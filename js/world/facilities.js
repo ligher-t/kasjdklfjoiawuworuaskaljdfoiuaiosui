@@ -1,0 +1,154 @@
+const localityAxes = Object.keys(LOCALITY_MODEL.axes);
+const localityDescriptor = s =>
+  `${s.res.n}|${s.local?.city || "都市名未特定"}|${s.home || "住居形態不詳"}|${s.local?.kind || "区画未特定"}`;
+const residenceSignature = s =>
+  s.residenceBase ? `base:${s.residenceBase.id}` : `${s.res.n}|${s.local?.city === "エル・ソル" ? "ドッソレス" : s.local?.city || ""}|${s.home}|${s.local?.kind}`;
+const localityKey = s =>
+  s.local?.districtId && s.local.identitySignature === residenceSignature(s)
+    ? `${s.local.placeId}|${s.local.districtId}`
+    : localityDescriptor(s);
+function ensureResidenceIdentity(s) {
+  if (!s?.res || !s.local) return null;
+  s.world ||= { events: {} };
+  const signature = residenceSignature(s);
+  if (!s.local.districtId || s.local.identitySignature !== signature) {
+    const serial = s.world.residenceSequence = (s.world.residenceSequence || 0) + 1;
+    const city = s.local.city === "エル・ソル" ? "ドッソレス" : s.local.city;
+    s.local.placeId = s.residenceBase ? `base:${s.residenceBase.id}` : city ? `city:${s.res.n}:${city}` : `settlement:${s.res.n}:${s.randomSeed ?? 0}:${serial}`;
+    s.local.districtId = s.residenceBase ? `base-living:${s.residenceBase.id}` : `district:${serial}`;
+    s.local.identitySignature = signature;
+  }
+  const key = localityKey(s);
+  s.world.residences ||= {};
+  s.world.residences[key] = { region: s.res.n, home: s.home, local: { ...s.local }, base:s.residenceBase?{...s.residenceBase}:null, recordedYear: s.year };
+  if (s.birthLocality && s.year === s.by && s.age === 0 && !s.birthLocality.placeId) {
+    s.birthLocality.placeId = s.local.placeId;
+    s.birthLocality.districtId = s.local.districtId;
+  }
+  return key;
+}
+function previousResidenceKey(s) {
+  return [...(s.world?.localityVisits || [])].reverse().map(row => row.from)
+    .find(key => canReturnToResidence(s,key)) || null;
+}
+function canReturnToResidence(s,key) {
+  if (!key || !Object.hasOwn(s.world?.residences || {},key) || key===localityKey(s)) return false;
+  if (s.lifeRecord?.affiliations?.some(a=>a.id==="ursus-kleini-sever-mine" && ["active","crisis","suspended"].includes(a.status) && a.anchor?.localityKey===localityKey(s))) return false;
+  const target=s.world.residences[key];
+  if (!target?.local || target.recordedYear>s.year || !REG.some(row=>row.n===target.region)) return false;
+  if (target.region !== s.res.n && !moveDestinations(s).some(row=>row.n===target.region)) return false;
+  if (!target.base) return true;
+  const a=s.lifeRecord?.affiliations?.find(row=>row.id===target.base.affiliationId);
+  return !!a && ["active","crisis"].includes(a.status) && a.posting?.localityKey===key &&
+    (a.role||"").startsWith((a.posting.kind==="ship"?"本艦":a.posting.kind)+"・");
+}
+const localityBaseline = s => {
+  const access = clamp(Number.isFinite(s.local?.access) ? s.local.access : 0.55, 0, 1),
+    hazard = clamp(Number.isFinite(s.local?.hazard) ? s.local.hazard : 0.5, 0, 1);
+  return {
+    food: clamp(0.68 + access * 0.22 - hazard * 0.07, 0.35, 0.95),
+    jobs: clamp(0.62 + access * 0.2 - hazard * 0.06, 0.3, 0.91),
+    housing: clamp(0.67 + access * 0.15 - hazard * 0.06, 0.3, 0.92),
+    medical: clamp(0.51 + access * 0.38 - hazard * 0.06, 0.28, 0.94),
+    transport: clamp(0.53 + access * 0.36 - hazard * 0.08, 0.25, 0.96)
+  };
+};
+/* v75: 継続する生活圏内の複数施設。実在の学校・医院・企業名ではなく架空の施設識別子。 */
+function facilitySpecsFor(s) {
+  const base = [
+    { kind: "clinic", extra: "" },
+    { kind: "school", extra: "" }
+  ];
+  if (s.job > 0 && !s.fl?.retired && !restricted(s)) base.push({ kind: "workplace", extra: String(s.job) });
+  return base;
+}
+const facilityId = (regionKey, kind, extra = "") => `${regionKey}#${kind}${extra ? "#" + extra : ""}`;
+const siteId = (regionKey, kind, extra = "", branch = 1) =>
+  facilityId(regionKey, kind, extra) + (branch === 1 ? "" : `#site${branch}`);
+const SITE_LABELS = {
+  clinic: ["地域の診療窓口", "別の診療窓口"],
+  school: ["地域の学び舎", "別の学び舎"],
+  workplace: ["既存の勤務先", "別の勤務先"]
+};
+function localSites(area, kind, extra = "") {
+  return Object.values(area?.facilities || {})
+    .filter(x => x.kind === kind && x.extra === extra && x.id.startsWith(area.key + "#"))
+    .sort((a, b) => (a.branch || 1) - (b.branch || 1));
+}
+function facilityStatus(metrics, kind, id, year) {
+  const spec = FACILITY_MODEL.kinds[kind],
+    v = clamp(
+      metrics[spec.axis] +
+        (id.endsWith("#site2")
+          ? (keyedRoll(`terra-site-access-v75:${id}`) - 0.5) * P("social.siteIndividualVariation")
+          : 0),
+      0.08,
+      1
+    );
+  const disruption = keyedRoll(`terra-facility-v1:${id}:${year}`);
+  // 小規模な年次運用変更は地域状況が既に悪い場合のみ抽象的に発生。
+  if (v < spec.limited || (v < spec.strained && disruption < 0.12)) return "limited";
+  if (v < spec.strained) return "strained";
+  return "available";
+}
+function ensureFacilityRecords(s, area) {
+  area.facilities ||= {};
+  if (!area.facilitySchemaVersion) {
+    area.legacyDefaultSite = Object.keys(area.facilities).some(
+      id => id === facilityId(area.key, "clinic") || id === facilityId(area.key, "school")
+    );
+    area.facilitySchemaVersion = 2;
+  }
+  for (const { kind, extra } of facilitySpecsFor(s)) {
+    for (let branch = 1; branch <= 2; branch++) {
+      const id = siteId(area.key, kind, extra, branch),
+        spec = FACILITY_MODEL.kinds[kind];
+      if (!area.facilities[id])
+        area.facilities[id] = {
+          id,
+          kind,
+          extra,
+          branch,
+          label: `${spec.label}（${branch === 1 ? "従来の窓口" : "別の施設"}）`,
+          status: "available",
+          lastYear: null,
+          transition: null,
+          transitionYear: null,
+          history: [],
+          contacts: [],
+          basis: "game-model",
+          entityKind: "synthetic-site"
+        };
+      else {
+        area.facilities[id].branch ??= branch;
+        area.facilities[id].entityKind ??= "synthetic-site";
+      }
+    }
+  }
+  return area.facilities;
+}
+function facilityAdvance(s, area, year) {
+  ensureFacilityRecords(s, area);
+  for (const f of Object.values(area.facilities)) {
+    if (f.lastYear === year) continue;
+    const status = facilityStatus(area.metrics, f.kind, f.id, year),
+      old = f.status;
+    if (f.lastYear !== null && old !== status) {
+      f.transition =
+        old === "limited" && status !== "limited"
+          ? "restored"
+          : old !== "limited" && status === "limited"
+            ? "restricted"
+            : "changed";
+      f.transitionYear = year;
+      f.history.push({ year, from: old, to: status, source: "locality-and-game-model" });
+      f.history = f.history.slice(-24);
+    }
+    f.status = status;
+    f.lastYear = year;
+    if (f.kind === "workplace") advanceWorkplaceLedger(s, f, year);
+  }
+}
+
+/* v76 職場契約・勤務先運営。個別事業者の名称・人口・賃金統計ではなく架空の台帳。
+   出生前の雇用履歴を再現しない。旧セーブの現職も現年から記録する。 */

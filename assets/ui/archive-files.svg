@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" fill="none">
+<defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v8" stroke="#8b989e" stroke-opacity=".35"/></pattern></defs>
+<path d="m138 66 209-24 88 269-226 50Z" fill="#59727e" stroke="#9cadb2" stroke-width="2"/>
+<path d="m94 108 244-29 44 266-251 29Z" fill="#b6bdb7" stroke="#e4e7dc" stroke-width="2"/>
+<path d="m166 55 220 24-30 295-220-24Z" fill="#dde1d5" stroke="#8d9a9b" stroke-width="2"/>
+<path d="m182 85 187 20-4 40-188-20Z" fill="#1b2a33"/>
+<path d="m177 154 178 19m-181 9 178 19m-181 9 178 19m-181 9 178 19m-181 9 178 19" stroke="#7a8c92" stroke-width="3"/>
+<path d="m178 275 87 9-4 42-87-9Z" fill="url(#hatch)"/>
+<path d="m92 155 95 9 16 24 114 12-19 186-226-24Z" fill="#223743" stroke="#9cb0b7" stroke-width="2"/>
+<path d="m102 208 188 20-5 42-187-20Z" fill="#d9ded2"/><path d="m109 223 104 11m-107 3 66 7" stroke="#263d49" stroke-width="3"/>
+<path d="m96 285 48 5-5 44-48-5Z" fill="url(#hatch)" stroke="#829ba4"/>
+<path d="m169 339 100 11M48 365h29m307 5h102M408 66h47m-23-23v46" stroke="#dbb566" stroke-width="3"/>
+</svg>

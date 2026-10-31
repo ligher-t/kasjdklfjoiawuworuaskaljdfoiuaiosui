@@ -1,0 +1,52 @@
+name: Terra Life UI and simulation regressions
+
+on:
+  push:
+    branches:
+      - design/terra-life-visual-experience
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  focused-node-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: npm run check:syntax
+      - name: Run focused P0-P2 and UI regressions
+        shell: bash
+        run: |
+          failed=0
+          for test in \
+            p0-education-service-context.test.cjs \
+            v87_education_path.js \
+            v87_life_text_context.js \
+            v87_war_mortality_scope.js \
+            state-ownership.test.cjs \
+            v87_information_claim_resume_roundtrip.js \
+            v87_exposure_lifecycle.js \
+            ending-comparison.test.cjs \
+            ui-log-years.test.cjs \
+            ui-ending-chart.test.cjs \
+            ui-record-evidence.test.cjs \
+            ui-summary-focus.test.cjs \
+            ui-choice-presentation.test.cjs \
+            ui-log-archive.test.cjs \
+            ui-summary-display-boundaries.test.cjs \
+            ui-title-resume.test.cjs
+          do
+            echo "::group::${test}"
+            if ! node tools/check-efficient.cjs run "${test}"; then
+              echo "::error::Failed: ${test}"
+              failed=1
+            fi
+            echo "::endgroup::"
+          done
+          exit "${failed}"

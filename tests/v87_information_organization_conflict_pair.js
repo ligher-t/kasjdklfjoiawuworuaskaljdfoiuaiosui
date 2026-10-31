@@ -1,0 +1,32 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),nodes=new Map(),storage=new Map();
+function node(id=''){if(!nodes.has(id))nodes.set(id,{id,hidden:false,value:'',textContent:'',innerHTML:'',dataset:{},style:{},children:[],classList:{toggle(){},add(){},remove(){}},setAttribute(){},append(){},appendChild(){},replaceChildren(){this.children=[]},querySelectorAll(){return[]},addEventListener(){},click(){}});return nodes.get(id)}
+const document={currentScript:null,getElementById:id=>node(id),querySelectorAll(){return[]},createElement:tag=>node('created-'+tag),createTextNode:text=>({textContent:text}),addEventListener(){},activeElement:{tagName:'BODY'},documentElement:{style:{setProperty(){}},removeAttribute(){},setAttribute(){}},head:{appendChild(){}}};
+const ctx={window:{},document,console,Date,setTimeout(){},setInterval(){},alert(){},confirm(){return true},localStorage:{getItem:key=>storage.get(key)||null,setItem:(key,value)=>storage.set(key,String(value))}};
+vm.runInNewContext(require('../tools/runtime.cjs').readData(root),ctx,{timeout:15000});
+vm.runInNewContext(require('../tools/runtime.cjs').readEngine(root),ctx,{timeout:15000});
+const result=vm.runInNewContext(String.raw`(()=>{
+ HL=1;AU='r';STAT.ev={};STAT.op={};STAT.currentLife=0;STAT.choiceMonths=new Set();
+ born({seed:871240,by:1077,region:'ヴィクトリア'});S.age=30;S.year=1098;S.known.londinium_war=1;S.world.events.londinium_war=1098;
+ const marketId='londinium-market-price-rise',grainId='londinium-grain-price-stability',receive=EV.find(row=>row.id==='sr_londinium_distant_news');recordInformationClaimAction(S,receive.c[0].o[0][2].informationClaimAction,receive.id);
+ S.year=1099;S.age++;const follow=EV.find(row=>row.id==='sr_londinium_price_followup'),grainChoice=follow.c.find(choice=>choice.o?.[0]?.[2]?.informationClaimAction?.claimId===grainId&&choice.o?.[0]?.[2]?.informationClaimAction?.action==='receive');if(!grainChoice)throw Error('the second distinct market claim was not available');recordInformationClaimAction(S,grainChoice.o[0][2].informationClaimAction,follow.id);
+ applyLifeOrganization({id:'infected-mutual-aid',action:'found',title:'感染者と家族の共同購入・診療連絡会'});
+ S.year=1100;S.age++;const event=EV.find(row=>row.id==='sr_information_claim_organization_meeting'),market=S.informationClaims.find(row=>row.id===marketId),grain=S.informationClaims.find(row=>row.id===grainId),pairChoice=event.c.find(choice=>choice.o?.[0]?.[2]?.informationClaimAction?.action==='present-conflicting-claims-to-organization'&&choice.o[0][2].informationClaimAction.organizationId==='infected-mutual-aid');
+ if(!event.once||!event.show(S)||!pairChoice?.show(S))throw Error('one-time meeting did not offer a paired-claim option: '+JSON.stringify({once:event.once,event:event.show(S),choice:pairChoice?.show(S),region:S.res?.n,home:S.home,local:S.local,org:S.lifeRecord?.organizations?.[0],claims:S.informationClaims?.map(row=>({id:row.id,recordedYear:row.recordedYear,status:row.status,relation:row.relation,channel:row.channel}))}));
+ if(event.c[4].show(S))throw Error('paired claims were offered to an organization not founded in the current locality');
+ const wrongRegion=JSON.parse(JSON.stringify(S));wrongRegion.res.n='カジミエーシュ';if(informationClaimOrganizationConflictTarget(wrongRegion,'infected-mutual-aid'))throw Error('paired route crossed regions');
+ const action=pairChoice.o[0][2].informationClaimAction;if(action.claimId!==marketId||action.organizationId!=='infected-mutual-aid')throw Error('paired choice payload did not identify the two-claim action and eligible group');
+ recordInformationClaimAction(S,action,event.id);
+ const marketRow=market.groupTransmissions?.[0],grainRow=grain.groupTransmissions?.[0],before=JSON.stringify(S.informationClaims);
+ if(market.status!=='unverified'||grain.status!=='unverified'||market.transmissions.length||grain.transmissions.length||market.groupTransmissions.length!==1||grain.groupTransmissions.length!==1||marketRow.groupConflictId!==grainRow.groupConflictId||marketRow.pairedClaimId!==grainId||grainRow.pairedClaimId!==marketId||marketRow.organizationId!==grainRow.organizationId||!marketRow.scope.includes('組織判断への反映は未確認'))throw Error('paired meeting did not preserve both unresolved claims and provenance');
+ const audit=auditLifeState(S);if(audit.length)throw Error(audit.join('; ')+' rows='+JSON.stringify(S.informationClaims.map(row=>({id:row.id,rec:row.recordedYear,grp:row.groupTransmissions,valid:row.groupTransmissions?.map(item=>informationClaimGroupTransmissionValid(S,row,item))}))));
+ const broken=JSON.parse(JSON.stringify(S));broken.informationClaims.find(row=>row.id===grainId).groupTransmissions=[];if(!auditLifeState(broken).length)throw Error('audit accepted a one-sided organization presentation');
+ const snapshot=makeResumeSnapshot();writeResumeSlot(0,{savedAt:snapshot.savedAt,snapshot});const stored=readResumeSlots().slots[0].snapshot;if(!cont(normalizeResumeImport(JSON.parse(JSON.stringify(stored)))))throw Error('paired group record failed save-slot restoration');
+ const restored=JSON.stringify(S.informationClaims);if(restored!==before||auditLifeState(S).length)throw Error('paired group record changed or failed audit after restoration');
+ HL=0;rd();const markup=$('known').innerHTML;if(!markup.includes('出所別に述べた一度の発言')||!markup.includes('組織判断への反映は未確認'))throw Error('knowledge panel did not retain the paired presentation scope');
+ const closed=JSON.parse(JSON.stringify(S));closed.lifeRecord.organizations[0].status='dissolved';if(informationClaimOrganizationConflictTarget(closed,'infected-mutual-aid'))throw Error('dissolved organization remained eligible');
+ return{passed:true,singleMeetingOffersPairedClaims:true,claimsRemainUnverified:true,provenancePairSymmetric:true,organizationUptakeNotInferred:true,halfPairRejectedByAudit:true,saveSlotRoundTrip:true,knowledgePanelShowsUncertainty:true,stateAuditErrors:0};
+})()`,ctx,{timeout:60000});
+assert.equal(result.passed,true);assert.equal(result.stateAuditErrors,0);assert.equal(result.saveSlotRoundTrip,true);
+console.log(JSON.stringify(result,null,2));
