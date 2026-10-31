@@ -1,0 +1,35 @@
+<!doctype html><meta charset="utf-8"><title>Terra debug panel acceptance</title><h2>debugパネル受入</h2><button id="execute">パネルの操作と保留復帰を確認</button><pre id="output">開始操作待ち</pre><iframe id="game" src="../../index.html?debug=1" style="width:100%;height:650px"></iframe><script>
+const frame=document.getElementById('game'),button=document.getElementById('execute'),output=document.getElementById('output');
+button.onclick=async()=>{button.disabled=true;const checks=[];const check=(ok,label)=>{if(!ok)throw Error(label);checks.push('PASS '+label);output.textContent=checks.join('\n');};try{
+ const w=frame.contentWindow,d=w.document,api=w.TERRA_DEBUG_API;
+ check(!!api&&!!d.getElementById('terra-debug'),'debug=1のAPIとパネル');
+ api.newLife({seed:9001,by:1077,region:'イェラグ'});api.setState({age:20,h:90,cash:1000000});
+ const input=d.getElementById('td-event-search');input.value='kje_pilgrim';input.dispatchEvent(new w.Event('input'));
+ check([...d.getElementById('td-event').options].filter(o=>o.value&&!o.hidden).every(o=>o.value==='kje_pilgrim'),'イベント検索');
+ const scenarioInput=d.getElementById('td-scenario-search');scenarioInput.value='rhodes';scenarioInput.dispatchEvent(new w.Event('input'));
+ check([...d.getElementById('td-scenario').options].filter(o=>!o.hidden).every(o=>o.textContent.includes('rhodes')),'シナリオ検索');
+ d.getElementById('td-event').value='kje_pilgrim';d.getElementById('td-event-status').click();
+ const status=JSON.parse(d.getElementById('td-output').textContent);check(status.eligible&&status.choices.length===3,'発生条件と選択肢');
+ d.getElementById('td-event-run').click();check(api.summary().pendingChoice==='kje_pilgrim','条件を満たす選択の実表示');
+ const snapshot=w.eval('JSON.stringify({S,W,RANDOM_STATE,acc,sp,AU})'),text=d.getElementById('mt').textContent;
+ const storageBefore=JSON.stringify({...w.localStorage});d.getElementById('td-checkpoint').click();check(!JSON.parse(d.getElementById('td-output').textContent).error,'チェックポイント作成');
+ d.getElementById('mc').children[2].click();check(!api.summary().pendingChoice,'実ボタンで選択を確定');
+ d.getElementById('td-restore').click();check(!JSON.parse(d.getElementById('td-output').textContent).error,'復帰処理が正常終了');const afterSnapshot=w.eval('JSON.stringify({S,W,RANDOM_STATE,acc,sp,AU})');
+ const beforeValue=JSON.parse(snapshot),afterValue=JSON.parse(afterSnapshot);
+ const differences=Object.keys(beforeValue.S).filter(key=>JSON.stringify(beforeValue.S[key])!==JSON.stringify(afterValue.S[key]));
+ check(afterSnapshot===snapshot&&d.getElementById('mt').textContent===text,'保留中の人生・世界・乱数・本文復帰 '+JSON.stringify({differences,globals:Object.keys(beforeValue).filter(key=>key!=='S'&&JSON.stringify(beforeValue[key])!==JSON.stringify(afterValue[key])),output:d.getElementById('td-output').textContent}));
+ check(JSON.stringify({...w.localStorage})===storageBefore,'チェックポイントは通常保存枠を書き換えない');
+ d.getElementById('mc').children[2].click();check(!api.summary().pendingChoice,'復帰後の実ボタン再接続');
+ const before=api.summary().cash;d.getElementById('td-patch').value=JSON.stringify({cash:1,unknownKey:1});d.getElementById('td-apply').click();
+ check(d.getElementById('td-output').textContent.includes('unknownKey')&&api.summary().cash===before,'未知キーは拒否し部分適用しない');
+ d.getElementById('td-patch').value=JSON.stringify({cash:12345});d.getElementById('td-apply').click();const result=JSON.parse(d.getElementById('td-output').textContent);
+ check(result.changes.some(r=>r.key==='cash')&&Array.isArray(result.audit),'パッチの差分と監査');
+ d.getElementById('td-refresh').click();const summary=JSON.parse(d.getElementById('td-output').textContent);check(!summary.state&&!summary.events&&summary.cash===12345,'概要表示は全状態・全イベント走査を伴わない');
+ w.setDevRunBusy(true);check([...d.querySelectorAll('#terra-debug button, #terra-debug input, #terra-debug select, #terra-debug textarea')].every(el=>el.disabled),'シム中のパネル操作を無効化');
+ w.setDevRunBusy(false);check(!d.getElementById('td-create').disabled,'シム終了時に操作状態を復元');
+ const beforeTrial=w.eval('JSON.stringify({S,W,RANDOM_STATE,statKeys:Object.keys(STAT)})');let rejected=false;
+ await w.runDevSimulation({count:1,maxYears:1},{onProgress:()=>{try{api.setState({cash:1});}catch(e){rejected=e.message.includes('シミュレーション実行中');}}});
+ check(rejected&&w.eval('JSON.stringify({S,W,RANDOM_STATE,statKeys:Object.keys(STAT)})')===beforeTrial,'試行中のAPI変更を拒否し、統計キーも元へ戻す');
+ output.textContent=checks.join('\n')+'\n受入 PASS';
+}catch(e){output.textContent+='\nFAIL '+e.message;}finally{button.disabled=false;}};
+</script>

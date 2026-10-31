@@ -1,0 +1,31 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),document={currentScript:null,getElementById(){return{hidden:false,textContent:'',value:'',dataset:{},innerHTML:'',insertAdjacentHTML(){}}},querySelectorAll(){return[]}};
+const context={window:{},document,console,localStorage:{getItem(){return null},setItem(){}},Date,setTimeout(){},setInterval(){}};
+vm.runInNewContext(require('../tools/runtime.cjs').readData(root),context,{timeout:15000});
+vm.runInNewContext(require('../tools/runtime.cjs').readEngine(root).split('/* ===== UI ===== */')[0],context,{timeout:15000});context.rd=()=>{};
+const event=id=>context.window.GAME_DATA.EV.find(row=>row.id===id),entry=event('life_bolivar_upland_crops'),review=event('life_bolivar_harvest_review');
+const audit=()=>vm.runInNewContext('auditLifeState(S).length',context);
+assert(entry&&review,'Bolivar cultivation events exist');
+assert.deepEqual(Array.from(entry.references),['SRC_BOLIVAR_LIFEWAYS_II','SRC_BOLIVAR_UPLAND_LIFE_MODEL']);
+assert.deepEqual(Array.from(review.references),['SRC_BOLIVAR_LIFEWAYS_II','SRC_BOLIVAR_UPLAND_LIFE_MODEL']);
+const setup=seed=>vm.runInNewContext(`(()=>{born({seed:${seed},by:1077,region:'ボリバル'});S.age=24;S.year=1101;S.mo=3;S.home='固定集落';S.local=makeLocality(S.home,S.res.n,'小規模な定住地');return S;})()`,context,{timeout:30000});
+const apply=(id,choice)=>{const e=event(id),previous=context.TRACE_RESOLUTION;context.TRACE_RESOLUTION={kind:'choice',id:e.id,label:e.c[choice].l};try{context.ap(e.c[choice].o[0][2])}finally{context.TRACE_RESOLUTION=previous}};
+const base=setup(871001);
+assert(entry.show(base),'route appears in a small Bolivar settlement');
+assert(!entry.show({...base,home:'移動都市'}),'route stays within the supported fixed-settlement context');
+assert(!entry.show({...base,res:{n:'サルゴン'}}),'route stays within Bolivar');
+const choices=['商品作物を小さく試す','家の食料と次の種を取り置く','花の区画を残す'];
+for(let choice=0;choice<3;choice++){
+ const s=setup(871010+choice);apply(entry.id,choice);
+ const goal=s.lifeRecord.goals.find(row=>row.id==='bolivar-upland-cultivation-review');
+ assert.equal(goal?.status,'active',`${choices[choice]} starts a personal cultivation review`);
+ assert.equal(audit(),0,'entry state passes lifecycle audit');
+ s.year++;s.age++;assert(!review.show(s),'harvest review waits two years');
+ s.year++;s.age++;assert(review.show(s),'harvest review becomes available after two years');
+ apply(review.id,choice);
+ const closed=s.lifeRecord.goals.find(row=>row.id==='bolivar-upland-cultivation-review');
+ assert.equal(closed?.status,'achieved',`${choices[choice]} can reach a later review`);
+ assert.equal(audit(),0,'review state passes lifecycle audit');
+}
+console.log(JSON.stringify({passed:true,entryContext:'Bolivar small fixed settlement',entryChoices:entry.c.length,reviewChoices:review.c.length,twoYearFollowup:true,sourceBoundaries:true,allChoiceAudits:0},null,2));
