@@ -1,0 +1,11 @@
+{
+  "name": "terra-life-development",
+  "version": "0.88.0",
+  "private": true,
+  "description": "Static game; optional high-value checks use Node built-ins only",
+  "scripts": {
+    "test": "node tools/check-efficient.cjs syntax && node tools/check-efficient.cjs run regional-event-context.test.cjs v88_event_coherence_and_repetition_reforms.test.cjs v88_audit_fixes_xss_and_causes.test.cjs v88_system_audit_fixes.test.cjs",
+    "test:list": "node tools/check-efficient.cjs list",
+    "check:syntax": "node tools/check-efficient.cjs syntax"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "baseline": "9292d24",
+  "cases": [
+    {
+      "id": "clean-catalog",
+      "kind": "catalog",
+      "code": "",
+      "expected": []
+    },
+    {
+      "id": "duplicate-id",
+      "kind": "catalog",
+      "code": "EV.find(event=>event.id==='f1').id='fever';",
+      "expected": [
+        "重複または空のid: fever"
+      ]
+    },
+    {
+      "id": "unknown-condition",
+      "kind": "catalog",
+      "code": "EV[0].need=['presentation_unknown_flag'];",
+      "expected": [
+        "fever: 未知のタグ「presentation_unknown_flag」"
+      ]
+    },
+    {
+      "id": "invalid-effect",
+      "kind": "catalog",
+      "code": "EV.find(event=>!event.c).fx={presentationUnknownEffect:1,h:'bad'};",
+      "expected": [
+        "f1: 未知の効果「presentationUnknownEffect」",
+        "f1: 効果「h」が有限な数値ではない"
+      ]
+    },
+    {
+      "id": "negative-weight",
+      "kind": "catalog",
+      "code": "EV[0].w=-1;",
+      "expected": [
+        "fever: 抽選重みの基準値が正の有限数ではない"
+      ]
+    },
+    {
+      "id": "missing-after",
+      "kind": "catalog",
+      "code": "EV[0].after={id:'presentation_missing_event'};",
+      "expected": [
+        "fever: afterの参照先「presentation_missing_event」がない"
+      ]
+    },
+    {
+      "id": "parameter-range",
+      "kind": "catalog",
+      "code": "PARAM['economy.spouseSharedHouseholdIncomeShare']=2;",
+      "expected": [
+        "配偶者の家計分担・生活費設定値が不正"
+      ]
+    },
+    {
+      "id": "parameter-metadata",
+      "kind": "catalog",
+      "code": "SIM_PARAMS[0].unit='';",
+      "expected": [
+        "シミュレーション設定値「clock.yearMs」のunit説明が不足",
+        "clock.yearMs: パラメータ台帳の説明項目が不足"
+      ]
+    },
+    {
+      "id": "flag-metadata",
+      "kind": "catalog",
+      "code": "FLAG_REGISTRY[Object.keys(FLAG_REGISTRY)[0]].label='';",
+      "expected": [
+        "ursus_student_assembly_contacted: フラグ台帳の型・寿命・出典・生成元・解除元・参照先が不足"
+      ]
+    },
+    {
+      "id": "migration",
+      "kind": "catalog",
+      "code": "MIGRATION_ROUTES[REG[0].n]=[{n:'presentation_unknown_region'}];",
+      "expected": [
+        "移動経路「炎国」に不正な行先「presentation_unknown_region」がある"
+      ]
+    },
+    {
+      "id": "clean-state",
+      "kind": "state",
+      "code": "",
+      "expected": []
+    },
+    {
+      "id": "bad-clock",
+      "kind": "state",
+      "code": "S.age=NaN;",
+      "expected": [
+        "ageが有限数でない"
+      ]
+    },
+    {
+      "id": "bad-money-health",
+      "kind": "state",
+      "code": "S.cash=-1;S.debt=-5;S.h=NaN;",
+      "expected": [
+        "hが有限数でない",
+        "cashが負",
+        "debtが負"
+      ]
+    },
+    {
+      "id": "bad-rng",
+      "kind": "state",
+      "code": "S.randomAlgorithm='unknown';S.rngState=0;S.randomSeed=-1;",
+      "expected": [
+        "再現用乱数のseed/state/algorithmが不整合"
+      ]
+    },
+    {
+      "id": "bad-community",
+      "kind": "state",
+      "code": "S.community.metrics.access=5;S.community.lastYear=S.year+1;",
+      "expected": [
+        "生活圏の状態・記録に不整合"
+      ]
+    },
+    {
+      "id": "duplicate-person",
+      "kind": "state",
+      "code": "S.par.mo.id=S.par.fa.id;",
+      "expected": [
+        "家族・関係者のIDが重複"
+      ]
+    }
+  ],
+  "preservedInputChanges": [
+    {
+      "file": "data/model/flags.js",
+      "sha256": "eb49e644778ffc2a40f3263fb755430a7efbad702f50e521928d99561b224d18"
+    }
+  ]
+}

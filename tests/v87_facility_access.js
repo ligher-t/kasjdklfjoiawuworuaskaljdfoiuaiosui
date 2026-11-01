@@ -1,0 +1,36 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),context={window:{}};
+vm.runInNewContext(require('../tools/runtime.cjs').readData(root),context,{timeout:15000});
+require('./support/bind-rule-fixture.cjs').bindRuleFixture(context);
+const event=id=>context.window.GAME_DATA.EV.find(row=>row.id===id);
+const expected={facility_clinic_followup:['information','defer'],facility_school_reopen:['procedure','self-or-family-care'],facility_new_area_orientation:['information','information'],site_clinic_contact_change:['procedure','defer'],site_school_transfer:['procedure','self-or-family-care'],site_clinic_different_conditions:['information','defer']};
+for(const [id,intents] of Object.entries(expected)){
+ const row=event(id);assert(row,id+' event missing');assert.equal(row.c.length,intents.length,id+' choice count');
+ assert.deepEqual(Array.from(row.c,choice=>choice.ethics?.intent),intents,id+' intent classification');
+ assert(row.c.every(choice=>choice.ethics?.reviewed&&choice.ethics.policyVersion===87),id+' current review');
+ for(const choice of row.c)for(const outcome of choice.o)if(outcome[2].facilityAction)assert.equal(typeof outcome[2].facilityAction.description,'string',id+' facility record description');
+}
+const followup=event('facility_clinic_followup');assert.deepEqual(Array.from(followup.c,choice=>choice.o[0][2].facilityAction.action),['renew','defer'],'clinic information refresh remains separate from actual care');
+const reopen=event('facility_school_reopen');assert.deepEqual(Array.from(reopen.c,choice=>choice.o[0][2].facilityAction.action),['resume','continue_study'],'school reopening does not force attendance');
+const orientation=event('facility_new_area_orientation');
+assert.equal(orientation.t.includes('以前の診療所から届いた知らせ'),false,'relocation must not invent a prior clinic message');
+assert.equal(orientation.c[0].o[0][2].facilityAction.kind,'clinic','choosing to check the new clinic records an inquiry');
+assert.equal(orientation.c[1].o[0][2].facilityAction,undefined,'asking neighbours for shops and water is not clinic contact');
+assert.equal(orientation.c[1].o[0][2].localityAction.kind,'social','neighbour information belongs to community history');
+assert.equal(orientation.c[1].o[0][2].localityAction.action,'information');
+const clinicWording=event('site_clinic_contact_change');
+assert.equal(clinicWording.t.includes('普段調べている'),false,'clinic contact-point must not imply a documented visit');
+assert.equal(clinicWording.c[0].o[0][1].includes('以前の担当者'),false,'switching a contact point must not invent a prior staff relationship');
+const clinicChange=event('site_clinic_contact_change');assert.equal(clinicChange.c[0].o[0][2].siteAction.action,'switch');assert.equal(clinicChange.c[1].o[0][2].siteAction,undefined,'keeping current contact does not create a transfer');
+const school=event('site_school_transfer');assert.equal(school.c[0].o[0][2].siteAction.action,'switch');assert.equal(school.c[0].o[1][2].siteAction,undefined,'rejected application leaves existing school in place');assert.equal(school.c[1].o[0][2].siteAction,undefined,'choosing current school is not a transfer');
+const compare=event('site_clinic_different_conditions');assert.equal(compare.c[0].o[0][2].facilityAction.action,'compare');assert(compare.c[0].o[0][2].facilityAction.description,'runtime facility records require a description');assert.equal(compare.c[1].o[0][2].facilityAction,undefined,'keeping current contact does not claim comparison or treatment');
+const worldFixture=require('./support/annual-cases.cjs'),world=worldFixture.context(root);worldFixture.setup(world.ctx,{id:'facility-count-view',seed:905123,region:'ウルサス',age:32});
+const summary=vm.runInContext('facilitySummary(S)',world.ctx);assert.equal(summary.includes('同種の施設'),false,'synthetic facility slots must not appear as a canon facility count');
+const neighbourAction=orientation.c[1].o[0][2].localityAction;
+vm.runInContext(`applyLocalityAction(S,${JSON.stringify(neighbourAction)})`,world.ctx);
+const recordedNeighbourAction=vm.runInContext('({action:S.community.actions.at(-1),clinicContacts:S.facilityContacts||[]})',world.ctx);
+assert.equal(recordedNeighbourAction.action.kind,'social','neighbour guidance is recorded in the locality history');
+assert.equal(recordedNeighbourAction.action.description,neighbourAction.description);
+assert.equal(recordedNeighbourAction.clinicContacts.length,0,'neighbour guidance does not create a clinic contact record');
+console.log(JSON.stringify({passed:true,reviewedEvents:Object.keys(expected).length,reviewedChoices:Object.values(expected).flat().length,facilityInformationAndCareOutcomesSeparate:true,schoolReopeningDoesNotForceAttendance:true,failedOrDeclinedTransferPreservesExistingState:true,clinicComparisonDoesNotImplyTreatment:true,relocationOutcomeRecordedInMatchingDomain:true,syntheticFacilityCountNotPresentedAsWorldFact:true,neighbourInfoDoesNotCreateClinicContact:true},null,2));

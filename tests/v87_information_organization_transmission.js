@@ -1,0 +1,41 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),nodes=new Map(),storage=new Map();
+function node(id=''){if(!nodes.has(id))nodes.set(id,{id,hidden:false,value:'',textContent:'',innerHTML:'',dataset:{},style:{},children:[],classList:{toggle(){},add(){},remove(){}},setAttribute(){},append(){},appendChild(){},replaceChildren(){this.children=[]},querySelectorAll(){return[]},addEventListener(){},click(){}});return nodes.get(id)}
+const document={currentScript:null,getElementById:id=>node(id),querySelectorAll(){return[]},createElement:tag=>node('created-'+tag),createTextNode:text=>({textContent:text}),addEventListener(){},activeElement:{tagName:'BODY'},documentElement:{style:{setProperty(){}},removeAttribute(){},setAttribute(){}},head:{appendChild(){}}};
+const ctx={window:{},document,console,Date,setTimeout(){},setInterval(){},alert(){},confirm(){return true},localStorage:{getItem:key=>storage.get(key)||null,setItem:(key,value)=>storage.set(key,String(value))}};
+vm.runInNewContext(require('../tools/runtime.cjs').readData(root),ctx,{timeout:15000});
+vm.runInNewContext(require('../tools/runtime.cjs').readEngine(root),ctx,{timeout:15000});
+const result=vm.runInNewContext(String.raw`(()=>{
+ HL=1;AU='r';STAT.ev={};STAT.op={};STAT.currentLife=0;STAT.choiceMonths=new Set();
+ born({seed:871240,by:1077,region:'ヴィクトリア'});S.age=30;S.year=1099;S.known.londinium_war=1;S.world.events.londinium_war=1098;
+ const receive=EV.find(row=>row.id==='sr_londinium_distant_news');recordInformationClaimAction(S,receive.c[0].o[0][2].informationClaimAction,receive.id);
+ const follow=EV.find(row=>row.id==='sr_londinium_price_followup');recordInformationClaimAction(S,follow.c[9].o[0][2].informationClaimAction,follow.id);
+ applyLifeOrganization({id:'infected-mutual-aid',action:'found',title:'感染者と家族の共同購入・診療連絡会'});
+ const event=EV.find(row=>row.id==='sr_information_claim_organization_meeting'),claimId='londinium-market-price-rise',grainId='londinium-grain-price-stability';
+ const unknownLegacy=JSON.parse(JSON.stringify(S));for(const field of ['formedRegion','formedHome','formedLocalityKind','formedCity'])delete unknownLegacy.lifeRecord.organizations[0][field];
+ S.year++;S.age++;if(!event.show(S))throw Error('matching active organization should unlock its local meeting route');
+ if(event.c[0].show(S)||!event.c[1].show(S)||event.c[2].show(S)||!event.c[3].show(S))throw Error('the active mutual-aid group was not offered only its matching claims');
+ if(informationClaimOrganizationTarget(unknownLegacy,claimId,'infected-mutual-aid'))throw Error('legacy organization without a recorded locality inherited one');
+ const moved=JSON.parse(JSON.stringify(S));moved.res.n='カジミエーシュ';if(event.show(moved))throw Error('organization transmission crossed regions without a recorded meeting');
+ applyLifeOrganization({id:'infected-exclusion',action:'found',title:'感染者排除を求める住民会'});
+ const legacyNoLocation=JSON.parse(JSON.stringify(S));for(const field of ['formedRegion','formedHome','formedLocalityKind','formedCity'])delete legacyNoLocation.lifeRecord.organizations[1][field];if(event.c[0].show(legacyNoLocation))throw Error('legacy organization without locality was offered as a recipient');
+ const transmissions=[];let turn=0;for(const index of [1,2,3,0]){if(turn++){S.year++;S.age++}const choice=event.c[index],payload=choice.o[0][2].informationClaimAction;if(!choice.show(S))throw Error('eligible organization transmission option disappeared: '+index);recordInformationClaimAction(S,payload,event.id);transmissions.push(payload)}
+ const claim=S.informationClaims.find(row=>row.id===claimId),grain=S.informationClaims.find(row=>row.id===grainId),savedGroup=claim.groupTransmissions[0],before=JSON.stringify(S.informationClaims);
+ if(claim.status!=='unverified'||grain.status!=='unverified'||claim.transmissions.length!==0||grain.transmissions.length!==0||claim.groupTransmissions.length!==2||grain.groupTransmissions.length!==2||savedGroup.organizationId!=='infected-mutual-aid'||savedGroup.region!=='ヴィクトリア'||savedGroup.receiverGroup!=='感染者と家族の共同購入・診療連絡会'||!savedGroup.scope.includes('参加者の聴取・理解・同意・行動や第三者への伝達は未確認'))throw Error('organization transmission inferred members or altered either source claim');
+ if(event.show(S))throw Error('fully transmitted claims remained eligible for another group share');
+ let duplicateRejected=false;try{recordInformationClaimAction(S,transmissions[0],event.id)}catch{duplicateRejected=true}if(!duplicateRejected)throw Error('duplicate organization transmission was accepted');
+ const audit=auditLifeState(S);if(audit.length)throw Error(audit.join('; '));
+ const snapshot=makeResumeSnapshot();writeResumeSlot(0,{savedAt:snapshot.savedAt,snapshot});const stored=readResumeSlots().slots[0].snapshot,loaded=cont(normalizeResumeImport(JSON.parse(JSON.stringify(stored))));if(!loaded)throw Error('organization information record failed save-slot restoration');
+ const restored=JSON.stringify(S.informationClaims);if(restored!==before)throw Error('organization transmission changed through save-slot round trip');
+ const postLoadAudit=auditLifeState(S);if(postLoadAudit.length)throw Error(postLoadAudit.join('; '));
+ const corrupt=JSON.parse(JSON.stringify(S));corrupt.informationClaims.find(row=>row.id===claimId).groupTransmissions[0].organizationId='infected-exclusion';if(auditLifeState(corrupt).length===0)throw Error('audit accepted a group transmission detached from its organization');
+ HL=0;rd();const knownMarkup=$('known').innerHTML;if(!knownMarkup.includes('会合で発言')||!knownMarkup.includes('参加者の聴取・理解・同意・行動や第三者への伝達は未確認'))throw Error('knowledge panel: claims='+JSON.stringify(S.informationClaims?.map(x=>({id:x.id,groups:x.groupTransmissions})))+' html='+knownMarkup.slice(0,800));
+ const ended=JSON.parse(JSON.stringify(S));ended.lifeRecord.organizations[0].status='dissolved';if(informationClaimOrganizationTarget(ended,claimId,'infected-mutual-aid'))throw Error('dissolved organization remained an active recipient');
+ return{passed:true,twoDifferentClaimsRemainUnverified:true,twoOrganizationTypesScopedByFoundingLocality:true,legacyLocationNotInvented:true,regionalGate:true,groupSpeechSeparateFromPersonTransmissions:true,noMemberUptakeInferred:true,duplicateTransmissionRejected:true,saveSlotRoundTrip:true,claimsPreserved:restored===before,knowledgePanelGroupScopeRendered:true,corruptOrganizationRejectedByAudit:true,stateAuditErrors:postLoadAudit.length};
+})()`,ctx,{timeout:60000});
+assert.equal(result.passed,true);
+assert.equal(result.saveSlotRoundTrip,true);
+assert.equal(result.claimsPreserved,true);
+assert.equal(result.stateAuditErrors,0);
+console.log(JSON.stringify(result,null,2));

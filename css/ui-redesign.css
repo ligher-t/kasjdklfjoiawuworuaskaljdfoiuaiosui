@@ -1,0 +1,258 @@
+/* P0/P1: shared surfaces, controls and choice presentation. */
+:root {
+  --ui-bg: #edf0ee; --ui-surface: #fff; --ui-raised: #e4eae7;
+  --ui-fg: #162127; --ui-muted: #526168; --ui-border: #bec9c5;
+  --ui-accent: #a16800; --ui-danger: #a83336; --ui-positive: #16775a;
+  --ui-gap: 12px; --ui-control-gap: 8px; --ui-focus: #a16800;
+  --bg: var(--ui-bg); --fg: var(--ui-fg); --pn: var(--ui-surface);
+  --mu: var(--ui-muted); --ln: var(--ui-border); --ac: var(--ui-accent);
+  --bd: var(--ui-danger); --gd: var(--ui-positive);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --ui-bg: #12171c; --ui-surface: #1b232a; --ui-raised: #27323a;
+    --ui-fg: #f0f3f2; --ui-muted: #bac5c7; --ui-border: #465961;
+    --ui-accent: #e6ac30; --ui-danger: #ee7d78; --ui-positive: #70c6ad;
+    --ui-focus: #e6ac30; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ui-bg: #12171c; --ui-surface: #1b232a; --ui-raised: #27323a;
+  --ui-fg: #f0f3f2; --ui-muted: #bac5c7; --ui-border: #465961;
+  --ui-accent: #e6ac30; --ui-danger: #ee7d78; --ui-positive: #70c6ad;
+  --ui-focus: #e6ac30; color-scheme: dark;
+}
+/* Override legacy theme values with the new palette in every mode. */
+:root[data-theme], :root:not([data-theme]) {
+  --bg: var(--ui-bg); --fg: var(--ui-fg); --pn: var(--ui-surface);
+  --mu: var(--ui-muted); --ln: var(--ui-border); --ac: var(--ui-accent);
+  --bd: var(--ui-danger); --gd: var(--ui-positive);
+}
+body { font-size: 16px; line-height: 1.75; }
+button, select, input:not([type="checkbox"]) { min-height: 44px; }
+button, select { border-radius: 2px; }
+button:focus-visible, select:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid var(--ui-focus); outline-offset: 3px;
+}
+button:disabled { opacity: .55; }
+button:hover:not(:disabled):not([aria-disabled="true"]) { border-color: var(--ui-accent); }
+#tb {
+  display: grid; grid-template-columns: minmax(210px,1fr) auto auto;
+  gap: var(--ui-gap); padding: 14px 18px; border-bottom: 1px solid var(--ui-border);
+  box-shadow: 0 3px 0 #0000000a;
+}
+.ui-toolbar-clock { min-width: 0; display: grid; gap: 6px; }
+#tbi { flex-wrap: wrap; gap: 4px 12px; }
+#tn { font-size: 1.15rem; font-weight: 800; }
+#pgw { min-width: 0; gap: 8px; }
+#pg { height: 4px; }
+#mo { width: 3em; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.ui-toolbar-play, .ui-toolbar-system { display: flex; align-items: center; flex-wrap: wrap; gap: var(--ui-control-gap); }
+.ui-toolbar-play { padding-inline: 16px; border-inline: 1px solid var(--ui-border); }
+#ctl { display: flex; flex-wrap: wrap; gap: var(--ui-control-gap); }
+#ctl button { min-width: 44px; margin: 0; }
+#ctl button.on { background: var(--ui-fg); border-color: var(--ui-fg); color: var(--ui-surface); }
+.au { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.au select { max-width: 105px; }
+#stt { color: var(--ui-muted); font-size: 14px; }
+#stt:empty { display: none; }
+.ui-modal-open { overflow: hidden; }
+#md, #resume-manager, #ui-settings {
+  position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+  padding: 16px; background: #071017a8; backdrop-filter: blur(3px);
+}
+#md { z-index: 30; }
+#resume-manager, #ui-settings { z-index: 40; }
+#md .card {
+  width: min(760px, calc(100vw - 32px)); max-width: none;
+  max-height: calc(100dvh - 32px); overflow-y: auto; overscroll-behavior: contain;
+  padding: clamp(20px, 4vw, 36px); border: 1px solid var(--ui-border);
+  border-top: 4px solid var(--ui-accent); box-shadow: 0 24px 70px #0006;
+}
+.ui-choice-heading { display: flex; gap: 12px; justify-content: space-between; margin-bottom: 20px; color: var(--ui-muted); font-size: 14px; }
+#mt { margin: 0 0 28px; font-size: clamp(17px, 1.5vw, 19px); line-height: 1.85; font-weight: 600; overflow-wrap: anywhere; }
+#mc { display: grid; gap: var(--ui-control-gap); }
+#mc button {
+  min-height: 56px; padding: 16px 20px; margin: 0; line-height: 1.7;
+  background: var(--ui-raised); white-space: normal; overflow-wrap: anywhere;
+}
+#mc button[aria-disabled="true"] { color: var(--ui-muted); background: var(--ui-surface); border-style: dashed; cursor: not-allowed; }
+#mc .choice-reason { display: block; margin-top: 8px; font-size: 14px; line-height: 1.6; color: var(--ui-muted); }
+.ui-choice-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--ui-border); }
+#md .ui-choice-actions button { float: none; margin: 0; width: auto; text-align: center; }
+#resumeChoice.ui-pending-banner {
+  position: sticky; top: calc(var(--tbh, 80px) + 8px); z-index: 15;
+  width: 100%; padding: 16px 20px; margin-bottom: 12px; display: flex;
+  align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  text-align: left; background: var(--ui-surface); border: 2px solid var(--ui-accent);
+  box-shadow: 0 5px 18px #0002; border-radius: 2px;
+}
+#resumeChoice span { font-size: 14px; }
+#resume-manager .card, #ui-settings .card {
+  width: min(760px,100%); max-width: 760px; max-height: calc(100dvh - 32px);
+  overflow-y: auto; overscroll-behavior: contain; padding: 24px;
+}
+#ui-settings .card { max-width: 460px; }
+#resume-manager .resume-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+#resume-manager .resume-actions button { flex: 1 1 140px; width: auto; margin: 0; }
+#resume-manager #resume-close { float: none !important; width: auto; margin: 0 0 16px auto; }
+.ui-dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.ui-dialog-heading h2 { margin: 0; font-size: 20px; }
+.ui-dialog-heading button { width: auto; margin: 0; }
+.ui-settings-panel label, .ui-settings-panel select { display: block; width: 100%; }
+.ui-settings-panel select { margin: 8px 0 24px; padding: 8px; }
+@media (max-width: 1279px) {
+  #tb { grid-template-columns: minmax(200px,1fr) auto; }
+  .ui-toolbar-play { grid-row: 2; grid-column: 1 / -1; padding: 12px 0 0; border: 0; border-top: 1px solid var(--ui-border); }
+  .ui-toolbar-system { justify-content: flex-end; }
+}
+@media (max-width: 899px) {
+  #tb { padding: 10px 12px; gap: 8px; grid-template-columns: minmax(0,1fr) auto; }
+  #tn { font-size: 16px; }
+  #ty { font-size: 14px; }
+  .ui-toolbar-system { gap: 4px; }
+  .ui-toolbar-system button { padding: 6px 8px; font-size: 14px; }
+  .ui-toolbar-play { gap: 8px; }
+  #ctl { width: 100%; display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 4px; }
+  #ctl:has(>button:nth-child(7)){grid-template-columns:repeat(7,minmax(0,1fr))}
+  #ctl button { min-width: 0; padding: 4px 2px; font-size: 14px; }
+  #md { padding: 8px; }
+  #md .card { width: 100%; max-height: calc(100dvh - 16px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px)); padding: 20px; }
+  .ui-choice-heading { flex-wrap: wrap; margin-bottom: 16px; }
+  #mc button { padding: 14px; }
+  .ui-choice-actions { justify-content: stretch; }
+  #md .ui-choice-actions button { flex: 1; }
+  #resumeChoice.ui-pending-banner {
+    position: fixed; left: 12px; right: 12px; bottom: calc(62px + env(safe-area-inset-bottom,0px));
+    top: auto; width: auto; margin: 0; padding: 12px 16px; flex-direction: column; align-items: flex-start;
+  }
+  body:has(#resumeChoice:not([hidden])) #s1 { padding-bottom: 160px; }
+  #resume-manager, #ui-settings { padding: 8px; }
+}
+/* P2: keep a short player-facing overview in view and retain full records in details. */
+.ui-person-summary { display: grid; gap: 4px; }
+.ui-person-summary p { margin: 0; }
+.ui-person-lead { font-size: 1.1rem; font-weight: 800; overflow-wrap: anywhere; }
+.ui-person-current { color: var(--ui-muted); }
+.ui-person-facts { display: grid; grid-template-columns: max-content minmax(0,1fr); gap: 2px 12px; margin: 12px 0 0; }
+.ui-person-facts dt { color: var(--ui-muted); }
+.ui-person-facts dd { margin: 0; overflow-wrap: anywhere; }
+#st .b { margin-block: 8px; }
+.ui-overview-grid { display: grid; gap: 8px; }
+.ui-overview-card { padding: 12px 14px; border: 1px solid var(--ui-border); border-left: 3px solid var(--ui-accent); background: var(--ui-surface); }
+.ui-overview-card h4 { margin: 0; font-size: 14px; color: var(--ui-muted); }
+.ui-overview-card p { margin: 2px 0 0; overflow-wrap: anywhere; }
+.ui-summary-value { font-weight: 700; }
+.ui-summary-detail { color: var(--ui-muted); font-size: 14px; }
+.ui-detail-group { min-width: 0; }
+.ui-detail-group > summary { cursor: pointer; min-height: 28px; font-weight: 750; }
+.ui-detail-group[open] > summary { margin-bottom: 12px; }
+.ui-detail-group > section.pn { margin: 14px 0 0; padding: 14px 0 0; border: 0; border-top: 1px solid var(--ui-border); }
+.ui-detail-group > section.pn:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+.ui-known-statuses { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.ui-known-statuses li { padding: 4px 8px; border: 1px solid var(--ui-border); color: var(--ui-muted); }
+.ui-known-status-group { margin: 12px 0; }
+.ui-known-status-group h4 { margin: 0 0 6px; font-size: 14px; }
+@media (max-width: 899px) {
+  .ui-overview-card { padding: 10px 12px; }
+  .ui-detail-group > summary { padding: 4px 0; }
+  .ui-person-facts { grid-template-columns: 1fr; gap: 0; }
+  .ui-person-facts dd { margin: 0 0 8px; }
+}
+
+/* P3: keep the first decision clear, make the full log readable, and group the ending. */
+main:has(#s0:not([hidden])) { max-width: 1040px; }
+#s0.ui-title-screen { display: grid; gap: clamp(18px, 3vw, 30px); }
+.ui-title-header { padding: clamp(16px, 4vw, 36px); border-bottom: 1px solid var(--ui-border); }
+.ui-title-kicker, .ui-ending-kicker { margin: 0; color: var(--ui-accent); font-size: .78rem; font-weight: 800; letter-spacing: .08em; }
+.ui-title-header h1 { margin-top: 8px; font-size: clamp(2rem, 5vw, 3.2rem); }
+.ui-title-header .sub { margin: 10px 0 0; font-size: 1rem; }
+.ui-birth-panel { padding: clamp(16px, 3vw, 28px); border: 1px solid var(--ui-border); border-top: 4px solid var(--ui-accent); background: var(--ui-surface); }
+.ui-birth-panel h2 { margin: 0; font-size: clamp(1.15rem, 2.4vw, 1.45rem); }
+.ui-birth-panel > p { margin: 6px 0 18px; color: var(--ui-muted); }
+.ui-title-continuation { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.ui-title-continuation > div { min-width: 0; padding: 14px 16px; border: 1px solid var(--ui-border); background: var(--ui-surface); }
+.ui-title-continuation > div:has(#ct[hidden]) { display: none; }
+.ui-title-continuation:has(#ct[hidden]) { grid-template-columns: minmax(0, 1fr); }
+.ui-title-continuation:has(#ct[hidden]) > div:last-child {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  border-top: 2px solid var(--ui-border);
+}
+.ui-title-continuation:has(#ct[hidden]) > div:last-child p { margin: 0; }
+.ui-title-continuation:has(#ct[hidden]) > div:last-child button {
+  width: auto; flex: 0 0 auto; min-width: 216px;
+}
+@media (max-width: 620px) {
+  .ui-title-continuation:has(#ct[hidden]) > div:last-child { flex-direction: column; align-items: stretch; gap: 9px; }
+  .ui-title-continuation:has(#ct[hidden]) > div:last-child button { width: 100%; min-width: 0; }
+}
+.ui-title-continuation p { margin: 0 0 8px; color: var(--ui-muted); font-size: .9rem; }
+.ui-title-continuation button { width: 100%; margin: 0; }
+.ui-title-notice { margin: 0; padding: 14px 16px; border-left: 3px solid var(--ui-accent); background: var(--ui-raised); }
+.ui-title-screen > .nt { margin: 0; }
+.ui-title-notes { padding: 12px 16px; border: 1px solid var(--ui-border); background: var(--ui-surface); }
+.ui-title-notes > summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-weight: 750; }
+.ui-title-notes[open] > summary { margin-bottom: 10px; }
+.ui-title-notes .fx { margin: 8px 0 16px; }
+.ui-title-notes .fx dd, .ui-title-notes .fx dt { padding: 8px 0; }
+.ui-title-notes .sg button { width: auto; min-width: 44px; margin: 0; }
+.ui-title-notes > button { width: auto; min-width: 44px; }
+.ui-ending-heading { padding: clamp(18px, 4vw, 34px); border-left: 4px solid var(--ui-danger); background: var(--ui-raised); }
+#rs.ui-ending { max-width: 1040px; margin: 18px auto 32px; padding: clamp(16px, 3vw, 30px); border-color: var(--ui-border); border-top: 4px solid var(--ui-danger); }
+.ui-ending-heading h2 { margin: 8px 0 4px; font-size: clamp(1.45rem, 3.5vw, 2.3rem); overflow-wrap: anywhere; }
+.ui-ending-place { margin: 0 0 18px; color: var(--ui-muted); }
+.ui-ending-cause { display: grid; grid-template-columns: minmax(100px, .28fr) minmax(0, 1fr); gap: 8px 16px; padding-top: 14px; border-top: 1px solid var(--ui-border); }
+.ui-ending-cause p { display: contents; margin: 0; }
+.ui-ending-cause strong { color: var(--ui-muted); }
+.ui-ending-cause span { overflow-wrap: anywhere; }
+.ui-ending-cause .cause span { font-size: 1.08rem; font-weight: 700; }
+.ui-ending-record, .ui-ending-comparison, .ui-ending-chart { margin: 20px 0 0; padding: clamp(14px, 2.5vw, 22px); border: 1px solid var(--ui-border); background: var(--ui-surface); }
+.ui-ending-record > h3, .ui-ending-comparison > h3 { margin: 0 0 12px; color: var(--ui-fg); font-size: 1.15rem; }
+.ui-ending-record .life-chapter { margin: 12px 0; padding: 12px 14px; border-left: 2px solid var(--ui-accent); background: var(--ui-raised); }
+.ui-ending-record .life-chapter h4 { margin: 0 0 6px; }
+.ui-ending-record .life-chapter ol { margin: 0; padding-left: 22px; }
+.ui-ending-chart { overflow-x: auto; }
+.ui-ending-chart figcaption { margin-bottom: 12px; font-weight: 750; }
+.ui-ending-chart svg { display: block; max-width: 100%; height: auto; }
+.ui-ending-chart > p { margin: 12px 0 0; }
+.ui-ending-comparison .peers { display: grid; gap: 8px; }
+.ui-ending-comparison .peer { min-width: 0; padding: 12px 14px; border: 1px solid var(--ui-border); background: var(--ui-raised); overflow-wrap: anywhere; }
+.ui-ending-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+.ui-ending-actions > section { min-width: 0; padding: 16px; border: 1px solid var(--ui-border); }
+.ui-ending-actions h3 { margin: 0 0 6px; color: var(--ui-fg); font-size: 1rem; }
+.ui-ending-actions p { color: var(--ui-muted); }
+.ui-ending-actions button { width: 100%; min-height: 48px; margin: 0; }
+.ui-ending-actions .go { text-align: center; }
+.ui-ending-support { margin: 16px 0 0; }
+#lf.ui-log-filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+#lf.ui-log-filters button { width: auto; min-width: 64px; min-height: 44px; margin: 0; }
+#lf.ui-log-filters button.on, #lf.ui-log-filters button[aria-pressed="true"] { border-color: var(--ui-fg); background: var(--ui-fg); color: var(--ui-surface); }
+#rs:focus { outline: 3px solid var(--ui-focus); outline-offset: 4px; }
+/* 900–1279px: the status rail is a drawer, owned by terra-identity.css. */
+@media (max-width: 899px) {
+  main:has(#s0:not([hidden])) { padding: 12px 12px calc(24px + env(safe-area-inset-bottom, 0px)); }
+  .ui-title-header { padding: 12px 4px 18px; }
+  .ui-birth-panel { padding: 16px 12px; }
+  .ui-title-continuation { grid-template-columns: 1fr; gap: 8px; }
+  .ui-title-notes { padding: 10px 12px; }
+  .ui-title-notes .fx { grid-template-columns: 1fr; }
+  .ui-title-notes .fx dt { padding-bottom: 0; border: 0; font-weight: 700; }
+  .ui-title-notes .fx dd { padding-top: 0; }
+  #rs.ui-ending { margin: 8px 0 20px; padding: 12px; }
+  .ui-ending-heading { padding: 16px 12px; }
+  .ui-ending-cause { grid-template-columns: 1fr; gap: 3px; }
+  .ui-ending-cause strong { margin-top: 8px; }
+  .ui-ending-cause strong:first-child { margin-top: 0; }
+  .ui-ending-record, .ui-ending-comparison, .ui-ending-chart { padding: 12px; }
+  #rs dl { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+  #rs dt, #rs dd { min-width: 0; overflow-wrap: anywhere; }
+  .ui-ending-actions { grid-template-columns: 1fr; }
+  #md { padding: calc(8px + env(safe-area-inset-top, 0px)) 8px calc(8px + env(safe-area-inset-bottom, 0px)); }
+  #md .card { max-height: calc(100dvh - 16px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)); }
+  #resume-manager, #ui-settings { padding: calc(8px + env(safe-area-inset-top, 0px)) 8px calc(8px + env(safe-area-inset-bottom, 0px)); }
+  #tabs { bottom: 0; padding-bottom: env(safe-area-inset-bottom, 0px); }
+}
+@media (max-width: 420px) {
+  #s0.ui-title-screen { gap: 14px; }
+}

@@ -1,0 +1,40 @@
+function traceIdentityLocation(s, services) {
+  return {
+    informationClaims: (s.informationClaims || []).map(row => JSON.parse(JSON.stringify(row))),
+    year: s.year,
+    age: s.age,
+    month: s.mo || 0,
+    randomSeed: s.randomSeed ?? null,
+    rngState: s.rngState ?? null,
+    randomAlgorithm: s.randomAlgorithm || null,
+    region: s.res.n,
+    facilityState: {
+      areaKey: s.community?.key || null,
+      states: Object.values(s.community?.facilities || {}).map(f => ({ id: f.id, status: f.status })),
+      personalContactCount: (s.facilityContacts || []).length
+    },
+    worldPressure: services.worldPressureContext(s),
+    regionalPolicy: services.regionalPolicyContext(s),
+    regionalServices: services.regionalServiceContext(s),
+    origin: s.g.n,
+    birthLocality: s.birthLocality ? { ...s.birthLocality } : null,
+    socialPosition: s.socialPosition || null,
+    socialClass: services.socialClassSummary(s),
+    residenceArrangement: s.residenceArrangement || null,
+    residenceHistory: (s.residenceHistory || []).map(row => ({ ...row })),
+    investmentType: s.investmentType || null,
+    investment: s.investment || 0,
+    illness: s.illness ? { ...s.illness } : null,
+    legalStatus: s.legal ? { ...s.legal } : null,
+    home: s.home,
+    hobbyModes: { ...(s.hobbyModes || {}) },
+    hobbyModeHistory: (s.hobbyModeHistory || []).map(row => ({ ...row })),
+    local: s.local?.kind || null,
+    city: s.local?.city || null,
+    placeId: s.local?.placeId || null,
+    districtId: s.local?.districtId || null,
+    residenceBase: s.residenceBase ? { ...s.residenceBase } : null,
+    ecology: s.local?.ecology || "未特定",
+    exileFrom: s.exileFrom || null
+  };
+}

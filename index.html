@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>テラに生まれて</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/ui-redesign.css">
+<link rel="stylesheet" href="css/terra-identity.css">
+</head>
+<body>
+<main>
+<section id="s0" class="ui-title-screen">
+<header class="ui-title-header">
+<img class="ui-title-city" src="assets/ui/terra-transit.svg" width="1000" height="620" alt="" aria-hidden="true">
+<p class="ui-register ui-title-register" aria-hidden="true">TERRA / PERSONAL RECORD</p>
+<p class="ui-title-kicker">テラに生まれた、名もなき一人の歳月</p>
+<h1><span>テラに</span><span>生まれて</span></h1>
+<p class="sub">この大地に生きる一人として、時代と日々の暮らしを辿ります。</p>
+</header>
+<section class="ui-birth-panel" aria-labelledby="birth-prompt">
+<div class="ui-birth-panel-heading">
+<p class="ui-register" aria-hidden="true">01 / NEW RECORD</p><h2 id="birth-prompt">生まれる年代を選ぶ</h2>
+<p>どの年に産声を上げるかで、巡り合う時代の空気や暮らしの景色が変わります。</p>
+</div>
+<div id="birth-year-picker" class="ui-birth-composer" role="group" aria-labelledby="birth-prompt">
+<div class="ui-birth-year-control">
+<div class="ui-birth-readout">
+<label for="birth-year">出生年 <span>テラ暦</span></label>
+<div class="ui-birth-number"><input id="birth-year" name="birth-year" type="number" min="1000" max="1100" step="1" value="1077" inputmode="numeric" aria-describedby="birth-year-range-hint"><span>年</span></div>
+</div>
+<div class="ui-birth-stepper" aria-label="出生年を1年ずつ変更">
+<button type="button" id="birth-prev-year" onclick="stepBirthYear(-1)" aria-label="出生年を1年戻す">−</button>
+<button type="button" id="birth-next-year" onclick="stepBirthYear(1)" aria-label="出生年を1年進める">＋</button>
+</div>
+</div>
+<div class="ui-birth-range-group">
+<input id="birth-year-range" type="range" min="1000" max="1100" step="1" value="1077" aria-label="出生年をスライダーで選ぶ" aria-describedby="birth-year-range-hint">
+<div class="ui-birth-range-marks" aria-hidden="true"><span>1000</span><span>1050</span><span>1100</span></div>
+<p id="birth-year-range-hint" class="nt">テラ暦1000〜1100年。数字を直接入力することもできます。</p>
+</div>
+<div class="ui-birth-seed-group">
+<label for="birth-seed">再現用seed <span class="nt">（省略時はランダム）</span></label>
+<div class="ui-birth-seed-box"><input id="birth-seed" name="birth-seed" type="text" autocomplete="off" spellcheck="false"></div>
+</div>
+<p id="birth-year-error" class="ui-birth-error" role="status" aria-live="polite"></p>
+<button id="birth-start-button" class="go ui-birth-primary" type="button" onclick="beginLifeAtSelectedYear()"><span id="birth-start-year">1077年</span><span>この年に生まれる</span><span aria-hidden="true">↗</span></button>
+</div>
+<p class="ui-birth-footnote">地域・種族・性別・気質・家庭・住環境は、誕生時に決まります。</p>
+</section>
+<section class="ui-title-continuation" aria-label="中断データ">
+<div><p>保存した人生の続きから再開できます。</p><button id="ct" hidden onclick="cont()">続きから（中断データ）</button></div>
+<div><p>このブラウザーに保存した人生を開きます。</p><button type="button" onclick="openResumeManager()">中断データの保存枠</button></div>
+</section>
+<p class="ui-title-notice">アークナイツの世界を舞台にした、非公式・非営利の二次創作です。</p>
+<div class="ui-title-reference-grid">
+<details class="ui-title-notes"><summary>この人生の歩み方</summary>
+<p>出生年を選んだら、この大地に生きる一人として日々の暮らしを辿ります。生まれた土地や種族、気質、家のなりわい、住まいの形は誕生時に決まります。</p>
+<p>季節の移ろいや出来事のなかで振る舞いを選び、ときには足を止めて、体調や仕事、家族、街の空気を確かめることができます。</p>
+<p>ロドスやレユニオンといった組織と関わるかどうかは、本人の素養や居場所、人の縁、そして時代のうねりによって変わります。大きな組織と交わらないまま、市井の片隅で名もない一生を全うすることもまた、一つの確かな人生です。</p>
+<dl class="fx"><dt>進む速さ</dt><dd><div class="sg" aria-label="進む速さ"></div></dd></dl>
+<button type="button" onclick="openUISettings()">表示設定</button>
+</details>
+<details class="ui-title-notes"><summary>世界設定と数値の前提</summary>
+<p>出生年はテラ暦1000〜1100年、初期値は1077年です。鉱石病は出生後の生活で判定します。通貨は龍門幣換算で、収入・物価はゲーム独自の推計です。</p>
+<p>国・種族・家庭の抽選重み、鉱石病の発生率、寿命補正、戦争・差別・物価・収入の数値は、このゲームのシミュレーション用設定です。テラの人口統計や公式な確率を表すものではありません。家計の準備金・親の収入・生活費上限もゲーム上の仮定です。</p>
+<p>分岐イベントは通常、1年に3〜6回（3歳未満は1〜2回）ある抽選枠ごとに基準16%で候補になります。16%は年間発生率ではありません。優先イベントや条件を満たすイベントの有無によって実際の頻度は変わります。</p>
+</details>
+<details class="ui-title-notes"><summary>資料の根拠と作品について</summary>
+<p>国家・地域・人物・事件の設定は調査資料を参照しています。公式本文で確認できた内容、二次資料による整理、年代などの推定、ゲーム上の仮定を区別し、未確認の情報を設定上の事実として補いません。</p>
+<p>確度ラベルは、A=公式・作中で年月または事実が明示 / B=複数の本文・相対日付が整合 / C=所在・季節・前後関係からの推定 / D=資料矛盾・複数説・仮説段階 / S=ゲーム上の仮定 / ?=未確認、を表します。確度はイベント効果や抽選値の根拠にはなりません。</p>
+<p>公式素材（画像・音楽・文章）は使用せず、非営利で運営しています。アークナイツの二次創作ガイドラインに準拠します。</p>
+</details></div>
+<details id="developer-tools"><summary class="nt">開発者ツール（構造検査・人生シミュレーション）</summary>
+<p class="nt">抽選重み・イベント回数・分布はゲーム内モデルの試行結果です。テラの人口統計や正史上の発生率を表しません。</p>
+<fieldset><legend>シミュレーション条件</legend><div class="devtool-grid">
+<label>人数<input id="dev-count" type="number" min="1" max="1000" value="1000"></label>
+<label>再現用seed<input id="dev-seed" type="number" min="0" max="4294967295" value="20261026"></label>
+<label>最大年数/人<input id="dev-years" type="number" min="1" max="400" value="400"></label>
+<label>出生年・下限<input id="dev-year-from" type="number" min="1000" max="1100" value="1077"></label>
+<label>出生年・上限<input id="dev-year-to" type="number" min="1000" max="1100" value="1077"></label>
+<label>出生地域<select id="dev-region"><option value="">全地域から抽選</option></select></label>
+<label>地域の試行方式<select id="dev-region-sampling"><option value="natural">自然抽選（地域指定時は固定）</option><option value="balanced">地域別同数（人数は地域数の倍数）</option></select></label><label>種族<select id="dev-race"><option value="">種族を抽選</option></select></label>
+<label>家計階層<select id="dev-wealth"><option value="">家計階層を抽選</option></select></label>
+</div><label class="devtool-check"><input id="dev-continue-on-findings" type="checkbox">構造検査に指摘があっても、確認後にシミュレーションを続ける</label>
+<div class="devtool-actions"><button id="dev-audit-catalog" type="button" onclick="devAuditCatalog()">イベント構造だけを検査</button><button id="dev-run" type="button" onclick="dev()">指定条件で人生を試行</button><button id="dev-cancel" type="button" onclick="devCancelSimulation()" disabled>年の処理後に中止</button></div>
+<progress id="dev-progress" max="1000" value="0" aria-label="シミュレーション進捗"></progress><p id="dev-status" class="devtool-status" role="status" aria-live="polite">構造検査または条件を指定した試行を選んでください。</p>
+</fieldset>
+<div class="devtool-actions"><button id="dev-download-report" type="button" onclick="devDownloadSimulationReport()" disabled>結果JSONを書き出す</button><button id="dev-replay-failure" type="button" onclick="devReplayFirstFailure()" disabled>選んだ失敗を同じseedで再実行</button><label>比較レポート<input id="dev-baseline-file" type="file" accept="application/json,.json"></label></div>
+<pre id="dv" class="devtool-report" aria-live="polite"></pre>
+<details><summary>地域別の居住形態・人生経路</summary><pre id="dev-cohort-report" class="devtool-report"></pre></details>
+<details><summary>イベント・選択肢の到達数</summary><label>イベントID/状態で絞り込む<input id="dev-event-filter" type="search"></label><pre id="dev-event-report" class="devtool-report"></pre></details>
+<details><summary>構造検査の指摘</summary><pre id="dev-catalog-report" class="devtool-report"></pre></details>
+<details><summary>失敗例</summary><label>再実行する失敗<select id="dev-failure-select" disabled><option value="">失敗なし</option></select></label><pre id="dev-failure-report" class="devtool-report"></pre></details>
+<details><summary>前回レポートとの差分</summary><pre id="dev-compare-report" class="devtool-report"></pre></details>
+</details>
+</section>
+</main>
+<div id="s1" hidden>
+<header id="tb" aria-label="進行の操作">
+<div class="ui-toolbar-clock">
+<div id="tbi"><strong id="tn"></strong><span id="ty"></span></div>
+<div id="pgw"><div id="pg" role="progressbar" aria-label="1年の進み" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><u id="pb"></u></div><span id="mo"></span></div>
+</div>
+<span class="ui-origin-mark" aria-hidden="true"></span>
+<details id="terminal-progress" class="ui-progress-controls" open><summary>進行操作<span id="stt" aria-live="polite" tabindex="-1"></span></summary>
+<div class="ui-toolbar-play" role="group" aria-label="進行">
+<div id="ctl" class="sg" aria-label="進む速さ"></div>
+<label class="au">おまかせ <select id="au"><option value="">手動</option><option value="c">慎重</option><option value="b">大胆</option><option value="r">ランダム</option></select></label>
+</div></details>
+<div class="ui-toolbar-system">
+<button id="terminal-ledger-exit" type="button" hidden onclick="closeLifeLedger()" aria-controls="life-journal-panel" title="資料を閉じて元の閲覧位置へ戻る">← 人生の記録へ</button>
+<button id="terminal-ledger-choice" type="button" hidden onclick="resumePendingChoiceFromLedger()" aria-controls="md" title="保留中の選択画面へ戻る">選択へ戻る</button>
+<button id="terminal-status-toggle" type="button" aria-expanded="false" aria-controls="cr" onclick="toggleTerminalStatusDrawer()">暮らしの概況</button>
+<button type="button" onclick="openUISettings()">表示設定</button>
+<button type="button" onclick="openResumeManager()">保存枠</button>
+</div>
+</header>
+<div id="cols" data-t="c">
+<aside id="cl" class="col side" aria-label="主人公の情報">
+<section class="pn"><h3>人物</h3><div id="person-summary" class="ui-person-summary"></div></section>
+<section class="pn"><h3>主な指標</h3><div id="st"></div></section>
+<section class="pn"><h3>基本情報</h3><div id="person-summary-facts"></div><details class="ui-detail-group"><summary>人物と生い立ち</summary><dl id="pf"></dl></details><details class="ui-metric-guide"><summary>指標と学びの読み方</summary><dl>
+<dt>知識と読み書き</dt><dd>「知識」は学びや経験の蓄積。「読み書き」は文字を扱う習得度で、生業と学びの資料に記録します。別々の指標です。</dd>
+<dt>学歴と学習経験</dt><dd>通学中、課程の修了、学校外での学びを区別します。学んだ経験があっても、通学や修了の記録があるとは限りません。</dd>
+<dt>健康と診断</dt><dd>「健康」は体力を表すゲーム上の指標です。「診断記録なし」は病気や感染がないことを意味しません。</dd>
+</dl></details></section>
+<section class="pn"><details id="detail-finance" class="ui-detail-group"><summary>資産と収支</summary><dl id="fn"></dl><details><summary>過去5年の収支</summary><p class="nt">就労開始後の年次記録を生涯分保存します。残高は年次収支更新直後の値です。その後のイベント選択による増減は「選択による収支の履歴」に個別記録します。養育家計は「家族・家計」欄で別に扱います。金額は龍門幣換算のゲーム上の仮定です。</p><ul id="fh" class="finance-history"></ul></details><details><summary>選択による収支の履歴</summary><p class="nt">医療、借入、送金、投資など選択に伴う資産・負債・投資持分の変化を記録します。</p><ul id="ch" class="finance-history"></ul></details></details></section>
+</aside>
+<section id="cc" class="col" aria-label="人生">
+<button id="resumeChoice" class="ui-pending-banner" type="button" hidden aria-controls="md"><strong>選択が保留されています</strong><span>選択画面へ戻る →</span></button>
+<div id="rs" hidden role="region" aria-label="生涯の結末" tabindex="-1"></div>
+<section id="terminal-ledger-view" class="pn terminal-ledger" hidden aria-labelledby="terminal-ledger-title">
+  <div class="ui-record-path" id="terminal-ledger-path" aria-label="閲覧中の資料"></div>
+  <div class="terminal-record-workspace">
+    <details id="terminal-directory" class="terminal-directory" open>
+      <summary>資料ディレクトリ<span id="terminal-directory-current"></span></summary>
+      <div id="terminal-ledger-nav" class="terminal-ledger-nav">
+        <p class="ui-register" aria-hidden="true">LOCAL INDEX</p>
+        <nav id="terminal-ledger-switcher" class="terminal-ledger-switcher" aria-label="資料の分野"></nav>
+        <nav id="terminal-section-index" class="terminal-section-index" aria-label="資料内の見出し"></nav>
+      </div>
+    </details>
+    <div class="terminal-document">
+      <header class="terminal-ledger-heading"><p class="ui-register" id="terminal-ledger-register" aria-hidden="true"></p><h2 id="terminal-ledger-title"></h2><p class="terminal-document-date" id="terminal-ledger-date"></p></header>
+      <div class="terminal-ledger-lead"><div class="terminal-ledger-lead-copy"><p id="terminal-ledger-headline"></p><p id="terminal-ledger-context"></p></div><div id="terminal-ledger-metrics" class="terminal-ledger-metrics" role="group" aria-label="記録上の主な数値"></div></div>
+      <div id="terminal-ledger-diagram"></div>
+      <div id="terminal-ledger-body"></div>
+    </div>
+  </div>
+</section>
+<section class="pn ui-policy-strip"><div class="ui-policy-main"><span id="policy-control-label" class="ui-policy-label">生活の方針</span><button id="policy-toggle" type="button" aria-labelledby="policy-control-label policy-current policy-control-action" aria-controls="policy-editor" aria-expanded="false" onclick="toggleLifePolicyEditor()"><strong id="policy-current">のんびり</strong><span id="policy-control-action">方針を変更 <span aria-hidden="true">▾</span></span></button></div><div id="policy-editor" hidden><p class="nt">6歳から選べます。変更するまで同じ方針が続きます。</p><div id="fc" class="sg"></div></div><label id="txw" hidden><input type="checkbox" id="tx"> 鉱石病の治療を続ける（費用がかかります。病状の進行を抑えます）</label></section>
+<section id="life-journal-panel" class="pn" tabindex="-1"><div class="ui-record-path" id="life-journal-path" aria-label="閲覧中の記録"></div><div class="ui-journal-heading"><div><p class="ui-register" aria-hidden="true">LIFE RECORD / TERRA / CHRONICLE</p><h3>人生の記録</h3></div><button class="ui-journal-export" type="button" onclick="exportLife()" title="人生の記録と状態をJSON形式で書き出す">書き出す</button></div><div id="lf" class="sg ui-log-filters" role="group" aria-label="人生記録の絞り込み"></div><ul id="lg" aria-live="polite" aria-label="人生の記録。新しい記録が先頭です"></ul><details id="life-evidence" class="ui-record-evidence" ontoggle="renderLifeEvidencePanel()"><summary>記録の出所・確度と出来事のつながり</summary><div id="life-evidence-body"></div></details></section>
+</section>
+<aside id="cr" class="col side" aria-label="現在の暮らしと関係">
+<section class="pn"><h3>暮らしの概要</h3><div id="situation-overview" class="ui-overview-grid"></div></section>
+<details id="detail-health" class="pn ui-detail-group"><summary>健康と医療</summary><div class="ui-ledger-contents">
+<section class="pn"><h3>体調・危機への対応</h3><div id="mortality-status"></div><details><summary>これまでの経過と相談の記録</summary><div id="mortality-history" class="nt"></div></details></section>
+<section class="pn"><h3>源石曝露と検査の履歴</h3><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">曝露機会の推計と実際の診断は別の記録です。感染者との通常の接触だけで感染したとは扱いません。</p></details><p id="ori-history" class="nt"></p></section>
+<section class="pn" id="infection-awareness-section"><h3>周囲の感染認知・露見状況</h3><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">本人の申告や周囲の目撃、噂の広まりを通じて、誰にどこまで病気のことが知られているかの記録です。未確認の相手には伝わっていないものとして扱います。</p></details><div id="infection-awareness-status" class="nt"></div></section>
+</div>
+</details>
+<details id="detail-work" class="pn ui-detail-group"><summary>仕事と学びの記録</summary><div class="ui-ledger-contents">
+<section class="pn"><h3>行き先と経歴</h3><div id="trajectory" class="sg"></div><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">目標には達成だけでなく、保留や断念の経緯も残ります。組織や地域への影響は、実際に本人が関わった出来事に限って記録します。</p></details></section>
+<section class="pn"><h3>学びと社会的な経験</h3><div id="social-learning-note" class="nt"></div></section>
+<section class="pn" id="language-records-section"><h3>言葉と文字（言語の習得）</h3><div id="language-learning-details" class="ui-record-table"></div><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">テラの大地で身につけた言葉・文字・現場の符牒の記録です。母語や地域社会での生活、学校教育や日々の経験を通じて培われます。未接触の言語は表示されません。</p></details></section>
+</div>
+</details>
+<details id="detail-family" class="pn ui-detail-group"><summary>家族と人とのつながり</summary><div class="ui-ledger-contents" id="family-record-sections">
+<section class="pn"><h3>家族・家計</h3><p class="nt">15歳未満の金銭イベントと家族の収支は家計に反映されます。本人の資産とは別管理です。</p><div id="fm" class="ui-record-table"></div></section>
+<section class="pn" id="family-disclosure-record"><h3>近しい人に伝えたこと</h3><div id="close-knowledge" class="nt"></div><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">個別の開示・返答だけを記録します。相手の内心やほかの人への伝播は推定しません。</p></details></section>
+<section class="pn" id="family-people-record"><h3>施設で出会った人たち</h3><div id="facility-people" class="nt"></div><details><summary>知っている近況と交流の履歴</summary><div id="facility-people-history" class="nt"></div></details><details><summary>一人ひとりとの関係</summary><div id="person-tie-summary" class="nt"></div></details><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">こちらが確認できた近況だけを表示します。相手の生活は本人と独立して変わり、未確認の事情は補いません。</p></details></section>
+<details id="family-unrecorded" class="ui-empty-records" data-record-group="family-sections"><summary>未記録の資料</summary><p class="nt">本人の記録に残る交流ができると、本文に表示されます。</p><div id="family-unrecorded-body"></div></details>
+</div>
+</details>
+<details id="detail-place" class="pn ui-detail-group"><summary>住まいと地域の記録</summary><div class="ui-ledger-contents" id="place-record-sections">
+<section class="pn"><h3>地域の暮らし</h3><div id="locality-meter"></div><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">食料・仕事・住居・医療・交通の値は、原作の統計ではなく生活状況を表すゲーム用の推計です。地域で起きたことと、本人の経験・選択は別に記録します。</p></details></section>
+<section class="pn"><h3>身近な施設の稼働状況</h3><div id="facility-meter" class="nt"></div><details><summary>施設の変化と問い合わせ履歴</summary><div id="facility-history" class="nt"></div></details><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">個々の施設はゲーム内の抽象モデルです。実在施設や公的な稼働率を示すものではなく、問い合わせだけで受診・採用が成立することもありません。</p></details></section>
+<section class="pn"><h3>暮らしと地域の状況</h3><div id="life" class="ui-record-table"></div><details><summary>この表示の数値と前提</summary><div id="basis" class="nt"></div></details></section>
+<section class="pn" id="place-known-record"><h3>本人に伝わった歴史上の出来事</h3><p class="nt">ここには本人が知った記録だけを表示します。設定根拠区分（A〜D）は事件の年代・根拠の整理です。</p><div id="known"></div></section>
+<section class="pn"><h3>本人が把握する状態</h3><div id="tg"></div></section>
+<section class="pn"><h3>起きた出来事</h3><p id="cnt" class="nt"></p></section>
+<details id="place-unrecorded" class="ui-empty-records" data-record-group="place-sections"><summary>未記録の資料</summary><p class="nt">事件の発生と、本人に届いた情報は別の記録です。</p><div id="place-unrecorded-body"></div></details>
+</div>
+</details>
+</aside>
+</div>
+<footer class="pn" id="ft"><p class="nt">出生年は選択内容に応じて記録されます。本編の出来事（チェルノボーグ事変、テレジア暗殺、ロンディニウム戦争など）は、時代と地域に応じて生活へ影響します。進行状況は1年ごとに自動保存されます（このブラウザ内のみ）。</p></footer>
+<nav id="tabs" aria-label="画面の切り替え"><button type="button" data-t="l" aria-pressed="false" onclick="tab('l')">本人</button><button type="button" data-t="c" class="on" aria-pressed="true" onclick="tab('c')">人生</button><button type="button" data-t="r" aria-pressed="false" onclick="tab('r')">暮らし</button></nav>
+<div id="md" hidden role="dialog" aria-label="出来事の選択" aria-describedby="mt" tabindex="-1"><div class="card ui-choice-sheet"><div class="ui-choice-heading"><strong>行動を選ぶ</strong><span id="choice-date"></span></div><p id="mt" tabindex="-1"></p><div id="mc"></div><div class="ui-choice-actions"><button id="choiceSave" type="button" onclick="openResumeManager()">中断保存</button><button id="hideChoice" type="button" aria-controls="md">縮小して記録を見る</button></div></div></div>
+</div>
+<div id="resume-manager" hidden role="dialog" aria-modal="true" aria-labelledby="resume-title"><section class="card"><button type="button" id="resume-close" style="float:right">閉じる</button><p class="ui-register" aria-hidden="true">RECORD STORAGE / RESUME</p><h2 id="resume-title">中断データの保存枠</h2><p class="nt">自動保存とは別に、選択待ちを含む現在の状態を3枠へ保存できます。保存枠はこのブラウザー内に置かれ、JSONとして書き出し・読み込みできます。</p><div id="resume-slots" class="resume-slots"></div><div class="resume-import"><label>読み込み先 <select id="resume-import-target"><option value="0">枠1</option><option value="1">枠2</option><option value="2">枠3</option></select></label><button id="resume-import-button" type="button">保存データ（JSON）を読み込む</button><input id="resume-import-file" type="file" accept="application/json,.json" hidden></div><p id="resume-status" class="nt resume-status" aria-live="polite"></p></section></div>
+<div id="ui-settings" hidden role="dialog" aria-labelledby="ui-settings-title" tabindex="-1"><section class="card ui-settings-panel">
+<p class="ui-register" aria-hidden="true">TERMINAL / DISPLAY</p><div class="ui-dialog-heading"><h2 id="ui-settings-title">表示設定</h2><button type="button" onclick="closeUIDialog('ui-settings')">閉じる</button></div>
+<label for="ui-theme">テーマ</label><select id="ui-theme" data-ui-preference="theme"><option value="auto">自動</option><option value="light">ライト</option><option value="dark">ダーク</option></select>
+<label for="ui-spacing">表示間隔</label><select id="ui-spacing" data-ui-preference="spacing"><option value="compact">コンパクト</option><option value="standard">標準</option></select>
+<label for="ui-motion">画面の動き</label><select id="ui-motion" data-ui-preference="motion" aria-describedby="ui-motion-note"><option value="auto">システムに合わせる</option><option value="full">演出を使う</option><option value="reduced">動きを抑える</option></select>
+<p id="ui-motion-note" class="nt ui-settings-explain">端末や資料を開く短い演出です。通常はシステムの設定に従い、「演出を使う」を選ぶと、この画面で有効にします。</p>
+<label class="ui-settings-toggle" for="ui-ledger-auto-pause"><input id="ui-ledger-auto-pause" type="checkbox" checked> 台帳の閲覧中は進行を一時停止する</label>
+<p class="nt ui-settings-explain">通常は台帳を開くと停止し、閉じると閲覧前の速度に戻ります。オフにすると閲覧中も進行します。</p>
+</section></div>
+<script defer src="rules.js"></script>
+<script defer src="events.js"></script>
+<script defer src="data/model/guide.js"></script>
+<script defer src="data/parts/model/sources/references-entries-01.js"></script>
+<script defer src="data/parts/model/sources/references-entries-02.js"></script>
+<script defer src="data/parts/model/sources/references-entries-03.js"></script>
+<script defer src="data/parts/model/sources/references.js"></script>
+<script defer src="data/parts/model/sources/context-and-access.js"></script>
+<script defer src="data/parts/model/sources/mechanic-parameters-rows-01.js"></script>
+<script defer src="data/parts/model/sources/mechanic-parameters-rows-02.js"></script>
+<script defer src="data/parts/model/sources/mechanic-parameters.js"></script>
+<script defer src="data/parts/model/sources/family-and-economy-events-01.js"></script>
+<script defer src="data/parts/model/sources/family-and-economy-events-02.js"></script>
+<script defer src="data/parts/model/sources/family-and-economy-events-03.js"></script>
+<script defer src="data/parts/model/sources/family-and-economy-events-04.js"></script>
+<script defer src="data/parts/model/sources/family-and-economy-events-05.js"></script>
+<script defer src="data/parts/model/sources/family-and-economy.js"></script>
+<script defer src="data/model/sources.js"></script>
+<script defer src="data/model/schema.js"></script>
+<script defer src="data/model/flags.js"></script>
+<script defer src="data/model/world.js"></script>
+<script defer src="data/model/languages.js"></script>
+<script defer src="data/base/initialize.js"></script>
+<script defer src="data/base/childhood-attitudes.js"></script>
+<script defer src="data/base/career-entry.js"></script>
+<script defer src="data/base/life-and-health.js"></script>
+<script defer src="data/base/family-and-livelihood.js"></script>
+<script defer src="data/base/daily-childhood.js"></script>
+<script defer src="data/base/daily-adulthood.js"></script>
+<script defer src="data/base/daily-family.js"></script>
+<script defer src="data/base/regional-west.js"></script>
+<script defer src="data/base/regional-east.js"></script>
+<script defer src="data/base/regional-conflict.js"></script>
+<script defer src="data/base/world-and-contacts.js"></script>
+<script defer src="data/base/daily-regional.js"></script>
+<script defer src="data/base/daily-war-and-identity.js"></script>
+<script defer src="data/regional/yan.js"></script>
+<script defer src="data/regional/lungmen.js"></script>
+<script defer src="data/regional/higashi.js"></script>
+<script defer src="data/regional/ursus.js"></script>
+<script defer src="data/regional/victoria.js"></script>
+<script defer src="data/regional/leithanien.js"></script>
+<script defer src="data/regional/laterano.js"></script>
+<script defer src="data/regional/columbia.js"></script>
+<script defer src="data/regional/kazimierz.js"></script>
+<script defer src="data/regional/siracusa.js"></script>
+<script defer src="data/regional/siesta.js"></script>
+<script defer src="data/regional/sargon.js"></script>
+<script defer src="data/regional/sami.js"></script>
+<script defer src="data/regional/kjerag.js"></script>
+<script defer src="data/regional/kazdel.js"></script>
+<script defer src="data/regional/iberia.js"></script>
+<script defer src="data/regional/bolivar.js"></script>
+<script defer src="data/regional/rim-billiton.js"></script>
+<script defer src="data/regional/minos.js"></script>
+<script defer src="data/base/confinement-and-education.js"></script>
+<script defer src="data/parts/extensions/social-and-care/attitudes-family-knights.js"></script>
+<script defer src="data/parts/extensions/social-and-care/goals-craft-family.js"></script>
+<script defer src="data/parts/extensions/social-and-care/local-support-referrals.js"></script>
+<script defer src="data/parts/extensions/social-and-care/infected-organizations.js"></script>
+<script defer src="data/parts/extensions/social-and-care/infected-organization-operations.js"></script>
+<script defer src="data/parts/extensions/social-and-care/kazdel-displaced-life.js"></script>
+<script defer src="data/parts/extensions/social-and-care/research-reunion.js"></script>
+<script defer src="data/parts/extensions/social-and-care/civilian-response.js"></script>
+<script defer src="data/parts/extensions/social-and-care/affiliation-places.js"></script>
+<script defer src="data/parts/extensions/social-and-care/sources-and-flags.js"></script>
+<script defer src="data/parts/extensions/social-and-care/local-discrimination.js"></script>
+<script defer src="data/extensions/social-and-care.js"></script>
+<script defer src="data/model/flag-usage.js"></script>
+<script defer src="data/parts/extensions/education-and-later-life/training.js"></script>
+<script defer src="data/parts/extensions/education-and-later-life/relationships-events-01.js"></script>
+<script defer src="data/parts/extensions/education-and-later-life/relationships-events-02.js"></script>
+<script defer src="data/parts/extensions/education-and-later-life/relationships-events-03.js"></script>
+<script defer src="data/parts/extensions/education-and-later-life/relationships.js"></script>
+<script defer src="data/parts/extensions/education-and-later-life/family-care.js"></script>
+<script defer src="data/parts/extensions/education-and-later-life/ursus-student-life.js"></script>
+<script defer src="data/parts/extensions/education-and-later-life/leithanian-political-life.js"></script>
+<script defer src="data/parts/extensions/education-and-later-life/leithanian-noble-household.js"></script>
+<script defer src="data/parts/extensions/education-and-later-life/elder-life.js"></script>
+<script defer src="data/parts/extensions/education-and-later-life/assets-and-property.js"></script>
+<script defer src="data/extensions/education-and-later-life.js"></script>
+<script defer src="data/world/history.js"></script>
+<script defer src="data/extensions/family-and-community.js"></script>
+<script defer src="data/health/mortality.js"></script>
+<script defer src="data/social/organizations-and-infection.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/staff-setup.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/staff-routes-events-01.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/staff-routes-events-02.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/staff-routes-events-03.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/staff-routes-events-04.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/staff-routes-events-05.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/rhodes-landship-daily.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/staff-routes.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/arena-work.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/staff-job-catalog.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/aftercare-and-eligibility.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/reunion-lifepath.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/bsw-and-rhine-setup.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/cross-faction-routes.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/bsw-routes.js"></script>
+<script defer src="data/parts/routes/rhodes-and-factions/rhine-routes.js"></script>
+<script defer src="data/routes/rhodes-and-factions.js"></script>
+<script defer src="data/parts/routes/regional-careers/setup.js"></script>
+<script defer src="data/parts/routes/regional-careers/entry-east.js"></script>
+<script defer src="data/parts/routes/regional-careers/entry-west.js"></script>
+<script defer src="data/parts/routes/regional-careers/entry-central.js"></script>
+<script defer src="data/parts/routes/regional-careers/entry-frontier.js"></script>
+<script defer src="data/parts/routes/regional-careers/events-east.js"></script>
+<script defer src="data/parts/routes/regional-careers/events-west.js"></script>
+<script defer src="data/parts/routes/regional-careers/events-central.js"></script>
+<script defer src="data/parts/routes/regional-careers/events-frontier.js"></script>
+<script defer src="data/routes/regional-careers.js"></script>
+<script defer src="data/world/class-and-locality.js"></script>
+<script defer src="data/world/facilities.js"></script>
+<script defer src="data/relationships/facility-people.js"></script>
+<script defer src="data/life/goals-and-family.js"></script>
+<script defer src="data/work/contracts.js"></script>
+<script defer src="data/social/learning.js"></script>
+<script defer src="data/social/conflict.js"></script>
+<script defer src="data/review/choice-policy.js"></script>
+<script defer src="data/relationships/person-ties.js"></script>
+<script defer src="data/review/historical-reviews.js"></script>
+<script defer src="data/information/current-routes.js"></script>
+<script defer src="data/relationships/close-disclosure.js"></script>
+<script defer src="data/review/current-review.js"></script>
+<script defer src="data/finalize.js"></script>
+<script defer src="js/version.js"></script>
+<script defer src="js/core/config.js"></script>
+<script defer src="js/world/residence.js"></script>
+<script defer src="js/family/care-network.js"></script>
+<script defer src="js/events/choice-policy.js"></script>
+<script defer src="js/family/household-helpers.js"></script>
+<script defer src="js/life/hobbies.js"></script>
+<script defer src="js/life/records.js"></script>
+<script defer src="js/life/affiliations.js"></script>
+<script defer src="js/family/sibling-care.js"></script>
+<script defer src="js/family/relatives.js"></script>
+<script defer src="js/family/spouse-health.js"></script>
+<script defer src="js/family/spouse-work.js"></script>
+<script defer src="js/family/household-costs.js"></script>
+<script defer src="js/family/spouse-finance.js"></script>
+<script defer src="js/ui/family-details.js"></script>
+<script defer src="js/family/adult-children.js"></script>
+<script defer src="js/family/independent-siblings.js"></script>
+<script defer src="js/social/infection-pressure.js"></script>
+<script defer src="js/social/infection-awareness.js"></script>
+<script defer src="js/health/access.js"></script>
+<script defer src="js/family/parent-household.js"></script>
+<script defer src="js/language/api.js"></script>
+<script defer src="js/events/conditions.js"></script>
+<script defer src="js/world/facilities.js"></script>
+<script defer src="js/work/contracts.js"></script>
+<script defer src="js/world/affiliations.js"></script>
+<script defer src="js/relationships/ties.js"></script>
+<script defer src="js/relationships/disclosure.js"></script>
+<script defer src="js/world/people.js"></script>
+<script defer src="js/world/locality.js"></script>
+<script defer src="js/social/equity.js"></script>
+<script defer src="js/rules/tag-services.js"></script>
+<script defer src="js/rules/tags/locality.js"></script>
+<script defer src="js/rules/tags/life-and-careers.js"></script>
+<script defer src="js/rules/tags/care-network.js"></script>
+<script defer src="js/rules/tags/class-and-education.js"></script>
+<script defer src="js/rules/tags/relationships.js"></script>
+<script defer src="js/rules/tags/children-and-siblings.js"></script>
+<script defer src="js/rules/tags/household-and-parents.js"></script>
+<script defer src="js/rules/tags/health-and-economy.js"></script>
+<script defer src="js/rules/tags/identity-and-social.js"></script>
+<script defer src="js/rules/tags/environment-and-wellbeing.js"></script>
+<script defer src="js/rules/tags/flags-and-world.js"></script>
+<script defer src="js/events/eligibility.js"></script>
+<script defer src="js/rules/inspection.js"></script>
+<script defer src="js/world/policy.js"></script>
+<script defer src="js/core/session-state.js"></script>
+<script defer src="js/core/state.js"></script>
+  <script defer src="js/education/lifecycle.js"></script>
+<script defer src="js/ui/economy.js"></script>
+<script defer src="js/people/names.js"></script>
+<script defer src="js/social/class.js"></script>
+<script defer src="js/family/household-view.js"></script>
+<script defer src="js/ui/chart.js"></script>
+<script defer src="js/ui/preferences.js"></script>
+<script defer src="js/ui/choice-presentation.js"></script>
+<script defer src="js/save/slots.js"></script>
+<script defer src="js/ui/records.js"></script>
+<script defer src="js/life/birth.js"></script>
+<script defer src="js/log/messages.js"></script>
+<script defer src="js/social/attitude-history.js"></script>
+<script defer src="js/family/siracusa-family-tie.js"></script>
+<script defer src="js/family/care-inclination.js"></script>
+<script defer src="js/log/records.js"></script>
+<script defer src="js/log/export.js"></script>
+<script defer src="js/log/services.js"></script>
+<script defer src="js/log/snapshot/identity-location.js"></script>
+<script defer src="js/log/snapshot/care-households.js"></script>
+<script defer src="js/log/snapshot/social-life.js"></script>
+<script defer src="js/log/snapshot/sibling-support.js"></script>
+<script defer src="js/log/snapshot/parents-relocation.js"></script>
+<script defer src="js/log/snapshot/siblings.js"></script>
+<script defer src="js/log/snapshot/relationships-work.js"></script>
+<script defer src="js/log/snapshot/personal-health.js"></script>
+<script defer src="js/log/snapshot/spouse.js"></script>
+<script defer src="js/log/snapshot/children.js"></script>
+<script defer src="js/log/snapshot/household-finance.js"></script>
+<script defer src="js/log/snapshot/former-and-flags.js"></script>
+<script defer src="js/life/trace.js"></script>
+<script defer src="js/information/history.js"></script>
+<script defer src="js/information/claims.js"></script>
+<script defer src="js/ui/render-services.js"></script>
+<script defer src="js/ui/panels/profile.js"></script>
+<script defer src="js/ui/panels/vitals.js"></script>
+<script defer src="js/ui/panels/family.js"></script>
+<script defer src="js/ui/panels/economy.js"></script>
+<script defer src="js/ui/panels/tags-and-health.js"></script>
+<script defer src="js/ui/panels/locality.js"></script>
+<script defer src="js/ui/panels/life-and-knowledge.js"></script>
+<script defer src="js/ui/panels/controls.js"></script>
+<script defer src="js/ui/panels/social.js"></script>
+<script defer src="js/ui/panels/treatment.js"></script>
+<script defer src="js/ui/terminal-navigation.js"></script>
+<script defer src="js/ui/summary-view.js"></script>
+<script defer src="js/ui/render.js"></script>
+<script defer src="js/effects/life-records.js"></script>
+<script defer src="js/effects/health-money.js"></script>
+<script defer src="js/effects/family-care.js"></script>
+<script defer src="js/effects/relationships.js"></script>
+<script defer src="js/effects/siblings.js"></script>
+<script defer src="js/effects/children.js"></script>
+<script defer src="js/effects/residence.js"></script>
+<script defer src="js/effects/community.js"></script>
+<script defer src="js/effects/consequences.js"></script>
+<script defer src="js/effects/apply.js"></script>
+<script defer src="js/family/children-health.js"></script>
+<script defer src="js/family/network-progress.js"></script>
+<script defer src="js/health/mortality.js"></script>
+<script defer src="js/health/death-risk.js"></script>
+<script defer src="js/health/infection.js"></script>
+<script defer src="js/social/actions.js"></script>
+<script defer src="js/social/learning.js"></script>
+<script defer src="js/life/annual/personal-amounts.js"></script>
+<script defer src="js/life/annual/personal-cash.js"></script>
+<script defer src="js/life/annual/family-payments.js"></script>
+<script defer src="js/life/annual/personal-care.js"></script>
+<script defer src="js/life/annual/personal-budget.js"></script>
+<script defer src="js/life/annual/calendar.js"></script>
+<script defer src="js/life/annual/relations-and-access.js"></script>
+<script defer src="js/life/annual/wellbeing.js"></script>
+<script defer src="js/life/annual/infection.js"></script>
+<script defer src="js/life/annual/household-budget.js"></script>
+<script defer src="js/life/annual/wealth-and-history.js"></script>
+<script defer src="js/life/annual/services.js"></script>
+<script defer src="js/life/annual.js"></script>
+<script defer src="js/events/dispatch.js"></script>
+<script defer src="js/ui/life-summary.js"></script>
+<script defer src="js/ui/ending.js"></script>
+<script defer src="js/debug/statistics.js"></script>
+<script defer src="js/audit/catalog-schema.js"></script>
+<script defer src="js/audit/catalog-services.js"></script>
+<script defer src="js/audit/catalog/former-partners.js"></script>
+<script defer src="js/audit/catalog/spouse-finance-parameters.js"></script>
+<script defer src="js/audit/catalog/spouse-health-parameters.js"></script>
+<script defer src="js/audit/catalog/spouse-work-records.js"></script>
+<script defer src="js/audit/catalog/care-parameters.js"></script>
+<script defer src="js/audit/catalog/field-metadata.js"></script>
+<script defer src="js/audit/catalog/events.js"></script>
+<script defer src="js/audit/catalog/baseline-coverage.js"></script>
+<script defer src="js/audit/catalog/regional-models.js"></script>
+<script defer src="js/audit/catalog/parameters-and-datasets.js"></script>
+<script defer src="js/audit/catalog/flag-lifecycle.js"></script>
+<script defer src="js/audit/catalog/history-and-migration.js"></script>
+<script defer src="js/audit/catalog/cash-checks.js"></script>
+<script defer src="js/audit/catalog/condition-checks.js"></script>
+<script defer src="js/audit/state-services.js"></script>
+<script defer src="js/audit/catalog.js"></script>
+<script defer src="js/audit/state-basic.js"></script>
+<script defer src="js/audit/state-life.js"></script>
+<script defer src="js/audit/state-family.js"></script>
+<script defer src="js/audit/state-economy.js"></script>
+<script defer src="js/audit/state-household.js"></script>
+<script defer src="js/audit/state-contacts.js"></script>
+<script defer src="js/audit/state-information.js"></script>
+<script defer src="js/audit/state-community.js"></script>
+<script defer src="js/audit/state-social.js"></script>
+<script defer src="js/audit/state.js"></script>
+<script defer src="js/debug/simulation-cohorts.js"></script>
+<script defer src="js/debug/simulation-report.js"></script>
+<script defer src="js/debug/simulation.js"></script>
+<script defer src="js/rules/providers.js"></script>
+<script defer src="js/ui/controls.js"></script>
+<script defer src="js/save/resume.js"></script>
+<script defer src="js/ui/bootstrap.js"></script>
+</body>
+</html>

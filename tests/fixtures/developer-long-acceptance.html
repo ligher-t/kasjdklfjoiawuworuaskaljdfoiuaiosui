@@ -1,0 +1,27 @@
+<!doctype html><meta charset="utf-8"><title>Terra 1000 life acceptance</title><h2>1000人・最大400年の受入</h2><label>実行回数<select id="repeats"><option value="1">1回（他環境のハッシュと照合）</option><option value="2">2回（同じブラウザーで再現確認）</option></select></label><button id="run">1000人を実行</button><button id="cancel">現在の実行を中止</button><pre id="status">開始操作待ち</pre><iframe id="game" src="../../index.html" style="width:100%;height:420px"></iframe><script>
+const statusOutput=document.getElementById('status'),runButton=document.getElementById('run'),cancelButton=document.getElementById('cancel'),gameFrame=document.getElementById('game');
+const options={count:1000,maxYears:400,masterSeed:20261026,birthYearMin:1077,birthYearMax:1077};
+const hex=buffer=>Array.from(new Uint8Array(buffer),b=>b.toString(16).padStart(2,'0')).join('');
+const sha=text=>crypto.subtle.digest('SHA-256',new TextEncoder().encode(text)).then(hex);
+const assert=(ok,message)=>{if(!ok)throw Error(message)};
+let busy=false;
+cancelButton.onclick=()=>gameFrame.contentWindow.devCancelSimulation();
+runButton.onclick=async()=>{if(busy)return;busy=true;runButton.disabled=true;const w=gameFrame.contentWindow;try{
+const original=w.eval('JSON.stringify({life:S,world:W,seed:RANDOM_SEED,rng:RANDOM_STATE,au:AU,hl:HL,speed:sp,acc})');
+const outputs=[],repeats=Number(document.getElementById('repeats').value);
+for(let iteration=1;iteration<=repeats;iteration++){
+ const hashes=[];statusOutput.textContent=`実行${iteration}/${repeats} 開始`;
+ const report=await w.runDevSimulation(options,{onProgress:p=>{if(p.phase==='life-finished')hashes.push(sha(w.eval('JSON.stringify({life:S,world:W,seed:RANDOM_SEED,rng:RANDOM_STATE})')));statusOutput.textContent=`実行${iteration}/${repeats} 完了${p.completed}・失敗${p.failed} / ${p.total}人・${(p.elapsedMs/1000).toFixed(1)}秒`;}});
+ assert(!report.summary.canceled,'中止: 完走確認は未完了');
+ assert(report.summary.attempted===1000,'試行数不足');
+ const snapshot=w.eval('JSON.stringify({life:S,world:W,seed:RANDOM_SEED,rng:RANDOM_STATE,au:AU,hl:HL,speed:sp,acc})');assert(snapshot===original,'元の人生・乱数・進行状態の復元不一致');
+ const sourceFingerprint=report.fingerprints.source, comparisonSource=new URLSearchParams(location.search).get("comparisonSource") || sourceFingerprint;
+ const elapsedMs=report.elapsedMs;const clean=structuredClone(report);delete clean.elapsedMs;delete clean.generatedAt;delete clean.run;clean.fingerprints.source=comparisonSource;
+ outputs.push({elapsedMs,sourceFingerprint,comparisonSource,summary:report.summary,failures:report.failures,reportHash:await sha(JSON.stringify(clean)),lifeHashes:await Promise.all(hashes)});
+ statusOutput.textContent=JSON.stringify({iteration,elapsedMs,summary:report.summary,failures:report.failures},null,2);
+}
+if(repeats===2){assert(outputs[0].reportHash===outputs[1].reportHash,'診断レポート不一致');assert(JSON.stringify(outputs[0].lifeHashes)===JSON.stringify(outputs[1].lifeHashes),'人生・世界・乱数不一致');}
+window.acceptanceResult={options,runs:await Promise.all(outputs.map(async({lifeHashes,...rest})=>({...rest,lifeHash:await sha(JSON.stringify(lifeHashes))}))),identicalLives:outputs[0].lifeHashes.length,identicalReport:repeats===2?true:null,restored:true};
+assert(outputs.every(row=>row.summary.failureCount===0),'監査/実行失敗あり（詳細を確認）');statusOutput.textContent='PASS '+JSON.stringify(acceptanceResult,null,2);
+}catch(error){statusOutput.textContent='FAIL '+error.message+'\n'+statusOutput.textContent;window.acceptanceError=error.message;}finally{busy=false;runButton.disabled=false;}};
+</script>

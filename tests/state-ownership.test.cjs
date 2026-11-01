@@ -1,0 +1,33 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const root=path.resolve(__dirname,'..');
+const slots=vm.createContext({});vm.runInContext(fs.readFileSync(path.join(root,'js/core/session-state.js'),'utf8'),slots);
+assert.equal(vm.runInContext('currentLifeState()',slots),undefined,'Initial S remains undefined');
+const state={nested:{value:1}},world={known:1};slots.next=state;slots.known=world;
+assert.equal(vm.runInContext('replaceCurrentLife(next)',slots),state);assert.equal(vm.runInContext('currentLifeState()',slots),state);
+assert.equal(vm.runInContext('replaceWorldKnowledge(known)',slots),world);assert.equal(vm.runInContext('W',slots),world);
+vm.runInContext('replaceCurrentLife(null)',slots);assert.equal(vm.runInContext('currentLifeState()',slots),null);assert.equal(vm.runInContext('W',slots),world,'Slot replacement does not silently merge or repair world state');
+const {context}=require('./support/annual-cases.cjs'),{ctx}=context(root);
+vm.runInContext(`(()=>{
+ const previousDebugRandom=DEBUG_RANDOM;DEBUG_RANDOM=()=>.999;const initialNetwork=makeCare('龍門',1001).supportNetwork;DEBUG_RANDOM=previousDebugRandom;
+ if(!initialNetwork||initialNetwork.startedYear!==1001||initialNetwork.regionKnownYear!==1001||initialNetwork.region!=='龍門')throw Error('Birth care network did not use its explicit year and region');
+ HL=1;AU='r';born({seed:905200,region:'龍門'});const original=S;
+ S.age=26;S.year=S.by+26;S.q=[];S.debt=120000;
+ S.loanContracts=[{id:'resume-loan',borrower:'本人',creditor:'確認用貸付人',region:'龍門',currency:'龍門幣',account:'personal',kind:'personal-loan',principal:100000,totalDue:150000,balance:120000,installment:30000,nonContractualCharges:0,signedYear:S.year-1,dueYear:S.year+2,status:'open',terms:'固定返済総額',sourceEventId:'resume-test',history:[{year:S.year-1,kind:'signed',principal:100000,totalDue:150000,dueYear:S.year+2},{year:S.year,kind:'payment',amount:30000,source:'test'}]}];
+ S.personalWishes={version:1,status:'written',year:S.year-1,sourceEventId:'resume-test',recipientId:'resume-child',recipientName:'成人した子',content:'道具の保管を家族で相談してほしい。',afterDeathStatus:null,history:[{year:S.year-1,kind:'written',recipientId:'resume-child'}]};
+ const saved=makeResumeSnapshot(),name=S.nm;
+ born({seed:905201,region:'クルビア'});if(S===original||currentLifeState()!==S||W!==S.known)throw Error('Birth slot/knowledge ownership');
+ if(!cont(saved)||currentLifeState()!==S||S.nm!==name||S.age!==26||W!==S.known)throw Error('Resume slot/knowledge ownership');
+ if(S.loanContracts?.[0]?.id!=='resume-loan'||S.loanContracts[0].balance!==120000||S.debt!==120000||S.personalWishes?.recipientId!=='resume-child')throw Error('Resume failed to preserve contract ledger, aggregate debt, or personal wishes');
+ const restored=S,worldBefore=W,known=JSON.stringify(W),oldBorn=born;
+ const originalRuntime={seed:RANDOM_SEED,state:RANDOM_STATE,debug:()=>.27,trace:{id:'kept'},pending:{kind:'kept'},capture:true,speed:3,acc:.6,hl:0,au:'paused'};
+ DEBUG_RANDOM=originalRuntime.debug;RANDOM_SEED=originalRuntime.seed;RANDOM_STATE=originalRuntime.state;TRACE_RESOLUTION=originalRuntime.trace;PENDING_DEATH_TRACE=originalRuntime.pending;CAPTURE_TRACE=originalRuntime.capture;sp=originalRuntime.speed;acc=originalRuntime.acc;HL=originalRuntime.hl;AU=originalRuntime.au;
+ STAT.totalSlots=17;STAT.recentEvents=[{eventId:'preserved'}];STAT.eventCoverage={preserved:{fired:3,stages:{x:{fired:2}}}};STAT.choiceMonths=new Set(['preserved']);
+ const statSnapshot=()=>JSON.stringify({...STAT,choiceMonths:[...STAT.choiceMonths]}),statsBefore=statSnapshot();
+ born=()=>{if(HL!==1||AU!=='r'||sp!==0||acc!==0||DEBUG_RANDOM!==null||TRACE_RESOLUTION!==null||PENDING_DEATH_TRACE!==null||CAPTURE_TRACE!==false)throw Error('Peer run inherited visible or traced state');replaceCurrentLife({by:1});replaceWorldKnowledge({temporary:true});RANDOM_SEED=2;RANDOM_STATE=3;DEBUG_RANDOM=()=>.5;TRACE_RESOLUTION={id:'peer'};PENDING_DEATH_TRACE={kind:'peer'};CAPTURE_TRACE=false;STAT.totalSlots=999;STAT.recentEvents.push({eventId:'peer'});STAT.eventCoverage.preserved={fired:99,stages:{peer:{fired:99}}};STAT.choiceMonths.add('peer');throw Error('intentional peer failure');};
+ const oldError=console.error;console.error=()=>{};try{try{simPeer();throw Error('Peer simulation failure was swallowed');}catch(error){if(!String(error).includes('intentional peer failure'))throw error;}}finally{console.error=oldError;born=oldBorn;}
+ if(S!==restored||W!==worldBefore||JSON.stringify(W)!==known||S.known!==W||currentLifeState()!==restored)throw Error('Peer finally did not restore current slot identities');
+ if(RANDOM_SEED!==originalRuntime.seed||RANDOM_STATE!==originalRuntime.state||DEBUG_RANDOM!==originalRuntime.debug||TRACE_RESOLUTION!==originalRuntime.trace||PENDING_DEATH_TRACE!==originalRuntime.pending||CAPTURE_TRACE!==originalRuntime.capture||sp!==originalRuntime.speed||acc!==originalRuntime.acc||HL!==originalRuntime.hl||AU!==originalRuntime.au)throw Error('Peer finally did not restore runtime controls and trace state');
+ if(statSnapshot()!==statsBefore)throw Error('Peer simulation leaked developer statistics');
+})()`,ctx,{timeout:30000});
+console.log('PASS annual dependency boundaries, centralized slot writes, birth/resume aliases and peer failure restoration');
