@@ -14,7 +14,6 @@ function advanceAnnualRelationsAndAccess(s, services) {
   services.advanceSeparatedParentWorkLives(s);
   services.advanceRelativeMilestones(s);
   services.advanceIndependentChildLives(s);
-  services.advanceIndependentChildBudgets(s);
   services.advanceSiblingLives(s);
   services.advanceIndependentSiblingMoves(s);
   services.advanceIndependentSiblingFamilies(s);
