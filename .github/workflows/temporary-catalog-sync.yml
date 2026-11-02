@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Recheck randomized child-specific diagnosis
+      - name: Recheck multi-child diagnosis and independent adult boundaries
         run: |
           node tools/generate-event-catalog.cjs --write
           node tools/generate-event-catalog.cjs --check
