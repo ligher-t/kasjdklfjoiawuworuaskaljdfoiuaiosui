@@ -1,6 +1,7 @@
 function shouldApplyLifeAffiliation(input) {
-  if (!input.onlyIfActive && !input.onlyIfActiveOrCrisis && !input.onlyIfMember) return true;
+  if (!input.onlyIfActive && !input.onlyIfActiveOrCrisis && !input.onlyIfMember && !input.onlyIfContacted) return true;
   const status = S.lifeRecord?.affiliations?.find(item => item.id === input.id)?.status;
+  if (input.onlyIfContacted) return status === "contacted";
   if (input.onlyIfMember) return ["active", "crisis", "suspended"].includes(status);
   return input.onlyIfActiveOrCrisis ? ["active", "crisis"].includes(status) : status === "active";
 }
@@ -43,11 +44,13 @@ function applyLifeRecordEffects(e, s) {
   if (e.lifeGoal) applyLifeGoal(e.lifeGoal);
   if (e.lifeGoals)
     e.lifeGoals.forEach(input => {
+      const goal = S.lifeRecord?.goals?.find(item => item.id === input.id);
+      const member = input.onlyIfAffiliation &&
+        S.lifeRecord?.affiliations?.find(item => item.id === input.onlyIfAffiliation);
       if (
-        !input.onlyIfActive ||
-        S.lifeRecord?.goals?.some(
-          item => item.id === input.id && ["active", "compromised"].includes(item.status)
-        )
+        (!input.onlyIfAffiliation || ["active", "crisis", "suspended"].includes(member?.status)) &&
+        (!input.onlyIfUnresolved || (goal && ["active", "compromised", "paused"].includes(goal.status))) &&
+        (!input.onlyIfActive || (goal && ["active", "compromised"].includes(goal.status)))
       )
         applyLifeGoal(input);
     });
