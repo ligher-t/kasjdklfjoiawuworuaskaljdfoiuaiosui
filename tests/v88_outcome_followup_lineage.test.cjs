@@ -53,6 +53,11 @@ const ursus=inspect(`
   const participant=S.lifeRecord.affiliations.find(x=>x.id==='ursus-student-assembly');
   const afterLiaison={active:S.fl.ursus_student_assembly_active,role:participant?.role,
     status:participant?.status,detained:!!S.fl.ursus_katorga_detained};
+  // A different outcome of the same choice event requires a separate life.
+  born({seed:110221,by:1081,region:'ウルサス'});
+  S.year=1101;S.age=20;S.mo=12;
+  ap(contact.c[0].o[0][2]);
+  ap(meeting.c[1].o[0][2]);
   ap(protest.c[4].o[0][2]);
   const paused=S.lifeRecord.affiliations.find(x=>x.id==='ursus-student-assembly');
   const afterPause={active:S.fl.ursus_student_assembly_active,status:paused?.status,
