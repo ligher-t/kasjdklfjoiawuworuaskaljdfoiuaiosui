@@ -62,7 +62,7 @@ assert.equal(late.metrics.expiredUnserved,5-lateAllowed);
 // The real developer runner must collect results over complete years, keep
 // death-censored observations out of expiry, and preserve reproducibility.
 (async()=>{
-  const options={count:19,masterSeed:19761103,maxYears:65,birthYearMin:1060,birthYearMax:1075,regionSampling:'balanced'};
+  const options={count:19,masterSeed:19761103,maxYears:process.argv.includes('--long-run')?65:10,birthYearMin:1060,birthYearMax:1075,regionSampling:'balanced'};
   ctx.auditOptions=options;
   const report=await vm.runInContext('runDevSimulation(auditOptions)',ctx);
   const coverage=JSON.parse(JSON.stringify(report.deadlineCoverage));

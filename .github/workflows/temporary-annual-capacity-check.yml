@@ -1,4 +1,4 @@
-name: Temporary annual capacity and lifetime coverage verification
+name: Temporary deadline capacity and extended-life verification
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
@@ -24,6 +24,7 @@ jobs:
           node tools/check-efficient.cjs syntax
           node tools/check-efficient.cjs run v88_annual_deadline_capacity.test.cjs
           node tools/check-efficient.cjs run v88_deadline_coverage_metrics.test.cjs
+          node tests/v88_deadline_coverage_metrics.test.cjs --long-run
           node tools/check-efficient.cjs run v88_age_cutoff_competing_followups.test.cjs
           node tools/check-efficient.cjs run v88_expiring_followup_priority.test.cjs
           node tools/check-efficient.cjs run v88_crisis_event_priority.test.cjs
