@@ -97,4 +97,53 @@ assert.deepEqual(student,{oldFlagWithoutMembership:false,active:true,
   staleFlagDuringPause:false,staleFlagAfterExit:false,resumed:true},
   'the later student contact follows actual membership despite a stale active flag');
 
+// Outstanding balances must be paid and renegotiated from the current ledger,
+// never from the amount of the original 90,000 payment obligation.
+for (const followup of ['settle','mediate','dispute']) {
+  setup(ctx,{id:'siracusa-recurring-balance-'+followup,seed:seed++,region:'シラクーザ',age:28});
+  ctx.FOLLOWUP=followup;
+  const actual=inspect(`
+    S.year=1090;S.age=28;
+    const entry=EV.find(e=>e.id==='sir_family'),
+      debt=EV.find(e=>e.id==='sir_family_obligation');
+    ap(entry.c[0].o[0][2]);
+    ap({siracusaFamilyDuty:{action:'acceptedPressure',amount:90000,note:'立替金'}});
+    S.year=1092;S.age=30;
+    ap(debt.c[1].o[1][2]); // A 30,000 payment leaves 60,000 outstanding.
+    const afterFirst=S.siracusaFamilyTie.duty.outstandingAmount;
+    S.year=1094;S.age=32;S.cash=500000;
+    const available=elig(debt,S,tags(S));
+    const fullChoice=debt.c[0],partialChoice=debt.c[1];
+    const fullAvailable=fullChoice.show.show(S);
+    let before=S.cash;
+    if(FOLLOWUP==='settle') ap(fullChoice.o[0][2]);
+    if(FOLLOWUP==='mediate') ap(partialChoice.o[1][2]);
+    if(FOLLOWUP==='dispute') ap(debt.c[2].o[0][2]);
+    const d=S.siracusaFamilyTie.duty,final=d.history.at(-1);
+    const member=S.lifeRecord.affiliations.find(a=>a.id==='siracusa-familia');
+    return {afterFirst,available,fullAvailable,spent:before-S.cash,
+      balance:d.outstandingAmount,lastAmount:final.amount,
+      lastAction:final.action,deadline:d.settleByYear,
+      member:member.status};
+  `);
+  assert.equal(actual.afterFirst,60000);
+  assert.equal(actual.available,true,'the remaining balance becomes due two years after mediation');
+  assert.equal(actual.fullAvailable,true,'the full repayment eligibility uses the remaining balance');
+  if(followup==='settle') assert.deepEqual(
+    {spent:actual.spent,balance:actual.balance,lastAmount:actual.lastAmount,
+      lastAction:actual.lastAction,member:actual.member},
+    {spent:60000,balance:0,lastAmount:60000,lastAction:'settled',member:'suspended'},
+    'repayment is exactly 60,000, not the original 90,000');
+  if(followup==='mediate') assert.deepEqual(
+    {spent:actual.spent,balance:actual.balance,lastAmount:actual.lastAmount,
+      lastAction:actual.lastAction,deadline:actual.deadline},
+    {spent:30000,balance:30000,lastAmount:30000,lastAction:'mediated',deadline:1096},
+    'second 30,000 repayment leaves exactly 30,000 outstanding');
+  if(followup==='dispute') assert.deepEqual(
+    {spent:actual.spent,balance:actual.balance,lastAmount:actual.lastAmount,
+      lastAction:actual.lastAction,deadline:actual.deadline,member:actual.member},
+    {spent:0,balance:60000,lastAmount:60000,lastAction:'disputed',deadline:null,member:'left'},
+    'refusing collection records the remaining disputed sum, not the original sum');
+}
+
 console.log('PASS Siracusa debt, affiliation and goal lifecycles; Ursus later-life membership gate');
