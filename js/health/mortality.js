@@ -477,6 +477,9 @@ function mortalityDeathDetail(s, category, description, monthBasis, episodeId = 
     year: s.year,
     month: Number.isInteger(s.mo) ? s.mo : null,
     monthBasis,
+    accountingPeriod: s.flow?.year === s.year
+      ? { year:s.year,kind:"full-year-model",proratedToDeath:false }
+      : { year:s.flow?.year || null,kind:"last-completed-year",proratedToDeath:false },
     age: s.age,
     place: {
       region: s.res?.n || null,
@@ -492,11 +495,14 @@ function mortalityDeathDetail(s, category, description, monthBasis, episodeId = 
     note: monthBasis === "current-calendar-month" ? "記録された年月による。" : "死亡月の詳細は未記録。",
     modelNote:
       "死因名はゲーム上の分類。実世界の診断・原作の確定死因を意味しない。" +
-      (monthBasis === "annual-random-placeholder"
-        ? "月は年次処理後に置いた表示・記録用の仮置きで、実際の死亡月を特定しない。"
+      (monthBasis === "annual-month-unknown"
+        ? "年次の死亡判定のため、死亡月は特定していない。"
         : monthBasis === "pressure-window-sample"
           ? "月は有効な戦乱期間から選んだゲーム上の代表月で、正確な死亡月を確定しない。"
-          : "月はゲーム内の進行暦による。日付までは記録しない。")
+          : "月はゲーム内の進行暦による。日付までは記録しない。") +
+      (s.flow?.year === s.year
+        ? "死亡年の収支は12か月分の年次モデル値であり、死亡時点までに受け取った実収入・実支出を示さない。"
+        : "")
   };
 }
 /* 鉱石病への曝露モデル：確定的な生物学的種族差を感染抽選へ用いない。

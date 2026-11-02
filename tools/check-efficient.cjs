@@ -20,6 +20,7 @@ const approved=Object.freeze([
   "v88_timeline_local_events.test.cjs",
   "v88_history_scope_and_pending.test.cjs",
   "v88_regional_career_outcomes.test.cjs",
+  "v88_death_job_and_year_basis.test.cjs",
   "ui-summary-focus.test.cjs",
   "ui-log-years.test.cjs",
   "ui-choice-presentation.test.cjs",

@@ -14,14 +14,14 @@ function die(c, l, monthBasis = null, episodeId = null) {
       localStorage.removeItem("terra2");
     } catch (e) {}
   }
+  // Annual mortality is not a dated incident. Keep month=0 when unknown.
   const annualMonthWasUnassigned = !s.mo;
-  if (annualMonthWasUnassigned) s.mo = rnd(1, 12);
   s.deathOrigin = ["choice","daily"].includes(TRACE_RESOLUTION?.kind) ? "event" : "annual";
   s.deathProcess = mortalityDeathDetail(
     s,
     c,
     l,
-    monthBasis || (annualMonthWasUnassigned ? "annual-random-placeholder" : "current-calendar-month"),
+    monthBasis || (annualMonthWasUnassigned ? "annual-month-unknown" : "current-calendar-month"),
     episodeId
   );
   if (TRACE_RESOLUTION && !(HL && !CAPTURE_TRACE)) {

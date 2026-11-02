@@ -1,5 +1,6 @@
 function renderEconomyPanel(s, services) {
   const flow = s.flow || {},
+    annualDeathEstimate = !!s.dead && flow.year === s.year,
     flowNames = {
       living: "生活費",
       spouseLiving: "配偶者の生活費",
@@ -58,9 +59,12 @@ function renderEconomyPanel(s, services) {
       "天災総合保険",
       s.fl?.insured ? "加入中（天災被災時の生活再建補償あり）" : "未加入"
     ],
-    ["年収", services.m(s.inc)],
-    ["年間支出", services.m(s.exp)],
-    ["年間収支", services.m(s.inc - s.exp)],
+    [annualDeathEstimate ? "死亡年の年収（12か月換算）" : "年収", services.m(s.inc)],
+    [annualDeathEstimate ? "死亡年の支出（12か月換算）" : "年間支出", services.m(s.exp)],
+    [annualDeathEstimate ? "死亡年の収支（12か月換算）" : "年間収支", services.m(s.inc - s.exp)],
+    ...(annualDeathEstimate
+      ? [["死亡年の収支の扱い", "年次モデルによる12か月分の推計です。死亡時点までに受け取った実収入・実支出ではありません。"]]
+      : []),
     ["生活費上昇指数", `${(s.priceIndex || 1).toFixed(2)}（給金は値上がりの一部を追随）`],
     [
       "直近年の収入内訳",

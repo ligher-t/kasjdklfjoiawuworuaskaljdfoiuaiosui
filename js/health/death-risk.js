@@ -1,4 +1,27 @@
 // Annual death-risk candidates; called from the event dispatcher.
+// Canonical IDs: data/model/world.js and regional-career setup.
+const MORTALITY_JOB = Object.freeze({
+  miner:3, guard:4, knight:10, artsEngineer:11, logistics:14, transporter:16,
+  competitionKnight:63, northernGuard:71, miningEngineer:80
+});
+function occupationalDeathExposure(s) {
+  const job=s.job, region=s.res?.n,
+    travel=job===MORTALITY_JOB.transporter ||
+      (!!s.moves?.at(-1) && s.year-s.moves.at(-1).year<=1),
+    mine=job===MORTALITY_JOB.miner || job===MORTALITY_JOB.miningEngineer;
+  return {
+    travel,
+    dust: mine || (job===2 && !!s.fl?.workplace_hazard),
+    mineCollapse:mine && ["レム・ビリトン","ウルサス","カズデル"].includes(region),
+    arena:!!s.fl?.arena || !!s.fl?.street_fighter ||
+      (region==="カジミエーシュ" && [MORTALITY_JOB.knight,MORTALITY_JOB.competitionKnight].includes(job)),
+    arts:job===MORTALITY_JOB.artsEngineer || (s.ar||0)>=40 ||
+      !!s.lifeRecord?.skills?.some(x=>x.title?.includes("アーツ")),
+    northern:region==="サーミ" && (job===MORTALITY_JOB.northernGuard || travel),
+    coastal:region==="イベリア" &&
+      (s.local?.kind==="漁村・沿岸集落" || (travel && s.home==="固定集落"))
+  };
+}
 function D(s) {
   const a = s.age,
     ea = a / Math.max(0.3, s.r?.lm || 1),
@@ -123,15 +146,16 @@ function D(s) {
     "老衰",
     ["年齢とともに少しずつ体力が落ち、長い人生を終えた。", "長い時間を生き、徐々に衰弱して亡くなった。"]
   );
-  const work = (j.ex || 1) > 1 || s.fl.workplace_hazard || s.f === 8,
-    travel = s.job === 16 || (!!s.moves?.at(-1) && s.year - s.moves.at(-1).year <= 1);
+  const exposure=occupationalDeathExposure(s),
+    work = (j.ex || 1) > 1 || s.fl.workplace_hazard || s.f === 8,
+    travel=exposure.travel;
   const safety = m.exposureProtectionUntilYear >= s.year ? 0.42 : 1;
   const accident =
     (P("life.accidentMortalityBase") +
       (ea > P("death.accidentOlderAgeLimit") ? P("death.accidentOlderAgeBase") : 0)) *
     (t.acc || 1) *
     (0.75 + (s.local?.hazard || 0) * 0.5);
-  const isDustZone = !isLandship && (s.local?.kind === "工業・採掘地域" || s.fl.workplace_hazard || s.f === 8) && (work || s.job === 2);
+  const isDustZone = !isLandship && exposure.dust;
   A(isDustZone ? accident * 0.45 * (j.ex || 1) * safety : 0, "事故死（源石粉塵吸入・爆発）", [
     "採掘・精錬区画での高濃度源石粉塵の爆発に巻き込まれ、命を落とした。",
     "換気停止による高濃度源石粉塵の急速吸入により、急性塞栓を起こして亡くなった。"
@@ -173,7 +197,7 @@ function D(s) {
     (r.n === "極東" && s.year < P("world.farEastWarReliefUntil") ? P("world.farEastWarReliefScale") : 1) *
     (j.war || 1) *
     warPressureVal;
-  const activeWarDuty = j.n === "傭兵・護衛" || j.n === "軍務・兵站";
+  const activeWarDuty=[MORTALITY_JOB.guard,MORTALITY_JOB.logistics].includes(s.job);
   const civilianPeaceScale = (isLandship || (!activeWarDuty && !s.fl.veteran && warPressureVal <= 1)) ? 0.2 : 1;
   const cityBombardment = !isLandship && warPressureVal > 1 && s.home === "移動都市" && !activeWarDuty;
   A(
@@ -188,7 +212,7 @@ function D(s) {
     !isLandship ? war * P("life.warMortalityBase") * (activeWarDuty ? 2 : s.fl.veteran ? 1.4 : 0.45) * civilianPeaceScale : 0,
     activeWarDuty ? "戦闘職務中の死亡" : "戦争に伴う民間人死亡",
     activeWarDuty
-      ? j.n === "軍務・兵站"
+      ? s.job === MORTALITY_JOB.logistics
         ? ["軍務・兵站の任務中、戦闘に巻き込まれて命を落とした。", "任務先で戦闘が起こり、帰らなかった。"]
         : ["護衛の任務中、戦闘に巻き込まれて命を落とした。", "警護先で戦闘が起こり、帰らなかった。"]
       : ["戦乱の影響が暮らしに及ぶなか、亡くなった。", "争いの続く地域で命を落とした。"]
@@ -298,14 +322,14 @@ function D(s) {
       "砂嵐に巻かれて隊商から逸脱し、灼熱の砂漠で命を落とした。"
     ]);
   }
-  const coastalAegir = !isLandship && r.n === "イベリア" && (s.local?.kind === "漁村・沿岸集落" || s.r?.n === "エーギル" || travel);
+  const coastalAegir = !isLandship && exposure.coastal;
   if (coastalAegir) {
-    A(0.001 * (s.r?.n === "エーギル" ? 2 : 1) * (s.p < 30 ? 1.5 : 1), "海の怪異（恐魚の捕食・同化・海への喪失）", [
-      "海から這い上がった異形の怪物に引きずり込まれるか、あるいは自ら海へ還るように姿を消した。",
-      "打ち捨てられた沿岸で未知の深海怪異に接触し、肉体と意識が異形に変貌した末に波間へ消えた。"
+    A(0.001 * (s.p < 30 ? 1.5 : 1), "海の怪異（恐魚の捕食・同化・海への喪失）", [
+      "沿岸で海から現れた異形の影に襲われ、その後の足取りは分からなくなった。",
+      "人の寄りつかない海岸で何者かに遭遇したらしい。持ち物だけが浜辺に残り、本人は見つからなかった。"
     ]);
   }
-  const samiDemon = !isLandship && r.n === "サーミ" && (s.job === 6 || travel || s.home !== "移動都市");
+  const samiDemon = !isLandship && exposure.northern;
   if (samiDemon) {
     A(0.0009 * (s.p < 30 ? 1.5 : 1), "極北の虚無・悪魔（未知の侵食による消失）", [
       "北方の大地で名状しがたい影と接触し、肉体と精神の輪郭を失って消息を絶った。",
@@ -313,7 +337,7 @@ function D(s) {
     ]);
   }
   const wildBeastHazard = !isLandship && (travel || s.job === 16 || s.home === "固定集落" || s.home === "荒野") &&
-    ["サルゴン", "クルビア", "サーミ", "リム・ビリトン", "カズデル"].includes(r.n);
+    ["サルゴン", "クルビア", "サーミ", "レム・ビリトン", "カズデル"].includes(r.n);
   if (wildBeastHazard) {
     A(0.0035 * (po ? 1.4 : 1) * (travel ? 1.8 : 1), "獣害（狂暴化源石獣の襲撃）", [
       "荒野の輸送路で狂暴化した源石獣の群れに襲撃され、荒野の土となった。",
@@ -351,14 +375,14 @@ function D(s) {
       "過密工業区に滞留した源石煤煙を吸い込み、肺胞を焼かれて窒息死した。"
     ]);
   }
-  const mineCollapseRisk = !isLandship && (work || s.job === 2 || s.f === 8) && ["レム・ビリトン", "ウルサス", "カズデル"].includes(r.n);
+  const mineCollapseRisk = !isLandship && exposure.mineCollapse;
   if (mineCollapseRisk) {
     A(accident * 0.4 * (j.ex || 1) * safety, "事故死（落盤・坑道崩落生き埋め）", [
       "支柱の破断とともに頭上の岩盤が崩落し、暗黒の地下深くに生き埋めとなった。",
       "坑道の落盤事故に巻き込まれ、退路を断たれて地下深くで命を落とした。"
     ]);
   }
-  const arenaRisk = !isLandship && ((r.n === "カジミエーシュ" && s.job === 4) || s.fl?.arena || s.fl?.street_fighter);
+  const arenaRisk = !isLandship && exposure.arena;
   if (arenaRisk) {
     A(0.006 * (s.h < 40 ? 1.6 : 1), "闘技場での致命傷（競技・地下闘技）", [
       "熱狂する観衆の歓声の中、対戦相手の無慈悲な一撃を受けて競技場の砂の上に倒れ伏した。",
@@ -390,7 +414,7 @@ function D(s) {
       "捕縛された屈辱と主家への背信を拒み、武人の誇りを守るため自ら刃を取って果てた。"
     ]);
   }
-  const artsCapable = s.job === 3 || (s.arts || 0) >= 40 || !!s.lifeRecord?.skills?.some(x => x.id?.includes("arts") || x.title?.includes("アーツ"));
+  const artsCapable = exposure.arts;
   if (artsCapable && s.inf && (s.p < 22 || s.ob >= 65)) {
     A(0.0055 * (s.p < 15 ? 1.6 : 1), "アーツ暴走による自壊", [
       "感情の昂ぶりとともに体内の源石結晶が過剰励起を起こし、アーツの暴走により肉体が内側から自壊した。",
