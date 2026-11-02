@@ -62,6 +62,31 @@ function childHouseholdFinances(s, costPm, regionPm = s.res.pm) {
     careTravel: infectionCareTravelPortion(care, s)
   };
 }
+// The former spouse's current cash balance is not modeled, so record matching remittance receipts without inventing assets.
+function recordDivorceChildSupportPayments(s) {
+  for (const child of s.kids || []) {
+    if (
+      child.d ||
+      s.year - child.by >= P("life.adultStartAge") ||
+      child.householdResidencePlan !== "former_support" ||
+      child.divorceSupportPaidYear === s.year
+    ) continue;
+    const recipient = formerSpouseForChild(s, child);
+    if (!recipient || formerSpouseDeathKnown(recipient)) continue;
+    const amount = divorceChildSupportAnnualCost(s, child),
+      transactionId = `${child.id}::divorce-support::${s.year}`,
+      receipt = { year: s.year, amount, transactionId, childId: child.id, fromId: "player", recipientId: recipient.id };
+    child.divorceSupportPaidYear = s.year;
+    child.divorceSupportPaidAmount = amount;
+    child.divorceSupportPaidTotal = (child.divorceSupportPaidTotal || 0) + amount;
+    child.divorceSupportReceipts || (child.divorceSupportReceipts = []);
+    child.divorceSupportReceipts.push(receipt);
+    child.divorceSupportReceipts = child.divorceSupportReceipts.slice(-16);
+    recipient.childSupportReceipts || (recipient.childSupportReceipts = []);
+    recipient.childSupportReceipts.push({ ...receipt });
+    recipient.childSupportReceipts = recipient.childSupportReceipts.slice(-16);
+  }
+}
 function adultChildVisitRoute(
   s,
   child = (s.kids || []).find(item => item.id === s.eventRelativeId && !item.d)
