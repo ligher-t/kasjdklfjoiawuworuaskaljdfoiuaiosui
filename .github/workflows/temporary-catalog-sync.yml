@@ -1,0 +1,35 @@
+name: Temporary mutual aid suspension verification
+on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths: ['.github/workflows/temporary-catalog-sync.yml']
+permissions:
+  contents: write
+jobs:
+  verify:
+    if: github.repository == 'ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify mutual aid reentry and regenerate event catalog
+        run: |
+          node tools/generate-event-catalog.cjs --write
+          node tools/generate-event-catalog.cjs --check
+          node tools/update-version.cjs
+          node tools/check-efficient.cjs syntax
+          node tools/check-efficient.cjs run v88_infected_org_reentry_suspension_age.test.cjs
+          node tools/check-efficient.cjs run v88_infected_organization_exit_consistency.test.cjs
+          node tools/check-efficient.cjs run v88_affiliation_legacy_event_boundaries.test.cjs
+      - name: Commit generated version and catalog
+        run: |
+          git add EVENT_CATALOG.md js/version.js
+          if ! git diff --cached --quiet; then
+            git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' commit -m 'chore: sync mutual-aid reentry catalog and engine revision'
+            git push origin HEAD:fix/historical-event-scope-and-delivery
+          fi
