@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Regenerate and verify child-specific diagnosis
+      - name: Recheck randomized child-specific diagnosis
         run: |
           node tools/generate-event-catalog.cjs --write
           node tools/generate-event-catalog.cjs --check
