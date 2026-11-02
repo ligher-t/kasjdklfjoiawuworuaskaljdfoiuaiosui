@@ -278,7 +278,7 @@ function advanceIndependentChildBudgets(s) {
         region.pm *
         priceIndex,
       support =
-        Math.max(0, child.remittanceAnnual || 0) * s.res.pm * priceIndex +
+        Math.max(0, child.remittanceAnnual || 0) * s.res.pm * priceIndex * localityLivingMultiplier(s) +
         (child.aidTransfers || [])
           .filter(transfer => transfer.year === s.year)
           .reduce((sum, transfer) => sum + transfer.amount, 0),
