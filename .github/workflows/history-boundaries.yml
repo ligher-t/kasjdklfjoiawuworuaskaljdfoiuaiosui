@@ -8,6 +8,7 @@ on:
       - 'data/parts/routes/regional-careers/**'
       - 'data/regional/**'
       - 'data/parts/extensions/social-and-care/**'
+      - 'data/base/daily-family.js'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
@@ -25,6 +26,7 @@ on:
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
       - 'tests/v88_infected_org_reentry_suspension_age.test.cjs'
       - 'tests/v88_kazdel_child_family_memory_context.test.cjs'
+      - 'tests/v88_adult_child_contact_target_and_funds.test.cjs'
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
@@ -48,6 +50,7 @@ on:
       - 'data/parts/routes/regional-careers/**'
       - 'data/regional/**'
       - 'data/parts/extensions/social-and-care/**'
+      - 'data/base/daily-family.js'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
@@ -65,6 +68,7 @@ on:
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
       - 'tests/v88_infected_org_reentry_suspension_age.test.cjs'
       - 'tests/v88_kazdel_child_family_memory_context.test.cjs'
+      - 'tests/v88_adult_child_contact_target_and_funds.test.cjs'
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
@@ -127,6 +131,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_infected_org_reentry_suspension_age.test.cjs
       - name: Kazdel displaced parent child question matches family context
         run: node tools/check-efficient.cjs run v88_kazdel_child_family_memory_context.test.cjs
+      - name: Adult child contact targeting and family budget transfer boundaries
+        run: node tools/check-efficient.cjs run v88_adult_child_contact_target_and_funds.test.cjs
       - name: Civic and research duties close linked life goals
         run: node tools/check-efficient.cjs run v88_affiliation_goal_closure.test.cjs
       - name: Affiliation legacy and actual departure boundaries

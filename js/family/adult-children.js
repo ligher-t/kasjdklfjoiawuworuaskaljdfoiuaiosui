@@ -126,11 +126,9 @@ function adultChildReturnAnnualCost(s, child) {
   );
 }
 function adultChildReturnRoomSetupAffordable(s, child) {
-  return (
-    !!child &&
-    Number.isFinite(child.by) &&
-    moveFunds(s) >= adultChildReturnRoomSetupCost(s) + annualCashReserve(s)
-  );
+  if (!child || child.d || !Number.isFinite(child.by)) return false;
+  if (Number.isFinite(child.returnRoomSetupYear)) return true;
+  return moveFunds(s) >= adultChildReturnRoomSetupCost(s) + annualCashReserve(s);
 }
 function siblingVisitRoute(
   s,
@@ -196,14 +194,20 @@ const childForEvent = (s, id) => {
     const grown = children.filter(
       x => s.year - x.by >= 18 && (x.contactReviewYear == null || x.contactReviewYear <= s.year)
     );
+    // Eligibility, choice display, and dispatch must agree on the same child.
+    const stable = candidates => {
+      if (!candidates.length) return null;
+      const sorted = candidates.slice().sort((a, b) => String(a.id).localeCompare(String(b.id)));
+      return sorted[((s.year % sorted.length) + sorted.length) % sorted.length];
+    };
     const moved = grown.filter(x => (x.moveHistory?.length || 0) > (x.knownMoveCount || 0));
-    if (moved.length) return pick(moved);
+    if (moved.length) return stable(moved);
     const request = grown.filter(x => Number.isFinite(x.returnRequestYear));
-    if (request.length) return pick(request);
+    if (request.length) return stable(request);
     const pending = grown.filter(x => Number.isFinite(x.returnOfferYear));
-    if (pending.length) return pick(pending);
+    if (pending.length) return stable(pending);
     const supported = grown.filter(x => (x.remittanceAnnual || 0) > 0);
-    return supported.length ? pick(supported) : grown.length ? pick(grown) : null;
+    return stable(supported.length ? supported : grown);
   }
   if (id === "adult_child_memory" || id === "life_personal_wishes") {
     const grown = children.filter(x => s.year - x.by >= 18);
@@ -236,6 +240,7 @@ function adultChildEmergencyAidCost(s) {
 function adultChildEmergencyAidAffordable(s, child = childForEvent(s, "adult_child_contact")) {
   const row = child?.budgetHistory?.at(-1);
   return (
+    child?.householdStatus === "independent" &&
     !!row &&
     Number.isFinite(row.net) &&
     row.net < 0 &&

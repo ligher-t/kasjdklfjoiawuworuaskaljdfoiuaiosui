@@ -117,7 +117,7 @@ window.TERRA_DATA_BUILD.run("base/daily-family", function ($terraData, $define, 
           ]
         ),
         $terraData.K(
-          "寝床を整えて家に迎える（準備費{grownKidReturnRoomCost}）",
+          "寝床を整えて家に迎える（未準備なら{grownKidReturnRoomCost}）",
           {
             show: s => $rules.compatibility.tags(s).has("対象の子から帰宅相談中"),
             en: s =>
@@ -129,7 +129,7 @@ window.TERRA_DATA_BUILD.run("base/daily-family", function ($terraData, $define, 
           },
           [
             1,
-            "{grownKid}の頼みを受け入れ、{grownKidReturnRoomCost}で寝床や身の回りを整えて再び同じ屋根の下に迎えた。家事や暮らしの分担は、顔を合わせながら少しずつ決めていけばいい。",
+            "{grownKid}の頼みを受け入れ、寝床や身の回りを整えて再び同じ屋根の下に迎えた。家事や暮らしの分担は、顔を合わせながら少しずつ決めていけばいい。",
             { childContact: "return", childReturnRoomSetup: 1, rl: 4, p: 2 }
           ]
         ),

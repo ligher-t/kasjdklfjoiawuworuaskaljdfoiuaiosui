@@ -34,6 +34,7 @@ const approved=Object.freeze([
   "v88_infected_organization_exit_consistency.test.cjs",
   "v88_infected_org_reentry_suspension_age.test.cjs",
   "v88_kazdel_child_family_memory_context.test.cjs",
+  "v88_adult_child_contact_target_and_funds.test.cjs",
   "v88_affiliation_goal_closure.test.cjs",
   "v88_affiliation_legacy_event_boundaries.test.cjs",
   "v88_reunion_goal_transition.test.cjs",

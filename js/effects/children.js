@@ -161,10 +161,10 @@ function applyChildEffects(e, s, addMoney) {
         child.visitCount = (child.visitCount || 0) + 1;
       }
       if (e.childContact === "returnOffer" || e.childReturnRoomSetup) {
-        const setupCost = adultChildReturnRoomSetupCost(s);
-        if (!adultChildReturnRoomSetupAffordable(s, child))
-          throw new Error("成人子を迎える準備費と家計の予備を残せません");
         if (!Number.isFinite(child.returnRoomSetupYear)) {
+          if (!adultChildReturnRoomSetupAffordable(s, child))
+            throw new Error("成人子を迎える準備費と家計の予備を残せません");
+          const setupCost = adultChildReturnRoomSetupCost(s);
           const setupWallet = inSharedHousehold(s)
             ? s.house || (s.house = { cash: 0, debt: 0, inc: 0, exp: 0 })
             : s;
