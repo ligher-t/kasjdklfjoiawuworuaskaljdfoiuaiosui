@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Synchronize and test annual family transfers
+      - name: Verify family service-bound annual remittances
         run: |
           node tools/generate-event-catalog.cjs --write
           node tools/generate-event-catalog.cjs --check
