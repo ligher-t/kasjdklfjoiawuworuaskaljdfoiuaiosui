@@ -359,7 +359,7 @@ window.TERRA_DATA_BUILD.fragment(
           "まとまった金を一度送り、急場をしのいでもらう",
           {
             show: { ban: ["対象きょうだいとの連絡終了"] },
-            en: { affordableCash: 1e5 },
+            en: { affordableCashAfterReserve: 1e5 },
             why: "10万龍門幣相当の仕送りを出すと、自分の生活費が足りなくなる"
           },
           [
