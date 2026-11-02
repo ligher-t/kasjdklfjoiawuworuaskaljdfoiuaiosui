@@ -13,6 +13,13 @@ function settleAnnualHouseholdBudget(s, services, a) {
         inc: 0,
         exp: 0
       });
+    // Caregiver income and living costs follow the family ledger, not the
+    // adult protagonist's privately held savings.
+    const householdReference = services.EXP[2] * s.res.pm * (s.priceIndex || 1) * 1.6;
+    const householdYears = householdReference > 0
+      ? Math.max(0, (house.cash || 0) - (house.debt || 0)) / householdReference : 0;
+    const householdWealthIndex = Math.min(services.EXP.length - 1,
+      services.P("economy.wealthClassReserveYears").filter(x => householdYears >= x).length);
     const parents = (s.care.parentKeys || ["fa", "mo"]).map(k => s.par[k]).filter(x => x && !x.d);
     const grossParentIncome = parents.reduce(
         (sum, x) => sum + (services.J[x.j]?.pay || 0) * (x.workShare ?? 1),
@@ -25,7 +32,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
           : 0;
     const wageIndex = (1 + (s.priceIndex - 1) * 0.65) * services.localityEarningsMultiplier(s),
       networkIncome = s.care.networkIncome * s.res.pm * wageIndex,
-      capitalIncome = [0, 0, 3e5, 2e6, 6e6][s.w.i] * s.res.pm * wageIndex,
+      capitalIncome = [0, 0, 3e5, 2e6, 6e6][householdWealthIndex] * s.res.pm * wageIndex,
       hinc =
         Math.max(0, grossParentIncome - lostParentIncome) * s.care.parentShare * s.res.pm * wageIndex +
         networkIncome +
@@ -71,7 +78,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
     const hex =
       Math.max(
         services.P("economy.minimumExpenseBase") * costPm,
-        services.EXP[s.w.i] * costPm * householdUnits
+        services.EXP[householdWealthIndex] * costPm * householdUnits
       ) +
       petCost * s.priceIndex +
       schoolCost * s.priceIndex +
@@ -122,7 +129,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
       expense: {
         living: Math.max(
           services.P("economy.minimumExpenseBase") * costPm,
-          services.EXP[s.w.i] * costPm * householdUnits
+          services.EXP[householdWealthIndex] * costPm * householdUnits
         ),
         pet: petCost * s.priceIndex,
         school: schoolCost * s.priceIndex + educationTuition,
@@ -163,8 +170,10 @@ function settleAnnualHouseholdBudget(s, services, a) {
     }
     if (siblingCareCost) services.lapseUnaffordableSiblingTreatment(s, siblingCareCost);
     // 成年・自立年齢への移行時の資金引き継ぎ（世帯貯蓄に余力がある場合、本人口座へ独立支度金を分与）
-    if ((a >= 18 || a >= services.householdEndAge(s) - 1) && !s.familyLaunchTransferred && (house.cash || 0) > 0 && (house.debt || 0) <= 0) {
-      const share = [0, 0.1, 0.2, 0.25, 0.3][s.w.i] || 0.2;
+    if (a <= Math.max(18, services.householdEndAge(s)) &&
+        (a >= 18 || a >= services.householdEndAge(s) - 1) &&
+        !s.familyLaunchTransferred && (house.cash || 0) > 0 && (house.debt || 0) <= 0) {
+      const share = [0, 0.1, 0.2, 0.25, 0.3][householdWealthIndex] || 0.2;
       const transferAmount = Math.floor(house.cash * share);
       if (transferAmount > 0) {
         house.cash -= transferAmount;

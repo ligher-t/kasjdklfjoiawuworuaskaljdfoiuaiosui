@@ -64,7 +64,7 @@ const adultShared = vm.runInContext(`(() => {
   s.par.mo.d = 0;
   s.par.mo.j = 0;
   s.care.networkIncome = 0;
-  s.w = WEALTH[0];
+  s.w = WEALTH[4];
   s.house.cash = 0;
   s.cash = 120000000;
   const personalCashBefore = s.cash;
@@ -76,6 +76,7 @@ const adultShared = vm.runInContext(`(() => {
   refreshWealthClass(s);
   return {
     houseYear, year: s.year, transfer, paidByHousehold,
+    parentalCapital: s.house.flow.income.capital,
     savedFromOwnFunds: personalCashBefore - s.cash + (s.inc - s.exp),
     personalLiving: s.flow.expense.living,
     accountedContribution: s.flow.expense.familyContribution || 0,
@@ -86,6 +87,7 @@ const adultShared = vm.runInContext(`(() => {
 })()`, ctx);
 assert.equal(adultShared.houseYear, adultShared.year, 'shared family books must advance beyond the exit-age guideline');
 assert(adultShared.paidByHousehold > 0, 'adult shared living costs belong to the shared ledger');
+assert.equal(adultShared.parentalCapital, 0, 'the adult fortune must not invent passive income for impoverished parents');
 assert.equal(adultShared.personalLiving, 0, 'do not charge adult shared living costs twice');
 assert(adultShared.transfer > 0, 'adult shared savings must cover an actual household cash shortfall');
 assert.equal(adultShared.accountedContribution, adultShared.transfer, 'internal transfer must be visible in both ledgers');
