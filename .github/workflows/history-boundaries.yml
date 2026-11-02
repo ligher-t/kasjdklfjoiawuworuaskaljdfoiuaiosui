@@ -28,6 +28,7 @@ on:
       - 'tests/v88_separate_spouse_sibling_annual_reconciliation.test.cjs'
       - 'tests/v88_spouse_oneoff_and_annual_receipt_idempotency.test.cjs'
       - 'tests/v88_multi_child_annual_family_budget_reconciliation.test.cjs'
+      - 'tests/v88_divorce_child_support_recipient_receipts.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
   pull_request:
@@ -58,6 +59,7 @@ on:
       - 'tests/v88_separate_spouse_sibling_annual_reconciliation.test.cjs'
       - 'tests/v88_spouse_oneoff_and_annual_receipt_idempotency.test.cjs'
       - 'tests/v88_multi_child_annual_family_budget_reconciliation.test.cjs'
+      - 'tests/v88_divorce_child_support_recipient_receipts.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
 permissions:
@@ -119,3 +121,5 @@ jobs:
         run: node tools/check-efficient.cjs run v88_spouse_oneoff_and_annual_receipt_idempotency.test.cjs
       - name: Multiple child medical, study and annual family remittance reconciliation
         run: node tools/check-efficient.cjs run v88_multi_child_annual_family_budget_reconciliation.test.cjs
+      - name: Divorce child support recipient and former spouse receipts
+        run: node tools/check-efficient.cjs run v88_divorce_child_support_recipient_receipts.test.cjs
