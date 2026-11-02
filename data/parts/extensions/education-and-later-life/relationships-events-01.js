@@ -760,6 +760,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.65,
       t: [
@@ -774,6 +775,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.6,
       t: [
@@ -788,6 +790,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.6,
       t: [
@@ -802,6 +805,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.55,
       t: [
@@ -816,6 +820,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES", "SRC_MOBILE_CITY_MOBILITY"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.6,
       t: [
@@ -830,6 +835,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.6,
       t: [
@@ -844,6 +850,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 4,
       w: 0.5,
       t: [

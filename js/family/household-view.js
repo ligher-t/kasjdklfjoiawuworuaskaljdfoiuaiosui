@@ -99,12 +99,21 @@ function currentHouseholdMembers(s) {
   }
   if (arrangement === "partner_shared" && s.romance?.stage === "cohabiting")
     members.push(s.romance.name || s.romance.nm || "同居する恋人");
-  if (arrangement === "spouse_parent_home") members.push("配偶者の親族（個別記録なし）");
-  if (s.sp && !s.sp.d && (arrangement.startsWith("spouse_") || spouseLivesWithProtagonist(s)))
+  if (arrangement === "spouse_parent_home" && spouseLivesWithProtagonist(s))
+    members.push("配偶者の親族（個別記録なし）");
+  if (spouseLivesWithProtagonist(s))
     members.push(s.sp.nm || "配偶者");
-  for (const child of s.kids || [])
-    if (!child.d && child.householdStatus !== "independent" && child.householdResidencePlan !== "former")
+  for (const child of s.kids || []) {
+    const plan = child.householdResidencePlan,
+      former = formerSpouseForChild(s, child);
+    if (
+      !child.d &&
+      child.householdStatus !== "independent" &&
+      !["former", "former_support", "unresolved"].includes(plan) &&
+      (!former || plan === "self" || plan === "shared")
+    )
       members.push(child.nm || "子");
+  }
   return members.length ? [...new Set(members)].join("、") : "なし";
 }
 const fam = s => {
