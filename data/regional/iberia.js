@@ -75,7 +75,7 @@ window.TERRA_DATA_BUILD.run("regional/iberia", function ($terraData, $define, $r
   // 審問所・法治・監視 (4件)
   iberiaDaily.push({
     id: "daily_iberia_39", conf: "S", st: ["青年", "壮年"], need: ["国:イベリア"],
-    show: {"need":["就労中"],"any":["職:イベリア審問所・見習い審問官"]},
+    show: {"need":["就労中"],"any":["職:イベリア裁判所・見習い審問官"]},
     t: "審問所の外郭警備任務に就いた。ランタンの灯りを掲げ、暗闇の海岸線から這い上がる脅威に目を光らせた。",
     fx: { cash: 1500, p: -1 }
   });

@@ -30,6 +30,7 @@ const approved=Object.freeze([
   "v88_relationship_flag_lifecycle.test.cjs",
   "v88_cohabitation_residence_accounting.test.cjs",
   "v88_family_spouse_co_residence_events_and_roster.test.cjs",
+  "v88_historical_catalog_schema_and_sources.test.cjs",
   "v88_ursus_katorga_custody_lifecycle.test.cjs",
   "v88_followup_elapsed_from_status.test.cjs",
   "v88_infected_organization_exit_consistency.test.cjs",

@@ -9,6 +9,10 @@ on:
       - 'data/regional/**'
       - 'data/parts/extensions/social-and-care/**'
       - 'data/base/daily-family.js'
+      - 'data/base/regional-conflict.js'
+      - 'data/model/flags.js'
+      - 'data/model/guide.js'
+      - 'data/model/schema.js'
       - 'data/parts/extensions/education-and-later-life/**'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
@@ -23,6 +27,7 @@ on:
       - 'tests/v88_relationship_flag_lifecycle.test.cjs'
       - 'tests/v88_cohabitation_residence_accounting.test.cjs'
       - 'tests/v88_family_spouse_co_residence_events_and_roster.test.cjs'
+      - 'tests/v88_historical_catalog_schema_and_sources.test.cjs'
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
@@ -54,6 +59,10 @@ on:
       - 'data/regional/**'
       - 'data/parts/extensions/social-and-care/**'
       - 'data/base/daily-family.js'
+      - 'data/base/regional-conflict.js'
+      - 'data/model/flags.js'
+      - 'data/model/guide.js'
+      - 'data/model/schema.js'
       - 'data/parts/extensions/education-and-later-life/**'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
@@ -68,6 +77,7 @@ on:
       - 'tests/v88_relationship_flag_lifecycle.test.cjs'
       - 'tests/v88_cohabitation_residence_accounting.test.cjs'
       - 'tests/v88_family_spouse_co_residence_events_and_roster.test.cjs'
+      - 'tests/v88_historical_catalog_schema_and_sources.test.cjs'
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
@@ -129,6 +139,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_cohabitation_residence_accounting.test.cjs
       - name: Spouse co-residence daily life and actual family roster transitions
         run: node tools/check-efficient.cjs run v88_family_spouse_co_residence_events_and_roster.test.cjs
+      - name: Historical timeline metadata, references and effect types
+        run: node tools/check-efficient.cjs run v88_historical_catalog_schema_and_sources.test.cjs
       - name: Katorga special custody and release lifecycle
         run: node tools/check-efficient.cjs run v88_ursus_katorga_custody_lifecycle.test.cjs
       - name: Delayed followup after actual withdrawal
