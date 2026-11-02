@@ -1,4 +1,4 @@
-name: Temporary grouped deadline and goal outcome verification
+name: Temporary deadline cohorts with zero-observation boundary
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]

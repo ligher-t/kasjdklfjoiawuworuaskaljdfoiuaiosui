@@ -113,7 +113,7 @@ assert.equal(supersession.unservedExamples[0].schoolEnrolled,true);
   assert.equal(coverage.observed,coverage.delivered+coverage.expiredUnserved+coverage.superseded+coverage.censored);
   assert.equal(coverage.eligibleForRate,coverage.delivered+coverage.expiredUnserved);
   for(const groups of [coverage.byRegion,coverage.byAgeBand]){
-    assert(Object.keys(groups).length>0);
+    if(coverage.observed) assert(Object.keys(groups).length>0);
     for(const key of ['observed','delivered','expiredUnserved','superseded','censored'])
       assert.equal(Object.values(groups).reduce((total,row)=>total+row[key],0),coverage[key]);
     for(const row of Object.values(groups)){
