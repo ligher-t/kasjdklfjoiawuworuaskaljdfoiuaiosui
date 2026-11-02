@@ -218091,6 +218091,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -218185,6 +218186,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -218239,6 +218241,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -218312,6 +218315,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -218366,6 +218370,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -218439,6 +218444,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -218493,6 +218499,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -218566,6 +218573,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -218620,6 +218628,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -218693,6 +218702,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -218747,6 +218757,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -233915,7 +233926,7 @@ s => {
     "year": 1095
   },
   "show": {
-    "dynamicFunction": "s =>\n        $terraData.srOnStaff(s) &&\n        s.year >= 1096 &&\n        (s.job === 31 || s.job === 34) &&\n        (s.biasInfected || 0) <= 25"
+    "dynamicFunction": "s =>\n        $terraData.srOnStaff(s) &&\n        s.year >= 1096 &&\n        (s.job === 31 || s.job === 34) &&\n        (s.biasInfected || 0) <= 25 &&\n        !s.lifeRecord?.affiliations?.some(a => a.id === \"reunion-reorg\" &&\n          [\"active\", \"crisis\", \"suspended\"].includes(a.status))"
   }
 }
 ```
@@ -233961,6 +233972,15 @@ s => {
     "action": "leave",
     "note": "感染者虐殺を前に中立を捨てレユニオンへ転向"
   },
+  "lifeGoals": [
+    {
+      "id": "rhodes-work",
+      "action": "abandon",
+      "onlyIfAffiliation": "rhodes-staff",
+      "onlyIfUnresolved": true,
+      "note": "ロドスの勤務を辞し、別の組織へ活動を移した"
+    }
+  ],
   "lifeAffiliations": [
     {
       "id": "reunion-reorg",
@@ -233970,6 +233990,13 @@ s => {
       "role": "最前線自衛戦闘班"
     }
   ],
+  "lifeGoal": {
+    "id": "reunion-relief",
+    "title": "所属した隊で感染者の生活と安全を支える",
+    "priority": "地域と安全",
+    "action": "start",
+    "note": "ロドス勤務を辞し、再編後の隊に加わった"
+  },
   "fl": {
     "reunion": 1
   },
@@ -234042,7 +234069,7 @@ s => {
     "year": 1097
   },
   "show": {
-    "dynamicFunction": "s =>\n        s.lifeRecord?.affiliations?.some(a => [\"reunion-1096\", \"reunion-reorg\"].includes(a.id) && [\"active\", \"crisis\"].includes(a.status)) &&\n        (s.ob >= 40 || s.h <= 45)"
+    "dynamicFunction": "s =>\n        s.lifeRecord?.affiliations?.some(a => [\"reunion-1096\", \"reunion-reorg\"].includes(a.id) && [\"active\", \"crisis\"].includes(a.status)) &&\n        !s.lifeRecord?.affiliations?.some(a => a.id === \"rhodes-care\" &&\n          [\"active\", \"crisis\", \"suspended\"].includes(a.status)) &&\n        (s.ob >= 40 || s.h <= 45)"
   }
 }
 ```
@@ -234081,13 +234108,35 @@ s => {
 
 ```json
 {
-  "lifeAffiliation": {
-    "id": "reunion-reorg",
-    "title": "レユニオン・ムーブメント",
-    "action": "leave",
-    "note": "組織崩壊と病状悪化によりロドスへ保護"
-  },
+  "lifeGoals": [
+    {
+      "id": "protect-neighbours",
+      "action": "abandon",
+      "onlyIfAffiliation": "reunion-1096",
+      "onlyIfUnresolved": true,
+      "note": "所属隊の活動を離れ、治療のために保護を受けた"
+    },
+    {
+      "id": "reunion-relief",
+      "action": "abandon",
+      "onlyIfAffiliation": "reunion-reorg",
+      "onlyIfUnresolved": true,
+      "note": "再編互助網の活動を離れ、治療のために保護を受けた"
+    }
+  ],
   "lifeAffiliations": [
+    {
+      "id": "reunion-1096",
+      "action": "leave",
+      "onlyIfActiveOrCrisis": true,
+      "note": "活動を離れてロドスの医療保護を受けた"
+    },
+    {
+      "id": "reunion-reorg",
+      "action": "leave",
+      "onlyIfActiveOrCrisis": true,
+      "note": "活動を離れてロドスの医療保護を受けた"
+    },
     {
       "id": "rhodes-care",
       "title": "ロドスへの療養相談",
@@ -234096,6 +234145,9 @@ s => {
       "role": "本艦・保護療養患者（元レユニオン）"
     }
   ],
+  "fl": {
+    "reunion": 0
+  },
   "h": 3,
   "p": 2
 }
@@ -234165,7 +234217,7 @@ s => {
     "year": 1097
   },
   "show": {
-    "dynamicFunction": "s =>\n        s.lifeRecord?.affiliations?.some(a => a.id === \"rhodes-care\" && a.role?.includes?.(\"元レユニオン\"))"
+    "dynamicFunction": "s =>\n        s.lifeRecord?.affiliations?.some(a => a.id === \"rhodes-care\" &&\n          [\"active\", \"crisis\"].includes(a.status) && a.role?.includes?.(\"元レユニオン\")) &&\n        !s.lifeRecord?.affiliations?.some(a => a.id === \"rhodes-staff\" &&\n          [\"active\", \"crisis\", \"suspended\"].includes(a.status))"
   }
 }
 ```
@@ -234210,6 +234262,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
@@ -234283,6 +234336,7 @@ s => {
       "id": "rhodes-employment",
       "title": "ロドスへの雇用照会",
       "action": "decline",
+      "onlyIfContacted": true,
       "note": "選考の返答を受け、照会期間が終了"
     },
     {
