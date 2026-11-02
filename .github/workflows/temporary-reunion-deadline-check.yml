@@ -1,4 +1,4 @@
-name: Temporary Reunion state and expiring choice verification
+name: Temporary extended-life missed-choice diagnostics
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
@@ -27,6 +27,7 @@ jobs:
           node tools/check-efficient.cjs run v88_reunion_goal_transition.test.cjs
           node tools/check-efficient.cjs run v88_cohabitation_residence_accounting.test.cjs
           node tools/check-efficient.cjs run audit-diagnostics.test.cjs
+          node tests/v88_deadline_coverage_metrics.test.cjs --long-run
       - name: Commit generated files
         run: |
           git add EVENT_CATALOG.md js/version.js
