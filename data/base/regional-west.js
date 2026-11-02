@@ -1974,21 +1974,23 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
       w: 1,
       cd: 1,
       pri: true,
-      t: "以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。",
+      t: "以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。",
       c: [
         $terraData.K(
-          "記録された額を返す（-90,000龍門幣）",
+          "帳面に残る立替金を全額返す",
           {
-            show: s => $rules.economy.availableFunds(s) >= 90000 + $rules.economy.annualReserve(s),
-            en: s => $rules.economy.availableFunds(s) >= 90000 + $rules.economy.annualReserve(s),
+            show: s => $rules.economy.availableFunds(s) >=
+              Number(s.siracusaFamilyTie?.duty?.outstandingAmount || 0) + $rules.economy.annualReserve(s),
+            en: s => $rules.economy.availableFunds(s) >=
+              Number(s.siracusaFamilyTie?.duty?.outstandingAmount || 0) + $rules.economy.annualReserve(s),
             why: "返済後の生活準備金を残せない"
           },
           [
             1,
             "帳面に残っていた分を返した。相手は返済を確認し、借りの記録に印をつけた。",
             {
-              cash: -90000,
-              siracusaFamilyDuty: { action: "settled", amount: 90000, note: "記録された立替金を返済" },
+              cash: s => -Math.max(0, Number(s.siracusaFamilyTie?.duty?.outstandingAmount || 0)),
+              siracusaFamilyDuty: { action: "settled", amount: "outstanding", note: "記録された立替金を返済" },
               lifeGoal: { id: "siracusa-family-livelihood", action: "continue", onlyIfActive: true, note: "立替金を清算した" },
               groupStanding: {
                 id: "siracusa-familia",
@@ -2002,7 +2004,7 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
         $terraData.K(
           "事情を話し、仲介役を通じて30,000龍門幣を返す（残額の扱いを相談）",
           {
-            show: s => s.siracusaFamilyTie?.duty?.outstandingAmount > 0,
+            show: s => s.siracusaFamilyTie?.duty?.outstandingAmount >= 30000,
             en: s => $rules.economy.availableFunds(s) >= 30000 + $rules.economy.annualReserve(s),
             why: "仲介費用を出すと生活準備金が不足する"
           },
@@ -2041,13 +2043,13 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
           ],
           [
             1,
-            "仲介役を通じて30,000龍門幣を返したが、残る60,000龍門幣も返すよう求められた。期限は二年後となり、ファミリーの仕事から距離を置いた。",
+            "仲介役を通じて30,000龍門幣を返したが、残額も返すよう求められた。期限は二年後となり、ファミリーの仕事から距離を置いた。",
             {
               cash: -30000,
               siracusaFamilyDuty: {
                 action: "mediated",
-                amount: 60000,
-                note: "仲介を頼み、30,000龍門幣を返した。残額60,000龍門幣は二年後までに返す"
+                amount: "remaining-after-30000",
+                note: "仲介を頼み、30,000龍門幣を返した。残額は二年後までに返す"
               },
               siracusaFamilyAction: { action: "distant", onlyIfMember: true },
               lifeAffiliation: {
@@ -2081,7 +2083,7 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
           {
             siracusaFamilyDuty: {
               action: "disputed",
-              amount: 90000,
+              amount: "outstanding",
               note: "支払い要求を拒み接触を断った。帳面上の借りは未解決"
             },
             siracusaFamilyAction: "left",
