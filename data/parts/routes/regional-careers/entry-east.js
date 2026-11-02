@@ -13,6 +13,7 @@ window.TERRA_DATA_BUILD.fragment(
       id: "car_yan_court_entry",
       conf: "S",
       st: ["青年", "壮年"],
+      months: [3, 4, 5],
       cd: 3,
       w: 0.5,
       ge: { age: 18, year: 1090 },
