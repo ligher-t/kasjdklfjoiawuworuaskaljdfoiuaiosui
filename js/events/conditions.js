@@ -145,8 +145,9 @@ const ok = (c, s, T) => {
     (!c.affordableSiblingCareSupport ||
       moveFunds(s) >=
         independentSiblingCareSupportExpense(s) +
-          P("economy.siblingInfectionSupportAnnualCost") * s.res.pm * (s.priceIndex || 1) *
-            localityLivingMultiplier(s) * infectionCareTravelCostScale(s) +
+          P("economy.siblingInfectionSupportAnnualCost") *
+            (s.res.pm * (s.priceIndex || 1) * localityLivingMultiplier(s)) *
+            infectionCareTravelCostScale(s) +
           annualCashReserve(s))
   );
 };
