@@ -183250,6 +183250,7 @@ s =>
   "need": [
     "ロドス研究から離脱済み"
   ],
+  "once": true,
   "show": {
     "dynamicFunction": "s => {\n      const affiliation = s.lifeRecord?.affiliations?.find(row => row.id === \"rhodes-research\"),\n        episode = researchEpisode(s);\n      return affiliation?.status === \"left\" && yearsSince(episode?.endedYear, s.year);\n    }"
   },
@@ -183330,11 +183331,6 @@ s =>
 
 ```json
 {
-  "lifeAffiliation": {
-    "id": "rhodes-research",
-    "action": "leave",
-    "note": "自ら距離を置いた"
-  },
   "p": 1
 }
 ```
@@ -184117,9 +184113,16 @@ s =>
   "need": [
     "再編レユニオン互助網から離脱済み"
   ],
-  "after": null,
+  "after": {
+    "id": "life_reunion_reorg_tension",
+    "min": 1
+  },
+  "once": true,
   "cd": 6,
-  "w": 0.2
+  "w": 0.2,
+  "show": {
+    "dynamicFunction": "s => {\n      const affiliation = s.lifeRecord?.affiliations?.find(row => row.id === \"reunion-reorg\");\n      return affiliation?.status === \"left\" &&\n        Number.isInteger(affiliation.endedYear) && s.year - affiliation.endedYear >= 2;\n    }"
+  }
 }
 ```
 
@@ -205689,7 +205692,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   "once": true,
   "w": 0.07,
   "show": {
-    "dynamicFunction": "s => affiliation(s)?.status === \"left\""
+    "dynamicFunction": "s => hasLeft(s) &&\n        Number.isInteger(affiliation(s)?.endedYear) &&\n        s.year - affiliation(s).endedYear >= 10"
   }
 }
 ```
