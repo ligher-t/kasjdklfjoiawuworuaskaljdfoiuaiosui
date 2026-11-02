@@ -524,7 +524,7 @@ window.TERRA_DATA_BUILD.fragment(
             delta: 3,
             reason: "物資の受け渡しを続けた"
           },
-          lifeGoal: { id: "reunion-relief", action: "continue", note: "身近な範囲の互助を継続" },
+          lifeGoal: { id: "reunion-relief", title: "身近な感染者へ薬と食料を届ける", action: "continue", note: "身近な範囲の互助を継続" },
           regionalImpact: {
             entity: "感染者世帯への生活物資の連絡網",
             kind: "reorg-relief",
@@ -547,7 +547,8 @@ window.TERRA_DATA_BUILD.fragment(
           },
           lifeGoal: {
             id: "reunion-relief",
-            action: "compromise",
+            title: "身近な感染者へ薬と食料を届ける",
+          action: "compromise",
             note: "支援を続けたいが定期役は引き受けなかった"
           },
           p: 1
@@ -563,7 +564,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "leave",
             note: "家族と診療先を優先して離脱"
           },
-          lifeGoal: { id: "reunion-relief", action: "abandon", note: "互助網での役割を断念" },
+          lifeGoal: { id: "reunion-relief", title: "身近な感染者へ薬と食料を届ける", action: "abandon", note: "互助網での役割を断念" },
           p: 1
         }
       ])
@@ -645,7 +646,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "leave",
             note: "配給不足の照会を巡る対立で離脱"
           },
-          lifeGoal: { id: "reunion-relief", action: "abandon", note: "運搬役と互助網を離れた" },
+          lifeGoal: { id: "reunion-relief", title: "身近な感染者へ薬と食料を届ける", action: "abandon", note: "運搬役と互助網を離れた" },
           p: -2
         }
       ])
@@ -702,7 +703,8 @@ window.TERRA_DATA_BUILD.fragment(
           },
           lifeGoal: {
             id: "reunion-relief",
-            action: "pause",
+            title: "身近な感染者へ薬と食料を届ける",
+          action: "pause",
             note: "内部対立の間は定期の配給当番を休止した"
           },
           groupStanding: {
@@ -767,7 +769,7 @@ window.TERRA_DATA_BUILD.fragment(
             role: "限定的な配給受け渡し",
             note: "休止後、本人が可能な範囲で当番へ復帰"
           },
-          lifeGoal: { id: "reunion-relief", action: "continue", note: "限られた配給当番を再開" },
+          lifeGoal: { id: "reunion-relief", title: "身近な感染者へ薬と食料を届ける", action: "continue", note: "限られた配給当番を再開" },
           p: 1
         }
       ]),
@@ -780,7 +782,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "review",
             note: "本人が休止を続け、数年後に再確認する"
           },
-          lifeGoal: { id: "reunion-relief", action: "pause", note: "配給当番の休止を続けた" },
+          lifeGoal: { id: "reunion-relief", title: "身近な感染者へ薬と食料を届ける", action: "pause", note: "配給当番の休止を続けた" },
           p: 0
         }
       ]),
@@ -793,7 +795,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "leave",
             note: "休止後、本人が連絡網を離れた"
           },
-          lifeGoal: { id: "reunion-relief", action: "abandon", note: "配給当番と連絡網を離れた" },
+          lifeGoal: { id: "reunion-relief", title: "身近な感染者へ薬と食料を届ける", action: "abandon", note: "配給当番と連絡網を離れた" },
           p: 0
         }
       ])
