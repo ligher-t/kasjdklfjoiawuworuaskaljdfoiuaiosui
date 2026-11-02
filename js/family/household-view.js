@@ -97,6 +97,8 @@ function currentHouseholdMembers(s) {
     for (const sibling of siblingsOf(s))
       if (!sibling.d && !sibling.independentSinceYear) members.push(sibling.nm);
   }
+  if (arrangement === "partner_shared" && s.romance?.stage === "cohabiting")
+    members.push(s.romance.name || s.romance.nm || "同居する恋人");
   if (arrangement === "spouse_parent_home") members.push("配偶者の親族（個別記録なし）");
   if (s.sp && !s.sp.d && (arrangement.startsWith("spouse_") || spouseLivesWithProtagonist(s)))
     members.push(s.sp.nm || "配偶者");
@@ -469,6 +471,8 @@ const fam = s => {
         independent_rental: "別の賃貸住居で独立",
         independent_owned: "自己所有の住居で独立",
         spouse_shared: "配偶者と同居",
+        partner_shared: "婚姻前の恋人と同居（本人の家計は別管理）",
+        post_cohabitation_housing_unconfirmed: "同居解消後・住居と契約の状況を確認中（転居の記録なし）",
         spouse_parent_home: "配偶者の親族宅で同居（他の同居者は未記録）"
       }[s.residenceArrangement] || "旧記録では未確認"
     ],

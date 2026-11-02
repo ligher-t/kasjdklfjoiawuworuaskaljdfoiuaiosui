@@ -13,6 +13,7 @@ on:
       - 'tests/v88_effect_subject_finance_and_infection.test.cjs'
       - 'tests/v88_outcome_followup_lineage.test.cjs'
       - 'tests/v88_relationship_flag_lifecycle.test.cjs'
+      - 'tests/v88_cohabitation_residence_accounting.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
   pull_request:
@@ -28,6 +29,7 @@ on:
       - 'tests/v88_effect_subject_finance_and_infection.test.cjs'
       - 'tests/v88_outcome_followup_lineage.test.cjs'
       - 'tests/v88_relationship_flag_lifecycle.test.cjs'
+      - 'tests/v88_cohabitation_residence_accounting.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
 permissions:
@@ -59,3 +61,5 @@ jobs:
         run: |
           node tools/check-efficient.cjs run v88_relationship_flag_lifecycle.test.cjs
           node tools/check-efficient.cjs run v88_romance_lifecycle_coherence.test.cjs
+      - name: Unmarried cohabitation, breakup and balance-sheet boundaries
+        run: node tools/check-efficient.cjs run v88_cohabitation_residence_accounting.test.cjs
