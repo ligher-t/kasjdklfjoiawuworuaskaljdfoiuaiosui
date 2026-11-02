@@ -121831,6 +121831,7 @@ s => {
   "need": [
     "国:シエスタ"
   ],
+  "crisisPolicy": "nonessential-leisure",
   "fx": {
     "h": 1,
     "p": 3
@@ -122111,6 +122112,7 @@ s => {
   "need": [
     "国:シエスタ"
   ],
+  "crisisPolicy": "nonessential-leisure",
   "fx": {
     "h": 2,
     "p": 2
@@ -122205,6 +122207,7 @@ s => {
   "need": [
     "国:シエスタ"
   ],
+  "crisisPolicy": "nonessential-leisure",
   "fx": {
     "p": 2
   }
@@ -122386,6 +122389,7 @@ s => {
   "need": [
     "国:シエスタ"
   ],
+  "crisisPolicy": "nonessential-leisure",
   "fx": {}
 }
 ```
@@ -122650,6 +122654,7 @@ s => {
   "need": [
     "国:シエスタ"
   ],
+  "crisisPolicy": "nonessential-leisure",
   "fx": {}
 }
 ```
@@ -123909,6 +123914,7 @@ s => {
 {
   "id": "daily_siesta_47",
   "conf": "S",
+  "crisisPolicy": "nonessential-leisure",
   "st": [
     "少年",
     "青年"
@@ -124050,6 +124056,7 @@ s => {
 {
   "id": "daily_siesta_50",
   "conf": "S",
+  "crisisPolicy": "nonessential-leisure",
   "st": [
     "青年",
     "壮年",
@@ -124101,6 +124108,7 @@ s => {
 {
   "id": "daily_siesta_51",
   "conf": "S",
+  "crisisPolicy": "nonessential-leisure",
   "st": [
     "青年",
     "壮年",
@@ -151576,6 +151584,7 @@ s => {
 {
   "id": "daily_bolivar_39",
   "conf": "S",
+  "crisisPolicy": "nonessential-leisure",
   "st": [
     "青年",
     "壮年"
@@ -151628,6 +151637,7 @@ s => {
 {
   "id": "daily_bolivar_40",
   "conf": "S",
+  "crisisPolicy": "nonessential-leisure",
   "st": [
     "青年",
     "壮年"
@@ -151774,6 +151784,7 @@ s => {
 {
   "id": "daily_bolivar_43",
   "conf": "S",
+  "crisisPolicy": "nonessential-leisure",
   "st": [
     "青年",
     "壮年",
