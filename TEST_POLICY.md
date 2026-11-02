@@ -107,6 +107,7 @@
 | v88_affiliation_goal_closure.test.cjs | 高 | 地区陳情・屋敷実務・ロドス研究の正式離脱8分岐を実際の効果適用で確認し、所属の終了と人生目標の終了を同じ人物に結び付ける。 |
 | v88_affiliation_legacy_event_boundaries.test.cjs | 高 | レユニオンの配給問題を経験した離脱者の後日談、屋敷退職後10年境界、ロドス研究離脱後の重複離脱効果を実エンジンと状態遷移で直接検出する。 |
 | v88_reunion_goal_transition.test.cjs | 高 | 再編互助網の内部危機・休止・3年後の復帰、旧レユニオン隊から新互助網への移籍（活動中・休止中）で、所属期間と関連人生目標の終了／再開を実効果で直接検証する。 |
+| v88_cross_faction_affiliation_transitions.test.cjs | 高 | ロドスと旧／再編レユニオンの移籍を実イベント効果で行い、在籍していない組織の離脱防止・在籍目標の終了・療養のみからの雇用・重複勧誘防止と旧旗の解除を検証する。 |
 | v87_life_text_context.js | 高 | 年齢・養育者視点・人物関係・医療文脈の適格性を確認。 |
 | v87_livelihood_investment.js | 中 | 投資の資金ゲートと効果定義の確認が中心で、結果の会計処理を直接確認しない。 |
 | v87_locality_pressure_history.js | 高 | 地域圧力の適用・履歴と他生活圏への持ち越し防止を確認。 |
