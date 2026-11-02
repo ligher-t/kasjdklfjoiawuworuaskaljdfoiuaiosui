@@ -25,6 +25,7 @@ jobs:
           node tools/check-efficient.cjs syntax
           node tools/check-efficient.cjs run v88_student_familia_status_debt.test.cjs
           node tools/check-efficient.cjs run v87_siracusa_family_lifecourse.js
+          node tools/check-efficient.cjs run v87_ursus_student_reentry.js
       - name: Commit generated files only
         run: |
           git add EVENT_CATALOG.md js/version.js
