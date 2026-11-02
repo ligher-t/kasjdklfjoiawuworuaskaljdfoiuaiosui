@@ -24,6 +24,7 @@ on:
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
       - 'tests/v88_infected_org_reentry_suspension_age.test.cjs'
+      - 'tests/v88_kazdel_child_family_memory_context.test.cjs'
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
@@ -63,6 +64,7 @@ on:
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
       - 'tests/v88_infected_org_reentry_suspension_age.test.cjs'
+      - 'tests/v88_kazdel_child_family_memory_context.test.cjs'
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
@@ -123,6 +125,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_infected_organization_exit_consistency.test.cjs
       - name: Suspended mutual aid reentry uses most recent actual pause
         run: node tools/check-efficient.cjs run v88_infected_org_reentry_suspension_age.test.cjs
+      - name: Kazdel displaced parent child question matches family context
+        run: node tools/check-efficient.cjs run v88_kazdel_child_family_memory_context.test.cjs
       - name: Civic and research duties close linked life goals
         run: node tools/check-efficient.cjs run v88_affiliation_goal_closure.test.cjs
       - name: Affiliation legacy and actual departure boundaries

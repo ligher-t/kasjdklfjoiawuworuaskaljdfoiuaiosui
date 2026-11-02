@@ -283,8 +283,14 @@ window.TERRA_DATA_BUILD.fragment(
       after: { id: "life_kazdel_displaced_start", min: 7 },
       once: true,
       w: 0.2,
-      show: s => isActive(s) && (s.kids || []).some(child => !child.d),
-      t: "この土地で育った子どもに、「カズデルってどんな場所だったの？」と尋ねられた。自分が目で見た故郷の風景や、苦しい避難の記憶をどこまで語って聞かせるか考えた。",
+      show: s => isActive(s) && (s.kids || []).some(child =>
+        !child.d &&
+        Number.isInteger(child.by) && s.year - child.by >= 6 &&
+        !["independent", "study"].includes(child.householdStatus) &&
+        !["former", "former_support", "unresolved"].includes(child.householdResidencePlan) &&
+        child.contactState !== "paused"
+      ),
+      t: "夕餉の支度をしていると、子どもに「カズデルってどんな場所だったの？」と尋ねられた。自分が目で見た故郷の風景や、苦しい避難の記憶をどこまで語って聞かせるか考えた。",
       c: [
         $terraData.K("自分がその目で見たカズデルの街並みと、人から聞いた話を分けて語って聞かせる", {}, [
           1,
