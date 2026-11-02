@@ -177,16 +177,21 @@ function slot(x) {
   );
   const expiringChoices = mj.filter(event => nextExpiringFollowup([event],s) === event);
   const expiringFollowup = nextExpiringFollowup(expiringChoices,s);
-  // Even a fully prioritized event cannot fire if every remaining draw is
-  // exhausted. Reserve distinct future months while eligible deadlines remain.
-  reserveExpiringSlots(s, expiringChoices);
+  const schoolReview = requiredSchool ? mj.find(event => event.id === requiredSchool) : null;
+  // Schooling and due medical reviews also consume the year's major-choice
+  // capacity. Count them once if they are themselves expiring.
+  const protectedChoices = [...new Set([
+    ...expiringChoices, ...(medicalReview ? [medicalReview] : []),
+    ...(schoolReview ? [schoolReview] : [])
+  ])];
+  reserveExpiringSlots(s, protectedChoices);
   const localTimelineChoice = mj.find(event =>
     event.timelineFlag &&
     s.world?.events?.[event.timelineFlag] &&
     !s.sn?.[event.id] &&
     hasActionableChoice(event)
   );
-  let e = (requiredSchool ? mj.find(event => event.id === requiredSchool && hasActionableChoice(event)) : null) ||
+  let e = schoolReview ||
     medicalReview ||
     expiringFollowup ||
     localTimelineChoice ||

@@ -74,6 +74,43 @@ assert.equal(overload.lateDelivered.length,2,
  'one November event can reserve December, but cannot manufacture earlier months');
 assert.deepEqual(overload.queue,[],'no overflow survives into the next calendar year');
 assert.equal(overload.year,1098,'all reserved opportunities occur before the annual transition');
+const mixed=inspect(`
+ born({seed:186073,by:1060,region:'ヴィクトリア'});
+ S.year=1098;S.age=38;S.mo=0;
+ S.educationDecision={kind:'upper-path'};
+ S.infectionWorkplace={reviewDueYear:1098};
+ S.majorEventMonth=null;
+ S.world={events:{}};
+ const regular=Array.from({length:6},(_,i)=>({
+   id:'mixed_deadline_'+i,st:['壮年'],
+   after:{id:'mixed_seed_'+i,min:1,max:3},
+   c:[{l:'結論を決める',o:[[1,'決定を記録する',{}]]}],w:1
+ }));
+ const school={id:'education_upper_path',st:['壮年'],c:[{l:'進路を決める',o:[[1,'進路を決めた',{}]]}]};
+ const medical={id:'infection_workplace_review',st:['壮年'],c:[{l:'再検査を行う',o:[[1,'再検査を終えた',{}]]}]};
+ for(let i=0;i<regular.length;i++)S.sn['mixed_seed_'+i]=1095;
+ const original=EV.slice(),previousFire=fire,selected=[];
+ S.q=[(2-0.5)/CALENDAR_MONTHS,(8-0.5)/CALENDAR_MONTHS];
+ try{
+   EV.splice(0,EV.length,...regular,medical,school);
+   fire=(e,s)=>{
+     selected.push({id:e.id,month:s.mo});
+     s.sn[e.id]=s.year;
+     s.majorEventMonth={year:s.year,month:s.mo};
+     if(e.id===school.id)s.educationDecision=null;
+     if(e.id===medical.id)s.infectionWorkplace.reviewDueYear=1099;
+   };
+   while(S.q.length)slot(S.q.shift());
+   return {selected,pending:regular.filter(e=>S.sn[e.id]!==1098).map(e=>e.id)};
+ }finally{fire=previousFire;EV.splice(0,EV.length,...original);}
+`);
+assert.equal(mixed.selected.length,8,'school, medical and six final-year choices all receive slots');
+assert.equal(mixed.selected[0].id,'education_upper_path','mandatory schooling remains first');
+assert.equal(mixed.selected[1].id,'infection_workplace_review','due medical review follows school');
+assert.deepEqual(mixed.pending,[],'all expiring events survive school and medical priority');
+assert.equal(new Set(mixed.selected.map(x=>x.month)).size,8,
+ 'competing compulsory choices cannot consume two slots from the same month');
+
 console.log(JSON.stringify({passed:true,scheduleSamples:sampling.count,
  sixSlotSchedules:sampling.sixSlotSchedules,oldCollisionSamples:sampling.oldCollisions,
  newCollisionSamples:0,highPressureDelivered:overload.delivered.length,
