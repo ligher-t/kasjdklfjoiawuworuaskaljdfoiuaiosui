@@ -54,7 +54,7 @@ window.TERRA_DATA_BUILD.run("review/historical-reviews", function ($terraData, $
     {
       life_ursus_student_assembly_contact: "i,w",
       life_ursus_student_assembly_meeting: "d,a,w",
-      life_ursus_student_assembly_protest: "a,a,w",
+      life_ursus_student_assembly_protest: "a,a,w,i,w",
       life_ursus_katorga_life: "i,i,s",
       life_ursus_student_assembly_release: "d,w,s",
       life_ursus_student_assembly_later: "i,i,w",
