@@ -62,13 +62,13 @@ assert.equal(late.metrics.expiredUnserved,5-lateAllowed);
 // The real developer runner must collect results over complete years, keep
 // death-censored observations out of expiry, and preserve reproducibility.
 (async()=>{
-  const options={count:18,masterSeed:19761103,maxYears:65,birthYearMin:1060,birthYearMax:1075,regionSampling:'balanced'};
+  const options={count:19,masterSeed:19761103,maxYears:65,birthYearMin:1060,birthYearMax:1075,regionSampling:'balanced'};
   ctx.auditOptions=options;
   const report=await vm.runInContext('runDevSimulation(auditOptions)',ctx);
   const coverage=JSON.parse(JSON.stringify(report.deadlineCoverage));
   assert.equal(report.summary.runtimeFailures,0);
   assert.equal(report.summary.stateFailures,0);
-  assert.equal(report.summary.sampled,18);
+  assert.equal(report.summary.sampled,19);
   assert.equal(coverage.observed,coverage.delivered+coverage.expiredUnserved+coverage.censored);
   assert.equal(coverage.eligibleForRate,coverage.delivered+coverage.expiredUnserved);
   const rows=Object.values(coverage.byEvent);
