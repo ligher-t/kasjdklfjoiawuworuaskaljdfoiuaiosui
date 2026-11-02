@@ -5,6 +5,7 @@ on:
     paths:
       - 'js/**'
       - 'data/world/history.js'
+      - 'data/parts/routes/regional-careers/**'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
@@ -38,6 +39,7 @@ on:
     paths:
       - 'js/**'
       - 'data/world/history.js'
+      - 'data/parts/routes/regional-careers/**'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
