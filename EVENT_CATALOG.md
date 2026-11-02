@@ -194685,7 +194685,10 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
   "after": {
     "id": "lov",
     "min": 1,
-    "max": 6
+    "max": 6,
+    "choice": 0,
+    "outcome": 0,
+    "subject": "romance"
   },
   "cd": 2,
   "w": 1.8
@@ -194890,7 +194893,8 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
     "min": 1,
     "max": 6,
     "choice": 0,
-    "outcome": 0
+    "outcome": 0,
+    "subject": "romance"
   },
   "cd": 2,
   "w": 1.8
@@ -195040,7 +195044,8 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
     "min": 1,
     "max": 7,
     "choice": 0,
-    "outcome": 0
+    "outcome": 0,
+    "subject": "romance"
   },
   "cd": 2,
   "w": 2
@@ -195255,7 +195260,8 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
     "min": 1,
     "max": 4,
     "choice": 2,
-    "outcome": 0
+    "outcome": 0,
+    "subject": "romance"
   },
   "cd": 2,
   "w": 0.55
