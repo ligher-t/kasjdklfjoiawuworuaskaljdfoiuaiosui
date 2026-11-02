@@ -1,4 +1,4 @@
-name: Temporary annual capacity and mandatory choice verification
+name: Temporary annual capacity and final-year coverage verification
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
