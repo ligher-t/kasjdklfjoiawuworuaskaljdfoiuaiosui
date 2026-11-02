@@ -27,7 +27,7 @@ const cases=run(`
   ap({sp:1});
   const married=a();
   S.fl.marriage_strained=1;
-  ap({spouseDivorce:1});
+  ap({divorce:1});
   const divorced=a();
   born({seed:194001,by:1067,region:'龍門'});S.year=1100;S.age=33;
   S.fl.marriage_strained=1;S.fl.romance_committed=1;
