@@ -1,0 +1,35 @@
+name: Refresh U-13 generated outputs (temporary)
+on:
+  push:
+    branches: ['fix/historical-event-scope-and-delivery']
+    paths:
+      - '.github/workflows/sync-u13-generated.yml'
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate event catalogue and version
+        run: |
+          node tools/generate-event-catalog.cjs --write
+          node tools/generate-event-catalog.cjs --check
+          node tools/update-version.cjs
+      - name: Verify actual event effect and recipient accounts
+        run: |
+          node tools/check-efficient.cjs syntax
+          node tools/check-efficient.cjs run v88_effect_subject_finance_and_infection.test.cjs
+      - name: Persist generated files
+        run: |
+          git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' add EVENT_CATALOG.md js/version.js
+          if ! git diff --cached --quiet; then
+            git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' commit -m 'Refresh generated event catalogue for U-13 accounting and exposure'
+            git push origin HEAD:fix/historical-event-scope-and-delivery
+          fi
