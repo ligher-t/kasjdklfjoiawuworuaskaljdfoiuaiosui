@@ -14,6 +14,7 @@ on:
       - 'tests/v88_outcome_followup_lineage.test.cjs'
       - 'tests/v88_relationship_flag_lifecycle.test.cjs'
       - 'tests/v88_cohabitation_residence_accounting.test.cjs'
+      - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
   pull_request:
@@ -30,6 +31,7 @@ on:
       - 'tests/v88_outcome_followup_lineage.test.cjs'
       - 'tests/v88_relationship_flag_lifecycle.test.cjs'
       - 'tests/v88_cohabitation_residence_accounting.test.cjs'
+      - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
 permissions:
@@ -63,3 +65,5 @@ jobs:
           node tools/check-efficient.cjs run v88_romance_lifecycle_coherence.test.cjs
       - name: Unmarried cohabitation, breakup and balance-sheet boundaries
         run: node tools/check-efficient.cjs run v88_cohabitation_residence_accounting.test.cjs
+      - name: Katorga special custody and release lifecycle
+        run: node tools/check-efficient.cjs run v88_ursus_katorga_custody_lifecycle.test.cjs

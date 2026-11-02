@@ -190,7 +190,7 @@ window.TERRA_DATA_BUILD.fragment(
         1,
         "友人の肩を抱き起こそうとした瞬間、背後から警備兵に取り押さえられた。そのまま窓のない護送車へ押し込まれ、どこへ行くかも知らされないまま、電力も暖房も落とされた極寒のカトルガ区画へ放り込まれた。",
         {
-          fl: { ursus_katorga_detained: 1 },
+          fl: { ursus_katorga_detained: 1, detained: 1, ursus_student_assembly_active: 0 },
           lifeAffiliation: {
             id: "ursus-student-assembly",
             title: "サンクト・グリファーブルク学生連合とのつながり",
@@ -315,6 +315,7 @@ window.TERRA_DATA_BUILD.fragment(
   $terraData.EV.push({
     id: "life_ursus_katorga_life",
     conf: "B",
+    inConfinement: true,
     references: ["SRC_URSUS_PAA_SYNOPSIS"],
     st: ["少年", "青年"],
     need: ["ursus_katorga_detained"],
@@ -394,6 +395,7 @@ window.TERRA_DATA_BUILD.fragment(
   $terraData.EV.push({
     id: "life_ursus_student_assembly_release",
     conf: "B",
+    inConfinement: true,
     references: ["SRC_URSUS_PAA_SYNOPSIS"],
     st: ["少年", "青年"],
     need: ["ursus_katorga_detained"],
@@ -420,7 +422,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "continue",
             note: "生活を立て直しながら仲間との細い縁を保つ"
           },
-          fl: { ursus_katorga_detained: 0, ursus_student_assembly_active: 1 },
+          fl: { ursus_katorga_detained: 0, detained: 0, ursus_student_assembly_active: 1 },
           p: 1
         }
       ]),
@@ -440,7 +442,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "complete",
             note: "無事に帰宅し、仲間の安否を伝えて区切りをつけた"
           },
-          fl: { ursus_katorga_detained: 0, ursus_student_assembly_active: 0 },
+          fl: { ursus_katorga_detained: 0, detained: 0, ursus_student_assembly_active: 0 },
           regionalImpact: {
             region: "ウルサス",
             entity: "カトルガ区画から戻った本人の記録",
@@ -467,7 +469,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "pause",
             note: "体調と暮らしの立て直しを最優先した"
           },
-          fl: { ursus_katorga_detained: 0, ursus_student_assembly_active: 0 },
+          fl: { ursus_katorga_detained: 0, detained: 0, ursus_student_assembly_active: 0 },
           h: 2,
           p: 0
         }

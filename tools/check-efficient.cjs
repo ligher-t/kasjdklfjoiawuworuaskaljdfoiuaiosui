@@ -26,6 +26,7 @@ const approved=Object.freeze([
   "v88_outcome_followup_lineage.test.cjs",
   "v88_relationship_flag_lifecycle.test.cjs",
   "v88_cohabitation_residence_accounting.test.cjs",
+  "v88_ursus_katorga_custody_lifecycle.test.cjs",
   "v88_romance_lifecycle_coherence.test.cjs",
   "ui-summary-focus.test.cjs",
   "ui-log-years.test.cjs",

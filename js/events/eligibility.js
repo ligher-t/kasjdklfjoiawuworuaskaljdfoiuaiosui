@@ -527,6 +527,12 @@ function elig(e, s, T, options = {}) {
   if (!ignoreOccurrence && e.once && l != null) return rejectEligibility(e, "once", options);
   if (e.st && !e.st.includes(STG[stg(s)])) return rejectEligibility(e, "stage", options);
   if (e.months && !e.months.includes(s.mo)) return rejectEligibility(e, "month", options);
+  // Katorga is a particular sealed location with a scripted release. The
+  // generic detention appeal/escape route cannot liberate this special case,
+  // and ordinary jobs/social scenes cannot occur while trapped inside.
+  if (s.fl?.ursus_katorga_detained &&
+      !["life_ursus_katorga_life", "life_ursus_student_assembly_release"].includes(e.id))
+    return rejectEligibility(e, "katorga-route", options);
   if (restricted(s) && !e.inConfinement && !e.need?.some(t => t === "収容中" || t === "隔離中")) return rejectEligibility(e, "confinement", options);
   if (!ok(e, s, T)) return rejectEligibility(e, "event-condition", options);
   if (!ok(e.show, s, T)) return rejectEligibility(e, "event-show-condition", options);
