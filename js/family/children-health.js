@@ -39,35 +39,29 @@ function childInfectionTreatmentRestartCost(s) {
 function childInfectionConsultTravelCost(s) {
   return 5e4 * childResidenceEconomicIndex(s, childResidenceCostTarget(s), "pm") * (s.priceIndex || 1);
 }
-function childInfectionAnnualTreatmentCost(s) {
+// Keep event quotes, annual payer charges, and treatment-lapse thresholds on the same cost basis.
+function childAnnualMedicalExpense(s, child, treatment, costPm = s.res.pm * (s.priceIndex || 1) * localityLivingMultiplier(s)) {
+  if (!child || child.d) return 0;
+  const share = childResidenceCostShare(s, child);
+  const localPm = childResidenceEconomicIndex(s, child, "pm");
+  const childCostPm = (localPm / (s.res?.pm || 1)) * costPm;
   return (
-    P("economy.childInfectionTreatmentAnnualCost") *
-    childResidenceEconomicIndex(s, childResidenceCostTarget(s), "pm") *
-    (s.priceIndex || 1) *
-    infectionCareTravelCostScale(s)
+    P(treatment ? "economy.childInfectionTreatmentAnnualCost" : "economy.childInfectionCareAnnualCost") *
+    infectionCareTravelCostScale(s) *
+    share *
+    childCostPm
   );
 }
+function childInfectionAnnualTreatmentCost(s) {
+  return childAnnualMedicalExpense(s, childResidenceCostTarget(s), true);
+}
 function childInfectionAnnualCareCost(s) {
-  return (
-    P("economy.childInfectionCareAnnualCost") *
-    childResidenceEconomicIndex(s, childResidenceCostTarget(s), "pm") *
-    (s.priceIndex || 1) *
-    infectionCareTravelCostScale(s)
-  );
+  return childAnnualMedicalExpense(s, childResidenceCostTarget(s), false);
 }
 function activeChildTreatmentAnnualCost(s) {
   return (s.kids || [])
     .filter(child => childIsSupported(s, child) && child.inf && child.tx)
-    .reduce(
-      (sum, child) =>
-        sum +
-        P("economy.childInfectionTreatmentAnnualCost") *
-          infectionCareTravelCostScale(s) *
-          childResidenceEconomicIndex(s, child, "pm") *
-          (s.priceIndex || 1) *
-          childResidenceCostShare(s, child),
-      0
-    );
+    .reduce((sum, child) => sum + childAnnualMedicalExpense(s, child, true), 0);
 }
 function lapseUnaffordableChildTreatments(s, annualCost = activeChildTreatmentAnnualCost(s)) {
   if (
