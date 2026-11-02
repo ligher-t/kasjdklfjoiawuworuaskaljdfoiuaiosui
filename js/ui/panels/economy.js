@@ -26,10 +26,10 @@ function renderEconomyPanel(s, services) {
     .filter(([, v]) => v > 0)
     .map(([k, v]) => [flowNames[k] || k, services.m(v)]);
   services.$("fn").innerHTML = [
-    ["家計状態", services.householdStrained(s) ? "逼迫（手元資金・負債の年支出比で判定）" : "逼迫判定なし"],
+    ["家計状態", services.householdStrained(s) ? "逼迫" : "逼迫判定なし"],
     ["現在の経済階層", s.w.n],
     ["出生時の家計階層", (s.originWealth || s.w).n],
-    ["貯蓄", services.m(s.cash)],
+    ["本人の貯蓄", services.m(s.cash)],
     [
       "投資持分（換金前）",
       s.investment > 0
@@ -43,7 +43,7 @@ function renderEconomyPanel(s, services) {
         : services.m(0)
     ],
     ["負債", services.m(s.debt)],
-    ["純資産", services.m(s.cash + (s.investment || 0) - s.debt)],
+    ["本人の純資産", services.m(s.cash + (s.investment || 0) - s.debt)],
     [
       "固定資産・事業持分",
       (s.investment || 0) >= 2000000

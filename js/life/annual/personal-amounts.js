@@ -18,7 +18,7 @@ function prepareAnnualPersonalBudget(s, services, a, t, f) {
   services.reconcileEquity(s);
   const j = services.J[s.job],
     pm = s.res.pm,
-    householdCoversPersonalCosts = a < services.householdEndAge(s) && services.inSharedHousehold(s),
+    householdCoversPersonalCosts = services.inSharedHousehold(s),
     costPm = pm * s.priceIndex * services.localityLivingMultiplier(s),
     childFinance = services.childHouseholdFinances(s, costPm, pm),
     childHouseholdIncome = childFinance.income,

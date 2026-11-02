@@ -87,7 +87,13 @@ function currentHouseholdMembers(s) {
     members = [],
     familyHome = arrangement.startsWith("family_home_");
   if (familyHome) {
-    for (const key of ["fa", "mo"]) if (s.par?.[key] && !s.par[key].d) members.push(s.par[key].nm || "親");
+    const caregiverKeys = s.care?.parentKeys;
+    for (const key of ["fa", "mo"]) {
+      const parent = s.par?.[key];
+      if (parent && !parent.d && !parent.separated &&
+          (!Array.isArray(caregiverKeys) || caregiverKeys.includes(key)))
+        members.push(parent.nm || "親");
+    }
     for (const sibling of siblingsOf(s))
       if (!sibling.d && !sibling.independentSinceYear) members.push(sibling.nm);
   }
