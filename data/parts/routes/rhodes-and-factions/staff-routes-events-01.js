@@ -601,6 +601,10 @@ window.TERRA_DATA_BUILD.fragment(
               action: "leave",
               note: "地域の仕事へ戻る"
             },
+            lifeGoal: {
+              id: "reunion-relief", title: "身近な感染者へ薬と食料を届ける",
+              action: "abandon", note: "配達の道順を後任へ引き継ぎ、連絡網の役目を終えた"
+            },
             p: 1
           }
         ])

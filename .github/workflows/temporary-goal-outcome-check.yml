@@ -1,0 +1,33 @@
+name: Temporary goal outcome verification
+on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths: ['.github/workflows/temporary-goal-outcome-check.yml']
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate and check
+        run: |
+          node tools/generate-event-catalog.cjs --write
+          node tools/generate-event-catalog.cjs --check
+          node tools/update-version.cjs
+          node tools/check-efficient.cjs syntax
+          node tools/check-efficient.cjs run v88_affiliation_goal_outcome_branches.test.cjs
+          node tools/check-efficient.cjs run v88_affiliation_goal_closure.test.cjs
+          node tools/check-efficient.cjs run v88_reunion_goal_transition.test.cjs
+          node tools/check-efficient.cjs run v88_deadline_coverage_metrics.test.cjs
+      - name: Sync catalog and revision
+        run: |
+          git add EVENT_CATALOG.md js/version.js
+          if ! git diff --cached --quiet; then
+            git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' commit -m 'chore: synchronize goal outcome catalog and revision'
+            git push origin HEAD:fix/historical-event-scope-and-delivery
+          fi
