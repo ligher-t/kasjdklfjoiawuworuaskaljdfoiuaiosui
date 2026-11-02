@@ -32,7 +32,7 @@ function createCatalogFieldChecks(W_, services) {
   ]);
   const eventKeys = new Set([
     ...conditionKeys, "id", "conf", "references", "w", "cd", "once", "pri", "st", "months",
-    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "timelineFlag"
+    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "timelineFlag", "crisisPolicy"
   ]);
   const cc = (c, w, event = false) => {
     if (!c) return;

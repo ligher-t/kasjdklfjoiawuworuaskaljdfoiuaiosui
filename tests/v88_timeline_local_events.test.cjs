@@ -141,9 +141,9 @@ const crisisPeacefulSuppression = JSON.parse(JSON.stringify(vm.runInNewContext(`
   const inCrisis = isLocationInCrisis(S);
   
   // Test peaceful daily event recognition
-  const roseGarden = { t: "公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。" };
-  const salon = { t: "名門サロンの夜会に招かれ、銀器の触れ合う音の中で貴族や実業家たちと優雅に歓談した。" };
-  const drawbridge = { t: "運河沿いの遊歩道を歩き、夕暮れに染まる巨大な跳ね橋のシルエットを眺めた。" };
+  const roseGarden = { crisisPolicy: "nonessential-leisure", t: "公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。" };
+  const salon = { crisisPolicy: "nonessential-leisure", t: "名門サロンの夜会に招かれ、銀器の触れ合う音の中で貴族や実業家たちと優雅に歓談した。" };
+  const drawbridge = { crisisPolicy: "nonessential-leisure", t: "運河沿いの遊歩道を歩き、夕暮れに染まる巨大な跳ね橋のシルエットを眺めた。" };
   const wartimeDaily = { t: "諸侯軍の攻城砲の地鳴りが一日中響き、路地に立ち込める硝煙の向こうで自救軍の若者たちが救援物資を運び込んでいた。" };
   
   return {
@@ -160,6 +160,8 @@ assert.equal(crisisPeacefulSuppression.roseGardenBlocked, true, 'Rose garden str
 assert.equal(crisisPeacefulSuppression.salonBlocked, true, 'Salon party is recognized as peaceful leisure and blocked');
 assert.equal(crisisPeacefulSuppression.drawbridgeBlocked, true, 'Drawbridge stroll is recognized as peaceful leisure and blocked');
 assert.equal(crisisPeacefulSuppression.wartimeDailyAllowed, true, 'Wartime siege daily is allowed during crisis');
+assert.equal(vm.runInContext('isPeacefulLeisureEvent({t:"観光開発のために共有地を失うことに抗議した。"})',context),false,
+  'prose about tourism or unrest is not automatically classified as leisure');
 
 // 8. Historical death cause codes validation
 const requiredDeathCauses = [

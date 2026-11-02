@@ -7,6 +7,8 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
     (e.references || []).forEach(ref => {
       if (!services.SETTING_SOURCES[ref]) W_.push(`${w}: 未定義の資料ID「${ref}」`);
     });
+    if (e.crisisPolicy != null && (e.crisisPolicy !== "nonessential-leisure" || e.c))
+      W_.push(`${w}: crisisPolicyは選択肢のない日常イベントのnonessential-leisureだけを許可`);
     if (e.timelineFlag != null &&
       (typeof e.timelineFlag !== "string" ||
         !services.HIST.some(entry => entry.flag === e.timelineFlag)))

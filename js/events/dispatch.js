@@ -22,14 +22,9 @@ function isLocationInCrisis(state = S) {
   });
 }
 function isPeacefulLeisureEvent(event) {
-  const text = event.t || "";
-  if (typeof text !== "string") return false;
-  const peacePatterns = [
-    /バラ園/, /名門サロン/, /夜会/, /跳ね橋のシルエット/, /優雅なひととき/,
-    /優雅に歓談/, /贅沢な甘み/, /観光/, /避暑/, /ピクニック/, /遊歩道を歩き/,
-    /劇場で優雅/, /舞踏会/, /豪奢な晩餐/, /アフタヌーンティー/
-  ];
-  return peacePatterns.some(pattern => pattern.test(text));
+  // The event's meaning is explicit: a report mentioning tourism or a
+  // battlefield relief meal must not be rejected by matching prose fragments.
+  return event?.crisisPolicy === "nonessential-leisure";
 }
 // Dates only: never relax eligibility, select random relatives, or mutate state here.
 function scheduledFollowupDueYear(event,s) {
@@ -130,6 +125,11 @@ function slot(x) {
     s.educationDecision?.kind === "graduation" ? "education_graduation_review" : null;
   const institutional=!!institutionalInfectionAudience(s) &&
     mj.find(event=>event.id==='urs_sweep' || event.id==='lei_isolation');
+  // An already-due diagnosis or exposure review must not disappear behind a
+  // newly active historical choice in the same month's event slots.
+  const medicalReview = nextScheduledFollowup(
+    mj.filter(event => ["infection_workplace_review", "family_child_exposure_followup"].includes(event.id)), s
+  );
   const localTimelineChoice = mj.find(event =>
     event.timelineFlag &&
     s.world?.events?.[event.timelineFlag] &&
@@ -137,6 +137,7 @@ function slot(x) {
     hasActionableChoice(event)
   );
   let e = (requiredSchool ? mj.find(event => event.id === requiredSchool && hasActionableChoice(event)) : null) ||
+    medicalReview ||
     localTimelineChoice ||
     nextScheduledFollowup(mj,s) || wpk(mj.filter(event => event.pri), s, T) || institutional || (R() < MAJ_PER_SLOT ? wpk(mj, s, T) : null);
   if (!e) {

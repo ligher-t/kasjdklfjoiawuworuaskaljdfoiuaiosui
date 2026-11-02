@@ -15,12 +15,12 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
   // [汎用・生活・風土 1-38]
   const commonTexts = [
     // 良 (Good: p +2 or cash/h)
-    { t: "午後の茶の時間に、素朴な焼き菓子に濃厚な生クリームと果実ジャムを添え、柑橘の香る温かい銘茶を味わった。贅沢な甘みに心が満たされた。", fx: { p: 2 } },
+    { crisisPolicy: "nonessential-leisure", t: "午後の茶の時間に、素朴な焼き菓子に濃厚な生クリームと果実ジャムを添え、柑橘の香る温かい銘茶を味わった。贅沢な甘みに心が満たされた。", fx: { p: 2 } },
     { t: "近所の大衆食堂で、揚げたての白身魚と香ばしい揚げ芋を頬張りながら麦茶を啜った。カリッとした衣の旨味に、一日の疲れが吹き飛んだ。", fx: { p: 2 } },
-    { t: "公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。", fx: { p: 2 } },
+    { crisisPolicy: "nonessential-leisure", t: "公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。", fx: { p: 2 } },
     { t: "街角の書店で、旧時代のヴィクトリアを舞台にした重厚な推理小説を手に入れた。格調高い装幀の本を抱え、暖炉の前で読書に耽る楽しみができた。", fx: { k: 1, p: 2 } },
     { months: [12, 1, 2], t: "市場の露店で、上等なウールで編まれたチェック柄のマフラーを安く買い求めた。首元を温かい羊毛で包み、冬の風の中を暖かく歩いた。", fx: { p: 1 } },
-    { t: "運河沿いの遊歩道を歩き、夕暮れに染まる巨大な跳ね橋のシルエットを眺めた。蒸気と鋼鉄の文明を象徴する壮大な景観に息を呑んだ。", fx: { p: 2 } },
+    { crisisPolicy: "nonessential-leisure", t: "運河沿いの遊歩道を歩き、夕暮れに染まる巨大な跳ね橋のシルエットを眺めた。蒸気と鋼鉄の文明を象徴する壮大な景観に息を呑んだ。", fx: { p: 2 } },
     { t: "近所の仕立て屋で、綻びていた上着の裏地を美しく修繕してもらった。丁寧な職人技により、新品のように生まれ変わった服に誇らしさを感じた。", fx: { p: 2 } },
     { t: "ベーカリーの軒先から漂う、焼き立てのトーストとミートパイの香ばしい匂いに誘われて朝食を買い込んだ。サクサクのパイ生地が口の中で弾けた。", fx: { p: 1 } },
     { t: "路地裏の広場で、旅の音楽家が奏でるバイオリンの哀愁を帯びたターラーの古い民謡に聞き入った。通りがかりの人々とともに温かい拍手を送った。", fx: { p: 2 } },
@@ -67,6 +67,7 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
       st: ["児童", "少年", "青年", "壮年", "老年"],
       need: ["国:ヴィクトリア"],
       ...(item.months ? { months: item.months } : {}),
+      ...(item.crisisPolicy ? { crisisPolicy: item.crisisPolicy } : {}),
       t: item.t,
       fx: item.fx
     });
@@ -133,25 +134,25 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
 
   // 3. 上流階級・サロン・社交 (4件)
   victoriaDaily.push({
-    id: "daily_victoria_49", conf: "S", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
+    id: "daily_victoria_49", conf: "S", crisisPolicy: "nonessential-leisure", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
     show: {"ge":{"cash":500000}},
     t: "名門サロンの夜会に招かれ、銀器の触れ合う音の中で貴族や実業家たちと優雅に歓談した。国際情勢の裏話に耳を傾け、人脈を広げた。",
     fx: { p: 4, rl: 2 }
   });
   victoriaDaily.push({
-    id: "daily_victoria_50", conf: "S", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
+    id: "daily_victoria_50", conf: "S", crisisPolicy: "nonessential-leisure", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
     show: {"ge":{"cash":500000}},
     t: "都内の大劇場の前を通りかかると、着飾った貴族や紳士淑女たちが馬車から降り立つ華やかな光景が広がっていた。漏れ聞こえる壮麗な管弦楽の調べに、上流階級の優雅な夕べを感じた。",
     fx: { p: 2 }
   });
   victoriaDaily.push({
-    id: "daily_victoria_51", conf: "S", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
+    id: "daily_victoria_51", conf: "S", crisisPolicy: "nonessential-leisure", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
     show: {"ge":{"cash":500000}},
     t: "伝統ある仕立て屋が集まる街区を歩いた。ショーウィンドウに整然と並ぶ最高級のウールスーツやコートの完璧な裁断に見惚れ、ヴィクトリアの職人文化の極致を味わった。",
     fx: { p: 2 }
   });
   victoriaDaily.push({
-    id: "daily_victoria_52", conf: "S", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
+    id: "daily_victoria_52", conf: "S", crisisPolicy: "nonessential-leisure", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
     show: {"ge":{"cash":500000}},
     t: "格式ある会員制紳士クラブの図書室で、革張りのアームチェアに身を沈めて高級シガーを燻らせた。完全な静寂と特権階級の安らぎを味わった。",
     fx: { p: 3 }

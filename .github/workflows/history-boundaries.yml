@@ -28,6 +28,7 @@ on:
       - 'tests/v88_cohabitation_residence_accounting.test.cjs'
       - 'tests/v88_family_spouse_co_residence_events_and_roster.test.cjs'
       - 'tests/v88_historical_catalog_schema_and_sources.test.cjs'
+      - 'tests/v88_crisis_event_priority.test.cjs'
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
@@ -78,6 +79,7 @@ on:
       - 'tests/v88_cohabitation_residence_accounting.test.cjs'
       - 'tests/v88_family_spouse_co_residence_events_and_roster.test.cjs'
       - 'tests/v88_historical_catalog_schema_and_sources.test.cjs'
+      - 'tests/v88_crisis_event_priority.test.cjs'
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
@@ -141,6 +143,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_family_spouse_co_residence_events_and_roster.test.cjs
       - name: Historical timeline metadata, references and effect types
         run: node tools/check-efficient.cjs run v88_historical_catalog_schema_and_sources.test.cjs
+      - name: Due medical reviews and crisis leisure classification
+        run: node tools/check-efficient.cjs run v88_crisis_event_priority.test.cjs
       - name: Katorga special custody and release lifecycle
         run: node tools/check-efficient.cjs run v88_ursus_katorga_custody_lifecycle.test.cjs
       - name: Delayed followup after actual withdrawal
