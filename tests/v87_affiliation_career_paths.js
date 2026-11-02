@@ -20,7 +20,7 @@ for(const choice of research.c){
  const affiliation=choice.o[0][2].lifeAffiliation,goal=choice.o[0][2].lifeGoal;
  const result=vm.runInContext(String.raw`(()=>{born({seed:870051,by:1070,region:'クルビア'});S.age=36;S.year=1107;const title='ロドスの鉱石病経過研究';applyLifeAffiliation({id:'rhodes-research',title,action:'join'});applyLifeAffiliation({id:'rhodes-research',action:'suspend',note:'生活事情'});applyLifeGoal({id:'oripathy-research',title,action:'start'});applyLifeAffiliation(${JSON.stringify(affiliation)});applyLifeGoal(${JSON.stringify(goal)});const a=S.lifeRecord.affiliations.find(x=>x.id==='rhodes-research'),g=S.lifeRecord.goals.find(x=>x.id==='oripathy-research');return {affiliation:a.status,episode:a.episodes.at(-1),goal:g.status,audit:auditLifeState(S)}})()`,context,{timeout:30000});
  const expectedAffiliation=affiliation.action==='return'?'active':affiliation.action==='leave'?'left':'suspended';
- const expectedGoal=goal.action==='continue'?'active':goal.action==='pause'?'paused':'compromised';
+ const expectedGoal=goal.action==='continue'?'active':goal.action==='pause'?'paused':goal.action==='abandon'?'abandoned':'compromised';
  assert.equal(result.affiliation,expectedAffiliation);assert.equal(result.goal,expectedGoal);assert.deepEqual(Array.from(result.audit),[]);states.push({affiliation:result.affiliation,goal:result.goal});
 }
 const routeState=(seed,region,job,age=24)=>vm.runInContext(`(()=>{born({seed:${seed},by:1076,region:${JSON.stringify(region)}});S.age=${age};S.year=1100;S.mo=6;S.res=REG.find(row=>row.n===${JSON.stringify(region)});S.job=${job};S.sn.car=1100;return S})()`,context,{timeout:30000});
