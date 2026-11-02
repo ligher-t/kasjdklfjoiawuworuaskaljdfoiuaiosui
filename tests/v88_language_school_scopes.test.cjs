@@ -36,6 +36,8 @@ assert.equal(access.readBefore,false);
 assert.equal(access.now,true);
 assert.equal(access.mediated,true);
 assert.equal(access.booked.expiresYear,access.booked.year,'default support lasts only the recorded year');
+const supportUI=vm.runInContext('formatLanguageLearningDetails(S)',ctx);
+assert(supportUI.includes('窓口への応募手続き'),'the history uses Japanese prose instead of an internal context ID');
 for(const k of ['otherLanguage','otherUse','otherDocument','otherPurpose','otherSite','relocated','expired'])
   assert.equal(access[k],false,k+' must not inherit unrelated interpreter support');
 

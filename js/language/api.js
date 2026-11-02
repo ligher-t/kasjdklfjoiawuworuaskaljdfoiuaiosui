@@ -541,7 +541,17 @@ function clampLanguageSkill(val) {
       for (const arr of ls.accessArrangements.slice(-5).reverse()) {
         const lName = registry[arr.languageId]?.displayName || arr.languageId;
         const kLabel = arr.kind === "interpreter" ? "通訳手配" : arr.kind === "helper" ? "同行補助" : arr.kind;
-        html += `<li>${arr.year ? `${arr.year}年: ` : ""}${escFn(lName)}における${escFn(kLabel)}（${escFn(arr.purpose || "対象未記録")}・${escFn(arr.region || "場所未記録")}・${escFn(arr.expiresYear ?? arr.year ?? "期限未記録")}年までの手配履歴）</li>`;
+        const purposeNames = {
+          "victoria-office-application": "窓口への応募手続き",
+          "columbia-frontier-contract": "契約内容の確認",
+          "kazdel-historical-tablet": "古い石板の読解",
+          "ursus-mine-team": "鉱山での意思疎通",
+          "siracusa-street-alert": "街路での連絡",
+          "language-condition": "個別の言語手続き",
+          document: "文書の確認"
+        };
+        const purposeName = purposeNames[arr.purpose] || "手配用途の詳細未記録";
+        html += `<li>${arr.year ? `${arr.year}年: ` : ""}${escFn(lName)}における${escFn(kLabel)}（${escFn(purposeName)}・${escFn(arr.region || "場所未記録")}・${escFn(arr.expiresYear ?? arr.year ?? "期限未記録")}年までの手配履歴）</li>`;
       }
       html += `</ul></div>`;
     }
