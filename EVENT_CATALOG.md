@@ -181932,7 +181932,7 @@ s =>
   "once": true,
   "w": 0.12,
   "show": {
-    "dynamicFunction": "s => isPaused(s)"
+    "dynamicFunction": "s => isPaused(s) &&\n        Number.isInteger(goal(s)?.lastChangedYear) &&\n        s.year - goal(s).lastChangedYear >= 3"
   }
 }
 ```
@@ -204632,7 +204632,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   "once": true,
   "w": 0.08,
   "show": {
-    "dynamicFunction": "s => affiliation(s)?.status === \"left\""
+    "dynamicFunction": "s => hasLeft(s) &&\n        Number.isInteger(affiliation(s)?.lastChangedYear) &&\n        s.year - affiliation(s).lastChangedYear >= 10"
   }
 }
 ```
