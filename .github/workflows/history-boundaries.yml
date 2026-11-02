@@ -7,6 +7,7 @@ on:
       - 'data/world/history.js'
       - 'data/parts/routes/regional-careers/**'
       - 'data/regional/**'
+      - 'data/parts/extensions/social-and-care/**'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
@@ -22,6 +23,7 @@ on:
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
+      - 'tests/v88_infected_org_reentry_suspension_age.test.cjs'
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
@@ -44,6 +46,7 @@ on:
       - 'data/world/history.js'
       - 'data/parts/routes/regional-careers/**'
       - 'data/regional/**'
+      - 'data/parts/extensions/social-and-care/**'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
@@ -59,6 +62,7 @@ on:
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
+      - 'tests/v88_infected_org_reentry_suspension_age.test.cjs'
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
@@ -117,6 +121,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_followup_elapsed_from_status.test.cjs
       - name: Organization exit, successor and long-term goal coherence
         run: node tools/check-efficient.cjs run v88_infected_organization_exit_consistency.test.cjs
+      - name: Suspended mutual aid reentry uses most recent actual pause
+        run: node tools/check-efficient.cjs run v88_infected_org_reentry_suspension_age.test.cjs
       - name: Civic and research duties close linked life goals
         run: node tools/check-efficient.cjs run v88_affiliation_goal_closure.test.cjs
       - name: Affiliation legacy and actual departure boundaries

@@ -375,7 +375,12 @@ window.TERRA_DATA_BUILD.fragment(
       after: { id: "life_infected_org_rotation", min: 1 },
       cd: 4,
       w: 0.14,
-      show: isSuspended,
+      show: s => {
+        if (!isSuspended(s)) return false;
+        const pauses = affiliation(s)?.history?.filter(row => row.action === "suspend") || [];
+        const pausedYear = pauses.at(-1)?.year;
+        return Number.isInteger(pausedYear) && s.year - pausedYear >= 1;
+      },
       t: "互助会の活動から遠ざかって、いくつか季節が巡った。新しい世話役から「物資の計算や引き継ぎのやり方を教えてほしい」と便りが届いた。丸一日の当番は無理でも、少し顔を出すくらいならできそうだった。",
       c: [
         $terraData.K("短時間の計算・引き継ぎ係として、また集まりに顔を出す", {}, [
