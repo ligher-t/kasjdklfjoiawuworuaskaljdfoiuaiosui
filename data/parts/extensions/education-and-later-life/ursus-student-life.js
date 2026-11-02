@@ -182,9 +182,11 @@ window.TERRA_DATA_BUILD.fragment(
     show: s => !!s.world?.events?.katorga_incident,
     once: true,
     w: 0.2,
-    t: "冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた。突然、白煙を噴き上げて催涙弾が転がり込み、帰る道も見失われた。警棒を構えた警備兵が雪煙を蹴立てて突っ込んでくる中、すぐ目の前で友人が足を滑らせて倒れ込んだ。",
+    t: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
+      ? "冬の舞踏会の夜、広場から離れた部屋で学生たちの帰りを待った。通りの向こうで鐘が鳴り、騒ぎが始まったという知らせが届く。戻ってこない生徒の家族に、何をどこまで伝えられるのか。机の上には、まだ確かめられていない名前が並んでいた。"
+      : "冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた。突然、白煙を噴き上げて催涙弾が転がり込み、帰る道も見失われた。警棒を構えた警備兵が雪煙を蹴立てて突っ込んでくる中、すぐ目の前で友人が足を滑らせて倒れ込んだ。",
     c: [
-      $terraData.K("転んだ友人を起こそうとする", {}, [
+      $terraData.K("転んだ友人を起こそうとする", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 0 }, [
         1,
         "友人の肩を抱き起こそうとした瞬間、背後から警備兵に取り押さえられた。そのまま窓のない護送車へ押し込まれ、どこへ行くかも知らされないまま、電力も暖房も落とされた極寒のカトルガ区画へ放り込まれた。",
         {
@@ -212,7 +214,7 @@ window.TERRA_DATA_BUILD.fragment(
           k: -2
         }
       ]),
-      $terraData.K("パニックの人波から脇道へ抜け、家族への伝言役に徹する", {}, [
+      $terraData.K("パニックの人波から脇道へ抜け、家族への伝言役に徹する", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 0 }, [
         1,
         "むせるような煙の中、友人と引き剥がされるように路地裏へ逃げ込んだ。翌日からは表通りを避け、捕まった仲間たちの親もとへひそかに様子を知らせて回った。",
         {
@@ -244,7 +246,54 @@ window.TERRA_DATA_BUILD.fragment(
           p: 1
         }
       ]),
-      $terraData.K("命の危険を感じ、そのまま家へ逃げ帰って息を潜める", {}, [
+      $terraData.K("確かめられた帰宅情報だけを、待っている家族へ届ける", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1 }, [
+        1,
+        "夜明けまでに戻った人の名前を一つずつ確かめ、その家族へ知らせに歩いた。まだ帰らない人については、知らないことを知らないまま伝えた。戸口が閉まるたび、次の家へ向かう足が重くなった。",
+        {
+          lifeAffiliation: {
+            id: "ursus-student-assembly",
+            title: "サンクト・グリファーブルク学生連合とのつながり",
+            kind: "community",
+            action: "role",
+            role: "帰宅確認と家族への伝言係",
+            note: "広場へは出ず、確かめた安否だけを伝えた"
+          },
+          lifeGoal: {
+            id: "ursus-student-assembly",
+            action: "continue",
+            note: "知らない安否を憶測で埋めず、連絡役を続けた"
+          },
+          regionalImpact: {
+            region: "ウルサス",
+            entity: "学生の家族への帰宅連絡",
+            kind: "family-message",
+            description: "帰宅を確認できた学生について、その家族へ伝えた",
+            basis: "secondary-event-summary; individual-game-branch"
+          },
+          p: -2, rl: 2
+        }
+      ]),
+      $terraData.K("いったん連絡を止め、家族と自分の安全を確かめる", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1 }, [
+        1,
+        "外では誰が連れて行かれたのか確かな話がなく、伝言を待つ家からも次々に人が訪れた。今夜は答えを出せないと告げ、紙片をしまって戸に鍵を掛けた。",
+        {
+          fl: { ursus_student_assembly_active: 0 },
+          lifeAffiliation: {
+            id: "ursus-student-assembly",
+            title: "サンクト・グリファーブルク学生連合とのつながり",
+            kind: "community",
+            action: "suspend",
+            note: "広場の外での連絡を休止し、身の安全を優先した"
+          },
+          lifeGoal: {
+            id: "ursus-student-assembly",
+            action: "pause",
+            note: "安否不明のまま断定せず、連絡を一時止めた"
+          },
+          p: -1
+        }
+      ]),
+      $terraData.K("命の危険を感じ、そのまま家へ逃げ帰って息を潜める", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 0 }, [
         1,
         "誰にも声をかけず、震える足で家まで走って逃げ帰った。それから数日は恐ろしくて学校へも行けず、誰が連れ去られたという噂ばかりが耳に入った。",
         {
