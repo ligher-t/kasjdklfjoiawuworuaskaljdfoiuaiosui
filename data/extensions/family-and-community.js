@@ -663,13 +663,7 @@ window.TERRA_DATA_BUILD.run("extensions/family-and-community", function ($terraD
           en: s =>
             $rules.family.spouseSeparateSupportAffordable(
               s,
-              $rules.parameters.value("economy.spouseInfectionCareAnnualCost") *
-                $rules.family.spouseResidenceRegion(s).pm *
-                (1 +
-                  ($terraData.SIM_TABLES.oripathyPressure?.[$rules.family.spouseResidenceRegion(s).n]
-                    ?.medical ?? 0.45) *
-                    0.3) *
-                (s.priceIndex || 1) +
+              $rules.family.spouseSeparateSupportCost(s, "medical") +
                 $rules.family.spouseSeparateContactAnnualCost(s, "letters")
             ),
           why: "療養費の仕送りと通信費を、自分の生活費を残して捻出できない"
