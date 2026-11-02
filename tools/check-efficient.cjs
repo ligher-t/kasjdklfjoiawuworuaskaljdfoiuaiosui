@@ -41,6 +41,7 @@ const approved=Object.freeze([
   "v88_spouse_oneoff_and_annual_receipt_idempotency.test.cjs",
   "v88_multi_child_annual_family_budget_reconciliation.test.cjs",
   "v88_divorce_child_support_recipient_receipts.test.cjs",
+  "v88_multi_child_medical_quote_and_payer.test.cjs",
   "v88_romance_lifecycle_coherence.test.cjs",
   "ui-summary-focus.test.cjs",
   "ui-log-years.test.cjs",
