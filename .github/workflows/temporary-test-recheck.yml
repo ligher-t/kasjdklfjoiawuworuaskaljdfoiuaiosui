@@ -1,0 +1,20 @@
+name: Temporary career path test recheck
+on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths: ['.github/workflows/temporary-test-recheck.yml']
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check multi-region affiliation and goal transitions
+        run: |
+          node tools/check-efficient.cjs syntax
+          node tools/check-efficient.cjs run v87_affiliation_career_paths.js
+          node tools/check-efficient.cjs run v88_affiliation_goal_closure.test.cjs
+          node tools/check-efficient.cjs run v88_affiliation_legacy_event_boundaries.test.cjs
