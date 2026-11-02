@@ -1,0 +1,35 @@
+name: Verify delayed status followups (temporary)
+on:
+  push:
+    branches: ['fix/historical-event-scope-and-delivery']
+    paths:
+      - '.github/workflows/sync-followup-status.yml'
+permissions:
+  contents: write
+jobs:
+  selected:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Synchronize generated catalogue and revision
+        run: |
+          node tools/generate-event-catalog.cjs --write
+          node tools/generate-event-catalog.cjs --check
+          node tools/update-version.cjs
+      - name: Inspect status-age regression
+        run: |
+          node tools/check-efficient.cjs syntax
+          node tools/check-efficient.cjs run v88_followup_elapsed_from_status.test.cjs
+      - name: Commit generated outputs
+        run: |
+          git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' add EVENT_CATALOG.md js/version.js
+          if ! git diff --cached --quiet; then
+            git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' commit -m 'Regenerate after status-age followup fixes'
+            git push origin HEAD:fix/historical-event-scope-and-delivery
+          fi
