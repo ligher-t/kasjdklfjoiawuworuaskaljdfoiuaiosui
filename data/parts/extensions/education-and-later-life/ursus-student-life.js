@@ -246,6 +246,22 @@ window.TERRA_DATA_BUILD.fragment(
           p: 1
         }
       ]),
+      $terraData.K("命の危険を感じ、そのまま家へ逃げ帰って息を潜める", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 0 }, [
+        1,
+        "誰にも声をかけず、震える足で家まで走って逃げ帰った。それから数日は恐ろしくて学校へも行けず、誰が連れ去られたという噂ばかりが耳に入った。",
+        {
+          fl: { ursus_student_assembly_active: 0 },
+          lifeAffiliation: {
+            id: "ursus-student-assembly",
+            title: "サンクト・グリファーブルク学生連合とのつながり",
+            kind: "community",
+            action: "suspend",
+            note: "抗議後の危険を避けて活動を一時休止した"
+          },
+          lifeGoal: { id: "ursus-student-assembly", action: "pause", note: "身の安全と家族との生活を優先" },
+          p: 0
+        }
+      ]),
       $terraData.K("確かめられた帰宅情報だけを、待っている家族へ届ける", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1 }, [
         1,
         "夜明けまでに戻った人の名前を一つずつ確かめ、その家族へ知らせに歩いた。まだ帰らない人については、知らないことを知らないまま伝えた。戸口が閉まるたび、次の家へ向かう足が重くなった。",
@@ -293,22 +309,6 @@ window.TERRA_DATA_BUILD.fragment(
           p: -1
         }
       ]),
-      $terraData.K("命の危険を感じ、そのまま家へ逃げ帰って息を潜める", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 0 }, [
-        1,
-        "誰にも声をかけず、震える足で家まで走って逃げ帰った。それから数日は恐ろしくて学校へも行けず、誰が連れ去られたという噂ばかりが耳に入った。",
-        {
-          fl: { ursus_student_assembly_active: 0 },
-          lifeAffiliation: {
-            id: "ursus-student-assembly",
-            title: "サンクト・グリファーブルク学生連合とのつながり",
-            kind: "community",
-            action: "suspend",
-            note: "抗議後の危険を避けて活動を一時休止した"
-          },
-          lifeGoal: { id: "ursus-student-assembly", action: "pause", note: "身の安全と家族との生活を優先" },
-          p: 0
-        }
-      ])
     ]
   });
 
