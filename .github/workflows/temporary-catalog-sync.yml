@@ -1,0 +1,34 @@
+name: Temporary multi-child diagnosis catalog sync
+on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths: ['.github/workflows/temporary-catalog-sync.yml']
+permissions:
+  contents: write
+jobs:
+  regenerate:
+    if: github.repository == 'ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Regenerate and verify child-specific diagnosis
+        run: |
+          node tools/generate-event-catalog.cjs --write
+          node tools/generate-event-catalog.cjs --check
+          node tools/update-version.cjs
+          node tools/check-efficient.cjs syntax
+          node tools/check-efficient.cjs run v88_multi_child_diagnosis_target.test.cjs
+          node tools/check-efficient.cjs run v88_effect_subject_finance_and_infection.test.cjs
+      - name: Commit generated catalog and engine version
+        run: |
+          git add EVENT_CATALOG.md js/version.js
+          if ! git diff --cached --quiet; then
+            git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' commit -m 'chore: sync child diagnosis catalog and revision'
+            git push origin HEAD:fix/historical-event-scope-and-delivery
+          fi
