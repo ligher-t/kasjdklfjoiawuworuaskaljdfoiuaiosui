@@ -18,6 +18,7 @@ function renderLifeAndKnowledgePanel(s, services) {
         .reverse()
         .map(h => {
           const contact = (s.infoLog || []).filter(x => x.id === h.flag).slice(-1)[0],
+            encounter = s.historicalDirectEncounters?.[h.flag],
             refs = (h.references || [])
               .map(id => services.SETTING_SOURCES[id])
               .filter(Boolean)
@@ -26,10 +27,10 @@ function renderLifeAndKnowledgePanel(s, services) {
           return (
             `<div class="ledger"><b>${services.esc(h.displayDate || `${h.y}年`)}</b> ${services.esc(h.t)} <small class="nt">${
               contact
-                ? `本人が知った時期: ${contact.heardYear}年／経路: ${services.esc(contact.route)}。`
+                ? `本人が知った時期: ${contact.heardYear}年${contact.heardMonth ? contact.heardMonth + "月" : ""}／経路: ${services.esc(contact.route)}／情報の根拠: ${services.esc(contact.textBasis || "未記録")}。` 
                 : "伝達経路の記録なし（旧セーブ）。"
             }` +
-            `設定根拠区分: ${services.esc(h.conf || "未分類")}。${refs ? `参照資料: ${services.esc(refs)}。` : ""}</small></div>`
+            `${encounter ? `現地遭遇: ${services.esc(encounter.year)}年・${services.esc(encounter.city)}（${services.esc(encounter.eventId || "出来事")}）。` : ""}設定根拠区分: ${services.esc(h.conf || "未分類")}。${refs ? `参照資料: ${services.esc(refs)}。` : ""}</small></div>`
           );
         })
         .join("")

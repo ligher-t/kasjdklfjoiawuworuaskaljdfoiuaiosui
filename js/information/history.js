@@ -1,4 +1,4 @@
-const informationScopeDecision = (historyEntry, nearby) => {
+const informationScopeDecision = (historyEntry, nearby, state = S) => {
   const scope = historyEntry?.infoScope || "public";
   if (scope === "sealed") return { scope, eligible: false, chanceScale: 0 };
   if (scope === "local_news") return { scope, eligible: nearby, chanceScale: 1 };
@@ -6,38 +6,66 @@ const informationScopeDecision = (historyEntry, nearby) => {
   if (scope === "faction_only")
     return {
       scope,
-      eligible: !!historyEntry.requiredFlag && !!S.fl?.[historyEntry.requiredFlag],
+      eligible: !!historyEntry.requiredFlag && !!state?.fl?.[historyEntry.requiredFlag],
       chanceScale: 1
     };
   return { scope: "public", eligible: true, chanceScale: 1 };
 };
+// Spatial match is NOT an eyewitness record. National and regional news ranges
+// cannot promote a resident of another city into a participant in the event.
+function historicalPlaceScope(historyEntry, state = S) {
+  const city = state?.local?.city || null,
+    region = state?.res?.n || null,
+    cities = [
+      ...(Array.isArray(historyEntry?.localCities) ? historyEntry.localCities : []),
+      historyEntry?.localCity,
+      historyEntry?.city
+    ].filter(Boolean),
+    regions = [
+      ...(Array.isArray(historyEntry?.localRegions) ? historyEntry.localRegions : []),
+      historyEntry?.localRegion
+    ].filter(Boolean);
+  const directPlace = !!city && cities.includes(city) &&
+    (!regions.length || regions.includes(region));
+  // A region-only source establishes a potential civilian-life impact, not an
+  // encounter with the particular battlefield, court, or historical figure.
+  const affected = directPlace || (!!region && regions.includes(region));
+  return { city, region, directPlace, affected };
+}
 function isHistoricalEventLocal(historyEntry, state = S) {
-  if (!historyEntry || !state) return false;
-  const currentCity = state.local?.city || state.birthLocality?.city;
-  const currentRegion = state.res?.n || state.birthLocality?.region;
-  if (historyEntry.localCities && Array.isArray(historyEntry.localCities)) {
-    if (currentCity && historyEntry.localCities.includes(currentCity)) return true;
-  }
-  if (historyEntry.localCity) {
-    if (currentCity && historyEntry.localCity === currentCity) return true;
-  }
-  if (historyEntry.localRegions && Array.isArray(historyEntry.localRegions)) {
-    if (currentRegion && historyEntry.localRegions.includes(currentRegion)) return true;
-  }
-  if (historyEntry.localRegion) {
-    if (currentRegion && historyEntry.localRegion === currentRegion) return true;
-  }
-  if (historyEntry.city && currentCity && historyEntry.city === currentCity) return true;
-  if (Array.isArray(historyEntry.r) && historyEntry.r.length === 1 && historyEntry.r[0] === currentRegion) {
-    return true;
-  }
-  return false;
+  return historicalPlaceScope(historyEntry, state).directPlace;
 }
 function historyIsNearby(historyEntry, state = S) {
-  // `r` models information reach; it does not establish the resident's personal exposure to the event.
-  if (historyEntry?.city && historyEntry.city !== state.local?.city) return false;
+  // `r` is an information-reach list, including news from other cities.
   return historyEntry?.r === "all" ||
-    (Array.isArray(historyEntry?.r) && historyEntry.r.includes(state.res?.n));
+    (Array.isArray(historyEntry?.r) && historyEntry.r.includes(state?.res?.n));
+}
+function recordHistoricalDirectEncounter(historyEntry, state = S, eventId = null) {
+  if (!historyEntry?.flag || !isHistoricalEventLocal(historyEntry, state) ||
+      state.year !== historyEntry.y || !historyAvailabilityReached(historyEntry, state))
+    return null;
+  const encounters = state.historicalDirectEncounters || (state.historicalDirectEncounters = {});
+  return encounters[historyEntry.flag] || (encounters[historyEntry.flag] = {
+    eventYear: historyEntry.y,
+    year: state.year,
+    month: Number.isInteger(state.mo) && state.mo >= 1 ? state.mo : null,
+    region: state.res.n,
+    city: state.local.city,
+    eventId,
+    basis: "event-shown-at-specific-city"
+  });
+}
+function historicalDirectEncounter(historyEntry, state = S) {
+  const encounter = state?.historicalDirectEncounters?.[historyEntry?.flag];
+  return encounter?.eventYear === historyEntry?.y &&
+    encounter.city &&
+    encounter.eventId ? encounter : null;
+}
+function historicalInformationRoute(historyEntry, state = S) {
+  if (historicalDirectEncounter(historyEntry, state))
+    return "現地での直接の目撃・体験";
+  return historyEntry?.r === "all" ? "広域の知らせ" :
+    historyIsNearby(historyEntry, state) ? "近隣・地域の伝達網" : "交易商・旅人の伝聞";
 }
 function historyAvailabilityReached(historyEntry, state = S) {
   if (historyEntry.y < state.year) return true;
@@ -66,17 +94,35 @@ function activateHistoricalWorldEvents(state = S) {
     if (historyEntry.conf === "S" && !historyEntry.flag) return;
     if (!historyAvailabilityReached(historyEntry, state)) return;
     if (world.events[id] == null) world.events[id] = historyEntry.y;
+    if (state.year === historyEntry.y) {
+      const location = historicalPlaceScope(historyEntry, state);
+      if (location.affected) {
+        const impacts = state.historicalPlaceImpacts || (state.historicalPlaceImpacts = {});
+        impacts[id] ||= {
+          eventYear: historyEntry.y,
+          region: location.region,
+          city: location.city,
+          scope: location.directPlace ? "event-city-residence" : "regional-residence",
+          basis: "residence-model-not-confirmed-witness"
+        };
+      }
+    }
   });
 }
 function announceHistoricalNews(historyEntry, id, route, infoScope) {
   const before = HL && !CAPTURE_TRACE ? null : traceState(S),
     hd = S.hd || (S.hd = {}),
     known = S.known || (S.known = W || {});
-  const isLocal = isHistoricalEventLocal(historyEntry, S);
-  const receivedText = (isLocal && historyEntry.localText) ? historyEntry.localText : (historyEntry.publicText || historyEntry.t);
+  const encounter = historicalDirectEncounter(historyEntry, S),
+    placeImpact = S.historicalPlaceImpacts?.[id] || null,
+    effectiveRoute = encounter ? "現地での直接の目撃・体験" :
+      (route === "現地での直接の目撃・体験" ? historicalInformationRoute(historyEntry, S) : route),
+    receivedText = encounter && historyEntry.localText
+      ? historyEntry.localText
+      : (placeImpact && historyEntry.affectedText) || historyEntry.newsText ||
+        historyEntry.publicText || historyEntry.t;
   hd[id] = 1;
   if (historyEntry.flag) known[historyEntry.flag] = 1;
-  const effectiveRoute = (isLocal || route === "現地での直接の目撃・体験") ? "現地での直接の目撃・体験" : route;
   const source =
     effectiveRoute === "現地での直接の目撃・体験"
       ? "現地直面の体験から"
@@ -92,12 +138,25 @@ function announceHistoricalNews(historyEntry, id, route, infoScope) {
     heardYear: S.year,
     heardMonth: Number.isInteger(S.mo) && S.mo >= 1 && S.mo <= CALENDAR_MONTHS ? S.mo : null,
     route: effectiveRoute,
+    heardRegion: S.res?.n || null,
+    heardCity: S.local?.city || null,
+    eventRegion: encounter?.region || placeImpact?.region || null,
+    eventCity: encounter?.city || placeImpact?.city || null,
+    encounterEventId: encounter?.eventId || null,
+    exposureBasis: encounter ? encounter.basis :
+      placeImpact ? placeImpact.basis : "no-personal-exposure-record",
     settingConfidence: historyEntry.conf || "?",
     infoScope,
-    textBasis: (isLocal && historyEntry.localText) ? "現地体験文面" : (historyEntry.publicText ? "公開範囲に合わせた要約" : "登録文面")
+    textBasis: encounter && historyEntry.localText ? "現地体験文面" :
+      placeImpact && historyEntry.affectedText ? "地域への影響文面" :
+      historyEntry.publicText ? "公開範囲に合わせた要約" : "登録文面"
   });
   L(`<span class="${tone(historyEntry.e || {})}">${source}、${receivedText}</span>`);
-  if (historyEntry.e) ap(historyEntry.e);
+  // Existing HIST effects are emotional reactions to hearing the report.
+  // Material or bodily losses cannot be inferred merely from receiving news.
+  const newsEffect = historyEntry.newsEffect ||
+    (historyEntry.e && Object.keys(historyEntry.e).every(key => key === "p") ? historyEntry.e : null);
+  if (newsEffect) ap(newsEffect);
   recordTrace(
     "world-news",
     id,
@@ -106,6 +165,9 @@ function announceHistoricalNews(historyEntry, id, route, infoScope) {
       eventAvailableFromMonth: historyEntry.availableFromMonth ?? null,
       heardMonth: Number.isInteger(S.mo) && S.mo >= 1 && S.mo <= CALENDAR_MONTHS ? S.mo : null,
       route: effectiveRoute,
+      eventRegion: encounter?.region || placeImpact?.region || null,
+      eventCity: encounter?.city || placeImpact?.city || null,
+      exposureBasis: encounter?.basis || placeImpact?.basis || "no-personal-exposure-record",
       infoScope,
       text: receivedText
     },
@@ -118,9 +180,14 @@ function releasePendingHistoricalNews(state = S) {
   Object.entries(pending).forEach(([id, queued]) => {
     const historyEntry = HIST.find(row => (row.flag || row.t) === id);
     if (!historyEntry || !historyAvailabilityReached(historyEntry, state)) return;
+    // A queued notice is only an attempt to deliver, never proof of an old
+    // place, route or present information entitlement.
+    const nearby = historyIsNearby(historyEntry, state),
+      decision = informationScopeDecision(historyEntry, nearby, state);
     delete pending[id];
-    if (state.hd?.[id] || (historyEntry.flag && state.known?.[historyEntry.flag])) return;
-    announceHistoricalNews(historyEntry, id, queued.route, queued.infoScope);
+    if (state.hd?.[id] || (historyEntry.flag && state.known?.[historyEntry.flag]) ||
+        !decision.eligible) return;
+    announceHistoricalNews(historyEntry, id, historicalInformationRoute(historyEntry, state), decision.scope);
   });
   if (!Object.keys(pending).length) delete state.pendingHistoricalNews;
 }
@@ -149,18 +216,17 @@ function hist() {
     }
     if (hd[id] || S.year - h.y > P("information.historyWindow")) return;
     const available = historyAvailabilityReached(h, S);
-    const isLocal = isHistoricalEventLocal(h, S);
-    const nearby = historyIsNearby(h),
-      scopeAccess = informationScopeDecision(h, nearby);
+    const nearby = historyIsNearby(h, S),
+      scopeAccess = informationScopeDecision(h, nearby, S);
     if (!scopeAccess.eligible) {
       if (scopeAccess.scope === "sealed") hd[id] = 1;
       return;
     }
     if (R() >= historicalInformationChance(h, nearby, scopeAccess.chanceScale)) return;
-    const route = isLocal ? "現地での直接の目撃・体験" : (h.r === "all" ? "広域の知らせ" : nearby ? "近隣・地域の伝達網" : "交易商・旅人の伝聞");
+    const route = historicalInformationRoute(h, S);
     if (!available) {
       const queued = S.pendingHistoricalNews || (S.pendingHistoricalNews = {});
-      queued[id] = { route, infoScope: scopeAccess.scope };
+      queued[id] = { sampledYear: S.year, sampledMonth: S.mo };
       return;
     }
     announceHistoricalNews(h, id, route, scopeAccess.scope);

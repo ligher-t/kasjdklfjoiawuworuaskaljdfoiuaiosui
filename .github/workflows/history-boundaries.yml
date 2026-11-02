@@ -1,0 +1,33 @@
+name: History direct-experience boundaries (targeted)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'js/**'
+      - 'data/world/history.js'
+      - 'tools/**'
+      - 'tests/v88_history_scope_and_pending.test.cjs'
+      - '.github/workflows/history-boundaries.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'js/**'
+      - 'data/world/history.js'
+      - 'tools/**'
+      - 'tests/v88_history_scope_and_pending.test.cjs'
+      - '.github/workflows/history-boundaries.yml'
+permissions:
+  contents: read
+jobs:
+  history-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Runtime syntax and revision
+        run: node tools/check-efficient.cjs syntax
+      - name: Historically situated information
+        run: node tools/check-efficient.cjs run v88_history_scope_and_pending.test.cjs

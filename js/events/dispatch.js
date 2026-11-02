@@ -158,6 +158,12 @@ function fire(e, s, T) {
     return;
   }
   if (HL) STAT.currentEventId = e?.id || null;
+  // A dated scene records a witnessed encounter only when it actually
+  // appears in the city to which the historical scene is grounded.
+  if (e?.timelineFlag) {
+    const historicalEntry = HIST.find(row => row.flag === e.timelineFlag);
+    if (historicalEntry) recordHistoricalDirectEncounter(historicalEntry, s, e.id);
+  }
   recordSimulationEvent(e, s);
   s.eventCareNetworkMemberId = null;
   s.eventCareSiblingId = null;
