@@ -31,6 +31,8 @@ function advanceAnnualRelationsAndAccess(s, services) {
   services.deliverSocialContactNotices(s);
   s.priceIndex = (s.priceIndex || 1) * (1 + services.P("economy.costInflationAnnual"));
   services.refreshMobileCityEcology(s);
+  // Record independent children's current-year receipts after the payer's price/locality update.
+  services.advanceIndependentChildBudgets(s);
   services.settleSiblingParentTreatmentContribution(s);
   if (s.study) {
     if (services.restricted(s)) {
