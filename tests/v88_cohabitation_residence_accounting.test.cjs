@@ -103,4 +103,32 @@ assert.deepEqual(expired,{
  before:'partner_shared',after:'post_cohabitation_housing_unconfirmed',
  partner:null,flags:0,history:'別離'
 },'natural relationship expiry also ends the shared-room label');
-console.log('PASS unmarried partner housing, separate parent cash, breakup, marriage, divorce and annual expiry');
+const bereavement=snapshot(`
+  born({seed:150204,by:1069,region:'龍門'});S.year=1100;S.age=31;
+  ap({romanceStart:1});ap({romanceStage:'cohabiting'});ap({sp:1});
+  const id=S.sp.id;
+  S.sp.d=S.year;S.sp.deathYear=S.year;
+  S.sp.deathNoticePending=true;S.sp.deathNoticeAvailableYear=S.year;
+  S.eventRelativeId=id;
+  ap({spouseDeath:1});
+  return {spouse:S.sp,arrangement:S.residenceArrangement,
+    end:S.relationshipHistory.at(-1)?.ending,relativeId:S.relationshipHistory.at(-1)?.id,
+    moves:S.moves?.length||0};
+`);
+assert.equal(bereavement.spouse,null);
+assert.equal(bereavement.arrangement,'post_cohabitation_housing_unconfirmed');
+assert.equal(bereavement.end,'死別');
+assert.equal(bereavement.moves,0,'bereavement does not invent a change of address');
+const datingAgain=snapshot(`
+  born({seed:150205,by:1069,region:'龍門'});S.year=1100;S.age=31;
+  ap({romanceStart:1});ap({romanceStage:'cohabiting'});
+  ap({romanceStage:'dating'});
+  return {arrangement:S.residenceArrangement,
+    partnerStillKnown:!!S.romance,
+    members:currentHouseholdMembers(S),moves:S.moves?.length||0};
+`);
+assert.equal(datingAgain.arrangement,'post_cohabitation_housing_unconfirmed');
+assert.equal(datingAgain.partnerStillKnown,true);
+assert.equal(datingAgain.moves,0,'downgrading from cohabitation does not fabricate a move');
+assert(!datingAgain.members.includes('同居する恋人'));
+console.log('PASS unmarried partner housing, separate parent cash, breakup, marriage, divorce annual expiry, bereavement and a later non-cohabiting relationship');
