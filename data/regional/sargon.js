@@ -55,7 +55,7 @@ window.TERRA_DATA_BUILD.run("regional/sargon", function ($terraData, $define, $r
     // 悪 (Bad: p -2 or cash/h)
     { t: "突如として地平線から巨大な砂嵐（ハブーブ）が襲来した。急いで家の中に逃げ込んだが、隙間から侵入した砂で部屋中が真っ白になり、目や口がジャリジャリになった。", fx: { h: -3, p: -2 } },
     { t: "パーディシャーの配下の横暴な徴税役人が現れ、理由のわからない追加の「道路保全税」を強制徴収された。", fx: { cash: -5000, p: -3 } },
-    { t: "真夏の猛烈な熱波に煽られ、日射病でひどい頭痛と目まいに見舞われて寝込んでしまった。", fx: { h: -4, p: -2 } },
+    { months: [6, 7, 8], t: "真夏の猛烈な熱波に煽られ、日射病でひどい頭痛と目まいに見舞われて寝込んでしまった。", fx: { h: -4, p: -2 } },
     { t: "オアシスの貯水池で水質汚濁が発生し、沸かし直した水を飲んだものの腹を下して苦しんだ。", fx: { h: -3, p: -2 } }
   ];
 
@@ -66,6 +66,7 @@ window.TERRA_DATA_BUILD.run("regional/sargon", function ($terraData, $define, $r
       conf: "S",
       st: ["児童", "少年", "青年", "壮年", "老年"],
       need: ["国:サルゴン"],
+      ...(item.months ? { months: item.months } : {}),
       t: item.t,
       fx: item.fx
     });

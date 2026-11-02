@@ -53,7 +53,7 @@ window.TERRA_DATA_BUILD.run("regional/minos", function ($terraData, $define, $ru
     { t: "城壁のアーチ門をくぐり、郊外の牧草地へと続くのどかな田舎道をのんびり歩いた。", fx: {} },
 
     // 悪 (Bad: p -2 or cash/h)
-    { t: "真夏の猛烈な熱波が大地を焼き、日射病でひどい目まいと頭痛に襲われて木陰に倒れ込んだ。", fx: { h: -3, p: -2 } },
+    { months: [6, 7, 8], t: "真夏の猛烈な熱波が大地を焼き、日射病でひどい目まいと頭痛に襲われて木陰に倒れ込んだ。", fx: { h: -3, p: -2 } },
     { t: "ポリス（都市）同士の小競り合いが近郊の農道で発生し、街道が封鎖されて足止めを食らい予定が狂った。", fx: { p: -3 } },
     { t: "大理石の採石場で作業中に足元の岩が崩れ、跳ねた砕石で足に擦り傷を負ってしまった。", fx: { h: -3, p: -2 } },
     { t: "害虫の大量発生によってオリーブの果実が大きな被害を受け、今年の収穫への不安が街中に広がった。", fx: { p: -2, cash: -2000 } }
@@ -66,6 +66,7 @@ window.TERRA_DATA_BUILD.run("regional/minos", function ($terraData, $define, $ru
       conf: "S",
       st: ["児童", "少年", "青年", "壮年", "老年"],
       need: ["国:ミノス"],
+      ...(item.months ? { months: item.months } : {}),
       t: item.t,
       fx: item.fx
     });
