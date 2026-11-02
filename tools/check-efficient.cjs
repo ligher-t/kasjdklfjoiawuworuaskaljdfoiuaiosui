@@ -20,6 +20,7 @@ const approved=Object.freeze([
   "v88_timeline_local_events.test.cjs",
   "v88_history_scope_and_pending.test.cjs",
   "v88_regional_career_outcomes.test.cjs",
+  "v88_yan_court_spring_eligibility.test.cjs",
   "v88_death_job_and_year_basis.test.cjs",
   "v88_language_school_scopes.test.cjs",
   "v88_effect_subject_finance_and_infection.test.cjs",
