@@ -197861,6 +197861,9 @@ s => {
   "need": [
     "既婚"
   ],
+  "show": {
+    "dynamicFunction": "s => $rules.family.spouseLivesWithProtagonist(s)"
+  },
   "cd": 3,
   "w": 0.65,
   "fx": {
@@ -197918,6 +197921,9 @@ s => {
   "need": [
     "既婚"
   ],
+  "show": {
+    "dynamicFunction": "s => $rules.family.spouseLivesWithProtagonist(s)"
+  },
   "cd": 3,
   "w": 0.6,
   "fx": {
@@ -197975,6 +197981,9 @@ s => {
   "need": [
     "既婚"
   ],
+  "show": {
+    "dynamicFunction": "s => $rules.family.spouseLivesWithProtagonist(s)"
+  },
   "cd": 3,
   "w": 0.6,
   "fx": {
@@ -198032,6 +198041,9 @@ s => {
   "need": [
     "既婚"
   ],
+  "show": {
+    "dynamicFunction": "s => $rules.family.spouseLivesWithProtagonist(s)"
+  },
   "cd": 3,
   "w": 0.55,
   "fx": {
@@ -198091,6 +198103,9 @@ s => {
   "need": [
     "既婚"
   ],
+  "show": {
+    "dynamicFunction": "s => $rules.family.spouseLivesWithProtagonist(s)"
+  },
   "cd": 3,
   "w": 0.6,
   "fx": {
@@ -198148,6 +198163,9 @@ s => {
   "need": [
     "既婚"
   ],
+  "show": {
+    "dynamicFunction": "s => $rules.family.spouseLivesWithProtagonist(s)"
+  },
   "cd": 3,
   "w": 0.6,
   "fx": {
@@ -198205,6 +198223,9 @@ s => {
   "need": [
     "既婚"
   ],
+  "show": {
+    "dynamicFunction": "s => $rules.family.spouseLivesWithProtagonist(s)"
+  },
   "cd": 4,
   "w": 0.5,
   "fx": {
