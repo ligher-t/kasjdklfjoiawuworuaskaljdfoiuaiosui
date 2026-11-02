@@ -30,21 +30,41 @@ function clampLanguageSkill(val) {
     return clampLanguageSkill(item.comprehension ?? 0);
   }
 
-  function canReadLanguageDocument(s, languageId, difficulty = 40, script = null, assistance = null) {
+  // Access support is an appointment, not a new language skill. A record
+  // without recipient, language, purpose, location and term is never universal.
+  function languageSupportApplies(s, record, languageId, mode, purpose = "document") {
+    if (!record || !s || !languageId ||
+        !["interpreter","helper","translation"].includes(record.kind) ||
+        record.languageId !== languageId ||
+        record.region !== s.res?.n ||
+        !Number.isInteger(record.year) || record.year > s.year ||
+        !Number.isInteger(record.expiresYear) || record.expiresYear < s.year ||
+        record.purpose !== purpose ||
+        !["both",mode].includes(record.mode)) return false;
+    if (record.placeId && record.placeId !== s.local?.placeId) return false;
+    if (record.areaKey && record.areaKey !== s.community?.key) return false;
+    return true;
+  }
+  function languageHasSupport(s, languageId, mode, purpose, assistance = null, kinds = null) {
+    const entries = [...(Array.isArray(s?.languageState?.accessArrangements)
+      ? s.languageState.accessArrangements : [])];
+    if (assistance && typeof assistance === "object") entries.push(assistance);
+    return entries.some(entry =>
+      (!Array.isArray(kinds) || kinds.includes(entry.kind)) &&
+      languageSupportApplies(s, entry, languageId, mode, purpose));
+  }
+
+  function canReadLanguageDocument(s, languageId, difficulty = 40, script = null, assistance = null, purpose = "document") {
     const readSkill = getLanguageSkill(s, languageId, "read");
     let scriptOk = true;
     if (script) {
       const scriptScore = s?.languageState?.scripts?.[script] || 0;
       scriptOk = scriptScore >= difficulty;
     }
-    const hasAssistance = Boolean(
-      assistance ||
-      (Array.isArray(s?.languageState?.accessArrangements) &&
-        s.languageState.accessArrangements.some(a => a.languageId === languageId || a.kind === "interpreter" || a.kind === "helper"))
-    );
+    const hasAssistance = languageHasSupport(s, languageId, "read", purpose, assistance);
     const assistanceBonus = hasAssistance ? 25 : 0;
     const effective = readSkill + assistanceBonus;
-    const readable = scriptOk && effective >= difficulty;
+    const readable = (scriptOk || hasAssistance) && effective >= difficulty;
     return {
       readable,
       effectiveScore: effective,
@@ -93,16 +113,13 @@ function clampLanguageSkill(val) {
     }
 
     // 支援・通訳
-    const hasAssistance = Boolean(
-      assistance ||
-      (Array.isArray(s?.languageState?.accessArrangements) &&
-        s.languageState.accessArrangements.some(a => a.languageId === langId || a.kind === "interpreter" || a.kind === "helper"))
-    );
+    const purpose = typeof context === "string" ? context : ctx.purpose || "general-communication";
+    const hasAssistance = languageHasSupport(s, langId, mode, purpose, assistance);
     const assistanceBonus = hasAssistance ? 30 : 0;
 
     const effective = Math.max(0, baseSkill - registerPenalty + cantBonus + assistanceBonus);
     const directOk = baseSkill >= difficulty && scriptOk && registerPenalty <= 10;
-    const overallOk = effective >= difficulty && scriptOk;
+    const overallOk = effective >= difficulty && (scriptOk || hasAssistance);
 
     let status = "blocked";
     if (overallOk) {
@@ -245,10 +262,18 @@ function clampLanguageSkill(val) {
       if (action.usageAmount) rep.usage = clampLanguageSkill(rep.usage + action.usageAmount);
       rep.lastUsedYear = s.year;
     } else if (action.type === "support" && action.arrangement) {
+      const a = action.arrangement;
       ls.accessArrangements.push({
         year: s.year,
-        languageId: action.arrangement.languageId || langId,
-        kind: action.arrangement.kind || "interpreter",
+        expiresYear: Number.isInteger(a.expiresYear)
+          ? Math.max(s.year, Math.min(s.year + 3, a.expiresYear)) : s.year,
+        languageId: a.languageId || langId || null,
+        kind: a.kind || "interpreter",
+        mode: a.mode || "listen",
+        purpose: a.purpose || a.contextId || "unspecified",
+        region: s.res?.n || null,
+        placeId: s.local?.placeId || null,
+        areaKey: s.community?.key || null,
         sourceEventId: TRACE_RESOLUTION?.id || null
       });
       ls.accessArrangements = ls.accessArrangements.slice(-16);
@@ -516,7 +541,7 @@ function clampLanguageSkill(val) {
       for (const arr of ls.accessArrangements.slice(-5).reverse()) {
         const lName = registry[arr.languageId]?.displayName || arr.languageId;
         const kLabel = arr.kind === "interpreter" ? "通訳手配" : arr.kind === "helper" ? "同行補助" : arr.kind;
-        html += `<li>${arr.year ? `${arr.year}年: ` : ""}${escFn(lName)}における${escFn(kLabel)}（支援の記録）</li>`;
+        html += `<li>${arr.year ? `${arr.year}年: ` : ""}${escFn(lName)}における${escFn(kLabel)}（${escFn(arr.purpose || "対象未記録")}・${escFn(arr.region || "場所未記録")}・${escFn(arr.expiresYear ?? arr.year ?? "期限未記録")}年までの手配履歴）</li>`;
       }
       html += `</ul></div>`;
     }

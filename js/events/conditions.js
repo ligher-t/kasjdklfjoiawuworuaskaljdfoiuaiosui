@@ -96,8 +96,9 @@ const checkLanguageCondition = (s, langCond) => {
     const skill = getLanguageSkill(s, langId, mode);
     let effective = skill;
     if (Array.isArray(langCond.alternatives) && Array.isArray(s.languageState.accessArrangements)) {
-      const hasArrangement = s.languageState.accessArrangements.some(
-        a => langCond.alternatives.includes(a.kind) && (a.languageId == null || a.languageId === langId)
+      const hasArrangement = languageHasSupport(
+        s, langId, mode, langCond.purpose || "language-condition",
+        langCond.assistance, langCond.alternatives
       );
       if (hasArrangement) effective += 25;
     }

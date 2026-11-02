@@ -59,7 +59,7 @@ function recordInfectionAwareness(s, input) {
       subjectMatch: input.subjectMatch || (input.certainty === "confirmed" ? "confirmed" : "unclear"),
       recipientId: input.recipientId || null,
       recipientRef: input.recipientRef === "current-school"
-        ? (typeof activeFacility === "function" ? activeFacility(s, "school")?.id || null : null)
+        ? (typeof educationInstitutionRef === "function" ? educationInstitutionRef(s) : null)
         : input.recipientRef || null,
       region: s.res?.n || null,
       placeId: s.local?.placeId || null,
@@ -135,7 +135,7 @@ function recordInfectionAwarenessAction(s, action) {
     // after relocation or transfer. The actual facility is the recipient.
     recipientRef: action.audience === "school" && !action.recipientRef &&
       typeof activeFacility === "function"
-      ? activeFacility(s,"school")?.id || null
+      ? (typeof educationInstitutionRef === "function" ? educationInstitutionRef(s) : null)
       : action.recipientRef || null,
     sourceEventId: TRACE_RESOLUTION?.id || null
   });

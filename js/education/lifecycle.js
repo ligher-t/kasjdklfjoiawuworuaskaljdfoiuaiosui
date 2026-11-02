@@ -54,14 +54,25 @@ function educationSchoolOrDecision(s) {
 function educationHas(s, stage) {
   return !!s.educationPath?.completed?.includes(stage);
 }
+// A school recipient is the current school or the particular higher-course
+// enrolment, never the neighborhood elementary school for a university.
+function educationInstitutionRef(s, stage = s?.educationPath?.stage) {
+  if (["primary","lower","upper"].includes(stage))
+    return typeof activeFacility === "function" ? activeFacility(s,"school")?.id || null : null;
+  if (!["university","vocational","arts","preparatory"].includes(stage) ||
+      s?.educationPath?.stage !== stage ||
+      !["enrolled","paused"].includes(s.educationPath.status)) return null;
+  const m=s.educationPath;
+  return m.institutionId || [
+    "course",s.res?.n || "unknown",s.local?.placeId || s.community?.key || "unknown",
+    stage,m.tier,m.stageStartYear
+  ].join(":");
+}
 function educationSchoolKnowsInfection(s, stage) {
-  if (
-    !["primary", "lower", "upper"].includes(stage) ||
-    !s.inf || !s.fl?.dg ||
-    typeof infectionAwarenessEntries !== "function"
-  ) return false;
-  const site = typeof activeFacility === "function" ? activeFacility(s, "school") : null;
-  if (!site?.id) return false;
+  if (!s.inf || !s.fl?.dg || typeof infectionAwarenessEntries !== "function")
+    return false;
+  const siteId = educationInstitutionRef(s,stage);
+  if (!siteId) return false;
   return infectionAwarenessEntries(s).some(row =>
     row.subject === "protagonist" &&
     row.audience === "school" &&
@@ -69,7 +80,7 @@ function educationSchoolKnowsInfection(s, stage) {
     row.region === s.res?.n &&
     (!row.placeId || row.placeId === s.local?.placeId) &&
     (!row.areaKey || row.areaKey === s.community?.key) &&
-    row.recipientRef === site.id
+    row.recipientRef === siteId
   );
 }
 function educationBarrier(s, stage, tier = 1) {
@@ -206,9 +217,9 @@ function educationStart(s,stage,tier = 1,source = null) {
     equivalency:[...(previous?.equivalency || [])],
     history:[...(previous?.history || [])].slice(-60),sourceEventId:source
   };
+  s.educationPath.institutionId = educationInstitutionRef(s,stage);
   educationAppendHistory(s,"enrolled",{stage,tier,source,
-    schoolSiteId:["primary","lower","upper"].includes(stage) ?
-      (typeof activeFacility === "function" ? activeFacility(s,"school")?.id || null : null) : null
+    schoolSiteId:s.educationPath.institutionId || null
   });
   s.educationDecision=null;
   // All full-time courses, not only universities, exclude concurrent regular work.

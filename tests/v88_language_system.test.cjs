@@ -90,7 +90,11 @@ const { condPass, condFail, condAssisted } = vm.runInContext(`
   const mockTags = new Set(["成人", "就労中"]);
   const p = ok({ lang: { language: "victorian", mode: "read", threshold: 35 } }, globalThis.sCustom, mockTags);
   const f = ok({ lang: { language: "victorian", mode: "read", threshold: 70 } }, globalThis.sCustom, mockTags);
-  globalThis.sCustom.languageState.accessArrangements.push({ kind: "helper", languageId: "victorian" });
+  globalThis.sCustom.languageState.accessArrangements.push({
+    kind: "helper", languageId: "victorian", mode: "read",
+    region: "ヴィクトリア", year: sCustom.year,
+    expiresYear: sCustom.year, purpose: "language-condition"
+  });
   const a = ok({ lang: { language: "victorian", mode: "read", threshold: 55, alternatives: ["helper"] } }, globalThis.sCustom, mockTags);
   ({ condPass: p, condFail: f, condAssisted: a });
 `, ctx);
