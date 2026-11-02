@@ -23,7 +23,7 @@ const siblings = inspect(`
  S.eventRelativeId=second;
  ap(e.c[1].o[0][2]);S.sn[e.id]=1111;
  S.year=1112;S.age=48;
- const third=childForEvent(S,e.id)?.id,eligibleThird=elig(e,S,tags(S));
+ const third=childForEvent(S,e.id)?.id ?? null,eligibleThird=elig(e,S,tags(S));
  const last=S.kids.map(child=>({id:child.id,year:child.futurePlanYear,kind:child.futurePlanSupportHistory?.at(-1)?.kind}));
  return {cd,first,eligibleFirst,second,eligibleSecond,third,eligibleThird,last};
 `);
