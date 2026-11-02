@@ -2038,7 +2038,7 @@
 - [f60](#event-f60) — 日だまりの窓辺に椅子を引き寄せ、通りを行き交う人々の声や荷車の音を聞いて過ごした。何ひとつ急ぐ用事のない、静かな午後だった。 熱い茶をゆっくり冷まし…
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
 - [life_personal_wishes](#event-life_personal_wishes) — めっきり年を重ね、長年使い込んだ仕事道具や家の書きつけを、いずれ子の{grownKid}に託したいと思うようになった。自分の思いを書き残しておくか、…
-- [adult_child_memory](#event-adult_child_memory) — 片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひら…
+- [adult_child_memory](#event-adult_child_memory) — （動的本文）
 - [f61](#event-f61) — 隔離区画の柵の端から、外の通りを行き交う人影をぼんやり眺めた。向こう側の店が灯りを落として戸を閉めるころ、自分も冷えた寝床へ引き返した。 出入口の近…
 - [f62](#event-f62) — その日の配給袋は、手にした瞬間に分かるほど軽かった。次の配布日まであと何回に分けて食べられるか、寝床の隅で中身を数え直した。 配給の品が一つ足りず、…
 - [f63](#event-f63) — 同じ隔離区画に暮らす人と、乏しい食材で少しでも腹持ちよく作る工夫を話し合った。昔の家庭料理の味を言い合っているうちに、自然と互いの故郷の話になった。…
@@ -2995,7 +2995,7 @@
 - [f56](#event-f56) — 離れて暮らす親から手紙が届いた。便箋の余白にまで、近所の誰それが引っ越したという他愛ない話がびっしり書き込まれていた。 親から届いた短い手紙を灯りの…
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
 - [life_personal_wishes](#event-life_personal_wishes) — めっきり年を重ね、長年使い込んだ仕事道具や家の書きつけを、いずれ子の{grownKid}に託したいと思うようになった。自分の思いを書き残しておくか、…
-- [adult_child_memory](#event-adult_child_memory) — 片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひら…
+- [adult_child_memory](#event-adult_child_memory) — （動的本文）
 - [f68](#event-f68) — 持ち帰った薬の包みを、誰の目にも触れない棚の奥へ押し込んだ。隠す手つきまで淀みなくなっている自分に気づき、なんとも言えない苦さが胸に広がった。 作業…
 - [urs_sweep](#event-urs_sweep) — 鉱石病の兆候を周囲に隠したまま暮らしてきた。ある朝、重苦しい軍靴の音が通りに響き、憲兵や地区の係員が未登録の感染者を匿う家はないかと一軒ずつ戸を叩き…
 - [sir_family](#event-sir_family) — 地区のファミリーから仕事を頼まれた。荷物や伝言を運ぶ仕事もあれば、店へ支払いを迫る役もあるという。
@@ -9662,7 +9662,7 @@
 - [f58](#event-f58) — いつも通う坂道で、立ち止まって息を整える回数が増えた。外へ出かけるときは、帰り道に腰を下ろせる石段やベンチの場所をまず思い浮かべるようになった。 何…
 - [f59](#event-f59) — 昔よく酒を酌み交わした知人の訃報が人づてに届いた。最後に顔を合わせたときどんな言葉を交わしたのか、夕暮れの窓辺でずっと考え続けた。 古くからの友人が…
 - [f60](#event-f60) — 日だまりの窓辺に椅子を引き寄せ、通りを行き交う人々の声や荷車の音を聞いて過ごした。何ひとつ急ぐ用事のない、静かな午後だった。 熱い茶をゆっくり冷まし…
-- [adult_child_memory](#event-adult_child_memory) — 片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひら…
+- [adult_child_memory](#event-adult_child_memory) — （動的本文）
 - [f61](#event-f61) — 隔離区画の柵の端から、外の通りを行き交う人影をぼんやり眺めた。向こう側の店が灯りを落として戸を閉めるころ、自分も冷えた寝床へ引き返した。 出入口の近…
 - [f62](#event-f62) — その日の配給袋は、手にした瞬間に分かるほど軽かった。次の配布日まであと何回に分けて食べられるか、寝床の隅で中身を数え直した。 配給の品が一つ足りず、…
 - [f63](#event-f63) — 同じ隔離区画に暮らす人と、乏しい食材で少しでも腹持ちよく作る工夫を話し合った。昔の家庭料理の味を言い合っているうちに、自然と互いの故郷の話になった。…
@@ -11233,7 +11233,7 @@
 - [f59](#event-f59) — 昔よく酒を酌み交わした知人の訃報が人づてに届いた。最後に顔を合わせたときどんな言葉を交わしたのか、夕暮れの窓辺でずっと考え続けた。 古くからの友人が…
 - [f60](#event-f60) — 日だまりの窓辺に椅子を引き寄せ、通りを行き交う人々の声や荷車の音を聞いて過ごした。何ひとつ急ぐ用事のない、静かな午後だった。 熱い茶をゆっくり冷まし…
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
-- [adult_child_memory](#event-adult_child_memory) — 片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひら…
+- [adult_child_memory](#event-adult_child_memory) — （動的本文）
 - [f61](#event-f61) — 隔離区画の柵の端から、外の通りを行き交う人影をぼんやり眺めた。向こう側の店が灯りを落として戸を閉めるころ、自分も冷えた寝床へ引き返した。 出入口の近…
 - [f62](#event-f62) — その日の配給袋は、手にした瞬間に分かるほど軽かった。次の配布日まであと何回に分けて食べられるか、寝床の隅で中身を数え直した。 配給の品が一つ足りず、…
 - [f63](#event-f63) — 同じ隔離区画に暮らす人と、乏しい食材で少しでも腹持ちよく作る工夫を話し合った。昔の家庭料理の味を言い合っているうちに、自然と互いの故郷の話になった。…
@@ -11480,7 +11480,7 @@
 
 <a id="tag-situation-235"></a>
 ### 親子の記憶（1）
-- [adult_child_memory](#event-adult_child_memory) — 片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひら…
+- [adult_child_memory](#event-adult_child_memory) — （動的本文）
 
 <a id="tag-situation-236"></a>
 ### 診断済み（1）
@@ -11560,7 +11560,7 @@
 <a id="tag-situation-254"></a>
 ### 成人した子（2）
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
-- [adult_child_memory](#event-adult_child_memory) — 片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひら…
+- [adult_child_memory](#event-adult_child_memory) — （動的本文）
 
 <a id="tag-situation-255"></a>
 ### 成人の種族偏見に触れる（1）
@@ -17928,7 +17928,7 @@
 - [f56](#event-f56) — 離れて暮らす親から手紙が届いた。便箋の余白にまで、近所の誰それが引っ越したという他愛ない話がびっしり書き込まれていた。 親から届いた短い手紙を灯りの…
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
 - [life_personal_wishes](#event-life_personal_wishes) — めっきり年を重ね、長年使い込んだ仕事道具や家の書きつけを、いずれ子の{grownKid}に託したいと思うようになった。自分の思いを書き残しておくか、…
-- [adult_child_memory](#event-adult_child_memory) — 片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひら…
+- [adult_child_memory](#event-adult_child_memory) — （動的本文）
 - [f61](#event-f61) — 隔離区画の柵の端から、外の通りを行き交う人影をぼんやり眺めた。向こう側の店が灯りを落として戸を閉めるころ、自分も冷えた寝床へ引き返した。 出入口の近…
 - [f62](#event-f62) — その日の配給袋は、手にした瞬間に分かるほど軽かった。次の配布日まであと何回に分けて食べられるか、寝床の隅で中身を数え直した。 配給の品が一つ足りず、…
 - [f63](#event-f63) — 同じ隔離区画に暮らす人と、乏しい食材で少しでも腹持ちよく作る工夫を話し合った。昔の家庭料理の味を言い合っているうちに、自然と互いの故郷の話になった。…
@@ -20171,7 +20171,7 @@
 - [f60](#event-f60) — 日だまりの窓辺に椅子を引き寄せ、通りを行き交う人々の声や荷車の音を聞いて過ごした。何ひとつ急ぐ用事のない、静かな午後だった。 熱い茶をゆっくり冷まし…
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
 - [life_personal_wishes](#event-life_personal_wishes) — めっきり年を重ね、長年使い込んだ仕事道具や家の書きつけを、いずれ子の{grownKid}に託したいと思うようになった。自分の思いを書き残しておくか、…
-- [adult_child_memory](#event-adult_child_memory) — 片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひら…
+- [adult_child_memory](#event-adult_child_memory) — （動的本文）
 - [f61](#event-f61) — 隔離区画の柵の端から、外の通りを行き交う人影をぼんやり眺めた。向こう側の店が灯りを落として戸を閉めるころ、自分も冷えた寝床へ引き返した。 出入口の近…
 - [f62](#event-f62) — その日の配給袋は、手にした瞬間に分かるほど軽かった。次の配布日まであと何回に分けて食べられるか、寝床の隅で中身を数え直した。 配給の品が一つ足りず、…
 - [f63](#event-f63) — 同じ隔離区画に暮らす人と、乏しい食材で少しでも腹持ちよく作る工夫を話し合った。昔の家庭料理の味を言い合っているうちに、自然と互いの故郷の話になった。…
@@ -45999,6 +45999,16 @@ s => {
 <a id="choice-life_personal_wishes-1"></a>
 選択肢文：折を見て言葉で伝え、書き置きは残さない
 
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => {\n            const child = (s.kids || []).find(row => row.id === s.eventRelativeId && !row.d);\n            return !!child && (\n              child.contactState === \"regular\" ||\n              (child.householdStatus !== \"independent\" &&\n                ![\"former\", \"former_support\", \"unresolved\"].includes(child.householdResidencePlan) &&\n                ![\"paused\", \"ended\"].includes(child.contactState))\n            );\n          }"
+  }
+}
+```
+
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
@@ -46035,13 +46045,22 @@ s => {
 
 ### 本文
 
-#### 本文候補 1
+**動的本文**：実行時状態から文章を組み立てます。本文を一つに固定せず、生成関数を示します。
 
-> 片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひらで転がした。
-
-#### 本文候補 2
-
-> ふとした拍子に{grownKid}が小さかったころの思い出話になった。親の自分がすっかり忘れていた場面を向こうが鮮明に覚えていたり、本人が忘れている泣き顔をこちらが覚えていたりと、笑い声が絶えなかった。
+```js
+s => {
+        const child = (s.kids || []).find(row => row.id === s.eventRelativeId && !row.d);
+        const canTalk = child && (
+          child.contactState === "regular" ||
+          (child.householdStatus !== "independent" &&
+            !["former", "former_support", "unresolved"].includes(child.householdResidencePlan) &&
+            !["paused", "ended"].includes(child.contactState))
+        );
+        if (!canTalk || s.year % 2 === 0)
+          return "片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひらで転がした。";
+        return "ふとした拍子に{grownKid}が小さかったころの思い出話になった。親の自分がすっかり忘れていた場面を向こうが鮮明に覚えていたり、本人が忘れている泣き顔をこちらが覚えていたりと、笑い声が絶えなかった。";
+      }
+```
 
 ### 発生条件・構造
 
@@ -202150,7 +202169,7 @@ s => {
   "ge": {
     "age": 16
   },
-  "cd": 3,
+  "cd": 1,
   "pri": true,
   "w": 0.32
 }
@@ -202177,7 +202196,7 @@ s => {
 ```json
 {
   "en": {
-    "affordableCashAfterReserve": 150000
+    "dynamicFunction": "s => $rules.economy.availableFunds(s) >= 15e4 + $rules.economy.annualReserve(s)"
   },
   "why": "学費の15万龍門幣を出すと、向こう一年の家の暮らしが立ち行かなくなる"
 }
@@ -202200,8 +202219,9 @@ s => {
     "kind": "study-funds",
     "amount": 150000
   },
-  "cash": -150000,
-  "pm": 1,
+  "cash": {
+    "dynamicFunction": "() => -15e4"
+  },
   "p": 2,
   "rl": 3
 }
@@ -202275,7 +202295,7 @@ s => {
 ```json
 {
   "en": {
-    "affordableCashAfterReserve": 80000
+    "dynamicFunction": "s => $rules.economy.availableFunds(s) >= 8e4 + $rules.economy.annualReserve(s)"
   },
   "why": "支度金の8万龍門幣を出すと、向こう一年の家の暮らしが立ち行かなくなる"
 }
@@ -202298,8 +202318,9 @@ s => {
     "kind": "move-funds",
     "amount": 80000
   },
-  "cash": -80000,
-  "pm": 1,
+  "cash": {
+    "dynamicFunction": "() => -8e4"
+  },
   "rl": -1,
   "p": -1
 }
