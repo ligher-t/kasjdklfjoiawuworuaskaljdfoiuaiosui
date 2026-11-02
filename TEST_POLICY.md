@@ -104,6 +104,7 @@
 | v87_kazimierz_knight_life.js | 高 | 参入条件・支払・不採用・職務移行を確認。 |
 | v87_lei_noble_lifepath.js | 高 | 後援接触と身分を区別し、演奏会仕事の継続退出を実行確認。 |
 | v87_leithanian_civic_noble_lifecycle.js | 高 | 政治活動・家内役割の加入休止復帰離脱と転居を実効果適用で確認。 |
+| v88_affiliation_goal_closure.test.cjs | 高 | 地区陳情・屋敷実務・ロドス研究の正式離脱8分岐を実際の効果適用で確認し、所属の終了と人生目標の終了を同じ人物に結び付ける。 |
 | v87_life_text_context.js | 高 | 年齢・養育者視点・人物関係・医療文脈の適格性を確認。 |
 | v87_livelihood_investment.js | 中 | 投資の資金ゲートと効果定義の確認が中心で、結果の会計処理を直接確認しない。 |
 | v87_locality_pressure_history.js | 高 | 地域圧力の適用・履歴と他生活圏への持ち越し防止を確認。 |
