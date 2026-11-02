@@ -182425,7 +182425,7 @@ s =>
   "once": true,
   "w": 0.2,
   "show": {
-    "dynamicFunction": "s => isActive(s) && (s.kids || []).some(child =>\n        !child.d &&\n        Number.isInteger(child.by) && s.year - child.by >= 6 &&\n        ![\"independent\", \"study\"].includes(child.householdStatus) &&\n        ![\"former\", \"former_support\", \"unresolved\"].includes(child.householdResidencePlan) &&\n        child.contactState !== \"paused\"\n      )"
+    "dynamicFunction": "s => isActive(s) && (s.kids || []).some(child =>\n        !child.d &&\n        Number.isInteger(child.by) && s.year - child.by >= 6 &&\n        child.householdStatus !== \"independent\" &&\n        ![\"former\", \"former_support\", \"unresolved\"].includes(child.householdResidencePlan) &&\n        child.contactState !== \"paused\"\n      )"
   }
 }
 ```
