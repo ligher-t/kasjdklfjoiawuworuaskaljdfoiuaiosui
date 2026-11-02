@@ -69,16 +69,21 @@ function nextScheduledFollowup(events,s) {
     .filter(row=>row.due!==null)
     .sort((a,b)=>a.due-b.due)[0]?.event || null;
 }
-// An outcome-dependent review can permanently expire after its after.max year.
-// Protect its final eligible year without weakening eligibility, waiving a
-// choice's conditions, or moving untimed recurring contact ahead of history.
+// Eligible choices can cease to exist after an after.max window, age cap,
+// or calendar-year cap. Protect their final year without bypassing eligibility
+// or reserving a slot for a choice the player cannot actually select.
 function nextExpiringFollowup(events,s) {
   return events.map(event => {
-    const prior=s.sn?.[event.after?.id], max=event.after?.max;
-    if(!Number.isInteger(prior) || !Number.isInteger(max) || max<0) return null;
-    const deadline=prior+max;
-    if(deadline!==s.year) return null;
-    return {event,deadline,due:prior+(event.after.min||0)};
+    const prior=s.sn?.[event.after?.id], max=event.after?.max,
+      ageMax=event.le?.age, yearMax=event.le?.year,
+      deadlines=[];
+    if(Number.isInteger(prior) && Number.isInteger(max) && max>=0)
+      deadlines.push(prior+max);
+    if(Number.isFinite(ageMax) && Number.isFinite(s.age))
+      deadlines.push(s.year+Math.floor(ageMax-s.age));
+    if(Number.isInteger(yearMax)) deadlines.push(yearMax);
+    if(!deadlines.length || Math.min(...deadlines)!==s.year) return null;
+    return {event,due:Number.isInteger(prior) ? prior+(event.after.min||0) : s.year};
   }).filter(Boolean)
     .sort((a,b)=>a.due-b.due || a.event.id.localeCompare(b.event.id))[0]?.event || null;
 }
