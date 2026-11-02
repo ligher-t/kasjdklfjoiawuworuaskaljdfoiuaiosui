@@ -116,7 +116,7 @@ const independentSiblingCareSupportExpense = (s, costPm = s.res.pm * (s.priceInd
   );
 function recordIndependentSiblingCareSupportPayments(s, costPm = s.res.pm * (s.priceIndex || 1) * localityLivingMultiplier(s)) {
   for (const sibling of siblingsOf(s))
-    if (sibling.independentSinceYear && sibling.inf && !sibling.d && sibling.careSupportAnnual > 0) {
+    if (sibling.independentSinceYear && sibling.inf && !sibling.d && sibling.careSupportAnnual > 0 && sibling.careSupportPaidYear !== s.year) {
       const amount = sibling.careSupportAnnual * costPm * infectionCareTravelCostScale(s);
       sibling.careSupportPaidTotal = (sibling.careSupportPaidTotal || 0) + amount;
       sibling.careSupportPaidYear = s.year;
