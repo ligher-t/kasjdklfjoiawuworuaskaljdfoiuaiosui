@@ -1,4 +1,5 @@
 name: Temporary final-year followup verification
+# Recheck full initialized romance outcome state.
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
