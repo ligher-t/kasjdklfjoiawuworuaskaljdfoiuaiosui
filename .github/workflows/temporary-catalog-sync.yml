@@ -1,4 +1,5 @@
 name: Temporary child future and memory verification
+# Rerun after correcting the absent-target test representation.
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
