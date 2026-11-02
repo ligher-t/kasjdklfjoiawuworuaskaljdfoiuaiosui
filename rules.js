@@ -32,6 +32,7 @@
       "spouseResidenceRegion": "spouseResidenceRegion",
       "spouseSeparateContactAnnualCost": "spouseSeparateContactAnnualCost",
       "spouseSeparateSupportAffordable": "spouseSeparateSupportAffordable",
+      "spouseSeparateSupportCost": "spouseSeparateSupportCost",
       "spouseVisitAffordable": "spouseVisitAffordable",
       "spouseVisitRoute": "spouseVisitRoute"
     },
