@@ -13,6 +13,24 @@ function start(region, species='エラフィア') {
   run('S.r={...S.r,n:TEST_SPECIES}; S.age=24; S.year=1098; S.mo=6; S.job=0; S.fl.retired=0; S.fl.inf=0; S.sn={};');
 }
 // Exercise the actual event dispatcher once, not a manually fabricated result.
+// These fictional job applications must not silently depend on a nonexistent
+// 'fl.inf' field. Infection policy needs event-level evidence, not an invented
+// country-wide hiring prohibition.
+for(const [region,eventId] of [
+  ['イベリア','car_ibe_inq_entry'],
+  ['炎国','car_yan_court_entry'],
+  ['極東','car_hig_samurai_entry']
+]) {
+  start(region);
+  const infected=snap(`
+    S.inf=1;S.fl.dg=1;S.fl.inf=1;S.k=40;
+    const event=EV.find(e=>e.id===${JSON.stringify(eventId)});
+    return {present:!!event,open:event.show(S)};
+  `);
+  assert.equal(infected.present,true,eventId+' is defined');
+  assert.equal(infected.open,true,eventId+' does not apply an undocumented universal infected ban');
+}
+
 start('イベリア');
 const dispatchResult=snap(`
   AU='r';HL=0;

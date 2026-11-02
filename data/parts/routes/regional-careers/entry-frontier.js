@@ -368,7 +368,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 19, year: 1092 },
-      show: s => s.res?.n === "イベリア" && s.job === 0 && !s.fl?.retired && !s.fl?.inf,
+      show: s => s.res?.n === "イベリア" && s.job === 0 && !s.fl?.retired,
       t: "港町の詰所で、裁判所の人員募集を知らせる紙が風に鳴っていた。海の異変への警戒が続くなか、見習い審問官には身元の照会もあるという。列に並ぶ人々のなかには、書類の出自欄を見つめたまま引き返す者もいた。",
       c: [
         $terraData.K("裁判所の採用試問を受ける", { show: { ban: ["種族:エーギル"] }, ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [

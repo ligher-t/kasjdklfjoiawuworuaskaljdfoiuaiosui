@@ -16,7 +16,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 18, year: 1090 },
-      show: s => s.res?.n === "炎国" && s.job === 0 && !s.fl?.retired && !s.fl?.inf && (s.k || 0) >= 30,
+      show: s => s.res?.n === "炎国" && s.job === 0 && !s.fl?.retired && (s.k || 0) >= 30,
       t: "炎国の春、都や各州の試験場で科挙の会試が催された。真龍の治める広大な領土に秩序を敷くべく、三省六部の官吏登用を期して天下の士が筆を執る。家柄の推薦状だけでは通らぬ厳格な律令の試練である。",
       c: [
         $terraData.K("科挙の会試に全霊を賭けて臨む", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -238,7 +238,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 18, year: 1090 },
-      show: s => s.res?.n === "極東" && s.job === 0 && !s.fl?.retired && !s.fl?.inf,
+      show: s => s.res?.n === "極東" && s.job === 0 && !s.fl?.retired,
       t: "極東の城下町で、名門武家が新たな家臣を募っていた。北朝と南朝の対立が続くこの国において、主君に命を預けて刀を振るう『侍』は誉れ高き身分である。だがそれには、家格と武芸、そして主君への絶対の服従が求められる。",
       c: [
         $terraData.K("武家の指南役の前で剣術の型を披露する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
