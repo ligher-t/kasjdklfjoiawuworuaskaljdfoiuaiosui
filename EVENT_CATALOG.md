@@ -176375,6 +176375,11 @@ s => {
     "action": "leave",
     "note": "近所の人へ当番を引継いだ"
   },
+  "lifeGoal": {
+    "id": "neighborhood-mutual-aid",
+    "action": "abandon",
+    "note": "当番を後任へ引き継ぎ、近隣の役目を終えた"
+  },
   "groupStanding": {
     "id": "neighbors",
     "title": "近隣の住民",
@@ -176415,6 +176420,11 @@ s => {
     "title": "近隣の生活互助",
     "action": "suspend",
     "note": "本人の休養と家の用事"
+  },
+  "lifeGoal": {
+    "id": "neighborhood-mutual-aid",
+    "action": "pause",
+    "note": "家の用事を優先し、当番を一時休止した"
   },
   "h": -1,
   "p": 1
@@ -176502,6 +176512,11 @@ s => {
     "role": "不定期の備品確認",
     "note": "休止後、本人が可能な日の当番へ復帰"
   },
+  "lifeGoal": {
+    "id": "neighborhood-mutual-aid",
+    "action": "continue",
+    "note": "戻れる日だけ当番を再開した"
+  },
   "groupStanding": {
     "id": "neighbors",
     "title": "近隣の住民",
@@ -176565,6 +176580,11 @@ s => {
     "id": "local-mutual-aid",
     "action": "leave",
     "note": "本人が近隣互助の当番を終えた"
+  },
+  "lifeGoal": {
+    "id": "neighborhood-mutual-aid",
+    "action": "abandon",
+    "note": "鍵を返し、近隣互助の当番を終えた"
   },
   "p": 0
 }
@@ -176652,8 +176672,8 @@ s => {
   },
   "lifeGoal": {
     "id": "neighborhood-mutual-aid",
-    "action": "compromise",
-    "note": "転居後、地域互助の担当を引き継いだ"
+    "action": "abandon",
+    "note": "転居に伴い、以前の地区の当番を引き継いで終えた"
   },
   "p": 1
 }
@@ -220477,6 +220497,12 @@ s => {
     "title": "再編後レユニオンに連なる互助連絡網",
     "action": "leave",
     "note": "地域の仕事へ戻る"
+  },
+  "lifeGoal": {
+    "id": "reunion-relief",
+    "title": "身近な感染者へ薬と食料を届ける",
+    "action": "abandon",
+    "note": "配達の道順を後任へ引き継ぎ、連絡網の役目を終えた"
   },
   "p": 1
 }
