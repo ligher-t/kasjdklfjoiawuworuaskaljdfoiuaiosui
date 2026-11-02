@@ -209,7 +209,7 @@ window.TERRA_DATA_BUILD.fragment(
               onlyIfActive: true,
               note: "屋敷での実務から手を引いた"
             },
-            lifeGoal: { id: goalId, action: "compromise", onlyIfActive: true, note: "屋敷での務めを終えた" },
+            lifeGoal: { id: goalId, action: "abandon", onlyIfActive: true, note: "屋敷での務めを終えた" },
             p: -1
           }
         ])
@@ -260,7 +260,7 @@ window.TERRA_DATA_BUILD.fragment(
               onlyIfActive: true,
               note: "長年の屋敷の務めにピリオドを打った"
             },
-            lifeGoal: { id: goalId, action: "compromise", onlyIfActive: true, note: "屋敷の役目を終え、自分の道を選んだ" },
+            lifeGoal: { id: goalId, action: "abandon", onlyIfActive: true, note: "屋敷の役目を終え、自分の道を選んだ" },
             p: -1
           }
         ])
@@ -308,7 +308,7 @@ window.TERRA_DATA_BUILD.fragment(
               action: "leave",
               note: "休止していた屋敷の務めを正式に返上"
             },
-            lifeGoal: { id: goalId, action: "compromise", note: "屋敷での役目に区切りをつけた" },
+            lifeGoal: { id: goalId, action: "abandon", note: "屋敷での役目に区切りをつけた" },
             p: -1
           }
         ])
