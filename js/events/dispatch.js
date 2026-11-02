@@ -16,7 +16,9 @@ function isLocationInCrisis(state = S) {
     } else {
       if (state.year !== activeYear) return false;
     }
-    return isHistoricalEventLocal(h, state);
+    // A regional disruption may shape everyday life even when the resident
+    // did not witness the event at its specific battlefield or institution.
+    return historicalPlaceScope(h, state).affected;
   });
 }
 function isPeacefulLeisureEvent(event) {

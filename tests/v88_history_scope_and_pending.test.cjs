@@ -57,6 +57,9 @@ const result = JSON.parse(JSON.stringify(vm.runInContext(`(() => {
     heardRegion:S.infoLog[0]?.heardRegion,heardYear:S.infoLog[0]?.heardYear,
     eventYear:S.infoLog[0]?.eventYear};
   const regionOnly=oneRegion ? isHistoricalEventLocal(oneRegion,S) : null;
+  loc("ボリバル","ボリバルの別都市",1048,8);
+  activateHistoricalWorldEvents(S);
+  const regionalCrisis={direct:isHistoricalEventLocal(HIST.find(h=>h.flag==="bolivar_civil_war"),S),active:isLocationInCrisis(S)};
   // A queued regional-only bulletin cannot be delivered after moving out.
   const narrow=HIST.find(h=>h.infoScope==="local_news"&&h.r!=="all");
   loc(narrow.r[0],"地域内の別都市",narrow.y,narrow.availableFromMonth||1);
@@ -65,7 +68,7 @@ const result = JSON.parse(JSON.stringify(vm.runInContext(`(() => {
   S.local={...makeLocality(S.home,S.res.n),city:null};
   releasePendingHistoricalNews(S);
   const restricted={heard:!!S.hd[narrow.flag],pending:!!S.pendingHistoricalNews?.[narrow.flag]};
-  return {gh01,gh02,gh03,gh04,gh05,regionOnly,restricted};
+  return {gh01,gh02,gh03,gh04,gh05,regionOnly,regionalCrisis,restricted};
 })()`,ctx)));
 assert.equal(result.gh01.direct,false,'other Victoria city is not the Londinium battlefield');
 assert.equal(result.gh01.nearby,true,'regional news may reach another Victoria city');
@@ -87,6 +90,8 @@ assert.equal(result.gh05.heardRegion,'クルビア');
 assert.equal(result.gh05.eventYear,1098);
 assert.equal(result.gh05.heardYear,1099);
 assert.equal(result.regionOnly,false,'region-only data are not eyewitness proof');
+assert.deepEqual(result.regionalCrisis,{direct:false,active:true},
+  'civilian disruption remains recognized without inventing a witnessed battle');
 assert.deepEqual(result.restricted,{heard:false,pending:false},
   'the moved recipient no longer qualifies for the held regional notice');
 console.log('PASS GH-01..05: direct encounter, residence, sealed, delayed receipt and relocation');
