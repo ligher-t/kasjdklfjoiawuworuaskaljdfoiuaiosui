@@ -27,8 +27,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Compute merged runtime revision
-        run: node -e "console.log('EXPECTED_REVISION=' + require('./tools/update-version.cjs').revision())"
       - name: Runtime syntax and revision
         run: node tools/check-efficient.cjs syntax
       - name: Historically situated information
