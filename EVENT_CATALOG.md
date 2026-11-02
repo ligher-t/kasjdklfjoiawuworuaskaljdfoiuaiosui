@@ -204166,7 +204166,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   },
   "lifeGoal": {
     "id": "leithanian-district-petition",
-    "action": "compromise",
+    "action": "abandon",
     "onlyIfActive": true,
     "note": "地区の集まりから離れた"
   },
@@ -204255,7 +204255,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   },
   "lifeGoal": {
     "id": "leithanian-district-petition",
-    "action": "compromise",
+    "action": "abandon",
     "note": "転居を機に地区活動の役目を終えた"
   },
   "p": 0
@@ -204453,7 +204453,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   },
   "lifeGoal": {
     "id": "leithanian-district-petition",
-    "action": "compromise",
+    "action": "abandon",
     "onlyIfActive": true,
     "note": "地区活動に一区切りをつけた"
   },
@@ -204613,7 +204613,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   },
   "lifeGoal": {
     "id": "leithanian-district-petition",
-    "action": "compromise",
+    "action": "abandon",
     "note": "地区活動との関わりを終えた"
   },
   "p": -1
@@ -205314,7 +205314,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   },
   "lifeGoal": {
     "id": "leithanian-noble-household",
-    "action": "compromise",
+    "action": "abandon",
     "onlyIfActive": true,
     "note": "屋敷での務めを終えた"
   },
@@ -205479,7 +205479,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   },
   "lifeGoal": {
     "id": "leithanian-noble-household",
-    "action": "compromise",
+    "action": "abandon",
     "onlyIfActive": true,
     "note": "屋敷の役目を終え、自分の道を選んだ"
   },
@@ -205639,7 +205639,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   },
   "lifeGoal": {
     "id": "leithanian-noble-household",
-    "action": "compromise",
+    "action": "abandon",
     "note": "屋敷での役目に区切りをつけた"
   },
   "p": -1
@@ -231303,7 +231303,7 @@ s => {
   },
   "lifeGoal": {
     "id": "oripathy-research",
-    "action": "compromise",
+    "action": "abandon",
     "note": "研究協力を終え、生活上の別の優先事項へ移る"
   },
   "p": 1
