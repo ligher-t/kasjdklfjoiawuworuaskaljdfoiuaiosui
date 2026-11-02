@@ -55,7 +55,7 @@ function resetSimulationStatistics() {
   STAT.choiceMonths = new Set();
   STAT.deadlinePending = new Map();
   STAT.deadlineFired = new Set();
-  STAT.deadlineCoverage = {observed:0,delivered:0,expiredUnserved:0,censored:0,byEvent:{}};
+  STAT.deadlineCoverage = {observed:0,delivered:0,expiredUnserved:0,censored:0,byEvent:{},missedExamples:[]};
   STAT.currentLife = -1;
   STAT.currentEventId = null;
 }

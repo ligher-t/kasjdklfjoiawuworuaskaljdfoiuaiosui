@@ -1,4 +1,4 @@
-name: Temporary Reunion goal and deadline audit verification
+name: Temporary Reunion state and expiring choice verification
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
