@@ -179064,6 +179064,20 @@ s => {
       "onlyIfActiveOrCrisis": true
     }
   ],
+  "lifeGoals": [
+    {
+      "id": "order-through-exclusion",
+      "action": "abandon",
+      "onlyIfActive": true,
+      "note": "会の運営から退き、本人が追っていた活動目標を終了"
+    },
+    {
+      "id": "infected-mutual-aid",
+      "action": "abandon",
+      "onlyIfActive": true,
+      "note": "会の運営から退き、本人が追っていた活動目標を終了"
+    }
+  ],
   "lifeOrganization": {
     "id": "infected-current",
     "action": "handover",
@@ -179112,6 +179126,20 @@ s => {
       "action": "leave",
       "note": "内部分裂を受けて解散",
       "onlyIfActiveOrCrisis": true
+    }
+  ],
+  "lifeGoals": [
+    {
+      "id": "order-through-exclusion",
+      "action": "abandon",
+      "onlyIfActive": true,
+      "note": "組織を解散し、本人の活動目標を終了"
+    },
+    {
+      "id": "infected-mutual-aid",
+      "action": "abandon",
+      "onlyIfActive": true,
+      "note": "組織を解散し、本人の活動目標を終了"
     }
   ],
   "lifeOrganization": {
@@ -179770,7 +179798,10 @@ s => {
     "感染者互助組織から退出済み"
   ],
   "cd": 8,
-  "w": 0.2
+  "w": 0.2,
+  "show": {
+    "dynamicFunction": "s => (s.lifeRecord?.affiliations || []).some(member =>\n      [\"infected-exclusion\", \"infected-mutual-aid\"].includes(member.id) &&\n      member.status === \"left\" &&\n      Number.isInteger(member.endedYear) && s.year - member.endedYear >= 3 &&\n      (s.lifeRecord?.organizations || []).some(org =>\n        org.id === member.id && [\"active\", \"handed-over\"].includes(org.status))\n    )"
+  }
 }
 ```
 
@@ -181054,9 +181085,9 @@ s => {
     "id": "infected-mutual-aid",
     "title": "感染者と家族が孤立しない支援網を保つ",
     "priority": "互助",
-    "action": "compromise",
+    "action": "abandon",
     "onlyIfActive": false,
-    "note": "互助会の仕事を終えた"
+    "note": "互助会の仕事を終え、本人の活動目標を終了した"
   },
   "p": -1
 }
