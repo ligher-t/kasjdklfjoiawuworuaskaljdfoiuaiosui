@@ -49,6 +49,8 @@ assert.equal(full.queue,0);
 assert.equal(full.metrics.observed,13);
 assert.equal(full.metrics.delivered,allowedMonths);
 assert.equal(full.metrics.expiredUnserved,13-allowedMonths);
+assert.equal(full.metrics.missedExamples.length,13-allowedMonths);
+assert(full.metrics.missedExamples.every(row=>row.firstEligibleMonth===1 && row.lastProcessedMonth===12));
 assert.equal(full.metrics.censored,0);
 assert.equal(Object.keys(full.metrics.byEvent).length,13);
 const late=pressure(11,5);
@@ -58,6 +60,7 @@ assert(late.selected.every(x=>x.month>=11));
 assert.equal(late.metrics.observed,5);
 assert.equal(late.metrics.delivered,lateAllowed);
 assert.equal(late.metrics.expiredUnserved,5-lateAllowed);
+assert(late.metrics.missedExamples.every(row=>row.firstEligibleMonth===11 && row.lastProcessedMonth===12));
 
 // The real developer runner must collect results over complete years, keep
 // death-censored observations out of expiry, and preserve reproducibility.

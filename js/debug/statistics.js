@@ -19,7 +19,7 @@ const STAT = {
   choiceMonths: new Set(),
   deadlinePending: new Map(),
   deadlineFired: new Set(),
-  deadlineCoverage: {observed:0,delivered:0,expiredUnserved:0,censored:0,byEvent:{}},
+  deadlineCoverage: {observed:0,delivered:0,expiredUnserved:0,censored:0,byEvent:{},missedExamples:[]},
   currentLife: -1
 };
 
@@ -96,19 +96,28 @@ function recordSimulationEligibilityRejection(event, reason) {
 // it remains a candidate through multiple monthly slots.
 function recordSimulationExpiringChoices(state, events) {
   if (!HL) return;
-  for (const event of events)
-    if (!STAT.deadlinePending.has(event.id))
-      STAT.deadlinePending.set(event.id, state.mo);
+  for (const event of events) {
+    const existing = STAT.deadlinePending.get(event.id);
+    if (existing) existing.lastMonth = state.mo;
+    else STAT.deadlinePending.set(event.id, {firstMonth:state.mo,lastMonth:state.mo});
+  }
 }
 function finalizeSimulationDeadlineYear(state, interrupted = false) {
   if (!HL) return;
-  for (const [id] of STAT.deadlinePending) {
+  for (const [id, window] of STAT.deadlinePending) {
     const summary = STAT.deadlineCoverage,
       row = summary.byEvent[id] || (summary.byEvent[id] = {observed:0,delivered:0,expiredUnserved:0,censored:0});
     summary.observed++; row.observed++;
     const status = STAT.deadlineFired.has(id) ? "delivered" :
       interrupted ? "censored" : "expiredUnserved";
     summary[status]++; row[status]++;
+    if (status === "expiredUnserved" && summary.missedExamples.length < 30)
+      summary.missedExamples.push({
+        lifeIndex:STAT.currentLife+1, eventId:id, year:state.year,
+        age:state.age, region:state.res?.n || null,
+        firstEligibleMonth:window.firstMonth, lastEligibleMonth:window.lastMonth,
+        lastProcessedMonth:state.mo
+      });
   }
   STAT.deadlinePending.clear();
   STAT.deadlineFired.clear();
