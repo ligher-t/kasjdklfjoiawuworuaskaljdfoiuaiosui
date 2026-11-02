@@ -263,7 +263,7 @@ function buildDevSimulationReport(options, result, catalogFindings = []) {
       "候補回数はイベントが発生可能な抽選枠の数です。結果の率は設定条件とこの標本に限ります。",
       "未発生は即座に不具合を意味しません。希少条件は固定条件の経路試験で確認してください。",
       "年次空白期間はチェックポイントでの記録です。職業記録なしを失業と断定せず、教育・療養・退職等の状態と併せて読みます.",
-      "最終発火年に少なくとも一度選択可能だった人物・イベント・年を期限付き候補の母数とし、死亡や実行失敗で途中終了した年を打切りに分類します。未発火例の最初と最後の適格月を最大30件記録します。"
+      "最終発火年に少なくとも一度選択可能だった人物・イベント・年を期限付き候補の母数とし、死亡や実行失敗で途中終了した年を打切りに分類します。年内の条件変化で不適格となった選択はsupersededへ分け、未処理例の最初と最後の適格月を最大30件記録します。"
     ],
     summary: {
       requested: options.count,
@@ -313,11 +313,11 @@ function buildDevSimulationReport(options, result, catalogFindings = []) {
     eventCoverage,
     deadlineCoverage: {
       ...STAT.deadlineCoverage,
-      eligibleForRate: STAT.deadlineCoverage.observed - STAT.deadlineCoverage.censored,
-      deliveryRatePercent: STAT.deadlineCoverage.observed > STAT.deadlineCoverage.censored
-        ? Number((100 * STAT.deadlineCoverage.delivered / (STAT.deadlineCoverage.observed - STAT.deadlineCoverage.censored)).toFixed(2)) : null,
-      expiryRatePercent: STAT.deadlineCoverage.observed > STAT.deadlineCoverage.censored
-        ? Number((100 * STAT.deadlineCoverage.expiredUnserved / (STAT.deadlineCoverage.observed - STAT.deadlineCoverage.censored)).toFixed(2)) : null
+      eligibleForRate: STAT.deadlineCoverage.observed - STAT.deadlineCoverage.censored - STAT.deadlineCoverage.superseded,
+      deliveryRatePercent: STAT.deadlineCoverage.observed > STAT.deadlineCoverage.censored + STAT.deadlineCoverage.superseded
+        ? Number((100 * STAT.deadlineCoverage.delivered / (STAT.deadlineCoverage.observed - STAT.deadlineCoverage.censored - STAT.deadlineCoverage.superseded)).toFixed(2)) : null,
+      expiryRatePercent: STAT.deadlineCoverage.observed > STAT.deadlineCoverage.censored + STAT.deadlineCoverage.superseded
+        ? Number((100 * STAT.deadlineCoverage.expiredUnserved / (STAT.deadlineCoverage.observed - STAT.deadlineCoverage.censored - STAT.deadlineCoverage.superseded)).toFixed(2)) : null
     },
     choiceBranches,
     catalogSummary: devSummarizeCatalogFindings(catalogFindings),

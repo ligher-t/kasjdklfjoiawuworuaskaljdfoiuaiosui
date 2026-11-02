@@ -19,7 +19,7 @@ const STAT = {
   choiceMonths: new Set(),
   deadlinePending: new Map(),
   deadlineFired: new Set(),
-  deadlineCoverage: {observed:0,delivered:0,expiredUnserved:0,censored:0,byEvent:{},missedExamples:[]},
+  deadlineCoverage: {observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0,byEvent:{},unservedExamples:[]},
   currentLife: -1
 };
 
@@ -55,7 +55,7 @@ function resetSimulationStatistics() {
   STAT.choiceMonths = new Set();
   STAT.deadlinePending = new Map();
   STAT.deadlineFired = new Set();
-  STAT.deadlineCoverage = {observed:0,delivered:0,expiredUnserved:0,censored:0,byEvent:{},missedExamples:[]};
+  STAT.deadlineCoverage = {observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0,byEvent:{},unservedExamples:[]};
   STAT.currentLife = -1;
   STAT.currentEventId = null;
 }
@@ -99,24 +99,28 @@ function recordSimulationExpiringChoices(state, events) {
   for (const event of events) {
     const existing = STAT.deadlinePending.get(event.id);
     if (existing) existing.lastMonth = state.mo;
-    else STAT.deadlinePending.set(event.id, {firstMonth:state.mo,lastMonth:state.mo});
+    else STAT.deadlinePending.set(event.id, {event,firstMonth:state.mo,lastMonth:state.mo});
   }
 }
 function finalizeSimulationDeadlineYear(state, interrupted = false) {
   if (!HL) return;
   for (const [id, window] of STAT.deadlinePending) {
     const summary = STAT.deadlineCoverage,
-      row = summary.byEvent[id] || (summary.byEvent[id] = {observed:0,delivered:0,expiredUnserved:0,censored:0});
+      row = summary.byEvent[id] || (summary.byEvent[id] = {observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0});
     summary.observed++; row.observed++;
-    const status = STAT.deadlineFired.has(id) ? "delivered" :
-      interrupted ? "censored" : "expiredUnserved";
+    const completed = STAT.deadlineFired.has(id),
+      actionable = !completed && !interrupted && elig(window.event,state,tags(state)) &&
+        simulationChoiceStates(window.event,state,tags(state)).some(choice=>choice.enabled),
+      status = completed ? "delivered" : interrupted ? "censored" :
+        actionable ? "expiredUnserved" : "superseded";
     summary[status]++; row[status]++;
-    if (status === "expiredUnserved" && summary.missedExamples.length < 30)
-      summary.missedExamples.push({
+    if (status !== "delivered" && summary.unservedExamples.length < 30)
+      summary.unservedExamples.push({
         lifeIndex:STAT.currentLife+1, eventId:id, year:state.year,
         age:state.age, region:state.res?.n || null,
-        firstEligibleMonth:window.firstMonth, lastEligibleMonth:window.lastMonth,
-        lastProcessedMonth:state.mo
+        resolution:status, firstEligibleMonth:window.firstMonth,
+        lastEligibleMonth:window.lastMonth, lastProcessedMonth:state.mo,
+        schoolEnrolled:!!state.fl?.sch
       });
   }
   STAT.deadlinePending.clear();
