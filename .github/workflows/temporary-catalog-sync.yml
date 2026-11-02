@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Recheck distinct aid thresholds and targeted monetary effects
+      - name: Verify travel-adjusted annual support and monetary effects
         run: |
           node tools/generate-event-catalog.cjs --write
           node tools/generate-event-catalog.cjs --check
