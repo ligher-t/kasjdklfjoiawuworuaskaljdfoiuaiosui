@@ -74,13 +74,13 @@ window.TERRA_DATA_BUILD.run("regional/bolivar", function ($terraData, $define, $
   // [属性・状況固有 39-60 (22件)]
   // ドッソレス限定（都市・観光・カクテル・富裕）※ドッソレス在住かつ非貧困限定！ (5件)
   bolivarDaily.push({
-    id: "daily_bolivar_39", conf: "S", st: ["青年", "壮年"], need: ["国:ボリバル"],
+    id: "daily_bolivar_39", conf: "S", crisisPolicy: "nonessential-leisure", st: ["青年", "壮年"], need: ["国:ボリバル"],
     show: {"need":["都市:ドッソレス"],"ge":{"cash":50000}},
     t: "ドッソレスの人工ビーチ沿いのテラスで、色鮮やかなトロピカルカクテルを傾けた。内戦の影を微塵も感じさせないリゾートの狂騒に酔いしれた。",
     fx: { cash: -1500, p: 3 }
   });
   bolivarDaily.push({
-    id: "daily_bolivar_40", conf: "S", st: ["青年", "壮年"], need: ["国:ボリバル"],
+    id: "daily_bolivar_40", conf: "S", crisisPolicy: "nonessential-leisure", st: ["青年", "壮年"], need: ["国:ボリバル"],
     show: {"need":["都市:ドッソレス"]},
     t: "ドッソレスの巨大プールスタジアムで、熱狂的なウォーターフェスティバルの水上バトルを観戦した。水飛沫と音楽の渦に大興奮した。",
     fx: { p: 2 }
@@ -98,7 +98,7 @@ window.TERRA_DATA_BUILD.run("regional/bolivar", function ($terraData, $define, $
     fx: { k: 1, p: 1 }
   });
   bolivarDaily.push({
-    id: "daily_bolivar_43", conf: "S", st: ["青年", "壮年", "老年"], need: ["国:ボリバル"],
+    id: "daily_bolivar_43", conf: "S", crisisPolicy: "nonessential-leisure", st: ["青年", "壮年", "老年"], need: ["国:ボリバル"],
     show: {"need":["都市:ドッソレス"],"ge":{"cash":500000}},
     t: "ドッソレスの高級プライベートヨットで人工海を周遊した。冷えたシャンパンとキャビアを味わいながら、極上のバカンスを満喫した。",
     fx: { cash: -15000, p: 4, cr: 2 }
