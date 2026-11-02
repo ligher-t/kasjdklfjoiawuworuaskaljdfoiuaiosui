@@ -1,4 +1,4 @@
-name: Temporary deadline capacity and sample diagnostics
+name: Temporary deadline capacity and long-term statistics
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
