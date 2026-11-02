@@ -294,6 +294,7 @@ window.TERRA_DATA_BUILD.run("regional/kjerag", function ($terraData, $define, $r
     {
       id: "choice_kjerag_05",
       conf: "S",
+      months: [9, 10, 11],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["児童", "少年", "青年", "壮年", "老年"],
       need: ["国:イェラグ"],
@@ -336,6 +337,7 @@ window.TERRA_DATA_BUILD.run("regional/kjerag", function ($terraData, $define, $r
     {
       id: "choice_kjerag_07",
       conf: "S",
+      months: [3, 4, 5],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:イェラグ"],

@@ -256,6 +256,7 @@ window.TERRA_DATA_BUILD.run("regional/sami", function ($terraData, $define, $rul
     {
       id: "choice_sami_03",
       conf: "S",
+      months: [12, 1, 2],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:サーミ"],
@@ -340,6 +341,7 @@ window.TERRA_DATA_BUILD.run("regional/sami", function ($terraData, $define, $rul
     {
       id: "choice_sami_07",
       conf: "S",
+      months: [9, 10, 11],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["児童", "少年", "青年", "壮年", "老年"],
       need: ["国:サーミ"],

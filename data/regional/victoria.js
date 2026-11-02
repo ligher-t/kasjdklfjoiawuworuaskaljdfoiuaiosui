@@ -368,6 +368,7 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
     {
       id: "choice_victoria_08",
       conf: "S",
+      months: [12],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:ヴィクトリア"],

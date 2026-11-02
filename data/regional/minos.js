@@ -342,6 +342,7 @@ window.TERRA_DATA_BUILD.run("regional/minos", function ($terraData, $define, $ru
     {
       id: "choice_minos_07",
       conf: "S",
+      months: [9, 10, 11],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:ミノス"],
@@ -384,6 +385,7 @@ window.TERRA_DATA_BUILD.run("regional/minos", function ($terraData, $define, $ru
     {
       id: "choice_minos_09",
       conf: "S",
+      months: [9, 10, 11],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["児童", "少年", "青年", "壮年", "老年"],
       need: ["国:ミノス"],

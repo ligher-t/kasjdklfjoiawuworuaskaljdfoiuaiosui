@@ -6,10 +6,12 @@ on:
       - 'js/**'
       - 'data/world/history.js'
       - 'data/parts/routes/regional-careers/**'
+      - 'data/regional/**'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
       - 'tests/v88_yan_court_spring_eligibility.test.cjs'
+      - 'tests/v88_regional_choice_seasonal_calendar.test.cjs'
       - 'tests/v88_death_job_and_year_basis.test.cjs'
       - 'tests/v88_language_school_scopes.test.cjs'
       - 'tests/v88_effect_subject_finance_and_infection.test.cjs'
@@ -40,10 +42,12 @@ on:
       - 'js/**'
       - 'data/world/history.js'
       - 'data/parts/routes/regional-careers/**'
+      - 'data/regional/**'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
       - 'tests/v88_yan_court_spring_eligibility.test.cjs'
+      - 'tests/v88_regional_choice_seasonal_calendar.test.cjs'
       - 'tests/v88_death_job_and_year_basis.test.cjs'
       - 'tests/v88_language_school_scopes.test.cjs'
       - 'tests/v88_effect_subject_finance_and_infection.test.cjs'
@@ -87,6 +91,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs
       - name: Yan court recruitment is only offered in spring
         run: node tools/check-efficient.cjs run v88_yan_court_spring_eligibility.test.cjs
+      - name: Seasonal choices honor actual calendar months
+        run: node tools/check-efficient.cjs run v88_regional_choice_seasonal_calendar.test.cjs
       - name: Death risks and annual-accounting boundaries
         run: node tools/check-efficient.cjs run v88_death_job_and_year_basis.test.cjs
       - name: Interpreter and school-knowledge boundaries

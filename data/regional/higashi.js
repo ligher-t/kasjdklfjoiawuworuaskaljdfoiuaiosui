@@ -297,6 +297,7 @@ window.TERRA_DATA_BUILD.run("regional/higashi", function ($terraData, $define, $
     {
       id: "choice_higashi_05",
       conf: "S",
+      months: [12, 1, 2],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:極東"],

@@ -414,6 +414,7 @@ window.TERRA_DATA_BUILD.run("regional/leithanien", function ($terraData, $define
     {
       id: "choice_leithanien_10",
       conf: "S",
+      months: [6, 7],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["児童", "少年", "青年", "壮年", "老年"],
       need: ["国:リターニア"],

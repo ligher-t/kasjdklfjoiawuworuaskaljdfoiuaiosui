@@ -300,6 +300,7 @@ window.TERRA_DATA_BUILD.run("regional/iberia", function ($terraData, $define, $r
     {
       id: "choice_iberia_04",
       conf: "S",
+      months: [6, 7, 8],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:イベリア"],
@@ -342,6 +343,7 @@ window.TERRA_DATA_BUILD.run("regional/iberia", function ($terraData, $define, $r
     {
       id: "choice_iberia_06",
       conf: "S",
+      months: [9, 10, 11],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["児童", "少年", "青年", "壮年", "老年"],
       need: ["国:イベリア"],

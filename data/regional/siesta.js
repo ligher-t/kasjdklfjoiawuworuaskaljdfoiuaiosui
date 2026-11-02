@@ -323,6 +323,7 @@ window.TERRA_DATA_BUILD.run("regional/siesta", function ($terraData, $define, $r
     {
       id: "choice_siesta_06",
       conf: "S",
+      months: [9, 10, 11, 12, 1, 2],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:シエスタ"],

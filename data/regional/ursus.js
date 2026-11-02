@@ -252,6 +252,7 @@ window.TERRA_DATA_BUILD.run("regional/ursus", function ($terraData, $define, $ru
     {
       id: "choice_ursus_02",
       conf: "S",
+      months: [12, 1, 2],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:ウルサス"],
@@ -410,6 +411,7 @@ window.TERRA_DATA_BUILD.run("regional/ursus", function ($terraData, $define, $ru
     {
       id: "choice_ursus_10",
       conf: "S",
+      months: [2, 3],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["児童", "少年", "青年", "壮年", "老年"],
       need: ["国:ウルサス"],
