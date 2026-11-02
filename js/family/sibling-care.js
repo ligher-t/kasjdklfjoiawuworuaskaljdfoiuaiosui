@@ -101,20 +101,20 @@ function lapseUnaffordableSiblingTreatment(s, careCost = householdSiblingCareExp
   );
   return sibling.id;
 }
-const siblingCareSupportQuote = (s, sibling, costPm = s.res.pm * (s.priceIndex || 1)) =>
+const siblingCareSupportQuote = (s, sibling, costPm = s.res.pm * (s.priceIndex || 1) * localityLivingMultiplier(s)) =>
   sibling?.independentSinceYear && sibling.inf && !sibling.d
     ? (sibling.careSupportAnnual || P("economy.siblingInfectionSupportAnnualCost")) *
       costPm *
       infectionCareTravelCostScale(s)
     : 0;
-const independentSiblingCareSupportAnnualCost = (s, sibling, costPm = s.res.pm * (s.priceIndex || 1)) =>
+const independentSiblingCareSupportAnnualCost = (s, sibling, costPm = s.res.pm * (s.priceIndex || 1) * localityLivingMultiplier(s)) =>
   sibling?.careSupportAnnual > 0 ? siblingCareSupportQuote(s, sibling, costPm) : 0;
-const independentSiblingCareSupportExpense = (s, costPm = s.res.pm * (s.priceIndex || 1)) =>
+const independentSiblingCareSupportExpense = (s, costPm = s.res.pm * (s.priceIndex || 1) * localityLivingMultiplier(s)) =>
   siblingsOf(s).reduce(
     (sum, sibling) => sum + independentSiblingCareSupportAnnualCost(s, sibling, costPm),
     0
   );
-function recordIndependentSiblingCareSupportPayments(s, costPm = s.res.pm * (s.priceIndex || 1)) {
+function recordIndependentSiblingCareSupportPayments(s, costPm = s.res.pm * (s.priceIndex || 1) * localityLivingMultiplier(s)) {
   for (const sibling of siblingsOf(s))
     if (sibling.independentSinceYear && sibling.inf && !sibling.d && sibling.careSupportAnnual > 0) {
       const amount = sibling.careSupportAnnual * costPm * infectionCareTravelCostScale(s);
