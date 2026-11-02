@@ -38,7 +38,8 @@ const ursus=inspect(`
   S.year=1101;S.age=20;S.mo=12;
   const meeting=EV.find(e=>e.id==='life_ursus_student_assembly_meeting'),
         protest=EV.find(e=>e.id==='life_ursus_student_assembly_protest');
-  S.fl.ursus_student_assembly_contacted=1;
+  const contact=EV.find(e=>e.id==='life_ursus_student_assembly_contact');
+  ap(contact.c[0].o[0][2]); // contact starts the specific affiliation and life goal
   S.fl.ursus_student_assembly_active=1;
   S.sn[meeting.id]=1101;
   S.eventOutcomes={[meeting.id]:{year:1101,choiceIndex:0,outcomeIndex:0}};
