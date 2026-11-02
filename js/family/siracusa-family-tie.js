@@ -140,7 +140,11 @@ function recordSiracusaFamilyDuty(s, input, eventId, choice) {
     ].includes(action)
   )
     throw new Error("ファミリーの仕事・借りの記録形式が不正");
-  const amount = Math.max(0, Number(input.amount) || 0);
+  const outstanding = Math.max(0, Number(d.outstandingAmount) || 0);
+  const amount =
+    input.amount === "outstanding" ? outstanding :
+      input.amount === "remaining-after-30000" ? Math.max(0, outstanding - 30000) :
+        Math.max(0, Number(input.amount) || 0);
   if (action === "join") {
     if (!Number.isInteger(d.nextYear)) d.nextYear = s.year + 2;
   } else if (action === "paidErrand" || action === "refusedPressure" || action === "acceptedPressure") {
