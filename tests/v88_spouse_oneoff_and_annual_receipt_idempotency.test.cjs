@@ -11,8 +11,8 @@ for (const shared of [false, true]) {
   ctx.SHARED=shared;
   const r=inspect(`
     S.year=1100;S.age=40;S.priceIndex=1.15;
-    S.residenceArrangement=SHARED?'spouse_shared':'independent_rental';
-    S.fl.household_separated=1;
+    S.residenceArrangement=SHARED?'family_home_shared_budget':'independent_rental';
+    S.fl.household_separated=SHARED?0:1;
     S.sp={
       id:'spouse-finance-aid',nm:'家計を相談する配偶者',r:S.r,by:1071,d:0,
       sharesHousehold:SHARED,residenceRegion:S.res.n,
