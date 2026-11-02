@@ -88742,6 +88742,11 @@ s => {
 {
   "id": "choice_higashi_05",
   "conf": "S",
+  "months": [
+    12,
+    1,
+    2
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -92789,6 +92794,11 @@ s => {
 {
   "id": "choice_ursus_02",
   "conf": "S",
+  "months": [
+    12,
+    1,
+    2
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -94094,6 +94104,10 @@ s => {
 {
   "id": "choice_ursus_10",
   "conf": "S",
+  "months": [
+    2,
+    3
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -98326,6 +98340,9 @@ s => {
 {
   "id": "choice_victoria_08",
   "conf": "S",
+  "months": [
+    12
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -103065,6 +103082,10 @@ s => {
 {
   "id": "choice_leithanien_10",
   "conf": "S",
+  "months": [
+    6,
+    7
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -107476,6 +107497,11 @@ s => {
 {
   "id": "choice_laterano_10",
   "conf": "S",
+  "months": [
+    3,
+    4,
+    5
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -125278,6 +125304,14 @@ s => {
 {
   "id": "choice_siesta_06",
   "conf": "S",
+  "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -134000,6 +134034,11 @@ s => {
 {
   "id": "choice_sami_03",
   "conf": "S",
+  "months": [
+    12,
+    1,
+    2
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -134751,6 +134790,11 @@ s => {
 {
   "id": "choice_sami_07",
   "conf": "S",
+  "months": [
+    9,
+    10,
+    11
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -138975,6 +139019,11 @@ s => {
 {
   "id": "choice_kjerag_05",
   "conf": "S",
+  "months": [
+    9,
+    10,
+    11
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -139349,6 +139398,11 @@ s => {
 {
   "id": "choice_kjerag_07",
   "conf": "S",
+  "months": [
+    3,
+    4,
+    5
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -148230,6 +148284,11 @@ s => {
 {
   "id": "choice_iberia_04",
   "conf": "S",
+  "months": [
+    6,
+    7,
+    8
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -148598,6 +148657,11 @@ s => {
 {
   "id": "choice_iberia_06",
   "conf": "S",
+  "months": [
+    9,
+    10,
+    11
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -162742,6 +162806,11 @@ s => {
 {
   "id": "choice_minos_07",
   "conf": "S",
+  "months": [
+    9,
+    10,
+    11
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
@@ -163117,6 +163186,11 @@ s => {
 {
   "id": "choice_minos_09",
   "conf": "S",
+  "months": [
+    9,
+    10,
+    11
+  ],
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
