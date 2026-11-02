@@ -67,13 +67,18 @@ function applyLifeRecordEffects(e, s) {
   if (e.groupStanding) applyGroupStanding(e.groupStanding);
   if (e.groupStandings) e.groupStandings.forEach(applyGroupStanding);
   if (e.regionalImpact) applyRegionalImpact(e.regionalImpact);
-  if (e.siracusaFamilyAction)
-    recordSiracusaFamilyAction(
-      s,
-      e.siracusaFamilyAction,
-      TRACE_RESOLUTION?.id,
-      TRACE_RESOLUTION?.label || e.label
-    );
+  if (e.siracusaFamilyAction) {
+    const input = e.siracusaFamilyAction;
+    const action = typeof input === "string" ? input : input.action;
+    const member = s.lifeRecord?.affiliations?.find(item => item.id === "siracusa-familia");
+    if (!input.onlyIfMember || ["active", "crisis", "suspended"].includes(member?.status))
+      recordSiracusaFamilyAction(
+        s,
+        action,
+        TRACE_RESOLUTION?.id,
+        TRACE_RESOLUTION?.label || e.label
+      );
+  }
   if (e.siracusaFamilyDuty)
     recordSiracusaFamilyDuty(
       s,
