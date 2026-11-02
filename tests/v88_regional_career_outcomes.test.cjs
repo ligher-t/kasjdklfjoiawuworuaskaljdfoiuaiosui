@@ -15,7 +15,7 @@ function start(region, species='エラフィア') {
 // Exercise the actual event dispatcher once, not a manually fabricated result.
 start('イベリア');
 const dispatchResult=snap(`
-  rd=()=>{}; // suppress UI drawing, not the actual event or choice resolution
+  rd=()=>{}; syncUIDialogs=()=>{}; // replace DOM-only hooks in the VM fixture
   AU='r';HL=0;
   const e=EV.find(x=>x.id==='car_ibe_inq_entry');
   fire(e,S,tags(S));
