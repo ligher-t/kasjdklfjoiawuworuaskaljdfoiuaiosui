@@ -6,6 +6,8 @@
 
 1. イベントIDから EVENT_CATALOG.md で現行の生成元ファイルとレビュー状態を探す。
 2. 本文・条件・選択・効果・後続を、実際のデータ生成元（data/ と対応するエンジンの js/）で直す。条件、効果、後続、出典IDも本文と同じ変更範囲として確認する。
+**プレイヤー表示文面の提出ルール**：イベントの本文、選択肢、結果、UIに表示される肩書・説明文を追加・改稿した場合、`docs/PLAYER_TEXT_REVIEW.md` に**イベントID・変更後の文面全文・変更理由・根拠区分・該当ソースパス**を一度だけ追記する。確認用台帳はプレイヤー表示の正本ではなく、レビューの索引。文章の評価を実装担当の完了条件にしない。課題や進捗は従来どおり `REMAINING_TASKS.md` のみとする。
+
 3. 根拠は data/model/sources.js の構成下にある SETTING_SOURCES と、data/review/current-review.js または choice-policy.js の既存分類へ記録する。個別事例、二次資料、分析・推論、ゲーム内補完を区別し、複数の台帳へ同じ長文を複製しない。
 4. 編集・レビュー分類の変更後に node tools/generate-event-catalog.cjs --write を実行し、生成された EVENT_CATALOG.md を更新する。手作業でカタログの行を変えない。
 5. 提出前に node tools/generate-event-catalog.cjs --check を実行する。これはメタデータ整合と生成物の最新状態を確認する。P3対象ファイルでは同じチェックがPR自動検査でも走る。
