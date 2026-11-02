@@ -30,11 +30,7 @@ function childHouseholdFinances(s, costPm, regionPm = s.res.pm) {
       living += P("economy.adultChildSharedHousingAnnualCost") * share * childCostPm;
     }
     if (child.inf && dependent && (child.tx || child.careSupport !== 0)) {
-      const careBase =
-        P(child.tx ? "economy.childInfectionTreatmentAnnualCost" : "economy.childInfectionCareAnnualCost") *
-        infectionCareTravelCostScale(s) *
-        share *
-        childCostPm;
+      const careBase = childAnnualMedicalExpense(s, child, !!child.tx, costPm);
       care += careBase;
       living += careBase;
     }
