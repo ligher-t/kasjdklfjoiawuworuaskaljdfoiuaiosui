@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Recheck annual receipts with medical travel surcharge
+      - name: Verify exact annual fee thresholds and transfer receipts
         run: |
           node tools/generate-event-catalog.cjs --write
           node tools/generate-event-catalog.cjs --check
