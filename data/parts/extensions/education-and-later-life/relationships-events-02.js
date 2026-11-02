@@ -402,7 +402,7 @@ window.TERRA_DATA_BUILD.fragment(
           },
           [
             1,
-            "年に{siblingCareSupportAmount}ずつ治療費を送ると{siblings}に伝え、最初の仕送りを済ませた。少しでも安心して医者にかかれるよう祈った。",
+            "年に{siblingCareSupportAmount}ずつ治療費を送ると{siblings}に伝え、最初の送金日を決めた。少しでも安心して医者にかかれるよう祈った。",
             { sibCareSupport: "start", sibContact: "regular", rl: 3, p: 1 }
           ]
         ),
