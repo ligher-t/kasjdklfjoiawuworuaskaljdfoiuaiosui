@@ -1,6 +1,8 @@
 // js/life/annual/household-budget.js: ordered annual phase; see ANNUAL.md.
 function settleAnnualHouseholdBudget(s, services, a) {
-  if (a < services.householdEndAge(s)) {
+  const familyHome = !s.fl?.household_separated &&
+    typeof s.residenceArrangement === "string" && s.residenceArrangement.startsWith("family_home_");
+  if (a < services.householdEndAge(s) || familyHome) {
     /* 養育者の職業収入・家族規模・地域物価から世帯収支を作り、子どもの医療や教育費も同じ帳簿へ載せる。
        支出は収入割合で打ち切らず、家族構成に応じた必要額を払う。数値は公式統計ではなくモデル仮定。 */
     const house =
@@ -28,7 +30,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
         Math.max(0, grossParentIncome - lostParentIncome) * s.care.parentShare * s.res.pm * wageIndex +
         networkIncome +
         capitalIncome;
-    // 15歳以降も家計の終了年までは、共有家計を選んだ本人の生活・治療をここだけで負担する。
+    // 共有家計を続ける限り、成人後も本人の生活・治療をこの帳簿で負担する。
     // 個人会計を選んだ場合は本人分を家計人数・治療費から外し、本人会計へ載せる。
     const householdCoversProtagonist =
       a < services.P("life.workStartAge") || services.inSharedHousehold(s);
@@ -77,6 +79,15 @@ function settleAnnualHouseholdBudget(s, services, a) {
       parentTreatmentCost * s.priceIndex +
       siblingCareCost * s.priceIndex;
     if(typeof updateLoanContractStatuses==="function")updateLoanContractStatuses(s);
+    // Shared household reserves are available for the actual family shortfall.
+    // Transfer only the amount needed; do not silently confiscate a wage earner's savings.
+    const reserveContribution = services.inSharedHousehold(s) && a >= services.P("life.workStartAge")
+      ? Math.min(Math.max(0, s.cash || 0), Math.max(0, hex - hinc - (house.cash || 0)))
+      : 0;
+    if (reserveContribution > 0) {
+      s.cash -= reserveContribution;
+      house.cash += reserveContribution;
+    }
     const hnet = hinc - hex;
     if (hnet >= 0) {
       const contractPaid=typeof settleContractDebt==="function" ? settleContractDebt(s,"household",hnet) : 0,
@@ -97,7 +108,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
     const educationTuition = s.educationAnnualFee?.year === s.year ?
       (s.educationAnnualFee.paidByHousehold ??
        (s.educationAnnualFee.payer === "household" ? s.educationAnnualFee.amount : 0)) : 0;
-    house.inc = hinc;
+    house.inc = hinc + reserveContribution;
     house.exp = hex + educationTuition;
     house.flow = {
       year: s.year,
@@ -105,7 +116,8 @@ function settleAnnualHouseholdBudget(s, services, a) {
         caregivers:
           Math.max(0, grossParentIncome - lostParentIncome) * s.care.parentShare * s.res.pm * wageIndex,
         network: networkIncome,
-        capital: capitalIncome
+        capital: capitalIncome,
+        ...(reserveContribution > 0 ? { protagonistReserve: reserveContribution } : {})
       },
       expense: {
         living: Math.max(
@@ -119,7 +131,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
         siblingCare: (siblingCareCost - siblingCareTravel) * s.priceIndex,
         medicalTravel: (treatmentTravel + parentTreatmentTravel + siblingCareTravel) * s.priceIndex
       },
-      net: hnet - educationTuition
+      net: hnet + reserveContribution - educationTuition
     };
     const network = s.care.supportNetwork;
     if (network && network.status === "active") {

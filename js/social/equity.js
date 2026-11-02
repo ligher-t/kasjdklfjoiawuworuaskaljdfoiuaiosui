@@ -142,10 +142,10 @@ function equityCreditPenalty(s) {
 }
 
 const householdStrained = s => {
-  const minor = inSharedHousehold(s) && s.house,
-    rawCash = minor ? s.house.cash : s.cash,
-    rawDebt = minor ? s.house.debt : s.debt,
-    rawExpense = minor ? s.house.exp : s.exp,
+  const shared = inSharedHousehold(s) && s.house,
+    rawCash = shared ? (s.house.cash || 0) + (s.cash || 0) : s.cash,
+    rawDebt = shared ? (s.house.debt || 0) + (s.debt || 0) : s.debt,
+    rawExpense = shared ? (s.house.exp || 0) + (s.exp || 0) : s.exp,
     liquid = Number.isFinite(rawCash) ? rawCash : 0,
     debt = Number.isFinite(rawDebt) ? rawDebt : 0,
     expense = Math.max(

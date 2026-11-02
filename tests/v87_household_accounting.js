@@ -52,6 +52,53 @@ function settle() {
   })()`, ctx);
 }
 
+// A grown adult can remain in the family home without freezing the parent ledger
+// or being classified as destitute because the parent account has little cash.
+prepare(32, 'family_home_shared_budget');
+const adultShared = vm.runInContext(`(() => {
+  const s = S;
+  s.care.kind = '片親と暮らす';
+  s.care.parentKeys = ['mo'];
+  s.par.fa.d = 0;
+  s.par.fa.separated = true;
+  s.par.mo.d = 0;
+  s.par.mo.j = 0;
+  s.care.networkIncome = 0;
+  s.w = WEALTH[0];
+  s.house.cash = 0;
+  s.cash = 120000000;
+  const personalCashBefore = s.cash;
+  settleAnnualHouseholdBudget(s, ANNUAL_SERVICES, s.age);
+  const houseYear = s.house.flow.year;
+  const transfer = s.house.flow.income.protagonistReserve || 0;
+  const paidByHousehold = s.house.flow.expense.living;
+  applyAnnualPersonalBudget(s, ANNUAL_SERVICES, s.age, s.t, s.f);
+  refreshWealthClass(s);
+  return {
+    houseYear, year: s.year, transfer, paidByHousehold,
+    savedFromOwnFunds: personalCashBefore - s.cash + (s.inc - s.exp),
+    personalLiving: s.flow.expense.living,
+    accountedContribution: s.flow.expense.familyContribution || 0,
+    strained: householdStrained(s), wealth: s.w.i,
+    residentNames: currentHouseholdMembers(s),
+    absentParent: s.par.fa.nm, presentParent: s.par.mo.nm
+  };
+})()`, ctx);
+assert.equal(adultShared.houseYear, adultShared.year, 'shared family books must advance beyond the exit-age guideline');
+assert(adultShared.paidByHousehold > 0, 'adult shared living costs belong to the shared ledger');
+assert.equal(adultShared.personalLiving, 0, 'do not charge adult shared living costs twice');
+assert(adultShared.transfer > 0, 'adult shared savings must cover an actual household cash shortfall');
+assert.equal(adultShared.accountedContribution, adultShared.transfer, 'internal transfer must be visible in both ledgers');
+assert.equal(adultShared.strained, false, 'strain must consider funds available across the shared household');
+assert(adultShared.wealth >= 3, 'shared household wealth class must consider the adult account');
+assert(adultShared.residentNames.includes(adultShared.presentParent), 'resident caregiver must appear');
+assert(!adultShared.residentNames.includes(adultShared.absentParent), 'absent parent must not be invented as a resident');
+
+prepare(32, 'family_home_separate_budget');
+const adultSeparate = settle();
+assert.equal(adultSeparate.personalBudgetRecorded, true, 'adult personal account remains active');
+assert(adultSeparate.personalLiving > 0, 'separate-budget adult pays their own living costs');
+
 prepare(15, 'family_home_shared_budget', true);
 const shared = settle();
 assert(shared.householdLiving > 0, 'the shared household should carry the youth living share');
