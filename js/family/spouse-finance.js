@@ -312,12 +312,11 @@ function recordSpouseSeparateSupportTransfer(s, amount) {
   spouse.pendingSupportTransactionId = transactionId;
   return transactionId;
 }
-function spouseSeparateSupportCost(s) {
+function spouseSeparateSupportCost(s, plan = s.sp?.separateSupportPlan) {
   const spouse = s.sp;
   if (!spouse || spouse.d || spouseLivesWithProtagonist(s)) return 0;
   const region = spouseResidenceRegion(s),
-    price = s.priceIndex || 1,
-    plan = spouse.separateSupportPlan;
+    price = s.priceIndex || 1;
   if (plan === "living") return P("economy.spouseSeparateSupportAnnualCost") * region.pm * price;
   if (plan === "medical" && spouse.inf && spouse.tx) {
     const pressure =
