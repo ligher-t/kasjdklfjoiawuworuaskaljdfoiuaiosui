@@ -20,6 +20,7 @@ on:
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
+      - 'tests/v88_cross_faction_affiliation_transitions.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
   pull_request:
@@ -42,6 +43,7 @@ on:
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
+      - 'tests/v88_cross_faction_affiliation_transitions.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
 permissions:
@@ -87,3 +89,5 @@ jobs:
         run: node tools/check-efficient.cjs run v88_affiliation_legacy_event_boundaries.test.cjs
       - name: Reunion crisis pause and old unit transfer goals
         run: node tools/check-efficient.cjs run v88_reunion_goal_transition.test.cjs
+      - name: Rhodes and Reunion actual affiliations and recruitment
+        run: node tools/check-efficient.cjs run v88_cross_faction_affiliation_transitions.test.cjs
