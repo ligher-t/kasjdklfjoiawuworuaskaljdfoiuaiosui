@@ -670,12 +670,15 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
         $terraData.K(
           "仕送りは辞退し、逆に実家へ支援金を送る",
           {
-            show: s => (s.cash || 0) >= 200000 && ((s.job || 0) > 0 || (s.inc || 0) > 0)
+            show: s => s.house?.parentLedger?.status === "tracked" &&
+              (s.cash || 0) >= 200000 && ((s.job || 0) > 0 || (s.inc || 0) > 0),
+            en: { affordableParentHouseholdCash: 150000 },
+            why: "実家への支援金と当面の生活費を同時に用意できない"
           },
           [
             1,
             "仕送りは丁重に断り、むしろ日頃の感謝を込めて実家の家計へまとまった支援金を包んで送った。家族から感謝と労りの便りが届いた。",
-            { selfCash: -150000, p: 3, rl: 3 }
+            { parentHouseholdGift: 150000, p: 3, rl: 3 }
           ]
         )
       ]

@@ -62,11 +62,11 @@ function applySiblingSupportEffects(e, s) {
       house = s.house;
     if (!ledger || ledger.status !== "tracked" || e.parentHouseholdGift < 0)
       throw new Error("親世帯への一時送金に必要な家計記録がありません");
-    const amount = Math.min(
-      Math.max(0, s.cash || 0),
+    const amount = Math.max(0, Math.round(
       e.parentHouseholdGift * (ledger.res?.pm || s.res.pm) * (ledger.priceIndex || s.priceIndex || 1)
-    );
-    if (amount <= 0) throw new Error("親世帯へ送金できる本人資金がありません");
+    ));
+    if (amount <= 0 || (s.cash || 0) < amount)
+      throw new Error("親世帯へ送る約束の金額を本人資金から用意できません");
     s.cash -= amount;
     const debtPaid = Math.min(Math.max(0, house.debt || 0), amount),
       cashAdded = amount - debtPaid;
