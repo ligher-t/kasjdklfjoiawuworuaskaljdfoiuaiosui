@@ -202607,7 +202607,9 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 ```json
 {
   "fl": {
-    "ursus_katorga_detained": 1
+    "ursus_katorga_detained": 1,
+    "detained": 1,
+    "ursus_student_assembly_active": 0
   },
   "lifeAffiliation": {
     "id": "ursus-student-assembly",
@@ -202870,6 +202872,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 {
   "id": "life_ursus_katorga_life",
   "conf": "B",
+  "inConfinement": true,
   "references": [
     "SRC_URSUS_PAA_SYNOPSIS"
   ],
@@ -203045,6 +203048,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 {
   "id": "life_ursus_student_assembly_release",
   "conf": "B",
+  "inConfinement": true,
   "references": [
     "SRC_URSUS_PAA_SYNOPSIS"
   ],
@@ -203115,6 +203119,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   },
   "fl": {
     "ursus_katorga_detained": 0,
+    "detained": 0,
     "ursus_student_assembly_active": 1
   },
   "p": 1
@@ -203155,6 +203160,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   },
   "fl": {
     "ursus_katorga_detained": 0,
+    "detained": 0,
     "ursus_student_assembly_active": 0
   },
   "regionalImpact": {
@@ -203202,6 +203208,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   },
   "fl": {
     "ursus_katorga_detained": 0,
+    "detained": 0,
     "ursus_student_assembly_active": 0
   },
   "h": 2,
