@@ -31,11 +31,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Targeted death regression and revision diagnostic (temporary)
-        run: |
-          node tools/check-efficient.cjs run v88_death_job_and_year_basis.test.cjs
-          node tools/check-efficient.cjs run v87_war_mortality_scope.js
-          node -e "console.log('EXPECTED_REVISION=' + require('./tools/update-version.cjs').revision())"
       - name: Runtime syntax and revision
         run: node tools/check-efficient.cjs syntax
       - name: Historically situated information
