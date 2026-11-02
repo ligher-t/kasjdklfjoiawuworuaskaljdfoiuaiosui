@@ -1303,9 +1303,9 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
         "spouseSeparateContact",
         "spouseHousingPlan",
         "spouseDisclosureBoundary",
-        "divorceParentingPlan",
-        "siracusaFamilyAction"
-      ]
+        "divorceParentingPlan"
+      ],
+      textOrObject: ["siracusaFamilyAction"]
     },
     false
   );

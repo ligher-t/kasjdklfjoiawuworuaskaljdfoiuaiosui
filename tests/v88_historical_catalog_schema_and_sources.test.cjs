@@ -16,6 +16,8 @@ const result=read(`
  const stages=daily.map(id=>EV.find(e=>e.id===id)?.st);
  const city=SIM_TABLES.namedCities['カジミエーシュ']?.includes('カヴァレリエルキ')||false;
  const job=J.some(j=>j.n==='イベリア裁判所・見習い審問官');
+ const actualType=EVENT_FIELD_META.siracusaFamilyAction.valueType;
+ const registeredType=EVENT_EFFECT_TYPES.textOrObject?.includes('siracusaFamilyAction')||false;
  const target=historical[0],original=target.timelineFlag;
  target.timelineFlag='unregistered-chronicle-probe';
  const invalidTimeline=validate().filter(msg=>msg.includes(target.id)&&msg.includes('timelineFlag'));
@@ -25,7 +27,7 @@ const result=read(`
  const invalidFamily=validate().filter(msg=>msg.includes('sir_family_obligation')&&msg.includes('siracusaFamilyAction'));
  sir.c[1].o[0][2].siracusaFamilyAction=old;
  return {clean,flags,count:historical.length,unmapped:historical.filter(e=>!HIST.some(h=>h.flag===e.timelineFlag)).map(e=>e.id),
-  stages,city,job,invalidTimeline,invalidFamily};
+  stages,city,job,actualType,registeredType,invalidTimeline,invalidFamily};
 `);
 assert.deepEqual(result.clean,[],'all event source, effect and tag references resolve');
 assert(result.count>=30,'historical event metadata is registered');
@@ -33,6 +35,8 @@ assert.deepEqual(result.unmapped,[],'historical events target a real HIST flag')
 assert(result.flags.every(Boolean),'all six historic player outcomes have registry entries');
 assert(result.stages.every(s=>s?.includes('少年')&&s?.includes('老年')),'war dailies are age scoped');
 assert(result.city&&result.job,'city and job tags match runtime vocabularies');
+assert.equal(result.actualType,'textOrObject','effect type is not silently overwritten during data initialization');
+assert.equal(result.registeredType,true,'schema source of truth accepts conditional family actions');
 assert(result.invalidTimeline.length>0,'an invalid timelineFlag must fail diagnostics');
 assert(result.invalidFamily.length>0,'malformed conditional family action must fail diagnostics');
 console.log('PASS: historical catalog tags, timeline, flags and Siracusa conditional effect');
