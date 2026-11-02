@@ -111,7 +111,7 @@ for (const followup of ['settle','mediate','dispute']) {
     S.year=1092;S.age=30;
     ap(debt.c[1].o[1][2]); // A 30,000 payment leaves 60,000 outstanding.
     const afterFirst=S.siracusaFamilyTie.duty.outstandingAmount;
-    S.year=1094;S.age=32;S.cash=10000000;
+    S.year=1094;S.age=32;S.priceIndex=1;S.cash=10000000;
     const available=elig(debt,S,tags(S));
     const fullChoice=debt.c[0],partialChoice=debt.c[1];
     const fullAvailable=ok(fullChoice.show,S,tags(S));
