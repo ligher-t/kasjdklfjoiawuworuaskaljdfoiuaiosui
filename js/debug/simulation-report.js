@@ -198,6 +198,17 @@ function devAggregateEconomicHealth(lives) {
   };
 }
 
+function devDeadlineGroupStats(groups) {
+  return Object.fromEntries(Object.entries(groups).map(([key,row])=>{
+    const eligibleForRate=row.delivered+row.expiredUnserved;
+    return [key,{
+      ...row,eligibleForRate,
+      deliveryRatePercent:eligibleForRate?Number((100*row.delivered/eligibleForRate).toFixed(2)):null,
+      expiryRatePercent:eligibleForRate?Number((100*row.expiredUnserved/eligibleForRate).toFixed(2)):null
+    }];
+  }));
+}
+
 function buildDevSimulationReport(options, result, catalogFindings = []) {
   const lives = STAT.lifeMetrics,
     deaths = lives.filter(row => row.dead),
@@ -263,7 +274,7 @@ function buildDevSimulationReport(options, result, catalogFindings = []) {
       "候補回数はイベントが発生可能な抽選枠の数です。結果の率は設定条件とこの標本に限ります。",
       "未発生は即座に不具合を意味しません。希少条件は固定条件の経路試験で確認してください。",
       "年次空白期間はチェックポイントでの記録です。職業記録なしを失業と断定せず、教育・療養・退職等の状態と併せて読みます.",
-      "最終発火年に少なくとも一度選択可能だった人物・イベント・年を期限付き候補の母数とし、死亡や実行失敗で途中終了した年を打切りに分類します。年内の条件変化で不適格となった選択はsupersededへ分け、未処理例の最初と最後の適格月を最大30件記録します。"
+      "最終発火年に少なくとも一度選択可能だった人物・イベント・年を期限付き候補の母数とし、死亡や実行失敗で途中終了した年を打切りに分類します。年内の条件変化で不適格となった選択はsupersededへ分け、未処理例の最初と最後の適格月を最大30件記録します。地域・年齢帯は初めて適格になった時点で集計します。"
     ],
     summary: {
       requested: options.count,
@@ -313,6 +324,8 @@ function buildDevSimulationReport(options, result, catalogFindings = []) {
     eventCoverage,
     deadlineCoverage: {
       ...STAT.deadlineCoverage,
+      byRegion:devDeadlineGroupStats(STAT.deadlineCoverage.byRegion),
+      byAgeBand:devDeadlineGroupStats(STAT.deadlineCoverage.byAgeBand),
       eligibleForRate: STAT.deadlineCoverage.observed - STAT.deadlineCoverage.censored - STAT.deadlineCoverage.superseded,
       deliveryRatePercent: STAT.deadlineCoverage.observed > STAT.deadlineCoverage.censored + STAT.deadlineCoverage.superseded
         ? Number((100 * STAT.deadlineCoverage.delivered / (STAT.deadlineCoverage.observed - STAT.deadlineCoverage.censored - STAT.deadlineCoverage.superseded)).toFixed(2)) : null,

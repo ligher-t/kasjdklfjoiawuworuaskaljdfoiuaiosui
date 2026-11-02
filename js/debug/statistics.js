@@ -19,7 +19,7 @@ const STAT = {
   choiceMonths: new Set(),
   deadlinePending: new Map(),
   deadlineFired: new Set(),
-  deadlineCoverage: {observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0,byEvent:{},unservedExamples:[]},
+  deadlineCoverage: {observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0,byEvent:{},byRegion:{},byAgeBand:{},unservedExamples:[]},
   currentLife: -1
 };
 
@@ -55,7 +55,7 @@ function resetSimulationStatistics() {
   STAT.choiceMonths = new Set();
   STAT.deadlinePending = new Map();
   STAT.deadlineFired = new Set();
-  STAT.deadlineCoverage = {observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0,byEvent:{},unservedExamples:[]};
+  STAT.deadlineCoverage = {observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0,byEvent:{},byRegion:{},byAgeBand:{},unservedExamples:[]};
   STAT.currentLife = -1;
   STAT.currentEventId = null;
 }
@@ -99,7 +99,10 @@ function recordSimulationExpiringChoices(state, events) {
   for (const event of events) {
     const existing = STAT.deadlinePending.get(event.id);
     if (existing) existing.lastMonth = state.mo;
-    else STAT.deadlinePending.set(event.id, {event,firstMonth:state.mo,lastMonth:state.mo});
+    else STAT.deadlinePending.set(event.id, {
+      event,firstMonth:state.mo,lastMonth:state.mo,
+      firstRegion:state.res?.n||'不明',firstAge:state.age
+    });
   }
 }
 function finalizeSimulationDeadlineYear(state, interrupted = false) {
@@ -114,10 +117,20 @@ function finalizeSimulationDeadlineYear(state, interrupted = false) {
       status = completed ? "delivered" : interrupted ? "censored" :
         actionable ? "expiredUnserved" : "superseded";
     summary[status]++; row[status]++;
+    // Attribute observations to the place and age at first eligibility.
+    const age=window.firstAge,
+      band=age<=17?"0-17":age<=34?"18-34":age<=59?"35-59":"60+";
+    for(const [groups,key] of [[summary.byRegion,window.firstRegion],[summary.byAgeBand,band]]){
+      const group=groups[key]||(groups[key]={
+        observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0
+      });
+      group.observed++;
+      group[status]++;
+    }
     if (status !== "delivered" && summary.unservedExamples.length < 30)
       summary.unservedExamples.push({
         lifeIndex:STAT.currentLife+1, eventId:id, year:state.year,
-        age:state.age, region:state.res?.n || null,
+        age:window.firstAge, region:window.firstRegion,
         resolution:status, firstEligibleMonth:window.firstMonth,
         lastEligibleMonth:window.lastMonth, lastProcessedMonth:state.mo,
         schoolEnrolled:!!state.fl?.sch
