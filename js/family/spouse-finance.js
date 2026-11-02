@@ -294,6 +294,8 @@ function recordSpouseAnnualFinance(
 function recordSpouseSeparateSupportTransfer(s, amount) {
   const spouse = s.sp;
   if (!spouse || !Number.isFinite(amount) || amount <= 0) return null;
+  // The annual payer record has one debit per year; repeat settlement must not duplicate a receipt.
+  if (spouse.separateSupportPaidYear === s.year) return null;
   const transactionId = `${spouse.id}::support::${s.year}`,
     region = spouseResidenceRegion(s).n,
     plan = spouse.separateSupportPlan,
