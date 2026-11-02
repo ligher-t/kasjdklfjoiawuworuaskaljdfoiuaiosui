@@ -389,7 +389,7 @@ window.TERRA_DATA_BUILD.run("world/history", function ($terraData, $define, $rul
         flag: "thelazia_dead",
         localText: "軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な布告が全街区に響き渡った。",
         localCities: ["ロンディニウム"],
-        localRegions: ["カズデル"],
+        localRegions: ["カズデル", "ヴィクトリア"],
         isCrisis: true,
         availableFromMonth: 8,
         availabilityBasis: "BB-ST-1は暗殺後の場面をSummer 1094とするため、夏の最終月をゲーム内境界とする。秋頃とする二次年表とは競合し、正確な月日は未確定。",

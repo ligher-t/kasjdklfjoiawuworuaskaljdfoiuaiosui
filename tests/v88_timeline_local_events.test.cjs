@@ -47,7 +47,7 @@ data.HIST.forEach(h => {
   assert(allEventFlags.has(h.flag), `Every HIST flag must be referenced by an event, missing: ${h.flag}`);
 });
 
-// 3. Local news routing: resident in Londinium in 1094 gets direct experience log
+// 3. Residence alone delivers nearby news; an actual, city-grounded event records direct experience
 const localLondiniumNews = JSON.parse(JSON.stringify(vm.runInNewContext(`(() => {
   born({ seed: 109401, by: 1060, region: 'ヴィクトリア' });
   S.res = REG.find(r => r.n === 'ヴィクトリア');
@@ -57,16 +57,25 @@ const localLondiniumNews = JSON.parse(JSON.stringify(vm.runInNewContext(`(() => 
   activateHistoricalWorldEvents(S);
   hist();
   const infoEntry = S.infoLog.find(row => row.id === 'thelazia_dead');
+  const h = HIST.find(row => row.flag === 'thelazia_dead');
+  const directBefore = !!historicalDirectEncounter(h, S);
+  const encounter = recordHistoricalDirectEncounter(h, S, 'timeline_thelazia_dead_londinium');
   return {
     known: !!S.known.thelazia_dead,
     route: infoEntry?.route,
-    textBasis: infoEntry?.textBasis
+    textBasis: infoEntry?.textBasis,
+    directBefore,
+    encounterRecorded: !!encounter,
+    witnessedRoute: historicalInformationRoute(h,S)
   };
 })()`, context)));
 
 assert.equal(localLondiniumNews.known, true, 'Londinium resident registers thelazia_dead');
-assert.equal(localLondiniumNews.route, '現地での直接の目撃・体験', 'Local resident receives eyewitness route');
-assert.equal(localLondiniumNews.textBasis, '現地体験文面', 'Local resident receives local text basis');
+assert.equal(localLondiniumNews.route, '近隣・地域の伝達網', 'residence alone supplies news, not eyewitness status');
+assert.notEqual(localLondiniumNews.textBasis, '現地体験文面', 'no unearned eyewitness prose from news');
+assert.equal(localLondiniumNews.directBefore,false,'initial regional news is not an encounter');
+assert.equal(localLondiniumNews.encounterRecorded,true,'matching city and region permit an event-backed encounter');
+assert.equal(localLondiniumNews.witnessedRoute,'現地での直接の目撃・体験','actual documented city encounter supplies direct experience');
 
 // 4. Distant news routing: resident in Higashi gets distant news, not local route
 const distantNews = JSON.parse(JSON.stringify(vm.runInNewContext(`(() => {
