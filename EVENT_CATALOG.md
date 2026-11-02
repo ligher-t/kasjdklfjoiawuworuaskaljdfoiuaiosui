@@ -1160,7 +1160,7 @@
 - [sir_family](#event-sir_family) — 地区のファミリーから仕事を頼まれた。荷物や伝言を運ぶ仕事もあれば、店へ支払いを迫る役もあるという。
 - [sir_family_review](#event-sir_family_review) — 仕事の頼まれ方が変わり、ファミリーとの縁をこの先どうするか、顔を合わせる相手と話す機会があった。助けてもらったこともあれば、引き受けた仕事への気がか…
 - [sir_family_duty](#event-sir_family_duty) — 顔なじみから地区の仕事を頼まれた。荷や伝言を届ける仕事もあれば、店へ強く支払いを迫る役もあるという。
-- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つか…
+- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
 - [sir_family_afterwork](#event-sir_family_afterwork) — ファミリーの仕事から手を引いた。帳面に残った立替金はまだ片づかず、別の働き口を探す必要がある。地区の掲示で配達と露店の求人を見つけた。 ファミリーの…
 - [sir_family_later_work](#event-sir_family_later_work) — ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。
 - [sir_hospital](#event-sir_hospital) — 強い熱が続き、街の診療所へ運ばれた。医師は数日休んで治療を受けるよう勧めたが、受付で告げられた費用は家計に重かった。顔なじみのファミリーに口利きを頼…
@@ -3000,7 +3000,7 @@
 - [urs_sweep](#event-urs_sweep) — 鉱石病の兆候を周囲に隠したまま暮らしてきた。ある朝、重苦しい軍靴の音が通りに響き、憲兵や地区の係員が未登録の感染者を匿う家はないかと一軒ずつ戸を叩き…
 - [sir_family](#event-sir_family) — 地区のファミリーから仕事を頼まれた。荷物や伝言を運ぶ仕事もあれば、店へ支払いを迫る役もあるという。
 - [sir_family_duty](#event-sir_family_duty) — 顔なじみから地区の仕事を頼まれた。荷や伝言を届ける仕事もあれば、店へ強く支払いを迫る役もあるという。
-- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つか…
+- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
 - [sir_feud](#event-sir_feud) — 関わりのあるファミリーと対立組織の緊張が高まった。知人は店の裏口を閉め、今夜は誰と帰るかを確かめている。 ファミリー同士の緊張が通りにも伝わった。店…
 - [lat_exile](#event-lat_exile) — ラテラーノ市民であっても例外はない。鉱石病にかかったことを理由に、聖都を退去するよう冷たい通達が届いた。甘い菓子の匂いが漂う見慣れた石畳を歩きながら…
 - [rim_debt](#event-rim_debt) — 生まれ育った大家族の集まりで、身内の一人が首の回らないほどの借金を抱えていると打ち明けられた。みんなで金を出し合って尻拭いをするか、本人に始末をつけ…
@@ -4255,7 +4255,7 @@
 - [sir_family](#event-sir_family) — 地区のファミリーから仕事を頼まれた。荷物や伝言を運ぶ仕事もあれば、店へ支払いを迫る役もあるという。
 - [sir_family_review](#event-sir_family_review) — 仕事の頼まれ方が変わり、ファミリーとの縁をこの先どうするか、顔を合わせる相手と話す機会があった。助けてもらったこともあれば、引き受けた仕事への気がか…
 - [sir_family_duty](#event-sir_family_duty) — 顔なじみから地区の仕事を頼まれた。荷や伝言を届ける仕事もあれば、店へ強く支払いを迫る役もあるという。
-- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つか…
+- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
 - [sir_family_afterwork](#event-sir_family_afterwork) — ファミリーの仕事から手を引いた。帳面に残った立替金はまだ片づかず、別の働き口を探す必要がある。地区の掲示で配達と露店の求人を見つけた。 ファミリーの…
 - [sir_family_later_work](#event-sir_family_later_work) — ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。
 - [sir_hospital](#event-sir_hospital) — 強い熱が続き、街の診療所へ運ばれた。医師は数日休んで治療を受けるよう勧めたが、受付で告げられた費用は家計に重かった。顔なじみのファミリーに口利きを頼…
@@ -6245,7 +6245,7 @@
 - [sir_family](#event-sir_family) — 地区のファミリーから仕事を頼まれた。荷物や伝言を運ぶ仕事もあれば、店へ支払いを迫る役もあるという。
 - [sir_family_review](#event-sir_family_review) — 仕事の頼まれ方が変わり、ファミリーとの縁をこの先どうするか、顔を合わせる相手と話す機会があった。助けてもらったこともあれば、引き受けた仕事への気がか…
 - [sir_family_duty](#event-sir_family_duty) — 顔なじみから地区の仕事を頼まれた。荷や伝言を届ける仕事もあれば、店へ強く支払いを迫る役もあるという。
-- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つか…
+- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
 - [sir_family_afterwork](#event-sir_family_afterwork) — ファミリーの仕事から手を引いた。帳面に残った立替金はまだ片づかず、別の働き口を探す必要がある。地区の掲示で配達と露店の求人を見つけた。 ファミリーの…
 - [sir_family_later_work](#event-sir_family_later_work) — ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。
 - [sir_hospital](#event-sir_hospital) — 強い熱が続き、街の診療所へ運ばれた。医師は数日休んで治療を受けるよう勧めたが、受付で告げられた費用は家計に重かった。顔なじみのファミリーに口利きを頼…
@@ -11705,7 +11705,7 @@
 - [sir_family](#event-sir_family) — 地区のファミリーから仕事を頼まれた。荷物や伝言を運ぶ仕事もあれば、店へ支払いを迫る役もあるという。
 - [sir_family_review](#event-sir_family_review) — 仕事の頼まれ方が変わり、ファミリーとの縁をこの先どうするか、顔を合わせる相手と話す機会があった。助けてもらったこともあれば、引き受けた仕事への気がか…
 - [sir_family_duty](#event-sir_family_duty) — 顔なじみから地区の仕事を頼まれた。荷や伝言を届ける仕事もあれば、店へ強く支払いを迫る役もあるという。
-- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つか…
+- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
 - [sir_family_afterwork](#event-sir_family_afterwork) — ファミリーの仕事から手を引いた。帳面に残った立替金はまだ片づかず、別の働き口を探す必要がある。地区の掲示で配達と露店の求人を見つけた。 ファミリーの…
 - [sir_family_later_work](#event-sir_family_later_work) — ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。
 - [sir_hospital](#event-sir_hospital) — 強い熱が続き、街の診療所へ運ばれた。医師は数日休んで治療を受けるよう勧めたが、受付で告げられた費用は家計に重かった。顔なじみのファミリーに口利きを頼…
@@ -12619,7 +12619,7 @@
 - [sir_family](#event-sir_family) — 地区のファミリーから仕事を頼まれた。荷物や伝言を運ぶ仕事もあれば、店へ支払いを迫る役もあるという。
 - [sir_family_review](#event-sir_family_review) — 仕事の頼まれ方が変わり、ファミリーとの縁をこの先どうするか、顔を合わせる相手と話す機会があった。助けてもらったこともあれば、引き受けた仕事への気がか…
 - [sir_family_duty](#event-sir_family_duty) — 顔なじみから地区の仕事を頼まれた。荷や伝言を届ける仕事もあれば、店へ強く支払いを迫る役もあるという。
-- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つか…
+- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
 - [sir_family_afterwork](#event-sir_family_afterwork) — ファミリーの仕事から手を引いた。帳面に残った立替金はまだ片づかず、別の働き口を探す必要がある。地区の掲示で配達と露店の求人を見つけた。 ファミリーの…
 - [sir_family_later_work](#event-sir_family_later_work) — ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。
 - [sir_hospital](#event-sir_hospital) — 強い熱が続き、街の診療所へ運ばれた。医師は数日休んで治療を受けるよう勧めたが、受付で告げられた費用は家計に重かった。顔なじみのファミリーに口利きを頼…
@@ -12937,7 +12937,7 @@
 - [lei_noble_later](#event-lei_noble_later) — 音楽会での接点から数年が過ぎた。稽古や別の仕事と両立できる関わり方を考えるようになった。
 - [sir_family_review](#event-sir_family_review) — 仕事の頼まれ方が変わり、ファミリーとの縁をこの先どうするか、顔を合わせる相手と話す機会があった。助けてもらったこともあれば、引き受けた仕事への気がか…
 - [sir_family_duty](#event-sir_family_duty) — 顔なじみから地区の仕事を頼まれた。荷や伝言を届ける仕事もあれば、店へ強く支払いを迫る役もあるという。
-- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つか…
+- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
 - [sir_family_afterwork](#event-sir_family_afterwork) — ファミリーの仕事から手を引いた。帳面に残った立替金はまだ片づかず、別の働き口を探す必要がある。地区の掲示で配達と露店の求人を見つけた。 ファミリーの…
 - [sir_family_later_work](#event-sir_family_later_work) — ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。
 - [ibe_rebuild_contract_review](#event-ibe_rebuild_contract_review) — 海辺の街区で、また別の古い倉庫を直す日雇い募集が出ていた。前に覚えた手順を生かして応募するか、もっと安定した別の職を探すか思案した。
@@ -15701,7 +15701,7 @@
 - [sir_family](#event-sir_family) — 地区のファミリーから仕事を頼まれた。荷物や伝言を運ぶ仕事もあれば、店へ支払いを迫る役もあるという。
 - [sir_family_review](#event-sir_family_review) — 仕事の頼まれ方が変わり、ファミリーとの縁をこの先どうするか、顔を合わせる相手と話す機会があった。助けてもらったこともあれば、引き受けた仕事への気がか…
 - [sir_family_duty](#event-sir_family_duty) — 顔なじみから地区の仕事を頼まれた。荷や伝言を届ける仕事もあれば、店へ強く支払いを迫る役もあるという。
-- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つか…
+- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
 - [sir_family_afterwork](#event-sir_family_afterwork) — ファミリーの仕事から手を引いた。帳面に残った立替金はまだ片づかず、別の働き口を探す必要がある。地区の掲示で配達と露店の求人を見つけた。 ファミリーの…
 - [sir_hospital](#event-sir_hospital) — 強い熱が続き、街の診療所へ運ばれた。医師は数日休んで治療を受けるよう勧めたが、受付で告げられた費用は家計に重かった。顔なじみのファミリーに口利きを頼…
 - [sir_feud](#event-sir_feud) — 関わりのあるファミリーと対立組織の緊張が高まった。知人は店の裏口を閉め、今夜は誰と帰るかを確かめている。 ファミリー同士の緊張が通りにも伝わった。店…
@@ -17961,7 +17961,7 @@
 - [lei_isolation](#event-lei_isolation) — 地区の役所から、診断記録を根拠に隔離区画へ移るよう通達が届いた。移れば仕事を失うことになり、当面の収入も途絶える。 地区の役所から、診断記録を根拠に…
 - [sir_family_review](#event-sir_family_review) — 仕事の頼まれ方が変わり、ファミリーとの縁をこの先どうするか、顔を合わせる相手と話す機会があった。助けてもらったこともあれば、引き受けた仕事への気がか…
 - [sir_family_duty](#event-sir_family_duty) — 顔なじみから地区の仕事を頼まれた。荷や伝言を届ける仕事もあれば、店へ強く支払いを迫る役もあるという。
-- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つか…
+- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
 - [sir_family_afterwork](#event-sir_family_afterwork) — ファミリーの仕事から手を引いた。帳面に残った立替金はまだ片づかず、別の働き口を探す必要がある。地区の掲示で配達と露店の求人を見つけた。 ファミリーの…
 - [sir_family_later_work](#event-sir_family_later_work) — ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。
 - [sir_hospital](#event-sir_hospital) — 強い熱が続き、街の診療所へ運ばれた。医師は数日休んで治療を受けるよう勧めたが、受付で告げられた費用は家計に重かった。顔なじみのファミリーに口利きを頼…
@@ -20191,7 +20191,7 @@
 - [col_quarantine_offer](#event-col_quarantine_offer) — 高い保険料が払えず薬の確保に苦労していると、同じ境遇の仕事仲間が声を潜めて「市の感染者隔離区画へ入れば、公費で最低限の処置は受けられるらしい」と教え…
 - [sir_family_review](#event-sir_family_review) — 仕事の頼まれ方が変わり、ファミリーとの縁をこの先どうするか、顔を合わせる相手と話す機会があった。助けてもらったこともあれば、引き受けた仕事への気がか…
 - [sir_family_duty](#event-sir_family_duty) — 顔なじみから地区の仕事を頼まれた。荷や伝言を届ける仕事もあれば、店へ強く支払いを迫る役もあるという。
-- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つか…
+- [sir_family_obligation](#event-sir_family_obligation) — 以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
 - [sir_family_afterwork](#event-sir_family_afterwork) — ファミリーの仕事から手を引いた。帳面に残った立替金はまだ片づかず、別の働き口を探す必要がある。地区の掲示で配達と露店の求人を見つけた。 ファミリーの…
 - [sir_family_later_work](#event-sir_family_later_work) — ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。
 - [col_reuse_market](#event-col_reuse_market) — 工業区の回収市に、金具や板の切れ端が並んでいた。売り手は寸法を測り、買い手は欠けやねじ山を確かめている。あなたは壊れた鞄の留め具を手に、金具を選ぶ台…
@@ -52807,7 +52807,7 @@ s => {
 
 ### 本文
 
-> 以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
+> 以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。
 
 ### 発生条件・構造
 
@@ -52848,17 +52848,17 @@ s => {
 #### 選択肢 1
 
 <a id="choice-sir_family_obligation-0"></a>
-選択肢文：記録された額を返す（-90,000龍門幣）
+選択肢文：帳面に残る立替金を全額返す
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "show": {
-    "dynamicFunction": "s => $rules.economy.availableFunds(s) >= 90000 + $rules.economy.annualReserve(s)"
+    "dynamicFunction": "s => $rules.economy.availableFunds(s) >=\n              Number(s.siracusaFamilyTie?.duty?.outstandingAmount || 0) + $rules.economy.annualReserve(s)"
   },
   "en": {
-    "dynamicFunction": "s => $rules.economy.availableFunds(s) >= 90000 + $rules.economy.annualReserve(s)"
+    "dynamicFunction": "s => $rules.economy.availableFunds(s) >=\n              Number(s.siracusaFamilyTie?.duty?.outstandingAmount || 0) + $rules.economy.annualReserve(s)"
   },
   "why": "返済後の生活準備金を残せない"
 }
@@ -52877,10 +52877,12 @@ s => {
 
 ```json
 {
-  "cash": -90000,
+  "cash": {
+    "dynamicFunction": "s => -Math.max(0, Number(s.siracusaFamilyTie?.duty?.outstandingAmount || 0))"
+  },
   "siracusaFamilyDuty": {
     "action": "settled",
-    "amount": 90000,
+    "amount": "outstanding",
     "note": "記録された立替金を返済"
   },
   "lifeGoal": {
@@ -52910,7 +52912,7 @@ s => {
 ```json
 {
   "show": {
-    "dynamicFunction": "s => s.siracusaFamilyTie?.duty?.outstandingAmount > 0"
+    "dynamicFunction": "s => s.siracusaFamilyTie?.duty?.outstandingAmount >= 30000"
   },
   "en": {
     "dynamicFunction": "s => $rules.economy.availableFunds(s) >= 30000 + $rules.economy.annualReserve(s)"
@@ -52970,7 +52972,7 @@ s => {
 
 - **結果 2（設定確率 35%）**
 
-> 仲介役を通じて30,000龍門幣を返したが、残る60,000龍門幣も返すよう求められた。期限は二年後となり、ファミリーの仕事から距離を置いた。
+> 仲介役を通じて30,000龍門幣を返したが、残額も返すよう求められた。期限は二年後となり、ファミリーの仕事から距離を置いた。
 
 効果：
 
@@ -52979,8 +52981,8 @@ s => {
   "cash": -30000,
   "siracusaFamilyDuty": {
     "action": "mediated",
-    "amount": 60000,
-    "note": "仲介を頼み、30,000龍門幣を返した。残額60,000龍門幣は二年後までに返す"
+    "amount": "remaining-after-30000",
+    "note": "仲介を頼み、30,000龍門幣を返した。残額は二年後までに返す"
   },
   "siracusaFamilyAction": {
     "action": "distant",
@@ -53033,7 +53035,7 @@ s => {
 {
   "siracusaFamilyDuty": {
     "action": "disputed",
-    "amount": 90000,
+    "amount": "outstanding",
     "note": "支払い要求を拒み接触を断った。帳面上の借りは未解決"
   },
   "siracusaFamilyAction": "left",
