@@ -209366,7 +209366,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 ```json
 {
   "en": {
-    "dynamicFunction": "s =>\n            $rules.family.spouseSeparateSupportAffordable(\n              s,\n              $rules.parameters.value(\"economy.spouseSeparateSupportAnnualCost\") *\n                $rules.family.spouseResidenceRegion(s).pm *\n                (s.priceIndex || 1) +\n                $rules.family.spouseSeparateContactAnnualCost(s, \"letters\")\n            )"
+    "dynamicFunction": "s =>\n            $rules.family.spouseSeparateSupportAffordable(\n              s,\n              $rules.family.spouseSeparateSupportCost(s, \"living\") +\n                $rules.family.spouseSeparateContactAnnualCost(s, \"letters\")\n            )"
   },
   "why": "仕送りと通信費を、自分の生活費を残して捻出できない"
 }
@@ -209406,7 +209406,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
     "dynamicFunction": "s => !!s.sp?.inf && !s.sp.infHidden && !!s.sp.tx"
   },
   "en": {
-    "dynamicFunction": "s =>\n            $rules.family.spouseSeparateSupportAffordable(\n              s,\n              $rules.parameters.value(\"economy.spouseInfectionCareAnnualCost\") *\n                $rules.family.spouseResidenceRegion(s).pm *\n                (1 +\n                  ($terraData.SIM_TABLES.oripathyPressure?.[$rules.family.spouseResidenceRegion(s).n]\n                    ?.medical ?? 0.45) *\n                    0.3) *\n                (s.priceIndex || 1) +\n                $rules.family.spouseSeparateContactAnnualCost(s, \"letters\")\n            )"
+    "dynamicFunction": "s =>\n            $rules.family.spouseSeparateSupportAffordable(\n              s,\n              $rules.family.spouseSeparateSupportCost(s, \"medical\") +\n                $rules.family.spouseSeparateContactAnnualCost(s, \"letters\")\n            )"
   },
   "why": "療養費の仕送りと通信費を、自分の生活費を残して捻出できない"
 }
