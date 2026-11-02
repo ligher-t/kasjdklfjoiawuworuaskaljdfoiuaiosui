@@ -60,7 +60,11 @@ const siblingForEvent = (s, id) => {
     );
   }
   if (id === "family_sibling_exposure")
-    return sibs.find(x => s.year - x.by >= 18 && !x.inf && !x.exposurePending) || null;
+    return sibs.find(x =>
+      s.year - x.by >= 18 &&
+      !x.inf && !x.exposurePending &&
+      !Number.isFinite(x.exposureYear)
+    ) || null;
   if (id === "family_sibling_independence")
     return (
       sibs.find(
