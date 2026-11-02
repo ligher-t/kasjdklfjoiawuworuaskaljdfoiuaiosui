@@ -1,0 +1,16 @@
+name: Temporary full-lifetime simulation recheck
+on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths: ['.github/workflows/temporary-simulation-check.yml']
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run complete high-cost developer simulation assertions
+        run: node tools/check-efficient.cjs run v87_dev_simulation_diagnostics.js
