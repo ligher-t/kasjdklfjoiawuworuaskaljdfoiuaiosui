@@ -26,6 +26,7 @@ on:
       - 'tests/v88_sibling_exposure_individual_targets.test.cjs'
       - 'tests/v88_spouse_sibling_medical_funds.test.cjs'
       - 'tests/v88_separate_spouse_sibling_annual_reconciliation.test.cjs'
+      - 'tests/v88_spouse_oneoff_and_annual_receipt_idempotency.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
   pull_request:
@@ -54,6 +55,7 @@ on:
       - 'tests/v88_sibling_exposure_individual_targets.test.cjs'
       - 'tests/v88_spouse_sibling_medical_funds.test.cjs'
       - 'tests/v88_separate_spouse_sibling_annual_reconciliation.test.cjs'
+      - 'tests/v88_spouse_oneoff_and_annual_receipt_idempotency.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
 permissions:
@@ -111,3 +113,5 @@ jobs:
         run: node tools/check-efficient.cjs run v88_spouse_sibling_medical_funds.test.cjs
       - name: Annual spouse medical and sibling remittance reconciliation
         run: node tools/check-efficient.cjs run v88_separate_spouse_sibling_annual_reconciliation.test.cjs
+      - name: Spouse debt aid and repeat annual recipient receipts
+        run: node tools/check-efficient.cjs run v88_spouse_oneoff_and_annual_receipt_idempotency.test.cjs
