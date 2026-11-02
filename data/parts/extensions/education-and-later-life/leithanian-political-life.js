@@ -370,7 +370,9 @@ window.TERRA_DATA_BUILD.fragment(
       after: { id: "life_leithanian_civic_activity", min: 10 },
       once: true,
       w: 0.08,
-      show: hasLeft,
+      show: s => hasLeft(s) &&
+        Number.isInteger(affiliation(s)?.lastChangedYear) &&
+        s.year - affiliation(s).lastChangedYear >= 10,
       t: "街の陳情の集まりから離れて、ずいぶん長い歳月が流れた。古い木箱の底を整理していると、あの頃仲間たちと頭を突き合わせて書いた橋の修繕嘆願の下書きが出てきた。乾いた紙は折り目からほろりと裂けた。",
       c: [
         $terraData.K("当時の仲間たちの顔を思い出しながら、懐かしい日々を振り返る", {}, [

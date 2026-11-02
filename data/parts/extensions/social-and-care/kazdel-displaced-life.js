@@ -253,7 +253,9 @@ window.TERRA_DATA_BUILD.fragment(
       after: { id: "life_kazdel_displaced_start", min: 5 },
       once: true,
       w: 0.12,
-      show: s => isPaused(s),
+      show: s => isPaused(s) &&
+        Number.isInteger(goal(s)?.lastChangedYear) &&
+        s.year - goal(s).lastChangedYear >= 3,
       t: "故郷へ帰ることを考えるのをやめてから数年が過ぎ、この街での暮らしもすっかり板についた。そんな折、カズデルの噂を伝える便りが舞い込み、もう一度故郷のことを考えるか迷った。",
       c: [
         $terraData.K("改めてカズデルへの道や現地の暮らしぶりを調べ始める", {}, [
