@@ -66,7 +66,7 @@ window.TERRA_DATA_BUILD.fragment(
           },
           lifeGoal: {
             id: "oripathy-research",
-            action: "compromise",
+            action: "abandon",
             note: "研究協力を終え、生活上の別の優先事項へ移る"
           },
           p: 1
