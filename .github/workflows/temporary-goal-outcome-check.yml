@@ -1,4 +1,4 @@
-name: Temporary goal outcome verification
+name: Temporary grouped deadline and goal outcome verification
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
@@ -24,6 +24,7 @@ jobs:
           node tools/check-efficient.cjs run v88_affiliation_goal_closure.test.cjs
           node tools/check-efficient.cjs run v88_reunion_goal_transition.test.cjs
           node tools/check-efficient.cjs run v88_deadline_coverage_metrics.test.cjs
+          node tests/v88_deadline_coverage_metrics.test.cjs --long-run --large-cohort
       - name: Sync catalog and revision
         run: |
           git add EVENT_CATALOG.md js/version.js

@@ -47,6 +47,8 @@ assert.equal(full.months,allowedMonths,'no two protected choices fire in the sam
 assert(full.selected.every(x=>x.month>=1&&x.month<=12),'no 13th month can be generated');
 assert.equal(full.queue,0);
 assert.equal(full.metrics.observed,13);
+assert.equal(full.metrics.byRegion['ヴィクトリア'].observed,13);
+assert.equal(full.metrics.byAgeBand['35-59'].observed,13);
 assert.equal(full.metrics.delivered,allowedMonths);
 assert.equal(full.metrics.expiredUnserved,13-allowedMonths);
 assert.equal(full.metrics.unservedExamples.length,13-allowedMonths);
@@ -59,6 +61,8 @@ const lateAllowed=[11,12].filter(month=>(month-0.5)/12<late.limit).length;
 assert.equal(late.selected.length,lateAllowed,'a late-year overload never rewinds calendar months');
 assert(late.selected.every(x=>x.month>=11));
 assert.equal(late.metrics.observed,5);
+assert.equal(late.metrics.byRegion['ヴィクトリア'].observed,5);
+assert.equal(late.metrics.byAgeBand['35-59'].observed,5);
 assert.equal(late.metrics.delivered,lateAllowed);
 assert.equal(late.metrics.expiredUnserved,5-lateAllowed);
 assert.equal(late.metrics.superseded,0);
@@ -95,18 +99,30 @@ assert.equal(supersession.unservedExamples[0].schoolEnrolled,true);
 // The real developer runner must collect results over complete years, keep
 // death-censored observations out of expiry, and preserve reproducibility.
 (async()=>{
-  const options={count:19,masterSeed:19761103,maxYears:process.argv.includes('--long-run')?65:10,birthYearMin:1060,birthYearMax:1075,regionSampling:'balanced'};
+  const count=process.argv.includes('--large-cohort')?57:19;
+  const options={count,masterSeed:19761103,maxYears:process.argv.includes('--long-run')?65:10,birthYearMin:1060,birthYearMax:1075,regionSampling:'balanced'};
   ctx.auditOptions=options;
   const report=await vm.runInContext('runDevSimulation(auditOptions)',ctx);
   const coverage=JSON.parse(JSON.stringify(report.deadlineCoverage));
   console.log(JSON.stringify({simulationFailures:report.failures.map(row=>({type:row.type,eventId:row.eventId,error:row.error,count:row.count,seed:row.example.seed}))}));
-  assert.equal(report.summary.attempted,19);
+  assert.equal(report.summary.attempted,count);
   // Whole-life auditing deliberately retains unrelated engine/state errors
   // as findings. They censor the unfinished year instead of becoming deadline misses.
   assert.equal(report.summary.sampled + report.summary.runtimeFailures +
     report.summary.stateFailures,report.summary.attempted);
   assert.equal(coverage.observed,coverage.delivered+coverage.expiredUnserved+coverage.superseded+coverage.censored);
   assert.equal(coverage.eligibleForRate,coverage.delivered+coverage.expiredUnserved);
+  for(const groups of [coverage.byRegion,coverage.byAgeBand]){
+    assert(Object.keys(groups).length>0);
+    for(const key of ['observed','delivered','expiredUnserved','superseded','censored'])
+      assert.equal(Object.values(groups).reduce((total,row)=>total+row[key],0),coverage[key]);
+    for(const row of Object.values(groups)){
+      assert.equal(row.observed,row.delivered+row.expiredUnserved+row.superseded+row.censored);
+      assert.equal(row.eligibleForRate,row.delivered+row.expiredUnserved);
+      assert(row.deliveryRatePercent===null||
+        Math.abs(row.deliveryRatePercent+row.expiryRatePercent-100)<0.011);
+    }
+  }
   const rows=Object.values(coverage.byEvent);
   for(const key of ['observed','delivered','expiredUnserved','superseded','censored'])
     assert.equal(rows.reduce((sum,row)=>sum+row[key],0),coverage[key]);
