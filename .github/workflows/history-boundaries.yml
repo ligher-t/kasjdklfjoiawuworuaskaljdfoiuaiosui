@@ -33,6 +33,7 @@ on:
       - 'tests/v88_expiring_followup_priority.test.cjs'
       - 'tests/v88_age_cutoff_competing_followups.test.cjs'
       - 'tests/v88_annual_deadline_capacity.test.cjs'
+      - 'tests/v88_deadline_coverage_metrics.test.cjs'
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
@@ -88,6 +89,7 @@ on:
       - 'tests/v88_expiring_followup_priority.test.cjs'
       - 'tests/v88_age_cutoff_competing_followups.test.cjs'
       - 'tests/v88_annual_deadline_capacity.test.cjs'
+      - 'tests/v88_deadline_coverage_metrics.test.cjs'
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
@@ -161,6 +163,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_age_cutoff_competing_followups.test.cjs
       - name: Annual scheduling collision and expiring choice capacity
         run: node tools/check-efficient.cjs run v88_annual_deadline_capacity.test.cjs
+      - name: Final-year twelve-month capacity and lifetime expiry diagnostics
+        run: node tools/check-efficient.cjs run v88_deadline_coverage_metrics.test.cjs
       - name: Katorga special custody and release lifecycle
         run: node tools/check-efficient.cjs run v88_ursus_katorga_custody_lifecycle.test.cjs
       - name: Delayed followup after actual withdrawal

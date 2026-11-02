@@ -185,6 +185,7 @@ function slot(x) {
     ...(schoolReview ? [schoolReview] : [])
   ])];
   reserveExpiringSlots(s, protectedChoices);
+  if (HL) recordSimulationExpiringChoices(s, expiringChoices);
   const localTimelineChoice = mj.find(event =>
     event.timelineFlag &&
     s.world?.events?.[event.timelineFlag] &&

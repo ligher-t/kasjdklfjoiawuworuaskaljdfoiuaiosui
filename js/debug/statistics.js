@@ -17,6 +17,9 @@ const STAT = {
   duplicateChoiceMonths: 0,
   unavailableChoiceCandidates: 0,
   choiceMonths: new Set(),
+  deadlinePending: new Map(),
+  deadlineFired: new Set(),
+  deadlineCoverage: {observed:0,delivered:0,expiredUnserved:0,censored:0,byEvent:{}},
   currentLife: -1
 };
 
@@ -50,6 +53,9 @@ function resetSimulationStatistics() {
   STAT.duplicateChoiceMonths = 0;
   STAT.unavailableChoiceCandidates = 0;
   STAT.choiceMonths = new Set();
+  STAT.deadlinePending = new Map();
+  STAT.deadlineFired = new Set();
+  STAT.deadlineCoverage = {observed:0,delivered:0,expiredUnserved:0,censored:0,byEvent:{}};
   STAT.currentLife = -1;
   STAT.currentEventId = null;
 }
@@ -86,9 +92,31 @@ function recordSimulationEligibilityRejection(event, reason) {
   row.rejections[reason] = (row.rejections[reason] || 0) + 1;
 }
 
+// Count each actionable final-year event once per person-year, even when
+// it remains a candidate through multiple monthly slots.
+function recordSimulationExpiringChoices(state, events) {
+  if (!HL) return;
+  for (const event of events)
+    if (!STAT.deadlinePending.has(event.id))
+      STAT.deadlinePending.set(event.id, state.mo);
+}
+function finalizeSimulationDeadlineYear(state, interrupted = false) {
+  if (!HL) return;
+  for (const [id] of STAT.deadlinePending) {
+    const summary = STAT.deadlineCoverage,
+      row = summary.byEvent[id] || (summary.byEvent[id] = {observed:0,delivered:0,expiredUnserved:0,censored:0});
+    summary.observed++; row.observed++;
+    const status = STAT.deadlineFired.has(id) ? "delivered" :
+      interrupted ? "censored" : "expiredUnserved";
+    summary[status]++; row[status]++;
+  }
+  STAT.deadlinePending.clear();
+  STAT.deadlineFired.clear();
+}
 function recordSimulationEvent(event, state) {
   if (!HL) return;
   if (Number.isInteger(state?.year)) STAT.lifeEventYears.add(state.year);
+  if (event.c) STAT.deadlineFired.add(event.id);
   const row = STAT.eventCoverage[event.id];
   const stage = STG[stg(state)] || "不明";
   if (row) {
