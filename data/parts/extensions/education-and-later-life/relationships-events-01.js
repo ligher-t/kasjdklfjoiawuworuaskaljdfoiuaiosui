@@ -258,9 +258,9 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_ORIPATHY_EXPOSURE", "SRC_TERRA_FAMILY"],
       st: ["少年", "青年", "壮年", "老年"],
       need: ["存命の成人きょうだいがいる"],
-      ban: ["感染したきょうだいがいる", "sibling_exposure_seen"],
+      show: s => !!siblingForEvent(s, "family_sibling_exposure"),
       ge: { age: 14 },
-      once: true,
+      cd: 1,
       w: 0.3,
       t: [
         {
