@@ -101,8 +101,10 @@ const r=inspect(`
     due,spouseSupport,spouseContact,paid,afterStop};
 `);
 assert(r.locality>1,'local food and housing shortages should increase the actual support cost');
-near(r.secondQuote,r.base*r.costPm*r.due/r.committed,
-  'second sibling quote must use same unit cost as the already committed recipient');
+near(r.secondQuote,r.committed,
+  'both siblings have the same annual base, locality multiplier and treatment travel surcharge');
+assert(r.secondQuote>r.base*r.costPm,
+  'the rendered sibling quote includes the infection travel surcharge');
 near(r.committed,r.due,'annual quoted commitments and actual personal expense agree');
 assert.equal(r.tooPoor,false,'affordability must include local food and housing scarcity');
 assert.equal(r.enough,true,'exact quoted annual obligations and reserve are affordable');
