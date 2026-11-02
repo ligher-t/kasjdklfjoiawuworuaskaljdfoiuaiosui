@@ -17,6 +17,8 @@ const rows=vm.runInContext(`(()=>{
   const school=activeFacility(s,'school'),
     universityBeforeDisclosure=educationBarrier(s,'university').chance,
     primaryBeforeDisclosure=educationBarrier(s,'primary').chance;
+  // A current-school disclosure is addressed to the presently enrolled institution.
+  s.educationPath={stage:'primary',status:'enrolled'};
   recordInfectionAwareness(s,{subject:'protagonist',audience:'school',certainty:'confirmed',
     source:'self-disclosure',consent:'voluntary',recipientRef:'current-school'});
   const schoolAware=educationSchoolKnowsInfection(s,'primary'),
