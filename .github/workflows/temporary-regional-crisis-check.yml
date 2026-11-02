@@ -1,0 +1,35 @@
+name: Temporary regional crisis followup verification
+on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths: ['.github/workflows/temporary-regional-crisis-check.yml']
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate active-crisis classification and generated files
+        run: |
+          node tools/generate-event-catalog.cjs --write
+          node tools/generate-event-catalog.cjs --check
+          node tools/update-version.cjs
+          node tools/check-efficient.cjs syntax
+          node tools/check-efficient.cjs run v88_regional_crisis_leisure_scope.test.cjs
+          node tools/check-efficient.cjs run v88_crisis_event_priority.test.cjs
+          node tools/check-efficient.cjs run v88_regional_daily_seasonal_calendar.test.cjs
+          node tools/check-efficient.cjs run audit-diagnostics.test.cjs
+      - name: Synchronize event catalog and runtime revision
+        run: |
+          git add EVENT_CATALOG.md js/version.js
+          if ! git diff --cached --quiet; then
+            git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' commit -m 'chore: synchronize regional crisis catalog and revision'
+            git push origin HEAD:fix/historical-event-scope-and-delivery
+          fi
