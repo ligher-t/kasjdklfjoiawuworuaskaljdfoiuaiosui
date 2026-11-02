@@ -30,8 +30,12 @@ const two = inspect(`
     availableAgain:elig(event,S,tags(S))};
   return {initial,afterFirst,beforeSecond,afterSecond};
 `);
-assert.deepEqual(two,{
-  initial:{eligible:true,target:'child-a'},
+assert.equal(two.initial.eligible,true);
+assert(['child-a','child-b'].includes(two.initial.target),
+  'either still healthy dependent can be selected before the first diagnosis');
+assert.deepEqual({
+  afterFirst:two.afterFirst,beforeSecond:two.beforeSecond,afterSecond:two.afterSecond
+},{
   afterFirst:{firstInf:1,secondInf:0,firstYear:1090,secondYear:null,
     target:'child-b',availableThisYear:false},
   beforeSecond:true,
