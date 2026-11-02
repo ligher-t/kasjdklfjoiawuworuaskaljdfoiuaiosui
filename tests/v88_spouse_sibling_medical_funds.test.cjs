@@ -112,7 +112,8 @@ assert.equal(sibling.treated,0,'paying transport does not imply a new clinical t
 
 setup(ctx,{id:'sibling-annual-first-payment',seed:194103,region:'クルビア',age:40});
 const annual=inspect(`
-  S.year=1100;S.age=40;
+  S.year=1100;S.age=40;S.priceIndex=1.1;
+  S.residenceArrangement='independent_rental';S.fl.household_separated=1;
   S.siblings=[{id:'sibling-care',nm:'支援されるきょうだい',by:1070,
     independentSinceYear:1091,region:S.res.n,knownRegion:S.res.n,
     inf:1,infKnown:1,contactState:'regular',financialTransfers:[],financialCash:0,
@@ -120,13 +121,28 @@ const annual=inspect(`
   S.eventRelativeId='sibling-care';
   const event=EV.find(e=>e.id==='family_sibling_contact'),
     option=event.c.find(c=>c.l.includes('毎年の薬代'));
-  const before=S.siblings[0].financialTransfers.length;
+  const before=S.siblings[0].financialTransfers.length,
+    quoted=P('economy.siblingInfectionSupportAnnualCost')*S.res.pm*S.priceIndex*
+      infectionCareTravelCostScale(S),
+    reserve=annualCashReserve(S),
+    committed=independentSiblingCareSupportExpense(S,S.res.pm*S.priceIndex);
+  S.cash=quoted+committed+reserve-1;
+  const short=ok(option.en,S,tags(S));
+  S.cash=quoted+committed+reserve;
+  const enough=ok(option.en,S,tags(S)),beforeCash=S.cash;
   ap(option.o[0][2]);
   return {annual:S.siblings[0].careSupportAnnual,
     transfers:S.siblings[0].financialTransfers.length-before,
-    resultText:option.o[0][1]};
+    resultText:option.o[0][1],short,enough,
+    quote:quoted,actualQuote:siblingCareSupportQuote(S,S.siblings[0]),
+    reserve,spent:beforeCash-S.cash};
 `);
 assert(annual.annual>0);
+assert(annual.quote>0 && annual.reserve>0);
+assert.equal(annual.short,false,'a plan cannot be started without the actual travel-adjusted annual fee and reserve');
+assert.equal(annual.enough,true);
+assert.equal(annual.actualQuote,annual.quote,'the annual support estimate equals the cost of the recorded plan');
+assert.equal(annual.spent,0,'no annual remittance is debited merely by creating a scheduled plan');
 assert.equal(annual.transfers,0,'choosing annual support schedules future payments, not instant remittance');
 assert.match(annual.resultText,/最初の送金日を決めた/);
 assert.doesNotMatch(annual.resultText,/最初の仕送りを済ませた/);
