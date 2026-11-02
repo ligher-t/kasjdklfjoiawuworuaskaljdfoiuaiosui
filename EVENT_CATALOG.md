@@ -195763,14 +195763,13 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
   "need": [
     "存命の成人きょうだいがいる"
   ],
-  "ban": [
-    "感染したきょうだいがいる",
-    "sibling_exposure_seen"
-  ],
+  "show": {
+    "dynamicFunction": "s => !!siblingForEvent(s, \"family_sibling_exposure\")"
+  },
   "ge": {
     "age": 14
   },
-  "once": true,
+  "cd": 1,
   "w": 0.3
 }
 ```
