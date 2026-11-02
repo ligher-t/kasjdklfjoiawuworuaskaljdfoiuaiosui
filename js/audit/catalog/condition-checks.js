@@ -32,7 +32,7 @@ function createCatalogFieldChecks(W_, services) {
   ]);
   const eventKeys = new Set([
     ...conditionKeys, "id", "conf", "references", "w", "cd", "once", "pri", "st", "months",
-    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly"
+    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "timelineFlag"
   ]);
   const cc = (c, w, event = false) => {
     if (!c) return;
@@ -104,6 +104,17 @@ function createCatalogFieldChecks(W_, services) {
         type = meta?.valueType;
       if (!meta || !meta.unit || !meta.meaning || !type)
         W_.push(`${w}: 効果「${k}」の型・単位・説明台帳がない`);
+      if (k === "siracusaFamilyAction") {
+        const input = f[k], action = typeof input === "string" ? input : input?.action;
+        if (
+          !["active", "distant", "left", "declined"].includes(action) ||
+          (typeof input === "object" &&
+            (!input || Array.isArray(input) ||
+              Object.keys(input).some(key => !["action", "onlyIfMember"].includes(key)) ||
+              (input.onlyIfMember != null && typeof input.onlyIfMember !== "boolean")))
+        )
+          W_.push(`${w}: 効果「siracusaFamilyAction」は有効な関係状態または条件付き関係状態ではない`);
+      }
       if(type === "object" && (!f[k] || typeof f[k] !== "object" || Array.isArray(f[k])))
         W_.push(`${w}: 効果「${k}」がオブジェクトではない`);
       if(type === "objectOrArray" && (!f[k] || typeof f[k] !== "object" ||

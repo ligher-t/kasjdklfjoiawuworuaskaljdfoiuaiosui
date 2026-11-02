@@ -1002,9 +1002,9 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
   $terraData.EVENT_FIELD_META.siracusaFamilyAction = {
     unit: "シラクーザの組織的ファミリーとの関係",
     meaning:
-      "加入の受諾・辞退、関係継続、距離を置くこと、離脱を区別して履歴へ記録する。血縁家族とは別の社会・仕事上の関係",
+      "加入の受諾・辞退、関係継続、距離を置くこと、離脱を区別して履歴へ記録する。血縁家族とは別の社会・仕事上の関係。条件付き変更ではactionとonlyIfMemberを使う",
     status: "S",
-    valueType: "text"
+    valueType: "textOrObject"
   };
 
   $terraData.EVENT_FIELD_META.siracusaFamilyDuty = {

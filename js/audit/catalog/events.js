@@ -7,6 +7,10 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
     (e.references || []).forEach(ref => {
       if (!services.SETTING_SOURCES[ref]) W_.push(`${w}: 未定義の資料ID「${ref}」`);
     });
+    if (e.timelineFlag != null &&
+      (typeof e.timelineFlag !== "string" ||
+        !services.HIST.some(entry => entry.flag === e.timelineFlag)))
+      W_.push(`${w}: timelineFlagに対応する年表IDがない`);
     if (e.w != null) weight(e.w, w);
     if (e.cd != null && (!Number.isFinite(e.cd) || e.cd < 0)) W_.push(`${w}: 再発待機期間が不正`);
     if (e.inConfinement != null && typeof e.inConfinement !== "boolean")

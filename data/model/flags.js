@@ -744,6 +744,42 @@ window.TERRA_DATA_BUILD.run("model/flags", function ($terraData, $define, $rules
         engine: "クルビア技師職の後年経路",
         tags: ["技師職の後年の働き方を決めた"]
       },
+      columbia_pioneer: {
+        label: "クルビア独立期に登記申請を選んだ",
+        description: "独立期に登記を申請する選択を記録。土地所有が認可されたという永続的な法的証明ではない。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
+      },
+      silence_survivor: {
+        label: "大いなる静謐で沿岸から避難した",
+        description: "沿岸の危機に遭遇し避難したという個人のゲーム内選択。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
+      },
+      omerta_sworn: {
+        label: "シラクーザ統一期に沈黙の掟を守った",
+        description: "当該時期の本人の選択。全国共通の法令を示さない。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
+      },
+      babel_affiliate: {
+        label: "バベル離脱時に陸艦へ向かった",
+        description: "年表上の危機で主人公が選んだ架空の行動。公式人物との関係を確定しない。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
+      },
+      chernobog_refugee: {
+        label: "チェルノボーグ事変で避難列車へ向かった",
+        description: "事変時に避難したという本人のゲーム内経験。全住民の被災・移動状況を表さない。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
+      },
+      volcano_evacuee: {
+        label: "シエスタ火山活動で船に避難した",
+        description: "火山危機で船を利用した本人の選択。公式の避難制度を確定しない。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
+      },
       cyber_trace: {
         label: "鎖川電脳プロトコルの痕跡",
         description: "1088年鎖川サイバー攻撃の極秘プロトコル断片を発見した記録。",
