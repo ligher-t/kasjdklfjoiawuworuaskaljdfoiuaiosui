@@ -181265,7 +181265,7 @@ s => {
   "cd": 4,
   "w": 0.14,
   "show": {
-    "dynamicFunction": "s => affiliation(s)?.status === \"suspended\" && organization(s)?.status === \"active\""
+    "dynamicFunction": "s => {\n        if (!isSuspended(s)) return false;\n        const pauses = affiliation(s)?.history?.filter(row => row.action === \"suspend\") || [];\n        const pausedYear = pauses.at(-1)?.year;\n        return Number.isInteger(pausedYear) && s.year - pausedYear >= 1;\n      }"
   }
 }
 ```
