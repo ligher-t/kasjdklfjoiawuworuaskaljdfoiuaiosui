@@ -17,6 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      # Run after the high-value regression has been registered.
       - name: Regenerate derived catalog and revision
         run: |
           node tools/generate-event-catalog.cjs --write
