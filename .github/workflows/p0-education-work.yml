@@ -25,6 +25,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Compute runtime revision for PR audit
+        run: node -e "console.log('EXPECTED_REVISION=' + require('./tools/update-version.cjs').revision())"
       - name: Runtime syntax and generated revision
         run: node tools/check-efficient.cjs syntax
       - name: Catalog validation and rejected condition keys

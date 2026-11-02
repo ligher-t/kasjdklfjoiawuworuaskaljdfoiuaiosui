@@ -96,6 +96,26 @@ assert(adultShared.wealth >= 3, 'shared household wealth class must consider the
 assert(adultShared.residentNames.includes(adultShared.presentParent), 'resident caregiver must appear');
 assert(!adultShared.residentNames.includes(adultShared.absentParent), 'absent parent must not be invented as a resident');
 
+// Internal contributions are not an external expense twice: the adult's
+// personal ledger and the family ledger describe the same single transfer.
+prepare(32, 'family_home_shared_budget');
+const internalTransferStrain = JSON.parse(JSON.stringify(vm.runInContext(`(() => {
+  const s = S, externalExpense = 8000000;
+  const reserveYears = P('condition.financialStrainReserveYears');
+  s.house.cash = externalExpense * Math.max(1, reserveYears + 0.25);
+  s.house.debt = 0; s.house.exp = externalExpense;
+  s.cash = 0; s.debt = 0; s.exp = 0;
+  s.flow = { year: s.year, expense: { familyContribution: 0 } };
+  const baseline = householdStrained(s);
+  const internalTransfer = 20000000;
+  s.exp += internalTransfer;
+  s.flow.expense.familyContribution += internalTransfer;
+  const afterTransfer = householdStrained(s);
+  return { baseline, afterTransfer };
+})()`, ctx)));
+assert.deepEqual(internalTransferStrain, { baseline: false, afterTransfer: false },
+  'transfers between the two shared ledgers cannot create fictitious household financial strain');
+
 prepare(32, 'family_home_separate_budget');
 const adultSeparate = settle();
 assert.equal(adultSeparate.personalBudgetRecorded, true, 'adult personal account remains active');
