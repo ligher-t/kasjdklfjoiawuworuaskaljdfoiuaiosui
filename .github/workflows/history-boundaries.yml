@@ -17,6 +17,7 @@ on:
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
+      - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
   pull_request:
@@ -36,6 +37,7 @@ on:
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
       - 'tests/v88_infected_organization_exit_consistency.test.cjs'
+      - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
 permissions:
@@ -75,3 +77,5 @@ jobs:
         run: node tools/check-efficient.cjs run v88_followup_elapsed_from_status.test.cjs
       - name: Organization exit, successor and long-term goal coherence
         run: node tools/check-efficient.cjs run v88_infected_organization_exit_consistency.test.cjs
+      - name: Civic and research duties close linked life goals
+        run: node tools/check-efficient.cjs run v88_affiliation_goal_closure.test.cjs
