@@ -29,6 +29,7 @@ const approved=Object.freeze([
   "v88_ursus_katorga_custody_lifecycle.test.cjs",
   "v88_followup_elapsed_from_status.test.cjs",
   "v88_infected_organization_exit_consistency.test.cjs",
+  "v88_affiliation_goal_closure.test.cjs",
   "v88_romance_lifecycle_coherence.test.cjs",
   "ui-summary-focus.test.cjs",
   "ui-log-years.test.cjs",
