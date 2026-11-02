@@ -23,6 +23,7 @@ on:
       - 'tests/v88_cross_faction_affiliation_transitions.test.cjs'
       - 'tests/v88_student_familia_status_debt.test.cjs'
       - 'tests/v88_multi_child_diagnosis_target.test.cjs'
+      - 'tests/v88_sibling_exposure_individual_targets.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
   pull_request:
@@ -48,6 +49,7 @@ on:
       - 'tests/v88_cross_faction_affiliation_transitions.test.cjs'
       - 'tests/v88_student_familia_status_debt.test.cjs'
       - 'tests/v88_multi_child_diagnosis_target.test.cjs'
+      - 'tests/v88_sibling_exposure_individual_targets.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
 permissions:
@@ -99,3 +101,5 @@ jobs:
         run: node tools/check-efficient.cjs run v88_student_familia_status_debt.test.cjs
       - name: Individual child infection diagnoses in multi-child households
         run: node tools/check-efficient.cjs run v88_multi_child_diagnosis_target.test.cjs
+      - name: Separate sibling exposure targets and past exposures
+        run: node tools/check-efficient.cjs run v88_sibling_exposure_individual_targets.test.cjs
