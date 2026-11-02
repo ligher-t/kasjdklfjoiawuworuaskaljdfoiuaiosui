@@ -39357,10 +39357,10 @@ s => {
   "need": [
     "扶養中の子"
   ],
-  "ban": [
-    "扶養中の感染者"
-  ],
-  "once": true,
+  "show": {
+    "dynamicFunction": "s => (s.kids || []).some(k =>\n        !k.d && !k.inf && !k.exposurePending && childIsSupported(s, k))"
+  },
+  "cd": 1,
   "w": 0.4
 }
 ```
