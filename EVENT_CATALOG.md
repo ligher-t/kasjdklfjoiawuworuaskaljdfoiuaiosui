@@ -63122,7 +63122,7 @@ s => {
   "conf": "C",
   "timelineFlag": "siracusa_unification",
   "references": [
-    "SRC_SIRACUSA_HISTORY"
+    "SRC_TL_1000_1061"
   ],
   "st": [
     "青年",
@@ -63420,7 +63420,7 @@ s => {
   "conf": "B",
   "timelineFlag": "tenth_ursus_kazimierz_war",
   "references": [
-    "SRC_HIST_WAR_1062"
+    "SRC_TL_EARLY"
   ],
   "st": [
     "青年",
@@ -63567,7 +63567,7 @@ s => {
   "conf": "C",
   "timelineFlag": "sarcophagus_discovery",
   "references": [
-    "SRC_URSUS_SARCOPHAGUS"
+    "SRC_TL_EARLY"
   ],
   "st": [
     "青年",
@@ -63714,7 +63714,7 @@ s => {
   "conf": "B",
   "timelineFlag": "bloodpeak_and_victorian_crown",
   "references": [
-    "SRC_HIST_BLOODPEAK"
+    "SRC_TL_EARLY"
   ],
   "st": [
     "少年",
@@ -63862,7 +63862,7 @@ s => {
   "conf": "B",
   "timelineFlag": "ursus_great_rebellion",
   "references": [
-    "SRC_HIST_URSUS_REBELLION"
+    "SRC_TL_EARLY"
   ],
   "st": [
     "青年",
@@ -64143,7 +64143,7 @@ s => {
   "conf": "B",
   "timelineFlag": "sandsoldier_incident",
   "references": [
-    "SRC_HIST_SARGON_SANDSOLDIER"
+    "SRC_A_WALK_DUST_TIMELINE"
   ],
   "st": [
     "青年",
@@ -64460,7 +64460,7 @@ s => {
   "conf": "C",
   "timelineFlag": "leith_revolution",
   "references": [
-    "SRC_LEITH_HISTORY"
+    "SRC_TL_EARLY"
   ],
   "st": [
     "青年",
@@ -64740,7 +64740,7 @@ s => {
   "conf": "B",
   "timelineFlag": "vanya_assassination",
   "references": [
-    "SRC_URSUS_HISTORY"
+    "SRC_TL_MIDDLE"
   ],
   "st": [
     "青年",
@@ -64889,7 +64889,7 @@ s => {
   "conf": "C",
   "timelineFlag": "victoria_leak",
   "references": [
-    "SRC_VIC_LEAK"
+    "SRC_TL_MIDDLE"
   ],
   "st": [
     "青年",
@@ -65154,7 +65154,7 @@ s => {
   "conf": "B",
   "timelineFlag": "babel_split",
   "references": [
-    "SRC_BABEL_HISTORY"
+    "SRC_KAZDEL_BB5"
   ],
   "st": [
     "青年",
@@ -65288,7 +65288,7 @@ s => {
   "conf": "B",
   "timelineFlag": "kazdel_conflict_started",
   "references": [
-    "SRC_KAZDEL_CIVIL_WAR"
+    "SRC_KAZDEL_BB5"
   ],
   "st": [
     "青年",
@@ -65717,7 +65717,7 @@ s => {
   "conf": "B",
   "timelineFlag": "kazdel_war_declared",
   "references": [
-    "SRC_KAZDEL_CIVIL_WAR"
+    "SRC_KAZDEL_BB5"
   ],
   "st": [
     "青年",
@@ -65865,7 +65865,7 @@ s => {
   "conf": "B",
   "timelineFlag": "kazdel_civil_war",
   "references": [
-    "SRC_KAZDEL_CIVIL_WAR"
+    "SRC_KAZDEL_BB5"
   ],
   "st": [
     "少年",
@@ -66020,7 +66020,7 @@ s => {
   "conf": "B",
   "timelineFlag": "kazdel_border_battle",
   "references": [
-    "SRC_KAZDEL_CIVIL_WAR"
+    "SRC_KAZDEL_BB5"
   ],
   "st": [
     "青年",
@@ -66647,7 +66647,7 @@ s => {
   "conf": "C",
   "timelineFlag": "kazimierz_major",
   "references": [
-    "SRC_KAZIMIERZ_MAJOR"
+    "SRC_KAZIMIERZ_COMPETITION"
   ],
   "st": [
     "青年",
@@ -66794,7 +66794,7 @@ s => {
   "conf": "C",
   "timelineFlag": "siesta_disaster",
   "references": [
-    "SRC_SIESTA_STORY"
+    "SRC_SIESTA_TRANSITION"
   ],
   "st": [
     "少年",
@@ -66949,7 +66949,7 @@ s => {
   "conf": "C",
   "timelineFlag": "world_1099",
   "references": [
-    "SRC_WORLD_1099"
+    "SRC_TL_LATE"
   ],
   "st": [
     "青年",
@@ -67077,7 +67077,7 @@ s => {
   "conf": "C",
   "timelineFlag": "world_1101",
   "references": [
-    "SRC_WORLD_1101"
+    "SRC_TL_LATE"
   ],
   "st": [
     "青年",
@@ -67205,7 +67205,7 @@ s => {
   "conf": "B",
   "timelineFlag": "katorga_incident",
   "references": [
-    "SRC_URSUS_KATORGA"
+    "SRC_URSUS_PAA_SYNOPSIS"
   ],
   "st": [
     "青年",
@@ -67355,7 +67355,7 @@ s => {
   "conf": "C",
   "timelineFlag": "sui_1102",
   "references": [
-    "SRC_SUI_HISTORY"
+    "SRC_TL_LATE"
   ],
   "st": [
     "少年",
@@ -67482,6 +67482,12 @@ s => {
 {
   "id": "timeline_daily_londinium_siege",
   "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
   "timelineFlag": "londinium_war",
   "need": [
     "国:ヴィクトリア",
@@ -67534,6 +67540,12 @@ s => {
 {
   "id": "timeline_daily_londinium_martial",
   "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
   "timelineFlag": "thelazia_dead",
   "need": [
     "国:ヴィクトリア",
@@ -67585,6 +67597,12 @@ s => {
 {
   "id": "timeline_daily_chernobog_alarm",
   "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
   "timelineFlag": "chernobog_incident",
   "need": [
     "国:ウルサス",
@@ -67637,6 +67655,12 @@ s => {
 {
   "id": "timeline_daily_bolivar_barricade",
   "conf": "B",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
   "timelineFlag": "bolivar_civil_war",
   "need": [
     "国:ボリバル"
@@ -67687,6 +67711,12 @@ s => {
 {
   "id": "timeline_daily_great_silence_sea",
   "conf": "B",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
   "timelineFlag": "great_silence",
   "need": [
     "国:イベリア"
@@ -119501,7 +119531,7 @@ s => {
       "職:ウルサス国境警備兵・炭鉱監視",
       "職:パーディシャー宮廷親衛隊",
       "職:ウォルシーニ裁判所警察官",
-      "職:イベリア審問所・見習い審問官",
+      "職:イベリア裁判所・見習い審問官",
       "職:ドッソレス特区市警"
     ]
   },
@@ -124290,7 +124320,7 @@ s => {
       "職:ウルサス国境警備兵・炭鉱監視",
       "職:パーディシャー宮廷親衛隊",
       "職:ウォルシーニ裁判所警察官",
-      "職:イベリア審問所・見習い審問官",
+      "職:イベリア裁判所・見習い審問官",
       "職:ドッソレス特区市警"
     ]
   },
@@ -142578,7 +142608,7 @@ s => {
       "職:ウルサス国境警備兵・炭鉱監視",
       "職:パーディシャー宮廷親衛隊",
       "職:ウォルシーニ裁判所警察官",
-      "職:イベリア審問所・見習い審問官",
+      "職:イベリア裁判所・見習い審問官",
       "職:ドッソレス特区市警"
     ]
   },
@@ -146747,7 +146777,7 @@ s => {
       "就労中"
     ],
     "any": [
-      "職:イベリア審問所・見習い審問官"
+      "職:イベリア裁判所・見習い審問官"
     ]
   },
   "fx": {
@@ -152000,7 +152030,7 @@ s => {
       "職:ウルサス国境警備兵・炭鉱監視",
       "職:パーディシャー宮廷親衛隊",
       "職:ウォルシーニ裁判所警察官",
-      "職:イベリア審問所・見習い審問官",
+      "職:イベリア裁判所・見習い審問官",
       "職:ドッソレス特区市警"
     ]
   },
@@ -156362,7 +156392,7 @@ s => {
       "職:ウルサス国境警備兵・炭鉱監視",
       "職:パーディシャー宮廷親衛隊",
       "職:ウォルシーニ裁判所警察官",
-      "職:イベリア審問所・見習い審問官",
+      "職:イベリア裁判所・見習い審問官",
       "職:ドッソレス特区市警"
     ]
   },
@@ -161310,7 +161340,7 @@ s => {
       "職:ウルサス国境警備兵・炭鉱監視",
       "職:パーディシャー宮廷親衛隊",
       "職:ウォルシーニ裁判所警察官",
-      "職:イベリア審問所・見習い審問官",
+      "職:イベリア裁判所・見習い審問官",
       "職:ドッソレス特区市警"
     ]
   },
