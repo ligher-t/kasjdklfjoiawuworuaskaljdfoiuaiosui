@@ -36528,8 +36528,12 @@ s => {
 ```json
 {
   "show": {
-    "dynamicFunction": "s => (s.cash || 0) >= 200000 && ((s.job || 0) > 0 || (s.inc || 0) > 0)"
-  }
+    "dynamicFunction": "s => s.house?.parentLedger?.status === \"tracked\" &&\n              (s.cash || 0) >= 200000 && ((s.job || 0) > 0 || (s.inc || 0) > 0)"
+  },
+  "en": {
+    "affordableParentHouseholdCash": 150000
+  },
+  "why": "実家への支援金と当面の生活費を同時に用意できない"
 }
 ```
 
@@ -36546,7 +36550,7 @@ s => {
 
 ```json
 {
-  "selfCash": -150000,
+  "parentHouseholdGift": 150000,
   "p": 3,
   "rl": 3
 }
@@ -244919,6 +244923,9 @@ s => {
 {
   "h": -10,
   "p": -5,
+  "inf": 1,
+  "infectionRoute": "wound",
+  "infCause": "坑道暴動で源石の破片によって負った創傷",
   "fl": {
     "dg": 1
   }
