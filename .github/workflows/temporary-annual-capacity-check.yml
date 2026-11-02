@@ -1,4 +1,4 @@
-name: Temporary deadline capacity and extended-life verification
+name: Temporary deadline capacity and sample diagnostics
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]

@@ -66,6 +66,7 @@ assert.equal(late.metrics.expiredUnserved,5-lateAllowed);
   ctx.auditOptions=options;
   const report=await vm.runInContext('runDevSimulation(auditOptions)',ctx);
   const coverage=JSON.parse(JSON.stringify(report.deadlineCoverage));
+  console.log(JSON.stringify({simulationFailures:report.failures.map(row=>({type:row.type,eventId:row.eventId,error:row.error,count:row.count,seed:row.example.seed}))}));
   assert.equal(report.summary.runtimeFailures,0);
   assert.equal(report.summary.stateFailures,0);
   assert.equal(report.summary.sampled,19);
