@@ -6,7 +6,9 @@ const inspect=code=>JSON.parse(vm.runInContext('JSON.stringify((()=>{'+code+'})(
 setup(ctx,{id:'U19-romance-lineage',seed:110219,region:'龍門',age:25});
 const romance=inspect(`
   S.year=1105;S.age=25;S.mo=6;S.sn={};S.eventOutcomes={};
+  S.romance={id:'romance-a',name:'相手A',stage:'dating',metYear:1101,stageSinceYear:1101};
   const rows=[
+    ['romance_followup','lov',0,0],
     ['romance_future_talk','romance_followup',0,0],
     ['romance_marriage_choice','romance_future_talk',0,0],
     ['romance_cohabitation_review','romance_marriage_choice',2,0]
@@ -17,13 +19,16 @@ const romance=inspect(`
     const probe={id:'test-'+laterId,st:['青年','壮年'],
       after:event.after,fx:{},w:1,t:'probe'};
     const without=elig(probe,S,tags(S));
-    S.eventOutcomes[earlierId]={year:1103,choiceIndex:expectedChoice===0?1:0,outcomeIndex:0};
+    S.eventOutcomes[earlierId]={year:1103,choiceIndex:expectedChoice===0?1:0,outcomeIndex:0,romanceId:'romance-a'};
     const wrong=elig(probe,S,tags(S));
-    S.eventOutcomes[earlierId]={year:1103,choiceIndex:expectedChoice,outcomeIndex:expectedOutcome};
+    S.eventOutcomes[earlierId]={year:1103,choiceIndex:expectedChoice,outcomeIndex:expectedOutcome,romanceId:'romance-a'};
     const correct=elig(probe,S,tags(S));
+    S.romance.id='romance-b';
+    const switched=elig(probe,S,tags(S));
+    S.romance.id='romance-a';
     S.eventOutcomes[earlierId].year=1104;
     const stale=elig(probe,S,tags(S));
-    return {laterId,without,wrong,correct,stale,rule:event.after};
+    return {laterId,without,wrong,correct,switched,stale,rule:event.after};
   });
   return rows;
 `);
@@ -31,6 +36,7 @@ for(const row of romance){
  assert.equal(row.without,false,row.laterId+' needs a recorded choice result');
  assert.equal(row.wrong,false,row.laterId+' must not fire after a different choice');
  assert.equal(row.correct,true,row.laterId+' follows only the intended event outcome');
+ assert.equal(row.switched,false,row.laterId+' cannot transfer a promise to a different partner');
  assert.equal(row.stale,false,row.laterId+' must reject a mismatched event year');
 }
 setup(ctx,{id:'U19-ursus-participation',seed:110220,region:'ウルサス',age:20});
@@ -75,4 +81,19 @@ assert.equal(ursus.afterLiaison.detained,false);
 assert.equal(ursus.afterPause.active,0);
 assert.equal(ursus.afterPause.status,'suspended');
 assert.equal(ursus.afterPause.detained,false);
-console.log('PASS romance actual-outcome lineage; distinct protest/liaison accounts and role state');
+// One live dispatcher choice must save the partner ID, not just the choice number.
+setup(ctx,{id:'U19-romance-dispatch',seed:110222,region:'龍門',age:24});
+const recorded=inspect(`
+  S.year=1101;S.age=24;S.mo=6;
+  S.romance={id:'partner-live',name:'相手B',stage:'dating',metYear:1099,stageSinceYear:1099};
+  S.sn={};S.eventOutcomes={};
+  AU='r';HL=0;rd=()=>{};syncUIDialogs=()=>{};$('stt').focus=()=>{};
+  const event=EV.find(e=>e.id==='romance_future_talk');
+  fire(event,S,tags(S));
+  return {entry:S.eventOutcomes?.[event.id],now:S.romance?.id||null};
+`);
+assert.equal(recorded.entry?.romanceId,'partner-live','live selection must retain the partner even if breakup occurs');
+assert.equal(recorded.entry?.year,1101);
+assert(Number.isInteger(recorded.entry?.choiceIndex));
+assert(Number.isInteger(recorded.entry?.outcomeIndex));
+console.log('PASS partner-bound romantic outcomes and their live persistence, protest/liaison branches');

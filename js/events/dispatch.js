@@ -411,13 +411,20 @@ function ask(e, T, t, before, resumed = false) {
     UI_FOCUS_RETURNS.delete("md");
     cnt(tone(o[2]));
     const previousResolution = TRACE_RESOLUTION;
+    // This outcome belongs to the partner at the time of the choice, even if
+    // the choice ends the relationship. The first meeting can create the ID.
+    const romanceIdAtChoice = s.romance?.id || null;
     TRACE_RESOLUTION = { kind: "choice", id: e.id, label: choiceLabel };
     try {
       ap(o[2], routeReserve);
-      // A follow-up may depend on the actual selected outcome, not only the
-      // year in which an event was offered. Keep the final result per event.
+      // Record the actual outcome and the relationship's stable participant.
       s.eventOutcomes || (s.eventOutcomes = {});
-      s.eventOutcomes[e.id] = { year: s.year, choiceIndex, outcomeIndex };
+      const romanceId = romanceIdAtChoice || s.romance?.id || null;
+      s.eventOutcomes[e.id] = {
+        year: s.year, choiceIndex, outcomeIndex,
+        ...((e.id === "lov" || e.id.startsWith("romance_")) && romanceId
+          ? { romanceId } : {})
+      };
       recordEventReview(e,s,choiceLabel);
     } finally {
       TRACE_RESOLUTION = previousResolution;
