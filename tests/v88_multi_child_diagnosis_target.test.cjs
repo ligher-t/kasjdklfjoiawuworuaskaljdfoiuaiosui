@@ -47,7 +47,7 @@ const pending=inspect(`
  S.year=1090;S.age=35;
  S.kids=[
    {id:'infected',nm:'感染した子',by:1080,inf:1,infYear:1089,householdStatus:'supported'},
-   {id:'pending',nm:'曝露検査待ちの子',by:1082,inf:0,exposurePending:1,householdStatus:'supported'}
+   {id:'pending',nm:'曝露検査待ちの子',by:1070,inf:0,exposurePending:1,householdStatus:'supported'}
  ];
  const event=EV.find(e=>e.id==='fam_child_inf');
  const initial=elig(event,S,tags(S));
