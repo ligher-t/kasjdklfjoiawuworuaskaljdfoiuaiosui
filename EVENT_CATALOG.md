@@ -52410,7 +52410,7 @@ s => {
     "国:シラクーザ"
   ],
   "show": {
-    "dynamicFunction": "s =>\n        [\"active\", \"distant\"].includes(s.siracusaFamilyTie?.status) &&\n        Number.isInteger(s.siracusaFamilyTie.nextReviewYear) &&\n        s.year >= s.siracusaFamilyTie.nextReviewYear"
+    "dynamicFunction": "s => {\n        const tie = s.siracusaFamilyTie;\n        const member = s.lifeRecord?.affiliations?.find(row => row.id === \"siracusa-familia\");\n        return ((tie?.status === \"active\" && [\"active\", \"crisis\"].includes(member?.status)) ||\n          (tie?.status === \"distant\" && member?.status === \"suspended\")) &&\n          Number.isInteger(tie.nextReviewYear) && s.year >= tie.nextReviewYear;\n      }"
   },
   "w": 1,
   "cd": 3
@@ -52500,8 +52500,8 @@ s => {
     "id": "siracusa-family-livelihood",
     "title": "地区のつながりを使いながら自分の暮らしを守る",
     "priority": "生計と安全",
-    "action": "compromise",
-    "note": "仕事を断り、関係に距離を置いた"
+    "action": "pause",
+    "note": "仕事を断り、現在の役割を一時休止した"
   },
   "fl": {
     "family": 0
@@ -52886,6 +52886,7 @@ s => {
   "lifeGoal": {
     "id": "siracusa-family-livelihood",
     "action": "continue",
+    "onlyIfActive": true,
     "note": "立替金を清算した"
   },
   "groupStanding": {
@@ -52937,18 +52938,22 @@ s => {
     "amount": 0,
     "note": "仲介を頼み、30,000龍門幣を返して残額の免除を受けた"
   },
-  "siracusaFamilyAction": "distant",
+  "siracusaFamilyAction": {
+    "action": "distant",
+    "onlyIfMember": true
+  },
   "lifeAffiliation": {
     "id": "siracusa-familia",
     "title": "シラクーザの地区ファミリーとの仕事・保護のつながり",
     "action": "suspend",
-    "onlyIfActive": true,
+    "onlyIfActiveOrCrisis": true,
     "note": "借りの仲介後、仕事から距離を置いた"
   },
   "lifeGoal": {
     "id": "siracusa-family-livelihood",
-    "action": "compromise",
-    "note": "借りを仲介し、依頼から距離を置いた"
+    "action": "pause",
+    "onlyIfActive": true,
+    "note": "借りを仲介し、依頼の仕事を休止した"
   },
   "groupStanding": {
     "id": "siracusa-familia",
@@ -52977,20 +52982,24 @@ s => {
     "amount": 60000,
     "note": "仲介を頼み、30,000龍門幣を返した。残額60,000龍門幣は二年後までに返す"
   },
-  "siracusaFamilyAction": "distant",
+  "siracusaFamilyAction": {
+    "action": "distant",
+    "onlyIfMember": true
+  },
   "lifeAffiliation": {
     "id": "siracusa-familia",
     "title": "シラクーザの地区ファミリーとの仕事・保護のつながり",
     "action": "suspend",
-    "onlyIfActive": true,
+    "onlyIfActiveOrCrisis": true,
     "note": "残額の返済が続くため仕事から距離を置いた"
   },
   "lifeGoal": {
     "id": "siracusa-family-livelihood",
     "title": "地区のつながりを使いながら自分の暮らしを守る",
     "priority": "生計と安全",
-    "action": "compromise",
-    "note": "一部を返済し、残額の返済を続ける"
+    "action": "pause",
+    "onlyIfActive": true,
+    "note": "一部を返済し、仕事を休止して残額を清算する"
   },
   "groupStanding": {
     "id": "siracusa-familia",
@@ -53035,11 +53044,14 @@ s => {
     "onlyIfMember": true,
     "note": "支払い要求を拒み接触を断った"
   },
-  "lifeGoal": {
-    "id": "siracusa-family-livelihood",
-    "action": "abandon",
-    "note": "危険を避けるため関係を断った"
-  },
+  "lifeGoals": [
+    {
+      "id": "siracusa-family-livelihood",
+      "action": "abandon",
+      "onlyIfUnresolved": true,
+      "note": "危険を避けるため関係を断った"
+    }
+  ],
   "groupStanding": {
     "id": "siracusa-neighbours",
     "title": "近隣の住民",
@@ -203299,7 +203311,10 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
     "age": 18
   },
   "once": true,
-  "w": 0.16
+  "w": 0.16,
+  "show": {
+    "dynamicFunction": "s => s.lifeRecord?.affiliations?.some(row =>\n      row.id === \"ursus-student-assembly\" && [\"active\", \"crisis\"].includes(row.status))"
+  }
 }
 ```
 
