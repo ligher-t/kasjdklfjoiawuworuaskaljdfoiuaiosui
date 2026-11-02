@@ -441,6 +441,7 @@ window.TERRA_DATA_BUILD.fragment(
     references: ["SRC_RHODES_MEDICAL", "SRC_TERRA_LIFECOURSE"],
     st: ["青年", "壮年", "老年"],
     need: ["ロドス研究から離脱済み"],
+    once: true,
     show: s => {
       const affiliation = s.lifeRecord?.affiliations?.find(row => row.id === "rhodes-research"),
         episode = researchEpisode(s);
@@ -476,10 +477,7 @@ window.TERRA_DATA_BUILD.fragment(
       $terraData.K("連絡を返さず、研究班とは距離を置く", {}, [
         1,
         "便りには返事をせず、当時の作業から距離を置いた。研究班が記録をどう使ったかは分からないまま、自分の生活へ専念した。",
-        {
-          lifeAffiliation: { id: "rhodes-research", action: "leave", note: "自ら距離を置いた" },
-          p: 1
-        }
+        { p: 1 }
       ]),
       $terraData.K("成果がないと感じ、記録そのものを忘れる", {}, [
         1,
@@ -804,8 +802,14 @@ window.TERRA_DATA_BUILD.fragment(
     st: ["青年", "壮年", "老年"],
     need: ["再編レユニオン互助網から離脱済み"],
     after: { id: "life_reunion_reorg_tension", min: 1 },
+    once: true,
     cd: 6,
     w: 0.2,
+    show: s => {
+      const affiliation = s.lifeRecord?.affiliations?.find(row => row.id === "reunion-reorg");
+      return affiliation?.status === "left" &&
+        Number.isInteger(affiliation.endedYear) && s.year - affiliation.endedYear >= 2;
+    },
       t: "互助網を離れてから、以前の連絡先が別の場所へ移ったと聞いた。後任から、配給が乱れた頃のことを尋ねる便りが届いた。覚えていることをどこまで伝えるか考えた。",
     c: [
       $terraData.K("覚えている配給の記録を書き、確かめられない箇所も添えて返す", {}, [
