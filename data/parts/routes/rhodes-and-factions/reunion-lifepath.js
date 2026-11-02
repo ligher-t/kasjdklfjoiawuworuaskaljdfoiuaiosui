@@ -504,6 +504,11 @@ window.TERRA_DATA_BUILD.fragment(
               priority: "互助",
               action: "start"
             },
+            lifeGoals: [{
+              id: "protect-neighbours",
+              action: "abandon",
+              note: "旧隊での役割を終え、再編後の互助網へ活動を移した"
+            }],
             groupStanding: {
               id: "reunion-reorg-volunteers",
               title: "再編後の地域ボランティア",
