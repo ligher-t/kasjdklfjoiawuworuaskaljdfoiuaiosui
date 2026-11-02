@@ -1,10 +1,9 @@
 function refreshWealthClass(s) {
-  const minor = inSharedHousehold(s) && s.house;
-  const net = minor
-    ? (s.house.cash || 0) - (s.house.debt || 0)
-    : (s.cash || 0) + (s.investment || 0) - (s.debt || 0);
+  const shared = inSharedHousehold(s) && s.house;
+  const personalNet = (s.cash || 0) + (s.investment || 0) - (s.debt || 0);
+  const net = shared ? personalNet + (s.house.cash || 0) - (s.house.debt || 0) : personalNet;
   const benchmark = EXP[2] * (s.res?.pm || 1) * (s.priceIndex || 1);
-  const reference = minor
+  const reference = shared
     ? benchmark * 1.6
     : benchmark;
   const years = reference > 0 ? Math.max(0, net) / reference : 0,

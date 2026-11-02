@@ -164,17 +164,26 @@ function settleAnnualPersonalCash(s, services, amounts, a) {
       (!arrangement ||
         arrangement === "legacy_unknown" ||
         (typeof arrangement === "string" && arrangement.startsWith("family_home_"))),
-    familyHouseholdActive = inFamilyHome && a < services.householdEndAge(s);
+    familyHouseholdActive = inFamilyHome && s.house?.flow?.year === s.year;
   if (familyHouseholdActive && s.familyContribution > 0) {
     const house = s.house || (s.house = { cash: 0, debt: 0, inc: 0, exp: 0 });
     const contribution = Math.min(s.cash, inc * s.familyContribution);
     s.cash -= contribution;
     house.cash += contribution;
+    house.inc += contribution;
     annualFlow.expense.familyContribution = contribution;
     annualFlow.net -= contribution;
     house.flow || (house.flow = { year: s.year, income: {}, expense: {}, net: 0 });
-    house.flow.income.youthContribution = (house.flow.income.youthContribution || 0) + contribution;
+    house.flow.income.protagonistContribution = (house.flow.income.protagonistContribution || 0) + contribution;
     house.flow.net += contribution;
+  }
+  // Household costs funded from pre-existing personal savings earlier in the year
+  // must also appear on the protagonist's own annual ledger.
+  const reserveContribution = s.house?.flow?.year === s.year
+    ? s.house.flow.income?.protagonistReserve || 0 : 0;
+  if (reserveContribution > 0) {
+    annualFlow.expense.familyContribution = (annualFlow.expense.familyContribution || 0) + reserveContribution;
+    annualFlow.net -= reserveContribution;
   }
   s.flow = annualFlow;
   return { tc, ex, annualFlow };
