@@ -372,7 +372,7 @@ window.TERRA_DATA_BUILD.fragment(
           "医者へ行くための足代を一度だけ送る（{siblingHealthAidAmount}）",
           {
             show: { need: ["対象きょうだいの体調に注意"], ban: ["対象きょうだいとの連絡終了"] },
-            en: { affordableCash: 50000 },
+            en: { affordableCashAfterReserve: 50000 },
             why: "交通費を送ると自分の生活費が足りなくなる"
           },
           [
