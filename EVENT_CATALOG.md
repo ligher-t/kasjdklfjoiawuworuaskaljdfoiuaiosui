@@ -236190,7 +236190,7 @@ s => {
     "year": 1090
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"炎国\" && s.job === 0 && !s.fl?.retired && !s.fl?.inf && (s.k || 0) >= 30"
+    "dynamicFunction": "s => s.res?.n === \"炎国\" && s.job === 0 && !s.fl?.retired && (s.k || 0) >= 30"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -236994,7 +236994,7 @@ s => {
     "year": 1090
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === 0 && !s.fl?.retired && !s.fl?.inf"
+    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === 0 && !s.fl?.retired"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -241902,7 +241902,7 @@ s => {
     "year": 1092
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"イベリア\" && s.job === 0 && !s.fl?.retired && !s.fl?.inf"
+    "dynamicFunction": "s => s.res?.n === \"イベリア\" && s.job === 0 && !s.fl?.retired"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
