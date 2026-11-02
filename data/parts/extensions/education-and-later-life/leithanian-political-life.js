@@ -213,7 +213,7 @@ window.TERRA_DATA_BUILD.fragment(
               onlyIfActive: true,
               note: "地区の陳情活動から手を引いた"
             },
-            lifeGoal: { id: goalId, action: "compromise", onlyIfActive: true, note: "地区の集まりから離れた" },
+            lifeGoal: { id: goalId, action: "abandon", onlyIfActive: true, note: "地区の集まりから離れた" },
             p: -1
           }
         ])
@@ -239,7 +239,7 @@ window.TERRA_DATA_BUILD.fragment(
               action: "leave",
               note: "転居に伴い、元の地区の集まりから抜けた"
             },
-            lifeGoal: { id: goalId, action: "compromise", note: "転居を機に地区活動の役目を終えた" },
+            lifeGoal: { id: goalId, action: "abandon", note: "転居を機に地区活動の役目を終えた" },
             p: 0
           }
         ]),
@@ -303,7 +303,7 @@ window.TERRA_DATA_BUILD.fragment(
               onlyIfActive: true,
               note: "後進に譲り、地区の集まりから退いた"
             },
-            lifeGoal: { id: goalId, action: "compromise", onlyIfActive: true, note: "地区活動に一区切りをつけた" },
+            lifeGoal: { id: goalId, action: "abandon", onlyIfActive: true, note: "地区活動に一区切りをつけた" },
             p: -1
           }
         ])
@@ -355,7 +355,7 @@ window.TERRA_DATA_BUILD.fragment(
               action: "leave",
               note: "休止していた地区活動から完全に離れた"
             },
-            lifeGoal: { id: goalId, action: "compromise", note: "地区活動との関わりを終えた" },
+            lifeGoal: { id: goalId, action: "abandon", note: "地区活動との関わりを終えた" },
             p: -1
           }
         ])
