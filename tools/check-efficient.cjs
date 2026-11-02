@@ -24,6 +24,8 @@ const approved=Object.freeze([
   "v88_language_school_scopes.test.cjs",
   "v88_effect_subject_finance_and_infection.test.cjs",
   "v88_outcome_followup_lineage.test.cjs",
+  "v88_relationship_flag_lifecycle.test.cjs",
+  "v88_romance_lifecycle_coherence.test.cjs",
   "ui-summary-focus.test.cjs",
   "ui-log-years.test.cjs",
   "ui-choice-presentation.test.cjs",

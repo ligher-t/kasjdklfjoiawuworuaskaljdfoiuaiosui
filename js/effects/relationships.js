@@ -1,3 +1,29 @@
+// The current relationship flags are derived state, unlike history flags
+// (romance_started, romance_ended, marriage_ended, divorced). An outcome may
+// update its explicit fl values later in the same ap() call, so reconcile last.
+function reconcileRelationshipStatusFlags(s) {
+  if (!s?.fl) return;
+  const stage = s.romance?.stage || null;
+  if (!stage || stage === "known" || stage === "arranged") {
+    s.fl.romance_dating = 0;
+    s.fl.romance_committed = 0;
+    s.fl.romance_cohabiting = 0;
+  } else if (stage === "dating") {
+    s.fl.romance_dating = 1;
+    s.fl.romance_committed = 0;
+    s.fl.romance_cohabiting = 0;
+  } else if (stage === "committed") {
+    s.fl.romance_dating = 1;
+    s.fl.romance_committed = 1;
+    s.fl.romance_cohabiting = 0;
+  } else if (stage === "cohabiting") {
+    s.fl.romance_dating = 1;
+    s.fl.romance_cohabiting = 1;
+    // Keep the prior commitment only if the couple actually made one.
+  }
+  if (!s.sp) s.fl.marriage_strained = 0;
+}
+
 function applyRelationshipAndSiblingHealthEffects(e, s) {
   if (e.sp) {
     if (s.romance) {
@@ -709,11 +735,7 @@ function advanceRomanceLife(s) {
       ending: "別離"
     });
     s.romance = null;
-    if (s.fl) {
-      s.fl.romance_dating = 0;
-      s.fl.romance_committed = 0;
-      s.fl.romance_cohabiting = 0;
-    }
+    reconcileRelationshipStatusFlags(s);
   }
 }
 

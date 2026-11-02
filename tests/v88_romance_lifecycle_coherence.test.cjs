@@ -48,7 +48,8 @@ const eligibilityBoundaryTest = vm.runInContext(`(() => {
   S.year = 1092;
   S.age = 24;
   S.sn.lov = 1090;
-  S.romance = { stage: 'known', metYear: 1090, yearsKnown: 2 };
+  S.romance = { id: 'same-romance-partner', stage: 'known', metYear: 1090, yearsKnown: 2 };
+  S.eventOutcomes = { lov: { year: 1090, choiceIndex: 0, outcomeIndex: 0, romanceId: 'same-romance-partner' } };
   
   const tagsValid = tags(S);
   const eligibleWithinMax = elig(evFollowup, S, tagsValid);

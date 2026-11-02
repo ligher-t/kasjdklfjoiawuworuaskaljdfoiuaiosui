@@ -43,6 +43,7 @@ function ap(e, routeReserve = 0) {
   const resolvedId = TRACE_RESOLUTION?.id;
   applyNeighbourAndWorkplaceEffects(e, s, resolvedId);
   reconcileSocialAndInformationEffects(e, s);
+  reconcileRelationshipStatusFlags(s);
   recordEffectConsequences(e, s, jobBefore, assetsBefore, debtBefore, investmentBefore, cashBefore);
   if (e.d) {
     finalizeLifeLedgerAtDeath(s);

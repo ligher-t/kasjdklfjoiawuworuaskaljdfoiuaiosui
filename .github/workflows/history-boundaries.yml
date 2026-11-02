@@ -12,6 +12,8 @@ on:
       - 'tests/v88_language_school_scopes.test.cjs'
       - 'tests/v88_effect_subject_finance_and_infection.test.cjs'
       - 'tests/v88_outcome_followup_lineage.test.cjs'
+      - 'tests/v88_relationship_flag_lifecycle.test.cjs'
+      - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
   pull_request:
     branches: [main]
@@ -25,6 +27,8 @@ on:
       - 'tests/v88_language_school_scopes.test.cjs'
       - 'tests/v88_effect_subject_finance_and_infection.test.cjs'
       - 'tests/v88_outcome_followup_lineage.test.cjs'
+      - 'tests/v88_relationship_flag_lifecycle.test.cjs'
+      - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
 permissions:
   contents: read
@@ -51,3 +55,7 @@ jobs:
         run: node tools/check-efficient.cjs run v88_effect_subject_finance_and_infection.test.cjs
       - name: Event outcome lineage and actor location
         run: node tools/check-efficient.cjs run v88_outcome_followup_lineage.test.cjs
+      - name: Relationship active-flag lifecycle
+        run: |
+          node tools/check-efficient.cjs run v88_relationship_flag_lifecycle.test.cjs
+          node tools/check-efficient.cjs run v88_romance_lifecycle_coherence.test.cjs
