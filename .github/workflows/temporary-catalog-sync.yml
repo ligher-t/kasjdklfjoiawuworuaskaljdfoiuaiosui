@@ -1,5 +1,5 @@
 name: Temporary comprehensive catalog repair verification
-# Verify canonical schema classification before generated metadata sync.
+# Verify historical direct experience versus regional news after fixture repair.
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
