@@ -183836,6 +183836,7 @@ s =>
   },
   "lifeGoal": {
     "id": "reunion-relief",
+    "title": "身近な感染者へ薬と食料を届ける",
     "action": "continue",
     "note": "身近な範囲の互助を継続"
   },
@@ -183883,6 +183884,7 @@ s =>
   },
   "lifeGoal": {
     "id": "reunion-relief",
+    "title": "身近な感染者へ薬と食料を届ける",
     "action": "compromise",
     "note": "支援を続けたいが定期役は引き受けなかった"
   },
@@ -183918,6 +183920,7 @@ s =>
   },
   "lifeGoal": {
     "id": "reunion-relief",
+    "title": "身近な感染者へ薬と食料を届ける",
     "action": "abandon",
     "note": "互助網での役割を断念"
   },
@@ -184103,6 +184106,7 @@ s =>
   },
   "lifeGoal": {
     "id": "reunion-relief",
+    "title": "身近な感染者へ薬と食料を届ける",
     "action": "abandon",
     "note": "運搬役と互助網を離れた"
   },
@@ -184244,6 +184248,7 @@ s =>
   },
   "lifeGoal": {
     "id": "reunion-relief",
+    "title": "身近な感染者へ薬と食料を届ける",
     "action": "pause",
     "note": "内部対立の間は定期の配給当番を休止した"
   },
@@ -184385,6 +184390,7 @@ s =>
   },
   "lifeGoal": {
     "id": "reunion-relief",
+    "title": "身近な感染者へ薬と食料を届ける",
     "action": "continue",
     "note": "限られた配給当番を再開"
   },
@@ -184419,6 +184425,7 @@ s =>
   },
   "lifeGoal": {
     "id": "reunion-relief",
+    "title": "身近な感染者へ薬と食料を届ける",
     "action": "pause",
     "note": "配給当番の休止を続けた"
   },
@@ -184453,6 +184460,7 @@ s =>
   },
   "lifeGoal": {
     "id": "reunion-relief",
+    "title": "身近な感染者へ薬と食料を届ける",
     "action": "abandon",
     "note": "配給当番と連絡網を離れた"
   },
