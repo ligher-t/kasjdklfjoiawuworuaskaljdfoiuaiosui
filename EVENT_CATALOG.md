@@ -208588,7 +208588,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 ```json
 {
   "en": {
-    "affordableCash": 100000
+    "affordableCashAfterReserve": 100000
   },
   "why": "自分たちの生活費を残して{spouseFinanceAidAmount}を出す余裕がない"
 }
