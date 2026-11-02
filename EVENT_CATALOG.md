@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2469　選択肢数：3034　結果枝数：3889
+イベント数：2469　選択肢数：3036　結果枝数：3891
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -486,7 +486,7 @@
 - [earth_persecution_ursus_sweep](#event-earth_persecution_ursus_sweep) — 夜半、金属製のバリケードが激突する轟音と怒号で目を覚ました。憲兵隊と特別巡回部隊が街区を一斉に封鎖し、診断記録のある感染者や容疑者を片っ端からトラッ…
 - [earth_persecution_ursus_family_infection_spill](#event-earth_persecution_ursus_family_infection_spill) — 家族の誰かが鉱石病を患っているという噂が近所に漏れた途端、あなたの生活は一変した。勤め先へ行くと同僚たちが一斉に距離を置き、監督から『お前が感染源で…
 - [life_ursus_student_assembly_contact](#event-life_ursus_student_assembly_contact) — 冬の舞踏会が近づく街で、よその学校の生徒たちがひそかに開く集まりの噂が回ってきた。国家評議会庁舎を傷つけた容疑で、学生連合の生徒がひとり憲兵に連れて…
-- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — 冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた…
+- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_ursus_katorga_life](#event-life_ursus_katorga_life) — 送り込まれたカトルガ区画では、稼働停止とともに照明も暖房も断ち切られ、外の扉には重い鎖がかけられた。叩いても返事のない扉が並び、白い息が凍りつく暗闇…
 - [life_ursus_student_assembly_release](#event-life_ursus_student_assembly_release) — やがて封鎖扉が開かれ、外の眩しい光とともに審理や釈放の手続きが始まった。泣きながら親に抱きつく者、戻らない友人の名を呼ぶ者、帰る場所を失った者が入り…
 - [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
@@ -3178,7 +3178,7 @@
 - [family_child_future](#event-family_child_future) — 大きくなった{kid}のこれからについて、近しい仲間や家族と膝を突き合わせた。鉱山や工場の見習いに入るか、よそへ学びに出るか、それとも独立するか。最…
 - [family_child_bereavement](#event-family_child_bereavement) — {childDeathTiming}、{kid}が亡くなったという知らせが突然届いた。なぜ死ななければならなかったのか、詳しいことさえ分からなかった…
 - [life_ursus_student_assembly_meeting](#event-life_ursus_student_assembly_meeting) — 薄暗い空き部屋で開かれた会合では、捕まった仲間を釈放させるため、冬の舞踏会の当日に宮殿の前で抗議の声を上げようという話になった。だが街頭へ出れば憲兵…
-- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — 冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた…
+- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_ursus_student_assembly_release](#event-life_ursus_student_assembly_release) — やがて封鎖扉が開かれ、外の眩しい光とともに審理や釈放の手続きが始まった。泣きながら親に抱きつく者、戻らない友人の名を呼ぶ者、帰る場所を失った者が入り…
 - [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
 - [life_ursus_student_assembly_pause_review](#event-life_ursus_student_assembly_pause_review) — あの冬のあと、学生連合の活動から距離を置いて数年が経った。街でかつての知人の噂を耳にし、無事を確かめたい思いが胸をかすめる。今の平穏な暮らしを守りつ…
@@ -3992,7 +3992,7 @@
 - [family_child_future](#event-family_child_future) — 大きくなった{kid}のこれからについて、近しい仲間や家族と膝を突き合わせた。鉱山や工場の見習いに入るか、よそへ学びに出るか、それとも独立するか。最…
 - [life_ursus_student_assembly_contact](#event-life_ursus_student_assembly_contact) — 冬の舞踏会が近づく街で、よその学校の生徒たちがひそかに開く集まりの噂が回ってきた。国家評議会庁舎を傷つけた容疑で、学生連合の生徒がひとり憲兵に連れて…
 - [life_ursus_student_assembly_meeting](#event-life_ursus_student_assembly_meeting) — 薄暗い空き部屋で開かれた会合では、捕まった仲間を釈放させるため、冬の舞踏会の当日に宮殿の前で抗議の声を上げようという話になった。だが街頭へ出れば憲兵…
-- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — 冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた…
+- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
 - [life_leithanian_civic_entry](#event-life_leithanian_civic_entry) — 川にかかる橋の踏み板が抜けてから、荷車は毎日ぐるりと遠回りを強いられていた。街角の集会所では、住民たちの声を集めて領主側の役人へ修繕を掛け合おうとい…
 - [life_leithanian_civic_after_exit](#event-life_leithanian_civic_after_exit) — 街の陳情の集まりから離れて、ずいぶん長い歳月が流れた。古い木箱の底を整理していると、あの頃仲間たちと頭を突き合わせて書いた橋の修繕嘆願の下書きが出て…
@@ -9444,7 +9444,7 @@
 - [earth_persecution_ursus_family_infection_spill](#event-earth_persecution_ursus_family_infection_spill) — 家族の誰かが鉱石病を患っているという噂が近所に漏れた途端、あなたの生活は一変した。勤め先へ行くと同僚たちが一斉に距離を置き、監督から『お前が感染源で…
 - [earth_discr_g1_tara_accent](#event-earth_discr_g1_tara_accent) — 街の茶店で注文をした際、後ろの席にいた紳士風の客が「そこまで訛りを隠せるなら、立派なヴィクトリア人になれるな」と連れに話しかけて笑った。注文を受けた…
 - [life_ursus_student_assembly_contact](#event-life_ursus_student_assembly_contact) — 冬の舞踏会が近づく街で、よその学校の生徒たちがひそかに開く集まりの噂が回ってきた。国家評議会庁舎を傷つけた容疑で、学生連合の生徒がひとり憲兵に連れて…
-- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — 冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた…
+- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_leithanian_civic_entry](#event-life_leithanian_civic_entry) — 川にかかる橋の踏み板が抜けてから、荷車は毎日ぐるりと遠回りを強いられていた。街角の集会所では、住民たちの声を集めて領主側の役人へ修繕を掛け合おうとい…
 - [life_leithanian_civic_routine](#event-life_leithanian_civic_routine) — 街角の集まりに顔を出すようになってから、橋だけでなく石畳の陥没や街灯の故障まで様々な苦情が持ち込まれるようになった。今夜も仕事終わりに集会所へ集まる…
 - [life_leithanian_civic_activity](#event-life_leithanian_civic_activity) — 役人へ陳情を出してから何度も集まりを重ねたが、橋の板は抜けたままで、冬場に凍りつく坂道の話まで重なってきた。なかなか動かない役人を相手にこのまま声を…
@@ -12179,7 +12179,7 @@
 - [family_child_bereavement](#event-family_child_bereavement) — {childDeathTiming}、{kid}が亡くなったという知らせが突然届いた。なぜ死ななければならなかったのか、詳しいことさえ分からなかった…
 - [life_ursus_student_assembly_contact](#event-life_ursus_student_assembly_contact) — 冬の舞踏会が近づく街で、よその学校の生徒たちがひそかに開く集まりの噂が回ってきた。国家評議会庁舎を傷つけた容疑で、学生連合の生徒がひとり憲兵に連れて…
 - [life_ursus_student_assembly_meeting](#event-life_ursus_student_assembly_meeting) — 薄暗い空き部屋で開かれた会合では、捕まった仲間を釈放させるため、冬の舞踏会の当日に宮殿の前で抗議の声を上げようという話になった。だが街頭へ出れば憲兵…
-- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — 冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた…
+- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_ursus_katorga_life](#event-life_ursus_katorga_life) — 送り込まれたカトルガ区画では、稼働停止とともに照明も暖房も断ち切られ、外の扉には重い鎖がかけられた。叩いても返事のない扉が並び、白い息が凍りつく暗闇…
 - [life_ursus_student_assembly_release](#event-life_ursus_student_assembly_release) — やがて封鎖扉が開かれ、外の眩しい光とともに審理や釈放の手続きが始まった。泣きながら親に抱きつく者、戻らない友人の名を呼ぶ者、帰る場所を失った者が入り…
 - [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
@@ -13104,7 +13104,7 @@
 - [infection_workplace_review](#event-infection_workplace_review) — （動的本文）
 - [infection_regional_housing_pressure](#event-infection_regional_housing_pressure) — 建物の管理人がやって来て、「この中に鉱石病の人間がいると苦情が出ている」と切り出した。あなたがそうだとは断言しないまま、露骨に契約更新の条件をつり上…
 - [infection_low_pressure_routine_service](#event-infection_low_pressure_routine_service) — 診療所からの帰り道、立ち寄った食堂で袖口からのぞく黒い結晶に店主が一瞬だけ目を留めた。だが何も聞かず、いつもの調子で注文を尋ねてくれた。ただ、奥にい…
-- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — 冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた…
+- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_ursus_student_assembly_pause_review](#event-life_ursus_student_assembly_pause_review) — あの冬のあと、学生連合の活動から距離を置いて数年が経った。街でかつての知人の噂を耳にし、無事を確かめたい思いが胸をかすめる。今の平穏な暮らしを守りつ…
 - [life_leithanian_civic_entry](#event-life_leithanian_civic_entry) — 川にかかる橋の踏み板が抜けてから、荷車は毎日ぐるりと遠回りを強いられていた。街角の集会所では、住民たちの声を集めて領主側の役人へ修繕を掛け合おうとい…
 - [life_leithanian_civic_routine](#event-life_leithanian_civic_routine) — 街角の集まりに顔を出すようになってから、橋だけでなく石畳の陥没や街灯の故障まで様々な苦情が持ち込まれるようになった。今夜も仕事終わりに集会所へ集まる…
@@ -15453,7 +15453,7 @@
 - [infection_diagnosis_disclosure_scope](#event-infection_diagnosis_disclosure_scope) — 通っている診療所の片隅で、感染者とその家族が集まる互助の集まりの案内を見かけた。同じ病を抱える人たちに混じって助けを求めるか、病名は伏せたまま薬代や…
 - [life_ursus_student_assembly_contact](#event-life_ursus_student_assembly_contact) — 冬の舞踏会が近づく街で、よその学校の生徒たちがひそかに開く集まりの噂が回ってきた。国家評議会庁舎を傷つけた容疑で、学生連合の生徒がひとり憲兵に連れて…
 - [life_ursus_student_assembly_meeting](#event-life_ursus_student_assembly_meeting) — 薄暗い空き部屋で開かれた会合では、捕まった仲間を釈放させるため、冬の舞踏会の当日に宮殿の前で抗議の声を上げようという話になった。だが街頭へ出れば憲兵…
-- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — 冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた…
+- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_ursus_katorga_life](#event-life_ursus_katorga_life) — 送り込まれたカトルガ区画では、稼働停止とともに照明も暖房も断ち切られ、外の扉には重い鎖がかけられた。叩いても返事のない扉が並び、白い息が凍りつく暗闇…
 - [life_ursus_student_assembly_release](#event-life_ursus_student_assembly_release) — やがて封鎖扉が開かれ、外の眩しい光とともに審理や釈放の手続きが始まった。泣きながら親に抱きつく者、戻らない友人の名を呼ぶ者、帰る場所を失った者が入り…
 - [life_ursus_school_habit](#event-life_ursus_school_habit) — 学校へ通える日は、冷たい空気の教室で授業を受けた。試験が近づくにつれ、放課後に残って勉強するか、まっすぐ帰って家の手伝いをするか迷った。家に帰れば、…
@@ -17387,7 +17387,7 @@
 - [family_child_bereavement](#event-family_child_bereavement) — {childDeathTiming}、{kid}が亡くなったという知らせが突然届いた。なぜ死ななければならなかったのか、詳しいことさえ分からなかった…
 - [life_ursus_student_assembly_contact](#event-life_ursus_student_assembly_contact) — 冬の舞踏会が近づく街で、よその学校の生徒たちがひそかに開く集まりの噂が回ってきた。国家評議会庁舎を傷つけた容疑で、学生連合の生徒がひとり憲兵に連れて…
 - [life_ursus_student_assembly_meeting](#event-life_ursus_student_assembly_meeting) — 薄暗い空き部屋で開かれた会合では、捕まった仲間を釈放させるため、冬の舞踏会の当日に宮殿の前で抗議の声を上げようという話になった。だが街頭へ出れば憲兵…
-- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — 冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた…
+- [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_ursus_katorga_life](#event-life_ursus_katorga_life) — 送り込まれたカトルガ区画では、稼働停止とともに照明も暖房も断ち切られ、外の扉には重い鎖がかけられた。叩いても返事のない扉が並び、白い息が凍りつく暗闇…
 - [life_ursus_student_assembly_release](#event-life_ursus_student_assembly_release) — やがて封鎖扉が開かれ、外の眩しい光とともに審理や釈放の手続きが始まった。泣きながら親に抱きつく者、戻らない友人の名を呼ぶ者、帰る場所を失った者が入り…
 - [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
@@ -194888,7 +194888,9 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
   "after": {
     "id": "romance_followup",
     "min": 1,
-    "max": 6
+    "max": 6,
+    "choice": 0,
+    "outcome": 0
   },
   "cd": 2,
   "w": 1.8
@@ -195036,7 +195038,9 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
   "after": {
     "id": "romance_future_talk",
     "min": 1,
-    "max": 7
+    "max": 7,
+    "choice": 0,
+    "outcome": 0
   },
   "cd": 2,
   "w": 2
@@ -195249,7 +195253,9 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
   "after": {
     "id": "romance_marriage_choice",
     "min": 1,
-    "max": 4
+    "max": 4,
+    "choice": 2,
+    "outcome": 0
   },
   "cd": 2,
   "w": 0.55
@@ -202506,7 +202512,13 @@ s => {
 
 ### 本文
 
-> 冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた。突然、白煙を噴き上げて催涙弾が転がり込み、帰る道も見失われた。警棒を構えた警備兵が雪煙を蹴立てて突っ込んでくる中、すぐ目の前で友人が足を滑らせて倒れ込んだ。
+**動的本文**：実行時状態から文章を組み立てます。本文を一つに固定せず、生成関数を示します。
+
+```js
+s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
+      ? "冬の舞踏会の夜、広場から離れた部屋で学生たちの帰りを待った。通りの向こうで鐘が鳴り、騒ぎが始まったという知らせが届く。戻ってこない生徒の家族に、何をどこまで伝えられるのか。机の上には、まだ確かめられていない名前が並んでいた。"
+      : "冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた。突然、白煙を噴き上げて催涙弾が転がり込み、帰る道も見失われた。警棒を構えた警備兵が雪煙を蹴立てて突っ込んでくる中、すぐ目の前で友人が足を滑らせて倒れ込んだ。"
+```
 
 ### 発生条件・構造
 
@@ -202565,6 +202577,16 @@ s => {
 <a id="choice-life_ursus_student_assembly_protest-0"></a>
 選択肢文：転んだ友人を起こそうとする
 
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 0"
+  }
+}
+```
+
 旧シム観測：表示 0、選択可能 0
 
 結果枝：
@@ -202611,6 +202633,16 @@ s => {
 
 <a id="choice-life_ursus_student_assembly_protest-1"></a>
 選択肢文：パニックの人波から脇道へ抜け、家族への伝言役に徹する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 0"
+  }
+}
+```
 
 旧シム観測：表示 0、選択可能 0
 
@@ -202661,6 +202693,16 @@ s => {
 <a id="choice-life_ursus_student_assembly_protest-2"></a>
 選択肢文：命の危険を感じ、そのまま家へ逃げ帰って息を潜める
 
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 0"
+  }
+}
+```
+
 旧シム観測：表示 0、選択可能 0
 
 結果枝：
@@ -202694,6 +202736,110 @@ s => {
 ```
 
 旧シム観測回数：0
+
+#### 選択肢 4
+
+<a id="choice-life_ursus_student_assembly_protest-3"></a>
+選択肢文：確かめられた帰宅情報だけを、待っている家族へ届ける
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ursus_student_assembly_protest-3-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 夜明けまでに戻った人の名前を一つずつ確かめ、その家族へ知らせに歩いた。まだ帰らない人については、知らないことを知らないまま伝えた。戸口が閉まるたび、次の家へ向かう足が重くなった。
+
+効果：
+
+```json
+{
+  "lifeAffiliation": {
+    "id": "ursus-student-assembly",
+    "title": "サンクト・グリファーブルク学生連合とのつながり",
+    "kind": "community",
+    "action": "role",
+    "role": "帰宅確認と家族への伝言係",
+    "note": "広場へは出ず、確かめた安否だけを伝えた"
+  },
+  "lifeGoal": {
+    "id": "ursus-student-assembly",
+    "action": "continue",
+    "note": "知らない安否を憶測で埋めず、連絡役を続けた"
+  },
+  "regionalImpact": {
+    "region": "ウルサス",
+    "entity": "学生の家族への帰宅連絡",
+    "kind": "family-message",
+    "description": "帰宅を確認できた学生について、その家族へ伝えた",
+    "basis": "secondary-event-summary; individual-game-branch"
+  },
+  "p": -2,
+  "rl": 2
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 5
+
+<a id="choice-life_ursus_student_assembly_protest-4"></a>
+選択肢文：いったん連絡を止め、家族と自分の安全を確かめる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ursus_student_assembly_protest-4-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 外では誰が連れて行かれたのか確かな話がなく、伝言を待つ家からも次々に人が訪れた。今夜は答えを出せないと告げ、紙片をしまって戸に鍵を掛けた。
+
+効果：
+
+```json
+{
+  "fl": {
+    "ursus_student_assembly_active": 0
+  },
+  "lifeAffiliation": {
+    "id": "ursus-student-assembly",
+    "title": "サンクト・グリファーブルク学生連合とのつながり",
+    "kind": "community",
+    "action": "suspend",
+    "note": "広場の外での連絡を休止し、身の安全を優先した"
+  },
+  "lifeGoal": {
+    "id": "ursus-student-assembly",
+    "action": "pause",
+    "note": "安否不明のまま断定せず、連絡を一時止めた"
+  },
+  "p": -1
+}
+```
+
+旧シム観測回数：未計測
 
 
 <a id="event-life_ursus_katorga_life"></a>
