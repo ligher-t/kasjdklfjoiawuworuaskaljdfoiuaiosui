@@ -49,9 +49,10 @@ assert.equal(full.queue,0);
 assert.equal(full.metrics.observed,13);
 assert.equal(full.metrics.delivered,allowedMonths);
 assert.equal(full.metrics.expiredUnserved,13-allowedMonths);
-assert.equal(full.metrics.missedExamples.length,13-allowedMonths);
-assert(full.metrics.missedExamples.every(row=>row.firstEligibleMonth===1 && row.lastProcessedMonth===12));
+assert.equal(full.metrics.unservedExamples.length,13-allowedMonths);
+assert(full.metrics.unservedExamples.every(row=>row.firstEligibleMonth===1 && row.lastProcessedMonth===12));
 assert.equal(full.metrics.censored,0);
+assert.equal(full.metrics.superseded,0);
 assert.equal(Object.keys(full.metrics.byEvent).length,13);
 const late=pressure(11,5);
 const lateAllowed=[11,12].filter(month=>(month-0.5)/12<late.limit).length;
@@ -60,7 +61,36 @@ assert(late.selected.every(x=>x.month>=11));
 assert.equal(late.metrics.observed,5);
 assert.equal(late.metrics.delivered,lateAllowed);
 assert.equal(late.metrics.expiredUnserved,5-lateAllowed);
-assert(late.metrics.missedExamples.every(row=>row.firstEligibleMonth===11 && row.lastProcessedMonth===12));
+assert.equal(late.metrics.superseded,0);
+assert(late.metrics.unservedExamples.every(row=>row.firstEligibleMonth===11 && row.lastProcessedMonth===12));
+
+// Enrollment can supersede a previously available out-of-school scene.
+const supersession=read(`
+  born({seed:19761104,by:1060,region:'イベリア'});
+  S.year=1098;S.age=38;S.mo=0;S.world={events:{}};
+  S.educationDecision={kind:'upper-path'};S.majorEventMonth=null;S.fl.sch=0;
+  const lesson={id:'lesson_lost_after_enrollment',st:['壮年'],le:{age:38},
+    show:s=>!s.fl.sch,c:[{l:'学ぶ',o:[[1,'教わる',{}]]}],w:1};
+  const school={id:'education_upper_path',st:['壮年'],c:[{l:'学校に行く',o:[[1,'在籍',{}]]}],w:1};
+  const old=EV.slice(),prior=fire;
+  try {
+    EV.splice(0,EV.length,lesson,school);resetSimulationStatistics();STAT.currentLife=0;
+    fire=(e,s)=>{recordSimulationEvent(e,s);s.sn[e.id]=s.year;
+      s.majorEventMonth={year:s.year,month:s.mo};
+      if(e.id===school.id){s.fl.sch=1;s.educationDecision=null;}
+    };
+    S.q=[(2-0.5)/12,(8-0.5)/12];
+    while(S.q.length)slot(S.q.shift());
+    finalizeSimulationDeadlineYear(S);
+    return JSON.parse(JSON.stringify(STAT.deadlineCoverage));
+  }finally{fire=prior;EV.splice(0,EV.length,...old);}
+`);
+assert.equal(supersession.observed,1);
+assert.equal(supersession.delivered,0);
+assert.equal(supersession.expiredUnserved,0);
+assert.equal(supersession.superseded,1);
+assert.equal(supersession.unservedExamples[0].resolution,'superseded');
+assert.equal(supersession.unservedExamples[0].schoolEnrolled,true);
 
 // The real developer runner must collect results over complete years, keep
 // death-censored observations out of expiry, and preserve reproducibility.
@@ -75,10 +105,10 @@ assert(late.metrics.missedExamples.every(row=>row.firstEligibleMonth===11 && row
   // as findings. They censor the unfinished year instead of becoming deadline misses.
   assert.equal(report.summary.sampled + report.summary.runtimeFailures +
     report.summary.stateFailures,report.summary.attempted);
-  assert.equal(coverage.observed,coverage.delivered+coverage.expiredUnserved+coverage.censored);
+  assert.equal(coverage.observed,coverage.delivered+coverage.expiredUnserved+coverage.superseded+coverage.censored);
   assert.equal(coverage.eligibleForRate,coverage.delivered+coverage.expiredUnserved);
   const rows=Object.values(coverage.byEvent);
-  for(const key of ['observed','delivered','expiredUnserved','censored'])
+  for(const key of ['observed','delivered','expiredUnserved','superseded','censored'])
     assert.equal(rows.reduce((sum,row)=>sum+row[key],0),coverage[key]);
   assert(coverage.deliveryRatePercent===null||
     Math.abs(coverage.deliveryRatePercent+coverage.expiryRatePercent-100)<0.011);

@@ -1,4 +1,4 @@
-name: Temporary extended-life missed-choice diagnostics
+name: Temporary deadline supersession classification verification
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
