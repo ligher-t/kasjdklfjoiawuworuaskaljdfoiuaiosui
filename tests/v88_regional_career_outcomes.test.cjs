@@ -15,8 +15,8 @@ function start(region, species='エラフィア') {
 // Exercise the actual event dispatcher once, not a manually fabricated result.
 start('イベリア');
 const dispatchResult=snap(`
-  rd=()=>{}; syncUIDialogs=()=>{}; $('stt').focus=()=>{}; // VM has no visual DOM
   AU='r';HL=0;
+  rd=()=>{}; syncUIDialogs=()=>{}; $('stt').focus=()=>{}; // VM has no visual DOM
   const e=EV.find(x=>x.id==='car_ibe_inq_entry');
   fire(e,S,tags(S));
   const row=S.eventOutcomes?.[e.id];
