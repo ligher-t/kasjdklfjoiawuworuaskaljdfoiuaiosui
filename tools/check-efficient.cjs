@@ -32,6 +32,7 @@ const approved=Object.freeze([
   "v88_affiliation_goal_closure.test.cjs",
   "v88_affiliation_legacy_event_boundaries.test.cjs",
   "v88_reunion_goal_transition.test.cjs",
+  "v88_cross_faction_affiliation_transitions.test.cjs",
   "v88_romance_lifecycle_coherence.test.cjs",
   "ui-summary-focus.test.cjs",
   "ui-log-years.test.cjs",
