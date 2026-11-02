@@ -266,6 +266,9 @@ const ANNUAL_SERVICES = Object.freeze({
   recordIndependentSiblingCareSupportPayments(...args) {
     return recordIndependentSiblingCareSupportPayments(...args);
   },
+  recordDivorceChildSupportPayments(...args) {
+    return recordDivorceChildSupportPayments(...args);
+  },
   recordSpouseSeparateSupportTransfer(...args) {
     return recordSpouseSeparateSupportTransfer(...args);
   },
