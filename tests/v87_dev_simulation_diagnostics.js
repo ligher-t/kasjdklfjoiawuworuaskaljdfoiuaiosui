@@ -127,7 +127,7 @@ context.setTimeout = setTimeout;
   assert(result.first.eventCoverage.every(row => row.evaluated === row.eligibleSlots + Object.values(row.firstBlockingGateCounts).reduce((sum,count)=>sum+count,0)), 'each event-slot evaluation has one first outcome');
   assert(result.first.choiceBranches.every(row => row.outcomes.reduce((sum, outcome) => sum + outcome.count, 0) <= row.enabled));
   assert(result.first.choiceBranches.some(row => row.enabled > 0), 'choice availability must include eligible but unselected candidates');
-  assert(result.first.eventCoverage.some(row => row.monthlyChoiceBlocked > 0), 'monthly choice exclusion must be visible');
+  assert(result.first.eventCoverage.every(row => row.monthlyChoiceBlocked === 0), 'collision-free annual scheduling must not waste major choices in the same month');
   assert.deepEqual(JSON.parse(JSON.stringify(result.first.eventCoverage)), JSON.parse(JSON.stringify(result.second.eventCoverage)), 'same seed and cohort must reproduce event coverage');
   assert.deepEqual(JSON.parse(JSON.stringify(result.first.choiceBranches)), JSON.parse(JSON.stringify(result.second.choiceBranches)), 'same seed and cohort must reproduce selected outcomes');
   assert.equal(result.comparison.sameConfig, true);
