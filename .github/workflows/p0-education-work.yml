@@ -27,8 +27,6 @@ jobs:
           node-version: '22'
       - name: Runtime syntax and generated revision
         run: node tools/check-efficient.cjs syntax
-      - name: Contract and household debt accounting
-        run: node tools/check-efficient.cjs run v87_household_accounting.js
       - name: Catalog validation and rejected condition keys
         run: node tools/check-efficient.cjs run audit-diagnostics.test.cjs
       - name: Regional conditions, text and actual spending
@@ -57,6 +55,8 @@ jobs:
         run: node tools/check-efficient.cjs run v87_war_mortality_scope.js
       - name: Education-to-credit-to-repayment path
         run: node tools/check-efficient.cjs run v87_education_path.js
+      - name: Contract and household debt accounting
+        run: node tools/check-efficient.cjs run v87_household_accounting.js
       - name: Exposure, diagnosis, disclosure and same-version state
         run: node tools/check-efficient.cjs run v87_exposure_lifecycle.js
       - name: Discrimination incident provenance after relocation
