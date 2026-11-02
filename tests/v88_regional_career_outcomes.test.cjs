@@ -12,6 +12,23 @@ function start(region, species='エラフィア') {
   ctx.TEST_SPECIES=species;
   run('S.r={...S.r,n:TEST_SPECIES}; S.age=24; S.year=1098; S.mo=6; S.job=0; S.fl.retired=0; S.fl.inf=0; S.sn={};');
 }
+// Exercise the actual event dispatcher once, not a manually fabricated result.
+start('イベリア');
+const dispatchResult=snap(`
+  L=()=>{};cnt=()=>{};rd=()=>{};syncUIDialogs=()=>{};
+  AU='r';HL=0;
+  const e=EV.find(x=>x.id==='car_ibe_inq_entry');
+  fire(e,S,tags(S));
+  const row=S.eventOutcomes?.[e.id];
+  return {hasOutcome:!!row,year:row?.year,sn:S.sn[e.id],
+    choiceIndex:row?.choiceIndex,outcomeIndex:row?.outcomeIndex,
+    valid:!!row&&row.choiceIndex>=0&&row.choiceIndex<e.c.length&&
+      row.outcomeIndex>=0&&row.outcomeIndex<e.c[row.choiceIndex].o.length};
+`);
+assert.equal(dispatchResult.hasOutcome,true,'an actually dispatched choice must record its concrete result');
+assert.equal(dispatchResult.year,dispatchResult.sn,'result year must match the event occurrence');
+assert.equal(dispatchResult.valid,true,'recorded indices must identify the selected choice and actual result');
+
 start('イベリア');
 assert.deepEqual(snap(`
   const e=EV.find(x=>x.id==='car_ibe_inq_entry'), choices=simulationChoiceStates(e,S,tags(S));
