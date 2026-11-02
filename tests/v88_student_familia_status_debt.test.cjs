@@ -112,16 +112,18 @@ for (const followup of ['settle','mediate','dispute']) {
     ap(debt.c[1].o[1][2]); // A 30,000 payment leaves 60,000 outstanding.
     const afterFirst=S.siracusaFamilyTie.duty.outstandingAmount;
     S.year=1094;S.age=32;S.priceIndex=1;S.cash=10000000;
+    if(S.house)S.house.cash=10000000;
     const available=elig(debt,S,tags(S));
     const fullChoice=debt.c[0],partialChoice=debt.c[1];
     const fullAvailable=ok(fullChoice.show,S,tags(S));
-    let before=S.cash;
+    const before=(S.cash||0)+(S.house?.cash||0);
     if(FOLLOWUP==='settle') ap(fullChoice.o[0][2]);
     if(FOLLOWUP==='mediate') ap(partialChoice.o[1][2]);
     if(FOLLOWUP==='dispute') ap(debt.c[2].o[0][2]);
     const d=S.siracusaFamilyTie.duty,final=d.history.at(-1);
     const member=S.lifeRecord.affiliations.find(a=>a.id==='siracusa-familia');
-    return {afterFirst,available,fullAvailable,spent:before-S.cash,
+    return {afterFirst,available,fullAvailable,
+      spent:before-(S.cash||0)-(S.house?.cash||0),
       balance:d.outstandingAmount,lastAmount:final.amount,
       lastAction:final.action,deadline:d.settleByYear,
       member:member.status};
