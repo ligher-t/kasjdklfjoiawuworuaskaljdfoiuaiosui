@@ -164,7 +164,7 @@ function main(args){
  if(request.command==='syntax'){
   const expectedRevision=require('./update-version.cjs').revision(root);
   if(!fs.readFileSync(path.join(root,'js/version.js'),'utf8').includes('const ENGINE_REVISION = '+JSON.stringify(expectedRevision)+';')) {
-    console.error('Stale engine revision; expected: '+expectedRevision);return 1;
+    console.error('Stale engine revision: run node tools/update-version.cjs');return 1;
   }
   if(!request.reason&&cache['@syntax']?.key===common){console.log('REUSED syntax: unchanged runtime');return 0;}
   const start=Date.now();
