@@ -553,6 +553,13 @@ function elig(e, s, T, options = {}) {
   if (a) {
     const x = s.sn[a.id];
     if (x == null || s.year - x < (a.min || 0) || (a.max != null && s.year - x > a.max)) return rejectEligibility(e, "after-dependency", options);
+    if (a.choice != null || a.outcome != null) {
+      const result = s.eventOutcomes?.[a.id];
+      if (!result || result.year !== x ||
+          (a.choice != null && result.choiceIndex !== a.choice) ||
+          (a.outcome != null && result.outcomeIndex !== a.outcome))
+        return rejectEligibility(e, "after-outcome", options);
+    }
   }
   if (e.excl && e.excl.some(i => s.sn[i] != null)) return rejectEligibility(e, "excluded-by-event", options);
   return true;

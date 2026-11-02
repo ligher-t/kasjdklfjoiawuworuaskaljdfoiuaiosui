@@ -414,6 +414,10 @@ function ask(e, T, t, before, resumed = false) {
     TRACE_RESOLUTION = { kind: "choice", id: e.id, label: choiceLabel };
     try {
       ap(o[2], routeReserve);
+      // A follow-up may depend on the actual selected outcome, not only the
+      // year in which an event was offered. Keep the final result per event.
+      s.eventOutcomes || (s.eventOutcomes = {});
+      s.eventOutcomes[e.id] = { year: s.year, choiceIndex, outcomeIndex };
       recordEventReview(e,s,choiceLabel);
     } finally {
       TRACE_RESOLUTION = previousResolution;

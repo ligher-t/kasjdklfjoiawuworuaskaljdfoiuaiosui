@@ -30,28 +30,31 @@ window.TERRA_DATA_BUILD.fragment(
       id: "car_sar_guard_choice_assassination",
       conf: "S",
       st: ["青年", "壮年"],
-      cd: 4,
+      once: true,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "サルゴン" && s.job === $terraData.REG_JOBS.sar_guard,
-      t: "深夜、宮殿の奥殿から争う物音が響いた。敵対するパーディシャーが放った凄腕のアサシンたちが、寝所へ忍び込んだようだ。曲刀を抜いて単身で奥殿へ駆け込み、主君を救出するか。",
+      show: s => s.res?.n === "サルゴン" && s.job === $terraData.REG_JOBS.sar_guard &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "sargon-padishah-guard" && ["active", "crisis"].includes(a.status)),
+      t: "深夜、宮殿の奥から短い叫び声と金属のぶつかる音がした。回廊に倒れた衛兵のそばで、夜番の鐘が鳴り始める。寝所へ続く扉は半ば開いたままだった。",
       c: [
-        $terraData.K("扉を蹴破り、曲刀の連撃で刺客たちを斬り伏せる", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+        $terraData.K("寝所へ駆け込み、刺客を迎え撃つ", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
-          "闇の中から飛び出す刺客三人を電光石火の太刀筋で斬り倒し、パーディシャーの命を救った。主君から莫大な黄金と『親衛隊長』の地位を賜った。",
-          { cr: 5, h: 2, p: 3, cash: 2500000 }
+          "暗がりで刃を受け止め、駆けつけた衛兵とともに侵入者を取り押さえた。翌朝、主君から金子と親衛隊長の役目を与えられ、詰所の命令簿に新しい肩書が記された。",
+          { cr: 5, h: 2, p: 3, cash: 2500000,
+            lifeAffiliation: { id: "sargon-padishah-guard", action: "role", role: "親衛隊長", onlyIfActiveOrCrisis: true,
+              note: "寝所への侵入者を取り押さえた功績で隊長役を命じられた" } }
         ], [
           0.8,
-          "主君を救出したものの、毒の塗られた投剣を受けて倒れた。解毒剤で一命を取り留めたが、長い療養を要した。",
-          { h: -8, p: 1, cash: 400000 }
+          "短刀が肩を裂いた。仲間に引きずられて回廊へ戻り、手当てを受ける間も、扉の向こうでは怒号が続いていた。",
+          { h: -8, p: -1 }
         ], [
           1,
-          "刺客の放った毒矢を喉に受け、主君の眼前で倒れて息絶えた。",
+          "衛兵が駆けつけたとき、寝所の扉の前には血が広がっていた。刺客の刃が喉を裂き、最後の息は声にならなかった。",
           { h: -100, d: ["護衛任務での毒殺", "サルゴンの宮廷護衛中、刺客の放った毒矢を喉に受けて息絶えた。"] }
         ]),
-        $terraData.K("警報の銅鑼を打ち鳴らし、大隊の兵を集めて包囲する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
+        $terraData.K("警鐘を鳴らし、衛兵を集める", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
           1,
-          "集まった兵たちで宮殿を封鎖し、刺客を生け捕りにした。",
+          "鐘の音で集まった衛兵が回廊を塞ぎ、窓から逃げようとした侵入者を取り押さえた。夜明けのころには、床に残った血の跡だけが騒ぎを伝えていた。",
           { p: 2, k: 1 }
         ])
       ]

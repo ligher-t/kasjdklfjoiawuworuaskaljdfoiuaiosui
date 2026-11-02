@@ -7,6 +7,7 @@ on:
       - 'data/world/history.js'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
+      - 'tests/v88_regional_career_outcomes.test.cjs'
       - '.github/workflows/history-boundaries.yml'
   pull_request:
     branches: [main]
@@ -15,6 +16,7 @@ on:
       - 'data/world/history.js'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
+      - 'tests/v88_regional_career_outcomes.test.cjs'
       - '.github/workflows/history-boundaries.yml'
 permissions:
   contents: read
@@ -31,3 +33,5 @@ jobs:
         run: node tools/check-efficient.cjs syntax
       - name: Historically situated information
         run: node tools/check-efficient.cjs run v88_history_scope_and_pending.test.cjs
+      - name: Regional recruitment, custody and career outcome
+        run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs
