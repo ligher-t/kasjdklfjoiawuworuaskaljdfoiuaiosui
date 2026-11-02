@@ -56,7 +56,7 @@ const ordering=read(`
  const older={id:'z-older',after:{id:'older',min:1,max:6},le:{age:48}};
  const newer={id:'a-newer',after:{id:'newer',min:1,max:5},le:{age:48}};
  const candidate=nextExpiringFollowup([newer,older],S)?.id;
- S.sn.older=1094;S.sn.newer=1095;
+ S.sn.older=1095;S.sn.newer=1095;
  const stable=nextExpiringFollowup([newer,older],S)?.id;
  return {candidate,stable};
 `);
