@@ -432,7 +432,7 @@ window.TERRA_DATA_BUILD.run("extensions/family-and-community", function ($terraD
     c: [
       $terraData.K(
         "返済の足しに、手元から{spouseFinanceAidAmount}を出す",
-        { en: { affordableCash: 1e5 }, why: "自分たちの生活費を残して{spouseFinanceAidAmount}を出す余裕がない" },
+        { en: { affordableCashAfterReserve: 1e5 }, why: "自分たちの生活費を残して{spouseFinanceAidAmount}を出す余裕がない" },
         [
           1,
           "蓄えから{spouseFinanceAidAmount}を渡し、急ぎの返済に充てて残りは手元に置いておくよう伝えた。張り詰めていた相手の肩から、ようやく少し力が抜けた。",
