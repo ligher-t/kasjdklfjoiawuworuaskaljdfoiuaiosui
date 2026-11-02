@@ -172091,7 +172091,7 @@ s => {
 ```json
 {
   "en": {
-    "affordableCash": 100000
+    "affordableCashAfterReserve": 100000
   },
   "why": "初回の通院費{spouseInitialTreatmentCost}を生活費後に用意できない"
 }
@@ -172360,7 +172360,7 @@ s => {
     ]
   },
   "en": {
-    "affordableCash": 100000
+    "affordableCashAfterReserve": 100000
   },
   "why": "初回の通院費{spouseInitialTreatmentCost}を生活費後に用意できない"
 }
@@ -172532,7 +172532,7 @@ s => {
     ]
   },
   "en": {
-    "affordableCash": 100000
+    "affordableCashAfterReserve": 100000
   },
   "why": "通院再開の初回費用{spouseInitialTreatmentCost}を生活費後に用意できない"
 }
@@ -199301,7 +199301,7 @@ s => {
     ]
   },
   "en": {
-    "affordableCash": 100000
+    "affordableCashAfterReserve": 100000
   },
   "why": "10万龍門幣相当の仕送りを出すと、自分の生活費が足りなくなる"
 }
@@ -199348,7 +199348,7 @@ s => {
     ]
   },
   "en": {
-    "affordableCash": 50000
+    "affordableCashAfterReserve": 50000
   },
   "why": "交通費を送ると自分の生活費が足りなくなる"
 }
@@ -199447,7 +199447,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 年に{siblingCareSupportAmount}ずつ治療費を送ると{siblings}に伝え、最初の仕送りを済ませた。少しでも安心して医者にかかれるよう祈った。
+> 年に{siblingCareSupportAmount}ずつ治療費を送ると{siblings}に伝え、最初の送金日を決めた。少しでも安心して医者にかかれるよう祈った。
 
 効果：
 
