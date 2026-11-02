@@ -1436,8 +1436,11 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
       references: ["SRC_ORIPATHY_SOCIAL", "SRC_TERRA_FAMILY"],
       st: ["青年", "壮年", "老年"],
       need: ["扶養中の子"],
-      ban: ["扶養中の感染者"],
-      once: true,
+      // A diagnosis is tied to a child, not a once-in-a-lifetime household flag.
+      // Already infected and pending-exposure children remain on their own routes.
+      show: s => (s.kids || []).some(k =>
+        !k.d && !k.inf && !k.exposurePending && childIsSupported(s, k)),
+      cd: 1,
       w: 0.4,
       t: "診察室で、{kid}が鉱石病にかかっていると告げられた。熱が引いたあとの細い腕に、小さな黒い結晶が浮いている。帰り道、子どもの手を握りしめながら、これからの薬代と世間の目をどうしのぐか必死に考えた。",
       c: [
