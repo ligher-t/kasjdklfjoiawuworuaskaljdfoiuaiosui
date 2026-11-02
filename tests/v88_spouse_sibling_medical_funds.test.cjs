@@ -80,8 +80,10 @@ const sibling = inspect(`
     aid=event.c[2],medical=event.c[3],reserve=annualCashReserve(S),
     aidCost=100000*S.res.pm*(S.priceIndex||1),
     medicalCost=siblingHealthAidCost(S);
-  S.cash=Math.max(aidCost,medicalCost)+reserve-1;
-  const beforeAid=ok(aid.en,S,tags(S)),beforeMedical=ok(medical.en,S,tags(S));
+  S.cash=aidCost+reserve-1;
+  const beforeAid=ok(aid.en,S,tags(S));
+  S.cash=medicalCost+reserve-1;
+  const beforeMedical=ok(medical.en,S,tags(S));
   S.cash=Math.max(aidCost,medicalCost)+reserve;
   const readyAid=ok(aid.en,S,tags(S)),readyMedical=ok(medical.en,S,tags(S));
   const beforeCash=S.cash,priorOtherCash=S.siblings[1].financialCash;
