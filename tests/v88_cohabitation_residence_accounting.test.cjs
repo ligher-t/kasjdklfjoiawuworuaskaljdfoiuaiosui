@@ -14,7 +14,7 @@ const regular=snapshot(`
   ap({romanceStage:'cohabiting'});
   const cohab={
     arrangement:S.residenceArrangement,members:currentHouseholdMembers(S),
-    label:fam(S).find(x=>x[0]==='住まい・家計の形')?.[1],
+    label:fam(S),
     partnerId,partnerName,
     householdSeparated:S.fl.household_separated,
     ledgerStatus:S.house.parentLedger?.status,
@@ -25,7 +25,7 @@ const regular=snapshot(`
   ap({romanceEnd:1,fl:{romance_ended:1}});
   const ended={
     arrangement:S.residenceArrangement,members:currentHouseholdMembers(S),
-    label:fam(S).find(x=>x[0]==='住まい・家計の形')?.[1],
+    label:fam(S),
     romance:S.romance,cash:S.cash,house:S.house.cash,
     region:S.res.n,city:S.local?.city||null,moves:S.moves?.length||0,
     lastResidence:S.residenceHistory?.at(-1),
@@ -76,7 +76,7 @@ const marriage=snapshot(`
   ap({divorce:1});
   return {partnerId,married,divorced:{
     arrangement:S.residenceArrangement,spouse:S.sp,
-    label:fam(S).find(x=>x[0]==='住まい・家計の形')?.[1],
+    label:fam(S),
     strained:S.fl.marriage_strained,members:currentHouseholdMembers(S),
     moves:S.moves?.length||0
   }};
