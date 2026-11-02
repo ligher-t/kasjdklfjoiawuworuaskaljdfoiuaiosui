@@ -114,7 +114,7 @@ for (const followup of ['settle','mediate','dispute']) {
     S.year=1094;S.age=32;S.cash=500000;
     const available=elig(debt,S,tags(S));
     const fullChoice=debt.c[0],partialChoice=debt.c[1];
-    const fullAvailable=fullChoice.show.show(S);
+    const fullAvailable=ok(fullChoice.show,S,tags(S));
     let before=S.cash;
     if(FOLLOWUP==='settle') ap(fullChoice.o[0][2]);
     if(FOLLOWUP==='mediate') ap(partialChoice.o[1][2]);
