@@ -16,6 +16,7 @@ on:
       - 'tests/v88_cohabitation_residence_accounting.test.cjs'
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
+      - 'tests/v88_infected_organization_exit_consistency.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
   pull_request:
@@ -34,6 +35,7 @@ on:
       - 'tests/v88_cohabitation_residence_accounting.test.cjs'
       - 'tests/v88_ursus_katorga_custody_lifecycle.test.cjs'
       - 'tests/v88_followup_elapsed_from_status.test.cjs'
+      - 'tests/v88_infected_organization_exit_consistency.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
       - '.github/workflows/history-boundaries.yml'
 permissions:
@@ -71,3 +73,5 @@ jobs:
         run: node tools/check-efficient.cjs run v88_ursus_katorga_custody_lifecycle.test.cjs
       - name: Delayed followup after actual withdrawal
         run: node tools/check-efficient.cjs run v88_followup_elapsed_from_status.test.cjs
+      - name: Organization exit, successor and long-term goal coherence
+        run: node tools/check-efficient.cjs run v88_infected_organization_exit_consistency.test.cjs

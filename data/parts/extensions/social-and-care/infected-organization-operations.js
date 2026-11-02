@@ -424,7 +424,7 @@ window.TERRA_DATA_BUILD.fragment(
               action: "followup",
               note: "休止後に本人が会員を辞めた"
             },
-            ...goal("compromise", "互助会の仕事を終えた", false),
+            ...goal("abandon", "互助会の仕事を終え、本人の活動目標を終了した", false),
             p: -1
           }
         ])
