@@ -24,7 +24,10 @@ const result = inspect(`
   child.householdStatus='independent';
   const independent=eligible();
   child.householdStatus='study';
-  const studyingAway=eligible();
+  const studyingAtHome=eligible();
+  child.householdResidencePlan='former';
+  const studyingWithFormerParent=eligible();
+  delete child.householdResidencePlan;
   child.householdStatus='supported';
   child.householdResidencePlan='former';
   const formerHome=eligible();
@@ -49,7 +52,7 @@ const result = inspect(`
   delete S.sn.life_kazdel_displaced_next_generation;
   ap({lifeGoal:{id:'kazdel-displaced-life',action:'pause'}});
   const pausedLifeGoal=eligible();
-  return {fiveYears,sixYears,deceased,independent,studyingAway,formerHome,
+  return {fiveYears,sixYears,deceased,independent,studyingAtHome,studyingWithFormerParent,formerHome,
     supportedFormerHome,uncertainHome,sharedResidence,contactPaused,
     contactRestored,workingAtHome,mixedFamily,noEligibleChild,alreadySeen,pausedLifeGoal,
     text:event.t};
@@ -57,7 +60,7 @@ const result = inspect(`
 const {text:paragraph,...checks}=result;
 assert.deepEqual(checks,{
   fiveYears:false,sixYears:true,deceased:false,independent:false,
-  studyingAway:false,formerHome:false,supportedFormerHome:false,
+  studyingAtHome:true,studyingWithFormerParent:false,formerHome:false,supportedFormerHome:false,
   uncertainHome:false,sharedResidence:true,contactPaused:false,
   contactRestored:true,workingAtHome:true,mixedFamily:true,noEligibleChild:false,
   alreadySeen:false,pausedLifeGoal:false

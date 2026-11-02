@@ -286,7 +286,7 @@ window.TERRA_DATA_BUILD.fragment(
       show: s => isActive(s) && (s.kids || []).some(child =>
         !child.d &&
         Number.isInteger(child.by) && s.year - child.by >= 6 &&
-        !["independent", "study"].includes(child.householdStatus) &&
+        child.householdStatus !== "independent" &&
         !["former", "former_support", "unresolved"].includes(child.householdResidencePlan) &&
         child.contactState !== "paused"
       ),
