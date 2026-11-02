@@ -69,6 +69,19 @@ function nextScheduledFollowup(events,s) {
     .filter(row=>row.due!==null)
     .sort((a,b)=>a.due-b.due)[0]?.event || null;
 }
+// An outcome-dependent review can permanently expire after its after.max year.
+// Protect its final eligible year without weakening eligibility, waiving a
+// choice's conditions, or moving untimed recurring contact ahead of history.
+function nextExpiringFollowup(events,s) {
+  return events.map(event => {
+    const prior=s.sn?.[event.after?.id], max=event.after?.max;
+    if(!Number.isInteger(prior) || !Number.isInteger(max) || max<0) return null;
+    const deadline=prior+max;
+    if(deadline!==s.year) return null;
+    return {event,deadline,due:prior+(event.after.min||0)};
+  }).filter(Boolean)
+    .sort((a,b)=>a.due-b.due || a.event.id.localeCompare(b.event.id))[0]?.event || null;
+}
 function sched() {
   const range = S.age < P("events.childSlotAgeLimit") ? P("events.childSlots") : P("events.adultSlots"),
     n = rnd(range[0], range[1]);
@@ -130,6 +143,7 @@ function slot(x) {
   const medicalReview = nextScheduledFollowup(
     mj.filter(event => ["infection_workplace_review", "family_child_exposure_followup"].includes(event.id)), s
   );
+  const expiringFollowup = nextExpiringFollowup(mj,s);
   const localTimelineChoice = mj.find(event =>
     event.timelineFlag &&
     s.world?.events?.[event.timelineFlag] &&
@@ -138,6 +152,7 @@ function slot(x) {
   );
   let e = (requiredSchool ? mj.find(event => event.id === requiredSchool && hasActionableChoice(event)) : null) ||
     medicalReview ||
+    expiringFollowup ||
     localTimelineChoice ||
     nextScheduledFollowup(mj,s) || wpk(mj.filter(event => event.pri), s, T) || institutional || (R() < MAJ_PER_SLOT ? wpk(mj, s, T) : null);
   if (!e) {

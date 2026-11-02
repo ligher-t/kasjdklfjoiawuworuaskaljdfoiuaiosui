@@ -33,6 +33,7 @@ const approved=Object.freeze([
   "v88_historical_catalog_schema_and_sources.test.cjs",
   "v88_crisis_event_priority.test.cjs",
   "v88_regional_crisis_leisure_scope.test.cjs",
+  "v88_expiring_followup_priority.test.cjs",
   "v88_ursus_katorga_custody_lifecycle.test.cjs",
   "v88_followup_elapsed_from_status.test.cjs",
   "v88_infected_organization_exit_consistency.test.cjs",
