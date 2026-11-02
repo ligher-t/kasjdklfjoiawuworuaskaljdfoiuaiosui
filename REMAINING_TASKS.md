@@ -33,7 +33,7 @@
 | U-21 出典パス・版・正誤表 | 未着手 | `siryou/` を索引し未解決参照を峻別 |
 | U-22 機械レビューと意味校閲 | 未着手 | 自動`reviewed`を校閲済み扱いしない |
 | U-23 正式日本語・技術アクセス | 未着手 | 原作本文・史料で個別照合 |
-| U-24 main/PR CI | **歴史境界の軽量CI実装完了／全体は継続** | Draft PR #2の最新検査 `41408562861`（生成・恋愛3テストPASS） で構文・歴史境界・地域職業・死亡年月・通訳と学校認知・効果主体・選択結果と恋愛相手ID継承の後続経路を対象検査（PASS）。`EVENT_CATALOG.md` は生成ツール `--write` / `--check` で同期済み。`main` pushトリガー実装済みだが未マージのためpush実績未検証。旧総合CIは `audit-diagnostics.test.cjs` が `timelineFlag` 未知・未登録flag・出典ID不明で失敗中（別件U-19/U-21）。 |
+| U-24 main/PR CI | **歴史境界の軽量CI実装完了／全体は継続** | Draft PR #2の最新対象CI `41408826938`（構文・歴史境界・関係フラグ含むすべてPASS） で構文・歴史境界・地域職業・死亡年月・通訳と学校認知・効果主体・選択結果と恋愛相手ID継承の後続経路を対象検査（PASS）。`EVENT_CATALOG.md` は生成ツール `--write` / `--check` で同期済み。`main` pushトリガー実装済みだが未マージのためpush実績未検証。旧総合CIは `audit-diagnostics.test.cjs` が `timelineFlag` 未知・未登録flag・出典ID不明で失敗中（別件U-19/U-21）。 |
 | U-25 代表生涯の到達・分布 | 未着手 | 前段修正後、小規模・固定シードのみ |
 | U-26 同版保存・異常入力 | 未着手 | 同版復元と入力上限 |
 | U-27 文書・版・件数 | 未着手 | 新旧数値を現行データで照合 |
@@ -47,9 +47,9 @@
 
 **U-19（恋愛当事者ID）検証済み**：先行イベントの `year/choice/outcome` に加え、選択時点の恋人IDを `eventOutcomes` に記録し、4つの後日談で現在の当事者と突合。関係解消後の別人に前の約束が継承されない境界を `v88_outcome_followup_lineage.test.cjs` と実 `fire()` で確認（[対象CI 41406361532](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41406361532) PASS）。既存カタログ生成物・リビジョンは同期済み。イベント本文・選択肢・結果のプレイヤー文言は今回変更なし。画面の任意確認は非ブロッキング。旧総合CIのカタログ監査不一致は依然別件として残す。
 
-**U-19 現在状態フラグの限定是正（2026-11-02）**：通常の選択結果は効果適用後に `reconcileRelationshipStatusFlags` を呼び、`romance_dating`・`romance_committed`・`romance_cohabiting` と、配偶者不在時の `marriage_strained` を現在の交際・婚姻状態へ一致させる。年次の自然消滅でも同じ処理を利用。`romance_started`・`romance_ended`・`marriage_ended`・`divorced` は過去の出来事を表す履歴のため削除しない。`v88_relationship_flag_lifecycle.test.cjs` を新設し、既存 `v88_romance_lifecycle_coherence.test.cjs` は結果条件に合わせて改修。ターゲット生成と3種の関係テストは [41408562861](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41408562861) で合格。ユーザ表示文面の新規追加・改稿なし。**残課題**：他の全フラグ・人物IDと、同居解消後の居住形態の反映（U-15）を別途監査する。
+**U-19 現在状態フラグの限定是正（2026-11-02）**：通常の選択結果は効果適用後に `reconcileRelationshipStatusFlags` を呼び、`romance_dating`・`romance_committed`・`romance_cohabiting` と、配偶者不在時の `marriage_strained` を現在の交際・婚姻状態へ一致させる。年次の自然消滅でも同じ処理を利用。`romance_started`・`romance_ended`・`marriage_ended`・`divorced` は過去の出来事を表す履歴のため削除しない。`v88_relationship_flag_lifecycle.test.cjs` を新設し、既存 `v88_romance_lifecycle_coherence.test.cjs` は結果条件に合わせて改修。ターゲット生成と3種の関係テストは [41408562861](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41408562861)、仮設ワークフロー撤去後の対象CIは [41408826938](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41408826938) で合格。旧総合CIは [41408826935](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41408826935) のカタログ診断で従来どおり失敗。ユーザ表示文面の新規追加・改稿なし。**残課題**：他の全フラグ・人物IDと、同居解消後の居住形態の反映（U-15）を別途監査する。
 
-**次に着手する順序**：**U-19の残る全イベント・フラグ横断精査**（前イベントの選択結果・人物ID・解除条件）→ U-13の残る配偶者・きょうだい・子の主体監査→ U-10／U-14（優先発火・時代年齢）→ U-21／U-23（出典・正式用語の照合）。U-09の個別通訳契約とU-17の研究室・実習先スコープは横断残件として保持。歴史の残部（U-01の影響文面・出典・現地イベント）をU-16/U-20と合わせて後続で検証する。家計修正PR #1は完了・マージ済みであり、再着手しない。以後の是正はDraft PR #2で継続する。
+**次に着手する順序**：**U-15の同居解消後の住居・家計の矛盾是正**（今回新規検出、対象を絞って実装）→ **U-19の残る全イベント・フラグ横断精査**（前イベントの選択結果・人物ID・解除条件）→ U-13の残る配偶者・きょうだい・子の主体監査→ U-10／U-14（優先発火・時代年齢）→ U-21／U-23（出典・正式用語の照合）。U-09の個別通訳契約とU-17の研究室・実習先スコープは横断残件として保持。歴史の残部（U-01の影響文面・出典・現地イベント）をU-16/U-20と合わせて後続で検証する。家計修正PR #1は完了・マージ済みであり、再着手しない。以後の是正はDraft PR #2で継続する。
 
 ---
 
