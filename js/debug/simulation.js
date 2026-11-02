@@ -128,7 +128,13 @@ async function runDevSimulation(input = {}, hooks = {}) {
         check("出生直後");
         let years = 0;
         while (!S.dead && years < options.maxYears) {
-          for (const q of S.q.splice(0)) { slot(q); check("イベント処理後"); }
+          // A due choice can reserve future months while a slot is processed.
+          // Consume the live queue so such slots are audited before year end.
+          while (S.q.length && !S.dead) {
+            const q=S.q.shift();
+            slot(q);
+            check("イベント処理後");
+          }
           if (!S.dead) { tick(); check("年次更新後", true); years++; result.processedYears++; }
           if (Date.now() - lastYieldAt >= 10) {
             hooks.onProgress?.(progressState("running"));

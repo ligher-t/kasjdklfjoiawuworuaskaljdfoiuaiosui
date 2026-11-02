@@ -89,8 +89,35 @@ function nextExpiringFollowup(events,s) {
 }
 function sched() {
   const range = S.age < P("events.childSlotAgeLimit") ? P("events.childSlots") : P("events.adultSlots"),
-    n = rnd(range[0], range[1]);
-  S.q = Array.from({ length: n }, () => R() * P("events.slotPlacementCeiling")).sort((a, b) => a - b);
+    n = rnd(range[0], range[1]),
+    ceiling = P("events.slotPlacementCeiling"),
+    months = Array.from({length: Math.ceil(ceiling * CALENDAR_MONTHS)}, (_, i) => i);
+  // A second draw in the same calendar month cannot offer another major
+  // choice. Preserve the annual slot count, but give each slot its own month.
+  S.q = Array.from({length: Math.min(n, months.length)}, () => {
+    const index = Math.floor(R() * months.length),
+      month = months.splice(index, 1)[0],
+      upper = Math.min(ceiling * CALENDAR_MONTHS, month + 1);
+    return (month + R() * (upper - month)) / CALENDAR_MONTHS;
+  }).sort((a, b) => a - b);
+}
+// Add only the missing opportunities for choices which will permanently
+// expire this year. Never exceed the last available calendar month or change
+// the number of regular life events in an otherwise unpressured year.
+function reserveExpiringSlots(s, expiringChoices) {
+  if (!Array.isArray(s.q) || !expiringChoices.length) return;
+  const future = new Set(s.q.map(q => Math.floor(q * CALENDAR_MONTHS) + 1).filter(month => month > s.mo)),
+    ceiling = P("events.slotPlacementCeiling");
+  let missing = expiringChoices.length - 1 - future.size;
+  if (missing <= 0) return;
+  for (let month = s.mo + 1; month <= CALENDAR_MONTHS && missing > 0; month++) {
+    const position = (month - 0.5) / CALENDAR_MONTHS;
+    if (future.has(month) || position >= ceiling) continue;
+    s.q.push(position);
+    future.add(month);
+    missing--;
+  }
+  s.q.sort((a,b) => a-b);
 }
 const SIMULATION_ELIGIBILITY_OPTIONS = { onReject: (...args) => recordSimulationEligibilityRejection(...args) };
 function simulationChoiceStates(event, s, T) {
@@ -148,7 +175,11 @@ function slot(x) {
   const medicalReview = nextScheduledFollowup(
     mj.filter(event => ["infection_workplace_review", "family_child_exposure_followup"].includes(event.id)), s
   );
-  const expiringFollowup = nextExpiringFollowup(mj,s);
+  const expiringChoices = mj.filter(event => nextExpiringFollowup([event],s) === event);
+  const expiringFollowup = nextExpiringFollowup(expiringChoices,s);
+  // Even a fully prioritized event cannot fire if every remaining draw is
+  // exhausted. Reserve distinct future months while eligible deadlines remain.
+  reserveExpiringSlots(s, expiringChoices);
   const localTimelineChoice = mj.find(event =>
     event.timelineFlag &&
     s.world?.events?.[event.timelineFlag] &&
