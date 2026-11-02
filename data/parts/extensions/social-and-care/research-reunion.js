@@ -700,6 +700,11 @@ window.TERRA_DATA_BUILD.fragment(
             action: "suspend",
             note: "内部対立の間は定期当番を休止"
           },
+          lifeGoal: {
+            id: "reunion-relief",
+            action: "pause",
+            note: "内部対立の間は定期の配給当番を休止した"
+          },
           groupStanding: {
             id: "infected-neighbours",
             title: "近隣の感染者と家族",
