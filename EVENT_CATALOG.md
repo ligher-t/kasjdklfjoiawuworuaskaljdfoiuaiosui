@@ -94462,6 +94462,7 @@ s => {
   "need": [
     "国:ヴィクトリア"
   ],
+  "crisisPolicy": "nonessential-leisure",
   "fx": {
     "p": 2
   }
@@ -94554,6 +94555,7 @@ s => {
   "need": [
     "国:ヴィクトリア"
   ],
+  "crisisPolicy": "nonessential-leisure",
   "fx": {
     "p": 2
   }
@@ -94698,6 +94700,7 @@ s => {
   "need": [
     "国:ヴィクトリア"
   ],
+  "crisisPolicy": "nonessential-leisure",
   "fx": {
     "p": 2
   }
@@ -96665,6 +96668,7 @@ s => {
 {
   "id": "daily_victoria_49",
   "conf": "S",
+  "crisisPolicy": "nonessential-leisure",
   "st": [
     "青年",
     "壮年"
@@ -96714,6 +96718,7 @@ s => {
 {
   "id": "daily_victoria_50",
   "conf": "S",
+  "crisisPolicy": "nonessential-leisure",
   "st": [
     "青年",
     "壮年"
@@ -96762,6 +96767,7 @@ s => {
 {
   "id": "daily_victoria_51",
   "conf": "S",
+  "crisisPolicy": "nonessential-leisure",
   "st": [
     "青年",
     "壮年"
@@ -96810,6 +96816,7 @@ s => {
 {
   "id": "daily_victoria_52",
   "conf": "S",
+  "crisisPolicy": "nonessential-leisure",
   "st": [
     "青年",
     "壮年"
