@@ -144,9 +144,9 @@ const ok = (c, s, T) => {
       moveFunds(s) >= c.affordableParentHouseholdCash * parentGiftPrice + annualCashReserve(s)) &&
     (!c.affordableSiblingCareSupport ||
       moveFunds(s) >=
-        independentSiblingCareSupportExpense(s, s.res.pm * (s.priceIndex || 1)) +
+        independentSiblingCareSupportExpense(s) +
           P("economy.siblingInfectionSupportAnnualCost") * s.res.pm * (s.priceIndex || 1) *
-            infectionCareTravelCostScale(s) +
+            localityLivingMultiplier(s) * infectionCareTravelCostScale(s) +
           annualCashReserve(s))
   );
 };
