@@ -16,6 +16,7 @@ function die(c, l, monthBasis = null, episodeId = null) {
   }
   // Annual mortality is not a dated incident. Keep month=0 when unknown.
   const annualMonthWasUnassigned = !s.mo;
+  if (annualMonthWasUnassigned && !monthBasis) s.mo = 0;
   s.deathOrigin = ["choice","daily"].includes(TRACE_RESOLUTION?.kind) ? "event" : "annual";
   s.deathProcess = mortalityDeathDetail(
     s,
