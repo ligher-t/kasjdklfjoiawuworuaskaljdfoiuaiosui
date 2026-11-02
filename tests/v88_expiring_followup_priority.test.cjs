@@ -15,7 +15,7 @@ const result=read(`
  S.educationDecision=null;S.majorEventMonth=null;
  S.romance={id:'romance-a',name:'相手A',stage:'known',metYear:1091,stageSinceYear:1091};
  S.sn.lov=1092;
- S.eventOutcomes.lov={year:1092,choiceIndex:0,outcomeIndex:0,romanceId:'romance-a'};
+ S.eventOutcomes={lov:{year:1092,choiceIndex:0,outcomeIndex:0,romanceId:'romance-a'}};
  const romance=EV.find(e=>e.id==='romance_followup');
  const choice=()=>[{l:'期限付きの手続きを選ぶ',o:[[1,'確認を行った',{}]]}];
  const history={id:'test_local_history',st:['壮年'],timelineFlag:'londinium_war',c:choice(),w:1};
