@@ -1,0 +1,35 @@
+name: Temporary child and family annual budget check
+on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths: ['.github/workflows/temporary-catalog-sync.yml']
+permissions:
+  contents: write
+jobs:
+  verify:
+    if: github.repository == 'ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Sync and verify combined family annual budget
+        run: |
+          node tools/generate-event-catalog.cjs --write
+          node tools/generate-event-catalog.cjs --check
+          node tools/update-version.cjs
+          node tools/check-efficient.cjs syntax
+          node tools/check-efficient.cjs run v88_multi_child_annual_family_budget_reconciliation.test.cjs
+          node tools/check-efficient.cjs run v88_separate_spouse_sibling_annual_reconciliation.test.cjs
+          node tools/check-efficient.cjs run v88_spouse_oneoff_and_annual_receipt_idempotency.test.cjs
+      - name: Commit generated artifacts
+        run: |
+          git add EVENT_CATALOG.md js/version.js
+          if ! git diff --cached --quiet; then
+            git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' commit -m 'chore: synchronize child and multi-family budget catalog revision'
+            git push origin HEAD:fix/historical-event-scope-and-delivery
+          fi
