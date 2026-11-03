@@ -70,4 +70,57 @@ assert.equal(medical.goal,'active','local treatment remains a personal health go
 assert.equal(medical.goalLast,'start','no phantom abandonment of health goal');
 assert.deepEqual(medical.issues,[]);
 
-console.log('PASS: six workplace exits close their career goals; short-contract and healthcare goals stay active');
+const regionalPlacements=[
+  {region:'クルビア',aff:'columbia-technical-work',goal:'columbia-technical-work',job:7},
+  {region:'ヴィクトリア',aff:'victoria-insurance-clerk',goal:'victoria-clerk-livelihood',job:21},
+  {region:'クルビア',aff:'bsw-contract',goal:'bsw-work',job:35},
+  {region:'クルビア',aff:'rhine-lab',goal:'rhine-research',job:38}
+];
+for(let i=0;i<regionalPlacements.length;i++){
+ const cfg=regionalPlacements[i];
+ for(const mode of ['relocate','change-job','retire']){
+  if(mode!=='relocate' && i>=2)continue;
+  ctx.TARGET=cfg;ctx.MODE=mode;ctx.SEED=204000+i*10+['relocate','change-job','retire'].indexOf(mode);
+  const result=inspect(`
+   born({seed:SEED,by:1065,region:TARGET.region});
+   S.year=1102;S.age=37;S.mo=4;S.cash=10000000;S.house.cash=10000000;
+   ap({job:TARGET.job,
+     lifeAffiliation:{id:TARGET.aff,title:'現地の勤務先',kind:'workplace',action:'join',role:'職員'},
+     lifeGoal:{id:TARGET.goal,title:'この職場の仕事を続ける',action:'start'}});
+   const before={job:S.job,contract:S.workContract?.siteId||null,
+     affiliation:S.lifeRecord.affiliations.find(a=>a.id===TARGET.aff)?.status,
+     goal:S.lifeRecord.goals.find(g=>g.id===TARGET.goal)?.status};
+   const historyLength=S.workContractHistory.length;
+   if(MODE==='relocate'){
+     const dest=moveDestinations(S).find(x=>x.n!==S.res.n);
+     if(!dest)throw Error('No cross-region route for '+TARGET.region);
+     ap({resTo:dest.n,resFareCovered:true});
+   }else if(MODE==='change-job')ap({job:19});
+   else if(MODE==='retire')ap({fl:{retired:1}});
+   const a=S.lifeRecord.affiliations.find(x=>x.id===TARGET.aff),
+     g=S.lifeRecord.goals.find(x=>x.id===TARGET.goal),
+     career=S.lifeRecord.careerChanges.at(-1);
+   return {before,job:S.job,affiliation:a.status,goal:g.status,
+     contract:S.workContract?.siteId||null,site:S.siteAffiliations?.workplace?.facilityId||null,
+     career:{from:career?.fromJobId,to:career?.toJobId},
+     ended:S.workContractHistory.slice(historyLength).filter(x=>x.action==='ended').length,
+     phantomStarts:S.workContractHistory.slice(historyLength).filter(x=>x.action==='started').length,
+     issues:auditLifeState(S)};
+  `);
+  assert.deepEqual([result.before.job,result.before.affiliation,result.before.goal],
+    [cfg.job,'active','active'],cfg.aff+' entered employment');
+  assert.equal(result.affiliation,'left',cfg.aff+' must leave the original job posting on '+mode);
+  assert.equal(result.goal,'compromised',cfg.aff+' career goal reflects ended placement on '+mode);
+  assert.equal(result.job,mode==='change-job'?19:0,cfg.aff+' correct occupation after '+mode);
+  assert.equal(result.career.from,cfg.job,cfg.aff+' change source');
+  assert.equal(result.career.to,mode==='change-job'?19:0,cfg.aff+' change destination');
+  if(mode==='relocate'||mode==='retire'){
+    assert.equal(result.contract,null,cfg.aff+' old contract must close');
+    assert.equal(result.site,null,cfg.aff+' former worksite must close');
+    assert.equal(result.phantomStarts,0,cfg.aff+' must not create employment in destination');
+    if(result.before.contract)assert.equal(result.ended,1,cfg.aff+' old contract ended once');
+  }
+  assert.deepEqual(result.issues,[],cfg.aff+' state audit after '+mode);
+ }
+}
+console.log('PASS: workplace goals and short contracts; relocation, job change and retirement close region-bound employment without phantom contracts');
