@@ -197,7 +197,20 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("サーベルを抜き、公爵の旗を守るため最後まで防衛戦を指揮する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
           "血路を開いて包囲を突破し、公爵家の後継者を連れて地方へ脱出した。忠義の士として称えられ、亡命貴族軍の最高指揮官となった。",
-          { cr: 5, p: 4, h: -4, cash: 2000000 }
+          { cr: 5, p: 4, h: -4, cash: 2000000, job: 55,
+            lifeGoals: [
+              { id: "victoria-officer-career", action: "compromise", onlyIfUnresolved: true,
+                note: "元の公爵軍での任務を終え、後継者と残存部隊の指揮へ移った" },
+              { id: "victoria-exiled-command", title: "亡命公爵家の部隊を率いて任務を続ける",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ],
+            lifeAffiliations: [
+              { id: "victoria-royal-officer", action: "leave",
+                note: "公爵家の敗北により元の指揮系統を離れた" },
+              { id: "victoria-exiled-ducal-command", title: "亡命公爵家の残存部隊",
+                kind: "employer", action: "join", role: "最高指揮官",
+                note: "公爵家の後継者と脱出し、残存部隊の指揮を任された" }
+            ] }
         ], [
           1,
           "軍事委員会のサルカズ精鋭に司令部を制圧され、捕縛された。反逆者としてロンディニウムの断頭台へ送られ、処刑された。",
@@ -206,7 +219,46 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("軍刀を床に置き、白旗を掲げて降伏する", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
           "爵位と財産を剥奪されたが命は助命され、平民として解放された。",
-          { job: 0, cash: -3000000, p: -5, cr: -4 }
+          { job: 0, cash: -3000000, p: -5, cr: -4,
+            lifeAffiliation: { id: "victoria-royal-officer", action: "leave",
+              note: "降伏により爵位と任官資格を失い、公爵軍を離れた" },
+            lifeGoals: [
+              { id: "victoria-officer-career", action: "abandon", onlyIfUnresolved: true,
+                note: "降伏により公爵軍の軍歴と派閥での権力追求を終えた" }
+            ] }
+        ])
+      ]
+    },
+
+    // The refugee command follows one person's survived 1094 coup outcome.
+    // No destination country or restoration to power is inferred.
+    {
+      id: "car_vic_exile_command_review",
+      conf: "S",
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.35,
+      ge: { age: 24, year: 1096 },
+      after: { id: "car_vic_royal_choice_coup", min: 2, choice: 0, outcome: 0 },
+      show: s => s.res?.n === "ヴィクトリア" && s.job === 55 &&
+        $rules.affiliations.canWork(s, "victoria-exiled-ducal-command"),
+      t: "公爵家が都を追われてから幾年かが過ぎた。残った兵の名簿には、二度と戻らない者の名もある。かつての軍旗を守り続けるか、指揮の役目を終えて別の暮らしを探すか、決める時が来た。",
+      c: [
+        $terraData.K("残った部隊の指揮を続ける", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+          1,
+          "補給と宿営の帳面を開き、残る兵たちの持ち場を確かめた。次の朝も同じ旗の下で点呼を取ることにした。",
+          { k: 1, p: -1,
+            lifeGoal: { id: "victoria-exiled-command", action: "continue",
+              note: "残存部隊の指揮と補給の役目を継続した" } }
+        ]),
+        $terraData.K("指揮を引き継ぎ、軍務を離れる", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
+          1,
+          "指揮の引継ぎを終え、使い込んだ軍刀を布に包んだ。部隊の行方を決める席から離れ、当面の暮らしを自分で考えることにした。",
+          { job: 0,
+            lifeAffiliation: { id: "victoria-exiled-ducal-command", action: "leave",
+              note: "残存部隊の指揮を引き継ぎ、軍務を離れた" },
+            lifeGoal: { id: "victoria-exiled-command", action: "abandon",
+              note: "亡命部隊の指揮を終えた" } }
         ])
       ]
     },
