@@ -5,7 +5,8 @@ window.TERRA_DATA_BUILD.fragment(
 )(function ($terraData, $define, $rules, $parts) {
   "use strict";
 
-  const onRhine = s => [38, 39, 40].includes(s.job);
+  const onRhine = s => [38, 39, 40].includes(s.job) &&
+    $rules.affiliations.canWork(s, "rhine-lab");
 
   const events = [
     {
@@ -39,7 +40,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { year: 1094 },
-      show: s => s.job === 38 && s.k >= 55,
+      show: s => onRhine(s) && s.job === 38 && s.k >= 55,
       t: "実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ迎え入れようとしている。",
       c: [
         $terraData.K("生態科（ミュルジス主任）を志望し、水循環・環境工学の研究に就く", {}, [
@@ -119,7 +120,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { year: 1094 },
-      show: s => s.job >= 39 && s.job <= 40,
+      show: s => onRhine(s) && s.job >= 39 && s.job <= 40,
       t: "数か月に及ぶ実験の末、世界初となる新素材の合成と高効率反応モデルの構築に成功した。学会での注目と特許申請の手続きが目の前に控えている。",
       c: [
         $terraData.K("特許を会社名義で登録し、巨額のロイヤリティ報酬と昇給を獲得する", {}, [
@@ -165,7 +166,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { year: 1095, age: 26 },
-      show: s => s.job === 39 && s.k >= 75,
+      show: s => onRhine(s) && s.job === 39 && s.k >= 75,
       t: "これまでの傑出した学術業績と特許取得がクリステン総括の目に留まり、自らの研究室と莫大な予算枠を持つ主任研究員（J 40）への昇格面談に呼ばれた。",
       c: [
         $terraData.K("昇進の内示書に署名し、独自ラボを統括する主任研究員へ就任する", {}, [
@@ -206,7 +207,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 5,
       w: 0.4,
       ge: { year: 1094 },
-      show: s => (s.job === 39 || s.job === 40),
+      show: s => onRhine(s) && (s.job === 39 || s.job === 40),
       t: "深夜、立ち入り制限区画の地下ラボで『炎魔計画』の機密ファイルを目撃してしまった。そこには、幼い感染児の体内に活性源石を強制作動させ、生体兵器へと造り変える狂気的人体実験の記録が記されていた。",
       c: [
         $terraData.K("良心に従い、実験データを密かに複製して外部や防衛科へ告発する", {}, [
@@ -248,10 +249,7 @@ window.TERRA_DATA_BUILD.fragment(
       ge: { year: 1095 },
       show: s =>
         !!s.fl?.rhine_whistleblower &&
-        [38, 39, 40].includes(s.job) &&
-        ["active", "crisis", "suspended"].includes(
-          s.lifeRecord?.affiliations?.find(a => a.id === "rhine-lab")?.status
-        ),
+        onRhine(s),
       t: "トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格納庫で、白衣を着た医療スタッフたちが出迎えてくれた。",
       c: [
         $terraData.K("持ち出した研究資料をロドスへ託し、医療・研究補助職員（J 30）として身を寄せる", {}, [
@@ -271,6 +269,10 @@ window.TERRA_DATA_BUILD.fragment(
               action: "abandon",
               note: "非人道実験を告発しロドスへ亡命"
             },
+            lifeGoals: [
+              { id: "rhodes-work", title: "ロドスで担当する仕事を無理なく続ける",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ],
             lifeAffiliations: [
               {
                 id: "rhodes-staff",
@@ -309,11 +311,14 @@ window.TERRA_DATA_BUILD.fragment(
     {
       id: "sr_rhine_359_transmitter_consent",
       conf: "S",
+      once: true,
+      months: [10],
       references: ["SRC_RHINE_LAB"],
       st: ["青年", "壮年", "老年"],
       cd: 4,
       w: 0.45,
-      ge: { year: 1098 },
+      ge: { year: 1099 },
+      le: { year: 1099 },
       show: s => (s.job === 39 || s.job === 40),
       t: "トリマウンツ郊外の359号基地にて、アーツ応用課のドロシー主任が進める「伝達物質」の大規模治験に立ち会った。神経信号を結合して人々の意識を共有し、能力差や苦しみを克服するという崇高な構想だが、実験に参加している被験者の多くは、生活に困窮して日銭のために集まった不安定な開拓民たちだった。",
       c: [
@@ -348,11 +353,14 @@ window.TERRA_DATA_BUILD.fragment(
     {
       id: "sr_rhine_lone_trail_sky_horizon",
       conf: "S",
+      once: true,
+      months: [11],
       references: ["SRC_RHINE_LAB"],
       st: ["青年", "壮年", "老年"],
       cd: 5,
       w: 0.45,
       ge: { year: 1099 },
+      le: { year: 1099 },
       show: s => (s.job === 39 || s.job === 40),
       t: "1099年晩秋、トリマウンツ上空。クリステン統括が主導した『ホライズンアーク計画』が極大の光を放ち、フォーカスジェネレーターが天空を穿った。何千年もテラを覆い続けてきた偽りの天球「星のさや」に巨大な風穴が開き、その向こう側に真の静寂と星空が姿を現した。世界が震天動地の衝撃に包まれる中、地上のライン生命は大きな変革の時を迎えていた。",
       c: [
@@ -390,6 +398,96 @@ window.TERRA_DATA_BUILD.fragment(
         ])
       ]
     }
+    {
+      id: "sr_rhine_post_lone_trail_career_review",
+      conf: "S",
+      references: ["SRC_RHINE_LAB"],
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.4,
+      ge: { year: 1100 },
+      after: { id: "sr_rhine_lone_trail_sky_horizon", min: 1 },
+      show: s => onRhine(s),
+      t: "トリマウンツの空にあの光が走ってから、ひと冬が過ぎた。研究室には残った装置と書類が積まれ、新しい責任者のもとで仕事が続いている。ここで研究を続けるか、職員証を返して別の暮らしを探すか、決める時が来た。",
+      c: [
+        $terraData.K("今の研究室に残り、仕事を引き継ぐ", {}, [
+          1,
+          "使える装置と残された試料を確認し、明日の実験の準備をした。研究室での仕事は、まだ自分の手の届くところにあった。",
+          { k: 2, p: 1,
+            lifeGoal: { id: "rhine-research", action: "continue",
+              note: "孤星事件後もライン生命での研究を継続した" } }
+        ]),
+        $terraData.K("職員証を返し、別の働き口を探す", {}, [
+          1,
+          "資料の引継ぎを済ませ、職員証を机に置いた。次にどこで働くかは決まっていない。研究室の扉を閉め、ひとまず自分の暮らしを考えることにした。",
+          {
+            job: 0,
+            lifeAffiliation: { id: "rhine-lab", action: "leave",
+              note: "孤星事件後、研究所を正式に退職して次の職を探した" },
+            lifeGoals: [
+              { id: "rhine-research", action: "abandon", onlyIfUnresolved: true,
+                note: "ライン生命での研究雇用を終了した" },
+              { id: "rhine-after-departure-livelihood",
+                title: "ライン生命を離れた後の働き口を探す",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ],
+            p: 1
+          }
+        ])
+      ]
+    },
+    {
+      id: "sr_rhine_after_departure_livelihood",
+      conf: "S",
+      references: ["SRC_RHINE_LAB"],
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { year: 1102 },
+      after: { id: "sr_rhine_post_lone_trail_career_review", min: 2, choice: 1, outcome: 0 },
+      show: s => s.lifeRecord?.affiliations?.some(a => a.id === "rhine-lab" && a.status === "left") &&
+        s.lifeRecord?.goals?.some(g => g.id === "rhine-after-departure-livelihood" &&
+          ["active", "compromised", "paused"].includes(g.status)),
+      t: "研究所を離れたとき、次の仕事は決まっていなかった。あれからいくつかの季節が過ぎた。白衣のままでは入れない職場もあれば、実験室で覚えた手順を役立てられる場所もあった。",
+      c: [
+        $terraData.K("もう少し働き口を探す", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [
+          1,
+          "求人の話を聞き、履歴書に書ける仕事を一つずつ確かめた。採用の返事は、今日もまだ届いていない。",
+          { lifeGoal: { id: "rhine-after-departure-livelihood", action: "continue",
+            note: "退職後の求職を続けたが、採用は成立していない" } }
+        ]),
+        $terraData.K("しばらく求職を休む", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [
+          1,
+          "研究所を出た理由を何度も考えた。次の勤務先を急いで決めるのはやめ、今ある暮らしを整えることにした。",
+          { lifeGoal: { id: "rhine-after-departure-livelihood", action: "pause",
+            note: "次の仕事探しを一時中断した" } }
+        ]),
+        $terraData.K("今の職場で生活を立て直したと認める", {
+          show: s => s.job > 0 && ![38, 39, 40].includes(s.job),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [
+          1,
+          "今の勤め先で一日の仕事を終えた。研究所の名札はもう使っていないが、以前に覚えたことも、今の仕事に役立っていた。",
+          { lifeGoal: { id: "rhine-after-departure-livelihood", action: "complete",
+            note: "研究所退職後、別の実際の職業で働き始めた" } }
+        ]),
+        $terraData.K("新しい仕事を続けながら先行きを見直す", {
+          show: s => s.job > 0 && ![38, 39, 40].includes(s.job),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [
+          1,
+          "新しい職場にも慣れないことはある。それでも、次の仕事を探していたころより日々の手順は増えた。今はもう少し様子を見ることにした。",
+          { lifeGoal: { id: "rhine-after-departure-livelihood", action: "continue",
+            note: "再就職後も暮らしの安定を見極める" } }
+        ])
+      ]
+    },
   ];
 
   $terraData.EV.push(...events);
