@@ -19,5 +19,5 @@ jobs:
           node tools/update-version.cjs
           node tools/check-efficient.cjs syntax
           node --input-type=commonjs -e "const fs=require('node:fs');console.log('GENERATED_VERSION='+fs.readFileSync('js/version.js','utf8').match(/[a-f0-9]{64}/)[0])"
-      - name: Regional careers and role transitions
-        run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs
+      - name: Regional careers, contracts and role transitions
+        run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs v88_workplace_goal_departure_contracts.test.cjs
