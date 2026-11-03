@@ -100,4 +100,125 @@ for (const withGoal of [false,true]) {
     oldGoal:withGoal?'abandoned':null,newGoal:'active',job:0,flag:1,again:false},
     'a cross-faction transfer closes Rhodes work without fabricating missing goals');
 }
-console.log('PASS actual cross-faction exits, paused goal closure, care-only hiring and no duplicate recruitment');
+
+// Blacksteel's real secondment leaves two active organizations but only one
+// employment job. The ship's address is tied to the verified Rhodes posting.
+for(const infectionRoute of [false,true]){
+  setup(ctx,{id:'blacksteel-rhodes-secondment-'+seed,seed:seed++,region:'クルビア',age:29});
+  ctx.BSW_INFECTION_ROUTE=infectionRoute;
+  const status=inspect(`
+    S.year=1098;S.age=29;S.mo=6;S.job=0;
+    const medical=!!BSW_INFECTION_ROUTE;
+    S.inf=medical?1:0;
+    ap($terraData.bswStaff(medical?'junior':'regular',
+      medical?'BSW契約警備員・見習い':'BSW正規戦術オペレーター'));
+    const offer=EV.find(e=>e.id==='sr_bsw_rhodes_secondment'),
+      infected=EV.find(e=>e.id==='sr_bsw_infected_squad_policy'),
+      review=EV.find(e=>e.id==='sr_bsw_secondment_posting_review'),
+      vip=EV.find(e=>e.id==='sr_bsw_vip_escort_ambush'),
+      convoy=EV.find(e=>e.id==='sr_bsw_convoy_protection');
+    if(!offer||!infected||!review||!vip||!convoy)
+      throw new Error('Blacksteel secondment path is absent');
+    const recruitment={
+      job:S.job,bsw:S.lifeRecord.affiliations.find(a=>a.id==='bsw-contract')?.status,
+      offer:offer.show(S),infected:infected.show(S)
+    };
+    ap(medical?infected.c[2].o[0][2]:offer.c[0].o[0][2]);
+    const bsw=S.lifeRecord.affiliations.find(a=>a.id==='bsw-contract'),
+      rhodes=S.lifeRecord.affiliations.find(a=>a.id==='rhodes-staff'),
+      goal=S.lifeRecord.goals.find(g=>g.id==='bsw-work');
+    const onboard={
+      job:S.job,bsw:bsw?.status,rhodes:rhodes?.status,
+      rhodesRole:rhodes?.role,
+      base:S.residenceBase?.id||null,
+      flag:S.fl.rhodes_landship,
+      trulyOnShip:isRhodesLandshipResident(S),
+      homeCountry:S.res.n,
+      bswGoal:goal?.status,
+      newBswOffer:offer.show(S),
+      vip:vip.show(S),convoy:convoy.show(S),
+      eligibleReview:elig(review,S,tags(S)),
+      issues:auditLifeState(S)
+    };
+    ap({k:1});
+    const incidental={
+      bsw:bsw.status,rhodes:rhodes.status,job:S.job,
+      onShip:isRhodesLandshipResident(S),
+      bswVip:vip.show(S)
+    };
+    S.year+=1;S.age+=1;
+    const first={
+      visible:review.show(S),eligible:elig(review,S,tags(S))
+    };
+    ap(review.c[0].o[0][2]);
+    S.sn[review.id]=S.year;
+    const continuing={
+      bsw:bsw.status,rhodes:rhodes.status,job:S.job,
+      onShip:isRhodesLandshipResident(S),
+      revisit:elig(review,S,tags(S))
+    };
+    S.year+=3;S.age+=3;
+    const next=elig(review,S,tags(S));
+    ap(review.c[1].o[0][2]);
+    const back={
+      job:S.job,bsw:bsw.status,rhodes:rhodes.status,
+      endYear:rhodes.episodes.at(-1)?.endedYear,
+      base:S.residenceBase?.id||null,
+      onShip:isRhodesLandshipResident(S),
+      flag:S.fl.rhodes_landship,
+      bswGoal:goal.status,
+      vip:vip.show(S),convoy:convoy.show(S),
+      returnReview:review.show(S),
+      issues:auditLifeState(S)
+    };
+    return {recruitment,onboard,incidental,first,continuing,next,back};
+  `);
+  assert.deepEqual(status.recruitment,{
+    job:infectionRoute?35:36,bsw:'active',
+    offer:!infectionRoute,infected:infectionRoute
+  },'actual Blacksteel staff may be assigned, while infected staff may seek treatment');
+  assert.equal(status.onboard.job,infectionRoute?35:36);
+  assert.equal(status.onboard.bsw,'active','BSW employment remains in force during a secondment');
+  assert.equal(status.onboard.rhodes,'active','the host organization has an actual posting');
+  assert(status.onboard.rhodesRole.startsWith('本艦・BSW出向'));
+  assert.equal(status.onboard.base,'rhodes-landship','secondment must actually board the ship');
+  assert.equal(status.onboard.flag,1);
+  assert.equal(status.onboard.trulyOnShip,true);
+  assert.equal(status.onboard.homeCountry,'クルビア','unknown ship coordinates do not invent a country move');
+  assert.equal(status.onboard.bswGoal,'active');
+  assert.equal(status.onboard.newBswOffer,false,'staff already on secondment cannot receive another first offer');
+  assert.equal(status.onboard.vip,false,'domestic BSW VIP work cannot happen aboard the Rhodes ship');
+  assert.equal(status.onboard.convoy,false,'domestic BSW convoy cannot happen aboard the Rhodes ship');
+  assert.equal(status.onboard.eligibleReview,false,'no immediate renewal on arrival');
+  assert.deepEqual(status.onboard.issues,[]);
+  assert.deepEqual(status.incidental,{
+    bsw:'active',rhodes:'active',job:infectionRoute?35:36,
+    onShip:true,bswVip:false
+  },'other effects do not silently terminate the host or parent job');
+  assert.deepEqual(status.first,{visible:true,eligible:true},
+    'after a full year the seconded worker may reconsider the assignment');
+  assert.deepEqual(status.continuing,{
+    bsw:'active',rhodes:'active',job:infectionRoute?35:36,
+    onShip:true,revisit:false
+  },'continuation respects the review cooldown without changing employment');
+  assert.equal(status.next,true);
+  assert.deepEqual(status.back,{
+    job:infectionRoute?35:36,bsw:'active',rhodes:'left',
+    endYear:1102,base:null,onShip:false,flag:0,
+    bswGoal:'active',vip:!infectionRoute,convoy:infectionRoute,
+    returnReview:false,issues:[]
+  },'leaving the host ship returns to the parent contract without creating a new job');
+}
+setup(ctx,{id:'blacksteel-phantom-worker',seed:seed++,region:'クルビア',age:29});
+const phantom=inspect(`
+  S.year=1099;S.age=29;S.job=36;
+  const offer=EV.find(e=>e.id==='sr_bsw_rhodes_secondment'),
+    vip=EV.find(e=>e.id==='sr_bsw_vip_escort_ambush'),
+    review=EV.find(e=>e.id==='sr_bsw_secondment_posting_review');
+  return {offer:offer.show(S),vip:vip.show(S),
+    review:review.show(S)};
+`);
+assert.deepEqual(phantom,{offer:false,vip:false,review:false},
+  'occupation number alone is not proof of a BSW or Rhodes posting');
+
+console.log('PASS actual cross-faction exits, paused goal closure, care-only hiring and no duplicate recruitment and real Blacksteel secondments');
