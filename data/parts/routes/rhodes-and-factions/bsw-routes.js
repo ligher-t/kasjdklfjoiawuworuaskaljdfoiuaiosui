@@ -319,7 +319,8 @@ window.TERRA_DATA_BUILD.fragment(
         $rules.affiliations.canWork(s, "rhodes-staff") &&
         s.residenceBase?.id === "rhodes-landship" &&
         s.lifeRecord?.affiliations?.some(a => a.id === "rhodes-staff" &&
-          a.role?.startsWith("本艦・BSW出向") && s.year > a.startedYear),
+          a.role?.startsWith("本艦・BSW出向") &&
+          s.year > a.episodes?.at(-1)?.startedYear),
       t: "ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生かすか、出向の任務を終えて元の会社の仕事へ戻るか。",
       c: [
         $terraData.K("本艦での出向勤務を続け、次の任務の準備をする", {}, [
