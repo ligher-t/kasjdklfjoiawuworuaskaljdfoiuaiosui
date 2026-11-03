@@ -26,6 +26,7 @@ for(let i=0;i<2;i++){
       rhodesGoal=S.lifeRecord.goals.find(g=>g.id==='rhodes-work');
     const after=elig(event,S,tags(S)),
       staffStatus=staff?.status||null,
+      rhodesGoalStatus=rhodesGoal?.status||null,
       stateIssues=auditLifeState(S);
     S.sn[event.id]=S.year;
     S.job=39;
@@ -34,7 +35,7 @@ for(let i=0;i<2;i++){
     return {before,after,secondTry,asylumOnce:event.once,ethicsOnce:ethics.once,
       aff:aff.status,goal:goal.status,goalAction:goal.history.at(-1).action,
       goalTitle:goal.title,staff:staffStatus,
-      rhodesGoal:rhodesGoal?.status||null,
+      rhodesGoal:rhodesGoalStatus,
       whistleblower:S.fl.rhine_whistleblower,issues:stateIssues};
   `);
   assert.equal(result.before,true,'current whistleblower has an asylum option');
