@@ -1,4 +1,4 @@
-name: P07 financing and refund regression verification
+name: P07 finance, boarding and annual reconciliation
 on:
   pull_request:
     branches: [main]
