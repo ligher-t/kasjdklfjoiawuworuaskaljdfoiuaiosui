@@ -17,6 +17,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Locate generic dismissals and regional employment events in their owning modules
+        run: |
+          grep -R -n -E 'id: ["'"'"'](urs_mine|vic_strike|rim_mine|col_frontier|discrimination_work_after|discrimination_after|hid_exposed|choice_ursus_04|choice_victoria_01)["'"'"']' data/parts data/base data/regional || true
       - name: Cross-check all event outcomes that terminate current occupation
         run: |
           node <<'NODE'
