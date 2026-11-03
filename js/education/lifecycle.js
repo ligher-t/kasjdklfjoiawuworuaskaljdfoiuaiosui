@@ -262,8 +262,7 @@ function educationEnd(s,outcome,reason,source=null) {
   if(!model || model.status!=="enrolled" && model.status!=="paused")return false;
   if(outcome==="completed" && model.offeringId){
     const enrollment=educationActiveEnrollment(s),
-      credits=Object.values(s.educationCredits?.items||{}).filter(x=>
-        x.enrollmentId===enrollment?.id && x.credited),
+      credits=enrollment?educationTransferredCreditIds(s,enrollment.id):[],
       offering=s.world?.educationWorld?.offerings?.[model.offeringId];
     if(!enrollment||credits.length<model.duration||
        model.yearsCompleted<model.duration ||
