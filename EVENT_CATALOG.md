@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2491　選択肢数：3103　結果枝数：3961
+イベント数：2493　選択肢数：3116　結果枝数：3974
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -12,7 +12,7 @@
 
 ## 国・地域別索引
 
-[イェラグ (84)](#tag-region-0)　・　[イベリア (109)](#tag-region-1)　・　[ヴィクトリア (145)](#tag-region-2)　・　[ウルサス (170)](#tag-region-3)　・　[カジミエーシュ (102)](#tag-region-4)　・　[カズデル (119)](#tag-region-5)　・　[クルビア (116)](#tag-region-6)　・　[サーミ (91)](#tag-region-7)　・　[サルゴン (98)](#tag-region-8)　・　[シエスタ (80)](#tag-region-9)　・　[シラクーザ (98)](#tag-region-10)　・　[ボリバル (94)](#tag-region-11)　・　[ミノス (86)](#tag-region-12)　・　[ラテラーノ (88)](#tag-region-13)　・　[リターニア (103)](#tag-region-14)　・　[レム・ビリトン (93)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (86)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (90)](#tag-region-19)　・　[未特定 (672)](#tag-region-20)　・　[龍門 (106)](#tag-region-21)
+[イェラグ (84)](#tag-region-0)　・　[イベリア (109)](#tag-region-1)　・　[ヴィクトリア (145)](#tag-region-2)　・　[ウルサス (170)](#tag-region-3)　・　[カジミエーシュ (102)](#tag-region-4)　・　[カズデル (119)](#tag-region-5)　・　[クルビア (116)](#tag-region-6)　・　[サーミ (91)](#tag-region-7)　・　[サルゴン (98)](#tag-region-8)　・　[シエスタ (80)](#tag-region-9)　・　[シラクーザ (98)](#tag-region-10)　・　[ボリバル (94)](#tag-region-11)　・　[ミノス (86)](#tag-region-12)　・　[ラテラーノ (88)](#tag-region-13)　・　[リターニア (103)](#tag-region-14)　・　[レム・ビリトン (93)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (86)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (90)](#tag-region-19)　・　[未特定 (674)](#tag-region-20)　・　[龍門 (106)](#tag-region-21)
 
 <a id="tag-region-0"></a>
 ### イェラグ（84）
@@ -1929,7 +1929,7 @@
 - [car_hig_touhou_daily_01](#event-car_hig_touhou_daily_01) — 東方重工の工場内で、最新鋭の旋盤から削り出された手裏剣『シルバーウィンド』同型刃の寸法と硬度を測定した。特殊合金の焼き入れムラがないか、顕微鏡で結晶…
 
 <a id="tag-region-20"></a>
-### 未特定（672）
+### 未特定（674）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
@@ -2133,6 +2133,8 @@
 - [elder_community](#event-elder_community) — 仕事帰りの夕暮れ、近所の若者に古い道具の手入れの仕方を尋ねられた。提げていた買い物袋を足元に置き、どこから教えてやろうかと考えた。 久しく誰も訪ねて…
 - [yakuza_collect](#event-yakuza_collect) — 龍門の裏通りを仕切る金融業者が、手下を連れて戸口に立ちはだかった。返済の期限はすでに過ぎている。突きつけられた借用書の数字を前に、今どう出るか迫られ…
 - [neighbor_followup](#event-neighbor_followup) — 隣の{neighborName}が、湯気の立つ鉢を持って戸口を訪ねてきた。引っ越してきた日にこちらが差し入れた食べ物を覚えていて、「今日はお裾分けだ…
+- [education_case_review](#event-education_case_review) — 学校の案内と家の事情を確かめながら、今年の進路についてもう一度考えた。募集先の知らせが届いても、通い続ける算段と入学の手続は別に残っている。
+- [edu_lower_stage_site_review](#event-edu_lower_stage_site_review) — 初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。
 - [attitude_infected_child](#event-attitude_infected_child) — 診療所の軒先で、鉱石病の患者が受付の列から外れるよう言い渡されていた。周りの大人たちは理由も言わず、手で追い払うような仕草をして距離を取っている。
 - [attitude_sarkaz_child](#event-attitude_sarkaz_child) — 賑わう市場の露店の前で、サルカズの荷運び人が売り物に手を触れたと店主から怒鳴られていた。そばで見ていた大人が「これだからサルカズは油断ならない」と吐…
 - [family_parent_crystal_dust](#event-family_parent_crystal_dust) — 鉱石病に苦しみながら息を引き取った親の遺品を片づけていた。着古した服の縫い目や使い込まれた道具には、黒く光る結晶の欠片と細かい粉がこびりついている。…
@@ -2714,7 +2716,7 @@
 
 ## ジャンル別索引
 
-[移動・物流 (238)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (348)](#tag-genre-2)　・　[感染・医療 (404)](#tag-genre-3)　・　[教育・文化 (386)](#tag-genre-4)　・　[差別・制度 (153)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (243)](#tag-genre-7)　・　[戦争・政治 (145)](#tag-genre-8)　・　[天災・避難 (200)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (389)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (889)](#tag-genre-13)　・　[労働・経済 (728)](#tag-genre-14)
+[移動・物流 (238)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (348)](#tag-genre-2)　・　[感染・医療 (404)](#tag-genre-3)　・　[教育・文化 (388)](#tag-genre-4)　・　[差別・制度 (153)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (243)](#tag-genre-7)　・　[戦争・政治 (145)](#tag-genre-8)　・　[天災・避難 (200)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (389)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (889)](#tag-genre-13)　・　[労働・経済 (730)](#tag-genre-14)
 
 <a id="tag-genre-0"></a>
 ### 移動・物流（238）
@@ -3720,7 +3722,7 @@
 - [life_ursus_zelgrad_purge_trap](#event-life_ursus_zelgrad_purge_trap) — 広場の騒乱が遠ざかり冷え込みが厳しさを増すなか、重装憲兵と防護服を着た工廠監理官が労働区画の出口を鉄柵で完全封鎖した。『都市エンジンの緊急点検のため…
 
 <a id="tag-genre-4"></a>
-### 教育・文化（386）
+### 教育・文化（388）
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_model](#event-bias_family_model) — 夕餉の食卓で、大人たちが近所にいる鉱石病患者の噂話をしていた。誰かが吐き捨てるように『ああいう連中は決まりも守らない』と言い、周りの大人も誰一人とし…
@@ -3981,6 +3983,8 @@
 - [arts_academy_completion](#event-arts_academy_completion) — アーツ学院の課程を修め、門を出る日が来た。身につけた制御技術を活かして食っていける場所がないか、求人板の貼り紙を見比べた。
 - [teacher_path](#event-teacher_path) — 地域の学び舎に、読み書きを教える講師の募集が出ていた。顔見知りの紹介者から「一度教室を見学して、短い模擬授業をやってみないか」と誘われ、教本代と往復…
 - [elder_community](#event-elder_community) — 仕事帰りの夕暮れ、近所の若者に古い道具の手入れの仕方を尋ねられた。提げていた買い物袋を足元に置き、どこから教えてやろうかと考えた。 久しく誰も訪ねて…
+- [education_case_review](#event-education_case_review) — 学校の案内と家の事情を確かめながら、今年の進路についてもう一度考えた。募集先の知らせが届いても、通い続ける算段と入学の手続は別に残っている。
+- [edu_lower_stage_site_review](#event-edu_lower_stage_site_review) — 初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。
 - [attitude_infected_child](#event-attitude_infected_child) — 診療所の軒先で、鉱石病の患者が受付の列から外れるよう言い渡されていた。周りの大人たちは理由も言わず、手で追い払うような仕草をして距離を取っている。
 - [attitude_sarkaz_child](#event-attitude_sarkaz_child) — 賑わう市場の露店の前で、サルカズの荷運び人が売り物に手を触れたと店主から怒鳴られていた。そばで見ていた大人が「これだからサルカズは油断ならない」と吐…
 - [family_spouse_sarkaz](#event-family_spouse_sarkaz) — 配偶者がサルカズだというただそれだけの理由で、親族は二人の結婚を頑なに認めようとしない。幼いころ自分自身もサルカズに向けて口にした心ない言葉が蘇り、…
@@ -6159,7 +6163,7 @@
 - [people_work_introduction](#event-people_work_introduction) — 次の持ち場へ荷や伝票を引き継ぐタイミングが噛み合わず、手元の作業がたびたび止まった。隣の工程を受け持つ働き手と、一度きちんと話をしておいた方がよさそ…
 
 <a id="tag-genre-14"></a>
-### 労働・経済（728）
+### 労働・経済（730）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -6549,6 +6553,8 @@
 - [yakuza_collect](#event-yakuza_collect) — 龍門の裏通りを仕切る金融業者が、手下を連れて戸口に立ちはだかった。返済の期限はすでに過ぎている。突きつけられた借用書の数字を前に、今どう出るか迫られ…
 - [siracusa_credit_collection](#event-siracusa_credit_collection) — シラクーザのファミリーに雇われた会計役が、黒服の男を連れて食堂の席へ割り込んできた。返済期限はすでに過ぎている。静かな声で突きつけられた残額を前に、…
 - [columbia_credit_collection](#event-columbia_credit_collection) — 工業区の部品問屋から来た取立人が、用心棒を伴ってアパートの扉を叩いた。期限を過ぎたツケと借金の残額を突きつけられ、今払えるのかと詰め寄られた。
+- [education_case_review](#event-education_case_review) — 学校の案内と家の事情を確かめながら、今年の進路についてもう一度考えた。募集先の知らせが届いても、通い続ける算段と入学の手続は別に残っている。
+- [edu_lower_stage_site_review](#event-edu_lower_stage_site_review) — 初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。
 - [family_child_exposure_followup](#event-family_child_exposure_followup) — （動的本文）
 - [family_player_infection_reaction](#event-family_player_infection_reaction) — あなたが鉱石病だと打ち明けた家族は、黙って通院日や薬代の話に耳を傾けていた。あなたの身を案じているのか、それともこれから降りかかる負担に怯えているの…
 - [family_marital_strain](#event-family_marital_strain) — 食卓の上で家計簿をぱたんと閉じる乾いた音が、また言い争いの火種になった。相手が仕事で疲れ果てていることは分かっていたはずなのに、口を開けばトゲのある…
@@ -6891,7 +6897,7 @@
 
 ## 状況別索引
 
-[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (140)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (248)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[記録・説明責任 (1)](#tag-situation-108)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-109)　・　[記録と責任 (1)](#tag-situation-110)　・　[技師 (1)](#tag-situation-111)　・　[技能条件 (1)](#tag-situation-112)　・　[求職 (2)](#tag-situation-113)　・　[求職・紹介 (1)](#tag-situation-114)　・　[旧坑区の荷札照会 (1)](#tag-situation-115)　・　[競技会場の仮設席設営 (1)](#tag-situation-116)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-117)　・　[競技騎士の肩の負傷 (1)](#tag-situation-118)　・　[競技祭 (1)](#tag-situation-119)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-120)　・　[脅迫を受ける (1)](#tag-situation-121)　・　[脅迫記録の解除分岐 (1)](#tag-situation-122)　・　[極東 (1)](#tag-situation-123)　・　[極東の軍務・兵站ルート (2)](#tag-situation-124)　・　[極東の神社 (1)](#tag-situation-125)　・　[勤務縮小後 (1)](#tag-situation-126)　・　[近隣からの相談 (1)](#tag-situation-127)　・　[近隣との情報交換 (1)](#tag-situation-128)　・　[近隣の若年者との交流 (1)](#tag-situation-129)　・　[近隣互助 (1)](#tag-situation-130)　・　[軍務・護衛の継続 (1)](#tag-situation-131)　・　[契約確認 (1)](#tag-situation-132)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-133)　・　[継続／民間移行／求職 (1)](#tag-situation-134)　・　[継続後の振り返り (1)](#tag-situation-135)　・　[継続後の窓口 (1)](#tag-situation-136)　・　[警戒・質問の選択 (1)](#tag-situation-137)　・　[検査延期後の再検討 (1)](#tag-situation-138)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-139)　・　[源石片による負傷・曝露 (1)](#tag-situation-140)　・　[源石片への接触回避 (1)](#tag-situation-141)　・　[言葉の行き違い (1)](#tag-situation-142)　・　[個人情報 (1)](#tag-situation-143)　・　[古傷による職業転換 (1)](#tag-situation-144)　・　[固定集落への配達 (1)](#tag-situation-145)　・　[固定都市 (1)](#tag-situation-146)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-147)　・　[交易所の共用端末 (1)](#tag-situation-148)　・　[公証人役場 (1)](#tag-situation-149)　・　[工業区域 (1)](#tag-situation-150)　・　[工場労働者 (1)](#tag-situation-151)　・　[港湾労働 (2)](#tag-situation-152)　・　[鉱区事故 (1)](#tag-situation-153)　・　[鉱山の交替減少 (1)](#tag-situation-154)　・　[鉱山労働 (1)](#tag-situation-155)　・　[鉱石病以外の回復期 (1)](#tag-situation-156)　・　[鉱石病診断済み (1)](#tag-situation-157)　・　[鉱夫 (1)](#tag-situation-158)　・　[鉱夫分岐 (1)](#tag-situation-159)　・　[高等教育経験者の教員応募 (1)](#tag-situation-160)　・　[高齢期 (1)](#tag-situation-161)　・　[高齢期の就労 (1)](#tag-situation-162)　・　[告示の交代 (1)](#tag-situation-163)　・　[国の発生条件あり (1561)](#tag-situation-164)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-165)　・　[再受付・別の診療先の探索 (1)](#tag-situation-166)　・　[採掘坑内の換気停止 (1)](#tag-situation-167)　・　[採掘地域 (1)](#tag-situation-168)　・　[採掘地域に限定 (1)](#tag-situation-169)　・　[採掘中 (1)](#tag-situation-170)　・　[災害後の商店再開 (1)](#tag-situation-171)　・　[祭典 (1)](#tag-situation-172)　・　[作業技能 (1)](#tag-situation-173)　・　[作業停止・退避 (1)](#tag-situation-174)　・　[山道の情報共有 (1)](#tag-situation-175)　・　[山麓の宿への道案内 (1)](#tag-situation-176)　・　[仕送り (1)](#tag-situation-177)　・　[子どもの就学 (1)](#tag-situation-178)　・　[子どもの誕生・養育 (1)](#tag-situation-179)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-180)　・　[子への訃報 (1)](#tag-situation-181)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-182)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-183)　・　[思春期 (1)](#tag-situation-184)　・　[支援の受入れ (1)](#tag-situation-185)　・　[氏族養育 (1)](#tag-situation-186)　・　[資格取得後の求職 (1)](#tag-situation-187)　・　[飼育動物の世話 (1)](#tag-situation-188)　・　[次便待ち (1)](#tag-situation-189)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-190)　・　[自動発生イベント (1415)](#tag-situation-191)　・　[湿地地勢 (1)](#tag-situation-192)　・　[守秘と名簿 (1)](#tag-situation-193)　・　[種族差別 (2)](#tag-situation-194)　・　[種族差別後 (1)](#tag-situation-195)　・　[酒類の仕入れ帳 (1)](#tag-situation-196)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-197)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-198)　・　[授業担当者との接点 (1)](#tag-situation-199)　・　[収容・隔離中 (1)](#tag-situation-200)　・　[収容・隔離中の診療 (1)](#tag-situation-201)　・　[収容中 (4)](#tag-situation-202)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-203)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-204)　・　[就労中 (2)](#tag-situation-205)　・　[就労中の鉱夫 (1)](#tag-situation-206)　・　[住居差別 (1)](#tag-situation-207)　・　[住居差別後 (1)](#tag-situation-208)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-209)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-210)　・　[宿泊拒否 (1)](#tag-situation-211)　・　[宿泊拒否後 (1)](#tag-situation-212)　・　[出場・観戦・場外見物 (1)](#tag-situation-213)　・　[所持金による本文・選択肢 (1)](#tag-situation-214)　・　[小舞台 (1)](#tag-situation-215)　・　[少年・青年 (2)](#tag-situation-216)　・　[少年・青年・壮年 (3)](#tag-situation-217)　・　[消息不明者の生存確認 (1)](#tag-situation-218)　・　[症状進行中 (1)](#tag-situation-219)　・　[情報網の高い居住地 (1)](#tag-situation-220)　・　[条件付き本文 (210)](#tag-situation-221)　・　[職業課程の継続 (1)](#tag-situation-222)　・　[職業課程の修了 (1)](#tag-situation-223)　・　[職業条件あり (71)](#tag-situation-224)　・　[職場・近隣で露見の兆し (1)](#tag-situation-225)　・　[職場の排斥 (1)](#tag-situation-226)　・　[食堂の客足 (1)](#tag-situation-227)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-228)　・　[食料不足 (1)](#tag-situation-229)　・　[森林地勢 (1)](#tag-situation-230)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-231)　・　[親の家計判断 (1)](#tag-situation-232)　・　[親の感染 (1)](#tag-situation-233)　・　[親の死後 (1)](#tag-situation-234)　・　[親子の記憶 (1)](#tag-situation-235)　・　[診断済み (1)](#tag-situation-236)　・　[診断済み・未治療 (1)](#tag-situation-237)　・　[診療・休養・記録から選択 (1)](#tag-situation-238)　・　[診療・作業調整 (1)](#tag-situation-239)　・　[診療・動作を避ける選択 (1)](#tag-situation-240)　・　[診療・付き添いの依頼 (1)](#tag-situation-241)　・　[診療・負担軽減から選択 (1)](#tag-situation-242)　・　[診療延期後 (1)](#tag-situation-243)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-244)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-245)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-246)　・　[身近な人への支援依頼 (1)](#tag-situation-247)　・　[身近な連絡先あり (1)](#tag-situation-248)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-249)　・　[睡眠不足 (1)](#tag-situation-250)　・　[世界イベント後 (1)](#tag-situation-251)　・　[成人 (4)](#tag-situation-252)　・　[成人・返済支援の選択 (1)](#tag-situation-253)　・　[成人した子 (2)](#tag-situation-254)　・　[成人の種族偏見に触れる (1)](#tag-situation-255)　・　[生活上の備え (1)](#tag-situation-256)　・　[青年・壮年 (5)](#tag-situation-257)　・　[青年・壮年・老年 (3)](#tag-situation-258)　・　[雪祭司・聖樹 (1)](#tag-situation-259)　・　[選択イベント (1017)](#tag-situation-260)　・　[前段で残留した人 (1)](#tag-situation-261)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-262)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-263)　・　[全年齢の循環器系エピソード (1)](#tag-situation-264)　・　[全年齢の食料不足 (1)](#tag-situation-265)　・　[全年齢の負傷後の痛み (1)](#tag-situation-266)　・　[組織・所属に言及 (175)](#tag-situation-267)　・　[組織離脱後 (1)](#tag-situation-268)　・　[相談・医療・休養 (1)](#tag-situation-269)　・　[相談・記録 (1)](#tag-situation-270)　・　[相談・記録・経路変更 (1)](#tag-situation-271)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-272)　・　[足場や荷の異常 (1)](#tag-situation-273)　・　[退会後の関係 (1)](#tag-situation-274)　・　[退職選択 (1)](#tag-situation-275)　・　[大いなる静謐後 (1)](#tag-situation-276)　・　[大学課程の継続 (1)](#tag-situation-277)　・　[大学課程の修了 (1)](#tag-situation-278)　・　[短期雇用 (1)](#tag-situation-279)　・　[短期雇用と現場危険 (1)](#tag-situation-280)　・　[地域の供給不安定 (1)](#tag-situation-281)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-282)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-283)　・　[地域学習会・独学の選択 (1)](#tag-situation-284)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-285)　・　[仲間の捜索 (1)](#tag-situation-286)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-287)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-288)　・　[通学していない (1)](#tag-situation-289)　・　[通学中 (1)](#tag-situation-290)　・　[通行止め・迂回 (1)](#tag-situation-291)　・　[天災・戦乱による避難中 (1)](#tag-situation-292)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-293)　・　[店舗からの排斥集会 (1)](#tag-situation-294)　・　[転居後の近隣交流 (1)](#tag-situation-295)　・　[都市街区での襲撃 (1)](#tag-situation-296)　・　[動的表示条件 (591)](#tag-situation-297)　・　[動的本文 (30)](#tag-situation-298)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-299)　・　[同一都市の周縁区への転居 (1)](#tag-situation-300)　・　[同郷者との交流 (1)](#tag-situation-301)　・　[同行者との交流 (1)](#tag-situation-302)　・　[匿名動画の出所確認 (1)](#tag-situation-303)　・　[独立商業所属 (1)](#tag-situation-304)　・　[読み書きに困難がある (1)](#tag-situation-305)　・　[日雇い (1)](#tag-situation-306)　・　[乳児の成長 (1)](#tag-situation-307)　・　[任意応募・採用選考 (1)](#tag-situation-308)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-309)　・　[年齢：35歳以上 (2)](#tag-situation-310)　・　[年齢：児童 (893)](#tag-situation-311)　・　[年齢：少年 (1120)](#tag-situation-312)　・　[年齢：青年 (2287)](#tag-situation-313)　・　[年齢：壮年 (2227)](#tag-situation-314)　・　[年齢：乳児 (15)](#tag-situation-315)　・　[年齢：幼児 (31)](#tag-situation-316)　・　[年齢：老年 (1432)](#tag-situation-317)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-318)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-319)　・　[配給・食料不足 (1)](#tag-situation-320)　・　[配給・寝床・診療案内 (1)](#tag-situation-321)　・　[配給と地域支援 (1)](#tag-situation-322)　・　[配給登録 (1)](#tag-situation-323)　・　[配偶者との死別 (1)](#tag-situation-324)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-325)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-326)　・　[班間の点検記録 (1)](#tag-situation-327)　・　[班内の技能伝達 (1)](#tag-situation-328)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-329)　・　[避難中 (1)](#tag-situation-330)　・　[非感染者 (1)](#tag-situation-331)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-332)　・　[付き添い依頼・受診延期 (1)](#tag-situation-333)　・　[付き添い相談 (1)](#tag-situation-334)　・　[扶養中の子 (2)](#tag-situation-335)　・　[扶養中の子の看病 (1)](#tag-situation-336)　・　[負傷後の職務調整 (1)](#tag-situation-337)　・　[部品寸法 (1)](#tag-situation-338)　・　[復旧作業中の負傷 (1)](#tag-situation-339)　・　[粉塵への接触懸念 (1)](#tag-situation-340)　・　[粉塵曝露 (2)](#tag-situation-341)　・　[兵士の消息不明 (1)](#tag-situation-342)　・　[兵役招集 (1)](#tag-situation-343)　・　[別居・転居 (1)](#tag-situation-344)　・　[亡命・移住 (2)](#tag-situation-345)　・　[未診断の感染者 (1)](#tag-situation-346)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-347)　・　[未成年は養育者判断 (8)](#tag-situation-348)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-349)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-350)　・　[名前を知る相手 (1)](#tag-situation-351)　・　[夜間の世話 (1)](#tag-situation-352)　・　[友人との文通再開 (1)](#tag-situation-353)　・　[友人への恋心 (1)](#tag-situation-354)　・　[傭兵・護衛勤務 (1)](#tag-situation-355)　・　[傭兵隊の護衛契約 (1)](#tag-situation-356)　・　[傭兵隊の通過 (1)](#tag-situation-357)　・　[幼い子の養育 (1)](#tag-situation-358)　・　[用事の再開・再診 (1)](#tag-situation-359)　・　[養育者の視点 (1)](#tag-situation-360)　・　[離婚後の元配偶者の死 (1)](#tag-situation-361)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-362)　・　[離婚後の子育て・連絡 (1)](#tag-situation-363)　・　[龍門 (1)](#tag-situation-364)　・　[龍門の移動都市居住区 (1)](#tag-situation-365)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-366)　・　[龍門の商業街 (1)](#tag-situation-367)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-368)　・　[隣人との死別 (1)](#tag-situation-369)　・　[隣人との伝言再開 (1)](#tag-situation-370)　・　[隣人の消息不明 (1)](#tag-situation-371)　・　[隣人の生存確認 (1)](#tag-situation-372)　・　[連絡・休息の継続 (1)](#tag-situation-373)　・　[連絡先と家の用事の相談 (1)](#tag-situation-374)　・　[労務補償 (1)](#tag-situation-375)
+[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (140)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (248)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[記録・説明責任 (1)](#tag-situation-108)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-109)　・　[記録と責任 (1)](#tag-situation-110)　・　[技師 (1)](#tag-situation-111)　・　[技能条件 (1)](#tag-situation-112)　・　[求職 (2)](#tag-situation-113)　・　[求職・紹介 (1)](#tag-situation-114)　・　[旧坑区の荷札照会 (1)](#tag-situation-115)　・　[競技会場の仮設席設営 (1)](#tag-situation-116)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-117)　・　[競技騎士の肩の負傷 (1)](#tag-situation-118)　・　[競技祭 (1)](#tag-situation-119)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-120)　・　[脅迫を受ける (1)](#tag-situation-121)　・　[脅迫記録の解除分岐 (1)](#tag-situation-122)　・　[極東 (1)](#tag-situation-123)　・　[極東の軍務・兵站ルート (2)](#tag-situation-124)　・　[極東の神社 (1)](#tag-situation-125)　・　[勤務縮小後 (1)](#tag-situation-126)　・　[近隣からの相談 (1)](#tag-situation-127)　・　[近隣との情報交換 (1)](#tag-situation-128)　・　[近隣の若年者との交流 (1)](#tag-situation-129)　・　[近隣互助 (1)](#tag-situation-130)　・　[軍務・護衛の継続 (1)](#tag-situation-131)　・　[契約確認 (1)](#tag-situation-132)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-133)　・　[継続／民間移行／求職 (1)](#tag-situation-134)　・　[継続後の振り返り (1)](#tag-situation-135)　・　[継続後の窓口 (1)](#tag-situation-136)　・　[警戒・質問の選択 (1)](#tag-situation-137)　・　[検査延期後の再検討 (1)](#tag-situation-138)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-139)　・　[源石片による負傷・曝露 (1)](#tag-situation-140)　・　[源石片への接触回避 (1)](#tag-situation-141)　・　[言葉の行き違い (1)](#tag-situation-142)　・　[個人情報 (1)](#tag-situation-143)　・　[古傷による職業転換 (1)](#tag-situation-144)　・　[固定集落への配達 (1)](#tag-situation-145)　・　[固定都市 (1)](#tag-situation-146)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-147)　・　[交易所の共用端末 (1)](#tag-situation-148)　・　[公証人役場 (1)](#tag-situation-149)　・　[工業区域 (1)](#tag-situation-150)　・　[工場労働者 (1)](#tag-situation-151)　・　[港湾労働 (2)](#tag-situation-152)　・　[鉱区事故 (1)](#tag-situation-153)　・　[鉱山の交替減少 (1)](#tag-situation-154)　・　[鉱山労働 (1)](#tag-situation-155)　・　[鉱石病以外の回復期 (1)](#tag-situation-156)　・　[鉱石病診断済み (1)](#tag-situation-157)　・　[鉱夫 (1)](#tag-situation-158)　・　[鉱夫分岐 (1)](#tag-situation-159)　・　[高等教育経験者の教員応募 (1)](#tag-situation-160)　・　[高齢期 (1)](#tag-situation-161)　・　[高齢期の就労 (1)](#tag-situation-162)　・　[告示の交代 (1)](#tag-situation-163)　・　[国の発生条件あり (1561)](#tag-situation-164)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-165)　・　[再受付・別の診療先の探索 (1)](#tag-situation-166)　・　[採掘坑内の換気停止 (1)](#tag-situation-167)　・　[採掘地域 (1)](#tag-situation-168)　・　[採掘地域に限定 (1)](#tag-situation-169)　・　[採掘中 (1)](#tag-situation-170)　・　[災害後の商店再開 (1)](#tag-situation-171)　・　[祭典 (1)](#tag-situation-172)　・　[作業技能 (1)](#tag-situation-173)　・　[作業停止・退避 (1)](#tag-situation-174)　・　[山道の情報共有 (1)](#tag-situation-175)　・　[山麓の宿への道案内 (1)](#tag-situation-176)　・　[仕送り (1)](#tag-situation-177)　・　[子どもの就学 (1)](#tag-situation-178)　・　[子どもの誕生・養育 (1)](#tag-situation-179)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-180)　・　[子への訃報 (1)](#tag-situation-181)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-182)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-183)　・　[思春期 (1)](#tag-situation-184)　・　[支援の受入れ (1)](#tag-situation-185)　・　[氏族養育 (1)](#tag-situation-186)　・　[資格取得後の求職 (1)](#tag-situation-187)　・　[飼育動物の世話 (1)](#tag-situation-188)　・　[次便待ち (1)](#tag-situation-189)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-190)　・　[自動発生イベント (1415)](#tag-situation-191)　・　[湿地地勢 (1)](#tag-situation-192)　・　[守秘と名簿 (1)](#tag-situation-193)　・　[種族差別 (2)](#tag-situation-194)　・　[種族差別後 (1)](#tag-situation-195)　・　[酒類の仕入れ帳 (1)](#tag-situation-196)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-197)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-198)　・　[授業担当者との接点 (1)](#tag-situation-199)　・　[収容・隔離中 (1)](#tag-situation-200)　・　[収容・隔離中の診療 (1)](#tag-situation-201)　・　[収容中 (4)](#tag-situation-202)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-203)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-204)　・　[就労中 (2)](#tag-situation-205)　・　[就労中の鉱夫 (1)](#tag-situation-206)　・　[住居差別 (1)](#tag-situation-207)　・　[住居差別後 (1)](#tag-situation-208)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-209)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-210)　・　[宿泊拒否 (1)](#tag-situation-211)　・　[宿泊拒否後 (1)](#tag-situation-212)　・　[出場・観戦・場外見物 (1)](#tag-situation-213)　・　[所持金による本文・選択肢 (1)](#tag-situation-214)　・　[小舞台 (1)](#tag-situation-215)　・　[少年・青年 (2)](#tag-situation-216)　・　[少年・青年・壮年 (3)](#tag-situation-217)　・　[消息不明者の生存確認 (1)](#tag-situation-218)　・　[症状進行中 (1)](#tag-situation-219)　・　[情報網の高い居住地 (1)](#tag-situation-220)　・　[条件付き本文 (210)](#tag-situation-221)　・　[職業課程の継続 (1)](#tag-situation-222)　・　[職業課程の修了 (1)](#tag-situation-223)　・　[職業条件あり (71)](#tag-situation-224)　・　[職場・近隣で露見の兆し (1)](#tag-situation-225)　・　[職場の排斥 (1)](#tag-situation-226)　・　[食堂の客足 (1)](#tag-situation-227)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-228)　・　[食料不足 (1)](#tag-situation-229)　・　[森林地勢 (1)](#tag-situation-230)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-231)　・　[親の家計判断 (1)](#tag-situation-232)　・　[親の感染 (1)](#tag-situation-233)　・　[親の死後 (1)](#tag-situation-234)　・　[親子の記憶 (1)](#tag-situation-235)　・　[診断済み (1)](#tag-situation-236)　・　[診断済み・未治療 (1)](#tag-situation-237)　・　[診療・休養・記録から選択 (1)](#tag-situation-238)　・　[診療・作業調整 (1)](#tag-situation-239)　・　[診療・動作を避ける選択 (1)](#tag-situation-240)　・　[診療・付き添いの依頼 (1)](#tag-situation-241)　・　[診療・負担軽減から選択 (1)](#tag-situation-242)　・　[診療延期後 (1)](#tag-situation-243)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-244)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-245)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-246)　・　[身近な人への支援依頼 (1)](#tag-situation-247)　・　[身近な連絡先あり (1)](#tag-situation-248)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-249)　・　[睡眠不足 (1)](#tag-situation-250)　・　[世界イベント後 (1)](#tag-situation-251)　・　[成人 (4)](#tag-situation-252)　・　[成人・返済支援の選択 (1)](#tag-situation-253)　・　[成人した子 (2)](#tag-situation-254)　・　[成人の種族偏見に触れる (1)](#tag-situation-255)　・　[生活上の備え (1)](#tag-situation-256)　・　[青年・壮年 (5)](#tag-situation-257)　・　[青年・壮年・老年 (3)](#tag-situation-258)　・　[雪祭司・聖樹 (1)](#tag-situation-259)　・　[選択イベント (1019)](#tag-situation-260)　・　[前段で残留した人 (1)](#tag-situation-261)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-262)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-263)　・　[全年齢の循環器系エピソード (1)](#tag-situation-264)　・　[全年齢の食料不足 (1)](#tag-situation-265)　・　[全年齢の負傷後の痛み (1)](#tag-situation-266)　・　[組織・所属に言及 (175)](#tag-situation-267)　・　[組織離脱後 (1)](#tag-situation-268)　・　[相談・医療・休養 (1)](#tag-situation-269)　・　[相談・記録 (1)](#tag-situation-270)　・　[相談・記録・経路変更 (1)](#tag-situation-271)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-272)　・　[足場や荷の異常 (1)](#tag-situation-273)　・　[退会後の関係 (1)](#tag-situation-274)　・　[退職選択 (1)](#tag-situation-275)　・　[大いなる静謐後 (1)](#tag-situation-276)　・　[大学課程の継続 (1)](#tag-situation-277)　・　[大学課程の修了 (1)](#tag-situation-278)　・　[短期雇用 (1)](#tag-situation-279)　・　[短期雇用と現場危険 (1)](#tag-situation-280)　・　[地域の供給不安定 (1)](#tag-situation-281)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-282)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-283)　・　[地域学習会・独学の選択 (1)](#tag-situation-284)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-285)　・　[仲間の捜索 (1)](#tag-situation-286)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-287)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-288)　・　[通学していない (1)](#tag-situation-289)　・　[通学中 (1)](#tag-situation-290)　・　[通行止め・迂回 (1)](#tag-situation-291)　・　[天災・戦乱による避難中 (1)](#tag-situation-292)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-293)　・　[店舗からの排斥集会 (1)](#tag-situation-294)　・　[転居後の近隣交流 (1)](#tag-situation-295)　・　[都市街区での襲撃 (1)](#tag-situation-296)　・　[動的表示条件 (593)](#tag-situation-297)　・　[動的本文 (30)](#tag-situation-298)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-299)　・　[同一都市の周縁区への転居 (1)](#tag-situation-300)　・　[同郷者との交流 (1)](#tag-situation-301)　・　[同行者との交流 (1)](#tag-situation-302)　・　[匿名動画の出所確認 (1)](#tag-situation-303)　・　[独立商業所属 (1)](#tag-situation-304)　・　[読み書きに困難がある (1)](#tag-situation-305)　・　[日雇い (1)](#tag-situation-306)　・　[乳児の成長 (1)](#tag-situation-307)　・　[任意応募・採用選考 (1)](#tag-situation-308)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-309)　・　[年齢：35歳以上 (2)](#tag-situation-310)　・　[年齢：児童 (894)](#tag-situation-311)　・　[年齢：少年 (1121)](#tag-situation-312)　・　[年齢：青年 (2288)](#tag-situation-313)　・　[年齢：壮年 (2228)](#tag-situation-314)　・　[年齢：乳児 (15)](#tag-situation-315)　・　[年齢：幼児 (31)](#tag-situation-316)　・　[年齢：老年 (1432)](#tag-situation-317)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-318)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-319)　・　[配給・食料不足 (1)](#tag-situation-320)　・　[配給・寝床・診療案内 (1)](#tag-situation-321)　・　[配給と地域支援 (1)](#tag-situation-322)　・　[配給登録 (1)](#tag-situation-323)　・　[配偶者との死別 (1)](#tag-situation-324)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-325)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-326)　・　[班間の点検記録 (1)](#tag-situation-327)　・　[班内の技能伝達 (1)](#tag-situation-328)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-329)　・　[避難中 (1)](#tag-situation-330)　・　[非感染者 (1)](#tag-situation-331)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-332)　・　[付き添い依頼・受診延期 (1)](#tag-situation-333)　・　[付き添い相談 (1)](#tag-situation-334)　・　[扶養中の子 (2)](#tag-situation-335)　・　[扶養中の子の看病 (1)](#tag-situation-336)　・　[負傷後の職務調整 (1)](#tag-situation-337)　・　[部品寸法 (1)](#tag-situation-338)　・　[復旧作業中の負傷 (1)](#tag-situation-339)　・　[粉塵への接触懸念 (1)](#tag-situation-340)　・　[粉塵曝露 (2)](#tag-situation-341)　・　[兵士の消息不明 (1)](#tag-situation-342)　・　[兵役招集 (1)](#tag-situation-343)　・　[別居・転居 (1)](#tag-situation-344)　・　[亡命・移住 (2)](#tag-situation-345)　・　[未診断の感染者 (1)](#tag-situation-346)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-347)　・　[未成年は養育者判断 (8)](#tag-situation-348)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-349)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-350)　・　[名前を知る相手 (1)](#tag-situation-351)　・　[夜間の世話 (1)](#tag-situation-352)　・　[友人との文通再開 (1)](#tag-situation-353)　・　[友人への恋心 (1)](#tag-situation-354)　・　[傭兵・護衛勤務 (1)](#tag-situation-355)　・　[傭兵隊の護衛契約 (1)](#tag-situation-356)　・　[傭兵隊の通過 (1)](#tag-situation-357)　・　[幼い子の養育 (1)](#tag-situation-358)　・　[用事の再開・再診 (1)](#tag-situation-359)　・　[養育者の視点 (1)](#tag-situation-360)　・　[離婚後の元配偶者の死 (1)](#tag-situation-361)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-362)　・　[離婚後の子育て・連絡 (1)](#tag-situation-363)　・　[龍門 (1)](#tag-situation-364)　・　[龍門の移動都市居住区 (1)](#tag-situation-365)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-366)　・　[龍門の商業街 (1)](#tag-situation-367)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-368)　・　[隣人との死別 (1)](#tag-situation-369)　・　[隣人との伝言再開 (1)](#tag-situation-370)　・　[隣人の消息不明 (1)](#tag-situation-371)　・　[隣人の生存確認 (1)](#tag-situation-372)　・　[連絡・休息の継続 (1)](#tag-situation-373)　・　[連絡先と家の用事の相談 (1)](#tag-situation-374)　・　[労務補償 (1)](#tag-situation-375)
 
 <a id="tag-situation-0"></a>
 ### 1072年以降は戦役後の導入文（1）
@@ -11644,7 +11650,7 @@
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 
 <a id="tag-situation-260"></a>
-### 選択イベント（1017）
+### 選択イベント（1019）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -12058,6 +12064,8 @@
 - [yakuza_collect](#event-yakuza_collect) — 龍門の裏通りを仕切る金融業者が、手下を連れて戸口に立ちはだかった。返済の期限はすでに過ぎている。突きつけられた借用書の数字を前に、今どう出るか迫られ…
 - [siracusa_credit_collection](#event-siracusa_credit_collection) — シラクーザのファミリーに雇われた会計役が、黒服の男を連れて食堂の席へ割り込んできた。返済期限はすでに過ぎている。静かな声で突きつけられた残額を前に、…
 - [columbia_credit_collection](#event-columbia_credit_collection) — 工業区の部品問屋から来た取立人が、用心棒を伴ってアパートの扉を叩いた。期限を過ぎたツケと借金の残額を突きつけられ、今払えるのかと詰め寄られた。
+- [education_case_review](#event-education_case_review) — 学校の案内と家の事情を確かめながら、今年の進路についてもう一度考えた。募集先の知らせが届いても、通い続ける算段と入学の手続は別に残っている。
+- [edu_lower_stage_site_review](#event-edu_lower_stage_site_review) — 初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。
 - [family_parent_crystal_dust](#event-family_parent_crystal_dust) — 鉱石病に苦しみながら息を引き取った親の遺品を片づけていた。着古した服の縫い目や使い込まれた道具には、黒く光る結晶の欠片と細かい粉がこびりついている。…
 - [family_child_crystal_exposure](#event-family_child_crystal_exposure) — 外から帰ってきた子どもが、「きれいな石を拾った」と黒く光る欠片を手のひらに乗せて見せてきた。近くの古い採掘跡から風で飛ばされてきた源石片らしい。子ど…
 - [family_child_exposure_followup](#event-family_child_exposure_followup) — （動的本文）
@@ -12983,7 +12991,7 @@
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
 <a id="tag-situation-297"></a>
-### 動的表示条件（591）
+### 動的表示条件（593）
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
@@ -13123,6 +13131,8 @@
 - [education_graduation_review](#event-education_graduation_review) — 卒業に必要な単位と実技の評価がわずかに足りなかった。先生を前にして、もう一年残って学び直すか、このまま学校を去るか問われた。
 - [siracusa_credit_collection](#event-siracusa_credit_collection) — シラクーザのファミリーに雇われた会計役が、黒服の男を連れて食堂の席へ割り込んできた。返済期限はすでに過ぎている。静かな声で突きつけられた残額を前に、…
 - [columbia_credit_collection](#event-columbia_credit_collection) — 工業区の部品問屋から来た取立人が、用心棒を伴ってアパートの扉を叩いた。期限を過ぎたツケと借金の残額を突きつけられ、今払えるのかと詰め寄られた。
+- [education_case_review](#event-education_case_review) — 学校の案内と家の事情を確かめながら、今年の進路についてもう一度考えた。募集先の知らせが届いても、通い続ける算段と入学の手続は別に残っている。
+- [edu_lower_stage_site_review](#event-edu_lower_stage_site_review) — 初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。
 - [kaz_knight_later_career_review](#event-kaz_knight_later_career_review) — 競技場の砂塵のなかで剣を振るい続けて、もう十年以上が過ぎた。どれだけ試合を重ねても、傷んだ武具の修理代や次の大会の登録料は自分の懐から出ていく。若い…
 - [life_chernobog_worksite_errand](#event-life_chernobog_worksite_errand) — 鉱山へ続く道の脇に立ち入り禁止の柵が次々と組まれ、重い幌をかけた荷車がひっきりなしに行き交うようになった。行きつけの食堂の壁に、その柵の手前まで板材…
 - [life_local_mutual_aid_review](#event-life_local_mutual_aid_review) — 共同ボイラーの燃料運びや水場の掃除が、いつの間にか真面目な数人ばかりに偏っていた。このままでは立ち行かなくなると、隣人たちを集めてこれからの回し方を…
@@ -13659,7 +13669,7 @@
 - [fam_care_followup](#event-fam_care_followup) — 親の世話を始めてから二年が過ぎた。{parentName}の通院や身の回りの手伝いはまだ終わらず、こちらの体や暮らしの予定にも疲れが溜まってきている…
 
 <a id="tag-situation-311"></a>
-### 年齢：児童（893）
+### 年齢：児童（894）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -14475,6 +14485,7 @@
 - [education_school_prejudice](#event-education_school_prejudice) — 教室であなたの生まれや血筋を知った生徒が、露骨に顔をしかめて同じ教本に触れようとしなくなった。教壇の先生もその空気には気づいていた。
 - [education_school_disclosure_review](#event-education_school_disclosure_review) — 鉱石病の診断を受けた。通院で休む日や体育・実習の配慮を頼むため、学校へ正直に病名を打ち明けるべきか迷った。
 - [neighbor_followup](#event-neighbor_followup) — 隣の{neighborName}が、湯気の立つ鉢を持って戸口を訪ねてきた。引っ越してきた日にこちらが差し入れた食べ物を覚えていて、「今日はお裾分けだ…
+- [edu_lower_stage_site_review](#event-edu_lower_stage_site_review) — 初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。
 - [family_parent_crystal_dust](#event-family_parent_crystal_dust) — 鉱石病に苦しみながら息を引き取った親の遺品を片づけていた。着古した服の縫い目や使い込まれた道具には、黒く光る結晶の欠片と細かい粉がこびりついている。…
 - [infection_terror_crystal_shrapnel](#event-infection_terror_crystal_shrapnel) — 市場の片隅で耳をつんざく爆発音が轟き、吹き飛んだ荷車の積荷が石畳に散乱した。黒煙のなかに砕けた源石の破片が飛び散り、血を流す負傷者のうめき声と、爆弾…
 - [family_daily_small_care](#event-family_daily_small_care) — （動的本文） {dailyFamilyName}と帰ると、食卓には冷めかけた汁物があった。今日見たものを話しながら、二人で湯を足した。 {daily…
@@ -14555,7 +14566,7 @@
 - [v82_teacher_continuity](#event-v82_teacher_continuity) — 授業が終わって席を立とうとしたとき、以前から目をかけてくれている先生が「最近の課題はどうだ」と声をかけてくれた。一人では解けずに行き詰まっていた箇所…
 
 <a id="tag-situation-312"></a>
-### 年齢：少年（1120）
+### 年齢：少年（1121）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
@@ -15518,6 +15529,7 @@
 - [education_school_prejudice](#event-education_school_prejudice) — 教室であなたの生まれや血筋を知った生徒が、露骨に顔をしかめて同じ教本に触れようとしなくなった。教壇の先生もその空気には気づいていた。
 - [education_school_disclosure_review](#event-education_school_disclosure_review) — 鉱石病の診断を受けた。通院で休む日や体育・実習の配慮を頼むため、学校へ正直に病名を打ち明けるべきか迷った。
 - [neighbor_followup](#event-neighbor_followup) — 隣の{neighborName}が、湯気の立つ鉢を持って戸口を訪ねてきた。引っ越してきた日にこちらが差し入れた食べ物を覚えていて、「今日はお裾分けだ…
+- [edu_lower_stage_site_review](#event-edu_lower_stage_site_review) — 初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。
 - [family_parent_crystal_dust](#event-family_parent_crystal_dust) — 鉱石病に苦しみながら息を引き取った親の遺品を片づけていた。着古した服の縫い目や使い込まれた道具には、黒く光る結晶の欠片と細かい粉がこびりついている。…
 - [family_player_infection_reaction](#event-family_player_infection_reaction) — あなたが鉱石病だと打ち明けた家族は、黙って通院日や薬代の話に耳を傾けていた。あなたの身を案じているのか、それともこれから降りかかる負担に怯えているの…
 - [infection_terror_crystal_shrapnel](#event-infection_terror_crystal_shrapnel) — 市場の片隅で耳をつんざく爆発音が轟き、吹き飛んだ荷車の積荷が石畳に散乱した。黒煙のなかに砕けた源石の破片が飛び散り、血を流す負傷者のうめき声と、爆弾…
@@ -15678,7 +15690,7 @@
 - [v82_teacher_continuity](#event-v82_teacher_continuity) — 授業が終わって席を立とうとしたとき、以前から目をかけてくれている先生が「最近の課題はどうだ」と声をかけてくれた。一人では解けずに行き詰まっていた箇所…
 
 <a id="tag-situation-313"></a>
-### 年齢：青年（2287）
+### 年齢：青年（2288）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -17303,6 +17315,7 @@
 - [siracusa_credit_collection](#event-siracusa_credit_collection) — シラクーザのファミリーに雇われた会計役が、黒服の男を連れて食堂の席へ割り込んできた。返済期限はすでに過ぎている。静かな声で突きつけられた残額を前に、…
 - [columbia_credit_collection](#event-columbia_credit_collection) — 工業区の部品問屋から来た取立人が、用心棒を伴ってアパートの扉を叩いた。期限を過ぎたツケと借金の残額を突きつけられ、今払えるのかと詰め寄られた。
 - [neighbor_followup](#event-neighbor_followup) — 隣の{neighborName}が、湯気の立つ鉢を持って戸口を訪ねてきた。引っ越してきた日にこちらが差し入れた食べ物を覚えていて、「今日はお裾分けだ…
+- [edu_lower_stage_site_review](#event-edu_lower_stage_site_review) — 初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。
 - [family_parent_crystal_dust](#event-family_parent_crystal_dust) — 鉱石病に苦しみながら息を引き取った親の遺品を片づけていた。着古した服の縫い目や使い込まれた道具には、黒く光る結晶の欠片と細かい粉がこびりついている。…
 - [family_child_crystal_exposure](#event-family_child_crystal_exposure) — 外から帰ってきた子どもが、「きれいな石を拾った」と黒く光る欠片を手のひらに乗せて見せてきた。近くの古い採掘跡から風で飛ばされてきた源石片らしい。子ど…
 - [family_child_exposure_followup](#event-family_child_exposure_followup) — （動的本文）
@@ -17968,7 +17981,7 @@
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
 
 <a id="tag-situation-314"></a>
-### 年齢：壮年（2227）
+### 年齢：壮年（2228）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -19544,6 +19557,7 @@
 - [siracusa_credit_collection](#event-siracusa_credit_collection) — シラクーザのファミリーに雇われた会計役が、黒服の男を連れて食堂の席へ割り込んできた。返済期限はすでに過ぎている。静かな声で突きつけられた残額を前に、…
 - [columbia_credit_collection](#event-columbia_credit_collection) — 工業区の部品問屋から来た取立人が、用心棒を伴ってアパートの扉を叩いた。期限を過ぎたツケと借金の残額を突きつけられ、今払えるのかと詰め寄られた。
 - [neighbor_followup](#event-neighbor_followup) — 隣の{neighborName}が、湯気の立つ鉢を持って戸口を訪ねてきた。引っ越してきた日にこちらが差し入れた食べ物を覚えていて、「今日はお裾分けだ…
+- [edu_lower_stage_site_review](#event-edu_lower_stage_site_review) — 初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。
 - [family_parent_crystal_dust](#event-family_parent_crystal_dust) — 鉱石病に苦しみながら息を引き取った親の遺品を片づけていた。着古した服の縫い目や使い込まれた道具には、黒く光る結晶の欠片と細かい粉がこびりついている。…
 - [family_child_crystal_exposure](#event-family_child_crystal_exposure) — 外から帰ってきた子どもが、「きれいな石を拾った」と黒く光る欠片を手のひらに乗せて見せてきた。近くの古い採掘跡から風で飛ばされてきた源石片らしい。子ど…
 - [family_child_exposure_followup](#event-family_child_exposure_followup) — （動的本文）
@@ -22235,9 +22249,9 @@
 ```json
 {
   "en": {
-    "dynamicFunction": "s => educationCanEnter(s,\"primary\").allowed"
+    "dynamicFunction": "s => !educationActiveCase(s)"
   },
-  "why": "通える学校や空き枠がないか、学費や感染者への扱いなどの条件を満たせない",
+  "why": "今年の進路相談がすでに進んでいる",
   "pw": [
     1,
     {
@@ -22255,7 +22269,7 @@
 
 - **結果 1（設定確率 100%）**
 
-> 「学校へ行きたい」と家の人に伝え、初等学校へ入学の申し込みを出してもらった。無事に机を並べられるかどうかは、学校の空き枠や世間の目にも左右される。
+> 「学校へ行きたい」と家の人に伝えた。家の人と近くの募集案内を確かめ、どの学び舎へ通えるか相談することにした。
 
 効果：
 
@@ -22263,7 +22277,7 @@
 {
   "k": 1,
   "rl": 4,
-  "educationAction": "primary"
+  "educationAction": "case:begin:primary:primary:1"
 }
 ```
 
@@ -22272,14 +22286,14 @@
 #### 選択肢 2
 
 <a id="choice-sch-1"></a>
-選択肢文：学校に受け入れられない理由を確認する
+選択肢文：家の人と近隣の募集案内を探す
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "show": {
-    "dynamicFunction": "s=>!educationBarrier(s,\"primary\").allowed"
+    "dynamicFunction": "s=>!educationActiveCase(s)"
   }
 }
 ```
@@ -22291,14 +22305,14 @@
 
 - **結果 1（設定確率 100%）**
 
-> 学校の門は閉ざされ、入学は断られた。どうして教室へ入れないのか、家の人と悔しさを噛みしめながらその理由を確かめた。
+> 学校に入れるかは、まだ分からない。家の人に頼んで、近くにある学び舎の募集案内を一緒に調べた。
 
 効果：
 
 ```json
 {
-  "educationAction": "denied-primary",
-  "p": -2
+  "educationAction": "case:begin:primary:primary:1",
+  "p": 1
 }
 ```
 
@@ -22338,7 +22352,7 @@
 {
   "k": 3,
   "p": -3,
-  "educationAction": "decline-primary"
+  "educationAction": "case:decline:primary"
 }
 ```
 
@@ -167549,7 +167563,8 @@ s => {
     "dynamicFunction": "s => s.educationDecision?.kind === \"higher-path\" || (\n        (educationHas(s, \"upper\") || !!s.educationPath?.equivalency?.includes(\"upper\")) &&\n        !educationLive(s) && !s.study && s.age >= 18 && !s.educationDecision\n      )"
   },
   "pri": true,
-  "w": 1
+  "w": 1,
+  "cd": 1
 }
 ```
 
@@ -167567,14 +167582,14 @@ s => {
 #### 選択肢 1
 
 <a id="choice-higher_ed-0"></a>
-選択肢文：地域大学の入学試験を受ける
+選択肢文：地域大学の募集先を探す
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "en": {
-    "dynamicFunction": "s=>educationExam(s,\"university\",1).allowed"
+    "dynamicFunction": "s=>!educationActiveCase(s)"
   },
   "why": "後期中等修了・入学資金・学校の受入要件が必要"
 }
@@ -167587,13 +167602,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 地域の大学へ願書を出し、試験会場の机に向かった。これまでの積み重ねがどこまで通じるか、静かな緊張の中でペンを走らせた。
+> 地域の大学へ進みたいと考え、実際に募集している課程と通学方法を調べ始めた。
 
 効果：
 
 ```json
 {
-  "educationAction": "apply:university:1"
+  "educationAction": "case:begin:higher-path:university:1"
 }
 ```
 
@@ -167602,14 +167617,14 @@ s => {
 #### 選択肢 2
 
 <a id="choice-higher_ed-1"></a>
-選択肢文：選抜大学の入学試験を受ける
+選択肢文：選抜大学の募集先を調べる
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "en": {
-    "dynamicFunction": "s=>educationExam(s,\"university\",2).allowed"
+    "dynamicFunction": "s=>!educationActiveCase(s)"
   },
   "why": "進学資格・受験費用・学校の受入要件が必要"
 }
@@ -167622,13 +167637,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 各地から秀才が集まる選抜大学で試験に臨んだ。ひねりの効いた難問を前に、これまで読み込んだ知識を必死にたぐり寄せた。
+> 選抜の厳しい大学について、募集先と出願資格を調べた。試験を受けるかは、確かめた条件を見て決める。
 
 効果：
 
 ```json
 {
-  "educationAction": "apply:university:2"
+  "educationAction": "case:begin:higher-path:university:2"
 }
 ```
 
@@ -167637,14 +167652,14 @@ s => {
 #### 選択肢 3
 
 <a id="choice-higher_ed-2"></a>
-選択肢文：最高水準の大学へ挑戦する
+選択肢文：高度な大学課程の募集を調べる
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "en": {
-    "dynamicFunction": "s=>educationExam(s,\"university\",3).allowed"
+    "dynamicFunction": "s=>!educationActiveCase(s)"
   },
   "why": "進学資格・高額な学費・学校の受入要件が必要"
 }
@@ -167657,13 +167672,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 名だたる難関大学の荘厳な試験会場へ足を踏み入れた。ごくわずかな合格枠をめぐり、張り詰めた空気の中で最後の設問まで食らいついた。
+> 高度な大学課程への進学を望み、出願先と試験の条件を調べた。実際に受験できる場所はまだ決まっていない。
 
 効果：
 
 ```json
 {
-  "educationAction": "apply:university:3"
+  "educationAction": "case:begin:higher-path:university:3"
 }
 ```
 
@@ -167672,14 +167687,14 @@ s => {
 #### 選択肢 4
 
 <a id="choice-higher_ed-3"></a>
-選択肢文：地域の技術専門校を受験する
+選択肢文：技術専門課程の募集を調べる
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "en": {
-    "dynamicFunction": "s=>educationExam(s,\"vocational\",1).allowed"
+    "dynamicFunction": "s=>!educationActiveCase(s)"
   },
   "why": "中等課程修了か同等資格と実習・授業料が必要"
 }
@@ -167692,13 +167707,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 地域の技術専門校で選考を受けた。機械油の匂いが染みついた実習場で、工具の扱いと基礎計算を確かめられた。
+> 手仕事を学べる技術専門課程を探すことにした。実習設備と受入条件を調べ、通える学校を選ぼうと考えた。
 
 効果：
 
 ```json
 {
-  "educationAction": "apply:vocational:1"
+  "educationAction": "case:begin:higher-path:vocational:1"
 }
 ```
 
@@ -167707,14 +167722,14 @@ s => {
 #### 選択肢 5
 
 <a id="choice-higher_ed-4"></a>
-選択肢文：上級技術専門校を受験する
+選択肢文：高度な技術専門課程を探す
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "en": {
-    "dynamicFunction": "s=>educationExam(s,\"vocational\",2).allowed"
+    "dynamicFunction": "s=>!educationActiveCase(s)"
   },
   "why": "中等課程修了か同等資格と実習・授業料が必要"
 }
@@ -167727,13 +167742,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 上級技術専門校の実技と筆記試験に挑んだ。厳しい目つきの試験官から、手を動かす手順だけでなくその裏付けまで鋭く問われた。
+> 高度な実習を行う学校について、募集課程と受入条件を調べた。まだ試験の結果は出ていない。
 
 効果：
 
 ```json
 {
-  "educationAction": "apply:vocational:2"
+  "educationAction": "case:begin:higher-path:vocational:2"
 }
 ```
 
@@ -167742,14 +167757,14 @@ s => {
 #### 選択肢 6
 
 <a id="choice-higher_ed-5"></a>
-選択肢文：アーツ実技を扱う専門学院を受験する
+選択肢文：アーツ専門学院の募集を調べる
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "en": {
-    "dynamicFunction": "s=>educationExam(s,\"arts\",1).allowed"
+    "dynamicFunction": "s=>!educationActiveCase(s)"
   },
   "why": "中等修了・学費・学校の受入要件が必要"
 }
@@ -167762,13 +167777,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> アーツの制御と触媒器具の安全な扱いについて、専門学院の実技選抜を受けた。
+> アーツの制御や器具を扱う学院で学びたいと考え、募集案内を探した。
 
 効果：
 
 ```json
 {
-  "educationAction": "apply:arts:1"
+  "educationAction": "case:begin:higher-path:arts:1"
 }
 ```
 
@@ -167777,14 +167792,14 @@ s => {
 #### 選択肢 7
 
 <a id="choice-higher_ed-6"></a>
-選択肢文：高度なアーツ学院へ挑戦する
+選択肢文：高度なアーツ学院の募集を調べる
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "en": {
-    "dynamicFunction": "s=>educationExam(s,\"arts\",3).allowed"
+    "dynamicFunction": "s=>!educationActiveCase(s)"
   },
   "why": "中等修了・相当の学費・学院の受入要件が必要"
 }
@@ -167797,13 +167812,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 最先端のアーツ研究を行う名門学院で選考に臨んだ。熟練の術師でも額に汗を浮かべるような高度な制御課題を課された。
+> 高度なアーツ課程への進学を望み、実際の募集先と出願資格を確かめることにした。
 
 効果：
 
 ```json
 {
-  "educationAction": "apply:arts:3"
+  "educationAction": "case:begin:higher-path:arts:3"
 }
 ```
 
@@ -167837,7 +167852,7 @@ s => {
 
 ```json
 {
-  "educationAction": "leave-higher",
+  "educationAction": "case:decline:higher-path",
   "p": 1
 }
 ```
@@ -167936,9 +167951,9 @@ s => {
 ```json
 {
   "en": {
-    "dynamicFunction": "s=>educationCanEnter(s,\"upper\").allowed"
+    "dynamicFunction": "s=>!educationActiveCase(s)"
   },
-  "why": "通学先の受入れまたは授業料の負担が難しい"
+  "why": "先に今年の進路案件を整理する必要がある"
 }
 ```
 
@@ -167949,13 +167964,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 上の課程への進学を願い出て願書を出した。学費の工面と学校の受け入れ結果を胸を突かれる思いで待つ。
+> 上の課程で学びたいと家族に話した。どの学校で募集があるか、通い道と費用を一つずつ調べ始めた。
 
 効果：
 
 ```json
 {
-  "educationAction": "enter-upper"
+  "educationAction": "case:begin:upper-path:upper:1"
 }
 ```
 
@@ -167973,13 +167988,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 家族と話し合い、学生生活にきっぱり区切りをつけて仕事や見習いの口を探し始めた。
+> 家族と話し合い、今期の進学は見送り、仕事や見習いの口を探すことにした。
 
 効果：
 
 ```json
 {
-  "educationAction": "leave-secondary"
+  "educationAction": "case:decline:upper-path"
 }
 ```
 
@@ -167997,13 +168012,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> まずは働きに出て暮らしを立て、余裕ができたら夜学や資格試験で学び直す道を選んだ。
+> 今期の進学は見送り、余裕ができれば学び直す道を残すことにした。
 
 効果：
 
 ```json
 {
-  "educationAction": "leave-secondary"
+  "educationAction": "case:decline:upper-path"
 }
 ```
 
@@ -170826,6 +170841,541 @@ s => {
 ```
 
 旧シム観測回数：112
+
+
+<a id="event-education_case_review"></a>
+## education_case_review
+
+- 出典位置：data/base/confinement-and-education.js:1219
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 学校の案内と家の事情を確かめながら、今年の進路についてもう一度考えた。募集先の知らせが届いても、通い続ける算段と入学の手続は別に残っている。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "education_case_review",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "ge": {
+    "age": 6
+  },
+  "cd": 0,
+  "pri": true,
+  "who": "self",
+  "inConfinement": true,
+  "show": {
+    "dynamicFunction": "s=>educationCaseNeedsReview(s)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-education_case_review-0"></a>
+選択肢文：確認した第一候補へ申し込む
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"planning\" && !!educationCaseCandidate(s,0)"
+  },
+  "en": {
+    "dynamicFunction": "s=>educationCasePreflight(s,educationCaseCandidate(s,0)).allowed"
+  },
+  "why": "この募集先の応募資格、交通、保護者または受験費用の条件が整っていない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 確認した募集先に、進学の意思を伝えて選考を申し込んだ。学校からの返事を待つことになった。
+
+効果：
+
+```json
+{
+  "educationAction": "case:select:0"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-education_case_review-1"></a>
+選択肢文：確認した第二候補へ申し込む
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"planning\" && !!educationCaseCandidate(s,1)"
+  },
+  "en": {
+    "dynamicFunction": "s=>educationCasePreflight(s,educationCaseCandidate(s,1)).allowed"
+  },
+  "why": "この募集先の応募資格、交通、保護者または受験費用の条件が整っていない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 別の地区で確認した募集先へ願書を出した。どこで学ぶかは、まだ受入れの返事によって変わりうる。
+
+効果：
+
+```json
+{
+  "educationAction": "case:select:1"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-education_case_review-2"></a>
+選択肢文：確認した第三候補へ申し込む
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"planning\" && !!educationCaseCandidate(s,2)"
+  },
+  "en": {
+    "dynamicFunction": "s=>educationCasePreflight(s,educationCaseCandidate(s,2)).allowed"
+  },
+  "why": "この募集先の応募資格、交通、保護者または受験費用の条件が整っていない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 調べた中のもう一つの募集先を選び、申込みの手続を始めた。
+
+効果：
+
+```json
+{
+  "educationAction": "case:select:2"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 4
+
+<a id="choice-education_case_review-3"></a>
+選択肢文：隣の地区の募集先も調べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"planning\" &&\n          educationActiveCase(s).stepsUsed<2 &&\n          educationNeighborAreaIds(s,s.local?.educationAreaId).length>0"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-3-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 近くの地区まで足を延ばし、募集案内のある学校を一つずつ訪ねて回った。探した範囲と時期を記録した。
+
+効果：
+
+```json
+{
+  "educationAction": "case:search-adjacent"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 5
+
+<a id="choice-education_case_review-4"></a>
+選択肢文：学校外で読み書きや手仕事を学ぶ
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"planning\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-4-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 今年は学校へ通う手続を置き、家や仕事場で学べることから始めると決めた。学校の免状を得たことにはならない。
+
+効果：
+
+```json
+{
+  "educationAction": "case:nonformal",
+  "k": 2
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 6
+
+<a id="choice-education_case_review-5"></a>
+選択肢文：今年の進学は見送る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"planning\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-5-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 調べた学校の案内を手元に残し、今年は申込みをしないことにした。また考える余地は残してある。
+
+効果：
+
+```json
+{
+  "educationAction": "case:defer"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 7
+
+<a id="choice-education_case_review-6"></a>
+選択肢文：入学の条件を確かめて正式に手続する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"contract\""
+  },
+  "en": {
+    "dynamicFunction": "s=>educationCaseCommitEligibility(s).allowed"
+  },
+  "why": "受入通知、校地、通学手段または入学時の費用を整えられていない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-6-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 合格の知らせを受けて、学費と通学の手続きをそろえた。入学の届けを出し、学校で学ぶ暮らしが始まる。
+
+効果：
+
+```json
+{
+  "educationAction": "case:commit"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 8
+
+<a id="choice-education_case_review-7"></a>
+選択肢文：合格・受入後の入学を辞退する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"contract\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-7-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 受け入れるという学校の返事を手元に残し、今回は入学を見送った。受験をした事実は消えない。
+
+効果：
+
+```json
+{
+  "educationAction": "case:decline-offer"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 9
+
+<a id="choice-education_case_review-8"></a>
+選択肢文：元の学籍の継続について相談する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"continuity\""
+  },
+  "en": {
+    "dynamicFunction": "s=>educationOccupied(s)"
+  },
+  "why": "継続できる学籍が残っていない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-8-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 学校の窓口に現在の学籍を照会し、今年の扱いを確認した。
+
+効果：
+
+```json
+{
+  "educationAction": "case:keep-current"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 10
+
+<a id="choice-education_case_review-9"></a>
+選択肢文：在籍中の課程をいったん休む
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"continuity\"&&educationLive(s)"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-9-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 学びを続けるための時間を得ようと、学校に休学の意思を伝えた。
+
+効果：
+
+```json
+{
+  "educationAction": "case:pause"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 11
+
+<a id="choice-education_case_review-10"></a>
+選択肢文：いったん退学して別の学び方を考える
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"continuity\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-10-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> これまでの履修記録を残し、今の学校を離れる判断を下した。
+
+効果：
+
+```json
+{
+  "educationAction": "case:withdraw"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_lower_stage_site_review"></a>
+## edu_lower_stage_site_review
+
+- 出典位置：data/base/confinement-and-education.js:1283
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_lower_stage_site_review",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年"
+  ],
+  "pri": true,
+  "who": "self",
+  "cd": 0,
+  "show": {
+    "dynamicFunction": "s=>s.educationDecision?.kind===\"lower-path\" &&\n      !educationActiveCase(s)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_lower_stage_site_review-0"></a>
+選択肢文：前期中等課程の募集先を調べる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_lower_stage_site_review-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 次の課程で学びたいと伝え、通える範囲にある学校の案内を確かめ始めた。
+
+効果：
+
+```json
+{
+  "educationAction": "case:begin:lower-path:lower:1"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_lower_stage_site_review-1"></a>
+選択肢文：今年は別の学び方を探す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_lower_stage_site_review-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 初等の修了記録は手元に残した。今すぐ次の学校へは進まず、家や仕事場で学ぶ道を考えた。
+
+効果：
+
+```json
+{
+  "educationAction": "case:decline:lower-path"
+}
+```
+
+旧シム観測回数：未計測
 
 
 <a id="event-attitude_infected_child"></a>
