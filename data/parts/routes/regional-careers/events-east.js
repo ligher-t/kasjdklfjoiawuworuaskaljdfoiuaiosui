@@ -16,7 +16,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "炎国" && s.job === $terraData.REG_JOBS.yan_court,
+      show: s => s.res?.n === "炎国" && $terraData.regionalCareerOnDuty(s, "yan_court"),
       t: "州府の公堂で、山積みになった治水工事の進捗報告と戸籍の改定記録に朱筆を走らせた。数字のわずかな不整合を洗い出し、下級書吏に再調査を命じる。平穏な民の暮らしは、こうした地道な墨の跡によって保たれている。",
       c: [
         $terraData.K("淡々と公務をこなし、定刻に退庁する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -33,7 +33,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "炎国" && s.job === $terraData.REG_JOBS.yan_court,
+      show: s => s.res?.n === "炎国" && $terraData.regionalCareerOnDuty(s, "yan_court"),
       t: "管轄下の穀倉地帯を巡視中、地方の有力豪族から私邸に招かれた。豪奢な酒宴の席で、豪族は帳簿の免税措置を願い出て、袖の下から眩い金の延べ棒を差し出してきた。三省の監査が入れば一族巻き添えの重罪になりかねないが、目の前の富はあまりに甘い。",
       c: [
         $terraData.K("賄賂を突き返し、即座に大理寺へ告発状を送る", { ethics: { reviewed: true, policyVersion: 87, intent: "whistleblowing" } }, [
@@ -67,7 +67,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "炎国" && s.job === $terraData.REG_JOBS.yan_suis,
+      show: s => s.res?.n === "炎国" && $terraData.regionalCareerOnDuty(s, "yan_suis"),
       t: "人里離れた山頂の観測所で、司歳台の特殊計器が刻む地脈の波形を点検した。千年前の巨獣狩り以来、眠りにつく『歳』の気配に異常はないか。冷たい山風の中で杯の湯気を眺めながら、国家の安寧を確かめる。",
       c: [
         $terraData.K("観測記録に封印を施し、本府へ転送する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -84,7 +84,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 23 },
-      show: s => s.res?.n === "炎国" && s.job === $terraData.REG_JOBS.yan_suis,
+      show: s => s.res?.n === "炎国" && $terraData.regionalCareerOnDuty(s, "yan_suis"),
       t: "辺境の荒野で、歳獣の微細な破片が活性化し、周囲の天候を歪めながら暴走していた。近隣の集落が呑み込まれる寸前である。司歳台の監察官として、自らの命を削って封印術式を発動するか、本隊の増援を待つか。",
       c: [
         $terraData.K("単身で封印陣を展開し、巨獣の影を鎮める", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -118,7 +118,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "龍門" && s.job === $terraData.REG_JOBS.lmd_guard,
+      show: s => s.res?.n === "龍門" && $terraData.regionalCareerOnDuty(s, "lmd_guard"),
       t: "ネオン瞬く龍門の中央通りから、薄暗い下層水路へと巡回車を走らせた。違法な源石製品の密輸取引現場を押さえ、抵抗するチンピラを警棒で制圧する。近衛局のバッジを磨き直し、夜警の詰め所へ戻った。",
       c: [
         $terraData.K("日報を提出し、夜食のワンタン麺をすする", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -135,7 +135,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 21 },
-      show: s => s.res?.n === "龍門" && s.job === $terraData.REG_JOBS.lmd_guard,
+      show: s => s.res?.n === "龍門" && $terraData.regionalCareerOnDuty(s, "lmd_guard"),
       t: "近衛局通信から緊急入電。スラム街の廃ビルに武装組織の潜伏拠点が特定された。銃火器で武装した敵に対し、先頭を切って突入するか、催涙弾を撃ち込んで持久戦に持ち込むか。",
       c: [
         $terraData.K("防弾盾を構え、先頭でドアを蹴破る", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -169,7 +169,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "龍門" && s.job === $terraData.REG_JOBS.lmd_black,
+      show: s => s.res?.n === "龍門" && $terraData.regionalCareerOnDuty(s, "lmd_black"),
       t: "近衛局の目が届かぬ高架下の暗がりで、客と無言の取引を交わした。偽造身分証の引き渡し、出入国コードの売買。手渡された札束の厚みを指先で確かめ、路地の影へと溶け込む。",
       c: [
         $terraData.K("稼ぎの一部を隠し金庫に収める", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -186,7 +186,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "龍門" && s.job === $terraData.REG_JOBS.lmd_black,
+      show: s => s.res?.n === "龍門" && $terraData.regionalCareerOnDuty(s, "lmd_black"),
       t: "見知らぬ大物から、近衛局の極秘警備配置図を買い取りたいと破格の報酬が提示された。成功すれば数千万龍門幣の巨利だが、一歩間違えれば近衛局の特捜に踏み込まれるか、裏社会の消去対象にされる。",
       c: [
         $terraData.K("危険を冒して配置図を入手し、取引現場へ運ぶ", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -216,7 +216,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_samurai,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_samurai"),
       t: "朝靄の立ち込める道場で、息を整えながら居合の抜き付けを繰り返した。白鞘から放たれる鋼の冷たい光。稽古の後、丁字油で刀身を拭い、主君の警固当番へ向かう。武士としての節度と誇りが身に沁みつく。",
       c: [
         $terraData.K("背筋を伸ばし、御殿の門番を務める", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -233,7 +233,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_samurai,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_samurai"),
       t: "北朝と南朝の軍勢が川を挟んで対峙する合戦場。敵陣から名うての剛の者が馬を進め、大音声で一騎打ちを呼びかけてきた。主君の御前で名乗りを上げ、武士の誉れを懸けて立ち会うか。",
       c: [
         $terraData.K("太刀を抜き、名乗りを上げて一騎打ちに応じる", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -267,7 +267,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_ninja,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_ninja"),
       t: "敵城の梁の上に息を潜め、数刻にわたり身じろぎ一つせず下の密談を聞き耳を立てた。手裏剣の刃に塗り直した痺れ薬の匂い。夜明け前に城壁を縄で滑り降り、頭領への報告書を暗号で認める。",
       c: [
         $terraData.K("気配を消して路地裏の隠れ処へ潜む", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -284,7 +284,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 5,
       w: 0.4,
       ge: { age: 22 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_ninja && !s.fl?.nukenin,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_ninja") && !s.fl?.nukenin,
       t: "頭領から下された新たな指令――それは無実の幼子を抹殺し、自らも証拠隠滅のために毒を仰げという冷酷なものだった。忍びの掟に従い命を捨てるか、それとも里を裏切り、生涯追手と戦い続ける『抜け忍』となるか。",
       c: [
         $terraData.K("巻物を焼き捨て、里から脱走して『抜け忍』となる", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
@@ -314,7 +314,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_cyber,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_cyber"),
       t: "防音シェルターの暗室で、頭部インターフェースを通じて極東全土の光ファイバー網へ意識を接続した。他国の情報機関が仕掛けてくるクラッキングパケットをミリ秒単位で相殺し、国家基幹システムを防衛する。電脳空間の闇で息づく日常である。",
       c: [
         $terraData.K("ログを消去し、神経接続を解除する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -331,7 +331,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_cyber,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_cyber"),
       t: "国家上層部から最重要指令。クルビアの巨大企業が極東の軍事通信を盗聴している疑いがある。その中枢サーバーへ電子侵入し、盗聴プログラムを無力化せよ。失敗すれば相手の防諜迎撃により端末のアーツユニットが暴走臨界を起こす極限の情報戦である。",
       c: [
         $terraData.K("最高強度の自作ウイルスを展開し、中枢へ突入する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -365,7 +365,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_shinto,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_shinto"),
       t: "朝露の残る神社の石段を竹箒で掃き清め、本堂の蝋燭に火を灯した。病や天災に怯える信徒たちが訪れ、鉱石病の平癒を祈願する。鈴の音を響かせ、真摯に祓いの詞を奏上する。人々の安寧を祈る静かな一日である。",
       c: [
         $terraData.K("信徒たちに供物の茶を振る舞う", { ethics: { reviewed: true, policyVersion: 87, intent: "self-or-family-care" } }, [
@@ -386,7 +386,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_touhou,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_touhou"),
       t: "東方重工の工場内で、最新鋭の旋盤から削り出された手裏剣『シルバーウィンド』同型刃の寸法と硬度を測定した。特殊合金の焼き入れムラがないか、顕微鏡で結晶構造を検査する。大量生産であっても、一撃の切れ味に一切の妥協は許されない。",
       c: [
         $terraData.K("検査合格印を押し、梱包ラインへ送る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
