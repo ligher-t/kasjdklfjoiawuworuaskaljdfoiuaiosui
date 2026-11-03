@@ -1,4 +1,4 @@
-name: Temporary Zelgrad settlement and exclusion re-suspension
+name: Temporary reviewed Zelgrad settlement and exclusion re-suspension
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
