@@ -215,6 +215,8 @@ function applyResidenceEffects(e, routeReserve, s, fromRegion, fundsBeforeEffect
     if (e.fl.insured === 0) s.insurancePaidYear = null;
   }
   if (e.res || e.home || e.returnToLocality) {
+    ensureResidenceIdentity(s);
+    ensureEducationWorldForResidence(s);
     if (s.fl?.infection_community_rumor_current_area) s.fl.infection_community_rumor_current_area = 0;
     if (s.fl?.infection_housing_rumor_current_home) s.fl.infection_housing_rumor_current_home = 0;
   }

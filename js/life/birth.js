@@ -354,6 +354,7 @@ function born(birth = {}) {
     sourceFingerprintAtBirth: SOURCE_FINGERPRINT
   });
   ensureLocalityState(S);
+  ensureEducationWorldForResidence(S);
   ensureIdentity(S, {
     // 公式の民族人口比ではない。地域の家の伝承を独立抽選し、種族では確定させない。
     affiliation:

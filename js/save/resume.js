@@ -7,6 +7,8 @@ function cont(savedInput = null) {
     replaceWorldKnowledge(snapshot.W);
     S.known = W;
     restoreLifeRandom(S);
+    ensureResidenceIdentity(S);
+    ensureEducationWorldForResidence(S);
     acc = snapshot.acc;
     sp = snapshot.sp;
     AU = snapshot.AU;

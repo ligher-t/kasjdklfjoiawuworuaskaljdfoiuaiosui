@@ -3,6 +3,7 @@ function advanceAnnualCalendar(s, services) {
   s.year++;
   s.mo = 0;
   services.ensureLocalityState(s);
+  ensureEducationWorldForResidence(s);
   const areaChange = s.community.history.find(
     entry =>
       entry.year === s.year &&
