@@ -1,4 +1,5 @@
 // P07: canonical invoice/receipt ledger. All rates are simulation assumptions.
+function educationFinanceClone(value) {return JSON.parse(JSON.stringify(value));}
 const EDUCATION_FINANCE_KINDS = Object.freeze([
   "entrance-exam","application-document","entrance-deposit","tuition",
   "school-materials","entrance-trip","commute-pass","boarding-room",
@@ -144,7 +145,7 @@ function educationEnsureInvoice(s,input) {
     lines:lines.map(row=>({...row})),
     gross:amount,discountTotal:discount,net:amount-discount,
     paid:0,refunded:0,outstanding:amount-discount,
-    status:"issued",refundStatus:"none",receiptIds:[],refundIds:[],
+    status:amount-discount===0?"paid":"issued",refundStatus:"none",receiptIds:[],refundIds:[],
     policyId:input.policyId||"game-model-school-standard-v1",
     priceRegion:input.priceRegion||null,priceIndexAtIssue:input.priceIndexAtIssue??null
   };
@@ -228,7 +229,7 @@ function educationCommitSettlement(s,plan) {
   if(plan.grant && f.grants[plan.grant.id])return null;
   if(plan.parts.reduce((n,x)=>n+x.amount,0)!==plan.outstanding)return null;
   const before={cash:s.cash,houseCash:s.house?.cash,debt:s.debt,
-    contracts:structuredClone(s.loanContracts||[]),finance:structuredClone(f)};
+    contracts:educationFinanceClone(s.loanContracts||[]),finance:educationFinanceClone(f)};
   try {
     if(plan.loan?.amount){
       const amount=plan.loan.amount;
@@ -277,8 +278,26 @@ function educationCommitSettlement(s,plan) {
   }
 }
 function educationSettleInvoice(s,invoice,sources={}) {
+  if(invoice.net===0)return {id:invoice.id+":no-charge",invoiceId:invoice.id,
+    receiptIds:[],amount:0,status:"settled"};
   const plan=educationPlanSettlement(s,invoice.id,sources);
   return plan.allowed?educationCommitSettlement(s,plan):null;
+}
+function educationFinanceProjectInvoice(s,invoice) {
+  if(invoice?.kind!=="tuition")return;
+  const receipts=invoice.receiptIds.map(id=>s.educationFinance.receipts[id]);
+  const personal=receipts.filter(x=>x.source==="personal").reduce((n,x)=>n+x.amount,0),
+    household=receipts.filter(x=>x.source==="household").reduce((n,x)=>n+x.amount,0),
+    contract=receipts.filter(x=>x.source==="contract-loan").reduce((n,x)=>n+x.amount,0),
+    aid=receipts.filter(x=>x.source==="grant").reduce((n,x)=>n+x.amount,0);
+  const payer=contract?(personal+household?"mixed-contract":"contract"):
+    household?(personal?"mixed":"household"):"personal";
+  s.educationAnnualFee={year:invoice.serviceYear,
+    stage:s.educationPath?.stage||s.educationCases?.items?.[invoice.caseId]?.stage||null,
+    amount:invoice.net,payer,paidByPersonal:personal,paidByHousehold:household,
+    ...(aid?{aidAmount:aid,aidBasis:"game-model-approved-grant"}:{}),
+    ...(contract?{paidByContract:contract,contractId:receipts.find(x=>x.source==="contract-loan").sourceRef}:{}),
+    invoiceId:invoice.id};
 }
 function educationVoidInvoice(s,id,reason="service-not-provided") {
   const invoice=educationFinanceState(s).invoices[id];
@@ -337,7 +356,7 @@ function educationCommitRefund(s,plan) {
   for(const row of plan.parts) if(row.source==="contract-loan" &&
     loanContractBalance(s,row.sourceRef)<row.amount)return null;
   const before={cash:s.cash,house:s.house?.cash,debt:s.debt,
-    contracts:structuredClone(s.loanContracts||[]),finance:structuredClone(f)};
+    contracts:educationFinanceClone(s.loanContracts||[]),finance:educationFinanceClone(f)};
   try{
     for(const row of plan.parts){
       if(row.source==="personal")s.cash=(s.cash||0)+row.amount;
