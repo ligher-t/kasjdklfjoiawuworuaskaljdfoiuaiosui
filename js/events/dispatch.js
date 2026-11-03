@@ -141,6 +141,7 @@ function slot(x) {
   activateHistoricalWorldEvents(s);
   releasePendingHistoricalNews(s);
   reconcileCareerPlacements(s);
+  educationCaseReserveSlots(s);
   const T = tags(s),
     choiceAlreadyUsed = s.majorEventMonth?.year === s.year && s.majorEventMonth?.month === s.mo,
     eligible = EV.filter(e => HL ? elig(e, s, T, SIMULATION_ELIGIBILITY_OPTIONS) : elig(e, s, T)),
@@ -163,7 +164,8 @@ function slot(x) {
     for (const candidate of el) STAT.op[candidate.id] = (STAT.op[candidate.id] || 0) + 1;
   }
   // Unresolved schooling decisions outrank optional random events.
-  const requiredSchool = s.educationDecision?.kind === "primary" ? "sch" :
+  const requiredSchool = educationCaseNeedsReview(s) ? "education_case_review" :
+    s.educationDecision?.kind === "primary" ? "sch" :
     s.educationDecision?.kind === "upper-path" ? "education_upper_path" :
     s.educationDecision?.kind === "higher-path" ? "higher_ed" :
     s.educationDecision?.kind === "transfer" ? "education_transfer_review" :
@@ -538,7 +540,7 @@ function ask(e, T, t, before, resumed = false) {
   }
   s.evBefore = before || s.evBefore || null;
   rd();
-  $("mt").textContent = t;
+  $("mt").textContent = t + (e.id==="education_case_review" ? educationCasePresentation(s) : "");
   $("mc").innerHTML = "";
   cs.forEach((c, i) => {
     const b = document.createElement("button"),

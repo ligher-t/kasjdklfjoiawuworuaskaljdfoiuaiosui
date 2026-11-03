@@ -94,24 +94,24 @@ window.TERRA_DATA_BUILD.run("base/childhood-attitudes", function ($terraData, $d
           "小学校への入学を希望する",
           {
             // Always show the option. An unavailable school or unmet requirements disable it.
-            en: s => educationCanEnter(s,"primary").allowed,
-            why: "通える学校や空き枠がないか、学費や感染者への扱いなどの条件を満たせない",
+            en: s => !educationActiveCase(s),
+            why: "今年の進路相談がすでに進んでいる",
             pw: [1, { when: "貧困", x: 0.4 }]
           },
           [
             1,
-            "「学校へ行きたい」と家の人に伝え、初等学校へ入学の申し込みを出してもらった。無事に机を並べられるかどうかは、学校の空き枠や世間の目にも左右される。",
-            { k: 1, rl: 4, educationAction: "primary" }
+            "「学校へ行きたい」と家の人に伝えた。家の人と近くの募集案内を確かめ、どの学び舎へ通えるか相談することにした。",
+            { k: 1, rl: 4, educationAction: "case:begin:primary:primary:1" }
           ]
         ),
-        $terraData.K("学校に受け入れられない理由を確認する",
-          {show:s=>!educationBarrier(s,"primary").allowed},
-          [1,"学校の門は閉ざされ、入学は断られた。どうして教室へ入れないのか、家の人と悔しさを噛みしめながらその理由を確かめた。",
-           {educationAction:"denied-primary",p:-2}]),
+        $terraData.K("家の人と近隣の募集案内を探す",
+          {show:s=>!educationActiveCase(s)},
+          [1,"学校に入れるかは、まだ分からない。家の人に頼んで、近くにある学び舎の募集案内を一緒に調べた。",
+           {educationAction:"case:begin:primary:primary:1",p:1}]),
         $terraData.K("家の手伝いをする", { pw: [0.3, { when: "貧困", x: 3 }] }, [
           1,
           "家の人と水汲みや片付けを分け合った。学校への申し込みは見送り、当面は家で文字や暮らしの知恵を教わることにした。",
-          { k: 3, p: -3, educationAction: "decline-primary" }
+          { k: 3, p: -3, educationAction: "case:decline:primary" }
         ])
       ]
     },

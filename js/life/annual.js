@@ -3,6 +3,7 @@ function tick() {
   advanceCurrentLifeYear(currentLifeState(), ANNUAL_SERVICES);
 }
 function advanceCurrentLifeYear(s, services) {
+  educationExpireCases(s,s.year+1);
   const a = ++s.age,
     t = s.t,
     f =

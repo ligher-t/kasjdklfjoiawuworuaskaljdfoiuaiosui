@@ -282,6 +282,10 @@ function educationRecordFundedYear(s,m,source,historyKind,details) {
   s.educationDecision=null;
 }
 function educationApplyAction(s,action) {
+  if(typeof action==="string" && action.startsWith("case:")) {
+    educationCaseAction(s,action);
+    return;
+  }
   const source=typeof TRACE_RESOLUTION==="object" ? TRACE_RESOLUTION?.id : null;
   if(action==="primary"){
     const gate=educationCanEnter(s,"primary");
