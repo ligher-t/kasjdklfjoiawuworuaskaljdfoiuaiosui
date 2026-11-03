@@ -1361,7 +1361,7 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
         s.lifeRecord?.skills?.some(skill => skill.id === "industrial-production") &&
         hasDisplacementGoal(s),
       t: s =>
-        s.displacement?.status === "rebuilt"
+        s.local?.city === "ゼルգրад"
           ? "労働区画へ戻ってはきたものの、以前働いていた工場の持ち場には戻れそうになかった。近くの修理工房が部品の仕分けや検品の手伝いを探していると聞き、工場で身につけた腕が通用するか考えてみた。"
           : "避難先で狭い寝床を借り、日銭を稼げる仕事を探して歩き回った。近くの修理工房が部品の仕分けや検品の手伝いを募集していると聞き、ゼルグラードの工場で覚えた仕事を思い起こした。",
       c: [
@@ -1528,6 +1528,7 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
       show: s =>
         ["shelter", "rebuilt"].includes(s.displacement?.status) &&
         s.job === 2 &&
+        lifeAffiliationAtRecordedLocality(s, "ursus-displaced-repair-workshop") &&
         s.lifeRecord?.affiliations?.some(
           affiliation =>
             affiliation.id === "ursus-displaced-repair-workshop" &&
@@ -1535,7 +1536,7 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
             s.year - (affiliation.startedYear ?? s.year) >= 2
         ),
       t: s =>
-        s.displacement?.status === "rebuilt"
+        s.local?.city === "ゼルգրад"
           ? "労働区画の修理工房で働き始めて二年余りが過ぎた。工具の並びも親方の癖もすっかり覚えた今、このままここで働き続けるか、別の仕事を探すか考えた。"
           : "避難先の修理工房に雇われてから二年余りが過ぎた。仕事の手順もすっかり身体に馴染んだ今、このまま工房で働き続けるか、別の働き口を探すか考えた。",
       c: [
@@ -1604,6 +1605,120 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
               action: "compromise",
               onlyIfActive: true,
               note: "修理工房を離れ、別の求人を探す"
+            },
+            p: 0
+          }
+        ])
+      ]
+    },
+    {
+      id: "life_ursus_zelgrad_post_settlement_job_search",
+      conf: "B",
+      references: ["SRC_ZELGRAD_DISPLACED_WORK_MODEL", "SRC_TERRA_LIFECOURSE"],
+      st: ["青年", "壮年", "老年"],
+      ge: { year: 1106, age: 18 },
+      le: { year: 1135, age: 85 },
+      after: { id: "life_ursus_zelgrad_displaced_work_review", min: 1 },
+      once: true,
+      w: 0.32,
+      show: s =>
+        s.job === 0 &&
+        s.lifeRecord?.affiliations?.some(a =>
+          a.id === "ursus-displaced-repair-workshop" && a.status === "left"
+        ) &&
+        s.lifeRecord?.goals?.some(g =>
+          g.id === "ursus-zelgrad-after-crisis" && g.status === "achieved"
+        ) &&
+        !s.lifeRecord?.goals?.some(g => g.id === "ursus-post-settlement-reemployment"),
+      t: "工房での仕事を終え、収入の見通しが立たなくなった。以前に住まいと生計を立て直した日々まで消えたわけではないが、今の暮らしを続けるには別の働き口が要る。職探しを始めるか、しばらく暮らしの立て直しを優先するか考えた。",
+      c: [
+        $terraData.K("工場と工房で覚えた手順をまとめ、次の働き口を探す", {}, [
+          1,
+          "使い慣れた工具を手入れし、製造補助と検品で覚えた手順を手帳へ書き出した。求人を出している店や工房を訪ね、これまでの経験を伝えながら、次の仕事を探し始めた。",
+          {
+            lifeGoal: {
+              id: "ursus-post-settlement-reemployment",
+              title: "立て直した暮らしを支える次の働き口を見つける",
+              priority: "生計",
+              action: "start",
+              note: "以前の工房を離れ、経験を生かす再就職を目指した"
+            },
+            p: 1
+          }
+        ]),
+        $terraData.K("当面は食費と住まいの支払いを確かめ、求職を急がない", {}, [
+          1,
+          "手元の金と次の支払日を確かめ、今すぐ動ける範囲を考えた。道具は捨てずに手元へ残し、身体を休めながら次の募集を待つことにした。",
+          {
+            lifeGoal: {
+              id: "ursus-post-settlement-reemployment",
+              title: "立て直した暮らしを支える次の働き口を見つける",
+              priority: "生計",
+              action: "pause",
+              note: "暮らしの支払いを確認し、再就職の判断を保留した"
+            },
+            p: 0
+          }
+        ])
+      ]
+    },
+    {
+      id: "life_ursus_zelgrad_post_settlement_work_review",
+      conf: "B",
+      references: ["SRC_ZELGRAD_DISPLACED_WORK_MODEL", "SRC_TERRA_LIFECOURSE"],
+      st: ["青年", "壮年", "老年"],
+      ge: { year: 1107, age: 18 },
+      le: { year: 1140, age: 90 },
+      after: { id: "life_ursus_zelgrad_post_settlement_job_search", min: 1 },
+      cd: 2,
+      w: 0.29,
+      show: s =>
+        s.lifeRecord?.goals?.some(g =>
+          g.id === "ursus-post-settlement-reemployment" &&
+          ["active", "paused", "compromised"].includes(g.status)
+        ),
+      t: s => s.job > 0
+        ? "前の工房を離れてから、新しい仕事に就いた。職場が変わっても、かつて取り戻した生活の記憶と、二つの現場で覚えた手順は残っている。今の働き方で暮らしを続けられそうか確かめた。"
+        : "次の働き口を探しながら時間が過ぎた。暮らしの用事と求人の条件を見比べ、今できることから動くか、もうしばらく様子を見るか考えた。",
+      c: [
+        $terraData.K("新しい仕事に就いたことを区切りとして記録する", {
+          show: s => s.job > 0
+        }, [
+          1,
+          "新しい職場での仕事を続けることにした。以前の工場や修理工房の経験は、日々の手順を見直すときにも役に立っている。",
+          {
+            lifeGoal: {
+              id: "ursus-post-settlement-reemployment",
+              action: "complete",
+              note: "新しい仕事に就き、再就職の目標を達成した"
+            },
+            p: 1
+          }
+        ]),
+        $terraData.K("これまでの経験を生かし、求人を探し続ける", {
+          show: s => s.job === 0
+        }, [
+          1,
+          "工場と工房で覚えたことを書き留めた手帳を携え、働き口のある通りを歩いた。条件が合う仕事に出会うまで、また確かめて回るつもりだ。",
+          {
+            lifeGoal: {
+              id: "ursus-post-settlement-reemployment",
+              action: "continue",
+              note: "前の職場での経験を使い、引き続き求人を探した"
+            },
+            p: 0
+          }
+        ]),
+        $terraData.K("いったん求職を休み、今の暮らしを優先する", {
+          show: s => s.job === 0
+        }, [
+          1,
+          "すぐに次の職場を決めるのはやめた。食費や寝床の見通しを一つずつ確かめ、動ける日まで求人の話を聞く程度にとどめた。",
+          {
+            lifeGoal: {
+              id: "ursus-post-settlement-reemployment",
+              action: "pause",
+              note: "次の職場を決める前に生活の整理を優先した"
             },
             p: 0
           }
