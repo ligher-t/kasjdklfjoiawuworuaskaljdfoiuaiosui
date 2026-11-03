@@ -192,4 +192,62 @@ assert.equal(different.examPaid,30000);
 assert.equal(different.invoiceCount,3);
 assert.equal(different.zeroStatus,"paid");
 assert.equal(different.zeroReceipts,0);
+fresh("クルビア",22);
+const caseLoan=run(function(){
+  const s=S;s.age=22;s.mo=3;s.cash=10000;s.house.cash=0;s.debt=0;s.job=0;
+  s.study=null;s.fl.sch=0;s.loanContracts=[];
+  s.res=REG.find(x=>x.n==="クルビア");
+  ensureResidenceIdentity(s);ensureEducationWorldForResidence(s);
+  const world=s.world.educationWorld,areaId=s.local.educationAreaId;
+  const institution=educationRegisterInstitution(world,areaId,
+    "tuition-credit-fixture","university",["university"],s.year);
+  const offering=world.offerings[institution.offeringIds[0]];
+  offering.admissionTier=1;
+  const item=educationCaseBegin(s,"higher-path","university",1);
+  item.phase="contract";item.stepsUsed=2;
+  item.applicationId=item.id+":application:1";
+  item.offeringId=offering.id;item.campusId=offering.campusId;
+  item.targetInstitutionId=institution.id;
+  const access=educationAccessState(s);
+  access.knownOfferings[offering.id]={
+    offeringId:offering.id,institutionId:institution.id,
+    campusId:offering.campusId,
+    stage:"university",tier:1,epistemicStatus:"offering-verified",
+    checkedAt:{year:s.year,month:s.mo},informationSource:"in-person-inquiry",
+    admissionStatus:"open",teachingStatus:"teaching"
+  };
+  access.notices[item.applicationId]={
+    applicationId:item.applicationId,offeringId:offering.id,result:"accepted",
+    informedAt:{year:s.year,month:s.mo}
+  };
+  const before={cash:s.cash,house:s.house.cash,debt:s.debt,enroll:s.educationRecord.enrollments.length};
+  const noCash=educationCaseCommitEligibility(s);
+  const consulted=educationCaseFinanceInquiry(s);
+  const verified=educationCaseCommitEligibility(s,"loan");
+  const success=educationCaseCommit(s,"loan");
+  const history=s.educationCases.history.at(-1);
+  const inv=s.educationFinance?.invoices?.["enrol-"+(before.enroll+1)+":tuition:"+s.year];
+  return {noCash:noCash.reason,consulted,verified:verified.allowed,success,
+    reason:history?.reason,oldCash:before.cash,newCash:s.cash,
+    debtBefore:before.debt,debtAfter:s.debt,
+    loanCount:s.loanContracts.length,loanPrincipal:s.loanContracts[0]?.principal,
+    enrolled:s.educationPath?.status,offeringSame:s.educationPath?.offeringId===offering.id,
+    tuitionInvoice:inv?.id,paid:inv?.paid,net:inv?.net,
+    cashReceipts:inv?.receiptIds?.map(id=>s.educationFinance.receipts[id].source),
+    duplicate:educationCaseCommit(s,"loan"),
+    audit:educationCheckFinanceInvariants(s)};
+});
+assert.equal(caseLoan.noCash,"no-funds");
+assert.equal(caseLoan.consulted,true);
+assert.equal(caseLoan.verified,true);
+assert.equal(caseLoan.success,true);
+assert.equal(caseLoan.reason,"admitted");
+assert.equal(caseLoan.newCash,0);
+assert.equal(caseLoan.loanCount,1);
+assert.equal(caseLoan.enrolled,"enrolled");
+assert.equal(caseLoan.offeringSame,true);
+assert.equal(caseLoan.paid,caseLoan.net);
+assert.deepEqual(caseLoan.cashReceipts,["personal","contract-loan"]);
+assert.equal(caseLoan.duplicate,false);
+assert.deepEqual(caseLoan.audit,[]);
 console.log("PASS P07: quote, invoice, mixed payment, grant, loan, refund, annual rollup and no double charge");
