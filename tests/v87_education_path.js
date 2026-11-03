@@ -99,11 +99,12 @@ for(const choice of literacy.c)for(const outcome of choice.o){
  assert.equal(effects.ep,undefined,'informal literacy must not award a formal education credential');
  assert.equal(effects.study,undefined,'informal literacy must not create a university/vocational enrollment');
 }
-const university=event('higher_ed'),universityChoice=university.c.find(row=>row.l.includes('地域大学の入学試験を受ける'));
-assert(universityChoice,'regional university entrance path missing');
+const university=event('higher_ed'),universityChoice=university.c.find(row=>row.l.includes('地域大学の募集先を探す'));
+assert(universityChoice,'regional university search intent missing');
 const universityApplication=universityChoice.o[0][2];
-assert.equal(universityApplication.educationAction,'apply:university:1');
-assert.equal(universityApplication.study,undefined,'applying for a course must not enroll before admission');
+assert.equal(universityApplication.educationAction,'case:begin:higher-path:university:1');
+assert.equal(universityApplication.study,undefined,'researching a course must not enroll before verified admission');
+assert.equal(universityApplication.cash,undefined,'researching a course must not charge examination fees');
 const disruption=event('facility_school_disruption'),reopen=event('facility_school_reopen');
 assert(disruption&&reopen,'school disruption and reopening paths must both exist');
 assert(disruption.need.includes('就学中') && disruption.need.includes('学び舎の通常授業が制限中'));
