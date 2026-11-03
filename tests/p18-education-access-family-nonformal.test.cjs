@@ -107,6 +107,9 @@ const communication=run(function(){
  offer.instructionLanguage={
    languageId:"unknown-to-student",scriptId:"unfamiliar-script",
    evidenceRef:"verified-course-handbook",minimum:{listen:65,read:65}};
+ offer.applicationLanguage={
+   languageId:"unknown-to-student",scriptId:"unfamiliar-script",
+   evidenceRef:"verified-admission-document",minimum:{read:65}};
  const blocked=educationOfferingLanguageAssessment(s,offer.id,"instruction-session"),
    unassisted=educationOfferingLanguageAssessment(s,offer.id,"application-document");
  const providerDenied=(()=>{try{educationRegisterLanguageSupport(s,{
