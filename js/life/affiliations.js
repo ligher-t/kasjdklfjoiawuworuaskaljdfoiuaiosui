@@ -240,6 +240,20 @@ function reconcileAffiliationWork(s, preserveCurrentJob = false) {
         continue;
       }
     }
+    // An explicit leave can arrive without job: 0. A closed regional employer
+    // must never continue paying the old, non-transferable occupation.
+    if (!preserveCurrentJob && a.status === "left" && rule?.jobs?.includes(s.job) &&
+        s.job >= 41 && s.job <= 82) {
+      const formerJob = s.job;
+      s.job = 0;
+      s.workPayBonus = 0;
+      s.fl.workplace_hazard = 0;
+      recordCareerChange(s, formerJob, 0);
+      const goal = s.lifeRecord.goals.find(row => row.id === rule.goal);
+      if (goal && ["active", "paused"].includes(goal.status))
+        applyLifeGoal({id: goal.id, action: "compromise", note: "この仕事を離れ、次の生計を考える"});
+      continue;
+    }
     if (!rule?.jobs || !["active", "crisis"].includes(a.status)) continue;
     const matches = rule.jobs.includes(s.job) && !s.fl?.retired && !restricted(s) &&
       (!rule.region || s.res.n === rule.region) &&
