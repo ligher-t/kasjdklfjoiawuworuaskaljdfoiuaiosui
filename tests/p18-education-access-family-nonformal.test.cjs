@@ -171,12 +171,24 @@ const family=run(function(){
   effectiveAt:{year:s.year,month:s.mo},sourceEventId:"seen-at-home",
   reportedToProtagonist:true,knownAt:{year:s.year,month:s.mo}
  });
- first.consents.push(
-   {consentId:"child-agreement",personId:first.personId,
-     purpose:"attend",status:"approved"},
-   {consentId:"guardian-agreement",personId:first.personId,
-     purpose:"guardian-enrollment",status:"approved"}
- );
+ educationDependentRecordPreference(s,{
+   personId:first.personId,stage:"primary",stance:"attend",
+   sourceEventId:"child-actually-said-wants-to-study"
+ });
+ educationDependentRecordConsent(s,{
+   personId:first.personId,consentId:"child-agreement",
+   purpose:"attend",signerPersonId:first.personId,
+   offeringId:offering.id,status:"approved",sourceEventId:"child-stated-agreement"
+ });
+ educationDependentRecordConsent(s,{
+   personId:first.personId,consentId:"guardian-agreement",
+   purpose:"guardian-enrollment",signerPersonId:"protagonist",
+   offeringId:offering.id,status:"approved",sourceEventId:"parent-signature"
+ });
+ educationDependentRecordSchoolDecision(s,{
+   personId:first.personId,applicationId:"admission-p11",
+   offeringId:offering.id,status:"accepted",sourceEventId:"school-signed-offer"
+ });
  const enrollment=educationDependentRecordEnrollment(s,{
     personId:first.personId,offeringId:offering.id,
     admissionTransactionId:"admission-p11",sourceEventId:"confirmed-offer",
@@ -255,4 +267,113 @@ assert.equal(informal.knowledgeGain,true);
 assert.equal(informal.noAutomaticDegree,true);
 assert.equal(informal.pathStatus,"active");
 assert.deepEqual(informal.issues,[]);
+fresh(27,"クルビア");
+const certified=run(function(){
+ const s=S;s.mo=12;
+ const area=ensureEducationWorldForResidence(s),world=s.world.educationWorld,
+   school=educationRegisterInstitution(world,area,"p12-assessor",
+     "technical_college",["vocational"],s.year);
+ school.nonformalRecognitionRules={
+   "skill-test":{approved:true,sourceRef:"school-signed-assessor-policy",
+     kind:"skill_certificate",targetStageOrRole:"machine-maintenance",
+     jurisdiction:s.res.n}
+ };
+ educationRegisterInformalProvider(s,{
+   providerId:"p12-shop-tutor",personId:"person-confirmed-workshop-mentor",
+   kind:"workshop-apprenticeship",areaId:area,
+   activeFrom:{year:s.year,month:1},subjectIds:["repair"],
+   evidenceRef:"verified-attending-shop"
+ });
+ const path=educationOpenLearningPath(s,{
+   personId:"protagonist",modeId:"workshop-apprenticeship",
+   providerId:"p12-shop-tutor",
+   siteRef:{region:s.res.n,areaId:area,attendanceMode:"on-site"},
+   subjectIds:["repair"],sourceEventId:"mentor-agreed-to-train"
+ });
+ const attended=educationRecordLearningParticipation(s,{
+   personId:"protagonist",pathId:path.pathId,year:s.year,month:12,
+   attendedSessions:7,totalSessions:8,evidenceRef:"signed-practical-log"
+ });
+ const once=educationRecordRecognitionAssessment(s,{
+   applicationId:"workshop-skill-review",pathId:path.pathId,
+   authorityId:school.id,ruleId:"skill-test",
+   assessmentEvidenceId:"observed-practical-test",examinerId:"assessor-person-confirmed",
+   verdict:"passed",sourceEventId:"assessment-result-notice"
+ });
+ const again=educationRecordRecognitionAssessment(s,{
+   applicationId:"workshop-skill-review",pathId:path.pathId,
+   authorityId:school.id,ruleId:"skill-test",
+   assessmentEvidenceId:"observed-practical-test",examinerId:"assessor-person-confirmed",
+   verdict:"passed",sourceEventId:"assessment-result-notice"
+ })===once;
+ const accepted=educationNonformalRecognition(s,{
+   applicationId:"workshop-skill-review",pathId:path.pathId,
+   authorityId:school.id,ruleId:"skill-test",targetJurisdiction:s.res.n,
+   targetStageOrRole:"machine-maintenance",outcome:"accepted",
+   assessmentEvidenceId:"observed-practical-test",sourceEventId:"school-assessment-accepted",
+   recognitionKind:"skill_certificate",
+   effectiveFrom:{year:s.year,month:12}
+ });
+ const retry=educationNonformalRecognition(s,{
+   applicationId:"workshop-skill-review",pathId:path.pathId,
+   authorityId:school.id,ruleId:"skill-test",targetJurisdiction:s.res.n,
+   targetStageOrRole:"machine-maintenance",outcome:"accepted",
+   assessmentEvidenceId:"observed-practical-test",sourceEventId:"school-assessment-accepted",
+   recognitionKind:"skill_certificate",
+   effectiveFrom:{year:s.year,month:12}
+ })===accepted;
+ return {attendance:attended.effectiveAttendanceFraction,
+   certified:accepted.applicationStatus,
+   reviewSame:again,retry,skill:s.lifeRecord.skills.find(x=>x.id==="nonformal:repair")?.level,
+   recognitions:s.educationRecord.recognitions.length,
+   degree:s.educationRecord.awards.length,
+   knownGroup:!!world.informalProviders["p12-shop-tutor"],
+   audit:educationNonformalInvariants(s)};
+});
+assert.equal(certified.attendance,7/8);
+assert.equal(certified.certified,"accepted");
+assert.equal(certified.reviewSame,true);
+assert.equal(certified.retry,true);
+assert(certified.skill>0);
+assert.equal(certified.recognitions,1);
+assert.equal(certified.degree,0);
+assert.equal(certified.knownGroup,true);
+assert.deepEqual(certified.audit,[]);
+fresh(30,"ヴィクトリア");
+const noRhodesDegree=run(function(){
+ const s=S;s.mo=12;
+ const area=ensureEducationWorldForResidence(s);
+ educationRegisterInformalProvider(s,{
+   providerId:"p12-rhodes-ship",organizationId:"rhodes",
+   kind:"onboard-training",areaId:area,
+   activeFrom:{year:s.year,month:1},
+   subjectIds:["academic_knowledge","language"],
+   evidenceRef:"observed-crew-workshop"
+ });
+ const tryDenied=(()=>{try{
+   educationOpenLearningPath(s,{
+     modeId:"rhodes-onboard",providerId:"p12-rhodes-ship",
+     siteRef:{region:s.res.n,areaId:area,attendanceMode:"onboard"},
+     subjectIds:["academic_knowledge"],sourceEventId:"crew-invite"
+   });return false;}catch{return true;}})();
+ s.fl.rhodes=1;
+ const path=educationOpenLearningPath(s,{
+     modeId:"rhodes-onboard",providerId:"p12-rhodes-ship",
+     siteRef:{region:s.res.n,areaId:area,attendanceMode:"onboard"},
+     subjectIds:["academic_knowledge"],sourceEventId:"crew-invite"
+ });
+ educationRecordLearningParticipation(s,{
+   pathId:path.pathId,year:s.year,month:12,attendedSessions:1,
+   totalSessions:1,evidenceRef:"rhodes-lesson-notes"
+ });
+ return {tryDenied,attendance:path.participation.length,
+   degrees:s.educationRecord.awards.length,
+   enrollments:s.educationRecord.enrollments.length,
+   flags:!!s.fl.uni||!!s.fl.voc||!!s.fl.arts_grad};
+});
+assert.equal(noRhodesDegree.tryDenied,true);
+assert.equal(noRhodesDegree.attendance,1);
+assert.equal(noRhodesDegree.degrees,0);
+assert.equal(noRhodesDegree.enrollments,0);
+assert.equal(noRhodesDegree.flags,false);
 console.log("PASS P09/P10/P11/P12 scoped school knowledge, language, dependents, and nonformal learning");
