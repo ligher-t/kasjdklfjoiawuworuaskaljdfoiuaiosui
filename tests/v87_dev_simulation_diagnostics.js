@@ -29,7 +29,7 @@ context.setTimeout = setTimeout;
     const comparison=compareDevSimulationReports(first,second);
     let invalidOptionsRejected=false;
     try { normalizeDevSimulationOptions({...options,birthYearMin:1080,birthYearMax:1060}); } catch { invalidOptionsRejected=true; }
-    return {progress,first,second,canceled,large:{summary:large.summary,cohortCount:large.cohorts.reduce((sum,row)=>sum+row.lives,0),lifeDurations:large.lifePaths.lifeDurations},findings,findingSummary,comparison,original,after,eventCount:EV.length,invalidOptionsRejected};
+    return {progress,first,second,canceled,large:{summary:large.summary,failures:large.failures,cohortCount:large.cohorts.reduce((sum,row)=>sum+row.lives,0),lifeDurations:large.lifePaths.lifeDurations},findings,findingSummary,comparison,original,after,eventCount:EV.length,invalidOptionsRejected};
   })()`, context, { timeout: 60000 });
 
   const cohorts = await vm.runInContext(`(async()=>{
@@ -137,7 +137,7 @@ context.setTimeout = setTimeout;
   assert.equal(result.canceled.summary.attempted, 1);
   assert.equal(result.canceled.summary.sampled, 1, 'cancellation should retain completed lives');
   assert.equal(result.large.summary.attempted, 12);
-  assert.equal(result.large.summary.sampled, 12);
+  assert.equal(result.large.summary.sampled, 12, JSON.stringify(result.large.failures));
   assert.equal(result.large.cohortCount, 12);
   assert.equal(result.large.lifeDurations.length,12);
   assert(result.large.lifeDurations.every(row=>row.observedYears<=100&&row.maxEventFreeYears<=100&&row.maxYearsWithoutRecordedJob<=100));
