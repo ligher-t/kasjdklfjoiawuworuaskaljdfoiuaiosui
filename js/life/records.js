@@ -690,6 +690,8 @@ function applyLifeAffiliation(input) {
               : "";
         if (post) role = `${post}／職務:${role}`.slice(0, 80);
       }
+      // A repeated success at the same rank is another incident, not another promotion.
+      if (input.onlyIfRoleChanged && a.role === role) return a;
       a.role = role;
     }
   } else if (action === "crisis") {
