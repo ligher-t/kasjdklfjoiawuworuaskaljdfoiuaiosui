@@ -73,7 +73,10 @@ function settleAnnualHouseholdBudget(s, services, a) {
     const costPm = s.res.pm * s.priceIndex * services.localityLivingMultiplier(s),
       dependents = services.householdDependentSiblings(s).length,
       parentUnits = parents.length > 1 ? 1.5 : 1.0,
-      protagonistUnits = householdCoversProtagonist ? (a < 15 ? 0.35 : 0.5) : 0,
+      awayMonths=typeof educationResidenceAwayMonths==="function" ?
+        educationResidenceAwayMonths(s,s.year):0,
+      protagonistUnits = householdCoversProtagonist ?
+        (a < 15 ? 0.35 : 0.5) * (1-awayMonths/12) : 0,
       siblingUnits = 0.25 * dependents,
       householdUnits = parentUnits + protagonistUnits + siblingUnits;
     const hex =

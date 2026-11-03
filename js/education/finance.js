@@ -433,12 +433,11 @@ function educationResidenceContractMonth(contract,year,month) {
 }
 function educationResidenceAwayMonths(s,year) {
   const covered=new Set();
-  const oldArea=s.local?.educationAreaId;
   for(const contract of Object.values(s.educationMobility?.residenceContracts||{})){
     if(contract?.personId!=="protagonist" ||
        contract.status!=="committed" || !contract.actualAreaId ||
        !contract.householdRemainsAtOrigin || !contract.start ||
-       (oldArea && contract.actualAreaId===oldArea))continue;
+       (contract.previousHomeRef && contract.previousHomeRef===contract.actualAreaId))continue;
     for(let month=1;month<=12;month++)
       if(educationResidenceContractMonth(contract,year,month))covered.add(month);
   }
