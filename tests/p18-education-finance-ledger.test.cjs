@@ -300,4 +300,47 @@ assert.equal(ownerAndSequence.zeroThird,false);
 assert.deepEqual(ownerAndSequence.issues,[]);
 assert.equal(ownerAndSequence.refusedMisroute,true);
 assert.equal(ownerAndSequence.newHouseCash,0);
+function legacyExamOutcome(roll,budget){
+  fresh("クルビア",22);
+  ctx.p07ExamFixture={roll,budget};
+  return run(function(){
+    const s=S;s.age=22;s.cash=1000000;s.house.cash=0;
+    s.educationPath={version:1,status:"completed",stage:"upper",tier:1,
+      completed:["upper"],equivalency:[],history:[],yearsCompleted:3,duration:3,
+      startedYear:s.year-4,stageStartYear:s.year-4,lastProcessedYear:s.year};
+    s.study=null;s.fl.sch=0;
+    const exam=educationExam(s,"university",1);
+    s.cash=p07ExamFixture.budget===null?1000000:exam.examFee+1;
+    const initial=s.cash;
+    DEBUG_RANDOM=()=>p07ExamFixture.roll;
+    try{educationApplyAction(s,"apply:university:1");}
+    finally{DEBUG_RANDOM=null;}
+    const invoices=Object.values(s.educationFinance?.invoices||{}),
+      applied=invoices.filter(x=>x.kind==="entrance-exam"),
+      tuition=invoices.filter(x=>x.kind==="tuition");
+    return {eligible:exam.allowed,fee:exam.examFee,examInvoice:applied[0]?.net,
+      examPaid:applied[0]?.paid,examCount:applied.length,
+      tuitionPaid:tuition.reduce((n,x)=>n+x.paid,0),
+      cashSpent:initial-s.cash,enrolled:s.educationPath?.status==="enrolled",
+      ledgerIssues:educationCheckFinanceInvariants(s)};
+  });
+}
+const examFail=legacyExamOutcome(0.999,null),
+  examPass=legacyExamOutcome(0,null),
+  examOnly=legacyExamOutcome(0,"only-exam");
+assert.equal(examFail.eligible,true);
+assert.equal(examPass.eligible,true);
+assert.equal(examFail.examCount,1);
+assert.equal(examPass.examCount,1);
+assert.equal(examFail.examPaid,examPass.examPaid);
+assert.equal(examFail.examPaid,examFail.fee);
+assert.equal(examFail.tuitionPaid,0);
+assert(examPass.tuitionPaid>0);
+assert.equal(examOnly.eligible,true);
+assert.equal(examOnly.examPaid,examOnly.fee);
+assert.equal(examOnly.tuitionPaid,0);
+assert.equal(examOnly.enrolled,false);
+assert.deepEqual(examFail.ledgerIssues,[]);
+assert.deepEqual(examPass.ledgerIssues,[]);
+assert.deepEqual(examOnly.ledgerIssues,[]);
 console.log("PASS P07: quote, invoice, mixed payment, grant, loan, refund, annual rollup and no double charge");
