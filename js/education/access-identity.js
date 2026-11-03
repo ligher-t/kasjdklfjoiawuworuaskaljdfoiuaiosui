@@ -117,11 +117,13 @@ function educationRecordSchoolDisclosure(s,{institutionId,recipientKind,
 function educationOfferingLanguageAssessment(s,offeringId,purpose="instruction-session",
   at={year:s.year,month:s.mo??0}) {
   const offer=s.world?.educationWorld?.offerings?.[offeringId],
-    spec=offer?.instructionLanguage;
+    applicationPurpose=["application-document","entrance-exam-reading",
+      "entrance-exam-interview","school-inquiry"].includes(purpose),
+    spec=applicationPurpose?offer?.applicationLanguage:offer?.instructionLanguage;
   if(!offer)return {status:"unknown",fraction:0,reason:"offering-not-found"};
   if(!spec?.languageId||!spec.evidenceRef)
     return {status:"unverified",fraction:1,reason:"instruction-language-unconfirmed"};
-  const modes=purpose==="application-document"?
+  const modes=["application-document","entrance-exam-reading"].includes(purpose)?
     ["read"]:purpose==="entrance-exam-interview"?["speak","listen"]:
     purpose==="specialized-practical-lesson"?["listen","formalRegister"]:["listen"];
   const arrangements=Object.values(s.educationLanguageSupports?.items||{}).filter(row=>
@@ -158,7 +160,10 @@ function educationOfferingLanguageAssessment(s,offeringId,purpose="instruction-s
 function educationRegisterLanguageSupport(s,input) {
   const {offeringId,languageId,purpose,personId="protagonist",kind,mode,
     providerPersonId,evidenceRef,start,end}=input||{},
-    offer=s.world?.educationWorld?.offerings?.[offeringId];
+    offer=s.world?.educationWorld?.offerings?.[offeringId],
+    spec=["application-document","entrance-exam-reading",
+      "entrance-exam-interview","school-inquiry"].includes(purpose)?
+      offer?.applicationLanguage:offer?.instructionLanguage;
   const providerKnown=!!s.world?.educationWorld?.staff?.[providerPersonId] ||
     !!s.world?.educationWorld?.schoolPeers?.[providerPersonId] ||
     (Array.isArray(s.personTies) ?
@@ -172,7 +177,7 @@ function educationRegisterLanguageSupport(s,input) {
     !["listen","speak","read","write","formalRegister","both"].includes(mode) ||
     !["school-inquiry","application-document","entrance-exam-reading",
       "entrance-exam-interview","instruction-session","specialized-practical-lesson"].includes(purpose) ||
-    !languageId||offer.instructionLanguage?.languageId!==languageId||
+    !languageId||spec?.languageId!==languageId||
     !start||!end||!Number.isInteger(start.year)||!Number.isInteger(start.month)||
     !Number.isInteger(end.year)||!Number.isInteger(end.month) ||
     start.year*12+start.month>end.year*12+end.month||
