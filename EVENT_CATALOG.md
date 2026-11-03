@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2493　選択肢数：3116　結果枝数：3974
+イベント数：2493　選択肢数：3119　結果枝数：3977
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -171145,6 +171145,116 @@ s => {
 #### 選択肢 8
 
 <a id="choice-education_case_review-7"></a>
+選択肢文：学費支援と貸付の窓口へ条件を尋ねる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"contract\" &&\n          !s.educationAccess?.financingOffers?.[educationActiveCase(s).id] &&\n          !educationPaymentPlan(s,educationFunds(s,\n            educationActiveCase(s).stage,educationActiveCase(s).tier,\n            educationActiveCase(s).offeringId)).allowed"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-7-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 入学までに用意できる金を数え直し、学校の相談窓口で減免と学資貸付の条件を聞いた。支援の返事を受けてから手続きを決める。
+
+効果：
+
+```json
+{
+  "educationAction": "case:check-financing"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 9
+
+<a id="choice-education_case_review-8"></a>
+選択肢文：認められた学費支援を使って入学する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"contract\" &&\n          !!s.educationAccess?.financingOffers?.[educationActiveCase(s).id]?.grant"
+  },
+  "en": {
+    "dynamicFunction": "s=>educationCaseCommitEligibility(s,\"grant\").allowed"
+  },
+  "why": "今回の学校の支援額、残りの負担と通学条件が整っていない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-8-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 学校から認められた支援を今期の学費に充て、残額の支払と入学手続きを整えた。
+
+効果：
+
+```json
+{
+  "educationAction": "case:commit-grant"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 10
+
+<a id="choice-education_case_review-9"></a>
+選択肢文：確認した貸付の返済条件に同意して入学する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"contract\" &&\n          !!s.educationAccess?.financingOffers?.[educationActiveCase(s).id]?.loan"
+  },
+  "en": {
+    "dynamicFunction": "s=>educationCaseCommitEligibility(s,\"loan\").allowed"
+  },
+  "why": "今回の貸付条件、本人負担と通学・入学要件を満たしていない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-9-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 借入先と返済総額を確かめ、学校に直接納付される学費貸付の契約書に署名した。残る自分の負担分も納めた。
+
+効果：
+
+```json
+{
+  "educationAction": "case:commit-loan"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 11
+
+<a id="choice-education_case_review-10"></a>
 選択肢文：合格・受入後の入学を辞退する
 
 表示・選択条件と補助情報：
@@ -171160,7 +171270,7 @@ s => {
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-7-0"></a>
+<a id="outcome-education_case_review-10-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -171176,9 +171286,9 @@ s => {
 
 旧シム観測回数：未計測
 
-#### 選択肢 9
+#### 選択肢 12
 
-<a id="choice-education_case_review-8"></a>
+<a id="choice-education_case_review-11"></a>
 選択肢文：元の学籍の継続について相談する
 
 表示・選択条件と補助情報：
@@ -171198,7 +171308,7 @@ s => {
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-8-0"></a>
+<a id="outcome-education_case_review-11-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -171214,9 +171324,9 @@ s => {
 
 旧シム観測回数：未計測
 
-#### 選択肢 10
+#### 選択肢 13
 
-<a id="choice-education_case_review-9"></a>
+<a id="choice-education_case_review-12"></a>
 選択肢文：在籍中の課程をいったん休む
 
 表示・選択条件と補助情報：
@@ -171232,7 +171342,7 @@ s => {
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-9-0"></a>
+<a id="outcome-education_case_review-12-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -171248,9 +171358,9 @@ s => {
 
 旧シム観測回数：未計測
 
-#### 選択肢 11
+#### 選択肢 14
 
-<a id="choice-education_case_review-10"></a>
+<a id="choice-education_case_review-13"></a>
 選択肢文：いったん退学して別の学び方を考える
 
 表示・選択条件と補助情報：
@@ -171266,7 +171376,7 @@ s => {
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-10-0"></a>
+<a id="outcome-education_case_review-13-0"></a>
 
 - **結果 1（設定確率 100%）**
 
