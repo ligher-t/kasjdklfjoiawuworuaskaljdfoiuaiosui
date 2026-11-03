@@ -90,7 +90,8 @@ function educationTransferToApprovedInstitution(s,approvalId) {
      approval.effectiveFrom?.month!==(s.mo||0)||
      !offer||offer.stage!==m.stage||offer.institutionId===m.institutionId||
      !world.institutions[offer.institutionId] ||
-     !world.campuses[offer.campusId])return null;
+     !world.campuses[offer.campusId] ||
+     offer.recognitionRule?.issuerBasis!=="game-model")return null;
   const status=educationSchoolStatusAt(s,offer.id,s.year,s.mo||0);
   if(!status||!["open","limited"].includes(status.admissionStatus) ||
      status.teachingEquivalent<=0)return null;
@@ -131,7 +132,7 @@ function educationTransferToApprovedInstitution(s,approvalId) {
   s.educationRecord.enrollments.push(record);
   m.institutionId=offer.institutionId;m.campusId=offer.campusId;
   m.offeringId=offer.id;m.tier=offer.admissionTier;
-  m.currentEnrollmentId=newId;
+  m.currentEnrollmentId=newId;m.sourceEventId=approvalId;
   store.placements.currentPlacementId=null;
   educationBindFormalEnrollment(s,newId);
   s.educationCreditTransfers ||= {version:1,items:{}};

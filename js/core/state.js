@@ -100,8 +100,8 @@ function recordEducationTransition(s, program, action, sourceEventId = null) {
   const formal=s.educationPath?.offeringId &&
     s.educationPath.currentEnrollmentId===current?.id &&
     ["completed","enrolled"].includes(s.educationPath.status);
-  const credits=formal?Object.values(s.educationCredits?.items||{}).filter(x=>
-    x.enrollmentId===current.id && x.credited):[];
+  const credits=formal?educationTransferredCreditIds(s,current.id)
+    .map(id=>s.educationCredits.items[id]).filter(Boolean):[];
   if(action==="finish" && formal &&
      (credits.length<s.educationPath.duration ||
        s.educationPath.yearsCompleted<s.educationPath.duration))
@@ -123,7 +123,8 @@ function recordEducationTransition(s, program, action, sourceEventId = null) {
         (formal ? x.enrollmentId===current.id : !x.enrollmentId))) {
     record.awards.push({
       id: `award-${record.awards.length + 1}`, program, awardedYear: s.year,
-      region: s.res?.n || null, sourceEventId, issuer: "個別課程（機関名未記録）",
+      region: s.res?.n || null, sourceEventId,
+      issuer: formal?s.educationPath.institutionId:"個別課程（機関名未記録）",
       certainty: "game-course-completion",
       ...(formal?{
         enrollmentId:current.id,offeringId:s.educationPath.offeringId,

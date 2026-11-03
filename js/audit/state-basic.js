@@ -107,7 +107,7 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
       !Array.isArray(education.awards) ||
       education.enrollments.some(row =>
         !row.id || !["general-school", "university", "vocational", "arts-academy"].includes(row.program) ||
-        !["enrolled", "completed", "interrupted"].includes(row.status) ||
+        !["enrolled", "completed", "interrupted", "transferred"].includes(row.status) ||
         !Number.isInteger(row.startedYear) || row.startedYear > s.year ||
         (row.endedYear != null && (!Number.isInteger(row.endedYear) ||
           row.endedYear < row.startedYear || row.endedYear > s.year)) ||
