@@ -338,6 +338,7 @@ for(const [region,entryId,incidentId] of [
     const c=EXPELLED_CASE,e=EV.find(x=>x.id===c.entryId);
     S.k=100;S.cr=100;
     const before=e.show(S);
+    S.eventOutcomes ||= {};
     S.eventOutcomes[c.incidentId]={year:S.year-3,choiceIndex:0,outcomeIndex:0};
     const loyal=e.show(S);
     S.eventOutcomes[c.incidentId]={year:S.year-3,choiceIndex:1,outcomeIndex:0};
