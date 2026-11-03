@@ -1,0 +1,28 @@
+name: Synchronize currency change in event catalog
+on:
+  push:
+    branches:
+      - fix/historical-event-scope-and-delivery
+    paths:
+      - .github/workflows/currency-catalog-sync.yml
+permissions:
+  contents: write
+jobs:
+  sync-catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/historical-event-scope-and-delivery
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Refresh generated review catalog
+        run: |
+          node tools/generate-event-catalog.cjs --write
+          git add -- EVENT_CATALOG.md
+          if ! git diff --cached --quiet; then
+            git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' commit -m 'docs: regenerate event catalog after currency unit updates'
+            git push origin HEAD:fix/historical-event-scope-and-delivery
+          fi
