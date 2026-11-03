@@ -539,6 +539,13 @@ function educationFundYear(s,m) {
   if(invoice.outstanding>0){
     const posting=educationSettleInvoice(s,invoice);
     if(!posting){
+      // Only regions with an actual institutional tuition-support pathway
+      // can leave a funding decision pending. Else stop the enrollment.
+      if(!EDUCATION_INSTITUTIONAL_REGIONS.includes(s.res?.n)){
+        educationEnd(s,"withdrawn","学費不足による在籍終了","annual-finance");
+        educationVoidInvoice(s,invoice.id,"enrollment-ended-unfunded");
+        return;
+      }
       s.educationDecision={kind:"funding",year:s.year,fee:invoice.outstanding,
         invoiceId:invoice.id};
       m.lastProcessedYear=s.year;
