@@ -39,7 +39,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("命令に従い、砲兵の誤爆に見せかけて標的を葬る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
           0.5,
           "事故偽装を完璧にやり遂げ、疑惑を一切持たれずに標的を排除した。軍団長から絶大な信任を得て、近衛少佐への昇進が決定した。",
-          { cr: 5, p: -3, cash: 1500000, groupStanding: { id: "ursus-officers", title: "帝国軍将校団", delta: 3 } }
+          { cr: 5, p: -3, cash: 1500000, groupStanding: { id: "ursus-officers", title: "帝国軍将校団", delta: 3 },
+            lifeAffiliation: { id: "ursus-imperial-officer", action: "role", role: "近衛少佐",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           1,
           "偽装に綻びが生じ、相手の親族である大貴族に察知された。軍法会議にかけられ、銃殺刑を宣告された。",
@@ -86,7 +88,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("鉄扉の前に踏みとどまり、銃剣で突撃を迎え撃つ", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "猛烈なツルハシの連撃を銃剣で捌き、増援の到着まで扉を死守した。暴動は鎮圧され、勇敢さを称えられて憲兵軍曹へ昇進した。",
-          { h: -3, p: 3, cr: 3, cash: 300000 }
+          { h: -3, p: 3, cr: 3, cash: 300000,
+            lifeAffiliation: { id: "ursus-border-mine-guard", action: "role", role: "憲兵軍曹",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "重傷を負いながらも気絶するまで戦い抜いた。一命を取り留めたが、源石の破片を浴びて鉱石病を発症した。",
@@ -138,7 +142,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("銃剣突撃の号令を自ら叫び、敵の側面を衝く", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "怯む仲間を鼓舞して果敢に突撃し、サルカズの指揮官を銃剣で討ち取った。小隊を全滅の危機から救い、平民としては異例の『連隊先任軍曹』へ抜擢された。",
-          { h: -2, cr: 4, p: 3, cash: 400000 }
+          { h: -2, cr: 4, p: 3, cash: 400000,
+            lifeAffiliation: { id: "victoria-regular-infantry", action: "role", role: "連隊先任軍曹",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "撃退には成功したが、大剣で腕を切り裂かれ重傷を負った。",
@@ -238,7 +244,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("金律の絶対和音を展開し、異端の旋律を粉砕する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "金律杖から放たれた神聖な光の和音が狂気の旋律を完全に打ち消し、残党を一網打尽にした。女帝直属の首席法衛へと抜擢された。",
-          { k: 4, p: 4, cr: 5, cash: 1500000 }
+          { k: 4, p: 4, cr: 5, cash: 1500000,
+            lifeAffiliation: { id: "leithania-golden-law", action: "role", role: "首席法衛",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "残党を制圧したものの、巫王の呪詛アーツを耳にしてしまい、激しい頭痛と幻聴の後遺症を負った。",
