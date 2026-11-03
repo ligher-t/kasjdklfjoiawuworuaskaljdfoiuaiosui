@@ -1749,12 +1749,6 @@ window.TERRA_EDUCATION_INJECT_P17=function ($terraData) {
     ]
   }
 ];
-  $terraData.EVENT_EFFECT_TYPES.string.push("educationMigrationAction");
-  $terraData.EVENT_FIELD_META.educationMigrationAction={
-    status:"S",valueType:"string",unit:"P17イベント・選択の操作識別子",
-    meaning:"本人が選択した新イベントをP05-P12の実記録へ接続する",
-    assumption:"S"
-  };
   const activated=new Set(["E34","E35","E41","E43","E47","E48","E49","E50","E51","E52","E53","E54"]);
   window.TERRA_EDUCATION_P17_REVIEWED=reviewed;
   for(const entry of reviewed){
@@ -1768,14 +1762,14 @@ window.TERRA_EDUCATION_INJECT_P17=function ($terraData) {
       t:entry.body
     };
     if(!entry.choices.length){
-      event.fx={educationMigrationAction:entry.reviewId+":solo"};
+      event.fx={educationAction:"event:"+entry.reviewId+":solo"};
     }else{
       event.c=entry.choices.map(choice=>
         $terraData.K(choice.label,{
           en:s=>educationMigrationEligible(s,entry.eventId,choice.letter),
           why:"対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
         },[1,choice.result,{
-          educationMigrationAction:entry.reviewId+":"+choice.letter
+          educationAction:"event:"+entry.reviewId+":"+choice.letter
         }]));
     }
     $terraData.EV.push(event);
