@@ -1,4 +1,4 @@
-name: Temporary catalog sidecar and post-settlement verification
+name: Temporary new life goal and sidecar validation
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]

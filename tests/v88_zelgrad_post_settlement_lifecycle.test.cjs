@@ -24,7 +24,7 @@ assert.equal(moved.before,true);
 assert.notEqual(moved.movedTo,'ウルサス');
 assert.equal(moved.blocked,false,'after moving, the old workshop review is not eligible');
 assert.deepEqual([moved.afterMove.job,moved.afterMove.employer,moved.afterMove.originalGoal,moved.afterMove.newGoal],
- [0,'left','achieved',null]);
+ [0,'left','achieved',undefined]);
 assert.deepEqual(moved.afterMove.audit,[]);
 assert.equal(moved.eligible,true,'moving and unemployment unlock the next hardship');
 assert.equal(moved.paused,'paused');
