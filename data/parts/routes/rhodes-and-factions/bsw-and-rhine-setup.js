@@ -66,7 +66,8 @@ window.TERRA_DATA_BUILD.fragment(
         id: "bsw-work",
         title: "民間軍事会社BSWでプロとしての契約を果たす",
         priority: "生業",
-        action: "start"
+        action: "start",
+        preserveAchievement: true
       },
       lifeSkill: {
         id: "bsw-tactics",
@@ -103,7 +104,8 @@ window.TERRA_DATA_BUILD.fragment(
         id: "rhine-research",
         title: "ライン生命で最先端科学の真理を開拓する",
         priority: "生業",
-        action: "start"
+        action: "start",
+        preserveAchievement: true
       },
       lifeSkill: {
         id: "rhine-academic",
