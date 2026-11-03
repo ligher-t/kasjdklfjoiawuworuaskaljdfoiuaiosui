@@ -73,7 +73,7 @@ const admission=run(function(){
   const result={selected,preflight,accepted:notice?.result==="accepted",
     reason:record.reason,phase:record.phase,applicationId:record.applicationId,
     cashSame:before===s.cash,houseSame:houseBefore===s.house.cash,
-    examReceipts:(s.educationFinance?.receipts||[]).filter(x=>x.kind==="exam").length,
+    examReceipts:Object.values(s.educationFinance?.receipts||{}).filter(x=>s.educationFinance.invoices[x.invoiceId]?.kind==="entrance-exam").length,
     active:!!current};
   if(!result.accepted)return result;
   const contract=educationCaseCommitEligibility(s),performed=educationCaseCommit(s);
@@ -82,7 +82,7 @@ const admission=run(function(){
     offeringCommitted:s.educationPath?.offeringId===original.offeringId,
     institutionCommitted:s.educationPath?.institutionId===original.institutionId,
     awards:s.educationRecord.awards.length,
-    tuitionReceipts:s.educationFinance.receipts.filter(x=>x.kind==="tuition").length,
+    tuitionReceipts:Object.values(s.educationFinance.receipts).filter(x=>s.educationFinance.invoices[x.invoiceId]?.kind==="tuition").length,
     activeAfter:!!educationActiveCase(s)};
 });
 assert.equal(admission.selected,true);
@@ -98,7 +98,7 @@ if(admission.accepted){
   assert.equal(admission.terminal,"admitted");
   assert.equal(admission.offeringCommitted,true);
   assert.equal(admission.institutionCommitted,true);
-  assert.equal(admission.tuitionReceipts,1);
+  assert.equal(admission.tuitionReceipts,0,"free primary tuition has no cash receipt");
   assert.equal(admission.activeAfter,false);
   assert.equal(admission.awards,0);
 }else{
@@ -117,7 +117,7 @@ const noSchool=run(function(){
   const history=s.educationCases.history.at(-1);
   return {created,count,exit,reason:history.reason,active:educationActiveCase(s),
     moneySame:money===s.cash,houseSame:house===s.house.cash,
-    feeRecords:(s.educationFinance?.receipts||[]).filter(x=>x.caseId===history.id).length};
+    feeRecords:Object.values(s.educationFinance?.receipts||{}).filter(x=>s.educationFinance.invoices[x.invoiceId]?.caseId===history.id).length};
 });
 assert.equal(noSchool.created,true);
 assert.equal(noSchool.count,0);
@@ -182,7 +182,7 @@ const guardianScope=run(function(){
     x.institutionId===row.institutionId &&
     x.evidenceRef===item.id+":guardian-response");
   const end=s.educationCases.items[item.id],
-    receiptCount=(s.educationFinance?.receipts||[]).filter(x=>x.caseId===item.id).length;
+    receiptCount=Object.values(s.educationFinance?.receipts||{}).filter(x=>s.educationFinance.invoices[x.invoiceId]?.caseId===item.id).length;
   return {begin,before,pending,searched,afterSearch,repeatSearch,denied,deniedText,
     selected,answers:answers.map(x=>({purpose:x.purpose,state:x.consentState,evidence:x.evidenceRef})),
     phase:end.phase,terminal:end.reason,receiptCount,uncharged:bank===s.cash&&house===s.house.cash,

@@ -151,9 +151,7 @@ function settleAnnualPersonalCash(s, services, amounts, a) {
       },
       net
     };
-  const educationTuition = s.educationAnnualFee?.year === s.year ?
-    (s.educationAnnualFee.paidByPersonal ??
-     (s.educationAnnualFee.payer === "personal" ? s.educationAnnualFee.amount : 0)) : 0;
+  const educationTuition=educationAnnualOutflow(s,s.year,"personal");
   if(educationTuition){
     annualFlow.expense.education = educationTuition;
     annualFlow.net -= educationTuition;

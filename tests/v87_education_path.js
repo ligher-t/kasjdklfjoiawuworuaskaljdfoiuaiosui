@@ -136,7 +136,7 @@ assert.equal(credit.balance,credit.totalDue-50000);
 assert.equal(credit.aggregate,credit.balance,'annual repayment changes the ledger and aggregate exactly once');
 assert.equal(credit.payer,'contract');
 assert.equal(credit.paidByContract,credit.fee);
-assert.equal(credit.contractId,'columbia-education-credit-'+credit.year);
+assert(credit.contractId.startsWith('edu-loan:'),'the loan contract is keyed to the specific tuition invoice');
 assert.equal(credit.years,1,'signing tuition credit starts a funded year without instant completed study');
 assert.equal(credit.decision,null);
 assert.equal(credit.cash,0,'education credit pays the school and does not inflate student cash');

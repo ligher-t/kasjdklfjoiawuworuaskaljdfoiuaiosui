@@ -43,7 +43,8 @@ function settleAnnualHouseholdBudget(s, services, a) {
       a < services.P("life.workStartAge") || services.inSharedHousehold(s);
     const petCost = s.pet ? services.petCostBase(s.pet) * s.res.pm : 0,
       schoolCost =
-        s.fl.sch && a < services.P("life.schoolEnrollmentEndAge")
+        s.fl.sch && a < services.P("life.schoolEnrollmentEndAge") &&
+          !s.educationPath?.offeringId
           ? services.P("economy.schoolMaterialsAnnualCost") * s.res.pm
           : 0,
       tc =
@@ -112,9 +113,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
     if(typeof accrueUncontractedDebtInterest==="function")
       accrueUncontractedDebtInterest(s,"household",services.P("economy.debtInterest"));
     else house.debt *= 1 + services.P("economy.debtInterest");
-    const educationTuition = s.educationAnnualFee?.year === s.year ?
-      (s.educationAnnualFee.paidByHousehold ??
-       (s.educationAnnualFee.payer === "household" ? s.educationAnnualFee.amount : 0)) : 0;
+    const educationTuition=educationAnnualOutflow(s,s.year,"household");
     house.inc = hinc + reserveContribution;
     house.exp = hex + educationTuition;
     house.flow = {

@@ -171,6 +171,9 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
       item.stepsUsed<0 || !["active","resolved"].includes(item.status) ||
       !["intent","planning","application","contract","continuity","resolved"].includes(item.phase))
   )) problems.push("進路案件の年次・状態遷移記録が不正");
+  if(typeof educationCheckFinanceInvariants==="function" &&
+    educationCheckFinanceInvariants(s).length)
+    problems.push("教育費の請求・領収・返金台帳に矛盾");
   if(s.educationAnnualFee && (
     !Number.isInteger(s.educationAnnualFee.year) ||
     s.educationAnnualFee.year > s.year ||
