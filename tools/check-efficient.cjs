@@ -48,6 +48,7 @@ const approved=Object.freeze([
   "v88_affiliation_goal_closure.test.cjs",
   "v88_affiliation_goal_outcome_branches.test.cjs",
   "v88_workplace_goal_departure_contracts.test.cjs",
+  "v88_rejected_career_and_short_contract_goals.test.cjs",
   "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
   "v88_higashi_and_siracusa_retirement_goals.test.cjs",
   "v88_zelgrad_post_settlement_lifecycle.test.cjs",

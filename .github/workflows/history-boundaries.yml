@@ -47,6 +47,7 @@ on:
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_goal_outcome_branches.test.cjs'
       - 'tests/v88_workplace_goal_departure_contracts.test.cjs'
+      - 'tests/v88_rejected_career_and_short_contract_goals.test.cjs'
       - 'tests/v88_rhine_and_rhodes_departure_lifecycle.test.cjs'
       - 'tests/v88_higashi_and_siracusa_retirement_goals.test.cjs'
       - 'tests/v88_zelgrad_post_settlement_lifecycle.test.cjs'
@@ -115,6 +116,7 @@ on:
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_goal_outcome_branches.test.cjs'
       - 'tests/v88_workplace_goal_departure_contracts.test.cjs'
+      - 'tests/v88_rejected_career_and_short_contract_goals.test.cjs'
       - 'tests/v88_rhine_and_rhodes_departure_lifecycle.test.cjs'
       - 'tests/v88_higashi_and_siracusa_retirement_goals.test.cjs'
       - 'tests/v88_zelgrad_post_settlement_lifecycle.test.cjs'
@@ -211,6 +213,10 @@ jobs:
         run: node tools/check-efficient.cjs run v88_affiliation_goal_outcome_branches.test.cjs
       - name: Career departure goal and intermittent contract distinctions
         run: node tools/check-efficient.cjs run v88_workplace_goal_departure_contracts.test.cjs
+      - name: Failed specialist applications and one-off employment records
+        run: |
+          node tools/check-efficient.cjs run v88_rejected_career_and_short_contract_goals.test.cjs
+          node tools/check-efficient.cjs run v87_sargon_contract_lifecourse.js
       - name: Rhine whistleblower asylum and Rhodes staff exit contracts
         run: node tools/check-efficient.cjs run v88_rhine_and_rhodes_departure_lifecycle.test.cjs
       - name: Higashi demobilization and Siracusa retirement goals
