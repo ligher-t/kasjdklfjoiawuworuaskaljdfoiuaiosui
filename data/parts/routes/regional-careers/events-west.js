@@ -415,7 +415,7 @@ window.TERRA_DATA_BUILD.fragment(
           { k: 2, cr: 2 }
         ])
       ]
-    }
+    },
     {
       id: "car_urs_officer_after_dismissal",
       conf: "S",
