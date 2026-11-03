@@ -299,6 +299,14 @@ window.TERRA_DATA_BUILD.fragment(
               }
             ],
             lifeGoal: { id: "oripathy-research", action: "abandon", note: "研究班と勤務関係を離れた" },
+            lifeGoals: [
+              {
+                id: "rhodes-work",
+                title: "ロドスで担当する仕事を無理なく続ける",
+                action: "abandon",
+                note: "休止中のロドス勤務も終了"
+              }
+            ],
             regionalImpact: {
               entity: "ロドス研究班の患者経過記録",
               kind: "research-handover",

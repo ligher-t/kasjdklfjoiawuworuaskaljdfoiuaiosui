@@ -117,7 +117,7 @@ window.TERRA_DATA_BUILD.fragment(
               action: "leave",
               note: "退職し地域で再就職先を探す"
             },
-            lifeGoal: { id: "kazimierz-arena-work", action: "compromise", note: "会場の雇用を終了" },
+            lifeGoal: { id: "kazimierz-arena-work", action: "abandon", note: "会場の雇用を終了" },
             p: 1
           }
         ])

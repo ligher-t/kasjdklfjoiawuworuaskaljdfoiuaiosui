@@ -372,3 +372,21 @@
 対象：`data/base/career-entry.js` の `col_tech_safety_aftermath`、`col_tech_internal_review`、`col_tech_workplace_consequence`、`col_tech_later_years`、`vic_clerk_role_review`、`data/parts/routes/rhodes-and-factions/staff-routes-events-01.js` の `sr_rhodes_work_review`。
 
 **イベント本文・選択肢・結果文・人生目標の注記は、いずれも改稿・追加なし。** 退職を選んだ結果に既存の注記「現職を離れ、別の働き口を探す」「内部確認の結論を待たず現職を離れた」「同じ職場での継続を断念し、別の働き口を探す」「同じ職場での勤務を終えた」「この仲介所での勤務を終えた」「別の仕事へ進むため退職」がある。これらの職場固有目標の状態を `compromised` から `abandoned` に変更。新たな職場、給与、居住地は記録しない。単発請負終了と本人の療養継続については従来の状態遷移を維持する。
+
+
+## 2026-11-03｜U-19：競技場・ロドス研究・ライン生命の離脱履歴
+
+**変更対象**：`data/parts/routes/rhodes-and-factions/arena-work.js`（`sr_kazimierz_arena_shift`）、`data/parts/extensions/social-and-care/research-reunion.js`（`life_rhodes_research_stall`）、`data/parts/routes/rhodes-and-factions/rhine-routes.js`（`sr_rhine_rhodes_asylum`、`sr_rhine_diabolic_ethical_crossroad`）。
+
+**新たに人生目標の履歴に表示され得る注記全文**：
+
+- 「休止中のロドス勤務も終了」
+- 「非人道実験を告発しロドスへ亡命」
+- 「研究界を離脱し隠遁」
+
+**表示され得る目標見出し全文**（既存の見出しを再利用）：
+
+- 「ロドスで担当する仕事を無理なく続ける」
+- 「ライン生命で最先端科学の真理を開拓する」
+
+**変更の意味**：それぞれ既存の所属履歴・目標名の語句を新しい目標履歴にも適用し、退職・亡命により未解決で残る目標を終了する。競技場の退職による既存の目標注記「会場の雇用を終了」の表示は変わらない。イベント本文、選択肢、結果散文は無改稿。ライン生命の倫理事件・亡命の再表示は発火条件と `once` で制限する。史料の出来事や人物像を拡張する変更ではない。

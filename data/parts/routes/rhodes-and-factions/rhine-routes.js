@@ -202,6 +202,7 @@ window.TERRA_DATA_BUILD.fragment(
       conf: "S",
       references: ["SRC_RHINE_LAB"],
       st: ["青年", "壮年", "老年"],
+      once: true,
       cd: 5,
       w: 0.4,
       ge: { year: 1094 },
@@ -241,10 +242,16 @@ window.TERRA_DATA_BUILD.fragment(
       conf: "S",
       references: ["SRC_RHINE_LAB", "SRC_RHODES_FOUNDATION"],
       st: ["青年", "壮年", "老年"],
+      once: true,
       cd: 3,
       w: 0.5,
       ge: { year: 1095 },
-      show: s => !!s.fl?.rhine_whistleblower,
+      show: s =>
+        !!s.fl?.rhine_whistleblower &&
+        [38, 39, 40].includes(s.job) &&
+        ["active", "crisis", "suspended"].includes(
+          s.lifeRecord?.affiliations?.find(a => a.id === "rhine-lab")?.status
+        ),
       t: "トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格納庫で、白衣を着た医療スタッフたちが出迎えてくれた。",
       c: [
         $terraData.K("持ち出した研究資料をロドスへ託し、医療・研究補助職員（J 30）として身を寄せる", {}, [
@@ -256,6 +263,12 @@ window.TERRA_DATA_BUILD.fragment(
               id: "rhine-lab",
               title: "ライン生命医科学研究所",
               action: "leave",
+              note: "非人道実験を告発しロドスへ亡命"
+            },
+            lifeGoal: {
+              id: "rhine-research",
+              title: "ライン生命で最先端科学の真理を開拓する",
+              action: "abandon",
               note: "非人道実験を告発しロドスへ亡命"
             },
             lifeAffiliations: [
@@ -280,6 +293,12 @@ window.TERRA_DATA_BUILD.fragment(
               id: "rhine-lab",
               title: "ライン生命医科学研究所",
               action: "leave",
+              note: "研究界を離脱し隠遁"
+            },
+            lifeGoal: {
+              id: "rhine-research",
+              title: "ライン生命で最先端科学の真理を開拓する",
+              action: "abandon",
               note: "研究界を離脱し隠遁"
             },
             p: 1
