@@ -281,7 +281,7 @@ for(const career of regionalCareers){
     S.job=c.job;
     const staleDuty=duties.map(e=>e.show(S));
     S.job=0;
-    S.year+=3;S.age+=3;S.mo=4;
+    S.year+=3;S.age+=3;S.mo=entry.months?.[0]||4;
     const canRehire={shown:entry.show(S),eligible:elig(entry,S,tags(S))};
     ap(success);
     const hiredAgain={
