@@ -1,0 +1,33 @@
+name: Temporary repeated unemployment and relocation contracts
+on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths: ['.github/workflows/temporary-zelgrad-repeat-and-moves.yml']
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Register new metadata and validate lifecycle
+        run: |
+          node tools/generate-event-catalog.cjs --reconcile
+          node tools/generate-event-catalog.cjs --write
+          node tools/generate-event-catalog.cjs --check
+          node tools/update-version.cjs
+          node tools/check-efficient.cjs syntax
+          node tools/check-efficient.cjs run v88_zelgrad_second_job_loss_and_mobility.test.cjs
+          node tools/check-efficient.cjs run v88_zelgrad_post_settlement_lifecycle.test.cjs
+          node tools/check-efficient.cjs run v87_ursus_zelgrad_displaced_work.js
+      - name: Synchronize metadata, catalog and revision
+        run: |
+          git add tools/event-catalog-metadata.json EVENT_CATALOG.md js/version.js
+          if ! git diff --cached --quiet; then
+            git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' commit -m 'chore: synchronize repeated-unemployment events and catalog'
+            git push origin HEAD:fix/historical-event-scope-and-delivery
+          fi

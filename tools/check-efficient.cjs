@@ -51,6 +51,7 @@ const approved=Object.freeze([
   "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
   "v88_higashi_and_siracusa_retirement_goals.test.cjs",
   "v88_zelgrad_post_settlement_lifecycle.test.cjs",
+  "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
   "v88_affiliation_legacy_event_boundaries.test.cjs",
   "v88_reunion_goal_transition.test.cjs",
   "v88_cross_faction_affiliation_transitions.test.cjs",
