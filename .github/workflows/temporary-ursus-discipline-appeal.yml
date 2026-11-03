@@ -24,7 +24,7 @@ jobs:
           node tools/generate-event-catalog.cjs --write
           node tools/check-efficient.cjs syntax
           node tools/generate-event-catalog.cjs --check
-      - name: Verify military appeal, reentry and post-discharge goals
+      - name: Verify old and new reemployment options with exceptional military appeals
         run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs v88_outcome_followup_lineage.test.cjs v88_workplace_goal_departure_contracts.test.cjs
       - name: Commit verified generated files
         run: |
