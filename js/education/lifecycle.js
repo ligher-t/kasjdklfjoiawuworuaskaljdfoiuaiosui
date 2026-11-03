@@ -138,10 +138,11 @@ function educationBarrier(s, stage, tier = 1) {
     reason:chance<1 ? "学校側の受入れ、地域の身分・種族・感染者差別、交通の影響" : null,
     basis:"game-model-school-policy",profile:profile.source};
 }
-function educationFunds(s, stage, tier = 1) {
-  const config = EDUCATION_PROGRAMS[stage];
-  return Math.round((config?.fee || 0) * (stage === "university" || stage === "vocational" || stage === "arts" ? 1 + 0.55 * (tier - 1) : 1) *
-    (s.res?.pm || 1) * (s.priceIndex || 1));
+function educationFunds(s,stage,tier=1,offeringId=null) {
+  const current=s.educationPath;
+  const named=offeringId||(current?.stage===stage&&current.tier===tier?
+    current.offeringId||null:null);
+  return educationFinancePrice(s,stage,tier,named).amount;
 }
 function educationPaymentPlan(s, fee) {
   const requested=Math.max(0,fee||0),
@@ -162,16 +163,24 @@ function educationPayer(s, required = 0) {
   return s.house && typeof inSharedHousehold==="function" && inSharedHousehold(s) &&
     (s.house.cash || 0) >= required ? s.house : s;
 }
-function educationChargeFee(s, amount, stage, recordAnnual = true) {
-  const plan=educationPaymentPlan(s,amount);
-  if(!plan.allowed)return false;
-  s.cash=(s.cash||0)-plan.personal;
-  if(plan.household)s.house.cash-=plan.household;
-  if(recordAnnual && amount>0) {
-    s.educationAnnualFee={year:s.year,stage,amount,
-      payer:plan.household===0?"personal":plan.personal===0?"household":"mixed",
-      paidByPersonal:plan.personal,paidByHousehold:plan.household};
-  }
+function educationChargeFee(s,amount,stage,recordAnnual=true) {
+  const m=s.educationPath,
+    inSameCourse=recordAnnual&&m?.status==="enrolled"&&m.stage===stage;
+  const invoice=inSameCourse
+    ? educationEnsureTuitionInvoice(s,m,s.year)
+    : educationEnsureInvoice(s,{
+      id:["education-legacy",stage,s.year,
+        typeof TRACE_RESOLUTION==="object"&&TRACE_RESOLUTION?.id||"annual",
+        m?.stageStartYear||"new"].join(":"),
+      kind:stage==="materials"?"school-materials":"tuition",
+      institutionId:m?.institutionId||"legacy-school:"+s.res?.n+":"+stage,
+      offeringId:m?.stage===stage?m.offeringId||null:null,
+      amount:educationFinanceAmount(amount),serviceYear:s.year
+    });
+  if(invoice.net!==amount)return false;
+  const receipt=educationSettleInvoice(s,invoice);
+  if(!receipt)return false;
+  if(recordAnnual)educationFinanceProjectInvoice(s,invoice);
   return true;
 }
 function educationCanEnter(s, stage, tier = 1) {
@@ -184,7 +193,9 @@ function educationCanEnter(s, stage, tier = 1) {
 function educationExam(s, stage, tier = 1) {
   const hasQualification = educationHas(s,"upper") ||
     !!s.educationPath?.equivalency?.includes("upper");
-  const admission = educationCanEnter(s,stage,tier),
+  const access=educationBarrier(s,stage,tier),
+    fee=educationFunds(s,stage,tier),examFee=Math.round(fee*0.06),
+    funded=educationPaymentPlan(s,examFee),
     knowledge = Number(s.k || 0),
     literacy = Number.isFinite(s.socialLearning?.literacy) ? s.socialLearning.literacy : 0,
     arts = Number(s.ar || 0);
@@ -194,10 +205,11 @@ function educationExam(s, stage, tier = 1) {
     // Large gaps should make success extremely unlikely; exceptional prepared
     // applicants pass with high probability, without an invented intelligence trait.
     examChance = Math.max(0.008,Math.min(0.985,0.5 + (aptitude - threshold) * 0.025));
-  return {allowed:hasQualification && admission.allowed && !educationOccupied(s),
-    chance:examChance * admission.chance,fee:admission.fee,
+  return {allowed:hasQualification && access.allowed && funded.allowed && !educationOccupied(s),
+    chance:examChance * access.chance,fee,examFee,
     reason:!hasQualification ? "後期中等課程の修了、または正式な同等資格が必要" :
-      educationOccupied(s) ? "在籍・休学中の課程を先に終える必要がある" : admission.reason};
+      educationOccupied(s) ? "在籍・休学中の課程を先に終える必要がある" :
+      !funded.allowed?"受験料の支払手段が不足している":access.reason};
 }
 function educationAppendHistory(s,action,details = {}) {
   const model = s.educationPath;
@@ -357,48 +369,44 @@ function educationApplyAction(s,action) {
   }
   if(action==="funding-grant"){
     const m=s.educationPath;
-    if(s.educationDecision?.kind!=="funding" || !m || m.status!=="enrolled" ||
+    if(s.educationDecision?.kind!=="funding"||!m||m.status!=="enrolled"||
        !EDUCATION_INSTITUTIONAL_REGIONS.includes(s.res?.n))return;
-    const fee=educationFunds(s,m.stage,m.tier),plan=educationPaymentPlan(s,fee),
-      aid=Math.max(0,fee-plan.personal-plan.household);
-    if(plan.allowed || aid<=0)return;
-    s.cash=(s.cash||0)-plan.personal;
-    if(plan.household)s.house.cash-=plan.household;
-    s.educationAnnualFee={year:s.year,stage:m.stage,amount:fee,
-      payer:plan.household===0?"personal":plan.personal===0?"household":"mixed",
-      paidByPersonal:plan.personal,paidByHousehold:plan.household,
-      aidAmount:aid,aidBasis:"simulation-school-tuition-relief"};
+    const invoice=educationEnsureTuitionInvoice(s,m),
+      remaining=invoice.net-invoice.paid,
+      plan=educationPaymentPlan(s,remaining),
+      aid=Math.max(0,remaining-plan.personal-plan.household);
+    if(plan.allowed||aid<=0)return;
+    const id="grant:"+s.year+":"+invoice.id;
+    const posting=educationSettleInvoice(s,invoice,{
+      postingId:invoice.id+":grant-settlement",
+      grant:{id,amount:aid,basis:"game-model-institutional-relief"}
+    });
+    if(!posting)return;
+    educationFinanceProjectInvoice(s,invoice);
     educationRecordFundedYear(s,m,source,"aid-granted",{
-      tuition:fee,personal:plan.personal,household:plan.household,grant:aid,
-      basis:"simulation-school-tuition-relief"
+      tuition:invoice.net,personal:plan.personal,household:plan.household,
+      grant:aid,basis:"game-model-institutional-relief"
     });
     return;
   }
   if(action==="funding-loan"){
     const m=s.educationPath;
-    if(s.educationDecision?.kind!=="funding" || !m || m.status!=="enrolled" ||
-       s.age<18 || s.res?.n!=="クルビア" || typeof addLoanContract!=="function")return;
-    const fee=educationFunds(s,m.stage,m.tier),plan=educationPaymentPlan(s,fee),
-      principal=Math.max(0,Math.round(fee-plan.personal-plan.household));
-    if(principal<=0)return;
-    const id="columbia-education-credit-"+s.year;
-    addLoanContract(s,{
-      contractId:id,kind:"education-credit",borrower:"本人",
-      creditor:"クルビア工業区の民間学費貸付人",region:"クルビア",
-      currency:"クルビア現地通貨（モデル単位）",account:"personal",
-      principal,totalDue:Math.round(principal*1.1),installmentShare:0.2,
-      dueInYears:3,disbursement:"school",
-      terms:"この学費契約の返済総額は元本の1.1倍。契約年から3年後の年末が期限。一部返済可。固定返済総額以外の利息・遅延料は記載なし。",
-      sourceEventId:source
-    },1);
-    s.cash=(s.cash||0)-plan.personal;
-    if(plan.household)s.house.cash-=plan.household;
-    s.educationAnnualFee={year:s.year,stage:m.stage,amount:fee,
-      payer:plan.personal+plan.household>0?"mixed-contract":"contract",
-      paidByPersonal:plan.personal,paidByHousehold:plan.household,
-      paidByContract:principal,contractId:id,aidAmount:0};
+    if(s.educationDecision?.kind!=="funding"||!m||m.status!=="enrolled"||
+       s.age<18||s.res?.n!=="クルビア"||typeof addLoanContract!=="function")return;
+    const invoice=educationEnsureTuitionInvoice(s,m),
+      remaining=invoice.net-invoice.paid,
+      plan=educationPaymentPlan(s,remaining),
+      principal=Math.max(0,remaining-plan.personal-plan.household);
+    if(plan.allowed||principal<=0)return;
+    const id="edu-loan:"+educationTuitionEnrollmentId(s,m)+":"+invoice.id;
+    const posting=educationSettleInvoice(s,invoice,{
+      postingId:invoice.id+":loan-settlement",
+      loan:{id,amount:principal,creditor:"クルビア工業区の民間学費貸付人"}
+    });
+    if(!posting)return;
+    educationFinanceProjectInvoice(s,invoice);
     educationRecordFundedYear(s,m,source,"education-credit-signed",{
-      tuition:fee,personal:plan.personal,household:plan.household,
+      tuition:invoice.net,personal:plan.personal,household:plan.household,
       principal,totalDue:Math.round(principal*1.1),contractId:id
     });
     return;
@@ -436,7 +444,7 @@ function educationApplyAction(s,action) {
   if(action==="funding-resume"){
     const m=s.educationPath;
     if(!m || m.status!=="paused") {s.educationDecision=null;return;}
-    const fee=educationFunds(s,m.stage,m.tier);
+    const fee=educationFunds(s,m.stage,m.tier,m.offeringId||null);
     if(m?.status==="paused" && educationBarrier(s,m.stage,m.tier).allowed &&
        educationChargeFee(s,fee,m.stage)){
       m.status="enrolled";m.lastProcessedYear=s.year;m.fundedYear=s.year;
@@ -499,18 +507,19 @@ function educationEnforceAccess(s){
   }
 }
 function educationFundYear(s,m) {
-  const fee=educationFunds(s,m.stage,m.tier);
-  if(fee>0) {
-    if(!educationPaymentPlan(s,fee).allowed){
-      if(EDUCATION_INSTITUTIONAL_REGIONS.includes(s.res?.n)) {
-        s.educationDecision={kind:"funding",year:s.year,fee};
-        m.lastProcessedYear=s.year;
-        return;
-      }
-      educationEnd(s,"withdrawn","学費不足による在籍終了","annual-finance");return;
+  const invoice=educationEnsureTuitionInvoice(s,m,s.year);
+  if(invoice.status==="void")return;
+  if(invoice.outstanding>0){
+    const posting=educationSettleInvoice(s,invoice);
+    if(!posting){
+      s.educationDecision={kind:"funding",year:s.year,fee:invoice.outstanding,
+        invoiceId:invoice.id};
+      m.lastProcessedYear=s.year;
+      return;
     }
-    educationChargeFee(s,fee,m.stage);
   }
+  if(invoice.status!=="paid")return;
+  educationFinanceProjectInvoice(s,invoice);
   m.fundedYear=s.year;
   m.lastProcessedYear=s.year;
   if(s.study){s.study.yearsPaid++;s.study.nextDue=s.year+1;}
