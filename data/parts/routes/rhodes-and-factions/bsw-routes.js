@@ -340,6 +340,7 @@ window.TERRA_DATA_BUILD.fragment(
           }
         ])
       ]
+    }
   ];
 
   $terraData.EV.push(...events);
