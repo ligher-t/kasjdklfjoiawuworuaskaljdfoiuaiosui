@@ -335,8 +335,10 @@ function educationPlanRefund(s,invoiceId,reasonId,parameters={}) {
   }
   const total=Object.values(receiptGroups).reduce((n,row)=>n+row.amount,0);
   if(total!==invoice.paid)return {allowed:false,reason:"receipt-mismatch"};
+  const payerOrder=["personal","household","grant","contract-loan"];
   const parts=Object.values(receiptGroups).sort((a,b)=>
-    (a.source+":"+a.sourceRef).localeCompare(b.source+":"+b.sourceRef));
+    payerOrder.indexOf(a.source)-payerOrder.indexOf(b.source) ||
+    String(a.sourceRef||"").localeCompare(String(b.sourceRef||"")));
   let assigned=0;
   for(const [index,row] of parts.entries()){
     row.amount=index===parts.length-1?ceiling-assigned:Math.floor(ceiling*row.amount/total);
