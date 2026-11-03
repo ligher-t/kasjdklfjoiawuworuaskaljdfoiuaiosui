@@ -114,7 +114,7 @@ function educationAreaRegistration(world, definition) {
   if (existing) {
     if (existing.regionKey !== definition.regionKey ||
         existing.cityOrSettlementKey !== definition.cityOrSettlementKey ||
-        existing.hubId !== definition.hubId)
+        existing.educationHubId !== definition.hubId)
       throw new Error("教育圏IDが別の場所に衝突");
     if (definition.designation && existing.designation !== definition.designation)
       throw new Error("学校配置確定後の特例はP05の新設履歴で扱う");
