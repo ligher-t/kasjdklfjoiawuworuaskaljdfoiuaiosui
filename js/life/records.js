@@ -127,6 +127,9 @@ function applyLifeGoal(input) {
     !["start", "continue", "compromise", "pause", "complete", "abandon"].includes(action)
   )
     throw new Error("人生目標の記録形式が不正");
+  // A later employment episode must not undo an already completed life goal.
+  if (action === "start" && input.preserveAchievement && goal?.status === "achieved")
+    return goal;
   const source = lifeRecordSource();
   if (!goal) {
     goal = {
