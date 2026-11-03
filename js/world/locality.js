@@ -188,6 +188,7 @@ function applyCurrentLocalityShocks(s, state) {
 function ensureLocalityState(s) {
   if (!s?.res || !s.local) return null;
   ensureResidenceIdentity(s);
+  ensureEducationWorldForResidence(s);
   s.world || (s.world = { events: {} });
   s.world.localityArchive || (s.world.localityArchive = {});
   const key = localityKey(s);

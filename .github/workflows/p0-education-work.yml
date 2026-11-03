@@ -45,6 +45,8 @@ jobs:
         run: node tools/check-efficient.cjs run p0-school-progression.test.cjs
       - name: Regional school admissions and school facility conditions
         run: node tools/check-efficient.cjs run p0-school-regional-access.test.cjs
+      - name: Education world placement and ID determinism
+        run: node tools/check-efficient.cjs run p18-education-world-determinism.test.cjs
       - name: Nonstandard school and infection scenarios
         run: node tools/check-efficient.cjs run p0-education-nonstandard.test.cjs
       - name: School and career transition boundaries
