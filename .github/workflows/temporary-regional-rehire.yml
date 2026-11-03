@@ -1,0 +1,23 @@
+name: Temporary regional rehiring verification
+on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths: [.github/workflows/temporary-regional-rehire.yml]
+permissions:
+  contents: read
+jobs:
+  targeted:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate runtime revision for targeted checks
+        run: |
+          node tools/update-version.cjs
+          node tools/check-efficient.cjs syntax
+          node --input-type=commonjs -e "const fs=require('node:fs');console.log('GENERATED_VERSION='+fs.readFileSync('js/version.js','utf8').match(/[a-f0-9]{64}/)[0])"
+      - name: Regional careers and workplace contract boundaries
+        run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs v88_workplace_goal_departure_contracts.test.cjs
