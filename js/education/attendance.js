@@ -50,7 +50,8 @@ function educationRecordPlacementTransfer(s,{enrollmentId,campusId,offeringId,
   const reg=educationAttendanceState(s),record=educationActiveEnrollment(s),
     world=s.world?.educationWorld,offer=world?.offerings?.[offeringId],
     campus=world?.campuses?.[campusId];
-  if(!record||record.id!==enrollmentId||!evidenceRef||!recognitionRef||
+  if(s.dead||s.educationPath?.status!=="enrolled"||
+     !record||record.id!==enrollmentId||!evidenceRef||!recognitionRef||
      !offer||offer.campusId!==campusId||offer.stage!==s.educationPath.stage||
      !campus||campus.institutionId!==offer.institutionId)
     return null;
@@ -93,7 +94,7 @@ function educationMonthKey(enrollmentId,year,month) {
 function educationRecordAttendance(s,input) {
   const {enrollmentId,year,month,placementId,personalAccess,evidenceRef,
     sourceKind="confirmed-attendance"}=input||{};
-  if(!enrollmentId||!evidenceRef||!Number.isInteger(year)||
+  if(s.dead||!enrollmentId||!evidenceRef||!Number.isInteger(year)||
      !Number.isInteger(month)||month<1||month>12||
      year>s.year || year===s.year && month>(s.mo||0) && !s.educationYearClosing ||
      !Number.isFinite(personalAccess)||
@@ -178,7 +179,7 @@ function educationRenewGuardianStudy(s) {
 }
 function educationSimulateAttendanceThrough(s,year= s?.year,untilMonth=12) {
   const m=s.educationPath,record=educationActiveEnrollment(s),world=s.world?.educationWorld;
-  if(!record||!["enrolled","paused"].includes(m.status)||!world||
+  if(s.dead||!record||!["enrolled","paused"].includes(m.status)||!world||
      year!==s.year || untilMonth<1)return 0;
   const reg=educationAttendanceState(s);
   if(!reg.placements.currentPlacementId)educationBindFormalEnrollment(s,record.id);
@@ -228,7 +229,7 @@ function educationSimulateAttendanceThrough(s,year= s?.year,untilMonth=12) {
   return count;
 }
 function educationSettleCompletedAcademicYear(s,year) {
-  if(!Number.isInteger(year)||year>s.year)return null;
+  if(s.dead||!Number.isInteger(year)||year>s.year)return null;
   if(year===s.year && s.mo<12 && !s.educationYearClosing)
     return {academicYear:year,outcome:"pending",credited:false,
       reason:"academic-year-not-ended"};
