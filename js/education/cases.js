@@ -413,7 +413,8 @@ function educationCaseCommit(s,mode="cash") {
   if(!item||!check.allowed)return false;
   const fields=["educationFinance","educationAnnualFee","educationPath",
     "educationDecision","educationCases","educationRecord","fl","study",
-    "job","workPayBonus","reducedWorkStartedYear","lifeRecord","careerHistory","cash"];
+    "job","workPayBonus","reducedWorkStartedYear","lifeRecord","careerHistory",
+    "educationAttendance","educationCredits","educationPlacements","cash"];
   const saved=Object.fromEntries(fields.map(key=>
     [key,s[key]===undefined?undefined:educationFinanceClone(s[key])]));
   const houseCash=s.house?.cash;
@@ -430,6 +431,7 @@ function educationCaseCommit(s,mode="cash") {
     enrolled.institutionId=item.targetInstitutionId;
     enrolled.campusId=item.campusId;
     enrolled.offeringId=item.offeringId;
+    educationBindFormalEnrollment(s,enrollmentId);
     const posting=educationCaseCharge(s,item,"tuition",check.tuition,{
       enrollmentId,sources:check.financing
     });
@@ -567,7 +569,9 @@ function educationCaseAction(s,action) {
   }
   if(command==="keep-current"&&item.phase==="continuity"){
     if(!educationCaseStep(s,item,command))return false;
-    educationCaseFinish(s,item,"continued");return true;
+    educationCaseFinish(s,item,"continued");
+    if(s.educationPath?.status==="enrolled")educationFundYear(s,s.educationPath);
+    return true;
   }
   return false;
 }

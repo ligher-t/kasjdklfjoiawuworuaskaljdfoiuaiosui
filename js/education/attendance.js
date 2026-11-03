@@ -137,7 +137,7 @@ function educationRecordAttendance(s,input) {
 }
 function educationSimulateAttendanceThrough(s,year= s?.year,untilMonth=12) {
   const m=s.educationPath,record=educationActiveEnrollment(s),world=s.world?.educationWorld;
-  if(!record||m.status!=="enrolled"||!world||
+  if(!record||!["enrolled","paused"].includes(m.status)||!world||
      year!==s.year || untilMonth<1)return 0;
   const reg=educationAttendanceState(s),
     placement=reg.placements.items[reg.placements.currentPlacementId];

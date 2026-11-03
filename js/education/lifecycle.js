@@ -589,14 +589,26 @@ function educationAdvanceYear(s) {
   }
   if(m.stageStartYear===s.year)return;
   // Only a funded, uninterrupted previous year earns study credit. Calendar gaps do not.
-  if(m.fundedYear===s.year-1) {
+  const credit=m.offeringId?educationCreditForPreviousYear(s):null;
+  const recognized=m.offeringId?credit?.credited===true:m.fundedYear===s.year-1;
+  if(recognized && m.lastCreditedYear!==s.year-1) {
     m.yearsCompleted++;
+    m.lastCreditedYear=s.year-1;
     m.fundedYear=null;
-    educationAppendHistory(s,"advanced",{stage:m.stage,yearsCompleted:m.yearsCompleted});
-    s.ep=Math.min(120,(s.ep||0)+(m.stage==="primary"?8:5));
-    s.k=Math.min(100,(s.k||0)+(m.stage==="primary"?3:4));
-    if(s.socialLearning && Number.isFinite(s.socialLearning.literacy))
-      s.socialLearning.literacy=Math.min(100,s.socialLearning.literacy+(m.stage==="primary"?9:4));
+    educationAppendHistory(s,"advanced",{stage:m.stage,yearsCompleted:m.yearsCompleted,
+      creditId:credit?.id||null});
+    // For actual school offerings the social learning subsystem owns skills:
+    // a recognized year is a credential input, not another ability bonus.
+    if(!m.offeringId){
+      s.ep=Math.min(120,(s.ep||0)+(m.stage==="primary"?8:5));
+      s.k=Math.min(100,(s.k||0)+(m.stage==="primary"?3:4));
+      if(s.socialLearning && Number.isFinite(s.socialLearning.literacy))
+        s.socialLearning.literacy=Math.min(100,s.socialLearning.literacy+(m.stage==="primary"?9:4));
+    }
+  } else if(m.offeringId && !recognized && credit && !s.educationDecision){
+    const pending=educationCaseBegin(s,"interruption-review",m.stage,m.tier,"continuity");
+    if(pending)educationAppendHistory(s,"credit-interrupted",{
+      academicYear:s.year-1,creditId:credit.id,reason:credit.outcome});
   }
   m.lastProcessedYear=s.year;
   if(m.yearsCompleted>=m.duration){
@@ -646,5 +658,6 @@ function educationAdvanceYear(s) {
     }
     return;
   }
-  educationFundYear(s,m);
+  if(!s.educationDecision || s.educationDecision.kind!=="case-review")
+    educationFundYear(s,m);
 }

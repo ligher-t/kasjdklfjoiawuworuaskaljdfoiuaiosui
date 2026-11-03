@@ -103,8 +103,8 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
   if (s.ob < 0 || s.ob > services.P("infection.terminalThreshold")) problems.push("感染度が範囲外");
   const education = s.educationRecord;
   if (!education || education.version !== 1 ||
-      !Array.isArray(education.enrollments) || education.enrollments.length > 24 ||
-      !Array.isArray(education.awards) || education.awards.length > 12 ||
+      !Array.isArray(education.enrollments) ||
+      !Array.isArray(education.awards) ||
       education.enrollments.some(row =>
         !row.id || !["general-school", "university", "vocational", "arts-academy"].includes(row.program) ||
         !["enrolled", "completed", "interrupted"].includes(row.status) ||
@@ -174,6 +174,9 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
   if(typeof educationCheckFinanceInvariants==="function" &&
     educationCheckFinanceInvariants(s).length)
     problems.push("教育費の請求・領収・返金台帳に矛盾");
+  if(typeof educationAttendanceInvariants==="function" &&
+    educationAttendanceInvariants(s).length)
+    problems.push("教育の月次出席・年次履修認定記録に矛盾");
   if(s.educationAnnualFee && (
     !Number.isInteger(s.educationAnnualFee.year) ||
     s.educationAnnualFee.year > s.year ||

@@ -3,6 +3,10 @@ function tick() {
   advanceCurrentLifeYear(currentLifeState(), ANNUAL_SERVICES);
 }
 function advanceCurrentLifeYear(s, services) {
+  if(s.educationPath?.offeringId && !s.dead){
+    educationSimulateAttendanceThrough(s,s.year,12);
+    educationSettleCompletedAcademicYear(s,s.year);
+  }
   educationExpireCases(s,s.year+1);
   const a = ++s.age,
     t = s.t,

@@ -105,8 +105,8 @@ function recordEducationTransition(s, program, action, sourceEventId = null) {
       certainty: "game-course-completion"
     });
   }
-  record.enrollments = record.enrollments.slice(-24);
-  record.awards = record.awards.slice(-12);
+  // Formal enrollment and award provenance remain a lifelong ledger.
+  // Only UI or daily narrative history may be windowed.
 }
 // One opening's work, evidence and stated requirements are distinct from an
 // unsupported general law. The inquiry must not mutate state or consume RNG.
