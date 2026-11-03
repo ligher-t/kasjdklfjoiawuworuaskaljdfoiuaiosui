@@ -239,7 +239,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("太刀を抜き、名乗りを上げて一騎打ちに応じる", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "電光石火の抜刀で敵将の甲冑を両断し、討ち取った。両軍から轟く歓声の中、主君より感状と名刀を賜り、旗本頭へ昇進した。",
-          { h: 3, cr: 5, p: 3, cash: 800000 }
+          { h: 3, cr: 5, p: 3, cash: 800000,
+            lifeAffiliation: { id: "higashi-samurai-household", action: "role", role: "旗本頭",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "激闘の末に敵を退けたものの、深手を負って落馬した。味方に救出され、療養所へ運ばれた。",
@@ -337,7 +339,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("最高強度の自作ウイルスを展開し、中枢へ突入する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
           "クルビアのファイアウォールを瞬時に粉砕し、盗聴データを完全消去して無傷で離脱した。国家電脳防諜部の『電脳首席執行官』へと登り詰め、国家の影の覇権を握った。",
-          { k: 8, p: 5, cash: 5000000, cr: 5 }
+          { k: 8, p: 5, cash: 5000000, cr: 5,
+            lifeAffiliation: { id: "higashi-cyber-intelligence", action: "role", role: "電脳首席執行官",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "作戦には成功したものの、相手の防諜パルスを浴びて一時的な記憶障害と頭痛の後遺症を負った。",
