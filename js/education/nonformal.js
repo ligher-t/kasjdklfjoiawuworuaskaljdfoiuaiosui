@@ -32,7 +32,7 @@ function educationRegisterInformalProvider(s,{providerId,personId=null,organizat
   if(!world||!providerId||!evidenceRef||!kind||!Array.isArray(subjectIds)||
      !subjectIds.length||!activeFrom||!Number.isInteger(activeFrom.year)||
      activeFrom.year>s.year||areaId&&!world.areas?.[areaId]||
-     !personId&&!organizationId||
+     !personId&&!organizationId||!areaId&&!mobileRouteId||
      (activeTo && activeTo.year*12+(activeTo.month||0)<
        activeFrom.year*12+(activeFrom.month||0)))
     throw Error("証拠を持つ学校外指導者・実在場所・期間が不足");
@@ -82,6 +82,13 @@ function educationOpenLearningPath(s,{personId="protagonist",modeId,providerId,
        [28,29,30,31,32,33,34].includes(s.job))||
      modeId==="corporate-training"&&s.job<=0)
     throw Error("非正規学習の指導者・受講者・場所・科目が未確認");
+  if(modeId==="clan-tradition" && languageId &&
+     !["listen","speak"].includes(languageMode))
+    throw Error("氏族の口承経験から未確認の文字読解能力を生成しない");
+  if(provider && !educationNonformalProviderActive(s,{
+    providerId,siteRef,languageId
+  },s.year,s.mo??0))
+    throw Error("指導者は受講時期または実際の場所にいない");
   const pathId=["learn",personId,modeId,providerId,sourceEventId].join(":");
   const old=list.find(x=>x.pathId===pathId);
   if(old)return old;
@@ -132,7 +139,7 @@ function educationCompetenceGain(s,personId,path,period,attendance,quality,
     if(axis==="language" && (!path.languageId||!path.languageMode))continue;
     const appliedId=[personId,path.pathId,period,axis,originEvidenceId].join("|");
     if(ledger.items[appliedId])continue;
-    const key=personId+":"+period.slice(0,4)+":"+axis+
+    const key=personId+":"+Number(period.split("-")[0])+":"+axis+
       (axis==="language"?":"+path.languageId+":"+path.languageMode:"");
     const used=ledger.annualTotals[key]||0,
       available=Math.max(0,EDUCATION_NONFORMAL_CAPS[axis]-used);
@@ -227,6 +234,33 @@ function educationCloseLearningPath(s,personId,pathId,status,evidenceRef) {
   path.sourceEventIds.push(evidenceRef);
   return path;
 }
+function educationRecordRecognitionAssessment(s,{personId="protagonist",
+  applicationId,pathId,authorityId,ruleId,assessmentEvidenceId,
+  examinerId,verdict,sourceEventId}={}) {
+  const path=educationLearningPath(s,personId,pathId),
+    authority=s.world?.educationWorld?.institutions?.[authorityId],
+    rule=authority?.nonformalRecognitionRules?.[ruleId];
+  if(!path||!path.participation.length||!path.evidenceIds.length||
+     !authority||!rule?.approved||!rule?.sourceRef||
+     !applicationId||!assessmentEvidenceId||!examinerId||!sourceEventId||
+     !["passed","failed"].includes(verdict))
+    throw Error("独立した学習証拠・審査者・機関規則が揃っていない");
+  s.educationRecognitionAssessments ||= {version:1,items:{}};
+  const record={
+    assessmentEvidenceId,applicationId,pathId,personId,authorityId,ruleId,
+    examinerId,verdict,sourceEventId,
+    assessedAt:{year:s.year,month:s.mo??0},
+    submittedEvidenceIds:[...path.evidenceIds]
+  };
+  const old=s.educationRecognitionAssessments.items[assessmentEvidenceId];
+  if(old){
+    if(JSON.stringify(old)!==JSON.stringify(record))
+      throw Error("同一審査証拠IDが異なる判断を指す");
+    return old;
+  }
+  s.educationRecognitionAssessments.items[assessmentEvidenceId]=record;
+  return record;
+}
 function educationNonformalRecognition(s,{personId="protagonist",applicationId,
   pathId,authorityId,ruleId,targetJurisdiction,targetStageOrRole,
   outcome,assessmentEvidenceId,sourceEventId,recognitionKind,
@@ -234,10 +268,15 @@ function educationNonformalRecognition(s,{personId="protagonist",applicationId,
   const path=educationLearningPath(s,personId,pathId),
     authority=s.world?.educationWorld?.institutions?.[authorityId],
     rule=authority?.nonformalRecognitionRules?.[ruleId],
+    assessment=s.educationRecognitionAssessments?.items?.[assessmentEvidenceId],
     accepted=["accepted","partially_accepted"].includes(outcome);
-  if(!path||!applicationId||!authority||!rule||
+  if(!path||!path.participation.length||!applicationId||!authority||!rule||
      !targetJurisdiction||!targetStageOrRole||!sourceEventId||
-     !assessmentEvidenceId||!effectiveFrom||
+     !assessment||assessment.personId!==personId||
+     assessment.pathId!==pathId||assessment.applicationId!==applicationId||
+     assessment.authorityId!==authorityId||assessment.ruleId!==ruleId||
+     (accepted?assessment.verdict!=="passed":assessment.verdict!=="failed")||
+     !effectiveFrom||
      !["entry_eligibility","partial_course_credit","skill_certificate",
        "occupational_registration"].includes(recognitionKind)||
      rule.kind!==recognitionKind||rule.targetStageOrRole!==targetStageOrRole||
@@ -251,7 +290,13 @@ function educationNonformalRecognition(s,{personId="protagonist",applicationId,
     educationDependentEntry(s,personId,true);
   store.recognitionApplications ||= {};
   const existing=store.recognitionApplications[applicationId];
-  if(existing)return existing;
+  if(existing){
+    if(existing.pathId!==pathId ||
+       existing.targetRecognitionRuleId!==ruleId ||
+       existing.outcomeType!==(accepted?recognitionKind:"none"))
+      throw Error("同一申請IDに異なる認定結果");
+    return existing;
+  }
   const item={
     applicationId,personId,pathId,targetAuthorityId:authorityId,
     targetJurisdiction,targetRecognitionRuleId:ruleId,
@@ -297,5 +342,10 @@ function educationNonformalInvariants(s) {
   if(Object.values(s.learningCompetenceEffects?.annualTotals||{})
     .some(n=>!Number.isFinite(n)||n<0||n>15.00001))
     errs.push("学校外学習の年間技能・知識上限に違反");
+  for(const review of Object.values(s.educationRecognitionAssessments?.items||{}))
+    if(!educationLearningPath(s,review.personId,review.pathId) ||
+       !s.world?.educationWorld?.institutions?.[review.authorityId]||
+       !["passed","failed"].includes(review.verdict))
+      errs.push("学校外資格審査の機関・人物・結果が不正");
   return errs;
 }
