@@ -16,6 +16,7 @@ const install=()=>run(function(){
   const world=s.world.educationWorld;
   const inst=educationRegisterInstitution(world,area,"I05-university","university",
     ["university"],s.year),offer=world.offerings[inst.offeringIds[0]];
+  offer.admissionTier=1;
   s.mo=0;
   educationStart(s,"university",1,"i05-test-enrollment");
   const m=s.educationPath;m.institutionId=inst.id;m.campusId=offer.campusId;
