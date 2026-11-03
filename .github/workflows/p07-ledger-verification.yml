@@ -31,6 +31,8 @@ jobs:
         run: node tools/check-efficient.cjs run p18-education-case-fsm.test.cjs
       - name: Existing education annual/loan regression
         run: node tools/check-efficient.cjs run v87_education_path.js
+      - name: Annual simulation diagnostic course boundary
+        run: node tools/check-efficient.cjs run v87_sim_audit_fixes_and_metrics.test.cjs
       - name: Syntax integrity
         run: node tools/check-efficient.cjs syntax
       - name: Commit generated runtime revision
