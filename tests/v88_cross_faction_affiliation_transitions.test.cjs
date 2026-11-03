@@ -110,8 +110,12 @@ for(const infectionRoute of [false,true]){
     S.year=1098;S.age=29;S.mo=6;S.job=0;
     const medical=!!BSW_INFECTION_ROUTE;
     S.inf=medical?1:0;
-    ap($terraData.bswStaff(medical?'junior':'regular',
-      medical?'BSW契約警備員・見習い':'BSW正規戦術オペレーター'));
+    const hire=EV.find(e=>e.id==='sr_bsw_recruitment_assessment');
+    ap(hire.c[0].o[0][2]);
+    if(!medical) {
+      const promotion=EV.find(e=>e.id==='sr_bsw_promotion_tactical');
+      ap(promotion.c[0].o[0][2]);
+    }
     const offer=EV.find(e=>e.id==='sr_bsw_rhodes_secondment'),
       infected=EV.find(e=>e.id==='sr_bsw_infected_squad_policy'),
       review=EV.find(e=>e.id==='sr_bsw_secondment_posting_review'),
