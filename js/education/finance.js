@@ -421,13 +421,96 @@ function educationCommitRefund(s,plan) {
     throw error;
   }
 }
+// P08 owns the actual move and its dates. Finance may charge only a
+// confirmed, priced residence/service; a school listing is never a bill.
+function educationResidenceContractMonth(contract,year,month) {
+  if(!contract || !Number.isInteger(year)||!Number.isInteger(month)||
+     month<1||month>12)return false;
+  const key=(date,edge)=>date?.year*12+(date?.month||edge);
+  const current=year*12+month,
+    from=key(contract.start,1),to=contract.end?key(contract.end,12):Infinity;
+  return Number.isFinite(from)&&current>=from&&current<=to;
+}
+function educationResidenceAwayMonths(s,year) {
+  const covered=new Set();
+  const oldArea=s.local?.educationAreaId;
+  for(const contract of Object.values(s.educationMobility?.residenceContracts||{})){
+    if(contract?.personId!=="protagonist" ||
+       contract.status!=="committed" || !contract.actualAreaId ||
+       !contract.householdRemainsAtOrigin || !contract.start ||
+       (oldArea && contract.actualAreaId===oldArea))continue;
+    for(let month=1;month<=12;month++)
+      if(educationResidenceContractMonth(contract,year,month))covered.add(month);
+  }
+  return covered.size;
+}
+function educationEnsureVerifiedMobilityInvoice(s,input) {
+  const kind=input?.kind,year=input?.year||s.year,month=input?.month,
+    residenceKind=["boarding-room","boarding-food","rent"].includes(kind),
+    travelKind=["entrance-trip","commute-pass","relocation"].includes(kind);
+  if(!residenceKind&&!travelKind)throw Error("教育移動費の区分が不正");
+  if(!Number.isInteger(year)||!Number.isInteger(month)||month<1||month>12 ||
+     year>s.year)throw Error("教育移動費のサービス期間が不正");
+  const f=educationFinanceState(s);
+  let invoiceId,amount,recipient,ownerId;
+  if(residenceKind){
+    const contract=s.educationMobility?.residenceContracts?.[input.residenceContractId];
+    if(!contract || contract.status!=="committed"||
+       contract.personId!=="protagonist" || !contract.actualAreaId ||
+       !educationResidenceContractMonth(contract,year,month))
+      throw Error("確定した本人の居住契約・対象月がない");
+    if(kind==="rent" ? contract.lodgingKind!=="independent-rental" :
+       contract.lodgingKind!=="institution-dormitory")
+      throw Error("居住契約と室料・家賃の費目が一致しない");
+    const fee=contract.feeSchedule?.[kind],
+      provider=contract.providerId;
+    if(!Number.isSafeInteger(fee)||fee<0||!provider)
+      throw Error("寄宿費の実料金・提供者が確定していない");
+    amount=fee;recipient=provider;ownerId=contract.id||input.residenceContractId;
+    invoiceId=ownerId+":boarding:"+year+":"+month+":"+kind;
+    const conflict=kind==="rent"?"boarding-room":"rent";
+    if(Object.values(f.invoices).some(row=>
+      row.personId==="protagonist" && row.kind===conflict &&
+      row.serviceYear===year && row.serviceMonth===month &&
+      row.residenceContractId===ownerId))
+      throw Error("同じ居住月の家賃と寄宿室料が重複");
+  }else{
+    const tx=s.educationMobility?.transportTransactions?.[input.transactionId];
+    if(!tx || tx.status!=="confirmed" || !tx.providerId ||
+       !Number.isSafeInteger(tx.amount)||tx.amount<0 ||
+       tx.year!==year||tx.month!==month||tx.kind!==kind)
+      throw Error("実施済みの交通契約と明示額がない");
+    if(tx.chargedElsewhere || tx.paidInResidenceEffect)
+      throw Error("一般の移動取引で既に清算された交通費");
+    amount=tx.amount;recipient=tx.providerId;ownerId=tx.id||input.transactionId;
+    invoiceId=kind==="relocation" ?
+      "move:"+(tx.moveTransactionId||ownerId):ownerId+":"+kind;
+  }
+  const invoice=educationEnsureInvoice(s,{
+    id:invoiceId,kind,amount,serviceYear:year,
+    recipientKind:residenceKind?"residence-provider":"transport-provider",
+    recipientId:recipient,
+    personId:"protagonist"
+  });
+  invoice.serviceMonth=month;
+  if(residenceKind)invoice.residenceContractId=ownerId;
+  else invoice.transportTransactionId=ownerId;
+  return invoice;
+}
+function educationSettleVerifiedMobility(s,input) {
+  const invoice=educationEnsureVerifiedMobilityInvoice(s,input);
+  return educationSettleInvoice(s,invoice,{
+    postingId:invoice.id+":cash-settlement"
+  });
+}
+
 function educationAnnualOutflow(s,year,account) {
   if(!["personal","household"].includes(account))throw Error("教育会計の集計口座が不正");
-  const f=s.educationFinance;
-  if(!f || Array.isArray(f.receipts)){
+  if(!s.educationFinance){
     const old=s.educationAnnualFee;
     return old?.year===year ? (old[account==="personal"?"paidByPersonal":"paidByHousehold"]||0):0;
   }
+  const f=educationFinanceState(s);
   const expense=Object.values(f.receipts).filter(x=>
     x.source===account && x.status==="settled" && x.paidAt?.year===year)
     .reduce((n,x)=>n+x.amount,0);
