@@ -16,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      # The terminal data phase injects P17 scenes before metadata reconciliation.
       - name: Regenerate runtime revision and validated event review catalog
         run: |
           node tools/update-version.cjs

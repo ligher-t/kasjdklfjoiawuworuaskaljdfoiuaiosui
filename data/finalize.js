@@ -1,6 +1,10 @@
 // finalize: ordered game data; see DATA_MODULES.md.
 window.TERRA_DATA_BUILD.run("finalize", function ($terraData, $define, $rules) {
   "use strict";
+  // Inject authored, separately guarded education scenes at the existing
+  // terminal data phase; preserve the strict source-module phase ordering.
+  if(typeof window.TERRA_EDUCATION_INJECT_P17==="function")
+    window.TERRA_EDUCATION_INJECT_P17($terraData);
   // 同じ所属への二重加入・二重応募を、表示と実行候補の両方で防ぐ。
   for (const event of $terraData.EV) for (const choice of event.c || []) {
     if (!choice.o?.some(outcome => {

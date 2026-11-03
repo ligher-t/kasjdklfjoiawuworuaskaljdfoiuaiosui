@@ -2,7 +2,7 @@
 // Only event IDs explicitly listed below are registered as game events. The
 // remaining text is retained verbatim for subsequent guarded migration.
 // Six source-design '保留' entries are never made executable.
-window.TERRA_DATA_BUILD.run("education/p17-reviewed-prose", function ($terraData) {
+window.TERRA_EDUCATION_INJECT_P17=function ($terraData) {
   "use strict";
   const reviewed=[
   {
@@ -1780,4 +1780,4 @@ window.TERRA_DATA_BUILD.run("education/p17-reviewed-prose", function ($terraData
     }
     $terraData.EV.push(event);
   }
-});
+};
