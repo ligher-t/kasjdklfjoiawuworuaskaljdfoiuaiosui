@@ -238473,7 +238473,7 @@ s => {
     "year": 1090
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === 0 && !s.fl?.retired"
+    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === 0 && !s.fl?.retired && !s.fl?.nukenin"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -239249,7 +239249,7 @@ s => {
     "year": 1090
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && s.job === 0 && !s.fl?.retired && !s.fl?.inf"
+    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && s.job === 0 && !s.fl?.retired && s.eventOutcomes?.car_urs_officer_choice_purge?.choiceIndex !== 1"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -239435,7 +239435,7 @@ s => {
     "year": 1090
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && s.job === 0 && !s.fl?.retired"
+    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && s.job === 0 && !s.fl?.retired && s.eventOutcomes?.car_urs_guard_choice_riot?.choiceIndex !== 1"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -239922,7 +239922,7 @@ s => {
     "year": 1092
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ヴィクトリア\" && s.job === 0 && !s.fl?.retired && !s.fl?.inf && (s.cr || 0) >= 25"
+    "dynamicFunction": "s => s.res?.n === \"ヴィクトリア\" && s.job === 0 && !s.fl?.retired && (s.cr || 0) >= 25 && s.eventOutcomes?.car_vic_royal_choice_coup?.choiceIndex !== 1"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -240402,7 +240402,7 @@ s => {
     "year": 1092
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"リターニア\" && s.job === 0 && !s.fl?.retired && !s.fl?.inf && (s.k || 0) >= 30"
+    "dynamicFunction": "s => s.res?.n === \"リターニア\" && s.job === 0 && !s.fl?.retired && (s.k || 0) >= 30"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -244350,7 +244350,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"炎国\" && s.job === $terraData.REG_JOBS.yan_court"
+    "dynamicFunction": "s => s.res?.n === \"炎国\" && $terraData.regionalCareerOnDuty(s, \"yan_court\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -244424,7 +244424,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"炎国\" && s.job === $terraData.REG_JOBS.yan_court"
+    "dynamicFunction": "s => s.res?.n === \"炎国\" && $terraData.regionalCareerOnDuty(s, \"yan_court\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -244561,7 +244561,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"炎国\" && s.job === $terraData.REG_JOBS.yan_suis"
+    "dynamicFunction": "s => s.res?.n === \"炎国\" && $terraData.regionalCareerOnDuty(s, \"yan_suis\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -244635,7 +244635,7 @@ s => {
     "age": 23
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"炎国\" && s.job === $terraData.REG_JOBS.yan_suis"
+    "dynamicFunction": "s => s.res?.n === \"炎国\" && $terraData.regionalCareerOnDuty(s, \"yan_suis\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -244771,7 +244771,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"龍門\" && s.job === $terraData.REG_JOBS.lmd_guard"
+    "dynamicFunction": "s => s.res?.n === \"龍門\" && $terraData.regionalCareerOnDuty(s, \"lmd_guard\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -244845,7 +244845,7 @@ s => {
     "age": 21
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"龍門\" && s.job === $terraData.REG_JOBS.lmd_guard"
+    "dynamicFunction": "s => s.res?.n === \"龍門\" && $terraData.regionalCareerOnDuty(s, \"lmd_guard\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -244981,7 +244981,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"龍門\" && s.job === $terraData.REG_JOBS.lmd_black"
+    "dynamicFunction": "s => s.res?.n === \"龍門\" && $terraData.regionalCareerOnDuty(s, \"lmd_black\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -245054,7 +245054,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"龍門\" && s.job === $terraData.REG_JOBS.lmd_black"
+    "dynamicFunction": "s => s.res?.n === \"龍門\" && $terraData.regionalCareerOnDuty(s, \"lmd_black\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -245169,7 +245169,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === $terraData.REG_JOBS.hig_samurai"
+    "dynamicFunction": "s => s.res?.n === \"極東\" && $terraData.regionalCareerOnDuty(s, \"hig_samurai\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -245243,7 +245243,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === $terraData.REG_JOBS.hig_samurai"
+    "dynamicFunction": "s => s.res?.n === \"極東\" && $terraData.regionalCareerOnDuty(s, \"hig_samurai\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -245379,7 +245379,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === $terraData.REG_JOBS.hig_ninja"
+    "dynamicFunction": "s => s.res?.n === \"極東\" && $terraData.regionalCareerOnDuty(s, \"hig_ninja\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -245453,7 +245453,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === $terraData.REG_JOBS.hig_ninja && !s.fl?.nukenin"
+    "dynamicFunction": "s => s.res?.n === \"極東\" && $terraData.regionalCareerOnDuty(s, \"hig_ninja\") && !s.fl?.nukenin"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -245577,7 +245577,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === $terraData.REG_JOBS.hig_cyber"
+    "dynamicFunction": "s => s.res?.n === \"極東\" && $terraData.regionalCareerOnDuty(s, \"hig_cyber\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -245651,7 +245651,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === $terraData.REG_JOBS.hig_cyber"
+    "dynamicFunction": "s => s.res?.n === \"極東\" && $terraData.regionalCareerOnDuty(s, \"hig_cyber\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -245787,7 +245787,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === $terraData.REG_JOBS.hig_shinto"
+    "dynamicFunction": "s => s.res?.n === \"極東\" && $terraData.regionalCareerOnDuty(s, \"hig_shinto\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -245861,7 +245861,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"極東\" && s.job === $terraData.REG_JOBS.hig_touhou"
+    "dynamicFunction": "s => s.res?.n === \"極東\" && $terraData.regionalCareerOnDuty(s, \"hig_touhou\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -245935,7 +245935,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && s.job === $terraData.REG_JOBS.urs_officer"
+    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && $terraData.regionalCareerOnDuty(s, \"urs_officer\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -246009,7 +246009,7 @@ s => {
     "age": 23
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && s.job === $terraData.REG_JOBS.urs_officer"
+    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && $terraData.regionalCareerOnDuty(s, \"urs_officer\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -246134,7 +246134,7 @@ s => {
     "age": 19
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && s.job === $terraData.REG_JOBS.urs_guard"
+    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && $terraData.regionalCareerOnDuty(s, \"urs_guard\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -246208,7 +246208,7 @@ s => {
     "age": 21
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && s.job === $terraData.REG_JOBS.urs_guard"
+    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && $terraData.regionalCareerOnDuty(s, \"urs_guard\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -246350,7 +246350,7 @@ s => {
     "age": 19
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ヴィクトリア\" && s.job === $terraData.REG_JOBS.vic_infantry"
+    "dynamicFunction": "s => s.res?.n === \"ヴィクトリア\" && $terraData.regionalCareerOnDuty(s, \"vic_infantry\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -246424,7 +246424,7 @@ s => {
     "age": 21
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ヴィクトリア\" && s.job === $terraData.REG_JOBS.vic_infantry"
+    "dynamicFunction": "s => s.res?.n === \"ヴィクトリア\" && $terraData.regionalCareerOnDuty(s, \"vic_infantry\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -246559,7 +246559,7 @@ s => {
     "age": 21
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ヴィクトリア\" && s.job === $terraData.REG_JOBS.vic_royal"
+    "dynamicFunction": "s => s.res?.n === \"ヴィクトリア\" && $terraData.regionalCareerOnDuty(s, \"vic_royal\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -246638,7 +246638,7 @@ s => {
     "year": 1094
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ヴィクトリア\" && s.job === $terraData.REG_JOBS.vic_royal"
+    "dynamicFunction": "s => s.res?.n === \"ヴィクトリア\" && $terraData.regionalCareerOnDuty(s, \"vic_royal\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -246759,7 +246759,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"リターニア\" && s.job === $terraData.REG_JOBS.lei_golden"
+    "dynamicFunction": "s => s.res?.n === \"リターニア\" && $terraData.regionalCareerOnDuty(s, \"lei_golden\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -246833,7 +246833,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"リターニア\" && s.job === $terraData.REG_JOBS.lei_golden"
+    "dynamicFunction": "s => s.res?.n === \"リターニア\" && $terraData.regionalCareerOnDuty(s, \"lei_golden\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -246968,7 +246968,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ラテラーノ\" && s.job === $terraData.REG_JOBS.lat_executor"
+    "dynamicFunction": "s => s.res?.n === \"ラテラーノ\" && $terraData.regionalCareerOnDuty(s, \"lat_executor\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -247042,7 +247042,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ラテラーノ\" && s.job === $terraData.REG_JOBS.lat_executor"
+    "dynamicFunction": "s => s.res?.n === \"ラテラーノ\" && $terraData.regionalCareerOnDuty(s, \"lat_executor\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS",
@@ -247178,7 +247178,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"クルビア\" && s.job === $terraData.REG_JOBS.col_pioneer"
+    "dynamicFunction": "s => s.res?.n === \"クルビア\" && $terraData.regionalCareerOnDuty(s, \"col_pioneer\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -247251,7 +247251,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"クルビア\" && s.job === $terraData.REG_JOBS.col_pioneer"
+    "dynamicFunction": "s => s.res?.n === \"クルビア\" && $terraData.regionalCareerOnDuty(s, \"col_pioneer\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -247387,7 +247387,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"カジミエーシュ\" && s.job === $terraData.REG_JOBS.kaz_comp_knight"
+    "dynamicFunction": "s => s.res?.n === \"カジミエーシュ\" && $terraData.regionalCareerOnDuty(s, \"kaz_comp_knight\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -247460,7 +247460,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"カジミエーシュ\" && s.job === $terraData.REG_JOBS.kaz_comp_knight"
+    "dynamicFunction": "s => s.res?.n === \"カジミエーシュ\" && $terraData.regionalCareerOnDuty(s, \"kaz_comp_knight\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -247596,7 +247596,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"カジミエーシュ\" && s.job === $terraData.REG_JOBS.kaz_armorless"
+    "dynamicFunction": "s => s.res?.n === \"カジミエーシュ\" && $terraData.regionalCareerOnDuty(s, \"kaz_armorless\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -247669,7 +247669,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"シラクーザ\" && s.job === $terraData.REG_JOBS.sir_soldier"
+    "dynamicFunction": "s => s.res?.n === \"シラクーザ\" && $terraData.regionalCareerOnDuty(s, \"sir_soldier\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -247741,7 +247741,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"シラクーザ\" && s.job === $terraData.REG_JOBS.sir_soldier"
+    "dynamicFunction": "s => s.res?.n === \"シラクーザ\" && $terraData.regionalCareerOnDuty(s, \"sir_soldier\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -247876,7 +247876,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"シラクーザ\" && s.job === $terraData.REG_JOBS.sir_police"
+    "dynamicFunction": "s => s.res?.n === \"シラクーザ\" && $terraData.regionalCareerOnDuty(s, \"sir_police\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -247949,7 +247949,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"シエスタ\" && s.job === $terraData.REG_JOBS.sie_obs"
+    "dynamicFunction": "s => s.res?.n === \"シエスタ\" && $terraData.regionalCareerOnDuty(s, \"sie_obs\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -248022,7 +248022,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"サルゴン\" && s.job === $terraData.REG_JOBS.sar_guard"
+    "dynamicFunction": "s => s.res?.n === \"サルゴン\" && $terraData.regionalCareerOnDuty(s, \"sar_guard\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -248095,7 +248095,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"サルゴン\" && s.job === $terraData.REG_JOBS.sar_guard &&\n        s.lifeRecord?.affiliations?.some(a => a.id === \"sargon-padishah-guard\" && [\"active\", \"crisis\"].includes(a.status))"
+    "dynamicFunction": "s => s.res?.n === \"サルゴン\" && $terraData.regionalCareerOnDuty(s, \"sar_guard\") &&\n        s.lifeRecord?.affiliations?.some(a => a.id === \"sargon-padishah-guard\" && [\"active\", \"crisis\"].includes(a.status))"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -248236,7 +248236,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"サルゴン\" && s.job === $terraData.REG_JOBS.sar_warrior"
+    "dynamicFunction": "s => s.res?.n === \"サルゴン\" && $terraData.regionalCareerOnDuty(s, \"sar_warrior\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -248309,7 +248309,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"サルゴン\" && s.job === $terraData.REG_JOBS.sar_warrior"
+    "dynamicFunction": "s => s.res?.n === \"サルゴン\" && $terraData.regionalCareerOnDuty(s, \"sar_warrior\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -248443,7 +248443,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"サーミ\" && s.job === $terraData.REG_JOBS.sam_priest"
+    "dynamicFunction": "s => s.res?.n === \"サーミ\" && $terraData.regionalCareerOnDuty(s, \"sam_priest\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -248516,7 +248516,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"サーミ\" && s.job === $terraData.REG_JOBS.sam_priest"
+    "dynamicFunction": "s => s.res?.n === \"サーミ\" && $terraData.regionalCareerOnDuty(s, \"sam_priest\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -248648,7 +248648,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"サーミ\" && s.job === $terraData.REG_JOBS.sam_warrior"
+    "dynamicFunction": "s => s.res?.n === \"サーミ\" && $terraData.regionalCareerOnDuty(s, \"sam_warrior\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -248721,7 +248721,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"サーミ\" && s.job === $terraData.REG_JOBS.sam_warrior"
+    "dynamicFunction": "s => s.res?.n === \"サーミ\" && $terraData.regionalCareerOnDuty(s, \"sam_warrior\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -248855,7 +248855,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"イェラグ\" && s.job === $terraData.REG_JOBS.kje_karlan"
+    "dynamicFunction": "s => s.res?.n === \"イェラグ\" && $terraData.regionalCareerOnDuty(s, \"kje_karlan\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -248928,7 +248928,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"イェラグ\" && s.job === $terraData.REG_JOBS.kje_karlan"
+    "dynamicFunction": "s => s.res?.n === \"イェラグ\" && $terraData.regionalCareerOnDuty(s, \"kje_karlan\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -249062,7 +249062,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"イェラグ\" && s.job === $terraData.REG_JOBS.kje_monk"
+    "dynamicFunction": "s => s.res?.n === \"イェラグ\" && $terraData.regionalCareerOnDuty(s, \"kje_monk\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -249135,7 +249135,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"イェラグ\" && s.job === $terraData.REG_JOBS.kje_monk"
+    "dynamicFunction": "s => s.res?.n === \"イェラグ\" && $terraData.regionalCareerOnDuty(s, \"kje_monk\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -249269,7 +249269,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"カズデル\" && s.job === $terraData.REG_JOBS.kazdel_mil"
+    "dynamicFunction": "s => s.res?.n === \"カズデル\" && $terraData.regionalCareerOnDuty(s, \"kazdel_mil\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -249342,7 +249342,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"カズデル\" && s.job === $terraData.REG_JOBS.kazdel_mil"
+    "dynamicFunction": "s => s.res?.n === \"カズデル\" && $terraData.regionalCareerOnDuty(s, \"kazdel_mil\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -249476,7 +249476,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"カズデル\" && s.job === $terraData.REG_JOBS.kazdel_bone"
+    "dynamicFunction": "s => s.res?.n === \"カズデル\" && $terraData.regionalCareerOnDuty(s, \"kazdel_bone\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -249549,7 +249549,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"カズデル\" && s.job === $terraData.REG_JOBS.kazdel_bone"
+    "dynamicFunction": "s => s.res?.n === \"カズデル\" && $terraData.regionalCareerOnDuty(s, \"kazdel_bone\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -249683,7 +249683,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"イベリア\" && s.job === $terraData.REG_JOBS.ibe_inq"
+    "dynamicFunction": "s => s.res?.n === \"イベリア\" && $terraData.regionalCareerOnDuty(s, \"ibe_inq\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -249756,7 +249756,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"イベリア\" && s.job === $terraData.REG_JOBS.ibe_inq"
+    "dynamicFunction": "s => s.res?.n === \"イベリア\" && $terraData.regionalCareerOnDuty(s, \"ibe_inq\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -249891,7 +249891,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"イベリア\" && s.job === $terraData.REG_JOBS.ibe_tuner"
+    "dynamicFunction": "s => s.res?.n === \"イベリア\" && $terraData.regionalCareerOnDuty(s, \"ibe_tuner\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -249964,7 +249964,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"イベリア\" && s.job === $terraData.REG_JOBS.ibe_tuner"
+    "dynamicFunction": "s => s.res?.n === \"イベリア\" && $terraData.regionalCareerOnDuty(s, \"ibe_tuner\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -250099,7 +250099,7 @@ s => {
     "age": 19
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ボリバル\" && s.job === $terraData.REG_JOBS.bol_soldier"
+    "dynamicFunction": "s => s.res?.n === \"ボリバル\" && $terraData.regionalCareerOnDuty(s, \"bol_soldier\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -250171,7 +250171,7 @@ s => {
     "age": 21
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ボリバル\" && s.job === $terraData.REG_JOBS.bol_soldier"
+    "dynamicFunction": "s => s.res?.n === \"ボリバル\" && $terraData.regionalCareerOnDuty(s, \"bol_soldier\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -250305,7 +250305,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ボリバル\" && s.job === $terraData.REG_JOBS.bol_dossoles"
+    "dynamicFunction": "s => s.res?.n === \"ボリバル\" && $terraData.regionalCareerOnDuty(s, \"bol_dossoles\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -250378,7 +250378,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ボリバル\" && s.job === $terraData.REG_JOBS.bol_dossoles"
+    "dynamicFunction": "s => s.res?.n === \"ボリバル\" && $terraData.regionalCareerOnDuty(s, \"bol_dossoles\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -250513,7 +250513,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"レム・ビリトン\" && s.job === $terraData.REG_JOBS.rim_eng"
+    "dynamicFunction": "s => s.res?.n === \"レム・ビリトン\" && $terraData.regionalCareerOnDuty(s, \"rim_eng\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -250586,7 +250586,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"レム・ビリトン\" && s.job === $terraData.REG_JOBS.rim_eng"
+    "dynamicFunction": "s => s.res?.n === \"レム・ビリトン\" && $terraData.regionalCareerOnDuty(s, \"rim_eng\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -250724,7 +250724,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ミノス\" && s.job === $terraData.REG_JOBS.min_champ"
+    "dynamicFunction": "s => s.res?.n === \"ミノス\" && $terraData.regionalCareerOnDuty(s, \"min_champ\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -250797,7 +250797,7 @@ s => {
     "age": 22
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ミノス\" && s.job === $terraData.REG_JOBS.min_champ"
+    "dynamicFunction": "s => s.res?.n === \"ミノス\" && $terraData.regionalCareerOnDuty(s, \"min_champ\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -250933,7 +250933,7 @@ s => {
     "age": 20
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ミノス\" && s.job === $terraData.REG_JOBS.min_orator"
+    "dynamicFunction": "s => s.res?.n === \"ミノス\" && $terraData.regionalCareerOnDuty(s, \"min_orator\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
@@ -251006,7 +251006,7 @@ s => {
     "age": 23
   },
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"ミノス\" && s.job === $terraData.REG_JOBS.min_orator"
+    "dynamicFunction": "s => s.res?.n === \"ミノス\" && $terraData.regionalCareerOnDuty(s, \"min_orator\")"
   },
   "references": [
     "SRC_REGIONAL_CAREERS"
