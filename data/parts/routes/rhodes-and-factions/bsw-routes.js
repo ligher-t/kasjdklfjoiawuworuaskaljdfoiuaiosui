@@ -5,7 +5,9 @@ window.TERRA_DATA_BUILD.fragment(
 )(function ($terraData, $define, $rules, $parts) {
   "use strict";
 
-  const onBsw = s => [35, 36, 37].includes(s.job);
+  const onBsw = s => [35, 36, 37].includes(s.job) &&
+    $rules.affiliations.canWork(s, "bsw-contract") &&
+    s.residenceBase?.id !== "rhodes-landship";
 
   const events = [
     {
@@ -40,7 +42,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { year: 1090 },
-      show: s => s.job === 35,
+      show: s => onBsw(s) && s.job === 35,
       t: "荒野を渡る鉱石採掘企業の大型輸送コンボイの護衛任務中、突如として砂塵の向こうから武装した略奪者集団が急襲してきた。先頭の車両が被弾し、激しい銃撃戦が始まった。",
       c: [
         $terraData.K("防護シールドを展開して射撃線を確保し、契約に基づき敵を撃退する", {}, [
@@ -127,7 +129,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { year: 1092 },
-      show: s => s.job === 36 || s.job === 37,
+      show: s => onBsw(s) && (s.job === 36 || s.job === 37),
       t: "移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の口止め料と安全を約束する」と極秘通信が入った。",
       c: [
         $terraData.K("「BSWの契約は金では買えない」と通信を叩き切り、要人を死守する", {}, [
@@ -173,7 +175,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { year: 1095 },
-      show: s => (s.job === 36 || s.job === 37),
+      show: s => onBsw(s) && (s.job === 36 || s.job === 37),
       t: "BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦にて外勤部隊の戦術教官や重要任務の護衛にあたり、同時にロドスの手厚い医療ケアを受けられる契約だという。",
       c: [
         $terraData.K("出向協定に合意し、BSW籍を保持したままロドス本艦へ派遣される", {}, [
@@ -186,7 +188,7 @@ window.TERRA_DATA_BUILD.fragment(
               id: "rhodes-staff",
               title: "ロドス・アイランド",
               action: "join",
-              role: "本艦・出向派遣／BSW戦術顧問オペレーター",
+              role: "本艦・BSW出向／戦術顧問オペレーター",
               note: "BSW籍を保持したままロドスへ出向"
             },
             p: 2,
@@ -209,7 +211,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { year: 1096 },
-      show: s => (s.job === 35 || s.job === 36),
+      show: s => onBsw(s) && (s.job === 35 || s.job === 36),
       t: "衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援するための夜間警備だった。街路には荷物をまとめる気力も失った老人や職人たちの絶望的な視線が満ちている。",
       c: [
         $terraData.K("「契約は絶対だ」と感情を排し、銀行の指示通りに差し押さえ区画の厳重封鎖を行う", {}, [
@@ -254,7 +256,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { year: 1090 },
-      show: s => [35, 36, 37].includes(s.job) && !!s.inf && !s.fl?.bsw_infection_disclosed,
+      show: s => onBsw(s) && !!s.inf && !s.fl?.bsw_infection_disclosed,
       t: "定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混成編成には厳格な制限があり、相棒や同僚の同意、あるいは後方・対源石専門部隊への配置転換が求められる。",
       c: [
         $terraData.K("規定に従い人事部へ正式申告し、同僚たちの同意を得て前線任務の継続を申請する", {}, [
@@ -296,14 +298,48 @@ window.TERRA_DATA_BUILD.fragment(
               id: "rhodes-staff",
               title: "ロドス・アイランド",
               action: "join",
-              role: "BSW出向オペレーター（療養兼任）"
+              role: "本艦・BSW出向／療養兼任オペレーター"
             },
             p: 2,
             h: 2
           }
         ])
       ]
-    }
+    },
+    {
+      id: "sr_bsw_secondment_posting_review",
+      conf: "S",
+      references: ["SRC_BSW_PMC", "SRC_RHODES_FOUNDATION"],
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.4,
+      ge: { year: 1096, age: 19 },
+      show: s => [35, 36, 37].includes(s.job) &&
+        $rules.affiliations.canWork(s, "bsw-contract") &&
+        $rules.affiliations.canWork(s, "rhodes-staff") &&
+        s.residenceBase?.id === "rhodes-landship" &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "rhodes-staff" &&
+          a.role?.startsWith("本艦・BSW出向") && s.year > a.startedYear),
+      t: "ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生かすか、出向の任務を終えて元の会社の仕事へ戻るか。",
+      c: [
+        $terraData.K("本艦での出向勤務を続け、次の任務の準備をする", {}, [
+          1,
+          "本社へ勤務継続を伝えた。防護装備の点検を終えると、明日の仕事で必要になる訓練記録を整理した。",
+          { k: 1, p: 1 }
+        ]),
+        $terraData.K("出向を終え、BSWの契約警備任務へ帰任する", {}, [
+          1,
+          "本艦での引継ぎを済ませ、使い慣れた装備と派遣記録を持って船を降りた。BSWとの雇用契約は残り、次の配置先について本社と連絡を取ることになった。",
+          {
+            lifeAffiliation: {
+              id: "rhodes-staff",
+              action: "leave",
+              note: "BSWとの契約を保持したままロドス本艦への出向を終えた"
+            },
+            p: 1
+          }
+        ])
+      ]
   ];
 
   $terraData.EV.push(...events);
