@@ -53,7 +53,16 @@ function educationSchoolRecipient(s,institutionId,recipientKind,personId=null) {
 function educationRecipientInfectionKnowledge(s,{institutionId,recipientKind,personId}={}) {
   const target=educationSchoolRecipient(s,institutionId,recipientKind,personId);
   if(!target)return {status:"unverified",basis:"unknown-recipient"};
-  const entries=infectionAwarenessEntries(s).filter(row=>
+  const explicitReceipts=Object.values(s.educationDisclosureReceipts?.items||{})
+    .filter(x=>x.institutionId===institutionId)
+    .map(x=>({
+      subject:"protagonist",
+      recipientRef:x.institutionId,recipientId:x.recipientId||null,
+      audience:x.recipientKind==="institution"?"school":"school-contact",
+      certainty:x.certainty,
+      subjectMatch:x.certainty==="confirmed"?"confirmed":"unclear"
+    }));
+  const entries=[...infectionAwarenessEntries(s),...explicitReceipts].filter(row=>
     row.subject==="protagonist" &&
     row.recipientRef===target.recipientRef &&
     (recipientKind==="institution" ?
@@ -148,7 +157,9 @@ function educationRegisterLanguageSupport(s,input) {
     offer=s.world?.educationWorld?.offerings?.[offeringId];
   const providerKnown=!!s.world?.educationWorld?.staff?.[providerPersonId] ||
     !!s.world?.educationWorld?.schoolPeers?.[providerPersonId] ||
-    !!s.personTies?.[providerPersonId] ||
+    (Array.isArray(s.personTies) ?
+      s.personTies.some(x=>x.personId===providerPersonId) :
+      !!s.personTies?.[providerPersonId]) ||
     Object.values(s.par||{}).some(x=>x?.id===providerPersonId&&!x.d) ||
     (s.siblings||[]).some(x=>x?.id===providerPersonId&&!x.d) ||
     (s.kids||[]).some(x=>x?.id===providerPersonId&&!x.d);
@@ -161,6 +172,7 @@ function educationRegisterLanguageSupport(s,input) {
     !start||!end||!Number.isInteger(start.year)||!Number.isInteger(start.month)||
     !Number.isInteger(end.year)||!Number.isInteger(end.month) ||
     start.year*12+start.month>end.year*12+end.month||
+    end.year*12+end.month>start.year*12+start.month+12||
     start.year*12+start.month>s.year*12+(s.mo??0))
     throw Error("特定校・用途・通訳者・期間の確認を欠く");
   s.educationLanguageSupports ||= {version:1,items:{}};
@@ -178,11 +190,16 @@ function educationAccessIdentityInvariants(s) {
   const errors=[],receipts=s.educationDisclosureReceipts?.items||{};
   for(const row of Object.values(receipts)){
     if(!educationSchoolRecipient(s,row.institutionId,row.recipientKind,row.recipientId)||
-       !infectionAwarenessEntries(s).some(x=>
-         x.sourceEventId===row.awarenessSourceEventId &&
-         x.recipientRef===row.institutionId &&
-         x.recipientId===(row.recipientId||null)))
+       !row.awarenessSourceEventId || !row.source ||
+       !["confirmed","suspected","unverified"].includes(row.certainty))
       errors.push("学校関係者の感染受領記録に根拠がない");
+    const original=infectionAwarenessEntries(s).find(x=>
+      x.sourceEventId===row.awarenessSourceEventId &&
+      x.recipientRef===row.institutionId&&
+      x.recipientId===(row.recipientId||null));
+    if(original && (original.certainty!==row.certainty ||
+       original.source!==row.source))
+      errors.push("学校関係者の感染情報と原本の内容が矛盾");
   }
   for(const row of Object.values(s.educationLanguageSupports?.items||{}))
     if(!s.world?.educationWorld?.offerings?.[row.offeringId]||
