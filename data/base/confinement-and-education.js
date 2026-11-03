@@ -1261,6 +1261,28 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
         why:"受入通知、校地、通学手段または入学時の費用を整えられていない"
       },[1,"合格の知らせを受けて、学費と通学の手続きをそろえた。入学の届けを出し、学校で学ぶ暮らしが始まる。",
         {educationAction:"case:commit"}]),
+      $terraData.K("学費支援と貸付の窓口へ条件を尋ねる",{
+        show:s=>educationActiveCase(s)?.phase==="contract" &&
+          !s.educationAccess?.financingOffers?.[educationActiveCase(s).id] &&
+          !educationPaymentPlan(s,educationFunds(s,
+            educationActiveCase(s).stage,educationActiveCase(s).tier,
+            educationActiveCase(s).offeringId)).allowed
+      },[1,"入学までに用意できる金を数え直し、学校の相談窓口で減免と学資貸付の条件を聞いた。支援の返事を受けてから手続きを決める。",
+        {educationAction:"case:check-financing"}]),
+      $terraData.K("認められた学費支援を使って入学する",{
+        show:s=>educationActiveCase(s)?.phase==="contract" &&
+          !!s.educationAccess?.financingOffers?.[educationActiveCase(s).id]?.grant,
+        en:s=>educationCaseCommitEligibility(s,"grant").allowed,
+        why:"今回の学校の支援額、残りの負担と通学条件が整っていない"
+      },[1,"学校から認められた支援を今期の学費に充て、残額の支払と入学手続きを整えた。",
+        {educationAction:"case:commit-grant"}]),
+      $terraData.K("確認した貸付の返済条件に同意して入学する",{
+        show:s=>educationActiveCase(s)?.phase==="contract" &&
+          !!s.educationAccess?.financingOffers?.[educationActiveCase(s).id]?.loan,
+        en:s=>educationCaseCommitEligibility(s,"loan").allowed,
+        why:"今回の貸付条件、本人負担と通学・入学要件を満たしていない"
+      },[1,"借入先と返済総額を確かめ、学校に直接納付される学費貸付の契約書に署名した。残る自分の負担分も納めた。",
+        {educationAction:"case:commit-loan"}]),
       $terraData.K("合格・受入後の入学を辞退する",{
         show:s=>educationActiveCase(s)?.phase==="contract"
       },[1,"受け入れるという学校の返事を手元に残し、今回は入学を見送った。受験をした事実は消えない。",
