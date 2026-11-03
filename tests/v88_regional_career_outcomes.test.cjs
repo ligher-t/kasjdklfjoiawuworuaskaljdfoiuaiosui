@@ -299,7 +299,7 @@ for(const career of regionalCareers){
   assert.equal(result.employed.job,career.job,career.id+' actually sets intended occupation');
   assert.equal(result.employed.affiliation,'active',career.id+' actually joins the employer');
   assert.equal(result.employed.goal,'active',career.id+' starts a livelihood goal');
-  assert.equal(result.employed.contract,true,career.id+' has actual work contract');
+  assert.equal(result.employed.contract,false,career.id+' uses the regional affiliation and base pay, not a fabricated standard-work contract');
   checkedRegionalDutyEvents+=result.employed.duty.length;
   assert(result.employed.duty.every(e=>e.shown),career.id+' has all current duty scenes available');
   assert.equal(result.ended.job,0,career.id+' explicit leave removes old occupation');
