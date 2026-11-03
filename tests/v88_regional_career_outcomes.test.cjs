@@ -549,4 +549,139 @@ assert.deepEqual(missingExile,{
 },
   'a recorded crisis outcome without an actual exile posting cannot provide exile duties');
 
+
+// Former-service careers have a separate next-livelihood goal. It is only
+// completed after a real independent hiring outcome has established a job.
+const departureCases=[
+  {region:'極東',entry:'car_hig_ninja_entry',incident:'car_hig_ninja_choice_escape',
+    exitChoice:0,exitOutcome:0,former:'higashi-ninja-clan',oldGoal:'higashi-ninja-mission',
+    goal:'higashi-nukenin-next-livelihood',review:'car_hig_ninja_after_escape',
+    other:'car_hig_samurai_entry',oldJob:47,otherJob:46},
+  {region:'極東',entry:'car_hig_ninja_entry',incident:'car_hig_ninja_choice_escape',
+    exitChoice:0,exitOutcome:1,former:'higashi-ninja-clan',oldGoal:'higashi-ninja-mission',
+    goal:'higashi-nukenin-next-livelihood',review:'car_hig_ninja_after_escape',
+    other:'car_hig_samurai_entry',oldJob:47,otherJob:46},
+  {region:'ウルサス',entry:'car_urs_officer_entry',incident:'car_urs_officer_choice_purge',
+    exitChoice:1,exitOutcome:0,former:'ursus-imperial-officer',oldGoal:'ursus-imperial-command',
+    goal:'ursus-dismissed-officer-next-livelihood',review:'car_urs_officer_after_dismissal',
+    other:'car_urs_academy_entry',oldJob:51,otherJob:53},
+  {region:'ウルサス',entry:'car_urs_guard_entry',incident:'car_urs_guard_choice_riot',
+    exitChoice:1,exitOutcome:0,former:'ursus-border-mine-guard',oldGoal:'ursus-border-mine-patrol',
+    goal:'ursus-expelled-guard-next-livelihood',review:'car_urs_guard_after_expulsion',
+    other:'car_urs_academy_entry',oldJob:52,otherJob:53}
+];
+for(const c of departureCases){
+  start(c.region);
+  ctx.AFTER_DEPARTURE_CASE=c;
+  const result=snap(`
+    const c=AFTER_DEPARTURE_CASE,
+      entry=EV.find(e=>e.id===c.entry),
+      incident=EV.find(e=>e.id===c.incident),
+      review=EV.find(e=>e.id===c.review),
+      other=EV.find(e=>e.id===c.other),
+      hiring=entry.c[0].o[0][2],
+      exit=incident.c[c.exitChoice].o[c.exitOutcome][2];
+    if(!entry||!incident||!review||!other||!hiring||!exit)
+      throw Error('Departure pathway missing: '+c.incident);
+    const startYear=S.year;
+    S.cash=10000000;S.house.cash=10000000;S.k=100;S.cr=100;
+    ap(hiring);
+    const member=S.lifeRecord.affiliations.find(a=>a.id===c.former),
+      formerGoal=S.lifeRecord.goals.find(g=>g.id===c.oldGoal);
+    const onDuty=incident.show(S);
+    ap(exit);
+    S.sn[incident.id]=startYear;
+    S.eventOutcomes ||= {};
+    S.eventOutcomes[incident.id]={
+      year:startYear,choiceIndex:c.exitChoice,outcomeIndex:c.exitOutcome
+    };
+    const nextGoal=S.lifeRecord.goals.find(g=>g.id===c.goal);
+    const afterExit={
+      job:S.job,member:member.status,ended:member.episodes.at(-1)?.endedYear,
+      oldGoal:formerGoal.status,nextGoal:nextGoal?.status,
+      oldDuty:incident.show(S),alreadyReady:elig(review,S,tags(S)),
+      issues:auditLifeState(S)
+    };
+    S.year+=2;S.age+=2;
+    const firstReview={
+      open:elig(review,S,tags(S)),
+      choices:review.c.map(row=>row.show(S,tags(S)))
+    };
+    ap(review.c[0].o[0][2]);
+    S.sn[review.id]=S.year;
+    const search={job:S.job,goal:nextGoal.status,
+      action:nextGoal.history.at(-1)?.action,
+      cooldown:elig(review,S,tags(S))
+    };
+    S.year+=3;S.age+=3;
+    ap(review.c[1].o[0][2]);
+    S.sn[review.id]=S.year;
+    const resting={job:S.job,goal:nextGoal.status,
+      action:nextGoal.history.at(-1)?.action};
+    const otherHiring=other.c.flatMap(ch=>ch.o).find(out=>out[2]?.job===c.otherJob)?.[2];
+    if(!otherHiring) throw Error('Actual alternative employer hiring missing: '+c.other);
+    ap(otherHiring);
+    S.year+=3;S.age+=3;
+    const hired={job:S.job,former:member.status,
+      nextGoal:nextGoal.status,oldGoal:formerGoal.status,
+      oldEmployerRehire:entry.show(S),
+      choices:review.c.map(row=>row.show(S,tags(S))),
+      eligible:elig(review,S,tags(S))
+    };
+    ap(review.c[2].o[0][2]);
+    S.sn[review.id]=S.year;
+    const completed={job:S.job,goal:nextGoal.status,
+      action:nextGoal.history.at(-1)?.action,
+      shown:review.show(S),eligible:elig(review,S,tags(S)),
+      history:nextGoal.history.map(h=>h.action),
+      affiliationCount:S.lifeRecord.affiliations.filter(a=>a.id===c.former).length,
+      issues:auditLifeState(S)
+    };
+    return {startYear,onDuty,afterExit,firstReview,search,resting,hired,completed};
+  `);
+  assert.equal(result.onDuty,true,c.incident+' belongs to active employee');
+  assert.deepEqual(result.afterExit,{
+    job:0,member:'left',ended:result.startYear,
+    oldGoal:'abandoned',nextGoal:'active',oldDuty:false,alreadyReady:false,issues:[]
+  },c.incident+' leaves the former employer and closes prior mission');
+  assert.deepEqual(result.firstReview,{
+    open:true,choices:[true,true,false,false]
+  },c.review+' offers search or rest only when unemployed');
+  assert.deepEqual(result.search,{
+    job:0,goal:'active',action:'continue',cooldown:false
+  },c.review+' does not invent an employment outcome');
+  assert.deepEqual(result.resting,{
+    job:0,goal:'paused',action:'pause'
+  },c.review+' allows a reversible pause without reopening former service');
+  assert.deepEqual(result.hired,{
+    job:c.otherJob,former:'left',nextGoal:'paused',oldGoal:'abandoned',
+    oldEmployerRehire:false,
+    choices:[false,false,true,true],eligible:true
+  },c.review+' later reflects an actual independent employment decision');
+  assert.deepEqual(result.completed,{
+    job:c.otherJob,goal:'achieved',action:'complete',shown:false,eligible:false,
+    history:['start','continue','pause','complete'],affiliationCount:1,issues:[]
+  },c.review+' completes only after a real new job and preserves former records');
+}
+// Another incident outcome is never permission to invent expulsion or new work.
+for(const cfg of [
+  {region:'極東',incident:'car_hig_ninja_choice_escape',choice:1,review:'car_hig_ninja_after_escape'},
+  {region:'ウルサス',incident:'car_urs_officer_choice_purge',choice:0,review:'car_urs_officer_after_dismissal'},
+  {region:'ウルサス',incident:'car_urs_guard_choice_riot',choice:0,review:'car_urs_guard_after_expulsion'}
+]){
+  start(cfg.region);
+  ctx.FORMER_SERVICE_NEGATIVE=cfg;
+  const negative=snap(`
+    const c=FORMER_SERVICE_NEGATIVE,
+      e=EV.find(x=>x.id===c.review);
+    S.sn[c.incident]=1097;
+    S.eventOutcomes={[c.incident]:{year:1097,choiceIndex:c.choice,outcomeIndex:0}};
+    S.year=1100;S.age=26;
+    return {shown:e.show(S),eligible:elig(e,S,tags(S)),
+      goalCreated:S.lifeRecord.goals.some(g=>g.id.includes('next-livelihood'))};
+  `);
+  assert.deepEqual(negative,{shown:false,eligible:false,goalCreated:false},
+    cfg.review+' cannot activate from another historical choice');
+}
+
 console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring, expulsion and Victorian wartime/postwar exile');
