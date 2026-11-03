@@ -183352,6 +183352,14 @@ s =>
     "action": "abandon",
     "note": "研究班と勤務関係を離れた"
   },
+  "lifeGoals": [
+    {
+      "id": "rhodes-work",
+      "title": "ロドスで担当する仕事を無理なく続ける",
+      "action": "abandon",
+      "note": "休止中のロドス勤務も終了"
+    }
+  ],
   "regionalImpact": {
     "entity": "ロドス研究班の患者経過記録",
     "kind": "research-handover",
@@ -230940,7 +230948,7 @@ s => (s && s.year >= 1097)
   },
   "lifeGoal": {
     "id": "kazimierz-arena-work",
-    "action": "compromise",
+    "action": "abandon",
     "note": "会場の雇用を終了"
   },
   "p": 1
@@ -236374,6 +236382,7 @@ s => {
     "壮年",
     "老年"
   ],
+  "once": true,
   "cd": 5,
   "w": 0.4,
   "ge": {
@@ -236502,13 +236511,14 @@ s => {
     "壮年",
     "老年"
   ],
+  "once": true,
   "cd": 3,
   "w": 0.5,
   "ge": {
     "year": 1095
   },
   "show": {
-    "dynamicFunction": "s => !!s.fl?.rhine_whistleblower"
+    "dynamicFunction": "s =>\n        !!s.fl?.rhine_whistleblower &&\n        [38, 39, 40].includes(s.job) &&\n        [\"active\", \"crisis\", \"suspended\"].includes(\n          s.lifeRecord?.affiliations?.find(a => a.id === \"rhine-lab\")?.status\n        )"
   }
 }
 ```
@@ -236554,6 +236564,12 @@ s => {
     "action": "leave",
     "note": "非人道実験を告発しロドスへ亡命"
   },
+  "lifeGoal": {
+    "id": "rhine-research",
+    "title": "ライン生命で最先端科学の真理を開拓する",
+    "action": "abandon",
+    "note": "非人道実験を告発しロドスへ亡命"
+  },
   "lifeAffiliations": [
     {
       "id": "rhodes-staff",
@@ -236593,6 +236609,12 @@ s => {
     "id": "rhine-lab",
     "title": "ライン生命医科学研究所",
     "action": "leave",
+    "note": "研究界を離脱し隠遁"
+  },
+  "lifeGoal": {
+    "id": "rhine-research",
+    "title": "ライン生命で最先端科学の真理を開拓する",
+    "action": "abandon",
     "note": "研究界を離脱し隠遁"
   },
   "p": 1
