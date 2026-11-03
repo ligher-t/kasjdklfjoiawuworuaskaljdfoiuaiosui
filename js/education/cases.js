@@ -97,6 +97,10 @@ function educationCaseDiscover(s,scope="local") {
   for(const {offer,areaId} of unique.values()){
     const school=educationSchoolStatusAt(s,offer.id,s.year,s.mo??0);
     if(!school)continue;
+    const quote=educationRecordQuote(s,educationQuoteCosts(s,{
+      caseId:caseItem.id,offeringId:offer.id,stage:offer.stage,
+      tier:offer.admissionTier,kind:"tuition"
+    }));
     const row={
       offeringId:offer.id,institutionId:offer.institutionId,campusId:offer.campusId,
       areaId:world.campuses[offer.campusId].educationAreaId,
@@ -105,7 +109,7 @@ function educationCaseDiscover(s,scope="local") {
       epistemicStatus:"offering-verified",
       confirmedFields:["institution","campus","stage","admissionStatus"],
       admissionStatus:school.admissionStatus,teachingStatus:school.teachingStatus,
-      tuitionEstimate:educationFunds(s,offer.stage,offer.admissionTier,offer.id),
+      tuitionEstimate:quote.amount,quoteId:quote.id,
       estimateBasis:"game-model-current-quote"
     };
     access.knownOfferings[offer.id]=row;
@@ -517,12 +521,14 @@ function educationCasePresentation(s) {
     intent:"進路の希望",planning:"募集先の確認",application:"申請の確認",
     contract:"入学手続",continuity:"在籍の継続",resolved:"今年の判断終了"
   }[item.phase]||"進路";
-  const quote=item.phase==="contract"&&item.offeringId?
-    educationFunds(s,item.stage,item.tier):null;
+  const selectedQuote=item.phase==="contract"&&item.offeringId?
+    s.educationAccess?.knownOfferings?.[item.offeringId]:null;
+  const quote=selectedQuote?.tuitionEstimate??null;
   const details=rows.slice(0,3).map((row,index)=>
     "\n"+(index+1)+". "+educationCaseCandidateLabel(s,index)+
     "・募集："+(row.admissionStatus==="open"?"受付中":
-      row.admissionStatus==="limited"?"受付制限あり":"募集停止")).join("");
+      row.admissionStatus==="limited"?"受付制限あり":"募集停止")+
+    "・年額概算："+row.tuitionEstimate.toLocaleString()+"龍門幣").join("");
   return "\n"+stage+"／"+phase+
     "\n調べた募集先："+known+details+
     (quote!==null?"\n入学時の授業料概算："+Math.round(quote).toLocaleString()+"龍門幣":"")+
