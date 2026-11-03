@@ -169,16 +169,17 @@ function educationFindRoute(s,{originAreaId,campusAreaId,year=s?.year,month=s?.m
     basisRefs:[...new Set([...outbound.links,...returnTrip?.links||[]])]
   };
 }
-function educationGuardianReview(s,personId,purpose,institutionId,year,month) {
+function educationGuardianReview(s,personId,purpose,institutionId,year,month,selectedConsentId=null) {
   if(personId!=="protagonist")
     return {authorityStatus:"unknown-person",guardianConsentStatus:"unknown-person",escortStatus:"unknown"};
   const minor=s.age<18;
   if(!minor)return {authorityStatus:"not-required",guardianConsentStatus:"not-required",escortStatus:"not-required"};
-  const record=Object.values(s.educationMobility?.consentRecords||{}).find(x=>
+  const record=Object.entries(s.educationMobility?.consentRecords||{}).find(([id,x])=>
+    (!selectedConsentId||selectedConsentId===id||selectedConsentId===x.id) &&
     x.personId===personId && x.purpose===purpose && x.institutionId===institutionId &&
     x.evidenceRef && x.consentState &&
     educationDateIndex(x.validFrom?.year,x.validFrom?.month)<=educationDateIndex(year,month) &&
-    (!x.validThrough || educationDateIndex(year,month)<=educationDateIndex(x.validThrough.year,x.validThrough.month)));
+    (!x.validThrough || educationDateIndex(year,month)<=educationDateIndex(x.validThrough.year,x.validThrough.month)))?.[1];
   const isParent=x=>["fa","mo"].includes(x) && s.care?.parentKeys?.includes(x) &&
     s.par?.[x] && !s.par[x].d && !s.par[x].separated;
   const explicitAuthority=x=>(s.educationMobility?.guardianAuthorities||[]).some(a=>
@@ -255,7 +256,7 @@ function educationCanReach(s,{institutionId,campusId,offeringId,
     result.safeTravelStatus=risk>=0.75?"critical":risk>=0.5?"high":risk>=0.25?"watch":"low";
     if(risk>=0.75 && purpose==="daily-commute")add("route-risk-critical");
     const minor=s.age<18;
-    const guardian=educationGuardianReview(s,personId,purpose,institutionId,year,time);
+    const guardian=educationGuardianReview(s,personId,purpose,institutionId,year,time,selectedConsentId);
     result.guardianConsentStatus=guardian.guardianConsentStatus;
     const escortRequired=minor && (s.age<=9 || (risk>=0.25&&s.age<12) || risk>=0.5);
     if(minor&&risk>=0.5&&guardian.escortStatus!=="verified")

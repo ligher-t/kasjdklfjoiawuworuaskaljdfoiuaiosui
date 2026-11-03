@@ -108,10 +108,11 @@ function educationSchoolEffectsAt(world,campus,year,month) {
     const recovery=x.recoveryAt && educationDateIndex(x.recoveryAt.year,x.recoveryAt.month);
     return from!==null && from<=now && (recovery===null||recovery===undefined||now<recovery);
   }).sort((a,b)=>{
-    const p=x=>x.basis==="explicit-canon-school-action"?0:
-      x.basis==="explicit-simulation-site-action"?1:x.kind==="destroyed"?2:
-      x.kind==="suspended"?3:x.kind==="limited"?4:5;
-    return p(a)-p(b)||String(a.effectId).localeCompare(String(b.effectId));
+    const date=educationDateIndex(a.effectiveFrom.year,a.effectiveFrom.month)-
+      educationDateIndex(b.effectiveFrom.year,b.effectiveFrom.month);
+    const priority=x=>x.basis==="explicit-canon-school-action"?3:
+      x.basis==="explicit-simulation-site-action"?2:1;
+    return date || priority(a)-priority(b) || String(a.effectId).localeCompare(String(b.effectId));
   });
 }
 function educationSchoolStatusAt(s,offeringId,year=s?.year,month=s?.mo??0) {
@@ -127,41 +128,50 @@ function educationSchoolStatusAt(s,offeringId,year=s?.year,month=s?.mo??0) {
     admissionStatus=offering.admissionStatus||"open",
     activeEffectIds=[],basis="game-model-baseline";
   const active=educationSchoolEffectsAt(world,campus,year,month);
-  // Explicit records override transient model results for their stated target only.
-  const explicit=active.filter(x=>x.basis?.startsWith("explicit-"));
-  const modeled=active.filter(x=>!x.basis?.startsWith("explicit-"));
-  for(const x of modeled){
-    activeEffectIds.push(x.effectId);
-    const next=x.next||educationEffectStatus(x.kind);
-    if(x.kind==="destroyed")campusStatus="destroyed";
-    else if(x.kind==="suspended" && campusStatus!=="destroyed")campusStatus="inaccessible";
-    else if(x.kind==="limited" && campusStatus==="usable")campusStatus="limited";
-    if(x.kind==="destroyed" || x.kind==="suspended") {
-      teachingStatus="suspended";admissionStatus="suspended";
-    }else if(x.kind==="limited" && teachingStatus==="teaching") {
-      teachingStatus="limited";if(admissionStatus==="open")admissionStatus="limited";
+  let learningContinuity="normal",alternativeCampusId=null;
+  for(const effect of active){
+    activeEffectIds.push(effect.effectId);
+    if(effect.basis?.startsWith("explicit-")){
+      const next=effect.next||{};
+      if(next.institution)institutionStatus=next.institution;
+      if(next.campus)campusStatus=next.campus;
+      if(!effect.offeringId||effect.offeringId===offeringId){
+        if(next.offering)teachingStatus=next.offering;
+        if(next.admission)admissionStatus=next.admission;
+        if(next.learningContinuity)learningContinuity=next.learningContinuity;
+        if(next.alternativeCampusId)alternativeCampusId=next.alternativeCampusId;
+      }
+      basis=effect.basis;
+    }else{
+      if(effect.kind==="destroyed")campusStatus="destroyed";
+      else if(effect.kind==="suspended"&&campusStatus!=="destroyed")campusStatus="inaccessible";
+      else if(effect.kind==="limited"&&campusStatus==="usable")campusStatus="limited";
+      if(effect.kind==="destroyed"||effect.kind==="suspended"){
+        if(teachingStatus!=="discontinued")teachingStatus="suspended";
+        if(admissionStatus!=="closed")admissionStatus="suspended";
+      }else if(effect.kind==="limited"&&teachingStatus==="teaching"){
+        teachingStatus="limited";
+        if(admissionStatus==="open")admissionStatus="limited";
+      }
+      basis="simulation-school-impact";
     }
-    basis="simulation-school-impact";
   }
-  for(const x of explicit.slice().reverse()){
-    activeEffectIds.push(x.effectId);
-    if(x.next?.institution) institutionStatus=x.next.institution;
-    if(x.next?.campus) campusStatus=x.next.campus;
-    if(x.next?.offering && (!x.offeringId||x.offeringId===offeringId))
-      teachingStatus=x.next.offering;
-    if(x.next?.admission && (!x.offeringId||x.offeringId===offeringId))
-      admissionStatus=x.next.admission;
-    basis=x.basis;
-  }
-  if(institutionStatus!=="operating" || campusStatus==="destroyed" ||
-    campusStatus==="inaccessible") {
-    teachingStatus="suspended";admissionStatus="suspended";
+  const alternativeAuthorized=learningContinuity==="alternative_classroom" &&
+    !!world.campuses[alternativeCampusId] &&
+    world.campuses[alternativeCampusId].institutionId===institution.id;
+  if(institutionStatus!=="operating" || ["destroyed","inaccessible","relocated"].includes(campusStatus)){
+    if(teachingStatus!=="discontinued")teachingStatus="suspended";
+    admissionStatus="suspended";
   }
   if(teachingStatus==="discontinued")admissionStatus="closed";
+  const teachingEquivalent=alternativeAuthorized?0.75:
+    teachingStatus==="teaching"?1:teachingStatus==="limited"?0.5:0;
   return {
     institutionId:institution.id,campusId:campus.id,offeringId,
     institutionStatus,campusStatus,teachingStatus,admissionStatus,
-    teachingEquivalent:teachingStatus==="teaching"?1:teachingStatus==="limited"?0.5:0,
+    learningContinuity:alternativeAuthorized?"alternative_classroom":
+      teachingEquivalent===0?"interrupted":teachingEquivalent<1?"reduced":"normal",
+    alternativeCampusId:alternativeAuthorized?alternativeCampusId:null,teachingEquivalent,
     effectiveAt:{year,month},activeEffectIds,basis
   };
 }
@@ -206,10 +216,16 @@ function educationRecordSchoolAction(s,action) {
       institution:["operating","administratively_suspended","dissolved"],
       campus:["usable","limited","inaccessible","destroyed","relocated"],
       offering:["teaching","limited","suspended","discontinued"],
-      admission:["open","limited","suspended","closed","full"]
+      admission:["open","limited","suspended","closed","full"],
+      learningContinuity:["normal","reduced","interrupted","alternative_classroom"],
+      alternativeCampusId:Object.keys(world.campuses)
     }[field];
     if(!valid?.includes(value))throw new Error("学校運営状態の更新内容が不正");
   }
+  if(action.next.learningContinuity==="alternative_classroom" &&
+    (!action.next.alternativeCampusId ||
+      world.campuses[action.next.alternativeCampusId]?.institutionId!==action.institutionId))
+    throw new Error("代替教室は同一学校の実在校地と認定記録が必要");
   world.operationalHistory ||= [];
   const prior=world.operationalHistory.find(row=>row.effectId===action.effectId);
   if(prior) {
