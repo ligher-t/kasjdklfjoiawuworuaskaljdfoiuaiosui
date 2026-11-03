@@ -252,7 +252,8 @@ function educationGenerateHub(world, hub, confirmedYear) {
   }
 }
 function educationResidenceAreaInfo(s) {
-  if (!s?.res?.n || !s.local || !EDUCATION_REGIONAL_PRESENCE[s.res.n]) return null;
+  if (!s?.res?.n || !s.local || !EDUCATION_REGIONAL_PRESENCE[s.res.n] ||
+      !EDUCATION_LOCALITY_PRESENCE_DELTA[s.local.kind]) return null;
   const city = s.local.city && s.local.city !== "エル・ソル" ? s.local.city :
     s.local.city === "エル・ソル" ? "ドッソレス" : null;
   if (city) {

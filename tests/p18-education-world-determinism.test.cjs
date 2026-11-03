@@ -30,6 +30,12 @@ assert.equal(grid.lungmen.primary,100);
 assert.equal(grid.frontier.primary,0);
 assert.equal(grid.special.primary,80);
 assert.equal(grid.special.university,17);
+const unsupported = evaluate(`
+  const s={randomSeed:55,res:{n:"サーミ"},local:{kind:"遊牧氏族の生活圏",city:null},world:{events:{}},year:1099};
+  return {area:ensureEducationWorldForResidence(s),worldCreated:!!s.world.educationWorld};
+`);
+assert.equal(unsupported.area,null);
+assert.equal(unsupported.worldCreated,false);
 
 const world = evaluate(`
   const s=S, rng=s.rngState;
