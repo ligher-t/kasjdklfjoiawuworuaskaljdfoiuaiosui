@@ -969,4 +969,128 @@ assert.deepEqual(pioneerReturn,{
     secondStart:1101,choices:[false,false,true]}
 },'a separately obtained second farm can settle the first dispossession livelihood goal');
 
-console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring, expulsion Victorian wartime/postwar exile and two Ursus military hearings, three explicit regional career losses and genuine later reemployment');
+
+// A paid company camp and a farmer cultivating private land share job 62 but
+// have different employers, career goals and actual on-duty obligations.
+for(const choiceIndex of [0,1]){
+ for(const outcomeIndex of [0,1]){
+  start('クルビア');
+  ctx.FRONTIER_CASE={choiceIndex,outcomeIndex};
+  const result=snap(`
+    const cfg=FRONTIER_CASE,
+      offer=EV.find(e=>e.id==='col_frontier'),
+      farmDuty=EV.find(e=>e.id==='car_col_pioneer_daily_01'),
+      campReview=EV.find(e=>e.id==='col_frontier_contract_review'),
+      after=EV.find(e=>e.id==='col_frontier_after_contract_loss'),
+      generic=EV.find(e=>e.id==='work_unemployed_reentry');
+    S.year=1098;S.age=24;S.by=1074;S.h=100;S.k=100;
+    S.debt=cfg.choiceIndex===0?2000000:0;
+    S.fl.frontier_contract=0;
+    const offered=elig(offer,S,tags(S));
+    ap(offer.c[cfg.choiceIndex].o[cfg.outcomeIndex][2]);
+    S.sn[offer.id]=S.year;
+    S.eventOutcomes={[offer.id]:{
+      year:S.year,choiceIndex:cfg.choiceIndex,outcomeIndex:cfg.outcomeIndex
+    }};
+    const a=S.lifeRecord.affiliations.find(r=>r.id==='columbia-frontier-contract-crew'),
+      g=S.lifeRecord.goals.find(r=>r.id==='columbia-frontier-contract-work'),
+      next=S.lifeRecord.goals.find(r=>r.id==='columbia-frontier-camp-next-livelihood');
+    const initial={job:S.job,employer:a?.status,episodes:a?.episodes.length,
+      ended:a?.episodes.at(-1)?.endedYear??null,goal:g?.status,
+      next:next?.status??null,
+      farmDuty:farmDuty.show(S),
+      companyWork:$rules.affiliations.canWork(S,'columbia-frontier-contract-crew'),
+      campReview:elig(campReview,S,tags(S)),issues:auditLifeState(S)};
+    S.year=1100;S.age=26;
+    const eligibleReview=elig(campReview,S,tags(S)),
+      eligibleRecovery=elig(after,S,tags(S));
+    let continued=null,departed=null;
+    if(cfg.outcomeIndex===0){
+      ap(campReview.c[0].o[0][2]);
+      S.sn[campReview.id]=S.year;
+      continued={employer:a.status,goal:g.status,job:S.job,
+        cooldown:elig(campReview,S,tags(S))};
+      S.year+=3;S.age+=3;
+      ap(campReview.c[1].o[0][2]);
+      S.sn[campReview.id]=S.year;
+      departed={job:S.job,employer:a.status,formerGoal:g.status,
+        next:S.lifeRecord.goals.find(r=>r.id==='columbia-frontier-camp-next-livelihood')?.status,
+        ended:a.episodes.at(-1)?.endedYear,
+        oldDuty:farmDuty.show(S),issues:auditLifeState(S)};
+    }
+    const ready=elig(after,S,tags(S));
+    const target=S.lifeRecord.goals.find(r=>r.id==='columbia-frontier-camp-next-livelihood');
+    const choices=after.c.map(x=>x.show(S,tags(S)));
+    ap(after.c[0].o[0][2]);
+    S.sn[after.id]=S.year;
+    const seeking={job:S.job,goal:target.status,
+      action:target.history.at(-1)?.action,
+      cooldown:elig(after,S,tags(S))};
+    S.year+=3;S.age+=3;
+    ap(after.c[1].o[0][2]);
+    S.sn[after.id]=S.year;
+    const paused=target.status;
+    const genericOpen=elig(generic,S,tags(S));
+    ap(generic.c[0].o[0][2]);
+    S.year+=3;S.age+=3;
+    const employed={job:S.job,employer:a.status,
+      goal:target.status,choices:after.c.map(x=>x.show(S,tags(S)))};
+    ap(after.c[2].o[0][2]);
+    const achieved={job:S.job,goal:target.status,
+      history:target.history.map(x=>x.action),
+      former:a.status,formerEpisodes:a.episodes.length,
+      review:after.show(S),issues:auditLifeState(S)};
+    return {offered,initial,eligibleReview,eligibleRecovery,continued,
+      departed,ready,choices,seeking,paused,genericOpen,employed,achieved};
+  `);
+  assert.equal(result.offered,true);
+  assert.deepEqual(result.initial,{
+    job:outcomeIndex===0?62:0,employer:outcomeIndex===0?'active':'left',
+    episodes:1,ended:outcomeIndex===0?null:1098,
+    goal:outcomeIndex===0?'active':'abandoned',
+    next:outcomeIndex===0?null:'active',
+    farmDuty:false,companyWork:outcomeIndex===0,campReview:false,issues:[]
+  },'generic frontier recruiter must never create an independent farmer appointment');
+  assert.equal(result.eligibleReview,outcomeIndex===0);
+  assert.equal(result.eligibleRecovery,outcomeIndex===1);
+  if(outcomeIndex===0){
+    assert.deepEqual(result.continued,{
+      employer:'active',goal:'active',job:62,cooldown:false
+    },'ongoing company work is retained without a new hire');
+    assert.deepEqual(result.departed,{
+      job:0,employer:'left',formerGoal:'abandoned',
+      next:'active',ended:1103,oldDuty:false,issues:[]
+    },'a voluntary camp resignation closes company work and opens a livelihood goal');
+  }else{
+    assert.equal(result.continued,null);
+    assert.equal(result.departed,null);
+  }
+  assert.equal(result.ready,true);
+  assert.deepEqual(result.choices,[true,true,false]);
+  assert.deepEqual(result.seeking,{
+    job:0,goal:'active',action:'continue',cooldown:false
+  });
+  assert.equal(result.paused,'paused');
+  assert.equal(result.genericOpen,true);
+  assert.deepEqual(result.employed,{
+    job:1,employer:'left',goal:'paused',choices:[false,false,true]
+  });
+  assert.deepEqual(result.achieved,{
+    job:1,goal:'achieved',
+    history:['start','continue','pause','complete'],
+    former:'left',formerEpisodes:1,review:false,issues:[]
+  },'a short failed camp contract and a later voluntary exit each recover through real work');
+ }
+}
+// The same occupation number is never enough for the independent farmer story.
+start('クルビア');
+const companyPhantom=snap(`
+  S.year=1100;S.age=26;S.job=62;
+  const camp=EV.find(e=>e.id==='col_frontier_contract_review'),
+    farm=EV.find(e=>e.id==='car_col_pioneer_daily_01');
+  return {camp:camp.show(S),farm:farm.show(S)};
+`);
+assert.deepEqual(companyPhantom,{camp:false,farm:false},
+  'a job number without either company or farm membership cannot create duty');
+
+console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring, expulsion Victorian wartime/postwar exile and two Ursus military hearings, three explicit regional career losses and genuine later reemployment, two frontier company hiring and failure branches');
