@@ -259,6 +259,7 @@ for(const career of regionalCareers){
         (e.id.includes('_daily_')||e.id.includes('_choice_')));
     S.cash=15000000;S.house.cash=15000000;
     S.k=100;S.p=100;S.cr=100;
+    S.mo=entry.months?.[0]||4;
     if(c.key==='hig_cyber')S.fl.cyber_trace=1;
     const before={shown:entry.show(S),eligible:elig(entry,S,tags(S))};
     ap(success);
