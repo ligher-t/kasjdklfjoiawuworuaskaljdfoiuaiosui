@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),path=require('node:path'),vm=require(
 const {context,setup}=require('./support/annual-cases.cjs');
 const {ctx}=context(path.resolve(__dirname,'..'));
 setup(ctx,{id:'education-operations-mobility',seed:20261104,region:'龍門',age:15});
-const run=fn=>JSON.parse(vm.runInContext('JSON.stringify(('+fn.toString()+')())',ctx,{timeout:20000}));
+const run=fn=>JSON.parse(vm.runInContext('JSON.stringify((()=>{'+synthetic.toString()+';return ('+fn.toString()+')();})())',ctx,{timeout:20000}));
 function synthetic(region,city,year,month,seed,age=15) {
   return {randomSeed:seed,world:{events:{}},year,mo:month,age,
     care:{parentKeys:["fa"]},par:{fa:{d:0,separated:false}},
