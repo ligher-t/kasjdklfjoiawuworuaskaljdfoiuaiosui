@@ -156,7 +156,8 @@ window.TERRA_DATA_BUILD.fragment(
           id: goalId,
           title: goalTitle,
           priority: "生業",
-          action: "start"
+          action: "start",
+          preserveAchievement: true
         },
         p: opts.p || 0,
         k: opts.k || 0,
