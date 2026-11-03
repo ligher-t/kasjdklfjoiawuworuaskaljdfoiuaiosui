@@ -26,7 +26,7 @@ const AFFILIATION_RULES = Object.freeze({
   "rhodes-employment": affiliationRule("contact", null, null, "rhodes-job-search", "sr_rhodes_recruitment_contact/sr_rhodes_hiring_review/sr_rhodes_reapplication", "応募照会。採用・不採用で照会を閉じ、採用後の職員在籍を別に始める"),
   "bsw-contract": affiliationRule("organization", "クルビア", [35, 36, 37], "bsw-work", "sr_bsw_*", "クルビアの民間軍事会社BSWでの警備契約・戦術任務雇用。契約更新・派遣・退職を管理"),
   "rhine-lab": affiliationRule("organization", "クルビア", [38, 39, 40], "rhine-research", "sr_rhine_*", "クルビア・トリマウンツのライン生命研究所における研究雇用・特許契約。専門科配属と研究倫理を管理"),
-  "rhodes-staff": affiliationRule("organization", null, [28,29,30,31,33,34], "rhodes-work", "sr_rhodes_*", "本艦・地域支部・外勤の雇用。船の航行や一時任務を転居とせず、支部異動は配属を更新"),
+  "rhodes-staff": affiliationRule("organization", null, [28,29,30,31,33,34,35,36,37], "rhodes-work", "sr_rhodes_*", "本艦・地域支部・外勤の雇用。船の航行や一時任務を転居とせず、支部異動は配属を更新"),
   "reunion-1096": affiliationRule("mobile-network", null, null, "protect-neighbours", "life_reunion_early_*/life_reunion_chernobog_*", "初期移動野営地、チェルノボーグ臨時拠点、散開後の連絡を分離。壊滅後の旧拠点勤務を続けない"),
   "ursus-school-aid": affiliationRule("network", null, null, null, "life_ursus_school_aid*", "同級生と避難先の連絡網。卒業・転居後も便りを続けられ、学校在籍や同居を意味しない"),
   "infected-exclusion": affiliationRule("district", null, null, "order-through-exclusion", "life_infected_association*/life_infected_organization*/v87_exclusion_organizer_infected", "地域の住民会。現地会合と主催者の罹患・思想・過去の排斥行為を分け、転居で加害履歴を消さない"),
