@@ -19,7 +19,8 @@ jobs:
       - name: Regenerate runtime revision and validated event review catalog
         run: |
           node tools/update-version.cjs
-          node tools/generate-event-catalog.cjs --reconcile --write
+          node tools/generate-event-catalog.cjs --reconcile
+          node tools/generate-event-catalog.cjs --write
           node tools/generate-event-catalog.cjs --check
       - name: Commit generated runtime metadata to this draft branch
         run: |
