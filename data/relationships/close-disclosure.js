@@ -1331,7 +1331,12 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
     ]
   });
 
-  const hasZelgradFactoryHistory = s =>
+  const isBackInZelgrad = s =>
+      s.local?.city === "ゼルグラード" &&
+      s.lifeRecord?.regionalImpacts?.some(
+        impact => impact.region === "ウルサス" && impact.kind === "individual-return"
+      ),
+    hasZelgradFactoryHistory = s =>
       s.lifeRecord?.affiliations?.some(
         affiliation =>
           affiliation.id === "ursus-zelgrad-factory" &&
@@ -1361,7 +1366,7 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
         s.lifeRecord?.skills?.some(skill => skill.id === "industrial-production") &&
         hasDisplacementGoal(s),
       t: s =>
-        s.local?.city === "ゼルգրад"
+        isBackInZelgrad(s)
           ? "労働区画へ戻ってはきたものの、以前働いていた工場の持ち場には戻れそうになかった。近くの修理工房が部品の仕分けや検品の手伝いを探していると聞き、工場で身につけた腕が通用するか考えてみた。"
           : "避難先で狭い寝床を借り、日銭を稼げる仕事を探して歩き回った。近くの修理工房が部品の仕分けや検品の手伝いを募集していると聞き、ゼルグラードの工場で覚えた仕事を思い起こした。",
       c: [
@@ -1536,7 +1541,7 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
             s.year - (affiliation.startedYear ?? s.year) >= 2
         ),
       t: s =>
-        s.local?.city === "ゼルգրад"
+        isBackInZelgrad(s)
           ? "労働区画の修理工房で働き始めて二年余りが過ぎた。工具の並びも親方の癖もすっかり覚えた今、このままここで働き続けるか、別の仕事を探すか考えた。"
           : "避難先の修理工房に雇われてから二年余りが過ぎた。仕事の手順もすっかり身体に馴染んだ今、このまま工房で働き続けるか、別の働き口を探すか考えた。",
       c: [

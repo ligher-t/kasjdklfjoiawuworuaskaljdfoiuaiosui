@@ -49,6 +49,7 @@ on:
       - 'tests/v88_workplace_goal_departure_contracts.test.cjs'
       - 'tests/v88_rhine_and_rhodes_departure_lifecycle.test.cjs'
       - 'tests/v88_higashi_and_siracusa_retirement_goals.test.cjs'
+      - 'tests/v88_zelgrad_post_settlement_lifecycle.test.cjs'
       - 'tests/v87_ursus_zelgrad_displaced_work.js'
       - 'tests/v87_ursus_zelgrad_evacuation.js'
       - 'tests/v87_exclusion_organizer_infected.js'
@@ -115,6 +116,7 @@ on:
       - 'tests/v88_workplace_goal_departure_contracts.test.cjs'
       - 'tests/v88_rhine_and_rhodes_departure_lifecycle.test.cjs'
       - 'tests/v88_higashi_and_siracusa_retirement_goals.test.cjs'
+      - 'tests/v88_zelgrad_post_settlement_lifecycle.test.cjs'
       - 'tests/v87_ursus_zelgrad_displaced_work.js'
       - 'tests/v87_ursus_zelgrad_evacuation.js'
       - 'tests/v87_exclusion_organizer_infected.js'
@@ -217,6 +219,8 @@ jobs:
           node tools/check-efficient.cjs run v87_ursus_zelgrad_evacuation.js
       - name: Exclusion organizer repeated suspension and resignation
         run: node tools/check-efficient.cjs run v87_exclusion_organizer_infected.js
+      - name: Post-settlement relocation and independent reemployment goals
+        run: node tools/check-efficient.cjs run v88_zelgrad_post_settlement_lifecycle.test.cjs
       - name: Affiliation legacy and actual departure boundaries
         run: node tools/check-efficient.cjs run v88_affiliation_legacy_event_boundaries.test.cjs
       - name: Reunion crisis pause and old unit transfer goals
