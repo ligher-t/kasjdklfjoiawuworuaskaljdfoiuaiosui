@@ -81,7 +81,7 @@ for(const [region,incidentId,affiliationId,rank] of promotions){
   const message=incidentId+': ';
   assert.equal(actual.available,true,message+'on-duty incident is eligible');
   assert.notEqual(actual.original,rank,message+'initial rank differs from the promotion');
-  assert.equal(actual.otherRole,undefined,message+'injury/failure branch awards no rank');
+  assert.equal(actual.otherRole,false,message+'injury/failure branch awards no rank');
   assert.deepEqual(
     {id:actual.onSuccess?.id,action:actual.onSuccess?.action,role:actual.onSuccess?.role,
       required:actual.onSuccess?.onlyIfActiveOrCrisis,noRepeat:actual.onSuccess?.onlyIfRoleChanged},
