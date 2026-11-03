@@ -128,7 +128,6 @@ function applyWorkAndCareEffects(e, s, fromRegion) {
   else if (e.fl?.arts_enrolled === 0)
     recordEducationTransition(s, "arts-academy", "stop", educationSource);
   if (e.educationAction) educationApplyAction(s,e.educationAction);
-  if (e.educationMigrationAction) educationMigrationApply(s,e.educationMigrationAction);
   if (typeof educationMigrationLinkLegacyLearning==="function")
     educationMigrationLinkLegacyLearning(s,e);
   if (e.familyCare === "parent") {
