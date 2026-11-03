@@ -306,7 +306,11 @@ function educationSimulateAttendanceThrough(s,year= s?.year,untilMonth=12) {
         const roll=educationDraw(world,record.id+":"+year+":"+month,
           "personal-attendance-v1","participation");
         access=roll.value<0.91?1:roll.value<0.975?0.5:0;
-        basis="game-model-personal-participation";
+        const communication=educationOfferingLanguageAssessment(s,
+          placement.offeringId,"instruction-session",{year,month});
+        access=Math.min(access,communication.fraction);
+        basis=communication.status==="blocked"?"language-support-needed":
+          "game-model-personal-participation";
       }else basis="route-unavailable";
     }
     educationRecordAttendance(s,{enrollmentId:record.id,year,month,
@@ -380,7 +384,7 @@ function educationCreditForPreviousYear(s) {
 }
 function educationAnnualParticipationScale(s) {
   const credit=educationCreditForPreviousYear(s);
-  return credit?.credited?Math.max(0,Math.min(1,credit.equivalent/12)):0;
+  return credit?Math.max(0,Math.min(1,credit.equivalent/12)):0;
 }
 function educationAttendanceInvariants(s) {
   const issues=[],att=s.educationAttendance,credits=s.educationCredits,places=s.educationPlacements;

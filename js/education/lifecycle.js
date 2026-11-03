@@ -57,6 +57,8 @@ function educationHas(s, stage) {
 // A school recipient is the current school or the particular higher-course
 // enrolment, never the neighborhood elementary school for a university.
 function educationInstitutionRef(s, stage = s?.educationPath?.stage) {
+  if(s?.educationPath?.stage===stage && s.educationPath.offeringId &&
+     s.educationPath.institutionId)return s.educationPath.institutionId;
   if (["primary","lower","upper"].includes(stage))
     return typeof activeFacility === "function" ? activeFacility(s,"school")?.id || null : null;
   if (!["university","vocational","arts","preparatory"].includes(stage) ||
@@ -73,6 +75,10 @@ function educationSchoolKnowsInfection(s, stage) {
     return false;
   const siteId = educationInstitutionRef(s,stage);
   if (!siteId) return false;
+  if(s.world?.educationWorld?.institutions?.[siteId])
+    return educationRecipientInfectionKnowledge(s,{
+      institutionId:siteId,recipientKind:"institution"
+    }).status==="institution-confirmed";
   return infectionAwarenessEntries(s).some(row =>
     row.subject === "protagonist" &&
     row.audience === "school" &&
@@ -89,7 +95,14 @@ function educationBarrier(s, stage, tier = 1) {
     sarkaz = s.r?.n === "サルカズ",
     tara = region === "ヴィクトリア" &&
       s.culturalIdentity?.affiliation === "ターラー系",
-    school = typeof activeFacility === "function" ? activeFacility(s,"school") : null,
+    realOffering=s.educationPath?.stage===stage &&
+      s.world?.educationWorld?.offerings?.[s.educationPath.offeringId],
+    school = realOffering?
+      (()=>{const status=educationSchoolStatusAt(s,realOffering.id,s.year,s.mo??0);
+        return status?{id:realOffering.institutionId,
+          status:status.teachingEquivalent<=0?"closed":
+            status.teachingEquivalent<1?"strained":"open"}:null;})() :
+      typeof activeFacility==="function"?activeFacility(s,"school"):null,
     basicSchool = ["primary","lower","upper"].includes(stage),
     clanSite = region === "サーミ" && s.local?.kind &&
       /氏族|遊牧|非定住/.test(s.local.kind);

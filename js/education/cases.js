@@ -194,6 +194,10 @@ function educationCasePreflight(s,row) {
   if(item.stage==="lower" && !educationHas(s,"primary"))return fail("not-eligible");
   if(item.stage==="upper" && !educationHas(s,"lower"))return fail("not-eligible");
   if(item.stage==="primary"&&(s.age<6||s.age>14))return fail("not-eligible");
+  const language=educationOfferingLanguageAssessment(s,off.id,
+    "application-document");
+  if(language.status==="blocked")
+    return fail("application-reading-pending");
   const quote=educationQuoteCosts(s,{caseId:item.id,stage:off.stage,
     tier:off.admissionTier,offeringId:off.id,kind:"tuition"}),
     cost=quote.amount,examFee=higher?Math.round(cost*0.06):0;
@@ -393,6 +397,10 @@ function educationCaseCommitEligibility(s,mode="cash") {
     ["suspended","closed","full"].includes(status.admissionStatus))
     return {allowed:false,reason:"school-closed"};
   if(educationOccupied(s)||!!s.study)return {allowed:false,reason:"enrollment-conflict"};
+  const understanding=educationOfferingLanguageAssessment(s,item.offeringId,
+    "instruction-session");
+  if(understanding.status==="blocked")
+    return {allowed:false,reason:"instruction-comprehension-pending"};
   if(s.age<18){
     const guardian=educationGuardianReview(s,"protagonist","daily-commute",
       item.targetInstitutionId,s.year,s.mo??0);
@@ -414,7 +422,8 @@ function educationCaseCommit(s,mode="cash") {
   const fields=["educationFinance","educationAnnualFee","educationPath",
     "educationDecision","educationCases","educationRecord","fl","study",
     "job","workPayBonus","reducedWorkStartedYear","lifeRecord","careerHistory",
-    "educationAttendance","educationCredits","educationPlacements","cash"];
+    "educationAttendance","educationCredits","educationPlacements",
+    "educationPeopleTies","cash"];
   const saved=Object.fromEntries(fields.map(key=>
     [key,s[key]===undefined?undefined:educationFinanceClone(s[key])]));
   const houseCash=s.house?.cash;
@@ -442,6 +451,7 @@ function educationCaseCommit(s,mode="cash") {
       offeringId:item.offeringId,enrollmentId,
       committedAt:{year:s.year,month:s.mo??0}};
     educationCaseFinish(s,item,"admitted");
+    educationEnsureEnrolledSchoolPeople(s,enrollmentId);
     return true;
   }catch(error){
     for(const key of fields){

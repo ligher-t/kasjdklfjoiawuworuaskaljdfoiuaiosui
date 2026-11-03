@@ -54,12 +54,12 @@ function educationRecipientInfectionKnowledge(s,{institutionId,recipientKind,per
   const target=educationSchoolRecipient(s,institutionId,recipientKind,personId);
   if(!target)return {status:"unverified",basis:"unknown-recipient"};
   const entries=infectionAwarenessEntries(s).filter(row=>
-    row.subject==="protagonist" && row.subjectMatch==="confirmed" &&
+    row.subject==="protagonist" &&
     row.recipientRef===target.recipientRef &&
     (recipientKind==="institution" ?
       row.audience==="school" && !row.recipientId :
       row.audience==="school-contact" && row.recipientId===target.recipientId));
-  if(entries.some(x=>x.certainty==="confirmed"))
+  if(entries.some(x=>x.certainty==="confirmed" && x.subjectMatch==="confirmed"))
     return {status:recipientKind==="institution"?"institution-confirmed":"individual-confirmed",
       basis:"recipient-specific-confirmed"};
   if(entries.some(x=>x.certainty==="suspected"||x.certainty==="unverified"))

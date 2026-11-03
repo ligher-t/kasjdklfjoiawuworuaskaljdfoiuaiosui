@@ -416,6 +416,7 @@ function born(birth = {}) {
       `テラ暦${birthYear}年、${birthPlace}に${S.r.n}の${S.sx === "男" ? "男の子" : "女の子"}として生まれた。家庭の経済状況は「${w.n}」。気質は「${t.n}」。`
     );
   }
+  educationSynchronizeDependents(S);
   recordTrace("birth", null, { text: `テラ暦${birthYear}年、${birthPlace}に生まれた。` });
   hist();
   sched();

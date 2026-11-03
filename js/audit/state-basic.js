@@ -177,6 +177,15 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
   if(typeof educationAttendanceInvariants==="function" &&
     educationAttendanceInvariants(s).length)
     problems.push("教育の月次出席・年次履修認定記録に矛盾");
+  if(typeof educationAccessIdentityInvariants==="function" &&
+    educationAccessIdentityInvariants(s).length)
+    problems.push("学校・教師の感染認知または言語支援に不整合");
+  if(typeof educationDependentInvariants==="function" &&
+    educationDependentInvariants(s).length)
+    problems.push("子・きょうだいの教育記録に不整合");
+  if(typeof educationNonformalInvariants==="function" &&
+    educationNonformalInvariants(s).length)
+    problems.push("学校外学習または技能認定記録に不整合");
   if(s.educationAnnualFee && (
     !Number.isInteger(s.educationAnnualFee.year) ||
     s.educationAnnualFee.year > s.year ||

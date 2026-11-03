@@ -23,6 +23,7 @@ function advanceCurrentLifeYear(s, services) {
   let annualFlowRecorded = false;
   advanceAnnualCalendar(s, services);
   advanceAnnualRelationsAndAccess(s, services);
+  educationSynchronizeDependents(s);
   advanceAnnualWellbeing(s, services, a, t, f, careEffect);
   advanceAnnualInfection(s, services, f);
   if (typeof educationAdvanceYear === "function") educationAdvanceYear(s);

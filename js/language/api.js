@@ -312,17 +312,26 @@ function clampLanguageSkill(val) {
 
     const isEnrolled = Boolean(s.fl?.sch || s.fl?.uni_enrolled || s.fl?.voc_enrolled || s.fl?.arts_enrolled);
     if (isEnrolled && a >= 6) {
-      const schoolLang = localProfile.schoolInstruction || civicLang;
+      const formalOffer=s.world?.educationWorld?.offerings?.[s.educationPath?.offeringId],
+        confirmed=!!formalOffer?.instructionLanguage?.evidenceRef,
+        schoolLang=formalOffer?
+          (confirmed?formalOffer.instructionLanguage.languageId:null):
+          localProfile.schoolInstruction||civicLang,
+        participation=formalOffer?
+          (typeof educationAnnualParticipationScale==="function"?
+            educationAnnualParticipationScale(s):0):1;
+      if(schoolLang && participation>0){
       if (!ls.skills[schoolLang]) {
         ls.skills[schoolLang] = { listen: 0, speak: 0, read: 0, write: 0, formalRegister: 0, lastUsedYear: s.year, acquisition: ["school"], evidence: [] };
       }
       const sk = ls.skills[schoolLang];
-      sk.read = clampLanguageSkill(sk.read + 7);
-      sk.write = clampLanguageSkill(sk.write + 6);
-      sk.listen = clampLanguageSkill(sk.listen + 5);
-      sk.speak = clampLanguageSkill(sk.speak + 4);
-      if (a >= 14) sk.formalRegister = clampLanguageSkill(sk.formalRegister + 4);
+      sk.read = clampLanguageSkill(sk.read + 7*participation);
+      sk.write = clampLanguageSkill(sk.write + 6*participation);
+      sk.listen = clampLanguageSkill(sk.listen + 5*participation);
+      sk.speak = clampLanguageSkill(sk.speak + 4*participation);
+      if (a >= 14) sk.formalRegister = clampLanguageSkill(sk.formalRegister + 4*participation);
       sk.lastUsedYear = s.year;
+      }
     }
 
     if (civicLang) {
