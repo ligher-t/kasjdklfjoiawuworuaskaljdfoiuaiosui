@@ -173,7 +173,8 @@ const guardianScope=run(function(){
     afterSearch=item.stepsUsed,
     repeatSearch=educationCaseAction(s,"case:search-adjacent");
   s.care.parentKeys=[];
-  const denied=educationCasePreflight(s,row);
+  const denied=educationCasePreflight(s,row),
+    deniedText=educationCaseReasonText(s,0);
   s.care.parentKeys=["fa"];
   const bank=s.cash,house=s.house.cash,
     selected=educationCaseAction(s,"case:select:0");
@@ -182,7 +183,7 @@ const guardianScope=run(function(){
     x.evidenceRef===item.id+":guardian-response");
   const end=s.educationCases.items[item.id],
     receiptCount=(s.educationFinance?.receipts||[]).filter(x=>x.caseId===item.id).length;
-  return {begin,before,pending,searched,afterSearch,repeatSearch,denied,
+  return {begin,before,pending,searched,afterSearch,repeatSearch,denied,deniedText,
     selected,answers:answers.map(x=>({purpose:x.purpose,state:x.consentState,evidence:x.evidenceRef})),
     phase:end.phase,terminal:end.reason,receiptCount,uncharged:bank===s.cash&&house===s.house.cash,
     auditIssues:auditLifeState(s).filter(x=>x.includes("進路案件")||x.includes("教育上"))};
@@ -196,6 +197,7 @@ assert.equal(guardianScope.afterSearch,1,"adjacent search is an information acti
 assert.equal(guardianScope.repeatSearch,false);
 assert.equal(guardianScope.denied.allowed,false);
 assert.equal(guardianScope.denied.reasonCodes[0],"no-guardian");
+assert.equal(guardianScope.deniedText,"未成年者の出願に必要な保護者の同意が確かめられていない。");
 assert.equal(guardianScope.selected,true);
 assert.equal(guardianScope.answers.length,2);
 assert(guardianScope.answers.every(row=>row.evidence?.includes("guardian-response")));

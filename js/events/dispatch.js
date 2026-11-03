@@ -558,7 +558,11 @@ function ask(e, T, t, before, resumed = false) {
     b.append(number);
     b.append(action);
     if (!k) {
-      const reason = tpl(ethicalLock(e, c, s, who) || c.why || "条件を満たしていない", s),
+      const candidateIndex = e.id==="education_case_review" ? e.c.indexOf(c) : -1,
+        schoolReason = candidateIndex>=0 && candidateIndex<3 ?
+          educationCaseReasonText(s,candidateIndex) : null,
+        reason = tpl(ethicalLock(e, c, s, who) || schoolReason || c.why ||
+          "条件を満たしていない", s),
         description = document.createElement("span");
       description.className = "choice-reason";
       description.id = `choice-reason-${i + 1}`;
