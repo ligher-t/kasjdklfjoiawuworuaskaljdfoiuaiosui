@@ -482,7 +482,7 @@ function recordCareerChange(s, fromJobId, toJobId, source = TRACE_RESOLUTION) {
   return item;
 }
 const CAREER_PLACEMENTS = [
-  { id: "rhodes-staff", jobs: [28, 29, 30, 31, 33, 34], region: null, goal: "rhodes-work" },
+  { id: "rhodes-staff", jobs: [28, 29, 30, 31, 33, 34, 35, 36, 37], region: null, goal: "rhodes-work" },
   { id: "bsw-contract", jobs: [35, 36, 37], region: "クルビア", goal: "bsw-work" },
   { id: "rhine-lab", jobs: [38, 39, 40], region: "クルビア", goal: "rhine-research" },
   { id: "kazimierz-arena-staff", job: 32, region: "カジミエーシュ", goal: "kazimierz-arena-work" },
