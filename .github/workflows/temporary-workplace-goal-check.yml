@@ -1,4 +1,4 @@
-name: Temporary workplace and contract goal verification
+name: Temporary career exit and independent health goal verification
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]

@@ -53,4 +53,21 @@ assert.equal(separateContract.aff,'left','completed short contract remains close
 assert.equal(separateContract.goal,'active','aspiration to find another short contract can remain active');
 assert.equal(separateContract.history,'continue');
 assert.deepEqual(separateContract.issues,[]);
-console.log('PASS: six workplace exits close their career goals; intermittent contract aspiration stays active');
+const medical=inspect(`
+ born({seed:203101,by:1065,region:'クルビア'});
+ S.year=1102;S.age=37;
+ ap({lifeAffiliation:{id:'rhodes-care',title:'ロドスへの療養相談',kind:'contact',
+       action:'join',role:'定期相談'},
+     lifeGoal:{id:'rhodes-care',title:'通院と暮らしを両立しながら療養する',action:'start'}});
+ ap(EV.find(x=>x.id==='life_rhodes_role_review').c[2].o[0][2]);
+ const aff=S.lifeRecord.affiliations.find(x=>x.id==='rhodes-care'),
+   goal=S.lifeRecord.goals.find(x=>x.id==='rhodes-care');
+ return {aff:aff.status,goal:goal.status,goalLast:goal.history.at(-1)?.action,
+   issues:auditLifeState(S)};
+`);
+assert.equal(medical.aff,'left','Rhodes contact ends after the referral is transferred');
+assert.equal(medical.goal,'active','local treatment remains a personal health goal');
+assert.equal(medical.goalLast,'start','no phantom abandonment of health goal');
+assert.deepEqual(medical.issues,[]);
+
+console.log('PASS: six workplace exits close their career goals; short-contract and healthcare goals stay active');
