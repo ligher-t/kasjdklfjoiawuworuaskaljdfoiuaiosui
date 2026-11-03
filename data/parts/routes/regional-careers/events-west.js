@@ -16,7 +16,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "ウルサス" && s.job === $terraData.REG_JOBS.urs_officer,
+      show: s => s.res?.n === "ウルサス" && $terraData.regionalCareerOnDuty(s, "urs_officer"),
       t: "要塞前広場で、凍てつく風の中を直立する兵士たちを馬上から閲兵した。毛皮の軍服に積もる雪を払うことも許さぬ絶対の軍規。ウルサスの軍事力は、この無情な服従の上に築かれている。",
       c: [
         $terraData.K("閲兵を終え、幕僚たちとウォッカで体を温める", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -33,7 +33,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 23 },
-      show: s => s.res?.n === "ウルサス" && s.job === $terraData.REG_JOBS.urs_officer,
+      show: s => s.res?.n === "ウルサス" && $terraData.regionalCareerOnDuty(s, "urs_officer"),
       t: "軍団長から極秘の密命が下された。反皇帝派の疑いがある同僚の貴族将校を、演習中の事故に見せかけて抹殺せよという。従えば軍団長の側近へ引き立てられるが、拒めば自らが反逆者として消される。",
       c: [
         $terraData.K("命令に従い、砲兵の誤爆に見せかけて標的を葬る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -63,7 +63,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 19 },
-      show: s => s.res?.n === "ウルサス" && s.job === $terraData.REG_JOBS.urs_guard,
+      show: s => s.res?.n === "ウルサス" && $terraData.regionalCareerOnDuty(s, "urs_guard"),
       t: "鉛色の空の下、雪に埋もれたコンクリートトーチカで銃を抱えて立った。双眼鏡で荒涼たる雪原を監視し、凍えた手足を焚火にかざす。粗末な黒パンを齧りながら、交代のラッパを待つ。",
       c: [
         $terraData.K("交代兵に銃を引き渡し、粗末な兵舎へ戻る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -80,7 +80,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 21 },
-      show: s => s.res?.n === "ウルサス" && s.job === $terraData.REG_JOBS.urs_guard,
+      show: s => s.res?.n === "ウルサス" && $terraData.regionalCareerOnDuty(s, "urs_guard"),
       t: "監視する感染者炭鉱の地下最深部で、虐待に耐えかねた囚人たちがツルハシを手に一斉に暴動を起こした。坑道の出入口を塞ぐ鉄扉の前で、援軍が来るまで銃剣で死守するか、扉を捨てて地上へ逃げるか。",
       c: [
         $terraData.K("鉄扉の前に踏みとどまり、銃剣で突撃を迎え撃つ", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -115,7 +115,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 19 },
-      show: s => s.res?.n === "ヴィクトリア" && s.job === $terraData.REG_JOBS.vic_infantry,
+      show: s => s.res?.n === "ヴィクトリア" && $terraData.regionalCareerOnDuty(s, "vic_infantry"),
       t: "冷たい雨が降り続くヴィクトリア軍の演習陣地。膝まで泥に浸かりながら塹壕の土嚢を積み直し、油布で小銃のボルトを拭った。貴族将校が天幕で温かいスープを飲むのを横目に、冷え切った固パンを齧る。",
       c: [
         $terraData.K("小隊の仲間と煙草を分け合って一息つく", { ethics: { reviewed: true, policyVersion: 87, intent: "self-or-family-care" } }, [
@@ -132,7 +132,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 21 },
-      show: s => s.res?.n === "ヴィクトリア" && s.job === $terraData.REG_JOBS.vic_infantry,
+      show: s => s.res?.n === "ヴィクトリア" && $terraData.regionalCareerOnDuty(s, "vic_infantry"),
       t: "行軍中、霧の立ち込める渓谷で待ち伏せしていた凶悪なサルカズ傭兵団の奇襲を受けた。貴族将校は狼狽して逃げ腰になり、歩兵小隊が孤立した。銃剣を構えて突撃するか、土手を盾にして応戦するか。",
       c: [
         $terraData.K("銃剣突撃の号令を自ら叫び、敵の側面を衝く", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -166,7 +166,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 21 },
-      show: s => s.res?.n === "ヴィクトリア" && s.job === $terraData.REG_JOBS.vic_royal,
+      show: s => s.res?.n === "ヴィクトリア" && $terraData.regionalCareerOnDuty(s, "vic_royal"),
       t: "ロンディニウムの豪壮な将校クラブで、大公爵派閥の貴族たちとワイングラスを傾けた。壁に掛けられた歴代の武勲詩。どの公爵が次の軍需予算を握るか、華やかな制服の下で冷徹な情報戦が繰り広げられる。",
       c: [
         $terraData.K("公爵の副官と親交を深め、派閥の動向を探る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -185,7 +185,7 @@ window.TERRA_DATA_BUILD.fragment(
       w: 0.4,
       ge: { age: 22, year: 1094 },
       le: { year: 1094 },
-      show: s => s.res?.n === "ヴィクトリア" && s.job === $terraData.REG_JOBS.vic_royal,
+      show: s => s.res?.n === "ヴィクトリア" && $terraData.regionalCareerOnDuty(s, "vic_royal"),
       t: "1094年、ロンディニウムにカズデル軍事委員会が介入し、大公爵たちの利権闘争が頂点に達した。所属する公爵家が議会襲撃で敗北し、司令部が包囲された。反逆者として公爵と共に散るか、それとも寝返って新体制に忠誠を誓うか。",
       c: [
         $terraData.K("サーベルを抜き、公爵の旗を守るため最後まで防衛戦を指揮する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -215,7 +215,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "リターニア" && s.job === $terraData.REG_JOBS.lei_golden,
+      show: s => s.res?.n === "リターニア" && $terraData.regionalCareerOnDuty(s, "lei_golden"),
       t: "女帝の双塔を結ぶ高架回廊で、音律法典のアーツ発振器を調律した。完璧な純正律の和音を響かせ、都市の精神安定結界を維持する。わずかな不協和音も許さぬ金律法衛の誇りと重責が、全身の神経を研ぎ澄ませる。",
       c: [
         $terraData.K("調律を完了し、女帝の紋章に一礼する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -232,7 +232,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "リターニア" && s.job === $terraData.REG_JOBS.lei_golden,
+      show: s => s.res?.n === "リターニア" && $terraData.regionalCareerOnDuty(s, "lei_golden"),
       t: "ツヴィリングトゥルムの地下深く、かつて巫王が築いた禁断の音律院で残党たちが狂乱のアーツ演奏を行っていた。歪んだ旋律が精神を蝕む中、法衛として即座に突入しアーツで鎮圧するか。",
       c: [
         $terraData.K("金律の絶対和音を展開し、異端の旋律を粉砕する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -266,7 +266,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "ラテラーノ" && s.job === $terraData.REG_JOBS.lat_executor,
+      show: s => s.res?.n === "ラテラーノ" && $terraData.regionalCareerOnDuty(s, "lat_executor"),
       t: "公証人役場の執務室で、他国企業とラテラーノ市民の間に結ばれた遺産分割契約書を審査した。午後は射撃場で守護銃の分解清掃と的当て。サンクタ法典の厳格な条文と火薬の匂いが、執行人の日常を満たす。",
       c: [
         $terraData.K("報告書を提出し、名物のアップルパイを食べる", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -283,7 +283,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "ラテラーノ" && s.job === $terraData.REG_JOBS.lat_executor,
+      show: s => s.res?.n === "ラテラーノ" && $terraData.regionalCareerOnDuty(s, "lat_executor"),
       t: "公証人役場の特務指令。国外の無法地帯において、ラテラーノ市民の遺産である聖遺物と守護銃が武装傭兵団に略奪された。法典の履行のため、単身で傭兵アジトへ乗り込み返還調停を行うか。",
       c: [
         $terraData.K("法典を宣告し、守護銃の連射で制圧する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
