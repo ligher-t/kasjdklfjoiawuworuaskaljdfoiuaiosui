@@ -115,9 +115,9 @@ assert.deepEqual(snap(`
 `),{missing:false,wrong:false,correct:true,roundtrip:0},
   'result-dependent after requires the actual result and is serializable');
 for(const entry of [
-  {region:'龍門',job:45,id:'lungmen-black-market'},
-  {region:'リターニア',job:59,id:'leithania-court-musician'},
-  {region:'サーミ',job:71,id:'sami-scar-warrior'}
+  {region:'龍門',job:45,id:'lungmen-black-market',goal:'lmd-underground-deals'},
+  {region:'リターニア',job:59,id:'leithania-court-musician',goal:'leithania-court-music'},
+  {region:'サーミ',job:71,id:'sami-scar-warrior',goal:'sami-scar-demon-defense'}
 ]){
   start(entry.region);
   ctx.EMPLOYMENT_CASE=entry;
@@ -125,13 +125,13 @@ for(const entry of [
     const c=EMPLOYMENT_CASE;
     S.cash=10000000;S.house.cash=10000000;
     ap({job:c.job,lifeAffiliation:{id:c.id,title:'地域固有の勤務',action:'join',role:'現地の担当'},
-        lifeGoal:{id:'regional-career-test-'+c.id,title:'地域の仕事を続ける',action:'start'}});
+        lifeGoal:{id:c.goal,title:'地域の仕事を続ける',action:'start'}});
     const prior={job:S.job,status:S.lifeRecord.affiliations.find(x=>x.id===c.id).status};
     const destination=moveDestinations(S).find(x=>x.n!==S.res.n);
     if(!destination)throw Error('No regional route from '+c.region);
     ap({resTo:destination.n,resFareCovered:true});
     const affiliation=S.lifeRecord.affiliations.find(x=>x.id===c.id),
-      goal=S.lifeRecord.goals.find(x=>x.id==='regional-career-test-'+c.id),
+      goal=S.lifeRecord.goals.find(x=>x.id===c.goal),
       career=S.lifeRecord.careerChanges.at(-1);
     return {prior,region:S.res.n,job:S.job,affiliation:affiliation.status,goal:goal.status,
       change:{from:career?.fromJobId,to:career?.toJobId},
