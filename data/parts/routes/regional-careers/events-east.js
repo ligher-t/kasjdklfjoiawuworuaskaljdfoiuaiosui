@@ -416,6 +416,46 @@ window.TERRA_DATA_BUILD.fragment(
         ])
       ]
     }
+    {
+      id: "car_hig_ninja_after_escape",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 24 },
+      after: { id: "car_hig_ninja_choice_escape", min: 2, choice: 0 },
+      show: s => !!s.fl?.nukenin &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "higashi-ninja-clan" && a.status === "left") &&
+        s.lifeRecord?.goals?.some(g => g.id === "higashi-nukenin-next-livelihood" &&
+          ["active", "compromised", "paused"].includes(g.status)),
+      t: "里を離れた後も、戸口の物音には耳が向いた。かつての名前を知る者がいつ現れるかは分からない。それでも、寝床と食い扶持は今日も必要だった。",
+      c: [
+        $terraData.K("足取りを隠しながら働き口を探す", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "市場に立ち寄り、誰も昔のことを尋ねない仕事がないか聞いて回った。働き口の約束は得られなかった。",
+          { lifeGoal: { id: "higashi-nukenin-next-livelihood", action: "continue",
+            note: "身元と追跡を気にかけつつ、次の仕事を探し続けた" } }]),
+        $terraData.K("いまは身を隠し、求職を休む", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "外へ出るのを控え、手元の食べ物を少しずつ使った。先の見通しは立たなかった。",
+          { lifeGoal: { id: "higashi-nukenin-next-livelihood", action: "pause",
+            note: "身を隠すことを優先し、仕事探しをいったん休んだ" } }]),
+        $terraData.K("新しい仕事を得たことに一区切りつける", {
+          show: s => s.job > 0 && s.job !== 47,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "今の勤め先で働いた分の報酬を受け取った。追われる記憶は残るが、自分の働きで暮らしを支える道が一つできた。",
+          { lifeGoal: { id: "higashi-nukenin-next-livelihood", action: "complete",
+            note: "忍び衆を離れた後、別の実際の職業で生計を得た" } }]),
+        $terraData.K("新しい勤め先があっても警戒を続ける", {
+          show: s => s.job > 0 && s.job !== 47,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "仕事には通い続けたが、帰り道では何度も背後を確かめた。暮らしを立て直せたかどうか、結論を急がなかった。",
+          { lifeGoal: { id: "higashi-nukenin-next-livelihood", action: "continue",
+            note: "別の職業に就いたが、追跡下での生計の安定を引き続き見極める" } }])
+      ]
+    },
   ];
 
   for (const event of E) {
