@@ -474,6 +474,71 @@ window.TERRA_DATA_BUILD.fragment(
             note: "別の職業に就いたが、追跡下での生計の安定を引き続き見極める" } }])
       ]
     },
+    {
+      id: "car_yan_court_after_dismissal",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 24 },
+      after: { id: "car_yan_court_choice_bribe", min: 2, choice: 1, outcome: 1 },
+      show: s => s.lifeRecord?.affiliations?.some(a => a.id === "yan-court-bureaucracy" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        s.lifeRecord?.goals?.some(g => g.id === "yan-dismissed-clerk-livelihood" && ["active", "paused", "compromised"].includes(g.status)),
+      t: "官吏の名簿から名を消されて以来、以前の役所の門を通ることはなかった。文字と帳簿を扱う腕は残っている。どこで働くとしても、あの収賄の記録を抱えて暮らすことになる。",
+      c: [
+        $terraData.K("役所の外で働き口を探す", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "小さな商店を訪ね、帳簿の仕事を引き受けられないか尋ねた。店主は話を聞いたが、採用については何も約束しなかった。",
+          { lifeGoal: { id: "yan-dismissed-clerk-livelihood", action: "continue",
+            note: "罷免後も民間の仕事を探したが、採用は成立していない" } }]),
+        $terraData.K("ひとまず求職を休む", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "書類を閉じ、当面は手元の蓄えと日々の支出を見直すことにした。かつての肩書きは戻らない。",
+          { lifeGoal: { id: "yan-dismissed-clerk-livelihood", action: "pause",
+            note: "罷免後の仕事探しを一時休止した" } }]),
+        $terraData.K("新しい仕事で暮らしを立て直したと認める", {
+          show: s => s.job > 0 && (s.job !== 41 || s.lifeRecord?.affiliations?.some(a => a.id === "yan-court-bureaucracy" && a.status === "active" && a.episodes?.length >= 2)),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "新しい勤め先で任された帳面を閉じ、働いた分の報酬を受け取った。失った官職の名ではなく、自分の今の仕事で生活が続いている。",
+          { lifeGoal: { id: "yan-dismissed-clerk-livelihood", action: "complete",
+            note: "官吏の職を失った後、別の実際の仕事で生計を得た" } }])
+      ]
+    },
+    {
+      id: "car_lmd_black_after_detention",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 24 },
+      after: { id: "car_lmd_black_choice_big_deal", min: 2, choice: 0, outcome: 1 },
+      show: s => !s.fl?.detained &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "lungmen-black-market" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        s.lifeRecord?.goals?.some(g => g.id === "lungmen-post-custody-livelihood" && ["active", "paused", "compromised"].includes(g.status)),
+      t: "留置施設を出た後も、裏通りで交わした名前を口にする気にはなれなかった。手元に残る金を数え、今日の寝床と次の仕事のことを考えた。",
+      c: [
+        $terraData.K("危ない紹介を避けて働き口を探す", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "小さな荷運びの依頼を尋ねて歩いたが、今日のところ仕事は決まらなかった。誰にも昔の取引を話さなかった。",
+          { lifeGoal: { id: "lungmen-post-custody-livelihood", action: "continue",
+            note: "拘束終了後、安全を優先して求職を続けた" } }]),
+        $terraData.K("しばらく身を落ち着ける", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "日暮れまで人気の少ない場所で過ごした。次の勤め先を決めるのは、いまは見送った。",
+          { lifeGoal: { id: "lungmen-post-custody-livelihood", action: "pause",
+            note: "拘束後の求職を一時休止した" } }]),
+        $terraData.K("別の仕事で生活を立て直したと認める", {
+          show: s => s.job > 0 && (s.job !== 45 || s.lifeRecord?.affiliations?.some(a => a.id === "lungmen-black-market" && a.status === "active" && a.episodes?.length >= 2)),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "今日の仕事を終え、賃金を受け取った。黒市の取引から離れても、暮らしを支える仕事が一つできた。",
+          { lifeGoal: { id: "lungmen-post-custody-livelihood", action: "complete",
+            note: "拘束が解けた後、別の実際の仕事で生計を得た" } }])
+      ]
+    },
   ];
 
   for (const event of E) {

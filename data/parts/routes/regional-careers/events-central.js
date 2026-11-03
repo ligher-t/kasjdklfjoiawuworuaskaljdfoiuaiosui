@@ -231,7 +231,39 @@ window.TERRA_DATA_BUILD.fragment(
           { k: 1, p: 1, cash: 150000 }
         ])
       ]
-    }
+    },
+    {
+      id: "car_col_pioneer_after_dispossession",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 24 },
+      after: { id: "car_col_pioneer_choice_bandits", min: 2, choice: 1, outcome: 0 },
+      show: s => s.lifeRecord?.affiliations?.some(a => a.id === "columbia-frontier-pioneer" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        s.lifeRecord?.goals?.some(g => g.id === "columbia-dispossessed-pioneer-livelihood" && ["active", "paused", "compromised"].includes(g.status)),
+      t: "農場を離れた夜のことは今も覚えている。畑の位置も、掘り当てた水脈も、誰かに奪われた土地に残してきた。新しい働き口を探すか、もう一度開拓を始めるか、生活の先を考えた。",
+      c: [
+        $terraData.K("ほかの働き口を探して回る", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "求人を出している工房と倉庫を訪ねた。農具を扱えた経験を話したが、採用の返事はまだ届かなかった。",
+          { lifeGoal: { id: "columbia-dispossessed-pioneer-livelihood", action: "continue",
+            note: "農場喪失後に求職を続けたが、採用は成立していない" } }]),
+        $terraData.K("今は働き口探しを休む", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "焼けた農場のことを考えながら、しばらく手元の道具を片付けた。新しい契約を結ぶのは先送りにした。",
+          { lifeGoal: { id: "columbia-dispossessed-pioneer-livelihood", action: "pause",
+            note: "土地を失った後の求職を一時休止した" } }]),
+        $terraData.K("新しい仕事で暮らしを再建したと認める", {
+          show: s => s.job > 0 && (s.job !== 62 || s.lifeRecord?.affiliations?.some(a => a.id === "columbia-frontier-pioneer" && a.status === "active" && a.episodes?.length >= 2)),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "今日の仕事を終え、賃金を受け取った。元の畑は戻らないが、いま働いている場所には新しい生活の手がかりがある。",
+          { lifeGoal: { id: "columbia-dispossessed-pioneer-livelihood", action: "complete",
+            note: "農場を失った後、新たな実際の職業で生計を立て直した" } }])
+      ]
+    },
   ];
 
   for (const event of E) {
