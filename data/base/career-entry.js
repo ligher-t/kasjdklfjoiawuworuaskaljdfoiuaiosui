@@ -487,7 +487,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             0.6,
             "移動バザールを行き来するトランスポーターの口利きで、隊商の荷を守る短期の警戒任務を請けた。手渡された前金で当座の暮らしは息をついたが、砂塵の旅が一往復終わると次の依頼は来なかった。",
             {
-              job: 4,
+              job: 0,
               cash: 80000,
               h: -5,
               lifeAffiliations: [
@@ -520,6 +520,80 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             { job: 0, cash: -20000, p: -2 }
           ]
         )
+      ]
+    },
+    {
+      id: "life_columbia_failed_application_followup",
+      conf: "B",
+      references: ["SRC_TERRA_INDUSTRY_POLICY", "SRC_TERRA_LIFECOURSE"],
+      st: ["青年", "壮年", "老年"],
+      ge: { age: 18 },
+      le: { age: 80 },
+      after: { id: "car", min: 1 },
+      cd: 2,
+      w: 0.34,
+      show: s => s.lifeRecord?.goals?.some(g =>
+        g.id === "columbia-technical-next-step" && ["active", "paused", "compromised"].includes(g.status)
+      ),
+      t: s => s.job > 0 ? "研究企業の技師職に採用されなかったあと、別の職場で働くようになった。選考で覚えた装置の仕組みは手元に残っているが、今の仕事を続けるか、改めて技術職を探すか考えた。" : "研究企業への応募が実らなかったあとも、職探しは続いている。採用試験で覚えた手順を忘れないようにしながら、求人の条件と今の暮らしを見比べた。",
+      c: [
+        $terraData.K("装置の点検や修理を扱う今の仕事を次の一歩として記録する", { show: s => [7, 18].includes(s.job) }, [
+          1, "別の職場で装置の点検や修理を担当することになった。最初の研究企業とは別の持ち場だが、以前に覚えたことを仕事へつなげられた。",
+          { lifeGoal: { id: "columbia-technical-next-step", action: "complete", note: "別の職場で装置の点検・修理の仕事に就いた" }, p: 1 }
+        ]),
+        $terraData.K("今の職場で働きながら、技術職への希望を持ち続ける", { show: s => s.job > 0 && !([7, 18].includes(s.job)) }, [
+          1, "当面の収入は今の仕事で確保することにした。装置を扱う仕事への希望も捨てず、条件の合う募集があれば改めて考えるつもりだ。",
+          { lifeGoal: { id: "columbia-technical-next-step", action: "compromise", note: "別の職業で暮らしを支え、技術職への希望は留保した" }, p: 1 }
+        ]),
+        $terraData.K("今の仕事を暮らしの軸に据え、技術職探しを終える", { show: s => s.job > 0 && !([7, 18].includes(s.job)) }, [
+          1, "以前の採用試験は一つの経験として手帳に残した。今は別の職業で働く道を選び、技師職への応募を続ける考えを終えた。",
+          { lifeGoal: { id: "columbia-technical-next-step", action: "abandon", note: "別の職業を選び、技術職への求職目標を終了" }, p: 0 }
+        ]),
+        $terraData.K("身につけた装置の知識を復習し、求人を探し続ける", { show: s => s.job === 0 }, [
+          1, "試験で触れた装置の手順を手帳に書き直し、工房や技術職の募集を探した。まだ採用の約束はない。",
+          { lifeGoal: { id: "columbia-technical-next-step", action: "continue", note: "技術の知識を確かめながら求職を継続" }, p: 0 }
+        ]),
+        $terraData.K("いったん求職を休み、当面の生活を優先する", { show: s => s.job === 0 }, [
+          1, "次の採用試験を急がず、手元の蓄えと生活の用事を確かめることにした。技術職の求人票は捨てずに残した。",
+          { lifeGoal: { id: "columbia-technical-next-step", action: "pause", note: "次の技術職応募を保留し、生活を優先" }, p: 0 }
+        ])
+      ]
+    },
+    {
+      id: "life_victoria_failed_application_followup",
+      conf: "B",
+      references: ["SRC_TERRA_INDUSTRY_POLICY", "SRC_TERRA_LIFECOURSE"],
+      st: ["青年", "壮年", "老年"],
+      ge: { age: 18 },
+      le: { age: 80 },
+      after: { id: "car", min: 1 },
+      cd: 2,
+      w: 0.34,
+      show: s => s.lifeRecord?.goals?.some(g =>
+        g.id === "victoria-clerk-next-step" && ["active", "paused", "compromised"].includes(g.status)
+      ),
+      t: s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかったが、その後に別の仕事に就いた。あのとき調べた書式や照会先は今も覚えている。新しい職場で使うか、別の生計を続けるか考えた。" : "保険仲介所の応募が実らなかったあとも、働き口を探している。書類を読み直し、窓口で求められた知識を使える仕事がないか確かめた。",
+      c: [
+        $terraData.K("帳簿や書類を扱う今の仕事を次の一歩として記録する", { show: s => s.job === 21 }, [
+          1, "別の職場で帳簿と書類を扱う仕事に就いた。最初に応募した仲介所との縁はなかったが、以前に覚えた書式の扱い方が役に立った。",
+          { lifeGoal: { id: "victoria-clerk-next-step", action: "complete", note: "別の職場で帳簿や書類を扱う仕事に就いた" }, p: 1 }
+        ]),
+        $terraData.K("今の職場で働きながら、事務職への希望を持ち続ける", { show: s => s.job > 0 && !(s.job === 21) }, [
+          1, "今は別の仕事で暮らしを支えている。読み書きや記録に関わる職場への希望は残し、次の募集を待つことにした。",
+          { lifeGoal: { id: "victoria-clerk-next-step", action: "compromise", note: "別の仕事で生計を支え、事務職の求職は留保" }, p: 1 }
+        ]),
+        $terraData.K("今の仕事を選び、事務職探しを終える", { show: s => s.job > 0 && !(s.job === 21) }, [
+          1, "書類を扱う仕事への応募は、これまでに経験した選択の一つとして残した。今の職場で働く道を選び、帳簿係の募集を追うことを終えた。",
+          { lifeGoal: { id: "victoria-clerk-next-step", action: "abandon", note: "別の職業を選び、帳簿係への求職目標を終了" }, p: 0 }
+        ]),
+        $terraData.K("書式の知識を確かめ、事務職の求人を探し続ける", { show: s => s.job === 0 }, [
+          1, "応募先で求められた書類を改めて読み、今度はどの窓口へ足を運べるか探した。まだ採用の返事はない。",
+          { lifeGoal: { id: "victoria-clerk-next-step", action: "continue", note: "書式の知識を確かめながら事務職を探した" }, p: 0 }
+        ]),
+        $terraData.K("いったん求職を休み、暮らしを整える", { show: s => s.job === 0 }, [
+          1, "窓口へ出向くのをいったんやめ、手元のお金と家の用事を確かめた。必要な書類はひとまとめにして残した。",
+          { lifeGoal: { id: "victoria-clerk-next-step", action: "pause", note: "事務職への応募を保留し、今の暮らしを優先" }, p: 0 }
+        ])
       ]
     },
     {
@@ -826,7 +900,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             0.6,
             "別の隊商から声がかかり、荷車の脇を固める短い警戒任務に就いた。手渡された銅貨は前回より少なく、砂塵の旅が終わるとまた次の当ては途切れた。",
             {
-              job: 4,
+              job: 0,
               cash: 80000,
               h: -5,
               lifeAffiliations: [

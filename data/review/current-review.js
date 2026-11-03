@@ -6,6 +6,8 @@ window.TERRA_DATA_BUILD.run("review/current-review", function ($terraData, $defi
     {
       v78_hardline_sarkaz_employer: "h~K,w",
       v87_hardline_sarkaz_employer_review: "h~K,c~K,x~K",
+      life_columbia_failed_application_followup: "p,p,p,p,s",
+      life_victoria_failed_application_followup: "p,p,p,p,s",
       transporter_contract_review: "p,p,w",
       kjerag_transporter_route_review: "p,p,w",
       rim_catastrophe_transporter_review: "p,p,p",

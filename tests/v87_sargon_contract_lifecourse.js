@@ -9,7 +9,7 @@ const rows=vm.runInNewContext(String.raw`(()=>{
  const setup=seed=>{born({seed,by:1080,region:'サルゴン'});S.age=18;S.year=1098;S.mo=3;S.res=REG.find(row=>row.n==='サルゴン');S.home='固定集落';S.local={...makeLocality(S.home,S.res.n),ecology:'乾燥地・オアシス'};S.job=2;S.house.cash=300000;return S};
  const career=event('car'),follow=event('sargon_market_contract_review'),eligible=setup(981001);
  const entryIndex=career.c.findIndex(row=>row.l==='移動バザール周辺で短い警戒任務を探す'),visible=career.c[entryIndex].show(eligible);
- apply('car',entryIndex,0);const affiliation=eligible.lifeRecord.affiliations.find(row=>row.id==='sargon-market-guard-contracts'),goal=eligible.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work');
+ apply('car',entryIndex,0);const initialJob=eligible.job;const affiliation=eligible.lifeRecord.affiliations.find(row=>row.id==='sargon-market-guard-contracts'),goal=eligible.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work');
  const oneYearHidden=(eligible.year++,eligible.age++,!follow.show(eligible));eligible.year++;eligible.age++;const twoYearVisible=follow.show(eligible);apply(follow.id,0,0);
  const repeat={status:affiliation.status,episodes:affiliation.episodes.map(row=>[row.startedYear,row.endedYear]),goal:eligible.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work')?.status,job:eligible.job,audit:auditLifeState(eligible)};
  const failedIntro=setup(981002);apply('car',entryIndex,1);const failedEntry={hasAffiliation:failedIntro.lifeRecord.affiliations.some(row=>row.id==='sargon-market-guard-contracts'),followHidden:!follow.show(failedIntro),audit:auditLifeState(failedIntro)};
@@ -21,11 +21,11 @@ const rows=vm.runInNewContext(String.raw`(()=>{
  const exit={job:stopped.job,goal:stopped.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work')?.status,audit:auditLifeState(stopped)};
  const regionGate=setup(981006);apply('car',entryIndex,0);regionGate.year+=2;regionGate.age+=2;regionGate.res=REG.find(row=>row.n==='龍門');const outsideRegionHidden=!follow.show(regionGate);
  const ecologyGate=setup(981007);apply('car',entryIndex,0);ecologyGate.year+=2;ecologyGate.age+=2;ecologyGate.local.ecology='熱帯雨林';const outsideEcologyHidden=!follow.show(ecologyGate);
- return {careerChoices:career.c.length,entryIndex,visible,followChoices:follow.c.length,oneYearHidden,twoYearVisible,goalAtStart:goal?.status,repeat,failedEntry,paused,moved,exit,outsideRegionHidden,outsideEcologyHidden};
+ return {careerChoices:career.c.length,entryIndex,visible,initialJob,followChoices:follow.c.length,oneYearHidden,twoYearVisible,goalAtStart:goal?.status,repeat,failedEntry,paused,moved,exit,outsideRegionHidden,outsideEcologyHidden};
 })()`,ctx,{timeout:45000});
 assert(rows.visible,'the contract work is limited to Sargonian desert/oasis lives: '+JSON.stringify({entryIndex:rows.entryIndex,visible:rows.visible}));
 assert.equal(rows.followChoices,3);assert(rows.oneYearHidden&&rows.twoYearVisible,'the reflection waits until two years after an accepted contract');
-assert.equal(rows.goalAtStart,'active');assert.equal(rows.repeat.status,'left');assert.equal(rows.repeat.episodes.length,2,'each accepted job is a bounded individual assignment, not continuous unit membership');assert.equal(rows.repeat.goal,'active');assert.equal(rows.repeat.job,4);assert.equal(rows.repeat.audit.length,0);
+assert.equal(rows.initialJob,0,'the first one-off hire ends before the next decision');assert.equal(rows.goalAtStart,'active');assert.equal(rows.repeat.status,'left');assert.equal(rows.repeat.episodes.length,2,'each accepted job is a bounded individual assignment, not continuous unit membership');assert.equal(rows.repeat.goal,'active');assert.equal(rows.repeat.job,0,'a completed short contract must leave no active mercenary occupation');assert.equal(rows.repeat.audit.length,0);
 assert.deepEqual([rows.failedEntry.hasAffiliation,rows.failedEntry.followHidden,rows.failedEntry.audit.length],[false,true,0],'a failed introduction creates no employment history or follow-up');
 assert.deepEqual([rows.paused.status,rows.paused.episodes,rows.paused.audit.length],['paused',1,0]);
 assert.deepEqual([rows.moved.job,rows.moved.goal,rows.moved.audit.length],[16,'compromised',0]);
