@@ -397,7 +397,7 @@ window.TERRA_DATA_BUILD.fragment(
           }
         ])
       ]
-    }
+    },
     {
       id: "sr_rhine_post_lone_trail_career_review",
       conf: "S",
