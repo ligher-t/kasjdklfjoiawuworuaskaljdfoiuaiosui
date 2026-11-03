@@ -42,9 +42,9 @@ function ap(e, routeReserve = 0) {
   finishAffiliationPlaces(e, s);
   const resolvedId = TRACE_RESOLUTION?.id;
   applyNeighbourAndWorkplaceEffects(e, s, resolvedId);
-  reconcileSocialAndInformationEffects(e, s);
   reconcileRelationshipStatusFlags(s);
   recordEffectConsequences(e, s, jobBefore, assetsBefore, debtBefore, investmentBefore, cashBefore);
+  reconcileSocialAndInformationEffects(e, s);
   if (e.d) {
     finalizeLifeLedgerAtDeath(s);
     die(e.d[0], e.d[1]);
