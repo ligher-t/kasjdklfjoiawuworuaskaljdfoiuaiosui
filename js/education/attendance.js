@@ -56,7 +56,8 @@ function educationRecordPlacementTransfer(s,{enrollmentId,campusId,offeringId,
      !campus||campus.institutionId!==offer.institutionId)
     return null;
   const current=reg.placements.items[reg.placements.currentPlacementId];
-  if(!current||current.enrollmentId!==enrollmentId)return null;
+  if(!current||current.enrollmentId!==enrollmentId ||
+     offer.institutionId!==current.institutionId)return null;
   // Preserve every already closed month at the former placement before
   // changing the live school affiliation.
   if(s.mo>1)educationSimulateAttendanceThrough(s,s.year,s.mo-1);
@@ -78,6 +79,96 @@ function educationRecordPlacementTransfer(s,{enrollmentId,campusId,offeringId,
   s.educationPath.campusId=campusId;s.educationPath.offeringId=offeringId;
   return placement;
 }
+function educationTransferToApprovedInstitution(s,approvalId) {
+  const m=s.educationPath,old=educationActiveEnrollment(s),
+    approval=s.educationTransferApprovals?.[approvalId],
+    world=s.world?.educationWorld,offer=world?.offerings?.[approval?.toOfferingId];
+  if(s.dead||!old||m.status!=="enrolled"||!approval?.approved||
+     !approval.sourceRef||!approval.recognitionRef||!approval.fundingClearanceRef||
+     approval.fromEnrollmentId!==old.id||
+     approval.effectiveFrom?.year!==s.year||
+     approval.effectiveFrom?.month!==(s.mo||0)||
+     !offer||offer.stage!==m.stage||offer.institutionId===m.institutionId||
+     !world.institutions[offer.institutionId] ||
+     !world.campuses[offer.campusId])return null;
+  const status=educationSchoolStatusAt(s,offer.id,s.year,s.mo||0);
+  if(!status||!["open","limited"].includes(status.admissionStatus) ||
+     status.teachingEquivalent<=0)return null;
+  const reachable=educationCanReach(s,{
+    institutionId:offer.institutionId,campusId:offer.campusId,
+    offeringId:offer.id,year:s.year,month:s.mo||0,purpose:"daily-commute"
+  });
+  if(!reachable.reachable)return null;
+  const paid=s.educationFinance?.invoices?.[old.id+":tuition:"+s.year];
+  if(paid?.status!=="paid")return null;
+  if(approval.feeInvoiceId &&
+    s.educationFinance?.invoices?.[approval.feeInvoiceId]?.status!=="paid")return null;
+  const previousFees=educationFunds(s,m.stage,m.tier,m.offeringId),
+    currentFees=educationFunds(s,m.stage,offer.admissionTier,offer.id);
+  if(currentFees>previousFees&&!approval.feeInvoiceId)return null;
+  // The recognized tuition and transferred credit come from an actual
+  // receiving-institution decision; free cross-institution transfers are not presumed.
+  if(approval.creditRecognitionStatus!=="approved"||
+     approval.tuitionRecognitionStatus!=="approved")return null;
+  educationSimulateAttendanceThrough(s,s.year,Math.max(0,(s.mo||0)-1));
+  const store=educationAttendanceState(s),oldPlacement=
+    store.placements.items[store.placements.currentPlacementId],
+    newId="enrol-"+(s.educationRecord.enrollments.length+1);
+  if(!oldPlacement||store.placements.items[newId+":placement:1"])return null;
+  const copy=old.id,now={year:s.year,month:s.mo||0};
+  const oldCredits=Object.values(store.credits.items).filter(row=>
+    row.enrollmentId===copy&&row.credited).map(row=>row.id);
+  old.status="transferred";old.endedYear=s.year;old.endingEventId=approvalId;
+  old.successorEnrollmentId=newId;
+  oldPlacement.effectiveTo=now;oldPlacement.status="transferred";
+  const record={
+    id:newId,program:old.program,status:"enrolled",
+    startedYear:s.year,endedYear:null,region:s.res?.n||null,
+    sourceEventId:approvalId,priorEnrollmentId:copy,
+    institutionId:offer.institutionId,campusId:offer.campusId,
+    offeringId:offer.id,stage:m.stage,recognitionRule:offer.recognitionRule
+  };
+  s.educationRecord.enrollments.push(record);
+  m.institutionId=offer.institutionId;m.campusId=offer.campusId;
+  m.offeringId=offer.id;m.tier=offer.admissionTier;
+  m.currentEnrollmentId=newId;
+  store.placements.currentPlacementId=null;
+  educationBindFormalEnrollment(s,newId);
+  s.educationCreditTransfers ||= {version:1,items:{}};
+  s.educationCreditTransfers.items[newId]={
+    id:newId,fromEnrollmentId:copy,toEnrollmentId:newId,
+    transferredAt:now,approvalId,sourceRef:approval.sourceRef,
+    recognitionRef:approval.recognitionRef,
+    fundingClearanceRef:approval.fundingClearanceRef,
+    acceptedCreditIds:oldCredits,
+    tuitionInvoiceId:paid.id,feeInvoiceId:approval.feeInvoiceId||null,
+    status:"approved"
+  };
+  educationAppendHistory(s,"institution-transferred",{
+    priorEnrollmentId:copy,enrollmentId:newId,
+    institutionId:offer.institutionId,offeringId:offer.id,
+    approvalId,recognitionRef:approval.recognitionRef
+  });
+  return record;
+}
+function educationTransferredCreditIds(s,enrollmentId) {
+  const ids=new Set(),visited=new Set();
+  const visit=id=>{
+    if(visited.has(id))return;
+    visited.add(id);
+    for(const row of Object.values(s.educationCredits?.items||{}))
+      if(row.enrollmentId===id&&row.credited)ids.add(row.id);
+    const prior=s.educationCreditTransfers?.items?.[id];
+    if(prior?.status==="approved"){
+      for(const creditId of prior.acceptedCreditIds||[])
+        if(s.educationCredits?.items?.[creditId]?.credited)ids.add(creditId);
+      if(prior.fromEnrollmentId)visit(prior.fromEnrollmentId);
+    }
+  };
+  visit(enrollmentId);
+  return [...ids];
+}
+
 function educationTeachingMonth(s,offeringId,year,month) {
   const offer=s.world?.educationWorld?.offerings?.[offeringId],
     status=offer && educationSchoolStatusAt(s,offeringId,year,month);
@@ -238,7 +329,22 @@ function educationSettleCompletedAcademicYear(s,year) {
   const reg=educationAttendanceState(s),id=record.id+":credit:"+year;
   if(reg.credits.items[id])return reg.credits.items[id];
   const months=reg.attendance.enrollments[record.id]?.[year]||{},
-    rows=Array.from({length:12},(_,i)=>months[i+1]).filter(Boolean);
+    transfer=s.educationCreditTransfers?.items?.[record.id],
+    previous=transfer?.status==="approved"?
+      reg.attendance.enrollments[transfer.fromEnrollmentId]?.[year]||{}:{},
+    rows=Array.from({length:12},(_,i)=>{
+      const month=i+1,
+        own=months[month],prior=previous[month],
+        transferable=transfer &&
+          year*12+month<=transfer.transferredAt.year*12+transfer.transferredAt.month;
+      if(!own&&!prior)return null;
+      return {
+        id:own?.id||prior?.id,
+        equivalent:Math.min(1,(own?.recognizedEquivalent||0)+
+          (transferable?prior?.recognizedEquivalent||0:0)),
+        sourceMonthKeys:[own?.id,transferable?prior?.id:null].filter(Boolean)
+      };
+    }).filter(Boolean);
   if(rows.length!==12)return {id,enrollmentId:record.id,academicYear:year,
     outcome:"pending",finalizedMonths:rows.length,credited:false};
   const offered=s.world?.educationWorld?.offerings?.[record.offeringId],
@@ -246,9 +352,12 @@ function educationSettleCompletedAcademicYear(s,year) {
     offered.recognitionRule?.issuerBasis==="game-model" &&
     (offered.recognitionRule.completionStage===m.stage ||
       m.stage==="preparatory" && offered.recognitionRule.upperEquivalency==="assessment-required");
-  const equivalent=rows.reduce((n,x)=>n+x.recognizedEquivalent,0);
+  const equivalent=rows.reduce((n,x)=>n+x.equivalent,0);
   const invoice=s.educationFinance?.invoices?.[record.id+":tuition:"+year],
+    oldInvoice=transfer?.status==="approved"?
+      s.educationFinance?.invoices?.[transfer.fromEnrollmentId+":tuition:"+year]:null,
     funded=invoice?.status==="paid" ||
+      (oldInvoice?.status==="paid" && transfer?.tuitionInvoiceId===oldInvoice.id) ||
       (m.fundedYear===year && !invoice && offered && EDUCATION_PROGRAMS[m.stage]?.fee===0);
   const credited=authorized && funded && equivalent>=EDUCATION_CREDIT_THRESHOLD;
   const result={
@@ -259,7 +368,8 @@ function educationSettleCompletedAcademicYear(s,year) {
     outcome:credited?"recognized":equivalent<EDUCATION_CREDIT_THRESHOLD?
       "insufficient-attendance":!funded?"unfunded":"authority-unverified",
     fundingInvoiceId:invoice?.id||null,
-    sourceMonthKeys:rows.map(x=>x.id),decidedAt:{year:s.year,month:s.mo??0},
+    sourceMonthKeys:[...new Set(rows.flatMap(x=>x.sourceMonthKeys))],
+    decidedAt:{year:s.year,month:s.mo??0},
     recognitionBasis:"game-model-P05-P09"
   };
   reg.credits.items[id]=result;
