@@ -1161,8 +1161,8 @@ window.TERRA_DATA_BUILD.run("base/regional-east", function ($terraData, $define,
             },
             lifeGoal: {
               id: "higashi-service",
-              action: "compromise",
-              onlyIfActive: true,
+              title: "軍務を通じて生活を支え、地域の安全に関わる",
+              action: "abandon",
               note: "軍務を終え、民間物流へ技能を移した"
             },
             lifeGoals: [
@@ -1205,8 +1205,8 @@ window.TERRA_DATA_BUILD.run("base/regional-east", function ($terraData, $define,
             },
             lifeGoal: {
               id: "higashi-service",
-              action: "compromise",
-              onlyIfActive: true,
+              title: "軍務を通じて生活を支え、地域の安全に関わる",
+              action: "abandon",
               note: "任期を終え、次の仕事を探す"
             },
             lifeSkill: {
@@ -1288,8 +1288,8 @@ window.TERRA_DATA_BUILD.run("base/regional-east", function ($terraData, $define,
               ],
               lifeGoal: {
                 id: "higashi-service",
-                action: "compromise",
-                onlyIfActive: true,
+                title: "軍務を通じて生活を支え、地域の安全に関わる",
+                action: "abandon",
                 note: "軍務を終え、兵站経験を民間へ移した"
               },
               lifeGoals: [
@@ -1322,8 +1322,8 @@ window.TERRA_DATA_BUILD.run("base/regional-east", function ($terraData, $define,
               },
               lifeGoal: {
                 id: "higashi-service",
-                action: "compromise",
-                onlyIfActive: true,
+                title: "軍務を通じて生活を支え、地域の安全に関わる",
+                action: "abandon",
                 note: "軍務を終え、別の働き口を探す"
               },
               lifeGoals: [
@@ -1357,8 +1357,8 @@ window.TERRA_DATA_BUILD.run("base/regional-east", function ($terraData, $define,
             },
             lifeGoal: {
               id: "higashi-service",
+              title: "軍務を通じて生活を支え、地域の安全に関わる",
               action: "abandon",
-              onlyIfActive: true,
               note: "軍務を終えてから次の働き口を探す"
             },
             lifeGoals: [

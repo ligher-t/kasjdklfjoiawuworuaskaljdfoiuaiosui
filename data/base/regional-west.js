@@ -2334,8 +2334,8 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
             },
             lifeGoal: {
               id: "siracusa-post-family-work",
-              action: "compromise",
-              onlyIfActive: true,
+              title: "ファミリーを離れ、地域の仕事で生計を立てる",
+              action: "abandon",
               note: "地域の仕事を終え、後年の暮らしへ移った"
             },
             p: 2
