@@ -24,7 +24,7 @@ jobs:
           node tools/check-efficient.cjs syntax
           node tools/generate-event-catalog.cjs --check
           node --input-type=commonjs -e "const fs=require('node:fs');console.log('GENERATED_VERSION='+fs.readFileSync('js/version.js','utf8').match(/[a-f0-9]{64}/)[0])"
-      - name: Validate registered promotions and regional career history
+      - name: Validate documented ranks and post-service promotion history
         run: node tools/check-efficient.cjs run v88_regional_promotion_history.test.cjs v88_regional_career_outcomes.test.cjs v88_affiliation_goal_outcome_branches.test.cjs
       - name: Record reviewed generated artifacts
         run: |
