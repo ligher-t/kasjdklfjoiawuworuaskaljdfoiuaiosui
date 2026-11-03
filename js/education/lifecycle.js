@@ -528,6 +528,12 @@ function educationEnforceAccess(s){
   }
 }
 function educationFundYear(s,m) {
+  // Old diagnostic fixtures and incomplete school records may lack a real
+  // defined course. Never bill or mark study funded for such a stage.
+  if(!Object.hasOwn(EDUCATION_PROGRAMS,m.stage)){
+    m.lastProcessedYear=s.year;
+    return;
+  }
   const invoice=educationEnsureTuitionInvoice(s,m,s.year);
   if(invoice.status==="void")return;
   if(invoice.outstanding>0){
