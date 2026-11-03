@@ -340,6 +340,7 @@ for(const [region,entryId,incidentId] of [
     const before=e.show(S);
     S.eventOutcomes ||= {};
     S.eventOutcomes[c.incidentId]={year:S.year-3,choiceIndex:0,outcomeIndex:0};
+    if(c.entryId==='car_vic_royal_entry') S.sn[c.incidentId]=S.year-3;
     const loyal=e.show(S);
     S.eventOutcomes[c.incidentId]={year:S.year-3,choiceIndex:1,outcomeIndex:0};
     S.sn[c.incidentId]=S.year-3;
@@ -347,7 +348,8 @@ for(const [region,entryId,incidentId] of [
     return {before,loyal,discharged};
   `);
   assert.equal(result.before,true,entryId+' ordinarily recruits');
-  assert.equal(result.loyal,true,entryId+' prior non-resignation outcome is not a bar');
+  assert.equal(result.loyal,entryId==='car_vic_royal_entry'?false:true,
+    entryId+' reapplication follows the actual survival and affiliation history');
   assert.deepEqual(result.discharged,{shown:false,eligible:false},
     entryId+' cannot rehire a recorded expelled officer/guard');
 }
@@ -393,4 +395,126 @@ for(const branch of [0,1]){
   assert.deepEqual(result.after.issues,[],'ninja desertion state audit');
 }
 
-console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring and expulsion');
+
+start('ヴィクトリア');
+const victorianExile=snap(`
+  const entry=EV.find(e=>e.id==='car_vic_royal_entry'),
+    coup=EV.find(e=>e.id==='car_vic_royal_choice_coup'),
+    oldDuty=EV.find(e=>e.id==='car_vic_royal_daily_01'),
+    review=EV.find(e=>e.id==='car_vic_exile_command_review');
+  S.year=1094;S.by=1070;S.age=24;S.mo=6;
+  S.k=100;S.cr=100;S.p=100;S.cash=10000000;S.house.cash=10000000;
+  const hiring=entry.c[0].o[0][2];
+  ap(hiring);
+  const old=S.lifeRecord.affiliations.find(a=>a.id==='victoria-royal-officer'),
+    priorGoal=S.lifeRecord.goals.find(g=>g.id==='victoria-officer-career');
+  const initially={
+    job:S.job,oldRole:old.role,oldStatus:old.status,
+    coupEligible:elig(coup,S,tags(S)),oldDuty:oldDuty.show(S)
+  };
+  ap(coup.c[0].o[0][2]);
+  S.sn[coup.id]=S.year;
+  S.eventOutcomes ||= {};
+  S.eventOutcomes[coup.id]={year:S.year,choiceIndex:0,outcomeIndex:0};
+  const exile=S.lifeRecord.affiliations.find(a=>a.id==='victoria-exiled-ducal-command'),
+    newGoal=S.lifeRecord.goals.find(g=>g.id==='victoria-exiled-command');
+  const escaped={
+    job:S.job,region:S.res.n,priorStatus:old.status,priorEnd:old.episodes.at(-1)?.endedYear,
+    oldGoal:priorGoal.status,newGoal:newGoal?.status,oldDuty:oldDuty.show(S),
+    newRole:exile?.role,newStatus:exile?.status,
+    exileCount:S.lifeRecord.affiliations.filter(a=>a.id===exile.id).length,
+    oldCareerAgain:entry.show(S),reviewNow:elig(review,S,tags(S)),
+    issues:auditLifeState(S)
+  };
+  S.year=1096;S.age=26;
+  const ready={shown:review.show(S),eligible:elig(review,S,tags(S))};
+  ap({k:1});
+  const incidental={
+    job:S.job,oldStatus:old.status,newStatus:exile.status,
+    oldDuty:oldDuty.show(S),review:elig(review,S,tags(S))
+  };
+  ap(review.c[0].o[0][2]);
+  S.sn[review.id]=S.year;
+  const continued={
+    job:S.job,status:exile.status,role:exile.role,
+    goal:newGoal.status,latest:newGoal.history.at(-1)?.action,
+    reviewAgain:elig(review,S,tags(S))
+  };
+  S.year=1099;S.age=29;
+  const repeat=elig(review,S,tags(S));
+  ap(review.c[1].o[0][2]);
+  const retired={
+    job:S.job,oldStatus:old.status,newStatus:exile.status,
+    exileEnd:exile.episodes.at(-1)?.endedYear,
+    newGoal:newGoal.status,oldGoal:priorGoal.status,
+    oldDuty:oldDuty.show(S),reviewShown:review.show(S),
+    careerAgain:entry.show(S),
+    history:exile.history.map(row=>row.action),
+    issues:auditLifeState(S)
+  };
+  return {initially,escaped,ready,incidental,continued,repeat,retired};
+`);
+assert.deepEqual(victorianExile.initially,{
+  job:55,oldRole:'公爵軍近衛少尉',oldStatus:'active',coupEligible:true,oldDuty:true
+},'Victorian officer may face the historically scoped 1094 coup');
+assert.deepEqual(victorianExile.escaped,{
+  job:55,region:'ヴィクトリア',priorStatus:'left',priorEnd:1094,
+  oldGoal:'compromised',newGoal:'active',oldDuty:false,
+  newRole:'最高指揮官',newStatus:'active',exileCount:1,
+  oldCareerAgain:false,reviewNow:false,issues:[]
+},'surviving the coup transfers to a separate exile command without fabricating a new country');
+assert.deepEqual(victorianExile.ready,{shown:true,eligible:true},
+  'only the surviving exile commander receives the two-year follow-up');
+assert.deepEqual(victorianExile.incidental,{
+  job:55,oldStatus:'left',newStatus:'active',oldDuty:false,review:true
+},'later unrelated effects cannot erase a valid second employer with the same occupation');
+assert.deepEqual(victorianExile.continued,{
+  job:55,status:'active',role:'最高指揮官',goal:'active',
+  latest:'continue',reviewAgain:false
+},'remaining with the exiled force retains command and respects cooldown');
+assert.equal(victorianExile.repeat,true,'exiled duty may be reviewed again after three years');
+assert.deepEqual(victorianExile.retired,{
+  job:0,oldStatus:'left',newStatus:'left',exileEnd:1099,
+  newGoal:'abandoned',oldGoal:'compromised',oldDuty:false,
+  reviewShown:false,careerAgain:false,
+  history:['join','leave'],issues:[]
+},'demobilization closes the new posting while both employer histories persist');
+
+start('ヴィクトリア');
+const royalSurrender=snap(`
+  const entry=EV.find(e=>e.id==='car_vic_royal_entry'),
+    coup=EV.find(e=>e.id==='car_vic_royal_choice_coup'),
+    review=EV.find(e=>e.id==='car_vic_exile_command_review');
+  S.year=1094;S.by=1070;S.age=24;S.k=100;S.cr=100;
+  ap(entry.c[0].o[0][2]);
+  ap(coup.c[1].o[0][2]);
+  S.sn[coup.id]=S.year;
+  S.eventOutcomes ||= {};
+  S.eventOutcomes[coup.id]={year:S.year,choiceIndex:1,outcomeIndex:0};
+  return {job:S.job,former:S.lifeRecord.affiliations.find(a=>a.id==='victoria-royal-officer').status,
+    oldGoal:S.lifeRecord.goals.find(g=>g.id==='victoria-officer-career').status,
+    exile:S.lifeRecord.affiliations.some(a=>a.id==='victoria-exiled-ducal-command'),
+    formerDuty:EV.find(e=>e.id==='car_vic_royal_daily_01').show(S),
+    rehire:entry.show(S),exileReview:elig(review,S,tags(S)),
+    issues:auditLifeState(S)};
+`);
+assert.deepEqual(royalSurrender,{
+  job:0,former:'left',oldGoal:'abandoned',exile:false,formerDuty:false,
+  rehire:false,exileReview:false,issues:[]
+},'surrender ends the original army career without creating exiled command');
+
+start('ヴィクトリア');
+const missingExile=snap(`
+  const entry=EV.find(e=>e.id==='car_vic_royal_entry'),
+    coup=EV.find(e=>e.id==='car_vic_royal_choice_coup'),
+    review=EV.find(e=>e.id==='car_vic_exile_command_review');
+  S.year=1096;S.age=26;S.by=1070;
+  ap(entry.c[0].o[0][2]);
+  S.sn[coup.id]=1094;
+  S.eventOutcomes={[coup.id]:{year:1094,choiceIndex:0,outcomeIndex:0}};
+  return {shown:review.show(S),eligible:elig(review,S,tags(S))};
+`);
+assert.deepEqual(missingExile,{shown:false,eligible:false},
+  'a recorded crisis outcome without an actual exile posting cannot provide exile duties');
+
+console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring, expulsion and Victorian exile');
