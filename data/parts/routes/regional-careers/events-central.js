@@ -162,7 +162,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("先頭を切ってクラブに突入し、サブマシンガンを乱射する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "猛烈な銃撃戦の中で敵幹部を仕留め、クラブを制圧した。ドンからその胆力を絶賛され、若くして小隊を率いる『カポ』へ昇進した。",
-          { cr: 4, h: 2, p: 2, cash: 1200000 }
+          { cr: 4, h: 2, p: 2, cash: 1200000,
+            lifeAffiliation: { id: "siracusa-mafia-soldier", action: "role", role: "カポ",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "敵を制圧したものの、太腿に銃弾を受けて流血した。裏医者の元で弾を抜いてもらった。",
