@@ -1,4 +1,4 @@
-name: Temporary cross-career consequences audit
+name: Temporary comprehensive career-ending verification
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 jobs:
-  review:
+  targeted:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -17,42 +17,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Locate generic dismissals and regional employment events in their owning modules
+      - name: Reconcile all event metadata and check syntax
         run: |
-          grep -R -n -E 'id: ["'"'"'](urs_mine|vic_strike|rim_mine|col_frontier|discrimination_work_after|discrimination_after|hid_exposed|choice_ursus_04|choice_victoria_01)["'"'"']' data/parts data/base data/regional || true
-      - name: Cross-check all event outcomes that terminate current occupation
+          node tools/update-version.cjs
+          node tools/generate-event-catalog.cjs --reconcile
+          node tools/generate-event-catalog.cjs --write
+          node tools/check-efficient.cjs syntax
+          node tools/generate-event-catalog.cjs --check
+      - name: Test all three regional losses and existing 42 career outcomes
+        run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs v88_workplace_goal_departure_contracts.test.cjs v88_regional_promotion_history.test.cjs
+      - name: Commit event catalog and version after passing
         run: |
-          node <<'NODE'
-          const vm=require('node:vm'),{context}=require('./tests/support/annual-cases.cjs');
-          const {ctx}=context(process.cwd());
-          const scan=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
-            const issues=[],stats={events:EV.length,outcomes:0,jobExit:0,missingAffiliation:0,missingGoal:0,otherJob:0,groupLeave:0};
-            for(const event of EV){
-              for(let ci=0;ci<(event.c||[]).length;ci++){
-                const c=event.c[ci];
-                for(let oi=0;oi<(c.o||[]).length;oi++){
-                  const out=c.o[oi],fx=out?.[2];stats.outcomes++;
-                  if(!fx||typeof fx!=='object')continue;
-                  const aff=[fx.lifeAffiliation,...(fx.lifeAffiliations||[])].filter(Boolean),
-                    goals=[fx.lifeGoal,...(fx.lifeGoals||[])].filter(Boolean);
-                  if(fx.job===0){
-                    stats.jobExit++;
-                    const missingAff=!aff.some(a=>['leave','suspend'].includes(a.action)),
-                      missingGoal=!goals.some(g=>['abandon','complete','pause','compromise'].includes(g.action));
-                    if(missingAff)stats.missingAffiliation++;
-                    if(missingGoal)stats.missingGoal++;
-                    issues.push({id:event.id,ci,oi,from:typeof event.t==='string'?event.t.slice(0,56):null,result:String(out[1]).slice(0,90),
-                      hasAff:!missingAff,hasGoal:!missingGoal,keys:Object.keys(fx).slice(0,15)});
-                  }
-                  if(typeof fx.job==='number' && fx.job>0 && !aff.some(a=>['join','return','assign'].includes(a.action))){
-                    stats.otherJob++;
-                    issues.push({id:event.id,ci,oi,newJob:fx.job,hasAff:false,result:String(out[1]).slice(0,90)});
-                  }
-                  if(aff.some(a=>a.action==='leave')&&!goals.some(g=>['abandon','pause','complete','compromise'].includes(g.action)))stats.groupLeave++;
-                }
-              }
-            }
-            return{stats,issues};
-          })())`,ctx));
-          console.log('CROSS_CAREER_AUDIT '+JSON.stringify(scan));
-          NODE
+          git add js/version.js EVENT_CATALOG.md tools/event-catalog-metadata.json
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: synchronize regional loss and return events with catalog"
+            git push origin HEAD:fix/historical-event-scope-and-delivery
+          fi
