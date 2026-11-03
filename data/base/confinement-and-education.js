@@ -1218,7 +1218,7 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
   // P06/P16: dated case follow-up and post-primary progression.
   $terraData.EV.push({
     id:"education_case_review",conf:"S",references:["SRC_EDUCATION_ACCESS"],
-    cd:0,pri:true,who:"self",inConfinement:true,
+    ge:{age:6},cd:0,pri:true,who:"self",inConfinement:true,
     show:s=>educationCaseNeedsReview(s),
     t:"学校の案内と家の事情を確かめながら、今年の進路についてもう一度考えた。募集先の知らせが届いても、通い続ける算段と入学の手続は別に残っている。",
     c:[
