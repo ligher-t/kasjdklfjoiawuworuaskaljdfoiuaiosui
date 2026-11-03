@@ -24,7 +24,7 @@ jobs:
           node tools/generate-event-catalog.cjs --write
           node tools/check-efficient.cjs syntax
           node tools/generate-event-catalog.cjs --check
-      - name: Test actual Rhodes and Blacksteel affiliation boundaries
+      - name: Validate BSW enlistment, promotion and Rhodes landship assignment
         run: node tools/check-efficient.cjs run v88_cross_faction_affiliation_transitions.test.cjs v87_affiliation_career_paths.js v87_rhodes_landship_reforms.test.cjs
       - name: Sync verified generated artifacts
         run: |
