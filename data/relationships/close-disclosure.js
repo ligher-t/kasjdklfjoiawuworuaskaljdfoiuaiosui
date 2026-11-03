@@ -310,6 +310,12 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
               action: "suspend",
               note: "診断後、住民会の役目を一時停止"
             },
+            lifeGoal: {
+              id: "order-through-exclusion",
+              action: "pause",
+              onlyIfActive: true,
+              note: "感染診断後、住民会の役目と排除活動を休止"
+            },
             socialConflictAction: {
               action: "social-rejection",
               target: "infected",
@@ -369,9 +375,9 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
             },
             lifeGoal: {
               id: "order-through-exclusion",
-              action: "continue",
+              action: "pause",
               onlyIfActive: true,
-              note: "会は既存の排除規則を維持"
+              note: "規則改定を拒まれ、本人の住民会活動を休止"
             },
             socialConflictAction: {
               action: "social-rejection",
@@ -453,8 +459,8 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
           },
           lifeGoal: {
             id: "order-through-exclusion",
-            action: "pause",
-            note: "住民会を通じた活動を終え、目標の扱いを保留"
+            action: "abandon",
+            note: "住民会から正式に退会し、排除活動の目標を終了"
           },
           p: 0
         }
@@ -1343,6 +1349,7 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
       once: true,
       w: 0.32,
       show: s =>
+        s.job === 0 &&
         ["shelter", "rebuilt"].includes(s.displacement?.status) &&
         hasZelgradFactoryHistory(s) &&
         s.lifeRecord?.skills?.some(skill => skill.id === "industrial-production") &&
@@ -1375,6 +1382,15 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
                   role: "部品の仕分け・製造補助"
                 }
               ],
+              lifeGoals: [
+                {
+                  id: "ursus-zelgrad-work",
+                  action: "compromise",
+                  onlyIfActive: true,
+                  note: "避難後に旧工場の在籍を閉じ、就労目標を見直した"
+                }
+              ],
+
               lifeGoal: {
                 id: "ursus-zelgrad-after-crisis",
                 action: "compromise",
@@ -1402,6 +1418,15 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
                   note: "避難後の求職時に旧工場との在職を整理"
                 }
               ],
+              lifeGoals: [
+                {
+                  id: "ursus-zelgrad-work",
+                  action: "compromise",
+                  onlyIfActive: true,
+                  note: "避難後に旧工場の在籍を閉じ、就労目標を見直した"
+                }
+              ],
+
               lifeGoal: {
                 id: "ursus-zelgrad-after-crisis",
                 action: "pause",
@@ -1430,6 +1455,15 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
                 note: "避難後の生活を整えるため旧工場との在職を整理"
               }
             ],
+            lifeGoals: [
+              {
+                id: "ursus-zelgrad-work",
+                action: "compromise",
+                onlyIfActive: true,
+                note: "避難後に旧工場の在籍を閉じ、就労目標を見直した"
+              }
+            ],
+
             lifeGoal: {
               id: "ursus-zelgrad-after-crisis",
               action: "pause",
@@ -1457,6 +1491,15 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
                 note: "避難後の生活を整えるため旧工場との在職を整理"
               }
             ],
+            lifeGoals: [
+              {
+                id: "ursus-zelgrad-work",
+                action: "compromise",
+                onlyIfActive: true,
+                note: "避難後に旧工場の在籍を閉じ、就労目標を見直した"
+              }
+            ],
+
             lifeGoal: {
               id: "ursus-zelgrad-after-crisis",
               action: "compromise",

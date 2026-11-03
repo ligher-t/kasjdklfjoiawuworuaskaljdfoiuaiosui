@@ -25,7 +25,20 @@ function apply(fx){for(const [name,value] of Object.entries(fx)){if(name==='life
 const policy='感染者の立入・雇用制限';
 let s=actor();apply(event.c[0].o[0][2]);assert.equal(s.lifeRecord.organizations[0].policy,policy);assert.equal(s.lifeRecord.organizations[0].lastFollowupYear,s.year);assert.equal(s.lifeRecord.affiliations[0].status,'active');assert.equal(Object.keys(s.closeKnowledge.links).length,0,'withholding diagnosis from the group does not create a named disclosure record');
 s=actor();apply(event.c[1].o[0][2]);assert.equal(s.lifeRecord.organizations[0].policy,policy,'personal exception leaves the discriminatory rule unchanged');assert.equal(s.lifeRecord.affiliations[0].status,'crisis');assert(s.lifeRecord.organizations[0].history.at(-1).note.includes('個別例外'));
-s=actor();apply(event.c[1].o[1][2]);assert.equal(s.lifeRecord.organizations[0].policy,policy);assert.equal(s.lifeRecord.affiliations[0].status,'suspended');assert(s.socialConflict.experienced.some(row=>row.action==='social-rejection'&&row.target==='infected'));assert(s.socialAftermath.episodes.some(row=>row.domain==='community'&&row.status==='active'));
+s=actor();apply(event.c[1].o[1][2]);assert.equal(s.lifeRecord.organizations[0].policy,policy);assert.equal(s.lifeRecord.affiliations[0].status,'suspended');assert(s.socialConflict.experienced.some(row=>row.action==='social-rejection'&&row.target==='infected'));assert(s.socialAftermath.episodes.some(row=>row.domain==='community'&&row.status==='active'));assert.equal(s.lifeRecord.goals.find(row=>row.id==='order-through-exclusion').status,'paused');
 s=actor();apply(event.c[2].o[0][2]);assert.notEqual(s.lifeRecord.organizations[0].policy,policy);assert.equal(s.lifeRecord.affiliations[0].status,'crisis');assert(s.socialConflict.acts.some(row=>row.action==='reconsider'));assert.equal(s.lifeRecord.regionalImpacts.length,0,'a local organization rule change does not imply region-wide uptake');assert.equal(s.lifeRecord.goals.find(row=>row.id==='order-through-exclusion').status,'compromised');
-s=actor();apply(event.c[2].o[1][2]);assert.equal(s.lifeRecord.organizations[0].policy,policy);assert.equal(s.lifeRecord.affiliations[0].status,'suspended');assert(s.socialConflict.experienced.some(row=>row.action==='social-rejection'));assert.equal(s.lifeRecord.goals.find(row=>row.id==='order-through-exclusion').status,'active','rejected proposal does not pretend the aspiration was abandoned');
+s=actor();apply(event.c[2].o[1][2]);assert.equal(s.lifeRecord.organizations[0].policy,policy);assert.equal(s.lifeRecord.affiliations[0].status,'suspended');assert(s.socialConflict.experienced.some(row=>row.action==='social-rejection'));assert.equal(s.lifeRecord.goals.find(row=>row.id==='order-through-exclusion').status,'paused','rejected proposal suspends the founder’s practical activity while historical exclusion persists');
+const followup=ctx.window.GAME_DATA.EV.find(row=>row.id==='life_infected_exclusion_pause_review');
+assert(followup);
+for(const choice of [0,1,2]){
+ s=actor();apply(event.c[1].o[1][2]);
+ vm.runInNewContext('S.sn.v87_exclusion_organizer_infected=S.year;S.year+=3;S.age+=3',ctx);
+ assert(followup.show(s),'suspended founder receives a follow-up after three years');
+ apply(followup.c[choice].o[0][2]);
+ const expected=choice===0?['active','active']:choice===1?['suspended','paused']:['left','abandoned'];
+ assert.deepEqual([s.lifeRecord.affiliations.find(a=>a.id==='infected-exclusion').status,
+  s.lifeRecord.goals.find(g=>g.id==='order-through-exclusion').status],expected);
+ assert.equal(followup.show(s),false,'resolved or recently reviewed decision cannot immediately recur');
+ assert.deepEqual(vm.runInNewContext('auditLifeState(S)',ctx),[]);
+}
 console.log(JSON.stringify({passed:true,conditionedOnDiagnosisAndRecordedExclusion:true,hardlineCannotRequestPolicyReform:true,personalExceptionLeavesRuleUnchanged:true,localPolicyRevisionAndRejectionBothRecorded:true,communityRejectionRemainsUnresolved:true},null,2));

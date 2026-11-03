@@ -24,8 +24,10 @@ const result=vm.runInNewContext(String.raw`(()=>{
  const delayed=hiredAndEvacuated(874304,2);delayed.s.year=1103;delayed.s.age++;apply(stay.id,1,0);const delayedEvacuation={job:delayed.s.job,status:status(delayed.s,'ursus-zelgrad-factory'),goal:goal(delayed.s,'ursus-zelgrad-work'),workVisible:work.show(delayed.s),audit:auditLifeState(delayed.s)};
  const returned=hiredAndEvacuated(874305);returned.s.year=1104;returned.s.age+=2;apply(displacementReview.id,1,0);const returnRecord={job:returned.s.job,oldStatus:status(returned.s,'ursus-zelgrad-factory'),workVisible:work.show(returned.s),audit:auditLifeState(returned.s)};
  const ordinary=setup(874306);apply(evac.id,0,0);ordinary.year=1103;ordinary.age++;const ordinaryGate=!work.show(ordinary);
- const legacy=setup(874307);apply(factory.id,0,0);legacy.job=0;legacy.displacement={status:'shelter',sinceYear:1102};const prior=TRACE_RESOLUTION;TRACE_RESOLUTION={kind:'choice',id:'legacy_setup',label:'旧セーブ状態'};try{ap({lifeGoal:{id:'ursus-zelgrad-after-crisis',title:'ゼルグラード危機後の住まいと生計を整える',priority:'生計と居場所',action:'start'}})}finally{TRACE_RESOLUTION=prior}const legacyVisible=work.show(legacy);apply(work.id,1,0);const legacyClosed={visible:legacyVisible,oldStatus:status(legacy,'ursus-zelgrad-factory'),goal:goal(legacy,'ursus-zelgrad-after-crisis'),audit:auditLifeState(legacy)};
- return{atEvac,workVisible,hiredElsewhere,reviewVisible,reviewExit,rejected,stayed,delayedEvacuation,returnRecord,ordinaryGate,legacyClosed};
+ const employed=hiredAndEvacuated(874308);employed.s.job=24;const employedGate=!work.show(employed.s),
+   employedJob=employed.s.job;
+ const legacy=setup(874307);apply(factory.id,0,0);legacy.job=0;legacy.displacement={status:'shelter',sinceYear:1102};const prior=TRACE_RESOLUTION;TRACE_RESOLUTION={kind:'choice',id:'legacy_setup',label:'旧セーブ状態'};try{ap({lifeGoal:{id:'ursus-zelgrad-after-crisis',title:'ゼルグラード危機後の住まいと生計を整える',priority:'生計と居場所',action:'start'}})}finally{TRACE_RESOLUTION=prior}const legacyVisible=work.show(legacy);apply(work.id,1,0);const legacyClosed={visible:legacyVisible,oldStatus:status(legacy,'ursus-zelgrad-factory'),oldGoal:goal(legacy,'ursus-zelgrad-work'),goal:goal(legacy,'ursus-zelgrad-after-crisis'),audit:auditLifeState(legacy)};
+ return{atEvac,workVisible,hiredElsewhere,reviewVisible,reviewExit,rejected,stayed,delayedEvacuation,returnRecord,ordinaryGate,employedGate,employedJob,legacyClosed};
 })()`,ctx,{timeout:45000});
 assert.deepEqual([result.atEvac.job,result.atEvac.oldStatus,result.atEvac.oldGoal,result.atEvac.goal,result.atEvac.status],[0,'left','compromised','active','shelter']);
 assert.equal(result.atEvac.audit.length,0,'factory employment closes cleanly on evacuation: '+result.atEvac.audit.join('; '));
@@ -45,6 +47,7 @@ assert.equal(result.delayedEvacuation.audit.length,0,'delayed evacuation closes 
 assert.deepEqual([result.returnRecord.job,result.returnRecord.oldStatus,result.returnRecord.workVisible],[0,'left',true]);
 assert.equal(result.returnRecord.audit.length,0,'individual return does not restore the old employment automatically: '+result.returnRecord.audit.join('; '));
 assert(result.ordinaryGate,'a displaced person without factory affiliation and skill does not enter this route');
-assert.deepEqual([result.legacyClosed.visible,result.legacyClosed.oldStatus,result.legacyClosed.goal],[true,'left','paused']);
+assert(result.employedGate&&result.employedJob===24,'a displaced worker who already has another occupation cannot have it replaced silently');
+assert.deepEqual([result.legacyClosed.visible,result.legacyClosed.oldStatus,result.legacyClosed.oldGoal,result.legacyClosed.goal],[true,'left','compromised','paused']);
 assert.equal(result.legacyClosed.audit.length,0,'a legacy active affiliation can be closed through the post-evacuation event: '+result.legacyClosed.audit.join('; '));
 console.log(JSON.stringify({passed:true,scope:'Zelgrad employment closure, evacuation/return, skill transfer, hiring outcome and two-year follow-up',audits:8,legacyRecordEligible:true,limitations:'One worker and one game-assumed repair workshop; no claim about Zelgrad-wide employment or factory reopening'},null,2));
