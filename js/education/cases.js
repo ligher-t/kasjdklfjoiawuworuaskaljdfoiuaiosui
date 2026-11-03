@@ -313,7 +313,73 @@ function educationCaseSelect(s,index) {
     "学校から、今回は受け入れられないと返事が届いた。理由は通知されていない。");
   return true;
 }
-function educationCaseCommitEligibility(s) {
+function educationCaseFinanceInquiry(s) {
+  const item=educationActiveCase(s);
+  if(!item||item.phase!=="contract")return false;
+  const access=educationAccessState(s);
+  access.financingOffers||={};
+  if(access.financingOffers[item.id])return false;
+  const world=s.world?.educationWorld,offer=world?.offerings?.[item.offeringId];
+  const campus=world?.campuses?.[offer?.campusId],
+    area=world?.areas?.[campus?.educationAreaId];
+  if(!offer||!area)return false;
+  const tuition=educationFunds(s,item.stage,item.tier,item.offeringId),
+    alloc=educationPaymentPlan(s,tuition),
+    shortfall=Math.max(0,tuition-alloc.personal-alloc.household);
+  const roll=educationDraw(world,item.id+":"+item.offeringId,
+    "education-aid-application-v1","decision");
+  // Existing annual school aid's 0.32 probability is reused as a game model.
+  const grants=shortfall>0 &&
+    EDUCATION_INSTITUTIONAL_REGIONS.includes(area.regionKey) && roll.value<0.32;
+  // This specific game-model lender must be located and recorded by inquiry.
+  // A region string on the player is never by itself a signed loan contract.
+  const credit=shortfall>0 && s.age>=18 &&
+    area.regionKey==="クルビア" && s.res?.n==="クルビア";
+  const offered={
+    caseId:item.id,offeringId:item.offeringId,institutionId:item.targetInstitutionId,
+    checkedAt:{year:s.year,month:s.mo??0},source:"institutional-desk-inquiry",
+    grant:grants?{id:"grant:"+item.id+":"+item.offeringId,amount:shortfall,
+      basis:"game-model-institutional-relief",decisionKey:roll.key}:null,
+    loan:credit?{creditor:"クルビア工業区の民間学費貸付人",
+      amount:shortfall,basis:"game-model-documented-local-lender"}:null
+  };
+  access.financingOffers[item.id]=offered;
+  item.history.push({phase:"contract",action:"financing-inquiry",
+    at:offered.checkedAt,grantOffered:!!offered.grant,loanOffered:!!offered.loan,
+    basis:"game-model-finance-office"});
+  if(typeof L==="function")L(offered.grant?
+    "学校の窓口で学費の支援を申し込み、減免の対象として認められた。利用できるのは、この募集先の今回の入学費用に限られる。" :
+    offered.loan?
+      "学資貸付人の窓口で、学校への直接納付と返済条件を提示された。契約書に署名するかどうかは、まだ決めていない。" :
+      "尋ねた窓口では、今回の入学費用に利用できる支援や貸付の条件が見つからなかった。");
+  return true;
+}
+function educationCaseFinancePlan(s,item,mode,tuition) {
+  if(mode==="cash")return {allowed:educationPaymentPlan(s,tuition).allowed,
+    sources:{},reason:"no-funds"};
+  const offers=s.educationAccess?.financingOffers?.[item.id];
+  if(!offers || offers.offeringId!==item.offeringId ||
+    offers.checkedAt.year!==s.year)return {allowed:false,reason:"financing-not-verified"};
+  const plan=educationPaymentPlan(s,tuition),
+    shortfall=Math.max(0,tuition-plan.personal-plan.household);
+  if(!shortfall)return {allowed:false,reason:"financing-not-needed"};
+  if(mode==="grant" && offers.grant){
+    const amount=Math.min(shortfall,offers.grant.amount);
+    return {allowed:educationPaymentPlan(s,tuition-amount).allowed,
+      reason:"grant-insufficient",sources:{grant:{...offers.grant,amount}}};
+  }
+  if(mode==="loan" && offers.loan){
+    const amount=Math.min(shortfall,offers.loan.amount);
+    const enrollmentId="enrol-"+((s.educationRecord?.enrollments?.length||0)+1),
+      invoiceId=enrollmentId+":tuition:"+s.year,
+      id="edu-loan:"+enrollmentId+":"+invoiceId;
+    return {allowed:educationPaymentPlan(s,tuition-amount).allowed,
+      reason:"loan-insufficient",sources:{loan:{
+        id,amount,creditor:offers.loan.creditor}}};
+  }
+  return {allowed:false,reason:"financing-not-offered"};
+}
+function educationCaseCommitEligibility(s,mode="cash") {
   const item=educationActiveCase(s);
   if(!item||item.phase!=="contract"||item.stepsUsed>=EDUCATION_CASE_MAX_CHOICES)
     return {allowed:false,reason:"no-active-offer"};
@@ -337,12 +403,13 @@ function educationCaseCommitEligibility(s) {
     campusId:item.campusId,offeringId:item.offeringId,year:s.year,month:s.mo??0,
     purpose:"daily-commute"});
   if(!route.reachable)return {allowed:false,reason:"no-reachable-route"};
-  const tuition=educationFunds(s,item.stage,item.tier,item.offeringId);
-  if(!educationPaymentPlan(s,tuition).allowed)return {allowed:false,reason:"no-funds"};
-  return {allowed:true,reason:null,tuition,route};
+  const tuition=educationFunds(s,item.stage,item.tier,item.offeringId),
+    financing=educationCaseFinancePlan(s,item,mode,tuition);
+  if(!financing.allowed)return {allowed:false,reason:financing.reason};
+  return {allowed:true,reason:null,tuition,route,financing:financing.sources};
 }
-function educationCaseCommit(s) {
-  const item=educationActiveCase(s),check=educationCaseCommitEligibility(s);
+function educationCaseCommit(s,mode="cash") {
+  const item=educationActiveCase(s),check=educationCaseCommitEligibility(s,mode);
   if(!item||!check.allowed)return false;
   const fields=["educationFinance","educationAnnualFee","educationPath",
     "educationDecision","educationCases","educationRecord","fl","study",
@@ -363,7 +430,9 @@ function educationCaseCommit(s) {
     enrolled.institutionId=item.targetInstitutionId;
     enrolled.campusId=item.campusId;
     enrolled.offeringId=item.offeringId;
-    const posting=educationCaseCharge(s,item,"tuition",check.tuition,{enrollmentId});
+    const posting=educationCaseCharge(s,item,"tuition",check.tuition,{
+      enrollmentId,sources:check.financing
+    });
     if(!posting)throw Error("入学年度の授業料を納付できない");
     if(!educationCaseStep(s,item,"commit-enrollment"))throw Error("進路判断を確定できない");
     item.commit={receiptId:posting.receiptIds?.[0]||null,postingId:posting.id,
@@ -461,6 +530,10 @@ function educationCaseAction(s,action) {
   if(!item||item.deadlineYear!==s.year)return false;
   if(command==="select")return educationCaseSelect(s,Number(parts[2]));
   if(command==="commit")return educationCaseCommit(s);
+  if(command==="commit-grant")return educationCaseCommit(s,"grant");
+  if(command==="commit-loan")return educationCaseCommit(s,"loan");
+  if(command==="check-financing"&&item.phase==="contract")
+    return educationCaseFinanceInquiry(s);
   if(command==="defer"||command==="nonformal"){
     if(!educationCaseStep(s,item,command))return false;
     educationCaseFinish(s,item,command==="defer"?"voluntary-defer":"nonformal-choice");
