@@ -1,4 +1,4 @@
-name: Temporary Rhine and Rhodes life goal verification
+name: Temporary Rhine goal and repeat eligibility verification
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]

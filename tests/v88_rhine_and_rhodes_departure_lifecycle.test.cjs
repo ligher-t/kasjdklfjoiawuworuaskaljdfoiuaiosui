@@ -23,15 +23,17 @@ for(let i=0;i<2;i++){
     const aff=S.lifeRecord.affiliations.find(a=>a.id==='rhine-lab'),
       goal=S.lifeRecord.goals.find(g=>g.id==='rhine-research'),
       staff=S.lifeRecord.affiliations.find(a=>a.id==='rhodes-staff');
-    const after=elig(event,S,tags(S));
+    const after=elig(event,S,tags(S)),
+      staffStatus=staff?.status||null,
+      stateIssues=auditLifeState(S);
     S.sn[event.id]=S.year;
     S.job=39;
     ap({lifeAffiliation:{id:'rhine-lab',action:'return'}});
     const secondTry=elig(event,S,tags(S));
     return {before,after,secondTry,asylumOnce:event.once,ethicsOnce:ethics.once,
       aff:aff.status,goal:goal.status,goalAction:goal.history.at(-1).action,
-      goalTitle:goal.title,staff:staff?.status||null,
-      whistleblower:S.fl.rhine_whistleblower,issues:auditLifeState(S)};
+      goalTitle:goal.title,staff:staffStatus,
+      whistleblower:S.fl.rhine_whistleblower,issues:stateIssues};
   `);
   assert.equal(result.before,true,'current whistleblower has an asylum option');
   assert.equal(result.after,false,'the prior employer must not receive another asylum event');
