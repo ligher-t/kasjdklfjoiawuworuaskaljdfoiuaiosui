@@ -98,7 +98,9 @@ function educationMigrationRecognitionTarget(s) {
 }
 function educationMigrationScope(s,eventId) {
   const current=educationMigrationCurrent(s);
-  if(["edu_school_confidential_disclosure","edu_first_day_of_actual_school",
+  if(eventId==="edu_school_confidential_disclosure")
+    return (current?.enroll.id||"none")+":"+s.year;
+  if(["edu_first_day_of_actual_school",
     "edu_real_institution_transfer","edu_graduation_record_review"].includes(eventId))
     return current?.enroll.id||"none";
   const provider=educationMigrationProviderFor(s,eventId);
@@ -282,6 +284,15 @@ function educationMigrationApply(s,action) {
   const config=EDUCATION_MIGRATION_NONFORMAL[eventId],
     provider=educationMigrationProviderFor(s,eventId);
   if(!config||!provider)return false;
+  // Preparing a tent classroom and inspecting an evening school do not
+  // enroll the visitor or manufacture an attended lesson.
+  if((review==="E48"||review==="E53")&&letter==="B"){
+    educationMigrationRecord(s,eventId,letter,{
+      providerId:provider.id,observationOnly:true,
+      formalEnrollmentIssued:false,actualParticipation:false
+    });
+    return true;
+  }
   const subjectId=letter==="B"&&review==="E51"?"ritual_knowledge":
     config.subject;
   let mode=config.mode,providerId=provider.id;
