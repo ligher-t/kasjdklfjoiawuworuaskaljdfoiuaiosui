@@ -1333,6 +1333,7 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
 
   const isBackInZelgrad = s =>
       s.local?.city === "ゼルグラード" &&
+      !["shelter", "displaced"].includes(s.displacement?.status) &&
       s.lifeRecord?.regionalImpacts?.some(
         impact => impact.region === "ウルサス" && impact.kind === "individual-return"
       ),

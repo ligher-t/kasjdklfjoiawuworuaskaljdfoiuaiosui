@@ -1,4 +1,4 @@
-name: Temporary post-settlement locality and work contract reconciliation
+name: Temporary repeated displacement and reemployment verification
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
