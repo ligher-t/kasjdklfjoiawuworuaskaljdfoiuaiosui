@@ -77,11 +77,11 @@ assert.equal(result.returnRecord.audit.length,0,'individual return does not rest
 assert(result.ordinaryGate,'a displaced person without factory affiliation and skill does not enter this route');
 assert.equal(result.returnEnabled,false,'an employed repair worker cannot return with a job reset and active old employer');
 assert.deepEqual([result.workingBefore.job,result.workingBefore.status,result.workingAfter.job,result.workingAfter.status],[2,'active',2,'active']);
-assert.deepEqual(result.workingAfter.audit,[]);
+assert.equal(result.workingAfter.audit.length,0);
 assert.deepEqual([result.settledRecord.ready,result.settledRecord.pendingGoal,result.settledRecord.goal,result.settledRecord.displacement,result.settledRecord.job,result.settledRecord.status,result.settledRecord.repeatChoice],[true,'compromised','achieved','rebuilt',2,'active',false]);
-assert.deepEqual(result.settledRecord.audit,[]);
+assert.equal(result.settledRecord.audit.length,0);
 assert.deepEqual([result.exitAfterSettlement.job,result.exitAfterSettlement.affiliation,result.exitAfterSettlement.goal],[0,'left','achieved'],'a later job exit preserves the achieved housing-and-livelihood milestone');
-assert.deepEqual(result.exitAfterSettlement.audit,[]);
+assert.equal(result.exitAfterSettlement.audit.length,0);
 assert(result.employedGate&&result.employedJob===24,'a displaced worker who already has another occupation cannot have it replaced silently');
 assert.deepEqual([result.legacyClosed.visible,result.legacyClosed.oldStatus,result.legacyClosed.oldGoal,result.legacyClosed.goal],[true,'left','compromised','paused']);
 assert.equal(result.legacyClosed.audit.length,0,'a legacy active affiliation can be closed through the post-evacuation event: '+result.legacyClosed.audit.join('; '));
