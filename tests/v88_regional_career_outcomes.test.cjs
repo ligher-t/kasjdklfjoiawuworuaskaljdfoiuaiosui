@@ -229,4 +229,166 @@ for(const row of [
   assert.deepEqual(outcome.result.issues,[],row.event+' rehire audit');
 }
 
-console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome regional job exit and rehire goal history');
+
+// Audit every registered regional career, using the real event catalogue and effects.
+// The matrix is intentionally generated from the current catalogue; new careers
+// enter the regression without a separate mirror of profession IDs.
+const regionalCareers=snap(`
+  return EV.filter(e=>/^car_[a-z0-9_]+_entry$/.test(e.id)).map(e=>{
+    const outcome=e.c.flatMap(c=>c.o).find(o=>o[2]?.job>=41 && o[2]?.job<=82),
+      effect=outcome?.[2],affiliation=effect?.lifeAffiliation?.id,
+      rule=affiliation&&AFFILIATION_RULES[affiliation];
+    return effect&&rule?{
+      id:e.id,key:e.id.slice(4,-6),region:rule.region,job:effect.job,
+      affiliation,goal:effect.lifeGoal.id
+    }:null;
+  }).filter(Boolean);
+`);
+assert.equal(regionalCareers.length,42,'all 42 regional careers have genuine hiring outcomes');
+assert.deepEqual(regionalCareers.map(c=>c.job).sort((a,b)=>a-b),
+  Array.from({length:42},(_,i)=>41+i),'regional job IDs 41–82 are all represented');
+let checkedRegionalDutyEvents=0;
+for(const career of regionalCareers){
+  start(career.region,career.job===60?'サンクタ':'エラフィア');
+  ctx.REGIONAL_MATRIX_CASE=career;
+  const result=snap(`
+    const c=REGIONAL_MATRIX_CASE,entry=EV.find(e=>e.id===c.id),
+      choice=entry.c.flatMap(x=>x.o).find(o=>o[2]?.job===c.job),
+      success=choice[2],
+      duties=EV.filter(e=>e.id.startsWith('car_'+c.key+'_') &&
+        (e.id.includes('_daily_')||e.id.includes('_choice_')));
+    S.cash=15000000;S.house.cash=15000000;
+    S.k=100;S.p=100;S.cr=100;
+    if(c.key==='hig_cyber')S.fl.cyber_trace=1;
+    const before={shown:entry.show(S),eligible:elig(entry,S,tags(S))};
+    ap(success);
+    S.sn[entry.id]=S.year;
+    const member=S.lifeRecord.affiliations.find(a=>a.id===c.affiliation);
+    const goal=S.lifeRecord.goals.find(g=>g.id===c.goal);
+    const employed={
+      job:S.job,affiliation:member?.status,goal:goal?.status,
+      duty:duties.map(e=>({id:e.id,shown:e.show(S)})),
+      contract:!!S.workContract
+    };
+    ap({lifeAffiliation:{id:c.affiliation,action:'leave'}});
+    const ended={
+      job:S.job,affiliation:member.status,goal:goal.status,
+      contract:S.workContract,site:S.siteAffiliations?.workplace||null,
+      duty:duties.map(e=>e.show(S))
+    };
+    // Even a stale manually assigned occupation may not impersonate active duty.
+    S.job=c.job;
+    const staleDuty=duties.map(e=>e.show(S));
+    S.job=0;
+    S.year+=3;S.age+=3;S.mo=4;
+    const canRehire={shown:entry.show(S),eligible:elig(entry,S,tags(S))};
+    ap(success);
+    const hiredAgain={
+      job:S.job,status:member.status,goal:goal.status,
+      episodes:member.episodes.map(x=>({startedYear:x.startedYear,endedYear:x.endedYear,returning:x.returning})),
+      occupationChanges:S.lifeRecord.careerChanges.slice(-3).map(x=>[x.fromJobId,x.toJobId]),
+      memberCount:S.lifeRecord.affiliations.filter(a=>a.id===c.affiliation).length,
+      goalCount:S.lifeRecord.goals.filter(g=>g.id===c.goal).length,
+      issues:auditLifeState(S)
+    };
+    return {before,employed,ended,staleDuty,canRehire,hiredAgain};
+  `);
+  assert.equal(result.before.shown,true,career.id+' hiring opportunity is shown');
+  assert.equal(result.before.eligible,true,career.id+' hiring opportunity is eligible');
+  assert.equal(result.employed.job,career.job,career.id+' actually sets intended occupation');
+  assert.equal(result.employed.affiliation,'active',career.id+' actually joins the employer');
+  assert.equal(result.employed.goal,'active',career.id+' starts a livelihood goal');
+  assert.equal(result.employed.contract,true,career.id+' has actual work contract');
+  checkedRegionalDutyEvents+=result.employed.duty.length;
+  assert(result.employed.duty.every(e=>e.shown),career.id+' has all current duty scenes available');
+  assert.equal(result.ended.job,0,career.id+' explicit leave removes old occupation');
+  assert.equal(result.ended.affiliation,'left',career.id+' closes original employer');
+  assert.equal(result.ended.goal,'compromised',career.id+' retains unresolved livelihood history');
+  assert.equal(result.ended.contract,null,career.id+' closes old contract');
+  assert.equal(result.ended.site,null,career.id+' closes old workplace');
+  assert(result.ended.duty.every(x=>x===false),career.id+' has no duty event after leaving');
+  assert(result.staleDuty.every(x=>x===false),career.id+' job ID alone cannot impersonate active employment');
+  assert.deepEqual(result.canRehire,{shown:true,eligible:true},career.id+' may reapply after cooldown');
+  assert.equal(result.hiredAgain.job,career.job,career.id+' is re-employed');
+  assert.equal(result.hiredAgain.status,'active',career.id+' renews current affiliation');
+  assert.equal(result.hiredAgain.goal,'active',career.id+' reopens unresolved goal');
+  assert.deepEqual(result.hiredAgain.episodes,[
+    {startedYear:1098,endedYear:1098,returning:false},
+    {startedYear:1101,endedYear:null,returning:true}
+  ],career.id+' records two separate employment periods');
+  assert.deepEqual(result.hiredAgain.occupationChanges,
+    [[0,career.job],[career.job,0],[0,career.job]],career.id+' retains exact career sequence');
+  assert.equal(result.hiredAgain.memberCount,1,career.id+' never duplicates employer ID');
+  assert.equal(result.hiredAgain.goalCount,1,career.id+' never duplicates goal ID');
+  assert.deepEqual(result.hiredAgain.issues,[],career.id+' passes state audit');
+}
+assert(checkedRegionalDutyEvents>=60,'all registered duty event groups are exercised');
+
+// Severe employer-specific departures must not turn into a normal reapplication.
+for(const [region,entryId,incidentId] of [
+  ['ウルサス','car_urs_officer_entry','car_urs_officer_choice_purge'],
+  ['ウルサス','car_urs_guard_entry','car_urs_guard_choice_riot'],
+  ['ヴィクトリア','car_vic_royal_entry','car_vic_royal_choice_coup']
+]){
+  start(region);
+  const contextCase={entryId,incidentId};
+  ctx.EXPELLED_CASE=contextCase;
+  const result=snap(`
+    const c=EXPELLED_CASE,e=EV.find(x=>x.id===c.entryId);
+    S.k=100;S.cr=100;
+    const before=e.show(S);
+    S.eventOutcomes[c.incidentId]={year:S.year-3,choiceIndex:0,outcomeIndex:0};
+    const loyal=e.show(S);
+    S.eventOutcomes[c.incidentId]={year:S.year-3,choiceIndex:1,outcomeIndex:0};
+    S.sn[c.incidentId]=S.year-3;
+    const discharged={shown:e.show(S),eligible:elig(e,S,tags(S))};
+    return {before,loyal,discharged};
+  `);
+  assert.equal(result.before,true,entryId+' ordinarily recruits');
+  assert.equal(result.loyal,true,entryId+' prior non-resignation outcome is not a bar');
+  assert.deepEqual(result.discharged,{shown:false,eligible:false},
+    entryId+' cannot rehire a recorded expelled officer/guard');
+}
+for(const [region,eventId] of [
+  ['ウルサス','car_urs_officer_entry'],
+  ['ヴィクトリア','car_vic_royal_entry'],
+  ['リターニア','car_lei_golden_entry']
+]){
+  start(region);
+  ctx.INFECTION_RECRUIT=eventId;
+  const candidate=snap(`
+    S.inf=1;S.fl.dg=1;S.k=100;S.cr=100;
+    const e=EV.find(x=>x.id===INFECTION_RECRUIT);
+    return {shown:e.show(S),eligible:elig(e,S,tags(S)),
+      hasBogusFlag:Object.hasOwn(S.fl,'inf')};
+  `);
+  assert.equal(candidate.shown,true,eventId+' uses actual eligibility rather than fl.inf');
+  assert.equal(candidate.eligible,true,eventId+' has no invented blanket infection hiring ban');
+  assert.equal(candidate.hasBogusFlag,false,eventId+' does not write an unregistered infection flag');
+}
+for(const branch of [0,1]){
+  start('極東');
+  ctx.NINJA_OUTCOME=branch;
+  const result=snap(`
+    const entry=EV.find(x=>x.id==='car_hig_ninja_entry'),
+      escape=EV.find(x=>x.id==='car_hig_ninja_choice_escape');
+    ap(entry.c[0].o[0][2]);
+    const before={job:S.job,affiliation:S.lifeRecord.affiliations.find(a=>a.id==='higashi-ninja-clan').status};
+    ap(escape.c[0].o[NINJA_OUTCOME][2]);
+    S.year+=3;S.age+=3;
+    return {before,after:{job:S.job,escaped:S.fl.nukenin,
+      affiliation:S.lifeRecord.affiliations.find(a=>a.id==='higashi-ninja-clan').status,
+      ninjaAgain:entry.show(S),
+      otherCareer:EV.find(e=>e.id==='car_hig_samurai_entry').show(S),
+      issues:auditLifeState(S)}};
+  `);
+  assert.deepEqual(result.before,{job:47,affiliation:'active'},'ninja begins in the clan');
+  assert.equal(result.after.job,0,'ninja departure ends original job');
+  assert.equal(result.after.escaped,1,'ninja desertion is recorded');
+  assert.equal(result.after.affiliation,'left','ninja clan records its departure');
+  assert.equal(result.after.ninjaAgain,false,'escaped ninja cannot immediately rejoin same clan');
+  assert.equal(result.after.otherCareer,true,'escape is not a universal employment ban');
+  assert.deepEqual(result.after.issues,[],'ninja desertion state audit');
+}
+
+console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring and expulsion');
