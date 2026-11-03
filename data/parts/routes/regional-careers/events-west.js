@@ -49,7 +49,7 @@ window.TERRA_DATA_BUILD.fragment(
         ]),
         $terraData.K("良心に従って命令を拒絶し、将校を辞任する", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
-          "軍服を脱ぎ捨てて要塞を脱出した。不名誉除隊とされ全財産を没収されたが、命だけは守った。",
+          "軍服を脱ぎ捨てて要塞を脱出した。不名誉除隊とされ、財貨を差し押さえられたが、命だけは守った。",
           { job: 0, cash: -2000000, p: 3, cr: -5 ,
             lifeAffiliation: { id: "ursus-imperial-officer", action: "leave",
               note: "命令を拒んで要塞を去り、不名誉除隊として軍籍を終えた" },
