@@ -76,6 +76,8 @@ window.TERRA_DATA_BUILD.run("review/current-review", function ($terraData, $defi
       life_ursus_zelgrad_displaced_work_review: "p,p,w",
       life_ursus_zelgrad_post_settlement_job_search: "p,s",
       life_ursus_zelgrad_post_settlement_work_review: "p,p,s",
+      life_ursus_zelgrad_later_unemployment: "p,s",
+      life_ursus_zelgrad_later_unemployment_review: "p,p,s",
       sr_rhodes_former_worker: "i,p,s",
       sr_rhodes_reapplication: "p,s",
       education_return_path: "s,p,s,s",

@@ -1730,6 +1730,120 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
           }
         ])
       ]
+    },
+    {
+      id: "life_ursus_zelgrad_later_unemployment",
+      conf: "B",
+      references: ["SRC_ZELGRAD_DISPLACED_WORK_MODEL", "SRC_TERRA_LIFECOURSE"],
+      st: ["青年", "壮年", "老年"],
+      ge: { year: 1108, age: 18 },
+      le: { year: 1145, age: 85 },
+      after: { id: "life_ursus_zelgrad_post_settlement_work_review", min: 1 },
+      once: true,
+      w: 0.28,
+      show: s =>
+        s.job === 0 &&
+        s.lifeRecord?.goals?.some(g =>
+          g.id === "ursus-zelgrad-after-crisis" && g.status === "achieved"
+        ) &&
+        s.lifeRecord?.goals?.some(g =>
+          g.id === "ursus-post-settlement-reemployment" && g.status === "achieved"
+        ) &&
+        !s.lifeRecord?.goals?.some(g => g.id === "ursus-later-reemployment"),
+      t: "かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕事の手順が消えたわけでもない。もう一度求人を探すか、当面の暮らしを先に整えるか考えた。",
+      c: [
+        $terraData.K("これまでの勤務経験を頼りに、もう一度仕事を探す", {}, [
+          1,
+          "工場や工房で覚えた手順を振り返り、いま応募できる仕事を探し始めた。前に就職できたからといって次も採用されるとは限らない。手帳に訪ねた先を書き足していった。",
+          {
+            lifeGoal: {
+              id: "ursus-later-reemployment",
+              title: "再び職を失った後、次の生計を確保する",
+              priority: "生計",
+              action: "start",
+              note: "再度の失業を記録し、新しい求人を探し始めた"
+            },
+            p: 1
+          }
+        ]),
+        $terraData.K("収支を見直し、当面の求職を保留する", {}, [
+          1,
+          "手元に残った金と暮らしに必要な支払いを数え直した。すぐに採用を得られる見通しは立たず、しばらくは生活を整えながら募集の話を待つことにした。",
+          {
+            lifeGoal: {
+              id: "ursus-later-reemployment",
+              title: "再び職を失った後、次の生計を確保する",
+              priority: "生計",
+              action: "pause",
+              note: "再失業後の出費を確認し、求職の判断を保留した"
+            },
+            p: 0
+          }
+        ])
+      ]
+    },
+    {
+      id: "life_ursus_zelgrad_later_unemployment_review",
+      conf: "B",
+      references: ["SRC_ZELGRAD_DISPLACED_WORK_MODEL", "SRC_TERRA_LIFECOURSE"],
+      st: ["青年", "壮年", "老年"],
+      ge: { year: 1109, age: 18 },
+      le: { year: 1150, age: 90 },
+      after: { id: "life_ursus_zelgrad_later_unemployment", min: 1 },
+      cd: 2,
+      w: 0.25,
+      show: s =>
+        s.lifeRecord?.goals?.some(g =>
+          g.id === "ursus-later-reemployment" &&
+          ["active", "paused", "compromised"].includes(g.status)
+        ),
+      t: s => s.job > 0
+        ? "再び仕事を失ってから、新しい働き口を得た。以前の二度の就職を思い返しても、今の職場で働けるかどうかは別の問題だ。新たな勤務を続けていくか、考える機会が訪れた。"
+        : "仕事を探し始めてから月日が過ぎた。行き慣れない通りにも顔を出し、時折求人の話を聞く。すぐに暮らしの見通しが立つわけではなく、今後の動き方を考えた。",
+      c: [
+        $terraData.K("新しい職場に就いたことを記録する", {
+          show: s => s.job > 0
+        }, [
+          1,
+          "新しい持ち場で働き始めた。昔の仕事で覚えた工夫はまだ役に立つが、ここでの手順は一つずつ覚え直していく必要がある。",
+          {
+            lifeGoal: {
+              id: "ursus-later-reemployment",
+              action: "complete",
+              note: "再失業の後に新しい職業へ就き、目標を達成した"
+            },
+            p: 1
+          }
+        ]),
+        $terraData.K("別の求人を探し続ける", {
+          show: s => s.job === 0
+        }, [
+          1,
+          "まだ働き口は決まっていない。手帳に書いた応募先を見直し、次の募集がないか足を運んだ。",
+          {
+            lifeGoal: {
+              id: "ursus-later-reemployment",
+              action: "continue",
+              note: "再失業後も求人探しを続けた"
+            },
+            p: 0
+          }
+        ]),
+        $terraData.K("ひとまず求職を休止する", {
+          show: s => s.job === 0
+        }, [
+          1,
+          "すぐには職場を決めず、身の回りの支払いと休息を優先した。いつまた働き始めるかは、暮らしの様子を見ながら考えることにした。",
+          {
+            lifeGoal: {
+              id: "ursus-later-reemployment",
+              action: "pause",
+              note: "再失業後の求人探しを一時休止した"
+            },
+            p: 0
+          }
+        ])
+      ]
     }
   );
 });
