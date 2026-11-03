@@ -1,4 +1,4 @@
-name: Temporary repeated unemployment and relocation contracts
+name: Temporary reviewed second-unemployment narrative and relocation contracts
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
