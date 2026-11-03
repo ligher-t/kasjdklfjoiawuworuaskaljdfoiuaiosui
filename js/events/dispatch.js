@@ -166,6 +166,7 @@ function slot(x) {
   // Unresolved schooling decisions outrank optional random events.
   const requiredSchool = educationCaseNeedsReview(s) ? "education_case_review" :
     s.educationDecision?.kind === "primary" ? "sch" :
+    s.educationDecision?.kind === "lower-path" ? "edu_lower_stage_site_review" :
     s.educationDecision?.kind === "upper-path" ? "education_upper_path" :
     s.educationDecision?.kind === "higher-path" ? "higher_ed" :
     s.educationDecision?.kind === "transfer" ? "education_transfer_review" :

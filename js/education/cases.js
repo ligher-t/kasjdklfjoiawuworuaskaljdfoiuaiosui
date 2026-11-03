@@ -158,7 +158,8 @@ function educationCaseCandidateLabel(s,index) {
   if(!row)return "募集先を確認する";
   const area=s.world?.educationWorld?.areas?.[row.areaId];
   const site=area?.cityOrSettlementKey?.startsWith("city:")?
-    area.cityOrSettlementKey.slice(5)+"の学校" : "調べた地区の学校";
+    area.cityOrSettlementKey.slice(5)+"・"+area.kind+"の学校" :
+    area?.kind ? area.kind+"の学校" : "調べた地区の学校";
   return site+"の"+(EDUCATION_CASE_STAGES[row.stage]||"課程")+
     "（候補"+(index+1)+"）へ申し込む";
 }
@@ -358,7 +359,8 @@ function educationCaseAction(s,action) {
     return true;
   }
   if(command==="decline"){
-    const kind=parts[2]||"primary",stage=kind==="primary"?"primary":"upper";
+    const kind=parts[2]||"primary",stage=kind==="primary"?"primary":kind==="lower-path"?"lower":
+      kind==="higher-path"?null:"upper";
     const item=educationCaseBegin(s,kind,stage);
     if(!item||!educationCaseStep(s,item,"decline"))return false;
     educationCaseFinish(s,item,"declined");return true;
@@ -425,8 +427,12 @@ function educationCasePresentation(s) {
   }[item.phase]||"進路";
   const quote=item.phase==="contract"&&item.offeringId?
     educationFunds(s,item.stage,item.tier):null;
+  const details=rows.slice(0,3).map((row,index)=>
+    "\n"+(index+1)+". "+educationCaseCandidateLabel(s,index)+
+    "・募集："+(row.admissionStatus==="open"?"受付中":
+      row.admissionStatus==="limited"?"受付制限あり":"募集停止")).join("");
   return "\n"+stage+"／"+phase+
-    "\n調べた募集先："+known+
+    "\n調べた募集先："+known+details+
     (quote!==null?"\n入学時の授業料概算："+Math.round(quote).toLocaleString()+"龍門幣":"")+
     "\n今年の進路判断："+item.stepsUsed+"/"+EDUCATION_CASE_MAX_CHOICES+"回";
 }

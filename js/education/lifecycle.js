@@ -559,6 +559,12 @@ function educationAdvanceYear(s) {
   if(m.yearsCompleted>=m.duration){
     if(m.stage==="primary") {
       educationAppendHistory(s,"completed-stage",{stage:"primary"});
+      if(m.offeringId) {
+        educationEnd(s,"completed","初等課程の履修を修了","annual-progression");
+        recordEducationTransition(s,"general-school","finish","annual-progression");
+        s.educationDecision={kind:"lower-path",year:s.year};
+        return;
+      }
       if(!m.completed.includes("primary"))m.completed.push("primary");
       const lowerAccess=educationBarrier(s,"lower");
       if(!lowerAccess.allowed) {

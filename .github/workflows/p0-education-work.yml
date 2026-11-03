@@ -49,6 +49,8 @@ jobs:
         run: node tools/check-efficient.cjs run p18-education-world-determinism.test.cjs
       - name: Dated school operations and daily/exam/residence mobility
         run: node tools/check-efficient.cjs run p18-education-operations-mobility.test.cjs
+      - name: P06/P16 bounded school case and student-visible decisions
+        run: node tools/check-efficient.cjs run p18-education-case-fsm.test.cjs
       - name: Nonstandard school and infection scenarios
         run: node tools/check-efficient.cjs run p0-education-nonstandard.test.cjs
       - name: School and career transition boundaries

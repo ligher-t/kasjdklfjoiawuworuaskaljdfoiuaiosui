@@ -64,5 +64,19 @@ window.TERRA_DATA_BUILD.run("base/education-case-followup", function ($terraData
       },[1,"これまでの履修記録を残し、今の学校を離れる判断を下した。",
         {educationAction:"case:withdraw"}])
     ]
+  }, {
+    id:"edu_lower_stage_site_review",conf:"S",references:["SRC_EDUCATION_ACCESS"],
+    st:["児童","少年","青年","壮年"],pri:true,who:"self",cd:0,
+    show:s=>s.educationDecision?.kind==="lower-path" &&
+      !educationActiveCase(s),
+    t:"初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。",
+    c:[
+      $terraData.K("前期中等課程の募集先を調べる",{},[
+        1,"次の課程で学びたいと伝え、通える範囲にある学校の案内を確かめ始めた。",
+        {educationAction:"case:begin:lower-path:lower:1"}]),
+      $terraData.K("今年は別の学び方を探す",{},[
+        1,"初等の修了記録は手元に残した。今すぐ次の学校へは進まず、家や仕事場で学ぶ道を考えた。",
+        {educationAction:"case:decline:lower-path"}])
+    ]
   });
 });
