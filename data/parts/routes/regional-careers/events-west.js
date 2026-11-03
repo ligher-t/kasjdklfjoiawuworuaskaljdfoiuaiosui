@@ -192,7 +192,7 @@ window.TERRA_DATA_BUILD.fragment(
       ge: { age: 22, year: 1094 },
       le: { year: 1094 },
       show: s => s.res?.n === "ヴィクトリア" && $terraData.regionalCareerOnDuty(s, "vic_royal"),
-      t: "1094年、ロンディニウムにカズデル軍事委員会が介入し、大公爵たちの利権闘争が頂点に達した。所属する公爵家が議会襲撃で敗北し、司令部が包囲された。反逆者として公爵と共に散るか、それとも寝返って新体制に忠誠を誓うか。",
+      t: "1094年、ロンディニウムではカズデル軍事委員会の影響が強まり、大公爵たちの利権争いも深まっていた。所属する公爵家の部隊は対立勢力に敗れ、司令部を包囲された。公爵の旗を守って抗戦するか、武器を置いて降伏するか。",
       c: [
         $terraData.K("サーベルを抜き、公爵の旗を守るため最後まで防衛戦を指揮する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
@@ -239,6 +239,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.35,
       ge: { age: 24, year: 1096 },
+      le: { year: 1098 },
       after: { id: "car_vic_royal_choice_coup", min: 2, choice: 0, outcome: 0 },
       show: s => s.res?.n === "ヴィクトリア" && s.job === 55 &&
         $rules.affiliations.canWork(s, "victoria-exiled-ducal-command"),
@@ -259,6 +260,39 @@ window.TERRA_DATA_BUILD.fragment(
               note: "残存部隊の指揮を引き継ぎ、軍務を離れた" },
             lifeGoal: { id: "victoria-exiled-command", action: "abandon",
               note: "亡命部隊の指揮を終えた" } }
+        ])
+      ]
+    },
+
+    // The canonical 1098 end of the occupation changes the context of this
+    // fictional exile unit. Its survival and dissolution remain personal choices.
+    {
+      id: "car_vic_exile_postwar_review",
+      conf: "S",
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.45,
+      ge: { age: 24, year: 1099 },
+      after: { id: "car_vic_royal_choice_coup", min: 5, choice: 0, outcome: 0 },
+      show: s => s.res?.n === "ヴィクトリア" && s.job === 55 &&
+        $rules.affiliations.canWork(s, "victoria-exiled-ducal-command"),
+      t: "ロンディニウムの戦いが終わり、カズデル軍事委員会は都を去った。議会では復興のための話し合いが続いているが、敗れた公爵家の残存部隊がこの先どこに属するのかは定まっていない。かつて守った旗を掲げ続けるか、指揮を引き継いで軍務を終えるか。",
+      c: [
+        $terraData.K("残存部隊の指揮を続け、戦後の情勢を見定める", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+          1,
+          "占領軍の撤退は、失った部下を連れ戻してはくれなかった。兵の数と補給の残りを確かめ、今はまだ部隊の旗を降ろさないことにした。",
+          { k: 1, p: -1,
+            lifeGoal: { id: "victoria-exiled-command", action: "continue",
+              note: "戦後も残存部隊の指揮と補給を引き受けた" } }
+        ]),
+        $terraData.K("指揮を引き継ぎ、軍務を終える", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
+          1,
+          "これまでの命令書と兵の名簿を整理し、指揮の引継ぎを済ませた。戦争は終わった。明日の仕事は、もう軍刀を手に決めるものではない。",
+          { job: 0,
+            lifeAffiliation: { id: "victoria-exiled-ducal-command", action: "leave",
+              note: "戦後、残存部隊の指揮を引き継いで軍務を終えた" },
+            lifeGoal: { id: "victoria-exiled-command", action: "abandon",
+              note: "戦後の転身を選び、亡命部隊での指揮を終えた" } }
         ])
       ]
     },
