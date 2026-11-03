@@ -102,11 +102,16 @@ function educationTransferToApprovedInstitution(s,approvalId) {
   if(!reachable.reachable)return null;
   const paid=s.educationFinance?.invoices?.[old.id+":tuition:"+s.year];
   if(paid?.status!=="paid")return null;
-  if(approval.feeInvoiceId &&
-    s.educationFinance?.invoices?.[approval.feeInvoiceId]?.status!=="paid")return null;
   const previousFees=educationFunds(s,m.stage,m.tier,m.offeringId),
-    currentFees=educationFunds(s,m.stage,offer.admissionTier,offer.id);
-  if(currentFees>previousFees&&!approval.feeInvoiceId)return null;
+    currentFees=educationFunds(s,m.stage,offer.admissionTier,offer.id),
+    feeInvoice=approval.feeInvoiceId?
+      s.educationFinance?.invoices?.[approval.feeInvoiceId]:null;
+  if(approval.feeInvoiceId&&feeInvoice?.status!=="paid")return null;
+  if(currentFees>previousFees&&
+     (!feeInvoice||feeInvoice.kind!=="tuition"||
+       feeInvoice.recipient.id!==offer.institutionId||
+       feeInvoice.serviceYear!==s.year||
+       feeInvoice.net<currentFees-previousFees))return null;
   // The recognized tuition and transferred credit come from an actual
   // receiving-institution decision; free cross-institution transfers are not presumed.
   if(approval.creditRecognitionStatus!=="approved"||
@@ -117,8 +122,7 @@ function educationTransferToApprovedInstitution(s,approvalId) {
     newId="enrol-"+(s.educationRecord.enrollments.length+1);
   if(!oldPlacement||store.placements.items[newId+":placement:1"])return null;
   const copy=old.id,now={year:s.year,month:s.mo||0};
-  const oldCredits=Object.values(store.credits.items).filter(row=>
-    row.enrollmentId===copy&&row.credited).map(row=>row.id);
+  const oldCredits=educationTransferredCreditIds(s,copy);
   old.status="transferred";old.endedYear=s.year;old.endingEventId=approvalId;
   old.successorEnrollmentId=newId;
   oldPlacement.effectiveTo=now;oldPlacement.status="transferred";
@@ -153,20 +157,13 @@ function educationTransferToApprovedInstitution(s,approvalId) {
   return record;
 }
 function educationTransferredCreditIds(s,enrollmentId) {
-  const ids=new Set(),visited=new Set();
-  const visit=id=>{
-    if(visited.has(id))return;
-    visited.add(id);
-    for(const row of Object.values(s.educationCredits?.items||{}))
-      if(row.enrollmentId===id&&row.credited)ids.add(row.id);
-    const prior=s.educationCreditTransfers?.items?.[id];
-    if(prior?.status==="approved"){
-      for(const creditId of prior.acceptedCreditIds||[])
-        if(s.educationCredits?.items?.[creditId]?.credited)ids.add(creditId);
-      if(prior.fromEnrollmentId)visit(prior.fromEnrollmentId);
-    }
-  };
-  visit(enrollmentId);
+  const ids=new Set();
+  for(const row of Object.values(s.educationCredits?.items||{}))
+    if(row.enrollmentId===enrollmentId&&row.credited)ids.add(row.id);
+  const prior=s.educationCreditTransfers?.items?.[enrollmentId];
+  if(prior?.status==="approved")
+    for(const creditId of prior.acceptedCreditIds||[])
+      if(s.educationCredits?.items?.[creditId]?.credited)ids.add(creditId);
   return [...ids];
 }
 
@@ -400,11 +397,27 @@ function educationAttendanceInvariants(s) {
           issues.push("同一月の出席換算または学籍参照が不正");
       }
   for(const [id,row] of Object.entries(credits?.items||{})){
+    const owner=s.educationRecord?.enrollments?.find(x=>x.id===row.enrollmentId);
+    if(!owner||!Array.isArray(row.sourceMonthKeys)||
+       row.sourceMonthKeys.length<12 ||
+       row.sourceMonthKeys.some(key=>typeof key!=="string"||!key))
+      issues.push("履修認定の根拠月または学籍が不正");
     if(row.id!==id||!Number.isFinite(row.equivalent)||row.equivalent<0||
        row.equivalent>12||row.finalizedMonths!==12||
        row.credited !== (row.outcome==="recognized")||
        row.credited && row.equivalent<EDUCATION_CREDIT_THRESHOLD)
       issues.push("履修年度の認定台帳が不正");
+  }
+  for(const [id,row] of Object.entries(s.educationCreditTransfers?.items||{})){
+    const old=s.educationRecord?.enrollments?.find(x=>x.id===row.fromEnrollmentId),
+      incoming=s.educationRecord?.enrollments?.find(x=>x.id===id);
+    if(row.id!==id||row.status!=="approved"||
+       !old||old.status!=="transferred"||old.successorEnrollmentId!==id||
+       !incoming||incoming.priorEnrollmentId!==old.id||
+       !row.approvalId||!row.recognitionRef||!row.fundingClearanceRef||
+       !Array.isArray(row.acceptedCreditIds)||
+       row.acceptedCreditIds.some(cid=>!s.educationCredits?.items?.[cid]?.credited))
+      issues.push("学校間転学の旧学籍・新学籍・認定根拠が不正");
   }
   return issues;
 }
