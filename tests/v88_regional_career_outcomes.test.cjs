@@ -645,7 +645,7 @@ for(const c of departureCases){
     oldGoal:'abandoned',nextGoal:'active',oldDuty:false,alreadyReady:false,issues:[]
   },c.incident+' leaves the former employer and closes prior mission');
   assert.deepEqual(result.firstReview,{
-    open:true,choices:[true,true,false,false]
+    open:true,choices:[true,true,false,false,false]
   },c.review+' offers search or rest only when unemployed');
   assert.deepEqual(result.search,{
     job:0,goal:'active',action:'continue',cooldown:false
@@ -656,7 +656,7 @@ for(const c of departureCases){
   assert.deepEqual(result.hired,{
     job:c.otherJob,former:'left',nextGoal:'paused',oldGoal:'abandoned',
     oldEmployerRehire:false,
-    choices:[false,false,true,true],eligible:true
+    choices:[false,false,true,true,false],eligible:true
   },c.review+' later reflects an actual independent employment decision');
   assert.deepEqual(result.completed,{
     job:c.otherJob,goal:'achieved',action:'complete',shown:false,eligible:false,
