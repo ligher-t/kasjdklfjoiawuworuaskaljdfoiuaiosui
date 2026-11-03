@@ -193,22 +193,31 @@ function educationCasePreflight(s,row) {
   const cost=educationFunds(s,off.stage,off.admissionTier),
     examFee=higher?Math.round(cost*0.06):0;
   if(!educationPaymentPlan(s,examFee).allowed)return fail("no-funds");
-  if(s.age<18){
-    const review=educationGuardianReview(s,"protagonist",
-      higher?"exam-visit":"daily-commute",off.institutionId,s.year,s.mo??0);
-    if(review.guardianConsentStatus==="refused")return fail("guardian-refused");
-    if(review.guardianConsentStatus!=="granted")return fail("no-guardian");
-  }
+  const minor=s.age<18;
+  const guardian=minor?educationGuardianReview(s,"protagonist",
+    higher?"exam-visit":"daily-commute",off.institutionId,s.year,s.mo??0):null;
+  if(guardian?.guardianConsentStatus==="refused")return fail("guardian-refused");
+  const needsGuardian=minor&&guardian?.guardianConsentStatus!=="granted";
+  if(needsGuardian&&!educationCaseKnownGuardian(s))return fail("no-guardian");
   const route=educationCanReach(s,{
     institutionId:off.institutionId,campusId:off.campusId,offeringId:off.id,
     year:s.year,month:s.mo??0,purpose:higher?"exam-visit":"daily-commute"
   });
   if(!route.reachable){
-    const code=route.reasonCodes.find(x=>x==="escort-required"||
-      x==="route-risk-unmitigated-minor")||"no-reachable-route";
-    return {allowed:false,reasonCodes:[code],route,fee:examFee};
+    const guardianRemediable=new Set([
+      "escort-required","route-risk-unmitigated-minor",
+      "guardian-consent-pending","guardianship-unverified"
+    ]);
+    if(!(needsGuardian&&route.reasonCodes.length &&
+      route.reasonCodes.every(code=>guardianRemediable.has(code)))){
+      const code=route.reasonCodes.find(x=>x==="time-limit-exceeded")||
+        route.reasonCodes.find(x=>x==="no-return-service")||
+        route.reasonCodes.find(x=>x==="escort-required")||"no-reachable-route";
+      return {allowed:false,reasonCodes:[code],route,fee:examFee};
+    }
   }
-  return {allowed:true,reasonCodes:[],route,fee:examFee,tuitionEstimate:cost};
+  return {allowed:true,reasonCodes:needsGuardian?["guardian-consent-pending"]:[],
+    requiresGuardianDecision:needsGuardian,route,fee:examFee,tuitionEstimate:cost};
 }
 function educationCaseAdmissionChance(s,row) {
   const higher=["university","vocational","arts"].includes(row.stage);
@@ -242,9 +251,23 @@ function educationCaseCharge(s,item,kind,amount) {
 function educationCaseSelect(s,index) {
   const item=educationActiveCase(s);
   if(!item||item.phase!=="planning"||item.stepsUsed>=EDUCATION_CASE_MAX_CHOICES)return false;
-  const row=educationCaseCandidate(s,index),
-    assessment=educationCasePreflight(s,row);
+  const row=educationCaseCandidate(s,index);
+  let assessment=educationCasePreflight(s,row);
   if(!assessment.allowed)return false;
+  if(assessment.requiresGuardianDecision){
+    const response=educationCaseGuardianResponse(s,item,row);
+    if(response!=="granted"){
+      educationCaseStep(s,item,"guardian-refused",{institutionId:row.institutionId});
+      educationCaseFinish(s,item,response==="refused"?"guardian-refused":"no-guardian");
+      return true;
+    }
+    assessment=educationCasePreflight(s,row);
+    if(!assessment.allowed){
+      educationCaseStep(s,item,"preflight-changed",{reasonCodes:assessment.reasonCodes});
+      educationCaseFinish(s,item,"no-reachable-route");
+      return true;
+    }
+  }
   const world=s.world.educationWorld;
   item.phase="application";
   item.targetInstitutionId=row.institutionId;
@@ -334,30 +357,59 @@ function educationCaseCommit(s) {
   educationCaseFinish(s,item,"admitted");
   return true;
 }
-function educationCaseRequestGuardian(s,caseItem) {
-  if(s.age>=18)return;
-  const key=(s.care?.parentKeys||[]).find(x=>
-    s.par?.[x]&&!s.par[x].d&&!s.par[x].separated);
-  if(!key)return;
-  const world=s.world?.educationWorld,origin=s.local?.educationAreaId;
-  if(!world?.areas?.[origin])return;
-  const offers=educationCaseCandidates(s);
-  educationCreateMobilityState(s);
-  for(const row of offers) for(const purpose of ["daily-commute","exam-visit"]){
-    const inst=row.institutionId,id=caseItem.id+":"+inst+":"+purpose;
-    const allowed={year:s.year,month:s.mo??0};
-    s.educationMobility.escortRecords[id]={
-      id,personId:"protagonist",institutionId:inst,purpose,
-      escortPersonId:key,evidenceRef:caseItem.id+":family-escort",
-      status:"verified",validFrom:allowed,validThrough:{year:s.year,month:12}
-    };
-    s.educationMobility.consentRecords[id]={
-      id,personId:"protagonist",institutionId:inst,purpose,
-      consenterPersonId:key,evidenceRef:caseItem.id+":family-agreement",
-      consentState:"granted",validFrom:allowed,validThrough:{year:s.year,month:12}
-    };
-  }
+function educationCaseKnownGuardian(s) {
+  const parent=(s.care?.parentKeys||[]).find(key=>
+    ["fa","mo"].includes(key) && s.par?.[key] &&
+    !s.par[key].d && !s.par[key].separated);
+  if(parent)return {personId:parent,authority:"parent-recorded"};
+  const appointed=(s.educationMobility?.guardianAuthorities||[]).find(row=>
+    row?.authority==="explicit-guardian" && row.evidenceRef && row.personId);
+  return appointed
+    ? {personId:appointed.personId,authority:"explicit-guardian"} : null;
 }
+function educationCaseGuardianResponse(s,item,row) {
+  if(s.age>=18)return "not-required";
+  const guardian=educationCaseKnownGuardian(s);
+  if(!guardian)return "unconfirmed";
+  const world=s.world?.educationWorld;
+  if(!world)return "unconfirmed";
+  educationCreateMobilityState(s);
+  const evidence=educationDraw(world,item.id+":"+row.institutionId,
+    "school-guardian-request-v1","response");
+  // A recorded parent/guardian is not consent. The response is a separate
+  // game-model interaction, scoped to this case, institution and year.
+  const approved=evidence.value<0.78,now={year:s.year,month:s.mo??0};
+  const history={
+    phase:"planning",action:"guardian-response",at:now,
+    institutionId:row.institutionId,personId:guardian.personId,
+    authority:guardian.authority,consent:approved?"granted":"refused",
+    sampleKey:evidence.key,basis:"game-model-interaction"
+  };
+  item.history.push(history);
+  const purposes=["daily-commute","exam-visit"];
+  for(const purpose of purposes){
+    const id=item.id+":"+row.institutionId+":"+purpose;
+    s.educationMobility.consentRecords[id]={
+      id,personId:"protagonist",institutionId:row.institutionId,purpose,
+      consenterPersonId:guardian.personId,consentState:approved?"granted":"refused",
+      evidenceRef:item.id+":guardian-response",validFrom:now,
+      validThrough:{year:s.year,month:12}
+    };
+    if(approved && ["fa","mo"].includes(guardian.personId) &&
+      Number(s.par?.[guardian.personId]?.health??100)>20){
+      s.educationMobility.escortRecords[id]={
+        id,personId:"protagonist",institutionId:row.institutionId,purpose,
+        escortPersonId:guardian.personId,evidenceRef:item.id+":escort-response",
+        status:"verified",validFrom:now,validThrough:{year:s.year,month:12}
+      };
+    }
+  }
+  if(typeof L==="function")L(approved
+    ? "家の人は出願と通学に同意した。付き添いができるかどうかも、実際の生活状況に合わせて確かめた。"
+    : "家の人から、今回は出願を認められないと返事があった。受験料や授業料は支払っていない。");
+  return approved?"granted":"refused";
+}
+
 function educationCaseAction(s,action) {
   if(typeof action!=="string"||!action.startsWith("case:"))return false;
   const parts=action.split(":"),command=parts[1];
@@ -371,7 +423,6 @@ function educationCaseAction(s,action) {
     if(!educationCaseStep(s,item,"express-interest"))return false;
     item.phase="planning";
     educationCaseDiscover(s,"local");
-    educationCaseRequestGuardian(s,item);
     return true;
   }
   if(command==="decline"){
@@ -391,7 +442,11 @@ function educationCaseAction(s,action) {
     return true;
   }
   if(command==="search-adjacent"&&item.phase==="planning"){
-    if(!educationCaseStep(s,item,command))return false;
+    const searched=s.educationAccess?.searches?.some(row=>
+      row.caseId===item.id && row.scope==="adjacent");
+    if(searched)return false;
+    item.history.push({phase:"planning",action:"search-adjacent",
+      at:{year:s.year,month:s.mo??0},basis:"information-only"});
     educationCaseDiscover(s,"adjacent");return true;
   }
   if(command==="decline-offer"&&item.phase==="contract"){

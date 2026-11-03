@@ -1226,23 +1226,24 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
         show:s=>educationActiveCase(s)?.phase==="planning" && !!educationCaseCandidate(s,0),
         en:s=>educationCasePreflight(s,educationCaseCandidate(s,0)).allowed,
         why:"この募集先の応募資格、交通、保護者または受験費用の条件が整っていない"
-      },[1,"確認した募集先に、進学の意思を伝えて選考を申し込んだ。学校からの返事を待つことになった。",
+      },[1,"候補校への出願を考え、家の人と学校に必要な手続きを確かめた。返事に応じて次の判断をする。",
         {educationAction:"case:select:0"}]),
       $terraData.K("確認した第二候補へ申し込む",{
         show:s=>educationActiveCase(s)?.phase==="planning" && !!educationCaseCandidate(s,1),
         en:s=>educationCasePreflight(s,educationCaseCandidate(s,1)).allowed,
         why:"この募集先の応募資格、交通、保護者または受験費用の条件が整っていない"
-      },[1,"別の地区で確認した募集先へ願書を出した。どこで学ぶかは、まだ受入れの返事によって変わりうる。",
+      },[1,"別の地区で確認した学校を候補に選んだ。家の人の同意と学校の回答を確かめて進路を決める。",
         {educationAction:"case:select:1"}]),
       $terraData.K("確認した第三候補へ申し込む",{
         show:s=>educationActiveCase(s)?.phase==="planning" && !!educationCaseCandidate(s,2),
         en:s=>educationCasePreflight(s,educationCaseCandidate(s,2)).allowed,
         why:"この募集先の応募資格、交通、保護者または受験費用の条件が整っていない"
-      },[1,"調べた中のもう一つの募集先を選び、申込みの手続を始めた。",
+      },[1,"調べた学校の一つを候補として挙げ、必要な同意と募集条件を確かめた。",
         {educationAction:"case:select:2"}]),
       $terraData.K("隣の地区の募集先も調べる",{
         show:s=>educationActiveCase(s)?.phase==="planning" &&
-          educationActiveCase(s).stepsUsed<2 &&
+          !s.educationAccess?.searches?.some(x=>
+            x.caseId===educationActiveCase(s)?.id && x.scope==="adjacent") &&
           educationNeighborAreaIds(s,s.local?.educationAreaId).length>0
       },[1,"近くの地区まで足を延ばし、募集案内のある学校を一つずつ訪ねて回った。探した範囲と時期を記録した。",
         {educationAction:"case:search-adjacent"}]),

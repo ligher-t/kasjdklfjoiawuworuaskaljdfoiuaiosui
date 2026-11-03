@@ -27,7 +27,9 @@ const basic=run(function(){
     shown:event.c.filter(c=>ok(c.show,s,tags(s))).length,
     presentation:educationCasePresentation(s),source:candidates[0]?.informationSource,
     known:Object.keys(s.educationAccess.knownOfferings).length,
-    decision:s.educationDecision.kind};
+    consentCount:Object.keys(s.educationMobility?.consentRecords||{}).length,
+    decision:s.educationDecision.kind,
+    auditIssues:auditLifeState(s).filter(x=>x.includes("進路")||x.includes("教育上"))};
 });
 assert.equal(basic.begin,true);
 assert.equal(basic.repeat,false);
@@ -44,10 +46,27 @@ assert(basic.known>=1);
 assert.equal(basic.eligible,true);
 assert(basic.shown<=9);
 assert.equal(basic.decision,"case-review");
+assert.equal(basic.consentCount,0,"school inquiries must not imply parental consent");
+assert.deepEqual(basic.auditIssues,[]);
 assert(!basic.presentation.includes("edu-inst:"));
 const admission=run(function(){
   const s=S,item=educationActiveCase(s),before=s.cash,houseBefore=s.house.cash;
   const original=educationCaseCandidates(s)[0],preflight=educationCasePreflight(s,original);
+  const chosenParent="fa",id=educationActiveCase(s).id+":"+original.institutionId;
+  educationCreateMobilityState(s);
+  for(const purpose of ["daily-commute","exam-visit"]){
+    s.educationMobility.consentRecords[id+":"+purpose]={
+      personId:"protagonist",institutionId:original.institutionId,
+      purpose,consenterPersonId:chosenParent,consentState:"granted",
+      evidenceRef:"test-fixture-explicit-parent-response",
+      validFrom:{year:s.year,month:1},validThrough:{year:s.year,month:12}
+    };
+    s.educationMobility.escortRecords[id+":"+purpose]={
+      personId:"protagonist",institutionId:original.institutionId,purpose,
+      escortPersonId:chosenParent,status:"verified",evidenceRef:"test-fixture-escort-response",
+      validFrom:{year:s.year,month:1},validThrough:{year:s.year,month:12}
+    };
+  }
   const selected=educationCaseAction(s,"case:select:0");
   const current=educationActiveCase(s),record=s.educationCases.items[item.id],
     notice=s.educationAccess.notices[record.applicationId];

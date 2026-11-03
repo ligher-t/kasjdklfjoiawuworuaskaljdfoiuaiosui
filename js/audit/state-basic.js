@@ -155,9 +155,22 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
       school.fundedYear < school.stageStartYear || school.fundedYear > s.year))
   )) problems.push("教育学籍の年限・就業・資格記録に矛盾");
   if(s.educationDecision && (
-    !["primary","upper-path","higher-path","funding","resume","graduation","transfer"].includes(s.educationDecision.kind) ||
+    !["primary","lower-path","upper-path","higher-path","funding","resume","graduation","transfer","case-review"].includes(s.educationDecision.kind) ||
     !Number.isInteger(s.educationDecision.year) || s.educationDecision.year > s.year
   )) problems.push("教育上の必須進路判断が不正");
+  if(s.educationDecision?.kind==="case-review" &&
+    (s.educationCases?.activeCaseId!==s.educationDecision.caseId ||
+      s.educationCases?.items?.[s.educationDecision.caseId]?.status!=="active"))
+    problems.push("進路案件の選択対象と進行中の案件が一致しない");
+  if(s.educationCases && (
+    s.educationCases.version!==1 ||
+    !Number.isInteger(s.educationCases.sequence) || s.educationCases.sequence<0 ||
+    !Array.isArray(s.educationCases.history) || !s.educationCases.items ||
+    typeof s.educationCases.items!=="object" ||
+    Object.values(s.educationCases.items).some(item=>!item || item.stepsUsed>3 ||
+      item.stepsUsed<0 || !["active","resolved"].includes(item.status) ||
+      !["intent","planning","application","contract","continuity","resolved"].includes(item.phase))
+  )) problems.push("進路案件の年次・状態遷移記録が不正");
   if(s.educationAnnualFee && (
     !Number.isInteger(s.educationAnnualFee.year) ||
     s.educationAnnualFee.year > s.year ||
