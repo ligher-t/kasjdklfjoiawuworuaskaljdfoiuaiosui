@@ -1,0 +1,37 @@
+name: Temporary Ursus military appeals verification
+on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths: [.github/workflows/temporary-ursus-discipline-appeal.yml]
+permissions:
+  contents: write
+jobs:
+  targeted:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/historical-event-scope-and-delivery
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reconcile two new military disciplinary events and check syntax
+        run: |
+          node tools/update-version.cjs
+          node tools/generate-event-catalog.cjs --reconcile
+          node tools/generate-event-catalog.cjs --write
+          node tools/check-efficient.cjs syntax
+          node tools/generate-event-catalog.cjs --check
+      - name: Verify military appeal, reentry and post-discharge goals
+        run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs v88_outcome_followup_lineage.test.cjs v88_workplace_goal_departure_contracts.test.cjs
+      - name: Commit verified generated files
+        run: |
+          git add js/version.js EVENT_CATALOG.md tools/event-catalog-metadata.json
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: sync Ursus military review catalog and game revision"
+            git push origin HEAD:fix/historical-event-scope-and-delivery
+          fi
