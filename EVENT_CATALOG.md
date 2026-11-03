@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2469　選択肢数：3036　結果枝数：3891
+イベント数：2469　選択肢数：3037　結果枝数：3892
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -269925,6 +269925,17 @@ s => {
 <a id="choice-life_ursus_zelgrad_displacement_review-1"></a>
 選択肢文：つてを辿り、ひとりでゼルグラードへ戻ってみる
 
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s => s.job === 0 && !s.lifeRecord?.affiliations?.some(\n            a => a.id === \"ursus-displaced-repair-workshop\" &&\n              [\"active\", \"crisis\", \"suspended\"].includes(a.status)\n          )"
+  },
+  "why": "避難先での勤務を終え、仕事の引継ぎを済ませる必要がある"
+}
+```
+
 旧シム観測：表示 0、選択可能 0
 
 結果枝：
@@ -270584,6 +270595,7 @@ s =>
   "lifeGoal": {
     "id": "ursus-zelgrad-after-crisis",
     "action": "continue",
+    "onlyIfActive": true,
     "note": "避難先で工場経験を生かす仕事を続けた"
   },
   "lifeSkill": {
@@ -270601,12 +270613,57 @@ s =>
 #### 選択肢 2
 
 <a id="choice-life_ursus_zelgrad_displaced_work_review-1"></a>
-選択肢文：工房に暇を乞い、より条件の良い働き口を探す
+選択肢文：工房の仕事を続け、借りた部屋を暮らしの拠点として整える
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !s.lifeRecord?.goals?.some(\n              g => g.id === \"ursus-zelgrad-after-crisis\" && g.status === \"achieved\"\n            )"
+  }
+}
+```
 
 旧シム観測：表示 0、選択可能 0
 
 結果枝：
 <a id="outcome-life_ursus_zelgrad_displaced_work_review-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 親方とこれからの勤務を確かめ、部屋の貸主とも賃借の約束を交わした。仕事帰りに戻る寝床が定まり、避難してから続けてきた住まいと生計の立て直しに、ようやく区切りがついた。
+
+効果：
+
+```json
+{
+  "displacement": "rebuilt",
+  "lifeAffiliation": {
+    "id": "ursus-displaced-repair-workshop",
+    "action": "continue",
+    "note": "勤務を続け、借りた部屋を生活の拠点とした"
+  },
+  "lifeGoal": {
+    "id": "ursus-zelgrad-after-crisis",
+    "action": "complete",
+    "note": "工房の仕事と部屋の賃借を確かめ、生活再建を完了"
+  },
+  "p": 2
+}
+```
+
+旧シム観測回数：0
+
+#### 選択肢 3
+
+<a id="choice-life_ursus_zelgrad_displaced_work_review-2"></a>
+選択肢文：工房に暇を乞い、より条件の良い働き口を探す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ursus_zelgrad_displaced_work_review-2-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -270625,13 +270682,14 @@ s =>
   "lifeGoal": {
     "id": "ursus-zelgrad-after-crisis",
     "action": "compromise",
+    "onlyIfActive": true,
     "note": "修理工房を離れ、別の求人を探す"
   },
   "p": 0
 }
 ```
 
-旧シム観測回数：0
+旧シム観測回数：未計測
 
 
 <!-- generated from current source; edit the metadata sidecar, not this file -->
