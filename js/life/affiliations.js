@@ -253,7 +253,13 @@ function reconcileAffiliationWork(s, preserveCurrentJob = false) {
     const goal = s.lifeRecord.goals.find(row => row.id === rule.goal);
     if (goal && ["active", "paused", "compromised"].includes(goal.status))
       applyLifeGoal({id:goal.id, action:"compromise", note:"この職場・任地を離れ、次の生計を考える"});
-    if (!preserveCurrentJob && priorJob && (["workplace", "organization"].includes(rule.scope) || ["higashi-service", "kazimierz-competition-career", "rim-catastrophe-survey-assistant"].includes(a.id))) {
+    // Regional career IDs 41–82 have no transferable employment contract.
+    // A personal, regional or network affiliation can close without a workplace scope.
+    if (!preserveCurrentJob && priorJob && (
+      ["workplace", "organization"].includes(rule.scope) ||
+      ["higashi-service", "kazimierz-competition-career", "rim-catastrophe-survey-assistant"].includes(a.id) ||
+      (s.job >= 41 && s.job <= 82)
+    )) {
       const before = s.job; s.job=0; s.workPayBonus=0; s.fl.workplace_hazard=0;
       recordCareerChange(s,before,0);
     }
