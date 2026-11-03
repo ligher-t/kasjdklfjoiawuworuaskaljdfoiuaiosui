@@ -8,6 +8,8 @@ on:
       - 'data/parts/routes/regional-careers/**'
       - 'data/regional/**'
       - 'data/parts/extensions/social-and-care/**'
+      - 'data/relationships/close-disclosure.js'
+      - 'data/review/current-review.js'
       - 'data/base/daily-family.js'
       - 'data/base/regional-conflict.js'
       - 'data/model/flags.js'
@@ -47,6 +49,9 @@ on:
       - 'tests/v88_workplace_goal_departure_contracts.test.cjs'
       - 'tests/v88_rhine_and_rhodes_departure_lifecycle.test.cjs'
       - 'tests/v88_higashi_and_siracusa_retirement_goals.test.cjs'
+      - 'tests/v87_ursus_zelgrad_displaced_work.js'
+      - 'tests/v87_ursus_zelgrad_evacuation.js'
+      - 'tests/v87_exclusion_organizer_infected.js'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
       - 'tests/v88_cross_faction_affiliation_transitions.test.cjs'
@@ -69,6 +74,8 @@ on:
       - 'data/parts/routes/regional-careers/**'
       - 'data/regional/**'
       - 'data/parts/extensions/social-and-care/**'
+      - 'data/relationships/close-disclosure.js'
+      - 'data/review/current-review.js'
       - 'data/base/daily-family.js'
       - 'data/base/regional-conflict.js'
       - 'data/model/flags.js'
@@ -108,6 +115,9 @@ on:
       - 'tests/v88_workplace_goal_departure_contracts.test.cjs'
       - 'tests/v88_rhine_and_rhodes_departure_lifecycle.test.cjs'
       - 'tests/v88_higashi_and_siracusa_retirement_goals.test.cjs'
+      - 'tests/v87_ursus_zelgrad_displaced_work.js'
+      - 'tests/v87_ursus_zelgrad_evacuation.js'
+      - 'tests/v87_exclusion_organizer_infected.js'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
       - 'tests/v88_cross_faction_affiliation_transitions.test.cjs'
@@ -201,6 +211,12 @@ jobs:
         run: node tools/check-efficient.cjs run v88_rhine_and_rhodes_departure_lifecycle.test.cjs
       - name: Higashi demobilization and Siracusa retirement goals
         run: node tools/check-efficient.cjs run v88_higashi_and_siracusa_retirement_goals.test.cjs
+      - name: Zelgrad displacement, work settlement and review boundaries
+        run: |
+          node tools/check-efficient.cjs run v87_ursus_zelgrad_displaced_work.js
+          node tools/check-efficient.cjs run v87_ursus_zelgrad_evacuation.js
+      - name: Exclusion organizer repeated suspension and resignation
+        run: node tools/check-efficient.cjs run v87_exclusion_organizer_infected.js
       - name: Affiliation legacy and actual departure boundaries
         run: node tools/check-efficient.cjs run v88_affiliation_legacy_event_boundaries.test.cjs
       - name: Reunion crisis pause and old unit transfer goals
