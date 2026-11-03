@@ -41,4 +41,31 @@ for(const choice of [0,1,2]){
  assert.equal(followup.show(s),false,'resolved or recently reviewed decision cannot immediately recur');
  assert.equal(vm.runInNewContext('auditLifeState(S).length',ctx),0);
 }
+// A new suspension after rejoining must use its own start year.
+s=actor();apply(event.c[1].o[1][2]);
+vm.runInNewContext('S.sn.v87_exclusion_organizer_infected=S.year;S.year+=3;S.age+=3',ctx);
+apply(followup.c[0].o[0][2]);
+assert.equal(s.lifeRecord.affiliations[0].status,'active');
+vm.runInNewContext('S.sn.life_infected_exclusion_pause_review=S.year;S.year+=5;S.age+=5',ctx);
+vm.runInNewContext(`ap({lifeAffiliation:{id:'infected-exclusion',action:'suspend',
+ note:'復帰後に活動を再び休止'},lifeGoal:{id:'order-through-exclusion',action:'pause'}})`,ctx);
+const newestSuspension=s.year,history=s.lifeRecord.affiliations[0].history;
+assert.equal(history.filter(h=>h.action==='suspend').at(-1).year,newestSuspension);
+vm.runInNewContext('S.year+=2;S.age+=2',ctx);
+assert.equal(followup.show(s),false,'rejoining must not reuse the first suspension clock');
+vm.runInNewContext('S.year++;S.age++',ctx);
+assert.equal(followup.show(s),true,'the latest suspension becomes eligible after three years');
+apply(followup.c[1].o[0][2]);
+assert.equal(s.lifeRecord.affiliations[0].status,'suspended');
+const reviewYear=s.year;
+vm.runInNewContext('S.year+=2;S.age+=2',ctx);
+assert.equal(followup.show(s),false,'a reviewed deferral must honor a new three-year interval');
+vm.runInNewContext('S.year++;S.age++',ctx);
+assert.equal(followup.show(s),true);
+apply(followup.c[2].o[0][2]);
+assert.equal(s.lifeRecord.affiliations[0].status,'left');
+assert.equal(s.lifeRecord.goals[0].status,'abandoned');
+vm.runInNewContext('S.year+=10;S.age+=10',ctx);
+assert.equal(followup.show(s),false,'a former organizer cannot receive new suspension letters');
+assert.equal(vm.runInNewContext('auditLifeState(S).length',ctx),0);
 console.log(JSON.stringify({passed:true,conditionedOnDiagnosisAndRecordedExclusion:true,hardlineCannotRequestPolicyReform:true,personalExceptionLeavesRuleUnchanged:true,localPolicyRevisionAndRejectionBothRecorded:true,communityRejectionRemainsUnresolved:true},null,2));

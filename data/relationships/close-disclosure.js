@@ -1155,7 +1155,13 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
       ]),
       $terraData.K(
         "つてを辿り、ひとりでゼルグラードへ戻ってみる",
-        {},
+        {
+          en: s => s.job === 0 && !s.lifeRecord?.affiliations?.some(
+            a => a.id === "ursus-displaced-repair-workshop" &&
+              ["active", "crisis", "suspended"].includes(a.status)
+          ),
+          why: "避難先での勤務を終え、仕事の引継ぎを済ませる必要がある"
+        },
         [
           0.45,
           "行き交う荷馬車や旅人に道を尋ね続け、ようやくゼルグラードの労働区画へたどり着いた。かつての職場は影も形もなく、まずは雨風をしのげる寝床と日雇いの仕事を探して通りを歩いた。",
@@ -1545,6 +1551,7 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
             lifeGoal: {
               id: "ursus-zelgrad-after-crisis",
               action: "continue",
+              onlyIfActive: true,
               note: "避難先で工場経験を生かす仕事を続けた"
             },
             lifeSkill: {
@@ -1556,6 +1563,32 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
             p: 1
           }
         ]),
+        $terraData.K(
+          "工房の仕事を続け、借りた部屋を暮らしの拠点として整える",
+          {
+            show: s => !s.lifeRecord?.goals?.some(
+              g => g.id === "ursus-zelgrad-after-crisis" && g.status === "achieved"
+            )
+          },
+          [
+            1,
+            "親方とこれからの勤務を確かめ、部屋の貸主とも賃借の約束を交わした。仕事帰りに戻る寝床が定まり、避難してから続けてきた住まいと生計の立て直しに、ようやく区切りがついた。",
+            {
+              displacement: "rebuilt",
+              lifeAffiliation: {
+                id: "ursus-displaced-repair-workshop",
+                action: "continue",
+                note: "勤務を続け、借りた部屋を生活の拠点とした"
+              },
+              lifeGoal: {
+                id: "ursus-zelgrad-after-crisis",
+                action: "complete",
+                note: "工房の仕事と部屋の賃借を確かめ、生活再建を完了"
+              },
+              p: 2
+            }
+          ]
+        ),
         $terraData.K("工房に暇を乞い、より条件の良い働き口を探す", {}, [
           1,
           "世話になった親方に礼を言って工房を離れた。二つの現場で鍛えた腕を頼りに、次の仕事を探して街へ出た。",
@@ -1569,6 +1602,7 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
             lifeGoal: {
               id: "ursus-zelgrad-after-crisis",
               action: "compromise",
+              onlyIfActive: true,
               note: "修理工房を離れ、別の求人を探す"
             },
             p: 0
