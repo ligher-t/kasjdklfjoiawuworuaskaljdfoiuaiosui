@@ -25,6 +25,7 @@ const install=()=>run(function(){
   educationBindFormalEnrollment(s,record.id);
   const invoice=educationEnsureTuitionInvoice(s,m,s.year),posting=educationSettleInvoice(s,invoice);
   educationFinanceProjectInvoice(s,invoice);
+  s.mo=12;
   s.k=95;s.socialLearning.literacy=88;s.ar=50;
   return {id:record.id,placementId:s.educationPlacements.currentPlacementId,
     offeringId:offer.id,invoice:invoice.id,
