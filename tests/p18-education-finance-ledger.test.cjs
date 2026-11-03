@@ -343,4 +343,82 @@ assert.equal(examOnly.enrolled,false);
 assert.deepEqual(examFail.ledgerIssues,[]);
 assert.deepEqual(examPass.ledgerIssues,[]);
 assert.deepEqual(examOnly.ledgerIssues,[]);
+fresh("龍門",12);
+const mobility=run(function(){
+  const s=S;s.age=12;s.cash=100;s.house.cash=100000;s.mo=4;
+  ensureResidenceIdentity(s);ensureEducationWorldForResidence(s);
+  const world=s.world.educationWorld,origin=s.local.educationAreaId;
+  const target=Object.values(world.areas).find(x=>x.id!==origin)?.id;
+  if(!target)throw Error("No second area to exercise student residence");
+  educationCreateMobilityState(s);
+  const id="edu-residence:protagonist:test";
+  s.educationMobility.residenceContracts[id]={
+    id,personId:"protagonist",status:"committed",actualAreaId:target,
+    previousHomeRef:origin,householdRemainsAtOrigin:true,
+    lodgingKind:"institution-dormitory",providerId:"dorm:test",
+    start:{year:s.year,month:4},end:{year:s.year,month:9},
+    feeSchedule:{"boarding-room":1000,"boarding-food":2000}
+  };
+  const away=educationResidenceAwayMonths(s,s.year),before=s.house.cash;
+  const room=educationSettleVerifiedMobility(s,{
+    kind:"boarding-room",residenceContractId:id,year:s.year,month:4});
+  const food=educationSettleVerifiedMobility(s,{
+    kind:"boarding-food",residenceContractId:id,year:s.year,month:4});
+  const repeat=educationSettleVerifiedMobility(s,{
+    kind:"boarding-room",residenceContractId:id,year:s.year,month:4});
+  const invoiceIds=Object.keys(s.educationFinance.invoices);
+  let rejectedRent=false;try{
+    educationEnsureVerifiedMobilityInvoice(s,{
+      kind:"rent",residenceContractId:id,year:s.year,month:4
+    });
+  }catch{rejectedRent=true;}
+  s.educationMobility.transportTransactions["edu-travel:test"]={
+    id:"edu-travel:test",kind:"commute-pass",status:"confirmed",
+    year:s.year,month:4,providerId:"route:test",amount:650
+  };
+  const commute=educationSettleVerifiedMobility(s,{
+    kind:"commute-pass",transactionId:"edu-travel:test",year:s.year,month:4});
+  const duplicateCommute=educationSettleVerifiedMobility(s,{
+    kind:"commute-pass",transactionId:"edu-travel:test",year:s.year,month:4});
+  return {away,price:before-s.house.cash,room:room?.amount,food:food?.amount,
+    repeat:repeat?.id===room?.id,rentRejected:rejectedRent,
+    invoiceCount:invoiceIds.length,commute:commute?.amount,
+    duplicateCommute:duplicateCommute?.id===commute?.id,
+    travelInvoices:Object.values(s.educationFinance.invoices)
+      .filter(x=>x.kind==="commute-pass").length,
+    audit:educationCheckFinanceInvariants(s)};
+});
+assert.equal(mobility.away,6);
+assert.equal(mobility.price,3650);
+assert.equal(mobility.room,1000);
+assert.equal(mobility.food,2000);
+assert.equal(mobility.repeat,true);
+assert.equal(mobility.rentRejected,true);
+assert.equal(mobility.invoiceCount,2);
+assert.equal(mobility.commute,650);
+assert.equal(mobility.duplicateCommute,true);
+assert.equal(mobility.travelInvoices,1);
+assert.deepEqual(mobility.audit,[]);
+fresh("クルビア",22);
+const migrated=run(function(){
+  const s=S;
+  s.educationFinance={version:1,receipts:[{
+    id:"legacy:case:exam",kind:"exam",personal:2500,household:1100,
+    caseId:"legacy:case",settledAt:{year:s.year,month:4}
+  }]};
+  const cashBefore=s.cash,houseBefore=s.house.cash,
+    personal=educationAnnualOutflow(s,s.year,"personal"),
+    household=educationAnnualOutflow(s,s.year,"household");
+  return {personal,household,
+    receipts:Object.keys(s.educationFinance.receipts).length,
+    invoiceCount:Object.keys(s.educationFinance.invoices).length,
+    noRecharged:s.cash===cashBefore&&s.house.cash===houseBefore,
+    audit:educationCheckFinanceInvariants(s)};
+});
+assert.equal(migrated.personal,2500);
+assert.equal(migrated.household,1100);
+assert.equal(migrated.receipts,2);
+assert.equal(migrated.invoiceCount,1);
+assert.equal(migrated.noRecharged,true);
+assert.deepEqual(migrated.audit,[]);
 console.log("PASS P07: quote, invoice, mixed payment, grant, loan, refund, annual rollup and no double charge");
