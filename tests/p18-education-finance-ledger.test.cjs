@@ -421,4 +421,30 @@ assert.equal(migrated.receipts,2);
 assert.equal(migrated.invoiceCount,1);
 assert.equal(migrated.noRecharged,true);
 assert.deepEqual(migrated.audit,[]);
+fresh("龍門",12);
+const panel=run(function(){
+  const s=S;s.age=12;s.cash=1000;s.house.cash=20000;
+  const invoice=educationEnsureInvoice(s,{id:"tuition:panel:1",kind:"tuition",
+    institutionId:"school:panel",amount:10000});
+  educationSettleInvoice(s,invoice);
+  s.flow={year:s.year,expense:{education:0},income:{}};
+  const previous=JSON.stringify(s.educationFinance),
+    output={fn:{innerHTML:""},fh:{innerHTML:""},ch:{innerHTML:""}},
+    services={m:value=>String(value),$:id=>output[id],
+      householdStrained:()=>false,
+      annualEconomyHistoryMarkup:()=>"",
+      choiceEconomyHistoryMarkup:()=>""};
+  renderEconomyPanel(s,services);
+  return {unchanged:previous===JSON.stringify(s.educationFinance),
+    text:output.fn.innerHTML,paid:s.educationFinance.invoices[invoice.id].paid};
+});
+assert.equal(panel.unchanged,true,"rendering finances must not update ledger");
+assert.equal(panel.paid,10000);
+for(const label of ["当年教育費：本人財布からの実支払",
+  "当年教育費：家計財布からの実支払",
+  "現在の教育機関への授業料未納額（別建て）",
+  "うち学生貸付の未返済契約残高"])
+  assert(panel.text.includes(label),"missing education finance panel label: "+label);
+assert(panel.text.includes("家計財布からの実支払</dt><dd>10000"),
+  "household education spending is shown once");
 console.log("PASS P07: quote, invoice, mixed payment, grant, loan, refund, annual rollup and no double charge");
