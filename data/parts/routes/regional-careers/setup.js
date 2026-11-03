@@ -138,10 +138,29 @@ window.TERRA_DATA_BUILD.fragment(
     $terraData.J.push(job);
   }
 
+  // Recruitment outcomes establish the canonical employer for each regional job.
+  // Duty scenes must follow an active posting, not a stale occupation identifier.
+  const regionalCareerEmployers = new Map();
+  $define(
+    "regionalCareerOnDuty",
+    (s, jobKey) => {
+      const employer = regionalCareerEmployers.get(jobKey);
+      return !!employer &&
+        s.job === $terraData.REG_JOBS[jobKey] &&
+        $rules.affiliations.canWork(s, employer);
+    },
+    false,
+    true
+  );
+
   // Helper function to build a regional career entry effect
   $define(
     "regionalCareerStaff",
     (jobKey, affiliationId, affiliationTitle, roleTitle, goalId, goalTitle, skillId, skillTitle, opts = {}) => {
+      const assigned = regionalCareerEmployers.get(jobKey);
+      if (assigned && assigned !== affiliationId)
+        throw new Error("Conflicting regional career employer for " + jobKey);
+      regionalCareerEmployers.set(jobKey, affiliationId);
       const effect = {
         job: $terraData.REG_JOBS[jobKey],
         lifeAffiliation: {
