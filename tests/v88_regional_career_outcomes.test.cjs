@@ -10,7 +10,7 @@ const snap = src => JSON.parse(run('JSON.stringify((()=>{'+src+'})())'));
 function start(region, species='エラフィア') {
   setup(ctx,{id:'regional-career-outcomes',seed:740011,region,age:24});
   ctx.TEST_SPECIES=species;
-  run('S.r={...S.r,n:TEST_SPECIES}; S.age=24; S.year=1098; S.mo=6; S.job=0; S.fl.retired=0; S.fl.inf=0; S.sn={};');
+  run('S.r={...S.r,n:TEST_SPECIES}; S.age=24; S.year=1098; S.mo=6; S.job=0; S.fl.retired=0; S.sn={};');
 }
 // Exercise the actual event dispatcher once, not a manually fabricated result.
 // These fictional job applications must not silently depend on a nonexistent
