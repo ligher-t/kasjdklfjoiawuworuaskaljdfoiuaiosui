@@ -244,7 +244,13 @@ function educationDependentRecordSupport(s,{personId,transferId,
 function educationDependentInvariants(s) {
   const issues=[];
   for(const [id,row] of Object.entries(s.dependentEducation||{})){
-    if(!educationDependentPerson(s,id)||row.personId!==id||
+    // A historical registration with no observations may outlive a changed
+    // family roster; do not fabricate an identity to repair it.
+    const missing=!educationDependentPerson(s,id),
+      hasActualRecord=!!(row.enrollments?.length||row.knownFacts?.length||
+        row.preferences?.length||row.consents?.length||row.cases?.length||
+        row.aidHistory?.length||row.learningPaths?.length);
+    if(missing&&hasActualRecord || row.personId!==id||
        !Array.isArray(row.enrollments)||!Array.isArray(row.knownFacts)||
        row.enrollments.filter(x=>x.status==="enrolled").length>1 ||
        row.enrollments.some(x=>x.personId!==id ||
