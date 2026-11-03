@@ -999,7 +999,7 @@ for(const choiceIndex of [0,1]){
       ended:a?.episodes.at(-1)?.endedYear??null,goal:g?.status,
       next:next?.status??null,
       farmDuty:farmDuty.show(S),
-      companyWork:$rules.affiliations.canWork(S,'columbia-frontier-contract-crew'),
+      companyWork:affiliationWorkAvailable(S,'columbia-frontier-contract-crew'),
       campReview:elig(campReview,S,tags(S)),issues:auditLifeState(S)};
     S.year=1100;S.age=26;
     const eligibleReview=elig(campReview,S,tags(S)),
