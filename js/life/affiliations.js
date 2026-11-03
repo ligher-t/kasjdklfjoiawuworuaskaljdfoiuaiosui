@@ -58,6 +58,7 @@ const AFFILIATION_RULES = Object.freeze({
   "ursus-imperial-academy-science": affiliationRule("organization", "ウルサス", [53], "ursus-science-engineering", "car/urs_academy_*", "ウルサス帝国科学院の重工業技師。装甲列車と軍用都市設計"),
   "victoria-regular-infantry": affiliationRule("organization", "ヴィクトリア", [54], "victoria-infantry-service", "car/vic_infantry_*", "ヴィクトリア正規陸軍の平民歩兵。泥にまみれる使い捨て兵士"),
   "victoria-royal-officer": affiliationRule("organization", "ヴィクトリア", [55], "victoria-officer-career", "car/vic_royal_*", "王立前衛学校卒のエリート将校。公爵派閥の権力闘争"),
+  "victoria-exiled-ducal-command": affiliationRule("organization", "ヴィクトリア", [55], "victoria-exiled-command", "car/vic_royal_choice_coup/car/vic_exile_command_review", "1094年の陥落後、敗れた公爵家の残存部隊を率いる本人固有の分岐。元の公爵軍と勤務地を区別するゲーム上の所属モデル"),
   "victoria-parliament-scribe": affiliationRule("organization", "ヴィクトリア", [56], "victoria-parliament-governance", "car/vic_scribe_*", "ヴィクトリア帝国議会・貴族院の書記官。官僚機構の実務"),
   "victoria-locomotive-works": affiliationRule("organization", "ヴィクトリア", [57], "victoria-locomotive-engineering", "car/vic_works_*", "ヴィクトリア鉄道工廠・製鋼工場の重工業技師。蒸気動力の心臓部"),
   "leithania-golden-law": affiliationRule("organization", "リターニア", [58], "leithania-golden-law-enforce", "car/lei_golden_*", "リターニア金律法衛。女帝直属の音律法典執行部隊"),
