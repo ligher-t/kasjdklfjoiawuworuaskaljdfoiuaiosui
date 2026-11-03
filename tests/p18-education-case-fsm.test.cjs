@@ -158,4 +158,49 @@ assert.equal(contract.active,null);
 assert.deepEqual(contract.phases,["intent","planning","application","contract","continuity","resolved"]);
 assert.equal(contract.limit,3);
 assert.equal(contract.fallback,true);
+const guardianScope=run(function(){
+  const s=S;s.year=1088;s.age=9;s.mo=3;s.cash=9000000;
+  s.educationPath=null;s.study=null;s.fl.sch=0;
+  s.res=REG.find(x=>x.n==="龍門");s.home="移動都市";
+  s.local={kind:"移動都市の居住区",city:"龍門",placeId:"city:龍門:龍門",
+    districtId:"district:guardian-review",access:0.8,hazard:0.2};
+  ensureResidenceIdentity(s);ensureEducationWorldForResidence(s);
+  s.care.parentKeys=["fa"];s.par.fa.d=0;s.par.fa.separated=false;s.par.fa.health=80;
+  const begin=educationCaseAction(s,"case:begin:primary:primary:1"),
+    item=educationActiveCase(s),before=item.stepsUsed,
+    row=educationCaseCandidate(s,0),pending=educationCasePreflight(s,row);
+  const searched=educationCaseAction(s,"case:search-adjacent"),
+    afterSearch=item.stepsUsed,
+    repeatSearch=educationCaseAction(s,"case:search-adjacent");
+  s.care.parentKeys=[];
+  const denied=educationCasePreflight(s,row);
+  s.care.parentKeys=["fa"];
+  const bank=s.cash,house=s.house.cash,
+    selected=educationCaseAction(s,"case:select:0");
+  const answers=Object.values(s.educationMobility.consentRecords).filter(x=>
+    x.institutionId===row.institutionId);
+  const end=s.educationCases.items[item.id],
+    receiptCount=(s.educationFinance?.receipts||[]).filter(x=>x.caseId===item.id).length;
+  return {begin,before,pending,searched,afterSearch,repeatSearch,denied,
+    selected,answers:answers.map(x=>({purpose:x.purpose,state:x.consentState,evidence:x.evidenceRef})),
+    phase:end.phase,terminal:end.reason,receiptCount,uncharged:bank===s.cash&&house===s.house.cash,
+    auditIssues:auditLifeState(s).filter(x=>x.includes("進路案件")||x.includes("教育上"))};
+});
+assert.equal(guardianScope.begin,true);
+assert(guardianScope.pending.allowed,"a recorded parent can be consulted as part of a real application");
+assert.equal(guardianScope.pending.requiresGuardianDecision,true);
+assert.equal(guardianScope.before,1);
+assert.equal(guardianScope.searched,true);
+assert.equal(guardianScope.afterSearch,1,"adjacent search is an information action, not a terminal decision");
+assert.equal(guardianScope.repeatSearch,false);
+assert.equal(guardianScope.denied.allowed,false);
+assert.equal(guardianScope.denied.reasonCodes[0],"no-guardian");
+assert.equal(guardianScope.selected,true);
+assert.equal(guardianScope.answers.length,2);
+assert(guardianScope.answers.every(row=>row.evidence?.includes("guardian-response")));
+assert(guardianScope.answers.some(row=>row.purpose==="daily-commute"));
+assert(guardianScope.answers.some(row=>row.purpose==="exam-visit"));
+assert.equal(guardianScope.uncharged,true);
+assert.equal(guardianScope.receiptCount,0);
+assert.deepEqual(guardianScope.auditIssues,[]);
 console.log("PASS P06/P16 student discovery, admission, termination and 3-choice limits");
