@@ -379,4 +379,108 @@ assert.equal(noRhodesDegree.attendance,1);
 assert.equal(noRhodesDegree.degrees,0);
 assert.equal(noRhodesDegree.enrollments,0);
 assert.equal(noRhodesDegree.flags,false);
+fresh(22,"サーミ");
+const learningCap=run(function(){
+ const s=S;s.mo=12;
+ const area=ensureEducationWorldForResidence(s),
+   siteRef={region:s.res.n,areaId:area,attendanceMode:"home"};
+ const a=educationOpenLearningPath(s,{
+   modeId:"self-directed",providerId:"self",
+   siteRef,subjectIds:["academic_knowledge"],sourceEventId:"book-notes-a"
+ });
+ const b=educationOpenLearningPath(s,{
+   modeId:"exam-self-preparation",providerId:"self",
+   siteRef,subjectIds:["test_preparation"],sourceEventId:"book-notes-b"
+ });
+ const c=educationOpenLearningPath(s,{
+   modeId:"self-directed",providerId:"self",
+   siteRef,subjectIds:["academic_knowledge"],sourceEventId:"book-notes-c"
+ });
+ educationRecordLearningParticipation(s,{
+   pathId:a.pathId,year:s.year,month:12,attendedSessions:1,
+   totalSessions:4,evidenceRef:"a-study-record"
+ });
+ educationRecordLearningParticipation(s,{
+   pathId:b.pathId,year:s.year,month:12,attendedSessions:3,
+   totalSessions:4,evidenceRef:"b-study-record"
+ });
+ const before=Object.keys(s.learningCompetenceEffects.items).length;
+ let overCapRejected=false,duplicateEvidenceRejected=false;
+ try{educationRecordLearningParticipation(s,{
+   pathId:c.pathId,year:s.year,month:12,
+   attendedSessions:1,totalSessions:4,evidenceRef:"c-overcap"
+ });}catch{overCapRejected=true;}
+ try{educationRecordLearningParticipation(s,{
+   pathId:c.pathId,year:s.year,month:11,
+   attendedSessions:1,totalSessions:2,evidenceRef:"a-study-record"
+ });}catch{duplicateEvidenceRejected=true;}
+ return {overCapRejected,duplicateEvidenceRejected,
+   unchanged:before===Object.keys(s.learningCompetenceEffects.items).length,
+   issues:educationNonformalInvariants(s)};
+});
+assert.equal(learningCap.overCapRejected,true);
+assert.equal(learningCap.duplicateEvidenceRejected,true);
+assert.equal(learningCap.unchanged,true);
+assert.deepEqual(learningCap.issues,[]);
+fresh(22,"龍門");
+const noFormalDuplication=run(function(){
+ const s=S;s.mo=12;
+ const area=ensureEducationWorldForResidence(s),
+   world=s.world.educationWorld,
+   school=educationRegisterInstitution(world,area,"formal-evidence-fixture",
+     "university",["university"],s.year),
+   offer=world.offerings[school.offeringIds[0]];
+ offer.admissionTier=1;
+ educationStart(s,"university",1,"actual-course");
+ s.educationPath.institutionId=school.id;
+ s.educationPath.campusId=offer.campusId;
+ s.educationPath.offeringId=offer.id;
+ educationBindFormalEnrollment(s,s.educationRecord.enrollments.at(-1).id);
+ educationRecordAttendance(s,{
+   enrollmentId:s.educationPath.currentEnrollmentId,
+   placementId:s.educationPlacements.currentPlacementId,
+   year:s.year,month:12,personalAccess:1,
+   evidenceRef:"one-real-lesson"
+ });
+ const path=educationOpenLearningPath(s,{
+   modeId:"self-directed",providerId:"self",
+   siteRef:{region:s.res.n,areaId:area,attendanceMode:"home"},
+   subjectIds:["academic_knowledge"],sourceEventId:"formal-remedial-other-path"
+ });
+ let rejected=false;
+ try{educationRecordLearningParticipation(s,{
+   pathId:path.pathId,year:s.year,month:12,
+   attendedSessions:1,totalSessions:1,evidenceRef:"one-real-lesson"
+ });}catch{rejected=true;}
+ return {rejected,noLearning:path.participation.length===0,
+   issues:educationNonformalInvariants(s)};
+});
+assert.equal(noFormalDuplication.rejected,true);
+assert.equal(noFormalDuplication.noLearning,true);
+assert.deepEqual(noFormalDuplication.issues,[]);
+fresh(29,"ヴィクトリア");
+const persisted=run(function(){
+ const s=S;
+ const area=ensureEducationWorldForResidence(s);
+ s.kids.push({id:"child-test-save-I06",by:s.year-8,d:0});
+ educationSynchronizeDependents(s);
+ educationDependentRecordFact(s,{
+  personId:"child-test-save-I06",factId:"child-reported-studying",
+  claim:"child-studies-away",sourceEventId:"message-from-relative",
+  observedAt:{year:s.year,month:s.mo},
+  knownAt:{year:s.year,month:s.mo},certainty:"reported"
+ });
+ const snapshot=makeResumeSnapshot(),
+   imported=normalizeResumeImport(JSON.parse(JSON.stringify(snapshot)));
+ return {same:JSON.stringify(imported.S.dependentEducation)===
+   JSON.stringify(s.dependentEducation),
+   original:JSON.stringify(imported.S.world.educationWorld)===
+   JSON.stringify(s.world.educationWorld),
+   area,preserved:s.dependentEducation["child-test-save-I06"]?.knownFacts?.length,
+   audit:auditLifeState(s).filter(x=>x.includes("教育")||x.includes("学校外"))};
+});
+assert.equal(persisted.same,true);
+assert.equal(persisted.original,true);
+assert.equal(persisted.preserved,1);
+assert.deepEqual(persisted.audit,[]);
 console.log("PASS P09/P10/P11/P12 scoped school knowledge, language, dependents, and nonformal learning");
