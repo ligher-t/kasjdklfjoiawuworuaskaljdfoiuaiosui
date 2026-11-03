@@ -501,12 +501,14 @@ function currentCareerPlacement(s, id) {
 }
 function reconcileCareerPlacements(s, preserveCurrentPay = false, assignedPlacements = null) {
   if (s !== S) return;
+  const jobAtStart = s.job;
   for (const placement of CAREER_PLACEMENTS) {
-    const affiliation = s.lifeRecord?.affiliations?.find(row => row.id === placement.id);
+    const affiliation = s.lifeRecord?.affiliations?.find(row => row.id === placement.id),
+      holdsPlacementJob = placement.jobs ? placement.jobs.includes(s.job) : s.job === placement.job;
     if (
       !affiliation ||
       !["active", "crisis"].includes(affiliation.status) ||
-      ((placement.jobs ? placement.jobs.includes(s.job) : s.job === placement.job) &&
+      (holdsPlacementJob &&
         (placement.region == null || s.res?.n === placement.region) &&
         !s.fl?.retired &&
         !restricted(s) &&
@@ -524,8 +526,18 @@ function reconcileCareerPlacements(s, preserveCurrentPay = false, assignedPlacem
         note: "この職場での継続を終え、次の暮らしを考える"
       });
     if (!preserveCurrentPay) s.workPayBonus = 0;
+    if (!preserveCurrentPay && holdsPlacementJob) {
+      const previousJob = s.job;
+      s.job = 0;
+      s.fl.workplace_hazard = 0;
+      recordCareerChange(s, previousJob, 0);
+    }
   }
   reconcileAffiliationWork(s, preserveCurrentPay);
+  if (s.job !== jobAtStart) {
+    siteAffiliation(s, "workplace");
+    reconcileWorkContract(s);
+  }
 }
 function lifeAffiliationAtRecordedLocality(s, id) {
   const affiliation = s?.lifeRecord?.affiliations?.find(row => row.id === id),
