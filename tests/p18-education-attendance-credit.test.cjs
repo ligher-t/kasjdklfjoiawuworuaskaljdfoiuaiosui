@@ -365,4 +365,70 @@ assert.equal(interSchool.credited,true);
 assert.equal(interSchool.references,12);
 assert.equal(interSchool.distinct,true);
 assert.deepEqual(interSchool.issues,[]);
+fresh();install();
+const graduateAfterTransfer=run(function(){
+  const s=S,world=s.world.educationWorld,area=s.local.educationAreaId,
+    original=s.educationPath.currentEnrollmentId,
+    originalPlacement=s.educationPlacements.currentPlacementId;
+  for(let month=1;month<=12;month++)educationRecordAttendance(s,{
+    enrollmentId:original,placementId:originalPlacement,
+    year:s.year,month,personalAccess:1,evidenceRef:"first-year:"+month
+  });
+  educationSettleCompletedAcademicYear(s,s.year);
+  s.year++;s.age++;s.mo=0;educationAdvanceYear(s);
+  s.mo=7;
+  for(let month=1;month<=6;month++)educationRecordAttendance(s,{
+    enrollmentId:original,placementId:originalPlacement,
+    year:s.year,month,personalAccess:1,evidenceRef:"second-year-before-transfer:"+month
+  });
+  const institute=educationRegisterInstitution(world,area,"I05-last-university",
+    "university",["university"],s.year),
+    offer=world.offerings[institute.offeringIds[0]];
+  offer.admissionTier=1;
+  s.educationTransferApprovals={
+    secondYear:{
+      approved:true,sourceRef:"receiving-school-approval",
+      recognitionRef:"academic-credit-recognition",
+      fundingClearanceRef:"tuition-invoice-transferred",
+      creditRecognitionStatus:"approved",
+      tuitionRecognitionStatus:"approved",
+      fromEnrollmentId:original,toOfferingId:offer.id,
+      effectiveFrom:{year:s.year,month:7}
+    }
+  };
+  const transfer=educationTransferToApprovedInstitution(s,"secondYear");
+  const newId=s.educationPath.currentEnrollmentId,
+    newPlacement=s.educationPlacements.currentPlacementId;
+  s.mo=12;
+  for(let month=7;month<=12;month++)educationRecordAttendance(s,{
+    enrollmentId:newId,placementId:newPlacement,year:s.year,month,
+    personalAccess:1,evidenceRef:"after-transfer:"+month
+  });
+  const second=educationSettleCompletedAcademicYear(s,s.year);
+  s.year++;s.age++;s.mo=0;educationAdvanceYear(s);
+  s.mo=12;
+  for(let month=1;month<=12;month++)educationRecordAttendance(s,{
+    enrollmentId:newId,placementId:newPlacement,year:s.year,month,
+    personalAccess:1,evidenceRef:"final-year:"+month
+  });
+  const third=educationSettleCompletedAcademicYear(s,s.year);
+  s.year++;s.age++;s.mo=0;educationAdvanceYear(s);
+  const award=s.educationRecord.awards.find(x=>x.enrollmentId===newId);
+  return {transfer:!!transfer,second:second.credited,third:third.credited,
+    completed:s.educationPath.status,
+    creditedYears:s.educationPath.yearsCompleted,
+    sourceCreditIds:award?.sourceCreditIds?.length,
+    oldCredited:award?.sourceCreditIds?.some(x=>x.startsWith(original+":credit:")),
+    currentIssuer:award?.issuerInstitutionId===institute.id,
+    audit:educationAttendanceInvariants(s)};
+});
+assert.equal(graduateAfterTransfer.transfer,true);
+assert.equal(graduateAfterTransfer.second,true);
+assert.equal(graduateAfterTransfer.third,true);
+assert.equal(graduateAfterTransfer.completed,"completed");
+assert.equal(graduateAfterTransfer.creditedYears,3);
+assert.equal(graduateAfterTransfer.sourceCreditIds,3);
+assert.equal(graduateAfterTransfer.oldCredited,true);
+assert.equal(graduateAfterTransfer.currentIssuer,true);
+assert.deepEqual(graduateAfterTransfer.audit,[]);
 console.log("PASS P05/P09 annual 9/12, disruptions, transfer cap, idempotence and non-anticipatory credits");
