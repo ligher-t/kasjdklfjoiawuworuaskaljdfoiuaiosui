@@ -416,6 +416,86 @@ window.TERRA_DATA_BUILD.fragment(
         ])
       ]
     }
+    {
+      id: "car_urs_officer_after_dismissal",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 25 },
+      after: { id: "car_urs_officer_choice_purge", min: 2, choice: 1 },
+      show: s => true &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-imperial-officer" && a.status === "left") &&
+        s.lifeRecord?.goals?.some(g => g.id === "ursus-dismissed-officer-next-livelihood" &&
+          ["active", "compromised", "paused"].includes(g.status)),
+      t: "軍服を脱いで幾年かが過ぎた。没収された財産や、かつての肩章が戻ってくる気配はない。もう軍の命令が届かない場所にも、食べていくための仕事はあった。",
+      c: [
+        $terraData.K("働き口の手がかりを探す", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "店の軒先や仕事を仲介する者を訪ねて歩いた。今日のところ、雇ってくれる者は見つからなかった。",
+          { lifeGoal: { id: "ursus-dismissed-officer-next-livelihood", action: "continue",
+            note: "除隊後の求職を続けたが、採用はまだ成立していない" } }]),
+        $terraData.K("当面は仕事探しを休む", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "ひとまず足を止め、手元に残ったものを数えた。次の勤め先を決めるのは、もう少し先に延ばした。",
+          { lifeGoal: { id: "ursus-dismissed-officer-next-livelihood", action: "pause",
+            note: "除隊後の求職をいったん休んだ" } }]),
+        $terraData.K("今の仕事で新たな生活を始めたと認める", {
+          show: s => s.job > 0 && s.job !== 51,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "かつての階級は今の勤め先では役に立たない。自分の仕事を終え、約束された報酬を受け取った。",
+          { lifeGoal: { id: "ursus-dismissed-officer-next-livelihood", action: "complete",
+            note: "帝国軍を離れた後、別の実際の職業で新しい生計を得た" } }]),
+        $terraData.K("働き始めた後も先行きを考え続ける", {
+          show: s => s.job > 0 && s.job !== 51,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "新しい勤務は続いている。それでも、この先の暮らしを決めるにはまだ早いと感じた。",
+          { lifeGoal: { id: "ursus-dismissed-officer-next-livelihood", action: "continue",
+            note: "別の仕事に就いたが、除隊後の生計を引き続き見極める" } }])
+      ]
+    },
+    {
+      id: "car_urs_guard_after_expulsion",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 23 },
+      after: { id: "car_urs_guard_choice_riot", min: 2, choice: 1 },
+      show: s => true &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-border-mine-guard" && a.status === "left") &&
+        s.lifeRecord?.goals?.some(g => g.id === "ursus-expelled-guard-next-livelihood" &&
+          ["active", "compromised", "paused"].includes(g.status)),
+      t: "坑道を逃げ出したあの日のことは今も覚えている。軍務を追われてからは、制服のない日々を送っていた。夜になると、地下の鉄扉が軋む音を思い出すことがあった。",
+      c: [
+        $terraData.K("別の働き口を探して回る", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "早朝から求人の話を聞いて回った。仕事を頼めそうな相手の名前を覚えたが、採用の約束は得られなかった。",
+          { lifeGoal: { id: "ursus-expelled-guard-next-livelihood", action: "continue",
+            note: "追放後も求職を続けたが、新たな採用は成立していない" } }]),
+        $terraData.K("しばらく身を休める", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "人の少ない場所に腰を下ろし、しばらく何もしないことにした。翌日の暮らしは、まだ決めていなかった。",
+          { lifeGoal: { id: "ursus-expelled-guard-next-livelihood", action: "pause",
+            note: "軍務追放後の求職を一時中断した" } }]),
+        $terraData.K("次の職を得たことに一区切りつける", {
+          show: s => s.job > 0 && s.job !== 52,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "今の仕事を終え、報酬を受け取った。坑道の扉の内側とは違う場所で、一日を終えることができた。",
+          { lifeGoal: { id: "ursus-expelled-guard-next-livelihood", action: "complete",
+            note: "軍務追放の後、別の実際の職業で生計を得た" } }]),
+        $terraData.K("新しい職があっても暮らしを見直し続ける", {
+          show: s => s.job > 0 && s.job !== 52,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "働き始めてからも、いつまでこの勤めが続くかは分からない。しばらく考え続けることにした。",
+          { lifeGoal: { id: "ursus-expelled-guard-next-livelihood", action: "continue",
+            note: "別の仕事に就いたが、追放後の暮らしの安定を引き続き見極める" } }])
+      ]
+    },
   ];
 
   for (const event of E) {
