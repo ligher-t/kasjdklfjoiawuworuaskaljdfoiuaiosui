@@ -16,7 +16,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "クルビア" && s.job === $terraData.REG_JOBS.col_pioneer,
+      show: s => s.res?.n === "クルビア" && $terraData.regionalCareerOnDuty(s, "col_pioneer"),
       t: "乾いた土煙が舞う荒野の農場で、地下水汲み上げポンプのモーターを分解修理した。厳しい日差しの中、自らの手で開墾した畑に緑の芽が吹くのを見つめる。すべてが自己責任のフロンティアで、今日も大地と向き合う。",
       c: [
         $terraData.K("トラクターの燃料を補給し、日没を迎える", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -33,7 +33,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "クルビア" && s.job === $terraData.REG_JOBS.col_pioneer,
+      show: s => s.res?.n === "クルビア" && $terraData.regionalCareerOnDuty(s, "col_pioneer"),
       t: "収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取ってサイロから撃って撃退するか、要求を呑んで土地を明け渡すか。",
       c: [
         $terraData.K("サイロに籠城し、猟銃で応戦する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -67,7 +67,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "カジミエーシュ" && s.job === $terraData.REG_JOBS.kaz_comp_knight,
+      show: s => s.res?.n === "カジミエーシュ" && $terraData.regionalCareerOnDuty(s, "kaz_comp_knight"),
       t: "照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と巨額のギャラが飛び交うが、負ければ即座に契約を切られる過酷な競争の世界である。",
       c: [
         $terraData.K("サイン会をこなし、専属トレーナーのマッサージを受ける", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -84,7 +84,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "カジミエーシュ" && s.job === $terraData.REG_JOBS.kaz_comp_knight,
+      show: s => s.res?.n === "カジミエーシュ" && $terraData.regionalCareerOnDuty(s, "kaz_comp_knight"),
       t: "メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する』。八百長を呑んで巨額の富を手にするか、騎士の誇りを賭けて真正面から勝利を掴むか。",
       c: [
         $terraData.K("八百長を断固拒絶し、全霊を賭けて決勝戦で打ち倒す", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -118,7 +118,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "カジミエーシュ" && s.job === $terraData.REG_JOBS.kaz_armorless,
+      show: s => s.res?.n === "カジミエーシュ" && $terraData.regionalCareerOnDuty(s, "kaz_armorless"),
       t: "商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。冷酷な数字として命を消去する日常である。",
       c: [
         $terraData.K("気配を消してアジトへ戻る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -139,7 +139,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "シラクーザ" && s.job === $terraData.REG_JOBS.sir_soldier,
+      show: s => s.res?.n === "シラクーザ" && $terraData.regionalCareerOnDuty(s, "sir_soldier"),
       t: "石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コートの下の銃の重みが、シラクーザの夜の秩序を担保している。",
       c: [
         $terraData.K("回収金を幹部に納め、酒場でワインを飲む", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -156,7 +156,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "シラクーザ" && s.job === $terraData.REG_JOBS.sir_soldier,
+      show: s => s.res?.n === "シラクーザ" && $terraData.regionalCareerOnDuty(s, "sir_soldier"),
       t: "隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。夜の市街地で血で血を洗う銃撃戦が始まる。",
       c: [
         $terraData.K("先頭を切ってクラブに突入し、サブマシンガンを乱射する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -190,7 +190,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "シラクーザ" && s.job === $terraData.REG_JOBS.sir_police,
+      show: s => s.res?.n === "シラクーザ" && $terraData.regionalCareerOnDuty(s, "sir_police"),
       t: "ヌオバ・ウォルシーニの広場で、市民からの陳情や交通の整理を行った。マフィアの報復を恐れて声を潜める住民に優しく声をかけ、法による保護を約束する。銃ではなく法典で街を変える、静かで尊い戦いである。",
       c: [
         $terraData.K("詰所で日誌を書き終え、パスタを食べる", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -211,7 +211,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "シエスタ" && s.job === $terraData.REG_JOBS.sie_obs,
+      show: s => s.res?.n === "シエスタ" && $terraData.regionalCareerOnDuty(s, "sie_obs"),
       t: "シエスタ火山の観測ドームで、マグマだまりの圧力と噴気孔の硫黄濃度データを集計した。リゾート地で音楽フェスを楽しむ観光客たちの笑顔を守るため、数値の異常を一つも見落とさぬよう目を光らせる。",
       c: [
         $terraData.K("安全報告書を市長府へ送信する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
