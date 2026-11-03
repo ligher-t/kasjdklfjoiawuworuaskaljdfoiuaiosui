@@ -6,7 +6,7 @@ const {context,setup} = require('./support/annual-cases.cjs');
 const {ctx} = context(path.resolve(__dirname,'..'));
 setup(ctx,{id:'education-world',seed:20261103,region:'龍門',age:8});
 const evaluate = code => JSON.parse(vm.runInContext('JSON.stringify((()=>{' + code + '})())',ctx,{timeout:20000}));
-const grid = evaluate('
+const grid = evaluate(`
   const regions=Object.keys(EDUCATION_REGIONAL_PRESENCE);
   const kinds=Object.keys(EDUCATION_LOCALITY_PRESENCE_DELTA);
   let cells=0,violations=0,outside=0;
@@ -21,7 +21,7 @@ const grid = evaluate('
     cells,violations,outside,lungmen:educationPresenceRates("龍門","固定都市の街区"),
     frontier:educationPresenceRates("カズデル","辺境・移動の多い居住地"),
     special:educationPresenceRates("カズデル","辺境・移動の多い居住地","kazdel_reconstruction_core")};
-');
+`);
 assert.deepEqual([grid.regions,grid.kinds,grid.stages,grid.cells],[19,7,6,798]);
 assert.equal(grid.violations,0);
 assert.equal(grid.outside,0);
@@ -31,7 +31,7 @@ assert.equal(grid.frontier.primary,0);
 assert.equal(grid.special.primary,80);
 assert.equal(grid.special.university,17);
 
-const world = evaluate('
+const world = evaluate(`
   const s=S, rng=s.rngState;
   const areaId=educationAreaForResidence(s),w=s.world.educationWorld;
   const before=JSON.stringify(w),draws=Object.keys(w.generationDecisions).length;
@@ -42,7 +42,7 @@ const world = evaluate('
     linked:offerings.every(x=>w.campuses[x.campusId]?.institutionId===x.institutionId &&
       w.institutions[x.institutionId]?.offeringIds.includes(x.id)),
     formalCount:offerings.length,neighborCount:educationNeighborAreaIds(s,areaId).length};
-');
+`);
 assert.equal(world.rngSame,true);
 assert.equal(world.areaId,world.repeat);
 assert.equal(world.worldSame,true);
@@ -51,7 +51,7 @@ assert(world.draws>=2);
 assert.equal(world.linked,true);
 assert(world.neighborCount<=4);
 
-const city = evaluate('
+const city = evaluate(`
   const s={randomSeed:998812,world:{events:{}},year:1099,res:{n:"龍門"},
     local:{city:"龍門",kind:"移動都市の居住区",placeId:"city:龍門:龍門",districtId:"district:1"}};
   const central=ensureEducationWorldForResidence(s);
@@ -65,7 +65,7 @@ const city = evaluate('
   return {central,adjacent,uni,arts,alternatives,hubs:Object.keys(records.hubs).length,
     uniInstitutions:Object.values(records.institutions).filter(x=>x.institutionCategory==="university").length,
     artsInstitutions:Object.values(records.institutions).filter(x=>x.institutionCategory==="originium_arts_academy").length};
-');
+`);
 assert.equal(city.adjacent.length,3);
 assert.equal(city.hubs,1);
 assert(city.uniInstitutions<=1);
@@ -75,7 +75,7 @@ for(const row of city.alternatives) {
   assert.deepEqual(row.arts,city.arts,'arts offering is hub-shared');
 }
 
-const unordered = evaluate('
+const unordered = evaluate(`
   function state(){return {randomSeed:771122,world:{events:{}},year:1099,res:{n:"サーミ"},
     local:{kind:"小規模な定住地",city:null,educationAreaAnchor:"settlement-a",placeId:"A",districtId:"district:1"}};}
   function snapshot(reverse){
@@ -90,12 +90,12 @@ const unordered = evaluate('
   }
   const ab=snapshot(false),ba=snapshot(true);
   return {first:ab,second:ba};
-');
+`);
 assert.deepEqual(unordered.first.decisions,unordered.second.decisions,
   'placement does not depend on the order in which explicit settlements are consulted');
 assert.notEqual(unordered.first.ids[0],unordered.first.ids[1]);
 
-const saved = evaluate('
+const saved = evaluate(`
   const original=S.world.educationWorld;
   const frozen=JSON.stringify(original);
   const clone=JSON.parse(JSON.stringify(S));
@@ -103,7 +103,7 @@ const saved = evaluate('
   return {unchanged:frozen===JSON.stringify(original),
     restoredWorld:frozen===JSON.stringify(clone.world.educationWorld),
     sameArea:id===S.local.educationAreaId};
-');
+`);
 assert.equal(saved.unchanged,true);
 assert.equal(saved.restoredWorld,true);
 assert.equal(saved.sameArea,true);
