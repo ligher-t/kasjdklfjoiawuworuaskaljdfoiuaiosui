@@ -307,4 +307,62 @@ assert.equal(noFuture.refused,true);
 assert.equal(noFuture.pending,"pending");
 assert.equal(noFuture.afterDeath,true);
 assert.equal(noFuture.noNewCredit,true);
+fresh();install();
+const interSchool=run(function(){
+  const s=S,world=s.world.educationWorld,origin=s.local.educationAreaId,
+    oldId=s.educationPath.currentEnrollmentId,
+    oldPlacement=s.educationPlacements.currentPlacementId,
+    first=s.educationPath.offeringId;
+  const secondInst=educationRegisterInstitution(world,origin,"I05-second-university",
+    "university",["university"],s.year),
+    second=world.offerings[secondInst.offeringIds[0]];
+  second.admissionTier=1;
+  s.mo=7;
+  const blocked=educationTransferToApprovedInstitution(s,"not-approved");
+  for(let month=1;month<=6;month++)educationRecordAttendance(s,{
+    enrollmentId:oldId,placementId:oldPlacement,year:s.year,month,
+    personalAccess:1,evidenceRef:"prior-school:"+month
+  });
+  s.educationTransferApprovals={
+    "approved-placement-1":{
+      approved:true,sourceRef:"receiving-institution-signed-offer",
+      recognitionRef:"approved-course-credit-read-across",
+      fundingClearanceRef:"incoming-institution-school-tuition-accepted",
+      creditRecognitionStatus:"approved",tuitionRecognitionStatus:"approved",
+      fromEnrollmentId:oldId,toOfferingId:second.id,
+      effectiveFrom:{year:s.year,month:7}
+    }
+  };
+  const relocated=educationTransferToApprovedInstitution(s,"approved-placement-1"),
+    noRepeat=educationTransferToApprovedInstitution(s,"approved-placement-1"),
+    current=s.educationPath.currentEnrollmentId,
+    currentPlacement=s.educationPlacements.currentPlacementId;
+  s.mo=12;
+  for(let month=7;month<=12;month++)educationRecordAttendance(s,{
+    enrollmentId:current,placementId:currentPlacement,year:s.year,month,
+    personalAccess:1,evidenceRef:"receiving-school:"+month
+  });
+  const credit=educationSettleCompletedAcademicYear(s,s.year),
+    from=s.educationRecord.enrollments.find(x=>x.id===oldId),
+    to=s.educationRecord.enrollments.find(x=>x.id===current);
+  return {blocked:blocked===null,relocated:!!relocated,noRepeat:noRepeat===null,
+    fromStatus:from.status,toStatus:to.status,
+    beforeOffering:first!==second.id,
+    oldLink:to.priorEnrollmentId===oldId,
+    equivalent:credit.equivalent,credited:credit.credited,
+    references:credit.sourceMonthKeys.length,
+    distinct:oldId!==current,issues:educationAttendanceInvariants(s)};
+});
+assert.equal(interSchool.blocked,true);
+assert.equal(interSchool.relocated,true);
+assert.equal(interSchool.noRepeat,true);
+assert.equal(interSchool.fromStatus,"transferred");
+assert.equal(interSchool.toStatus,"enrolled");
+assert.equal(interSchool.beforeOffering,true);
+assert.equal(interSchool.oldLink,true);
+assert.equal(interSchool.equivalent,12);
+assert.equal(interSchool.credited,true);
+assert.equal(interSchool.references,12);
+assert.equal(interSchool.distinct,true);
+assert.deepEqual(interSchool.issues,[]);
 console.log("PASS P05/P09 annual 9/12, disruptions, transfer cap, idempotence and non-anticipatory credits");
