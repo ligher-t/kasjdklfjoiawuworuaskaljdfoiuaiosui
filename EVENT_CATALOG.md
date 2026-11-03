@@ -27717,7 +27717,7 @@
     "id": "columbia-technical-work",
     "title": "技術職を続け、暮らしと安全を両立させる",
     "priority": "生計と仕事",
-    "action": "compromise",
+    "action": "abandon",
     "note": "現職を離れ、別の働き口を探す"
   },
   "p": -5,
@@ -28410,7 +28410,7 @@
     "id": "columbia-technical-work",
     "title": "技術職を続け、暮らしと安全を両立させる",
     "priority": "生計と仕事",
-    "action": "compromise",
+    "action": "abandon",
     "note": "内部確認の結論を待たず現職を離れた"
   },
   "p": -2,
@@ -28655,7 +28655,7 @@
     "id": "columbia-technical-work",
     "title": "技術職を続け、暮らしと安全を両立させる",
     "priority": "生計と仕事",
-    "action": "compromise",
+    "action": "abandon",
     "note": "同じ職場での継続を断念し、別の働き口を探す"
   },
   "p": -2,
@@ -28866,7 +28866,7 @@
     "id": "columbia-technical-work",
     "title": "技術職を続け、暮らしと安全を両立させる",
     "priority": "暮らしの再構成",
-    "action": "compromise",
+    "action": "abandon",
     "note": "同じ職場での勤務を終えた"
   },
   "p": 0
@@ -29036,7 +29036,7 @@
   },
   "lifeGoal": {
     "id": "victoria-clerk-livelihood",
-    "action": "compromise",
+    "action": "abandon",
     "note": "この仲介所での勤務を終えた"
   },
   "p": -1
@@ -220042,7 +220042,7 @@ s => {
   },
   "lifeGoal": {
     "id": "rhodes-work",
-    "action": "compromise",
+    "action": "abandon",
     "note": "別の仕事へ進むため退職"
   },
   "p": 1
