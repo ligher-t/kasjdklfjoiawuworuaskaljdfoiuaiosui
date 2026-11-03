@@ -237533,7 +237533,8 @@ s => {
     "id": "yan-governance",
     "title": "科挙に合格し、三省六部の法と典籍を治める",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 3,
@@ -237701,7 +237702,8 @@ s => {
     "id": "yan-suis-investigation",
     "title": "巨獣の動向と官吏の汚職を監察する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 3,
   "k": 2,
@@ -237861,7 +237863,8 @@ s => {
     "id": "yan-tianshi-arts",
     "title": "天師府で天候・治水・地脈のアーツを修める",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 3,
@@ -238007,7 +238010,8 @@ s => {
     "id": "lmd-law-enforcement",
     "title": "龍門の治安と秩序を死守する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 0,
@@ -238045,7 +238049,8 @@ s => {
     "id": "lmd-law-enforcement",
     "title": "下請け警備員として危険地帯の詰め所に立つ",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -1,
   "k": 0,
@@ -238191,7 +238196,8 @@ s => {
     "id": "lmd-underground-deals",
     "title": "龍門の影で情報を売り買いし生き残る",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 2,
@@ -238337,7 +238343,8 @@ s => {
     "id": "higashi-samurai-duty",
     "title": "主君に忠義を尽くし、武士の誉れを守る",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 0,
@@ -238375,7 +238382,8 @@ s => {
     "id": "higashi-samurai-duty",
     "title": "泥にまみれ、最前線で命を懸けて武功を狙う",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -1,
   "k": 0,
@@ -238521,7 +238529,8 @@ s => {
     "id": "higashi-ninja-mission",
     "title": "影となりて密命を遂行する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 3,
   "k": 0,
@@ -238767,7 +238776,8 @@ s => {
     "id": "higashi-cyber-defense",
     "title": "電子の闇に潜み、国家の防諜と破壊工作を担う",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 4,
   "k": 6,
@@ -238940,7 +238950,8 @@ s => {
     "id": "higashi-shinto-devotion",
     "title": "神仏を敬い、人々の穢れと苦難を鎮める",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 4,
   "k": 1,
@@ -238978,7 +238989,8 @@ s => {
     "id": "higashi-shinto-devotion",
     "title": "霊峰の滝に打たれ、己の雑念を削ぎ落とす",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 0,
@@ -239123,7 +239135,8 @@ s => {
     "id": "higashi-touhou-manufacturing",
     "title": "大量生産される刀剣と近代兵器を鍛造する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 0,
   "k": 2,
@@ -239161,7 +239174,8 @@ s => {
     "id": "higashi-touhou-manufacturing",
     "title": "高熱の溶解炉で鉄屑を運び、火傷に耐える",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -2,
   "k": 0,
@@ -239291,7 +239305,8 @@ s => {
     "id": "ursus-imperial-command",
     "title": "ウルサス軍の威信を背負い、部隊を指揮する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 0,
@@ -239329,7 +239344,8 @@ s => {
     "id": "ursus-imperial-command",
     "title": "莫大な軍資金の借金を背負い、士官席にしがみつく",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -2,
   "k": 0,
@@ -239475,7 +239491,8 @@ s => {
     "id": "ursus-border-mine-patrol",
     "title": "極寒の国境線と鉱山監視で生き延びる",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 1,
   "k": 0,
@@ -239513,7 +239530,8 @@ s => {
     "id": "ursus-border-mine-patrol",
     "title": "粉塵舞う地下坑道で、暴動と急性感染に怯えながら見張る",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -3,
   "k": 0,
@@ -239643,7 +239661,8 @@ s => {
     "id": "ursus-science-engineering",
     "title": "装甲列車と軍用移動都市の堅牢な機構を設計する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 1,
   "k": 3,
@@ -239789,7 +239808,8 @@ s => {
     "id": "victoria-infantry-service",
     "title": "泥まみれの塹壕で命令に従い生き残る",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 1,
   "k": 0,
@@ -239827,7 +239847,8 @@ s => {
     "id": "victoria-infantry-service",
     "title": "砲弾を担ぎ、泥濘の補給路を這いずり回る",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -2,
   "k": 0,
@@ -239957,7 +239978,8 @@ s => {
     "id": "victoria-officer-career",
     "title": "大公爵の派閥抗争の中で軍歴を重ね、権力を掴む",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 3,
@@ -239995,7 +240017,8 @@ s => {
     "id": "victoria-officer-career",
     "title": "莫大な任官借金を抱えながら、公爵の顔色を窺う",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -2,
   "k": 0,
@@ -240140,7 +240163,8 @@ s => {
     "id": "victoria-parliament-governance",
     "title": "議会の法律案と利権文書を起草し、行政を補佐する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 1,
   "k": 3,
@@ -240286,7 +240310,8 @@ s => {
     "id": "victoria-locomotive-engineering",
     "title": "高圧蒸気機関と鉄道網の安全運行を維持する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 0,
   "k": 2,
@@ -240433,7 +240458,8 @@ s => {
     "id": "leithania-golden-law-enforce",
     "title": "女帝の金律を護持し、不協和音を奏でる者を粛清する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 3,
   "k": 4,
@@ -240594,7 +240620,8 @@ s => {
     "id": "leithania-court-music",
     "title": "貴族のサロンでアーツ音楽を奏で、庇護を受ける",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 2,
@@ -240740,7 +240767,8 @@ s => {
     "id": "laterano-notarial-execution",
     "title": "サンクタ法典を厳格に執行し、契約と遺言を守護する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 3,
   "k": 3,
@@ -240902,7 +240930,8 @@ s => {
     "id": "laterano-landen-devotion",
     "title": "祈りと守護銃の伝統を守り、修道院に奉仕する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 4,
   "k": 0,
@@ -241046,7 +241075,8 @@ s => {
     "id": "columbia-frontier-survival",
     "title": "荒野で農場を開墾し、自らの手でアメリカン・ドリームを掴む",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 0,
@@ -241085,7 +241115,8 @@ s => {
     "id": "columbia-frontier-survival",
     "title": "高利貸しの返済期日に追われながら、荒野にしがみつく",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -2,
   "k": 0,
@@ -241229,7 +241260,8 @@ s => {
     "id": "kazimierz-arena-glory",
     "title": "アリーナの歓声を浴び、スポンサーの契約金を稼ぎ出す",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 0,
@@ -241267,7 +241299,8 @@ s => {
     "id": "kazimierz-arena-glory",
     "title": "八百長の殴られ役としてアリーナの砂を噛む",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -3,
   "k": 0,
@@ -241412,7 +241445,8 @@ s => {
     "id": "kazimierz-armorless-elimination",
     "title": "商業連合会の影で標的を暗殺し、組織の掟に縛られる",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 3,
   "k": 0,
@@ -241558,7 +241592,8 @@ s => {
     "id": "siracusa-mafia-loyalty",
     "title": "ファミリーの掟に従い、縄張りを守り血の抗争を生き延びる",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 0,
@@ -241703,7 +241738,8 @@ s => {
     "id": "siracusa-court-justice",
     "title": "マフィアの暴力に屈せず、法と市民の正義を守る",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 2,
@@ -241848,7 +241884,8 @@ s => {
     "id": "siesta-volcano-monitoring",
     "title": "黒曜石火山の地殻変動を観測し、都市の命綱を守る",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 3,
@@ -241993,7 +242030,8 @@ s => {
     "id": "sargon-padishah-service",
     "title": "パーディシャーに忠誠を捧げ、砂漠の権力抗争で生き抜く",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 0,
@@ -242031,7 +242069,8 @@ s => {
     "id": "sargon-padishah-service",
     "title": "貢ぎ物の借金を抱えながら、領主の護衛を務める",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -2,
   "k": 0,
@@ -242176,7 +242215,8 @@ s => {
     "id": "sargon-acahualla-might",
     "title": "雨林の力比べで部族の誇りを守り、仲間を導く",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 3,
   "k": 0,
@@ -242321,7 +242361,8 @@ s => {
     "id": "sami-nature-communion",
     "title": "森と巨獣の神託を読み、部族の生存を守る",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 5,
   "k": 3,
@@ -242482,7 +242523,8 @@ s => {
     "id": "sami-scar-demon-defense",
     "title": "北方の悪魔を氷原に押し留め、テラの大地を守護する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 3,
   "k": 0,
@@ -242627,7 +242669,8 @@ s => {
     "id": "kjerag-karlan-trade",
     "title": "最新の銃火器と近代流通網でイェラグの変革を支える",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 0,
   "k": 2,
@@ -242772,7 +242815,8 @@ s => {
     "id": "kjerag-vine-guard",
     "title": "カランドの女神の神聖を守り、聖山への侵入者を防ぐ",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 4,
   "k": 0,
@@ -242916,7 +242960,8 @@ s => {
     "id": "kazdel-commission-conquest",
     "title": "サルカズの怨念を晴らし、軍事委員会の覇業に身を投じる",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 0,
@@ -242954,7 +242999,8 @@ s => {
     "id": "kazdel-commission-conquest",
     "title": "最前線の盾として突撃させられる過酷な兵役",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -3,
   "k": 0,
@@ -243099,7 +243145,8 @@ s => {
     "id": "kazdel-bonesmith-craft",
     "title": "魔獣の骨と源石を刻み、呪術兵器を鍛え上げる",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 3,
   "k": 3,
@@ -243244,7 +243291,8 @@ s => {
     "id": "iberia-inquisition-crusade",
     "title": "海の怪物の侵食を阻み、深海教会の異端を根絶やしにする",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 3,
   "k": 0,
@@ -243459,7 +243507,8 @@ s => {
     "id": "iberia-lantern-tuning",
     "title": "光の目を維持し、大静謐の暗闇からイベリアの沿岸を守る",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 3,
@@ -243604,7 +243653,8 @@ s => {
     "id": "bolivar-coalition-war",
     "title": "泥沼の内戦で一日でも長く生き延び、家族への仕送りを稼ぐ",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -1,
   "k": 0,
@@ -243749,7 +243799,8 @@ s => {
     "id": "bolivar-dossoles-security",
     "title": "リゾート都市ドッソレスの華やかな治安を死守する",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 0,
@@ -243894,7 +243945,8 @@ s => {
     "id": "rim-mining-platform-engineering",
     "title": "巨大採掘機を運用し、源石鉱脈から巨額の富を掘り出す",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 3,
@@ -243932,7 +243984,8 @@ s => {
     "id": "rim-mining-platform-engineering",
     "title": "手作業で源石鉱脈を砕き、粉塵に咽びながら働く",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": -2,
   "k": 0,
@@ -244061,7 +244114,8 @@ s => {
     "id": "minos-temple-glory",
     "title": "肉体を極限まで鍛え、ポリスの自由と名誉のために戦う",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 3,
   "k": 0,
@@ -244206,7 +244260,8 @@ s => {
     "id": "minos-agora-debates",
     "title": "アゴラで市民の自由と正義を論じ、公正な裁判を行う",
     "priority": "生業",
-    "action": "start"
+    "action": "start",
+    "preserveAchievement": true
   },
   "p": 2,
   "k": 3,
