@@ -93,6 +93,7 @@ function educationFinancePrice(s,stage,tier=1,offeringId=null) {
     tuitionBasis:override!=null?"school-final-base":"game-model-stage-base",
     tierMultiplier:override!=null?1:tierFactor};
 }
+// Pure calculations never alter wallets, eligibility, random state or enrollment.
 function educationQuoteCosts(s,input) {
   const stage=input?.stage||s.educationPath?.stage,
     tier=input?.tier||s.educationPath?.tier||1,
@@ -113,6 +114,13 @@ function educationQuoteCosts(s,input) {
     basis:"game-model-school-tuition",
     lines:[{kind,amount}]
   };
+}
+function educationRecordQuote(s,quote) {
+  if(!quote?.id||!Number.isSafeInteger(quote.amount))throw Error("教育見積の内容が不正");
+  const f=educationFinanceState(s);
+  if(f.quotes[quote.id])return f.quotes[quote.id];
+  f.quotes[quote.id]=educationFinanceClone(quote);
+  return f.quotes[quote.id];
 }
 function educationEnsureInvoice(s,input) {
   if(!input?.id||typeof input.id!=="string"||
@@ -323,7 +331,7 @@ function educationPlanRefund(s,invoiceId,reasonId,parameters={}) {
       return {allowed:false,reason:"delivery-not-verified"};
     ceiling=Math.floor(invoice.paid*(periods-provided)/periods);
   }
-  ceiling=Math.min(ceiling,invoice.paid-invoice.refunded);
+  ceiling=Math.min(Math.max(0,ceiling-invoice.refunded),invoice.paid-invoice.refunded);
   if(!ceiling)return {allowed:false,reason:"policy-zero-refund"};
   const receiptGroups={};
   for(const receiptId of invoice.receiptIds){
@@ -333,16 +341,26 @@ function educationPlanRefund(s,invoiceId,reasonId,parameters={}) {
     const group=receiptGroups[key] ||= {source:row.source,sourceRef:row.sourceRef,amount:0};
     group.amount+=row.amount;
   }
+  const prior=Object.values(f.refunds||{}).filter(row=>
+    row.invoiceId===invoiceId && row.status==="settled");
+  for(const settled of prior)for(const part of settled.allocation||[]){
+    const key=part.source+":"+(part.sourceRef||"");
+    if(!receiptGroups[key])return {allowed:false,reason:"refund-source-mismatch"};
+    receiptGroups[key].amount-=part.amount;
+    if(receiptGroups[key].amount<0)return {allowed:false,reason:"refund-overpayer"};
+  }
   const total=Object.values(receiptGroups).reduce((n,row)=>n+row.amount,0);
-  if(total!==invoice.paid)return {allowed:false,reason:"receipt-mismatch"};
+  if(total!==invoice.paid-invoice.refunded)return {allowed:false,reason:"receipt-mismatch"};
   const payerOrder=["personal","household","grant","contract-loan"];
   const parts=Object.values(receiptGroups).sort((a,b)=>
     payerOrder.indexOf(a.source)-payerOrder.indexOf(b.source) ||
     String(a.sourceRef||"").localeCompare(String(b.sourceRef||"")));
   let assigned=0;
   for(const [index,row] of parts.entries()){
-    row.amount=index===parts.length-1?ceiling-assigned:Math.floor(ceiling*row.amount/total);
+    const available=row.amount;
+    row.amount=index===parts.length-1?ceiling-assigned:Math.floor(ceiling*available/total);
     assigned+=row.amount;
+    if(row.amount>available)return {allowed:false,reason:"refund-overpayer"};
   }
   return {allowed:true,idempotent:false,id,invoiceId,reasonId,amount:ceiling,
     expectedPaid:invoice.paid,expectedRefunded:invoice.refunded,parts,
