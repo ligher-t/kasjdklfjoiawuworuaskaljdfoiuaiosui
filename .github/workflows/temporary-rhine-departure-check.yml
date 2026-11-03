@@ -1,4 +1,4 @@
-name: Temporary Higashi and civilian career goal verification
+name: Temporary retirement paused-goal and legacy-state verification
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]

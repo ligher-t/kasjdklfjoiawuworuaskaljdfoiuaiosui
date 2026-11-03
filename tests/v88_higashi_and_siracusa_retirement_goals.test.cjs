@@ -63,4 +63,29 @@ assert.equal(older.aff,'left');
 assert.equal(older.goal,'abandoned');
 assert.equal(older.action,'abandon');
 assert.deepEqual(older.issues,[]);
+// Paused life goals and older saves with an omitted goal must still close on departure.
+for(let i=0;i<2;i++){
+  ctx.MODE=i;
+  const boundary=inspect(`
+    born({seed:209500+MODE,by:1059,region:'極東'});
+    S.year=1090;S.age=31;S.job=14;S.fl.higashi_service=1;
+    ap({lifeAffiliation:{id:'higashi-service',title:'極東の軍務・兵站職',
+      kind:'career',action:'join',role:'街道警備'}});
+    if(MODE===0){
+      ap({lifeGoal:{id:'higashi-service',
+        title:'軍務を通じて生活を支え、地域の安全に関わる',action:'start'}});
+      ap({lifeGoal:{id:'higashi-service',action:'pause'}});
+    }
+    S.year=1101;S.age=42;
+    ap(EV.find(e=>e.id==='hig_service_review').c[2].o[0][2]);
+    const goal=S.lifeRecord.goals.find(g=>g.id==='higashi-service');
+    return {status:goal?.status,title:goal?.title,
+      affiliation:S.lifeRecord.affiliations.find(a=>a.id==='higashi-service').status,
+      issues:auditLifeState(S)};
+  `);
+  assert.equal(boundary.status,'abandoned');
+  assert.equal(boundary.title,'軍務を通じて生活を支え、地域の安全に関わる');
+  assert.equal(boundary.affiliation,'left');
+  assert.deepEqual(boundary.issues,[]);
+}
 console.log('PASS: Higashi service departures and Siracusa retirement close former goals');
