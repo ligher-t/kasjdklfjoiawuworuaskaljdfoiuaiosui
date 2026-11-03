@@ -53531,8 +53531,8 @@ s => {
   },
   "lifeGoal": {
     "id": "siracusa-post-family-work",
-    "action": "compromise",
-    "onlyIfActive": true,
+    "title": "ファミリーを離れ、地域の仕事で生計を立てる",
+    "action": "abandon",
     "note": "地域の仕事を終え、後年の暮らしへ移った"
   },
   "p": 2
@@ -58521,8 +58521,8 @@ s => {
   },
   "lifeGoal": {
     "id": "higashi-service",
-    "action": "compromise",
-    "onlyIfActive": true,
+    "title": "軍務を通じて生活を支え、地域の安全に関わる",
+    "action": "abandon",
     "note": "軍務を終え、民間物流へ技能を移した"
   },
   "lifeGoals": [
@@ -58584,8 +58584,8 @@ s => {
   },
   "lifeGoal": {
     "id": "higashi-service",
-    "action": "compromise",
-    "onlyIfActive": true,
+    "title": "軍務を通じて生活を支え、地域の安全に関わる",
+    "action": "abandon",
     "note": "任期を終え、次の仕事を探す"
   },
   "lifeSkill": {
@@ -58746,8 +58746,8 @@ s => {
   ],
   "lifeGoal": {
     "id": "higashi-service",
-    "action": "compromise",
-    "onlyIfActive": true,
+    "title": "軍務を通じて生活を支え、地域の安全に関わる",
+    "action": "abandon",
     "note": "軍務を終え、兵站経験を民間へ移した"
   },
   "lifeGoals": [
@@ -58790,8 +58790,8 @@ s => {
   },
   "lifeGoal": {
     "id": "higashi-service",
-    "action": "compromise",
-    "onlyIfActive": true,
+    "title": "軍務を通じて生活を支え、地域の安全に関わる",
+    "action": "abandon",
     "note": "軍務を終え、別の働き口を探す"
   },
   "lifeGoals": [
@@ -58843,8 +58843,8 @@ s => {
   },
   "lifeGoal": {
     "id": "higashi-service",
+    "title": "軍務を通じて生活を支え、地域の安全に関わる",
     "action": "abandon",
-    "onlyIfActive": true,
     "note": "軍務を終えてから次の働き口を探す"
   },
   "lifeGoals": [
