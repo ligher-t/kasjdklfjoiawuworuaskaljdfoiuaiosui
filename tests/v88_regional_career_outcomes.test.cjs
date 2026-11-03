@@ -753,6 +753,8 @@ for(const c of [
       choices:after.c.map(x=>x.show(S,tags(S))),
       issues:auditLifeState(S)
     };
+    S.year+=3;S.age+=3;
+    const afterReady=elig(after,S,tags(S));
     ap(after.c[4].o[0][2]);
     const settled={
       job:S.job,goal:next.status,
@@ -762,7 +764,7 @@ for(const c of [
       employmentEpisodes:group.episodes.length,
       afterShown:after.show(S),issues:auditLifeState(S)
     };
-    return {discharged,early,eligible,denied,later,paused,cleared,again,settled};
+    return {discharged,early,eligible,denied,later,paused,cleared,again,afterReady,settled};
   `);
   assert.deepEqual(result.discharged,{
     job:0,status:'left',oldGoal:'abandoned',newGoal:'active',
@@ -784,9 +786,11 @@ for(const c of [
   assert.deepEqual(result.again,{
     job:c.job,status:'active',episodes:2,firstEnded:1094,
     newStarted:1100,oldGoal:'active',pausedCivilian:'paused',
-    duty:true,hearing:false,followup:true,
+    duty:true,hearing:false,followup:false,
     choices:[false,false,false,false,true],issues:[]
   },'a separate successful enlistment restarts work without deleting the discharge');
+  assert.equal(result.afterReady,true,
+    'the formerly dismissed recruit can settle the old livelihood goal after its genuine three-year cooldown');
   assert.deepEqual(result.settled,{
     job:c.job,goal:'achieved',action:'complete',oldGoal:'active',
     originalMemory:1,employmentEpisodes:2,afterShown:false,issues:[]
