@@ -245279,7 +245279,14 @@ s => {
   "h": 3,
   "cr": 5,
   "p": 3,
-  "cash": 800000
+  "cash": 800000,
+  "lifeAffiliation": {
+    "id": "higashi-samurai-household",
+    "action": "role",
+    "role": "旗本頭",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -245687,7 +245694,14 @@ s => {
   "k": 8,
   "p": 5,
   "cash": 5000000,
-  "cr": 5
+  "cr": 5,
+  "lifeAffiliation": {
+    "id": "higashi-cyber-intelligence",
+    "action": "role",
+    "role": "電脳首席執行官",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -246049,6 +246063,13 @@ s => {
     "id": "ursus-officers",
     "title": "帝国軍将校団",
     "delta": 3
+  },
+  "lifeAffiliation": {
+    "id": "ursus-imperial-officer",
+    "action": "role",
+    "role": "近衛少佐",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
   }
 }
 ```
@@ -246244,7 +246265,14 @@ s => {
   "h": -3,
   "p": 3,
   "cr": 3,
-  "cash": 300000
+  "cash": 300000,
+  "lifeAffiliation": {
+    "id": "ursus-border-mine-guard",
+    "action": "role",
+    "role": "憲兵軍曹",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -246460,7 +246488,14 @@ s => {
   "h": -2,
   "cr": 4,
   "p": 3,
-  "cash": 400000
+  "cash": 400000,
+  "lifeAffiliation": {
+    "id": "victoria-regular-infantry",
+    "action": "role",
+    "role": "連隊先任軍曹",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -246869,7 +246904,14 @@ s => {
   "k": 4,
   "p": 4,
   "cr": 5,
-  "cash": 1500000
+  "cash": 1500000,
+  "lifeAffiliation": {
+    "id": "leithania-golden-law",
+    "action": "role",
+    "role": "首席法衛",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -247776,7 +247818,14 @@ s => {
   "cr": 4,
   "h": 2,
   "p": 2,
-  "cash": 1200000
+  "cash": 1200000,
+  "lifeAffiliation": {
+    "id": "siracusa-mafia-soldier",
+    "action": "role",
+    "role": "カポ",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -248962,7 +249011,14 @@ s => {
 {
   "cr": 5,
   "p": 3,
-  "cash": 1200000
+  "cash": 1200000,
+  "lifeAffiliation": {
+    "id": "kjerag-karlan-commercial",
+    "action": "role",
+    "role": "特務護衛班長",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -249377,7 +249433,14 @@ s => {
   "h": -3,
   "p": 4,
   "cr": 4,
-  "cash": 800000
+  "cash": 800000,
+  "lifeAffiliation": {
+    "id": "kazdel-military-commission",
+    "action": "role",
+    "role": "百人隊長",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -249791,7 +249854,14 @@ s => {
   "cr": 5,
   "p": 4,
   "h": -2,
-  "cash": 1000000
+  "cash": 1000000,
+  "lifeAffiliation": {
+    "id": "iberia-inquisition-officer",
+    "action": "role",
+    "role": "上級審問官",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -249999,7 +250069,14 @@ s => {
   "cr": 4,
   "p": 3,
   "k": 2,
-  "cash": 800000
+  "cash": 800000,
+  "lifeAffiliation": {
+    "id": "iberia-lantern-tuner",
+    "action": "role",
+    "role": "技師長",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -250206,7 +250283,14 @@ s => {
   "cr": 4,
   "h": -2,
   "p": 3,
-  "cash": 400000
+  "cash": 400000,
+  "lifeAffiliation": {
+    "id": "bolivar-coalition-soldier",
+    "action": "role",
+    "role": "軍曹",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -250412,7 +250496,14 @@ s => {
 {
   "cr": 5,
   "p": 3,
-  "cash": 1000000
+  "cash": 1000000,
+  "lifeAffiliation": {
+    "id": "bolivar-dossoles-police",
+    "action": "role",
+    "role": "警部補",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
@@ -250621,7 +250712,14 @@ s => {
   "cr": 5,
   "p": 4,
   "k": 3,
-  "cash": 1500000
+  "cash": 1500000,
+  "lifeAffiliation": {
+    "id": "rim-mining-lead-engineer",
+    "action": "role",
+    "role": "最高顧問技師",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  }
 }
 ```
 
