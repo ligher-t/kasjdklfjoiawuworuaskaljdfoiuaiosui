@@ -25,7 +25,7 @@ jobs:
           node tools/check-efficient.cjs syntax
           node tools/generate-event-catalog.cjs --check
           node --input-type=commonjs -e "const fs=require('node:fs');console.log('GENERATED_VERSION='+fs.readFileSync('js/version.js','utf8').match(/[a-f0-9]{64}/)[0])"
-      - name: Validate expelled career aftermath against actual event and state engine
+      - name: Validate regional exits and actual civilian reemployment outcomes
         run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs v88_regional_promotion_history.test.cjs v88_workplace_goal_departure_contracts.test.cjs v88_outcome_followup_lineage.test.cjs
       - name: Update reviewed generated files
         run: |
