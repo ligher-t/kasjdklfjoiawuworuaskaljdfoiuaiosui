@@ -684,4 +684,136 @@ for(const cfg of [
     cfg.review+' cannot activate from another historical choice');
 }
 
-console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring, expulsion and Victorian wartime/postwar exile');
+
+// Each exceptional military return needs a documented departure, individual
+// positive review, then a separate ordinary hiring result. Re-entry is not an amnesty.
+for(const c of [
+  {entry:'car_urs_officer_entry',incident:'car_urs_officer_choice_purge',
+    hearing:'car_urs_officer_disciplinary_review',review:'car_urs_officer_after_dismissal',
+    employer:'ursus-imperial-officer',formerGoal:'ursus-imperial-command',
+    civilianGoal:'ursus-dismissed-officer-next-livelihood',job:51},
+  {entry:'car_urs_guard_entry',incident:'car_urs_guard_choice_riot',
+    hearing:'car_urs_guard_disciplinary_review',review:'car_urs_guard_after_expulsion',
+    employer:'ursus-border-mine-guard',formerGoal:'ursus-border-mine-patrol',
+    civilianGoal:'ursus-expelled-guard-next-livelihood',job:52}
+]){
+  start('ウルサス');ctx.URS_REENTRY=c;
+  const result=snap(`
+    const c=URS_REENTRY,
+      hire=EV.find(x=>x.id===c.entry),
+      original=EV.find(x=>x.id===c.incident),
+      hearing=EV.find(x=>x.id===c.hearing),
+      after=EV.find(x=>x.id===c.review);
+    if(!hire||!original||!hearing||!after)
+      throw Error('Missing exceptional military career event '+c.entry);
+    S.year=1094;S.age=26;S.by=1068;S.cr=90;S.k=90;S.h=90;
+    ap(hire.c[0].o[0][2]);
+    const group=S.lifeRecord.affiliations.find(x=>x.id===c.employer);
+    const oldGoal=S.lifeRecord.goals.find(x=>x.id===c.formerGoal);
+    ap(original.c[1].o[0][2]);
+    S.sn[original.id]=S.year;
+    S.eventOutcomes={[original.id]:{year:S.year,choiceIndex:1,outcomeIndex:0}};
+    const next=S.lifeRecord.goals.find(x=>x.id===c.civilianGoal);
+    const discharged={
+      job:S.job,status:group.status,oldGoal:oldGoal.status,
+      newGoal:next.status,canApply:hire.show(S),hearing:elig(hearing,S,tags(S)),
+      oldDuty:original.show(S),issues:auditLifeState(S)
+    };
+    S.year=1096;S.age=28;
+    const early={shown:hearing.show(S),eligible:elig(hearing,S,tags(S))};
+    S.year=1097;S.age=29;
+    const eligible=elig(hearing,S,tags(S));
+    ap(hearing.c[0].o[1][2]);
+    S.sn[hearing.id]=S.year;
+    S.eventOutcomes[hearing.id]={year:S.year,choiceIndex:0,outcomeIndex:1};
+    const denied={job:S.job,canApply:hire.show(S),
+      hearingAgain:elig(hearing,S,tags(S)),status:group.status};
+    S.year=1100;S.age=32;
+    const later=elig(hearing,S,tags(S));
+    ap(after.c[1].o[0][2]);
+    S.sn[after.id]=S.year;
+    const paused=next.status;
+    ap(hearing.c[0].o[0][2]);
+    S.sn[hearing.id]=S.year;
+    S.eventOutcomes[hearing.id]={year:S.year,choiceIndex:0,outcomeIndex:0};
+    const cleared={
+      job:S.job,oldStatus:group.status,oldGoal:oldGoal.status,
+      civilianGoal:next.status,canApply:elig(hire,S,tags(S)),
+      reviewOnceMore:elig(hearing,S,tags(S)),
+      episodes:group.episodes.length,issues:auditLifeState(S)
+    };
+    ap(hire.c[0].o[0][2]);
+    const again={
+      job:S.job,status:group.status,episodes:group.episodes.length,
+      firstEnded:group.episodes[0]?.endedYear,
+      newStarted:group.episodes.at(-1)?.startedYear,
+      oldGoal:oldGoal.status,pausedCivilian:next.status,
+      duty:original.show(S),hearing:hearing.show(S),
+      followup:elig(after,S,tags(S)),
+      choices:after.c.map(x=>x.show(S,tags(S))),
+      issues:auditLifeState(S)
+    };
+    ap(after.c[4].o[0][2]);
+    const settled={
+      job:S.job,goal:next.status,
+      action:next.history.at(-1)?.action,
+      oldGoal:oldGoal.status,
+      originalMemory:S.eventOutcomes[original.id].choiceIndex,
+      employmentEpisodes:group.episodes.length,
+      afterShown:after.show(S),issues:auditLifeState(S)
+    };
+    return {discharged,early,eligible,denied,later,paused,cleared,again,settled};
+  `);
+  assert.deepEqual(result.discharged,{
+    job:0,status:'left',oldGoal:'abandoned',newGoal:'active',
+    canApply:false,hearing:false,oldDuty:false,issues:[]
+  },c.incident+' has real military discharge and blocks ordinary recruitment');
+  assert.deepEqual(result.early,{shown:true,eligible:false},
+    'a petition cannot precede the three-year waiting period');
+  assert.equal(result.eligible,true,'a documented discharge opens individual military review');
+  assert.deepEqual(result.denied,{
+    job:0,canApply:false,hearingAgain:false,status:'left'
+  },'review refusal gives no rank or job and observes cooldown');
+  assert.equal(result.later,true,'the former soldier may reapply for a hearing in three years');
+  assert.equal(result.paused,'paused',
+    'a later hearing does not itself complete the post-expulsion livelihood goal');
+  assert.deepEqual(result.cleared,{
+    job:0,oldStatus:'left',oldGoal:'abandoned',civilianGoal:'paused',
+    canApply:true,reviewOnceMore:false,episodes:1,issues:[]
+  },'an approved review restores eligibility, not military employment');
+  assert.deepEqual(result.again,{
+    job:c.job,status:'active',episodes:2,firstEnded:1094,
+    newStarted:1100,oldGoal:'active',pausedCivilian:'paused',
+    duty:true,hearing:false,followup:true,
+    choices:[false,false,false,false,true],issues:[]
+  },'a separate successful enlistment restarts work without deleting the discharge');
+  assert.deepEqual(result.settled,{
+    job:c.job,goal:'achieved',action:'complete',oldGoal:'active',
+    originalMemory:1,employmentEpisodes:2,afterShown:false,issues:[]
+  },'an explicitly chosen livelihood settlement closes the old post-dismissal goal');
+}
+// Positive-looking hearing results alone cannot restore an undocumented position.
+for(const c of [
+  {entry:'car_urs_officer_entry',incident:'car_urs_officer_choice_purge',
+    hearing:'car_urs_officer_disciplinary_review'},
+  {entry:'car_urs_guard_entry',incident:'car_urs_guard_choice_riot',
+    hearing:'car_urs_guard_disciplinary_review'}
+]){
+  start('ウルサス');ctx.URS_PHANTOM=c;
+  const bad=snap(`
+    const c=URS_PHANTOM;
+    S.year=1101;S.age=33;S.by=1068;S.cr=90;S.k=90;S.h=90;
+    S.eventOutcomes={
+      [c.incident]:{year:1094,choiceIndex:1,outcomeIndex:0},
+      [c.hearing]:{year:1100,choiceIndex:0,outcomeIndex:0}
+    };
+    S.sn[c.incident]=1094;S.sn[c.hearing]=1100;
+    const hiring=EV.find(x=>x.id===c.entry),
+      review=EV.find(x=>x.id===c.hearing);
+    return {hire:hiring.show(S),review:elig(review,S,tags(S))};
+  `);
+  assert.deepEqual(bad,{hire:false,review:false},
+    'outcome logs without a previous employer cannot invent exceptional reinstatement');
+}
+
+console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring, expulsion Victorian wartime/postwar exile and two Ursus military hearings');
