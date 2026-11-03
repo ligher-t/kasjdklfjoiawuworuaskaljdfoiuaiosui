@@ -114,4 +114,57 @@ assert.deepEqual(snap(`
   return {missing,wrong,correct,roundtrip};
 `),{missing:false,wrong:false,correct:true,roundtrip:0},
   'result-dependent after requires the actual result and is serializable');
-console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only and after-outcome');
+for(const entry of [
+  {region:'龍門',job:45,id:'lungmen-black-market'},
+  {region:'リターニア',job:59,id:'leithania-court-musician'},
+  {region:'サーミ',job:71,id:'sami-scar-warrior'}
+]){
+  start(entry.region);
+  ctx.EMPLOYMENT_CASE=entry;
+  const result=snap(`
+    const c=EMPLOYMENT_CASE;
+    S.cash=10000000;S.house.cash=10000000;
+    ap({job:c.job,lifeAffiliation:{id:c.id,title:'地域固有の勤務',action:'join',role:'現地の担当'},
+        lifeGoal:{id:'regional-career-test-'+c.id,title:'地域の仕事を続ける',action:'start'}});
+    const prior={job:S.job,status:S.lifeRecord.affiliations.find(x=>x.id===c.id).status};
+    const destination=moveDestinations(S).find(x=>x.n!==S.res.n);
+    if(!destination)throw Error('No regional route from '+c.region);
+    ap({resTo:destination.n,resFareCovered:true});
+    const affiliation=S.lifeRecord.affiliations.find(x=>x.id===c.id),
+      goal=S.lifeRecord.goals.find(x=>x.id==='regional-career-test-'+c.id),
+      career=S.lifeRecord.careerChanges.at(-1);
+    return {prior,region:S.res.n,job:S.job,affiliation:affiliation.status,goal:goal.status,
+      change:{from:career?.fromJobId,to:career?.toJobId},
+      contract:S.workContract,site:S.siteAffiliations?.workplace||null,
+      issues:auditLifeState(S)};
+  `);
+  assert.deepEqual(result.prior,{job:entry.job,status:'active'},entry.id+' was employed locally');
+  assert.notEqual(result.region,entry.region,entry.id+' moved to a new region');
+  assert.equal(result.affiliation,'left',entry.id+' old posting closed');
+  assert.equal(result.goal,'compromised',entry.id+' personal goal reviewed after departure');
+  assert.equal(result.job,0,entry.id+' no longer pays a region-bound occupation');
+  assert.deepEqual(result.change,{from:entry.job,to:0},entry.id+' transition recorded');
+  assert.equal(result.contract,null,entry.id+' no phantom work contract');
+  assert.equal(result.site,null,entry.id+' no phantom local workplace');
+  assert.deepEqual(result.issues,[],entry.id+' state audit');
+}
+start('イェラグ');
+const portable=snap(`
+  S.cash=10000000;S.house.cash=10000000;
+  ap({job:16,
+    lifeAffiliation:{id:'terra-general-transporter',title:'各地の運送業',action:'join'},
+    lifeAffiliations:[{id:'kjerag-village-transporter',title:'集落間の便',action:'join'}]});
+  const destination=moveDestinations(S).find(x=>x.n!==S.res.n);
+  if(!destination)throw Error('No exit from Kjerag');
+  ap({resTo:destination.n,resFareCovered:true});
+  return {job:S.job,local:S.lifeRecord.affiliations.find(x=>x.id==='kjerag-village-transporter').status,
+    general:S.lifeRecord.affiliations.find(x=>x.id==='terra-general-transporter').status,
+    contract:!!S.workContract,issues:auditLifeState(S)};
+`);
+assert.equal(portable.job,16,'ordinary transporter keeps the portable occupation');
+assert.equal(portable.local,'left','original village route closes after departure');
+assert.equal(portable.general,'active','general transporter work remains active');
+assert.equal(portable.contract,true,'a new current-region employer is modeled for the portable job');
+assert.deepEqual(portable.issues,[],'portable occupation audit');
+
+console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome and regional job exit');
