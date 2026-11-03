@@ -243,8 +243,12 @@ function reconcileAffiliationWork(s, preserveCurrentJob = false) {
     }
     // An explicit leave can arrive without job: 0. A closed regional employer
     // must never continue paying the old, non-transferable occupation.
-    if (!preserveCurrentJob && a.status === "left" && rule?.jobs?.includes(s.job) &&
-        s.job >= 41 && s.job <= 82) {
+    const continuingEmployer = s.lifeRecord.affiliations.some(other =>
+      other.id !== a.id &&
+      AFFILIATION_RULES[other.id]?.jobs?.includes(s.job) &&
+      affiliationWorkAvailable(s, other.id));
+    if (!preserveCurrentJob && !continuingEmployer && a.status === "left" &&
+        rule?.jobs?.includes(s.job) && s.job >= 41 && s.job <= 82) {
       const formerJob = s.job;
       s.job = 0;
       s.workPayBonus = 0;
