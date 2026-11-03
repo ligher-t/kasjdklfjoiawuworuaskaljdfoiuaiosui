@@ -443,7 +443,7 @@ const victorianExile=snap(`
     reviewAgain:elig(review,S,tags(S))
   };
   S.year=1098;S.age=28;
-  const wartimeLastYear={shown:review.show(S),postwarShown:postwar.show(S)};
+  const wartimeLastYear={shown:review.show(S),postwarEligible:elig(postwar,S,tags(S))};
   S.year=1099;S.age=29;
   const repeat=elig(review,S,tags(S)),
     postwarReady={shown:postwar.show(S),eligible:elig(postwar,S,tags(S))};
@@ -488,7 +488,7 @@ assert.deepEqual(victorianExile.continued,{
   latest:'continue',reviewAgain:false
 },'remaining with the exiled force retains command and respects cooldown');
 assert.deepEqual(victorianExile.wartimeLastYear,
-  {shown:true,postwarShown:false},
+  {shown:true,postwarEligible:false},
   '1098 wartime review may still exist, while postwar negotiations cannot begin prematurely');
 assert.equal(victorianExile.repeat,false,
   'the wartime review cannot recur after the 1098 conclusion');
