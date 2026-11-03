@@ -43,8 +43,33 @@ assert.equal(service.o[0][2].fl?.trauma_war,undefined,'recruitment alone does no
 assert.equal(guard.o[0][2].fl?.trauma_war,undefined,'a completed guard contract alone does not establish trauma');
 assert.equal(service.o[1][2].fl?.trauma_war,1,'the explicit first-battle injury still records trauma');
 function phaseBSchool(id, enrolled, age = 12) {
+  // A flag alone is not a witnessed, reachable classroom. Start a real
+  // enrollment for the pupil so P13 school scenes can verify its campus.
+  annual.setup(ctx,{id:'p0-classroom-'+id+'-'+enrolled,
+    seed:948120,region:'ヴィクトリア',age});
   ctx.__phaseBSchool = {id, enrolled, age};
-  return vm.runInContext('(()=>{ const {id,enrolled,age}=__phaseBSchool; S.age=age; S.year=S.by+age; S.res=REG.find(r=>r.n==="ヴィクトリア"); S.fl.sch=enrolled?1:0; S.ep=0; const scene=EV.find(e=>e.id===id); return {eligible:elig(scene,S,tags(S)),text:typeof scene.t==="function"?scene.t(S):scene.t,education:educationStandingLabel(S)};})()', ctx);
+  return vm.runInContext(`(()=>{
+    const {id,enrolled,age}=__phaseBSchool;
+    S.age=age;S.year=S.by+age;S.mo=4;S.fl.sch=0;S.ep=0;
+    if(enrolled){
+      ensureResidenceIdentity(S);
+      const areaId=ensureEducationWorldForResidence(S);
+      const school=educationRegisterInstitution(S.world.educationWorld,
+        areaId,"p0-confirmed-classroom","general_lower",["lower"],S.year);
+      const offering=S.world.educationWorld.offerings[school.offeringIds[0]];
+      educationStart(S,"lower",1,"p0-classroom-admission");
+      S.educationPath.institutionId=school.id;
+      S.educationPath.campusId=offering.campusId;
+      S.educationPath.offeringId=offering.id;
+      const enrollment=S.educationRecord.enrollments.at(-1);
+      educationBindFormalEnrollment(S,enrollment.id);
+      educationEnsureEnrolledSchoolPeople(S,enrollment.id);
+    }
+    const scene=EV.find(e=>e.id===id),T=tags(S);
+    return {eligible:elig(scene,S,T),
+      text:typeof scene.t==="function"?scene.t(S):scene.t,
+      education:educationStandingLabel(S)};
+  })()`,ctx);
 }
 const outOfSchool = phaseBSchool('bias_peer_mockery', false);
 const inSchool = phaseBSchool('bias_peer_mockery', true);
