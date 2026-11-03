@@ -20,15 +20,16 @@ jobs:
       - name: Update revision and validate generated event catalog
         run: |
           node tools/update-version.cjs
+          node tools/generate-event-catalog.cjs --reconcile
           node tools/generate-event-catalog.cjs --write
           node tools/check-efficient.cjs syntax
           node tools/generate-event-catalog.cjs --check
           node --input-type=commonjs -e "const fs=require('node:fs');console.log('GENERATED_VERSION='+fs.readFileSync('js/version.js','utf8').match(/[a-f0-9]{64}/)[0])"
-      - name: Check Victorian exile and relevant regional career boundaries
+      - name: Check Victorian exile path and regional career boundaries
         run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs v88_regional_promotion_history.test.cjs v88_workplace_goal_departure_contracts.test.cjs v88_outcome_followup_lineage.test.cjs
       - name: Commit generated artifacts after passing checks
         run: |
-          git add js/version.js EVENT_CATALOG.md
+          git add js/version.js EVENT_CATALOG.md tools/event-catalog-metadata.json
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
