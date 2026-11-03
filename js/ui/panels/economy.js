@@ -20,12 +20,35 @@ function renderEconomyPanel(s, services) {
       parentTreatment: "親の療養費支援",
       familyCare: "親族の療養支援",
       familyContribution: "家計への拠出",
+      education: "本人が納付した教育費（返金分控除後）",
       siblingCare: "同居感染きょうだいの療養費",
       siblingCareSupport: "別居きょうだいへの療養支援"
     };
   const flowRows = Object.entries(flow.expense || {})
     .filter(([, v]) => v > 0)
     .map(([k, v]) => [flowNames[k] || k, services.m(v)]);
+  // Render from already settled entries only; the panel never issues bills,
+  // migrates a save, or evaluates a candidate school's hidden prices.
+  const finance=s.educationFinance,
+    ledger=finance && !Array.isArray(finance.receipts) ? finance : null,
+    studentReceipts=Object.values(ledger?.receipts||{}).filter(x=>
+      x.status==="settled" && x.paidAt?.year===s.year),
+    thisYearRefunds=Object.values(ledger?.refunds||{}).filter(x=>
+      x.status==="settled" && x.refundedAt?.year===s.year),
+    paidBy=source=>studentReceipts.filter(x=>x.source===source)
+      .reduce((n,x)=>n+x.amount,0)-
+      thisYearRefunds.flatMap(x=>x.allocation||[]).filter(x=>x.source===source)
+        .reduce((n,x)=>n+x.amount,0),
+    personalEducation=ledger?paidBy("personal"):
+      s.educationAnnualFee?.year===s.year?(s.educationAnnualFee.paidByPersonal||0):0,
+    householdEducation=ledger?paidBy("household"):
+      s.educationAnnualFee?.year===s.year?(s.educationAnnualFee.paidByHousehold||0):0,
+    tuitionOutstanding=Object.values(ledger?.invoices||{}).filter(x=>
+      x.kind==="tuition" && x.status!=="void")
+      .reduce((n,x)=>n+x.outstanding,0),
+    studentCreditBalance=(s.loanContracts||[]).filter(x=>
+      x.kind==="education-credit" && x.balance>0)
+      .reduce((n,x)=>n+x.balance,0);
   services.$("fn").innerHTML = [
     ["家計状態", services.householdStrained(s) ? "逼迫" : "逼迫判定なし"],
     ["現在の経済階層", s.w.n],
@@ -44,6 +67,10 @@ function renderEconomyPanel(s, services) {
         : services.m(0)
     ],
     ["負債", services.m(s.debt)],
+    ["うち学生貸付の未返済契約残高", services.m(studentCreditBalance)],
+    ["現在の教育機関への授業料未納額（別建て）", services.m(tuitionOutstanding)],
+    ["当年教育費：本人財布からの実支払", services.m(personalEducation)],
+    ["当年教育費：家計財布からの実支払", services.m(householdEducation)],
     ["本人の純資産", services.m(s.cash + (s.investment || 0) - s.debt)],
     [
       "固定資産・事業持分",
