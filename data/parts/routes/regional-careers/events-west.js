@@ -50,7 +50,15 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("良心に従って命令を拒絶し、将校を辞任する", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
           "軍服を脱ぎ捨てて要塞を脱出した。不名誉除隊とされ全財産を没収されたが、命だけは守った。",
-          { job: 0, cash: -2000000, p: 3, cr: -5 }
+          { job: 0, cash: -2000000, p: 3, cr: -5 ,
+            lifeAffiliation: { id: "ursus-imperial-officer", action: "leave",
+              note: "命令を拒んで要塞を去り、不名誉除隊として軍籍を終えた" },
+            lifeGoals: [
+              { id: "ursus-imperial-command", action: "abandon", onlyIfUnresolved: true,
+                note: "不名誉除隊により、帝国軍で指揮を続ける目標を終えた" },
+              { id: "ursus-dismissed-officer-next-livelihood", title: "不名誉除隊後の暮らしと次の仕事を立て直す",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ])
       ]
     },
@@ -104,7 +112,15 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("鍵を投げ捨ててエレベーターへ逃げ込む", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
           "命からがら地上へ脱出したが、職場放棄の重罪で軍務を追放された。",
-          { job: 0, p: -5, cr: -3 }
+          { job: 0, p: -5, cr: -3 ,
+            lifeAffiliation: { id: "ursus-border-mine-guard", action: "leave",
+              note: "坑道から脱出した後、職場放棄を理由に軍務を追放された" },
+            lifeGoals: [
+              { id: "ursus-border-mine-patrol", action: "abandon", onlyIfUnresolved: true,
+                note: "軍務追放によって、国境と鉱山での警備任務を終えた" },
+              { id: "ursus-expelled-guard-next-livelihood", title: "軍務追放後の次の働き口を探す",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ])
       ]
     },
