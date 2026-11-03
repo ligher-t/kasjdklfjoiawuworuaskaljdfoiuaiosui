@@ -39,6 +39,6 @@ for(const choice of [0,1,2]){
  assert.deepEqual([s.lifeRecord.affiliations.find(a=>a.id==='infected-exclusion').status,
   s.lifeRecord.goals.find(g=>g.id==='order-through-exclusion').status],expected);
  assert.equal(followup.show(s),false,'resolved or recently reviewed decision cannot immediately recur');
- assert.deepEqual(vm.runInNewContext('auditLifeState(S)',ctx),[]);
+ assert.equal(vm.runInNewContext('auditLifeState(S).length',ctx),0);
 }
 console.log(JSON.stringify({passed:true,conditionedOnDiagnosisAndRecordedExclusion:true,hardlineCannotRequestPolicyReform:true,personalExceptionLeavesRuleUnchanged:true,localPolicyRevisionAndRejectionBothRecorded:true,communityRejectionRemainsUnresolved:true},null,2));

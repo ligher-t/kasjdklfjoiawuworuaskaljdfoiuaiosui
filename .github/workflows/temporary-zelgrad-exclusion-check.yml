@@ -1,4 +1,4 @@
-name: Temporary Zelgrad employment and exclusion status verification
+name: Temporary Zelgrad employment and exclusion audit verification
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
