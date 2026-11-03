@@ -67,6 +67,7 @@ const AFFILIATION_RULES = Object.freeze({
   "laterano-landen-monastery": affiliationRule("organization", "ラテラーノ", [61], "laterano-landen-devotion", "car/lat_landen_*", "ランデン修道院の修道銃士。伝統銃器と信仰の護持"),
   // 企業・商業・自治
   "columbia-frontier-pioneer": affiliationRule("region", "クルビア", [62], "columbia-frontier-survival", "car/col_pioneer_*", "クルビアのフロンティア開拓者。自己責任の荒野農場経営"),
+  "columbia-frontier-contract-crew": affiliationRule("region", "クルビア", [62], "columbia-frontier-contract-work", "col_frontier/col_frontier_contract_review", "開拓地の企業雇用による現場労働。自営の開拓農場主とは別契約で、地域移動・転職・契約終了で離職"),
   "kazimierz-competition-knight": affiliationRule("organization", "カジミエーシュ", [63], "kazimierz-arena-glory", "car/kaz_comp_knight_*", "商業連合会公認の企業騎士。アリーナでの競技とスポンサー契約"),
   "kazimierz-armorless-union": affiliationRule("network", "カジミエーシュ", [64], "kazimierz-armorless-elimination", "car/kaz_armorless_*", "無冑盟の暗殺部隊員。商業連合会の裏の汚れ仕事と脱出不可の掟"),
   "siracusa-mafia-soldier": affiliationRule("network", "シラクーザ", [65], "siracusa-mafia-loyalty", "car/sir_soldier_*", "シラクーザ12ファミリーの構成員。オメルタの沈黙の掟と血の抗争"),

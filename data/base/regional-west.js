@@ -801,6 +801,19 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
               debt: -1e6,
               cash: 2e5,
               job: 62,
+              lifeAffiliation: {
+                id: "columbia-frontier-contract-crew",
+                title: "クルビア辺境開拓事業・契約労働班",
+                kind: "employer",
+                action: "join",
+                role: "開拓基地・現場契約労働者",
+                note: "企業の開拓現場に雇われ、辺境の宿舎へ着任した"
+              },
+              lifeGoal: {
+                id: "columbia-frontier-contract-work",
+                title: "開拓基地の雇用契約で生活を維持する",
+                priority: "生業", action: "start", preserveAchievement: true
+              },
               h: -8,
               p: -4,
               fl: { frontier_contract: 1, household_separated: 1, sch: 0 }
@@ -815,6 +828,25 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
               residenceArrangement: "independent_rental",
               debt: -1e6,
               job: 0,
+              lifeAffiliations: [
+                { id: "columbia-frontier-contract-crew",
+                  title: "クルビア辺境開拓事業・契約労働班",
+                  kind: "employer", action: "join",
+                  role: "開拓基地・現場契約労働者",
+                  note: "開拓基地へ着任したが、重労働で契約を続けられなかった" },
+                { id: "columbia-frontier-contract-crew", action: "leave",
+                  note: "健康を損ない、開拓基地の雇用を終了した" }
+              ],
+              lifeGoals: [
+                { id: "columbia-frontier-contract-work",
+                  title: "開拓基地の雇用契約で生活を維持する",
+                  priority: "生業", action: "start", preserveAchievement: true },
+                { id: "columbia-frontier-contract-work", action: "abandon",
+                  onlyIfUnresolved: true, note: "健康を損なって開拓事業の契約を終えた" },
+                { id: "columbia-frontier-camp-next-livelihood",
+                  title: "開拓キャンプを離れた後の生計を立て直す",
+                  priority: "生業", action: "start", preserveAchievement: true }
+              ],
               h: -25,
               p: -10,
               fl: { frontier_contract: 1, household_separated: 1, sch: 0 }
@@ -833,6 +865,19 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
               residenceArrangement: "independent_rental",
               cash: 2e5,
               job: 62,
+              lifeAffiliation: {
+                id: "columbia-frontier-contract-crew",
+                title: "クルビア辺境開拓事業・契約労働班",
+                kind: "employer",
+                action: "join",
+                role: "開拓基地・現場契約労働者",
+                note: "企業の開拓現場に雇われ、辺境の宿舎へ着任した"
+              },
+              lifeGoal: {
+                id: "columbia-frontier-contract-work",
+                title: "開拓基地の雇用契約で生活を維持する",
+                priority: "生業", action: "start", preserveAchievement: true
+              },
               h: -8,
               p: 1,
               fl: { frontier_contract: 1, household_separated: 1, sch: 0 }
@@ -846,6 +891,25 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
               localKind: "辺境・移動の多い居住地",
               residenceArrangement: "independent_rental",
               job: 0,
+              lifeAffiliations: [
+                { id: "columbia-frontier-contract-crew",
+                  title: "クルビア辺境開拓事業・契約労働班",
+                  kind: "employer", action: "join",
+                  role: "開拓基地・現場契約労働者",
+                  note: "開拓基地へ着任したが、重労働で契約を続けられなかった" },
+                { id: "columbia-frontier-contract-crew", action: "leave",
+                  note: "健康を損ない、開拓基地の雇用を終了した" }
+              ],
+              lifeGoals: [
+                { id: "columbia-frontier-contract-work",
+                  title: "開拓基地の雇用契約で生活を維持する",
+                  priority: "生業", action: "start", preserveAchievement: true },
+                { id: "columbia-frontier-contract-work", action: "abandon",
+                  onlyIfUnresolved: true, note: "健康を損なって開拓事業の契約を終えた" },
+                { id: "columbia-frontier-camp-next-livelihood",
+                  title: "開拓キャンプを離れた後の生計を立て直す",
+                  priority: "生業", action: "start", preserveAchievement: true }
+              ],
               h: -25,
               p: -10,
               fl: { frontier_contract: 1, household_separated: 1, sch: 0 }
@@ -861,6 +925,77 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
           1,
           "募集票を窓口へ返した。借金や食い扶持の悩みは消えないが、見知らぬ荒野で使い潰されるよりは、通い慣れたこの街で生き延びる道を探すことにした。",
           { p: -2 }
+        ])
+      ]
+    },
+    {
+      id: "col_frontier_contract_review",
+      conf: "S",
+      references: ["SRC_COLUMBIA_INSURANCE", "SRC_COLUMBIA_DV5"],
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.35,
+      after: { id: "col_frontier", min: 2 },
+      show: s => s.res?.n === "クルビア" && s.job === 62 &&
+        $rules.affiliations.canWork(s, "columbia-frontier-contract-crew") &&
+        s.lifeRecord?.goals?.some(g => g.id === "columbia-frontier-contract-work" &&
+          ["active", "compromised", "paused"].includes(g.status)),
+      t: "開拓キャンプで働き始めてから、いくつも季節が過ぎた。会社から支給された道具と宿舎はあるが、現場の仕事は体にこたえる。契約を続けるか、区切りをつけて新しい働き口を探すか。",
+      c: [
+        $terraData.K("今の班に残り、勤務を続ける", {}, [
+          1, "作業帳に名前を記し、次の当番へ向かった。道具の手入れを済ませ、明日の作業手順を確かめた。",
+          { lifeGoal: { id: "columbia-frontier-contract-work", action: "continue",
+            note: "開拓契約の勤務を続け、現場の状況を見極めた" }, p: 1 }
+        ]),
+        $terraData.K("契約を終え、次の働き口を探す", {}, [
+          1, "支給品を返し、作業班の責任者に退職を伝えた。宿舎を出た後の寝床と仕事はまだ決まっていない。",
+          {
+            job: 0,
+            lifeAffiliation: { id: "columbia-frontier-contract-crew", action: "leave",
+              note: "企業の開拓地雇用契約を終了し、別の仕事を探し始めた" },
+            lifeGoals: [
+              { id: "columbia-frontier-contract-work", action: "abandon",
+                onlyIfUnresolved: true, note: "開拓地の企業雇用を終えた" },
+              { id: "columbia-frontier-camp-next-livelihood",
+                title: "開拓キャンプを離れた後の生計を立て直す",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ], p: 1
+          }
+        ])
+      ]
+    },
+    {
+      id: "col_frontier_after_contract_loss",
+      conf: "S",
+      references: ["SRC_COLUMBIA_INSURANCE", "SRC_COLUMBIA_DV5"],
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      after: { id: "col_frontier", min: 2 },
+      show: s => s.lifeRecord?.affiliations?.some(a => a.id === "columbia-frontier-contract-crew" &&
+          a.status === "left" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        s.lifeRecord?.goals?.some(g => g.id === "columbia-frontier-camp-next-livelihood" &&
+          ["active", "compromised", "paused"].includes(g.status)),
+      t: "開拓キャンプの契約を終えた後も、仕事を探す日は続いた。砂埃の多い現場で覚えたことは残っている。今の生活で何を頼りにできるか、改めて考えた。",
+      c: [
+        $terraData.K("次の働き口を探し続ける", { show: s => s.job === 0 }, [
+          1, "倉庫と工場を訪ね、仕事の空きを尋ねた。今日のところ採用は決まらなかった。",
+          { lifeGoal: { id: "columbia-frontier-camp-next-livelihood", action: "continue",
+            note: "開拓事業を離れた後も求職を続けた" } }
+        ]),
+        $terraData.K("当面は求職を休む", { show: s => s.job === 0 }, [
+          1, "体を休め、手持ちの資金と支出を確かめた。次の仕事は今は決めずにおいた。",
+          { lifeGoal: { id: "columbia-frontier-camp-next-livelihood", action: "pause",
+            note: "開拓地を離れた後の求職を一時休止した" } }
+        ]),
+        $terraData.K("実際に得た仕事で生活を再開したと認める", {
+          show: s => s.job > 0 && (s.job !== 62 ||
+            s.lifeRecord?.affiliations?.some(a => a.id === "columbia-frontier-contract-crew" &&
+              a.status === "active" && a.episodes?.length >= 2))
+        }, [
+          1, "新たな仕事を終え、働いた分の報酬を受け取った。前の開拓キャンプでの契約は終わったが、いまの働きで暮らしを続けている。",
+          { lifeGoal: { id: "columbia-frontier-camp-next-livelihood", action: "complete",
+            note: "開拓地での契約終了後、別の実際の仕事を得た" } }
         ])
       ]
     },
