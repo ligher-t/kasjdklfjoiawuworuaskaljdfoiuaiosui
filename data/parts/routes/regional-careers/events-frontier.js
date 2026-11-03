@@ -246,7 +246,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("屋根の上に這い上がり、狙撃で爆弾の起爆手を討ち取る", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "凍てつく風の中で正確な狙撃を放ち、起爆装置を持つ首領を狙撃。列車を無傷で通過させた。議長直々に銀の懐中時計を贈られ、特務護衛班長へ昇進した。",
-          { cr: 5, p: 3, cash: 1200000 }
+          { cr: 5, p: 3, cash: 1200000,
+            lifeAffiliation: { id: "kjerag-karlan-commercial", action: "role", role: "特務護衛班長",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "敵の銃弾を肩に受けながらも撃退に成功。列車は軽微な被害で済んだ。",
@@ -348,7 +350,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("大剣を振りかざし、砲煙を突き破って突進する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
           "猛砲撃の中を駆け抜け、敵の砲兵隊を薙ぎ倒して砲座を制圧した。摂政王テレシスより直々に武勲を称えられ、百人隊長へ昇進した。",
-          { h: -3, p: 4, cr: 4, cash: 800000 }
+          { h: -3, p: 4, cr: 4, cash: 800000,
+            lifeAffiliation: { id: "kazdel-military-commission", action: "role", role: "百人隊長",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.8,
           "砲撃の爆風で吹き飛ばされ、全身に破片を浴びて倒れた。衛生兵に救助され生き延びた。",
@@ -450,7 +454,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("ランタンの聖光を浴びせ、刃で怪物を両断する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
           "青白い怪物の群れを一人で斬り伏せ、夜明けまで海岸線を守り抜いた。大審問官からその信仰と剣技を絶賛され、正式な『上級審問官』へ昇進した。",
-          { cr: 5, p: 4, h: -2, cash: 1000000 }
+          { cr: 5, p: 4, h: -2, cash: 1000000,
+            lifeAffiliation: { id: "iberia-inquisition-officer", action: "role", role: "上級審問官",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.8,
           "怪物を撃退したものの、怪物の青い体液を浴びて幻覚と高熱に襲われた。激しい治療の末に生還した。",
@@ -501,7 +507,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("暴風雨の外壁に身を乗り出し、工具とアーツで怪物を叩き落とす", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "滑りやすい絶壁の足場を踏みしめ、レンズに群がる怪物をすべて叩き落として灯火を守り抜いた。沿岸航路を救った英雄として表彰され、技師長に任命された。",
-          { cr: 4, p: 3, k: 2, cash: 800000 }
+          { cr: 4, p: 3, k: 2, cash: 800000,
+            lifeAffiliation: { id: "iberia-lantern-tuner", action: "role", role: "技師長",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "怪物の針で手を刺されながらも灯火を復旧した。手の痺れが残ったが一命を取り留めた。",
@@ -552,7 +560,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("泥煙を突っ切り、敵の機関銃座へ手榴弾を投げ込む", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
           "敵の弾幕を掻い潜り、機関銃座の隙間に手榴弾を叩き込んで制圧した。小隊を全滅から救った功績で軍曹へ昇進し、特別報奨金を獲得した。",
-          { cr: 4, h: -2, p: 3, cash: 400000 }
+          { cr: 4, h: -2, p: 3, cash: 400000,
+            lifeAffiliation: { id: "bolivar-coalition-soldier", action: "role", role: "軍曹",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.8,
           "銃弾が脚を貫通して倒れた。泥水を這いずりながら味方の衛生兵に救助された。",
@@ -603,7 +613,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("警棒と拳銃を手に船内へ突入し、マフィア幹部を現行犯逮捕する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "激しい銃撃戦の末に護衛を制圧し、密輸幹部を逮捕。大量の密輸武器を押収した。カンデラ市長から直接激励を受け、警部補へ特進した。",
-          { cr: 5, p: 3, cash: 1000000 }
+          { cr: 5, p: 3, cash: 1000000,
+            lifeAffiliation: { id: "bolivar-dossoles-police", action: "role", role: "警部補",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "逮捕には成功したものの、銃弾を腕に受けて負傷した。犯人の一味から報復の脅迫状が届いた。",
@@ -654,7 +666,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("レンチを握り締め、噴出する源石ガスの中へ突入する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "視界ゼロのガス充満地帯を突き進み、高熱のバルブを渾身の力で締め切った。大爆発を食い止め全鉱夫を救った英雄として、鉱山長から最高顧問技師の座を授けられた。",
-          { cr: 5, p: 4, k: 3, cash: 1500000 }
+          { cr: 5, p: 4, k: 3, cash: 1500000,
+            lifeAffiliation: { id: "rim-mining-lead-engineer", action: "role", role: "最高顧問技師",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "バルブの閉鎖には成功したが、防護服が破損して高濃度の粉塵を吸入。鉱石病を発症してしまった。",
