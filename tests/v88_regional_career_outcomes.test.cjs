@@ -820,4 +820,153 @@ for(const c of [
     'outcome logs without a previous employer cannot invent exceptional reinstatement');
 }
 
-console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring, expulsion Victorian wartime/postwar exile and two Ursus military hearings');
+
+// All distinctive employer losses previously expressed only as job:0 now have
+// an ended posting, an abandoned old career goal and actual later hiring.
+const jobLossCases=[
+  {region:'炎国',entry:'car_yan_court_entry',
+    trigger:'car_yan_court_choice_bribe',choice:1,outcome:1,
+    review:'car_yan_court_after_dismissal',former:'yan-court-bureaucracy',
+    oldGoal:'yan-governance',next:'yan-dismissed-clerk-livelihood',
+    oldJob:41,custody:false},
+  {region:'龍門',entry:'car_lmd_black_entry',
+    trigger:'car_lmd_black_choice_big_deal',choice:0,outcome:1,
+    review:'car_lmd_black_after_detention',former:'lungmen-black-market',
+    oldGoal:'lmd-underground-deals',next:'lungmen-post-custody-livelihood',
+    oldJob:45,custody:true},
+  {region:'クルビア',entry:'car_col_pioneer_entry',
+    trigger:'car_col_pioneer_choice_bandits',choice:1,outcome:0,
+    review:'car_col_pioneer_after_dispossession',former:'columbia-frontier-pioneer',
+    oldGoal:'columbia-frontier-survival',next:'columbia-dispossessed-pioneer-livelihood',
+    oldJob:62,custody:false}
+];
+for(const c of jobLossCases){
+  start(c.region);
+  ctx.JOB_LOSS_CASE=c;
+  const result=snap(`
+    const c=JOB_LOSS_CASE,
+      entry=EV.find(e=>e.id===c.entry),
+      loss=EV.find(e=>e.id===c.trigger),
+      review=EV.find(e=>e.id===c.review),
+      civilian=EV.find(e=>e.id==='work_unemployed_reentry'),
+      detention=EV.find(e=>e.id==='detain_life');
+    if(!entry||!loss||!review||!civilian||!detention)
+      throw Error('Incomplete lost-job review path '+c.trigger);
+    S.year=1098;S.age=24;S.by=1074;S.mo=4;S.k=100;S.h=100;S.cr=100;
+    S.cash=10000000;S.house.cash=10000000;
+    const firstOffer=elig(entry,S,tags(S));
+    ap(entry.c[0].o[0][2]);
+    const old=S.lifeRecord.affiliations.find(a=>a.id===c.former),
+      oldGoal=S.lifeRecord.goals.find(g=>g.id===c.oldGoal);
+    const originalJob=S.job,onDuty=loss.show(S);
+    ap(loss.c[c.choice].o[c.outcome][2]);
+    S.sn[loss.id]=S.year;
+    S.eventOutcomes ||={};
+    S.eventOutcomes[loss.id]={year:S.year,choiceIndex:c.choice,outcomeIndex:c.outcome};
+    const next=S.lifeRecord.goals.find(g=>g.id===c.next);
+    const lost={job:S.job,former:old.status,end:old.episodes.at(-1)?.endedYear,
+      goal:oldGoal.status,next:next?.status,detained:!!S.fl.detained,
+      duty:loss.show(S),review:elig(review,S,tags(S)),
+      issues:auditLifeState(S)};
+    S.year+=1;S.age+=1;
+    const premature=elig(review,S,tags(S));
+    S.year+=1;S.age+=1;
+    const inCustody={detained:!!S.fl.detained,eligible:elig(review,S,tags(S))};
+    if(c.custody){
+      ap(detention.c[1].o[0][2]);
+      ap(detention.c[2].o[0][2]);
+    }
+    const ready={eligible:elig(review,S,tags(S)),
+      choices:review.c.map(q=>q.show(S,tags(S))),
+      detentionCleared:!S.fl.detained};
+    ap(review.c[0].o[0][2]);
+    S.sn[review.id]=S.year;
+    const seeking={job:S.job,status:next.status,action:next.history.at(-1)?.action,
+      repeat:elig(review,S,tags(S))};
+    S.year+=3;S.age+=3;
+    ap(review.c[1].o[0][2]);
+    S.sn[review.id]=S.year;
+    const paused=next.status;
+    const workOpen=elig(civilian,S,tags(S));
+    ap(civilian.c[0].o[0][2]);
+    S.year+=3;S.age+=3;
+    const employed={job:S.job,former:old.status,formerGoal:oldGoal.status,
+      nextGoal:next.status,eligible:elig(review,S,tags(S)),
+      choices:review.c.map(q=>q.show(S,tags(S)))};
+    ap(review.c[2].o[0][2]);
+    const completed={job:S.job,next:next.status,old:old.status,
+      formerGoal:oldGoal.status,history:next.history.map(e=>e.action),
+      eligible:elig(review,S,tags(S)),issues:auditLifeState(S)};
+    return{firstOffer,originalJob,onDuty,lost,premature,inCustody,ready,
+      seeking,paused,workOpen,employed,completed};
+  `);
+  assert.equal(result.firstOffer,true,c.entry+' must be real, permitted hiring');
+  assert.equal(result.originalJob,c.oldJob);
+  assert.equal(result.onDuty,true,c.trigger+' must describe actual active career');
+  assert.deepEqual(result.lost,{
+    job:0,former:'left',end:1098,goal:'abandoned',
+    next:'active',detained:c.custody,duty:false,review:false,issues:[]
+  },c.trigger+' closes former employment and opens an independent livelihood goal');
+  assert.equal(result.premature,false,'loss cannot generate review after one year');
+  assert.deepEqual(result.inCustody,{
+    detained:c.custody,eligible:!c.custody
+  },'a prisoner may not search for outside work while detained');
+  assert.deepEqual(result.ready,{
+    eligible:true,choices:[true,true,false],detentionCleared:true
+  },'after two years and any release the owner can search or rest');
+  assert.deepEqual(result.seeking,{
+    job:0,status:'active',action:'continue',repeat:false
+  },'searching cannot invent employment');
+  assert.equal(result.paused,'paused');
+  assert.equal(result.workOpen,true,'an actual general reemployment offer is available');
+  assert.deepEqual(result.employed,{
+    job:1,former:'left',formerGoal:'abandoned',nextGoal:'paused',
+    eligible:true,choices:[false,false,true]
+  },'independent paid work opens an optional livelihood settlement');
+  assert.deepEqual(result.completed,{
+    job:1,next:'achieved',old:'left',formerGoal:'abandoned',
+    history:['start','continue','pause','complete'],eligible:false,issues:[]
+  },'goal completion leaves the old loss episode intact and makes review terminal');
+}
+// A recorded choice with no real former membership/goal cannot create a review.
+for(const c of jobLossCases){
+  start(c.region);ctx.FAKE_JOB_LOSS_CASE=c;
+  const falsePath=snap(`
+    const c=FAKE_JOB_LOSS_CASE,
+      e=EV.find(x=>x.id===c.review);
+    S.year=1101;S.age=27;S.by=1074;
+    S.sn[c.trigger]=1098;
+    S.eventOutcomes={[c.trigger]:{year:1098,choiceIndex:c.choice,outcomeIndex:c.outcome}};
+    return{shown:e.show(S),eligible:elig(e,S,tags(S))};
+  `);
+  assert.deepEqual(falsePath,{shown:false,eligible:false},
+    c.review+' requires a genuine terminated affiliation and active new goal');
+}
+// Reopening a pioneer farm is a distinct hiring episode, not a revival of
+// a previously seized property. A job ID alone is insufficient.
+start('クルビア');
+const pioneerReturn=snap(`
+  S.year=1098;S.age=24;S.by=1074;S.k=100;S.h=100;S.cr=100;S.mo=6;
+  const entry=EV.find(x=>x.id==='car_col_pioneer_entry'),
+    loss=EV.find(x=>x.id==='car_col_pioneer_choice_bandits'),
+    followup=EV.find(x=>x.id==='car_col_pioneer_after_dispossession');
+  ap(entry.c[0].o[0][2]);
+  ap(loss.c[1].o[0][2]);
+  S.sn[loss.id]=S.year;
+  S.eventOutcomes={[loss.id]:{year:S.year,choiceIndex:1,outcomeIndex:0}};
+  S.year=1101;S.age=27;
+  const former=S.lifeRecord.affiliations.find(a=>a.id==='columbia-frontier-pioneer');
+  const canHire=entry.show(S);
+  ap(entry.c[0].o[0][2]);
+  const legit={job:S.job,episodes:former.episodes.length,
+    firstEnd:former.episodes[0].endedYear,
+    secondStart:former.episodes.at(-1)?.startedYear,
+    choices:followup.c.map(c=>c.show(S,tags(S)))};
+  return{canHire,legit};
+`);
+assert.deepEqual(pioneerReturn,{
+  canHire:true,legit:{job:62,episodes:2,firstEnd:1098,
+    secondStart:1101,choices:[false,false,true]}
+},'a separately obtained second farm can settle the first dispossession livelihood goal');
+
+console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring, expulsion Victorian wartime/postwar exile and two Ursus military hearings, three explicit regional career losses and genuine later reemployment');
