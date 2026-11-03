@@ -97,12 +97,38 @@ function recordEducationTransition(s, program, action, sourceEventId = null) {
       current.endingEventId = sourceEventId;
     }
   }
+  const formal=s.educationPath?.offeringId &&
+    s.educationPath.currentEnrollmentId===current?.id &&
+    ["completed","enrolled"].includes(s.educationPath.status);
+  const credits=formal?Object.values(s.educationCredits?.items||{}).filter(x=>
+    x.enrollmentId===current.id && x.credited):[];
+  if(action==="finish" && formal &&
+     (credits.length<s.educationPath.duration ||
+       s.educationPath.yearsCompleted<s.educationPath.duration))
+    throw new Error("実際の履修認定を欠く課程に卒業資格は発行できない");
+  if(action==="finish" && formal && program==="general-school"){
+    record.schoolCertificates||=[];
+    const id=current.id+":school-certificate";
+    if(!record.schoolCertificates.some(x=>x.id===id))
+      record.schoolCertificates.push({
+        id,enrollmentId:current.id,
+        offeringId:s.educationPath.offeringId,
+        stage:s.educationPath.stage,issuer:s.educationPath.institutionId,
+        awardedYear:s.year,
+        sourceCreditIds:credits.map(x=>x.id)
+      });
+  }
   if (action === "finish" && program !== "general-school" &&
       !record.awards.some(x => x.program === program)) {
     record.awards.push({
       id: `award-${record.awards.length + 1}`, program, awardedYear: s.year,
       region: s.res?.n || null, sourceEventId, issuer: "個別課程（機関名未記録）",
-      certainty: "game-course-completion"
+      certainty: "game-course-completion",
+      ...(formal?{
+        enrollmentId:current.id,offeringId:s.educationPath.offeringId,
+        issuerInstitutionId:s.educationPath.institutionId,
+        sourceCreditIds:credits.map(x=>x.id)
+      }:{})
     });
   }
   // Formal enrollment and award provenance remain a lifelong ledger.

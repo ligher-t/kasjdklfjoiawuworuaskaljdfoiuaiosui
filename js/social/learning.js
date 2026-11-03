@@ -392,7 +392,9 @@ function advanceSocialLearning(s) {
   const beforeLiteracy = literacyValue(s);
   // 正規就学外の読み書きにも道を残す。ただし学校の不在を毎年の大幅成長に変換しない。
   const formal = studying
-    ? (a < 16 ? P("social.v77SchoolLiteracyGain") : 3.2) * facilitySchoolMultiplier(s)
+    ? (a < 16 ? P("social.v77SchoolLiteracyGain") : 3.2) *
+      facilitySchoolMultiplier(s) *
+      (s.educationPath?.offeringId?educationAnnualParticipationScale(s):1)
     : 0;
   const informal = !studying && s.f === 1 && a >= 8 ? P("social.v77InformalLiteracyGain") * participation : 0;
   if (m.literacy === null) m.literacy = beforeLiteracy;
@@ -549,7 +551,8 @@ function annualEducationAndRelationships(s, f, t) {
   const a = s.age,
     m = socialModel(s),
     inSchool = !!s.fl?.sch && !restricted(s) && a < P("life.schoolEnrollmentEndAge"),
-    schoolMultiplier = inSchool ? facilitySchoolMultiplier(s) : 0;
+    schoolMultiplier = inSchool ? facilitySchoolMultiplier(s) *
+      (s.educationPath?.offeringId?educationAnnualParticipationScale(s):1) : 0;
   const studying = f === 1 && !restricted(s),
     access = socialParticipation(s);
   const literacy = literacyValue(s),

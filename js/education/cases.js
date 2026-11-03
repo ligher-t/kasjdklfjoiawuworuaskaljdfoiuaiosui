@@ -570,7 +570,10 @@ function educationCaseAction(s,action) {
   if(command==="keep-current"&&item.phase==="continuity"){
     if(!educationCaseStep(s,item,command))return false;
     educationCaseFinish(s,item,"continued");
-    if(s.educationPath?.status==="enrolled")educationFundYear(s,s.educationPath);
+    if(s.educationPath?.status==="enrolled"){
+      educationFundYear(s,s.educationPath);
+      if(s.educationPath.status==="enrolled")educationRenewGuardianStudy(s);
+    }
     return true;
   }
   return false;

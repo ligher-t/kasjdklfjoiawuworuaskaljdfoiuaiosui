@@ -265,6 +265,10 @@ function educationCreditForPreviousYear(s) {
   if(!m?.offeringId||!record)return null;
   return s.educationCredits?.items?.[record.id+":credit:"+(s.year-1)]||null;
 }
+function educationAnnualParticipationScale(s) {
+  const credit=educationCreditForPreviousYear(s);
+  return credit?.credited?Math.max(0,Math.min(1,credit.equivalent/12)):0;
+}
 function educationAttendanceInvariants(s) {
   const issues=[],att=s.educationAttendance,credits=s.educationCredits,places=s.educationPlacements;
   if(!att&&!credits&&!places)return issues;

@@ -658,6 +658,8 @@ function educationAdvanceYear(s) {
     }
     return;
   }
-  if(!s.educationDecision || s.educationDecision.kind!=="case-review")
+  if(!s.educationDecision || s.educationDecision.kind!=="case-review"){
     educationFundYear(s,m);
+    if(m.status==="enrolled"&&m.offeringId)educationRenewGuardianStudy(s);
+  }
 }

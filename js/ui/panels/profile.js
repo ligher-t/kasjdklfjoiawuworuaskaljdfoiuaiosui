@@ -84,6 +84,15 @@ function renderProfilePanel(s, services, st) {
     ],
     ["職業", services.occupationLabel(s)],
     ["学歴・就学", services.educationStandingLabel(s)],
+    ["現在の正規履修記録", s.educationPath?.offeringId ?
+      (()=>{
+        const id=s.educationPath.currentEnrollmentId,
+          rows=Object.values(s.educationCredits?.items||{})
+            .filter(x=>x.enrollmentId===id).sort((a,b)=>b.academicYear-a.academicYear),
+          last=rows[0];
+        return last ? `認定済み学年：${rows.filter(x=>x.credited).length}／${s.educationPath.duration}・直近${last.academicYear}年 ${last.equivalent}/12相当（${last.credited?"認定":"未認定"}）` :
+          "年度履修の認定待ち";
+      })() : "正規学籍の詳細記録なし"],
     ["気質", s.t.n],
     ["再現用seed", String(s.randomSeed ?? "未記録")],
     ["地域で見られる信仰", s.res.fa || "資料なし"]
