@@ -51,8 +51,17 @@ window.TERRA_DATA_BUILD.fragment(
         ]),
         $terraData.K("財産を諦め、夜陰に乗じてトラクターで脱出する", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
-          "命からがら移動都市へ逃げ延びた。農場は略奪されたが、命は繋いだ。",
-          { job: 0, cash: -500000, p: -5 }
+          "命からがら農場を離れ、近くの避難場所へ逃げ延びた。畑も収穫物も略奪されたが、命だけはつないだ。",
+          { job: 0, cash: -500000, p: -5,
+            lifeAffiliation: { id: "columbia-frontier-pioneer", action: "leave",
+              note: "農場を襲撃されて土地を離れ、開拓の仕事を終えた" },
+            lifeGoals: [
+              { id: "columbia-frontier-survival", action: "abandon", onlyIfUnresolved: true,
+                note: "農場を失い、従来の開拓生活を終えた" },
+              { id: "columbia-dispossessed-pioneer-livelihood",
+                title: "農場を失った後の働き口を見つける",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ])
       ]
     },

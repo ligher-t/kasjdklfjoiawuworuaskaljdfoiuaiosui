@@ -51,8 +51,17 @@ window.TERRA_DATA_BUILD.fragment(
           { cash: 3000000, p: -5, cr: -4 }
         ], [
           1,
-          "偽装が拙く、わずか三ヶ月後に御史台の監察官に踏み込まれた。官位を剥奪され、重罪人として全財産を没収された。",
-          { job: 0, p: -20, cash: -1000000 }
+          "偽装が拙く、三ヶ月後に御史台の監察官が踏み込んだ。官位を剥奪され、財貨を差し押さえられた。",
+          { job: 0, p: -20, cash: -1000000,
+            lifeAffiliation: { id: "yan-court-bureaucracy", action: "leave",
+              note: "収賄の発覚で官位を剥奪され、朝廷の職を失った" },
+            lifeGoals: [
+              { id: "yan-governance", action: "abandon", onlyIfUnresolved: true,
+                note: "収賄による罷免で官吏の仕事を終えた" },
+              { id: "yan-dismissed-clerk-livelihood",
+                title: "罷免された後の生計を立て直す",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ])
       ]
     },
@@ -195,8 +204,17 @@ window.TERRA_DATA_BUILD.fragment(
           { cash: 5000000, p: 2, k: 3 }
         ], [
           1,
-          "取引現場は近衛局の仕組んだ罠だった。一斉射撃の中を逃げ切れず、手錠を打たれて投獄された。",
-          { job: 0, p: -20, cash: -2000000 }
+          "取引現場は近衛局の仕組んだ罠だった。射撃を受けながらも逃げ道を探したが、手錠をかけられ、留置施設へ連行された。",
+          { job: 0, p: -20, cash: -2000000, fl: { detained: 1 },
+            lifeAffiliation: { id: "lungmen-black-market", action: "leave",
+              note: "近衛局に拘束され、黒市の仲介業から離れた" },
+            lifeGoals: [
+              { id: "lmd-underground-deals", action: "abandon", onlyIfUnresolved: true,
+                note: "摘発によって黒市での仲介を続けられなくなった" },
+              { id: "lungmen-post-custody-livelihood",
+                title: "拘束が解けた後に新しい生計を探す",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ]),
         $terraData.K("怪しすぎて手を出せないと断る", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
