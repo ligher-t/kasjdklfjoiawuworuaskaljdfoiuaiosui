@@ -385,6 +385,7 @@ window.TERRA_DATA_BUILD.run("relationships/facility-people", function ($terraDat
         w: 0.4,
         show: s =>
           !!s.fl?.sch &&
+          !s.educationPath?.offeringId &&
           !$rules.conditions.restricted(s) &&
           !!$rules.facilities.alternativeFacility(s, "school"),
         t: "今通っている学び舎とは別の教室が、年度の途中からでも生徒を受け入れると案内を出していた。通いやすさや授業の進み具合を家の人と話し合った。",

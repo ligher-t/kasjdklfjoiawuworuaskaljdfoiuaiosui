@@ -105,6 +105,7 @@ window.TERRA_DATA_BUILD.fragment(
     {
       id: "infection_school_disclosure",
       conf: "S",
+      show: s => !s.educationPath?.offeringId,
       references: ["SRC_ORIPATHY_SOCIAL", "SRC_TERRA_SOCIAL_ATTITUDES", "SRC_V88_INFO_BOUNDARIES"],
       st: ["児童", "少年"],
       need: ["感染診断済", "就学中"],

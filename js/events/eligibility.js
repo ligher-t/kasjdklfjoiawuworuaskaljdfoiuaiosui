@@ -536,6 +536,9 @@ function elig(e, s, T, options = {}) {
   if (restricted(s) && !e.inConfinement && !e.need?.some(t => t === "収容中" || t === "隔離中")) return rejectEligibility(e, "confinement", options);
   if (!ok(e, s, T)) return rejectEligibility(e, "event-condition", options);
   if (!ok(e.show, s, T)) return rejectEligibility(e, "event-show-condition", options);
+  if(typeof educationLegacySceneGuard==="function" &&
+     !educationLegacySceneGuard(s,e.id))
+    return rejectEligibility(e,"school-context-unverified",options);
   const review=s.eventReviews?.[e.id];
   if(!ignoreOccurrence && review && review.signature===eventReviewSignature(e,s) &&
      (CONTEXT_REVIEW_EVENTS.has(e.id) || s.year-review.year<5))

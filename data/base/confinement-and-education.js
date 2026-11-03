@@ -541,7 +541,8 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
     {
       id:"education_school_disclosure_review",conf:"S",references:["SRC_EDUCATION_ACCESS"],
       st:["児童","少年","青年","壮年","老年"],cd:3,w:0.55,
-      show:s=>educationLive(s)&&!!s.inf&&!!s.fl?.dg&&!educationSchoolKnowsInfection(s),
+      show:s=>educationLive(s)&&!s.educationPath?.offeringId&&
+        !!s.inf&&!!s.fl?.dg&&!educationSchoolKnowsInfection(s),
       t:"鉱石病の診断を受けた。通院で休む日や体育・実習の配慮を頼むため、学校へ正直に病名を打ち明けるべきか迷った。",
       c:[
         $terraData.K("学校に診断結果を伝え、配慮を相談する",{},[
