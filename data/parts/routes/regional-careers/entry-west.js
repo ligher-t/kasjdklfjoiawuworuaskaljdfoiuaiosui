@@ -5,6 +5,21 @@ window.TERRA_DATA_BUILD.fragment(
 )(function ($terraData, $define, $rules, $parts) {
   "use strict";
 
+  // Clearance is individual and applies only to the documented departure.
+  // Passing an appeal restores eligibility to apply, never military employment.
+  const militaryReturnCleared = (s, incident, review, employer) => {
+    const exit = s.eventOutcomes?.[incident],
+      clearance = s.eventOutcomes?.[review];
+    return exit?.choiceIndex === 1 && exit.outcomeIndex === 0 &&
+      s.sn?.[incident] === exit.year &&
+      clearance?.choiceIndex === 0 && clearance.outcomeIndex === 0 &&
+      s.sn?.[review] === clearance.year &&
+      clearance.year >= exit.year + 3 &&
+      s.lifeRecord?.affiliations?.some(a => a.id === employer &&
+        a.episodes?.some(ep => Number.isInteger(ep.endedYear) &&
+          ep.endedYear >= exit.year));
+  };
+
   const E = [
     // -------------------------------------------------------------
     // ウルサス: 帝国軍・近衛将校
@@ -16,7 +31,9 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 18, year: 1090 },
-      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired && s.eventOutcomes?.car_urs_officer_choice_purge?.choiceIndex !== 1,
+      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired && (s.eventOutcomes?.car_urs_officer_choice_purge?.choiceIndex !== 1 ||
+        militaryReturnCleared(s, "car_urs_officer_choice_purge",
+          "car_urs_officer_disciplinary_review", "ursus-imperial-officer")),
       t: "要塞司令部の豪奢な執務室で、貴族将校たちが書類に目を落としていた。ウルサス帝国軍の指揮官枠――それは貴族の血筋と巨額の軍資金を握る選民だけの特権である。平民や感染者を徹底して見下す軍国主義の牙城に、士官候補生としての仕官を願う。",
       c: [
         $terraData.K("家格の推薦状と武芸の証を差し出す", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -70,7 +87,9 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 18, year: 1090 },
-      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired && s.eventOutcomes?.car_urs_guard_choice_riot?.choiceIndex !== 1,
+      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired && (s.eventOutcomes?.car_urs_guard_choice_riot?.choiceIndex !== 1 ||
+        militaryReturnCleared(s, "car_urs_guard_choice_riot",
+          "car_urs_guard_disciplinary_review", "ursus-border-mine-guard")),
       t: "ツンドラの冷風が吹きすさぶ兵舎で、国境警備部隊と感染者鉱山を監視する憲兵の徴募が行われていた。厳しい学歴は問われず、頑丈な体さえあれば誰でも雇われる。だがそれは、極寒と感染者の暴動が渦巻く使い捨ての最前線である。",
       c: [
         $terraData.K("過酷な任務を覚悟し、徴募書に署名する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
