@@ -178,7 +178,8 @@ const guardianScope=run(function(){
   const bank=s.cash,house=s.house.cash,
     selected=educationCaseAction(s,"case:select:0");
   const answers=Object.values(s.educationMobility.consentRecords).filter(x=>
-    x.institutionId===row.institutionId);
+    x.institutionId===row.institutionId &&
+    x.evidenceRef===item.id+":guardian-response");
   const end=s.educationCases.items[item.id],
     receiptCount=(s.educationFinance?.receipts||[]).filter(x=>x.caseId===item.id).length;
   return {begin,before,pending,searched,afterSearch,repeatSearch,denied,
