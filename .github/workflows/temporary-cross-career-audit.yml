@@ -24,7 +24,7 @@ jobs:
           node tools/generate-event-catalog.cjs --write
           node tools/check-efficient.cjs syntax
           node tools/generate-event-catalog.cjs --check
-      - name: Verify 42 careers, three forced exits and four corporate frontier recruitment results
+      - name: Test all regional employment consequences with true company-affiliation predicates
         run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs v88_workplace_goal_departure_contracts.test.cjs v88_regional_promotion_history.test.cjs
       - name: Commit event catalog and version after passing
         run: |
