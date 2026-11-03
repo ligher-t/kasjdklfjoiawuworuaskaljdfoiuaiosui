@@ -292,11 +292,27 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("巻物を焼き捨て、里から脱走して『抜け忍』となる", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           0.5,
           "追跡してきた刺客二人を返り討ちにし、極東の山中へ逃げ延びた。忍び衆の掟を破った『抜け忍』として、生涯追手から命を狙われ続ける修羅の人生が始まった。",
-          { job: 0, fl: { nukenin: 1 }, p: 3, h: 2, cr: -5 }
+          { job: 0, fl: { nukenin: 1 }, p: 3, h: 2, cr: -5 ,
+            lifeAffiliation: { id: "higashi-ninja-clan", action: "leave",
+              note: "忍び衆から脱走し、抜け忍として追われる身となった" },
+            lifeGoals: [
+              { id: "higashi-ninja-mission", action: "abandon", onlyIfUnresolved: true,
+                note: "忍び衆の密命を離れ、元の任務を終えた" },
+              { id: "higashi-nukenin-next-livelihood", title: "追跡を警戒しながら次の生計を見つける",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ], [
           1,
           "逃走の途中で追手の毒矢に射抜かれた。血を吐きながら川へ飛び込み、瀕死の重傷を負いながら街へ流れ着いた。",
-          { job: 0, fl: { nukenin: 1 }, h: -20, p: -10 }
+          { job: 0, fl: { nukenin: 1 }, h: -20, p: -10 ,
+            lifeAffiliation: { id: "higashi-ninja-clan", action: "leave",
+              note: "逃走中に重傷を負い、忍び衆の任務から離脱した" },
+            lifeGoals: [
+              { id: "higashi-ninja-mission", action: "abandon", onlyIfUnresolved: true,
+                note: "忍び衆の密命を離れ、元の任務を終えた" },
+              { id: "higashi-nukenin-next-livelihood", title: "追跡を警戒しながら次の生計を見つける",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ]),
         $terraData.K("感情を殺し、掟に従って密命を完遂する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
           1,
