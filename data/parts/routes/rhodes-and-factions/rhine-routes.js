@@ -17,7 +17,8 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.45,
       ge: { year: 1093, age: 18 },
-      show: s => s.res?.n === "クルビア" && s.k >= 45 && !s.fl?.detained && !s.job,
+      show: s => s.res?.n === "クルビア" && s.k >= 45 && !s.fl?.detained && !s.job &&
+        (!s.fl?.rhine_whistleblower || !!s.fl?.rhine_whistleblower_review_passed),
       t: "クルビア連邦トリマウンツにそびえるライン生命本社ビル。テラ最先端の科学技術と莫大な資本が集うこの学術コンソーシアムで、研究実習生の公募選考が行われている。",
       c: [
         $terraData.K("研究計画書と理論論文を提出し、ライン生命研究実習生として入職する", {}, [
@@ -249,6 +250,7 @@ window.TERRA_DATA_BUILD.fragment(
       ge: { year: 1095 },
       show: s =>
         !!s.fl?.rhine_whistleblower &&
+        !s.fl?.rhine_whistleblower_review_passed &&
         onRhine(s),
       t: "トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格納庫で、白衣を着た医療スタッフたちが出迎えてくれた。",
       c: [
@@ -485,6 +487,39 @@ window.TERRA_DATA_BUILD.fragment(
           "新しい職場にも慣れないことはある。それでも、次の仕事を探していたころより日々の手順は増えた。今はもう少し様子を見ることにした。",
           { lifeGoal: { id: "rhine-after-departure-livelihood", action: "continue",
             note: "再就職後も暮らしの安定を見極める" } }
+        ])
+      ]
+    },
+    {
+      id: "sr_rhine_whistleblower_return_review",
+      conf: "S",
+      references: ["SRC_RHINE_LAB"],
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.35,
+      ge: { year: 1100, age: 18 },
+      show: s => s.res?.n === "クルビア" && s.job === 0 &&
+        !!s.fl?.rhine_whistleblower &&
+        !s.fl?.rhine_whistleblower_review_passed &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "rhine-lab" &&
+          a.status === "left" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        !s.lifeRecord?.affiliations?.some(a => a.id === "rhodes-staff" &&
+          ["active", "crisis", "suspended"].includes(a.status)),
+      t: "ライン生命では、あの事件の後に役員と研究倫理の審査体制が変わった。以前の告発について、人事部に記録が残っている。研究所で再び働くことを考えるなら、退職と告発の経緯を示して、改めて応募資格の審査を受ける必要があるという。",
+      c: [
+        $terraData.K("退職の経緯と証言を提出し、再応募資格の審査を求める", {}, [
+          0.4,
+          "提出した記録について照会が続いた末、再応募の選考を受けてよいとの通知が届いた。採用の内定ではない。次に必要なのは、研究所の募集に自分で応募することだった。",
+          { fl: { rhine_whistleblower_review_passed: 1 }, p: 1 }
+        ], [
+          1,
+          "証言や退職の扱いをめぐって意見がまとまらず、今回の再応募資格の審査は見送られた。旧職場の席は戻らない。別の働き口を選ぶ自由は残されている。",
+          { p: -1 }
+        ]),
+        $terraData.K("以前の職場へ戻る判断を保留する", {}, [
+          1,
+          "資料を封筒に戻し、今は申請をやめることにした。研究室で過ごした時間も、そこを離れた理由も消えない。",
+          { p: 1 }
         ])
       ]
     },
