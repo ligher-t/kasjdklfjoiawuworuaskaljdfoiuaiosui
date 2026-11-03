@@ -24,7 +24,7 @@ jobs:
           node tools/check-efficient.cjs syntax
           node tools/generate-event-catalog.cjs --check
           node --input-type=commonjs -e "const fs=require('node:fs');console.log('GENERATED_VERSION='+fs.readFileSync('js/version.js','utf8').match(/[a-f0-9]{64}/)[0])"
-      - name: Test seasonal careers and affiliation boundaries
+      - name: Test seasonal careers, exits and post-service boundaries
         run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs v88_workplace_goal_departure_contracts.test.cjs v87_affiliation_career_paths.js
       - name: Commit generated artifacts after passing checks
         run: |
