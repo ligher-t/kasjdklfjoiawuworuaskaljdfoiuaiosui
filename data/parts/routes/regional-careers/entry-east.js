@@ -293,7 +293,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.45,
       ge: { age: 18, year: 1090 },
-      show: s => s.res?.n === "極東" && s.job === 0 && !s.fl?.retired,
+      show: s => s.res?.n === "極東" && s.job === 0 && !s.fl?.retired && !s.fl?.nukenin,
       t: "夜更けの屋根裏から、音もなく黒装束の密使が姿を現した。大名の影で敵情を探り、暗殺と工作を担う忍び衆。名も捨て、情も捨て、主君の命に従い影に生きる覚悟があるかを試される。失敗すれば自決、逃亡すれば『抜け忍』として追われる修羅の道である。",
       c: [
         $terraData.K("血判を押し、影の掟に従う", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
