@@ -17,8 +17,11 @@ const classes = ['daily_columbia_57','daily_columbia_58','daily_columbia_59','da
 for (const id of classes)
   assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), false, id+' rejects a child outside school');
 run(`educationStart(S,'lower',1,'regional-context');`);
+// A legacy school flag and an unbound school path do not establish that
+// a laboratory, club or tuition notice actually exists at a reachable campus.
 for (const id of classes)
-  assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), true, id+' remains reachable for a pupil');
+  assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), false,
+    id+' needs a verified school offering and the event-specific campus evidence');
 run(`educationEnd(S,'withdrawn','本人が通学を終えた','regional-context');`);
 restore();
 for (const id of classes)
