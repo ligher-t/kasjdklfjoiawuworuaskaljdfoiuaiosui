@@ -146,7 +146,13 @@ function educationRegisterLanguageSupport(s,input) {
   const {offeringId,languageId,purpose,personId="protagonist",kind,mode,
     providerPersonId,evidenceRef,start,end}=input||{},
     offer=s.world?.educationWorld?.offerings?.[offeringId];
-  if(!offer||!evidenceRef||!providerPersonId||
+  const providerKnown=!!s.world?.educationWorld?.staff?.[providerPersonId] ||
+    !!s.world?.educationWorld?.schoolPeers?.[providerPersonId] ||
+    !!s.personTies?.[providerPersonId] ||
+    Object.values(s.par||{}).some(x=>x?.id===providerPersonId&&!x.d) ||
+    (s.siblings||[]).some(x=>x?.id===providerPersonId&&!x.d) ||
+    (s.kids||[]).some(x=>x?.id===providerPersonId&&!x.d);
+  if(!offer||!evidenceRef||!providerPersonId||!providerKnown||
     personId!=="protagonist"||!["interpreter","helper","translation"].includes(kind)||
     !["listen","speak","read","write","formalRegister","both"].includes(mode) ||
     !["school-inquiry","application-document","entrance-exam-reading",
