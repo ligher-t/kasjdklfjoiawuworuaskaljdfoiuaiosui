@@ -1750,7 +1750,7 @@ window.TERRA_EDUCATION_INJECT_P17=function ($terraData) {
   }
 ];
   const activated=new Set(["E34","E35","E41","E43","E47","E48","E49","E50","E51","E52","E53","E54"]);
-  window.TERRA_EDUCATION_P17_REVIEWED=reviewed;
+  $terraData.EDUCATION_P17_REVIEWED=reviewed;
   for(const entry of reviewed){
     if(!activated.has(entry.reviewId)||entry.decision==="保留")continue;
     const event={

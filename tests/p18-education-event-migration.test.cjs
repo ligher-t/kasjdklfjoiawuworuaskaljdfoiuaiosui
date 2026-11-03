@@ -34,7 +34,7 @@ const fixture=()=>{
   });
 };
 const corpus=run(function(){
-  const items=window.TERRA_EDUCATION_P17_REVIEWED,
+  const items=GAME_DATA.EDUCATION_P17_REVIEWED,
     shown=EV.filter(x=>x.id.startsWith("edu_")&&
       items.some(y=>y.eventId===x.id) &&
       (x.fx?.educationAction?.startsWith("event:") ||
