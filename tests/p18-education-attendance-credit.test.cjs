@@ -203,4 +203,108 @@ const pending=run(function(){
 assert.equal(pending.decision.outcome,"pending");
 assert.equal(pending.decision.finalizedMonths,1);
 assert.equal(pending.notStored,true);
+fresh();install();
+const boundary=run(function(){
+  const s=S,place=s.educationPlacements.currentPlacementId,
+    enrollmentId=s.educationPath.currentEnrollmentId;
+  for(let month=1;month<=12;month++)educationRecordAttendance(s,{
+    enrollmentId,placementId:place,year:s.year,month,
+    personalAccess:month<=8?1:month===9?0.5:0,
+    evidenceRef:"attended-"+month
+  });
+  const credit=educationSettleCompletedAcademicYear(s,s.year);
+  return {amount:credit.equivalent,credited:credit.credited,outcome:credit.outcome};
+});
+assert.equal(boundary.amount,8.5);
+assert.equal(boundary.credited,false);
+fresh();install();
+const temporary=run(function(){
+  const s=S,world=s.world.educationWorld,
+    offer=world.offerings[s.educationPath.offeringId],
+    old=world.campuses[offer.campusId],
+    temporaryCampusId=old.id+":approved-temporary",
+    institution=world.institutions[offer.institutionId],
+    enrollmentId=s.educationPath.currentEnrollmentId,
+    placementId=s.educationPlacements.currentPlacementId;
+  world.campuses[temporaryCampusId]={...old,id:temporaryCampusId,
+    campusId:temporaryCampusId,physicalStatus:"usable"};
+  institution.campusIds.push(temporaryCampusId);
+  educationRecordSchoolAction(s,{
+    effectId:"i05-confirmed-temporary-classroom",approved:true,
+    basis:"explicit-simulation-site-action",
+    sourceRef:"institutional-temporary-class-recognition",
+    institutionId:offer.institutionId,campusId:offer.campusId,offeringId:offer.id,
+    effectiveFrom:{year:s.year,month:7},
+    next:{campus:"inaccessible",offering:"suspended",
+      learningContinuity:"alternative_classroom",alternativeCampusId:temporaryCampusId}
+  });
+  for(let month=1;month<=12;month++)educationRecordAttendance(s,{
+    enrollmentId,placementId,year:s.year,month,
+    personalAccess:1,evidenceRef:"verified-temporary-course:"+month
+  });
+  const credit=educationSettleCompletedAcademicYear(s,s.year);
+  return {equivalent:credit.equivalent,credited:credit.credited,
+    month7:s.educationAttendance.enrollments[enrollmentId][s.year][7].equivalent};
+});
+assert.equal(temporary.equivalent,10.5);
+assert.equal(temporary.month7,0.75);
+assert.equal(temporary.credited,true);
+fresh();install();
+const diploma=run(function(){
+  const s=S,enrollmentId=s.educationPath.currentEnrollmentId,
+    place=s.educationPlacements.currentPlacementId,
+    program=s.educationPath.duration;
+  for(let i=0;i<program;i++){
+    s.mo=12;
+    for(let month=1;month<=12;month++)educationRecordAttendance(s,{
+      enrollmentId,placementId:place,year:s.year,month,
+      personalAccess:1,evidenceRef:"academic-year:"+s.year+":"+month
+    });
+    const credit=educationSettleCompletedAcademicYear(s,s.year);
+    if(!credit.credited)throw Error("Expected completed annual credit");
+    s.year++;s.age++;s.mo=0;
+    educationAdvanceYear(s);
+  }
+  const diploma=s.educationRecord.awards.find(row=>row.enrollmentId===enrollmentId);
+  const clone=JSON.parse(JSON.stringify(s));
+  educationAdvanceYear(s);
+  return {completed:s.educationPath.status,years:s.educationPath.yearsCompleted,
+    credits:Object.values(s.educationCredits.items).filter(row=>row.credited).length,
+    awards:s.educationRecord.awards.filter(row=>row.enrollmentId===enrollmentId).length,
+    issuer:diploma?.issuerInstitutionId,sourceCredits:diploma?.sourceCreditIds?.length,
+    same:JSON.stringify(clone)===JSON.stringify(s),
+    audit:educationAttendanceInvariants(s)};
+});
+assert.equal(diploma.completed,"completed");
+assert.equal(diploma.years,3);
+assert.equal(diploma.credits,3);
+assert.equal(diploma.awards,1);
+assert(diploma.issuer?.startsWith("edu-inst:"));
+assert.equal(diploma.sourceCredits,3);
+assert.equal(diploma.same,true);
+assert.deepEqual(diploma.audit,[]);
+fresh();install();
+const noFuture=run(function(){
+  const s=S,id=s.educationPath.currentEnrollmentId,
+    placementId=s.educationPlacements.currentPlacementId;
+  s.mo=3;
+  let refused=false;try{
+    educationRecordAttendance(s,{enrollmentId:id,placementId,
+      year:s.year,month:4,personalAccess:1,evidenceRef:"future-month"});
+  }catch{refused=true;}
+  const current=educationSettleCompletedAcademicYear(s,s.year);
+  const prior=JSON.stringify(s.educationCredits);
+  educationEnd(s,"deceased","本人死亡","confirmed-death");
+  s.dead=1;
+  let afterDeath=false;try{
+    educationRecordAttendance(s,{enrollmentId:id,placementId,
+      year:s.year,month:3,personalAccess:1,evidenceRef:"postmortem"});
+  }catch{afterDeath=true;}
+  return {refused,pending:current.outcome,afterDeath,
+    noNewCredit:prior===JSON.stringify(s.educationCredits)};
+});
+assert.equal(noFuture.refused,true);
+assert.equal(noFuture.pending,"pending");
+assert.equal(noFuture.afterDeath,true);
+assert.equal(noFuture.noNewCredit,true);
 console.log("PASS P05/P09 annual 9/12, disruptions, transfer cap, idempotence and non-anticipatory credits");
