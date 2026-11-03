@@ -170913,7 +170913,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 確認した募集先に、進学の意思を伝えて選考を申し込んだ。学校からの返事を待つことになった。
+> 候補校への出願を考え、家の人と学校に必要な手続きを確かめた。返事に応じて次の判断をする。
 
 効果：
 
@@ -170951,7 +170951,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 別の地区で確認した募集先へ願書を出した。どこで学ぶかは、まだ受入れの返事によって変わりうる。
+> 別の地区で確認した学校を候補に選んだ。家の人の同意と学校の回答を確かめて進路を決める。
 
 効果：
 
@@ -170989,7 +170989,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 調べた中のもう一つの募集先を選び、申込みの手続を始めた。
+> 調べた学校の一つを候補として挙げ、必要な同意と募集条件を確かめた。
 
 効果：
 
@@ -171011,7 +171011,7 @@ s => {
 ```json
 {
   "show": {
-    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"planning\" &&\n          educationActiveCase(s).stepsUsed<2 &&\n          educationNeighborAreaIds(s,s.local?.educationAreaId).length>0"
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"planning\" &&\n          !s.educationAccess?.searches?.some(x=>\n            x.caseId===educationActiveCase(s)?.id && x.scope===\"adjacent\") &&\n          educationNeighborAreaIds(s,s.local?.educationAreaId).length>0"
   }
 }
 ```
