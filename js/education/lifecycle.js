@@ -260,6 +260,8 @@ function educationStart(s,stage,tier = 1,source = null) {
 function educationEnd(s,outcome,reason,source=null) {
   const model=s.educationPath;
   if(!model || model.status!=="enrolled" && model.status!=="paused")return;
+  if(model.offeringId)
+    educationSimulateAttendanceThrough(s,s.year,Math.max(0,(s.mo||0)-1));
   const program=model.stage;
   educationAppendHistory(s,outcome,{stage:program,reason,source});
   model.status=outcome;
@@ -413,6 +415,8 @@ function educationApplyAction(s,action) {
   }
   if(action==="funding-pause"){
     if(s.educationPath?.status==="enrolled"){
+      if(s.educationPath.offeringId)
+        educationSimulateAttendanceThrough(s,s.year,Math.max(0,(s.mo||0)-1));
       s.educationPath.status="paused";
       if(s.study)s.study.suspended=true;
       s.educationPath.pauseYear=s.year;

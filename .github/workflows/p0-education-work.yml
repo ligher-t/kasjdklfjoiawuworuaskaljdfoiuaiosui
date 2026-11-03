@@ -53,6 +53,8 @@ jobs:
         run: node tools/check-efficient.cjs run p18-education-case-fsm.test.cjs
       - name: P07 canonical finance and repayment invariants
         run: node tools/check-efficient.cjs run p18-education-finance-ledger.test.cjs
+      - name: P05/P09 monthly attendance and annual credit threshold
+        run: node tools/check-efficient.cjs run p18-education-attendance-credit.test.cjs
       - name: Educational effects use the correct payer and subject
         run: node tools/check-efficient.cjs run v88_effect_subject_finance_and_infection.test.cjs
       - name: Dependent-child annual household costs reconcile once

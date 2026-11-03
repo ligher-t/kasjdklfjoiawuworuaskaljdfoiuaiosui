@@ -136,6 +136,8 @@ function slot(x) {
     return;
   }
   s.mo = Math.floor(x * CALENDAR_MONTHS) + 1;
+  if(s.educationPath?.offeringId)
+    educationSimulateAttendanceThrough(s,s.year,s.mo-1);
   ensureLocalityState(s);
   educationReconcileWorldAt(s,s.year,s.mo);
   activateHistoricalWorldEvents(s);

@@ -556,6 +556,8 @@ function educationCaseAction(s,action) {
   if(command==="pause"&&item.phase==="continuity"){
     if(!educationCaseStep(s,item,command))return false;
     if(s.educationPath?.status==="enrolled"){
+      if(s.educationPath.offeringId)
+        educationSimulateAttendanceThrough(s,s.year,Math.max(0,(s.mo||0)-1));
       s.educationPath.status="paused";s.educationPath.pauseYear=s.year;
       if(s.study)s.study.suspended=true;
       educationAppendHistory(s,"paused",{reason:"本人の年度内判断"});
