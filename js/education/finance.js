@@ -237,6 +237,7 @@ function educationCommitSettlement(s,plan) {
   if(plan.grant && f.grants[plan.grant.id])return null;
   if(plan.parts.reduce((n,x)=>n+x.amount,0)!==plan.outstanding)return null;
   const before={cash:s.cash,houseCash:s.house?.cash,debt:s.debt,
+    houseWalletId:s.house?.educationWalletId,
     contracts:educationFinanceClone(s.loanContracts||[]),finance:educationFinanceClone(f)};
   try {
     if(plan.loan?.amount){
@@ -254,12 +255,17 @@ function educationCommitSettlement(s,plan) {
         principal:amount,contractId:plan.loan.id,sourceKind:"game-model-loan"};
     }
     s.cash=(s.cash||0)-personal;
-    if(household)s.house.cash-=household;
+    if(household){
+      if(!s.house.educationWalletId)
+        s.house.educationWalletId="edu-wallet:"+String(s.randomSeed||s.by||"life")+":"+plan.invoiceId;
+      s.house.cash-=household;
+    }
     const now=educationFinanceAt(s),receiptIds=[];
     for(const part of plan.parts){
       const id="edu-pay:"+(++f.seq);
       f.receipts[id]={id,invoiceId:plan.invoiceId,amount:part.amount,
-        source:part.source,sourceRef:part.sourceRef||null,
+        source:part.source,sourceRef:part.source==="household"?
+          s.house.educationWalletId:part.sourceRef||null,
         payerPersonId:part.source==="personal"?"protagonist":
           part.source==="household"?"household":null,
         paidAt:now,status:"settled",postingId:plan.postingId};
@@ -279,7 +285,11 @@ function educationCommitSettlement(s,plan) {
     return posting;
   }catch(error){
     s.cash=before.cash;
-    if(s.house)s.house.cash=before.houseCash;
+    if(s.house){
+      s.house.cash=before.houseCash;
+      if(before.houseWalletId===undefined)delete s.house.educationWalletId;
+      else s.house.educationWalletId=before.houseWalletId;
+    }
     s.debt=before.debt;s.loanContracts=before.contracts;
     s.educationFinance=before.finance;
     throw error;
@@ -373,8 +383,14 @@ function educationCommitRefund(s,plan) {
   const inv=f.invoices[plan.invoiceId];
   if(!inv||inv.paid!==plan.expectedPaid||inv.refunded!==plan.expectedRefunded ||
     plan.amount>inv.paid-inv.refunded)return null;
-  for(const row of plan.parts) if(row.source==="contract-loan" &&
-    loanContractBalance(s,row.sourceRef)<row.amount)return null;
+  for(const row of plan.parts){
+    if(row.source==="contract-loan" &&
+       loanContractBalance(s,row.sourceRef)<row.amount)return null;
+    // Do not direct a parental household's refund into a different
+    // household when residence and sharing arrangements have changed.
+    if(row.source==="household" && (!row.sourceRef ||
+       s.house?.educationWalletId!==row.sourceRef))return null;
+  }
   const before={cash:s.cash,house:s.house?.cash,debt:s.debt,
     contracts:educationFinanceClone(s.loanContracts||[]),finance:educationFinanceClone(f)};
   try{
