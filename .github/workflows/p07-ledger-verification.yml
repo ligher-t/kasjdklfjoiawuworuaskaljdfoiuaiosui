@@ -1,4 +1,4 @@
-name: P07 focused ledger integration verification
+name: P07 financing and refund regression verification
 on:
   pull_request:
     branches: [main]
