@@ -162,7 +162,8 @@ function educationDependentRecordSchoolDecision(s,{personId,applicationId,
   };
   const old=entry.cases.find(x=>x.caseId===applicationId);
   if(old){
-    if(JSON.stringify(old)!==JSON.stringify(record))
+    if(old.personId!==personId || old.candidateOfferingId!==offeringId||
+       old.schoolDecision!==status || old.sourceEventId!==sourceEventId)
       throw Error("同じ子の出願判断IDに異なる結果");
     return old;
   }

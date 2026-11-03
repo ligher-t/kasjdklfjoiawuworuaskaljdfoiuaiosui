@@ -85,6 +85,11 @@ function educationRecordSchoolDisclosure(s,{institutionId,recipientKind,
     throw Error("学校の受信者・感染情報の出典が確定していない");
   if(certainty==="confirmed"&&(!s.inf||!s.fl?.dg))
     throw Error("本人の診断確認前に感染確知を共有できない");
+  const id=[institutionId,recipientKind,personId||"office",evidenceRef].join("|"),
+    prior=s.educationDisclosureReceipts?.items?.[id];
+  if(prior && (prior.certainty!==certainty||prior.source!==source||
+     prior.consent!==consent))
+    throw Error("同じ感染情報受領IDに別の根拠や確度を付与できない");
   const row=recordInfectionAwareness(s,{
     subject:"protagonist",
     audience:recipientKind==="institution"?"school":"school-contact",
@@ -94,7 +99,6 @@ function educationRecordSchoolDisclosure(s,{institutionId,recipientKind,
     sourceEventId:evidenceRef
   });
   s.educationDisclosureReceipts ||= {version:1,items:{}};
-  const id=[institutionId,recipientKind,personId||"office",evidenceRef].join("|");
   s.educationDisclosureReceipts.items[id] ||= {
     id,institutionId,recipientKind,recipientId:personId,
     awarenessSourceEventId:row.sourceEventId,
