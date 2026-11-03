@@ -1093,4 +1093,28 @@ const companyPhantom=snap(`
 assert.deepEqual(companyPhantom,{camp:false,farm:false},
   'a job number without either company or farm membership cannot create duty');
 
-console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring, expulsion Victorian wartime/postwar exile and two Ursus military hearings, three explicit regional career losses and genuine later reemployment, two frontier company hiring and failure branches');
+// Cross-check all explicit regional career job exits against the formal ledger.
+// Dismissals, captures, disbandment and land losses require a recorded ending;
+// this guards against new ghost employers when expanding the route catalog.
+const allRegionalExits=snap(`
+  let exits=0;
+  const missing=[];
+  for(const e of EV.filter(x=>/^car_(?:yan|lmd|hig|urs|vic|lei|lat|col|kaz|sir|sie|sar|sam|kje|ibe|bol|rim|min)_/.test(x.id))){
+    (e.c||[]).forEach((c,ci)=>(c.o||[]).forEach((o,oi)=>{
+      const fx=o?.[2];
+      if(fx?.job!==0) return;
+      exits++;
+      const a=[fx.lifeAffiliation,...(fx.lifeAffiliations||[])].filter(Boolean),
+        g=[fx.lifeGoal,...(fx.lifeGoals||[])].filter(Boolean);
+      if(!a.some(x=>x.action==='leave') ||
+         !g.some(x=>['abandon','pause','compromise','complete'].includes(x.action)))
+        missing.push({event:e.id,choice:ci,outcome:oi});
+    }));
+  }
+  return {exits,missing};
+`);
+assert(allRegionalExits.exits>=9,'regional career audit must inspect every real work-ending outcome');
+assert.deepEqual(allRegionalExits.missing,[],
+  'every region-specific involuntary or chosen loss must explicitly close employer and life-goal histories');
+
+console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome, 42 regional career duties, rehiring, expulsion Victorian wartime/postwar exile and two Ursus military hearings, three explicit regional career losses and genuine later reemployment, two frontier company hiring and failure branches and all regional occupation exits');
