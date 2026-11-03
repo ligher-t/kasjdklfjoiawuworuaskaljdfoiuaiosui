@@ -13,6 +13,7 @@ const approved=Object.freeze([
   "p18-education-finance-ledger.test.cjs",
   "p18-education-attendance-credit.test.cjs",
   "p18-education-access-family-nonformal.test.cjs",
+  "p18-education-event-migration.test.cjs",
   "p0-education-service-context.test.cjs",
   "regional-event-context.test.cjs",
   "terra-death-causes-diversity.test.cjs",

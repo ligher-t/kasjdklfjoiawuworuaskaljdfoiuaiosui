@@ -57,6 +57,8 @@ jobs:
         run: node tools/check-efficient.cjs run p18-education-attendance-credit.test.cjs
       - name: P10/P11/P12 awareness, child autonomy, and evidence-based nonformal learning
         run: node tools/check-efficient.cjs run p18-education-access-family-nonformal.test.cjs
+      - name: P13/P17 reviewed prose, school scenes, and nonformal event delivery
+        run: node tools/check-efficient.cjs run p18-education-event-migration.test.cjs
       - name: Educational effects use the correct payer and subject
         run: node tools/check-efficient.cjs run v88_effect_subject_finance_and_infection.test.cjs
       - name: Dependent-child annual household costs reconcile once
