@@ -36,7 +36,10 @@ const fixture=()=>{
 const corpus=run(function(){
   const items=window.TERRA_EDUCATION_P17_REVIEWED,
     shown=EV.filter(x=>x.id.startsWith("edu_")&&
-      items.some(y=>y.eventId===x.id));
+      items.some(y=>y.eventId===x.id) &&
+      (x.fx?.educationAction?.startsWith("event:") ||
+        x.c?.some(c=>c.o?.some(o=>
+          o?.[2]?.educationAction?.startsWith("event:")))));
   return {count:items.length,
     choices:items.reduce((n,x)=>n+x.choices.length,0),
     notes:items.reduce((n,x)=>n+x.choices.reduce((a,b)=>a+b.notifications.length,0),0),
