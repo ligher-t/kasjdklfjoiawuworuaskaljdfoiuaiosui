@@ -321,6 +321,8 @@ function educationRecordFundedYear(s,m,source,historyKind,details) {
   s.educationDecision=null;
 }
 function educationApplyAction(s,action) {
+  if(typeof action==="string" && action.startsWith("event:"))
+    return educationMigrationApply(s,action.slice(6));
   if(typeof action==="string" && action.startsWith("case:")) {
     educationCaseAction(s,action);
     return;
