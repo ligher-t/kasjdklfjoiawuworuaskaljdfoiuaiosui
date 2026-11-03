@@ -1749,6 +1749,12 @@ window.TERRA_DATA_BUILD.run("education/p17-reviewed-prose", function ($terraData
     ]
   }
 ];
+  $terraData.EVENT_EFFECT_TYPES.string.push("educationMigrationAction");
+  $terraData.EVENT_FIELD_META.educationMigrationAction={
+    status:"S",valueType:"string",unit:"P17イベント・選択の操作識別子",
+    meaning:"本人が選択した新イベントをP05-P12の実記録へ接続する",
+    assumption:"S"
+  };
   const activated=new Set(["E34","E35","E41","E43","E47","E48","E49","E50","E51","E52","E53","E54"]);
   window.TERRA_EDUCATION_P17_REVIEWED=reviewed;
   for(const entry of reviewed){
