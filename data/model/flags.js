@@ -562,6 +562,12 @@ window.TERRA_DATA_BUILD.run("model/flags", function ($terraData, $define, $rules
         description: "ライン生命の非人道実験を内部告発し、追われる身となった経験。",
         engine: "ロドス亡命・隠遁イベントの解放"
       },
+      rhine_whistleblower_review_passed: {
+        label: "ライン生命の再応募資格審査を通過",
+        description:
+          "1099年の組織再編後に個別の告発経歴を審査して再応募資格が認められたゲーム上の結果。採用内定や元の階級への復帰を意味しない。",
+        engine: "離職した告発者の通常採用経路を再び選択可能にする"
+      },
       bsw_infection_disclosed: {
         label: "BSW社内感染開示",
         description: "BSW社内規則に基づき、自身の鉱石病感染を人事部・同僚へ正式に開示した記録。",
