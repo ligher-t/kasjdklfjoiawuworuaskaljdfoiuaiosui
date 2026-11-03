@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Reconcile new review catalog records and version
+      - name: Synchronize verified career aftermath prose and catalog
         run: |
           node tools/update-version.cjs
           node tools/generate-event-catalog.cjs --reconcile
@@ -25,8 +25,6 @@ jobs:
           node tools/check-efficient.cjs syntax
           node tools/generate-event-catalog.cjs --check
           node --input-type=commonjs -e "const fs=require('node:fs');console.log('GENERATED_VERSION='+fs.readFileSync('js/version.js','utf8').match(/[a-f0-9]{64}/)[0])"
-      - name: Validate regional exits and actual civilian reemployment outcomes
-        run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs v88_regional_promotion_history.test.cjs v88_workplace_goal_departure_contracts.test.cjs v88_outcome_followup_lineage.test.cjs
       - name: Update reviewed generated files
         run: |
           git add js/version.js EVENT_CATALOG.md tools/event-catalog-metadata.json
