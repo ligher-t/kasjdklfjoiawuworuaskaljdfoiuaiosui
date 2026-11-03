@@ -16,7 +16,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 18, year: 1090 },
-      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired,
+      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired && s.eventOutcomes?.car_urs_officer_choice_purge?.choiceIndex !== 1,
       t: "要塞司令部の豪奢な執務室で、貴族将校たちが書類に目を落としていた。ウルサス帝国軍の指揮官枠――それは貴族の血筋と巨額の軍資金を握る選民だけの特権である。平民や感染者を徹底して見下す軍国主義の牙城に、士官候補生としての仕官を願う。",
       c: [
         $terraData.K("家格の推薦状と武芸の証を差し出す", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -70,7 +70,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 18, year: 1090 },
-      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired,
+      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired && s.eventOutcomes?.car_urs_guard_choice_riot?.choiceIndex !== 1,
       t: "ツンドラの冷風が吹きすさぶ兵舎で、国境警備部隊と感染者鉱山を監視する憲兵の徴募が行われていた。厳しい学歴は問われず、頑丈な体さえあれば誰でも雇われる。だがそれは、極寒と感染者の暴動が渦巻く使い捨ての最前線である。",
       c: [
         $terraData.K("過酷な任務を覚悟し、徴募書に署名する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -210,7 +210,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20, year: 1092 },
-      show: s => s.res?.n === "ヴィクトリア" && s.job === 0 && !s.fl?.retired && (s.cr || 0) >= 25,
+      show: s => s.res?.n === "ヴィクトリア" && s.job === 0 && !s.fl?.retired && (s.cr || 0) >= 25 && s.eventOutcomes?.car_vic_royal_choice_coup?.choiceIndex !== 1,
       t: "ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推薦状を揃えた者だけが、金糸の軍服をまとい将校として軍の頂点へ迎えられる。",
       c: [
         $terraData.K("推薦状と巨額の軍官買い取り金を差し出す", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
