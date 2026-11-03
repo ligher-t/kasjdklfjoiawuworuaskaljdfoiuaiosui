@@ -425,10 +425,11 @@ window.TERRA_DATA_BUILD.fragment(
       ge: { age: 25 },
       after: { id: "car_urs_officer_choice_purge", min: 2, choice: 1 },
       show: s => true &&
-        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-imperial-officer" && a.status === "left") &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-imperial-officer" &&
+          (a.status === "left" || (a.status === "active" && s.job === 51))) &&
         s.lifeRecord?.goals?.some(g => g.id === "ursus-dismissed-officer-next-livelihood" &&
           ["active", "compromised", "paused"].includes(g.status)),
-      t: "軍服を脱いで幾年かが過ぎた。没収された財産や、かつての肩章が戻ってくる気配はない。もう軍の命令が届かない場所にも、食べていくための仕事はあった。",
+      t: "軍服を脱いだあの日から幾年かが過ぎた。不名誉除隊の記録と失ったものは、今も自分の経歴に残っている。新しい仕事や生活のかたちを、あらためて考える機会が訪れた。",
       c: [
         $terraData.K("働き口の手がかりを探す", {
           show: s => s.job === 0,
@@ -453,7 +454,13 @@ window.TERRA_DATA_BUILD.fragment(
           ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
         }, [1, "新しい勤務は続いている。それでも、この先の暮らしを決めるにはまだ早いと感じた。",
           { lifeGoal: { id: "ursus-dismissed-officer-next-livelihood", action: "continue",
-            note: "別の仕事に就いたが、除隊後の生計を引き続き見極める" } }])
+            note: "別の仕事に就いたが、除隊後の生計を引き続き見極める" } }]),
+        $terraData.K("軍に再採用された仕事を、生活再建の区切りとする", {
+          show: s => s.job === 51 && $rules.affiliations.canWork(s, "ursus-imperial-officer"),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "新たな任命書に署名し、かつての勤務地とは異なる持ち場の仕事を始めた。不名誉除隊の記録は残るが、今は自分の給金で暮らしている。",
+          { lifeGoal: { id: "ursus-dismissed-officer-next-livelihood", action: "complete",
+            note: "個別の処分審査後に再採用され、軍務で新たな生計を得た" } }])
       ]
     },
     {
@@ -465,10 +472,11 @@ window.TERRA_DATA_BUILD.fragment(
       ge: { age: 23 },
       after: { id: "car_urs_guard_choice_riot", min: 2, choice: 1 },
       show: s => true &&
-        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-border-mine-guard" && a.status === "left") &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-border-mine-guard" &&
+          (a.status === "left" || (a.status === "active" && s.job === 52))) &&
         s.lifeRecord?.goals?.some(g => g.id === "ursus-expelled-guard-next-livelihood" &&
           ["active", "compromised", "paused"].includes(g.status)),
-      t: "坑道を逃げ出したあの日のことは今も覚えている。軍務を追われてからは、制服のない日々を送っていた。夜になると、地下の鉄扉が軋む音を思い出すことがあった。",
+      t: "坑道を離れたあの日のことは今も覚えている。軍務を追われた後の日々は、以前とは違う重みを持っていた。今の仕事も、次の暮らしも、自分で選び直すことができる。",
       c: [
         $terraData.K("別の働き口を探して回る", {
           show: s => s.job === 0,
@@ -493,7 +501,83 @@ window.TERRA_DATA_BUILD.fragment(
           ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
         }, [1, "働き始めてからも、いつまでこの勤めが続くかは分からない。しばらく考え続けることにした。",
           { lifeGoal: { id: "ursus-expelled-guard-next-livelihood", action: "continue",
-            note: "別の仕事に就いたが、追放後の暮らしの安定を引き続き見極める" } }])
+            note: "別の仕事に就いたが、追放後の暮らしの安定を引き続き見極める" } }]),
+        $terraData.K("再採用後の警備勤務を、生活再建の区切りとする", {
+          show: s => s.job === 52 && $rules.affiliations.canWork(s, "ursus-border-mine-guard"),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "新しい配属先で交代勤務を終えた。以前の坑道からは離れているが、任された仕事を終えるたびに給金が支払われるようになった。",
+          { lifeGoal: { id: "ursus-expelled-guard-next-livelihood", action: "complete",
+            note: "処分再審査後の再採用によって、警備勤務で生計を立て直した" } }])
+      ]
+    },
+    {
+      id: "car_urs_officer_disciplinary_review",
+      conf: "S",
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.32,
+      ge: { age: 25 },
+      after: { id: "car_urs_officer_choice_purge", min: 3, choice: 1, outcome: 0 },
+      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-imperial-officer" &&
+          a.status === "left" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        !(s.eventOutcomes?.car_urs_officer_disciplinary_review?.choiceIndex === 0 &&
+          s.eventOutcomes?.car_urs_officer_disciplinary_review?.outcomeIndex === 0),
+      t: "かつての不名誉除隊について、軍の記録担当が例外的な処分再審査の申立書を受け付けると知った。命令を拒んだ事情を記せば、当時の上官の判断も問い直すことになる。古い対立を掘り起こす危険はあった。",
+      c: [
+        $terraData.K("当時の命令と除隊の経緯を書き、審査を申し立てる", {
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [
+          0.2,
+          "数度の照会の後、処分記録に再審査の結果が追記された。士官候補として再応募することは認められたが、階級も任地も戻ってはいない。",
+          { k: 1, p: 1 }
+        ], [
+          1,
+          "軍司令部からは、処分を見直す根拠が見いだせないという短い返書が届いた。封書を閉じても、あの命令を拒んだ日の記憶は消えなかった。",
+          { p: -1 }
+        ]),
+        $terraData.K("処分には触れず、今の暮らしを優先する", {
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [
+          1,
+          "申立書を破り、いつもの仕事探しに戻ることにした。かつての肩章に頼らず暮らす道も、自分には残されていた。",
+          { p: 1 }
+        ])
+      ]
+    },
+    {
+      id: "car_urs_guard_disciplinary_review",
+      conf: "S",
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.32,
+      ge: { age: 23 },
+      after: { id: "car_urs_guard_choice_riot", min: 3, choice: 1, outcome: 0 },
+      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-border-mine-guard" &&
+          a.status === "left" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        !(s.eventOutcomes?.car_urs_guard_disciplinary_review?.choiceIndex === 0 &&
+          s.eventOutcomes?.car_urs_guard_disciplinary_review?.outcomeIndex === 0),
+      t: "軍務を追われて数年が経ち、かつての坑道での出来事を別の担当者に申し立てられると聞いた。脱出を選んだ理由も、退路を塞いだ状況も、記録の中では短い「職場放棄」の一語で片付けられていた。",
+      c: [
+        $terraData.K("坑道の状況と自分の証言を提出し、処分の再審査を求める", {
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [
+          0.4,
+          "提出した報告が照合され、再び警備隊の採用選考を受ける資格を認められた。以前の処分や失った年月は記録に残っている。",
+          { k: 1, p: 1 }
+        ], [
+          1,
+          "返ってきたのは、処分を変更しないという通知だけだった。事件の詳しい事情は、今回の判断には採用されなかった。",
+          { p: -1 }
+        ]),
+        $terraData.K("軍務への復帰は望まず、今の生活を続ける", {
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [
+          1,
+          "書きかけの申立書をしまい、これからの仕事を探すことにした。坑道での出来事は、どこへ行っても自分の過去として残る。",
+          { p: 1 }
+        ])
       ]
     },
   ];
