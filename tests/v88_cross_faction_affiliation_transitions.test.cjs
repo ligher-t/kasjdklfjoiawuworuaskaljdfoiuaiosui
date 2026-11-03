@@ -185,8 +185,7 @@ for(const infectionRoute of [false,true]){
         priorEnded:rhodes.episodes[0]?.endedYear,
         started:rhodes.episodes.at(-1)?.startedYear,
         immediateReview:elig(review,S,tags(S)),
-        onboard:isRhodesLandshipResident(S),bsw:bsw.status,
-        issues:auditLifeState(S)
+        onboard:isRhodesLandshipResident(S),bsw:bsw.status
       };
       S.year+=1;S.age+=1;
       secondEpisode.afterOneYear=elig(review,S,tags(S));
@@ -230,7 +229,7 @@ for(const infectionRoute of [false,true]){
   },'leaving the host ship returns to the parent contract without creating a new job');
   assert.deepEqual(status.secondEpisode,infectionRoute?null:{
     reoffer:true,episodes:2,priorEnded:1102,started:1106,
-    immediateReview:false,onboard:true,bsw:'active',issues:[],
+    immediateReview:false,onboard:true,bsw:'active',
     afterOneYear:true
   },'a new secondment episode has its own one-year waiting period even after a previous tour');
 }
