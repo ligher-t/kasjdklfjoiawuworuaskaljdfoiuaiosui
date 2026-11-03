@@ -1,4 +1,4 @@
-name: Temporary new life goal and sidecar validation
+name: Temporary post-settlement locality and work contract reconciliation
 on:
   push:
     branches: [fix/historical-event-scope-and-delivery]
