@@ -476,19 +476,40 @@ function educationApplyAction(s,action) {
     s.educationDecision=null;return;
   }
   if(action.startsWith("apply:")){
-    const [,stage,t]=action.split(":"),tier=Number(t),exam=educationExam(s,stage,tier);
+    const [,stage,t]=action.split(":"),tier=Number(t),
+      exam=educationExam(s,stage,tier);
     if(!exam.allowed)return;
-    // Examination fee applies even when the application is rejected.
-    const examFee=Math.round(exam.fee*0.06),admitted=R()<exam.chance;
-    if(admitted) {
-      if(educationChargeFee(s,exam.fee,stage)) {
+    const applicationId=["legacy-application",source||"unattributed",stage,tier,s.year].join(":"),
+      invoice=educationEnsureInvoice(s,{
+        id:applicationId+":exam:1",kind:"entrance-exam",
+        applicationId,institutionId:"legacy-course:"+s.res?.n+":"+stage+":"+tier,
+        amount:exam.examFee,serviceYear:s.year,
+        policyId:"game-model-legacy-entrance-exam-v1"
+      });
+    // The identical fee is settled before selection. A failed examination
+    // cannot defer payment until after seeing the result.
+    if(!educationSettleInvoice(s,invoice))return;
+    const admitted=R()<exam.chance;
+    if(admitted){
+      const funded=educationPaymentPlan(s,exam.fee).allowed;
+      if(funded && educationChargeFee(s,exam.fee,stage)){
         educationStart(s,stage,tier,source);
-        if(typeof L==="function")L("選考に合格し、学費を納付して"+(stage==="university"?"大学":stage==="arts"?"アーツ学院":"専門校")+"への入学が認められた。");
+        if(typeof L==="function")L("選考に合格し、学費を納付して"+
+          (stage==="university"?"大学":stage==="arts"?"アーツ学院":"専門校")+
+          "への入学が認められた。");
+      }else{
+        s.educationPath=s.educationPath||{version:1,status:"outside",completed:[],history:[]};
+        educationAppendHistory(s,"accepted-not-enrolled",{
+          stage,tier,applicationId,reason:"入学年度の学費未納",source
+        });
+        s.educationDecision=null;
+        if(typeof L==="function")L("選考には通ったものの、入学年度の学費がそろわず、在籍の手続は成立しなかった。受験料の支払は記録に残った。");
       }
-    } else {
-      educationChargeFee(s,examFee,stage);
+    }else{
       s.educationPath=s.educationPath||{version:1,status:"outside",completed:[],history:[]};
-      educationAppendHistory(s,"exam-failed",{stage,tier,source,examChance:exam.chance,examFee});
+      educationAppendHistory(s,"exam-failed",{
+        stage,tier,source,applicationId,examChance:exam.chance,examFee:exam.examFee
+      });
       s.educationDecision=null;
       if(typeof L==="function")L("入学試験の結果は不合格だった。受験料は戻らず、学費は支払っていない。");
     }
