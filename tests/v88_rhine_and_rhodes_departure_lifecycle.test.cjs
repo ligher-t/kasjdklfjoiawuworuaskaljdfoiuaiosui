@@ -249,4 +249,129 @@ assert.deepEqual(nonResigner,{
   followup:false,reviewAgain:false
 },'remaining on the company payroll creates no fictitious resignation history');
 
-console.log('PASS: Rhine dated crisis and post-exit jobs, asylum boundary, Rhodes parallel exit, arena retirement');
+
+// Whistleblowers are not silently rehired. A documented former staff member
+// can request post-1099 review, without the review itself awarding a job.
+const reinstatement=inspect(`
+  born({seed:20261196,by:1070,region:'クルビア'});
+  S.year=1099;S.age=29;S.mo=6;S.k=100;
+  const hire=EV.find(e=>e.id==='sr_rhine_recruitment_exam'),
+    promotion=EV.find(e=>e.id==='sr_rhine_section_assignment'),
+    ethics=EV.find(e=>e.id==='sr_rhine_diabolic_ethical_crossroad'),
+    asylum=EV.find(e=>e.id==='sr_rhine_rhodes_asylum'),
+    review=EV.find(e=>e.id==='sr_rhine_whistleblower_return_review');
+  if(!hire||!promotion||!ethics||!asylum||!review)
+    throw Error('Rhine whistleblower path event missing');
+  const initially=hire.show(S);
+  ap(hire.c[0].o[0][2]);
+  ap(promotion.c[0].o[0][2]);
+  ap(ethics.c[0].o[0][2]);
+  const disclosed={job:S.job,flag:S.fl.rhine_whistleblower,
+    ordinaryRecruitment:hire.show(S),review:review.show(S)};
+  ap(asylum.c[0].o[0][2]);
+  const aff=S.lifeRecord.affiliations.find(a=>a.id==='rhine-lab'),
+    goal=S.lifeRecord.goals.find(g=>g.id==='rhine-research'),
+    rhodes=S.lifeRecord.affiliations.find(a=>a.id==='rhodes-staff');
+  S.year=1100;S.age=30;
+  const stillEmployed={job:S.job,review:review.show(S)};
+  ap({job:0,
+    lifeAffiliation:{id:'rhodes-staff',action:'leave',note:'ロドスを本人の意思で退職'},
+    lifeGoal:{id:'rhodes-work',action:'abandon',
+      note:'ロドスへの所属終了にあわせ勤務目標を終了'}});
+  const applying={
+    job:S.job,former:aff.status,episodes:aff.episodes.length,
+    oldGoal:goal.status,rhodes:rhodes.status,
+    ordinaryRecruitment:hire.show(S),review:elig(review,S,tags(S)),
+    issues:auditLifeState(S)
+  };
+  ap(review.c[0].o[1][2]);
+  S.sn[review.id]=S.year;
+  const rejected={flag:S.fl.rhine_whistleblower_review_passed||0,
+    job:S.job,recruitment:hire.show(S),
+    immediateReview:elig(review,S,tags(S))};
+  S.year=1103;S.age=33;
+  const later=elig(review,S,tags(S));
+  ap(review.c[0].o[0][2]);
+  S.sn[review.id]=S.year;
+  const approved={flag:S.fl.rhine_whistleblower_review_passed,
+    job:S.job,recruitment:elig(hire,S,tags(S)),
+    review:review.show(S),
+    former:aff.status,oldGoal:goal.status};
+  ap(hire.c[0].o[0][2]);
+  const rehired={
+    job:S.job,aff:aff.status,episodes:aff.episodes.length,
+    oldEnded:aff.episodes[0]?.endedYear,
+    newStarted:aff.episodes.at(-1)?.startedYear,
+    goal:goal.status,history:goal.history.map(x=>x.action),
+    review:review.show(S),
+    asylum:asylum.show(S),
+    issues:auditLifeState(S)
+  };
+  return {initially,disclosed,stillEmployed,applying,rejected,later,approved,rehired};
+`);
+assert.equal(reinstatement.initially,true);
+assert.deepEqual(reinstatement.disclosed,{
+  job:39,flag:1,ordinaryRecruitment:false,review:false
+});
+assert.deepEqual(reinstatement.stillEmployed,{job:30,review:false},
+  'an active Rhodes worker is not seeking a fresh Rhine job');
+assert.deepEqual(reinstatement.applying,{
+  job:0,former:'left',episodes:1,oldGoal:'abandoned',rhodes:'left',
+  ordinaryRecruitment:false,review:true,issues:[]
+},'former Rhine whistleblower needs a recorded departure and unemployment before review');
+assert.deepEqual(reinstatement.rejected,{
+  flag:0,job:0,recruitment:false,immediateReview:false
+},'rejected ethical screening provides no old job or permission to recruit');
+assert.equal(reinstatement.later,true,
+  'after a three-year interval the applicant may seek another review');
+assert.deepEqual(reinstatement.approved,{
+  flag:1,job:0,recruitment:true,review:false,
+  former:'left',oldGoal:'abandoned'
+},'a favorable assessment opens recruitment but does not award employment');
+assert.deepEqual(reinstatement.rehired,{
+  job:38,aff:'active',episodes:2,oldEnded:1099,newStarted:1103,
+  goal:'active',history:['start','abandon','start'],
+  review:false,asylum:false,issues:[]
+},'separate recruitment creates a fresh episode while retaining the original whistleblower departure');
+
+const phantomReview=inspect(`
+  born({seed:20261197,by:1070,region:'クルビア'});
+  S.year=1101;S.age=31;S.k=100;S.fl.rhine_whistleblower=1;
+  const hire=EV.find(e=>e.id==='sr_rhine_recruitment_exam'),
+    review=EV.find(e=>e.id==='sr_rhine_whistleblower_return_review');
+  return {hire:hire.show(S),review:review.show(S),eligible:elig(review,S,tags(S))};
+`);
+assert.deepEqual(phantomReview,{hire:false,review:false,eligible:false},
+  'a bare whistleblower flag does not manufacture former company membership');
+
+for(const corp of ['rhine','bsw']){
+  ctx.REHIRE_CORP=corp;
+  const achievement=inspect(`
+    born({seed:REHIRE_CORP==='rhine'?20261198:20261199,by:1070,region:'クルビア'});
+    S.year=1099;S.age=29;S.k=100;S.h=100;
+    const rhine=REHIRE_CORP==='rhine',
+      hire=EV.find(e=>e.id=== (rhine?'sr_rhine_recruitment_exam':'sr_bsw_recruitment_assessment')),
+      affId=rhine?'rhine-lab':'bsw-contract',
+      goalId=rhine?'rhine-research':'bsw-work';
+    ap(hire.c[0].o[0][2]);
+    ap({lifeGoal:{id:goalId,action:'complete',note:'前の在籍期間に達成'}});
+    const membership=S.lifeRecord.affiliations.find(a=>a.id===affId),
+      objective=S.lifeRecord.goals.find(g=>g.id===goalId);
+    ap({job:0,lifeAffiliation:{id:affId,action:'leave',note:'契約を終了'}});
+    S.year+=3;S.age+=3;
+    const allowed=elig(hire,S,tags(S));
+    ap(hire.c[0].o[0][2]);
+    return {allowed,job:S.job,status:membership.status,
+      episodes:membership.episodes.length,oldEnd:membership.episodes[0]?.endedYear,
+      currentStart:membership.episodes.at(-1)?.startedYear,
+      goal:objective.status,history:objective.history.map(x=>x.action),
+      issues:auditLifeState(S)};
+  `);
+  assert.deepEqual(achievement,{
+    allowed:true,job:corp==='rhine'?38:35,status:'active',
+    episodes:2,oldEnd:1099,currentStart:1102,
+    goal:'achieved',history:['start','complete'],issues:[]
+  },'an already achieved '+corp+' employment goal must survive a later hire');
+}
+
+console.log('PASS: Rhine dated crisis and post-exit jobs, asylum boundary, Rhodes parallel exit, arena retirement, ethics-gated reentry and achievement-preserving rehiring');
