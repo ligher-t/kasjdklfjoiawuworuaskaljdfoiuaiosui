@@ -148,6 +148,8 @@ function educationCaseReasonText(s,index) {
     "escort-required":"付き添いを引き受ける人を確かめる必要がある。",
     "route-risk-unmitigated-minor":"未成年者が安全に通える付き添いが必要。",
     "no-funds":"出願に必要な費用が足りない。",
+    "no-guardian":"未成年者の出願に必要な保護者の同意が確かめられていない。",
+    "guardian-refused":"保護者から出願の承諾を得られていない。",
     "not-eligible":"この課程の出願資格を満たしていない。",
     "enrollment-conflict":"現在の学籍を先に整理する必要がある。"
   };
@@ -191,6 +193,12 @@ function educationCasePreflight(s,row) {
   const cost=educationFunds(s,off.stage,off.admissionTier),
     examFee=higher?Math.round(cost*0.06):0;
   if(!educationPaymentPlan(s,examFee).allowed)return fail("no-funds");
+  if(s.age<18){
+    const review=educationGuardianReview(s,"protagonist",
+      higher?"exam-visit":"daily-commute",off.institutionId,s.year,s.mo??0);
+    if(review.guardianConsentStatus==="refused")return fail("guardian-refused");
+    if(review.guardianConsentStatus!=="granted")return fail("no-guardian");
+  }
   const route=educationCanReach(s,{
     institutionId:off.institutionId,campusId:off.campusId,offeringId:off.id,
     year:s.year,month:s.mo??0,purpose:higher?"exam-visit":"daily-commute"
@@ -270,6 +278,10 @@ function educationCaseSelect(s,index) {
     item.phase="contract";
     item.evidence.admissionOfferId=item.applicationId+":admission-offer";
   }else educationCaseFinish(s,item,high?"exam-failed":"institution-refused");
+  if(typeof L==="function")L(accepted ?
+    "応募した学校から受入れの知らせが届いた。学費の納付と通学の条件を確かめて、入学を決めることになる。" :
+    high ? "出願した課程から不合格の知らせが届いた。受験料の支払は記録に残り、授業料の請求は発生していない。" :
+    "学校から、今回は受け入れられないと返事が届いた。理由は通知されていない。");
   return true;
 }
 function educationCaseCommitEligibility(s) {
@@ -286,6 +298,12 @@ function educationCaseCommitEligibility(s) {
     ["suspended","closed","full"].includes(status.admissionStatus))
     return {allowed:false,reason:"school-closed"};
   if(educationOccupied(s)||!!s.study)return {allowed:false,reason:"enrollment-conflict"};
+  if(s.age<18){
+    const guardian=educationGuardianReview(s,"protagonist","daily-commute",
+      item.targetInstitutionId,s.year,s.mo??0);
+    if(guardian.guardianConsentStatus!=="granted")
+      return {allowed:false,reason:"no-guardian"};
+  }
   const route=educationCanReach(s,{institutionId:item.targetInstitutionId,
     campusId:item.campusId,offeringId:item.offeringId,year:s.year,month:s.mo??0,
     purpose:"daily-commute"});
@@ -325,18 +343,16 @@ function educationCaseRequestGuardian(s,caseItem) {
   if(!world?.areas?.[origin])return;
   const offers=educationCaseCandidates(s);
   educationCreateMobilityState(s);
-  for(const row of offers){
-    const inst=row.institutionId;
+  for(const row of offers) for(const purpose of ["daily-commute","exam-visit"]){
+    const inst=row.institutionId,id=caseItem.id+":"+inst+":"+purpose;
     const allowed={year:s.year,month:s.mo??0};
-    s.educationMobility.escortRecords[caseItem.id+":"+inst]={
-      id:caseItem.id+":"+inst,personId:"protagonist",
-      institutionId:inst,purpose:"daily-commute",
+    s.educationMobility.escortRecords[id]={
+      id,personId:"protagonist",institutionId:inst,purpose,
       escortPersonId:key,evidenceRef:caseItem.id+":family-escort",
       status:"verified",validFrom:allowed,validThrough:{year:s.year,month:12}
     };
-    s.educationMobility.consentRecords[caseItem.id+":"+inst]={
-      id:caseItem.id+":"+inst,personId:"protagonist",
-      institutionId:inst,purpose:"daily-commute",
+    s.educationMobility.consentRecords[id]={
+      id,personId:"protagonist",institutionId:inst,purpose,
       consenterPersonId:key,evidenceRef:caseItem.id+":family-agreement",
       consentState:"granted",validFrom:allowed,validThrough:{year:s.year,month:12}
     };
