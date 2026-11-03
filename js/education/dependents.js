@@ -113,6 +113,62 @@ function educationDependentRecordPreference(s,{personId,stage,stance,
   entry.preferences.push(row);
   return row;
 }
+function educationDependentRecordConsent(s,{personId,consentId,purpose,
+  signerPersonId,offeringId,status,sourceEventId}={}) {
+  const entry=educationDependentEntry(s,personId,true),
+    offer=s.world?.educationWorld?.offerings?.[offeringId];
+  if(!entry||!consentId||!sourceEventId||!offer||!signerPersonId||
+     !["attend","guardian-enrollment","informal-learning"].includes(purpose)||
+     !["approved","refused","pending"].includes(status))
+    throw Error("子本人・後見者の個別同意を記録する証拠が不足");
+  const actualParent=entry.subjectKind==="child"&&
+    signerPersonId==="protagonist";
+  const verifiedGuardian=entry.authority.guardians.some(x=>
+    x.personId===signerPersonId && x.status==="verified");
+  if(purpose==="attend"&&signerPersonId!==personId ||
+     purpose!=="attend"&&!actualParent&&!verifiedGuardian)
+    throw Error("教育判断の署名者が本人または実際の後見人と一致しない");
+  const row={
+    consentId,personId,signerPersonId,signerAuthority:purpose==="attend"?
+      "learner":actualParent?"protagonist-parent":"confirmed-guardian",
+    purpose,offeringId,status,sourceEventId,
+    period:{year:s.year,month:s.mo??0}
+  };
+  const existing=entry.consents.find(x=>x.consentId===consentId);
+  if(existing){
+    if(JSON.stringify(existing)!==JSON.stringify(row))
+      throw Error("同意記録IDの異なる署名内容");
+    return existing;
+  }
+  entry.consents.push(row);
+  return row;
+}
+function educationDependentRecordSchoolDecision(s,{personId,applicationId,
+  offeringId,status,sourceEventId}={}) {
+  const entry=educationDependentEntry(s,personId,true),
+    offer=s.world?.educationWorld?.offerings?.[offeringId],
+    note=educationSchoolStatusAt(s,offeringId,s.year,s.mo??0);
+  if(!entry||!applicationId||!sourceEventId||!offer||!note||
+     !["accepted","rejected","expired","applied"].includes(status))
+    throw Error("子別の学校判断と募集の根拠が不足");
+  const record={
+    caseId:applicationId,personId,stage:offer.stage,
+    status:status==="accepted"?"awaiting-funds":
+      status==="applied"?"awaiting-school":"closed",
+    schoolDecision:status,candidateOfferingId:offeringId,
+    decisionOwnerId:offer.institutionId,
+    createdAt:{year:s.year,month:s.mo??0},
+    sourceEventId,reasonCodes:[]
+  };
+  const old=entry.cases.find(x=>x.caseId===applicationId);
+  if(old){
+    if(JSON.stringify(old)!==JSON.stringify(record))
+      throw Error("同じ子の出願判断IDに異なる結果");
+    return old;
+  }
+  entry.cases.push(record);
+  return record;
+}
 function educationDependentRecordEnrollment(s,{personId,offeringId,
   admissionTransactionId,sourceEventId,personConsentId,guardianConsentId,
   fundingInvoiceId=null,confirmedAt}={}) {
@@ -125,10 +181,20 @@ function educationDependentRecordEnrollment(s,{personId,offeringId,
        educationSchoolStatusAt(s,offeringId,confirmedAt.year,confirmedAt.month??0)?.admissionStatus))
     throw Error("扶養対象本人の受入・意思・後見・課程が未確定");
   const agreements=entry.consents||[];
+  const acceptance=entry.cases.find(x=>
+    x.caseId===admissionTransactionId &&
+    x.candidateOfferingId===offeringId &&
+    x.schoolDecision==="accepted"&&
+    x.decisionOwnerId===offer.institutionId);
+  if(!acceptance)throw Error("当人の入学願書に対する学校の受入記録がない");
   if(!agreements.some(x=>x.consentId===personConsentId &&
-      x.personId===personId&&x.status==="approved"&&x.purpose==="attend")||
+      x.personId===personId&&x.status==="approved"&&x.purpose==="attend"&&
+      x.signerPersonId===personId&&x.offeringId===offeringId)||
      !agreements.some(x=>x.consentId===guardianConsentId &&
-       x.personId===personId&&x.status==="approved"&&x.purpose==="guardian-enrollment"))
+       x.personId===personId&&x.status==="approved"&&
+       x.purpose==="guardian-enrollment"&&x.offeringId===offeringId&&
+       (x.signerAuthority==="protagonist-parent"||
+         x.signerAuthority==="confirmed-guardian")))
     throw Error("本人の希望と後見人の許諾を別々に確認する必要がある");
   if(entry.actualResidence.status==="unknown"||
      !entry.actualResidence.educationAreaId)
@@ -154,6 +220,7 @@ function educationDependentRecordEnrollment(s,{personId,offeringId,
     fundingInvoiceId,attendanceMonths:[],awards:[]
   };
   entry.enrollments.push(row);
+  acceptance.status="closed";
   return row;
 }
 function educationDependentRecordSupport(s,{personId,transferId,
