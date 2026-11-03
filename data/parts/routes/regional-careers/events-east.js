@@ -415,7 +415,7 @@ window.TERRA_DATA_BUILD.fragment(
           { k: 1, h: 1, cash: 180000 }
         ])
       ]
-    }
+    },
     {
       id: "car_hig_ninja_after_escape",
       conf: "S",
