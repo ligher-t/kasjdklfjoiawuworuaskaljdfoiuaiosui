@@ -251,7 +251,7 @@ function reconcileAffiliationWork(s, preserveCurrentJob = false) {
       recordCareerChange(s, formerJob, 0);
       const goal = s.lifeRecord.goals.find(row => row.id === rule.goal);
       if (goal && ["active", "paused"].includes(goal.status))
-        applyLifeGoal({id: goal.id, action: "compromise", note: "この仕事を離れ、次の生計を考える"});
+        applyLifeGoal({id: goal.id, action: "compromise", note: "この職場・任地を離れ、次の生計を考える"});
       continue;
     }
     if (!rule?.jobs || !["active", "crisis"].includes(a.status)) continue;
