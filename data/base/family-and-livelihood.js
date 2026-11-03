@@ -83,7 +83,7 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
           { loanContract: {
             contractId: "siracusa-private-credit", borrower: "本人",
             creditor: "シラクーザのファミリー会計役", region: "シラクーザ",
-            currency: "シラクーザ現地通貨（モデル単位）", account: "personal",
+            currency: "龍門幣換算", account: "personal",
             principal: 700000, totalDue: 1050000, installmentShare: 0.2,
             dueInYears: 2, disbursement: "borrower",
             terms: "返済総額は元本の1.5倍。契約年から2年後の年末までに支払う。部分返済可。固定総額以外の利息・遅延料は記載なし。"
@@ -117,7 +117,7 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
           { loanContract: {
             contractId: "columbia-private-credit", borrower: "本人",
             creditor: "クルビア工業区の部品問屋", region: "クルビア",
-            currency: "クルビア現地通貨（モデル単位）", account: "personal",
+            currency: "龍門幣換算", account: "personal",
             principal: 1200000, totalDue: 1440000, installmentShare: 0.2,
             dueInYears: 4, disbursement: "borrower",
             terms: "返済総額は元本の1.2倍。契約年から4年後の年末までに支払う。部分返済可。固定総額以外の利息・遅延料は記載なし。"

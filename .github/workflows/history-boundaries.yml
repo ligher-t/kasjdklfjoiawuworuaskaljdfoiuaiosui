@@ -167,6 +167,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_language_school_scopes.test.cjs
       - name: Effect subject and transfer boundaries
         run: node tools/check-efficient.cjs run v88_effect_subject_finance_and_infection.test.cjs
+      - name: Currency display and household launch funds
+        run: node tools/check-efficient.cjs run v88_currency_display.test.cjs
       - name: Event outcome lineage and actor location
         run: node tools/check-efficient.cjs run v88_outcome_followup_lineage.test.cjs
       - name: Relationship active-flag lifecycle

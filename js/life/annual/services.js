@@ -14,6 +14,9 @@ const ANNUAL_SERVICES = Object.freeze({
   L(...args) {
     return L(...args);
   },
+  m(...args) {
+    return m(...args);
+  },
   esc(...args) {
     return esc(...args);
   },

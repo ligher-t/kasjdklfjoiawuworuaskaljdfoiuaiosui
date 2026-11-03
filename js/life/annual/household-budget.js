@@ -179,7 +179,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
         house.cash -= transferAmount;
         s.cash = (s.cash || 0) + transferAmount;
         s.familyLaunchTransferred = true;
-        services.L(`<span class="good">自立の節目を迎え、実家の蓄えから門出の支度金として${Math.round(transferAmount).toLocaleString()}テラ通貨を渡された。</span>`);
+        services.L(`<span class="good">自立の節目を迎え、実家の蓄えから門出の支度金として${services.m(transferAmount)}を渡された。</span>`);
         if (s.moneyLog) {
           s.moneyLog.push({
             year: s.year,

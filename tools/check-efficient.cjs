@@ -58,6 +58,7 @@ const approved=Object.freeze([
   "v88_reunion_goal_transition.test.cjs",
   "v88_cross_faction_affiliation_transitions.test.cjs",
   "v88_student_familia_status_debt.test.cjs",
+  "v88_currency_display.test.cjs",
   "v88_multi_child_diagnosis_target.test.cjs",
   "v88_sibling_exposure_individual_targets.test.cjs",
   "v88_spouse_sibling_medical_funds.test.cjs",
@@ -213,7 +214,7 @@ function main(args){
  if(request.command==='syntax'){
   const expectedRevision=require('./update-version.cjs').revision(root);
   if(!fs.readFileSync(path.join(root,'js/version.js'),'utf8').includes('const ENGINE_REVISION = '+JSON.stringify(expectedRevision)+';')) {
-    console.error('Stale engine revision: run node tools/update-version.cjs');return 1;
+    console.error('Stale engine revision: expected '+expectedRevision+'; run node tools/update-version.cjs');return 1;
   }
   if(!request.reason&&cache['@syntax']?.key===common){console.log('REUSED syntax: unchanged runtime');return 0;}
   const start=Date.now();
