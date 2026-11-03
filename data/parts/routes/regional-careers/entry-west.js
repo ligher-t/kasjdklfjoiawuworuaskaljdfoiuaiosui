@@ -210,7 +210,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20, year: 1092 },
-      show: s => s.res?.n === "ヴィクトリア" && s.job === 0 && !s.fl?.retired && (s.cr || 0) >= 25 && s.eventOutcomes?.car_vic_royal_choice_coup?.choiceIndex !== 1,
+      show: s => s.res?.n === "ヴィクトリア" && s.job === 0 && !s.fl?.retired && (s.cr || 0) >= 25 && s.sn?.car_vic_royal_choice_coup == null,
       t: "ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推薦状を揃えた者だけが、金糸の軍服をまとい将校として軍の頂点へ迎えられる。",
       c: [
         $terraData.K("推薦状と巨額の軍官買い取り金を差し出す", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
