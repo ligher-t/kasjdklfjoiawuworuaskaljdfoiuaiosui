@@ -167,4 +167,66 @@ assert.equal(portable.general,'active','general transporter work remains active'
 assert.equal(portable.contract,true,'a new current-region employer is modeled for the portable job');
 assert.deepEqual(portable.issues,[],'portable occupation audit');
 
-console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome and regional job exit');
+
+for(const row of [
+  {region:'龍門',event:'car_lmd_black_entry',job:45,affiliation:'lungmen-black-market',goal:'lmd-underground-deals',achieved:true},
+  {region:'リターニア',event:'car_lei_court_entry',job:59,affiliation:'leithania-court-musician',goal:'leithania-court-music',achieved:true},
+  {region:'サーミ',event:'car_sam_warrior_entry',job:71,affiliation:'sami-scar-warrior',goal:'sami-scar-demon-defense',achieved:false}
+]){
+  start(row.region);
+  ctx.REHIRE_CASE=row;
+  const outcome=snap(`
+    const c=REHIRE_CASE,e=EV.find(x=>x.id===c.event);
+    if(!e)throw Error('Regional career event missing: '+c.event);
+    S.cash=10000000;S.house.cash=10000000;
+    const firstChoice=e.c[0].o[0][2];
+    ap(firstChoice);
+    S.sn[e.id]=S.year;
+    const initial=S.lifeRecord.affiliations.find(x=>x.id===c.affiliation);
+    const goal=S.lifeRecord.goals.find(x=>x.id===c.goal);
+    if(c.achieved)applyLifeGoal({id:c.goal,action:'complete',note:'第一の勤務期間で目標を達成した'});
+    const completedYear=goal.lastChangedYear;
+    ap({job:0});
+    const afterExit={job:S.job,affiliation:initial.status,goal:goal.status,episodes:initial.episodes.length};
+    S.year+=3;S.age+=3;S.mo=4;
+    const canApply=elig(e,S,tags(S)),canChoose=e.c[0].show(S,tags(S));
+    ap(firstChoice);
+    const result={job:S.job,affiliation:initial.status,goal:goal.status,
+      goalChangedYear:goal.lastChangedYear,completedYear,
+      completions:goal.history.filter(x=>x.action==='complete').length,
+      goalHistory:goal.history.map(x=>x.action),episodes:initial.episodes.length,
+      priorEpisodeEnd:initial.episodes[0]?.endedYear,
+      returnEpisodeStart:initial.episodes[1]?.startedYear,
+      returning:initial.episodes[1]?.returning,
+      role:initial.role,
+      duplicateAffiliations:S.lifeRecord.affiliations.filter(x=>x.id===c.affiliation).length,
+      duplicateGoals:S.lifeRecord.goals.filter(x=>x.id===c.goal).length,
+      changes:S.lifeRecord.careerChanges.slice(-3).map(x=>[x.fromJobId,x.toJobId]),
+      issues:auditLifeState(S)};
+    return {canApply,canChoose,afterExit,result};
+  `);
+  assert.equal(outcome.canApply,true,row.event+' is eligible again after cooldown');
+  assert.equal(outcome.canChoose,true,row.event+' allows a new period after leaving');
+  assert.deepEqual(outcome.afterExit,{job:0,affiliation:'left',
+    goal:row.achieved?'achieved':'compromised',episodes:1},row.event+' closes first period');
+  assert.equal(outcome.result.job,row.job,row.event+' second hiring starts same occupation');
+  assert.equal(outcome.result.affiliation,'active',row.event+' second period is active');
+  assert.equal(outcome.result.goal,row.achieved?'achieved':'active',row.event+' respects completion history');
+  assert.equal(outcome.result.episodes,2,row.event+' starts a separate affiliation period');
+  assert.equal(outcome.result.returning,true,row.event+' records re-entry');
+  assert.equal(outcome.result.priorEpisodeEnd,1098,row.event+' keeps first ending');
+  assert.equal(outcome.result.returnEpisodeStart,1101,row.event+' stores new start');
+  assert.equal(outcome.result.duplicateAffiliations,1,row.event+' does not duplicate employer identity');
+  assert.equal(outcome.result.duplicateGoals,1,row.event+' does not duplicate goal identity');
+  assert.deepEqual(outcome.result.changes,[[0,row.job],[row.job,0],[0,row.job]],row.event+' career episodes');
+  if(row.achieved){
+    assert.equal(outcome.result.goalChangedYear,outcome.result.completedYear,row.event+' keeps completion date');
+    assert.equal(outcome.result.completions,1,row.event+' keeps single historical achievement');
+    assert.equal(outcome.result.goalHistory.at(-1),'complete',row.event+' rehire does not rewrite achievement');
+  }else{
+    assert.equal(outcome.result.goalHistory.at(-1),'start',row.event+' reopens unresolved aspiration');
+  }
+  assert.deepEqual(outcome.result.issues,[],row.event+' rehire audit');
+}
+
+console.log('PASS Aegir gate, non-Aegir route, custody-release, promotion history, once-only, after-outcome regional job exit and rehire goal history');
