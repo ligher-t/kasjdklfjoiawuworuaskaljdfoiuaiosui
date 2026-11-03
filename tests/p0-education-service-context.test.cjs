@@ -91,7 +91,7 @@ for(const [by,region,home] of [[1000,'カズデル','固定集落'],[1100,'ヴ�
  assert.equal(result.available.visible,true,'school application is presented while a school is available');
  assert.equal(result.available.enabled,true,'an accessible school permits applying');
  assert.equal(result.limited.visible,true,'a disrupted school still shows the application choice');
- assert.equal(result.limited.enabled,false,'a disrupted school disables the application choice');
+ assert.equal(result.limited.enabled,true,'a disrupted school still permits stating the wish to search; enrollment is checked later');
 }
 for(const [eventId,label,outcomeIndex,expectedJob,trauma] of [
  ['car','軍務に志願する',0,'軍務・兵站',false],
