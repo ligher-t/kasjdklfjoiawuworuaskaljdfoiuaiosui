@@ -86,7 +86,8 @@ function ensureEducationWorld(s) {
     modelVersion:EDUCATION_WORLD_MODEL_VERSION,
     worldSeed:educationSeedFromLife(s.randomSeed),
     areas:{},hubs:{},institutions:{},campuses:{},offerings:{},
-    transportLinks:{},generationDecisions:{},residenceEducationAnchors:{}
+    transportLinks:{},generationDecisions:{},residenceEducationAnchors:{},
+    operationalHistory:[],appliedEffectIds:[]
   };
   if (world.modelVersion !== EDUCATION_WORLD_MODEL_VERSION ||
       !Number.isInteger(world.worldSeed) || !world.worldSeed)
@@ -181,13 +182,13 @@ function educationRegisterOffering(world, institution, stage, tier) {
     recognitionRule:stage === "preparatory"
       ? {upperEquivalency:"assessment-required",issuerBasis:"game-model"}
       : {completionStage:stage,issuerBasis:"game-model"},
-    sourceKind:"game-model"
+    sourceKind:"game-model",teachingStatus:"teaching",admissionStatus:"open",operationalHistory:[]
   };
   world.offerings[id] = offering;
   institution.offeringIds.push(id);
   return offering;
 }
-function educationRegisterInstitution(world, areaId, key, category, stages) {
+function educationRegisterInstitution(world, areaId, key, category, stages, firstObservedYear) {
   const area = world.areas[areaId];
   const id = "edu-inst:v1:" + areaId + ":" + key;
   if (world.institutions[id]) return world.institutions[id];
@@ -195,12 +196,14 @@ function educationRegisterInstitution(world, areaId, key, category, stages) {
   const institution = {
     id,institutionId:id,institutionCategory:category,
     homeAreaId:areaId,campusIds:[campusId],offeringIds:[],
-    sourceKind:"game-model",foundedYear:null,operationalHistory:[]
+    sourceKind:"game-model",foundedYear:null,firstObservedYear,
+    status:"operating",operationalHistory:[]
   };
   world.institutions[id] = institution;
   world.campuses[campusId] = {
     id:campusId,campusId,institutionId:id,educationAreaId:areaId,
-    sourceKind:"game-model",operationalHistory:[]
+    sourceKind:"game-model",firstObservedYear,physicalStatus:"usable",
+    exposureTags:[],operationalHistory:[]
   };
   area.institutionIds.push(id);
   const hub = world.hubs[area.educationHubId];
@@ -220,10 +223,10 @@ function educationGenerateArea(world, area, confirmedYear) {
     const category = stages.length > 1 ? "comprehensive_school" :
       stages[0] === "primary" ? "general_primary" :
       stages[0] === "lower" ? "general_lower" : "general_upper";
-    educationRegisterInstitution(world,area.id,"general",category,stages);
+    educationRegisterInstitution(world,area.id,"general",category,stages,confirmedYear);
   }
   if (vocational.present.vocational)
-    educationRegisterInstitution(world,area.id,"vocational","technical_college",["vocational"]);
+    educationRegisterInstitution(world,area.id,"vocational","technical_college",["vocational"],confirmedYear);
   const hosts = area.institutionIds.map(id => world.institutions[id])
     .filter(inst => inst.offeringIds.some(id =>
       ["lower","upper","vocational"].includes(world.offerings[id].stage)));
@@ -248,7 +251,7 @@ function educationGenerateHub(world, hub, confirmedYear) {
     const decision = educationDecision(world,hub.id,stage,{[stage]:rates[stage]},confirmedYear,hub.id);
     if (!decision.present[stage]) continue;
     educationRegisterInstitution(world,host.id,stage,
-      stage === "university" ? "university" : "originium_arts_academy",[stage]);
+      stage === "university" ? "university" : "originium_arts_academy",[stage],confirmedYear);
   }
 }
 function educationResidenceAreaInfo(s) {
@@ -307,6 +310,7 @@ function ensureEducationWorldForResidence(s) {
   for (const id of hub.areaIds)
     educationGenerateArea(world,world.areas[id],s.year);
   educationGenerateHub(world,hub,s.year);
+  educationEnsureTransportLinks(world,hub);
   const residenceKey = (s.local.placeId || "") + "|" + (s.local.districtId || "");
   if (residenceKey !== "|") world.residenceEducationAnchors[residenceKey] = areaId;
   s.local.educationAreaId = areaId;

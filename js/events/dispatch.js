@@ -137,6 +137,7 @@ function slot(x) {
   }
   s.mo = Math.floor(x * CALENDAR_MONTHS) + 1;
   ensureLocalityState(s);
+  educationReconcileWorldAt(s,s.year,s.mo);
   activateHistoricalWorldEvents(s);
   releasePendingHistoricalNews(s);
   reconcileCareerPlacements(s);

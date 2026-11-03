@@ -133,8 +133,9 @@ function educationSchoolStatusAt(s,offeringId,year=s?.year,month=s?.mo??0) {
   for(const x of modeled){
     activeEffectIds.push(x.effectId);
     const next=x.next||educationEffectStatus(x.kind);
-    if(["destroyed","suspended","limited"].includes(x.kind) &&
-      (x.kind==="destroyed" || campusStatus!=="destroyed")) campusStatus=next.campus;
+    if(x.kind==="destroyed")campusStatus="destroyed";
+    else if(x.kind==="suspended" && campusStatus!=="destroyed")campusStatus="inaccessible";
+    else if(x.kind==="limited" && campusStatus==="usable")campusStatus="limited";
     if(x.kind==="destroyed" || x.kind==="suspended") {
       teachingStatus="suspended";admissionStatus="suspended";
     }else if(x.kind==="limited" && teachingStatus==="teaching") {

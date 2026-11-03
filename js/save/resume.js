@@ -9,6 +9,8 @@ function cont(savedInput = null) {
     restoreLifeRandom(S);
     ensureResidenceIdentity(S);
     ensureEducationWorldForResidence(S);
+    educationCreateMobilityState(S);
+    educationReconcileWorldAt(S,S.year,S.mo??0);
     acc = snapshot.acc;
     sp = snapshot.sp;
     AU = snapshot.AU;
