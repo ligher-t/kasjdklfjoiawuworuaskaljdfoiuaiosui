@@ -175,7 +175,23 @@ for(const infectionRoute of [false,true]){
       returnReview:review.show(S),
       issues:auditLifeState(S)
     };
-    return {recruitment,onboard,incidental,first,continuing,next,back};
+    let secondEpisode=null;
+    if(!medical){
+      S.year+=4;S.age+=4;
+      const reoffer=offer.show(S);
+      ap(offer.c[0].o[0][2]);
+      secondEpisode={
+        reoffer,episodes:rhodes.episodes.length,
+        priorEnded:rhodes.episodes[0]?.endedYear,
+        started:rhodes.episodes.at(-1)?.startedYear,
+        immediateReview:elig(review,S,tags(S)),
+        onboard:isRhodesLandshipResident(S),bsw:bsw.status,
+        issues:auditLifeState(S)
+      };
+      S.year+=1;S.age+=1;
+      secondEpisode.afterOneYear=elig(review,S,tags(S));
+    }
+    return {recruitment,onboard,incidental,first,continuing,next,back,secondEpisode};
   `);
   assert.deepEqual(status.recruitment,{
     job:infectionRoute?35:36,bsw:'active',
@@ -212,6 +228,11 @@ for(const infectionRoute of [false,true]){
     bswGoal:'active',vip:!infectionRoute,convoy:infectionRoute,
     returnReview:false,issues:[]
   },'leaving the host ship returns to the parent contract without creating a new job');
+  assert.deepEqual(status.secondEpisode,infectionRoute?null:{
+    reoffer:true,episodes:2,priorEnded:1102,started:1106,
+    immediateReview:false,onboard:true,bsw:'active',issues:[],
+    afterOneYear:true
+  },'a new secondment episode has its own one-year waiting period even after a previous tour');
 }
 setup(ctx,{id:'blacksteel-phantom-worker',seed:seed++,region:'クルビア',age:29});
 const phantom=inspect(`
