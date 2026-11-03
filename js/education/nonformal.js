@@ -193,10 +193,11 @@ function educationRecordLearningParticipation(s,{personId="protagonist",pathId,
      attendedSessions>totalSessions||
      !educationNonformalProviderActive(s,path,year,month))
     throw Error("学校外学習の実参加・講師の活動期間が不正");
-  if(originFormalEvidenceId && Object.values(s.educationAttendance?.enrollments||{})
+  const sourceEvidence=originFormalEvidenceId||evidenceRef;
+  if(Object.values(s.educationAttendance?.enrollments||{})
     .some(yrs=>Object.values(yrs).some(months=>
       Object.values(months).some(row=>Object.values(row.segments||{})
-        .some(segment=>segment.evidenceRef===originFormalEvidenceId)))))
+        .some(segment=>segment.evidenceRef===sourceEvidence)))))
     throw Error("正式履修と同じ受講証拠に二重の教育効果");
   if(personId!=="protagonist"){
     const child=educationDependentEntry(s,personId);
@@ -209,7 +210,16 @@ function educationRecordLearningParticipation(s,{personId="protagonist",pathId,
     if(existing.evidenceIds.includes(evidenceRef))return existing;
     throw Error("同月の受講実績を別IDで二重に数えられない");
   }
+  const others=educationLearningPathList(s,personId)||[];
+  if(others.some(other=>other.participation.some(item=>
+       item.evidenceIds.includes(evidenceRef))))
+    throw Error("別の学校外学習路で同じ受講証拠を重複計上");
   const fraction=attendedSessions/totalSessions,
+    monthlyLoad=others.reduce((sum,other)=>
+      sum+other.participation.filter(item=>item.periodKey===key)
+        .reduce((n,item)=>n+item.effectiveAttendanceFraction,0),0);
+  if(monthlyLoad+fraction>1.000001)
+    throw Error("同一人物の学校外学習を同月に1か月分以上計上できない");
     item={
       periodKey:key,pathId,personId,totalSessions,attendedSessions,
       effectiveAttendanceFraction:fraction,teacherPresent:path.providerId!=="self",
@@ -240,8 +250,13 @@ function educationRecordRecognitionAssessment(s,{personId="protagonist",
   const path=educationLearningPath(s,personId,pathId),
     authority=s.world?.educationWorld?.institutions?.[authorityId],
     rule=authority?.nonformalRecognitionRules?.[ruleId];
+  const validAt=year=>!year || year.year*12+(year.month??1)<=
+    s.year*12+(s.mo??0);
   if(!path||!path.participation.length||!path.evidenceIds.length||
      !authority||!rule?.approved||!rule?.sourceRef||
+     !validAt(rule.effectiveFrom) ||
+     (rule.validUntil && rule.validUntil.year*12+
+       (rule.validUntil.month??12)<s.year*12+(s.mo??0))||
      !applicationId||!assessmentEvidenceId||!examinerId||!sourceEventId||
      !["passed","failed"].includes(verdict))
     throw Error("独立した学習証拠・審査者・機関規則が揃っていない");
@@ -282,6 +297,10 @@ function educationNonformalRecognition(s,{personId="protagonist",applicationId,
      rule.kind!==recognitionKind||rule.targetStageOrRole!==targetStageOrRole||
      rule.jurisdiction!==targetJurisdiction ||
      !rule.approved||!rule.sourceRef||
+     (rule.effectiveFrom && rule.effectiveFrom.year*12+
+       (rule.effectiveFrom.month??1)>s.year*12+(s.mo??0))||
+     (rule.validUntil && rule.validUntil.year*12+
+       (rule.validUntil.month??12)<s.year*12+(s.mo??0))||
      !["accepted","partially_accepted","refused","withdrawn"].includes(outcome))
     throw Error("学校外の能力を正式に認定する機関・規則・審査が未確認");
   const store=personId==="protagonist" ?
@@ -328,6 +347,7 @@ function educationNonformalInvariants(s) {
     ["protagonist",s.learningPaths||[]],
     ...Object.entries(s.dependentEducation||{}).map(([id,entry])=>
       [id,entry.learningPaths||[]])]){
+    const monthly={},evidenceIds=new Set();
     for(const p of list){
       if(seen.has(p.pathId)||p.personId!==personId||
          !EDUCATION_NONFORMAL_MODES[p.modeId]||
@@ -337,7 +357,17 @@ function educationNonformalInvariants(s) {
            x.effectiveAttendanceFraction<0||x.effectiveAttendanceFraction>1))
         errs.push("学校外学習の人物ID・期間・実績に不整合");
       seen.add(p.pathId);
+      for(const item of p.participation||[]){
+        monthly[item.periodKey]=(monthly[item.periodKey]||0)+
+          item.effectiveAttendanceFraction;
+        for(const id of item.evidenceIds||[]){
+          if(evidenceIds.has(id))errs.push("学校外学習の証拠を別経路で重複処理");
+          evidenceIds.add(id);
+        }
+      }
     }
+    if(Object.values(monthly).some(x=>x>1.000001))
+      errs.push("学校外学習の同月学習量が上限を超える");
   }
   if(Object.values(s.learningCompetenceEffects?.annualTotals||{})
     .some(n=>!Number.isFinite(n)||n<0||n>15.00001))
