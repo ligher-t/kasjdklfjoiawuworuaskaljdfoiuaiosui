@@ -1,5 +1,30 @@
 # プレイヤー表示文面の変更レビュー台帳
 
+## 2026-11-03｜U-19：地域固有職の昇進後に表示する役職名（14件）
+
+**対象**：`data/parts/routes/regional-careers/events-*.js` の既存成功結果に、所属台帳の `lifeAffiliation.action: "role"` を接続。プレイヤーが見るイベント本文・選択肢・結果文章は改稿していない。次の **役職表示文字列の全文** は元の結果に明示された階級・職名をそのまま採用した。原作上の新しい階級設定を追加したものではなく、既存イベントで語られた任用をゲームの履歴へ反映する変更である。
+
+| イベントID | 更新先の所属 | 昇進後の役職表示（全文） |
+| --- | --- | --- |
+| `car_hig_samurai_choice_duel` | 極東武家 | 旗本頭 |
+| `car_hig_cyber_choice_offensive` | 極東国家電脳防諜部 | 電脳首席執行官 |
+| `car_urs_officer_choice_purge` | ウルサス帝国軍 | 近衛少佐 |
+| `car_urs_guard_choice_riot` | ウルサス国境・炭鉱警備隊 | 憲兵軍曹 |
+| `car_vic_infantry_choice_skirmish` | ヴィクトリア正規軍 | 連隊先任軍曹 |
+| `car_lei_golden_choice_witch_remnant` | リターニア金律法衛 | 首席法衛 |
+| `car_sir_soldier_choice_turf_war` | シラクーザ・ファミリー | カポ |
+| `car_kje_karlan_choice_ambush` | カランド貿易 | 特務護衛班長 |
+| `car_kazdel_mil_choice_major_battle` | カズデル軍事委員会 | 百人隊長 |
+| `car_ibe_inq_choice_seaborn_attack` | イベリア裁判所 | 上級審問官 |
+| `car_ibe_tuner_choice_fog` | イベリア灯台庁 | 技師長 |
+| `car_bol_soldier_choice_counterattack` | ボリバル連合軍 | 軍曹 |
+| `car_bol_dossoles_choice_syndicate` | ドッソレス特区市警 | 警部補 |
+| `car_rim_eng_choice_gas_leak` | レム・ビリトン鉱山会社 | 最高顧問技師 |
+
+**表示と記録の条件**：成功結果を得て、該当組織に現役で在籍する場合にだけ役職を更新。負傷・失敗・他の選択肢では昇進させず、同じ役職での同一成功再発時も昇進履歴を重複追加しない。退職後も旧役職の履歴を残し、再採用では新しい在籍期間の採用時役職から始める。昇進年度・所属期間は本人の実状態に従う。
+
+**未反映の表現**：`car_lmd_guard_choice_raid` は階級名のない「昇進」、`car_vic_royal_choice_coup` は別組織の亡命軍への移行、`car_kje_monk_choice_avalanche` は「筆頭僧匠として称えられた」という称賛である。いずれも今回、新たな階級・所属を創作しない。
+
 この文書は、編集・追加した**プレイヤーが読み得る文章そのもの**の確認専用です。作業進捗・未実装課題は `REMAINING_TASKS.md` にだけ記録します。本文の正本はリンク先の `data/` です。ユーザーが「妥当・要修正・保留」を判断できるよう、原文の問題点、改稿・追加した全文、原作確認とゲーム上の仮定を区別します。記載がないコード・条件・数値だけの変更はここに複製しません。
 
 ## 2026-11-02｜採用条件・拘束・昇進・重大事件（PR #2）
