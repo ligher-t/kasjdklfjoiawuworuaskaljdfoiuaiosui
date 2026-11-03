@@ -4,8 +4,13 @@ function tick() {
 }
 function advanceCurrentLifeYear(s, services) {
   if(s.educationPath?.offeringId && !s.dead){
-    educationSimulateAttendanceThrough(s,s.year,12);
-    educationSettleCompletedAcademicYear(s,s.year);
+    s.educationYearClosing=true;
+    try{
+      educationSimulateAttendanceThrough(s,s.year,12);
+      educationSettleCompletedAcademicYear(s,s.year);
+    }finally{
+      delete s.educationYearClosing;
+    }
   }
   educationExpireCases(s,s.year+1);
   const a = ++s.age,

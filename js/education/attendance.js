@@ -95,7 +95,8 @@ function educationRecordAttendance(s,input) {
     sourceKind="confirmed-attendance"}=input||{};
   if(!enrollmentId||!evidenceRef||!Number.isInteger(year)||
      !Number.isInteger(month)||month<1||month>12||
-     year>s.year||!Number.isFinite(personalAccess)||
+     year>s.year || year===s.year && month>(s.mo||0) && !s.educationYearClosing ||
+     !Number.isFinite(personalAccess)||
      personalAccess<0||personalAccess>1)
     throw Error("月次出席の日時・参加率・証拠が不正");
   const record=s.educationRecord?.enrollments?.find(x=>x.id===enrollmentId),
@@ -228,6 +229,9 @@ function educationSimulateAttendanceThrough(s,year= s?.year,untilMonth=12) {
 }
 function educationSettleCompletedAcademicYear(s,year) {
   if(!Number.isInteger(year)||year>s.year)return null;
+  if(year===s.year && s.mo<12 && !s.educationYearClosing)
+    return {academicYear:year,outcome:"pending",credited:false,
+      reason:"academic-year-not-ended"};
   const m=s.educationPath,record=educationActiveEnrollment(s);
   if(!m?.offeringId||!record)return null;
   const reg=educationAttendanceState(s),id=record.id+":credit:"+year;

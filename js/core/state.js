@@ -119,7 +119,8 @@ function recordEducationTransition(s, program, action, sourceEventId = null) {
       });
   }
   if (action === "finish" && program !== "general-school" &&
-      !record.awards.some(x => x.program === program)) {
+      !record.awards.some(x => x.program === program &&
+        (formal ? x.enrollmentId===current.id : !x.enrollmentId))) {
     record.awards.push({
       id: `award-${record.awards.length + 1}`, program, awardedYear: s.year,
       region: s.res?.n || null, sourceEventId, issuer: "個別課程（機関名未記録）",

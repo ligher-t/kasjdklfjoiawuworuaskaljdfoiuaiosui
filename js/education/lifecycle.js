@@ -259,7 +259,19 @@ function educationStart(s,stage,tier = 1,source = null) {
 }
 function educationEnd(s,outcome,reason,source=null) {
   const model=s.educationPath;
-  if(!model || model.status!=="enrolled" && model.status!=="paused")return;
+  if(!model || model.status!=="enrolled" && model.status!=="paused")return false;
+  if(outcome==="completed" && model.offeringId){
+    const enrollment=educationActiveEnrollment(s),
+      credits=Object.values(s.educationCredits?.items||{}).filter(x=>
+        x.enrollmentId===enrollment?.id && x.credited),
+      offering=s.world?.educationWorld?.offerings?.[model.offeringId];
+    if(!enrollment||credits.length<model.duration||
+       model.yearsCompleted<model.duration ||
+       offering?.recognitionRule?.issuerBasis!=="game-model"){
+      if(!s.educationDecision)s.educationDecision={kind:"graduation",year:s.year};
+      return false;
+    }
+  }
   if(model.offeringId)
     educationSimulateAttendanceThrough(s,s.year,Math.max(0,(s.mo||0)-1));
   const program=model.stage;
@@ -286,6 +298,7 @@ function educationEnd(s,outcome,reason,source=null) {
   }else if(outcome!=="completed" && ["primary","lower","upper"].includes(program)){
     recordEducationTransition(s,"general-school","stop",source||"annual-school-withdrawal");
   }
+  return true;
 }
 // Aid and credit fund the upcoming year; they do not award completed study immediately.
 function educationRecordFundedYear(s,m,source,historyKind,details) {
@@ -619,7 +632,7 @@ function educationAdvanceYear(s) {
     if(m.stage==="primary") {
       educationAppendHistory(s,"completed-stage",{stage:"primary"});
       if(m.offeringId) {
-        educationEnd(s,"completed","初等課程の履修を修了","annual-progression");
+        if(!educationEnd(s,"completed","初等課程の履修を修了","annual-progression"))return;
         recordEducationTransition(s,"general-school","finish","annual-progression");
         s.educationDecision={kind:"lower-path",year:s.year};
         return;
@@ -638,15 +651,13 @@ function educationAdvanceYear(s) {
       educationStart(s,"lower",1,"annual-progression");return;
     }
     if(m.stage==="lower"){
+      if(!educationEnd(s,"completed","前期中等課程の年限を修了","annual-progression"))return;
       educationAppendHistory(s,"completed-stage",{stage:"lower"});
-      if(!m.completed.includes("lower"))m.completed.push("lower");
-      educationEnd(s,"completed","前期中等課程の年限を修了","annual-progression");
       s.educationDecision={kind:"upper-path",year:s.year};return;
     }
     if(m.stage==="upper"){
+      if(!educationEnd(s,"completed","後期中等課程の年限を修了","annual-progression"))return;
       educationAppendHistory(s,"completed-stage",{stage:"upper"});
-      if(!m.completed.includes("upper"))m.completed.push("upper");
-      educationEnd(s,"completed","後期中等課程の年限を修了","annual-progression");
       s.educationDecision={kind:"higher-path",year:s.year};return;
     }
     const knowledge=s.k||0,lit=Number.isFinite(s.socialLearning?.literacy)?s.socialLearning.literacy:0,
