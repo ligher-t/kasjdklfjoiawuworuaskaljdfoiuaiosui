@@ -461,7 +461,7 @@ window.TERRA_DATA_BUILD.fragment(
               action: "leave",
               note: "勤務終了、職場を移る"
             },
-            lifeGoal: { id: "rhodes-work", action: "compromise", note: "別の仕事へ進むため退職" },
+            lifeGoal: { id: "rhodes-work", action: "abandon", note: "別の仕事へ進むため退職" },
             p: 1
           }
         ])

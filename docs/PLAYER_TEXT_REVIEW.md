@@ -365,3 +365,10 @@
 再編レユニオンの目標の見出し（既存全文）：「身近な感染者へ薬と食料を届ける」。
 
 変更理由：現在の所属が `left` でも目標が `active`、あるいは所属が `suspended` なのに目標が `active` のまま残る整合性問題を解消。復帰時は休止目標を再開する。本文・選択肢・結果の散文は変更していない。根拠区分：プレイヤーの活動・所属・関係履歴を記録するゲーム内設定であり、原作世界の制度を確定する変更ではない。
+
+
+## 2026-11-03｜U-19：職場退職後の人生目標ステータスの是正
+
+対象：`data/base/career-entry.js` の `col_tech_safety_aftermath`、`col_tech_internal_review`、`col_tech_workplace_consequence`、`col_tech_later_years`、`vic_clerk_role_review`、`data/parts/routes/rhodes-and-factions/staff-routes-events-01.js` の `sr_rhodes_work_review`。
+
+**イベント本文・選択肢・結果文・人生目標の注記は、いずれも改稿・追加なし。** 退職を選んだ結果に既存の注記「現職を離れ、別の働き口を探す」「内部確認の結論を待たず現職を離れた」「同じ職場での継続を断念し、別の働き口を探す」「同じ職場での勤務を終えた」「この仲介所での勤務を終えた」「別の仕事へ進むため退職」がある。これらの職場固有目標の状態を `compromised` から `abandoned` に変更。新たな職場、給与、居住地は記録しない。単発請負終了と本人の療養継続については従来の状態遷移を維持する。

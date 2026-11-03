@@ -47,6 +47,7 @@ const approved=Object.freeze([
   "v88_family_child_future_and_memories.test.cjs",
   "v88_affiliation_goal_closure.test.cjs",
   "v88_affiliation_goal_outcome_branches.test.cjs",
+  "v88_workplace_goal_departure_contracts.test.cjs",
   "v88_affiliation_legacy_event_boundaries.test.cjs",
   "v88_reunion_goal_transition.test.cjs",
   "v88_cross_faction_affiliation_transitions.test.cjs",

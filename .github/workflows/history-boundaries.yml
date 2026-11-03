@@ -44,6 +44,7 @@ on:
       - 'tests/v88_family_child_future_and_memories.test.cjs'
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_goal_outcome_branches.test.cjs'
+      - 'tests/v88_workplace_goal_departure_contracts.test.cjs'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
       - 'tests/v88_cross_faction_affiliation_transitions.test.cjs'
@@ -102,6 +103,7 @@ on:
       - 'tests/v88_family_child_future_and_memories.test.cjs'
       - 'tests/v88_affiliation_goal_closure.test.cjs'
       - 'tests/v88_affiliation_goal_outcome_branches.test.cjs'
+      - 'tests/v88_workplace_goal_departure_contracts.test.cjs'
       - 'tests/v88_affiliation_legacy_event_boundaries.test.cjs'
       - 'tests/v88_reunion_goal_transition.test.cjs'
       - 'tests/v88_cross_faction_affiliation_transitions.test.cjs'
@@ -189,6 +191,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_affiliation_goal_closure.test.cjs
       - name: Local mutual aid and Reunion goal outcome branches
         run: node tools/check-efficient.cjs run v88_affiliation_goal_outcome_branches.test.cjs
+      - name: Career departure goal and intermittent contract distinctions
+        run: node tools/check-efficient.cjs run v88_workplace_goal_departure_contracts.test.cjs
       - name: Affiliation legacy and actual departure boundaries
         run: node tools/check-efficient.cjs run v88_affiliation_legacy_event_boundaries.test.cjs
       - name: Reunion crisis pause and old unit transfer goals
