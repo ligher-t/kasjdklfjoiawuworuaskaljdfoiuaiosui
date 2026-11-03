@@ -56,6 +56,9 @@ function educationRecordPlacementTransfer(s,{enrollmentId,campusId,offeringId,
     return null;
   const current=reg.placements.items[reg.placements.currentPlacementId];
   if(!current||current.enrollmentId!==enrollmentId)return null;
+  // Preserve every already closed month at the former placement before
+  // changing the live school affiliation.
+  if(s.mo>1)educationSimulateAttendanceThrough(s,s.year,s.mo-1);
   const ordinal=Object.keys(reg.placements.items).filter(id=>
     id.startsWith(enrollmentId+":placement:")).length+1;
   const id=enrollmentId+":placement:"+ordinal,now={year:s.year,month:s.mo||0};
@@ -135,19 +138,68 @@ function educationRecordAttendance(s,input) {
   row.recognizedEquivalent=row.equivalent;
   return row;
 }
+function educationRenewGuardianStudy(s) {
+  const m=s.educationPath,record=educationActiveEnrollment(s);
+  if(!record||m.status!=="enrolled"||s.age>=18||!s.educationMobility ||
+     !s.world?.educationWorld)return false;
+  const old=Object.values(s.educationMobility.consentRecords||{}).filter(x=>
+    x.personId==="protagonist"&&x.institutionId===m.institutionId&&
+    x.purpose==="daily-commute"&&x.consentState==="granted"&&
+    x.validFrom?.year<s.year);
+  if(!old.length)return false;
+  const person=educationCaseKnownGuardian(s);
+  if(!person||!old.some(x=>x.consenterPersonId===person.personId))return false;
+  const id=record.id+":guardian-study:"+s.year,
+    current=s.educationMobility.consentRecords[id];
+  if(current)return current.consentState==="granted";
+  const world=s.world.educationWorld,
+    roll=educationDraw(world,id,"annual-guardian-continuity-v1","response"),
+    granted=roll.value<0.88,
+    from={year:s.year,month:1},through={year:s.year,month:12};
+  s.educationMobility.consentRecords[id]={
+    id,personId:"protagonist",institutionId:m.institutionId,
+    purpose:"daily-commute",consenterPersonId:person.personId,
+    consentState:granted?"granted":"refused",
+    evidenceRef:id+":model-response",validFrom:from,validThrough:through
+  };
+  if(granted && ["fa","mo"].includes(person.personId)&&
+      (s.par?.[person.personId]?.health??100)>20)
+    s.educationMobility.escortRecords[id]={
+      id,personId:"protagonist",institutionId:m.institutionId,
+      purpose:"daily-commute",escortPersonId:person.personId,
+      evidenceRef:id+":escort-response",status:"verified",
+      validFrom:from,validThrough:through
+    };
+  if(typeof L==="function")L(granted?
+    "今年も学校に通うため、家の人と送り迎えや通学について改めて相談した。承諾を得て、今期の約束を記録した。":
+    "今年の通学について家の人に相談したが、今期は承諾を得られなかった。学校の学籍は残っていても、出席できる条件は整っていない。");
+  return granted;
+}
 function educationSimulateAttendanceThrough(s,year= s?.year,untilMonth=12) {
   const m=s.educationPath,record=educationActiveEnrollment(s),world=s.world?.educationWorld;
   if(!record||!["enrolled","paused"].includes(m.status)||!world||
      year!==s.year || untilMonth<1)return 0;
-  const reg=educationAttendanceState(s),
-    placement=reg.placements.items[reg.placements.currentPlacementId];
+  const reg=educationAttendanceState(s);
+  if(!reg.placements.currentPlacementId)educationBindFormalEnrollment(s,record.id);
+  const placement=reg.placements.items[reg.placements.currentPlacementId];
   if(!placement||placement.enrollmentId!==record.id)return 0;
   let count=0;
   for(let month=1;month<=Math.min(12,untilMonth);month++){
     const date=year*12+month,start=placement.effectiveFrom.year*12+placement.effectiveFrom.month;
-    if(date<start)continue;
     const row=reg.attendance.enrollments[record.id]?.[year]?.[month];
     if(row)continue;
+    if(date<start){
+      const months=(reg.attendance.enrollments[record.id] ||= {});
+      const values=(months[year] ||= {});
+      values[month]={
+        id:educationMonthKey(record.id,year,month),
+        enrollmentId:record.id,academicYear:year,month,segments:{},
+        equivalent:0,recognizedEquivalent:0,finalized:true,
+        basis:"pre-enrollment-month"
+      };
+      count++;
+      continue;
+    }
     educationReconcileWorldAt(s,year,month);
     const teaching=educationTeachingMonth(s,placement.offeringId,year,month);
     let access=0,basis="no-formal-class";
