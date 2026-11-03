@@ -38,7 +38,7 @@ jobs:
                       missingGoal=!goals.some(g=>['abandon','complete','pause','compromise'].includes(g.action));
                     if(missingAff)stats.missingAffiliation++;
                     if(missingGoal)stats.missingGoal++;
-                    issues.push({id:event.id,ci,oi,from:event.t?.slice(0,56),result:String(out[1]).slice(0,90),
+                    issues.push({id:event.id,ci,oi,from:typeof event.t==='string'?event.t.slice(0,56):null,result:String(out[1]).slice(0,90),
                       hasAff:!missingAff,hasGoal:!missingGoal,keys:Object.keys(fx).slice(0,15)});
                   }
                   if(typeof fx.job==='number' && fx.job>0 && !aff.some(a=>['join','return','assign'].includes(a.action))){
