@@ -224,10 +224,20 @@ const caseLoan=run(function(){
   const noCash=educationCaseCommitEligibility(s);
   const consulted=educationCaseFinanceInquiry(s);
   const verified=educationCaseCommitEligibility(s,"loan");
+  const originalTransition=recordEducationTransition;
+  recordEducationTransition=()=>{throw Error("test enrollment failure");};
+  let rejected;
+  try{rejected=educationCaseCommit(s,"loan");}
+  finally{recordEducationTransition=originalTransition;}
+  const rollbackClean=rejected===false && s.cash===before.cash &&
+    s.debt===before.debt && s.educationRecord.enrollments.length===before.enroll &&
+    s.loanContracts.length===0 && !Object.values(s.educationFinance?.invoices||{})
+      .some(x=>x.kind==="tuition"&&x.caseId===item.id);
   const success=educationCaseCommit(s,"loan");
   const history=s.educationCases.history.at(-1);
   const inv=s.educationFinance?.invoices?.["enrol-"+(before.enroll+1)+":tuition:"+s.year];
-  return {noCash:noCash.reason,consulted,verified:verified.allowed,success,
+  return {noCash:noCash.reason,consulted,verified:verified.allowed,
+    rollbackClean,success,
     reason:history?.reason,oldCash:before.cash,newCash:s.cash,
     debtBefore:before.debt,debtAfter:s.debt,
     loanCount:s.loanContracts.length,loanPrincipal:s.loanContracts[0]?.principal,
@@ -240,6 +250,7 @@ const caseLoan=run(function(){
 assert.equal(caseLoan.noCash,"no-funds");
 assert.equal(caseLoan.consulted,true);
 assert.equal(caseLoan.verified,true);
+assert.equal(caseLoan.rollbackClean,true,"rejected enrollment cannot leave tuition or debt behind");
 assert.equal(caseLoan.success,true);
 assert.equal(caseLoan.reason,"admitted");
 assert.equal(caseLoan.newCash,0);
@@ -250,4 +261,43 @@ assert.equal(caseLoan.paid,caseLoan.net);
 assert.deepEqual(caseLoan.cashReceipts,["personal","contract-loan"]);
 assert.equal(caseLoan.duplicate,false);
 assert.deepEqual(caseLoan.audit,[]);
+fresh("龍門",12);
+const ownerAndSequence=run(function(){
+  const s=S;s.age=12;s.cash=80000;s.house.cash=120000;
+  const inv=educationEnsureInvoice(s,{id:"multi-refund",kind:"tuition",
+    institutionId:"school:multi",amount:200000});
+  educationSettleInvoice(s,inv);
+  const first=educationCommitRefund(s,educationPlanRefund(s,inv.id,
+    "tuition-school-cancel-midyear",{
+      contractedTeachingPeriods:12,verifiedTeachingPeriods:4,makeupProvided:false
+    }));
+  const second=educationCommitRefund(s,educationPlanRefund(s,inv.id,
+    "tuition-school-cancel-before-term"));
+  const amount=first.amount+second.amount,
+    ledgerIssues=educationCheckFinanceInvariants(s);
+  const third=educationPlanRefund(s,inv.id,"tuition-student-withdraw-before-term");
+  const oldHouse=s.house;
+  s.house={...oldHouse,educationWalletId:"another-household",cash:0};
+  const next=educationEnsureInvoice(s,{id:"another-refund",kind:"tuition",
+    institutionId:"school:test2",amount:1200});
+  // Constructing an explicit former household claim exercises the
+  // destination guard without changing any real account.
+  next.paid=1200;next.net=1200;next.gross=1200;next.outstanding=0;next.status="paid";
+  const id="old-pay";s.educationFinance.receipts[id]={id,invoiceId:next.id,
+    source:"household",sourceRef:oldHouse.educationWalletId,
+    amount:1200,status:"settled",paidAt:{year:s.year,month:s.mo||0}};
+  next.receiptIds=[id];
+  const plan=educationPlanRefund(s,next.id,"tuition-school-cancel-before-term"),
+    denied=educationCommitRefund(s,plan);
+  return {amount,personal:oldHouse? s.cash:null,originalHouse:oldHouse.cash,
+    zeroThird:third.allowed,issues:ledgerIssues,
+    refusedMisroute:denied===null,newHouseCash:s.house.cash};
+});
+assert.equal(ownerAndSequence.amount,200000);
+assert.equal(ownerAndSequence.personal,80000);
+assert.equal(ownerAndSequence.originalHouse,120000);
+assert.equal(ownerAndSequence.zeroThird,false);
+assert.deepEqual(ownerAndSequence.issues,[]);
+assert.equal(ownerAndSequence.refusedMisroute,true);
+assert.equal(ownerAndSequence.newHouseCash,0);
 console.log("PASS P07: quote, invoice, mixed payment, grant, loan, refund, annual rollup and no double charge");
