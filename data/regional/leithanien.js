@@ -187,6 +187,7 @@ window.TERRA_DATA_BUILD.run("regional/leithanien", function ($terraData, $define
   });
   leithanienDaily.push({
     id: "daily_leithanien_54", conf: "S", st: ["青年", "壮年"], need: ["国:リターニア", "感染診断済", "隠蔽"],
+    show:s=>educationP17Witness(s,"P13:music-audition"),
     t: "音楽院のオーディションで、指の結晶を肌色のテーピングで固く隠して演奏した。審査員の鋭い視線に心臓が凍りつきそうだった。",
     fx: { p: -2, cr: 1 }
   });
@@ -216,8 +217,13 @@ window.TERRA_DATA_BUILD.run("regional/leithanien", function ($terraData, $define
   });
   leithanienDaily.push({
     id: "daily_leithanien_59", conf: "S", st: ["少年", "青年"], need: ["国:リターニア"],
-    show: "就学中",
-    t: "学内コンクールの本選を聴講した。同世代の圧倒的な超絶技巧と豊かな表現力に強い刺激を受け、練習への闘志を燃え上がらせた。",
+    show: s => (educationLegacySceneGuard(s,"daily_leithanien_57") &&
+      educationP17SchoolExperience(s,"music-competition")) ||
+      educationP17Witness(s,"P13:public-music-competition"),
+    t: s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
+      educationP17SchoolExperience(s,"music-competition") ?
+      "学内コンクールの本選を聴講した。同世代の演奏家が技術を競い合い、講評を聞きながら自分の練習を振り返った。" :
+      "公開された演奏会へ足を運んだ。舞台の上で音を重ねる同世代の演奏家を眺め、自分ももう一度楽器に触れてみたくなった。",
     fx: { p: 2, cr: 1 }
   });
   leithanienDaily.push({
@@ -280,12 +286,12 @@ window.TERRA_DATA_BUILD.run("regional/leithanien", function ($terraData, $define
       need: ["国:リターニア"],
       w: 0.85,
       cd: 7,
-      t: "スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。名門音楽院への入学が認められたが、高額な制服代と教材費が払えず泣いている。",
+      t: "スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。音楽を教わる先を探しているが、教材や身の回りの品を買う金もない。",
       c: [
-        K("私財を投じて少年の奨学金全額を用立てる", { intent: "voluntary-aid", en: { affordableCash: 40000 }, why: "支援に回す金銭がない。" },
-          [1, "少年は見事に音楽院をトップで卒業し、大劇場の首席奏者に抜擢された。恩人として生涯の敬愛を捧げられた。", { cash: -40000, pm: 1, p: 8, rl: 5, cr: 3 }]),
+        K("必要な教材と身支度の費用を渡す", { intent: "voluntary-aid", en: { affordableCash: 40000 }, why: "支援に回す金銭がない。" },
+          [1, "少年に教材と身支度の費用を手渡した。教わる場所が見つかるかはまだ分からないが、少年は楽器を胸に抱え、何度も頭を下げた。", { cash: -40000, pm: 1, p: 8, rl: 5, cr: 3 }]),
         K("慈善団体や音楽家仲間に呼びかけ、共同の募金活動を主導する", { intent: "mediate", en: { ge: { rl: 15 } }, why: "人脈や説得力がない。" },
-          [1, "市民たちの温かい善意を結集して学費を集めきった。少年は深々とお辞儀をして学舎へ旅立った。", { p: 5, rl: 4 }]),
+          [1, "町の人々から教材代の寄付が少しずつ集まった。少年とともに受け入れてくれる教え手を探し、募金の使い道を記録した。", { p: 5, rl: 4 }]),
         K("自分の生活を守るため、温かい励ましの言葉だけで見送る", { intent: "self-or-family-care" },
           [1, "ポケットの少額の小銭だけを少年に握らせた。世の不条理にやるせない思いを抱いた。", { cash: -2000, p: -1 }])
       ]
