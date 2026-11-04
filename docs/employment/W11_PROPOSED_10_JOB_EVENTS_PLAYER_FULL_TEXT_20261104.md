@@ -244,6 +244,25 @@
 
 **後続接続**：共同の現物資源・家族支援・親類関係へ。全共同体が同一慣習という断言をしない。
 
+## 既存36コンセプト／現行イベントとの意味的近接関係
+
+本10件は [既存36件の企画候補](W11_EVENT_GAP_AND_NEW_CONCEPTS_20261104.json) を参照して本文の温度・動作を具体化した**試作10件**。その36件へ単純に加算して「新規46件を実装」と数えない。同義のものは統合・置換・採用見送りを選ぶ。
+
+| この全文草案 | 近接する36コンセプト | 既存実装の精査先 | 重複回避の判定点 |
+|---|---|---|---|
+| work_w11_notice_corner | work_notice_still_open、work_qualified_no_vacancy | car | この草案は締切が生きている実求人の確認。古い張り紙／募集ゼロとは別 |
+| work_w11_worn_rule | work_foreman_help_during_fault | life_work_project_setback | 機械故障の大型案件と異なる日常の技能場面か |
+| work_w11_pay_envelope | work_timecard_missing、work_pay_delayed_market | job_contract_review_v76、vic_strike | 未払の原因と要求手段を分け、同じ給与紛争を重複発火させない |
+| work_w11_route_rope | work_lungmen_courier_small_job | transporter_contract_review | 運送契約中の小さな作業。採用や納品報酬と混ぜない |
+| work_w11_stall_leftovers | work_self_shop_first_customer | lon_merchant | 売上不足・在庫と初めての客は違う。自営の二重記帳を防ぐ |
+| work_w11_gate_closed | work_iberia_decommissioned_dock、work_contract_housing_ends | work_unemployed_reentry | 事業所の休廃業、旧住居、未払、退職は別の結果 |
+| work_w11_apprentice_pencil | work_credential_from_apprentice | life_youth_apprenticeship | 日常の読み書き習得であり正式技能認定・修了は別 |
+| work_w11_rest_day | 36件内に直接一致する主題なし | job_contract_family_schedule_v76、一般日常群 | 実際の休日の生活を描く。休暇・病欠・配置交渉と混ぜない |
+| work_w11_medical_schedule | work_shift_swap_for_care | job_contract_family_schedule_v76、感染職場関連 | 本人の通院日と家族の通院を分け、雇用主の病名認知を勝手に立てない |
+| work_w11_community_bowl | work_sami_winter_food_share、work_family_field_in_kind | car_sam_priest_entry、家族日常群 | 日々の現物分配と季節全体の保存・支援の決定を分ける |
+
+各草案は文体・本文・効果の候補としてユーザーが比較できるが、機能的な重複の最終判定は、近接IDの実際の選択・結果・履歴の全枝を読んで行う。複数イベントが同じ勤務期間・給与・紹介者を二重に成立させない。
+
 ## 再利用・校閲時の禁止事項
 
 新規草案を他の地区へ横展開するときは、既存175件の職業イベントとB/C/D群の関連本文を読み、同義場面を大量追加しない。原文の穏やかな生活描写と、差別・困窮・危険の実際の結果を双方扱う。選択を押しただけで採用・給与・学籍・感染認知を確定させない。新規文章の既存作品との言い回しの過度な重複、架空の固有名詞、国家規則と見える断言も避ける。
