@@ -391,33 +391,117 @@ assert.equal(informedGrant.cash,0);
 
 fixture();
 const noticeProof=run(function(){
-  const s=S;s.mo=5;
-  const id="confirmed-assessment",
-    sourceEventId="edu_informal_skill_assessment";
-  s.educationRecognitionInquiries={version:1,items:{
-    [id]:{id,sourceEventId,status:"awaiting-assessment",awardId:null,
-      at:{year:s.year,month:5}}
-  }};
-  const row=educationMigrationRecord(s,sourceEventId,"A",
-    {noAutomaticQualification:true}),
-    pending=!row.notice;
-  s.educationRecognitionInquiries.items[id].status="rejected";
-  const noUnsourced=educationP17ReconcileNotices(s)===0;
-  s.educationRecognitionInquiries.items[id].assessmentEvidenceRef=
-    "signed-assessment-result-001";
-  const confirmed=educationP17ReconcileNotices(s),
-    once=educationP17ReconcileNotices(s);
-  return {pending,noUnsourced,confirmed,once,
-    index:row.notice?.index,evidence:row.notice?.evidenceRef,
-    credentials:s.educationRecord.awards.length};
+ const s=S;s.mo=5,area=s.local.educationAreaId,
+   world=s.world.educationWorld;
+ const provider=educationRegisterInformalProvider(s,{
+   providerId:"confirmed-workshop-fail",personId:"known-workshop-master",
+   kind:"workshop-apprenticeship",areaId:area,
+   activeFrom:{year:s.year,month:1},subjectIds:["repair"],
+   evidenceRef:"observed-workshop-course"
+ });
+ s.educationWorkshopLinks={version:1,items:{
+   workshop:{personId:"protagonist",providerId:provider.id,status:"active"}
+ }};
+ educationMigrationApply(s,"E49:A");
+ const path=s.learningPaths.find(x=>x.modeId==="workshop-apprenticeship"),
+   school=world.institutions[s.educationPath.institutionId];
+ school.nonformalRecognitionRules={repair:{
+   approved:true,sourceRef:"signed-repair-assessment-policy",
+   kind:"skill_certificate",jurisdiction:s.res.n,
+   targetStageOrRole:"repair"
+ }};
+ educationMigrationApply(s,"E54:A");
+ const inquiry=Object.values(s.educationRecognitionInquiries.items)[0],
+   row=s.educationMigration.records.find(x=>
+     x.eventId==="edu_informal_skill_assessment"),
+   pending=!row.notice;
+ educationRecordRecognitionAssessment(s,{
+   applicationId:inquiry.id,pathId:path.pathId,
+   authorityId:school.id,ruleId:"repair",
+   assessmentEvidenceId:"signed-repair-exam-fail",
+   examinerId:"school-appointed-examiner",
+   verdict:"failed",sourceEventId:"school-repair-exam"
+ });
+ const recognized=educationP17ReconcileNotices(s),
+   repeated=educationP17ReconcileNotices(s),
+   restored=JSON.parse(JSON.stringify(s)),
+   afterRestore=educationP17ReconcileNotices(restored);
+ return {pending,recognized,repeated,afterRestore,
+   index:row.notice?.index,evidence:row.notice?.evidenceRef,
+   rejected:inquiry.status==="rejected",
+   credentials:s.educationRecord.awards.length,
+   recognitionCount:s.educationRecord.recognitions?.length||0};
 });
 assert.equal(noticeProof.pending,true);
-assert.equal(noticeProof.noUnsourced,true);
-assert.equal(noticeProof.confirmed,1);
-assert.equal(noticeProof.once,0);
+assert.equal(noticeProof.recognized,1);
+assert.equal(noticeProof.repeated,0);
+assert.equal(noticeProof.afterRestore,0);
 assert.equal(noticeProof.index,1);
-assert.equal(noticeProof.evidence,"signed-assessment-result-001");
+assert.equal(noticeProof.evidence,"signed-repair-exam-fail");
+assert.equal(noticeProof.rejected,true);
 assert.equal(noticeProof.credentials,0);
+assert.equal(noticeProof.recognitionCount,0);
+
+fixture();
+const noticeAward=run(function(){
+ const s=S;s.mo=5,world=s.world.educationWorld;
+ const provider=educationRegisterInformalProvider(s,{
+   providerId:"confirmed-workshop-pass",personId:"known-workshop-master",
+   kind:"workshop-apprenticeship",areaId:s.local.educationAreaId,
+   activeFrom:{year:s.year,month:1},subjectIds:["repair"],
+   evidenceRef:"observed-workshop-course"
+ });
+ s.educationWorkshopLinks={version:1,items:{
+   workshop:{personId:"protagonist",providerId:provider.id,status:"active"}
+ }};
+ educationMigrationApply(s,"E49:A");
+ const path=s.learningPaths.find(x=>x.modeId==="workshop-apprenticeship"),
+   school=world.institutions[s.educationPath.institutionId];
+ school.nonformalRecognitionRules={repair:{
+   approved:true,sourceRef:"signed-repair-assessment-policy",
+   kind:"skill_certificate",jurisdiction:s.res.n,
+   targetStageOrRole:"repair"
+ }};
+ educationMigrationApply(s,"E54:A");
+ const inquiry=Object.values(s.educationRecognitionInquiries.items)[0],
+   row=s.educationMigration.records.find(x=>
+     x.eventId==="edu_informal_skill_assessment");
+ educationRecordRecognitionAssessment(s,{
+   applicationId:inquiry.id,pathId:path.pathId,
+   authorityId:school.id,ruleId:"repair",
+   assessmentEvidenceId:"signed-repair-exam-pass",
+   examinerId:"school-appointed-examiner",
+   verdict:"passed",sourceEventId:"school-repair-exam"
+ });
+ const noEarly=educationP17ReconcileNotices(s)===0 &&
+   inquiry.status==="assessment-passed" &&
+   !s.educationRecord.recognitions?.length;
+ educationNonformalRecognition(s,{
+   applicationId:inquiry.id,pathId:path.pathId,authorityId:school.id,
+   ruleId:"repair",targetJurisdiction:s.res.n,
+   targetStageOrRole:"repair",outcome:"accepted",
+   assessmentEvidenceId:"signed-repair-exam-pass",
+   sourceEventId:"school-repair-exam-final",
+   recognitionKind:"skill_certificate",
+   effectiveFrom:{year:s.year,month:s.mo}
+ });
+ const delivered=educationP17ReconcileNotices(s),
+   duplicate=educationP17ReconcileNotices(s);
+ return {noEarly,delivered,duplicate,
+   index:row.notice?.index,proof:row.notice?.evidenceRef,
+   inquiry:inquiry.status,
+   recognitionId:s.educationRecord.recognitions?.[0]?.recognitionId,
+   noDegree:s.educationRecord.awards.length===0};
+});
+assert.equal(noticeAward.noEarly,true);
+assert.equal(noticeAward.delivered,1);
+assert.equal(noticeAward.duplicate,0);
+assert.equal(noticeAward.index,0);
+assert.equal(noticeAward.proof,"signed-repair-exam-pass");
+assert.equal(noticeAward.inquiry,"recognized");
+assert.equal(noticeAward.recognitionId,
+  "recognition:edu-recogn-inquiry:"+noticeAward.recognitionId?.split("edu-recogn-inquiry:")[1]);
+assert.equal(noticeAward.noDegree,true);
 console.log("PASS P17 conditional notices: 46 authored, two held, delayed source-backed dispatch, no duplicates or phantom awards");
 
 
