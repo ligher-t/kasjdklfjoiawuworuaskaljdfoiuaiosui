@@ -10,7 +10,7 @@ window.TERRA_DATA_BUILD.run("model/flag-usage", function ($terraData, $define, $
         return out;
       }
       if (node.fl && Object.prototype.hasOwnProperty.call(node.fl, id)) out.push(node.fl[id]);
-      if(id==="sch" && node.educationAction==="primary")out.push(1);
+      if(id==="sch" && ["primary","case:commit","case:commit-grant","case:commit-loan"].includes(node.educationAction))out.push(1);
       (node.o || []).forEach(o => $terraData.eventFlagValues(o[2], id, out));
       return out;
     },
