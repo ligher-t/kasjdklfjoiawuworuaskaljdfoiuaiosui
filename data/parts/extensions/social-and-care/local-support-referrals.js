@@ -986,19 +986,27 @@ window.TERRA_DATA_BUILD.fragment(
     ge: { year: 1096, age: 12 },
     le: { year: 1097, age: 17 },
     months: [12, 1],
-    show: s => {
-      const student=educationMigrationCurrent(s),campus=student &&
-        s.world.educationWorld.campuses?.[student.m.campusId];
-      return !!s.world?.events?.chernobog_incident && !!student &&
-        student.enroll.startedYear<=1096 && !!campus &&
-        campus.educationAreaId===s.local?.educationAreaId;
-    },
+    show: s => !!s.world?.events?.chernobog_incident &&
+      !!s.local?.educationAreaId,
     once: true,
     w: 0.4,
-    t: "混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持ちの食料を分け合おうとしている。窓の外では、街を脱出する人々の列が雪煙の中を動いていた。",
+    t: s => {
+      const student=educationMigrationCurrent(s),campus=student &&
+        s.world?.educationWorld?.campuses?.[student.m.campusId];
+      return student && student.enroll.startedYear<=1096 && campus &&
+        campus.educationAreaId===s.local?.educationAreaId ?
+        "混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持ちの食料を分け合おうとしている。窓の外では、街を脱出する人々の列が雪煙の中を動いていた。" :
+        "チェルノボーグの通りに避難する人々があふれた。学校の方角からも子どもたちが駆けてくる。何が教室で起きたかは分からないまま、近くの大人に逃げ道を尋ねるか考えた。";
+    },
     c: [
       $terraData.K(
         "同級生たちの連絡係を引き受け、避難先と食料のありかを伝えて回る",
+        { show: s => {
+          const student=educationMigrationCurrent(s),campus=student &&
+            s.world?.educationWorld?.campuses?.[student.m.campusId];
+          return !!student && student.enroll.startedYear<=1096 &&
+            campus?.educationAreaId===s.local?.educationAreaId;
+        } },
         {},
         [
           0.7,
@@ -1033,9 +1041,9 @@ window.TERRA_DATA_BUILD.fragment(
           { p: -3, fl: { war_displaced: 1 } }
         ]
       ),
-      $terraData.K("生き延びることを最優先し、学校を出て避難の列に飛び込む", {}, [
+      $terraData.K("生き延びることを最優先し、避難の列に加わる", {}, [
         1,
-        "ちりぢりになる同級生たちの声を背後に聞きながら、避難民の波へ駆け込んだ。誰が無事に逃げ延びたのかも分からないまま街を離れた。",
+        "遠くで呼び合う人々の声を聞きながら、避難民の波へ駆け込んだ。誰が無事に逃げ延びたのかも分からないまま街を離れた。",
         { fl: { war_displaced: 1 }, p: 1 }
       ]),
       $terraData.K("パニックにならず、近所の大人に安全な抜け道を聞いてから動く", {}, [
