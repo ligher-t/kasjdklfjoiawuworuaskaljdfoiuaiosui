@@ -59,6 +59,8 @@ jobs:
         run: node tools/check-efficient.cjs run p15-education-regional-representatives.test.cjs
       - name: P15 causal boundaries for school access, tuition, commute and closures
         run: node tools/check-efficient.cjs run p15-education-causal-boundaries.test.cjs
+      - name: P15 D12-D14 D19 D27 annual, qualification and replay boundaries
+        run: node tools/check-efficient.cjs run p15-education-annual-lifecourse.test.cjs
       - name: Dated school operations and daily/exam/residence mobility
         run: node tools/check-efficient.cjs run p18-education-operations-mobility.test.cjs
       - name: P06/P16 bounded school case and student-visible decisions
