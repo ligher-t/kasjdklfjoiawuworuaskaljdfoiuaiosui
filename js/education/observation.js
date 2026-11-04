@@ -35,8 +35,9 @@ function educationObservationRows(s,{
   year=s?.year,month=s?.mo,siteFrame=[],openFrame=[],
   caseIds=null,applicationIds=null,enrollmentIds=null
 }={}) {
-  if(!Number.isInteger(year)||!Number.isInteger(month)||month<1||month>12)
-    throw Error("教育観測は確定した年月を必要とする");
+  if(!Number.isInteger(year)||!Number.isInteger(month)||month<1||month>12 ||
+     year*12+month>s.year*12+(s.mo??0))
+    throw Error("教育観測は既に到来した年月を必要とする");
   const world=s?.world?.educationWorld,
     access=s?.educationAccess||{},cases=s?.educationCases?.items||{},
     finance=s?.educationFinance||{},record=s?.educationRecord||{},
@@ -92,7 +93,8 @@ function educationObservationRows(s,{
       continue;
     }
     discovery.push("yes");
-    if(item.originAreaId!==s.local?.educationAreaId){
+    if(item.originAreaId!==s.local?.educationAreaId ||
+       year!==s.year||month!==s.mo){
       reach.push("unknown");continue;
     }
     const travel=known.map(x=>educationCanReach(s,{
@@ -102,6 +104,17 @@ function educationObservationRows(s,{
     reach.push(travel.some(x=>x.reachable)?"yes":
       travel.every(x=>x.status==="blocked")?"no":"unknown");
   }
+  const paidByObservationDate=invoice=>{
+    if(invoice.status!=="paid"||!validDate(invoice.issuedAt))return false;
+    if(invoice.net===0)return true;
+    const receipts=(invoice.receiptIds||[]).map(id=>finance.receipts?.[id]);
+    return receipts.length>0 && receipts.every(r=>r &&
+      r.status==="settled" && r.invoiceId===invoice.id &&
+      validDate(r.paidAt) && Number.isSafeInteger(r.amount)) &&
+      receipts.reduce((total,r)=>total+r.amount,0)===invoice.net &&
+      Object.values(finance.postings||{}).some(p=>
+        p.invoiceId===invoice.id && p.status==="settled" && validDate(p.at));
+  };
   const chosenApplications=distinct((applicationIds||
       Object.keys(access.notices||{})).map(id=>({id,notice:access.notices?.[id]})),
     x=>x.id);
@@ -124,6 +137,7 @@ function educationObservationRows(s,{
       x.kind==="tuition" && x.personId==="protagonist");
     if(!tuition){funded.push("no");continue;}
     if(tuition.status!=="paid"){funded.push("no");continue;}
+    if(!paidByObservationDate(tuition)){funded.push("unknown");continue;}
     const off=offered(notice.offeringId),
       campus=world?.campuses?.[off?.campusId];
     if(!campus){funded.push("unknown");continue;}
@@ -132,7 +146,7 @@ function educationObservationRows(s,{
       const transport=Object.values(finance.invoices||{}).filter(x=>
         x.personId==="protagonist" && x.offeringId===off.id &&
         ["commute-pass","boarding-room","boarding-food","entrance-trip"].includes(x.kind));
-      funded.push(transport.length && transport.every(x=>x.status==="paid")?
+      funded.push(transport.length && transport.every(paidByObservationDate)?
         "yes":"unknown");
     }else funded.push("yes");
   }
@@ -221,7 +235,8 @@ function educationObservationCaseBridgeRows(s,{
       N_any_present:origin?offerings.length>0:null,
       N_any_open:origin?opened.length>0:null,
       N_known:opened.length?known.length>0:null,
-      N_route:known.length && origin?.id===s.local?.educationAreaId?
+      N_route:known.length && origin?.id===s.local?.educationAreaId &&
+        year===s.year&&month===s.mo?
         route.some(x=>x.reachable)?true:
           route.every(x=>x.status==="blocked")?false:null:null,
       N_applied:!!c.applicationId,
