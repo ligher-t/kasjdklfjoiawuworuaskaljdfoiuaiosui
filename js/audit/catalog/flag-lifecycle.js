@@ -10,7 +10,7 @@ function validateFlagLifecycle(W_, services) {
         for (const part of node) inspect(part);
         return;
       }
-      for (const [flag, value] of Object.entries({...node.fl,...(node.educationAction==="primary"?{sch:1}:{})})) {
+      for (const [flag, value] of Object.entries({...node.fl,...(["primary","case:commit","case:commit-grant","case:commit-loan"].includes(node.educationAction)?{sch:1}:{})})) {
         if (!seen.has(flag)) seen.set(flag, new Set());
         seen.get(flag).add(value);
       }
