@@ -127,7 +127,10 @@ function educationLegacyTeacherAction(s,action) {
     actionSources={
       "legacy:teacher-meet":"people_school_introduction",
       "legacy:teacher-followup":"people_school_followup",
-      "legacy:teacher-help":"people_school_small_help"
+      "legacy:teacher-help":"people_school_small_help",
+      "legacy:teacher-talk":"people_school_life_conversation",
+      "legacy:teacher-concern":"people_school_housing_concern",
+      "legacy:teacher-lesson":"v82_teacher_continuity"
     };
   if(actionSources[action]!==source)
     throw Error("教師との面識を確定するイベントが一致しない");
