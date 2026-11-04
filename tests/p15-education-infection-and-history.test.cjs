@@ -200,6 +200,7 @@ const history=JSON.parse(vm.runInContext('JSON.stringify((()=>{'+makeHistoryStat
   return outcomes;
 }).toString()+')();})())',ctx,{timeout:25000}));
 assert.equal(history.d21.wasUnverified,true);
+assert.equal(history.d21.beforeWasNotAutomaticallyDestroyed,true);
 assert.equal(history.d21.gainedEvidence,true);
 assert.equal(history.d21.repeat,true);
 assert.equal(history.d21.evidenceCampusId,true);
