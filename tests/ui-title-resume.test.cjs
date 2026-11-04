@@ -80,7 +80,7 @@ assert.equal(vm.runInContext('RANDOM_STATE',ctx),snapshot.S.rngState,'resume res
 // P18/P19: a real title-screen resume preserves the world snapshot, known
 // offerings, pending case, financial quotes and all read-only measurements.
 {
-  const result=JSON.parse(vm.runInContext(`
+  const result=JSON.parse(vm.runInContext(`(()=>{
     S.age=20;S.year=S.by+20;S.mo=4;
     ensureResidenceIdentity(S);
     ensureEducationWorldForResidence(S);
@@ -112,9 +112,9 @@ assert.equal(vm.runInContext('RANDOM_STATE',ctx),snapshot.S.rngState,'resume res
       resumed=cont(snapshot),
       second=capture(),
       noDraws=rng===RANDOM_STATE;
-    JSON.stringify({resumed,same:first===second,
-      noDraws,knownLink:S.known===W})
-  `,ctx));
+    return JSON.stringify({resumed,same:first===second,
+      noDraws,knownLink:S.known===W});
+  })()`,ctx));
   assert.deepEqual(result,{resumed:true,same:true,noDraws:true,knownLink:true});
   assert.equal(vm.runInContext('cont(birthSnapshot)',ctx),true);
 }
