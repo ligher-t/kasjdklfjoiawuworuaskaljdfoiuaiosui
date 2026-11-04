@@ -702,18 +702,18 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
           { show: s => s.age >= $rules.parameters.value("life.workStartAge") },
           [
             0.7,
-            "学校へ通うのを諦め、日雇いの荷運びに出た。泥だらけで持ち帰った小銭で食卓はつないだが、親の働き口はまだ見つからない。",
-            { job: 1, fl: { sch: 0, parent_unemployed: 1 }, cash: 5e4, p: -5, h: -5 }
+            "学ぶ時間も削り、日雇いの荷運びに出た。泥だらけで持ち帰った小銭で食卓はつないだが、親の働き口はまだ見つからない。",
+            { job: 1, educationAction: "leave-school", fl: { parent_unemployed: 1 }, cash: 5e4, p: -5, h: -5 }
           ],
           [
             1,
             "大人の嫌がる危険な現場しか口がなく、無理がたたって体を壊した。親の仕事も決まらず、食費と薬代のどちらを先に出すかで家が暗くなった。",
-            { job: 1, fl: { sch: 0, workplace_hazard: 1, parent_unemployed: 1 }, cash: 5e4, h: -15, p: -8 }
+            { job: 1, educationAction: "leave-school", fl: { workplace_hazard: 1, parent_unemployed: 1 }, cash: 5e4, h: -15, p: -8 }
           ]
         ),
         $terraData.K(
           "勉学を続ける",
-          { en: { ge: { sch: 1 } }, why: "学校に通っていない" },
+          { en: s => !!educationMigrationCurrent(s), why: "現在、実在する学校課程に在籍していない" },
           [
             0.5,
             "「お前は学校へ行け」と親が背中を押してくれた。すり減った靴で通学を続けたが、親は毎日仕事を探し回って疲れ切っていた。",
@@ -722,7 +722,7 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
           [
             1,
             "学費どころか日々の食事にも事欠くようになり、学校を辞めざるを得なくなった。親の新しい仕事もまだ見つからない。",
-            { fl: { sch: 0, parent_unemployed: 1 }, p: -10 }
+            { educationAction: "leave-school", fl: { parent_unemployed: 1 }, p: -10 }
           ]
         ),
         $terraData.K("家の仕事を手伝って支える", {}, [
@@ -1096,7 +1096,7 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
       cd: 15,
       t: [
         {
-          when: "就学中",
+          when: s => !!educationMigrationCurrent(s),
           t: "商いを切り盛りする親から、そろそろ店の仕事を手伝わないかと切り出された。まだ学業を続けたい気持ちもあるが、年々白髪の増える親の横顔を見ると簡単には断れなかった。"
         },
         {
@@ -1104,17 +1104,17 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
         }
       ],
       c: [
-        $terraData.K("親の店に入り、商いを覚える", { show: { ban: ["就学中"] } }, [
+        $terraData.K("親の店に入り、商いを覚える", { show: s => !educationMigrationCurrent(s) }, [
           1,
           "前掛けを締め、親の隣で仕入れ先との駆け引きや算盤を覚え始めた。看板を継ぐのはまだ先だが、常連客に顔を覚えてもらうのが嬉しかった。",
           { job: 5, cr: 2, rl: 6, p: 3 }
         ]),
-        $terraData.K("今は学業を続けたいと伝える", { show: { need: ["就学中"] } }, [
+        $terraData.K("今は学業を続けたいと伝える", { show: s => !!educationMigrationCurrent(s) }, [
           1,
           "「もう少しだけ勉強を続けさせてほしい」と頭を下げた。親は少し寂しそうに頷き、店の話は卒業まで待ってくれることになった。",
           { ep: 5, k: 2, rl: 2, p: 2 }
         ]),
-        $terraData.K("店は継がず、よそで働き口を探す", { show: { ban: ["就学中"] } }, [
+        $terraData.K("店は継がず、よそで働き口を探す", { show: s => !educationMigrationCurrent(s) }, [
           1,
           "自分の力で外の世界を見てみたいと伝え、店の話を断った。夕食の席で商売の話題が出るたび、気まずくて茶碗に目を落とした。",
           { p: 3, rl: -5 }
