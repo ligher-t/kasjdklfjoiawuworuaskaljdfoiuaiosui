@@ -161,3 +161,78 @@ function educationObservationRows(s,{
       p_funded:funded,p_completed:finished
     }[id],date)]));
 }
+
+// P19 person-level bridge. Null means that the relevant fact has not been
+// established in this save. Each row is one recorded life/case/stage window.
+function educationObservationCaseBridgeRows(s,{
+  year=s?.year,month=s?.mo,caseIds=null
+}={}) {
+  if(!Number.isInteger(year)||!Number.isInteger(month)||month<1||month>12)
+    throw Error("人物別教育観測には確定した年月が必要");
+  const world=s.world?.educationWorld,cases=s.educationCases?.items||{},
+    access=s.educationAccess||{},enrollments=s.educationRecord?.enrollments||[],
+    selected=[...new Set(caseIds||Object.keys(cases))],
+    knownAt=x=>x?.checkedAt?.year*12+x?.checkedAt?.month<=year*12+month;
+  return selected.map(id=>{
+    const c=cases[id];
+    if(!c)return null;
+    const origin=world?.areas?.[c.originAreaId],
+      areas=origin?[origin.id,...(origin.neighborIds||[])]:[],
+      offerings=origin?[...new Map(areas.flatMap(area=>
+        institutionOfferings(s,area,c.stage).filter(off=>
+          !["university","vocational","arts"].includes(c.stage) ||
+          off.admissionTier===c.tier).map(off=>[off.id,off]))).values()]:[],
+      opened=offerings.filter(off=>{
+        const current=educationSchoolStatusAt(s,off.id,year,month);
+        return current&&(current.teachingEquivalent>0 ||
+          ["open","limited"].includes(current.admissionStatus));
+      }),
+      known=opened.filter(off=>
+        c.evidence?.knownCandidateIds?.includes(off.id) &&
+        access.knownOfferings?.[off.id]?.epistemicStatus==="offering-verified" &&
+        knownAt(access.knownOfferings[off.id])),
+      route=origin?.id===s.local?.educationAreaId?known.map(off=>
+        educationCanReach(s,{institutionId:off.institutionId,
+          campusId:off.campusId,offeringId:off.id,year,month,
+          purpose:"daily-commute"})):[],
+      notice=access.notices?.[c.applicationId],
+      admission=notice?.caseId===c.id&&notice.applicationId===c.applicationId?
+        notice:null,
+      linked=c.commit?.enrollmentId?
+        enrollments.find(x=>x.id===c.commit.enrollmentId &&
+          x.offeringId===c.offeringId):null,
+      evidence=linked && educationObservationRows(s,{year,month,
+        caseIds:[],siteFrame:[],openFrame:[],
+        applicationIds:[],enrollmentIds:[linked.id]}).p_completed,
+      financing=admission?.result==="accepted"?
+        educationObservationRows(s,{year,month,
+          caseIds:[],siteFrame:[],openFrame:[],
+          applicationIds:[c.applicationId],enrollmentIds:[]}).p_funded:null,
+      participation=(s.learningPaths||[]).some(path=>
+        path.personId==="protagonist" && path.evidenceIds?.length &&
+        path.participation?.some(part=>
+          part.periodKey<=year+"-"+String(month).padStart(2,"0") &&
+          part.evidenceIds?.length));
+    return {personId:"protagonist",caseId:c.id,stage:c.stage,
+      intentYear:c.year,observedAt:{year,month},
+      sampleScope:"recorded-intent-window",
+      N_eligible:c.evidence?.eligibilityReviewId?true:
+        c.reason==="not-eligible"?false:null,
+      N_any_present:origin?offerings.length>0:null,
+      N_any_open:origin?opened.length>0:null,
+      N_known:opened.length?known.length>0:null,
+      N_route:known.length && origin?.id===s.local?.educationAreaId?
+        route.some(x=>x.reachable)?true:
+          route.every(x=>x.status==="blocked")?false:null:null,
+      N_applied:!!c.applicationId,
+      N_accepted:admission?.result==="accepted"?true:
+        ["exam-failed","not-accepted"].includes(admission?.result)?false:null,
+      N_funded:financing?.denominator?
+        financing.numerator>0:financing?.pending?null:null,
+      N_enrolled:linked?true:
+        c.status==="resolved"?false:null,
+      N_completed:evidence?.denominator?
+        evidence.numerator>0:null,
+      N_nonformal_gain:participation}};
+  }).filter(Boolean);
+}
