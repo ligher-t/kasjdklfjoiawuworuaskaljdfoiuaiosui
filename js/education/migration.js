@@ -1,6 +1,171 @@
 /* I07: P13/P17 evidence-gated education event actions.
  * Every eligibility check is pure. No event prose settles an exam or awards a degree.
  */
+
+// P17 information-only scenes have distinct prerequisites. A notice, teacher,
+// barrier or historical memory must exist before prose claims it was observed.
+const EDUCATION_P17_EXTRA = new Set(
+  Array.from({length:80},(_,i)=>"E"+String(i+1).padStart(2,"0")).filter(id=>
+    !["E34","E35","E41","E43","E47","E48","E49","E50","E51","E52","E53","E54",
+      "E57","E59","E60","E65","E66","E73"].includes(id))
+);
+const EDUCATION_P17_REGIONS = Object.freeze({
+  E56:"炎国",E58:"ヴィクトリア",E61:"カジミエーシュ",
+  E62:"クルビア",E63:"極東",E64:"イベリア",E67:"カズデル",
+  E68:"サーミ",E69:"リターニア",E70:"イェラグ",
+  E71:"レム・ビリトン",E72:"ボリバル",E74:"ミノス",
+  E75:"ウルサス",E76:"ウルサス"
+});
+const EDUCATION_P17_CASE_SCENES = new Set(
+  ["E01","E02","E03","E04","E05","E06","E07","E08","E09",
+   "E10","E11","E12","E20","E21","E24","E25","E26","E27",
+   "E28","E30","E31","E32","E33"]
+);
+const EDUCATION_P17_STUDENT_SCENES = new Set(
+  ["E13","E14","E15","E22","E23","E29","E36","E37","E38",
+   "E39","E40","E42","E78","E79"]
+);
+function educationP17Witness(s,review) {
+  return Object.values(s.educationSceneEvidence?.items||{}).some(row=>
+    row.reviewId===review && row.status==="verified" && row.evidenceRef &&
+    row.year<=s.year && (row.areaId===s.local?.educationAreaId ||
+      row.areaId==="region:"+s.res?.n));
+}
+function educationP17SchoolExperience(s,tag) {
+  const current=educationMigrationCurrent(s);
+  return !!current && Object.values(s.educationSchoolExperiences?.items||{})
+    .some(row=>row.enrollmentId===current.enroll.id &&
+      row.offeringId===current.offering.id && row.experienceTag===tag &&
+      row.status==="verified" && row.evidenceRef && row.year<=s.year);
+}
+function educationP17ExtraEligible(s,review,letter=null) {
+  if(!EDUCATION_P17_EXTRA.has(review))return false;
+  if(EDUCATION_P17_REGIONS[review] &&
+     s.res?.n!==EDUCATION_P17_REGIONS[review])return false;
+  const current=educationMigrationCurrent(s),item=educationActiveCase(s),
+    cases=s.educationCases?.history||[],
+    known=item?educationCaseCandidates(s):[],
+    area=s.local?.educationAreaId,
+    world=s.world.educationWorld,
+    witness=educationP17Witness(s,review),
+    school= current&&educationSchoolStatusAt(s,current.offering.id,s.year,s.mo);
+  const searched=scope=>s.educationAccess?.searches?.some(x=>
+    x.caseId===item?.id && x.scope===scope);
+  const primary=item?.stage==="primary",
+    planning=item?.phase==="planning",
+    contract=item?.phase==="contract";
+  if(EDUCATION_P17_CASE_SCENES.has(review) && !item)return false;
+  if(EDUCATION_P17_STUDENT_SCENES.has(review) && !current)return false;
+  switch(review){
+    case "E01": return planning && primary && !!searched("local") &&
+      known.length===0 && (s.age>=6&&s.age<=11);
+    case "E02": return planning && primary && !!searched("adjacent") &&
+      (letter==="B"?known.length===0:letter==="A"||letter==="C"?
+        known.length>0:true);
+    case "E03": return planning && primary && known.some(x=>{
+      const route=educationCanReach(s,{institutionId:x.institutionId,
+        campusId:x.campusId,offeringId:x.offeringId,
+        year:s.year,month:s.mo,purpose:"daily-commute"});
+      return !route.reachable;
+    });
+    case "E04": return planning && item.stage==="lower" &&
+      educationHas(s,"primary");
+    case "E05": return planning && item.stage==="upper" &&
+      !!searched("local") && known.every(x=>x.areaId!==area);
+    case "E06": return planning &&
+      ["university","vocational","arts"].includes(item.stage);
+    case "E07": return planning && known.length>=2;
+    case "E08": return planning && known.some(x=>
+      educationSchoolStatusAt(s,x.offeringId,s.year,s.mo)?.admissionStatus==="closed");
+    case "E09": return contract && !!item.evidence?.admissionOfferId &&
+      (letter!=="A"||educationP17Witness(s,"E09"));
+    case "E10": return planning && item.kind==="reentry" &&
+      s.educationRecord?.enrollments?.some(x=>x.status==="withdrawn");
+    case "E11": return planning && item.stage==="preparatory" && s.age>=18;
+    case "E12": return planning && s.mo>=10 && !known.length;
+    case "E20": return planning && known.some(x=>
+      world.areas?.[x.areaId]?.regionKey!==s.res?.n) && witness;
+    case "E21": return planning && witness;
+    case "E24": return (planning||contract) &&
+      known.some(x=>Number.isFinite(x.tuitionEstimate));
+    case "E25": return item.phase==="application" && witness;
+    case "E26":case "E27":case "E28": return (planning||contract) && witness;
+    case "E30": return (planning||contract) &&
+      known.some(x=>x.tuitionEstimate>0);
+    case "E31": return planning && s.job>0 && witness;
+    case "E32":case "E33": return (planning||item.phase==="application") &&
+      witness;
+    case "E13": return !!school && school.teachingEquivalent>0 &&
+      educationP17SchoolExperience(s,"paid-commute-quote") &&
+      (letter!=="A"||educationP17SchoolExperience(s,"paid-commute-pass"));
+    case "E14":case "E15": return !!school && witness &&
+      !educationCanReach(s,{institutionId:current.m.institutionId,
+        campusId:current.m.campusId,offeringId:current.offering.id,
+        year:s.year,month:s.mo,purpose:"daily-commute"}).reachable;
+    case "E22":return !!school && school.teachingEquivalent>0 &&
+      educationP17SchoolExperience(s,"long-commute");
+    case "E23":return !!school && witness;
+    case "E29":return !!school && witness &&
+      !educationCanReach(s,{institutionId:current.m.institutionId,
+        campusId:current.m.campusId,offeringId:current.offering.id,
+        year:s.year,month:s.mo,purpose:"daily-commute"}).reachable;
+    case "E36":return educationP17SchoolExperience(s,"teacher-shortage");
+    case "E37":return educationP17SchoolExperience(s,"specialized-laboratory");
+    case "E38":return !!school && school.teachingEquivalent===0;
+    case "E39":return educationP17SchoolExperience(s,"teacher-evacuated");
+    case "E40":return educationP17SchoolExperience(s,"approved-temporary-classroom");
+    case "E42":return educationP17SchoolExperience(s,"examination-cancelled");
+    case "E44":return s.educationRecord?.enrollments?.some(x=>
+      x.status!=="enrolled"&&x.institutionId) &&
+      Object.values(s.educationPeopleTies?.items||{}).some(x=>
+        x.role==="teacher"&&x.personallyKnown) && witness;
+    case "E45":case "E46":case "E55":
+      return !!s.educationDependents?.items &&
+        Object.keys(s.educationDependents.items).length>0 && witness;
+    case "E16":case "E17":case "E18":case "E19":
+      return witness && (letter!=="A" ||
+        ["E16","E19"].includes(review) ||
+        Object.values(s.educationMobility?.residenceContracts||{})
+          .some(x=>x.status==="active"&&x.evidenceRef));
+    case "E56":case "E58":case "E61":case "E62":case "E64":
+    case "E67":case "E69":case "E70":case "E72":
+      return witness && !!world.areas?.[area];
+    case "E63":case "E68":case "E71":return witness;
+    case "E74":return !!world.areas?.[area] && (s.age>=12);
+    case "E75":return witness &&
+      s.educationRecord?.enrollments?.some(x=>x.region==="ウルサス" &&
+        x.startedYear<=1096 && (x.endedYear??s.year)>=1096);
+    case "E76":return witness;
+    case "E77":return witness;
+    case "E78":return !!school && school.teachingEquivalent>0 &&
+      Object.values(s.educationPeopleTies?.items||{}).some(x=>
+        x.enrollmentId===current.enroll.id&&x.role==="peer"&&x.personallyKnown);
+    case "E79":return !!school && educationP17SchoolExperience(s,"accessibility-barrier");
+    case "E80":return s.age>=25 && witness &&
+      (s.lifeRecord?.careerChanges?.length>0);
+    default: return false;
+  }
+}
+function educationP17ExtraApply(s,review,letter,eventId){
+  const item=educationActiveCase(s);
+  if(!educationP17ExtraEligible(s,review,letter))return false;
+  const decision={
+    E01:{A:"case:search-adjacent",B:"case:nonformal"},
+    E05:{A:"case:search-adjacent",C:"case:defer"},
+    E06:{B:"case:defer"},
+    E09:{A:"case:commit",B:"case:decline-offer"},
+    E12:{A:"case:defer",B:"case:nonformal"}
+  }[review]?.[letter];
+  if(decision && !educationCaseAction(s,decision))return false;
+  educationMigrationRecord(s,eventId,letter,{
+    evidenceRef:educationP17Witness(s,review)?review+":"+s.year+":"+s.mo:null,
+    caseId:item?.id||null,informationOnly:review!=="E09"||letter!=="A",
+    formalEnrollmentIssued:review==="E09"&&letter==="A",
+    awardIssued:false,automaticPayment:false
+  });
+  return true;
+}
+
 const EDUCATION_MIGRATION_NONFORMAL = Object.freeze({
   edu_roving_teacher_visit: {
     mode:"roving-tutor",kind:"roving-tutor",subject:"basic_literacy"},
@@ -150,6 +315,8 @@ function educationMigrationEligible(s,eventId,choice=null) {
         (s.educationCreditTransfers?.items?.[current.enroll.id]?.acceptedCreditIds||[]).includes(x.id));
   if(eventId==="edu_informal_skill_assessment")
     return !!educationMigrationRecognitionTarget(s);
+  const review=window.GAME_DATA?.EDUCATION_P17_REVIEWED?.find(x=>x.eventId===eventId)?.reviewId;
+  if(EDUCATION_P17_EXTRA.has(review))return educationP17ExtraEligible(s,review,choice);
   const config=EDUCATION_MIGRATION_NONFORMAL[eventId];
   if(!config)return false;
   if(eventId==="edu_adult_evening_literacy" &&
@@ -282,6 +449,7 @@ function educationMigrationApply(s,action) {
     });
     return true;
   }
+  if(EDUCATION_P17_EXTRA.has(review))return educationP17ExtraApply(s,review,letter,eventId);
   const config=EDUCATION_MIGRATION_NONFORMAL[eventId],
     provider=educationMigrationProviderFor(s,eventId);
   if(!config||!provider)return false;
