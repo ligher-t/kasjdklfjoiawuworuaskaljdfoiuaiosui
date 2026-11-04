@@ -199,7 +199,7 @@ function educationMigrationRecord(s,eventId,letter,result={}) {
 function educationMigrationApply(s,action) {
   if(typeof action!=="string")throw Error("教育イベントの選択内容が不正");
   const [review,letter]=action.split(":"),
-    entry=GAME_DATA.EDUCATION_P17_REVIEWED?.find(x=>x.reviewId===review),
+    entry=window.GAME_DATA.EDUCATION_P17_REVIEWED?.find(x=>x.reviewId===review),
     eventId=entry?.eventId;
   if(!entry||!educationMigrationEligible(s,eventId,letter))
     throw Error("学校イベントの在籍・人物・募集・時間条件が変わった");
