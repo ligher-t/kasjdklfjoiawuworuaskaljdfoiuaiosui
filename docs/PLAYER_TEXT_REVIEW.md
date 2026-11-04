@@ -2036,3 +2036,7 @@
 ### その他の条件改修
 
 `fam_inherit`は学業継続の選択を実在する本人の学籍へ限定、`daily_yan_55`は独学でも成立する読書情景として学籍条件を解除。元のプレイヤー可視全文は変更なし。
+
+## 2026-11-04｜EDU I07のP13全文校閲追補
+
+既存学校イベントの本文・選択文・結果文の改稿および教育効果の経路は、[`docs/education/I07_PLAYER_TEXT_CHANGES_20261104.md`](education/I07_PLAYER_TEXT_CHANGES_20261104.md) にイベントID別・変更ソース全文で記録した。P17の新規80件の校閲本文・条件通知46件は [`data/education/p17-reviewed-prose.js`](../data/education/p17-reviewed-prose.js) に完全収録している。P17の条件別通知は本文登録と発火ガードを分離し、実際の結果根拠が得られた場面に限って配信する。
