@@ -1,0 +1,2317 @@
+{
+  "schema": "terra-work-w01-source-branch-samples",
+  "version": 1,
+  "part": "01",
+  "sourceRef": "fix/historical-event-scope-and-delivery",
+  "method": "Read real event source objects; extract choice labels and effect indicators per K(...) call. Not proof all JS runtime branches are statically captured. Retain original wording samples for prose checks.",
+  "status": "source-assisted-semantic-preparation; manual branch approval remains distinct",
+  "files": [
+    "data/base/career-entry.js",
+    "data/base/life-and-health.js",
+    "data/base/family-and-livelihood.js",
+    "data/base/regional-west.js",
+    "data/base/regional-east.js",
+    "data/base/regional-conflict.js",
+    "data/base/world-and-contacts.js"
+  ],
+  "sourceErrors": [],
+  "eventCount": 64,
+  "parseErrors": [
+    {
+      "id": "transporter_contract_review",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "kjerag_transporter_route_review",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "rim_catastrophe_transporter_review",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "sargon_market_contract_review",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "ursus_mine_assignment_offer",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "ursus_mine_assignment_review",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "col_tech_safety_aftermath",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "col_tech_internal_review",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "col_tech_workplace_consequence",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "col_tech_later_years",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "vic_clerk_role_review",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "vic_clerk_later_years",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "work_unemployed_reentry",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "work_elder_reentry",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "illness_review",
+      "why": "event object parse failed"
+    },
+    {
+      "id": "illness_followup",
+      "why": "event object parse failed"
+    },
+    {
+      "id": "dis",
+      "why": "event object parse failed"
+    },
+    {
+      "id": "fam_unemploy",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "fam_conscript",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "fam_infected",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "fam_tribetree",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "fam_inherit",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "urs_mine",
+      "why": "event object parse failed"
+    },
+    {
+      "id": "col_frontier_contract_review",
+      "why": "event object parse failed"
+    },
+    {
+      "id": "kaz_rural",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "lei_isolation",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "sir_family_afterwork",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "sir_family_later_work",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "sir_feud",
+      "why": "ID not found near catalog location"
+    },
+    {
+      "id": "lon_merchant",
+      "why": "event object parse failed"
+    },
+    {
+      "id": "discrimination_after",
+      "why": "event object parse failed"
+    },
+    {
+      "id": "discrimination_work_after",
+      "why": "event object parse failed"
+    }
+  ],
+  "choiceCountMismatches": [
+    {
+      "eventId": "car",
+      "expected": 23,
+      "parsed": 0
+    },
+    {
+      "eventId": "nat",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "displacement_after",
+      "expected": 4,
+      "parsed": 0
+    },
+    {
+      "eventId": "war",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "mv",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "old",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "old_followup",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "elder_work_opportunity",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "urs_conscript",
+      "expected": 3,
+      "parsed": 1
+    },
+    {
+      "eventId": "urs_purge",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "vic_patron",
+      "expected": 4,
+      "parsed": 0
+    },
+    {
+      "eventId": "vic_strike",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "vic_war",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "col_quarantine_offer",
+      "expected": 2,
+      "parsed": 0
+    },
+    {
+      "eventId": "col_hire",
+      "expected": 4,
+      "parsed": 0
+    },
+    {
+      "eventId": "col_frontier",
+      "expected": 4,
+      "parsed": 0
+    },
+    {
+      "eventId": "lat_exile",
+      "expected": 2,
+      "parsed": 0
+    },
+    {
+      "eventId": "lat_priest",
+      "expected": 3,
+      "parsed": 1
+    },
+    {
+      "eventId": "ibe_rebuild",
+      "expected": 3,
+      "parsed": 1
+    },
+    {
+      "eventId": "ibe_rebuild_contract_review",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "kje_open",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "yan_exam",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "lon_guard",
+      "expected": 2,
+      "parsed": 0
+    },
+    {
+      "eventId": "hig_tension",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "hig_service_review",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "hig_service_later_career_review",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "rim_mine",
+      "expected": 3,
+      "parsed": 1
+    },
+    {
+      "eventId": "kaz_exile",
+      "expected": 2,
+      "parsed": 0
+    },
+    {
+      "eventId": "kazdel_afterfall",
+      "expected": 2,
+      "parsed": 0
+    },
+    {
+      "eventId": "bol_war",
+      "expected": 3,
+      "parsed": 0
+    },
+    {
+      "eventId": "bol_tourist",
+      "expected": 3,
+      "parsed": 1
+    },
+    {
+      "eventId": "wld_race",
+      "expected": 3,
+      "parsed": 0
+    }
+  ],
+  "events": [
+    {
+      "eventId": "car",
+      "source": "data/base/career-entry.js:4",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_URSUS_INFECTED",
+        "SRC_URSUS_EP16",
+        "SRC_RIM_WORK",
+        "SRC_LEONHARDT_ARCHIVE",
+        "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+        "SRC_PENGUIN_LOGISTICS_CB1",
+        "SRC_COURIER_LOGISTICS_RECORD",
+        "SRC_TRANSPORTER_LIFE_MODEL",
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_SARGON_WD1_WD5",
+        "SRC_SARGON_CONTRACT_LIFE_MODEL"
+      ],
+      "catalogChoiceCount": 23,
+      "catalogOutcomeBranchCount": 37,
+      "possibleJobIds": [
+        14,
+        0,
+        4,
+        2,
+        3,
+        16,
+        17,
+        18,
+        20,
+        21,
+        7,
+        22,
+        23,
+        24,
+        27,
+        1
+      ],
+      "mechanics": [
+        "ar",
+        "cash",
+        "cr",
+        "ep",
+        "fl",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "payBonus",
+        "pm",
+        "res",
+        "residenceArrangement",
+        "rl",
+        "study"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 6,
+      "sourceLength": 637,
+      "openingSnippet": "show: s => !educationSchoolOrDecision(s) && (s.job === 0 || s.job == null) && !s.fl?.frontier_contract && !s.fl?.rhodes_landship,\n      conf: \"S\",\n      references: [\n        \"SRC_INDUSTRIAL_LIFE\",\n        \"SRC_URSUS_INFECTED\",\n        \"SRC_URSUS_EP16\",\n        \"SRC_RIM_WORK\",\n        \"SRC_LEONHARDT_ARCHIVE\",\n        \"SRC_CATASTROPHE_TRANSPORTER_OF",
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [
+        "frontier_contract",
+        "rhodes_landship"
+      ],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "transporter_contract_review",
+      "source": "data/base/career-entry.js:519",
+      "sourceRefs": [
+        "SRC_PENGUIN_LOGISTICS_CB1",
+        "SRC_COURIER_LOGISTICS_RECORD",
+        "SRC_TRANSPORTER_LIFE_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "kjerag_transporter_route_review",
+      "source": "data/base/career-entry.js:596",
+      "sourceRefs": [
+        "SRC_COURIER_LOGISTICS_RECORD",
+        "SRC_TRANSPORTER_LIFE_MODEL",
+        "SRC_KJERAG_LIFE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "rim_catastrophe_transporter_review",
+      "source": "data/base/career-entry.js:675",
+      "sourceRefs": [
+        "SRC_LEONHARDT_ARCHIVE",
+        "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+        "SRC_RIM_LOCAL_LIFE_MODEL",
+        "SRC_TRANSPORTER_LIFE_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        16
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "sargon_market_contract_review",
+      "source": "data/base/career-entry.js:792",
+      "sourceRefs": [
+        "SRC_SARGON_WD1_WD5",
+        "SRC_SARGON_CONTRACT_LIFE_MODEL",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        0,
+        16
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "ursus_mine_assignment_offer",
+      "source": "data/base/career-entry.js:898",
+      "sourceRefs": [
+        "SRC_URSUS_MINE_LIFE",
+        "SRC_URSUS_EP16",
+        "SRC_URSUS_INFECTED"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        3
+      ],
+      "mechanics": [
+        "fl",
+        "h",
+        "home",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "localKind",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "ursus_mine_assignment_review",
+      "source": "data/base/career-entry.js:973",
+      "sourceRefs": [
+        "SRC_URSUS_MINE_LIFE",
+        "SRC_URSUS_EP16",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "groupStanding",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p",
+        "regionalImpact",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "col_tech_safety_aftermath",
+      "source": "data/base/career-entry.js:1286",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE",
+        "SRC_COLUMBIA_TECH_SAFETY_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        7,
+        0
+      ],
+      "mechanics": [
+        "cr",
+        "fl",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "regionalImpact"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "col_tech_internal_review",
+      "source": "data/base/career-entry.js:1661",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cr",
+        "fl",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "col_tech_workplace_consequence",
+      "source": "data/base/career-entry.js:1759",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cr",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "regionalImpact"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "col_tech_later_years",
+      "source": "data/base/career-entry.js:1877",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "vic_clerk_role_review",
+      "source": "data/base/career-entry.js:1970",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "payBonus"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "vic_clerk_later_years",
+      "source": "data/base/career-entry.js:2047",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "work_unemployed_reentry",
+      "source": "data/base/career-entry.js:2188",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_INDUSTRY_POLICY"
+      ],
+      "catalogChoiceCount": 5,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        1,
+        2,
+        24,
+        4
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "h",
+        "job",
+        "k",
+        "p",
+        "pm",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "work_elder_reentry",
+      "source": "data/base/career-entry.js:2246",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_INDUSTRY_POLICY"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        24,
+        1
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "illness_review",
+      "source": "data/base/life-and-health.js:281",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "illnessReviewed",
+        "illnessTreated",
+        "job",
+        "med",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "event object parse failed",
+      "actualLine": 280,
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "illness_followup",
+      "source": "data/base/life-and-health.js:321",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "illnessReviewed",
+        "illnessTreated",
+        "job",
+        "med",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "event object parse failed",
+      "actualLine": 320,
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "nat",
+      "source": "data/base/life-and-health.js:514",
+      "sourceRefs": [
+        "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+        "SRC_MOBILE_CITY_MOBILITY",
+        "SRC_REGIONAL_ENVIRONMENT",
+        "SRC_CATASTROPHE_CIVILIAN_LIFEPATH"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "d",
+        "displacement",
+        "fl",
+        "home",
+        "job",
+        "p",
+        "res",
+        "w"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 514,
+      "sourceLength": 291,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "displacement_after",
+      "source": "data/base/life-and-health.js:612",
+      "sourceRefs": [],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        27
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "displacement",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 613,
+      "sourceLength": 501,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "war",
+      "source": "data/base/life-and-health.js:841",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "d",
+        "fl",
+        "h",
+        "home",
+        "job",
+        "p",
+        "res"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 842,
+      "sourceLength": 249,
+      "openingSnippet": null,
+      "descriptionSample": "遠くで砲撃の閃光が走り、移動都市は黒煙を吐いて緊急針路変更を始めた。機関区へ走る整備班と、避難路へ殺到する住民の怒号で通路が埋め尽くされた。",
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "mv",
+      "source": "data/base/life-and-health.js:894",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "debt",
+        "fl",
+        "home",
+        "job",
+        "p",
+        "res",
+        "residenceArrangement",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 895,
+      "sourceLength": 115,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "old",
+      "source": "data/base/life-and-health.js:974",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 975,
+      "sourceLength": 57,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "old_followup",
+      "source": "data/base/life-and-health.js:1014",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 1015,
+      "sourceLength": 66,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "elder_work_opportunity",
+      "source": "data/base/life-and-health.js:1048",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        24,
+        12
+      ],
+      "mechanics": [
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 1049,
+      "sourceLength": 76,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "dis",
+      "source": "data/base/family-and-livelihood.js:408",
+      "sourceRefs": [],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cr",
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "event object parse failed",
+      "actualLine": 408,
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "fam_unemploy",
+      "source": "data/base/family-and-livelihood.js:632",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        1
+      ],
+      "mechanics": [
+        "cash",
+        "educationAction",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "fam_conscript",
+      "source": "data/base/family-and-livelihood.js:722",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        14,
+        0
+      ],
+      "mechanics": [
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "fam_infected",
+      "source": "data/base/family-and-livelihood.js:770",
+      "sourceRefs": [
+        "SRC_ORIPATHY_SOCIAL",
+        "SRC_TERRA_FAMILY",
+        "SRC_URSUS_INFECTED",
+        "SRC_LEITHANIEN_INFECTION",
+        "SRC_LATERANO_CIVIC"
+      ],
+      "catalogChoiceCount": 5,
+      "catalogOutcomeBranchCount": 8,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "infectionAwarenessActions",
+        "job",
+        "k",
+        "p",
+        "parentTreatment",
+        "res",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "fam_tribetree",
+      "source": "data/base/family-and-livelihood.js:957",
+      "sourceRefs": [
+        "SRC_SAMI_CLANS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "res",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "fam_inherit",
+      "source": "data/base/family-and-livelihood.js:1032",
+      "sourceRefs": [],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        5
+      ],
+      "mechanics": [
+        "cr",
+        "ep",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "urs_mine",
+      "source": "data/base/regional-west.js:123",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE"
+      ],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 8,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "d",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "event object parse failed",
+      "actualLine": 123,
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "urs_conscript",
+      "source": "data/base/regional-west.js:187",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        2,
+        14
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "k",
+        "p",
+        "payBonus"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 187,
+      "sourceLength": 410,
+      "openingSnippet": null,
+      "descriptionSample": "街角に貼り出された軍需工場の募集票には、「高給・宿舎完備」と太字で書かれていた。だがよく読めば、配属先も外出の可否もすべて軍の管理下に置かれるとあり、戦況が悪化した際にどこへ送られるかは曖昧にぼかされていた。",
+      "choiceCountParsed": 1,
+      "choices": [
+        {
+          "label": "背に腹は代えられず応募する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesIncome": false,
+          "outcomeTextSamples": [],
+          "sourceOffset": 368
+        }
+      ],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "urs_purge",
+      "source": "data/base/regional-west.js:280",
+      "sourceRefs": [
+        "SRC_TL_EARLY"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 280,
+      "sourceLength": 150,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "vic_patron",
+      "source": "data/base/regional-west.js:337",
+      "sourceRefs": [],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        6,
+        2
+      ],
+      "mechanics": [
+        "cr",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 337,
+      "sourceLength": 131,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "vic_strike",
+      "source": "data/base/regional-west.js:438",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "job",
+        "p",
+        "payBonus",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 438,
+      "sourceLength": 186,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "vic_war",
+      "source": "data/base/regional-west.js:485",
+      "sourceRefs": [
+        "SRC_TL_LATE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 8,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "d",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 485,
+      "sourceLength": 212,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "col_quarantine_offer",
+      "source": "data/base/regional-west.js:666",
+      "sourceRefs": [
+        "SRC_COLUMBIA_DV1",
+        "SRC_COLUMBIA_DV5"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 672,
+      "sourceLength": 267,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [
+        "col_coverage_gap"
+      ],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "col_hire",
+      "source": "data/base/regional-west.js:690",
+      "sourceRefs": [],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 8,
+      "possibleJobIds": [
+        7,
+        2
+      ],
+      "mechanics": [
+        "cr",
+        "job",
+        "k",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 704,
+      "sourceLength": 104,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "col_frontier",
+      "source": "data/base/regional-west.js:758",
+      "sourceRefs": [
+        "SRC_COLUMBIA_INSURANCE",
+        "SRC_COLUMBIA_DV5"
+      ],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        62,
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "debt",
+        "fl",
+        "h",
+        "home",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "localKind",
+        "p",
+        "residenceArrangement",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 772,
+      "sourceLength": 413,
+      "openingSnippet": null,
+      "descriptionSample": "診療所の待合室に、クルビア西部の未開拓地へ向かう労働者を募るポスターが貼られていた。前渡しの支度金が出るうえ感染者も不問と書かれているが、荒野の開拓キャンプへ移れば今の病院にはもう通えなくなる。",
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "col_frontier_contract_review",
+      "source": "data/base/regional-west.js:932",
+      "sourceRefs": [
+        "SRC_COLUMBIA_INSURANCE",
+        "SRC_COLUMBIA_DV5"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeGoals",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "event object parse failed",
+      "actualLine": 932,
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "kaz_rural",
+      "source": "data/base/regional-west.js:1062",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        1,
+        2
+      ],
+      "mechanics": [
+        "cash",
+        "home",
+        "job",
+        "localKind",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "lei_isolation",
+      "source": "data/base/regional-west.js:1587",
+      "sourceRefs": [
+        "SRC_LEITHANIEN_INFECTION"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "h",
+        "infectionAwarenessAction",
+        "job",
+        "p",
+        "w"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "sir_family_afterwork",
+      "source": "data/base/regional-west.js:2125",
+      "sourceRefs": [
+        "SRC_TERRA_FAMILY",
+        "SRC_SIRACUSA_FAMILIA_CONTEXT",
+        "SRC_SIRACUSA_MARKET_MODEL",
+        "SRC_SIRACUSA_POST_FAMILY_WORK_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        16,
+        24
+      ],
+      "mechanics": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "sir_family_later_work",
+      "source": "data/base/regional-west.js:2255",
+      "sourceRefs": [
+        "SRC_TERRA_FAMILY",
+        "SRC_SIRACUSA_FAMILIA_CONTEXT",
+        "SRC_SIRACUSA_MARKET_MODEL",
+        "SRC_SIRACUSA_POST_FAMILY_WORK_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        24,
+        0
+      ],
+      "mechanics": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "sir_feud",
+      "source": "data/base/regional-west.js:2441",
+      "sourceRefs": [
+        "SRC_TERRA_FAMILY",
+        "SRC_CRIME_REGIONAL"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "ID not found near catalog location",
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "lat_exile",
+      "source": "data/base/regional-east.js:28",
+      "sourceRefs": [
+        "SRC_LATERANO_CIVIC",
+        "SRC_LATERANO_ARENE"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "infectionAwarenessAction",
+        "job",
+        "p",
+        "res",
+        "resFareCovered",
+        "residenceArrangement",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 28,
+      "sourceLength": 227,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "lat_priest",
+      "source": "data/base/regional-east.js:84",
+      "sourceRefs": [
+        "SRC_LATERANO_RELIGION"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        9
+      ],
+      "mechanics": [
+        "cr",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 88,
+      "sourceLength": 319,
+      "openingSnippet": null,
+      "descriptionSample": "礼拝堂からの帰り道、穏やかな物腰の聖職者に呼び止められた。教会の奉仕や聖職の道に関心があるなら、一度話を聞きに来ないかという。",
+      "choiceCountParsed": 1,
+      "choices": [
+        {
+          "label": "聖職の道へ進むため選考を受ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesIncome": false,
+          "outcomeTextSamples": [],
+          "sourceOffset": 275
+        }
+      ],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "ibe_rebuild",
+      "source": "data/base/regional-east.js:250",
+      "sourceRefs": [
+        "SRC_IBERIA_INFORMATION",
+        "SRC_IBERIA_RECOVERY"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [],
+      "mechanics": [
+        "cash",
+        "cr",
+        "h",
+        "k",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 254,
+      "sourceLength": 385,
+      "openingSnippet": "show: s => s.year > 1038 || (s.year === 1038 && s.mo >= 7),",
+      "descriptionSample": "潮風で朽ちた海辺の街区で、崩れた倉庫の床や石畳を直す短期の復旧人足を募っていた。長く続く仕事ではないが、日銭にはなる。",
+      "choiceCountParsed": 1,
+      "choices": [
+        {
+          "label": "補修の人足として働く",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesIncome": false,
+          "outcomeTextSamples": [],
+          "sourceOffset": 367
+        }
+      ],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "ibe_rebuild_contract_review",
+      "source": "data/base/regional-east.js:345",
+      "sourceRefs": [
+        "SRC_IBERIA_INFORMATION",
+        "SRC_IBERIA_RECOVERY",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [],
+      "mechanics": [
+        "cash",
+        "h",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 349,
+      "sourceLength": 719,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [
+        "ibe_rebuild"
+      ],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "kje_open",
+      "source": "data/base/regional-east.js:565",
+      "sourceRefs": [
+        "SRC_KJERAG_LIFE",
+        "SRC_KJERAG_RAIL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        2,
+        5
+      ],
+      "mechanics": [
+        "cash",
+        "job",
+        "k",
+        "p",
+        "pm",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 569,
+      "sourceLength": 193,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "yan_exam",
+      "source": "data/base/regional-east.js:607",
+      "sourceRefs": [
+        "SRC_YAN_GOVERNMENT"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        6
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "ep",
+        "job",
+        "k",
+        "p",
+        "pm"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 611,
+      "sourceLength": 144,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "lon_guard",
+      "source": "data/base/regional-east.js:717",
+      "sourceRefs": [
+        "SRC_LUNGMEN_SECURITY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        15
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "p",
+        "pm"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 721,
+      "sourceLength": 147,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "lon_merchant",
+      "source": "data/base/regional-east.js:901",
+      "sourceRefs": [
+        "SRC_LUNGMEN_AUTONOMY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        5,
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "job",
+        "p",
+        "pm"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "event object parse failed",
+      "actualLine": 905,
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "hig_tension",
+      "source": "data/base/regional-east.js:1036",
+      "sourceRefs": [
+        "SRC_HIGASHI_CONFLICT",
+        "SRC_HIGASHI_SERVICE_MODEL",
+        "SRC_AKAFUYU_HIGASHI"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        14
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 1040,
+      "sourceLength": 427,
+      "openingSnippet": null,
+      "descriptionSample": "北院と南院の睨み合いや、海の向こうのウルサスとのいくさ話が、仕事帰りの茶屋でもしきりに囁かれるようになった。辻の掲示板には、近隣の陣屋が兵站や街道警備の人員を募る真新しい木札がいくつも並んでいる。",
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "hig_service_review",
+      "source": "data/base/regional-east.js:1117",
+      "sourceRefs": [
+        "SRC_HIGASHI_CONFLICT",
+        "SRC_HIGASHI_SERVICE_MODEL",
+        "SRC_AKAFUYU_HIGASHI"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        16,
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 1121,
+      "sourceLength": 272,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [
+        "hig_tension"
+      ],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "hig_service_later_career_review",
+      "source": "data/base/regional-east.js:1220",
+      "sourceRefs": [
+        "SRC_HIGASHI_CONFLICT",
+        "SRC_HIGASHI_SERVICE_MODEL",
+        "SRC_AKAFUYU_HIGASHI"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        16,
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill",
+        "p"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 1224,
+      "sourceLength": 555,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "rim_mine",
+      "source": "data/base/regional-conflict.js:32",
+      "sourceRefs": [
+        "SRC_RIM_WORK"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0,
+        2
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 32,
+      "sourceLength": 326,
+      "openingSnippet": null,
+      "descriptionSample": "採掘坑の奥で支柱がきしみ、一度作業を止めて点検すべきだという声が上がった。手を止めれば今日の日当が削られるが、このまま掘り進めて崩れたら命がない。",
+      "choiceCountParsed": 1,
+      "choices": [
+        {
+          "label": "点検のため作業を止める",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesIncome": false,
+          "outcomeTextSamples": [],
+          "sourceOffset": 286
+        }
+      ],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "kaz_exile",
+      "source": "data/base/regional-conflict.js:126",
+      "sourceRefs": [
+        "SRC_TL_EARLY",
+        "SRC_TL_1094",
+        "SRC_KAZDEL_LIFE",
+        "SRC_KAZDEL_DISPLACEMENT_MODEL"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "d",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 126,
+      "sourceLength": 277,
+      "openingSnippet": "show: s => !!s.world?.events?.kazdel_civil_war,",
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "kazdel_afterfall",
+      "source": "data/base/regional-conflict.js:185",
+      "sourceRefs": [
+        "SRC_TL_1094",
+        "SRC_KAZDEL_LIFE",
+        "SRC_KAZDEL_DISPLACEMENT_MODEL"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 186,
+      "sourceLength": 237,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "bol_war",
+      "source": "data/base/regional-conflict.js:358",
+      "sourceRefs": [
+        "SRC_BOLIVAR_CIVIL_WAR"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "d",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 360,
+      "sourceLength": 210,
+      "openingSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "bol_tourist",
+      "source": "data/base/regional-conflict.js:398",
+      "sourceRefs": [
+        "SRC_BOLIVAR_ECONOMY"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        1
+      ],
+      "mechanics": [
+        "cash",
+        "job",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 401,
+      "sourceLength": 290,
+      "openingSnippet": null,
+      "descriptionSample": "市場の荷さばき場に、急ぎの積荷を仕分ける数日間の人手募集が貼り出されていた。手っ取り早く日銭を稼ぐには悪くない話だ。",
+      "choiceCountParsed": 1,
+      "choices": [
+        {
+          "label": "一日だけ荷の仕分けを手伝う",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesIncome": false,
+          "outcomeTextSamples": [],
+          "sourceOffset": 269
+        }
+      ],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "wld_race",
+      "source": "data/base/world-and-contacts.js:153",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": true,
+      "actualLine": 153,
+      "sourceLength": 250,
+      "openingSnippet": null,
+      "descriptionSample": "前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。",
+      "choiceCountParsed": 0,
+      "choices": [],
+      "priorRefs": [],
+      "stateFlags": [],
+      "positionIsNotProofOfVacancy": false,
+      "reviewDecision": "check-each-branch-intent-and-result-before-migrating"
+    },
+    {
+      "eventId": "discrimination_after",
+      "source": "data/base/world-and-contacts.js:228",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "event object parse failed",
+      "actualLine": 228,
+      "reviewDecision": "requires-manual-source-recovery"
+    },
+    {
+      "eventId": "discrimination_work_after",
+      "source": "data/base/world-and-contacts.js:281",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "classification": "source-inspection-with-choice-and-effect-samples",
+      "found": false,
+      "why": "event object parse failed",
+      "actualLine": 281,
+      "reviewDecision": "requires-manual-source-recovery"
+    }
+  ]
+}
