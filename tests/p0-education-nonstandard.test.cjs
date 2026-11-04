@@ -13,8 +13,8 @@ function scenarios(){
  const legacy=JSON.parse(JSON.stringify(s)),cashBefore=legacy.cash;
  TRACE_RESOLUTION={id:'education_return_path',label:'三年間の基礎準備'};
  educationApplyAction(legacy,'start-preparatory');TRACE_RESOLUTION=null;
- const pending=educationActiveCase(legacy),
-   legacyCase=pending?.stage==='preparatory'&&pending.phase==='planning' &&
+ const pendingPreparatory=educationActiveCase(legacy),
+   legacyCase=pendingPreparatory?.stage==='preparatory'&&pendingPreparatory.phase==='planning' &&
      !legacy.educationPath && cashBefore===legacy.cash;
  ensureResidenceIdentity(s);
  const area=ensureEducationWorldForResidence(s),world=s.world.educationWorld;
