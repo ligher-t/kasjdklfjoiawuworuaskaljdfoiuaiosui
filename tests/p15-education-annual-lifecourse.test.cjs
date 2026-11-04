@@ -227,6 +227,30 @@ assert.equal(d19.assessment.passed,true);
 assert.deepEqual(d19.assessment.sourceCreditIds,d19.credits.map(x=>x.id));
 assert.deepEqual(d19.issues,[]);
 
+// The earlier direct preparatory action must enter the current P06 case.
+// It may not charge legacy tuition or synthesize admission.
+fresh('p15-D19-legacy-entry','炎国',1515199,19);
+const legacy=run(function(){
+  const s=S;
+  s.age=19;s.year=1094;s.mo=4;s.res=REG.find(x=>x.n==='炎国');
+  s.cash=10000000;s.house.cash=0;s.study=null;s.educationPath=null;
+  const before=s.cash,houseBefore=s.house.cash,random=s.rngState;
+  educationApplyAction(s,'start-preparatory');
+  const item=educationActiveCase(s);
+  return {kind:item?.kind,stage:item?.stage,phase:item?.phase,
+    noCharge:before===s.cash&&houseBefore===s.house.cash,
+    noEnrollment:s.educationRecord.enrollments.length===0,
+    noAwards:s.educationRecord.awards.length===0,
+    rngUntouched:random===s.rngState};
+});
+assert.equal(legacy.kind,'reentry');
+assert.equal(legacy.stage,'preparatory');
+assert.equal(legacy.phase,'planning');
+assert.equal(legacy.noCharge,true);
+assert.equal(legacy.noEnrollment,true);
+assert.equal(legacy.noAwards,true);
+assert.equal(legacy.rngUntouched,true);
+
 // D27 uses the real title resume entry, then replays only the annual
 // education authority, without invoking multi-decade population simulation.
 install('D27','ボリバル','小規模な定住地','primary',1095,8,151527);
