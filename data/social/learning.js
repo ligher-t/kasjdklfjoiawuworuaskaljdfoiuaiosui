@@ -132,8 +132,14 @@ window.TERRA_DATA_BUILD.run("social/learning", function ($terraData, $define, $r
         $terraData.K(
           "近所の読み書き教室へ顔を出す",
           {
-            en: { ge: { socialAccess: 52, cash: 25000 } },
-            why: "教えてくれる人へのツテか、月謝に回す金が足りない。"
+            en: s => ok({ge:{socialAccess:52,cash:25000}},s) &&
+              Object.values(s.world?.educationWorld?.informalProviders||{}).some(p=>
+                p.kind==="neighborhood-literacy" && p.status==="active" &&
+                p.areaId===s.local?.educationAreaId && p.evidenceRef &&
+                p.subjectIds?.includes("basic_literacy") &&
+                s.year*12+s.mo>=p.activeFrom.year*12+(p.activeFrom.month||0) &&
+                (!p.activeTo || s.year*12+s.mo<=p.activeTo.year*12+(p.activeTo.month??12))),
+            why: "実在する教室・通学できる講師・月謝の条件が揃っていない。"
           },
           [
             1,
@@ -392,7 +398,7 @@ window.TERRA_DATA_BUILD.run("social/learning", function ($terraData, $define, $r
           [
             1,
             "泥のように疲れた体を引きずって夜の教室へ通い、鉛筆の握り方から教わった。書類に並んだ黒い文字が、少しずつ意味のある言葉に変わっていった。",
-            { languageAction: { type: "learn", mode: "read", amount: 12 }, k: 3, literacyGain: 8, cash: -55000, p: 1 }
+            { k: 3, literacyGain: 8, cash: -55000, p: 1 }
           ]
         ),
         $terraData.K(
@@ -401,7 +407,7 @@ window.TERRA_DATA_BUILD.run("social/learning", function ($terraData, $define, $r
           [
             0.8,
             "知人は茶を淹れて横に座り、難しい言い回しを噛み砕いて教えてくれた。帰り際には、自分で読める文字がいくつか増えていた。",
-            { languageAction: { type: "support", arrangement: { kind: "helper" } }, k: 2, rl: 1, literacyGain: 4 }
+            { k: 2, rl: 1, literacyGain: 4 }
           ],
           [
             1,
