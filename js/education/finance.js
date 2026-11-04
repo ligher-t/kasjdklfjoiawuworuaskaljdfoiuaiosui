@@ -202,7 +202,11 @@ function educationPlanSettlement(s,invoiceId,sources={}) {
   if(loanAmount){
     if(!loan?.id || !loan.creditor || typeof addLoanContract!=="function" ||
        loanContract(s,loan.id))return fail("loan-unavailable");
-    if(s.age<18 || s.res?.n!=="クルビア")return fail("loan-not-eligible");
+    const offer=s.educationFinance?.creditOffers?.[loan.id];
+    const documented=offer&&offer.status==="approved"&&offer.evidenceRef&&
+      offer.creditor===loan.creditor&&offer.invoiceId===invoiceId&&
+      offer.amount===loanAmount&&offer.validYear===s.year;
+    if(s.age<18 || s.res?.n!=="クルビア"&&!documented)return fail("loan-not-eligible");
   }
   const required=outstanding-grantAmount-loanAmount,
     cash=educationPaymentPlan(s,required);

@@ -85,7 +85,7 @@ function educationCaseDiscover(s,scope="local") {
   const access=educationAccessState(s),world=s.world?.educationWorld;
   const own=s.local?.educationAreaId;
   if(!world?.areas?.[own])return [];
-  const areaIds=scope==="adjacent" ?
+  const areaIds=scope==="abroad" ? world.areas[own].studyDestinationIds||[] : scope==="adjacent" ?
     educationNeighborAreaIds(s,own) : [own];
   const unique=new Map();
   for(const areaId of areaIds)
@@ -133,6 +133,8 @@ function educationCaseCandidates(s) {
       (["university","vocational","arts"].includes(item.stage) ? row.tier===item.tier : true))
     .sort((a,b)=>{
       const origin=item.originAreaId;
+      if(a.offeringId===item.previewOfferingId)return -1;
+      if(b.offeringId===item.previewOfferingId)return 1;
       return (a.areaId===origin?0:1)-(b.areaId===origin?0:1) ||
         a.offeringId.localeCompare(b.offeringId);
     });
@@ -155,6 +157,8 @@ function educationCaseReasonText(s,index) {
     "no-guardian":"未成年者の出願に必要な保護者の同意が確かめられていない。",
     "guardian-refused":"保護者から出願の承諾を得られていない。",
     "not-eligible":"この課程の出願資格を満たしていない。",
+    "documents-missing":"学校が求める書類が揃っていない。",
+    "travel-permission-pending":"この経路で渡航できるか、窓口の回答を待っている。",
     "enrollment-conflict":"現在の学籍を先に整理する必要がある。"
   };
   return codes[status.reasonCodes[0]]||"応募条件を再確認する必要がある。";
@@ -194,6 +198,10 @@ function educationCasePreflight(s,row) {
   if(item.stage==="lower" && !educationHas(s,"primary"))return fail("not-eligible");
   if(item.stage==="upper" && !educationHas(s,"lower"))return fail("not-eligible");
   if(item.stage==="primary"&&(s.age<6||s.age>14))return fail("not-eligible");
+  const documents=off.requiredDocuments;
+  if(Array.isArray(documents) && documents.some(kind=>!s.educationDocuments?.some(x=>
+    x.kind===kind&&x.status==="verified"&&x.personId==="protagonist"&&
+    (!x.institutionId||x.institutionId===off.institutionId))))return fail("documents-missing");
   const language=educationOfferingLanguageAssessment(s,off.id,
     "application-document");
   if(language.status==="blocked")
@@ -202,6 +210,8 @@ function educationCasePreflight(s,row) {
     tier:off.admissionTier,offeringId:off.id,kind:"tuition"}),
     cost=quote.amount,examFee=higher?Math.round(cost*0.06):0;
   if(!educationPaymentPlan(s,examFee).allowed)return fail("no-funds");
+  if(world.areas[row.areaId]?.regionKey!==s.res.n &&
+     !educationServiceTravelApproved(s,item.id,off.id))return fail("travel-permission-pending");
   const minor=s.age<18;
   const guardian=minor?educationGuardianReview(s,"protagonist",
     higher?"exam-visit":"daily-commute",off.institutionId,s.year,s.mo??0):null;
@@ -265,6 +275,7 @@ function educationCaseSelect(s,index) {
   let assessment=educationCasePreflight(s,row);
   if(!assessment.allowed)return false;
   if(assessment.requiresGuardianDecision){
+    item.targetInstitutionId=row.institutionId;item.campusId=row.campusId;item.offeringId=row.offeringId;
     const response=educationCaseGuardianResponse(s,item,row);
     if(response!=="granted"){
       educationCaseStep(s,item,"guardian-refused",{institutionId:row.institutionId});
@@ -293,6 +304,26 @@ function educationCaseSelect(s,index) {
   if(high && !educationCaseCharge(s,item,"exam",assessment.fee)){
     educationCaseFinish(s,item,"no-funds");return true;
   }
+  const remote=world.campuses[row.campusId]?.educationAreaId!==item.originAreaId;
+  if(high&&remote){
+    item.examVisitRequired=true;
+    item.examAt={year:s.year,month:Math.min(12,s.mo+1)};
+    return true;
+  }
+  return educationCaseResolveExam(s,item);
+}
+function educationCaseResolveExam(s,item=educationActiveCase(s)) {
+  if(!item||item.phase!=="application"||item.status!=="active")return false;
+  const status=educationSchoolStatusAt(s,item.offeringId,s.year,s.mo);
+  if(!status||!["open","limited"].includes(status.admissionStatus))
+    return item.examAttendedAt?false:educationCaseCancelApplication(s,item,"exam-cancelled");
+  if(item.examAt&&s.year*12+s.mo<item.examAt.year*12+item.examAt.month)return false;
+  for(const purpose of ["entrance-exam-reading","entrance-exam-interview"])
+    if(educationOfferingLanguageAssessment(s,item.offeringId,purpose).status==="blocked")return false;
+  if(item.examVisitRequired&&!item.examAttendedAt)return false;
+  const row=educationAccessState(s).knownOfferings[item.offeringId];
+  if(!row)return false;
+  const high=["university","vocational","arts"].includes(item.stage),world=s.world.educationWorld;
   const chance=educationCaseAdmissionChance(s,row),
     sample=educationDraw(world,item.applicationId,"school-admission-v1","result").value,
     accepted=sample<chance;
@@ -317,6 +348,20 @@ function educationCaseSelect(s,index) {
     "学校から、今回は受け入れられないと返事が届いた。理由は通知されていない。");
   return true;
 }
+function educationCaseCancelApplication(s,item,reason="application-withdrawn") {
+  if(!item||!item.applicationId)return false;
+  if(item.status==="resolved")return item.reason===reason;
+  const id=item.applicationId+":exam:1",invoice=s.educationFinance?.invoices?.[id];
+  if(invoice&&reason==="exam-cancelled"){
+    const plan=educationPlanRefund(s,id,"exam-cancel-school");
+    if(plan.allowed)educationCommitRefund(s,plan);
+  }
+  educationAccessState(s).notices[item.applicationId]={applicationId:item.applicationId,
+    caseId:item.id,offeringId:item.offeringId,result:reason,
+    informedAt:{year:s.year,month:s.mo},basis:"individual-application-cancellation"};
+  educationCaseFinish(s,item,reason);return true;
+}
+
 function educationCaseFinanceInquiry(s) {
   const item=educationActiveCase(s);
   if(!item||item.phase!=="contract")return false;
@@ -392,6 +437,9 @@ function educationCaseCommitEligibility(s,mode="cash") {
   const row=s.educationAccess?.knownOfferings?.[item.offeringId],world=s.world?.educationWorld;
   if(!row||!world?.offerings?.[item.offeringId] ||
     !educationCaseProofCurrent(s,row))return {allowed:false,reason:"notice-stale"};
+  const target=world.offerings[item.offeringId],area=world.areas[world.campuses[target.campusId].educationAreaId];
+  if(area.regionKey!==s.res.n&&!educationServiceTravelApproved(s,item.id,target.id))
+    return {allowed:false,reason:"travel-permission-pending"};
   const status=educationSchoolStatusAt(s,item.offeringId,s.year,s.mo??0);
   if(!status||status.teachingStatus==="suspended" ||
     ["suspended","closed","full"].includes(status.admissionStatus))
@@ -437,6 +485,8 @@ function educationCaseCommit(s,mode="cash") {
     const enrolled=s.educationRecord?.enrollments?.at(-1);
     if(!enrolled || enrolled.id!==enrollmentId || enrolled.status!=="enrolled")
       throw Error("正式入学記録を確定できない");
+    enrolled.region=s.world.educationWorld.areas[
+      s.world.educationWorld.campuses[item.campusId].educationAreaId].regionKey;
     enrolled.institutionId=item.targetInstitutionId;
     enrolled.campusId=item.campusId;
     enrolled.offeringId=item.offeringId;
@@ -473,7 +523,7 @@ function educationCaseKnownGuardian(s) {
   return appointed
     ? {personId:appointed.personId,authority:"explicit-guardian"} : null;
 }
-function educationCaseGuardianResponse(s,item,row) {
+function educationCaseGuardianResponse(s,item,row,additionalPurposes=[]) {
   if(s.age>=18)return "not-required";
   const guardian=educationCaseKnownGuardian(s);
   if(!guardian)return "unconfirmed";
@@ -492,7 +542,7 @@ function educationCaseGuardianResponse(s,item,row) {
     sampleKey:evidence.key,basis:"game-model-interaction"
   };
   item.history.push(history);
-  const purposes=["daily-commute","exam-visit"];
+  const purposes=["daily-commute","exam-visit",...additionalPurposes];
   for(const purpose of purposes){
     const id=item.id+":"+row.institutionId+":"+purpose;
     s.educationMobility.consentRecords[id]={
@@ -540,6 +590,16 @@ function educationCaseAction(s,action) {
   }
   const item=educationActiveCase(s);
   if(!item||item.deadlineYear!==s.year)return false;
+  if(command==="attend-exam"&&item.phase==="application"){
+    if(item.examAt&&s.year*12+s.mo<item.examAt.year*12+item.examAt.month)return false;
+    if(item.examAttendedAt)return true;
+    const o=s.world.educationWorld.offerings[item.offeringId];
+    if(!educationServicePayMobility(s,{offering:o,item},"entrance-trip"))return false;
+    item.examAttendedAt ||= {year:s.year,month:s.mo};
+    return true;
+  }
+  if(command==="cancel-application"&&item.phase==="application")
+    return educationCaseCancelApplication(s,item);
   if(command==="select")return educationCaseSelect(s,Number(parts[2]));
   if(command==="commit")return educationCaseCommit(s);
   if(command==="commit-grant")return educationCaseCommit(s,"grant");
@@ -598,7 +658,7 @@ function educationCaseNeedsReview(s) {
   const item=educationActiveCase(s);
   return !!item && item.deadlineYear===s.year &&
     item.stepsUsed<EDUCATION_CASE_MAX_CHOICES &&
-    ["planning","contract","continuity"].includes(item.phase);
+    ["planning","application","contract","continuity"].includes(item.phase);
 }
 function educationCasePresentation(s) {
   const item=educationActiveCase(s);

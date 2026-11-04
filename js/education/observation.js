@@ -10,6 +10,42 @@ const EDUCATION_OBSERVATION_UNITS=Object.freeze({
   p_funded:"unique_accepted_offer_id",
   p_completed:"unique_enrollment_id_x_target_stage"
 });
+// Explicit saved-world samples, grouped without combining different denominators.
+function educationObservationRegionalRows(s,{year=s.year,month=s.mo}={}) {
+  const w=s.world?.educationWorld;
+  return [...new Set(Object.values(w?.areas||{}).map(x=>x.regionKey))].sort().map(region=>{
+    const areas=new Set(Object.values(w.areas).filter(x=>x.regionKey===region).map(x=>x.id)),
+      hubs=new Set(Object.values(w.hubs).filter(x=>x.regionKey===region).map(x=>x.id)),
+      offerings=new Set(Object.values(w.offerings).filter(x=>areas.has(w.campuses[x.campusId]?.educationAreaId)).map(x=>x.id)),
+      siteFrame=Object.values(w.generationDecisions).filter(x=>areas.has(x.scopeId)||hubs.has(x.scopeId))
+        .flatMap(x=>Object.keys(x.present).filter(stage=>["primary","lower","upper","vocational","university","arts"].includes(stage))
+          .map(stage=>({scopeId:x.scopeId,stage}))),
+      cases=Object.values(s.educationCases?.items||{}).filter(x=>areas.has(x.originAreaId)),
+      applications=Object.values(s.educationCases?.items||{}).filter(x=>offerings.has(x.offeringId)&&x.applicationId),
+      enrollments=(s.educationRecord?.enrollments||[]).filter(x=>offerings.has(x.offeringId));
+    return {region,period:{year,month},sampleScope:"saved-world-and-recorded-person-cases",
+      metrics:educationObservationRows(s,{year,month,siteFrame,
+        openFrame:[...offerings].map(offeringId=>({offeringId,year,month})),
+        caseIds:cases.map(x=>x.id),applicationIds:applications.map(x=>x.applicationId),
+        enrollmentIds:enrollments.map(x=>x.id)})};
+  });
+}
+// Player projection deliberately contains no actual residence/enrollment fields.
+function educationDependentKnownView(s) {
+  if(!s||!Number.isInteger(s.year)||!Number.isInteger(s.mo)||s.mo<1||s.mo>12)return [];
+  const rows=educationObservationDependentRows(s);
+  return rows.map(row=>{
+    const source=educationDependentPerson(s,row.personId),entry=s.dependentEducation[row.personId],
+      residence=entry?.knownResidence,at=residence?.knownAtYear,
+      offer=s.world?.educationWorld?.offerings?.[row.knownOfferingId];
+    return {personId:row.personId,name:source?.person.nm||"家族",
+      education:row.knownStatus==="unknown"?"就学先は未確認":
+        offer?EDUCATION_CASE_STAGES[offer.stage]+"について本人から報告あり":"学んでいるという便りあり（学校は未確認）",
+      residence:row.knownResidenceStatus==="unknown"?"居住先は未確認":
+        (residence.region||"地域未確認")+"（"+at+"年"+(residence.knownAtMonth?residence.knownAtMonth+"月":"・月未確認")+"の便り）",
+      certainty:row.knowledgeCertainty||"unknown"};
+  });
+}
 function educationObservationMeasure(metricId,values,period) {
   const row={metricId,unit:EDUCATION_OBSERVATION_UNITS[metricId],
     numerator:0,denominator:0,excludedUnknown:0,pending:0,
@@ -70,7 +106,8 @@ function educationObservationRows(s,{
   const candidateSet=item=>{
     const origin=world?.areas?.[item.originAreaId];
     if(!origin)return null;
-    const areas=[origin.id,...(origin.neighborIds||[])];
+    const foreign=(access.searches||[]).some(x=>x.caseId===item.id&&x.scope==="abroad");
+    const areas=[origin.id,...(origin.neighborIds||[]),...(foreign?origin.studyDestinationIds||[]:[])];
     return [...new Map(areas.flatMap(areaId=>
       institutionOfferings(s,areaId,item.stage)
         .filter(x=>!["university","vocational","arts"].includes(item.stage) ||
@@ -191,7 +228,7 @@ function educationObservationCaseBridgeRows(s,{
     const c=cases[id];
     if(!c)return null;
     const origin=world?.areas?.[c.originAreaId],
-      areas=origin?[origin.id,...(origin.neighborIds||[])]:[],
+      areas=origin?[origin.id,...(origin.neighborIds||[]),...((access.searches||[]).some(x=>x.caseId===c.id&&x.scope==="abroad")?origin.studyDestinationIds||[]:[])]:[],
       offerings=origin?[...new Map(areas.flatMap(area=>
         institutionOfferings(s,area,c.stage).filter(off=>
           !["university","vocational","arts"].includes(c.stage) ||

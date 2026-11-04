@@ -51,7 +51,7 @@ function educationP17ExternalBasis(s,review) {
     const requirement=requirements.find(row=>{
       if(row.status!=="verified" || !row.evidenceRef || !row.policyRef ||
          !row.authorityId || !row.permitKind || row.personId!=="protagonist" ||
-         row.caseId!==item.id || row.fromRegion!==s.res?.n ||
+         row.caseId!==item.id || item.previewOfferingId&&row.offeringId!==item.previewOfferingId || row.fromRegion!==s.res?.n ||
          row.at?.year>s.year)return false;
       const offer=known.find(x=>x.offeringId===row.offeringId),
         link=world.transportLinks?.[row.routeId],
@@ -78,7 +78,7 @@ function educationP17ExternalBasis(s,review) {
       const provider=world.informalProviders?.[row.providerId];
       return row.status==="verified" && !!row.evidenceRef && !!row.policyRef &&
         row.personId==="protagonist" && row.jobId===s.job &&
-        row.caseId===item.id && row.maxContribution>0 &&
+        row.caseId===item.id && (!item.previewOfferingId||row.offeringId===item.previewOfferingId) && row.maxContribution>0 &&
         employers.some(x=>x.id===row.employerId) &&
         known.some(x=>x.offeringId===row.offeringId && x.tuitionEstimate>0) &&
         provider?.kind==="corporate-training" &&
@@ -175,7 +175,8 @@ function educationP17ExtraEligible(s,review,letter=null) {
         "instruction-session").status==="blocked");
     case "E24": return (planning||contract) &&
       known.some(x=>Number.isFinite(x.tuitionEstimate));
-    case "E25": return item.phase==="application" && witness;
+    case "E25": return item.phase==="application" && !!item.applicationId &&
+      (letter!=="A"||!item.examAt||s.year*12+s.mo>=item.examAt.year*12+item.examAt.month);
     case "E26":
       return contract && !!s.educationAccess?.financingOffers?.[item.id] &&
         s.educationAccess.financingOffers[item.id].source===
@@ -193,7 +194,7 @@ function educationP17ExtraEligible(s,review,letter=null) {
       s.educationAccess?.notices?.[x.applicationId]?.result==="not-accepted");
     case "E13": return !!school && school.teachingEquivalent>0 &&
       educationP17SchoolExperience(s,"paid-commute-quote") &&
-      (letter!=="A"||educationP17SchoolExperience(s,"paid-commute-pass"));
+      (letter!=="A"||educationServiceMobilityQuote(s,current,"commute-pass").allowed);
     case "E14":case "E15": return !!school && witness &&
       !educationCanReach(s,{institutionId:current.m.institutionId,
         campusId:current.m.campusId,offeringId:current.offering.id,
@@ -213,7 +214,7 @@ function educationP17ExtraEligible(s,review,letter=null) {
         earlier.reasonCodes.some(code=>["route-suspended","no-active-link",
           "no-return-service"].includes(code));
     }
-    case "E29":return !!school && witness &&
+    case "E29":return !!school && educationP17SchoolExperience(s,"paid-commute-quote") &&
       !educationCanReach(s,{institutionId:current.m.institutionId,
         campusId:current.m.campusId,offeringId:current.offering.id,
         year:s.year,month:s.mo,purpose:"daily-commute"}).reachable;
@@ -252,10 +253,13 @@ function educationP17ExtraEligible(s,review,letter=null) {
           world.campuses?.[x.campusId] &&
           (x.offeringId===item?.offeringId ||
            x.offeringId===current?.offering.id));
-    case "E17":case "E18":case "E19":
-      return witness && (letter!=="A" || review==="E19" ||
-        Object.values(s.educationMobility?.residenceContracts||{})
-          .some(x=>x.status==="committed"&&x.evidenceRef));
+    case "E18":return witness && Object.values(s.educationMobility?.residenceOffers||{}).some(x=>
+      x.lodgingKind==="relative-home" && x.personId==="protagonist" && x.evidenceRef);
+    case "E19":return witness && (letter!=="A" || Object.values(s.educationMobility?.residenceContracts||{})
+      .some(x=>x.personId==="protagonist" && x.status==="committed"&&x.evidenceRef));
+    case "E17":
+      return Object.values(s.educationMobility?.residenceOffers||{}).some(x=>
+        x.offeringId===(item?.offeringId||current?.offering.id)&&x.evidenceRef) || witness;
     case "E58":{
       const prev=s.mo===1?{year:s.year-1,month:12}:
         {year:s.year,month:s.mo-1};
@@ -284,7 +288,11 @@ function educationP17ExtraEligible(s,review,letter=null) {
       x.admissionTier>=2 &&
       ["open","limited"].includes(
         educationSchoolStatusAt(s,x.id,s.year,s.mo)?.admissionStatus));
-    case "E56":case "E61":case "E62":case "E64":
+    case "E61":return !!item && known.some(x=>
+      world.offerings[x.offeringId]?.specializations?.includes("knightly_training"));
+    case "E64":return !!current && !!s.educationServices?.inquiries &&
+      Object.values(s.educationServices.inquiries).some(x=>x.offeringIds.includes(current.offering.id));
+    case "E56":case "E62":
     case "E67":case "E70":case "E72":
       return witness && !!world.areas?.[area];
     case "E68":return witness;
@@ -322,6 +330,7 @@ function educationP17ExtraApply(s,review,letter,eventId){
   if(["E20","E27","E42","E79"].includes(review) &&
      letter==="A" && !external)return false;
   const current=educationMigrationCurrent(s);
+  const serviceReply=educationServiceSceneAction(s,review,letter);
   const routeCheck=letter==="A" && ["E14","E23"].includes(review) &&
     current ? educationFindRoute(s,{
       originAreaId:s.local?.educationAreaId,
@@ -333,7 +342,8 @@ function educationP17ExtraApply(s,review,letter,eventId){
     current.offering.id,s.year,s.mo);
   educationMigrationRecord(s,eventId,letter,{
     evidenceRef:educationP17Witness(s,review)?review+":"+s.year+":"+s.mo:null,
-    caseId:item?.id||null,informationOnly:review!=="E09"||letter!=="A",
+    caseId:item?.id||null,serviceReplyId:serviceReply?.id||null,
+    enrollmentId:current?.enroll.id||null,offeringId:current?.offering.id||item?.offeringId||null,informationOnly:review!=="E09"||letter!=="A",
     formalEnrollmentIssued:review==="E09"&&letter==="A",
     awardIssued:false,automaticPayment:false,
     ...(external?{externalRequest:{
@@ -422,7 +432,8 @@ function educationMigrationTransferOffer(s) {
       nextFee=educationFunds(s,m.stage,target.admissionTier,target.id),
       differential=approval.feeInvoiceId?
         s.educationFinance?.invoices?.[approval.feeInvoiceId]:null;
-    if(approval.feeInvoiceId && differential?.status!=="paid")continue;
+    if(approval.feeInvoiceId && differential?.status!=="paid" &&
+       (!approval.serviceRequestId||!differential||!educationPaymentPlan(s,differential.outstanding).allowed))continue;
     if(nextFee>oldFee&&
        (!differential||differential.kind!=="tuition" ||
         differential.recipient?.id!==target.institutionId ||
@@ -651,6 +662,10 @@ function educationP17NoticeRegisteredSource(s,row,record) {
   return true;
 }
 function educationP17NoticeOutcome(s,record,review,letter) {
+  const reply=s.educationServices?.replies?.[record.result?.serviceReplyId];
+  if(reply && reply.review===review && reply.letter===letter &&
+     reply.at.year*12+reply.at.month>=record.at.year*12+record.at.month)
+    return {index:reply.index,evidenceRef:reply.evidenceRef};
   const caseItem=s.educationCases?.items?.[record.result?.caseId],
     access=s.educationAccess,world=s.world?.educationWorld;
   if(["E20","E27","E42","E79"].includes(review)&&letter==="A"){
@@ -669,8 +684,8 @@ function educationP17NoticeOutcome(s,record,review,letter) {
   if(review==="E16"&&letter==="A"){
     const candidates=Object.values(s.educationMobility?.residenceOffers||{})
       .filter(x=>x.evidenceRef && x.campusId &&
-        (x.offeringId===caseItem?.offeringId ||
-         x.campusId===s.educationPath?.campusId));
+        (x.offeringId===record.result?.offeringId ||
+         !record.result?.offeringId && x.offeringId===caseItem?.offeringId));
     const offer=candidates.sort((a,b)=>String(a.id).localeCompare(String(b.id)))[0];
     if(offer?.approved && offer.capacityRemaining>0)
       return {index:0,evidenceRef:offer.evidenceRef};
@@ -711,14 +726,15 @@ function educationP17NoticeOutcome(s,record,review,letter) {
     return {index:0,evidenceRef:caseItem.id+":paused"};
   if(review==="E40"&&letter==="A"){
     const current=educationMigrationCurrent(s);
-    if(current){
+    if(current && (!record.result?.enrollmentId || current.enroll.id===record.result.enrollmentId)){
       const yearRows=s.educationAttendance?.enrollments?.[current.enroll.id];
       const months=yearRows?.[s.year]||{};
       for(const month of Object.values(months)){
         for(const segment of Object.values(month.segments||{})){
           const state=educationSchoolStatusAt(s,segment.offeringId,
             month.academicYear,month.month);
-          if(segment.offeringId!==current.offering.id ||
+          if(month.academicYear*12+month.month<record.at.year*12+record.at.month ||
+             segment.offeringId!==current.offering.id ||
              !segment.evidenceRef || !state ||
              state.learningContinuity!=="alternative_classroom" ||
              segment.schoolDelivery<=0)continue;
@@ -731,7 +747,8 @@ function educationP17NoticeOutcome(s,record,review,letter) {
   if(review==="E54"&&letter==="A"){
     const inquiries=Object.values(s.educationRecognitionInquiries?.items||{})
       .filter(x=>x.sourceEventId===record.eventId &&
-        x.at?.year>=record.at.year);
+        x.at?.year*12+x.at?.month>=record.at.year*12+record.at.month &&
+        (!record.result?.pathId||x.pathId===record.result.pathId));
     for(const inquiry of inquiries){
       const success=["approved","recognized","awarded"].includes(inquiry.status),
         failed=["denied","rejected","failed"].includes(inquiry.status);
@@ -833,6 +850,8 @@ function educationMigrationApply(s,action) {
     return true;
   }
   if(review==="E35"){
+    for(const tie of Object.values(s.educationPeopleTies?.items||{}))
+      if(tie.enrollmentId===current.enroll.id){tie.personallyKnown=true;tie.metAt={year:s.year,month:s.mo};}
     educationMigrationRecord(s,eventId,"solo",{
       enrollmentId:current.enroll.id,
       institutionId:current.m.institutionId
@@ -844,6 +863,8 @@ function educationMigrationApply(s,action) {
     if(!target)return false;
     const oldId=current.enroll.id;
     if(letter==="A"){
+      const fee=s.educationFinance?.invoices?.[target.approval.feeInvoiceId];
+      if(fee&&fee.status!=="paid"&&!educationSettleInvoice(s,fee))return false;
       const transferred=educationTransferToApprovedInstitution(s,target.id);
       if(!transferred)throw Error("確定した新校への学籍転籍に失敗");
       educationMigrationRecord(s,eventId,letter,{
@@ -852,6 +873,10 @@ function educationMigrationApply(s,action) {
       },oldId);
     }else{
       target.approval.reviewStatus="declined";
+      const fee=target.approval.feeInvoiceId;
+      if(fee){const plan=educationPlanRefund(s,fee,"tuition-student-withdraw-before-term");
+        if(plan.allowed)educationCommitRefund(s,plan);}
+
       educationMigrationRecord(s,eventId,letter,{
         formerEnrollmentId:oldId,approvalId:target.id,decision:"declined"
       });
@@ -950,6 +975,8 @@ function educationMigrationLinkLegacyLearning(s,effect) {
     participation=effect.ep>=8?1:0.5;
   }else if(id==="life_youth_apprenticeship"&&effect.lifeSkill?.id==="youth-workshop-learning"){
     mode="workshop-apprenticeship";kind=mode;subject="repair";
+  }else if(id==="fam_tribetree"&&effect.k===2&&effect.rl===8){
+    mode="clan-tradition";kind=mode;subject="terrain";
   }else return null;
   const providerId="observed-informal:"+id+":"+s.year+":"+s.mo,
     sourceEventId=id+":"+s.year+":"+s.mo,
@@ -965,6 +992,12 @@ function educationMigrationLinkLegacyLearning(s,effect) {
       attendanceMode:"observed-lesson"},
     subjectIds:[subject],sourceEventId
   });
+  if(mode==="workshop-apprenticeship"||mode==="clan-tradition"){
+    const key=mode==="workshop-apprenticeship"?"educationWorkshopLinks":"educationMentorTies";
+    s[key] ||= {version:1,items:{}};
+    s[key].items[sourceEventId]={id:sourceEventId,personId:"protagonist",providerId:provider.id,
+      status:"active",evidenceRef:sourceEventId+":direct-encounter"};
+  }
   const row=educationRecordLearningParticipation(s,{
     pathId:path.pathId,year:s.year,month:s.mo,
     attendedSessions:Math.round(participation*2),totalSessions:2,

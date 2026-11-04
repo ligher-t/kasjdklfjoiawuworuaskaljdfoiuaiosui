@@ -334,3 +334,27 @@ function institutionOfferings(s, areaId, stage) {
     .map(id => world.offerings[id])
     .filter(row => row && (!stage || row.stage === stage));
 }
+
+// Explicit world-side initialization for a requested foreign study inquiry.
+// A regional journey is never registered as a daily school bus.
+function educationPrepareStudyDestinations(s) {
+  const origin=s.local?.educationAreaId,world=s.world?.educationWorld;
+  if(!world?.areas?.[origin])return [];
+  const ids=[];
+  for(const route of MIGRATION_ROUTES[s.res.n]||[]){
+    const region=REG.find(x=>x.n===route.n);if(!region)continue;
+    const proxy={...s,res:region,home:"固定集落",local:{kind:"固定都市の街区",city:null,
+      placeId:"study-destination:"+region.n,educationAreaAnchor:"study-destination:"+region.n,
+      districtId:"study-destination:"+region.n}};
+    const area=ensureEducationWorldForResidence(proxy);if(!area)continue;
+    ids.push(area);
+    const id=educationLinkId(origin,area,"study-journey");
+    world.transportLinks[id] ||= {id,endpointAreaIds:[origin,area],routeKind:"study-journey",
+      travelMinutesAB:720,travelMinutesBA:720,transferWaitMinutes:0,riskScore:0.2,
+      directionalAccess:{[origin]:true,[area]:true},accessibilityKnown:false,accessibility:[],
+      allowedPurposes:["exam-visit","boarding-move","family-relocation","temporary-visit"],
+      studyTravelFare:Math.round(route.fare*s.res.pm*(s.priceIndex||1)),statusHistory:[],
+      sourceKind:"game-model-specific-study-journey",sourceRef:"regional-destination-inquiry:"+id};
+  }
+  world.areas[origin].studyDestinationIds=[...new Set(ids)];return ids;
+}

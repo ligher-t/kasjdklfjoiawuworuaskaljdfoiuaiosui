@@ -263,3 +263,29 @@ function educationDependentInvariants(s) {
   }
   return issues;
 }
+// A child's monthly attendance is owned by that child and uses their actual
+// residence. Parent knowledge is never an input and is never updated here.
+function educationDependentRecordAttendance(s,{personId,enrollmentId,year,month,
+  participation=1,evidenceRef}={}) {
+  const entry=educationDependentEntry(s,personId),person=educationDependentPerson(s,personId)?.person,
+    enrolled=entry?.enrollments.find(x=>x.enrollmentId===enrollmentId),
+    at=year*12+month;
+  if(!enrolled||enrolled.status!=="enrolled"||!person||person.d||!evidenceRef||
+     !Number.isInteger(year)||!Number.isInteger(month)||month<1||month>12||
+     at>s.year*12+s.mo||at<enrolled.startAt.year*12+enrolled.startAt.month||
+     !Number.isFinite(participation)||participation<0||participation>1)
+    throw Error("子本人の在籍・参加年月・証拠が不正");
+  const key=enrollmentId+":"+year+":"+month,old=entry.attendanceMonths[key];
+  if(old){if(old.evidenceRef!==evidenceRef||old.participation!==participation)
+    throw Error("子本人の同月出席に異なる証拠");return old;}
+  const route=educationCanReach(s,{personId,institutionId:enrolled.institutionId,
+    campusId:enrolled.campusId,offeringId:enrolled.offeringId,year,month}),
+    teaching=educationTeachingMonth(s,enrolled.offeringId,year,month),
+    funded=EDUCATION_PROGRAMS[s.world.educationWorld.offerings[enrolled.offeringId].stage].fee===0||
+      Object.values(s.educationFinance?.invoices||{}).some(x=>x.personId===personId&&
+        x.enrollmentId===enrollmentId&&x.serviceYear===year&&x.kind==="tuition"&&x.status==="paid");
+  const row={id:key,personId,enrollmentId,year,month,participation,evidenceRef,
+    equivalent:route.reachable&&funded?Math.min(participation,teaching.delivery):0,
+    authorityId:teaching.authorityId,routeReasons:route.reasonCodes,funded};
+  entry.attendanceMonths[key]=row;enrolled.attendanceMonths.push(key);return row;
+}

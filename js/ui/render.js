@@ -105,6 +105,7 @@ function rd() {
   renderEconomyPanel(s, services);
   renderTagsAndHealthPanel(s, services);
   renderLocalityPanel(s, services);
+  renderEducationPanel(s);
   renderLifeAndKnowledgePanel(s, services);
   renderControlsPanel(s, services);
   renderSocialPanel(s, services);

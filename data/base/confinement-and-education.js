@@ -1248,6 +1248,17 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
         why:"この募集先の応募資格、交通、保護者または受験費用の条件が整っていない"
       },[1,"調べた学校の一つを候補として挙げ、必要な同意と募集条件を確かめた。",
         {educationAction:"case:select:2"}]),
+      $terraData.K("会場へ向かい入学試験を受ける",{
+        show:s=>educationActiveCase(s)?.phase==="application"&&!educationActiveCase(s).examAttendedAt,
+        en:s=>{const x=educationActiveCase(s);return x&&(!x.examAt||
+          s.year*12+s.mo>=x.examAt.year*12+x.examAt.month)&&educationServiceMobilityQuote(s,
+          {offering:s.world.educationWorld.offerings[x.offeringId]},"entrance-trip").allowed;},
+        why:"試験の日程、往復経路または移動費の条件が整っていない"
+      },[1,"案内の日時と道順を確かめ、会場へ向かう支度をした。",{educationAction:"case:attend-exam"}]),
+      $terraData.K("今回の出願を取り下げる",{
+        show:s=>educationActiveCase(s)?.phase==="application"
+      },[1,"学校へ出願を取り下げると伝えた。納めた費用は学校の返金規約に従って扱われる。",
+        {educationAction:"case:cancel-application"}]),
       $terraData.K("隣の地区の募集先も調べる",{
         show:s=>educationActiveCase(s)?.phase==="planning" &&
           !s.educationAccess?.searches?.some(x=>

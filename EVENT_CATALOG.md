@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2566　選択肢数：3265　結果枝数：4123
+イベント数：2566　選択肢数：3267　結果枝数：4125
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -171720,6 +171720,78 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 4
 
 <a id="choice-education_case_review-3"></a>
+選択肢文：会場へ向かい入学試験を受ける
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"application\"&&!educationActiveCase(s).examAttendedAt"
+  },
+  "en": {
+    "dynamicFunction": "s=>{const x=educationActiveCase(s);return x&&(!x.examAt||\n          s.year*12+s.mo>=x.examAt.year*12+x.examAt.month)&&educationServiceMobilityQuote(s,\n          {offering:s.world.educationWorld.offerings[x.offeringId]},\"entrance-trip\").allowed;}"
+  },
+  "why": "試験の日程、往復経路または移動費の条件が整っていない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-3-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 案内の日時と道順を確かめ、会場へ向かう支度をした。
+
+効果：
+
+```json
+{
+  "educationAction": "case:attend-exam"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 5
+
+<a id="choice-education_case_review-4"></a>
+選択肢文：今回の出願を取り下げる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>educationActiveCase(s)?.phase===\"application\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-education_case_review-4-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 学校へ出願を取り下げると伝えた。納めた費用は学校の返金規約に従って扱われる。
+
+効果：
+
+```json
+{
+  "educationAction": "case:cancel-application"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 6
+
+<a id="choice-education_case_review-5"></a>
 選択肢文：隣の地区の募集先も調べる
 
 表示・選択条件と補助情報：
@@ -171735,7 +171807,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-3-0"></a>
+<a id="outcome-education_case_review-5-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -171751,9 +171823,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 旧シム観測回数：未計測
 
-#### 選択肢 5
+#### 選択肢 7
 
-<a id="choice-education_case_review-4"></a>
+<a id="choice-education_case_review-6"></a>
 選択肢文：学校外で読み書きや手仕事を学ぶ
 
 表示・選択条件と補助情報：
@@ -171769,7 +171841,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-4-0"></a>
+<a id="outcome-education_case_review-6-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -171786,9 +171858,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 旧シム観測回数：未計測
 
-#### 選択肢 6
+#### 選択肢 8
 
-<a id="choice-education_case_review-5"></a>
+<a id="choice-education_case_review-7"></a>
 選択肢文：今年の進学は見送る
 
 表示・選択条件と補助情報：
@@ -171804,7 +171876,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-5-0"></a>
+<a id="outcome-education_case_review-7-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -171820,9 +171892,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 旧シム観測回数：未計測
 
-#### 選択肢 7
+#### 選択肢 9
 
-<a id="choice-education_case_review-6"></a>
+<a id="choice-education_case_review-8"></a>
 選択肢文：入学の条件を確かめて正式に手続する
 
 表示・選択条件と補助情報：
@@ -171842,7 +171914,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-6-0"></a>
+<a id="outcome-education_case_review-8-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -171858,9 +171930,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 旧シム観測回数：未計測
 
-#### 選択肢 8
+#### 選択肢 10
 
-<a id="choice-education_case_review-7"></a>
+<a id="choice-education_case_review-9"></a>
 選択肢文：学費支援と貸付の窓口へ条件を尋ねる
 
 表示・選択条件と補助情報：
@@ -171876,7 +171948,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-7-0"></a>
+<a id="outcome-education_case_review-9-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -171892,9 +171964,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 旧シム観測回数：未計測
 
-#### 選択肢 9
+#### 選択肢 11
 
-<a id="choice-education_case_review-8"></a>
+<a id="choice-education_case_review-10"></a>
 選択肢文：認められた学費支援を使って入学する
 
 表示・選択条件と補助情報：
@@ -171914,7 +171986,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-8-0"></a>
+<a id="outcome-education_case_review-10-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -171930,9 +172002,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 旧シム観測回数：未計測
 
-#### 選択肢 10
+#### 選択肢 12
 
-<a id="choice-education_case_review-9"></a>
+<a id="choice-education_case_review-11"></a>
 選択肢文：確認した貸付の返済条件に同意して入学する
 
 表示・選択条件と補助情報：
@@ -171952,7 +172024,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-9-0"></a>
+<a id="outcome-education_case_review-11-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -171968,9 +172040,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 旧シム観測回数：未計測
 
-#### 選択肢 11
+#### 選択肢 13
 
-<a id="choice-education_case_review-10"></a>
+<a id="choice-education_case_review-12"></a>
 選択肢文：合格・受入後の入学を辞退する
 
 表示・選択条件と補助情報：
@@ -171986,7 +172058,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-10-0"></a>
+<a id="outcome-education_case_review-12-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -172002,9 +172074,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 旧シム観測回数：未計測
 
-#### 選択肢 12
+#### 選択肢 14
 
-<a id="choice-education_case_review-11"></a>
+<a id="choice-education_case_review-13"></a>
 選択肢文：元の学籍の継続について相談する
 
 表示・選択条件と補助情報：
@@ -172024,7 +172096,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-11-0"></a>
+<a id="outcome-education_case_review-13-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -172040,9 +172112,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 旧シム観測回数：未計測
 
-#### 選択肢 13
+#### 選択肢 15
 
-<a id="choice-education_case_review-12"></a>
+<a id="choice-education_case_review-14"></a>
 選択肢文：在籍中の課程をいったん休む
 
 表示・選択条件と補助情報：
@@ -172058,7 +172130,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-12-0"></a>
+<a id="outcome-education_case_review-14-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -172074,9 +172146,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 旧シム観測回数：未計測
 
-#### 選択肢 14
+#### 選択肢 16
 
-<a id="choice-education_case_review-13"></a>
+<a id="choice-education_case_review-15"></a>
 選択肢文：いったん退学して別の学び方を考える
 
 表示・選択条件と補助情報：
@@ -172092,7 +172164,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-education_case_review-13-0"></a>
+<a id="outcome-education_case_review-15-0"></a>
 
 - **結果 1（設定確率 100%）**
 
@@ -278236,7 +278308,7 @@ s => s.job > 0
 
 - **結果 1（設定確率 100%）**
 
-> 必要な書類を届け、決まった寝床へ荷物を運んだ。家を離れて過ごす最初の晩、同じ建物の生活音に耳を澄ませた。
+> 必要な書類と負担金を確かめ、入寮を申し込んだ。荷物を運べるかどうかは、寮の受入条件と手続の結果を確かめてから決める。
 
 効果：
 

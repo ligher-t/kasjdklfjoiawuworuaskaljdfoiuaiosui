@@ -3,6 +3,8 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {spawnSync}=require('node:child_process'),{createHash}=require('node:crypto');
 const runtime=require('./runtime.cjs'),root=path.resolve(__dirname,'..');
 const approved=Object.freeze([
+  "p20-education-completion.test.cjs",
+  "p15-education-regional-paths.test.cjs",
   "p0-career-credential-lifecycle.test.cjs",
   "p0-education-nonstandard.test.cjs",
   "p0-school-progression.test.cjs",

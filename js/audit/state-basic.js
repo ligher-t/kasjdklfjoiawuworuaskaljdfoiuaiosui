@@ -186,6 +186,8 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
   if(typeof educationNonformalInvariants==="function" &&
     educationNonformalInvariants(s).length)
     problems.push("学校外学習または技能認定記録に不整合");
+  if(typeof educationServiceInvariants==="function" && educationServiceInvariants(s).length)
+    problems.push("教育窓口の申請・回答記録に不整合");
   if(s.educationAnnualFee && (
     !Number.isInteger(s.educationAnnualFee.year) ||
     s.educationAnnualFee.year > s.year ||

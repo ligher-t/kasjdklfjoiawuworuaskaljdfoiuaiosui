@@ -88,6 +88,7 @@
 </fieldset>
 <div class="devtool-actions"><button id="dev-download-report" type="button" onclick="devDownloadSimulationReport()" disabled>結果JSONを書き出す</button><button id="dev-replay-failure" type="button" onclick="devReplayFirstFailure()" disabled>選んだ失敗を同じseedで再実行</button><label>比較レポート<input id="dev-baseline-file" type="file" accept="application/json,.json"></label></div>
 <pre id="dv" class="devtool-report" aria-live="polite"></pre>
+<details><summary>地域別の教育観測（現在の保存）</summary><div id="dev-education-report" class="ui-record-table"></div></details>
 <details><summary>地域別の居住形態・人生経路</summary><pre id="dev-cohort-report" class="devtool-report"></pre></details>
 <details><summary>イベント・選択肢の到達数</summary><label>イベントID/状態で絞り込む<input id="dev-event-filter" type="search"></label><pre id="dev-event-report" class="devtool-report"></pre></details>
 <details><summary>構造検査の指摘</summary><pre id="dev-catalog-report" class="devtool-report"></pre></details>
@@ -163,12 +164,14 @@
 <details id="detail-work" class="pn ui-detail-group"><summary>仕事と学びの記録</summary><div class="ui-ledger-contents">
 <section class="pn"><h3>行き先と経歴</h3><div id="trajectory" class="sg"></div><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">目標には達成だけでなく、保留や断念の経緯も残ります。組織や地域への影響は、実際に本人が関わった出来事に限って記録します。</p></details></section>
 <section class="pn"><h3>学びと社会的な経験</h3><div id="social-learning-note" class="nt"></div></section>
+<section class="pn" id="education-record"><h3>学びと学校</h3><div id="education-current" class="nt"></div><div id="education-desk" class="sg"></div><div id="education-dependents"></div><details id="education-observation-details" hidden><summary>地域別の教育観測</summary><div id="education-observations" class="ui-record-table"></div></details></section>
 <section class="pn" id="language-records-section"><h3>言葉と文字（言語の習得）</h3><div id="language-learning-details" class="ui-record-table"></div><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">テラの大地で身につけた言葉・文字・現場の符牒の記録です。母語や地域社会での生活、学校教育や日々の経験を通じて培われます。未接触の言語は表示されません。</p></details></section>
 </div>
 </details>
 <details id="detail-family" class="pn ui-detail-group"><summary>家族と人とのつながり</summary><div class="ui-ledger-contents" id="family-record-sections">
 <section class="pn"><h3>家族・家計</h3><p class="nt">15歳未満の金銭イベントと家族の収支は家計に反映されます。本人の資産とは別管理です。</p><div id="fm" class="ui-record-table"></div></section>
 <section class="pn" id="family-disclosure-record"><h3>近しい人に伝えたこと</h3><div id="close-knowledge" class="nt"></div><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">個別の開示・返答だけを記録します。相手の内心やほかの人への伝播は推定しません。</p></details></section>
+
 <section class="pn" id="family-people-record"><h3>施設で出会った人たち</h3><div id="facility-people" class="nt"></div><details><summary>知っている近況と交流の履歴</summary><div id="facility-people-history" class="nt"></div></details><details><summary>一人ひとりとの関係</summary><div id="person-tie-summary" class="nt"></div></details><details class="ui-method-note"><summary>この記録の読み方</summary><p class="nt">こちらが確認できた近況だけを表示します。相手の生活は本人と独立して変わり、未確認の事情は補いません。</p></details></section>
 <details id="family-unrecorded" class="ui-empty-records" data-record-group="family-sections"><summary>未記録の資料</summary><p class="nt">本人の記録に残る交流ができると、本文に表示されます。</p><div id="family-unrecorded-body"></div></details>
 </div>
@@ -386,6 +389,7 @@
 <script defer src="js/education/lifecycle.js"></script>
 <script defer src="js/education/cases.js"></script>
 <script defer src="js/education/migration.js"></script>
+<script defer src="js/education/services.js"></script>
 <script defer src="js/education/observation.js"></script>
 <script defer src="js/education/legacy-guards.js"></script>
 <script defer src="js/ui/economy.js"></script>
@@ -426,6 +430,7 @@
 <script defer src="js/ui/panels/family.js"></script>
 <script defer src="js/ui/panels/economy.js"></script>
 <script defer src="js/ui/panels/tags-and-health.js"></script>
+<script defer src="js/ui/panels/education.js"></script>
 <script defer src="js/ui/panels/locality.js"></script>
 <script defer src="js/ui/panels/life-and-knowledge.js"></script>
 <script defer src="js/ui/panels/controls.js"></script>

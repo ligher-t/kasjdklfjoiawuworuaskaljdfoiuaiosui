@@ -107,15 +107,20 @@ function educationTransportationGraph(s,originAreaId,year=s?.year,month=s?.mo??0
     .map(x=>educationTransportLinkStateAt(world,x,originAreaId,year,month))
     .filter(Boolean);
 }
-function educationFindOneWay(s,fromAreaId,toAreaId,year,month) {
+function educationFindOneWay(s,fromAreaId,toAreaId,year,month,purpose="daily-commute") {
   const world=s?.world?.educationWorld;
   if(!world?.areas?.[fromAreaId]||!world?.areas?.[toAreaId])
     return {found:false,reason:"origin-unknown"};
   if(fromAreaId===toAreaId){
     const draw=educationDraw(world,fromAreaId,"intra-area-foot","time").value;
-    const mins=5+Math.floor(draw*16);
-    return {found:true,minutes:mins,riskScore:0.08,links:[],accessibility:[],
-      accessibilityKnown:false,waitMinutes:0,sourceKind:"game-model-local-foot"};
+    const policy=world.areas[fromAreaId].localTravelPolicy,
+      verified=policy?.evidenceRef && Number.isFinite(policy.minutes)&&policy.minutes>=0 &&
+        Number.isFinite(policy.riskScore)&&policy.riskScore>=0&&policy.riskScore<=1;
+    const mins=verified?policy.minutes:5+Math.floor(draw*16);
+    return {found:true,minutes:mins,riskScore:verified?policy.riskScore:0.08,links:[],
+      accessibility:verified?policy.accessibility||[]:[],
+      accessibilityKnown:verified&&Array.isArray(policy.accessibility),waitMinutes:0,
+      sourceKind:verified?"observed-local-route":"game-model-local-foot"};
   }
   let queue=[{area:fromAreaId,minutes:0,riskScore:0,links:[],accessibility:[],accessibilityKnown:true}],
     best=new Map(),sawClosed=false;
@@ -132,6 +137,8 @@ function educationFindOneWay(s,fromAreaId,toAreaId,year,month) {
     };
     if(current.links.length>=4)continue;
     for(const edge of educationTransportationGraph(s,current.area,year,month)){
+      const link=world.transportLinks[edge.linkId];
+      if(link.allowedPurposes&&!link.allowedPurposes.includes(purpose))continue;
       if(!edge.allowed){sawClosed=true;continue;}
       if(current.links.includes(edge.linkId))continue;
       queue.push({
@@ -139,7 +146,7 @@ function educationFindOneWay(s,fromAreaId,toAreaId,year,month) {
         riskScore:Math.max(current.riskScore,edge.riskScore),
         links:[...current.links,edge.linkId],
         accessibility:edge.accessibilityKnown ?
-          (current.accessibilityKnown ? current.accessibility.filter(x=>edge.accessibility.includes(x)) : edge.accessibility) :
+          (current.links.length && current.accessibilityKnown ? current.accessibility.filter(x=>edge.accessibility.includes(x)) : edge.accessibility) :
           current.accessibility,
         accessibilityKnown:current.accessibilityKnown&&edge.accessibilityKnown
       });
@@ -150,13 +157,13 @@ function educationFindOneWay(s,fromAreaId,toAreaId,year,month) {
 function educationFindRoute(s,{originAreaId,campusAreaId,year=s?.year,month=s?.mo??0,purpose="daily-commute"}={}) {
   if(!EDUCATION_MOBILITY_PURPOSES.includes(purpose) || educationDateIndex(year,month)===null)
     return {status:"unknown",reasonCodes:["term-timing-unknown"]};
-  const outbound=educationFindOneWay(s,originAreaId,campusAreaId,year,month);
+  const outbound=educationFindOneWay(s,originAreaId,campusAreaId,year,month,purpose);
   if(!outbound.found)return {
     status:"blocked",reasonCodes:[outbound.reason],outboundMinutes:null,returnMinutes:null,
     outbound:null,returnTrip:null
   };
   const needsReturn=purpose==="daily-commute"||purpose==="exam-visit"||purpose==="temporary-visit";
-  const returnTrip=needsReturn?educationFindOneWay(s,campusAreaId,originAreaId,year,month):null;
+  const returnTrip=needsReturn?educationFindOneWay(s,campusAreaId,originAreaId,year,month,purpose):null;
   if(needsReturn&&!returnTrip.found)return {
     status:"blocked",reasonCodes:["no-return-service"],
     outboundMinutes:outbound.minutes,returnMinutes:null,outbound,returnTrip
@@ -170,9 +177,11 @@ function educationFindRoute(s,{originAreaId,campusAreaId,year=s?.year,month=s?.m
   };
 }
 function educationGuardianReview(s,personId,purpose,institutionId,year,month,selectedConsentId=null) {
-  if(personId!=="protagonist")
+  const dependent=personId!=="protagonist"?educationDependentPerson(s,personId):null;
+  if(personId!=="protagonist"&&!dependent)
     return {authorityStatus:"unknown-person",guardianConsentStatus:"unknown-person",escortStatus:"unknown"};
-  const minor=s.age<18;
+  const personAge=dependent?s.year-dependent.person.by:s.age;
+  const minor=personAge<18;
   if(!minor)return {authorityStatus:"not-required",guardianConsentStatus:"not-required",escortStatus:"not-required"};
   const record=Object.entries(s.educationMobility?.consentRecords||{}).find(([id,x])=>
     (!selectedConsentId||selectedConsentId===id||selectedConsentId===x.id) &&
@@ -184,7 +193,10 @@ function educationGuardianReview(s,personId,purpose,institutionId,year,month,sel
     s.par?.[x] && !s.par[x].d && !s.par[x].separated;
   const explicitAuthority=x=>(s.educationMobility?.guardianAuthorities||[]).some(a=>
     a.personId===x && a.authority==="explicit-guardian"&&a.evidenceRef);
-  const authorized=record&&(isParent(record.consenterPersonId)||explicitAuthority(record.consenterPersonId));
+  const authorized=record&&(personId!=="protagonist" ?
+    record.consenterPersonId==="protagonist"&&dependent.kind==="child" ||
+    s.dependentEducation?.[personId]?.authority?.guardians?.some(x=>x.personId===record.consenterPersonId&&x.status==="verified") :
+    isParent(record.consenterPersonId)||explicitAuthority(record.consenterPersonId));
   const consentStatus=record?.consentState==="refused"?"refused":
     authorized&&record.consentState==="granted"?"granted":
     record&&!authorized?"unverified":"pending";
@@ -200,10 +212,16 @@ function educationGuardianReview(s,personId,purpose,institutionId,year,month,sel
   };
 }
 function educationResolvePersonLocation(s,personId="protagonist") {
-  if(personId!=="protagonist")return null;
+  if(personId!=="protagonist"){
+    const entry=s.dependentEducation?.[personId],actual=entry?.actualResidence;
+    return actual?.educationAreaId && s.world?.educationWorld?.areas?.[actual.educationAreaId] &&
+      actual.sinceYear*12+(actual.sinceMonth||0)<=s.year*12+(s.mo||0) ?
+      {personId,areaId:actual.educationAreaId,basis:"individual-residence-evidence"}:null;
+  }
   const active=s.educationMobility?.residenceContracts &&
     Object.values(s.educationMobility.residenceContracts).find(x=>
-      x.personId==="protagonist"&&x.status==="committed"&&x.actualAreaId);
+      x.personId==="protagonist"&&x.status==="committed"&&x.actualAreaId&&
+      educationResidenceContractMonth(x,s.year,s.mo));
   const areaId=active?.actualAreaId||s.local?.educationAreaId||null;
   return areaId && s.world?.educationWorld?.areas?.[areaId]
     ? {personId,areaId,residenceContractId:active?.id||null,basis:active?"committed-student-residence":"current-residence"}
@@ -222,7 +240,9 @@ function educationCanReach(s,{institutionId,campusId,offeringId,
   };
   const reasons=result.reasonCodes,world=s?.world?.educationWorld;
   const add=reason=>{if(!reasons.includes(reason))reasons.push(reason);};
-  if(personId!=="protagonist"||!s) {add("unknown-person");result.status="blocked";return result;}
+  const dependent=personId!=="protagonist"?educationDependentPerson(s,personId):null;
+  if(!s || personId!=="protagonist"&&!dependent) {add("unknown-person");result.status="blocked";return result;}
+  const personAge=dependent?s.year-dependent.person.by:s.age;
   const inst=world?.institutions?.[institutionId],campus=world?.campuses?.[campusId],
     offering=world?.offerings?.[offeringId];
   if(!inst)add("unknown-institution");
@@ -255,10 +275,10 @@ function educationCanReach(s,{institutionId,campusId,offeringId,
     const risk=route.riskScore||0;
     result.safeTravelStatus=risk>=0.75?"critical":risk>=0.5?"high":risk>=0.25?"watch":"low";
     if(risk>=0.75 && purpose==="daily-commute")add("route-risk-critical");
-    const minor=s.age<18;
+    const minor=personAge<18;
     const guardian=educationGuardianReview(s,personId,purpose,institutionId,year,time,selectedConsentId);
     result.guardianConsentStatus=guardian.guardianConsentStatus;
-    const escortRequired=minor && (s.age<=9 || (risk>=0.25&&s.age<12) || risk>=0.5);
+    const escortRequired=minor && (personAge<=9 || (risk>=0.25&&personAge<12) || risk>=0.5);
     if(minor&&risk>=0.5&&guardian.escortStatus!=="verified")
       add("route-risk-unmitigated-minor");
     if(escortRequired && (guardian.escortStatus!=="verified" ||
@@ -266,7 +286,7 @@ function educationCanReach(s,{institutionId,campusId,offeringId,
          x.escortPersonId===selectedEscortPersonId && x.institutionId===institutionId && x.status==="verified"))))
       add("escort-required");
     if(purpose==="daily-commute"){
-      const limit=offering.stage==="primary" ? s.age<=9?35:s.age<=12?30:35 :
+      const limit=offering.stage==="primary" ? personAge<=9?35:personAge<=12?30:35 :
         EDUCATION_COMMUTE_LIMITS[offering.stage];
       if(Number.isFinite(limit) && (route.outboundMinutes>limit||route.returnMinutes>limit))
         add("time-limit-exceeded");
@@ -277,7 +297,7 @@ function educationCanReach(s,{institutionId,campusId,offeringId,
         add("residence-offer-unconfirmed");result.residenceStatus="unconfirmed";
       }else if((offer.capacityRemaining||0)<=0){
         add("boarding-full");result.residenceStatus="full";
-      }else if(s.age<12 && (!offer.responsibleAdultId||!offer.overnightSupervisionConfirmed)){
+      }else if(personAge<12 && (!offer.responsibleAdultId||!offer.overnightSupervisionConfirmed)){
         add("boarding-age-policy");result.residenceStatus="age-review";
       }else result.residenceStatus="offer-confirmed";
     }
@@ -285,7 +305,7 @@ function educationCanReach(s,{institutionId,campusId,offeringId,
       if(guardian.guardianConsentStatus==="refused")add("guardian-consent-refused");
       else if(guardian.guardianConsentStatus==="unverified")add("guardianship-unverified");
       else if(guardian.guardianConsentStatus!=="granted")add("guardian-consent-pending");
-      if(s.age<=11 && guardian.escortStatus!=="verified")add("escort-required");
+      if(personAge<=11 && guardian.escortStatus!=="verified")add("escort-required");
     }
     for(const need of accessibilityNeeds){
       if(!route.outbound?.accessibilityKnown||!route.outbound.accessibility?.includes(need)||
