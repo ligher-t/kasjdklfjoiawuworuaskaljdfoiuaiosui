@@ -178,6 +178,7 @@ window.TERRA_DATA_BUILD.run("regional/kazdel", function ($terraData, $define, $r
   });
   kazdelDaily.push({
     id: "daily_kazdel_56", conf: "S", st: ["少年"], need: ["国:カズデル"],
+    show: s => !!educationMigrationProviderFor(s,"edu_community_tent_learning"),
     t: "青空教室のテントで、文字の読み書きと計算を熱心に勉強した。「知識こそが国を再建する力だ」という先生の言葉を胸に刻んだ。",
     fx: { k: 2, p: 2 }
   });
