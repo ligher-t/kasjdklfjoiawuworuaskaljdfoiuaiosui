@@ -6,6 +6,7 @@ setup(ctx,{id:'education-cases',seed:112996,region:'龍門',age:6});
 const run=fn=>JSON.parse(vm.runInContext('JSON.stringify(('+fn.toString()+')())',ctx,{timeout:20000}));
 const basic=run(function(){
   const s=S;
+  s.playSettings.compulsoryEducation=false; // This suite exercises the manual case-review UI.
   s.year=1085;s.age=6;s.mo=3;s.cash=9000000;
   s.res=REG.find(x=>x.n==="龍門");s.home="移動都市";
   s.local={kind:"移動都市の居住区",city:"龍門",placeId:"city:龍門:龍門",

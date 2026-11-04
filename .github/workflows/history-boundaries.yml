@@ -153,6 +153,8 @@ jobs:
           node-version: '22'
       - name: Runtime syntax and revision
         run: node tools/check-efficient.cjs syntax
+      - name: Advanced settings and native education automation
+        run: node tools/check-efficient.cjs run advanced-settings.test.cjs
       - name: Parent oripathy death and bereavement
         run: node tools/check-efficient.cjs run parent-oripathy-bereavement.test.cjs
       - name: Historically situated information
@@ -213,8 +215,6 @@ jobs:
         run: node tools/check-efficient.cjs run v88_deadline_coverage_metrics.test.cjs
       - name: Reunion goal and spouse housing long-life regressions
         run: node tools/check-efficient.cjs run v88_long_life_state_reproductions.test.cjs
-      - name: Advanced settings and native education automation
-        run: node tools/check-efficient.cjs run advanced-settings.test.cjs
       - name: Katorga special custody and release lifecycle
         run: node tools/check-efficient.cjs run v88_ursus_katorga_custody_lifecycle.test.cjs
       - name: Delayed followup after actual withdrawal

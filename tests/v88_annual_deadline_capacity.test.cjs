@@ -13,19 +13,24 @@ const sampling=inspect(`
  const ceiling=P('events.slotPlacementCeiling'),range=P('events.adultSlots');
  for(let i=0;i<count;i++){
    sched();
-   const months=S.q.map(pos=>Math.floor(pos*CALENDAR_MONTHS)+1);
+   const normal=S.q.filter(pos=>!S.eventSchedule.servicePositions.includes(pos));
+   const months=normal.map(pos=>Math.floor(pos*CALENDAR_MONTHS)+1);
    if(months.length===6) rows.push(months);
    previous.push({n:months.length,unique:new Set(months).size,
+     monthly:S.q.length===12&&new Set(S.q.map(pos=>Math.floor(pos*CALENDAR_MONTHS)+1)).size===12,
+     normalRange:normal.length>=range[0]&&normal.length<=range[1],
      sorted:S.q.every((pos,index)=>index===0||pos>S.q[index-1]),
      within:S.q.every(pos=>pos>=0&&pos<ceiling)});
  }
  const oldSix=rows.map(()=>Array.from({length:6},()=>Math.floor(R()*ceiling*CALENDAR_MONTHS)+1));
  return {count,range,allUnique:previous.every(x=>x.n===x.unique),
+   monthly:previous.every(x=>x.monthly&&x.normalRange),
    sorted:previous.every(x=>x.sorted),within:previous.every(x=>x.within),
    sixSlotSchedules:rows.length,oldCollisions:oldSix.filter(ms=>new Set(ms).size<6).length};
 `);
 assert(sampling.allUnique&&sampling.sorted&&sampling.within,
  'all schedules have distinct chronological calendar months within the configured year');
+assert(sampling.monthly,'default normal draws retain their range while service-only opportunities cover missing months');
 assert(sampling.sixSlotSchedules>40,'stress sample must include many six-slot years');
 assert(sampling.oldCollisions>sampling.sixSlotSchedules/2,
  'unrestricted independent placements lose a majority of six-slot monthly capacities');
