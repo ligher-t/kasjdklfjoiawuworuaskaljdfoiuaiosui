@@ -171,7 +171,7 @@ const siblings=run(function(){
     enrollments.push(enrolled);
     receipts.push({invoiceId:invoice.id,personId:invoice.personId,
       amount:invoice.paid,paid:invoice.status==='paid',
-      successful:!!payment,repeat:replay===null});
+      successful:!!payment,repeat:replay?.id===payment?.id});
   }
   const before=educationSchoolStatusAt(s,off.id,s.year,4);
   s.mo=5;
