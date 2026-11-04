@@ -236,4 +236,4 @@ const VK = [
   "equity"
 ];
 
-FXK.push("debtPlan","educationAction","loanContract","loanPayment","loanCharge","personalWishes","infectionRoute","languageAction");
+FXK.push("travelAction","travelResidenceRef","debtPlan","educationAction","loanContract","loanPayment","loanCharge","personalWishes","infectionRoute","languageAction");

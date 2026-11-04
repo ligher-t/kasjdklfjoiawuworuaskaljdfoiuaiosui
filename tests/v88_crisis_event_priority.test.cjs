@@ -39,7 +39,7 @@ const dispatch=evalJSON(`
  S.infectionWorkplace={reviewDueYear:1098};
  const source=EV.slice();
  const choice=()=>[{l:'期限付きの選択を行う',ethics:{intent:'procedure',reviewed:true,policyVersion:87},o:[[1,'結果',{}]]}];
- const historic={id:'priority_test_historical',timelineFlag:'londinium_war',st:['壮年'],c:choice(),w:1};
+ const historic={id:'priority_test_historical',timelineFlag:'londinium_war',historicalScene:EV.find(e=>e.id==='vic_war').historicalScene,st:['壮年'],c:choice(),w:1};
  const review={id:'infection_workplace_review',st:['壮年'],c:choice(),w:1};
  const fireOriginal=fire,selected=[];
  try {

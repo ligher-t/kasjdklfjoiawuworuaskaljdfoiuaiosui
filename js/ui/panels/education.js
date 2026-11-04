@@ -14,6 +14,17 @@ function educationDeskClick(action) {
   const s=S;
   if(!s||s.dead||s.ev||s.mo<1||s.mo>12)return false;
   if(typeof play==="function")play(0);
+  if(action==="study-journey"||action==="study-guardian"){
+    try{
+      const item=educationActiveCase(s),w=s.world.educationWorld,o=w.offerings[item?.offeringId],
+        region=w.areas[w.campuses[o?.campusId]?.educationAreaId]?.regionKey;
+      if(action==="study-guardian"){
+        const a=travelGuardianConsult(s,region);TRAVEL_PANEL_DRAFT.guardianAgreementId=a.id;
+        L(a.status==="granted"?"保護者から受験の旅への同行了承を得た。":"受験の旅への保護者の了承は得られなかった。");
+      }else travelEducationJourney(s,item?.id,{guardianAgreementId:TRAVEL_PANEL_DRAFT.guardianAgreementId});
+      SV();rd();return true;
+    }catch(error){L(esc(error.message));return false;}
+  }
   if(action==="transfer-search"){
     const result=educationServiceTransferInquiry(s);rd();return result;
   }
@@ -49,7 +60,7 @@ function renderEducationPanel(s) {
       signature=JSON.stringify([disabled,used,active?.id||active?.enroll?.id,
         s.year,s.mo,s.educationServices?.inquiries,s.educationMigration?.records?.length,
         s.educationPath?.status,s.educationTransferRequests,s.educationAccess?.knownOfferings,
-        educationActiveCase(s)?.previewOfferingId]);
+        educationActiveCase(s)?.previewOfferingId,travelCurrentJourney(s)?.id]);
     if(desk.dataset.educationSignature!==signature){
       desk.replaceChildren();
       const button=(label,action,blocked)=>{
@@ -57,6 +68,12 @@ function renderEducationPanel(s) {
         b.disabled=blocked;b.addEventListener("click",()=>educationDeskClick(action));desk.appendChild(b);
       };
       if(active)button("募集先・通学・住まいの条件を照会", "inquire",disabled);
+      const application=educationActiveCase(s),world=s.world.educationWorld,
+        offering=world.offerings[application?.offeringId],area=world.areas[world.campuses[offering?.campusId]?.educationAreaId];
+      if(application?.phase==="application"&&area?.regionKey!==s.res.n&&!travelCurrentJourney(s)){
+        if(s.age<18)button("受験の旅への同行を保護者に相談する","study-guardian",disabled);
+        button("受験先への旅程を計画する","study-journey",disabled);
+      }
       if(educationMigrationCurrent(s))button("転学先の受入れと費用を照会","transfer-search",disabled);
       if(educationActiveCase(s)?.phase==="planning"&&s.age>=15)
         button("国外の募集先を調べる","abroad",disabled);

@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2566　選択肢数：3267　結果枝数：4125
+イベント数：2575　選択肢数：3294　結果枝数：4123
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -12,7 +12,7 @@
 
 ## 国・地域別索引
 
-[イェラグ (84)](#tag-region-0)　・　[イベリア (109)](#tag-region-1)　・　[ヴィクトリア (145)](#tag-region-2)　・　[ウルサス (170)](#tag-region-3)　・　[カジミエーシュ (102)](#tag-region-4)　・　[カズデル (119)](#tag-region-5)　・　[クルビア (116)](#tag-region-6)　・　[サーミ (91)](#tag-region-7)　・　[サルゴン (98)](#tag-region-8)　・　[シエスタ (80)](#tag-region-9)　・　[シラクーザ (98)](#tag-region-10)　・　[ボリバル (94)](#tag-region-11)　・　[ミノス (86)](#tag-region-12)　・　[ラテラーノ (88)](#tag-region-13)　・　[リターニア (103)](#tag-region-14)　・　[レム・ビリトン (93)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (86)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (90)](#tag-region-19)　・　[未特定 (747)](#tag-region-20)　・　[龍門 (106)](#tag-region-21)
+[イェラグ (84)](#tag-region-0)　・　[イベリア (109)](#tag-region-1)　・　[ヴィクトリア (145)](#tag-region-2)　・　[ウルサス (170)](#tag-region-3)　・　[カジミエーシュ (102)](#tag-region-4)　・　[カズデル (119)](#tag-region-5)　・　[クルビア (116)](#tag-region-6)　・　[サーミ (91)](#tag-region-7)　・　[サルゴン (98)](#tag-region-8)　・　[シエスタ (80)](#tag-region-9)　・　[シラクーザ (98)](#tag-region-10)　・　[ボリバル (94)](#tag-region-11)　・　[ミノス (86)](#tag-region-12)　・　[ラテラーノ (88)](#tag-region-13)　・　[リターニア (103)](#tag-region-14)　・　[レム・ビリトン (93)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (86)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (90)](#tag-region-19)　・　[未特定 (756)](#tag-region-20)　・　[龍門 (106)](#tag-region-21)
 
 <a id="tag-region-0"></a>
 ### イェラグ（84）
@@ -109,8 +109,8 @@
 - [ibe_famine](#event-ibe_famine) — 食料の配給が何日も滞り、市場の露店からも食べ物が消えた。街中がひりついた空腹を抱えている。
 - [ibe_rebuild](#event-ibe_rebuild) — 潮風で朽ちた海辺の街区で、崩れた倉庫の床や石畳を直す短期の復旧人足を募っていた。長く続く仕事ではないが、日銭にはなる。
 - [ibe_rebuild_contract_review](#event-ibe_rebuild_contract_review) — 海辺の街区で、また別の古い倉庫を直す日雇い募集が出ていた。前に覚えた手順を生かして応募するか、もっと安定した別の職を探すか思案した。
-- [timeline_great_silence](#event-timeline_great_silence) — 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄え…
-- [timeline_world_1101](#event-timeline_world_1101) — 監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。
+- [timeline_great_silence](#event-timeline_great_silence) — 海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。
+- [timeline_world_1101](#event-timeline_world_1101) — 海辺や北方から届く不穏な知らせを読んだ。海の哨所と北の防壁を一つの場所とは考えず、届いた情報の地域と日付を分けて整理した。
 - [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — 海の異変を伝える話が内陸へも届き、港から来る荷の行方を尋ねる人が増えた。海辺で何が起きたのか、行商人たちの話は少しずつ食い違っていた。
 - [f76](#event-f76) — 市場で買った塩魚を包む古紙の端に、沿岸の灯台網から回ってきた短い警戒文が刷られていた。店主も詳しい事情は知らぬと言い、潮の匂いが染みた包みだけを脇に…
 - [f90](#event-f90) — 港の掲示板に、異端審問所の印が押された立入禁止の告示が張り出されていた。理由は一行も記されておらず、詰所の窓を叩いても冷たい沈黙が返ってくるだけだっ…
@@ -225,12 +225,12 @@
 - [vic_occupy](#event-vic_occupy) — ロンディニウムの街角にはサルカズ軍事委員会の歩哨が立ち並び、毎日のように厳しい検問と物資の徴発が続いている。パンひとつ買いに出るにも、通行証を握りし…
 - [vic_strike](#event-vic_strike) — 蒸気機関の煤煙が立ちこめる工場の裏手で、仲間たちが「こんな安い賃金と長時間の立ちっぱなしじゃ体がもたない」とストライキの相談を始めた。加わればその間…
 - [vic_war](#event-vic_war) — ロンディニウムの居住区まで激しい砲撃の音が迫り、窓ガラスがビリビリと震え続けている。昨日まで通れた大通りが今日は瓦礫で塞がり、飲み水と今夜の寝床を確…
-- [timeline_columbia_independence](#event-timeline_columbia_independence) — ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に…
-- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レ…
-- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
-- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘区画の地表から紫色の源石ガスが噴き出し、防護服を着た公爵私兵が住民たちを問答無用で追い立てた。汚染された土壌と閉鎖線の前で怒号が飛び交っている。
+- [timeline_columbia_independence](#event-timeline_columbia_independence) — 独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。
+- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。
+- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。
+- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘地区の汚染を巡る知らせを読んだ。問題の区画へ入ったことはなく、流通する品や仕事の条件にどんな影響があるかを確かめた。
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_daily_londinium_siege](#event-timeline_daily_londinium_siege) — 諸侯軍の攻城砲の地鳴りが一日中響き、路地に立ち込める硝煙の向こうで自救軍の若者たちが救援物資を運び込んでいた。
 - [timeline_daily_londinium_martial](#event-timeline_daily_londinium_martial) — 軍事委員会の無骨な装甲歩兵が跳ね橋の検問を固め、道行く市民たちを鋭い眼光で監視していた。
@@ -374,17 +374,17 @@
 - [urs_ice](#event-urs_ice) — 厳冬期の朝、移動都市の蒸気配管の圧力が落ち、部屋の蒸気放熱器がすっかり冷え切った。白い息を吐きながら窓の外を見ると、闇市の燃料屋の前に早くも人だかり…
 - [urs_purge](#event-urs_purge) — 黒い外套を着た役人たちが通りを回り、一軒ずつ住人の名簿と身元を調べていた。家の大人たちは険しい顔でカーテンを閉め、「外でうちの仕事や親戚の話を絶対に…
 - [hig_tension](#event-hig_tension) — 北院と南院の睨み合いや、海の向こうのウルサスとのいくさ話が、仕事帰りの茶屋でもしきりに囁かれるようになった。辻の掲示板には、近隣の陣屋が兵站や街道警…
-- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦…
-- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — 国境要塞から轟く巨砲の重低音が空を震わせ、傷病兵を満載した軍用列車が絶え間なく駅へ滑り込んできた。第十次ウルサス＝カジミエーシュ戦争の火蓋が切られ、…
-- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — 鉱山奥の封鎖区画に軍の特科装甲車が何台も乗り付け、黒塗りの幌で覆われた巨大な機材が秘密裏に運び込まれた。坑道周辺は立入禁止となり、作業員たちに厳しい…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
+- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。
+- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — ウルサスとカジミエーシュの戦争についての報道を読んだ。国境にいるわけではない。仕事や親族との往来に影響があるか、分かる範囲から確かめた。
+- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — チェルノボーグの研究を巡る風聞を耳にした。どの話が確かなのかは分からず、封鎖された施設の中を自分が見たわけでもない。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
 - [timeline_sarcophagus_purge](#event-timeline_sarcophagus_purge) — 深夜の研究所街区を帝国特科憲兵部隊が完全包囲し、激しい銃声のあと、白衣の研究員たちが雪の上に倒れ伏した。機密資料を満載した軍用トラックが夜の闇へと疾…
-- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — ワーニャ大公の車列が市街の交差点で爆砕され、憲兵隊が通りを完全に封鎖して住民を広場へ駆り集めた。厳冬の広場で容疑者の割り出しと過酷な尋問が夜を徹して…
+- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — 暗殺事件と捜査についての知らせが届いた。現場の交差点に居合わせたわけではなく、報じられた情報と身近な噂を分けて聞いた。
 - [timeline_talulah_kills](#event-timeline_talulah_kills) — 凍てつく原野の古びた公爵邸から猛火と黒煙が立ち上り、吹雪の中に佇むドラコの少女の姿が目撃された。凍土の集落に不穏なざわめきが広がっている。
 - [timeline_talulah_leave](#event-timeline_talulah_leave) — 雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_world_1101](#event-timeline_world_1101) — 監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。
+- [timeline_world_1101](#event-timeline_world_1101) — 海辺や北方から届く不穏な知らせを読んだ。海の哨所と北の防壁を一つの場所とは考えず、届いた情報の地域と日付を分けて整理した。
 - [timeline_katorga_incident](#event-timeline_katorga_incident) — 大学前広場を取り囲んだ帝国憲兵隊が棍棒と銃剣で抗議学生たちを殴り倒し、無蓋トラックへ次々と放り込んだ。凍てつく石畳に血痕が凍りついていく。
 - [timeline_daily_chernobog_alarm](#event-timeline_daily_chernobog_alarm) — チェルノボーグの市街に空襲と天災の二重のサイレンが狂ったように鳴り響き、遠くの街区から黒煙が立ち上っていた。
 - [f87](#event-f87) — 軍需品を造る工場で、耳をつんざく交替の汽笛が鳴り響いた。隣の工員は油まみれの手袋を剥ぎ取りながら、監督に来月の夜勤がどうなるか詰め寄っていた。重たい…
@@ -541,9 +541,9 @@
 - [kaz_infknight](#event-kaz_infknight) — 支払いの催促が続くころ、競技区画の裏手で、感染者の出る非公式試合を仕切る人から声をかけられた。報酬は勝ち負けで変わり、負傷の補償はないという。 仕事…
 - [kaz_business](#event-kaz_business) — 商業連合会の担当者が、働き口の帳場で出資を募っていた。元手は軽くない。家賃や薬代に回す金まで預けて、事業が外れたらどうするか、仕事仲間も答えを出せず…
 - [kaz_rural](#event-kaz_rural) — 農村の知人から、仕事を引き継ぐ人を探していると連絡が来た。道具と住まいの支度には金が要る。都市で別の勤めを探す道もあるが、そちらも何も決まっていない…
-- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — 国境要塞から轟く巨砲の重低音が空を震わせ、傷病兵を満載した軍用列車が絶え間なく駅へ滑り込んできた。第十次ウルサス＝カジミエーシュ戦争の火蓋が切られ、…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
+- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — ウルサスとカジミエーシュの戦争についての報道を読んだ。国境にいるわけではない。仕事や親族との往来に影響があるか、分かる範囲から確かめた。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — カヴァレリエルキの街には大会の知らせと中継があふれている。大通りの画面を見上げる人も、会場へ急ぐ人もいる。どこで、どんな立場で関わるかを考えた。
 - [f74](#event-f74) — 街角の受信機から、騎士競技の実況中継が威勢よく流れてきた。選手の名が呼ばれるたび、解説者は背後のスポンサー企業の名も忘れずに連呼していた。 大衆食堂…
 - [f89](#event-f89) — 一日の務めを終えたあと、人気のない訓練場で一人、基本の型を繰り返した。昼間の歓声はもう遠かったが、木剣を握りしめる手のひらにじんわりと熱が残っていた…
 - [arena_brutal_record_daily](#event-arena_brutal_record_daily) — 控室の掲示板に張り出された対戦相手の戦歴表を見て息を呑んだ。過去の対戦相手のほとんどが試合後に救護室で死亡または四肢欠損と記されており、観衆の血への…
@@ -644,15 +644,15 @@
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [fam_conscript](#event-fam_conscript) — 戦火が迫るなか、きょうだいの一人に部隊への招集状が届いた。泣き崩れる家族のそばで、免除を願い出るか、自分が身代わりに出るか、重苦しい相談が続いた。
 - [kaz_merc](#event-kaz_merc) — カズデルの傭兵隊が、荒野を抜ける輸送隊の護衛を募っていた。分け前は悪くないが、生きて帰れる保証もない長旅になる。
-- [kaz_exile](#event-kaz_exile) — カズデル全土に内戦の炎が広がり、大人たちは国を捨てるか残るかで夜通し言い争っている。あなたは押し殺した声に耳を澄ませながら、いつでも逃げられるよう荷…
-- [kazdel_afterfall](#event-kazdel_afterfall) — ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼…
+- [kaz_exile](#event-kaz_exile) — 内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。
+- [kazdel_afterfall](#event-kazdel_afterfall) — 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
 - [kaz_reunion](#event-kaz_reunion) — チェルノボーグ事変のあと、散り散りになったレユニオンが感染者の互助組織として立て直されているという噂が、北から来た旅人を通じて伝わってきた。カズデル…
-- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 傭兵団の頭領たちが城塞へ集結し、軍事委員会の無骨な鉄の印章が市壁に刻まれた。統一軍の旗が掲げられ、集落の若者たちに召集と物資拠出の鋭い視線が向けられ…
+- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 軍事委員会の成立を伝える知らせが地区へ届いた。兵站の求人や物資の照会が増え、人々は新しい力との距離を測っていた。
 - [timeline_babel_split](#event-timeline_babel_split) — 陸艦バベルが黒煙を吐いて城砦を離脱し、追撃の矢と術式が甲板に降り注ぐ中、サルカズの同胞同士が銃を向け合った。割れた王庭の絆が修復不能な亀裂を刻んでい…
-- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。
-- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
-- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
+- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 内戦開始の知らせは届いたが、この地区がその日に戦場になったとは限らない。近隣では荷と連絡の遅れを確かめ、今後の備えを話し合っている。
+- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 戦争宣言の知らせが地区にも届いた。物資や働き手を求める声と、関わりを避ける声が交錯していた。
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
+- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 国境地帯の会戦を伝える知らせを受け取った。どの道を通れるかについては別の確認が必要で、知らせの地名を地図でたどると、往来の先行きが気に掛かった。
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [f95](#event-f95) — 内戦の火種がくすぶるなか、武装した傭兵の一団が荷をまとめて通りを抜けていった。家の大人は店先にいたあなたを慌てて奥へ引っ張り込み、隊列が角を曲がりき…
 - [wild_beast_track_daily](#event-wild_beast_track_daily) — 荒野の轍の脇に、源石結晶を背負った野獣の巨大な足跡と、半分貪り食われた輸送車両の残骸を見かけて背筋が凍った。遠くの岩陰からこちらを伺う獰猛な唸り声に…
@@ -781,7 +781,7 @@
 - [col_research](#event-col_research) — 研究への協力を求める文書が届いた。検査項目は細かいのに、協力者へ危険をどう伝えるか、異常が出たとき誰が止めるかは書かれていなかった。
 - [col_timecard_dispute](#event-col_timecard_dispute) — 給金を受け取る日に帳面を確かめると、退勤の打刻が一つ抜け、早退扱いになっていた。決められた時刻まで持ち場にいたはずだが、係は忙しく、訂正は次の締め日…
 - [col_reuse_market](#event-col_reuse_market) — 工業区の回収市に、金具や板の切れ端が並んでいた。売り手は寸法を測り、買い手は欠けやねじ山を確かめている。あなたは壊れた鞄の留め具を手に、金具を選ぶ台…
-- [timeline_columbia_independence](#event-timeline_columbia_independence) — ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に…
+- [timeline_columbia_independence](#event-timeline_columbia_independence) — 独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。
 - [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [f88](#event-f88) — 退勤後、企業研究所の公開発表会に足を運んだ。会場の隅から誰かが被験者への事前説明について鋭い質問を飛ばしたが、登壇者は笑顔のまま次のスライドへ話を切…
 - [col_pioneer_radio_daily](#event-col_pioneer_radio_daily) — 昼時のダイナーの受信機が、クルビア辺境の開拓地行きの求人を明るい声で流していた。破格の日当と出発日が読み上げられたあと、現地から戻った作業員の録音に…
@@ -983,7 +983,7 @@
 - [f33](#event-f33) — 国:サルゴン 地勢:乾燥地・オアシス 革の水袋と乾パンを並べた露店で、旅装の客が袋の重みと値段を厳しく見比べていた。熱風の中で呼び込みの声だけが乾い…
 - [sar_tribe](#event-sar_tribe) — オアシスから延びる細い水路の堰の前で、顔見知りの二つの家が水を引く順番をめぐって言い争っていた。通りかかったあなたを見止めると、双方が「お前もここで…
 - [sar_sandstorm](#event-sar_sandstorm) — 生ぬるい突風とともに、移動都市の外縁デッキへ赤茶けた砂が吹き込み始めた。巨大な砂嵐の接近を知らせる鐘が鳴り響き、人々が慌てて鎧戸を閉め、内側の区画へ…
-- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 吹き荒れる砂嵐の中、旧パディシャーの反乱残党と傭兵隊がオアシスの市場で激突した。乾いた砂に鮮血が染み込み、隊商の荷車が次々と炎上している。
+- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 砂漠の市場で起きた争いの噂を聞いた。交戦した者や被害の規模について話が食い違い、隊商の予定をどう扱うかで商人たちが迷っていた。
 - [f78](#event-f78) — 砂混じりの乾いた熱風に目を細め、口元を覆う布をぐっと引き上げた。日陰に逃げ込んで水筒を傾けたが、ぬるくなった水が一筋喉を落ちただけでは渇きは到底収ま…
 - [f92](#event-f92) — 水路の分岐点で、各戸の取水順を示す木札が掛け替えられていた。上流の番を終えた隣家から湿った木札を受け取り、ようやく自分の家に水が引ける時間帯を確かめ…
 - [rainforest_damp](#event-rainforest_damp) — 生暖かい雨が何日も降り続き、箱にしまっていた布地にまで青臭いカビの匂いが移った。まだ使える衣類を部屋の縄に広げ、雲の切れ間から短い日差しが漏れるのを…
@@ -1082,7 +1082,7 @@
 - [sie_volcano](#event-sie_volcano) — 夏の祭典の熱気が冷めたころ、役所から新設される移動都市への移住案内が配られた。火山の活動が年々激しくなり、この美しい浜辺の街を丸ごと移すのだという。…
 - [sie_tourist](#event-sie_tourist) — オブシディアン・フェスティバルが開幕し、街中が浮き立つような音楽と観光客の熱気で溢れ返っている。浜辺の露店では、夜遅くの片づけまで手伝ってくれる若手…
 - [sie_seasonal_work](#event-sie_seasonal_work) — 観光シーズンの到来とともに、海辺の食堂に「配膳・洗い場急募」の木札が下がった。裏の倉庫街でも、土産物の荷ほどきを手伝う短期の人手を探している。
-- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
+- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。
 - [f96](#event-f96) — 海辺の祭りの日、店先には朝から晩まで観光客の波が絶えなかった。釣り銭を渡し続ける手を休める暇もなかったが、客足がふっと途切れた一瞬だけ、きらめく海の…
 - [siesta_shop_reopens_after_move](#event-siesta_shop_reopens_after_move) — 移動都市へと姿を変えた新しいシエスタで、勤め先の店をようやく再開した。まだ人通りのまばらな通りに面して木の案内札を立て、届いたばかりの商品を一品ずつ…
 - [daily_siesta_01](#event-daily_siesta_01) — どこまでも青く広がるシエスタの海辺を散歩した。寄せては返す白い波頭と心地よい潮風に吹かれ、日頃の疲れが綺麗に洗い流された。
@@ -1172,7 +1172,7 @@
 - [sir_family_later_work](#event-sir_family_later_work) — ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。
 - [sir_hospital](#event-sir_hospital) — 強い熱が続き、街の診療所へ運ばれた。医師は数日休んで治療を受けるよう勧めたが、受付で告げられた費用は家計に重かった。顔なじみのファミリーに口利きを頼…
 - [sir_feud](#event-sir_feud) — 関わりのあるファミリーと対立組織の緊張が高まった。知人は店の裏口を閉め、今夜は誰と帰るかを確かめている。 ファミリー同士の緊張が通りにも伝わった。店…
-- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
+- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
 - [f85](#event-f85) — 仕入れ先の店主が、あるファミリーの名を耳にした途端にぱたりと帳面を閉じた。あんたの商いには関わりのない話だと言われたが、背中に冷たいものを感じながら…
 - [siracusa_wine_shop_ledger_daily](#event-siracusa_wine_shop_ledger_daily) — 店の扉を閉める前、店主に頼まれて木箱のワイン瓶と仕入れ帳をひと瓶ずつ照らし合わせた。ぶどうの産地を細かく尋ねる常連客にも淀みなく答えられるようになり…
 - [medical_denial_shuttered_clinic_daily](#event-medical_denial_shuttered_clinic_daily) — 化膿した傷口が赤黒く腫れ上がり、痛みに耐えかねて街外れの診療所の呼び鈴を鳴らした。だが対応に出た職員は、袖口の源石結晶を一瞥するなり無言で鉄扉の閂を…
@@ -1262,7 +1262,7 @@
 <a id="tag-region-11"></a>
 ### ボリバル（94）
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
-- [bol_war](#event-bol_war) — 三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金…
+- [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 - [bol_tourist](#event-bol_tourist) — 市場の荷さばき場に、急ぎの積荷を仕分ける数日間の人手募集が貼り出されていた。手っ取り早く日銭を稼ぐには悪くない話だ。
 - [bol_local_contract](#event-bol_local_contract) — 市場の木の掲示板に、農作物の袋詰め、採鉱道具の修理、そして街道を行く荷車の護衛という三つの日雇い募集が並んでいた。どれも数日ポッキリの口で、危険の度…
 - [bol_dossoles_championship_work](#event-bol_dossoles_championship_work) — 水上競技大会で沸き返るドッソレスの荷受け場に、仮設スタンドを組む数日間の急募が出ていた。日当は悪くない。今の仕事や予定と折り合いがつくか考えた。
@@ -1544,8 +1544,8 @@
 - [lei_witchking](#event-lei_witchking) — 旧体制の施設を整理する現場で、記録と荷物の扱いを手伝う人を募っている。古い物には近づきたくないという人も、仕事の手当が要るという人もいた。
 - [lei_noble](#event-lei_noble) — 貴族の屋敷で音楽会が開かれる。客の紹介を取り次ぐ者もいれば、支度を手伝う人手を募る者もいた。
 - [lei_isolation](#event-lei_isolation) — 地区の役所から、診断記録を根拠に隔離区画へ移るよう通達が届いた。移れば仕事を失うことになり、当面の収入も途絶える。 地区の役所から、診断記録を根拠に…
-- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦…
-- [timeline_leith_revolution](#event-timeline_leith_revolution) — 1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むな…
+- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。
+- [timeline_leith_revolution](#event-timeline_leith_revolution) — 政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。
 - [f83](#event-f83) — 地域の公開講座で、かつての巫王時代の検閲についての話を聞いた。書物に残された公の記録と、各々の家庭でひそかに語り継がれた記憶とが食い違うことは珍しく…
 - [f84](#event-f84) — 仕事を終えてから、貸出用の練習具を返却する時刻までアーツの基礎訓練を繰り返した。指先はしびれるほど疲れていたが、思い描いたとおりの旋律と形に近づく確…
 - [medical_denial_shuttered_clinic_daily](#event-medical_denial_shuttered_clinic_daily) — 化膿した傷口が赤黒く腫れ上がり、痛みに耐えかねて街外れの診療所の呼び鈴を鳴らした。だが対応に出た職員は、袖口の源石結晶を一瞥するなり無言で鉄扉の閂を…
@@ -1649,7 +1649,7 @@
 - [rim_debt](#event-rim_debt) — 生まれ育った大家族の集まりで、身内の一人が首の回らないほどの借金を抱えていると打ち明けられた。みんなで金を出し合って尻拭いをするか、本人に始末をつけ…
 - [rim_mine](#event-rim_mine) — 採掘坑の奥で支柱がきしみ、一度作業を止めて点検すべきだという声が上がった。手を止めれば今日の日当が削られるが、このまま掘り進めて崩れたら命がない。
 - [rim_shipment_label](#event-rim_shipment_label) — 自治地区の集配所で、あなた宛てに届いた重たい工具箱を係員が出してきた。ただ、荷札に書かれた坑区番号がすでに閉鎖された古い区画になっており、そのままで…
-- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レ…
+- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。
 - [f94](#event-f94) — 鉱区の掲示板に、落盤で負傷した仲間の名と閉鎖された坑道番号がチョークで書き出された。次の番に入る同僚は、見舞金や補償の話を誰に掛け合えばいいのかと周…
 - [rim_forecast_route_daily](#event-rim_forecast_route_daily) — 坑道から地上へ上がると、詰所の前で天災トランスポーターが帰路の案内札を掛け替えていた。煤けた黒板にはこれからの風向きと安全に通れる谷筋が短く記され、…
 - [rim_local_mine_slowdown_daily](#event-rim_local_mine_slowdown_daily) — 町外れの鉱山で稼働する切羽が減り始めてから、行きつけの食堂の昼時もすっかり客足が遠のいた。店主は火にかける大鍋を一つ減らし、静まり返った店内で所在な…
@@ -1749,7 +1749,7 @@
 - [yan_exam](#event-yan_exam) — 役所の門前に、下級書記の採用試験を知らせる告示が貼り出された。公文書を読み解く学識と、試験場へ赴く旅費が要る。今の仕事を投げ打って官の道へ挑むかどう…
 - [yan_sui](#event-yan_sui) — 年の瀬、暖を取ろうと立ち寄った茶館で、古びた絵巻を広げて『歳』とその代理人たちの物語を語る講釈師がいた。ただの昔話だと笑う客もいれば、今もどこかに息…
 - [yan_ancestor](#event-yan_ancestor) — 長雨で傷んだ水路の橋を直すため、町内の年寄りたちが役所への嘆願と普請の寄付を募っていた。資材代や炊き出しの分担をどうするか、仕事帰りの路地で声をかけ…
-- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
+- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。
 - [f91](#event-f91) — 役所の控え室で帳簿をめくると、先に受け付けたはずの申請が露骨に後ろへ回されていた。理由を質しても、上役の担当者は「そういう決まりだ」としか言わない。…
 - [daily_yan_01](#event-daily_yan_01) — 遠くの険しい山並みを望みながら、朝の茶館で淹れたてのジャスミン茶を啜った。蒸篭から上がる湯気が冷えた朝の空気を和らげ、身体の芯から温まった。
 - [daily_yan_02](#event-daily_yan_02) — 近所の手入れされた中庭から、白檀と秋菊の清らかな香りが漂ってきた。通りを歩く人々も心なしか歩みを緩め、穏やかな朝の風を楽しんでいた。
@@ -1929,7 +1929,7 @@
 - [car_hig_touhou_daily_01](#event-car_hig_touhou_daily_01) — 東方重工の工場内で、最新鋭の旋盤から削り出された手裏剣『シルバーウィンド』同型刃の寸法と硬度を測定した。特殊合金の焼き入れムラがないか、顕微鏡で結晶…
 
 <a id="tag-region-20"></a>
-### 未特定（747）
+### 未特定（756）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
@@ -2064,7 +2064,7 @@
 - [lei_noble_after](#event-lei_noble_after) — 以前の音楽会で後援者と連絡先を交換したか、舞台裏の仕事を得た。次の案内が届き、返事を考えた。
 - [lei_noble_later](#event-lei_noble_later) — 音楽会での接点から数年が過ぎた。稽古や別の仕事と両立できる関わり方を考えるようになった。
 - [kazdel_rebuild](#event-kazdel_rebuild) — 落ち着かない仮住まいが続き、家の人は毎日の食べ物と燃料を手に入れるだけで精一杯だ。通りで同じ故郷の訛りや角の形を見かけるたび、思わず目で追ってしまう…
-- [timeline_world_1099](#event-timeline_world_1099) — 各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。
+- [timeline_world_1099](#event-timeline_world_1099) — 旅程上で実際に到達した検問所が、通行の審査を始めている。運行側から届いた通行条件を読み、先へ進む方法を考えた。
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
 - [discrimination_after](#event-discrimination_after) — 申し立てから数日後、上司は返事を先延ばしにし、同僚は仕事の話しかしなくなった。 窓口から返事はなく、顔見知りはその話題になると目をそらした。
@@ -2604,6 +2604,15 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [journey_decision_review](#event-journey_decision_review) — 検問の前で足止めされている。届いた通行条件と旅費を確かめ、先へ進むか、滞在先で待つかを考えた。
+- [history_path_review_columbia_independence](#event-history_path_review_columbia_independence) — 開拓地区の自治活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_commission_founded](#event-history_path_review_kazdel_commission_founded) — 地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_siracusa_unification](#event-history_path_review_siracusa_unification) — 地区の掟を担うつながりに関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_ursus_great_rebellion](#event-history_path_review_ursus_great_rebellion) — 地区の労働者の要求活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_rim_billiton_independence](#event-history_path_review_rim_billiton_independence) — 鉱区の自治運営に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
+- [history_path_review_kazdel_war_declared](#event-history_path_review_kazdel_war_declared) — 地区の後方補給班に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_civil_war](#event-history_path_review_kazdel_civil_war) — 避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 - [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
 - [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
 - [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
@@ -2689,7 +2698,7 @@
 - [lon_slum](#event-lon_slum) — かつて部屋を追い出されるように移ってきたこの下層街区で、食料と薬の炊き出しに長い列ができていた。自分の番が飛ばされないよう必死に引換券を握りしめる人…
 - [lon_housing](#event-lon_housing) — 部屋の更新手続きに行くと、家主は診断記録に目を落としたまま、これまでの倍近い保証金をふっかけてきた。「お互いの安心のためだよ」と笑うが、元の契約書の…
 - [lon_merchant](#event-lon_merchant) — 龍門の賑やかな商業通りで、空きが出たばかりの小さな露店を引き継がないかと声がかかった。権利金と仕入れで50万龍門幣。当たれば大きいが、客がつかなくて…
-- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
+- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
 - [f77](#event-f77) — 見上げる高層街の窓が次々に宝石のように灯り始めるころ、路地裏の市場で値引きされた食材を見比べていた。頭上のきらびやかな夜景より、今夜の鍋に何を入れら…
 - [f82](#event-f82) — 龍門の賑やかな屋台で、湯気の立つ汁物を一杯買った。道端に立ったまま熱い器をすすり、目の前を絶え間なく流れていく人々の背中を眺めた。 香ばしい油の匂い…
@@ -2789,7 +2798,7 @@
 
 ## ジャンル別索引
 
-[移動・物流 (244)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (361)](#tag-genre-2)　・　[感染・医療 (405)](#tag-genre-3)　・　[教育・文化 (446)](#tag-genre-4)　・　[差別・制度 (155)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (243)](#tag-genre-7)　・　[戦争・政治 (145)](#tag-genre-8)　・　[天災・避難 (202)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (394)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (895)](#tag-genre-13)　・　[労働・経済 (753)](#tag-genre-14)
+[移動・物流 (244)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (361)](#tag-genre-2)　・　[感染・医療 (405)](#tag-genre-3)　・　[教育・文化 (446)](#tag-genre-4)　・　[差別・制度 (156)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (244)](#tag-genre-7)　・　[戦争・政治 (146)](#tag-genre-8)　・　[天災・避難 (203)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (394)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (895)](#tag-genre-13)　・　[労働・経済 (761)](#tag-genre-14)
 
 <a id="tag-genre-0"></a>
 ### 移動・物流（244）
@@ -2835,20 +2844,20 @@
 - [hig_tension](#event-hig_tension) — 北院と南院の睨み合いや、海の向こうのウルサスとのいくさ話が、仕事帰りの茶屋でもしきりに囁かれるようになった。辻の掲示板には、近隣の陣屋が兵站や街道警…
 - [hig_service_review](#event-hig_service_review) — 陣屋で兵站と街道警備の務めに就いて三年が経ち、上役から次の任期も残るかと尋ねられた。このまま軍務を続けるか、覚えた荷捌きの腕を民間の輸送業で生かすか…
 - [hig_service_later_career_review](#event-hig_service_later_career_review) — 気づけば十五年以上も軍務・兵站の現場に身を置き、急な陣触れと家の暮らしのあいだで折り合いをつけてきた。このまま古参として部隊に残るか、培った街道と荷…
-- [kaz_exile](#event-kaz_exile) — カズデル全土に内戦の炎が広がり、大人たちは国を捨てるか残るかで夜通し言い争っている。あなたは押し殺した声に耳を澄ませながら、いつでも逃げられるよう荷…
-- [kazdel_afterfall](#event-kazdel_afterfall) — ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼…
+- [kaz_exile](#event-kaz_exile) — 内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。
+- [kazdel_afterfall](#event-kazdel_afterfall) — 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
 - [kazdel_rebuild](#event-kazdel_rebuild) — 落ち着かない仮住まいが続き、家の人は毎日の食べ物と燃料を手に入れるだけで精一杯だ。通りで同じ故郷の訛りや角の形を見かけるたび、思わず目で追ってしまう…
 - [kaz_reunion](#event-kaz_reunion) — チェルノボーグ事変のあと、散り散りになったレユニオンが感染者の互助組織として立て直されているという噂が、北から来た旅人を通じて伝わってきた。カズデル…
-- [bol_war](#event-bol_war) — 三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金…
+- [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 - [sie_volcano](#event-sie_volcano) — 夏の祭典の熱気が冷めたころ、役所から新設される移動都市への移住案内が配られた。火山の活動が年々激しくなり、この美しい浜辺の街を丸ごと移すのだという。…
 - [rim_shipment_label](#event-rim_shipment_label) — 自治地区の集配所で、あなた宛てに届いた重たい工具箱を係員が出してきた。ただ、荷札に書かれた坑区番号がすでに閉鎖された古い区画になっており、そのままで…
 - [bol_dossoles_traveler_account](#event-bol_dossoles_traveler_account) — 街道沿いの荷馬車の休憩所で、東へ向かうくたびれた旅人と相席になった。せっかくドッソレスの近くまで来たのに、乗り継ぎの運賃すら足りず、華やかな街を遠く…
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
-- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — 国境要塞から轟く巨砲の重低音が空を震わせ、傷病兵を満載した軍用列車が絶え間なく駅へ滑り込んできた。第十次ウルサス＝カジミエーシュ戦争の火蓋が切られ、…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 吹き荒れる砂嵐の中、旧パディシャーの反乱残党と傭兵隊がオアシスの市場で激突した。乾いた砂に鮮血が染み込み、隊商の荷車が次々と炎上している。
+- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — ウルサスとカジミエーシュの戦争についての報道を読んだ。国境にいるわけではない。仕事や親族との往来に影響があるか、分かる範囲から確かめた。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 砂漠の市場で起きた争いの噂を聞いた。交戦した者や被害の規模について話が食い違い、隊商の予定をどう扱うかで商人たちが迷っていた。
 - [timeline_sarcophagus_purge](#event-timeline_sarcophagus_purge) — 深夜の研究所街区を帝国特科憲兵部隊が完全包囲し、激しい銃声のあと、白衣の研究員たちが雪の上に倒れ伏した。機密資料を満載した軍用トラックが夜の闇へと疾…
-- [timeline_world_1099](#event-timeline_world_1099) — 各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。
+- [timeline_world_1099](#event-timeline_world_1099) — 旅程上で実際に到達した検問所が、通行の審査を始めている。運行側から届いた通行条件を読み、先へ進む方法を考えた。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
 - [friend_missing_news](#event-friend_missing_news) — {contactName}と連絡が途絶えたのは{contactMissingYear}年ごろ。最後に所在が確かめられたのは{contactMissi…
@@ -3108,19 +3117,19 @@
 - [sir_feud](#event-sir_feud) — 関わりのあるファミリーと対立組織の緊張が高まった。知人は店の裏口を閉め、今夜は誰と帰るかを確かめている。 ファミリー同士の緊張が通りにも伝わった。店…
 - [lat_exile](#event-lat_exile) — ラテラーノ市民であっても例外はない。鉱石病にかかったことを理由に、聖都を退去するよう冷たい通達が届いた。甘い菓子の匂いが漂う見慣れた石畳を歩きながら…
 - [rim_debt](#event-rim_debt) — 生まれ育った大家族の集まりで、身内の一人が首の回らないほどの借金を抱えていると打ち明けられた。みんなで金を出し合って尻拭いをするか、本人に始末をつけ…
-- [kaz_exile](#event-kaz_exile) — カズデル全土に内戦の炎が広がり、大人たちは国を捨てるか残るかで夜通し言い争っている。あなたは押し殺した声に耳を澄ませながら、いつでも逃げられるよう荷…
-- [kazdel_afterfall](#event-kazdel_afterfall) — ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼…
+- [kaz_exile](#event-kaz_exile) — 内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。
+- [kazdel_afterfall](#event-kazdel_afterfall) — 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
 - [kazdel_rebuild](#event-kazdel_rebuild) — 落ち着かない仮住まいが続き、家の人は毎日の食べ物と燃料を手に入れるだけで精一杯だ。通りで同じ故郷の訛りや角の形を見かけるたび、思わず目で追ってしまう…
-- [bol_war](#event-bol_war) — 三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金…
+- [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 - [sie_volcano](#event-sie_volcano) — 夏の祭典の熱気が冷めたころ、役所から新設される移動都市への移住案内が配られた。火山の活動が年々激しくなり、この美しい浜辺の街を丸ごと移すのだという。…
-- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
-- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — 国境要塞から轟く巨砲の重低音が空を震わせ、傷病兵を満載した軍用列車が絶え間なく駅へ滑り込んできた。第十次ウルサス＝カジミエーシュ戦争の火蓋が切られ、…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
-- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — ワーニャ大公の車列が市街の交差点で爆砕され、憲兵隊が通りを完全に封鎖して住民を広場へ駆り集めた。厳冬の広場で容疑者の割り出しと過酷な尋問が夜を徹して…
-- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。
+- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
+- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — ウルサスとカジミエーシュの戦争についての報道を読んだ。国境にいるわけではない。仕事や親族との往来に影響があるか、分かる範囲から確かめた。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。
+- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — 暗殺事件と捜査についての知らせが届いた。現場の交差点に居合わせたわけではなく、報じられた情報と身近な噂を分けて聞いた。
+- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 内戦開始の知らせは届いたが、この地区がその日に戦場になったとは限らない。近隣では荷と連絡の遅れを確かめ、今後の備えを話し合っている。
 - [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
-- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
+- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
 - [wld_plague](#event-wld_plague) — 移動都市 都市の別区画で発熱する人が増えたと、配給の列で聞いた。診療所の待ち時間や薬の値段を、近所の人が気にしていた。 乗員区画から感染症への注意が…
@@ -3467,11 +3476,11 @@
 - [lon_housing](#event-lon_housing) — 部屋の更新手続きに行くと、家主は診断記録に目を落としたまま、これまでの倍近い保証金をふっかけてきた。「お互いの安心のためだよ」と笑うが、元の契約書の…
 - [rim_mine](#event-rim_mine) — 採掘坑の奥で支柱がきしみ、一度作業を止めて点検すべきだという声が上がった。手を止めれば今日の日当が削られるが、このまま掘り進めて崩れたら命がない。
 - [kaz_reunion](#event-kaz_reunion) — チェルノボーグ事変のあと、散り散りになったレユニオンが感染者の互助組織として立て直されているという噂が、北から来た旅人を通じて伝わってきた。カズデル…
-- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘区画の地表から紫色の源石ガスが噴き出し、防護服を着た公爵私兵が住民たちを問答無用で追い立てた。汚染された土壌と閉鎖線の前で怒号が飛び交っている。
+- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘地区の汚染を巡る知らせを読んだ。問題の区画へ入ったことはなく、流通する品や仕事の条件にどんな影響があるかを確かめた。
 - [timeline_talulah_leave](#event-timeline_talulah_leave) — 雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
+- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — カヴァレリエルキの街には大会の知らせと中継があふれている。大通りの画面を見上げる人も、会場へ急ぐ人もいる。どこで、どんな立場で関わるかを考えた。
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
 - [wld_plague](#event-wld_plague) — 移動都市 都市の別区画で発熱する人が増えたと、配給の列で聞いた。診療所の待ち時間や薬の値段を、近所の人が気にしていた。 乗員区画から感染症への注意が…
@@ -3867,7 +3876,7 @@
 - [minos_competition_skill_later_life](#event-minos_competition_skill_later_life) — 若い頃にミノスの競技祭へ出たことを知る近所の若者から、「一度でいいからフォームや道具の手入れを見てほしい」と頭を下げられた。今の体と相談しながら、ど…
 - [bol_dossoles_championship_work](#event-bol_dossoles_championship_work) — 水上競技大会で沸き返るドッソレスの荷受け場に、仮設スタンドを組む数日間の急募が出ていた。日当は悪くない。今の仕事や予定と折り合いがつくか考えた。
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
-- [timeline_leith_revolution](#event-timeline_leith_revolution) — 1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むな…
+- [timeline_leith_revolution](#event-timeline_leith_revolution) — 政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。
 - [timeline_el_sol_renamed_dossoles](#event-timeline_el_sol_renamed_dossoles) — 人工海浜のネオンが一斉に点灯し、カンデラ市長の演説とともに歓楽都市ドッソレスの看板が掲げられた。リゾート音楽が響き渡り、街は享楽の熱狂に包まれている…
 - [timeline_talulah_kills](#event-timeline_talulah_kills) — 凍てつく原野の古びた公爵邸から猛火と黒煙が立ち上り、吹雪の中に佇むドラコの少女の姿が目撃された。凍土の集落に不穏なざわめきが広がっている。
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
@@ -4264,7 +4273,7 @@
 - [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-genre-5"></a>
-### 差別・制度（155）
+### 差別・制度（156）
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
@@ -4292,14 +4301,14 @@
 - [lon_slum](#event-lon_slum) — かつて部屋を追い出されるように移ってきたこの下層街区で、食料と薬の炊き出しに長い列ができていた。自分の番が飛ばされないよう必死に引換券を握りしめる人…
 - [lon_housing](#event-lon_housing) — 部屋の更新手続きに行くと、家主は診断記録に目を落としたまま、これまでの倍近い保証金をふっかけてきた。「お互いの安心のためだよ」と笑うが、元の契約書の…
 - [kaz_reunion](#event-kaz_reunion) — チェルノボーグ事変のあと、散り散りになったレユニオンが感染者の互助組織として立て直されているという噂が、北から来た旅人を通じて伝わってきた。カズデル…
-- [timeline_columbia_independence](#event-timeline_columbia_independence) — ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
-- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レ…
-- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
-- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
+- [timeline_columbia_independence](#event-timeline_columbia_independence) — 独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
+- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。
+- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。
+- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 内戦開始の知らせは届いたが、この地区がその日に戦場になったとは限らない。近隣では荷と連絡の遅れを確かめ、今後の備えを話し合っている。
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
-- [timeline_world_1099](#event-timeline_world_1099) — 各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。
+- [timeline_world_1099](#event-timeline_world_1099) — 旅程上で実際に到達した検問所が、通行の審査を始めている。運行側から届いた通行条件を読み、先へ進む方法を考えた。
 - [timeline_daily_londinium_martial](#event-timeline_daily_londinium_martial) — 軍事委員会の無骨な装甲歩兵が跳ね橋の検問を固め、道行く市民たちを鋭い眼光で監視していた。
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
@@ -4418,6 +4427,7 @@
 - [v87_exclusion_organizer_infected](#event-v87_exclusion_organizer_infected) — 感染者を街区から締め出す住民会を自ら立ち上げ、商店や下宿にまで排除の申し合わせを広げてきた。その自分が鉱石病と診断された今、会合の扉を開ける前に立ち…
 - [life_infected_exclusion_pause_review](#event-life_infected_exclusion_pause_review) — 鉱石病を明かして住民会の役目を追われてから数年が過ぎた。自分が広めた排除の決まりは今も街区に生きている。そんな折、会から雑務の手伝いを求める便りが届…
 - [life_ursus_zelgrad_purge_trap](#event-life_ursus_zelgrad_purge_trap) — 広場の騒乱が遠ざかり冷え込みが厳しさを増すなか、重装憲兵と防護服を着た工廠監理官が労働区画の出口を鉄柵で完全封鎖した。『都市エンジンの緊急点検のため…
+- [journey_decision_review](#event-journey_decision_review) — 検問の前で足止めされている。届いた通行条件と旅費を確かめ、先へ進むか、滞在先で待つかを考えた。
 - [edu_scholarship_application](#event-edu_scholarship_application) — 募集案内に、学費を支える制度が記されていた。申請には本人や世帯の事情を示す書類が必要らしい。
 - [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
 
@@ -4426,7 +4436,7 @@
 - [life_work_project_setback](#event-life_work_project_setback) — 納品目前になって、届いた部品の寸法が仕様書と食い違っていることが発覚した。現場には古い図面と、納期を盾に急かせる発注者の怒鳴り声だけが残された。 工…
 
 <a id="tag-genre-7"></a>
-### 所属・組織（243）
+### 所属・組織（244）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [loan_shark_siracusa](#event-loan_shark_siracusa) — シラクーザの馴染みの食堂の奥席で、ファミリーの会計役が濃い珈琲のカップを置き、折り畳んだ証文を差し出した。「いま困っているなら融通しよう。返すのは二…
 - [fam_gunrite](#event-fam_gunrite) — 教会から、守護銃の授与と訓練の知らせが届いた。家の人たちは晴れがましい顔で、あなたが一丁の銃を受け取る日を心待ちにしている。
@@ -4448,7 +4458,7 @@
 - [hig_service_later_career_review](#event-hig_service_later_career_review) — 気づけば十五年以上も軍務・兵站の現場に身を置き、急な陣触れと家の暮らしのあいだで折り合いをつけてきた。このまま古参として部隊に残るか、培った街道と荷…
 - [kaz_merc](#event-kaz_merc) — カズデルの傭兵隊が、荒野を抜ける輸送隊の護衛を募っていた。分け前は悪くないが、生きて帰れる保証もない長旅になる。
 - [kaz_reunion](#event-kaz_reunion) — チェルノボーグ事変のあと、散り散りになったレユニオンが感染者の互助組織として立て直されているという噂が、北から来た旅人を通じて伝わってきた。カズデル…
-- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
+- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
 - [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
@@ -4670,9 +4680,10 @@
 - [cl_siracusa_market_patron](#event-cl_siracusa_market_patron) — シラクーザの市場で店の手伝いを頼まれたが、店主は毎月の売り上げとは別に、地元のファミリーへ納める金を裏帳面に書き込んでいた。表の帳面だけをつけるか、…
 - [v87_exclusion_organizer_infected](#event-v87_exclusion_organizer_infected) — 感染者を街区から締め出す住民会を自ら立ち上げ、商店や下宿にまで排除の申し合わせを広げてきた。その自分が鉱石病と診断された今、会合の扉を開ける前に立ち…
 - [life_infected_exclusion_pause_review](#event-life_infected_exclusion_pause_review) — 鉱石病を明かして住民会の役目を追われてから数年が過ぎた。自分が広めた排除の決まりは今も街区に生きている。そんな折、会から雑務の手伝いを求める便りが届…
+- [history_path_review_kazdel_commission_founded](#event-history_path_review_kazdel_commission_founded) — 地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
 
 <a id="tag-genre-8"></a>
-### 戦争・政治（145）
+### 戦争・政治（146）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [war](#event-war) — 遠くで砲撃の閃光が走り、移動都市は黒煙を吐いて緊急針路変更を始めた。機関区へ走る整備班と、避難路へ殺到する住民の怒号で通路が埋め尽くされた。 地響き…
 - [mv](#event-mv) — きな臭い知らせが相次ぎ、この移動都市もいつ戦火に巻き込まれるか分からない。外の定住地へ降りるか、別の移動都市へ乗り継ぐか、懐の金を数えながら思案した…
@@ -4685,24 +4696,24 @@
 - [vic_war](#event-vic_war) — ロンディニウムの居住区まで激しい砲撃の音が迫り、窓ガラスがビリビリと震え続けている。昨日まで通れた大通りが今日は瓦礫で塞がり、飲み水と今夜の寝床を確…
 - [hig_tension](#event-hig_tension) — 北院と南院の睨み合いや、海の向こうのウルサスとのいくさ話が、仕事帰りの茶屋でもしきりに囁かれるようになった。辻の掲示板には、近隣の陣屋が兵站や街道警…
 - [kaz_merc](#event-kaz_merc) — カズデルの傭兵隊が、荒野を抜ける輸送隊の護衛を募っていた。分け前は悪くないが、生きて帰れる保証もない長旅になる。
-- [kaz_exile](#event-kaz_exile) — カズデル全土に内戦の炎が広がり、大人たちは国を捨てるか残るかで夜通し言い争っている。あなたは押し殺した声に耳を澄ませながら、いつでも逃げられるよう荷…
-- [kazdel_afterfall](#event-kazdel_afterfall) — ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼…
-- [bol_war](#event-bol_war) — 三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金…
+- [kaz_exile](#event-kaz_exile) — 内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。
+- [kazdel_afterfall](#event-kazdel_afterfall) — 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
+- [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 - [bol_local_contract](#event-bol_local_contract) — 市場の木の掲示板に、農作物の袋詰め、採鉱道具の修理、そして街道を行く荷車の護衛という三つの日雇い募集が並んでいた。どれも数日ポッキリの口で、危険の度…
-- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦…
-- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 傭兵団の頭領たちが城塞へ集結し、軍事委員会の無骨な鉄の印章が市壁に刻まれた。統一軍の旗が掲げられ、集落の若者たちに召集と物資拠出の鋭い視線が向けられ…
+- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。
+- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 軍事委員会の成立を伝える知らせが地区へ届いた。兵站の求人や物資の照会が増え、人々は新しい力との距離を測っていた。
 - [timeline_el_sol_renovation_paused](#event-timeline_el_sol_renovation_paused) — ボリバル内戦の激化により、エル・ソルの観光改装計画が凍結された。建設途中の骨組みが放置され、港には行き場を失った大量の建築資材が雨ざらしになっている…
-- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — 国境要塞から轟く巨砲の重低音が空を震わせ、傷病兵を満載した軍用列車が絶え間なく駅へ滑り込んできた。第十次ウルサス＝カジミエーシュ戦争の火蓋が切られ、…
-- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — 鉱山奥の封鎖区画に軍の特科装甲車が何台も乗り付け、黒塗りの幌で覆われた巨大な機材が秘密裏に運び込まれた。坑道周辺は立入禁止となり、作業員たちに厳しい…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
-- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 吹き荒れる砂嵐の中、旧パディシャーの反乱残党と傭兵隊がオアシスの市場で激突した。乾いた砂に鮮血が染み込み、隊商の荷車が次々と炎上している。
+- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — ウルサスとカジミエーシュの戦争についての報道を読んだ。国境にいるわけではない。仕事や親族との往来に影響があるか、分かる範囲から確かめた。
+- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — チェルノボーグの研究を巡る風聞を耳にした。どの話が確かなのかは分からず、封鎖された施設の中を自分が見たわけでもない。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
+- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 砂漠の市場で起きた争いの噂を聞いた。交戦した者や被害の規模について話が食い違い、隊商の予定をどう扱うかで商人たちが迷っていた。
 - [timeline_sarcophagus_purge](#event-timeline_sarcophagus_purge) — 深夜の研究所街区を帝国特科憲兵部隊が完全包囲し、激しい銃声のあと、白衣の研究員たちが雪の上に倒れ伏した。機密資料を満載した軍用トラックが夜の闇へと疾…
-- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
+- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。
 - [timeline_babel_split](#event-timeline_babel_split) — 陸艦バベルが黒煙を吐いて城砦を離脱し、追撃の矢と術式が甲板に降り注ぐ中、サルカズの同胞同士が銃を向け合った。割れた王庭の絆が修復不能な亀裂を刻んでい…
-- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
-- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
+- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 戦争宣言の知らせが地区にも届いた。物資や働き手を求める声と、関わりを避ける声が交錯していた。
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
+- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 国境地帯の会戦を伝える知らせを受け取った。どの道を通れるかについては別の確認が必要で、知らせの地名を地図でたどると、往来の先行きが気に掛かった。
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_katorga_incident](#event-timeline_katorga_incident) — 大学前広場を取り囲んだ帝国憲兵隊が棍棒と銃剣で抗議学生たちを殴り倒し、無蓋トラックへ次々と放り込んだ。凍てつく石畳に血痕が凍りついていく。
 - [timeline_daily_londinium_siege](#event-timeline_daily_londinium_siege) — 諸侯軍の攻城砲の地鳴りが一日中響き、路地に立ち込める硝煙の向こうで自救軍の若者たちが救援物資を運び込んでいた。
@@ -4818,9 +4829,10 @@
 - [car_bol_soldier_choice_counterattack](#event-car_bol_soldier_choice_counterattack) — 敵軍の夜間砲撃がやんだ瞬間、司令部から敵の前進基地への突撃命令が下った。泥濘に足を取られる中、照明弾の光が交差する無人地帯を駆け抜ける。生き残るため…
 - [inter_ursus_minority_work_v76](#event-inter_ursus_minority_work_v76) — 兵営の点呼で名簿をめくっていた担当官が、あなたの出自欄でぴたりとペンを止めた。隣のウルサス人兵士には一言二言で済ませた身元の確認を、こちらにだけ執拗…
 - [life_ursus_zelgrad_evacuation](#event-life_ursus_zelgrad_evacuation) — 広場に集められた住民たちの前で、北原の元坑夫を名乗る男が軍の研究と感染者の非道な扱いを声を限りに告発し、今すぐ街を出るよう叫んだ。ざわめきが広がり、…
+- [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 
 <a id="tag-genre-9"></a>
-### 天災・避難（202）
+### 天災・避難（203）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [rim_catastrophe_transporter_review](#event-rim_catastrophe_transporter_review) — 天災が爪痕を残した坑道を調べる助手になって二年が過ぎた。崩落した岩肌や黒く光る源石の露出を図面に落とし込む隣で、同行する天災トランスポーターは絶えず…
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
@@ -4846,15 +4858,15 @@
 - [ibe_rebuild](#event-ibe_rebuild) — 潮風で朽ちた海辺の街区で、崩れた倉庫の床や石畳を直す短期の復旧人足を募っていた。長く続く仕事ではないが、日銭にはなる。
 - [ibe_rebuild_contract_review](#event-ibe_rebuild_contract_review) — 海辺の街区で、また別の古い倉庫を直す日雇い募集が出ていた。前に覚えた手順を生かして応募するか、もっと安定した別の職を探すか思案した。
 - [sar_sandstorm](#event-sar_sandstorm) — 生ぬるい突風とともに、移動都市の外縁デッキへ赤茶けた砂が吹き込み始めた。巨大な砂嵐の接近を知らせる鐘が鳴り響き、人々が慌てて鎧戸を閉め、内側の区画へ…
-- [kazdel_afterfall](#event-kazdel_afterfall) — ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼…
+- [kazdel_afterfall](#event-kazdel_afterfall) — 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
 - [sie_volcano](#event-sie_volcano) — 夏の祭典の熱気が冷めたころ、役所から新設される移動都市への移住案内が配られた。火山の活動が年々激しくなり、この美しい浜辺の街を丸ごと移すのだという。…
-- [timeline_great_silence](#event-timeline_great_silence) — 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄え…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
-- [timeline_leith_revolution](#event-timeline_leith_revolution) — 1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むな…
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
+- [timeline_great_silence](#event-timeline_great_silence) — 海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
+- [timeline_leith_revolution](#event-timeline_leith_revolution) — 政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
-- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
+- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。
+- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。
 - [timeline_daily_chernobog_alarm](#event-timeline_daily_chernobog_alarm) — チェルノボーグの市街に空襲と天災の二重のサイレンが狂ったように鳴り響き、遠くの街区から黒煙が立ち上っていた。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
 - [wld_plague](#event-wld_plague) — 移動都市 都市の別区画で発熱する人が増えたと、配給の列で聞いた。診療所の待ち時間や薬の値段を、近所の人が気にしていた。 乗員区画から感染症への注意が…
@@ -5021,6 +5033,7 @@
 - [life_ursus_zelgrad_displaced_work](#event-life_ursus_zelgrad_displaced_work) — （動的本文）
 - [life_ursus_zelgrad_displaced_work_review](#event-life_ursus_zelgrad_displaced_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
+- [history_path_review_kazdel_civil_war](#event-history_path_review_kazdel_civil_war) — 避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 - [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
 - [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
 
@@ -5113,15 +5126,15 @@
 - [sar_tribe](#event-sar_tribe) — オアシスから延びる細い水路の堰の前で、顔見知りの二つの家が水を引く順番をめぐって言い争っていた。通りかかったあなたを見止めると、双方が「お前もここで…
 - [sar_sandstorm](#event-sar_sandstorm) — 生ぬるい突風とともに、移動都市の外縁デッキへ赤茶けた砂が吹き込み始めた。巨大な砂嵐の接近を知らせる鐘が鳴り響き、人々が慌てて鎧戸を閉め、内側の区画へ…
 - [hig_shrine](#event-hig_shrine) — 帰り道に神社の前を通りかかると、氏子や近所の人たちが祭礼の支度に追われていた。紅白の幕を張り、提灯を吊るし、石段の脇には奉納金を募る木札が並んでいる…
-- [kazdel_afterfall](#event-kazdel_afterfall) — ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼…
+- [kazdel_afterfall](#event-kazdel_afterfall) — 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
 - [kazdel_rebuild](#event-kazdel_rebuild) — 落ち着かない仮住まいが続き、家の人は毎日の食べ物と燃料を手に入れるだけで精一杯だ。通りで同じ故郷の訛りや角の形を見かけるたび、思わず目で追ってしまう…
 - [sie_tourist](#event-sie_tourist) — オブシディアン・フェスティバルが開幕し、街中が浮き立つような音楽と観光客の熱気で溢れ返っている。浜辺の露店では、夜遅くの片づけまで手伝ってくれる若手…
 - [minos_competition_skill_later_life](#event-minos_competition_skill_later_life) — 若い頃にミノスの競技祭へ出たことを知る近所の若者から、「一度でいいからフォームや道具の手入れを見てほしい」と頭を下げられた。今の体と相談しながら、ど…
 - [bol_dossoles_traveler_account](#event-bol_dossoles_traveler_account) — 街道沿いの荷馬車の休憩所で、東へ向かうくたびれた旅人と相席になった。せっかくドッソレスの近くまで来たのに、乗り継ぎの運賃すら足りず、華やかな街を遠く…
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
 - [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
-- [timeline_world_1099](#event-timeline_world_1099) — 各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。
+- [timeline_world_1099](#event-timeline_world_1099) — 旅程上で実際に到達した検問所が、通行の審査を始めている。運行側から届いた通行条件を読み、先へ進む方法を考えた。
 - [discrimination_after](#event-discrimination_after) — 申し立てから数日後、上司は返事を先延ばしにし、同僚は仕事の話しかしなくなった。 窓口から返事はなく、顔見知りはその話題になると目をそらした。
 - [wld_plague](#event-wld_plague) — 移動都市 都市の別区画で発熱する人が増えたと、配給の列で聞いた。診療所の待ち時間や薬の値段を、近所の人が気にしていた。 乗員区画から感染症への注意が…
 - [neighbor_death_notice](#event-neighbor_death_notice) — {contactDeathTiming}、{contactName}が亡くなったと同じ区画の人から聞いた。知らせには死因も最期の様子もなかった。玄関…
@@ -5456,7 +5469,7 @@
 - [kje_pilgrim](#event-kje_pilgrim) — 聖山へ向かう巡礼者たちが、麓の宿場で雪道の様子を聞き合っている。一緒について行くなら、旅費としっかりした防寒具が要る。仕事を休んで山へ登るか、麓から…
 - [yan_sui](#event-yan_sui) — 年の瀬、暖を取ろうと立ち寄った茶館で、古びた絵巻を広げて『歳』とその代理人たちの物語を語る講釈師がいた。ただの昔話だと笑う客もいれば、今もどこかに息…
 - [timeline_el_sol_founded](#event-timeline_el_sol_founded) — 荒野の砂塵を切り裂いて巨大な移動プレートが結合され、エル・ソルの基礎が目の前に組み上がった。荷役と補修の槌音が昼夜を問わず響き渡り、新しい街の建設に…
-- [timeline_world_1101](#event-timeline_world_1101) — 監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。
+- [timeline_world_1101](#event-timeline_world_1101) — 海辺や北方から届く不穏な知らせを読んだ。海の哨所と北の防壁を一つの場所とは考えず、届いた情報の地域と日付を分けて整理した。
 - [timeline_daily_bolivar_barricade](#event-timeline_daily_bolivar_barricade) — 戦線から離れた市でも、荷車の行き先を確かめる声が増えた。市場の値札がまた書き替えられ、誰もその理由を一つに決められなかった。
 - [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — 海の異変を伝える話が内陸へも届き、港から来る荷の行方を尋ねる人が増えた。海辺で何が起きたのか、行商人たちの話は少しずつ食い違っていた。
 - [f91](#event-f91) — 役所の控え室で帳簿をめくると、先に受け付けたはずの申請が露骨に後ろへ回されていた。理由を質しても、上役の担当者は「そういう決まりだ」としか言わない。…
@@ -6329,7 +6342,7 @@
 - [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
 
 <a id="tag-genre-14"></a>
-### 労働・経済（753）
+### 労働・経済（761）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -6478,7 +6491,7 @@
 - [rim_mine](#event-rim_mine) — 採掘坑の奥で支柱がきしみ、一度作業を止めて点検すべきだという声が上がった。手を止めれば今日の日当が削られるが、このまま掘り進めて崩れたら命がない。
 - [kaz_merc](#event-kaz_merc) — カズデルの傭兵隊が、荒野を抜ける輸送隊の護衛を募っていた。分け前は悪くないが、生きて帰れる保証もない長旅になる。
 - [kazdel_rebuild](#event-kazdel_rebuild) — 落ち着かない仮住まいが続き、家の人は毎日の食べ物と燃料を手に入れるだけで精一杯だ。通りで同じ故郷の訛りや角の形を見かけるたび、思わず目で追ってしまう…
-- [bol_war](#event-bol_war) — 三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金…
+- [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 - [bol_tourist](#event-bol_tourist) — 市場の荷さばき場に、急ぎの積荷を仕分ける数日間の人手募集が貼り出されていた。手っ取り早く日銭を稼ぐには悪くない話だ。
 - [bol_local_contract](#event-bol_local_contract) — 市場の木の掲示板に、農作物の袋詰め、採鉱道具の修理、そして街道を行く荷車の護衛という三つの日雇い募集が並んでいた。どれも数日ポッキリの口で、危険の度…
 - [sie_tourist](#event-sie_tourist) — オブシディアン・フェスティバルが開幕し、街中が浮き立つような音楽と観光客の熱気で溢れ返っている。浜辺の露店では、夜遅くの片づけまで手伝ってくれる若手…
@@ -6487,13 +6500,13 @@
 - [rim_shipment_label](#event-rim_shipment_label) — 自治地区の集配所で、あなた宛てに届いた重たい工具箱を係員が出してきた。ただ、荷札に書かれた坑区番号がすでに閉鎖された古い区画になっており、そのままで…
 - [bol_dossoles_championship_work](#event-bol_dossoles_championship_work) — 水上競技大会で沸き返るドッソレスの荷受け場に、仮設スタンドを組む数日間の急募が出ていた。日当は悪くない。今の仕事や予定と折り合いがつくか考えた。
 - [bol_dossoles_traveler_account](#event-bol_dossoles_traveler_account) — 街道沿いの荷馬車の休憩所で、東へ向かうくたびれた旅人と相席になった。せっかくドッソレスの近くまで来たのに、乗り継ぎの運賃すら足りず、華やかな街を遠く…
-- [timeline_columbia_independence](#event-timeline_columbia_independence) — ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に…
-- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 傭兵団の頭領たちが城塞へ集結し、軍事委員会の無骨な鉄の印章が市壁に刻まれた。統一軍の旗が掲げられ、集落の若者たちに召集と物資拠出の鋭い視線が向けられ…
-- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
+- [timeline_columbia_independence](#event-timeline_columbia_independence) — 独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。
+- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 軍事委員会の成立を伝える知らせが地区へ届いた。兵站の求人や物資の照会が増え、人々は新しい力との距離を測っていた。
+- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
 - [timeline_el_sol_renovation_paused](#event-timeline_el_sol_renovation_paused) — ボリバル内戦の激化により、エル・ソルの観光改装計画が凍結された。建設途中の骨組みが放置され、港には行き場を失った大量の建築資材が雨ざらしになっている…
-- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — 鉱山奥の封鎖区画に軍の特科装甲車が何台も乗り付け、黒塗りの幌で覆われた巨大な機材が秘密裏に運び込まれた。坑道周辺は立入禁止となり、作業員たちに厳しい…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
-- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レ…
+- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — チェルノボーグの研究を巡る風聞を耳にした。どの話が確かなのかは分からず、封鎖された施設の中を自分が見たわけでもない。
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
+- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。
 - [timeline_talulah_leave](#event-timeline_talulah_leave) — 雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。
 - [timeline_katorga_incident](#event-timeline_katorga_incident) — 大学前広場を取り囲んだ帝国憲兵隊が棍棒と銃剣で抗議学生たちを殴り倒し、無蓋トラックへ次々と放り込んだ。凍てつく石畳に血痕が凍りついていく。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
@@ -7060,6 +7073,14 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [history_path_review_columbia_independence](#event-history_path_review_columbia_independence) — 開拓地区の自治活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_commission_founded](#event-history_path_review_kazdel_commission_founded) — 地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_siracusa_unification](#event-history_path_review_siracusa_unification) — 地区の掟を担うつながりに関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_ursus_great_rebellion](#event-history_path_review_ursus_great_rebellion) — 地区の労働者の要求活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_rim_billiton_independence](#event-history_path_review_rim_billiton_independence) — 鉱区の自治運営に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
+- [history_path_review_kazdel_war_declared](#event-history_path_review_kazdel_war_declared) — 地区の後方補給班に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_civil_war](#event-history_path_review_kazdel_civil_war) — 避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 - [edu_higher_search_decision](#event-edu_higher_search_decision) — 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
 - [edu_course_admission_contract](#event-edu_course_admission_contract) — 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
 - [edu_overage_equivalency_review](#event-edu_overage_equivalency_review) — 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
@@ -7086,7 +7107,7 @@
 
 ## 状況別索引
 
-[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (142)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (248)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[記録・説明責任 (1)](#tag-situation-108)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-109)　・　[記録と責任 (1)](#tag-situation-110)　・　[技師 (1)](#tag-situation-111)　・　[技能条件 (1)](#tag-situation-112)　・　[求職 (2)](#tag-situation-113)　・　[求職・紹介 (1)](#tag-situation-114)　・　[旧坑区の荷札照会 (1)](#tag-situation-115)　・　[競技会場の仮設席設営 (1)](#tag-situation-116)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-117)　・　[競技騎士の肩の負傷 (1)](#tag-situation-118)　・　[競技祭 (1)](#tag-situation-119)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-120)　・　[脅迫を受ける (1)](#tag-situation-121)　・　[脅迫記録の解除分岐 (1)](#tag-situation-122)　・　[極東 (1)](#tag-situation-123)　・　[極東の軍務・兵站ルート (2)](#tag-situation-124)　・　[極東の神社 (1)](#tag-situation-125)　・　[勤務縮小後 (1)](#tag-situation-126)　・　[近隣からの相談 (1)](#tag-situation-127)　・　[近隣との情報交換 (1)](#tag-situation-128)　・　[近隣の若年者との交流 (1)](#tag-situation-129)　・　[近隣互助 (1)](#tag-situation-130)　・　[軍務・護衛の継続 (1)](#tag-situation-131)　・　[契約確認 (1)](#tag-situation-132)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-133)　・　[継続／民間移行／求職 (1)](#tag-situation-134)　・　[継続後の振り返り (1)](#tag-situation-135)　・　[継続後の窓口 (1)](#tag-situation-136)　・　[警戒・質問の選択 (1)](#tag-situation-137)　・　[検査延期後の再検討 (1)](#tag-situation-138)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-139)　・　[源石片による負傷・曝露 (1)](#tag-situation-140)　・　[源石片への接触回避 (1)](#tag-situation-141)　・　[言葉の行き違い (1)](#tag-situation-142)　・　[個人情報 (1)](#tag-situation-143)　・　[古傷による職業転換 (1)](#tag-situation-144)　・　[固定集落への配達 (1)](#tag-situation-145)　・　[固定都市 (1)](#tag-situation-146)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-147)　・　[交易所の共用端末 (1)](#tag-situation-148)　・　[公証人役場 (1)](#tag-situation-149)　・　[工業区域 (1)](#tag-situation-150)　・　[工場労働者 (1)](#tag-situation-151)　・　[港湾労働 (2)](#tag-situation-152)　・　[鉱区事故 (1)](#tag-situation-153)　・　[鉱山の交替減少 (1)](#tag-situation-154)　・　[鉱山労働 (1)](#tag-situation-155)　・　[鉱石病以外の回復期 (1)](#tag-situation-156)　・　[鉱石病診断済み (1)](#tag-situation-157)　・　[鉱夫 (1)](#tag-situation-158)　・　[鉱夫分岐 (1)](#tag-situation-159)　・　[高等教育経験者の教員応募 (1)](#tag-situation-160)　・　[高齢期 (1)](#tag-situation-161)　・　[高齢期の就労 (1)](#tag-situation-162)　・　[告示の交代 (1)](#tag-situation-163)　・　[国の発生条件あり (1561)](#tag-situation-164)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-165)　・　[再受付・別の診療先の探索 (1)](#tag-situation-166)　・　[採掘坑内の換気停止 (1)](#tag-situation-167)　・　[採掘地域 (1)](#tag-situation-168)　・　[採掘地域に限定 (1)](#tag-situation-169)　・　[採掘中 (1)](#tag-situation-170)　・　[災害後の商店再開 (1)](#tag-situation-171)　・　[祭典 (1)](#tag-situation-172)　・　[作業技能 (1)](#tag-situation-173)　・　[作業停止・退避 (1)](#tag-situation-174)　・　[山道の情報共有 (1)](#tag-situation-175)　・　[山麓の宿への道案内 (1)](#tag-situation-176)　・　[仕送り (1)](#tag-situation-177)　・　[子どもの就学 (1)](#tag-situation-178)　・　[子どもの誕生・養育 (1)](#tag-situation-179)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-180)　・　[子への訃報 (1)](#tag-situation-181)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-182)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-183)　・　[思春期 (1)](#tag-situation-184)　・　[支援の受入れ (1)](#tag-situation-185)　・　[氏族養育 (1)](#tag-situation-186)　・　[資格取得後の求職 (1)](#tag-situation-187)　・　[飼育動物の世話 (1)](#tag-situation-188)　・　[次便待ち (1)](#tag-situation-189)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-190)　・　[自動発生イベント (1418)](#tag-situation-191)　・　[湿地地勢 (1)](#tag-situation-192)　・　[守秘と名簿 (1)](#tag-situation-193)　・　[種族差別 (2)](#tag-situation-194)　・　[種族差別後 (1)](#tag-situation-195)　・　[酒類の仕入れ帳 (1)](#tag-situation-196)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-197)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-198)　・　[授業担当者との接点 (1)](#tag-situation-199)　・　[収容・隔離中 (1)](#tag-situation-200)　・　[収容・隔離中の診療 (1)](#tag-situation-201)　・　[収容中 (4)](#tag-situation-202)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-203)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-204)　・　[就労中 (2)](#tag-situation-205)　・　[就労中の鉱夫 (1)](#tag-situation-206)　・　[住居差別 (1)](#tag-situation-207)　・　[住居差別後 (1)](#tag-situation-208)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-209)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-210)　・　[宿泊拒否 (1)](#tag-situation-211)　・　[宿泊拒否後 (1)](#tag-situation-212)　・　[出場・観戦・場外見物 (1)](#tag-situation-213)　・　[所持金による本文・選択肢 (1)](#tag-situation-214)　・　[小舞台 (1)](#tag-situation-215)　・　[少年・青年 (2)](#tag-situation-216)　・　[少年・青年・壮年 (3)](#tag-situation-217)　・　[消息不明者の生存確認 (1)](#tag-situation-218)　・　[症状進行中 (1)](#tag-situation-219)　・　[情報網の高い居住地 (1)](#tag-situation-220)　・　[条件付き本文 (210)](#tag-situation-221)　・　[職業課程の継続 (1)](#tag-situation-222)　・　[職業課程の修了 (1)](#tag-situation-223)　・　[職業条件あり (71)](#tag-situation-224)　・　[職場・近隣で露見の兆し (1)](#tag-situation-225)　・　[職場の排斥 (1)](#tag-situation-226)　・　[食堂の客足 (1)](#tag-situation-227)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-228)　・　[食料不足 (1)](#tag-situation-229)　・　[森林地勢 (1)](#tag-situation-230)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-231)　・　[親の家計判断 (1)](#tag-situation-232)　・　[親の感染 (1)](#tag-situation-233)　・　[親の死後 (1)](#tag-situation-234)　・　[親子の記憶 (1)](#tag-situation-235)　・　[診断済み (1)](#tag-situation-236)　・　[診断済み・未治療 (1)](#tag-situation-237)　・　[診療・休養・記録から選択 (1)](#tag-situation-238)　・　[診療・作業調整 (1)](#tag-situation-239)　・　[診療・動作を避ける選択 (1)](#tag-situation-240)　・　[診療・付き添いの依頼 (1)](#tag-situation-241)　・　[診療・負担軽減から選択 (1)](#tag-situation-242)　・　[診療延期後 (1)](#tag-situation-243)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-244)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-245)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-246)　・　[身近な人への支援依頼 (1)](#tag-situation-247)　・　[身近な連絡先あり (1)](#tag-situation-248)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-249)　・　[睡眠不足 (1)](#tag-situation-250)　・　[世界イベント後 (1)](#tag-situation-251)　・　[成人 (4)](#tag-situation-252)　・　[成人・返済支援の選択 (1)](#tag-situation-253)　・　[成人した子 (2)](#tag-situation-254)　・　[成人の種族偏見に触れる (1)](#tag-situation-255)　・　[生活上の備え (1)](#tag-situation-256)　・　[青年・壮年 (5)](#tag-situation-257)　・　[青年・壮年・老年 (3)](#tag-situation-258)　・　[雪祭司・聖樹 (1)](#tag-situation-259)　・　[選択イベント (1089)](#tag-situation-260)　・　[前段で残留した人 (1)](#tag-situation-261)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-262)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-263)　・　[全年齢の循環器系エピソード (1)](#tag-situation-264)　・　[全年齢の食料不足 (1)](#tag-situation-265)　・　[全年齢の負傷後の痛み (1)](#tag-situation-266)　・　[組織・所属に言及 (175)](#tag-situation-267)　・　[組織離脱後 (1)](#tag-situation-268)　・　[相談・医療・休養 (1)](#tag-situation-269)　・　[相談・記録 (1)](#tag-situation-270)　・　[相談・記録・経路変更 (1)](#tag-situation-271)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-272)　・　[足場や荷の異常 (1)](#tag-situation-273)　・　[退会後の関係 (1)](#tag-situation-274)　・　[退職選択 (1)](#tag-situation-275)　・　[大いなる静謐後 (1)](#tag-situation-276)　・　[大学課程の継続 (1)](#tag-situation-277)　・　[大学課程の修了 (1)](#tag-situation-278)　・　[短期雇用 (1)](#tag-situation-279)　・　[短期雇用と現場危険 (1)](#tag-situation-280)　・　[地域の供給不安定 (1)](#tag-situation-281)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-282)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-283)　・　[地域学習会・独学の選択 (1)](#tag-situation-284)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-285)　・　[仲間の捜索 (1)](#tag-situation-286)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-287)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-288)　・　[通学していない (1)](#tag-situation-289)　・　[通学中 (1)](#tag-situation-290)　・　[通行止め・迂回 (1)](#tag-situation-291)　・　[天災・戦乱による避難中 (1)](#tag-situation-292)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-293)　・　[店舗からの排斥集会 (1)](#tag-situation-294)　・　[転居後の近隣交流 (1)](#tag-situation-295)　・　[都市街区での襲撃 (1)](#tag-situation-296)　・　[動的表示条件 (666)](#tag-situation-297)　・　[動的本文 (30)](#tag-situation-298)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-299)　・　[同一都市の周縁区への転居 (1)](#tag-situation-300)　・　[同郷者との交流 (1)](#tag-situation-301)　・　[同行者との交流 (1)](#tag-situation-302)　・　[匿名動画の出所確認 (1)](#tag-situation-303)　・　[独立商業所属 (1)](#tag-situation-304)　・　[読み書きに困難がある (1)](#tag-situation-305)　・　[日雇い (1)](#tag-situation-306)　・　[乳児の成長 (1)](#tag-situation-307)　・　[任意応募・採用選考 (1)](#tag-situation-308)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-309)　・　[年齢：35歳以上 (2)](#tag-situation-310)　・　[年齢：児童 (967)](#tag-situation-311)　・　[年齢：少年 (1194)](#tag-situation-312)　・　[年齢：青年 (2361)](#tag-situation-313)　・　[年齢：壮年 (2301)](#tag-situation-314)　・　[年齢：乳児 (15)](#tag-situation-315)　・　[年齢：幼児 (31)](#tag-situation-316)　・　[年齢：老年 (1505)](#tag-situation-317)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-318)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-319)　・　[配給・食料不足 (1)](#tag-situation-320)　・　[配給・寝床・診療案内 (1)](#tag-situation-321)　・　[配給と地域支援 (1)](#tag-situation-322)　・　[配給登録 (1)](#tag-situation-323)　・　[配偶者との死別 (1)](#tag-situation-324)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-325)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-326)　・　[班間の点検記録 (1)](#tag-situation-327)　・　[班内の技能伝達 (1)](#tag-situation-328)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-329)　・　[避難中 (1)](#tag-situation-330)　・　[非感染者 (1)](#tag-situation-331)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-332)　・　[付き添い依頼・受診延期 (1)](#tag-situation-333)　・　[付き添い相談 (1)](#tag-situation-334)　・　[扶養中の子 (2)](#tag-situation-335)　・　[扶養中の子の看病 (1)](#tag-situation-336)　・　[負傷後の職務調整 (1)](#tag-situation-337)　・　[部品寸法 (1)](#tag-situation-338)　・　[復旧作業中の負傷 (1)](#tag-situation-339)　・　[粉塵への接触懸念 (1)](#tag-situation-340)　・　[粉塵曝露 (2)](#tag-situation-341)　・　[兵士の消息不明 (1)](#tag-situation-342)　・　[兵役招集 (1)](#tag-situation-343)　・　[別居・転居 (1)](#tag-situation-344)　・　[亡命・移住 (2)](#tag-situation-345)　・　[未診断の感染者 (1)](#tag-situation-346)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-347)　・　[未成年は養育者判断 (8)](#tag-situation-348)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-349)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-350)　・　[名前を知る相手 (1)](#tag-situation-351)　・　[夜間の世話 (1)](#tag-situation-352)　・　[友人との文通再開 (1)](#tag-situation-353)　・　[友人への恋心 (1)](#tag-situation-354)　・　[傭兵・護衛勤務 (1)](#tag-situation-355)　・　[傭兵隊の護衛契約 (1)](#tag-situation-356)　・　[傭兵隊の通過 (1)](#tag-situation-357)　・　[幼い子の養育 (1)](#tag-situation-358)　・　[用事の再開・再診 (1)](#tag-situation-359)　・　[養育者の視点 (1)](#tag-situation-360)　・　[離婚後の元配偶者の死 (1)](#tag-situation-361)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-362)　・　[離婚後の子育て・連絡 (1)](#tag-situation-363)　・　[龍門 (1)](#tag-situation-364)　・　[龍門の移動都市居住区 (1)](#tag-situation-365)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-366)　・　[龍門の商業街 (1)](#tag-situation-367)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-368)　・　[隣人との死別 (1)](#tag-situation-369)　・　[隣人との伝言再開 (1)](#tag-situation-370)　・　[隣人の消息不明 (1)](#tag-situation-371)　・　[隣人の生存確認 (1)](#tag-situation-372)　・　[連絡・休息の継続 (1)](#tag-situation-373)　・　[連絡先と家の用事の相談 (1)](#tag-situation-374)　・　[労務補償 (1)](#tag-situation-375)
+[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (143)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (248)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[記録・説明責任 (1)](#tag-situation-108)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-109)　・　[記録と責任 (1)](#tag-situation-110)　・　[技師 (1)](#tag-situation-111)　・　[技能条件 (1)](#tag-situation-112)　・　[求職 (2)](#tag-situation-113)　・　[求職・紹介 (1)](#tag-situation-114)　・　[旧坑区の荷札照会 (1)](#tag-situation-115)　・　[競技会場の仮設席設営 (1)](#tag-situation-116)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-117)　・　[競技騎士の肩の負傷 (1)](#tag-situation-118)　・　[競技祭 (1)](#tag-situation-119)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-120)　・　[脅迫を受ける (1)](#tag-situation-121)　・　[脅迫記録の解除分岐 (1)](#tag-situation-122)　・　[極東 (1)](#tag-situation-123)　・　[極東の軍務・兵站ルート (2)](#tag-situation-124)　・　[極東の神社 (1)](#tag-situation-125)　・　[勤務縮小後 (1)](#tag-situation-126)　・　[近隣からの相談 (1)](#tag-situation-127)　・　[近隣との情報交換 (1)](#tag-situation-128)　・　[近隣の若年者との交流 (1)](#tag-situation-129)　・　[近隣互助 (1)](#tag-situation-130)　・　[軍務・護衛の継続 (1)](#tag-situation-131)　・　[契約確認 (1)](#tag-situation-132)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-133)　・　[継続／民間移行／求職 (1)](#tag-situation-134)　・　[継続後の振り返り (1)](#tag-situation-135)　・　[継続後の窓口 (1)](#tag-situation-136)　・　[警戒・質問の選択 (1)](#tag-situation-137)　・　[検査延期後の再検討 (1)](#tag-situation-138)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-139)　・　[源石片による負傷・曝露 (1)](#tag-situation-140)　・　[源石片への接触回避 (1)](#tag-situation-141)　・　[言葉の行き違い (1)](#tag-situation-142)　・　[個人情報 (1)](#tag-situation-143)　・　[古傷による職業転換 (1)](#tag-situation-144)　・　[固定集落への配達 (1)](#tag-situation-145)　・　[固定都市 (1)](#tag-situation-146)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-147)　・　[交易所の共用端末 (1)](#tag-situation-148)　・　[公証人役場 (1)](#tag-situation-149)　・　[工業区域 (1)](#tag-situation-150)　・　[工場労働者 (1)](#tag-situation-151)　・　[港湾労働 (2)](#tag-situation-152)　・　[鉱区事故 (1)](#tag-situation-153)　・　[鉱山の交替減少 (1)](#tag-situation-154)　・　[鉱山労働 (1)](#tag-situation-155)　・　[鉱石病以外の回復期 (1)](#tag-situation-156)　・　[鉱石病診断済み (1)](#tag-situation-157)　・　[鉱夫 (1)](#tag-situation-158)　・　[鉱夫分岐 (1)](#tag-situation-159)　・　[高等教育経験者の教員応募 (1)](#tag-situation-160)　・　[高齢期 (1)](#tag-situation-161)　・　[高齢期の就労 (1)](#tag-situation-162)　・　[告示の交代 (1)](#tag-situation-163)　・　[国の発生条件あり (1561)](#tag-situation-164)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-165)　・　[再受付・別の診療先の探索 (1)](#tag-situation-166)　・　[採掘坑内の換気停止 (1)](#tag-situation-167)　・　[採掘地域 (1)](#tag-situation-168)　・　[採掘地域に限定 (1)](#tag-situation-169)　・　[採掘中 (1)](#tag-situation-170)　・　[災害後の商店再開 (1)](#tag-situation-171)　・　[祭典 (1)](#tag-situation-172)　・　[作業技能 (1)](#tag-situation-173)　・　[作業停止・退避 (1)](#tag-situation-174)　・　[山道の情報共有 (1)](#tag-situation-175)　・　[山麓の宿への道案内 (1)](#tag-situation-176)　・　[仕送り (1)](#tag-situation-177)　・　[子どもの就学 (1)](#tag-situation-178)　・　[子どもの誕生・養育 (1)](#tag-situation-179)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-180)　・　[子への訃報 (1)](#tag-situation-181)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-182)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-183)　・　[思春期 (1)](#tag-situation-184)　・　[支援の受入れ (1)](#tag-situation-185)　・　[氏族養育 (1)](#tag-situation-186)　・　[資格取得後の求職 (1)](#tag-situation-187)　・　[飼育動物の世話 (1)](#tag-situation-188)　・　[次便待ち (1)](#tag-situation-189)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-190)　・　[自動発生イベント (1418)](#tag-situation-191)　・　[湿地地勢 (1)](#tag-situation-192)　・　[守秘と名簿 (1)](#tag-situation-193)　・　[種族差別 (2)](#tag-situation-194)　・　[種族差別後 (1)](#tag-situation-195)　・　[酒類の仕入れ帳 (1)](#tag-situation-196)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-197)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-198)　・　[授業担当者との接点 (1)](#tag-situation-199)　・　[収容・隔離中 (1)](#tag-situation-200)　・　[収容・隔離中の診療 (1)](#tag-situation-201)　・　[収容中 (4)](#tag-situation-202)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-203)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-204)　・　[就労中 (2)](#tag-situation-205)　・　[就労中の鉱夫 (1)](#tag-situation-206)　・　[住居差別 (1)](#tag-situation-207)　・　[住居差別後 (1)](#tag-situation-208)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-209)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-210)　・　[宿泊拒否 (1)](#tag-situation-211)　・　[宿泊拒否後 (1)](#tag-situation-212)　・　[出場・観戦・場外見物 (1)](#tag-situation-213)　・　[所持金による本文・選択肢 (1)](#tag-situation-214)　・　[小舞台 (1)](#tag-situation-215)　・　[少年・青年 (2)](#tag-situation-216)　・　[少年・青年・壮年 (3)](#tag-situation-217)　・　[消息不明者の生存確認 (1)](#tag-situation-218)　・　[症状進行中 (1)](#tag-situation-219)　・　[情報網の高い居住地 (1)](#tag-situation-220)　・　[条件付き本文 (210)](#tag-situation-221)　・　[職業課程の継続 (1)](#tag-situation-222)　・　[職業課程の修了 (1)](#tag-situation-223)　・　[職業条件あり (71)](#tag-situation-224)　・　[職場・近隣で露見の兆し (1)](#tag-situation-225)　・　[職場の排斥 (1)](#tag-situation-226)　・　[食堂の客足 (1)](#tag-situation-227)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-228)　・　[食料不足 (1)](#tag-situation-229)　・　[森林地勢 (1)](#tag-situation-230)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-231)　・　[親の家計判断 (1)](#tag-situation-232)　・　[親の感染 (1)](#tag-situation-233)　・　[親の死後 (1)](#tag-situation-234)　・　[親子の記憶 (1)](#tag-situation-235)　・　[診断済み (1)](#tag-situation-236)　・　[診断済み・未治療 (1)](#tag-situation-237)　・　[診療・休養・記録から選択 (1)](#tag-situation-238)　・　[診療・作業調整 (1)](#tag-situation-239)　・　[診療・動作を避ける選択 (1)](#tag-situation-240)　・　[診療・付き添いの依頼 (1)](#tag-situation-241)　・　[診療・負担軽減から選択 (1)](#tag-situation-242)　・　[診療延期後 (1)](#tag-situation-243)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-244)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-245)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-246)　・　[身近な人への支援依頼 (1)](#tag-situation-247)　・　[身近な連絡先あり (1)](#tag-situation-248)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-249)　・　[睡眠不足 (1)](#tag-situation-250)　・　[世界イベント後 (1)](#tag-situation-251)　・　[成人 (4)](#tag-situation-252)　・　[成人・返済支援の選択 (1)](#tag-situation-253)　・　[成人した子 (2)](#tag-situation-254)　・　[成人の種族偏見に触れる (1)](#tag-situation-255)　・　[生活上の備え (1)](#tag-situation-256)　・　[青年・壮年 (5)](#tag-situation-257)　・　[青年・壮年・老年 (3)](#tag-situation-258)　・　[雪祭司・聖樹 (1)](#tag-situation-259)　・　[選択イベント (1098)](#tag-situation-260)　・　[前段で残留した人 (1)](#tag-situation-261)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-262)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-263)　・　[全年齢の循環器系エピソード (1)](#tag-situation-264)　・　[全年齢の食料不足 (1)](#tag-situation-265)　・　[全年齢の負傷後の痛み (1)](#tag-situation-266)　・　[組織・所属に言及 (175)](#tag-situation-267)　・　[組織離脱後 (1)](#tag-situation-268)　・　[相談・医療・休養 (1)](#tag-situation-269)　・　[相談・記録 (1)](#tag-situation-270)　・　[相談・記録・経路変更 (1)](#tag-situation-271)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-272)　・　[足場や荷の異常 (1)](#tag-situation-273)　・　[退会後の関係 (1)](#tag-situation-274)　・　[退職選択 (1)](#tag-situation-275)　・　[大いなる静謐後 (1)](#tag-situation-276)　・　[大学課程の継続 (1)](#tag-situation-277)　・　[大学課程の修了 (1)](#tag-situation-278)　・　[短期雇用 (1)](#tag-situation-279)　・　[短期雇用と現場危険 (1)](#tag-situation-280)　・　[地域の供給不安定 (1)](#tag-situation-281)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-282)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-283)　・　[地域学習会・独学の選択 (1)](#tag-situation-284)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-285)　・　[仲間の捜索 (1)](#tag-situation-286)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-287)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-288)　・　[通学していない (1)](#tag-situation-289)　・　[通学中 (1)](#tag-situation-290)　・　[通行止め・迂回 (1)](#tag-situation-291)　・　[天災・戦乱による避難中 (1)](#tag-situation-292)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-293)　・　[店舗からの排斥集会 (1)](#tag-situation-294)　・　[転居後の近隣交流 (1)](#tag-situation-295)　・　[都市街区での襲撃 (1)](#tag-situation-296)　・　[動的表示条件 (675)](#tag-situation-297)　・　[動的本文 (30)](#tag-situation-298)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-299)　・　[同一都市の周縁区への転居 (1)](#tag-situation-300)　・　[同郷者との交流 (1)](#tag-situation-301)　・　[同行者との交流 (1)](#tag-situation-302)　・　[匿名動画の出所確認 (1)](#tag-situation-303)　・　[独立商業所属 (1)](#tag-situation-304)　・　[読み書きに困難がある (1)](#tag-situation-305)　・　[日雇い (1)](#tag-situation-306)　・　[乳児の成長 (1)](#tag-situation-307)　・　[任意応募・採用選考 (1)](#tag-situation-308)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-309)　・　[年齢：35歳以上 (2)](#tag-situation-310)　・　[年齢：児童 (968)](#tag-situation-311)　・　[年齢：少年 (1203)](#tag-situation-312)　・　[年齢：青年 (2370)](#tag-situation-313)　・　[年齢：壮年 (2310)](#tag-situation-314)　・　[年齢：乳児 (15)](#tag-situation-315)　・　[年齢：幼児 (31)](#tag-situation-316)　・　[年齢：老年 (1514)](#tag-situation-317)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-318)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-319)　・　[配給・食料不足 (1)](#tag-situation-320)　・　[配給・寝床・診療案内 (1)](#tag-situation-321)　・　[配給と地域支援 (1)](#tag-situation-322)　・　[配給登録 (1)](#tag-situation-323)　・　[配偶者との死別 (1)](#tag-situation-324)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-325)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-326)　・　[班間の点検記録 (1)](#tag-situation-327)　・　[班内の技能伝達 (1)](#tag-situation-328)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-329)　・　[避難中 (1)](#tag-situation-330)　・　[非感染者 (1)](#tag-situation-331)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-332)　・　[付き添い依頼・受診延期 (1)](#tag-situation-333)　・　[付き添い相談 (1)](#tag-situation-334)　・　[扶養中の子 (2)](#tag-situation-335)　・　[扶養中の子の看病 (1)](#tag-situation-336)　・　[負傷後の職務調整 (1)](#tag-situation-337)　・　[部品寸法 (1)](#tag-situation-338)　・　[復旧作業中の負傷 (1)](#tag-situation-339)　・　[粉塵への接触懸念 (1)](#tag-situation-340)　・　[粉塵曝露 (2)](#tag-situation-341)　・　[兵士の消息不明 (1)](#tag-situation-342)　・　[兵役招集 (1)](#tag-situation-343)　・　[別居・転居 (1)](#tag-situation-344)　・　[亡命・移住 (2)](#tag-situation-345)　・　[未診断の感染者 (1)](#tag-situation-346)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-347)　・　[未成年は養育者判断 (8)](#tag-situation-348)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-349)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-350)　・　[名前を知る相手 (1)](#tag-situation-351)　・　[夜間の世話 (1)](#tag-situation-352)　・　[友人との文通再開 (1)](#tag-situation-353)　・　[友人への恋心 (1)](#tag-situation-354)　・　[傭兵・護衛勤務 (1)](#tag-situation-355)　・　[傭兵隊の護衛契約 (1)](#tag-situation-356)　・　[傭兵隊の通過 (1)](#tag-situation-357)　・　[幼い子の養育 (1)](#tag-situation-358)　・　[用事の再開・再診 (1)](#tag-situation-359)　・　[養育者の視点 (1)](#tag-situation-360)　・　[離婚後の元配偶者の死 (1)](#tag-situation-361)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-362)　・　[離婚後の子育て・連絡 (1)](#tag-situation-363)　・　[龍門 (1)](#tag-situation-364)　・　[龍門の移動都市居住区 (1)](#tag-situation-365)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-366)　・　[龍門の商業街 (1)](#tag-situation-367)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-368)　・　[隣人との死別 (1)](#tag-situation-369)　・　[隣人との伝言再開 (1)](#tag-situation-370)　・　[隣人の消息不明 (1)](#tag-situation-371)　・　[隣人の生存確認 (1)](#tag-situation-372)　・　[連絡・休息の継続 (1)](#tag-situation-373)　・　[連絡先と家の用事の相談 (1)](#tag-situation-374)　・　[労務補償 (1)](#tag-situation-375)
 
 <a id="tag-situation-0"></a>
 ### 1072年以降は戦役後の導入文（1）
@@ -7184,7 +7205,7 @@
 
 <a id="tag-situation-23"></a>
 ### カズデル内戦後・1095〜1098年（1）
-- [kazdel_afterfall](#event-kazdel_afterfall) — ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼…
+- [kazdel_afterfall](#event-kazdel_afterfall) — 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
 
 <a id="tag-situation-24"></a>
 ### カズデル内戦中（1）
@@ -7192,7 +7213,7 @@
 
 <a id="tag-situation-25"></a>
 ### カズデル内戦中・1092〜1094年（1）
-- [kaz_exile](#event-kaz_exile) — カズデル全土に内戦の炎が広がり、大人たちは国を捨てるか残るかで夜通し言い争っている。あなたは押し殺した声に耳を澄ませながら、いつでも逃げられるよう荷…
+- [kaz_exile](#event-kaz_exile) — 内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。
 
 <a id="tag-situation-26"></a>
 ### カズデル離散後（1）
@@ -7257,7 +7278,7 @@
 
 <a id="tag-situation-41"></a>
 ### ボリバル内戦・1048年以降（1）
-- [bol_war](#event-bol_war) — 三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金…
+- [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 
 <a id="tag-situation-42"></a>
 ### ボリバル内戦の生活影響（1）
@@ -7313,7 +7334,7 @@
 - [siesta_shop_reopens_after_move](#event-siesta_shop_reopens_after_move) — 移動都市へと姿を変えた新しいシエスタで、勤め先の店をようやく再開した。まだ人通りのまばらな通りに面して木の案内札を立て、届いたばかりの商品を一品ずつ…
 
 <a id="tag-situation-55"></a>
-### 移動都市・避難に言及（142）
+### 移動都市・避難に言及（143）
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
 - [lov](#event-lov) — 仕事帰りにたびたび顔を合わせる人と、雨宿りの軒先で立ち話をした。もっと話していたい気持ちはあったが、今月の支払いに追われる暮らしを思うと、次の一歩を…
 - [nat](#event-nat) — （動的本文）
@@ -7332,13 +7353,13 @@
 - [urs_ice](#event-urs_ice) — 厳冬期の朝、移動都市の蒸気配管の圧力が落ち、部屋の蒸気放熱器がすっかり冷え切った。白い息を吐きながら窓の外を見ると、闇市の燃料屋の前に早くも人だかり…
 - [vic_war](#event-vic_war) — ロンディニウムの居住区まで激しい砲撃の音が迫り、窓ガラスがビリビリと震え続けている。昨日まで通れた大通りが今日は瓦礫で塞がり、飲み水と今夜の寝床を確…
 - [kaz_rural](#event-kaz_rural) — 農村の知人から、仕事を引き継ぐ人を探していると連絡が来た。道具と住まいの支度には金が要る。都市で別の勤めを探す道もあるが、そちらも何も決まっていない…
-- [timeline_great_silence](#event-timeline_great_silence) — 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄え…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
-- [timeline_leith_revolution](#event-timeline_leith_revolution) — 1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むな…
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
+- [timeline_great_silence](#event-timeline_great_silence) — 海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
+- [timeline_leith_revolution](#event-timeline_leith_revolution) — 政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
-- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
+- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。
+- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
 - [wld_plague](#event-wld_plague) — 移動都市 都市の別区画で発熱する人が増えたと、配給の列で聞いた。診療所の待ち時間や薬の値段を、近所の人が気にしていた。 乗員区画から感染症への注意が…
 - [friend_missing_news](#event-friend_missing_news) — {contactName}と連絡が途絶えたのは{contactMissingYear}年ごろ。最後に所在が確かめられたのは{contactMissi…
@@ -7454,6 +7475,7 @@
 - [life_ursus_zelgrad_displaced_work](#event-life_ursus_zelgrad_displaced_work) — （動的本文）
 - [life_ursus_zelgrad_displaced_work_review](#event-life_ursus_zelgrad_displaced_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
+- [history_path_review_kazdel_civil_war](#event-history_path_review_kazdel_civil_war) — 避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 - [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
 - [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
 
@@ -7507,7 +7529,7 @@
 
 <a id="tag-situation-68"></a>
 ### 仮住まい・個人の再移動（1）
-- [kazdel_afterfall](#event-kazdel_afterfall) — ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼…
+- [kazdel_afterfall](#event-kazdel_afterfall) — 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
 
 <a id="tag-situation-69"></a>
 ### 加入3年後・20歳以上（1）
@@ -7616,10 +7638,10 @@
 - [lei_isolation](#event-lei_isolation) — 地区の役所から、診断記録を根拠に隔離区画へ移るよう通達が届いた。移れば仕事を失うことになり、当面の収入も途絶える。 地区の役所から、診断記録を根拠に…
 - [lat_exile](#event-lat_exile) — ラテラーノ市民であっても例外はない。鉱石病にかかったことを理由に、聖都を退去するよう冷たい通達が届いた。甘い菓子の匂いが漂う見慣れた石畳を歩きながら…
 - [ibe_inquisition](#event-ibe_inquisition) — 異端審問所の黒い外套が港の街区に現れ、海辺で妙なものを見聞きしなかったかと住民を一人ずつ問い詰めて回った。誰もが目を伏せ、自分の言葉がどう受け取られ…
-- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘区画の地表から紫色の源石ガスが噴き出し、防護服を着た公爵私兵が住民たちを問答無用で追い立てた。汚染された土壌と閉鎖線の前で怒号が飛び交っている。
+- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘地区の汚染を巡る知らせを読んだ。問題の区画へ入ったことはなく、流通する品や仕事の条件にどんな影響があるかを確かめた。
 - [timeline_talulah_leave](#event-timeline_talulah_leave) — 雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
+- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — カヴァレリエルキの街には大会の知らせと中継があふれている。大通りの画面を見上げる人も、会場へ急ぐ人もいる。どこで、どんな立場で関わるかを考えた。
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
 - [wld_plague](#event-wld_plague) — 移動都市 都市の別区画で発熱する人が増えたと、配給の列で聞いた。診療所の待ち時間や薬の値段を、近所の人が気にしていた。 乗員区画から感染症への注意が…
@@ -8245,31 +8267,31 @@
 - [yan_sui](#event-yan_sui) — 年の瀬、暖を取ろうと立ち寄った茶館で、古びた絵巻を広げて『歳』とその代理人たちの物語を語る講釈師がいた。ただの昔話だと笑う客もいれば、今もどこかに息…
 - [yan_ancestor](#event-yan_ancestor) — 長雨で傷んだ水路の橋を直すため、町内の年寄りたちが役所への嘆願と普請の寄付を募っていた。資材代や炊き出しの分担をどうするか、仕事帰りの路地で声をかけ…
 - [timeline_el_sol_founded](#event-timeline_el_sol_founded) — 荒野の砂塵を切り裂いて巨大な移動プレートが結合され、エル・ソルの基礎が目の前に組み上がった。荷役と補修の槌音が昼夜を問わず響き渡り、新しい街の建設に…
-- [timeline_columbia_independence](#event-timeline_columbia_independence) — ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に…
-- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 傭兵団の頭領たちが城塞へ集結し、軍事委員会の無骨な鉄の印章が市壁に刻まれた。統一軍の旗が掲げられ、集落の若者たちに召集と物資拠出の鋭い視線が向けられ…
-- [timeline_great_silence](#event-timeline_great_silence) — 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄え…
-- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
+- [timeline_columbia_independence](#event-timeline_columbia_independence) — 独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。
+- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 軍事委員会の成立を伝える知らせが地区へ届いた。兵站の求人や物資の照会が増え、人々は新しい力との距離を測っていた。
+- [timeline_great_silence](#event-timeline_great_silence) — 海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。
+- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
 - [timeline_el_sol_renovation_paused](#event-timeline_el_sol_renovation_paused) — ボリバル内戦の激化により、エル・ソルの観光改装計画が凍結された。建設途中の骨組みが放置され、港には行き場を失った大量の建築資材が雨ざらしになっている…
-- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — 鉱山奥の封鎖区画に軍の特科装甲車が何台も乗り付け、黒塗りの幌で覆われた巨大な機材が秘密裏に運び込まれた。坑道周辺は立入禁止となり、作業員たちに厳しい…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
-- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レ…
-- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 吹き荒れる砂嵐の中、旧パディシャーの反乱残党と傭兵隊がオアシスの市場で激突した。乾いた砂に鮮血が染み込み、隊商の荷車が次々と炎上している。
+- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — チェルノボーグの研究を巡る風聞を耳にした。どの話が確かなのかは分からず、封鎖された施設の中を自分が見たわけでもない。
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
+- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。
+- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 砂漠の市場で起きた争いの噂を聞いた。交戦した者や被害の規模について話が食い違い、隊商の予定をどう扱うかで商人たちが迷っていた。
 - [timeline_sarcophagus_purge](#event-timeline_sarcophagus_purge) — 深夜の研究所街区を帝国特科憲兵部隊が完全包囲し、激しい銃声のあと、白衣の研究員たちが雪の上に倒れ伏した。機密資料を満載した軍用トラックが夜の闇へと疾…
-- [timeline_leith_revolution](#event-timeline_leith_revolution) — 1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むな…
-- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — ワーニャ大公の車列が市街の交差点で爆砕され、憲兵隊が通りを完全に封鎖して住民を広場へ駆り集めた。厳冬の広場で容疑者の割り出しと過酷な尋問が夜を徹して…
-- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘区画の地表から紫色の源石ガスが噴き出し、防護服を着た公爵私兵が住民たちを問答無用で追い立てた。汚染された土壌と閉鎖線の前で怒号が飛び交っている。
+- [timeline_leith_revolution](#event-timeline_leith_revolution) — 政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。
+- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — 暗殺事件と捜査についての知らせが届いた。現場の交差点に居合わせたわけではなく、報じられた情報と身近な噂を分けて聞いた。
+- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘地区の汚染を巡る知らせを読んだ。問題の区画へ入ったことはなく、流通する品や仕事の条件にどんな影響があるかを確かめた。
 - [timeline_el_sol_renamed_dossoles](#event-timeline_el_sol_renamed_dossoles) — 人工海浜のネオンが一斉に点灯し、カンデラ市長の演説とともに歓楽都市ドッソレスの看板が掲げられた。リゾート音楽が響き渡り、街は享楽の熱狂に包まれている…
 - [timeline_babel_split](#event-timeline_babel_split) — 陸艦バベルが黒煙を吐いて城砦を離脱し、追撃の矢と術式が甲板に降り注ぐ中、サルカズの同胞同士が銃を向け合った。割れた王庭の絆が修復不能な亀裂を刻んでい…
-- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。
+- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 内戦開始の知らせは届いたが、この地区がその日に戦場になったとは限らない。近隣では荷と連絡の遅れを確かめ、今後の備えを話し合っている。
 - [timeline_talulah_kills](#event-timeline_talulah_kills) — 凍てつく原野の古びた公爵邸から猛火と黒煙が立ち上り、吹雪の中に佇むドラコの少女の姿が目撃された。凍土の集落に不穏なざわめきが広がっている。
 - [timeline_talulah_leave](#event-timeline_talulah_leave) — 雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。
-- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
-- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
+- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 戦争宣言の知らせが地区にも届いた。物資や働き手を求める声と、関わりを避ける声が交錯していた。
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
+- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 国境地帯の会戦を伝える知らせを受け取った。どの道を通れるかについては別の確認が必要で、知らせの地名を地図でたどると、往来の先行きが気に掛かった。
 - [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
-- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
+- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — カヴァレリエルキの街には大会の知らせと中継があふれている。大通りの画面を見上げる人も、会場へ急ぐ人もいる。どこで、どんな立場で関わるかを考えた。
+- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。
 - [timeline_katorga_incident](#event-timeline_katorga_incident) — 大学前広場を取り囲んだ帝国憲兵隊が棍棒と銃剣で抗議学生たちを殴り倒し、無蓋トラックへ次々と放り込んだ。凍てつく石畳に血痕が凍りついていく。
 - [timeline_daily_londinium_siege](#event-timeline_daily_londinium_siege) — 諸侯軍の攻城砲の地鳴りが一日中響き、路地に立ち込める硝煙の向こうで自救軍の若者たちが救援物資を運び込んでいた。
 - [timeline_daily_londinium_martial](#event-timeline_daily_londinium_martial) — 軍事委員会の無骨な装甲歩兵が跳ね橋の検問を固め、道行く市民たちを鋭い眼光で監視していた。
@@ -9751,7 +9773,7 @@
 
 <a id="tag-situation-165"></a>
 ### 国外避難・残留・死亡分岐（1）
-- [kaz_exile](#event-kaz_exile) — カズデル全土に内戦の炎が広がり、大人たちは国を捨てるか残るかで夜通し言い争っている。あなたは押し殺した声に耳を澄ませながら、いつでも逃げられるよう荷…
+- [kaz_exile](#event-kaz_exile) — 内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。
 
 <a id="tag-situation-166"></a>
 ### 再受付・別の診療先の探索（1）
@@ -11830,7 +11852,7 @@
 - [lon_merchant](#event-lon_merchant) — 龍門の賑やかな商業通りで、空きが出たばかりの小さな露店を引き継がないかと声がかかった。権利金と仕入れで50万龍門幣。当たれば大きいが、客がつかなくて…
 - [hig_tension](#event-hig_tension) — 北院と南院の睨み合いや、海の向こうのウルサスとのいくさ話が、仕事帰りの茶屋でもしきりに囁かれるようになった。辻の掲示板には、近隣の陣屋が兵站や街道警…
 - [kaz_merc](#event-kaz_merc) — カズデルの傭兵隊が、荒野を抜ける輸送隊の護衛を募っていた。分け前は悪くないが、生きて帰れる保証もない長旅になる。
-- [bol_war](#event-bol_war) — 三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金…
+- [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
 
 <a id="tag-situation-258"></a>
@@ -11844,7 +11866,7 @@
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 
 <a id="tag-situation-260"></a>
-### 選択イベント（1089）
+### 選択イベント（1098）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -11990,40 +12012,40 @@
 - [sie_seasonal_work](#event-sie_seasonal_work) — 観光シーズンの到来とともに、海辺の食堂に「配膳・洗い場急募」の木札が下がった。裏の倉庫街でも、土産物の荷ほどきを手伝う短期の人手を探している。
 - [min_hero](#event-min_hero) — ミノスの伝統競技祭が近づき、街角の広場は出場者と見物客の熱気でざわめいている。登録料と遠征費を出して自ら挑むか、観客席から声援を送るか、それとも外か…
 - [timeline_el_sol_founded](#event-timeline_el_sol_founded) — 荒野の砂塵を切り裂いて巨大な移動プレートが結合され、エル・ソルの基礎が目の前に組み上がった。荷役と補修の槌音が昼夜を問わず響き渡り、新しい街の建設に…
-- [timeline_columbia_independence](#event-timeline_columbia_independence) — ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に…
-- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦…
-- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 傭兵団の頭領たちが城塞へ集結し、軍事委員会の無骨な鉄の印章が市壁に刻まれた。統一軍の旗が掲げられ、集落の若者たちに召集と物資拠出の鋭い視線が向けられ…
-- [timeline_great_silence](#event-timeline_great_silence) — 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄え…
-- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
+- [timeline_columbia_independence](#event-timeline_columbia_independence) — 独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。
+- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。
+- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 軍事委員会の成立を伝える知らせが地区へ届いた。兵站の求人や物資の照会が増え、人々は新しい力との距離を測っていた。
+- [timeline_great_silence](#event-timeline_great_silence) — 海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。
+- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
 - [timeline_el_sol_renovation_paused](#event-timeline_el_sol_renovation_paused) — ボリバル内戦の激化により、エル・ソルの観光改装計画が凍結された。建設途中の骨組みが放置され、港には行き場を失った大量の建築資材が雨ざらしになっている…
-- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — 国境要塞から轟く巨砲の重低音が空を震わせ、傷病兵を満載した軍用列車が絶え間なく駅へ滑り込んできた。第十次ウルサス＝カジミエーシュ戦争の火蓋が切られ、…
-- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — 鉱山奥の封鎖区画に軍の特科装甲車が何台も乗り付け、黒塗りの幌で覆われた巨大な機材が秘密裏に運び込まれた。坑道周辺は立入禁止となり、作業員たちに厳しい…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
-- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レ…
-- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 吹き荒れる砂嵐の中、旧パディシャーの反乱残党と傭兵隊がオアシスの市場で激突した。乾いた砂に鮮血が染み込み、隊商の荷車が次々と炎上している。
+- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — ウルサスとカジミエーシュの戦争についての報道を読んだ。国境にいるわけではない。仕事や親族との往来に影響があるか、分かる範囲から確かめた。
+- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — チェルノボーグの研究を巡る風聞を耳にした。どの話が確かなのかは分からず、封鎖された施設の中を自分が見たわけでもない。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
+- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。
+- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 砂漠の市場で起きた争いの噂を聞いた。交戦した者や被害の規模について話が食い違い、隊商の予定をどう扱うかで商人たちが迷っていた。
 - [timeline_sarcophagus_purge](#event-timeline_sarcophagus_purge) — 深夜の研究所街区を帝国特科憲兵部隊が完全包囲し、激しい銃声のあと、白衣の研究員たちが雪の上に倒れ伏した。機密資料を満載した軍用トラックが夜の闇へと疾…
-- [timeline_leith_revolution](#event-timeline_leith_revolution) — 1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むな…
-- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
-- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — ワーニャ大公の車列が市街の交差点で爆砕され、憲兵隊が通りを完全に封鎖して住民を広場へ駆り集めた。厳冬の広場で容疑者の割り出しと過酷な尋問が夜を徹して…
-- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘区画の地表から紫色の源石ガスが噴き出し、防護服を着た公爵私兵が住民たちを問答無用で追い立てた。汚染された土壌と閉鎖線の前で怒号が飛び交っている。
+- [timeline_leith_revolution](#event-timeline_leith_revolution) — 政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。
+- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。
+- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — 暗殺事件と捜査についての知らせが届いた。現場の交差点に居合わせたわけではなく、報じられた情報と身近な噂を分けて聞いた。
+- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘地区の汚染を巡る知らせを読んだ。問題の区画へ入ったことはなく、流通する品や仕事の条件にどんな影響があるかを確かめた。
 - [timeline_el_sol_renamed_dossoles](#event-timeline_el_sol_renamed_dossoles) — 人工海浜のネオンが一斉に点灯し、カンデラ市長の演説とともに歓楽都市ドッソレスの看板が掲げられた。リゾート音楽が響き渡り、街は享楽の熱狂に包まれている…
 - [timeline_babel_split](#event-timeline_babel_split) — 陸艦バベルが黒煙を吐いて城砦を離脱し、追撃の矢と術式が甲板に降り注ぐ中、サルカズの同胞同士が銃を向け合った。割れた王庭の絆が修復不能な亀裂を刻んでい…
-- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。
+- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 内戦開始の知らせは届いたが、この地区がその日に戦場になったとは限らない。近隣では荷と連絡の遅れを確かめ、今後の備えを話し合っている。
 - [timeline_talulah_kills](#event-timeline_talulah_kills) — 凍てつく原野の古びた公爵邸から猛火と黒煙が立ち上り、吹雪の中に佇むドラコの少女の姿が目撃された。凍土の集落に不穏なざわめきが広がっている。
 - [timeline_talulah_leave](#event-timeline_talulah_leave) — 雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。
-- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
-- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
+- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 戦争宣言の知らせが地区にも届いた。物資や働き手を求める声と、関わりを避ける声が交錯していた。
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
+- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 国境地帯の会戦を伝える知らせを受け取った。どの道を通れるかについては別の確認が必要で、知らせの地名を地図でたどると、往来の先行きが気に掛かった。
 - [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
-- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
-- [timeline_world_1099](#event-timeline_world_1099) — 各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。
-- [timeline_world_1101](#event-timeline_world_1101) — 監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。
+- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — カヴァレリエルキの街には大会の知らせと中継があふれている。大通りの画面を見上げる人も、会場へ急ぐ人もいる。どこで、どんな立場で関わるかを考えた。
+- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。
+- [timeline_world_1099](#event-timeline_world_1099) — 旅程上で実際に到達した検問所が、通行の審査を始めている。運行側から届いた通行条件を読み、先へ進む方法を考えた。
+- [timeline_world_1101](#event-timeline_world_1101) — 海辺や北方から届く不穏な知らせを読んだ。海の哨所と北の防壁を一つの場所とは考えず、届いた情報の地域と日付を分けて整理した。
 - [timeline_katorga_incident](#event-timeline_katorga_incident) — 大学前広場を取り囲んだ帝国憲兵隊が棍棒と銃剣で抗議学生たちを殴り倒し、無蓋トラックへ次々と放り込んだ。凍てつく石畳に血痕が凍りついていく。
-- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
+- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
@@ -12864,6 +12886,15 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [journey_decision_review](#event-journey_decision_review) — 検問の前で足止めされている。届いた通行条件と旅費を確かめ、先へ進むか、滞在先で待つかを考えた。
+- [history_path_review_columbia_independence](#event-history_path_review_columbia_independence) — 開拓地区の自治活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_commission_founded](#event-history_path_review_kazdel_commission_founded) — 地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_siracusa_unification](#event-history_path_review_siracusa_unification) — 地区の掟を担うつながりに関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_ursus_great_rebellion](#event-history_path_review_ursus_great_rebellion) — 地区の労働者の要求活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_rim_billiton_independence](#event-history_path_review_rim_billiton_independence) — 鉱区の自治運営に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
+- [history_path_review_kazdel_war_declared](#event-history_path_review_kazdel_war_declared) — 地区の後方補給班に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_civil_war](#event-history_path_review_kazdel_civil_war) — 避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 - [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
 - [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
 - [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
@@ -12937,7 +12968,7 @@
 
 <a id="tag-situation-261"></a>
 ### 前段で残留した人（1）
-- [kazdel_afterfall](#event-kazdel_afterfall) — ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼…
+- [kazdel_afterfall](#event-kazdel_afterfall) — 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
 
 <a id="tag-situation-262"></a>
 ### 全年齢の急なめまい・運動困難（1）
@@ -12973,7 +13004,7 @@
 - [sir_family_later_work](#event-sir_family_later_work) — ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。
 - [sir_hospital](#event-sir_hospital) — 強い熱が続き、街の診療所へ運ばれた。医師は数日休んで治療を受けるよう勧めたが、受付で告げられた費用は家計に重かった。顔なじみのファミリーに口利きを頼…
 - [sir_feud](#event-sir_feud) — 関わりのあるファミリーと対立組織の緊張が高まった。知人は店の裏口を閉め、今夜は誰と帰るかを確かめている。 ファミリー同士の緊張が通りにも伝わった。店…
-- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
+- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
 - [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
@@ -13255,7 +13286,7 @@
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
 <a id="tag-situation-297"></a>
-### 動的表示条件（666）
+### 動的表示条件（675）
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
@@ -13296,40 +13327,40 @@
 - [sir_family_later_work](#event-sir_family_later_work) — ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。
 - [ibe_rebuild_contract_review](#event-ibe_rebuild_contract_review) — 海辺の街区で、また別の古い倉庫を直す日雇い募集が出ていた。前に覚えた手順を生かして応募するか、もっと安定した別の職を探すか思案した。
 - [timeline_el_sol_founded](#event-timeline_el_sol_founded) — 荒野の砂塵を切り裂いて巨大な移動プレートが結合され、エル・ソルの基礎が目の前に組み上がった。荷役と補修の槌音が昼夜を問わず響き渡り、新しい街の建設に…
-- [timeline_columbia_independence](#event-timeline_columbia_independence) — ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に…
-- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦…
-- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 傭兵団の頭領たちが城塞へ集結し、軍事委員会の無骨な鉄の印章が市壁に刻まれた。統一軍の旗が掲げられ、集落の若者たちに召集と物資拠出の鋭い視線が向けられ…
-- [timeline_great_silence](#event-timeline_great_silence) — 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄え…
-- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
+- [timeline_columbia_independence](#event-timeline_columbia_independence) — 独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。
+- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。
+- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 軍事委員会の成立を伝える知らせが地区へ届いた。兵站の求人や物資の照会が増え、人々は新しい力との距離を測っていた。
+- [timeline_great_silence](#event-timeline_great_silence) — 海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。
+- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
 - [timeline_el_sol_renovation_paused](#event-timeline_el_sol_renovation_paused) — ボリバル内戦の激化により、エル・ソルの観光改装計画が凍結された。建設途中の骨組みが放置され、港には行き場を失った大量の建築資材が雨ざらしになっている…
-- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — 国境要塞から轟く巨砲の重低音が空を震わせ、傷病兵を満載した軍用列車が絶え間なく駅へ滑り込んできた。第十次ウルサス＝カジミエーシュ戦争の火蓋が切られ、…
-- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — 鉱山奥の封鎖区画に軍の特科装甲車が何台も乗り付け、黒塗りの幌で覆われた巨大な機材が秘密裏に運び込まれた。坑道周辺は立入禁止となり、作業員たちに厳しい…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
-- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レ…
-- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 吹き荒れる砂嵐の中、旧パディシャーの反乱残党と傭兵隊がオアシスの市場で激突した。乾いた砂に鮮血が染み込み、隊商の荷車が次々と炎上している。
+- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — ウルサスとカジミエーシュの戦争についての報道を読んだ。国境にいるわけではない。仕事や親族との往来に影響があるか、分かる範囲から確かめた。
+- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — チェルノボーグの研究を巡る風聞を耳にした。どの話が確かなのかは分からず、封鎖された施設の中を自分が見たわけでもない。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
+- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。
+- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 砂漠の市場で起きた争いの噂を聞いた。交戦した者や被害の規模について話が食い違い、隊商の予定をどう扱うかで商人たちが迷っていた。
 - [timeline_sarcophagus_purge](#event-timeline_sarcophagus_purge) — 深夜の研究所街区を帝国特科憲兵部隊が完全包囲し、激しい銃声のあと、白衣の研究員たちが雪の上に倒れ伏した。機密資料を満載した軍用トラックが夜の闇へと疾…
-- [timeline_leith_revolution](#event-timeline_leith_revolution) — 1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むな…
-- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
-- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — ワーニャ大公の車列が市街の交差点で爆砕され、憲兵隊が通りを完全に封鎖して住民を広場へ駆り集めた。厳冬の広場で容疑者の割り出しと過酷な尋問が夜を徹して…
-- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘区画の地表から紫色の源石ガスが噴き出し、防護服を着た公爵私兵が住民たちを問答無用で追い立てた。汚染された土壌と閉鎖線の前で怒号が飛び交っている。
+- [timeline_leith_revolution](#event-timeline_leith_revolution) — 政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。
+- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。
+- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — 暗殺事件と捜査についての知らせが届いた。現場の交差点に居合わせたわけではなく、報じられた情報と身近な噂を分けて聞いた。
+- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘地区の汚染を巡る知らせを読んだ。問題の区画へ入ったことはなく、流通する品や仕事の条件にどんな影響があるかを確かめた。
 - [timeline_el_sol_renamed_dossoles](#event-timeline_el_sol_renamed_dossoles) — 人工海浜のネオンが一斉に点灯し、カンデラ市長の演説とともに歓楽都市ドッソレスの看板が掲げられた。リゾート音楽が響き渡り、街は享楽の熱狂に包まれている…
 - [timeline_babel_split](#event-timeline_babel_split) — 陸艦バベルが黒煙を吐いて城砦を離脱し、追撃の矢と術式が甲板に降り注ぐ中、サルカズの同胞同士が銃を向け合った。割れた王庭の絆が修復不能な亀裂を刻んでい…
-- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。
+- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 内戦開始の知らせは届いたが、この地区がその日に戦場になったとは限らない。近隣では荷と連絡の遅れを確かめ、今後の備えを話し合っている。
 - [timeline_talulah_kills](#event-timeline_talulah_kills) — 凍てつく原野の古びた公爵邸から猛火と黒煙が立ち上り、吹雪の中に佇むドラコの少女の姿が目撃された。凍土の集落に不穏なざわめきが広がっている。
 - [timeline_talulah_leave](#event-timeline_talulah_leave) — 雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。
-- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
-- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
+- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 戦争宣言の知らせが地区にも届いた。物資や働き手を求める声と、関わりを避ける声が交錯していた。
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
+- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 国境地帯の会戦を伝える知らせを受け取った。どの道を通れるかについては別の確認が必要で、知らせの地名を地図でたどると、往来の先行きが気に掛かった。
 - [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
-- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
-- [timeline_world_1099](#event-timeline_world_1099) — 各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。
-- [timeline_world_1101](#event-timeline_world_1101) — 監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。
+- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — カヴァレリエルキの街には大会の知らせと中継があふれている。大通りの画面を見上げる人も、会場へ急ぐ人もいる。どこで、どんな立場で関わるかを考えた。
+- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。
+- [timeline_world_1099](#event-timeline_world_1099) — 旅程上で実際に到達した検問所が、通行の審査を始めている。運行側から届いた通行条件を読み、先へ進む方法を考えた。
+- [timeline_world_1101](#event-timeline_world_1101) — 海辺や北方から届く不穏な知らせを読んだ。海の哨所と北の防壁を一つの場所とは考えず、届いた情報の地域と日付を分けて整理した。
 - [timeline_katorga_incident](#event-timeline_katorga_incident) — 大学前広場を取り囲んだ帝国憲兵隊が棍棒と銃剣で抗議学生たちを殴り倒し、無蓋トラックへ次々と放り込んだ。凍てつく石畳に血痕が凍りついていく。
-- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
+- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。
 - [timeline_daily_londinium_siege](#event-timeline_daily_londinium_siege) — 諸侯軍の攻城砲の地鳴りが一日中響き、路地に立ち込める硝煙の向こうで自救軍の若者たちが救援物資を運び込んでいた。
 - [timeline_daily_londinium_martial](#event-timeline_daily_londinium_martial) — 軍事委員会の無骨な装甲歩兵が跳ね橋の検問を固め、道行く市民たちを鋭い眼光で監視していた。
 - [timeline_daily_chernobog_alarm](#event-timeline_daily_chernobog_alarm) — チェルノボーグの市街に空襲と天災の二重のサイレンが狂ったように鳴り響き、遠くの街区から黒煙が立ち上っていた。
@@ -13849,6 +13880,15 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [journey_decision_review](#event-journey_decision_review) — 検問の前で足止めされている。届いた通行条件と旅費を確かめ、先へ進むか、滞在先で待つかを考えた。
+- [history_path_review_columbia_independence](#event-history_path_review_columbia_independence) — 開拓地区の自治活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_commission_founded](#event-history_path_review_kazdel_commission_founded) — 地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_siracusa_unification](#event-history_path_review_siracusa_unification) — 地区の掟を担うつながりに関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_ursus_great_rebellion](#event-history_path_review_ursus_great_rebellion) — 地区の労働者の要求活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_rim_billiton_independence](#event-history_path_review_rim_billiton_independence) — 鉱区の自治運営に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
+- [history_path_review_kazdel_war_declared](#event-history_path_review_kazdel_war_declared) — 地区の後方補給班に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_civil_war](#event-history_path_review_kazdel_civil_war) — 避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 - [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
 - [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
 - [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
@@ -14006,7 +14046,7 @@
 - [fam_care_followup](#event-fam_care_followup) — 親の世話を始めてから二年が過ぎた。{parentName}の通院や身の回りの手伝いはまだ終わらず、こちらの体や暮らしの予定にも疲れが溜まってきている…
 
 <a id="tag-situation-311"></a>
-### 年齢：児童（967）
+### 年齢：児童（968）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -14901,6 +14941,7 @@
 - [v77_social_stigma_family](#event-v77_social_stigma_family) — 町の食堂に入ると、感染者の隣人が隅の卓で一人黙々と匙を動かしていた。あからさまに席を立つ客もいれば、小さく会釈して通り過ぎる人もいる。家の大人の目が…
 - [v81_aftermath_mutualaid](#event-v81_aftermath_mutualaid) — 近隣の集まりで、大人も子どもも住まいや学び、仕事の困りごとを持ち寄った。配給の知らせを探す人もいれば、働き口を探す人、ただ話を聞いてほしい人もいた。
 - [v82_teacher_continuity](#event-v82_teacher_continuity) — 授業が終わって席を立とうとしたとき、以前から目をかけてくれている先生が「最近の課題はどうだ」と声をかけてくれた。一人では解けずに行き詰まっていた箇所…
+- [journey_decision_review](#event-journey_decision_review) — 検問の前で足止めされている。届いた通行条件と旅費を確かめ、先へ進むか、滞在先で待つかを考えた。
 - [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
 - [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
 - [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
@@ -14976,7 +15017,7 @@
 - [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-situation-312"></a>
-### 年齢：少年（1194）
+### 年齢：少年（1203）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
@@ -15048,14 +15089,14 @@
 - [sam_migrate](#event-sam_migrate) — 雪祭司が風の匂いと星の位置を読み、次の野営地へ移る時だと告げた。家の人たちは橇の縄を締め直し、あなたも背負う荷物をひとつずつ確かめた。 近くの氏族が…
 - [sam_ritual](#event-sam_ritual) — 雪祭司のお告げを聞くため、氏族の人々が大きな焚き火の周りに集まった。あなたの家でも、火を絶やさない役目と大鍋の支度を手分けしている。 近くの氏族が雪…
 - [kje_pilgrim](#event-kje_pilgrim) — 聖山へ向かう巡礼者たちが、麓の宿場で雪道の様子を聞き合っている。一緒について行くなら、旅費としっかりした防寒具が要る。仕事を休んで山へ登るか、麓から…
-- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦…
-- [timeline_great_silence](#event-timeline_great_silence) — 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄え…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
+- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。
+- [timeline_great_silence](#event-timeline_great_silence) — 海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
-- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
+- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。
+- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
 - [wld_plague](#event-wld_plague) — 移動都市 都市の別区画で発熱する人が増えたと、配給の列で聞いた。診療所の待ち時間や薬の値段を、近所の人が気にしていた。 乗員区画から感染症への注意が…
 - [neighbor_death_notice](#event-neighbor_death_notice) — {contactDeathTiming}、{contactName}が亡くなったと同じ区画の人から聞いた。知らせには死因も最期の様子もなかった。玄関…
@@ -16098,6 +16139,15 @@
 - [v81_family_boundary](#event-v81_family_boundary) — 家族から拒絶された日から年月が過ぎた。食事の前に電話をかけ、呼び出し音が続くのを待った。受話器を置いても、あの日の言葉が残っていた。
 - [v81_aftermath_mutualaid](#event-v81_aftermath_mutualaid) — 近隣の集まりで、大人も子どもも住まいや学び、仕事の困りごとを持ち寄った。配給の知らせを探す人もいれば、働き口を探す人、ただ話を聞いてほしい人もいた。
 - [v82_teacher_continuity](#event-v82_teacher_continuity) — 授業が終わって席を立とうとしたとき、以前から目をかけてくれている先生が「最近の課題はどうだ」と声をかけてくれた。一人では解けずに行き詰まっていた箇所…
+- [journey_decision_review](#event-journey_decision_review) — 検問の前で足止めされている。届いた通行条件と旅費を確かめ、先へ進むか、滞在先で待つかを考えた。
+- [history_path_review_columbia_independence](#event-history_path_review_columbia_independence) — 開拓地区の自治活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_commission_founded](#event-history_path_review_kazdel_commission_founded) — 地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_siracusa_unification](#event-history_path_review_siracusa_unification) — 地区の掟を担うつながりに関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_ursus_great_rebellion](#event-history_path_review_ursus_great_rebellion) — 地区の労働者の要求活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_rim_billiton_independence](#event-history_path_review_rim_billiton_independence) — 鉱区の自治運営に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
+- [history_path_review_kazdel_war_declared](#event-history_path_review_kazdel_war_declared) — 地区の後方補給班に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_civil_war](#event-history_path_review_kazdel_civil_war) — 避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 - [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
 - [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
 - [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
@@ -16173,7 +16223,7 @@
 - [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-situation-313"></a>
-### 年齢：青年（2361）
+### 年齢：青年（2370）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -16326,40 +16376,40 @@
 - [yan_sui](#event-yan_sui) — 年の瀬、暖を取ろうと立ち寄った茶館で、古びた絵巻を広げて『歳』とその代理人たちの物語を語る講釈師がいた。ただの昔話だと笑う客もいれば、今もどこかに息…
 - [yan_ancestor](#event-yan_ancestor) — 長雨で傷んだ水路の橋を直すため、町内の年寄りたちが役所への嘆願と普請の寄付を募っていた。資材代や炊き出しの分担をどうするか、仕事帰りの路地で声をかけ…
 - [timeline_el_sol_founded](#event-timeline_el_sol_founded) — 荒野の砂塵を切り裂いて巨大な移動プレートが結合され、エル・ソルの基礎が目の前に組み上がった。荷役と補修の槌音が昼夜を問わず響き渡り、新しい街の建設に…
-- [timeline_columbia_independence](#event-timeline_columbia_independence) — ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に…
-- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦…
-- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 傭兵団の頭領たちが城塞へ集結し、軍事委員会の無骨な鉄の印章が市壁に刻まれた。統一軍の旗が掲げられ、集落の若者たちに召集と物資拠出の鋭い視線が向けられ…
-- [timeline_great_silence](#event-timeline_great_silence) — 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄え…
-- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
+- [timeline_columbia_independence](#event-timeline_columbia_independence) — 独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。
+- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。
+- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 軍事委員会の成立を伝える知らせが地区へ届いた。兵站の求人や物資の照会が増え、人々は新しい力との距離を測っていた。
+- [timeline_great_silence](#event-timeline_great_silence) — 海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。
+- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
 - [timeline_el_sol_renovation_paused](#event-timeline_el_sol_renovation_paused) — ボリバル内戦の激化により、エル・ソルの観光改装計画が凍結された。建設途中の骨組みが放置され、港には行き場を失った大量の建築資材が雨ざらしになっている…
-- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — 国境要塞から轟く巨砲の重低音が空を震わせ、傷病兵を満載した軍用列車が絶え間なく駅へ滑り込んできた。第十次ウルサス＝カジミエーシュ戦争の火蓋が切られ、…
-- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — 鉱山奥の封鎖区画に軍の特科装甲車が何台も乗り付け、黒塗りの幌で覆われた巨大な機材が秘密裏に運び込まれた。坑道周辺は立入禁止となり、作業員たちに厳しい…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
-- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レ…
-- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 吹き荒れる砂嵐の中、旧パディシャーの反乱残党と傭兵隊がオアシスの市場で激突した。乾いた砂に鮮血が染み込み、隊商の荷車が次々と炎上している。
+- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — ウルサスとカジミエーシュの戦争についての報道を読んだ。国境にいるわけではない。仕事や親族との往来に影響があるか、分かる範囲から確かめた。
+- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — チェルノボーグの研究を巡る風聞を耳にした。どの話が確かなのかは分からず、封鎖された施設の中を自分が見たわけでもない。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
+- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。
+- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 砂漠の市場で起きた争いの噂を聞いた。交戦した者や被害の規模について話が食い違い、隊商の予定をどう扱うかで商人たちが迷っていた。
 - [timeline_sarcophagus_purge](#event-timeline_sarcophagus_purge) — 深夜の研究所街区を帝国特科憲兵部隊が完全包囲し、激しい銃声のあと、白衣の研究員たちが雪の上に倒れ伏した。機密資料を満載した軍用トラックが夜の闇へと疾…
-- [timeline_leith_revolution](#event-timeline_leith_revolution) — 1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むな…
-- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
-- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — ワーニャ大公の車列が市街の交差点で爆砕され、憲兵隊が通りを完全に封鎖して住民を広場へ駆り集めた。厳冬の広場で容疑者の割り出しと過酷な尋問が夜を徹して…
-- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘区画の地表から紫色の源石ガスが噴き出し、防護服を着た公爵私兵が住民たちを問答無用で追い立てた。汚染された土壌と閉鎖線の前で怒号が飛び交っている。
+- [timeline_leith_revolution](#event-timeline_leith_revolution) — 政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。
+- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。
+- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — 暗殺事件と捜査についての知らせが届いた。現場の交差点に居合わせたわけではなく、報じられた情報と身近な噂を分けて聞いた。
+- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘地区の汚染を巡る知らせを読んだ。問題の区画へ入ったことはなく、流通する品や仕事の条件にどんな影響があるかを確かめた。
 - [timeline_el_sol_renamed_dossoles](#event-timeline_el_sol_renamed_dossoles) — 人工海浜のネオンが一斉に点灯し、カンデラ市長の演説とともに歓楽都市ドッソレスの看板が掲げられた。リゾート音楽が響き渡り、街は享楽の熱狂に包まれている…
 - [timeline_babel_split](#event-timeline_babel_split) — 陸艦バベルが黒煙を吐いて城砦を離脱し、追撃の矢と術式が甲板に降り注ぐ中、サルカズの同胞同士が銃を向け合った。割れた王庭の絆が修復不能な亀裂を刻んでい…
-- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。
+- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 内戦開始の知らせは届いたが、この地区がその日に戦場になったとは限らない。近隣では荷と連絡の遅れを確かめ、今後の備えを話し合っている。
 - [timeline_talulah_kills](#event-timeline_talulah_kills) — 凍てつく原野の古びた公爵邸から猛火と黒煙が立ち上り、吹雪の中に佇むドラコの少女の姿が目撃された。凍土の集落に不穏なざわめきが広がっている。
 - [timeline_talulah_leave](#event-timeline_talulah_leave) — 雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。
-- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
-- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
+- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 戦争宣言の知らせが地区にも届いた。物資や働き手を求める声と、関わりを避ける声が交錯していた。
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
+- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 国境地帯の会戦を伝える知らせを受け取った。どの道を通れるかについては別の確認が必要で、知らせの地名を地図でたどると、往来の先行きが気に掛かった。
 - [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
-- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
-- [timeline_world_1099](#event-timeline_world_1099) — 各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。
-- [timeline_world_1101](#event-timeline_world_1101) — 監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。
+- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — カヴァレリエルキの街には大会の知らせと中継があふれている。大通りの画面を見上げる人も、会場へ急ぐ人もいる。どこで、どんな立場で関わるかを考えた。
+- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。
+- [timeline_world_1099](#event-timeline_world_1099) — 旅程上で実際に到達した検問所が、通行の審査を始めている。運行側から届いた通行条件を読み、先へ進む方法を考えた。
+- [timeline_world_1101](#event-timeline_world_1101) — 海辺や北方から届く不穏な知らせを読んだ。海の哨所と北の防壁を一つの場所とは考えず、届いた情報の地域と日付を分けて整理した。
 - [timeline_katorga_incident](#event-timeline_katorga_incident) — 大学前広場を取り囲んだ帝国憲兵隊が棍棒と銃剣で抗議学生たちを殴り倒し、無蓋トラックへ次々と放り込んだ。凍てつく石畳に血痕が凍りついていく。
-- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
+- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
@@ -18462,6 +18512,15 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [journey_decision_review](#event-journey_decision_review) — 検問の前で足止めされている。届いた通行条件と旅費を確かめ、先へ進むか、滞在先で待つかを考えた。
+- [history_path_review_columbia_independence](#event-history_path_review_columbia_independence) — 開拓地区の自治活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_commission_founded](#event-history_path_review_kazdel_commission_founded) — 地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_siracusa_unification](#event-history_path_review_siracusa_unification) — 地区の掟を担うつながりに関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_ursus_great_rebellion](#event-history_path_review_ursus_great_rebellion) — 地区の労働者の要求活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_rim_billiton_independence](#event-history_path_review_rim_billiton_independence) — 鉱区の自治運営に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
+- [history_path_review_kazdel_war_declared](#event-history_path_review_kazdel_war_declared) — 地区の後方補給班に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_civil_war](#event-history_path_review_kazdel_civil_war) — 避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 - [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
 - [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
 - [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
@@ -18537,7 +18596,7 @@
 - [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-situation-314"></a>
-### 年齢：壮年（2301）
+### 年齢：壮年（2310）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -18680,40 +18739,40 @@
 - [yan_sui](#event-yan_sui) — 年の瀬、暖を取ろうと立ち寄った茶館で、古びた絵巻を広げて『歳』とその代理人たちの物語を語る講釈師がいた。ただの昔話だと笑う客もいれば、今もどこかに息…
 - [yan_ancestor](#event-yan_ancestor) — 長雨で傷んだ水路の橋を直すため、町内の年寄りたちが役所への嘆願と普請の寄付を募っていた。資材代や炊き出しの分担をどうするか、仕事帰りの路地で声をかけ…
 - [timeline_el_sol_founded](#event-timeline_el_sol_founded) — 荒野の砂塵を切り裂いて巨大な移動プレートが結合され、エル・ソルの基礎が目の前に組み上がった。荷役と補修の槌音が昼夜を問わず響き渡り、新しい街の建設に…
-- [timeline_columbia_independence](#event-timeline_columbia_independence) — ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に…
-- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦…
-- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 傭兵団の頭領たちが城塞へ集結し、軍事委員会の無骨な鉄の印章が市壁に刻まれた。統一軍の旗が掲げられ、集落の若者たちに召集と物資拠出の鋭い視線が向けられ…
-- [timeline_great_silence](#event-timeline_great_silence) — 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄え…
-- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
+- [timeline_columbia_independence](#event-timeline_columbia_independence) — 独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。
+- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。
+- [timeline_kazdel_commission](#event-timeline_kazdel_commission) — 軍事委員会の成立を伝える知らせが地区へ届いた。兵站の求人や物資の照会が増え、人々は新しい力との距離を測っていた。
+- [timeline_great_silence](#event-timeline_great_silence) — 海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。
+- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
 - [timeline_el_sol_renovation_paused](#event-timeline_el_sol_renovation_paused) — ボリバル内戦の激化により、エル・ソルの観光改装計画が凍結された。建設途中の骨組みが放置され、港には行き場を失った大量の建築資材が雨ざらしになっている…
-- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — 国境要塞から轟く巨砲の重低音が空を震わせ、傷病兵を満載した軍用列車が絶え間なく駅へ滑り込んできた。第十次ウルサス＝カジミエーシュ戦争の火蓋が切られ、…
-- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — 鉱山奥の封鎖区画に軍の特科装甲車が何台も乗り付け、黒塗りの幌で覆われた巨大な機材が秘密裏に運び込まれた。坑道周辺は立入禁止となり、作業員たちに厳しい…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
-- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レ…
-- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 吹き荒れる砂嵐の中、旧パディシャーの反乱残党と傭兵隊がオアシスの市場で激突した。乾いた砂に鮮血が染み込み、隊商の荷車が次々と炎上している。
+- [timeline_tenth_ursus_kazimierz_war](#event-timeline_tenth_ursus_kazimierz_war) — ウルサスとカジミエーシュの戦争についての報道を読んだ。国境にいるわけではない。仕事や親族との往来に影響があるか、分かる範囲から確かめた。
+- [timeline_sarcophagus_discovery](#event-timeline_sarcophagus_discovery) — チェルノボーグの研究を巡る風聞を耳にした。どの話が確かなのかは分からず、封鎖された施設の中を自分が見たわけでもない。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
+- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。
+- [timeline_sandsoldier_incident](#event-timeline_sandsoldier_incident) — 砂漠の市場で起きた争いの噂を聞いた。交戦した者や被害の規模について話が食い違い、隊商の予定をどう扱うかで商人たちが迷っていた。
 - [timeline_sarcophagus_purge](#event-timeline_sarcophagus_purge) — 深夜の研究所街区を帝国特科憲兵部隊が完全包囲し、激しい銃声のあと、白衣の研究員たちが雪の上に倒れ伏した。機密資料を満載した軍用トラックが夜の闇へと疾…
-- [timeline_leith_revolution](#event-timeline_leith_revolution) — 1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むな…
-- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
-- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — ワーニャ大公の車列が市街の交差点で爆砕され、憲兵隊が通りを完全に封鎖して住民を広場へ駆り集めた。厳冬の広場で容疑者の割り出しと過酷な尋問が夜を徹して…
-- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘区画の地表から紫色の源石ガスが噴き出し、防護服を着た公爵私兵が住民たちを問答無用で追い立てた。汚染された土壌と閉鎖線の前で怒号が飛び交っている。
+- [timeline_leith_revolution](#event-timeline_leith_revolution) — 政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。
+- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。
+- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — 暗殺事件と捜査についての知らせが届いた。現場の交差点に居合わせたわけではなく、報じられた情報と身近な噂を分けて聞いた。
+- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘地区の汚染を巡る知らせを読んだ。問題の区画へ入ったことはなく、流通する品や仕事の条件にどんな影響があるかを確かめた。
 - [timeline_el_sol_renamed_dossoles](#event-timeline_el_sol_renamed_dossoles) — 人工海浜のネオンが一斉に点灯し、カンデラ市長の演説とともに歓楽都市ドッソレスの看板が掲げられた。リゾート音楽が響き渡り、街は享楽の熱狂に包まれている…
 - [timeline_babel_split](#event-timeline_babel_split) — 陸艦バベルが黒煙を吐いて城砦を離脱し、追撃の矢と術式が甲板に降り注ぐ中、サルカズの同胞同士が銃を向け合った。割れた王庭の絆が修復不能な亀裂を刻んでい…
-- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。
+- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 内戦開始の知らせは届いたが、この地区がその日に戦場になったとは限らない。近隣では荷と連絡の遅れを確かめ、今後の備えを話し合っている。
 - [timeline_talulah_kills](#event-timeline_talulah_kills) — 凍てつく原野の古びた公爵邸から猛火と黒煙が立ち上り、吹雪の中に佇むドラコの少女の姿が目撃された。凍土の集落に不穏なざわめきが広がっている。
 - [timeline_talulah_leave](#event-timeline_talulah_leave) — 雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。
-- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
-- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
+- [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 戦争宣言の知らせが地区にも届いた。物資や働き手を求める声と、関わりを避ける声が交錯していた。
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
+- [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 国境地帯の会戦を伝える知らせを受け取った。どの道を通れるかについては別の確認が必要で、知らせの地名を地図でたどると、往来の先行きが気に掛かった。
 - [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
-- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
-- [timeline_world_1099](#event-timeline_world_1099) — 各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。
-- [timeline_world_1101](#event-timeline_world_1101) — 監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。
+- [timeline_kazimierz_major](#event-timeline_kazimierz_major) — カヴァレリエルキの街には大会の知らせと中継があふれている。大通りの画面を見上げる人も、会場へ急ぐ人もいる。どこで、どんな立場で関わるかを考えた。
+- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。
+- [timeline_world_1099](#event-timeline_world_1099) — 旅程上で実際に到達した検問所が、通行の審査を始めている。運行側から届いた通行条件を読み、先へ進む方法を考えた。
+- [timeline_world_1101](#event-timeline_world_1101) — 海辺や北方から届く不穏な知らせを読んだ。海の哨所と北の防壁を一つの場所とは考えず、届いた情報の地域と日付を分けて整理した。
 - [timeline_katorga_incident](#event-timeline_katorga_incident) — 大学前広場を取り囲んだ帝国憲兵隊が棍棒と銃剣で抗議学生たちを殴り倒し、無蓋トラックへ次々と放り込んだ。凍てつく石畳に血痕が凍りついていく。
-- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
+- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
@@ -20766,6 +20825,15 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [journey_decision_review](#event-journey_decision_review) — 検問の前で足止めされている。届いた通行条件と旅費を確かめ、先へ進むか、滞在先で待つかを考えた。
+- [history_path_review_columbia_independence](#event-history_path_review_columbia_independence) — 開拓地区の自治活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_commission_founded](#event-history_path_review_kazdel_commission_founded) — 地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_siracusa_unification](#event-history_path_review_siracusa_unification) — 地区の掟を担うつながりに関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_ursus_great_rebellion](#event-history_path_review_ursus_great_rebellion) — 地区の労働者の要求活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_rim_billiton_independence](#event-history_path_review_rim_billiton_independence) — 鉱区の自治運営に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
+- [history_path_review_kazdel_war_declared](#event-history_path_review_kazdel_war_declared) — 地区の後方補給班に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_civil_war](#event-history_path_review_kazdel_civil_war) — 避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 - [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
 - [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
 - [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
@@ -20893,7 +20961,7 @@
 - [v77_social_stigma_family](#event-v77_social_stigma_family) — 町の食堂に入ると、感染者の隣人が隅の卓で一人黙々と匙を動かしていた。あからさまに席を立つ客もいれば、小さく会釈して通り過ぎる人もいる。家の大人の目が…
 
 <a id="tag-situation-317"></a>
-### 年齢：老年（1505）
+### 年齢：老年（1514）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -20993,29 +21061,29 @@
 - [ibe_rebuild](#event-ibe_rebuild) — 潮風で朽ちた海辺の街区で、崩れた倉庫の床や石畳を直す短期の復旧人足を募っていた。長く続く仕事ではないが、日銭にはなる。
 - [ibe_rebuild_contract_review](#event-ibe_rebuild_contract_review) — 海辺の街区で、また別の古い倉庫を直す日雇い募集が出ていた。前に覚えた手順を生かして応募するか、もっと安定した別の職を探すか思案した。
 - [yan_ancestor](#event-yan_ancestor) — 長雨で傷んだ水路の橋を直すため、町内の年寄りたちが役所への嘆願と普請の寄付を募っていた。資材代や炊き出しの分担をどうするか、仕事帰りの路地で声をかけ…
-- [timeline_columbia_independence](#event-timeline_columbia_independence) — ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に…
-- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦…
-- [timeline_great_silence](#event-timeline_great_silence) — 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄え…
-- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
-- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開か…
-- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レ…
+- [timeline_columbia_independence](#event-timeline_columbia_independence) — 独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。
+- [timeline_four_emperors_war](#event-timeline_four_emperors_war) — 四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。
+- [timeline_great_silence](#event-timeline_great_silence) — 海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。
+- [timeline_siracusa_unification](#event-timeline_siracusa_unification) — 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
+- [timeline_bloodpeak_and_victorian_crown](#event-timeline_bloodpeak_and_victorian_crown) — 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
+- [timeline_rim_billiton_independence](#event-timeline_rim_billiton_independence) — 自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。
 - [timeline_sarcophagus_purge](#event-timeline_sarcophagus_purge) — 深夜の研究所街区を帝国特科憲兵部隊が完全包囲し、激しい銃声のあと、白衣の研究員たちが雪の上に倒れ伏した。機密資料を満載した軍用トラックが夜の闇へと疾…
-- [timeline_leith_revolution](#event-timeline_leith_revolution) — 1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むな…
-- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
-- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — ワーニャ大公の車列が市街の交差点で爆砕され、憲兵隊が通りを完全に封鎖して住民を広場へ駆り集めた。厳冬の広場で容疑者の割り出しと過酷な尋問が夜を徹して…
-- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘区画の地表から紫色の源石ガスが噴き出し、防護服を着た公爵私兵が住民たちを問答無用で追い立てた。汚染された土壌と閉鎖線の前で怒号が飛び交っている。
-- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。
+- [timeline_leith_revolution](#event-timeline_leith_revolution) — 政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。
+- [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。
+- [timeline_vanya_assassination](#event-timeline_vanya_assassination) — 暗殺事件と捜査についての知らせが届いた。現場の交差点に居合わせたわけではなく、報じられた情報と身近な噂を分けて聞いた。
+- [timeline_victoria_leak](#event-timeline_victoria_leak) — 採掘地区の汚染を巡る知らせを読んだ。問題の区画へ入ったことはなく、流通する品や仕事の条件にどんな影響があるかを確かめた。
+- [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 内戦開始の知らせは届いたが、この地区がその日に戦場になったとは限らない。近隣では荷と連絡の遅れを確かめ、今後の備えを話し合っている。
 - [timeline_talulah_kills](#event-timeline_talulah_kills) — 凍てつく原野の古びた公爵邸から猛火と黒煙が立ち上り、吹雪の中に佇むドラコの少女の姿が目撃された。凍土の集落に不穏なざわめきが広がっている。
 - [timeline_talulah_leave](#event-timeline_talulah_leave) — 雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。
-- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
+- [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考え…
 - [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
-- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
-- [timeline_world_1099](#event-timeline_world_1099) — 各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。
-- [timeline_world_1101](#event-timeline_world_1101) — 監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。
+- [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。
+- [timeline_world_1099](#event-timeline_world_1099) — 旅程上で実際に到達した検問所が、通行の審査を始めている。運行側から届いた通行条件を読み、先へ進む方法を考えた。
+- [timeline_world_1101](#event-timeline_world_1101) — 海辺や北方から届く不穏な知らせを読んだ。海の哨所と北の防壁を一つの場所とは考えず、届いた情報の地域と日付を分けて整理した。
 - [timeline_katorga_incident](#event-timeline_katorga_incident) — 大学前広場を取り囲んだ帝国憲兵隊が棍棒と銃剣で抗議学生たちを殴り倒し、無蓋トラックへ次々と放り込んだ。凍てつく石畳に血痕が凍りついていく。
-- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
+- [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。
 - [discrimination_after](#event-discrimination_after) — 申し立てから数日後、上司は返事を先延ばしにし、同僚は仕事の話しかしなくなった。 窓口から返事はなく、顔見知りはその話題になると目をそらした。
 - [discrimination_work_after](#event-discrimination_work_after) — 封書には調査中とだけあった。記録は受け取ったが、その先のことは何も書かれていない。
 - [wld_plague](#event-wld_plague) — 移動都市 都市の別区画で発熱する人が増えたと、配給の列で聞いた。診療所の待ち時間や薬の値段を、近所の人が気にしていた。 乗員区画から感染症への注意が…
@@ -22326,6 +22394,15 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [journey_decision_review](#event-journey_decision_review) — 検問の前で足止めされている。届いた通行条件と旅費を確かめ、先へ進むか、滞在先で待つかを考えた。
+- [history_path_review_columbia_independence](#event-history_path_review_columbia_independence) — 開拓地区の自治活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_commission_founded](#event-history_path_review_kazdel_commission_founded) — 地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_siracusa_unification](#event-history_path_review_siracusa_unification) — 地区の掟を担うつながりに関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_ursus_great_rebellion](#event-history_path_review_ursus_great_rebellion) — 地区の労働者の要求活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考え…
+- [history_path_review_rim_billiton_independence](#event-history_path_review_rim_billiton_independence) — 鉱区の自治運営に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
+- [history_path_review_kazdel_war_declared](#event-history_path_review_kazdel_war_declared) — 地区の後方補給班に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+- [history_path_review_kazdel_civil_war](#event-history_path_review_kazdel_civil_war) — 避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 - [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
 - [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
 - [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
@@ -22446,7 +22523,7 @@
 
 <a id="tag-situation-329"></a>
 ### 避難／後方荷役／残留・死亡分岐（1）
-- [bol_war](#event-bol_war) — 三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金…
+- [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 
 <a id="tag-situation-330"></a>
 ### 避難中（1）
@@ -22540,7 +22617,7 @@
 
 <a id="tag-situation-350"></a>
 ### 未成年は養育者判断／成人は本人判断（1）
-- [kaz_exile](#event-kaz_exile) — カズデル全土に内戦の炎が広がり、大人たちは国を捨てるか残るかで夜通し言い争っている。あなたは押し殺した声に耳を澄ませながら、いつでも逃げられるよう荷…
+- [kaz_exile](#event-kaz_exile) — 内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。
 
 <a id="tag-situation-351"></a>
 ### 名前を知る相手（1）
@@ -50053,12 +50130,12 @@ s => {
 
 - 出典位置：data/base/regional-west.js:485
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
-- 校閲状態：確認済み　優先度：中
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ヴィクトリア
 - ジャンル：労働・経済、感染・医療、天災・避難、戦争・政治、移動・物流
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり、移動都市・避難に言及
-- 指摘分類：年代・場所・因果、死因・結果の明瞭さ
-- 注記：1098年7〜9月のロンディニウム戦争 marker 後に限る運搬・避難・屋内待機を確認。転居先を特定国と断定せず、戦死と負傷の描写を明確にした。
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -50080,10 +50157,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:ヴィクトリア",
-    "都市:ロンディニウム"
-  ],
   "ge": {
     "year": 1098
   },
@@ -50099,7 +50172,23 @@ s => {
     "dynamicFunction": "s => !!s.world?.events?.londinium_war"
   },
   "w": 2,
-  "once": true
+  "once": true,
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "ongoing",
+    "region": "ヴィクトリア",
+    "city": "ロンディニウム",
+    "from": [
+      1098,
+      7
+    ],
+    "through": [
+      1098,
+      9
+    ],
+    "role": "present-civilian",
+    "sourceGrade": "B"
+  }
 }
 ```
 
@@ -50190,57 +50279,23 @@ s => {
 #### 選択肢 2
 
 <a id="choice-vic_war-1"></a>
-選択肢文：有り金を払って脱出ルートを確保し、街を離れる
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "en": {
-    "affordableRoute": 300000
-  },
-  "why": "脱出の運賃と避難先での当面の費用30万龍門幣を用立てられない"
-}
-```
+選択肢文：街を離れる行程と手配条件を調べる
 
 旧シム観測：表示 5、選択可能 5
 
 結果枝：
 <a id="outcome-vic_war-1-0"></a>
 
-- **結果 1（設定確率 85%）**
+- **結果 1（設定確率 100%）**
 
-> 闇のブローカーに30万龍門幣を握らせて荷馬車の隅に乗り込み、砲火に包まれる王都をどうにか脱出した。命は助かったものの、見知らぬ避難先でまた一から仕事と寝床を探さなければならない。
-
-効果：
-
-```json
-{
-  "res": 1,
-  "job": 0,
-  "p": -8,
-  "cash": -300000,
-  "fl": {
-    "war_displaced": 1,
-    "sch": 0
-  }
-}
-```
-
-旧シム観測回数：0
-<a id="outcome-vic_war-1-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 手配金を払って街の外縁まで向かったものの、前方の城門が戦闘で封鎖されており引き返すしかなかった。逃げ惑う群衆のなかで破片を浴びて負傷し、金も体力もすり減らした。
+> 人づてに便の案内を集め、行先と運賃を控えた。家族の都合を確かめ、出発の準備を始めた。
 
 効果：
 
 ```json
 {
-  "h": -25,
-  "cash": -100000,
-  "p": -12
+  "travelAction": "intent:flight",
+  "p": -3
 }
 ```
 
@@ -61272,39 +61327,23 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:126
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：確認済み　優先度：高
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：カズデル
 - ジャンル：戦争・政治、移動・物流、家族・介護
 - 状況：カズデル内戦中・1092〜1094年、未成年は養育者判断／成人は本人判断、国外避難・残留・死亡分岐
-- 指摘分類：年代・年齢・場所、条件・表示・処理、視点・語り手
-- 注記：1092〜1094年のカズデル内戦フラグが立った場合だけ表示し、未成年は家の大人が判断する語り分け。失敗時の運賃損失を結果に合わせた一世帯の避難経路。
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-#### 条件付き本文 1
-
-条件：
-```json
-"未成年"
-```
-
-> カズデル全土に内戦の炎が広がり、大人たちは国を捨てるか残るかで夜通し言い争っている。あなたは押し殺した声に耳を澄ませながら、いつでも逃げられるよう荷物をまとめた。
-
-#### 条件付き本文 2
-
-条件：
-```json
-"(条件指定なし)"
-```
-
-> 内戦の戦火がいよいよ身近に迫り、故郷を捨てて国境を越えるか、この地に留まるか決断を迫られた。逃げ道も荒野も、どちらも血と硝煙の匂いがしていた。
+> 内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "kaz_exile",
-  "conf": "B",
+  "conf": "S",
   "references": [
     "SRC_TL_EARLY",
     "SRC_TL_1094",
@@ -61351,62 +61390,23 @@ s => {
 #### 選択肢 1
 
 <a id="choice-kaz_exile-0"></a>
-選択肢文：運賃と当面の費用を工面して国外へ逃れる
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "en": {
-    "affordableRoute": 200000
-  },
-  "why": "移動先までの運賃と当面の費用を用意できない"
-}
-```
+選択肢文：国外へ向かう避難の行程を準備する
 
 旧シム観測：表示 576、選択可能 162
 
 結果枝：
 <a id="outcome-kaz_exile-0-0"></a>
 
-- **結果 1（設定確率 70%）**
+- **結果 1（設定確率 100%）**
 
-> 有り金をはたいて闇の運び屋に乗り込み、国境を越えた。背負い袋ひとつの身の上になり、カズデルに残してきた人たちとの音信もぷっつりと途絶えた。
-
-効果：
-
-```json
-{
-  "job": 0,
-  "res": 1,
-  "p": -10,
-  "rl": -8,
-  "cash": -200000,
-  "fl": {
-    "kazdel_left": 1,
-    "kazdel_displaced_life": 1,
-    "sch": 0
-  }
-}
-```
-
-旧シム観測回数：0
-<a id="outcome-kaz_exile-0-1"></a>
-
-- **結果 2（設定確率 30%）**
-
-> 金を払って脱出を図ったが、荒野の途中で武装集団に襲われ、荷物も路銀も根こそぎ奪われた。国境を越えることもできず、傷ついた体でカズデルへ引き返した。
+> 荷物と連絡先をまとめ、行先の候補を調べ始めた。出発前に、家族の都合と運賃を確かめる必要がある。
 
 効果：
 
 ```json
 {
-  "h": -25,
-  "p": -12,
-  "cash": -200000,
-  "fl": {
-    "kazdel_stayed": 1
-  }
+  "travelAction": "intent:flight",
+  "p": -2
 }
 ```
 
@@ -61415,23 +61415,22 @@ s => {
 #### 選択肢 2
 
 <a id="choice-kaz_exile-1"></a>
-選択肢文：故郷に留まる
+選択肢文：この地区で暮らしを続ける
 
 旧シム観測：表示 576、選択可能 576
 
 結果枝：
 <a id="outcome-kaz_exile-1-0"></a>
 
-- **結果 1（設定確率 60%）**
+- **結果 1（設定確率 100%）**
 
-> 崩れた壁の陰で息を潜め、激化する内戦をなんとか生き延びた。夜空を焦がす砲火を見上げるたび、いつまでここで生きていけるのかと胸が潰れそうになった。
+> 身近な人々と当面の仕事と食料を確かめ、ここに残ることにした。
 
 効果：
 
 ```json
 {
-  "h": -15,
-  "p": -10,
+  "p": -2,
   "fl": {
     "kazdel_stayed": 1
   }
@@ -61439,24 +61438,6 @@ s => {
 ```
 
 旧シム観測回数：5
-<a id="outcome-kaz_exile-1-1"></a>
-
-- **結果 2（設定確率 40%）**
-
-> 封鎖線を抜けることもできないまま、容赦ない戦火が居住区ごとすべてを焼き尽くした。
-
-効果：
-
-```json
-{
-  "d": [
-    "戦死・戦争被害",
-    "カズデル内戦で命を落とした"
-  ]
-}
-```
-
-旧シム観測回数：1
 
 
 <a id="event-kazdel_afterfall"></a>
@@ -61464,32 +61445,16 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:185
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：確認済み　優先度：高
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：カズデル
 - ジャンル：日常、家族・介護、天災・避難、戦争・政治、移動・物流
 - 状況：カズデル内戦後・1095〜1098年、前段で残留した人、仮住まい・個人の再移動
-- 指摘分類：年代・年齢・場所、因果・状況整合、条件・表示・処理
-- 注記：内戦後の1095〜1098年に、前段でカズデルに残った人だけを対象にする。運賃・当面費用20万龍門幣の条件と支出を揃え、移住先や家族全員の同行を断定しない。
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-#### 条件付き本文 1
-
-条件：
-```json
-"未成年"
-```
-
-> ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼け跡に残った人たちと身を寄せ合うか、暗い部屋で相談が続いた。
-
-#### 条件付き本文 2
-
-条件：
-```json
-"(条件指定なし)"
-```
-
-> 通りへ出ると、生き残った隣家の人たちが荷車に家財を積んでいた。どの街道なら安全か、行った先に仕事や寝床があるのか、誰も知らない。身近な人たちと、この地を離れるか残るか話し合った。
+> 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
 
 ### 発生条件・構造
 
@@ -61544,18 +61509,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-kazdel_afterfall-0"></a>
-選択肢文：運賃を工面して別の土地へ移る
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "en": {
-    "affordableRoute": 200000
-  },
-  "why": "移動先までの運賃と当面の費用を用意できない"
-}
-```
+選択肢文：別の土地へ向かう行程を準備する
 
 旧シム観測：表示 92、選択可能 62
 
@@ -61564,23 +61518,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> わずかな荷物を背負い、焼け跡に残る人たちに別れを告げた。移動の運賃と支度金を支払い、向かう先の町の名を口の中で何度も繰り返しながら、見知らぬ土地へ旅立った。
+> わずかな荷と連絡先をまとめ、行先と交通を確かめ始めた。
 
 効果：
 
 ```json
 {
-  "job": 0,
-  "res": 1,
-  "p": -10,
-  "rl": -7,
-  "cash": -100000,
-  "fl": {
-    "kazdel_stayed": 0,
-    "kazdel_displaced": 1,
-    "kazdel_displaced_life": 1,
-    "sch": 0
-  }
+  "travelAction": "intent:flight",
+  "p": -2
 }
 ```
 
@@ -61589,7 +61534,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-kazdel_afterfall-1"></a>
-選択肢文：近くに残った人たちと仮住まいを探す
+選択肢文：同じ地域の仮住まいを探す行程を準備する
 
 旧シム観測：表示 92、選択可能 92
 
@@ -61598,20 +61543,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 焼け残った者同士で声をかけ合い、雨風をしのげる空き家を手入れした。故郷の景色は変わり果ててしまったが、乏しい食料や毛布を分け合える相手がそばにいた。
+> 頼れそうな滞在先の案内を集め、荷を運ぶ方法を考えた。
 
 効果：
 
 ```json
 {
-  "h": -5,
-  "p": -6,
-  "rl": 5,
-  "fl": {
-    "kazdel_stayed": 0,
-    "kazdel_displaced": 1,
-    "kazdel_displaced_life": 1
-  }
+  "travelAction": "intent:local-flight",
+  "p": -1
 }
 ```
 
@@ -62062,16 +62001,16 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:358
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：確認済み　優先度：高
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ボリバル
 - ジャンル：戦争・政治、家族・介護、労働・経済、移動・物流
 - 状況：ボリバル内戦・1048年以降、青年・壮年、避難／後方荷役／残留・死亡分岐
-- 指摘分類：視点・語り手、因果・状況整合
-- 注記：1048年以降の内戦フラグに応じた一人の避難・後方荷役・残留。短期の軍需仕事を軍への入隊と混同せず、避難失敗後は街へ戻る記述に揃えた。
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金と逃げ道の心当たりを確かめた。
+> 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 
 ### 発生条件・構造
 
@@ -62089,9 +62028,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:ボリバル"
-  ],
   "ge": {
     "year": 1048
   },
@@ -62099,7 +62035,22 @@ s => {
     "dynamicFunction": "s => !!s.world?.events?.bolivar_civil_war"
   },
   "w": 2,
-  "cd": 5
+  "cd": 5,
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "ongoing",
+    "region": "ボリバル",
+    "from": [
+      1048,
+      1
+    ],
+    "through": [
+      1052,
+      12
+    ],
+    "role": "local-civilian",
+    "sourceGrade": "C"
+  }
 }
 ```
 
@@ -62117,145 +62068,76 @@ s => {
 #### 選択肢 1
 
 <a id="choice-bol_war-0"></a>
-選択肢文：軍の後方基地で荷さばきを手伝う
+選択肢文：地区で引き受けられる修理仕事を探す
 
 旧シム観測：表示 3376、選択可能 3376
 
 結果枝：
 <a id="outcome-bol_war-0-0"></a>
 
-- **結果 1（設定確率 60%）**
+- **結果 1（設定確率 100%）**
 
-> 後方部隊の倉庫で弾薬箱とレーションを積み替える日雇いにありついた。実入りは良く当面の支払いはしのげたが、前線の死傷者の噂が耳に入るたび手が止まった。
+> 手元でできる補修を請け負い、仕上げた分の報酬を受け取った。
 
 効果：
 
 ```json
 {
-  "cash": 300000,
-  "cr": 4,
-  "p": -4
+  "cash": 50000,
+  "h": -3
 }
 ```
 
 旧シム観測回数：6
-<a id="outcome-bol_war-0-1"></a>
-
-- **結果 2（設定確率 40%）**
-
-> 補給物資を運ぶ車列が敵対勢力の待ち伏せを受け、飛び交う銃弾と砲火のなかを逃げ惑って負傷した。
-
-効果：
-
-```json
-{
-  "h": -30,
-  "p": -12
-}
-```
-
-旧シム観測回数：3
 
 #### 選択肢 2
 
 <a id="choice-bol_war-1"></a>
-選択肢文：戦火の及ばない土地へ避難する
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "en": {
-    "affordableRoute": 300000
-  },
-  "why": "移動運賃と到着後の当面の費用を用意できない"
-}
-```
+選択肢文：移動先の暮らしと経路を調べる
 
 旧シム観測：表示 3376、選択可能 1207
 
 結果枝：
 <a id="outcome-bol_war-1-0"></a>
 
-- **結果 1（設定確率 80%）**
+- **結果 1（設定確率 100%）**
 
-> なけなしの運賃を払って荷馬車に乗り、銃声の届かない地域へ移り住んだ。見知らぬ町でまた一から仕事を探し直すことになる。
+> 行先と費用を控え、出発の準備を始めた。
 
 効果：
 
 ```json
 {
-  "job": 0,
-  "res": 1,
-  "p": -6,
-  "cash": -300000,
-  "fl": {
-    "war_displaced": 1,
-    "sch": 0
-  }
+  "k": 2,
+  "p": -2
 }
 ```
 
 旧シム観測回数：2
-<a id="outcome-bol_war-1-1"></a>
-
-- **結果 2（設定確率 20%）**
-
-> 避難する街道で敗残兵崩れの強盗に襲われ、持ち出した路銀の大半を巻き上げられた。傷の手当てをしながら元の街へ引き返すしかなかった。
-
-効果：
-
-```json
-{
-  "h": -20,
-  "cash": -200000,
-  "p": -10
-}
-```
-
-旧シム観測回数：1
 
 #### 選択肢 3
 
 <a id="choice-bol_war-2"></a>
-選択肢文：今の街に留まる
+選択肢文：今の仕事を守り、家計を切り詰める
 
 旧シム観測：表示 3376、選択可能 3376
 
 結果枝：
 <a id="outcome-bol_war-2-0"></a>
 
-- **結果 1（設定確率 70%）**
+- **結果 1（設定確率 100%）**
 
-> 鎧戸を閉ざして街に踏みとどまり、嵐が通り過ぎるのを息を潜めて待った。
+> 予定を減らし、当面の食料と仕事を確保した。
 
 効果：
 
 ```json
 {
-  "p": -4
+  "p": -1
 }
 ```
 
 旧シム観測回数：1
-<a id="outcome-bol_war-2-1"></a>
-
-- **結果 2（設定確率 30%）**
-
-> 激突する両軍の砲火が街区を直撃し、逃げ場のないまま炎に巻かれた。
-
-効果：
-
-```json
-{
-  "d": [
-    "戦争に伴う民間人死亡",
-    "ボリバル内戦の戦火に巻き込まれ、亡くなった"
-  ]
-}
-```
-
-旧シム観測回数：2
 
 
 <a id="event-bol_tourist"></a>
@@ -64032,12 +63914,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:850
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ボリバル
 - ジャンル：未分類
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -64054,7 +63936,17 @@ s => {
     "delivery": "direct",
     "dateMode": "event-year",
     "region": "ボリバル",
-    "city": "エル・ソル"
+    "city": "エル・ソル",
+    "from": [
+      1007,
+      1
+    ],
+    "through": [
+      1007,
+      12
+    ],
+    "sourceGrade": "C",
+    "role": "present-civilian"
   },
   "references": [
     "SRC_COMMUNITY_DOSSOLES_HISTORY",
@@ -64063,10 +63955,6 @@ s => {
   "st": [
     "青年",
     "壮年"
-  ],
-  "need": [
-    "国:ボリバル",
-    "都市:エル・ソル"
   ],
   "ge": {
     "year": 1007
@@ -64186,27 +64074,40 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:885
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ヴィクトリア、クルビア
 - ジャンル：労働・経済、差別・制度
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に歓声が沸き上がっている。
+> 独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_columbia_independence",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "columbia_independence",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1019,
+      1
+    ],
+    "through": [
+      1019,
+      12
+    ],
+    "region": "クルビア",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_1000_1061",
@@ -64217,9 +64118,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:クルビア"
-  ],
   "ge": {
     "year": 1019
   },
@@ -64227,7 +64125,7 @@ s => {
     "year": 1021
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.columbia_independence"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -64243,7 +64141,17 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_columbia_independence-0"></a>
-選択肢文：新政府の登記所へ向かい、自作地の所有権を申請する
+選択肢文：登記申請を提出し、地区の自治の仕事を手伝う
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  }
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -64252,15 +64160,33 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 古い総督府の帳簿から新しい合衆国登記簿へ権利を書き換え、晴れて独立した土地の持ち主となった。
+> 手元の土地資料を添えて申請を提出し、返事を待つことにした。地区の帳簿を取りまとめる役目も引き受け、顔を合わせる仲間ができた。
 
 効果：
 
 ```json
 {
-  "cash": -80000,
-  "w": 1,
-  "p": 4,
+  "k": 2,
+  "p": 1,
+  "lifeAffiliation": {
+    "id": "hist-columbia_independence",
+    "title": "開拓地区の自治活動",
+    "kind": "local-civic-commitment",
+    "action": "join",
+    "role": "地区の活動を担う"
+  },
+  "lifeGoal": {
+    "id": "hist-columbia_independence-path",
+    "title": "開拓地区の自治活動と自分の暮らしを両立する",
+    "priority": "仕事と社会",
+    "action": "start"
+  },
+  "regionalImpact": {
+    "region": "クルビア",
+    "entity": "開拓地区の自治活動",
+    "kind": "personal-participation",
+    "description": "本人が地区の活動に加わると決めた"
+  },
   "fl": {
     "columbia_pioneer": 1
   }
@@ -64272,39 +64198,36 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_columbia_independence-1"></a>
-選択肢文：旧本国派の役人との未払い契約を急ぎ回収清算する
+選択肢文：独立を祝う近隣の集まりへ差し入れをする
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "affordableCash": 20000
+  },
+  "why": "この支出を賄える資金がない"
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_columbia_independence-1-0"></a>
 
-- **結果 1（設定確率 75%）**
+- **結果 1（設定確率 100%）**
 
-> 撤収を急ぐ総督府の会計係から滞納されていた報酬を無事回収し、財布を膨らませた。
-
-効果：
-
-```json
-{
-  "cash": 150000,
-  "p": 1
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_columbia_independence-1-1"></a>
-
-- **結果 2（設定確率 25%）**
-
-> 役人は夜逃げ同然に去っており、請求書の束だけが手元に残った。
+> 祝いの席で、これからの暮らしについて話した。遠い式典の様子は、届いた知らせで知るほかなかった。
 
 効果：
 
 ```json
 {
-  "p": -4,
-  "cash": -30000
+  "cash": -20000,
+  "rl": 4,
+  "p": 3,
+  "pm": 1
 }
 ```
 
@@ -64313,7 +64236,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_columbia_independence-2"></a>
-選択肢文：開拓民たちの熱狂的な独立パレードを見届ける
+選択肢文：政治の行方を見ながら、普段の商いを続ける
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -64322,14 +64245,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 広場に響く祝砲と青空に翻る旗を見上げ、これからの荒野の未来に思いを馳せた。
+> 取引相手と納期を確かめ、急な契約変更を避けて一日を終えた。
 
 効果：
 
 ```json
 {
-  "p": 3,
-  "rl": 2
+  "p": 1
 }
 ```
 
@@ -64341,27 +64263,39 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:920
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ヴィクトリア、ウルサス、リターニア
 - ジャンル：戦争・政治
 - 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦なき戦乱の炎が視界を埋め尽くしている。
+> 四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_four_emperors_war",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "four_emperors_war",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1031,
+      12
+    ],
+    "through": [
+      1031,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_1000_1061",
@@ -64374,7 +64308,7 @@ s => {
     "老年"
   ],
   "show": {
-    "dynamicFunction": "() => false"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "ge": {
     "year": 1031
@@ -64396,45 +64330,23 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_four_emperors_war-0"></a>
-選択肢文：猛烈な砲爆撃の下、地下水路を伝って市街外へ脱出する
+選択肢文：複数の報道を読み比べる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_four_emperors_war-0-0"></a>
 
-- **結果 1（設定確率 85%）**
+- **結果 1（設定確率 100%）**
 
-> 濁流と瓦礫を這い進み、立ち込める黒煙に紛れて戦火の街を脱出した。生き延びたものの、故郷の家屋は失われた。
-
-効果：
-
-```json
-{
-  "p": -8,
-  "h": -15,
-  "res": 1,
-  "fl": {
-    "war_displaced": 1
-  }
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_four_emperors_war-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 崩壊した地下天井が巨砲の衝撃で抜け落ち、退路を断たれて瓦礫の下敷きとなった。
+> 断片を帳面に並べ、分かっていない部分を空欄のまま残した。遠い砲声を思い浮かべながら、帳面を閉じた。
 
 効果：
 
 ```json
 {
-  "d": [
-    "戦死・戦争被害（四皇会戦・ガリア侵攻）",
-    "四皇会戦の猛砲撃で崩壊した地下道の下敷きとなり、亡くなった"
-  ]
+  "k": 3,
+  "p": -2
 }
 ```
 
@@ -64443,42 +64355,23 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_four_emperors_war-1"></a>
-選択肢文：近隣住民とともにバリケードを築き、略奪部隊に抵抗する
+選択肢文：関係する取引の納期を確認する
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_four_emperors_war-1-0"></a>
 
-- **結果 1（設定確率 75%）**
+- **結果 1（設定確率 100%）**
 
-> 家具や石畳を積み上げた防壁で敗残兵の略奪を退け、夜明けまで街区を守り通した。
-
-効果：
-
-```json
-{
-  "p": -4,
-  "cash": -50000,
-  "rl": 8
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_four_emperors_war-1-1"></a>
-
-- **結果 2（設定確率 25%）**
-
-> 重火器を手にした略奪兵の銃撃を浴び、防衛戦の最中に致命傷を負った。
+> 届く予定の荷と未確定の便を分けて書き留めた。返事のない便には印を付け、次の連絡を待った。
 
 効果：
 
 ```json
 {
-  "d": [
-    "戦死・戦争被害（四皇会戦・ガリア侵攻）",
-    "ガリア侵攻軍の略奪兵との交戦で致命傷を負い、亡くなった"
-  ]
+  "k": 1,
+  "p": 1
 }
 ```
 
@@ -64487,41 +64380,22 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_four_emperors_war-2"></a>
-選択肢文：教会の頑丈な地下納骨堂に身を潜め、終戦の鐘を待つ
+選択肢文：当面の出費を抑える
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_four_emperors_war-2-0"></a>
 
-- **結果 1（設定確率 80%）**
+- **結果 1（設定確率 100%）**
 
-> 暗闇の中で祈り続け、数日後に連合軍による占領宣言の太鼓を聞いて命拾いした。
-
-効果：
-
-```json
-{
-  "p": -10,
-  "h": -6
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_four_emperors_war-2-1"></a>
-
-- **結果 2（設定確率 20%）**
-
-> 砲撃による火災旋風の有毒な煙が地下へ逆流し、窒息して命を落とした。
+> 戦況の噂だけで転居を決めず、手元の暮らしを維持した。
 
 効果：
 
 ```json
 {
-  "d": [
-    "戦死・戦争被害（四皇会戦・ガリア侵攻）",
-    "会戦時の毒煙と瓦礫で退路を断たれ、亡くなった"
-  ]
+  "p": -1
 }
 ```
 
@@ -64533,27 +64407,40 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:962
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：カズデル
 - ジャンル：労働・経済、戦争・政治
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 傭兵団の頭領たちが城塞へ集結し、軍事委員会の無骨な鉄の印章が市壁に刻まれた。統一軍の旗が掲げられ、集落の若者たちに召集と物資拠出の鋭い視線が向けられている。
+> 軍事委員会の成立を伝える知らせが地区へ届いた。兵站の求人や物資の照会が増え、人々は新しい力との距離を測っていた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_kazdel_commission",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "kazdel_commission_founded",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1031,
+      9
+    ],
+    "through": [
+      1031,
+      12
+    ],
+    "region": "カズデル",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_KAZDEL_BB1"
@@ -64562,9 +64449,6 @@ s => {
     "青年",
     "壮年"
   ],
-  "need": [
-    "国:カズデル"
-  ],
   "ge": {
     "year": 1031
   },
@@ -64572,7 +64456,7 @@ s => {
     "year": 1033
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.kazdel_commission_founded"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -64588,7 +64472,17 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_kazdel_commission-0"></a>
-選択肢文：軍事委員会の兵站隊に登録し、正規の糧食配給を得る
+選択肢文：地元の補給班で継続して働く
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  }
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -64597,15 +64491,34 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 輸送部隊の荷役仕事に就き、荒野を巡回する兵団の補給を支えて安定した食料を受け取った。
+> 荷を数える仕事を終え、その分の手当を受け取った。次の仕事も引き受けると伝え、補給班の名簿に名を載せた。
 
 効果：
 
 ```json
 {
-  "cash": 150000,
-  "cr": 3,
-  "p": -2
+  "cash": 60000,
+  "h": -3,
+  "p": -2,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_commission_founded",
+    "title": "地元の補給組織",
+    "kind": "local-civic-commitment",
+    "action": "join",
+    "role": "地区の活動を担う"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_commission_founded-path",
+    "title": "地元の補給組織と自分の暮らしを両立する",
+    "priority": "仕事と社会",
+    "action": "start"
+  },
+  "regionalImpact": {
+    "region": "カズデル",
+    "entity": "地元の補給組織",
+    "kind": "personal-participation",
+    "description": "本人が地区の活動に加わると決めた"
+  }
 }
 ```
 
@@ -64614,40 +64527,24 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_kazdel_commission-1"></a>
-選択肢文：傭兵団の頭領と掛け合い、集落の過度な徴発の免除を請願する
+選択肢文：地区の負担について要望書をまとめる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_kazdel_commission-1-0"></a>
 
-- **結果 1（設定確率 70%）**
+- **結果 1（設定確率 100%）**
 
-> 丁重な交渉と手土産が功を奏し、身内の集落は必要以上の略奪を免れた。
-
-効果：
-
-```json
-{
-  "cash": -80000,
-  "rl": 8,
-  "p": 3
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_kazdel_commission-1-1"></a>
-
-- **結果 2（設定確率 30%）**
-
-> 頭領の不興を買い、重い罰金を課されて手痛い出費となった。
+> 集めた意見を文書にした。提出してから、返事が来るまで落ち着かない日々が続いた。
 
 効果：
 
 ```json
 {
-  "cash": -150000,
-  "p": -5
+  "k": 2,
+  "rl": 3,
+  "p": -1
 }
 ```
 
@@ -64656,7 +64553,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_kazdel_commission-2"></a>
-選択肢文：集落の鍛冶場で武具の補修に専念し、中立を保つ
+選択肢文：新しい組織と契約せず、今の仕事を続ける
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -64665,13 +64562,12 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 傭兵たちの刃を研ぎ、鉄屑を打ち直す日々の仕事に没頭して戦乱の嵐をやり過ごした。
+> 委員会の噂を聞きながらも、暮らしの段取りを変えずに過ごした。
 
 効果：
 
 ```json
 {
-  "cash": 80000,
   "p": 1
 }
 ```
@@ -64684,27 +64580,40 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:997
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：イベリア
 - ジャンル：天災・避難
 - 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり、移動都市・避難に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄えたイベリアの沿岸が一瞬にして死の静寂に呑み込まれた。
+> 海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_great_silence",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "great_silence",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1038,
+      7
+    ],
+    "through": [
+      1038,
+      12
+    ],
+    "region": "イベリア",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_1000_1061",
@@ -64717,9 +64626,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:イベリア"
-  ],
   "ge": {
     "year": 1038
   },
@@ -64727,7 +64633,7 @@ s => {
     "year": 1039
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.great_silence"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2.5,
   "once": true
@@ -64743,45 +64649,23 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_great_silence-0"></a>
-選択肢文：暗黒の海を背に、身一つで内陸の巡礼街道へ急行避難する
+選択肢文：手元の食料と入荷の予定を点検する
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_great_silence-0-0"></a>
 
-- **結果 1（設定確率 85%）**
+- **結果 1（設定確率 100%）**
 
-> 恐ろしい海鳴りを背中に聞きながら走りに走り、内陸の防衛線へ逃げ込んだ。沿岸の財産はすべて失われた。
-
-効果：
-
-```json
-{
-  "res": 1,
-  "p": -10,
-  "cash": -150000,
-  "fl": {
-    "silence_survivor": 1
-  }
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_great_silence-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 沿岸街道を這い上がってきた黒い潮流と異形の群れに呑み込まれ、跡形もなく消え去った。
+> 在庫と未着の荷を分けて数え直した。食卓に並ぶものが減るかもしれないと、気が重くなった。
 
 効果：
 
 ```json
 {
-  "d": [
-    "怪異被災（大いなる静謐・黒い海の侵蝕）",
-    "大いなる静謐の黒い潮流に呑み込まれ、行方不明となった"
-  ]
+  "k": 2,
+  "p": -2
 }
 ```
 
@@ -64790,42 +64674,36 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_great_silence-1"></a>
-選択肢文：灯台に孤立した港湾作業員たちの救助に向かう
+選択肢文：地域で受け取った不足物資の募集に応じる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "affordableCash": 40000
+  },
+  "why": "この支出を賄える資金がない"
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_great_silence-1-0"></a>
 
-- **結果 1（設定確率 75%）**
+- **結果 1（設定確率 100%）**
 
-> 闇の中で生存者を誘導し、奇跡的に内陸へ脱出させた。救われた人々から涙とともに感謝された。
-
-効果：
-
-```json
-{
-  "p": 4,
-  "rl": 10,
-  "h": -12
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_great_silence-1-1"></a>
-
-- **結果 2（設定確率 25%）**
-
-> 波打ち際で冷たい触肢の怪異に捕らえられ、引きずり込まれて息絶えた。
+> 届け先を確かめて物資を渡した。受取人の礼を聞き、残った荷を持って家へ戻った。
 
 効果：
 
 ```json
 {
-  "d": [
-    "怪異被災（大いなる静謐・黒い海の侵蝕）",
-    "灯台救助中に海からの異形に襲われ、命を落とした"
-  ]
+  "cash": -40000,
+  "rl": 5,
+  "p": 2,
+  "pm": 1
 }
 ```
 
@@ -64834,41 +64712,22 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_great_silence-2"></a>
-選択肢文：厚い石壁の教会に籠城し、審判修道士の救援を待つ
+選択肢文：危険な話に近づかず、日々の仕事を守る
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_great_silence-2-0"></a>
 
-- **結果 1（設定確率 80%）**
+- **結果 1（設定確率 100%）**
 
-> 閉ざされた礼拝堂で灯明を絶やさず祈り続け、駆けつけた審判官によって救出された。
-
-効果：
-
-```json
-{
-  "p": -12,
-  "h": -4
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_great_silence-2-1"></a>
-
-- **結果 2（設定確率 20%）**
-
-> 礼拝堂の敷石の隙間から滲み出た黒い粘液に蝕まれ、精神と肉体を失った。
+> 帰ってこない便を気にかけながら、暮らしを続けた。
 
 効果：
 
 ```json
 {
-  "d": [
-    "怪異被災（大いなる静謐・黒い海の侵蝕）",
-    "礼拝堂を侵蝕した未知の怪異に精神と肉体を奪われ、亡くなった"
-  ]
+  "p": -2
 }
 ```
 
@@ -64880,27 +64739,40 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1040
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：シラクーザ
 - ジャンル：家族・介護、労働・経済、所属・組織
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり、組織・所属に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタのもとに束ねられていく。
+> 新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_siracusa_unification",
-  "conf": "C",
+  "conf": "S",
   "timelineFlag": "siracusa_unification",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1040,
+      1
+    ],
+    "through": [
+      1040,
+      12
+    ],
+    "region": "シラクーザ",
+    "role": "local-civilian",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_1000_1061"
@@ -64910,9 +64782,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:シラクーザ"
-  ],
   "ge": {
     "year": 1040
   },
@@ -64920,7 +64789,7 @@ s => {
     "year": 1042
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.siracusa_unification"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -64936,7 +64805,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_siracusa_unification-0"></a>
-選択肢文：ミズ・シチリアの布告したオメルタの掟を厳格に順守する
+選択肢文：不用意な口約束を避け、取引の条件を書き留める
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -64945,17 +64814,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 沈黙の掟を守り、余計な口を利かずに商売を続けて街の信認を得た。
+> 相手と条件を確かめ直し、余計な噂を広げずに取引を終えた。
 
 効果：
 
 ```json
 {
-  "p": 2,
-  "rl": 5,
-  "fl": {
-    "omerta_sworn": 1
-  }
+  "k": 2,
+  "p": 1
 }
 ```
 
@@ -64964,39 +64830,55 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_siracusa_unification-1"></a>
-選択肢文：旧来の有力ファミリーとの貸し借りを急ぎ清算する
+選択肢文：地区の掟を担う人々との約束に加わる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  }
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_siracusa_unification-1-0"></a>
 
-- **結果 1（設定確率 70%）**
+- **結果 1（設定確率 100%）**
 
-> 粛清の刃が届く前に厄介な義理を片付け、新体制下で身軽になった。
-
-効果：
-
-```json
-{
-  "cash": -80000,
-  "p": 2
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_siracusa_unification-1-1"></a>
-
-- **結果 2（設定確率 30%）**
-
-> 残債の回収に来た荒くれ者たちに脅し取られ、手痛い損失を被った。
+> 取引と沈黙についての約束を、自分の言葉で引き受けた。頼み事と義理が増え、暮らしの中でその重みを感じ始めた。
 
 効果：
 
 ```json
 {
-  "cash": -150000,
-  "p": -4
+  "fl": {
+    "omerta_sworn": 1
+  },
+  "rl": 3,
+  "p": 1,
+  "lifeAffiliation": {
+    "id": "hist-siracusa_unification",
+    "title": "地区の掟を担うつながり",
+    "kind": "local-civic-commitment",
+    "action": "join",
+    "role": "地区の活動を担う"
+  },
+  "lifeGoal": {
+    "id": "hist-siracusa_unification-path",
+    "title": "地区の掟を担うつながりと自分の暮らしを両立する",
+    "priority": "仕事と社会",
+    "action": "start"
+  },
+  "regionalImpact": {
+    "region": "シラクーザ",
+    "entity": "地区の掟を担うつながり",
+    "kind": "personal-participation",
+    "description": "本人が地区の活動に加わると決めた"
+  }
 }
 ```
 
@@ -65005,7 +64887,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_siracusa_unification-2"></a>
-選択肢文：教会区の神父に相談し、騒乱を避けて教区の仕事を手伝う
+選択肢文：抗争との取引を増やさず、生活を続ける
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65014,14 +64896,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 教会の鐘の下で慎ましい勤めを果たし、ファミリーの抗争から距離を置いた。
+> 自分が引き受ける用事を絞り、その日の仕事へ戻った。
 
 効果：
 
 ```json
 {
-  "p": 3,
-  "rl": 3
+  "p": 2
 }
 ```
 
@@ -65033,12 +64914,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1075
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ボリバル
 - ジャンル：労働・経済、戦争・政治
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -65055,7 +64936,17 @@ s => {
     "delivery": "direct",
     "dateMode": "event-year",
     "region": "ボリバル",
-    "city": "エル・ソル"
+    "city": "エル・ソル",
+    "from": [
+      1048,
+      1
+    ],
+    "through": [
+      1048,
+      12
+    ],
+    "sourceGrade": "C",
+    "role": "present-civilian"
   },
   "references": [
     "SRC_TL_1000_1061",
@@ -65065,10 +64956,6 @@ s => {
   "st": [
     "青年",
     "壮年"
-  ],
-  "need": [
-    "国:ボリバル",
-    "都市:エル・ソル"
   ],
   "ge": {
     "year": 1048
@@ -65188,27 +65075,39 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1110
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ウルサス、カジミエーシュ
 - ジャンル：家族・介護、戦争・政治、移動・物流
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 国境要塞から轟く巨砲の重低音が空を震わせ、傷病兵を満載した軍用列車が絶え間なく駅へ滑り込んできた。第十次ウルサス＝カジミエーシュ戦争の火蓋が切られ、国境地帯に非常戒厳令が敷かれている。
+> ウルサスとカジミエーシュの戦争についての報道を読んだ。国境にいるわけではない。仕事や親族との往来に影響があるか、分かる範囲から確かめた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_tenth_ursus_kazimierz_war",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "tenth_ursus_kazimierz_war",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1062,
+      1
+    ],
+    "through": [
+      1062,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_EARLY"
@@ -65218,7 +65117,7 @@ s => {
     "壮年"
   ],
   "show": {
-    "dynamicFunction": "s => [\"ウルサス\", \"カジミエーシュ\"].includes(s.res?.n)"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "ge": {
     "year": 1062
@@ -65240,43 +65139,23 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_tenth_ursus_kazimierz_war-0"></a>
-選択肢文：前線要塞の防壁補強と弾薬運搬の工兵任務に志願する
+選択肢文：軍関係の仕事へ応募する前に条件を照会する
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_tenth_ursus_kazimierz_war-0-0"></a>
 
-- **結果 1（設定確率 80%）**
+- **結果 1（設定確率 100%）**
 
-> 敵の砲撃に晒されながらも防壁の修復を完遂し、軍功手当を受け取った。
-
-効果：
-
-```json
-{
-  "cash": 220000,
-  "cr": 4,
-  "h": -10,
-  "p": -4
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_tenth_ursus_kazimierz_war-0-1"></a>
-
-- **結果 2（設定確率 20%）**
-
-> 要塞の胸壁へ敵の榴弾が直撃し、吹き飛ぶ破片を浴びて戦死した。
+> 配属先も任務も未確定のまま、募集条件を書き留めた。返事を待つ間、戦争の仕事を引き受ける重みを考えた。
 
 効果：
 
 ```json
 {
-  "d": [
-    "戦闘職務中の死亡",
-    "第十次ウルサス＝カジミエーシュ戦争の要塞防衛戦で戦死した"
-  ]
+  "k": 2,
+  "p": -1
 }
 ```
 
@@ -65285,7 +65164,18 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_tenth_ursus_kazimierz_war-1"></a>
-選択肢文：駅前の臨時野戦病院で負傷兵の救護と物資仕分けを支援する
+選択肢文：負傷者向けの物資募集へ寄付する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "affordableCash": 30000
+  },
+  "why": "この支出を賄える資金がない"
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65294,15 +65184,16 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 次々と運び込まれる負傷兵の止血を手伝い、医師団から深く感謝された。
+> 受取先を確認して寄付した。送られる荷を見送り、受け取る人々のことを思った。
 
 効果：
 
 ```json
 {
-  "cash": 100000,
-  "rl": 6,
-  "p": -4
+  "cash": -30000,
+  "rl": 3,
+  "p": 2,
+  "pm": 1
 }
 ```
 
@@ -65311,7 +65202,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_tenth_ursus_kazimierz_war-2"></a>
-選択肢文：徴用令状を避け、山間の親類の村へ一時的に身を隠す
+選択肢文：仕事と往来の予定を見直す
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65320,14 +65211,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 砲声の届かない山村で炭焼きを手伝い、戦線が膠着するのを待った。
+> 未確認の道を安全と決めつけず、当面の予定を減らした。
 
 効果：
 
 ```json
 {
-  "cash": -60000,
-  "p": 2
+  "p": -1
 }
 ```
 
@@ -65339,27 +65229,39 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1144
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ウルサス
 - ジャンル：労働・経済、戦争・政治
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 鉱山奥の封鎖区画に軍の特科装甲車が何台も乗り付け、黒塗りの幌で覆われた巨大な機材が秘密裏に運び込まれた。坑道周辺は立入禁止となり、作業員たちに厳しい箝口令が敷かれている。
+> チェルノボーグの研究を巡る風聞を耳にした。どの話が確かなのかは分からず、封鎖された施設の中を自分が見たわけでもない。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_sarcophagus_discovery",
-  "conf": "C",
+  "conf": "S",
   "timelineFlag": "sarcophagus_discovery",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1070,
+      1
+    ],
+    "through": [
+      1070,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_EARLY"
@@ -65368,10 +65270,6 @@ s => {
     "青年",
     "壮年"
   ],
-  "need": [
-    "国:ウルサス",
-    "都市:チェルノボーグ"
-  ],
   "ge": {
     "year": 1070
   },
@@ -65379,7 +65277,7 @@ s => {
     "year": 1072
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.sarcophagus_discovery"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -65395,7 +65293,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_sarcophagus_discovery-0"></a>
-選択肢文：軍の厳命に従い、封鎖区画の秘密から一切目を背けて働く
+選択肢文：分かっている記述だけを控える
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65404,14 +65302,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 余計な詮索をせず通常の鉱山作業を続け、無難に給金を確保した。
+> 聞いた経路と不明点を一緒に書き留めた。肝心な部分は空欄のままで、落ち着かない気持ちが残った。
 
 効果：
 
 ```json
 {
-  "cash": 100000,
-  "p": 1
+  "k": 2,
+  "p": -1
 }
 ```
 
@@ -65420,39 +65318,22 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_sarcophagus_discovery-1"></a>
-選択肢文：酒場で鉱夫たちの噂話に耳を傾け、研究施設の正体を探る
+選択肢文：噂の詮索をやめる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_sarcophagus_discovery-1-0"></a>
 
-- **結果 1（設定確率 70%）**
+- **結果 1（設定確率 100%）**
 
-> 古代の遺物を巡る軍の研究についての断片的な情報を聞き込み、知識を深めた。
-
-効果：
-
-```json
-{
-  "k": 4,
-  "p": -2
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_sarcophagus_discovery-1-1"></a>
-
-- **結果 2（設定確率 30%）**
-
-> 憲兵の密偵に怪しまれ、厳重な取り調べを受けて怯えた。
+> 話題を切り上げ、普段の用事へ戻った。
 
 効果：
 
 ```json
 {
-  "p": -6,
-  "cash": -40000
+  "p": 1
 }
 ```
 
@@ -65461,7 +65342,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_sarcophagus_discovery-2"></a>
-選択肢文：不穏な気配の漂う鉱山から離れ、地上の一般工場へ移籍する
+選択肢文：公開された情報があるか調べる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65470,15 +65351,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 安全な街区の機械工場へ働き口を移し、胸のざわめきを鎮めた。
+> 公開情報と酒場の噂を分けた。期待していたほどの答えはなく、資料を閉じて席を立った。
 
 効果：
 
 ```json
 {
-  "cash": 60000,
-  "h": 2,
-  "p": 2
+  "k": 1
 }
 ```
 
@@ -65490,27 +65369,39 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1179
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ヴィクトリア、ウルサス、カジミエーシュ
 - ジャンル：家族・介護、戦争・政治、移動・物流
 - 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開かれた。
+> 王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_bloodpeak_and_victorian_crown",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "bloodpeak_and_victorian_crown",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1072,
+      1
+    ],
+    "through": [
+      1072,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_EARLY"
@@ -65522,7 +65413,7 @@ s => {
     "老年"
   ],
   "show": {
-    "dynamicFunction": "s => [\"ヴィクトリア\", \"ウルサス\", \"カジミエーシュ\"].includes(s.res?.n)"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "ge": {
     "year": 1072
@@ -65544,42 +65435,23 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_bloodpeak_and_victorian_crown-0"></a>
-選択肢文：斬り伏せられた近衛兵の脱出を裏路地から支援する
+選択肢文：複数の報道の食い違いを調べる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_bloodpeak_and_victorian_crown-0-0"></a>
 
-- **結果 1（設定確率 80%）**
+- **結果 1（設定確率 100%）**
 
-> 追手の貴族私兵をまいて負傷兵を裏長屋へ匿い、感謝の指輪を託された。
-
-効果：
-
-```json
-{
-  "rl": 8,
-  "p": 2,
-  "cash": 120000
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_bloodpeak_and_victorian_crown-0-1"></a>
-
-- **結果 2（設定確率 20%）**
-
-> 反乱貴族の騎兵に包囲され、謀反の共謀者とみなされて斬殺された。
+> 日付と伝達元を比べ、確かめられない話は未確認のまま残した。
 
 効果：
 
 ```json
 {
-  "d": [
-    "戦死・戦争被害（血峰の戦い）",
-    "王都のクーデターの掃討戦に巻き込まれ、斬殺された"
-  ]
+  "k": 3,
+  "p": -2
 }
 ```
 
@@ -65588,7 +65460,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_bloodpeak_and_victorian_crown-1"></a>
-選択肢文：封鎖線を避けて家財道具を荷車に積み、親戚宅へ退避する
+選択肢文：取引先へ今後の連絡方法を尋ねる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65597,15 +65469,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 略奪の炎が広がる前に安全な郊外区画へ荷を運び込み、難を逃れた。
+> 連絡の取れる相手と未返信の相手を区別した。返事を待つ間、遠い政変が仕事の話にも影を落としていると感じた。
 
 効果：
 
 ```json
 {
-  "cash": -80000,
-  "p": -3,
-  "h": -2
+  "rl": 2,
+  "k": 1
 }
 ```
 
@@ -65614,7 +65485,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_bloodpeak_and_victorian_crown-2"></a>
-選択肢文：自宅の窓に鉄格子を打ち付け、私兵集団の略奪を警戒する
+選択肢文：政変への関与を控える
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65623,14 +65494,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 厳重な戸締まりで暴徒化した私兵の侵入を防ぎ、夜明けを迎えた。
+> 見知らぬ人物の依頼は引き受けず、自分の暮らしを続けた。
 
 効果：
 
 ```json
 {
-  "p": -4,
-  "h": 1
+  "p": 1
 }
 ```
 
@@ -65642,27 +65512,40 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1213
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ウルサス
 - ジャンル：日常、労働・経済、差別・制度、天災・避難、戦争・政治
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり、移動都市・避難に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空を焦がしている。
+> 反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_ursus_great_rebellion",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "ursus_great_rebellion",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1074,
+      1
+    ],
+    "through": [
+      1074,
+      12
+    ],
+    "region": "ウルサス",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_EARLY"
@@ -65671,9 +65554,6 @@ s => {
     "青年",
     "壮年"
   ],
-  "need": [
-    "国:ウルサス"
-  ],
   "ge": {
     "year": 1074
   },
@@ -65681,7 +65561,7 @@ s => {
     "year": 1075
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.ursus_great_rebellion"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -65697,42 +65577,52 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_ursus_great_rebellion-0"></a>
-選択肢文：反乱労働者たちの行進に加わり、権利要求を叫ぶ
+選択肢文：待遇改善を求める地区の活動に加わる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  }
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_ursus_great_rebellion-0-0"></a>
 
-- **結果 1（設定確率 75%）**
+- **結果 1（設定確率 100%）**
 
-> 同志たちと肩を組み、軍の司令部前で賃金と待遇の改善要求を突きつけた。
-
-効果：
-
-```json
-{
-  "p": 4,
-  "rl": 8,
-  "cr": 3
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_ursus_great_rebellion-0-1"></a>
-
-- **結果 2（設定確率 25%）**
-
-> 出動した帝国正規軍のコサック騎兵による一斉射撃を浴びて倒れた。
+> 要求書をまとめる役目を引き受け、仲間と会う約束を交わした。暮らしを賭けて何を求めるのか、これからも問われることになった。
 
 効果：
 
 ```json
 {
-  "d": [
-    "他殺（抗争・報復）",
-    "ウルサス大反乱の鎮圧銃撃に倒れ、亡くなった"
-  ]
+  "k": 2,
+  "p": 2,
+  "lifeAffiliation": {
+    "id": "hist-ursus_great_rebellion",
+    "title": "地区の労働者の要求活動",
+    "kind": "local-civic-commitment",
+    "action": "join",
+    "role": "地区の活動を担う"
+  },
+  "lifeGoal": {
+    "id": "hist-ursus_great_rebellion-path",
+    "title": "地区の労働者の要求活動と自分の暮らしを両立する",
+    "priority": "仕事と社会",
+    "action": "start"
+  },
+  "regionalImpact": {
+    "region": "ウルサス",
+    "entity": "地区の労働者の要求活動",
+    "kind": "personal-participation",
+    "description": "本人が地区の活動に加わると決めた"
+  }
 }
 ```
 
@@ -65741,7 +65631,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_ursus_great_rebellion-1"></a>
-選択肢文：暴動に乗じた放火から隣近所の食料倉庫を共同警護する
+選択肢文：近隣の備蓄品を点検する仕事を手伝う
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65750,15 +65640,15 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 棒切れを手にして夜通し見張り番を務め、住民たちの生活物資を守り抜いた。
+> 引き受けた点検を終え、実作業分の手当を受け取った。
 
 効果：
 
 ```json
 {
-  "rl": 6,
-  "p": -2,
-  "h": -4
+  "cash": 40000,
+  "h": -2,
+  "rl": 2
 }
 ```
 
@@ -65767,7 +65657,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_ursus_great_rebellion-2"></a>
-選択肢文：騒乱を避けて郊外の農村へ一時避難し、嵐が過ぎるのを待つ
+選択肢文：騒乱の噂から距離を置く
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65776,14 +65666,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 煙煙と立ち上る市街の火の手を遠くから見つめ、静かに息を潜めた。
+> 話の出所を確かめるまで、参加や転居を決めずに過ごした。
 
 効果：
 
 ```json
 {
-  "cash": -50000,
-  "p": 1
+  "p": -1
 }
 ```
 
@@ -65795,27 +65684,40 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1248
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ヴィクトリア、レム・ビリトン
 - ジャンル：労働・経済、差別・制度
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レム・ビリトンの自治独立を祝っている。
+> 自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_rim_billiton_independence",
-  "conf": "C",
+  "conf": "S",
   "timelineFlag": "rim_billiton_independence",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1075,
+      1
+    ],
+    "through": [
+      1075,
+      12
+    ],
+    "region": "レム・ビリトン",
+    "role": "local-civilian",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_RIM_WORK"
@@ -65825,9 +65727,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:レム・ビリトン"
-  ],
   "ge": {
     "year": 1075
   },
@@ -65835,7 +65734,7 @@ s => {
     "year": 1076
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.rim_billiton_independence"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -65851,7 +65750,17 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_rim_billiton_independence-0"></a>
-選択肢文：全社協議会の新鉱区規約に署名し、自治の運営に参加する
+選択肢文：鉱区の自治を支える仕事に加わる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  }
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65860,15 +65769,33 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 独立鉱区の新たな契約書にサインし、労働者としての権利と正当な取り分を確保した。
+> 働く条件を確かめながら、帳簿と意見を取りまとめる役目を引き受けた。祝いの日の先にも、地道な仕事が続いている。
 
 効果：
 
 ```json
 {
-  "cash": 140000,
-  "cr": 4,
-  "p": 4
+  "k": 3,
+  "p": 1,
+  "lifeAffiliation": {
+    "id": "hist-rim_billiton_independence",
+    "title": "鉱区の自治運営",
+    "kind": "local-civic-commitment",
+    "action": "join",
+    "role": "地区の活動を担う"
+  },
+  "lifeGoal": {
+    "id": "hist-rim_billiton_independence-path",
+    "title": "鉱区の自治運営と自分の暮らしを両立する",
+    "priority": "仕事と社会",
+    "action": "start"
+  },
+  "regionalImpact": {
+    "region": "レム・ビリトン",
+    "entity": "鉱区の自治運営",
+    "kind": "personal-participation",
+    "description": "本人が地区の活動に加わると決めた"
+  }
 }
 ```
 
@@ -65877,7 +65804,18 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_rim_billiton_independence-1"></a>
-選択肢文：独立を祝う採掘夫たちの酒宴に樽酒を差し入れて歓談する
+選択肢文：近隣の祝席へ酒を差し入れる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "affordableCash": 30000
+  },
+  "why": "この支出を賄える資金がない"
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65886,15 +65824,16 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 賑やかな祝宴の輪に加わり、仲間たちと夜遅くまで未来の展望を語り合った。
+> 顔見知りと自治の先行きについて語り、同じ地区で一晩を過ごした。
 
 効果：
 
 ```json
 {
-  "cash": -50000,
-  "rl": 8,
-  "p": 3
+  "cash": -30000,
+  "rl": 5,
+  "p": 3,
+  "pm": 1
 }
 ```
 
@@ -65903,7 +65842,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_rim_billiton_independence-2"></a>
-選択肢文：旧宗主国企業との契約解除に伴う事務を迅速に片付ける
+選択肢文：帳簿整理の短期仕事を引き受ける
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -65912,14 +65851,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 帳簿の引き継ぎを無事に完了させ、新体制の役員から重宝された。
+> 渡された帳票を整理し、作業の報酬を受け取った。一日分の手当をしまい、いつもの仕事へ戻った。
 
 効果：
 
 ```json
 {
-  "cash": 180000,
-  "k": 3
+  "cash": 60000,
+  "k": 1
 }
 ```
 
@@ -65931,27 +65870,39 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1279
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：サルゴン
 - ジャンル：戦争・政治、移動・物流
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 吹き荒れる砂嵐の中、旧パディシャーの反乱残党と傭兵隊がオアシスの市場で激突した。乾いた砂に鮮血が染み込み、隊商の荷車が次々と炎上している。
+> 砂漠の市場で起きた争いの噂を聞いた。交戦した者や被害の規模について話が食い違い、隊商の予定をどう扱うかで商人たちが迷っていた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_sandsoldier_incident",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "sandsoldier_incident",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1075,
+      1
+    ],
+    "through": [
+      1075,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "D",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_A_WALK_DUST_TIMELINE"
@@ -65960,9 +65911,6 @@ s => {
     "青年",
     "壮年"
   ],
-  "need": [
-    "国:サルゴン"
-  ],
   "ge": {
     "year": 1075
   },
@@ -65970,7 +65918,7 @@ s => {
     "year": 1076
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.sandsoldier_incident"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -65986,43 +65934,23 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_sandsoldier_incident-0"></a>
-選択肢文：襲撃を受けた隊商の護衛に加わり、砂兵の突入を食い止める
+選択肢文：伝達元と分かっていない点を記録する
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_sandsoldier_incident-0-0"></a>
 
-- **結果 1（設定確率 80%）**
+- **結果 1（設定確率 100%）**
 
-> 砂嵐の中で曲刀を振るい、隊商の荷と商人の命を守り抜いて多額の報奨を得た。
-
-効果：
-
-```json
-{
-  "cash": 250000,
-  "cr": 5,
-  "h": -12,
-  "p": 2
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_sandsoldier_incident-0-1"></a>
-
-- **結果 2（設定確率 20%）**
-
-> 砂煙の中から躍り出た反乱傭兵の刃を胸に受け、オアシスの砂に倒れた。
+> 噂の断片を並べた。話し手ごとの食い違いが、かえって強く印象に残った。
 
 効果：
 
 ```json
 {
-  "d": [
-    "他殺（抗争・報復）",
-    "レッドホーン砂漠の市場抗争で刺殺された"
-  ]
+  "k": 2,
+  "p": -1
 }
 ```
 
@@ -66031,7 +65959,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_sandsoldier_incident-1"></a>
-選択肢文：市場の頑丈な石造り神殿へ逃げ込み、砂嵐が止むのを待つ
+選択肢文：予定していた取引の安全を問い合わせる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -66040,14 +65968,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 暗い石室の中で息を殺し、戦火が遠ざかったのを見届けて脱出した。
+> 返信のあった便だけを予定表に残した。連絡のない商人が気に掛かり、しばらく待つことにした。
 
 効果：
 
 ```json
 {
-  "p": -4,
-  "h": -2
+  "k": 1,
+  "p": 1
 }
 ```
 
@@ -66056,39 +65984,22 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_sandsoldier_incident-2"></a>
-選択肢文：混乱に乗じて散乱した香辛料や鉱石の木箱を回収する
+選択肢文：不確かな儲け話を断る
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_sandsoldier_incident-2-0"></a>
 
-- **結果 1（設定確率 75%）**
+- **結果 1（設定確率 100%）**
 
-> 砂に埋もれた貴重な積荷を拾い集め、後日商人に引き渡して謝礼を得た。
-
-効果：
-
-```json
-{
-  "cash": 160000,
-  "p": -2
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_sandsoldier_incident-2-1"></a>
-
-- **結果 2（設定確率 25%）**
-
-> 略奪兵の銃撃を掠めて負傷し、荷物を捨てて逃げ帰った。
+> 争いの跡へ品物を拾いに行く話には乗らず、自分の仕事へ戻った。
 
 効果：
 
 ```json
 {
-  "h": -15,
-  "p": -5
+  "p": 1
 }
 ```
 
@@ -66100,12 +66011,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1318
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：要照合　優先度：高
 - 国・地域：ウルサス
 - ジャンル：戦争・政治、移動・物流
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：原作・世界観、年代・年齢・場所
+- 注記：封鎖研究施設への当事者の立入証拠が未確立。直接場面は非公開。採否根拠：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -66120,7 +66031,18 @@ s => {
   "timelineFlag": "sarcophagus_purge",
   "historicalScene": {
     "delivery": "suspended",
-    "dateMode": "event-year"
+    "dateMode": "event-year",
+    "from": [
+      1077,
+      3
+    ],
+    "through": [
+      1077,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "resident",
+    "reason": "封鎖研究施設への当事者の立入証拠が未確立"
   },
   "references": [
     "SRC_TL_EARLY",
@@ -66130,10 +66052,6 @@ s => {
     "青年",
     "壮年",
     "老年"
-  ],
-  "need": [
-    "国:ウルサス",
-    "都市:チェルノボーグ"
   ],
   "ge": {
     "year": 1077
@@ -66256,27 +66174,40 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1353
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：リターニア
 - ジャンル：教育・文化、天災・避難
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり、移動都市・避難に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むなか、街角では息を潜めた囁きが交わされた。
+> 政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_leith_revolution",
-  "conf": "C",
+  "conf": "S",
   "timelineFlag": "leith_revolution",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1077,
+      9
+    ],
+    "through": [
+      1077,
+      12
+    ],
+    "region": "リターニア",
+    "role": "local-civilian",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_EARLY"
@@ -66286,9 +66217,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:リターニア"
-  ],
   "ge": {
     "year": 1077
   },
@@ -66296,7 +66224,7 @@ s => {
     "year": 1078
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.leith_revolution"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2.5,
   "once": true
@@ -66312,42 +66240,23 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_leith_revolution-0"></a>
-選択肢文：金律の防護結界が施された大聖堂の地下へ避難する
+選択肢文：仕事や学びの条件変更を照会する
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_leith_revolution-0-0"></a>
 
-- **結果 1（設定確率 85%）**
+- **結果 1（設定確率 100%）**
 
-> 女帝のアーツの恩寵を受け、王城から放たれた余波の暴風をしのぎきった。
-
-効果：
-
-```json
-{
-  "p": 4,
-  "h": 2,
-  "rl": 5
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_leith_revolution-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 巫王の尖塔から暴発した黒い残存アーツの直撃を受け、肉体が崩壊した。
+> 相手先の回答と未定の部分を分けて控えた。返事のなかった項目には印を残し、次の相談を待った。
 
 効果：
 
 ```json
 {
-  "d": [
-    "アーツ暴走による自壊",
-    "リターニア変革の巫王の黒い術式に呑まれ、命を落とした"
-  ]
+  "k": 2,
+  "p": 1
 }
 ```
 
@@ -66356,7 +66265,17 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_leith_revolution-1"></a>
-選択肢文：騒乱で被災した市立音律図書館の貴重な楽譜を救出保全する
+選択肢文：地区で新しい体制を支持する活動に加わる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  }
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -66365,15 +66284,33 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 燃え盛る書棚から古典の原典を運び出し、学術界から高い賞賛を得た。
+> 自分の考えを表し、地区の仲間と活動を続けることにした。以前の知人と意見が分かれることも、引き受ける必要があった。
 
 効果：
 
 ```json
 {
-  "k": 5,
-  "cr": 3,
-  "cash": 100000
+  "rl": 3,
+  "p": 2,
+  "lifeAffiliation": {
+    "id": "hist-leith_revolution",
+    "title": "地区の新政権支持活動",
+    "kind": "local-civic-commitment",
+    "action": "join",
+    "role": "地区の活動を担う"
+  },
+  "lifeGoal": {
+    "id": "hist-leith_revolution-path",
+    "title": "地区の新政権支持活動と自分の暮らしを両立する",
+    "priority": "仕事と社会",
+    "action": "start"
+  },
+  "regionalImpact": {
+    "region": "リターニア",
+    "entity": "地区の新政権支持活動",
+    "kind": "personal-participation",
+    "description": "本人が地区の活動に加わると決めた"
+  }
 }
 ```
 
@@ -66382,7 +66319,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_leith_revolution-2"></a>
-選択肢文：旧体制の追及に怯える無実の演奏家を自室に匿う
+選択肢文：政治的な表明を控え、今の練習を続ける
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -66391,15 +66328,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 憲兵の家宅捜索を平静に受け流し、友人の命と音楽を守った。
+> 外の話を気にかけながらも、手元の仕事に集中した。
 
 効果：
 
 ```json
 {
-  "cash": -80000,
-  "rl": 8,
-  "p": -3
+  "k": 1,
+  "p": 1
 }
 ```
 
@@ -66411,27 +66347,39 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1388
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：龍門、ヴィクトリア
 - ジャンル：家族・介護、差別・制度、戦争・政治
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
+> 少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_tarra_kidnap",
-  "conf": "C",
+  "conf": "S",
   "timelineFlag": "tarra_kidnap",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1077,
+      1
+    ],
+    "through": [
+      1077,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_EARLY"
@@ -66442,7 +66390,7 @@ s => {
     "老年"
   ],
   "show": {
-    "dynamicFunction": "s => (s.res?.n === \"ヴィクトリア\" && s.local?.city === \"ロンディニウム\") || (s.res?.n === \"龍門\" || s.local?.city === \"龍門\")"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "ge": {
     "year": 1077
@@ -66464,7 +66412,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_tarra_kidnap-0"></a>
-選択肢文：発砲音の響く路地で警備隊の検問に目撃情報を提供する
+選択肢文：都市名と日付を混ぜずに書き留める
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -66473,15 +66421,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 車輌の逃走経路を正確に伝え、治安維持への協力金を受け取った。
+> 別の土地で聞かれた話を一つの街角の出来事へまとめず、未確認の記録として残した。
 
 効果：
 
 ```json
 {
-  "cash": 120000,
-  "cr": 3,
-  "p": 2
+  "k": 3,
+  "p": -1
 }
 ```
 
@@ -66490,7 +66437,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_tarra_kidnap-1"></a>
-選択肢文：銃撃戦の流弾を警戒し、家族を地下室へ誘導して鍵をかける
+選択肢文：当事者を探す噂には加わらない
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -66499,14 +66446,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 騒乱が収まるまで身を潜め、家族全員の無事を確かめた。
+> 知らない少女や家族について憶測を重ねず、話題から離れた。
 
 効果：
 
 ```json
 {
-  "rl": 5,
-  "p": -2
+  "p": 1
 }
 ```
 
@@ -66515,7 +66461,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_tarra_kidnap-2"></a>
-選択肢文：夜間警備の強化に応じ、街区の自警団として見回りを手伝う
+選択肢文：公開情報が出るまで判断を保留する
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -66524,15 +66470,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> ランタンを提げて通りを巡回し、近隣の平穏を守った。
+> 詳しい知らせを待つことにして、その日の用事へ戻った。
 
 効果：
 
 ```json
 {
-  "cash": 60000,
-  "rl": 4,
-  "h": -3
+  "p": 1
 }
 ```
 
@@ -66544,27 +66488,39 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1418
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ウルサス
 - ジャンル：家族・介護
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> ワーニャ大公の車列が市街の交差点で爆砕され、憲兵隊が通りを完全に封鎖して住民を広場へ駆り集めた。厳冬の広場で容疑者の割り出しと過酷な尋問が夜を徹して行われている。
+> 暗殺事件と捜査についての知らせが届いた。現場の交差点に居合わせたわけではなく、報じられた情報と身近な噂を分けて聞いた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_vanya_assassination",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "vanya_assassination",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1081,
+      1
+    ],
+    "through": [
+      1081,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_MIDDLE"
@@ -66574,9 +66530,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:ウルサス"
-  ],
   "ge": {
     "year": 1081
   },
@@ -66584,7 +66537,7 @@ s => {
     "year": 1082
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.vanya_assassination"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -66600,41 +66553,23 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_vanya_assassination-0"></a>
-選択肢文：広場での憲兵隊による身体検査と取り調べを耐え抜く
+選択肢文：確認できる報道を読み比べる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_vanya_assassination-0-0"></a>
 
-- **結果 1（設定確率 85%）**
+- **結果 1（設定確率 100%）**
 
-> 身元証明書を提示して潔白を証明し、凍える広場から解放された。
-
-効果：
-
-```json
-{
-  "p": -6,
-  "h": -8
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_vanya_assassination-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 憲兵の過酷な暴力と不当な密告により、反逆罪として広場の一角で銃殺された。
+> 伝達元を記した。人々の推測の強さに息苦しくなり、紙面から目を上げた。
 
 効果：
 
 ```json
 {
-  "d": [
-    "刑の執行",
-    "大公暗殺の余波で無実の嫌疑をかけられ処刑された"
-  ]
+  "k": 2,
+  "p": -1
 }
 ```
 
@@ -66643,7 +66578,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_vanya_assassination-1"></a>
-選択肢文：憲兵の包囲の手をかいくぐり、隣家の老夫婦を裏口から逃がす
+選択肢文：不確かな犯人の噂を広めない
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -66652,15 +66587,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 無実の隣人を安全な親類宅へ逃がし、感謝の涙で見送られた。
+> 確かな話がないことを知人へ伝え、憶測の輪から離れた。
 
 効果：
 
 ```json
 {
-  "rl": 8,
-  "p": 3,
-  "cash": -50000
+  "rl": 2,
+  "p": 1
 }
 ```
 
@@ -66669,7 +66603,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_vanya_assassination-2"></a>
-選択肢文：自宅の戸籍台帳と納税領収書を整え、家宅捜索に冷静に応じる
+選択肢文：普段の用事を続ける
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -66678,14 +66612,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 隙のない書類対応で憲兵の追及をかわし、事なきを得た。
+> 事件現場へ行く予定は立てず、手元の暮らしを守った。
 
 効果：
 
 ```json
 {
-  "cash": -40000,
-  "p": -2
+  "p": 1
 }
 ```
 
@@ -66697,27 +66630,39 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1453
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ヴィクトリア
 - ジャンル：感染・医療
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり、感染・鉱石病に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 採掘区画の地表から紫色の源石ガスが噴き出し、防護服を着た公爵私兵が住民たちを問答無用で追い立てた。汚染された土壌と閉鎖線の前で怒号が飛び交っている。
+> 採掘地区の汚染を巡る知らせを読んだ。問題の区画へ入ったことはなく、流通する品や仕事の条件にどんな影響があるかを確かめた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_victoria_leak",
-  "conf": "C",
+  "conf": "S",
   "timelineFlag": "victoria_leak",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1085,
+      1
+    ],
+    "through": [
+      1085,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_MIDDLE"
@@ -66727,9 +66672,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:ヴィクトリア"
-  ],
   "ge": {
     "year": 1085
   },
@@ -66737,7 +66679,7 @@ s => {
     "year": 1086
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.victoria_leak"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -66753,7 +66695,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_victoria_leak-0"></a>
-選択肢文：公爵私兵による一方的な立ち退き命令に住民会とともに抗議する
+選択肢文：仕入先に品物の由来を照会する
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -66762,16 +66704,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 団結して補償を要求し、公爵側の代理人から立ち退き移転料を勝ち取った。
+> 回答と未確認の品を分けた。答えの曖昧な品は、受け入れる前にもう一度確かめることにした。
 
 効果：
 
 ```json
 {
-  "cash": 150000,
-  "cr": 3,
-  "rl": 6,
-  "p": -3
+  "k": 2,
+  "p": 1
 }
 ```
 
@@ -66780,7 +66720,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_victoria_leak-1"></a>
-選択肢文：噴出する源石粉塵を吸わないよう、手製の防護布を近隣に配る
+選択肢文：公表された検査情報を調べる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -66789,15 +66729,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 湿らせた二重マスクを配り歩き、子供たちを急性鉱石病の危険から守った。
+> 資料を読み、分からない数値は未確認のまま残した。
 
 効果：
 
 ```json
 {
-  "cash": -40000,
-  "rl": 8,
-  "h": 2
+  "k": 3,
+  "p": -1
 }
 ```
 
@@ -66806,7 +66745,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_victoria_leak-2"></a>
-選択肢文：汚染の届かない健全な上層街区へ速やかに住居を移す
+選択肢文：現地へ向かわず、仕事の予定を調整する
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -66815,15 +66754,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 手持ちの資金を投じて引っ越しを済ませ、清浄な空気を確保した。
+> 未確定の便を予定から外した。遅れた仕事の段取りを考えながら、その日の作業へ戻った。
 
 効果：
 
 ```json
 {
-  "cash": -180000,
-  "res": 1,
-  "p": 2
+  "p": 1
 }
 ```
 
@@ -66835,12 +66772,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1484
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ボリバル
 - ジャンル：教育・文化
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -66857,7 +66794,17 @@ s => {
     "delivery": "direct",
     "dateMode": "event-year",
     "region": "ボリバル",
-    "city": "ドッソレス"
+    "city": "ドッソレス",
+    "from": [
+      1086,
+      1
+    ],
+    "through": [
+      1086,
+      12
+    ],
+    "sourceGrade": "D",
+    "role": "present-civilian"
   },
   "references": [
     "SRC_BOLIVAR_DOSSOLES_STORY"
@@ -66865,10 +66812,6 @@ s => {
   "st": [
     "青年",
     "壮年"
-  ],
-  "need": [
-    "国:ボリバル",
-    "都市:ドッソレス"
   ],
   "ge": {
     "year": 1086
@@ -66972,12 +66915,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1515
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：要照合　優先度：高
 - 国・地域：カズデル
 - ジャンル：戦争・政治
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：原作・世界観、年代・年齢・場所
+- 注記：陸艦の時点付き所在と本人の関係が未確立。直接場面は非公開。採否根拠：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -66992,7 +66935,18 @@ s => {
   "timelineFlag": "babel_split",
   "historicalScene": {
     "delivery": "suspended",
-    "dateMode": "event-year"
+    "dateMode": "event-year",
+    "from": [
+      1086,
+      6
+    ],
+    "through": [
+      1086,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "resident",
+    "reason": "陸艦の時点付き所在と本人の関係が未確立"
   },
   "references": [
     "SRC_KAZDEL_BB5"
@@ -67000,9 +66954,6 @@ s => {
   "st": [
     "青年",
     "壮年"
-  ],
-  "need": [
-    "国:カズデル"
   ],
   "ge": {
     "year": 1086
@@ -67110,27 +67061,40 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1546
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：カズデル
 - ジャンル：家族・介護、差別・制度
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。
+> 内戦開始の知らせは届いたが、この地区がその日に戦場になったとは限らない。近隣では荷と連絡の遅れを確かめ、今後の備えを話し合っている。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_kazdel_conflict_started",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "kazdel_conflict_started",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1086,
+      1
+    ],
+    "through": [
+      1086,
+      12
+    ],
+    "region": "カズデル",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_KAZDEL_BB5"
@@ -67140,9 +67104,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:カズデル"
-  ],
   "ge": {
     "year": 1086
   },
@@ -67150,7 +67111,7 @@ s => {
     "year": 1088
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.kazdel_conflict_started"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -67166,7 +67127,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_kazdel_conflict_started-0"></a>
-選択肢文：アパートの窓に鉄板を打ち付け、食料と生活用水を備蓄する
+選択肢文：家の備蓄と連絡先を確かめる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -67175,15 +67136,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 早期に保存食と水を確保し、市街戦の初期の混乱を自室で乗り切った。
+> 今ある物と連絡できる相手を整理した。連絡の取れた相手の声に少し安堵したが、先の不安は消えなかった。
 
 効果：
 
 ```json
 {
-  "cash": -100000,
-  "p": -3,
-  "h": 2
+  "k": 2,
+  "p": -2
 }
 ```
 
@@ -67192,40 +67152,24 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_kazdel_conflict_started-1"></a>
-選択肢文：対立する近隣のサルカズ部族同士の仲裁に立ち会う
+選択肢文：地区の物資整理を短期で引き受ける
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_kazdel_conflict_started-1-0"></a>
 
-- **結果 1（設定確率 75%）**
+- **結果 1（設定確率 100%）**
 
-> 昔馴染みの誼を活かして一時的な停戦を取りまとめ、長老たちから感謝された。
-
-効果：
-
-```json
-{
-  "rl": 8,
-  "cr": 3,
-  "p": 3
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_kazdel_conflict_started-1-1"></a>
-
-- **結果 2（設定確率 25%）**
-
-> 話し合いは決裂し、飛んできた投石で負傷した。
+> 預かった荷を整理し、その作業分の手当を受け取った。
 
 効果：
 
 ```json
 {
-  "h": -10,
-  "p": -4
+  "cash": 50000,
+  "h": -3,
+  "rl": 2
 }
 ```
 
@@ -67234,42 +67178,23 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_kazdel_conflict_started-2"></a>
-選択肢文：戦火の広がる前に辺境の移動集落へ荷馬車で逃れる
+選択肢文：旅と避難の候補を調べる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_kazdel_conflict_started-2-0"></a>
 
-- **結果 1（設定確率 85%）**
+- **結果 1（設定確率 100%）**
 
-> 検問の隙を突いて市街を抜け出し、辺境の親類のもとへ無事に辿り着いた。
-
-効果：
-
-```json
-{
-  "res": 1,
-  "cash": -120000,
-  "p": -4
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_kazdel_conflict_started-2-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 街道の封鎖線で傭兵隊の銃撃を浴び、荷馬車ごと吹き飛ばされた。
+> 行先と運賃を帳面に並べ、荷物をどこまで持てるか考えた。
 
 効果：
 
 ```json
 {
-  "d": [
-    "戦火被災（カズデル内戦・焦土戦）",
-    "カズデル内戦の初期抗争に巻き込まれ、命を落とした"
-  ]
+  "k": 1,
+  "p": -1
 }
 ```
 
@@ -67281,12 +67206,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1585
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：要照合　優先度：高
 - 国・地域：ウルサス
 - ジャンル：教育・文化
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：原作・世界観、年代・年齢・場所
+- 注記：邸宅の所在と関係者への直接接触が未確立。直接場面は非公開。採否根拠：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -67301,7 +67226,18 @@ s => {
   "timelineFlag": "talulah_kills",
   "historicalScene": {
     "delivery": "suspended",
-    "dateMode": "event-year"
+    "dateMode": "event-year",
+    "from": [
+      1088,
+      1
+    ],
+    "through": [
+      1088,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "resident",
+    "reason": "邸宅の所在と関係者への直接接触が未確立"
   },
   "references": [
     "SRC_REUNION_HISTORY"
@@ -67310,9 +67246,6 @@ s => {
     "青年",
     "壮年",
     "老年"
-  ],
-  "need": [
-    "国:ウルサス"
   ],
   "ge": {
     "year": 1088
@@ -67416,12 +67349,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1616
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：要照合　優先度：高
 - 国・地域：ウルサス
 - ジャンル：労働・経済、感染・医療
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり、感染・鉱石病に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：原作・世界観、年代・年齢・場所
+- 注記：特定集落への滞在・知己が未確立。直接場面は非公開。採否根拠：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -67436,7 +67369,18 @@ s => {
   "timelineFlag": "talulah_leave",
   "historicalScene": {
     "delivery": "suspended",
-    "dateMode": "event-year"
+    "dateMode": "event-year",
+    "from": [
+      1091,
+      1
+    ],
+    "through": [
+      1091,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "resident",
+    "reason": "特定集落への滞在・知己が未確立"
   },
   "references": [
     "SRC_REUNION_HISTORY"
@@ -67445,9 +67389,6 @@ s => {
     "青年",
     "壮年",
     "老年"
-  ],
-  "need": [
-    "国:ウルサス"
   ],
   "ge": {
     "year": 1091
@@ -67551,27 +67492,40 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1647
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：カズデル
 - ジャンル：戦争・政治
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
+> 戦争宣言の知らせが地区にも届いた。物資や働き手を求める声と、関わりを避ける声が交錯していた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_kazdel_war_declared",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "kazdel_war_declared",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1091,
+      12
+    ],
+    "through": [
+      1091,
+      12
+    ],
+    "region": "カズデル",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_KAZDEL_BB5"
@@ -67580,9 +67534,6 @@ s => {
     "青年",
     "壮年"
   ],
-  "need": [
-    "国:カズデル"
-  ],
   "ge": {
     "year": 1091
   },
@@ -67590,7 +67541,7 @@ s => {
     "year": 1092
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.kazdel_war_declared"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -67606,42 +67557,52 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_kazdel_war_declared-0"></a>
-選択肢文：軍事委員会の召集に応じ、後方補給部隊に配属される
+選択肢文：地区の後方補給班へ加わる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  }
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_kazdel_war_declared-0-0"></a>
 
-- **結果 1（設定確率 80%）**
+- **結果 1（設定確率 100%）**
 
-> 補給廠での物資仕分け任務を完遂し、軍からの手当を受け取った。
-
-効果：
-
-```json
-{
-  "cash": 200000,
-  "cr": 4,
-  "p": -5
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_kazdel_war_declared-0-1"></a>
-
-- **結果 2（設定確率 20%）**
-
-> 補給基地への敵対部隊による奇襲を受け、砲火に巻かれて戦死した。
+> 地元の補給所で任務と期間を確認し、荷の仕分けを引き受けた。前線とは違う場所でも、戦争に手を貸していることを意識した。
 
 効果：
 
 ```json
 {
-  "d": [
-    "戦闘職務中の死亡",
-    "カズデル宣戦後の補給戦において戦死した"
-  ]
+  "k": 2,
+  "p": -1,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_war_declared",
+    "title": "地区の後方補給班",
+    "kind": "local-civic-commitment",
+    "action": "join",
+    "role": "地区の活動を担う"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_war_declared-path",
+    "title": "地区の後方補給班と自分の暮らしを両立する",
+    "priority": "仕事と社会",
+    "action": "start"
+  },
+  "regionalImpact": {
+    "region": "カズデル",
+    "entity": "地区の後方補給班",
+    "kind": "personal-participation",
+    "description": "本人が地区の活動に加わると決めた"
+  }
 }
 ```
 
@@ -67650,7 +67611,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_kazdel_war_declared-1"></a>
-選択肢文：武器職人として傭兵たちの刀剣やアーツ銃の修理にあたる
+選択肢文：手元でできる修理の短期仕事を引き受ける
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -67659,14 +67620,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 昼夜を問わず鍛冶場で槌を振るい、まとまった稼ぎを得た。
+> 渡された道具を直し、仕上げた分だけ報酬を得た。手当を受け取り、くたびれた道具を片付けた。
 
 効果：
 
 ```json
 {
-  "cash": 180000,
-  "cr": 3
+  "cash": 60000,
+  "h": -2
 }
 ```
 
@@ -67675,7 +67636,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_kazdel_war_declared-2"></a>
-選択肢文：サルカズの古い礼拝堂に身を寄せ、静かに祈祷を捧げる
+選択肢文：軍との契約を増やさずに暮らす
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -67684,14 +67645,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 戦乱の足音から距離を置き、古き同胞の魂のために祈った。
+> 誘いを断り、今ある用事を続けた。
 
 効果：
 
 ```json
 {
-  "p": 3,
-  "h": 2
+  "p": 1
 }
 ```
 
@@ -67703,27 +67663,40 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1682
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：カズデル
 - ジャンル：感染・医療、差別・制度、天災・避難、戦争・政治
 - 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり、移動都市・避難に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返している。
+> 焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考えた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_kazdel_civil_war",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "kazdel_civil_war",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1092,
+      1
+    ],
+    "through": [
+      1092,
+      12
+    ],
+    "region": "カズデル",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_KAZDEL_BB5"
@@ -67734,9 +67707,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:カズデル"
-  ],
   "ge": {
     "year": 1092
   },
@@ -67744,7 +67714,7 @@ s => {
     "year": 1094
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.kazdel_civil_war"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2.5,
   "once": true
@@ -67760,45 +67730,52 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_kazdel_civil_war-0"></a>
-選択肢文：焦土と化した集落から生存者の一団を誘導して脱出する
+選択肢文：地区に留まり、避難者の生活再建に関わる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  }
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_kazdel_civil_war-0-0"></a>
 
-- **結果 1（設定確率 80%）**
+- **結果 1（設定確率 100%）**
 
-> 爆撃の合間を縫って荒野を抜け、安全な国境地帯へ住民たちを導いた。
+> 顔を合わせた人々と物資や仕事を取りまとめる役目を引き受けた。自分の暮らしを続けながら、終わりの見えない仕事と付き合っていく。
 
 効果：
 
 ```json
 {
-  "p": -8,
-  "rl": 10,
-  "res": 1,
-  "fl": {
-    "war_displaced": 1
+  "k": 2,
+  "p": -2,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_civil_war",
+    "title": "避難者の生活再建活動",
+    "kind": "local-civic-commitment",
+    "action": "join",
+    "role": "地区の活動を担う"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_civil_war-path",
+    "title": "避難者の生活再建活動と自分の暮らしを両立する",
+    "priority": "仕事と社会",
+    "action": "start"
+  },
+  "regionalImpact": {
+    "region": "カズデル",
+    "entity": "避難者の生活再建活動",
+    "kind": "personal-participation",
+    "description": "本人が地区の活動に加わると決めた"
   }
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_kazdel_civil_war-0-1"></a>
-
-- **結果 2（設定確率 20%）**
-
-> 飛空艇の無差別絨毯爆撃を受け、吹き飛ぶ熱波と破片に呑み込まれた。
-
-効果：
-
-```json
-{
-  "d": [
-    "戦火被災（カズデル内戦・焦土戦）",
-    "カズデル焦土戦の飛空艇爆撃に被災し、亡くなった"
-  ]
 }
 ```
 
@@ -67807,7 +67784,18 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_kazdel_civil_war-1"></a>
-選択肢文：廃墟となった補給列車から軍用缶詰と医療品を回収する
+選択肢文：受取先を確認し、避難者用の物資へ支出する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "affordableCash": 40000
+  },
+  "why": "この支出を賄える資金がない"
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -67816,15 +67804,16 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 危険を冒して物資を運び出し、当面の食料と薬品を手に入れた。
+> 渡した物資の記録を残した。受取人からの短い礼を聞き、残った物でどう暮らすかを考えた。
 
 効果：
 
 ```json
 {
-  "cash": 200000,
-  "p": -4,
-  "h": -6
+  "cash": -40000,
+  "rl": 4,
+  "p": 1,
+  "pm": 1
 }
 ```
 
@@ -67833,7 +67822,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_kazdel_civil_war-2"></a>
-選択肢文：地下壕に毛布を敷き詰め、近隣と最後の保存食を分け合う
+選択肢文：地区の物資点検を引き受ける
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -67842,15 +67831,15 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 暗闇の中で互いを励まし合い、爆撃が遠ざかるのを耐え忍んだ。
+> 実際に数えた荷を引き渡し、その日の手当を得た。
 
 効果：
 
 ```json
 {
-  "p": -6,
-  "rl": 6,
-  "h": -3
+  "cash": 40000,
+  "h": -2,
+  "p": -2
 }
 ```
 
@@ -67862,27 +67851,39 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1717
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：カズデル
 - ジャンル：戦争・政治
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
+> 国境地帯の会戦を伝える知らせを受け取った。どの道を通れるかについては別の確認が必要で、知らせの地名を地図でたどると、往来の先行きが気に掛かった。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_kazdel_border_battle",
-  "conf": "B",
+  "conf": "S",
   "timelineFlag": "kazdel_border_battle",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1092,
+      12
+    ],
+    "through": [
+      1092,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_KAZDEL_BB5"
@@ -67891,9 +67892,6 @@ s => {
     "青年",
     "壮年"
   ],
-  "need": [
-    "国:カズデル"
-  ],
   "ge": {
     "year": 1092
   },
@@ -67901,7 +67899,7 @@ s => {
     "year": 1093
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.kazdel_border_battle"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -67917,43 +67915,23 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_kazdel_border_battle-0"></a>
-選択肢文：猛吹雪の中、炎上する補給船団から負傷兵を雪上橇で救出する
+選択肢文：予定している移動の経路を問い合わせる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_kazdel_border_battle-0-0"></a>
 
-- **結果 1（設定確率 80%）**
+- **結果 1（設定確率 100%）**
 
-> 凍死寸前の兵士たちを救護所へ運び込み、兵団から手厚い報酬を受けた。
-
-効果：
-
-```json
-{
-  "cash": 160000,
-  "rl": 8,
-  "h": -15,
-  "p": 3
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_kazdel_border_battle-0-1"></a>
-
-- **結果 2（設定確率 20%）**
-
-> 猛烈な地吹雪の中で視界を失い、氷点下の渓谷で力尽きて凍死した。
+> 現在の道と未確認の迂回案を分けて控えた。回答のない道を避け、返事のあった便の出発日を尋ねた。
 
 効果：
 
 ```json
 {
-  "d": [
-    "凍死（極寒・吹雪での遭難）",
-    "吹雪の国境戦場で救護活動中に遭難し、凍死した"
-  ]
+  "k": 2,
+  "p": -1
 }
 ```
 
@@ -67962,7 +67940,18 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_kazdel_border_battle-1"></a>
-選択肢文：雪崩と砲撃の危険な渓谷を避けて安全な迂回ルートを進む
+選択肢文：補給品募集の受取先を確かめて寄付する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "affordableCash": 30000
+  },
+  "why": "この支出を賄える資金がない"
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -67971,14 +67960,16 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 遠回りを選んで遭難の危機を回避し、目的地へ無事に到着した。
+> 受取が確認された募集へ支出した。荷が届くことを願い、受付を後にした。
 
 効果：
 
 ```json
 {
-  "cash": -80000,
-  "p": -2
+  "cash": -30000,
+  "rl": 3,
+  "p": 1,
+  "pm": 1
 }
 ```
 
@@ -67987,7 +67978,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_kazdel_border_battle-2"></a>
-選択肢文：前線から引き揚げてきた敗残兵たちに温かいスープを配給する
+選択肢文：新しい移動を控える
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -67996,15 +67987,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 凍えた兵士たちの手を温め、荒んだ兵団の心を僅かに和らげた。
+> 戦場の噂だけを頼りに出発せず、今いる場所で暮らした。
 
 効果：
 
 ```json
 {
-  "cash": -40000,
-  "rl": 6,
-  "p": 2
+  "p": 1
 }
 ```
 
@@ -68016,12 +68005,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1752
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：要照合　優先度：高
 - 国・地域：クルビア
 - ジャンル：日常、家族・介護、所属・組織
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり、組織・所属に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：原作・世界観、年代・年齢・場所
+- 注記：事件都市・街区と本人の関与を確定できない。直接場面は非公開。採否根拠：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -68036,7 +68025,18 @@ s => {
   "timelineFlag": "texas_family_purge",
   "historicalScene": {
     "delivery": "suspended",
-    "dateMode": "event-year"
+    "dateMode": "event-year",
+    "from": [
+      1092,
+      1
+    ],
+    "through": [
+      1092,
+      12
+    ],
+    "sourceGrade": "C",
+    "role": "resident",
+    "reason": "事件都市・街区と本人の関与を確定できない"
   },
   "references": [
     "SRC_COMMUNITY_COLUMBIA_REVOLUTION"
@@ -68045,9 +68045,6 @@ s => {
     "青年",
     "壮年",
     "老年"
-  ],
-  "need": [
-    "国:クルビア"
   ],
   "ge": {
     "year": 1092
@@ -68169,12 +68166,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1787
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ヴィクトリア、カズデル
 - ジャンル：差別・制度、戦争・政治
 - 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -68191,7 +68188,17 @@ s => {
     "delivery": "direct",
     "dateMode": "event-year",
     "region": "ヴィクトリア",
-    "city": "ロンディニウム"
+    "city": "ロンディニウム",
+    "from": [
+      1094,
+      8
+    ],
+    "through": [
+      1094,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
   },
   "references": [
     "SRC_TL_LATE",
@@ -68307,12 +68314,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1817
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ウルサス
 - ジャンル：感染・医療、天災・避難、所属・組織
 - 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり、感染・鉱石病に言及、組織・所属に言及、移動都市・避難に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -68329,7 +68336,17 @@ s => {
     "delivery": "direct",
     "dateMode": "event-year",
     "region": "ウルサス",
-    "city": "チェルノボーグ"
+    "city": "チェルノボーグ",
+    "from": [
+      1096,
+      12
+    ],
+    "through": [
+      1097,
+      1
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
   },
   "references": [
     "SRC_TL_LATE",
@@ -68340,10 +68357,6 @@ s => {
     "青年",
     "壮年",
     "老年"
-  ],
-  "need": [
-    "国:ウルサス",
-    "都市:チェルノボーグ"
   ],
   "ge": {
     "year": 1096
@@ -68368,7 +68381,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_chernobog_incident_local-0"></a>
-選択肢文：大混乱の駅舎へ走り、緊急避難列車の乗車口へ飛び込む
+選択肢文：駅舎で避難便の乗車条件を確かめる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -68377,18 +68390,14 @@ s => {
 
 - **結果 1（設定確率 80%）**
 
-> 暴徒と化した群衆を押し分け、発車寸前の避難列車に辛うじて滑り込んだ。
+> 群衆を押し分け、乗車口の受付で行先と運賃を聞いた。持ち出す荷をまとめ、出発を急ぐことにした。
 
 効果：
 
 ```json
 {
-  "res": 1,
-  "cash": -250000,
-  "p": -8,
-  "fl": {
-    "chernobog_refugee": 1
-  }
+  "travelAction": "intent:flight",
+  "p": -8
 }
 ```
 
@@ -68468,7 +68477,7 @@ s => {
 
 - **結果 1（設定確率 70%）**
 
-> 子供たちを連れて裏路地の抜け道を走り、市壁の亀裂から郊外へ脱出させた。
+> 取り残された人々と裏路地の安全を確かめた。荷と連絡先をまとめ、次の避難便に間に合うよう準備した。
 
 効果：
 
@@ -68476,10 +68485,7 @@ s => {
 {
   "p": 4,
   "rl": 12,
-  "res": 1,
-  "fl": {
-    "war_displaced": 1
-  }
+  "travelAction": "intent:flight"
 }
 ```
 
@@ -68509,16 +68515,16 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1860
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：カジミエーシュ
 - ジャンル：感染・医療
 - 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、国の発生条件あり、感染・鉱石病に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
+> カヴァレリエルキの街には大会の知らせと中継があふれている。大通りの画面を見上げる人も、会場へ急ぐ人もいる。どこで、どんな立場で関わるかを考えた。
 
 ### 発生条件・構造
 
@@ -68531,7 +68537,17 @@ s => {
     "delivery": "direct",
     "dateMode": "event-year",
     "region": "カジミエーシュ",
-    "city": "カヴァレリエルキ"
+    "city": "カヴァレリエルキ",
+    "from": [
+      1097,
+      6
+    ],
+    "through": [
+      1097,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
   },
   "references": [
     "SRC_KAZIMIERZ_COMPETITION"
@@ -68539,10 +68555,6 @@ s => {
   "st": [
     "青年",
     "壮年"
-  ],
-  "need": [
-    "国:カジミエーシュ",
-    "都市:カヴァレリエルキ"
   ],
   "ge": {
     "year": 1097
@@ -68567,38 +68579,50 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_kazimierz_major-0"></a>
-選択肢文：血騎士が下馬評を覆すと信じて大穴の賭け券を買う
+選択肢文：大会の周辺試合に賭ける
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "affordableCash": 100000
+  },
+  "why": "賭け金を用意できない"
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_kazimierz_major-0-0"></a>
 
-- **結果 1（設定確率 60%）**
+- **結果 1（設定確率 55%）**
 
-> 見事に血騎士が勝利を収め、大金を手にしてアリーナで歓声をあげた。
+> 選んだ試合の賭けが当たり、換金した金を財布へ戻した。
 
 効果：
 
 ```json
 {
-  "cash": 500000,
-  "p": 5
+  "cash": 200000,
+  "p": 3
 }
 ```
 
 旧シム観測回数：未計測
 <a id="outcome-timeline_kazimierz_major-0-1"></a>
 
-- **結果 2（設定確率 40%）**
+- **結果 2（設定確率 45%）**
 
-> 波乱の展開で賭け金を失い、苦笑いしながら財布を叩いた。
+> 賭けは外れた。会場の歓声を背に、軽くなった財布をしまった。
 
 効果：
 
 ```json
 {
-  "cash": -150000,
+  "cash": -100000,
+  "pm": 1,
   "p": -3
 }
 ```
@@ -68610,6 +68634,16 @@ s => {
 <a id="choice-timeline_kazimierz_major-1"></a>
 選択肢文：アリーナ整備班としてネオン看板と電光掲示板の保守に就く
 
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s=>s.job===7||s.job===11||s.job===19"
+  }
+}
+```
+
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
@@ -68617,7 +68651,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 大会期間中の高所作業を完遂し、企業連合から手厚い報酬を受け取った。
+> 市内で請け負った大会関連表示の保守を終え、実作業分の手当を受け取った。手当を受け取ると、街の中継画面を見上げて一息ついた。
 
 効果：
 
@@ -68643,7 +68677,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 同じ立場の人々と肩を組み、歴史的な熱戦に胸を熱くした。
+> 隣に集まった人々と肩を並べ、画面を追って声を上げた。
 
 効果：
 
@@ -68662,27 +68696,40 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1895
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：シエスタ
 - ジャンル：天災・避難
 - 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり、移動都市・避難に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
+> 火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_siesta_disaster_local",
-  "conf": "C",
+  "conf": "S",
   "timelineFlag": "siesta_disaster",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1097,
+      7
+    ],
+    "through": [
+      1097,
+      12
+    ],
+    "region": "シエスタ",
+    "role": "local-civilian",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_SIESTA_TRANSITION"
@@ -68693,9 +68740,6 @@ s => {
     "壮年",
     "老年"
   ],
-  "need": [
-    "国:シエスタ"
-  ],
   "ge": {
     "year": 1097
   },
@@ -68703,7 +68747,7 @@ s => {
     "year": 1098
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.siesta_disaster"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2.5,
   "once": true
@@ -68719,45 +68763,24 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_siesta_disaster_local-0"></a>
-選択肢文：噴火する火山灰の中、港の緊急避難船に乗り込む
+選択肢文：避難便の条件を確かめ、出発の準備をする
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-timeline_siesta_disaster_local-0-0"></a>
 
-- **結果 1（設定確率 85%）**
+- **結果 1（設定確率 100%）**
 
-> 湖面を進む船上で噴煙を上げる故郷を見つめ、無事に新シエスタへの避難路についた。
-
-効果：
-
-```json
-{
-  "res": 1,
-  "cash": -200000,
-  "p": -6,
-  "fl": {
-    "volcano_evacuee": 1
-  }
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-timeline_siesta_disaster_local-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 港を襲った高温の火砕流に呑まれ、湖畔で命を落とした。
+> 案内を読み、持ち出す荷物をまとめた。連絡船を選ぶか、別の行先を探すか、運賃と家族の都合を確かめることにした。
 
 効果：
 
 ```json
 {
-  "d": [
-    "天災被災（シエスタ火山活動・火砕流）",
-    "シエスタ火山の火砕流に港ごと呑み込まれ、亡くなった"
-  ]
+  "travelAction": "intent:local-flight",
+  "k": 2,
+  "p": -2
 }
 ```
 
@@ -68766,7 +68789,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_siesta_disaster_local-1"></a>
-選択肢文：耐震補強された黒曜石の地下シェルターへ避難する
+選択肢文：地区の荷物整理を手伝う
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -68775,15 +68798,15 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 灰の降り積もる中を耐え忍び、火山活動の沈静化を待って脱出した。
+> 引き受けた荷を整理し、その作業分だけ手当を受け取った。疲れた腕を休め、今夜の寝床へ戻った。
 
 効果：
 
 ```json
 {
-  "p": -8,
-  "h": -5,
-  "rl": 4
+  "cash": 40000,
+  "h": -3,
+  "rl": 2
 }
 ```
 
@@ -68792,7 +68815,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_siesta_disaster_local-2"></a>
-選択肢文：逃げ遅れた観光客を船着き場へ誘導する救助ボランティアを務める
+選択肢文：手元の食料と連絡方法を点検する
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -68801,15 +68824,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 混乱する桟橋で整然と乗船を促し、市長から表彰を受けた。
+> 家族と分かっている情報を共有した。未確認の港の被害を確かめられないまま、その夜を過ごした。
 
 効果：
 
 ```json
 {
-  "rl": 10,
-  "p": 4,
-  "h": -8
+  "p": -1,
+  "k": 1
 }
 ```
 
@@ -68821,16 +68843,16 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1930
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：未特定
 - ジャンル：日常、差別・制度、移動・物流
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。
+> 旅程上で実際に到達した検問所が、通行の審査を始めている。運行側から届いた通行条件を読み、先へ進む方法を考えた。
 
 ### 発生条件・構造
 
@@ -68841,7 +68863,17 @@ s => {
   "timelineFlag": "world_1099",
   "historicalScene": {
     "delivery": "journey",
-    "dateMode": "event-year"
+    "dateMode": "event-year",
+    "from": [
+      1099,
+      1
+    ],
+    "through": [
+      1099,
+      12
+    ],
+    "sourceGrade": "D",
+    "role": "resident"
   },
   "references": [
     "SRC_TL_LATE"
@@ -68874,7 +68906,18 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_world_1099-0"></a>
-選択肢文：閉鎖された国境検問所で護衛兵に特別通行証を提示する
+選択肢文：この検問に有効な通行証を提示する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>travelCheckpointCan(s,\"pass\")"
+  },
+  "why": "本人・この区間・有効期間が一致する通行証または費用が不足している"
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -68883,15 +68926,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 正規の手続きで検問を通過し、物流が滞る前に移動を完了した。
+> 通行証を照合し、この検問を抜けて次の区間へ進んだ。乗継先まではもうしばらく掛かりそうだ。
 
 効果：
 
 ```json
 {
-  "cash": -80000,
-  "cr": 3,
-  "p": 1
+  "travelAction": "checkpoint:pass"
 }
 ```
 
@@ -68900,7 +68941,18 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_world_1099-1"></a>
-選択肢文：荒野の迂回ルートに詳しいキャラバンの案内人を雇う
+選択肢文：登録された迂回路へ切り替える
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>travelCheckpointCan(s,\"detour\")"
+  },
+  "why": "利用できる迂回路・案内人または追加費用が確認できない"
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -68909,14 +68961,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 検問所を大きく避けて荒野を進み、無事に目的の集落へ抜けた。
+> 案内人の示した別の道を選び、追加費用を払って移動を再開した。背後に検問の列が遠ざかっていった。
 
 効果：
 
 ```json
 {
-  "cash": -150000,
-  "p": -2
+  "travelAction": "checkpoint:detour"
 }
 ```
 
@@ -68925,7 +68976,18 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_world_1099-2"></a>
-選択肢文：無理な旅を取りやめ、近場の宿場町で情勢の落ち着きを待つ
+選択肢文：指定の滞在先で待ち、通行条件を照会する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>travelCheckpointCan(s,\"wait\")"
+  },
+  "why": "この区間で待てる滞在先が確認できない"
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -68934,14 +68996,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 宿場で温かい食事をとり、封鎖が解除されるまで待機した。
+> 検問の近くで待機を始めた。照会の返事と、再出発や帰路を選ぶ機会を待つことにした。
 
 効果：
 
 ```json
 {
-  "cash": -50000,
-  "p": 2
+  "travelAction": "checkpoint:wait"
 }
 ```
 
@@ -68953,27 +69014,39 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1960
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ウルサス、イベリア
 - ジャンル：未分類
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。
+> 海辺や北方から届く不穏な知らせを読んだ。海の哨所と北の防壁を一つの場所とは考えず、届いた情報の地域と日付を分けて整理した。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_world_1101",
-  "conf": "C",
+  "conf": "S",
   "timelineFlag": "world_1101",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1101,
+      1
+    ],
+    "through": [
+      1101,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "D",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_LATE"
@@ -68984,7 +69057,7 @@ s => {
     "老年"
   ],
   "show": {
-    "dynamicFunction": "s => [\"イベリア\", \"ウルサス\"].includes(s.res?.n)"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "ge": {
     "year": 1101
@@ -69006,7 +69079,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_world_1101-0"></a>
-選択肢文：監視塔の遠見鏡で海鳥の異常な大群飛来を観察記録する
+選択肢文：イベリアの海辺について届いた報道を読む
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -69015,15 +69088,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 異変の兆候を日誌に克明に記録し、学術調査隊に提出して謝礼を得た。
+> 海からの知らせを記録した。伝わってくる海辺の気配に、しばらく黙り込んだ。
 
 効果：
 
 ```json
 {
-  "k": 4,
-  "cr": 3,
-  "p": 1
+  "k": 2,
+  "p": -1
 }
 ```
 
@@ -69032,7 +69104,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_world_1101-1"></a>
-選択肢文：哨戒線周辺の通信機材とセンサーの点検作業を引き受ける
+選択肢文：ウルサス北方の連絡状況について調べる
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -69041,14 +69113,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 冷たい風の中で通信アンテナを補修し、哨所の孤立を防いだ。
+> 北方の報告と未返信の便を区別した。連絡の途切れた場所を地図に探し、冷えた指先を握り直した。
 
 効果：
 
 ```json
 {
-  "cash": 150000,
-  "h": -5
+  "k": 2,
+  "p": -1
 }
 ```
 
@@ -69057,7 +69129,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_world_1101-2"></a>
-選択肢文：吹雪の迫る防壁のストーブに薪をくべて仲間と暖をとる
+選択肢文：現地への依頼は引き受けず、暮らしを続ける
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -69066,14 +69138,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 見張り仲間と温かい茶を分け合い、厳しい冬の警戒を耐え忍んだ。
+> 未確認の警戒線へ向かう予定は立てず、その日の用事を終えた。
 
 効果：
 
 ```json
 {
-  "rl": 6,
-  "p": 3
+  "p": 1
 }
 ```
 
@@ -69085,12 +69156,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:1990
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ウルサス
 - ジャンル：労働・経済、戦争・政治
 - 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -69107,7 +69178,19 @@ s => {
     "delivery": "direct",
     "dateMode": "event-year",
     "region": "ウルサス",
-    "city": "サンクト・グリファーブルク"
+    "city": "サンクト・グリファーブルク",
+    "from": [
+      1101,
+      12
+    ],
+    "through": [
+      1101,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian",
+    "siteId": "model:katorga-university-square",
+    "reason": "大学前広場への本人の時点付き所在証拠が必要"
   },
   "references": [
     "SRC_URSUS_PAA_SYNOPSIS"
@@ -69116,10 +69199,6 @@ s => {
     "青年",
     "壮年",
     "老年"
-  ],
-  "need": [
-    "国:ウルサス",
-    "都市:サンクト・グリファーブルク"
   ],
   "ge": {
     "year": 1101
@@ -69170,16 +69249,16 @@ s => {
 
 - **結果 2（設定確率 20%）**
 
-> 密告により薪小屋を暴かれ、反体制活動の幇助罪でカトルガ流刑に処され死亡した。
+> 捜索で学生を匿ったことが発覚し、その場で拘束された。審査の行方を知らされないまま、連行先で長い夜を迎えた。
 
 効果：
 
 ```json
 {
-  "d": [
-    "刑の執行（カトルガ流刑・政治犯処刑）",
-    "カトルガ事件で抗議学生を匿った罪により流刑地で処刑された"
-  ]
+  "fl": {
+    "detained": 1
+  },
+  "p": -8
 }
 ```
 
@@ -69241,27 +69320,39 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:2025
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：炎国
 - ジャンル：家族・介護、天災・避難
 - 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、移動都市・避難に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
-> 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
+> 司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_sui_1102",
-  "conf": "C",
+  "conf": "S",
   "timelineFlag": "sui_1102",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "event-year"
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1102,
+      1
+    ],
+    "through": [
+      1102,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "D",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
   },
   "references": [
     "SRC_TL_LATE"
@@ -69279,7 +69370,7 @@ s => {
     "year": 1103
   },
   "show": {
-    "dynamicFunction": "() => false"
+    "dynamicFunction": "s=>!!s.world?.events?.[h.flag]"
   },
   "w": 2,
   "once": true
@@ -69295,7 +69386,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_sui_1102-0"></a>
-選択肢文：司歳台の天師の指示に従い、住民たちと指定の防護陣へ避難する
+選択肢文：分かっている公表情報だけを書き留める
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -69304,15 +69395,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 天師の張った結界の中で待機し、異様な神鳴りの震動から身を守った。
+> 伝達元と未確認の点を一緒に残した。伝承のどこまでが確かなのか、考えながら筆を置いた。
 
 効果：
 
 ```json
 {
-  "p": 3,
-  "rl": 4,
-  "h": 2
+  "k": 2,
+  "p": -1
 }
 ```
 
@@ -69321,7 +69411,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-timeline_sui_1102-1"></a>
-選択肢文：真っ二つに割れた古い封印碑の破片を遠巻きに観察記録する
+選択肢文：静かな場所で、身近な人々の無事を祈る
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -69330,14 +69420,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 刻まれた太古の紋様を写し取り、炎国の神話的遺物の研究を深めた。
+> 騒ぎから少し離れ、身近な人々の無事を祈った。遠い場所の行く末は分からないまま、帰り支度を整えた。
 
 効果：
 
 ```json
 {
-  "k": 5,
-  "p": -2
+  "p": 2
 }
 ```
 
@@ -69346,7 +69435,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-timeline_sui_1102-2"></a>
-選択肢文：自宅の先祖の祠に香を焚き、大地が鎮まるのを静かに祈る
+選択肢文：詳しい知らせが出るまで判断を保留する
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -69355,14 +69444,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 家族とともに煙を捧げ、荒ぶる大地の怒りが鎮まるのを待った。
+> 分からないことを分からないまま残し、いつもの暮らしへ戻った。
 
 効果：
 
 ```json
 {
-  "p": 4,
-  "h": 1
+  "p": 1
 }
 ```
 
@@ -69374,12 +69462,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:2060
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ヴィクトリア
 - ジャンル：戦争・政治
 - 状況：自動発生イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -69402,12 +69490,18 @@ s => {
     "delivery": "direct",
     "dateMode": "ongoing",
     "region": "ヴィクトリア",
-    "city": "ロンディニウム"
+    "city": "ロンディニウム",
+    "from": [
+      1098,
+      7
+    ],
+    "through": [
+      1098,
+      9
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
   },
-  "need": [
-    "国:ヴィクトリア",
-    "都市:ロンディニウム"
-  ],
   "ge": {
     "year": 1098
   },
@@ -69438,12 +69532,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:2072
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ヴィクトリア
 - ジャンル：差別・制度、戦争・政治
 - 状況：自動発生イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -69466,12 +69560,18 @@ s => {
     "delivery": "direct",
     "dateMode": "ongoing",
     "region": "ヴィクトリア",
-    "city": "ロンディニウム"
+    "city": "ロンディニウム",
+    "from": [
+      1094,
+      8
+    ],
+    "through": [
+      1097,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
   },
-  "need": [
-    "国:ヴィクトリア",
-    "都市:ロンディニウム"
-  ],
   "ge": {
     "year": 1094
   },
@@ -69501,12 +69601,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:2084
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ウルサス
 - ジャンル：天災・避難
 - 状況：自動発生イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -69529,12 +69629,18 @@ s => {
     "delivery": "direct",
     "dateMode": "ongoing",
     "region": "ウルサス",
-    "city": "チェルノボーグ"
+    "city": "チェルノボーグ",
+    "from": [
+      1096,
+      12
+    ],
+    "through": [
+      1097,
+      1
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
   },
-  "need": [
-    "国:ウルサス",
-    "都市:チェルノボーグ"
-  ],
   "ge": {
     "year": 1096
   },
@@ -69565,12 +69671,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:2096
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：ボリバル
 - ジャンル：未分類
 - 状況：自動発生イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -69592,11 +69698,18 @@ s => {
   "historicalScene": {
     "delivery": "area-impact",
     "dateMode": "ongoing",
-    "region": "ボリバル"
+    "region": "ボリバル",
+    "from": [
+      1048,
+      1
+    ],
+    "through": [
+      1052,
+      12
+    ],
+    "sourceGrade": "C",
+    "role": "resident"
   },
-  "need": [
-    "国:ボリバル"
-  ],
   "ge": {
     "year": 1048
   },
@@ -69626,12 +69739,12 @@ s => {
 
 - 出典位置：data/base/regional-conflict.js:2108
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：高
 - 国・地域：イベリア
 - ジャンル：未分類
 - 状況：自動発生イベント、動的表示条件、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
 
 ### 本文
 
@@ -69653,11 +69766,18 @@ s => {
   "historicalScene": {
     "delivery": "area-impact",
     "dateMode": "ongoing",
-    "region": "イベリア"
+    "region": "イベリア",
+    "from": [
+      1038,
+      7
+    ],
+    "through": [
+      1040,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "resident"
   },
-  "need": [
-    "国:イベリア"
-  ],
   "ge": {
     "year": 1038
   },
@@ -276555,6 +276675,1307 @@ s => s.job > 0
     "note": "再失業後の求人探しを一時休止した"
   },
   "p": 0
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-journey_decision_review"></a>
+## journey_decision_review
+
+- 出典位置：data/parts/historical-scene-reviews.js:140
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：高
+- 国・地域：未特定
+- ジャンル：差別・制度
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
+
+### 本文
+
+> 検問の前で足止めされている。届いた通行条件と旅費を確かめ、先へ進むか、滞在先で待つかを考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "journey_decision_review",
+  "conf": "S",
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 0,
+  "who": "self",
+  "show": {
+    "dynamicFunction": "s=>!!travelCheckpointDefinition(s)&&[\"at-checkpoint\",\"blocked\"].includes(travelCurrentJourney(s)?.status)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-journey_decision_review-0"></a>
+選択肢文：この検問に有効な通行証を提示する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>travelCheckpointCan(s,\"pass\")"
+  },
+  "why": "通行証または再開の確認がない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-journey_decision_review-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> この検問を通り、次の乗継先へ向かった。
+
+効果：
+
+```json
+{
+  "travelAction": "checkpoint:pass"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-journey_decision_review-1"></a>
+選択肢文：登録された迂回路へ切り替える
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>travelCheckpointCan(s,\"detour\")"
+  },
+  "why": "迂回路・案内人または資金が不足している"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-journey_decision_review-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 案内人と別の道へ入り、次の停留地へ向かった。
+
+効果：
+
+```json
+{
+  "travelAction": "checkpoint:detour"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-journey_decision_review-2"></a>
+選択肢文：滞在先で待ち、通行条件を照会する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>travelCheckpointCan(s,\"wait\")"
+  },
+  "why": "待てる滞在先が確認できない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-journey_decision_review-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 検問のそばの滞在先へ向かい、照会の返事を待った。
+
+効果：
+
+```json
+{
+  "travelAction": "checkpoint:wait"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-history_path_review_columbia_independence"></a>
+## history_path_review_columbia_independence
+
+- 出典位置：data/parts/historical-scene-reviews.js:163
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：高
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
+
+### 本文
+
+> 開拓地区の自治活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "history_path_review_columbia_independence",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 3,
+  "after": {
+    "id": "timeline_columbia_independence",
+    "min": 2
+  },
+  "show": {
+    "dynamicFunction": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-history_path_review_columbia_independence-0"></a>
+選択肢文：暮らしと両立できる役目を続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_columbia_independence-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。
+
+効果：
+
+```json
+{
+  "p": 1,
+  "rl": 2,
+  "lifeAffiliation": {
+    "id": "hist-columbia_independence",
+    "action": "continue",
+    "role": "分担を決めて活動を続ける"
+  },
+  "lifeGoal": {
+    "id": "hist-columbia_independence-path",
+    "action": "continue"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-history_path_review_columbia_independence-1"></a>
+選択肢文：自分の役目に区切りをつけ、記録を残して退く
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_columbia_independence-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。
+
+効果：
+
+```json
+{
+  "p": 2,
+  "lifeAffiliation": {
+    "id": "hist-columbia_independence",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-columbia_independence-path",
+    "action": "complete"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-history_path_review_columbia_independence-2"></a>
+選択肢文：負担が大きくなった活動から離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_columbia_independence-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "lifeAffiliation": {
+    "id": "hist-columbia_independence",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-columbia_independence-path",
+    "action": "abandon"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-history_path_review_kazdel_commission_founded"></a>
+## history_path_review_kazdel_commission_founded
+
+- 出典位置：data/parts/historical-scene-reviews.js:163
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：高
+- 国・地域：未特定
+- ジャンル：労働・経済、所属・組織
+- 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
+
+### 本文
+
+> 地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "history_path_review_kazdel_commission_founded",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 3,
+  "after": {
+    "id": "timeline_kazdel_commission",
+    "min": 2
+  },
+  "show": {
+    "dynamicFunction": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-history_path_review_kazdel_commission_founded-0"></a>
+選択肢文：暮らしと両立できる役目を続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_kazdel_commission_founded-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。
+
+効果：
+
+```json
+{
+  "p": 1,
+  "rl": 2,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_commission_founded",
+    "action": "continue",
+    "role": "分担を決めて活動を続ける"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_commission_founded-path",
+    "action": "continue"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-history_path_review_kazdel_commission_founded-1"></a>
+選択肢文：自分の役目に区切りをつけ、記録を残して退く
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_kazdel_commission_founded-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。
+
+効果：
+
+```json
+{
+  "p": 2,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_commission_founded",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_commission_founded-path",
+    "action": "complete"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-history_path_review_kazdel_commission_founded-2"></a>
+選択肢文：負担が大きくなった活動から離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_kazdel_commission_founded-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_commission_founded",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_commission_founded-path",
+    "action": "abandon"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-history_path_review_siracusa_unification"></a>
+## history_path_review_siracusa_unification
+
+- 出典位置：data/parts/historical-scene-reviews.js:163
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：高
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
+
+### 本文
+
+> 地区の掟を担うつながりに関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "history_path_review_siracusa_unification",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 3,
+  "after": {
+    "id": "timeline_siracusa_unification",
+    "min": 2
+  },
+  "show": {
+    "dynamicFunction": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-history_path_review_siracusa_unification-0"></a>
+選択肢文：暮らしと両立できる役目を続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_siracusa_unification-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。
+
+効果：
+
+```json
+{
+  "p": 1,
+  "rl": 2,
+  "lifeAffiliation": {
+    "id": "hist-siracusa_unification",
+    "action": "continue",
+    "role": "分担を決めて活動を続ける"
+  },
+  "lifeGoal": {
+    "id": "hist-siracusa_unification-path",
+    "action": "continue"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-history_path_review_siracusa_unification-1"></a>
+選択肢文：自分の役目に区切りをつけ、記録を残して退く
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_siracusa_unification-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。
+
+効果：
+
+```json
+{
+  "p": 2,
+  "lifeAffiliation": {
+    "id": "hist-siracusa_unification",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-siracusa_unification-path",
+    "action": "complete"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-history_path_review_siracusa_unification-2"></a>
+選択肢文：負担が大きくなった活動から離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_siracusa_unification-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "lifeAffiliation": {
+    "id": "hist-siracusa_unification",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-siracusa_unification-path",
+    "action": "abandon"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-history_path_review_ursus_great_rebellion"></a>
+## history_path_review_ursus_great_rebellion
+
+- 出典位置：data/parts/historical-scene-reviews.js:163
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：高
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
+
+### 本文
+
+> 地区の労働者の要求活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "history_path_review_ursus_great_rebellion",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 3,
+  "after": {
+    "id": "timeline_ursus_great_rebellion",
+    "min": 2
+  },
+  "show": {
+    "dynamicFunction": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-history_path_review_ursus_great_rebellion-0"></a>
+選択肢文：暮らしと両立できる役目を続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_ursus_great_rebellion-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。
+
+効果：
+
+```json
+{
+  "p": 1,
+  "rl": 2,
+  "lifeAffiliation": {
+    "id": "hist-ursus_great_rebellion",
+    "action": "continue",
+    "role": "分担を決めて活動を続ける"
+  },
+  "lifeGoal": {
+    "id": "hist-ursus_great_rebellion-path",
+    "action": "continue"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-history_path_review_ursus_great_rebellion-1"></a>
+選択肢文：自分の役目に区切りをつけ、記録を残して退く
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_ursus_great_rebellion-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。
+
+効果：
+
+```json
+{
+  "p": 2,
+  "lifeAffiliation": {
+    "id": "hist-ursus_great_rebellion",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-ursus_great_rebellion-path",
+    "action": "complete"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-history_path_review_ursus_great_rebellion-2"></a>
+選択肢文：負担が大きくなった活動から離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_ursus_great_rebellion-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "lifeAffiliation": {
+    "id": "hist-ursus_great_rebellion",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-ursus_great_rebellion-path",
+    "action": "abandon"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-history_path_review_rim_billiton_independence"></a>
+## history_path_review_rim_billiton_independence
+
+- 出典位置：data/parts/historical-scene-reviews.js:163
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：高
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
+
+### 本文
+
+> 鉱区の自治運営に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "history_path_review_rim_billiton_independence",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 3,
+  "after": {
+    "id": "timeline_rim_billiton_independence",
+    "min": 2
+  },
+  "show": {
+    "dynamicFunction": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-history_path_review_rim_billiton_independence-0"></a>
+選択肢文：暮らしと両立できる役目を続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_rim_billiton_independence-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。
+
+効果：
+
+```json
+{
+  "p": 1,
+  "rl": 2,
+  "lifeAffiliation": {
+    "id": "hist-rim_billiton_independence",
+    "action": "continue",
+    "role": "分担を決めて活動を続ける"
+  },
+  "lifeGoal": {
+    "id": "hist-rim_billiton_independence-path",
+    "action": "continue"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-history_path_review_rim_billiton_independence-1"></a>
+選択肢文：自分の役目に区切りをつけ、記録を残して退く
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_rim_billiton_independence-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。
+
+効果：
+
+```json
+{
+  "p": 2,
+  "lifeAffiliation": {
+    "id": "hist-rim_billiton_independence",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-rim_billiton_independence-path",
+    "action": "complete"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-history_path_review_rim_billiton_independence-2"></a>
+選択肢文：負担が大きくなった活動から離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_rim_billiton_independence-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "lifeAffiliation": {
+    "id": "hist-rim_billiton_independence",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-rim_billiton_independence-path",
+    "action": "abandon"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-history_path_review_leith_revolution"></a>
+## history_path_review_leith_revolution
+
+- 出典位置：data/parts/historical-scene-reviews.js:163
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：高
+- 国・地域：未特定
+- ジャンル：労働・経済、戦争・政治
+- 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
+
+### 本文
+
+> 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "history_path_review_leith_revolution",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 3,
+  "after": {
+    "id": "timeline_leith_revolution",
+    "min": 2
+  },
+  "show": {
+    "dynamicFunction": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-history_path_review_leith_revolution-0"></a>
+選択肢文：暮らしと両立できる役目を続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_leith_revolution-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。
+
+効果：
+
+```json
+{
+  "p": 1,
+  "rl": 2,
+  "lifeAffiliation": {
+    "id": "hist-leith_revolution",
+    "action": "continue",
+    "role": "分担を決めて活動を続ける"
+  },
+  "lifeGoal": {
+    "id": "hist-leith_revolution-path",
+    "action": "continue"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-history_path_review_leith_revolution-1"></a>
+選択肢文：自分の役目に区切りをつけ、記録を残して退く
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_leith_revolution-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。
+
+効果：
+
+```json
+{
+  "p": 2,
+  "lifeAffiliation": {
+    "id": "hist-leith_revolution",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-leith_revolution-path",
+    "action": "complete"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-history_path_review_leith_revolution-2"></a>
+選択肢文：負担が大きくなった活動から離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_leith_revolution-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "lifeAffiliation": {
+    "id": "hist-leith_revolution",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-leith_revolution-path",
+    "action": "abandon"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-history_path_review_kazdel_war_declared"></a>
+## history_path_review_kazdel_war_declared
+
+- 出典位置：data/parts/historical-scene-reviews.js:163
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：高
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
+
+### 本文
+
+> 地区の後方補給班に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "history_path_review_kazdel_war_declared",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 3,
+  "after": {
+    "id": "timeline_kazdel_war_declared",
+    "min": 2
+  },
+  "show": {
+    "dynamicFunction": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-history_path_review_kazdel_war_declared-0"></a>
+選択肢文：暮らしと両立できる役目を続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_kazdel_war_declared-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。
+
+効果：
+
+```json
+{
+  "p": 1,
+  "rl": 2,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_war_declared",
+    "action": "continue",
+    "role": "分担を決めて活動を続ける"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_war_declared-path",
+    "action": "continue"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-history_path_review_kazdel_war_declared-1"></a>
+選択肢文：自分の役目に区切りをつけ、記録を残して退く
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_kazdel_war_declared-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。
+
+効果：
+
+```json
+{
+  "p": 2,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_war_declared",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_war_declared-path",
+    "action": "complete"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-history_path_review_kazdel_war_declared-2"></a>
+選択肢文：負担が大きくなった活動から離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_kazdel_war_declared-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_war_declared",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_war_declared-path",
+    "action": "abandon"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-history_path_review_kazdel_civil_war"></a>
+## history_path_review_kazdel_civil_war
+
+- 出典位置：data/parts/historical-scene-reviews.js:163
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：高
+- 国・地域：未特定
+- ジャンル：労働・経済、天災・避難
+- 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、移動都市・避難に言及
+- 指摘分類：年代・年齢・場所、条件・表示・処理
+- 注記：時空間・主体・実行結果を統合校閲。改稿／追加の実行定義：data/parts/historical-scene-reviews.js。全文：docs/PLAYER_TEXT_REVIEW.md。根拠とS仮定：docs/HISTORICAL_SCENE_RATIONALE.md。
+
+### 本文
+
+> 避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "history_path_review_kazdel_civil_war",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 3,
+  "after": {
+    "id": "timeline_kazdel_civil_war",
+    "min": 2
+  },
+  "show": {
+    "dynamicFunction": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-history_path_review_kazdel_civil_war-0"></a>
+選択肢文：暮らしと両立できる役目を続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_kazdel_civil_war-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。
+
+効果：
+
+```json
+{
+  "p": 1,
+  "rl": 2,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_civil_war",
+    "action": "continue",
+    "role": "分担を決めて活動を続ける"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_civil_war-path",
+    "action": "continue"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-history_path_review_kazdel_civil_war-1"></a>
+選択肢文：自分の役目に区切りをつけ、記録を残して退く
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_kazdel_civil_war-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。
+
+効果：
+
+```json
+{
+  "p": 2,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_civil_war",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_civil_war-path",
+    "action": "complete"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-history_path_review_kazdel_civil_war-2"></a>
+選択肢文：負担が大きくなった活動から離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-history_path_review_kazdel_civil_war-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "lifeAffiliation": {
+    "id": "hist-kazdel_civil_war",
+    "action": "leave"
+  },
+  "lifeGoal": {
+    "id": "hist-kazdel_civil_war-path",
+    "action": "abandon"
+  }
 }
 ```
 

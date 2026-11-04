@@ -13,6 +13,7 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
       (typeof e.timelineFlag !== "string" ||
         !services.HIST.some(entry => entry.flag === e.timelineFlag)))
       W_.push(`${w}: timelineFlagに対応する年表IDがない`);
+    if(e.timelineFlag&&!e.historicalScene)W_.push(`${w}: 年表場面の分類がない`);
     if (e.historicalScene != null) {
       const scene = e.historicalScene;
       if (!e.timelineFlag || !["suspended","direct","area-impact","report-response","journey"].includes(scene.delivery) ||
@@ -25,6 +26,12 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
       if (scene.delivery === "area-impact" &&
           !services.REG.some(g => g.n === scene.region))
         W_.push(`${w}: 地域影響の地域が未登録`);
+      const validDate=x=>Array.isArray(x)&&Number.isInteger(x[0])&&Number.isInteger(x[1])&&x[1]>=1&&x[1]<=12;
+      if(!validDate(scene.from)||!validDate(scene.through)||
+        scene.from[0]*12+scene.from[1]>scene.through[0]*12+scene.through[1])W_.push(`${w}: 歴史場面の期間が不正`);
+      if(scene.delivery==="suspended"&&!scene.reason)W_.push(`${w}: 休眠場面の根拠がない`);
+      if(["area-impact","report-response","journey"].includes(scene.delivery)&&
+        e.c?.some(c=>c.o.some(o=>o[2]?.d)))W_.push(`${w}: 現場外の歴史場面に死亡結果がある`);
     }
     if (e.w != null) weight(e.w, w);
     if (e.cd != null && (!Number.isFinite(e.cd) || e.cd < 0)) W_.push(`${w}: 再発待機期間が不正`);

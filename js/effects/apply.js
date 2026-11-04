@@ -9,11 +9,18 @@ function ap(e, routeReserve = 0) {
   if (e.returnToLocality && !canReturnToResidence(S,e.returnToLocality==="previous"?previousResidenceKey(S):e.returnToLocality))
     throw new Error("再訪できる居住記録がありません");
   if (e.resTo && !REG.some(row=>row.n===e.resTo)) throw new Error("転居先の地域が不正");
-  if (e.resTo && e.resTo !== S.res.n && !moveDestinations(S).some(row=>row.n===e.resTo)) throw new Error("指定された地域へ移動できる経路がありません");
+  if(e.travelResidenceRef)travelResidenceOffer(S,e.travelResidenceRef);
+  if (e.resTo && !e.travelResidenceRef && e.resTo !== S.res.n && !moveDestinations(S).some(row=>row.n===e.resTo)) throw new Error("指定された地域へ移動できる経路がありません");
   const s = S,
     fromRegion = s.res.n,
     fundsBeforeEffects = moveFunds(s),
     jobBefore = s.job;
+  if(e.travelAction){
+    if(e.travelAction.startsWith("checkpoint:"))travelCheckpointAction(s,e.travelAction.split(":")[1]);
+    else if(e.travelAction==="intent:flight")travelIntent(s,"flight");
+    else if(e.travelAction==="intent:local-flight")travelIntent(s,"flight",s.res.n);
+    else throw Error("不明な旅程操作");
+  }
   applyLifeRecordEffects(e, s);
   const assetsBefore = (s.cash || 0) + (s.house?.cash || 0) + (s.investment || 0),
     debtBefore = (s.debt || 0) + (s.house?.debt || 0),

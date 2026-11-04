@@ -218,17 +218,17 @@ assert.deepEqual(run(`const s=S,teacher=Object.values(F.w.staff).find(x=>x.offer
 
 // D28: actual dispatcher protects school, due medical review, then history.
 fresh('ウルサス','lower',18);
-assert.deepEqual(run(`const s=S;s.year=1097;s.by=s.year-s.age;s.mo=4;s.educationDecision={kind:'graduation',year:s.year};
+assert.deepEqual(run(`const s=S;s.year=1098;s.by=s.year-s.age;s.mo=8;s.res=REG.find(x=>x.n==='ヴィクトリア');s.home='移動都市';s.local={kind:'移動都市の居住区',city:'ロンディニウム'};s.educationDecision={kind:'graduation',year:s.year};
   s.infectionWorkplace={reviewDueYear:s.year};s.world.events.londinium_war=s.year;
   const source=EV.slice(),oldFire=fire,selected=[],choices=[{l:'act',o:[[1,'done',{}]]}],
     school={id:'education_graduation_review',st:['青年'],c:choices,w:1},
     medical={id:'infection_workplace_review',st:['青年'],c:choices,w:1},
-    history={id:'p15-history',st:['青年'],timelineFlag:'londinium_war',c:choices,w:1};
+    history={id:'p15-history',st:['青年'],timelineFlag:'londinium_war',historicalScene:EV.find(e=>e.id==='vic_war').historicalScene,c:choices,w:1};
   try{EV.splice(0,EV.length,history,medical,school);
     fire=(e,state)=>{selected.push(e.id);state.majorEventMonth={year:state.year,month:state.mo};
       state.sn[e.id]=state.year;if(e===school)state.educationDecision=null;
       if(e===medical)state.infectionWorkplace=null;};
-    slot(3.5/12);slot(3.5/12);slot(4.5/12);slot(5.5/12);
+    slot(6.5/12);slot(6.5/12);slot(7.5/12);slot(8.5/12);
     return selected;
   }finally{fire=oldFire;EV.splice(0,EV.length,...source);}`),
   ['education_graduation_review','infection_workplace_review','p15-history']);

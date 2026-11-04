@@ -18,7 +18,7 @@ function isLocationInCrisis(state = S) {
     }
     // A regional disruption may shape everyday life even when the resident
     // did not witness the event at its specific battlefield or institution.
-    return historicalPlaceScope(h, state).affected;
+    return historicalLocalCrisis(h, state);
   });
 }
 function isPeacefulLeisureEvent(event) {
@@ -85,7 +85,12 @@ function nextExpiringFollowup(events,s) {
     if(!deadlines.length || Math.min(...deadlines)!==s.year) return null;
     return {event,due:Number.isInteger(prior) ? prior+(event.after.min||0) : s.year};
   }).filter(Boolean)
-    .sort((a,b)=>a.due-b.due || a.event.id.localeCompare(b.event.id))[0]?.event || null;
+    .sort((a,b)=>a.due-b.due ||
+      // When deadlines tie, show the already eligible physical crisis first.
+      // Reserve the remaining expiring choices in later monthly slots below.
+      Number(["direct","journey"].includes(b.event.historicalScene?.delivery))-
+      Number(["direct","journey"].includes(a.event.historicalScene?.delivery)) ||
+      a.event.id.localeCompare(b.event.id))[0]?.event || null;
 }
 function sched() {
   const range = S.age < P("events.childSlotAgeLimit") ? P("events.childSlots") : P("events.adultSlots"),
@@ -195,8 +200,7 @@ function slot(x) {
   reserveExpiringSlots(s, protectedChoices);
   if (HL) recordSimulationExpiringChoices(s, expiringChoices);
   const localTimelineChoice = mj.find(event =>
-    (!event.id?.startsWith("timeline_") ||
-      ["direct", "journey"].includes(event.historicalScene?.delivery)) &&
+    ["direct", "journey"].includes(event.historicalScene?.delivery) &&
     event.timelineFlag &&
     s.world?.events?.[event.timelineFlag] &&
     !s.sn?.[event.id] &&
@@ -205,6 +209,7 @@ function slot(x) {
   let e = schoolReview ||
     medicalReview ||
     expiringFollowup ||
+    mj.find(event=>event.id==="journey_decision_review") ||
     localTimelineChoice ||
     nextScheduledFollowup(mj,s) || wpk(mj.filter(event => event.pri), s, T) || institutional || (R() < MAJ_PER_SLOT ? wpk(mj, s, T) : null);
   if (!e) {
@@ -223,6 +228,7 @@ function slot(x) {
   if (e) fire(e, s, T);
 }
 function fire(e, s, T) {
+  if(e?.timelineFlag&&!historicalSceneEligibility(e,s).eligible)return false;
   if (!s || s.dead) {
     if (HL) STAT.postDeathFireAttempts++;
     return;
@@ -233,7 +239,7 @@ function fire(e, s, T) {
   if (e?.timelineFlag && e.c && e.historicalScene?.delivery === "direct" &&
       historicalSceneEligibility(e, s).eligible) {
     const historicalEntry = HIST.find(row => row.flag === e.timelineFlag);
-    if (historicalEntry) recordHistoricalDirectEncounter(historicalEntry, s, e.id);
+    if (historicalEntry) recordHistoricalDirectEncounter(historicalEntry, s, e.id,historicalSceneEligibility(e,s));
   }
   recordSimulationEvent(e, s);
   s.eventCareNetworkMemberId = null;
@@ -457,6 +463,10 @@ function ask(e, T, t, before, resumed = false) {
   if (!resumed) L(t);
   const pk = (c, by) => {
     if (s.ev !== e) return;
+    if((e.timelineFlag||e.id==="journey_decision_review")&&
+      (e.timelineFlag&&!historicalSceneEligibility(e,s).eligible||!ok(c.show,s,T)||!ok(c.en,s,T))){
+      s.ev=null;$("md").hidden=1;$("resumeChoice").hidden=1;syncUIDialogs();rd();return;
+    }
     const resolutionBefore = s.evBefore || before;
     const roll = R(),
       outcomeIndex = c.o.findIndex(x => roll < x[0]),
@@ -480,6 +490,9 @@ function ask(e, T, t, before, resumed = false) {
     UI_FOCUS_RETURNS.delete("md");
     cnt(tone(o[2]));
     const previousResolution = TRACE_RESOLUTION;
+    const historicalExposure=e.timelineFlag&&o[2]?.d?historicalSceneExposure(e,s,choiceIndex,outcomeIndex):null;
+    if(e.timelineFlag&&o[2]?.d&&!historicalExposure)throw Error("歴史的な死亡結果に現場の曝露根拠がない");
+    if(historicalExposure)s.deathHistorical={...historicalExposure,cause:o[2].d[0]};
     // This outcome belongs to the partner at the time of the choice, even if
     // the choice ends the relationship. The first meeting can create the ID.
     const romanceIdAtChoice = s.romance?.id || null;

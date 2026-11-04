@@ -1347,6 +1347,8 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
   Object.assign($terraData.EVENT_FIELD_META, {
     debtPlan:{unit:"家計再建方針",meaning:"生活必需費を保ちつつ支出を調整する本人の選択",status:"S",valueType:"text"},
     educationAction:{unit:"学籍操作",meaning:"教育状態機械へ入学・支払・中断・再開・修了判断を渡す",status:"S",valueType:"text"},
+    travelResidenceRef:{unit:"旅先の住居ID",meaning:"実到着と照合した住居の個別受入記録",status:"S",valueType:"text"},
+    travelAction:{unit:"旅程操作",meaning:"実在する旅程の検問通過・迂回・待機を確定する",status:"S",valueType:"text"},
     loanContract:{unit:"個人借入契約",meaning:"実際の契約条件と元本・返済総額を登録する",status:"S",valueType:"object"},
     loanPayment:{unit:"契約返済",meaning:"既存契約の残高と実際の支払を同時に減らす",status:"S",valueType:"object"},
     loanCharge:{unit:"契約外追加請求",meaning:"既存契約への追加請求と異議を記録する",status:"S",valueType:"object"},

@@ -97,7 +97,7 @@ function renderEconomyPanel(s, services) {
     ["生活費上昇指数", `${(s.priceIndex || 1).toFixed(2)}（給金は値上がりの一部を追随）`],
     [
       "直近年の収入内訳",
-      `本人 ${services.m(flow.income?.wages || 0)}・配偶者 ${services.m(flow.income?.spouse || 0)}・子 ${services.m(flow.income?.children || 0)}・支援 ${services.m(flow.income?.support || 0)}`
+      `本人 ${services.m(flow.income?.wages || 0)}・配偶者 ${services.m(flow.income?.spouse || 0)}・子 ${services.m(flow.income?.children || 0)}・支援 ${services.m(flow.income?.support || 0)}・旅先の仕事 ${services.m(flow.income?.travelWork || 0)}`
     ],
     [
       "支出内訳",

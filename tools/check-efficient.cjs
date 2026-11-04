@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {spawnSync}=require('node:child_process'),{createHash}=require('node:crypto');
 const runtime=require('./runtime.cjs'),root=path.resolve(__dirname,'..');
 const approved=Object.freeze([
+  "v88-history-roaming-completion.test.cjs",
   "p20-education-completion.test.cjs",
   "p15-education-regional-paths.test.cjs",
   "p0-career-credential-lifecycle.test.cjs",
@@ -233,7 +234,7 @@ function main(args){
  if(request.command==='list'){console.log(approved.join('\n'));return 0;}
  if(request.dry){console.log(JSON.stringify({command:request.command,tests:request.files,rerunReason:request.reason,writes:false}));return 0;}
  const cache=readCache(),publicFiles=runtime.publicFiles(root);
- const common=digest([...publicFiles,'tools/runtime.cjs','tools/check-efficient.cjs']);
+ const common=digest([...publicFiles,'tools/runtime.cjs','tools/check-efficient.cjs','tools/history-source-keys.cjs']);
  if(request.reason)console.log('Explicit rerun: '+request.reason);
  if(request.command==='syntax'){
   const expectedRevision=require('./update-version.cjs').revision(root);
@@ -242,6 +243,10 @@ function main(args){
   }
   if(!request.reason&&cache['@syntax']?.key===common){console.log('REUSED syntax: unchanged runtime');return 0;}
   const start=Date.now();
+  for(const file of publicFiles.filter(x=>x.startsWith('data/')&&x.endsWith('.js'))){
+    const duplicates=require('./history-source-keys.cjs').duplicateSceneKeys(fs.readFileSync(path.join(root,file),'utf8'));
+    if(duplicates.length){console.error('Duplicate scene keys: '+file+' '+JSON.stringify(duplicates));return 1;}
+  }
   try{for(const file of publicFiles.filter(f=>f.endsWith('.js')))new vm.Script(fs.readFileSync(path.join(root,file),'utf8'),{filename:file});}
   catch(error){delete cache['@syntax'];saveCache(cache);console.error(error.stack);return 1;}
   cache['@syntax']={key:common,ms:Date.now()-start};saveCache(cache);
@@ -250,8 +255,8 @@ function main(args){
  for(const file of request.files){
   const inputs=[...dependencies('tests/'+file),...(extraInputs[file]||[])],key=digest(inputs,common);
   if(!request.reason&&cache[file]?.key===key){console.log('REUSED '+file+': unchanged inputs');continue;}
-  const start=Date.now(),result=spawnSync(process.execPath,['tests/'+file],{cwd:root,encoding:'utf8',timeout:file==='v87_dev_simulation_diagnostics.js'?120000:30000,maxBuffer:256*1024});
-  if(result.status!==0){delete cache[file];saveCache(cache);console.error('FAILED '+file+'\n'+(result.stderr||result.stdout||result.error?.message||'No diagnostic output').slice(-16000));return 1;}
+  const start=Date.now(),result=spawnSync(process.execPath,['tests/'+file],{cwd:root,encoding:'utf8',timeout:file==='v87_dev_simulation_diagnostics.js'?120000:file==='audit-diagnostics.test.cjs'?60000:30000,maxBuffer:256*1024});
+  if(result.status!==0){delete cache[file];saveCache(cache);console.error('FAILED '+file+'\n'+([result.error?.message,result.stderr||result.stdout||'No diagnostic output'].filter(Boolean).join('\n')).slice(-16000));return 1;}
   cache[file]={key,ms:Date.now()-start};console.log('PASSED '+file+': '+cache[file].ms+' ms');
  }
  saveCache(cache);return 0;

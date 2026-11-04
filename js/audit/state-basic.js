@@ -331,7 +331,7 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
   for (const [flag, value] of Object.entries(s.fl))
     if (!services.FLAG_REGISTRY[flag] || (value !== 0 && value !== 1))
       problems.push(`不正な状態フラグ ${flag}`);
-  problems.push(...auditTravelState(s));
+  problems.push(...auditTravelState(s),...auditHistoricalExposureState(s));
   if (s.house)
     for (const key of ["cash", "debt", "inc", "exp"])
       if (!Number.isFinite(s.house[key]) || s.house[key] < 0) problems.push(`家計${key}が不正`);

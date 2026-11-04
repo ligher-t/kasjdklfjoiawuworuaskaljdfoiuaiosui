@@ -163,6 +163,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_roaming_ui_roundtrip.test.cjs
       - name: Dated travel stay finances and save-restore
         run: node tools/check-efficient.cjs run v88_roaming_monthly_stay.test.cjs
+      - name: Integrated historical scenes, services, family, settlement and exam journeys
+        run: node tools/check-efficient.cjs run v88-history-roaming-completion.test.cjs
       - name: Historical regional impacts without on-site claims
         run: node tools/check-efficient.cjs run v88_historical_regional_impacts.test.cjs
       - name: Regional recruitment, custody and career outcome

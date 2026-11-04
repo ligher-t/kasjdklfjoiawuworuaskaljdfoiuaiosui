@@ -236,7 +236,7 @@ function lifeRows(s) {
       `${(s.moves || []).length}回${
         last
           ? `。直近: ${last.year}年 ${last.from}から${last.to}へ、${last.fromHome || "住居種別不明"}から${last.toHome || "住居種別不明"}へ（${last.householdSize || 1}` +
-            `人／${last.fareCovered ? "移送側が運賃を負担" : "移動費目安 " + m(last.routeFare || 0)}）`
+            `人／${last.journeyId ? "旅程の運賃として精算済み" : last.fareCovered ? "移送側が運賃を負担" : "移動費目安 " + m(last.routeFare || 0)}）`
           : ""
       }`
     ],

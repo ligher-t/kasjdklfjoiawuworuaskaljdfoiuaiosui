@@ -133,6 +133,13 @@ function educationServiceInquiry(s) {
 }
 function educationServiceMobilityQuote(s,current,kind) {
   const o=current?.offering;if(!o)return {allowed:false};
+  const item=educationActiveCase(s),world=s.world.educationWorld,
+    foreign=world.areas[world.campuses[o.campusId].educationAreaId].regionKey!==s.res.n;
+  if(kind==="entrance-trip"&&foreign){
+    const journey=travelCurrentJourney(s),allowed=travelEducationCanAttend(s)&&
+      journey.educationRef?.caseId===item?.id&&journey.educationRef?.offeringId===o.id;
+    return {allowed:!!allowed,amount:0,route:{reachable:!!allowed,reasonCodes:allowed?[]:["study-journey-required"]}};
+  }
   const policy=educationServicePolicy(s,o.id),campus=s.world.educationWorld.campuses[o.campusId],
     route=educationCanReach(s,{institutionId:o.institutionId,campusId:o.campusId,offeringId:o.id,
       purpose:kind==="entrance-trip"?"exam-visit":kind==="relocation"?"boarding-move":"daily-commute",year:s.year,month:s.mo});
@@ -144,6 +151,12 @@ function educationServiceMobilityQuote(s,current,kind) {
 }
 function educationServicePayMobility(s,current,kind,sources={}) {
   const o=current?.offering;if(!o)return null;
+  const w=s.world.educationWorld;
+  if(kind==="entrance-trip"&&w.areas[w.campuses[o.campusId].educationAreaId].regionKey!==s.res.n){
+    if(!educationServiceMobilityQuote(s,current,kind).allowed)return null;
+    const item=travelEducationAttendance(s),journey=travelCurrentJourney(s);
+    return s.travelState.transactions[journey.legs[0].id+":fare"];
+  }
   const policy=educationServicePolicy(s,o.id),mob=educationCreateMobilityState(s),
     campus=s.world.educationWorld.campuses[o.campusId],route=educationCanReach(s,{
       institutionId:o.institutionId,campusId:o.campusId,offeringId:o.id,

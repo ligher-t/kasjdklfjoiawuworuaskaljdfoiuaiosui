@@ -18,7 +18,7 @@ const result=read(`
  S.eventOutcomes={lov:{year:1092,choiceIndex:0,outcomeIndex:0,romanceId:'romance-a'}};
  const romance=EV.find(e=>e.id==='romance_followup');
  const choice=()=>[{l:'期限付きの手続きを選ぶ',o:[[1,'確認を行った',{}]]}];
- const history={id:'test_local_history',st:['壮年'],timelineFlag:'londinium_war',c:choice(),w:1};
+ const history={id:'test_local_history',st:['壮年'],timelineFlag:'londinium_war',historicalScene:EV.find(e=>e.id==='vic_war').historicalScene,c:choice(),w:1};
  const school={id:'education_upper_path',st:['壮年'],c:choice(),w:1};
  const medical={id:'infection_workplace_review',st:['壮年'],c:choice(),w:1};
  const original=EV.slice(),oldFire=fire,selected=[],eligible={};

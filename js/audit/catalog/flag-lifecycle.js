@@ -1,5 +1,5 @@
 function validateFlagLifecycle(W_, services) {
-  const engineCredentialProducers=new Set(["arts_grad"]);
+  const engineCredentialProducers=new Set(["arts_grad",...TRAVEL_ENGINE_PRODUCED_FLAGS]);
   const actualCreators = new Map(),
     actualClearers = new Map(),
     actualConsumers = new Map();
@@ -35,6 +35,7 @@ function validateFlagLifecycle(W_, services) {
     }
   }
   Object.entries(services.FLAG_REGISTRY).forEach(([flag, meta]) => {
+    if(TRAVEL_ENGINE_PRODUCED_FLAGS.has(flag)&&meta.engineProducers?.join("|")!=="travelArrivalConsequences")W_.push(`${flag}: 実到着による生成元が未登録`);
     if (
       !meta.label ||
       !meta.description ||

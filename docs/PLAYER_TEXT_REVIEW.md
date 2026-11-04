@@ -2251,3 +2251,8542 @@ function educationDependentKnownView(s) {
 ## 2026-11-04｜EDU I07のP13全文校閲追補
 
 既存学校イベントの本文・選択文・結果文の改稿および教育効果の経路は、[`docs/education/I07_PLAYER_TEXT_CHANGES_20261104.md`](education/I07_PLAYER_TEXT_CHANGES_20261104.md) にイベントID別・変更ソース全文で記録した。P17の新規80件の校閲本文・条件通知46件は [`data/education/p17-reviewed-prose.js`](../data/education/p17-reviewed-prose.js) に完全収録している。P17の条件別通知は本文登録と発火ガードを分離し、実際の結果根拠が得られた場面に限って配信する。
+
+## 2026-11-04｜年表・旅程の統合校閲全文
+
+基準 `75bf10b`。根拠・不明点・個別サービスのS仮定は [歴史場面・旅程の根拠台帳](HISTORICAL_SCENE_RATIONALE.md) を参照。以下は旧文／新文、条件付きの全選択・結果・死亡文と、経歴に表示する効果の文言を記録する。B/C/DはHISTの史料評価、書き起こした本人の生活場面はS。休眠5件の旧文は公開内容へ復帰させる意味を持たない。
+
+### timeline_el_sol_founded
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_el_sol_founded",
+  "conf": "C",
+  "references": [
+    "SRC_COMMUNITY_DOSSOLES_HISTORY",
+    "SRC_BOLIVAR_DOSSOLES_STORY"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ボリバル",
+    "city": "エル・ソル"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:ボリバル",
+    "都市:エル・ソル"
+  ],
+  "ge": {
+    "year": 1007
+  },
+  "le": {
+    "year": 1010
+  },
+  "show": "s => !!s.world?.events?.el_sol_founded",
+  "body": "荒野の砂塵を切り裂いて巨大な移動プレートが結合され、エル・ソルの基礎が目の前に組み上がった。荷役と補修の槌音が昼夜を問わず響き渡り、新しい街の建設に多くの人手が集められている。",
+  "choices": [
+    {
+      "label": "移動プレート結合の荷役作業に応募する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "砂埃まみれになりながら巨大鋼材の荷役に従事し、手堅い日当を受け取った。建設途中の街並みに自分の汗が染み込んでいるのを感じた。",
+          "effects": {
+            "cash": 120000,
+            "p": 2,
+            "h": -4
+          }
+        }
+      ]
+    },
+    {
+      "label": "建設現場向けの工具や保存食を仕入れて商う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "集まった工夫たちに冷たい水と頑丈な手袋を売り歩き、上々の利益を上げた。",
+          "effects": {
+            "cash": 180000,
+            "cr": 3,
+            "p": 2
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "砂嵐で露店が吹き飛ばされ、仕入れた商品の半分が砂に埋もれて損を出した。",
+          "effects": {
+            "cash": -50000,
+            "p": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "砂埃の届かない街区で堅実に家業を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "喧騒から距離を置き、落ち着いた生活リズムを守りながら新しい都市の行く末を見守った。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_el_sol_founded",
+  "conf": "C",
+  "references": [
+    "SRC_COMMUNITY_DOSSOLES_HISTORY",
+    "SRC_BOLIVAR_DOSSOLES_STORY"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ボリバル",
+    "city": "エル・ソル",
+    "from": [
+      1007,
+      1
+    ],
+    "through": [
+      1007,
+      12
+    ],
+    "sourceGrade": "C",
+    "role": "present-civilian"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1007
+  },
+  "le": {
+    "year": 1010
+  },
+  "show": "s => !!s.world?.events?.el_sol_founded",
+  "body": "荒野の砂塵を切り裂いて巨大な移動プレートが結合され、エル・ソルの基礎が目の前に組み上がった。荷役と補修の槌音が昼夜を問わず響き渡り、新しい街の建設に多くの人手が集められている。",
+  "choices": [
+    {
+      "label": "移動プレート結合の荷役作業に応募する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "砂埃まみれになりながら巨大鋼材の荷役に従事し、手堅い日当を受け取った。建設途中の街並みに自分の汗が染み込んでいるのを感じた。",
+          "effects": {
+            "cash": 120000,
+            "p": 2,
+            "h": -4
+          }
+        }
+      ]
+    },
+    {
+      "label": "建設現場向けの工具や保存食を仕入れて商う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "集まった工夫たちに冷たい水と頑丈な手袋を売り歩き、上々の利益を上げた。",
+          "effects": {
+            "cash": 180000,
+            "cr": 3,
+            "p": 2
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "砂嵐で露店が吹き飛ばされ、仕入れた商品の半分が砂に埋もれて損を出した。",
+          "effects": {
+            "cash": -50000,
+            "p": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "砂埃の届かない街区で堅実に家業を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "喧騒から距離を置き、落ち着いた生活リズムを守りながら新しい都市の行く末を見守った。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_columbia_independence
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_columbia_independence",
+  "conf": "B",
+  "references": [
+    "SRC_TL_1000_1061",
+    "SRC_COMMUNITY_COLUMBIA_REVOLUTION"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:クルビア"
+  ],
+  "ge": {
+    "year": 1019
+  },
+  "le": {
+    "year": 1021
+  },
+  "show": "s => !!s.world?.events?.columbia_independence",
+  "body": "ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に歓声が沸き上がっている。",
+  "choices": [
+    {
+      "label": "新政府の登記所へ向かい、自作地の所有権を申請する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "古い総督府の帳簿から新しい合衆国登記簿へ権利を書き換え、晴れて独立した土地の持ち主となった。",
+          "effects": {
+            "cash": -80000,
+            "w": 1,
+            "p": 4,
+            "fl": {
+              "columbia_pioneer": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "旧本国派の役人との未払い契約を急ぎ回収清算する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.75,
+          "text": "撤収を急ぐ総督府の会計係から滞納されていた報酬を無事回収し、財布を膨らませた。",
+          "effects": {
+            "cash": 150000,
+            "p": 1
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "役人は夜逃げ同然に去っており、請求書の束だけが手元に残った。",
+          "effects": {
+            "p": -4,
+            "cash": -30000
+          }
+        }
+      ]
+    },
+    {
+      "label": "開拓民たちの熱狂的な独立パレードを見届ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "広場に響く祝砲と青空に翻る旗を見上げ、これからの荒野の未来に思いを馳せた。",
+          "effects": {
+            "p": 3,
+            "rl": 2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_columbia_independence",
+  "conf": "S",
+  "references": [
+    "SRC_TL_1000_1061",
+    "SRC_COMMUNITY_COLUMBIA_REVOLUTION"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1019,
+      1
+    ],
+    "through": [
+      1019,
+      12
+    ],
+    "region": "クルビア",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1019
+  },
+  "le": {
+    "year": 1021
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "独立の知らせが暮らす地区にも届いた。商いの書類や土地の扱いを今後どこへ尋ねるか、隣人たちの話題が変わり始めた。",
+  "choices": [
+    {
+      "label": "登記申請を提出し、地区の自治の仕事を手伝う",
+      "show": "(s, tags) => $rules.conditions.matches(show, s,\r\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\r\n      $rules.affiliations.canChoose(choice, s)",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "手元の土地資料を添えて申請を提出し、返事を待つことにした。地区の帳簿を取りまとめる役目も引き受け、顔を合わせる仲間ができた。",
+          "effects": {
+            "k": 2,
+            "p": 1,
+            "lifeAffiliation": {
+              "id": "hist-columbia_independence",
+              "title": "開拓地区の自治活動",
+              "kind": "local-civic-commitment",
+              "action": "join",
+              "role": "地区の活動を担う"
+            },
+            "lifeGoal": {
+              "id": "hist-columbia_independence-path",
+              "title": "開拓地区の自治活動と自分の暮らしを両立する",
+              "priority": "仕事と社会",
+              "action": "start"
+            },
+            "regionalImpact": {
+              "region": "クルビア",
+              "entity": "開拓地区の自治活動",
+              "kind": "personal-participation",
+              "description": "本人が地区の活動に加わると決めた"
+            },
+            "fl": {
+              "columbia_pioneer": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "独立を祝う近隣の集まりへ差し入れをする",
+      "en": {
+        "affordableCash": 20000
+      },
+      "disabledReason": "この支出を賄える資金がない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "祝いの席で、これからの暮らしについて話した。遠い式典の様子は、届いた知らせで知るほかなかった。",
+          "effects": {
+            "cash": -20000,
+            "rl": 4,
+            "p": 3,
+            "pm": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "政治の行方を見ながら、普段の商いを続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "取引相手と納期を確かめ、急な契約変更を避けて一日を終えた。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_four_emperors_war
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_four_emperors_war",
+  "conf": "B",
+  "references": [
+    "SRC_TL_1000_1061",
+    "SRC_COMMUNITY_FOUR_NATIONS_WAR"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1031
+  },
+  "le": {
+    "year": 1032
+  },
+  "show": "() => false",
+  "body": "空を覆う三国連合の巨大飛行艦隊から砲弾が雨あられと降り注ぎ、崩れ落ちる首都リンガネスの街路を皇帝近衛兵が血に塗れて敗走していった。ガリアの落日と容赦なき戦乱の炎が視界を埋め尽くしている。",
+  "choices": [
+    {
+      "label": "猛烈な砲爆撃の下、地下水路を伝って市街外へ脱出する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.85,
+          "text": "濁流と瓦礫を這い進み、立ち込める黒煙に紛れて戦火の街を脱出した。生き延びたものの、故郷の家屋は失われた。",
+          "effects": {
+            "p": -8,
+            "h": -15,
+            "res": 1,
+            "fl": {
+              "war_displaced": 1
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "崩壊した地下天井が巨砲の衝撃で抜け落ち、退路を断たれて瓦礫の下敷きとなった。",
+          "effects": {
+            "d": [
+              "戦死・戦争被害（四皇会戦・ガリア侵攻）",
+              "四皇会戦の猛砲撃で崩壊した地下道の下敷きとなり、亡くなった"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "近隣住民とともにバリケードを築き、略奪部隊に抵抗する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.75,
+          "text": "家具や石畳を積み上げた防壁で敗残兵の略奪を退け、夜明けまで街区を守り通した。",
+          "effects": {
+            "p": -4,
+            "cash": -50000,
+            "rl": 8
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "重火器を手にした略奪兵の銃撃を浴び、防衛戦の最中に致命傷を負った。",
+          "effects": {
+            "d": [
+              "戦死・戦争被害（四皇会戦・ガリア侵攻）",
+              "ガリア侵攻軍の略奪兵との交戦で致命傷を負い、亡くなった"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "教会の頑丈な地下納骨堂に身を潜め、終戦の鐘を待つ",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "暗闇の中で祈り続け、数日後に連合軍による占領宣言の太鼓を聞いて命拾いした。",
+          "effects": {
+            "p": -10,
+            "h": -6
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "砲撃による火災旋風の有毒な煙が地下へ逆流し、窒息して命を落とした。",
+          "effects": {
+            "d": [
+              "戦死・戦争被害（四皇会戦・ガリア侵攻）",
+              "会戦時の毒煙と瓦礫で退路を断たれ、亡くなった"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_four_emperors_war",
+  "conf": "S",
+  "references": [
+    "SRC_TL_1000_1061",
+    "SRC_COMMUNITY_FOUR_NATIONS_WAR"
+  ],
+  "historicalScene": {
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1031,
+      12
+    ],
+    "through": [
+      1031,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1031
+  },
+  "le": {
+    "year": 1032
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "四皇会戦の知らせを読んだ。遠い戦場の全容は分からない。こちらの暮らしにも及び得る取引や往来の変化を、手元で確かめることにした。",
+  "choices": [
+    {
+      "label": "複数の報道を読み比べる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "断片を帳面に並べ、分かっていない部分を空欄のまま残した。遠い砲声を思い浮かべながら、帳面を閉じた。",
+          "effects": {
+            "k": 3,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "関係する取引の納期を確認する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "届く予定の荷と未確定の便を分けて書き留めた。返事のない便には印を付け、次の連絡を待った。",
+          "effects": {
+            "k": 1,
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "当面の出費を抑える",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "戦況の噂だけで転居を決めず、手元の暮らしを維持した。",
+          "effects": {
+            "p": -1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_kazdel_commission
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_kazdel_commission",
+  "conf": "B",
+  "references": [
+    "SRC_KAZDEL_BB1"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:カズデル"
+  ],
+  "ge": {
+    "year": 1031
+  },
+  "le": {
+    "year": 1033
+  },
+  "show": "s => !!s.world?.events?.kazdel_commission_founded",
+  "body": "傭兵団の頭領たちが城塞へ集結し、軍事委員会の無骨な鉄の印章が市壁に刻まれた。統一軍の旗が掲げられ、集落の若者たちに召集と物資拠出の鋭い視線が向けられている。",
+  "choices": [
+    {
+      "label": "軍事委員会の兵站隊に登録し、正規の糧食配給を得る",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "輸送部隊の荷役仕事に就き、荒野を巡回する兵団の補給を支えて安定した食料を受け取った。",
+          "effects": {
+            "cash": 150000,
+            "cr": 3,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "傭兵団の頭領と掛け合い、集落の過度な徴発の免除を請願する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "丁重な交渉と手土産が功を奏し、身内の集落は必要以上の略奪を免れた。",
+          "effects": {
+            "cash": -80000,
+            "rl": 8,
+            "p": 3
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "頭領の不興を買い、重い罰金を課されて手痛い出費となった。",
+          "effects": {
+            "cash": -150000,
+            "p": -5
+          }
+        }
+      ]
+    },
+    {
+      "label": "集落の鍛冶場で武具の補修に専念し、中立を保つ",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "傭兵たちの刃を研ぎ、鉄屑を打ち直す日々の仕事に没頭して戦乱の嵐をやり過ごした。",
+          "effects": {
+            "cash": 80000,
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_kazdel_commission",
+  "conf": "S",
+  "references": [
+    "SRC_KAZDEL_BB1"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1031,
+      9
+    ],
+    "through": [
+      1031,
+      12
+    ],
+    "region": "カズデル",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1031
+  },
+  "le": {
+    "year": 1033
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "軍事委員会の成立を伝える知らせが地区へ届いた。兵站の求人や物資の照会が増え、人々は新しい力との距離を測っていた。",
+  "choices": [
+    {
+      "label": "地元の補給班で継続して働く",
+      "show": "(s, tags) => $rules.conditions.matches(show, s,\r\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\r\n      $rules.affiliations.canChoose(choice, s)",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "荷を数える仕事を終え、その分の手当を受け取った。次の仕事も引き受けると伝え、補給班の名簿に名を載せた。",
+          "effects": {
+            "cash": 60000,
+            "h": -3,
+            "p": -2,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_commission_founded",
+              "title": "地元の補給組織",
+              "kind": "local-civic-commitment",
+              "action": "join",
+              "role": "地区の活動を担う"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_commission_founded-path",
+              "title": "地元の補給組織と自分の暮らしを両立する",
+              "priority": "仕事と社会",
+              "action": "start"
+            },
+            "regionalImpact": {
+              "region": "カズデル",
+              "entity": "地元の補給組織",
+              "kind": "personal-participation",
+              "description": "本人が地区の活動に加わると決めた"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "地区の負担について要望書をまとめる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "集めた意見を文書にした。提出してから、返事が来るまで落ち着かない日々が続いた。",
+          "effects": {
+            "k": 2,
+            "rl": 3,
+            "p": -1
+          }
+        }
+      ]
+    },
+    {
+      "label": "新しい組織と契約せず、今の仕事を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "委員会の噂を聞きながらも、暮らしの段取りを変えずに過ごした。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_great_silence
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_great_silence",
+  "conf": "B",
+  "references": [
+    "SRC_TL_1000_1061",
+    "SRC_SN_ST1_OLD_WELL",
+    "SRC_COMMUNITY_PROFOUND_SILENCE"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:イベリア"
+  ],
+  "ge": {
+    "year": 1038
+  },
+  "le": {
+    "year": 1039
+  },
+  "show": "s => !!s.world?.events?.great_silence",
+  "body": "突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄えたイベリアの沿岸が一瞬にして死の静寂に呑み込まれた。",
+  "choices": [
+    {
+      "label": "暗黒の海を背に、身一つで内陸の巡礼街道へ急行避難する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.85,
+          "text": "恐ろしい海鳴りを背中に聞きながら走りに走り、内陸の防衛線へ逃げ込んだ。沿岸の財産はすべて失われた。",
+          "effects": {
+            "res": 1,
+            "p": -10,
+            "cash": -150000,
+            "fl": {
+              "silence_survivor": 1
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "沿岸街道を這い上がってきた黒い潮流と異形の群れに呑み込まれ、跡形もなく消え去った。",
+          "effects": {
+            "d": [
+              "怪異被災（大いなる静謐・黒い海の侵蝕）",
+              "大いなる静謐の黒い潮流に呑み込まれ、行方不明となった"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "灯台に孤立した港湾作業員たちの救助に向かう",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.75,
+          "text": "闇の中で生存者を誘導し、奇跡的に内陸へ脱出させた。救われた人々から涙とともに感謝された。",
+          "effects": {
+            "p": 4,
+            "rl": 10,
+            "h": -12
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "波打ち際で冷たい触肢の怪異に捕らえられ、引きずり込まれて息絶えた。",
+          "effects": {
+            "d": [
+              "怪異被災（大いなる静謐・黒い海の侵蝕）",
+              "灯台救助中に海からの異形に襲われ、命を落とした"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "厚い石壁の教会に籠城し、審判修道士の救援を待つ",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "閉ざされた礼拝堂で灯明を絶やさず祈り続け、駆けつけた審判官によって救出された。",
+          "effects": {
+            "p": -12,
+            "h": -4
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "礼拝堂の敷石の隙間から滲み出た黒い粘液に蝕まれ、精神と肉体を失った。",
+          "effects": {
+            "d": [
+              "怪異被災（大いなる静謐・黒い海の侵蝕）",
+              "礼拝堂を侵蝕した未知の怪異に精神と肉体を奪われ、亡くなった"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_great_silence",
+  "conf": "S",
+  "references": [
+    "SRC_TL_1000_1061",
+    "SRC_SN_ST1_OLD_WELL",
+    "SRC_COMMUNITY_PROFOUND_SILENCE"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1038,
+      7
+    ],
+    "through": [
+      1038,
+      12
+    ],
+    "region": "イベリア",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1038
+  },
+  "le": {
+    "year": 1039
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "海の異変について、港から来る便りと荷が途切れがちになった。この地区に何が届かなくなるのか、まだ誰も確かな見通しを持てずにいた。",
+  "choices": [
+    {
+      "label": "手元の食料と入荷の予定を点検する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "在庫と未着の荷を分けて数え直した。食卓に並ぶものが減るかもしれないと、気が重くなった。",
+          "effects": {
+            "k": 2,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "地域で受け取った不足物資の募集に応じる",
+      "en": {
+        "affordableCash": 40000
+      },
+      "disabledReason": "この支出を賄える資金がない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "届け先を確かめて物資を渡した。受取人の礼を聞き、残った荷を持って家へ戻った。",
+          "effects": {
+            "cash": -40000,
+            "rl": 5,
+            "p": 2,
+            "pm": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "危険な話に近づかず、日々の仕事を守る",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "帰ってこない便を気にかけながら、暮らしを続けた。",
+          "effects": {
+            "p": -2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_siracusa_unification
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_siracusa_unification",
+  "conf": "C",
+  "references": [
+    "SRC_TL_1000_1061"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:シラクーザ"
+  ],
+  "ge": {
+    "year": 1040
+  },
+  "le": {
+    "year": 1042
+  },
+  "show": "s => !!s.world?.events?.siracusa_unification",
+  "body": "ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタのもとに束ねられていく。",
+  "choices": [
+    {
+      "label": "ミズ・シチリアの布告したオメルタの掟を厳格に順守する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "沈黙の掟を守り、余計な口を利かずに商売を続けて街の信認を得た。",
+          "effects": {
+            "p": 2,
+            "rl": 5,
+            "fl": {
+              "omerta_sworn": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "旧来の有力ファミリーとの貸し借りを急ぎ清算する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "粛清の刃が届く前に厄介な義理を片付け、新体制下で身軽になった。",
+          "effects": {
+            "cash": -80000,
+            "p": 2
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "残債の回収に来た荒くれ者たちに脅し取られ、手痛い損失を被った。",
+          "effects": {
+            "cash": -150000,
+            "p": -4
+          }
+        }
+      ]
+    },
+    {
+      "label": "教会区の神父に相談し、騒乱を避けて教区の仕事を手伝う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "教会の鐘の下で慎ましい勤めを果たし、ファミリーの抗争から距離を置いた。",
+          "effects": {
+            "p": 3,
+            "rl": 3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_siracusa_unification",
+  "conf": "S",
+  "references": [
+    "SRC_TL_1000_1061"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1040,
+      1
+    ],
+    "through": [
+      1040,
+      12
+    ],
+    "region": "シラクーザ",
+    "role": "local-civilian",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1040
+  },
+  "le": {
+    "year": 1042
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "新しい秩序を伝える話が、地区の取引先にも回ってきた。口にする言葉や、誰と約束を交わすかが以前より重く感じられた。",
+  "choices": [
+    {
+      "label": "不用意な口約束を避け、取引の条件を書き留める",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "相手と条件を確かめ直し、余計な噂を広げずに取引を終えた。",
+          "effects": {
+            "k": 2,
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "地区の掟を担う人々との約束に加わる",
+      "show": "(s, tags) => $rules.conditions.matches(show, s,\r\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\r\n      $rules.affiliations.canChoose(choice, s)",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "取引と沈黙についての約束を、自分の言葉で引き受けた。頼み事と義理が増え、暮らしの中でその重みを感じ始めた。",
+          "effects": {
+            "fl": {
+              "omerta_sworn": 1
+            },
+            "rl": 3,
+            "p": 1,
+            "lifeAffiliation": {
+              "id": "hist-siracusa_unification",
+              "title": "地区の掟を担うつながり",
+              "kind": "local-civic-commitment",
+              "action": "join",
+              "role": "地区の活動を担う"
+            },
+            "lifeGoal": {
+              "id": "hist-siracusa_unification-path",
+              "title": "地区の掟を担うつながりと自分の暮らしを両立する",
+              "priority": "仕事と社会",
+              "action": "start"
+            },
+            "regionalImpact": {
+              "region": "シラクーザ",
+              "entity": "地区の掟を担うつながり",
+              "kind": "personal-participation",
+              "description": "本人が地区の活動に加わると決めた"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "抗争との取引を増やさず、生活を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "自分が引き受ける用事を絞り、その日の仕事へ戻った。",
+          "effects": {
+            "p": 2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_el_sol_renovation_paused
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_el_sol_renovation_paused",
+  "conf": "C",
+  "references": [
+    "SRC_TL_1000_1061",
+    "SRC_COMMUNITY_DOSSOLES_HISTORY",
+    "SRC_BOLIVAR_DOSSOLES_STORY"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ボリバル",
+    "city": "エル・ソル"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:ボリバル",
+    "都市:エル・ソル"
+  ],
+  "ge": {
+    "year": 1048
+  },
+  "le": {
+    "year": 1050
+  },
+  "show": "s => !!s.world?.events?.el_sol_renovation_paused",
+  "body": "ボリバル内戦の激化により、エル・ソルの観光改装計画が凍結された。建設途中の骨組みが放置され、港には行き場を失った大量の建築資材が雨ざらしになっている。",
+  "choices": [
+    {
+      "label": "放置された建材の回収と倉庫への移送作業を引き受ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "雨で傷む前に資材を倉庫へ運び込み、まとまった委託手当を受け取った。",
+          "effects": {
+            "cash": 160000,
+            "cr": 3,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "工事中断による未払い日当の補償を求める組合の集会に加わる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.75,
+          "text": "事業者側から一定の補償金を引き出し、仲間たちと胸を撫で下ろした。",
+          "effects": {
+            "cash": 100000,
+            "rl": 6,
+            "p": 2
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "雇い主はすでに夜逃げしており、徒労に終わった。",
+          "effects": {
+            "p": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "観光工事に見切りをつけ、港湾の保税倉庫へ仕事を移す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "軍需物資や生活必需品の荷役へ切り替え、日銭の途絶えを防いだ。",
+          "effects": {
+            "cash": 80000,
+            "h": -3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_el_sol_renovation_paused",
+  "conf": "C",
+  "references": [
+    "SRC_TL_1000_1061",
+    "SRC_COMMUNITY_DOSSOLES_HISTORY",
+    "SRC_BOLIVAR_DOSSOLES_STORY"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ボリバル",
+    "city": "エル・ソル",
+    "from": [
+      1048,
+      1
+    ],
+    "through": [
+      1048,
+      12
+    ],
+    "sourceGrade": "C",
+    "role": "present-civilian"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1048
+  },
+  "le": {
+    "year": 1050
+  },
+  "show": "s => !!s.world?.events?.el_sol_renovation_paused",
+  "body": "ボリバル内戦の激化により、エル・ソルの観光改装計画が凍結された。建設途中の骨組みが放置され、港には行き場を失った大量の建築資材が雨ざらしになっている。",
+  "choices": [
+    {
+      "label": "放置された建材の回収と倉庫への移送作業を引き受ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "雨で傷む前に資材を倉庫へ運び込み、まとまった委託手当を受け取った。",
+          "effects": {
+            "cash": 160000,
+            "cr": 3,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "工事中断による未払い日当の補償を求める組合の集会に加わる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.75,
+          "text": "事業者側から一定の補償金を引き出し、仲間たちと胸を撫で下ろした。",
+          "effects": {
+            "cash": 100000,
+            "rl": 6,
+            "p": 2
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "雇い主はすでに夜逃げしており、徒労に終わった。",
+          "effects": {
+            "p": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "観光工事に見切りをつけ、港湾の保税倉庫へ仕事を移す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "軍需物資や生活必需品の荷役へ切り替え、日銭の途絶えを防いだ。",
+          "effects": {
+            "cash": 80000,
+            "h": -3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_tenth_ursus_kazimierz_war
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_tenth_ursus_kazimierz_war",
+  "conf": "B",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1062
+  },
+  "le": {
+    "year": 1063
+  },
+  "show": "s => [\"ウルサス\", \"カジミエーシュ\"].includes(s.res?.n)",
+  "body": "国境要塞から轟く巨砲の重低音が空を震わせ、傷病兵を満載した軍用列車が絶え間なく駅へ滑り込んできた。第十次ウルサス＝カジミエーシュ戦争の火蓋が切られ、国境地帯に非常戒厳令が敷かれている。",
+  "choices": [
+    {
+      "label": "前線要塞の防壁補強と弾薬運搬の工兵任務に志願する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "敵の砲撃に晒されながらも防壁の修復を完遂し、軍功手当を受け取った。",
+          "effects": {
+            "cash": 220000,
+            "cr": 4,
+            "h": -10,
+            "p": -4
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "要塞の胸壁へ敵の榴弾が直撃し、吹き飛ぶ破片を浴びて戦死した。",
+          "effects": {
+            "d": [
+              "戦闘職務中の死亡",
+              "第十次ウルサス＝カジミエーシュ戦争の要塞防衛戦で戦死した"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "駅前の臨時野戦病院で負傷兵の救護と物資仕分けを支援する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "次々と運び込まれる負傷兵の止血を手伝い、医師団から深く感謝された。",
+          "effects": {
+            "cash": 100000,
+            "rl": 6,
+            "p": -4
+          }
+        }
+      ]
+    },
+    {
+      "label": "徴用令状を避け、山間の親類の村へ一時的に身を隠す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "砲声の届かない山村で炭焼きを手伝い、戦線が膠着するのを待った。",
+          "effects": {
+            "cash": -60000,
+            "p": 2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_tenth_ursus_kazimierz_war",
+  "conf": "S",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1062,
+      1
+    ],
+    "through": [
+      1062,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1062
+  },
+  "le": {
+    "year": 1063
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "ウルサスとカジミエーシュの戦争についての報道を読んだ。国境にいるわけではない。仕事や親族との往来に影響があるか、分かる範囲から確かめた。",
+  "choices": [
+    {
+      "label": "軍関係の仕事へ応募する前に条件を照会する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "配属先も任務も未確定のまま、募集条件を書き留めた。返事を待つ間、戦争の仕事を引き受ける重みを考えた。",
+          "effects": {
+            "k": 2,
+            "p": -1
+          }
+        }
+      ]
+    },
+    {
+      "label": "負傷者向けの物資募集へ寄付する",
+      "en": {
+        "affordableCash": 30000
+      },
+      "disabledReason": "この支出を賄える資金がない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "受取先を確認して寄付した。送られる荷を見送り、受け取る人々のことを思った。",
+          "effects": {
+            "cash": -30000,
+            "rl": 3,
+            "p": 2,
+            "pm": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "仕事と往来の予定を見直す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "未確認の道を安全と決めつけず、当面の予定を減らした。",
+          "effects": {
+            "p": -1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_sarcophagus_discovery
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_sarcophagus_discovery",
+  "conf": "C",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:ウルサス",
+    "都市:チェルノボーグ"
+  ],
+  "ge": {
+    "year": 1070
+  },
+  "le": {
+    "year": 1072
+  },
+  "show": "s => !!s.world?.events?.sarcophagus_discovery",
+  "body": "鉱山奥の封鎖区画に軍の特科装甲車が何台も乗り付け、黒塗りの幌で覆われた巨大な機材が秘密裏に運び込まれた。坑道周辺は立入禁止となり、作業員たちに厳しい箝口令が敷かれている。",
+  "choices": [
+    {
+      "label": "軍の厳命に従い、封鎖区画の秘密から一切目を背けて働く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "余計な詮索をせず通常の鉱山作業を続け、無難に給金を確保した。",
+          "effects": {
+            "cash": 100000,
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "酒場で鉱夫たちの噂話に耳を傾け、研究施設の正体を探る",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "古代の遺物を巡る軍の研究についての断片的な情報を聞き込み、知識を深めた。",
+          "effects": {
+            "k": 4,
+            "p": -2
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "憲兵の密偵に怪しまれ、厳重な取り調べを受けて怯えた。",
+          "effects": {
+            "p": -6,
+            "cash": -40000
+          }
+        }
+      ]
+    },
+    {
+      "label": "不穏な気配の漂う鉱山から離れ、地上の一般工場へ移籍する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "安全な街区の機械工場へ働き口を移し、胸のざわめきを鎮めた。",
+          "effects": {
+            "cash": 60000,
+            "h": 2,
+            "p": 2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_sarcophagus_discovery",
+  "conf": "S",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1070,
+      1
+    ],
+    "through": [
+      1070,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1070
+  },
+  "le": {
+    "year": 1072
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "チェルノボーグの研究を巡る風聞を耳にした。どの話が確かなのかは分からず、封鎖された施設の中を自分が見たわけでもない。",
+  "choices": [
+    {
+      "label": "分かっている記述だけを控える",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "聞いた経路と不明点を一緒に書き留めた。肝心な部分は空欄のままで、落ち着かない気持ちが残った。",
+          "effects": {
+            "k": 2,
+            "p": -1
+          }
+        }
+      ]
+    },
+    {
+      "label": "噂の詮索をやめる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "話題を切り上げ、普段の用事へ戻った。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "公開された情報があるか調べる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "公開情報と酒場の噂を分けた。期待していたほどの答えはなく、資料を閉じて席を立った。",
+          "effects": {
+            "k": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_bloodpeak_and_victorian_crown
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_bloodpeak_and_victorian_crown",
+  "conf": "B",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1072
+  },
+  "le": {
+    "year": 1073
+  },
+  "show": "s => [\"ヴィクトリア\", \"ウルサス\", \"カジミエーシュ\"].includes(s.res?.n)",
+  "body": "王宮から黒煙が立ち上り、アスラン王の近衛兵が門前で斬り伏せられた。諸侯が私兵を率いて主要路を封鎖し、王都の秩序が崩壊していく。王冠なき乱世の幕が開かれた。",
+  "choices": [
+    {
+      "label": "斬り伏せられた近衛兵の脱出を裏路地から支援する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "追手の貴族私兵をまいて負傷兵を裏長屋へ匿い、感謝の指輪を託された。",
+          "effects": {
+            "rl": 8,
+            "p": 2,
+            "cash": 120000
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "反乱貴族の騎兵に包囲され、謀反の共謀者とみなされて斬殺された。",
+          "effects": {
+            "d": [
+              "戦死・戦争被害（血峰の戦い）",
+              "王都のクーデターの掃討戦に巻き込まれ、斬殺された"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "封鎖線を避けて家財道具を荷車に積み、親戚宅へ退避する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "略奪の炎が広がる前に安全な郊外区画へ荷を運び込み、難を逃れた。",
+          "effects": {
+            "cash": -80000,
+            "p": -3,
+            "h": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "自宅の窓に鉄格子を打ち付け、私兵集団の略奪を警戒する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "厳重な戸締まりで暴徒化した私兵の侵入を防ぎ、夜明けを迎えた。",
+          "effects": {
+            "p": -4,
+            "h": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_bloodpeak_and_victorian_crown",
+  "conf": "S",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1072,
+      1
+    ],
+    "through": [
+      1072,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1072
+  },
+  "le": {
+    "year": 1073
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "王位を巡る流血と政変の知らせが届いた。遠い王宮の様子は情報を通して知るほかなく、誰の説明を信じるかでも人々の見方が分かれていた。",
+  "choices": [
+    {
+      "label": "複数の報道の食い違いを調べる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "日付と伝達元を比べ、確かめられない話は未確認のまま残した。",
+          "effects": {
+            "k": 3,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "取引先へ今後の連絡方法を尋ねる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "連絡の取れる相手と未返信の相手を区別した。返事を待つ間、遠い政変が仕事の話にも影を落としていると感じた。",
+          "effects": {
+            "rl": 2,
+            "k": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "政変への関与を控える",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "見知らぬ人物の依頼は引き受けず、自分の暮らしを続けた。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_ursus_great_rebellion
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_ursus_great_rebellion",
+  "conf": "B",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:ウルサス"
+  ],
+  "ge": {
+    "year": 1074
+  },
+  "le": {
+    "year": 1075
+  },
+  "show": "s => !!s.world?.events?.ursus_great_rebellion",
+  "body": "武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空を焦がしている。",
+  "choices": [
+    {
+      "label": "反乱労働者たちの行進に加わり、権利要求を叫ぶ",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.75,
+          "text": "同志たちと肩を組み、軍の司令部前で賃金と待遇の改善要求を突きつけた。",
+          "effects": {
+            "p": 4,
+            "rl": 8,
+            "cr": 3
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "出動した帝国正規軍のコサック騎兵による一斉射撃を浴びて倒れた。",
+          "effects": {
+            "d": [
+              "他殺（抗争・報復）",
+              "ウルサス大反乱の鎮圧銃撃に倒れ、亡くなった"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "暴動に乗じた放火から隣近所の食料倉庫を共同警護する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "棒切れを手にして夜通し見張り番を務め、住民たちの生活物資を守り抜いた。",
+          "effects": {
+            "rl": 6,
+            "p": -2,
+            "h": -4
+          }
+        }
+      ]
+    },
+    {
+      "label": "騒乱を避けて郊外の農村へ一時避難し、嵐が過ぎるのを待つ",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "煙煙と立ち上る市街の火の手を遠くから見つめ、静かに息を潜めた。",
+          "effects": {
+            "cash": -50000,
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_ursus_great_rebellion",
+  "conf": "S",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1074,
+      1
+    ],
+    "through": [
+      1074,
+      12
+    ],
+    "region": "ウルサス",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1074
+  },
+  "le": {
+    "year": 1075
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "反乱と鎮圧の知らせが地区へも流れ込んだ。目の前の街路が戦場になったとは限らないが、職場では賃金や待遇について話す声が低くなっていた。",
+  "choices": [
+    {
+      "label": "待遇改善を求める地区の活動に加わる",
+      "show": "(s, tags) => $rules.conditions.matches(show, s,\r\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\r\n      $rules.affiliations.canChoose(choice, s)",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "要求書をまとめる役目を引き受け、仲間と会う約束を交わした。暮らしを賭けて何を求めるのか、これからも問われることになった。",
+          "effects": {
+            "k": 2,
+            "p": 2,
+            "lifeAffiliation": {
+              "id": "hist-ursus_great_rebellion",
+              "title": "地区の労働者の要求活動",
+              "kind": "local-civic-commitment",
+              "action": "join",
+              "role": "地区の活動を担う"
+            },
+            "lifeGoal": {
+              "id": "hist-ursus_great_rebellion-path",
+              "title": "地区の労働者の要求活動と自分の暮らしを両立する",
+              "priority": "仕事と社会",
+              "action": "start"
+            },
+            "regionalImpact": {
+              "region": "ウルサス",
+              "entity": "地区の労働者の要求活動",
+              "kind": "personal-participation",
+              "description": "本人が地区の活動に加わると決めた"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "近隣の備蓄品を点検する仕事を手伝う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "引き受けた点検を終え、実作業分の手当を受け取った。",
+          "effects": {
+            "cash": 40000,
+            "h": -2,
+            "rl": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "騒乱の噂から距離を置く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "話の出所を確かめるまで、参加や転居を決めずに過ごした。",
+          "effects": {
+            "p": -1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_rim_billiton_independence
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_rim_billiton_independence",
+  "conf": "C",
+  "references": [
+    "SRC_RIM_WORK"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:レム・ビリトン"
+  ],
+  "ge": {
+    "year": 1075
+  },
+  "le": {
+    "year": 1076
+  },
+  "show": "s => !!s.world?.events?.rim_billiton_independence",
+  "body": "採掘プラットフォームの尖塔からヴィクトリアの社旗が切り落とされ、全社協議会の祝砲と汽笛が一斉に鳴り響いた。鉱区の労働者たちが抱き合って歓声をあげ、レム・ビリトンの自治独立を祝っている。",
+  "choices": [
+    {
+      "label": "全社協議会の新鉱区規約に署名し、自治の運営に参加する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "独立鉱区の新たな契約書にサインし、労働者としての権利と正当な取り分を確保した。",
+          "effects": {
+            "cash": 140000,
+            "cr": 4,
+            "p": 4
+          }
+        }
+      ]
+    },
+    {
+      "label": "独立を祝う採掘夫たちの酒宴に樽酒を差し入れて歓談する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "賑やかな祝宴の輪に加わり、仲間たちと夜遅くまで未来の展望を語り合った。",
+          "effects": {
+            "cash": -50000,
+            "rl": 8,
+            "p": 3
+          }
+        }
+      ]
+    },
+    {
+      "label": "旧宗主国企業との契約解除に伴う事務を迅速に片付ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "帳簿の引き継ぎを無事に完了させ、新体制の役員から重宝された。",
+          "effects": {
+            "cash": 180000,
+            "k": 3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_rim_billiton_independence",
+  "conf": "S",
+  "references": [
+    "SRC_RIM_WORK"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1075,
+      1
+    ],
+    "through": [
+      1075,
+      12
+    ],
+    "region": "レム・ビリトン",
+    "role": "local-civilian",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1075
+  },
+  "le": {
+    "year": 1076
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "自治独立の知らせに地区の人々が沸いた。各鉱区で今後の契約を確かめる動きが広がっている。祝いの声の中にも、次の契約を案じる話が混じっていた。",
+  "choices": [
+    {
+      "label": "鉱区の自治を支える仕事に加わる",
+      "show": "(s, tags) => $rules.conditions.matches(show, s,\r\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\r\n      $rules.affiliations.canChoose(choice, s)",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "働く条件を確かめながら、帳簿と意見を取りまとめる役目を引き受けた。祝いの日の先にも、地道な仕事が続いている。",
+          "effects": {
+            "k": 3,
+            "p": 1,
+            "lifeAffiliation": {
+              "id": "hist-rim_billiton_independence",
+              "title": "鉱区の自治運営",
+              "kind": "local-civic-commitment",
+              "action": "join",
+              "role": "地区の活動を担う"
+            },
+            "lifeGoal": {
+              "id": "hist-rim_billiton_independence-path",
+              "title": "鉱区の自治運営と自分の暮らしを両立する",
+              "priority": "仕事と社会",
+              "action": "start"
+            },
+            "regionalImpact": {
+              "region": "レム・ビリトン",
+              "entity": "鉱区の自治運営",
+              "kind": "personal-participation",
+              "description": "本人が地区の活動に加わると決めた"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "近隣の祝席へ酒を差し入れる",
+      "en": {
+        "affordableCash": 30000
+      },
+      "disabledReason": "この支出を賄える資金がない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "顔見知りと自治の先行きについて語り、同じ地区で一晩を過ごした。",
+          "effects": {
+            "cash": -30000,
+            "rl": 5,
+            "p": 3,
+            "pm": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "帳簿整理の短期仕事を引き受ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "渡された帳票を整理し、作業の報酬を受け取った。一日分の手当をしまい、いつもの仕事へ戻った。",
+          "effects": {
+            "cash": 60000,
+            "k": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_sandsoldier_incident
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_sandsoldier_incident",
+  "conf": "B",
+  "references": [
+    "SRC_A_WALK_DUST_TIMELINE"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:サルゴン"
+  ],
+  "ge": {
+    "year": 1075
+  },
+  "le": {
+    "year": 1076
+  },
+  "show": "s => !!s.world?.events?.sandsoldier_incident",
+  "body": "吹き荒れる砂嵐の中、旧パディシャーの反乱残党と傭兵隊がオアシスの市場で激突した。乾いた砂に鮮血が染み込み、隊商の荷車が次々と炎上している。",
+  "choices": [
+    {
+      "label": "襲撃を受けた隊商の護衛に加わり、砂兵の突入を食い止める",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "砂嵐の中で曲刀を振るい、隊商の荷と商人の命を守り抜いて多額の報奨を得た。",
+          "effects": {
+            "cash": 250000,
+            "cr": 5,
+            "h": -12,
+            "p": 2
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "砂煙の中から躍り出た反乱傭兵の刃を胸に受け、オアシスの砂に倒れた。",
+          "effects": {
+            "d": [
+              "他殺（抗争・報復）",
+              "レッドホーン砂漠の市場抗争で刺殺された"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "市場の頑丈な石造り神殿へ逃げ込み、砂嵐が止むのを待つ",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "暗い石室の中で息を殺し、戦火が遠ざかったのを見届けて脱出した。",
+          "effects": {
+            "p": -4,
+            "h": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "混乱に乗じて散乱した香辛料や鉱石の木箱を回収する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.75,
+          "text": "砂に埋もれた貴重な積荷を拾い集め、後日商人に引き渡して謝礼を得た。",
+          "effects": {
+            "cash": 160000,
+            "p": -2
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "略奪兵の銃撃を掠めて負傷し、荷物を捨てて逃げ帰った。",
+          "effects": {
+            "h": -15,
+            "p": -5
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_sandsoldier_incident",
+  "conf": "S",
+  "references": [
+    "SRC_A_WALK_DUST_TIMELINE"
+  ],
+  "historicalScene": {
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1075,
+      1
+    ],
+    "through": [
+      1075,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "D",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1075
+  },
+  "le": {
+    "year": 1076
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "砂漠の市場で起きた争いの噂を聞いた。交戦した者や被害の規模について話が食い違い、隊商の予定をどう扱うかで商人たちが迷っていた。",
+  "choices": [
+    {
+      "label": "伝達元と分かっていない点を記録する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "噂の断片を並べた。話し手ごとの食い違いが、かえって強く印象に残った。",
+          "effects": {
+            "k": 2,
+            "p": -1
+          }
+        }
+      ]
+    },
+    {
+      "label": "予定していた取引の安全を問い合わせる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "返信のあった便だけを予定表に残した。連絡のない商人が気に掛かり、しばらく待つことにした。",
+          "effects": {
+            "k": 1,
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "不確かな儲け話を断る",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "争いの跡へ品物を拾いに行く話には乗らず、自分の仕事へ戻った。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_sarcophagus_purge
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_sarcophagus_purge",
+  "conf": "B",
+  "references": [
+    "SRC_TL_EARLY",
+    "SRC_URSUS_EP17_1"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ウルサス",
+    "都市:チェルノボーグ"
+  ],
+  "ge": {
+    "year": 1077
+  },
+  "le": {
+    "year": 1078
+  },
+  "show": "s => !!s.world?.events?.sarcophagus_purge",
+  "body": "深夜の研究所街区を帝国特科憲兵部隊が完全包囲し、激しい銃声のあと、白衣の研究員たちが雪の上に倒れ伏した。機密資料を満載した軍用トラックが夜の闇へと疾走し、凄惨な粛清の嵐が吹き荒れている。",
+  "choices": [
+    {
+      "label": "追われる研究員の脱出を助け、託された手記を雪中に隠す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "憲兵の哨戒網をかいくぐって研究員を逃がし、重要な記録を守り抜いた。",
+          "effects": {
+            "rl": 10,
+            "k": 5,
+            "p": -5
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "包囲網を敷く特科憲兵に発見され、現場の目撃者として即座に銃殺された。",
+          "effects": {
+            "d": [
+              "粛清被災（チェルノボーグ石棺研究所急襲）",
+              "石棺研究所急襲の目撃者として特科部隊に射殺された"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "銃声を聞いて雨戸を厳重に閂で閉ざし、朝まで息を殺す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "恐怖に震えながら朝を待ち、血痕の残る雪道を避けて日常へ戻った。",
+          "effects": {
+            "p": -8,
+            "h": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "チェルノボーグの不穏な空気を察し、急ぎ他都市へ移住する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "全財産をまとめて夜行列車に飛び乗り、帝国中枢の粛清の手から逃れた。",
+          "effects": {
+            "cash": -200000,
+            "res": 1,
+            "p": -2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_sarcophagus_purge",
+  "conf": "B",
+  "references": [
+    "SRC_TL_EARLY",
+    "SRC_URSUS_EP17_1"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year",
+    "from": [
+      1077,
+      3
+    ],
+    "through": [
+      1077,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "resident",
+    "reason": "封鎖研究施設への当事者の立入証拠が未確立"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1077
+  },
+  "le": {
+    "year": 1078
+  },
+  "show": "s => !!s.world?.events?.sarcophagus_purge",
+  "body": "深夜の研究所街区を帝国特科憲兵部隊が完全包囲し、激しい銃声のあと、白衣の研究員たちが雪の上に倒れ伏した。機密資料を満載した軍用トラックが夜の闇へと疾走し、凄惨な粛清の嵐が吹き荒れている。",
+  "choices": [
+    {
+      "label": "追われる研究員の脱出を助け、託された手記を雪中に隠す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "憲兵の哨戒網をかいくぐって研究員を逃がし、重要な記録を守り抜いた。",
+          "effects": {
+            "rl": 10,
+            "k": 5,
+            "p": -5
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "包囲網を敷く特科憲兵に発見され、現場の目撃者として即座に銃殺された。",
+          "effects": {
+            "d": [
+              "粛清被災（チェルノボーグ石棺研究所急襲）",
+              "石棺研究所急襲の目撃者として特科部隊に射殺された"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "銃声を聞いて雨戸を厳重に閂で閉ざし、朝まで息を殺す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "恐怖に震えながら朝を待ち、血痕の残る雪道を避けて日常へ戻った。",
+          "effects": {
+            "p": -8,
+            "h": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "チェルノボーグの不穏な空気を察し、急ぎ他都市へ移住する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "全財産をまとめて夜行列車に飛び乗り、帝国中枢の粛清の手から逃れた。",
+          "effects": {
+            "cash": -200000,
+            "res": 1,
+            "p": -2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_leith_revolution
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_leith_revolution",
+  "conf": "C",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:リターニア"
+  ],
+  "ge": {
+    "year": 1077
+  },
+  "le": {
+    "year": 1078
+  },
+  "show": "s => !!s.world?.events?.leith_revolution",
+  "body": "1077年秋、双子の女帝が巫王を倒し、新体制への移行が告げられた。金律の鐘が狂ったように乱打され、巫王の黒い術式を女帝の金光が切り裂いて王城を包むなか、街角では息を潜めた囁きが交わされた。",
+  "choices": [
+    {
+      "label": "金律の防護結界が施された大聖堂の地下へ避難する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.85,
+          "text": "女帝のアーツの恩寵を受け、王城から放たれた余波の暴風をしのぎきった。",
+          "effects": {
+            "p": 4,
+            "h": 2,
+            "rl": 5
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "巫王の尖塔から暴発した黒い残存アーツの直撃を受け、肉体が崩壊した。",
+          "effects": {
+            "d": [
+              "アーツ暴走による自壊",
+              "リターニア変革の巫王の黒い術式に呑まれ、命を落とした"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "騒乱で被災した市立音律図書館の貴重な楽譜を救出保全する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "燃え盛る書棚から古典の原典を運び出し、学術界から高い賞賛を得た。",
+          "effects": {
+            "k": 5,
+            "cr": 3,
+            "cash": 100000
+          }
+        }
+      ]
+    },
+    {
+      "label": "旧体制の追及に怯える無実の演奏家を自室に匿う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "憲兵の家宅捜索を平静に受け流し、友人の命と音楽を守った。",
+          "effects": {
+            "cash": -80000,
+            "rl": 8,
+            "p": -3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_leith_revolution",
+  "conf": "S",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1077,
+      9
+    ],
+    "through": [
+      1077,
+      12
+    ],
+    "region": "リターニア",
+    "role": "local-civilian",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1077
+  },
+  "le": {
+    "year": 1078
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "政変の知らせを受け、地区でも新たな支配の行方が話題になった。王城の戦いはここから見えない。芸術の仕事や学びを、これから誰のもとで続けるか考えた。",
+  "choices": [
+    {
+      "label": "仕事や学びの条件変更を照会する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "相手先の回答と未定の部分を分けて控えた。返事のなかった項目には印を残し、次の相談を待った。",
+          "effects": {
+            "k": 2,
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "地区で新しい体制を支持する活動に加わる",
+      "show": "(s, tags) => $rules.conditions.matches(show, s,\r\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\r\n      $rules.affiliations.canChoose(choice, s)",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "自分の考えを表し、地区の仲間と活動を続けることにした。以前の知人と意見が分かれることも、引き受ける必要があった。",
+          "effects": {
+            "rl": 3,
+            "p": 2,
+            "lifeAffiliation": {
+              "id": "hist-leith_revolution",
+              "title": "地区の新政権支持活動",
+              "kind": "local-civic-commitment",
+              "action": "join",
+              "role": "地区の活動を担う"
+            },
+            "lifeGoal": {
+              "id": "hist-leith_revolution-path",
+              "title": "地区の新政権支持活動と自分の暮らしを両立する",
+              "priority": "仕事と社会",
+              "action": "start"
+            },
+            "regionalImpact": {
+              "region": "リターニア",
+              "entity": "地区の新政権支持活動",
+              "kind": "personal-participation",
+              "description": "本人が地区の活動に加わると決めた"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "政治的な表明を控え、今の練習を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "外の話を気にかけながらも、手元の仕事に集中した。",
+          "effects": {
+            "k": 1,
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_tarra_kidnap
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_tarra_kidnap",
+  "conf": "C",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1077
+  },
+  "le": {
+    "year": 1078
+  },
+  "show": "s => (s.res?.n === \"ヴィクトリア\" && s.local?.city === \"ロンディニウム\") || (s.res?.n === \"龍門\" || s.local?.city === \"龍門\")",
+  "body": "近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。",
+  "choices": [
+    {
+      "label": "発砲音の響く路地で警備隊の検問に目撃情報を提供する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "車輌の逃走経路を正確に伝え、治安維持への協力金を受け取った。",
+          "effects": {
+            "cash": 120000,
+            "cr": 3,
+            "p": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "銃撃戦の流弾を警戒し、家族を地下室へ誘導して鍵をかける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "騒乱が収まるまで身を潜め、家族全員の無事を確かめた。",
+          "effects": {
+            "rl": 5,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "夜間警備の強化に応じ、街区の自警団として見回りを手伝う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "ランタンを提げて通りを巡回し、近隣の平穏を守った。",
+          "effects": {
+            "cash": 60000,
+            "rl": 4,
+            "h": -3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_tarra_kidnap",
+  "conf": "S",
+  "references": [
+    "SRC_TL_EARLY"
+  ],
+  "historicalScene": {
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1077,
+      1
+    ],
+    "through": [
+      1077,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1077
+  },
+  "le": {
+    "year": 1078
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "少女を巡る事件の風聞を耳にした。話には複数の都市名が出てくるが、起きた順序も、その場にいた者も確かめられていない。",
+  "choices": [
+    {
+      "label": "都市名と日付を混ぜずに書き留める",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "別の土地で聞かれた話を一つの街角の出来事へまとめず、未確認の記録として残した。",
+          "effects": {
+            "k": 3,
+            "p": -1
+          }
+        }
+      ]
+    },
+    {
+      "label": "当事者を探す噂には加わらない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "知らない少女や家族について憶測を重ねず、話題から離れた。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "公開情報が出るまで判断を保留する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "詳しい知らせを待つことにして、その日の用事へ戻った。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_vanya_assassination
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_vanya_assassination",
+  "conf": "B",
+  "references": [
+    "SRC_TL_MIDDLE"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ウルサス"
+  ],
+  "ge": {
+    "year": 1081
+  },
+  "le": {
+    "year": 1082
+  },
+  "show": "s => !!s.world?.events?.vanya_assassination",
+  "body": "ワーニャ大公の車列が市街の交差点で爆砕され、憲兵隊が通りを完全に封鎖して住民を広場へ駆り集めた。厳冬の広場で容疑者の割り出しと過酷な尋問が夜を徹して行われている。",
+  "choices": [
+    {
+      "label": "広場での憲兵隊による身体検査と取り調べを耐え抜く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.85,
+          "text": "身元証明書を提示して潔白を証明し、凍える広場から解放された。",
+          "effects": {
+            "p": -6,
+            "h": -8
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "憲兵の過酷な暴力と不当な密告により、反逆罪として広場の一角で銃殺された。",
+          "effects": {
+            "d": [
+              "刑の執行",
+              "大公暗殺の余波で無実の嫌疑をかけられ処刑された"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "憲兵の包囲の手をかいくぐり、隣家の老夫婦を裏口から逃がす",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "無実の隣人を安全な親類宅へ逃がし、感謝の涙で見送られた。",
+          "effects": {
+            "rl": 8,
+            "p": 3,
+            "cash": -50000
+          }
+        }
+      ]
+    },
+    {
+      "label": "自宅の戸籍台帳と納税領収書を整え、家宅捜索に冷静に応じる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "隙のない書類対応で憲兵の追及をかわし、事なきを得た。",
+          "effects": {
+            "cash": -40000,
+            "p": -2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_vanya_assassination",
+  "conf": "S",
+  "references": [
+    "SRC_TL_MIDDLE"
+  ],
+  "historicalScene": {
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1081,
+      1
+    ],
+    "through": [
+      1081,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1081
+  },
+  "le": {
+    "year": 1082
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "暗殺事件と捜査についての知らせが届いた。現場の交差点に居合わせたわけではなく、報じられた情報と身近な噂を分けて聞いた。",
+  "choices": [
+    {
+      "label": "確認できる報道を読み比べる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "伝達元を記した。人々の推測の強さに息苦しくなり、紙面から目を上げた。",
+          "effects": {
+            "k": 2,
+            "p": -1
+          }
+        }
+      ]
+    },
+    {
+      "label": "不確かな犯人の噂を広めない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "確かな話がないことを知人へ伝え、憶測の輪から離れた。",
+          "effects": {
+            "rl": 2,
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "普段の用事を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "事件現場へ行く予定は立てず、手元の暮らしを守った。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_victoria_leak
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_victoria_leak",
+  "conf": "C",
+  "references": [
+    "SRC_TL_MIDDLE"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ヴィクトリア"
+  ],
+  "ge": {
+    "year": 1085
+  },
+  "le": {
+    "year": 1086
+  },
+  "show": "s => !!s.world?.events?.victoria_leak",
+  "body": "採掘区画の地表から紫色の源石ガスが噴き出し、防護服を着た公爵私兵が住民たちを問答無用で追い立てた。汚染された土壌と閉鎖線の前で怒号が飛び交っている。",
+  "choices": [
+    {
+      "label": "公爵私兵による一方的な立ち退き命令に住民会とともに抗議する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "団結して補償を要求し、公爵側の代理人から立ち退き移転料を勝ち取った。",
+          "effects": {
+            "cash": 150000,
+            "cr": 3,
+            "rl": 6,
+            "p": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "噴出する源石粉塵を吸わないよう、手製の防護布を近隣に配る",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "湿らせた二重マスクを配り歩き、子供たちを急性鉱石病の危険から守った。",
+          "effects": {
+            "cash": -40000,
+            "rl": 8,
+            "h": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "汚染の届かない健全な上層街区へ速やかに住居を移す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "手持ちの資金を投じて引っ越しを済ませ、清浄な空気を確保した。",
+          "effects": {
+            "cash": -180000,
+            "res": 1,
+            "p": 2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_victoria_leak",
+  "conf": "S",
+  "references": [
+    "SRC_TL_MIDDLE"
+  ],
+  "historicalScene": {
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1085,
+      1
+    ],
+    "through": [
+      1085,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1085
+  },
+  "le": {
+    "year": 1086
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "採掘地区の汚染を巡る知らせを読んだ。問題の区画へ入ったことはなく、流通する品や仕事の条件にどんな影響があるかを確かめた。",
+  "choices": [
+    {
+      "label": "仕入先に品物の由来を照会する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "回答と未確認の品を分けた。答えの曖昧な品は、受け入れる前にもう一度確かめることにした。",
+          "effects": {
+            "k": 2,
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "公表された検査情報を調べる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "資料を読み、分からない数値は未確認のまま残した。",
+          "effects": {
+            "k": 3,
+            "p": -1
+          }
+        }
+      ]
+    },
+    {
+      "label": "現地へ向かわず、仕事の予定を調整する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "未確定の便を予定から外した。遅れた仕事の段取りを考えながら、その日の作業へ戻った。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_el_sol_renamed_dossoles
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_el_sol_renamed_dossoles",
+  "conf": "C",
+  "references": [
+    "SRC_BOLIVAR_DOSSOLES_STORY"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ボリバル",
+    "city": "ドッソレス"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:ボリバル",
+    "都市:ドッソレス"
+  ],
+  "ge": {
+    "year": 1086
+  },
+  "le": {
+    "year": 1088
+  },
+  "show": "s => !!s.world?.events?.el_sol_renamed_dossoles",
+  "body": "人工海浜のネオンが一斉に点灯し、カンデラ市長の演説とともに歓楽都市ドッソレスの看板が掲げられた。リゾート音楽が響き渡り、街は享楽の熱狂に包まれている。",
+  "choices": [
+    {
+      "label": "オープンした豪華カジノホテルの会場スタッフに応募する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "煌びやかなカジノフロアでの職を得て、弾むチップで稼ぎを増やした。",
+          "effects": {
+            "cash": 220000,
+            "cr": 4,
+            "p": 3
+          }
+        }
+      ]
+    },
+    {
+      "label": "人工ビーチの遊歩道で観光客向けの屋台を開く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "南国フルーツの冷たいドリンクが飛ぶように売れ、大繁盛となった。",
+          "effects": {
+            "cash": 180000,
+            "p": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "華やかな歓楽街を横目に、港湾の保税倉庫で手堅く働く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "リゾートの狂乱に惑わされず、日々の実利を確実に積み上げた。",
+          "effects": {
+            "cash": 120000,
+            "h": -3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_el_sol_renamed_dossoles",
+  "conf": "C",
+  "references": [
+    "SRC_BOLIVAR_DOSSOLES_STORY"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ボリバル",
+    "city": "ドッソレス",
+    "from": [
+      1086,
+      1
+    ],
+    "through": [
+      1086,
+      12
+    ],
+    "sourceGrade": "D",
+    "role": "present-civilian"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1086
+  },
+  "le": {
+    "year": 1088
+  },
+  "show": "s => !!s.world?.events?.el_sol_renamed_dossoles",
+  "body": "人工海浜のネオンが一斉に点灯し、カンデラ市長の演説とともに歓楽都市ドッソレスの看板が掲げられた。リゾート音楽が響き渡り、街は享楽の熱狂に包まれている。",
+  "choices": [
+    {
+      "label": "オープンした豪華カジノホテルの会場スタッフに応募する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "煌びやかなカジノフロアでの職を得て、弾むチップで稼ぎを増やした。",
+          "effects": {
+            "cash": 220000,
+            "cr": 4,
+            "p": 3
+          }
+        }
+      ]
+    },
+    {
+      "label": "人工ビーチの遊歩道で観光客向けの屋台を開く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "南国フルーツの冷たいドリンクが飛ぶように売れ、大繁盛となった。",
+          "effects": {
+            "cash": 180000,
+            "p": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "華やかな歓楽街を横目に、港湾の保税倉庫で手堅く働く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "リゾートの狂乱に惑わされず、日々の実利を確実に積み上げた。",
+          "effects": {
+            "cash": 120000,
+            "h": -3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_babel_split
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_babel_split",
+  "conf": "B",
+  "references": [
+    "SRC_KAZDEL_BB5"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:カズデル"
+  ],
+  "ge": {
+    "year": 1086
+  },
+  "le": {
+    "year": 1087
+  },
+  "show": "s => !!s.world?.events?.babel_split",
+  "body": "陸艦バベルが黒煙を吐いて城砦を離脱し、追撃の矢と術式が甲板に降り注ぐ中、サルカズの同胞同士が銃を向け合った。割れた王庭の絆が修復不能な亀裂を刻んでいる。",
+  "choices": [
+    {
+      "label": "城砦を離脱する陸艦バベルの搭乗ランプへ駆け込む",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "追撃の銃弾をくぐり抜けて甲板へ滑り込み、テレジアの掲げる理想の船の一員となった。",
+          "effects": {
+            "res": 1,
+            "fl": {
+              "babel_affiliate": 1
+            },
+            "p": 4,
+            "cash": -80000
+          }
+        }
+      ]
+    },
+    {
+      "label": "軍事委員会の統率下にとどまり、拠点の防壁を固める",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "城塞に残り、軍事委員会の戦士として陣地補強の任に就いた。",
+          "effects": {
+            "cash": 150000,
+            "cr": 3,
+            "p": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "内輪揉めの戦場を避け、中立の傭兵集落へ身を寄せる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "同胞同士の血塗られた争いに背を向け、静かに荒野の集落へ去った。",
+          "effects": {
+            "cash": -60000,
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_babel_split",
+  "conf": "B",
+  "references": [
+    "SRC_KAZDEL_BB5"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year",
+    "from": [
+      1086,
+      6
+    ],
+    "through": [
+      1086,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "resident",
+    "reason": "陸艦の時点付き所在と本人の関係が未確立"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1086
+  },
+  "le": {
+    "year": 1087
+  },
+  "show": "s => !!s.world?.events?.babel_split",
+  "body": "陸艦バベルが黒煙を吐いて城砦を離脱し、追撃の矢と術式が甲板に降り注ぐ中、サルカズの同胞同士が銃を向け合った。割れた王庭の絆が修復不能な亀裂を刻んでいる。",
+  "choices": [
+    {
+      "label": "城砦を離脱する陸艦バベルの搭乗ランプへ駆け込む",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "追撃の銃弾をくぐり抜けて甲板へ滑り込み、テレジアの掲げる理想の船の一員となった。",
+          "effects": {
+            "res": 1,
+            "fl": {
+              "babel_affiliate": 1
+            },
+            "p": 4,
+            "cash": -80000
+          }
+        }
+      ]
+    },
+    {
+      "label": "軍事委員会の統率下にとどまり、拠点の防壁を固める",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "城塞に残り、軍事委員会の戦士として陣地補強の任に就いた。",
+          "effects": {
+            "cash": 150000,
+            "cr": 3,
+            "p": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "内輪揉めの戦場を避け、中立の傭兵集落へ身を寄せる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "同胞同士の血塗られた争いに背を向け、静かに荒野の集落へ去った。",
+          "effects": {
+            "cash": -60000,
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_kazdel_conflict_started
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_kazdel_conflict_started",
+  "conf": "B",
+  "references": [
+    "SRC_KAZDEL_BB5"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:カズデル"
+  ],
+  "ge": {
+    "year": 1086
+  },
+  "le": {
+    "year": 1088
+  },
+  "show": "s => !!s.world?.events?.kazdel_conflict_started",
+  "body": "見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。",
+  "choices": [
+    {
+      "label": "アパートの窓に鉄板を打ち付け、食料と生活用水を備蓄する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "早期に保存食と水を確保し、市街戦の初期の混乱を自室で乗り切った。",
+          "effects": {
+            "cash": -100000,
+            "p": -3,
+            "h": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "対立する近隣のサルカズ部族同士の仲裁に立ち会う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.75,
+          "text": "昔馴染みの誼を活かして一時的な停戦を取りまとめ、長老たちから感謝された。",
+          "effects": {
+            "rl": 8,
+            "cr": 3,
+            "p": 3
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "話し合いは決裂し、飛んできた投石で負傷した。",
+          "effects": {
+            "h": -10,
+            "p": -4
+          }
+        }
+      ]
+    },
+    {
+      "label": "戦火の広がる前に辺境の移動集落へ荷馬車で逃れる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.85,
+          "text": "検問の隙を突いて市街を抜け出し、辺境の親類のもとへ無事に辿り着いた。",
+          "effects": {
+            "res": 1,
+            "cash": -120000,
+            "p": -4
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "街道の封鎖線で傭兵隊の銃撃を浴び、荷馬車ごと吹き飛ばされた。",
+          "effects": {
+            "d": [
+              "戦火被災（カズデル内戦・焦土戦）",
+              "カズデル内戦の初期抗争に巻き込まれ、命を落とした"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_kazdel_conflict_started",
+  "conf": "S",
+  "references": [
+    "SRC_KAZDEL_BB5"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1086,
+      1
+    ],
+    "through": [
+      1086,
+      12
+    ],
+    "region": "カズデル",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1086
+  },
+  "le": {
+    "year": 1088
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "内戦開始の知らせは届いたが、この地区がその日に戦場になったとは限らない。近隣では荷と連絡の遅れを確かめ、今後の備えを話し合っている。",
+  "choices": [
+    {
+      "label": "家の備蓄と連絡先を確かめる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "今ある物と連絡できる相手を整理した。連絡の取れた相手の声に少し安堵したが、先の不安は消えなかった。",
+          "effects": {
+            "k": 2,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "地区の物資整理を短期で引き受ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "預かった荷を整理し、その作業分の手当を受け取った。",
+          "effects": {
+            "cash": 50000,
+            "h": -3,
+            "rl": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "旅と避難の候補を調べる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "行先と運賃を帳面に並べ、荷物をどこまで持てるか考えた。",
+          "effects": {
+            "k": 1,
+            "p": -1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_talulah_kills
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_talulah_kills",
+  "conf": "C",
+  "references": [
+    "SRC_REUNION_HISTORY"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ウルサス"
+  ],
+  "ge": {
+    "year": 1088
+  },
+  "le": {
+    "year": 1089
+  },
+  "show": "s => !!s.world?.events?.talulah_kills",
+  "body": "凍てつく原野の古びた公爵邸から猛火と黒煙が立ち上り、吹雪の中に佇むドラコの少女の姿が目撃された。凍土の集落に不穏なざわめきが広がっている。",
+  "choices": [
+    {
+      "label": "炎上する公爵邸から逃げてきた使用人たちを保護する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "凍える使用人たちに温かい粥と毛布を提供し、感謝の言葉を受けた。",
+          "effects": {
+            "cash": -50000,
+            "rl": 6,
+            "p": 3
+          }
+        }
+      ]
+    },
+    {
+      "label": "雪原に残された竜の足跡と炎の跡を遠くから見届ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "冷たい雪の中に残る熱気を感じ取り、凍土に起きつつある異変を悟った。",
+          "effects": {
+            "p": -2,
+            "k": 3
+          }
+        }
+      ]
+    },
+    {
+      "label": "集落の防衛組とともに夜間の巡回警備を強化する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "吹雪の中で見張りに立ち、集落の安全を守り抜いた。",
+          "effects": {
+            "cr": 3,
+            "h": -4
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_talulah_kills",
+  "conf": "C",
+  "references": [
+    "SRC_REUNION_HISTORY"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year",
+    "from": [
+      1088,
+      1
+    ],
+    "through": [
+      1088,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "resident",
+    "reason": "邸宅の所在と関係者への直接接触が未確立"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1088
+  },
+  "le": {
+    "year": 1089
+  },
+  "show": "s => !!s.world?.events?.talulah_kills",
+  "body": "凍てつく原野の古びた公爵邸から猛火と黒煙が立ち上り、吹雪の中に佇むドラコの少女の姿が目撃された。凍土の集落に不穏なざわめきが広がっている。",
+  "choices": [
+    {
+      "label": "炎上する公爵邸から逃げてきた使用人たちを保護する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "凍える使用人たちに温かい粥と毛布を提供し、感謝の言葉を受けた。",
+          "effects": {
+            "cash": -50000,
+            "rl": 6,
+            "p": 3
+          }
+        }
+      ]
+    },
+    {
+      "label": "雪原に残された竜の足跡と炎の跡を遠くから見届ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "冷たい雪の中に残る熱気を感じ取り、凍土に起きつつある異変を悟った。",
+          "effects": {
+            "p": -2,
+            "k": 3
+          }
+        }
+      ]
+    },
+    {
+      "label": "集落の防衛組とともに夜間の巡回警備を強化する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "吹雪の中で見張りに立ち、集落の安全を守り抜いた。",
+          "effects": {
+            "cr": 3,
+            "h": -4
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_talulah_leave
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_talulah_leave",
+  "conf": "B",
+  "references": [
+    "SRC_REUNION_HISTORY"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ウルサス"
+  ],
+  "ge": {
+    "year": 1091
+  },
+  "le": {
+    "year": 1092
+  },
+  "show": "s => !!s.world?.events?.talulah_leave",
+  "body": "雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。",
+  "choices": [
+    {
+      "label": "旅立つ感染者のリーダーたちに乾パンと防寒毛布を託す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "旅立ちの若者たちの手を握って激励し、集落全員の祈りを託した。",
+          "effects": {
+            "cash": -50000,
+            "rl": 8,
+            "p": 4
+          }
+        }
+      ]
+    },
+    {
+      "label": "感染者集落の留守部隊を支えるため畑仕事に専念する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "凍土を耕し、残された人々が飢えないよう地道な労働を続けた。",
+          "effects": {
+            "h": 2,
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "吹雪の去った荒野へ向かい、狩猟と薪集めを急ぐ",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "厳しい冬を越すための燃料と獲物を手に入れ、家計を助けた。",
+          "effects": {
+            "cash": 60000,
+            "h": -3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_talulah_leave",
+  "conf": "B",
+  "references": [
+    "SRC_REUNION_HISTORY"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year",
+    "from": [
+      1091,
+      1
+    ],
+    "through": [
+      1091,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "resident",
+    "reason": "特定集落への滞在・知己が未確立"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1091
+  },
+  "le": {
+    "year": 1092
+  },
+  "show": "s => !!s.world?.events?.talulah_leave",
+  "body": "雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。",
+  "choices": [
+    {
+      "label": "旅立つ感染者のリーダーたちに乾パンと防寒毛布を託す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "旅立ちの若者たちの手を握って激励し、集落全員の祈りを託した。",
+          "effects": {
+            "cash": -50000,
+            "rl": 8,
+            "p": 4
+          }
+        }
+      ]
+    },
+    {
+      "label": "感染者集落の留守部隊を支えるため畑仕事に専念する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "凍土を耕し、残された人々が飢えないよう地道な労働を続けた。",
+          "effects": {
+            "h": 2,
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "吹雪の去った荒野へ向かい、狩猟と薪集めを急ぐ",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "厳しい冬を越すための燃料と獲物を手に入れ、家計を助けた。",
+          "effects": {
+            "cash": 60000,
+            "h": -3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_kazdel_war_declared
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_kazdel_war_declared",
+  "conf": "B",
+  "references": [
+    "SRC_KAZDEL_BB5"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:カズデル"
+  ],
+  "ge": {
+    "year": 1091
+  },
+  "le": {
+    "year": 1092
+  },
+  "show": "s => !!s.world?.events?.kazdel_war_declared",
+  "body": "軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。",
+  "choices": [
+    {
+      "label": "軍事委員会の召集に応じ、後方補給部隊に配属される",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "補給廠での物資仕分け任務を完遂し、軍からの手当を受け取った。",
+          "effects": {
+            "cash": 200000,
+            "cr": 4,
+            "p": -5
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "補給基地への敵対部隊による奇襲を受け、砲火に巻かれて戦死した。",
+          "effects": {
+            "d": [
+              "戦闘職務中の死亡",
+              "カズデル宣戦後の補給戦において戦死した"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "武器職人として傭兵たちの刀剣やアーツ銃の修理にあたる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "昼夜を問わず鍛冶場で槌を振るい、まとまった稼ぎを得た。",
+          "effects": {
+            "cash": 180000,
+            "cr": 3
+          }
+        }
+      ]
+    },
+    {
+      "label": "サルカズの古い礼拝堂に身を寄せ、静かに祈祷を捧げる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "戦乱の足音から距離を置き、古き同胞の魂のために祈った。",
+          "effects": {
+            "p": 3,
+            "h": 2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_kazdel_war_declared",
+  "conf": "S",
+  "references": [
+    "SRC_KAZDEL_BB5"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1091,
+      12
+    ],
+    "through": [
+      1091,
+      12
+    ],
+    "region": "カズデル",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1091
+  },
+  "le": {
+    "year": 1092
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "戦争宣言の知らせが地区にも届いた。物資や働き手を求める声と、関わりを避ける声が交錯していた。",
+  "choices": [
+    {
+      "label": "地区の後方補給班へ加わる",
+      "show": "(s, tags) => $rules.conditions.matches(show, s,\r\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\r\n      $rules.affiliations.canChoose(choice, s)",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "地元の補給所で任務と期間を確認し、荷の仕分けを引き受けた。前線とは違う場所でも、戦争に手を貸していることを意識した。",
+          "effects": {
+            "k": 2,
+            "p": -1,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_war_declared",
+              "title": "地区の後方補給班",
+              "kind": "local-civic-commitment",
+              "action": "join",
+              "role": "地区の活動を担う"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_war_declared-path",
+              "title": "地区の後方補給班と自分の暮らしを両立する",
+              "priority": "仕事と社会",
+              "action": "start"
+            },
+            "regionalImpact": {
+              "region": "カズデル",
+              "entity": "地区の後方補給班",
+              "kind": "personal-participation",
+              "description": "本人が地区の活動に加わると決めた"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "手元でできる修理の短期仕事を引き受ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "渡された道具を直し、仕上げた分だけ報酬を得た。手当を受け取り、くたびれた道具を片付けた。",
+          "effects": {
+            "cash": 60000,
+            "h": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "軍との契約を増やさずに暮らす",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "誘いを断り、今ある用事を続けた。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_kazdel_civil_war
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_kazdel_civil_war",
+  "conf": "B",
+  "references": [
+    "SRC_KAZDEL_BB5"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:カズデル"
+  ],
+  "ge": {
+    "year": 1092
+  },
+  "le": {
+    "year": 1094
+  },
+  "show": "s => !!s.world?.events?.kazdel_civil_war",
+  "body": "焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返している。",
+  "choices": [
+    {
+      "label": "焦土と化した集落から生存者の一団を誘導して脱出する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "爆撃の合間を縫って荒野を抜け、安全な国境地帯へ住民たちを導いた。",
+          "effects": {
+            "p": -8,
+            "rl": 10,
+            "res": 1,
+            "fl": {
+              "war_displaced": 1
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "飛空艇の無差別絨毯爆撃を受け、吹き飛ぶ熱波と破片に呑み込まれた。",
+          "effects": {
+            "d": [
+              "戦火被災（カズデル内戦・焦土戦）",
+              "カズデル焦土戦の飛空艇爆撃に被災し、亡くなった"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "廃墟となった補給列車から軍用缶詰と医療品を回収する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "危険を冒して物資を運び出し、当面の食料と薬品を手に入れた。",
+          "effects": {
+            "cash": 200000,
+            "p": -4,
+            "h": -6
+          }
+        }
+      ]
+    },
+    {
+      "label": "地下壕に毛布を敷き詰め、近隣と最後の保存食を分け合う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "暗闇の中で互いを励まし合い、爆撃が遠ざかるのを耐え忍んだ。",
+          "effects": {
+            "p": -6,
+            "rl": 6,
+            "h": -3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_kazdel_civil_war",
+  "conf": "S",
+  "references": [
+    "SRC_KAZDEL_BB5"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1092,
+      1
+    ],
+    "through": [
+      1092,
+      12
+    ],
+    "region": "カズデル",
+    "role": "local-civilian",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1092
+  },
+  "le": {
+    "year": 1094
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "焦土戦の知らせと物資の遅れが地区にも及んだ。届かない荷が増え、隣人たちの話にも疲れがにじんでいた。ここで暮らしを続けるか、実際に移動を始めるかを考えた。",
+  "choices": [
+    {
+      "label": "地区に留まり、避難者の生活再建に関わる",
+      "show": "(s, tags) => $rules.conditions.matches(show, s,\r\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\r\n      $rules.affiliations.canChoose(choice, s)",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "顔を合わせた人々と物資や仕事を取りまとめる役目を引き受けた。自分の暮らしを続けながら、終わりの見えない仕事と付き合っていく。",
+          "effects": {
+            "k": 2,
+            "p": -2,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_civil_war",
+              "title": "避難者の生活再建活動",
+              "kind": "local-civic-commitment",
+              "action": "join",
+              "role": "地区の活動を担う"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_civil_war-path",
+              "title": "避難者の生活再建活動と自分の暮らしを両立する",
+              "priority": "仕事と社会",
+              "action": "start"
+            },
+            "regionalImpact": {
+              "region": "カズデル",
+              "entity": "避難者の生活再建活動",
+              "kind": "personal-participation",
+              "description": "本人が地区の活動に加わると決めた"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "受取先を確認し、避難者用の物資へ支出する",
+      "en": {
+        "affordableCash": 40000
+      },
+      "disabledReason": "この支出を賄える資金がない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "渡した物資の記録を残した。受取人からの短い礼を聞き、残った物でどう暮らすかを考えた。",
+          "effects": {
+            "cash": -40000,
+            "rl": 4,
+            "p": 1,
+            "pm": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "地区の物資点検を引き受ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "実際に数えた荷を引き渡し、その日の手当を得た。",
+          "effects": {
+            "cash": 40000,
+            "h": -2,
+            "p": -2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_kazdel_border_battle
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_kazdel_border_battle",
+  "conf": "B",
+  "references": [
+    "SRC_KAZDEL_BB5"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:カズデル"
+  ],
+  "ge": {
+    "year": 1092
+  },
+  "le": {
+    "year": 1093
+  },
+  "show": "s => !!s.world?.events?.kazdel_border_battle",
+  "body": "猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。",
+  "choices": [
+    {
+      "label": "猛吹雪の中、炎上する補給船団から負傷兵を雪上橇で救出する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "凍死寸前の兵士たちを救護所へ運び込み、兵団から手厚い報酬を受けた。",
+          "effects": {
+            "cash": 160000,
+            "rl": 8,
+            "h": -15,
+            "p": 3
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "猛烈な地吹雪の中で視界を失い、氷点下の渓谷で力尽きて凍死した。",
+          "effects": {
+            "d": [
+              "凍死（極寒・吹雪での遭難）",
+              "吹雪の国境戦場で救護活動中に遭難し、凍死した"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "雪崩と砲撃の危険な渓谷を避けて安全な迂回ルートを進む",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "遠回りを選んで遭難の危機を回避し、目的地へ無事に到着した。",
+          "effects": {
+            "cash": -80000,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "前線から引き揚げてきた敗残兵たちに温かいスープを配給する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "凍えた兵士たちの手を温め、荒んだ兵団の心を僅かに和らげた。",
+          "effects": {
+            "cash": -40000,
+            "rl": 6,
+            "p": 2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_kazdel_border_battle",
+  "conf": "S",
+  "references": [
+    "SRC_KAZDEL_BB5"
+  ],
+  "historicalScene": {
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1092,
+      12
+    ],
+    "through": [
+      1092,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "B",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1092
+  },
+  "le": {
+    "year": 1093
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "国境地帯の会戦を伝える知らせを受け取った。どの道を通れるかについては別の確認が必要で、知らせの地名を地図でたどると、往来の先行きが気に掛かった。",
+  "choices": [
+    {
+      "label": "予定している移動の経路を問い合わせる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "現在の道と未確認の迂回案を分けて控えた。回答のない道を避け、返事のあった便の出発日を尋ねた。",
+          "effects": {
+            "k": 2,
+            "p": -1
+          }
+        }
+      ]
+    },
+    {
+      "label": "補給品募集の受取先を確かめて寄付する",
+      "en": {
+        "affordableCash": 30000
+      },
+      "disabledReason": "この支出を賄える資金がない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "受取が確認された募集へ支出した。荷が届くことを願い、受付を後にした。",
+          "effects": {
+            "cash": -30000,
+            "rl": 3,
+            "p": 1,
+            "pm": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "新しい移動を控える",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "戦場の噂だけを頼りに出発せず、今いる場所で暮らした。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_texas_family_purge
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_texas_family_purge",
+  "conf": "B",
+  "references": [
+    "SRC_COMMUNITY_COLUMBIA_REVOLUTION"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:クルビア"
+  ],
+  "ge": {
+    "year": 1092
+  },
+  "le": {
+    "year": 1093
+  },
+  "show": "() => false",
+  "body": "土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。",
+  "choices": [
+    {
+      "label": "夜の豪邸から逃れてきたテキサスファミリーの従者を裏口から匿う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "追っ手の殺し屋たちをやり過ごして従者を逃がし、謝礼の宝石を受け取った。",
+          "effects": {
+            "rl": 8,
+            "p": -5,
+            "cash": 150000
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "家宅捜索に来たファミリーの殺し屋に乱射され、口封じに射殺された。",
+          "effects": {
+            "d": [
+              "粛清被災（クルビア・テキサスファミリー壊滅抗争）",
+              "テキサスファミリー壊滅抗争の巻き添えとなり、射殺された"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "銃声の鳴り響く街区を離れ、遠くの親戚の農場へ身を寄せる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "抗争の余波が広がる前に街を出て、平穏な農村でほとぼりを冷ました。",
+          "effects": {
+            "cash": -100000,
+            "p": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "翌朝、焦げた街路の薬莢を片付け、割れたガラスを掃除する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "黙々と清掃作業に励み、日常を取り戻そうとする住民たちと励まし合った。",
+          "effects": {
+            "cash": 60000,
+            "p": -2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_texas_family_purge",
+  "conf": "B",
+  "references": [
+    "SRC_COMMUNITY_COLUMBIA_REVOLUTION"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year",
+    "from": [
+      1092,
+      1
+    ],
+    "through": [
+      1092,
+      12
+    ],
+    "sourceGrade": "C",
+    "role": "resident",
+    "reason": "事件都市・街区と本人の関与を確定できない"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1092
+  },
+  "le": {
+    "year": 1093
+  },
+  "show": "() => false",
+  "body": "土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。",
+  "choices": [
+    {
+      "label": "夜の豪邸から逃れてきたテキサスファミリーの従者を裏口から匿う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "追っ手の殺し屋たちをやり過ごして従者を逃がし、謝礼の宝石を受け取った。",
+          "effects": {
+            "rl": 8,
+            "p": -5,
+            "cash": 150000
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "家宅捜索に来たファミリーの殺し屋に乱射され、口封じに射殺された。",
+          "effects": {
+            "d": [
+              "粛清被災（クルビア・テキサスファミリー壊滅抗争）",
+              "テキサスファミリー壊滅抗争の巻き添えとなり、射殺された"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "銃声の鳴り響く街区を離れ、遠くの親戚の農場へ身を寄せる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "抗争の余波が広がる前に街を出て、平穏な農村でほとぼりを冷ました。",
+          "effects": {
+            "cash": -100000,
+            "p": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "翌朝、焦げた街路の薬莢を片付け、割れたガラスを掃除する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "黙々と清掃作業に励み、日常を取り戻そうとする住民たちと励まし合った。",
+          "effects": {
+            "cash": 60000,
+            "p": -2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_thelazia_dead_londinium
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_thelazia_dead_londinium",
+  "conf": "S",
+  "references": [
+    "SRC_TL_LATE",
+    "SRC_KAZDEL_BB1"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ヴィクトリア",
+    "city": "ロンディニウム"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1094
+  },
+  "le": {
+    "year": 1096
+  },
+  "show": "s => s.year === 1094 && !!s.world?.events?.thelazia_dead &&\r\n        s.res?.n === \"ヴィクトリア\" && s.local?.city === \"ロンディニウム\"",
+  "body": "軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不穏な静寂が街を支配している。",
+  "choices": [
+    {
+      "label": "軍事委員会の重装甲車列の検問を迂回し、裏道から帰宅する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "サルカズ兵の威圧的な視線をかわし、細い路地を伝って自宅へ逃げ帰った。",
+          "effects": {
+            "p": -5,
+            "h": -3,
+            "rl": 3
+          }
+        }
+      ]
+    },
+    {
+      "label": "突然の占領令に抗議して負傷したヴィクトリア衛戍兵の手当てをする",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "血を流す衛戍兵を路地に引き込み、傷口を包帯で縛って命を救った。",
+          "effects": {
+            "rl": 8,
+            "p": 2,
+            "cash": -60000
+          }
+        }
+      ]
+    },
+    {
+      "label": "店舗の雨戸を閉鎖し、戒厳令下での食料節約に努める",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "配給の制限に備えて買い置きを点検し、当面の生活を防衛した。",
+          "effects": {
+            "cash": -100000,
+            "p": -4,
+            "h": 2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_thelazia_dead_londinium",
+  "conf": "S",
+  "references": [
+    "SRC_TL_LATE",
+    "SRC_KAZDEL_BB1"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ヴィクトリア",
+    "city": "ロンディニウム",
+    "from": [
+      1094,
+      8
+    ],
+    "through": [
+      1094,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1094
+  },
+  "le": {
+    "year": 1096
+  },
+  "show": "s => s.year === 1094 && !!s.world?.events?.thelazia_dead &&\r\n        s.res?.n === \"ヴィクトリア\" && s.local?.city === \"ロンディニウム\"",
+  "body": "軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不穏な静寂が街を支配している。",
+  "choices": [
+    {
+      "label": "軍事委員会の重装甲車列の検問を迂回し、裏道から帰宅する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "サルカズ兵の威圧的な視線をかわし、細い路地を伝って自宅へ逃げ帰った。",
+          "effects": {
+            "p": -5,
+            "h": -3,
+            "rl": 3
+          }
+        }
+      ]
+    },
+    {
+      "label": "突然の占領令に抗議して負傷したヴィクトリア衛戍兵の手当てをする",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "血を流す衛戍兵を路地に引き込み、傷口を包帯で縛って命を救った。",
+          "effects": {
+            "rl": 8,
+            "p": 2,
+            "cash": -60000
+          }
+        }
+      ]
+    },
+    {
+      "label": "店舗の雨戸を閉鎖し、戒厳令下での食料節約に努める",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "配給の制限に備えて買い置きを点検し、当面の生活を防衛した。",
+          "effects": {
+            "cash": -100000,
+            "p": -4,
+            "h": 2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_chernobog_incident_local
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_chernobog_incident_local",
+  "conf": "S",
+  "references": [
+    "SRC_TL_LATE",
+    "SRC_REUNION_HISTORY"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ウルサス",
+    "city": "チェルノボーグ"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ウルサス",
+    "都市:チェルノボーグ"
+  ],
+  "ge": {
+    "year": 1096
+  },
+  "le": {
+    "year": 1097
+  },
+  "show": "s => !!s.world?.events?.chernobog_incident",
+  "body": "漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、逃げ惑う群衆の悲鳴が轟いている。",
+  "choices": [
+    {
+      "label": "大混乱の駅舎へ走り、緊急避難列車の乗車口へ飛び込む",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "暴徒と化した群衆を押し分け、発車寸前の避難列車に辛うじて滑り込んだ。",
+          "effects": {
+            "res": 1,
+            "cash": -250000,
+            "p": -8,
+            "fl": {
+              "chernobog_refugee": 1
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "駅前広場に降り注いだ巨大な源石天災嵐の直撃弾を浴び、命を落とした。",
+          "effects": {
+            "d": [
+              "天災被災（チェルノボーグ天災直撃・源石嵐）",
+              "チェルノボーグ駅で避難列車を待つ最中に天災直撃を受け、亡くなった"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "レユニオン部隊を避け、頑丈な地下シェルターへ隣人と潜伏する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.75,
+          "text": "暗闇の中で息を潜め、暴徒の略奪隊が通り過ぎるのを耐えて生き延びた。",
+          "effects": {
+            "p": -12,
+            "h": -10,
+            "rl": 6
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "シェルターの扉を破った感染者過激派に発見され、略奪の果てに命を奪われた。",
+          "effects": {
+            "d": [
+              "事変被災（チェルノボーグ・レユニオン蜂起戦乱）",
+              "チェルノボーグ事変の市街戦乱で過激派部隊に襲撃され、命を落とした"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "街に取り残された市民や子供たちを救護しながら脱出路を探す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "子供たちを連れて裏路地の抜け道を走り、市壁の亀裂から郊外へ脱出させた。",
+          "effects": {
+            "p": 4,
+            "rl": 12,
+            "res": 1,
+            "fl": {
+              "war_displaced": 1
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "崩壊するアパートの瓦礫が頭上に崩落し、下敷きとなって亡くなった。",
+          "effects": {
+            "d": [
+              "事変被災（チェルノボーグ・レユニオン蜂起戦乱）",
+              "チェルノボーグ救援中に瓦礫の倒壊に巻き込まれ、亡くなった"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_chernobog_incident_local",
+  "conf": "S",
+  "references": [
+    "SRC_TL_LATE",
+    "SRC_REUNION_HISTORY"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ウルサス",
+    "city": "チェルノボーグ",
+    "from": [
+      1096,
+      12
+    ],
+    "through": [
+      1097,
+      1
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1096
+  },
+  "le": {
+    "year": 1097
+  },
+  "show": "s => !!s.world?.events?.chernobog_incident",
+  "body": "漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、逃げ惑う群衆の悲鳴が轟いている。",
+  "choices": [
+    {
+      "label": "駅舎で避難便の乗車条件を確かめる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "群衆を押し分け、乗車口の受付で行先と運賃を聞いた。持ち出す荷をまとめ、出発を急ぐことにした。",
+          "effects": {
+            "travelAction": "intent:flight",
+            "p": -8
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "駅前広場に降り注いだ巨大な源石天災嵐の直撃弾を浴び、命を落とした。",
+          "effects": {
+            "d": [
+              "天災被災（チェルノボーグ天災直撃・源石嵐）",
+              "チェルノボーグ駅で避難列車を待つ最中に天災直撃を受け、亡くなった"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "レユニオン部隊を避け、頑丈な地下シェルターへ隣人と潜伏する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.75,
+          "text": "暗闇の中で息を潜め、暴徒の略奪隊が通り過ぎるのを耐えて生き延びた。",
+          "effects": {
+            "p": -12,
+            "h": -10,
+            "rl": 6
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "シェルターの扉を破った感染者過激派に発見され、略奪の果てに命を奪われた。",
+          "effects": {
+            "d": [
+              "事変被災（チェルノボーグ・レユニオン蜂起戦乱）",
+              "チェルノボーグ事変の市街戦乱で過激派部隊に襲撃され、命を落とした"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "街に取り残された市民や子供たちを救護しながら脱出路を探す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "取り残された人々と裏路地の安全を確かめた。荷と連絡先をまとめ、次の避難便に間に合うよう準備した。",
+          "effects": {
+            "p": 4,
+            "rl": 12,
+            "travelAction": "intent:flight"
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "崩壊するアパートの瓦礫が頭上に崩落し、下敷きとなって亡くなった。",
+          "effects": {
+            "d": [
+              "事変被災（チェルノボーグ・レユニオン蜂起戦乱）",
+              "チェルノボーグ救援中に瓦礫の倒壊に巻き込まれ、亡くなった"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_kazimierz_major
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_kazimierz_major",
+  "conf": "C",
+  "references": [
+    "SRC_KAZIMIERZ_COMPETITION"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "カジミエーシュ",
+    "city": "カヴァレリエルキ"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:カジミエーシュ",
+    "都市:カヴァレリエルキ"
+  ],
+  "ge": {
+    "year": 1097
+  },
+  "le": {
+    "year": 1098
+  },
+  "show": "s => !!s.world?.events?.kazimierz_major",
+  "body": "ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。",
+  "choices": [
+    {
+      "label": "血騎士が下馬評を覆すと信じて大穴の賭け券を買う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.6,
+          "text": "見事に血騎士が勝利を収め、大金を手にしてアリーナで歓声をあげた。",
+          "effects": {
+            "cash": 500000,
+            "p": 5
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "波乱の展開で賭け金を失い、苦笑いしながら財布を叩いた。",
+          "effects": {
+            "cash": -150000,
+            "p": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "アリーナ整備班としてネオン看板と電光掲示板の保守に就く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "大会期間中の高所作業を完遂し、企業連合から手厚い報酬を受け取った。",
+          "effects": {
+            "cash": 200000,
+            "cr": 3,
+            "h": -4
+          }
+        }
+      ]
+    },
+    {
+      "label": "感染者街区の大型ビジョン前で住民たちと熱烈に応援する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "同じ立場の人々と肩を組み、歴史的な熱戦に胸を熱くした。",
+          "effects": {
+            "rl": 8,
+            "p": 4
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_kazimierz_major",
+  "conf": "C",
+  "references": [
+    "SRC_KAZIMIERZ_COMPETITION"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "カジミエーシュ",
+    "city": "カヴァレリエルキ",
+    "from": [
+      1097,
+      6
+    ],
+    "through": [
+      1097,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "year": 1097
+  },
+  "le": {
+    "year": 1098
+  },
+  "show": "s => !!s.world?.events?.kazimierz_major",
+  "body": "カヴァレリエルキの街には大会の知らせと中継があふれている。大通りの画面を見上げる人も、会場へ急ぐ人もいる。どこで、どんな立場で関わるかを考えた。",
+  "choices": [
+    {
+      "label": "大会の周辺試合に賭ける",
+      "en": {
+        "affordableCash": 100000
+      },
+      "disabledReason": "賭け金を用意できない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.55,
+          "text": "選んだ試合の賭けが当たり、換金した金を財布へ戻した。",
+          "effects": {
+            "cash": 200000,
+            "p": 3
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "賭けは外れた。会場の歓声を背に、軽くなった財布をしまった。",
+          "effects": {
+            "cash": -100000,
+            "pm": 1,
+            "p": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "アリーナ整備班としてネオン看板と電光掲示板の保守に就く",
+      "show": "s=>s.job===7||s.job===11||s.job===19",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "市内で請け負った大会関連表示の保守を終え、実作業分の手当を受け取った。手当を受け取ると、街の中継画面を見上げて一息ついた。",
+          "effects": {
+            "cash": 200000,
+            "cr": 3,
+            "h": -4
+          }
+        }
+      ]
+    },
+    {
+      "label": "感染者街区の大型ビジョン前で住民たちと熱烈に応援する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "隣に集まった人々と肩を並べ、画面を追って声を上げた。",
+          "effects": {
+            "rl": 8,
+            "p": 4
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_siesta_disaster_local
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_siesta_disaster_local",
+  "conf": "C",
+  "references": [
+    "SRC_SIESTA_TRANSITION"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:シエスタ"
+  ],
+  "ge": {
+    "year": 1097
+  },
+  "le": {
+    "year": 1098
+  },
+  "show": "s => !!s.world?.events?.siesta_disaster",
+  "body": "黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。",
+  "choices": [
+    {
+      "label": "噴火する火山灰の中、港の緊急避難船に乗り込む",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.85,
+          "text": "湖面を進む船上で噴煙を上げる故郷を見つめ、無事に新シエスタへの避難路についた。",
+          "effects": {
+            "res": 1,
+            "cash": -200000,
+            "p": -6,
+            "fl": {
+              "volcano_evacuee": 1
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "港を襲った高温の火砕流に呑まれ、湖畔で命を落とした。",
+          "effects": {
+            "d": [
+              "天災被災（シエスタ火山活動・火砕流）",
+              "シエスタ火山の火砕流に港ごと呑み込まれ、亡くなった"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "耐震補強された黒曜石の地下シェルターへ避難する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "灰の降り積もる中を耐え忍び、火山活動の沈静化を待って脱出した。",
+          "effects": {
+            "p": -8,
+            "h": -5,
+            "rl": 4
+          }
+        }
+      ]
+    },
+    {
+      "label": "逃げ遅れた観光客を船着き場へ誘導する救助ボランティアを務める",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "混乱する桟橋で整然と乗船を促し、市長から表彰を受けた。",
+          "effects": {
+            "rl": 10,
+            "p": 4,
+            "h": -8
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_siesta_disaster_local",
+  "conf": "S",
+  "references": [
+    "SRC_SIESTA_TRANSITION"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "event-year",
+    "from": [
+      1097,
+      7
+    ],
+    "through": [
+      1097,
+      12
+    ],
+    "region": "シエスタ",
+    "role": "local-civilian",
+    "sourceGrade": "C",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1097
+  },
+  "le": {
+    "year": 1098
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "火山活動と避難の案内が届いた。旧市街、港、移転先の話を混ぜず、今いる地区で必要なことを確認した。連絡を待つ人々の間で、次に乗れる便の話を聞いた。",
+  "choices": [
+    {
+      "label": "避難便の条件を確かめ、出発の準備をする",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "案内を読み、持ち出す荷物をまとめた。連絡船を選ぶか、別の行先を探すか、運賃と家族の都合を確かめることにした。",
+          "effects": {
+            "travelAction": "intent:local-flight",
+            "k": 2,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "地区の荷物整理を手伝う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "引き受けた荷を整理し、その作業分だけ手当を受け取った。疲れた腕を休め、今夜の寝床へ戻った。",
+          "effects": {
+            "cash": 40000,
+            "h": -3,
+            "rl": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "手元の食料と連絡方法を点検する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "家族と分かっている情報を共有した。未確認の港の被害を確かめられないまま、その夜を過ごした。",
+          "effects": {
+            "p": -1,
+            "k": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_world_1099
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_world_1099",
+  "conf": "C",
+  "references": [
+    "SRC_TL_LATE"
+  ],
+  "historicalScene": {
+    "delivery": "journey",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1099
+  },
+  "le": {
+    "year": 1100
+  },
+  "show": "() => false",
+  "body": "各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。",
+  "choices": [
+    {
+      "label": "閉鎖された国境検問所で護衛兵に特別通行証を提示する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "正規の手続きで検問を通過し、物流が滞る前に移動を完了した。",
+          "effects": {
+            "cash": -80000,
+            "cr": 3,
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "荒野の迂回ルートに詳しいキャラバンの案内人を雇う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "検問所を大きく避けて荒野を進み、無事に目的の集落へ抜けた。",
+          "effects": {
+            "cash": -150000,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "無理な旅を取りやめ、近場の宿場町で情勢の落ち着きを待つ",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "宿場で温かい食事をとり、封鎖が解除されるまで待機した。",
+          "effects": {
+            "cash": -50000,
+            "p": 2
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_world_1099",
+  "conf": "C",
+  "references": [
+    "SRC_TL_LATE"
+  ],
+  "historicalScene": {
+    "delivery": "journey",
+    "dateMode": "event-year",
+    "from": [
+      1099,
+      1
+    ],
+    "through": [
+      1099,
+      12
+    ],
+    "sourceGrade": "D",
+    "role": "resident"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1099
+  },
+  "le": {
+    "year": 1100
+  },
+  "show": "() => false",
+  "body": "旅程上で実際に到達した検問所が、通行の審査を始めている。運行側から届いた通行条件を読み、先へ進む方法を考えた。",
+  "choices": [
+    {
+      "label": "この検問に有効な通行証を提示する",
+      "en": "s=>travelCheckpointCan(s,\"pass\")",
+      "disabledReason": "本人・この区間・有効期間が一致する通行証または費用が不足している",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "通行証を照合し、この検問を抜けて次の区間へ進んだ。乗継先まではもうしばらく掛かりそうだ。",
+          "effects": {
+            "travelAction": "checkpoint:pass"
+          }
+        }
+      ]
+    },
+    {
+      "label": "登録された迂回路へ切り替える",
+      "en": "s=>travelCheckpointCan(s,\"detour\")",
+      "disabledReason": "利用できる迂回路・案内人または追加費用が確認できない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "案内人の示した別の道を選び、追加費用を払って移動を再開した。背後に検問の列が遠ざかっていった。",
+          "effects": {
+            "travelAction": "checkpoint:detour"
+          }
+        }
+      ]
+    },
+    {
+      "label": "指定の滞在先で待ち、通行条件を照会する",
+      "en": "s=>travelCheckpointCan(s,\"wait\")",
+      "disabledReason": "この区間で待てる滞在先が確認できない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "検問の近くで待機を始めた。照会の返事と、再出発や帰路を選ぶ機会を待つことにした。",
+          "effects": {
+            "travelAction": "checkpoint:wait"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_world_1101
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_world_1101",
+  "conf": "C",
+  "references": [
+    "SRC_TL_LATE"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1101
+  },
+  "le": {
+    "year": 1102
+  },
+  "show": "s => [\"イベリア\", \"ウルサス\"].includes(s.res?.n)",
+  "body": "監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。",
+  "choices": [
+    {
+      "label": "監視塔の遠見鏡で海鳥の異常な大群飛来を観察記録する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "異変の兆候を日誌に克明に記録し、学術調査隊に提出して謝礼を得た。",
+          "effects": {
+            "k": 4,
+            "cr": 3,
+            "p": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "哨戒線周辺の通信機材とセンサーの点検作業を引き受ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "冷たい風の中で通信アンテナを補修し、哨所の孤立を防いだ。",
+          "effects": {
+            "cash": 150000,
+            "h": -5
+          }
+        }
+      ]
+    },
+    {
+      "label": "吹雪の迫る防壁のストーブに薪をくべて仲間と暖をとる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "見張り仲間と温かい茶を分け合い、厳しい冬の警戒を耐え忍んだ。",
+          "effects": {
+            "rl": 6,
+            "p": 3
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_world_1101",
+  "conf": "S",
+  "references": [
+    "SRC_TL_LATE"
+  ],
+  "historicalScene": {
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1101,
+      1
+    ],
+    "through": [
+      1101,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "D",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1101
+  },
+  "le": {
+    "year": 1102
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "海辺や北方から届く不穏な知らせを読んだ。海の哨所と北の防壁を一つの場所とは考えず、届いた情報の地域と日付を分けて整理した。",
+  "choices": [
+    {
+      "label": "イベリアの海辺について届いた報道を読む",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "海からの知らせを記録した。伝わってくる海辺の気配に、しばらく黙り込んだ。",
+          "effects": {
+            "k": 2,
+            "p": -1
+          }
+        }
+      ]
+    },
+    {
+      "label": "ウルサス北方の連絡状況について調べる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "北方の報告と未返信の便を区別した。連絡の途切れた場所を地図に探し、冷えた指先を握り直した。",
+          "effects": {
+            "k": 2,
+            "p": -1
+          }
+        }
+      ]
+    },
+    {
+      "label": "現地への依頼は引き受けず、暮らしを続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "未確認の警戒線へ向かう予定は立てず、その日の用事を終えた。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_katorga_incident
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_katorga_incident",
+  "conf": "B",
+  "references": [
+    "SRC_URSUS_PAA_SYNOPSIS"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ウルサス",
+    "city": "サンクト・グリファーブルク"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ウルサス",
+    "都市:サンクト・グリファーブルク"
+  ],
+  "ge": {
+    "year": 1101
+  },
+  "le": {
+    "year": 1102
+  },
+  "show": "s => !!s.world?.events?.katorga_incident",
+  "body": "大学前広場を取り囲んだ帝国憲兵隊が棍棒と銃剣で抗議学生たちを殴り倒し、無蓋トラックへ次々と放り込んだ。凍てつく石畳に血痕が凍りついていく。",
+  "choices": [
+    {
+      "label": "憲兵の銃剣から逃げてきた若い学生を自宅の薪小屋に匿う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "息を殺して憲兵の捜索をやり過ごし、夜陰に紛れて学生を逃亡させた。",
+          "effects": {
+            "rl": 10,
+            "p": 3,
+            "cash": -50000
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "密告により薪小屋を暴かれ、反体制活動の幇助罪でカトルガ流刑に処され死亡した。",
+          "effects": {
+            "d": [
+              "刑の執行（カトルガ流刑・政治犯処刑）",
+              "カトルガ事件で抗議学生を匿った罪により流刑地で処刑された"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "学生たちの抗議活動の記録ノートを回収し、安全な場所へ移す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "弾圧の証拠となる手記を預かり、後世へ真実を伝えるため厳重に保管した。",
+          "effects": {
+            "k": 5,
+            "p": -4
+          }
+        }
+      ]
+    },
+    {
+      "label": "広場の厳戒態勢を避けて足早に仕事場へ向かう",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "視線を伏せて憲兵の列を通り過ぎ、日々の生業に身を投じた。",
+          "effects": {
+            "p": -2,
+            "h": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_katorga_incident",
+  "conf": "B",
+  "references": [
+    "SRC_URSUS_PAA_SYNOPSIS"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ウルサス",
+    "city": "サンクト・グリファーブルク",
+    "from": [
+      1101,
+      12
+    ],
+    "through": [
+      1101,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian",
+    "siteId": "model:katorga-university-square",
+    "reason": "大学前広場への本人の時点付き所在証拠が必要"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1101
+  },
+  "le": {
+    "year": 1102
+  },
+  "show": "s => !!s.world?.events?.katorga_incident",
+  "body": "大学前広場を取り囲んだ帝国憲兵隊が棍棒と銃剣で抗議学生たちを殴り倒し、無蓋トラックへ次々と放り込んだ。凍てつく石畳に血痕が凍りついていく。",
+  "choices": [
+    {
+      "label": "憲兵の銃剣から逃げてきた若い学生を自宅の薪小屋に匿う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "息を殺して憲兵の捜索をやり過ごし、夜陰に紛れて学生を逃亡させた。",
+          "effects": {
+            "rl": 10,
+            "p": 3,
+            "cash": -50000
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "捜索で学生を匿ったことが発覚し、その場で拘束された。審査の行方を知らされないまま、連行先で長い夜を迎えた。",
+          "effects": {
+            "fl": {
+              "detained": 1
+            },
+            "p": -8
+          }
+        }
+      ]
+    },
+    {
+      "label": "学生たちの抗議活動の記録ノートを回収し、安全な場所へ移す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "弾圧の証拠となる手記を預かり、後世へ真実を伝えるため厳重に保管した。",
+          "effects": {
+            "k": 5,
+            "p": -4
+          }
+        }
+      ]
+    },
+    {
+      "label": "広場の厳戒態勢を避けて足早に仕事場へ向かう",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "視線を伏せて憲兵の列を通り過ぎ、日々の生業に身を投じた。",
+          "effects": {
+            "p": -2,
+            "h": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_sui_1102
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_sui_1102",
+  "conf": "C",
+  "references": [
+    "SRC_TL_LATE"
+  ],
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1102
+  },
+  "le": {
+    "year": 1103
+  },
+  "show": "() => false",
+  "body": "司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。",
+  "choices": [
+    {
+      "label": "司歳台の天師の指示に従い、住民たちと指定の防護陣へ避難する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "天師の張った結界の中で待機し、異様な神鳴りの震動から身を守った。",
+          "effects": {
+            "p": 3,
+            "rl": 4,
+            "h": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "真っ二つに割れた古い封印碑の破片を遠巻きに観察記録する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "刻まれた太古の紋様を写し取り、炎国の神話的遺物の研究を深めた。",
+          "effects": {
+            "k": 5,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "自宅の先祖の祠に香を焚き、大地が鎮まるのを静かに祈る",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "家族とともに煙を捧げ、荒ぶる大地の怒りが鎮まるのを待った。",
+          "effects": {
+            "p": 4,
+            "h": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_sui_1102",
+  "conf": "S",
+  "references": [
+    "SRC_TL_LATE"
+  ],
+  "historicalScene": {
+    "delivery": "report-response",
+    "dateMode": "event-year",
+    "from": [
+      1102,
+      1
+    ],
+    "through": [
+      1102,
+      12
+    ],
+    "role": "informed-listener",
+    "sourceGrade": "D",
+    "sceneBasis": "S:authored-civilian-response",
+    "reason": "特定現場への瞬間移動と結果の先取りを除去"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1102
+  },
+  "le": {
+    "year": 1103
+  },
+  "show": "s=>!!s.world?.events?.[h.flag]",
+  "body": "司歳台と歳を巡る知らせを読んだ。場所や経緯には不確かな部分があり、封印碑や天師の働きを自分が目撃したわけではない。",
+  "choices": [
+    {
+      "label": "分かっている公表情報だけを書き留める",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "伝達元と未確認の点を一緒に残した。伝承のどこまでが確かなのか、考えながら筆を置いた。",
+          "effects": {
+            "k": 2,
+            "p": -1
+          }
+        }
+      ]
+    },
+    {
+      "label": "静かな場所で、身近な人々の無事を祈る",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "騒ぎから少し離れ、身近な人々の無事を祈った。遠い場所の行く末は分からないまま、帰り支度を整えた。",
+          "effects": {
+            "p": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "詳しい知らせが出るまで判断を保留する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "分からないことを分からないまま残し、いつもの暮らしへ戻った。",
+          "effects": {
+            "p": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### timeline_daily_londinium_siege
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_daily_londinium_siege",
+  "conf": "S",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "ongoing",
+    "region": "ヴィクトリア",
+    "city": "ロンディニウム"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ヴィクトリア",
+    "都市:ロンディニウム"
+  ],
+  "ge": {
+    "year": 1098
+  },
+  "le": {
+    "year": 1098
+  },
+  "show": "s => !!s.world?.events?.londinium_war",
+  "body": "諸侯軍の攻城砲の地鳴りが一日中響き、路地に立ち込める硝煙の向こうで自救軍の若者たちが救援物資を運び込んでいた。",
+  "effects": {
+    "p": -2,
+    "h": -1
+  }
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_daily_londinium_siege",
+  "conf": "S",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "ongoing",
+    "region": "ヴィクトリア",
+    "city": "ロンディニウム",
+    "from": [
+      1098,
+      7
+    ],
+    "through": [
+      1098,
+      9
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1098
+  },
+  "le": {
+    "year": 1098
+  },
+  "show": "s => !!s.world?.events?.londinium_war",
+  "body": "諸侯軍の攻城砲の地鳴りが一日中響き、路地に立ち込める硝煙の向こうで自救軍の若者たちが救援物資を運び込んでいた。",
+  "effects": {
+    "p": -2,
+    "h": -1
+  }
+}
+```
+
+### timeline_daily_londinium_martial
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_daily_londinium_martial",
+  "conf": "S",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "ongoing",
+    "region": "ヴィクトリア",
+    "city": "ロンディニウム"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ヴィクトリア",
+    "都市:ロンディニウム"
+  ],
+  "ge": {
+    "year": 1094
+  },
+  "le": {
+    "year": 1097
+  },
+  "show": "s => !!s.world?.events?.thelazia_dead",
+  "body": "軍事委員会の無骨な装甲歩兵が跳ね橋の検問を固め、道行く市民たちを鋭い眼光で監視していた。",
+  "effects": {
+    "p": -1
+  }
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_daily_londinium_martial",
+  "conf": "S",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "ongoing",
+    "region": "ヴィクトリア",
+    "city": "ロンディニウム",
+    "from": [
+      1094,
+      8
+    ],
+    "through": [
+      1097,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1094
+  },
+  "le": {
+    "year": 1097
+  },
+  "show": "s => !!s.world?.events?.thelazia_dead",
+  "body": "軍事委員会の無骨な装甲歩兵が跳ね橋の検問を固め、道行く市民たちを鋭い眼光で監視していた。",
+  "effects": {
+    "p": -1
+  }
+}
+```
+
+### timeline_daily_chernobog_alarm
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_daily_chernobog_alarm",
+  "conf": "S",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "ongoing",
+    "region": "ウルサス",
+    "city": "チェルノボーグ"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ウルサス",
+    "都市:チェルノボーグ"
+  ],
+  "ge": {
+    "year": 1096
+  },
+  "le": {
+    "year": 1097
+  },
+  "show": "s => !!s.world?.events?.chernobog_incident",
+  "body": "チェルノボーグの市街に空襲と天災の二重のサイレンが狂ったように鳴り響き、遠くの街区から黒煙が立ち上っていた。",
+  "effects": {
+    "p": -3,
+    "h": -1
+  }
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_daily_chernobog_alarm",
+  "conf": "S",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "ongoing",
+    "region": "ウルサス",
+    "city": "チェルノボーグ",
+    "from": [
+      1096,
+      12
+    ],
+    "through": [
+      1097,
+      1
+    ],
+    "sourceGrade": "B",
+    "role": "present-civilian"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1096
+  },
+  "le": {
+    "year": 1097
+  },
+  "show": "s => !!s.world?.events?.chernobog_incident",
+  "body": "チェルノボーグの市街に空襲と天災の二重のサイレンが狂ったように鳴り響き、遠くの街区から黒煙が立ち上っていた。",
+  "effects": {
+    "p": -3,
+    "h": -1
+  }
+}
+```
+
+### timeline_daily_bolivar_barricade
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_daily_bolivar_barricade",
+  "conf": "S",
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "ongoing",
+    "region": "ボリバル"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ボリバル"
+  ],
+  "ge": {
+    "year": 1048
+  },
+  "le": {
+    "year": 1052
+  },
+  "show": "s => !!s.world?.events?.bolivar_civil_war",
+  "body": "戦線から離れた市でも、荷車の行き先を確かめる声が増えた。市場の値札がまた書き替えられ、誰もその理由を一つに決められなかった。",
+  "effects": {
+    "p": -2
+  }
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_daily_bolivar_barricade",
+  "conf": "S",
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "ongoing",
+    "region": "ボリバル",
+    "from": [
+      1048,
+      1
+    ],
+    "through": [
+      1052,
+      12
+    ],
+    "sourceGrade": "C",
+    "role": "resident"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1048
+  },
+  "le": {
+    "year": 1052
+  },
+  "show": "s => !!s.world?.events?.bolivar_civil_war",
+  "body": "戦線から離れた市でも、荷車の行き先を確かめる声が増えた。市場の値札がまた書き替えられ、誰もその理由を一つに決められなかった。",
+  "effects": {
+    "p": -2
+  }
+}
+```
+
+### timeline_daily_great_silence_sea
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "timeline_daily_great_silence_sea",
+  "conf": "S",
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "ongoing",
+    "region": "イベリア"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:イベリア"
+  ],
+  "ge": {
+    "year": 1038
+  },
+  "le": {
+    "year": 1040
+  },
+  "show": "s => !!s.world?.events?.great_silence",
+  "body": "海の異変を伝える話が内陸へも届き、港から来る荷の行方を尋ねる人が増えた。海辺で何が起きたのか、行商人たちの話は少しずつ食い違っていた。",
+  "effects": {
+    "p": -2
+  }
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "timeline_daily_great_silence_sea",
+  "conf": "S",
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "ongoing",
+    "region": "イベリア",
+    "from": [
+      1038,
+      7
+    ],
+    "through": [
+      1040,
+      12
+    ],
+    "sourceGrade": "B",
+    "role": "resident"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1038
+  },
+  "le": {
+    "year": 1040
+  },
+  "show": "s => !!s.world?.events?.great_silence",
+  "body": "海の異変を伝える話が内陸へも届き、港から来る荷の行方を尋ねる人が増えた。海辺で何が起きたのか、行商人たちの話は少しずつ食い違っていた。",
+  "effects": {
+    "p": -2
+  }
+}
+```
+
+### vic_war
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "vic_war",
+  "conf": "S",
+  "references": [
+    "SRC_TL_LATE"
+  ],
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ヴィクトリア",
+    "都市:ロンディニウム"
+  ],
+  "ge": {
+    "year": 1098
+  },
+  "le": {
+    "year": 1098
+  },
+  "months": [
+    7,
+    8,
+    9
+  ],
+  "show": "s => !!s.world?.events?.londinium_war",
+  "body": "ロンディニウムの居住区まで激しい砲撃の音が迫り、窓ガラスがビリビリと震え続けている。昨日まで通れた大通りが今日は瓦礫で塞がり、飲み水と今夜の寝床を確保するだけでも必死の有様だ。",
+  "choices": [
+    {
+      "label": "危険を冒して救援物資の運搬を引き受ける",
+      "show": {
+        "ban": [
+          "健康不良"
+        ]
+      },
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "黒煙の上がる通りを縫って医薬品と食料の木箱を運び、まとまった手当と乾パンを受け取った。崩れた建物の陰を走り抜けて部屋へ戻ると、張りつめていた糸が切れて膝がガクガクと震えた。",
+          "effects": {
+            "cash": 200000,
+            "p": -5,
+            "h": -8,
+            "rl": 3
+          }
+        },
+        {
+          "cumulativeProbability": 0.95,
+          "text": "荷車を引いて路地を抜ける途中で至近弾が炸裂し、荷物を投げ出して這々の体で逃げ帰った。飛んできた破片で切った腕を手当てしながらも、耳鳴りがしばらく止まなかった。",
+          "effects": {
+            "h": -25,
+            "p": -12
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "物資を運ぶ途中で激しい砲撃の直撃を受け、崩れ落ちる煉瓦の下敷きとなってそのまま命を落とした。",
+          "effects": {
+            "d": [
+              "市街戦被災（ロンディニウム攻城砲・軍事委員会掃討）",
+              "ロンディニウムの物資運搬中に攻城砲の直撃を受け、亡くなった"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "有り金を払って脱出ルートを確保し、街を離れる",
+      "en": {
+        "affordableRoute": 300000
+      },
+      "disabledReason": "脱出の運賃と避難先での当面の費用30万龍門幣を用立てられない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.85,
+          "text": "闇のブローカーに30万龍門幣を握らせて荷馬車の隅に乗り込み、砲火に包まれる王都をどうにか脱出した。命は助かったものの、見知らぬ避難先でまた一から仕事と寝床を探さなければならない。",
+          "effects": {
+            "res": 1,
+            "job": 0,
+            "p": -8,
+            "cash": -300000,
+            "fl": {
+              "war_displaced": 1,
+              "sch": 0
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "手配金を払って街の外縁まで向かったものの、前方の城門が戦闘で封鎖されており引き返すしかなかった。逃げ惑う群衆のなかで破片を浴びて負傷し、金も体力もすり減らした。",
+          "effects": {
+            "h": -25,
+            "cash": -100000,
+            "p": -12
+          }
+        }
+      ]
+    },
+    {
+      "label": "頑丈な地下室に身を寄せ、嵐が過ぎるのを待つ",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "近所の住民たちと古い石造りの地下室に毛布を敷き、僅かな水と食料を分け合った。頭上で鈍い爆発音が響くたび、天井から落ちる砂埃を見上げて全員で息を呑んだ。",
+          "effects": {
+            "p": -6,
+            "h": -5,
+            "rl": 2
+          }
+        },
+        {
+          "cumulativeProbability": 0.9,
+          "text": "身を寄せていた建物のすぐ隣に着弾し、崩れた壁の破片で怪我を負った。潰れた家財道具の買い直しと傷の治療で、なけなしの蓄えがほとんど吹き飛んだ。",
+          "effects": {
+            "h": -25,
+            "cash": -300000,
+            "p": -12,
+            "fl": {
+              "war_displaced": 1
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "身を寄せていた地下室の天井が攻城砲弾で粉砕され、瓦礫に押し潰されて命を落とした。",
+          "effects": {
+            "d": [
+              "市街戦被災（ロンディニウム攻城砲・軍事委員会掃討）",
+              "ロンディニウムの激しい砲撃戦で建物の倒壊に巻き込まれ、亡くなった"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "vic_war",
+  "conf": "S",
+  "references": [
+    "SRC_TL_LATE"
+  ],
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "ongoing",
+    "region": "ヴィクトリア",
+    "city": "ロンディニウム",
+    "from": [
+      1098,
+      7
+    ],
+    "through": [
+      1098,
+      9
+    ],
+    "role": "present-civilian",
+    "sourceGrade": "B"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1098
+  },
+  "le": {
+    "year": 1098
+  },
+  "months": [
+    7,
+    8,
+    9
+  ],
+  "show": "s => !!s.world?.events?.londinium_war",
+  "body": "ロンディニウムの居住区まで激しい砲撃の音が迫り、窓ガラスがビリビリと震え続けている。昨日まで通れた大通りが今日は瓦礫で塞がり、飲み水と今夜の寝床を確保するだけでも必死の有様だ。",
+  "choices": [
+    {
+      "label": "危険を冒して救援物資の運搬を引き受ける",
+      "show": {
+        "ban": [
+          "健康不良"
+        ]
+      },
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "黒煙の上がる通りを縫って医薬品と食料の木箱を運び、まとまった手当と乾パンを受け取った。崩れた建物の陰を走り抜けて部屋へ戻ると、張りつめていた糸が切れて膝がガクガクと震えた。",
+          "effects": {
+            "cash": 200000,
+            "p": -5,
+            "h": -8,
+            "rl": 3
+          }
+        },
+        {
+          "cumulativeProbability": 0.95,
+          "text": "荷車を引いて路地を抜ける途中で至近弾が炸裂し、荷物を投げ出して這々の体で逃げ帰った。飛んできた破片で切った腕を手当てしながらも、耳鳴りがしばらく止まなかった。",
+          "effects": {
+            "h": -25,
+            "p": -12
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "物資を運ぶ途中で激しい砲撃の直撃を受け、崩れ落ちる煉瓦の下敷きとなってそのまま命を落とした。",
+          "effects": {
+            "d": [
+              "市街戦被災（ロンディニウム攻城砲・軍事委員会掃討）",
+              "ロンディニウムの物資運搬中に攻城砲の直撃を受け、亡くなった"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "街を離れる行程と手配条件を調べる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "人づてに便の案内を集め、行先と運賃を控えた。家族の都合を確かめ、出発の準備を始めた。",
+          "effects": {
+            "travelAction": "intent:flight",
+            "p": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "頑丈な地下室に身を寄せ、嵐が過ぎるのを待つ",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "近所の住民たちと古い石造りの地下室に毛布を敷き、僅かな水と食料を分け合った。頭上で鈍い爆発音が響くたび、天井から落ちる砂埃を見上げて全員で息を呑んだ。",
+          "effects": {
+            "p": -6,
+            "h": -5,
+            "rl": 2
+          }
+        },
+        {
+          "cumulativeProbability": 0.9,
+          "text": "身を寄せていた建物のすぐ隣に着弾し、崩れた壁の破片で怪我を負った。潰れた家財道具の買い直しと傷の治療で、なけなしの蓄えがほとんど吹き飛んだ。",
+          "effects": {
+            "h": -25,
+            "cash": -300000,
+            "p": -12,
+            "fl": {
+              "war_displaced": 1
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "身を寄せていた地下室の天井が攻城砲弾で粉砕され、瓦礫に押し潰されて命を落とした。",
+          "effects": {
+            "d": [
+              "市街戦被災（ロンディニウム攻城砲・軍事委員会掃討）",
+              "ロンディニウムの激しい砲撃戦で建物の倒壊に巻き込まれ、亡くなった"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### bol_war
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "bol_war",
+  "conf": "B",
+  "references": [
+    "SRC_BOLIVAR_CIVIL_WAR"
+  ],
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "need": [
+    "国:ボリバル"
+  ],
+  "ge": {
+    "year": 1048
+  },
+  "show": "s => !!s.world?.events?.bolivar_civil_war",
+  "body": "三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金と逃げ道の心当たりを確かめた。",
+  "choices": [
+    {
+      "label": "軍の後方基地で荷さばきを手伝う",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.6,
+          "text": "後方部隊の倉庫で弾薬箱とレーションを積み替える日雇いにありついた。実入りは良く当面の支払いはしのげたが、前線の死傷者の噂が耳に入るたび手が止まった。",
+          "effects": {
+            "cash": 300000,
+            "cr": 4,
+            "p": -4
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "補給物資を運ぶ車列が敵対勢力の待ち伏せを受け、飛び交う銃弾と砲火のなかを逃げ惑って負傷した。",
+          "effects": {
+            "h": -30,
+            "p": -12
+          }
+        }
+      ]
+    },
+    {
+      "label": "戦火の及ばない土地へ避難する",
+      "en": {
+        "affordableRoute": 300000
+      },
+      "disabledReason": "移動運賃と到着後の当面の費用を用意できない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.8,
+          "text": "なけなしの運賃を払って荷馬車に乗り、銃声の届かない地域へ移り住んだ。見知らぬ町でまた一から仕事を探し直すことになる。",
+          "effects": {
+            "job": 0,
+            "res": 1,
+            "p": -6,
+            "cash": -300000,
+            "fl": {
+              "war_displaced": 1,
+              "sch": 0
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "避難する街道で敗残兵崩れの強盗に襲われ、持ち出した路銀の大半を巻き上げられた。傷の手当てをしながら元の街へ引き返すしかなかった。",
+          "effects": {
+            "h": -20,
+            "cash": -200000,
+            "p": -10
+          }
+        }
+      ]
+    },
+    {
+      "label": "今の街に留まる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "鎧戸を閉ざして街に踏みとどまり、嵐が通り過ぎるのを息を潜めて待った。",
+          "effects": {
+            "p": -4
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "激突する両軍の砲火が街区を直撃し、逃げ場のないまま炎に巻かれた。",
+          "effects": {
+            "d": [
+              "戦争に伴う民間人死亡",
+              "ボリバル内戦の戦火に巻き込まれ、亡くなった"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "bol_war",
+  "conf": "B",
+  "references": [
+    "SRC_BOLIVAR_CIVIL_WAR"
+  ],
+  "historicalScene": {
+    "delivery": "area-impact",
+    "dateMode": "ongoing",
+    "region": "ボリバル",
+    "from": [
+      1048,
+      1
+    ],
+    "through": [
+      1052,
+      12
+    ],
+    "role": "local-civilian",
+    "sourceGrade": "C"
+  },
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "year": 1048
+  },
+  "show": "s => !!s.world?.events?.bolivar_civil_war",
+  "body": "内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。",
+  "choices": [
+    {
+      "label": "地区で引き受けられる修理仕事を探す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "手元でできる補修を請け負い、仕上げた分の報酬を受け取った。",
+          "effects": {
+            "cash": 50000,
+            "h": -3
+          }
+        }
+      ]
+    },
+    {
+      "label": "移動先の暮らしと経路を調べる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "行先と費用を控え、出発の準備を始めた。",
+          "effects": {
+            "k": 2,
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "今の仕事を守り、家計を切り詰める",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "予定を減らし、当面の食料と仕事を確保した。",
+          "effects": {
+            "p": -1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### kaz_exile
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "kaz_exile",
+  "conf": "B",
+  "references": [
+    "SRC_TL_EARLY",
+    "SRC_TL_1094",
+    "SRC_KAZDEL_LIFE",
+    "SRC_KAZDEL_DISPLACEMENT_MODEL"
+  ],
+  "st": [
+    "少年",
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:カズデル"
+  ],
+  "ge": {
+    "year": 1092
+  },
+  "le": {
+    "year": 1094
+  },
+  "show": "s => !!s.world?.events?.kazdel_civil_war",
+  "body": [
+    {
+      "when": "未成年",
+      "t": "カズデル全土に内戦の炎が広がり、大人たちは国を捨てるか残るかで夜通し言い争っている。あなたは押し殺した声に耳を澄ませながら、いつでも逃げられるよう荷物をまとめた。"
+    },
+    {
+      "t": "内戦の戦火がいよいよ身近に迫り、故郷を捨てて国境を越えるか、この地に留まるか決断を迫られた。逃げ道も荒野も、どちらも血と硝煙の匂いがしていた。"
+    }
+  ],
+  "choices": [
+    {
+      "label": "運賃と当面の費用を工面して国外へ逃れる",
+      "en": {
+        "affordableRoute": 200000
+      },
+      "disabledReason": "移動先までの運賃と当面の費用を用意できない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.7,
+          "text": "有り金をはたいて闇の運び屋に乗り込み、国境を越えた。背負い袋ひとつの身の上になり、カズデルに残してきた人たちとの音信もぷっつりと途絶えた。",
+          "effects": {
+            "job": 0,
+            "res": 1,
+            "p": -10,
+            "rl": -8,
+            "cash": -200000,
+            "fl": {
+              "kazdel_left": 1,
+              "kazdel_displaced_life": 1,
+              "sch": 0
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "金を払って脱出を図ったが、荒野の途中で武装集団に襲われ、荷物も路銀も根こそぎ奪われた。国境を越えることもできず、傷ついた体でカズデルへ引き返した。",
+          "effects": {
+            "h": -25,
+            "p": -12,
+            "cash": -200000,
+            "fl": {
+              "kazdel_stayed": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "故郷に留まる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 0.6,
+          "text": "崩れた壁の陰で息を潜め、激化する内戦をなんとか生き延びた。夜空を焦がす砲火を見上げるたび、いつまでここで生きていけるのかと胸が潰れそうになった。",
+          "effects": {
+            "h": -15,
+            "p": -10,
+            "fl": {
+              "kazdel_stayed": 1
+            }
+          }
+        },
+        {
+          "cumulativeProbability": 1,
+          "text": "封鎖線を抜けることもできないまま、容赦ない戦火が居住区ごとすべてを焼き尽くした。",
+          "effects": {
+            "d": [
+              "戦死・戦争被害",
+              "カズデル内戦で命を落とした"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "kaz_exile",
+  "conf": "S",
+  "references": [
+    "SRC_TL_EARLY",
+    "SRC_TL_1094",
+    "SRC_KAZDEL_LIFE",
+    "SRC_KAZDEL_DISPLACEMENT_MODEL"
+  ],
+  "st": [
+    "少年",
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:カズデル"
+  ],
+  "ge": {
+    "year": 1092
+  },
+  "le": {
+    "year": 1094
+  },
+  "show": "s => !!s.world?.events?.kazdel_civil_war",
+  "body": "内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。",
+  "choices": [
+    {
+      "label": "国外へ向かう避難の行程を準備する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "荷物と連絡先をまとめ、行先の候補を調べ始めた。出発前に、家族の都合と運賃を確かめる必要がある。",
+          "effects": {
+            "travelAction": "intent:flight",
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "この地区で暮らしを続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "身近な人々と当面の仕事と食料を確かめ、ここに残ることにした。",
+          "effects": {
+            "p": -2,
+            "fl": {
+              "kazdel_stayed": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### kazdel_afterfall
+
+旧文全文（新規は該当なし）：
+```json
+{
+  "id": "kazdel_afterfall",
+  "conf": "S",
+  "references": [
+    "SRC_TL_1094",
+    "SRC_KAZDEL_LIFE",
+    "SRC_KAZDEL_DISPLACEMENT_MODEL"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:カズデル",
+    "kazdel_stayed"
+  ],
+  "ge": {
+    "year": 1095
+  },
+  "le": {
+    "year": 1098
+  },
+  "body": [
+    {
+      "when": "未成年",
+      "t": "ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼け跡に残った人たちと身を寄せ合うか、暗い部屋で相談が続いた。"
+    },
+    {
+      "t": "通りへ出ると、生き残った隣家の人たちが荷車に家財を積んでいた。どの街道なら安全か、行った先に仕事や寝床があるのか、誰も知らない。身近な人たちと、この地を離れるか残るか話し合った。"
+    }
+  ],
+  "choices": [
+    {
+      "label": "運賃を工面して別の土地へ移る",
+      "en": {
+        "affordableRoute": 200000
+      },
+      "disabledReason": "移動先までの運賃と当面の費用を用意できない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "わずかな荷物を背負い、焼け跡に残る人たちに別れを告げた。移動の運賃と支度金を支払い、向かう先の町の名を口の中で何度も繰り返しながら、見知らぬ土地へ旅立った。",
+          "effects": {
+            "job": 0,
+            "res": 1,
+            "p": -10,
+            "rl": -7,
+            "cash": -100000,
+            "fl": {
+              "kazdel_stayed": 0,
+              "kazdel_displaced": 1,
+              "kazdel_displaced_life": 1,
+              "sch": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "近くに残った人たちと仮住まいを探す",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "焼け残った者同士で声をかけ合い、雨風をしのげる空き家を手入れした。故郷の景色は変わり果ててしまったが、乏しい食料や毛布を分け合える相手がそばにいた。",
+          "effects": {
+            "h": -5,
+            "p": -6,
+            "rl": 5,
+            "fl": {
+              "kazdel_stayed": 0,
+              "kazdel_displaced": 1,
+              "kazdel_displaced_life": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+新文全文・条件・結果：
+```json
+{
+  "id": "kazdel_afterfall",
+  "conf": "S",
+  "references": [
+    "SRC_TL_1094",
+    "SRC_KAZDEL_LIFE",
+    "SRC_KAZDEL_DISPLACEMENT_MODEL"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年"
+  ],
+  "need": [
+    "国:カズデル",
+    "kazdel_stayed"
+  ],
+  "ge": {
+    "year": 1095
+  },
+  "le": {
+    "year": 1098
+  },
+  "body": "戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。",
+  "choices": [
+    {
+      "label": "別の土地へ向かう行程を準備する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "わずかな荷と連絡先をまとめ、行先と交通を確かめ始めた。",
+          "effects": {
+            "travelAction": "intent:flight",
+            "p": -2
+          }
+        }
+      ]
+    },
+    {
+      "label": "同じ地域の仮住まいを探す行程を準備する",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "頼れそうな滞在先の案内を集め、荷を運ぶ方法を考えた。",
+          "effects": {
+            "travelAction": "intent:local-flight",
+            "p": -1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### journey_decision_review
+
+旧文全文（新規は該当なし）：
+新規。
+
+新文全文・条件・結果：
+```json
+{
+  "id": "journey_decision_review",
+  "conf": "S",
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "show": "s=>!!travelCheckpointDefinition(s)&&[\"at-checkpoint\",\"blocked\"].includes(travelCurrentJourney(s)?.status)",
+  "body": "検問の前で足止めされている。届いた通行条件と旅費を確かめ、先へ進むか、滞在先で待つかを考えた。",
+  "choices": [
+    {
+      "label": "この検問に有効な通行証を提示する",
+      "en": "s=>travelCheckpointCan(s,\"pass\")",
+      "disabledReason": "通行証または再開の確認がない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "この検問を通り、次の乗継先へ向かった。",
+          "effects": {
+            "travelAction": "checkpoint:pass"
+          }
+        }
+      ]
+    },
+    {
+      "label": "登録された迂回路へ切り替える",
+      "en": "s=>travelCheckpointCan(s,\"detour\")",
+      "disabledReason": "迂回路・案内人または資金が不足している",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "案内人と別の道へ入り、次の停留地へ向かった。",
+          "effects": {
+            "travelAction": "checkpoint:detour"
+          }
+        }
+      ]
+    },
+    {
+      "label": "滞在先で待ち、通行条件を照会する",
+      "en": "s=>travelCheckpointCan(s,\"wait\")",
+      "disabledReason": "待てる滞在先が確認できない",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "検問のそばの滞在先へ向かい、照会の返事を待った。",
+          "effects": {
+            "travelAction": "checkpoint:wait"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### history_path_review_columbia_independence
+
+旧文全文（新規は該当なし）：
+新規。
+
+新文全文・条件・結果：
+```json
+{
+  "id": "history_path_review_columbia_independence",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "show": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))",
+  "body": "開拓地区の自治活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。",
+  "choices": [
+    {
+      "label": "暮らしと両立できる役目を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。",
+          "effects": {
+            "p": 1,
+            "rl": 2,
+            "lifeAffiliation": {
+              "id": "hist-columbia_independence",
+              "action": "continue",
+              "role": "分担を決めて活動を続ける"
+            },
+            "lifeGoal": {
+              "id": "hist-columbia_independence-path",
+              "action": "continue"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "自分の役目に区切りをつけ、記録を残して退く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。",
+          "effects": {
+            "p": 2,
+            "lifeAffiliation": {
+              "id": "hist-columbia_independence",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-columbia_independence-path",
+              "action": "complete"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "負担が大きくなった活動から離れる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。",
+          "effects": {
+            "p": -1,
+            "lifeAffiliation": {
+              "id": "hist-columbia_independence",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-columbia_independence-path",
+              "action": "abandon"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### history_path_review_kazdel_commission_founded
+
+旧文全文（新規は該当なし）：
+新規。
+
+新文全文・条件・結果：
+```json
+{
+  "id": "history_path_review_kazdel_commission_founded",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "show": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))",
+  "body": "地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。",
+  "choices": [
+    {
+      "label": "暮らしと両立できる役目を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。",
+          "effects": {
+            "p": 1,
+            "rl": 2,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_commission_founded",
+              "action": "continue",
+              "role": "分担を決めて活動を続ける"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_commission_founded-path",
+              "action": "continue"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "自分の役目に区切りをつけ、記録を残して退く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。",
+          "effects": {
+            "p": 2,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_commission_founded",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_commission_founded-path",
+              "action": "complete"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "負担が大きくなった活動から離れる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。",
+          "effects": {
+            "p": -1,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_commission_founded",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_commission_founded-path",
+              "action": "abandon"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### history_path_review_siracusa_unification
+
+旧文全文（新規は該当なし）：
+新規。
+
+新文全文・条件・結果：
+```json
+{
+  "id": "history_path_review_siracusa_unification",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "show": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))",
+  "body": "地区の掟を担うつながりに関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。",
+  "choices": [
+    {
+      "label": "暮らしと両立できる役目を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。",
+          "effects": {
+            "p": 1,
+            "rl": 2,
+            "lifeAffiliation": {
+              "id": "hist-siracusa_unification",
+              "action": "continue",
+              "role": "分担を決めて活動を続ける"
+            },
+            "lifeGoal": {
+              "id": "hist-siracusa_unification-path",
+              "action": "continue"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "自分の役目に区切りをつけ、記録を残して退く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。",
+          "effects": {
+            "p": 2,
+            "lifeAffiliation": {
+              "id": "hist-siracusa_unification",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-siracusa_unification-path",
+              "action": "complete"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "負担が大きくなった活動から離れる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。",
+          "effects": {
+            "p": -1,
+            "lifeAffiliation": {
+              "id": "hist-siracusa_unification",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-siracusa_unification-path",
+              "action": "abandon"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### history_path_review_ursus_great_rebellion
+
+旧文全文（新規は該当なし）：
+新規。
+
+新文全文・条件・結果：
+```json
+{
+  "id": "history_path_review_ursus_great_rebellion",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "show": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))",
+  "body": "地区の労働者の要求活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。",
+  "choices": [
+    {
+      "label": "暮らしと両立できる役目を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。",
+          "effects": {
+            "p": 1,
+            "rl": 2,
+            "lifeAffiliation": {
+              "id": "hist-ursus_great_rebellion",
+              "action": "continue",
+              "role": "分担を決めて活動を続ける"
+            },
+            "lifeGoal": {
+              "id": "hist-ursus_great_rebellion-path",
+              "action": "continue"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "自分の役目に区切りをつけ、記録を残して退く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。",
+          "effects": {
+            "p": 2,
+            "lifeAffiliation": {
+              "id": "hist-ursus_great_rebellion",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-ursus_great_rebellion-path",
+              "action": "complete"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "負担が大きくなった活動から離れる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。",
+          "effects": {
+            "p": -1,
+            "lifeAffiliation": {
+              "id": "hist-ursus_great_rebellion",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-ursus_great_rebellion-path",
+              "action": "abandon"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### history_path_review_rim_billiton_independence
+
+旧文全文（新規は該当なし）：
+新規。
+
+新文全文・条件・結果：
+```json
+{
+  "id": "history_path_review_rim_billiton_independence",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "show": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))",
+  "body": "鉱区の自治運営に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。",
+  "choices": [
+    {
+      "label": "暮らしと両立できる役目を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。",
+          "effects": {
+            "p": 1,
+            "rl": 2,
+            "lifeAffiliation": {
+              "id": "hist-rim_billiton_independence",
+              "action": "continue",
+              "role": "分担を決めて活動を続ける"
+            },
+            "lifeGoal": {
+              "id": "hist-rim_billiton_independence-path",
+              "action": "continue"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "自分の役目に区切りをつけ、記録を残して退く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。",
+          "effects": {
+            "p": 2,
+            "lifeAffiliation": {
+              "id": "hist-rim_billiton_independence",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-rim_billiton_independence-path",
+              "action": "complete"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "負担が大きくなった活動から離れる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。",
+          "effects": {
+            "p": -1,
+            "lifeAffiliation": {
+              "id": "hist-rim_billiton_independence",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-rim_billiton_independence-path",
+              "action": "abandon"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### history_path_review_leith_revolution
+
+旧文全文（新規は該当なし）：
+新規。
+
+新文全文・条件・結果：
+```json
+{
+  "id": "history_path_review_leith_revolution",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "show": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))",
+  "body": "地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。",
+  "choices": [
+    {
+      "label": "暮らしと両立できる役目を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。",
+          "effects": {
+            "p": 1,
+            "rl": 2,
+            "lifeAffiliation": {
+              "id": "hist-leith_revolution",
+              "action": "continue",
+              "role": "分担を決めて活動を続ける"
+            },
+            "lifeGoal": {
+              "id": "hist-leith_revolution-path",
+              "action": "continue"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "自分の役目に区切りをつけ、記録を残して退く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。",
+          "effects": {
+            "p": 2,
+            "lifeAffiliation": {
+              "id": "hist-leith_revolution",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-leith_revolution-path",
+              "action": "complete"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "負担が大きくなった活動から離れる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。",
+          "effects": {
+            "p": -1,
+            "lifeAffiliation": {
+              "id": "hist-leith_revolution",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-leith_revolution-path",
+              "action": "abandon"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### history_path_review_kazdel_war_declared
+
+旧文全文（新規は該当なし）：
+新規。
+
+新文全文・条件・結果：
+```json
+{
+  "id": "history_path_review_kazdel_war_declared",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "show": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))",
+  "body": "地区の後方補給班に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。",
+  "choices": [
+    {
+      "label": "暮らしと両立できる役目を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。",
+          "effects": {
+            "p": 1,
+            "rl": 2,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_war_declared",
+              "action": "continue",
+              "role": "分担を決めて活動を続ける"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_war_declared-path",
+              "action": "continue"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "自分の役目に区切りをつけ、記録を残して退く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。",
+          "effects": {
+            "p": 2,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_war_declared",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_war_declared-path",
+              "action": "complete"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "負担が大きくなった活動から離れる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。",
+          "effects": {
+            "p": -1,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_war_declared",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_war_declared-path",
+              "action": "abandon"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### history_path_review_kazdel_civil_war
+
+旧文全文（新規は該当なし）：
+新規。
+
+新文全文・条件・結果：
+```json
+{
+  "id": "history_path_review_kazdel_civil_war",
+  "conf": "S",
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "show": "s=>(s.lifeRecord?.affiliations||[]).some(x=>x.id===id&&[\"active\",\"crisis\"].includes(x.status))",
+  "body": "避難者の生活再建活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。",
+  "choices": [
+    {
+      "label": "暮らしと両立できる役目を続ける",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "仲間と分担を話し合い、引き受けられる用事を確かめた。今後もこの活動に関わっていく。",
+          "effects": {
+            "p": 1,
+            "rl": 2,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_civil_war",
+              "action": "continue",
+              "role": "分担を決めて活動を続ける"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_civil_war-path",
+              "action": "continue"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "自分の役目に区切りをつけ、記録を残して退く",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "引き受けていた仕事を整理し、仲間に別れを告げた。関わった日々は、自分の経歴に残っている。",
+          "effects": {
+            "p": 2,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_civil_war",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_civil_war-path",
+              "action": "complete"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "負担が大きくなった活動から離れる",
+      "outcomes": [
+        {
+          "cumulativeProbability": 1,
+          "text": "続けられないと伝え、役目から退いた。残った人々の行く末は気になるが、自分の暮らしを立て直すことにした。",
+          "effects": {
+            "p": -1,
+            "lifeAffiliation": {
+              "id": "hist-kazdel_civil_war",
+              "action": "leave"
+            },
+            "lifeGoal": {
+              "id": "hist-kazdel_civil_war-path",
+              "action": "abandon"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### 年表・経歴に表示する名称
+
+`sui_1102`：旧／新
+```json
+{
+  "old": {
+    "y": 1102,
+    "displayDate": "1102年頃",
+    "r": [
+      "炎国",
+      "龍門"
+    ],
+    "t": "炎国で歳をめぐる騒ぎがあったという話が届いた。どの町に及んだのか、何が起きたのか、話す人の間でも意見が食い違っていた。",
+    "flag": "sui_1102",
+    "localText": "司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆った。",
+    "localCities": [
+      "龍門"
+    ],
+    "localRegions": [
+      "炎国"
+    ],
+    "conf": "D",
+    "references": [
+      "SRC_TL_LATE"
+    ]
+  },
+  "new": {
+    "y": 1102,
+    "displayDate": "1102年頃",
+    "r": [
+      "炎国",
+      "龍門"
+    ],
+    "t": "炎国で歳をめぐる騒ぎがあったという話が届いた。どの町に及んだのか、何が起きたのか、話す人の間でも意見が食い違っていた。",
+    "flag": "sui_1102",
+    "localText": "司歳台と歳を巡る知らせには未確定の部分がある。自分がその現場を見た記録はない。",
+    "localRegions": [
+      "炎国"
+    ],
+    "conf": "D",
+    "references": [
+      "SRC_TL_LATE"
+    ]
+  }
+}
+```
+
+`kazdel_displaced`：旧／新
+```json
+{
+  "old": {
+    "label": "カズデル内戦による住まいの喪失",
+    "description": "内戦とカズデルの再度の滅亡を受け、元の住まいを離れて暮らしを組み直しているゲーム上の状態。"
+  },
+  "new": {
+    "label": "内戦後、元の住まいを離れて暮らしを組み直した",
+    "description": "内戦とカズデルの再度の滅亡を受け、元の住まいを離れて暮らしを組み直しているゲーム上の状態。"
+  }
+}
+```
+
+`chernobog_refugee`：旧／新
+```json
+{
+  "old": {
+    "label": "チェルノボーグ事変で避難列車へ向かった",
+    "description": "事変時に避難したという本人のゲーム内経験。全住民の被災・移動状況を表さない。"
+  },
+  "new": {
+    "label": "チェルノボーグ事変後、実際に避難の旅をした",
+    "description": "事変時に避難したという本人のゲーム内経験。全住民の被災・移動状況を表さない。"
+  }
+}
+```
+
+### 旅程UIの全表示パターン
+
+テンプレート中の地域・人物・金額は確定した状態値を代入する。ソース全文で分岐・条件通知を含む表示パターンを収録し、分岐を省略しない。旧文全文：
+```javascript
+// The journey panel exposes temporary travel without changing a person's home.
+const TRAVEL_PURPOSE_LABELS = [
+  ["wandering","放浪・見聞"],["family","親族・知人の訪問"],
+  ["work","仕事の用事"],["study","学びのための訪問"],["other","私用"]
+];
+function travelPanelCare(s) {
+  const minors=travelResidentMinorChildren(s);
+  if(!minors.length)return {ready:true,ref:null,message:"",consult:false};
+  const spouse=s.sp;
+  if(!spouse || spouse.d || !spouse.id || !spouseLivesWithProtagonist(s))
+    return {ready:false,ref:null,consult:false,
+      message:"同居する未成年の子どもの見守りを引き受ける大人が確認されていない。"};
+  const ids=minors.map(c=>c.id).sort();
+  const agreement=Object.values(s.travelState?.familyCareAgreements||{}).find(a=>
+    a.year===s.year && a.caregiverId===spouse.id &&
+    a.childIds?.length===ids.length && a.childIds.every((id,i)=>id===ids[i]));
+  if(!agreement)return {ready:false,ref:null,consult:true,
+    message:"留守中の子どもの見守りについて、配偶者と相談する必要がある。"};
+  return {ready:agreement.status==="granted",ref:agreement.id,consult:false,
+    message:agreement.status==="granted"
+      ?"配偶者は留守中の子どもの見守りを引き受けた。住所と学籍は従来のまま残る。"
+      :"配偶者は今回の見守りを引き受けなかった。同じ年の再相談はできない。"};
+}
+function travelPanelReady(s) {
+  return !!s && !s.dead && !s.ev && s.age>=18 && !restricted(s) &&
+    Number.isInteger(s.mo) && s.mo>=1 && s.mo<=12;
+}
+function renderTravelControls(s,services) {
+  const target=services.document.getElementById("travel-controls");
+  if(!target)return;
+  const esc=services.esc,fmt=services.m,active=travelCurrentJourney(s);
+  if(s.dead){target.textContent="この人生の旅程は終了した。";return;}
+  const ready=travelPanelReady(s),disabled=ready?"":" disabled";
+  const care=travelPanelCare(s),lines=[];
+  if(!active){
+    lines.push("<p>短期の単身旅行を計画できる。旅先への到着で住所や学籍は移らない。</p>");
+    if(care.message)lines.push('<p class="nt">'+esc(care.message)+'</p>');
+    if(care.consult)lines.push('<button type="button" onclick="travelControlAction(\'consult\')"'+disabled+'>子どもの見守りを相談する</button>');
+    const routes=moveDestinations(s).filter(r=>(MIGRATION_ROUTES[r.n]||[]).some(x=>x.n===s.res.n));
+    if(routes.length){
+      lines.push('<label for="travel-destination">行き先</label> <select id="travel-destination">'+routes.map(r=>
+        '<option value="'+esc(r.n)+'">'+esc(r.n)+'</option>').join("")+'</select>');
+      lines.push('<label for="travel-purpose">目的</label> <select id="travel-purpose">'+TRAVEL_PURPOSE_LABELS.map(([id,label])=>
+        '<option value="'+id+'">'+esc(label)+'</option>').join("")+'</select>');
+      lines.push('<label for="travel-duration">移動に要する期間</label> <select id="travel-duration"><option value="1">1か月</option><option value="2">2か月</option><option value="3">3か月</option></select>');
+      lines.push('<button type="button" onclick="travelControlAction(\'plan\')"'+
+        (!ready||!care.ready?' disabled':'')+'>往復の行程を計画する</button>');
+    }else lines.push("<p>往復可能な広域経路の登録がない。</p>");
+    lines.push('<p class="nt">運賃はゲーム用の広域移動費。出発時に往復分を先払いし、払い戻しは行わない。個々の街道や検問所の実在は示さない。</p>');
+    lines.push('<p class="nt">出発後は、通常の自宅の生活費に加えて旅先の食宿費が月ごとに発生する。滞在費はゲーム上の推計である。</p>');
+  }else{
+    const leg=active.legs[active.activeLegIndex],mode=active.status;
+    const arrivedHome=mode==="arrived"&&leg.toRegion===active.originRegion;
+    const status=mode==="planned"?"出発準備中":arrivedHome?"帰還地点に到着":
+      mode==="arrived"?"旅先に到着":mode==="en-route"?"移動中":"旅先で待機中";
+    lines.push("<p>"+esc(active.originRegion)+"から"+esc(active.destinationRegion)+
+      "への旅程："+status+"。</p>");
+    if(mode==="planned"){
+      if(care.message)lines.push('<p class="nt">'+esc(care.message)+'</p>');
+      if(care.consult)lines.push('<button type="button" onclick="travelControlAction(\'consult\')"'+disabled+'>留守中の見守りを相談する</button>');
+      const fare=travelLegFareQuote(s,active.originRegion,active.destinationRegion).amount+
+        (active.returnReservation?travelLegFareQuote(s,active.destinationRegion,active.originRegion).amount:0);
+      const wallet=inSharedHousehold(s)?s.house:s;
+      lines.push('<p>出発時の運賃：'+fmt(fare)+'（'+(inSharedHousehold(s)?"共有家計":"本人会計")+'）</p>');
+      lines.push('<button type="button" onclick="travelControlAction(\'depart\')"'+
+        (!ready||!care.ready||!wallet||wallet.cash<fare?' disabled':'')+'>出発する</button>');
+      lines.push('<button type="button" onclick="travelControlAction(\'cancel\')"'+disabled+'>行程を取りやめる</button>');
+    }else if(arrivedHome){
+      lines.push('<button type="button" onclick="travelControlAction(\'finish\')"'+disabled+'>帰還を完了する</button>');
+    }else if(mode==="arrived"){
+      const fare=travelLegFareQuote(s,active.destinationRegion,active.originRegion).amount;
+      const wallet=inSharedHousehold(s)?s.house:s;
+      lines.push('<button type="button" onclick="travelControlAction(\'return\')"'+
+        (!ready||!active.returnReservation&&(!wallet||wallet.cash<fare)?' disabled':'')+'>帰路に就く</button>');
+    }else lines.push('<p class="nt">暦月が進むと移動が進行する。到着後に帰路を選べる。</p>');
+    lines.push('<p class="nt">一時的な旅行の間も、以前の住居と家族の居住地は維持される。</p>');
+    const stayTotal=Object.values(s.travelState?.transactions||{})
+      .filter(tx=>tx.journeyId===active.id&&tx.kind==="stay")
+      .reduce((sum,tx)=>sum+tx.amount,0);
+    lines.push('<p>旅先の食宿費：'+fmt(stayTotal)+'（これまでの累計）</p>');
+  }
+  if(!ready)lines.push('<p class="nt">操作には成人・年月の確定・未解決の選択がない状態が必要となる。</p>');
+  target.innerHTML=lines.join("\n");
+}
+function travelControlAction(action,request) {
+  const s=S,messageBox=document.getElementById("travel-message");
+  if(!travelPanelReady(s)){
+    if(messageBox)messageBox.textContent="現在の状態では旅程を操作できない。";
+    return false;
+  }
+  try{
+    const before=traceState(s);
+    let note="",id=null;
+    const journey=travelCurrentJourney(s);
+    if(action==="consult"){
+      const response=travelFamilyCareAgreement(s);
+      note=response.status==="granted"
+        ?"同居の配偶者と留守中の見守りについて話し合い、了承を得た。"
+        :"同居の配偶者と留守中の見守りについて話し合ったが、了承は得られなかった。";
+      if(journey?.status==="planned"&&response.status==="granted")
+        travelRefreshFamilyCare(s,response.id);
+      id=response.id;
+    }else if(action==="plan"){
+      if(journey)throw Error("既に進行中の旅程がある");
+      const values=request||{
+        destinationRegion:document.getElementById("travel-destination")?.value,
+        purpose:document.getElementById("travel-purpose")?.value,
+        durationMonths:Number(document.getElementById("travel-duration")?.value)
+      };
+      const care=travelPanelCare(s);
+      if(!care.ready)throw Error(care.message);
+      const plan=travelStart(s,{...values,prepayReturn:true,familyCareAgreementId:care.ref});
+      note=plan.destinationRegion+"への往復を計画した。";id=plan.id;
+    }else if(action==="depart"){
+      const trip=travelDepart(s);
+      note=trip.originRegion+"を離れ、"+trip.destinationRegion+"へ向けて出発した。往復の運賃を支払った。";id=trip.id;
+    }else if(action==="cancel"){
+      const trip=travelEnd(s,"abandoned");
+      if(!trip)throw Error("取りやめられる旅程がない");
+      note="出発前の行程を取りやめた。";id=trip.id;
+    }else if(action==="return"){
+      const trip=travelBeginReturn(s);
+      note=trip.destinationRegion+"から帰路に就いた。";id=trip.id;
+    }else if(action==="finish"){
+      const trip=travelEnd(s,"returned-home");
+      if(!trip)throw Error("帰還完了に必要な到着記録がない");
+      note="元の暮らしの場所へ戻り、旅程を終えた。";id=trip.id;
+    }else throw Error("旅程の操作が不明");
+    recordTrace("journey",action,{journeyId:id,note},before);
+    L('<span class="nt">'+esc(note)+'</span>');
+    SV();
+    rd();
+    const updated=document.getElementById("travel-message");
+    if(updated)updated.textContent=note;
+    return true;
+  }catch(error){
+    if(messageBox)messageBox.textContent=error.message||String(error);
+    return false;
+  }
+}
+
+```
+
+新文全文：
+```javascript
+// Player decisions use the same journey, family, service and settlement authorities.
+const TRAVEL_PURPOSE_LABELS=[["wandering","放浪・見聞"],["family","親族・知人の訪問"],["work","仕事の用事"],["study","学びのための訪問"],["flight","避難"],["other","私用"]];
+let TRAVEL_PANEL_DRAFT={};
+function travelPanelCare(s,companionIds=TRAVEL_PANEL_DRAFT.personIds||[]){
+  const minors=travelResidentMinorChildren(s).filter(x=>!companionIds.includes(x.id));if(!minors.length)return {ready:true,ref:null,message:"",consult:false};
+  const spouse=s.sp;if(!spouse||spouse.d||!spouse.id||companionIds.includes(spouse.id)||!spouseLivesWithProtagonist(s))return {
+    ready:false,ref:null,consult:false,message:"留守中の子どもの見守り役が確認されていない。"};
+  const ids=minors.map(x=>x.id).sort(),a=Object.values(s.travelState?.familyCareAgreements||{}).find(x=>
+    x.year===s.year&&x.caregiverId===spouse.id&&JSON.stringify(x.childIds)===JSON.stringify(ids));
+  return {ready:a?.status==="granted",ref:a?.id||null,consult:!a,
+    message:a?a.status==="granted"?"配偶者は留守中の子どもの見守りを引き受けた。":"配偶者は今回の見守りを引き受けなかった。":"子どもの見守りについて相談する必要がある。"};
+}
+function travelPanelReady(s){return !!s&&!s.dead&&!s.ev&&s.age>=6&&!restricted(s)&&Number.isInteger(s.mo)&&s.mo>=1&&s.mo<=12;}
+function travelDraftChanged(){
+  const dest=document.getElementById("travel-destination")?.value;
+  TRAVEL_PANEL_DRAFT={...TRAVEL_PANEL_DRAFT,routeId:dest,purpose:document.getElementById("travel-purpose")?.value,
+    durationMonths:Number(document.getElementById("travel-duration")?.value||1),
+    personIds:[...document.querySelectorAll("[data-travel-companion]:checked")].map(x=>x.value)};
+}
+function renderTravelControls(s,services){
+  const target=services.document.getElementById("travel-controls");if(!target)return;
+  const esc=services.esc,fmt=services.m,j=travelCurrentJourney(s),ready=travelPanelReady(s),disabled=ready?"":" disabled",
+    signature=JSON.stringify([s.randomSeed,s.year,s.mo,s.dead,!!s.ev,s.cash,s.house?.cash,s.travelState,s.sp?.id,(s.kids||[]).map(x=>[x.id,x.d])]);
+  if(target._travelSignature===signature)return;
+  const button=(label,action,enabled=true)=>'<button type="button" onclick="travelControlAction(\''+action+'\')"'+(!ready||!enabled?' disabled':'')+'>'+label+'</button>',lines=[];
+  if(s.dead){target.textContent="この人生の旅程は終了した。";return;}
+  if(!j){
+    const routes=travelCorridors(s),draft=TRAVEL_PANEL_DRAFT,selected=routes.find(x=>x.id===draft.routeId)||routes.find(x=>s.travelState?.intent?.destinationRegion===x.toRegion)||routes[0];
+    lines.push('<label for="travel-destination">行き先と行程</label> <select id="travel-destination" onchange="travelDraftChanged()">'+routes.map(x=>
+      '<option value="'+esc(x.id)+'"'+(x.id===selected?.id?' selected':'')+'>'+esc(x.name)+'</option>').join("")+'</select>');
+    lines.push('<label for="travel-purpose">目的</label> <select id="travel-purpose" onchange="travelDraftChanged()">'+TRAVEL_PURPOSE_LABELS.map(([id,label])=>
+      '<option value="'+id+'"'+(id===(draft.purpose||s.travelState?.intent?.purpose||"wandering")?' selected':'')+'>'+label+'</option>').join("")+'</select>');
+    lines.push('<label for="travel-duration">移動に要する期間</label> <select id="travel-duration" onchange="travelDraftChanged()">'+[1,2,3].map(n=>
+      '<option value="'+n+'"'+(n===(draft.durationMonths||1)?' selected':'')+'>'+n+'か月</option>').join("")+'</select>');
+    for(const person of travelCompanionCandidates(s))
+      lines.push('<label><input type="checkbox" data-travel-companion value="'+esc(person.id)+'" onchange="travelDraftChanged()"'+
+        (draft.personIds?.includes(person.id)?' checked':'')+'>'+esc(person.nm||"家族")+'と同行を相談する</label>');
+    if(draft.personIds?.length)lines.push(button("選んだ家族と同行を相談する","consult-party"));
+    const care=travelPanelCare(s);if(care.message)lines.push('<p class="nt">'+esc(care.message)+'</p>');
+    if(care.consult)lines.push(button("子どもの見守りを相談する","consult"));
+    if(s.age<18)lines.push(button("保護者に同行を相談する","consult-guardian"));
+    lines.push(button("行程を計画する","plan",!!selected));
+    lines.push('<p class="nt">広域移動の期間と料金はゲーム上の見積。登録のない街道や検問所の所在は未確認。</p>');
+    lines.push('<p class="nt">帰路が登録された行程では往復分を先払いする。旅先での追加の食宿費は月ごとに掛かる。</p>');
+  }else{
+    const leg=j.legs[j.activeLegIndex],home=j.status==="arrived"&&leg.returnToBase,
+      labels={planned:"出発準備中","en-route":"移動中",arrived:home?"帰還地点に到着":"旅先に到着","at-checkpoint":"検問で待機中",blocked:"滞在先で待機中","at-stop":"停留地で滞在中"};
+    lines.push('<p>'+esc(j.originRegion)+'から'+esc(j.destinationRegion)+'への旅程：'+labels[j.status]+'。</p>');
+    if(j.companions.length)lines.push('<p>同行者：'+j.companions.map(x=>esc([s.sp,...(s.kids||[])].find(p=>p?.id===x.personId)?.nm||"家族")).join("・")+'</p>');
+    if(j.status==="planned"){
+      const fare=travelLegFareQuote(s,leg.fromRegion,leg.toRegion).amount+
+        (j.returnReservation?travelLegFareQuote(s,j.returnReservation.fromRegion,j.returnReservation.toRegion).amount:0);
+      lines.push('<p>出発時の運賃：'+fmt(fare*(1+j.companions.length+(j.guardianEscort?1:0)))+'</p>');
+      lines.push(button("出発する","depart"),button("行程を取りやめる","cancel"));
+      lines.push(button("留守中の見守りを相談する","consult"));
+    }else if(home)lines.push(button("帰還を完了する","finish"));
+    else{
+      if(["arrived","at-stop","at-checkpoint","blocked"].includes(j.status)){lines.push(button("滞在先で医療の窓口を照会","medical"),button("食宿の支援を相談する","support"));}
+      if(["at-checkpoint","blocked"].includes(j.status)){
+        lines.push(button("通行条件を照会して待つ","checkpoint:wait",travelCheckpointCan(s,"wait")));
+        const permit=s.travelState?.permits?.[j.permitInquiry?.permitId],cp=travelCheckpointDefinition(s);
+        if(cp)lines.push('<p>迂回の追加運賃：'+fmt(cp.detourFee)+'</p>');
+        if(permit?.status==="offered"&&cp?.active)lines.push(button("通行証を受け取る（"+fmt(permit.fee)+"）","permit",
+          (inSharedHousehold(s)?s.house?.cash:s.cash)>=permit.fee));
+        lines.push(button("通行条件を満たして先へ進む","checkpoint:pass",travelCheckpointCan(s,"pass")),
+          button("登録された迂回路へ進む","checkpoint:detour",travelCheckpointCan(s,"detour")));
+      }
+      if(j.status==="arrived"){
+        lines.push(button("宿泊・住居・短期仕事の条件を照会","stay-inquiry"));
+        if(j.workOffer?.status==="offered"&&j.localWork?.status!=="active")lines.push('<p>旅の滞在期間だけの短期仕事：月額 '+fmt(j.workOffer.monthlyPay)+'</p>');
+        if(j.workOffer?.status==="offered"&&j.localWork?.status!=="active")lines.push(button("提示された短期仕事を引き受ける","local-work"));
+        if(j.localWork?.status==="active")lines.push('<p>旅先の短期仕事：月額 '+fmt(j.localWork.monthlyPay)+'。移動再開、または定住で旅程を終えると終了する。</p>');
+        if(j.stayOffer){
+          if(s.sp&&!s.sp.d&&spouseLivesWithProtagonist(s)&&!j.companions.some(x=>x.personId===s.sp.id)){
+            lines.push(button("旅先で暮らすことと別居について相談する","separation"));
+            if(j.separationAgreement?.status==="refused")lines.push(button("反対を受けたうえで、定住の意思を固める","acknowledge-separation"));
+          }
+          lines.push(button("確認した住まいで定住を始める","settle"));
+        }
+        if(j.educationRef)lines.push(button("到着した学校で入学試験を受ける","exam",travelEducationCanAttend(s)));
+        const next=travelCorridors(s,leg.toRegion);
+        lines.push('<label for="travel-next">次の行き先</label> <select id="travel-next">'+next.map(x=>
+          '<option value="'+esc(x.id)+'">'+esc(x.name)+'</option>').join("")+'</select>');
+        if(j.companions.length)lines.push(button("次の行先について同行者と相談する","consult-next-party"));
+        if(s.age<18)lines.push(button("次の行先について保護者に相談する","consult-next-guardian"));
+        lines.push(button("次の行程へ進む","continue",!!next.length&&!j.returning));
+      }
+      lines.push(button("帰路に就く","return"));
+      lines.push(button("不足する運賃を後払いにして帰路に就く","return-credit"));
+      lines.push('<p class="nt">後払いでは手持ちの資金を運賃に充て、不足分を運行側への負債として引き受ける。</p>');
+    }
+    const stay=Object.values(s.travelState.transactions).filter(x=>x.journeyId===j.id&&x.kind==="stay").reduce((a,x)=>a+x.amount,0);
+    lines.push('<p>旅先の食宿費：'+fmt(stay)+'（これまでの累計）</p>');
+  }
+  if(!ready)lines.push('<p class="nt">年月と未解決の選択を確認してから、行程を操作できる。</p>');
+  target.innerHTML=lines.join("");target._travelSignature=signature;
+}
+function travelControlAction(action,request){
+  const s=S,box=document.getElementById("travel-message");if(!travelPanelReady(s)){if(box)box.textContent="現在の状態では旅程を操作できない。";return false;}
+  try{
+    if(typeof play==="function")play(0);
+    const before=traceState(s),j=travelCurrentJourney(s),draft=TRAVEL_PANEL_DRAFT,
+      selected=travelCorridors(s).find(x=>x.id===(request?.corridorId||document.getElementById("travel-destination")?.value||draft.routeId))||travelCorridors(s)[0];
+    let note="",id=j?.id;
+    if(action==="consult"){
+      const a=travelFamilyCareAgreement(s,j?.companions.map(x=>x.personId)||draft.personIds||[]);if(!a)note="留守中の見守りを必要とする子どもはいない。";
+      else{note=a.status==="granted"?"配偶者は留守中の見守りを引き受けた。":"配偶者は今回の見守りを引き受けなかった。";
+        if(j?.status==="planned"&&a.status==="granted")travelRefreshFamilyCare(s,a.id);}
+    }else if(action==="consult-party"){
+      travelDraftChanged();const a=travelCompanionAgreement(s,TRAVEL_PANEL_DRAFT.personIds||[],selected?.toRegion);
+      TRAVEL_PANEL_DRAFT.companionAgreementId=a.id;note=a.status==="granted"?"選んだ家族は、この行先への同行に同意した。":"家族は今回の同行に同意しなかった。";
+    }else if(action==="consult-guardian"){
+      const a=travelGuardianConsult(s,selected?.toRegion);TRAVEL_PANEL_DRAFT.guardianAgreementId=a.id;
+      note=a.status==="granted"?"保護者が同行する旅行について了承を得た。":"保護者の了承は得られなかった。";
+    }else if(action==="consult-next-party"||action==="consult-next-guardian"){
+      const route=travelCorridors(s,travelPresence(s).region).find(x=>x.id===(request?.corridorId||document.getElementById("travel-next")?.value));
+      if(!route)throw Error("次の行程が未選択");
+      if(action==="consult-next-party"){
+        const a=travelCompanionAgreement(s,j.companions.map(x=>x.personId),route.toRegion);
+        TRAVEL_PANEL_DRAFT.nextCompanionAgreementId=a.id;note=a.status==="granted"?"同行者と次の行先について了承を確かめた。":"同行者は次の行先への移動を了承しなかった。";
+      }else{
+        const a=travelGuardianConsult(s,route.toRegion);TRAVEL_PANEL_DRAFT.nextGuardianAgreementId=a.id;
+        note=a.status==="granted"?"保護者と次の行先への同行を確かめた。":"次の行先への保護者の了承は得られなかった。";
+      }
+    }else if(action==="plan"){
+      const values=request||{destinationRegion:selected?.toRegion,corridorId:selected?.id,purpose:draft.purpose||s.travelState?.intent?.purpose||"wandering",durationMonths:draft.durationMonths||1};
+      const party=travelValidateCompanions(s,values.companionAgreementId||draft.companionAgreementId,values.destinationRegion),care=travelPanelCare(s);
+      const trip=travelStart(s,{...values,companionAgreementId:values.companionAgreementId||draft.companionAgreementId,
+        guardianAgreementId:values.guardianAgreementId||draft.guardianAgreementId,
+        prepayReturn:(MIGRATION_ROUTES[values.destinationRegion]||[]).some(x=>x.n===s.res.n),familyCareAgreementId:care.ref});
+      note=trip.destinationRegion+"への行程を計画した。";id=trip.id;
+    }else if(action==="depart"){const trip=travelDepart(s);note=trip.originRegion+"を離れ、旅に出発した。";}
+    else if(action==="cancel"){travelEnd(s,"abandoned");note="出発前の行程を取りやめた。";}
+    else if(action==="return"){travelBeginReturn(s);note="通ってきた道へ引き返し、帰路に就いた。";}
+    else if(action==="return-credit"){travelBeginReturn(s,{deferPayment:true});note="運行側の後払い条件を受け入れ、不足する運賃を負債として帰路に就いた。";}
+    else if(action==="finish"){travelEnd(s,"returned-home");note="元の暮らしの場所へ戻り、旅程を終えた。";}
+    else if(action==="medical"){const a=travelHealthInquiry(s);note=a.status==="contact-confirmed"?"滞在先の診療窓口の連絡先を確認した。診察の予定を別に相談できる。":"この滞在先では診療窓口を確認できなかった。";}
+    else if(action==="support"){const a=travelSupportInquiry(s);note=a.status==="approved"?"次の月の食宿費について、個別の減免を受けられると返事があった。":"今回の食宿費の減免は認められなかった。";}
+    else if(action==="permit"){travelAcceptPermit(s);note="この検問で提示する通行証を受け取った。";}
+    else if(action.startsWith("checkpoint:")){travelCheckpointAction(s,action.split(":")[1]);note="旅程の通行・滞在の判断を記録した。";}
+    else if(action==="stay-inquiry"){travelStayInquiry(s);note="到着した土地で、住まいと仕事の条件を確かめた。";}
+    else if(action==="local-work"){travelTakeLocalWork(s);note="提示された旅先の短期仕事を引き受けた。";}
+    else if(action==="separation"){const a=travelSeparationConsult(s);note=a.status==="granted"?"配偶者と別々の土地で暮らすことについて了承を得た。":"配偶者は別居に反対した。今後の暮らしを改めて考える。";}
+    else if(action==="acknowledge-separation"){if(j?.separationAgreement?.status!=="refused")throw Error("定住を再検討する回答がない");j.separationAcknowledged=true;note="反対の返事を受け止めたうえで、この土地で暮らす意思を固めた。";}
+    else if(action==="settle"){travelSettle(s);note="確認した住まいで暮らしを始め、旅程を終えた。";}
+    else if(action==="exam"){travelEducationAttendance(s);note="到着した学校で入学試験を受けた。結果は後日の知らせを待つ。";}
+    else if(action==="continue"){
+      const presence=travelPresence(s),route=travelCorridors(s,presence.region).find(x=>x.id===(request?.corridorId||document.getElementById("travel-next")?.value));
+      if(!route)throw Error("次の行程が未選択");travelContinue(s,route.toRegion,route.id,{
+        companionAgreementId:request?.companionAgreementId||draft.nextCompanionAgreementId,
+        guardianAgreementId:request?.guardianAgreementId||draft.nextGuardianAgreementId});note="次の停留地へ向けて出発した。";
+    }else throw Error("旅程の操作が不明");
+    recordTrace("journey",action,{journeyId:id,note},before);L('<span class="nt">'+esc(note)+'</span>');SV();rd();
+    if(box)box.textContent=note;return true;
+  }catch(error){if(box)box.textContent=error.message||String(error);return false;}
+}
+
+```
+
+### 教育・会計・居住履歴の追加表示
+
+- 受験の旅への同行を保護者に相談する
+- 受験先への旅程を計画する
+- 保護者から受験の旅への同行了承を得た。
+- 受験の旅への保護者の了承は得られなかった。
+- 旅先の仕事（年次収入内訳）
+- 旅程の運賃として精算済み（以前は「移送側が運賃を負担」と誤表示）
+- 旅先で確認した住まいへの定住（住居履歴の理由）
+
+### 旅程操作の条件通知全文
+
+旧旅程APIの通知（UIから表示され得たもの）：
+```json
+[
+  "同居する未成年の子の見守りを引き受ける大人が確認されていない",
+  "同居する未成年の子の本人IDが未記録",
+  "同居する未成年の子の見守り役が不在",
+  "家族の見守りについて有効な同意記録がない",
+  "出発前の行程だけ家族の見守りを更新できる",
+  "Travel route has no valid cost basis",
+  "Travel fare is invalid",
+  "旅程の運賃を支払える残高がない",
+  "旅先の食宿費を算定する地域情報がない",
+  "旅先の食宿費が計算範囲を超えた",
+  "旅先の食宿費を記帳する会計が不正",
+  "An active journey already exists",
+  "Invalid travel purpose or destination",
+  "Travel permission is unavailable",
+  "Invalid modeled travel duration",
+  "帰路の運賃を確保できる往復経路がない",
+  "Journey is not planned",
+  "Journey departure requires a known calendar month",
+  "旅程の家族見守り計画を更新してから出発する必要がある",
+  "往復運賃を先払いできる残高がない",
+  "Checkpoint is not registered on the active leg",
+  "No confirmed return option from the reached destination",
+  "Return departure month is not known",
+  "Unsupported journey conclusion",
+  "An actual trip needs a physical return, not an instant cancellation",
+  "The traveler has not returned to their residence"
+]
+```
+
+新旅程APIの通知（計画・移動・個別サービス・家族・学校・定住）：
+```json
+[
+  "同居する未成年の子の見守りを引き受ける大人が確認されていない",
+  "同居する未成年の子の本人IDが未記録",
+  "同居する未成年の子の見守り役が不在",
+  "同行する配偶者を留守中の見守り役にはできない",
+  "家族の見守りについて有効な同意記録がない",
+  "出発前の行程だけ家族の見守りを更新できる",
+  "この経路の運賃が未確認",
+  "運賃が不正",
+  "旅程の運賃を支払える残高がない",
+  "旅先の食宿費を算定する地域情報がない",
+  "旅先の食宿費が計算範囲を超えた",
+  "旅先の食宿費を記帳する会計が不正",
+  "進行中の旅程がある",
+  "旅の目的または行先が不正",
+  "出発に必要な了承または移動条件が確認できない",
+  "移動期間が不正",
+  "帰路の運賃を確保できる往復経路がない",
+  "選択した路線の登録がない",
+  "出発前の旅程がない",
+  "現在は出発できない",
+  "出発時の保護者の同行了承が確認できない",
+  "出発する年月が未確定",
+  "同行者を再確認する必要がある",
+  "旅程の家族見守り計画を更新してから出発する必要がある",
+  "往復運賃を先払いできる残高がない",
+  "現在の区間に登録された検問所ではない",
+  "帰路を始める現在地と時点が確認できない",
+  "既に帰還地点へ到着している",
+  "帰路の区間がない",
+  "旅程の終了理由が不正",
+  "出発した旅は、帰還先へ戻ってから終了できる",
+  "元の暮らしの場所へまだ戻っていない",
+  "路線の根拠と地域が不正",
+  "検問の場所・期限・費用の根拠が不正",
+  "路線IDが矛盾",
+  "必要な費用を支払えない",
+  "検問でこの行動を選べる根拠がない",
+  "この検問の交付回答がない",
+  "旅先への実到着が必要",
+  "引き受けられる旅先の仕事がない",
+  "次の行程を決められる停留地にいない",
+  "往来できる次区間が登録されていない",
+  "次の行先について同行者の了承が必要",
+  "次の行先について保護者の同行了承が必要",
+  "同行の目的地が未確認",
+  "同行を相談できる同居家族が一致しない",
+  "同行の有効な同意記録がない",
+  "実到着と受入先の住居確認が必要",
+  "現在は住まいの契約を決められない",
+  "旅先で暮らす前に配偶者と別居を相談する必要がある",
+  "配偶者の反対を受けて、定住の意思を改めて決める必要がある",
+  "越境受験の出願と実在校が必要",
+  "本人の旅行を判断する保護者が未確認",
+  "受験先への到着と試験日を確認できない",
+  "別居を相談する相手と旅先が確認できない",
+  "確認した旅先の住居と実到着が一致しない",
+  "旅の目的が不明",
+  "医療窓口を照会できる滞在地が未確認",
+  "支援を相談する滞在地が未確認"
+]
+```
+
+
+校閲判断：位置・時点・役割と合わない断定、実現前の転居・権利取得・入隊、他者の同意の捏造、ニュースによる死亡を除去。政治・自治・補給の加入は個人の実行と後年の退出を伴わせる。ゲームの料金・返答モデルを原作の制度へ帰属させない。

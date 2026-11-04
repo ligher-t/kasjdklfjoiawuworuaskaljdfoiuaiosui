@@ -1,12 +1,16 @@
 // finalize: ordered game data; see DATA_MODULES.md.
 window.TERRA_DATA_BUILD.run("finalize", function ($terraData, $define, $rules) {
   "use strict";
+  if(typeof window.TERRA_HISTORY_SCENE_REVIEWS==="function"){
+    window.TERRA_HISTORY_SCENE_REVIEWS($terraData);delete window.TERRA_HISTORY_SCENE_REVIEWS;
+  }
   // Inject authored, separately guarded education scenes at the existing
   // terminal data phase; preserve the strict source-module phase ordering.
   if(typeof window.TERRA_EDUCATION_INJECT_P17==="function"){
     window.TERRA_EDUCATION_INJECT_P17($terraData,$define);
     delete window.TERRA_EDUCATION_INJECT_P17;
   }
+  $terraData.refreshFlagUsage();
   // 同じ所属への二重加入・二重応募を、表示と実行候補の両方で防ぐ。
   for (const event of $terraData.EV) for (const choice of event.c || []) {
     if (!choice.o?.some(outcome => {

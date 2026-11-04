@@ -1,4 +1,5 @@
 function applyResidenceEffects(e, routeReserve, s, fromRegion, fundsBeforeEffects, addMoney) {
+  const arrival=e.travelResidenceRef?travelResidenceOffer(s,e.travelResidenceRef):null;
   const spouseAtDeparture=spouseLivesWithProtagonist(s);
   const childrenAtDeparture=s.kids.filter(k=>!k.d && (!s.residenceBase || k.residenceBaseId===s.residenceBase.id)).length;
   const returnKey = e.returnToLocality === "previous" ? previousResidenceKey(s) : e.returnToLocality;
@@ -18,7 +19,7 @@ function applyResidenceEffects(e, routeReserve, s, fromRegion, fundsBeforeEffect
   if (e.res) {
     const from = s.res,
       spouseWasCohabiting = spouseAtDeparture,
-      routes = moveDestinations(s).filter(row => (!returnTarget || row.n === returnTarget.region) && (!e.resTo || row.n === e.resTo)),
+      routes = arrival?[{n:arrival.region,w:1,fare:0}]:moveDestinations(s).filter(row => (!returnTarget || row.n === returnTarget.region) && (!e.resTo || row.n === e.resTo)),
       affordable = routes.filter(x => x.fare * from.pm + routeReserve <= fundsBeforeEffects),
       pool = e.resFareCovered
         ? routes
@@ -35,7 +36,7 @@ function applyResidenceEffects(e, routeReserve, s, fromRegion, fundsBeforeEffect
       e.home || chooseHomeForRegion(to.n, R(), P("migration.mobileCityArrivalShare")),
       to.n
     );
-    s.local = returnTarget ? { ...returnTarget.local } : makeLocality(s.home, to.n, e.localKind);
+    s.local = arrival?JSON.parse(JSON.stringify(arrival.local)):returnTarget ? { ...returnTarget.local } : makeLocality(s.home, to.n, e.localKind);
     if (e.localCity) {
       if (s.home !== "移動都市" || !SIM_TABLES.namedCities[to.n]?.includes(e.localCity))
         throw new Error("転居先の都市名が地域・居住形態と一致しない");
@@ -80,7 +81,7 @@ function applyResidenceEffects(e, routeReserve, s, fromRegion, fundsBeforeEffect
   } else if (e.home) {
     const fromHome = s.home;
     s.home = normalizeHomeForRegion(e.home, s.res.n);
-    s.local = returnTarget ? { ...returnTarget.local } : makeLocality(s.home, s.res.n, e.localKind);
+    s.local = arrival?JSON.parse(JSON.stringify(arrival.local)):returnTarget ? { ...returnTarget.local } : makeLocality(s.home, s.res.n, e.localKind);
     clearLocalContacts(s);
     if (e.localCity) {
       if (s.home !== "移動都市" || !SIM_TABLES.namedCities[s.res.n]?.includes(e.localCity))

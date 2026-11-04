@@ -521,7 +521,7 @@ function elig(e, s, T, options = {}) {
   if (e.id?.startsWith("daily_rhodes_") && !isRhodesLandshipResident(s)) return rejectEligibility(e, "landship-location", options);
   if (!affiliationEventAvailable(e, s)) return rejectEligibility(e, "affiliation-place", options);
   if (travelBlocksResidenceEvent(e, s)) return rejectEligibility(e, "away-from-residence", options);
-  if (e.timelineFlag && e.id?.startsWith("timeline_")) {
+  if (e.timelineFlag) {
     const scene = historicalSceneEligibility(e, s);
     if (!scene.eligible) return rejectEligibility(e, scene.reason, options);
   }

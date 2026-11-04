@@ -76,7 +76,7 @@ function applyWorkAndCareEffects(e, s, fromRegion) {
   if (e.fl?.sch === 0 && educationLive(s) &&
       ["primary","lower","upper"].includes(s.educationPath.stage))
     educationEnd(s,"withdrawn","家庭・生活上の判断により通学を終了",TRACE_RESOLUTION?.id||"school-exit");
-  if ((e.res === 1 || e.fl?.frontier_contract || e.fl?.rhodes_landship || (e.home && e.home !== "移動都市" && s.home === "移動都市")) && educationLive(s)) {
+  if (!e.travelResidenceRef && (e.res === 1 || e.fl?.frontier_contract || e.fl?.rhodes_landship || (e.home && e.home !== "移動都市" && s.home === "移動都市")) && educationLive(s)) {
     educationEnd(s,"withdrawn","生活圏移動・専従労働のため通学を終了",TRACE_RESOLUTION?.id||"relocation-exit");
     s.fl.sch = 0;
   }

@@ -14,8 +14,9 @@ const informationScopeDecision = (historyEntry, nearby, state = S) => {
 // Spatial match is NOT an eyewitness record. National and regional news ranges
 // cannot promote a resident of another city into a participant in the event.
 function historicalPlaceScope(historyEntry, state = S) {
-  const city = state?.local?.city || null,
-    region = state?.res?.n || null,
+  const presence=typeof travelPresence==="function"?travelPresence(state):null;
+  const city = presence?presence.city:state?.local?.city || null,
+    region = presence?presence.region:state?.res?.n || null,
     cities = [
       ...(Array.isArray(historyEntry?.localCities) ? historyEntry.localCities : []),
       historyEntry?.localCity,
@@ -29,7 +30,7 @@ function historicalPlaceScope(historyEntry, state = S) {
     (!regions.length || regions.includes(region));
   // A region-only source establishes a potential civilian-life impact, not an
   // encounter with the particular battlefield, court, or historical figure.
-  const affected = directPlace || (!!region && regions.includes(region));
+  const affected = historyEntry?.infoScope!=="sealed"&&(directPlace || (!!region && regions.includes(region)));
   return { city, region, directPlace, affected };
 }
 function isHistoricalEventLocal(historyEntry, state = S) {
@@ -38,19 +39,20 @@ function isHistoricalEventLocal(historyEntry, state = S) {
 function historyIsNearby(historyEntry, state = S) {
   // `r` is an information-reach list, including news from other cities.
   return historyEntry?.r === "all" ||
-    (Array.isArray(historyEntry?.r) && historyEntry.r.includes(state?.res?.n));
+    (Array.isArray(historyEntry?.r) && historyEntry.r.includes(typeof travelPresence==="function"?travelPresence(state).region:state?.res?.n));
 }
-function recordHistoricalDirectEncounter(historyEntry, state = S, eventId = null) {
-  if (!historyEntry?.flag || !isHistoricalEventLocal(historyEntry, state) ||
-      state.year !== historyEntry.y || !historyAvailabilityReached(historyEntry, state))
+function recordHistoricalDirectEncounter(historyEntry, state = S, eventId = null,sceneProof=null) {
+  if (!historyEntry?.flag || (!(sceneProof?.eligible&&sceneProof.delivery==="direct")&&
+      (!isHistoricalEventLocal(historyEntry, state)||state.year!==historyEntry.y)) ||
+      !historyAvailabilityReached(historyEntry, state))
     return null;
   const encounters = state.historicalDirectEncounters || (state.historicalDirectEncounters = {});
   return encounters[historyEntry.flag] || (encounters[historyEntry.flag] = {
     eventYear: historyEntry.y,
     year: state.year,
     month: Number.isInteger(state.mo) && state.mo >= 1 ? state.mo : null,
-    region: state.res.n,
-    city: state.local.city,
+    region: sceneProof?.placeEvidence?.region||state.res.n,
+    city: sceneProof?.placeEvidence?.city||state.local.city,
     eventId,
     basis: "event-shown-at-specific-city"
   });
@@ -138,8 +140,8 @@ function announceHistoricalNews(historyEntry, id, route, infoScope) {
     heardYear: S.year,
     heardMonth: Number.isInteger(S.mo) && S.mo >= 1 && S.mo <= CALENDAR_MONTHS ? S.mo : null,
     route: effectiveRoute,
-    heardRegion: S.res?.n || null,
-    heardCity: S.local?.city || null,
+    heardRegion: travelPresence(S).region,
+    heardCity: travelPresence(S).city,
     eventRegion: encounter?.region || placeImpact?.region || null,
     eventCity: encounter?.city || placeImpact?.city || null,
     encounterEventId: encounter?.eventId || null,

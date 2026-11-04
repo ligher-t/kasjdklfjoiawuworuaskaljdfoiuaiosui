@@ -69,7 +69,7 @@ function scenario(){
 }
 const r=JSON.parse(vm.runInContext('JSON.stringify(('+scenario.toString()+')())',ctx,{timeout:30000}));
 assert(r.menu.includes('travel-destination')&&r.menu.includes('travelControlAction'));
-assert(r.menu.includes('往復の行程を計画する'));
+assert(r.menu.includes('行程を計画する'));
 assert.equal(r.planned,true);
 assert.equal(r.reserved,"pending");
 assert.equal(r.departed,true);

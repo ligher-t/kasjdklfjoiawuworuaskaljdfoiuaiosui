@@ -372,6 +372,8 @@ function pressureAnnualExposureShare(p, year) {
 }
 function worldPressureValue(p, key, s) {
   const value = p[key] || 1;
+  const travelShare=typeof travelPressureShare==="function"?travelPressureShare(s,p):null;
+  if(travelShare!==null)return 1+(value-1)*travelShare;
   if (s.mo !== 0 || !pressureHasMonthWindow(p)) return value;
   // Annual processing resolves health and mortality before assigning this year's event month.
   // Approximate a partial-year effect without publishing its historical event flag early.
@@ -383,6 +385,7 @@ function worldPressureDeathMonth(s, cause) {
     !["戦闘職務中の死亡", "戦争に伴う民間人死亡"].includes(cause)
   )
     return null;
+  if(typeof travelPressureShare==="function"&&WORLD_PRESSURES.some(p=>travelPressureShare(s,p)!==null))return null;
   const months = activeWorldPressures(s)
     .filter(pressureHasMonthWindow)
     .flatMap(p => {
@@ -395,7 +398,8 @@ function worldPressureDeathMonth(s, cause) {
 function activeWorldPressures(s, region = s.res?.n, city = s.local?.city) {
   return WORLD_PRESSURES.filter(
     p => {
-      if (!pressureMatchesPlace(p, region, city) || !pressureYearHasExposure(p, s.year)) return false;
+      const share=region===s.res?.n&&city===s.local?.city&&typeof travelPressureShare==="function"?travelPressureShare(s,p):null;
+      if (!(share===null?pressureMatchesPlace(p,region,city):share>0) || !pressureYearHasExposure(p, s.year)) return false;
       // Annual health/mortality runs before hist() publishes this year's flags.
       // The configured pressure window itself is sufficient for this aggregate
       // estimate; monthly event eligibility still waits for the historical flag.
