@@ -76,7 +76,7 @@ const educationCredential = (s, kind) =>
 // This record carries the event provenance, rather than inferring a diploma from ep.
 function recordEducationTransition(s, program, action, sourceEventId = null) {
   const record = s.educationRecord || (s.educationRecord = { version: 1, enrollments: [], awards: [] });
-  if (!["general-school", "university", "vocational", "arts-academy"].includes(program))
+  if (!["general-school", "university", "vocational", "arts-academy", "preparatory"].includes(program))
     throw new Error("未定義の教育課程");
   if (!["start", "advance", "finish", "stop"].includes(action))
     throw new Error("未定義の学籍変更");
@@ -118,7 +118,25 @@ function recordEducationTransition(s, program, action, sourceEventId = null) {
         sourceCreditIds:credits.map(x=>x.id)
       });
   }
-  if (action === "finish" && program !== "general-school" &&
+  if(action==="finish" && formal && program==="preparatory"){
+    const assessment=s.educationPath.completionAssessment;
+    if(!assessment?.passed || assessment.enrollmentId!==current.id ||
+       !assessment.evidenceRef || !assessment.assessedAt?.year ||
+       assessment.assessedAt.year!==s.year)
+      throw new Error("準備課程の正式な同等資格評価が未確認");
+    record.schoolCertificates||=[];
+    const id=current.id+":upper-equivalency";
+    if(!record.schoolCertificates.some(x=>x.id===id))
+      record.schoolCertificates.push({
+        id,enrollmentId:current.id,
+        offeringId:s.educationPath.offeringId,
+        stage:"upper",qualification:"upper-equivalency",
+        issuer:s.educationPath.institutionId,awardedYear:s.year,
+        assessmentEvidenceId:assessment.evidenceRef,
+        sourceCreditIds:credits.map(x=>x.id)
+      });
+  }
+  if (action === "finish" && program !== "general-school" && program !== "preparatory" &&
       !record.awards.some(x => x.program === program &&
         (formal ? x.enrollmentId===current.id : !x.enrollmentId))) {
     record.awards.push({
