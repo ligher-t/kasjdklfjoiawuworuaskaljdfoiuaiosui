@@ -716,3 +716,38 @@ const accessDecision=run(function(){
 });
 assert.deepEqual(accessDecision,{eligible:true,rejectedEarly:true,notice:0,duplicate:0});
 console.log("PASS E42 and E79: independent exam schedule and school adjustment evidence");
+
+fresh("クルビア",24);
+const fundingResponse=run(function(){
+ const s=S;s.mo=4;s.job=7;ensureResidenceIdentity(s);
+ const area=ensureEducationWorldForResidence(s),w=s.world.educationWorld,
+   inst=educationRegisterInstitution(w,area,"employer-course","university",
+     ["university"],s.year),off=w.offerings[inst.offeringIds[0]];
+ off.admissionTier=1;
+ const item=educationCaseBegin(s,"higher-path","university",1);
+ item.phase="planning";educationCaseDiscover(s,"local");
+ ensureLifeRecord(s).affiliations.push({id:"company",kind:"employer",
+   status:"active",title:"職場"});
+ educationRegisterInformalProvider(s,{providerId:"company-course",
+   organizationId:"company",kind:"corporate-training",areaId:area,
+   activeFrom:{year:s.year,month:1},subjectIds:["technical"],
+   evidenceRef:"observed-course"});
+ s.educationEmployerPrograms={version:1,items:{aid:{
+   id:"aid",status:"verified",evidenceRef:"signed-course-policy",
+   policyRef:"company-student-aid",personId:"protagonist",
+   jobId:7,employerId:"company",caseId:item.id,
+   offeringId:off.id,providerId:"company-course",maxContribution:50000
+ }}};
+ const eligible=educationMigrationEligible(s,"edu_employer_sponsored_course","A");
+ educationMigrationApply(s,"E27:A");
+ const record=s.educationMigration.records.find(x=>
+   x.eventId==="edu_employer_sponsored_course");
+ const pending=!record.notice,cash=s.cash;
+ educationP17RecordExternalDecision(s,{requestId:record.result.externalRequest.id,
+   issuerId:"company",status:"approved",evidenceRef:"issued-course-approval",
+   approvedAmount:30000});
+ return {eligible,pending,index:record.notice?.index,unchangedCash:s.cash===cash,
+   noEnrollment:!s.educationRecord.enrollments.length};
+});
+assert.deepEqual(fundingResponse,{eligible:true,pending:true,index:0,
+ unchangedCash:true,noEnrollment:true});
