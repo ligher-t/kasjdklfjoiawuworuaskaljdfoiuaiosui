@@ -268,11 +268,16 @@ function educationStart(s,stage,tier = 1,source = null) {
     s.study={kind,yearsPaid:1,nextDue:s.year+1,duration:years,educationManaged:true};
     recordEducationTransition(s, stage==="university"?"university":stage==="arts"?"arts-academy":"vocational","start",source);
     // Regular work was reconciled before applying the course flags.
-  }
+  }else recordEducationTransition(s,"preparatory","start",source);
 }
 function educationEnd(s,outcome,reason,source=null) {
   const model=s.educationPath;
   if(!model || model.status!=="enrolled" && model.status!=="paused")return false;
+  if(outcome==="completed" && model.stage==="preparatory" &&
+     (!model.offeringId || !model.currentEnrollmentId ||
+       model.completionAssessment?.passed!==true ||
+       model.completionAssessment.enrollmentId!==model.currentEnrollmentId))
+    return false;
   if(outcome==="completed" && model.offeringId){
     const enrollment=educationActiveEnrollment(s),
       credits=enrollment?educationTransferredCreditIds(s,enrollment.id):[],
@@ -309,6 +314,9 @@ function educationEnd(s,outcome,reason,source=null) {
     recordEducationTransition(s,"general-school","finish",source||"annual-school-completion");
   }else if(outcome!=="completed" && ["primary","lower","upper"].includes(program)){
     recordEducationTransition(s,"general-school","stop",source||"annual-school-withdrawal");
+  }else if(program==="preparatory"){
+    recordEducationTransition(s,"preparatory",outcome==="completed"?"finish":"stop",
+      source||"formal-preparatory-closure");
   }
   return true;
 }
@@ -368,11 +376,8 @@ function educationApplyAction(s,action) {
     return;
   }
   if(action==="start-preparatory"){
-    const fee=educationFunds(s,"preparatory");
-    if(!educationOccupied(s) && !educationHas(s,"upper") &&
-       educationChargeFee(s,fee,"preparatory")){
-      educationStart(s,"preparatory",1,source);
-    }
+    if(!educationOccupied(s) && !educationHas(s,"upper"))
+      educationCaseAction(s,"case:begin:reentry:preparatory:1");
     return;
   }
   if(action==="school-materials"){
@@ -681,8 +686,24 @@ function educationAdvanceYear(s) {
       artsReady=m.stage==="arts" ? (s.ar||0)>=30 : true,
       threshold=m.stage==="university" ? 45+(m.tier-1)*13 : 25+(m.tier-1)*10;
     if(knowledge>=threshold && lit>=35 && artsReady && preparatoryReady){
-      if(m.stage==="preparatory")m.equivalency.push("upper");
-      educationEnd(s,"completed","年限・履修・修了評価を満たした","annual-progression");
+      if(m.stage==="preparatory"){
+        const enrollment=educationActiveEnrollment(s);
+        if(!enrollment || !m.offeringId ||
+           enrollment.id!==m.currentEnrollmentId){
+          s.educationDecision={kind:"graduation",year:s.year};
+          return;
+        }
+        const evidenceRef=enrollment.id+":formal-completion-assessment:"+s.year;
+        m.completionAssessment={evidenceRef,enrollmentId:enrollment.id,
+          assessedAt:{year:s.year,month:s.mo||0},
+          knowledge, literacy:lit,passed:true,
+          basis:"game-model-formal-qualification-assessment",
+          sourceCreditIds:educationTransferredCreditIds(s,enrollment.id)};
+      }
+      const completed=educationEnd(s,"completed",
+        "年限・履修・修了評価を満たした","annual-progression");
+      if(completed && m.stage==="preparatory" && !m.equivalency.includes("upper"))
+        m.equivalency.push("upper");
     }else {
       s.educationDecision={kind:"graduation",year:s.year};
       m.lastProcessedYear=s.year;
