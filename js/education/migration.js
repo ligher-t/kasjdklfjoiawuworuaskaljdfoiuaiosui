@@ -198,6 +198,38 @@ function educationMigrationProviderFor(s,eventId) {
       now<=p.activeTo.year*12+(p.activeTo.month??12)))
     .sort((a,b)=>a.id.localeCompare(b.id))[0]||null;
 }
+
+function educationMigrationKnownTeacher(s,requireCurrent=false) {
+  const current=requireCurrent?educationMigrationCurrent(s):null,
+    world=s.world?.educationWorld;
+  return Object.values(s.educationPeopleTies?.items||{}).some(t=>{
+    if(t.role!=="teacher"||!t.personallyKnown)return false;
+    const enrol=s.educationRecord?.enrollments?.find(e=>e.id===t.enrollmentId),
+      teacher=world?.staff?.[t.personId];
+    return !!enrol && !!teacher &&
+      teacher.institutionId===enrol.institutionId &&
+      teacher.offeringId===enrol.offeringId &&
+      (!requireCurrent || (current?.enroll.id===enrol.id &&
+        teacher.status==="assigned"));
+  });
+}
+function educationMigrationMeetTeacher(s) {
+  const current=educationMigrationCurrent(s);
+  if(!current||!educationLegacySceneGuard(s,"education_school_classroom"))
+    return false;
+  educationEnsureEnrolledSchoolPeople(s,current.enroll.id);
+  const ties=Object.values(s.educationPeopleTies?.items||{}).filter(t=>
+    t.enrollmentId===current.enroll.id && t.role==="teacher");
+  const teacher=ties.sort((a,b)=>a.personId.localeCompare(b.personId))[0];
+  if(!teacher)return false;
+  teacher.personallyKnown=true;
+  teacher.lastMetAt={year:s.year,month:s.mo};
+  const evidence="people_school_introduction:"+current.enroll.id;
+  if(!teacher.knowledgeEvidenceIds.includes(evidence))
+    teacher.knowledgeEvidenceIds.push(evidence);
+  return true;
+}
+
 function educationMigrationCurrent(s) {
   const m=s.educationPath,enroll=educationActiveEnrollment(s);
   if(!enroll||m.status!=="enrolled"||
