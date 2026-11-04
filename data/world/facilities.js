@@ -137,10 +137,16 @@ window.TERRA_DATA_BUILD.run("world/facilities", function ($terraData, $define, $
         conf: "S",
         references: ["SRC_FACILITY_TW", "SRC_FACILITY_PODENCO"],
         st: ["児童", "少年", "青年"],
-        need: ["就学中", "学び舎の通常授業が制限中"],
+        need: ["就学中"],
+        show: s => {
+          const current=educationMigrationCurrent(s);
+          if(!current)return false;
+          const state=educationSchoolStatusAt(s,current.offering.id,s.year,s.mo);
+          return !!state && state.teachingEquivalent<1;
+        },
         cd: 4,
         w: 0.9,
-        t: "通っている学び舎で教室が閉まる日が増え、集会所の隅や空き部屋を借りて細々と授業が行われるようになった。いつ元の教室へ戻れるのかは、先生にも分からないらしい。",
+        t: "通っている学校で授業を開けない日が増えた。校門には休止と教材配布の知らせが貼られ、別の部屋で教えてもらえるのか、先生もまだ確かめているという。",
         c: [
           $terraData.K("配られたプリントや教科書を家で繰り返し読む", {}, [
             1,
@@ -156,7 +162,7 @@ window.TERRA_DATA_BUILD.run("world/facilities", function ($terraData, $define, $
           ]),
           $terraData.K("先生に、次に集まれる場所や質問できる時間を尋ねる", {}, [
             1,
-            "片づけをしていた先生に声をかけると、週に二度だけ別の部屋で質問を受け付けると教えてくれた。",
+            "片づけをしていた先生に声を掛け、質問を受け付けられる日と場所を尋ねた。予定が分かれば改めて知らせてくれるという。",
             {
               rl: 1,
               facilityAction: {
@@ -185,7 +191,16 @@ window.TERRA_DATA_BUILD.run("world/facilities", function ($terraData, $define, $
         conf: "S",
         references: ["SRC_FACILITY_TW"],
         st: ["児童", "少年", "青年"],
-        need: ["就学中", "学び舎の授業が再開した"],
+        need: ["就学中"],
+        show: s => {
+          const current=educationMigrationCurrent(s);
+          if(!current||!(s.mo>=1&&s.mo<=12))return false;
+          const now=educationSchoolStatusAt(s,current.offering.id,s.year,s.mo),
+            before=educationSchoolStatusAt(s,current.offering.id,
+              s.mo===1?s.year-1:s.year,s.mo===1?12:s.mo-1);
+          return !!now && !!before && now.teachingEquivalent>0 &&
+            before.teachingEquivalent<now.teachingEquivalent;
+        },
         cd: 6,
         w: 0.92,
         t: "ようやく学び舎の扉が開き、いつもの教室に机が並んだ。黒板の前に立った先生は『休みの前の続きから始める』と言ったが、教科書を開くとどこまで習ったのかすっかり曖昧になっていた。",
