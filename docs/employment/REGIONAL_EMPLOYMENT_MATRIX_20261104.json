@@ -1,0 +1,1065 @@
+{
+  "schema": "terra-regional-occupation-model",
+  "version": "design-v0.1",
+  "asOf": "2026-11-04",
+  "ref": "fix/historical-event-scope-and-delivery",
+  "status": "設計仮説・未実装。テラの人口/産業統計ではない",
+  "regions": [
+    {
+      "region": "炎国",
+      "sectorTiers": {
+        "AGR": 3,
+        "MIN": 2,
+        "MFG": 3,
+        "LOG": 3,
+        "COM": 3,
+        "CIV": 3,
+        "MIL": 2,
+        "MED": 2,
+        "EDU": 2,
+        "SCI": 2,
+        "CRE": 2,
+        "REL": 2,
+        "REC": 2
+      },
+      "evidenceSummary": "官僚制・農業・都市工業・馳道網の併存。地方差が大きい。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Yan/Overview",
+      "specificityCaution": "内地の役所・天師、農業都市、軍事境界を分ける"
+    },
+    {
+      "region": "龍門",
+      "sectorTiers": {
+        "AGR": 0,
+        "MIN": 0,
+        "MFG": 2,
+        "LOG": 3,
+        "COM": 3,
+        "CIV": 3,
+        "MIL": 3,
+        "MED": 2,
+        "EDU": 2,
+        "SCI": 2,
+        "CRE": 3,
+        "REL": 1,
+        "REC": 1
+      },
+      "evidenceSummary": "自治的商業都市、物流・警務・仲介と旧スラムの不均衡。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Lungmen",
+      "specificityCaution": "単一の都市・地域登録。炎国農村の率を継承しない"
+    },
+    {
+      "region": "ヴィクトリア",
+      "sectorTiers": {
+        "AGR": 2,
+        "MIN": 2,
+        "MFG": 3,
+        "LOG": 3,
+        "COM": 3,
+        "CIV": 3,
+        "MIL": 3,
+        "MED": 2,
+        "EDU": 3,
+        "SCI": 2,
+        "CRE": 2,
+        "REL": 1,
+        "REC": 2
+      },
+      "evidenceSummary": "大量生産・重工・軍・金融、貴族統治と工業地区の格差。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Victoria/Overview",
+      "specificityCaution": "1098年ロンディニウムの直接・間接の就労影響を区別"
+    },
+    {
+      "region": "ウルサス",
+      "sectorTiers": {
+        "AGR": 1,
+        "MIN": 3,
+        "MFG": 3,
+        "LOG": 2,
+        "COM": 2,
+        "CIV": 3,
+        "MIL": 3,
+        "MED": 1,
+        "EDU": 2,
+        "SCI": 2,
+        "CRE": 2,
+        "REL": 1,
+        "REC": 2
+      },
+      "evidenceSummary": "採鉱・軍需・製錬・国境軍務。徴用・強制配属は自由雇用に計上しない。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Ursus/Overview",
+      "specificityCaution": "チェルノボーグ1096年以降の被災を都市別に保持"
+    },
+    {
+      "region": "ラテラーノ",
+      "sectorTiers": {
+        "AGR": 3,
+        "MIN": 2,
+        "MFG": 2,
+        "LOG": 3,
+        "COM": 3,
+        "CIV": 3,
+        "MIL": 2,
+        "MED": 3,
+        "EDU": 3,
+        "SCI": 2,
+        "CRE": 3,
+        "REL": 3,
+        "REC": 1
+      },
+      "evidenceSummary": "公証人役場・宗教・精密加工・菓子・交易。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Laterano/Overview",
+      "specificityCaution": "市民資格、入域条件、銃器の専門職審査を分離"
+    },
+    {
+      "region": "カジミエーシュ",
+      "sectorTiers": {
+        "AGR": 3,
+        "MIN": 1,
+        "MFG": 2,
+        "LOG": 3,
+        "COM": 3,
+        "CIV": 2,
+        "MIL": 2,
+        "MED": 2,
+        "EDU": 2,
+        "SCI": 1,
+        "CRE": 3,
+        "REL": 1,
+        "REC": 1
+      },
+      "evidenceSummary": "金融・企業騎士・興行・商業都市と貧しい農村。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Kazimierz/Overview",
+      "specificityCaution": "競技騎士/従軍騎士/裏方/警備は別職務"
+    },
+    {
+      "region": "クルビア",
+      "sectorTiers": {
+        "AGR": 2,
+        "MIN": 3,
+        "MFG": 3,
+        "LOG": 3,
+        "COM": 3,
+        "CIV": 3,
+        "MIL": 3,
+        "MED": 3,
+        "EDU": 3,
+        "SCI": 3,
+        "CRE": 3,
+        "REL": 1,
+        "REC": 2
+      },
+      "evidenceSummary": "研究企業・先端技術・保険・物流・開拓・PMC。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Columbia/Overview",
+      "specificityCaution": "研究所やBSWを全国・全地区の通常雇用主にしない"
+    },
+    {
+      "region": "極東",
+      "sectorTiers": {
+        "AGR": 2,
+        "MIN": 1,
+        "MFG": 3,
+        "LOG": 2,
+        "COM": 3,
+        "CIV": 2,
+        "MIL": 3,
+        "MED": 2,
+        "EDU": 2,
+        "SCI": 2,
+        "CRE": 3,
+        "REL": 3,
+        "REC": 2
+      },
+      "evidenceSummary": "南部の電子・娯楽、北部の軍需と武家、南北統治差。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Higashi/Overview",
+      "specificityCaution": "北院/南院・戦時・民間・忍者等の区分と年代"
+    },
+    {
+      "region": "イベリア",
+      "sectorTiers": {
+        "AGR": 1,
+        "MIN": 1,
+        "MFG": 1,
+        "LOG": 1,
+        "COM": 1,
+        "CIV": 2,
+        "MIL": 2,
+        "MED": 1,
+        "EDU": 1,
+        "SCI": 1,
+        "CRE": 1,
+        "REL": 2,
+        "REC": 3
+      },
+      "evidenceSummary": "大静謐以後の港湾衰退、配給・沿岸警備・審問・復興。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Iberia/Overview",
+      "specificityCaution": "黄金時代の港湾・航海職を現在の通常職に残さない"
+    },
+    {
+      "region": "シラクーザ",
+      "sectorTiers": {
+        "AGR": 1,
+        "MIN": 1,
+        "MFG": 1,
+        "LOG": 2,
+        "COM": 3,
+        "CIV": 2,
+        "MIL": 2,
+        "MED": 2,
+        "EDU": 2,
+        "SCI": 1,
+        "CRE": 2,
+        "REL": 2,
+        "REC": 1
+      },
+      "evidenceSummary": "輸入・サービス・医療・金融/裏社会と家族事業。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Siracusa/Overview",
+      "specificityCaution": "ファミリーの組織所属を一般就職へ自動換算しない"
+    },
+    {
+      "region": "サルゴン",
+      "sectorTiers": {
+        "AGR": 3,
+        "MIN": 2,
+        "MFG": 1,
+        "LOG": 2,
+        "COM": 2,
+        "CIV": 1,
+        "MIL": 3,
+        "MED": 1,
+        "EDU": 1,
+        "SCI": 1,
+        "CRE": 1,
+        "REL": 3,
+        "REC": 2
+      },
+      "evidenceSummary": "農牧・部族の採集・商隊・アミール支配の局地差。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Sargon/Overview",
+      "specificityCaution": "砂漠・熱帯雨林・都市・アカフラを別生活圏"
+    },
+    {
+      "region": "カズデル",
+      "sectorTiers": {
+        "AGR": 2,
+        "MIN": 2,
+        "MFG": 2,
+        "LOG": 1,
+        "COM": 1,
+        "CIV": 1,
+        "MIL": 3,
+        "MED": 1,
+        "EDU": 1,
+        "SCI": 1,
+        "CRE": 1,
+        "REL": 3,
+        "REC": 3
+      },
+      "evidenceSummary": "傭兵・手工業・物々交換と中央都市の工業化・再建。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Kazdel/Overview",
+      "specificityCaution": "中央都市の工場を全土の一般求人と扱わない"
+    },
+    {
+      "region": "サーミ",
+      "sectorTiers": {
+        "AGR": 3,
+        "MIN": 0,
+        "MFG": 0,
+        "LOG": 1,
+        "COM": 1,
+        "CIV": 0,
+        "MIL": 2,
+        "MED": 0,
+        "EDU": 0,
+        "SCI": 1,
+        "CRE": 1,
+        "REL": 3,
+        "REC": 2
+      },
+      "evidenceSummary": "狩猟採集・氏族伝承・雪祀・境界警戒と南部観光。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Sami/Overview",
+      "specificityCaution": "共同体労働を無給＝無職にしない"
+    },
+    {
+      "region": "リターニア",
+      "sectorTiers": {
+        "AGR": 2,
+        "MIN": 1,
+        "MFG": 2,
+        "LOG": 2,
+        "COM": 2,
+        "CIV": 3,
+        "MIL": 2,
+        "MED": 2,
+        "EDU": 3,
+        "SCI": 3,
+        "CRE": 3,
+        "REL": 3,
+        "REC": 1
+      },
+      "evidenceSummary": "音楽・アーツ研究・宮廷・貴族領の工業と農村。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Leithanien/Overview",
+      "specificityCaution": "実職業に必要な課程資格/個人アーツと家柄を分離"
+    },
+    {
+      "region": "イェラグ",
+      "sectorTiers": {
+        "AGR": 3,
+        "MIN": 2,
+        "MFG": 2,
+        "LOG": 2,
+        "COM": 2,
+        "CIV": 1,
+        "MIL": 2,
+        "MED": 1,
+        "EDU": 1,
+        "SCI": 1,
+        "CRE": 2,
+        "REL": 3,
+        "REC": 2
+      },
+      "evidenceSummary": "氏族農牧・工房・宗教、カランド貿易の物流/工業化。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Kjerag",
+      "specificityCaution": "鉄道と観光業は開放・建設時期を持つ"
+    },
+    {
+      "region": "レム・ビリトン",
+      "sectorTiers": {
+        "AGR": 1,
+        "MIN": 3,
+        "MFG": 3,
+        "LOG": 3,
+        "COM": 2,
+        "CIV": 1,
+        "MIL": 2,
+        "MED": 2,
+        "EDU": 1,
+        "SCI": 2,
+        "CRE": 1,
+        "REL": 1,
+        "REC": 3
+      },
+      "evidenceSummary": "源石採掘・鉱山工学・移動都市建設・運搬。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Rim_Billiton/Overview",
+      "specificityCaution": "稼働中鉱山・危険坑道・現場の安全と免許を区別"
+    },
+    {
+      "region": "ボリバル",
+      "sectorTiers": {
+        "AGR": 3,
+        "MIN": 3,
+        "MFG": 2,
+        "LOG": 2,
+        "COM": 2,
+        "CIV": 1,
+        "MIL": 3,
+        "MED": 1,
+        "EDU": 1,
+        "SCI": 1,
+        "CRE": 2,
+        "REL": 2,
+        "REC": 2
+      },
+      "evidenceSummary": "農園・採鉱・複数軍閥とドッソレス観光。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Bol%C3%ADvar/Overview",
+      "specificityCaution": "ドッソレスだけを全国の就労環境へ広げない"
+    },
+    {
+      "region": "シエスタ",
+      "sectorTiers": {
+        "AGR": 1,
+        "MIN": 1,
+        "MFG": 1,
+        "LOG": 3,
+        "COM": 3,
+        "CIV": 2,
+        "MIL": 1,
+        "MED": 2,
+        "EDU": 2,
+        "SCI": 2,
+        "CRE": 3,
+        "REL": 1,
+        "REC": 3
+      },
+      "evidenceSummary": "観光・音楽祭・観測、噴火後は移動都市の交易・物流へ転換。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Siesta/Overview",
+      "specificityCaution": "1097～1099の旧市街/新市街と違法採掘の扱いに注意"
+    },
+    {
+      "region": "ミノス",
+      "sectorTiers": {
+        "AGR": 3,
+        "MIN": 1,
+        "MFG": 1,
+        "LOG": 2,
+        "COM": 2,
+        "CIV": 2,
+        "MIL": 2,
+        "MED": 2,
+        "EDU": 2,
+        "SCI": 1,
+        "CRE": 3,
+        "REL": 3,
+        "REC": 1
+      },
+      "evidenceSummary": "農業・織物・酒造・英雄競技・神殿/都市共同体。",
+      "evidenceLink": "https://arknights.wiki.gg/wiki/Minos/Overview",
+      "specificityCaution": "英雄競技者の奉納・商業興行・普通職の契約を分ける"
+    }
+  ],
+  "sectorLabels": {
+    "AGR": "農漁業・牧畜・採集",
+    "MIN": "鉱山・採掘・選鉱",
+    "MFG": "製造・整備・建設",
+    "LOG": "交通・運搬・流通",
+    "COM": "商業・金融・宿泊・観光",
+    "CIV": "行政・司法・事務",
+    "MIL": "軍務・警察・警備・傭兵",
+    "MED": "医療・福祉",
+    "EDU": "教育・研修",
+    "SCI": "学術・源石アーツ・研究",
+    "CRE": "芸能・文化・競技",
+    "REL": "宗教・氏族・共同体",
+    "REC": "天災観測・避難・復興"
+  },
+  "tierInterpretation": {
+    "0": "通常生活圏では希少・専門拠点を要する可能性",
+    "1": "一部地区に存在する可能性",
+    "2": "比較的よく存在する可能性",
+    "3": "代表的・幅広い存在を想定"
+  },
+  "baselinePresenceProbabilityDesign": {
+    "0": 0.04,
+    "1": 0.2,
+    "2": 0.55,
+    "3": 0.85
+  },
+  "interpretation": "一つの標準的な労働生活圏に当該部門の仕事機会が存在する、という固定世界抽選の暫定パラメータ。人数・就業率・応募率ではなく、地区補正と年代運営の前に使う相対基準。0段階でも絶対禁止ではない。",
+  "jobSectorCandidateMapping": [
+    {
+      "jobId": 0,
+      "sectorCandidates": [],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 1,
+      "sectorCandidates": [
+        "AGR"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 2,
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 3,
+      "sectorCandidates": [
+        "MIN"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 4,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 5,
+      "sectorCandidates": [
+        "COM"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 6,
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 7,
+      "sectorCandidates": [
+        "MFG",
+        "SCI"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 8,
+      "sectorCandidates": [
+        "MED",
+        "SCI"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 9,
+      "sectorCandidates": [
+        "REL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 10,
+      "sectorCandidates": [
+        "MIL",
+        "CRE"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 11,
+      "sectorCandidates": [
+        "SCI",
+        "MFG"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 12,
+      "sectorCandidates": [
+        "EDU"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 13,
+      "sectorCandidates": [
+        "CRE"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 14,
+      "sectorCandidates": [
+        "MIL",
+        "LOG"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 15,
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 16,
+      "sectorCandidates": [
+        "LOG"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 17,
+      "sectorCandidates": [
+        "COM"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 18,
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 19,
+      "sectorCandidates": [
+        "MFG",
+        "REC"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 20,
+      "sectorCandidates": [
+        "MED"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 21,
+      "sectorCandidates": [
+        "CIV",
+        "COM"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 22,
+      "sectorCandidates": [
+        "MFG",
+        "COM"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 23,
+      "sectorCandidates": [
+        "AGR"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 24,
+      "sectorCandidates": [
+        "COM"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 25,
+      "sectorCandidates": [
+        "CRE",
+        "COM"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 26,
+      "sectorCandidates": [
+        "REL",
+        "AGR"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 27,
+      "sectorCandidates": [
+        "REC",
+        "MIN"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 28,
+      "sectorCandidates": [
+        "LOG",
+        "COM"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 29,
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 30,
+      "sectorCandidates": [
+        "MED",
+        "SCI"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 31,
+      "sectorCandidates": [
+        "MED",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 32,
+      "sectorCandidates": [
+        "CRE",
+        "COM"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 33,
+      "sectorCandidates": [
+        "LOG"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 34,
+      "sectorCandidates": [
+        "EDU",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 35,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 36,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 37,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 38,
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 39,
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 40,
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 41,
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 42,
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 43,
+      "sectorCandidates": [
+        "SCI",
+        "CIV"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 44,
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 45,
+      "sectorCandidates": [
+        "COM"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 46,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 47,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 48,
+      "sectorCandidates": [
+        "MIL",
+        "SCI"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 49,
+      "sectorCandidates": [
+        "REL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 50,
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 51,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 52,
+      "sectorCandidates": [
+        "MIL",
+        "MIN"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 53,
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 54,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 55,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 56,
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 57,
+      "sectorCandidates": [
+        "MFG",
+        "LOG"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 58,
+      "sectorCandidates": [
+        "MIL",
+        "SCI"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 59,
+      "sectorCandidates": [
+        "CRE",
+        "SCI"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 60,
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 61,
+      "sectorCandidates": [
+        "REL",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 62,
+      "sectorCandidates": [
+        "AGR",
+        "REC"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 63,
+      "sectorCandidates": [
+        "CRE",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 64,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 65,
+      "sectorCandidates": [
+        "COM",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 66,
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 67,
+      "sectorCandidates": [
+        "SCI",
+        "REC"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 68,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 69,
+      "sectorCandidates": [
+        "MIL",
+        "REL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 70,
+      "sectorCandidates": [
+        "REL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 71,
+      "sectorCandidates": [
+        "MIL",
+        "REC"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 72,
+      "sectorCandidates": [
+        "MIL",
+        "LOG"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 73,
+      "sectorCandidates": [
+        "REL",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 74,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 75,
+      "sectorCandidates": [
+        "MFG",
+        "REL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 76,
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 77,
+      "sectorCandidates": [
+        "REC",
+        "SCI"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 78,
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 79,
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 80,
+      "sectorCandidates": [
+        "MIN",
+        "MFG"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 81,
+      "sectorCandidates": [
+        "CRE",
+        "MIL"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    },
+    {
+      "jobId": 82,
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "classification": "設計上の便宜的な対応。実際の求人・適格証拠は別に評価する"
+    }
+  ],
+  "sources": {
+    "secondary": "Arknights Terra Wiki の各地域Overview、リンクは regions[].evidenceLink。各概要はゲーム設定の二次整理であり個別制度の確定根拠には原作照合を要する。",
+    "priorLocal": "siryou/テラ国家別_萌娘百科横断補完台帳_20261028.md（萌娘百科転載・日本語表記注意の調査メモ）",
+    "officialBook": "https://yostar.store/products/arkninght-terra-a-journey-the-arknights-official-lore-compendium （公式設定集の存在・範囲の確認に使用。本文全ページの照合は未実施）",
+    "canonReader": "https://050644zf.github.io/ArknightsStoryTextReader/?s=ja_JP （日本語原文の個別照合候補）"
+  }
+}
