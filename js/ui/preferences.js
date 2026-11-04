@@ -1,6 +1,6 @@
 // Display preferences never belong to a life or its random stream.
 const UI_PREFERENCES_KEY = "terra-ui-preferences-v1";
-const UI_DEFAULTS = Object.freeze({ version: 1, theme: "auto", spacing: "compact", motion: "auto", activeTab: "c", pauseInLedger: true });
+const UI_DEFAULTS = Object.freeze({ version: 1, theme: "auto", spacing: "compact", motion: "auto", activeTab: "c", pauseInLedger: true,choiceResume:"legacy",pauseImportant:false,educationNotices:"compact" });
 let UI_PREFERENCES = { ...UI_DEFAULTS };
 function readUIPreferences() {
   let value = {};
@@ -8,6 +8,9 @@ function readUIPreferences() {
   let oldTheme;
   try { oldTheme = localStorage.getItem("terra-theme"); } catch {}
   return {
+    choiceResume:["legacy","resume","pause"].includes(value.choiceResume)?value.choiceResume:"legacy",
+    pauseImportant:typeof value.pauseImportant==="boolean"?value.pauseImportant:false,
+    educationNotices:["compact","detailed"].includes(value.educationNotices)?value.educationNotices:"compact",
     version: 1,
     theme: ["auto", "light", "dark"].includes(value.theme) ? value.theme :
       ["auto", "light", "dark"].includes(oldTheme) ? oldTheme : "auto",
@@ -18,7 +21,7 @@ function readUIPreferences() {
   };
 }
 function setUIPreference(key, value) {
-  const allowed = { theme: ["auto", "light", "dark"], spacing: ["compact", "standard"], motion: ["auto", "full", "reduced"], activeTab: ["l", "c", "r"], pauseInLedger: [true, false] };
+  const allowed = { theme: ["auto", "light", "dark"], spacing: ["compact", "standard"], motion: ["auto", "full", "reduced"], activeTab: ["l", "c", "r"], pauseInLedger: [true, false],choiceResume:["legacy","resume","pause"],pauseImportant:[true,false],educationNotices:["compact","detailed"] };
   if (!allowed[key]?.includes(value)) return;
   if (UI_PREFERENCES[key] === value) return;
   UI_PREFERENCES = { ...UI_PREFERENCES, [key]: value };

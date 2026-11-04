@@ -40,6 +40,7 @@ function advanceAnnualInfection(s, services, f) {
       s.fl.dg = 1;
       s.infection || (s.infection = { year: s.year, cause: "接触経路不明", basis: "event-unclassified" });
       s.infection.diagnosedYear = s.year;
+      importantLifeNotification(s,"diagnosis");
       s.infection.diagnosisBasis = "年次の診察・検査機会（ゲーム上の仮定）";
       ori.reviewDueYear = null;
       services.oriRecord(s, "diagnosis", "検査で鉱石病と診断された", { certainty: "model-diagnostic" });

@@ -46,7 +46,9 @@ function applyInfectionAndContactEffects(e, s) {
   }
   if (e.fl?.dg === 1 && s.inf) {
     s.infection || (s.infection = { year: s.year, cause: "感染経路未確認", basis: "event-unclassified" });
+    const newlyDiagnosed=s.infection.diagnosedYear==null;
     s.infection.diagnosedYear ??= s.year;
+    if(newlyDiagnosed)importantLifeNotification(s,"diagnosis");
     s.infection.diagnosisBasis ||= "イベントで確認した検査・診断";
     oriState(s).reviewDueYear = null;
     oriRecord(s, "diagnosis", "検査で鉱石病と診断された");

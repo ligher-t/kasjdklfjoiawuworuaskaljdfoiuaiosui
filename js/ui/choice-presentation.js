@@ -34,6 +34,11 @@ function openUIDialog(id, focusTarget) {
 function closeUIDialog(id) {
   UI_SELECT_ESCAPE_PRIMED = null;
   $(id).hidden = true;
+  if(id==='ui-settings'){
+    const previousSpeed=UI_SETTINGS_RESUME_SPEED;UI_SETTINGS_RESUME_SPEED=null;
+    if(S&&!S.dead&&!S.ev&&!S.importantNotificationPause&&Number.isInteger(previousSpeed)&&
+       !(typeof TERMINAL_LEDGER!=='undefined'&&TERMINAL_LEDGER&&UI_PREFERENCES.pauseInLedger))play(previousSpeed);
+  }
   syncUIDialogs();
   const top = topUIDialog(), previous = UI_FOCUS_RETURNS.get(id);
   UI_FOCUS_RETURNS.delete(id);
@@ -41,7 +46,11 @@ function closeUIDialog(id) {
   else if (top) (uiFocusable(top)[0] || top).focus();
   else $("stt")?.focus();
 }
-function openUISettings() { openUIDialog("ui-settings", $("ui-theme")); }
+let UI_SETTINGS_RESUME_SPEED=null;
+function openUISettings() {
+  if($("ui-settings").hidden){UI_SETTINGS_RESUME_SPEED=sp;if(S?.ev&&!Number.isInteger(S.choiceReturnSpeed))S.choiceReturnSpeed=sp;play(0); }
+  renderAdvancedSettings();openUIDialog("ui-settings", $("ui-theme"));
+}
 function syncChoiceControls() {
   if (HL) return;
   const pending = !!S?.ev;

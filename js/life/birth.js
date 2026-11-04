@@ -399,6 +399,7 @@ function born(birth = {}) {
     S.ac = R() < P("infection.acuteShare");
     S.infection = { year: S.year, cause: "出生時から保有（結晶曝露の経路未記録）" };
   }
+  S.playSettings=newLifePlaySettings();
   acc = 0;
   replaceWorldKnowledge(S.known);
   const birthPlace = `${g.n}${local.city ? `・${local.city}` : ""}`;

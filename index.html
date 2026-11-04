@@ -59,7 +59,7 @@
 <p>季節の移ろいや出来事のなかで振る舞いを選び、ときには足を止めて、体調や仕事、家族、街の空気を確かめることができます。</p>
 <p>ロドスやレユニオンといった組織と関わるかどうかは、本人の素養や居場所、人の縁、そして時代のうねりによって変わります。大きな組織と交わらないまま、市井の片隅で名もない一生を全うすることもまた、一つの確かな人生です。</p>
 <dl class="fx"><dt>進む速さ</dt><dd><div class="sg" aria-label="進む速さ"></div></dd></dl>
-<button type="button" onclick="openUISettings()">表示設定</button>
+<button type="button" onclick="openUISettings()">設定</button>
 </details>
 <details class="ui-title-notes"><summary>世界設定と数値の前提</summary>
 <p>出生年はテラ暦1000〜1100年、初期値は1077年です。鉱石病は出生後の生活で判定します。通貨は龍門幣換算で、収入・物価はゲーム独自の推計です。</p>
@@ -113,7 +113,7 @@
 <button id="terminal-ledger-exit" type="button" hidden onclick="closeLifeLedger()" aria-controls="life-journal-panel" title="資料を閉じて元の閲覧位置へ戻る">← 人生の記録へ</button>
 <button id="terminal-ledger-choice" type="button" hidden onclick="resumePendingChoiceFromLedger()" aria-controls="md" title="保留中の選択画面へ戻る">選択へ戻る</button>
 <button id="terminal-status-toggle" type="button" aria-expanded="false" aria-controls="cr" onclick="toggleTerminalStatusDrawer()">暮らしの概況</button>
-<button type="button" onclick="openUISettings()">表示設定</button>
+<button type="button" onclick="openUISettings()">設定</button>
 <button type="button" onclick="openResumeManager()">保存枠</button>
 </div>
 </header>
@@ -195,13 +195,14 @@
 </div>
 <div id="resume-manager" hidden role="dialog" aria-modal="true" aria-labelledby="resume-title"><section class="card"><button type="button" id="resume-close" style="float:right">閉じる</button><p class="ui-register" aria-hidden="true">RECORD STORAGE / RESUME</p><h2 id="resume-title">中断データの保存枠</h2><p class="nt">自動保存とは別に、選択待ちを含む現在の状態を3枠へ保存できます。保存枠はこのブラウザー内に置かれ、JSONとして書き出し・読み込みできます。</p><div id="resume-slots" class="resume-slots"></div><div class="resume-import"><label>読み込み先 <select id="resume-import-target"><option value="0">枠1</option><option value="1">枠2</option><option value="2">枠3</option></select></label><button id="resume-import-button" type="button">保存データ（JSON）を読み込む</button><input id="resume-import-file" type="file" accept="application/json,.json" hidden></div><p id="resume-status" class="nt resume-status" aria-live="polite"></p></section></div>
 <div id="ui-settings" hidden role="dialog" aria-labelledby="ui-settings-title" tabindex="-1"><section class="card ui-settings-panel">
-<p class="ui-register" aria-hidden="true">TERMINAL / DISPLAY</p><div class="ui-dialog-heading"><h2 id="ui-settings-title">表示設定</h2><button type="button" onclick="closeUIDialog('ui-settings')">閉じる</button></div>
+<p class="ui-register" aria-hidden="true">TERMINAL / DISPLAY</p><div class="ui-dialog-heading"><h2 id="ui-settings-title">設定</h2><button type="button" onclick="closeUIDialog('ui-settings')">閉じる</button></div>
 <label for="ui-theme">テーマ</label><select id="ui-theme" data-ui-preference="theme"><option value="auto">自動</option><option value="light">ライト</option><option value="dark">ダーク</option></select>
 <label for="ui-spacing">表示間隔</label><select id="ui-spacing" data-ui-preference="spacing"><option value="compact">コンパクト</option><option value="standard">標準</option></select>
 <label for="ui-motion">画面の動き</label><select id="ui-motion" data-ui-preference="motion" aria-describedby="ui-motion-note"><option value="auto">システムに合わせる</option><option value="full">演出を使う</option><option value="reduced">動きを抑える</option></select>
 <p id="ui-motion-note" class="nt ui-settings-explain">端末や資料を開く短い演出です。通常はシステムの設定に従い、「演出を使う」を選ぶと、この画面で有効にします。</p>
 <label class="ui-settings-toggle" for="ui-ledger-auto-pause"><input id="ui-ledger-auto-pause" type="checkbox" checked> 台帳の閲覧中は進行を一時停止する</label>
 <p class="nt ui-settings-explain">通常は台帳を開くと停止し、閉じると閲覧前の速度に戻ります。オフにすると閲覧中も進行します。</p>
+<details id="advanced-settings"><summary>高度な設定</summary><div id="advanced-settings-controls"></div></details>
 </section></div>
 <script defer src="rules.js"></script>
 <script defer src="events.js"></script>
@@ -386,6 +387,7 @@
 <script defer src="js/world/policy.js"></script>
 <script defer src="js/core/session-state.js"></script>
 <script defer src="js/core/state.js"></script>
+<script defer src="js/core/play-settings.js"></script>
   <script defer src="js/education/finance.js"></script>
   <script defer src="js/education/access-identity.js"></script>
   <script defer src="js/education/dependents.js"></script>
@@ -393,6 +395,7 @@
   <script defer src="js/education/attendance.js"></script>
 <script defer src="js/education/lifecycle.js"></script>
 <script defer src="js/education/cases.js"></script>
+<script defer src="js/education/automation.js"></script>
 <script defer src="js/education/migration.js"></script>
 <script defer src="js/education/services.js"></script>
 <script defer src="js/education/observation.js"></script>
@@ -403,6 +406,7 @@
 <script defer src="js/family/household-view.js"></script>
 <script defer src="js/ui/chart.js"></script>
 <script defer src="js/ui/preferences.js"></script>
+<script defer src="js/ui/advanced-settings.js"></script>
 <script defer src="js/ui/choice-presentation.js"></script>
 <script defer src="js/save/slots.js"></script>
 <script defer src="js/ui/records.js"></script>

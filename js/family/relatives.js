@@ -746,6 +746,7 @@ function advanceParentWorkLives(s) {
       parent.workShare = 0;
       parent.healthUpdatedYear = s.year;
       notifyParentOripathyDeath(s,parent,key);
+      importantLifeNotification(s,"parent-death");
       continue;
     }
     const floor = P("family.parentWorkShareFloor"),

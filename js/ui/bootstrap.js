@@ -354,8 +354,8 @@ function paintYearProgress(value) {
 setInterval(() => {
   if (!S || S.dead || S.ev || !SPD[sp]) return;
   acc += (SPD[sp] * 100) / YMS;
-  while (S.q.length && acc >= S.q[0] && !S.ev && !S.dead) slot(S.q.shift());
-  if (acc >= 1 && !S.ev && !S.dead) {
+  while (S.q.length && acc >= S.q[0] && !S.ev && !S.dead && SPD[sp]) slot(S.q.shift());
+  if (acc >= 1 && !S.ev && !S.dead && SPD[sp]) {
     acc -= 1;
     tick();
   }
@@ -363,6 +363,7 @@ setInterval(() => {
   $("mo").textContent = Math.floor(acc * CALENDAR_MONTHS) + 1 + "月";
 }, 100);
 initializeUIPreferences();
+initializeAdvancedSettings();
 try {
   const tb = document.getElementById("tb");
   new ResizeObserver(() =>

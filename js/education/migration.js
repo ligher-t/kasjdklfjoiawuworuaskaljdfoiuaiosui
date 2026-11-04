@@ -126,6 +126,7 @@ function educationP17ExternalBasis(s,review) {
 }
 function educationP17ExtraEligible(s,review,letter=null) {
   if(!EDUCATION_P17_EXTRA.has(review))return false;
+  if(EDUCATION_P17_CASE_SCENES.has(review)&&educationAutoCase(s))return false;
   if(EDUCATION_P17_REGIONS[review] &&
      s.res?.n!==EDUCATION_P17_REGIONS[review])return false;
   const current=educationMigrationCurrent(s),item=educationActiveCase(s),

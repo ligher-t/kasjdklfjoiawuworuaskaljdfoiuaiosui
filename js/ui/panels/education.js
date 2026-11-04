@@ -60,13 +60,16 @@ function renderEducationPanel(s) {
       signature=JSON.stringify([disabled,used,active?.id||active?.enroll?.id,
         s.year,s.mo,s.educationServices?.inquiries,s.educationMigration?.records?.length,
         s.educationPath?.status,s.educationTransferRequests,s.educationAccess?.knownOfferings,
-        educationActiveCase(s)?.previewOfferingId,travelCurrentJourney(s)?.id]);
+        educationActiveCase(s)?.previewOfferingId,travelCurrentJourney(s)?.id,s.playSettings]);
     if(desk.dataset.educationSignature!==signature){
       desk.replaceChildren();
       const button=(label,action,blocked)=>{
         const b=document.createElement("button");b.type="button";b.textContent=label;
         b.disabled=blocked;b.addEventListener("click",()=>educationDeskClick(action));desk.appendChild(b);
       };
+      const automated=educationAutoCase(s);
+      if(automated){const note=document.createElement('p');note.textContent='希望に沿って進学の手続を自動で進めています。設定から手動に戻せます。';desk.appendChild(note);}
+      if(!automated){
       if(active)button("募集先・通学・住まいの条件を照会", "inquire",disabled);
       const application=educationActiveCase(s),world=s.world.educationWorld,
         offering=world.offerings[application?.offeringId],area=world.areas[world.campuses[offering?.campusId]?.educationAreaId];
@@ -86,6 +89,7 @@ function renderEducationPanel(s) {
         if(entry.decision==="保留")continue;
         const event=EV.find(x=>x.id===entry.eventId);
         if(event&&educationMigrationEligible(s,event.id))button(entry.title,entry.eventId,used);
+      }
       }
       desk.dataset.educationSignature=signature;
     }

@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {spawnSync}=require('node:child_process'),{createHash}=require('node:crypto');
 const runtime=require('./runtime.cjs'),root=path.resolve(__dirname,'..');
 const approved=Object.freeze([
+  "advanced-settings.test.cjs",
   "parent-oripathy-bereavement.test.cjs",
   "v88-history-roaming-completion.test.cjs",
   "p20-education-completion.test.cjs",

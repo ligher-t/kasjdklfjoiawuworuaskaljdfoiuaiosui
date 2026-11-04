@@ -94,7 +94,8 @@ function nextExpiringFollowup(events,s) {
 }
 function sched() {
   const range = S.age < P("events.childSlotAgeLimit") ? P("events.childSlots") : P("events.adultSlots"),
-    n = rnd(range[0], range[1]),
+    settings=lifePlaySettings(S),
+    n = playFrequencyCount(rnd(range[0], range[1]),settings.eventFrequency),
     ceiling = P("events.slotPlacementCeiling"),
     months = Array.from({length: Math.ceil(ceiling * CALENDAR_MONTHS)}, (_, i) => i);
   // A second draw in the same calendar month cannot offer another major
@@ -105,6 +106,10 @@ function sched() {
       upper = Math.min(ceiling * CALENDAR_MONTHS, month + 1);
     return (month + R() * (upper - month)) / CALENDAR_MONTHS;
   }).sort((a, b) => a - b);
+  const normal=S.q.slice(),monthsUsed=new Set(normal.map(x=>Math.floor(x*CALENDAR_MONTHS)+1));
+  const servicePositions=Array.from({length:12},(_,i)=>(i+0.01)/12).filter(x=>!monthsUsed.has(Math.floor(x*12)+1));
+  S.eventSchedule={year:S.year,eventFrequency:settings.eventFrequency,choiceRatio:settings.choiceRatio,servicePositions};
+  S.q.push(...servicePositions);S.q.sort((a,b)=>a-b);
 }
 // Add only the missing opportunities for choices which will permanently
 // expire this year. Never exceed the last available calendar month or change
@@ -147,6 +152,7 @@ function slot(x) {
   ensureLocalityState(s);
   educationReconcileWorldAt(s,s.year,s.mo);
   educationServiceTick(s);
+  advanceAutomaticEducation(s);
   activateHistoricalWorldEvents(s);
   releasePendingHistoricalNews(s);
   reconcileCareerPlacements(s);
@@ -211,7 +217,10 @@ function slot(x) {
     expiringFollowup ||
     mj.find(event=>event.id==="journey_decision_review") ||
     localTimelineChoice ||
-    nextScheduledFollowup(mj,s) || wpk(mj.filter(event => event.pri), s, T) || institutional || (R() < MAJ_PER_SLOT ? wpk(mj, s, T) : null);
+    nextScheduledFollowup(mj,s) || wpk(mj.filter(event => event.pri), s, T) || institutional;
+  const serviceOnly=s.eventSchedule?.year===s.year&&s.eventSchedule.servicePositions.includes(x);
+  if(!e&&serviceOnly)return;
+  if(!e)e=R()<playChoiceChance(s)?wpk(mj,s,T):null;
   if (!e) {
     const inCrisis = isLocationInCrisis(s);
     const r = R(),
@@ -233,6 +242,8 @@ function fire(e, s, T) {
     if (HL) STAT.postDeathFireAttempts++;
     return;
   }
+  if(["dg"].includes(e?.id))importantLifeNotification(s,"diagnosis");
+  if(["family_spouse_death","family_former_spouse_death_notice","family_sibling_bereavement","family_child_bereavement"].includes(e?.id))importantLifeNotification(s,"family-death");
   if (HL) STAT.currentEventId = e?.id || null;
   // A dated scene records a witnessed encounter only when it actually
   // appears in the city to which the historical scene is grounded.
@@ -499,6 +510,7 @@ function ask(e, T, t, before, resumed = false) {
     TRACE_RESOLUTION = { kind: "choice", id: e.id, label: choiceLabel };
     try {
       ap(o[2], routeReserve);
+      advanceAutomaticEducation(s);
       // Record the actual outcome and the relationship's stable participant.
       s.eventOutcomes || (s.eventOutcomes = {});
       const romanceId = romanceIdAtChoice || s.romance?.id || null;
@@ -538,11 +550,17 @@ function ask(e, T, t, before, resumed = false) {
     flushPendingDeathTrace();
     if (!s.dead) {
       rd();
-      if (choiceReturnSpeed !== null) play(choiceReturnSpeed);
+      const choiceResume=typeof UI_PREFERENCES==='undefined'?'legacy':UI_PREFERENCES.choiceResume||'legacy';
+      if(choiceResume==='pause')play(0);
+      else if(!s.importantNotificationPause&&!(typeof TERMINAL_LEDGER!=='undefined'&&TERMINAL_LEDGER&&UI_PREFERENCES.pauseInLedger)&&choiceReturnSpeed!==null)play(choiceReturnSpeed);
       $("stt").focus();
     }
   };
   s.ev = e;
+  if(!HL&&!AU&&typeof UI_PREFERENCES!=='undefined'&&UI_PREFERENCES.choiceResume!=='legacy'){
+    if(!Number.isInteger(s.choiceReturnSpeed))s.choiceReturnSpeed=sp;
+    play(0);
+  }
   if (who == "parent") {
     const target = [s.par?.fa, s.par?.mo].find(parent => parent?.id === s.eventRelativeId),
       options = ab.map((c, index) => ({

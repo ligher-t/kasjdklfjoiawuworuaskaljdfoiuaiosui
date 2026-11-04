@@ -318,6 +318,10 @@ function educationEnd(s,outcome,reason,source=null) {
     recordEducationTransition(s,"preparatory",outcome==="completed"?"finish":"stop",
       source||"formal-preparatory-closure");
   }
+  if(educationAutoStage(s,program)){
+    if(outcome==="completed")educationAutoMessage(s,(EDUCATION_CASE_STAGES[program]||"学校")+"を修了した。");
+    else educationAutoMessage(s,(EDUCATION_CASE_STAGES[program]||"学校")+"での在籍が終了した。"+reason,true);
+  }
   return true;
 }
 // Aid and credit fund the upcoming year; they do not award completed study immediately.

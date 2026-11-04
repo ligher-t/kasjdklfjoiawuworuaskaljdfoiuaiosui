@@ -43,6 +43,8 @@ function educationCaseFinish(s,caseItem,reason) {
   if(!EDUCATION_CASE_TERMINALS.has(reason))throw Error("不正な進路案件の終了理由");
   if(caseItem.status==="resolved")return caseItem;
   if(caseItem.status!=="active")throw Error("終了対象の進路案件がない");
+  const automaticNotice=educationAutoCase(s,caseItem)&&!s.educationAutoRunning&&
+    !["admitted","continued","declined","nonformal-choice","deceased"].includes(reason);
   caseItem.status="resolved";
   caseItem.phase="resolved";
   caseItem.reason=reason;
@@ -56,6 +58,7 @@ function educationCaseFinish(s,caseItem,reason) {
   root.history=root.history.slice(-64);
   if(root.activeCaseId===caseItem.id)root.activeCaseId=null;
   if(s.educationDecision?.caseId===caseItem.id)s.educationDecision=null;
+  if(automaticNotice)educationAutoMessage(s,(EDUCATION_CASE_STAGES[caseItem.stage]||"進学")+"："+educationAutomaticReason(reason),true);
   return caseItem;
 }
 function educationCaseBegin(s,kind,stage=null,tier=1,mode="entry") {
@@ -656,7 +659,7 @@ function educationExpireCases(s,nextYear) {
 }
 function educationCaseNeedsReview(s) {
   const item=educationActiveCase(s);
-  return !!item && item.deadlineYear===s.year &&
+  return !!item && !educationAutoCase(s,item) && item.deadlineYear===s.year &&
     item.stepsUsed<EDUCATION_CASE_MAX_CHOICES &&
     ["planning","application","contract","continuity"].includes(item.phase);
 }

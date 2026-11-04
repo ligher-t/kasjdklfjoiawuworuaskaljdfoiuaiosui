@@ -54,9 +54,10 @@ function markNewLifeLogYear(li) {
     previous.classList.remove("ui-year-start");
   LIFE_LOG_FIRST_VISIBLE = li;
 }
-function L(t) {
+function L(t,options={}) {
   const services = LOG_SERVICES;
   if (services.HL) return;
+  if(services.S?.educationAutoRunning&&typeof UI_PREFERENCES!=="undefined"&&UI_PREFERENCES.educationNotices!=="detailed"&&!options.automationSummary)return;
   const { S } = services,
     year = Number.isInteger(S.year) ? `テラ暦${S.year}年` : "テラ暦・年未記録",
     age = `${Number.isFinite(S.age) ? S.age : "年齢未記録"}歳`,

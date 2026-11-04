@@ -18,6 +18,7 @@ on:
       - 'data/parts/extensions/education-and-later-life/**'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
+      - 'tests/advanced-settings.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
       - 'tests/v88_yan_court_spring_eligibility.test.cjs'
       - 'tests/v88_regional_choice_seasonal_calendar.test.cjs'
@@ -87,6 +88,7 @@ on:
       - 'data/parts/extensions/education-and-later-life/**'
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
+      - 'tests/advanced-settings.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
       - 'tests/v88_yan_court_spring_eligibility.test.cjs'
       - 'tests/v88_regional_choice_seasonal_calendar.test.cjs'
@@ -211,6 +213,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_deadline_coverage_metrics.test.cjs
       - name: Reunion goal and spouse housing long-life regressions
         run: node tools/check-efficient.cjs run v88_long_life_state_reproductions.test.cjs
+      - name: Advanced settings and native education automation
+        run: node tools/check-efficient.cjs run advanced-settings.test.cjs
       - name: Katorga special custody and release lifecycle
         run: node tools/check-efficient.cjs run v88_ursus_katorga_custody_lifecycle.test.cjs
       - name: Delayed followup after actual withdrawal
