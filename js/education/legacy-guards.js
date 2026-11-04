@@ -44,11 +44,13 @@ const EDUCATION_LEGACY_SCENE_REQUIREMENTS=Object.freeze({
 });
 function educationLegacySceneGuard(s,id) {
   if(id==="life_ursus_classmate_contact"){
-    return !!s.educationRecord?.enrollments?.some(e=>{
-      const school=s.world?.educationWorld?.institutions?.[e.institutionId],
-        area=s.world?.educationWorld?.areas?.[school?.homeAreaId];
-      return e.startedYear<=s.year && area?.regionKey==="ウルサス";
-    });
+    const current=educationMigrationCurrent(s),
+      school=s.world?.educationWorld?.institutions?.[current?.m.institutionId],
+      area=s.world?.educationWorld?.areas?.[school?.homeAreaId];
+    return !!current && area?.regionKey==="ウルサス" &&
+      educationLegacySceneGuard(s,"education_school_classroom") &&
+      Object.values(s.world.educationWorld.schoolPeers||{}).some(p=>
+        p.offeringId===current.offering.id && p.status==="enrolled-peer");
   }
   const kind=EDUCATION_LEGACY_SCENE_REQUIREMENTS[id];
   if(!kind)return true;
