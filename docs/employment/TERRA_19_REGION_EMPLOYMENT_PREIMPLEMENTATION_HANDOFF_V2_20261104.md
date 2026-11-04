@@ -1,12 +1,12 @@
 # テラ19地域・就労／企業／生計システム 実装前統合引継ぎ v2.0
 
-2026-11-04。**Draft PR #2の設計資料。ゲームの実装コード・既存イベント・ゲーム進行・セーブ形式は本工程では変更していない。** 元の[TERRA_19_REGION_EMPLOYMENT_INTEGRATED_SPEC_20261104.md](TERRA_19_REGION_EMPLOYMENT_INTEGRATED_SPEC_20261104.md) v1.0を保持し、以下のW01〜W11資料と具体的な移行境界・実装時に要する校閲を一つの入口として定める。
+2026-11-04。**Draft PR #2の設計資料。ゲームの実装コード・既存イベント・ゲーム進行・セーブ形式は本工程では変更していない。** 元の[TERRA_19_REGION_EMPLOYMENT_INTEGRATED_SPEC_20261104.md](TERRA_19_REGION_EMPLOYMENT_INTEGRATED_SPEC_20261104.md) v1.0と先行[W00統合引継ぎ](W00_EMPLOYMENT_PREPARATION_HANDOFF_20261104.md)を保持し、以下のW01〜W11資料と具体的な移行境界・実装時に要する校閲を一つの入口として定める。
 
 ## 1 成果物正本一覧
 
 | 準備 | 正本 | 実施・進行状況 |
 |---|---|---|
-| W01 175イベント | [W01_A175_CHOICE_SEMANTIC_TRIAGE_20261104.json](W01_A175_CHOICE_SEMANTIC_TRIAGE_20261104.json)、[原コード資料 PART01](W01_SOURCE_BRANCH_REVIEW_20261104_PART01.json)～[PART05](W01_SOURCE_BRANCH_REVIEW_20261104_PART05.json) | **175イベント・488選択枝の現コード読取と注意点分類完了**。結果分岐の実行時経路の最終意味裁定は実装時のP0対象 |
+| W01 175イベント | [W01_CODE_BASED_SEMANTIC_FINDINGS_20261104.md](W01_CODE_BASED_SEMANTIC_FINDINGS_20261104.md)、[W01_A175_CHOICE_SEMANTIC_TRIAGE_20261104.json](W01_A175_CHOICE_SEMANTIC_TRIAGE_20261104.json)、[原コード資料 PART01](W01_SOURCE_BRANCH_REVIEW_20261104_PART01.json)～[PART05](W01_SOURCE_BRANCH_REVIEW_20261104_PART05.json) | **175イベント・488選択枝の現コード読取と注意点分類完了**。結果分岐の実行時経路の最終意味裁定は実装時のP0対象 |
 | W02 全職業の入職資格 | [W02_POSITION_QUALIFICATION_MASTER_20261104.json](W02_POSITION_QUALIFICATION_MASTER_20261104.json) | 全83職業の職位・資格、活動形態、世界で必要な職場証拠を定義。資格の実在性は会社ごとに検証 |
 | W03 職場と求人 | [W03_WORKSITE_AND_VACANCY_DESIGN_20261104.md](W03_WORKSITE_AND_VACANCY_DESIGN_20261104.md) | 固定世界の施設、欠員、募集、休業・移転・企業間関係を確定設計 |
 | W04 生涯就労 | [W04_CAREER_LIFECYCLE_FSM_FAMILY_DESIGN_20261104.md](W04_CAREER_LIFECYCLE_FSM_FAMILY_DESIGN_20261104.md) | workCaseと就業episode、初職、失職・転属・家族/旧セーブを確定設計 |
@@ -15,8 +15,8 @@
 | W07 地域分布 | [W07_REGIONAL_DISTRIBUTION_OBSERVATION_20261104.md](W07_REGIONAL_DISTRIBUTION_OBSERVATION_20261104.md) | 全19地域の高存在部門・地理例外・統計分母と仮定の境界を明記 |
 | W08 移動 | [W08_WORK_MOBILITY_GUARDIAN_20261104.md](W08_WORK_MOBILITY_GUARDIAN_20261104.md) | 通勤、面接、出張、旅行、転勤、避難・拘束と契約状態の接続 |
 | W09 情報UI | [W09_EMPLOYMENT_CHOICE_UI_INFORMATION_20261104.md](W09_EMPLOYMENT_CHOICE_UI_INFORMATION_20261104.md) | 実在求人と本人の認知、不可理由、内定・勤務を分離。照会でRNGを消費しない |
-| W10 受入 | [W10_INTEGRATION_ACCEPTANCE_95_CASES_20261104.json](W10_INTEGRATION_ACCEPTANCE_95_CASES_20261104.json) | **95件の具体的な設計上の受入ケース**。19地域+20横断+職場12+FSM12+家計12+移動10+UI10。テスト実行結果ではない |
-| W11 関連イベント・新規草案 | [W11_BCD862_DEPENDENT_EVENT_QUEUE_20261104.json](W11_BCD862_DEPENDENT_EVENT_QUEUE_20261104.json)、[新規10件・全文草案](W11_PROPOSED_10_JOB_EVENTS_PLAYER_FULL_TEXT_20261104.md) | B262+C526+D74の862件を全件読取用候補へ分類。新規10場面20選択肢の本文と後続候補を作成。どちらも実装未済 |
+| W10 受入 | [W10_INTEGRATION_ACCEPTANCE_107_CASES_20261104.json](W10_INTEGRATION_ACCEPTANCE_107_CASES_20261104.json) | **107件の具体的な設計上の受入ケース**。19地域+20横断+職場12+FSM12+家計12+移動10+UI10+既存X12。テスト実行結果ではない |
+| W11 関連イベント・新規草案 | [W11_BCD862_DEPENDENT_EVENT_QUEUE_20261104.json](W11_BCD862_DEPENDENT_EVENT_QUEUE_20261104.json)、[既存36コンセプト](W11_EVENT_GAP_AND_NEW_CONCEPTS_20261104.json)、[新規10件・全文草案](W11_PROPOSED_10_JOB_EVENTS_PLAYER_FULL_TEXT_20261104.md) | B262+C526+D74の862件を全件読取用候補へ分類。既存36コンセプトに対する新規10場面20選択肢の全文試作。重複を比較するまで46件と合算しない。いずれも実装未済 |
 
 **全イベント共通校閲**：[/docs/EVENT_PROSE_CAUSALITY_AND_REVIEW_STANDARD.md](../EVENT_PROSE_CAUSALITY_AND_REVIEW_STANDARD.md)。既存正規制作経路：[/docs/CONTENT_REVIEW_WORKFLOW.md](../CONTENT_REVIEW_WORKFLOW.md)。イベントの新規・改稿文面をゲームへ採用した際は[/docs/PLAYER_TEXT_REVIEW.md](../PLAYER_TEXT_REVIEW.md)に可視全文を登録する。
 
@@ -56,13 +56,13 @@
 
 ## 5 この設計段階で解決した事柄と、実装時に実測が必要な事柄
 
-**準備済み**：19地域と13部門、83の職業資格プロフィール、66組織の証拠ゲート、175イベント488選択枝の原コード照会・静的注意点、862件の依存イベント候補、事業所と採用・給与・家族・移動のデータ契約、95件の受入ケース、新規イベント草案10件。
+**準備済み**：19地域と13部門、83の職業資格プロフィール、66組織の証拠ゲート、175イベント488選択枝の原コード照会・静的注意点、862件の依存イベント候補、事業所と採用・給与・家族・移動のデータ契約、107件の受入ケース、既存36コンセプトと意味重複を比較する新規イベント草案10件。
 
 **継続する精査**：W01の原コードにある各結果の**実際のランタイム効果**と失敗枝のフラグ・後続を個別承認する。原コード抽出により life_rhodes_role_review は3個の選択肢を持つ一方、旧イベント棚卸しのchoiceCountは4である。この不一致をカタログ抽出規則から実装時に修正する。W11のB/C/D群は出典・フラグ・職場前提を全枝人手で裁定した状態にはない。新規イベントの実装前に原作照合と重複確認を行う。
 
 **史料保留**：名前付き組織の日本語正式名が資料上未確認のもの、地域別の支社・具体的採用枠、正確な創業/独立年、厳密な資格制度は原作未確認と表記し、出典のない「全国の一般法」「全企業で有効な資格」として一括設定しない。追加の史料調査で得たMountaincommの分離経緯、Schwire表記も登録組織台帳へ反映した。
 
-**未実施**：新システムの実装、旧セーブmigration実行、95ケースの実行、人口別の雇用率と賃金の較正。設計の数値はゲームモデル上の仮定。
+**未実施**：新システムの実装、旧セーブmigration実行、107ケースの実行、人口別の雇用率と賃金の較正。設計の数値はゲームモデル上の仮定。
 
 ## 6 導入と校閲の共通完了条件
 
@@ -72,3 +72,5 @@
 - 指定された確定シナリオがすべて成功し、旧セーブと現在の正常な運用が保たれ、コード由来の変更箇所のみを対象とするテストを実行して初めて実装完了と記す。
 
 このv2.0は今後の実装と校閲を始めるための一元的な案内正本。W01〜W11の詳細データと原設計v1.0はそのまま参照し、個別テーブルの複製を避ける。
+
+**受入ケースの版関係**：先行W00の51件（R19/D20/X12）と、拡張版95件（R19/D20/S12/T12/L12/M10/I10）を照合し、重複しないX12を追加した[107件の統合正本](W10_INTEGRATION_ACCEPTANCE_107_CASES_20261104.json)を最終受入リストとする。95件版と先行51件は個別設計資料として保持し、検査予定を二重に実行する必要はない。全107件とも実行前の期待仕様である。
