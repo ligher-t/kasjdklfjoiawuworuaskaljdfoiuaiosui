@@ -363,6 +363,7 @@ const informedGrant=run(function(){
       "p17-grant-office","university",["university"],s.year),
     offer=world.offerings[institution.offeringIds[0]],
     item=educationCaseBegin(s,"higher-path","university",1);
+  offer.admissionTier=1;
   item.phase="contract";item.offeringId=offer.id;
   item.targetInstitutionId=institution.id;
   const result=educationMigrationRecord(s,"edu_scholarship_application","A",
