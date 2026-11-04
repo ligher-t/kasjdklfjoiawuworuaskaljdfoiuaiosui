@@ -32,6 +32,51 @@ assert.equal(vm.runInContext('resumeTestSpeed',ctx),snapshot.sp,'resume restores
 assert.equal(vm.runInContext('RANDOM_SEED',ctx),snapshot.S.randomSeed,'resume restores the seed');
 assert.equal(vm.runInContext('RANDOM_STATE',ctx),snapshot.S.rngState,'resume restores the current RNG state');
 
+// The I07 notification is part of the life-state snapshot: a resume must
+// preserve the issued decision and its one-time delivery, including source IDs.
+{
+  const state=vm.runInContext(`
+    const record={
+      id:"edu_employer_sponsored_course:1097",
+      eventId:"edu_employer_sponsored_course",choice:"A",
+      at:{year:S.year,month:1},
+      sourceKind:"P17-reviewed-scene",
+      result:{externalRequest:{
+        id:"company-approval:1097",reviewId:"E27",
+        issuerId:"life-employer",sourceId:"training-policy",
+        sourceRef:"verified-training-policy"
+      }},
+      notice:{index:0,evidenceRef:"issuer-signed-notice",
+        deliveredAt:{year:S.year,month:1}}
+    };
+    S.educationMigration={version:1,seen:{[record.id]:record},
+      records:[record]};
+    S.educationP17Decisions={version:1,items:{
+      "company-approval:1097":{
+        id:"company-approval:1097",requestId:"company-approval:1097",
+        issuerId:"life-employer",reviewId:"E27",status:"approved",
+        evidenceRef:"issuer-signed-notice",approvedAmount:12000,
+        decidedAt:{year:S.year,month:1}
+      }
+    }};
+    globalThis.educationSlotSnapshot=makeResumeSnapshot();
+    const resumed=cont(educationSlotSnapshot),
+      deliveredAgain=educationP17ReconcileNotices(S);
+    JSON.stringify({resumed,deliveredAgain,
+      notice:S.educationMigration.records[0].notice,
+      decision:S.educationP17Decisions.items["company-approval:1097"],
+      identical:JSON.stringify(educationSlotSnapshot.S.educationMigration)===
+        JSON.stringify(S.educationMigration)})
+  `,ctx);
+  const restored=JSON.parse(state);
+  assert.equal(restored.resumed,true);
+  assert.equal(restored.deliveredAgain,0);
+  assert.equal(restored.notice.index,0);
+  assert.equal(restored.decision.approvedAmount,12000);
+  assert.equal(restored.identical,true);
+  assert.equal(vm.runInContext('cont(birthSnapshot)',ctx),true);
+}
+
 // Deleting a slot removes both copies without changing another saved life.
 {
   vm.runInContext(`
