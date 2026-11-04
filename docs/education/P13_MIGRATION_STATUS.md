@@ -7,7 +7,7 @@
 
 ## 現況
 
-- I03–I06:進路・会計等へ一部接続済：6件
+- I07:I03–I06入口の最終監査済：6件
 - I07:学籍・授業・施設別発火ガード：38件
 - I07:P13維持確認済（改修対象外）：78件
 - I07:個別効果・本文移行済：49件（既存11件＋今回の個別確認・改修38件）
@@ -16,11 +16,13 @@
 - I07:正規学籍への旧経路の二重適用を除外：3件
 - 既存休止（show:false）：4件
 
+I03–I06からの6入口（`sch`、`education_paused_life`、`higher_ed`、`education_upper_path`、`education_funding_review`、`education_graduation_review`）は、希望・募集検索と学籍登録、休学中の自習と正式履修、支援の申請と実納付、修了判断と認定資格の所有権を分離している。`p18-education-event-migration.test.cjs`で全6入口のイベント効果と初等学校検索の実呼出しを確認し、既存のI03〜I06専門テストで進路案件・納付・出席・履修・資格の正本を検証した。
+
 ## 既存イベント別の移行判定
 
 | 優先度 | イベントID | 元ファイル | P13の変更 | I07の現況 | P13で要確認の内容 |
 |---|---|---|---|---|---|
-| P0 | `sch` | `data/base/childhood-attitudes.js` | 接続変更 | I03–I06:進路・会計等へ一部接続済 | 6〜9歳の初等入学希望、入学不能でも本人の希望・家族判断を保持 |
+| P0 | `sch` | `data/base/childhood-attitudes.js` | 接続変更 | I07:I03–I06入口の最終監査済 | 6〜9歳の初等入学希望、入学不能でも本人の希望・家族判断を保持 |
 | P1 | `bias_peer_mockery` | `data/base/childhood-attitudes.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 教室で感染者を嘲る同級生、実際の授業参加が前提 |
 | P1 | `bias_teacher_lesson` | `data/base/childhood-attitudes.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 教員の偏見ある発言、当該学校の授業・担当教員を特定 |
 | P2 | `attitude_counterexample` | `data/base/childhood-attitudes.js` | 維持 | I07:P13維持確認済（改修対象外） | 感染者との接触によって過去の偏見を見直す場面、本人の就学状況は無関係 |
@@ -101,16 +103,16 @@
 | P2 | `detain_life` | `data/base/confinement-and-education.js` | 維持 | I07:P13維持確認済（改修対象外） | 収容中の相談・書類と審査、学校に在籍している前提なし |
 | P2 | `veteran` | `data/base/confinement-and-education.js` | 維持 | I07:P13維持確認済（改修対象外） | 傭兵の退職・若手指導、職場での技能伝承 |
 | P0 | `education_return_path` | `data/base/confinement-and-education.js` | 別イベント化 | I07:再入学経路を案件へ接続済み | 学齢後の再入学・正式準備課程・仕事／氏族師弟の非正規教育が混在 |
-| P1 | `education_paused_life` | `data/base/confinement-and-education.js` | 接続変更 | I03–I06:進路・会計等へ一部接続済 | 休学中の暮らし、在籍先の再開と自習を分離 |
+| P1 | `education_paused_life` | `data/base/confinement-and-education.js` | 接続変更 | I07:I03–I06入口の最終監査済 | 休学中の暮らし、在籍先の再開と自習を分離 |
 | P1 | `education_school_classroom` | `data/base/confinement-and-education.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 放課後の復習と級友の手伝い、実際の授業実施日 |
 | P1 | `education_school_family_pressure` | `data/base/confinement-and-education.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 保護者失業などで通学継続困難、学校の在籍と家計の現況 |
 | P1 | `education_school_prejudice` | `data/base/confinement-and-education.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 教室内で出自をめぐるいじめ、学校・同級生・教員の主体 |
 | P1 | `education_school_disclosure_review` | `data/base/confinement-and-education.js` | 接続変更 | I07:正規学籍への旧経路の二重適用を除外 | 感染診断を学校へ公式申告する判断、旧校への通知と分離 |
 | P0 | `education_transfer_review` | `data/base/confinement-and-education.js` | 接続変更 | I07:改修・接続済み | 学校による受入拒否・閉鎖に伴う転学選択、入学先のID |
-| P0 | `higher_ed` | `data/base/confinement-and-education.js` | 接続変更 | I03–I06:進路・会計等へ一部接続済 | 大学・職業校・アーツ学院の7系統出願、学校種別の実在・受験先ID |
-| P0 | `education_upper_path` | `data/base/confinement-and-education.js` | 接続変更 | I03–I06:進路・会計等へ一部接続済 | 前期中等修了後の後期中等への進学、別校・通学条件 |
-| P0 | `education_funding_review` | `data/base/confinement-and-education.js` | 接続変更 | I03–I06:進路・会計等へ一部接続済 | 学費納付・奨学・貸付・休学、学校側の制度と請求ID |
-| P0 | `education_graduation_review` | `data/base/confinement-and-education.js` | 接続変更 | I03–I06:進路・会計等へ一部接続済 | 修了判定と留年の選択、認定履修実績 |
+| P0 | `higher_ed` | `data/base/confinement-and-education.js` | 接続変更 | I07:I03–I06入口の最終監査済 | 大学・職業校・アーツ学院の7系統出願、学校種別の実在・受験先ID |
+| P0 | `education_upper_path` | `data/base/confinement-and-education.js` | 接続変更 | I07:I03–I06入口の最終監査済 | 前期中等修了後の後期中等への進学、別校・通学条件 |
+| P0 | `education_funding_review` | `data/base/confinement-and-education.js` | 接続変更 | I07:I03–I06入口の最終監査済 | 学費納付・奨学・貸付・休学、学校側の制度と請求ID |
+| P0 | `education_graduation_review` | `data/base/confinement-and-education.js` | 接続変更 | I07:I03–I06入口の最終監査済 | 修了判定と留年の選択、認定履修実績 |
 | P1 | `uni_fee` | `data/base/confinement-and-education.js` | 除外 | 既存休止（show:false） | 旧大学通常年度学費イベント、show:falseの休眠処理 |
 | P1 | `uni_final_fee` | `data/base/confinement-and-education.js` | 除外 | 既存休止（show:false） | 旧大学最終年度学費イベント、show:falseの休眠処理 |
 | P1 | `voc_fee` | `data/base/confinement-and-education.js` | 除外 | 既存休止（show:false） | 旧職業課程通常年度学費イベント、show:falseの休眠処理 |
