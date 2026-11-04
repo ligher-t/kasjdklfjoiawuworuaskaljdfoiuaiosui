@@ -8,6 +8,7 @@ const approved=Object.freeze([
   "p0-school-progression.test.cjs",
   "p0-school-regional-access.test.cjs",
   "p18-education-world-determinism.test.cjs",
+  "p19-education-observation.test.cjs",
   "p18-education-operations-mobility.test.cjs",
   "p18-education-case-fsm.test.cjs",
   "p18-education-finance-ledger.test.cjs",
