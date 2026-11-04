@@ -706,29 +706,59 @@
       "parentOrganizationKey": null,
       "availabilityRule": "post-1099-secondary-description; verify-before-activation",
       "recruitmentRule": "verified-site-and-individual-position",
-      "notes": "MountainDash LogisticsとScwire Groupとの合弁。1097年に前倒ししない。",
+      "notes": "シエスタで設立・契約した会社。SL-1ではMountainDash Logisticsの子会社として描写され、SL-7では独立会社への移行方針が告げられる。Schwire側の投資・提携も存在。企業の親子・投資関係を年代固定にしない。具体月日・法人手続の発効と日本語名称は要日本語本文確認。",
       "jointVenturePartyKeys": [
         "mountaindash-logistics",
         "scwire-group"
-      ]
+      ],
+      "relationshipTimeline": [
+        {
+          "phase": "initial-subsidiary",
+          "parentOrganizationKey": "mountaindash-logistics",
+          "sourceUrl": "https://arknights.wiki.gg/wiki/SL-1/Story",
+          "evidence": "translated-original-story-transcript",
+          "startDate": "unconfirmed",
+          "endDate": "before-separation-effectiveness-unconfirmed"
+        },
+        {
+          "phase": "investment-and-partnership",
+          "counterpartyOrganizationKey": "scwire-group",
+          "sourceUrl": "https://arknights.wiki.gg/wiki/SL-6/Story",
+          "evidence": "translated-original-story-transcript",
+          "effectiveDate": "unconfirmed"
+        },
+        {
+          "phase": "proposed-separation",
+          "formerParentOrganizationKey": "mountaindash-logistics",
+          "sourceUrl": "https://arknights.wiki.gg/wiki/SL-7/Story",
+          "evidence": "translated-original-story-transcript",
+          "effectiveDate": "unconfirmed",
+          "comment": "Character's declaration does not itself provide the precise legal-registration date"
+        }
+      ],
+      "jointVenturePartiesAreHistoricalNotPerpetual": true
     },
     {
       "organizationKey": "scwire-group",
-      "displayName": "Scwire Group（表記要照合）",
-      "regionScope": "クルビア+verified-branches",
+      "displayName": "Schwire Group（表記要照合。英語のScwireは表記揺れ）",
+      "regionScope": "龍門+ヴィクトリアの確認済み事業+個別支部",
       "sectorKinds": [
         "COM",
         "LOG"
       ],
       "entityType": "named",
       "sourceGrade": "secondary-reports-named-entity",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta/Overview",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Swire/Operator_Record",
       "displayNameStatus": "needs-jp-text-confirmation",
       "employmentRole": "employer-or-organizer",
       "parentOrganizationKey": null,
       "availabilityRule": "year-and-site-specific",
       "recruitmentRule": "verified-site-and-individual-position",
-      "notes": "シエスタ共同事業への参加は確認。所在地や全国拠点は別証拠。"
+      "notes": "スワイヤー家に関係する企業集団。日本語の法人正式名未照合。英語原文を転載したSL-6およびスワイヤーの記録はSchwire Groupと記載。龍門の本拠とヴィクトリアの事業は個別文脈で裏付ける。企業取引は第三国の常設支店・採用枠を自動的に意味しない。",
+      "secondarySourceUrls": [
+        "https://arknights.wiki.gg/wiki/SL-6/Story",
+        "https://arknights.wiki.gg/wiki/Adams_Schwire"
+      ]
     },
     {
       "organizationKey": "iberian-inquisition-and-coastal-sites",
@@ -1265,8 +1295,12 @@
     "source": [
       "https://arknights.wiki.gg/wiki/Kazimierz/Branches",
       "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
-      "https://arknights.wiki.gg/wiki/Siesta/Overview"
+      "https://arknights.wiki.gg/wiki/Siesta/Overview",
+      "https://arknights.wiki.gg/wiki/SL-1/Story",
+      "https://arknights.wiki.gg/wiki/SL-6/Story",
+      "https://arknights.wiki.gg/wiki/SL-7/Story",
+      "https://arknights.wiki.gg/wiki/Swire/Operator_Record"
     ],
-    "notes": "Mieszko Group subsidiaries include Rose Papers Union in secondary source. KGCC affiliate list records institutional membership; Mountaincomm Trade is joint venture of MountainDash Logistics and Scwire Group. Japanese names need canon confirmation."
+    "notes": "Mieszko Group傘下にRose Papers Unionがあるとの二次史料。KGCCは企業連合の加盟であって給与主体ではない。Mountaincomm Tradeの子会社関係はSL-1/SL-7で変化し、出資を受けた後に独立する旨の記録がある。Schwireの英語綴りと龍門・ヴィクトリアへの関係を修正。日本語正式名と効力発生日は未照合。"
   }
 }
