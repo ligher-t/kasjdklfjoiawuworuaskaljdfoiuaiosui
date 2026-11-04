@@ -78,8 +78,7 @@ function educationP17ExtraEligible(s,review,letter=null) {
     case "E08": return planning && known.some(x=>
       educationSchoolStatusAt(s,x.offeringId,s.year,s.mo)?.admissionStatus==="closed");
     case "E09": return contract && !!item.evidence?.admissionOfferId &&
-      (letter!=="A" || (educationP17Witness(s,"E09") &&
-        educationCaseCommitEligibility(s).allowed));
+      (letter!=="A" || educationCaseCommitEligibility(s).allowed);
     case "E10": return planning && item.kind==="reentry" &&
       s.educationRecord?.enrollments?.some(x=>x.status==="withdrawn");
     case "E11": return planning && item.stage==="preparatory" && s.age>=18;
@@ -90,7 +89,13 @@ function educationP17ExtraEligible(s,review,letter=null) {
     case "E24": return (planning||contract) &&
       known.some(x=>Number.isFinite(x.tuitionEstimate));
     case "E25": return item.phase==="application" && witness;
-    case "E26":case "E27":case "E28": return (planning||contract) && witness;
+    case "E26":
+      return contract && !!s.educationAccess?.financingOffers?.[item.id] &&
+        s.educationAccess.financingOffers[item.id].source===
+          "institutional-desk-inquiry";
+    case "E28":
+      return contract && !!s.educationAccess?.financingOffers?.[item.id]?.loan;
+    case "E27":return (planning||contract) && witness;
     case "E30": return (planning||contract) &&
       known.some(x=>x.tuitionEstimate>0);
     case "E31": return planning && s.job>0 && witness;
@@ -105,7 +110,19 @@ function educationP17ExtraEligible(s,review,letter=null) {
         year:s.year,month:s.mo,purpose:"daily-commute"}).reachable;
     case "E22":return !!school && school.teachingEquivalent>0 &&
       educationP17SchoolExperience(s,"long-commute");
-    case "E23":return !!school && witness;
+    case "E23":{
+      if(!school || !current)return false;
+      const prev=s.mo===1?{year:s.year-1,month:12}:
+        {year:s.year,month:s.mo-1},
+        args={institutionId:current.m.institutionId,
+          campusId:current.m.campusId,offeringId:current.offering.id,
+          purpose:"daily-commute"},
+        earlier=educationCanReach(s,{...args,...prev}),
+        now=educationCanReach(s,{...args,year:s.year,month:s.mo});
+      return !earlier.reachable && now.reachable &&
+        earlier.reasonCodes.some(code=>["route-suspended","no-active-link",
+          "no-return-service"].includes(code));
+    }
     case "E29":return !!school && witness &&
       !educationCanReach(s,{institutionId:current.m.institutionId,
         campusId:current.m.campusId,offeringId:current.offering.id,
@@ -114,7 +131,15 @@ function educationP17ExtraEligible(s,review,letter=null) {
     case "E37":return educationP17SchoolExperience(s,"specialized-laboratory");
     case "E38":return !!school && school.teachingEquivalent===0;
     case "E39":return educationP17SchoolExperience(s,"teacher-evacuated");
-    case "E40":return educationP17SchoolExperience(s,"approved-temporary-classroom");
+    case "E40":{
+      if(!current || school?.learningContinuity!=="alternative_classroom" ||
+         !school.alternativeCampusId)return false;
+      return Object.values(
+        s.educationAttendance?.enrollments?.[current.enroll.id]?.[s.year]||{}
+      ).some(month=>Object.values(month.segments||{}).some(seg=>
+        seg.offeringId===current.offering.id && seg.recognized &&
+        seg.schoolDelivery>0 && !!seg.evidenceRef));
+    }
     case "E42":return educationP17SchoolExperience(s,"examination-cancelled");
     case "E44":return s.educationRecord?.enrollments?.some(x=>
       x.status!=="enrolled"&&x.institutionId) &&
@@ -439,7 +464,8 @@ function educationP17NoticeOutcome(s,record,review,letter) {
       const award=success && (s.educationRecord?.recognitions||[]).some(x=>
         x.id===inquiry.awardId || x.awardId===inquiry.awardId);
       if(award)return {index:0,evidenceRef:inquiry.id+":"+inquiry.awardId};
-      if(failed)return {index:1,evidenceRef:inquiry.id+":"+inquiry.status};
+      if(failed && inquiry.assessmentEvidenceRef)
+        return {index:1,evidenceRef:inquiry.assessmentEvidenceRef};
     }
   }
   if(review==="E68"&&letter==="B"){
