@@ -132,7 +132,7 @@ window.TERRA_DATA_BUILD.run("social/learning", function ($terraData, $define, $r
         $terraData.K(
           "近所の読み書き教室へ顔を出す",
           {
-            en: s => ok({ge:{socialAccess:52,cash:25000}},s) &&
+            en: (s,T) => ok({ge:{socialAccess:52,cash:25000}},s,T) &&
               Object.values(s.world?.educationWorld?.informalProviders||{}).some(p=>
                 p.kind==="neighborhood-literacy" && p.status==="active" &&
                 p.areaId===s.local?.educationAreaId && p.evidenceRef &&
