@@ -201,6 +201,11 @@ const d19=run(function(){
       path:m,credits:s.educationCredits,records:s.educationRecord}),
     completedEquivalency:m.equivalency.filter(x=>x==='upper').length,
     awards:s.educationRecord.awards.filter(x=>x.enrollmentId===id).length,
+    certificates:(s.educationRecord.schoolCertificates||[]).filter(x=>
+      x.enrollmentId===id && x.qualification==="upper-equivalency").map(x=>({
+        issuer:x.issuer,sourceCredits:x.sourceCreditIds.length,
+        assessmentEvidenceId:x.assessmentEvidenceId})),
+    assessment:m.completionAssessment,
     issues:educationAttendanceInvariants(s)};
 });
 assert.deepEqual(d19.credits.map(x=>x.year),[1093,1094,1095]);
@@ -213,7 +218,13 @@ assert.equal(d19.status,'completed');
 assert.equal(d19.ends,true);
 assert.equal(d19.completedEquivalency,1);
 assert.equal(d19.noDuplicate,true);
-assert.equal(d19.awards,1);
+assert.equal(d19.awards,0,"preparatory completion grants equivalency, not a university award");
+assert.equal(d19.certificates.length,1);
+assert.equal(d19.certificates[0].sourceCredits,3);
+assert(d19.certificates[0].issuer.startsWith("edu-inst:"));
+assert.equal(d19.certificates[0].assessmentEvidenceId,d19.assessment.evidenceRef);
+assert.equal(d19.assessment.passed,true);
+assert.deepEqual(d19.assessment.sourceCreditIds,d19.credits.map(x=>x.id));
 assert.deepEqual(d19.issues,[]);
 
 // D27 uses the real title resume entry, then replays only the annual
