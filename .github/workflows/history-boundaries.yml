@@ -159,6 +159,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_roaming_school_absence.test.cjs
       - name: Work and family consent while roaming
         run: node tools/check-efficient.cjs run v88_roaming_work_family_boundaries.test.cjs
+      - name: Player controlled round-trip journey and prepaid return
+        run: node tools/check-efficient.cjs run v88_roaming_ui_roundtrip.test.cjs
       - name: Regional recruitment, custody and career outcome
         run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs
       - name: Yan court recruitment is only offered in spring
