@@ -1,0 +1,1655 @@
+{
+  "schema": "terra-occupation-access-contract",
+  "schemaVersion": 1,
+  "asOf": "2026-11-04",
+  "status": "implementation-ready-design-only",
+  "referenceBranch": "fix/historical-event-scope-and-delivery",
+  "positionCatalogMustNotGenerateEmployersFromCurrentJob": true,
+  "eventInventory": "WORK_EVENT_INVENTORY_20261104.json",
+  "regionalMatrix": "REGIONAL_EMPLOYMENT_MATRIX_20261104.json",
+  "semantics": {
+    "jobId": "画面用の現行職種。単独では採用・配属の証拠にならない",
+    "sectorCandidates": "産業分類であり採用資格でも雇用主の存在証明でもない",
+    "organizationKey": "実在先／組織類型への設計上の参照キー。未確定名は運用時自動生成しない",
+    "engagementKinds": "成立可能な就労形態。個々のポジションによって選択",
+    "qualificationProfile": "基準審査類型。学位・免許の具体的出典は募集ごとに設定",
+    "namedEntityStatus": "source-grade用。scenario-label-needs-jp-canonは出典照合まで組織固有の生成・採用を停止"
+  },
+  "requiredPositionEvidence": [
+    "occupationWorld.employerId",
+    "siteId",
+    "positionId",
+    "availabilityWindow",
+    "regionAndAreaScope",
+    "engagementKind",
+    "qualificationEvidenceRule",
+    "selectionOrFormationEvidence",
+    "payOrBenefitTerms"
+  ],
+  "hardRules": [
+    "jobIdの変更から事業所を逆生成しない",
+    "給与倍率・求人枠を職業ID変更で自動生成しない",
+    "学校の学籍を勤務資格と自動同一視しない",
+    "訓練・免許・感染認知・居住・語学は応募元職位の条件で判定",
+    "家業・自営・共同体の役割を求人採用経路へ強制しない",
+    "診断・種族を全地域の禁止として扱わない",
+    "変化した現職と過去の勤務履歴は独立保存する",
+    "求人がないときも求職・断念・学校外訓練等を提示する"
+  ],
+  "jobs": [
+    {
+      "jobId": 0,
+      "displayName": "無職",
+      "sectorCandidates": [],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "none"
+      ],
+      "qualificationProfile": "none",
+      "siteRequirement": "none",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[0]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 1,
+      "displayName": "日雇い・農作業",
+      "sectorCandidates": [
+        "AGR"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "gig-piecework",
+        "seasonal-contract",
+        "family-community"
+      ],
+      "qualificationProfile": "manual",
+      "siteRequirement": "local",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[1]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 2,
+      "displayName": "工場労働者",
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "wage-employment",
+        "seasonal-contract",
+        "coerced-assignment"
+      ],
+      "qualificationProfile": "manual",
+      "siteRequirement": "local",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[2]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 3,
+      "displayName": "鉱夫",
+      "sectorCandidates": [
+        "MIN"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "wage-employment",
+        "coerced-assignment",
+        "gig-piecework"
+      ],
+      "qualificationProfile": "hazard-training",
+      "siteRequirement": "mine-site",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[3]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 4,
+      "displayName": "傭兵・護衛",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "gig-piecework",
+        "organization-service",
+        "wage-employment"
+      ],
+      "qualificationProfile": "combat",
+      "siteRequirement": "mission-site",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[4]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 5,
+      "displayName": "商人",
+      "sectorCandidates": [
+        "COM"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "self-employment",
+        "family-community",
+        "wage-employment"
+      ],
+      "qualificationProfile": "business",
+      "siteRequirement": "market",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[5]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 6,
+      "displayName": "官吏",
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "public-appointment"
+      ],
+      "qualificationProfile": "administrator",
+      "siteRequirement": "government-office",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[6]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 7,
+      "displayName": "技師",
+      "sectorCandidates": [
+        "MFG",
+        "SCI"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "wage-employment",
+        "gig-piecework",
+        "self-employment"
+      ],
+      "qualificationProfile": "technical",
+      "siteRequirement": "works-site",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[7]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 8,
+      "displayName": "医師・研究者",
+      "sectorCandidates": [
+        "MED",
+        "SCI"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "wage-employment",
+        "public-appointment",
+        "organization-service"
+      ],
+      "qualificationProfile": "clinical-or-research",
+      "siteRequirement": "medical-or-research-site",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[8]",
+      "review": "design-contract-not-implemented",
+      "subroleChoiceRequired": true
+    },
+    {
+      "jobId": 9,
+      "displayName": "聖職者",
+      "sectorCandidates": [
+        "REL"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "faith-service",
+        "family-community"
+      ],
+      "qualificationProfile": "religious-reception",
+      "siteRequirement": "faith-site",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[9]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 10,
+      "displayName": "騎士",
+      "sectorCandidates": [
+        "MIL",
+        "CRE"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "organization-service",
+        "seasonal-contract",
+        "self-employment"
+      ],
+      "qualificationProfile": "knight-specialization",
+      "siteRequirement": "knight-organization",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[10]",
+      "review": "design-contract-not-implemented",
+      "subroleChoiceRequired": true
+    },
+    {
+      "jobId": 11,
+      "displayName": "アーツ技師",
+      "sectorCandidates": [
+        "SCI",
+        "MFG"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "wage-employment",
+        "gig-piecework"
+      ],
+      "qualificationProfile": "arts-technician",
+      "siteRequirement": "arts-worksite",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[11]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 12,
+      "displayName": "教師",
+      "sectorCandidates": [
+        "EDU"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "wage-employment",
+        "public-appointment",
+        "family-community"
+      ],
+      "qualificationProfile": "teacher",
+      "siteRequirement": "verified-education-provider",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[12]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 13,
+      "displayName": "芸術家",
+      "sectorCandidates": [
+        "CRE"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "self-employment",
+        "seasonal-contract",
+        "wage-employment"
+      ],
+      "qualificationProfile": "performance",
+      "siteRequirement": "cultural-venue",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[13]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 14,
+      "displayName": "軍務・兵站",
+      "sectorCandidates": [
+        "MIL",
+        "LOG"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "organization-service",
+        "public-appointment",
+        "coerced-assignment"
+      ],
+      "qualificationProfile": "military",
+      "siteRequirement": "command-post",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[14]",
+      "review": "design-contract-not-implemented",
+      "subroleChoiceRequired": true
+    },
+    {
+      "jobId": 15,
+      "displayName": "治安機関勤務",
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "public-appointment",
+        "wage-employment"
+      ],
+      "qualificationProfile": "security-vetting",
+      "siteRequirement": "public-security-site",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[15]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 16,
+      "displayName": "トランスポーター",
+      "sectorCandidates": [
+        "LOG"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "gig-piecework",
+        "wage-employment",
+        "self-employment"
+      ],
+      "qualificationProfile": "logistics",
+      "siteRequirement": "transport-route",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[16]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 17,
+      "displayName": "飲食・宿の仕事",
+      "sectorCandidates": [
+        "COM"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "wage-employment",
+        "family-community",
+        "seasonal-contract",
+        "self-employment"
+      ],
+      "qualificationProfile": "service",
+      "siteRequirement": "hospitality-site",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[17]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 18,
+      "displayName": "修理・整備工",
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "wage-employment",
+        "gig-piecework",
+        "self-employment"
+      ],
+      "qualificationProfile": "technical",
+      "siteRequirement": "workshop",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[18]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 19,
+      "displayName": "建設・水道設備",
+      "sectorCandidates": [
+        "MFG",
+        "REC"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "wage-employment",
+        "gig-piecework",
+        "coerced-assignment"
+      ],
+      "qualificationProfile": "construction",
+      "siteRequirement": "construction-site",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[19]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 20,
+      "displayName": "医療補助・薬局手伝い",
+      "sectorCandidates": [
+        "MED"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "wage-employment",
+        "family-community"
+      ],
+      "qualificationProfile": "medical-assistant",
+      "siteRequirement": "health-site",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[20]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 21,
+      "displayName": "事務・窓口補助",
+      "sectorCandidates": [
+        "CIV",
+        "COM"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "wage-employment",
+        "public-appointment"
+      ],
+      "qualificationProfile": "office-assistant",
+      "siteRequirement": "office",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[21]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 22,
+      "displayName": "職人・仕立て",
+      "sectorCandidates": [
+        "MFG",
+        "COM"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "self-employment",
+        "family-community",
+        "wage-employment"
+      ],
+      "qualificationProfile": "craft",
+      "siteRequirement": "workshop",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[22]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 23,
+      "displayName": "農漁業・採集",
+      "sectorCandidates": [
+        "AGR"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "family-community",
+        "self-employment",
+        "seasonal-contract"
+      ],
+      "qualificationProfile": "agri-survival",
+      "siteRequirement": "agricultural-resource",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[23]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 24,
+      "displayName": "露店・小商い",
+      "sectorCandidates": [
+        "COM"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "self-employment",
+        "family-community",
+        "gig-piecework"
+      ],
+      "qualificationProfile": "market",
+      "siteRequirement": "market-stall",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[24]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 25,
+      "displayName": "舞台・興行の裏方",
+      "sectorCandidates": [
+        "CRE",
+        "COM"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "seasonal-contract",
+        "gig-piecework",
+        "wage-employment"
+      ],
+      "qualificationProfile": "arts-support",
+      "siteRequirement": "venue",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[25]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 26,
+      "displayName": "氏族・共同体の仕事",
+      "sectorCandidates": [
+        "REL",
+        "AGR"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "family-community",
+        "faith-service"
+      ],
+      "qualificationProfile": "community",
+      "siteRequirement": "community-site",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[26]",
+      "review": "design-contract-not-implemented",
+      "subroleChoiceRequired": true
+    },
+    {
+      "jobId": 27,
+      "displayName": "測量・天災後の復旧",
+      "sectorCandidates": [
+        "REC",
+        "MIN"
+      ],
+      "scope": "generic",
+      "region": null,
+      "organizationKey": null,
+      "engagementKinds": [
+        "gig-piecework",
+        "wage-employment",
+        "public-appointment"
+      ],
+      "qualificationProfile": "disaster-survey",
+      "siteRequirement": "recovery-site",
+      "namedEntityStatus": "not-applicable",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[27]",
+      "review": "design-contract-not-implemented",
+      "subroleChoiceRequired": true
+    },
+    {
+      "jobId": 28,
+      "displayName": "ロドスの物資・生活支援職員",
+      "sectorCandidates": [
+        "LOG",
+        "COM"
+      ],
+      "scope": "organization",
+      "region": "global-by-confirmed-site",
+      "organizationKey": "rhodes-island",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "org-screening",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[28]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 29,
+      "displayName": "ロドスの設備整備職員",
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "scope": "organization",
+      "region": "global-by-confirmed-site",
+      "organizationKey": "rhodes-island",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "org-screening",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[29]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 30,
+      "displayName": "ロドスの医療・研究補助職員",
+      "sectorCandidates": [
+        "MED",
+        "SCI"
+      ],
+      "scope": "organization",
+      "region": "global-by-confirmed-site",
+      "organizationKey": "rhodes-island",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "org-screening",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[30]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 31,
+      "displayName": "ロドスの外勤オペレーター",
+      "sectorCandidates": [
+        "MED",
+        "MIL"
+      ],
+      "scope": "organization",
+      "region": "global-by-confirmed-site",
+      "organizationKey": "rhodes-island",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "org-screening",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[31]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 32,
+      "displayName": "カジミエーシュの競技会場運営職員",
+      "sectorCandidates": [
+        "CRE",
+        "COM"
+      ],
+      "scope": "organization",
+      "region": "global-by-confirmed-site",
+      "organizationKey": "rhodes-island",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "org-screening",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[32]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 33,
+      "displayName": "ロドスのトランスポーター",
+      "sectorCandidates": [
+        "LOG"
+      ],
+      "scope": "organization",
+      "region": "global-by-confirmed-site",
+      "organizationKey": "rhodes-island",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "org-screening",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[33]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 34,
+      "displayName": "ロドス行動予備隊員",
+      "sectorCandidates": [
+        "EDU",
+        "MIL"
+      ],
+      "scope": "organization",
+      "region": "global-by-confirmed-site",
+      "organizationKey": "rhodes-island",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "org-screening",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[34]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 35,
+      "displayName": "BSW契約警備員・見習い",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "organization",
+      "region": "クルビア",
+      "organizationKey": "blacksteel-worldwide",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "pmc-screening",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[35]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 36,
+      "displayName": "BSW正規戦術オペレーター",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "organization",
+      "region": "クルビア",
+      "organizationKey": "blacksteel-worldwide",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "pmc-screening",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[36]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 37,
+      "displayName": "BSW特務スペシャリスト",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "organization",
+      "region": "クルビア",
+      "organizationKey": "blacksteel-worldwide",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "pmc-screening",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[37]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 38,
+      "displayName": "ライン生命研究実習生",
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "scope": "organization",
+      "region": "クルビア",
+      "organizationKey": "rhine-lab",
+      "engagementKinds": [
+        "wage-employment",
+        "training-placement"
+      ],
+      "qualificationProfile": "research-credential",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[38]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 39,
+      "displayName": "ライン生命専任研究員",
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "scope": "organization",
+      "region": "クルビア",
+      "organizationKey": "rhine-lab",
+      "engagementKinds": [
+        "wage-employment",
+        "training-placement"
+      ],
+      "qualificationProfile": "research-credential",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[39]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 40,
+      "displayName": "ライン生命主任研究員",
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "scope": "organization",
+      "region": "クルビア",
+      "organizationKey": "rhine-lab",
+      "engagementKinds": [
+        "wage-employment",
+        "training-placement"
+      ],
+      "qualificationProfile": "research-credential",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[40]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 41,
+      "displayName": "炎国朝廷文官（科挙登用）",
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "scope": "region-specific",
+      "region": "炎国",
+      "organizationKey": "yan-civil-service",
+      "engagementKinds": [
+        "public-appointment"
+      ],
+      "qualificationProfile": "civil-service-review",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[41]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 42,
+      "displayName": "炎国司歳台・大理寺監察官",
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "炎国",
+      "organizationKey": "yan-supervisory-authority",
+      "engagementKinds": [
+        "public-appointment"
+      ],
+      "qualificationProfile": "security-vetting",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[42]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 43,
+      "displayName": "炎国天師府・国家天師",
+      "sectorCandidates": [
+        "SCI",
+        "CIV"
+      ],
+      "scope": "region-specific",
+      "region": "炎国",
+      "organizationKey": "yan-tianshi-office",
+      "engagementKinds": [
+        "public-appointment"
+      ],
+      "qualificationProfile": "arts-specialist",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[43]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 44,
+      "displayName": "龍門近衛局（L.G.D.）警官",
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "龍門",
+      "organizationKey": "lungmen-guard-department",
+      "engagementKinds": [
+        "public-appointment"
+      ],
+      "qualificationProfile": "security-vetting",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[44]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 45,
+      "displayName": "龍門黒市ブローカー",
+      "sectorCandidates": [
+        "COM"
+      ],
+      "scope": "region-specific",
+      "region": "龍門",
+      "organizationKey": "lungmen-underground-brokerage",
+      "engagementKinds": [
+        "informal-illicit"
+      ],
+      "qualificationProfile": "trust-network",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[45]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 46,
+      "displayName": "極東武家・侍",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "極東",
+      "organizationKey": "higashi-household-retainers",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "lord-or-household-recommendation",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[46]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 47,
+      "displayName": "極東・忍者（隠密）",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "極東",
+      "organizationKey": "higashi-household-retainers",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "lord-or-household-recommendation",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[47]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 48,
+      "displayName": "極東・サイバーニンジャ",
+      "sectorCandidates": [
+        "MIL",
+        "SCI"
+      ],
+      "scope": "region-specific",
+      "region": "極東",
+      "organizationKey": "higashi-cyberninja-scenario",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "source-and-technology-review",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "scenario-label-needs-jp-canon",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[48]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 49,
+      "displayName": "極東・神職（神官・僧侶）",
+      "sectorCandidates": [
+        "REL"
+      ],
+      "scope": "region-specific",
+      "region": "極東",
+      "organizationKey": "higashi-religious-institution",
+      "engagementKinds": [
+        "faith-service"
+      ],
+      "qualificationProfile": "religious-reception",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[49]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 50,
+      "displayName": "東方重工・兵器技師",
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "scope": "region-specific",
+      "region": "極東",
+      "organizationKey": "higashi-touhou-heavy-scenario",
+      "engagementKinds": [
+        "wage-employment"
+      ],
+      "qualificationProfile": "source-name-review",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "scenario-label-needs-jp-canon",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[50]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 51,
+      "displayName": "ウルサス帝国軍・近衛将校",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "ウルサス",
+      "organizationKey": "ursus-imperial-forces",
+      "engagementKinds": [
+        "public-appointment",
+        "organization-service",
+        "coerced-assignment"
+      ],
+      "qualificationProfile": "military",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[51]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 52,
+      "displayName": "ウルサス国境警備兵・炭鉱監視",
+      "sectorCandidates": [
+        "MIL",
+        "MIN"
+      ],
+      "scope": "region-specific",
+      "region": "ウルサス",
+      "organizationKey": "ursus-imperial-forces",
+      "engagementKinds": [
+        "public-appointment",
+        "organization-service",
+        "coerced-assignment"
+      ],
+      "qualificationProfile": "military",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[52]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 53,
+      "displayName": "ウルサス帝国科学院技師",
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "scope": "region-specific",
+      "region": "ウルサス",
+      "organizationKey": "ursus-science-academy-scenario",
+      "engagementKinds": [
+        "public-appointment"
+      ],
+      "qualificationProfile": "research-credential",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "scenario-label-needs-jp-canon",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[53]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 54,
+      "displayName": "ヴィクトリア正規軍・歩兵",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "ヴィクトリア",
+      "organizationKey": "victoria-military-authorities",
+      "engagementKinds": [
+        "organization-service",
+        "public-appointment"
+      ],
+      "qualificationProfile": "military",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[54]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 55,
+      "displayName": "王立前衛学校卒エリート将校",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "ヴィクトリア",
+      "organizationKey": "victoria-military-authorities",
+      "engagementKinds": [
+        "organization-service",
+        "public-appointment"
+      ],
+      "qualificationProfile": "military",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "scenario-label-needs-jp-canon",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[55]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 56,
+      "displayName": "ヴィクトリア帝国議会書記官",
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "scope": "region-specific",
+      "region": "ヴィクトリア",
+      "organizationKey": "victoria-legislative-administration",
+      "engagementKinds": [
+        "public-appointment"
+      ],
+      "qualificationProfile": "administrator",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[56]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 57,
+      "displayName": "ヴィクトリア重工業・鉄道工廠技師",
+      "sectorCandidates": [
+        "MFG",
+        "LOG"
+      ],
+      "scope": "region-specific",
+      "region": "ヴィクトリア",
+      "organizationKey": "victoria-rail-works",
+      "engagementKinds": [
+        "wage-employment"
+      ],
+      "qualificationProfile": "technical",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[57]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 58,
+      "displayName": "リターニア金律法衛",
+      "sectorCandidates": [
+        "MIL",
+        "SCI"
+      ],
+      "scope": "region-specific",
+      "region": "リターニア",
+      "organizationKey": "leithanien-legal-enforcement-scenario",
+      "engagementKinds": [
+        "public-appointment"
+      ],
+      "qualificationProfile": "arts-law-review",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "scenario-label-needs-jp-canon",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[58]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 59,
+      "displayName": "選帝侯領・宮廷音楽家",
+      "sectorCandidates": [
+        "CRE",
+        "SCI"
+      ],
+      "scope": "region-specific",
+      "region": "リターニア",
+      "organizationKey": "leithanien-court",
+      "engagementKinds": [
+        "organization-service",
+        "seasonal-contract"
+      ],
+      "qualificationProfile": "performance-and-court",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[59]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 60,
+      "displayName": "ラテラーノ公証人役場執行人",
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "ラテラーノ",
+      "organizationKey": "laterano-notarial-hall",
+      "engagementKinds": [
+        "public-appointment"
+      ],
+      "qualificationProfile": "executor-vetting",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[60]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 61,
+      "displayName": "ランデン修道院・修道銃士",
+      "sectorCandidates": [
+        "REL",
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "ラテラーノ",
+      "organizationKey": "laterano-landen-monastery",
+      "engagementKinds": [
+        "faith-service",
+        "organization-service"
+      ],
+      "qualificationProfile": "monastery",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "scenario-label-needs-jp-canon",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[61]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 62,
+      "displayName": "フロンティア開拓パイオニア",
+      "sectorCandidates": [
+        "AGR",
+        "REC"
+      ],
+      "scope": "region-specific",
+      "region": "クルビア",
+      "organizationKey": "columbia-frontier-program",
+      "engagementKinds": [
+        "seasonal-contract",
+        "organization-service"
+      ],
+      "qualificationProfile": "pioneer-contract",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[62]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 63,
+      "displayName": "商業連合会公認・企業騎士",
+      "sectorCandidates": [
+        "CRE",
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "カジミエーシュ",
+      "organizationKey": "kazimierz-corporate-knight-club",
+      "engagementKinds": [
+        "wage-employment",
+        "organization-service"
+      ],
+      "qualificationProfile": "competition-license",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[63]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 64,
+      "displayName": "カジミエーシュ無冑盟暗殺員",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "カジミエーシュ",
+      "organizationKey": "kazimierz-armorless-union",
+      "engagementKinds": [
+        "organization-service",
+        "informal-illicit"
+      ],
+      "qualificationProfile": "secret-network",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[64]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 65,
+      "displayName": "シラクーザ・ファミリー構成員",
+      "sectorCandidates": [
+        "COM",
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "シラクーザ",
+      "organizationKey": "siracusa-family",
+      "engagementKinds": [
+        "family-community",
+        "informal-illicit"
+      ],
+      "qualificationProfile": "family-invitation",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[65]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 66,
+      "displayName": "ウォルシーニ裁判所警察官",
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "シラクーザ",
+      "organizationKey": "siracusa-volsinii-court",
+      "engagementKinds": [
+        "public-appointment"
+      ],
+      "qualificationProfile": "security-vetting",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[66]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 67,
+      "displayName": "シエスタ火山観測所研究員",
+      "sectorCandidates": [
+        "SCI",
+        "REC"
+      ],
+      "scope": "region-specific",
+      "region": "シエスタ",
+      "organizationKey": "siesta-volcanology-center",
+      "engagementKinds": [
+        "wage-employment",
+        "public-appointment"
+      ],
+      "qualificationProfile": "disaster-research",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "scenario-label-needs-jp-canon",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[67]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 68,
+      "displayName": "パーディシャー宮廷親衛隊",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "サルゴン",
+      "organizationKey": "sargon-padishah-palace",
+      "engagementKinds": [
+        "organization-service"
+      ],
+      "qualificationProfile": "palace-appointment",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[68]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 69,
+      "displayName": "アカフラ部族大勇士",
+      "sectorCandidates": [
+        "MIL",
+        "REL"
+      ],
+      "scope": "region-specific",
+      "region": "サルゴン",
+      "organizationKey": "sargon-acahualla-community",
+      "engagementKinds": [
+        "family-community"
+      ],
+      "qualificationProfile": "community-acknowledgement",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[69]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 70,
+      "displayName": "サーミ雪祀（自然呪術者）",
+      "sectorCandidates": [
+        "REL"
+      ],
+      "scope": "region-specific",
+      "region": "サーミ",
+      "organizationKey": "sami-tribes",
+      "engagementKinds": [
+        "family-community",
+        "faith-service",
+        "organization-service"
+      ],
+      "qualificationProfile": "community-acknowledgement",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[70]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 71,
+      "displayName": "氷原境界哨戒戦士",
+      "sectorCandidates": [
+        "MIL",
+        "REC"
+      ],
+      "scope": "region-specific",
+      "region": "サーミ",
+      "organizationKey": "sami-tribes",
+      "engagementKinds": [
+        "family-community",
+        "faith-service",
+        "organization-service"
+      ],
+      "qualificationProfile": "community-acknowledgement",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[71]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 72,
+      "displayName": "カランド貿易・武装社員",
+      "sectorCandidates": [
+        "MIL",
+        "LOG"
+      ],
+      "scope": "region-specific",
+      "region": "イェラグ",
+      "organizationKey": "karlan-trade",
+      "engagementKinds": [
+        "organization-service",
+        "wage-employment"
+      ],
+      "qualificationProfile": "karlan-hiring",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[72]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 73,
+      "displayName": "曼珠院・聖山護衛僧",
+      "sectorCandidates": [
+        "REL",
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "イェラグ",
+      "organizationKey": "kjerag-monastery",
+      "engagementKinds": [
+        "faith-service"
+      ],
+      "qualificationProfile": "monastery",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[73]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 74,
+      "displayName": "軍事委員会・サルカズ正規兵",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "カズデル",
+      "organizationKey": "kazdel-military-commission",
+      "engagementKinds": [
+        "organization-service",
+        "coerced-assignment"
+      ],
+      "qualificationProfile": "military",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[74]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 75,
+      "displayName": "カズデル伝統骨鍛冶",
+      "sectorCandidates": [
+        "MFG",
+        "REL"
+      ],
+      "scope": "region-specific",
+      "region": "カズデル",
+      "organizationKey": "kazdel-craft-workshop",
+      "engagementKinds": [
+        "self-employment",
+        "family-community"
+      ],
+      "qualificationProfile": "craft",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[75]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 76,
+      "displayName": "イベリア裁判所・見習い審問官",
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "イベリア",
+      "organizationKey": "iberian-inquisition-and-coastal-sites",
+      "engagementKinds": [
+        "public-appointment",
+        "organization-service"
+      ],
+      "qualificationProfile": "tribunal-technical",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[76]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 77,
+      "displayName": "イベリア沿岸灯台調律師",
+      "sectorCandidates": [
+        "REC",
+        "SCI"
+      ],
+      "scope": "region-specific",
+      "region": "イベリア",
+      "organizationKey": "iberian-inquisition-and-coastal-sites",
+      "engagementKinds": [
+        "public-appointment",
+        "organization-service"
+      ],
+      "qualificationProfile": "tribunal-technical",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "scenario-label-needs-jp-canon",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[77]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 78,
+      "displayName": "ボリバル正規・真正連合軍兵士",
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "ボリバル",
+      "organizationKey": "bolivar-faction-military",
+      "engagementKinds": [
+        "organization-service",
+        "coerced-assignment"
+      ],
+      "qualificationProfile": "faction-military",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[78]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 79,
+      "displayName": "ドッソレス特区市警",
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "ボリバル",
+      "organizationKey": "dossoles-police",
+      "engagementKinds": [
+        "public-appointment"
+      ],
+      "qualificationProfile": "municipal-security",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[79]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 80,
+      "displayName": "レム・ビリトン採掘重機主任技師",
+      "sectorCandidates": [
+        "MIN",
+        "MFG"
+      ],
+      "scope": "region-specific",
+      "region": "レム・ビリトン",
+      "organizationKey": "rim-billiton-mining-conglomerates",
+      "engagementKinds": [
+        "wage-employment"
+      ],
+      "qualificationProfile": "heavy-machinery-technical",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "organization-or-institution-scope-required",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[80]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 81,
+      "displayName": "アテヌス英雄神殿競技勇士",
+      "sectorCandidates": [
+        "CRE",
+        "MIL"
+      ],
+      "scope": "region-specific",
+      "region": "ミノス",
+      "organizationKey": "minos-hero-temple-arena",
+      "engagementKinds": [
+        "seasonal-contract",
+        "family-community"
+      ],
+      "qualificationProfile": "competition-role",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "scenario-label-needs-jp-canon",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[81]",
+      "review": "design-contract-not-implemented"
+    },
+    {
+      "jobId": 82,
+      "displayName": "ミノス市民集会・法廷弁論官",
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "scope": "region-specific",
+      "region": "ミノス",
+      "organizationKey": "minos-civic-court",
+      "engagementKinds": [
+        "public-appointment",
+        "family-community"
+      ],
+      "qualificationProfile": "civic-authority",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "namedEntityStatus": "scenario-label-needs-jp-canon",
+      "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[82]",
+      "review": "design-contract-not-implemented"
+    }
+  ]
+}
