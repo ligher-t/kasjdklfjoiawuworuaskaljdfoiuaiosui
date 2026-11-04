@@ -213,6 +213,8 @@ function travelDepart(state) {
   if (!journey || journey.status !== "planned") throw Error("Journey is not planned");
   if (!Number.isInteger(state.mo) || state.mo < 1 || state.mo > 12)
     throw Error("Journey departure requires a known calendar month");
+  if (journey.householdCare?.childIds?.length)
+    travelValidateFamilyCare(state, journey.householdCare.agreementId);
   travelDebitLeg(state, journey, journey.legs[journey.activeLegIndex]);
   journey.status = "en-route";
   journey.departedAt = {year: state.year, month: state.mo};

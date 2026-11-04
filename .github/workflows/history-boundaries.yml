@@ -157,6 +157,8 @@ jobs:
         run: node tools/check-efficient.cjs run v88_historical_roaming_contract.test.cjs
       - name: School absence during physical roaming
         run: node tools/check-efficient.cjs run v88_roaming_school_absence.test.cjs
+      - name: Work and family consent while roaming
+        run: node tools/check-efficient.cjs run v88_roaming_work_family_boundaries.test.cjs
       - name: Regional recruitment, custody and career outcome
         run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs
       - name: Yan court recruitment is only offered in spring
