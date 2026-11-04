@@ -469,7 +469,7 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
       cd: 10,
       t: [
         {
-          when: s => ok({ need: ["地域で少数派", "就学中"] }, s) &&
+          when: (s,T) => ok({ need: ["地域で少数派", "就学中"] }, s, T) &&
             educationLegacySceneGuard(s,"education_school_classroom"),
           t: "教室で名簿を読み上げた先生が、あなたの種族の欄でつっかえて何度も言い直した。後ろの席からくすくす笑う声が聞こえ、帰り道、家の人に打ち明けるか迷った。"
         },
