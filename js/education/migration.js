@@ -171,10 +171,38 @@ function educationP17ExtraEligible(s,review,letter=null) {
       return witness && (letter!=="A" || review==="E19" ||
         Object.values(s.educationMobility?.residenceContracts||{})
           .some(x=>x.status==="committed"&&x.evidenceRef));
-    case "E56":case "E58":case "E61":case "E62":case "E64":
-    case "E67":case "E69":case "E70":case "E72":
+    case "E58":{
+      const prev=s.mo===1?{year:s.year-1,month:12}:
+        {year:s.year,month:s.mo-1};
+      return Object.values(world.offerings||{}).some(x=>
+        x.stage==="university" &&
+        world.campuses?.[x.campusId]?.educationAreaId===area &&
+        (()=>{
+          const now=educationSchoolStatusAt(s,x.id,s.year,s.mo),
+            former=educationSchoolStatusAt(s,x.id,prev.year,prev.month);
+          return now && former && now.teachingEquivalent!==former.teachingEquivalent &&
+            (now.activeEffectIds.length || former.activeEffectIds.length);
+        })());
+    }
+    case "E63":case "E71":{
+      const kind=review==="E63"?"dojo-or-guild":"corporate-training",
+        required=review==="E63"?"craft":"safety",
+        month=s.year*12+s.mo;
+      return Object.values(world.informalProviders||{}).some(x=>
+        x.kind===kind && x.areaId===area && x.status==="active" &&
+        !!x.evidenceRef && x.subjectIds?.includes(required) &&
+        x.activeFrom?.year*12+(x.activeFrom?.month??1)<=month &&
+        (!x.activeTo ||
+         x.activeTo.year*12+(x.activeTo.month??12)>=month));
+    }
+    case "E69":return institutionOfferings(s,area,"arts").some(x=>
+      x.admissionTier>=2 &&
+      ["open","limited"].includes(
+        educationSchoolStatusAt(s,x.id,s.year,s.mo)?.admissionStatus));
+    case "E56":case "E61":case "E62":case "E64":
+    case "E67":case "E70":case "E72":
       return witness && !!world.areas?.[area];
-    case "E63":case "E68":case "E71":return witness;
+    case "E68":return witness;
     case "E74":return !!world.areas?.[area] && (s.age>=12);
     case "E75":return witness &&
       s.educationRecord?.enrollments?.some(x=>x.region==="ウルサス" &&
