@@ -1,6 +1,5 @@
 // P17 reviewed full prose: 80 records, 159 choices, 46 conditional notifications.
-// Only event IDs explicitly listed below are registered as game events. The
-// remaining text is retained verbatim for subsequent guarded migration.
+// All 74 non-held event IDs are registered; individual events fire only when\n// their P17 evidence gates verify the current life and specific choice.
 // Six source-design '保留' entries are never made executable.
 window.TERRA_EDUCATION_INJECT_P17=function ($terraData,$define) {
   "use strict";
@@ -1749,7 +1748,7 @@ window.TERRA_EDUCATION_INJECT_P17=function ($terraData,$define) {
     ]
   }
 ];
-  const activated=new Set(["E34","E35","E41","E43","E47","E48","E49","E50","E51","E52","E53","E54"]);
+  const activated=new Set(reviewed.filter(x=>x.decision!=="保留").map(x=>x.reviewId));
   $define("EDUCATION_P17_REVIEWED",reviewed,false);
   for(const entry of reviewed){
     if(!activated.has(entry.reviewId)||entry.decision==="保留")continue;
