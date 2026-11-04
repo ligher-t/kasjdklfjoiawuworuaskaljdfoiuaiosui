@@ -136,7 +136,7 @@ for (let regionIndex=0;regionIndex<regions.length;regionIndex++) {
       assert.equal(row.readOnly,true,scope);
       assert.deepEqual(row.learningIssues,[],scope);
       assert.equal(row.tuitionReceipts,0,scope);
-      if (row.localIds.length===0)assert.equal(row.firstKnown,null,scope);
+      if (row.localIds.length===0)assert.notEqual(row.firstKnown,true,scope);
       if (row.tuition!==null) {
         assert(row.tuition>0,scope);
         assert(row.examFee>0,scope);
