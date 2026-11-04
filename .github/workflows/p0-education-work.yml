@@ -61,6 +61,10 @@ jobs:
         run: node tools/check-efficient.cjs run p15-education-causal-boundaries.test.cjs
       - name: P15 D12-D14 D19 D27 annual, qualification and replay boundaries
         run: node tools/check-efficient.cjs run p15-education-annual-lifecourse.test.cjs
+      - name: P15 D07 D10 D11 transfer, sibling costs and separated residences
+        run: node tools/check-efficient.cjs run p15-education-transfer-and-dependents.test.cjs
+      - name: P15 D15 D16 D21-D24 scoped infection and historical school status
+        run: node tools/check-efficient.cjs run p15-education-infection-and-history.test.cjs
       - name: Dated school operations and daily/exam/residence mobility
         run: node tools/check-efficient.cjs run p18-education-operations-mobility.test.cjs
       - name: P06/P16 bounded school case and student-visible decisions
