@@ -119,12 +119,12 @@ function educationP17ExtraEligible(s,review,letter=null) {
       if(!school || !current)return false;
       const prev=s.mo===1?{year:s.year-1,month:12}:
         {year:s.year,month:s.mo-1},
-        args={institutionId:current.m.institutionId,
-          campusId:current.m.campusId,offeringId:current.offering.id,
+        args={originAreaId:s.local?.educationAreaId,
+          campusAreaId:world.campuses?.[current.m.campusId]?.educationAreaId,
           purpose:"daily-commute"},
-        earlier=educationCanReach(s,{...args,...prev}),
-        now=educationCanReach(s,{...args,year:s.year,month:s.mo});
-      return !earlier.reachable && now.reachable &&
+        earlier=educationFindRoute(s,{...args,...prev}),
+        now=educationFindRoute(s,{...args,year:s.year,month:s.mo});
+      return earlier.status==="blocked" && now.status==="feasible" &&
         earlier.reasonCodes.some(code=>["route-suspended","no-active-link",
           "no-return-service"].includes(code));
     }
