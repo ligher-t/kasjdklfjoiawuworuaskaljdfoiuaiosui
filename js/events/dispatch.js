@@ -195,7 +195,8 @@ function slot(x) {
   reserveExpiringSlots(s, protectedChoices);
   if (HL) recordSimulationExpiringChoices(s, expiringChoices);
   const localTimelineChoice = mj.find(event =>
-    ["direct", "journey"].includes(event.historicalScene?.delivery) &&
+    (!event.id?.startsWith("timeline_") ||
+      ["direct", "journey"].includes(event.historicalScene?.delivery)) &&
     event.timelineFlag &&
     s.world?.events?.[event.timelineFlag] &&
     !s.sn?.[event.id] &&
