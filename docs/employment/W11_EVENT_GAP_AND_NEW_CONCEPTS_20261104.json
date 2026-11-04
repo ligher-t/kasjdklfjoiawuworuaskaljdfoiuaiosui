@@ -1,0 +1,729 @@
+{
+  "schema": "terra-work-w11-event-gap-concepts",
+  "version": 1,
+  "asOf": "2026-11-04",
+  "status": "design-only: concepts do not introduce events or draft visible prose",
+  "origin": "19-region model, A175 choice semantic triage, B262/C526/D74 candidate taxonomy",
+  "policy": "docs/EVENT_PROSE_CAUSALITY_AND_REVIEW_STANDARD.md",
+  "conceptCount": 36,
+  "existingCatalogIdsChecked": 2566,
+  "proposedIdCollisionCount": 0,
+  "existingPotentialOverlapNote": "priorExistingToInspect lists likely functional neighbors, not a proof no other semantic duplication exists; full text matching required at implementation",
+  "themeCounts": {
+    "求職": 6,
+    "資格": 1,
+    "勤務": 3,
+    "賃金": 2,
+    "労働安全": 3,
+    "離職": 2,
+    "自営": 2,
+    "家業": 2,
+    "共同体": 1,
+    "請負": 2,
+    "強制労働": 1,
+    "契約": 1,
+    "訓練": 1,
+    "研究": 1,
+    "建設": 1,
+    "転勤": 2,
+    "復興": 1,
+    "教育労働": 1,
+    "老年": 1,
+    "差別": 1,
+    "家計": 1
+  },
+  "concepts": [
+    {
+      "id": "work_area_without_hiring_site",
+      "status": "concept-proposal-not-playable-text",
+      "title": "就職口のない産業集落",
+      "theme": "求職",
+      "regionContext": "一般",
+      "narrativeTemperature": "貧困〜平常",
+      "triggerEvidence": "産業はあるが募集可能な職位0、本人が確認済",
+      "conceptualChoices": [
+        "掲示を待つ",
+        "隣区を探す",
+        "自営・家業を試す"
+      ],
+      "proposedResultOwner": "workCase:searched-no-openings",
+      "priorExistingToInspect": "work_unemployed_reentry",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_notice_still_open",
+      "status": "concept-proposal-not-playable-text",
+      "title": "張り紙が古い",
+      "theme": "求職",
+      "regionContext": "一般",
+      "narrativeTemperature": "平常",
+      "triggerEvidence": "既知の仕事口が既に終了、本人が古い公告を持つ",
+      "conceptualChoices": [
+        "問い合わせる",
+        "別の募集を探す"
+      ],
+      "proposedResultOwner": "workKnowledge:confirmed-expired",
+      "priorExistingToInspect": "car",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_job_offer_wrong_site",
+      "status": "concept-proposal-not-playable-text",
+      "title": "支店の名ばかり",
+      "theme": "求職",
+      "regionContext": "一般",
+      "narrativeTemperature": "平常",
+      "triggerEvidence": "企業は知るが現地site不存在、噂だけ",
+      "conceptualChoices": [
+        "事業所の所在を調べる",
+        "見送る"
+      ],
+      "proposedResultOwner": "workKnowledge:branch-unverified",
+      "priorExistingToInspect": "col_hire",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_reference_from_old_colleague",
+      "status": "concept-proposal-not-playable-text",
+      "title": "前の仕事場からの紹介状",
+      "theme": "求職",
+      "regionContext": "一般",
+      "narrativeTemperature": "平常",
+      "triggerEvidence": "旧同僚の面識、本人の前職episodeが終了",
+      "conceptualChoices": [
+        "紹介を頼む",
+        "自分で探す"
+      ],
+      "proposedResultOwner": "workCase:referral-requested",
+      "priorExistingToInspect": "work_unemployed_reentry",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_interview_trip_cancel",
+      "status": "concept-proposal-not-playable-text",
+      "title": "試験会場までの便がなくなった",
+      "theme": "求職",
+      "regionContext": "一般",
+      "narrativeTemperature": "緊迫",
+      "triggerEvidence": "選考会場と往復路が登録済みで一時運休",
+      "conceptualChoices": [
+        "別日程を尋ねる",
+        "応募を取り下げる"
+      ],
+      "proposedResultOwner": "workCase:journey-deferral",
+      "priorExistingToInspect": "car",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_credential_from_apprentice",
+      "status": "concept-proposal-not-playable-text",
+      "title": "工房の腕前を誰が認めるか",
+      "theme": "資格",
+      "regionContext": "一般",
+      "narrativeTemperature": "平常",
+      "triggerEvidence": "P12技能実績あり正式資格なし、募集が実務証拠を受理しうる",
+      "conceptualChoices": [
+        "実物を見せる",
+        "職能審査へ",
+        "研修に戻る"
+      ],
+      "proposedResultOwner": "workCase:evidence-submitted",
+      "priorExistingToInspect": "life_youth_apprenticeship",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_qualified_no_vacancy",
+      "status": "concept-proposal-not-playable-text",
+      "title": "資格だけでは足りない",
+      "theme": "求職",
+      "regionContext": "一般",
+      "narrativeTemperature": "平常",
+      "triggerEvidence": "資格合致、募集枠ゼロ",
+      "conceptualChoices": [
+        "待機登録",
+        "別企業を探す"
+      ],
+      "proposedResultOwner": "workCase:qualified-waitlisted",
+      "priorExistingToInspect": "car",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_first_day_clock",
+      "status": "concept-proposal-not-playable-text",
+      "title": "最初の出勤刻限",
+      "theme": "勤務",
+      "regionContext": "一般",
+      "narrativeTemperature": "穏やか",
+      "triggerEvidence": "active employmentEpisode初年度、本人が実際に勤務開始",
+      "conceptualChoices": [
+        "初めての仕事場を覚える（日常）"
+      ],
+      "proposedResultOwner": "employmentEpisode:first-shift",
+      "priorExistingToInspect": "job_contract_review_v76",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_shift_swap_for_care",
+      "status": "concept-proposal-not-playable-text",
+      "title": "家族の通院日と交替勤務",
+      "theme": "勤務",
+      "regionContext": "一般",
+      "narrativeTemperature": "緊迫",
+      "triggerEvidence": "active contract、同居扶養者の医療予定、shift重複",
+      "conceptualChoices": [
+        "上司へ交代を頼む",
+        "予定を変更"
+      ],
+      "proposedResultOwner": "workContract:shift-negotiated",
+      "priorExistingToInspect": "job_contract_family_schedule_v76",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_timecard_missing",
+      "status": "concept-proposal-not-playable-text",
+      "title": "汚れた出勤簿",
+      "theme": "賃金",
+      "regionContext": "一般",
+      "narrativeTemperature": "平常〜厳しい",
+      "triggerEvidence": "有効勤務日と給与明細不一致",
+      "conceptualChoices": [
+        "出勤記録を示す",
+        "相談する",
+        "請求を保留"
+      ],
+      "proposedResultOwner": "workEarnings:pay-dispute",
+      "priorExistingToInspect": "job_contract_review_v76",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_pay_delayed_market",
+      "status": "concept-proposal-not-playable-text",
+      "title": "給金が翌月に延びた",
+      "theme": "賃金",
+      "regionContext": "一般",
+      "narrativeTemperature": "厳しい",
+      "triggerEvidence": "賃金支払期日到来、現金未払、現職",
+      "conceptualChoices": [
+        "書面請求",
+        "同僚相談",
+        "期限を待つ"
+      ],
+      "proposedResultOwner": "workEarnings:unpaid",
+      "priorExistingToInspect": "vic_strike",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_factory_machine_guard",
+      "status": "concept-proposal-not-playable-text",
+      "title": "外したままの防護カバー",
+      "theme": "労働安全",
+      "regionContext": "工業",
+      "narrativeTemperature": "緊迫",
+      "triggerEvidence": "MFG site稼働、本人に担当機械、実安全状態basic",
+      "conceptualChoices": [
+        "作業を止め点検",
+        "上司へ相談",
+        "拒否して帰る"
+      ],
+      "proposedResultOwner": "site:safety-reported",
+      "priorExistingToInspect": "col_tech_safety_aftermath",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_foreman_help_during_fault",
+      "status": "concept-proposal-not-playable-text",
+      "title": "工長の手を借りる",
+      "theme": "労働安全",
+      "regionContext": "工業",
+      "narrativeTemperature": "穏やか",
+      "triggerEvidence": "MFG就労、同じ現場で既知の工長、設備不具合",
+      "conceptualChoices": [
+        "自分で調べる",
+        "工長と点検"
+      ],
+      "proposedResultOwner": "personTie:mentor",
+      "priorExistingToInspect": "life_work_project_setback",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_contract_housing_ends",
+      "status": "concept-proposal-not-playable-text",
+      "title": "社宅の鍵を返す日",
+      "theme": "離職",
+      "regionContext": "一般",
+      "narrativeTemperature": "厳しい",
+      "triggerEvidence": "employer-provided housing、episode終了、家族同居有無",
+      "conceptualChoices": [
+        "次の居所を探す",
+        "会社と期限交渉"
+      ],
+      "proposedResultOwner": "residence:post-employment-uncertain",
+      "priorExistingToInspect": "work_unemployed_reentry",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_craft_supplier_broke",
+      "status": "concept-proposal-not-playable-text",
+      "title": "仕入れ先が潰れた",
+      "theme": "自営",
+      "regionContext": "市場",
+      "narrativeTemperature": "厳しい",
+      "triggerEvidence": "self employment、実取引先閉鎖、在庫不足",
+      "conceptualChoices": [
+        "代替仕入れ",
+        "休業",
+        "工房へ勤める"
+      ],
+      "proposedResultOwner": "selfBusiness:supply-disrupted",
+      "priorExistingToInspect": "fam_inherit",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_self_shop_first_customer",
+      "status": "concept-proposal-not-playable-text",
+      "title": "小さな売上を帳面につける",
+      "theme": "自営",
+      "regionContext": "市場",
+      "narrativeTemperature": "穏やか",
+      "triggerEvidence": "自営店舗確定、実営業日、顧客がいる",
+      "conceptualChoices": [
+        "売上をつける（日常）"
+      ],
+      "proposedResultOwner": "workEarnings:actual-sale",
+      "priorExistingToInspect": "lon_merchant",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_family_field_in_kind",
+      "status": "concept-proposal-not-playable-text",
+      "title": "余った作物の分け前",
+      "theme": "家業",
+      "regionContext": "農村",
+      "narrativeTemperature": "穏やか",
+      "triggerEvidence": "family-community実役割、収穫実績、共有家計",
+      "conceptualChoices": [
+        "保存する",
+        "市場へ持つ",
+        "家族へ配分"
+      ],
+      "proposedResultOwner": "household:in-kind-allocation",
+      "priorExistingToInspect": "kaz_rural",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_sami_winter_food_share",
+      "status": "concept-proposal-not-playable-text",
+      "title": "冬に備えた分配の相談",
+      "theme": "共同体",
+      "regionContext": "サーミ",
+      "narrativeTemperature": "穏やか〜緊迫",
+      "triggerEvidence": "氏族の収穫と越冬、地域／参加者実在",
+      "conceptualChoices": [
+        "共同倉へ渡す",
+        "近隣家族へ届ける"
+      ],
+      "proposedResultOwner": "community:allocation",
+      "priorExistingToInspect": "car_sam_priest_entry",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_sargon_caravan_return",
+      "status": "concept-proposal-not-playable-text",
+      "title": "隊商の報酬を分ける",
+      "theme": "請負",
+      "regionContext": "サルゴン",
+      "narrativeTemperature": "平常",
+      "triggerEvidence": "隊商護衛のgig完了、任務結果確定",
+      "conceptualChoices": [
+        "約定分を受取",
+        "未払を問い直す"
+      ],
+      "proposedResultOwner": "gig:completed-payment",
+      "priorExistingToInspect": "sargon_market_contract_review",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_kazdel_forge_request",
+      "status": "concept-proposal-not-playable-text",
+      "title": "鍛冶場へ持ち込まれた修理品",
+      "theme": "家業",
+      "regionContext": "カズデル",
+      "narrativeTemperature": "平常",
+      "triggerEvidence": "作業可能な鍛冶工房と依頼者、材料実在",
+      "conceptualChoices": [
+        "修繕を引き受ける",
+        "材料不足を伝える"
+      ],
+      "proposedResultOwner": "gig:forging-commission",
+      "priorExistingToInspect": "car_kazdel_bone_entry",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_rim_mine_evac_shift",
+      "status": "concept-proposal-not-playable-text",
+      "title": "坑道の警報と点呼",
+      "theme": "労働安全",
+      "regionContext": "レム・ビリトン",
+      "narrativeTemperature": "緊迫",
+      "triggerEvidence": "採鉱拠点に天災警報、現勤務者あり",
+      "conceptualChoices": [
+        "班を数える",
+        "避難経路確認"
+      ],
+      "proposedResultOwner": "site:shutdown-logged",
+      "priorExistingToInspect": "rim_mine",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_urs_ore_worker_coercion",
+      "status": "concept-proposal-not-playable-text",
+      "title": "監督者の印章",
+      "theme": "強制労働",
+      "regionContext": "ウルサス",
+      "narrativeTemperature": "過酷",
+      "triggerEvidence": "監視付き採掘班、本人が強制配属、抜ける権限なし",
+      "conceptualChoices": [
+        "医療申請",
+        "異議",
+        "生存優先"
+      ],
+      "proposedResultOwner": "coercedAssignment:review",
+      "priorExistingToInspect": "ursus_mine_assignment_review",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_lungmen_courier_small_job",
+      "status": "concept-proposal-not-playable-text",
+      "title": "地図の端にある配達先",
+      "theme": "請負",
+      "regionContext": "龍門",
+      "narrativeTemperature": "穏やか",
+      "triggerEvidence": "個人の運送gig、実配達路と受領人",
+      "conceptualChoices": [
+        "引き受ける",
+        "経路を確かめる"
+      ],
+      "proposedResultOwner": "gig:delivery",
+      "priorExistingToInspect": "transporter_contract_review",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_kaz_newsroom_missing_print",
+      "status": "concept-proposal-not-playable-text",
+      "title": "印刷所に紙が届かない",
+      "theme": "勤務",
+      "regionContext": "カジミエーシュ",
+      "narrativeTemperature": "平常〜緊迫",
+      "triggerEvidence": "実在新聞社site、記事制作が物流停止で遅滞",
+      "conceptualChoices": [
+        "事実確認して延期",
+        "別の版面を使う"
+      ],
+      "proposedResultOwner": "site:production-delay",
+      "priorExistingToInspect": "car_kaz_comp_knight_entry",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_kazimierz_sponsor_breach",
+      "status": "concept-proposal-not-playable-text",
+      "title": "契約書にない広告",
+      "theme": "契約",
+      "regionContext": "カジミエーシュ",
+      "narrativeTemperature": "厳しい",
+      "triggerEvidence": "企業騎士のスポンサー契約と広告指示が不一致",
+      "conceptualChoices": [
+        "条件照会",
+        "異議",
+        "受け入れ"
+      ],
+      "proposedResultOwner": "workContract:sponsor-dispute",
+      "priorExistingToInspect": "car_kaz_comp_knight_entry",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_bsw_quiet_office_training",
+      "status": "concept-proposal-not-playable-text",
+      "title": "軍事会社の事務研修",
+      "theme": "訓練",
+      "regionContext": "クルビア",
+      "narrativeTemperature": "穏やか",
+      "triggerEvidence": "BSW民間事務職、研修開始、軍事資格は未取得",
+      "conceptualChoices": [
+        "事務手順を学ぶ",
+        "現場訓練の概要を聞く"
+      ],
+      "proposedResultOwner": "learningPath:BSW-office",
+      "priorExistingToInspect": "sr_bsw_recruitment_assessment",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_rhine_lab_safety_minutes",
+      "status": "concept-proposal-not-playable-text",
+      "title": "研究室の保守記録",
+      "theme": "研究",
+      "regionContext": "クルビア",
+      "narrativeTemperature": "平常〜緊迫",
+      "triggerEvidence": "ライン生命の実研究現場、責任部署・実安全状況",
+      "conceptualChoices": [
+        "記録に残す",
+        "責任者と協議"
+      ],
+      "proposedResultOwner": "workCase:lab-safety-record",
+      "priorExistingToInspect": "sr_rhine_section_assignment",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_karlan_rail_station_work",
+      "status": "concept-proposal-not-playable-text",
+      "title": "新しい線路と古い峠道",
+      "theme": "建設",
+      "regionContext": "イェラグ",
+      "narrativeTemperature": "平常",
+      "triggerEvidence": "実在の開通区間と旧商路、現地輸送職",
+      "conceptualChoices": [
+        "新ルートの試用",
+        "従来道を守る"
+      ],
+      "proposedResultOwner": "workCase:route-change",
+      "priorExistingToInspect": "kje_open",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_siesta_relocated_job",
+      "status": "concept-proposal-not-playable-text",
+      "title": "移転先へ運んだ道具",
+      "theme": "転勤",
+      "regionContext": "シエスタ",
+      "narrativeTemperature": "穏やか〜厳しい",
+      "triggerEvidence": "Old Siesta勤務先が移転、New siteが本当に開業",
+      "conceptualChoices": [
+        "異動を申請",
+        "残る仕事を探す"
+      ],
+      "proposedResultOwner": "employmentEpisode:site-transfer",
+      "priorExistingToInspect": "car_sie_obs_entry",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_iberia_decommissioned_dock",
+      "status": "concept-proposal-not-playable-text",
+      "title": "閉じた船渠の職人",
+      "theme": "離職",
+      "regionContext": "イベリア",
+      "narrativeTemperature": "厳しい",
+      "triggerEvidence": "海運サイト閉鎖・元労働者本人、技能記録",
+      "conceptualChoices": [
+        "修理技術を陸上へ活かす",
+        "記録を残す"
+      ],
+      "proposedResultOwner": "workCase:retrain-from-sea",
+      "priorExistingToInspect": "ibe_rebuild",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_laterano_duty_elsewhere",
+      "status": "concept-proposal-not-playable-text",
+      "title": "国外派遣の書類",
+      "theme": "転勤",
+      "regionContext": "ラテラーノ",
+      "narrativeTemperature": "平常",
+      "triggerEvidence": "公証人役場実任用者、正式派遣指示",
+      "conceptualChoices": [
+        "受領",
+        "差し戻し",
+        "勤務地相談"
+      ],
+      "proposedResultOwner": "employmentEpisode:public-posting",
+      "priorExistingToInspect": "car_lat_executor_entry",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_victoria_rail_repair_postwar",
+      "status": "concept-proposal-not-playable-text",
+      "title": "外したレールの行き先",
+      "theme": "復興",
+      "regionContext": "ヴィクトリア",
+      "narrativeTemperature": "平常〜緊迫",
+      "triggerEvidence": "戦災済み鉄道site、復旧発注実在",
+      "conceptualChoices": [
+        "復旧請負",
+        "別の職場を探す"
+      ],
+      "proposedResultOwner": "gig:reconstruction",
+      "priorExistingToInspect": "car_vic_works_entry",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_education_teacher_contract",
+      "status": "concept-proposal-not-playable-text",
+      "title": "生徒の来ない教室の教員",
+      "theme": "教育労働",
+      "regionContext": "一般",
+      "narrativeTemperature": "厳しい",
+      "triggerEvidence": "P05学校site閉鎖、J12本人の正式職務、休業通知",
+      "conceptualChoices": [
+        "別課程を探す",
+        "学校と再開条件を協議"
+      ],
+      "proposedResultOwner": "teacherEpisode:school-closed",
+      "priorExistingToInspect": "teacher_path",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_elder_light_task_offer",
+      "status": "concept-proposal-not-playable-text",
+      "title": "昔の道具を預ける",
+      "theme": "老年",
+      "regionContext": "一般",
+      "narrativeTemperature": "穏やか",
+      "triggerEvidence": "退職した熟練工と実在の短期師弟先、体力制約",
+      "conceptualChoices": [
+        "手ほどきだけ続ける",
+        "現場請負を断る"
+      ],
+      "proposedResultOwner": "learningPath:craft-transfer",
+      "priorExistingToInspect": "work_elder_reentry",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_infected_rejected_hearsay",
+      "status": "concept-proposal-not-playable-text",
+      "title": "診断を知らない採用担当",
+      "theme": "差別",
+      "regionContext": "一般",
+      "narrativeTemperature": "厳しい",
+      "triggerEvidence": "応募結果不採用、採用担当の感染認知未確定",
+      "conceptualChoices": [
+        "理由を確認",
+        "別の応募先を探す"
+      ],
+      "proposedResultOwner": "workKnowledge:rejection-reason-unknown",
+      "priorExistingToInspect": "earth_discr_disclose_employer",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    },
+    {
+      "id": "work_household_income_from_spouse",
+      "status": "concept-proposal-not-playable-text",
+      "title": "配偶者の勤務先が休業した",
+      "theme": "家計",
+      "regionContext": "一般",
+      "narrativeTemperature": "厳しい",
+      "triggerEvidence": "配偶者の実episodeとsite停止、主人公は別職",
+      "conceptualChoices": [
+        "家計を見直す",
+        "支援を探す"
+      ],
+      "proposedResultOwner": "household:income-interruption",
+      "priorExistingToInspect": "fam_unemploy",
+      "followupRequired": "record real chosen outcome and subject/person/site/period; no success inferred from occurrence",
+      "proseInstruction": "Use short concrete life-detail prose from existing events; include ordinary or harsh outcomes as justified and preserve uncertainty and agency",
+      "sourceGrade": "S-design",
+      "reviewStatus": "candidate; compare existing text/choice/outcomes and player-visible prose before approval"
+    }
+  ]
+}
