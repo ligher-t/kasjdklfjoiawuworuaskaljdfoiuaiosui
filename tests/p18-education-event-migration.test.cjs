@@ -56,6 +56,10 @@ assert.equal(corpus.notes,46);
 assert.equal(corpus.unique,80);
 assert.deepEqual(corpus.held,["E57","E59","E60","E65","E66","E73"]);
 assert.equal(corpus.enabled.length,73);
+const lowerStageOwners=run(function(){
+  return EV.filter(e=>e.id==="edu_lower_stage_site_review").length;
+});
+assert.equal(lowerStageOwners,1,"E04 must reuse the existing I03 lower-stage event");
 assert.equal(corpus.conditional,2);
 assert.equal(corpus.exact,
   "診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。");
