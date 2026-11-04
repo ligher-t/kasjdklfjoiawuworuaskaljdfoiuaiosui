@@ -28,6 +28,7 @@ const EDUCATION_LEGACY_SCENE_REQUIREMENTS=Object.freeze({
   daily_leithanien_57:"music",
   daily_leithanien_58:"music",
   daily_leithanien_60:"verified-exam",
+  daily_leithanien_54:"verified-exam",
   daily_laterano_48:"religious",
   daily_laterano_49:"religious",
   daily_laterano_52:"equipment-shooting",
@@ -42,6 +43,13 @@ const EDUCATION_LEGACY_SCENE_REQUIREMENTS=Object.freeze({
   daily_siracusa_50:"formal"
 });
 function educationLegacySceneGuard(s,id) {
+  if(id==="life_ursus_classmate_contact"){
+    return !!s.educationRecord?.enrollments?.some(e=>{
+      const school=s.world?.educationWorld?.institutions?.[e.institutionId],
+        area=s.world?.educationWorld?.areas?.[school?.homeAreaId];
+      return e.startedYear<=s.year && area?.regionKey==="ウルサス";
+    });
+  }
   const kind=EDUCATION_LEGACY_SCENE_REQUIREMENTS[id];
   if(!kind)return true;
   const current=educationMigrationCurrent(s);
