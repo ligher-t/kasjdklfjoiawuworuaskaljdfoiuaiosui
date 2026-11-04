@@ -194,6 +194,7 @@ function slot(x) {
   reserveExpiringSlots(s, protectedChoices);
   if (HL) recordSimulationExpiringChoices(s, expiringChoices);
   const localTimelineChoice = mj.find(event =>
+    ["direct", "journey"].includes(event.historicalScene?.delivery) &&
     event.timelineFlag &&
     s.world?.events?.[event.timelineFlag] &&
     !s.sn?.[event.id] &&
@@ -227,7 +228,8 @@ function fire(e, s, T) {
   if (HL) STAT.currentEventId = e?.id || null;
   // A dated scene records a witnessed encounter only when it actually
   // appears in the city to which the historical scene is grounded.
-  if (e?.timelineFlag) {
+  if (e?.timelineFlag && e.c && e.historicalScene?.delivery === "direct" &&
+      historicalSceneEligibility(e, s).eligible) {
     const historicalEntry = HIST.find(row => row.flag === e.timelineFlag);
     if (historicalEntry) recordHistoricalDirectEncounter(historicalEntry, s, e.id);
   }

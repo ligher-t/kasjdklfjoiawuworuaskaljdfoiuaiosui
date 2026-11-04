@@ -520,6 +520,10 @@ function elig(e, s, T, options = {}) {
   if (e.groundOnly && isRhodesLandshipResident(s)) return rejectEligibility(e, "ground-location", options);
   if (e.id?.startsWith("daily_rhodes_") && !isRhodesLandshipResident(s)) return rejectEligibility(e, "landship-location", options);
   if (!affiliationEventAvailable(e, s)) return rejectEligibility(e, "affiliation-place", options);
+  if (e.timelineFlag && e.id?.startsWith("timeline_")) {
+    const scene = historicalSceneEligibility(e, s);
+    if (!scene.eligible) return rejectEligibility(e, scene.reason, options);
+  }
   const l = s.sn[e.id] ?? (e.id === "displacement_after" ? s.sn.disaster_after : undefined),
     a = e.after,
     ignoreOccurrence = options.ignoreOccurrence === true,
