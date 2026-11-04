@@ -340,3 +340,81 @@ assert.equal(validatedCaseScene.reason,"voluntary-defer");
 assert.equal(validatedCaseScene.noEnrollment,true);
 assert.equal(validatedCaseScene.noCharge,true);
 console.log("PASS verified teacher identity and P17 case decisions preserve school/finance ownership");
+
+
+const noticeInventory=run(function(){
+  const corpus=window.GAME_DATA.EDUCATION_P17_REVIEWED;
+  const all=corpus.reduce((n,x)=>n+x.choices.reduce((m,c)=>
+    m+c.notifications.length,0),0);
+  const held=corpus.filter(x=>x.decision==="保留")
+    .reduce((n,x)=>n+x.choices.reduce((m,c)=>
+      m+c.notifications.length,0),0);
+  return {all,held,active:all-held};
+});
+assert.deepEqual(noticeInventory,{all:46,held:2,active:44});
+
+fresh("クルビア",22);
+const informedGrant=run(function(){
+  const s=S;s.mo=4;s.cash=0;s.house.cash=0;
+  ensureResidenceIdentity(s);
+  const area=ensureEducationWorldForResidence(s),
+    world=s.world.educationWorld,
+    institution=educationRegisterInstitution(world,area,
+      "p17-grant-office","university",["university"],s.year),
+    offer=world.offerings[institution.offeringIds[0]],
+    item=educationCaseBegin(s,"higher-path","university",1);
+  item.phase="contract";item.offeringId=offer.id;
+  item.targetInstitutionId=institution.id;
+  const result=educationMigrationRecord(s,"edu_scholarship_application","A",
+    {caseId:item.id,informationOnly:true}),
+    before=!result.notice;
+  const asked=educationCaseFinanceInquiry(s);
+  const notified=educationP17ReconcileNotices(s),
+    after=result.notice,
+    repeated=educationP17ReconcileNotices(s);
+  return {before,asked,notified,repeated,
+    index:after?.index,
+    matches:after?.index===(s.educationAccess.financingOffers[item.id].grant?0:1),
+    evidence:!!after?.evidenceRef,
+    newSchool:!!s.educationRecord?.enrollments?.length,
+    cash:s.cash};
+});
+assert.equal(informedGrant.before,true);
+assert.equal(informedGrant.asked,true);
+assert.equal(informedGrant.notified,1);
+assert.equal(informedGrant.repeated,0);
+assert.equal(informedGrant.matches,true);
+assert.equal(informedGrant.evidence,true);
+assert.equal(informedGrant.newSchool,false);
+assert.equal(informedGrant.cash,0);
+
+fixture();
+const noticeProof=run(function(){
+  const s=S;s.mo=5;
+  const id="confirmed-assessment",
+    sourceEventId="edu_informal_skill_assessment";
+  s.educationRecognitionInquiries={version:1,items:{
+    [id]:{id,sourceEventId,status:"awaiting-assessment",awardId:null,
+      at:{year:s.year,month:5}}
+  }};
+  const row=educationMigrationRecord(s,sourceEventId,"A",
+    {noAutomaticQualification:true}),
+    pending=!row.notice;
+  s.educationRecognitionInquiries.items[id].status="rejected";
+  const noUnsourced=educationP17ReconcileNotices(s)===0;
+  s.educationRecognitionInquiries.items[id].assessmentEvidenceRef=
+    "signed-assessment-result-001";
+  const confirmed=educationP17ReconcileNotices(s),
+    once=educationP17ReconcileNotices(s);
+  return {pending,noUnsourced,confirmed,once,
+    index:row.notice?.index,evidence:row.notice?.evidenceRef,
+    credentials:s.educationRecord.awards.length};
+});
+assert.equal(noticeProof.pending,true);
+assert.equal(noticeProof.noUnsourced,true);
+assert.equal(noticeProof.confirmed,1);
+assert.equal(noticeProof.once,0);
+assert.equal(noticeProof.index,1);
+assert.equal(noticeProof.evidence,"signed-assessment-result-001");
+assert.equal(noticeProof.credentials,0);
+console.log("PASS P17 conditional notices: 46 authored, two held, delayed source-backed dispatch, no duplicates or phantom awards");
