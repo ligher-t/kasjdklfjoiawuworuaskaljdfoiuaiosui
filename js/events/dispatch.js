@@ -136,6 +136,7 @@ function slot(x) {
     return;
   }
   s.mo = Math.floor(x * CALENDAR_MONTHS) + 1;
+  advanceJourneyThrough(s, s.year, s.mo);
   if(s.educationPath?.offeringId)
     educationSimulateAttendanceThrough(s,s.year,s.mo-1);
   ensureLocalityState(s);

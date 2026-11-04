@@ -12,6 +12,7 @@ function advanceCurrentLifeYear(s, services) {
       delete s.educationYearClosing;
     }
   }
+  advanceJourneyThrough(s, s.year, 12);
   educationExpireCases(s,s.year+1);
   const a = ++s.age,
     t = s.t,

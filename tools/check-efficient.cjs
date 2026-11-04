@@ -37,6 +37,7 @@ const approved=Object.freeze([
   "v88_language_system.test.cjs",
   "v88_timeline_local_events.test.cjs",
   "v88_history_scope_and_pending.test.cjs",
+  "v88_historical_roaming_contract.test.cjs",
   "v88_regional_career_outcomes.test.cjs",
   "v88_regional_promotion_history.test.cjs",
   "v88_yan_court_spring_eligibility.test.cjs",

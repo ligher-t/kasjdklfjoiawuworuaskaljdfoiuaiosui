@@ -31,7 +31,8 @@ function historicalSceneEligibility(event, state) {
   if (scene.delivery === "journey") {
     const presence = travelPresence(state);
     const journey = travelCurrentJourney(state);
-    if (!journey || presence.mode !== "checkpoint" || journey.status !== "at-checkpoint")
+    if (!journey || !["wandering", "flight"].includes(journey.purpose) ||
+        presence.mode !== "checkpoint" || journey.status !== "at-checkpoint")
       return { eligible: false, reason: "journey-inactive" };
     if (!presence.checkpointId || !presence.legId ||
         !journey.legs?.some(leg => leg.id === presence.legId &&

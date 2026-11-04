@@ -41,7 +41,7 @@ function travelPresence(state) {
       stopId: journey.currentStopId };
   }
   if (journey.status === "arrived") return {
-    ...base, mode: "stop", region: journey.destinationRegion,
+    ...base, mode: "stop", region: leg?.toRegion || null,
     stopId: journey.id + ":destination"
   };
   return base;
@@ -55,7 +55,7 @@ function travelStart(state, request) {
       to === state.res?.n || !(MIGRATION_ROUTES[state.res.n] || []).some(r => r.n === to))
     throw Error("Invalid travel purpose or destination");
   if (state.fl?.detained || state.fl?.ursus_katorga_detained ||
-      state.fl?.isolated || (state.age < 18 && !request.guardianConsentRef))
+      state.fl?.isolated || (state.age < 18))
     throw Error("Travel permission is unavailable");
   const duration = request?.durationMonths == null ? 1 : request.durationMonths;
   if (!Number.isInteger(duration) || duration < 1 || duration > 24)
@@ -122,13 +122,72 @@ function travelMarkCheckpoint(state, checkpoint) {
   journey.currentCheckpointId = checkpoint.id;
   return journey;
 }
+function travelBeginReturn(state) {
+  const journey = travelCurrentJourney(state);
+  if (!journey || journey.status !== "arrived" || journey.activeLegIndex !== 0 ||
+      !(MIGRATION_ROUTES[journey.destinationRegion] || []).some(r => r.n === journey.originRegion))
+    throw Error("No confirmed return option from the reached destination");
+  if (!Number.isInteger(state.mo) || state.mo < 1 || state.mo > 12)
+    throw Error("Return departure month is not known");
+  journey.legs.push({
+    id: journey.id + ":leg:1",
+    routeId: "migration-reference:" + journey.destinationRegion + ":" + journey.originRegion,
+    fromRegion: journey.destinationRegion, toRegion: journey.originRegion,
+    durationMonths: journey.legs[0].durationMonths,
+    checkpointId: null, checkpointRegion: null, sourceKind: "game-model"
+  });
+  journey.activeLegIndex = 1;
+  journey.status = "en-route";
+  journey.departedAt = {year: state.year, month: state.mo};
+  journey.lastProcessed = {year: state.year, month: state.mo};
+  return journey;
+}
 function travelEnd(state, reason) {
-  if (!["abandoned", "ended-by-death"].includes(reason))
+  if (!["abandoned", "returned-home", "ended-by-death"].includes(reason))
     throw Error("Unsupported journey conclusion");
   const journey = travelCurrentJourney(state);
   if (!journey) return null;
+  if (reason === "abandoned" && journey.status !== "planned")
+    throw Error("An actual trip needs a physical return, not an instant cancellation");
+  if (reason === "returned-home" &&
+      !(journey.status === "arrived" && journey.legs[journey.activeLegIndex].toRegion === journey.originRegion))
+    throw Error("The traveler has not returned to their residence");
   journey.status = reason;
   journey.conclusion = {reason, year: state.year, month: state.mo};
   ensureTravelState(state).activeJourneyId = null;
   return journey;
+}
+
+function auditTravelState(state) {
+  const t = state.travelState;
+  if (t == null) return [];
+  const errors = [];
+  if (t.version !== 1 || !["settled", "itinerant"].includes(t.lifestyle) ||
+      !Number.isInteger(t.journeySeq) || t.journeySeq < 0 ||
+      !t.journeys || typeof t.journeys !== "object" ||
+      !t.transactions || typeof t.transactions !== "object" ||
+      !Array.isArray(t.history)) return ["旅程台帳の構造が不正"];
+  const active = t.activeJourneyId ? t.journeys[t.activeJourneyId] : null;
+  if (t.activeJourneyId && (!active || !TRAVEL_OPEN_STATUSES.includes(active.status)))
+    errors.push("活動中の旅程IDが不正");
+  const open = Object.values(t.journeys).filter(j => j && TRAVEL_OPEN_STATUSES.includes(j.status));
+  if (open.length > 1 || open.length !== (active ? 1 : 0))
+    errors.push("未終了旅程が複数または未参照");
+  for (const [id, j] of Object.entries(t.journeys)) {
+    const leg = j?.legs?.[j.activeLegIndex];
+    if (!j || j.id !== id || !TRAVEL_PURPOSES.includes(j.purpose) ||
+        !Array.isArray(j.legs) || j.legs.length < 1 || j.legs.length > 2 ||
+        !Number.isInteger(j.activeLegIndex) || !leg ||
+        !REG.some(r => r.n === j.originRegion) ||
+        !REG.some(r => r.n === j.destinationRegion) ||
+        !Number.isInteger(j.startedAt?.year) ||
+        !Number.isInteger(j.lastProcessed?.year) ||
+        !Number.isInteger(j.lastProcessed?.month) ||
+        j.lastProcessed.month < 0 || j.lastProcessed.month > 12)
+      errors.push("旅程の起点・時点・区間が不正");
+    if (j?.status === "at-checkpoint" &&
+        (!leg?.checkpointId || leg.checkpointId !== j.currentCheckpointId))
+      errors.push("登録されていない検問所で待機");
+  }
+  return errors;
 }
