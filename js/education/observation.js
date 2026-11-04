@@ -233,6 +233,6 @@ function educationObservationCaseBridgeRows(s,{
         c.status==="resolved"?false:null,
       N_completed:evidence?.denominator?
         evidence.numerator>0:null,
-      N_nonformal_gain:participation}};
+      N_nonformal_gain:participation};
   }).filter(Boolean);
 }
