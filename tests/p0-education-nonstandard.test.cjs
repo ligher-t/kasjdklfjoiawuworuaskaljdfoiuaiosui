@@ -8,13 +8,49 @@ function scenarios(){
  const before=educationExam(s,'university',1).allowed,
    event=EV.find(e=>e.id==='higher_ed');
  const direct=!!event?.show(s);
+ // Legacy requests begin a bounded case. A separate documented acceptance
+ // and actual monthly credits are necessary for a formal preparatory course.
+ const legacy=JSON.parse(JSON.stringify(s)),cashBefore=legacy.cash;
  TRACE_RESOLUTION={id:'education_return_path',label:'三年間の基礎準備'};
- educationApplyAction(s,'start-preparatory');TRACE_RESOLUTION=null;
- const bridging=educationLive(s) && s.educationPath.stage==='preparatory' && s.job===24;
+ educationApplyAction(legacy,'start-preparatory');TRACE_RESOLUTION=null;
+ const pending=educationActiveCase(legacy),
+   legacyCase=pending?.stage==='preparatory'&&pending.phase==='planning' &&
+     !legacy.educationPath && cashBefore===legacy.cash;
+ ensureResidenceIdentity(s);
+ const area=ensureEducationWorldForResidence(s),world=s.world.educationWorld;
+ const inst=educationRegisterInstitution(world,area,
+   'nonstandard-accepted-preparation','preparatory',['preparatory'],s.year);
+ const off=world.offerings[inst.offeringIds[0]];
+ s.mo=0;
+ educationStart(s,'preparatory',1,'verified-school-acceptance');
+ s.educationPath.institutionId=inst.id;
+ s.educationPath.campusId=off.campusId;
+ s.educationPath.offeringId=off.id;
+ const enrollment=s.educationRecord.enrollments.at(-1);
+ educationBindFormalEnrollment(s,enrollment.id);
+ const firstInvoice=educationEnsureTuitionInvoice(s,s.educationPath,s.year);
+ educationSettleInvoice(s,firstInvoice);
+ educationFinanceProjectInvoice(s,firstInvoice);
+ const bridging=educationLive(s)&&s.educationPath.stage==='preparatory'&&
+   s.job===24 && firstInvoice.status==='paid';
  const noInstant=educationExam(s,'university',1).allowed;
- for(let i=1;i<=3;i++){s.age++;s.year++;educationAdvanceYear(s);}
+ const placement=s.educationPlacements.currentPlacementId;
+ for(let i=1;i<=3;i++){
+   s.mo=12;
+   for(let month=1;month<=12;month++)educationRecordAttendance(s,{
+     enrollmentId:enrollment.id,placementId:placement,
+     year:s.year,month,personalAccess:1,
+     evidenceRef:'nonstandard-preparation:'+s.year+':'+month
+   });
+   const credit=educationSettleCompletedAcademicYear(s,s.year);
+   if(!credit.credited)throw Error('準備課程の正式履修実績が不足');
+   if(i===3){s.k=55;socialModel(s).literacy=55;}
+   s.age++;s.year++;s.mo=0;educationAdvanceYear(s);
+ }
  const equiv=s.educationPath.equivalency.includes('upper') &&
-   s.educationPath.status==='completed';
+   s.educationPath.status==='completed' &&
+   s.educationRecord.schoolCertificates?.some(x=>
+     x.enrollmentId===enrollment.id&&x.qualification==='upper-equivalency');
  const after=educationExam(s,'university',1).allowed;
  const second=JSON.parse(JSON.stringify(s));
  second.educationPath=null;second.study=null;second.fl.sch=0;second.fl.uni=0;
@@ -86,13 +122,14 @@ function scenarios(){
    grant.educationAnnualFee?.paidByHousehold===30000&&
    grant.educationAnnualFee?.aidAmount===grantFee-50000;
  return{yanNoDegree,yanNoSchoolChoice,grantPaid,
-   before,direct,bridging,noInstant,equiv,after,confidential,disclosedOutcome,
+   before,direct,legacyCase,bridging,noInstant,equiv,after,confidential,disclosedOutcome,
    sarkazChance,taraChance,pending,paused,blockedConcurrentStudy,offeredResume,resumedNoFulltimeWork,
    audit:auditLifeState(s)};
 }
 const x=vm.runInContext('('+scenarios.toString()+')()',ctx,{timeout:18000});
 assert.equal(x.before,false,'no school degree means no university entry');
 assert.equal(x.direct,false,'the university offer is not a bypass for unschooled adults');
+assert.equal(x.legacyCase,true,'the legacy preparatory option now opens a case without tuition or admission');
 assert.equal(x.bridging,true,'multiyear adult study may coexist with ordinary employment');
 assert.equal(x.noInstant,false,'night school or one preparatory year is not university eligibility');
 assert.equal(x.equiv,true,'only completed preparation plus measured competence awards equivalency');
