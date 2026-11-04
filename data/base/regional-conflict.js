@@ -922,7 +922,8 @@ window.TERRA_DATA_BUILD.run("base/regional-conflict", function ($terraData, $def
       timelineFlag: "four_emperors_war",
       references: ["SRC_TL_1000_1061", "SRC_COMMUNITY_FOUR_NATIONS_WAR"],
       st: ["少年", "青年", "壮年", "老年"],
-      show: s => ["ガリア", "ヴィクトリア", "リターニア", "ウルサス"].includes(s.res?.n),
+      // The Lingones bombardment cannot be experienced in unrelated nations.
+      show: () => false,
       ge: { year: 1031 },
       le: { year: 1032 },
       w: 2.5,
@@ -1757,19 +1758,20 @@ window.TERRA_DATA_BUILD.run("base/regional-conflict", function ($terraData, $def
       need: ["国:クルビア"],
       ge: { year: 1092 },
       le: { year: 1093 },
-      show: s => !!s.world?.events?.texas_family_purge,
+      // The attack site and the protagonist's contact are unverified.
+      show: () => false,
       w: 2.0,
       once: true,
-      t: "土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。",
+      t: "土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。",
       c: [
-        $terraData.K("夜の豪邸から逃れてきたテキサス家の従者を裏口から匿う", {}, [
+        $terraData.K("夜の豪邸から逃れてきたテキサスファミリーの従者を裏口から匿う", {}, [
           0.8,
           "追っ手の殺し屋たちをやり過ごして従者を逃がし、謝礼の宝石を受け取った。",
           { rl: 8, p: -5, cash: 1.5e5 }
         ], [
           1,
           "家宅捜索に来たファミリーの殺し屋に乱射され、口封じに射殺された。",
-          { d: ["粛清被災（クルビア・テキサス家壊滅抗争）", "テキサス家壊滅抗争の巻き添えとなり、射殺された"] }
+          { d: ["粛清被災（クルビア・テキサスファミリー壊滅抗争）", "テキサスファミリー壊滅抗争の巻き添えとなり、射殺された"] }
         ]),
         $terraData.K("銃声の鳴り響く街区を離れ、遠くの親戚の農場へ身を寄せる", {}, [
           1,
@@ -1789,7 +1791,8 @@ window.TERRA_DATA_BUILD.run("base/regional-conflict", function ($terraData, $def
       timelineFlag: "thelazia_dead",
       references: ["SRC_TL_LATE", "SRC_KAZDEL_BB1"],
       st: ["少年", "青年", "壮年", "老年"],
-      show: s => (s.res?.n === "ヴィクトリア" && s.local?.city === "ロンディニウム") || s.res?.n === "カズデル",
+      show: s => s.year === 1094 && !!s.world?.events?.thelazia_dead &&
+        s.res?.n === "ヴィクトリア" && s.local?.city === "ロンディニウム",
       ge: { year: 1094 },
       le: { year: 1096 },
       w: 2.5,
@@ -1934,7 +1937,8 @@ window.TERRA_DATA_BUILD.run("base/regional-conflict", function ($terraData, $def
       st: ["青年", "壮年", "老年"],
       ge: { year: 1099 },
       le: { year: 1100 },
-      show: s => !!s.world?.events?.world_1099,
+      // Wait for an active journey and an actual checkpoint encounter.
+      show: () => false,
       w: 1.5,
       once: true,
       t: "各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。",
@@ -2027,10 +2031,10 @@ window.TERRA_DATA_BUILD.run("base/regional-conflict", function ($terraData, $def
       timelineFlag: "sui_1102",
       references: ["SRC_TL_LATE"],
       st: ["少年", "青年", "壮年", "老年"],
-      show: s => s.res?.n === "炎国" || s.res?.n === "龍門" || s.local?.city === "龍門",
       ge: { year: 1102 },
       le: { year: 1103 },
-      show: s => !!s.world?.events?.sui_1102,
+      // The site is unverified; do not reenact a report as a local encounter.
+      show: () => false,
       w: 2.0,
       once: true,
       t: "司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。",
