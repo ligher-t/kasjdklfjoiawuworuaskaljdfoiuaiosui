@@ -274,6 +274,13 @@ function educationRecordRecognitionAssessment(s,{personId="protagonist",
     return old;
   }
   s.educationRecognitionAssessments.items[assessmentEvidenceId]=record;
+  const inquiry=s.educationRecognitionInquiries?.items?.[applicationId];
+  if(inquiry && inquiry.personId===personId &&
+     inquiry.pathId===pathId && inquiry.authorityId===authorityId &&
+     inquiry.ruleId===ruleId && inquiry.status==="awaiting-assessment"){
+    inquiry.assessmentEvidenceRef=assessmentEvidenceId;
+    inquiry.status=verdict==="passed"?"assessment-passed":"rejected";
+  }
   return record;
 }
 function educationNonformalRecognition(s,{personId="protagonist",applicationId,
@@ -327,6 +334,14 @@ function educationNonformalRecognition(s,{personId="protagonist",applicationId,
     decisionReason:sourceEventId
   };
   store.recognitionApplications[applicationId]=item;
+  const inquiry=s.educationRecognitionInquiries?.items?.[applicationId];
+  if(inquiry && inquiry.personId===personId &&
+     inquiry.pathId===pathId && inquiry.authorityId===authorityId &&
+     inquiry.ruleId===ruleId &&
+     inquiry.assessmentEvidenceRef===assessmentEvidenceId){
+    inquiry.status=accepted?"recognized":"rejected";
+    inquiry.awardId=accepted?"recognition:"+applicationId:null;
+  }
   if(accepted){
     store.recognitions ||= [];
     store.recognitions.push({
