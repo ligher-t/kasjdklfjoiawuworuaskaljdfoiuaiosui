@@ -195,7 +195,7 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
   });
   victoriaDaily.push({
     id: "daily_victoria_59", conf: "S", st: ["少年", "青年"], need: ["国:ヴィクトリア"],
-    t: "夕暮れ、運河沿いの土手を歩いていると、学生たちがボートを漕ぎ進める練習風景に出会った。威勢のいい掛け声に合わせてオールが一斉に水を掻き、夕暮れの水面を滑っていく姿に清々しさを感じた。",
+    t: "運河沿いの土手を歩いていると、学生たちがボートを漕ぎ進める練習風景に出会った。掛け声に合わせてオールが一斉に水を掻き、夕暮れの水面を滑っていく姿に清々しさを感じた。",
     fx: { p: 2 }
   });
   victoriaDaily.push({
