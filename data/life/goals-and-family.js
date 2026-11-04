@@ -132,13 +132,8 @@ window.TERRA_DATA_BUILD.run("life/goals-and-family", function ($terraData, $defi
       st: ["少年", "青年", "壮年"],
       cd: 7,
       w: 0.36,
-      show: s => {
-        const teacher=educationLegacyTeacherContact(s,{known:true}),
-          fact=teacher && s.educationTeacherPersonalFacts?.items?.[teacher.staff.id];
-        return !!teacher && !!fact && fact.status==="verified" &&
-          !!fact.evidenceRef && ["shared","temporary"].includes(fact.housing);
-      },
-      t: "顔なじみの教え手が教材箱の蓋を閉じた。借りている部屋は狭く、夜に机を広げるゆとりもないという。片づけを手伝うか、次の教えの予定を尋ねるか考えた。",
+      show: s => !!educationLegacyTeacherContact(s,{known:true}),
+      t: "顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。",
       c: [
         $terraData.K("教材箱の運搬や黒板消しを手伝う", {}, [
           1,
