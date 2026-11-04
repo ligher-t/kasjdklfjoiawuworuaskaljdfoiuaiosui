@@ -686,12 +686,13 @@
         "COM"
       ],
       "scope": "organization",
-      "region": "global-by-confirmed-site",
-      "organizationKey": "rhodes-island",
+      "region": "カジミエーシュ",
+      "organizationKey": "kazimierz-arena",
       "engagementKinds": [
-        "organization-service"
+        "wage-employment",
+        "seasonal-contract"
       ],
-      "qualificationProfile": "org-screening",
+      "qualificationProfile": "arena-operations",
       "siteRequirement": "named-or-typed-employer-site-and-position",
       "namedEntityStatus": "organization-or-institution-scope-required",
       "sourceRef": "docs/employment/WORK_EVENT_INVENTORY_20261104.json#jobTypes[32]",
