@@ -47,6 +47,8 @@ jobs:
         run: node tools/check-efficient.cjs run p0-school-regional-access.test.cjs
       - name: Education world placement and ID determinism
         run: node tools/check-efficient.cjs run p18-education-world-determinism.test.cjs
+      - name: P19 seven-denominator read-only educational observations
+        run: node tools/check-efficient.cjs run p19-education-observation.test.cjs
       - name: Dated school operations and daily/exam/residence mobility
         run: node tools/check-efficient.cjs run p18-education-operations-mobility.test.cjs
       - name: P06/P16 bounded school case and student-visible decisions
