@@ -344,18 +344,24 @@ window.TERRA_DATA_BUILD.run("regional/bolivar", function ($terraData, $define, $
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年", "老年"],
       need: ["国:ボリバル"],
+      show: s => Object.values(s.world?.educationWorld?.campuses||{}).some(c=>{
+        if(c.educationAreaId!==s.local?.educationAreaId)return false;
+        const inst=s.world.educationWorld.institutions[c.institutionId];
+        return inst?.offeringIds?.some(id=>
+          educationSchoolStatusAt(s,id,s.year,s.mo)?.campusStatus==="destroyed");
+      }),
       w: 0.8,
       cd: 9,
       t: "過去の戦闘で屋根が吹き飛び、放置されていた村の小学校の校舎を再建する運動が始まった。「子供たちに銃ではなくペンを持たせたい」という村人たちの願いが込められている。",
       c: [
         K("建築資材を調達し、屋根のトタンを張り直して黒板と机を修復する", { intent: "service", en: { ge: { h: 30 } }, why: "大工仕事と高所作業を行う体力がない。" },
-          [0.85, "見事に明るく清潔な教室が蘇った！ 開校式で子供たちと親たちから割れんばかりの拍手を浴びた！", { cr: 10, p: 8, h: 2 }],
-          [1, "釘で指を怪我してしまったが、立派な学び舎を完成させた。", { h: -5, cr: 5, p: 3 }]),
+          [0.85, "教室の屋根の一部を張り直し、机と黒板を使える場所へ運んだ。学校の開校日や教員の確保は、今後の運営者の判断を待つことになった。", { cr: 10, p: 8, h: 2 }],
+          [1, "釘で指を怪我したが、壊れた屋根の補修を少し進めた。授業を再開できるかは、別に確かめなければならない。", { h: -5, cr: 5, p: 3 }]),
         K("各地の慈善団体に手紙を書き、教科書や筆記用具の寄付を取り付ける", { intent: "procedure", en: { ge: { k: 25 } }, why: "支援を募る文章力がない。" },
-          [0.85, "大量の図書と文具が届き、立派な図書コーナーが新設された！", { cr: 8, p: 6 }],
+          [0.85, "寄付された本と文具を仕分け、乾いた部屋に置いた。図書室として使えるようになるかは、校舎の復旧を待つ必要がある。", { cr: 8, p: 6 }],
           [1, "集まった本は少なかったが、大切に子供たちへ届けた。", { cr: 4, p: 2 }]),
         K("校庭の瓦礫や草を刈り払い、安全に遊べるグラウンドを整備する", { intent: "voluntary-aid" },
-          [1, "子供たちが思い切り駆け回れる校庭を作り、笑顔を見届けた。", { cr: 5, p: 4 }])
+          [1, "校庭の瓦礫を片付け、子どもたちが通る場所から危険な物を除いた。授業の再開についてはまだ知らせがない。", { cr: 5, p: 4 }])
       ]
     },
     // 8. ドッソレスカジノ街の不正摘発
