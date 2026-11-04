@@ -2,6 +2,8 @@
 
 この手順は EVENT_CATALOG.md、tools/event-catalog-metadata.json、data/review/、データモジュールを一つの制作経路として扱う。カタログは生成物であり、編集者が直接修正しない。
 
+**全イベント共通の優先校閲基準**：[`EVENT_PROSE_CAUSALITY_AND_REVIEW_STANDARD.md`](EVENT_PROSE_CAUSALITY_AND_REVIEW_STANDARD.md) を併読する。設計理念、選択／結果／後続の因果とフラグ、既存文面に準じた散文・生活描写、人物と施設の認知境界を、新規執筆・改稿・監査のすべてで同時に確認する。
+
 ## 変更するとき
 
 1. イベントIDから EVENT_CATALOG.md で現行の生成元ファイルとレビュー状態を探す。
