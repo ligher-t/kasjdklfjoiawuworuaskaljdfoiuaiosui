@@ -44,6 +44,7 @@ function run() {
   travelDepart(S);
   const firstFare=S.travelState.transactions[planned.legs[0].id+":fare"];
   const householdAfterOutbound=S.house.cash;
+  const firstStay=S.travelState.transactions[planned.id+":stay:1099:6"];
   const transit=travelPresence(S);
   advanceJourneyThrough(S,1099,6);
   const sameMonth=travelCurrentJourney(S).status;
@@ -54,6 +55,7 @@ function run() {
   S.mo=7;travelBeginReturn(S);
   const returnFare=S.travelState.transactions[planned.legs[1].id+":fare"];
   const householdAfterReturn=S.house.cash;
+  const secondStay=S.travelState.transactions[planned.id+":stay:1099:7"];
   advanceJourneyThrough(S,1099,8);
   const returned=travelPresence(S);
   travelEnd(S,"returned-home");
@@ -83,6 +85,7 @@ function run() {
   travelDepart(S);
   const ownTx=S.travelState.transactions[ownJourney.legs[0].id+":fare"];
   const ownCashAfter=S.cash;
+  const ownStay=S.travelState.transactions[ownJourney.id+":stay:1099:6"];
   const blockedResidence=travelBlocksResidenceEvent({need:["国:クルビア"]},S);
   const globalAllowed=!travelBlocksResidenceEvent({need:["成人"]},S);
   advanceJourneyThrough(S,1099,7);
@@ -95,13 +98,14 @@ function run() {
   const reportedFare=travelProjectAnnualOutflow(S,1100,"personal");
   const noDoubleDebit=S.cash===cashBeforeProjection;
   const annualFare=S.flow.expense.travelFare;
+  const annualStay=S.flow.expense.travelStay;
   return {insufficient,noDebit,ownCashBefore,ownCashAfter,ownTx,
-    blockedResidence,globalAllowed,reportedFare,noDoubleDebit,annualFare,
+    blockedResidence,globalAllowed,reportedFare,noDoubleDebit,annualFare,annualStay,ownStay,
     hist:hist.length,timeline:events.length,
     missing:events.filter(e=>!e.historicalScene).map(e=>e.id),
     cases,origin,dest,beforeMoves,
     plannedNoCheckpoint:planned.legs[0].checkpointId,
-    householdBefore,householdAfterOutbound,householdAfterReturn,personalBefore,firstFare,returnFare,
+    householdBefore,householdAfterOutbound,householdAfterReturn,personalBefore,firstFare,returnFare,firstStay,secondStay,
     travelExpense:householdTripExpense,personalTravelExpense:individualTripExpense,
     before,transit,sameMonth,arrived,refused,returned,audit,
     auditRestored, afterMoves:(S.moves||[]).length, actualHome:S.res.n,
@@ -130,15 +134,15 @@ assert.equal(r.active,null);
 assert.equal(r.insufficient,true);
 assert.equal(r.noDebit,true);
 assert.equal(r.ownTx.paidBy,"personal");
-assert.equal(r.ownCashBefore-r.ownCashAfter,r.ownTx.amount);
+assert.equal(r.ownCashBefore-r.ownCashAfter,r.ownTx.amount+r.ownStay.paid);
 assert.equal(r.blockedResidence,true);
 assert.equal(r.globalAllowed,true);
 assert.equal(r.noDoubleDebit,true);
-assert.equal(r.annualFare,r.reportedFare);
+assert.equal(r.annualFare+r.annualStay,r.reportedFare);
 assert(r.firstFare.amount > 0 && r.returnFare.amount > 0);
 assert.equal(r.firstFare.paidBy,"household");
-assert.equal(r.householdBefore-r.householdAfterOutbound,r.firstFare.amount);
-assert.equal(r.householdAfterOutbound-r.householdAfterReturn,r.returnFare.amount);
+assert.equal(r.householdBefore-r.householdAfterOutbound,r.firstFare.amount+r.firstStay.paid);
+assert.equal(r.householdAfterOutbound-r.householdAfterReturn,r.returnFare.amount+r.secondStay.paid);
 assert.equal(r.travelExpense,r.firstFare.amount+r.returnFare.amount);
 assert.equal(r.personalTravelExpense,0);
 assert.equal(r.personalBefore,30000000);

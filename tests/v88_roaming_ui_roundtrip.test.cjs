@@ -29,6 +29,7 @@ function scenario(){
   const departed=travelControlAction("depart");
   const after=s.cash;
   const spent=travelAnnualOutflow(s,1094,"personal");
+  const departureStay=travelAnnualOutflow(s,1094,"personal","stay");
   const receipts=Object.values(s.travelState.transactions).map(x=>x.legId);
   // The exact save transport is JSON. It must retain the return ticket.
   s.travelState=JSON.parse(JSON.stringify(s.travelState));
@@ -38,9 +39,11 @@ function scenario(){
   const yearBefore=travelHomeWorkIncomeShare(s,1093);
   s.mo=5;advanceJourneyThrough(s,1094,5);
   const reached=travelCurrentJourney(s).status;
+  const beforeReturn=s.cash;
   const canReturn=travelControlAction("return");
   const afterReturn=s.cash;
   const receiptCountAfterReturn=Object.keys(s.travelState.transactions).length;
+  const totalStayAfterReturn=travelAnnualOutflow(s,1094,"personal","stay");
   s.mo=6;advanceJourneyThrough(s,1094,6);
   const finished=travelControlAction("finish");
   const moves=(s.moves||[]).length,finalResidence=s.res.n,active=s.travelState.activeJourneyId;
@@ -57,8 +60,8 @@ function scenario(){
   poor.cash=total-1;
   const p=travelStart(poor,{purpose:"wandering",destinationRegion:dest,prepayReturn:true});
   let insufficient=false;try{travelDepart(poor);}catch{insufficient=true;}
-  return {menu,planned,reserved,departed,before,after,cost,spent,receipts,
-    travelResidence,blockedMove,yearBefore,reached,canReturn,afterReturn,
+  return {menu,planned,reserved,departed,before,after,cost,spent,departureStay,receipts,
+    travelResidence,blockedMove,yearBefore,reached,canReturn,afterReturn,beforeReturn,totalStayAfterReturn,
     receiptCountAfterReturn,auditAfterRestore,
     finished,moves,finalResidence,from,destination,active,audit,
     insufficient,poorStatus:p.status,poorCash:poor.cash,poorTransactions:
@@ -70,7 +73,7 @@ assert(r.menu.includes('往復の行程を計画する'));
 assert.equal(r.planned,true);
 assert.equal(r.reserved,"pending");
 assert.equal(r.departed,true);
-assert.equal(r.before-r.after,r.cost,'both fares are paid when departing');
+assert.equal(r.before-r.after,r.cost+r.departureStay,'both fares and first-month stay are paid at departure');
 assert.equal(r.spent,r.cost,'each fare is in the payment year');
 assert.equal(new Set(r.receipts).size,2);
 assert.equal(r.travelResidence,r.from);
@@ -78,8 +81,8 @@ assert.equal(r.blockedMove,true);
 assert.equal(r.yearBefore,1);
 assert.equal(r.reached,"arrived");
 assert.equal(r.canReturn,true);
-assert.equal(r.afterReturn,r.after,'prepaid return is not charged twice');
-assert.equal(r.receiptCountAfterReturn,2,'restored return does not create a second receipt');
+assert.equal(r.afterReturn,r.beforeReturn,'prepaid return is not charged twice');
+assert.equal(r.receiptCountAfterReturn,4,'two fare receipts and two different monthly stay receipts');
 assert.deepEqual(r.auditAfterRestore,[]);
 assert.equal(r.finished,true);
 assert.equal(r.moves,0);
