@@ -129,7 +129,7 @@ window.TERRA_DATA_BUILD.run("world/class-and-locality", function ($terraData, $d
               })
             }
           ]),
-          $terraData.K("学校の授業だけは休めないと家族に掛け合う", { show: { need: ["就学中"] } }, [
+          $terraData.K("学校の授業だけは休めないと家族に掛け合う", { show: s => educationLegacySceneGuard(s,"education_school_classroom") }, [
             1,
             "「学校がある日は抜けられない」と正直に話し、休みの日だけ手伝うことで折り合いをつけた。夜はランプの下で遅くまで宿題を広げた。",
             {
