@@ -185,4 +185,37 @@ const credentials=run(function(){
 });
 assert.deepEqual(credentials,{completed:1,endpoint:2,censored:1,unknown:1,
   unchanged:true,repeat:true});
-console.log('PASS P19 798 base cells, 24 overrides, seven isolated denominators, unknown/pending/censored, pure ledger projection');
+const placementSample=run(function(){
+ const regions=Object.keys(EDUCATION_REGIONAL_PRESENCE),
+   kinds=Object.keys(EDUCATION_LOCALITY_PRESENCE_DELTA);
+ let checked=0,changed=0,duplicates=0,absent=0;
+ for(let i=0;i<152;i++){
+   const state={randomSeed:20261104+i,year:1095,
+     res:{n:regions[i%regions.length]},
+     local:{kind:kinds[i%kinds.length],city:null,
+       placeId:'p19-small-world-'+i},
+     world:{events:{}}};
+   const area=ensureEducationWorldForResidence(state);
+   if(!area){absent++;continue;}
+   const w=state.world.educationWorld,
+     first=JSON.stringify({worldSeed:w.worldSeed,
+       generationDecisions:w.generationDecisions,
+       institutions:w.institutions,offerings:w.offerings,
+       hubs:w.hubs,areas:w.areas}),
+     firstCount=Object.keys(w.generationDecisions).length;
+   ensureEducationWorldForResidence(state);
+   const second=JSON.stringify({worldSeed:w.worldSeed,
+     generationDecisions:w.generationDecisions,
+     institutions:w.institutions,offerings:w.offerings,
+     hubs:w.hubs,areas:w.areas});
+   if(first!==second ||
+      firstCount!==Object.keys(w.generationDecisions).length)changed++;
+   const hubs=Object.keys(w.hubs);
+   if(new Set(hubs).size!==hubs.length)duplicates++;
+   checked++;
+ }
+ return {checked,changed,duplicates,absent};
+});
+assert.deepEqual(placementSample,{
+  checked:152,changed:0,duplicates:0,absent:0});
+console.log('PASS P19 798 base cells, 24 overrides, 152 fixed world placements, seven isolated denominators, unknown/pending/censored, pure ledger projection');
