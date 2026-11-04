@@ -4,6 +4,8 @@ function finalizeLifeLedgerAtDeath(s) {
 }
 function ap(e, routeReserve = 0) {
   if (!e) return;
+  const disclosureOrigin=disclosureImpactContext(S);
+  e=disclosureAdjustedEffect(S,e);
   const cashAlreadyScaled = typeof e.cash === "function";
   if (cashAlreadyScaled) e = { ...e, cash: e.cash(S) };
   if (e.returnToLocality && !canReturnToResidence(S,e.returnToLocality==="previous"?previousResidenceKey(S):e.returnToLocality))
@@ -48,10 +50,11 @@ function ap(e, routeReserve = 0) {
   applyResidenceEffects(e, routeReserve, s, fromRegion, fundsBeforeEffects, addMoney);
   finishAffiliationPlaces(e, s);
   const resolvedId = TRACE_RESOLUTION?.id;
-  applyNeighbourAndWorkplaceEffects(e, s, resolvedId);
+  applyNeighbourAndWorkplaceEffects(e, s, resolvedId,disclosureOrigin);
   reconcileRelationshipStatusFlags(s);
   recordEffectConsequences(e, s, jobBefore, assetsBefore, debtBefore, investmentBefore, cashBefore);
   reconcileSocialAndInformationEffects(e, s);
+  disclosureImpactFromEffect(s,e,disclosureOrigin);
   if (e.d) {
     finalizeLifeLedgerAtDeath(s);
     die(e.d[0], e.d[1]);

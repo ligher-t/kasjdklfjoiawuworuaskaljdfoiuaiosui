@@ -1,6 +1,35 @@
 // information/current-routes: ordered game data; see DATA_MODULES.md.
 window.TERRA_DATA_BUILD.run("information/current-routes", function ($terraData, $define, $rules) {
   "use strict";
+  $terraData.SETTING_SOURCES.SRC_DISCLOSURE_IMPACT_MODEL={
+    title:'鉱石病の露見による社会的影響と生活改善',kind:'ゲーム用仮定',
+    note:'2026-11-05の利用者指定。拒絶・確認済みの漏洩に範囲別の固定減点と正負の増減補正を適用する。守秘された診療、受容された告白、噂、第三者の感染は対象外。数値、漏洩遭遇と住居確認の頻度は原作の発生率ではない。'};
+  const stages=['児童','少年','青年','壮年','老年'];
+  const leak=(audience,recipientRef)=>({subject:'self',audience,certainty:'confirmed',
+    source:'reported-leak',consent:'nonconsensual',subjectMatch:'confirmed',recipientRef});
+  $terraData.EV.push(
+    {id:'infection_workplace_confirmed_leak',conf:'S',references:['SRC_DISCLOSURE_IMPACT_MODEL'],st:stages,
+      once:true,w:0.35,show:s=>disclosureLeakEligible(s,'work'),
+      t:'休憩室へ入ると、話し声が途切れた。通院のため責任者にだけ伝えたはずの診断を、同僚があなたの名を挙げて口にした。誰が伝えたのかは分からない。昼の席を探しても、隣に置いた盆から椅子を引かれた。',
+      fx:{infectionAwarenessAction:{...leak('workplace',null)}}},
+    {id:'infection_school_confirmed_leak',conf:'S',references:['SRC_DISCLOSURE_IMPACT_MODEL'],st:stages,
+      once:true,w:0.35,show:s=>disclosureLeakEligible(s,'school'),
+      t:'教室へ戻ると、診療のため学校へ伝えた病名を、何人かがあなたの名前と一緒に囁いていた。誰から聞いたのか尋ねても答えはない。いつも机を寄せていた相手が、今日は離れた席へ鞄を移した。',
+      fx:{infectionAwarenessAction:leak('school','current-school')}},
+    {id:'infection_neighborhood_confirmed_leak',conf:'S',references:['SRC_DISCLOSURE_IMPACT_MODEL'],st:stages,
+      once:true,w:0.30,show:s=>disclosureLeakEligible(s,'community'),
+      t:'戸口で名前を呼び止められ、近所の人から鉱石病の診断を受けたのかと確かめられた。限られた相手にしか話していないと答えると、その人は口をつぐんだ。その日から水場で隣を空けられ、挨拶を交わしていた戸口も閉じたままになった。',
+      fx:{infectionAwarenessAction:leak('community','current-residential-area')}},
+    {id:'infection_publication_confirmed_spread',conf:'S',references:['SRC_DISCLOSURE_IMPACT_MODEL'],st:stages,
+      once:true,w:0.30,show:s=>disclosureLeakEligible(s,'public'),
+      t:'診療所に掲示した名前と病状を写した紙が、市場の掲示場にも貼られていた。店先で名を呼ばれ、病気のことを理由に出ていくよう言われた。診療所の外へも伝わったことを、帰り道で何度も向けられる視線が知らせていた。',
+      fx:{infectionAwarenessAction:leak('public','current-market-notices')}},
+    {id:'infection_social_housing_secured',conf:'S',references:['SRC_DISCLOSURE_IMPACT_MODEL'],st:['青年','壮年','老年'],
+      once:true,w:0.5,show:s=>!!s.disclosureImpact&&s.residenceArrangement==='independent_rental'&&
+        s.socialAftermath?.episodes?.some(x=>x.domain==='housing'&&x.status!=='ended'&&x.year<s.year&&x.regionKey===s.res.n&&!!x.localityKey&&x.localityKey===s.community?.key),
+      t:'支援窓口の担当者と管理人の前で、今の部屋の契約を確かめた。診断だけを理由に退去を求めないことが書面に残り、控えを受け取った。帰宅して鍵を回すとき、今夜の寝床を失う心配が少し遠のいた。',
+      fx:{socialAftermathAction:{type:'close',domain:'housing',currentPlace:true,note:'支援者立会いで診断を理由とする退去要求の撤回を書面確認'},p:2,rl:1}}
+  );
   $terraData.EVENT_EFFECT_TYPES.object.push("closeKnowledgeAction");
   $terraData.EVENT_EFFECT_TYPES.object.push("infectionAwarenessAction");
 

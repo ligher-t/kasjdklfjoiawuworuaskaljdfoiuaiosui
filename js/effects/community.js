@@ -1,4 +1,4 @@
-function applyNeighbourAndWorkplaceEffects(e, s, resolvedId) {
+function applyNeighbourAndWorkplaceEffects(e, s, resolvedId,disclosureOrigin=null) {
   if (resolvedId === "wld_friend" && s.friendContact) {
     if (e.fl?.friend_unpaid === 1) {
       s.friendContact.status = "loan_outstanding";
@@ -35,8 +35,8 @@ function applyNeighbourAndWorkplaceEffects(e, s, resolvedId) {
     const person = closeInfoPerson(s, e.closeKnowledgeAction.kind);
     recordCloseKnowledgeAction(s, { ...e.closeKnowledgeAction, personId: person?.id });
   }
-  if (e.infectionAwarenessAction) recordInfectionAwarenessAction(s, e.infectionAwarenessAction);
-  if (e.infectionAwarenessActions) recordInfectionAwarenessActions(s, e.infectionAwarenessActions);
+  if (e.infectionAwarenessAction) recordInfectionAwarenessAction(s, e.infectionAwarenessAction,disclosureOrigin);
+  if (e.infectionAwarenessActions) recordInfectionAwarenessActions(s, e.infectionAwarenessActions,disclosureOrigin);
 }
 
 function applyInfectionWorkplaceAction(s, action, effect) {

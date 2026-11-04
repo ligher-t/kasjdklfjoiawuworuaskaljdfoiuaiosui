@@ -19,6 +19,7 @@ on:
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
       - 'tests/advanced-settings.test.cjs'
+      - 'tests/disclosure-impact.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
       - 'tests/v88_yan_court_spring_eligibility.test.cjs'
       - 'tests/v88_regional_choice_seasonal_calendar.test.cjs'
@@ -89,6 +90,7 @@ on:
       - 'tools/**'
       - 'tests/v88_history_scope_and_pending.test.cjs'
       - 'tests/advanced-settings.test.cjs'
+      - 'tests/disclosure-impact.test.cjs'
       - 'tests/v88_regional_career_outcomes.test.cjs'
       - 'tests/v88_yan_court_spring_eligibility.test.cjs'
       - 'tests/v88_regional_choice_seasonal_calendar.test.cjs'
@@ -153,6 +155,8 @@ jobs:
           node-version: '22'
       - name: Runtime syntax and revision
         run: node tools/check-efficient.cjs syntax
+      - name: Disclosure scope, wellbeing changes and verified recovery
+        run: node tools/check-efficient.cjs run disclosure-impact.test.cjs
       - name: Advanced settings and native education automation
         run: node tools/check-efficient.cjs run advanced-settings.test.cjs
       - name: Parent oripathy death and bereavement

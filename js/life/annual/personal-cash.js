@@ -102,7 +102,7 @@ function settleAnnualPersonalCash(s, services, amounts, a) {
       }
       if (currentDebt >= MAX_PERSONAL_DEBT || unfundedDeficit > 0) {
         s.h = Math.max(0, (s.h || 0) - 2);
-        s.p = Math.max(0, (s.p || 0) - 3);
+        changeWellbeing(s,'p',-3);
         if (s.fl?.tx && tc > 0) {
           s.fl.tx = 0;
         }

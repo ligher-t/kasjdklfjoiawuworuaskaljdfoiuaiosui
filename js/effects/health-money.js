@@ -3,7 +3,8 @@ function applyStatEffects(e, s) {
     if (e[k]) {
       const diminishing =
         k === "k" || k === "rl" ? Math.max(0.08, 1 - Math.pow(Math.max(0, s[k]) / 111, 1.6)) : 1;
-      s[k] = clamp(s[k] + e[k] * (e[k] > 0 ? diminishing : 1), 0, k === "ep" ? 200 : 100);
+      const delta=e[k]*(e[k]>0?diminishing:1);
+      s[k] = clamp(s[k] + wellbeingDelta(s,k,delta), 0, k === "ep" ? 200 : 100);
     }
   if (Number.isFinite(e.equityGain) && e.equityGain !== 0) {
     const model = socialModel(s);
