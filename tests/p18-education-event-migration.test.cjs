@@ -751,3 +751,49 @@ const fundingResponse=run(function(){
 });
 assert.deepEqual(fundingResponse,{eligible:true,pending:true,index:0,
  unchangedCash:true,noEnrollment:true});
+
+fresh("クルビア",24);
+const borderResponse=run(function(){
+ const s=S;s.mo=4;ensureResidenceIdentity(s);
+ const origin=ensureEducationWorldForResidence(s),w=s.world.educationWorld,
+   far="edu-area:v1:verified-border-destination";
+ educationAreaRegistration(w,{id:far,regionKey:"ヴィクトリア",
+   cityOrSettlementKey:"city:verified-foreign-site",hubId:"foreign-hub",
+   kind:"移動都市の居住区",catchmentType:"urban"});
+ const inst=educationRegisterInstitution(w,far,"foreign-course",
+   "university",["university"],s.year),off=w.offerings[inst.offeringIds[0]];
+ off.admissionTier=1;
+ const item=educationCaseBegin(s,"higher-path","university",1);
+ item.phase="planning";
+ const access=educationAccessState(s);
+ access.knownOfferings[off.id]={offeringId:off.id,institutionId:inst.id,
+   campusId:off.campusId,areaId:far,stage:"university",tier:1,
+   tuitionEstimate:200000,epistemicStatus:"offering-verified",
+   checkedAt:{year:s.year,month:4}};
+ item.evidence.knownCandidateIds.push(off.id);
+ const linkId="observed-border-crossing";
+ w.transportLinks[linkId]={id:linkId,endpointAreaIds:[origin,far]};
+ const before=educationMigrationEligible(s,"edu_crossborder_documents","A");
+ s.educationTravelRequirements={version:1,items:{border:{
+   id:"border",status:"verified",policyRef:"route-specific-rule",
+   evidenceRef:"documented-crossing-requirement",
+   personId:"protagonist",caseId:item.id,offeringId:off.id,
+   fromRegion:"クルビア",toRegion:"ヴィクトリア",
+   routeId:linkId,authorityId:"observed-permit-desk",
+   permitKind:"student-entry",at:{year:s.year,month:4}
+ }}};
+ const eligible=educationMigrationEligible(s,"edu_crossborder_documents","A");
+ educationMigrationApply(s,"E20:A");
+ const record=s.educationMigration.records.find(x=>
+   x.eventId==="edu_crossborder_documents");
+ const pending=!record.notice;
+ educationP17RecordExternalDecision(s,{requestId:record.result.externalRequest.id,
+   issuerId:"observed-permit-desk",status:"rejected",
+   evidenceRef:"confirmed-document-refusal"});
+ return {before,eligible,pending,index:record.notice?.index,
+   caseStillPlanning:item.phase==="planning",
+   noEnrollment:!s.educationRecord.enrollments.length};
+});
+assert.deepEqual(borderResponse,{before:false,eligible:true,pending:true,
+ index:1,caseStillPlanning:true,noEnrollment:true});
+console.log("PASS E20/E27/E42/E79 conditional results require unique source-linked issuer decisions");
