@@ -175,7 +175,6 @@ window.TERRA_DATA_BUILD.run("regional/yan", function ($terraData, $define, $rule
   });
   yanDaily.push({
     id: "daily_yan_55", conf: "S", st: ["少年", "青年"], need: ["国:炎国"],
-    show: "就学中",
     t: "夜遅くまで油煙の立ち込める灯火の下で書物を読み進めたが、長時間の読書で目が霞み、肩が酷く凝って机の上に突っ伏してしまった。",
     fx: { p: -1, h: -1 }
   });
