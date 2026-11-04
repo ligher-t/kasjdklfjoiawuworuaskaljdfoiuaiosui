@@ -223,9 +223,7 @@ window.TERRA_DATA_BUILD.run("regional/leithanien", function ($terraData, $define
   });
   leithanienDaily.push({
     id: "daily_leithanien_59", conf: "S", st: ["少年", "青年"], need: ["国:リターニア"],
-    show: s => (educationLegacySceneGuard(s,"daily_leithanien_57") &&
-      educationP17SchoolExperience(s,"music-competition")) ||
-      educationP17Witness(s,"P13:public-music-competition"),
+    show: s => s.res?.n==="リターニア",
     t: s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
       educationP17SchoolExperience(s,"music-competition") ?
       "学内コンクールの本選を聴講した。同世代の演奏家が技術を競い合い、講評を聞きながら自分の練習を振り返った。" :
