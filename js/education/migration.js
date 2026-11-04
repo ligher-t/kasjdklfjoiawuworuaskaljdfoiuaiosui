@@ -444,10 +444,12 @@ function educationP17NoticeOutcome(s,record,review,letter) {
       const months=yearRows?.[s.year]||{};
       for(const month of Object.values(months)){
         for(const segment of Object.values(month.segments||{})){
+          const state=educationSchoolStatusAt(s,segment.offeringId,
+            month.academicYear,month.month);
           if(segment.offeringId!==current.offering.id ||
-             !segment.evidenceRef ||
-             !["alternative_classroom","recognized-alternative-classroom"].includes(
-               segment.sourceKind))continue;
+             !segment.evidenceRef || !state ||
+             state.learningContinuity!=="alternative_classroom" ||
+             segment.schoolDelivery<=0)continue;
           return {index:segment.recognized&&segment.equivalent>0?0:1,
             evidenceRef:segment.evidenceRef};
         }
