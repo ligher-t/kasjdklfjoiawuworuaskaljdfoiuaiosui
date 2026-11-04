@@ -78,7 +78,8 @@ function educationP17ExtraEligible(s,review,letter=null) {
     case "E08": return planning && known.some(x=>
       educationSchoolStatusAt(s,x.offeringId,s.year,s.mo)?.admissionStatus==="closed");
     case "E09": return contract && !!item.evidence?.admissionOfferId &&
-      (letter!=="A"||educationP17Witness(s,"E09"));
+      (letter!=="A" || (educationP17Witness(s,"E09") &&
+        educationCaseCommitEligibility(s).allowed));
     case "E10": return planning && item.kind==="reentry" &&
       s.educationRecord?.enrollments?.some(x=>x.status==="withdrawn");
     case "E11": return planning && item.stage==="preparatory" && s.age>=18;
@@ -120,8 +121,8 @@ function educationP17ExtraEligible(s,review,letter=null) {
       Object.values(s.educationPeopleTies?.items||{}).some(x=>
         x.role==="teacher"&&x.personallyKnown) && witness;
     case "E45":case "E46":case "E55":
-      return !!s.educationDependents?.items &&
-        Object.keys(s.educationDependents.items).length>0 && witness;
+      return !!s.dependentEducation &&
+        Object.keys(s.dependentEducation).length>0 && witness;
     case "E16":case "E17":case "E18":case "E19":
       return witness && (letter!=="A" ||
         ["E16","E19"].includes(review) ||
@@ -197,37 +198,6 @@ function educationMigrationProviderFor(s,eventId) {
     (!p.activeTo ||
       now<=p.activeTo.year*12+(p.activeTo.month??12)))
     .sort((a,b)=>a.id.localeCompare(b.id))[0]||null;
-}
-
-function educationMigrationKnownTeacher(s,requireCurrent=false) {
-  const current=requireCurrent?educationMigrationCurrent(s):null,
-    world=s.world?.educationWorld;
-  return Object.values(s.educationPeopleTies?.items||{}).some(t=>{
-    if(t.role!=="teacher"||!t.personallyKnown)return false;
-    const enrol=s.educationRecord?.enrollments?.find(e=>e.id===t.enrollmentId),
-      teacher=world?.staff?.[t.personId];
-    return !!enrol && !!teacher &&
-      teacher.institutionId===enrol.institutionId &&
-      teacher.offeringId===enrol.offeringId &&
-      (!requireCurrent || (current?.enroll.id===enrol.id &&
-        teacher.status==="assigned"));
-  });
-}
-function educationMigrationMeetTeacher(s) {
-  const current=educationMigrationCurrent(s);
-  if(!current||!educationLegacySceneGuard(s,"education_school_classroom"))
-    return false;
-  educationEnsureEnrolledSchoolPeople(s,current.enroll.id);
-  const ties=Object.values(s.educationPeopleTies?.items||{}).filter(t=>
-    t.enrollmentId===current.enroll.id && t.role==="teacher");
-  const teacher=ties.sort((a,b)=>a.personId.localeCompare(b.personId))[0];
-  if(!teacher)return false;
-  teacher.personallyKnown=true;
-  teacher.lastMetAt={year:s.year,month:s.mo};
-  const evidence="people_school_introduction:"+current.enroll.id;
-  if(!teacher.knowledgeEvidenceIds.includes(evidence))
-    teacher.knowledgeEvidenceIds.push(evidence);
-  return true;
 }
 
 function educationMigrationCurrent(s) {
