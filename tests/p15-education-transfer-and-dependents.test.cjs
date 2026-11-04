@@ -174,6 +174,7 @@ const siblings=run(function(){
       successful:!!payment,repeat:replay===null});
   }
   const before=educationSchoolStatusAt(s,off.id,s.year,4);
+  s.mo=5;
   educationRecordSchoolAction(s,{effectId:'d10-shared-school-suspension',
     approved:true,basis:'explicit-simulation-site-action',
     sourceRef:'d10-school-signed-closure',institutionId:school.id,
@@ -225,7 +226,8 @@ const residence=run(function(){
   s.kids=[{id,by:s.year-9,d:0}];
   educationSynchronizeDependents(s);
   s.local={kind:'小規模な定住地',city:null,
-    placeId:'p15-d11-old-home',districtId:'p15-d11-old'};
+    placeId:'p15-d11-old-home',districtId:'p15-d11-old',
+    educationAreaAnchor:'p15-d11-old-home'};
   ensureResidenceIdentity(s);
   const former=ensureEducationWorldForResidence(s);
   educationDependentResidenceUpdate(s,{personId:id,
@@ -233,7 +235,8 @@ const residence=run(function(){
     effectiveAt:{year:s.year,month:1},sourceEventId:'d11-known-first',
     reportedToProtagonist:true,knownAt:{year:s.year,month:1}});
   s.local={kind:'小規模な定住地',city:null,
-    placeId:'p15-d11-current-home',districtId:'p15-d11-current'};
+    placeId:'p15-d11-current-home',districtId:'p15-d11-current',
+    educationAreaAnchor:'p15-d11-current-home'};
   ensureResidenceIdentity(s);
   const current=ensureEducationWorldForResidence(s);
   educationDependentResidenceUpdate(s,{personId:id,
