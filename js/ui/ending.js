@@ -5,6 +5,11 @@ function die(c, l, monthBasis = null, episodeId = null) {
   const before = traceState(s);
   if(educationLive(s)||s.educationPath?.status==="paused")
     educationEnd(s,"deceased","在学中に死亡し、課程を修了できなかった","death");
+  const journeyLocation = travelDeathLocation(s);
+  if (journeyLocation) {
+    s.deathTravel = journeyLocation;
+    travelEnd(s, "ended-by-death");
+  }
   s.dead = 1;
   s.dc = c;
   s.dl = l;
@@ -53,7 +58,7 @@ function die(c, l, monthBasis = null, episodeId = null) {
     `<div class="ui-record-path">${terminalRecordPathMarkup(s, "生涯の記録")}</div><p class="ui-ending-kicker">生涯の記録 / 終幕</p>` +
     `<h2 id="ending-title">${esc(s.nm)}は<span class="ui-ending-age">${s.age}<small>歳</small></span>で生涯を終えた</h2>` +
     `<p class="ui-ending-period">テラ暦${s.by}年 <span aria-hidden="true">―</span> ${s.year}年</p>` +
-    `<p class="ui-ending-place">${s.year}年、${s.res.n}にて</p>` +
+    `<p class="ui-ending-place">${s.year}年、${esc(s.deathTravel?.label || s.res.n)}にて</p>` +
     `<div class="ui-ending-cause"><p><strong>死因の分類</strong><span>${c}</span></p>` +
     `<p class="cause"><strong>記録された経緯</strong><span>${l}</span></p></div></header>` +
     `<div class="ui-ending-actions" role="group" aria-label="人生を終えた後の操作"><section class="ui-ending-next"><h3>次の人生</h3><p>また別の時代、別の土地で産声を上げる。</p>` +

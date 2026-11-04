@@ -221,6 +221,24 @@ function travelBeginReturn(state) {
   journey.lastProcessed = {year: state.year, month: state.mo};
   return journey;
 }
+function travelDeathLocation(state) {
+  const journey = travelCurrentJourney(state);
+  if (!journey || journey.status === "planned") return null;
+  const leg = journey.legs?.[journey.activeLegIndex];
+  if (!leg) return null;
+  const presence = travelPresence(state);
+  const label = presence.mode === "checkpoint" && presence.region
+    ? presence.region + "の検問所付近"
+    : presence.mode === "stop" && presence.region
+      ? presence.region + "の旅先"
+      : leg.fromRegion + "から" + leg.toRegion + "への移動途上";
+  return {
+    journeyId: journey.id, legId: leg.id, status: journey.status,
+    fromRegion: leg.fromRegion, toRegion: leg.toRegion,
+    presenceMode: presence.mode, label, year: state.year,
+    month: Number.isInteger(state.mo) && state.mo > 0 ? state.mo : null
+  };
+}
 function travelEnd(state, reason) {
   if (!["abandoned", "returned-home", "ended-by-death"].includes(reason))
     throw Error("Unsupported journey conclusion");

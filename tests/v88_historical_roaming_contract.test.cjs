@@ -142,4 +142,30 @@ assert.equal(r.householdAfterOutbound-r.householdAfterReturn,r.returnFare.amount
 assert.equal(r.travelExpense,r.firstFare.amount+r.returnFare.amount);
 assert.equal(r.personalTravelExpense,0);
 assert.equal(r.personalBefore,30000000);
-console.log('PASS: 40 timeline scenes, dated locality and roaming without teleportation');
+
+const fatal = JSON.parse(vm.runInContext(`JSON.stringify((() => {
+  born({seed:109908,by:1067,region:"クルビア"});
+  S.year=1099;S.age=32;S.mo=6;
+  S.cash=30000000;S.residenceArrangement="independent";
+  S.fl.household_separated=1;
+  const dest=MIGRATION_ROUTES[S.res.n][0].n;
+  const trip=travelStart(S,{purpose:"flight",destinationRegion:dest});
+  travelDepart(S);
+  const lastPlace=travelPresence(S);
+  die("事故死","街道を移動する途中で命を落とした");
+  const closed=S.travelState.journeys[trip.id];
+  return {dead:S.dead,journeyStatus:closed.status,
+    reason:closed.conclusion?.reason,active:S.travelState.activeJourneyId,
+    sourceMode:lastPlace.mode,location:S.deathTravel?.label,
+    context:S.deathTravel?.journeyId,errors:auditLifeState(S)};
+})())`,ctx,{timeout:20000}));
+assert.equal(fatal.dead,1);
+assert.equal(fatal.journeyStatus,"ended-by-death");
+assert.equal(fatal.reason,"ended-by-death");
+assert.equal(fatal.active,null);
+assert.equal(fatal.sourceMode,"in-transit");
+assert.match(fatal.location,/移動途上/);
+assert.equal(fatal.context!=null,true);
+assert.deepEqual(fatal.errors,[]);
+
+console.log('PASS: historic scene, travel finance, actual return, and death closure');
