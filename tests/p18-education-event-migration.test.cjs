@@ -650,3 +650,69 @@ assert.equal(realArtsRecruitment.applied,true);
 assert.equal(realArtsRecruitment.informational,true);
 assert.equal(realArtsRecruitment.noPayment,true);
 console.log("PASS P17 regional observations require actual local dojo and selective Arts offering");
+
+fixture();
+const delayedExam=run(function(){
+ const s=S,m=educationMigrationCurrent(s),examId="cancelled-course-exam";
+ s.educationSchoolExperiences={version:1,items:{exam:{
+   enrollmentId:m.enroll.id,offeringId:m.offering.id,
+   institutionId:m.m.institutionId,examId,experienceTag:"examination-cancelled",
+   status:"verified",evidenceRef:"school-cancellation-notice",year:s.year
+ }}};
+ s.educationExamSessions={version:1,items:{[examId]:{
+   institutionId:m.m.institutionId,offeringId:m.offering.id,
+   enrollmentId:m.enroll.id,status:"cancelled",evidenceRef:"exam-closed"
+ }}};
+ const eligible=educationMigrationEligible(s,"edu_exam_cancelled","A");
+ educationMigrationApply(s,"E42:A");
+ const row=s.educationMigration.records.find(x=>x.eventId==="edu_exam_cancelled"),
+   pending=!row.notice,req=row.result.externalRequest.id;
+ let rejectedEarly=false;
+ try{educationP17RecordExternalDecision(s,{requestId:req,
+   issuerId:m.m.institutionId,status:"approved",
+   evidenceRef:"rescheduling-decision",makeupAt:{year:s.year,month:8}})}
+ catch{rejectedEarly=true}
+ s.educationExamSessions.items[examId].status="rescheduled";
+ s.educationExamSessions.items[examId].makeupAt={year:s.year,month:8};
+ educationP17RecordExternalDecision(s,{requestId:req,
+   issuerId:m.m.institutionId,status:"approved",
+   evidenceRef:"rescheduling-decision",makeupAt:{year:s.year,month:8}});
+ return {eligible,pending,rejectedEarly,notice:row.notice?.index,
+   duplicate:educationP17ReconcileNotices(s),enrollments:s.educationRecord.enrollments.length};
+});
+assert.deepEqual(delayedExam,{eligible:true,pending:true,rejectedEarly:true,
+ notice:0,duplicate:0,enrollments:1});
+fixture();
+const accessDecision=run(function(){
+ const s=S,m=educationMigrationCurrent(s),mob=educationCreateMobilityState(s);
+ s.educationSchoolExperiences={version:1,items:{barrier:{
+   enrollmentId:m.enroll.id,offeringId:m.offering.id,year:s.year,
+   experienceTag:"accessibility-barrier",status:"verified",
+   evidenceRef:"observed-campus-barrier"
+ }}};
+ mob.accessibilityProfiles={[m.enroll.id]:{id:"student-access-needs",
+   enrollmentId:m.enroll.id,offeringId:m.offering.id,
+   institutionId:m.m.institutionId,status:"verified",
+   evidenceRef:"person-specific-assessment",needs:["step-free"]}};
+ const eligible=educationMigrationEligible(s,
+   "edu_safety_for_disabled_student","A");
+ educationMigrationApply(s,"E79:A");
+ const row=s.educationMigration.records.find(x=>x.eventId==="edu_safety_for_disabled_student"),
+   requestId=row.result.externalRequest.id;
+ let rejectedEarly=false;
+ try{educationP17RecordExternalDecision(s,{requestId,
+   issuerId:m.m.institutionId,status:"approved",
+   evidenceRef:"school-signed-adjustment",adjustmentRef:"reviewed-ramp"})}
+ catch{rejectedEarly=true}
+ mob.schoolAdjustments={"reviewed-ramp":{status:"verified",
+   institutionId:m.m.institutionId,offeringId:m.offering.id,
+   enrollmentId:m.enroll.id,supportedNeeds:["step-free"],
+   evidenceRef:"observed-ramp-and-route"}};
+ educationP17RecordExternalDecision(s,{requestId,
+   issuerId:m.m.institutionId,status:"approved",
+   evidenceRef:"school-signed-adjustment",adjustmentRef:"reviewed-ramp"});
+ return {eligible,rejectedEarly,notice:row.notice?.index,
+   duplicate:educationP17ReconcileNotices(s)};
+});
+assert.deepEqual(accessDecision,{eligible:true,rejectedEarly:true,notice:0,duplicate:0});
+console.log("PASS E42 and E79: independent exam schedule and school adjustment evidence");
