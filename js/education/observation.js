@@ -251,3 +251,88 @@ function educationObservationCaseBridgeRows(s,{
       N_nonformal_gain:participation};
   }).filter(Boolean);
 }
+
+// P11/P19 audit projection. This returns actual and reported knowledge in
+// separately labelled fields and is not suitable for direct player display.
+function educationObservationDependentRows(s,{
+  year=s?.year,month=s?.mo,personIds=null
+}={}) {
+  if(!s || !Number.isInteger(year)||!Number.isInteger(month)||
+     month<1||month>12||year*12+month>s.year*12+(s.mo??0))
+    throw Error("扶養対象の教育観測時点が不正");
+  const at=year*12+month,ledger=s.dependentEducation||{},
+    world=s.world?.educationWorld,
+    knownAt=x=>x&&Number.isInteger(x.year)&&
+      Number.isInteger(x.month)&&x.month>=0&&x.month<=12&&
+      x.year*12+x.month<=at,
+    ids=[...new Set(personIds||Object.keys(ledger))];
+  return ids.map(personId=>{
+    const entry=ledger[personId];
+    if(!entry||entry.personId!==personId)return {
+      personId,subjectKind:null,recordStatus:"not-observed",
+      actualEnrollmentId:null,actualOfferingId:null,actualStatus:"unknown",
+      knownStatus:"unknown",knownOfferingId:null,knowledgeCertainty:null,
+      knownResidenceStatus:"unknown",actualResidenceStatus:"unknown",
+      paidInvoiceId:null
+    };
+    const actual=(entry.enrollments||[]).filter(x=>
+      x.personId===personId && knownAt(x.startAt) &&
+      world?.offerings?.[x.offeringId] &&
+      x.enrollmentId===
+        "dependent-enrol:"+x.admissionTransactionId &&
+      (x.status==="enrolled"||x.status==="completed"||
+        x.status==="transferred"||x.status==="interrupted"))
+      .at(-1)||null;
+    const facts=(entry.knownFacts||[]).filter(f=>
+      f.personId===personId && knownAt(f.knownAt) &&
+      f.sourceEventId && f.certainty &&
+      (typeof f.claim==="string" || !!f.claim &&
+        typeof f.claim==="object"))
+      .sort((a,b)=>{
+        const da=a.knownAt.year*12+a.knownAt.month,
+          db=b.knownAt.year*12+b.knownAt.month;
+        return db-da||String(a.factId).localeCompare(String(b.factId));
+      });
+    const learning=facts.find(x=>
+      typeof x.claim==="string"?
+        /school|study|learn|学校|就学|通学/.test(x.claim):
+        !!x.claim.schoolOfferingId || !!x.claim.enrollmentId) ||null;
+    const claim=learning && typeof learning.claim==="object"?
+      learning.claim:null;
+    // Enrollment identifiers can be reported, but the report must not
+    // confer a record or borrow another child's formal enrollment.
+    const knownOffering=claim?.schoolOfferingId &&
+      world?.offerings?.[claim.schoolOfferingId]?claim.schoolOfferingId:null;
+    const reportedEnrollment=claim?.enrollmentId &&
+      (entry.enrollments||[]).some(x=>
+        x.personId===personId && x.enrollmentId===claim.enrollmentId &&
+        (!knownOffering||x.offeringId===knownOffering));
+    const knownStatus=learning?
+      knownOffering?
+        (reportedEnrollment?"reported-enrollment":"reported-school"):
+        "reported-education-unspecified":"unknown";
+    const residence=entry.knownResidence,
+      residenceValid=residence&&residence.sourceEventId &&
+        residence.knownAtYear!=null &&
+        residence.knownAtYear*12+(residence.knownAtMonth??0)<=at &&
+        residence.certainty!=="unknown";
+    const invoice=actual?.fundingInvoiceId &&
+      s.educationFinance?.invoices?.[actual.fundingInvoiceId],
+      paid=invoice?.personId===personId &&
+        invoice.offeringId===actual.offeringId &&
+        invoice.status==="paid";
+    return {
+      personId,subjectKind:entry.subjectKind,
+      recordStatus:"recorded",
+      actualEnrollmentId:actual?.enrollmentId||null,
+      actualOfferingId:actual?.offeringId||null,
+      actualStatus:actual?.status||"unknown",
+      knownStatus,knownOfferingId:knownOffering,
+      knowledgeCertainty:learning?.certainty||null,
+      knowledgeSourceId:learning?.sourceEventId||null,
+      actualResidenceStatus:entry.actualResidence?.status||"unknown",
+      knownResidenceStatus:residenceValid?residence.status:"unknown",
+      paidInvoiceId:paid?invoice.id:null
+    };
+  });
+}
