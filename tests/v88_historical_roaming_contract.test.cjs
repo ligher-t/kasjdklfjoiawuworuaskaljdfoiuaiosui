@@ -31,12 +31,17 @@ function run() {
   ];
   born({seed:109906,by:1067,region:"クルビア"});
   S.year=1099;S.age=32;S.mo=6;
+  S.cash=30000000;S.house.cash=30000000;
   const origin=S.res.n;
   const dest=MIGRATION_ROUTES[origin].find(x=>(MIGRATION_ROUTES[x.n]||[]).some(y=>y.n===origin)).n;
   const beforeMoves=(S.moves||[]).length;
   const planned=travelStart(S,{purpose:"wandering",destinationRegion:dest});
   const before=travelPresence(S);
+  const householdBefore=S.house.cash;
+  const personalBefore=S.cash;
   travelDepart(S);
+  const firstFare=S.travelState.transactions[planned.legs[0].id+":fare"];
+  const householdAfterOutbound=S.house.cash;
   const transit=travelPresence(S);
   advanceJourneyThrough(S,1099,6);
   const sameMonth=travelCurrentJourney(S).status;
@@ -45,6 +50,8 @@ function run() {
   let refused=false;
   try {travelEnd(S,"abandoned");}catch {refused=true;}
   S.mo=7;travelBeginReturn(S);
+  const returnFare=S.travelState.transactions[planned.legs[1].id+":fare"];
+  const householdAfterReturn=S.house.cash;
   advanceJourneyThrough(S,1099,8);
   const returned=travelPresence(S);
   travelEnd(S,"returned-home");
@@ -59,6 +66,8 @@ function run() {
     missing:events.filter(e=>!e.historicalScene).map(e=>e.id),
     cases,origin,dest,beforeMoves,
     plannedNoCheckpoint:planned.legs[0].checkpointId,
+    householdBefore,householdAfterOutbound,householdAfterReturn,personalBefore,firstFare,returnFare,
+    travelExpense:travelAnnualOutflow(S,1099,"household"),personalTravelExpense:travelAnnualOutflow(S,1099,"personal"),
     before,transit,sameMonth,arrived,refused,returned,audit,
     auditRestored, afterMoves:(S.moves||[]).length, actualHome:S.res.n,
     active:S.travelState.activeJourneyId
@@ -83,4 +92,11 @@ assert.equal(r.actualHome,r.origin);
 assert.deepEqual(r.audit,[]);
 assert.deepEqual(r.auditRestored,[]);
 assert.equal(r.active,null);
+assert(r.firstFare.amount > 0 && r.returnFare.amount > 0);
+assert.equal(r.firstFare.paidBy,"household");
+assert.equal(r.householdBefore-r.householdAfterOutbound,r.firstFare.amount);
+assert.equal(r.householdAfterOutbound-r.householdAfterReturn,r.returnFare.amount);
+assert.equal(r.travelExpense,r.firstFare.amount+r.returnFare.amount);
+assert.equal(r.personalTravelExpense,0);
+assert.equal(r.personalBefore,30000000);
 console.log('PASS: 40 timeline scenes, dated locality and roaming without teleportation');

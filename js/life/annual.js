@@ -31,6 +31,8 @@ function advanceCurrentLifeYear(s, services) {
   if (typeof advanceAnnualLanguageLearning === "function") advanceAnnualLanguageLearning(s, services, a);
   settleAnnualHouseholdBudget(s, services, a);
   annualFlowRecorded = applyAnnualPersonalBudget(s, services, a, t, f);
+  travelProjectAnnualOutflow(s, s.year, "household");
+  if (annualFlowRecorded) travelProjectAnnualOutflow(s, s.year, "personal");
   recordAnnualWealthAndHistory(s, services, a, annualFlowRecorded);
   services.hist();
   if (s.dead) return;

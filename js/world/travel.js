@@ -46,6 +46,59 @@ function travelPresence(state) {
   };
   return base;
 }
+function travelLegFareQuote(state, fromRegion, toRegion) {
+  const route = (MIGRATION_ROUTES[fromRegion] || []).find(row => row.n === toRegion);
+  const origin = REG.find(row => row.n === fromRegion);
+  if (!route || !origin || !Number.isFinite(route.fare) || route.fare < 0)
+    throw Error("Travel route has no valid cost basis");
+  const amount = Math.round(route.fare * origin.pm * (state.priceIndex || 1));
+  if (!Number.isSafeInteger(amount) || amount < 0)
+    throw Error("Travel fare is invalid");
+  return { amount, currency: "龍門幣", source: "migration-route-cost-proxy" };
+}
+function travelDebitLeg(state, journey, leg) {
+  const id = leg.id + ":fare";
+  const travel = ensureTravelState(state);
+  if (travel.transactions[id]) return travel.transactions[id];
+  const quote = travelLegFareQuote(state, leg.fromRegion, leg.toRegion);
+  const personal = !inSharedHousehold(state);
+  const account = personal ? state : state.house;
+  if (!account || !Number.isFinite(account.cash) || account.cash < quote.amount)
+    throw Error("旅程の運賃を支払える残高がない");
+  // The debit, receipt, leg transition and annual expense projection belong
+  // to one synchronous commit. The annual projection never charges again.
+  account.cash -= quote.amount;
+  const transaction = {
+    id, kind: "fare", journeyId: journey.id, legId: leg.id,
+    amount: quote.amount, currency: quote.currency,
+    source: quote.source, paidBy: personal ? "personal" : "household",
+    year: state.year, month: state.mo,
+    fromRegion: leg.fromRegion, toRegion: leg.toRegion
+  };
+  travel.transactions[id] = transaction;
+  return transaction;
+}
+function travelAnnualOutflow(state, year, paidBy) {
+  return Object.values(state.travelState?.transactions || {})
+    .filter(row => row.kind === "fare" && row.year === year && row.paidBy === paidBy)
+    .reduce((sum, row) => sum + row.amount, 0);
+}
+function travelProjectAnnualOutflow(state, year, paidBy) {
+  const amount = travelAnnualOutflow(state, year, paidBy);
+  const ledger = paidBy === "personal" ? state : state.house;
+  if (!amount || !ledger?.flow || ledger.flow.year !== year) return amount;
+  // An expense already debited during travel is only reported here.
+  ledger.flow.expense.travelFare = amount;
+  ledger.flow.net -= amount;
+  if (paidBy === "household") ledger.exp += amount;
+  return amount;
+}
+function travelBlocksResidenceEvent(event, state) {
+  if (travelPresence(state).mode === "residence") return false;
+  const tags = Array.isArray(event.need) ? event.need : [];
+  return tags.some(tag => typeof tag === "string" &&
+    /^(国|都市|住環境|地勢):/.test(tag));
+}
 function travelStart(state, request) {
   const travel = ensureTravelState(state);
   if (travelCurrentJourney(state)) throw Error("An active journey already exists");
@@ -60,6 +113,7 @@ function travelStart(state, request) {
   const duration = request?.durationMonths == null ? 1 : request.durationMonths;
   if (!Number.isInteger(duration) || duration < 1 || duration > 24)
     throw Error("Invalid modeled travel duration");
+  travelLegFareQuote(state, state.res.n, to);
   const id = "journey:" + (++travel.journeySeq);
   const leg = {
     id: id + ":leg:0", routeId: "migration-reference:" + state.res.n + ":" + to,
@@ -76,6 +130,7 @@ function travelStart(state, request) {
   };
   travel.journeys[id] = journey;
   travel.activeJourneyId = id;
+  if (purpose === "wandering") travel.lifestyle = "itinerant";
   return journey;
 }
 function travelDepart(state) {
@@ -83,6 +138,7 @@ function travelDepart(state) {
   if (!journey || journey.status !== "planned") throw Error("Journey is not planned");
   if (!Number.isInteger(state.mo) || state.mo < 1 || state.mo > 12)
     throw Error("Journey departure requires a known calendar month");
+  travelDebitLeg(state, journey, journey.legs[journey.activeLegIndex]);
   journey.status = "en-route";
   journey.departedAt = {year: state.year, month: state.mo};
   journey.lastProcessed = {year: state.year, month: state.mo};
@@ -129,13 +185,15 @@ function travelBeginReturn(state) {
     throw Error("No confirmed return option from the reached destination");
   if (!Number.isInteger(state.mo) || state.mo < 1 || state.mo > 12)
     throw Error("Return departure month is not known");
-  journey.legs.push({
+  const leg = {
     id: journey.id + ":leg:1",
     routeId: "migration-reference:" + journey.destinationRegion + ":" + journey.originRegion,
     fromRegion: journey.destinationRegion, toRegion: journey.originRegion,
     durationMonths: journey.legs[0].durationMonths,
     checkpointId: null, checkpointRegion: null, sourceKind: "game-model"
-  });
+  };
+  travelDebitLeg(state, journey, leg);
+  journey.legs.push(leg);
   journey.activeLegIndex = 1;
   journey.status = "en-route";
   journey.departedAt = {year: state.year, month: state.mo};
@@ -154,7 +212,9 @@ function travelEnd(state, reason) {
     throw Error("The traveler has not returned to their residence");
   journey.status = reason;
   journey.conclusion = {reason, year: state.year, month: state.mo};
-  ensureTravelState(state).activeJourneyId = null;
+  const travel = ensureTravelState(state);
+  travel.activeJourneyId = null;
+  if (reason === "returned-home" || reason === "abandoned") travel.lifestyle = "settled";
   return journey;
 }
 
@@ -170,6 +230,14 @@ function auditTravelState(state) {
   const active = t.activeJourneyId ? t.journeys[t.activeJourneyId] : null;
   if (t.activeJourneyId && (!active || !TRAVEL_OPEN_STATUSES.includes(active.status)))
     errors.push("活動中の旅程IDが不正");
+  for (const [id, tx] of Object.entries(t.transactions)) {
+    if (!tx || id !== tx.id || tx.kind !== "fare" || !t.journeys[tx.journeyId] ||
+        !Number.isSafeInteger(tx.amount) || tx.amount < 0 ||
+        !["personal", "household"].includes(tx.paidBy) ||
+        !Number.isInteger(tx.year) || tx.year > state.year ||
+        !Number.isInteger(tx.month) || tx.month < 1 || tx.month > 12)
+      errors.push("旅費の決済記録が不正");
+  }
   const open = Object.values(t.journeys).filter(j => j && TRAVEL_OPEN_STATUSES.includes(j.status));
   if (open.length > 1 || open.length !== (active ? 1 : 0))
     errors.push("未終了旅程が複数または未参照");
@@ -185,6 +253,10 @@ function auditTravelState(state) {
         !Number.isInteger(j.lastProcessed?.month) ||
         j.lastProcessed.month < 0 || j.lastProcessed.month > 12)
       errors.push("旅程の起点・時点・区間が不正");
+    if (j && !["planned","abandoned"].includes(j.status) &&
+        !j.legs.every((part, index) => index > j.activeLegIndex ||
+          !!t.transactions[part.id + ":fare"]))
+      errors.push("実際の旅程に決済記録がない");
     if (j?.status === "at-checkpoint" &&
         (!leg?.checkpointId || leg.checkpointId !== j.currentCheckpointId))
       errors.push("登録されていない検問所で待機");
