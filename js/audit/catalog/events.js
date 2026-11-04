@@ -13,6 +13,19 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
       (typeof e.timelineFlag !== "string" ||
         !services.HIST.some(entry => entry.flag === e.timelineFlag)))
       W_.push(`${w}: timelineFlagに対応する年表IDがない`);
+    if (e.historicalScene != null) {
+      const scene = e.historicalScene;
+      if (!e.timelineFlag || !["suspended","direct","area-impact","report-response","journey"].includes(scene.delivery) ||
+          !["event-year","ongoing"].includes(scene.dateMode))
+        W_.push(`${w}: 歴史場面の分類・年代契約が不正`);
+      if (scene.delivery === "direct" &&
+          (!scene.city || !scene.region || !services.REG.some(g => g.n === scene.region) ||
+           !(services.SIM_TABLES.namedCities[scene.region] || []).includes(scene.city)))
+        W_.push(`${w}: 直接体験の都市と地域が未登録`);
+      if (scene.delivery === "area-impact" &&
+          !services.REG.some(g => g.n === scene.region))
+        W_.push(`${w}: 地域影響の地域が未登録`);
+    }
     if (e.w != null) weight(e.w, w);
     if (e.cd != null && (!Number.isFinite(e.cd) || e.cd < 0)) W_.push(`${w}: 再発待機期間が不正`);
     if (e.inConfinement != null && typeof e.inConfinement !== "boolean")
