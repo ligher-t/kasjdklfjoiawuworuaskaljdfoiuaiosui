@@ -63,6 +63,8 @@ function run() {
   S.mo=9;
   travelStart(S,{purpose:"flight",destinationRegion:dest});
   travelEnd(S,"abandoned");
+  const householdTripExpense=travelAnnualOutflow(S,1099,"household");
+  const individualTripExpense=travelAnnualOutflow(S,1099,"personal");
   // A separate adult itinerary uses the personal wallet. Failure must leave
   // both the planned journey and the account untouched.
   born({seed:109907,by:1067,region:"クルビア"});
@@ -100,7 +102,7 @@ function run() {
     cases,origin,dest,beforeMoves,
     plannedNoCheckpoint:planned.legs[0].checkpointId,
     householdBefore,householdAfterOutbound,householdAfterReturn,personalBefore,firstFare,returnFare,
-    travelExpense:travelAnnualOutflow(S,1099,"household"),personalTravelExpense:travelAnnualOutflow(S,1099,"personal"),
+    travelExpense:householdTripExpense,personalTravelExpense:individualTripExpense,
     before,transit,sameMonth,arrived,refused,returned,audit,
     auditRestored, afterMoves:(S.moves||[]).length, actualHome:S.res.n,
     active:S.travelState.activeJourneyId
