@@ -12,6 +12,8 @@ const approved=Object.freeze([
   "p19-education-dependent-observation.test.cjs",
   "p19-education-nine-stage.test.cjs",
   "p19-education-local-transitions.test.cjs",
+  "p15-education-regional-representatives.test.cjs",
+  "p15-education-causal-boundaries.test.cjs",
   "p18-education-operations-mobility.test.cjs",
   "p18-education-case-fsm.test.cjs",
   "p18-education-finance-ledger.test.cjs",
