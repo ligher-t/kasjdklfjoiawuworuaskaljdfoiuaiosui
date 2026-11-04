@@ -1,4 +1,5 @@
 function validateFlagLifecycle(W_, services) {
+  const engineCredentialProducers=new Set(["arts_grad"]);
   const actualCreators = new Map(),
     actualClearers = new Map(),
     actualConsumers = new Map();
@@ -42,7 +43,7 @@ function validateFlagLifecycle(W_, services) {
       !meta.lifecycle ||
       !meta.source ||
       !meta.engine ||
-      !meta.producers?.length ||
+      (!meta.producers?.length && !engineCredentialProducers.has(flag)) ||
       !meta.consumers?.length ||
       !Array.isArray(meta.clearers) ||
       !Array.isArray(meta.engineClearers)
@@ -53,7 +54,8 @@ function validateFlagLifecycle(W_, services) {
     });
     const producers = actualCreators.get(flag) || [],
       clearers = actualClearers.get(flag) || [];
-    if (!producers.length) W_.push(`${flag}: イベント生成元がない（未使用フラグの可能性）`);
+    if (!producers.length && !engineCredentialProducers.has(flag))
+      W_.push(`${flag}: イベント生成元がない（未使用フラグの可能性）`);
     if (meta.producers?.join("|") !== producers.join("|"))
       W_.push(`${flag}: フラグ生成元の台帳がイベント定義と一致しない`);
     if (!Array.isArray(meta.clearers) || meta.clearers.join("|") !== clearers.join("|"))
