@@ -258,8 +258,8 @@ function educationObservationDependentRows(s,{
   year=s?.year,month=s?.mo,personIds=null
 }={}) {
   if(!s || !Number.isInteger(year)||!Number.isInteger(month)||
-     month<1||month>12||year*12+month>s.year*12+(s.mo??0))
-    throw Error("扶養対象の教育観測時点が不正");
+     month<1||month>12||year!==s.year||month!==(s.mo??0))
+    throw Error("扶養対象の現況観測時点が不正");
   const at=year*12+month,ledger=s.dependentEducation||{},
     world=s.world?.educationWorld,
     knownAt=x=>x&&Number.isInteger(x.year)&&
