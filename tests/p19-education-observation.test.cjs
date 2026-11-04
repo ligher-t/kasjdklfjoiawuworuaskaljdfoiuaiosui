@@ -142,7 +142,11 @@ const outcomes=run(function(){
    amount:1000,serviceYear:s.year});
  educationSettleInvoice(s,invoice);
  item.status='resolved';item.phase='resolved';
- const after=read();
+ const after=read(),
+   originalReceiptIds=[...invoice.receiptIds];
+ invoice.receiptIds=[];
+ const missingReceipt=read().p_funded;
+ invoice.receiptIds=originalReceiptIds;
  const bridge=educationObservationCaseBridgeRows(s,{
    year:s.year,month:s.mo,caseIds:[item.id]})[0];
  return {missingOffer:false,accepted:after.p_accepted.numerator,
@@ -151,12 +155,15 @@ const outcomes=run(function(){
    independentNonformal:bridge.N_nonformal_gain,
    fundedPending:before.p_funded.pending,funded:after.p_funded.numerator,
    fundedDenominator:after.p_funded.denominator,
+   receiptRequired:missingReceipt.excludedUnknown===1 &&
+     missingReceipt.numerator===0,
    noAutomaticEnrollment:(s.educationRecord?.enrollments||[]).length===0};
 });
 assert.deepEqual(outcomes,{missingOffer:false,accepted:1,
   applied:true,bridgeAccepted:true,bridgeFunded:true,bridgeEnrolled:false,
   independentNonformal:false,
-  fundedPending:1,funded:1,fundedDenominator:1,noAutomaticEnrollment:true});
+  fundedPending:1,funded:1,fundedDenominator:1,receiptRequired:true,
+  noAutomaticEnrollment:true});
 const credentials=run(function(){
  const s=S,offer=Object.values(s.world.educationWorld.offerings)
    .find(x=>x.stage==='university');
