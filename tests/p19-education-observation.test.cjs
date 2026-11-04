@@ -51,6 +51,7 @@ const observational=run(function(){
    year:s.year,month:s.mo,siteFrame:frame,openFrame,caseIds:[item.id],
    applicationIds:[],enrollmentIds:[]
  });
+ const hiddenBeforeSearch=educationCasePresentation(s);
  const first=projection(),unknown=educationObservationRows(s,{
    year:s.year,month:s.mo,
    siteFrame:[{scopeId:'unobserved-region',stage:'arts'}],
@@ -75,6 +76,9 @@ const observational=run(function(){
    unknownOpen:unknown.p_open.excludedUnknown,
    unchanged:stateBefore===stateAfter&&rngBefore===s.rngState,
    repeated:JSON.stringify(second)===JSON.stringify(third),
+   hiddenBeforeSearch:hiddenBeforeSearch.includes("まだ調べていない") &&
+     !hiddenBeforeSearch.includes(institution.id) &&
+     !hiddenBeforeSearch.includes(offering.id),
    units:Object.keys(second).map(x=>[x,second[x].unit]),
    openCount:second.p_open.numerator};
 });
@@ -91,6 +95,7 @@ assert.equal(observational.missingRate,null);
 assert.equal(observational.unknownOpen,1);
 assert.equal(observational.unchanged,true);
 assert.equal(observational.repeated,true);
+assert.equal(observational.hiddenBeforeSearch,true);
 assert.equal(new Set(observational.units.map(x=>x[0])).size,7);
 assert(observational.openCount>0);
 
