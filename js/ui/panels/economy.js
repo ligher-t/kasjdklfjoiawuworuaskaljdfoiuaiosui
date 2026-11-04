@@ -3,6 +3,8 @@ function renderEconomyPanel(s, services) {
     annualDeathEstimate = !!s.dead && flow.year === s.year,
     flowNames = {
       living: "生活費",
+      travelFare: "旅程の交通費",
+      travelStay: "旅先で追加した食宿費",
       spouseLiving: "配偶者の生活費",
       medical: "本人・家族の療養費（通院移動分を除く）",
       medicalTravel: "療養に伴う通院移動",

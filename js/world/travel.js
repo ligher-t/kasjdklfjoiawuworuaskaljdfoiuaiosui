@@ -156,19 +156,71 @@ function travelDebitLeg(state, journey, leg) {
   travel.transactions[id] = transaction;
   return transaction;
 }
-function travelAnnualOutflow(state, year, paidBy) {
+// Each charge is an additional, modeled overnight/road provision expense.
+// The annual household and personal living budgets still cover the home.
+function travelStayQuote(state, region) {
+  const area = REG.find(row => row.n === region);
+  const base = P("economy.minimumExpenseBase");
+  if (!area || !Number.isFinite(area.pm) || area.pm <= 0 ||
+      !Number.isFinite(base) || base <= 0)
+    throw Error("旅先の食宿費を算定する地域情報がない");
+  const amount = Math.max(1, Math.round(base * area.pm * (state.priceIndex || 1) * 0.25 / 12));
+  if (!Number.isSafeInteger(amount)) throw Error("旅先の食宿費が計算範囲を超えた");
+  return {amount,currency:"龍門幣",source:"temporary-stay-cost-game-model"};
+}
+function travelChargeStayMonth(state, journey, year, month, region) {
+  if (journey.status === "planned") return null;
+  const id = journey.id + ":stay:" + year + ":" + month;
+  const travel = ensureTravelState(state);
+  if (travel.transactions[id]) return travel.transactions[id];
+  const quote = travelStayQuote(state, region);
+  const personal = !inSharedHousehold(state);
+  const account = personal ? state : state.house;
+  if (!account || !Number.isFinite(account.cash) || account.cash < 0)
+    throw Error("旅先の食宿費を記帳する会計が不正");
+  const paid = Math.min(quote.amount, account.cash);
+  const unpaid = quote.amount - paid;
+  account.cash -= paid;
+  if (unpaid) {
+    if (personal) {
+      state.unpaidExpenses = (state.unpaidExpenses || 0) + unpaid;
+      state.fl ||= {};
+      state.fl.insolvent = 1;
+    } else {
+      // The household budget already recognizes negative balances as debt.
+      account.debt = (account.debt || 0) + unpaid;
+    }
+  }
+  const receipt = {
+    id,kind:"stay",journeyId:journey.id,legId:journey.legs[journey.activeLegIndex].id,
+    amount:quote.amount,paid,unpaid,currency:quote.currency,
+    source:quote.source,paidBy:personal?"personal":"household",
+    year,month,region
+  };
+  travel.transactions[id] = receipt;
+  return receipt;
+}
+function travelStayRegion(journey) {
+  const leg = journey.legs[journey.activeLegIndex];
+  return journey.status === "arrived" || journey.status === "at-stop"
+    ? leg.toRegion : leg.fromRegion;
+}
+function travelAnnualOutflow(state, year, paidBy, kind = "fare") {
   return Object.values(state.travelState?.transactions || {})
-    .filter(row => row.kind === "fare" && row.year === year && row.paidBy === paidBy)
+    .filter(row => row.kind === kind && row.year === year && row.paidBy === paidBy)
     .reduce((sum, row) => sum + row.amount, 0);
 }
 function travelProjectAnnualOutflow(state, closingYear, paidBy) {
   // Annual finances close the preceding calendar year after advanceAnnualCalendar
   // has already moved state.year forward.
-  const amount = travelAnnualOutflow(state, closingYear - 1, paidBy);
+  const fare = travelAnnualOutflow(state, closingYear - 1, paidBy, "fare");
+  const stay = travelAnnualOutflow(state, closingYear - 1, paidBy, "stay");
+  const amount = fare + stay;
   const ledger = paidBy === "personal" ? state : state.house;
   if (!amount || !ledger?.flow || ledger.flow.year !== closingYear) return amount;
-  // An expense already debited during travel is only reported here.
-  ledger.flow.expense.travelFare = amount;
+  // Both costs were booked at the time of travel. Never debit them twice.
+  if (fare) ledger.flow.expense.travelFare = fare;
+  if (stay) ledger.flow.expense.travelStay = stay;
   ledger.flow.net -= amount;
   if (paidBy === "household") ledger.exp += amount;
   return amount;
@@ -248,6 +300,7 @@ function travelDepart(state) {
   journey.departedAt = {year: state.year, month: state.mo};
   journey.legs[journey.activeLegIndex].departedAt = { ...journey.departedAt };
   journey.lastProcessed = {year: state.year, month: state.mo};
+  travelChargeStayMonth(state, journey, state.year, state.mo, travelStayRegion(journey));
   return journey;
 }
 function travelMonthIndex(date) {
@@ -260,15 +313,22 @@ function advanceJourneyThrough(state, year, month) {
   const target = travelMonthIndex({year, month});
   const last = travelMonthIndex(journey.lastProcessed);
   if (target <= last) return journey;
-  // A planned journey and a blocked checkpoint never move autonomously.
-  if (journey.status === "en-route" && journey.departedAt) {
-    const leg = journey.legs[journey.activeLegIndex];
-    const arrival = travelMonthIndex(journey.departedAt) + leg.durationMonths;
-    if (target >= arrival) {
-      journey.status = "arrived";
-      journey.arrivedAt = {year: Math.floor((arrival - 1) / 12),
-        month: ((arrival - 1) % 12) + 1};
-      leg.arrivedAt = { ...journey.arrivedAt };
+  // Process every calendar month, including those skipped by annual fast-forward.
+  // Arriving at a region changes the cost proxy only from that month onward.
+  for (let date = last + 1; date <= target; date++) {
+    if (journey.status === "en-route" && journey.departedAt) {
+      const leg = journey.legs[journey.activeLegIndex];
+      const arrival = travelMonthIndex(journey.departedAt) + leg.durationMonths;
+      if (date >= arrival) {
+        journey.status = "arrived";
+        journey.arrivedAt = {year: Math.floor((arrival - 1) / 12),
+          month: ((arrival - 1) % 12) + 1};
+        leg.arrivedAt = { ...journey.arrivedAt };
+      }
+    }
+    if (journey.status !== "planned") {
+      const at = {year:Math.floor((date - 1) / 12),month:((date - 1) % 12) + 1};
+      travelChargeStayMonth(state, journey, at.year, at.month, travelStayRegion(journey));
     }
   }
   journey.lastProcessed = {year, month};
@@ -306,6 +366,7 @@ function travelBeginReturn(state) {
   journey.departedAt = {year: state.year, month: state.mo};
   leg.departedAt = { ...journey.departedAt };
   journey.lastProcessed = {year: state.year, month: state.mo};
+  travelChargeStayMonth(state, journey, state.year, state.mo, travelStayRegion(journey));
   return journey;
 }
 function travelDeathLocation(state) {
@@ -357,12 +418,19 @@ function auditTravelState(state) {
   if (t.activeJourneyId && (!active || !TRAVEL_OPEN_STATUSES.includes(active.status)))
     errors.push("活動中の旅程IDが不正");
   for (const [id, tx] of Object.entries(t.transactions)) {
-    if (!tx || id !== tx.id || tx.kind !== "fare" || !t.journeys[tx.journeyId] ||
+    if (!tx || id !== tx.id || !["fare","stay"].includes(tx.kind) || !t.journeys[tx.journeyId] ||
         !Number.isSafeInteger(tx.amount) || tx.amount < 0 ||
         !["personal", "household"].includes(tx.paidBy) ||
         !Number.isInteger(tx.year) || tx.year > state.year ||
         !Number.isInteger(tx.month) || tx.month < 1 || tx.month > 12)
       errors.push("旅費の決済記録が不正");
+    if (tx?.kind === "stay" &&
+        (tx.paid + tx.unpaid !== tx.amount ||
+         !Number.isSafeInteger(tx.paid) || tx.paid < 0 ||
+         !Number.isSafeInteger(tx.unpaid) || tx.unpaid < 0 ||
+         tx.id !== tx.journeyId + ":stay:" + tx.year + ":" + tx.month ||
+         !REG.some(r => r.n === tx.region)))
+      errors.push("旅先食宿費の決済記録が不正");
   }
   for (const agreement of Object.values(t.familyCareAgreements || {})) {
     if (!agreement || typeof agreement.id !== "string" ||

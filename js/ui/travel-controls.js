@@ -47,6 +47,7 @@ function renderTravelControls(s,services) {
         (!ready||!care.ready?' disabled':'')+'>往復の行程を計画する</button>');
     }else lines.push("<p>往復可能な広域経路の登録がない。</p>");
     lines.push('<p class="nt">運賃はゲーム用の広域移動費。出発時に往復分を先払いし、払い戻しは行わない。個々の街道や検問所の実在は示さない。</p>');
+    lines.push('<p class="nt">出発後は、通常の自宅の生活費に加えて旅先の食宿費が月ごとに発生する。滞在費はゲーム上の推計である。</p>');
   }else{
     const leg=active.legs[active.activeLegIndex],mode=active.status;
     const arrivedHome=mode==="arrived"&&leg.toRegion===active.originRegion;
@@ -73,6 +74,10 @@ function renderTravelControls(s,services) {
         (!ready||!active.returnReservation&&(!wallet||wallet.cash<fare)?' disabled':'')+'>帰路に就く</button>');
     }else lines.push('<p class="nt">暦月が進むと移動が進行する。到着後に帰路を選べる。</p>');
     lines.push('<p class="nt">一時的な旅行の間も、以前の住居と家族の居住地は維持される。</p>');
+    const stayTotal=Object.values(s.travelState?.transactions||{})
+      .filter(tx=>tx.journeyId===active.id&&tx.kind==="stay")
+      .reduce((sum,tx)=>sum+tx.amount,0);
+    lines.push('<p>旅先の食宿費：'+fmt(stayTotal)+'（これまでの累計）</p>');
   }
   if(!ready)lines.push('<p class="nt">操作には成人・年月の確定・未解決の選択がない状態が必要となる。</p>');
   target.innerHTML=lines.join("\n");
