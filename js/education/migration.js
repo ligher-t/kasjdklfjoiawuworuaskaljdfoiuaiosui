@@ -38,6 +38,88 @@ function educationP17SchoolExperience(s,tag) {
       row.offeringId===current.offering.id && row.experienceTag===tag &&
       row.status==="verified" && row.evidenceRef && row.year<=s.year);
 }
+// Independent issuers must be tied to a known route, employer, examination
+// or enrolled student's actual accessibility needs. Reading an offer does
+// not imply that a decision has been made.
+function educationP17ExternalBasis(s,review) {
+  const world=s.world?.educationWorld,item=educationActiveCase(s),
+    current=educationMigrationCurrent(s),area=s.local?.educationAreaId,
+    known=item?educationCaseCandidates(s):[];
+  if(!world)return null;
+  if(review==="E20" && item?.phase==="planning"){
+    const requirements=Object.values(s.educationTravelRequirements?.items||{});
+    const requirement=requirements.find(row=>{
+      if(row.status!=="verified" || !row.evidenceRef || !row.policyRef ||
+         !row.authorityId || !row.permitKind || row.personId!=="protagonist" ||
+         row.caseId!==item.id || row.fromRegion!==s.res?.n ||
+         row.at?.year>s.year)return false;
+      const offer=known.find(x=>x.offeringId===row.offeringId),
+        link=world.transportLinks?.[row.routeId],
+        destination=world.areas?.[offer?.areaId];
+      return !!offer && !!link && !!destination &&
+        destination.regionKey!==s.res?.n &&
+        row.toRegion===destination.regionKey &&
+        link.endpointAreaIds?.includes(area) &&
+        link.endpointAreaIds?.includes(offer.areaId);
+    });
+    return requirement?{
+      issuerId:requirement.authorityId,sourceId:requirement.id,
+      sourceRef:requirement.evidenceRef,caseId:item.id,
+      offeringId:requirement.offeringId,routeId:requirement.routeId,
+      permitKind:requirement.permitKind
+    }:null;
+  }
+  if(review==="E27" && item && ["planning","contract"].includes(item.phase) &&
+     s.job>0){
+    const employers=(s.lifeRecord?.affiliations||[]).filter(x=>
+      x.kind==="employer" && ["active","crisis"].includes(x.status));
+    const programs=Object.values(s.educationEmployerPrograms?.items||{});
+    const program=programs.find(row=>{
+      const provider=world.informalProviders?.[row.providerId];
+      return row.status==="verified" && !!row.evidenceRef && !!row.policyRef &&
+        row.personId==="protagonist" && row.jobId===s.job &&
+        row.caseId===item.id && row.maxContribution>0 &&
+        employers.some(x=>x.id===row.employerId) &&
+        known.some(x=>x.offeringId===row.offeringId && x.tuitionEstimate>0) &&
+        provider?.kind==="corporate-training" &&
+        provider.organizationId===row.employerId && !!provider.evidenceRef &&
+        provider.status==="active" && provider.areaId===area;
+    });
+    return program?{
+      issuerId:program.employerId,sourceId:program.id,
+      sourceRef:program.evidenceRef,caseId:item.id,
+      offeringId:program.offeringId,maxContribution:program.maxContribution
+    }:null;
+  }
+  if(review==="E42" && current){
+    const exam=Object.values(s.educationSchoolExperiences?.items||{}).find(row=>
+      row.enrollmentId===current.enroll.id &&
+      row.offeringId===current.offering.id &&
+      row.institutionId===current.m.institutionId &&
+      row.experienceTag==="examination-cancelled" &&
+      row.status==="verified" && !!row.evidenceRef && !!row.examId &&
+      row.year<=s.year);
+    return exam?{
+      issuerId:current.m.institutionId,sourceId:exam.examId,
+      sourceRef:exam.evidenceRef,enrollmentId:current.enroll.id,
+      offeringId:current.offering.id
+    }:null;
+  }
+  if(review==="E79" && current){
+    const profile=s.educationMobility?.accessibilityProfiles?.[current.enroll.id],
+      observed=educationP17SchoolExperience(s,"accessibility-barrier");
+    return profile?.status==="verified" && !!profile.evidenceRef &&
+      profile.enrollmentId===current.enroll.id &&
+      profile.institutionId===current.m.institutionId &&
+      profile.offeringId===current.offering.id &&
+      Array.isArray(profile.needs) && profile.needs.length && observed ? {
+        issuerId:current.m.institutionId,sourceId:profile.id,
+        sourceRef:profile.evidenceRef,enrollmentId:current.enroll.id,
+        offeringId:current.offering.id,needs:[...profile.needs]
+      }:null;
+  }
+  return null;
+}
 function educationP17ExtraEligible(s,review,letter=null) {
   if(!EDUCATION_P17_EXTRA.has(review))return false;
   if(EDUCATION_P17_REGIONS[review] &&
@@ -83,8 +165,7 @@ function educationP17ExtraEligible(s,review,letter=null) {
       s.educationRecord?.enrollments?.some(x=>x.status==="withdrawn");
     case "E11": return planning && item.stage==="preparatory" && s.age>=18;
     case "E12": return planning && s.mo>=10 && !known.length;
-    case "E20": return planning && known.some(x=>
-      world.areas?.[x.areaId]?.regionKey!==s.res?.n) && witness;
+    case "E20":return !!educationP17ExternalBasis(s,"E20");
     case "E21":return planning && known.some(x=>
       educationOfferingLanguageAssessment(s,x.offeringId,
         "instruction-session").status==="blocked");
@@ -97,7 +178,7 @@ function educationP17ExtraEligible(s,review,letter=null) {
           "institutional-desk-inquiry";
     case "E28":
       return contract && !!s.educationAccess?.financingOffers?.[item.id]?.loan;
-    case "E27":return (planning||contract) && witness;
+    case "E27":return !!educationP17ExternalBasis(s,"E27");
     case "E30": return (planning||contract) &&
       known.some(x=>x.tuitionEstimate>0);
     case "E31": return planning && s.job>0 && known.length>0;
@@ -145,7 +226,7 @@ function educationP17ExtraEligible(s,review,letter=null) {
         seg.offeringId===current.offering.id && seg.recognized &&
         seg.schoolDelivery>0 && !!seg.evidenceRef));
     }
-    case "E42":return educationP17SchoolExperience(s,"examination-cancelled");
+    case "E42":return !!educationP17ExternalBasis(s,"E42");
     case "E44":return s.educationRecord?.enrollments?.some(x=>
       x.status!=="enrolled"&&x.institutionId) &&
       Object.values(s.educationPeopleTies?.items||{}).some(x=>
@@ -212,7 +293,7 @@ function educationP17ExtraEligible(s,review,letter=null) {
     case "E78":return !!school && school.teachingEquivalent>0 &&
       Object.values(s.educationPeopleTies?.items||{}).some(x=>
         x.enrollmentId===current.enroll.id&&x.role==="peer"&&x.personallyKnown);
-    case "E79":return !!school && educationP17SchoolExperience(s,"accessibility-barrier");
+    case "E79":return !!school && !!educationP17ExternalBasis(s,"E79");
     case "E80":return s.age>=25 && !current &&
       s.lifeRecord?.careerChanges?.length>0 &&
       institutionOfferings(s,area,"vocational").some(x=>
@@ -232,6 +313,10 @@ function educationP17ExtraApply(s,review,letter,eventId){
     E12:{A:"case:defer",B:"case:nonformal"}
   }[review]?.[letter];
   if(decision && !educationCaseAction(s,decision))return false;
+  const external=["E20","E27","E42","E79"].includes(review) &&
+    letter==="A"?educationP17ExternalBasis(s,review):null;
+  if(["E20","E27","E42","E79"].includes(review) &&
+     letter==="A" && !external)return false;
   const current=educationMigrationCurrent(s);
   const routeCheck=letter==="A" && ["E14","E23"].includes(review) &&
     current ? educationFindRoute(s,{
@@ -247,6 +332,10 @@ function educationP17ExtraApply(s,review,letter,eventId){
     caseId:item?.id||null,informationOnly:review!=="E09"||letter!=="A",
     formalEnrollmentIssued:review==="E09"&&letter==="A",
     awardIssued:false,automaticPayment:false,
+    ...(external?{externalRequest:{
+      id:eventId+":"+educationMigrationScope(s,eventId)+":request",
+      reviewId:review,issuedAt:{year:s.year,month:s.mo},...external
+    }}:{}),
     ...(routeCheck?{routeCheck:{
       status:routeCheck.status,
       reasonCodes:routeCheck.reasonCodes,
@@ -447,6 +536,60 @@ function educationMigrationEligible(s,eventId,choice=null) {
 
 // A conditional P17 notice describes an observed result, never the mere
 // decision to apply. The originating choice is the owner of its one-time log.
+// A written response from the relevant authority is the only source of
+// these four outcomes. It cannot enroll, pay tuition, or award a credential.
+function educationP17RecordExternalDecision(s,{requestId,issuerId,status,
+  evidenceRef,approvedAmount=null,makeupAt=null,adjustmentRef=null}={}) {
+  const record=s.educationMigration?.records?.find(x=>
+    x.result?.externalRequest?.id===requestId),
+    request=record?.result?.externalRequest,
+    review=request?.reviewId,
+    now={year:s.year,month:s.mo};
+  if(!request || record.choice!=="A" || !evidenceRef ||
+     evidenceRef===request.sourceRef || issuerId!==request.issuerId ||
+     !["E20","E27","E42","E79"].includes(review) ||
+     !["approved","rejected",...(review==="E42"?["undetermined"]:[])].includes(status) ||
+     (status==="undetermined" && review!=="E42") ||
+     now.year*12+now.month<record.at.year*12+record.at.month)
+    throw Error("教育申請の相手方・結果または通知証拠が一致しない");
+  const source=review==="E20"?
+    s.educationTravelRequirements?.items?.[request.sourceId]:
+    review==="E27"?s.educationEmployerPrograms?.items?.[request.sourceId]:
+    review==="E42"?
+      Object.values(s.educationSchoolExperiences?.items||{}).find(x=>
+        x.examId===request.sourceId && x.experienceTag==="examination-cancelled"):
+      s.educationMobility?.accessibilityProfiles?.[request.enrollmentId];
+  if(!source || source.evidenceRef!==request.sourceRef ||
+     (review==="E27" && (status==="approved" &&
+       (!Number.isSafeInteger(approvedAmount) || approvedAmount<=0 ||
+        approvedAmount>request.maxContribution))) ||
+     (review==="E42" && (status==="approved"?
+       !makeupAt || !Number.isInteger(makeupAt.year) ||
+         !Number.isInteger(makeupAt.month) || makeupAt.month<1 ||
+         makeupAt.month>12 || makeupAt.year*12+makeupAt.month<
+           now.year*12+now.month : makeupAt!==null)) ||
+     (review==="E79" && status==="approved" && !adjustmentRef))
+    throw Error("教育申請の原本・支援額・振替日・配慮決定が不足");
+  s.educationP17Decisions ||= {version:1,items:{}};
+  const ledger=s.educationP17Decisions;
+  if(ledger.version!==1)throw Error("教育通知の決定台帳の版が不正");
+  const result={id:requestId,requestId,reviewId:review,
+    issuerId,status,evidenceRef,decidedAt:now,
+    ...(status==="approved" && review==="E27"?{approvedAmount}:{}),
+    ...(makeupAt?{makeupAt:{...makeupAt}}:{}),
+    ...(adjustmentRef?{adjustmentRef}:{})};
+  const existing=ledger.items[requestId];
+  if(existing){
+    if(existing.status!==result.status ||
+       existing.evidenceRef!==result.evidenceRef ||
+       existing.issuerId!==result.issuerId)
+      throw Error("同一教育申請に異なる発行者または結果が登録された");
+    return existing;
+  }
+  ledger.items[requestId]=result;
+  educationP17ReconcileNotices(s);
+  return result;
+}
 function educationP17NoticeRegisteredSource(s,row,record) {
   if(!row || row.status!=="verified" || !row.evidenceRef ||
      row.reviewId!==window.GAME_DATA.EDUCATION_P17_REVIEWED?.find(x=>
@@ -480,6 +623,17 @@ function educationP17NoticeRegisteredSource(s,row,record) {
 function educationP17NoticeOutcome(s,record,review,letter) {
   const caseItem=s.educationCases?.items?.[record.result?.caseId],
     access=s.educationAccess,world=s.world?.educationWorld;
+  if(["E20","E27","E42","E79"].includes(review)&&letter==="A"){
+    const request=record.result?.externalRequest,
+      decision=s.educationP17Decisions?.items?.[request?.id];
+    if(!request || !decision || decision.requestId!==request.id ||
+       decision.issuerId!==request.issuerId ||
+       decision.reviewId!==review || !decision.evidenceRef ||
+       decision.decidedAt.year*12+decision.decidedAt.month<
+         record.at.year*12+record.at.month)return null;
+    return {index:decision.status==="approved"?0:1,
+      evidenceRef:decision.evidenceRef};
+  }
   if(review==="E09"&&letter==="A" && caseItem?.reason==="accepted-not-enrolled")
     return {index:0,evidenceRef:caseItem.id+":accepted-not-enrolled"};
   if(review==="E16"&&letter==="A"){
