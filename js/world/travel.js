@@ -46,6 +46,22 @@ function travelPresence(state) {
   };
   return base;
 }
+// A trip remains physically away from the home school until an actual return.
+// Re-reading a completed year must consult dated legs rather than today's address.
+function travelAwayDuringMonth(state, year, month) {
+  if (!Number.isInteger(year) || !Number.isInteger(month) || month < 1 || month > 12)
+    return false;
+  const date = year * 12 + month;
+  return Object.values(state.travelState?.journeys || {}).some(journey => {
+    const departure = journey.legs?.[0]?.departedAt;
+    if (!departure) return false;
+    const from = departure.year * 12 + departure.month;
+    const conclusion = journey.conclusion;
+    const through = conclusion?.reason === "returned-home"
+      ? conclusion.year * 12 + conclusion.month : Infinity;
+    return date >= from && date <= through;
+  });
+}
 function travelLegFareQuote(state, fromRegion, toRegion) {
   const route = (MIGRATION_ROUTES[fromRegion] || []).find(row => row.n === toRegion);
   const origin = REG.find(row => row.n === fromRegion);
@@ -143,6 +159,7 @@ function travelDepart(state) {
   travelDebitLeg(state, journey, journey.legs[journey.activeLegIndex]);
   journey.status = "en-route";
   journey.departedAt = {year: state.year, month: state.mo};
+  journey.legs[journey.activeLegIndex].departedAt = { ...journey.departedAt };
   journey.lastProcessed = {year: state.year, month: state.mo};
   return journey;
 }
@@ -164,6 +181,7 @@ function advanceJourneyThrough(state, year, month) {
       journey.status = "arrived";
       journey.arrivedAt = {year: Math.floor((arrival - 1) / 12),
         month: ((arrival - 1) % 12) + 1};
+      leg.arrivedAt = { ...journey.arrivedAt };
     }
   }
   journey.lastProcessed = {year, month};
@@ -199,6 +217,7 @@ function travelBeginReturn(state) {
   journey.activeLegIndex = 1;
   journey.status = "en-route";
   journey.departedAt = {year: state.year, month: state.mo};
+  leg.departedAt = { ...journey.departedAt };
   journey.lastProcessed = {year: state.year, month: state.mo};
   return journey;
 }

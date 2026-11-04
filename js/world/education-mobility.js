@@ -253,6 +253,10 @@ function educationCanReach(s,{institutionId,campusId,offeringId,
   const time=month==null?(year===s.year?s.mo:null):month;
   if(educationDateIndex(year,time)===null){add("term-timing-unknown");return result;}
   // A year-only quote cannot certify every later month of a historical crisis year.
+  if(personId==="protagonist" && purpose==="daily-commute" &&
+     travelAwayDuringMonth(s,year,time)){
+    add("protagonist-away-on-journey");result.status="blocked";return result;
+  }
   if(month==null && EDUCATION_OPERATION_WINDOWS.some(w=>w.region===world.areas[campus.educationAreaId].regionKey &&
     w.from[0]===year && w.kind!=="none"))add("term-timing-unknown");
   const school=educationSchoolStatusAt(s,offeringId,year,time);

@@ -292,6 +292,14 @@ function educationSimulateAttendanceThrough(s,year= s?.year,untilMonth=12) {
       continue;
     }
     educationReconcileWorldAt(s,year,month);
+    if(travelAwayDuringMonth(s,year,month)){
+      educationRecordAttendance(s,{enrollmentId:record.id,year,month,
+        placementId:placement.id,personalAccess:0,
+        evidenceRef:record.id+":journey-absence:"+year+":"+month,
+        sourceKind:"confirmed-journey-absence"});
+      count++;
+      continue;
+    }
     const teaching=educationTeachingMonth(s,placement.offeringId,year,month);
     let access=0,basis="no-formal-class";
     if(teaching.recognized&&teaching.delivery>0 &&
