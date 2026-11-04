@@ -30,6 +30,9 @@ function scenario(){
   const after=s.cash;
   const spent=travelAnnualOutflow(s,1094,"personal");
   const receipts=Object.values(s.travelState.transactions).map(x=>x.legId);
+  // The exact save transport is JSON. It must retain the return ticket.
+  s.travelState=JSON.parse(JSON.stringify(s.travelState));
+  const auditAfterRestore=auditTravelState(s);
   const travelResidence=s.res.n;
   const blockedMove=travelBlocksResidenceEvent({c:[{o:[[1,"x",{resTo:destination}]]}]},s);
   const yearBefore=travelHomeWorkIncomeShare(s,1093);
@@ -37,6 +40,7 @@ function scenario(){
   const reached=travelCurrentJourney(s).status;
   const canReturn=travelControlAction("return");
   const afterReturn=s.cash;
+  const receiptCountAfterReturn=Object.keys(s.travelState.transactions).length;
   s.mo=6;advanceJourneyThrough(s,1094,6);
   const finished=travelControlAction("finish");
   const moves=(s.moves||[]).length,finalResidence=s.res.n,active=s.travelState.activeJourneyId;
@@ -55,6 +59,7 @@ function scenario(){
   let insufficient=false;try{travelDepart(poor);}catch{insufficient=true;}
   return {menu,planned,reserved,departed,before,after,cost,spent,receipts,
     travelResidence,blockedMove,yearBefore,reached,canReturn,afterReturn,
+    receiptCountAfterReturn,auditAfterRestore,
     finished,moves,finalResidence,from,destination,active,audit,
     insufficient,poorStatus:p.status,poorCash:poor.cash,poorTransactions:
       Object.keys(poor.travelState.transactions).length,total};
@@ -74,6 +79,8 @@ assert.equal(r.yearBefore,1);
 assert.equal(r.reached,"arrived");
 assert.equal(r.canReturn,true);
 assert.equal(r.afterReturn,r.after,'prepaid return is not charged twice');
+assert.equal(r.receiptCountAfterReturn,2,'restored return does not create a second receipt');
+assert.deepEqual(r.auditAfterRestore,[]);
 assert.equal(r.finished,true);
 assert.equal(r.moves,0);
 assert.equal(r.finalResidence,r.from);

@@ -1,3 +1,7 @@
+## 2026-11-04：G3-4・G3-5 CI受入
+- G3-4 通常勤務収入と家族同意、G3-5 旅と放浪のUI・事前決済・帰路の遷移をDraft PR #2に実装し、コミット `2792ac1` の[歴史境界CI](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41821135345)と[教育・生活CI](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41821135404)はともに成功した。
+- 出発後の旅程台帳をJSON復元し、帰路の再請求と決済履歴重複が発生しない回帰を追加。リスク・文面・保留事項は既存G3-4、G3-5節に残している。
+
 - G3-5検証：実画面の旅程選択肢の接続と、出発時の往復運賃先払い・帰路の二重請求なし・転居記録の不変・所持金不足時の原子性を `v88_roaming_ui_roundtrip.test.cjs` に追加。
 ## 2026-11-04：G3-5 放浪を選べる画面
 - 「住まいと地域の記録」から単身での往復行程（計画、家族相談、出発、帰路、帰還、取消）を本人が選択可能。すべて既存旅程FSMと家計、ログ、経歴記録、自動保存を共有する。表示全文は docs/PLAYER_TEXT_REVIEW.md に収録。
