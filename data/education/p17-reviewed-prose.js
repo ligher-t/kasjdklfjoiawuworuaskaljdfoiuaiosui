@@ -1751,7 +1751,9 @@ window.TERRA_EDUCATION_INJECT_P17=function ($terraData,$define) {
   const activated=new Set(reviewed.filter(x=>x.decision!=="保留").map(x=>x.reviewId));
   $define("EDUCATION_P17_REVIEWED",reviewed,false);
   for(const entry of reviewed){
-    if(!activated.has(entry.reviewId)||entry.decision==="保留")continue;
+    // E04 is already the authoritative I03 lower-stage review event.
+    if(!activated.has(entry.reviewId)||entry.decision==="保留" ||
+       $terraData.EV.some(event=>event.id===entry.eventId))continue;
     const event={
       id:entry.eventId,conf:"S",
       references:["SRC_EDUCATION_ACCESS"],
