@@ -933,13 +933,22 @@ window.TERRA_DATA_BUILD.fragment(
     references: ["SRC_TL_MIDDLE", "SRC_URSUS_CHILDREN", "SRC_CHERNOB_AFTERSHOCK_MODEL"],
     st: ["児童", "少年", "青年", "壮年", "老年"],
     need: ["国:ウルサス", "都市:チェルノボーグ"],
-    show: s =>
-      !!s.world?.events?.chernobog_incident && (s.year > 1097 || (s.year === 1097 && s.mo >= 2)),
+    show: s => !!s.world?.events?.chernobog_incident &&
+      (s.year>1097 || (s.year===1097 && s.mo>=2)) &&
+      Object.values(s.world?.educationWorld?.offerings||{}).some(o=>{
+        if(o.stage!=="lower" ||
+          s.world.educationWorld.campuses[o.campusId]?.educationAreaId !==
+          s.local?.educationAreaId)return false;
+        const before=educationSchoolStatusAt(s,o.id,1096,12),
+          now=educationSchoolStatusAt(s,o.id,s.year,s.mo??0);
+        return !!before && !!now && before.teachingEquivalent===0 &&
+          now.teachingEquivalent>0;
+      }),
     ge: { year: 1097, age: 6 },
     le: { year: 1098 },
     once: true,
     w: 0.3,
-    t: "傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下には戻ってこない生徒たちの空席がいくつも並んでいた。",
+    t: "傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。",
     c: [
       $terraData.K("手を貸して、教室まで机を一つ運び込む", {}, [
         1,
@@ -1146,7 +1155,7 @@ window.TERRA_DATA_BUILD.fragment(
     c: [
       $terraData.K("生き延びた旧友へ再び筆を執り、年に一度だけでも便りを交わす", {}, [
         1,
-        "連絡がつく同級生へ久しぶりに手紙を書き、互いの無事を確かめ合った。年に一度、あの冬を生き延びた証として近況を送り合うことにした。",
+        "以前の同級生の宛先へ久しぶりに手紙を書いた。返事が届くかは分からないが、年に一度でも近況を尋ねられるように住所を控え直した。",
         {
           lifeAffiliation: {
             id: "ursus-school-aid",
