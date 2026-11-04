@@ -111,7 +111,7 @@
 - [ibe_rebuild_contract_review](#event-ibe_rebuild_contract_review) — 海辺の街区で、また別の古い倉庫を直す日雇い募集が出ていた。前に覚えた手順を生かして応募するか、もっと安定した別の職を探すか思案した。
 - [timeline_great_silence](#event-timeline_great_silence) — 突如として黄金の波が漆黒の静寂へと沈み、沿岸の灯台の光が一斉に途絶した。海から異形の影が這い上がり、塩の臭いとともに悲鳴が立ち込めている。かつて栄え…
 - [timeline_world_1101](#event-timeline_world_1101) — 監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。
-- [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — イベリアの海辺から魚の姿が消え、異様な沈黙に包まれた砂浜に黒い海藻が打ち寄せられていた。
+- [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — 海の異変を伝える話が内陸へも届き、港から来る荷の行方を尋ねる人が増えた。海辺で何が起きたのか、行商人たちの話は少しずつ食い違っていた。
 - [f76](#event-f76) — 市場で買った塩魚を包む古紙の端に、沿岸の灯台網から回ってきた短い警戒文が刷られていた。店主も詳しい事情は知らぬと言い、潮の匂いが染みた包みだけを脇に…
 - [f90](#event-f90) — 港の掲示板に、異端審問所の印が押された立入禁止の告示が張り出されていた。理由は一行も記されておらず、詰所の窓を叩いても冷たい沈黙が返ってくるだけだっ…
 - [peril_iberia_deep_sea_wash_daily](#event-peril_iberia_deep_sea_wash_daily) — 打ち捨てられた沿岸の波打ち際に、青白く光る奇妙な魚の死骸が無数に漂着していた。潮風に混じる生臭い油のような異臭と、海を見つめたまま言葉を失った老人の…
@@ -1271,7 +1271,7 @@
 - [timeline_el_sol_founded](#event-timeline_el_sol_founded) — 荒野の砂塵を切り裂いて巨大な移動プレートが結合され、エル・ソルの基礎が目の前に組み上がった。荷役と補修の槌音が昼夜を問わず響き渡り、新しい街の建設に…
 - [timeline_el_sol_renovation_paused](#event-timeline_el_sol_renovation_paused) — ボリバル内戦の激化により、エル・ソルの観光改装計画が凍結された。建設途中の骨組みが放置され、港には行き場を失った大量の建築資材が雨ざらしになっている…
 - [timeline_el_sol_renamed_dossoles](#event-timeline_el_sol_renamed_dossoles) — 人工海浜のネオンが一斉に点灯し、カンデラ市長の演説とともに歓楽都市ドッソレスの看板が掲げられた。リゾート音楽が響き渡り、街は享楽の熱狂に包まれている…
-- [timeline_daily_bolivar_barricade](#event-timeline_daily_bolivar_barricade) — 通りの角に築かれた土嚢のバリケードの陰で、缶詰の配給を待つ住民たちが不安そうに空を見上げていた。
+- [timeline_daily_bolivar_barricade](#event-timeline_daily_bolivar_barricade) — 戦線から離れた市でも、荷車の行き先を確かめる声が増えた。市場の値札がまた書き替えられ、誰もその理由を一つに決められなかった。
 - [f97](#event-f97) — 内戦のニュースが連日流れるなか、近所の市場でも目に見えて食料の値が跳ね上がった。かごに入れた野菜を一つ棚へ戻し、離れた親類へ送るはずだった小銭を財布…
 - [daily_bolivar_01](#event-daily_bolivar_01) — 集落の木陰で、焼きたての香ばしいトウモロコシ粉の薄焼きパン（アレパ）にチーズを挟んで食べた。素朴で優しい甘みが口に広がり、力強い活力を得た。
 - [daily_bolivar_02](#event-daily_bolivar_02) — 突然の激しいスコールが通り過ぎ、洗い流された熱帯の木々の緑が鮮やかに輝いていた。立ち上る雨上がりの土の匂いに、大地の豊かな生命力を感じた。
@@ -5457,8 +5457,8 @@
 - [yan_sui](#event-yan_sui) — 年の瀬、暖を取ろうと立ち寄った茶館で、古びた絵巻を広げて『歳』とその代理人たちの物語を語る講釈師がいた。ただの昔話だと笑う客もいれば、今もどこかに息…
 - [timeline_el_sol_founded](#event-timeline_el_sol_founded) — 荒野の砂塵を切り裂いて巨大な移動プレートが結合され、エル・ソルの基礎が目の前に組み上がった。荷役と補修の槌音が昼夜を問わず響き渡り、新しい街の建設に…
 - [timeline_world_1101](#event-timeline_world_1101) — 監視哨の遠見鏡の先、不気味な黒い潮流と北方の凍てつく防壁の影が静まり返っていた。連絡の途絶えた哨所から冷たい風だけが吹き抜けている。
-- [timeline_daily_bolivar_barricade](#event-timeline_daily_bolivar_barricade) — 通りの角に築かれた土嚢のバリケードの陰で、缶詰の配給を待つ住民たちが不安そうに空を見上げていた。
-- [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — イベリアの海辺から魚の姿が消え、異様な沈黙に包まれた砂浜に黒い海藻が打ち寄せられていた。
+- [timeline_daily_bolivar_barricade](#event-timeline_daily_bolivar_barricade) — 戦線から離れた市でも、荷車の行き先を確かめる声が増えた。市場の値札がまた書き替えられ、誰もその理由を一つに決められなかった。
+- [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — 海の異変を伝える話が内陸へも届き、港から来る荷の行方を尋ねる人が増えた。海辺で何が起きたのか、行商人たちの話は少しずつ食い違っていた。
 - [f91](#event-f91) — 役所の控え室で帳簿をめくると、先に受け付けたはずの申請が露骨に後ろへ回されていた。理由を質しても、上役の担当者は「そういう決まりだ」としか言わない。…
 - [arts_overload_resonance_daily](#event-arts_overload_resonance_daily) — 感情が揺らぐたびにアーツユニットの触媒がキーンと高周波の共鳴音を立て、指先の源石結晶が脈拍に合わせてチリチリと熱を帯びた。術の制御に余計な集中力を削…
 - [arts_overload_nightmare_scorch_daily](#event-arts_overload_nightmare_scorch_daily) — 深夜、激しい悪夢にうなされて目を覚ますと、無意識に漏れ出たアーツの微細な放電で毛布の端が焦げ付いていた。胸の結晶が疼き、神経を直接焼かれるような鈍痛…
@@ -8274,8 +8274,8 @@
 - [timeline_daily_londinium_siege](#event-timeline_daily_londinium_siege) — 諸侯軍の攻城砲の地鳴りが一日中響き、路地に立ち込める硝煙の向こうで自救軍の若者たちが救援物資を運び込んでいた。
 - [timeline_daily_londinium_martial](#event-timeline_daily_londinium_martial) — 軍事委員会の無骨な装甲歩兵が跳ね橋の検問を固め、道行く市民たちを鋭い眼光で監視していた。
 - [timeline_daily_chernobog_alarm](#event-timeline_daily_chernobog_alarm) — チェルノボーグの市街に空襲と天災の二重のサイレンが狂ったように鳴り響き、遠くの街区から黒煙が立ち上っていた。
-- [timeline_daily_bolivar_barricade](#event-timeline_daily_bolivar_barricade) — 通りの角に築かれた土嚢のバリケードの陰で、缶詰の配給を待つ住民たちが不安そうに空を見上げていた。
-- [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — イベリアの海辺から魚の姿が消え、異様な沈黙に包まれた砂浜に黒い海藻が打ち寄せられていた。
+- [timeline_daily_bolivar_barricade](#event-timeline_daily_bolivar_barricade) — 戦線から離れた市でも、荷車の行き先を確かめる声が増えた。市場の値札がまた書き替えられ、誰もその理由を一つに決められなかった。
+- [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — 海の異変を伝える話が内陸へも届き、港から来る荷の行方を尋ねる人が増えた。海辺で何が起きたのか、行商人たちの話は少しずつ食い違っていた。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
 - [f74](#event-f74) — 街角の受信機から、騎士競技の実況中継が威勢よく流れてきた。選手の名が呼ばれるたび、解説者は背後のスポンサー企業の名も忘れずに連呼していた。 大衆食堂…
 - [f75](#event-f75) — 聖堂の鐘の音が澄んだ空を渡って仕事場まで届いた。仲間たちは慣れた様子で手を止めず、それぞれの帰り支度を進めている。低く残る鐘の余韻の中で、一日の終わ…
@@ -9930,8 +9930,8 @@
 - [timeline_daily_londinium_siege](#event-timeline_daily_londinium_siege) — 諸侯軍の攻城砲の地鳴りが一日中響き、路地に立ち込める硝煙の向こうで自救軍の若者たちが救援物資を運び込んでいた。
 - [timeline_daily_londinium_martial](#event-timeline_daily_londinium_martial) — 軍事委員会の無骨な装甲歩兵が跳ね橋の検問を固め、道行く市民たちを鋭い眼光で監視していた。
 - [timeline_daily_chernobog_alarm](#event-timeline_daily_chernobog_alarm) — チェルノボーグの市街に空襲と天災の二重のサイレンが狂ったように鳴り響き、遠くの街区から黒煙が立ち上っていた。
-- [timeline_daily_bolivar_barricade](#event-timeline_daily_bolivar_barricade) — 通りの角に築かれた土嚢のバリケードの陰で、缶詰の配給を待つ住民たちが不安そうに空を見上げていた。
-- [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — イベリアの海辺から魚の姿が消え、異様な沈黙に包まれた砂浜に黒い海藻が打ち寄せられていた。
+- [timeline_daily_bolivar_barricade](#event-timeline_daily_bolivar_barricade) — 戦線から離れた市でも、荷車の行き先を確かめる声が増えた。市場の値札がまた書き替えられ、誰もその理由を一つに決められなかった。
+- [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — 海の異変を伝える話が内陸へも届き、港から来る荷の行方を尋ねる人が増えた。海辺で何が起きたのか、行商人たちの話は少しずつ食い違っていた。
 - [f73](#event-f73) — 通りの壁に『感染者は出ていけ』と荒々しく書かれていた。思わず袖口を引き下げ、誰の視線も向いていないのを確かめてから逃げるように家へ戻った。 居住区の…
 - [f74](#event-f74) — 街角の受信機から、騎士競技の実況中継が威勢よく流れてきた。選手の名が呼ばれるたび、解説者は背後のスポンサー企業の名も忘れずに連呼していた。 大衆食堂…
 - [f75](#event-f75) — 聖堂の鐘の音が澄んだ空を渡って仕事場まで届いた。仲間たちは慣れた様子で手を止めず、それぞれの帰り支度を進めている。低く残る鐘の余韻の中で、一日の終わ…
@@ -13333,8 +13333,8 @@
 - [timeline_daily_londinium_siege](#event-timeline_daily_londinium_siege) — 諸侯軍の攻城砲の地鳴りが一日中響き、路地に立ち込める硝煙の向こうで自救軍の若者たちが救援物資を運び込んでいた。
 - [timeline_daily_londinium_martial](#event-timeline_daily_londinium_martial) — 軍事委員会の無骨な装甲歩兵が跳ね橋の検問を固め、道行く市民たちを鋭い眼光で監視していた。
 - [timeline_daily_chernobog_alarm](#event-timeline_daily_chernobog_alarm) — チェルノボーグの市街に空襲と天災の二重のサイレンが狂ったように鳴り響き、遠くの街区から黒煙が立ち上っていた。
-- [timeline_daily_bolivar_barricade](#event-timeline_daily_bolivar_barricade) — 通りの角に築かれた土嚢のバリケードの陰で、缶詰の配給を待つ住民たちが不安そうに空を見上げていた。
-- [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — イベリアの海辺から魚の姿が消え、異様な沈黙に包まれた砂浜に黒い海藻が打ち寄せられていた。
+- [timeline_daily_bolivar_barricade](#event-timeline_daily_bolivar_barricade) — 戦線から離れた市でも、荷車の行き先を確かめる声が増えた。市場の値札がまた書き替えられ、誰もその理由を一つに決められなかった。
+- [timeline_daily_great_silence_sea](#event-timeline_daily_great_silence_sea) — 海の異変を伝える話が内陸へも届き、港から来る荷の行方を尋ねる人が増えた。海辺で何が起きたのか、行商人たちの話は少しずつ食い違っていた。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
 - [f95](#event-f95) — 内戦の火種がくすぶるなか、武装した傭兵の一団が荷をまとめて通りを抜けていった。家の大人は店先にいたあなたを慌てて奥へ引っ張り込み、隊列が角を曲がりき…
 - [siesta_shop_reopens_after_move](#event-siesta_shop_reopens_after_move) — 移動都市へと姿を変えた新しいシエスタで、勤め先の店をようやく再開した。まだ人通りのまばらな通りに面して木の案内札を立て、届いたばかりの商品を一品ずつ…
@@ -69574,14 +69574,14 @@ s => {
 
 ### 本文
 
-> 通りの角に築かれた土嚢のバリケードの陰で、缶詰の配給を待つ住民たちが不安そうに空を見上げていた。
+> 戦線から離れた市でも、荷車の行き先を確かめる声が増えた。市場の値札がまた書き替えられ、誰もその理由を一つに決められなかった。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_daily_bolivar_barricade",
-  "conf": "B",
+  "conf": "S",
   "st": [
     "少年",
     "青年",
@@ -69590,8 +69590,9 @@ s => {
   ],
   "timelineFlag": "bolivar_civil_war",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "ongoing"
+    "delivery": "area-impact",
+    "dateMode": "ongoing",
+    "region": "ボリバル"
   },
   "need": [
     "国:ボリバル"
@@ -69634,14 +69635,14 @@ s => {
 
 ### 本文
 
-> イベリアの海辺から魚の姿が消え、異様な沈黙に包まれた砂浜に黒い海藻が打ち寄せられていた。
+> 海の異変を伝える話が内陸へも届き、港から来る荷の行方を尋ねる人が増えた。海辺で何が起きたのか、行商人たちの話は少しずつ食い違っていた。
 
 ### 発生条件・構造
 
 ```json
 {
   "id": "timeline_daily_great_silence_sea",
-  "conf": "B",
+  "conf": "S",
   "st": [
     "少年",
     "青年",
@@ -69650,8 +69651,9 @@ s => {
   ],
   "timelineFlag": "great_silence",
   "historicalScene": {
-    "delivery": "suspended",
-    "dateMode": "ongoing"
+    "delivery": "area-impact",
+    "dateMode": "ongoing",
+    "region": "イベリア"
   },
   "need": [
     "国:イベリア"
