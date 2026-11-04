@@ -1,0 +1,2771 @@
+{
+  "part": "05",
+  "sourceRef": "fix/historical-event-scope-and-delivery",
+  "status": "extracted all textual outcome and effects where statically readable; not runtime signoff",
+  "events": [
+    {
+      "id": "car_col_pioneer_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:13",
+      "choices": [
+        {
+          "label": "開拓地登記書に署名し、荒野の区画へ乗り込む",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "手元資金でトラクターと掘削具を揃え、荒野の未開地に入植した。フロンティア開拓パイオニアとして、厳しい自然と戦いながら自前の農場を開墾する。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"col_pioneer\",\n            \"columbia-frontier-pioneer\",\n            \"クルビア開拓連盟\",\n            \"開拓農場主\",\n            \"columbia-frontier-survival\",\n            \"荒野で農場を開墾し、自らの手でアメリカン・ドリームを掴む\",\n            \"frontier-survival\",\n            \"荒野開墾・掘削重機運用\",\n            { h: 3, p: 2, cashDelta: -500000 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "cashDelta"
+              ]
+            },
+            {
+              "weight": "0.85",
+              "prose": "手元資金が足りず、連邦銀行から『年利35%の開拓ローン』を組まされた。収穫が出せねば土地を奪われて債務奴隷に転落する、背水の陣での開拓が始まった。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"col_pioneer\",\n            \"columbia-frontier-pioneer\",\n            \"クルビア開拓連盟\",\n            \"借金入植者\",\n            \"columbia-frontier-survival\",\n            \"高利貸しの返済期日に追われながら、荒野にしがみつく\",\n            \"frontier-survival\",\n            \"荒野開墾・掘削重機運用\",\n            { h: 2, p: -2, debt: 1500000 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "debt"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "体力も資金もまったく足りず、開拓局員から『荒野で死にたいなら止めんが、登記料の無駄だ』と突き放された。",
+              "effectRaw": "{ p: -3 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "都市の雑踏に留まる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "過酷な荒野を避け、移動都市内で日雇いの仕事を探すことにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "car_kaz_comp_knight_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:67",
+      "choices": [
+        {
+          "label": "アリーナで模擬戦に挑み、企業プロモーターにアピールする",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.4",
+              "prose": "華麗な剣技と観客を沸かせるパフォーマンスを見せ、大手飲料メーカーの専属騎士契約を勝ち取った。企業ロゴの入った甲冑をまとい、メジャーの舞台に立つ。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"kaz_comp_knight\",\n            \"kazimierz-competition-knight\",\n            \"商業連合会騎士競技\",\n            \"公認・企業騎士\",\n            \"kazimierz-arena-glory\",\n            \"アリーナの歓声を浴び、スポンサーの契約金を稼ぎ出す\",\n            \"arena-combat\",\n            \"魅せる剣技・アリーナ格闘術\",\n            { h: 3, cr: 3, p: 2 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "cr",
+                "p"
+              ]
+            },
+            {
+              "weight": "0.8",
+              "prose": "実力は悪くないもののスポンサーがつかず、プロモーターから『八百長試合で派手に吹っ飛ぶ負け役（咬ませ犬）なら契約してやる』と屈辱的な条件を出された。受諾し、泥を塗る契約を結んだ。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"kaz_comp_knight\",\n            \"kazimierz-competition-knight\",\n            \"商業連合会騎士競技\",\n            \"アリーナ負け役騎士\",\n            \"kazimierz-arena-glory\",\n            \"八百長の殴られ役としてアリーナの砂を噛む\",\n            \"arena-combat\",\n            \"魅せる剣技・アリーナ格闘術\",\n            { h: 1, p: -3, debt: 800000 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "debt"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "模擬戦で現役の騎士に一撃で叩きのめされ、アリーナの砂を舐めさせられた。観客のブーイングの中で退場した。",
+              "effectRaw": "{ p: -5, h: -3 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "血生臭いショービジネスを避ける",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "虚飾にまみれた競技アリーナに背を向け、静かに去った。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "car_kaz_armorless_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:121",
+      "choices": [
+        {
+          "label": "無冑盟の暗殺弓を受け取り、組織の鎖に繋がれる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "黒い弓と暗殺毒矢を渡され、商業連合会の裏の掃除人として登録された。夜の路地で、標的を無音で消し去る過酷な任務が始まる。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"kaz_armorless\",\n            \"kazimierz-armorless-union\",\n            \"カジミエーシュ無冑盟\",\n            \"暗殺部隊員\",\n            \"kazimierz-armorless-elimination\",\n            \"商業連合会の影で標的を暗殺し、組織の掟に縛られる\",\n            \"armorless-assassination\",\n            \"無音狙撃・追跡暗殺術\",\n            { h: 3, p: 3, cr: -3 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "cr"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "試練の的撃ちで手が震え、無冑盟の指揮官から『秘密を知った以上、生かして帰すわけにはいかんな』と矢を向けられた。命からがら逃げ延びたものの、重傷を負った。",
+              "effectRaw": "{ p: -8, h: -10, cash: -100000 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h",
+                "cash"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "恐怖で身を翻し、暗がりから逃げ出す",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "闇の誘いを振り切り、人通りの多い大通りへと必死で走った。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_sir_soldier_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:161",
+      "choices": [
+        {
+          "label": "聖人のカードに血を垂らし、オメルタを誓う",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "炎でカードを焼き、幹部と抱擁を交わした。ファミリーの正規構成員としてピストルを渡され、縄張りのみかじめ料徴収と抗争の最前線に立つ。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"sir_soldier\",\n            \"siracusa-mafia-soldier\",\n            \"シラクーザ・ファミリー\",\n            \"構成員（ソルジャー）\",\n            \"siracusa-mafia-loyalty\",\n            \"ファミリーの掟に従い、縄張りを守り血の抗争を生き延びる\",\n            \"mafia-omerta\",\n            \"裏街銃撃戦・みかじめ徴収術\",\n            { h: 2, p: 2, cr: -2 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "cr"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "覚悟を疑われ、忠誠の証として『対立ファミリーの幹部を今すぐ撃ってこい』と無謀な鉄砲玉役を命じられた。受諾できず、屋敷から殴り飛ばされた。",
+              "effectRaw": "{ p: -5, h: -3 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "マフィアの血の掟を恐れ、辞退する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "裏社会に足を踏み入れるのを思いとどまり、屋敷を去った。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_sir_police_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:201",
+      "choices": [
+        {
+          "label": "法典の試験と身辺調査を受け、宣誓する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "裁判所長官の前で法規を宣誓し、バッジを胸につけた。ファミリーの暗殺の影に怯えぬ気丈な警察官として、新都市の街頭に立つ。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"sir_police\",\n            \"siracusa-court-police\",\n            \"ウォルシーニ都市裁判所\",\n            \"都市警察巡官\",\n            \"siracusa-court-justice\",\n            \"マフィアの暴力に屈せず、法と市民の正義を守る\",\n            \"court-enforcement\",\n            \"都市法規執行・対マフィア捜査\",\n            { k: 2, cr: 3, p: 2 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "k",
+                "cr",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "面接でマフィアへの恐怖を隠しきれず、不合格となった。『その気弱さでは初日に撃たれて終わりだ』と諭された。",
+              "effectRaw": "{ p: -3, k: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "危険な警察官を辞退する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "ファミリーに狙われる職を避け、伝統料理店の厨房などで働くことにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_sie_obs_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:241",
+      "choices": [
+        {
+          "label": "地質熱学と振動波形の解析試験を受ける",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "地下マグマの圧力変化を的確に予測し、観測所の正規研究員として採用された。観光都市の安全を裏から支える観測業務に就く。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"sie_obs\",\n            \"siesta-observatory-research\",\n            \"シエスタ火山観測所\",\n            \"火山観測研究員\",\n            \"siesta-volcano-monitoring\",\n            \"黒曜石火山の地殻変動を観測し、都市の命綱を守る\",\n            \"volcanology\",\n            \"地熱解析・火山性微動観測\",\n            { k: 3, p: 2 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "k",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "観測データの誤差を見逃し、試験不合格となった。",
+              "effectRaw": "{ p: -2, k: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "ビーチのリゾート業を目指す",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "観測所を離れ、ホテルの接客やビーチの仕事を探すことにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_sar_guard_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:13",
+      "choices": [
+        {
+          "label": "曲刀を抜き、宮廷闘技で力を見せつける",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.35",
+              "prose": "猛獣や敵対部族の戦士を一人で叩き伏せ、パーディシャーの前に跪いた。金糸の外套と曲刀を賜り、領主直属の親衛隊員として登用された。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"sar_guard\",\n            \"sargon-padishah-guard\",\n            \"パーディシャー宮廷親衛隊\",\n            \"領主親衛隊員\",\n            \"sargon-padishah-service\",\n            \"パーディシャーに忠誠を捧げ、砂漠の権力抗争で生き抜く\",\n            \"scimitar-mastery\",\n            \"砂漠曲刀術・宮廷警衛格闘\",\n            { h: 3, p: 2, cr: 2 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "cr"
+              ]
+            },
+            {
+              "weight": "0.75",
+              "prose": "実力は認めたものの宮廷宦官から『親衛隊に入りたくば、百五十万龍門幣相当の金品をパーディシャーへの貢ぎ物として積め』と要求された。借金を背負い、辛うじて末席を確保した。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"sar_guard\",\n            \"sargon-padishah-guard\",\n            \"パーディシャー宮廷親衛隊\",\n            \"末席親衛兵（貢ぎ物仕官）\",\n            \"sargon-padishah-service\",\n            \"貢ぎ物の借金を抱えながら、領主の護衛を務める\",\n            \"scimitar-mastery\",\n            \"砂漠曲刀術・宮廷警衛格闘\",\n            { h: 2, p: -2, debt: 1500000 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "debt"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "力及ばず闘技場で叩き出され、宮殿の門から放り出された。",
+              "effectRaw": "{ p: -4, h: -2 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "専制君主への仕官を辞退する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "いつ粛清されるか知れぬ宮廷を避け、隊商の仕事を探すことにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "car_sar_warrior_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:67",
+      "choices": [
+        {
+          "label": "雄叫びを上げ、土俵の殴り合いに飛び込む",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "巨大な鰐や屈強な戦士たちを次々に投げ飛ばし、土俵の頂点に立った。部族長から羽飾りを掲げられ、アカフラの大勇士として称えられた。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"sar_warrior\",\n            \"sargon-acahualla-warrior\",\n            \"アカフラ部族連合\",\n            \"雨林の大勇士\",\n            \"sargon-acahualla-might\",\n            \"雨林の力比べで部族の誇りを守り、仲間を導く\",\n            \"acahualla-brawl\",\n            \"素手格闘・密林生存術\",\n            { h: 4, p: 3, cr: 3 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "cr"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "頑丈なワニ頭の戦士に力負けし、泥の中に叩きつけられた。全身打撲の痛みに唸りながら土俵を降りた。",
+              "effectRaw": "{ p: -3, h: -3 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "殴り合いを辞退し、観客席で囃し立てる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "骨を折る危険を避け、祭りの酒を楽しむことにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_sam_priest_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:107",
+      "choices": [
+        {
+          "label": "氷湖の祭壇に座し、巨木の声を聞く",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.35",
+              "prose": "吹きすさぶ吹雪の中で精神を澄まし、森の微かな脈動を感じ取った。老いた雪祀から骨の杖を授かり、部族の行く末を占う雪祀として認められた。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"sam_priest\",\n            \"sami-snow-priest\",\n            \"サーミ雪祀の輪\",\n            \"見習い雪祀\",\n            \"sami-nature-communion\",\n            \"森と巨獣の神託を読み、部族の生存を守る\",\n            \"sami-divination\",\n            \"骨占い・自然交信呪術\",\n            { p: 5, k: 3, cr: 3 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "k",
+                "cr"
+              ]
+            },
+            {
+              "weight": "0.75",
+              "prose": "氷湖の寒気と森のざわめきに精神を乱され、幻視に耐えきれず失神した。雪祀にはなれず、命だけ助けられて部族の天幕へ運ばれた。",
+              "effectRaw": "{ p: -6, h: -3 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "森の深奥から届く異質な悪意に当てられ、精神が崩壊しかけた。叫び声を上げて逃げ出し、長い後遺症に苦しむこととなった。",
+              "effectRaw": "{ p: -15, h: -5 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "神秘の森に立ち入らず、狩人として生きる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "人知を越えた儀礼を避け、平穏な生活を選ぶことにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "car_sam_warrior_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:151",
+      "choices": [
+        {
+          "label": "樹痕の刻印を腕に刻み、氷原哨戒隊に加わる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "凍てつく刃を握り、自らの血で木に境界印を刻んだ。北方悪魔の侵食を押し留める樹痕の戦士として、永久凍土の境界に立つ。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"sam_warrior\",\n            \"sami-scar-warrior\",\n            \"サーミ樹痕哨戒隊\",\n            \"境界哨戒戦士\",\n            \"sami-scar-demon-defense\",\n            \"北方の悪魔を氷原に押し留め、テラの大地を守護する\",\n            \"demon-warding\",\n            \"対悪魔戦闘術・極地追跡\",\n            { h: 3, p: 3, war: 1.5 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "war"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "氷原の異様な気配に怯え、哨戒隊長から『恐怖に負けた者は悪魔の餌食になるだけだ』と追い返された。",
+              "effectRaw": "{ p: -5, h: -2 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "死地を避け、南部の村へ引き返す",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "悪魔の這い回る北方を避け、比較的穏やかな南の集落へ戻った。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_kje_karlan_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:191",
+      "choices": [
+        {
+          "label": "近代火器の取扱と帳簿管理の試験を受ける",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "シルバーアッシュ総長の理念に賛同し、見事採用を勝ち取った。厚手のコートと近代小銃を支給され、カランド貿易の武装社員として雪山を越える任務に就く。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"kje_karlan\",\n            \"kjerag-karlan-commercial\",\n            \"カランド貿易\",\n            \"武装社員・流通護衛\",\n            \"kjerag-karlan-trade\",\n            \"最新の銃火器と近代流通網でイェラグの変革を支える\",\n            \"karlan-tactics\",\n            \"雪中護送戦術・近代貿易実務\",\n            { k: 2, h: 2, cr: 2 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "k",
+                "h",
+                "cr"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "火器の分解整備で不手際があり不採用となった。伝統的な山道へ戻った。",
+              "effectRaw": "{ p: -2, k: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "曼珠院の伝統を重んじ、辞退する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "急激な近代化を敬遠し、伝統的な暮らしを続けることにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_kje_monk_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:231",
+      "choices": [
+        {
+          "label": "女神の祭壇に額づき、僧兵の誓いを立てる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "純粋な信仰と節度ある振る舞いが長老たちに認められ、聖山護衛僧として迎えられた。清貧の僧衣をまとい、神聖なる山の静寂を守る。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"kje_monk\",\n            \"kjerag-vine-court-monk\",\n            \"イェラグ曼珠院\",\n            \"聖山護衛僧\",\n            \"kjerag-vine-guard\",\n            \"カランドの女神の神聖を守り、聖山への侵入者を防ぐ\",\n            \"vine-devotion\",\n            \"聖山杖術・女神祈祷礼式\",\n            { p: 4, cr: 3 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "cr"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "世俗の迷いが見えるとされ、入門を認められなかった。",
+              "effectRaw": "{ p: -2 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "厳しい戒律を避け、山を下りる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "静かに寺院を離れ、麓の村へ戻った。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_kazdel_mil_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:271",
+      "choices": [
+        {
+          "label": "復讐の旗の下に加わり、大剣を取る",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.4",
+              "prose": "軍事委員会の将校から黒鉄の鎧と大剣を叩きつけられ、正規兵として登録された。他国への復讐とロンディニウム遠征の部隊に配属される。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"kazdel_mil\",\n            \"kazdel-military-commission\",\n            \"カズデル軍事委員会\",\n            \"軍事委員会正規歩兵\",\n            \"kazdel-commission-conquest\",\n            \"サルカズの怨念を晴らし、軍事委員会の覇業に身を投じる\",\n            \"sarkaz-warfare\",\n            \"源石刀身格闘・軍事遠征戦術\",\n            { h: 3, p: 2, war: 2.0 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "war"
+              ]
+            },
+            {
+              "weight": "0.75",
+              "prose": "体力が劣ると見做され、前線の『突撃肉壁部隊』へ回された。生き残る確率が極めて低い過酷な消耗品兵士である。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"kazdel_mil\",\n            \"kazdel-military-commission\",\n            \"カズデル軍事委員会\",\n            \"前線突撃歩兵（肉壁）\",\n            \"kazdel-commission-conquest\",\n            \"最前線の盾として突撃させられる過酷な兵役\",\n            \"sarkaz-warfare\",\n            \"源石刀身格闘・軍事遠征戦術\",\n            { h: 1, p: -3, war: 2.5 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "war"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "サルカズ以外の異族が生意気に軍門へ近寄ったことを見咎められ、袋叩きにされて陣地から放り出された。",
+              "effectRaw": "{ p: -8, h: -6 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "復讐の狂気を恐れ、軍営を離れる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "血で血を洗う戦いを避け、荒野の廃墟へ身を隠した。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "car_kazdel_bone_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:325",
+      "choices": [
+        {
+          "label": "骨彫刻刀を握り、源石呪術の加工実技に挑む",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "骨の中に眠るアーツの導線を寸分狂わず彫り抜き、老鍛冶を唸らせた。伝統の骨鍛冶見習いとして工房に迎えられる。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"kazdel_bone\",\n            \"kazdel-bone-smith\",\n            \"カズデル骨鍛冶工房\",\n            \"骨鍛冶職人見習い\",\n            \"kazdel-bonesmith-craft\",\n            \"魔獣の骨と源石を刻み、呪術兵器を鍛え上げる\",\n            \"bonesmith-sorcery\",\n            \"骨器彫刻・源石呪術加工\",\n            { k: 3, p: 3 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "k",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "呪術の反動で手を滑らせ、高価な骨材を割ってしまった。工房から追い出された。",
+              "effectRaw": "{ p: -3, cash: -50000 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "cash"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "不気味な骨の工房を敬遠する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "死者の骨を扱う仕事を避け、工房を後にした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_ibe_inq_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:365",
+      "choices": [
+        {
+          "label": "裁判所の採用試問を受ける",
+          "gate": "{ show: { ban: [\"種族:エーギル\"] }, ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.4",
+              "prose": "口頭試問を終えると、制服と灯りが渡された。見習い審問官として沿岸の警戒に加わることになり、詰所の当番表に自分の名が書き込まれた。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"ibe_inq\",\n            \"iberia-inquisition-officer\",\n            \"イベリア裁判所\",\n            \"見習い審問官\",\n            \"iberia-inquisition-crusade\",\n            \"海の怪物の侵食を阻み、深海教会の異端を根絶やしにする\",\n            \"inquisition-doctrine\",\n            \"異端審問尋問術・ランタン剣闘\",\n            { h: 2, p: 3, cr: 3 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "cr"
+              ]
+            },
+            {
+              "weight": "0.7",
+              "prose": "失踪した船員の記録について問われたとき、答えが詰まった。担当者は筆を置き、次の応募者の名を呼んだ。",
+              "effectRaw": "{ p: -4 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "身元の証明書類に不備があると告げられた。窓口で申し立てても試問に戻る許可は下りず、長く並んだ列を逆に辿った。",
+              "effectRaw": "{ p: -5 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "出自を申告し、試問を求める",
+          "gate": "{ show: { need: [\"種族:エーギル\"] }, ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.75",
+              "prose": "出自を告げると、審問官は帳面を閉じた。『今は採用できない』とだけ答え、理由を尋ねても次の列を指した。",
+              "effectRaw": "{ p: -6, cr: -1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "cr"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "問答の途中、係官が沿岸の不審な往来について問い始めた。裏付けとなる証言も示されぬまま、衛兵に腕をつかまれ、裁判所の留置室へ連れていかれた。",
+              "effectRaw": "{ fl: { detained: 1 }, p: -12, h: -3 }",
+              "directJobs": [],
+              "effectKeys": [
+                "fl",
+                "detained",
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "審問官への応募を見送る",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "応募用紙を折りたたんで詰所を離れ、港の人足が集まる通りへ足を向けた。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        6
+      ]
+    },
+    {
+      "id": "car_ibe_tuner_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:409",
+      "choices": [
+        {
+          "label": "アーツレンズの偏光調整試験を受ける",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "巨大レンズの焦点を正確に合わせ、眩い光条を海へと放った。沿岸灯台の正規調律師として採用され、波音を聞く高塔での勤務が始まる。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"ibe_tuner\",\n            \"iberia-lantern-tuner\",\n            \"イベリア灯台庁\",\n            \"灯台調律技術員\",\n            \"iberia-lantern-tuning\",\n            \"光の目を維持し、大静謐の暗闇からイベリアの沿岸を守る\",\n            \"optics-tuning\",\n            \"光学アーツ調律・高塔保全\",\n            { k: 3, p: 2 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "k",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "レンズの波長を狂わせてしまい、試験失格となった。",
+              "effectRaw": "{ p: -2, k: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "高塔の勤務を辞退する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "海風の吹きすさぶ灯台を離れ、塩田や漁村の仕事を探すことにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_bol_soldier_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:449",
+      "choices": [
+        {
+          "label": "前金を受け取り、泥だらけの銃を受け取る",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.6",
+              "prose": "錆びたライフルを手渡され、連合軍の前線小隊に放り込まれた。敵がシンガス王朝軍か真正軍かも定かでない混沌の塹壕戦が始まる。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"bol_soldier\",\n            \"bolivar-coalition-soldier\",\n            \"ボリバル連合軍\",\n            \"前線塹壕歩兵\",\n            \"bolivar-coalition-war\",\n            \"泥沼の内戦で一日でも長く生き延び、家族への仕送りを稼ぐ\",\n            \"trench-warfare\",\n            \"塹壕戦術・泥濘地持久\",\n            { h: 2, p: -1, debt: 200000 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "debt"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "病弱な体を見咎められ、徴募官から『お前のような病人は弾除けにもならん』と蹴り出された。",
+              "effectRaw": "{ p: -3, h: -1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "内戦から逃れ、物陰に隠れる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "徴募隊の目を盗んで逃げ出し、コーヒー農園の物陰に身を潜めた。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_bol_dossoles_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:489",
+      "choices": [
+        {
+          "label": "水上艇の操縦と制圧射撃の試験を受ける",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "高速ボートを見事に操り、特区市警のバッジを受け取った。ドッソレスの観光客とリゾート施設を守る警備任務に就く。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"bol_dossoles\",\n            \"bolivar-dossoles-police\",\n            \"ドッソレス特区市警\",\n            \"水上市警巡査\",\n            \"bolivar-dossoles-security\",\n            \"リゾート都市ドッソレスの華やかな治安を死守する\",\n            \"dossoles-patrol\",\n            \"高速艇操縦・水上制圧射撃\",\n            { h: 2, cr: 2, p: 2 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "cr",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "操縦ミスで桟橋にボートを激突させ、失格となった。弁償代を取られなかっただけ幸いだった。",
+              "effectRaw": "{ p: -3, h: -1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "歓楽街の求人を避ける",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "警察の職を辞退し、ホテルのボーイなどを目指すことにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_rim_eng_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:529",
+      "choices": [
+        {
+          "label": "巨大採掘ドリルの油圧系統と地盤診断の試験に挑む",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "重機の異常振動を一瞬で聞き分け、安全弁を操作した。大手鉱業会社の正規重機主任技師として、採掘プラットフォームの運用を任される。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"rim_eng\",\n            \"rim-mining-lead-engineer\",\n            \"レム・ビリトン鉱山会社\",\n            \"採掘プラットフォーム主任技師\",\n            \"rim-mining-platform-engineering\",\n            \"巨大採掘機を運用し、源石鉱脈から巨額の富を掘り出す\",\n            \"mining-heavy-machinery\",\n            \"重機油圧保全・地質破砕工学\",\n            { h: 2, k: 3, p: 2 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "k",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "技師枠には届かず、現場監督から『ツルハシの手元掘りなら人手が欲しい』と打診された。粉塵舞う地下最深部へ送られ、源石被曝のリスクを背負うこととなった。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"rim_eng\",\n            \"rim-mining-lead-engineer\",\n            \"レム・ビリトン鉱山会社\",\n            \"坑内ツルハシ採掘夫\",\n            \"rim-mining-platform-engineering\",\n            \"手作業で源石鉱脈を砕き、粉塵に咽びながら働く\",\n            \"mining-heavy-machinery\",\n            \"重機油圧保全・地質破砕工学\",\n            { h: 2, p: -2, debt: 100000 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "debt"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "鉱山を離れ、トランスポーターを目指す",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "危険な採掘現場を避け、トラックの輸送仕事を探すことにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_min_champ_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:579",
+      "choices": [
+        {
+          "label": "円盾と槍を取り、神前試合に挑む",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "力強い槍捌きで対戦相手を圧倒し、オリーブの冠を授けられた。アテヌス神殿の競技勇士として、都市の英雄の一人に名を連ねる。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"min_champ\",\n            \"minos-temple-champion\",\n            \"ミノス英雄神殿\",\n            \"神殿競技勇士\",\n            \"minos-temple-glory\",\n            \"肉体を極限まで鍛え、ポリスの自由と名誉のために戦う\",\n            \"pankration-spear\",\n            \"パンクラチオン格闘・神殿重装槍術\",\n            { h: 4, p: 3, cr: 3 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "cr"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "予選で屈強な牛角の勇士に突き飛ばされ、敗退した。市民たちの声援に応えられず肩を落とした。",
+              "effectRaw": "{ p: -3, h: -1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "競技会への出場を見送る",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "怪我のリスクを避け、観客席で応援することにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_min_orator_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:619",
+      "choices": [
+        {
+          "label": "市民集会の演壇に立ち、法と倫理の演説を行う",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "理路整然とした弁論で聴衆の拍手喝采を浴び、市民投票で弁論官に選出された。アゴラの演壇で、都市の法と正義を追究する。",
+              "effectRaw": "$terraData.regionalCareerStaff(\n            \"min_orator\",\n            \"minos-agora-orator\",\n            \"ミノス市民集会\",\n            \"法廷弁論官\",\n            \"minos-agora-debates\",\n            \"アゴラで市民の自由と正義を論じ、公正な裁判を行う\",\n            \"philosophical-oratory\",\n            \"古典哲学修辞学・ポリス法廷弁論\",\n            { k: 3, cr: 3, p: 2 }\n          )",
+              "directJobs": [],
+              "effectKeys": [
+                "k",
+                "cr",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "演説の途中で言葉に詰まり、市民たちから野次を飛ばされた。弁論官の座を逃した。",
+              "effectRaw": "{ p: -3, k: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "演壇に上がるのを遠慮する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "大衆の前で話す重圧を避け、書記の仕事を探すことにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_yan_court_choice_bribe",
+      "source": "data/parts/routes/regional-careers/events-east.js:30",
+      "choices": [
+        {
+          "label": "賄賂を突き返し、即座に大理寺へ告発状を送る",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"whistleblowing\" } }",
+          "outcomes": [
+            {
+              "weight": "0.6",
+              "prose": "豪族の脱税証拠を完璧に保全し、中央へ急使を飛ばした。豪族は失脚し、剛直な官吏として朝廷内での名声が高まった。",
+              "effectRaw": "{ cr: 5, p: 3, groupStanding: { id: \"yan-officials\", title: \"朝廷の官吏仲間\", delta: 2 } }",
+              "directJobs": [],
+              "effectKeys": [
+                "cr",
+                "p",
+                "groupStanding",
+                "id",
+                "title",
+                "delta"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "告発には成功したものの、豪族の縁戚である上級官吏に恨まれ、閑職へ回される嫌がらせを受けた。",
+              "effectRaw": "{ cr: 2, p: -3 }",
+              "directJobs": [],
+              "effectKeys": [
+                "cr",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "延べ棒を受け取り、帳簿の数字を少し書き換える",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"self-or-family-care\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "細工を悟られぬよう完璧に帳簿を偽装し、巨額の賄賂を手中に収めた。だが、夜中に大理寺の足音が聞こえるたびに心臓が凍りつく日々が始まった。",
+              "effectRaw": "{ cash: 3000000, p: -5, cr: -4 }",
+              "directJobs": [],
+              "effectKeys": [
+                "cash",
+                "p",
+                "cr"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "偽装が拙く、三ヶ月後に御史台の監察官が踏み込んだ。官位を剥奪され、財貨を差し押さえられた。",
+              "effectRaw": "{ job: 0, p: -20, cash: -1000000,\n            lifeAffiliation: { id: \"yan-court-bureaucracy\", action: \"leave\",\n              note: \"収賄の発覚で官位を剥奪され、朝廷の職を失った\" },\n            lifeGoals: [\n              { id: \"yan-governance\", action: \"abandon\", onlyIfUnresolved: true,\n                note: \"収賄による罷免で官吏の仕事を終えた\" },\n              { id: \"yan-dismissed-clerk-livelihood\",\n                title: \"罷免された後の生計を立て直す\",\n                priority: \"生業\", action: \"start\", preserveAchievement: true }\n            ] }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "p",
+                "cash",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoals",
+                "onlyIfUnresolved",
+                "title",
+                "priority",
+                "preserveAchievement"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "car_lmd_black_choice_big_deal",
+      "source": "data/parts/routes/regional-careers/events-east.js:183",
+      "choices": [
+        {
+          "label": "危険を冒して配置図を入手し、取引現場へ運ぶ",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "近衛局の監視を欺き、見事に取引を成立させた。アタッシュケースいっぱいの現金を手に入れ、裏通りの大物として顔が利くようになった。",
+              "effectRaw": "{ cash: 5000000, p: 2, k: 3 }",
+              "directJobs": [],
+              "effectKeys": [
+                "cash",
+                "p",
+                "k"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "取引現場は近衛局の仕組んだ罠だった。射撃を受けながらも逃げ道を探したが、手錠をかけられ、留置施設へ連行された。",
+              "effectRaw": "{ job: 0, p: -20, cash: -2000000, fl: { detained: 1 },\n            lifeAffiliation: { id: \"lungmen-black-market\", action: \"leave\",\n              note: \"近衛局に拘束され、黒市の仲介業から離れた\" },\n            lifeGoals: [\n              { id: \"lmd-underground-deals\", action: \"abandon\", onlyIfUnresolved: true,\n                note: \"摘発によって黒市での仲介を続けられなくなった\" },\n              { id: \"lungmen-post-custody-livelihood\",\n                title: \"拘束が解けた後に新しい生計を探す\",\n                priority: \"生業\", action: \"start\", preserveAchievement: true }\n            ] }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "p",
+                "cash",
+                "fl",
+                "detained",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoals",
+                "onlyIfUnresolved",
+                "title",
+                "priority",
+                "preserveAchievement"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "怪しすぎて手を出せないと断る",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "深追いを避け、平穏な小商いに戻った。数日後、その大物が埠頭で水死体で見つかったと聞き、冷や汗を流した。",
+              "effectRaw": "{ p: 2 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_hig_ninja_choice_escape",
+      "source": "data/parts/routes/regional-careers/events-east.js:281",
+      "choices": [
+        {
+          "label": "巻物を焼き捨て、里から脱走して『抜け忍』となる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "追跡してきた刺客二人を返り討ちにし、極東の山中へ逃げ延びた。忍び衆の掟を破った『抜け忍』として、生涯追手から命を狙われ続ける修羅の人生が始まった。",
+              "effectRaw": "{ job: 0, fl: { nukenin: 1 }, p: 3, h: 2, cr: -5 ,\n            lifeAffiliation: { id: \"higashi-ninja-clan\", action: \"leave\",\n              note: \"忍び衆から脱走し、抜け忍として追われる身となった\" },\n            lifeGoals: [\n              { id: \"higashi-ninja-mission\", action: \"abandon\", onlyIfUnresolved: true,\n                note: \"忍び衆の密命を離れ、元の任務を終えた\" },\n              { id: \"higashi-nukenin-next-livelihood\", title: \"追跡を警戒しながら次の生計を見つける\",\n                priority: \"生業\", action: \"start\", preserveAchievement: true }\n            ] }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "fl",
+                "nukenin",
+                "p",
+                "h",
+                "cr",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoals",
+                "onlyIfUnresolved",
+                "title",
+                "priority",
+                "preserveAchievement"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "逃走の途中で追手の毒矢に射抜かれた。血を吐きながら川へ飛び込み、瀕死の重傷を負いながら街へ流れ着いた。",
+              "effectRaw": "{ job: 0, fl: { nukenin: 1 }, h: -20, p: -10 ,\n            lifeAffiliation: { id: \"higashi-ninja-clan\", action: \"leave\",\n              note: \"逃走中に重傷を負い、忍び衆の任務から離脱した\" },\n            lifeGoals: [\n              { id: \"higashi-ninja-mission\", action: \"abandon\", onlyIfUnresolved: true,\n                note: \"忍び衆の密命を離れ、元の任務を終えた\" },\n              { id: \"higashi-nukenin-next-livelihood\", title: \"追跡を警戒しながら次の生計を見つける\",\n                priority: \"生業\", action: \"start\", preserveAchievement: true }\n            ] }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "fl",
+                "nukenin",
+                "h",
+                "p",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoals",
+                "onlyIfUnresolved",
+                "title",
+                "priority",
+                "preserveAchievement"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "感情を殺し、掟に従って密命を完遂する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "感情を完全に凍りつかせ、血塗られた命令を果たした。人間性を失い、ただの冷徹な道具となった。",
+              "effectRaw": "{ p: -8, cr: -3, cash: 500000 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "cr",
+                "cash"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_urs_officer_choice_purge",
+      "source": "data/parts/routes/regional-careers/events-west.js:30",
+      "choices": [
+        {
+          "label": "命令に従い、砲兵の誤爆に見せかけて標的を葬る",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "事故偽装を完璧にやり遂げ、疑惑を一切持たれずに標的を排除した。軍団長から絶大な信任を得て、近衛少佐への昇進が決定した。",
+              "effectRaw": "{ cr: 5, p: -3, cash: 1500000, groupStanding: { id: \"ursus-officers\", title: \"帝国軍将校団\", delta: 3 },\n            lifeAffiliation: { id: \"ursus-imperial-officer\", action: \"role\", role: \"近衛少佐\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }",
+              "directJobs": [],
+              "effectKeys": [
+                "cr",
+                "p",
+                "cash",
+                "groupStanding",
+                "id",
+                "title",
+                "delta",
+                "lifeAffiliation",
+                "action",
+                "role",
+                "onlyIfActiveOrCrisis",
+                "onlyIfRoleChanged"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "偽装に綻びが生じ、相手の親族である大貴族に察知された。軍法会議にかけられ、銃殺刑を宣告された。",
+              "effectRaw": "{ h: -100, d: [\"軍法会議での銃殺刑\", \"ウルサス帝国軍の軍法会議において、大貴族の謀殺罪により銃殺刑に処された。\"] }",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "d"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "良心に従って命令を拒絶し、将校を辞任する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "軍服を脱ぎ捨てて要塞を脱出した。不名誉除隊とされ、財貨を差し押さえられたが、命だけは守った。",
+              "effectRaw": "{ job: 0, cash: -2000000, p: 3, cr: -5 ,\n            lifeAffiliation: { id: \"ursus-imperial-officer\", action: \"leave\",\n              note: \"命令を拒んで要塞を去り、不名誉除隊として軍籍を終えた\" },\n            lifeGoals: [\n              { id: \"ursus-imperial-command\", action: \"abandon\", onlyIfUnresolved: true,\n                note: \"不名誉除隊により、帝国軍で指揮を続ける目標を終えた\" },\n              { id: \"ursus-dismissed-officer-next-livelihood\", title: \"不名誉除隊後の暮らしと次の仕事を立て直す\",\n                priority: \"生業\", action: \"start\", preserveAchievement: true }\n            ] }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "cash",
+                "p",
+                "cr",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoals",
+                "onlyIfUnresolved",
+                "title",
+                "priority",
+                "preserveAchievement"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_urs_guard_choice_riot",
+      "source": "data/parts/routes/regional-careers/events-west.js:77",
+      "choices": [
+        {
+          "label": "鉄扉の前に踏みとどまり、銃剣で突撃を迎え撃つ",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "猛烈なツルハシの連撃を銃剣で捌き、増援の到着まで扉を死守した。暴動は鎮圧され、勇敢さを称えられて憲兵軍曹へ昇進した。",
+              "effectRaw": "{ h: -3, p: 3, cr: 3, cash: 300000,\n            lifeAffiliation: { id: \"ursus-border-mine-guard\", action: \"role\", role: \"憲兵軍曹\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "cr",
+                "cash",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "role",
+                "onlyIfActiveOrCrisis",
+                "onlyIfRoleChanged"
+              ]
+            },
+            {
+              "weight": "0.85",
+              "prose": "重傷を負いながらも気絶するまで戦い抜いた。一命を取り留めたが、源石の破片を浴びて鉱石病を発症した。",
+              "effectRaw": "{ h: -10, p: -5, inf: 1, infectionRoute: \"wound\",\n            infCause: \"坑道暴動で源石の破片によって負った創傷\", fl: { dg: 1 } }",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "p",
+                "inf",
+                "infectionRoute",
+                "infCause",
+                "fl",
+                "dg"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "狂乱した囚人の群れに押し潰され、ツルハシで胸を刺し貫かれて絶命した。",
+              "effectRaw": "{ h: -100, d: [\"炭鉱暴動での刺殺殉職\", \"ウルサスの感染者炭鉱暴動において、暴徒のツルハシに胸を刺し貫かれて絶命した。\"] }",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "d"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "鍵を投げ捨ててエレベーターへ逃げ込む",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "命からがら地上へ脱出したが、職場放棄の重罪で軍務を追放された。",
+              "effectRaw": "{ job: 0, p: -5, cr: -3 ,\n            lifeAffiliation: { id: \"ursus-border-mine-guard\", action: \"leave\",\n              note: \"坑道から脱出した後、職場放棄を理由に軍務を追放された\" },\n            lifeGoals: [\n              { id: \"ursus-border-mine-patrol\", action: \"abandon\", onlyIfUnresolved: true,\n                note: \"軍務追放によって、国境と鉱山での警備任務を終えた\" },\n              { id: \"ursus-expelled-guard-next-livelihood\", title: \"軍務追放後の次の働き口を探す\",\n                priority: \"生業\", action: \"start\", preserveAchievement: true }\n            ] }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "p",
+                "cr",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoals",
+                "onlyIfUnresolved",
+                "title",
+                "priority",
+                "preserveAchievement"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "car_vic_royal_choice_coup",
+      "source": "data/parts/routes/regional-careers/events-west.js:179",
+      "choices": [
+        {
+          "label": "サーベルを抜き、公爵の旗を守るため最後まで防衛戦を指揮する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.4",
+              "prose": "血路を開いて包囲を突破し、公爵家の後継者を連れて地方へ脱出した。忠義の士として称えられ、亡命貴族軍の最高指揮官となった。",
+              "effectRaw": "{ cr: 5, p: 4, h: -4, cash: 2000000, job: 55,\n            lifeGoals: [\n              { id: \"victoria-officer-career\", action: \"compromise\", onlyIfUnresolved: true,\n                note: \"元の公爵軍での任務を終え、後継者と残存部隊の指揮へ移った\" },\n              { id: \"victoria-exiled-command\", title: \"亡命公爵家の部隊を率いて任務を続ける\",\n                priority: \"生業\", action: \"start\", preserveAchievement: true }\n            ],\n            lifeAffiliations: [\n              { id: \"victoria-royal-officer\", action: \"leave\",\n                note: \"公爵家の敗北により元の指揮系統を離れた\" },\n              { id: \"victoria-exiled-ducal-command\", title: \"亡命公爵家の残存部隊\",\n                kind: \"employer\", action: \"join\", role: \"最高指揮官\",\n                note: \"公爵家の後継者と脱出し、残存部隊の指揮を任された\" }\n            ] }",
+              "directJobs": [
+                55
+              ],
+              "effectKeys": [
+                "cr",
+                "p",
+                "h",
+                "cash",
+                "job",
+                "lifeGoals",
+                "id",
+                "action",
+                "onlyIfUnresolved",
+                "note",
+                "title",
+                "priority",
+                "preserveAchievement",
+                "lifeAffiliations",
+                "kind",
+                "role"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "軍事委員会のサルカズ精鋭に司令部を制圧され、捕縛された。反逆者としてロンディニウムの断頭台へ送られ、処刑された。",
+              "effectRaw": "{ h: -100, d: [\"ロンディニウム断頭台での処刑\", \"ヴィクトリアのクーデターにおいて、反逆者としてロンディニウムの断頭台へ送られ処刑された。\"] }",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "d"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "軍刀を床に置き、白旗を掲げて降伏する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "爵位と財産を剥奪されたが命は助命され、平民として解放された。",
+              "effectRaw": "{ job: 0, cash: -3000000, p: -5, cr: -4,\n            lifeAffiliation: { id: \"victoria-royal-officer\", action: \"leave\",\n              note: \"降伏により爵位と任官資格を失い、公爵軍を離れた\" },\n            lifeGoals: [\n              { id: \"victoria-officer-career\", action: \"abandon\", onlyIfUnresolved: true,\n                note: \"降伏により公爵軍の軍歴と派閥での権力追求を終えた\" }\n            ] }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "cash",
+                "p",
+                "cr",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoals",
+                "onlyIfUnresolved"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "car_vic_exile_command_review",
+      "source": "data/parts/routes/regional-careers/events-west.js:236",
+      "choices": [
+        {
+          "label": "残った部隊の指揮を続ける",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "補給と宿営の帳面を開き、残る兵たちの持ち場を確かめた。次の朝も同じ旗の下で点呼を取ることにした。",
+              "effectRaw": "{ k: 1, p: -1,\n            lifeGoal: { id: \"victoria-exiled-command\", action: \"continue\",\n              note: \"残存部隊の指揮と補給の役目を継続した\" } }",
+              "directJobs": [],
+              "effectKeys": [
+                "k",
+                "p",
+                "lifeGoal",
+                "id",
+                "action",
+                "note"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "指揮を引き継ぎ、軍務を離れる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "指揮の引継ぎを終え、使い込んだ軍刀を布に包んだ。部隊の行方を決める席から離れ、当面の暮らしを自分で考えることにした。",
+              "effectRaw": "{ job: 0,\n            lifeAffiliation: { id: \"victoria-exiled-ducal-command\", action: \"leave\",\n              note: \"残存部隊の指揮を引き継ぎ、軍務を離れた\" },\n            lifeGoal: { id: \"victoria-exiled-command\", action: \"abandon\",\n              note: \"亡命部隊の指揮を終えた\" } }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoal"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "car_vic_exile_postwar_review",
+      "source": "data/parts/routes/regional-careers/events-west.js:270",
+      "choices": [
+        {
+          "label": "残存部隊の指揮を続け、戦後の情勢を見定める",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "占領軍の撤退は、失った部下を連れ戻してはくれなかった。兵の数と補給の残りを確かめ、今はまだ部隊の旗を降ろさないことにした。",
+              "effectRaw": "{ k: 1, p: -1,\n            lifeGoal: { id: \"victoria-exiled-command\", action: \"continue\",\n              note: \"戦後も残存部隊の指揮と補給を引き受けた\" } }",
+              "directJobs": [],
+              "effectKeys": [
+                "k",
+                "p",
+                "lifeGoal",
+                "id",
+                "action",
+                "note"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "指揮を引き継ぎ、軍務を終える",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "これまでの命令書と兵の名簿を整理し、指揮の引継ぎを済ませた。戦争は終わった。明日の仕事は、もう軍刀を手に決めるものではない。",
+              "effectRaw": "{ job: 0,\n            lifeAffiliation: { id: \"victoria-exiled-ducal-command\", action: \"leave\",\n              note: \"戦後、残存部隊の指揮を引き継いで軍務を終えた\" },\n            lifeGoal: { id: \"victoria-exiled-command\", action: \"abandon\",\n              note: \"戦後の転身を選び、亡命部隊での指揮を終えた\" } }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoal"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "car_col_pioneer_choice_bandits",
+      "source": "data/parts/routes/regional-careers/events-central.js:30",
+      "choices": [
+        {
+          "label": "サイロに籠城し、猟銃で応戦する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "的確な狙撃で略奪団の車両のタイヤを撃ち抜き、頭目を射殺して敗走させた。自力で農場を守り抜いた不屈の開拓者として連邦新聞に報じられた。",
+              "effectRaw": "{ cr: 4, h: 2, p: 3, cash: 800000 }",
+              "directJobs": [],
+              "effectKeys": [
+                "cr",
+                "h",
+                "p",
+                "cash"
+              ]
+            },
+            {
+              "weight": "0.85",
+              "prose": "撃退には成功したものの、サイロに火を放たれて収穫の半分を失った。",
+              "effectRaw": "{ h: -4, cash: -300000, p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "cash",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "略奪団の放った爆弾がサイロを直撃。炎上する建物の中で命を落とした。",
+              "effectRaw": "{ h: -100, d: [\"開拓地での爆殺\", \"クルビア開拓地において、略奪団の爆破攻撃に巻き込まれ炎上するサイロの中で命を落とした。\"] }",
+              "directJobs": [],
+              "effectKeys": [
+                "h",
+                "d"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "財産を諦め、夜陰に乗じてトラクターで脱出する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "命からがら農場を離れ、近くの避難場所へ逃げ延びた。畑も収穫物も略奪されたが、命だけはつないだ。",
+              "effectRaw": "{ job: 0, cash: -500000, p: -5,\n            lifeAffiliation: { id: \"columbia-frontier-pioneer\", action: \"leave\",\n              note: \"農場を襲撃されて土地を離れ、開拓の仕事を終えた\" },\n            lifeGoals: [\n              { id: \"columbia-frontier-survival\", action: \"abandon\", onlyIfUnresolved: true,\n                note: \"農場を失い、従来の開拓生活を終えた\" },\n              { id: \"columbia-dispossessed-pioneer-livelihood\",\n                title: \"農場を失った後の働き口を見つける\",\n                priority: \"生業\", action: \"start\", preserveAchievement: true }\n            ] }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "cash",
+                "p",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoals",
+                "onlyIfUnresolved",
+                "title",
+                "priority",
+                "preserveAchievement"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "job_contract_review_v76",
+      "source": "data/work/contracts.js:19",
+      "choices": [
+        {
+          "label": "判を押す前に、曖昧な条項を確かめる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "帳場の担当者を捕まえて一つずつ問い質した。渋い顔をされたが、手当の条件だけははっきりさせてから持ち場へ入った。",
+              "effectRaw": "{ workContractAction: { action: \"review\" }, k: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "波風を立てず、言われた手順に従う",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "余計な口出しはせず、まずは現場のやり方に合わせることにした。引っかかる文言は胸の奥にしまっておいた。",
+              "effectRaw": "{ workContractAction: { action: \"review\" }, p: -1, cr: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "p",
+                "cr"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "job_contract_negotiation_v76",
+      "source": "data/work/contracts.js:43",
+      "choices": [
+        {
+          "label": "これまでの働きぶりを示して掛け合う",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.38",
+              "prose": "「お前に抜けられると困るからな」と責任者が折れ、次の給金日から少しばかり手当が上乗せされることになった。",
+              "effectRaw": "{ workContractAction: { action: \"negotiate\", result: \"approved\" }, rl: 2 }",
+              "directJobs": [],
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "result",
+                "rl"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "資材の値上がりと予算の厳しさを理由に、今回は見送られた。それでも頭ごなしには撥ねつけられず、次の更新時にまた話すことになった。",
+              "effectRaw": "{ workContractAction: { action: \"negotiate\", result: \"declined\" }, p: -1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "result",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "無理には迫らず、今の持ち場の確認にとどめる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "深追いはせず、いま任されている仕事の段取りだけをすり合わせて引き下がった。",
+              "effectRaw": "{ workContractAction: { action: \"review\" }, k: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "k"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "job_contract_family_schedule_v76",
+      "source": "data/work/contracts.js:78",
+      "choices": [
+        {
+          "label": "勤務時間を短くできないか相談する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.64",
+              "prose": "事情を汲んでもらい、次の割り振りから早めに上がれることになった。袋に入る給金は軽くなるが、夕方に息をつく時間は戻ってきた。",
+              "effectRaw": "{ workContractAction: { action: \"hours\", result: \"approved\" }, p: 3 }",
+              "directJobs": [],
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "result",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "「今は代わりに入れる人間がいない」と首を横に振られた。重たい足を引きずりながら、家の段取りをもう一度組み直すしかなかった。",
+              "effectRaw": "{ workContractAction: { action: \"hours\", result: \"declined\" }, p: -1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "result",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "時間は変えず、身近な人に手助けを頼む",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "稼ぎを減らすわけにはいかず、手が回らない用事を近所や身内に頼めないか相談して回ることにした。",
+              "effectRaw": "{ k: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "k"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "life_ursus_zelgrad_recruitment",
+      "source": "data/relationships/close-disclosure.js:646",
+      "choices": [
+        {
+          "label": "工場の選考に応募してみる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.42",
+              "prose": "紹介を頼りに選考へ進み、移動都市ゼルグラードの工場補助職に採用された。仕事場へ通うため労働区画の狭い部屋へ荷物を運び込み、油と鉄の匂いがこもる現場で不慣れな作業を覚え始めた。",
+              "effectRaw": "{\n              job: 2,\n              home: \"移動都市\",\n              localKind: \"移動都市の避難・労働区画\",\n              localCity: \"ゼルグラード\",\n              lifeAffiliation: {\n                id: \"ursus-zelgrad-factory\",\n                title: \"ゼルグラードの工場補助職\",\n                kind: \"employer\",\n                action: \"join\",\n                bindAt: \"destination\",\n                role: \"製造・設備補助\"\n              },\n              lifeGoal: {\n                id: \"ursus-zelgrad-work\",\n                title: \"感染後の生活を支える仕事を見つける\",\n                priority: \"生計\",\n                action: \"start\",\n                note: \"紹介を受け、ゼルグラードの工場補助職に就いた\"\n              },\n              lifeSkill: {\n                id: \"industrial-production\",\n                title: \"工場の製造補助\",\n                delta: 1,\n                context: \"工場の研修で製造補助の手順を覚えた\"\n              },\n              p: 2\n            }",
+              "directJobs": [
+                2
+              ],
+              "effectKeys": [
+                "job",
+                "home",
+                "localKind",
+                "localCity",
+                "lifeAffiliation",
+                "id",
+                "title",
+                "kind",
+                "action",
+                "bindAt",
+                "role",
+                "lifeGoal",
+                "priority",
+                "note",
+                "lifeSkill",
+                "delta",
+                "context",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "選考には通らず、不採用の知らせだけが届いた。骨を折ってくれた親戚に礼を言い、また一から働き口を探して街を歩いた。",
+              "effectRaw": "{ p: -2, k: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "労働時間や住まいの条件が分かるまで応募を見合わせる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "身体がもつ働き方なのか、住み込みの条件はどうなっているのかを親戚に尋ね直し、返事が来るまでは今の暮らしを続けることにした。",
+              "effectRaw": "{\n            lifeGoal: {\n              id: \"ursus-zelgrad-work\",\n              title: \"感染後の生活を支える仕事を見つける\",\n              priority: \"生計\",\n              action: \"pause\",\n              note: \"紹介者に勤務時間と住まいの条件を尋ねた\"\n            },\n            p: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "title",
+                "priority",
+                "action",
+                "note",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "その話は見送り、近くで別の仕事口を探す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "遠くの工場へ移る話は見送り、今の土地で続けられそうな働き口を探すことにした。",
+              "effectRaw": "{\n            lifeGoal: {\n              id: \"ursus-zelgrad-work\",\n              title: \"感染後の生活を支える仕事を見つける\",\n              priority: \"生計\",\n              action: \"abandon\",\n              note: \"工場への応募を見送り、ほかの働き口を探す\"\n            },\n            p: 0\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "title",
+                "priority",
+                "action",
+                "note",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "life_ursus_zelgrad_work_review",
+      "source": "data/relationships/close-disclosure.js:736",
+      "choices": [
+        {
+          "label": "今の持ち場に残り、身体に馴染んだ手順で働き続ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "これからも同じ持ち場で続けると班長に伝えた。手が覚えた段取りのおかげで、以前より無理のない動きで一日の作業を終えられるようになった。",
+              "effectRaw": "{\n            lifeAffiliation: {\n              id: \"ursus-zelgrad-factory\",\n              action: \"continue\",\n              note: \"本人が二年後に担当を続けると決めた\"\n            },\n            lifeGoal: {\n              id: \"ursus-zelgrad-work\",\n              action: \"continue\",\n              note: \"工場補助職を続け、生活との両立を見直した\"\n            },\n            lifeSkill: {\n              id: \"industrial-production\",\n              title: \"工場の製造補助\",\n              delta: 1,\n              context: \"本人の担当を続ける中で手順を記録\"\n            },\n            p: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoal",
+                "lifeSkill",
+                "title",
+                "delta",
+                "context",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "工場を辞め、もう少し身体の楽な働き口を探す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "退職を申し出て工場の門を出た。手元に残ったわずかな給金を確かめながら、次の働き口を求めて街区の貼り紙を見て回った。",
+              "effectRaw": "{\n            job: 0,\n            lifeAffiliation: {\n              id: \"ursus-zelgrad-factory\",\n              action: \"leave\",\n              note: \"本人が二年後に工場補助職を離れた\"\n            },\n            lifeGoal: {\n              id: \"ursus-zelgrad-work\",\n              action: \"compromise\",\n              note: \"工場の仕事を終え、別の働き口を探す\"\n            },\n            p: -1\n          }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoal",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "life_ursus_zelgrad_recruitment_retry",
+      "source": "data/relationships/close-disclosure.js:804",
+      "choices": [
+        {
+          "label": "紹介を頼りに、今度こそ選考を受ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.42",
+              "prose": "親戚に採用係へのつなぎを取ってもらって応募し、無事に採用が決まった。ゼルグラードの労働区画へ荷物を運び込み、機械の熱気と騒音のなかで作業の手順を覚え始めた。",
+              "effectRaw": "{\n            job: 2,\n            home: \"移動都市\",\n            localKind: \"移動都市の避難・労働区画\",\n            localCity: \"ゼルグラード\",\n            lifeAffiliation: {\n              id: \"ursus-zelgrad-factory\",\n              title: \"ゼルグラードの工場補助職\",\n              kind: \"employer\",\n              action: \"join\",\n              bindAt: \"destination\",\n              role: \"製造・設備補助\"\n            },\n            lifeGoal: {\n              id: \"ursus-zelgrad-work\",\n              action: \"continue\",\n              note: \"一年保留した後、一件の募集に応募して採用された\"\n            },\n            lifeSkill: {\n              id: \"industrial-production\",\n              title: \"工場の製造補助\",\n              delta: 1,\n              context: \"工場の研修で機械の音と製造補助の手順を覚えた\"\n            },\n            p: 2\n          }",
+              "directJobs": [
+                2
+              ],
+              "effectKeys": [
+                "job",
+                "home",
+                "localKind",
+                "localCity",
+                "lifeAffiliation",
+                "id",
+                "title",
+                "kind",
+                "action",
+                "bindAt",
+                "role",
+                "lifeGoal",
+                "note",
+                "lifeSkill",
+                "delta",
+                "context",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "親戚から、あの募集はもう人が埋まって締め切られたと知らされた。肩を落としながら、街角の求人貼りを探しに出かけた。",
+              "effectRaw": "{\n            lifeGoal: {\n              id: \"ursus-zelgrad-work\",\n              action: \"pause\",\n              note: \"紹介者から募集終了を聞き、次の掲示を待つ\"\n            },\n            p: -1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "action",
+                "note",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "工場の話は諦め、別の働き口を探す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "いつまでもあてにならない話にすがるのはやめ、別の仕事口を探すことにした。",
+              "effectRaw": "{\n          lifeGoal: {\n            id: \"ursus-zelgrad-work\",\n            action: \"abandon\",\n            note: \"この求人の確認を終え、別の仕事を探す\"\n          },\n          p: 0\n        }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "action",
+                "note",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "life_ursus_zelgrad_evacuation",
+      "source": "data/relationships/close-disclosure.js:888",
+      "choices": [
+        {
+          "label": "人波に身を投じ、とにかく市外へ逃げる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "背負えるだけの荷物をひっつかみ、門へ殺到する群衆の列に飛び込んだ。移動都市の外へ吐き出されると、冷たい風のなかで今夜しのげる場所を探して歩き続けた。",
+              "effectRaw": "{\n          displacement: \"displaced\",\n          job: 0,\n          lifeAffiliations: [\n            {\n              id: \"ursus-zelgrad-factory\",\n              action: \"leave\",\n              onlyIfActive: true,\n              note: \"市外へ退避し、ゼルグラードの工場補助職を離れた\"\n            }\n          ],\n          lifeGoals: [\n            {\n              id: \"ursus-zelgrad-work\",\n              action: \"compromise\",\n              onlyIfActive: true,\n              note: \"退避により工場を離れ、避難先で生計を立て直す\"\n            }\n          ],\n          lifeGoal: {\n            id: \"ursus-zelgrad-after-crisis\",\n            title: \"ゼルグラード危機後の住まいと生計を整える\",\n            priority: \"生計と居場所\",\n            action: \"start\",\n            note: \"市外へ出て、今夜の寝床を探し始めた\"\n          },\n          regionalImpact: {\n            region: \"ウルサス\",\n            entity: \"ゼルグラードを離れた一人\",\n            kind: \"individual-evacuation\",\n            description: \"危機のさなか、市外へ退避した\",\n            basis: \"chapter17-civilian-scene; individual-game-branch\"\n          },\n          fl: { zelgrad_evacuated: 1 },\n          p: -2\n        }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "displacement",
+                "job",
+                "lifeAffiliations",
+                "id",
+                "action",
+                "onlyIfActive",
+                "note",
+                "lifeGoals",
+                "lifeGoal",
+                "title",
+                "priority",
+                "regionalImpact",
+                "region",
+                "entity",
+                "kind",
+                "description",
+                "basis",
+                "fl",
+                "zelgrad_evacuated",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "押し倒された人を荷台へ引き上げるのを手伝う",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "人波に押されて立ち上がれなくなっていた人を抱え起こし、近くの台車へ乗せるのに手を貸した。台車が門へ向かう列へ飲み込まれるのを見届けてから、荒い息をついて広場の端へ退いた。",
+              "effectRaw": "{\n          lifeGoal: {\n            id: \"ursus-zelgrad-civilian-aid\",\n            title: \"危機のさなかに一人の退避を手伝う\",\n            priority: \"地域\",\n            action: \"complete\",\n            note: \"倒れていた人を台車へ移すのに手を貸した\"\n          },\n          regionalImpact: {\n            region: \"ウルサス\",\n            entity: \"ゼルグラードの退避列にいた一人\",\n            kind: \"individual-evacuation-assistance\",\n            description: \"倒れていた人を台車へ移すのを手伝った\",\n            basis: \"chapter17-civilian-scene; individual-game-branch\"\n          },\n          fl: { zelgrad_evacuated: 1 },\n          p: -1,\n          rl: 1\n        }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "title",
+                "priority",
+                "action",
+                "note",
+                "regionalImpact",
+                "region",
+                "entity",
+                "kind",
+                "description",
+                "basis",
+                "fl",
+                "zelgrad_evacuated",
+                "p",
+                "rl"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "外へ出ても行く当てがなく、部屋にとどまる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "門へ向かう人々の背中を見送り、自分の部屋へ戻って仕事道具と食料を確かめた。外の怒号が遠のくまで、いつでも飛び出せるよう靴を履いたままベッドの端に腰かけていた。",
+              "effectRaw": "{\n          lifeGoal: {\n            id: \"ursus-zelgrad-after-crisis\",\n            title: \"ゼルグラードでの暮らしを続けながら退路を見直す\",\n            priority: \"生計と居場所\",\n            action: \"start\",\n            note: \"集会では退避せず、身の置き場を再検討する\"\n          },\n          regionalImpact: {\n            region: \"ウルサス\",\n            entity: \"ゼルグラードに残った一人\",\n            kind: \"individual-stay-decision\",\n            description: \"集会の後、退避せずその場に残った\",\n            basis: \"chapter17-civilian-scene; individual-game-branch\"\n          },\n          fl: { zelgrad_stay: 1 },\n          p: 1\n        }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "title",
+                "priority",
+                "action",
+                "note",
+                "regionalImpact",
+                "region",
+                "entity",
+                "kind",
+                "description",
+                "basis",
+                "fl",
+                "zelgrad_stay",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        3
+      ]
+    },
+    {
+      "id": "life_ursus_zelgrad_purge_trap",
+      "source": "data/relationships/close-disclosure.js:1046",
+      "choices": [
+        {
+          "label": "危険を察知し、排気ダクトを破って極寒の外壁から脱出する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.8",
+              "prose": "憲兵の監視の目を盗み、工具で排気ダクトの格子を蹴破って外壁のキャットウォークへ飛び出した。吹き荒れる雪嵐の中、身を切るような寒風に煽られながら外壁の梯子を滑り降り、命からがら荒野の雪原へ逃げ延びた。",
+              "effectRaw": "{\n            fl: { zelgrad_evacuated: 1 },\n            displacement: \"displaced\",\n            job: 0,\n            cash: 0,\n            h: -15,\n            p: -5,\n            lifeAffiliations: [\n              {\n                id: \"ursus-zelgrad-factory\",\n                action: \"leave\",\n                onlyIfActive: true,\n                note: \"炉心の集約虐殺から脱出し、工場補助職を離れた\"\n              }\n            ]\n          }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "fl",
+                "zelgrad_evacuated",
+                "displacement",
+                "job",
+                "cash",
+                "h",
+                "p",
+                "lifeAffiliations",
+                "id",
+                "action",
+                "onlyIfActive",
+                "note"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "排気ダクトを抜けた先で巡回兵に見咎められ、発砲を受けた。肩を撃ち抜かれながらも雪原へ転がり落ち、血を流しながら吹雪の中を這うように逃げ延びた。",
+              "effectRaw": "{\n            fl: { zelgrad_evacuated: 1 },\n            displacement: \"displaced\",\n            job: 0,\n            cash: 0,\n            h: -35,\n            p: -8\n          }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "fl",
+                "zelgrad_evacuated",
+                "displacement",
+                "job",
+                "cash",
+                "h",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "当局の指示に従い、中央炉心への点検車列に乗り込む",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "拡声器の言葉を信じて幌付きの車列に乗り込んだ。だがトラックが着いた先は保護宿舎ではなく、二重に施錠された巨大な中央炉室の入口だった。後悔の叫びが上がる間もなく、扉は外側から完全に密閉された。",
+              "effectRaw": "{\n            d: [\n              \"迫害死（ゼルグラード燃料化虐殺）\",\n              \"1102年のゼルグラード燃料危機において、当局の欺瞞命令に従った結果、炉心の源石燃料として感染者集約施設で虐殺された。\"\n            ]\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "d"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "life_ursus_zelgrad_displacement_review",
+      "source": "data/relationships/close-disclosure.js:985",
+      "choices": [
+        {
+          "label": "帰るかどうかは決めず、まずは今の町で働き口を探す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "いつ戻れるか分からない街のことを考えるのは後回しにし、まずは今日食べていくための仕事を町へ探しに出た。",
+              "effectRaw": "{\n          lifeGoal: {\n            id: \"ursus-zelgrad-after-crisis\",\n            action: \"pause\",\n            note: \"現在地での仕事を探しながら、帰還判断は保留\"\n          },\n          p: 1\n        }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "action",
+                "note",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "つてを辿り、ひとりでゼルグラードへ戻ってみる",
+          "gate": "{\n          en: s => s.job === 0 && !s.lifeRecord?.affiliations?.some(\n            a => a.id === \"ursus-displaced-repair-workshop\" &&\n              [\"active\", \"crisis\", \"suspended\"].includes(a.status)\n          ),\n          why: \"避難先での勤務を終え、仕事の引継ぎを済ませる必要がある\"\n        }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "行き交う荷馬車や旅人に道を尋ね続け、ようやくゼルグラードの労働区画へたどり着いた。かつての職場は影も形もなく、まずは雨風をしのげる寝床と日雇いの仕事を探して通りを歩いた。",
+              "effectRaw": "{\n            displacement: \"rebuilt\",\n            job: 0,\n            home: \"移動都市\",\n            localKind: \"移動都市の避難・労働区画\",\n            localCity: \"ゼルグラード\",\n            lifeGoal: {\n              id: \"ursus-zelgrad-after-crisis\",\n              action: \"compromise\",\n              note: \"労働区画へ戻り、寝床と働き口を探した\"\n            },\n            regionalImpact: {\n              region: \"ウルサス\",\n              entity: \"ゼルグラードへ戻った一人\",\n              kind: \"individual-return\",\n              description: \"労働区画へ戻り、寝床と働き口を探した\",\n              basis: \"individual-game-branch\"\n            },\n            p: -1\n          }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "displacement",
+                "job",
+                "home",
+                "localKind",
+                "localCity",
+                "lifeGoal",
+                "id",
+                "action",
+                "note",
+                "regionalImpact",
+                "region",
+                "entity",
+                "kind",
+                "description",
+                "basis",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "検問と荒れた道に阻まれて先へ進めず、途中で引き返すしかなかった。減った携帯食料を鞄の底で数えながら、また動ける日を待つことにした。",
+              "effectRaw": "{\n            lifeGoal: {\n              id: \"ursus-zelgrad-after-crisis\",\n              action: \"pause\",\n              note: \"今回の帰還はかなわず、次の確認時期を先へ送った\"\n            },\n            p: -2\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "action",
+                "note",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "ゼルグラードへ戻ることは諦め、この土地で暮らしを立て直す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "あの街へ戻る未練を断ち切り、今いる町で腰を落ち着けて暮らせる部屋と仕事を探すことにした。",
+              "effectRaw": "{\n          lifeGoal: {\n            id: \"ursus-zelgrad-after-crisis\",\n            action: \"compromise\",\n            note: \"帰還を優先せず、現在地で暮らしを組み立てる\"\n          },\n          p: 1\n        }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "action",
+                "note",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "life_ursus_zelgrad_stay_review",
+      "source": "data/relationships/close-disclosure.js:1074",
+      "choices": [
+        {
+          "label": "これからもこの街で暮らしていくと腹を決める",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "もう迷わないと決め、戸口に積みっぱなしにしていた非常用の荷物をほどいて部屋の棚へ戻した。",
+              "effectRaw": "{\n          lifeAffiliations: [\n            {\n              id: \"ursus-zelgrad-factory\",\n              action: \"continue\",\n              onlyIfActive: true,\n              note: \"ゼルグラードに残り、工場の担当を続けた\"\n            }\n          ],\n          lifeGoals: [\n            {\n              id: \"ursus-zelgrad-work\",\n              action: \"continue\",\n              onlyIfActive: true,\n              note: \"危機後も工場補助職へ通い続けた\"\n            }\n          ],\n          lifeGoal: {\n            id: \"ursus-zelgrad-after-crisis\",\n            action: \"complete\",\n            note: \"この町に残り、暮らしを続ける\"\n          },\n          p: 1\n        }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliations",
+                "id",
+                "action",
+                "onlyIfActive",
+                "note",
+                "lifeGoals",
+                "lifeGoal",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "今からでも荷物をまとめ、街を出る列に加わる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "部屋の荷物を背負える分だけまとめ、市外へ向かう人々の列に加わった。門を抜けた先で一度だけ振り返り、水筒の残りを確かめてから歩き出した。",
+              "effectRaw": "{\n          displacement: \"displaced\",\n          job: 0,\n          lifeAffiliations: [\n            {\n              id: \"ursus-zelgrad-factory\",\n              action: \"leave\",\n              onlyIfActive: true,\n              note: \"後年に市外へ退避し、ゼルグラードの工場補助職を離れた\"\n            }\n          ],\n          lifeGoals: [\n            {\n              id: \"ursus-zelgrad-work\",\n              action: \"compromise\",\n              onlyIfActive: true,\n              note: \"後年の退避により工場を離れ、避難先で生計を立て直す\"\n            }\n          ],\n          lifeGoal: {\n            id: \"ursus-zelgrad-after-crisis\",\n            action: \"continue\",\n            note: \"後年に荷物をまとめ、市外へ向かう列に加わった\"\n          },\n          regionalImpact: {\n            region: \"ウルサス\",\n            entity: \"ゼルグラードから後年に退避を始めた一人\",\n            kind: \"individual-delayed-evacuation\",\n            description: \"後年に荷物をまとめ、市外へ向かう列に加わった\",\n            basis: \"individual-game-branch\"\n          },\n          p: -2\n        }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "displacement",
+                "job",
+                "lifeAffiliations",
+                "id",
+                "action",
+                "onlyIfActive",
+                "note",
+                "lifeGoals",
+                "lifeGoal",
+                "regionalImpact",
+                "region",
+                "entity",
+                "kind",
+                "description",
+                "basis",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "すぐには出ないが、いつでも逃げられるよう荷物をまとめておく",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "今日は街を出ず、いつもの寝床へ戻った。ただ、いつでも飛び出せるよう靴と水筒だけは枕元に置き、戸口に荷袋をくくっておいた。",
+              "effectRaw": "{\n          lifeAffiliations: [\n            {\n              id: \"ursus-zelgrad-factory\",\n              action: \"continue\",\n              onlyIfActive: true,\n              note: \"ゼルグラードに残り、工場の担当を続けた\"\n            }\n          ],\n          lifeGoals: [\n            {\n              id: \"ursus-zelgrad-work\",\n              action: \"continue\",\n              onlyIfActive: true,\n              note: \"危機後も工場補助職へ通い続けた\"\n            }\n          ],\n          lifeGoal: {\n            id: \"ursus-zelgrad-after-crisis\",\n            action: \"abandon\",\n            note: \"今日は退避せず、荷物をまとめて暮らしを続けた\"\n          },\n          p: 0\n        }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliations",
+                "id",
+                "action",
+                "onlyIfActive",
+                "note",
+                "lifeGoals",
+                "lifeGoal",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        3
+      ]
+    },
+    {
+      "id": "life_ursus_zelgrad_displaced_work",
+      "source": "data/relationships/close-disclosure.js:1204",
+      "choices": [
+        {
+          "label": "修理工房を訪ね、工場で培った経験を話して雇ってもらえないか頼む",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.38",
+              "prose": "工場で扱っていた部品や検品のやり方を実演してみせると、親方がうなずいて補助職として雇ってくれた。油の染みた作業台で、部品の仕分けから新しい仕事が始まった。",
+              "effectRaw": "{\n              job: 2,\n              lifeAffiliations: [\n                {\n                  id: \"ursus-zelgrad-factory\",\n                  action: \"leave\",\n                  onlyIfActive: true,\n                  note: \"避難後の仕事探しを始める時点で旧工場との在職を整理\"\n                },\n                {\n                  id: \"ursus-displaced-repair-workshop\",\n                  title: \"近隣の修理工房\",\n                  kind: \"employer\",\n                  action: \"join\",\n                  role: \"部品の仕分け・製造補助\"\n                }\n              ],\n              lifeGoals: [\n                {\n                  id: \"ursus-zelgrad-work\",\n                  action: \"compromise\",\n                  onlyIfActive: true,\n                  note: \"避難後に旧工場の在籍を閉じ、就労目標を見直した\"\n                }\n              ],\n\n              lifeGoal: {\n                id: \"ursus-zelgrad-after-crisis\",\n                action: \"compromise\",\n                note: \"工場経験を使い、現在地の修理工房で補助職を始めた\"\n              },\n              lifeSkill: {\n                id: \"industrial-production\",\n                title: \"工場の製造補助\",\n                delta: 1,\n                context: \"現在地の修理工房で部品を仕分け、工場経験を使った\"\n              },\n              p: 2\n            }",
+              "directJobs": [
+                2
+              ],
+              "effectKeys": [
+                "job",
+                "lifeAffiliations",
+                "id",
+                "action",
+                "onlyIfActive",
+                "note",
+                "title",
+                "kind",
+                "role",
+                "lifeGoals",
+                "lifeGoal",
+                "lifeSkill",
+                "delta",
+                "context",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "工房の親方にこれまでの経験を話したが、「今は人を増やす余裕がない」と断られた。また空きが出ないか、時折顔を出して確かめることにした。",
+              "effectRaw": "{\n              job: 0,\n              lifeAffiliations: [\n                {\n                  id: \"ursus-zelgrad-factory\",\n                  action: \"leave\",\n                  onlyIfActive: true,\n                  note: \"避難後の求職時に旧工場との在職を整理\"\n                }\n              ],\n              lifeGoals: [\n                {\n                  id: \"ursus-zelgrad-work\",\n                  action: \"compromise\",\n                  onlyIfActive: true,\n                  note: \"避難後に旧工場の在籍を閉じ、就労目標を見直した\"\n                }\n              ],\n\n              lifeGoal: {\n                id: \"ursus-zelgrad-after-crisis\",\n                action: \"pause\",\n                note: \"修理工房の選考は不採用となり、次の募集を待つ\"\n              },\n              lifeSkill: {\n                id: \"industrial-production\",\n                title: \"工場の製造補助\",\n                delta: 1,\n                context: \"工場で覚えた手順を避難先で書き留めた\"\n              },\n              p: -1\n            }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "lifeAffiliations",
+                "id",
+                "action",
+                "onlyIfActive",
+                "note",
+                "lifeGoals",
+                "lifeGoal",
+                "lifeSkill",
+                "title",
+                "delta",
+                "context",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "手元の工具を手入れしながら、次の求人が出るのを待つ",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "工場で使っていた馴染みの工具の錆を落とし、いつでも働けるよう整えておいた。良い募集が出るまでは、寝床と日々の食事をつなぐことを優先した。",
+              "effectRaw": "{\n            job: 0,\n            lifeAffiliations: [\n              {\n                id: \"ursus-zelgrad-factory\",\n                action: \"leave\",\n                onlyIfActive: true,\n                note: \"避難後の生活を整えるため旧工場との在職を整理\"\n              }\n            ],\n            lifeGoals: [\n              {\n                id: \"ursus-zelgrad-work\",\n                action: \"compromise\",\n                onlyIfActive: true,\n                note: \"避難後に旧工場の在籍を閉じ、就労目標を見直した\"\n              }\n            ],\n\n            lifeGoal: {\n              id: \"ursus-zelgrad-after-crisis\",\n              action: \"pause\",\n              note: \"工場経験を書き残し、避難先の暮らしを先に整える\"\n            },\n            lifeSkill: {\n              id: \"industrial-production\",\n              title: \"工場の製造補助\",\n              delta: 1,\n              context: \"部品の名前と検品の順番を避難先で書き残した\"\n            },\n            p: 0\n          }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "lifeAffiliations",
+                "id",
+                "action",
+                "onlyIfActive",
+                "note",
+                "lifeGoals",
+                "lifeGoal",
+                "lifeSkill",
+                "title",
+                "delta",
+                "context",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "今は無理に職を探さず、寝床と配給の確保に専念する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "焦って仕事を探すのはいったんやめ、雨風をしのげる寝床の確保と配給の列に並ぶことを優先した。工場の作業着は荷袋の底にしまい込んだ。",
+              "effectRaw": "{\n            job: 0,\n            lifeAffiliations: [\n              {\n                id: \"ursus-zelgrad-factory\",\n                action: \"leave\",\n                onlyIfActive: true,\n                note: \"避難後の生活を整えるため旧工場との在職を整理\"\n              }\n            ],\n            lifeGoals: [\n              {\n                id: \"ursus-zelgrad-work\",\n                action: \"compromise\",\n                onlyIfActive: true,\n                note: \"避難後に旧工場の在籍を閉じ、就労目標を見直した\"\n              }\n            ],\n\n            lifeGoal: {\n              id: \"ursus-zelgrad-after-crisis\",\n              action: \"compromise\",\n              note: \"避難先では就職より寝床と食料の確保を優先\"\n            },\n            p: 1\n          }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "lifeAffiliations",
+                "id",
+                "action",
+                "onlyIfActive",
+                "note",
+                "lifeGoals",
+                "lifeGoal",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "life_ursus_zelgrad_displaced_work_review",
+      "source": "data/relationships/close-disclosure.js:1340",
+      "choices": [
+        {
+          "label": "このまま工房に残り、新しく入った手伝いにも手順を教える",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "部品の仕分けと検品のコツを若い手伝いにも教えながら、これまで通り工房の作業台に立ち続けた。",
+              "effectRaw": "{\n            lifeAffiliation: {\n              id: \"ursus-displaced-repair-workshop\",\n              action: \"continue\",\n              note: \"本人が工房に残り、補助職を続けた\"\n            },\n            lifeGoal: {\n              id: \"ursus-zelgrad-after-crisis\",\n              action: \"continue\",\n              onlyIfActive: true,\n              note: \"避難先で工場経験を生かす仕事を続けた\"\n            },\n            lifeSkill: {\n              id: \"industrial-production\",\n              title: \"工場の製造補助\",\n              delta: 1,\n              context: \"修理工房の検品手順を手帳にまとめて使った\"\n            },\n            p: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoal",
+                "onlyIfActive",
+                "lifeSkill",
+                "title",
+                "delta",
+                "context",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "工房の仕事を続け、借りた部屋を暮らしの拠点として整える",
+          "gate": "{\n            show: s => !s.lifeRecord?.goals?.some(\n              g => g.id === \"ursus-zelgrad-after-crisis\" && g.status === \"achieved\"\n            )\n          }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "親方とこれからの勤務を確かめ、部屋の貸主とも賃借の約束を交わした。仕事帰りに戻る寝床が定まり、避難してから続けてきた住まいと生計の立て直しに、ようやく区切りがついた。",
+              "effectRaw": "{\n              displacement: \"rebuilt\",\n              lifeAffiliation: {\n                id: \"ursus-displaced-repair-workshop\",\n                action: \"continue\",\n                note: \"勤務を続け、借りた部屋を生活の拠点とした\"\n              },\n              lifeGoal: {\n                id: \"ursus-zelgrad-after-crisis\",\n                action: \"complete\",\n                note: \"工房の仕事と部屋の賃借を確かめ、生活再建を完了\"\n              },\n              p: 2\n            }",
+              "directJobs": [],
+              "effectKeys": [
+                "displacement",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoal",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "工房に暇を乞い、より条件の良い働き口を探す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "世話になった親方に礼を言って工房を離れた。二つの現場で鍛えた腕を頼りに、次の仕事を探して街へ出た。",
+              "effectRaw": "{\n            job: 0,\n            lifeAffiliation: {\n              id: \"ursus-displaced-repair-workshop\",\n              action: \"leave\",\n              note: \"本人が別の仕事を探すため、避難先の修理工房を離れた\"\n            },\n            lifeGoal: {\n              id: \"ursus-zelgrad-after-crisis\",\n              action: \"compromise\",\n              onlyIfActive: true,\n              note: \"修理工房を離れ、別の求人を探す\"\n            },\n            p: 0\n          }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoal",
+                "onlyIfActive",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        3
+      ]
+    }
+  ],
+  "exceptions": []
+}
