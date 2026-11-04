@@ -520,3 +520,327 @@ P13既存イベントの改修に伴う表示本文・選択文・結果文の�
         ]
       }
 ~~~
+
+## data/extensions/family-and-community.js
+
+### `life_ursus_school_aid_later`
+
+~~~js
+{
+    id: "life_ursus_school_aid_later",
+    conf: "S",
+    references: ["SRC_TL_CHERNOB_WINDOW", "SRC_TERRA_FAMILY"],
+    st: ["青年", "壮年"],
+    need: ["ursus_school_contact_ongoing"],
+    after: { id: "life_ursus_school_aid_adult_followup", min: 5 },
+    ge: { year: 1105, age: 24 },
+    once: true,
+    w: 0.2,
+    t: "チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分からない。これからも年に一度の便りを続けるか、連絡網の世話役を誰かに引き継ぐか、考えた。",
+    c: [
+      $terraData.K("年に一度だけ近況を送り、返事は相手の気ままに任せる", {}, [
+        1,
+        "年に一度、季節の変わり目に短い手紙を出すことにした。忘れた頃に返事が届けば、それだけで無事を知ることができた。",
+        {
+          lifeAffiliation: {
+            id: "ursus-school-aid",
+            title: "チェルノボーグの同級生避難支援",
+            action: "role",
+            role: "年に一度の便りを続ける元同級生",
+            note: "返事を急かさず、細く長い縁を保つ"
+          },
+          lifeGoal: {
+            id: "ursus-classmate-contact",
+            title: "同級生と無理のない範囲で連絡を保つ",
+            priority: "同級生との縁",
+            action: "continue"
+          },
+          groupStanding: {
+            id: "chernobog-students",
+            title: "近隣の中学生",
+            delta: 1,
+            reason: "大人になってからも負担にならない便りを続けた"
+          },
+          p: 1
+        }
+      ]),
+      $terraData.K("構わないと言ってくれた人の宛先だけ、次の世話役へ託す", {}, [
+        1,
+        "一人ずつ意思を確かめ、連絡先を残してもいいと言ってくれた同級生の分だけ次の世話役に託した。肩の荷がひとつ降りた気がした。",
+        {
+          lifeAffiliation: {
+            id: "ursus-school-aid",
+            title: "チェルノボーグの同級生避難支援",
+            action: "leave",
+            note: "了承を得た同級生の連絡先を次の世話役へ引き継いだ"
+          },
+          lifeGoal: {
+            id: "ursus-classmate-contact",
+            title: "同級生と無理のない範囲で連絡を保つ",
+            priority: "同級生との縁",
+            action: "complete",
+            note: "同級生の連絡網を次の世話役へ託した"
+          },
+          regionalImpact: {
+            region: "ウルサス",
+            entity: "チェルノボーグから避難した元同級生の連絡記録",
+            kind: "later-handover",
+            description:
+              "連絡先を残すことに同意した元同級生たちの宛先を、次の世話役へ引き継いだ。"
+          },
+          p: 1
+        }
+      ]),
+      $terraData.K("世話役を終え、それぞれの今の暮らしに戻る", {}, [
+        1,
+        "長く続けた連絡係に区切りをつけ、古い住所録を棚の奥へしまった。その夜はペンを取らず、静かに部屋の灯りを消した。",
+        {
+          lifeAffiliation: {
+            id: "ursus-school-aid",
+            title: "チェルノボーグの同級生避難支援",
+            action: "leave",
+            note: "長年の便りを終え、それぞれの暮らしへ戻った"
+          },
+          lifeGoal: {
+            id: "ursus-classmate-contact",
+            title: "同級生と無理のない範囲で連絡を保つ",
+            priority: "同級生との縁",
+            action: "abandon",
+            note: "生活の変化を受け、連絡係の役目を終えた"
+          },
+          p: 0
+        }
+      ])
+    ]
+  }
+~~~
+
+## data/parts/extensions/education-and-later-life/ursus-student-life.js
+
+### `life_ursus_student_assembly_later`
+
+~~~js
+{
+    id: "life_ursus_student_assembly_later",
+    conf: "S",
+    references: ["SRC_URSUS_PAA_SYNOPSIS"],
+    st: ["青年", "壮年"],
+    need: ["ursus_student_assembly_active"],
+    after: { id: "life_ursus_student_assembly_protest", min: 6 },
+    ge: { year: 1107, age: 18 },
+    once: true,
+    w: 0.16,
+    show: s => s.lifeRecord?.affiliations?.some(row =>
+      row.id === "ursus-student-assembly" && ["active", "crisis"].includes(row.status)),
+      t: "あの冬の事件から何年もが過ぎた。学びの場や仕事、住まいが以前とは変わった人も多い。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との平穏な暮らしを思いながら、返事を書くか迷った。",
+    c: [
+      $terraData.K("今の暮らしに障らない範囲で、そのひとりとだけ細く連絡を保つ", {}, [
+        1,
+        "当時の仲間ひとりとだけ宛先を繋いでおくことにした。もう集会などに顔を出すことはないが、折に触れて無事を確かめ合うだけなら続けられそうだった。",
+        {
+          lifeAffiliation: {
+            id: "ursus-student-assembly",
+            title: "サンクト・グリファーブルク学生連合とのつながり",
+            kind: "community",
+            action: "role",
+            role: "後年の限定的な連絡役"
+          },
+          lifeGoal: {
+            id: "ursus-student-assembly",
+            action: "compromise",
+            note: "現在の暮らしを優先しながら一人と連絡を保つ"
+          },
+          p: 1
+        }
+      ]),
+      $terraData.K("知っている昔の仲間の宛先を世話役に託し、自分は手を引く", {}, [
+        1,
+        "今も連絡がつく仲間と、あれきり消息の知れない仲間の名前を整理して世話役に渡し、自分はこれで役目を降りた。",
+        {
+          lifeAffiliation: {
+            id: "ursus-student-assembly",
+            title: "サンクト・グリファーブルク学生連合とのつながり",
+            kind: "community",
+            action: "leave",
+            note: "知っている連絡先を引き継いで役目を終えた"
+          },
+          lifeGoal: {
+            id: "ursus-student-assembly",
+            action: "complete",
+            note: "昔の仲間の連絡網を引き継ぎ、役割を終えた"
+          },
+          fl: { ursus_student_assembly_active: 0 },
+          regionalImpact: {
+            region: "ウルサス",
+            entity: "学生連合の個人連絡帳",
+            kind: "limited-handover",
+            description: "手元にあった昔の仲間たちの連絡先を世話役へ引き継いだ",
+            basis: "game-future-assumption"
+          },
+          p: 1
+        }
+      ]),
+      $terraData.K("もう昔の集まりとは関わらないと伝え、今の生活へ戻る", {}, [
+        1,
+        "これからは連絡を取らないと短く書き送り、返事は待たなかった。今の仕事と家族の暮らしを何より守ることにした。",
+        {
+          lifeAffiliation: {
+            id: "ursus-student-assembly",
+            title: "サンクト・グリファーブルク学生連合とのつながり",
+            kind: "community",
+            action: "leave",
+            note: "後年に本人の意思で連絡を終えた"
+          },
+          lifeGoal: { id: "ursus-student-assembly", action: "abandon", note: "後年に別の生活を選んだ" },
+          fl: { ursus_student_assembly_active: 0 },
+          p: 0
+        }
+      ])
+    ]
+  }
+~~~
+
+## data/parts/routes/regional-careers/entry-west.js
+
+### `car_vic_royal_entry`
+
+~~~js
+{
+      id: "car_vic_royal_entry",
+      conf: "S",
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.5,
+      ge: { age: 20, year: 1092 },
+      show: s => s.res?.n === "ヴィクトリア" && s.job === 0 && !s.fl?.retired && (s.cr || 0) >= 25 && s.sn?.car_vic_royal_choice_coup == null,
+      t: "ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要な条件を確かめることにした。",
+      c: [
+        $terraData.K("推薦状と経歴を提出し、採用審査を受ける", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+          0.35,
+          "これまでの経験を確認され、軍務の仕事に採用された。配属先の規則と装備の扱いを教わり、新しい職場で働き始めた。",
+          $terraData.regionalCareerStaff(
+            "vic_royal",
+            "victoria-royal-officer",
+            "ヴィクトリア公爵軍",
+            "公爵軍近衛少尉",
+            "victoria-officer-career",
+            "大公爵の派閥抗争の中で軍歴を重ね、権力を掴む",
+            "royal-command",
+            "貴族戦術学・軍団運用論",
+            { cr: 4, k: 3, p: 2 }
+          )
+        ], [
+          0.75,
+          "採用の口利きには多額の金が必要だと告げられた。不透明な借入条件を受け入れ、軍務の職場へ入ったが、重い返済義務が残った。",
+          $terraData.regionalCareerStaff(
+            "vic_royal",
+            "victoria-royal-officer",
+            "ヴィクトリア公爵軍",
+            "下級任官少尉（借金仕官）",
+            "victoria-officer-career",
+            "莫大な任官借金を抱えながら、公爵の顔色を窺う",
+            "royal-command",
+            "貴族戦術学・軍団運用論",
+            { cr: 2, p: -2, debt: 2500000 }
+          )
+        ], [
+          1,
+          "提出した経歴を見た担当者に冷たく断られた。採用理由は説明されず、持ち帰った書類の角だけが折れていた。",
+          { p: -5 }
+        ]),
+        $terraData.K("採用条件が合わないため、応募を見送る", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
+          1,
+          "募集の条件を控えたうえで応募を見送り、ほかの働き口を探し始めた。",
+          { p: 1 }
+        ])
+      ]
+    }
+~~~
+
+## data/life/goals-and-family.js
+
+### `people_school_life_conversation`
+
+~~~js
+{
+      id: "people_school_life_conversation",
+      conf: "S",
+      references: $terraData.lifeRefs,
+      st: ["少年", "青年", "壮年"],
+      cd: 6,
+      w: 0.42,
+      show: s => !!educationLegacyTeacherContact(s,{known:true}),
+      t: s => educationLegacySceneGuard(s,"education_school_classroom")
+        ? "授業後の教室で、いつも教えてくれる先生がチョークの粉を払いながら机を並べていた。授業以外の話をしたことはまだない。"
+        : "夕暮れの道で再会したかつての恩師と、懐かしさに足をとめて言葉を交わした。教わっていた頃を思い出しながら、今の暮らしについて立ち話をする。",
+      c: [
+        $terraData.K("最近の暮らしぶりや近況を尋ねてみる", {}, [
+          1,
+          "教壇の向こうでは見えなかった普段の暮らしの話を聞き、帰り道でもその言葉が温かく胸に残った。",
+          { educationAction:"legacy:teacher-talk", rl: 1 }
+        ]),
+        $terraData.K("前に習ったことで気になっていた疑問を一つだけ尋ねる", {}, [
+          1,
+          "ずっと引っかかっていた問いを一つだけ尋ね、明快な答えに礼を言ってから別れた。",
+          { k: 1 }
+        ])
+      ]
+    }
+~~~
+
+### `people_school_housing_concern`
+
+~~~js
+{
+      id: "people_school_housing_concern",
+      conf: "S",
+      references: $terraData.lifeRefs,
+      st: ["少年", "青年", "壮年"],
+      cd: 7,
+      w: 0.36,
+      show: s => !!educationLegacyTeacherContact(s,{known:true}),
+      t: "顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。",
+      c: [
+        $terraData.K("教材箱の運搬や黒板消しを手伝う", {}, [
+          1,
+          "少しでも早く帰れるよう、重い箱を一緒に棚へ運んだ。教え手は礼を言い、机の上の講義ノートを鞄へ収めた。",
+          { educationAction:"legacy:teacher-concern", rl: 1 }
+        ]),
+        $terraData.K("次の授業でどこを扱うかだけ確かめておく", {}, [
+          1,
+          "次回の範囲を尋ねると、教え手は端に書き込みのある予定表を示しながら、要点を手短に教えてくれた。",
+          { k: 1 }
+        ])
+      ]
+    }
+~~~
+
+## data/base/life-and-health.js
+
+### `ksc`
+
+~~~js
+{
+      id: "ksc",
+      conf: "S",
+      st: ["青年", "壮年"],
+      need: ["子あり"],
+      after: { id: "chi", min: 6 },
+      show: s => s.kids?.some(child =>
+        Number.isFinite(child.by) && s.year-child.by>=6 &&
+        s.year-child.by<=12),
+      t: "子どもが学校へ通う年齢になった。どこで学べるのか、家では話題にするようになったが、受入先も通学の方法もまだ分かっていない。手元に用意できる学用品のことから考え始めた。",
+      c: [
+        $terraData.K("学校や学用品の費用を調べ、支度の相談をする", {}, [
+          1,
+          "授業を受けられる場所と、通うために必要な品を一つずつ書き出した。学校に入れるかどうかは、本人の希望と受入先の返事を確かめてから決めることにした。",
+          { p: 2 }
+        ]),
+        $terraData.K("今は生活費を優先し、支度の相談を続ける", {}, [
+          1,
+          "家計の数字を見直し、今すぐ買う必要のない品を後回しにした。子どもの進路については、本人の考えを聞きながら調べ続けることにした。",
+          { p: -1 }
+        ])
+      ]
+    }
+~~~
