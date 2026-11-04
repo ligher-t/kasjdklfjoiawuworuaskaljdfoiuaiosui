@@ -15,6 +15,8 @@ const approved=Object.freeze([
   "p15-education-regional-representatives.test.cjs",
   "p15-education-causal-boundaries.test.cjs",
   "p15-education-annual-lifecourse.test.cjs",
+  "p15-education-transfer-and-dependents.test.cjs",
+  "p15-education-infection-and-history.test.cjs",
   "p18-education-operations-mobility.test.cjs",
   "p18-education-case-fsm.test.cjs",
   "p18-education-finance-ledger.test.cjs",
