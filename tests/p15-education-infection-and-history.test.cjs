@@ -104,7 +104,7 @@ function makeHistoryState(region,city,year,seed,kind='移動都市の居住区')
       districtId:'p15-historic:'+city}};
 }
 setup(ctx,{id:'p15-history-runtime',region:'ウルサス',seed:150121,age:18});
-const history=JSON.parse(vm.runInContext('JSON.stringify((()=>{'+makeHistoryState.toString()+';return ('+function(){
+const history=JSON.parse(vm.runInContext('JSON.stringify((()=>{'+makeHistoryState.toString()+';return ('+(function(){
   const outcomes={};
   // D21: civil-war metadata by itself cannot destroy every school in Kazdel.
   {
