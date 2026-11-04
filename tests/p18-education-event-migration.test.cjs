@@ -55,7 +55,7 @@ assert.equal(corpus.choices,159);
 assert.equal(corpus.notes,46);
 assert.equal(corpus.unique,80);
 assert.deepEqual(corpus.held,["E57","E59","E60","E65","E66","E73"]);
-assert.equal(corpus.enabled.length,74);
+assert.equal(corpus.enabled.length,73);
 assert.equal(corpus.conditional,2);
 assert.equal(corpus.exact,
   "診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。");
@@ -214,7 +214,7 @@ assert.equal(legacy.alreadyApplied,true);
 assert.equal(legacy.learned,true);
 assert.equal(legacy.provider,true);
 assert.equal(legacy.noDegree,true);
-console.log("PASS P13/P17 80 reviewed prose, 74 evidence-gated scenes, scoped I03-I06 effects, and safe legacy classroom guards");
+console.log("PASS P13/P17 80 reviewed prose, 73 P17 events plus the existing I03 lower-stage scene, scoped I03-I06 effects, and safe legacy classroom guards");
 
 
 fresh();
