@@ -16,6 +16,8 @@
 
 ## 2026-11-03 U-19：地域固有職の再採用と達成済み人生目標の保全
 
+- [ ] 所属スコープ監査の未一致：`v87_affiliation_career_paths.js:228` で歴史イベントの `hist-*` 8所属IDが `AFFILIATION_RULES` と一致せず、教育CIが失敗する。`hist-columbia_independence`、`hist-kazdel_civil_war`、`hist-kazdel_commission_founded`、`hist-kazdel_war_declared`、`hist-leith_revolution`、`hist-rim_billiton_independence`、`hist-siracusa_unification`、`hist-ursus_great_rebellion` の物理／遠隔スコープと実加入を照合して是正する。高度な設定の着手前 `187acfb` の[CI](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41923058310)でも同じ工程が失敗し、今回 `917d6ec` の[CI](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41928529347)とローカル実行でID差分を確認した。期待一覧の追加だけで校閲済みと扱わない。
+
 - 地域固有職（職業ID 41〜82）の採用結果は、離職後のクールダウンを経て同じ仕事へ戻れる。採用時の `lifeGoal.start` に `preserveAchievement` を明示し、既に達成済みの目標を活動中へ戻さない。未達成の `compromised` 目標は通常どおり `active` へ復帰する。
 - 所属ID・目標IDは維持し、復職時は新しい在籍期間を追加する。初回離職年、最初の達成年、職業変遷、再採用年をそれぞれ保持する。プレイヤー表示文面の追加・改稿なし。
 - 龍門の裏社会ブローカー（45）、リターニアの宮廷音楽家（59）、サーミの北方護衛（71）で初回採用→離職→3年後の再採用を実エンジンで再現。達成済み2件・未達成1件の目標と所属エピソード、旧職の契約境界を検証。対象テスト `v88_regional_career_outcomes.test.cjs` と `v88_workplace_goal_departure_contracts.test.cjs` が合格。
