@@ -146,7 +146,7 @@ assert.equal(r.personalBefore,30000000);
 const fatal = JSON.parse(vm.runInContext(`JSON.stringify((() => {
   born({seed:109908,by:1067,region:"クルビア"});
   S.year=1099;S.age=32;S.mo=6;
-  S.cash=30000000;S.residenceArrangement="independent";
+  S.cash=30000000;S.residenceArrangement="independent_rental";
   S.fl.household_separated=1;
   const dest=MIGRATION_ROUTES[S.res.n][0].n;
   const trip=travelStart(S,{purpose:"flight",destinationRegion:dest});
