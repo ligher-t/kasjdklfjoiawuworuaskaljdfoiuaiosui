@@ -55,7 +55,7 @@ assert.equal(corpus.choices,159);
 assert.equal(corpus.notes,46);
 assert.equal(corpus.unique,80);
 assert.deepEqual(corpus.held,["E57","E59","E60","E65","E66","E73"]);
-assert.equal(corpus.enabled.length,12);
+assert.equal(corpus.enabled.length,74);
 assert.equal(corpus.conditional,2);
 assert.equal(corpus.exact,
   "診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。");
@@ -214,7 +214,7 @@ assert.equal(legacy.alreadyApplied,true);
 assert.equal(legacy.learned,true);
 assert.equal(legacy.provider,true);
 assert.equal(legacy.noDegree,true);
-console.log("PASS P13/P17 80 reviewed prose, 12 activated scenes, scoped I03-I06 effects, and safe legacy classroom guards");
+console.log("PASS P13/P17 80 reviewed prose, 74 evidence-gated scenes, scoped I03-I06 effects, and safe legacy classroom guards");
 
 
 fresh();
@@ -269,3 +269,28 @@ const actualClassroom=run(function(){
 assert.equal(actualClassroom.enrolled,true);
 assert.equal(actualClassroom.afterWithdrawal,false);
 assert.equal(actualClassroom.noNewEnrollment,true);
+
+// The 62 newly connected scenes are registered without manufacturing facts.
+fresh("クルビア",19);
+const extra=run(function(){
+  const s=S;s.mo=4;ensureResidenceIdentity(s);
+  ensureEducationWorldForResidence(s);
+  const entries=window.GAME_DATA.EDUCATION_P17_REVIEWED;
+  const candidates=entries.filter(x=>EDUCATION_P17_EXTRA.has(x.reviewId));
+  const events=candidates.map(x=>EV.find(e=>e.id===x.eventId));
+  const before=events.filter(e=>e && educationMigrationEligible(s,e.id)).map(e=>e.id);
+  const prior=JSON.stringify(s.educationRecord||{});
+  const held=entries.filter(x=>x.decision==="保留")
+    .some(x=>EV.some(e=>e.id===x.eventId));
+  const notEligible=educationMigrationEligible(s,"edu_region_ursus_class_and_school");
+  return {connected:candidates.length,allPresent:events.every(Boolean),
+    liveWithoutEvidence:before,held,noChange:prior===JSON.stringify(s.educationRecord||{}),
+    notEligible};
+});
+assert.equal(extra.connected,62);
+assert.equal(extra.allPresent,true);
+assert.deepEqual(extra.liveWithoutEvidence,[]);
+assert.equal(extra.held,false);
+assert.equal(extra.noChange,true);
+assert.equal(extra.notEligible,false);
+console.log("PASS P17 all 62 additional scenes registered, six held, no invented evidence");
