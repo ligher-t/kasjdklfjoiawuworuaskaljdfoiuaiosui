@@ -101,3 +101,51 @@ function educationLegacySceneGuard(s,id) {
   }
   return true;
 }
+
+
+function educationLegacyTeacherContact(s,{known=false,minElapsed=0}={}) {
+  const world=s?.world?.educationWorld;
+  if(!world||!s.local?.educationAreaId||s.dead)return null;
+  const candidates=Object.values(s.educationPeopleTies?.items||{})
+    .filter(t=>t.role==="teacher" && t.personId &&
+      (known ? t.personallyKnown===true : t.personallyKnown!==true))
+    .map(t=>({tie:t,staff:world.staff?.[t.personId]}))
+    .filter(({tie,staff})=>{
+      const campus=world.campuses?.[staff?.campusId],
+        school=staff && educationSchoolStatusAt(s,staff.offeringId,s.year,s.mo??0),
+        last=known?(tie.contacts?.at(-1)?.year??tie.metAt?.year):null;
+      return !!staff && staff.status==="assigned" &&
+        !!campus && campus.educationAreaId===s.local.educationAreaId &&
+        !!school && school.teachingEquivalent>0 &&
+        (!known || Number.isInteger(last) && s.year-last>=minElapsed);
+    })
+    .sort((a,b)=>a.staff.id.localeCompare(b.staff.id));
+  return candidates[0]||null;
+}
+function educationLegacyTeacherAction(s,action) {
+  const source=TRACE_RESOLUTION?.id,
+    actionSources={
+      "legacy:teacher-meet":"people_school_introduction",
+      "legacy:teacher-followup":"people_school_followup",
+      "legacy:teacher-help":"people_school_small_help"
+    };
+  if(actionSources[action]!==source)
+    throw Error("教師との面識を確定するイベントが一致しない");
+  const known=action!=="legacy:teacher-meet",
+    candidate=educationLegacyTeacherContact(s,{
+      known,minElapsed:action==="legacy:teacher-followup"?2:0
+    });
+  if(!candidate)throw Error("現在地に確認済みの教員との接点がない");
+  const {tie,staff}=candidate,at={year:s.year,month:s.mo??0};
+  tie.personallyKnown=true;
+  tie.metAt ||= at;
+  tie.relation="personally-met-school-teacher";
+  tie.contacts ||= [];
+  const id=source+":"+staff.id+":"+s.year+":"+(s.mo??0);
+  if(!tie.contacts.some(x=>x.evidenceRef===id))
+    tie.contacts.push({year:s.year,month:s.mo??0,evidenceRef:id,source});
+  if(!tie.knowledgeEvidenceIds.includes(id))
+    tie.knowledgeEvidenceIds.push(id);
+  return {personId:staff.personId,enrollmentId:tie.enrollmentId,
+    institutionId:staff.institutionId,evidenceRef:id};
+}
