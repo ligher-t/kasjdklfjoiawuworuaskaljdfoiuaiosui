@@ -1,3 +1,7 @@
+## 2026-11-04：G0〜G3 回帰とCI受入
+
+- Draft PR #2 の歴史境界CI [41817008954](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41817008954) と教育・生活経路CI [41817008926](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41817008926) はコミット `7753998d9` でともに成功。エンジン改訂番号、年表・旅程テスト、学校出席、全件カタログ鮮度が合格した。
+- G3-3の旅程中死亡時の状態終了と終幕所在地表示は次コミットで実装。G3-3を含む最終CIは別途同一ブランチの最新SHAで検証する。
 ## 2026-11-04 G3-3：移動中の死亡と所在地の確定
 
 - 活動中の旅程は死亡イベントで `ended-by-death` として閉じる。最後の旅程ID・区間ID・出発地域・到着予定地域・時点（不明なら月 null）を本人の `deathTravel` に保持。住居や知人、契約は無断移転しない。
