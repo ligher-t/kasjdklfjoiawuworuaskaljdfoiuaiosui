@@ -7,10 +7,11 @@
 
 ## 現況
 
-- I03–I06:進路・会計等へ一部接続済：7件
+- I03–I06:進路・会計等へ一部接続済：6件
 - I07:学籍・授業・施設別発火ガード：38件
 - I07:P13維持確認済（改修対象外）：78件
-- I07:個別効果・本文移行が必要：48件
+- I07:個別効果・本文移行済：11件（うちI03–I06の部分接続1件を完了）
+- I07:個別効果・本文移行が必要：38件（うち一部改修済5件）
 - I07:正規学籍への旧経路の二重適用を除外：3件
 - 既存休止（show:false）：4件
 
@@ -25,16 +26,16 @@
 | P2 | `car` | `data/base/career-entry.js` | 維持 | I07:P13維持確認済（改修対象外） | 就職応募であり学校の入学試験に変換しない |
 | P2 | `life_victoria_failed_application_followup` | `data/base/career-entry.js` | 維持 | I07:P13維持確認済（改修対象外） | 事務職応募に失敗した後日談、過去の応募記録を参照 |
 | P2 | `vic_clerk_later_years` | `data/base/career-entry.js` | 維持 | I07:P13維持確認済（改修対象外） | 事務職で後輩を指導する場面、雇用先の職務に限定 |
-| P1 | `ksc` | `data/base/life-and-health.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 子の入学準備資金、子本人の学校・居住地と親負担を照合 |
+| P1 | `ksc` | `data/base/life-and-health.js` | 接続変更 | I07:改修・接続済み | 子の入学準備資金、子本人の学校・居住地と親負担を照合 |
 | P2 | `elder_work_opportunity` | `data/base/life-and-health.js` | 維持 | I07:P13維持確認済（改修対象外） | 高齢者の店番・読み書き指導求人、教える相手と学籍は別 |
 | P2 | `hobby_strain` | `data/base/family-and-livelihood.js` | 維持 | I07:P13維持確認済（改修対象外） | 趣味の月謝と家計の悩み、正式学費の請求に混ぜない |
-| P0 | `race_identity` | `data/base/family-and-livelihood.js` | 本文分岐 | I07:今後の個別効果・本文移行が必要 | 教室の名簿と家庭・近隣の出自経験の本文変種が混在 |
+| P0 | `race_identity` | `data/base/family-and-livelihood.js` | 本文分岐 | I07:一部改修済み・個別移行継続 | 教室の名簿と家庭・近隣の出自経験の本文変種が混在 |
 | P2 | `family_launch` | `data/base/family-and-livelihood.js` | 維持 | I07:P13維持確認済（改修対象外） | 家計への労働拠出相談、現行の教育必須判断と競合させない |
 | P2 | `family_separation` | `data/base/family-and-livelihood.js` | 維持 | I07:P13維持確認済（改修対象外） | 家計分離と転居、現行の学籍や通学路はP08で別判定 |
-| P1 | `fam_unemploy` | `data/base/family-and-livelihood.js` | 本文分岐 | I07:今後の個別効果・本文移行が必要 | 失業した親と児童の就労・就学希望、学校がない場合の文を用意 |
+| P1 | `fam_unemploy` | `data/base/family-and-livelihood.js` | 本文分岐 | I07:改修・接続済み | 失業した親と児童の就労・就学希望、学校がない場合の文を用意 |
 | P2 | `fam_infected` | `data/base/family-and-livelihood.js` | 維持 | I07:P13維持確認済（改修対象外） | 親の感染を知った家庭内相談、学校への自動通知は禁止 |
 | P2 | `fam_tribetree` | `data/base/family-and-livelihood.js` | 維持 | I07:P13維持確認済（改修対象外） | サーミの氏族養育と移住、口承の学びを学位に変換しない |
-| P1 | `fam_inherit` | `data/base/family-and-livelihood.js` | 本文分岐 | I07:今後の個別効果・本文移行が必要 | 親の店の継承と学業継続の選択、本人の在籍の有無で文を変える |
+| P1 | `fam_inherit` | `data/base/family-and-livelihood.js` | 本文分岐 | I07:改修・接続済み | 親の店の継承と学業継続の選択、本人の在籍の有無で文を変える |
 | P2 | `f14` | `data/base/daily-childhood.js` | 維持 | I07:P13維持確認済（改修対象外） | 生成型幼少期日常イベント、学校制度変更の直接根拠を未特定 |
 | P2 | `f17` | `data/base/daily-childhood.js` | 維持 | I07:P13維持確認済（改修対象外） | 生成型幼少期の日常学校場面、実在校・授業参加を要件へ |
 | P2 | `f18` | `data/base/daily-childhood.js` | 維持 | I07:P13維持確認済（改修対象外） | 生成型幼少期の日常学校場面、実在校・授業参加を要件へ |
@@ -52,7 +53,7 @@
 | P2 | `f91` | `data/base/daily-regional.js` | 維持 | I07:P13維持確認済（改修対象外） | 生成型地域日常イベント、文脈の語彙一致段階 |
 | P1 | `daily_yan_53` | `data/regional/yan.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 炎国の書院で古典講読、書院課程と参加を要求 |
 | P1 | `daily_yan_54` | `data/regional/yan.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 官吏登用試験の模擬答案、受験準備講座の参加を要求 |
-| P1 | `daily_yan_55` | `data/regional/yan.js` | 本文分岐 | I07:今後の個別効果・本文移行が必要 | 灯火の下での長時間読書、正規学生と独学の双方で成立 |
+| P1 | `daily_yan_55` | `data/regional/yan.js` | 本文分岐 | I07:改修・接続済み | 灯火の下での長時間読書、正規学生と独学の双方で成立 |
 | P1 | `daily_yan_56` | `data/regional/yan.js` | 本文分岐 | I07:学籍・授業・施設別発火ガード | 天師府術師の特別講義、所属学生か公開聴講者かを分岐 |
 | P1 | `daily_lungmen_58` | `data/regional/lungmen.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 情報端末室で国際金融・情報処理、教室設備と高等課程 |
 | P1 | `daily_lungmen_59` | `data/regional/lungmen.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 下校後の級友との寄り道、同じ生活圏と通学帰路 |
@@ -66,7 +67,7 @@
 | P2 | `choice_ursus_03` | `data/regional/ursus.js` | 維持 | I07:P13維持確認済（改修対象外） | ウルサスで隣人の教師による秘密印刷を目撃、教師との関係は就学条件ではない |
 | P1 | `daily_victoria_57` | `data/regional/victoria.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 古典朗読の授業、正式な履修または対象講座 |
 | P1 | `daily_victoria_58` | `data/regional/victoria.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 蒸気ピストンの工学実習、上位課程と工学実習室 |
-| P1 | `daily_victoria_59` | `data/regional/victoria.js` | 本文分岐 | I07:今後の個別効果・本文移行が必要 | 運河沿いで他の学生の漕艇練習を目撃、自分の在籍とは独立 |
+| P1 | `daily_victoria_59` | `data/regional/victoria.js` | 本文分岐 | I07:改修・接続済み | 運河沿いで他の学生の漕艇練習を目撃、自分の在籍とは独立 |
 | P1 | `daily_victoria_60` | `data/regional/victoria.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 学校の弁論部、課外活動と所属・稼働条件 |
 | P2 | `daily_leithanien_13` | `data/regional/leithanien.js` | 維持 | I07:P13維持確認済（改修対象外） | 番号生成型の街路日常、抽出語だけでは学校体験と確定しない |
 | P2 | `daily_leithanien_29` | `data/regional/leithanien.js` | 維持 | I07:P13維持確認済（改修対象外） | 番号生成型の日常、学校以外の場面を消さない |
@@ -91,20 +92,20 @@
 | P1 | `daily_kazimierz_59` | `data/regional/kazimierz.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | スポンサー契約・八百長対策の商業法規講義、専門履修 |
 | P1 | `daily_kazimierz_60` | `data/regional/kazimierz.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 騎士学校の学費・武具維持費、保護者への請求はP07の請求ID |
 | P2 | `daily_siracusa_51` | `data/regional/siracusa.js` | 維持 | I07:P13維持確認済（改修対象外） | 法学生の屋外討論を目撃、観客の学籍は不要 |
-| P0 | `daily_kazdel_56` | `data/regional/kazdel.js` | 本文分岐 | I07:今後の個別効果・本文移行が必要 | 戦災地区の青空教室、正規学籍ゼロでも非正規学習なら参加可能 |
+| P0 | `daily_kazdel_56` | `data/regional/kazdel.js` | 本文分岐 | I07:改修・接続済み | 戦災地区の青空教室、正規学籍ゼロでも非正規学習なら参加可能 |
 | P1 | `choice_kazdel_05` | `data/regional/kazdel.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 戦災孤児向け天幕寺子屋の開設、学校資格の自動付与なし |
 | P2 | `choice_iberia_09` | `data/regional/iberia.js` | 維持 | I07:P13維持確認済（改修対象外） | 古い望遠鏡の修復と観測、学校の授業とは別 |
 | P1 | `choice_bolivar_07` | `data/regional/bolivar.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 戦災で破損した村の小学校校舎の再建支援、開校は別確認 |
 | P2 | `choice_rim_08` | `data/regional/rim-billiton.js` | 維持 | I07:P13維持確認済（改修対象外） | 鉱区住宅の換気設備支援、学校外の公共衛生活動 |
 | P2 | `detain_life` | `data/base/confinement-and-education.js` | 維持 | I07:P13維持確認済（改修対象外） | 収容中の相談・書類と審査、学校に在籍している前提なし |
 | P2 | `veteran` | `data/base/confinement-and-education.js` | 維持 | I07:P13維持確認済（改修対象外） | 傭兵の退職・若手指導、職場での技能伝承 |
-| P0 | `education_return_path` | `data/base/confinement-and-education.js` | 別イベント化 | I03–I06:進路・会計等へ一部接続済 | 学齢後の再入学・正式準備課程・仕事／氏族師弟の非正規教育が混在 |
+| P0 | `education_return_path` | `data/base/confinement-and-education.js` | 別イベント化 | I07:再入学経路を案件へ接続済み | 学齢後の再入学・正式準備課程・仕事／氏族師弟の非正規教育が混在 |
 | P1 | `education_paused_life` | `data/base/confinement-and-education.js` | 接続変更 | I03–I06:進路・会計等へ一部接続済 | 休学中の暮らし、在籍先の再開と自習を分離 |
 | P1 | `education_school_classroom` | `data/base/confinement-and-education.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 放課後の復習と級友の手伝い、実際の授業実施日 |
 | P1 | `education_school_family_pressure` | `data/base/confinement-and-education.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 保護者失業などで通学継続困難、学校の在籍と家計の現況 |
 | P1 | `education_school_prejudice` | `data/base/confinement-and-education.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 教室内で出自をめぐるいじめ、学校・同級生・教員の主体 |
 | P1 | `education_school_disclosure_review` | `data/base/confinement-and-education.js` | 接続変更 | I07:正規学籍への旧経路の二重適用を除外 | 感染診断を学校へ公式申告する判断、旧校への通知と分離 |
-| P0 | `education_transfer_review` | `data/base/confinement-and-education.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 学校による受入拒否・閉鎖に伴う転学選択、入学先のID |
+| P0 | `education_transfer_review` | `data/base/confinement-and-education.js` | 接続変更 | I07:改修・接続済み | 学校による受入拒否・閉鎖に伴う転学選択、入学先のID |
 | P0 | `higher_ed` | `data/base/confinement-and-education.js` | 接続変更 | I03–I06:進路・会計等へ一部接続済 | 大学・職業校・アーツ学院の7系統出願、学校種別の実在・受験先ID |
 | P0 | `education_upper_path` | `data/base/confinement-and-education.js` | 接続変更 | I03–I06:進路・会計等へ一部接続済 | 前期中等修了後の後期中等への進学、別校・通学条件 |
 | P0 | `education_funding_review` | `data/base/confinement-and-education.js` | 接続変更 | I03–I06:進路・会計等へ一部接続済 | 学費納付・奨学・貸付・休学、学校側の制度と請求ID |
@@ -120,7 +121,7 @@
 | P2 | `family_divorce_parenting_review` | `data/parts/extensions/social-and-care/attitudes-family-knights.js` | 維持 | I07:P13維持確認済（改修対象外） | 離婚後の子の居所・養育相談、就学は本人別 |
 | P2 | `kaz_knight_injury_job_transition` | `data/parts/extensions/social-and-care/attitudes-family-knights.js` | 維持 | I07:P13維持確認済（改修対象外） | 負傷した騎士の事務職転向、学校入試と分離 |
 | P1 | `life_chernobog_neighbourhood_reopening` | `data/parts/extensions/social-and-care/local-support-referrals.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | チェルノボーグで中学校の再開告知を目撃、主人公の在籍は問わない |
-| P0 | `life_ursus_school_aid` | `data/parts/extensions/social-and-care/local-support-referrals.js` | 本文分岐 | I07:今後の個別効果・本文移行が必要 | チェルノボーグ事変の教室で同級生と避難する場面、非在籍者の視点も必要 |
+| P0 | `life_ursus_school_aid` | `data/parts/extensions/social-and-care/local-support-referrals.js` | 本文分岐 | I07:一部改修済み・個別移行継続 | チェルノボーグ事変の教室で同級生と避難する場面、非在籍者の視点も必要 |
 | P1 | `life_ursus_school_aid_followup` | `data/parts/extensions/social-and-care/local-support-referrals.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 学校避難支援の直後、以前知った同級生へ連絡を取る後日談 |
 | P1 | `life_ursus_school_aid_adult_followup` | `data/parts/extensions/social-and-care/local-support-referrals.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 成人後にチェルノボーグの古い同級生の連絡先を見返す後日談 |
 | P2 | `life_kazdel_displaced_daily` | `data/parts/extensions/social-and-care/kazdel-displaced-life.js` | 維持 | I07:P13維持確認済（改修対象外） | カズデル避難民の日常と仕事の手順、技能訓練は限定 |
@@ -135,8 +136,8 @@
 | P1 | `family_sibling_birth` | `data/parts/extensions/education-and-later-life/relationships-events-01.js` | 本文分岐 | I07:今後の個別効果・本文移行が必要 | きょうだいの出生と学校や家事の日課の相談、学籍のない子にも生活選択を残す |
 | P1 | `infection_school_disclosure` | `data/parts/extensions/education-and-later-life/relationships-events-03.js` | 接続変更 | I07:正規学籍への旧経路の二重適用を除外 | 鉱石病診断後の担任個人への相談と欠席届、学校全体への公式通知は別 |
 | P1 | `family_child_future` | `data/parts/extensions/education-and-later-life/family-care.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 成人に近づいた子の進学・就職・独立の支援、本人の意思・学籍を親と分ける |
-| P0 | `life_ursus_student_assembly_contact` | `data/parts/extensions/education-and-later-life/ursus-student-life.js` | 本文分岐 | I07:今後の個別効果・本文移行が必要 | 1101年の学生集会の噂、非在学でも見聞きできるが学校へ戻る文がある |
-| P1 | `life_ursus_student_assembly_meeting` | `data/parts/extensions/education-and-later-life/ursus-student-life.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 学生集会参加後の会合、初回参加と当時の場所を参照 |
+| P0 | `life_ursus_student_assembly_contact` | `data/parts/extensions/education-and-later-life/ursus-student-life.js` | 本文分岐 | I07:改修・接続済み | 1101年の学生集会の噂、非在学でも見聞きできるが学校へ戻る文がある |
+| P1 | `life_ursus_student_assembly_meeting` | `data/parts/extensions/education-and-later-life/ursus-student-life.js` | 接続変更 | I07:改修・接続済み | 学生集会参加後の会合、初回参加と当時の場所を参照 |
 | P1 | `life_ursus_student_assembly_protest` | `data/parts/extensions/education-and-later-life/ursus-student-life.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | サンクト・グリファーブルクでの抗議参加、当時の参加フラグ |
 | P2 | `life_ursus_katorga_life` | `data/parts/extensions/education-and-later-life/ursus-student-life.js` | 維持 | I07:P13維持確認済（改修対象外） | カトルガ収容区画の生存経験、現学籍を要求しない |
 | P1 | `life_ursus_student_assembly_release` | `data/parts/extensions/education-and-later-life/ursus-student-life.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 収容からの釈放と旧友への連絡、当時の経験 |
@@ -146,7 +147,7 @@
 | P1 | `elder_choice_grandchild_gift` | `data/parts/extensions/education-and-later-life/elder-life.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 学校へ上がる孫への祝いの金品、実学校入学や学費納付を自動成立させない |
 | P2 | `family_spouse_unemployment_support` | `data/extensions/family-and-community.js` | 維持 | I07:P13維持確認済（改修対象外） | 配偶者の技能講習費支援、配偶者本人の意思と費用 |
 | P1 | `life_ursus_school_habit` | `data/extensions/family-and-community.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | ウルサスで実際に登校していた児童が授業と家の手伝いを考える |
-| P1 | `life_ursus_classmate_contact` | `data/extensions/family-and-community.js` | 条件追加 | I07:今後の個別効果・本文移行が必要 | 以前の学校生活後、同級生にノートを貸す場面、本人の過去の就学経験が必要 |
+| P1 | `life_ursus_classmate_contact` | `data/extensions/family-and-community.js` | 条件追加 | I07:一部改修済み・個別移行継続 | 以前の学校生活後、同級生にノートを貸す場面、本人の過去の就学経験が必要 |
 | P1 | `life_ursus_school_aid_later` | `data/extensions/family-and-community.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | チェルノボーグ避難後の旧友との文通、現学籍や現住所を要件にしない |
 | P1 | `ori_school_fragment` | `data/social/organizations-and-infection.js` | 本文分岐 | I07:今後の個別効果・本文移行が必要 | 路上の不明な結晶の児童への対応、教師に報告する選択を非在籍者へ調整 |
 | P2 | `ori_iberia_origin_doubt` | `data/social/organizations-and-infection.js` | 維持 | I07:P13維持確認済（改修対象外） | イベリア港湾の感染疑惑と安全点検、学校生活とは別 |
@@ -183,17 +184,17 @@
 | P1 | `people_school_life_conversation` | `data/life/goals-and-family.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 顔なじみの教え手との近況、人物IDの継続 |
 | P1 | `people_school_housing_concern` | `data/life/goals-and-family.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 教員の住居・教材の相談、学校への参加とは独立 |
 | P2 | `inter_ursus_minority_work_v76` | `data/work/contracts.js` | 維持 | I07:P13維持確認済（改修対象外） | 兵営での出自照会、学校出願とは別 |
-| P1 | `v77_child_informal_study` | `data/social/learning.js` | 条件追加 | I07:今後の個別効果・本文移行が必要 | 9〜17歳の非在籍児童の近隣識字教室または独学 |
+| P1 | `v77_child_informal_study` | `data/social/learning.js` | 条件追加 | I07:改修・接続済み | 9〜17歳の非在籍児童の近隣識字教室または独学 |
 | P2 | `v77_written_application` | `data/social/learning.js` | 維持 | I07:P13維持確認済（改修対象外） | 求人への応募書類を自書するか相談する、学校入試ではない |
 | P2 | `v77_sarkaz_historical_tension` | `data/social/learning.js` | 維持 | I07:P13維持確認済（改修対象外） | サンクタとサルカズの歴史話、学校課程を前提としない |
-| P0 | `v77_adult_literacy_path` | `data/social/learning.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 成人識字教室の言語ID未指定と講座の費用・期間 |
+| P0 | `v77_adult_literacy_path` | `data/social/learning.js` | 接続変更 | I07:一部改修済み・個別移行継続 | 成人識字教室の言語ID未指定と講座の費用・期間 |
 | P2 | `v78_identity_home_language` | `data/social/conflict.js` | 維持 | I07:P13維持確認済（改修対象外） | 家庭言語と役所文書の隔たり、在籍の必要なし |
 | P2 | `v81_housing_account` | `data/review/choice-policy.js` | 維持 | I07:P13維持確認済（改修対象外） | 住居申請の書類整理、教育制度の出願ではない |
 | P1 | `v82_teacher_continuity` | `data/relationships/person-ties.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 知り合いの教師と授業内容の相談、当該学校・在職を参照 |
 | P0 | `daily_siracusa_50` | `data/regional/siracusa.js` | 条件追加 | I07:学籍・授業・施設別発火ガード | 放課後に教会回廊で宿題、現行に就学条件なし |
 | P2 | `daily_leithanien_10` | `data/regional/leithanien.js` | 維持 | I07:P13維持確認済（改修対象外） | 公園で音楽院生を見かける日常、本人の音楽院在籍不要 |
 | P2 | `daily_leithanien_12` | `data/regional/leithanien.js` | 維持 | I07:P13維持確認済（改修対象外） | 街路で音楽院生を見かける日常、本人の音楽院在籍不要 |
-| P1 | `daily_leithanien_54` | `data/regional/leithanien.js` | 接続変更 | I07:今後の個別効果・本文移行が必要 | 音楽院オーディション時の診断非開示、応募先・感染認知を具体化 |
+| P1 | `daily_leithanien_54` | `data/regional/leithanien.js` | 接続変更 | I07:一部改修済み・個別移行継続 | 音楽院オーディション時の診断非開示、応募先・感染認知を具体化 |
 | P2 | `choice_yan_06` | `data/regional/yan.js` | 維持 | I07:P13維持確認済（改修対象外） | 官吏登用試験へ向かう学友の旅費・受験料を支援、本人の受験とは別 |
 | P2 | `daily_yan_42` | `data/regional/yan.js` | 維持 | I07:P13維持確認済（改修対象外） | 村の年長者から伝統農具の修理を教わる学校外の学習 |
 
