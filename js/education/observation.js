@@ -295,7 +295,7 @@ function educationObservationDependentRows(s,{
       });
     const learning=facts.find(x=>
       typeof x.claim==="string"?
-        /school|study|learn|学校|就学|通学/.test(x.claim):
+        /school|stud(?:y|ies|ying)|learn|学校|就学|通学/.test(x.claim):
         !!x.claim.schoolOfferingId || !!x.claim.enrollmentId) ||null;
     const claim=learning && typeof learning.claim==="object"?
       learning.claim:null;
