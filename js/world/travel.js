@@ -83,10 +83,12 @@ function travelAnnualOutflow(state, year, paidBy) {
     .filter(row => row.kind === "fare" && row.year === year && row.paidBy === paidBy)
     .reduce((sum, row) => sum + row.amount, 0);
 }
-function travelProjectAnnualOutflow(state, year, paidBy) {
-  const amount = travelAnnualOutflow(state, year, paidBy);
+function travelProjectAnnualOutflow(state, closingYear, paidBy) {
+  // Annual finances close the preceding calendar year after advanceAnnualCalendar
+  // has already moved state.year forward.
+  const amount = travelAnnualOutflow(state, closingYear - 1, paidBy);
   const ledger = paidBy === "personal" ? state : state.house;
-  if (!amount || !ledger?.flow || ledger.flow.year !== year) return amount;
+  if (!amount || !ledger?.flow || ledger.flow.year !== closingYear) return amount;
   // An expense already debited during travel is only reported here.
   ledger.flow.expense.travelFare = amount;
   ledger.flow.net -= amount;

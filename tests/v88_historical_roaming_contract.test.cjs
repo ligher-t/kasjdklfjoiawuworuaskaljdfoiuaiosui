@@ -32,6 +32,8 @@ function run() {
   born({seed:109906,by:1067,region:"クルビア"});
   S.year=1099;S.age=32;S.mo=6;
   S.cash=30000000;S.house.cash=30000000;
+  S.residenceArrangement="family_home_shared_budget";
+  S.fl.household_separated=0;
   const origin=S.res.n;
   const dest=MIGRATION_ROUTES[origin].find(x=>(MIGRATION_ROUTES[x.n]||[]).some(y=>y.n===origin)).n;
   const beforeMoves=(S.moves||[]).length;
@@ -61,7 +63,38 @@ function run() {
   S.mo=9;
   travelStart(S,{purpose:"flight",destinationRegion:dest});
   travelEnd(S,"abandoned");
-  return {
+  // A separate adult itinerary uses the personal wallet. Failure must leave
+  // both the planned journey and the account untouched.
+  born({seed:109907,by:1067,region:"クルビア"});
+  S.year=1099;S.age=32;S.mo=6;
+  S.residenceArrangement="independent";
+  S.fl.household_separated=1;
+  S.cash=0;
+  const destination=MIGRATION_ROUTES[S.res.n][0].n;
+  const ownJourney=travelStart(S,{purpose:"work",destinationRegion:destination});
+  let insufficient=false;
+  try {travelDepart(S);}catch {insufficient=true;}
+  const noDebit=Object.keys(S.travelState.transactions).length===0 &&
+    ownJourney.status==="planned" && S.cash===0;
+  S.cash=30000000;
+  const ownCashBefore=S.cash;
+  travelDepart(S);
+  const ownTx=S.travelState.transactions[ownJourney.legs[0].id+":fare"];
+  const ownCashAfter=S.cash;
+  const blockedResidence=travelBlocksResidenceEvent({need:["国:クルビア"]},S);
+  const globalAllowed=!travelBlocksResidenceEvent({need:["成人"]},S);
+  advanceJourneyThrough(S,1099,7);
+  travelBeginReturn(S);
+  advanceJourneyThrough(S,1099,8);
+  travelEnd(S,"returned-home");
+  const cashBeforeProjection=S.cash;
+  S.year=1100;
+  S.flow={year:1100,expense:{},net:0};
+  const reportedFare=travelProjectAnnualOutflow(S,1100,"personal");
+  const noDoubleDebit=S.cash===cashBeforeProjection;
+  const annualFare=S.flow.expense.travelFare;
+  return {insufficient,noDebit,ownCashBefore,ownCashAfter,ownTx,
+    blockedResidence,globalAllowed,reportedFare,noDoubleDebit,annualFare,
     hist:hist.length,timeline:events.length,
     missing:events.filter(e=>!e.historicalScene).map(e=>e.id),
     cases,origin,dest,beforeMoves,
@@ -92,6 +125,14 @@ assert.equal(r.actualHome,r.origin);
 assert.deepEqual(r.audit,[]);
 assert.deepEqual(r.auditRestored,[]);
 assert.equal(r.active,null);
+assert.equal(r.insufficient,true);
+assert.equal(r.noDebit,true);
+assert.equal(r.ownTx.paidBy,"personal");
+assert.equal(r.ownCashBefore-r.ownCashAfter,r.ownTx.amount);
+assert.equal(r.blockedResidence,true);
+assert.equal(r.globalAllowed,true);
+assert.equal(r.noDoubleDebit,true);
+assert.equal(r.annualFare,r.reportedFare);
 assert(r.firstFare.amount > 0 && r.returnFare.amount > 0);
 assert.equal(r.firstFare.paidBy,"household");
 assert.equal(r.householdBefore-r.householdAfterOutbound,r.firstFare.amount);
