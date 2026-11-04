@@ -6,23 +6,212 @@
     {
       "id": "choice_ursus_04",
       "source": "data/regional/ursus.js:290",
-      "choices": [],
+      "choices": [
+        {
+          "choiceIndex": 0,
+          "label": "武功を立てて立身出世するため、陸軍に志願入隊する",
+          "gate": "{ intent: \"procedure\", en: { ge: { h: 60, cr: 45 } }, why: \"過酷な軍役に耐えうる体力と度胸がない。\" }",
+          "outcomes": [
+            {
+              "prob": "0.75",
+              "prose": "厳しい新兵訓練を首席で終え、下士官候補として配属。多額の支度金と軍人の栄誉を手にした。",
+              "effectRaw": "{ cash: 80000, cr: 8, p: 5, job: 14, residenceArrangement: \"independent_rental\", fl: { household_separated: 1, sch: 0 } }",
+              "effectKeys": [
+                "cash",
+                "cr",
+                "p",
+                "job",
+                "residenceArrangement",
+                "fl",
+                "household_separated",
+                "sch"
+              ]
+            },
+            {
+              "prob": "1",
+              "prose": "過酷な訓練で重傷を負い、除隊を余儀なくされた。わずかな見舞金とともに故郷へ送還された。",
+              "effectRaw": "{ h: -20, cash: 20000, p: -4, job: 0 }",
+              "effectKeys": [
+                "h",
+                "cash",
+                "p",
+                "job"
+              ]
+            }
+          ]
+        },
+        {
+          "choiceIndex": 1,
+          "label": "軍務を辞退し、後方の兵站工場で物資製造に従事する",
+          "gate": "{ intent: \"self-or-family-care\" }",
+          "outcomes": [
+            {
+              "prob": "1",
+              "prose": "安全な工場で軍用缶詰や外套の生産に励み、手堅い月給と食糧配給を確保した。",
+              "effectRaw": "{ cash: 25000, p: 2 }",
+              "effectKeys": [
+                "cash",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "choiceIndex": 2,
+          "label": "軍への関与を一切断り、民間の一市民として暮らす",
+          "gate": "{ intent: \"withdrawal\" }",
+          "outcomes": [
+            {
+              "prob": "1",
+              "prose": "徴募官の鋭い視線を避けて応募を見送った。慎ましくも平穏な日々に感謝した。",
+              "effectRaw": "{ p: 1 }",
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
       "declared": 3,
-      "expectedOutcomes": 4
+      "expectedOutcomes": 4,
+      "parseCorrection": "bare-K handled"
     },
     {
       "id": "choice_victoria_01",
       "source": "data/regional/victoria.js:230",
-      "choices": [],
+      "choices": [
+        {
+          "choiceIndex": 0,
+          "label": "仲間とともにストライキの最前線に立ち、正当な権利を要求する",
+          "gate": "{ intent: \"oppose-exclusion\", en: { ge: { cr: 40 } }, why: \"雇用主からの報復を恐れる気持ちが勝る。\" }",
+          "outcomes": [
+            {
+              "prob": "0.75",
+              "prose": "粘り強い座り込みの末に経営陣を交渉の席に着かせ、賃金改善と安全装備の支給を勝ち取った。組合の英雄となった。",
+              "effectRaw": "{ cash: 20000, cr: 6, p: 5, rl: 4 }",
+              "effectKeys": [
+                "cash",
+                "cr",
+                "p",
+                "rl"
+              ]
+            },
+            {
+              "prob": "1",
+              "prose": "警察の騎馬隊が突入して強制排除され、警棒で殴られて負傷。職場も解雇されてしまった。",
+              "effectRaw": "{ h: -15, p: -6, job: 0 }",
+              "effectKeys": [
+                "h",
+                "p",
+                "job"
+              ]
+            }
+          ]
+        },
+        {
+          "choiceIndex": 1,
+          "label": "ストライキには参加せず、裏口から現場へ入り通常勤務を続ける",
+          "gate": "{ intent: \"procedure\" }",
+          "outcomes": [
+            {
+              "prob": "1",
+              "prose": "経営陣から忠誠を評価されて特別手当を受け取ったが、同僚たちからは「裏切り者」と冷たい視線を浴びた。",
+              "effectRaw": "{ cash: 30000, p: -3, rl: -3 }",
+              "effectKeys": [
+                "cash",
+                "p",
+                "rl"
+              ]
+            }
+          ]
+        },
+        {
+          "choiceIndex": 2,
+          "label": "争いが収まるまで病気と偽って自宅で待機する",
+          "gate": "{ intent: \"withdrawal\" }",
+          "outcomes": [
+            {
+              "prob": "1",
+              "prose": "無用な衝突を避け、家で事態の推移を見守った。やがて妥協案が成立して職場へ戻った。",
+              "effectRaw": "{ p: 1 }",
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
       "declared": 3,
-      "expectedOutcomes": 4
+      "expectedOutcomes": 4,
+      "parseCorrection": "bare-K handled"
     },
     {
       "id": "choice_columbia_03",
       "source": "data/regional/columbia.js:294",
-      "choices": [],
+      "choices": [
+        {
+          "choiceIndex": 0,
+          "label": "証拠データを持ち出し、大手新聞社と連邦保安局へ告発する",
+          "gate": "{ intent: \"oppose-exclusion\", en: { ge: { cr: 45 } }, why: \"企業の暗殺部隊に消される恐怖に打ち勝てない。\" }",
+          "outcomes": [
+            {
+              "prob": "0.75",
+              "prose": "新聞の一面を飾る大スクープとなり、悪徳研究所は強制捜査で解体。多くの被験者を救い出し、歴史に名を残す内部告発者となった。",
+              "effectRaw": "{ cr: 8, p: 7, rl: 5 }",
+              "effectKeys": [
+                "cr",
+                "p",
+                "rl"
+              ]
+            },
+            {
+              "prob": "1",
+              "prose": "警備部隊に脱出を察知され、追跡を受けて負傷。データは奪われ、指名手配される羽目になった。",
+              "effectRaw": "{ h: -20, p: -8, job: 0 }",
+              "effectKeys": [
+                "h",
+                "p",
+                "job"
+              ]
+            }
+          ]
+        },
+        {
+          "choiceIndex": 1,
+          "label": "匿名で告発データを情報通信網へ放流し、自らは平静を装う",
+          "gate": "{ intent: \"caution\", en: { ge: { k: 35 } }, why: \"電子的な追跡を遮断する通信回路の専門知識がない。\" }",
+          "outcomes": [
+            {
+              "prob": "1",
+              "prose": "身元を巧みに隠して都市の世論を激震させ、研究所を社会的制裁に追い込んだ。自らは安全に退職した。",
+              "effectRaw": "{ k: 3, p: 4, job: 0 }",
+              "effectKeys": [
+                "k",
+                "p",
+                "job"
+              ]
+            }
+          ]
+        },
+        {
+          "choiceIndex": 2,
+          "label": "関われば命がないと悟り、データを消去して黙認する",
+          "gate": "{ intent: \"withdrawal\" }",
+          "outcomes": [
+            {
+              "prob": "1",
+              "prose": "恐怖に屈して目を伏せた。安全は守られたが、良心の呵責に苛まれ続けた。",
+              "effectRaw": "{ p: -4 }",
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
       "declared": 3,
-      "expectedOutcomes": 4
+      "expectedOutcomes": 4,
+      "parseCorrection": "bare-K handled"
     },
     {
       "id": "hid_exposed",
@@ -1173,32 +1362,15 @@
   ],
   "issues": [
     {
-      "id": "choice_ursus_04",
-      "found": 0,
-      "expected": 3,
-      "outcomes": 0,
-      "expectedOutcomes": 4
-    },
-    {
-      "id": "choice_victoria_01",
-      "found": 0,
-      "expected": 3,
-      "outcomes": 0,
-      "expectedOutcomes": 4
-    },
-    {
-      "id": "choice_columbia_03",
-      "found": 0,
-      "expected": 3,
-      "outcomes": 0,
-      "expectedOutcomes": 4
-    },
-    {
       "id": "life_rhodes_role_review",
-      "found": 3,
-      "expected": 4,
-      "outcomes": 3,
-      "expectedOutcomes": 4
+      "actual": [
+        3,
+        3
+      ],
+      "expected": [
+        4,
+        4
+      ]
     }
   ]
 }
