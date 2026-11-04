@@ -252,3 +252,20 @@ assert.equal(legacyRoutes.minorityClassroom,false);
 assert.deepEqual(legacyRoutes.generatedClasses,[false,false]);
 assert.equal(legacyRoutes.oldTutorWithoutProvider,false);
 console.log("PASS education legacy reentry, family-school, minority, generated-classroom, and tutor guards");
+
+
+fixture();
+const actualClassroom=run(function(){
+  const s=S,variant=EV.find(e=>e.id==="race_identity").t[0],
+    known=tags(s);
+  known.add("地域で少数派");
+  const enrolled=variant.when(s,known);
+  const before=JSON.stringify(s.educationRecord.enrollments);
+  s.educationPath.status="outside";
+  const afterWithdrawal=variant.when(s,known);
+  return {enrolled,afterWithdrawal,
+    noNewEnrollment:before===JSON.stringify(s.educationRecord.enrollments)};
+});
+assert.equal(actualClassroom.enrolled,true);
+assert.equal(actualClassroom.afterWithdrawal,false);
+assert.equal(actualClassroom.noNewEnrollment,true);
