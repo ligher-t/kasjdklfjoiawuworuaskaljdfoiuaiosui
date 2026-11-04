@@ -104,7 +104,7 @@ function makeHistoryState(region,city,year,seed,kind='移動都市の居住区')
       districtId:'p15-historic:'+city}};
 }
 setup(ctx,{id:'p15-history-runtime',region:'ウルサス',seed:150121,age:18});
-const history=JSON.parse(vm.runInContext('JSON.stringify(('+function(){
+const history=JSON.parse(vm.runInContext('JSON.stringify((()=>{'+makeHistoryState.toString()+';return ('+function(){
   const outcomes={};
   // D21: civil-war metadata by itself cannot destroy every school in Kazdel.
   {
@@ -112,7 +112,7 @@ const history=JSON.parse(vm.runInContext('JSON.stringify(('+function(){
       '辺境・移動の多い居住地');
     const area=ensureEducationWorldForResidence(s),w=s.world.educationWorld,
       ins=educationRegisterInstitution(w,area,'p15-D21-school','general_primary',
-        ['primary'],s.year),off=w.offerings[ins.offeringIds[0]];
+        ['primary'],1085),off=w.offerings[ins.offeringIds[0]];
     s.mo=12;
     educationReconcileWorldAt(s,1093,12);
     const before=educationSchoolStatusAt(s,off.id,1093,12);
@@ -133,7 +133,7 @@ const history=JSON.parse(vm.runInContext('JSON.stringify(('+function(){
       worldAlive:!!w.offerings[off.id]};
   }
   // D22/D23: explicit city direct windows, other city indirect, no all-region blast.
-  const assess=(region,targetCity,otherCity,year,month,tag,seed,win)=>{
+  const assess=(region,targetCity,otherCity,year,month,tag,seed,win,indirectRef)=>{
     const s=makeHistoryState(region,targetCity,year,seed);
     s.mo=month-1;
     let targetArea=ensureEducationWorldForResidence(s),w=s.world.educationWorld;
@@ -154,11 +154,11 @@ const history=JSON.parse(vm.runInContext('JSON.stringify(('+function(){
       wronglyDirect=w.operationalHistory.filter(x=>
       x.eventRef===win+'-direct'&&x.campusId===otherOff.campusId);
     const indirect=w.operationalHistory.filter(x=>
-      x.eventRef===win+'-indirect'&&x.campusId===otherOff.campusId);
+      x.eventRef===indirectRef&&x.campusId===otherOff.campusId);
     const historySnapshot=JSON.stringify(w.operationalHistory);
     const next=educationSchoolStatusAt(s,targetOff.id,year,month);
     const otherStatus=educationSchoolStatusAt(s,otherOff.id,year,month);
-    educationReconcileWorldAt(s,year,month+2);
+    educationReconcileWorldAt(s,year+(month>10?1:0),month>10?2:month+2);
     const persisted=historySnapshot===JSON.stringify(w.operationalHistory);
     return {newRecords,again,directCount:direct.length,
       otherDirectCount:wronglyDirect.length,indirectCount:indirect.length,
@@ -168,9 +168,9 @@ const history=JSON.parse(vm.runInContext('JSON.stringify(('+function(){
       otherNeverDestroyed:otherStatus.campusStatus!=='destroyed'};
   };
   outcomes.d22=assess('ウルサス','チェルノボーグ','別のウルサス都市',
-    1096,12,'D22',150122,'chernobog');
+    1096,12,'D22',150122,'chernobog','chernobog-indirect');
   outcomes.d23=assess('ヴィクトリア','ロンディニウム','ヴィクトリア別都市',
-    1098,7,'D23',150123,'londinium');
+    1098,7,'D23',150123,'londinium','victoria-indirect');
   // D24: Siesta volcanic exposure requires site evidence; platform choice
   // does not transplant a school or reenroll a student automatically.
   {
@@ -195,11 +195,10 @@ const history=JSON.parse(vm.runInContext('JSON.stringify(('+function(){
     const noForcedTransfer=!w.operationalHistory.some(x=>
       x.campusId===off.campusId && x.eventRef==='siesta-transition');
     outcomes.d24={june:june.teachingStatus,
-      volcanicRecords:volcanic.length,oldPresent,noForcedTransfer,
-      noStudentCreated:true};
+      volcanicRecords:volcanic.length,oldPresent,noForcedTransfer};
   }
   return outcomes;
-}).toString()+')()',ctx,{timeout:25000}));
+}).toString()+')();})())',ctx,{timeout:25000}));
 assert.equal(history.d21.wasUnverified,true);
 assert.equal(history.d21.gainedEvidence,true);
 assert.equal(history.d21.repeat,true);
