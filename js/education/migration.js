@@ -204,11 +204,28 @@ function educationP17ExtraApply(s,review,letter,eventId){
     E12:{A:"case:defer",B:"case:nonformal"}
   }[review]?.[letter];
   if(decision && !educationCaseAction(s,decision))return false;
+  const current=educationMigrationCurrent(s);
+  const routeCheck=letter==="A" && ["E14","E23"].includes(review) &&
+    current ? educationFindRoute(s,{
+      originAreaId:s.local?.educationAreaId,
+      campusAreaId:s.world.educationWorld.campuses[
+        current.offering.campusId]?.educationAreaId,
+      year:s.year,month:s.mo,purpose:"daily-commute"
+    }) : null;
+  const schoolStatus=routeCheck && educationSchoolStatusAt(s,
+    current.offering.id,s.year,s.mo);
   educationMigrationRecord(s,eventId,letter,{
     evidenceRef:educationP17Witness(s,review)?review+":"+s.year+":"+s.mo:null,
     caseId:item?.id||null,informationOnly:review!=="E09"||letter!=="A",
     formalEnrollmentIssued:review==="E09"&&letter==="A",
-    awardIssued:false,automaticPayment:false
+    awardIssued:false,automaticPayment:false,
+    ...(routeCheck?{routeCheck:{
+      status:routeCheck.status,
+      reasonCodes:routeCheck.reasonCodes,
+      basisRefs:routeCheck.basisRefs||[],
+      checkedAt:{year:s.year,month:s.mo},
+      schoolTeaching:schoolStatus?.teachingEquivalent??0
+    }}:{})
   });
   return true;
 }
@@ -448,6 +465,28 @@ function educationP17NoticeOutcome(s,record,review,letter) {
     if(offer && offer.capacityRemaining===0)
       return {index:1,evidenceRef:offer.evidenceRef};
   }
+  if((review==="E14"||review==="E23")&&letter==="A"){
+    const route=record.result?.routeCheck;
+    if(route?.checkedAt?.year===record.at.year &&
+       route.checkedAt.month===record.at.month &&
+       ["feasible","blocked"].includes(route.status)){
+      const index=review==="E14"?
+        (route.status==="feasible"?0:1):
+        (route.status==="feasible"&&route.schoolTeaching>0?0:1);
+      return {index,evidenceRef:record.id+":route-inquiry:"+
+        record.at.year+":"+record.at.month};
+    }
+  }
+  if(review==="E28"&&letter==="A"){
+    if(caseItem?.reason==="admitted" && caseItem.commit?.enrollmentId){
+      const invoiceId=caseItem.commit.enrollmentId+":tuition:"+
+        caseItem.commit.committedAt.year;
+      const loan=Object.values(s.educationFinance?.loans||{}).find(x=>
+        x.invoiceId===invoiceId && x.principal>0 &&
+        s.educationFinance?.invoices?.[invoiceId]?.status==="paid");
+      if(loan)return {index:0,evidenceRef:loan.id};
+    }
+  }
   if(review==="E26"&&letter==="A"){
     const offer=access?.financingOffers?.[record.result?.caseId];
     if(offer?.source==="institutional-desk-inquiry" &&
@@ -484,10 +523,20 @@ function educationP17NoticeOutcome(s,record,review,letter) {
     for(const inquiry of inquiries){
       const success=["approved","recognized","awarded"].includes(inquiry.status),
         failed=["denied","rejected","failed"].includes(inquiry.status);
-      const award=success && (s.educationRecord?.recognitions||[]).some(x=>
-        x.id===inquiry.awardId || x.awardId===inquiry.awardId);
-      if(award)return {index:0,evidenceRef:inquiry.id+":"+inquiry.awardId};
-      if(failed && inquiry.assessmentEvidenceRef)
+      const assessment=s.educationRecognitionAssessments?.items?.[
+        inquiry.assessmentEvidenceRef],
+        matching=!!assessment &&
+          assessment.applicationId===inquiry.id &&
+          assessment.pathId===inquiry.pathId &&
+          assessment.authorityId===inquiry.authorityId &&
+          assessment.ruleId===inquiry.ruleId;
+      const award=success && matching && assessment.verdict==="passed" &&
+        (s.educationRecord?.recognitions||[]).some(x=>
+          x.recognitionId===inquiry.awardId &&
+          x.applicationId===inquiry.id &&
+          x.sourceEvidenceIds?.includes(inquiry.assessmentEvidenceRef));
+      if(award)return {index:0,evidenceRef:inquiry.assessmentEvidenceRef};
+      if(failed && matching && assessment.verdict==="failed")
         return {index:1,evidenceRef:inquiry.assessmentEvidenceRef};
     }
   }
