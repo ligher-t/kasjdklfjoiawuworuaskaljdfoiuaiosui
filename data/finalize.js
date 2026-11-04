@@ -4,7 +4,7 @@ window.TERRA_DATA_BUILD.run("finalize", function ($terraData, $define, $rules) {
   // Inject authored, separately guarded education scenes at the existing
   // terminal data phase; preserve the strict source-module phase ordering.
   if(typeof window.TERRA_EDUCATION_INJECT_P17==="function"){
-    window.TERRA_EDUCATION_INJECT_P17($terraData);
+    window.TERRA_EDUCATION_INJECT_P17($terraData,$define);
     delete window.TERRA_EDUCATION_INJECT_P17;
   }
   // 同じ所属への二重加入・二重応募を、表示と実行候補の両方で防ぐ。

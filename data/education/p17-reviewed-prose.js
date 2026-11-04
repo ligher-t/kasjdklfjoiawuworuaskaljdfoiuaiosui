@@ -2,7 +2,7 @@
 // Only event IDs explicitly listed below are registered as game events. The
 // remaining text is retained verbatim for subsequent guarded migration.
 // Six source-design '保留' entries are never made executable.
-window.TERRA_EDUCATION_INJECT_P17=function ($terraData) {
+window.TERRA_EDUCATION_INJECT_P17=function ($terraData,$define) {
   "use strict";
   const reviewed=[
   {
@@ -1750,7 +1750,7 @@ window.TERRA_EDUCATION_INJECT_P17=function ($terraData) {
   }
 ];
   const activated=new Set(["E34","E35","E41","E43","E47","E48","E49","E50","E51","E52","E53","E54"]);
-  $terraData.EDUCATION_P17_REVIEWED=reviewed;
+  $define("EDUCATION_P17_REVIEWED",reviewed,false);
   for(const entry of reviewed){
     if(!activated.has(entry.reviewId)||entry.decision==="保留")continue;
     const event={
