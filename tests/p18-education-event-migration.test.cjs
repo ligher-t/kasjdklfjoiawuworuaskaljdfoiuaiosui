@@ -673,6 +673,7 @@ const delayedExam=run(function(){
    evidenceRef:"rescheduling-decision",makeupAt:{year:s.year,month:8}})}
  catch{rejectedEarly=true}
  s.educationExamSessions.items[examId].status="rescheduled";
+ s.educationExamSessions.items[examId].rescheduleEvidenceRef="rescheduling-decision";
  s.educationExamSessions.items[examId].makeupAt={year:s.year,month:8};
  educationP17RecordExternalDecision(s,{requestId:req,
    issuerId:m.m.institutionId,status:"approved",
@@ -707,7 +708,8 @@ const accessDecision=run(function(){
  mob.schoolAdjustments={"reviewed-ramp":{status:"verified",
    institutionId:m.m.institutionId,offeringId:m.offering.id,
    enrollmentId:m.enroll.id,supportedNeeds:["step-free"],
-   evidenceRef:"observed-ramp-and-route"}};
+   evidenceRef:"observed-ramp-and-route",
+   decisionEvidenceRef:"school-signed-adjustment"}};
  educationP17RecordExternalDecision(s,{requestId,
    issuerId:m.m.institutionId,status:"approved",
    evidenceRef:"school-signed-adjustment",adjustmentRef:"reviewed-ramp"});
@@ -746,11 +748,17 @@ const fundingResponse=run(function(){
  educationP17RecordExternalDecision(s,{requestId:record.result.externalRequest.id,
    issuerId:"company",status:"approved",evidenceRef:"issued-course-approval",
    approvedAmount:30000});
- return {eligible,pending,index:record.notice?.index,unchangedCash:s.cash===cash,
+ let amountConflict=false;
+ try{educationP17RecordExternalDecision(s,{
+   requestId:record.result.externalRequest.id,
+   issuerId:"company",status:"approved",
+   evidenceRef:"issued-course-approval",approvedAmount:40000})}
+ catch{amountConflict=true}
+ return {eligible,pending,amountConflict,index:record.notice?.index,unchangedCash:s.cash===cash,
    noEnrollment:!s.educationRecord.enrollments.length};
 });
-assert.deepEqual(fundingResponse,{eligible:true,pending:true,index:0,
- unchangedCash:true,noEnrollment:true});
+assert.deepEqual(fundingResponse,{eligible:true,pending:true,amountConflict:true,
+ index:0,unchangedCash:true,noEnrollment:true});
 
 fresh("クルビア",24);
 const borderResponse=run(function(){
