@@ -1007,7 +1007,6 @@ window.TERRA_DATA_BUILD.fragment(
           return !!student && student.enroll.startedYear<=1096 &&
             campus?.educationAreaId===s.local?.educationAreaId;
         } },
-        {},
         [
           0.7,
           "震える手で書き留めた仲間の家を駆け回り、炊き出しの場所と合流先を必死に伝えた。息を切らして次の路地へと走った。",
