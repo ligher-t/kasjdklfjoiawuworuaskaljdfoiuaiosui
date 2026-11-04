@@ -782,7 +782,7 @@
 - [col_timecard_dispute](#event-col_timecard_dispute) — 給金を受け取る日に帳面を確かめると、退勤の打刻が一つ抜け、早退扱いになっていた。決められた時刻まで持ち場にいたはずだが、係は忙しく、訂正は次の締め日…
 - [col_reuse_market](#event-col_reuse_market) — 工業区の回収市に、金具や板の切れ端が並んでいた。売り手は寸法を測り、買い手は欠けやねじ山を確かめている。あなたは壊れた鞄の留め具を手に、金具を選ぶ台…
 - [timeline_columbia_independence](#event-timeline_columbia_independence) — ヴィクトリア総督府の紋章が引き倒され、開拓地の広場に開拓同盟の青い旗が掲げられた。武装した開拓民と新政府の役人が街路を行進し、新国家クルビアの誕生に…
-- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [f88](#event-f88) — 退勤後、企業研究所の公開発表会に足を運んだ。会場の隅から誰かが被験者への事前説明について鋭い質問を飛ばしたが、登壇者は笑顔のまま次のスライドへ話を切…
 - [col_pioneer_radio_daily](#event-col_pioneer_radio_daily) — 昼時のダイナーの受信機が、クルビア辺境の開拓地行きの求人を明るい声で流していた。破格の日当と出発日が読み上げられたあと、現地から戻った作業員の録音に…
 - [wild_beast_track_daily](#event-wild_beast_track_daily) — 荒野の轍の脇に、源石結晶を背負った野獣の巨大な足跡と、半分貪り食われた輸送車両の残骸を見かけて背筋が凍った。遠くの岩陰からこちらを伺う獰猛な唸り声に…
@@ -3119,7 +3119,7 @@
 - [timeline_tarra_kidnap](#event-timeline_tarra_kidnap) — 近衛局と公爵警護隊の激しい銃撃戦が夜の路地を切り裂き、黒塗りの軍用車が幼子の泣き声を乗せて疾走していった。深夜の街に厳戒のサイレンが鳴り響いている。
 - [timeline_vanya_assassination](#event-timeline_vanya_assassination) — ワーニャ大公の車列が市街の交差点で爆砕され、憲兵隊が通りを完全に封鎖して住民を広場へ駆り集めた。厳冬の広場で容疑者の割り出しと過酷な尋問が夜を徹して…
 - [timeline_kazdel_conflict_started](#event-timeline_kazdel_conflict_started) — 見慣れた街角に土嚢と有刺鉄線が張り巡らされ、昨日までの隣人が異なるバッジをつけて対峙した。散発的な銃撃音が路地に響き、カズデル内戦の火蓋が切られた。
-- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_sui_1102](#event-timeline_sui_1102) — 司歳台の天師たちが目抜き通りを固め、空を裂く異様な神鳴りとともに古い封印の石碑が真っ二つに割れた。大地を揺るがす神気と緊迫した気配が街を覆っている。
 - [wld_chernobog](#event-wld_chernobog) — 区画の掲示板に、チェルノボーグ避難民の臨時配給所が告知された。寝具や鍋を抱えた人々が列を作り、係員に離れた家族の行方を尋ねている。 町外れに荷車の列…
 - [wld_race](#event-wld_race) — 前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。 仕事と寝床を失うのが怖くて、また抗議できなかった。前に言葉を飲み込…
@@ -4449,7 +4449,7 @@
 - [kaz_merc](#event-kaz_merc) — カズデルの傭兵隊が、荒野を抜ける輸送隊の護衛を募っていた。分け前は悪くないが、生きて帰れる保証もない長旅になる。
 - [kaz_reunion](#event-kaz_reunion) — チェルノボーグ事変のあと、散り散りになったレユニオンが感染者の互助組織として立て直されているという噂が、北から来た旅人を通じて伝わってきた。カズデル…
 - [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
-- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
 - [f85](#event-f85) — 仕入れ先の店主が、あるファミリーの名を耳にした途端にぱたりと帳面を閉じた。あんたの商いには関わりのない話だと言われたが、背中に冷たいものを感じながら…
@@ -5120,7 +5120,7 @@
 - [bol_dossoles_traveler_account](#event-bol_dossoles_traveler_account) — 街道沿いの荷馬車の休憩所で、東へ向かうくたびれた旅人と相席になった。せっかくドッソレスの近くまで来たのに、乗り継ぎの運賃すら足りず、華やかな街を遠く…
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
 - [timeline_ursus_great_rebellion](#event-timeline_ursus_great_rebellion) — 武装した労働者と反乱部隊が市街の衛戍司令部へ押し寄せ、銃声と怒号の中で皇帝の肖像が広場の雪上に引きずり下ろされた。積年の怒りが爆発し、反逆の炎が夜空…
-- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_world_1099](#event-timeline_world_1099) — 各地の国境検問所が突然封鎖され、武装巡回兵が街道の旅人を一人ひとり銃剣で追い返した。各地の陸艦が航路を変更し、荒野の孤立が深まっている。
 - [discrimination_after](#event-discrimination_after) — 申し立てから数日後、上司は返事を先延ばしにし、同僚は仕事の話しかしなくなった。 窓口から返事はなく、顔見知りはその話題になると目をそらした。
 - [wld_plague](#event-wld_plague) — 移動都市 都市の別区画で発熱する人が増えたと、配給の列で聞いた。診療所の待ち時間や薬の値段を、近所の人が気にしていた。 乗員区画から感染症への注意が…
@@ -8266,7 +8266,7 @@
 - [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
 - [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
 - [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
-- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
 - [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
 - [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
@@ -12015,7 +12015,7 @@
 - [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
 - [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
 - [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
-- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
 - [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
@@ -12974,7 +12974,7 @@
 - [sir_hospital](#event-sir_hospital) — 強い熱が続き、街の診療所へ運ばれた。医師は数日休んで治療を受けるよう勧めたが、受付で告げられた費用は家計に重かった。顔なじみのファミリーに口利きを頼…
 - [sir_feud](#event-sir_feud) — 関わりのあるファミリーと対立組織の緊張が高まった。知人は店の裏口を閉め、今夜は誰と帰るかを確かめている。 ファミリー同士の緊張が通りにも伝わった。店…
 - [timeline_siracusa_unification](#event-timeline_siracusa_unification) — ミズ・シチリアの密使が各街区のファミリーの館を取り囲み、沈黙の中で新秩序が布告された。灰色の狼たちの視線が交錯し、シラクーザの掟が一夜にしてオメルタ…
-- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
 - [f85](#event-f85) — 仕入れ先の店主が、あるファミリーの名を耳にした途端にぱたりと帳面を閉じた。あんたの商いには関わりのない話だと言われたが、背中に冷たいものを感じながら…
@@ -13321,7 +13321,7 @@
 - [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
 - [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
 - [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
-- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
 - [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
@@ -16351,7 +16351,7 @@
 - [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
 - [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
 - [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
-- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
 - [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
@@ -18705,7 +18705,7 @@
 - [timeline_kazdel_war_declared](#event-timeline_kazdel_war_declared) — 軍事委員会の伝令が広場で最後通牒を読み上げ、太鼓の地鳴りとともに全土の戦士たちへ総動員令が下された。武器庫の扉が開かれ、若者たちが武装していく。
 - [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
 - [timeline_kazdel_border_battle](#event-timeline_kazdel_border_battle) — 猛吹雪の国境渓谷で補給船団が炎上し、雪を赤く染めて倒れる兵士たちの傍らで物資を奪い合う乱戦が展開された。極寒の風が悲鳴を掻き消していく。
-- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
 - [timeline_kazimierz_major](#event-timeline_kazimierz_major) — ネオン煌めく巨大アリーナの地鳴りのような大歓声の中、血騎士の長槍が電光を反射し、感染者席が熱狂した。街全体が企業騎士の熱闘と賭博に沸き立っている。
@@ -21008,7 +21008,7 @@
 - [timeline_talulah_kills](#event-timeline_talulah_kills) — 凍てつく原野の古びた公爵邸から猛火と黒煙が立ち上り、吹雪の中に佇むドラコの少女の姿が目撃された。凍土の集落に不穏なざわめきが広がっている。
 - [timeline_talulah_leave](#event-timeline_talulah_leave) — 雪に閉ざされた感染者集落の粗末な門が開き、長身のリーダーが仲間とともに吹雪の荒野へ踏み出した。見送る感染者たちの瞳に希望と不安が揺らいでいる。
 - [timeline_kazdel_civil_war](#event-timeline_kazdel_civil_war) — 焦土作戦によって畑も集落も焼き払われ、黒焦げの石積みの陰で避難民たちが乾パンを分け合った。頭上を通過する軍事委員会の飛空艇が容赦なく爆撃を繰り返して…
-- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+- [timeline_texas_family_purge](#event-timeline_texas_family_purge) — 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばって…
 - [timeline_thelazia_dead_londinium](#event-timeline_thelazia_dead_londinium) — 軍事委員会の重装甲車列がロンディニウムの市門を突破し、衛戍兵を武装解除して目抜き通りを占拠した。摂政テレシスの威圧的な占領布告が全街区に響き渡り、不…
 - [timeline_chernobog_incident_local](#event-timeline_chernobog_incident_local) — 漆黒の積乱雲が空を覆い尽くして天災サイレンが鳴り響く中、レユニオンの旗を掲げた感染者部隊が警備隊拠点を次々と急襲した。市街は炎と源石嵐の地獄と化し、…
 - [timeline_siesta_disaster_local](#event-timeline_siesta_disaster_local) — 黒曜石祭の喧騒を切り裂いて火山が噴火し、赤熱した火山弾が湖面に水柱を上げた。火山灰が降り注ぐ中、港のフェリー乗り場に逃げ惑う市民が殺到している。
@@ -64050,6 +64050,12 @@ s => {
   "id": "timeline_el_sol_founded",
   "conf": "C",
   "timelineFlag": "el_sol_founded",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ボリバル",
+    "city": "エル・ソル"
+  },
   "references": [
     "SRC_COMMUNITY_DOSSOLES_HISTORY",
     "SRC_BOLIVAR_DOSSOLES_STORY"
@@ -64198,6 +64204,10 @@ s => {
   "id": "timeline_columbia_independence",
   "conf": "B",
   "timelineFlag": "columbia_independence",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_1000_1061",
     "SRC_COMMUNITY_COLUMBIA_REVOLUTION"
@@ -64349,6 +64359,10 @@ s => {
   "id": "timeline_four_emperors_war",
   "conf": "B",
   "timelineFlag": "four_emperors_war",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_1000_1061",
     "SRC_COMMUNITY_FOUR_NATIONS_WAR"
@@ -64360,7 +64374,7 @@ s => {
     "老年"
   ],
   "show": {
-    "dynamicFunction": "s => [\"ガリア\", \"ヴィクトリア\", \"リターニア\", \"ウルサス\"].includes(s.res?.n)"
+    "dynamicFunction": "() => false"
   },
   "ge": {
     "year": 1031
@@ -64537,6 +64551,10 @@ s => {
   "id": "timeline_kazdel_commission",
   "conf": "B",
   "timelineFlag": "kazdel_commission_founded",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_KAZDEL_BB1"
   ],
@@ -64684,6 +64702,10 @@ s => {
   "id": "timeline_great_silence",
   "conf": "B",
   "timelineFlag": "great_silence",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_1000_1061",
     "SRC_SN_ST1_OLD_WELL",
@@ -64876,6 +64898,10 @@ s => {
   "id": "timeline_siracusa_unification",
   "conf": "C",
   "timelineFlag": "siracusa_unification",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_1000_1061"
   ],
@@ -65025,6 +65051,12 @@ s => {
   "id": "timeline_el_sol_renovation_paused",
   "conf": "C",
   "timelineFlag": "el_sol_renovation_paused",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ボリバル",
+    "city": "エル・ソル"
+  },
   "references": [
     "SRC_TL_1000_1061",
     "SRC_COMMUNITY_DOSSOLES_HISTORY",
@@ -65174,6 +65206,10 @@ s => {
   "id": "timeline_tenth_ursus_kazimierz_war",
   "conf": "B",
   "timelineFlag": "tenth_ursus_kazimierz_war",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_EARLY"
   ],
@@ -65321,6 +65357,10 @@ s => {
   "id": "timeline_sarcophagus_discovery",
   "conf": "C",
   "timelineFlag": "sarcophagus_discovery",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_EARLY"
   ],
@@ -65468,6 +65508,10 @@ s => {
   "id": "timeline_bloodpeak_and_victorian_crown",
   "conf": "B",
   "timelineFlag": "bloodpeak_and_victorian_crown",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_EARLY"
   ],
@@ -65616,6 +65660,10 @@ s => {
   "id": "timeline_ursus_great_rebellion",
   "conf": "B",
   "timelineFlag": "ursus_great_rebellion",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_EARLY"
   ],
@@ -65765,6 +65813,10 @@ s => {
   "id": "timeline_rim_billiton_independence",
   "conf": "C",
   "timelineFlag": "rim_billiton_independence",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_RIM_WORK"
   ],
@@ -65897,6 +65949,10 @@ s => {
   "id": "timeline_sandsoldier_incident",
   "conf": "B",
   "timelineFlag": "sandsoldier_incident",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_A_WALK_DUST_TIMELINE"
   ],
@@ -66062,6 +66118,10 @@ s => {
   "id": "timeline_sarcophagus_purge",
   "conf": "B",
   "timelineFlag": "sarcophagus_purge",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_EARLY",
     "SRC_URSUS_EP17_1"
@@ -66214,6 +66274,10 @@ s => {
   "id": "timeline_leith_revolution",
   "conf": "C",
   "timelineFlag": "leith_revolution",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_EARLY"
   ],
@@ -66365,6 +66429,10 @@ s => {
   "id": "timeline_tarra_kidnap",
   "conf": "C",
   "timelineFlag": "tarra_kidnap",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_EARLY"
   ],
@@ -66494,6 +66562,10 @@ s => {
   "id": "timeline_vanya_assassination",
   "conf": "B",
   "timelineFlag": "vanya_assassination",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_MIDDLE"
   ],
@@ -66643,6 +66715,10 @@ s => {
   "id": "timeline_victoria_leak",
   "conf": "C",
   "timelineFlag": "victoria_leak",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_MIDDLE"
   ],
@@ -66777,6 +66853,12 @@ s => {
   "id": "timeline_el_sol_renamed_dossoles",
   "conf": "C",
   "timelineFlag": "el_sol_renamed_dossoles",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ボリバル",
+    "city": "ドッソレス"
+  },
   "references": [
     "SRC_BOLIVAR_DOSSOLES_STORY"
   ],
@@ -66908,6 +66990,10 @@ s => {
   "id": "timeline_babel_split",
   "conf": "B",
   "timelineFlag": "babel_split",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_KAZDEL_BB5"
   ],
@@ -67042,6 +67128,10 @@ s => {
   "id": "timeline_kazdel_conflict_started",
   "conf": "B",
   "timelineFlag": "kazdel_conflict_started",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_KAZDEL_BB5"
   ],
@@ -67209,6 +67299,10 @@ s => {
   "id": "timeline_talulah_kills",
   "conf": "C",
   "timelineFlag": "talulah_kills",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_REUNION_HISTORY"
   ],
@@ -67340,6 +67434,10 @@ s => {
   "id": "timeline_talulah_leave",
   "conf": "B",
   "timelineFlag": "talulah_leave",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_REUNION_HISTORY"
   ],
@@ -67471,6 +67569,10 @@ s => {
   "id": "timeline_kazdel_war_declared",
   "conf": "B",
   "timelineFlag": "kazdel_war_declared",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_KAZDEL_BB5"
   ],
@@ -67619,6 +67721,10 @@ s => {
   "id": "timeline_kazdel_civil_war",
   "conf": "B",
   "timelineFlag": "kazdel_civil_war",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_KAZDEL_BB5"
   ],
@@ -67774,6 +67880,10 @@ s => {
   "id": "timeline_kazdel_border_battle",
   "conf": "B",
   "timelineFlag": "kazdel_border_battle",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_KAZDEL_BB5"
   ],
@@ -67915,7 +68025,7 @@ s => {
 
 ### 本文
 
-> 土砂降りの雨の夜、テキサス家の豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
+> 土砂降りの雨の夜、テキサスファミリーの豪邸に黒塗りのセダン群が押し寄せ、トンプソン銃の乱射と火炎瓶で名門が灰燼に帰した。街路に薬莢と血糊が散らばっている。
 
 ### 発生条件・構造
 
@@ -67924,6 +68034,10 @@ s => {
   "id": "timeline_texas_family_purge",
   "conf": "B",
   "timelineFlag": "texas_family_purge",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_COMMUNITY_COLUMBIA_REVOLUTION"
   ],
@@ -67942,7 +68056,7 @@ s => {
     "year": 1093
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.texas_family_purge"
+    "dynamicFunction": "() => false"
   },
   "w": 2,
   "once": true
@@ -67958,7 +68072,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-timeline_texas_family_purge-0"></a>
-選択肢文：夜の豪邸から逃れてきたテキサス家の従者を裏口から匿う
+選択肢文：夜の豪邸から逃れてきたテキサスファミリーの従者を裏口から匿う
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -67991,8 +68105,8 @@ s => {
 ```json
 {
   "d": [
-    "粛清被災（クルビア・テキサス家壊滅抗争）",
-    "テキサス家壊滅抗争の巻き添えとなり、射殺された"
+    "粛清被災（クルビア・テキサスファミリー壊滅抗争）",
+    "テキサスファミリー壊滅抗争の巻き添えとなり、射殺された"
   ]
 }
 ```
@@ -68073,6 +68187,12 @@ s => {
   "id": "timeline_thelazia_dead_londinium",
   "conf": "S",
   "timelineFlag": "thelazia_dead",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ヴィクトリア",
+    "city": "ロンディニウム"
+  },
   "references": [
     "SRC_TL_LATE",
     "SRC_KAZDEL_BB1"
@@ -68084,7 +68204,7 @@ s => {
     "老年"
   ],
   "show": {
-    "dynamicFunction": "s => (s.res?.n === \"ヴィクトリア\" && s.local?.city === \"ロンディニウム\") || s.res?.n === \"カズデル\""
+    "dynamicFunction": "s => s.year === 1094 && !!s.world?.events?.thelazia_dead &&\n        s.res?.n === \"ヴィクトリア\" && s.local?.city === \"ロンディニウム\""
   },
   "ge": {
     "year": 1094
@@ -68205,6 +68325,12 @@ s => {
   "id": "timeline_chernobog_incident_local",
   "conf": "S",
   "timelineFlag": "chernobog_incident",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ウルサス",
+    "city": "チェルノボーグ"
+  },
   "references": [
     "SRC_TL_LATE",
     "SRC_REUNION_HISTORY"
@@ -68401,6 +68527,12 @@ s => {
   "id": "timeline_kazimierz_major",
   "conf": "C",
   "timelineFlag": "kazimierz_major",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "カジミエーシュ",
+    "city": "カヴァレリエルキ"
+  },
   "references": [
     "SRC_KAZIMIERZ_COMPETITION"
   ],
@@ -68548,6 +68680,10 @@ s => {
   "id": "timeline_siesta_disaster_local",
   "conf": "C",
   "timelineFlag": "siesta_disaster",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_SIESTA_TRANSITION"
   ],
@@ -68703,6 +68839,10 @@ s => {
   "id": "timeline_world_1099",
   "conf": "C",
   "timelineFlag": "world_1099",
+  "historicalScene": {
+    "delivery": "journey",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_LATE"
   ],
@@ -68718,7 +68858,7 @@ s => {
     "year": 1100
   },
   "show": {
-    "dynamicFunction": "s => !!s.world?.events?.world_1099"
+    "dynamicFunction": "() => false"
   },
   "w": 1.5,
   "once": true
@@ -68831,6 +68971,10 @@ s => {
   "id": "timeline_world_1101",
   "conf": "C",
   "timelineFlag": "world_1101",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_LATE"
   ],
@@ -68959,6 +69103,12 @@ s => {
   "id": "timeline_katorga_incident",
   "conf": "B",
   "timelineFlag": "katorga_incident",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "event-year",
+    "region": "ウルサス",
+    "city": "サンクト・グリファーブルク"
+  },
   "references": [
     "SRC_URSUS_PAA_SYNOPSIS"
   ],
@@ -69109,6 +69259,10 @@ s => {
   "id": "timeline_sui_1102",
   "conf": "C",
   "timelineFlag": "sui_1102",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "event-year"
+  },
   "references": [
     "SRC_TL_LATE"
   ],
@@ -69118,14 +69272,14 @@ s => {
     "壮年",
     "老年"
   ],
-  "show": {
-    "dynamicFunction": "s => !!s.world?.events?.sui_1102"
-  },
   "ge": {
     "year": 1102
   },
   "le": {
     "year": 1103
+  },
+  "show": {
+    "dynamicFunction": "() => false"
   },
   "w": 2,
   "once": true
@@ -69244,6 +69398,12 @@ s => {
     "老年"
   ],
   "timelineFlag": "londinium_war",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "ongoing",
+    "region": "ヴィクトリア",
+    "city": "ロンディニウム"
+  },
   "need": [
     "国:ヴィクトリア",
     "都市:ロンディニウム"
@@ -69302,6 +69462,12 @@ s => {
     "老年"
   ],
   "timelineFlag": "thelazia_dead",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "ongoing",
+    "region": "ヴィクトリア",
+    "city": "ロンディニウム"
+  },
   "need": [
     "国:ヴィクトリア",
     "都市:ロンディニウム"
@@ -69359,6 +69525,12 @@ s => {
     "老年"
   ],
   "timelineFlag": "chernobog_incident",
+  "historicalScene": {
+    "delivery": "direct",
+    "dateMode": "ongoing",
+    "region": "ウルサス",
+    "city": "チェルノボーグ"
+  },
   "need": [
     "国:ウルサス",
     "都市:チェルノボーグ"
@@ -69417,6 +69589,10 @@ s => {
     "老年"
   ],
   "timelineFlag": "bolivar_civil_war",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "ongoing"
+  },
   "need": [
     "国:ボリバル"
   ],
@@ -69473,6 +69649,10 @@ s => {
     "老年"
   ],
   "timelineFlag": "great_silence",
+  "historicalScene": {
+    "delivery": "suspended",
+    "dateMode": "ongoing"
+  },
   "need": [
     "国:イベリア"
   ],
