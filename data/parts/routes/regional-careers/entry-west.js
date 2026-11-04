@@ -230,11 +230,11 @@ window.TERRA_DATA_BUILD.fragment(
       w: 0.5,
       ge: { age: 20, year: 1092 },
       show: s => s.res?.n === "ヴィクトリア" && s.job === 0 && !s.fl?.retired && (s.cr || 0) >= 25 && s.sn?.car_vic_royal_choice_coup == null,
-      t: "ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推薦状を揃えた者だけが、金糸の軍服をまとい将校として軍の頂点へ迎えられる。",
+      t: "ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要な条件を確かめることにした。",
       c: [
-        $terraData.K("推薦状と巨額の軍官買い取り金を差し出す", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+        $terraData.K("推薦状と経歴を提出し、採用審査を受ける", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.35,
-          "推薦状の家格と教養を認められ、公爵軍の少尉任官が確定した。サーベルと白手袋を支給され、華麗だが謀略渦巻くエリート将校の世界へ踏み出す。",
+          "これまでの経験を確認され、軍務の仕事に採用された。配属先の規則と装備の扱いを教わり、新しい職場で働き始めた。",
           $terraData.regionalCareerStaff(
             "vic_royal",
             "victoria-royal-officer",
@@ -248,7 +248,7 @@ window.TERRA_DATA_BUILD.fragment(
           )
         ], [
           0.75,
-          "家柄の格がわずかに足りず、公爵家令から『二百五十万龍門幣相当の裏金を用意せねば枠はない』と告げられた。借金を背負い、辛うじて少尉の座を買い取った。",
+          "採用の口利きには多額の金が必要だと告げられた。不透明な借入条件を受け入れ、軍務の職場へ入ったが、重い返済義務が残った。",
           $terraData.regionalCareerStaff(
             "vic_royal",
             "victoria-royal-officer",
@@ -262,12 +262,12 @@ window.TERRA_DATA_BUILD.fragment(
           )
         ], [
           1,
-          "『何処の馬の骨か知れぬ者が士官を望むなど片腹痛い』と公爵家令に冷笑され、追い出された。",
+          "提出した経歴を見た担当者に冷たく断られた。採用理由は説明されず、持ち帰った書類の角だけが折れていた。",
           { p: -5 }
         ]),
-        $terraData.K("貴族社会の虚飾を嫌い、身を引く", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
+        $terraData.K("採用条件が合わないため、応募を見送る", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
-          "足の引っ張り合いが日常の貴族軍閥を敬遠し、別の道を歩むことにした。",
+          "募集の条件を控えたうえで応募を見送り、ほかの働き口を探し始めた。",
           { p: 1 }
         ])
       ]
