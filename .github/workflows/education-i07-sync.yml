@@ -1,0 +1,29 @@
+name: Education I07 generated-source sync
+on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths: [.github/workflows/education-i07-sync.yml]
+permissions:
+  contents: write
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Synchronize catalog and runtime revision, clean temporary entry
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/generate-event-catalog.cjs --write
+          node tools/update-version.cjs
+          git rm .github/workflows/education-i07-sync.yml
+          git add EVENT_CATALOG.md js/version.js
+          git -c user.name='Codex Setup' -c user.email='codex-setup@localhost' commit -m 'chore(education): regenerate reviewed event catalog'
+          git push origin HEAD:fix/historical-event-scope-and-delivery
