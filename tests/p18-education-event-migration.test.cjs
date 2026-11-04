@@ -294,3 +294,45 @@ assert.equal(extra.held,false);
 assert.equal(extra.noChange,true);
 assert.equal(extra.notEligible,false);
 console.log("PASS P17 all 62 additional scenes registered, six held, no invented evidence");
+
+
+fixture();
+const currentTeacherIdentity=run(function(){
+ const s=S,school=educationMigrationCurrent(s),old=s.educationRecord.enrollments.length;
+ const unknown=educationLegacyTeacherContact(s,{known:false}),
+   previous=TRACE_RESOLUTION;
+ TRACE_RESOLUTION={kind:"choice",id:"people_school_introduction",label:"教卓へ歩み寄り、分からなかった箇所を尋ねる"};
+ let met;
+ try{met=educationApplyAction(s,"legacy:teacher-meet")}
+ finally{TRACE_RESOLUTION=previous}
+ const known=educationLegacyTeacherContact(s,{known:true});
+ return {unknown:!!unknown,metId:met?.personId,
+   knownId:known?.staff.personId,schoolId:school.m.institutionId,
+   noSecondEnrollment:s.educationRecord.enrollments.length===old,
+   evidence:known?.tie.contacts?.length};
+});
+assert.equal(currentTeacherIdentity.unknown,true);
+assert.equal(currentTeacherIdentity.metId,currentTeacherIdentity.knownId);
+assert.equal(currentTeacherIdentity.noSecondEnrollment,true);
+assert.equal(currentTeacherIdentity.evidence,1);
+
+fresh("クルビア",19);
+const validatedCaseScene=run(function(){
+ const s=S;s.mo=4;ensureResidenceIdentity(s);
+ ensureEducationWorldForResidence(s);
+ const c=educationCaseBegin(s,"higher-path","university",1);
+ c.phase="planning";
+ const before=educationMigrationEligible(s,"edu_higher_search_decision","B"),
+   old=s.educationRecord?.enrollments?.length||0,
+   cash=s.cash;
+ const applied=educationMigrationApply(s,"E06:B");
+ return {before,applied,reason:c.reason,
+   noEnrollment:(s.educationRecord?.enrollments?.length||0)===old,
+   noCharge:s.cash===cash};
+});
+assert.equal(validatedCaseScene.before,true);
+assert.equal(validatedCaseScene.applied,true);
+assert.equal(validatedCaseScene.reason,"voluntary-defer");
+assert.equal(validatedCaseScene.noEnrollment,true);
+assert.equal(validatedCaseScene.noCharge,true);
+console.log("PASS verified teacher identity and P17 case decisions preserve school/finance ownership");
