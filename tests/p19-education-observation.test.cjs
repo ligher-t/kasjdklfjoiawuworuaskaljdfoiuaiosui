@@ -11,13 +11,16 @@ const grid=run(function(){
  const regions=Object.keys(EDUCATION_REGIONAL_PRESENCE),
    kinds=Object.keys(EDUCATION_LOCALITY_PRESENCE_DELTA),
    designations=Object.keys(EDUCATION_SPECIAL_PRESENCE);
- let cells=0,limits=true,monotone=true,specialCells=0,unchanged=true;
+ let cells=0,limits=true,monotone=true,specialCells=0,unchanged=true,
+   zero=0,hundred=0;
  for(const region of regions)for(const kind of kinds){
    const original=educationPresenceRates(region,kind);
    if(original.primary<original.lower||original.lower<original.upper)
      monotone=false;
    for(const stage of EDUCATION_SITE_STAGES){
      cells++;
+     if(original[stage]===0)zero++;
+     if(original[stage]===100)hundred++;
      if(original[stage]<0||original[stage]>100)limits=false;
    }
  }
@@ -30,10 +33,11 @@ const grid=run(function(){
    if(JSON.stringify(before)!==JSON.stringify(after))unchanged=false;
  }
  return {regions:regions.length,kinds:kinds.length,cells,monotone,
-   limits,specialCells,unchanged};
+   limits,specialCells,unchanged,zero,hundred};
 });
 assert.deepEqual(grid,{regions:19,kinds:7,cells:798,
-  monotone:true,limits:true,specialCells:24,unchanged:true});
+  monotone:true,limits:true,specialCells:24,unchanged:true,
+  zero:126,hundred:11});
 const observational=run(function(){
  const s=S;s.mo=4;s.cash=5000000;
  ensureResidenceIdentity(s);
