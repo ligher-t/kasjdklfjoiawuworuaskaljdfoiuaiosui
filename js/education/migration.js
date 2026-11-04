@@ -574,12 +574,14 @@ function educationP17RecordExternalDecision(s,{requestId,issuerId,status,
        examSession.offeringId!==request.offeringId ||
        (status==="approved" &&
          (examSession.status!=="rescheduled" ||
-          !examSession.evidenceRef ||
+          !examSession.rescheduleEvidenceRef ||
+          examSession.rescheduleEvidenceRef!==evidenceRef ||
           examSession.makeupAt?.year!==makeupAt?.year ||
           examSession.makeupAt?.month!==makeupAt?.month)))) ||
      (review==="E79" && status==="approved" && (
        !adjustment || adjustment.status!=="verified" ||
        !adjustment.evidenceRef ||
+       adjustment.decisionEvidenceRef!==evidenceRef ||
        adjustment.institutionId!==issuerId ||
        adjustment.enrollmentId!==request.enrollmentId ||
        adjustment.offeringId!==request.offeringId ||
@@ -606,7 +608,11 @@ function educationP17RecordExternalDecision(s,{requestId,issuerId,status,
   if(existing){
     if(existing.status!==result.status ||
        existing.evidenceRef!==result.evidenceRef ||
-       existing.issuerId!==result.issuerId)
+       existing.issuerId!==result.issuerId ||
+       existing.approvedAmount!==result.approvedAmount ||
+       existing.adjustmentRef!==result.adjustmentRef ||
+       JSON.stringify(existing.makeupAt??null)!==
+         JSON.stringify(result.makeupAt??null))
       throw Error("同一教育申請に異なる発行者または結果が登録された");
     return existing;
   }
