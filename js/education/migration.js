@@ -99,11 +99,15 @@ function educationP17ExternalBasis(s,review) {
       row.experienceTag==="examination-cancelled" &&
       row.status==="verified" && !!row.evidenceRef && !!row.examId &&
       row.year<=s.year);
-    return exam?{
-      issuerId:current.m.institutionId,sourceId:exam.examId,
-      sourceRef:exam.evidenceRef,enrollmentId:current.enroll.id,
-      offeringId:current.offering.id
-    }:null;
+    const session=exam && s.educationExamSessions?.items?.[exam.examId];
+    return session?.status==="cancelled" && !!session.evidenceRef &&
+      session.institutionId===current.m.institutionId &&
+      session.offeringId===current.offering.id &&
+      session.enrollmentId===current.enroll.id ? {
+        issuerId:current.m.institutionId,sourceId:exam.examId,
+        sourceRef:exam.evidenceRef,enrollmentId:current.enroll.id,
+        offeringId:current.offering.id
+      }:null;
   }
   if(review==="E79" && current){
     const profile=s.educationMobility?.accessibilityProfiles?.[current.enroll.id],
@@ -559,7 +563,27 @@ function educationP17RecordExternalDecision(s,{requestId,issuerId,status,
       Object.values(s.educationSchoolExperiences?.items||{}).find(x=>
         x.examId===request.sourceId && x.experienceTag==="examination-cancelled"):
       s.educationMobility?.accessibilityProfiles?.[request.enrollmentId];
+  const examSession=review==="E42"?
+      s.educationExamSessions?.items?.[request.sourceId]:null,
+    adjustment=review==="E79" && status==="approved"?
+      s.educationMobility?.schoolAdjustments?.[adjustmentRef]:null;
   if(!source || source.evidenceRef!==request.sourceRef ||
+     (review==="E42" && (
+       !examSession || examSession.institutionId!==issuerId ||
+       examSession.enrollmentId!==request.enrollmentId ||
+       examSession.offeringId!==request.offeringId ||
+       (status==="approved" &&
+         (examSession.status!=="rescheduled" ||
+          !examSession.evidenceRef ||
+          examSession.makeupAt?.year!==makeupAt?.year ||
+          examSession.makeupAt?.month!==makeupAt?.month)))) ||
+     (review==="E79" && status==="approved" && (
+       !adjustment || adjustment.status!=="verified" ||
+       !adjustment.evidenceRef ||
+       adjustment.institutionId!==issuerId ||
+       adjustment.enrollmentId!==request.enrollmentId ||
+       adjustment.offeringId!==request.offeringId ||
+       !request.needs.every(need=>adjustment.supportedNeeds?.includes(need)))) ||
      (review==="E27" && (status==="approved" &&
        (!Number.isSafeInteger(approvedAmount) || approvedAmount<=0 ||
         approvedAmount>request.maxContribution))) ||
