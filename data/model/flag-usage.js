@@ -104,6 +104,7 @@ window.TERRA_DATA_BUILD.run("model/flag-usage", function ($terraData, $define, $
         ? "状態フラグ。現行イベント・エンジンに解除処理がなく、有効化後は人生終了まで保持。"
         : "経歴フラグ。一度記録されると人生終了まで保持。";
     if (id === "sch") meta.source="本人の入学選択と教育状態機械の在籍・修了・中断処理";
+    if (id === "arts_grad") meta.source="学籍別の認定履修を満たす課程修了で教育状態機械が確定";
     if (id === "insured") meta.source = "EVの加入結果と年次家計処理によるゲーム上の状態";
     if (id === "pet_care_outsourced") {
       meta.source = "本人の選択と収容・隔離状態によるゲーム上の状態";
