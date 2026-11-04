@@ -187,7 +187,13 @@ window.TERRA_DATA_BUILD.run("regional/leithanien", function ($terraData, $define
   });
   leithanienDaily.push({
     id: "daily_leithanien_54", conf: "S", st: ["青年", "壮年"], need: ["国:リターニア", "感染診断済", "隠蔽"],
-    show:s=>educationP17Witness(s,"P13:music-audition"),
+    show: s => Object.values(s.educationCases?.items||{}).some(item=>
+      item.stage==="arts" && item.targetInstitutionId &&
+      item.history?.some(h=>h.action==="exam-result" && h.at?.year===s.year) &&
+      s.educationAccess?.notices?.[item.applicationId] &&
+      educationRecipientInfectionKnowledge(s,{
+        institutionId:item.targetInstitutionId,recipientKind:"institution"
+      }).status!=="institution-confirmed"),
     t: "音楽院のオーディションで、指の結晶を肌色のテーピングで固く隠して演奏した。審査員の鋭い視線に心臓が凍りつきそうだった。",
     fx: { p: -2, cr: 1 }
   });
