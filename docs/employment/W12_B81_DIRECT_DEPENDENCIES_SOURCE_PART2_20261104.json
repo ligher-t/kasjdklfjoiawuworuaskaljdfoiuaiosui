@@ -1,0 +1,686 @@
+{
+  "part": 2,
+  "files": [
+    "data/parts/routes/rhodes-and-factions/rhine-routes.js",
+    "data/parts/routes/regional-careers/events-east.js",
+    "data/parts/routes/regional-careers/events-central.js",
+    "data/parts/extensions/social-and-care/local-discrimination.js",
+    "data/base/regional-west.js",
+    "data/base/regional-conflict.js"
+  ],
+  "summary": {
+    "events": 19,
+    "choices": 38,
+    "outcomes": 51
+  },
+  "events": [
+    {
+      "id": "col_frontier_after_contract_loss",
+      "source": "data/base/regional-west.js:968",
+      "priorPriority": "P1",
+      "originalChoices": 3,
+      "actualChoices": 3,
+      "originalText": "開拓キャンプの契約を終えた後も、仕事を探す日は続いた。砂埃の多い現場で覚えたことは残っている。今の生活で何を頼りにできるか、改めて考えた。",
+      "choices": [
+        {
+          "label": "次の働き口を探し続ける",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "倉庫と工場を訪ね、仕事の空きを尋ねた。今日のところ採用は決まらなかった。",
+              "effects": "{ lifeGoal: { id: \"columbia-frontier-camp-next-livelihood\", action: \"continue\",\n            note: \"開拓事業を離れた後も求職を続けた\" } }"
+            }
+          ]
+        },
+        {
+          "label": "当面は求職を休む",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "体を休め、手持ちの資金と支出を確かめた。次の仕事は今は決めずにおいた。",
+              "effects": "{ lifeGoal: { id: \"columbia-frontier-camp-next-livelihood\", action: \"pause\",\n            note: \"開拓地を離れた後の求職を一時休止した\" } }"
+            }
+          ]
+        },
+        {
+          "label": "実際に得た仕事で生活を再開したと認める",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "新たな仕事を終え、働いた分の報酬を受け取った。前の開拓キャンプでの契約は終わったが、いまの働きで暮らしを続けている。",
+              "effects": "{ lifeGoal: { id: \"columbia-frontier-camp-next-livelihood\", action: \"complete\",\n            note: \"開拓地での契約終了後、別の実際の仕事を得た\" } }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"col_frontier_after_contract_loss\",\n      conf: \"S\",\n      references: [\"SRC_COLUMBIA_INSURANCE\", \"SRC_COLUMBIA_DV5\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 3,\n      w: 0.3,\n      after: { id: \"col_frontier\", min: 2 },\n      show: s => s.lifeRecord?.affiliations?.some(a => a.id === \"columbia-frontier-contract-crew\" &&\n          a.status === \"left\" && a.episodes?.some(ep => ep.endedYear != null)) &&\n        s.lifeRecord?.goals?.some(g => g.id === \"columbia-frontier-camp-next-livelihood\" &&\n          [\"active\", \"compromised\", \"paused\"].includes(g.status)),\n      t: \"開拓キャンプの契約を終えた後も、仕事を探す日は続いた。砂埃の多い現場で覚えたことは残っている。今の生活で何を頼りにできるか、改めて考えた。\",\n      c: [\n        $terraData.K(\"次の働き口を探し続ける\", { show: s => s.job === 0 }, [\n          1, \"倉庫と工場を訪ね、仕事の空きを尋ねた。今日のところ採用は決まらなかった。\",\n          { lifeGoal: { id: \"columbia-frontier-camp-next-livelihood\", action: \"continue\",\n            note: \"開拓事業"
+    },
+    {
+      "id": "kaz_business",
+      "source": "data/base/regional-west.js:1019",
+      "priorPriority": "P1",
+      "originalChoices": 2,
+      "actualChoices": 2,
+      "originalText": "商業連合会の担当者が、働き口の帳場で出資を募っていた。元手は軽くない。家賃や薬代に回す金まで預けて、事業が外れたらどうするか、仕事仲間も答えを出せずにいた。",
+      "choices": [
+        {
+          "label": "出資金を預ける",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "出資した事業は当たり、元手を含む分配が戻った。出資前より手元の金は増え、帳面を閉じても次の分配を期待する気持ちが残った。",
+              "effects": "{ cash: 5e5, pm: 1, cr: 4 }"
+            },
+            {
+              "weight": "1",
+              "prose": "事業は失敗し、出資金は戻らなかった。家賃や食費を払うため、しばらく買い替えを先延ばしにした。",
+              "effects": "{ cash: -3e5, pm: 1, p: -8 }"
+            }
+          ]
+        },
+        {
+          "label": "出資を見送り、貯えを残す",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "案内を返し、出資金は手元に置いた。職場では別の人が出資を決めた。自分は、いつもの暮らしを続けた。",
+              "effects": "{ p: 1 }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"kaz_business\",\n      conf: \"S\",\n      references: [\"SRC_KAZIMIERZ_COMPETITION\"],\n      st: [\"青年\", \"壮年\"],\n      need: [\"国:カジミエーシュ\", \"就労中\"],\n      w: 0.5,\n      once: true,\n      t: [\n        {\n          when: \"家計逼迫\",\n          t: \"商業連合会の担当者が、働き口の帳場で出資を募っていた。元手は軽くない。家賃や薬代に回す金まで預けて、事業が外れたらどうするか、仕事仲間も答えを出せずにいた。\"\n        },\n        {\n          when: \"借金\",\n          t: \"商業連合会の出資案内が届いた。返済中の借金があると告げると、担当者は過去の利益例を並べて返済が早まると勧めた。元手は今月の返済に回す予定だった。\"\n        },\n        {\n          t: \"仕事先に商業連合会の出資案内が回ってきた。まとまった元手を出せば、事業の分配を受けられるという。帳面には利益の見込みと、失敗すれば元手が戻らないことが並んでいた。\"\n        }\n      ],\n      c: [\n        $terraData.K(\n          \"出資金を預ける\",\n          { en: { affordableCash: 3e5 }, why: \"地域物価込みの出資金を用意できない\" },\n          [\n            0.5,\n            \"出資した事業は当たり、元手を含む分配が戻った。出資前より手元の金は増え、帳面を閉じても次の分配を期待する気持ちが残った。\",\n            { cash: 5e5, pm: 1, cr: 4 }\n          ],\n          [\n            1,\n "
+    },
+    {
+      "id": "bol_local_contract",
+      "source": "data/base/regional-conflict.js:426",
+      "priorPriority": "P1",
+      "originalChoices": 4,
+      "actualChoices": 4,
+      "originalText": "市場の木の掲示板に、農作物の袋詰め、採鉱道具の修理、そして街道を行く荷車の護衛という三つの日雇い募集が並んでいた。どれも数日ポッキリの口で、危険の度合いもまるで違う。",
+      "choices": [
+        {
+          "label": "収穫物の荷造りを手伝う",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "農家の集荷場で麻袋の重さを量り、ほつれた口を太い針で縫い直した。夕方には手堅く日当をもらえたが、次の収穫便がいつ入るかは分からなかった。",
+              "effects": "{ selfCash: 8e4, pm: 1, h: -2, rl: 1 }"
+            }
+          ]
+        },
+        {
+          "label": "採鉱道具の仕分けと修理を手伝う",
+          "outcomes": [
+            {
+              "weight": "0.8",
+              "prose": "刃の欠けたツルハシを選り分け、折れた柄をすげ替えた。約束の手間賃はもらえたが、きな臭い採掘現場へ直接入る仕事だけは断っておいた。",
+              "effects": "{ selfCash: 9e4, pm: 1, h: -4, p: -2 }"
+            },
+            {
+              "weight": "1",
+              "prose": "重たい鉄道具を運ぶ途中で荷台が崩れ、足を挟まれてしまった。手当てもそこそこに減額された日当を渡され、二度とこの現場には来るまいと思った。",
+              "effects": "{ selfCash: 4e4, h: -8, p: -3 }"
+            }
+          ]
+        },
+        {
+          "label": "荷車の護衛を引き受ける",
+          "outcomes": [
+            {
+              "weight": "0.58",
+              "prose": "武器を携えて荷台の横に揺られ、無事に隣の町まで荷を送り届けた。道中で聞いたゲリラの噂が不気味で、帰り道はまとまった報酬を懐の奥へ隠して急いだ。",
+              "effects": "{ selfCash: 14e4, h: -7, p: -4 }"
+            },
+            {
+              "weight": "1",
+              "prose": "街道の茂みから突然銃声が響き、荷車は積荷を捨てて一目散に引き返した。わずかな危険手当は出たものの、生きた心地がせず、しばらく街道の仕事には近づかなかった。",
+              "effects": "{ selfCash: 5e4, h: -18, p: -9 }"
+            }
+          ]
+        },
+        {
+          "label": "今回は手を出さず、体をいたわる",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "きな臭い募集札から目を離し、そのまま市場を後にした。今月の実入りは増えないが、怪しい現場で怪我をするよりはましだった。",
+              "effects": "{ p: 1 }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"bol_local_contract\",\n      conf: \"S\",\n      references: [\"SRC_BOLIVAR_ECONOMY\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      need: [\"国:ボリバル\"],\n      any: [\"無職\", \"就労中\"],\n      w: 0.42,\n      cd: 5,\n      t: \"市場の木の掲示板に、農作物の袋詰め、採鉱道具の修理、そして街道を行く荷車の護衛という三つの日雇い募集が並んでいた。どれも数日ポッキリの口で、危険の度合いもまるで違う。\",\n      c: [\n        $terraData.K(\"収穫物の荷造りを手伝う\", {}, [\n          1,\n          \"農家の集荷場で麻袋の重さを量り、ほつれた口を太い針で縫い直した。夕方には手堅く日当をもらえたが、次の収穫便がいつ入るかは分からなかった。\",\n          { selfCash: 8e4, pm: 1, h: -2, rl: 1 }\n        ]),\n        $terraData.K(\n          \"採鉱道具の仕分けと修理を手伝う\",\n          {},\n          [\n            0.8,\n            \"刃の欠けたツルハシを選り分け、折れた柄をすげ替えた。約束の手間賃はもらえたが、きな臭い採掘現場へ直接入る仕事だけは断っておいた。\",\n            { selfCash: 9e4, pm: 1, h: -4, p: -2 }\n          ],\n          [\n            1,\n            \"重たい鉄道具を運ぶ途中で荷台が崩れ、足を挟まれてしまった。手当てもそこそこに減額された日当を渡され、二度とこの現場には来るまいと思った。\",\n            { selfCash: 4e4, h: -8, p: -3 }\n"
+    },
+    {
+      "id": "bol_dossoles_championship_work",
+      "source": "data/base/regional-conflict.js:746",
+      "priorPriority": "P1",
+      "originalChoices": 3,
+      "actualChoices": 3,
+      "originalText": "水上競技大会で沸き返るドッソレスの荷受け場に、仮設スタンドを組む数日間の急募が出ていた。日当は悪くない。今の仕事や予定と折り合いがつくか考えた。",
+      "choices": [
+        {
+          "label": "設営の短期仕事に飛び込む",
+          "outcomes": [
+            {
+              "weight": "0.68",
+              "prose": "炎天下で鉄パイプと足場板を運び、数日分のまとまった日当を手にした。作業を終えて表通りへ出ると、ネオンと大歓声が街全体を揺らしていた。",
+              "effects": "{ selfCash: 8e4, h: -3, p: 2 }"
+            },
+            {
+              "weight": "1",
+              "prose": "駆けつけた時にはすでに定員が埋まっており、あぶれてしまった。荷受け場の裏手まで、競技会場の華やかなアナウンスが風に乗って聞こえていた。",
+              "effects": "{ p: -1 }"
+            }
+          ]
+        },
+        {
+          "label": "集合時間と日当だけ確かめ、少し考える",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "現場の親方にシフトの時間を詳しく聞き、自分の予定と重ならないか頭の中で並べた。無理のない日があれば顔を出そうと決めた。",
+              "effects": "{ k: 1 }"
+            }
+          ]
+        },
+        {
+          "label": "お祭り騒ぎには関わらず、いつもの予定に戻る",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "募集札から離れ、自分のいつもの仕事へ戻った。水しぶきと歓声に沸く表通りを遠巻きにしながら、変わらない一日を終えた。",
+              "effects": "{ p: 1 }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"bol_dossoles_championship_work\",\n      conf: \"S\",\n      references: [\"SRC_BOLIVAR_DOSSOLES_STORY\", \"SRC_BOLIVAR_ECONOMY\"],\n      st: [\"青年\", \"壮年\"],\n      need: [\"国:ボリバル\", \"都市:ドッソレス\"],\n      ge: { year: 1097, age: 18 },\n      once: true,\n      w: 0.42,\n      t: \"水上競技大会で沸き返るドッソレスの荷受け場に、仮設スタンドを組む数日間の急募が出ていた。日当は悪くない。今の仕事や予定と折り合いがつくか考えた。\",\n      c: [\n        $terraData.K(\n          \"設営の短期仕事に飛び込む\",\n          {},\n          [\n            0.68,\n            \"炎天下で鉄パイプと足場板を運び、数日分のまとまった日当を手にした。作業を終えて表通りへ出ると、ネオンと大歓声が街全体を揺らしていた。\",\n            { selfCash: 8e4, h: -3, p: 2 }\n          ],\n          [\n            1,\n            \"駆けつけた時にはすでに定員が埋まっており、あぶれてしまった。荷受け場の裏手まで、競技会場の華やかなアナウンスが風に乗って聞こえていた。\",\n            { p: -1 }\n          ]\n        ),\n        $terraData.K(\"集合時間と日当だけ確かめ、少し考える\", {}, [\n          1,\n          \"現場の親方にシフトの時間を詳しく聞き、自分の予定と重ならないか頭の中で並べた。無理のない日があれば顔を出そうと決めた。\",\n          { k: 1 }\n "
+    },
+    {
+      "id": "earth_discr_sarkaz_work_later",
+      "source": "data/parts/extensions/social-and-care/local-discrimination.js:474",
+      "priorPriority": "P1",
+      "originalChoices": 3,
+      "actualChoices": 0,
+      "originalText": "サルカズだというだけで門前払いされた苦い記憶がまだ残るなか、知人づてに次の仕事を紹介してくれるという人物と会うことになった。自分の腕とこれまでの経緯をどう切り出すか迷った。",
+      "choices": [],
+      "codePrefix": "{\n        \"id\": \"earth_discr_sarkaz_work_later\",\n        \"conf\": \"S\",\n        \"references\": [\"SRC_TERRA_DISCR_SARKAZ\", \"SRC_TERRA_SOCIAL_ATTITUDES\"],\n        \"st\": [\"青年\", \"壮年\", \"老年\"],\n        \"need\": [\"ed_sarkaz_work_bias\"],\n        \"once\": true,\n        \"w\": 0.45,\n        \"t\": \"サルカズだというだけで門前払いされた苦い記憶がまだ残るなか、知人づてに次の仕事を紹介してくれるという人物と会うことになった。自分の腕とこれまでの経緯をどう切り出すか迷った。\",\n        \"c\": [\n          {\n            \"l\": \"口先ではなく、これまで現場で任されてきた確かな腕前を伝えて口添えを頼む\",\n            \"o\": [\n              [\n                1,\n                \"これまでどんな現場をこなしてきたかを具体的に話し、真面目に働く人間だと先方に太鼓判を押してもらえることになった。\",\n                { \"k\": 2, \"rl\": 1, \"fl\": { \"ed_sarkaz_work_bias\": 0 } }\n              ]\n            ]\n          },\n          {\n            \"l\": \"余計な詮索を招かないよう、前の職を離れた理由は当たり障りなく話す\",\n            \"o\": [\n              [\n                1,\n                \"「傭兵崩れ」と決めつけられた屈辱が喉元まで出かかったが、紹介してくれた人の手前もあって、ただ条件が合わなかったとだけ答えた。\",\n  "
+    },
+    {
+      "id": "earth_discr_g1_market_coin",
+      "source": "data/parts/extensions/social-and-care/local-discrimination.js:1747",
+      "priorPriority": "P1",
+      "originalChoices": 2,
+      "actualChoices": 0,
+      "originalText": "近所の食料品店でパンを買い、硬貨を手渡そうとした。店主はあなたの手から直接金を受け取ろうとせず、顎で勘定台の木皿を指した。お釣りを返す時も、触れぬよう宙から小銭を皿へ落とすように置かれた。",
+      "choices": [],
+      "codePrefix": "{\n      \"id\": \"earth_discr_g1_market_coin\",\n      \"conf\": \"S\",\n      \"references\": [\n            \"SRC_TERRA_DISCR_URSUS\",\n            \"SRC_ORIPATHY_SOCIAL\"\n      ],\n      \"st\": [\n            \"少年\",\n            \"青年\",\n            \"壮年\",\n            \"老年\"\n      ],\n      \"need\": [\n            \"感染診断済\"\n      ],\n      \"show\": s => infectionAwarenessHas(s, \"residents\", { includeUnverified: true }) || !!s.fl?.ed_neighborhood_whisper,\n      \"once\": true,\n      \"w\": 0.58,\n      \"cd\": 8,\n      \"t\": \"近所の食料品店でパンを買い、硬貨を手渡そうとした。店主はあなたの手から直接金を受け取ろうとせず、顎で勘定台の木皿を指した。お釣りを返す時も、触れぬよう宙から小銭を皿へ落とすように置かれた。\",\n      \"c\": [\n            {\n                  \"l\": \"皿の小銭を黙って拾い上げ、胸ポケットにしまう\",\n                  \"o\": [\n                        [\n                              1,\n                              \"乾いた金属音を立てる小銭を拾い集めた。店主は視線を合わせず、次の常連客には親しげに笑いかけながら手渡しで林檎を渡していた。\",\n                              {\n                          "
+    },
+    {
+      "id": "earth_discr_g2_work_lunch",
+      "source": "data/parts/extensions/social-and-care/local-discrimination.js:1899",
+      "priorPriority": "P1",
+      "originalChoices": 2,
+      "actualChoices": 0,
+      "originalText": "工場の昼休憩、手洗いを済ませて食堂のテーブルへ向かった。昨日まで一緒に並んでスープを飲んでいた同僚たちが、あなたの姿を認めた途端に小声で囁き交わし、次々と食器を持って別の離れた長机へと移動していった。",
+      "choices": [],
+      "codePrefix": "{\n      \"id\": \"earth_discr_g2_work_lunch\",\n      \"conf\": \"S\",\n      \"references\": [\n            \"SRC_INDUSTRIAL_LIFE\",\n            \"SRC_ORIPATHY_SOCIAL\"\n      ],\n      \"st\": [\n            \"青年\",\n            \"壮年\",\n            \"老年\"\n      ],\n      \"need\": [\n            \"成人\",\n            \"感染診断済\",\n            \"就労中\"\n      ],\n      \"show\": s => infectionAwarenessHas(s, \"workplace\", { includeUnverified: true }) || !!s.fl?.ed_leak_witnessed,\n      \"once\": true,\n      \"w\": 0.62,\n      \"cd\": 8,\n      \"t\": \"工場の昼休憩、手洗いを済ませて食堂のテーブルへ向かった。昨日まで一緒に並んでスープを飲んでいた同僚たちが、あなたの姿を認めた途端に小声で囁き交わし、次々と食器を持って別の離れた長机へと移動していった。\",\n      \"c\": [\n            {\n                  \"l\": \"残された広い机の隅で、一人静かに冷めた弁当を食べる\",\n                  \"o\": [\n                        [\n                              1,\n                              \"誰もいないテーブルで黒パンをかじった。遠くの机から時折楽しげな笑い声が上がり、自分と世界を隔てる目に見えない溝の深さを痛感した。\",\n                              {\n    "
+    },
+    {
+      "id": "sr_rhine_patent_breakthrough",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:115",
+      "priorPriority": "P0",
+      "originalChoices": 3,
+      "actualChoices": 3,
+      "originalText": "数か月に及ぶ実験の末、世界初となる新素材の合成と高効率反応モデルの構築に成功した。学会での注目と特許申請の手続きが目の前に控えている。",
+      "choices": [
+        {
+          "label": "特許を会社名義で登録し、巨額のロイヤリティ報酬と昇給を獲得する",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "特許庁に受理され、学会での発表は大反響を呼んだ。会社から莫大な発明奨励金と継続的なロイヤリティ支給が認められ、学術界にその名が轟いた。",
+              "effects": "{\n            cash: 500000,\n            payBonus: 0.2,\n            k: 4,\n            p: 3\n          }"
+            }
+          ]
+        },
+        {
+          "label": "オープンソースとして学術界に無償公開し、テラ全体の科学発展に捧げる",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "独占利益を放棄し、全データを学術誌へ無償公開した。巨大企業の経営陣からは苦言を呈されたが、世界中の研究者や貧しい地域の医療者から深い感謝を受けた。",
+              "effects": "{\n            rl: 3,\n            k: 5,\n            p: 2\n          }"
+            }
+          ]
+        },
+        {
+          "label": "共同研究にあたった若手研究者たちの連名を筆頭にし、成果を分かち合う",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "チーム全員の連名で発表した。若い研究員たちは涙を流して感謝し、研究室には揺るぎない結束と信頼関係が築かれた。",
+              "effects": "{\n            groupStanding: {\n              id: \"rhine-colleagues\",\n              title: \"ライン生命の研究仲間\",\n              delta: 2,\n              reason: \"研究成果の栄誉を研究チーム全員で分かち合った\"\n            },\n            k: 3,\n            p: 2\n          }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"sr_rhine_patent_breakthrough\",\n      conf: \"S\",\n      references: [\"SRC_RHINE_LAB\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { year: 1094 },\n      show: s => onRhine(s) && s.job >= 39 && s.job <= 40,\n      t: \"数か月に及ぶ実験の末、世界初となる新素材の合成と高効率反応モデルの構築に成功した。学会での注目と特許申請の手続きが目の前に控えている。\",\n      c: [\n        $terraData.K(\"特許を会社名義で登録し、巨額のロイヤリティ報酬と昇給を獲得する\", {}, [\n          1,\n          \"特許庁に受理され、学会での発表は大反響を呼んだ。会社から莫大な発明奨励金と継続的なロイヤリティ支給が認められ、学術界にその名が轟いた。\",\n          {\n            cash: 500000,\n            payBonus: 0.2,\n            k: 4,\n            p: 3\n          }\n        ]),\n        $terraData.K(\"オープンソースとして学術界に無償公開し、テラ全体の科学発展に捧げる\", {}, [\n          1,\n          \"独占利益を放棄し、全データを学術誌へ無償公開した。巨大企業の経営陣からは苦言を呈されたが、世界中の研究者や貧しい地域の医療者から深い感謝を受けた。\",\n          {\n            rl: 3,\n            k: 5,\n            p: 2\n          }\n        ]),\n        $terraData.K(\"共同研究にあたった若手研"
+    },
+    {
+      "id": "sr_rhine_lone_trail_sky_horizon",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:330",
+      "priorPriority": "P0",
+      "originalChoices": 3,
+      "actualChoices": 3,
+      "originalText": "1099年晩秋、トリマウンツ上空。クリステン統括が主導した『ホライズンアーク計画』が極大の光を放ち、フォーカスジェネレーターが天空を穿った。何千年もテラを覆い続けてきた偽りの天球「星のさや」に巨大な風穴が開き、その向こう",
+      "choices": [
+        {
+          "label": "天空を見上げ、クリステンが遺した未知の宇宙と科学の極致に魂を震わせる",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "人類の限界が打ち破られた瞬間をその瞳に焼き付けた。文明の新たな夜明けを前に、科学者としての熱い探求心が魂の底から燃え上がった。",
+              "effects": "{\n            k: 6,\n            p: 4,\n            ar: 2\n          }"
+            }
+          ]
+        },
+        {
+          "label": "統括代行として復帰したサリアを支え、軍部や国防部との混乱した事後収拾と組織再建に奔走する",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "混乱に陥るトリマウンツで施設警備と残された機密の保全を指揮した。サリアと共にライン生命の瓦解を防ぎ、新生ライン生命の中核幹部としての地位を確立した。",
+              "effects": "{\n            payBonus: 0.25,\n            groupStanding: {\n              id: \"rhine-colleagues\",\n              title: \"ライン生命の研究仲間\",\n              delta: 3,\n              reason: \"孤星事件後の組織再建に尽力した\"\n            },\n            p: 3\n          }"
+            }
+          ]
+        },
+        {
+          "label": "サイレンス（淬羽サイレンス）の呼びかけに賛同し、科学の暴走を防ぐ独立研究倫理委員会の設立に参画する",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "「科学の進歩が二度と人を踏みにじらないために」。成果主義に縛られない倫理監視機構の立ち上げに署名し、テラ全土に向けた技術開示と被験者保護のルール作りに身を捧げた。",
+              "effects": "{\n            rl: 4,\n            k: 3,\n            p: 3\n          }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"sr_rhine_lone_trail_sky_horizon\",\n      conf: \"S\",\n      once: true,\n      months: [11],\n      references: [\"SRC_RHINE_LAB\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 5,\n      w: 0.45,\n      ge: { year: 1099 },\n      le: { year: 1099 },\n      show: s => onRhine(s) && (s.job === 39 || s.job === 40),\n      t: \"1099年晩秋、トリマウンツ上空。クリステン統括が主導した『ホライズンアーク計画』が極大の光を放ち、フォーカスジェネレーターが天空を穿った。何千年もテラを覆い続けてきた偽りの天球「星のさや」に巨大な風穴が開き、その向こう側に真の静寂と星空が姿を現した。世界が震天動地の衝撃に包まれる中、地上のライン生命は大きな変革の時を迎えていた。\",\n      c: [\n        $terraData.K(\"天空を見上げ、クリステンが遺した未知の宇宙と科学の極致に魂を震わせる\", {}, [\n          1,\n          \"人類の限界が打ち破られた瞬間をその瞳に焼き付けた。文明の新たな夜明けを前に、科学者としての熱い探求心が魂の底から燃え上がった。\",\n          {\n            k: 6,\n            p: 4,\n            ar: 2\n          }\n        ]),\n        $terraData.K(\"統括代行として復帰したサリアを支え、軍部や国防部との混乱した事後収拾と組織再建に奔走する\", {}, [\n          1,\n          \"混乱に陥るトリマウンツで施設警備と残された機密の保全を指揮した。サリアと共にライン生命の瓦解を防ぎ、新生ライ"
+    },
+    {
+      "id": "sr_rhine_after_departure_livelihood",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:440",
+      "priorPriority": "P1",
+      "originalChoices": 4,
+      "actualChoices": 4,
+      "originalText": "研究所を離れたとき、次の仕事は決まっていなかった。あれからいくつかの季節が過ぎた。白衣のままでは入れない職場もあれば、実験室で覚えた手順を役立てられる場所もあった。",
+      "choices": [
+        {
+          "label": "もう少し働き口を探す",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "求人の話を聞き、履歴書に書ける仕事を一つずつ確かめた。採用の返事は、今日もまだ届いていない。",
+              "effects": "{ lifeGoal: { id: \"rhine-after-departure-livelihood\", action: \"continue\",\n            note: \"退職後の求職を続けたが、採用は成立していない\" } }"
+            }
+          ]
+        },
+        {
+          "label": "しばらく求職を休む",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "研究所を出た理由を何度も考えた。次の勤務先を急いで決めるのはやめ、今ある暮らしを整えることにした。",
+              "effects": "{ lifeGoal: { id: \"rhine-after-departure-livelihood\", action: \"pause\",\n            note: \"次の仕事探しを一時中断した\" } }"
+            }
+          ]
+        },
+        {
+          "label": "今の職場で生活を立て直したと認める",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "今の勤め先で一日の仕事を終えた。研究所の名札はもう使っていないが、以前に覚えたことも、今の仕事に役立っていた。",
+              "effects": "{ lifeGoal: { id: \"rhine-after-departure-livelihood\", action: \"complete\",\n            note: \"研究所退職後、別の実際の職業で働き始めた\" } }"
+            }
+          ]
+        },
+        {
+          "label": "新しい仕事を続けながら先行きを見直す",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "新しい職場にも慣れないことはある。それでも、次の仕事を探していたころより日々の手順は増えた。今はもう少し様子を見ることにした。",
+              "effects": "{ lifeGoal: { id: \"rhine-after-departure-livelihood\", action: \"continue\",\n            note: \"再就職後も暮らしの安定を見極める\" } }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"sr_rhine_after_departure_livelihood\",\n      conf: \"S\",\n      references: [\"SRC_RHINE_LAB\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 3,\n      w: 0.3,\n      ge: { year: 1102 },\n      after: { id: \"sr_rhine_post_lone_trail_career_review\", min: 2, choice: 1, outcome: 0 },\n      show: s => s.lifeRecord?.affiliations?.some(a => a.id === \"rhine-lab\" && a.status === \"left\") &&\n        s.lifeRecord?.goals?.some(g => g.id === \"rhine-after-departure-livelihood\" &&\n          [\"active\", \"compromised\", \"paused\"].includes(g.status)),\n      t: \"研究所を離れたとき、次の仕事は決まっていなかった。あれからいくつかの季節が過ぎた。白衣のままでは入れない職場もあれば、実験室で覚えた手順を役立てられる場所もあった。\",\n      c: [\n        $terraData.K(\"もう少し働き口を探す\", {\n          show: s => s.job === 0,\n          ethics: { reviewed: true, policyVersion: 87, intent: \"livelihood-planning\" }\n        }, [\n          1,\n          \"求人の話を聞き、履歴書に書ける仕事を一つずつ確かめた。採用の返事は、今日もまだ届いていない。\",\n          { "
+    },
+    {
+      "id": "sr_rhine_whistleblower_return_review",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:494",
+      "priorPriority": "P1",
+      "originalChoices": 2,
+      "actualChoices": 2,
+      "originalText": "ライン生命では、あの事件の後に役員と研究倫理の審査体制が変わった。以前の告発について、人事部に記録が残っている。研究所で再び働くことを考えるなら、退職と告発の経緯を示して、改めて応募資格の審査を受ける必要があるという。",
+      "choices": [
+        {
+          "label": "退職の経緯と証言を提出し、再応募資格の審査を求める",
+          "outcomes": [
+            {
+              "weight": "0.4",
+              "prose": "提出した記録について照会が続いた末、再応募の選考を受けてよいとの通知が届いた。採用の内定ではない。次に必要なのは、研究所の募集に自分で応募することだった。",
+              "effects": "{ fl: { rhine_whistleblower_review_passed: 1 }, p: 1 }"
+            },
+            {
+              "weight": "1",
+              "prose": "証言や退職の扱いをめぐって意見がまとまらず、今回の再応募資格の審査は見送られた。旧職場の席は戻らない。別の働き口を選ぶ自由は残されている。",
+              "effects": "{ p: -1 }"
+            }
+          ]
+        },
+        {
+          "label": "以前の職場へ戻る判断を保留する",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "資料を封筒に戻し、今は申請をやめることにした。研究室で過ごした時間も、そこを離れた理由も消えない。",
+              "effects": "{ p: 1 }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"sr_rhine_whistleblower_return_review\",\n      conf: \"S\",\n      references: [\"SRC_RHINE_LAB\"],\n      st: [\"青年\", \"壮年\"],\n      cd: 3,\n      w: 0.35,\n      ge: { year: 1100, age: 18 },\n      show: s => s.res?.n === \"クルビア\" && s.job === 0 &&\n        !!s.fl?.rhine_whistleblower &&\n        !s.fl?.rhine_whistleblower_review_passed &&\n        s.lifeRecord?.affiliations?.some(a => a.id === \"rhine-lab\" &&\n          a.status === \"left\" && a.episodes?.some(ep => ep.endedYear != null)) &&\n        !s.lifeRecord?.affiliations?.some(a => a.id === \"rhodes-staff\" &&\n          [\"active\", \"crisis\", \"suspended\"].includes(a.status)),\n      t: \"ライン生命では、あの事件の後に役員と研究倫理の審査体制が変わった。以前の告発について、人事部に記録が残っている。研究所で再び働くことを考えるなら、退職と告発の経緯を示して、改めて応募資格の審査を受ける必要があるという。\",\n      c: [\n        $terraData.K(\"退職の経緯と証言を提出し、再応募資格の審査を求める\", {}, [\n          0.4,\n          \"提出した記録について照会が続いた末、再応募の選考を受けてよいとの通知が届いた。採用の内定ではない。次に必要なの"
+    },
+    {
+      "id": "car_hig_samurai_choice_duel",
+      "source": "data/parts/routes/regional-careers/events-east.js:230",
+      "priorPriority": "P0",
+      "originalChoices": 2,
+      "actualChoices": 2,
+      "originalText": "北朝と南朝の軍勢が川を挟んで対峙する合戦場。敵陣から名うての剛の者が馬を進め、大音声で一騎打ちを呼びかけてきた。主君の御前で名乗りを上げ、武士の誉れを懸けて立ち会うか。",
+      "choices": [
+        {
+          "label": "太刀を抜き、名乗りを上げて一騎打ちに応じる",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "電光石火の抜刀で敵将の甲冑を両断し、討ち取った。両軍から轟く歓声の中、主君より感状と名刀を賜り、旗本頭へ昇進した。",
+              "effects": "{ h: 3, cr: 5, p: 3, cash: 800000,\n            lifeAffiliation: { id: \"higashi-samurai-household\", action: \"role\", role: \"旗本頭\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }"
+            },
+            {
+              "weight": "0.85",
+              "prose": "激闘の末に敵を退けたものの、深手を負って落馬した。味方に救出され、療養所へ運ばれた。",
+              "effects": "{ h: -8, p: 2, cr: 2 }"
+            },
+            {
+              "weight": "1",
+              "prose": "敵の剛剣に太刀をへし折られ、眉間を割られて討死した。武士としての人生が幕を閉じた。",
+              "effects": "{ h: -100, d: [\"合戦一騎打ちでの討死\", \"極東の南北朝の合戦において、敵将との一騎打ちの末に眉間を割られて討死した。\"] }"
+            }
+          ]
+        },
+        {
+          "label": "自重して陣形を維持し、鉄砲隊に射撃を命じる",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "敵将は鉄砲の一斉射撃で討ち取られた。派手さはないが、確実な用兵を評価された。",
+              "effects": "{ p: 1, k: 2 }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"car_hig_samurai_choice_duel\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"極東\" && $terraData.regionalCareerOnDuty(s, \"hig_samurai\"),\n      t: \"北朝と南朝の軍勢が川を挟んで対峙する合戦場。敵陣から名うての剛の者が馬を進め、大音声で一騎打ちを呼びかけてきた。主君の御前で名乗りを上げ、武士の誉れを懸けて立ち会うか。\",\n      c: [\n        $terraData.K(\"太刀を抜き、名乗りを上げて一騎打ちに応じる\", { ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }, [\n          0.45,\n          \"電光石火の抜刀で敵将の甲冑を両断し、討ち取った。両軍から轟く歓声の中、主君より感状と名刀を賜り、旗本頭へ昇進した。\",\n          { h: 3, cr: 5, p: 3, cash: 800000,\n            lifeAffiliation: { id: \"higashi-samurai-household\", action: \"role\", role: \"旗本頭\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }\n        ], [\n          0.85,\n          \"激闘の末に敵を退けたものの、深手を負って落馬した。味方に救出され、療養所へ運ばれた。\",\n          { h: -8, p: 2, cr: 2 }\n        ], [\n     "
+    },
+    {
+      "id": "car_hig_cyber_choice_offensive",
+      "source": "data/parts/routes/regional-careers/events-east.js:328",
+      "priorPriority": "P0",
+      "originalChoices": 2,
+      "actualChoices": 2,
+      "originalText": "国家上層部から最重要指令。クルビアの巨大企業が極東の軍事通信を盗聴している疑いがある。その中枢サーバーへ電子侵入し、盗聴プログラムを無力化せよ。失敗すれば相手の防諜迎撃により端末のアーツユニットが暴走臨界を起こす極限の情",
+      "choices": [
+        {
+          "label": "最高強度の自作ウイルスを展開し、中枢へ突入する",
+          "outcomes": [
+            {
+              "weight": "0.4",
+              "prose": "クルビアのファイアウォールを瞬時に粉砕し、盗聴データを完全消去して無傷で離脱した。国家電脳防諜部の『電脳首席執行官』へと登り詰め、国家の影の覇権を握った。",
+              "effects": "{ k: 8, p: 5, cash: 5000000, cr: 5,\n            lifeAffiliation: { id: \"higashi-cyber-intelligence\", action: \"role\", role: \"電脳首席執行官\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }"
+            },
+            {
+              "weight": "0.85",
+              "prose": "作戦には成功したものの、相手の防諜パルスを浴びて一時的な記憶障害と頭痛の後遺症を負った。",
+              "effects": "{ k: -5, p: -5, cash: 1500000 }"
+            },
+            {
+              "weight": "1",
+              "prose": "相手の防諜迎撃により端末のオリジニウム回路が過負荷を起こし臨界爆破。至近距離で激しい爆炎とアーツ衝撃波を浴び、即死した。",
+              "effects": "{ h: -100, d: [\"電脳情報戦での臨界爆死\", \"極東の軍事電脳防諜任務において、迎撃アーツによる端末の臨界爆発を浴びて即死した。\"] }"
+            }
+          ]
+        },
+        {
+          "label": "リスクが高すぎると判断し、侵入経路を変更する",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "安全策を取り、外縁サーバーの撹乱に留めて無難に任務を終えた。",
+              "effects": "{ k: 2, p: 1 }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"car_hig_cyber_choice_offensive\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"極東\" && $terraData.regionalCareerOnDuty(s, \"hig_cyber\"),\n      t: \"国家上層部から最重要指令。クルビアの巨大企業が極東の軍事通信を盗聴している疑いがある。その中枢サーバーへ電子侵入し、盗聴プログラムを無力化せよ。失敗すれば相手の防諜迎撃により端末のアーツユニットが暴走臨界を起こす極限の情報戦である。\",\n      c: [\n        $terraData.K(\"最高強度の自作ウイルスを展開し、中枢へ突入する\", { ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }, [\n          0.4,\n          \"クルビアのファイアウォールを瞬時に粉砕し、盗聴データを完全消去して無傷で離脱した。国家電脳防諜部の『電脳首席執行官』へと登り詰め、国家の影の覇権を握った。\",\n          { k: 8, p: 5, cash: 5000000, cr: 5,\n            lifeAffiliation: { id: \"higashi-cyber-intelligence\", action: \"role\", role: \"電脳首席執行官\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }\n        ], [\n          0.85,\n          \"作戦には成功したものの、相手の防諜パルスを浴びて一時的な記憶障害と頭痛の"
+    },
+    {
+      "id": "car_hig_touhou_daily_01",
+      "source": "data/parts/routes/regional-careers/events-east.js:383",
+      "priorPriority": "P1",
+      "originalChoices": 1,
+      "actualChoices": 1,
+      "originalText": "東方重工の工場内で、最新鋭の旋盤から削り出された手裏剣『シルバーウィンド』同型刃の寸法と硬度を測定した。特殊合金の焼き入れムラがないか、顕微鏡で結晶構造を検査する。大量生産であっても、一撃の切れ味に一切の妥協は許されない",
+      "choices": [
+        {
+          "label": "検査合格印を押し、梱包ラインへ送る",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "工場のチャイムを聞き、作業着の煤を払って帰宅した。",
+              "effects": "{ k: 1, h: 1, cash: 180000 }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"car_hig_touhou_daily_01\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 3,\n      w: 0.5,\n      ge: { age: 20 },\n      show: s => s.res?.n === \"極東\" && $terraData.regionalCareerOnDuty(s, \"hig_touhou\"),\n      t: \"東方重工の工場内で、最新鋭の旋盤から削り出された手裏剣『シルバーウィンド』同型刃の寸法と硬度を測定した。特殊合金の焼き入れムラがないか、顕微鏡で結晶構造を検査する。大量生産であっても、一撃の切れ味に一切の妥協は許されない。\",\n      c: [\n        $terraData.K(\"検査合格印を押し、梱包ラインへ送る\", { ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }, [\n          1,\n          \"工場のチャイムを聞き、作業着の煤を払って帰宅した。\",\n          { k: 1, h: 1, cash: 180000 }\n        ])\n      ]\n    }"
+    },
+    {
+      "id": "car_lmd_black_after_detention",
+      "source": "data/parts/routes/regional-careers/events-east.js:510",
+      "priorPriority": "P1",
+      "originalChoices": 3,
+      "actualChoices": 3,
+      "originalText": "留置施設を出た後も、裏通りで交わした名前を口にする気にはなれなかった。手元に残る金を数え、今日の寝床と次の仕事のことを考えた。",
+      "choices": [
+        {
+          "label": "危ない紹介を避けて働き口を探す",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "小さな荷運びの依頼を尋ねて歩いたが、今日のところ仕事は決まらなかった。誰にも昔の取引を話さなかった。",
+              "effects": "{ lifeGoal: { id: \"lungmen-post-custody-livelihood\", action: \"continue\",\n            note: \"拘束終了後、安全を優先して求職を続けた\" } }"
+            }
+          ]
+        },
+        {
+          "label": "しばらく身を落ち着ける",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "日暮れまで人気の少ない場所で過ごした。次の勤め先を決めるのは、いまは見送った。",
+              "effects": "{ lifeGoal: { id: \"lungmen-post-custody-livelihood\", action: \"pause\",\n            note: \"拘束後の求職を一時休止した\" } }"
+            }
+          ]
+        },
+        {
+          "label": "別の仕事で生活を立て直したと認める",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "今日の仕事を終え、賃金を受け取った。黒市の取引から離れても、暮らしを支える仕事が一つできた。",
+              "effects": "{ lifeGoal: { id: \"lungmen-post-custody-livelihood\", action: \"complete\",\n            note: \"拘束が解けた後、別の実際の仕事で生計を得た\" } }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"car_lmd_black_after_detention\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 3,\n      w: 0.3,\n      ge: { age: 24 },\n      after: { id: \"car_lmd_black_choice_big_deal\", min: 2, choice: 0, outcome: 1 },\n      show: s => !s.fl?.detained &&\n        s.lifeRecord?.affiliations?.some(a => a.id === \"lungmen-black-market\" && a.episodes?.some(ep => ep.endedYear != null)) &&\n        s.lifeRecord?.goals?.some(g => g.id === \"lungmen-post-custody-livelihood\" && [\"active\", \"paused\", \"compromised\"].includes(g.status)),\n      t: \"留置施設を出た後も、裏通りで交わした名前を口にする気にはなれなかった。手元に残る金を数え、今日の寝床と次の仕事のことを考えた。\",\n      c: [\n        $terraData.K(\"危ない紹介を避けて働き口を探す\", {\n          show: s => s.job === 0,\n          ethics: { reviewed: true, policyVersion: 87, intent: \"livelihood-planning\" }\n        }, [1, \"小さな荷運びの依頼を尋ねて歩いたが、今日のところ仕事は決まらなかった。誰にも昔の取引を話さなかった。\",\n          { lifeGoal: { id: \"lungmen-post-cust"
+    },
+    {
+      "id": "car_kaz_comp_knight_daily_01",
+      "source": "data/parts/routes/regional-careers/events-central.js:64",
+      "priorPriority": "P1",
+      "originalChoices": 1,
+      "actualChoices": 1,
+      "originalText": "照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と巨額のギャラが飛び交うが、負ければ即座に契約を切られる過酷な競争の世界で",
+      "choices": [
+        {
+          "label": "サイン会をこなし、専属トレーナーのマッサージを受ける",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "ファンの歓声を背に、高級ホテルのスイートへ戻った。",
+              "effects": "{ cr: 2, p: 1, cash: 350000 }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"car_kaz_comp_knight_daily_01\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 3,\n      w: 0.5,\n      ge: { age: 20 },\n      show: s => s.res?.n === \"カジミエーシュ\" && $terraData.regionalCareerOnDuty(s, \"kaz_comp_knight\"),\n      t: \"照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と巨額のギャラが飛び交うが、負ければ即座に契約を切られる過酷な競争の世界である。\",\n      c: [\n        $terraData.K(\"サイン会をこなし、専属トレーナーのマッサージを受ける\", { ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }, [\n          1,\n          \"ファンの歓声を背に、高級ホテルのスイートへ戻った。\",\n          { cr: 2, p: 1, cash: 350000 }\n        ])\n      ]\n    }"
+    },
+    {
+      "id": "car_kaz_comp_knight_choice_match",
+      "source": "data/parts/routes/regional-careers/events-central.js:81",
+      "priorPriority": "P1",
+      "originalChoices": 2,
+      "actualChoices": 2,
+      "originalText": "メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する』。八百長を呑んで巨額の富を手にするか、騎士の誇りを賭けて真正面から勝利",
+      "choices": [
+        {
+          "label": "八百長を断固拒絶し、全霊を賭けて決勝戦で打ち倒す",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "猛烈な打ち合いを制し、相手騎士をアリーナの壁へ叩き伏せて勝利した。メジャー大会優勝の栄冠と巨額の賞金を掴み、真の英雄騎士として称えられた。",
+              "effects": "{ cr: 6, h: -3, p: 4, cash: 6000000 }"
+            },
+            {
+              "weight": "0.85",
+              "prose": "善戦したものの、相手の重打を頭部に受けて惜敗した。重い脳震盪を負い、長期の治療を余儀なくされた。",
+              "effects": "{ h: -10, p: -2, cash: 1000000 }"
+            },
+            {
+              "weight": "1",
+              "prose": "相手の必殺の一撃を頚椎にまともに受け、アリーナの砂の上で息絶えた。",
+              "effects": "{ h: -100, d: [\"騎士競技での致命傷\", \"カジミエーシュの騎士競技場において、対戦相手の一撃を頚椎に受けて息絶えた。\"] }"
+            }
+          ]
+        },
+        {
+          "label": "裏取引を呑み、第3ラウンドでわざと倒れる",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "見事な負け芝居を打ち、五百万龍門幣の裏金を受け取った。だがファンからの激しい罵声が耳に焼き付いた。",
+              "effects": "{ cash: 5000000, cr: -5, p: -8 }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"car_kaz_comp_knight_choice_match\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"カジミエーシュ\" && $terraData.regionalCareerOnDuty(s, \"kaz_comp_knight\"),\n      t: \"メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する』。八百長を呑んで巨額の富を手にするか、騎士の誇りを賭けて真正面から勝利を掴むか。\",\n      c: [\n        $terraData.K(\"八百長を断固拒絶し、全霊を賭けて決勝戦で打ち倒す\", { ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }, [\n          0.45,\n          \"猛烈な打ち合いを制し、相手騎士をアリーナの壁へ叩き伏せて勝利した。メジャー大会優勝の栄冠と巨額の賞金を掴み、真の英雄騎士として称えられた。\",\n          { cr: 6, h: -3, p: 4, cash: 6000000 }\n        ], [\n          0.85,\n          \"善戦したものの、相手の重打を頭部に受けて惜敗した。重い脳震盪を負い、長期の治療を余儀なくされた。\",\n          { h: -10, p: -2, cash: 1000000 }\n        ], [\n          1,\n          \"相手の必殺の一撃を頚椎にまともに受け、アリーナの砂の上で息絶えた。\",\n          { h: -100, d: [\"騎士競"
+    },
+    {
+      "id": "car_sir_soldier_daily_01",
+      "source": "data/parts/routes/regional-careers/events-central.js:136",
+      "priorPriority": "P1",
+      "originalChoices": 1,
+      "actualChoices": 1,
+      "originalText": "石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コートの下の銃の重みが、シラクーザの夜の秩序を担保している。",
+      "choices": [
+        {
+          "label": "回収金を幹部に納め、酒場でワインを飲む",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "仲間とサイコロ博打に興じ、夜更けに自室へ戻った。",
+              "effects": "{ p: 1, cash: 180000 }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"car_sir_soldier_daily_01\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 3,\n      w: 0.5,\n      ge: { age: 20 },\n      show: s => s.res?.n === \"シラクーザ\" && $terraData.regionalCareerOnDuty(s, \"sir_soldier\"),\n      t: \"石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コートの下の銃の重みが、シラクーザの夜の秩序を担保している。\",\n      c: [\n        $terraData.K(\"回収金を幹部に納め、酒場でワインを飲む\", { ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }, [\n          1,\n          \"仲間とサイコロ博打に興じ、夜更けに自室へ戻った。\",\n          { p: 1, cash: 180000 }\n        ])\n      ]\n    }"
+    },
+    {
+      "id": "car_sir_soldier_choice_turf_war",
+      "source": "data/parts/routes/regional-careers/events-central.js:153",
+      "priorPriority": "P0",
+      "originalChoices": 2,
+      "actualChoices": 2,
+      "originalText": "隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。夜の市街地で血で血を洗う銃撃戦が始まる。",
+      "choices": [
+        {
+          "label": "先頭を切ってクラブに突入し、サブマシンガンを乱射する",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "猛烈な銃撃戦の中で敵幹部を仕留め、クラブを制圧した。ドンからその胆力を絶賛され、若くして小隊を率いる『カポ』へ昇進した。",
+              "effects": "{ cr: 4, h: 2, p: 2, cash: 1200000,\n            lifeAffiliation: { id: \"siracusa-mafia-soldier\", action: \"role\", role: \"カポ\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }"
+            },
+            {
+              "weight": "0.85",
+              "prose": "敵を制圧したものの、太腿に銃弾を受けて流血した。裏医者の元で弾を抜いてもらった。",
+              "effects": "{ h: -6, p: 1, cash: 300000 }"
+            },
+            {
+              "weight": "1",
+              "prose": "待ち伏せしていた敵の散弾銃を胸に受け、石畳の上に崩れ落ちて絶命した。",
+              "effects": "{ h: -100, d: [\"ファミリー抗争での銃殺\", \"シラクーザの縄張り争いにおいて、敵対ファミリーの散弾銃を胸に受けて絶命した。\"] }"
+            }
+          ]
+        },
+        {
+          "label": "裏口を封鎖し、逃走する敵を待ち伏せする",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "逃げ出してきた敵の運転手を捕縛し、堅実に役目を果たした。",
+              "effects": "{ p: 1, k: 1 }"
+            }
+          ]
+        }
+      ],
+      "codePrefix": "{\n      id: \"car_sir_soldier_choice_turf_war\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"シラクーザ\" && $terraData.regionalCareerOnDuty(s, \"sir_soldier\"),\n      t: \"隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。夜の市街地で血で血を洗う銃撃戦が始まる。\",\n      c: [\n        $terraData.K(\"先頭を切ってクラブに突入し、サブマシンガンを乱射する\", { ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }, [\n          0.45,\n          \"猛烈な銃撃戦の中で敵幹部を仕留め、クラブを制圧した。ドンからその胆力を絶賛され、若くして小隊を率いる『カポ』へ昇進した。\",\n          { cr: 4, h: 2, p: 2, cash: 1200000,\n            lifeAffiliation: { id: \"siracusa-mafia-soldier\", action: \"role\", role: \"カポ\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }\n        ], [\n          0.85,\n          \"敵を制圧したものの、太腿に銃弾を受けて流血した。裏医者の元で弾を抜いてもらった。\",\n          { h: -6, p: 1, cash: "
+    }
+  ],
+  "issues": [
+    {
+      "id": "earth_discr_sarkaz_work_later",
+      "expected": 3,
+      "actual": 0
+    },
+    {
+      "id": "earth_discr_g1_market_coin",
+      "expected": 2,
+      "actual": 0
+    },
+    {
+      "id": "earth_discr_g2_work_lunch",
+      "expected": 2,
+      "actual": 0
+    }
+  ]
+}
