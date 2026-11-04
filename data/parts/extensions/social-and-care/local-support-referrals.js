@@ -1105,9 +1105,9 @@ window.TERRA_DATA_BUILD.fragment(
           rl: 2
         }
       ]),
-      $terraData.K("家族と別の土地へ移るため、書き留めた連絡先を信頼できる大人に託す", {}, [
+      $terraData.K("今後の連絡のため、書き留めた宛先を信頼できる大人に託す", {}, [
         1,
-        "遠くの街へ移り住むことになり、もし後から尋ねてくる子がいたら渡してほしいと近所の大人に控えを託した。新しい土地で生きるのに必死で、振り返る余裕はなかった。",
+        "もし後から尋ねてくる人がいたら伝えてほしいと、近所の大人に宛先の控えを託した。自分は当面、日々の生活を整えることにした。",
         {
           lifeAffiliation: {
             id: "ursus-school-aid",
@@ -1121,7 +1121,6 @@ window.TERRA_DATA_BUILD.fragment(
             kind: "student-handover",
             description: "家族の転居前、同級生の連絡先を近所の大人へ託した"
           },
-          fl: { war_displaced: 1 },
           p: 1
         }
       ]),
