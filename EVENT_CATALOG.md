@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2505　選択肢数：3143　結果枝数：4001
+イベント数：2566　選択肢数：3265　結果枝数：4123
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -12,7 +12,7 @@
 
 ## 国・地域別索引
 
-[イェラグ (84)](#tag-region-0)　・　[イベリア (109)](#tag-region-1)　・　[ヴィクトリア (145)](#tag-region-2)　・　[ウルサス (170)](#tag-region-3)　・　[カジミエーシュ (102)](#tag-region-4)　・　[カズデル (119)](#tag-region-5)　・　[クルビア (116)](#tag-region-6)　・　[サーミ (91)](#tag-region-7)　・　[サルゴン (98)](#tag-region-8)　・　[シエスタ (80)](#tag-region-9)　・　[シラクーザ (98)](#tag-region-10)　・　[ボリバル (94)](#tag-region-11)　・　[ミノス (86)](#tag-region-12)　・　[ラテラーノ (88)](#tag-region-13)　・　[リターニア (103)](#tag-region-14)　・　[レム・ビリトン (93)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (86)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (90)](#tag-region-19)　・　[未特定 (686)](#tag-region-20)　・　[龍門 (106)](#tag-region-21)
+[イェラグ (84)](#tag-region-0)　・　[イベリア (109)](#tag-region-1)　・　[ヴィクトリア (145)](#tag-region-2)　・　[ウルサス (170)](#tag-region-3)　・　[カジミエーシュ (102)](#tag-region-4)　・　[カズデル (119)](#tag-region-5)　・　[クルビア (116)](#tag-region-6)　・　[サーミ (91)](#tag-region-7)　・　[サルゴン (98)](#tag-region-8)　・　[シエスタ (80)](#tag-region-9)　・　[シラクーザ (98)](#tag-region-10)　・　[ボリバル (94)](#tag-region-11)　・　[ミノス (86)](#tag-region-12)　・　[ラテラーノ (88)](#tag-region-13)　・　[リターニア (103)](#tag-region-14)　・　[レム・ビリトン (93)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (86)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (90)](#tag-region-19)　・　[未特定 (747)](#tag-region-20)　・　[龍門 (106)](#tag-region-21)
 
 <a id="tag-region-0"></a>
 ### イェラグ（84）
@@ -343,7 +343,7 @@
 - [daily_rhodes_21](#event-daily_rhodes_21) — 食堂の注文口に「辛味抜き希望」「ヴィクトリア風ロースト希望」といった各国のリクエスト札が並んでいるのを眺めた。
 - [sr_intersect_battlefield_mercy](#event-sr_intersect_battlefield_mercy) — 硝煙の立ち込める市街戦の廃墟で外勤任務中、倒壊した建物の瓦礫の陰に、深手を負って倒れているレユニオンの感染者戦闘員を見かけた。こちらに気づいた相手は…
 - [car_vic_infantry_entry](#event-car_vic_infantry_entry) — ヴィクトリアの各都市で、正規陸軍の平民歩兵の募集が行われていた。伝統と栄光を謳う帝国だが、平民出身の兵士はどれほど戦功を立てても下士官止まりであり、…
-- [car_vic_royal_entry](#event-car_vic_royal_entry) — ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推…
+- [car_vic_royal_entry](#event-car_vic_royal_entry) — ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要…
 - [car_vic_scribe_entry](#event-car_vic_scribe_entry) — ロンディニウム中央議会や地方市議会の議事堂で、公爵や伯爵たちの議案や法律文書を記録・整理する書記官が募集されていた。貴族の利権調整と汚職の嵐に巻き込…
 - [car_vic_works_entry](#event-car_vic_works_entry) — 巨大な蒸気機関車と鉄鋼レールが並ぶヴィクトリアの鉄道工廠。産業革命の鼓動が響くこの巨大施設で、高圧蒸気パイプラインや機関車エンジンの整備を担う技術者…
 - [car_vic_infantry_daily_01](#event-car_vic_infantry_daily_01) — 冷たい雨が降り続くヴィクトリア軍の演習陣地。膝まで泥に浸かりながら塹壕の土嚢を積み直し、油布で小銃のボルトを拭った。貴族将校が天幕で温かいスープを飲…
@@ -479,8 +479,8 @@
 - [life_chernobog_worksite_errand](#event-life_chernobog_worksite_errand) — 鉱山へ続く道の脇に立ち入り禁止の柵が次々と組まれ、重い幌をかけた荷車がひっきりなしに行き交うようになった。行きつけの食堂の壁に、その柵の手前まで板材…
 - [life_reunion_local_entry](#event-life_reunion_local_entry) — チェルノボーグの街区がレユニオンに占拠され、行き場を失った感染者とその家族が廃倉庫の片隅に身を寄せ合っていた。食料や薬を運ぶ人手が足りないという。力…
 - [life_reunion_order_conflict](#event-life_reunion_order_conflict) — 臨時拠点の配給所で、避難者を守るためにも全員が武器を取るべきだと息巻く声が上がった。周囲の仲間も意見が割れ、重苦しい空気が張りつめている。このまま配…
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
-- [life_ursus_school_aid](#event-life_ursus_school_aid) — 混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
+- [life_ursus_school_aid](#event-life_ursus_school_aid) — （動的本文）
 - [life_ursus_school_aid_followup](#event-life_ursus_school_aid_followup) — （動的本文）
 - [life_ursus_school_aid_adult_followup](#event-life_ursus_school_aid_adult_followup) — 大人になって荷物を整理していた時、チェルノボーグの学校で書き留めた同級生たちの古い連絡先がひょっこり出てきた。あのまま行方が知れない仲間の名を指でな…
 - [life_chernobog_resident_response](#event-life_chernobog_resident_response) — 年末から年明けにかけて、チェルノボーグの通りでは鎧戸を打ちつける音や、はぐれた身内を捜す貼り紙が目につくようになった。外の区画からの便りも途絶えがち…
@@ -491,10 +491,10 @@
 - [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_ursus_katorga_life](#event-life_ursus_katorga_life) — 送り込まれたカトルガ区画では、稼働停止とともに照明も暖房も断ち切られ、外の扉には重い鎖がかけられた。叩いても返事のない扉が並び、白い息が凍りつく暗闇…
 - [life_ursus_student_assembly_release](#event-life_ursus_student_assembly_release) — やがて封鎖扉が開かれ、外の眩しい光とともに審理や釈放の手続きが始まった。泣きながら親に抱きつく者、戻らない友人の名を呼ぶ者、帰る場所を失った者が入り…
-- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
+- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎた。学びの場や仕事、住まいが以前とは変わった人も多い。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の…
 - [life_ursus_school_habit](#event-life_ursus_school_habit) — 学校へ通える日は、冷たい空気の教室で授業を受けた。試験が近づくにつれ、放課後に残って勉強するか、まっすぐ帰って家の手伝いをするか迷った。家に帰れば、…
 - [life_ursus_classmate_contact](#event-life_ursus_classmate_contact) — よく学校を休む同級生が、休み時間に遠慮がちにノートを見せてほしいと声をかけてきた。机を寄せて黒板を写したページを開く。これからも気に留めてやるか、距…
-- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから散り散りになった昔の同級生から、短い葉書が届いた。あの日から細々と便りを続けてきたが、お互い住む街も仕事もすっかり変わった。これか…
+- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [life_lynch_mob_siege](#event-life_lynch_mob_siege) — 夜更け、怒号と松明の火がアパートの窓を赤く照らし出した。棍棒を持った排斥暴徒が『忌み者を焼き出せ』と叫びながら玄関扉を叩き壊そうとしている。廊下には…
 - [life_mine_collapse_crisis](#event-life_mine_collapse_crisis) — 地下深くの坑道で削岩機を動かしていたその時、頭上の岩盤から耳をつんざく地鳴りと共に支柱が砕け散る音が響いた。天井に巨大な亀裂が走り、無数の岩石が雨の…
 - [ori_ursus_mine_request](#event-ori_ursus_mine_request) — 交代の鐘が鳴るまであと一時間というところで、修理に出した防塵マスクがまだ戻ってこないと言われた。予備の装備も底をついているが、ここで持ち場を離れれば…
@@ -727,7 +727,7 @@
 - [choice_kazdel_02](#event-choice_kazdel_02) — テント酒場で見知らぬ外国の代理人から声をかけられた。「お前のような腕利きのサルカズが泥まみれで瓦礫を運ぶのは勿体ない。隣国の紛争地へ行けば、この金貨…
 - [choice_kazdel_03](#event-choice_kazdel_03) — 吹きさらしのテント暮らしを脱するため、数十家族が身を寄せ合える堅牢な石造り共同住宅の建設が始まった。寒風が吹きすさぶ中、レンガ積みと屋根架けの急ピッ…
 - [choice_kazdel_04](#event-choice_kazdel_04) — 瓦礫の撤去作業中、地下数メートルの地層から古代サルカズの楔形文字が刻まれた巨大な黒曜石の石板が発掘された。太古の歴史と失われたアーツ技術の手がかりが…
-- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教える寺子屋を開くことになっ…
+- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書き…
 - [choice_kazdel_06](#event-choice_kazdel_06) — 荒野から猛烈な突風を伴う砂嵐が吹き寄せてきた。移動集落の多くの天幕が浮き上がり、吹き飛ばされそうになっている。大槌を持って杭打ちに飛び出す決死の補強…
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
@@ -1609,11 +1609,11 @@
 - [daily_leithanien_56](#event-daily_leithanien_56) — 高価な抑制剤の処方箋を握りしめ、薬局の前で立ち尽くした。文化を誇る美しい都の足元で、見殺しにされる貧民の過酷な現実を痛感した。
 - [daily_leithanien_57](#event-daily_leithanien_57) — 音楽院の防音レッスン室で、古典の無伴奏組曲を何時間も弾き込んだ。指が動かなくなるまで没頭し、音の構造の奥深さに圧倒された。
 - [daily_leithanien_58](#event-daily_leithanien_58) — 学び舎の音楽教室で、古いアーツ記譜法と合奏の構成理論を学んだ。旋律が織りなす整然とした規則性に触れ、音の奥深さに視界が一気に開けた。
-- [daily_leithanien_59](#event-daily_leithanien_59) — 学内コンクールの本選を聴講した。同世代の圧倒的な超絶技巧と豊かな表現力に強い刺激を受け、練習への闘志を燃え上がらせた。
+- [daily_leithanien_59](#event-daily_leithanien_59) — （動的本文）
 - [daily_leithanien_60](#event-daily_leithanien_60) — 実技試験の前夜、過度の緊張と不安で眠れず、胃を痛めてしまった。温かいカモミールティーを啜りながら、必死に心を落ち着かせた。
 - [choice_leithanien_01](#event-choice_leithanien_01) — 偶然手に入れた招待状により、郊外の古城で巫王残党が禁忌のアーツ儀式を目論んでいる現場を知ってしまった。選帝侯の憲兵隊に通報するか、自ら真偽を確かめる…
 - [choice_leithanien_02](#event-choice_leithanien_02) — 数百年前の名工が遺した伝説のバイオリンが、響板の大破損状態であなたの工房（または知人の店）に持ち込まれた。修復に成功すれば世界に名が轟くが、失敗すれ…
-- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。名門音楽院への入学が認められたが、高額な制服代と教材費が払えず泣いている…
+- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。音楽を教わる先を探しているが、教材や身の回りの品を買う金もない。
 - [choice_leithanien_04](#event-choice_leithanien_04) — 名高い銘醸ブドウ畑の相続を巡り、伝統ある小作農家と新興の貴族商人の間で激しい係争が起きていた。地域の長老であるあなたに、仲裁の立会人としての要請が届…
 - [choice_leithanien_05](#event-choice_leithanien_05) — 選帝侯も臨席する大聖堂の演奏会直前、主役のチェロ奏者が急病で倒れた。楽団の控え奏者として舞台裏に控えていたあなたに、指揮者から「代役として協奏曲を弾…
 - [choice_leithanien_06](#event-choice_leithanien_06) — 好戦的な貴族が、聴く者の神経を破壊する非人道的な音波アーツ砲を秘密裏に試作していた。開発に協力させられそうになった技師から、設計図の破棄を手伝ってほ…
@@ -1929,7 +1929,7 @@
 - [car_hig_touhou_daily_01](#event-car_hig_touhou_daily_01) — 東方重工の工場内で、最新鋭の旋盤から削り出された手裏剣『シルバーウィンド』同型刃の寸法と硬度を測定した。特殊合金の焼き入れムラがないか、顕微鏡で結晶…
 
 <a id="tag-region-20"></a>
-### 未特定（686）
+### 未特定（747）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
@@ -2305,8 +2305,8 @@
 - [elder_choice_craft_teaching](#event-elder_choice_craft_teaching) — 近所の若い見習い職人が、作業のコツが掴めずに悩んでいると耳にした。長年の現場経験で培った勘と技術を、次の世代へ教える機会が巡ってきた。
 - [elder_choice_community_mediator](#event-elder_choice_community_mediator) — 通りの住人同士で井戸水の使い方や通路の荷物をめぐる口論が起きていた。長年この区画で暮らしてきた古株として、間に入って仲裁するか問われた。
 - [elder_daily_grandchild_visit](#event-elder_daily_grandchild_visit) — 独立した子供が幼い孫を連れて顔を見せにやってきた。部屋中を元気いっぱいに駆け回る孫の笑顔を見つめるうちに、胸の奥から温かいものが込み上げた。
-- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — よその移動都市で暮らす子供や孫から近況を知らせる便りが届いた。ぎこちない文字で綴られた学校や遊びの報告を、眼鏡を掛け直して何度も嬉しそうに読み返した…
-- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫が学校へ上がる節目の年を迎えた。日頃の蓄えの中から、新しい教本や学用品を揃えるためのお祝いの品を用意したいと考えた。
+- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — 子や孫から近況を知らせる便りが届いた。日々の遊びや家の出来事を綴った文字を、眼鏡を掛け直して何度も嬉しそうに読み返した。
+- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫の成長に合わせ、読み書きに使える品やお祝いの小遣いを贈りたいと思った。学校へ通えるかどうかは、本人たちの暮らしと受入先の事情を確かめてからの話だ。
 - [elder_choice_family_folklore](#event-elder_choice_family_folklore) — 夕暮れ時、暖炉の周りに集まった子供や孫たちから「昔のテラの大地や旅の話を聞かせてほしい」とせがまれた。
 - [elder_choice_write_memoir](#event-elder_choice_write_memoir) — 机に向かい、古びた手帳と万年筆を手に取った。激動のテラの大地で過ごした自らの人生の軌跡を、一冊の回顧録として書き残そうと考えた。
 - [elder_choice_make_will](#event-elder_choice_make_will) — 万が一の時に備え、公証人を招いて正式な遺言書を作成する機会を持った。これまで蓄えてきた財産や家財の処遇をどう定めるか熟考した。
@@ -2506,7 +2506,7 @@
 - [local_medical_followup](#event-local_medical_followup) — 以前、診療所がごった返していた頃に受診の手順を調べておいたことがあった。今日、具合の悪そうな近所の人から『どこへ行けば診てもらえるだろう』と心細そう…
 - [facility_clinic_constrained](#event-facility_clinic_constrained) — 近くの診療所は人手も薬も足りないらしく、日中の窓口が早く閉まるようになっていた。表の張り紙には『急患優先』とあるばかりで、普段の診察や薬の相談はいつ…
 - [facility_clinic_followup](#event-facility_clinic_followup) — 以前、診療所がごった返していた頃に別の相談先を調べたことがあった。久しぶりにその前を通りかかると、入口の案内板が新しく塗り替えられているのに気づいた…
-- [facility_school_disruption](#event-facility_school_disruption) — 通っている学び舎で教室が閉まる日が増え、集会所の隅や空き部屋を借りて細々と授業が行われるようになった。いつ元の教室へ戻れるのかは、先生にも分からない…
+- [facility_school_disruption](#event-facility_school_disruption) — 通っている学校で授業を開けない日が増えた。校門には休止と教材配布の知らせが貼られ、別の部屋で教えてもらえるのか、先生もまだ確かめているという。
 - [facility_school_reopen](#event-facility_school_reopen) — ようやく学び舎の扉が開き、いつもの教室に机が並んだ。黒板の前に立った先生は『休みの前の続きから始める』と言ったが、教科書を開くとどこまで習ったのかす…
 - [facility_work_restricted](#event-facility_work_restricted) — 原材料が届かず、仕事場の機械が半分以上止まったままだ。持ち場の作業も減り、現場の責任者は毎日渋い顔でシフトを削っている。来月の給金がどうなるか聞くか…
 - [facility_work_recovery](#event-facility_work_recovery) — 止まっていた資材がようやく届き、仕事場に機械の唸りが戻ってきた。ただ、人が抜けた穴を埋めるため、貼り出された配置表には見慣れない工程まで自分の名前が…
@@ -2529,7 +2529,7 @@
 - [people_school_life_conversation](#event-people_school_life_conversation) — （動的本文）
 - [people_clinic_life_conversation](#event-people_clinic_life_conversation) — 待合いの人波がようやく引いた頃、見慣れた受付の担当者が肩を回しながら伝票の束を揃えていた。もうすぐ交代の時間らしい。
 - [people_work_care_schedule](#event-people_work_care_schedule) — 顔なじみの同僚から、家族の看病でどうしても手が離せず、来週のシフトを少し代わってもらえないかと小声で頼まれた。こちらにも自分の持ち場がある。
-- [people_school_housing_concern](#event-people_school_housing_concern) — 授業が終わったあと、顔なじみの教え手が重い教材箱の蓋を閉じた。今借りている相部屋では夜に机を広げるゆとりもないと聞く。後片づけを手伝うか、次の授業の…
+- [people_school_housing_concern](#event-people_school_housing_concern) — 顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。
 - [people_clinic_skill_continuity](#event-people_clinic_skill_continuity) — 顔なじみの受付係が、新しく書き直した案内札を前に首をひねっていた。声をかけると、初めて来る患者にもすぐ伝わる言い回しを考えているところだと言う。
 - [job_contract_review_v76](#event-job_contract_review_v76) — 手渡された雇用契約書には、給金や勤務時間だけでなく、怪我や破損の責任まで細かい文字でびっしり並んでいた。何度読み返しても、自分に有利なのか不利なのか…
 - [job_contract_negotiation_v76](#event-job_contract_negotiation_v76) — 今の仕事にもだいぶ手が馴染み、周囲より多くの荷や工程を回せるようになってきた。責任者が一人で帳面をつけている隙を見て、給金の色をつけてもらえないか切…
@@ -2604,10 +2604,51 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+- [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
+- [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
+- [edu_upper_locality_review](#event-edu_upper_locality_review) — 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+- [edu_higher_search_decision](#event-edu_higher_search_decision) — 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
+- [edu_applicant_institution_shortlist](#event-edu_applicant_institution_shortlist) — 集めた募集案内を広げると、同じ分野でも選抜の方法や通う場所が違っていた。日帰りできそうな学校もあれば、住まいを考え直す必要のある学校もあった。
+- [edu_school_opening_not_admission](#event-edu_school_opening_not_admission) — 確かめた学校の校舎は残っていたが、希望する課程への募集は今期行われていなかった。窓口には理由と次の予定を尋ねる人がいた。
+- [edu_course_admission_contract](#event-edu_course_admission_contract) — 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
+- [edu_secondary_gap_reentry](#event-edu_secondary_gap_reentry) — 学校を離れて何度も季節が過ぎた。以前使っていた教材を持って相談すると、教員はどこまで学んでいたかを一つずつ尋ねた。
+- [edu_overage_equivalency_review](#event-edu_overage_equivalency_review) — 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
+- [edu_no_path_year_close](#event-edu_no_path_year_close) — 願書と時刻表を片付ける時期になった。調べた範囲では今年の入学先を決められなかったが、また学ぶ道まで閉ざされたわけではない。
+- [edu_route_first_fare](#event-edu_route_first_fare) — 一回分の運賃を確かめ、往復の日数を掛けてみた。毎日通うと、学費のほかにも少なくない金と時間が要る。
+- [edu_route_weather_closure](#event-edu_route_weather_closure) — 学校へ向かう便が運休になり、発着所には行き先の消された板が掛かっていた。天気が戻るまでの何日かで済むのか、誰にも分からない。
+- [edu_mobile_city_separation](#event-edu_mobile_city_separation) — 昨日まで使えた都市間の連絡便が、しばらく止まるという。学校の校舎は残っているが、いつもの時刻にはたどり着けなくなった。
+- [edu_boarding_application](#event-edu_boarding_application) — 学校から寮の案内が届いた。部屋の広さ、食事代、必要な保証人の欄が並んでいる。申し込めることと、実際に部屋を借りられることは別だった。
+- [edu_boarding_rules_review](#event-edu_boarding_rules_review) — 寮の管理人は、消灯時刻と外泊の届けを説明した。ここで暮らすなら、家から仕送りが届かない月も考えておかなければならない。
+- [edu_relative_lodging](#event-edu_relative_lodging) — 遠方に暮らす親戚から、しばらくなら空き部屋を使ってよいと便りが来た。返事には、家事の分担についても書いてある。
+- [edu_school_relocation_family](#event-edu_school_relocation_family) — 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+- [edu_crossborder_documents](#event-edu_crossborder_documents) — 遠方の学校へ行くために、途中でどんな身分証明が必要か尋ねた。国境を越える道には、移動を許されるか確かめる場所があるという。
+- [edu_classroom_language_gate](#event-edu_classroom_language_gate) — 募集の説明には、まだ意味をつかめない言葉があった。授業で話される言葉も、教本の文字も、今の自分にどこまで分かるか心配だった。
+- [edu_commute_daily_fatigue](#event-edu_commute_daily_fatigue) — まだ暗いうちに家を出た。乗り継ぎの待ち時間に教科書を開いたものの、車体が揺れるたびに字を追い直す。教室に着いたころには、すでに半日働いたような疲れが…
+- [edu_route_recovered_notice](#event-edu_route_recovered_notice) — 運休していた便が再び走り始めたと聞いた。新しい時刻表には、以前とは違う数字が並んでいる。今の暮らしで使えるかどうかは、改めて確かめなければならない。
+- [edu_fee_itemization](#event-edu_fee_itemization) — 学校から届いた授業料の案内とは別に、教材と通学、住まいの見積を集めた。今日必要な金と、毎年掛かる金を分けて数えることにした。
+- [edu_entrance_exam_journey](#event-edu_entrance_exam_journey) — 受験案内に、集合時刻と会場の場所が書かれていた。まだ合否の分からない学校まで行くために、家では旅費を数え直した。
+- [edu_scholarship_application](#event-edu_scholarship_application) — 募集案内に、学費を支える制度が記されていた。申請には本人や世帯の事情を示す書類が必要らしい。
+- [edu_employer_sponsored_course](#event-edu_employer_sponsored_course) — 職場に、仕事に関わる講習の費用を支援する案内が回ってきた。勤務を続ける約束が要るのか、返還の条件があるのか、細かな字まで確かめた。
+- [edu_education_credit_terms](#event-edu_education_credit_terms) — 学費の貸付について、返済の期日と支払額が細かく書かれていた。今の納付を助けても、将来の暮らしに負担が残る。
+- [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_study_work_balance](#event-edu_study_work_balance) — 働きながら受けられる講習があると聞いた。勤務と授業の時間を並べると、家の用事まで含めて休める時間が少なくなりそうだった。
+- [edu_admission_document_missing](#event-edu_admission_document_missing) — 次の学校に提出するため、前に学んだことを示す記録を探した。必要な書類が手元に見当たらず、どこへ照会すればよいか尋ねた。
+- [edu_institution_specific_exclusion](#event-edu_institution_specific_exclusion) — 願書を受け取った人は記載を確かめ、しばらく奥の部屋へ消えた。戻ってきたとき、学校の決定は受入を見送るという短いものだった。
 - [edu_school_confidential_disclosure](#event-edu_school_confidential_disclosure) — 診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。
 - [edu_first_day_of_actual_school](#event-edu_first_day_of_actual_school) — 教室にはまだ誰も座っていない席があった。自分の名前が書かれた札を見つけ、鞄を机の横へ置く。窓の外では、登校してきた生徒たちの声が重なっていた。
+- [edu_teacher_shortage](#event-edu_teacher_shortage) — 黒板には前の授業の日付が残っている。担当の教え手が来られない日が続き、教室では予定した授業がなかなか進まなかった。
+- [edu_course_specific_equipment](#event-edu_course_specific_equipment) — 実習室の机には測定器と使い込まれた工具が並んでいた。先生は急いで触れないよう注意し、計測の順序を黒板に書いた。数値が少しずつ揃っていくのを見て、よう…
+- [edu_school_closed_by_disaster](#event-edu_school_closed_by_disaster) — 学校へ向かう道に人だかりができていた。校舎の一部が使えなくなり、授業再開の日取りもまだ決まらないと聞いた。鞄だけが、いつもどおり肩に掛かっている。
+- [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+- [edu_temporary_classroom](#event-edu_temporary_classroom) — 倉庫を片付けた一角に板を立て掛け、間に合わせの黒板を作った。外からは荷車の音が聞こえるが、先生は出席を取ろうとしている。
 - [edu_real_institution_transfer](#event-edu_real_institution_transfer) — 別の学校から受入の案内が届いた。以前の授業と進み方が違うらしく、持っている履修の記録を見せてほしいという。
+- [edu_exam_cancelled](#event-edu_exam_cancelled) — 試験を行わないという知らせが届いた。会場へ向かう前の者も、すでに門の前で待っていた者も、改めて予定を考えることになった。
 - [edu_graduation_record_review](#event-edu_graduation_record_review) — 学期の終わり、これまでの出席と評価を学校で照合することになった。休んだ年や別の学校で学んだ月も、同じ一行にはまとめられない。
+- [edu_former_teacher_meeting](#event-edu_former_teacher_meeting) — 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+- [edu_child_guardian_disagreement](#event-edu_child_guardian_disagreement) — 学校の話になると家の空気が重くなった。行ってみたいと告げたが、家の人は仕事や家計のことばかり気にしている。
+- [edu_sibling_school_cost_conflict](#event-edu_sibling_school_cost_conflict) — 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
 - [edu_roving_teacher_visit](#event-edu_roving_teacher_visit) — 隊商と一緒に来た人が、集会所の隅へ古い本を並べた。数日だけ文字と計算を教えてくれるという。
 - [edu_community_tent_learning](#event-edu_community_tent_learning) — 風を防ぐために布を二重に張り、倒れかけた木箱を机にした。板切れの上の文字を、子どもたちは交替で指差して読んでいる。
 - [edu_apprentice_literacy_exchange](#event-edu_apprentice_literacy_exchange) — 工房の親方は仕事のあとで帳面を開き、材料の数え方を教えてくれた。手を動かすだけでは済まない仕事が、思ったより多い。
@@ -2616,6 +2657,26 @@
 - [edu_clan_knowledge_transmission](#event-edu_clan_knowledge_transmission) — 年長者は小さな沢の前で足を止め、土の乾き方と風向きを確かめた。帰り道が分からなくなったとき、地図より先に見るものがあるという。
 - [edu_adult_evening_literacy](#event-edu_adult_evening_literacy) — 仕事帰りに灯りのついた部屋をのぞくと、机の上に短い文章が並んでいた。初めて来た人のために、先生は鉛筆を一本残してくれていた。
 - [edu_informal_skill_assessment](#event-edu_informal_skill_assessment) — これまでに覚えた仕事や読み書きの内容を書き出した。学校の外で身につけた腕を、どの資格なら審査してもらえるのか確かめる必要があった。
+- [edu_dependent_future_school_consult](#event-edu_dependent_future_school_consult) — 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+- [edu_region_yan_public_study](#event-edu_region_yan_public_study) — 書院の門前に、今期の講義と選抜試験の案内が貼られていた。雨除けの下で書き写す人々は、皆同じ試験を目指しているわけでもないらしい。
+- [edu_region_victoria_disrupted_college](#event-edu_region_victoria_disrupted_college) — 大学の回廊には、授業を休む知らせと再開する知らせが日付を変えて貼られていた。使える教室がいくつ残るのか、学生たちは案内の前で立ち止まっていた。
+- [edu_region_kazimierz_sponsor_training](#event-edu_region_kazimierz_sponsor_training) — 訓練場の外に、競技騎士の姿を刷った募集看板が立っていた。必要な用具と講習の費用が書かれ、支援が受けられるかどうかは別の欄に記されていた。
+- [edu_region_columbia_corporate_scholarship](#event-edu_region_columbia_corporate_scholarship) — 大学の掲示板に、企業が費用を支援する講習・研究課程の案内が貼られていた。支援額だけでなく、応募資格と返還の条件も読まなければならない。
+- [edu_region_higashi_dojo_learning](#event-edu_region_higashi_dojo_learning) — 道場の戸口に、稽古の時間が書かれていた。教え手が、初めてなら見学してもよいと声を掛けてきた。
+- [edu_region_iberia_closed_library](#event-edu_region_iberia_closed_library) — 潮の匂いが残る建物の扉には、かつての授業時間が彫られていた。中の本を使えるのか、今も教え手がいるのかは、外から見ただけでは分からない。
+- [edu_region_kazdel_school_rebuild](#event-edu_region_kazdel_school_rebuild) — 崩れた壁の上に新しい梁が渡され、雨の入らない部屋が一つできた。通りかかった人々が入口から中をのぞいていたが、授業が始まるかどうかはまだ分からない。
+- [edu_region_sami_clan_or_school](#event-edu_region_sami_clan_or_school) — 旅を共にする年長者は、雪の下の足跡の見分け方を教えてくれた。交易所の近くに文字を教える部屋があるとも聞いたが、確かなことはまだ分からない。
+- [edu_region_leithanien_arts_selectivity](#event-edu_region_leithanien_arts_selectivity) — 学院の案内板に、実技試験の課題と募集条件が書かれていた。扉の向こうから繰り返す旋律が聞こえるが、自分がどの授業に入れるかはまだ決まっていない。
+- [edu_region_kjerag_mountain_and_school](#event-edu_region_kjerag_mountain_and_school) — 谷の向こうの学校から入学案内が届いた。晴れた日なら道は見えるが、雪の季節には峠を越えられないと家の人は言う。
+- [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
+- [edu_region_bolivar_school_under_conflict](#event-edu_region_bolivar_school_under_conflict) — 校庭に子どもの姿はなく、雨の後の水たまりが残っていた。先生たちの行き先はばらばらで、学校の再開日も決まっていない。
+- [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
+- [edu_ursus_school_displacement_memory](#event-edu_ursus_school_displacement_memory) — 昔の学校がどうなったのかを知らせる便りが来た。あのとき教室で聞いた物音や、隣に座っていた友人の顔が、紙の文字を読むうちに浮かんできた。
+- [edu_ursus_school_bystander_memory](#event-edu_ursus_school_bystander_memory) — あの日の通りの様子を話す人がいた。学校の方から逃げてきた子どもたちの姿を、自分も見たことを思い出した。教室の中で何が起きたかまでは知らない。
+- [edu_student_public_meeting_distinction](#event-edu_student_public_meeting_distinction) — 広場の端に、人の輪ができていた。学校のことを話す声もあれば、働き口や街の暮らしを訴える声も聞こえる。
+- [edu_school_peer_exclusion_route](#event-edu_school_peer_exclusion_route) — 教室で机を動かす音がして、隣の席が空いた。こちらを見てひそひそ話す声は聞こえたが、何を言っているのかまでは分からなかった。
+- [edu_safety_for_disabled_student](#event-edu_safety_for_disabled_student) — 授業を受ける部屋までの道に、自分には使いづらい場所があった。別の入口を通れるのか、教室を変えてもらえるのか、学校へ相談しようと考えた。
+- [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-region-21"></a>
 ### 龍門（106）
@@ -2728,10 +2789,10 @@
 
 ## ジャンル別索引
 
-[移動・物流 (238)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (351)](#tag-genre-2)　・　[感染・医療 (405)](#tag-genre-3)　・　[教育・文化 (396)](#tag-genre-4)　・　[差別・制度 (153)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (243)](#tag-genre-7)　・　[戦争・政治 (145)](#tag-genre-8)　・　[天災・避難 (200)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (389)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (891)](#tag-genre-13)　・　[労働・経済 (733)](#tag-genre-14)
+[移動・物流 (244)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (361)](#tag-genre-2)　・　[感染・医療 (405)](#tag-genre-3)　・　[教育・文化 (446)](#tag-genre-4)　・　[差別・制度 (155)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (243)](#tag-genre-7)　・　[戦争・政治 (145)](#tag-genre-8)　・　[天災・避難 (202)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (394)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (895)](#tag-genre-13)　・　[労働・経済 (753)](#tag-genre-14)
 
 <a id="tag-genre-0"></a>
-### 移動・物流（238）
+### 移動・物流（244）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [transporter_contract_review](#event-transporter_contract_review) — トランスポーターとして街を走り始めて二年が経った。靴底の減り方と裏通りの抜け道がすっかり体に染みついたころ、契約の節目がやってきた。このまま顔なじみ…
 - [kjerag_transporter_route_review](#event-kjerag_transporter_route_review) — 雪の山道を荷を背負って登り始めて二年になる。新しい荷受け場所を設けたいと集落を回ると、温かい茶を出して歓迎してくれる村もあれば、よそ者の出入りを嫌っ…
@@ -2884,7 +2945,7 @@
 - [life_chernobog_worksite_errand](#event-life_chernobog_worksite_errand) — 鉱山へ続く道の脇に立ち入り禁止の柵が次々と組まれ、重い幌をかけた荷車がひっきりなしに行き交うようになった。行きつけの食堂の壁に、その柵の手前まで板材…
 - [life_local_mutual_aid_relocation](#event-life_local_mutual_aid_relocation) — 水場や暖房の当番を一緒に回していた街区を離れることになった。荷造りをしながら、預かっていた道具置き場の鍵と自分の役目をどう締めくくるか考えた。
 - [life_reunion_local_entry](#event-life_reunion_local_entry) — チェルノボーグの街区がレユニオンに占拠され、行き場を失った感染者とその家族が廃倉庫の片隅に身を寄せ合っていた。食料や薬を運ぶ人手が足りないという。力…
-- [life_ursus_school_aid](#event-life_ursus_school_aid) — 混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持…
+- [life_ursus_school_aid](#event-life_ursus_school_aid) — （動的本文）
 - [life_ursus_school_aid_followup](#event-life_ursus_school_aid_followup) — （動的本文）
 - [life_ursus_school_aid_adult_followup](#event-life_ursus_school_aid_adult_followup) — 大人になって荷物を整理していた時、チェルノボーグの学校で書き留めた同級生たちの古い連絡先がひょっこり出てきた。あのまま行方が知れない仲間の名を指でな…
 - [life_infected_mutual_aid_shortage](#event-life_infected_mutual_aid_shortage) — 共同購入している抑制剤と日用品の値が跳ね上がり、会費を払えない世帯も出てきた。そこへ仕入れの遅れも重なり、わずかしか届かなかった薬と物資を誰から先に…
@@ -2970,13 +3031,19 @@
 - [v77_accidental_transport_originium](#event-v77_accidental_transport_originium) — 職場の運搬車が損傷して積み荷の袋が破れ、黒い粉が舞った。近くにいたとき粉を吸い込み、その後から咳とだるさが続いた。
 - [v81_housing_account](#event-v81_housing_account) — 申請の控えを出すたび、窓口では別の書類を求められた。近所では事情を知らない人が噂をしている。今月の家賃を払う前に、どこへ相談するか決めた。
 - [life_ursus_zelgrad_evacuation](#event-life_ursus_zelgrad_evacuation) — 広場に集められた住民たちの前で、北原の元坑夫を名乗る男が軍の研究と感染者の非道な扱いを声を限りに告発し、今すぐ街を出るよう叫んだ。ざわめきが広がり、…
+- [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+- [edu_upper_locality_review](#event-edu_upper_locality_review) — 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+- [edu_mobile_city_separation](#event-edu_mobile_city_separation) — 昨日まで使えた都市間の連絡便が、しばらく止まるという。学校の校舎は残っているが、いつもの時刻にはたどり着けなくなった。
+- [edu_boarding_rules_review](#event-edu_boarding_rules_review) — 寮の管理人は、消灯時刻と外泊の届けを説明した。ここで暮らすなら、家から仕送りが届かない月も考えておかなければならない。
+- [edu_temporary_classroom](#event-edu_temporary_classroom) — 倉庫を片付けた一角に板を立て掛け、間に合わせの黒板を作った。外からは荷車の音が聞こえるが、先生は出席を取ろうとしている。
+- [edu_region_sami_clan_or_school](#event-edu_region_sami_clan_or_school) — 旅を共にする年長者は、雪の下の足跡の見分け方を教えてくれた。交易所の近くに文字を教える部屋があるとも聞いたが、確かなことはまだ分からない。
 
 <a id="tag-genre-1"></a>
 ### 家計・生活（1）
 - [life_debt_budget_review](#event-life_debt_budget_review) — テーブルの上に給金袋と借金の督促状を並べ、ため息をついた。今の稼ぎだけではとても一度には返しきれず、腹をくくって日々の食い扶持を削るか、身体を壊さな…
 
 <a id="tag-genre-2"></a>
-### 家族・介護（351）
+### 家族・介護（361）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -3121,7 +3188,7 @@
 - [daily_kazdel_49](#event-daily_kazdel_49) — 復興区画の資材倉庫の夜間警備に就いた。戦乱を煽る略奪者たちから、同胞たちの未来の資材を毅然と守り抜いた。
 - [daily_kazdel_60](#event-daily_kazdel_60) — 手元に余裕ができた折、復興支援の炊き出し小屋に立ち寄って温かいスープを配る手伝いをした。湯気の中ではにかむ子どもたちの笑顔に、心が洗われる思いがした…
 - [choice_kazdel_03](#event-choice_kazdel_03) — 吹きさらしのテント暮らしを脱するため、数十家族が身を寄せ合える堅牢な石造り共同住宅の建設が始まった。寒風が吹きすさぶ中、レンガ積みと屋根架けの急ピッ…
-- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教える寺子屋を開くことになっ…
+- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書き…
 - [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔の海外渡航歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と泣きつ…
 - [daily_bolivar_09](#event-daily_bolivar_09) — 夕暮れ時、家族や近所の人々と囲炉裏を囲み、温かい豆スープを分け合って啜った。互いを思いやる温もりに胸が熱くなった。
 - [daily_bolivar_48](#event-daily_bolivar_48) — 集落の自警団として夜間の見張りに立った。近隣のゲリラや略奪者から村人たちの平和な眠りを守り抜いた。
@@ -3217,7 +3284,7 @@
 - [life_ursus_student_assembly_meeting](#event-life_ursus_student_assembly_meeting) — 薄暗い空き部屋で開かれた会合では、捕まった仲間を釈放させるため、冬の舞踏会の当日に宮殿の前で抗議の声を上げようという話になった。だが街頭へ出れば憲兵…
 - [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_ursus_student_assembly_release](#event-life_ursus_student_assembly_release) — やがて封鎖扉が開かれ、外の眩しい光とともに審理や釈放の手続きが始まった。泣きながら親に抱きつく者、戻らない友人の名を呼ぶ者、帰る場所を失った者が入り…
-- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
+- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎた。学びの場や仕事、住まいが以前とは変わった人も多い。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の…
 - [life_ursus_student_assembly_pause_review](#event-life_ursus_student_assembly_pause_review) — あの冬のあと、学生連合の活動から距離を置いて数年が経った。街でかつての知人の噂を耳にし、無事を確かめたい思いが胸をかすめる。今の平穏な暮らしを守りつ…
 - [life_leithanian_noble_household_entry](#event-life_leithanian_noble_household_entry) — 一族の年長者から、屋敷の経理か、書庫の楽譜とアーツ器具の管理を手伝うよう声がかかった。街では家名を出すだけで相手の態度が変わることもあるが、屋敷の雑…
 - [life_leithanian_noble_household_routine](#event-life_leithanian_noble_household_routine) — 屋敷の雑務は出納や手紙の仕分けにとどまらず、サロンで使う楽譜やアーツ器具の手入れまで次々に回ってくるようになった。言われるまま引き受ければ、自分の稽…
@@ -3225,7 +3292,7 @@
 - [life_leithanian_noble_household_later_active](#event-life_leithanian_noble_household_later_active) — 屋敷の務めを続けて、さらに何年もの歳月が流れた。どれだけ実務を回しても一族の重要な決定の場には呼ばれず、回ってくるのは面倒な後始末ばかりだった。この…
 - [life_leithanian_noble_household_later_suspended](#event-life_leithanian_noble_household_later_suspended) — 屋敷の務めから距離を置いて数年が経った。親族から新たに呼び戻されることもなく、静かな日々が続いている。このまま自分の暮らしを続けるか、少しだけ屋敷に…
 - [life_leithanian_noble_household_after_exit](#event-life_leithanian_noble_household_after_exit) — 屋敷の務めを離れてから、ずいぶん長い年月が経った。それでも、複雑な出納や古い目録をさばいた手際は、今の仕事や暮らしの中でもふとした拍子に顔を出す。あ…
-- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫が学校へ上がる節目の年を迎えた。日頃の蓄えの中から、新しい教本や学用品を揃えるためのお祝いの品を用意したいと考えた。
+- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫の成長に合わせ、読み書きに使える品やお祝いの小遣いを贈りたいと思った。学校へ通えるかどうかは、本人たちの暮らしと受入先の事情を確かめてからの話だ。
 - [elder_choice_family_folklore](#event-elder_choice_family_folklore) — 夕暮れ時、暖炉の周りに集まった子供や孫たちから「昔のテラの大地や旅の話を聞かせてほしい」とせがまれた。
 - [elder_choice_make_will](#event-elder_choice_make_will) — 万が一の時に備え、公証人を招いて正式な遺言書を作成する機会を持った。これまで蓄えてきた財産や家財の処遇をどう定めるか熟考した。
 - [elder_daily_cemetery_visit](#event-elder_daily_cemetery_visit) — 丘の上の墓地を訪れ、自分より先に逝った両親や旧友の墓石の苔を静かに拭った。野の花を手向け、今の穏やかな暮らしを心の中で報告した。
@@ -3244,7 +3311,7 @@
 - [family_spouse_housing_choice](#event-family_spouse_housing_choice) — 離れて暮らす{sp}から、今の部屋の家賃や、もう少し落ち着いて眠れる場所に移りたいという相談が届いた。貸間の案内を見比べながら、相部屋にするか、今の…
 - [family_divorce_child_residence](#event-family_divorce_child_residence) — 別れた相手の訃報が届いた。手紙には、残された子どもが今誰の元で暮らしているのかまでは書かれていなかった。すぐにこちらで引き取ると伝えるか、親族に居場…
 - [life_ursus_school_habit](#event-life_ursus_school_habit) — 学校へ通える日は、冷たい空気の教室で授業を受けた。試験が近づくにつれ、放課後に残って勉強するか、まっすぐ帰って家の手伝いをするか迷った。家に帰れば、…
-- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから散り散りになった昔の同級生から、短い葉書が届いた。あの日から細々と便りを続けてきたが、お互い住む街も仕事もすっかり変わった。これか…
+- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [life_medical_respiratory](#event-life_medical_respiratory) — 浅い息をするたびに胸の奥がヒューヒューと鳴り、熱が幾日も引かない。朝起き上がれずに仕事や外の用事を休んだまま、診療所までの足代と手元の小銭を数えた。
 - [life_medical_circulation](#event-life_medical_circulation) — 階段や坂を上るたびに心臓が早鐘を打ち、胸の奥を掴まれたように足が止まる。腰を下ろして息をついても、鉛のような重苦しさがなかなか消えない。
 - [life_medical_nerve](#event-life_medical_nerve) — ふいに視界がぐらりと揺れ、片方の手足からすっと力が抜けた。路地の壁に慌てて手をつき、冷たい石の感触にすがりながらめまいが引くのを待った。
@@ -3325,9 +3392,19 @@
 - [v87_diagnosis_to_spouse](#event-v87_diagnosis_to_spouse) — （動的本文）
 - [v87_private_followup_spouse](#event-v87_private_followup_spouse) — （動的本文）
 - [v87_help_commitment_followup_spouse](#event-v87_help_commitment_followup_spouse) — （動的本文）
+- [edu_upper_locality_review](#event-edu_upper_locality_review) — 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+- [edu_relative_lodging](#event-edu_relative_lodging) — 遠方に暮らす親戚から、しばらくなら空き部屋を使ってよいと便りが来た。返事には、家事の分担についても書いてある。
+- [edu_school_relocation_family](#event-edu_school_relocation_family) — 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_former_teacher_meeting](#event-edu_former_teacher_meeting) — 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+- [edu_sibling_school_cost_conflict](#event-edu_sibling_school_cost_conflict) — 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
 - [edu_community_tent_learning](#event-edu_community_tent_learning) — 風を防ぐために布を二重に張り、倒れかけた木箱を机にした。板切れの上の文字を、子どもたちは交替で指差して読んでいる。
 - [edu_apprentice_literacy_exchange](#event-edu_apprentice_literacy_exchange) — 工房の親方は仕事のあとで帳面を開き、材料の数え方を教えてくれた。手を動かすだけでは済まない仕事が、思ったより多い。
 - [edu_clan_knowledge_transmission](#event-edu_clan_knowledge_transmission) — 年長者は小さな沢の前で足を止め、土の乾き方と風向きを確かめた。帰り道が分からなくなったとき、地図より先に見るものがあるという。
+- [edu_dependent_future_school_consult](#event-edu_dependent_future_school_consult) — 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+- [edu_region_kjerag_mountain_and_school](#event-edu_region_kjerag_mountain_and_school) — 谷の向こうの学校から入学案内が届いた。晴れた日なら道は見えるが、雪の季節には峠を越えられないと家の人は言う。
+- [edu_region_bolivar_school_under_conflict](#event-edu_region_bolivar_school_under_conflict) — 校庭に子どもの姿はなく、雨の後の水たまりが残っていた。先生たちの行き先はばらばらで、学校の再開日も決まっていない。
+- [edu_ursus_school_bystander_memory](#event-edu_ursus_school_bystander_memory) — あの日の通りの様子を話す人がいた。学校の方から逃げてきた子どもたちの姿を、自分も見たことを思い出した。教室の中で何が起きたかまでは知らない。
 
 <a id="tag-genre-3"></a>
 ### 感染・医療（405）
@@ -3738,7 +3815,7 @@
 - [edu_school_confidential_disclosure](#event-edu_school_confidential_disclosure) — 診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。
 
 <a id="tag-genre-4"></a>
-### 教育・文化（396）
+### 教育・文化（446）
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_model](#event-bias_family_model) — 夕餉の食卓で、大人たちが近所にいる鉱石病患者の噂話をしていた。誰かが吐き捨てるように『ああいう連中は決まりも守らない』と言い、周りの大人も誰一人とし…
@@ -3867,7 +3944,7 @@
 - [daily_leithanien_57](#event-daily_leithanien_57) — 音楽院の防音レッスン室で、古典の無伴奏組曲を何時間も弾き込んだ。指が動かなくなるまで没頭し、音の構造の奥深さに圧倒された。
 - [daily_leithanien_58](#event-daily_leithanien_58) — 学び舎の音楽教室で、古いアーツ記譜法と合奏の構成理論を学んだ。旋律が織りなす整然とした規則性に触れ、音の奥深さに視界が一気に開けた。
 - [choice_leithanien_02](#event-choice_leithanien_02) — 数百年前の名工が遺した伝説のバイオリンが、響板の大破損状態であなたの工房（または知人の店）に持ち込まれた。修復に成功すれば世界に名が轟くが、失敗すれ…
-- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。名門音楽院への入学が認められたが、高額な制服代と教材費が払えず泣いている…
+- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。音楽を教わる先を探しているが、教材や身の回りの品を買う金もない。
 - [choice_leithanien_04](#event-choice_leithanien_04) — 名高い銘醸ブドウ畑の相続を巡り、伝統ある小作農家と新興の貴族商人の間で激しい係争が起きていた。地域の長老であるあなたに、仲裁の立会人としての要請が届…
 - [choice_leithanien_05](#event-choice_leithanien_05) — 選帝侯も臨席する大聖堂の演奏会直前、主役のチェロ奏者が急病で倒れた。楽団の控え奏者として舞台裏に控えていたあなたに、指揮者から「代役として協奏曲を弾…
 - [choice_leithanien_08](#event-choice_leithanien_08) — 表舞台を追われた感染者音楽家たちが、廃教会の地下で密かに市民向けの慈善演奏会を計画していた。憲兵に見つかれば全員逮捕だが、彼らは音楽の灯を消したくな…
@@ -3948,7 +4025,7 @@
 - [daily_kazdel_40](#event-daily_kazdel_40) — テントの作業場で、廃材の木材を削り出して子どもたちの机や椅子を組み立てている職人たちを見かけた。素朴な木の香りと共に、未来を信じて手を動かす同胞たち…
 - [daily_kazdel_43](#event-daily_kazdel_43) — ボーンスミス（骨細工師）の老匠から、獣の骨にアーツの記憶を刻み込む伝統の技法を教わった。サルカズの悠久の知恵に触れた。
 - [daily_kazdel_56](#event-daily_kazdel_56) — 青空教室のテントで、文字の読み書きと計算を熱心に勉強した。「知識こそが国を再建する力だ」という先生の言葉を胸に刻んだ。
-- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教える寺子屋を開くことになっ…
+- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書き…
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
 - [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
@@ -4007,8 +4084,8 @@
 - [family_player_infection_reaction](#event-family_player_infection_reaction) — あなたが鉱石病だと打ち明けた家族は、黙って通院日や薬代の話に耳を傾けていた。あなたの身を案じているのか、それともこれから降りかかる負担に怯えているの…
 - [kaz_knight_injury_job_transition](#event-kaz_knight_injury_job_transition) — 古傷の肩をかばいながら働く要領は覚えたものの、無理が重なる日は夜も眠れないほど疼く。街の求人板で帳簿つけや受付補助の募集を見かけ、力仕事を離れて新し…
 - [kazimierz_knight_entry](#event-kazimierz_knight_entry) — 仕事帰りに競技会場へ立ち寄り、きらびやかなネオンの奥にある受付で、騎士競技の舞台に立つ手順を尋ねてみた。自前で登録料と武具を揃えて予選に挑むか、有力…
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
-- [life_ursus_school_aid](#event-life_ursus_school_aid) — 混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
+- [life_ursus_school_aid](#event-life_ursus_school_aid) — （動的本文）
 - [life_ursus_school_aid_followup](#event-life_ursus_school_aid_followup) — （動的本文）
 - [life_ursus_school_aid_adult_followup](#event-life_ursus_school_aid_adult_followup) — 大人になって荷物を整理していた時、チェルノボーグの学校で書き留めた同級生たちの古い連絡先がひょっこり出てきた。あのまま行方が知れない仲間の名を指でな…
 - [life_kazdel_displaced_next_generation](#event-life_kazdel_displaced_next_generation) — 夕餉の支度をしていると、子どもに「カズデルってどんな場所だったの？」と尋ねられた。自分が目で見た故郷の風景や、苦しい避難の記憶をどこまで語って聞かせ…
@@ -4038,14 +4115,14 @@
 - [life_ursus_student_assembly_contact](#event-life_ursus_student_assembly_contact) — 冬の舞踏会が近づく街で、よその学校の生徒たちがひそかに開く集まりの噂が回ってきた。国家評議会庁舎を傷つけた容疑で、学生連合の生徒がひとり憲兵に連れて…
 - [life_ursus_student_assembly_meeting](#event-life_ursus_student_assembly_meeting) — 薄暗い空き部屋で開かれた会合では、捕まった仲間を釈放させるため、冬の舞踏会の当日に宮殿の前で抗議の声を上げようという話になった。だが街頭へ出れば憲兵…
 - [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
-- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
+- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎた。学びの場や仕事、住まいが以前とは変わった人も多い。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の…
 - [life_leithanian_civic_entry](#event-life_leithanian_civic_entry) — 川にかかる橋の踏み板が抜けてから、荷車は毎日ぐるりと遠回りを強いられていた。街角の集会所では、住民たちの声を集めて領主側の役人へ修繕を掛け合おうとい…
 - [life_leithanian_civic_after_exit](#event-life_leithanian_civic_after_exit) — 街の陳情の集まりから離れて、ずいぶん長い歳月が流れた。古い木箱の底を整理していると、あの頃仲間たちと頭を突き合わせて書いた橋の修繕嘆願の下書きが出て…
 - [life_leithanian_noble_household_review](#event-life_leithanian_noble_household_review) — 屋敷の実務を手伝い始めてから、親族は当たり前のように細かい用件を押しつけてくるようになった。自分の稽古や外の暮らしを守りながら、どこまで家に付き合う…
 - [life_leithanian_noble_household_later_active](#event-life_leithanian_noble_household_later_active) — 屋敷の務めを続けて、さらに何年もの歳月が流れた。どれだけ実務を回しても一族の重要な決定の場には呼ばれず、回ってくるのは面倒な後始末ばかりだった。この…
 - [elder_choice_craft_teaching](#event-elder_choice_craft_teaching) — 近所の若い見習い職人が、作業のコツが掴めずに悩んでいると耳にした。長年の現場経験で培った勘と技術を、次の世代へ教える機会が巡ってきた。
-- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — よその移動都市で暮らす子供や孫から近況を知らせる便りが届いた。ぎこちない文字で綴られた学校や遊びの報告を、眼鏡を掛け直して何度も嬉しそうに読み返した…
-- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫が学校へ上がる節目の年を迎えた。日頃の蓄えの中から、新しい教本や学用品を揃えるためのお祝いの品を用意したいと考えた。
+- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — 子や孫から近況を知らせる便りが届いた。日々の遊びや家の出来事を綴った文字を、眼鏡を掛け直して何度も嬉しそうに読み返した。
+- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫の成長に合わせ、読み書きに使える品やお祝いの小遣いを贈りたいと思った。学校へ通えるかどうかは、本人たちの暮らしと受入先の事情を確かめてからの話だ。
 - [life_ursus_school_habit](#event-life_ursus_school_habit) — 学校へ通える日は、冷たい空気の教室で授業を受けた。試験が近づくにつれ、放課後に残って勉強するか、まっすぐ帰って家の手伝いをするか迷った。家に帰れば、…
 - [life_ursus_classmate_contact](#event-life_ursus_classmate_contact) — よく学校を休む同級生が、休み時間に遠慮がちにノートを見せてほしいと声をかけてきた。机を寄せて黒板を写したページを開く。これからも気に留めてやるか、距…
 - [life_omerta_hitman_confrontation](#event-life_omerta_hitman_confrontation) — 雨の降りしきるシラクーザの路地裏で、前後の出口に見覚えのない黒塗りのコートを着た男たちが立った。冷たい銃口が向けられ、オメルタを破った裏切り者への『…
@@ -4063,7 +4140,7 @@
 - [sr_reunion_to_rhodes_sanctuary](#event-sr_reunion_to_rhodes_sanctuary) — 組織の瓦解と激しい内紛の果て、極寒の荒野で吹雪に巻かれて倒れ伏した。全身の源石結晶が激痛を放ち、意識が遠のく中、巨大な陸上移動艦の轟音とともに白い防…
 - [car_hig_touhou_entry](#event-car_hig_touhou_entry) — 煙突から黒煙を吐き出す巨大な近代工場群――東方重工。シラユキの手裏剣『シルバーウィンド』をはじめ、伝統的な刀剣や手裏剣を高精度の工業ラインで大量生産…
 - [car_vic_infantry_entry](#event-car_vic_infantry_entry) — ヴィクトリアの各都市で、正規陸軍の平民歩兵の募集が行われていた。伝統と栄光を謳う帝国だが、平民出身の兵士はどれほど戦功を立てても下士官止まりであり、…
-- [car_vic_royal_entry](#event-car_vic_royal_entry) — ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推…
+- [car_vic_royal_entry](#event-car_vic_royal_entry) — ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要…
 - [car_lei_court_entry](#event-car_lei_court_entry) — リターニア各選帝侯の宮殿で、貴族専属の音楽家を募るサロンが開かれていた。チェロやピアノのアーツ演奏で主君を楽しませ、夜会を彩る名誉ある地位。だがそこ…
 - [car_lat_landen_entry](#event-car_lat_landen_entry) — ラテラーノの伝統を頑なに守るランデン修道院。祈りとパン作り、そして守護銃の整備に生涯を捧げる修道銃士たちが祈りを捧げていた。世俗の富を捨て、信仰と伝…
 - [car_kaz_comp_knight_entry](#event-car_kaz_comp_knight_entry) — ネオン輝く大都市カヴァレリエルキ。歓声と巨額の賭け金が飛び交う騎士競技のメジャー大会で、企業スポンサー付きの『競技騎士』になるための公開トライアウト…
@@ -4085,14 +4162,14 @@
 - [cl_columbia_school_fee](#event-cl_columbia_school_fee) — クルビアの技術工房に、新しい機械講習の案内が貼り出された。最新の機材を触れるコースは受講料が高く、その横には薄給の見習い募集も並んでいる。財布の厚み…
 - [cl_training_long_term](#event-cl_training_long_term) — 街角で再び技能講習の募集を見かけた。働き始めて数年、泥のように疲れて帰り、机に向かう気力さえない夜も多い。現場で身につけた腕を自分で磨くか、今からで…
 - [cl_social_mobility_reflection](#event-cl_social_mobility_reflection) — ふとした拍子に、昔とは暮らし向きが大きく変わった年月のことを思い返した。小銭を数えて眠れなかった夜や、初めて新しい部屋に荷を入れた日の匂いがよみがえ…
-- [facility_school_disruption](#event-facility_school_disruption) — 通っている学び舎で教室が閉まる日が増え、集会所の隅や空き部屋を借りて細々と授業が行われるようになった。いつ元の教室へ戻れるのかは、先生にも分からない…
+- [facility_school_disruption](#event-facility_school_disruption) — 通っている学校で授業を開けない日が増えた。校門には休止と教材配布の知らせが貼られ、別の部屋で教えてもらえるのか、先生もまだ確かめているという。
 - [facility_school_reopen](#event-facility_school_reopen) — ようやく学び舎の扉が開き、いつもの教室に机が並んだ。黒板の前に立った先生は『休みの前の続きから始める』と言ったが、教科書を開くとどこまで習ったのかす…
 - [people_school_introduction](#event-people_school_introduction) — 放課後の教室で、授業を受け持つ先生が教卓の上のプリントを揃えていた。手元のノートには、授業中に聞きそびれた疑問がいくつも残っている。
 - [people_school_followup](#event-people_school_followup) — ふとした拍子に、以前わかりやすく勉強を教えてくれた先生のことを思い出した。あの学び舎では今も変わらず授業が続いているだろうか。
 - [people_school_small_help](#event-people_school_small_help) — 学び舎の前を通りかかると、顔なじみの先生が重そうな教材の箱を一人で運んでいた。次の授業が始まるまでに教室へ並べたいらしい。
 - [site_school_transfer](#event-site_school_transfer) — 今通っている学び舎とは別の教室が、年度の途中からでも生徒を受け入れると案内を出していた。通いやすさや授業の進み具合を家の人と話し合った。
 - [people_school_life_conversation](#event-people_school_life_conversation) — （動的本文）
-- [people_school_housing_concern](#event-people_school_housing_concern) — 授業が終わったあと、顔なじみの教え手が重い教材箱の蓋を閉じた。今借りている相部屋では夜に机を広げるゆとりもないと聞く。後片づけを手伝うか、次の授業の…
+- [people_school_housing_concern](#event-people_school_housing_concern) — 顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。
 - [people_clinic_skill_continuity](#event-people_clinic_skill_continuity) — 顔なじみの受付係が、新しく書き直した案内札を前に首をひねっていた。声をかけると、初めて来る患者にもすぐ伝わる言い回しを考えているところだと言う。
 - [inter_victoria_taran_speech_v76](#event-inter_victoria_taran_speech_v76) — 役所の窓口で、ターラー訛りの抜けない労働者が係員に冷たくあしらわれていた。本人は就労の書類を見てほしいと必死に食い下がっているのに、係員はろくに目も…
 - [v77_family_rumor](#event-v77_family_rumor) — 家の大人たちが食卓で、感染者やサルカズをひとくくりにして悪しざまに喋っていた。昼間に通りで見かけたあの人の横顔を思い出すと、大人の言うことをそのまま…
@@ -4127,17 +4204,67 @@
 - [v87_diagnosis_to_spouse](#event-v87_diagnosis_to_spouse) — （動的本文）
 - [v87_diagnosis_to_friend](#event-v87_diagnosis_to_friend) — （動的本文）
 - [life_ursus_zelgrad_purge_trap](#event-life_ursus_zelgrad_purge_trap) — 広場の騒乱が遠ざかり冷え込みが厳しさを増すなか、重装憲兵と防護服を着た工廠監理官が労働区画の出口を鉄柵で完全封鎖した。『都市エンジンの緊急点検のため…
+- [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+- [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
+- [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
+- [edu_upper_locality_review](#event-edu_upper_locality_review) — 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+- [edu_higher_search_decision](#event-edu_higher_search_decision) — 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
+- [edu_applicant_institution_shortlist](#event-edu_applicant_institution_shortlist) — 集めた募集案内を広げると、同じ分野でも選抜の方法や通う場所が違っていた。日帰りできそうな学校もあれば、住まいを考え直す必要のある学校もあった。
+- [edu_school_opening_not_admission](#event-edu_school_opening_not_admission) — 確かめた学校の校舎は残っていたが、希望する課程への募集は今期行われていなかった。窓口には理由と次の予定を尋ねる人がいた。
+- [edu_course_admission_contract](#event-edu_course_admission_contract) — 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
+- [edu_secondary_gap_reentry](#event-edu_secondary_gap_reentry) — 学校を離れて何度も季節が過ぎた。以前使っていた教材を持って相談すると、教員はどこまで学んでいたかを一つずつ尋ねた。
+- [edu_overage_equivalency_review](#event-edu_overage_equivalency_review) — 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
+- [edu_no_path_year_close](#event-edu_no_path_year_close) — 願書と時刻表を片付ける時期になった。調べた範囲では今年の入学先を決められなかったが、また学ぶ道まで閉ざされたわけではない。
+- [edu_route_first_fare](#event-edu_route_first_fare) — 一回分の運賃を確かめ、往復の日数を掛けてみた。毎日通うと、学費のほかにも少なくない金と時間が要る。
+- [edu_route_weather_closure](#event-edu_route_weather_closure) — 学校へ向かう便が運休になり、発着所には行き先の消された板が掛かっていた。天気が戻るまでの何日かで済むのか、誰にも分からない。
+- [edu_mobile_city_separation](#event-edu_mobile_city_separation) — 昨日まで使えた都市間の連絡便が、しばらく止まるという。学校の校舎は残っているが、いつもの時刻にはたどり着けなくなった。
+- [edu_boarding_application](#event-edu_boarding_application) — 学校から寮の案内が届いた。部屋の広さ、食事代、必要な保証人の欄が並んでいる。申し込めることと、実際に部屋を借りられることは別だった。
+- [edu_school_relocation_family](#event-edu_school_relocation_family) — 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+- [edu_crossborder_documents](#event-edu_crossborder_documents) — 遠方の学校へ行くために、途中でどんな身分証明が必要か尋ねた。国境を越える道には、移動を許されるか確かめる場所があるという。
+- [edu_classroom_language_gate](#event-edu_classroom_language_gate) — 募集の説明には、まだ意味をつかめない言葉があった。授業で話される言葉も、教本の文字も、今の自分にどこまで分かるか心配だった。
+- [edu_commute_daily_fatigue](#event-edu_commute_daily_fatigue) — まだ暗いうちに家を出た。乗り継ぎの待ち時間に教科書を開いたものの、車体が揺れるたびに字を追い直す。教室に着いたころには、すでに半日働いたような疲れが…
+- [edu_fee_itemization](#event-edu_fee_itemization) — 学校から届いた授業料の案内とは別に、教材と通学、住まいの見積を集めた。今日必要な金と、毎年掛かる金を分けて数えることにした。
+- [edu_entrance_exam_journey](#event-edu_entrance_exam_journey) — 受験案内に、集合時刻と会場の場所が書かれていた。まだ合否の分からない学校まで行くために、家では旅費を数え直した。
+- [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_study_work_balance](#event-edu_study_work_balance) — 働きながら受けられる講習があると聞いた。勤務と授業の時間を並べると、家の用事まで含めて休める時間が少なくなりそうだった。
+- [edu_admission_document_missing](#event-edu_admission_document_missing) — 次の学校に提出するため、前に学んだことを示す記録を探した。必要な書類が手元に見当たらず、どこへ照会すればよいか尋ねた。
+- [edu_institution_specific_exclusion](#event-edu_institution_specific_exclusion) — 願書を受け取った人は記載を確かめ、しばらく奥の部屋へ消えた。戻ってきたとき、学校の決定は受入を見送るという短いものだった。
 - [edu_school_confidential_disclosure](#event-edu_school_confidential_disclosure) — 診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。
 - [edu_first_day_of_actual_school](#event-edu_first_day_of_actual_school) — 教室にはまだ誰も座っていない席があった。自分の名前が書かれた札を見つけ、鞄を机の横へ置く。窓の外では、登校してきた生徒たちの声が重なっていた。
+- [edu_teacher_shortage](#event-edu_teacher_shortage) — 黒板には前の授業の日付が残っている。担当の教え手が来られない日が続き、教室では予定した授業がなかなか進まなかった。
+- [edu_school_closed_by_disaster](#event-edu_school_closed_by_disaster) — 学校へ向かう道に人だかりができていた。校舎の一部が使えなくなり、授業再開の日取りもまだ決まらないと聞いた。鞄だけが、いつもどおり肩に掛かっている。
+- [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+- [edu_temporary_classroom](#event-edu_temporary_classroom) — 倉庫を片付けた一角に板を立て掛け、間に合わせの黒板を作った。外からは荷車の音が聞こえるが、先生は出席を取ろうとしている。
 - [edu_real_institution_transfer](#event-edu_real_institution_transfer) — 別の学校から受入の案内が届いた。以前の授業と進み方が違うらしく、持っている履修の記録を見せてほしいという。
 - [edu_graduation_record_review](#event-edu_graduation_record_review) — 学期の終わり、これまでの出席と評価を学校で照合することになった。休んだ年や別の学校で学んだ月も、同じ一行にはまとめられない。
+- [edu_former_teacher_meeting](#event-edu_former_teacher_meeting) — 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+- [edu_child_guardian_disagreement](#event-edu_child_guardian_disagreement) — 学校の話になると家の空気が重くなった。行ってみたいと告げたが、家の人は仕事や家計のことばかり気にしている。
+- [edu_sibling_school_cost_conflict](#event-edu_sibling_school_cost_conflict) — 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
 - [edu_community_tent_learning](#event-edu_community_tent_learning) — 風を防ぐために布を二重に張り、倒れかけた木箱を机にした。板切れの上の文字を、子どもたちは交替で指差して読んでいる。
 - [edu_religious_school_nonformal](#event-edu_religious_school_nonformal) — 集会が終わって人の気配が薄れると、年長者が古い本を机へ置いた。文字を教える時間と、教義を聞く時間は分けてあるという。
 - [edu_adult_evening_literacy](#event-edu_adult_evening_literacy) — 仕事帰りに灯りのついた部屋をのぞくと、机の上に短い文章が並んでいた。初めて来た人のために、先生は鉛筆を一本残してくれていた。
 - [edu_informal_skill_assessment](#event-edu_informal_skill_assessment) — これまでに覚えた仕事や読み書きの内容を書き出した。学校の外で身につけた腕を、どの資格なら審査してもらえるのか確かめる必要があった。
+- [edu_dependent_future_school_consult](#event-edu_dependent_future_school_consult) — 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+- [edu_region_victoria_disrupted_college](#event-edu_region_victoria_disrupted_college) — 大学の回廊には、授業を休む知らせと再開する知らせが日付を変えて貼られていた。使える教室がいくつ残るのか、学生たちは案内の前で立ち止まっていた。
+- [edu_region_kazimierz_sponsor_training](#event-edu_region_kazimierz_sponsor_training) — 訓練場の外に、競技騎士の姿を刷った募集看板が立っていた。必要な用具と講習の費用が書かれ、支援が受けられるかどうかは別の欄に記されていた。
+- [edu_region_columbia_corporate_scholarship](#event-edu_region_columbia_corporate_scholarship) — 大学の掲示板に、企業が費用を支援する講習・研究課程の案内が貼られていた。支援額だけでなく、応募資格と返還の条件も読まなければならない。
+- [edu_region_higashi_dojo_learning](#event-edu_region_higashi_dojo_learning) — 道場の戸口に、稽古の時間が書かれていた。教え手が、初めてなら見学してもよいと声を掛けてきた。
+- [edu_region_iberia_closed_library](#event-edu_region_iberia_closed_library) — 潮の匂いが残る建物の扉には、かつての授業時間が彫られていた。中の本を使えるのか、今も教え手がいるのかは、外から見ただけでは分からない。
+- [edu_region_kazdel_school_rebuild](#event-edu_region_kazdel_school_rebuild) — 崩れた壁の上に新しい梁が渡され、雨の入らない部屋が一つできた。通りかかった人々が入口から中をのぞいていたが、授業が始まるかどうかはまだ分からない。
+- [edu_region_sami_clan_or_school](#event-edu_region_sami_clan_or_school) — 旅を共にする年長者は、雪の下の足跡の見分け方を教えてくれた。交易所の近くに文字を教える部屋があるとも聞いたが、確かなことはまだ分からない。
+- [edu_region_leithanien_arts_selectivity](#event-edu_region_leithanien_arts_selectivity) — 学院の案内板に、実技試験の課題と募集条件が書かれていた。扉の向こうから繰り返す旋律が聞こえるが、自分がどの授業に入れるかはまだ決まっていない。
+- [edu_region_kjerag_mountain_and_school](#event-edu_region_kjerag_mountain_and_school) — 谷の向こうの学校から入学案内が届いた。晴れた日なら道は見えるが、雪の季節には峠を越えられないと家の人は言う。
+- [edu_region_bolivar_school_under_conflict](#event-edu_region_bolivar_school_under_conflict) — 校庭に子どもの姿はなく、雨の後の水たまりが残っていた。先生たちの行き先はばらばらで、学校の再開日も決まっていない。
+- [edu_ursus_school_displacement_memory](#event-edu_ursus_school_displacement_memory) — 昔の学校がどうなったのかを知らせる便りが来た。あのとき教室で聞いた物音や、隣に座っていた友人の顔が、紙の文字を読むうちに浮かんできた。
+- [edu_ursus_school_bystander_memory](#event-edu_ursus_school_bystander_memory) — あの日の通りの様子を話す人がいた。学校の方から逃げてきた子どもたちの姿を、自分も見たことを思い出した。教室の中で何が起きたかまでは知らない。
+- [edu_student_public_meeting_distinction](#event-edu_student_public_meeting_distinction) — 広場の端に、人の輪ができていた。学校のことを話す声もあれば、働き口や街の暮らしを訴える声も聞こえる。
+- [edu_school_peer_exclusion_route](#event-edu_school_peer_exclusion_route) — 教室で机を動かす音がして、隣の席が空いた。こちらを見てひそひそ話す声は聞こえたが、何を言っているのかまでは分からなかった。
+- [edu_safety_for_disabled_student](#event-edu_safety_for_disabled_student) — 授業を受ける部屋までの道に、自分には使いづらい場所があった。別の入口を通れるのか、教室を変えてもらえるのか、学校へ相談しようと考えた。
+- [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-genre-5"></a>
-### 差別・制度（153）
+### 差別・制度（155）
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
@@ -4291,6 +4418,8 @@
 - [v87_exclusion_organizer_infected](#event-v87_exclusion_organizer_infected) — 感染者を街区から締め出す住民会を自ら立ち上げ、商店や下宿にまで排除の申し合わせを広げてきた。その自分が鉱石病と診断された今、会合の扉を開ける前に立ち…
 - [life_infected_exclusion_pause_review](#event-life_infected_exclusion_pause_review) — 鉱石病を明かして住民会の役目を追われてから数年が過ぎた。自分が広めた排除の決まりは今も街区に生きている。そんな折、会から雑務の手伝いを求める便りが届…
 - [life_ursus_zelgrad_purge_trap](#event-life_ursus_zelgrad_purge_trap) — 広場の騒乱が遠ざかり冷え込みが厳しさを増すなか、重装憲兵と防護服を着た工廠監理官が労働区画の出口を鉄柵で完全封鎖した。『都市エンジンの緊急点検のため…
+- [edu_scholarship_application](#event-edu_scholarship_application) — 募集案内に、学費を支える制度が記されていた。申請には本人や世帯の事情を示す書類が必要らしい。
+- [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
 
 <a id="tag-genre-6"></a>
 ### 仕事・技能（1）
@@ -4662,7 +4791,7 @@
 - [car_urs_officer_entry](#event-car_urs_officer_entry) — 要塞司令部の豪奢な執務室で、貴族将校たちが書類に目を落としていた。ウルサス帝国軍の指揮官枠――それは貴族の血筋と巨額の軍資金を握る選民だけの特権であ…
 - [car_urs_academy_entry](#event-car_urs_academy_entry) — 巨大な軍用装甲列車や重工業都市の設計を手掛けるウルサス帝国科学院。硬質な鉄と源石動力の極致を追求するこの研究機関で、構造工学と動力回路の専門技師が募…
 - [car_vic_infantry_entry](#event-car_vic_infantry_entry) — ヴィクトリアの各都市で、正規陸軍の平民歩兵の募集が行われていた。伝統と栄光を謳う帝国だが、平民出身の兵士はどれほど戦功を立てても下士官止まりであり、…
-- [car_vic_royal_entry](#event-car_vic_royal_entry) — ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推…
+- [car_vic_royal_entry](#event-car_vic_royal_entry) — ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要…
 - [car_vic_scribe_entry](#event-car_vic_scribe_entry) — ロンディニウム中央議会や地方市議会の議事堂で、公爵や伯爵たちの議案や法律文書を記録・整理する書記官が募集されていた。貴族の利権調整と汚職の嵐に巻き込…
 - [car_vic_works_entry](#event-car_vic_works_entry) — 巨大な蒸気機関車と鉄鋼レールが並ぶヴィクトリアの鉄道工廠。産業革命の鼓動が響くこの巨大施設で、高圧蒸気パイプラインや機関車エンジンの整備を担う技術者…
 - [car_lei_court_entry](#event-car_lei_court_entry) — リターニア各選帝侯の宮殿で、貴族専属の音楽家を募るサロンが開かれていた。チェロやピアノのアーツ演奏で主君を楽しませ、夜会を彩る名誉ある地位。だがそこ…
@@ -4691,7 +4820,7 @@
 - [life_ursus_zelgrad_evacuation](#event-life_ursus_zelgrad_evacuation) — 広場に集められた住民たちの前で、北原の元坑夫を名乗る男が軍の研究と感染者の非道な扱いを声を限りに告発し、今すぐ街を出るよう叫んだ。ざわめきが広がり、…
 
 <a id="tag-genre-9"></a>
-### 天災・避難（200）
+### 天災・避難（202）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [rim_catastrophe_transporter_review](#event-rim_catastrophe_transporter_review) — 天災が爪痕を残した坑道を調べる助手になって二年が過ぎた。崩落した岩肌や黒く光る源石の露出を図面に落とし込む隣で、同行する天災トランスポーターは絶えず…
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
@@ -4799,7 +4928,7 @@
 - [choice_rim_09](#event-choice_rim_09) — 鉱区の北東方向に大規模な天災雲（源石嵐）が観測された。採掘プラットフォームを安全地帯へ緊急移動させるため、脚部アンカーの引き抜きと移動機構の最終点検…
 - [life_reunion_local_entry](#event-life_reunion_local_entry) — チェルノボーグの街区がレユニオンに占拠され、行き場を失った感染者とその家族が廃倉庫の片隅に身を寄せ合っていた。食料や薬を運ぶ人手が足りないという。力…
 - [life_reunion_order_conflict](#event-life_reunion_order_conflict) — 臨時拠点の配給所で、避難者を守るためにも全員が武器を取るべきだと息巻く声が上がった。周囲の仲間も意見が割れ、重苦しい空気が張りつめている。このまま配…
-- [life_ursus_school_aid](#event-life_ursus_school_aid) — 混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持…
+- [life_ursus_school_aid](#event-life_ursus_school_aid) — （動的本文）
 - [life_ursus_school_aid_followup](#event-life_ursus_school_aid_followup) — （動的本文）
 - [life_ursus_school_aid_adult_followup](#event-life_ursus_school_aid_adult_followup) — 大人になって荷物を整理していた時、チェルノボーグの学校で書き留めた同級生たちの古い連絡先がひょっこり出てきた。あのまま行方が知れない仲間の名を指でな…
 - [life_kazdel_displaced_start](#event-life_kazdel_displaced_start) — （動的本文）
@@ -4824,12 +4953,12 @@
 - [family_daily_spouse_holiday_stroll](#event-family_daily_spouse_holiday_stroll) — 風の穏やかな休日に、{sp}と区画の連絡通路を抜けて展望デッキまで散歩した。通り過ぎていく荒野の地平線を並んで眺めながら、二人で歩んできた年月の長さ…
 - [family_care_network_member_missing_news](#event-family_care_network_member_missing_news) — 昔世話になった{careMemberName}が{careMemberMissingYear}年、{careMemberMissingRegion}…
 - [life_ursus_katorga_life](#event-life_ursus_katorga_life) — 送り込まれたカトルガ区画では、稼働停止とともに照明も暖房も断ち切られ、外の扉には重い鎖がかけられた。叩いても返事のない扉が並び、白い息が凍りつく暗闇…
-- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — よその移動都市で暮らす子供や孫から近況を知らせる便りが届いた。ぎこちない文字で綴られた学校や遊びの報告を、眼鏡を掛け直して何度も嬉しそうに読み返した…
+- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — 子や孫から近況を知らせる便りが届いた。日々の遊びや家の出来事を綴った文字を、眼鏡を掛け直して何度も嬉しそうに読み返した。
 - [elder_choice_family_folklore](#event-elder_choice_family_folklore) — 夕暮れ時、暖炉の周りに集まった子供や孫たちから「昔のテラの大地や旅の話を聞かせてほしい」とせがまれた。
 - [elder_choice_life_reflection](#event-elder_choice_life_reflection) — 暮れゆく夕焼け空を見つめながら、自らが歩んできた長い生涯を静かに振り返った。天災、戦争、病、飢え……幾多の苦難が渦巻くテラの大地で、自分は今日まで確…
 - [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — 不意の天災や移動都市の区画被災に備え、民間保険会社が提供する「天災総合避難・再建保険」の案内が届いた。年々の保険料を納めることで、被災時に速やかな補…
 - [asset_catastrophe_insurance_claim](#event-asset_catastrophe_insurance_claim) — 天災の混乱の中、避難所で保険会社の臨時窓口を見つけた。避難証明書と保険証書を提示したところ、迅速な審査が行われた。
-- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから散り散りになった昔の同級生から、短い葉書が届いた。あの日から細々と便りを続けてきたが、お互い住む街も仕事もすっかり変わった。これか…
+- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
 - [life_mine_collapse_crisis](#event-life_mine_collapse_crisis) — 地下深くの坑道で削岩機を動かしていたその時、頭上の岩盤から耳をつんざく地鳴りと共に支柱が砕け散る音が響いた。天井に巨大な亀裂が走り、無数の岩石が雨の…
 - [ori_post_catastrophe_ground](#event-ori_post_catastrophe_ground) — 崩れた通りを歩いていると、ぬかるんだ土の中に黒く光る欠片がいくつも混じっているのが目に入った。ただの石炭か、それとも活性を持った源石の欠片か、遠目に…
@@ -4892,13 +5021,15 @@
 - [life_ursus_zelgrad_displaced_work](#event-life_ursus_zelgrad_displaced_work) — （動的本文）
 - [life_ursus_zelgrad_displaced_work_review](#event-life_ursus_zelgrad_displaced_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
+- [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+- [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
 
 <a id="tag-genre-10"></a>
 ### 都市生活（1）
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
 <a id="tag-genre-11"></a>
-### 日常（389）
+### 日常（394）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
@@ -5162,8 +5293,8 @@
 - [life_local_mutual_aid_pause_review](#event-life_local_mutual_aid_pause_review) — 路地の当番を休ませてもらってから数年が過ぎた。昔一緒に水場やボイラーの世話をしていた隣人から「また少しずつでも手を貸してもらえないか」と声をかけられ…
 - [life_local_mutual_aid_relocation](#event-life_local_mutual_aid_relocation) — 水場や暖房の当番を一緒に回していた街区を離れることになった。荷造りをしながら、預かっていた道具置き場の鍵と自分の役目をどう締めくくるか考えた。
 - [life_rhodes_care_review](#event-life_rhodes_care_review) — ロドスの薬を飲んでいても、肌の表面に浮かぶ黒い結晶が消えるわけではない。それでも進行を抑えるために治療を続けるか、日々の生活費との間で思案した。
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
-- [life_ursus_school_aid](#event-life_ursus_school_aid) — 混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
+- [life_ursus_school_aid](#event-life_ursus_school_aid) — （動的本文）
 - [life_ursus_school_aid_followup](#event-life_ursus_school_aid_followup) — （動的本文）
 - [life_infected_organization_dues](#event-life_infected_organization_dues) — 集会所の借り賃や荷運びの手間賃が足りなくなり、次の集まりで追加の会費を出すか、体を使って運搬を手伝うか相談された。自分の家のやりくりも楽ではない。
 - [life_infected_organization_exit_legacy](#event-life_infected_organization_exit_legacy) — あの会を離れてから何年もの月日が流れた。ある日、今の世話役から「あなたが関わっていた頃のいきさつを教えてほしい」と便りが届いた。過去のことにどう向き…
@@ -5218,7 +5349,7 @@
 - [elder_daily_morning_walk](#event-elder_daily_morning_walk) — 朝もやの残る街角をゆっくりと散歩した。若い頃には気づかなかった建物の装飾や、露天商が荷解きをする静かな物音に耳を傾けながら、歩調を緩めた。
 - [elder_choice_craft_teaching](#event-elder_choice_craft_teaching) — 近所の若い見習い職人が、作業のコツが掴めずに悩んでいると耳にした。長年の現場経験で培った勘と技術を、次の世代へ教える機会が巡ってきた。
 - [elder_choice_community_mediator](#event-elder_choice_community_mediator) — 通りの住人同士で井戸水の使い方や通路の荷物をめぐる口論が起きていた。長年この区画で暮らしてきた古株として、間に入って仲裁するか問われた。
-- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — よその移動都市で暮らす子供や孫から近況を知らせる便りが届いた。ぎこちない文字で綴られた学校や遊びの報告を、眼鏡を掛け直して何度も嬉しそうに読み返した…
+- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — 子や孫から近況を知らせる便りが届いた。日々の遊びや家の出来事を綴った文字を、眼鏡を掛け直して何度も嬉しそうに読み返した。
 - [life_ursus_school_habit](#event-life_ursus_school_habit) — 学校へ通える日は、冷たい空気の教室で授業を受けた。試験が近づくにつれ、放課後に残って勉強するか、まっすぐ帰って家の手伝いをするか迷った。家に帰れば、…
 - [life_medical_respiratory](#event-life_medical_respiratory) — 浅い息をするたびに胸の奥がヒューヒューと鳴り、熱が幾日も引かない。朝起き上がれずに仕事や外の用事を休んだまま、診療所までの足代と手元の小銭を数えた。
 - [life_medical_circulation](#event-life_medical_circulation) — 階段や坂を上るたびに心臓が早鐘を打ち、胸の奥を掴まれたように足が止まる。腰を下ろして息をついても、鉛のような重苦しさがなかなか消えない。
@@ -5288,6 +5419,11 @@
 - [v87_private_followup_mother](#event-v87_private_followup_mother) — （動的本文）
 - [v87_private_followup_spouse](#event-v87_private_followup_spouse) — （動的本文）
 - [v87_private_followup_friend](#event-v87_private_followup_friend) — （動的本文）
+- [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+- [edu_boarding_application](#event-edu_boarding_application) — 学校から寮の案内が届いた。部屋の広さ、食事代、必要な保証人の欄が並んでいる。申し込めることと、実際に部屋を借りられることは別だった。
+- [edu_relative_lodging](#event-edu_relative_lodging) — 遠方に暮らす親戚から、しばらくなら空き部屋を使ってよいと便りが来た。返事には、家事の分担についても書いてある。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_teacher_shortage](#event-edu_teacher_shortage) — 黒板には前の授業の日付が残っている。担当の教え手が来られない日が続き、教室では予定した授業がなかなか進まなかった。
 
 <a id="tag-genre-12"></a>
 ### 暴力・犯罪（2）
@@ -5295,7 +5431,7 @@
 - [fam_mafia](#event-fam_mafia) — ファミリーの下働きで最初の夜を終えると、奥の部屋で年長者が革張りの帳簿をパタンと閉じた。「いいか、表で喋っていいことと、墓まで持っていくことがある」…
 
 <a id="tag-genre-13"></a>
-### 未分類（891）
+### 未分類（895）
 - [investment_exit](#event-investment_exit) — 出資先から精算の知らせが届いた。いま持分を手放せば{investmentCurrentValue}になり、出した元手を上回るという。ここで現金に替え…
 - [f1](#event-f1) — {caregiverArms}まどろむ日が続いた。ふと目を開けると、すぐそばで誰かが声を潜めて語りかけていた。 やわらかな布にくるまれて眠った。目を…
 - [f2](#event-f2) — 戸口から差し込む光の筋を、まばたきもせずに目で追った。人の影がそれを横切ると、そちらへ首をめぐらせた。 風に揺れる布の影をじっと見つめた。つかまえよ…
@@ -5546,7 +5682,7 @@
 - [daily_leithanien_48](#event-daily_leithanien_48) — 日当たりの良い丘の斜面に広がるブドウ畑で、実った房の収穫に汗を流した。紫色の果実を籠いっぱいに摘み、夕暮れの風に吹かれた。
 - [daily_leithanien_49](#event-daily_leithanien_49) — 集落の木造の水車小屋で、挽きたてのライ麦粉を袋に詰める作業を手伝った。粉にまみれながら、川のせせらぎと水車の軋みに癒やされた。
 - [daily_leithanien_50](#event-daily_leithanien_50) — 遅霜の被害でブドウの新芽が全滅し、今年のワイン生産が絶望的となった。畑の持ち主と頭を抱え、厳しい冬の生計を憂えた。
-- [daily_leithanien_59](#event-daily_leithanien_59) — 学内コンクールの本選を聴講した。同世代の圧倒的な超絶技巧と豊かな表現力に強い刺激を受け、練習への闘志を燃え上がらせた。
+- [daily_leithanien_59](#event-daily_leithanien_59) — （動的本文）
 - [daily_leithanien_60](#event-daily_leithanien_60) — 実技試験の前夜、過度の緊張と不安で眠れず、胃を痛めてしまった。温かいカモミールティーを啜りながら、必死に心を落ち着かせた。
 - [choice_leithanien_01](#event-choice_leithanien_01) — 偶然手に入れた招待状により、郊外の古城で巫王残党が禁忌のアーツ儀式を目論んでいる現場を知ってしまった。選帝侯の憲兵隊に通報するか、自ら真偽を確かめる…
 - [choice_leithanien_07](#event-choice_leithanien_07) — 百年以上続く老舗カフェの老パティシエが、引退を前に秘伝の「ザッハトルテ」の調合ノートを受け継ぐ後継者を探している。厳格な味覚と職人気質が求められる。
@@ -6185,11 +6321,15 @@
 - [car_min_champ_choice_grand_games](#event-car_min_champ_choice_grand_games) — 四年に一度の全ミノス大競技会。決勝戦の相手は、前大会無敗の巨漢戦士である。観客席を埋め尽くした数万の市民が固唾を呑んで見守る中、月桂冠とポリスの名誉…
 - [life_bolivar_harvest_review](#event-life_bolivar_harvest_review) — 作付けの相談をしてから二年が経った。今年は、隣の家が市場へ荷を出す道中で武装した連中に作物を奪われたという物騒な話が集落を駆け巡っている。次の畑をど…
 - [people_work_introduction](#event-people_work_introduction) — 次の持ち場へ荷や伝票を引き継ぐタイミングが噛み合わず、手元の作業がたびたび止まった。隣の工程を受け持つ働き手と、一度きちんと話をしておいた方がよさそ…
+- [edu_course_specific_equipment](#event-edu_course_specific_equipment) — 実習室の机には測定器と使い込まれた工具が並んでいた。先生は急いで触れないよう注意し、計測の順序を黒板に書いた。数値が少しずつ揃っていくのを見て、よう…
+- [edu_exam_cancelled](#event-edu_exam_cancelled) — 試験を行わないという知らせが届いた。会場へ向かう前の者も、すでに門の前で待っていた者も、改めて予定を考えることになった。
 - [edu_roving_teacher_visit](#event-edu_roving_teacher_visit) — 隊商と一緒に来た人が、集会所の隅へ古い本を並べた。数日だけ文字と計算を教えてくれるという。
 - [edu_correspondence_lessons](#event-edu_correspondence_lessons) — 何週間も前に申し込んだ教材がようやく届いた。封筒の角は傷んでいたが、中の問題用紙はまだ読める。
+- [edu_region_yan_public_study](#event-edu_region_yan_public_study) — 書院の門前に、今期の講義と選抜試験の案内が貼られていた。雨除けの下で書き写す人々は、皆同じ試験を目指しているわけでもないらしい。
+- [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
 
 <a id="tag-genre-14"></a>
-### 労働・経済（733）
+### 労働・経済（753）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -6610,7 +6750,7 @@
 - [life_rhodes_role_review](#event-life_rhodes_role_review) — ロドスの現地担当者から、今後の関わり方を尋ねる連絡が届いた。自分の体調や仕事の忙しさと照らし合わせ、これからどう付き合っていくか考えた。
 - [life_reunion_local_entry](#event-life_reunion_local_entry) — チェルノボーグの街区がレユニオンに占拠され、行き場を失った感染者とその家族が廃倉庫の片隅に身を寄せ合っていた。食料や薬を運ぶ人手が足りないという。力…
 - [life_reunion_order_conflict](#event-life_reunion_order_conflict) — 臨時拠点の配給所で、避難者を守るためにも全員が武器を取るべきだと息巻く声が上がった。周囲の仲間も意見が割れ、重苦しい空気が張りつめている。このまま配…
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
 - [life_infected_association_choice](#event-life_infected_association_choice) — 通りの商店の軒先に「感染者入店お断り」の木札が掲げられるようになり、町内の寄り合いでも感染者を職場や借家から締め出そうという声が勢いを増していた。会…
 - [life_infected_exclusion_consequence](#event-life_infected_exclusion_consequence) — 商店の軒先や下宿の入口に「感染者お断り」の札がずらりと並ぶようになった。安心したと喜ぶ住民がいる一方で、部屋を追い出された感染者の家族や常連客からは…
 - [life_infected_organization_dues](#event-life_infected_organization_dues) — 集会所の借り賃や荷運びの手間賃が足りなくなり、次の集まりで追加の会費を出すか、体を使って運搬を手伝うか相談された。自分の家のやりくりも楽ではない。
@@ -6693,7 +6833,7 @@
 - [infection_regional_housing_pressure](#event-infection_regional_housing_pressure) — 建物の管理人がやって来て、「この中に鉱石病の人間がいると苦情が出ている」と切り出した。あなたがそうだとは断言しないまま、露骨に契約更新の条件をつり上…
 - [family_child_future](#event-family_child_future) — 大きくなった{kid}のこれからについて、近しい仲間や家族と膝を突き合わせた。鉱山や工場の見習いに入るか、よそへ学びに出るか、それとも独立するか。最…
 - [family_child_bereavement](#event-family_child_bereavement) — {childDeathTiming}、{kid}が亡くなったという知らせが突然届いた。なぜ死ななければならなかったのか、詳しいことさえ分からなかった…
-- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
+- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎた。学びの場や仕事、住まいが以前とは変わった人も多い。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の…
 - [life_ursus_student_assembly_pause_review](#event-life_ursus_student_assembly_pause_review) — あの冬のあと、学生連合の活動から距離を置いて数年が経った。街でかつての知人の噂を耳にし、無事を確かめたい思いが胸をかすめる。今の平穏な暮らしを守りつ…
 - [life_leithanian_civic_entry](#event-life_leithanian_civic_entry) — 川にかかる橋の踏み板が抜けてから、荷車は毎日ぐるりと遠回りを強いられていた。街角の集会所では、住民たちの声を集めて領主側の役人へ修繕を掛け合おうとい…
 - [life_leithanian_civic_routine](#event-life_leithanian_civic_routine) — 街角の集まりに顔を出すようになってから、橋だけでなく石畳の陥没や街灯の故障まで様々な苦情が持ち込まれるようになった。今夜も仕事終わりに集会所へ集まる…
@@ -6708,7 +6848,7 @@
 - [life_leithanian_noble_household_later_active](#event-life_leithanian_noble_household_later_active) — 屋敷の務めを続けて、さらに何年もの歳月が流れた。どれだけ実務を回しても一族の重要な決定の場には呼ばれず、回ってくるのは面倒な後始末ばかりだった。この…
 - [life_leithanian_noble_household_later_suspended](#event-life_leithanian_noble_household_later_suspended) — 屋敷の務めから距離を置いて数年が経った。親族から新たに呼び戻されることもなく、静かな日々が続いている。このまま自分の暮らしを続けるか、少しだけ屋敷に…
 - [life_leithanian_noble_household_after_exit](#event-life_leithanian_noble_household_after_exit) — 屋敷の務めを離れてから、ずいぶん長い年月が経った。それでも、複雑な出納や古い目録をさばいた手際は、今の仕事や暮らしの中でもふとした拍子に顔を出す。あ…
-- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫が学校へ上がる節目の年を迎えた。日頃の蓄えの中から、新しい教本や学用品を揃えるためのお祝いの品を用意したいと考えた。
+- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫の成長に合わせ、読み書きに使える品やお祝いの小遣いを贈りたいと思った。学校へ通えるかどうかは、本人たちの暮らしと受入先の事情を確かめてからの話だ。
 - [asset_choice_property_purchase](#event-asset_choice_property_purchase) — 長年蓄えてきた手元の資金を確かめ、都市の不動産区画で自己所有の居住権（持ち家・アパート）を購入する好機が訪れた。家賃の支払いから解放され、地に足をつ…
 - [asset_choice_workshop_open](#event-asset_choice_workshop_open) — これまでに培った技術と知見を活かし、自らの看板を掲げて小さな工房や店舗（仕立て屋、パン屋、修理工房、薬草店）を開業する相談を持ちかけられた。
 - [asset_daily_workshop_revenue](#event-asset_daily_workshop_revenue) — 工房の店先で注文主と打ち合わせをし、丹精込めて仕上げた品を納品した。手渡された代金を金庫に収め、自らの腕で稼ぎ出す手応えを噛み締めた。
@@ -6728,7 +6868,7 @@
 - [family_spouse_housing_choice](#event-family_spouse_housing_choice) — 離れて暮らす{sp}から、今の部屋の家賃や、もう少し落ち着いて眠れる場所に移りたいという相談が届いた。貸間の案内を見比べながら、相部屋にするか、今の…
 - [family_divorce_child_residence](#event-family_divorce_child_residence) — 別れた相手の訃報が届いた。手紙には、残された子どもが今誰の元で暮らしているのかまでは書かれていなかった。すぐにこちらで引き取ると伝えるか、親族に居場…
 - [life_ursus_school_habit](#event-life_ursus_school_habit) — 学校へ通える日は、冷たい空気の教室で授業を受けた。試験が近づくにつれ、放課後に残って勉強するか、まっすぐ帰って家の手伝いをするか迷った。家に帰れば、…
-- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから散り散りになった昔の同級生から、短い葉書が届いた。あの日から細々と便りを続けてきたが、お互い住む街も仕事もすっかり変わった。これか…
+- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
 - [life_medical_nutrition](#event-life_medical_nutrition) — 一日の食事を一度に減らす日が続き、朝起きても手足に力が入らない。空腹をごまかすために水ばかり飲みながら、戸棚の奥に残ったわずかな乾物を数えた。
 - [life_medical_oripathy](#event-life_medical_oripathy) — 鉱石病の疼きと重だるさが年々深まり、昔なら一気に片づいた仕事にも何度も息継ぎが要るようになった。次の抑制薬を買う金と診察の日取りを思い浮かべ、ため息…
@@ -6802,7 +6942,7 @@
 - [car_hig_touhou_entry](#event-car_hig_touhou_entry) — 煙突から黒煙を吐き出す巨大な近代工場群――東方重工。シラユキの手裏剣『シルバーウィンド』をはじめ、伝統的な刀剣や手裏剣を高精度の工業ラインで大量生産…
 - [car_urs_officer_entry](#event-car_urs_officer_entry) — 要塞司令部の豪奢な執務室で、貴族将校たちが書類に目を落としていた。ウルサス帝国軍の指揮官枠――それは貴族の血筋と巨額の軍資金を握る選民だけの特権であ…
 - [car_urs_academy_entry](#event-car_urs_academy_entry) — 巨大な軍用装甲列車や重工業都市の設計を手掛けるウルサス帝国科学院。硬質な鉄と源石動力の極致を追求するこの研究機関で、構造工学と動力回路の専門技師が募…
-- [car_vic_royal_entry](#event-car_vic_royal_entry) — ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推…
+- [car_vic_royal_entry](#event-car_vic_royal_entry) — ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要…
 - [car_vic_works_entry](#event-car_vic_works_entry) — 巨大な蒸気機関車と鉄鋼レールが並ぶヴィクトリアの鉄道工廠。産業革命の鼓動が響くこの巨大施設で、高圧蒸気パイプラインや機関車エンジンの整備を担う技術者…
 - [car_lat_executor_entry](#event-car_lat_executor_entry) — 鐘の音が鳴り響くラテラーノ公証人役場。教皇庁の法典を執行し、遺言・契約の履行と国内外の紛争調停を担う『執行人』の審査が行われていた。絶対の信仰と守護…
 - [car_col_pioneer_entry](#event-car_col_pioneer_entry) — 移動都市の外、荒涼たる大地に広がる未開地。クルビア連邦政府の開拓局で、原野に自らの農場や工房を築く『パイオニア』の入植登記が行われていた。資本主義の…
@@ -6853,7 +6993,7 @@
 - [local_jobs_pressure](#event-local_jobs_pressure) — 近くの工場も商店も人を減らし、街角の求人板から募集の紙がめっきり減った。剥がされた跡ばかりが目立つ板の前で、数か月先の暮らしをどう繋ぐか立ち尽くした…
 - [local_housing_pressure](#event-local_housing_pressure) — 界隈では空き部屋が出てもその日のうちに埋まるようになり、家主たちも強気な家賃を吹っかけるようになった。手元の契約書を見返し、次の更新月がいつだったか…
 - [local_recovery_choices](#event-local_recovery_choices) — 崩れた外壁や歪んだ配管の応急処置が、通りのあちこちで続いていた。閉まっていた工房も半分だけ戸を開け始めている。近所の瓦礫片づけに手を貸すか、復旧の日…
-- [facility_school_disruption](#event-facility_school_disruption) — 通っている学び舎で教室が閉まる日が増え、集会所の隅や空き部屋を借りて細々と授業が行われるようになった。いつ元の教室へ戻れるのかは、先生にも分からない…
+- [facility_school_disruption](#event-facility_school_disruption) — 通っている学校で授業を開けない日が増えた。校門には休止と教材配布の知らせが貼られ、別の部屋で教えてもらえるのか、先生もまだ確かめているという。
 - [facility_work_restricted](#event-facility_work_restricted) — 原材料が届かず、仕事場の機械が半分以上止まったままだ。持ち場の作業も減り、現場の責任者は毎日渋い顔でシフトを削っている。来月の給金がどうなるか聞くか…
 - [facility_work_recovery](#event-facility_work_recovery) — 止まっていた資材がようやく届き、仕事場に機械の唸りが戻ってきた。ただ、人が抜けた穴を埋めるため、貼り出された配置表には見慣れない工程まで自分の名前が…
 - [facility_new_area_orientation](#event-facility_new_area_orientation) — 見知らぬ土地へ越してきて数日が経った。まだ片づかない荷物の山をまたぎながら、どこで水を買い、具合が悪くなったらどこへ駆け込めばいいのか、一から通りを…
@@ -6865,7 +7005,7 @@
 - [people_school_life_conversation](#event-people_school_life_conversation) — （動的本文）
 - [people_clinic_life_conversation](#event-people_clinic_life_conversation) — 待合いの人波がようやく引いた頃、見慣れた受付の担当者が肩を回しながら伝票の束を揃えていた。もうすぐ交代の時間らしい。
 - [people_work_care_schedule](#event-people_work_care_schedule) — 顔なじみの同僚から、家族の看病でどうしても手が離せず、来週のシフトを少し代わってもらえないかと小声で頼まれた。こちらにも自分の持ち場がある。
-- [people_school_housing_concern](#event-people_school_housing_concern) — 授業が終わったあと、顔なじみの教え手が重い教材箱の蓋を閉じた。今借りている相部屋では夜に机を広げるゆとりもないと聞く。後片づけを手伝うか、次の授業の…
+- [people_school_housing_concern](#event-people_school_housing_concern) — 顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。
 - [people_clinic_skill_continuity](#event-people_clinic_skill_continuity) — 顔なじみの受付係が、新しく書き直した案内札を前に首をひねっていた。声をかけると、初めて来る患者にもすぐ伝わる言い回しを考えているところだと言う。
 - [job_contract_review_v76](#event-job_contract_review_v76) — 手渡された雇用契約書には、給金や勤務時間だけでなく、怪我や破損の責任まで細かい文字でびっしり並んでいた。何度読み返しても、自分に有利なのか不利なのか…
 - [job_contract_negotiation_v76](#event-job_contract_negotiation_v76) — 今の仕事にもだいぶ手が馴染み、周囲より多くの荷や工程を回せるようになってきた。責任者が一人で帳面をつけている隙を見て、給金の色をつけてもらえないか切…
@@ -6920,13 +7060,33 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [edu_higher_search_decision](#event-edu_higher_search_decision) — 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
+- [edu_course_admission_contract](#event-edu_course_admission_contract) — 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
+- [edu_overage_equivalency_review](#event-edu_overage_equivalency_review) — 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
+- [edu_school_relocation_family](#event-edu_school_relocation_family) — 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+- [edu_route_recovered_notice](#event-edu_route_recovered_notice) — 運休していた便が再び走り始めたと聞いた。新しい時刻表には、以前とは違う数字が並んでいる。今の暮らしで使えるかどうかは、改めて確かめなければならない。
+- [edu_fee_itemization](#event-edu_fee_itemization) — 学校から届いた授業料の案内とは別に、教材と通学、住まいの見積を集めた。今日必要な金と、毎年掛かる金を分けて数えることにした。
+- [edu_entrance_exam_journey](#event-edu_entrance_exam_journey) — 受験案内に、集合時刻と会場の場所が書かれていた。まだ合否の分からない学校まで行くために、家では旅費を数え直した。
+- [edu_employer_sponsored_course](#event-edu_employer_sponsored_course) — 職場に、仕事に関わる講習の費用を支援する案内が回ってきた。勤務を続ける約束が要るのか、返還の条件があるのか、細かな字まで確かめた。
+- [edu_education_credit_terms](#event-edu_education_credit_terms) — 学費の貸付について、返済の期日と支払額が細かく書かれていた。今の納付を助けても、将来の暮らしに負担が残る。
+- [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_study_work_balance](#event-edu_study_work_balance) — 働きながら受けられる講習があると聞いた。勤務と授業の時間を並べると、家の用事まで含めて休める時間が少なくなりそうだった。
+- [edu_former_teacher_meeting](#event-edu_former_teacher_meeting) — 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+- [edu_child_guardian_disagreement](#event-edu_child_guardian_disagreement) — 学校の話になると家の空気が重くなった。行ってみたいと告げたが、家の人は仕事や家計のことばかり気にしている。
+- [edu_sibling_school_cost_conflict](#event-edu_sibling_school_cost_conflict) — 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
 - [edu_apprentice_literacy_exchange](#event-edu_apprentice_literacy_exchange) — 工房の親方は仕事のあとで帳面を開き、材料の数え方を教えてくれた。手を動かすだけでは済まない仕事が、思ったより多い。
 - [edu_adult_evening_literacy](#event-edu_adult_evening_literacy) — 仕事帰りに灯りのついた部屋をのぞくと、机の上に短い文章が並んでいた。初めて来た人のために、先生は鉛筆を一本残してくれていた。
 - [edu_informal_skill_assessment](#event-edu_informal_skill_assessment) — これまでに覚えた仕事や読み書きの内容を書き出した。学校の外で身につけた腕を、どの資格なら審査してもらえるのか確かめる必要があった。
+- [edu_dependent_future_school_consult](#event-edu_dependent_future_school_consult) — 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+- [edu_region_kazimierz_sponsor_training](#event-edu_region_kazimierz_sponsor_training) — 訓練場の外に、競技騎士の姿を刷った募集看板が立っていた。必要な用具と講習の費用が書かれ、支援が受けられるかどうかは別の欄に記されていた。
+- [edu_region_columbia_corporate_scholarship](#event-edu_region_columbia_corporate_scholarship) — 大学の掲示板に、企業が費用を支援する講習・研究課程の案内が貼られていた。支援額だけでなく、応募資格と返還の条件も読まなければならない。
+- [edu_region_higashi_dojo_learning](#event-edu_region_higashi_dojo_learning) — 道場の戸口に、稽古の時間が書かれていた。教え手が、初めてなら見学してもよいと声を掛けてきた。
+- [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 ## 状況別索引
 
-[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (140)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (248)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[記録・説明責任 (1)](#tag-situation-108)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-109)　・　[記録と責任 (1)](#tag-situation-110)　・　[技師 (1)](#tag-situation-111)　・　[技能条件 (1)](#tag-situation-112)　・　[求職 (2)](#tag-situation-113)　・　[求職・紹介 (1)](#tag-situation-114)　・　[旧坑区の荷札照会 (1)](#tag-situation-115)　・　[競技会場の仮設席設営 (1)](#tag-situation-116)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-117)　・　[競技騎士の肩の負傷 (1)](#tag-situation-118)　・　[競技祭 (1)](#tag-situation-119)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-120)　・　[脅迫を受ける (1)](#tag-situation-121)　・　[脅迫記録の解除分岐 (1)](#tag-situation-122)　・　[極東 (1)](#tag-situation-123)　・　[極東の軍務・兵站ルート (2)](#tag-situation-124)　・　[極東の神社 (1)](#tag-situation-125)　・　[勤務縮小後 (1)](#tag-situation-126)　・　[近隣からの相談 (1)](#tag-situation-127)　・　[近隣との情報交換 (1)](#tag-situation-128)　・　[近隣の若年者との交流 (1)](#tag-situation-129)　・　[近隣互助 (1)](#tag-situation-130)　・　[軍務・護衛の継続 (1)](#tag-situation-131)　・　[契約確認 (1)](#tag-situation-132)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-133)　・　[継続／民間移行／求職 (1)](#tag-situation-134)　・　[継続後の振り返り (1)](#tag-situation-135)　・　[継続後の窓口 (1)](#tag-situation-136)　・　[警戒・質問の選択 (1)](#tag-situation-137)　・　[検査延期後の再検討 (1)](#tag-situation-138)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-139)　・　[源石片による負傷・曝露 (1)](#tag-situation-140)　・　[源石片への接触回避 (1)](#tag-situation-141)　・　[言葉の行き違い (1)](#tag-situation-142)　・　[個人情報 (1)](#tag-situation-143)　・　[古傷による職業転換 (1)](#tag-situation-144)　・　[固定集落への配達 (1)](#tag-situation-145)　・　[固定都市 (1)](#tag-situation-146)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-147)　・　[交易所の共用端末 (1)](#tag-situation-148)　・　[公証人役場 (1)](#tag-situation-149)　・　[工業区域 (1)](#tag-situation-150)　・　[工場労働者 (1)](#tag-situation-151)　・　[港湾労働 (2)](#tag-situation-152)　・　[鉱区事故 (1)](#tag-situation-153)　・　[鉱山の交替減少 (1)](#tag-situation-154)　・　[鉱山労働 (1)](#tag-situation-155)　・　[鉱石病以外の回復期 (1)](#tag-situation-156)　・　[鉱石病診断済み (1)](#tag-situation-157)　・　[鉱夫 (1)](#tag-situation-158)　・　[鉱夫分岐 (1)](#tag-situation-159)　・　[高等教育経験者の教員応募 (1)](#tag-situation-160)　・　[高齢期 (1)](#tag-situation-161)　・　[高齢期の就労 (1)](#tag-situation-162)　・　[告示の交代 (1)](#tag-situation-163)　・　[国の発生条件あり (1561)](#tag-situation-164)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-165)　・　[再受付・別の診療先の探索 (1)](#tag-situation-166)　・　[採掘坑内の換気停止 (1)](#tag-situation-167)　・　[採掘地域 (1)](#tag-situation-168)　・　[採掘地域に限定 (1)](#tag-situation-169)　・　[採掘中 (1)](#tag-situation-170)　・　[災害後の商店再開 (1)](#tag-situation-171)　・　[祭典 (1)](#tag-situation-172)　・　[作業技能 (1)](#tag-situation-173)　・　[作業停止・退避 (1)](#tag-situation-174)　・　[山道の情報共有 (1)](#tag-situation-175)　・　[山麓の宿への道案内 (1)](#tag-situation-176)　・　[仕送り (1)](#tag-situation-177)　・　[子どもの就学 (1)](#tag-situation-178)　・　[子どもの誕生・養育 (1)](#tag-situation-179)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-180)　・　[子への訃報 (1)](#tag-situation-181)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-182)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-183)　・　[思春期 (1)](#tag-situation-184)　・　[支援の受入れ (1)](#tag-situation-185)　・　[氏族養育 (1)](#tag-situation-186)　・　[資格取得後の求職 (1)](#tag-situation-187)　・　[飼育動物の世話 (1)](#tag-situation-188)　・　[次便待ち (1)](#tag-situation-189)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-190)　・　[自動発生イベント (1416)](#tag-situation-191)　・　[湿地地勢 (1)](#tag-situation-192)　・　[守秘と名簿 (1)](#tag-situation-193)　・　[種族差別 (2)](#tag-situation-194)　・　[種族差別後 (1)](#tag-situation-195)　・　[酒類の仕入れ帳 (1)](#tag-situation-196)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-197)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-198)　・　[授業担当者との接点 (1)](#tag-situation-199)　・　[収容・隔離中 (1)](#tag-situation-200)　・　[収容・隔離中の診療 (1)](#tag-situation-201)　・　[収容中 (4)](#tag-situation-202)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-203)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-204)　・　[就労中 (2)](#tag-situation-205)　・　[就労中の鉱夫 (1)](#tag-situation-206)　・　[住居差別 (1)](#tag-situation-207)　・　[住居差別後 (1)](#tag-situation-208)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-209)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-210)　・　[宿泊拒否 (1)](#tag-situation-211)　・　[宿泊拒否後 (1)](#tag-situation-212)　・　[出場・観戦・場外見物 (1)](#tag-situation-213)　・　[所持金による本文・選択肢 (1)](#tag-situation-214)　・　[小舞台 (1)](#tag-situation-215)　・　[少年・青年 (2)](#tag-situation-216)　・　[少年・青年・壮年 (3)](#tag-situation-217)　・　[消息不明者の生存確認 (1)](#tag-situation-218)　・　[症状進行中 (1)](#tag-situation-219)　・　[情報網の高い居住地 (1)](#tag-situation-220)　・　[条件付き本文 (210)](#tag-situation-221)　・　[職業課程の継続 (1)](#tag-situation-222)　・　[職業課程の修了 (1)](#tag-situation-223)　・　[職業条件あり (71)](#tag-situation-224)　・　[職場・近隣で露見の兆し (1)](#tag-situation-225)　・　[職場の排斥 (1)](#tag-situation-226)　・　[食堂の客足 (1)](#tag-situation-227)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-228)　・　[食料不足 (1)](#tag-situation-229)　・　[森林地勢 (1)](#tag-situation-230)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-231)　・　[親の家計判断 (1)](#tag-situation-232)　・　[親の感染 (1)](#tag-situation-233)　・　[親の死後 (1)](#tag-situation-234)　・　[親子の記憶 (1)](#tag-situation-235)　・　[診断済み (1)](#tag-situation-236)　・　[診断済み・未治療 (1)](#tag-situation-237)　・　[診療・休養・記録から選択 (1)](#tag-situation-238)　・　[診療・作業調整 (1)](#tag-situation-239)　・　[診療・動作を避ける選択 (1)](#tag-situation-240)　・　[診療・付き添いの依頼 (1)](#tag-situation-241)　・　[診療・負担軽減から選択 (1)](#tag-situation-242)　・　[診療延期後 (1)](#tag-situation-243)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-244)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-245)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-246)　・　[身近な人への支援依頼 (1)](#tag-situation-247)　・　[身近な連絡先あり (1)](#tag-situation-248)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-249)　・　[睡眠不足 (1)](#tag-situation-250)　・　[世界イベント後 (1)](#tag-situation-251)　・　[成人 (4)](#tag-situation-252)　・　[成人・返済支援の選択 (1)](#tag-situation-253)　・　[成人した子 (2)](#tag-situation-254)　・　[成人の種族偏見に触れる (1)](#tag-situation-255)　・　[生活上の備え (1)](#tag-situation-256)　・　[青年・壮年 (5)](#tag-situation-257)　・　[青年・壮年・老年 (3)](#tag-situation-258)　・　[雪祭司・聖樹 (1)](#tag-situation-259)　・　[選択イベント (1030)](#tag-situation-260)　・　[前段で残留した人 (1)](#tag-situation-261)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-262)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-263)　・　[全年齢の循環器系エピソード (1)](#tag-situation-264)　・　[全年齢の食料不足 (1)](#tag-situation-265)　・　[全年齢の負傷後の痛み (1)](#tag-situation-266)　・　[組織・所属に言及 (175)](#tag-situation-267)　・　[組織離脱後 (1)](#tag-situation-268)　・　[相談・医療・休養 (1)](#tag-situation-269)　・　[相談・記録 (1)](#tag-situation-270)　・　[相談・記録・経路変更 (1)](#tag-situation-271)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-272)　・　[足場や荷の異常 (1)](#tag-situation-273)　・　[退会後の関係 (1)](#tag-situation-274)　・　[退職選択 (1)](#tag-situation-275)　・　[大いなる静謐後 (1)](#tag-situation-276)　・　[大学課程の継続 (1)](#tag-situation-277)　・　[大学課程の修了 (1)](#tag-situation-278)　・　[短期雇用 (1)](#tag-situation-279)　・　[短期雇用と現場危険 (1)](#tag-situation-280)　・　[地域の供給不安定 (1)](#tag-situation-281)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-282)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-283)　・　[地域学習会・独学の選択 (1)](#tag-situation-284)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-285)　・　[仲間の捜索 (1)](#tag-situation-286)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-287)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-288)　・　[通学していない (1)](#tag-situation-289)　・　[通学中 (1)](#tag-situation-290)　・　[通行止め・迂回 (1)](#tag-situation-291)　・　[天災・戦乱による避難中 (1)](#tag-situation-292)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-293)　・　[店舗からの排斥集会 (1)](#tag-situation-294)　・　[転居後の近隣交流 (1)](#tag-situation-295)　・　[都市街区での襲撃 (1)](#tag-situation-296)　・　[動的表示条件 (605)](#tag-situation-297)　・　[動的本文 (30)](#tag-situation-298)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-299)　・　[同一都市の周縁区への転居 (1)](#tag-situation-300)　・　[同郷者との交流 (1)](#tag-situation-301)　・　[同行者との交流 (1)](#tag-situation-302)　・　[匿名動画の出所確認 (1)](#tag-situation-303)　・　[独立商業所属 (1)](#tag-situation-304)　・　[読み書きに困難がある (1)](#tag-situation-305)　・　[日雇い (1)](#tag-situation-306)　・　[乳児の成長 (1)](#tag-situation-307)　・　[任意応募・採用選考 (1)](#tag-situation-308)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-309)　・　[年齢：35歳以上 (2)](#tag-situation-310)　・　[年齢：児童 (906)](#tag-situation-311)　・　[年齢：少年 (1133)](#tag-situation-312)　・　[年齢：青年 (2300)](#tag-situation-313)　・　[年齢：壮年 (2240)](#tag-situation-314)　・　[年齢：乳児 (15)](#tag-situation-315)　・　[年齢：幼児 (31)](#tag-situation-316)　・　[年齢：老年 (1444)](#tag-situation-317)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-318)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-319)　・　[配給・食料不足 (1)](#tag-situation-320)　・　[配給・寝床・診療案内 (1)](#tag-situation-321)　・　[配給と地域支援 (1)](#tag-situation-322)　・　[配給登録 (1)](#tag-situation-323)　・　[配偶者との死別 (1)](#tag-situation-324)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-325)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-326)　・　[班間の点検記録 (1)](#tag-situation-327)　・　[班内の技能伝達 (1)](#tag-situation-328)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-329)　・　[避難中 (1)](#tag-situation-330)　・　[非感染者 (1)](#tag-situation-331)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-332)　・　[付き添い依頼・受診延期 (1)](#tag-situation-333)　・　[付き添い相談 (1)](#tag-situation-334)　・　[扶養中の子 (2)](#tag-situation-335)　・　[扶養中の子の看病 (1)](#tag-situation-336)　・　[負傷後の職務調整 (1)](#tag-situation-337)　・　[部品寸法 (1)](#tag-situation-338)　・　[復旧作業中の負傷 (1)](#tag-situation-339)　・　[粉塵への接触懸念 (1)](#tag-situation-340)　・　[粉塵曝露 (2)](#tag-situation-341)　・　[兵士の消息不明 (1)](#tag-situation-342)　・　[兵役招集 (1)](#tag-situation-343)　・　[別居・転居 (1)](#tag-situation-344)　・　[亡命・移住 (2)](#tag-situation-345)　・　[未診断の感染者 (1)](#tag-situation-346)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-347)　・　[未成年は養育者判断 (8)](#tag-situation-348)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-349)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-350)　・　[名前を知る相手 (1)](#tag-situation-351)　・　[夜間の世話 (1)](#tag-situation-352)　・　[友人との文通再開 (1)](#tag-situation-353)　・　[友人への恋心 (1)](#tag-situation-354)　・　[傭兵・護衛勤務 (1)](#tag-situation-355)　・　[傭兵隊の護衛契約 (1)](#tag-situation-356)　・　[傭兵隊の通過 (1)](#tag-situation-357)　・　[幼い子の養育 (1)](#tag-situation-358)　・　[用事の再開・再診 (1)](#tag-situation-359)　・　[養育者の視点 (1)](#tag-situation-360)　・　[離婚後の元配偶者の死 (1)](#tag-situation-361)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-362)　・　[離婚後の子育て・連絡 (1)](#tag-situation-363)　・　[龍門 (1)](#tag-situation-364)　・　[龍門の移動都市居住区 (1)](#tag-situation-365)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-366)　・　[龍門の商業街 (1)](#tag-situation-367)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-368)　・　[隣人との死別 (1)](#tag-situation-369)　・　[隣人との伝言再開 (1)](#tag-situation-370)　・　[隣人の消息不明 (1)](#tag-situation-371)　・　[隣人の生存確認 (1)](#tag-situation-372)　・　[連絡・休息の継続 (1)](#tag-situation-373)　・　[連絡先と家の用事の相談 (1)](#tag-situation-374)　・　[労務補償 (1)](#tag-situation-375)
+[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (142)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (248)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[記録・説明責任 (1)](#tag-situation-108)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-109)　・　[記録と責任 (1)](#tag-situation-110)　・　[技師 (1)](#tag-situation-111)　・　[技能条件 (1)](#tag-situation-112)　・　[求職 (2)](#tag-situation-113)　・　[求職・紹介 (1)](#tag-situation-114)　・　[旧坑区の荷札照会 (1)](#tag-situation-115)　・　[競技会場の仮設席設営 (1)](#tag-situation-116)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-117)　・　[競技騎士の肩の負傷 (1)](#tag-situation-118)　・　[競技祭 (1)](#tag-situation-119)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-120)　・　[脅迫を受ける (1)](#tag-situation-121)　・　[脅迫記録の解除分岐 (1)](#tag-situation-122)　・　[極東 (1)](#tag-situation-123)　・　[極東の軍務・兵站ルート (2)](#tag-situation-124)　・　[極東の神社 (1)](#tag-situation-125)　・　[勤務縮小後 (1)](#tag-situation-126)　・　[近隣からの相談 (1)](#tag-situation-127)　・　[近隣との情報交換 (1)](#tag-situation-128)　・　[近隣の若年者との交流 (1)](#tag-situation-129)　・　[近隣互助 (1)](#tag-situation-130)　・　[軍務・護衛の継続 (1)](#tag-situation-131)　・　[契約確認 (1)](#tag-situation-132)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-133)　・　[継続／民間移行／求職 (1)](#tag-situation-134)　・　[継続後の振り返り (1)](#tag-situation-135)　・　[継続後の窓口 (1)](#tag-situation-136)　・　[警戒・質問の選択 (1)](#tag-situation-137)　・　[検査延期後の再検討 (1)](#tag-situation-138)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-139)　・　[源石片による負傷・曝露 (1)](#tag-situation-140)　・　[源石片への接触回避 (1)](#tag-situation-141)　・　[言葉の行き違い (1)](#tag-situation-142)　・　[個人情報 (1)](#tag-situation-143)　・　[古傷による職業転換 (1)](#tag-situation-144)　・　[固定集落への配達 (1)](#tag-situation-145)　・　[固定都市 (1)](#tag-situation-146)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-147)　・　[交易所の共用端末 (1)](#tag-situation-148)　・　[公証人役場 (1)](#tag-situation-149)　・　[工業区域 (1)](#tag-situation-150)　・　[工場労働者 (1)](#tag-situation-151)　・　[港湾労働 (2)](#tag-situation-152)　・　[鉱区事故 (1)](#tag-situation-153)　・　[鉱山の交替減少 (1)](#tag-situation-154)　・　[鉱山労働 (1)](#tag-situation-155)　・　[鉱石病以外の回復期 (1)](#tag-situation-156)　・　[鉱石病診断済み (1)](#tag-situation-157)　・　[鉱夫 (1)](#tag-situation-158)　・　[鉱夫分岐 (1)](#tag-situation-159)　・　[高等教育経験者の教員応募 (1)](#tag-situation-160)　・　[高齢期 (1)](#tag-situation-161)　・　[高齢期の就労 (1)](#tag-situation-162)　・　[告示の交代 (1)](#tag-situation-163)　・　[国の発生条件あり (1561)](#tag-situation-164)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-165)　・　[再受付・別の診療先の探索 (1)](#tag-situation-166)　・　[採掘坑内の換気停止 (1)](#tag-situation-167)　・　[採掘地域 (1)](#tag-situation-168)　・　[採掘地域に限定 (1)](#tag-situation-169)　・　[採掘中 (1)](#tag-situation-170)　・　[災害後の商店再開 (1)](#tag-situation-171)　・　[祭典 (1)](#tag-situation-172)　・　[作業技能 (1)](#tag-situation-173)　・　[作業停止・退避 (1)](#tag-situation-174)　・　[山道の情報共有 (1)](#tag-situation-175)　・　[山麓の宿への道案内 (1)](#tag-situation-176)　・　[仕送り (1)](#tag-situation-177)　・　[子どもの就学 (1)](#tag-situation-178)　・　[子どもの誕生・養育 (1)](#tag-situation-179)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-180)　・　[子への訃報 (1)](#tag-situation-181)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-182)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-183)　・　[思春期 (1)](#tag-situation-184)　・　[支援の受入れ (1)](#tag-situation-185)　・　[氏族養育 (1)](#tag-situation-186)　・　[資格取得後の求職 (1)](#tag-situation-187)　・　[飼育動物の世話 (1)](#tag-situation-188)　・　[次便待ち (1)](#tag-situation-189)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-190)　・　[自動発生イベント (1418)](#tag-situation-191)　・　[湿地地勢 (1)](#tag-situation-192)　・　[守秘と名簿 (1)](#tag-situation-193)　・　[種族差別 (2)](#tag-situation-194)　・　[種族差別後 (1)](#tag-situation-195)　・　[酒類の仕入れ帳 (1)](#tag-situation-196)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-197)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-198)　・　[授業担当者との接点 (1)](#tag-situation-199)　・　[収容・隔離中 (1)](#tag-situation-200)　・　[収容・隔離中の診療 (1)](#tag-situation-201)　・　[収容中 (4)](#tag-situation-202)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-203)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-204)　・　[就労中 (2)](#tag-situation-205)　・　[就労中の鉱夫 (1)](#tag-situation-206)　・　[住居差別 (1)](#tag-situation-207)　・　[住居差別後 (1)](#tag-situation-208)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-209)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-210)　・　[宿泊拒否 (1)](#tag-situation-211)　・　[宿泊拒否後 (1)](#tag-situation-212)　・　[出場・観戦・場外見物 (1)](#tag-situation-213)　・　[所持金による本文・選択肢 (1)](#tag-situation-214)　・　[小舞台 (1)](#tag-situation-215)　・　[少年・青年 (2)](#tag-situation-216)　・　[少年・青年・壮年 (3)](#tag-situation-217)　・　[消息不明者の生存確認 (1)](#tag-situation-218)　・　[症状進行中 (1)](#tag-situation-219)　・　[情報網の高い居住地 (1)](#tag-situation-220)　・　[条件付き本文 (210)](#tag-situation-221)　・　[職業課程の継続 (1)](#tag-situation-222)　・　[職業課程の修了 (1)](#tag-situation-223)　・　[職業条件あり (71)](#tag-situation-224)　・　[職場・近隣で露見の兆し (1)](#tag-situation-225)　・　[職場の排斥 (1)](#tag-situation-226)　・　[食堂の客足 (1)](#tag-situation-227)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-228)　・　[食料不足 (1)](#tag-situation-229)　・　[森林地勢 (1)](#tag-situation-230)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-231)　・　[親の家計判断 (1)](#tag-situation-232)　・　[親の感染 (1)](#tag-situation-233)　・　[親の死後 (1)](#tag-situation-234)　・　[親子の記憶 (1)](#tag-situation-235)　・　[診断済み (1)](#tag-situation-236)　・　[診断済み・未治療 (1)](#tag-situation-237)　・　[診療・休養・記録から選択 (1)](#tag-situation-238)　・　[診療・作業調整 (1)](#tag-situation-239)　・　[診療・動作を避ける選択 (1)](#tag-situation-240)　・　[診療・付き添いの依頼 (1)](#tag-situation-241)　・　[診療・負担軽減から選択 (1)](#tag-situation-242)　・　[診療延期後 (1)](#tag-situation-243)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-244)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-245)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-246)　・　[身近な人への支援依頼 (1)](#tag-situation-247)　・　[身近な連絡先あり (1)](#tag-situation-248)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-249)　・　[睡眠不足 (1)](#tag-situation-250)　・　[世界イベント後 (1)](#tag-situation-251)　・　[成人 (4)](#tag-situation-252)　・　[成人・返済支援の選択 (1)](#tag-situation-253)　・　[成人した子 (2)](#tag-situation-254)　・　[成人の種族偏見に触れる (1)](#tag-situation-255)　・　[生活上の備え (1)](#tag-situation-256)　・　[青年・壮年 (5)](#tag-situation-257)　・　[青年・壮年・老年 (3)](#tag-situation-258)　・　[雪祭司・聖樹 (1)](#tag-situation-259)　・　[選択イベント (1089)](#tag-situation-260)　・　[前段で残留した人 (1)](#tag-situation-261)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-262)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-263)　・　[全年齢の循環器系エピソード (1)](#tag-situation-264)　・　[全年齢の食料不足 (1)](#tag-situation-265)　・　[全年齢の負傷後の痛み (1)](#tag-situation-266)　・　[組織・所属に言及 (175)](#tag-situation-267)　・　[組織離脱後 (1)](#tag-situation-268)　・　[相談・医療・休養 (1)](#tag-situation-269)　・　[相談・記録 (1)](#tag-situation-270)　・　[相談・記録・経路変更 (1)](#tag-situation-271)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-272)　・　[足場や荷の異常 (1)](#tag-situation-273)　・　[退会後の関係 (1)](#tag-situation-274)　・　[退職選択 (1)](#tag-situation-275)　・　[大いなる静謐後 (1)](#tag-situation-276)　・　[大学課程の継続 (1)](#tag-situation-277)　・　[大学課程の修了 (1)](#tag-situation-278)　・　[短期雇用 (1)](#tag-situation-279)　・　[短期雇用と現場危険 (1)](#tag-situation-280)　・　[地域の供給不安定 (1)](#tag-situation-281)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-282)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-283)　・　[地域学習会・独学の選択 (1)](#tag-situation-284)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-285)　・　[仲間の捜索 (1)](#tag-situation-286)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-287)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-288)　・　[通学していない (1)](#tag-situation-289)　・　[通学中 (1)](#tag-situation-290)　・　[通行止め・迂回 (1)](#tag-situation-291)　・　[天災・戦乱による避難中 (1)](#tag-situation-292)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-293)　・　[店舗からの排斥集会 (1)](#tag-situation-294)　・　[転居後の近隣交流 (1)](#tag-situation-295)　・　[都市街区での襲撃 (1)](#tag-situation-296)　・　[動的表示条件 (666)](#tag-situation-297)　・　[動的本文 (30)](#tag-situation-298)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-299)　・　[同一都市の周縁区への転居 (1)](#tag-situation-300)　・　[同郷者との交流 (1)](#tag-situation-301)　・　[同行者との交流 (1)](#tag-situation-302)　・　[匿名動画の出所確認 (1)](#tag-situation-303)　・　[独立商業所属 (1)](#tag-situation-304)　・　[読み書きに困難がある (1)](#tag-situation-305)　・　[日雇い (1)](#tag-situation-306)　・　[乳児の成長 (1)](#tag-situation-307)　・　[任意応募・採用選考 (1)](#tag-situation-308)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-309)　・　[年齢：35歳以上 (2)](#tag-situation-310)　・　[年齢：児童 (967)](#tag-situation-311)　・　[年齢：少年 (1194)](#tag-situation-312)　・　[年齢：青年 (2361)](#tag-situation-313)　・　[年齢：壮年 (2301)](#tag-situation-314)　・　[年齢：乳児 (15)](#tag-situation-315)　・　[年齢：幼児 (31)](#tag-situation-316)　・　[年齢：老年 (1505)](#tag-situation-317)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-318)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-319)　・　[配給・食料不足 (1)](#tag-situation-320)　・　[配給・寝床・診療案内 (1)](#tag-situation-321)　・　[配給と地域支援 (1)](#tag-situation-322)　・　[配給登録 (1)](#tag-situation-323)　・　[配偶者との死別 (1)](#tag-situation-324)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-325)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-326)　・　[班間の点検記録 (1)](#tag-situation-327)　・　[班内の技能伝達 (1)](#tag-situation-328)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-329)　・　[避難中 (1)](#tag-situation-330)　・　[非感染者 (1)](#tag-situation-331)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-332)　・　[付き添い依頼・受診延期 (1)](#tag-situation-333)　・　[付き添い相談 (1)](#tag-situation-334)　・　[扶養中の子 (2)](#tag-situation-335)　・　[扶養中の子の看病 (1)](#tag-situation-336)　・　[負傷後の職務調整 (1)](#tag-situation-337)　・　[部品寸法 (1)](#tag-situation-338)　・　[復旧作業中の負傷 (1)](#tag-situation-339)　・　[粉塵への接触懸念 (1)](#tag-situation-340)　・　[粉塵曝露 (2)](#tag-situation-341)　・　[兵士の消息不明 (1)](#tag-situation-342)　・　[兵役招集 (1)](#tag-situation-343)　・　[別居・転居 (1)](#tag-situation-344)　・　[亡命・移住 (2)](#tag-situation-345)　・　[未診断の感染者 (1)](#tag-situation-346)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-347)　・　[未成年は養育者判断 (8)](#tag-situation-348)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-349)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-350)　・　[名前を知る相手 (1)](#tag-situation-351)　・　[夜間の世話 (1)](#tag-situation-352)　・　[友人との文通再開 (1)](#tag-situation-353)　・　[友人への恋心 (1)](#tag-situation-354)　・　[傭兵・護衛勤務 (1)](#tag-situation-355)　・　[傭兵隊の護衛契約 (1)](#tag-situation-356)　・　[傭兵隊の通過 (1)](#tag-situation-357)　・　[幼い子の養育 (1)](#tag-situation-358)　・　[用事の再開・再診 (1)](#tag-situation-359)　・　[養育者の視点 (1)](#tag-situation-360)　・　[離婚後の元配偶者の死 (1)](#tag-situation-361)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-362)　・　[離婚後の子育て・連絡 (1)](#tag-situation-363)　・　[龍門 (1)](#tag-situation-364)　・　[龍門の移動都市居住区 (1)](#tag-situation-365)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-366)　・　[龍門の商業街 (1)](#tag-situation-367)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-368)　・　[隣人との死別 (1)](#tag-situation-369)　・　[隣人との伝言再開 (1)](#tag-situation-370)　・　[隣人の消息不明 (1)](#tag-situation-371)　・　[隣人の生存確認 (1)](#tag-situation-372)　・　[連絡・休息の継続 (1)](#tag-situation-373)　・　[連絡先と家の用事の相談 (1)](#tag-situation-374)　・　[労務補償 (1)](#tag-situation-375)
 
 <a id="tag-situation-0"></a>
 ### 1072年以降は戦役後の導入文（1）
@@ -7153,7 +7313,7 @@
 - [siesta_shop_reopens_after_move](#event-siesta_shop_reopens_after_move) — 移動都市へと姿を変えた新しいシエスタで、勤め先の店をようやく再開した。まだ人通りのまばらな通りに面して木の案内札を立て、届いたばかりの商品を一品ずつ…
 
 <a id="tag-situation-55"></a>
-### 移動都市・避難に言及（140）
+### 移動都市・避難に言及（142）
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
 - [lov](#event-lov) — 仕事帰りにたびたび顔を合わせる人と、雨宿りの軒先で立ち話をした。もっと話していたい気持ちはあったが、今月の支払いに追われる暮らしを思うと、次の一歩を…
 - [nat](#event-nat) — （動的本文）
@@ -7225,7 +7385,7 @@
 - [choice_rim_09](#event-choice_rim_09) — 鉱区の北東方向に大規模な天災雲（源石嵐）が観測された。採掘プラットフォームを安全地帯へ緊急移動させるため、脚部アンカーの引き抜きと移動機構の最終点検…
 - [life_reunion_local_entry](#event-life_reunion_local_entry) — チェルノボーグの街区がレユニオンに占拠され、行き場を失った感染者とその家族が廃倉庫の片隅に身を寄せ合っていた。食料や薬を運ぶ人手が足りないという。力…
 - [life_reunion_order_conflict](#event-life_reunion_order_conflict) — 臨時拠点の配給所で、避難者を守るためにも全員が武器を取るべきだと息巻く声が上がった。周囲の仲間も意見が割れ、重苦しい空気が張りつめている。このまま配…
-- [life_ursus_school_aid](#event-life_ursus_school_aid) — 混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持…
+- [life_ursus_school_aid](#event-life_ursus_school_aid) — （動的本文）
 - [life_ursus_school_aid_followup](#event-life_ursus_school_aid_followup) — （動的本文）
 - [life_ursus_school_aid_adult_followup](#event-life_ursus_school_aid_adult_followup) — 大人になって荷物を整理していた時、チェルノボーグの学校で書き留めた同級生たちの古い連絡先がひょっこり出てきた。あのまま行方が知れない仲間の名を指でな…
 - [life_kazdel_displaced_start](#event-life_kazdel_displaced_start) — （動的本文）
@@ -7250,10 +7410,10 @@
 - [family_daily_spouse_holiday_stroll](#event-family_daily_spouse_holiday_stroll) — 風の穏やかな休日に、{sp}と区画の連絡通路を抜けて展望デッキまで散歩した。通り過ぎていく荒野の地平線を並んで眺めながら、二人で歩んできた年月の長さ…
 - [family_care_network_member_missing_news](#event-family_care_network_member_missing_news) — 昔世話になった{careMemberName}が{careMemberMissingYear}年、{careMemberMissingRegion}…
 - [life_ursus_katorga_life](#event-life_ursus_katorga_life) — 送り込まれたカトルガ区画では、稼働停止とともに照明も暖房も断ち切られ、外の扉には重い鎖がかけられた。叩いても返事のない扉が並び、白い息が凍りつく暗闇…
-- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — よその移動都市で暮らす子供や孫から近況を知らせる便りが届いた。ぎこちない文字で綴られた学校や遊びの報告を、眼鏡を掛け直して何度も嬉しそうに読み返した…
+- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — 子や孫から近況を知らせる便りが届いた。日々の遊びや家の出来事を綴った文字を、眼鏡を掛け直して何度も嬉しそうに読み返した。
 - [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — 不意の天災や移動都市の区画被災に備え、民間保険会社が提供する「天災総合避難・再建保険」の案内が届いた。年々の保険料を納めることで、被災時に速やかな補…
 - [asset_catastrophe_insurance_claim](#event-asset_catastrophe_insurance_claim) — 天災の混乱の中、避難所で保険会社の臨時窓口を見つけた。避難証明書と保険証書を提示したところ、迅速な審査が行われた。
-- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから散り散りになった昔の同級生から、短い葉書が届いた。あの日から細々と便りを続けてきたが、お互い住む街も仕事もすっかり変わった。これか…
+- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [ori_post_catastrophe_ground](#event-ori_post_catastrophe_ground) — 崩れた通りを歩いていると、ぬかるんだ土の中に黒く光る欠片がいくつも混じっているのが目に入った。ただの石炭か、それとも活性を持った源石の欠片か、遠目に…
 - [ori_protection_after_displacement](#event-ori_protection_after_displacement) — 避難先の仮宿でやっと荷をほどいたとき、家から持ち出した商売道具の隙間に、黒く光る破片が食い込んでいるのに気づいた。削り落として使い続けるか、泣く泣く…
 - [sr_rhodes_branch_routine](#event-sr_rhodes_branch_routine) — 地域の地上支部に、定期便の医療物資がまとめて運び込まれた。ところが待合室の予約数と倉庫の在庫が食い違っており、それぞれの持ち場で急いで中身を確かめる…
@@ -7294,6 +7454,8 @@
 - [life_ursus_zelgrad_displaced_work](#event-life_ursus_zelgrad_displaced_work) — （動的本文）
 - [life_ursus_zelgrad_displaced_work_review](#event-life_ursus_zelgrad_displaced_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
+- [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+- [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
 
 <a id="tag-situation-56"></a>
 ### 移動都市とそれ以外で導入文が分岐（1）
@@ -8577,11 +8739,11 @@
 - [daily_leithanien_56](#event-daily_leithanien_56) — 高価な抑制剤の処方箋を握りしめ、薬局の前で立ち尽くした。文化を誇る美しい都の足元で、見殺しにされる貧民の過酷な現実を痛感した。
 - [daily_leithanien_57](#event-daily_leithanien_57) — 音楽院の防音レッスン室で、古典の無伴奏組曲を何時間も弾き込んだ。指が動かなくなるまで没頭し、音の構造の奥深さに圧倒された。
 - [daily_leithanien_58](#event-daily_leithanien_58) — 学び舎の音楽教室で、古いアーツ記譜法と合奏の構成理論を学んだ。旋律が織りなす整然とした規則性に触れ、音の奥深さに視界が一気に開けた。
-- [daily_leithanien_59](#event-daily_leithanien_59) — 学内コンクールの本選を聴講した。同世代の圧倒的な超絶技巧と豊かな表現力に強い刺激を受け、練習への闘志を燃え上がらせた。
+- [daily_leithanien_59](#event-daily_leithanien_59) — （動的本文）
 - [daily_leithanien_60](#event-daily_leithanien_60) — 実技試験の前夜、過度の緊張と不安で眠れず、胃を痛めてしまった。温かいカモミールティーを啜りながら、必死に心を落ち着かせた。
 - [choice_leithanien_01](#event-choice_leithanien_01) — 偶然手に入れた招待状により、郊外の古城で巫王残党が禁忌のアーツ儀式を目論んでいる現場を知ってしまった。選帝侯の憲兵隊に通報するか、自ら真偽を確かめる…
 - [choice_leithanien_02](#event-choice_leithanien_02) — 数百年前の名工が遺した伝説のバイオリンが、響板の大破損状態であなたの工房（または知人の店）に持ち込まれた。修復に成功すれば世界に名が轟くが、失敗すれ…
-- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。名門音楽院への入学が認められたが、高額な制服代と教材費が払えず泣いている…
+- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。音楽を教わる先を探しているが、教材や身の回りの品を買う金もない。
 - [choice_leithanien_04](#event-choice_leithanien_04) — 名高い銘醸ブドウ畑の相続を巡り、伝統ある小作農家と新興の貴族商人の間で激しい係争が起きていた。地域の長老であるあなたに、仲裁の立会人としての要請が届…
 - [choice_leithanien_05](#event-choice_leithanien_05) — 選帝侯も臨席する大聖堂の演奏会直前、主役のチェロ奏者が急病で倒れた。楽団の控え奏者として舞台裏に控えていたあなたに、指揮者から「代役として協奏曲を弾…
 - [choice_leithanien_06](#event-choice_leithanien_06) — 好戦的な貴族が、聴く者の神経を破壊する非人道的な音波アーツ砲を秘密裏に試作していた。開発に協力させられそうになった技師から、設計図の破棄を手伝ってほ…
@@ -9216,7 +9378,7 @@
 - [choice_kazdel_02](#event-choice_kazdel_02) — テント酒場で見知らぬ外国の代理人から声をかけられた。「お前のような腕利きのサルカズが泥まみれで瓦礫を運ぶのは勿体ない。隣国の紛争地へ行けば、この金貨…
 - [choice_kazdel_03](#event-choice_kazdel_03) — 吹きさらしのテント暮らしを脱するため、数十家族が身を寄せ合える堅牢な石造り共同住宅の建設が始まった。寒風が吹きすさぶ中、レンガ積みと屋根架けの急ピッ…
 - [choice_kazdel_04](#event-choice_kazdel_04) — 瓦礫の撤去作業中、地下数メートルの地層から古代サルカズの楔形文字が刻まれた巨大な黒曜石の石板が発掘された。太古の歴史と失われたアーツ技術の手がかりが…
-- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教える寺子屋を開くことになっ…
+- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書き…
 - [choice_kazdel_06](#event-choice_kazdel_06) — 荒野から猛烈な突風を伴う砂嵐が吹き寄せてきた。移動集落の多くの天幕が浮き上がり、吹き飛ばされそうになっている。大槌を持って杭打ちに飛び出す決死の補強…
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
@@ -9512,8 +9674,8 @@
 - [life_chernobog_worksite_errand](#event-life_chernobog_worksite_errand) — 鉱山へ続く道の脇に立ち入り禁止の柵が次々と組まれ、重い幌をかけた荷車がひっきりなしに行き交うようになった。行きつけの食堂の壁に、その柵の手前まで板材…
 - [life_reunion_local_entry](#event-life_reunion_local_entry) — チェルノボーグの街区がレユニオンに占拠され、行き場を失った感染者とその家族が廃倉庫の片隅に身を寄せ合っていた。食料や薬を運ぶ人手が足りないという。力…
 - [life_reunion_order_conflict](#event-life_reunion_order_conflict) — 臨時拠点の配給所で、避難者を守るためにも全員が武器を取るべきだと息巻く声が上がった。周囲の仲間も意見が割れ、重苦しい空気が張りつめている。このまま配…
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
-- [life_ursus_school_aid](#event-life_ursus_school_aid) — 混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
+- [life_ursus_school_aid](#event-life_ursus_school_aid) — （動的本文）
 - [life_chernobog_resident_response](#event-life_chernobog_resident_response) — 年末から年明けにかけて、チェルノボーグの通りでは鎧戸を打ちつける音や、はぐれた身内を捜す貼り紙が目につくようになった。外の区画からの便りも途絶えがち…
 - [life_londinium_civilian_response](#event-life_londinium_civilian_response) — ロンディニウムの街区で戦闘と夜間外出禁止令が続き、通い慣れた道も封鎖されて店も閉まった。近所の集まりでは、焼け出された人たちのために炊き出しと空き部…
 - [life_reunion_londinium_local_aid](#event-life_reunion_londinium_local_aid) — 再編された互助網の連絡役から、近所の街区で続けている炊き出しの手伝いを頼まれた。配給場所の前には、戦火で家や仕事を失った人々が長蛇の列を作っている。…
@@ -9692,7 +9854,7 @@
 - [rim_shipment_label](#event-rim_shipment_label) — 自治地区の集配所で、あなた宛てに届いた重たい工具箱を係員が出してきた。ただ、荷札に書かれた坑区番号がすでに閉鎖された古い区画になっており、そのままで…
 
 <a id="tag-situation-191"></a>
-### 自動発生イベント（1416）
+### 自動発生イベント（1418）
 - [f1](#event-f1) — {caregiverArms}まどろむ日が続いた。ふと目を開けると、すぐそばで誰かが声を潜めて語りかけていた。 やわらかな布にくるまれて眠った。目を…
 - [f2](#event-f2) — 戸口から差し込む光の筋を、まばたきもせずに目で追った。人の影がそれを横切ると、そちらへ首をめぐらせた。 風に揺れる布の影をじっと見つめた。つかまえよ…
 - [f3](#event-f3) — 耳になじんだ子守歌がすぐそばで響いていた。その声がだんだん細くなるころ、あなたのまぶたも自然と閉じていった。 {caregiver}が短い節回しを何…
@@ -10222,7 +10384,7 @@
 - [daily_leithanien_56](#event-daily_leithanien_56) — 高価な抑制剤の処方箋を握りしめ、薬局の前で立ち尽くした。文化を誇る美しい都の足元で、見殺しにされる貧民の過酷な現実を痛感した。
 - [daily_leithanien_57](#event-daily_leithanien_57) — 音楽院の防音レッスン室で、古典の無伴奏組曲を何時間も弾き込んだ。指が動かなくなるまで没頭し、音の構造の奥深さに圧倒された。
 - [daily_leithanien_58](#event-daily_leithanien_58) — 学び舎の音楽教室で、古いアーツ記譜法と合奏の構成理論を学んだ。旋律が織りなす整然とした規則性に触れ、音の奥深さに視界が一気に開けた。
-- [daily_leithanien_59](#event-daily_leithanien_59) — 学内コンクールの本選を聴講した。同世代の圧倒的な超絶技巧と豊かな表現力に強い刺激を受け、練習への闘志を燃え上がらせた。
+- [daily_leithanien_59](#event-daily_leithanien_59) — （動的本文）
 - [daily_leithanien_60](#event-daily_leithanien_60) — 実技試験の前夜、過度の緊張と不安で眠れず、胃を痛めてしまった。温かいカモミールティーを啜りながら、必死に心を落ち着かせた。
 - [daily_laterano_01](#event-daily_laterano_01) — 聖都の有名な菓子舗で、焼きたての大判アップルパイを買って頬張った。シナモンと焦がしバターの極上の甘みに、思わず頬が緩むほどの幸福感を味わった。
 - [daily_laterano_02](#event-daily_laterano_02) — 広場のカフェのテラス席で、何種類ものベリーが山盛りに盛られたパフェをいただいた。甘いクリームと爽やかな酸味に、疲れが綺麗に溶け去った。
@@ -11037,7 +11199,7 @@
 - [elder_daily_neighborhood_tea](#event-elder_daily_neighborhood_tea) — 広場のベンチで同じ年頃の老人たちとお茶を分け合い、他愛もない世間話に花を咲かせた。互いに古傷の痛みを笑い合いながら、穏やかな昼下がりの陽光を浴びた。
 - [elder_daily_weather_aches](#event-elder_daily_weather_aches) — 節々の痛みが強くなり、天気が下り坂だと肌で感じ取った。薪をくべて部屋を暖め、雨が降り出す前に古い常備薬の煎じ湯をゆっくりとすすった。
 - [elder_daily_grandchild_visit](#event-elder_daily_grandchild_visit) — 独立した子供が幼い孫を連れて顔を見せにやってきた。部屋中を元気いっぱいに駆け回る孫の笑顔を見つめるうちに、胸の奥から温かいものが込み上げた。
-- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — よその移動都市で暮らす子供や孫から近況を知らせる便りが届いた。ぎこちない文字で綴られた学校や遊びの報告を、眼鏡を掛け直して何度も嬉しそうに読み返した…
+- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — 子や孫から近況を知らせる便りが届いた。日々の遊びや家の出来事を綴った文字を、眼鏡を掛け直して何度も嬉しそうに読み返した。
 - [elder_daily_cemetery_visit](#event-elder_daily_cemetery_visit) — 丘の上の墓地を訪れ、自分より先に逝った両親や旧友の墓石の苔を静かに拭った。野の花を手向け、今の穏やかな暮らしを心の中で報告した。
 - [elder_daily_peaceful_sunshine](#event-elder_daily_peaceful_sunshine) — 窓から差し込む午後の柔らかな光を浴びながら、揺り椅子に深く身を沈めた。柱時計の規則正しい音を聞きながら、穏やかな微睡みの中に身を委ねた。
 - [elder_daily_reading_past_letters](#event-elder_daily_reading_past_letters) — 机の引き出しから黄ばんだ古い手紙の束を取り出した。若い日の恋人、旅立った友、亡き親からの懐かしい筆跡を指でなぞり、遠い日々に思いを馳せた。
@@ -11108,7 +11270,9 @@
 - [v77_accidental_originium_uncertain](#event-v77_accidental_originium_uncertain) — 廃材置き場の脇を通ったとき、破れた麻袋から黒っぽい粉がこぼれ、乾いた風に舞い上がっていた。ただの煤か源石の粉か見分けがつかず、慌てて口元を覆って袖を…
 - [v82_colleague_rejects_patient](#event-v82_colleague_rejects_patient) — あなたが鉱石病だと知った翌日から、昨日まで隣で笑っていた同僚が露骨に作業台を離した。仕事の引き継ぎさえ直接口をきかず、わざわざ別の人間を通すようにな…
 - [v82_colleague_stays](#event-v82_colleague_stays) — あなたが鉱石病だと知った同僚は、声をひそめて「重い荷を持つときや通院の日は遠慮なく言えよ」と気遣ってくれた。翌日も、何ひとつ変わらない態度で隣の持ち…
+- [edu_commute_daily_fatigue](#event-edu_commute_daily_fatigue) — まだ暗いうちに家を出た。乗り継ぎの待ち時間に教科書を開いたものの、車体が揺れるたびに字を追い直す。教室に着いたころには、すでに半日働いたような疲れが…
 - [edu_first_day_of_actual_school](#event-edu_first_day_of_actual_school) — 教室にはまだ誰も座っていない席があった。自分の名前が書かれた札を見つけ、鞄を机の横へ置く。窓の外では、登校してきた生徒たちの声が重なっていた。
+- [edu_course_specific_equipment](#event-edu_course_specific_equipment) — 実習室の机には測定器と使い込まれた工具が並んでいた。先生は急いで触れないよう注意し、計測の順序を黒板に書いた。数値が少しずつ揃っていくのを見て、よう…
 
 <a id="tag-situation-192"></a>
 ### 湿地地勢（1）
@@ -11680,7 +11844,7 @@
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 
 <a id="tag-situation-260"></a>
-### 選択イベント（1030）
+### 選択イベント（1089）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -11929,7 +12093,7 @@
 - [choice_victoria_10](#event-choice_victoria_10) — 街の博物館で、厳重に保管されていた古代サルゴンの黄金の王冠が盗まれた。私立探偵が、犯人の逃走経路を目撃したあなたに捜査協力を求めている。
 - [choice_leithanien_01](#event-choice_leithanien_01) — 偶然手に入れた招待状により、郊外の古城で巫王残党が禁忌のアーツ儀式を目論んでいる現場を知ってしまった。選帝侯の憲兵隊に通報するか、自ら真偽を確かめる…
 - [choice_leithanien_02](#event-choice_leithanien_02) — 数百年前の名工が遺した伝説のバイオリンが、響板の大破損状態であなたの工房（または知人の店）に持ち込まれた。修復に成功すれば世界に名が轟くが、失敗すれ…
-- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。名門音楽院への入学が認められたが、高額な制服代と教材費が払えず泣いている…
+- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。音楽を教わる先を探しているが、教材や身の回りの品を買う金もない。
 - [choice_leithanien_04](#event-choice_leithanien_04) — 名高い銘醸ブドウ畑の相続を巡り、伝統ある小作農家と新興の貴族商人の間で激しい係争が起きていた。地域の長老であるあなたに、仲裁の立会人としての要請が届…
 - [choice_leithanien_05](#event-choice_leithanien_05) — 選帝侯も臨席する大聖堂の演奏会直前、主役のチェロ奏者が急病で倒れた。楽団の控え奏者として舞台裏に控えていたあなたに、指揮者から「代役として協奏曲を弾…
 - [choice_leithanien_06](#event-choice_leithanien_06) — 好戦的な貴族が、聴く者の神経を破壊する非人道的な音波アーツ砲を秘密裏に試作していた。開発に協力させられそうになった技師から、設計図の破棄を手伝ってほ…
@@ -12021,7 +12185,7 @@
 - [choice_kazdel_02](#event-choice_kazdel_02) — テント酒場で見知らぬ外国の代理人から声をかけられた。「お前のような腕利きのサルカズが泥まみれで瓦礫を運ぶのは勿体ない。隣国の紛争地へ行けば、この金貨…
 - [choice_kazdel_03](#event-choice_kazdel_03) — 吹きさらしのテント暮らしを脱するため、数十家族が身を寄せ合える堅牢な石造り共同住宅の建設が始まった。寒風が吹きすさぶ中、レンガ積みと屋根架けの急ピッ…
 - [choice_kazdel_04](#event-choice_kazdel_04) — 瓦礫の撤去作業中、地下数メートルの地層から古代サルカズの楔形文字が刻まれた巨大な黒曜石の石板が発掘された。太古の歴史と失われたアーツ技術の手がかりが…
-- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教える寺子屋を開くことになっ…
+- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書き…
 - [choice_kazdel_06](#event-choice_kazdel_06) — 荒野から猛烈な突風を伴う砂嵐が吹き寄せてきた。移動集落の多くの天幕が浮き上がり、吹き飛ばされそうになっている。大槌を持って杭打ちに飛び出す決死の補強…
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
@@ -12137,8 +12301,8 @@
 - [life_rhodes_role_review](#event-life_rhodes_role_review) — ロドスの現地担当者から、今後の関わり方を尋ねる連絡が届いた。自分の体調や仕事の忙しさと照らし合わせ、これからどう付き合っていくか考えた。
 - [life_reunion_local_entry](#event-life_reunion_local_entry) — チェルノボーグの街区がレユニオンに占拠され、行き場を失った感染者とその家族が廃倉庫の片隅に身を寄せ合っていた。食料や薬を運ぶ人手が足りないという。力…
 - [life_reunion_order_conflict](#event-life_reunion_order_conflict) — 臨時拠点の配給所で、避難者を守るためにも全員が武器を取るべきだと息巻く声が上がった。周囲の仲間も意見が割れ、重苦しい空気が張りつめている。このまま配…
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
-- [life_ursus_school_aid](#event-life_ursus_school_aid) — 混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
+- [life_ursus_school_aid](#event-life_ursus_school_aid) — （動的本文）
 - [life_ursus_school_aid_followup](#event-life_ursus_school_aid_followup) — （動的本文）
 - [life_ursus_school_aid_adult_followup](#event-life_ursus_school_aid_adult_followup) — 大人になって荷物を整理していた時、チェルノボーグの学校で書き留めた同級生たちの古い連絡先がひょっこり出てきた。あのまま行方が知れない仲間の名を指でな…
 - [life_infected_association_choice](#event-life_infected_association_choice) — 通りの商店の軒先に「感染者入店お断り」の木札が掲げられるようになり、町内の寄り合いでも感染者を職場や借家から締め出そうという声が勢いを増していた。会…
@@ -12279,7 +12443,7 @@
 - [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_ursus_katorga_life](#event-life_ursus_katorga_life) — 送り込まれたカトルガ区画では、稼働停止とともに照明も暖房も断ち切られ、外の扉には重い鎖がかけられた。叩いても返事のない扉が並び、白い息が凍りつく暗闇…
 - [life_ursus_student_assembly_release](#event-life_ursus_student_assembly_release) — やがて封鎖扉が開かれ、外の眩しい光とともに審理や釈放の手続きが始まった。泣きながら親に抱きつく者、戻らない友人の名を呼ぶ者、帰る場所を失った者が入り…
-- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
+- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎた。学びの場や仕事、住まいが以前とは変わった人も多い。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の…
 - [life_ursus_student_assembly_pause_review](#event-life_ursus_student_assembly_pause_review) — あの冬のあと、学生連合の活動から距離を置いて数年が経った。街でかつての知人の噂を耳にし、無事を確かめたい思いが胸をかすめる。今の平穏な暮らしを守りつ…
 - [life_leithanian_civic_entry](#event-life_leithanian_civic_entry) — 川にかかる橋の踏み板が抜けてから、荷車は毎日ぐるりと遠回りを強いられていた。街角の集会所では、住民たちの声を集めて領主側の役人へ修繕を掛け合おうとい…
 - [life_leithanian_civic_routine](#event-life_leithanian_civic_routine) — 街角の集まりに顔を出すようになってから、橋だけでなく石畳の陥没や街灯の故障まで様々な苦情が持ち込まれるようになった。今夜も仕事終わりに集会所へ集まる…
@@ -12296,7 +12460,7 @@
 - [life_leithanian_noble_household_after_exit](#event-life_leithanian_noble_household_after_exit) — 屋敷の務めを離れてから、ずいぶん長い年月が経った。それでも、複雑な出納や古い目録をさばいた手際は、今の仕事や暮らしの中でもふとした拍子に顔を出す。あ…
 - [elder_choice_craft_teaching](#event-elder_choice_craft_teaching) — 近所の若い見習い職人が、作業のコツが掴めずに悩んでいると耳にした。長年の現場経験で培った勘と技術を、次の世代へ教える機会が巡ってきた。
 - [elder_choice_community_mediator](#event-elder_choice_community_mediator) — 通りの住人同士で井戸水の使い方や通路の荷物をめぐる口論が起きていた。長年この区画で暮らしてきた古株として、間に入って仲裁するか問われた。
-- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫が学校へ上がる節目の年を迎えた。日頃の蓄えの中から、新しい教本や学用品を揃えるためのお祝いの品を用意したいと考えた。
+- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫の成長に合わせ、読み書きに使える品やお祝いの小遣いを贈りたいと思った。学校へ通えるかどうかは、本人たちの暮らしと受入先の事情を確かめてからの話だ。
 - [elder_choice_family_folklore](#event-elder_choice_family_folklore) — 夕暮れ時、暖炉の周りに集まった子供や孫たちから「昔のテラの大地や旅の話を聞かせてほしい」とせがまれた。
 - [elder_choice_write_memoir](#event-elder_choice_write_memoir) — 机に向かい、古びた手帳と万年筆を手に取った。激動のテラの大地で過ごした自らの人生の軌跡を、一冊の回顧録として書き残そうと考えた。
 - [elder_choice_make_will](#event-elder_choice_make_will) — 万が一の時に備え、公証人を招いて正式な遺言書を作成する機会を持った。これまで蓄えてきた財産や家財の処遇をどう定めるか熟考した。
@@ -12324,7 +12488,7 @@
 - [family_divorce_child_residence](#event-family_divorce_child_residence) — 別れた相手の訃報が届いた。手紙には、残された子どもが今誰の元で暮らしているのかまでは書かれていなかった。すぐにこちらで引き取ると伝えるか、親族に居場…
 - [life_ursus_school_habit](#event-life_ursus_school_habit) — 学校へ通える日は、冷たい空気の教室で授業を受けた。試験が近づくにつれ、放課後に残って勉強するか、まっすぐ帰って家の手伝いをするか迷った。家に帰れば、…
 - [life_ursus_classmate_contact](#event-life_ursus_classmate_contact) — よく学校を休む同級生が、休み時間に遠慮がちにノートを見せてほしいと声をかけてきた。机を寄せて黒板を写したページを開く。これからも気に留めてやるか、距…
-- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから散り散りになった昔の同級生から、短い葉書が届いた。あの日から細々と便りを続けてきたが、お互い住む街も仕事もすっかり変わった。これか…
+- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
@@ -12464,7 +12628,7 @@
 - [car_urs_guard_entry](#event-car_urs_guard_entry) — ツンドラの冷風が吹きすさぶ兵舎で、国境警備部隊と感染者鉱山を監視する憲兵の徴募が行われていた。厳しい学歴は問われず、頑丈な体さえあれば誰でも雇われる…
 - [car_urs_academy_entry](#event-car_urs_academy_entry) — 巨大な軍用装甲列車や重工業都市の設計を手掛けるウルサス帝国科学院。硬質な鉄と源石動力の極致を追求するこの研究機関で、構造工学と動力回路の専門技師が募…
 - [car_vic_infantry_entry](#event-car_vic_infantry_entry) — ヴィクトリアの各都市で、正規陸軍の平民歩兵の募集が行われていた。伝統と栄光を謳う帝国だが、平民出身の兵士はどれほど戦功を立てても下士官止まりであり、…
-- [car_vic_royal_entry](#event-car_vic_royal_entry) — ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推…
+- [car_vic_royal_entry](#event-car_vic_royal_entry) — ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要…
 - [car_vic_scribe_entry](#event-car_vic_scribe_entry) — ロンディニウム中央議会や地方市議会の議事堂で、公爵や伯爵たちの議案や法律文書を記録・整理する書記官が募集されていた。貴族の利権調整と汚職の嵐に巻き込…
 - [car_vic_works_entry](#event-car_vic_works_entry) — 巨大な蒸気機関車と鉄鋼レールが並ぶヴィクトリアの鉄道工廠。産業革命の鼓動が響くこの巨大施設で、高圧蒸気パイプラインや機関車エンジンの整備を担う技術者…
 - [car_lei_golden_entry](#event-car_lei_golden_entry) — 双子女帝の座すツヴィリングトゥルムの回廊で、金律法衛の選考審査が開かれていた。リターニアの調和とアーツ法典を執行する選ばれし魔道士たち。一音の狂いも…
@@ -12600,7 +12764,7 @@
 - [local_medical_followup](#event-local_medical_followup) — 以前、診療所がごった返していた頃に受診の手順を調べておいたことがあった。今日、具合の悪そうな近所の人から『どこへ行けば診てもらえるだろう』と心細そう…
 - [facility_clinic_constrained](#event-facility_clinic_constrained) — 近くの診療所は人手も薬も足りないらしく、日中の窓口が早く閉まるようになっていた。表の張り紙には『急患優先』とあるばかりで、普段の診察や薬の相談はいつ…
 - [facility_clinic_followup](#event-facility_clinic_followup) — 以前、診療所がごった返していた頃に別の相談先を調べたことがあった。久しぶりにその前を通りかかると、入口の案内板が新しく塗り替えられているのに気づいた…
-- [facility_school_disruption](#event-facility_school_disruption) — 通っている学び舎で教室が閉まる日が増え、集会所の隅や空き部屋を借りて細々と授業が行われるようになった。いつ元の教室へ戻れるのかは、先生にも分からない…
+- [facility_school_disruption](#event-facility_school_disruption) — 通っている学校で授業を開けない日が増えた。校門には休止と教材配布の知らせが貼られ、別の部屋で教えてもらえるのか、先生もまだ確かめているという。
 - [facility_school_reopen](#event-facility_school_reopen) — ようやく学び舎の扉が開き、いつもの教室に机が並んだ。黒板の前に立った先生は『休みの前の続きから始める』と言ったが、教科書を開くとどこまで習ったのかす…
 - [facility_work_restricted](#event-facility_work_restricted) — 原材料が届かず、仕事場の機械が半分以上止まったままだ。持ち場の作業も減り、現場の責任者は毎日渋い顔でシフトを削っている。来月の給金がどうなるか聞くか…
 - [facility_work_recovery](#event-facility_work_recovery) — 止まっていた資材がようやく届き、仕事場に機械の唸りが戻ってきた。ただ、人が抜けた穴を埋めるため、貼り出された配置表には見慣れない工程まで自分の名前が…
@@ -12622,7 +12786,7 @@
 - [people_school_life_conversation](#event-people_school_life_conversation) — （動的本文）
 - [people_clinic_life_conversation](#event-people_clinic_life_conversation) — 待合いの人波がようやく引いた頃、見慣れた受付の担当者が肩を回しながら伝票の束を揃えていた。もうすぐ交代の時間らしい。
 - [people_work_care_schedule](#event-people_work_care_schedule) — 顔なじみの同僚から、家族の看病でどうしても手が離せず、来週のシフトを少し代わってもらえないかと小声で頼まれた。こちらにも自分の持ち場がある。
-- [people_school_housing_concern](#event-people_school_housing_concern) — 授業が終わったあと、顔なじみの教え手が重い教材箱の蓋を閉じた。今借りている相部屋では夜に机を広げるゆとりもないと聞く。後片づけを手伝うか、次の授業の…
+- [people_school_housing_concern](#event-people_school_housing_concern) — 顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。
 - [people_clinic_skill_continuity](#event-people_clinic_skill_continuity) — 顔なじみの受付係が、新しく書き直した案内札を前に首をひねっていた。声をかけると、初めて来る患者にもすぐ伝わる言い回しを考えているところだと言う。
 - [job_contract_review_v76](#event-job_contract_review_v76) — 手渡された雇用契約書には、給金や勤務時間だけでなく、怪我や破損の責任まで細かい文字でびっしり並んでいた。何度読み返しても、自分に有利なのか不利なのか…
 - [job_contract_negotiation_v76](#event-job_contract_negotiation_v76) — 今の仕事にもだいぶ手が馴染み、周囲より多くの荷や工程を回せるようになってきた。責任者が一人で帳面をつけている隙を見て、給金の色をつけてもらえないか切…
@@ -12700,9 +12864,48 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+- [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
+- [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
+- [edu_upper_locality_review](#event-edu_upper_locality_review) — 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+- [edu_higher_search_decision](#event-edu_higher_search_decision) — 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
+- [edu_applicant_institution_shortlist](#event-edu_applicant_institution_shortlist) — 集めた募集案内を広げると、同じ分野でも選抜の方法や通う場所が違っていた。日帰りできそうな学校もあれば、住まいを考え直す必要のある学校もあった。
+- [edu_school_opening_not_admission](#event-edu_school_opening_not_admission) — 確かめた学校の校舎は残っていたが、希望する課程への募集は今期行われていなかった。窓口には理由と次の予定を尋ねる人がいた。
+- [edu_course_admission_contract](#event-edu_course_admission_contract) — 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
+- [edu_secondary_gap_reentry](#event-edu_secondary_gap_reentry) — 学校を離れて何度も季節が過ぎた。以前使っていた教材を持って相談すると、教員はどこまで学んでいたかを一つずつ尋ねた。
+- [edu_overage_equivalency_review](#event-edu_overage_equivalency_review) — 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
+- [edu_no_path_year_close](#event-edu_no_path_year_close) — 願書と時刻表を片付ける時期になった。調べた範囲では今年の入学先を決められなかったが、また学ぶ道まで閉ざされたわけではない。
+- [edu_route_first_fare](#event-edu_route_first_fare) — 一回分の運賃を確かめ、往復の日数を掛けてみた。毎日通うと、学費のほかにも少なくない金と時間が要る。
+- [edu_route_weather_closure](#event-edu_route_weather_closure) — 学校へ向かう便が運休になり、発着所には行き先の消された板が掛かっていた。天気が戻るまでの何日かで済むのか、誰にも分からない。
+- [edu_mobile_city_separation](#event-edu_mobile_city_separation) — 昨日まで使えた都市間の連絡便が、しばらく止まるという。学校の校舎は残っているが、いつもの時刻にはたどり着けなくなった。
+- [edu_boarding_application](#event-edu_boarding_application) — 学校から寮の案内が届いた。部屋の広さ、食事代、必要な保証人の欄が並んでいる。申し込めることと、実際に部屋を借りられることは別だった。
+- [edu_boarding_rules_review](#event-edu_boarding_rules_review) — 寮の管理人は、消灯時刻と外泊の届けを説明した。ここで暮らすなら、家から仕送りが届かない月も考えておかなければならない。
+- [edu_relative_lodging](#event-edu_relative_lodging) — 遠方に暮らす親戚から、しばらくなら空き部屋を使ってよいと便りが来た。返事には、家事の分担についても書いてある。
+- [edu_school_relocation_family](#event-edu_school_relocation_family) — 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+- [edu_crossborder_documents](#event-edu_crossborder_documents) — 遠方の学校へ行くために、途中でどんな身分証明が必要か尋ねた。国境を越える道には、移動を許されるか確かめる場所があるという。
+- [edu_classroom_language_gate](#event-edu_classroom_language_gate) — 募集の説明には、まだ意味をつかめない言葉があった。授業で話される言葉も、教本の文字も、今の自分にどこまで分かるか心配だった。
+- [edu_route_recovered_notice](#event-edu_route_recovered_notice) — 運休していた便が再び走り始めたと聞いた。新しい時刻表には、以前とは違う数字が並んでいる。今の暮らしで使えるかどうかは、改めて確かめなければならない。
+- [edu_fee_itemization](#event-edu_fee_itemization) — 学校から届いた授業料の案内とは別に、教材と通学、住まいの見積を集めた。今日必要な金と、毎年掛かる金を分けて数えることにした。
+- [edu_entrance_exam_journey](#event-edu_entrance_exam_journey) — 受験案内に、集合時刻と会場の場所が書かれていた。まだ合否の分からない学校まで行くために、家では旅費を数え直した。
+- [edu_scholarship_application](#event-edu_scholarship_application) — 募集案内に、学費を支える制度が記されていた。申請には本人や世帯の事情を示す書類が必要らしい。
+- [edu_employer_sponsored_course](#event-edu_employer_sponsored_course) — 職場に、仕事に関わる講習の費用を支援する案内が回ってきた。勤務を続ける約束が要るのか、返還の条件があるのか、細かな字まで確かめた。
+- [edu_education_credit_terms](#event-edu_education_credit_terms) — 学費の貸付について、返済の期日と支払額が細かく書かれていた。今の納付を助けても、将来の暮らしに負担が残る。
+- [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_study_work_balance](#event-edu_study_work_balance) — 働きながら受けられる講習があると聞いた。勤務と授業の時間を並べると、家の用事まで含めて休める時間が少なくなりそうだった。
+- [edu_admission_document_missing](#event-edu_admission_document_missing) — 次の学校に提出するため、前に学んだことを示す記録を探した。必要な書類が手元に見当たらず、どこへ照会すればよいか尋ねた。
+- [edu_institution_specific_exclusion](#event-edu_institution_specific_exclusion) — 願書を受け取った人は記載を確かめ、しばらく奥の部屋へ消えた。戻ってきたとき、学校の決定は受入を見送るという短いものだった。
 - [edu_school_confidential_disclosure](#event-edu_school_confidential_disclosure) — 診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。
+- [edu_teacher_shortage](#event-edu_teacher_shortage) — 黒板には前の授業の日付が残っている。担当の教え手が来られない日が続き、教室では予定した授業がなかなか進まなかった。
+- [edu_school_closed_by_disaster](#event-edu_school_closed_by_disaster) — 学校へ向かう道に人だかりができていた。校舎の一部が使えなくなり、授業再開の日取りもまだ決まらないと聞いた。鞄だけが、いつもどおり肩に掛かっている。
+- [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+- [edu_temporary_classroom](#event-edu_temporary_classroom) — 倉庫を片付けた一角に板を立て掛け、間に合わせの黒板を作った。外からは荷車の音が聞こえるが、先生は出席を取ろうとしている。
 - [edu_real_institution_transfer](#event-edu_real_institution_transfer) — 別の学校から受入の案内が届いた。以前の授業と進み方が違うらしく、持っている履修の記録を見せてほしいという。
+- [edu_exam_cancelled](#event-edu_exam_cancelled) — 試験を行わないという知らせが届いた。会場へ向かう前の者も、すでに門の前で待っていた者も、改めて予定を考えることになった。
 - [edu_graduation_record_review](#event-edu_graduation_record_review) — 学期の終わり、これまでの出席と評価を学校で照合することになった。休んだ年や別の学校で学んだ月も、同じ一行にはまとめられない。
+- [edu_former_teacher_meeting](#event-edu_former_teacher_meeting) — 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+- [edu_child_guardian_disagreement](#event-edu_child_guardian_disagreement) — 学校の話になると家の空気が重くなった。行ってみたいと告げたが、家の人は仕事や家計のことばかり気にしている。
+- [edu_sibling_school_cost_conflict](#event-edu_sibling_school_cost_conflict) — 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
 - [edu_roving_teacher_visit](#event-edu_roving_teacher_visit) — 隊商と一緒に来た人が、集会所の隅へ古い本を並べた。数日だけ文字と計算を教えてくれるという。
 - [edu_community_tent_learning](#event-edu_community_tent_learning) — 風を防ぐために布を二重に張り、倒れかけた木箱を机にした。板切れの上の文字を、子どもたちは交替で指差して読んでいる。
 - [edu_apprentice_literacy_exchange](#event-edu_apprentice_literacy_exchange) — 工房の親方は仕事のあとで帳面を開き、材料の数え方を教えてくれた。手を動かすだけでは済まない仕事が、思ったより多い。
@@ -12711,6 +12914,26 @@
 - [edu_clan_knowledge_transmission](#event-edu_clan_knowledge_transmission) — 年長者は小さな沢の前で足を止め、土の乾き方と風向きを確かめた。帰り道が分からなくなったとき、地図より先に見るものがあるという。
 - [edu_adult_evening_literacy](#event-edu_adult_evening_literacy) — 仕事帰りに灯りのついた部屋をのぞくと、机の上に短い文章が並んでいた。初めて来た人のために、先生は鉛筆を一本残してくれていた。
 - [edu_informal_skill_assessment](#event-edu_informal_skill_assessment) — これまでに覚えた仕事や読み書きの内容を書き出した。学校の外で身につけた腕を、どの資格なら審査してもらえるのか確かめる必要があった。
+- [edu_dependent_future_school_consult](#event-edu_dependent_future_school_consult) — 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+- [edu_region_yan_public_study](#event-edu_region_yan_public_study) — 書院の門前に、今期の講義と選抜試験の案内が貼られていた。雨除けの下で書き写す人々は、皆同じ試験を目指しているわけでもないらしい。
+- [edu_region_victoria_disrupted_college](#event-edu_region_victoria_disrupted_college) — 大学の回廊には、授業を休む知らせと再開する知らせが日付を変えて貼られていた。使える教室がいくつ残るのか、学生たちは案内の前で立ち止まっていた。
+- [edu_region_kazimierz_sponsor_training](#event-edu_region_kazimierz_sponsor_training) — 訓練場の外に、競技騎士の姿を刷った募集看板が立っていた。必要な用具と講習の費用が書かれ、支援が受けられるかどうかは別の欄に記されていた。
+- [edu_region_columbia_corporate_scholarship](#event-edu_region_columbia_corporate_scholarship) — 大学の掲示板に、企業が費用を支援する講習・研究課程の案内が貼られていた。支援額だけでなく、応募資格と返還の条件も読まなければならない。
+- [edu_region_higashi_dojo_learning](#event-edu_region_higashi_dojo_learning) — 道場の戸口に、稽古の時間が書かれていた。教え手が、初めてなら見学してもよいと声を掛けてきた。
+- [edu_region_iberia_closed_library](#event-edu_region_iberia_closed_library) — 潮の匂いが残る建物の扉には、かつての授業時間が彫られていた。中の本を使えるのか、今も教え手がいるのかは、外から見ただけでは分からない。
+- [edu_region_kazdel_school_rebuild](#event-edu_region_kazdel_school_rebuild) — 崩れた壁の上に新しい梁が渡され、雨の入らない部屋が一つできた。通りかかった人々が入口から中をのぞいていたが、授業が始まるかどうかはまだ分からない。
+- [edu_region_sami_clan_or_school](#event-edu_region_sami_clan_or_school) — 旅を共にする年長者は、雪の下の足跡の見分け方を教えてくれた。交易所の近くに文字を教える部屋があるとも聞いたが、確かなことはまだ分からない。
+- [edu_region_leithanien_arts_selectivity](#event-edu_region_leithanien_arts_selectivity) — 学院の案内板に、実技試験の課題と募集条件が書かれていた。扉の向こうから繰り返す旋律が聞こえるが、自分がどの授業に入れるかはまだ決まっていない。
+- [edu_region_kjerag_mountain_and_school](#event-edu_region_kjerag_mountain_and_school) — 谷の向こうの学校から入学案内が届いた。晴れた日なら道は見えるが、雪の季節には峠を越えられないと家の人は言う。
+- [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
+- [edu_region_bolivar_school_under_conflict](#event-edu_region_bolivar_school_under_conflict) — 校庭に子どもの姿はなく、雨の後の水たまりが残っていた。先生たちの行き先はばらばらで、学校の再開日も決まっていない。
+- [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
+- [edu_ursus_school_displacement_memory](#event-edu_ursus_school_displacement_memory) — 昔の学校がどうなったのかを知らせる便りが来た。あのとき教室で聞いた物音や、隣に座っていた友人の顔が、紙の文字を読むうちに浮かんできた。
+- [edu_ursus_school_bystander_memory](#event-edu_ursus_school_bystander_memory) — あの日の通りの様子を話す人がいた。学校の方から逃げてきた子どもたちの姿を、自分も見たことを思い出した。教室の中で何が起きたかまでは知らない。
+- [edu_student_public_meeting_distinction](#event-edu_student_public_meeting_distinction) — 広場の端に、人の輪ができていた。学校のことを話す声もあれば、働き口や街の暮らしを訴える声も聞こえる。
+- [edu_school_peer_exclusion_route](#event-edu_school_peer_exclusion_route) — 教室で机を動かす音がして、隣の席が空いた。こちらを見てひそひそ話す声は聞こえたが、何を言っているのかまでは分からなかった。
+- [edu_safety_for_disabled_student](#event-edu_safety_for_disabled_student) — 授業を受ける部屋までの道に、自分には使いづらい場所があった。別の入口を通れるのか、教室を変えてもらえるのか、学校へ相談しようと考えた。
+- [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-situation-261"></a>
 ### 前段で残留した人（1）
@@ -13032,7 +13255,7 @@
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
 <a id="tag-situation-297"></a>
-### 動的表示条件（605）
+### 動的表示条件（666）
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
@@ -13181,8 +13404,8 @@
 - [life_local_mutual_aid_relocation](#event-life_local_mutual_aid_relocation) — 水場や暖房の当番を一緒に回していた街区を離れることになった。荷造りをしながら、預かっていた道具置き場の鍵と自分の役目をどう締めくくるか考えた。
 - [life_rhodes_role_review](#event-life_rhodes_role_review) — ロドスの現地担当者から、今後の関わり方を尋ねる連絡が届いた。自分の体調や仕事の忙しさと照らし合わせ、これからどう付き合っていくか考えた。
 - [life_reunion_local_entry](#event-life_reunion_local_entry) — チェルノボーグの街区がレユニオンに占拠され、行き場を失った感染者とその家族が廃倉庫の片隅に身を寄せ合っていた。食料や薬を運ぶ人手が足りないという。力…
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
-- [life_ursus_school_aid](#event-life_ursus_school_aid) — 混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
+- [life_ursus_school_aid](#event-life_ursus_school_aid) — （動的本文）
 - [life_infected_org_records](#event-life_infected_org_records) — 薬や日用品の共同購入と巡回診療の連絡を続けるうち、誰の名前が載った名簿をどこに置くかで集まりのたび揉めるようになった。万が一外へ漏れれば職や部屋を失…
 - [life_infected_org_rotation](#event-life_infected_org_rotation) — 次の集まりでは、卸売商への買い付け交渉と代金の照合を誰が受け持つか決めることになった。自分の仕事と通院の合間に、どこまで背負えるか考えた。
 - [life_infected_org_recipients](#event-life_infected_org_recipients) — まだ会に入っていない感染者の家族が、わらにもすがる思いで巡回診療の日取りと共同購入のことを尋ねてきた。限られた物資を会員以外にも分けるのか、それとも…
@@ -13253,8 +13476,8 @@
 - [life_leithanian_noble_household_later_suspended](#event-life_leithanian_noble_household_later_suspended) — 屋敷の務めから距離を置いて数年が経った。親族から新たに呼び戻されることもなく、静かな日々が続いている。このまま自分の暮らしを続けるか、少しだけ屋敷に…
 - [life_leithanian_noble_household_after_exit](#event-life_leithanian_noble_household_after_exit) — 屋敷の務めを離れてから、ずいぶん長い年月が経った。それでも、複雑な出納や古い目録をさばいた手際は、今の仕事や暮らしの中でもふとした拍子に顔を出す。あ…
 - [elder_daily_grandchild_visit](#event-elder_daily_grandchild_visit) — 独立した子供が幼い孫を連れて顔を見せにやってきた。部屋中を元気いっぱいに駆け回る孫の笑顔を見つめるうちに、胸の奥から温かいものが込み上げた。
-- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — よその移動都市で暮らす子供や孫から近況を知らせる便りが届いた。ぎこちない文字で綴られた学校や遊びの報告を、眼鏡を掛け直して何度も嬉しそうに読み返した…
-- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫が学校へ上がる節目の年を迎えた。日頃の蓄えの中から、新しい教本や学用品を揃えるためのお祝いの品を用意したいと考えた。
+- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — 子や孫から近況を知らせる便りが届いた。日々の遊びや家の出来事を綴った文字を、眼鏡を掛け直して何度も嬉しそうに読み返した。
+- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫の成長に合わせ、読み書きに使える品やお祝いの小遣いを贈りたいと思った。学校へ通えるかどうかは、本人たちの暮らしと受入先の事情を確かめてからの話だ。
 - [elder_choice_family_folklore](#event-elder_choice_family_folklore) — 夕暮れ時、暖炉の周りに集まった子供や孫たちから「昔のテラの大地や旅の話を聞かせてほしい」とせがまれた。
 - [elder_choice_palliative_care_switch](#event-elder_choice_palliative_care_switch) — 身体の痛みや衰えが日増しに強くなり、医師から今後の療養方針を尋ねられた。身体に負担の大きい積極的な投薬を続けるか、それとも痛みを和らげ自然な安らぎを…
 - [asset_choice_property_purchase](#event-asset_choice_property_purchase) — 長年蓄えてきた手元の資金を確かめ、都市の不動産区画で自己所有の居住権（持ち家・アパート）を購入する好機が訪れた。家賃の支払いから解放され、地に足をつ…
@@ -13420,7 +13643,7 @@
 - [car_urs_guard_entry](#event-car_urs_guard_entry) — ツンドラの冷風が吹きすさぶ兵舎で、国境警備部隊と感染者鉱山を監視する憲兵の徴募が行われていた。厳しい学歴は問われず、頑丈な体さえあれば誰でも雇われる…
 - [car_urs_academy_entry](#event-car_urs_academy_entry) — 巨大な軍用装甲列車や重工業都市の設計を手掛けるウルサス帝国科学院。硬質な鉄と源石動力の極致を追求するこの研究機関で、構造工学と動力回路の専門技師が募…
 - [car_vic_infantry_entry](#event-car_vic_infantry_entry) — ヴィクトリアの各都市で、正規陸軍の平民歩兵の募集が行われていた。伝統と栄光を謳う帝国だが、平民出身の兵士はどれほど戦功を立てても下士官止まりであり、…
-- [car_vic_royal_entry](#event-car_vic_royal_entry) — ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推…
+- [car_vic_royal_entry](#event-car_vic_royal_entry) — ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要…
 - [car_vic_scribe_entry](#event-car_vic_scribe_entry) — ロンディニウム中央議会や地方市議会の議事堂で、公爵や伯爵たちの議案や法律文書を記録・整理する書記官が募集されていた。貴族の利権調整と汚職の嵐に巻き込…
 - [car_vic_works_entry](#event-car_vic_works_entry) — 巨大な蒸気機関車と鉄鋼レールが並ぶヴィクトリアの鉄道工廠。産業革命の鼓動が響くこの巨大施設で、高圧蒸気パイプラインや機関車エンジンの整備を担う技術者…
 - [car_lei_golden_entry](#event-car_lei_golden_entry) — 双子女帝の座すツヴィリングトゥルムの回廊で、金律法衛の選考審査が開かれていた。リターニアの調和とアーツ法典を執行する選ばれし魔道士たち。一音の狂いも…
@@ -13546,7 +13769,7 @@
 - [people_school_life_conversation](#event-people_school_life_conversation) — （動的本文）
 - [people_clinic_life_conversation](#event-people_clinic_life_conversation) — 待合いの人波がようやく引いた頃、見慣れた受付の担当者が肩を回しながら伝票の束を揃えていた。もうすぐ交代の時間らしい。
 - [people_work_care_schedule](#event-people_work_care_schedule) — 顔なじみの同僚から、家族の看病でどうしても手が離せず、来週のシフトを少し代わってもらえないかと小声で頼まれた。こちらにも自分の持ち場がある。
-- [people_school_housing_concern](#event-people_school_housing_concern) — 授業が終わったあと、顔なじみの教え手が重い教材箱の蓋を閉じた。今借りている相部屋では夜に机を広げるゆとりもないと聞く。後片づけを手伝うか、次の授業の…
+- [people_school_housing_concern](#event-people_school_housing_concern) — 顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。
 - [people_clinic_skill_continuity](#event-people_clinic_skill_continuity) — 顔なじみの受付係が、新しく書き直した案内札を前に首をひねっていた。声をかけると、初めて来る患者にもすぐ伝わる言い回しを考えているところだと言う。
 - [job_contract_review_v76](#event-job_contract_review_v76) — 手渡された雇用契約書には、給金や勤務時間だけでなく、怪我や破損の責任まで細かい文字でびっしり並んでいた。何度読み返しても、自分に有利なのか不利なのか…
 - [job_contract_negotiation_v76](#event-job_contract_negotiation_v76) — 今の仕事にもだいぶ手が馴染み、周囲より多くの荷や工程を回せるようになってきた。責任者が一人で帳面をつけている隙を見て、給金の色をつけてもらえないか切…
@@ -13626,10 +13849,51 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+- [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
+- [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
+- [edu_upper_locality_review](#event-edu_upper_locality_review) — 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+- [edu_higher_search_decision](#event-edu_higher_search_decision) — 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
+- [edu_applicant_institution_shortlist](#event-edu_applicant_institution_shortlist) — 集めた募集案内を広げると、同じ分野でも選抜の方法や通う場所が違っていた。日帰りできそうな学校もあれば、住まいを考え直す必要のある学校もあった。
+- [edu_school_opening_not_admission](#event-edu_school_opening_not_admission) — 確かめた学校の校舎は残っていたが、希望する課程への募集は今期行われていなかった。窓口には理由と次の予定を尋ねる人がいた。
+- [edu_course_admission_contract](#event-edu_course_admission_contract) — 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
+- [edu_secondary_gap_reentry](#event-edu_secondary_gap_reentry) — 学校を離れて何度も季節が過ぎた。以前使っていた教材を持って相談すると、教員はどこまで学んでいたかを一つずつ尋ねた。
+- [edu_overage_equivalency_review](#event-edu_overage_equivalency_review) — 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
+- [edu_no_path_year_close](#event-edu_no_path_year_close) — 願書と時刻表を片付ける時期になった。調べた範囲では今年の入学先を決められなかったが、また学ぶ道まで閉ざされたわけではない。
+- [edu_route_first_fare](#event-edu_route_first_fare) — 一回分の運賃を確かめ、往復の日数を掛けてみた。毎日通うと、学費のほかにも少なくない金と時間が要る。
+- [edu_route_weather_closure](#event-edu_route_weather_closure) — 学校へ向かう便が運休になり、発着所には行き先の消された板が掛かっていた。天気が戻るまでの何日かで済むのか、誰にも分からない。
+- [edu_mobile_city_separation](#event-edu_mobile_city_separation) — 昨日まで使えた都市間の連絡便が、しばらく止まるという。学校の校舎は残っているが、いつもの時刻にはたどり着けなくなった。
+- [edu_boarding_application](#event-edu_boarding_application) — 学校から寮の案内が届いた。部屋の広さ、食事代、必要な保証人の欄が並んでいる。申し込めることと、実際に部屋を借りられることは別だった。
+- [edu_boarding_rules_review](#event-edu_boarding_rules_review) — 寮の管理人は、消灯時刻と外泊の届けを説明した。ここで暮らすなら、家から仕送りが届かない月も考えておかなければならない。
+- [edu_relative_lodging](#event-edu_relative_lodging) — 遠方に暮らす親戚から、しばらくなら空き部屋を使ってよいと便りが来た。返事には、家事の分担についても書いてある。
+- [edu_school_relocation_family](#event-edu_school_relocation_family) — 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+- [edu_crossborder_documents](#event-edu_crossborder_documents) — 遠方の学校へ行くために、途中でどんな身分証明が必要か尋ねた。国境を越える道には、移動を許されるか確かめる場所があるという。
+- [edu_classroom_language_gate](#event-edu_classroom_language_gate) — 募集の説明には、まだ意味をつかめない言葉があった。授業で話される言葉も、教本の文字も、今の自分にどこまで分かるか心配だった。
+- [edu_commute_daily_fatigue](#event-edu_commute_daily_fatigue) — まだ暗いうちに家を出た。乗り継ぎの待ち時間に教科書を開いたものの、車体が揺れるたびに字を追い直す。教室に着いたころには、すでに半日働いたような疲れが…
+- [edu_route_recovered_notice](#event-edu_route_recovered_notice) — 運休していた便が再び走り始めたと聞いた。新しい時刻表には、以前とは違う数字が並んでいる。今の暮らしで使えるかどうかは、改めて確かめなければならない。
+- [edu_fee_itemization](#event-edu_fee_itemization) — 学校から届いた授業料の案内とは別に、教材と通学、住まいの見積を集めた。今日必要な金と、毎年掛かる金を分けて数えることにした。
+- [edu_entrance_exam_journey](#event-edu_entrance_exam_journey) — 受験案内に、集合時刻と会場の場所が書かれていた。まだ合否の分からない学校まで行くために、家では旅費を数え直した。
+- [edu_scholarship_application](#event-edu_scholarship_application) — 募集案内に、学費を支える制度が記されていた。申請には本人や世帯の事情を示す書類が必要らしい。
+- [edu_employer_sponsored_course](#event-edu_employer_sponsored_course) — 職場に、仕事に関わる講習の費用を支援する案内が回ってきた。勤務を続ける約束が要るのか、返還の条件があるのか、細かな字まで確かめた。
+- [edu_education_credit_terms](#event-edu_education_credit_terms) — 学費の貸付について、返済の期日と支払額が細かく書かれていた。今の納付を助けても、将来の暮らしに負担が残る。
+- [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_study_work_balance](#event-edu_study_work_balance) — 働きながら受けられる講習があると聞いた。勤務と授業の時間を並べると、家の用事まで含めて休める時間が少なくなりそうだった。
+- [edu_admission_document_missing](#event-edu_admission_document_missing) — 次の学校に提出するため、前に学んだことを示す記録を探した。必要な書類が手元に見当たらず、どこへ照会すればよいか尋ねた。
+- [edu_institution_specific_exclusion](#event-edu_institution_specific_exclusion) — 願書を受け取った人は記載を確かめ、しばらく奥の部屋へ消えた。戻ってきたとき、学校の決定は受入を見送るという短いものだった。
 - [edu_school_confidential_disclosure](#event-edu_school_confidential_disclosure) — 診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。
 - [edu_first_day_of_actual_school](#event-edu_first_day_of_actual_school) — 教室にはまだ誰も座っていない席があった。自分の名前が書かれた札を見つけ、鞄を机の横へ置く。窓の外では、登校してきた生徒たちの声が重なっていた。
+- [edu_teacher_shortage](#event-edu_teacher_shortage) — 黒板には前の授業の日付が残っている。担当の教え手が来られない日が続き、教室では予定した授業がなかなか進まなかった。
+- [edu_course_specific_equipment](#event-edu_course_specific_equipment) — 実習室の机には測定器と使い込まれた工具が並んでいた。先生は急いで触れないよう注意し、計測の順序を黒板に書いた。数値が少しずつ揃っていくのを見て、よう…
+- [edu_school_closed_by_disaster](#event-edu_school_closed_by_disaster) — 学校へ向かう道に人だかりができていた。校舎の一部が使えなくなり、授業再開の日取りもまだ決まらないと聞いた。鞄だけが、いつもどおり肩に掛かっている。
+- [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+- [edu_temporary_classroom](#event-edu_temporary_classroom) — 倉庫を片付けた一角に板を立て掛け、間に合わせの黒板を作った。外からは荷車の音が聞こえるが、先生は出席を取ろうとしている。
 - [edu_real_institution_transfer](#event-edu_real_institution_transfer) — 別の学校から受入の案内が届いた。以前の授業と進み方が違うらしく、持っている履修の記録を見せてほしいという。
+- [edu_exam_cancelled](#event-edu_exam_cancelled) — 試験を行わないという知らせが届いた。会場へ向かう前の者も、すでに門の前で待っていた者も、改めて予定を考えることになった。
 - [edu_graduation_record_review](#event-edu_graduation_record_review) — 学期の終わり、これまでの出席と評価を学校で照合することになった。休んだ年や別の学校で学んだ月も、同じ一行にはまとめられない。
+- [edu_former_teacher_meeting](#event-edu_former_teacher_meeting) — 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+- [edu_child_guardian_disagreement](#event-edu_child_guardian_disagreement) — 学校の話になると家の空気が重くなった。行ってみたいと告げたが、家の人は仕事や家計のことばかり気にしている。
+- [edu_sibling_school_cost_conflict](#event-edu_sibling_school_cost_conflict) — 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
 - [edu_roving_teacher_visit](#event-edu_roving_teacher_visit) — 隊商と一緒に来た人が、集会所の隅へ古い本を並べた。数日だけ文字と計算を教えてくれるという。
 - [edu_community_tent_learning](#event-edu_community_tent_learning) — 風を防ぐために布を二重に張り、倒れかけた木箱を机にした。板切れの上の文字を、子どもたちは交替で指差して読んでいる。
 - [edu_apprentice_literacy_exchange](#event-edu_apprentice_literacy_exchange) — 工房の親方は仕事のあとで帳面を開き、材料の数え方を教えてくれた。手を動かすだけでは済まない仕事が、思ったより多い。
@@ -13638,6 +13902,26 @@
 - [edu_clan_knowledge_transmission](#event-edu_clan_knowledge_transmission) — 年長者は小さな沢の前で足を止め、土の乾き方と風向きを確かめた。帰り道が分からなくなったとき、地図より先に見るものがあるという。
 - [edu_adult_evening_literacy](#event-edu_adult_evening_literacy) — 仕事帰りに灯りのついた部屋をのぞくと、机の上に短い文章が並んでいた。初めて来た人のために、先生は鉛筆を一本残してくれていた。
 - [edu_informal_skill_assessment](#event-edu_informal_skill_assessment) — これまでに覚えた仕事や読み書きの内容を書き出した。学校の外で身につけた腕を、どの資格なら審査してもらえるのか確かめる必要があった。
+- [edu_dependent_future_school_consult](#event-edu_dependent_future_school_consult) — 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+- [edu_region_yan_public_study](#event-edu_region_yan_public_study) — 書院の門前に、今期の講義と選抜試験の案内が貼られていた。雨除けの下で書き写す人々は、皆同じ試験を目指しているわけでもないらしい。
+- [edu_region_victoria_disrupted_college](#event-edu_region_victoria_disrupted_college) — 大学の回廊には、授業を休む知らせと再開する知らせが日付を変えて貼られていた。使える教室がいくつ残るのか、学生たちは案内の前で立ち止まっていた。
+- [edu_region_kazimierz_sponsor_training](#event-edu_region_kazimierz_sponsor_training) — 訓練場の外に、競技騎士の姿を刷った募集看板が立っていた。必要な用具と講習の費用が書かれ、支援が受けられるかどうかは別の欄に記されていた。
+- [edu_region_columbia_corporate_scholarship](#event-edu_region_columbia_corporate_scholarship) — 大学の掲示板に、企業が費用を支援する講習・研究課程の案内が貼られていた。支援額だけでなく、応募資格と返還の条件も読まなければならない。
+- [edu_region_higashi_dojo_learning](#event-edu_region_higashi_dojo_learning) — 道場の戸口に、稽古の時間が書かれていた。教え手が、初めてなら見学してもよいと声を掛けてきた。
+- [edu_region_iberia_closed_library](#event-edu_region_iberia_closed_library) — 潮の匂いが残る建物の扉には、かつての授業時間が彫られていた。中の本を使えるのか、今も教え手がいるのかは、外から見ただけでは分からない。
+- [edu_region_kazdel_school_rebuild](#event-edu_region_kazdel_school_rebuild) — 崩れた壁の上に新しい梁が渡され、雨の入らない部屋が一つできた。通りかかった人々が入口から中をのぞいていたが、授業が始まるかどうかはまだ分からない。
+- [edu_region_sami_clan_or_school](#event-edu_region_sami_clan_or_school) — 旅を共にする年長者は、雪の下の足跡の見分け方を教えてくれた。交易所の近くに文字を教える部屋があるとも聞いたが、確かなことはまだ分からない。
+- [edu_region_leithanien_arts_selectivity](#event-edu_region_leithanien_arts_selectivity) — 学院の案内板に、実技試験の課題と募集条件が書かれていた。扉の向こうから繰り返す旋律が聞こえるが、自分がどの授業に入れるかはまだ決まっていない。
+- [edu_region_kjerag_mountain_and_school](#event-edu_region_kjerag_mountain_and_school) — 谷の向こうの学校から入学案内が届いた。晴れた日なら道は見えるが、雪の季節には峠を越えられないと家の人は言う。
+- [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
+- [edu_region_bolivar_school_under_conflict](#event-edu_region_bolivar_school_under_conflict) — 校庭に子どもの姿はなく、雨の後の水たまりが残っていた。先生たちの行き先はばらばらで、学校の再開日も決まっていない。
+- [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
+- [edu_ursus_school_displacement_memory](#event-edu_ursus_school_displacement_memory) — 昔の学校がどうなったのかを知らせる便りが来た。あのとき教室で聞いた物音や、隣に座っていた友人の顔が、紙の文字を読むうちに浮かんできた。
+- [edu_ursus_school_bystander_memory](#event-edu_ursus_school_bystander_memory) — あの日の通りの様子を話す人がいた。学校の方から逃げてきた子どもたちの姿を、自分も見たことを思い出した。教室の中で何が起きたかまでは知らない。
+- [edu_student_public_meeting_distinction](#event-edu_student_public_meeting_distinction) — 広場の端に、人の輪ができていた。学校のことを話す声もあれば、働き口や街の暮らしを訴える声も聞こえる。
+- [edu_school_peer_exclusion_route](#event-edu_school_peer_exclusion_route) — 教室で机を動かす音がして、隣の席が空いた。こちらを見てひそひそ話す声は聞こえたが、何を言っているのかまでは分からなかった。
+- [edu_safety_for_disabled_student](#event-edu_safety_for_disabled_student) — 授業を受ける部屋までの道に、自分には使いづらい場所があった。別の入口を通れるのか、教室を変えてもらえるのか、学校へ相談しようと考えた。
+- [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-situation-298"></a>
 ### 動的本文（30）
@@ -13722,7 +14006,7 @@
 - [fam_care_followup](#event-fam_care_followup) — 親の世話を始めてから二年が過ぎた。{parentName}の通院や身の回りの手伝いはまだ終わらず、こちらの体や暮らしの予定にも疲れが溜まってきている…
 
 <a id="tag-situation-311"></a>
-### 年齢：児童（906）
+### 年齢：児童（967）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -14542,7 +14826,7 @@
 - [family_parent_crystal_dust](#event-family_parent_crystal_dust) — 鉱石病に苦しみながら息を引き取った親の遺品を片づけていた。着古した服の縫い目や使い込まれた道具には、黒く光る結晶の欠片と細かい粉がこびりついている。…
 - [infection_terror_crystal_shrapnel](#event-infection_terror_crystal_shrapnel) — 市場の片隅で耳をつんざく爆発音が轟き、吹き飛んだ荷車の積荷が石畳に散乱した。黒煙のなかに砕けた源石の破片が飛び散り、血を流す負傷者のうめき声と、爆弾…
 - [family_daily_small_care](#event-family_daily_small_care) — （動的本文） {dailyFamilyName}と帰ると、食卓には冷めかけた汁物があった。今日見たものを話しながら、二人で湯を足した。 {daily…
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
 - [life_kazdel_displaced_start](#event-life_kazdel_displaced_start) — （動的本文）
 - [life_kazdel_displaced_daily](#event-life_kazdel_displaced_daily) — 避難先での暮らしが重なり、路地の抜け道や市場で安く買える時間帯も少しずつ分かってきた。この土地で無理なく暮らし続けるため、次に何を整えるか考えた。
 - [life_kazdel_displaced_contacts](#event-life_kazdel_displaced_contacts) — 同じ街区に暮らすサルカズの運び屋が、よその街へ流れた昔の知人からの手紙を届けてくれた。返事に今の自分の居場所を明かすか、それとも用心して安否だけを尋…
@@ -14606,7 +14890,7 @@
 - [daily_rhodes_36](#event-daily_rhodes_36) — 通信端末に他国の都市で感染者排斥の暴動が起きたニュースが流れた。自分たちの手が届かない遠くの現実に無力感を覚えた。
 - [cl_child_school_supplies](#event-cl_child_school_supplies) — 新学期の教室を見渡すと、真新しい文房具を机に並べる子もいれば、ちびた鉛筆や継ぎ接ぎの鞄を使っている子もいた。家の手伝いも抱えるなかで、どうやって勉強…
 - [cl_ursus_school_divide](#event-cl_ursus_school_divide) — ウルサスの学校の廊下で、親の身分や家の貧しさをあげつらう怒鳴り声が響いた。貴族や役人の家を鼻にかける生徒と、馬鹿にされて拳を握りしめる生徒が睨み合っ…
-- [facility_school_disruption](#event-facility_school_disruption) — 通っている学び舎で教室が閉まる日が増え、集会所の隅や空き部屋を借りて細々と授業が行われるようになった。いつ元の教室へ戻れるのかは、先生にも分からない…
+- [facility_school_disruption](#event-facility_school_disruption) — 通っている学校で授業を開けない日が増えた。校門には休止と教材配布の知らせが貼られ、別の部屋で教えてもらえるのか、先生もまだ確かめているという。
 - [facility_school_reopen](#event-facility_school_reopen) — ようやく学び舎の扉が開き、いつもの教室に机が並んだ。黒板の前に立った先生は『休みの前の続きから始める』と言ったが、教科書を開くとどこまで習ったのかす…
 - [people_school_introduction](#event-people_school_introduction) — 放課後の教室で、授業を受け持つ先生が教卓の上のプリントを揃えていた。手元のノートには、授業中に聞きそびれた疑問がいくつも残っている。
 - [people_school_followup](#event-people_school_followup) — ふとした拍子に、以前わかりやすく勉強を教えてくれた先生のことを思い出した。あの学び舎では今も変わらず授業が続いているだろうか。
@@ -14617,10 +14901,51 @@
 - [v77_social_stigma_family](#event-v77_social_stigma_family) — 町の食堂に入ると、感染者の隣人が隅の卓で一人黙々と匙を動かしていた。あからさまに席を立つ客もいれば、小さく会釈して通り過ぎる人もいる。家の大人の目が…
 - [v81_aftermath_mutualaid](#event-v81_aftermath_mutualaid) — 近隣の集まりで、大人も子どもも住まいや学び、仕事の困りごとを持ち寄った。配給の知らせを探す人もいれば、働き口を探す人、ただ話を聞いてほしい人もいた。
 - [v82_teacher_continuity](#event-v82_teacher_continuity) — 授業が終わって席を立とうとしたとき、以前から目をかけてくれている先生が「最近の課題はどうだ」と声をかけてくれた。一人では解けずに行き詰まっていた箇所…
+- [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+- [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
+- [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
+- [edu_upper_locality_review](#event-edu_upper_locality_review) — 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+- [edu_higher_search_decision](#event-edu_higher_search_decision) — 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
+- [edu_applicant_institution_shortlist](#event-edu_applicant_institution_shortlist) — 集めた募集案内を広げると、同じ分野でも選抜の方法や通う場所が違っていた。日帰りできそうな学校もあれば、住まいを考え直す必要のある学校もあった。
+- [edu_school_opening_not_admission](#event-edu_school_opening_not_admission) — 確かめた学校の校舎は残っていたが、希望する課程への募集は今期行われていなかった。窓口には理由と次の予定を尋ねる人がいた。
+- [edu_course_admission_contract](#event-edu_course_admission_contract) — 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
+- [edu_secondary_gap_reentry](#event-edu_secondary_gap_reentry) — 学校を離れて何度も季節が過ぎた。以前使っていた教材を持って相談すると、教員はどこまで学んでいたかを一つずつ尋ねた。
+- [edu_overage_equivalency_review](#event-edu_overage_equivalency_review) — 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
+- [edu_no_path_year_close](#event-edu_no_path_year_close) — 願書と時刻表を片付ける時期になった。調べた範囲では今年の入学先を決められなかったが、また学ぶ道まで閉ざされたわけではない。
+- [edu_route_first_fare](#event-edu_route_first_fare) — 一回分の運賃を確かめ、往復の日数を掛けてみた。毎日通うと、学費のほかにも少なくない金と時間が要る。
+- [edu_route_weather_closure](#event-edu_route_weather_closure) — 学校へ向かう便が運休になり、発着所には行き先の消された板が掛かっていた。天気が戻るまでの何日かで済むのか、誰にも分からない。
+- [edu_mobile_city_separation](#event-edu_mobile_city_separation) — 昨日まで使えた都市間の連絡便が、しばらく止まるという。学校の校舎は残っているが、いつもの時刻にはたどり着けなくなった。
+- [edu_boarding_application](#event-edu_boarding_application) — 学校から寮の案内が届いた。部屋の広さ、食事代、必要な保証人の欄が並んでいる。申し込めることと、実際に部屋を借りられることは別だった。
+- [edu_boarding_rules_review](#event-edu_boarding_rules_review) — 寮の管理人は、消灯時刻と外泊の届けを説明した。ここで暮らすなら、家から仕送りが届かない月も考えておかなければならない。
+- [edu_relative_lodging](#event-edu_relative_lodging) — 遠方に暮らす親戚から、しばらくなら空き部屋を使ってよいと便りが来た。返事には、家事の分担についても書いてある。
+- [edu_school_relocation_family](#event-edu_school_relocation_family) — 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+- [edu_crossborder_documents](#event-edu_crossborder_documents) — 遠方の学校へ行くために、途中でどんな身分証明が必要か尋ねた。国境を越える道には、移動を許されるか確かめる場所があるという。
+- [edu_classroom_language_gate](#event-edu_classroom_language_gate) — 募集の説明には、まだ意味をつかめない言葉があった。授業で話される言葉も、教本の文字も、今の自分にどこまで分かるか心配だった。
+- [edu_commute_daily_fatigue](#event-edu_commute_daily_fatigue) — まだ暗いうちに家を出た。乗り継ぎの待ち時間に教科書を開いたものの、車体が揺れるたびに字を追い直す。教室に着いたころには、すでに半日働いたような疲れが…
+- [edu_route_recovered_notice](#event-edu_route_recovered_notice) — 運休していた便が再び走り始めたと聞いた。新しい時刻表には、以前とは違う数字が並んでいる。今の暮らしで使えるかどうかは、改めて確かめなければならない。
+- [edu_fee_itemization](#event-edu_fee_itemization) — 学校から届いた授業料の案内とは別に、教材と通学、住まいの見積を集めた。今日必要な金と、毎年掛かる金を分けて数えることにした。
+- [edu_entrance_exam_journey](#event-edu_entrance_exam_journey) — 受験案内に、集合時刻と会場の場所が書かれていた。まだ合否の分からない学校まで行くために、家では旅費を数え直した。
+- [edu_scholarship_application](#event-edu_scholarship_application) — 募集案内に、学費を支える制度が記されていた。申請には本人や世帯の事情を示す書類が必要らしい。
+- [edu_employer_sponsored_course](#event-edu_employer_sponsored_course) — 職場に、仕事に関わる講習の費用を支援する案内が回ってきた。勤務を続ける約束が要るのか、返還の条件があるのか、細かな字まで確かめた。
+- [edu_education_credit_terms](#event-edu_education_credit_terms) — 学費の貸付について、返済の期日と支払額が細かく書かれていた。今の納付を助けても、将来の暮らしに負担が残る。
+- [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_study_work_balance](#event-edu_study_work_balance) — 働きながら受けられる講習があると聞いた。勤務と授業の時間を並べると、家の用事まで含めて休める時間が少なくなりそうだった。
+- [edu_admission_document_missing](#event-edu_admission_document_missing) — 次の学校に提出するため、前に学んだことを示す記録を探した。必要な書類が手元に見当たらず、どこへ照会すればよいか尋ねた。
+- [edu_institution_specific_exclusion](#event-edu_institution_specific_exclusion) — 願書を受け取った人は記載を確かめ、しばらく奥の部屋へ消えた。戻ってきたとき、学校の決定は受入を見送るという短いものだった。
 - [edu_school_confidential_disclosure](#event-edu_school_confidential_disclosure) — 診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。
 - [edu_first_day_of_actual_school](#event-edu_first_day_of_actual_school) — 教室にはまだ誰も座っていない席があった。自分の名前が書かれた札を見つけ、鞄を机の横へ置く。窓の外では、登校してきた生徒たちの声が重なっていた。
+- [edu_teacher_shortage](#event-edu_teacher_shortage) — 黒板には前の授業の日付が残っている。担当の教え手が来られない日が続き、教室では予定した授業がなかなか進まなかった。
+- [edu_course_specific_equipment](#event-edu_course_specific_equipment) — 実習室の机には測定器と使い込まれた工具が並んでいた。先生は急いで触れないよう注意し、計測の順序を黒板に書いた。数値が少しずつ揃っていくのを見て、よう…
+- [edu_school_closed_by_disaster](#event-edu_school_closed_by_disaster) — 学校へ向かう道に人だかりができていた。校舎の一部が使えなくなり、授業再開の日取りもまだ決まらないと聞いた。鞄だけが、いつもどおり肩に掛かっている。
+- [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+- [edu_temporary_classroom](#event-edu_temporary_classroom) — 倉庫を片付けた一角に板を立て掛け、間に合わせの黒板を作った。外からは荷車の音が聞こえるが、先生は出席を取ろうとしている。
 - [edu_real_institution_transfer](#event-edu_real_institution_transfer) — 別の学校から受入の案内が届いた。以前の授業と進み方が違うらしく、持っている履修の記録を見せてほしいという。
+- [edu_exam_cancelled](#event-edu_exam_cancelled) — 試験を行わないという知らせが届いた。会場へ向かう前の者も、すでに門の前で待っていた者も、改めて予定を考えることになった。
 - [edu_graduation_record_review](#event-edu_graduation_record_review) — 学期の終わり、これまでの出席と評価を学校で照合することになった。休んだ年や別の学校で学んだ月も、同じ一行にはまとめられない。
+- [edu_former_teacher_meeting](#event-edu_former_teacher_meeting) — 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+- [edu_child_guardian_disagreement](#event-edu_child_guardian_disagreement) — 学校の話になると家の空気が重くなった。行ってみたいと告げたが、家の人は仕事や家計のことばかり気にしている。
+- [edu_sibling_school_cost_conflict](#event-edu_sibling_school_cost_conflict) — 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
 - [edu_roving_teacher_visit](#event-edu_roving_teacher_visit) — 隊商と一緒に来た人が、集会所の隅へ古い本を並べた。数日だけ文字と計算を教えてくれるという。
 - [edu_community_tent_learning](#event-edu_community_tent_learning) — 風を防ぐために布を二重に張り、倒れかけた木箱を机にした。板切れの上の文字を、子どもたちは交替で指差して読んでいる。
 - [edu_apprentice_literacy_exchange](#event-edu_apprentice_literacy_exchange) — 工房の親方は仕事のあとで帳面を開き、材料の数え方を教えてくれた。手を動かすだけでは済まない仕事が、思ったより多い。
@@ -14629,9 +14954,29 @@
 - [edu_clan_knowledge_transmission](#event-edu_clan_knowledge_transmission) — 年長者は小さな沢の前で足を止め、土の乾き方と風向きを確かめた。帰り道が分からなくなったとき、地図より先に見るものがあるという。
 - [edu_adult_evening_literacy](#event-edu_adult_evening_literacy) — 仕事帰りに灯りのついた部屋をのぞくと、机の上に短い文章が並んでいた。初めて来た人のために、先生は鉛筆を一本残してくれていた。
 - [edu_informal_skill_assessment](#event-edu_informal_skill_assessment) — これまでに覚えた仕事や読み書きの内容を書き出した。学校の外で身につけた腕を、どの資格なら審査してもらえるのか確かめる必要があった。
+- [edu_dependent_future_school_consult](#event-edu_dependent_future_school_consult) — 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+- [edu_region_yan_public_study](#event-edu_region_yan_public_study) — 書院の門前に、今期の講義と選抜試験の案内が貼られていた。雨除けの下で書き写す人々は、皆同じ試験を目指しているわけでもないらしい。
+- [edu_region_victoria_disrupted_college](#event-edu_region_victoria_disrupted_college) — 大学の回廊には、授業を休む知らせと再開する知らせが日付を変えて貼られていた。使える教室がいくつ残るのか、学生たちは案内の前で立ち止まっていた。
+- [edu_region_kazimierz_sponsor_training](#event-edu_region_kazimierz_sponsor_training) — 訓練場の外に、競技騎士の姿を刷った募集看板が立っていた。必要な用具と講習の費用が書かれ、支援が受けられるかどうかは別の欄に記されていた。
+- [edu_region_columbia_corporate_scholarship](#event-edu_region_columbia_corporate_scholarship) — 大学の掲示板に、企業が費用を支援する講習・研究課程の案内が貼られていた。支援額だけでなく、応募資格と返還の条件も読まなければならない。
+- [edu_region_higashi_dojo_learning](#event-edu_region_higashi_dojo_learning) — 道場の戸口に、稽古の時間が書かれていた。教え手が、初めてなら見学してもよいと声を掛けてきた。
+- [edu_region_iberia_closed_library](#event-edu_region_iberia_closed_library) — 潮の匂いが残る建物の扉には、かつての授業時間が彫られていた。中の本を使えるのか、今も教え手がいるのかは、外から見ただけでは分からない。
+- [edu_region_kazdel_school_rebuild](#event-edu_region_kazdel_school_rebuild) — 崩れた壁の上に新しい梁が渡され、雨の入らない部屋が一つできた。通りかかった人々が入口から中をのぞいていたが、授業が始まるかどうかはまだ分からない。
+- [edu_region_sami_clan_or_school](#event-edu_region_sami_clan_or_school) — 旅を共にする年長者は、雪の下の足跡の見分け方を教えてくれた。交易所の近くに文字を教える部屋があるとも聞いたが、確かなことはまだ分からない。
+- [edu_region_leithanien_arts_selectivity](#event-edu_region_leithanien_arts_selectivity) — 学院の案内板に、実技試験の課題と募集条件が書かれていた。扉の向こうから繰り返す旋律が聞こえるが、自分がどの授業に入れるかはまだ決まっていない。
+- [edu_region_kjerag_mountain_and_school](#event-edu_region_kjerag_mountain_and_school) — 谷の向こうの学校から入学案内が届いた。晴れた日なら道は見えるが、雪の季節には峠を越えられないと家の人は言う。
+- [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
+- [edu_region_bolivar_school_under_conflict](#event-edu_region_bolivar_school_under_conflict) — 校庭に子どもの姿はなく、雨の後の水たまりが残っていた。先生たちの行き先はばらばらで、学校の再開日も決まっていない。
+- [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
+- [edu_ursus_school_displacement_memory](#event-edu_ursus_school_displacement_memory) — 昔の学校がどうなったのかを知らせる便りが来た。あのとき教室で聞いた物音や、隣に座っていた友人の顔が、紙の文字を読むうちに浮かんできた。
+- [edu_ursus_school_bystander_memory](#event-edu_ursus_school_bystander_memory) — あの日の通りの様子を話す人がいた。学校の方から逃げてきた子どもたちの姿を、自分も見たことを思い出した。教室の中で何が起きたかまでは知らない。
+- [edu_student_public_meeting_distinction](#event-edu_student_public_meeting_distinction) — 広場の端に、人の輪ができていた。学校のことを話す声もあれば、働き口や街の暮らしを訴える声も聞こえる。
+- [edu_school_peer_exclusion_route](#event-edu_school_peer_exclusion_route) — 教室で机を動かす音がして、隣の席が空いた。こちらを見てひそひそ話す声は聞こえたが、何を言っているのかまでは分からなかった。
+- [edu_safety_for_disabled_student](#event-edu_safety_for_disabled_student) — 授業を受ける部屋までの道に、自分には使いづらい場所があった。別の入口を通れるのか、教室を変えてもらえるのか、学校へ相談しようと考えた。
+- [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-situation-312"></a>
-### 年齢：少年（1133）
+### 年齢：少年（1194）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
@@ -15016,7 +15361,7 @@
 - [daily_leithanien_38](#event-daily_leithanien_38) — 石畳の急な坂道で凍結に足を滑らせ、派手に転倒して膝を強く擦りむいた。破れたズボンと痛む足を引きずりながら家路についた。
 - [daily_leithanien_57](#event-daily_leithanien_57) — 音楽院の防音レッスン室で、古典の無伴奏組曲を何時間も弾き込んだ。指が動かなくなるまで没頭し、音の構造の奥深さに圧倒された。
 - [daily_leithanien_58](#event-daily_leithanien_58) — 学び舎の音楽教室で、古いアーツ記譜法と合奏の構成理論を学んだ。旋律が織りなす整然とした規則性に触れ、音の奥深さに視界が一気に開けた。
-- [daily_leithanien_59](#event-daily_leithanien_59) — 学内コンクールの本選を聴講した。同世代の圧倒的な超絶技巧と豊かな表現力に強い刺激を受け、練習への闘志を燃え上がらせた。
+- [daily_leithanien_59](#event-daily_leithanien_59) — （動的本文）
 - [daily_leithanien_60](#event-daily_leithanien_60) — 実技試験の前夜、過度の緊張と不安で眠れず、胃を痛めてしまった。温かいカモミールティーを啜りながら、必死に心を落ち着かせた。
 - [choice_leithanien_10](#event-choice_leithanien_10) — 街路樹が初夏の花を咲かせる季節を迎え、都の広場で市民総出の初夏祭が開かれた。広場には焼き菓子や伝統料理の屋台が並び、優雅な円舞曲（ワルツ）に合わせて…
 - [daily_laterano_01](#event-daily_laterano_01) — 聖都の有名な菓子舗で、焼きたての大判アップルパイを買って頬張った。シナモンと焦がしバターの極上の甘みに、思わず頬が緩むほどの幸福感を味わった。
@@ -15599,8 +15944,8 @@
 - [family_player_infection_reaction](#event-family_player_infection_reaction) — あなたが鉱石病だと打ち明けた家族は、黙って通院日や薬代の話に耳を傾けていた。あなたの身を案じているのか、それともこれから降りかかる負担に怯えているの…
 - [infection_terror_crystal_shrapnel](#event-infection_terror_crystal_shrapnel) — 市場の片隅で耳をつんざく爆発音が轟き、吹き飛んだ荷車の積荷が石畳に散乱した。黒煙のなかに砕けた源石の破片が飛び散り、血を流す負傷者のうめき声と、爆弾…
 - [family_daily_small_care](#event-family_daily_small_care) — （動的本文） {dailyFamilyName}と帰ると、食卓には冷めかけた汁物があった。今日見たものを話しながら、二人で湯を足した。 {daily…
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
-- [life_ursus_school_aid](#event-life_ursus_school_aid) — 混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
+- [life_ursus_school_aid](#event-life_ursus_school_aid) — （動的本文）
 - [life_ursus_school_aid_followup](#event-life_ursus_school_aid_followup) — （動的本文）
 - [life_kazdel_displaced_start](#event-life_kazdel_displaced_start) — （動的本文）
 - [life_kazdel_displaced_daily](#event-life_kazdel_displaced_daily) — 避難先での暮らしが重なり、路地の抜け道や市場で安く買える時間帯も少しずつ分かってきた。この土地で無理なく暮らし続けるため、次に何を整えるか考えた。
@@ -15721,7 +16066,7 @@
 - [local_housing_pressure](#event-local_housing_pressure) — 界隈では空き部屋が出てもその日のうちに埋まるようになり、家主たちも強気な家賃を吹っかけるようになった。手元の契約書を見返し、次の更新月がいつだったか…
 - [local_transport_pressure](#event-local_transport_pressure) — 乗り合い便も荷馬車も遅れが常態化し、停留所の時刻表はあってないようなものになっていた。吹きっさらしの乗り場で足を踏み鳴らしながら、今日の用事をどう回…
 - [facility_clinic_constrained](#event-facility_clinic_constrained) — 近くの診療所は人手も薬も足りないらしく、日中の窓口が早く閉まるようになっていた。表の張り紙には『急患優先』とあるばかりで、普段の診察や薬の相談はいつ…
-- [facility_school_disruption](#event-facility_school_disruption) — 通っている学び舎で教室が閉まる日が増え、集会所の隅や空き部屋を借りて細々と授業が行われるようになった。いつ元の教室へ戻れるのかは、先生にも分からない…
+- [facility_school_disruption](#event-facility_school_disruption) — 通っている学校で授業を開けない日が増えた。校門には休止と教材配布の知らせが貼られ、別の部屋で教えてもらえるのか、先生もまだ確かめているという。
 - [facility_school_reopen](#event-facility_school_reopen) — ようやく学び舎の扉が開き、いつもの教室に机が並んだ。黒板の前に立った先生は『休みの前の続きから始める』と言ったが、教科書を開くとどこまで習ったのかす…
 - [people_clinic_introduction](#event-people_clinic_introduction) — 消毒液の匂いが漂う診療所の窓口で、職員が忙しそうにカルテの束を仕分けていた。壁には診察日と受付時間の案内が貼られている。
 - [people_school_introduction](#event-people_school_introduction) — 放課後の教室で、授業を受け持つ先生が教卓の上のプリントを揃えていた。手元のノートには、授業中に聞きそびれた疑問がいくつも残っている。
@@ -15732,7 +16077,7 @@
 - [site_school_transfer](#event-site_school_transfer) — 今通っている学び舎とは別の教室が、年度の途中からでも生徒を受け入れると案内を出していた。通いやすさや授業の進み具合を家の人と話し合った。
 - [site_clinic_different_conditions](#event-site_clinic_different_conditions) — 同じ地区にある二つの診療所で、待合室の混み具合も薬の在庫もまるで違っていた。いざという時どちらへ駆け込むべきか見比べた。
 - [people_school_life_conversation](#event-people_school_life_conversation) — （動的本文）
-- [people_school_housing_concern](#event-people_school_housing_concern) — 授業が終わったあと、顔なじみの教え手が重い教材箱の蓋を閉じた。今借りている相部屋では夜に机を広げるゆとりもないと聞く。後片づけを手伝うか、次の授業の…
+- [people_school_housing_concern](#event-people_school_housing_concern) — 顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。
 - [inter_victoria_taran_speech_v76](#event-inter_victoria_taran_speech_v76) — 役所の窓口で、ターラー訛りの抜けない労働者が係員に冷たくあしらわれていた。本人は就労の書類を見てほしいと必死に食い下がっているのに、係員はろくに目も…
 - [v77_family_rumor](#event-v77_family_rumor) — 家の大人たちが食卓で、感染者やサルカズをひとくくりにして悪しざまに喋っていた。昼間に通りで見かけたあの人の横顔を思い出すと、大人の言うことをそのまま…
 - [v77_family_solidarity_and_caution](#event-v77_family_solidarity_and_caution) — （動的本文）
@@ -15753,10 +16098,51 @@
 - [v81_family_boundary](#event-v81_family_boundary) — 家族から拒絶された日から年月が過ぎた。食事の前に電話をかけ、呼び出し音が続くのを待った。受話器を置いても、あの日の言葉が残っていた。
 - [v81_aftermath_mutualaid](#event-v81_aftermath_mutualaid) — 近隣の集まりで、大人も子どもも住まいや学び、仕事の困りごとを持ち寄った。配給の知らせを探す人もいれば、働き口を探す人、ただ話を聞いてほしい人もいた。
 - [v82_teacher_continuity](#event-v82_teacher_continuity) — 授業が終わって席を立とうとしたとき、以前から目をかけてくれている先生が「最近の課題はどうだ」と声をかけてくれた。一人では解けずに行き詰まっていた箇所…
+- [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+- [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
+- [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
+- [edu_upper_locality_review](#event-edu_upper_locality_review) — 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+- [edu_higher_search_decision](#event-edu_higher_search_decision) — 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
+- [edu_applicant_institution_shortlist](#event-edu_applicant_institution_shortlist) — 集めた募集案内を広げると、同じ分野でも選抜の方法や通う場所が違っていた。日帰りできそうな学校もあれば、住まいを考え直す必要のある学校もあった。
+- [edu_school_opening_not_admission](#event-edu_school_opening_not_admission) — 確かめた学校の校舎は残っていたが、希望する課程への募集は今期行われていなかった。窓口には理由と次の予定を尋ねる人がいた。
+- [edu_course_admission_contract](#event-edu_course_admission_contract) — 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
+- [edu_secondary_gap_reentry](#event-edu_secondary_gap_reentry) — 学校を離れて何度も季節が過ぎた。以前使っていた教材を持って相談すると、教員はどこまで学んでいたかを一つずつ尋ねた。
+- [edu_overage_equivalency_review](#event-edu_overage_equivalency_review) — 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
+- [edu_no_path_year_close](#event-edu_no_path_year_close) — 願書と時刻表を片付ける時期になった。調べた範囲では今年の入学先を決められなかったが、また学ぶ道まで閉ざされたわけではない。
+- [edu_route_first_fare](#event-edu_route_first_fare) — 一回分の運賃を確かめ、往復の日数を掛けてみた。毎日通うと、学費のほかにも少なくない金と時間が要る。
+- [edu_route_weather_closure](#event-edu_route_weather_closure) — 学校へ向かう便が運休になり、発着所には行き先の消された板が掛かっていた。天気が戻るまでの何日かで済むのか、誰にも分からない。
+- [edu_mobile_city_separation](#event-edu_mobile_city_separation) — 昨日まで使えた都市間の連絡便が、しばらく止まるという。学校の校舎は残っているが、いつもの時刻にはたどり着けなくなった。
+- [edu_boarding_application](#event-edu_boarding_application) — 学校から寮の案内が届いた。部屋の広さ、食事代、必要な保証人の欄が並んでいる。申し込めることと、実際に部屋を借りられることは別だった。
+- [edu_boarding_rules_review](#event-edu_boarding_rules_review) — 寮の管理人は、消灯時刻と外泊の届けを説明した。ここで暮らすなら、家から仕送りが届かない月も考えておかなければならない。
+- [edu_relative_lodging](#event-edu_relative_lodging) — 遠方に暮らす親戚から、しばらくなら空き部屋を使ってよいと便りが来た。返事には、家事の分担についても書いてある。
+- [edu_school_relocation_family](#event-edu_school_relocation_family) — 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+- [edu_crossborder_documents](#event-edu_crossborder_documents) — 遠方の学校へ行くために、途中でどんな身分証明が必要か尋ねた。国境を越える道には、移動を許されるか確かめる場所があるという。
+- [edu_classroom_language_gate](#event-edu_classroom_language_gate) — 募集の説明には、まだ意味をつかめない言葉があった。授業で話される言葉も、教本の文字も、今の自分にどこまで分かるか心配だった。
+- [edu_commute_daily_fatigue](#event-edu_commute_daily_fatigue) — まだ暗いうちに家を出た。乗り継ぎの待ち時間に教科書を開いたものの、車体が揺れるたびに字を追い直す。教室に着いたころには、すでに半日働いたような疲れが…
+- [edu_route_recovered_notice](#event-edu_route_recovered_notice) — 運休していた便が再び走り始めたと聞いた。新しい時刻表には、以前とは違う数字が並んでいる。今の暮らしで使えるかどうかは、改めて確かめなければならない。
+- [edu_fee_itemization](#event-edu_fee_itemization) — 学校から届いた授業料の案内とは別に、教材と通学、住まいの見積を集めた。今日必要な金と、毎年掛かる金を分けて数えることにした。
+- [edu_entrance_exam_journey](#event-edu_entrance_exam_journey) — 受験案内に、集合時刻と会場の場所が書かれていた。まだ合否の分からない学校まで行くために、家では旅費を数え直した。
+- [edu_scholarship_application](#event-edu_scholarship_application) — 募集案内に、学費を支える制度が記されていた。申請には本人や世帯の事情を示す書類が必要らしい。
+- [edu_employer_sponsored_course](#event-edu_employer_sponsored_course) — 職場に、仕事に関わる講習の費用を支援する案内が回ってきた。勤務を続ける約束が要るのか、返還の条件があるのか、細かな字まで確かめた。
+- [edu_education_credit_terms](#event-edu_education_credit_terms) — 学費の貸付について、返済の期日と支払額が細かく書かれていた。今の納付を助けても、将来の暮らしに負担が残る。
+- [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_study_work_balance](#event-edu_study_work_balance) — 働きながら受けられる講習があると聞いた。勤務と授業の時間を並べると、家の用事まで含めて休める時間が少なくなりそうだった。
+- [edu_admission_document_missing](#event-edu_admission_document_missing) — 次の学校に提出するため、前に学んだことを示す記録を探した。必要な書類が手元に見当たらず、どこへ照会すればよいか尋ねた。
+- [edu_institution_specific_exclusion](#event-edu_institution_specific_exclusion) — 願書を受け取った人は記載を確かめ、しばらく奥の部屋へ消えた。戻ってきたとき、学校の決定は受入を見送るという短いものだった。
 - [edu_school_confidential_disclosure](#event-edu_school_confidential_disclosure) — 診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。
 - [edu_first_day_of_actual_school](#event-edu_first_day_of_actual_school) — 教室にはまだ誰も座っていない席があった。自分の名前が書かれた札を見つけ、鞄を机の横へ置く。窓の外では、登校してきた生徒たちの声が重なっていた。
+- [edu_teacher_shortage](#event-edu_teacher_shortage) — 黒板には前の授業の日付が残っている。担当の教え手が来られない日が続き、教室では予定した授業がなかなか進まなかった。
+- [edu_course_specific_equipment](#event-edu_course_specific_equipment) — 実習室の机には測定器と使い込まれた工具が並んでいた。先生は急いで触れないよう注意し、計測の順序を黒板に書いた。数値が少しずつ揃っていくのを見て、よう…
+- [edu_school_closed_by_disaster](#event-edu_school_closed_by_disaster) — 学校へ向かう道に人だかりができていた。校舎の一部が使えなくなり、授業再開の日取りもまだ決まらないと聞いた。鞄だけが、いつもどおり肩に掛かっている。
+- [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+- [edu_temporary_classroom](#event-edu_temporary_classroom) — 倉庫を片付けた一角に板を立て掛け、間に合わせの黒板を作った。外からは荷車の音が聞こえるが、先生は出席を取ろうとしている。
 - [edu_real_institution_transfer](#event-edu_real_institution_transfer) — 別の学校から受入の案内が届いた。以前の授業と進み方が違うらしく、持っている履修の記録を見せてほしいという。
+- [edu_exam_cancelled](#event-edu_exam_cancelled) — 試験を行わないという知らせが届いた。会場へ向かう前の者も、すでに門の前で待っていた者も、改めて予定を考えることになった。
 - [edu_graduation_record_review](#event-edu_graduation_record_review) — 学期の終わり、これまでの出席と評価を学校で照合することになった。休んだ年や別の学校で学んだ月も、同じ一行にはまとめられない。
+- [edu_former_teacher_meeting](#event-edu_former_teacher_meeting) — 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+- [edu_child_guardian_disagreement](#event-edu_child_guardian_disagreement) — 学校の話になると家の空気が重くなった。行ってみたいと告げたが、家の人は仕事や家計のことばかり気にしている。
+- [edu_sibling_school_cost_conflict](#event-edu_sibling_school_cost_conflict) — 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
 - [edu_roving_teacher_visit](#event-edu_roving_teacher_visit) — 隊商と一緒に来た人が、集会所の隅へ古い本を並べた。数日だけ文字と計算を教えてくれるという。
 - [edu_community_tent_learning](#event-edu_community_tent_learning) — 風を防ぐために布を二重に張り、倒れかけた木箱を机にした。板切れの上の文字を、子どもたちは交替で指差して読んでいる。
 - [edu_apprentice_literacy_exchange](#event-edu_apprentice_literacy_exchange) — 工房の親方は仕事のあとで帳面を開き、材料の数え方を教えてくれた。手を動かすだけでは済まない仕事が、思ったより多い。
@@ -15765,9 +16151,29 @@
 - [edu_clan_knowledge_transmission](#event-edu_clan_knowledge_transmission) — 年長者は小さな沢の前で足を止め、土の乾き方と風向きを確かめた。帰り道が分からなくなったとき、地図より先に見るものがあるという。
 - [edu_adult_evening_literacy](#event-edu_adult_evening_literacy) — 仕事帰りに灯りのついた部屋をのぞくと、机の上に短い文章が並んでいた。初めて来た人のために、先生は鉛筆を一本残してくれていた。
 - [edu_informal_skill_assessment](#event-edu_informal_skill_assessment) — これまでに覚えた仕事や読み書きの内容を書き出した。学校の外で身につけた腕を、どの資格なら審査してもらえるのか確かめる必要があった。
+- [edu_dependent_future_school_consult](#event-edu_dependent_future_school_consult) — 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+- [edu_region_yan_public_study](#event-edu_region_yan_public_study) — 書院の門前に、今期の講義と選抜試験の案内が貼られていた。雨除けの下で書き写す人々は、皆同じ試験を目指しているわけでもないらしい。
+- [edu_region_victoria_disrupted_college](#event-edu_region_victoria_disrupted_college) — 大学の回廊には、授業を休む知らせと再開する知らせが日付を変えて貼られていた。使える教室がいくつ残るのか、学生たちは案内の前で立ち止まっていた。
+- [edu_region_kazimierz_sponsor_training](#event-edu_region_kazimierz_sponsor_training) — 訓練場の外に、競技騎士の姿を刷った募集看板が立っていた。必要な用具と講習の費用が書かれ、支援が受けられるかどうかは別の欄に記されていた。
+- [edu_region_columbia_corporate_scholarship](#event-edu_region_columbia_corporate_scholarship) — 大学の掲示板に、企業が費用を支援する講習・研究課程の案内が貼られていた。支援額だけでなく、応募資格と返還の条件も読まなければならない。
+- [edu_region_higashi_dojo_learning](#event-edu_region_higashi_dojo_learning) — 道場の戸口に、稽古の時間が書かれていた。教え手が、初めてなら見学してもよいと声を掛けてきた。
+- [edu_region_iberia_closed_library](#event-edu_region_iberia_closed_library) — 潮の匂いが残る建物の扉には、かつての授業時間が彫られていた。中の本を使えるのか、今も教え手がいるのかは、外から見ただけでは分からない。
+- [edu_region_kazdel_school_rebuild](#event-edu_region_kazdel_school_rebuild) — 崩れた壁の上に新しい梁が渡され、雨の入らない部屋が一つできた。通りかかった人々が入口から中をのぞいていたが、授業が始まるかどうかはまだ分からない。
+- [edu_region_sami_clan_or_school](#event-edu_region_sami_clan_or_school) — 旅を共にする年長者は、雪の下の足跡の見分け方を教えてくれた。交易所の近くに文字を教える部屋があるとも聞いたが、確かなことはまだ分からない。
+- [edu_region_leithanien_arts_selectivity](#event-edu_region_leithanien_arts_selectivity) — 学院の案内板に、実技試験の課題と募集条件が書かれていた。扉の向こうから繰り返す旋律が聞こえるが、自分がどの授業に入れるかはまだ決まっていない。
+- [edu_region_kjerag_mountain_and_school](#event-edu_region_kjerag_mountain_and_school) — 谷の向こうの学校から入学案内が届いた。晴れた日なら道は見えるが、雪の季節には峠を越えられないと家の人は言う。
+- [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
+- [edu_region_bolivar_school_under_conflict](#event-edu_region_bolivar_school_under_conflict) — 校庭に子どもの姿はなく、雨の後の水たまりが残っていた。先生たちの行き先はばらばらで、学校の再開日も決まっていない。
+- [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
+- [edu_ursus_school_displacement_memory](#event-edu_ursus_school_displacement_memory) — 昔の学校がどうなったのかを知らせる便りが来た。あのとき教室で聞いた物音や、隣に座っていた友人の顔が、紙の文字を読むうちに浮かんできた。
+- [edu_ursus_school_bystander_memory](#event-edu_ursus_school_bystander_memory) — あの日の通りの様子を話す人がいた。学校の方から逃げてきた子どもたちの姿を、自分も見たことを思い出した。教室の中で何が起きたかまでは知らない。
+- [edu_student_public_meeting_distinction](#event-edu_student_public_meeting_distinction) — 広場の端に、人の輪ができていた。学校のことを話す声もあれば、働き口や街の暮らしを訴える声も聞こえる。
+- [edu_school_peer_exclusion_route](#event-edu_school_peer_exclusion_route) — 教室で机を動かす音がして、隣の席が空いた。こちらを見てひそひそ話す声は聞こえたが、何を言っているのかまでは分からなかった。
+- [edu_safety_for_disabled_student](#event-edu_safety_for_disabled_student) — 授業を受ける部屋までの道に、自分には使いづらい場所があった。別の入口を通れるのか、教室を変えてもらえるのか、学校へ相談しようと考えた。
+- [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-situation-313"></a>
-### 年齢：青年（2300）
+### 年齢：青年（2361）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -16472,11 +16878,11 @@
 - [daily_leithanien_56](#event-daily_leithanien_56) — 高価な抑制剤の処方箋を握りしめ、薬局の前で立ち尽くした。文化を誇る美しい都の足元で、見殺しにされる貧民の過酷な現実を痛感した。
 - [daily_leithanien_57](#event-daily_leithanien_57) — 音楽院の防音レッスン室で、古典の無伴奏組曲を何時間も弾き込んだ。指が動かなくなるまで没頭し、音の構造の奥深さに圧倒された。
 - [daily_leithanien_58](#event-daily_leithanien_58) — 学び舎の音楽教室で、古いアーツ記譜法と合奏の構成理論を学んだ。旋律が織りなす整然とした規則性に触れ、音の奥深さに視界が一気に開けた。
-- [daily_leithanien_59](#event-daily_leithanien_59) — 学内コンクールの本選を聴講した。同世代の圧倒的な超絶技巧と豊かな表現力に強い刺激を受け、練習への闘志を燃え上がらせた。
+- [daily_leithanien_59](#event-daily_leithanien_59) — （動的本文）
 - [daily_leithanien_60](#event-daily_leithanien_60) — 実技試験の前夜、過度の緊張と不安で眠れず、胃を痛めてしまった。温かいカモミールティーを啜りながら、必死に心を落ち着かせた。
 - [choice_leithanien_01](#event-choice_leithanien_01) — 偶然手に入れた招待状により、郊外の古城で巫王残党が禁忌のアーツ儀式を目論んでいる現場を知ってしまった。選帝侯の憲兵隊に通報するか、自ら真偽を確かめる…
 - [choice_leithanien_02](#event-choice_leithanien_02) — 数百年前の名工が遺した伝説のバイオリンが、響板の大破損状態であなたの工房（または知人の店）に持ち込まれた。修復に成功すれば世界に名が轟くが、失敗すれ…
-- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。名門音楽院への入学が認められたが、高額な制服代と教材費が払えず泣いている…
+- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。音楽を教わる先を探しているが、教材や身の回りの品を買う金もない。
 - [choice_leithanien_04](#event-choice_leithanien_04) — 名高い銘醸ブドウ畑の相続を巡り、伝統ある小作農家と新興の貴族商人の間で激しい係争が起きていた。地域の長老であるあなたに、仲裁の立会人としての要請が届…
 - [choice_leithanien_05](#event-choice_leithanien_05) — 選帝侯も臨席する大聖堂の演奏会直前、主役のチェロ奏者が急病で倒れた。楽団の控え奏者として舞台裏に控えていたあなたに、指揮者から「代役として協奏曲を弾…
 - [choice_leithanien_06](#event-choice_leithanien_06) — 好戦的な貴族が、聴く者の神経を破壊する非人道的な音波アーツ砲を秘密裏に試作していた。開発に協力させられそうになった技師から、設計図の破棄を手伝ってほ…
@@ -17090,7 +17496,7 @@
 - [choice_kazdel_02](#event-choice_kazdel_02) — テント酒場で見知らぬ外国の代理人から声をかけられた。「お前のような腕利きのサルカズが泥まみれで瓦礫を運ぶのは勿体ない。隣国の紛争地へ行けば、この金貨…
 - [choice_kazdel_03](#event-choice_kazdel_03) — 吹きさらしのテント暮らしを脱するため、数十家族が身を寄せ合える堅牢な石造り共同住宅の建設が始まった。寒風が吹きすさぶ中、レンガ積みと屋根架けの急ピッ…
 - [choice_kazdel_04](#event-choice_kazdel_04) — 瓦礫の撤去作業中、地下数メートルの地層から古代サルカズの楔形文字が刻まれた巨大な黒曜石の石板が発掘された。太古の歴史と失われたアーツ技術の手がかりが…
-- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教える寺子屋を開くことになっ…
+- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書き…
 - [choice_kazdel_06](#event-choice_kazdel_06) — 荒野から猛烈な突風を伴う砂嵐が吹き寄せてきた。移動集落の多くの天幕が浮き上がり、吹き飛ばされそうになっている。大槌を持って杭打ちに飛び出す決死の補強…
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
@@ -17433,7 +17839,7 @@
 - [life_rhodes_role_review](#event-life_rhodes_role_review) — ロドスの現地担当者から、今後の関わり方を尋ねる連絡が届いた。自分の体調や仕事の忙しさと照らし合わせ、これからどう付き合っていくか考えた。
 - [life_reunion_local_entry](#event-life_reunion_local_entry) — チェルノボーグの街区がレユニオンに占拠され、行き場を失った感染者とその家族が廃倉庫の片隅に身を寄せ合っていた。食料や薬を運ぶ人手が足りないという。力…
 - [life_reunion_order_conflict](#event-life_reunion_order_conflict) — 臨時拠点の配給所で、避難者を守るためにも全員が武器を取るべきだと息巻く声が上がった。周囲の仲間も意見が割れ、重苦しい空気が張りつめている。このまま配…
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
 - [life_ursus_school_aid_followup](#event-life_ursus_school_aid_followup) — （動的本文）
 - [life_ursus_school_aid_adult_followup](#event-life_ursus_school_aid_adult_followup) — 大人になって荷物を整理していた時、チェルノボーグの学校で書き留めた同級生たちの古い連絡先がひょっこり出てきた。あのまま行方が知れない仲間の名を指でな…
 - [life_infected_association_choice](#event-life_infected_association_choice) — 通りの商店の軒先に「感染者入店お断り」の木札が掲げられるようになり、町内の寄り合いでも感染者を職場や借家から締め出そうという声が勢いを増していた。会…
@@ -17588,7 +17994,7 @@
 - [life_ursus_student_assembly_protest](#event-life_ursus_student_assembly_protest) — （動的本文）
 - [life_ursus_katorga_life](#event-life_ursus_katorga_life) — 送り込まれたカトルガ区画では、稼働停止とともに照明も暖房も断ち切られ、外の扉には重い鎖がかけられた。叩いても返事のない扉が並び、白い息が凍りつく暗闇…
 - [life_ursus_student_assembly_release](#event-life_ursus_student_assembly_release) — やがて封鎖扉が開かれ、外の眩しい光とともに審理や釈放の手続きが始まった。泣きながら親に抱きつく者、戻らない友人の名を呼ぶ者、帰る場所を失った者が入り…
-- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
+- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎた。学びの場や仕事、住まいが以前とは変わった人も多い。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の…
 - [life_ursus_student_assembly_pause_review](#event-life_ursus_student_assembly_pause_review) — あの冬のあと、学生連合の活動から距離を置いて数年が経った。街でかつての知人の噂を耳にし、無事を確かめたい思いが胸をかすめる。今の平穏な暮らしを守りつ…
 - [life_leithanian_civic_entry](#event-life_leithanian_civic_entry) — 川にかかる橋の踏み板が抜けてから、荷車は毎日ぐるりと遠回りを強いられていた。街角の集会所では、住民たちの声を集めて領主側の役人へ修繕を掛け合おうとい…
 - [life_leithanian_civic_routine](#event-life_leithanian_civic_routine) — 街角の集まりに顔を出すようになってから、橋だけでなく石畳の陥没や街灯の故障まで様々な苦情が持ち込まれるようになった。今夜も仕事終わりに集会所へ集まる…
@@ -17620,7 +18026,7 @@
 - [family_spouse_infected_housing_pressure](#event-family_spouse_infected_housing_pressure) — 離れて暮らす{sp}のアパートで、契約更新の紙に健康状態を詳しく書くよう求められたという。病名は伏せていたが、肌の表面の結晶や通院の様子から勘づかれ…
 - [family_spouse_housing_choice](#event-family_spouse_housing_choice) — 離れて暮らす{sp}から、今の部屋の家賃や、もう少し落ち着いて眠れる場所に移りたいという相談が届いた。貸間の案内を見比べながら、相部屋にするか、今の…
 - [family_divorce_child_residence](#event-family_divorce_child_residence) — 別れた相手の訃報が届いた。手紙には、残された子どもが今誰の元で暮らしているのかまでは書かれていなかった。すぐにこちらで引き取ると伝えるか、親族に居場…
-- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから散り散りになった昔の同級生から、短い葉書が届いた。あの日から細々と便りを続けてきたが、お互い住む街も仕事もすっかり変わった。これか…
+- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
@@ -17818,7 +18224,7 @@
 - [car_urs_guard_entry](#event-car_urs_guard_entry) — ツンドラの冷風が吹きすさぶ兵舎で、国境警備部隊と感染者鉱山を監視する憲兵の徴募が行われていた。厳しい学歴は問われず、頑丈な体さえあれば誰でも雇われる…
 - [car_urs_academy_entry](#event-car_urs_academy_entry) — 巨大な軍用装甲列車や重工業都市の設計を手掛けるウルサス帝国科学院。硬質な鉄と源石動力の極致を追求するこの研究機関で、構造工学と動力回路の専門技師が募…
 - [car_vic_infantry_entry](#event-car_vic_infantry_entry) — ヴィクトリアの各都市で、正規陸軍の平民歩兵の募集が行われていた。伝統と栄光を謳う帝国だが、平民出身の兵士はどれほど戦功を立てても下士官止まりであり、…
-- [car_vic_royal_entry](#event-car_vic_royal_entry) — ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推…
+- [car_vic_royal_entry](#event-car_vic_royal_entry) — ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要…
 - [car_vic_scribe_entry](#event-car_vic_scribe_entry) — ロンディニウム中央議会や地方市議会の議事堂で、公爵や伯爵たちの議案や法律文書を記録・整理する書記官が募集されていた。貴族の利権調整と汚職の嵐に巻き込…
 - [car_vic_works_entry](#event-car_vic_works_entry) — 巨大な蒸気機関車と鉄鋼レールが並ぶヴィクトリアの鉄道工廠。産業革命の鼓動が響くこの巨大施設で、高圧蒸気パイプラインや機関車エンジンの整備を担う技術者…
 - [car_lei_golden_entry](#event-car_lei_golden_entry) — 双子女帝の座すツヴィリングトゥルムの回廊で、金律法衛の選考審査が開かれていた。リターニアの調和とアーツ法典を執行する選ばれし魔道士たち。一音の狂いも…
@@ -17951,7 +18357,7 @@
 - [local_medical_followup](#event-local_medical_followup) — 以前、診療所がごった返していた頃に受診の手順を調べておいたことがあった。今日、具合の悪そうな近所の人から『どこへ行けば診てもらえるだろう』と心細そう…
 - [facility_clinic_constrained](#event-facility_clinic_constrained) — 近くの診療所は人手も薬も足りないらしく、日中の窓口が早く閉まるようになっていた。表の張り紙には『急患優先』とあるばかりで、普段の診察や薬の相談はいつ…
 - [facility_clinic_followup](#event-facility_clinic_followup) — 以前、診療所がごった返していた頃に別の相談先を調べたことがあった。久しぶりにその前を通りかかると、入口の案内板が新しく塗り替えられているのに気づいた…
-- [facility_school_disruption](#event-facility_school_disruption) — 通っている学び舎で教室が閉まる日が増え、集会所の隅や空き部屋を借りて細々と授業が行われるようになった。いつ元の教室へ戻れるのかは、先生にも分からない…
+- [facility_school_disruption](#event-facility_school_disruption) — 通っている学校で授業を開けない日が増えた。校門には休止と教材配布の知らせが貼られ、別の部屋で教えてもらえるのか、先生もまだ確かめているという。
 - [facility_school_reopen](#event-facility_school_reopen) — ようやく学び舎の扉が開き、いつもの教室に机が並んだ。黒板の前に立った先生は『休みの前の続きから始める』と言ったが、教科書を開くとどこまで習ったのかす…
 - [facility_work_restricted](#event-facility_work_restricted) — 原材料が届かず、仕事場の機械が半分以上止まったままだ。持ち場の作業も減り、現場の責任者は毎日渋い顔でシフトを削っている。来月の給金がどうなるか聞くか…
 - [facility_work_recovery](#event-facility_work_recovery) — 止まっていた資材がようやく届き、仕事場に機械の唸りが戻ってきた。ただ、人が抜けた穴を埋めるため、貼り出された配置表には見慣れない工程まで自分の名前が…
@@ -17974,7 +18380,7 @@
 - [people_school_life_conversation](#event-people_school_life_conversation) — （動的本文）
 - [people_clinic_life_conversation](#event-people_clinic_life_conversation) — 待合いの人波がようやく引いた頃、見慣れた受付の担当者が肩を回しながら伝票の束を揃えていた。もうすぐ交代の時間らしい。
 - [people_work_care_schedule](#event-people_work_care_schedule) — 顔なじみの同僚から、家族の看病でどうしても手が離せず、来週のシフトを少し代わってもらえないかと小声で頼まれた。こちらにも自分の持ち場がある。
-- [people_school_housing_concern](#event-people_school_housing_concern) — 授業が終わったあと、顔なじみの教え手が重い教材箱の蓋を閉じた。今借りている相部屋では夜に机を広げるゆとりもないと聞く。後片づけを手伝うか、次の授業の…
+- [people_school_housing_concern](#event-people_school_housing_concern) — 顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。
 - [people_clinic_skill_continuity](#event-people_clinic_skill_continuity) — 顔なじみの受付係が、新しく書き直した案内札を前に首をひねっていた。声をかけると、初めて来る患者にもすぐ伝わる言い回しを考えているところだと言う。
 - [job_contract_review_v76](#event-job_contract_review_v76) — 手渡された雇用契約書には、給金や勤務時間だけでなく、怪我や破損の責任まで細かい文字でびっしり並んでいた。何度読み返しても、自分に有利なのか不利なのか…
 - [job_contract_negotiation_v76](#event-job_contract_negotiation_v76) — 今の仕事にもだいぶ手が馴染み、周囲より多くの荷や工程を回せるようになってきた。責任者が一人で帳面をつけている隙を見て、給金の色をつけてもらえないか切…
@@ -18056,10 +18462,51 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+- [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
+- [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
+- [edu_upper_locality_review](#event-edu_upper_locality_review) — 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+- [edu_higher_search_decision](#event-edu_higher_search_decision) — 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
+- [edu_applicant_institution_shortlist](#event-edu_applicant_institution_shortlist) — 集めた募集案内を広げると、同じ分野でも選抜の方法や通う場所が違っていた。日帰りできそうな学校もあれば、住まいを考え直す必要のある学校もあった。
+- [edu_school_opening_not_admission](#event-edu_school_opening_not_admission) — 確かめた学校の校舎は残っていたが、希望する課程への募集は今期行われていなかった。窓口には理由と次の予定を尋ねる人がいた。
+- [edu_course_admission_contract](#event-edu_course_admission_contract) — 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
+- [edu_secondary_gap_reentry](#event-edu_secondary_gap_reentry) — 学校を離れて何度も季節が過ぎた。以前使っていた教材を持って相談すると、教員はどこまで学んでいたかを一つずつ尋ねた。
+- [edu_overage_equivalency_review](#event-edu_overage_equivalency_review) — 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
+- [edu_no_path_year_close](#event-edu_no_path_year_close) — 願書と時刻表を片付ける時期になった。調べた範囲では今年の入学先を決められなかったが、また学ぶ道まで閉ざされたわけではない。
+- [edu_route_first_fare](#event-edu_route_first_fare) — 一回分の運賃を確かめ、往復の日数を掛けてみた。毎日通うと、学費のほかにも少なくない金と時間が要る。
+- [edu_route_weather_closure](#event-edu_route_weather_closure) — 学校へ向かう便が運休になり、発着所には行き先の消された板が掛かっていた。天気が戻るまでの何日かで済むのか、誰にも分からない。
+- [edu_mobile_city_separation](#event-edu_mobile_city_separation) — 昨日まで使えた都市間の連絡便が、しばらく止まるという。学校の校舎は残っているが、いつもの時刻にはたどり着けなくなった。
+- [edu_boarding_application](#event-edu_boarding_application) — 学校から寮の案内が届いた。部屋の広さ、食事代、必要な保証人の欄が並んでいる。申し込めることと、実際に部屋を借りられることは別だった。
+- [edu_boarding_rules_review](#event-edu_boarding_rules_review) — 寮の管理人は、消灯時刻と外泊の届けを説明した。ここで暮らすなら、家から仕送りが届かない月も考えておかなければならない。
+- [edu_relative_lodging](#event-edu_relative_lodging) — 遠方に暮らす親戚から、しばらくなら空き部屋を使ってよいと便りが来た。返事には、家事の分担についても書いてある。
+- [edu_school_relocation_family](#event-edu_school_relocation_family) — 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+- [edu_crossborder_documents](#event-edu_crossborder_documents) — 遠方の学校へ行くために、途中でどんな身分証明が必要か尋ねた。国境を越える道には、移動を許されるか確かめる場所があるという。
+- [edu_classroom_language_gate](#event-edu_classroom_language_gate) — 募集の説明には、まだ意味をつかめない言葉があった。授業で話される言葉も、教本の文字も、今の自分にどこまで分かるか心配だった。
+- [edu_commute_daily_fatigue](#event-edu_commute_daily_fatigue) — まだ暗いうちに家を出た。乗り継ぎの待ち時間に教科書を開いたものの、車体が揺れるたびに字を追い直す。教室に着いたころには、すでに半日働いたような疲れが…
+- [edu_route_recovered_notice](#event-edu_route_recovered_notice) — 運休していた便が再び走り始めたと聞いた。新しい時刻表には、以前とは違う数字が並んでいる。今の暮らしで使えるかどうかは、改めて確かめなければならない。
+- [edu_fee_itemization](#event-edu_fee_itemization) — 学校から届いた授業料の案内とは別に、教材と通学、住まいの見積を集めた。今日必要な金と、毎年掛かる金を分けて数えることにした。
+- [edu_entrance_exam_journey](#event-edu_entrance_exam_journey) — 受験案内に、集合時刻と会場の場所が書かれていた。まだ合否の分からない学校まで行くために、家では旅費を数え直した。
+- [edu_scholarship_application](#event-edu_scholarship_application) — 募集案内に、学費を支える制度が記されていた。申請には本人や世帯の事情を示す書類が必要らしい。
+- [edu_employer_sponsored_course](#event-edu_employer_sponsored_course) — 職場に、仕事に関わる講習の費用を支援する案内が回ってきた。勤務を続ける約束が要るのか、返還の条件があるのか、細かな字まで確かめた。
+- [edu_education_credit_terms](#event-edu_education_credit_terms) — 学費の貸付について、返済の期日と支払額が細かく書かれていた。今の納付を助けても、将来の暮らしに負担が残る。
+- [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_study_work_balance](#event-edu_study_work_balance) — 働きながら受けられる講習があると聞いた。勤務と授業の時間を並べると、家の用事まで含めて休める時間が少なくなりそうだった。
+- [edu_admission_document_missing](#event-edu_admission_document_missing) — 次の学校に提出するため、前に学んだことを示す記録を探した。必要な書類が手元に見当たらず、どこへ照会すればよいか尋ねた。
+- [edu_institution_specific_exclusion](#event-edu_institution_specific_exclusion) — 願書を受け取った人は記載を確かめ、しばらく奥の部屋へ消えた。戻ってきたとき、学校の決定は受入を見送るという短いものだった。
 - [edu_school_confidential_disclosure](#event-edu_school_confidential_disclosure) — 診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。
 - [edu_first_day_of_actual_school](#event-edu_first_day_of_actual_school) — 教室にはまだ誰も座っていない席があった。自分の名前が書かれた札を見つけ、鞄を机の横へ置く。窓の外では、登校してきた生徒たちの声が重なっていた。
+- [edu_teacher_shortage](#event-edu_teacher_shortage) — 黒板には前の授業の日付が残っている。担当の教え手が来られない日が続き、教室では予定した授業がなかなか進まなかった。
+- [edu_course_specific_equipment](#event-edu_course_specific_equipment) — 実習室の机には測定器と使い込まれた工具が並んでいた。先生は急いで触れないよう注意し、計測の順序を黒板に書いた。数値が少しずつ揃っていくのを見て、よう…
+- [edu_school_closed_by_disaster](#event-edu_school_closed_by_disaster) — 学校へ向かう道に人だかりができていた。校舎の一部が使えなくなり、授業再開の日取りもまだ決まらないと聞いた。鞄だけが、いつもどおり肩に掛かっている。
+- [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+- [edu_temporary_classroom](#event-edu_temporary_classroom) — 倉庫を片付けた一角に板を立て掛け、間に合わせの黒板を作った。外からは荷車の音が聞こえるが、先生は出席を取ろうとしている。
 - [edu_real_institution_transfer](#event-edu_real_institution_transfer) — 別の学校から受入の案内が届いた。以前の授業と進み方が違うらしく、持っている履修の記録を見せてほしいという。
+- [edu_exam_cancelled](#event-edu_exam_cancelled) — 試験を行わないという知らせが届いた。会場へ向かう前の者も、すでに門の前で待っていた者も、改めて予定を考えることになった。
 - [edu_graduation_record_review](#event-edu_graduation_record_review) — 学期の終わり、これまでの出席と評価を学校で照合することになった。休んだ年や別の学校で学んだ月も、同じ一行にはまとめられない。
+- [edu_former_teacher_meeting](#event-edu_former_teacher_meeting) — 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+- [edu_child_guardian_disagreement](#event-edu_child_guardian_disagreement) — 学校の話になると家の空気が重くなった。行ってみたいと告げたが、家の人は仕事や家計のことばかり気にしている。
+- [edu_sibling_school_cost_conflict](#event-edu_sibling_school_cost_conflict) — 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
 - [edu_roving_teacher_visit](#event-edu_roving_teacher_visit) — 隊商と一緒に来た人が、集会所の隅へ古い本を並べた。数日だけ文字と計算を教えてくれるという。
 - [edu_community_tent_learning](#event-edu_community_tent_learning) — 風を防ぐために布を二重に張り、倒れかけた木箱を机にした。板切れの上の文字を、子どもたちは交替で指差して読んでいる。
 - [edu_apprentice_literacy_exchange](#event-edu_apprentice_literacy_exchange) — 工房の親方は仕事のあとで帳面を開き、材料の数え方を教えてくれた。手を動かすだけでは済まない仕事が、思ったより多い。
@@ -18068,9 +18515,29 @@
 - [edu_clan_knowledge_transmission](#event-edu_clan_knowledge_transmission) — 年長者は小さな沢の前で足を止め、土の乾き方と風向きを確かめた。帰り道が分からなくなったとき、地図より先に見るものがあるという。
 - [edu_adult_evening_literacy](#event-edu_adult_evening_literacy) — 仕事帰りに灯りのついた部屋をのぞくと、机の上に短い文章が並んでいた。初めて来た人のために、先生は鉛筆を一本残してくれていた。
 - [edu_informal_skill_assessment](#event-edu_informal_skill_assessment) — これまでに覚えた仕事や読み書きの内容を書き出した。学校の外で身につけた腕を、どの資格なら審査してもらえるのか確かめる必要があった。
+- [edu_dependent_future_school_consult](#event-edu_dependent_future_school_consult) — 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+- [edu_region_yan_public_study](#event-edu_region_yan_public_study) — 書院の門前に、今期の講義と選抜試験の案内が貼られていた。雨除けの下で書き写す人々は、皆同じ試験を目指しているわけでもないらしい。
+- [edu_region_victoria_disrupted_college](#event-edu_region_victoria_disrupted_college) — 大学の回廊には、授業を休む知らせと再開する知らせが日付を変えて貼られていた。使える教室がいくつ残るのか、学生たちは案内の前で立ち止まっていた。
+- [edu_region_kazimierz_sponsor_training](#event-edu_region_kazimierz_sponsor_training) — 訓練場の外に、競技騎士の姿を刷った募集看板が立っていた。必要な用具と講習の費用が書かれ、支援が受けられるかどうかは別の欄に記されていた。
+- [edu_region_columbia_corporate_scholarship](#event-edu_region_columbia_corporate_scholarship) — 大学の掲示板に、企業が費用を支援する講習・研究課程の案内が貼られていた。支援額だけでなく、応募資格と返還の条件も読まなければならない。
+- [edu_region_higashi_dojo_learning](#event-edu_region_higashi_dojo_learning) — 道場の戸口に、稽古の時間が書かれていた。教え手が、初めてなら見学してもよいと声を掛けてきた。
+- [edu_region_iberia_closed_library](#event-edu_region_iberia_closed_library) — 潮の匂いが残る建物の扉には、かつての授業時間が彫られていた。中の本を使えるのか、今も教え手がいるのかは、外から見ただけでは分からない。
+- [edu_region_kazdel_school_rebuild](#event-edu_region_kazdel_school_rebuild) — 崩れた壁の上に新しい梁が渡され、雨の入らない部屋が一つできた。通りかかった人々が入口から中をのぞいていたが、授業が始まるかどうかはまだ分からない。
+- [edu_region_sami_clan_or_school](#event-edu_region_sami_clan_or_school) — 旅を共にする年長者は、雪の下の足跡の見分け方を教えてくれた。交易所の近くに文字を教える部屋があるとも聞いたが、確かなことはまだ分からない。
+- [edu_region_leithanien_arts_selectivity](#event-edu_region_leithanien_arts_selectivity) — 学院の案内板に、実技試験の課題と募集条件が書かれていた。扉の向こうから繰り返す旋律が聞こえるが、自分がどの授業に入れるかはまだ決まっていない。
+- [edu_region_kjerag_mountain_and_school](#event-edu_region_kjerag_mountain_and_school) — 谷の向こうの学校から入学案内が届いた。晴れた日なら道は見えるが、雪の季節には峠を越えられないと家の人は言う。
+- [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
+- [edu_region_bolivar_school_under_conflict](#event-edu_region_bolivar_school_under_conflict) — 校庭に子どもの姿はなく、雨の後の水たまりが残っていた。先生たちの行き先はばらばらで、学校の再開日も決まっていない。
+- [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
+- [edu_ursus_school_displacement_memory](#event-edu_ursus_school_displacement_memory) — 昔の学校がどうなったのかを知らせる便りが来た。あのとき教室で聞いた物音や、隣に座っていた友人の顔が、紙の文字を読むうちに浮かんできた。
+- [edu_ursus_school_bystander_memory](#event-edu_ursus_school_bystander_memory) — あの日の通りの様子を話す人がいた。学校の方から逃げてきた子どもたちの姿を、自分も見たことを思い出した。教室の中で何が起きたかまでは知らない。
+- [edu_student_public_meeting_distinction](#event-edu_student_public_meeting_distinction) — 広場の端に、人の輪ができていた。学校のことを話す声もあれば、働き口や街の暮らしを訴える声も聞こえる。
+- [edu_school_peer_exclusion_route](#event-edu_school_peer_exclusion_route) — 教室で机を動かす音がして、隣の席が空いた。こちらを見てひそひそ話す声は聞こえたが、何を言っているのかまでは分からなかった。
+- [edu_safety_for_disabled_student](#event-edu_safety_for_disabled_student) — 授業を受ける部屋までの道に、自分には使いづらい場所があった。別の入口を通れるのか、教室を変えてもらえるのか、学校へ相談しようと考えた。
+- [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-situation-314"></a>
-### 年齢：壮年（2240）
+### 年齢：壮年（2301）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -18738,7 +19205,7 @@
 - [daily_leithanien_56](#event-daily_leithanien_56) — 高価な抑制剤の処方箋を握りしめ、薬局の前で立ち尽くした。文化を誇る美しい都の足元で、見殺しにされる貧民の過酷な現実を痛感した。
 - [choice_leithanien_01](#event-choice_leithanien_01) — 偶然手に入れた招待状により、郊外の古城で巫王残党が禁忌のアーツ儀式を目論んでいる現場を知ってしまった。選帝侯の憲兵隊に通報するか、自ら真偽を確かめる…
 - [choice_leithanien_02](#event-choice_leithanien_02) — 数百年前の名工が遺した伝説のバイオリンが、響板の大破損状態であなたの工房（または知人の店）に持ち込まれた。修復に成功すれば世界に名が轟くが、失敗すれ…
-- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。名門音楽院への入学が認められたが、高額な制服代と教材費が払えず泣いている…
+- [choice_leithanien_03](#event-choice_leithanien_03) — スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。音楽を教わる先を探しているが、教材や身の回りの品を買う金もない。
 - [choice_leithanien_04](#event-choice_leithanien_04) — 名高い銘醸ブドウ畑の相続を巡り、伝統ある小作農家と新興の貴族商人の間で激しい係争が起きていた。地域の長老であるあなたに、仲裁の立会人としての要請が届…
 - [choice_leithanien_05](#event-choice_leithanien_05) — 選帝侯も臨席する大聖堂の演奏会直前、主役のチェロ奏者が急病で倒れた。楽団の控え奏者として舞台裏に控えていたあなたに、指揮者から「代役として協奏曲を弾…
 - [choice_leithanien_06](#event-choice_leithanien_06) — 好戦的な貴族が、聴く者の神経を破壊する非人道的な音波アーツ砲を秘密裏に試作していた。開発に協力させられそうになった技師から、設計図の破棄を手伝ってほ…
@@ -19344,7 +19811,7 @@
 - [choice_kazdel_02](#event-choice_kazdel_02) — テント酒場で見知らぬ外国の代理人から声をかけられた。「お前のような腕利きのサルカズが泥まみれで瓦礫を運ぶのは勿体ない。隣国の紛争地へ行けば、この金貨…
 - [choice_kazdel_03](#event-choice_kazdel_03) — 吹きさらしのテント暮らしを脱するため、数十家族が身を寄せ合える堅牢な石造り共同住宅の建設が始まった。寒風が吹きすさぶ中、レンガ積みと屋根架けの急ピッ…
 - [choice_kazdel_04](#event-choice_kazdel_04) — 瓦礫の撤去作業中、地下数メートルの地層から古代サルカズの楔形文字が刻まれた巨大な黒曜石の石板が発掘された。太古の歴史と失われたアーツ技術の手がかりが…
-- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教える寺子屋を開くことになっ…
+- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書き…
 - [choice_kazdel_06](#event-choice_kazdel_06) — 荒野から猛烈な突風を伴う砂嵐が吹き寄せてきた。移動集落の多くの天幕が浮き上がり、吹き飛ばされそうになっている。大槌を持って杭打ちに飛び出す決死の補強…
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
@@ -19688,7 +20155,7 @@
 - [life_rhodes_role_review](#event-life_rhodes_role_review) — ロドスの現地担当者から、今後の関わり方を尋ねる連絡が届いた。自分の体調や仕事の忙しさと照らし合わせ、これからどう付き合っていくか考えた。
 - [life_reunion_local_entry](#event-life_reunion_local_entry) — チェルノボーグの街区がレユニオンに占拠され、行き場を失った感染者とその家族が廃倉庫の片隅に身を寄せ合っていた。食料や薬を運ぶ人手が足りないという。力…
 - [life_reunion_order_conflict](#event-life_reunion_order_conflict) — 臨時拠点の配給所で、避難者を守るためにも全員が武器を取るべきだと息巻く声が上がった。周囲の仲間も意見が割れ、重苦しい空気が張りつめている。このまま配…
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
 - [life_ursus_school_aid_followup](#event-life_ursus_school_aid_followup) — （動的本文）
 - [life_ursus_school_aid_adult_followup](#event-life_ursus_school_aid_adult_followup) — 大人になって荷物を整理していた時、チェルノボーグの学校で書き留めた同級生たちの古い連絡先がひょっこり出てきた。あのまま行方が知れない仲間の名を指でな…
 - [life_infected_association_choice](#event-life_infected_association_choice) — 通りの商店の軒先に「感染者入店お断り」の木札が掲げられるようになり、町内の寄り合いでも感染者を職場や借家から締め出そうという声が勢いを増していた。会…
@@ -19839,7 +20306,7 @@
 - [infection_low_pressure_routine_service](#event-infection_low_pressure_routine_service) — 診療所からの帰り道、立ち寄った食堂で袖口からのぞく黒い結晶に店主が一瞬だけ目を留めた。だが何も聞かず、いつもの調子で注文を尋ねてくれた。ただ、奥にい…
 - [family_child_future](#event-family_child_future) — 大きくなった{kid}のこれからについて、近しい仲間や家族と膝を突き合わせた。鉱山や工場の見習いに入るか、よそへ学びに出るか、それとも独立するか。最…
 - [family_child_bereavement](#event-family_child_bereavement) — {childDeathTiming}、{kid}が亡くなったという知らせが突然届いた。なぜ死ななければならなかったのか、詳しいことさえ分からなかった…
-- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との…
+- [life_ursus_student_assembly_later](#event-life_ursus_student_assembly_later) — あの冬の事件から何年もが過ぎた。学びの場や仕事、住まいが以前とは変わった人も多い。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の…
 - [life_ursus_student_assembly_pause_review](#event-life_ursus_student_assembly_pause_review) — あの冬のあと、学生連合の活動から距離を置いて数年が経った。街でかつての知人の噂を耳にし、無事を確かめたい思いが胸をかすめる。今の平穏な暮らしを守りつ…
 - [life_leithanian_civic_entry](#event-life_leithanian_civic_entry) — 川にかかる橋の踏み板が抜けてから、荷車は毎日ぐるりと遠回りを強いられていた。街角の集会所では、住民たちの声を集めて領主側の役人へ修繕を掛け合おうとい…
 - [life_leithanian_civic_routine](#event-life_leithanian_civic_routine) — 街角の集まりに顔を出すようになってから、橋だけでなく石畳の陥没や街灯の故障まで様々な苦情が持ち込まれるようになった。今夜も仕事終わりに集会所へ集まる…
@@ -19873,7 +20340,7 @@
 - [family_spouse_infected_housing_pressure](#event-family_spouse_infected_housing_pressure) — 離れて暮らす{sp}のアパートで、契約更新の紙に健康状態を詳しく書くよう求められたという。病名は伏せていたが、肌の表面の結晶や通院の様子から勘づかれ…
 - [family_spouse_housing_choice](#event-family_spouse_housing_choice) — 離れて暮らす{sp}から、今の部屋の家賃や、もう少し落ち着いて眠れる場所に移りたいという相談が届いた。貸間の案内を見比べながら、相部屋にするか、今の…
 - [family_divorce_child_residence](#event-family_divorce_child_residence) — 別れた相手の訃報が届いた。手紙には、残された子どもが今誰の元で暮らしているのかまでは書かれていなかった。すぐにこちらで引き取ると伝えるか、親族に居場…
-- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから散り散りになった昔の同級生から、短い葉書が届いた。あの日から細々と便りを続けてきたが、お互い住む街も仕事もすっかり変わった。これか…
+- [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
@@ -20071,7 +20538,7 @@
 - [car_urs_guard_entry](#event-car_urs_guard_entry) — ツンドラの冷風が吹きすさぶ兵舎で、国境警備部隊と感染者鉱山を監視する憲兵の徴募が行われていた。厳しい学歴は問われず、頑丈な体さえあれば誰でも雇われる…
 - [car_urs_academy_entry](#event-car_urs_academy_entry) — 巨大な軍用装甲列車や重工業都市の設計を手掛けるウルサス帝国科学院。硬質な鉄と源石動力の極致を追求するこの研究機関で、構造工学と動力回路の専門技師が募…
 - [car_vic_infantry_entry](#event-car_vic_infantry_entry) — ヴィクトリアの各都市で、正規陸軍の平民歩兵の募集が行われていた。伝統と栄光を謳う帝国だが、平民出身の兵士はどれほど戦功を立てても下士官止まりであり、…
-- [car_vic_royal_entry](#event-car_vic_royal_entry) — ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推…
+- [car_vic_royal_entry](#event-car_vic_royal_entry) — ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要…
 - [car_vic_scribe_entry](#event-car_vic_scribe_entry) — ロンディニウム中央議会や地方市議会の議事堂で、公爵や伯爵たちの議案や法律文書を記録・整理する書記官が募集されていた。貴族の利権調整と汚職の嵐に巻き込…
 - [car_vic_works_entry](#event-car_vic_works_entry) — 巨大な蒸気機関車と鉄鋼レールが並ぶヴィクトリアの鉄道工廠。産業革命の鼓動が響くこの巨大施設で、高圧蒸気パイプラインや機関車エンジンの整備を担う技術者…
 - [car_lei_golden_entry](#event-car_lei_golden_entry) — 双子女帝の座すツヴィリングトゥルムの回廊で、金律法衛の選考審査が開かれていた。リターニアの調和とアーツ法典を執行する選ばれし魔道士たち。一音の狂いも…
@@ -20221,7 +20688,7 @@
 - [people_school_life_conversation](#event-people_school_life_conversation) — （動的本文）
 - [people_clinic_life_conversation](#event-people_clinic_life_conversation) — 待合いの人波がようやく引いた頃、見慣れた受付の担当者が肩を回しながら伝票の束を揃えていた。もうすぐ交代の時間らしい。
 - [people_work_care_schedule](#event-people_work_care_schedule) — 顔なじみの同僚から、家族の看病でどうしても手が離せず、来週のシフトを少し代わってもらえないかと小声で頼まれた。こちらにも自分の持ち場がある。
-- [people_school_housing_concern](#event-people_school_housing_concern) — 授業が終わったあと、顔なじみの教え手が重い教材箱の蓋を閉じた。今借りている相部屋では夜に机を広げるゆとりもないと聞く。後片づけを手伝うか、次の授業の…
+- [people_school_housing_concern](#event-people_school_housing_concern) — 顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。
 - [people_clinic_skill_continuity](#event-people_clinic_skill_continuity) — 顔なじみの受付係が、新しく書き直した案内札を前に首をひねっていた。声をかけると、初めて来る患者にもすぐ伝わる言い回しを考えているところだと言う。
 - [job_contract_review_v76](#event-job_contract_review_v76) — 手渡された雇用契約書には、給金や勤務時間だけでなく、怪我や破損の責任まで細かい文字でびっしり並んでいた。何度読み返しても、自分に有利なのか不利なのか…
 - [job_contract_negotiation_v76](#event-job_contract_negotiation_v76) — 今の仕事にもだいぶ手が馴染み、周囲より多くの荷や工程を回せるようになってきた。責任者が一人で帳面をつけている隙を見て、給金の色をつけてもらえないか切…
@@ -20299,10 +20766,51 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+- [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
+- [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
+- [edu_upper_locality_review](#event-edu_upper_locality_review) — 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+- [edu_higher_search_decision](#event-edu_higher_search_decision) — 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
+- [edu_applicant_institution_shortlist](#event-edu_applicant_institution_shortlist) — 集めた募集案内を広げると、同じ分野でも選抜の方法や通う場所が違っていた。日帰りできそうな学校もあれば、住まいを考え直す必要のある学校もあった。
+- [edu_school_opening_not_admission](#event-edu_school_opening_not_admission) — 確かめた学校の校舎は残っていたが、希望する課程への募集は今期行われていなかった。窓口には理由と次の予定を尋ねる人がいた。
+- [edu_course_admission_contract](#event-edu_course_admission_contract) — 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
+- [edu_secondary_gap_reentry](#event-edu_secondary_gap_reentry) — 学校を離れて何度も季節が過ぎた。以前使っていた教材を持って相談すると、教員はどこまで学んでいたかを一つずつ尋ねた。
+- [edu_overage_equivalency_review](#event-edu_overage_equivalency_review) — 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
+- [edu_no_path_year_close](#event-edu_no_path_year_close) — 願書と時刻表を片付ける時期になった。調べた範囲では今年の入学先を決められなかったが、また学ぶ道まで閉ざされたわけではない。
+- [edu_route_first_fare](#event-edu_route_first_fare) — 一回分の運賃を確かめ、往復の日数を掛けてみた。毎日通うと、学費のほかにも少なくない金と時間が要る。
+- [edu_route_weather_closure](#event-edu_route_weather_closure) — 学校へ向かう便が運休になり、発着所には行き先の消された板が掛かっていた。天気が戻るまでの何日かで済むのか、誰にも分からない。
+- [edu_mobile_city_separation](#event-edu_mobile_city_separation) — 昨日まで使えた都市間の連絡便が、しばらく止まるという。学校の校舎は残っているが、いつもの時刻にはたどり着けなくなった。
+- [edu_boarding_application](#event-edu_boarding_application) — 学校から寮の案内が届いた。部屋の広さ、食事代、必要な保証人の欄が並んでいる。申し込めることと、実際に部屋を借りられることは別だった。
+- [edu_boarding_rules_review](#event-edu_boarding_rules_review) — 寮の管理人は、消灯時刻と外泊の届けを説明した。ここで暮らすなら、家から仕送りが届かない月も考えておかなければならない。
+- [edu_relative_lodging](#event-edu_relative_lodging) — 遠方に暮らす親戚から、しばらくなら空き部屋を使ってよいと便りが来た。返事には、家事の分担についても書いてある。
+- [edu_school_relocation_family](#event-edu_school_relocation_family) — 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+- [edu_crossborder_documents](#event-edu_crossborder_documents) — 遠方の学校へ行くために、途中でどんな身分証明が必要か尋ねた。国境を越える道には、移動を許されるか確かめる場所があるという。
+- [edu_classroom_language_gate](#event-edu_classroom_language_gate) — 募集の説明には、まだ意味をつかめない言葉があった。授業で話される言葉も、教本の文字も、今の自分にどこまで分かるか心配だった。
+- [edu_commute_daily_fatigue](#event-edu_commute_daily_fatigue) — まだ暗いうちに家を出た。乗り継ぎの待ち時間に教科書を開いたものの、車体が揺れるたびに字を追い直す。教室に着いたころには、すでに半日働いたような疲れが…
+- [edu_route_recovered_notice](#event-edu_route_recovered_notice) — 運休していた便が再び走り始めたと聞いた。新しい時刻表には、以前とは違う数字が並んでいる。今の暮らしで使えるかどうかは、改めて確かめなければならない。
+- [edu_fee_itemization](#event-edu_fee_itemization) — 学校から届いた授業料の案内とは別に、教材と通学、住まいの見積を集めた。今日必要な金と、毎年掛かる金を分けて数えることにした。
+- [edu_entrance_exam_journey](#event-edu_entrance_exam_journey) — 受験案内に、集合時刻と会場の場所が書かれていた。まだ合否の分からない学校まで行くために、家では旅費を数え直した。
+- [edu_scholarship_application](#event-edu_scholarship_application) — 募集案内に、学費を支える制度が記されていた。申請には本人や世帯の事情を示す書類が必要らしい。
+- [edu_employer_sponsored_course](#event-edu_employer_sponsored_course) — 職場に、仕事に関わる講習の費用を支援する案内が回ってきた。勤務を続ける約束が要るのか、返還の条件があるのか、細かな字まで確かめた。
+- [edu_education_credit_terms](#event-edu_education_credit_terms) — 学費の貸付について、返済の期日と支払額が細かく書かれていた。今の納付を助けても、将来の暮らしに負担が残る。
+- [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_study_work_balance](#event-edu_study_work_balance) — 働きながら受けられる講習があると聞いた。勤務と授業の時間を並べると、家の用事まで含めて休める時間が少なくなりそうだった。
+- [edu_admission_document_missing](#event-edu_admission_document_missing) — 次の学校に提出するため、前に学んだことを示す記録を探した。必要な書類が手元に見当たらず、どこへ照会すればよいか尋ねた。
+- [edu_institution_specific_exclusion](#event-edu_institution_specific_exclusion) — 願書を受け取った人は記載を確かめ、しばらく奥の部屋へ消えた。戻ってきたとき、学校の決定は受入を見送るという短いものだった。
 - [edu_school_confidential_disclosure](#event-edu_school_confidential_disclosure) — 診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。
 - [edu_first_day_of_actual_school](#event-edu_first_day_of_actual_school) — 教室にはまだ誰も座っていない席があった。自分の名前が書かれた札を見つけ、鞄を机の横へ置く。窓の外では、登校してきた生徒たちの声が重なっていた。
+- [edu_teacher_shortage](#event-edu_teacher_shortage) — 黒板には前の授業の日付が残っている。担当の教え手が来られない日が続き、教室では予定した授業がなかなか進まなかった。
+- [edu_course_specific_equipment](#event-edu_course_specific_equipment) — 実習室の机には測定器と使い込まれた工具が並んでいた。先生は急いで触れないよう注意し、計測の順序を黒板に書いた。数値が少しずつ揃っていくのを見て、よう…
+- [edu_school_closed_by_disaster](#event-edu_school_closed_by_disaster) — 学校へ向かう道に人だかりができていた。校舎の一部が使えなくなり、授業再開の日取りもまだ決まらないと聞いた。鞄だけが、いつもどおり肩に掛かっている。
+- [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+- [edu_temporary_classroom](#event-edu_temporary_classroom) — 倉庫を片付けた一角に板を立て掛け、間に合わせの黒板を作った。外からは荷車の音が聞こえるが、先生は出席を取ろうとしている。
 - [edu_real_institution_transfer](#event-edu_real_institution_transfer) — 別の学校から受入の案内が届いた。以前の授業と進み方が違うらしく、持っている履修の記録を見せてほしいという。
+- [edu_exam_cancelled](#event-edu_exam_cancelled) — 試験を行わないという知らせが届いた。会場へ向かう前の者も、すでに門の前で待っていた者も、改めて予定を考えることになった。
 - [edu_graduation_record_review](#event-edu_graduation_record_review) — 学期の終わり、これまでの出席と評価を学校で照合することになった。休んだ年や別の学校で学んだ月も、同じ一行にはまとめられない。
+- [edu_former_teacher_meeting](#event-edu_former_teacher_meeting) — 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+- [edu_child_guardian_disagreement](#event-edu_child_guardian_disagreement) — 学校の話になると家の空気が重くなった。行ってみたいと告げたが、家の人は仕事や家計のことばかり気にしている。
+- [edu_sibling_school_cost_conflict](#event-edu_sibling_school_cost_conflict) — 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
 - [edu_roving_teacher_visit](#event-edu_roving_teacher_visit) — 隊商と一緒に来た人が、集会所の隅へ古い本を並べた。数日だけ文字と計算を教えてくれるという。
 - [edu_community_tent_learning](#event-edu_community_tent_learning) — 風を防ぐために布を二重に張り、倒れかけた木箱を机にした。板切れの上の文字を、子どもたちは交替で指差して読んでいる。
 - [edu_apprentice_literacy_exchange](#event-edu_apprentice_literacy_exchange) — 工房の親方は仕事のあとで帳面を開き、材料の数え方を教えてくれた。手を動かすだけでは済まない仕事が、思ったより多い。
@@ -20311,6 +20819,26 @@
 - [edu_clan_knowledge_transmission](#event-edu_clan_knowledge_transmission) — 年長者は小さな沢の前で足を止め、土の乾き方と風向きを確かめた。帰り道が分からなくなったとき、地図より先に見るものがあるという。
 - [edu_adult_evening_literacy](#event-edu_adult_evening_literacy) — 仕事帰りに灯りのついた部屋をのぞくと、机の上に短い文章が並んでいた。初めて来た人のために、先生は鉛筆を一本残してくれていた。
 - [edu_informal_skill_assessment](#event-edu_informal_skill_assessment) — これまでに覚えた仕事や読み書きの内容を書き出した。学校の外で身につけた腕を、どの資格なら審査してもらえるのか確かめる必要があった。
+- [edu_dependent_future_school_consult](#event-edu_dependent_future_school_consult) — 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+- [edu_region_yan_public_study](#event-edu_region_yan_public_study) — 書院の門前に、今期の講義と選抜試験の案内が貼られていた。雨除けの下で書き写す人々は、皆同じ試験を目指しているわけでもないらしい。
+- [edu_region_victoria_disrupted_college](#event-edu_region_victoria_disrupted_college) — 大学の回廊には、授業を休む知らせと再開する知らせが日付を変えて貼られていた。使える教室がいくつ残るのか、学生たちは案内の前で立ち止まっていた。
+- [edu_region_kazimierz_sponsor_training](#event-edu_region_kazimierz_sponsor_training) — 訓練場の外に、競技騎士の姿を刷った募集看板が立っていた。必要な用具と講習の費用が書かれ、支援が受けられるかどうかは別の欄に記されていた。
+- [edu_region_columbia_corporate_scholarship](#event-edu_region_columbia_corporate_scholarship) — 大学の掲示板に、企業が費用を支援する講習・研究課程の案内が貼られていた。支援額だけでなく、応募資格と返還の条件も読まなければならない。
+- [edu_region_higashi_dojo_learning](#event-edu_region_higashi_dojo_learning) — 道場の戸口に、稽古の時間が書かれていた。教え手が、初めてなら見学してもよいと声を掛けてきた。
+- [edu_region_iberia_closed_library](#event-edu_region_iberia_closed_library) — 潮の匂いが残る建物の扉には、かつての授業時間が彫られていた。中の本を使えるのか、今も教え手がいるのかは、外から見ただけでは分からない。
+- [edu_region_kazdel_school_rebuild](#event-edu_region_kazdel_school_rebuild) — 崩れた壁の上に新しい梁が渡され、雨の入らない部屋が一つできた。通りかかった人々が入口から中をのぞいていたが、授業が始まるかどうかはまだ分からない。
+- [edu_region_sami_clan_or_school](#event-edu_region_sami_clan_or_school) — 旅を共にする年長者は、雪の下の足跡の見分け方を教えてくれた。交易所の近くに文字を教える部屋があるとも聞いたが、確かなことはまだ分からない。
+- [edu_region_leithanien_arts_selectivity](#event-edu_region_leithanien_arts_selectivity) — 学院の案内板に、実技試験の課題と募集条件が書かれていた。扉の向こうから繰り返す旋律が聞こえるが、自分がどの授業に入れるかはまだ決まっていない。
+- [edu_region_kjerag_mountain_and_school](#event-edu_region_kjerag_mountain_and_school) — 谷の向こうの学校から入学案内が届いた。晴れた日なら道は見えるが、雪の季節には峠を越えられないと家の人は言う。
+- [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
+- [edu_region_bolivar_school_under_conflict](#event-edu_region_bolivar_school_under_conflict) — 校庭に子どもの姿はなく、雨の後の水たまりが残っていた。先生たちの行き先はばらばらで、学校の再開日も決まっていない。
+- [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
+- [edu_ursus_school_displacement_memory](#event-edu_ursus_school_displacement_memory) — 昔の学校がどうなったのかを知らせる便りが来た。あのとき教室で聞いた物音や、隣に座っていた友人の顔が、紙の文字を読むうちに浮かんできた。
+- [edu_ursus_school_bystander_memory](#event-edu_ursus_school_bystander_memory) — あの日の通りの様子を話す人がいた。学校の方から逃げてきた子どもたちの姿を、自分も見たことを思い出した。教室の中で何が起きたかまでは知らない。
+- [edu_student_public_meeting_distinction](#event-edu_student_public_meeting_distinction) — 広場の端に、人の輪ができていた。学校のことを話す声もあれば、働き口や街の暮らしを訴える声も聞こえる。
+- [edu_school_peer_exclusion_route](#event-edu_school_peer_exclusion_route) — 教室で机を動かす音がして、隣の席が空いた。こちらを見てひそひそ話す声は聞こえたが、何を言っているのかまでは分からなかった。
+- [edu_safety_for_disabled_student](#event-edu_safety_for_disabled_student) — 授業を受ける部屋までの道に、自分には使いづらい場所があった。別の入口を通れるのか、教室を変えてもらえるのか、学校へ相談しようと考えた。
+- [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-situation-315"></a>
 ### 年齢：乳児（15）
@@ -20365,7 +20893,7 @@
 - [v77_social_stigma_family](#event-v77_social_stigma_family) — 町の食堂に入ると、感染者の隣人が隅の卓で一人黙々と匙を動かしていた。あからさまに席を立つ客もいれば、小さく会釈して通り過ぎる人もいる。家の大人の目が…
 
 <a id="tag-situation-317"></a>
-### 年齢：老年（1444）
+### 年齢：老年（1505）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -21140,7 +21668,7 @@
 - [daily_kazdel_57](#event-daily_kazdel_57) — 崩れた日干し煉瓦の壁に腰掛け、復興していく街並みを静かに眺めた。幾度も踏みにじられても甦る同胞たちの生命力に涙が滲んだ。
 - [daily_kazdel_58](#event-daily_kazdel_58) — 若い世代に荒野の安全な井戸の場所と天候の読み方を教え伝えた。生き延びるための術を途切れさせず次代へ手渡した。
 - [daily_kazdel_60](#event-daily_kazdel_60) — 手元に余裕ができた折、復興支援の炊き出し小屋に立ち寄って温かいスープを配る手伝いをした。湯気の中ではにかむ子どもたちの笑顔に、心が洗われる思いがした…
-- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教える寺子屋を開くことになっ…
+- [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書き…
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
 - [daily_iberia_01](#event-daily_iberia_01) — 白壁の民家の路地で、天日に干された塩魚と完熟オリーブの素朴な昼餉をいただいた。塩気とオリーブ油の豊かな風味が滋味深く、歩き疲れた身体を満たした。
@@ -21370,7 +21898,7 @@
 - [life_rhodes_clinic_reschedule](#event-life_rhodes_clinic_reschedule) — 前回受け損ねたロドスの巡回診療について、次の訪問日程を知らせる便りが届いた。今度こそ仕事を休んで足を運べるか考えた。
 - [life_rhodes_care_review](#event-life_rhodes_care_review) — ロドスの薬を飲んでいても、肌の表面に浮かぶ黒い結晶が消えるわけではない。それでも進行を抑えるために治療を続けるか、日々の生活費との間で思案した。
 - [life_rhodes_role_review](#event-life_rhodes_role_review) — ロドスの現地担当者から、今後の関わり方を尋ねる連絡が届いた。自分の体調や仕事の忙しさと照らし合わせ、これからどう付き合っていくか考えた。
-- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下…
+- [life_chernobog_neighbourhood_reopening](#event-life_chernobog_neighbourhood_reopening) — 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
 - [life_infected_association_review](#event-life_infected_association_review) — 会を続けていくうちに場所代や物資の手配がかさみ、面倒な雑務もいつも同じ顔ぶれにばかり押しつけられるようになっていた。このまま会を引っ張り続けるか、後…
 - [life_infected_exclusion_consequence](#event-life_infected_exclusion_consequence) — 商店の軒先や下宿の入口に「感染者お断り」の札がずらりと並ぶようになった。安心したと喜ぶ住民がいる一方で、部屋を追い出された感染者の家族や常連客からは…
 - [life_infected_mutual_aid_shortage](#event-life_infected_mutual_aid_shortage) — 共同購入している抑制剤と日用品の値が跳ね上がり、会費を払えない世帯も出てきた。そこへ仕入れの遅れも重なり、わずかしか届かなかった薬と物資を誰から先に…
@@ -21513,8 +22041,8 @@
 - [elder_choice_craft_teaching](#event-elder_choice_craft_teaching) — 近所の若い見習い職人が、作業のコツが掴めずに悩んでいると耳にした。長年の現場経験で培った勘と技術を、次の世代へ教える機会が巡ってきた。
 - [elder_choice_community_mediator](#event-elder_choice_community_mediator) — 通りの住人同士で井戸水の使い方や通路の荷物をめぐる口論が起きていた。長年この区画で暮らしてきた古株として、間に入って仲裁するか問われた。
 - [elder_daily_grandchild_visit](#event-elder_daily_grandchild_visit) — 独立した子供が幼い孫を連れて顔を見せにやってきた。部屋中を元気いっぱいに駆け回る孫の笑顔を見つめるうちに、胸の奥から温かいものが込み上げた。
-- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — よその移動都市で暮らす子供や孫から近況を知らせる便りが届いた。ぎこちない文字で綴られた学校や遊びの報告を、眼鏡を掛け直して何度も嬉しそうに読み返した…
-- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫が学校へ上がる節目の年を迎えた。日頃の蓄えの中から、新しい教本や学用品を揃えるためのお祝いの品を用意したいと考えた。
+- [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — 子や孫から近況を知らせる便りが届いた。日々の遊びや家の出来事を綴った文字を、眼鏡を掛け直して何度も嬉しそうに読み返した。
+- [elder_choice_grandchild_gift](#event-elder_choice_grandchild_gift) — 孫の成長に合わせ、読み書きに使える品やお祝いの小遣いを贈りたいと思った。学校へ通えるかどうかは、本人たちの暮らしと受入先の事情を確かめてからの話だ。
 - [elder_choice_family_folklore](#event-elder_choice_family_folklore) — 夕暮れ時、暖炉の周りに集まった子供や孫たちから「昔のテラの大地や旅の話を聞かせてほしい」とせがまれた。
 - [elder_choice_write_memoir](#event-elder_choice_write_memoir) — 机に向かい、古びた手帳と万年筆を手に取った。激動のテラの大地で過ごした自らの人生の軌跡を、一冊の回顧録として書き残そうと考えた。
 - [elder_choice_make_will](#event-elder_choice_make_will) — 万が一の時に備え、公証人を招いて正式な遺言書を作成する機会を持った。これまで蓄えてきた財産や家財の処遇をどう定めるか熟考した。
@@ -21798,10 +22326,51 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment](#event-life_ursus_zelgrad_later_unemployment) — かつて避難先で暮らしを立て直し、次の仕事にも就いた。それでも今、また働き口を失っている。以前の選択をなかったことにはできないし、あのとき身につけた仕…
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
+- [edu_primary_area_check](#event-edu_primary_area_check) — 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+- [edu_neighbor_school_notice](#event-edu_neighbor_school_notice) — 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
+- [edu_primary_commute_guardian](#event-edu_primary_commute_guardian) — 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
+- [edu_upper_locality_review](#event-edu_upper_locality_review) — 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+- [edu_higher_search_decision](#event-edu_higher_search_decision) — 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
+- [edu_applicant_institution_shortlist](#event-edu_applicant_institution_shortlist) — 集めた募集案内を広げると、同じ分野でも選抜の方法や通う場所が違っていた。日帰りできそうな学校もあれば、住まいを考え直す必要のある学校もあった。
+- [edu_school_opening_not_admission](#event-edu_school_opening_not_admission) — 確かめた学校の校舎は残っていたが、希望する課程への募集は今期行われていなかった。窓口には理由と次の予定を尋ねる人がいた。
+- [edu_course_admission_contract](#event-edu_course_admission_contract) — 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
+- [edu_secondary_gap_reentry](#event-edu_secondary_gap_reentry) — 学校を離れて何度も季節が過ぎた。以前使っていた教材を持って相談すると、教員はどこまで学んでいたかを一つずつ尋ねた。
+- [edu_overage_equivalency_review](#event-edu_overage_equivalency_review) — 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
+- [edu_no_path_year_close](#event-edu_no_path_year_close) — 願書と時刻表を片付ける時期になった。調べた範囲では今年の入学先を決められなかったが、また学ぶ道まで閉ざされたわけではない。
+- [edu_route_first_fare](#event-edu_route_first_fare) — 一回分の運賃を確かめ、往復の日数を掛けてみた。毎日通うと、学費のほかにも少なくない金と時間が要る。
+- [edu_route_weather_closure](#event-edu_route_weather_closure) — 学校へ向かう便が運休になり、発着所には行き先の消された板が掛かっていた。天気が戻るまでの何日かで済むのか、誰にも分からない。
+- [edu_mobile_city_separation](#event-edu_mobile_city_separation) — 昨日まで使えた都市間の連絡便が、しばらく止まるという。学校の校舎は残っているが、いつもの時刻にはたどり着けなくなった。
+- [edu_boarding_application](#event-edu_boarding_application) — 学校から寮の案内が届いた。部屋の広さ、食事代、必要な保証人の欄が並んでいる。申し込めることと、実際に部屋を借りられることは別だった。
+- [edu_boarding_rules_review](#event-edu_boarding_rules_review) — 寮の管理人は、消灯時刻と外泊の届けを説明した。ここで暮らすなら、家から仕送りが届かない月も考えておかなければならない。
+- [edu_relative_lodging](#event-edu_relative_lodging) — 遠方に暮らす親戚から、しばらくなら空き部屋を使ってよいと便りが来た。返事には、家事の分担についても書いてある。
+- [edu_school_relocation_family](#event-edu_school_relocation_family) — 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+- [edu_crossborder_documents](#event-edu_crossborder_documents) — 遠方の学校へ行くために、途中でどんな身分証明が必要か尋ねた。国境を越える道には、移動を許されるか確かめる場所があるという。
+- [edu_classroom_language_gate](#event-edu_classroom_language_gate) — 募集の説明には、まだ意味をつかめない言葉があった。授業で話される言葉も、教本の文字も、今の自分にどこまで分かるか心配だった。
+- [edu_commute_daily_fatigue](#event-edu_commute_daily_fatigue) — まだ暗いうちに家を出た。乗り継ぎの待ち時間に教科書を開いたものの、車体が揺れるたびに字を追い直す。教室に着いたころには、すでに半日働いたような疲れが…
+- [edu_route_recovered_notice](#event-edu_route_recovered_notice) — 運休していた便が再び走り始めたと聞いた。新しい時刻表には、以前とは違う数字が並んでいる。今の暮らしで使えるかどうかは、改めて確かめなければならない。
+- [edu_fee_itemization](#event-edu_fee_itemization) — 学校から届いた授業料の案内とは別に、教材と通学、住まいの見積を集めた。今日必要な金と、毎年掛かる金を分けて数えることにした。
+- [edu_entrance_exam_journey](#event-edu_entrance_exam_journey) — 受験案内に、集合時刻と会場の場所が書かれていた。まだ合否の分からない学校まで行くために、家では旅費を数え直した。
+- [edu_scholarship_application](#event-edu_scholarship_application) — 募集案内に、学費を支える制度が記されていた。申請には本人や世帯の事情を示す書類が必要らしい。
+- [edu_employer_sponsored_course](#event-edu_employer_sponsored_course) — 職場に、仕事に関わる講習の費用を支援する案内が回ってきた。勤務を続ける約束が要るのか、返還の条件があるのか、細かな字まで確かめた。
+- [edu_education_credit_terms](#event-edu_education_credit_terms) — 学費の貸付について、返済の期日と支払額が細かく書かれていた。今の納付を助けても、将来の暮らしに負担が残る。
+- [edu_unpaid_commute_cost_review](#event-edu_unpaid_commute_cost_review) — 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
+- [edu_household_tuition_discussion](#event-edu_household_tuition_discussion) — 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+- [edu_study_work_balance](#event-edu_study_work_balance) — 働きながら受けられる講習があると聞いた。勤務と授業の時間を並べると、家の用事まで含めて休める時間が少なくなりそうだった。
+- [edu_admission_document_missing](#event-edu_admission_document_missing) — 次の学校に提出するため、前に学んだことを示す記録を探した。必要な書類が手元に見当たらず、どこへ照会すればよいか尋ねた。
+- [edu_institution_specific_exclusion](#event-edu_institution_specific_exclusion) — 願書を受け取った人は記載を確かめ、しばらく奥の部屋へ消えた。戻ってきたとき、学校の決定は受入を見送るという短いものだった。
 - [edu_school_confidential_disclosure](#event-edu_school_confidential_disclosure) — 診察のため授業を休む日のことを、誰に話すか考えた。担任にだけ相談する方法も、学校の担当窓口へ知らせる方法もある。
 - [edu_first_day_of_actual_school](#event-edu_first_day_of_actual_school) — 教室にはまだ誰も座っていない席があった。自分の名前が書かれた札を見つけ、鞄を机の横へ置く。窓の外では、登校してきた生徒たちの声が重なっていた。
+- [edu_teacher_shortage](#event-edu_teacher_shortage) — 黒板には前の授業の日付が残っている。担当の教え手が来られない日が続き、教室では予定した授業がなかなか進まなかった。
+- [edu_course_specific_equipment](#event-edu_course_specific_equipment) — 実習室の机には測定器と使い込まれた工具が並んでいた。先生は急いで触れないよう注意し、計測の順序を黒板に書いた。数値が少しずつ揃っていくのを見て、よう…
+- [edu_school_closed_by_disaster](#event-edu_school_closed_by_disaster) — 学校へ向かう道に人だかりができていた。校舎の一部が使えなくなり、授業再開の日取りもまだ決まらないと聞いた。鞄だけが、いつもどおり肩に掛かっている。
+- [edu_teacher_evacuated](#event-edu_teacher_evacuated) — 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+- [edu_temporary_classroom](#event-edu_temporary_classroom) — 倉庫を片付けた一角に板を立て掛け、間に合わせの黒板を作った。外からは荷車の音が聞こえるが、先生は出席を取ろうとしている。
 - [edu_real_institution_transfer](#event-edu_real_institution_transfer) — 別の学校から受入の案内が届いた。以前の授業と進み方が違うらしく、持っている履修の記録を見せてほしいという。
+- [edu_exam_cancelled](#event-edu_exam_cancelled) — 試験を行わないという知らせが届いた。会場へ向かう前の者も、すでに門の前で待っていた者も、改めて予定を考えることになった。
 - [edu_graduation_record_review](#event-edu_graduation_record_review) — 学期の終わり、これまでの出席と評価を学校で照合することになった。休んだ年や別の学校で学んだ月も、同じ一行にはまとめられない。
+- [edu_former_teacher_meeting](#event-edu_former_teacher_meeting) — 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+- [edu_child_guardian_disagreement](#event-edu_child_guardian_disagreement) — 学校の話になると家の空気が重くなった。行ってみたいと告げたが、家の人は仕事や家計のことばかり気にしている。
+- [edu_sibling_school_cost_conflict](#event-edu_sibling_school_cost_conflict) — 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
 - [edu_roving_teacher_visit](#event-edu_roving_teacher_visit) — 隊商と一緒に来た人が、集会所の隅へ古い本を並べた。数日だけ文字と計算を教えてくれるという。
 - [edu_community_tent_learning](#event-edu_community_tent_learning) — 風を防ぐために布を二重に張り、倒れかけた木箱を机にした。板切れの上の文字を、子どもたちは交替で指差して読んでいる。
 - [edu_apprentice_literacy_exchange](#event-edu_apprentice_literacy_exchange) — 工房の親方は仕事のあとで帳面を開き、材料の数え方を教えてくれた。手を動かすだけでは済まない仕事が、思ったより多い。
@@ -21810,6 +22379,26 @@
 - [edu_clan_knowledge_transmission](#event-edu_clan_knowledge_transmission) — 年長者は小さな沢の前で足を止め、土の乾き方と風向きを確かめた。帰り道が分からなくなったとき、地図より先に見るものがあるという。
 - [edu_adult_evening_literacy](#event-edu_adult_evening_literacy) — 仕事帰りに灯りのついた部屋をのぞくと、机の上に短い文章が並んでいた。初めて来た人のために、先生は鉛筆を一本残してくれていた。
 - [edu_informal_skill_assessment](#event-edu_informal_skill_assessment) — これまでに覚えた仕事や読み書きの内容を書き出した。学校の外で身につけた腕を、どの資格なら審査してもらえるのか確かめる必要があった。
+- [edu_dependent_future_school_consult](#event-edu_dependent_future_school_consult) — 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+- [edu_region_yan_public_study](#event-edu_region_yan_public_study) — 書院の門前に、今期の講義と選抜試験の案内が貼られていた。雨除けの下で書き写す人々は、皆同じ試験を目指しているわけでもないらしい。
+- [edu_region_victoria_disrupted_college](#event-edu_region_victoria_disrupted_college) — 大学の回廊には、授業を休む知らせと再開する知らせが日付を変えて貼られていた。使える教室がいくつ残るのか、学生たちは案内の前で立ち止まっていた。
+- [edu_region_kazimierz_sponsor_training](#event-edu_region_kazimierz_sponsor_training) — 訓練場の外に、競技騎士の姿を刷った募集看板が立っていた。必要な用具と講習の費用が書かれ、支援が受けられるかどうかは別の欄に記されていた。
+- [edu_region_columbia_corporate_scholarship](#event-edu_region_columbia_corporate_scholarship) — 大学の掲示板に、企業が費用を支援する講習・研究課程の案内が貼られていた。支援額だけでなく、応募資格と返還の条件も読まなければならない。
+- [edu_region_higashi_dojo_learning](#event-edu_region_higashi_dojo_learning) — 道場の戸口に、稽古の時間が書かれていた。教え手が、初めてなら見学してもよいと声を掛けてきた。
+- [edu_region_iberia_closed_library](#event-edu_region_iberia_closed_library) — 潮の匂いが残る建物の扉には、かつての授業時間が彫られていた。中の本を使えるのか、今も教え手がいるのかは、外から見ただけでは分からない。
+- [edu_region_kazdel_school_rebuild](#event-edu_region_kazdel_school_rebuild) — 崩れた壁の上に新しい梁が渡され、雨の入らない部屋が一つできた。通りかかった人々が入口から中をのぞいていたが、授業が始まるかどうかはまだ分からない。
+- [edu_region_sami_clan_or_school](#event-edu_region_sami_clan_or_school) — 旅を共にする年長者は、雪の下の足跡の見分け方を教えてくれた。交易所の近くに文字を教える部屋があるとも聞いたが、確かなことはまだ分からない。
+- [edu_region_leithanien_arts_selectivity](#event-edu_region_leithanien_arts_selectivity) — 学院の案内板に、実技試験の課題と募集条件が書かれていた。扉の向こうから繰り返す旋律が聞こえるが、自分がどの授業に入れるかはまだ決まっていない。
+- [edu_region_kjerag_mountain_and_school](#event-edu_region_kjerag_mountain_and_school) — 谷の向こうの学校から入学案内が届いた。晴れた日なら道は見えるが、雪の季節には峠を越えられないと家の人は言う。
+- [edu_region_rim_mining_training](#event-edu_region_rim_mining_training) — 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
+- [edu_region_bolivar_school_under_conflict](#event-edu_region_bolivar_school_under_conflict) — 校庭に子どもの姿はなく、雨の後の水たまりが残っていた。先生たちの行き先はばらばらで、学校の再開日も決まっていない。
+- [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
+- [edu_ursus_school_displacement_memory](#event-edu_ursus_school_displacement_memory) — 昔の学校がどうなったのかを知らせる便りが来た。あのとき教室で聞いた物音や、隣に座っていた友人の顔が、紙の文字を読むうちに浮かんできた。
+- [edu_ursus_school_bystander_memory](#event-edu_ursus_school_bystander_memory) — あの日の通りの様子を話す人がいた。学校の方から逃げてきた子どもたちの姿を、自分も見たことを思い出した。教室の中で何が起きたかまでは知らない。
+- [edu_student_public_meeting_distinction](#event-edu_student_public_meeting_distinction) — 広場の端に、人の輪ができていた。学校のことを話す声もあれば、働き口や街の暮らしを訴える声も聞こえる。
+- [edu_school_peer_exclusion_route](#event-edu_school_peer_exclusion_route) — 教室で机を動かす音がして、隣の席が空いた。こちらを見てひそひそ話す声は聞こえたが、何を言っているのかまでは分からなかった。
+- [edu_safety_for_disabled_student](#event-edu_safety_for_disabled_student) — 授業を受ける部屋までの道に、自分には使いづらい場所があった。別の入口を通れるのか、教室を変えてもらえるのか、学校へ相談しようと考えた。
+- [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-situation-318"></a>
 ### 排斥への参加・黙認・拒否（1）
@@ -52207,6 +52796,9 @@ s => {
     "age": 14
   },
   "who": "self",
+  "show": {
+    "dynamicFunction": "s => educationLegacySceneGuard(s,\"education_school_classroom\") &&\n        educationP17SchoolExperience(s,\"arts-selection-exam\") &&\n        Object.values(s.world?.educationWorld?.offerings||{}).some(o =>\n          o.institutionId===s.educationPath?.institutionId && o.stage===\"arts\" &&\n          [\"open\",\"limited\"].includes(educationSchoolStatusAt(s,o.id,s.year,s.mo)?.admissionStatus))"
+  },
   "w": 1.2,
   "once": true
 }
@@ -102652,6 +103244,9 @@ s => {
     "感染診断済",
     "隠蔽"
   ],
+  "show": {
+    "dynamicFunction": "s => Object.values(s.educationCases?.items||{}).some(item=>\n      item.stage===\"arts\" && item.targetInstitutionId &&\n      item.history?.some(h=>h.action===\"exam-result\" && h.at?.year===s.year) &&\n      s.educationAccess?.notices?.[item.applicationId] &&\n      educationRecipientInfectionKnowledge(s,{\n        institutionId:item.targetInstitutionId,recipientKind:\"institution\"\n      }).status!==\"institution-confirmed\")"
+  },
   "fx": {
     "p": -2,
     "cr": 1
@@ -102861,7 +103456,14 @@ s => {
 
 ### 本文
 
-> 学内コンクールの本選を聴講した。同世代の圧倒的な超絶技巧と豊かな表現力に強い刺激を受け、練習への闘志を燃え上がらせた。
+**動的本文**：実行時状態から文章を組み立てます。本文を一つに固定せず、生成関数を示します。
+
+```js
+s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
+      educationP17SchoolExperience(s,"music-competition") ?
+      "学内コンクールの本選を聴講した。同世代の演奏家が技術を競い合い、講評を聞きながら自分の練習を振り返った。" :
+      "公開された演奏会へ足を運んだ。舞台の上で音を重ねる同世代の演奏家を眺め、自分ももう一度楽器に触れてみたくなった。"
+```
 
 ### 発生条件・構造
 
@@ -102876,7 +103478,9 @@ s => {
   "need": [
     "国:リターニア"
   ],
-  "show": "就学中",
+  "show": {
+    "dynamicFunction": "s => s.res?.n===\"リターニア\""
+  },
   "fx": {
     "p": 2,
     "cr": 1
@@ -103285,7 +103889,7 @@ s => {
 
 ### 本文
 
-> スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。名門音楽院への入学が認められたが、高額な制服代と教材費が払えず泣いている。
+> スラム出身の孤児の少年が、壊れかけのフルートで驚くべき天賦の才を見せていた。音楽を教わる先を探しているが、教材や身の回りの品を買う金もない。
 
 ### 発生条件・構造
 
@@ -103317,7 +103921,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-choice_leithanien_03-0"></a>
-選択肢文：私財を投じて少年の奨学金全額を用立てる
+選択肢文：必要な教材と身支度の費用を渡す
 
 表示・選択条件と補助情報：
 
@@ -103338,7 +103942,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 少年は見事に音楽院をトップで卒業し、大劇場の首席奏者に抜擢された。恩人として生涯の敬愛を捧げられた。
+> 少年に教材と身支度の費用を手渡した。教わる場所が見つかるかはまだ分からないが、少年は楽器を胸に抱え、何度も頭を下げた。
 
 効果：
 
@@ -103380,7 +103984,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 市民たちの温かい善意を結集して学費を集めきった。少年は深々とお辞儀をして学舎へ旅立った。
+> 町の人々から教材代の寄付が少しずつ集まった。少年とともに受け入れてくれる教え手を探し、募金の使い道を記録した。
 
 効果：
 
@@ -145113,7 +145717,7 @@ s => {
 
 ### 本文
 
-> 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教える寺子屋を開くことになった。
+> 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書きの手伝いを始めようと、近所の人たちが声を掛け合った。
 
 ### 発生条件・構造
 
@@ -145169,7 +145773,7 @@ s => {
 
 - **結果 1（設定確率 90%）**
 
-> 子供たちは目を輝かせて勉強に夢中になり、自分の名前を書けるようになった！ 親代わりの保護者たちから涙を流して感謝された！
+> 数人の子に文字を教え、名前を一文字ずつ書き直すのを見守った。授業を続けられるかは、これから教え手や場所を確かめる必要がある。
 
 効果：
 
@@ -145185,7 +145789,7 @@ s => {
 
 - **結果 2（設定確率 10%）**
 
-> 元気すぎる子供たちに振り回されて声を枯らしたが、確かな学びの場を作った。
+> 子どもたちに何度も同じ字を教えて声を枯らした。今日の授業は終えたが、継続して教える人はまだ決まっていない。
 
 効果：
 
@@ -145225,7 +145829,7 @@ s => {
 
 - **結果 1（設定確率 85%）**
 
-> ダンボール箱いっぱいの文具が集まり、子供たち全員にノートを行き渡らせた！
+> 寄付された文具を数え、必要な子どもに行き渡るよう整理した。足りない分は今後も集めることになった。
 
 効果：
 
@@ -145274,7 +145878,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 寒風の吹き込まない温かい学び舎を整え、子供たちを風邪から守った。
+> 天幕の裾を補強し、風の入り込む隙間を塞いだ。授業を行える日に備えて、火の元と避難路も確かめた。
 
 効果：
 
@@ -154944,6 +155548,9 @@ s => {
   "need": [
     "国:ボリバル"
   ],
+  "show": {
+    "dynamicFunction": "s => Object.values(s.world?.educationWorld?.campuses||{}).some(c=>{\n        if(c.educationAreaId!==s.local?.educationAreaId)return false;\n        const inst=s.world.educationWorld.institutions[c.institutionId];\n        return inst?.offeringIds?.some(id=>\n          educationSchoolStatusAt(s,id,s.year,s.mo)?.campusStatus===\"destroyed\");\n      })"
+  },
   "w": 0.8,
   "cd": 9
 }
@@ -154981,7 +155588,7 @@ s => {
 
 - **結果 1（設定確率 85%）**
 
-> 見事に明るく清潔な教室が蘇った！ 開校式で子供たちと親たちから割れんばかりの拍手を浴びた！
+> 教室の屋根の一部を張り直し、机と黒板を使える場所へ運んだ。学校の開校日や教員の確保は、今後の運営者の判断を待つことになった。
 
 効果：
 
@@ -154998,7 +155605,7 @@ s => {
 
 - **結果 2（設定確率 15%）**
 
-> 釘で指を怪我してしまったが、立派な学び舎を完成させた。
+> 釘で指を怪我したが、壊れた屋根の補修を少し進めた。授業を再開できるかは、別に確かめなければならない。
 
 効果：
 
@@ -155038,7 +155645,7 @@ s => {
 
 - **結果 1（設定確率 85%）**
 
-> 大量の図書と文具が届き、立派な図書コーナーが新設された！
+> 寄付された本と文具を仕分け、乾いた部屋に置いた。図書室として使えるようになるかは、校舎の復旧を待つ必要がある。
 
 効果：
 
@@ -155087,7 +155694,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 子供たちが思い切り駆け回れる校庭を作り、笑顔を見届けた。
+> 校庭の瓦礫を片付け、子どもたちが通る場所から危険な物を除いた。授業の再開についてはまだ知らせがない。
 
 効果：
 
@@ -169450,13 +170057,9 @@ s => {
     "青年",
     "壮年"
   ],
-  "need": [
-    "arts_enrolled",
-    "voc"
-  ],
-  "ban": [
-    "arts_grad"
-  ],
+  "show": {
+    "dynamicFunction": "s => s.fl?.arts_grad===1 &&\n        s.educationPath?.completed?.includes(\"arts\") &&\n        !!s.educationRecord?.enrollments?.some(x=>x.program===\"arts\" &&\n          !!x.institutionId && !!x.offeringId)"
+  },
   "ge": {
     "age": 18
   },
@@ -169508,10 +170111,6 @@ s => {
 ```json
 {
   "job": 11,
-  "fl": {
-    "arts_grad": 1,
-    "arts_enrolled": 0
-  },
   "cr": 3,
   "p": 2
 }
@@ -169528,10 +170127,6 @@ s => {
 
 ```json
 {
-  "fl": {
-    "arts_grad": 1,
-    "arts_enrolled": 0
-  },
   "p": -2
 }
 ```
@@ -169556,10 +170151,6 @@ s => {
 
 ```json
 {
-  "fl": {
-    "arts_grad": 1,
-    "arts_enrolled": 0
-  },
   "p": 1
 }
 ```
@@ -180216,7 +180807,7 @@ s => {
 
 ### 本文
 
-> 傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下には戻ってこない生徒たちの空席がいくつも並んでいた。
+> 傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。
 
 ### 発生条件・構造
 
@@ -180241,7 +180832,7 @@ s => {
     "都市:チェルノボーグ"
   ],
   "show": {
-    "dynamicFunction": "s =>\n      !!s.world?.events?.chernobog_incident && (s.year > 1097 || (s.year === 1097 && s.mo >= 2))"
+    "dynamicFunction": "s => !!s.world?.events?.chernobog_incident &&\n      (s.year>1097 || (s.year===1097 && s.mo>=2)) &&\n      Object.values(s.world?.educationWorld?.offerings||{}).some(o=>{\n        if(o.stage!==\"lower\" ||\n          s.world.educationWorld.campuses[o.campusId]?.educationAreaId !==\n          s.local?.educationAreaId)return false;\n        const before=educationSchoolStatusAt(s,o.id,1096,12),\n          now=educationSchoolStatusAt(s,o.id,s.year,s.mo??0);\n        return !!before && !!now && before.teachingEquivalent===0 &&\n          now.teachingEquivalent>0;\n      })"
   },
   "ge": {
     "year": 1097,
@@ -180361,7 +180952,18 @@ s => {
 
 ### 本文
 
-> 混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持ちの食料を分け合おうとしている。窓の外では、街を脱出する人々の列が雪煙の中を動いていた。
+**動的本文**：実行時状態から文章を組み立てます。本文を一つに固定せず、生成関数を示します。
+
+```js
+s => {
+      const student=educationMigrationCurrent(s),campus=student &&
+        s.world?.educationWorld?.campuses?.[student.m.campusId];
+      return student && student.enroll.startedYear<=1096 && campus &&
+        campus.educationAreaId===s.local?.educationAreaId ?
+        "混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持ちの食料を分け合おうとしている。窓の外では、街を脱出する人々の列が雪煙の中を動いていた。" :
+        "チェルノボーグの通りに避難する人々があふれた。学校の方角からも子どもたちが駆けてくる。何が教室で起きたかは分からないまま、近くの大人に逃げ道を尋ねるか考えた。";
+    }
+```
 
 ### 発生条件・構造
 
@@ -180394,7 +180996,7 @@ s => {
     1
   ],
   "show": {
-    "dynamicFunction": "s => {\n      const student=educationMigrationCurrent(s),campus=student &&\n        s.world.educationWorld.campuses?.[student.m.campusId];\n      return !!s.world?.events?.chernobog_incident && !!student &&\n        student.enroll.startedYear<=1096 && !!campus &&\n        campus.educationAreaId===s.local?.educationAreaId;\n    }"
+    "dynamicFunction": "s => !!s.world?.events?.chernobog_incident &&\n      !!s.local?.educationAreaId"
   },
   "once": true,
   "w": 0.4
@@ -180487,7 +181089,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-life_ursus_school_aid-1"></a>
-選択肢文：生き延びることを最優先し、学校を出て避難の列に飛び込む
+選択肢文：生き延びることを最優先し、避難の列に加わる
 
 旧シム観測：表示 0、選択可能 0
 
@@ -180496,7 +181098,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> ちりぢりになる同級生たちの声を背後に聞きながら、避難民の波へ駆け込んだ。誰が無事に逃げ延びたのかも分からないまま街を離れた。
+> 遠くで呼び合う人々の声を聞きながら、避難民の波へ駆け込んだ。誰が無事に逃げ延びたのかも分からないまま街を離れた。
 
 効果：
 
@@ -180662,7 +181264,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-life_ursus_school_aid_followup-1"></a>
-選択肢文：家族と別の土地へ移るため、書き留めた連絡先を信頼できる大人に託す
+選択肢文：今後の連絡のため、書き留めた宛先を信頼できる大人に託す
 
 旧シム観測：表示 0、選択可能 0
 
@@ -180671,7 +181273,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 遠くの街へ移り住むことになり、もし後から尋ねてくる子がいたら渡してほしいと近所の大人に控えを託した。新しい土地で生きるのに必死で、振り返る余裕はなかった。
+> もし後から尋ねてくる人がいたら伝えてほしいと、近所の大人に宛先の控えを託した。自分は当面、日々の生活を整えることにした。
 
 効果：
 
@@ -180688,9 +181290,6 @@ s => {
     "entity": "チェルノボーグの同級生連絡先",
     "kind": "student-handover",
     "description": "家族の転居前、同級生の連絡先を近所の大人へ託した"
-  },
-  "fl": {
-    "war_displaced": 1
   },
   "p": 1
 }
@@ -180805,7 +181404,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 連絡がつく同級生へ久しぶりに手紙を書き、互いの無事を確かめ合った。年に一度、あの冬を生き延びた証として近況を送り合うことにした。
+> 以前の同級生の宛先へ久しぶりに手紙を書いた。返事が届くかは分からないが、年に一度でも近況を尋ねられるように住所を控え直した。
 
 効果：
 
@@ -197903,7 +198502,7 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
 #### 選択肢 2
 
 <a id="choice-family_sibling_birth-1"></a>
-選択肢文：自分の学校や日課をこれまで通り続ける
+選択肢文：自分の日課をこれまで通り続ける
 
 旧シム観測：表示 54074、選択可能 54074
 
@@ -197912,7 +198511,7 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
 
 - **結果 1（設定確率 100%）**
 
-> 赤ん坊が生まれて家の中は急に賑やかになった。学校や自分の日課はこれまで通り続けたが、夜中に泣き声で目が覚めることもあった。
+> 赤ん坊が生まれて家の中は急に賑やかになった。いつもの日課を続けようとしたが、夜中に泣き声で目が覚めることもあった。
 
 効果：
 
@@ -197940,7 +198539,7 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
 
 - **結果 1（設定確率 100%）**
 
-> 赤ん坊は可愛かったが、家の財布がさらに寂しくなる不安は消えなかった。言いつけられた水汲みや掃除をこなしながら、新しいノートを買っていいものかためらった。
+> 赤ん坊は可愛かったが、家の財布がさらに寂しくなる不安は消えなかった。水汲みや掃除をこなしながら、自分に必要な品を買ってよいかためらった。
 
 効果：
 
@@ -205558,7 +206157,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 
 ### 本文
 
-> あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との平穏な暮らしを思いながら、返事を書くか迷った。
+> あの冬の事件から何年もが過ぎた。学びの場や仕事、住まいが以前とは変わった人も多い。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との平穏な暮らしを思いながら、返事を書くか迷った。
 
 ### 発生条件・構造
 
@@ -208508,7 +209107,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 
 ### 本文
 
-> よその移動都市で暮らす子供や孫から近況を知らせる便りが届いた。ぎこちない文字で綴られた学校や遊びの報告を、眼鏡を掛け直して何度も嬉しそうに読み返した。
+> 子や孫から近況を知らせる便りが届いた。日々の遊びや家の出来事を綴った文字を、眼鏡を掛け直して何度も嬉しそうに読み返した。
 
 ### 発生条件・構造
 
@@ -208560,7 +209159,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 
 ### 本文
 
-> 孫が学校へ上がる節目の年を迎えた。日頃の蓄えの中から、新しい教本や学用品を揃えるためのお祝いの品を用意したいと考えた。
+> 孫の成長に合わせ、読み書きに使える品やお祝いの小遣いを贈りたいと思った。学校へ通えるかどうかは、本人たちの暮らしと受入先の事情を確かめてからの話だ。
 
 ### 発生条件・構造
 
@@ -213000,7 +213599,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 
 ### 本文
 
-> チェルノボーグから散り散りになった昔の同級生から、短い葉書が届いた。あの日から細々と便りを続けてきたが、お互い住む街も仕事もすっかり変わった。これからも年に一度の便りを続けるか、連絡網の世話役を誰かに引き継ぐか、ふと考えた。
+> チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分からない。これからも年に一度の便りを続けるか、連絡網の世話役を誰かに引き継ぐか、考えた。
 
 ### 発生条件・構造
 
@@ -217287,9 +217886,7 @@ s =>
 ```json
 {
   "show": {
-    "need": [
-      "就学中"
-    ]
+    "dynamicFunction": "s => educationLegacySceneGuard(s,\"education_school_classroom\")"
   }
 }
 ```
@@ -241769,7 +242366,7 @@ s => {
 
 ### 本文
 
-> ロンディニウムの王立前衛学校――各大公爵（ウェリントン、カスター、ウィンダミア等）に連なる名門貴族の令息令嬢が集う最高峰の士官養成校。巨額の学資と推薦状を揃えた者だけが、金糸の軍服をまとい将校として軍の頂点へ迎えられる。
+> ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要な条件を確かめることにした。
 
 ### 発生条件・構造
 
@@ -241806,7 +242403,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-car_vic_royal_entry-0"></a>
-選択肢文：推薦状と巨額の軍官買い取り金を差し出す
+選択肢文：推薦状と経歴を提出し、採用審査を受ける
 
 表示・選択条件と補助情報：
 
@@ -241825,7 +242422,7 @@ s => {
 
 - **結果 1（設定確率 35%）**
 
-> 推薦状の家格と教養を認められ、公爵軍の少尉任官が確定した。サーベルと白手袋を支給され、華麗だが謀略渦巻くエリート将校の世界へ踏み出す。
+> これまでの経験を確認され、軍務の仕事に採用された。配属先の規則と装備の扱いを教わり、新しい職場で働き始めた。
 
 効果：
 
@@ -241864,7 +242461,7 @@ s => {
 
 - **結果 2（設定確率 40%）**
 
-> 家柄の格がわずかに足りず、公爵家令から『二百五十万龍門幣相当の裏金を用意せねば枠はない』と告げられた。借金を背負い、辛うじて少尉の座を買い取った。
+> 採用の口利きには多額の金が必要だと告げられた。不透明な借入条件を受け入れ、軍務の職場へ入ったが、重い返済義務が残った。
 
 効果：
 
@@ -241903,7 +242500,7 @@ s => {
 
 - **結果 3（設定確率 25%）**
 
-> 『何処の馬の骨か知れぬ者が士官を望むなど片腹痛い』と公爵家令に冷笑され、追い出された。
+> 提出した経歴を見た担当者に冷たく断られた。採用理由は説明されず、持ち帰った書類の角だけが折れていた。
 
 効果：
 
@@ -241918,7 +242515,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-car_vic_royal_entry-1"></a>
-選択肢文：貴族社会の虚飾を嫌い、身を引く
+選択肢文：採用条件が合わないため、応募を見送る
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -241927,7 +242524,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 足の引っ張り合いが日常の貴族軍閥を敬遠し、別の道を歩むことにした。
+> 募集の条件を控えたうえで応募を見送り、ほかの働き口を探し始めた。
 
 効果：
 
@@ -255342,9 +255939,7 @@ s => {
 ```json
 {
   "show": {
-    "need": [
-      "就学中"
-    ]
+    "dynamicFunction": "s => educationLegacySceneGuard(s,\"education_school_classroom\")"
   }
 }
 ```
@@ -259926,7 +260521,7 @@ s => {
 
 ### 本文
 
-> 通っている学び舎で教室が閉まる日が増え、集会所の隅や空き部屋を借りて細々と授業が行われるようになった。いつ元の教室へ戻れるのかは、先生にも分からないらしい。
+> 通っている学校で授業を開けない日が増えた。校門には休止と教材配布の知らせが貼られ、別の部屋で教えてもらえるのか、先生もまだ確かめているという。
 
 ### 発生条件・構造
 
@@ -259944,9 +260539,11 @@ s => {
     "青年"
   ],
   "need": [
-    "就学中",
-    "学び舎の通常授業が制限中"
+    "就学中"
   ],
+  "show": {
+    "dynamicFunction": "s => {\n          const current=educationMigrationCurrent(s);\n          if(!current)return false;\n          const state=educationSchoolStatusAt(s,current.offering.id,s.year,s.mo);\n          return !!state && state.teachingEquivalent<1;\n        }"
+  },
   "cd": 4,
   "w": 0.9
 }
@@ -260004,7 +260601,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 片づけをしていた先生に声をかけると、週に二度だけ別の部屋で質問を受け付けると教えてくれた。
+> 片づけをしていた先生に声を掛け、質問を受け付けられる日と場所を尋ねた。予定が分かれば改めて知らせてくれるという。
 
 効果：
 
@@ -260082,9 +260679,11 @@ s => {
     "青年"
   ],
   "need": [
-    "就学中",
-    "学び舎の授業が再開した"
+    "就学中"
   ],
+  "show": {
+    "dynamicFunction": "s => {\n          const current=educationMigrationCurrent(s);\n          if(!current||!(s.mo>=1&&s.mo<=12))return false;\n          const now=educationSchoolStatusAt(s,current.offering.id,s.year,s.mo),\n            before=educationSchoolStatusAt(s,current.offering.id,\n              s.mo===1?s.year-1:s.year,s.mo===1?12:s.mo-1);\n          return !!now && !!before && now.teachingEquivalent>0 &&\n            before.teachingEquivalent<now.teachingEquivalent;\n        }"
+  },
   "cd": 6,
   "w": 0.92
 }
@@ -260655,7 +261254,7 @@ s => {
   "cd": 6,
   "w": 0.65,
   "show": {
-    "dynamicFunction": "s =>\n        !!s.fl?.sch && !$rules.facilities.facilityPersonFor(s, \"school\") && !$rules.conditions.restricted(s)"
+    "dynamicFunction": "s => !!educationMigrationCurrent(s) &&\n        educationLegacySceneGuard(s,\"education_school_classroom\") &&\n        !!educationLegacyTeacherContact(s,{known:false}) &&\n        !$rules.conditions.restricted(s)"
   }
 }
 ```
@@ -260689,10 +261288,7 @@ s => {
 
 ```json
 {
-  "facilityPersonAction": {
-    "kind": "school",
-    "action": "meet"
-  },
+  "educationAction": "legacy:teacher-meet",
   "k": 1
 }
 ```
@@ -260973,7 +261569,7 @@ s => {
   "cd": 5,
   "w": 0.54,
   "show": {
-    "dynamicFunction": "s => {\n        const p = $rules.facilities.facilityPersonFor(s, \"school\");\n        return !!p && s.year - p.metYear >= 2 && s.year - (p.contacts.at(-1)?.year ?? p.metYear) >= 2;\n      }"
+    "dynamicFunction": "s => !!educationLegacyTeacherContact(s,{known:true,minElapsed:2})"
   }
 }
 ```
@@ -261007,10 +261603,7 @@ s => {
 
 ```json
 {
-  "facilityPersonAction": {
-    "kind": "school",
-    "action": "ask"
-  },
+  "educationAction": "legacy:teacher-followup",
   "p": 1
 }
 ```
@@ -261289,7 +261882,7 @@ s => {
   "cd": 7,
   "w": 0.3,
   "show": {
-    "dynamicFunction": "s => {\n        const p = $rules.facilities.facilityPersonFor(s, \"school\");\n        return !!p && p.actualStatus === \"working\" && p.knownStatus === \"working\";\n      }"
+    "dynamicFunction": "s => !!educationLegacyTeacherContact(s,{known:true})"
   }
 }
 ```
@@ -261323,10 +261916,7 @@ s => {
 
 ```json
 {
-  "facilityPersonAction": {
-    "kind": "school",
-    "action": "help"
-  },
+  "educationAction": "legacy:teacher-help",
   "rl": 1
 }
 ```
@@ -262130,7 +262720,7 @@ s => {
 **動的本文**：実行時状態から文章を組み立てます。本文を一つに固定せず、生成関数を示します。
 
 ```js
-s => $rules.conditions.matches({ need: ["就学中"] }, s, $rules.conditions.inspectTags(s))
+s => educationLegacySceneGuard(s,"education_school_classroom")
         ? "授業後の教室で、いつも教えてくれる先生がチョークの粉を払いながら机を並べていた。授業以外の話をしたことはまだない。"
         : "夕暮れの道で再会したかつての恩師と、懐かしさに足をとめて言葉を交わした。教わっていた頃を思い出しながら、今の暮らしについて立ち話をする。"
 ```
@@ -262155,7 +262745,7 @@ s => $rules.conditions.matches({ need: ["就学中"] }, s, $rules.conditions.ins
   "cd": 6,
   "w": 0.42,
   "show": {
-    "dynamicFunction": "s => {\n        const p = $rules.facilities.facilityPersonFor(s, \"school\");\n        return (\n          !!p &&\n          p.actualStatus === \"working\" &&\n          p.contactState !== \"distant\" &&\n          s.year - p.metYear >= 1 &&\n          (!p.knownLife || s.year - p.knownLife.heardYear >= 3)\n        );\n      }"
+    "dynamicFunction": "s => !!educationLegacyTeacherContact(s,{known:true})"
   }
 }
 ```
@@ -262189,10 +262779,7 @@ s => $rules.conditions.matches({ need: ["就学中"] }, s, $rules.conditions.ins
 
 ```json
 {
-  "facilityPersonAction": {
-    "kind": "school",
-    "action": "talk"
-  },
+  "educationAction": "legacy:teacher-talk",
   "rl": 1
 }
 ```
@@ -262448,7 +263035,7 @@ s => $rules.conditions.matches({ need: ["就学中"] }, s, $rules.conditions.ins
 
 ### 本文
 
-> 授業が終わったあと、顔なじみの教え手が重い教材箱の蓋を閉じた。今借りている相部屋では夜に机を広げるゆとりもないと聞く。後片づけを手伝うか、次の授業の相談をするか。
+> 顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。
 
 ### 発生条件・構造
 
@@ -262470,7 +263057,7 @@ s => $rules.conditions.matches({ need: ["就学中"] }, s, $rules.conditions.ins
   "cd": 7,
   "w": 0.36,
   "show": {
-    "dynamicFunction": "s => {\n        const p = $rules.facilities.facilityPersonFor(s, \"school\");\n        return (\n          !!p &&\n          p.actualStatus === \"working\" &&\n          p.life &&\n          [\"shared\", \"temporary\"].includes(p.life.home) &&\n          p.contactState === \"familiar\"\n        );\n      }"
+    "dynamicFunction": "s => !!educationLegacyTeacherContact(s,{known:true})"
   }
 }
 ```
@@ -262504,10 +263091,7 @@ s => $rules.conditions.matches({ need: ["就学中"] }, s, $rules.conditions.ins
 
 ```json
 {
-  "facilityPersonAction": {
-    "kind": "school",
-    "action": "help"
-  },
+  "educationAction": "legacy:teacher-concern",
   "rl": 1
 }
 ```
@@ -270773,7 +271357,7 @@ s =>
   "cd": 8,
   "w": 0.54,
   "show": {
-    "dynamicFunction": "s => !!$terraData.v82p(s, \"school\") && !!s.fl?.sch"
+    "dynamicFunction": "s => educationLegacySceneGuard(s,\"education_school_classroom\") &&\n        !!educationLegacyTeacherContact(s,{known:true})"
   }
 }
 ```
@@ -270807,10 +271391,7 @@ s =>
 
 ```json
 {
-  "personTieAction": {
-    "kind": "school",
-    "action": "listen"
-  },
+  "educationAction": "legacy:teacher-lesson",
   "k": 1
 }
 ```
@@ -270835,10 +271416,7 @@ s =>
 
 ```json
 {
-  "personTieAction": {
-    "kind": "school",
-    "action": "respect-boundary"
-  },
+  "educationAction": "legacy:teacher-lesson",
   "k": 1
 }
 ```
@@ -270863,10 +271441,7 @@ s =>
 
 ```json
 {
-  "personTieAction": {
-    "kind": "school",
-    "action": "respect-boundary"
-  }
+  "educationAction": "legacy:teacher-lesson"
 }
 ```
 
@@ -275732,6 +276307,3824 @@ s => s.job > 0
 旧シム観測回数：未計測
 
 
+<a id="event-edu_primary_area_check"></a>
+## edu_primary_area_check
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：日常、教育・文化、移動・物流
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 家の人が学校の場所を尋ねて戻ってきた。今の地区では、通える初等の教室があるのか、はっきりした返事を得られなかった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_primary_area_check",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_primary_area_check-0"></a>
+選択肢文：隣の地区に学校がないか調べてもらう
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_primary_area_check-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 家の人は荷車の行き先や路線の案内を確かめ、隣の地区まで調べてみることにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E01:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_primary_area_check-1"></a>
+選択肢文：今は家で教わる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_primary_area_check-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 夕食のあと、使い古した紙の裏に文字を書いてみた。学校に通うことは見送っても、家で覚えられることはある。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E01:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_neighbor_school_notice"></a>
+## edu_neighbor_school_notice
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 頼んでいた学校の調査について、返事が届いた。通える学校が見つかったのか、手元の紙を開いて確かめた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_neighbor_school_notice",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_neighbor_school_notice-0"></a>
+選択肢文：見つかった学校に通学方法を尋ねる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_neighbor_school_notice-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 候補に挙がった学校へ手紙を出し、授業の始まる時刻と必要な書類を尋ねた。通えるかどうかは、まだ分からない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E02:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_neighbor_school_notice-1"></a>
+選択肢文：候補がないので今年は見送る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_neighbor_school_notice-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 調べた地区には募集先を見つけられなかった。地図の端に印を付け、別の地区を調べられる日を待つことにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E02:B"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-edu_neighbor_school_notice-2"></a>
+選択肢文：調べた学校の名だけ控えておく
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_neighbor_school_notice-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 確認できた学校の名前と場所を控え、紙を机にしまった。通えるかどうかの返事は、まだ出していない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E02:C"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_primary_commute_guardian"></a>
+## edu_primary_commute_guardian
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 候補の学校へ向かう便があるらしい。けれど、朝に着けても、授業のあとに戻れるとは限らない。家の人は時刻表を広げていた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_primary_commute_guardian",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_primary_commute_guardian-0"></a>
+選択肢文：家の人に送り迎えを頼む
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_primary_commute_guardian-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 家の人は勤務の時刻と往復の便を見比べ、送り迎えのできる日を確かめた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E03:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_primary_commute_guardian-1"></a>
+選択肢文：今年は遠くの学校へ通わない
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_primary_commute_guardian-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 小さな鞄は部屋の隅に掛けたままにした。入学をあきらめたことまで、勉強をやめる理由にはしたくなかった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E03:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_upper_locality_review"></a>
+## edu_upper_locality_review
+
+- 出典位置：data/education/p17-reviewed-prose.js:104
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：家族・介護、教育・文化、移動・物流
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 上の学校へ進もうと集めた案内には、今住む地区の外にある学校ばかりが載っていた。まだ調べていない場所も残るが、道の長さが気になった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_upper_locality_review",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_upper_locality_review-0"></a>
+選択肢文：近隣の学校と通学手段を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_upper_locality_review-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 家族で机を囲み、通える街と運賃を一つずつ書き出した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E05:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_upper_locality_review-1"></a>
+選択肢文：寄宿や転居が必要な進学先を調べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_upper_locality_review-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 遠い学校の募集要項を取り寄せた。学費とは別に、住む場所をどうするか考えなければならなかった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E05:B"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-edu_upper_locality_review-2"></a>
+選択肢文：進学を延期する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_upper_locality_review-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 授業の続きが書かれたノートは捨てずに残した。働きながら、もう一度機会を待つことにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E05:C"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_higher_search_decision"></a>
+## edu_higher_search_decision
+
+- 出典位置：data/education/p17-reviewed-prose.js:131
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 進学の話をすると、知人は遠い街の学校について話した。どんな課程を教えているのか、願書を受け付けているのか、まだ何も確かめていない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_higher_search_decision",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_higher_search_decision-0"></a>
+選択肢文：志望課程を持つ学校を照会する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_higher_search_decision-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 学校の案内を集め、授業科目と所在地の欄に印を付けた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E06:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_higher_search_decision-1"></a>
+選択肢文：今期は出願を見送る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_higher_search_decision-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 集めた案内をしまい、仕事や家事の予定を立て直した。今回は願書を出しておらず、試験の結果もない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E06:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_applicant_institution_shortlist"></a>
+## edu_applicant_institution_shortlist
+
+- 出典位置：data/education/p17-reviewed-prose.js:152
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 集めた募集案内を広げると、同じ分野でも選抜の方法や通う場所が違っていた。日帰りできそうな学校もあれば、住まいを考え直す必要のある学校もあった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_applicant_institution_shortlist",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_applicant_institution_shortlist-0"></a>
+選択肢文：通える候補を一校に絞って相談する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_applicant_institution_shortlist-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 自分の学力と暮らしを考え、願書を出したい学校に丸を付けた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E07:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_applicant_institution_shortlist-1"></a>
+選択肢文：条件の合う学校がないので探し直す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_applicant_institution_shortlist-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 紙を並べ替え、今は手の届かない進路と、まだ調べていない道を分けて書いた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E07:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_school_opening_not_admission"></a>
+## edu_school_opening_not_admission
+
+- 出典位置：data/education/p17-reviewed-prose.js:173
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 確かめた学校の校舎は残っていたが、希望する課程への募集は今期行われていなかった。窓口には理由と次の予定を尋ねる人がいた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_school_opening_not_admission",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_school_opening_not_admission-0"></a>
+選択肢文：別の学校を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_school_opening_not_admission-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 閉じた門の前で立ち止まるのはやめ、別の学び舎の案内を探しに歩いた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E08:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_school_opening_not_admission-1"></a>
+選択肢文：再開を待つ
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_school_opening_not_admission-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 募集のなかった課程と問い合わせ先を書き留めた。次に募集があるかは、まだ分からない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E08:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_course_admission_contract"></a>
+## edu_course_admission_contract
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 志望校から入学を認める通知が届いた。始業までに必要な書類と費用、住まいのことを改めて確かめなければならない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_course_admission_contract",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_course_admission_contract-0"></a>
+選択肢文：条件を満たして入学を確定する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_course_admission_contract-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 必要な書類と支払いを確認し、学校へ入学の意思を伝えた。学籍が成立したことを知らせる控えを受け取った。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E09:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_course_admission_contract-1"></a>
+選択肢文：合格は辞退する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_course_admission_contract-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 許可状を丁寧に畳んだ。手に届いた席を手放すことになったが、受けていた試験の結果は消えない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E09:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_secondary_gap_reentry"></a>
+## edu_secondary_gap_reentry
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 学校を離れて何度も季節が過ぎた。以前使っていた教材を持って相談すると、教員はどこまで学んでいたかを一つずつ尋ねた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_secondary_gap_reentry",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_secondary_gap_reentry-0"></a>
+選択肢文：受け入れられる学年からやり直す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_secondary_gap_reentry-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 前の記録と今の力を確かめてもらい、学校から受入の返事を待つことになった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E10:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_secondary_gap_reentry-1"></a>
+選択肢文：今は学校外で学び続ける
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_secondary_gap_reentry-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 新しい時間割はもらわなかった。暮らしの合間に少しずつ覚え直せるよう、必要な教材だけ控えた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E10:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_overage_equivalency_review"></a>
+## edu_overage_equivalency_review
+
+- 出典位置：data/education/p17-reviewed-prose.js:238
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 何年も働いた手で、資格の案内を広げた。これまで学んだことを認めてもらう方法があるのか、実施科目と申請条件を確かめようとした。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_overage_equivalency_review",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_overage_equivalency_review-0"></a>
+選択肢文：認定課程の受講条件を調べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_overage_equivalency_review-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 講習の日程と働く時間を並べ、資格を得るまでの長さを数えた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E11:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_overage_equivalency_review-1"></a>
+選択肢文：仕事や家庭での学びを続ける
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_overage_equivalency_review-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 願書は出さず、手の届く本を一冊買うか借りることにした。今日覚えたことは無駄にはならない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E11:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_no_path_year_close"></a>
+## edu_no_path_year_close
+
+- 出典位置：data/education/p17-reviewed-prose.js:259
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 願書と時刻表を片付ける時期になった。調べた範囲では今年の入学先を決められなかったが、また学ぶ道まで閉ざされたわけではない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_no_path_year_close",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_no_path_year_close-0"></a>
+選択肢文：来年の募集を待ち、生活を立てる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_no_path_year_close-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 必要な書類を残し、明日からの暮らしを整えた。来年も募集があるか、改めて確かめるつもりでいる。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E12:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_no_path_year_close-1"></a>
+選択肢文：学校外の学びを探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_no_path_year_close-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 正規の学籍は得られなかったが、読み書きや技術を教えてくれる人を探し始めた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E12:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_route_first_fare"></a>
+## edu_route_first_fare
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 一回分の運賃を確かめ、往復の日数を掛けてみた。毎日通うと、学費のほかにも少なくない金と時間が要る。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_route_first_fare",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_route_first_fare-0"></a>
+選択肢文：定期便を使って通学する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_route_first_fare-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 行きと帰りの便を確かめ、通学のために必要な金額を家の支出に書き加えた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E13:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_route_first_fare-1"></a>
+選択肢文：寄宿先を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_route_first_fare-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 遠い道を毎日往復する代わりに、学校の近くで暮らせる場所がないか尋ねた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E13:B"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-edu_route_first_fare-2"></a>
+選択肢文：今期は断念する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_route_first_fare-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 時刻表を折って棚に置き、別の道を探すことにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E13:C"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_route_weather_closure"></a>
+## edu_route_weather_closure
+
+- 出典位置：data/education/p17-reviewed-prose.js:309
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 学校へ向かう便が運休になり、発着所には行き先の消された板が掛かっていた。天気が戻るまでの何日かで済むのか、誰にも分からない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_route_weather_closure",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_route_weather_closure-0"></a>
+選択肢文：別の道と臨時便を調べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_route_weather_closure-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 荷を運ぶ人に別の道を尋ね、今も通れる便があるか調べた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E14:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_route_weather_closure-1"></a>
+選択肢文：一時的に授業を休み、学校へ連絡する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_route_weather_closure-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 先生に事情を知らせ、欠席が続く日数を手帳へ記した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E14:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_mobile_city_separation"></a>
+## edu_mobile_city_separation
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化、移動・物流
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 昨日まで使えた都市間の連絡便が、しばらく止まるという。学校の校舎は残っているが、いつもの時刻にはたどり着けなくなった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_mobile_city_separation",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_mobile_city_separation-0"></a>
+選択肢文：学校の側に移り住む方法を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_mobile_city_separation-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 荷物の量と部屋の空きを数え、学校から離れずに済む住まいを探した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E15:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_mobile_city_separation-1"></a>
+選択肢文：遠距離通学を中断する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_mobile_city_separation-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 学校へ通えない事情を伝え、届いた課題だけを確かめた。欠席した授業を受けたことにはならない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E15:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_boarding_application"></a>
+## edu_boarding_application
+
+- 出典位置：data/education/p17-reviewed-prose.js:354
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：日常、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 学校から寮の案内が届いた。部屋の広さ、食事代、必要な保証人の欄が並んでいる。申し込めることと、実際に部屋を借りられることは別だった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_boarding_application",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_boarding_application-0"></a>
+選択肢文：寮へ申し込む
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_boarding_application-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 書類を揃えて申し込んだ。部屋が取れるかどうかは、学校からの返事を待つことになった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E16:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_boarding_application-1"></a>
+選択肢文：民間の下宿を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_boarding_application-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 寮の一覧から目を離し、学校の近くで部屋を貸している家を調べた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E16:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_boarding_rules_review"></a>
+## edu_boarding_rules_review
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：移動・物流
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 寮の管理人は、消灯時刻と外泊の届けを説明した。ここで暮らすなら、家から仕送りが届かない月も考えておかなければならない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_boarding_rules_review",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_boarding_rules_review-0"></a>
+選択肢文：必要条件を整えて入寮する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_boarding_rules_review-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 必要な書類を届け、決まった寝床へ荷物を運んだ。家を離れて過ごす最初の晩、同じ建物の生活音に耳を澄ませた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E17:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_boarding_rules_review-1"></a>
+選択肢文：入寮を取りやめる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_boarding_rules_review-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 鍵を受け取らず、外の家をもう一度探した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E17:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_relative_lodging"></a>
+## edu_relative_lodging
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：日常、家族・介護
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 遠方に暮らす親戚から、しばらくなら空き部屋を使ってよいと便りが来た。返事には、家事の分担についても書いてある。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_relative_lodging",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_relative_lodging-0"></a>
+選択肢文：条件を相談して世話になる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_relative_lodging-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 寝具を運び込み、朝の水汲みと夕食の手伝いを引き受けた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E18:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_relative_lodging-1"></a>
+選択肢文：礼を言って断る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_relative_lodging-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 招いてくれたことだけを手紙で伝えた。部屋を借りる話は、そこでいったん終わりにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E18:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_school_relocation_family"></a>
+## edu_school_relocation_family
+
+- 出典位置：data/education/p17-reviewed-prose.js:422
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：家族・介護、労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 学校のある街へ移るには、衣類だけを持てばよいわけではなかった。家族と離れて暮らす日々のことを考えると、荷造りの手が止まった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_school_relocation_family",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_school_relocation_family-0"></a>
+選択肢文：自分だけ新しい街で暮らす
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_school_relocation_family-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 移動と部屋の契約を済ませて、家族の戸口で荷を担ぎ直した。遠い教室へ通うため、しばらく別の場所で暮らすことになった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E19:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_school_relocation_family-1"></a>
+選択肢文：家族と一緒に移ることを相談する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_school_relocation_family-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 家賃と働き口を書き出して話し合った。皆が移れるかは、まだ決められなかった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E19:B"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-edu_school_relocation_family-2"></a>
+選択肢文：今の家に残る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_school_relocation_family-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 荷をほどき、入学先には進学を見送ると知らせた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E19:C"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_crossborder_documents"></a>
+## edu_crossborder_documents
+
+- 出典位置：data/education/p17-reviewed-prose.js:449
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 遠方の学校へ行くために、途中でどんな身分証明が必要か尋ねた。国境を越える道には、移動を許されるか確かめる場所があるという。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_crossborder_documents",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_crossborder_documents-0"></a>
+選択肢文：必要書類を申請する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_crossborder_documents-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 今使う道で必要と言われた書類を申請し、窓口からの返事を待った。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E20:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_crossborder_documents-1"></a>
+選択肢文：国内の候補校を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_crossborder_documents-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 願書をしまい、同じ課程を教える別の学校がないか探した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E20:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_classroom_language_gate"></a>
+## edu_classroom_language_gate
+
+- 出典位置：data/education/p17-reviewed-prose.js:473
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 募集の説明には、まだ意味をつかめない言葉があった。授業で話される言葉も、教本の文字も、今の自分にどこまで分かるか心配だった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_classroom_language_gate",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_classroom_language_gate-0"></a>
+選択肢文：準備講座か言語支援を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_classroom_language_gate-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 分からない言葉を紙に書き、ゆっくり話してくれる人を探した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E21:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_classroom_language_gate-1"></a>
+選択肢文：今期の出願を延期する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_classroom_language_gate-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 手続の意味を理解できるようになってから、改めて願書を出すことにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E21:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_commute_daily_fatigue"></a>
+## edu_commute_daily_fatigue
+
+- 出典位置：data/education/p17-reviewed-prose.js:494
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、自動発生イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> まだ暗いうちに家を出た。乗り継ぎの待ち時間に教科書を開いたものの、車体が揺れるたびに字を追い直す。教室に着いたころには、すでに半日働いたような疲れがあった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_commute_daily_fatigue",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  },
+  "fx": {
+    "educationAction": "event:E22:solo"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+選択肢なし。
+
+<a id="event-edu_route_recovered_notice"></a>
+## edu_route_recovered_notice
+
+- 出典位置：data/education/p17-reviewed-prose.js:502
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 運休していた便が再び走り始めたと聞いた。新しい時刻表には、以前とは違う数字が並んでいる。今の暮らしで使えるかどうかは、改めて確かめなければならない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_route_recovered_notice",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_route_recovered_notice-0"></a>
+選択肢文：今の暮らしに合うなら再び使う
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_route_recovered_notice-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 今の住まいからの往復時間と費用を確かめ、必要なら通学路を組み直すことにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E23:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_route_recovered_notice-1"></a>
+選択肢文：知らせだけ受け取る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_route_recovered_notice-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 時刻表を眺めてから、その場を離れた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E23:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_fee_itemization"></a>
+## edu_fee_itemization
+
+- 出典位置：data/education/p17-reviewed-prose.js:526
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 学校から届いた授業料の案内とは別に、教材と通学、住まいの見積を集めた。今日必要な金と、毎年掛かる金を分けて数えることにした。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_fee_itemization",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_fee_itemization-0"></a>
+選択肢文：項目ごとに支払先と年度を確かめる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_fee_itemization-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 紙の端に印を付け、もう払った金とこれから必要な金を分けた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E24:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_fee_itemization-1"></a>
+選択肢文：負担が大きいため別の学校を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_fee_itemization-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 同じ課程を受けられる場所がないか、費用の安い候補を探し直した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E24:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_entrance_exam_journey"></a>
+## edu_entrance_exam_journey
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 受験案内に、集合時刻と会場の場所が書かれていた。まだ合否の分からない学校まで行くために、家では旅費を数え直した。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_entrance_exam_journey",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_entrance_exam_journey-0"></a>
+選択肢文：旅費を用意して受験する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_entrance_exam_journey-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 旅費を支払い、試験会場へ向かった。試験を受けられるかどうかは、当日の受付でも確かめることになった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E25:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_entrance_exam_journey-1"></a>
+選択肢文：今回は試験を受けない
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_entrance_exam_journey-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 受験票を封筒へ戻した。試験の結果欄は空白のまま残した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E25:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_scholarship_application"></a>
+## edu_scholarship_application
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：差別・制度
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 募集案内に、学費を支える制度が記されていた。申請には本人や世帯の事情を示す書類が必要らしい。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_scholarship_application",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_scholarship_application-0"></a>
+選択肢文：事情を書いて応募する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_scholarship_application-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 条件を確かめて申請書を提出し、選考の返事を待った。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E26:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_scholarship_application-1"></a>
+選択肢文：申請しない
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_scholarship_application-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 掲示をもう一度読んでから、別の方法で学費を準備することにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E26:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_employer_sponsored_course"></a>
+## edu_employer_sponsored_course
+
+- 出典位置：data/education/p17-reviewed-prose.js:595
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 職場に、仕事に関わる講習の費用を支援する案内が回ってきた。勤務を続ける約束が要るのか、返還の条件があるのか、細かな字まで確かめた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_employer_sponsored_course",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_employer_sponsored_course-0"></a>
+選択肢文：勤務条件を確かめて申し込む
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_employer_sponsored_course-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 支援の条件を尋ね、書類を提出した。講習の受入と援助の決定を待つことになった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E27:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_employer_sponsored_course-1"></a>
+選択肢文：拘束のない道を選ぶ
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_employer_sponsored_course-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 書類を戻し、自分で払える講習を探すことにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E27:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_education_credit_terms"></a>
+## edu_education_credit_terms
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 学費の貸付について、返済の期日と支払額が細かく書かれていた。今の納付を助けても、将来の暮らしに負担が残る。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_education_credit_terms",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_education_credit_terms-0"></a>
+選択肢文：返済総額を確かめて契約する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_education_credit_terms-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 返済額と支払先を確かめ、審査に必要な書類を出した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E28:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_education_credit_terms-1"></a>
+選択肢文：借りずに別の支援を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_education_credit_terms-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 返済表を畳み、先に奨学金や費用の低い課程を調べることにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E28:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_unpaid_commute_cost_review"></a>
+## edu_unpaid_commute_cost_review
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、差別・制度、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 授業料を払う見通しは立った。それでも通学のための金が足りず、通える日を減らさずに済む方法を考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_unpaid_commute_cost_review",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_unpaid_commute_cost_review-0"></a>
+選択肢文：通学費への支援を申請する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_unpaid_commute_cost_review-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 交通の費用を支える制度があるか尋ね、必要な書類を確かめた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E29:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_unpaid_commute_cost_review-1"></a>
+選択肢文：通学をいったん中断する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_unpaid_commute_cost_review-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 支払済みの授業料を無駄にしたくはなかったが、通えない日は登校したことにできない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E29:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_household_tuition_discussion"></a>
+## edu_household_tuition_discussion
+
+- 出典位置：data/education/p17-reviewed-prose.js:667
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：日常、家族・介護、労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 食卓に学校の納付書を広げた。家の人は「払えるかどうか」と「払いたいかどうか」を、なかなか同じ言葉では話してくれなかった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_household_tuition_discussion",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_household_tuition_discussion-0"></a>
+選択肢文：家族に分担を相談する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_household_tuition_discussion-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 話し合いに応じた家族と、負担できる額と時期を紙に書き出した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E30:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_household_tuition_discussion-1"></a>
+選択肢文：自分で資金を貯めてから進む
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_household_tuition_discussion-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 進学先の欄にしおりを挟み、働ける時期と支払いの期限を考えた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E30:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_study_work_balance"></a>
+## edu_study_work_balance
+
+- 出典位置：data/education/p17-reviewed-prose.js:691
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 働きながら受けられる講習があると聞いた。勤務と授業の時間を並べると、家の用事まで含めて休める時間が少なくなりそうだった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_study_work_balance",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_study_work_balance-0"></a>
+選択肢文：勤務を調整して受講する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_study_work_balance-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 勤め先と授業の予定を照らし合わせ、実際に通える日を確かめた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E31:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_study_work_balance-1"></a>
+選択肢文：受講を見送って働く
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_study_work_balance-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 教材だけを机に置き、当分は仕事の終わる時間を優先することにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E31:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_admission_document_missing"></a>
+## edu_admission_document_missing
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 次の学校に提出するため、前に学んだことを示す記録を探した。必要な書類が手元に見当たらず、どこへ照会すればよいか尋ねた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_admission_document_missing",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_admission_document_missing-0"></a>
+選択肢文：旧校や先生に照会を頼む
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_admission_document_missing-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 以前の担任の名と学校の所在地を書き、記録が残っているか尋ねた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E32:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_admission_document_missing-1"></a>
+選択肢文：認定試験を受ける方法を調べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_admission_document_missing-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 足りない書類の代わりに何を学び直せばよいのか、募集案内を確かめた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E32:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_institution_specific_exclusion"></a>
+## edu_institution_specific_exclusion
+
+- 出典位置：data/education/p17-reviewed-prose.js:736
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 願書を受け取った人は記載を確かめ、しばらく奥の部屋へ消えた。戻ってきたとき、学校の決定は受入を見送るという短いものだった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_institution_specific_exclusion",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_institution_specific_exclusion-0"></a>
+選択肢文：理由と異議申立ての方法を尋ねる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_institution_specific_exclusion-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 決定を記した文書と、問い合わせ先を求めた。理由が知らされるかどうかは、まだ分からない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E33:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_institution_specific_exclusion-1"></a>
+選択肢文：別の学校へ出願する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_institution_specific_exclusion-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 返された願書を持ち帰り、同じ課程を教える場所を探し直した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E33:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
 <a id="event-edu_school_confidential_disclosure"></a>
 ## edu_school_confidential_disclosure
 
@@ -275935,6 +280328,525 @@ s => s.job > 0
 
 選択肢なし。
 
+<a id="event-edu_teacher_shortage"></a>
+## edu_teacher_shortage
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：日常、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 黒板には前の授業の日付が残っている。担当の教え手が来られない日が続き、教室では予定した授業がなかなか進まなかった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_teacher_shortage",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_teacher_shortage-0"></a>
+選択肢文：補習のある日だけでも通う
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_teacher_shortage-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 机を並べ直して授業を待った。習えたのは予定の一部だったが、分からないことを尋ねる時間はできた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E36:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_teacher_shortage-1"></a>
+選択肢文：ほかの教え手を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_teacher_shortage-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 近所に頼れる人がいないか尋ねて回った。教室の外にも、教えてくれる人はいるかもしれない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E36:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_course_specific_equipment"></a>
+## edu_course_specific_equipment
+
+- 出典位置：data/education/p17-reviewed-prose.js:816
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、自動発生イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 実習室の机には測定器と使い込まれた工具が並んでいた。先生は急いで触れないよう注意し、計測の順序を黒板に書いた。数値が少しずつ揃っていくのを見て、ようやく説明の意味が分かった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_course_specific_equipment",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  },
+  "fx": {
+    "educationAction": "event:E37:solo"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+選択肢なし。
+
+<a id="event-edu_school_closed_by_disaster"></a>
+## edu_school_closed_by_disaster
+
+- 出典位置：data/education/p17-reviewed-prose.js:824
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 学校へ向かう道に人だかりができていた。校舎の一部が使えなくなり、授業再開の日取りもまだ決まらないと聞いた。鞄だけが、いつもどおり肩に掛かっている。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_school_closed_by_disaster",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_school_closed_by_disaster-0"></a>
+選択肢文：別の学校への転学を相談する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_school_closed_by_disaster-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 学籍の記録を受け取り、通える教室が残っていないか尋ねた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E38:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_school_closed_by_disaster-1"></a>
+選択肢文：再開まで休学する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_school_closed_by_disaster-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 学校へ連絡を送り、休学の手続きを相談した。認められた場合も、実際に受けなかった授業は履修に含めない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E38:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_teacher_evacuated"></a>
+## edu_teacher_evacuated
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化、天災・避難
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、移動都市・避難に言及
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 先生は数冊の本を箱に詰め、避難する車に載せていた。「続きはどこかで教えられるといいね」と言って、黒板の文字を消した。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_teacher_evacuated",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_teacher_evacuated-0"></a>
+選択肢文：連絡先を交換して見送る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_teacher_evacuated-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 書き損じの紙に行き先を書いてもらった。いつ会えるかは分からないが、名前だけでも忘れずにいたかった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E39:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_teacher_evacuated-1"></a>
+選択肢文：教室の片付けを手伝う
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_teacher_evacuated-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 壊れなかった教材を箱へ詰めた。学校は閉じても、持ち出せる本は残っていた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E39:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_temporary_classroom"></a>
+## edu_temporary_classroom
+
+- 出典位置：data/education/p17-reviewed-prose.js:869
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化、移動・物流
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 倉庫を片付けた一角に板を立て掛け、間に合わせの黒板を作った。外からは荷車の音が聞こえるが、先生は出席を取ろうとしている。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_temporary_classroom",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_temporary_classroom-0"></a>
+選択肢文：授業として認められるか確かめて参加する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_temporary_classroom-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 短い時間でも机を囲み、ノートに日付を書いた。授業として認められるかは、記録を照合してから決まる。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E40:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_temporary_classroom-1"></a>
+選択肢文：家で教材を読み進める
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_temporary_classroom-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 配られた紙を持ち帰り、分からない問題に印を付けた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E40:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
 <a id="event-edu_real_institution_transfer"></a>
 ## edu_real_institution_transfer
 
@@ -276052,6 +280964,123 @@ s => s.job > 0
 旧シム観測回数：未計測
 
 
+<a id="event-edu_exam_cancelled"></a>
+## edu_exam_cancelled
+
+- 出典位置：data/education/p17-reviewed-prose.js:914
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 試験を行わないという知らせが届いた。会場へ向かう前の者も、すでに門の前で待っていた者も、改めて予定を考えることになった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_exam_cancelled",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_exam_cancelled-0"></a>
+選択肢文：振替日を申し込む
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_exam_cancelled-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 振替日が決まっているか確認し、必要なら次の申請をすることにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E42:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_exam_cancelled-1"></a>
+選択肢文：今回は受験を取りやめる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_exam_cancelled-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 受験票を手帳にはさみ、今期の予定を引き直した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E42:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
 <a id="event-edu_graduation_record_review"></a>
 ## edu_graduation_record_review
 
@@ -276163,6 +281192,357 @@ s => s.job > 0
 ```json
 {
   "educationAction": "event:E43:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_former_teacher_meeting"></a>
+## edu_former_teacher_meeting
+
+- 出典位置：data/education/p17-reviewed-prose.js:959
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：家族・介護、労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 道端で見覚えのある声に呼び止められた。昔の先生は、今もノートを取っているのかと尋ねた。何年も前の教室の窓の明るさを、ふと思い出した。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_former_teacher_meeting",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_former_teacher_meeting-0"></a>
+選択肢文：学校を出てからの暮らしを話す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_former_teacher_meeting-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 仕事や家族の話をすると、先生は何度も頷いて聞いてくれた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E44:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_former_teacher_meeting-1"></a>
+選択肢文：短く挨拶して別れる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_former_teacher_meeting-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 頭を下げて歩き出した。別れ際、先生が昔と同じように手を振った。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E44:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_child_guardian_disagreement"></a>
+## edu_child_guardian_disagreement
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 学校の話になると家の空気が重くなった。行ってみたいと告げたが、家の人は仕事や家計のことばかり気にしている。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_child_guardian_disagreement",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_child_guardian_disagreement-0"></a>
+選択肢文：自分の希望をもう一度話す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_child_guardian_disagreement-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 何を学びたいのか、できるだけ自分の言葉で話した。家の人の答えが変わるかは分からない。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E45:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_child_guardian_disagreement-1"></a>
+選択肢文：家の手伝いを続ける
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_child_guardian_disagreement-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 言いたいことを飲み込んで、明日の用事を確かめた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E45:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_sibling_school_cost_conflict"></a>
+## edu_sibling_school_cost_conflict
+
+- 出典位置：data/education/p17-reviewed-prose.js:1004
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：家族・介護、労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 家の机には、きょうだいの納付書が二枚並んでいた。どちらも同じ時期に金が要る。家族は黙ったまま、今年の働き口の見通しを話し始めた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_sibling_school_cost_conflict",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_sibling_school_cost_conflict-0"></a>
+選択肢文：費用を分けられる支援を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_sibling_school_cost_conflict-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> それぞれの学校に、使える支援と申請期限を尋ねた。返事は子どもごとの請求に分けて控えた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E46:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_sibling_school_cost_conflict-1"></a>
+選択肢文：支払う順序を家族と相談する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_sibling_school_cost_conflict-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 誰か一人の希望だけで決めぬよう、何度も話し合った。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E46:B"
 }
 ```
 
@@ -277099,6 +282479,2346 @@ s => s.job > 0
 ```json
 {
   "educationAction": "event:E54:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_dependent_future_school_consult"></a>
+## edu_dependent_future_school_consult
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：家族・介護、労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 子どもが遠方の学校の話を持ち帰ってきた。どこまで確かな案内なのか、本人も分からないところがあるらしい。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_dependent_future_school_consult",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_dependent_future_school_consult-0"></a>
+選択肢文：本人と費用や通い方を調べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_dependent_future_school_consult-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 子どもが聞いてきた地名と日程を書き出し、家から通う方法と費用を一緒に確かめた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E55:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_dependent_future_school_consult-1"></a>
+選択肢文：別の学び方も一緒に考える
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_dependent_future_school_consult-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 近くで教わる方法と、遠くへ出る方法の両方を紙に書いた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E55:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_yan_public_study"></a>
+## edu_region_yan_public_study
+
+- 出典位置：data/education/p17-reviewed-prose.js:1217
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 書院の門前に、今期の講義と選抜試験の案内が貼られていた。雨除けの下で書き写す人々は、皆同じ試験を目指しているわけでもないらしい。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_yan_public_study",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_yan_public_study-0"></a>
+選択肢文：受講できる講義を尋ねる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_yan_public_study-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 係の人から科目と入門の条件を教わり、見学できる日を書き留めた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E56:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_yan_public_study-1"></a>
+選択肢文：門前の書物売りに教本を尋ねる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_yan_public_study-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 入門向けの薄い本を何冊か見せてもらい、読みやすい一冊を選んだ。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E56:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_victoria_disrupted_college"></a>
+## edu_region_victoria_disrupted_college
+
+- 出典位置：data/education/p17-reviewed-prose.js:1262
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 大学の回廊には、授業を休む知らせと再開する知らせが日付を変えて貼られていた。使える教室がいくつ残るのか、学生たちは案内の前で立ち止まっていた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_victoria_disrupted_college",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_victoria_disrupted_college-0"></a>
+選択肢文：再開した科目を確かめる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_victoria_disrupted_college-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 事務室の前で名簿を確かめ、受けられる講義だけを書き出した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E58:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_victoria_disrupted_college-1"></a>
+選択肢文：教室の整備を手伝う
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_victoria_disrupted_college-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 埃を払った机を運び込み、授業に戻る人々の通り道を空けた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E58:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_kazimierz_sponsor_training"></a>
+## edu_region_kazimierz_sponsor_training
+
+- 出典位置：data/education/p17-reviewed-prose.js:1325
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 訓練場の外に、競技騎士の姿を刷った募集看板が立っていた。必要な用具と講習の費用が書かれ、支援が受けられるかどうかは別の欄に記されていた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_kazimierz_sponsor_training",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_kazimierz_sponsor_training-0"></a>
+選択肢文：訓練課程の費用と選考を尋ねる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_kazimierz_sponsor_training-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 看板の華やかさとは別に、必要な装備と実技の条件を聞いた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E61:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_kazimierz_sponsor_training-1"></a>
+選択肢文：ほかの学び方を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_kazimierz_sponsor_training-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> その学校の受講は見送り、今の暮らしに合う講習や学び場を探すことにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E61:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_columbia_corporate_scholarship"></a>
+## edu_region_columbia_corporate_scholarship
+
+- 出典位置：data/education/p17-reviewed-prose.js:1348
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 大学の掲示板に、企業が費用を支援する講習・研究課程の案内が貼られていた。支援額だけでなく、応募資格と返還の条件も読まなければならない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_columbia_corporate_scholarship",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_columbia_corporate_scholarship-0"></a>
+選択肢文：条件を読み、応募を検討する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_columbia_corporate_scholarship-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 支援額だけでなく、守らなければならない約束も書き写した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E62:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_columbia_corporate_scholarship-1"></a>
+選択肢文：条件の付かない支援を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_columbia_corporate_scholarship-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 掲示板を離れ、別の学校や奨学金の一覧を見た。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E62:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_higashi_dojo_learning"></a>
+## edu_region_higashi_dojo_learning
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 道場の戸口に、稽古の時間が書かれていた。教え手が、初めてなら見学してもよいと声を掛けてきた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_higashi_dojo_learning",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_higashi_dojo_learning-0"></a>
+選択肢文：教わる内容を確かめる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_higashi_dojo_learning-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 仕事や学校と重ならない時間を尋ね、続けて通えるか考えた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E63:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_higashi_dojo_learning-1"></a>
+選択肢文：師範に一度教えを請う
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_higashi_dojo_learning-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 床を拭いてから稽古に混ざり、基本の姿勢を何度も直してもらった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E63:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_iberia_closed_library"></a>
+## edu_region_iberia_closed_library
+
+- 出典位置：data/education/p17-reviewed-prose.js:1390
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 潮の匂いが残る建物の扉には、かつての授業時間が彫られていた。中の本を使えるのか、今も教え手がいるのかは、外から見ただけでは分からない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_iberia_closed_library",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_iberia_closed_library-0"></a>
+選択肢文：資料の閲覧を許されるか尋ねる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_iberia_closed_library-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 管理する人に声を掛け、使ってよい棚と触れてはいけない箱を確かめた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E64:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_iberia_closed_library-1"></a>
+選択肢文：ほかの教え手を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_iberia_closed_library-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 書庫を離れ、町で勉強を教えてくれる人がいないか尋ねた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E64:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_kazdel_school_rebuild"></a>
+## edu_region_kazdel_school_rebuild
+
+- 出典位置：data/education/p17-reviewed-prose.js:1456
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 崩れた壁の上に新しい梁が渡され、雨の入らない部屋が一つできた。通りかかった人々が入口から中をのぞいていたが、授業が始まるかどうかはまだ分からない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_kazdel_school_rebuild",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_kazdel_school_rebuild-0"></a>
+選択肢文：教室の再開時期を尋ねる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_kazdel_school_rebuild-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 先生を集められるか、机をいくつ用意できるか、責任者に話を聞いた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E67:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_kazdel_school_rebuild-1"></a>
+選択肢文：教材の運び込みを手伝う
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_kazdel_school_rebuild-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 傷んだ机を外へ運び、本の残った箱を乾いた床へ並べた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E67:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_sami_clan_or_school"></a>
+## edu_region_sami_clan_or_school
+
+- 出典位置：data/education/p17-reviewed-prose.js:1477
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化、移動・物流
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 旅を共にする年長者は、雪の下の足跡の見分け方を教えてくれた。交易所の近くに文字を教える部屋があるとも聞いたが、確かなことはまだ分からない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_sami_clan_or_school",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_sami_clan_or_school-0"></a>
+選択肢文：氏族の人から土地の知識を教わる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_sami_clan_or_school-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 雪の硬さを手で確かめ、歩いてよい場所を覚えた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E68:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_sami_clan_or_school-1"></a>
+選択肢文：交易所の学び舎について調べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_sami_clan_or_school-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 次に交易所へ行ける日を聞き、実際に教室が開いているか尋ねることにした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E68:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_leithanien_arts_selectivity"></a>
+## edu_region_leithanien_arts_selectivity
+
+- 出典位置：data/education/p17-reviewed-prose.js:1500
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 学院の案内板に、実技試験の課題と募集条件が書かれていた。扉の向こうから繰り返す旋律が聞こえるが、自分がどの授業に入れるかはまだ決まっていない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_leithanien_arts_selectivity",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_leithanien_arts_selectivity-0"></a>
+選択肢文：実技の課題を確かめて準備する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_leithanien_arts_selectivity-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 難しい譜面の読み方を教わり、足りない技術をひとつずつ書き出した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E69:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_leithanien_arts_selectivity-1"></a>
+選択肢文：一般課程や別の専攻を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_leithanien_arts_selectivity-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 別の教室の案内も読み、今の自分が学べる科目に印を付けた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E69:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_kjerag_mountain_and_school"></a>
+## edu_region_kjerag_mountain_and_school
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：家族・介護、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 谷の向こうの学校から入学案内が届いた。晴れた日なら道は見えるが、雪の季節には峠を越えられないと家の人は言う。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_kjerag_mountain_and_school",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_kjerag_mountain_and_school-0"></a>
+選択肢文：季節ごとの通学路を調べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_kjerag_mountain_and_school-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 山を越す便の運行時期を尋ね、授業が途切れる月を書き出した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E70:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_kjerag_mountain_and_school-1"></a>
+選択肢文：近くで教えてくれる人を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_kjerag_mountain_and_school-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 家族や信仰の場に頼り、学べる科目がないか尋ねた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E70:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_rim_mining_training"></a>
+## edu_region_rim_mining_training
+
+- 出典位置：data/education/p17-reviewed-prose.js:1542
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：天災・避難
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、移動都市・避難に言及
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 鉱区の集会所に、機械の整備と避難手順を教える講習の日程が貼られていた。机には工具の図と、事故が起きた時の連絡順序が並んでいる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_rim_mining_training",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_rim_mining_training-0"></a>
+選択肢文：安全講習を受ける
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_rim_mining_training-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 繰り返し手順を確かめ、危険な兆候を見分ける練習をした。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E71:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_rim_mining_training-1"></a>
+選択肢文：正式な職業課程の案内も調べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_rim_mining_training-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 修了を証明できる課程があるか、運営元に尋ねた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E71:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_bolivar_school_under_conflict"></a>
+## edu_region_bolivar_school_under_conflict
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：家族・介護、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 校庭に子どもの姿はなく、雨の後の水たまりが残っていた。先生たちの行き先はばらばらで、学校の再開日も決まっていない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_bolivar_school_under_conflict",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_bolivar_school_under_conflict-0"></a>
+選択肢文：仮の授業があるか探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_bolivar_school_under_conflict-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 家々を回り、子どもを集めて教えている人がいないか尋ねた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E72:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_bolivar_school_under_conflict-1"></a>
+選択肢文：学校の再開を手伝う
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_bolivar_school_under_conflict-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 使える机を運び出し、教室の雨漏りを確かめた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E72:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_region_minos_learning_and_debate"></a>
+## edu_region_minos_learning_and_debate
+
+- 出典位置：data/education/p17-reviewed-prose.js:1605
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_region_minos_learning_and_debate",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_region_minos_learning_and_debate-0"></a>
+選択肢文：話に加わり、自分の考えを述べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_minos_learning_and_debate-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 聞いたことのある伝承を引き合いに出すと、別の解釈が返ってきた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E74:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_region_minos_learning_and_debate-1"></a>
+選択肢文：黙って聞き、後で調べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_region_minos_learning_and_debate-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 日が傾くまで議論を聞き、知らない名前を手帳に書き留めた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E74:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_ursus_school_displacement_memory"></a>
+## edu_ursus_school_displacement_memory
+
+- 出典位置：data/education/p17-reviewed-prose.js:1626
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 昔の学校がどうなったのかを知らせる便りが来た。あのとき教室で聞いた物音や、隣に座っていた友人の顔が、紙の文字を読むうちに浮かんできた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_ursus_school_displacement_memory",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_ursus_school_displacement_memory-0"></a>
+選択肢文：当時の友人へ連絡を取る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_ursus_school_displacement_memory-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 覚えている名前を頼りに便りを出した。返事が来るかは分からなくても、どこかで暮らしていてほしかった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E75:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_ursus_school_displacement_memory-1"></a>
+選択肢文：その日の記録を残す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_ursus_school_displacement_memory-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 見たことと聞いたことを分けて書いた。年月が過ぎても、確かに自分がいた場所のことだった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E75:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_ursus_school_bystander_memory"></a>
+## edu_ursus_school_bystander_memory
+
+- 出典位置：data/education/p17-reviewed-prose.js:1647
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：家族・介護、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> あの日の通りの様子を話す人がいた。学校の方から逃げてきた子どもたちの姿を、自分も見たことを思い出した。教室の中で何が起きたかまでは知らない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_ursus_school_bystander_memory",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_ursus_school_bystander_memory-0"></a>
+選択肢文：知っている範囲の話を伝える
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_ursus_school_bystander_memory-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 自分がいた場所と、実際に見たことだけを伝えた。知らない教室の出来事については語らなかった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E76:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_ursus_school_bystander_memory-1"></a>
+選択肢文：話すことを控える
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_ursus_school_bystander_memory-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 相手の話を聞いたまま、その日は何も付け足さなかった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E76:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_student_public_meeting_distinction"></a>
+## edu_student_public_meeting_distinction
+
+- 出典位置：data/education/p17-reviewed-prose.js:1770
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 広場の端に、人の輪ができていた。学校のことを話す声もあれば、働き口や街の暮らしを訴える声も聞こえる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_student_public_meeting_distinction",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_student_public_meeting_distinction-0"></a>
+選択肢文：話を聞いて帰る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_student_public_meeting_distinction-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 輪の外から議論を聞き、何を求めて集まったのかを知った。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E77:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_student_public_meeting_distinction-1"></a>
+選択肢文：自分の考えを話す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_student_public_meeting_distinction-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 一度だけ輪の中で口を開いた。賛同する人も、反論する人もいた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E77:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_school_peer_exclusion_route"></a>
+## edu_school_peer_exclusion_route
+
+- 出典位置：data/education/p17-reviewed-prose.js:1689
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 教室で机を動かす音がして、隣の席が空いた。こちらを見てひそひそ話す声は聞こえたが、何を言っているのかまでは分からなかった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_school_peer_exclusion_route",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_school_peer_exclusion_route-0"></a>
+選択肢文：理由を尋ねる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_school_peer_exclusion_route-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> どうして席を離れたのか尋ねた。相手は言葉を濁し、はっきりした理由は聞けなかった。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E78:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_school_peer_exclusion_route-1"></a>
+選択肢文：信頼できる人に相談する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_school_peer_exclusion_route-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 放課後、先生か知人のもとへ行き、今日起きたことを話した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E78:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_safety_for_disabled_student"></a>
+## edu_safety_for_disabled_student
+
+- 出典位置：data/education/p17-reviewed-prose.js:1710
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 授業を受ける部屋までの道に、自分には使いづらい場所があった。別の入口を通れるのか、教室を変えてもらえるのか、学校へ相談しようと考えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_safety_for_disabled_student",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_safety_for_disabled_student-0"></a>
+選択肢文：通れる経路と設備の変更を相談する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_safety_for_disabled_student-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 学校の人と一緒に通れる経路を確かめ、使える教室や補助の方法を探した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E79:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_safety_for_disabled_student-1"></a>
+選択肢文：別の校舎・課程を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_safety_for_disabled_student-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 同じ内容を学べる場所がないか、もう一度案内を調べた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E79:B"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-edu_later_life_retraining_after_displacement"></a>
+## edu_later_life_retraining_after_displacement
+
+- 出典位置：data/education/p17-reviewed-prose.js:1734
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "edu_later_life_retraining_after_displacement",
+  "conf": "S",
+  "references": [
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "st": [
+    "児童",
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 2,
+  "w": 0.6,
+  "show": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-edu_later_life_retraining_after_displacement-0"></a>
+選択肢文：仕事に結び付く講習を探す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_later_life_retraining_after_displacement-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 募集の条件と授業の時間を確かめ、今の生活で通える場所を探した。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E80:A"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-edu_later_life_retraining_after_displacement-1"></a>
+選択肢文：今までの経験を書き出して学び直す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s=>educationMigrationEligible(s,entry.eventId,choice.letter)"
+  },
+  "why": "対象となる本人の学籍・講師・学習条件が現在の記録と一致しない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-edu_later_life_retraining_after_displacement-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 覚えている手順を紙に書き、知らない部分に印を付けた。
+
+効果：
+
+```json
+{
+  "educationAction": "event:E80:B"
 }
 ```
 
