@@ -98,7 +98,7 @@ assert.equal(vm.runInContext('RANDOM_STATE',ctx),snapshot.S.rngState,'resume res
       stage:S.educationCases.items[c.id].stage,
       known:S.educationAccess.knownOfferings,
       searches:S.educationAccess.searches,
-      quotes:S.educationFinance.quotes,
+      quotes:S.educationFinance?.quotes||{},
       world:S.world.educationWorld,
       cash:S.cash,houseCash:S.house.cash,
       randomSeed:S.randomSeed,rngState:S.rngState,
