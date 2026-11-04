@@ -1261,6 +1261,11 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
       ge: { age: 10 },
       le: { age: 14 },
       who: "self",
+      show: s => educationLegacySceneGuard(s,"education_school_classroom") &&
+        educationP17SchoolExperience(s,"arts-selection-exam") &&
+        Object.values(s.world?.educationWorld?.offerings||{}).some(o =>
+          o.institutionId===s.educationPath?.institutionId && o.stage==="arts" &&
+          ["open","limited"].includes(educationSchoolStatusAt(s,o.id,s.year,s.mo)?.admissionStatus)),
       w: 1.2,
       once: true,
       t: "学校でアーツの選抜試験の案内を渡された。特別な授業に進むには試験を受けるという。道具を使って準備するには費用もかかり、{caregiver}と案内を読み返した。",
