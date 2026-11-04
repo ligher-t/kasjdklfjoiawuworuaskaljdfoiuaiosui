@@ -46,7 +46,9 @@ for(const x of result.contexts){
   assert.equal(x.eligibleLocal,true,x.id);
   assert.equal(x.remote.eligible,false,x.id);
   assert.equal(x.eligibleRemote,false,x.id);
-  assert.equal(x.beforeMonth.eligible,false,x.id);
+  if(x.id==="timeline_daily_great_silence_sea")
+    assert.equal(x.beforeMonth.eligible,false,x.id);
+  else assert.equal(x.beforeMonth.eligible,true,"the year after the event has begun");
   assert.equal(x.beforeNews,x.afterNews);
   assert(!/土嚢|砂浜/.test(x.prose));
 }
