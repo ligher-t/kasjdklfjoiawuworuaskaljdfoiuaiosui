@@ -140,6 +140,7 @@ function slot(x) {
     educationSimulateAttendanceThrough(s,s.year,s.mo-1);
   ensureLocalityState(s);
   educationReconcileWorldAt(s,s.year,s.mo);
+  educationP17ReconcileNotices(s);
   activateHistoricalWorldEvents(s);
   releasePendingHistoricalNews(s);
   reconcileCareerPlacements(s);
