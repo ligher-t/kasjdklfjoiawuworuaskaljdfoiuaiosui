@@ -15,20 +15,7 @@
   ],
   "sourceErrors": [],
   "eventCount": 16,
-  "parseErrors": [
-    {
-      "eventId": "life_work_project_setback",
-      "reason": "event ID not in source as literal"
-    },
-    {
-      "eventId": "earth_persecution_victoria_framed_debt",
-      "reason": "event ID not in source as literal"
-    },
-    {
-      "eventId": "earth_discr_disclose_employer",
-      "reason": "event ID not in source as literal"
-    }
-  ],
+  "parseErrors": [],
   "choiceMismatches": [],
   "events": [
     {
@@ -233,9 +220,41 @@
         "pm",
         "workContractAction"
       ],
-      "found": false,
-      "why": "event ID not in source as literal",
-      "manualBranchMeaningReview": "requires-recovery"
+      "found": true,
+      "manualBranchMeaningReview": "source-inspected; outcome-level transition approval remains pending",
+      "actualLine": 68,
+      "sourceLength": 1393,
+      "descriptionSample": "納品目前になって、届いた部品の寸法が仕様書と食い違っていることが発覚した。現場には古い図面と、納期を盾に急かせる発注者の怒鳴り声だけが残された。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "急かされても手を止め、図面と実物の寸法を測り直す",
+          "sourceFormat": "inline-constructed-K",
+          "outcomeTextSamples": [
+            "発注者の小言を背中で聞き流しながら寸法を測り直し、仲間と知恵を絞って無理のない取り付け方を見つけた。納期は少し延びたが、機械は異音ひとつなく動き出した。",
+            "深夜まで火花を散らして部材を加工し続け、約束通りの臨時手当を懐に入れた。翌朝は鉛のように肩が重く、寝床から起き上がるのにひどく時間がかかった。",
+            "疲れで手元が狂い、工具で指先を深く痛めて突貫作業から外された。臨時手当はふいになり、腫れた手を抱えて残りの工程を仲間に引き継いだ。"
+          ]
+        },
+        {
+          "label": "残業手当を目当てに、夜通しの突貫作業を引き受ける",
+          "sourceFormat": "inline-constructed-K",
+          "outcomeTextSamples": [
+            "深夜まで火花を散らして部材を加工し続け、約束通りの臨時手当を懐に入れた。翌朝は鉛のように肩が重く、寝床から起き上がるのにひどく時間がかかった。",
+            "疲れで手元が狂い、工具で指先を深く痛めて突貫作業から外された。臨時手当はふいになり、腫れた手を抱えて残りの工程を仲間に引き継いだ。",
+            "身体を壊しては元も子もないと短時間勤務への切り替えを申し入れ、やりかけの箇所の寸法を次の番の仲間に伝えて現場を上がった。稼ぎは減るが、深く息をつける夜が戻った。"
+          ]
+        },
+        {
+          "label": "無理な残業は断り、勤務を短くして後任へ引き継ぐ",
+          "sourceFormat": "inline-constructed-K",
+          "outcomeTextSamples": [
+            "疲れで手元が狂い、工具で指先を深く痛めて突貫作業から外された。臨時手当はふいになり、腫れた手を抱えて残りの工程を仲間に引き継いだ。",
+            "身体を壊しては元も子もないと短時間勤務への切り替えを申し入れ、やりかけの箇所の寸法を次の番の仲間に伝えて現場を上がった。稼ぎは減るが、深く息をつける夜が戻った。"
+          ]
+        }
+      ],
+      "sourceFormat": "inline-event"
     },
     {
       "eventId": "earth_persecution_victoria_framed_debt",
@@ -257,9 +276,30 @@
         "p",
         "rl"
       ],
-      "found": false,
-      "why": "event ID not in source as literal",
-      "manualBranchMeaningReview": "requires-recovery"
+      "found": true,
+      "manualBranchMeaningReview": "source-inspected; outcome-level transition approval remains pending",
+      "actualLine": 1148,
+      "sourceLength": 1160,
+      "descriptionSample": "朝、工場の門をくぐると警備員に事務所へ連行された。高価な蒸気織機の駆動部が破損した件について、工場主は『お前のような素性の怪しい労働者が故意に壊した』と決めつけ、今月の給与全額の没収と、莫大な損害賠償証文への署名を強要してきた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "証文への署名を拒否し、仲間とともに労働争議の窓口へ駆け込む",
+          "sourceFormat": "declarative-choice-object",
+          "outcomeTextSamples": [
+            "署名は拒んだものの即座に解雇され、給与は一銭も支払われなかった。さらに街の工場主連名でブラックリストに入れられ、同業への再就職を断たれた。",
+            "身に覚えのない巨額の負債を背負わされ、給与明細はすべて借金の天引きとなった。日々のパンを買う小銭すら底をついた。"
+          ]
+        },
+        {
+          "label": "これ以上の暴力や投獄を恐れ、涙を飲んで賠償証文に震える手でサインする",
+          "sourceFormat": "declarative-choice-object",
+          "outcomeTextSamples": [
+            "身に覚えのない巨額の負債を背負わされ、給与明細はすべて借金の天引きとなった。日々のパンを買う小銭すら底をついた。"
+          ]
+        }
+      ],
+      "sourceFormat": "JSON-style-declarative-event"
     },
     {
       "eventId": "earth_discr_disclose_employer",
@@ -280,9 +320,32 @@
         "job",
         "p"
       ],
-      "found": false,
-      "why": "event ID not in source as literal",
-      "manualBranchMeaningReview": "requires-recovery"
+      "found": true,
+      "manualBranchMeaningReview": "source-inspected; outcome-level transition approval remains pending",
+      "actualLine": 1603,
+      "sourceLength": 3088,
+      "descriptionSample": "現場の粉塵や激務で病状が悪化するのを防ぐため、事務所で雇い主に診断書を示し、自ら鉱石病であることを申し出るべきか迷った。解雇される危険はあるが、このまま倒れれば周囲にも迷惑がかかる。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "自費で防護具を揃えることを条件に、持ち場の調整を申し出る",
+          "sourceFormat": "declarative-choice-object",
+          "outcomeTextSamples": [
+            "雇い主は険しい表情で診断書を眺め、「余計な騒ぎを起こさないなら、粉塵の少ない倉庫番へ回してやる」と条件付きで承諾した。給金は減ったが、即座の解雇は免れた。",
+            "雇い主は机を激しく叩き、「なぜ隠して雇われた！」と激昂した。その場で今週分の日当を投げ出され、身辺整理をする間もなく事務所から追い出された。",
+            "診断書を懐の奥深くしまい、何も言わずに持ち場へ戻った。いつ露見するか分からない恐怖を抱えながら、冷や汗を拭って工具を握り直した。"
+          ]
+        },
+        {
+          "label": "今は打ち明けず、体力が続く限り隠して働き続ける",
+          "sourceFormat": "declarative-choice-object",
+          "outcomeTextSamples": [
+            "雇い主は机を激しく叩き、「なぜ隠して雇われた！」と激昂した。その場で今週分の日当を投げ出され、身辺整理をする間もなく事務所から追い出された。",
+            "診断書を懐の奥深くしまい、何も言わずに持ち場へ戻った。いつ露見するか分からない恐怖を抱えながら、冷や汗を拭って工具を握り直した。"
+          ]
+        }
+      ],
+      "sourceFormat": "JSON-style-declarative-event"
     },
     {
       "eventId": "infection_workplace_review",
