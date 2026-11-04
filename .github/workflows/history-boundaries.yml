@@ -283,4 +283,4 @@ jobs:
           git add EVENT_CATALOG.md
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'docs(catalog): regenerate all event entries after history scope revision'
-          git push origin HEAD:fix/historical-event-scope-and-delivery
+          git -c pack.window=0 -c pack.depth=0 push --no-thin origin HEAD:fix/historical-event-scope-and-delivery
