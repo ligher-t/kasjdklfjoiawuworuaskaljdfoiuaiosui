@@ -62,6 +62,62 @@ function travelAwayDuringMonth(state, year, month) {
     return date >= from && date <= through;
   });
 }
+// Home-bound work uses the actual months spent away. Portable assignments
+// require their own contract evidence before being treated as uninterrupted.
+function travelHomeWorkIncomeShare(state, year) {
+  if (!state || !contractEligibleJob(state)) return 1;
+  let available = 0;
+  for (let month = 1; month <= 12; month++)
+    if (!travelAwayDuringMonth(state, year, month)) available++;
+  return available / 12;
+}
+function travelResidentMinorChildren(state) {
+  return (state.kids || []).filter(child =>
+    child && !child.d && Number.isInteger(child.by) &&
+    state.year - child.by < 18 && state.year >= child.by &&
+    child.householdStatus !== "independent" &&
+    !["former", "former_support"].includes(child.householdResidencePlan) &&
+    (!state.residenceBase || !child.residenceBaseId ||
+      child.residenceBaseId === state.residenceBase.id));
+}
+function travelFamilyCareAgreement(state) {
+  const children = travelResidentMinorChildren(state);
+  if (!children.length) return null;
+  const spouse = state.sp;
+  if (!spouse || spouse.d || !spouse.id || !spouseLivesWithProtagonist(state))
+    throw Error("同居する未成年の子の見守りを引き受ける大人が確認されていない");
+  const travel = ensureTravelState(state);
+  const childIds = children.map(child => child.id).filter(Boolean).sort();
+  if (childIds.length !== children.length)
+    throw Error("同居する未成年の子の本人IDが未記録");
+  const id = ["travel-care", state.year, spouse.id, ...childIds].join(":");
+  if (travel.familyCareAgreements?.[id]) return travel.familyCareAgreements[id];
+  // One simulated response per year and set of children. A refused answer
+  // is persistent, and it cannot be re-rolled by reopening the controls.
+  const approved = keyedRoll("terra-travel-family-care-v1:" + id) < 0.7;
+  const agreement = {
+    id, year: state.year, caregiverId: spouse.id,
+    childIds, status: approved ? "granted" : "refused",
+    basis: "game-model-family-response"
+  };
+  (travel.familyCareAgreements ||= {})[id] = agreement;
+  return agreement;
+}
+function travelValidateFamilyCare(state, agreementId) {
+  const children = travelResidentMinorChildren(state);
+  if (!children.length) return {kind:"solo",caregiverId:null,childIds:[],agreementId:null};
+  const spouse = state.sp;
+  if (!spouse || spouse.d || !spouse.id || !spouseLivesWithProtagonist(state))
+    throw Error("同居する未成年の子の見守り役が不在");
+  const ids = children.map(c=>c.id).sort();
+  const agreement = state.travelState?.familyCareAgreements?.[agreementId];
+  if (!agreement || agreement.id !== agreementId || agreement.year !== state.year ||
+      agreement.status !== "granted" || agreement.caregiverId !== spouse.id ||
+      agreement.childIds.length !== ids.length ||
+      !agreement.childIds.every((id,index)=>id===ids[index]))
+    throw Error("家族の見守りについて有効な同意記録がない");
+  return {kind:"solo-care-arranged",caregiverId:spouse.id,childIds:ids,agreementId};
+}
 function travelLegFareQuote(state, fromRegion, toRegion) {
   const route = (MIGRATION_ROUTES[fromRegion] || []).find(row => row.n === toRegion);
   const origin = REG.find(row => row.n === fromRegion);
@@ -131,6 +187,7 @@ function travelStart(state, request) {
   const duration = request?.durationMonths == null ? 1 : request.durationMonths;
   if (!Number.isInteger(duration) || duration < 1 || duration > 24)
     throw Error("Invalid modeled travel duration");
+  const householdCare = travelValidateFamilyCare(state, request?.familyCareAgreementId || null);
   travelLegFareQuote(state, state.res.n, to);
   const id = "journey:" + (++travel.journeySeq);
   const leg = {
@@ -143,7 +200,7 @@ function travelStart(state, request) {
     originRegion: state.res.n, destinationRegion: to,
     legs: [leg], activeLegIndex: 0, currentCheckpointId: null,
     currentStopId: null, currentStopRegion: null, companions: [],
-    permitRefs: [], lastProcessed: {year: state.year, month: state.mo},
+    householdCare, permitRefs: [], lastProcessed: {year: state.year, month: state.mo},
     departedAt: null, conclusion: null
   };
   travel.journeys[id] = journey;
@@ -277,6 +334,14 @@ function auditTravelState(state) {
         !Number.isInteger(tx.month) || tx.month < 1 || tx.month > 12)
       errors.push("旅費の決済記録が不正");
   }
+  for (const agreement of Object.values(t.familyCareAgreements || {})) {
+    if (!agreement || typeof agreement.id !== "string" ||
+        !["granted","refused"].includes(agreement.status) ||
+        agreement.basis !== "game-model-family-response" ||
+        !Number.isInteger(agreement.year) || agreement.year > state.year ||
+        !Array.isArray(agreement.childIds))
+      errors.push("旅程の家族同意記録が不正");
+  }
   const open = Object.values(t.journeys).filter(j => j && TRAVEL_OPEN_STATUSES.includes(j.status));
   if (open.length > 1 || open.length !== (active ? 1 : 0))
     errors.push("未終了旅程が複数または未参照");
@@ -296,6 +361,12 @@ function auditTravelState(state) {
         !j.legs.every((part, index) => index > j.activeLegIndex ||
           !!t.transactions[part.id + ":fare"]))
       errors.push("実際の旅程に決済記録がない");
+    if (j?.householdCare?.childIds?.length) {
+      const agreement = t.familyCareAgreements?.[j.householdCare.agreementId];
+      if (!agreement || agreement.status !== "granted" ||
+          agreement.caregiverId !== j.householdCare.caregiverId)
+        errors.push("旅程の家族見守り同意が失われている");
+    }
     if (j?.status === "at-checkpoint" &&
         (!leg?.checkpointId || leg.checkpointId !== j.currentCheckpointId))
       errors.push("登録されていない検問所で待機");

@@ -48,7 +48,12 @@ function reconcileWorkContract(s) {
   s.workContractHistory ||= [];
   const prior = s.workContract;
   const eligible = contractEligibleJob(s) && !s.fl?.retired && !restricted(s);
-  const site = eligible ? activeFacility(s, "workplace") : null;
+  const away = travelPresence(s).mode !== "residence";
+  // Temporary absence neither terminates an existing job nor creates a
+  // new local employer contract at an unattended home workplace.
+  if (away && prior?.status === "active" && eligible && prior.jobId === s.job)
+    return prior;
+  const site = eligible && !away ? activeFacility(s, "workplace") : null;
   if (prior && (!site || prior.siteId !== site.id || prior.jobId !== s.job || prior.status !== "active")) {
     if (prior.status === "active")
       s.workContractHistory.push({

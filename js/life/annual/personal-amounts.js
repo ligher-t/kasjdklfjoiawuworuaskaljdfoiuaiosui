@@ -2,6 +2,7 @@
 function prepareAnnualPersonalBudget(s, services, a, t, f) {
   if (
     !s.job &&
+    travelPresence(s).mode === "residence" &&
     !s.lifeRecord?.careerChanges?.length &&
     !s.fl.retired &&
     !s.fl.unemployed &&
@@ -57,6 +58,7 @@ function prepareAnnualPersonalBudget(s, services, a, t, f) {
         : !s.fl.retired && (a < services.P("economy.employmentAgeLimit") || s.job > 0)
           ? j.pay *
             pm *
+            travelHomeWorkIncomeShare(s, s.year - 1) *
             services.contractIncomeFactor(s) * services.personalWorkCapacity(s) *
             (1 + (s.workPayBonus || 0)) *
             (1 + s.k / services.P("economy.knowledgeIncomeScale")) *
