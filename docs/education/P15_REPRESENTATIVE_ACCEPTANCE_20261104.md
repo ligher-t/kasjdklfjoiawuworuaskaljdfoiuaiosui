@@ -61,9 +61,9 @@
 
 ### D19で是正した実装不整合
 
-`js/education/lifecycle.js`と`js/core/state.js`を修正。準備課程を正規の`preparatory`学籍として登録し、実在の課程・学籍・3年度の正式履修・修了能力評価を満たす場合だけ上級中等相当資格を追加する。証書の`qualification="upper-equivalency"`、`sourceCreditIds`、`assessmentEvidenceId`と発行機関を保存する。準備課程の修了を大学・専門学校学位へ混入させない。
+`js/education/lifecycle.js`、`js/core/state.js`、`js/audit/state-basic.js`を修正。準備課程を正規の`preparatory`学籍として登録し、実在の課程・学籍・3年度の正式履修・修了能力評価を満たす場合だけ上級中等相当資格を追加する。証書の`qualification="upper-equivalency"`、`sourceCreditIds`、`assessmentEvidenceId`と発行機関を保存する。準備課程の修了を大学・専門学校学位へ混入させない。
 
-旧`start-preparatory`操作からの直接入学・授業料確定をやめ、P06の`case:begin:reentry:preparatory:1`を経由させる。旧操作の直後は照会案件だけが存在し、入学／費用／資格の正本は未生成であることを専用回帰で検証した。
+旧`start-preparatory`操作からの直接入学・授業料確定をやめ、P06の`case:begin:reentry:preparatory:1`を経由させる。旧操作の直後は照会案件だけが存在し、入学／費用／資格の正本は未生成であることを専用回帰で検証した。既存の`p0-education-nonstandard.test.cjs`も、以前の無学籍3年経過から、実在校・学籍・3年36か月の個別出席・学費納付・修了評価の実経路へ移行し、就労継続・後の大学受験資格・一般生活状態監査を引き続き検証する。
 
 ### 受入境界
 
