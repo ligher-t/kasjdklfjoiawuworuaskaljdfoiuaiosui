@@ -184,10 +184,10 @@ function educationMigrationEligible(s,eventId,choice=null) {
       s.sn?.life_night_study===s.year))return false;
   return !!educationMigrationProviderFor(s,eventId);
 }
-function educationMigrationRecord(s,eventId,letter,result={}) {
+function educationMigrationRecord(s,eventId,letter,result={},scopeOverride=null) {
   s.educationMigration ||= {version:1,seen:{},records:[]};
   const reg=s.educationMigration,
-    scope=educationMigrationScope(s,eventId),
+    scope=scopeOverride||educationMigrationScope(s,eventId),
     id=eventId+":"+scope;
   if(reg.seen[id])return reg.seen[id];
   const record={id,eventId,choice:letter,
@@ -241,13 +241,14 @@ function educationMigrationApply(s,action) {
       educationMigrationRecord(s,eventId,letter,{
         formerEnrollmentId:oldId,newEnrollmentId:transferred.id,
         targetInstitutionId:target.target.institutionId
-      });
+      },oldId);
     }else{
       target.approval.reviewStatus="declined";
       educationMigrationRecord(s,eventId,letter,{
         formerEnrollmentId:oldId,approvalId:target.id,decision:"declined"
       });
     }
+    if(s.educationDecision?.kind==="transfer")s.educationDecision=null;
     return true;
   }
   if(review==="E43"){
