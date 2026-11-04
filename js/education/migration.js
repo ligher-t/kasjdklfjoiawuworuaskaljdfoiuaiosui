@@ -54,7 +54,7 @@ function educationP17ExtraEligible(s,review,letter=null) {
   const primary=item?.stage==="primary",
     planning=item?.phase==="planning",
     contract=item?.phase==="contract";
-  if(EDUCATION_P17_CASE_SCENES.has(review) && !item)return false;
+  if(EDUCATION_P17_CASE_SCENES.has(review) && !item && review!=="E33")return false;
   if(EDUCATION_P17_STUDENT_SCENES.has(review) && !current)return false;
   switch(review){
     case "E01": return planning && primary && !!searched("local") &&
@@ -85,7 +85,9 @@ function educationP17ExtraEligible(s,review,letter=null) {
     case "E12": return planning && s.mo>=10 && !known.length;
     case "E20": return planning && known.some(x=>
       world.areas?.[x.areaId]?.regionKey!==s.res?.n) && witness;
-    case "E21": return planning && witness;
+    case "E21":return planning && known.some(x=>
+      educationOfferingLanguageAssessment(s,x.offeringId,
+        "instruction-session").status==="blocked");
     case "E24": return (planning||contract) &&
       known.some(x=>Number.isFinite(x.tuitionEstimate));
     case "E25": return item.phase==="application" && witness;
@@ -98,9 +100,12 @@ function educationP17ExtraEligible(s,review,letter=null) {
     case "E27":return (planning||contract) && witness;
     case "E30": return (planning||contract) &&
       known.some(x=>x.tuitionEstimate>0);
-    case "E31": return planning && s.job>0 && witness;
-    case "E32":case "E33": return (planning||item.phase==="application") &&
-      witness;
+    case "E31": return planning && s.job>0 && known.length>0;
+    case "E32":return planning && witness;
+    case "E33":return cases.some(x=>
+      x.reason==="institution-refused" && x.endedAt?.year===s.year &&
+      x.applicationId &&
+      s.educationAccess?.notices?.[x.applicationId]?.result==="not-accepted");
     case "E13": return !!school && school.teachingEquivalent>0 &&
       educationP17SchoolExperience(s,"paid-commute-quote") &&
       (letter!=="A"||educationP17SchoolExperience(s,"paid-commute-pass"));
@@ -145,14 +150,27 @@ function educationP17ExtraEligible(s,review,letter=null) {
       x.status!=="enrolled"&&x.institutionId) &&
       Object.values(s.educationPeopleTies?.items||{}).some(x=>
         x.role==="teacher"&&x.personallyKnown) && witness;
-    case "E45":case "E46":case "E55":
-      return !!s.dependentEducation &&
-        Object.keys(s.dependentEducation).length>0 && witness;
-    case "E16":case "E17":case "E18":case "E19":
-      return witness && (letter!=="A" ||
-        ["E16","E19"].includes(review) ||
+    case "E45":return s.age<18 && cases.some(x=>
+      x.reason==="guardian-refused" && x.endedAt?.year===s.year);
+    case "E46":return Object.values(s.dependentEducation||{})
+      .filter(child=>Object.values(s.educationFinance?.invoices||{})
+        .some(invoice=>invoice.personId===child.personId &&
+          invoice.kind==="tuition" && invoice.outstanding>0)).length>=2;
+    case "E55":return Object.values(s.dependentEducation||{})
+      .some(child=>child.knownFacts?.some(fact=>
+        fact.certainty==="reported" &&
+        fact.claim?.schoolOfferingId &&
+        world.offerings?.[fact.claim.schoolOfferingId]));
+    case "E16":return Object.values(
+        s.educationMobility?.residenceOffers||{}).some(x=>
+          x.evidenceRef && x.campusId &&
+          world.campuses?.[x.campusId] &&
+          (x.offeringId===item?.offeringId ||
+           x.offeringId===current?.offering.id));
+    case "E17":case "E18":case "E19":
+      return witness && (letter!=="A" || review==="E19" ||
         Object.values(s.educationMobility?.residenceContracts||{})
-          .some(x=>x.status==="active"&&x.evidenceRef));
+          .some(x=>x.status==="committed"&&x.evidenceRef));
     case "E56":case "E58":case "E61":case "E62":case "E64":
     case "E67":case "E69":case "E70":case "E72":
       return witness && !!world.areas?.[area];
@@ -167,8 +185,11 @@ function educationP17ExtraEligible(s,review,letter=null) {
       Object.values(s.educationPeopleTies?.items||{}).some(x=>
         x.enrollmentId===current.enroll.id&&x.role==="peer"&&x.personallyKnown);
     case "E79":return !!school && educationP17SchoolExperience(s,"accessibility-barrier");
-    case "E80":return s.age>=25 && witness &&
-      (s.lifeRecord?.careerChanges?.length>0);
+    case "E80":return s.age>=25 && !current &&
+      s.lifeRecord?.careerChanges?.length>0 &&
+      institutionOfferings(s,area,"vocational").some(x=>
+        ["open","limited"].includes(educationSchoolStatusAt(s,x.id,
+          s.year,s.mo)?.admissionStatus));
     default: return false;
   }
 }
