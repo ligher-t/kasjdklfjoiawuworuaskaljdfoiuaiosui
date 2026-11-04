@@ -419,3 +419,57 @@ assert.equal(noticeProof.index,1);
 assert.equal(noticeProof.evidence,"signed-assessment-result-001");
 assert.equal(noticeProof.credentials,0);
 console.log("PASS P17 conditional notices: 46 authored, two held, delayed source-backed dispatch, no duplicates or phantom awards");
+
+
+const sixLegacyContracts=run(function(){
+  const ids=["sch","education_paused_life","higher_ed","education_upper_path",
+    "education_funding_review","education_graduation_review"];
+  return ids.map(id=>{
+    const event=EV.find(x=>x.id===id),
+      choices=event?.c||[],
+      actions=choices.flatMap(c=>(c.o||[]).map(o=>o?.[2]?.educationAction)
+        .filter(Boolean)),
+      effects=choices.flatMap(c=>(c.o||[]).map(o=>o?.[2]||{}));
+    return {id,actions,count:choices.length,exists:!!event,
+      directDegree:effects.some(f=>f.fl?.uni===1||f.fl?.voc===1||
+        f.fl?.arts_grad===1||f.study?.endsWith("_finish")),
+      directSchool:effects.some(f=>f.fl?.sch===1),
+      directTuition:effects.some(f=>f.cash<0)};
+  });
+});
+assert.equal(sixLegacyContracts.length,6);
+assert(sixLegacyContracts.every(x=>x.exists&&!x.directDegree&&
+  !x.directSchool&&!x.directTuition));
+const legacyById=Object.fromEntries(sixLegacyContracts.map(x=>[x.id,x]));
+assert.deepEqual(legacyById.sch.actions,
+  ["case:begin:primary:primary:1","case:begin:primary:primary:1",
+   "case:decline:primary"]);
+assert.equal(legacyById.higher_ed.actions.filter(x=>
+  x.startsWith("case:begin:higher-path:")).length,7);
+assert.deepEqual(legacyById.education_upper_path.actions,
+  ["case:begin:upper-path:upper:1","case:decline:upper-path",
+   "case:decline:upper-path"]);
+assert.deepEqual(legacyById.education_graduation_review.actions,
+  ["repeat","withdraw"]);
+assert(legacyById.education_funding_review.actions.includes("funding-loan"));
+assert(legacyById.education_funding_review.actions.includes("funding-grant"));
+assert(legacyById.education_paused_life.actions.includes("withdraw"));
+fresh("龍門",7);
+const actualInitialChoice=run(function(){
+  const s=S;s.mo=4;ensureResidenceIdentity(s);
+  ensureEducationWorldForResidence(s);
+  const cash=s.cash,old=s.educationRecord?.enrollments?.length||0;
+  const accepted=educationCaseAction(s,"case:begin:primary:primary:1"),
+    active=educationActiveCase(s);
+  return {accepted,phase:active?.phase,stage:active?.stage,
+    searches:s.educationAccess?.searches?.length||0,
+    sameCash:s.cash===cash,
+    noEnrollment:(s.educationRecord?.enrollments?.length||0)===old};
+});
+assert.equal(actualInitialChoice.accepted,true);
+assert.equal(actualInitialChoice.phase,"planning");
+assert.equal(actualInitialChoice.stage,"primary");
+assert.equal(actualInitialChoice.searches,1);
+assert.equal(actualInitialChoice.sameCash,true);
+assert.equal(actualInitialChoice.noEnrollment,true);
+console.log("PASS six P13 legacy entrypoints: intent, funding, pause and graduation do not bypass school/finance/credit owners");
