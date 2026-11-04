@@ -42,6 +42,7 @@ const approved=Object.freeze([
   "v88_roaming_work_family_boundaries.test.cjs",
   "v88_roaming_ui_roundtrip.test.cjs",
   "v88_roaming_monthly_stay.test.cjs",
+  "v88_historical_regional_impacts.test.cjs",
   "v88_regional_career_outcomes.test.cjs",
   "v88_regional_promotion_history.test.cjs",
   "v88_yan_court_spring_eligibility.test.cjs",

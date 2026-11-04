@@ -2139,30 +2139,30 @@ window.TERRA_DATA_BUILD.run("base/regional-conflict", function ($terraData, $def
     },
     {
       id: "timeline_daily_bolivar_barricade",
-      conf: "B",
+      conf: "S",
       st: ["少年", "青年", "壮年", "老年"],
       timelineFlag: "bolivar_civil_war",
-      historicalScene: { delivery: "suspended", dateMode: "ongoing" },
+      historicalScene: { delivery: "area-impact", dateMode: "ongoing", region: "ボリバル" },
       need: ["国:ボリバル"],
       ge: { year: 1048 },
       le: { year: 1052 },
       show: s => !!s.world?.events?.bolivar_civil_war,
       w: 2.5,
-      t: "通りの角に築かれた土嚢のバリケードの陰で、缶詰の配給を待つ住民たちが不安そうに空を見上げていた。",
+      t: "戦線から離れた市でも、荷車の行き先を確かめる声が増えた。市場の値札がまた書き替えられ、誰もその理由を一つに決められなかった。",
       fx: { p: -2 }
     },
     {
       id: "timeline_daily_great_silence_sea",
-      conf: "B",
+      conf: "S",
       st: ["少年", "青年", "壮年", "老年"],
       timelineFlag: "great_silence",
-      historicalScene: { delivery: "suspended", dateMode: "ongoing" },
+      historicalScene: { delivery: "area-impact", dateMode: "ongoing", region: "イベリア" },
       need: ["国:イベリア"],
       ge: { year: 1038 },
       le: { year: 1040 },
       show: s => !!s.world?.events?.great_silence,
       w: 2.5,
-      t: "イベリアの海辺から魚の姿が消え、異様な沈黙に包まれた砂浜に黒い海藻が打ち寄せられていた。",
+      t: "海の異変を伝える話が内陸へも届き、港から来る荷の行方を尋ねる人が増えた。海辺で何が起きたのか、行商人たちの話は少しずつ食い違っていた。",
       fx: { p: -2 }
     }
   );
