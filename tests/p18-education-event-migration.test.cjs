@@ -604,3 +604,49 @@ assert.equal(restoredCommute.notice,0);
 assert.equal(restoredCommute.noInvoice,true);
 assert.equal(restoredCommute.noFakeArrival,true);
 console.log("PASS P17 observed transport recovery and case-independent route notice");
+
+
+fresh("極東",20);
+const observedDojo=run(function(){
+ const s=S;s.mo=5;ensureResidenceIdentity(s);
+ const area=ensureEducationWorldForResidence(s),
+   before=educationMigrationEligible(s,"edu_region_higashi_dojo_learning");
+ educationRegisterInformalProvider(s,{
+   providerId:"known-higashi-dojo",personId:"observed-master",
+   kind:"dojo-or-guild",areaId:area,
+   activeFrom:{year:s.year,month:4},subjectIds:["craft"],
+   evidenceRef:"direct-observation-of-dojo-teaching"
+ });
+ const after=educationMigrationEligible(s,"edu_region_higashi_dojo_learning","A"),
+   old=s.educationRecord?.enrollments?.length||0,
+   applied=educationMigrationApply(s,"E63:A");
+ return {before,after,applied,
+   actualEnrollment:(s.educationRecord?.enrollments?.length||0)===old,
+   noCredential:!s.educationRecord?.awards?.length};
+});
+assert.deepEqual(observedDojo,{
+ before:false,after:true,applied:true,actualEnrollment:true,noCredential:true
+});
+fresh("リターニア",22);
+const realArtsRecruitment=run(function(){
+ const s=S;s.mo=5;ensureResidenceIdentity(s);
+ const area=ensureEducationWorldForResidence(s),
+   world=s.world.educationWorld;
+ const inst=educationRegisterInstitution(world,area,
+   "observed-arts-college","arts",["arts"],s.year),
+   offer=world.offerings[inst.offeringIds[0]];
+ offer.admissionTier=3;
+ const available=educationMigrationEligible(s,
+   "edu_region_leithanien_arts_selectivity","A"),
+   old=s.educationRecord?.enrollments?.length||0,
+   applied=available&&educationMigrationApply(s,"E69:A");
+ return {available,applied,informational:
+   (s.educationRecord?.enrollments?.length||0)===old,
+   noPayment:!s.educationFinance?.postings ||
+     Object.keys(s.educationFinance.postings).length===0};
+});
+assert.equal(realArtsRecruitment.available,true);
+assert.equal(realArtsRecruitment.applied,true);
+assert.equal(realArtsRecruitment.informational,true);
+assert.equal(realArtsRecruitment.noPayment,true);
+console.log("PASS P17 regional observations require actual local dojo and selective Arts offering");
