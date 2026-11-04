@@ -52,6 +52,8 @@ const observational=run(function(){
    applicationIds:[],enrollmentIds:[]
  });
  const hiddenBeforeSearch=educationCasePresentation(s);
+ const firstBridge=educationObservationCaseBridgeRows(s,{
+   year:s.year,month:s.mo,caseIds:[item.id]})[0];
  const first=projection(),unknown=educationObservationRows(s,{
    year:s.year,month:s.mo,
    siteFrame:[{scopeId:'unobserved-region',stage:'arts'}],
@@ -59,6 +61,8 @@ const observational=run(function(){
    caseIds:[],applicationIds:[],enrollmentIds:[]});
  const before=first.p_discovered,unsearched=first.p_reachable;
  const discovered=educationCaseDiscover(s,'local');
+ const secondBridge=educationObservationCaseBridgeRows(s,{
+   year:s.year,month:s.mo,caseIds:[item.id]})[0];
  const second=projection(),stateBefore=JSON.stringify(s),
    rngBefore=s.rngState,
    third=projection(),
@@ -76,6 +80,11 @@ const observational=run(function(){
    unknownOpen:unknown.p_open.excludedUnknown,
    unchanged:stateBefore===stateAfter&&rngBefore===s.rngState,
    repeated:JSON.stringify(second)===JSON.stringify(third),
+   bridgeBefore:{known:firstBridge.N_known,open:firstBridge.N_any_open,
+     applied:firstBridge.N_applied,route:firstBridge.N_route},
+   bridgeAfter:{known:secondBridge.N_known,open:secondBridge.N_any_open,
+     applied:secondBridge.N_applied,
+     reachable:secondBridge.N_route},
    hiddenBeforeSearch:hiddenBeforeSearch.includes("まだ調べていない") &&
      !hiddenBeforeSearch.includes(institution.id) &&
      !hiddenBeforeSearch.includes(offering.id),
@@ -96,6 +105,12 @@ assert.equal(observational.unknownOpen,1);
 assert.equal(observational.unchanged,true);
 assert.equal(observational.repeated,true);
 assert.equal(observational.hiddenBeforeSearch,true);
+assert.deepEqual(observational.bridgeBefore,{
+  known:false,open:true,applied:false,route:null});
+assert.equal(observational.bridgeAfter.known,true);
+assert.equal(observational.bridgeAfter.open,true);
+assert.equal(observational.bridgeAfter.applied,false);
+assert.equal(typeof observational.bridgeAfter.reachable,"boolean");
 assert.equal(new Set(observational.units.map(x=>x[0])).size,7);
 assert(observational.openCount>0);
 
@@ -124,12 +139,19 @@ const outcomes=run(function(){
  educationSettleInvoice(s,invoice);
  item.status='resolved';item.phase='resolved';
  const after=read();
+ const bridge=educationObservationCaseBridgeRows(s,{
+   year:s.year,month:s.mo,caseIds:[item.id]})[0];
  return {missingOffer:false,accepted:after.p_accepted.numerator,
+   applied:bridge.N_applied,bridgeAccepted:bridge.N_accepted,
+   bridgeFunded:bridge.N_funded,bridgeEnrolled:bridge.N_enrolled,
+   independentNonformal:bridge.N_nonformal_gain,
    fundedPending:before.p_funded.pending,funded:after.p_funded.numerator,
    fundedDenominator:after.p_funded.denominator,
    noAutomaticEnrollment:(s.educationRecord?.enrollments||[]).length===0};
 });
 assert.deepEqual(outcomes,{missingOffer:false,accepted:1,
+  applied:true,bridgeAccepted:true,bridgeFunded:true,bridgeEnrolled:false,
+  independentNonformal:false,
   fundedPending:1,funded:1,fundedDenominator:1,noAutomaticEnrollment:true});
 const credentials=run(function(){
  const s=S,offer=Object.values(s.world.educationWorld.offerings)
