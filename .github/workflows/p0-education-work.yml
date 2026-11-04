@@ -51,6 +51,8 @@ jobs:
         run: node tools/check-efficient.cjs run p19-education-observation.test.cjs
       - name: P19 dependent enrollment and parent knowledge boundaries
         run: node tools/check-efficient.cjs run p19-education-dependent-observation.test.cjs
+      - name: P19 nine-step application, funding and enrollment boundaries
+        run: node tools/check-efficient.cjs run p19-education-nine-stage.test.cjs
       - name: Dated school operations and daily/exam/residence mobility
         run: node tools/check-efficient.cjs run p18-education-operations-mobility.test.cjs
       - name: P06/P16 bounded school case and student-visible decisions
