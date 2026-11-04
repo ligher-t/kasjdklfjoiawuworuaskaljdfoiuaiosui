@@ -151,6 +151,8 @@ jobs:
           node-version: '22'
       - name: Runtime syntax and revision
         run: node tools/check-efficient.cjs syntax
+      - name: Parent oripathy death and bereavement
+        run: node tools/check-efficient.cjs run parent-oripathy-bereavement.test.cjs
       - name: Historically situated information
         run: node tools/check-efficient.cjs run v88_history_scope_and_pending.test.cjs
       - name: Historical scene and journey contract

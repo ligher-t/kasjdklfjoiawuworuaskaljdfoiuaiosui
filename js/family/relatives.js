@@ -745,6 +745,7 @@ function advanceParentWorkLives(s) {
       parent.tx = 0;
       parent.workShare = 0;
       parent.healthUpdatedYear = s.year;
+      notifyParentOripathyDeath(s,parent,key);
       continue;
     }
     const floor = P("family.parentWorkShareFloor"),
@@ -767,4 +768,18 @@ function advanceParentWorkLives(s) {
       parent.workCapacityHistory = parent.workCapacityHistory.slice(-8);
     }
   }
+}
+function notifyParentOripathyDeath(s,parent,key){
+  if(!parent?.d||!parent.inf||!String(parent.deathCause).includes('鉱石病')||parent.oripathyDeathNotice)return false;
+  const variant=travelPresence(s).mode!=='residence'||parent.separated?4:Math.min(4,Math.floor(R()*5)),id='parent_oripathy_death_'+(variant+1),
+    event=EV.find(e=>e.id===id);
+  if(!event)return false;
+  parent.oripathyDeathNotice={eventId:id,personId:parent.id||key,deathYear:parent.d,
+    notifiedYear:s.year,notifiedMonth:s.mo||null};
+  fire({...event,t:event.t.replaceAll('{親の名}',parent.nm||'親')},s,tags(s));
+  // Only the scene with actual dust inhalation can establish this new exposure.
+  // It never automatically diagnoses the child or infects the whole household.
+  if(variant===2&&s===S&&!s.inf&&R()<0.15)
+    applyInfectionAndContactEffects({inf:1,infectionRoute:'dust',infCause:'鉱石病で亡くなった親の遺体から舞った源石粉塵を吸い込んだ'},s);
+  return true;
 }

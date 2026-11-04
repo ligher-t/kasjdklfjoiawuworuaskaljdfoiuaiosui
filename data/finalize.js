@@ -10,6 +10,7 @@ window.TERRA_DATA_BUILD.run("finalize", function ($terraData, $define, $rules) {
     window.TERRA_EDUCATION_INJECT_P17($terraData,$define);
     delete window.TERRA_EDUCATION_INJECT_P17;
   }
+  window.TERRA_PARENT_BEREAVEMENT($terraData);delete window.TERRA_PARENT_BEREAVEMENT;
   $terraData.refreshFlagUsage();
   // 同じ所属への二重加入・二重応募を、表示と実行候補の両方で防ぐ。
   for (const event of $terraData.EV) for (const choice of event.c || []) {
