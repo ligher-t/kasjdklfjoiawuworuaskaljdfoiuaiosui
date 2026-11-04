@@ -271,7 +271,73 @@
     {
       "id": "life_work_project_setback",
       "error": "source-not-found",
-      "choices": []
+      "choices": [
+        {
+          "label": "急かされても手を止め、図面と実物の寸法を測り直す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "発注者の小言を背中で聞き流しながら寸法を測り直し、仲間と知恵を絞って無理のない取り付け方を見つけた。納期は少し延びたが、機械は異音ひとつなく動き出した。",
+              "effectRaw": "{k:2,lifeSkill:{id:\"current-job\",title:\"current_job\",delta:3}}",
+              "effectKeys": [
+                "k",
+                "lifeSkill",
+                "id",
+                "title",
+                "delta"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "残業手当を目当てに、夜通しの突貫作業を引き受ける",
+          "gate": "{en:{ge:{h:25}},why:\"長い追加作業に耐えられる体力がない\"}",
+          "outcomes": [
+            {
+              "weight": "0.8",
+              "prose": "深夜まで火花を散らして部材を加工し続け、約束通りの臨時手当を懐に入れた。翌朝は鉛のように肩が重く、寝床から起き上がるのにひどく時間がかかった。",
+              "effectRaw": "{cash:18000,pm:1,h:-4,p:-2,lifeSkill:{id:\"current-job\",title:\"current_job\",delta:3}}",
+              "effectKeys": [
+                "cash",
+                "pm",
+                "h",
+                "p",
+                "lifeSkill",
+                "id",
+                "title",
+                "delta"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "疲れで手元が狂い、工具で指先を深く痛めて突貫作業から外された。臨時手当はふいになり、腫れた手を抱えて残りの工程を仲間に引き継いだ。",
+              "effectRaw": "{h:-7,p:-2}",
+              "effectKeys": [
+                "h",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "無理な残業は断り、勤務を短くして後任へ引き継ぐ",
+          "gate": "{show:s=>s.workContract?.hours!==\"short\"}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "身体を壊しては元も子もないと短時間勤務への切り替えを申し入れ、やりかけの箇所の寸法を次の番の仲間に伝えて現場を上がった。稼ぎは減るが、深く息をつける夜が戻った。",
+              "effectRaw": "{workContractAction:{action:\"hours\"},h:2,p:1}",
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "h",
+                "p"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "earth_persecution_victoria_framed_debt",
@@ -1418,8 +1484,8 @@
     {
       "id": "life_work_project_setback",
       "actual": [
-        0,
-        0
+        3,
+        4
       ]
     }
   ]
