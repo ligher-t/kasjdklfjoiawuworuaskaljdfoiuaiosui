@@ -844,3 +844,338 @@ P13既存イベントの改修に伴う表示本文・選択文・結果文の�
       ]
     }
 ~~~
+
+## data/base/family-and-livelihood.js
+
+### `fam_unemploy`
+
+~~~js
+{
+      id: "fam_unemploy",
+      conf: "S",
+      st: ["児童", "少年"],
+      need: ["貧困", "家計を担う親あり"],
+      ban: ["失業中の親"],
+      w: 0.6,
+      cd: 10,
+      t: [
+        { when: "家計逼迫", t: "大黒柱だった親が職を失った。ただでさえ苦しかった台所は火の車で、明日のパンや米をどうするかという声が部屋に響いた。" },
+        { t: "親が働き口を失い、肩を落として帰ってきた。次の仕事が見つかるまでどうやって食い繋ぐか、家族で額を集めた。" }
+      ],
+      c: [
+        $terraData.K(
+          "自分も働きに出る",
+          { show: s => s.age >= $rules.parameters.value("life.workStartAge") },
+          [
+            0.7,
+            "学ぶ時間も削り、日雇いの荷運びに出た。泥だらけで持ち帰った小銭で食卓はつないだが、親の働き口はまだ見つからない。",
+            { job: 1, educationAction: "leave-school", fl: { parent_unemployed: 1 }, cash: 5e4, p: -5, h: -5 }
+          ],
+          [
+            1,
+            "大人の嫌がる危険な現場しか口がなく、無理がたたって体を壊した。親の仕事も決まらず、食費と薬代のどちらを先に出すかで家が暗くなった。",
+            { job: 1, educationAction: "leave-school", fl: { workplace_hazard: 1, parent_unemployed: 1 }, cash: 5e4, h: -15, p: -8 }
+          ]
+        ),
+        $terraData.K(
+          "勉学を続ける",
+          { en: s => !!educationMigrationCurrent(s), why: "現在、実在する学校課程に在籍していない" },
+          [
+            0.5,
+            "「お前は学校へ行け」と親が背中を押してくれた。すり減った靴で通学を続けたが、親は毎日仕事を探し回って疲れ切っていた。",
+            { p: 3, rl: 5, fl: { parent_unemployed: 1 } }
+          ],
+          [
+            1,
+            "学費どころか日々の食事にも事欠くようになり、学校を辞めざるを得なくなった。親の新しい仕事もまだ見つからない。",
+            { educationAction: "leave-school", fl: { parent_unemployed: 1 }, p: -10 }
+          ]
+        ),
+        $terraData.K("家の仕事を手伝って支える", {}, [
+          1,
+          "水汲みや炊事、細かな繕い物を引き受け、親が仕事探しに回れるよう家を守った。まだ吉報は届かないが、食卓ではなるべく明るい声を出し合った。",
+          { p: 2, rl: 8, h: -2, fl: { parent_unemployed: 1 } }
+        ])
+      ]
+    }
+~~~
+
+### `race_identity`
+
+~~~js
+{
+      id: "race_identity",
+      conf: "S",
+      references: ["SRC_TERRA_SOCIAL_ATTITUDES"],
+      st: ["児童", "少年"],
+      any: ["地域で少数派", "多種族の交流圏", "異種族の家族"],
+      w: 0.7,
+      cd: 10,
+      t: [
+        {
+          when: (s,T) => ok({ need: ["地域で少数派", "就学中"] }, s, T) &&
+            educationLegacySceneGuard(s,"education_school_classroom"),
+          t: "教室で名簿を読み上げた先生が、あなたの種族の欄でつっかえて何度も言い直した。後ろの席からくすくす笑う声が聞こえ、帰り道、家の人に打ち明けるか迷った。"
+        },
+        {
+          when: "地域で少数派",
+          t: "近所の集まりで名前を聞かれたとき、あなたの種族を知った大人が珍しそうに何度も聞き返し、そばの子どもが笑った。家の人に話すべきか迷いながら帰った。"
+        },
+        {
+          when: "異種族の家族",
+          t: "親戚が集まった席で、角や尾、耳の形が周りと言葉通り違うことをからかわれた。愛想笑いを返したあとも、家族の中で自分だけ姿が違うことが胸に引っかかった。"
+        },
+        {
+          when: "多種族の交流圏",
+          t: "市場の手伝いに集まる子どもたちは、種族も生まれ故郷もばらばらだ。荷運びの合間に互いの角や耳、家の習慣を比べ合ううち、自分自身のルーツについても考えさせられた。"
+        },
+        {
+          t: "同じ種族ばかりの土地で育ち、自分の姿を特別だと思ったことは一度もなかった。よその土地から来た子に珍しそうにじろじろ見られ、初めて自分の輪郭を意識した。"
+        }
+      ],
+      c: [
+        $terraData.K("信頼できる大人に打ち明ける", {}, [
+          1,
+          "その人は手を止め、あなたの家族や故郷の話をゆっくり聞いてくれた。すっきりした答えは出なかったが、胸のつかえを言葉にできただけで少し息がしやすくなった。",
+          { p: 3, rl: 3 }
+        ]),
+        $terraData.K("誰にも言わず、自分の中で考える", {}, [
+          1,
+          "水たまりや鏡に映る自分の顔をじっと見つめ、昼間の言葉と重ね合わせてみた。何がそんなに特別なのか、まだうまく言葉にできなかった。",
+          { k: 1, p: 1 }
+        ])
+      ]
+    }
+~~~
+
+## data/regional/victoria.js
+
+### `daily_victoria_59`
+
+~~~js
+{
+    id: "daily_victoria_59", conf: "S", st: ["少年", "青年"], need: ["国:ヴィクトリア"],
+    t: "運河沿いの土手を歩いていると、学生たちがボートを漕ぎ進める練習風景に出会った。掛け声に合わせてオールが一斉に水を掻き、夕暮れの水面を滑っていく姿に清々しさを感じた。",
+    fx: { p: 2 }
+  }
+~~~
+
+## data/social/learning.js
+
+### `v77_child_informal_study`
+
+~~~js
+{
+      id: "v77_child_informal_study",
+      conf: "S",
+      references: ["SRC_V77_SOCIAL_MODEL", "SRC_V77_FROSTLEAF"],
+      st: ["児童", "少年"],
+      ge: { age: 9 },
+      le: { age: 17 },
+      cd: 5,
+      w: 0.8,
+      show: s => !s.fl?.sch,
+      t: "家に届いた書き付けや店の帳面の字が読めず、周りの大人に読み上げてもらうしかなかった。学校という場所には、もうしばらく通っていない。",
+      c: [
+        $terraData.K(
+          "近所の読み書き教室へ顔を出す",
+          {
+            en: (s,T) => ok({ge:{socialAccess:52,cash:25000}},s,T) &&
+              Object.values(s.world?.educationWorld?.informalProviders||{}).some(p=>
+                p.kind==="neighborhood-literacy" && p.status==="active" &&
+                p.areaId===s.local?.educationAreaId && p.evidenceRef &&
+                p.subjectIds?.includes("basic_literacy") &&
+                s.year*12+s.mo>=p.activeFrom.year*12+(p.activeFrom.month||0) &&
+                (!p.activeTo || s.year*12+s.mo<=p.activeTo.year*12+(p.activeTo.month??12))),
+            why: "実在する教室・通学できる講師・月謝の条件が揃っていない。"
+          },
+          [
+            1,
+            "顔なじみの年長者に文字の拾い方を教わり、帰り道、店先にぶら下がった値札を自分の声で読み上げてみた。",
+            { k: 3, literacyGain: 8, cash: -25000, rl: 2 }
+          ]
+        ),
+        $terraData.K("通りの看板や包み紙の字を見様見真似で写す", {}, [
+          1,
+          "道端の看板や荷物の包み紙にある文字を、切れ端に何度も書き写した。指先が黒く汚れるころ、読める字がほんの少しだけ増えた。",
+          { k: 1, p: 1 }
+        ]),
+        $terraData.K("今は家の手伝いや日銭稼ぎを優先する", {}, [
+          1,
+          "書き付けを折りたたんで脇へ置き、いつもの用事へ戻った。文字は覚えられなかったが、今日の手伝いで少しばかりの小遣いと家族の笑顔を得た。",
+          { cash: 20000, rl: 1 }
+        ])
+      ]
+    }
+~~~
+
+### `v77_adult_literacy_path`
+
+~~~js
+{
+      id: "v77_adult_literacy_path",
+      conf: "S",
+      references: ["SRC_V77_SOCIAL_MODEL", "SRC_V77_FROSTLEAF"],
+      st: ["青年", "壮年", "老年"],
+      cd: 7,
+      w: 0.64,
+      show: s => s.age >= 18 && $rules.social.literacyValue(s) < 45,
+      t: "役所の申請書を前に、自分の読める字だけを指先で拾った。通りの掲示板に夜間教室の案内が貼られていたのを思い出す。仕事帰りのクタクタな体で通えるか、月謝を捻出できるか思案した。",
+      c: [
+        $terraData.K(
+          "仕事帰りに夜間教室へ通い始める",
+          { en: { ge: { cash: 55000, socialAccess: 45 } }, why: "月謝に回す金か、夜間に通うだけの余裕がまだない。" },
+          [
+            1,
+            "泥のように疲れた体を引きずって夜の教室へ通い、鉛筆の握り方から教わった。書類に並んだ黒い文字が、少しずつ意味のある言葉に変わっていった。",
+            { k: 3, literacyGain: 8, cash: -55000, p: 1 }
+          ]
+        ),
+        $terraData.K(
+          "身近な人に文書を読んでもらえるか頼む",
+          { en: { ge: { rl: 30 } }, why: "文字が読めないことを打ち明けて頼れる相手が、まだいない。" },
+          [
+            0.8,
+            "知人は茶を淹れて横に座り、難しい言い回しを噛み砕いて教えてくれた。帰り際には、自分で読める文字がいくつか増えていた。",
+            { k: 2, rl: 1, literacyGain: 4 }
+          ],
+          [
+            1,
+            "頼んだ相手もその日は忙しく、後でまたにしてくれと断られた。読めない文字が並んだ紙をたたみ、ため息とともに懐へしまった。",
+            { p: -1 }
+          ]
+        ),
+        $terraData.K("今は読み書きより、明日の稼ぎを優先する", {}, [
+          1,
+          "学びたい気持ちは胸の奥にしまい込み、今は目の前の仕事と家事に時間を使うことにした。今日の日当をきっちり受け取り、家族のために夕飯の買い出しをした。",
+          { cash: 25000, rl: 1 }
+        ])
+      ]
+    }
+~~~
+
+## data/base/confinement-and-education.js
+
+### `education_return_path`
+
+~~~js
+{
+      id:"education_return_path",conf:"S",references:["SRC_EDUCATION_ACCESS"],
+      st:["児童","少年","青年","壮年"],cd:3,w:0.65,
+      show:s=>s.age>=8 && !educationOccupied(s) &&
+        !(educationHas(s,"upper") || s.educationPath?.equivalency?.includes("upper")),
+      t:"途中で学び舎を離れたか、そもそも机を並べる機会がないまま歳月が過ぎた。今の読み書きの力と懐具合で、もう一度学べる場所がないか探してみた。",
+      c:[
+        $terraData.K("初等課程の募集先を探し、遅れて入れるか相談する",{
+          show:s=>s.age<=14 && !educationHas(s,"primary"),
+          en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
+        },[1,"年下の子と同じ教室に通うことも考え、まず受け入れる学校があるか調べることにした。入学はまだ決まっていない。",
+           {educationAction:"case:begin:reentry:primary:1"}]),
+        $terraData.K("中断した前期中等課程の受入先を探す",{
+          show:s=>s.age<=20 && s.educationPath?.stage==="lower" &&
+            ["withdrawn","outside"].includes(s.educationPath.status),
+          en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
+        },[1,"以前の履修記録を確かめ、前期中等の課程を再開できる学校へ相談することにした。",
+           {educationAction:"case:begin:reentry:lower:1"}]),
+        $terraData.K("中断した後期中等課程の受入先を探す",{
+          show:s=>s.age<=20 && s.educationPath?.stage==="upper" &&
+            ["withdrawn","outside"].includes(s.educationPath.status),
+          en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
+        },[1,"以前の履修記録を確かめ、後期中等の課程を再開できる学校へ相談することにした。",
+           {educationAction:"case:begin:reentry:upper:1"}]),
+        $terraData.K("働きながら学べる正式準備課程を探す",{
+          show:s=>s.age>=16,
+          en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
+        },[1,"働きながら受けられる正式な準備課程があるか、募集期間と通学条件を調べることにした。",
+           {educationAction:"case:begin:reentry:preparatory:1"}]),
+        $terraData.K("仕事や氏族・師弟のもとで学べる方法を探す",{},
+          [1,"仕事場の親方や年長者に、教えてもらえることがあるか尋ねた。実際に学ぶ場と期間は、まだ決まっていない。",
+           {p:1}])
+      ]
+    }
+~~~
+
+### `education_transfer_review`
+
+~~~js
+{
+      id:"education_transfer_review",st:["幼児","児童","少年","青年","壮年","老年"],conf:"S",references:["SRC_EDUCATION_ACCESS"],
+      show:s=>s.educationDecision?.kind==="transfer"&&educationLive(s),
+      pri:true,who:"self",
+      t:"通っていた学び舎から、これ以上は席を置けないと通告された。同じ街に受け入れてくれる別の学校があるか探し、このまま学びを続けるかどうか決断を迫られた。",
+      c:[
+        $terraData.K("受入が確定した学び舎へ学籍を移す",{
+          en:s=>!!educationMigrationTransferOffer(s),
+          why:"受入先の正式な承認・単位認定・通学・納付が揃っていない"
+        },[1,"学籍と既修得の履修記録を確認し、承認された別の学び舎へ移った。新しい校地で学業を続けることになった。",
+          {educationAction:"event:E41:A"}]),
+        $terraData.K("通学をやめ、別の学び方を考える",{},[
+          1,"学校へ通い続けることを断念し、教本を鞄にしまった。これまで覚えた知識は頭に残るが、卒業の免状は手に入らないまま校門を出た。",
+          {educationAction:"transfer-leave"}])
+      ]
+    }
+~~~
+
+## data/parts/extensions/education-and-later-life/ursus-student-life.js
+
+### `life_ursus_student_assembly_contact`
+
+~~~js
+{
+    id: "life_ursus_student_assembly_contact",
+    conf: "B",
+    references: ["SRC_URSUS_PAA_OFFICIAL", "SRC_URSUS_PAA_SYNOPSIS"],
+    st: ["少年", "青年"],
+    need: ["国:ウルサス", "都市:サンクト・グリファーブルク"],
+    ge: { year: 1101, age: 14 },
+    le: { year: 1101, age: 24 },
+    months: [10, 11],
+    once: true,
+    w: 0.18,
+    t: "冬の舞踏会が近づく街で、よその学校の生徒たちがひそかに開く集まりの噂が回ってきた。国家評議会庁舎を傷つけた容疑で、学生連合の生徒がひとり憲兵に連れて行かれたという。家ではこの集まりに近づかないほうがいいと心配する声もあった。",
+    c: [
+      $terraData.K("身近な人には用事があるとだけ伝え、集まりを見に行く", {}, [
+        1,
+        "用事があると伝えて集まりへ顔を出した。捕まった生徒を助け出そうと息巻く声と、下手に動けば全員捕まると怯える声が入り乱れていた。帰り道、大通りでは冬の舞踏会に向けた華やかな飾りつけが進んでいた。",
+        {
+          fl: { ursus_student_assembly_contacted: 1 },
+          lifeAffiliation: {
+            id: "ursus-student-assembly",
+            title: "サンクト・グリファーブルク学生連合とのつながり",
+            kind: "community",
+            action: "contact",
+            role: "会合の知らせを受けた参加者"
+          },
+          lifeGoal: {
+            id: "ursus-student-assembly",
+            title: "同じ街の学生たちと連絡を保ち、自分の身を守る",
+            priority: "暮らしと安全",
+            action: "start"
+          },
+          groupStanding: {
+            id: "deity-student-assembly",
+            title: "学校をまたぐ学生連合の会合参加者",
+            delta: 1,
+            reason: "会合へ出席し、各校の話を聞いた"
+          },
+          p: 1
+        }
+      ]),
+      $terraData.K("危ない誘いには乗らず、普段の暮らしを続ける", {}, [
+        1,
+        "その集まりには足を向けなかった。街では捕まった生徒の噂が囁かれていたが、冷たい風の中をまっすぐ帰った。",
+        {
+          fl: { ursus_student_assembly_contacted: 0, ursus_student_assembly_active: 0 },
+          lifeGoal: {
+            id: "ursus-student-assembly",
+            title: "同じ街の学生たちと連絡を保ち、自分の身を守る",
+            priority: "暮らしと安全",
+            action: "abandon",
+            note: "連合との接触を選ばず、日々の暮らしを続けた"
+          },
+          p: 0
+        }
+      ])
+    ]
+  }
+~~~
