@@ -215,3 +215,40 @@ assert.equal(legacy.learned,true);
 assert.equal(legacy.provider,true);
 assert.equal(legacy.noDegree,true);
 console.log("PASS P13/P17 80 reviewed prose, 12 activated scenes, scoped I03-I06 effects, and safe legacy classroom guards");
+
+
+fresh();
+const legacyRoutes=run(function(){
+  const s=S;s.mo=6;s.educationPath={status:"outside"};
+  const event=id=>EV.find(e=>e.id===id);
+  const reentry=event("education_return_path");
+  const unemployment=event("fam_unemploy");
+  const childAid=event("ksc");
+  const adultTutor=event("v77_child_informal_study");
+  const minority=event("race_identity");
+  const tagset=tags(s);
+  return {
+    reentryChoices:reentry.c.length,
+    reentryActions:reentry.c.slice(0,4).map(c=>c.o[0][2].educationAction),
+    transfersViaApproval:event("education_transfer_review").c[0].o[0][2].educationAction,
+    unemploymentExit:unemployment.c[0].o.map(o=>o[2].educationAction),
+    childAidCash:childAid.c.map(c=>c.o[0][2].cash??0),
+    minorityClassroom:minority.t[0].when(s,tagset),
+    generatedClasses:["f17","f18"].map(id=>event(id).show(s)),
+    oldTutorWithoutProvider:adultTutor.c[0].en(s,tagset)
+  };
+});
+assert.equal(legacyRoutes.reentryChoices,5);
+assert.deepEqual(legacyRoutes.reentryActions,[
+  "case:begin:reentry:primary:1",
+  "case:begin:reentry:lower:1",
+  "case:begin:reentry:upper:1",
+  "case:begin:reentry:preparatory:1"
+]);
+assert.equal(legacyRoutes.transfersViaApproval,"event:E41:A");
+assert.deepEqual(legacyRoutes.unemploymentExit,["leave-school","leave-school"]);
+assert.deepEqual(legacyRoutes.childAidCash,[0,0]);
+assert.equal(legacyRoutes.minorityClassroom,false);
+assert.deepEqual(legacyRoutes.generatedClasses,[false,false]);
+assert.equal(legacyRoutes.oldTutorWithoutProvider,false);
+console.log("PASS education legacy reentry, family-school, minority, generated-classroom, and tutor guards");
