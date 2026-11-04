@@ -1,0 +1,6519 @@
+{
+  "schema": "terra-work-event-A-connection-contract",
+  "schemaVersion": 1,
+  "asOf": "2026-11-04",
+  "branch": "fix/historical-event-scope-and-delivery",
+  "status": "individual-A-index-with-machine-inferred-guards; full branch review pending",
+  "source": "WORK_EVENT_INVENTORY_20261104.json",
+  "recordCount": 175,
+  "summaryByKind": {
+    "choice-with-entry-and-exit": 18,
+    "potential-role-end": 61,
+    "potential-new-role": 81,
+    "affiliation-change": 11,
+    "existing-contract-action": 4
+  },
+  "summaryByPriority": {
+    "P1": 96,
+    "P0": 64,
+    "P2": 15
+  },
+  "interpretation": "175件をID単位に接続計画へ収録。候補の結果枝のJob IDとeffectsを抽出し、実装時に必要な存在・離職・会計・所属チェックを提示。すべての枝を人手で意味校閲済みと扱わない。個別イベントの選択後本文の修正やコード変更は本工程では行わない。",
+  "records": [
+    {
+      "eventId": "car",
+      "source": "data/base/career-entry.js:4",
+      "regionLabelFromCatalog": "炎国、龍門、ヴィクトリア、ウルサス、カジミエーシュ、クルビア、極東、シラクーザ、サルゴン、カズデル、サーミ、リターニア、イェラグ、レム・ビリトン、シエスタ、ミノス",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        14,
+        0,
+        4,
+        2,
+        3,
+        16,
+        17,
+        18,
+        20,
+        21,
+        7,
+        22,
+        23,
+        24,
+        27,
+        1
+      ],
+      "affiliationEffects": [
+        {
+          "id": "terra-general-transporter",
+          "kind": "occupation"
+        },
+        {
+          "id": "kjerag-village-transporter",
+          "kind": "individual-career"
+        },
+        {
+          "id": "columbia-technical-work",
+          "kind": null
+        },
+        {
+          "id": "victoria-insurance-clerk",
+          "kind": null
+        },
+        {
+          "id": "rim-catastrophe-survey-assistant",
+          "kind": "individual-career"
+        },
+        {
+          "id": "sargon-market-guard-contracts",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "ar",
+        "cash",
+        "cr",
+        "ep",
+        "fl",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "payBonus",
+        "pm",
+        "res",
+        "residenceArrangement",
+        "rl",
+        "study"
+      ],
+      "choiceCount": 23,
+      "outcomeBranchCount": 37,
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_URSUS_INFECTED",
+        "SRC_URSUS_EP16",
+        "SRC_RIM_WORK",
+        "SRC_LEONHARDT_ARCHIVE",
+        "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+        "SRC_PENGUIN_LOGISTICS_CB1",
+        "SRC_COURIER_LOGISTICS_RECORD",
+        "SRC_TRANSPORTER_LIFE_MODEL",
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_SARGON_WD1_WD5",
+        "SRC_SARGON_CONTRACT_LIFE_MODEL"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "transporter_contract_review",
+      "source": "data/base/career-entry.js:519",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "terra-general-transporter",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_PENGUIN_LOGISTICS_CB1",
+        "SRC_COURIER_LOGISTICS_RECORD",
+        "SRC_TRANSPORTER_LIFE_MODEL"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "gig-vs-permanent-payroll"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "kjerag_transporter_route_review",
+      "source": "data/base/career-entry.js:596",
+      "regionLabelFromCatalog": "イェラグ",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kjerag-village-transporter",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_COURIER_LOGISTICS_RECORD",
+        "SRC_TRANSPORTER_LIFE_MODEL",
+        "SRC_KJERAG_LIFE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "rim_catastrophe_transporter_review",
+      "source": "data/base/career-entry.js:675",
+      "regionLabelFromCatalog": "レム・ビリトン",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        16
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rim-catastrophe-survey-assistant",
+          "kind": null
+        },
+        {
+          "id": "terra-general-transporter",
+          "kind": "occupation"
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_LEONHARDT_ARCHIVE",
+        "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+        "SRC_RIM_LOCAL_LIFE_MODEL",
+        "SRC_TRANSPORTER_LIFE_MODEL"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "sargon_market_contract_review",
+      "source": "data/base/career-entry.js:792",
+      "regionLabelFromCatalog": "サルゴン",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        0,
+        16
+      ],
+      "affiliationEffects": [
+        {
+          "id": "sargon-market-guard-contracts",
+          "kind": null
+        },
+        {
+          "id": "terra-general-transporter",
+          "kind": "occupation"
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_SARGON_WD1_WD5",
+        "SRC_SARGON_CONTRACT_LIFE_MODEL",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "gig-vs-permanent-payroll"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "ursus_mine_assignment_offer",
+      "source": "data/base/career-entry.js:898",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        3
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-kleini-sever-mine",
+          "kind": "coercive-mine-assignment"
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "h",
+        "home",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "localKind",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_URSUS_MINE_LIFE",
+        "SRC_URSUS_EP16",
+        "SRC_URSUS_INFECTED"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "coercion-and-disclosure"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "ursus_mine_assignment_review",
+      "source": "data/base/career-entry.js:973",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-kleini-sever-mine",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "groupStanding",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p",
+        "regionalImpact",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_URSUS_MINE_LIFE",
+        "SRC_URSUS_EP16",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "coercion-and-disclosure"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "col_tech_safety_aftermath",
+      "source": "data/base/career-entry.js:1286",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        7,
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "columbia-technical-work",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cr",
+        "fl",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "regionalImpact"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE",
+        "SRC_COLUMBIA_TECH_SAFETY_MODEL"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "col_tech_internal_review",
+      "source": "data/base/career-entry.js:1661",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "columbia-technical-work",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cr",
+        "fl",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "col_tech_workplace_consequence",
+      "source": "data/base/career-entry.js:1759",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "columbia-technical-work",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cr",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "regionalImpact"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "col_tech_later_years",
+      "source": "data/base/career-entry.js:1877",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "columbia-technical-work",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "vic_clerk_role_review",
+      "source": "data/base/career-entry.js:1970",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "victoria-insurance-clerk",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "payBonus"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "vic_clerk_later_years",
+      "source": "data/base/career-entry.js:2047",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "victoria-insurance-clerk",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "work_unemployed_reentry",
+      "source": "data/base/career-entry.js:2188",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        1,
+        2,
+        24,
+        4
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "h",
+        "job",
+        "k",
+        "p",
+        "pm",
+        "rl"
+      ],
+      "choiceCount": 5,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_INDUSTRY_POLICY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "work_elder_reentry",
+      "source": "data/base/career-entry.js:2246",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        24,
+        1
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_INDUSTRY_POLICY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "illness_review",
+      "source": "data/base/life-and-health.js:281",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "h",
+        "illnessReviewed",
+        "illnessTreated",
+        "job",
+        "med",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "illness_followup",
+      "source": "data/base/life-and-health.js:321",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "h",
+        "illnessReviewed",
+        "illnessTreated",
+        "job",
+        "med",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "nat",
+      "source": "data/base/life-and-health.js:514",
+      "regionLabelFromCatalog": "サルゴン、サーミ、シエスタ",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "d",
+        "displacement",
+        "fl",
+        "home",
+        "job",
+        "p",
+        "res",
+        "w"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [
+        "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+        "SRC_MOBILE_CITY_MOBILITY",
+        "SRC_REGIONAL_ENVIRONMENT",
+        "SRC_CATASTROPHE_CIVILIAN_LIFEPATH"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "displacement_after",
+      "source": "data/base/life-and-health.js:612",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        27
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "displacement",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "war",
+      "source": "data/base/life-and-health.js:841",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "d",
+        "fl",
+        "h",
+        "home",
+        "job",
+        "p",
+        "res"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "mv",
+      "source": "data/base/life-and-health.js:894",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "debt",
+        "fl",
+        "home",
+        "job",
+        "p",
+        "res",
+        "residenceArrangement",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "old",
+      "source": "data/base/life-and-health.js:974",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "old_followup",
+      "source": "data/base/life-and-health.js:1014",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "elder_work_opportunity",
+      "source": "data/base/life-and-health.js:1048",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        24,
+        12
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "dis",
+      "source": "data/base/family-and-livelihood.js:408",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cr",
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "fam_unemploy",
+      "source": "data/base/family-and-livelihood.js:632",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        1
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "educationAction",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "fam_conscript",
+      "source": "data/base/family-and-livelihood.js:722",
+      "regionLabelFromCatalog": "ウルサス、ヴィクトリア、カズデル",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        14,
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "coercion-and-disclosure"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "fam_infected",
+      "source": "data/base/family-and-livelihood.js:770",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "infectionAwarenessActions",
+        "job",
+        "k",
+        "p",
+        "parentTreatment",
+        "res",
+        "rl"
+      ],
+      "choiceCount": 5,
+      "outcomeBranchCount": 8,
+      "sourceRefs": [
+        "SRC_ORIPATHY_SOCIAL",
+        "SRC_TERRA_FAMILY",
+        "SRC_URSUS_INFECTED",
+        "SRC_LEITHANIEN_INFECTION",
+        "SRC_LATERANO_CIVIC"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "fam_tribetree",
+      "source": "data/base/family-and-livelihood.js:957",
+      "regionLabelFromCatalog": "サーミ",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "res",
+        "rl"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_SAMI_CLANS"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "fam_inherit",
+      "source": "data/base/family-and-livelihood.js:1032",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        5
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cr",
+        "ep",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "urs_mine",
+      "source": "data/base/regional-west.js:123",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "d",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 8,
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "coercion-and-disclosure"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "urs_conscript",
+      "source": "data/base/regional-west.js:187",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        2,
+        14
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "k",
+        "p",
+        "payBonus"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "coercion-and-disclosure"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "urs_purge",
+      "source": "data/base/regional-west.js:280",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [
+        "SRC_TL_EARLY"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "vic_patron",
+      "source": "data/base/regional-west.js:337",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        6,
+        2
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cr",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "vic_strike",
+      "source": "data/base/regional-west.js:438",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "job",
+        "p",
+        "payBonus",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "vic_war",
+      "source": "data/base/regional-west.js:485",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "d",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 8,
+      "sourceRefs": [
+        "SRC_TL_LATE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "col_quarantine_offer",
+      "source": "data/base/regional-west.js:666",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_COLUMBIA_DV1",
+        "SRC_COLUMBIA_DV5"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "col_hire",
+      "source": "data/base/regional-west.js:690",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        7,
+        2
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cr",
+        "job",
+        "k",
+        "p"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 8,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "col_frontier",
+      "source": "data/base/regional-west.js:758",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        62,
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "columbia-frontier-contract-crew",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "debt",
+        "fl",
+        "h",
+        "home",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "localKind",
+        "p",
+        "residenceArrangement",
+        "rl"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [
+        "SRC_COLUMBIA_INSURANCE",
+        "SRC_COLUMBIA_DV5"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "gig-vs-permanent-payroll"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "col_frontier_contract_review",
+      "source": "data/base/regional-west.js:932",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "columbia-frontier-contract-crew",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeGoals",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_COLUMBIA_INSURANCE",
+        "SRC_COLUMBIA_DV5"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "gig-vs-permanent-payroll"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "kaz_rural",
+      "source": "data/base/regional-west.js:1062",
+      "regionLabelFromCatalog": "カジミエーシュ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        1,
+        2
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "home",
+        "job",
+        "localKind",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "lei_isolation",
+      "source": "data/base/regional-west.js:1587",
+      "regionLabelFromCatalog": "リターニア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "fl",
+        "h",
+        "infectionAwarenessAction",
+        "job",
+        "p",
+        "w"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_LEITHANIEN_INFECTION"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "sir_family_afterwork",
+      "source": "data/base/regional-west.js:2125",
+      "regionLabelFromCatalog": "シラクーザ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        16,
+        24
+      ],
+      "affiliationEffects": [
+        {
+          "id": "siracusa-post-family-work",
+          "kind": "occupation"
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [
+        "SRC_TERRA_FAMILY",
+        "SRC_SIRACUSA_FAMILIA_CONTEXT",
+        "SRC_SIRACUSA_MARKET_MODEL",
+        "SRC_SIRACUSA_POST_FAMILY_WORK_MODEL"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "sir_family_later_work",
+      "source": "data/base/regional-west.js:2255",
+      "regionLabelFromCatalog": "シラクーザ",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        24,
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "siracusa-post-family-work",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_TERRA_FAMILY",
+        "SRC_SIRACUSA_FAMILIA_CONTEXT",
+        "SRC_SIRACUSA_MARKET_MODEL",
+        "SRC_SIRACUSA_POST_FAMILY_WORK_MODEL"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "sir_feud",
+      "source": "data/base/regional-west.js:2441",
+      "regionLabelFromCatalog": "シラクーザ",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_TERRA_FAMILY",
+        "SRC_CRIME_REGIONAL"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "lat_exile",
+      "source": "data/base/regional-east.js:28",
+      "regionLabelFromCatalog": "ラテラーノ",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "fl",
+        "infectionAwarenessAction",
+        "job",
+        "p",
+        "res",
+        "resFareCovered",
+        "residenceArrangement",
+        "rl"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_LATERANO_CIVIC",
+        "SRC_LATERANO_ARENE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "lat_priest",
+      "source": "data/base/regional-east.js:84",
+      "regionLabelFromCatalog": "ラテラーノ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        9
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cr",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_LATERANO_RELIGION"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "ibe_rebuild",
+      "source": "data/base/regional-east.js:250",
+      "regionLabelFromCatalog": "イベリア",
+      "classification": "affiliation-change",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [
+        {
+          "id": "iberia-coastal-recovery-contract",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "h",
+        "k",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_IBERIA_INFORMATION",
+        "SRC_IBERIA_RECOVERY"
+      ],
+      "requiredGuards": [
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-affiliation-vs-work-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "ibe_rebuild_contract_review",
+      "source": "data/base/regional-east.js:345",
+      "regionLabelFromCatalog": "イベリア",
+      "classification": "affiliation-change",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [
+        {
+          "id": "iberia-coastal-recovery-contract",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "h",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_IBERIA_INFORMATION",
+        "SRC_IBERIA_RECOVERY",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "affiliation-vs-employment-proof",
+        "gig-vs-permanent-payroll"
+      ],
+      "requiredWorkCommit": "verify-affiliation-vs-work-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "kje_open",
+      "source": "data/base/regional-east.js:565",
+      "regionLabelFromCatalog": "イェラグ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        2,
+        5
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "job",
+        "k",
+        "p",
+        "pm",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [
+        "SRC_KJERAG_LIFE",
+        "SRC_KJERAG_RAIL"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "yan_exam",
+      "source": "data/base/regional-east.js:607",
+      "regionLabelFromCatalog": "炎国",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        6
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "ep",
+        "job",
+        "k",
+        "p",
+        "pm"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_YAN_GOVERNMENT"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "lon_guard",
+      "source": "data/base/regional-east.js:717",
+      "regionLabelFromCatalog": "龍門",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        15
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "p",
+        "pm"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_LUNGMEN_SECURITY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "lon_merchant",
+      "source": "data/base/regional-east.js:901",
+      "regionLabelFromCatalog": "龍門",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        5,
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "job",
+        "p",
+        "pm"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_LUNGMEN_AUTONOMY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "hig_tension",
+      "source": "data/base/regional-east.js:1036",
+      "regionLabelFromCatalog": "ウルサス、極東",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        14
+      ],
+      "affiliationEffects": [
+        {
+          "id": "higashi-service",
+          "kind": "career"
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_HIGASHI_CONFLICT",
+        "SRC_HIGASHI_SERVICE_MODEL",
+        "SRC_AKAFUYU_HIGASHI"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "hig_service_review",
+      "source": "data/base/regional-east.js:1117",
+      "regionLabelFromCatalog": "極東",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        16,
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "higashi-service",
+          "kind": null
+        },
+        {
+          "id": "terra-general-transporter",
+          "kind": "occupation"
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_HIGASHI_CONFLICT",
+        "SRC_HIGASHI_SERVICE_MODEL",
+        "SRC_AKAFUYU_HIGASHI"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "hig_service_later_career_review",
+      "source": "data/base/regional-east.js:1220",
+      "regionLabelFromCatalog": "極東",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        16,
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "higashi-service",
+          "kind": null
+        },
+        {
+          "id": "terra-general-transporter",
+          "kind": "occupation"
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_HIGASHI_CONFLICT",
+        "SRC_HIGASHI_SERVICE_MODEL",
+        "SRC_AKAFUYU_HIGASHI"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "rim_mine",
+      "source": "data/base/regional-conflict.js:32",
+      "regionLabelFromCatalog": "レム・ビリトン",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        0,
+        2
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [
+        "SRC_RIM_WORK"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "coercion-and-disclosure"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "kaz_exile",
+      "source": "data/base/regional-conflict.js:126",
+      "regionLabelFromCatalog": "カズデル",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "d",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_TL_EARLY",
+        "SRC_TL_1094",
+        "SRC_KAZDEL_LIFE",
+        "SRC_KAZDEL_DISPLACEMENT_MODEL"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "kazdel_afterfall",
+      "source": "data/base/regional-conflict.js:185",
+      "regionLabelFromCatalog": "カズデル",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_TL_1094",
+        "SRC_KAZDEL_LIFE",
+        "SRC_KAZDEL_DISPLACEMENT_MODEL"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "bol_war",
+      "source": "data/base/regional-conflict.js:358",
+      "regionLabelFromCatalog": "ボリバル",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "d",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [
+        "SRC_BOLIVAR_CIVIL_WAR"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "bol_tourist",
+      "source": "data/base/regional-conflict.js:398",
+      "regionLabelFromCatalog": "ボリバル",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        1
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_BOLIVAR_ECONOMY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "wld_race",
+      "source": "data/base/world-and-contacts.js:153",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "discrimination_after",
+      "source": "data/base/world-and-contacts.js:228",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "discrimination_work_after",
+      "source": "data/base/world-and-contacts.js:281",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "choice_ursus_04",
+      "source": "data/regional/ursus.js:290",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        14,
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "residenceArrangement"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_TERRA_19REGIONS_LIFE_20261030"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "choice_victoria_01",
+      "source": "data/regional/victoria.js:230",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_TERRA_19REGIONS_LIFE_20261030"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "choice_columbia_03",
+      "source": "data/regional/columbia.js:294",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cr",
+        "h",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_TERRA_19REGIONS_LIFE_20261030"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "hid_exposed",
+      "source": "data/base/confinement-and-education.js:159",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "closeKnowledgeAction",
+        "cr",
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 6,
+      "outcomeBranchCount": 14,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "veteran",
+      "source": "data/base/confinement-and-education.js:401",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        0,
+        12
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "education_paused_life",
+      "source": "data/base/confinement-and-education.js:468",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        1
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "educationAction",
+        "ep",
+        "h",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_EDUCATION_ACCESS",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "education-and-dependent-ownership"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "study_to_work",
+      "source": "data/base/confinement-and-education.js:799",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        7,
+        20,
+        18
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 7,
+      "sourceRefs": [
+        "SRC_EDUCATION_ACCESS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "arts_academy_completion",
+      "source": "data/base/confinement-and-education.js:867",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        11
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cr",
+        "job",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_EDUCATION_ACCESS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "teacher_path",
+      "source": "data/base/confinement-and-education.js:901",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        12
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "pm",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "position-and-site-before-job-commit"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "artist_path",
+      "source": "data/base/confinement-and-education.js:945",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        13,
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "job",
+        "p",
+        "pm"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "kaz_knight_injury_job_transition",
+      "source": "data/parts/extensions/social-and-care/attitudes-family-knights.js:1117",
+      "regionLabelFromCatalog": "カジミエーシュ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        21
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kazimierz-competition-career",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "bodyChange",
+        "cash",
+        "fl",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill",
+        "p",
+        "pm"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_KAZIMIERZ_COMPETITION",
+        "SRC_KAZIMIERZ_KNIGHT_LIFE_MODEL"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "kaz_knight_later_career_review",
+      "source": "data/parts/extensions/social-and-care/attitudes-family-knights.js:1254",
+      "regionLabelFromCatalog": "カジミエーシュ",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        32,
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kazimierz-competition-career",
+          "kind": null
+        },
+        {
+          "id": "kazimierz-arena-staff",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_KAZIMIERZ_COMPETITION",
+        "SRC_KAZIMIERZ_KNIGHT_LIFE_MODEL"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "kazimierz_knight_entry",
+      "source": "data/parts/extensions/social-and-care/goals-craft-family.js:144",
+      "regionLabelFromCatalog": "カジミエーシュ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        10,
+        1
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kazimierz-competition-career",
+          "kind": "individual-career"
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "pm",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [
+        "SRC_KAZIMIERZ_COMPETITION",
+        "SRC_KAZIMIERZ_KNIGHT_LIFE_MODEL"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "old_reemployment_review",
+      "source": "data/parts/extensions/social-and-care/goals-craft-family.js:251",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_TERRA_LIFECOURSE",
+        "SRC_TERRA_FAMILY"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_rhodes_referral",
+      "source": "data/parts/extensions/social-and-care/local-support-referrals.js:284",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "affiliation-change",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-care",
+          "kind": "medical-contact"
+        },
+        {
+          "id": "rhodes-employment",
+          "kind": "employment-application"
+        }
+      ],
+      "effectKeys": [
+        "groupStanding",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 5,
+      "sourceRefs": [
+        "SRC_RHODES_MEDICAL",
+        "SRC_ORIPATHY_SOCIAL",
+        "SRC_RHODES_FOUNDATION"
+      ],
+      "requiredGuards": [
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-affiliation-vs-work-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "life_rhodes_role_review",
+      "source": "data/parts/extensions/social-and-care/local-support-referrals.js:679",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-care",
+          "kind": null
+        },
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "groupStanding",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_RHODES_MEDICAL",
+        "SRC_TERRA_LIFECOURSE",
+        "SRC_RHODES_FOUNDATION"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_rhodes_research_stall",
+      "source": "data/parts/extensions/social-and-care/research-reunion.js:173",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        28,
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-research",
+          "kind": null
+        },
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "groupStanding",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill",
+        "p",
+        "regionalImpact"
+      ],
+      "choiceCount": 5,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [
+        "SRC_RHODES_MEDICAL",
+        "SRC_ORIPATHY_SOCIAL",
+        "SRC_RHODES_FOUNDATION"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "life_chernobog_resident_response",
+      "source": "data/parts/extensions/social-and-care/civilian-response.js:17",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "chernobog-neighbourhood",
+          "kind": "neighbourhood-network"
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p",
+        "regionalImpact",
+        "res",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_TL_CHERNOB_WINDOW",
+        "SRC_TERRA_FAMILY"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_work_project_setback",
+      "source": "data/parts/extensions/social-and-care/affiliation-places.js:68",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "existing-contract-action",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "h",
+        "k",
+        "lifeSkill",
+        "p",
+        "pm",
+        "workContractAction"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "contract-site-scope-and-transaction-id"
+      ],
+      "requiredWorkCommit": "update-current-work-contract-only",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "earth_persecution_victoria_framed_debt",
+      "source": "data/parts/extensions/social-and-care/local-discrimination.js:1156",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "debt",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_TERRA_19REGIONS_LIFE_20261030",
+        "SRC_ORIPATHY_SOCIAL"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "earth_discr_disclose_employer",
+      "source": "data/parts/extensions/social-and-care/local-discrimination.js:1623",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "fl",
+        "h",
+        "infectionAwarenessAction",
+        "job",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_ORIPATHY_SOCIAL"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "infection_workplace_review",
+      "source": "data/parts/extensions/education-and-later-life/relationships-events-03.js:253",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "exposureAction",
+        "infectionWorkplaceAction",
+        "job",
+        "p",
+        "rl",
+        "workContractAction"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 7,
+      "sourceRefs": [
+        "SRC_ORIPATHY_SOCIAL",
+        "SRC_ORI_FIELD_RECORD",
+        "SRC_ORI_GAME_MODEL_V3",
+        "SRC_V88_INFO_BOUNDARIES"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "contract-site-scope-and-transaction-id"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "infection_regional_housing_pressure",
+      "source": "data/parts/extensions/education-and-later-life/relationships-events-03.js:370",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "p",
+        "pm",
+        "res",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_ORIPATHY_SOCIAL",
+        "SRC_TERRA_SOCIAL_ATTITUDES",
+        "SRC_V88_INFO_BOUNDARIES"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_savra_late_craft",
+      "source": "data/extensions/family-and-community.js:155",
+      "regionLabelFromCatalog": "レム・ビリトン",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        18,
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "bodyChange",
+        "fl",
+        "groupStanding",
+        "h",
+        "job",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "regionalImpact"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_TERRA_SPECIES_ATLAS",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "sr_rhodes_recruitment_contact",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:9",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "affiliation-change",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-employment",
+          "kind": "employment-application"
+        }
+      ],
+      "effectKeys": [
+        "k",
+        "lifeAffiliation",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_SR_GAME_MODEL",
+        "SRC_SR_RHODES_WORK",
+        "SRC_SR_RHODES_FIELD",
+        "SRC_RHODES_FOUNDATION",
+        "SRC_RHODES_BRANCHES",
+        "SRC_RHODES_RESERVE",
+        "SRC_RHODES_LANDSHIP"
+      ],
+      "requiredGuards": [
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-affiliation-vs-work-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "sr_rhodes_hiring_review",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:53",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        28,
+        29,
+        30,
+        33,
+        34,
+        31
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-employment",
+          "kind": null
+        },
+        {
+          "id": "rhodes-staff",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "groupStanding",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 7,
+      "outcomeBranchCount": 13,
+      "sourceRefs": [
+        "SRC_SR_GAME_MODEL",
+        "SRC_SR_RHODES_WORK",
+        "SRC_SR_RHODES_FIELD",
+        "SRC_RHODES_FOUNDATION",
+        "SRC_RHODES_BRANCHES",
+        "SRC_RHODES_RESERVE",
+        "SRC_RHODES_LANDSHIP"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_rhodes_field_qualification",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:353",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        29
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cr",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_SR_GAME_MODEL",
+        "SRC_SR_RHODES_WORK",
+        "SRC_SR_RHODES_FIELD",
+        "SRC_RHODES_FOUNDATION",
+        "SRC_RHODES_BRANCHES",
+        "SRC_RHODES_RESERVE",
+        "SRC_RHODES_LANDSHIP"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_rhodes_work_review",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:452",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_SR_GAME_MODEL",
+        "SRC_SR_RHODES_WORK",
+        "SRC_SR_RHODES_FIELD",
+        "SRC_RHODES_FOUNDATION",
+        "SRC_RHODES_BRANCHES",
+        "SRC_RHODES_RESERVE",
+        "SRC_RHODES_LANDSHIP"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "sr_rhodes_posting_review",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:681",
+      "regionLabelFromCatalog": "龍門、ヴィクトリア、ウルサス、クルビア、イベリア、サルゴン、リターニア、ボリバル",
+      "classification": "affiliation-change",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "groupStanding",
+        "lifeAffiliation",
+        "p",
+        "residenceArrangement"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_SR_GAME_MODEL",
+        "SRC_SR_RHODES_WORK",
+        "SRC_SR_RHODES_FIELD",
+        "SRC_RHODES_FOUNDATION",
+        "SRC_RHODES_BRANCHES",
+        "SRC_RHODES_RESERVE",
+        "SRC_RHODES_LANDSHIP"
+      ],
+      "requiredGuards": [
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-affiliation-vs-work-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "sr_rhodes_posting_transfer",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:773",
+      "regionLabelFromCatalog": "龍門、ヴィクトリア、ウルサス、クルビア、イベリア、サルゴン、リターニア、ボリバル",
+      "classification": "affiliation-change",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "groupStanding",
+        "lifeAffiliation",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_SR_GAME_MODEL",
+        "SRC_SR_RHODES_WORK",
+        "SRC_SR_RHODES_FIELD",
+        "SRC_RHODES_FOUNDATION",
+        "SRC_RHODES_BRANCHES",
+        "SRC_RHODES_RESERVE",
+        "SRC_RHODES_LANDSHIP"
+      ],
+      "requiredGuards": [
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-affiliation-vs-work-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "sr_rhodes_branch_transfer",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:835",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "affiliation-change",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "groupStanding",
+        "lifeAffiliation",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_SR_GAME_MODEL",
+        "SRC_SR_RHODES_WORK",
+        "SRC_SR_RHODES_FIELD",
+        "SRC_RHODES_FOUNDATION",
+        "SRC_RHODES_BRANCHES",
+        "SRC_RHODES_RESERVE",
+        "SRC_RHODES_LANDSHIP"
+      ],
+      "requiredGuards": [
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-affiliation-vs-work-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "sr_rhodes_promotion_review",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1188",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        31
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cr",
+        "groupStanding",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "p",
+        "payBonus"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_SR_GAME_MODEL",
+        "SRC_SR_RHODES_WORK",
+        "SRC_SR_RHODES_FIELD",
+        "SRC_RHODES_FOUNDATION",
+        "SRC_RHODES_BRANCHES",
+        "SRC_RHODES_RESERVE",
+        "SRC_RHODES_LANDSHIP"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_kazimierz_arena_backstage",
+      "source": "data/parts/routes/rhodes-and-factions/arena-work.js:11",
+      "regionLabelFromCatalog": "カジミエーシュ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        32
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kazimierz-arena-staff",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_KAZIMIERZ_COMPETITION",
+        "SRC_SR_GAME_MODEL"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_kazimierz_arena_shift",
+      "source": "data/parts/routes/rhodes-and-factions/arena-work.js:81",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kazimierz-arena-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_KAZIMIERZ_COMPETITION",
+        "SRC_SR_GAME_MODEL"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "sr_rhodes_reapplication",
+      "source": "data/parts/routes/rhodes-and-factions/aftercare-and-eligibility.js:78",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "affiliation-change",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-employment",
+          "kind": "employment-application"
+        }
+      ],
+      "effectKeys": [
+        "k",
+        "lifeAffiliation",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_SR_GAME_MODEL",
+        "SRC_SR_RHODES_WORK",
+        "SRC_SR_RHODES_FIELD",
+        "SRC_RHODES_FOUNDATION",
+        "SRC_RHODES_BRANCHES",
+        "SRC_RHODES_RESERVE",
+        "SRC_RHODES_LANDSHIP"
+      ],
+      "requiredGuards": [
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-affiliation-vs-work-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "sr_rhodes_to_reunion_turning_point",
+      "source": "data/parts/routes/rhodes-and-factions/cross-faction-routes.js:80",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        },
+        {
+          "id": "reunion-reorg",
+          "kind": "infected-mutual-aid"
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_RHODES_FOUNDATION",
+        "SRC_ORIPATHY_SOCIAL"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "sr_reunion_turncoat_rehabilitation",
+      "source": "data/parts/routes/rhodes-and-factions/cross-faction-routes.js:169",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        28,
+        34
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-employment",
+          "kind": null
+        },
+        {
+          "id": "rhodes-staff",
+          "kind": "employer"
+        },
+        {
+          "id": "rhodes-care",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "groupStanding",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_RHODES_FOUNDATION"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_bsw_recruitment_assessment",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:12",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        35
+      ],
+      "affiliationEffects": [
+        {
+          "id": "bsw-contract",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "groupStanding",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_BSW_PMC"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_bsw_promotion_tactical",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:83",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        36
+      ],
+      "affiliationEffects": [
+        {
+          "id": "bsw-contract",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cr",
+        "groupStanding",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "p",
+        "payBonus"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_BSW_PMC"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_bsw_vip_escort_ambush",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:123",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        37
+      ],
+      "affiliationEffects": [
+        {
+          "id": "bsw-contract",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "groupStanding",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "p",
+        "payBonus"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_BSW_PMC"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_bsw_rhodes_secondment",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:169",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "affiliation-change",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "k",
+        "lifeAffiliation",
+        "p",
+        "residenceArrangement",
+        "rl"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_BSW_PMC",
+        "SRC_RHODES_FOUNDATION"
+      ],
+      "requiredGuards": [
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-affiliation-vs-work-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "sr_bsw_infected_squad_policy",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:250",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "affiliation-change",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [
+        {
+          "id": "bsw-contract",
+          "kind": null
+        },
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "fl",
+        "groupStanding",
+        "h",
+        "k",
+        "lifeAffiliation",
+        "p",
+        "residenceArrangement"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_BSW_PMC"
+      ],
+      "requiredGuards": [
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-affiliation-vs-work-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "sr_bsw_secondment_posting_review",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:310",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "affiliation-change",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [
+        {
+          "id": "rhodes-staff",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "k",
+        "lifeAffiliation",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_BSW_PMC",
+        "SRC_RHODES_FOUNDATION"
+      ],
+      "requiredGuards": [
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-affiliation-vs-work-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "sr_rhine_recruitment_exam",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:12",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        38
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhine-lab",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "groupStanding",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_RHINE_LAB"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_rhine_section_assignment",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:35",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        39
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhine-lab",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "p",
+        "payBonus",
+        "rl"
+      ],
+      "choiceCount": 4,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_RHINE_LAB"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_rhine_promotion_chief",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:161",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        40
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhine-lab",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cr",
+        "groupStanding",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "p",
+        "payBonus"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_RHINE_LAB"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_rhine_rhodes_asylum",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:240",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        30,
+        20
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhine-lab",
+          "kind": null
+        },
+        {
+          "id": "rhodes-staff",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_RHINE_LAB",
+        "SRC_RHODES_FOUNDATION"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "sr_rhine_post_lone_trail_career_review",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:402",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rhine-lab",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeGoals",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_RHINE_LAB"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "car_yan_court_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:13",
+      "regionLabelFromCatalog": "炎国",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        41
+      ],
+      "affiliationEffects": [
+        {
+          "id": "yan-court-bureaucracy",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "debt",
+        "groupStanding",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_yan_suis_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:57",
+      "regionLabelFromCatalog": "炎国",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        42
+      ],
+      "affiliationEffects": [
+        {
+          "id": "yan-suis-inquisition",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_yan_tianshi_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:101",
+      "regionLabelFromCatalog": "炎国",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        43
+      ],
+      "affiliationEffects": [
+        {
+          "id": "yan-tianshi-academy",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_lmd_guard_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:141",
+      "regionLabelFromCatalog": "龍門",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        44
+      ],
+      "affiliationEffects": [
+        {
+          "id": "lungmen-guard-bureau",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_lmd_black_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:195",
+      "regionLabelFromCatalog": "龍門",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        45
+      ],
+      "affiliationEffects": [
+        {
+          "id": "lungmen-black-market",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_hig_samurai_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:235",
+      "regionLabelFromCatalog": "極東",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        46
+      ],
+      "affiliationEffects": [
+        {
+          "id": "higashi-samurai-household",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_hig_ninja_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:289",
+      "regionLabelFromCatalog": "極東",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        47
+      ],
+      "affiliationEffects": [
+        {
+          "id": "higashi-ninja-clan",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_hig_cyber_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:355",
+      "regionLabelFromCatalog": "極東",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        48
+      ],
+      "affiliationEffects": [
+        {
+          "id": "higashi-cyber-intelligence",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_hig_shinto_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:399",
+      "regionLabelFromCatalog": "極東",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        49
+      ],
+      "affiliationEffects": [
+        {
+          "id": "higashi-shinto-temple",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_hig_touhou_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:453",
+      "regionLabelFromCatalog": "極東",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        50
+      ],
+      "affiliationEffects": [
+        {
+          "id": "higashi-touhou-heavy",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_urs_officer_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:13",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        51
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-imperial-officer",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_urs_guard_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:67",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        52
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-border-mine-guard",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_urs_academy_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:117",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        53
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-imperial-academy-science",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_vic_infantry_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:157",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        54
+      ],
+      "affiliationEffects": [
+        {
+          "id": "victoria-regular-infantry",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_vic_royal_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:207",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        55
+      ],
+      "affiliationEffects": [
+        {
+          "id": "victoria-royal-officer",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_vic_scribe_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:261",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        56
+      ],
+      "affiliationEffects": [
+        {
+          "id": "victoria-parliament-scribe",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_vic_works_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:301",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        57
+      ],
+      "affiliationEffects": [
+        {
+          "id": "victoria-locomotive-works",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_lei_golden_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:341",
+      "regionLabelFromCatalog": "リターニア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        58
+      ],
+      "affiliationEffects": [
+        {
+          "id": "leithania-golden-law",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_lei_court_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:385",
+      "regionLabelFromCatalog": "リターニア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        59
+      ],
+      "affiliationEffects": [
+        {
+          "id": "leithania-court-musician",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "debt",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_lat_executor_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:425",
+      "regionLabelFromCatalog": "ラテラーノ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        60
+      ],
+      "affiliationEffects": [
+        {
+          "id": "laterano-notarial-executor",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_lat_landen_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:469",
+      "regionLabelFromCatalog": "ラテラーノ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        61
+      ],
+      "affiliationEffects": [
+        {
+          "id": "laterano-landen-monastery",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_col_pioneer_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:13",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        62
+      ],
+      "affiliationEffects": [
+        {
+          "id": "columbia-frontier-pioneer",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_kaz_comp_knight_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:67",
+      "regionLabelFromCatalog": "カジミエーシュ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        63
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kazimierz-competition-knight",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_kaz_armorless_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:121",
+      "regionLabelFromCatalog": "カジミエーシュ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        64
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kazimierz-armorless-union",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_sir_soldier_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:161",
+      "regionLabelFromCatalog": "シラクーザ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        65
+      ],
+      "affiliationEffects": [
+        {
+          "id": "siracusa-mafia-soldier",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_sir_police_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:201",
+      "regionLabelFromCatalog": "シラクーザ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        66
+      ],
+      "affiliationEffects": [
+        {
+          "id": "siracusa-court-police",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_sie_obs_entry",
+      "source": "data/parts/routes/regional-careers/entry-central.js:241",
+      "regionLabelFromCatalog": "シエスタ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        67
+      ],
+      "affiliationEffects": [
+        {
+          "id": "siesta-observatory-research",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_sar_guard_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:13",
+      "regionLabelFromCatalog": "サルゴン",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        68
+      ],
+      "affiliationEffects": [
+        {
+          "id": "sargon-padishah-guard",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_sar_warrior_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:67",
+      "regionLabelFromCatalog": "サルゴン",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        69
+      ],
+      "affiliationEffects": [
+        {
+          "id": "sargon-acahualla-warrior",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_sam_priest_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:107",
+      "regionLabelFromCatalog": "サーミ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        70
+      ],
+      "affiliationEffects": [
+        {
+          "id": "sami-snow-priest",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_sam_warrior_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:151",
+      "regionLabelFromCatalog": "サーミ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        71
+      ],
+      "affiliationEffects": [
+        {
+          "id": "sami-scar-warrior",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_kje_karlan_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:191",
+      "regionLabelFromCatalog": "イェラグ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        72
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kjerag-karlan-commercial",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_kje_monk_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:231",
+      "regionLabelFromCatalog": "イェラグ",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        73
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kjerag-vine-court-monk",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_kazdel_mil_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:271",
+      "regionLabelFromCatalog": "カズデル",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        74
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kazdel-military-commission",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_kazdel_bone_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:325",
+      "regionLabelFromCatalog": "カズデル",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        75
+      ],
+      "affiliationEffects": [
+        {
+          "id": "kazdel-bone-smith",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_ibe_inq_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:365",
+      "regionLabelFromCatalog": "イベリア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        76
+      ],
+      "affiliationEffects": [
+        {
+          "id": "iberia-inquisition-officer",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 6,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_ibe_tuner_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:409",
+      "regionLabelFromCatalog": "イベリア",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        77
+      ],
+      "affiliationEffects": [
+        {
+          "id": "iberia-lantern-tuner",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_bol_soldier_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:449",
+      "regionLabelFromCatalog": "ボリバル",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        78
+      ],
+      "affiliationEffects": [
+        {
+          "id": "bolivar-coalition-soldier",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_bol_dossoles_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:489",
+      "regionLabelFromCatalog": "ボリバル",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        79
+      ],
+      "affiliationEffects": [
+        {
+          "id": "bolivar-dossoles-police",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_rim_eng_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:529",
+      "regionLabelFromCatalog": "レム・ビリトン",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        80
+      ],
+      "affiliationEffects": [
+        {
+          "id": "rim-mining-lead-engineer",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_min_champ_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:579",
+      "regionLabelFromCatalog": "ミノス",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        81
+      ],
+      "affiliationEffects": [
+        {
+          "id": "minos-temple-champion",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_min_orator_entry",
+      "source": "data/parts/routes/regional-careers/entry-frontier.js:619",
+      "regionLabelFromCatalog": "ミノス",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        82
+      ],
+      "affiliationEffects": [
+        {
+          "id": "minos-agora-orator",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_yan_court_choice_bribe",
+      "source": "data/parts/routes/regional-careers/events-east.js:30",
+      "regionLabelFromCatalog": "炎国",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "yan-court-bureaucracy",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoals",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "car_lmd_black_choice_big_deal",
+      "source": "data/parts/routes/regional-careers/events-east.js:183",
+      "regionLabelFromCatalog": "龍門",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "lungmen-black-market",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "fl",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoals",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "car_hig_ninja_choice_escape",
+      "source": "data/parts/routes/regional-careers/events-east.js:281",
+      "regionLabelFromCatalog": "極東",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "higashi-ninja-clan",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoals",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "car_urs_officer_choice_purge",
+      "source": "data/parts/routes/regional-careers/events-west.js:30",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-imperial-officer",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "d",
+        "groupStanding",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoals",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "car_urs_guard_choice_riot",
+      "source": "data/parts/routes/regional-careers/events-west.js:77",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-border-mine-guard",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "d",
+        "fl",
+        "h",
+        "inf",
+        "infCause",
+        "infectionRoute",
+        "job",
+        "lifeAffiliation",
+        "lifeGoals",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "car_vic_royal_choice_coup",
+      "source": "data/parts/routes/regional-careers/events-west.js:179",
+      "regionLabelFromCatalog": "ヴィクトリア、カズデル",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        55,
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "victoria-royal-officer",
+          "kind": null
+        },
+        {
+          "id": "victoria-exiled-ducal-command",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "d",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoals",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "named-organization-role-access",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P0"
+    },
+    {
+      "eventId": "car_vic_exile_command_review",
+      "source": "data/parts/routes/regional-careers/events-west.js:236",
+      "regionLabelFromCatalog": "ヴィクトリア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "victoria-exiled-ducal-command",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "car_vic_exile_postwar_review",
+      "source": "data/parts/routes/regional-careers/events-west.js:270",
+      "regionLabelFromCatalog": "ヴィクトリア、カズデル",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "victoria-exiled-ducal-command",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "car_col_pioneer_choice_bandits",
+      "source": "data/parts/routes/regional-careers/events-central.js:30",
+      "regionLabelFromCatalog": "クルビア",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "columbia-frontier-pioneer",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "cr",
+        "d",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoals",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof",
+        "locality-not-only-region"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "job_contract_review_v76",
+      "source": "data/work/contracts.js:19",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "existing-contract-action",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "cr",
+        "k",
+        "p",
+        "workContractAction"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_V76_EMPLOYMENT",
+        "SRC_MULTISITE_WORK_V75"
+      ],
+      "requiredGuards": [
+        "contract-site-scope-and-transaction-id",
+        "gig-vs-permanent-payroll"
+      ],
+      "requiredWorkCommit": "update-current-work-contract-only",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "job_contract_negotiation_v76",
+      "source": "data/work/contracts.js:43",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "existing-contract-action",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "k",
+        "p",
+        "rl",
+        "workContractAction"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_V76_EMPLOYMENT",
+        "SRC_MULTISITE_WORK_V75"
+      ],
+      "requiredGuards": [
+        "contract-site-scope-and-transaction-id",
+        "gig-vs-permanent-payroll"
+      ],
+      "requiredWorkCommit": "update-current-work-contract-only",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "job_contract_family_schedule_v76",
+      "source": "data/work/contracts.js:78",
+      "regionLabelFromCatalog": "未特定",
+      "classification": "existing-contract-action",
+      "possibleJobEffectIds": [],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "k",
+        "p",
+        "workContractAction"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_V76_EMPLOYMENT",
+        "SRC_MULTISITE_WORK_V75"
+      ],
+      "requiredGuards": [
+        "contract-site-scope-and-transaction-id",
+        "gig-vs-permanent-payroll"
+      ],
+      "requiredWorkCommit": "update-current-work-contract-only",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P2"
+    },
+    {
+      "eventId": "life_ursus_zelgrad_recruitment",
+      "source": "data/relationships/close-disclosure.js:646",
+      "regionLabelFromCatalog": "ウルサス、未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        2
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-zelgrad-factory",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "home",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "localCity",
+        "localKind",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_URSUS_EP17",
+        "SRC_URSUS_EP17_TIMELINE",
+        "SRC_URSUS_ZELGRAD_CITY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_ursus_zelgrad_work_review",
+      "source": "data/relationships/close-disclosure.js:736",
+      "regionLabelFromCatalog": "ウルサス、未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-zelgrad-factory",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 2,
+      "sourceRefs": [
+        "SRC_URSUS_EP17",
+        "SRC_URSUS_EP17_TIMELINE",
+        "SRC_URSUS_ZELGRAD_CITY",
+        "SRC_INDUSTRIAL_LIFE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_ursus_zelgrad_recruitment_retry",
+      "source": "data/relationships/close-disclosure.js:804",
+      "regionLabelFromCatalog": "ウルサス、未特定",
+      "classification": "potential-new-role",
+      "possibleJobEffectIds": [
+        2
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-zelgrad-factory",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "home",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "localCity",
+        "localKind",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_URSUS_EP17",
+        "SRC_URSUS_EP17_TIMELINE",
+        "SRC_URSUS_ZELGRAD_CITY"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_ursus_zelgrad_evacuation",
+      "source": "data/relationships/close-disclosure.js:888",
+      "regionLabelFromCatalog": "ウルサス、未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-zelgrad-factory",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "displacement",
+        "fl",
+        "job",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "p",
+        "regionalImpact",
+        "rl"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_URSUS_EP17_EVAC",
+        "SRC_URSUS_EP17_TIMELINE",
+        "SRC_URSUS_ZELGRAD_CITY"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_ursus_zelgrad_purge_trap",
+      "source": "data/relationships/close-disclosure.js:1046",
+      "regionLabelFromCatalog": "ウルサス",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-zelgrad-factory",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "cash",
+        "d",
+        "displacement",
+        "fl",
+        "h",
+        "job",
+        "lifeAffiliations",
+        "p"
+      ],
+      "choiceCount": 2,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_URSUS_EP17_EVAC",
+        "SRC_URSUS_EP17_TIMELINE",
+        "SRC_URSUS_ZELGRAD_CITY"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_ursus_zelgrad_displacement_review",
+      "source": "data/relationships/close-disclosure.js:985",
+      "regionLabelFromCatalog": "ウルサス、未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [],
+      "effectKeys": [
+        "displacement",
+        "home",
+        "job",
+        "lifeGoal",
+        "localCity",
+        "localKind",
+        "p",
+        "regionalImpact"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_URSUS_EP17_EVAC",
+        "SRC_URSUS_EP17_TIMELINE",
+        "SRC_URSUS_ZELGRAD_CITY",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_ursus_zelgrad_stay_review",
+      "source": "data/relationships/close-disclosure.js:1074",
+      "regionLabelFromCatalog": "ウルサス、未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-zelgrad-factory",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "displacement",
+        "job",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "p",
+        "regionalImpact"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_URSUS_EP17_EVAC",
+        "SRC_URSUS_EP17_TIMELINE",
+        "SRC_URSUS_ZELGRAD_CITY",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_ursus_zelgrad_displaced_work",
+      "source": "data/relationships/close-disclosure.js:1204",
+      "regionLabelFromCatalog": "ウルサス、未特定",
+      "classification": "choice-with-entry-and-exit",
+      "possibleJobEffectIds": [
+        2,
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-zelgrad-factory",
+          "kind": null
+        },
+        {
+          "id": "ursus-displaced-repair-workshop",
+          "kind": "employer"
+        }
+      ],
+      "effectKeys": [
+        "job",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 4,
+      "sourceRefs": [
+        "SRC_URSUS_EP17_EVAC",
+        "SRC_URSUS_ZELGRAD_CITY",
+        "SRC_ZELGRAD_DISPLACED_WORK_MODEL"
+      ],
+      "requiredGuards": [
+        "position-and-site-before-job-commit",
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "verify-opening-or-nonwage-role-and-atomic-employment-episode",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    },
+    {
+      "eventId": "life_ursus_zelgrad_displaced_work_review",
+      "source": "data/relationships/close-disclosure.js:1340",
+      "regionLabelFromCatalog": "ウルサス、未特定",
+      "classification": "potential-role-end",
+      "possibleJobEffectIds": [
+        0
+      ],
+      "affiliationEffects": [
+        {
+          "id": "ursus-displaced-repair-workshop",
+          "kind": null
+        }
+      ],
+      "effectKeys": [
+        "displacement",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "choiceCount": 3,
+      "outcomeBranchCount": 3,
+      "sourceRefs": [
+        "SRC_ZELGRAD_DISPLACED_WORK_MODEL",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "requiredGuards": [
+        "episode-end-reason-not-auto-unemployment",
+        "affiliation-vs-employment-proof"
+      ],
+      "requiredWorkCommit": "close-appropriate-active-episode-preserve-past-history",
+      "idempotencyKey": "eventId + selectedChoice + selectedOutcome + personId + caseId/episodeId",
+      "manualMeaningReview": "pending-full-branch-semantic-review",
+      "priority": "P1"
+    }
+  ]
+}
