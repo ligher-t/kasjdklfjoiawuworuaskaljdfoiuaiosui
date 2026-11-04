@@ -4,7 +4,7 @@ const path=require('node:path');
 const {context,setup}=require('./support/annual-cases.cjs');
 const {ctx}=context(path.resolve(__dirname,'..'));
 setup(ctx,{id:'p19-two-children',seed:20261104,region:'龍門',age:38});
-const result=JSON.parse(vm.runInContext(`(()=>{
+const result=JSON.parse(JSON.stringify(vm.runInContext(`(()=>{
  const s=S;s.mo=4;s.kids=[
    {id:"p19-dependent-a",by:s.year-8,d:0},
    {id:"p19-dependent-b",by:s.year-10,d:0}
@@ -89,7 +89,7 @@ const result=JSON.parse(vm.runInContext(`(()=>{
    noNewSchool:Object.keys(w.institutions).filter(id=>
      id===school.id).length===1,
    invariants:educationDependentInvariants(s)};
-})()`,ctx,{timeout:20000}));
+})()`,ctx,{timeout:20000})));
 assert.deepEqual(result.twoEnrolled,['enrolled','enrolled']);
 assert.equal(result.sameSchool,true);
 assert.equal(result.distinctEnrollment,true);
