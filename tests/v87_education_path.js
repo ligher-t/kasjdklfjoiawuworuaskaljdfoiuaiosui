@@ -166,6 +166,48 @@ function lifecycleRegressions(){
     reentry.educationRecord.awards.length===0;
   const normal=[];
   for(const stage of ['upper','university','vocational','arts','preparatory']){
+    if(stage==='preparatory'){
+      const s=fresh(22),start=s.year,initialCash=s.cash;
+      s.mo=0;ensureResidenceIdentity(s);
+      const area=ensureEducationWorldForResidence(s),world=s.world.educationWorld,
+        inst=educationRegisterInstitution(world,area,'v87-confirmed-preparatory',
+          'preparatory',['preparatory'],s.year),
+        off=world.offerings[inst.offeringIds[0]];
+      educationStart(s,'preparatory',1,'verified-preparatory-offer');
+      s.educationPath.institutionId=inst.id;
+      s.educationPath.campusId=off.campusId;
+      s.educationPath.offeringId=off.id;
+      const enrollment=s.educationRecord.enrollments.at(-1);
+      educationBindFormalEnrollment(s,enrollment.id);
+      const place=s.educationPlacements.currentPlacementId,
+        tuition=educationFunds(s,'preparatory',1,off.id),
+        initialInvoice=educationEnsureTuitionInvoice(s,s.educationPath,s.year);
+      educationSettleInvoice(s,initialInvoice);
+      educationFinanceProjectInvoice(s,initialInvoice);
+      const duration=s.educationPath.duration;
+      for(let i=0;i<duration;i++){
+        s.mo=12;
+        for(let month=1;month<=12;month++)
+          educationRecordAttendance(s,{enrollmentId:enrollment.id,
+            placementId:place,year:s.year,month,personalAccess:1,
+            evidenceRef:'v87-preparatory:'+s.year+':'+month});
+        const credit=educationSettleCompletedAcademicYear(s,s.year);
+        if(!credit.credited)throw Error('Preparatory year lacks a real credit');
+        s.year++;s.age++;s.mo=0;educationAdvanceYear(s);
+      }
+      normal.push({stage,
+        complete:s.educationPath.status==='completed',
+        years:s.educationPath.yearsCompleted,
+        duration,elapsed:s.year-start,
+        paid:initialCash-s.cash,expected:tuition*duration,
+        credential:s.educationPath.equivalency.includes('upper') &&
+          (s.educationRecord.schoolCertificates||[]).some(x=>
+            x.enrollmentId===enrollment.id &&
+            x.qualification==='upper-equivalency' &&
+            x.sourceCreditIds.length===duration),
+        audit:auditLifeState(s)});
+      continue;
+    }
     const s=fresh(22),fee=educationFunds(s,stage),start=s.year;
     educationChargeFee(s,fee,stage);educationStart(s,stage);
     const duration=s.educationPath.duration,initialCash=50000000;
