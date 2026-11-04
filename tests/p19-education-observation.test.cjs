@@ -192,6 +192,56 @@ const credentials=run(function(){
 });
 assert.deepEqual(credentials,{completed:1,endpoint:2,censored:1,unknown:1,
   unchanged:true,repeat:true});
+const matureCohort=run(function(){
+ const year=1100,stage="university",
+   make=(id,status,startedYear,endedYear=null,offeringId="cohort-university")=>({
+     id,program:stage,stage,offeringId,startedYear,endedYear,status
+   });
+ const s={year,mo:5,dead:false,educationRecord:{
+   enrollments:[
+     make("mature-issued","completed",1097,1100),
+     make("mature-no-award","completed",1097,1100),
+     make("mature-interrupted","interrupted",1098,1100),
+     make("mature-withdrawn","withdrawn",1098,1100),
+     make("mature-enrolled","enrolled",1099),
+     make("mature-paused","paused",1099),
+     make("mature-transferred","transferred",1099),
+     make("mature-primary-certificate","completed",1095,1100,"cohort-primary")
+   ],
+   awards:[{id:"credential-issued",enrollmentId:"mature-issued",
+     program:stage,offeringId:"cohort-university",awardedYear:1100},
+     {id:"unrelated-credential",enrollmentId:"someone-else",
+     program:stage,offeringId:"cohort-university",awardedYear:1100}],
+   schoolCertificates:[{id:"primary-certificate",
+     enrollmentId:"mature-primary-certificate",
+     offeringId:"cohort-primary",awardedYear:1100}]
+ }};
+ const ids=s.educationRecord.enrollments.map(x=>x.id),
+   measure=()=>educationObservationRows(s,{
+     year,month:5,siteFrame:[],openFrame:[],caseIds:[],
+     applicationIds:[],enrollmentIds:ids}).p_completed,
+   first=measure(),state=JSON.stringify(s);
+ s.educationRecord.awards.push({...s.educationRecord.awards[0]});
+ const afterDuplicate=measure();
+ s.educationRecord.awards.pop();s.dead=true;
+ const death=measure();
+ return {first:{numerator:first.numerator,denominator:first.denominator,
+   unknown:first.excludedUnknown,censored:first.censored},
+   sameWithDuplicate:first.numerator===afterDuplicate.numerator &&
+     first.denominator===afterDuplicate.denominator,
+   death:{numerator:death.numerator,denominator:death.denominator,
+     competing:death.competingDeath,censored:death.censored,
+     unknown:death.excludedUnknown},
+   restoredOriginal:s.educationRecord.enrollments.length===8 &&
+     s.educationRecord.awards.length===2,
+   noMutationBefore:state.includes("credential-issued")};
+});
+assert.deepEqual(matureCohort,{
+ first:{numerator:2,denominator:4,unknown:1,censored:3},
+ sameWithDuplicate:true,
+ death:{numerator:2,denominator:7,competing:3,censored:0,unknown:1},
+ restoredOriginal:true,noMutationBefore:true
+});
 const placementSample=run(function(){
  const regions=Object.keys(EDUCATION_REGIONAL_PRESENCE),
    kinds=Object.keys(EDUCATION_LOCALITY_PRESENCE_DELTA);
