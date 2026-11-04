@@ -247,10 +247,13 @@
       "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
       "displayNameStatus": "needs-jp-text-confirmation",
       "employmentRole": "employer-or-organizer",
-      "parentOrganizationKey": "kazimierz-general-chamber",
+      "parentOrganizationKey": null,
       "availabilityRule": "year-and-site-specific",
       "recruitmentRule": "verified-site-and-individual-position",
-      "notes": "工学・機材製造の関連企業。具体的工場地は未確定。"
+      "notes": "工学・機材製造の関連企業。具体的工場地は未確定。",
+      "associationKeys": [
+        "kazimierz-general-chamber"
+      ]
     },
     {
       "organizationKey": "rose-papers-union",
@@ -265,10 +268,13 @@
       "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
       "displayNameStatus": "needs-jp-text-confirmation",
       "employmentRole": "employer-or-organizer",
-      "parentOrganizationKey": "kazimierz-general-chamber",
+      "parentOrganizationKey": "mieszko-group",
       "availabilityRule": "year-and-site-specific",
       "recruitmentRule": "verified-site-and-individual-position",
-      "notes": "報道・広告・メディア関係の職位。"
+      "notes": "報道・広告・メディア関係の職位。",
+      "associationKeys": [
+        "kazimierz-general-chamber"
+      ]
     },
     {
       "organizationKey": "sloma-food-corporation",
@@ -283,10 +289,13 @@
       "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
       "displayNameStatus": "needs-jp-text-confirmation",
       "employmentRole": "employer-or-organizer",
-      "parentOrganizationKey": "kazimierz-general-chamber",
+      "parentOrganizationKey": null,
       "availabilityRule": "year-and-site-specific",
       "recruitmentRule": "verified-site-and-individual-position",
-      "notes": "食品・小売。店舗と本部職を分離。"
+      "notes": "食品・小売。店舗と本部職を分離。",
+      "associationKeys": [
+        "kazimierz-general-chamber"
+      ]
     },
     {
       "organizationKey": "ellen-select-technology",
@@ -301,10 +310,13 @@
       "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
       "displayNameStatus": "needs-jp-text-confirmation",
       "employmentRole": "employer-or-organizer",
-      "parentOrganizationKey": "kazimierz-general-chamber",
+      "parentOrganizationKey": null,
       "availabilityRule": "year-and-site-specific",
       "recruitmentRule": "verified-site-and-individual-position",
-      "notes": "無人機・宣伝機材。"
+      "notes": "無人機・宣伝機材。",
+      "associationKeys": [
+        "kazimierz-general-chamber"
+      ]
     },
     {
       "organizationKey": "gale-industries",
@@ -319,10 +331,13 @@
       "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
       "displayNameStatus": "needs-jp-text-confirmation",
       "employmentRole": "employer-or-organizer",
-      "parentOrganizationKey": "kazimierz-general-chamber",
+      "parentOrganizationKey": null,
       "availabilityRule": "year-and-site-specific",
       "recruitmentRule": "verified-site-and-individual-position",
-      "notes": "建設企業、感染者支援策への言及あり。制度は個別時点で評価。"
+      "notes": "建設企業、感染者支援策への言及あり。制度は個別時点で評価。",
+      "associationKeys": [
+        "kazimierz-general-chamber"
+      ]
     },
     {
       "organizationKey": "kazimierz-armorless-union",
@@ -688,10 +703,14 @@
       "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta/Overview",
       "displayNameStatus": "needs-jp-text-confirmation",
       "employmentRole": "employer-or-organizer",
-      "parentOrganizationKey": "mountaindash-logistics",
+      "parentOrganizationKey": null,
       "availabilityRule": "post-1099-secondary-description; verify-before-activation",
       "recruitmentRule": "verified-site-and-individual-position",
-      "notes": "MountainDash LogisticsとScwire Groupとの合弁。1097年に前倒ししない。"
+      "notes": "MountainDash LogisticsとScwire Groupとの合弁。1097年に前倒ししない。",
+      "jointVenturePartyKeys": [
+        "mountaindash-logistics",
+        "scwire-group"
+      ]
     },
     {
       "organizationKey": "scwire-group",
@@ -1235,5 +1254,19 @@
       "recruitmentRule": "verified-site-and-individual-position",
       "notes": "個々の都市国家の制度・市民資格・職務を別立て。"
     }
-  ]
+  ],
+  "relationshipSemantics": {
+    "parentOrganizationKey": "Equity/subsidiary or actual branch organizational parent; association membership or state regulation is not ownership",
+    "associationKeys": "Member or affiliated associations; association payroll is distinct from member-company payroll",
+    "jointVenturePartyKeys": "Investors or joint founders; not equivalent to sole employer"
+  },
+  "provenanceReview": {
+    "asOf": "2026-11-04",
+    "source": [
+      "https://arknights.wiki.gg/wiki/Kazimierz/Branches",
+      "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "https://arknights.wiki.gg/wiki/Siesta/Overview"
+    ],
+    "notes": "Mieszko Group subsidiaries include Rose Papers Union in secondary source. KGCC affiliate list records institutional membership; Mountaincomm Trade is joint venture of MountainDash Logistics and Scwire Group. Japanese names need canon confirmation."
+  }
 }
