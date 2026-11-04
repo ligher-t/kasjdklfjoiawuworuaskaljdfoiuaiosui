@@ -923,8 +923,10 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
       conf: "S",
       references: ["SRC_EDUCATION_ACCESS"],
       st: ["青年", "壮年"],
-      need: ["arts_enrolled", "voc"],
-      ban: ["arts_grad"],
+      show: s => s.fl?.arts_grad===1 &&
+        s.educationPath?.completed?.includes("arts") &&
+        !!s.educationRecord?.enrollments?.some(x=>x.program==="arts" &&
+          !!x.institutionId && !!x.offeringId),
       ge: { age: 18 },
       once: true,
       who: "self",
@@ -937,18 +939,18 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
           [
             0.55,
             "実技と面接を通過し、アーツユニットの点検と整備を任された。学院の綺麗な実験室とは勝手が違う現場で、油にまみれながら調整の勘所を掴んでいった。",
-            { job: 11, fl: { arts_grad: 1, arts_enrolled: 0 }, cr: 3, p: 2 }
+            { job: 11, cr: 3, p: 2 }
           ],
           [
             1,
             "実技試験まで進んだが、経験者には及ばず不採用となった。修了証を懐にしまい、自分の術を活かせる別の働き口を探した。",
-            { fl: { arts_grad: 1, arts_enrolled: 0 }, p: -2 }
+            { p: -2 }
           ]
         ),
         $terraData.K("修了証を携え、習った技術を使える募集を探す", {}, [
           1,
           "真新しい修了証を懐に携え、アーツの心得を求める工房や商会の募集を一つずつ回り始めた。",
-          { fl: { arts_grad: 1, arts_enrolled: 0 }, p: 1 }
+          { p: 1 }
         ])
       ]
     },
