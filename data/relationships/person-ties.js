@@ -215,23 +215,24 @@ window.TERRA_DATA_BUILD.run("relationships/person-ties", function ($terraData, $
       st: ["児童", "少年", "青年"],
       cd: 8,
       w: 0.54,
-      show: s => !!$terraData.v82p(s, "school") && !!s.fl?.sch,
+      show: s => educationLegacySceneGuard(s,"education_school_classroom") &&
+        !!educationLegacyTeacherContact(s,{known:true}),
       t: "授業が終わって席を立とうとしたとき、以前から目をかけてくれている先生が「最近の課題はどうだ」と声をかけてくれた。一人では解けずに行き詰まっていた箇所を見せるか迷った。",
       c: [
         $terraData.K("ノートを開き、どうしても解けなかった箇所を教えてもらう", {}, [
           1,
           "先生は快く隣に腰を下ろし、どこで考え方がつまずいていたのかを順を追って解きほぐしてくれた。頭の中の霧がすっと晴れた。",
-          { personTieAction: { kind: "school", action: "listen" }, k: 1 }
+          { educationAction:"legacy:teacher-lesson", k: 1 }
         ]),
         $terraData.K("まずは隣の席の友人に聞いてみてから、次の授業で質問する", {}, [
           1,
           "先にクラスメートとノートを見比べて解き方を教わり、それでも残った疑問を次の授業で先生にぶつけることにした。",
-          { personTieAction: { kind: "school", action: "respect-boundary" }, k: 1 }
+          { educationAction:"legacy:teacher-lesson", k: 1 }
         ]),
         $terraData.K("今日は「大丈夫です」と答え、家でもう一度ひとりで考えてみる", {}, [
           1,
           "もう少しだけ自分の力で粘ってみたくて、先生には礼だけ言ってカバンを手に帰路についた。",
-          { personTieAction: { kind: "school", action: "respect-boundary" } }
+          { educationAction:"legacy:teacher-lesson" }
         ])
       ]
     },
