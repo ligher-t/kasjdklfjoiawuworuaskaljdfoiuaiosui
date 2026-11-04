@@ -353,6 +353,134 @@ function educationMigrationEligible(s,eventId,choice=null) {
       s.sn?.life_night_study===s.year))return false;
   return !!educationMigrationProviderFor(s,eventId);
 }
+
+// A conditional P17 notice describes an observed result, never the mere
+// decision to apply. The originating choice is the owner of its one-time log.
+function educationP17NoticeRegisteredSource(s,row,record) {
+  if(!row || row.status!=="verified" || !row.evidenceRef ||
+     row.reviewId!==window.GAME_DATA.EDUCATION_P17_REVIEWED?.find(x=>
+       x.eventId===record.eventId)?.reviewId ||
+     row.choiceLetter!==record.choice ||
+     !Number.isInteger(row.noticeIndex) || row.noticeIndex<0 ||
+     !row.sourceId || !row.sourceKind || !row.sourceStatus ||
+     !Number.isInteger(row.year) || !Number.isInteger(row.month) ||
+     row.year*12+row.month<record.at.year*12+record.at.month ||
+     row.year*12+row.month>s.year*12+(s.mo??0) ||
+     (row.areaId!==s.local?.educationAreaId &&
+      row.areaId!=="region:"+s.res?.n))return false;
+  const roots={
+    "admission-notice":s.educationAccess?.notices,
+    "case-decision":s.educationCases?.items,
+    "residence-offer":s.educationMobility?.residenceOffers,
+    "residence-contract":s.educationMobility?.residenceContracts,
+    "transport-transaction":s.educationMobility?.transportTransactions,
+    "finance-posting":s.educationFinance?.postings,
+    "recognition-inquiry":s.educationRecognitionInquiries?.items
+  };
+  const obj=roots[row.sourceKind]?.[row.sourceId];
+  if(!obj)return false;
+  const actual=obj.status??obj.result??obj.reason??obj.reviewStatus;
+  if(actual!==row.sourceStatus)return false;
+  if(record.result?.caseId &&
+     row.sourceKind==="case-decision"&&row.sourceId!==record.result.caseId)
+    return false;
+  return true;
+}
+function educationP17NoticeOutcome(s,record,review,letter) {
+  const caseItem=s.educationCases?.items?.[record.result?.caseId],
+    access=s.educationAccess,world=s.world?.educationWorld;
+  if(review==="E09"&&letter==="A" && caseItem?.reason==="accepted-not-enrolled")
+    return {index:0,evidenceRef:caseItem.id+":accepted-not-enrolled"};
+  if(review==="E16"&&letter==="A"){
+    const candidates=Object.values(s.educationMobility?.residenceOffers||{})
+      .filter(x=>x.evidenceRef && x.campusId &&
+        (x.offeringId===caseItem?.offeringId ||
+         x.campusId===s.educationPath?.campusId));
+    const offer=candidates.sort((a,b)=>String(a.id).localeCompare(String(b.id)))[0];
+    if(offer?.approved && offer.capacityRemaining>0)
+      return {index:0,evidenceRef:offer.evidenceRef};
+    if(offer && offer.capacityRemaining===0)
+      return {index:1,evidenceRef:offer.evidenceRef};
+  }
+  if(review==="E26"&&letter==="A"){
+    const offer=access?.financingOffers?.[record.result?.caseId];
+    if(offer?.source==="institutional-desk-inquiry" &&
+       offer.checkedAt?.year>=record.at.year)
+      return {index:offer.grant?0:1,evidenceRef:
+        offer.grant?.id||offer.caseId+":institutional-desk-inquiry"};
+  }
+  if(review==="E38"&&letter==="B" && caseItem?.reason==="paused" &&
+     caseItem.endedAt?.year>=record.at.year)
+    return {index:0,evidenceRef:caseItem.id+":paused"};
+  if(review==="E40"&&letter==="A"){
+    const current=educationMigrationCurrent(s);
+    if(current){
+      const yearRows=s.educationAttendance?.enrollments?.[current.enroll.id];
+      const months=yearRows?.[s.year]||{};
+      for(const month of Object.values(months)){
+        for(const segment of Object.values(month.segments||{})){
+          if(segment.offeringId!==current.offering.id ||
+             !segment.evidenceRef ||
+             !["alternative_classroom","recognized-alternative-classroom"].includes(
+               segment.sourceKind))continue;
+          return {index:segment.recognized&&segment.equivalent>0?0:1,
+            evidenceRef:segment.evidenceRef};
+        }
+      }
+    }
+  }
+  if(review==="E54"&&letter==="A"){
+    const inquiries=Object.values(s.educationRecognitionInquiries?.items||{})
+      .filter(x=>x.sourceEventId===record.eventId &&
+        x.at?.year>=record.at.year);
+    for(const inquiry of inquiries){
+      const success=["approved","recognized","awarded"].includes(inquiry.status),
+        failed=["denied","rejected","failed"].includes(inquiry.status);
+      const award=success && (s.educationRecord?.recognitions||[]).some(x=>
+        x.id===inquiry.awardId || x.awardId===inquiry.awardId);
+      if(award)return {index:0,evidenceRef:inquiry.id+":"+inquiry.awardId};
+      if(failed)return {index:1,evidenceRef:inquiry.id+":"+inquiry.status};
+    }
+  }
+  if(review==="E68"&&letter==="B"){
+    const searches=(access?.searches||[]).filter(x=>
+      x.checkedAt?.year*12+x.checkedAt?.month>=
+        record.at.year*12+record.at.month &&
+      x.areaIds?.includes(s.local?.educationAreaId) &&
+      x.foundIds?.length===0);
+    if(searches.length)
+      return {index:0,evidenceRef:searches[0].caseId+":locality-inquiry"};
+  }
+  const entry=window.GAME_DATA.EDUCATION_P17_REVIEWED?.find(x=>x.reviewId===review),
+    choice=entry?.choices.find(x=>x.letter===letter);
+  const proof=Object.values(s.educationSceneEvidence?.items||{})
+    .filter(x=>x.noticeIndex<choice?.notifications.length &&
+      educationP17NoticeRegisteredSource(s,x,record))
+    .sort((a,b)=>a.year-b.year||a.month-b.month||
+      String(a.evidenceRef).localeCompare(String(b.evidenceRef)))[0];
+  return proof?{index:proof.noticeIndex,evidenceRef:proof.evidenceRef}:null;
+}
+function educationP17ReconcileNotices(s) {
+  if(!s||s.dead || !s.educationMigration?.records?.length)return 0;
+  const reviewed=window.GAME_DATA.EDUCATION_P17_REVIEWED||[];
+  let delivered=0;
+  for(const record of s.educationMigration.records){
+    if(record.notice || !record.at || record.at.year>s.year ||
+       record.at.year===s.year&&record.at.month>(s.mo??0))continue;
+    const entry=reviewed.find(x=>x.eventId===record.eventId);
+    if(!entry || entry.decision==="保留")continue;
+    const choice=entry.choices.find(x=>x.letter===record.choice);
+    if(!choice?.notifications.length)continue;
+    const truth=educationP17NoticeOutcome(s,record,entry.reviewId,record.choice);
+    if(!truth || !Number.isInteger(truth.index) ||
+       !choice.notifications[truth.index] || !truth.evidenceRef)continue;
+    record.notice={index:truth.index,evidenceRef:truth.evidenceRef,
+      deliveredAt:{year:s.year,month:s.mo??0}};
+    if(typeof L==="function")L(choice.notifications[truth.index]);
+    delivered++;
+  }
+  return delivered;
+}
 function educationMigrationRecord(s,eventId,letter,result={},scopeOverride=null) {
   s.educationMigration ||= {version:1,seen:{},records:[]};
   const reg=s.educationMigration,
@@ -363,6 +491,7 @@ function educationMigrationRecord(s,eventId,letter,result={},scopeOverride=null)
     at:{year:s.year,month:s.mo},result:{...result},
     sourceKind:"P17-reviewed-scene"};
   reg.seen[id]=record;reg.records.push(record);
+  educationP17ReconcileNotices(s);
   return record;
 }
 function educationMigrationApply(s,action) {
