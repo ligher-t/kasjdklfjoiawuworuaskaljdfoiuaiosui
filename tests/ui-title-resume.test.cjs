@@ -77,6 +77,48 @@ assert.equal(vm.runInContext('RANDOM_STATE',ctx),snapshot.S.rngState,'resume res
   assert.equal(vm.runInContext('cont(birthSnapshot)',ctx),true);
 }
 
+// P18/P19: a real title-screen resume preserves the world snapshot, known
+// offerings, pending case, financial quotes and all read-only measurements.
+{
+  const result=JSON.parse(vm.runInContext(`
+    S.age=20;S.year=S.by+20;S.mo=4;
+    ensureResidenceIdentity(S);
+    ensureEducationWorldForResidence(S);
+    educationCreateMobilityState(S);
+    educationReconcileWorldAt(S,S.year,S.mo);
+    const c=educationCaseBegin(S,'higher-path','university',1);
+    c.phase='planning';educationCaseDiscover(S,'local');
+    const frame=Object.values(S.world.educationWorld.generationDecisions)
+      .flatMap(x=>Object.keys(x.present).map(stage=>({
+        scopeId:x.scopeId,stage})));
+    const openFrame=Object.keys(S.world.educationWorld.offerings)
+      .map(offeringId=>({offeringId}));
+    const capture=()=>JSON.stringify({
+      id:S.educationCases.activeCaseId,
+      stage:S.educationCases.items[c.id].stage,
+      known:S.educationAccess.knownOfferings,
+      searches:S.educationAccess.searches,
+      quotes:S.educationFinance.quotes,
+      world:S.world.educationWorld,
+      cash:S.cash,houseCash:S.house.cash,
+      randomSeed:S.randomSeed,rngState:S.rngState,
+      randomAlgorithm:S.randomAlgorithm,
+      rows:educationObservationRows(S,{year:S.year,month:S.mo,
+        siteFrame:frame,openFrame,caseIds:[c.id],
+        applicationIds:[],enrollmentIds:[]})
+    });
+    const first=capture(),rng=RANDOM_STATE,
+      snapshot=makeResumeSnapshot(),
+      resumed=cont(snapshot),
+      second=capture(),
+      noDraws=rng===RANDOM_STATE;
+    JSON.stringify({resumed,same:first===second,
+      noDraws,knownLink:S.known===W})
+  `,ctx));
+  assert.deepEqual(result,{resumed:true,same:true,noDraws:true,knownLink:true});
+  assert.equal(vm.runInContext('cont(birthSnapshot)',ctx),true);
+}
+
 // Deleting a slot removes both copies without changing another saved life.
 {
   vm.runInContext(`
