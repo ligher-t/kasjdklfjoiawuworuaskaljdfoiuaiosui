@@ -557,3 +557,50 @@ assert.equal(actualInitialChoice.searches,1);
 assert.equal(actualInitialChoice.sameCash,true);
 assert.equal(actualInitialChoice.noEnrollment,true);
 console.log("PASS six P13 legacy entrypoints: intent, funding, pause and graduation do not bypass school/finance/credit owners");
+
+
+fixture();
+const restoredCommute=run(function(){
+ const s=S;s.mo=4;
+ const world=s.world.educationWorld,current=educationMigrationCurrent(s),
+   schoolArea=world.campuses[current.m.campusId].educationAreaId,
+   hub=world.hubs[world.areas[schoolArea].educationHubId],
+   adjacent=hub.areaIds.find(x=>x!==schoolArea);
+ if(!adjacent)return {missingHub:true};
+ s.local.educationAreaId=adjacent;
+ for(const id of Object.keys(world.transportLinks))delete world.transportLinks[id];
+ const id=educationLinkId(adjacent,schoolArea,"urban-transit"),
+   [a,b]=[adjacent,schoolArea].sort();
+ world.transportLinks[id]={
+   id,endpointAreaIds:[a,b],routeKind:"urban-transit",
+   travelMinutesAB:18,travelMinutesBA:18,transferWaitMinutes:0,
+   riskScore:0.04,accessibility:["step-free"],accessibilityKnown:true,
+   directionalAccess:{[a]:true,[b]:true},
+   statusHistory:[{
+     from:{year:s.year,month:3},to:{year:s.year,month:3},
+     status:"closed",sourceRef:"recorded-monthly-service-disruption"
+   }]
+ };
+ const earlier=educationFindRoute(s,{
+   originAreaId:adjacent,campusAreaId:schoolArea,year:s.year,month:3
+ }),now=educationFindRoute(s,{
+   originAreaId:adjacent,campusAreaId:schoolArea,year:s.year,month:4
+ }),eligible=educationMigrationEligible(s,"edu_route_recovered_notice","A"),
+   applied=eligible&&educationMigrationApply(s,"E23:A"),
+   scene=s.educationMigration.records.find(x=>
+     x.eventId==="edu_route_recovered_notice");
+ return {missingHub:false,earlier:earlier.status,now:now.status,
+   eligible,applied,notice:scene?.notice?.index,
+   noInvoice:!Object.values(s.educationFinance?.invoices||{}).some(x=>
+     x.kind==="commute-pass"),noFakeArrival:
+     s.educationRecord.enrollments.length===1};
+});
+assert.equal(restoredCommute.missingHub,false);
+assert.equal(restoredCommute.earlier,"blocked");
+assert.equal(restoredCommute.now,"feasible");
+assert.equal(restoredCommute.eligible,true);
+assert.equal(restoredCommute.applied,true);
+assert.equal(restoredCommute.notice,0);
+assert.equal(restoredCommute.noInvoice,true);
+assert.equal(restoredCommute.noFakeArrival,true);
+console.log("PASS P17 observed transport recovery and case-independent route notice");
