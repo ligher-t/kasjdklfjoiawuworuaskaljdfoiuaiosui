@@ -118,6 +118,12 @@ function travelValidateFamilyCare(state, agreementId) {
     throw Error("家族の見守りについて有効な同意記録がない");
   return {kind:"solo-care-arranged",caregiverId:spouse.id,childIds:ids,agreementId};
 }
+function travelRefreshFamilyCare(state, agreementId) {
+  const journey = travelCurrentJourney(state);
+  if (!journey || journey.status !== "planned") throw Error("出発前の行程だけ家族の見守りを更新できる");
+  journey.householdCare = travelValidateFamilyCare(state, agreementId);
+  return journey;
+}
 function travelLegFareQuote(state, fromRegion, toRegion) {
   const route = (MIGRATION_ROUTES[fromRegion] || []).find(row => row.n === toRegion);
   const origin = REG.find(row => row.n === fromRegion);
@@ -170,8 +176,11 @@ function travelProjectAnnualOutflow(state, closingYear, paidBy) {
 function travelBlocksResidenceEvent(event, state) {
   if (travelPresence(state).mode === "residence") return false;
   const tags = Array.isArray(event.need) ? event.need : [];
+  const move = fx => !!fx && !!(fx.res || fx.resTo || fx.returnToLocality || fx.home || fx.localCity);
   return tags.some(tag => typeof tag === "string" &&
-    /^(国|都市|住環境|地勢):/.test(tag));
+    /^(国|都市|住環境|地勢):/.test(tag)) ||
+    move(event.fx) ||
+    (event.c || []).some(choice => (choice.o || []).some(result => move(result[2])));
 }
 function travelStart(state, request) {
   const travel = ensureTravelState(state);
@@ -189,6 +198,10 @@ function travelStart(state, request) {
     throw Error("Invalid modeled travel duration");
   const householdCare = travelValidateFamilyCare(state, request?.familyCareAgreementId || null);
   travelLegFareQuote(state, state.res.n, to);
+  const prepayReturn = request?.prepayReturn === true;
+  if (prepayReturn && !(MIGRATION_ROUTES[to] || []).some(row => row.n === state.res.n))
+    throw Error("帰路の運賃を確保できる往復経路がない");
+  if (prepayReturn) travelLegFareQuote(state, to, state.res.n);
   const id = "journey:" + (++travel.journeySeq);
   const leg = {
     id: id + ":leg:0", routeId: "migration-reference:" + state.res.n + ":" + to,
@@ -201,6 +214,9 @@ function travelStart(state, request) {
     legs: [leg], activeLegIndex: 0, currentCheckpointId: null,
     currentStopId: null, currentStopRegion: null, companions: [],
     householdCare, permitRefs: [], lastProcessed: {year: state.year, month: state.mo},
+    returnReservation: prepayReturn ? {
+      legId: id + ":leg:1", fromRegion: to, toRegion: state.res.n, status: "pending"
+    } : null,
     departedAt: null, conclusion: null
   };
   travel.journeys[id] = journey;
@@ -213,9 +229,21 @@ function travelDepart(state) {
   if (!journey || journey.status !== "planned") throw Error("Journey is not planned");
   if (!Number.isInteger(state.mo) || state.mo < 1 || state.mo > 12)
     throw Error("Journey departure requires a known calendar month");
-  if (journey.householdCare?.childIds?.length)
-    travelValidateFamilyCare(state, journey.householdCare.agreementId);
-  travelDebitLeg(state, journey, journey.legs[journey.activeLegIndex]);
+  const actualCare = travelValidateFamilyCare(state, journey.householdCare?.agreementId);
+  if (JSON.stringify(actualCare) !== JSON.stringify(journey.householdCare))
+    throw Error("旅程の家族見守り計画を更新してから出発する必要がある");
+  const outbound = journey.legs[journey.activeLegIndex];
+  if (journey.returnReservation?.status === "pending") {
+    const reserve = journey.returnReservation;
+    const required = travelLegFareQuote(state, outbound.fromRegion, outbound.toRegion).amount +
+      travelLegFareQuote(state, reserve.fromRegion, reserve.toRegion).amount;
+    const wallet = inSharedHousehold(state) ? state.house : state;
+    if (!wallet || !Number.isFinite(wallet.cash) || wallet.cash < required)
+      throw Error("往復運賃を先払いできる残高がない");
+    travelDebitLeg(state, journey, outbound);
+    travelDebitLeg(state, journey, {id:reserve.legId,fromRegion:reserve.fromRegion,toRegion:reserve.toRegion});
+    reserve.status = "paid";
+  } else travelDebitLeg(state, journey, outbound);
   journey.status = "en-route";
   journey.departedAt = {year: state.year, month: state.mo};
   journey.legs[journey.activeLegIndex].departedAt = { ...journey.departedAt };
@@ -363,6 +391,16 @@ function auditTravelState(state) {
         !j.legs.every((part, index) => index > j.activeLegIndex ||
           !!t.transactions[part.id + ":fare"]))
       errors.push("実際の旅程に決済記録がない");
+    if (j?.returnReservation) {
+      const reserve = j.returnReservation, receipt = t.transactions[reserve.legId + ":fare"];
+      if (!["pending","paid"].includes(reserve.status) ||
+          reserve.fromRegion !== j.destinationRegion ||
+          reserve.toRegion !== j.originRegion ||
+          (reserve.status === "paid" && (!receipt || receipt.fromRegion !== reserve.fromRegion ||
+            receipt.toRegion !== reserve.toRegion)) ||
+          (reserve.status === "pending" && receipt))
+        errors.push("帰路運賃の事前決済が不正");
+    }
     if (j?.householdCare?.childIds?.length) {
       const agreement = t.familyCareAgreements?.[j.householdCare.agreementId];
       if (!agreement || agreement.status !== "granted" ||
