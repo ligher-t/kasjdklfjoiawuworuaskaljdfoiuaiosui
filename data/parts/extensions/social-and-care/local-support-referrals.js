@@ -977,7 +977,13 @@ window.TERRA_DATA_BUILD.fragment(
     ge: { year: 1096, age: 12 },
     le: { year: 1097, age: 17 },
     months: [12, 1],
-    show: s => !!s.world?.events?.chernobog_incident,
+    show: s => {
+      const student=educationMigrationCurrent(s),campus=student &&
+        s.world.educationWorld.campuses?.[student.m.campusId];
+      return !!s.world?.events?.chernobog_incident && !!student &&
+        student.enroll.startedYear<=1096 && !!campus &&
+        campus.educationAreaId===s.local?.educationAreaId;
+    },
     once: true,
     w: 0.4,
     t: "混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持ちの食料を分け合おうとしている。窓の外では、街を脱出する人々の列が雪煙の中を動いていた。",
