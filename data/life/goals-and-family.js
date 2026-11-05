@@ -164,7 +164,7 @@ window.TERRA_DATA_BUILD.run("life/goals-and-family", function ($terraData, $defi
       c: [
         $terraData.K("患者の目線から、少し迷いそうな箇所を伝える", {}, [
           1,
-          "年寄りや急患がパッと見て迷いそうな一行を指さした。係はなるほどと頷き、すぐさま筆を取り直した。個人の意見が施設の手順を変えたことにはならないが、その場で少し役には立ったようだ。",
+          "年寄りや急患がパッと見て迷いそうな一行を指さした。係はなるほどと頷き、その箇所の言い回しを手元の案で書き直した。",
           { facilityPersonAction: { kind: "clinic", action: "feedback" }, k: 1 }
         ]),
         $terraData.K("邪魔をしないよう、自分の受付だけ済ませる", {}, [
