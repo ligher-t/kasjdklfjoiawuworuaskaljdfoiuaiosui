@@ -436,7 +436,7 @@ window.TERRA_DATA_BUILD.run("regional/leithanien", function ($terraData, $define
         K("空いた場所で演奏を聴く", { intent: "enjoyment" },
           [1, "曲が終わるまで立ち止まり、拍手をしてから歩き出した。", { p: 2 }]),
         K("焼き菓子を買って近くの人と分ける", { intent: "self-or-family-care", en: { affordableCash: 2500 }, why: "焼き菓子に回せる小遣いがない。" },
-          [1, "紙包みの焼き菓子を分け合い、仕事や家の話をしながらしばらく休んだ。", { cash: -2500, p: 2, rl: 1 }]),
+          [1, "紙包みの焼き菓子を分け合い、仕事や家の話をしながらしばらく休んだ。", { cash: -2500, pm: 1, p: 2, rl: 1 }]),
         K("混み始める前に帰る", { intent: "withdrawal" },
           [1, "演奏が遠ざかる道を選び、静かなうちに家へ戻った。", { p: 1 }])
       ]
