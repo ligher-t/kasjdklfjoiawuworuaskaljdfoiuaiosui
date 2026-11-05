@@ -280,9 +280,16 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
   if(rule.scope==='workplace'){
    const jobId=rule.jobs[0];
    s.job=0;s.k=Math.max(50,s.k||0);s.socialLearning||={};s.socialLearning.literacy=60;
-   if(id==='ursus-displaced-repair-workshop')applyEffect(s,{lifeAffiliation:{
-    id:'ursus-zelgrad-factory',title:'ゼルグラードの工場',kind:'employer',action:'join',role:'工場補助'}
-   });
+   if(id==='ursus-displaced-repair-workshop'){
+    s.year=1102;s.age+=2;context.__state=s;
+    vm.runInContext("S=__state;S.res=REG.find(row=>row.n==='ウルサス');S.home='移動都市';S.local={...makeLocality(S.home,S.res.n),kind:'移動都市の避難・労働区画',city:null};",context);
+    s.displacement={status:'shelter',sinceYear:1102};
+    applyEffect(s,{lifeAffiliation:{id:'ursus-zelgrad-factory',title:'ゼルグラードの工場',kind:'employer',action:'join',role:'工場補助'}});
+    applyEffect(s,{lifeGoal:{id:'ursus-zelgrad-after-crisis',title:'ゼルグラード危機後の住まいと生計を整える',priority:'生計と居場所',action:'start'}});
+    applyEffect(s,{lifeSkill:{id:'industrial-production',title:'工場の製造補助',delta:1,context:'ゼルグラード工場の検品・部品作業'}});
+    s.year=1103;s.age+=1;
+    assert(event('life_ursus_zelgrad_displaced_work').show(s),'Ursus displaced-work source is reachable after factory employment and evacuation');
+   }
    if(id==='kazimierz-arena-staff'){
     s.age=55;s.year=1088;
     s.lifeRecord.affiliations.push({id:'kazimierz-competition-career',title:'カジミエーシュの競技騎士としての職業',kind:'individual-career',status:'active',role:'競技騎士',startedYear:1088,endedYear:null,episodes:[{startedYear:1088,endedYear:null,roleAtStart:'競技騎士',returning:false,basis:'recorded'}],history:[]});
