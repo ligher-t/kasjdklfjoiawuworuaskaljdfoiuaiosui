@@ -212,12 +212,15 @@ function slot(x) {
     !s.sn?.[event.id] &&
     hasActionableChoice(event)
   );
+  // The mandatory post-school decision is already handled by schoolReview.
+  // Later higher-education reconsiderations must obey the player's choice-frequency setting.
+  const priorityChoices = mj.filter(event => event.pri && event.id !== "higher_ed");
   let e = schoolReview ||
     medicalReview ||
     expiringFollowup ||
     mj.find(event=>event.id==="journey_decision_review") ||
     localTimelineChoice ||
-    nextScheduledFollowup(mj,s) || wpk(mj.filter(event => event.pri), s, T) || institutional;
+    nextScheduledFollowup(mj,s) || wpk(priorityChoices, s, T) || institutional;
   const serviceOnly=s.eventSchedule?.year===s.year&&s.eventSchedule.servicePositions.includes(x);
   if(!e&&serviceOnly)return;
   if(!e)e=R()<playChoiceChance(s)?wpk(mj,s,T):null;
