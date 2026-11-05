@@ -45,6 +45,24 @@ function advanceWorkplaceLedger(s, facility, year) {
   return ledger;
 }
 function reconcileWorkContract(s) {
+  const episode = currentPlayerEmployment(s);
+  if (episode) {
+    if (s.job !== episode.jobId || s.fl?.retired || restricted(s)) {
+      endPlayerEmployment(s, "occupation-or-availability-changed");
+    } else {
+      // The actual site is a persistent world record, never a local synthetic workplace.
+      if (!s.workContract || s.workContract.basis !== "occupation-episode" ||
+          s.workContract.episodeId !== episode.episodeId) {
+        s.workContract = {
+          siteId: episode.siteId, jobId: episode.jobId, episodeId: episode.episodeId,
+          startYear: episode.startYear, status: "active", wagePremium: 0,
+          hours: "regular", assignment: "usual", knownConditions: "basic",
+          basis: "occupation-episode"
+        };
+      }
+      return s.workContract;
+    }
+  }
   s.workContractHistory ||= [];
   const prior = s.workContract;
   const eligible = contractEligibleJob(s) && !s.fl?.retired && !restricted(s);
@@ -110,6 +128,10 @@ function closeInfectionWorkplaceDisclosureIfEmploymentChanged(s) {
 function contractIncomeFactor(s) {
   const contract = reconcileWorkContract(s);
   if (!contract) return 1;
+  if (contract.basis === "occupation-episode")
+    return clamp((1 + (contract.wagePremium || 0)) *
+      (contract.hours === "short" ? P("social.employerShortHoursIncomeFactor") :
+        contract.hours === "long" ? P("social.employerLongHoursIncomeFactor") : 1), 0.5, 1.4);
   const employer = s.community?.facilities?.[contract.siteId]?.employer;
   if (!employer) return 1;
   // 施設稼働の既存補正とは別に、雇用先の契約上の賃金だけを反映。親・配偶者の賃金は対象外。
@@ -132,9 +154,14 @@ function applyWorkContractAction(s, action) {
   if (!["approved", "declined"].includes(result)) throw Error("契約協議の結果が不正");
   const contract = reconcileWorkContract(s);
   if (!contract) throw Error("契約中の勤務先がない");
-  const facility = activeFacility(s, "workplace"),
-    ledger = ensureWorkplaceLedger(s, facility);
-  if (!facility || facility.id !== contract.siteId || !ledger) throw Error("勤務先の施設情報が不一致");
+  const actualSite = contract.basis === "occupation-episode"
+      ? s.world?.occupationWorld?.sites?.[contract.siteId] : null,
+    facility = actualSite || activeFacility(s, "workplace"),
+    ledger = actualSite
+      ? { openings: s.world.occupationWorld.positions[actualSite.positionIds[0]]?.vacancyCount ?? 0 }
+      : ensureWorkplaceLedger(s, facility);
+  if (!facility || facility.siteId !== contract.siteId && facility.id !== contract.siteId || !ledger)
+    throw Error("勤務先の施設情報が不一致");
   if (action.action === "review") contract.knownConditions = "reviewed";
   if (action.action === "negotiate") {
     if (result === "approved") {
