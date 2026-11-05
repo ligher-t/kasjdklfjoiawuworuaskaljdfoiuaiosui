@@ -136,11 +136,13 @@ function assessPlayerEmploymentAccess(s, request = {}) {
   if (mappedKey && requestedKey && requestedKey !== mappedKey)
     return { canApply: false, canStart: false, mode: null, reasonCode: "occupation-employer-mismatch" };
   const organizationKey = mappedKey || requestedKey;
-  if (!organizationKey)
+  const specificRequest = !!(request.siteId || request.positionId || request.openingId);
+  // Ordinary credential inquiries without a concrete offer remain read-only eligibility probes.
+  if (!organizationKey && !specificRequest)
     return { canApply: true, canStart: false, mode: "GENERIC", reasonCode: null };
-  if (!Object.hasOwn(EMPLOYER_PLAYER_ACCESS_MODES, organizationKey))
+  if (organizationKey && !Object.hasOwn(EMPLOYER_PLAYER_ACCESS_MODES, organizationKey))
     return { canApply: false, canStart: false, mode: null, reasonCode: "unregistered-employer" };
-  const mode = EMPLOYER_PLAYER_ACCESS_MODES[organizationKey];
+  const mode = organizationKey ? EMPLOYER_PLAYER_ACCESS_MODES[organizationKey] : "GENERIC";
   if (mode === "BLOCKED")
     return { canApply: false, canStart: false, mode, reasonCode: "player-employment-prohibited" };
   if (mode === "CONTACT" || mode === "HISTORICAL" || mode === "SOURCE_HOLD")
@@ -164,6 +166,8 @@ function assessPlayerEmploymentAccess(s, request = {}) {
     opening?.siteId === site.siteId &&
     opening?.employerId === site.employerId &&
     opening?.status === "open" && opening.slots > 0 &&
+    position.vacancyCount > 0 &&
+    (request.jobId == null || position.jobId === request.jobId) &&
     (opening.validFromYear == null || year >= opening.validFromYear) &&
     (opening.validToYear == null || year <= opening.validToYear) &&
     request.knownToPerson === true;
