@@ -898,7 +898,8 @@ for(const c of jobLossCases){
         employerId='fixture-reentry-employer',siteId='fixture-reentry-site',
         positionId='fixture-reentry-position',openingId='fixture-reentry-opening';
       w.employers[employerId]={employerId,organizationKey:null,areaId};
-      w.sites[siteId]={siteId,employerId,areaId,status:'open',positionIds:[positionId]};
+      w.sites[siteId]={siteId,employerId,areaId,status:'open',
+        createdYear:S.year,lastYear:S.year,positionIds:[positionId]};
       w.areas[areaId].siteIds.push(siteId);
       w.positions[positionId]={positionId,siteId,jobId:2,capacity:1,
         aggregateOccupiedSlots:0,identifiedOccupiedSlots:0,reservedSlots:0,
@@ -1062,7 +1063,8 @@ for(const choiceIndex of [0,1]){
         positionId='fixture-frontier-reentry-position',
         openingId='fixture-frontier-reentry-opening';
       w.employers[employerId]={employerId,organizationKey:null,areaId};
-      w.sites[siteId]={siteId,employerId,areaId,status:'open',positionIds:[positionId]};
+      w.sites[siteId]={siteId,employerId,areaId,status:'open',
+        createdYear:S.year,lastYear:S.year,positionIds:[positionId]};
       w.areas[areaId].siteIds.push(siteId);
       w.positions[positionId]={positionId,siteId,jobId:2,capacity:1,
         aggregateOccupiedSlots:0,identifiedOccupiedSlots:0,reservedSlots:0,
