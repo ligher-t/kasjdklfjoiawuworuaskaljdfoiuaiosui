@@ -120,16 +120,17 @@ assert.equal(reviewedBranchKeys.size,9);
 assert.equal(report.jobStartsRejectedWithoutEvidence+report.communityLivelihoodsRetained>0,true);
 console.log(`PASS W01 current runtime review: ${report.events} events, ${report.choices} choices, ${report.outcomes} outcomes; 7 reviewed source-shape deltas; 9 content-bound branches; unsupported starts rejected ${report.jobStartsRejectedWithoutEvidence}, evidence-backed livelihoods retained ${report.communityLivelihoodsRetained}`);
 
-// W11 is a screening inventory, not a semantic approval. Runtime-check its
-// high-priority employer/facility branches and the recovered W12 source events
-// against the same no-opening boundary used by event dispatch.
+// W11 is a screening inventory, not a semantic approval. Runtime-check every
+// job/livelihood-context candidate and recovered W12 source against the same
+// no-opening boundary used by event dispatch.
 const nonRuntimeRecovered=new Set(recoveredSources.summary.nonRuntime.map(row=>row.id));
-const dependentEventIds=new Set(dependentQueue.entries
-  .filter(row=>['P0','P1'].includes(row.classification) && row.why==='org-or-job-mechanics')
-  .map(row=>row.eventId));
+const dependencyCandidates=dependentQueue.entries
+  .filter(row=>row.why!=='contextual-dependency-not-yet-established');
+assert.equal(dependencyCandidates.length,330,'all explicit W11 job/livelihood-context candidates are screened');
+const dependentEventIds=new Set(dependencyCandidates.map(row=>row.eventId));
 for(const row of recoveredSources.events)
   if(!nonRuntimeRecovered.has(row.id))dependentEventIds.add(row.id);
-assert.equal(dependentEventIds.size,81,'W11 employer/facility screen plus runtime W12 source set');
+assert(dependentEventIds.size>=330,'all 330 W11 job/livelihood candidates reach runtime screening');
 ctx.DEPENDENT_EVENT_IDS=[...dependentEventIds];
 const dependentReport=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
   const result={events:0,choices:0,outcomes:0,blockedJobStarts:0,retainedLivelihoods:0};

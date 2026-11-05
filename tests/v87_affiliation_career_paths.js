@@ -63,7 +63,7 @@ const employmentStartSource=(affiliationId,jobId)=>{
   for(let outcomeIndex=0;outcomeIndex<(row.c[choiceIndex].o||[]).length;outcomeIndex++){
    const effect=row.c[choiceIndex].o[outcomeIndex][2],memberships=[effect?.lifeAffiliation,...(effect?.lifeAffiliations||[])];
    if(effect?.job===jobId&&memberships.some(item=>item?.id===affiliationId&&
-     ['join','assign','return','continue','role'].includes(item.action||'join'))){
+     ['join','assign'].includes(item.action||'join')&&typeof item.title==='string'&&item.title.trim())){
     const establishedVisit=vm.runInContext(
      'EMPLOYMENT_PHYSICAL_INTERVIEWS[__eventId]===__affiliationId||EMPLOYMENT_ONBOARD_APPOINTMENT_SOURCES[__eventId]===__affiliationId',
      Object.assign(context,{__eventId:row.id,__affiliationId:affiliationId}));
