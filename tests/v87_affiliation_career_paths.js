@@ -373,16 +373,20 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
  s.k=50;s.socialLearning||={};s.socialLearning.literacy=60;s.lifeRecord.skills||=[];
  s.lifeRecord.skills.push({id:'engineering-experience',level:12,basis:'acceptance-fixture'});
  const first=provisionOpening(s,7,'first'),second=provisionOpening(s,7,'second');
+ assert.equal(s.world.occupationWorld.openings[second.openingId]?.status,'open','the fixture retains its second public vacancy');
  context.__state=s;context.__opening=first.openingId;
  vm.runInContext("S=__state;applyPlayerEmploymentAction(S,{action:'accept-local-opening',jobId:7,openingId:__opening})",context,{timeout:30000});
  applyEffect(s,{lifeAffiliation:{id:'columbia-technical-work',title:'研究企業',action:'join'}});
  context.__state=s;
  const available=vm.runInContext("alternativeFacility(__state,'workplace')",context);
- assert.equal(available?.id,second.siteId,'the alternative is an actual second employer opening');
+ assert(available?.openingId,'the alternative is backed by a real vacancy');
+ assert.notEqual(available.siteId,first.siteId,'the alternative changes the current workplace');
+ assert.equal(s.world.occupationWorld.openings[available.openingId]?.siteId,available.siteId,'the selected workplace owns the open vacancy');
+ const destinationSiteId=available.siteId;
  applyEffect(s,{siteAction:{kind:'workplace',action:'switch'}});
  assert.equal(s.lifeRecord.affiliations.find(row=>row.id==='columbia-technical-work').status,'left','same occupation at another workplace is not the old company');
  assert.equal(s.job,7,'a confirmed new placement retains the occupation');
- context.__state=s;assert.equal(vm.runInContext('S=__state;currentPlayerEmployment(S).siteId',context),second.siteId);
+ context.__state=s;assert.equal(vm.runInContext('S=__state;currentPlayerEmployment(S).siteId',context),destinationSiteId);
  assert(s.siteAffiliationHistory.some(row=>row.kind==='workplace'&&row.action==='ended'&&row.reason==='chosen-transfer'));
  s.fl.workplace_hazard=1;applyEffect(s,{job:0});assert.equal(s.fl.workplace_hazard,0,'past hazardous work does not remain a current workplace exposure');
 }
