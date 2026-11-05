@@ -38,7 +38,10 @@ assert.equal(inKazdel.shown.find(c=>c.label==='傭兵団に加わる').visible,t
 const career=vm.runInContext("EV.find(e=>e.id==='car')",ctx);
 const service=career.c.find(c=>c.l==='軍務に志願する'),guard=career.c.find(c=>c.l==='傭兵団に加わる');
 assert.equal(vm.runInContext('J',ctx)[service.o[0][2].job].n,'軍務・兵站','regular army recruitment must not assign mercenary work');
-assert.equal(guard.o[0][2].job,4);
+assert.equal(guard.o[0][2].job,undefined,'completed short guard duty does not create a permanent mercenary job');
+assert.equal(guard.o[0][2].employmentAction?.action,'complete-gig');
+assert.equal(guard.o[0][2].employmentAction?.kind,'short-sentry');
+assert.equal(guard.o[0][2].employmentAction?.nominalCash,120000);
 assert.equal(service.o[0][2].fl?.trauma_war,undefined,'recruitment alone does not establish wartime trauma');
 assert.equal(guard.o[0][2].fl?.trauma_war,undefined,'a completed guard contract alone does not establish trauma');
 assert.equal(service.o[1][2].fl?.trauma_war,1,'the explicit first-battle injury still records trauma');
