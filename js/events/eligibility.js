@@ -421,6 +421,7 @@ const tpl = (t, s) => {
   words.childFeverVisitCost = m(childFeverVisitCost(s));
   words.illnessReviewCost = m(2e4 * s.res.md * (s.priceIndex || 1));
   words.rimSupplyKitCost = m(P("economy.rimSupplyKitCost") * s.res.pm * (s.priceIndex || 1));
+  words.kazMatchFixOffer = m(5e6 * (s.priceIndex || 1));
   words.investmentProjectName = investmentProjectName(s);
   words.investmentCurrentValue = m(s.investment || 0);
   words.newHouseholdSetupCost = newHouseholdSetupCost(s);
