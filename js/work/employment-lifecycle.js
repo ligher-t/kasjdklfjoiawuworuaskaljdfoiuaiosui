@@ -90,6 +90,7 @@ function applyPlayerEmploymentAction(s, action) {
   if (["accept-known-opening", "decline-known-opening"].includes(action?.action))
     return resolveKnownEmploymentOpening(s, action.action === "accept-known-opening");
   if (action?.action === "start-livelihood") return startEmploymentLivelihood(s, action);
+  if (action?.action === "receive-work-meal") return recordEmploymentMeal(s, action.sourceEventId);
   if (action?.action === "site-incident") return applyEmploymentSiteIncident(s, action);
   if (!action || !["accept-local-opening", "leave", "complete-gig", "suspend", "resume", "pay-arrears"].includes(action.action))
     throw Error("採用案件の操作が不正");

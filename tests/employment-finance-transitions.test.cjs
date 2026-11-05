@@ -61,6 +61,51 @@ assert.equal(result.projected,result.paid);
 assert(Math.abs(result.annualNet-result.cashDelta-result.paid)<0.001,'annual cash settlement must not pay monthly receipts again');
 console.log('Employment pay periods, leave, arrears and annual projection PASS');
 
+for (const [region, entryId, mealId, wallet] of [
+  ['サーミ','car_sam_priest_entry','work_w11_community_bowl','personal'],
+  ['クルビア','fam_inherit','work_family_shop_in_kind','household']
+]) {
+  setup(ctx,{id:'employment-meal',seed:20261105,region,age:22});
+  ctx.MEAL_CASE={entryId,mealId,wallet};
+  const meal=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+    const {entryId,mealId,wallet}=MEAL_CASE, find=id=>EV.find(e=>e.id===id);
+    S.job=0;S.mo=5;S.fl.sch=0;S.educationPath=null;S.educationDecision=null;
+    S.fl.household_separated=wallet==='personal'?1:0;
+    S.residenceArrangement=wallet==='personal'?'independent_rental':'family_home_shared_budget';
+    if(wallet==='household') { S.par.fa.d=0;S.par.fa.j=5; }
+    const event=find(mealId), beforeEntry=event.show(S);
+    ap(find(entryId).c[0].o[0][2]);
+    const offered=event.show(S), cash=S.cash, houseCash=S.house.cash, year=S.year;
+    ap(event.c[1].o[0][2]);
+    const declineUnchanged=event.show(S) && !employmentMealOffset(S,year,wallet);
+    ap(event.c[0].o[0][2]);
+    const cashUnchanged=S.cash===cash && S.house.cash===houseCash;
+    const blocked=!event.show(S) && !employmentEffectAssessment(S,event.c[0].o[0][2]).canStart;
+    const saved=cont(makeResumeSnapshot()), offset=employmentMealOffset(S,year,wallet);
+    const otherOffset=employmentMealOffset(S,year,wallet==='personal'?'household':'personal');
+    const projectedWages=employmentPaidForYear(S,year,wallet);
+    S.year++;S.mo=0;
+    const withoutMeal=JSON.parse(JSON.stringify(S));
+    withoutMeal.employmentState.finance.meals=[];
+    let difference;
+    if (wallet==='personal') {
+      const living=s=>prepareAnnualPersonalBudget(s,ANNUAL_SERVICES,s.age,s.t,s.f).baseExpense;
+      difference=living(withoutMeal)-living(S);
+    } else {
+      settleAnnualHouseholdBudget(withoutMeal,ANNUAL_SERVICES,withoutMeal.age);
+      settleAnnualHouseholdBudget(S,ANNUAL_SERVICES,S.age);
+      difference=withoutMeal.house.flow.expense.living-S.house.flow.expense.living;
+    }
+    return {beforeEntry,offered,declineUnchanged,cashUnchanged,blocked,saved,offset,otherOffset,projectedWages,difference};
+  })())`,ctx,{timeout:15000}));
+  assert(!meal.beforeEntry && meal.offered, `${mealId} must require its actual livelihood`);
+  assert(meal.declineUnchanged && meal.cashUnchanged && meal.blocked && meal.saved);
+  assert(meal.offset>0 && Math.abs(meal.difference-meal.offset)<0.001);
+  assert.equal(meal.otherOffset,0);
+  assert.equal(meal.projectedWages,0);
+}
+console.log('Community and family work meals, save and separate annual budgets PASS');
+
 setup(ctx,{id:'employment-secondment',seed:20261105,region:'クルビア',age:25});
 const posting=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
   const find=id=>EV.find(e=>e.id===id);

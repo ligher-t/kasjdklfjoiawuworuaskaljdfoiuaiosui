@@ -73,11 +73,11 @@ function settleAnnualHouseholdBudget(s, services, a) {
         (a < 15 ? 0.35 : 0.5) * (1-awayMonths/12) : 0,
       siblingUnits = 0.25 * dependents,
       householdUnits = parentUnits + protagonistUnits + siblingUnits;
-    const hex =
-      Math.max(
+    const living = Math.max(0, Math.max(
         services.P("economy.minimumExpenseBase") * costPm,
         services.EXP[householdWealthIndex] * costPm * householdUnits
-      ) +
+      ) - employmentMealOffset(s, s.year - 1, "household"));
+    const hex = living +
       petCost * s.priceIndex +
       schoolCost * s.priceIndex +
       tc * s.priceIndex +
@@ -126,10 +126,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
         ...(reserveContribution > 0 ? { protagonistReserve: reserveContribution } : {})
       },
       expense: {
-        living: Math.max(
-          services.P("economy.minimumExpenseBase") * costPm,
-          services.EXP[householdWealthIndex] * costPm * householdUnits
-        ),
+        living,
         pet: petCost * s.priceIndex,
         school: schoolCost * s.priceIndex + educationTuition,
         treatment: (tc - treatmentTravel) * s.priceIndex,

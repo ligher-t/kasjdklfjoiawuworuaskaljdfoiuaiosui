@@ -83,6 +83,33 @@ function employmentPaidForYear(s, year, wallet = "personal") {
   return (s.employmentState?.finance?.receipts || []).filter(row =>
     row.year === year && row.wallet === wallet && row.kind !== "gig").reduce((sum, row) => sum + row.amount, 0);
 }
+function employmentMealAvailable(s, sourceEventId) {
+  const episode = currentPlayerEmployment(s);
+  if (episode?.kind !== "family-community" || episode.localityKey !== localityKey(s) ||
+      s.dead || restricted(s) || travelPresence(s).mode !== "residence" ||
+      (s.employmentState.finance?.meals || []).some(row => row.year === s.year)) return false;
+  if (sourceEventId === "work_family_shop_in_kind") {
+    const business = resolveEmploymentLivelihoodResource(s, "family-community", 5, "family-business");
+    return episode.roleId === "apprentice" && business?.resourceId === episode.resourceId;
+  }
+  return sourceEventId === "work_w11_community_bowl" &&
+    ["サーミ", "カズデル"].includes(s.res.n) && [69, 70, 71, 75].includes(episode.jobId);
+}
+function recordEmploymentMeal(s, sourceEventId) {
+  if (!employmentMealAvailable(s, sourceEventId)) throw Error("食事を分けてもらう条件が変わった");
+  const episode = currentPlayerEmployment(s), finance = employmentFinance(s);
+  finance.meals ||= [];
+  finance.meals.push({
+    episodeId: episode.episodeId, resourceId: episode.resourceId,
+    sourceEventId, year: s.year, month: s.mo || 1,
+    wallet: inSharedHousehold(s) ? "household" : "personal",
+    livingCostOffset: P("economy.minimumExpenseBase") * s.res.pm * (s.priceIndex || 1) / (365 * 3)
+  });
+}
+function employmentMealOffset(s, year, wallet) {
+  return (s.employmentState?.finance?.meals || []).find(row =>
+    row.year === year && row.wallet === wallet)?.livingCostOffset || 0;
+}
 function employmentUnpaidAmount(s, episodeId = null) {
   return (s.employmentState?.finance?.claims || []).filter(row => row.status === "unpaid" &&
     (!episodeId || row.episodeId === episodeId)).reduce((sum, row) => sum + row.amount, 0);

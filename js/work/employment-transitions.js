@@ -44,6 +44,8 @@ function employmentDirectLivelihoodKind(jobId) {
 function employmentEffectAssessment(s, effect, sourceEventId = employmentEffectSource(effect)) {
   if (!effect || typeof effect !== "object") return { canStart: true, kind: "none" };
   const action = effect.employmentAction;
+  if (action?.action === "receive-work-meal")
+    return { canStart: employmentMealAvailable(s, action.sourceEventId), kind: "work-meal" };
   if (action?.action === "start-livelihood") {
     const resource = resolveEmploymentLivelihoodResource(s, action.kind, action.jobId, action.resourceId);
     return { canStart: !!resource && !s.dead && !restricted(s), kind: "livelihood", resource };

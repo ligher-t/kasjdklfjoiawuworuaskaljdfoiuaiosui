@@ -69,7 +69,7 @@ function prepareAnnualPersonalBudget(s, services, a, t, f) {
             services.P("economy.retirementIncomeBase") *
             (s.w.i < services.P("condition.povertyWealthIndex") ? 1 : 0),
     /* 生活費の設定値は収入と独立していたため、収入を超える部分を機械的に固定しない。これはゲーム上の上限仮定。 */
-    baseExpense = householdCoversPersonalCosts
+    livingBeforeMeal = householdCoversPersonalCosts
       ? 0
       : s.fl.detained
       ? services.P("economy.detainedPersonalAnnualCost") * costPm
@@ -86,8 +86,9 @@ function prepareAnnualPersonalBudget(s, services, a, t, f) {
                 : 1) *
               (!s.job && (s.cash || 0) < services.EXP[s.w.i] * costPm ? 0.65 : 1)
           ) * (isRhodesStaff ? 0.35 : [35, 36, 37].includes(s.job) ? 1.15 : 1),
+    baseExpense = Math.max(0, livingBeforeMeal - employmentMealOffset(s, s.year - 1, "personal")),
     spouseLivingCost = services.spouseLivesWithProtagonist(s)
-      ? baseExpense * services.P("economy.spouseLivingExpenseShare")
+      ? livingBeforeMeal * services.P("economy.spouseLivingExpenseShare")
       : 0,
     petCost = s.pet ? services.petCostBase(s.pet) * costPm : 0,
     hobbyCost = services.restricted(s) ? 0 : services.hobbyAnnualExpense(s, costPm),
