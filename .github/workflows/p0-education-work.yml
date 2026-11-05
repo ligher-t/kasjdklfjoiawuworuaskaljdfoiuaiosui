@@ -205,3 +205,6 @@ jobs:
           v87_affiliation_career_ursus_mine.js
           employment-family-periods.test.cjs
           employment-ux.test.cjs
+      - name: Chromium employment desk and opening decisions
+        if: ${{ !cancelled() }}
+        run: node tests/employment-browser-smoke.cjs
