@@ -189,4 +189,31 @@ assert.deepEqual(run(`S.local={...S.local,educationAreaId:'empty-area'};
  return {sameArea,afterMove};`),
  {sameArea:{allowed:false,eventShown:false},afterMove:{allowed:true,eventShown:true}});
 
+fresh();
+assert.deepEqual(run(`S.age=32;S.job=0;S.playSettings.eventFrequency=0;S.playSettings.choiceRatio=0;
+ S.educationPath={version:1,status:'completed',stage:'upper',completed:['primary','lower','upper'],history:[],equivalency:[]};
+ S.educationDecision=null;S.study=null;const original=EV.slice(),oldFire=fire,seen=[];
+ try{
+   const work=original.find(e=>e.id==='work_unemployed_reentry');EV.splice(0,EV.length,work);
+   const oldRandom=DEBUG_RANDOM;DEBUG_RANDOM=()=>0.99;try{sched();}finally{DEBUG_RANDOM=oldRandom;}
+   fire=e=>seen.push(e.id);const service=S.eventSchedule.servicePositions[0];slot(service);return seen;
+ }finally{fire=oldFire;EV.splice(0,EV.length,...original);}`),['work_unemployed_reentry']);
+
+fresh();
+assert.deepEqual(run(`S.age=32;S.job=1;
+ applyLifeGoal({id:'craft',title:'今の仕事の腕を磨く',action:'start'});
+ S.job=0;reconcileGenericWorkGoal(S);const paused=S.lifeRecord.goals.find(g=>g.id==='craft').status;
+ S.job=1;reconcileGenericWorkGoal(S);const resumed=S.lifeRecord.goals.find(g=>g.id==='craft').status;
+ return {paused,resumed};`),{paused:'paused',resumed:'active'});
+
+fresh();
+assert.deepEqual(run(`S.res=REG.find(r=>r.n==='イベリア');S.age=79;S.h=13;
+ const press=EV.find(e=>e.id==='choice_iberia_06').c[1];
+ const weak=ok(press.en,S,tags(S));S.h=30;const able=ok(press.en,S,tags(S));
+ const coast=EV.find(e=>e.id==='seaborn_coastal_whisper_daily');
+ S.r=RACE.find(r=>r.n==='エーギル');S.local={...S.local,kind:'小規模な定住地'};
+ const inland=coast.show(S);S.local={...S.local,kind:'漁村・沿岸集落'};const coastal=coast.show(S);
+ return {weak,able,inland,coastal,once:coast.once};`),
+ {weak:false,able:true,inland:false,coastal:true,once:true});
+
 console.log('PASS advanced settings, preserved priority slots, native automatic admission and life-specific resume');
