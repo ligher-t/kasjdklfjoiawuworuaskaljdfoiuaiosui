@@ -143,7 +143,7 @@ function localityAdvanceOne(s, regionState, year) {
     shockIds.push("game-background-" + axis);
   }
   regionState.lastYear = year;
-  ensureOccupationWorkArea(s);
+  advanceOccupationWorkArea(s, year, regionState.metrics);
   facilityAdvance(s, regionState, year);
   facilityPersonAdvance(s, regionState, year);
   const diffs = localityAxes.filter(axis => Math.abs(regionState.metrics[axis] - before[axis]) >= 0.055);
