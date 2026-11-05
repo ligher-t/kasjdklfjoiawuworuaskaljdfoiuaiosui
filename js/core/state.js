@@ -167,9 +167,15 @@ function careerOpeningAssessment(s, opening) {
       ? s.socialLearning.literacy
       : Math.min(75, eduLv(s) * 18 + (s.k || 0) * 0.32);
   let qualified = true, reason = null;
-  if (role === "research-lead" || role === "clinical") {
-    qualified = role === "research-lead" && uni && s.k >= 50 && literacy >= 45;
-    reason = "専門的な研究・診療の認定と実務が確認できない";
+  if (role === "research-lead") {
+    qualified = uni && s.k >= 50 && literacy >= 45;
+    reason = "研究に必要な修了課程と専門知識が確認できない";
+  } else if (role === "clinical") {
+    // Graduation alone must not create an unrestricted medical license.
+    // Accredited clinical training is represented by recorded practical evidence.
+    qualified = uni && skill(/clinical|medical-clinical|physician-practice/) &&
+      s.k >= 45 && literacy >= 45;
+    reason = "臨床業務の課程修了と実務認定が確認できない";
   } else if (role === "technical") {
     qualified = (uni || voc || skill(/technical|repair|engineering|job-18/)) && s.k >= 25 && literacy >= 30;
     reason = "修了課程または技術の実務経験がまだ確認できない";
