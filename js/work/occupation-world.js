@@ -289,6 +289,10 @@ const OCCUPATION_REGION_TIERS = Object.freeze({
   ]
 });
 const OCCUPATION_TIER_PROBABILITIES = Object.freeze([0.04, 0.20, 0.55, 0.85]);
+const OCCUPATION_SECTOR_PRIMARY_JOBS = Object.freeze({
+  AGR: 1, MIN: 3, MFG: 2, LOG: 16, COM: 17, CIV: 21, MIL: 14,
+  MED: 20, EDU: 12, SCI: 7, CRE: 13, REL: 9, REC: 17
+});
 
 function occupationWorkAreaKey(s) {
   if (!s?.res?.n || !s.local) return null;
@@ -368,7 +372,8 @@ function ensureOccupationWorkArea(s) {
       basis: "game-model"
     };
     occupationWorld.positions[positionId] = {
-      positionId, siteId, sector, capacity, aggregateOccupiedSlots: occupied,
+      positionId, siteId, sector, jobId: OCCUPATION_SECTOR_PRIMARY_JOBS[sector],
+      capacity, aggregateOccupiedSlots: occupied,
       identifiedOccupiedSlots: 0, reservedSlots: 0, vacancyCount: vacant,
       openingIds: advertised ? [openingId] : [],
       basis: "game-model"
@@ -434,6 +439,24 @@ function advanceOccupationWorkArea(s, year, metrics) {
     position.openingIds.push(openingId);
   }
   return area;
+}
+
+// Read-only candidate lookup. Seeking work never causes the world to generate a vacancy.
+function occupationOpeningFor(s, jobId) {
+  if (!Number.isInteger(jobId) || jobId <= 0 || s?.fl?.retired ||
+      s?.fl?.detained || s?.fl?.segregated || s?.age < 16) return null;
+  const areaId = occupationWorkAreaKey(s), work = s.world?.occupationWorld;
+  if (!areaId || !work?.areas?.[areaId]) return null;
+  return Object.values(work.openings).filter(row => {
+    const site = work.sites[row.siteId], position = work.positions[row.positionId];
+    return row.areaId === areaId && row.status === "open" && row.slots > 0 &&
+      (row.validFromYear == null || s.year >= row.validFromYear) &&
+      (row.validToYear == null || s.year <= row.validToYear) &&
+      site?.status === "open" && site.areaId === areaId &&
+      site.employerId === row.employerId &&
+      position?.siteId === site.siteId && position.jobId === jobId &&
+      position.vacancyCount > 0;
+  }).sort((a,b)=>a.openingId.localeCompare(b.openingId))[0] || null;
 }
 
 function occupationAreaSnapshot(s) {
