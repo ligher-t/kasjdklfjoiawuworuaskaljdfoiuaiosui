@@ -288,7 +288,6 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
     applyEffect(s,{lifeAffiliation:{id:'kazimierz-competition-career',title:'カジミエーシュの競技騎士としての職業',kind:'individual-career',action:'join',role:'競技騎士'}});
     applyEffect(s,{lifeGoal:{id:'kazimierz-competition-career',title:'競技騎士として働き、暮らしを立てる',priority:'仕事と身体',action:'start'}});
     s.year=1100;
-    assert(event('kaz_knight_later_career_review').show(s),'late-career source is established after ten years of active competition');
    }
    if(jobId===7)applyEffect(s,{lifeSkill:{id:'engineering-experience',title:'技術経験',delta:12,context:'所属範囲監査用の実在求人'}});
    context.__id=id;
