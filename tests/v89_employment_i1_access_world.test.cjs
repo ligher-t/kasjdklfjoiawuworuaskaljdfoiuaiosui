@@ -101,6 +101,24 @@ const directMembership=evaluate(`
 `);
 assert.equal(directMembership.blocked,2,'direct affiliation entrypoint forbids both organizations');
 assert.equal(directMembership.unchanged,true,'a denied join leaves the affiliation ledger unchanged');
+const sourceHolds=policy.entries.filter(row=>row.mode==='SOURCE_HOLD');
+assert.equal(sourceHolds.length,6,'all unverified named employers retain a closed source gate');
+const heldAccess=evaluate(`
+  const rows=${JSON.stringify(sourceHolds)},before=JSON.stringify({job:S.job,
+    affiliations:S.lifeRecord?.affiliations||[],rng:S.rngState});
+  const results=rows.map(row=>{
+    const access=assessPlayerEmploymentAccess(S,{organizationKey:row.organizationKey});
+    let denied=false;
+    try{ap({lifeAffiliation:{id:row.organizationKey,title:row.displayName,kind:'employer',action:'join'}});}
+    catch(error){denied=/正式な雇用として開始できない/.test(error.message);}
+    return {key:row.organizationKey,canApply:access.canApply,canStart:access.canStart,denied};
+  });
+  return {results,unchanged:before===JSON.stringify({job:S.job,
+    affiliations:S.lifeRecord?.affiliations||[],rng:S.rngState})};
+`);
+assert(heldAccess.results.every(row=>!row.canApply&&!row.canStart&&row.denied),
+  'all six source-held employers reject recruitment and legacy affiliation writes');
+assert.equal(heldAccess.unchanged,true,'source-held rejection creates no partial employment state');
 const site=evaluate(`
   const before=JSON.stringify(S.world.occupationWorld),rng=S.rngState;
   const w=S.world.occupationWorld,siteId='explicit-site',employerId='explicit-rhodes',

@@ -2,9 +2,21 @@
   "schema": "terra-employment-employer-player-access-policy",
   "version": 3,
   "asOf": "2026-11-05",
-  "status": "normative-design-only-not-runtime-enforced",
+  "status": "implemented-and-actions-verified",
   "branch": "fix/historical-event-scope-and-delivery",
   "canonicalDesign": "TERRA_EMPLOYMENT_INTEGRATED_DESIGN_V3_20261105.md",
+  "runtimeEnforcement": [
+    "js/work/employment-policy.js",
+    "js/work/employment-transitions.js",
+    "js/life/records.js"
+  ],
+  "verification": {
+    "workflowRunId": 42075373672,
+    "employmentPolicySuite": "tests/v89_employment_i1_access_world.test.cjs",
+    "employmentLifecycleSuite": "tests/v90_employment_i2_lifecycle.test.cjs",
+    "legacyAdmissionSuite": "tests/employment-legacy-route-removal.test.cjs",
+    "url": "https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/42075373672"
+  },
   "sourceOrganizationRegistry": "TERRA_EMPLOYER_AND_ORGANIZATION_REGISTRY_20261104.json",
   "precedence": "When deciding player-side new employment, this explicit mode overrides recruitmentRule in 2026-11-04 organization registry; source-grade/site/time/credential gates remain additionally required.",
   "modeDefinitions": {

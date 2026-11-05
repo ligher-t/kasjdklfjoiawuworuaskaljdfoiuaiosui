@@ -291,7 +291,8 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
    const source=employmentStartSource(id,jobId);
    assert(source,id+' has a source-backed employment start');
    context.__state=s;context.__source=source;context.__jobId=jobId;
-   vm.runInContext('S=__state;applyEmploymentAppointmentFixture(__source.eventId,__jobId,__id,__source.choiceIndex,__source.outcomeIndex)',context,{timeout:30000});
+   try{vm.runInContext('S=__state;applyEmploymentAppointmentFixture(__source.eventId,__jobId,__id,__source.choiceIndex,__source.outcomeIndex)',context,{timeout:30000});}
+   catch(error){throw new Error(`${id} source ${source.eventId} could not establish its reviewed start: ${error.message}`);}
   }
   const existing=s.lifeRecord.affiliations.find(row=>row.id===id);
   if(!existing||!['active','crisis','suspended'].includes(existing.status))
