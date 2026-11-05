@@ -403,7 +403,7 @@ window.TERRA_DATA_BUILD.run("regional/laterano", function ($terraData, $define, 
         K("屋台の配膳を手伝う", { intent: "service" },
           [1, "紙皿と飲み物を渡し続け、混雑が引いたころに店主から焼き菓子を一つ分けてもらった。", { cr: 1, p: 2 }]),
         K("菓子を一つ買い、広場の端で食べる", { intent: "enjoyment", en: { affordableCash: 1500 }, why: "菓子に使う小遣いがない。" },
-          [1, "甘い菓子を食べながら、行き交う人と鐘の音をしばらく眺めた。", { cash: -1500, p: 2 }]),
+          [1, "甘い菓子を食べながら、行き交う人と鐘の音をしばらく眺めた。", { cash: -1500, pm: 1, p: 2 }]),
         K("用事を済ませて、そのまま帰る", { intent: "withdrawal" },
           [1, "賑わいを横目に必要な買い物だけ済ませ、普段どおり家へ戻った。", { p: 1 }])
       ]
