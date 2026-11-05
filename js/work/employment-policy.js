@@ -160,7 +160,7 @@ function assessPlayerEmploymentAccess(s, request = {}) {
   // IDs must resolve to one actual employer, site, position and current opening.
   // Knowledge and selection are separate from the existence of these world facts.
   const canApply = !!site && site.status === "open" &&
-    employer?.organizationKey === organizationKey &&
+    (employer?.organizationKey || null) === (organizationKey || null) &&
     position?.siteId === site.siteId &&
     opening?.positionId === position.positionId &&
     opening?.siteId === site.siteId &&
