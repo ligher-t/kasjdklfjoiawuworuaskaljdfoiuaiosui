@@ -19,7 +19,8 @@ function sourceLiteracyGate(label){
  const offset=source.indexOf(label),nextChoice=source.indexOf('$terraData.K(',offset+label.length);
  const choiceSource=source.slice(offset,nextChoice<0?source.length:nextChoice);
  const match=choiceSource.match(/,\s*\{\s*show\s*:\s*\{[\s\S]*?\bge\s*:\s*\{[^}]*\bliteracy\s*:\s*(\d+)/);
- return match?Number(match[1]):undefined;
+ const dynamic = choiceSource.split('literacyValue(s) >= ')[1];
+ return match?Number(match[1]):dynamic?Number.parseInt(dynamic,10):undefined;
 }
 const reviewedIntent={uni_fee:['self-or-family-care','self-or-family-care','withdrawal'],uni_final_fee:['self-or-family-care','self-or-family-care','withdrawal'],voc_fee:['self-or-family-care','self-or-family-care','withdrawal'],voc_final_fee:['self-or-family-care','self-or-family-care','withdrawal'],teacher_path:['procedure','voluntary-aid','withdrawal'],artist_path:['self-or-family-care','self-or-family-care','withdrawal'],study_to_work:['procedure','procedure','procedure','withdrawal'],arts_academy_completion:['procedure','procedure']};
 for(const [id,intents] of Object.entries(reviewedIntent)){
