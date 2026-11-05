@@ -280,6 +280,9 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
   if(rule.scope==='workplace'){
    const jobId=rule.jobs[0];
    s.job=0;s.k=Math.max(50,s.k||0);s.socialLearning||={};s.socialLearning.literacy=60;
+   if(id==='ursus-displaced-repair-workshop')applyEffect(s,{lifeAffiliation:{
+    id:'ursus-zelgrad-factory',title:'ゼルグラードの工場',kind:'employer',action:'join',role:'工場補助'}
+   });
    if(jobId===7)applyEffect(s,{lifeSkill:{id:'engineering-experience',title:'技術経験',delta:12,context:'所属範囲監査用の実在求人'}});
    context.__id=id;
    const spec=vm.runInContext('EMPLOYMENT_APPOINTMENT_SITES.find(row=>row.affiliationId===__id)',context);
