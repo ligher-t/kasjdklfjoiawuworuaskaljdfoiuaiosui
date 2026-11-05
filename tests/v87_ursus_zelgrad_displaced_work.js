@@ -1,12 +1,18 @@
 'use strict';
 const path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),document={currentScript:null,getElementById(){return{hidden:false,textContent:'',value:'',dataset:{},innerHTML:'',insertAdjacentHTML(){}}},querySelectorAll(){return[]}};
-const ctx={window:{},document,console,Date,setTimeout(){},setInterval(){},localStorage:{getItem(){return null},setItem(){}}};
-vm.runInNewContext(require('../tools/runtime.cjs').readData(root),ctx,{timeout:15000});
-vm.runInNewContext(require('../tools/runtime.cjs').readEngine(root).split('/* ===== UI ===== */')[0],ctx,{timeout:15000});ctx.rd=()=>{};
-const result=vm.runInNewContext(String.raw`(()=>{
+const ctx=vm.createContext({window:{},document,console,Date,setTimeout(){},setInterval(){},localStorage:{getItem(){return null},setItem(){}}});
+vm.runInContext(require('../tools/runtime.cjs').readData(root),ctx,{timeout:15000});
+vm.runInContext(require('../tools/runtime.cjs').readEngine(root).split('/* ===== UI ===== */')[0],ctx,{timeout:15000});ctx.rd=()=>{};
+require('./support/employment-appointment-fixture.cjs').installEmploymentAppointmentFixture(ctx);
+const result=vm.runInContext(String.raw`(()=>{
  const event=id=>window.GAME_DATA.EV.find(row=>row.id===id),
-   apply=(id,choice,outcome)=>{const e=event(id),prior=TRACE_RESOLUTION;TRACE_RESOLUTION={kind:'choice',id:e.id,label:e.c[choice].l};try{ap(e.c[choice].o[outcome][2])}finally{TRACE_RESOLUTION=prior}},
+   apply=(id,choice,outcome)=>{const e=event(id),effect=e.c[choice].o[outcome][2],
+    affiliation=[effect?.lifeAffiliation,...(effect?.lifeAffiliations||[])].find(row=>row&&['join','assign'].includes(row.action||'join')),
+    appointment=Number.isInteger(effect?.job)&&effect.job>0&&affiliation&&
+      EMPLOYMENT_APPOINTMENT_SITES.some(spec=>spec.affiliationId===affiliation.id&&spec.jobs.includes(effect.job));
+    if(appointment&&!currentPlayerEmployment(S))return applyEmploymentAppointmentFixture(id,effect.job,affiliation.id,choice,outcome);
+    const prior=TRACE_RESOLUTION;TRACE_RESOLUTION={kind:'choice',id:e.id,label:e.c[choice].l};try{ap(effect)}finally{TRACE_RESOLUTION=prior}},
    factory=event('life_ursus_zelgrad_recruitment'),evac=event('life_ursus_zelgrad_evacuation'),stay=event('life_ursus_zelgrad_stay_review'),
    displacementReview=event('life_ursus_zelgrad_displacement_review'),work=event('life_ursus_zelgrad_displaced_work'),workReview=event('life_ursus_zelgrad_displaced_work_review'),
    setup=seed=>{born({seed,by:1080,region:'ウルサス'});S.age=22;S.year=1102;S.mo=1;S.res=REG.find(row=>row.n==='ウルサス');S.home='移動都市';S.local={...makeLocality(S.home,S.res.n),kind:'移動都市の避難・労働区画',city:null};S.inf=1;S.fl.dg=1;S.infection={year:1100,cause:'case setup',basis:'test'};S.job=0;S.house.cash=500000;return S},
