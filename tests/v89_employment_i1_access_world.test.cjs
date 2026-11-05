@@ -107,7 +107,7 @@ const site=evaluate(`
     positionId='explicit-position',openingId='explicit-opening';
   w.employers[employerId]={employerId,organizationKey:'rhodes-island'};
   w.sites[siteId]={siteId,employerId,status:'open'};
-  w.positions[positionId]={positionId,siteId};
+  w.positions[positionId]={positionId,siteId,jobId:28,vacancyCount:1};
   w.openings[openingId]={openingId,positionId,siteId,employerId,status:'open',slots:1,validFromYear:1};
   const entry={jobId:28,siteId,positionId,openingId,
     knownToPerson:true,specialPath:true,selected:true,accepted:true,started:true};
