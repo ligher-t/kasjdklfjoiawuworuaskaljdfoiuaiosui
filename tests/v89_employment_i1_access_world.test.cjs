@@ -90,6 +90,17 @@ const events=evaluate(`
 assert.equal(events.penguin,true,'legacy effect cannot join Penguin Logistics');
 assert.equal(events.lee,true,'legacy effect cannot join Lee agency');
 assert.equal(events.unchanged,true,'forbidden effect has no partial state mutation');
+const directMembership=evaluate(`
+  const before=JSON.stringify(S.lifeRecord?.affiliations||[]);
+  let blocked=0;
+  for(const key of ['penguin-logistics','lee-detective-agency']) {
+    try{applyLifeAffiliation({id:key,title:key,kind:'employer',action:'join'});}
+    catch(e){if(/加入対象外/.test(e.message))blocked++;}
+  }
+  return {blocked,unchanged:before===JSON.stringify(S.lifeRecord?.affiliations||[])};
+`);
+assert.equal(directMembership.blocked,2,'direct affiliation entrypoint forbids both organizations');
+assert.equal(directMembership.unchanged,true,'a denied join leaves the affiliation ledger unchanged');
 const site=evaluate(`
   const before=JSON.stringify(S.world.occupationWorld),rng=S.rngState;
   const w=S.world.occupationWorld,siteId='explicit-site',employerId='explicit-rhodes',
