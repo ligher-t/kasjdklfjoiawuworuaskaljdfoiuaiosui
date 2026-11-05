@@ -234,7 +234,17 @@ function auditCareAndWorkplaceState(s, problems, services = STATE_AUDIT_SERVICES
     (!s.job ||
       s.workContract.status !== "active" ||
       s.workContract.jobId !== s.job ||
-      s.workContract.siteId !== s.siteAffiliations?.workplace?.facilityId ||
+      (s.workContract.basis === "occupation-episode"
+        ? !s.employmentState?.episodes?.some(row =>
+            row.status === "active" &&
+            row.episodeId === s.employmentState.activeEpisodeId &&
+            row.episodeId === s.workContract.episodeId &&
+            row.siteId === s.workContract.siteId &&
+            row.jobId === s.job &&
+            row.startYear === s.workContract.startYear &&
+            s.world?.occupationWorld?.sites?.[row.siteId]?.siteId === row.siteId &&
+            s.world?.occupationWorld?.positions?.[row.positionId]?.siteId === row.siteId)
+        : s.workContract.siteId !== s.siteAffiliations?.workplace?.facilityId) ||
       !Number.isInteger(s.workContract.startYear) ||
       s.workContract.startYear > s.year ||
       s.workContract.wagePremium < 0 ||
