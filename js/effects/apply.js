@@ -4,6 +4,8 @@ function finalizeLifeLedgerAtDeath(s) {
 }
 function ap(e, routeReserve = 0) {
   if (!e) return;
+  if (e.employmentAction && e.job != null)
+    throw Error("採用案件と旧職業IDの直接付与を同時に処理できない");
   assertPlayerEmploymentEffectAllowed(e);
   const disclosureOrigin=disclosureImpactContext(S);
   e=disclosureAdjustedEffect(S,e);
