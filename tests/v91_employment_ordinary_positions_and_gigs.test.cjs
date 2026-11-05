@@ -35,6 +35,28 @@ assert.equal(world.noGeneralMilitary,true);
 assert.equal(world.noGeneralClergy,true);
 assert.equal(world.noOverbook,true);
 assert.equal(world.openingOwned,true);
+const indexedOpenings=inspect(`
+  const work=S.world.occupationWorld,area=occupationAreaSnapshot(S);
+  const p=Object.values(work.positions).find(row=>{
+    const site=work.sites[row.siteId];
+    return site?.areaId===area.areaId&&site.status==='open'&&row.vacancyCount>0;
+  });
+  if(!p)throw Error('missing vacancy fixture');
+  const site=work.sites[p.siteId],openingId='orphan-open-should-not-appear';
+  const before=JSON.stringify(work);
+  work.openings[openingId]={
+    openingId,areaId:area.areaId,siteId:site.siteId,
+    employerId:site.employerId,positionId:p.positionId,
+    status:'open',slots:1,validFromYear:S.year
+  };
+  const ghostVisible=occupationOpeningsFor(S,p.jobId).some(x=>x.openingId===openingId);
+  delete work.openings[openingId];
+  return {ghostVisible,unchanged:JSON.stringify(work)===before};
+`);
+assert.equal(indexedOpenings.ghostVisible,false,
+  'unindexed world-wide historical vacancy records cannot become live offers');
+assert.equal(indexedOpenings.unchanged,true,
+  'candidate discovery has no persistent side effects');
 const choices=inspect(`
   const entry=EV.find(e=>e.id==='car'),
     reentry=EV.find(e=>e.id==='work_unemployed_reentry'),
