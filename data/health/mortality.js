@@ -285,31 +285,73 @@ window.TERRA_DATA_BUILD.run("health/mortality", function ($terraData, $define, $
       show: s =>
         s.age >= 14 &&
         s.mortality?.crisis?.status === "active" &&
+        (s.mortality.crisis.consultCount || 0) === 0 &&
         s.mortality.crisis.lastDecisionYear !== s.year,
-      t: s =>
-        (s.mortality?.crisis?.consultCount || 0) > 0
-          ? "以前の苦しさがまたぶり返し、夜の静寂が重くのしかかる。かつて相談した経験や周囲の支えを思い返し、長引く不調の波とどう折り合いをつけていくか考えた。"
-          : "幾晩もまともに眠れず、人の声や視線に触れるだけで胸が張り裂けそうになる。昨日何を口にしたかも思い出せないまま、薄暗い寝床の脇に置いた水だけを見つめていた。",
+      t: "幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考えた。",
       c: [
-        $terraData.K("心を許せる相手に、再び波が来たと打ち明ける", {
+        $terraData.K("心を許せる相手に、今の苦しさを打ち明ける", {
           show: s => !!(s.sp || (s.kids && s.kids.length > 0) || (s.personTies && s.personTies.length > 0) || (s.siblings && s.siblings.length > 0) || (!s.fl?.household_separated && (s.par?.fa || s.par?.mo)))
         }, [
           1,
-          "途切れ途切れの声で、また息が詰まりそうだと伝えた。相手は静かに寄り添い、焦らなくていいと背中に手を当ててくれた。",
+          "途切れ途切れでも今の状態を伝えた。相手と、苦しくなった時に声をかけることと、一人で抱え込まないことを決めた。",
           { mortalityCare: { kind: "crisis", action: "support" }, rl: 3, p: 2 }
         ]),
         $terraData.K(
-          "診療所や相談窓口へ行き、これまでの経過を話す",
+          "診療所や相談窓口へ行き、今までの経過を話す",
           { en: { affordableMedicalCash: 2e4 }, why: "移動と相談に必要な費用が足りない" },
           [
             1,
-            "重い足を引きずって窓口を訪ね、不調の波がぶり返したことを打ち明けた。これまでの経過を踏まえた助言と、眠りを助ける薬を受け取った。",
+            "窓口で眠れない日や食事が取れない日のことを話し、今後の相談先と、次に苦しくなった時の連絡方法を確かめた。",
             { cash: -2e4, med: 1, mortalityCare: { kind: "crisis", action: "clinic" }, p: 3 }
           ]
         ),
-        $terraData.K("予定も用事もすべて投げ出し、毛布をかぶって目を閉じる", {}, [
+        $terraData.K("今日の予定を止め、食事と休息を優先する", {}, [
           1,
-          "起き上がることも人と話すことも諦め、薄暗い部屋でただ息を潜めた。思考が鈍るのを待ちながら、深い静寂に身を沈めた。",
+          "急ぎでない用事を断り、水分と食べられる物を少しずつ取りながら横になった。今日は先のことを決めず、身体を休めることにした。",
+          { mortalityCare: { kind: "crisis", action: "rest" }, p: 1 }
+        ])
+      ]
+    },
+    {
+      id: "life_mental_crisis_recurrence",
+      conf: "S",
+      references: ["SRC_LIFE_ENDING_GAME", "SRC_LIFE_ENDING_LW02"],
+      st: ["少年", "青年", "壮年", "老年"],
+      cd: 4,
+      w: 0.5,
+      show: s =>
+        s.age >= 14 &&
+        s.mortality?.crisis?.status === "active" &&
+        (s.mortality.crisis.consultCount || 0) > 0 &&
+        s.mortality.crisis.lastDecisionYear !== s.year,
+      t: s => {
+        const prior = s.mortality?.crisis?.lastAction;
+        if (prior === "clinic")
+          return "以前に相談したあとも、しばらくすると眠れない夜や何も手につかない日が戻ってきた。前に確かめた相談先を使うか、暮らしの負担を減らすか考え直した。";
+        if (prior === "support")
+          return "以前に身近な人へ苦しさを話したあとも、また日々の負担が重くなってきた。前に決めた助けの求め方を使うか、別の支えを探すか考えた。";
+        return "前に用事を止めて休んだあとも、不調の波がまた強くなった。休むだけで凌ぐか、今度は誰かに状態を伝えるか考えた。";
+      },
+      c: [
+        $terraData.K("前に頼った相手や身近な人へ、また状態が悪くなったと伝える", {
+          show: s => !!(s.sp || (s.kids && s.kids.length > 0) || (s.personTies && s.personTies.length > 0) || (s.siblings && s.siblings.length > 0) || (!s.fl?.household_separated && (s.par?.fa || s.par?.mo)))
+        }, [
+          1,
+          "前に話した時から何が変わったかを伝え、苦しい日に連絡する方法をもう一度確かめた。",
+          { mortalityCare: { kind: "crisis", action: "support" }, rl: 2, p: 2 }
+        ]),
+        $terraData.K(
+          "相談窓口へもう一度連絡し、その後の経過を話す",
+          { en: { affordableMedicalCash: 2e4 }, why: "移動と相談に必要な費用が足りない" },
+          [
+            1,
+            "前回から眠りや食事、日々の負担がどう変わったかを伝え、次に状態が崩れた時の相談方法を確認した。",
+            { cash: -2e4, med: 1, mortalityCare: { kind: "crisis", action: "clinic" }, p: 2 }
+          ]
+        ),
+        $terraData.K("今週の予定を減らし、食事と睡眠を立て直す", {}, [
+          1,
+          "急ぎでない用事をいくつか後へ回し、食事と眠る時間を確保した。調子が戻らなければ相談することにした。",
           { mortalityCare: { kind: "crisis", action: "rest" }, p: 1 }
         ])
       ]
