@@ -2287,11 +2287,11 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         ),
         $terraData.K(
           "街外れの町工場や工房で、製造工として雇ってもらう",
-          {},
+          { show: s => !!employmentOpeningForChoice(s, 2) },
           [
             1,
             "油の匂いが立ち込める町工場で採用された。機械の轟音の中で交代勤務に入り、再び毎月の安定した給金を得られるようになった。",
-            { job: 2, p: 3, rl: 2 }
+            { employmentAction: { action: "accept-local-opening", jobId: 2 }, p: 3, rl: 2 }
           ]
         ),
         $terraData.K(
