@@ -124,4 +124,47 @@ assert.deepEqual(run(`S.playSettings.choiceRatio=4;S.playSettings.higherEducatio
  HL=0;play=()=>{};rd=()=>{};tab=()=>{};restorePendingChoice=()=>false;
  const loaded=cont(saved);return {loaded,settings:settings===JSON.stringify(S.playSettings),schedule:schedule===JSON.stringify(S.eventSchedule)};`),
  {loaded:true,settings:true,schedule:true});
+
+fresh('university',22);
+assert.deepEqual(run(`S.playSettings.eventFrequency=0;S.playSettings.choiceRatio=0;
+ S.educationPath={version:1,status:'completed',stage:'upper',completed:['primary','lower','upper'],
+   history:[],equivalency:[],yearsCompleted:3,duration:3};S.educationDecision=null;S.study=null;S.fl.sch=0;
+ const original=EV.slice(),oldFire=fire,seen=[];
+ try{
+   const higher=original.find(e=>e.id==='higher_ed');EV.splice(0,EV.length,higher);
+   const oldRandom=DEBUG_RANDOM;DEBUG_RANDOM=()=>0.99;try{sched();}finally{DEBUG_RANDOM=oldRandom;}
+   fire=e=>seen.push(e.id);
+   const slots=S.eventSchedule.servicePositions.slice(0,2);
+   slot(slots[0]);const optional=seen.slice();seen.length=0;
+   S.educationDecision={kind:'higher-path',year:S.year};slot(slots[1]);
+   return {optional,required:seen.slice()};
+ }finally{fire=oldFire;EV.splice(0,EV.length,...original);}`),
+ {optional:[],required:['higher_ed']});
+
+fresh();
+assert.deepEqual(run(`activeFacility(S,'clinic');
+ const originalFacility=S.siteAffiliations.clinic.facilityId;
+ const view=parentHouseholdView(S,{
+   res:REG.find(r=>r.n==='カズデル'),home:'固定集落',
+   local:{...S.local,kind:'小規模な定住地',placeId:'parent-projection-test',
+     districtId:'parent-projection-test',identitySignature:'parent-projection-test'},priceIndex:1
+ },S.par.fa);
+ view.siteAffiliations.clinic={facilityId:'projection-only'};
+ view.siteAffiliationHistory.push({probe:true});
+ view.world.localityArchive.projectionOnly={};
+ return {
+   protagonistFacility:S.siteAffiliations.clinic.facilityId===originalFacility,
+   protagonistHistory:!S.siteAffiliationHistory.some(x=>x.probe),
+   protagonistArchive:!S.world.localityArchive.projectionOnly,
+   detachedWorld:view.world!==S.world,detachedCommunity:view.community!==S.community
+ };`),
+ {protagonistFacility:true,protagonistHistory:true,protagonistArchive:true,
+  detachedWorld:true,detachedCommunity:true});
+
+fresh('university',22);
+const completedSchoolLabel=run(`S.educationPath={version:1,status:'completed',stage:'upper',
+ completed:['primary','lower','upper'],history:[],equivalency:[],yearsCompleted:3,duration:3};
+ return educationStandingLabel(S);`);
+assert.match(completedSchoolLabel,/後期中等課程修了/);
+
 console.log('PASS advanced settings, preserved priority slots, native automatic admission and life-specific resume');
