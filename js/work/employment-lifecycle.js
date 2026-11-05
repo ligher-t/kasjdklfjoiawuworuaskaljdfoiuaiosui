@@ -158,13 +158,13 @@ function applyPlayerEmploymentAction(s, action) {
 /**
  * Completed one-off work is evidence of a specific task and payment, never an
  * indefinite employer or monthly salary. An event's money effect performs the
- * actual transfer; this record only attributes it to the completed assignment.
+ * actual transfer; this record attributes the stated pre-scaling amount to the task.
  */
 function recordCompletedGig(s, action) {
   const kind = action.kind;
   if (!["cargo-handling", "short-sentry", "local-errand", "market-watch"].includes(kind))
     throw Error("短期業務の種類が不正");
-  if (!Number.isSafeInteger(action.cashReceived) || action.cashReceived < 0 ||
+  if (!Number.isSafeInteger(action.nominalCash) || action.nominalCash < 0 ||
       !action.sourceEventId || typeof action.sourceEventId !== "string")
     throw Error("短期業務の支払根拠が不正");
   const month = Number.isInteger(s.mo) && s.mo >= 1 && s.mo <= 12 ? s.mo : 1,
@@ -178,7 +178,7 @@ function recordCompletedGig(s, action) {
       personId, sourceKey, sourceEventId: action.sourceEventId, kind: "gig",
       taskKind: kind, jobId: null, employerId: null, siteId: null,
       status: "completed", startYear: s.year, startMonth: month,
-      endYear: s.year, endMonth: month, cashReceived: action.cashReceived,
+      endYear: s.year, endMonth: month, nominalCash: action.nominalCash,
       basis: "single-event-completed-work",
       history: [{ status: "completed", year: s.year, month }]
     };
