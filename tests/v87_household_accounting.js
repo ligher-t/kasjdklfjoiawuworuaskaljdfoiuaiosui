@@ -62,6 +62,7 @@ const adultShared = vm.runInContext(`(() => {
   s.par.fa.d = 0;
   s.par.fa.separated = true;
   s.par.mo.d = 0;
+  closeDependentEmployment(s, s.par.mo, "unemployed-before-budget", {year:s.year, month:1});
   s.par.mo.j = 0;
   s.care.networkIncome = 0;
   s.w = WEALTH[4];

@@ -7,6 +7,17 @@ function fresh(){run(`born({seed:882211,by:1077,region:'クルビア'});S.age=20
  S.p=80;S.rl=80;S.par.fa.d=0;S.par.fa.lifeStatus='alive';S.par.fa.knownLifeStatus='alive';
  S.par.fa.region=S.res.n;S.par.fa.knownRegion=S.res.n;S.par.fa.separated=false;S.cash=10000000;
  TRACE_RESOLUTION={kind:'choice',id:'impact-probe',label:'確認'};return true;`);}
+vm.runInContext(`function hireWorkplaceForDisclosure(s, jobId) {
+  const area=occupationAreaSnapshot(s), work=s.world.occupationWorld,
+    siteId='disclosure-worksite-'+jobId, employerId='disclosure-employer-'+jobId,
+    positionId=siteId+':position', openingId=siteId+':opening';
+  work.employers[employerId]={employerId,organizationKey:null};
+  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',positionIds:[positionId]};
+  work.positions[positionId]={positionId,siteId,jobId,capacity:1,aggregateOccupiedSlots:0,
+    identifiedOccupiedSlots:0,vacancyCount:1,openingIds:[openingId]};
+  const opening=work.openings[openingId]={openingId,siteId,employerId,positionId,status:'open',slots:1};
+  commitEmploymentOpening(s,{opening,request:{jobId,positionId,siteId}}, {transition:true});
+}`,ctx);
 const near=(a,b)=>assert(Math.abs(a-b)<1e-9,`${a} != ${b}`);
 // Four real audience records: strongest scope only, cumulative fixed shock once.
 fresh();
@@ -66,12 +77,12 @@ assert.deepEqual(run(`const publication=EV.find(e=>e.id==='infection_diagnosis_d
  {before:false,eligible:true,level:4,ref:'current-market-notices'});
 // Support is evidence-driven, capped yearly, and does not silently notify a new community.
 fresh();
-assert.deepEqual(run(`S.job=7;reconcileWorkContract(S);const original=S.workContract.siteId;
+assert.deepEqual(run(`hireWorkplaceForDisclosure(S,7);const original=S.workContract.siteId;
  applyInfectionWorkplaceAction(S,{action:'disclose',response:'leave-approved-once'},{});
  const initial=!!S.disclosureImpact;S.year++;S.age++;
  const e=EV.find(e=>e.id==='infection_workplace_confirmed_leak'),eligible=elig(e,S,tags(S));ap(e.fx);
  const known=infectionAwarenessEntries(S).at(-1).recipientRef===original;
- S.job=8;reconcileWorkContract(S);return {initial,eligible,known,level:S.disclosureImpact.peakLevel,
+ hireWorkplaceForDisclosure(S,8);return {initial,eligible,known,level:S.disclosureImpact.peakLevel,
  repeated:disclosureLeakEligible(S,'work'),here:disclosureImpactState(S).ongoing,
  inherited:infectionAwarenessEntries(S).some(r=>r.recipientRef===S.workContract.siteId)};`),
  {initial:false,eligible:true,known:true,level:2,repeated:false,here:false,inherited:false});

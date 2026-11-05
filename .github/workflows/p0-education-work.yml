@@ -29,106 +29,156 @@ jobs:
       - name: Runtime syntax and generated revision
         run: node tools/check-efficient.cjs syntax
       - name: Contract and household debt accounting
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_household_accounting.js
       - name: Catalog validation and rejected condition keys
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run audit-diagnostics.test.cjs
       - name: Player prose warning candidates
         run: node tools/check-player-prose-warnings.cjs
       - name: Regional conditions, text and actual spending
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run regional-event-context.test.cjs
       - name: Rhodes residence, departure and real event dispatch
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_rhodes_landship_reforms.test.cjs
       - name: Death conditions and recorded life-course boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run terra-death-causes-diversity.test.cjs
       - name: Economy, education and UI audit metrics
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_sim_audit_fixes_and_metrics.test.cjs
       - name: P0 credential and hiring lifecycle
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p0-career-credential-lifecycle.test.cjs
       - name: Mandatory schooling and entrance examinations
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p0-school-progression.test.cjs
       - name: Regional school admissions and school facility conditions
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p0-school-regional-access.test.cjs
       - name: Education world placement and ID determinism
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p18-education-world-determinism.test.cjs
       - name: P19 seven-denominator read-only educational observations
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p19-education-observation.test.cjs
       - name: P19 dependent enrollment and parent knowledge boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p19-education-dependent-observation.test.cjs
       - name: P19 nine-step application, funding and enrollment boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p19-education-nine-stage.test.cjs
       - name: P19 S04 76 local person transitions across regions, households and world seeds
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p19-education-local-transitions.test.cjs
       - name: I07 and I08 natural services, remaining causal cases and real save resume
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p20-education-completion.test.cjs
       - name: P15 prescribed dated regional paths
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p15-education-regional-paths.test.cjs
       - name: P15 R01-R19 representative regional school and nonformal cases
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p15-education-regional-representatives.test.cjs
       - name: P15 causal boundaries for school access, tuition, commute and closures
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p15-education-causal-boundaries.test.cjs
       - name: P15 D12-D14 D19 D27 annual, qualification and replay boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p15-education-annual-lifecourse.test.cjs
       - name: P15 D07 D10 D11 transfer, sibling costs and separated residences
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p15-education-transfer-and-dependents.test.cjs
       - name: P15 D15 D16 D21-D24 scoped infection and historical school status
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p15-education-infection-and-history.test.cjs
       - name: Dated school operations and daily/exam/residence mobility
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p18-education-operations-mobility.test.cjs
       - name: P06/P16 bounded school case and student-visible decisions
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p18-education-case-fsm.test.cjs
       - name: P07 canonical finance and repayment invariants
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p18-education-finance-ledger.test.cjs
       - name: P05/P09 monthly attendance and annual credit threshold
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p18-education-attendance-credit.test.cjs
       - name: P10/P11/P12 awareness, child autonomy, and evidence-based nonformal learning
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p18-education-access-family-nonformal.test.cjs
       - name: P13/P17 reviewed prose, school scenes, and nonformal event delivery
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p18-education-event-migration.test.cjs
       - name: Educational effects use the correct payer and subject
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_effect_subject_finance_and_infection.test.cjs
       - name: Dependent-child annual household costs reconcile once
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_multi_child_annual_family_budget_reconciliation.test.cjs
       - name: Nonstandard school and infection scenarios
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p0-education-nonstandard.test.cjs
       - name: School and career transition boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run p0-education-service-context.test.cjs
       - name: Event eligibility is non-mutating
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run eligibility-rules.test.cjs
       - name: Current state ownership and resume boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run state-ownership.test.cjs
       - name: Regional modifiers apply to matching death causes
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_war_mortality_scope.js
       - name: Education-to-credit-to-repayment path
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_education_path.js
       - name: Exposure, diagnosis, disclosure and same-version state
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_exposure_lifecycle.js
       - name: Discrimination incident provenance after relocation
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_discrimination_incident_provenance.js
       - name: Class and locality history
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_class_locality_history.js
       - name: Catastrophe displacement and recovery
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_catastrophe_lifecourse.js
       - name: Information claims, recipients and same-version resume
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_information_claim_resume_roundtrip.js
       - name: Long-term affiliation and career routes
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_affiliation_career_paths.js
       - name: Personal wishes and care after bereavement
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_family_loss_aftercare.js
       - name: UI choice modal keyboard and focus behavior
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run ui-choice-presentation.test.cjs
       - name: UI summary focus behavior
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run ui-summary-focus.test.cjs
       - name: Evidence and record source presentation
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run ui-record-evidence.test.cjs
       - name: Summary display unknown and zero boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run ui-summary-display-boundaries.test.cjs
       - name: Life log year grouping
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run ui-log-years.test.cjs
       - name: Life log archive and save behavior
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run ui-log-archive.test.cjs
       - name: Title resume and same-version save
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run ui-title-resume.test.cjs
       - name: Data module load order
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run data-modules.test.cjs
       - name: Developer simulation report and state isolation
         if: github.event_name == 'workflow_dispatch'

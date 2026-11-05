@@ -156,128 +156,185 @@ jobs:
       - name: Runtime syntax and revision
         run: node tools/check-efficient.cjs syntax
       - name: Disclosure scope, wellbeing changes and verified recovery
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run disclosure-impact.test.cjs
       - name: Advanced settings and native education automation
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run advanced-settings.test.cjs
       - name: Parent oripathy death and bereavement
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run parent-oripathy-bereavement.test.cjs
       - name: Historically situated information
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_history_scope_and_pending.test.cjs
       - name: Historical scene and journey contract
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_historical_roaming_contract.test.cjs
       - name: School absence during physical roaming
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_roaming_school_absence.test.cjs
       - name: Work and family consent while roaming
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_roaming_work_family_boundaries.test.cjs
       - name: Player controlled round-trip journey and prepaid return
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_roaming_ui_roundtrip.test.cjs
       - name: Dated travel stay finances and save-restore
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_roaming_monthly_stay.test.cjs
       - name: Integrated historical scenes, services, family, settlement and exam journeys
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88-history-roaming-completion.test.cjs
       - name: Historical regional impacts without on-site claims
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_historical_regional_impacts.test.cjs
       - name: Regional recruitment, custody and career outcome
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_regional_career_outcomes.test.cjs
       - name: Yan court recruitment is only offered in spring
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_yan_court_spring_eligibility.test.cjs
       - name: Seasonal choices honor actual calendar months
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_regional_choice_seasonal_calendar.test.cjs
       - name: Regional daily event seasonal eligibility
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_regional_daily_seasonal_calendar.test.cjs
       - name: Death risks and annual-accounting boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_death_job_and_year_basis.test.cjs
       - name: Interpreter and school-knowledge boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_language_school_scopes.test.cjs
       - name: Effect subject and transfer boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_effect_subject_finance_and_infection.test.cjs
       - name: Currency display and household launch funds
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_currency_display.test.cjs
       - name: Event outcome lineage and actor location
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_outcome_followup_lineage.test.cjs
       - name: Relationship active-flag lifecycle
         run: |
           node tools/check-efficient.cjs run v88_relationship_flag_lifecycle.test.cjs
           node tools/check-efficient.cjs run v88_romance_lifecycle_coherence.test.cjs
       - name: Unmarried cohabitation, breakup and balance-sheet boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_cohabitation_residence_accounting.test.cjs
       - name: Spouse co-residence daily life and actual family roster transitions
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_family_spouse_co_residence_events_and_roster.test.cjs
       - name: Historical timeline metadata, references and effect types
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_historical_catalog_schema_and_sources.test.cjs
       - name: Due medical reviews and crisis leisure classification
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_crisis_event_priority.test.cjs
       - name: Regional leisure versus emergency duty during volcano and civil war
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_regional_crisis_leisure_scope.test.cjs
       - name: Expiring romance and affiliation followup windows
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_expiring_followup_priority.test.cjs
       - name: Age-limited and simultaneous final-year choices
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_age_cutoff_competing_followups.test.cjs
       - name: Annual scheduling collision and expiring choice capacity
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_annual_deadline_capacity.test.cjs
       - name: Final-year twelve-month capacity and lifetime expiry diagnostics
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_deadline_coverage_metrics.test.cjs
       - name: Reunion goal and spouse housing long-life regressions
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_long_life_state_reproductions.test.cjs
       - name: Katorga special custody and release lifecycle
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_ursus_katorga_custody_lifecycle.test.cjs
       - name: Delayed followup after actual withdrawal
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_followup_elapsed_from_status.test.cjs
       - name: Organization exit, successor and long-term goal coherence
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_infected_organization_exit_consistency.test.cjs
       - name: Suspended mutual aid reentry uses most recent actual pause
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_infected_org_reentry_suspension_age.test.cjs
       - name: Kazdel displaced parent child question matches family context
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_kazdel_child_family_memory_context.test.cjs
       - name: Adult child contact targeting and family budget transfer boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_adult_child_contact_target_and_funds.test.cjs
       - name: Sibling future consultations, fixed gifts, bereavement and memories
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_family_child_future_and_memories.test.cjs
       - name: Civic and research duties close linked life goals
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_affiliation_goal_closure.test.cjs
       - name: Local mutual aid and Reunion goal outcome branches
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_affiliation_goal_outcome_branches.test.cjs
       - name: Career departure goal and intermittent contract distinctions
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_workplace_goal_departure_contracts.test.cjs
       - name: Failed specialist applications and one-off employment records
         run: |
           node tools/check-efficient.cjs run v88_rejected_career_and_short_contract_goals.test.cjs
           node tools/check-efficient.cjs run v87_sargon_contract_lifecourse.js
       - name: Rhine whistleblower asylum and Rhodes staff exit contracts
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_rhine_and_rhodes_departure_lifecycle.test.cjs
       - name: Higashi demobilization and Siracusa retirement goals
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_higashi_and_siracusa_retirement_goals.test.cjs
       - name: Zelgrad displacement, work settlement and review boundaries
         run: |
           node tools/check-efficient.cjs run v87_ursus_zelgrad_displaced_work.js
           node tools/check-efficient.cjs run v87_ursus_zelgrad_evacuation.js
       - name: Exclusion organizer repeated suspension and resignation
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_exclusion_organizer_infected.js
       - name: Post-settlement relocation and independent reemployment goals
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_zelgrad_post_settlement_lifecycle.test.cjs
       - name: Repeat unemployment and relocation-worksite lifecycle
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_zelgrad_second_job_loss_and_mobility.test.cjs
       - name: Affiliation legacy and actual departure boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_affiliation_legacy_event_boundaries.test.cjs
       - name: Reunion crisis pause and old unit transfer goals
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_reunion_goal_transition.test.cjs
       - name: Rhodes and Reunion actual affiliations and recruitment
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_cross_faction_affiliation_transitions.test.cjs
       - name: Student assembly and Familia current-status debt boundaries
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_student_familia_status_debt.test.cjs
       - name: Individual child infection diagnoses in multi-child households
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_multi_child_diagnosis_target.test.cjs
       - name: Separate sibling exposure targets and past exposures
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_sibling_exposure_individual_targets.test.cjs
       - name: Spouse treatment reserves and sibling assistance ledgers
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_spouse_sibling_medical_funds.test.cjs
       - name: Annual spouse medical and sibling remittance reconciliation
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_separate_spouse_sibling_annual_reconciliation.test.cjs
       - name: Spouse debt aid and repeat annual recipient receipts
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_spouse_oneoff_and_annual_receipt_idempotency.test.cjs
       - name: Multiple child medical, study and annual family remittance reconciliation
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_multi_child_annual_family_budget_reconciliation.test.cjs
       - name: Divorce child support recipient and former spouse receipts
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_divorce_child_support_recipient_receipts.test.cjs
       - name: Multi-child medical cost quote and payer checks
+        if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_multi_child_medical_quote_and_payer.test.cjs

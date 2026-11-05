@@ -131,7 +131,7 @@ const annual=evaluate(`
   clone.year=oldYear+1;
   advanceOccupationWorkArea(clone,clone.year,{jobs:0.2});
   const allStrained=area.siteIds.every(id=>work.sites[id].status==='strained');
-  const areaOpenings=()=>Object.values(work.openings).filter(o=>o.areaId===area.areaId);
+  const areaOpenings=()=>Object.values(work.openings).filter(o=>o.areaId===area.areaId && o.kind==="general-public");
   const noActive=areaOpenings().every(o=>o.status!=='open');
   const expiredHaveEnd=areaOpenings()
     .filter(o=>o.status==='expired').every(o=>o.validToYear===oldYear);
