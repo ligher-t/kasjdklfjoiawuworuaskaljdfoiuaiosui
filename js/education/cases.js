@@ -29,6 +29,37 @@ function educationActiveCase(s) {
   const item=id && cases.items?.[id];
   return item?.status==="active" ? item : null;
 }
+function educationLocalSearchStillEmpty(s,stage,tier=1) {
+  const area=s?.local?.educationAreaId, searches=s?.educationAccess?.searches;
+  if(!area || !Array.isArray(searches))return false;
+  const previous=searches.filter(row=>
+    row?.stage===stage && row?.scope==="local" &&
+    Array.isArray(row.areaIds) && row.areaIds.length===1 && row.areaIds[0]===area
+  ).at(-1);
+  if(!previous || (previous.foundIds||[]).length>0)return false;
+  const current=institutionOfferings(s,area,stage).some(offer=>{
+    if(["university","vocational","arts"].includes(stage) && offer.admissionTier!==tier)return false;
+    const status=educationSchoolStatusAt(s,offer.id,s.year,s.mo??0);
+    return !!status && status.teachingStatus!=="suspended" &&
+      ["open","limited"].includes(status.admissionStatus);
+  });
+  return !current;
+}
+function educationReturnPathSearchAllowed(s,stage,tier=1) {
+  return !educationLocalSearchStillEmpty(s,stage,tier);
+}
+function educationReturnPathSearchAvailable(s) {
+  if(s.age<=14 && !educationHas(s,"primary") &&
+    educationReturnPathSearchAllowed(s,"primary"))return true;
+  if(s.age<=20 && s.educationPath?.stage==="lower" &&
+    ["withdrawn","outside"].includes(s.educationPath.status) &&
+    educationReturnPathSearchAllowed(s,"lower"))return true;
+  if(s.age<=20 && s.educationPath?.stage==="upper" &&
+    ["withdrawn","outside"].includes(s.educationPath.status) &&
+    educationReturnPathSearchAllowed(s,"upper"))return true;
+  if(s.age>=16 && educationReturnPathSearchAllowed(s,"preparatory"))return true;
+  return false;
+}
 function educationCaseStep(s,caseItem,action,details={}) {
   if(caseItem.status!=="active"||caseItem.stepsUsed>=EDUCATION_CASE_MAX_CHOICES)
     return false;
