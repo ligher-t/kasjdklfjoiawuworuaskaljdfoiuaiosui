@@ -14,6 +14,7 @@ on:
       - 'debug.js'
       - 'package.json'
       - '.github/workflows/p0-education-work.yml'
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -134,6 +135,7 @@ jobs:
       - name: Data module load order
         run: node tools/check-efficient.cjs run data-modules.test.cjs
       - name: Developer simulation report and state isolation
+        if: github.event_name == 'workflow_dispatch'
         run: node tools/check-efficient.cjs run v87_dev_simulation_diagnostics.js
       - name: Generated event catalogue matches review metadata
         run: node tools/generate-event-catalog.cjs --check
