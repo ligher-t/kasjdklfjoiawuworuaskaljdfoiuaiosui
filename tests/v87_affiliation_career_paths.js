@@ -298,12 +298,19 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
    if(jobId===7)applyEffect(s,{lifeSkill:{id:'engineering-experience',title:'技術経験',delta:12,context:'所属範囲監査用の実在求人'}});
    context.__id=id;
    const spec=vm.runInContext('EMPLOYMENT_APPOINTMENT_SITES.find(row=>row.affiliationId===__id)',context);
-   assert(spec,id+' has a worksite appointment definition');
-   s.year=Math.max(s.year,spec.fromYear);
    const source=employmentStartSource(id,jobId);
    assert(source,id+' has a source-backed employment start');
    context.__state=s;context.__source=source;context.__jobId=jobId;
-   try{vm.runInContext('S=__state;applyEmploymentAppointmentFixture(__source.eventId,__jobId,__id,__source.choiceIndex,__source.outcomeIndex)',context,{timeout:30000});}
+   try{
+    if(spec){
+     s.year=Math.max(s.year,spec.fromYear);
+     vm.runInContext('S=__state;applyEmploymentAppointmentFixture(__source.eventId,__jobId,__id,__source.choiceIndex,__source.outcomeIndex)',context,{timeout:30000});
+    }else{
+     assert.equal(id,'ursus-kleini-sever-mine','a missing appointment definition is reserved for the coercive mine assignment route');
+     assert.equal(source.eventId,'ursus_mine_assignment_offer','the coercive mine assignment keeps its reviewed source');
+     vm.runInContext('S=__state;applyEventOutcomeFixture(__source.eventId,__source.choiceIndex,__source.outcomeIndex)',context,{timeout:30000});
+    }
+   }
    catch(error){throw new Error(`${id} source ${source.eventId} could not establish its reviewed start: ${error.message}`);}
   }
   const existing=s.lifeRecord.affiliations.find(row=>row.id===id);
