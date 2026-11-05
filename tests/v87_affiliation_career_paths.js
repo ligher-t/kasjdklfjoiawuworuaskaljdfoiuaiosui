@@ -227,7 +227,7 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
  }
  assert.deepEqual([...ids].sort(),Object.keys(rules).sort(),'new or unreviewed affiliation IDs cannot bypass the scope audit');
  const localWorkers=new Set(['columbia-technical-work','victoria-insurance-clerk','ursus-kleini-sever-mine','siracusa-post-family-work','kazimierz-arena-staff','ursus-zelgrad-factory','ursus-displaced-repair-workshop']);
- const localDuties=new Set(['local-mutual-aid','infected-exclusion','infected-mutual-aid','londinium-mutual-aid','leithanian-district-petition','leithanian-noble-household','siracusa-independent-trade']);
+ const localDuties=new Set(['local-mutual-aid','infected-exclusion','infected-mutual-aid','londinium-mutual-aid','leithanian-district-petition','leithanian-noble-household','siracusa-independent-trade','hist-columbia_independence','hist-kazdel_commission_founded','hist-siracusa_unification','hist-ursus_great_rebellion','hist-rim_billiton_independence','hist-leith_revolution','hist-kazdel_war_declared','hist-kazdel_civil_war']);
  for(const [i,id] of [...ids].sort().entries()){
   const rule=rules[id],s=routeState(872000+i,rule.region||'ヴィクトリア',rule.jobs?.[0]||0);
   const appOnly=id==='rhodes-employment';
