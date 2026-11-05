@@ -17,6 +17,7 @@ const result=evaluate(`
       employerId='fixture-operator',openingId='fixture-open-1';
     w.employers[employerId]={employerId,organizationKey:null,kind:'anonymous-operator',areaId:area.areaId};
     w.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',positionIds:[positionId]};
+    area.siteIds.push(siteId);
     w.positions[positionId]={positionId,siteId,sector,jobId:2,capacity:5,
       aggregateOccupiedSlots:4,identifiedOccupiedSlots:0,reservedSlots:0,vacancyCount:1,
       openingIds:[openingId]};
