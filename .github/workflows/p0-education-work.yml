@@ -1,5 +1,19 @@
 name: Education, livelihood and life-course boundaries
 on:
+  push:
+    branches: [fix/historical-event-scope-and-delivery]
+    paths:
+      - 'js/**'
+      - 'data/**'
+      - 'tests/**'
+      - 'tools/**'
+      - 'css/**'
+      - 'index.html'
+      - 'events.js'
+      - 'rules.js'
+      - 'debug.js'
+      - 'package.json'
+      - '.github/workflows/p0-education-work.yml'
   pull_request:
     branches: [main]
     paths:
