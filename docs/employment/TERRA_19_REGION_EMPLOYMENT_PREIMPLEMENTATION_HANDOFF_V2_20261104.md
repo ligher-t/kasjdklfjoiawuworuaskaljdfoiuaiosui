@@ -1,5 +1,8 @@
 # テラ19地域・就労／企業／生計システム 実装前統合引継ぎ v2.0
 
+> **2026-11-05 統合入口更新**：以後の雇用・生計改修は [v3.0統合設計書](TERRA_EMPLOYMENT_INTEGRATED_DESIGN_V3_20261105.md) を先に参照する。本v2.0はW01〜W11の調査と従来設計の記録として保持。特に組織ごとの新規就職可否は [66組織のプレイヤー採用政策](EMPLOYER_PLAYER_ACCESS_POLICY_66_20261105.json)、選択負荷と受入は [v3追加28ケース](V3_EMPLOYMENT_ACCESS_UX_ACCEPTANCE_20261105.json) を優先し、従来の「求人票があるなら常に応募可能」という説明があればv3規約を適用する。ゲーム本体の実装状況は変わらない。
+
+
 2026-11-04。**Draft PR #2の設計資料。ゲームの実装コード・既存イベント・ゲーム進行・セーブ形式は本工程では変更していない。** 元の[TERRA_19_REGION_EMPLOYMENT_INTEGRATED_SPEC_20261104.md](TERRA_19_REGION_EMPLOYMENT_INTEGRATED_SPEC_20261104.md) v1.0と先行[W00統合引継ぎ](W00_EMPLOYMENT_PREPARATION_HANDOFF_20261104.md)を保持し、以下のW01〜W11資料と具体的な移行境界・実装時に要する校閲を一つの入口として定める。
 
 ## 1 成果物正本一覧
