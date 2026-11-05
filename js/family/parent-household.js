@@ -41,13 +41,25 @@ function beginSeparatedParentLedger(s) {
   };
 }
 function parentHouseholdView(s, ledger, parent) {
+  // Cost projections for a separated household must not mutate the protagonist's
+  // locality archive, facility affiliations, contacts, or employment state.
+  const world = s.world
+    ? { ...s.world, localityArchive: {}, localityVisits: [] }
+    : { events: {}, localityArchive: {}, localityVisits: [] };
   return {
     ...s,
+    world,
+    community: null,
+    siteAffiliations: {},
+    siteAffiliationHistory: [],
+    facilityContacts: [],
+    facilityPeopleContacts: [],
+    workContract: null,
     res: ledger.res || s.res,
     home: ledger.home || s.home,
-    local: ledger.local || s.local,
+    local: { ...(ledger.local || s.local) },
     r: parent?.r || s.r,
-    legal: parent?.legal || { status: "unverified", citizenshipCountry: null },
+    legal: parent?.legal ? { ...parent.legal } : { status: "unverified", citizenshipCountry: null },
     priceIndex: ledger.priceIndex || s.priceIndex
   };
 }
