@@ -1,7 +1,7 @@
 // Shared effect admission. Assessments only read established world and person records.
 let EMPLOYMENT_EFFECT_SOURCES;
-// These authored choices now require the verified route. Keep existing paths
-// operable while their exact worksite, role or outcome contract is migrated.
+// Exact-source appointment-backed choices require the recorded site, vacancy,
+// affiliation and time to agree before their employment effect can commit.
 const EMPLOYMENT_STRICT_DIRECT_EVENTS = new Set(["choice_columbia_06"]);
 function employmentEffectSource(effect) {
   if (TRACE_RESOLUTION?.id) return TRACE_RESOLUTION.id;
@@ -68,7 +68,10 @@ function employmentEffectAssessment(s, effect, sourceEventId = employmentEffectS
     return { canStart: false, reasonCode: "non-recruiting-organization" };
   if (current?.jobId === jobId && (!membership || current.affiliationId === membership.id))
     return { canStart: true, kind: "continue", episode: current };
-  const strict = EMPLOYMENT_STRICT_DIRECT_EVENTS.has(sourceEventId),
+  const appointmentBacked = EMPLOYMENT_APPOINTMENT_SITES.some(spec =>
+    spec.jobs.includes(jobId) && (!membership || membership.id === spec.affiliationId)),
+    strict = EMPLOYMENT_STRICT_DIRECT_EVENTS.has(sourceEventId) ||
+      !!membership && appointmentBacked,
     priorRoute = { canStart: !strict, kind: "existing-route", reasonCode: "worksite-migration-pending" };
   if (sourceEventId === "ursus_mine_assignment_offer" && jobId === 3 &&
       membership?.id === "ursus-kleini-sever-mine" && membership.action === "assign" && s.res.n === "ウルサス") {
@@ -106,7 +109,7 @@ function employmentEffectAssessment(s, effect, sourceEventId = employmentEffectS
 function employmentChoiceCanResolve(event, choice, s) {
   return (choice.o || []).every(outcome => {
     const assessment = employmentEffectAssessment(s, outcome[2], event.id);
-    return assessment.canStart || assessment.canApply;
+    return assessment.canStart || !Number.isInteger(outcome[2]?.job) && assessment.canApply;
   });
 }
 function commitEmploymentEffect(s, effect, assessment) {
