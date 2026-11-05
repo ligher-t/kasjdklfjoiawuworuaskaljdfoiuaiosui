@@ -222,11 +222,15 @@ function careerOpeningAssessment(s, opening) {
       row.domain === "work" && row.status === "active" &&
       row.siteId === siteId && row.jobId === s.job
     );
+  const employerGate = assessPlayerEmploymentAccess(s, opening),
+    employmentAllowed = employerGate.canApply;
   return {
-    canApply: qualified && !documentedRestriction,
-    canBeAssigned: qualified && !documentedRestriction,
+    canApply: qualified && !documentedRestriction && employmentAllowed,
+    canBeAssigned: qualified && !documentedRestriction && employmentAllowed,
     qualification: qualified ? "eligible" : "needs-training",
-    reason: !qualified ? reason : documentedRestriction ? "この募集に記録された資格・制度上の制限がある" : null,
+    reason: !qualified ? reason : documentedRestriction
+      ? "この募集に記録された資格・制度上の制限がある"
+      : !employmentAllowed ? "この応募経路では職務と募集先の条件が整っていない" : null,
     restriction: documentedRestriction ? policy.sourceRef : null,
     employerKnowsDiagnosis,
     // Only an observed incident tied to the current employer counts as workplace harm.
