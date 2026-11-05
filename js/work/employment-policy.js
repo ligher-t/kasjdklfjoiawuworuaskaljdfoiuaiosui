@@ -131,7 +131,7 @@ function assessPlayerEmploymentAccess(s, request = {}) {
   const hasJob = Number.isInteger(request.jobId),
     mappedKey = hasJob ? EMPLOYER_JOB_ORGANIZATIONS[request.jobId] : null,
     requestedKey = request.organizationKey || request.employerOrganizationKey || null;
-  if (hasJob && (request.jobId < 0 || request.jobId > 82))
+  if (hasJob && (request.jobId < 0 || request.jobId > 82 || request.jobId === 0))
     return { canApply: false, canStart: false, mode: null, reasonCode: "unknown-occupation" };
   if (mappedKey && requestedKey && requestedKey !== mappedKey)
     return { canApply: false, canStart: false, mode: null, reasonCode: "occupation-employer-mismatch" };
@@ -149,12 +149,24 @@ function assessPlayerEmploymentAccess(s, request = {}) {
     return { canApply: false, canStart: false, mode, reasonCode: "community-role-not-formal-employment" };
   if (mode === "SPECIAL" && request.specialPath !== true)
     return { canApply: false, canStart: false, mode, reasonCode: "specific-appointment-required" };
-  const hasSite = typeof request.siteId === "string" && request.siteId.length > 0,
-    hasPosition = typeof request.positionId === "string" && request.positionId.length > 0,
-    hasOpening = typeof request.openingId === "string" && request.openingId.length > 0;
-  // A real office, selection and commencement are independent of the employer's existence.
-  // The caller must validate each ID against the occupationWorld records before committing.
-  const canApply = hasSite && hasPosition && hasOpening;
+  const work = s?.world?.occupationWorld,
+    site = work?.sites?.[request.siteId],
+    position = work?.positions?.[request.positionId],
+    opening = work?.openings?.[request.openingId],
+    employer = site ? work?.employers?.[site.employerId] : null,
+    year = Number.isFinite(s?.year) ? s.year : 0;
+  // IDs must resolve to one actual employer, site, position and current opening.
+  // Knowledge and selection are separate from the existence of these world facts.
+  const canApply = !!site && site.status === "open" &&
+    employer?.organizationKey === organizationKey &&
+    position?.siteId === site.siteId &&
+    opening?.positionId === position.positionId &&
+    opening?.siteId === site.siteId &&
+    opening?.employerId === site.employerId &&
+    opening?.status === "open" && opening.slots > 0 &&
+    (opening.validFromYear == null || year >= opening.validFromYear) &&
+    (opening.validToYear == null || year <= opening.validToYear) &&
+    request.knownToPerson === true;
   return {
     canApply,
     canStart: canApply && request.selected === true && request.accepted === true &&
