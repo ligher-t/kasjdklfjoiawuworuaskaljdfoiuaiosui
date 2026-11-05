@@ -50,6 +50,11 @@ const result=evaluate(`
   const noDuplicate=originalCaseCount===S.employmentState.cases.length &&
     originalEpisodeCount===S.employmentState.episodes.length;
   ensureLocalityState(S);
+  const validAudit=!auditLifeState(S).includes('勤務契約と現在の在籍が不一致');
+  const savedEpisodeId=S.workContract.episodeId;
+  S.workContract.episodeId='invalid-episode-reference';
+  const corruptAudit=auditLifeState(S).includes('勤務契約と現在の在籍が不一致');
+  S.workContract.episodeId=savedEpisodeId;
   const contractSurvivesLocality=S.workContract?.siteId===episode.siteId;
   applyWorkContractAction(S,{action:'review',result:'approved'});
   const reviewWorks=S.workContract?.knownConditions==='reviewed';
@@ -71,7 +76,7 @@ const result=evaluate(`
   const followingYearPay=employmentAnnualWageBase(S,S.year);
   const noStarterCandidate=employmentOpeningForChoice(S,0)===null;
   return {beforeAvailable,shown,beforeJob,initialSlot,openBefore,
-    postHire,duplicateRejected,noDuplicate,contractSurvivesLocality,reviewWorks,
+    postHire,duplicateRejected,noDuplicate,validAudit,corruptAudit,contractSurvivesLocality,reviewWorks,
     afterEnd,stable,followingYearPay,noStarterCandidate};
 `);
 assert.equal(result.beforeAvailable,true);
@@ -92,6 +97,8 @@ assert.equal(result.postHire.oldFacilityMade,false,'new employment does not back
 assert.equal(result.postHire.careerChange.toJobId,2);
 assert.equal(result.duplicateRejected,true);
 assert.equal(result.noDuplicate,true);
+assert.equal(result.validAudit,true,'real worksite contract is valid without a synthetic workplace');
+assert.equal(result.corruptAudit,true,'incorrect episode reference remains auditable');
 assert.equal(result.contractSurvivesLocality,true);
 assert.equal(result.reviewWorks,true);
 assert.equal(result.afterEnd.job,0);
