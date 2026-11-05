@@ -1,3 +1,15 @@
+## 2026-11-05：雇用I-2横断確認と求人参照効率化
+
+- [x] 識字条件の動的求職判定を `v87_education_path.js` から検査できるようにし、医療補助28・事務40の従来条件を維持。
+- [x] サルゴンの単発警戒契約を本業の職業IDから分離。二度目の警戒契約をギグとして記録し、断念・不成立では無関係な現職を解除しない。
+- [x] サルゴンの恒常的なトランスポーター転向を実職位・求人・本人条件と接続。`v87_sargon_contract_lifecourse.js` で単発請負後の転職を検証。
+- [x] `js/work/occupation-world.js` の募集照会を生活圏site→position→当年度openingへ限定。過去の全求人を毎回列挙する処理を撤去。索引に未登録の孤立求人を候補にしない `v91` 検査を追加。
+- [x] 境界テスト用の職場siteにも `area.siteIds`、`createdYear`、`lastYear` を設定し、本番の事業所更新規則に統一。
+- [x] [歴史境界CI #41960927376](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41960927376) は全項目PASS。教育・生計CI #41960927442では雇用I-1/I-2および教育経路を含む通常の境界テスト59項目PASS。
+- [x] 12人×100年を含む `v87_dev_simulation_diagnostics.js` は毎回のPR検証で120秒上限を超えていたため、長期シミュレーションを明示的に実行する場合に限り起動するよう既存ワークフローを変更。テスト本体は保持し、`node tools/check-efficient.cjs run v87_dev_simulation_diagnostics.js` から手動実行可能。
+- [ ] **生成カタログの同期**：教育・生計CIの残る失敗は `EVENT_CATALOG.md` の生成結果との差分。約12MBの生成物であり、I-2〜I-4のイベント本文・選択・結果枝の移行を区切った際に、リポジトリ内で `node tools/generate-event-catalog.cjs --write` を実行し、その後 `--check` を通す。生成物を手編集して既存校閲記録を上書きしない。
+- [ ] 次の実装：家業・自営の役割と収支、固有組織・強制配属・転職の実職位連結、月次債権と家計精算、および旧 `job` 付与の残枝の意味監査。
+
 ## 2026-11-05：I-2の横断不整合修正とサルゴン請負の接続
 
 - [x] `v87_education_path.js`：実求人があるときだけ表示する医療補助・事務進路について、既存の識字条件28/40を動的判定の原文から監査する。資格条件自体は維持。
