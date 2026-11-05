@@ -456,18 +456,32 @@ function advanceOccupationWorkArea(s, year, metrics) {
 function occupationOpeningsFor(s, jobId) {
   if (!Number.isInteger(jobId) || jobId <= 0 || s?.fl?.retired ||
       s?.fl?.detained || s?.fl?.segregated || s?.age < 16) return [];
-  const areaId = occupationWorkAreaKey(s), work = s.world?.occupationWorld;
-  if (!areaId || !work?.areas?.[areaId]) return [];
-  return Object.values(work.openings).filter(row => {
-    const site = work.sites[row.siteId], position = work.positions[row.positionId];
-    return row.areaId === areaId && row.status === "open" && row.slots > 0 &&
-      (row.validFromYear == null || s.year >= row.validFromYear) &&
-      (row.validToYear == null || s.year <= row.validToYear) &&
-      site?.status === "open" && site.areaId === areaId &&
-      site.employerId === row.employerId &&
-      position?.siteId === site.siteId && position.jobId === jobId &&
-      position.vacancyCount > 0;
-  }).sort((a,b)=>a.openingId.localeCompare(b.openingId));
+  const areaId = occupationWorkAreaKey(s), work = s.world?.occupationWorld,
+    area = areaId ? work?.areas?.[areaId] : null;
+  if (!area) return [];
+  // Follow only the current area's active position index. Historical openings
+  // remain in the ledger but must not be traversed for every job inquiry.
+  const available = [];
+  for (const siteId of area.siteIds || []) {
+    const site = work.sites[siteId];
+    if (!site || site.status !== "open" || site.areaId !== areaId) continue;
+    for (const positionId of site.positionIds || []) {
+      const position = work.positions[positionId];
+      if (!position || position.siteId !== siteId ||
+          position.jobId !== jobId || position.vacancyCount < 1) continue;
+      for (const openingId of position.openingIds || []) {
+        const row = work.openings[openingId];
+        if (row && row.areaId === areaId && row.status === "open" &&
+            row.slots > 0 && row.siteId === siteId &&
+            row.positionId === positionId &&
+            row.employerId === site.employerId &&
+            (row.validFromYear == null || s.year >= row.validFromYear) &&
+            (row.validToYear == null || s.year <= row.validToYear))
+          available.push(row);
+      }
+    }
+  }
+  return available.sort((a,b)=>a.openingId.localeCompare(b.openingId));
 }
 function occupationOpeningFor(s, jobId) {
   return occupationOpeningsFor(s, jobId)[0] || null;
