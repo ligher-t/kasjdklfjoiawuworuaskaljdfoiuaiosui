@@ -25,6 +25,7 @@ function ap(e, routeReserve = 0) {
     else throw Error("不明な旅程操作");
   }
   applyLifeRecordEffects(e, s);
+  if (e.employmentAction) applyPlayerEmploymentAction(s, e.employmentAction);
   const assetsBefore = (s.cash || 0) + (s.house?.cash || 0) + (s.investment || 0),
     debtBefore = (s.debt || 0) + (s.house?.debt || 0),
     investmentBefore = s.investment || 0,
