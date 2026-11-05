@@ -907,8 +907,11 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             0.6,
             "別の隊商から声がかかり、荷車の脇を固める短い警戒任務に就いた。手渡された銅貨は前回より少なく、砂塵の旅が終わるとまた次の当ては途切れた。",
             {
-              job: 0,
               cash: 80000,
+              employmentAction: {
+                action: "complete-gig", kind: "market-watch",
+                sourceEventId: "sargon_market_contract_review", nominalCash: 80000
+              },
               h: -5,
               lifeAffiliations: [
                 { id: "sargon-market-guard-contracts", action: "return", role: "単発の警戒任務" },
@@ -929,7 +932,6 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             1,
             "バザールを回っても護衛の口は見つからず、水代と移動費だけが減った。用心棒で食いつなぐ考えはいったん引っ込め、別の働き口を探すことにした。",
             {
-              job: 0,
               cash: -20000,
               lifeGoal: {
                 id: "sargon-market-guard-work",
@@ -972,7 +974,6 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           1,
           "紹介屋に断りを入れ、不安定な護衛の請負から足を洗った。しばらくは家の用事と足元の暮らしを立て直すことにした。",
           {
-            job: 0,
             lifeGoal: {
               id: "sargon-market-guard-work",
               action: "abandon",
