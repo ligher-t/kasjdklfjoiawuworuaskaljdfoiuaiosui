@@ -415,7 +415,7 @@ window.TERRA_DATA_BUILD.run("regional/sargon", function ($terraData, $define, $r
         K("荷下ろしを手伝って日当を得る", { intent: "service" },
           [1, "荷箱を天幕まで運び、積み荷の数を確かめる仕事を手伝った。夕方に小さな日当を受け取った。", { cash: 8000, h: -1, p: 2 }]),
         K("必要な食料と香辛料を買う", { intent: "self-or-family-care", en: { affordableCash: 3500 }, why: "買い物に回せる現金が足りない。" },
-          [1, "値段を聞き比べ、必要な品だけを選んで袋に詰めてもらった。", { cash: -3500, p: 2 }]),
+          [1, "値段を聞き比べ、必要な品だけを選んで袋に詰めてもらった。", { cash: -3500, pm: 1, p: 2 }]),
         K("品物を見るだけにする", { intent: "withdrawal" },
           [1, "見慣れない品を眺めながら市を一周し、何も買わずに戻った。", { p: 1 }])
       ]
