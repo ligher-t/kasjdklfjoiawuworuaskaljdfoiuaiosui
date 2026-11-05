@@ -120,8 +120,9 @@ const annual=evaluate(`
   clone.year=oldYear+1;
   advanceOccupationWorkArea(clone,clone.year,{jobs:0.2});
   const allStrained=area.siteIds.every(id=>work.sites[id].status==='strained');
-  const noActive=Object.values(work.openings).every(o=>o.status!=='open');
-  const expiredHaveEnd=Object.values(work.openings)
+  const areaOpenings=()=>Object.values(work.openings).filter(o=>o.areaId===area.areaId);
+  const noActive=areaOpenings().every(o=>o.status!=='open');
+  const expiredHaveEnd=areaOpenings()
     .filter(o=>o.status==='expired').every(o=>o.validToYear===oldYear);
   const beforeRepeat=JSON.stringify(work);
   advanceOccupationWorkArea(clone,clone.year,{jobs:0.2});
@@ -129,7 +130,7 @@ const annual=evaluate(`
   clone.year++;
   advanceOccupationWorkArea(clone,clone.year,{jobs:0.95});
   const allReopened=area.siteIds.every(id=>work.sites[id].status==='open');
-  const noPastResurrection=Object.values(work.openings)
+  const noPastResurrection=areaOpenings()
     .filter(o=>o.status==='expired').every(o=>o.validToYear<=oldYear+1);
   const snapshot=JSON.stringify(clone.world.occupationWorld);
   const reloaded=JSON.parse(JSON.stringify(clone));
