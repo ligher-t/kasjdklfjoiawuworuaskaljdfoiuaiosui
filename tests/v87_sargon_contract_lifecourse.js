@@ -6,7 +6,7 @@ vm.runInNewContext(require('../tools/runtime.cjs').readData(root),ctx,{timeout:1
 vm.runInNewContext(require('../tools/runtime.cjs').readEngine(root).split('/* ===== UI ===== */')[0],ctx,{timeout:15000});ctx.rd=()=>{};
 const rows=vm.runInNewContext(String.raw`(()=>{
  const event=id=>window.GAME_DATA.EV.find(row=>row.id===id),apply=(id,choice,outcome=0)=>{const e=event(id),previous=TRACE_RESOLUTION;TRACE_RESOLUTION={kind:'choice',id:e.id,label:e.c[choice].l};try{ap(e.c[choice].o[outcome][2])}finally{TRACE_RESOLUTION=previous}};
- const setup=seed=>{born({seed,by:1080,region:'サルゴン'});S.age=18;S.year=1098;S.mo=3;S.res=REG.find(row=>row.n==='サルゴン');S.home='固定集落';S.local={...makeLocality(S.home,S.res.n),ecology:'乾燥地・オアシス'};S.job=2;S.house.cash=300000;return S};
+ const setup=seed=>{born({seed,by:1080,region:'サルゴン'});S.age=18;S.year=1098;S.mo=3;S.res=REG.find(row=>row.n==='サルゴン');S.home='固定集落';S.local={...makeLocality(S.home,S.res.n),ecology:'乾燥地・オアシス'};S.job=0;S.house.cash=300000;return S};
  const career=event('car'),follow=event('sargon_market_contract_review'),eligible=setup(981001);
  const entryIndex=career.c.findIndex(row=>row.l==='移動バザール周辺で短い警戒任務を探す'),visible=career.c[entryIndex].show(eligible);
  apply('car',entryIndex,0);const initialJob=eligible.job;const affiliation=eligible.lifeRecord.affiliations.find(row=>row.id==='sargon-market-guard-contracts'),goal=eligible.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work');
@@ -19,9 +19,15 @@ const rows=vm.runInNewContext(String.raw`(()=>{
  const moved={job:transport.job,goal:transport.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work')?.status,audit:auditLifeState(transport)};
  const stopped=setup(981005);apply('car',entryIndex,0);stopped.year+=2;stopped.age+=2;apply(follow.id,2);
  const exit={job:stopped.job,goal:stopped.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work')?.status,audit:auditLifeState(stopped)};
+ const concurrentWork=setup(981008);concurrentWork.job=2;
+ apply('car',entryIndex,0);
+ const sideGig={job:concurrentWork.job,
+   kind:concurrentWork.employmentState?.episodes?.at(-1)?.kind,
+   employerId:concurrentWork.employmentState?.episodes?.at(-1)?.employerId,
+   ongoingEmployment:concurrentWork.employmentState?.activeEpisodeId??null};
  const regionGate=setup(981006);apply('car',entryIndex,0);regionGate.year+=2;regionGate.age+=2;regionGate.res=REG.find(row=>row.n==='龍門');const outsideRegionHidden=!follow.show(regionGate);
  const ecologyGate=setup(981007);apply('car',entryIndex,0);ecologyGate.year+=2;ecologyGate.age+=2;ecologyGate.local.ecology='熱帯雨林';const outsideEcologyHidden=!follow.show(ecologyGate);
- return {careerChoices:career.c.length,entryIndex,visible,initialJob,followChoices:follow.c.length,oneYearHidden,twoYearVisible,goalAtStart:goal?.status,repeat,failedEntry,paused,moved,exit,outsideRegionHidden,outsideEcologyHidden};
+ return {careerChoices:career.c.length,entryIndex,visible,initialJob,followChoices:follow.c.length,oneYearHidden,twoYearVisible,goalAtStart:goal?.status,repeat,failedEntry,paused,moved,exit,sideGig,outsideRegionHidden,outsideEcologyHidden};
 })()`,ctx,{timeout:45000});
 assert(rows.visible,'the contract work is limited to Sargonian desert/oasis lives: '+JSON.stringify({entryIndex:rows.entryIndex,visible:rows.visible}));
 assert.equal(rows.followChoices,3);assert(rows.oneYearHidden&&rows.twoYearVisible,'the reflection waits until two years after an accepted contract');
@@ -30,5 +36,9 @@ assert.deepEqual([rows.failedEntry.hasAffiliation,rows.failedEntry.followHidden,
 assert.deepEqual([rows.paused.status,rows.paused.episodes,rows.paused.audit.length],['paused',1,0]);
 assert.deepEqual([rows.moved.job,rows.moved.goal,rows.moved.audit.length],[16,'compromised',0]);
 assert.deepEqual([rows.exit.job,rows.exit.goal,rows.exit.audit.length],[0,'abandoned',0]);
+assert.equal(rows.sideGig.job,2,'short guard duty does not displace another occupation');
+assert.equal(rows.sideGig.kind,'gig');
+assert.equal(rows.sideGig.employerId,null);
+assert.equal(rows.sideGig.ongoingEmployment,null);
 assert(rows.outsideRegionHidden&&rows.outsideEcologyHidden,'later choices stay within the modeled Sargonian local context');
 console.log(JSON.stringify({passed:true,individualContractsOnly:true,twoYearFollowup:true,failedAndDeclinedRoutesDoNotInventMembership:true,regionAndEcologyGates:true,auditErrors:0},null,2));
