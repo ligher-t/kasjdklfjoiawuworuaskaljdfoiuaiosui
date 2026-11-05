@@ -23,10 +23,13 @@ const fixture = () => {
       born({seed:20261105,by:1077,region:'クルビア'});
       S.age=24;S.year=S.by+S.age;S.mo=2;S.job=0;S.fl.sch=0;
       S.educationDecision=null;S.educationPath=null;
+      // Let the production render advance the locality to the fixture year.
+      // Otherwise that first render expires the fixture's newly inserted vacancy.
+      rd();
       const area=occupationAreaSnapshot(S), world=S.world.occupationWorld;
       const siteId='browser-site', positionId='browser-position', openingId='browser-opening', employerId='browser-employer';
       world.employers[employerId]={employerId,organizationKey:null};
-      world.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',positionIds:[positionId]};
+      world.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',lastYear:S.year,positionIds:[positionId]};
       world.positions[positionId]={positionId,siteId,jobId:2,capacity:1,aggregateOccupiedSlots:0,
         identifiedOccupiedSlots:0,reservedSlots:0,vacancyCount:1,openingIds:[openingId]};
       world.openings[openingId]={openingId,siteId,positionId,employerId,areaId:area.areaId,
