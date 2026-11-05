@@ -941,11 +941,11 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             }
           ]
         ),
-        $terraData.K("荷札や行き先を扱うトランスポーターの仕事を探す", {}, [
+        $terraData.K("荷札や行き先を扱うトランスポーターの仕事を探す", { show: s => !!employmentOpeningForChoice(s, 16) }, [
           1,
           "武器の代わりに荷袋を担ぎ、移動バザールの天幕から天幕へ品物を届けるトランスポーターの仕事へ移った。",
           {
-            job: 16,
+            employmentAction: { action: "accept-local-opening", jobId: 16 },
             rl: 2,
             lifeAffiliation: {
               id: "terra-general-transporter",
