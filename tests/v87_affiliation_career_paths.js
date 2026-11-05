@@ -285,8 +285,7 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
    });
    if(id==='kazimierz-arena-staff'){
     s.age=55;s.year=1088;
-    applyEffect(s,{lifeAffiliation:{id:'kazimierz-competition-career',title:'カジミエーシュの競技騎士としての職業',kind:'individual-career',action:'join',role:'競技騎士'}});
-    applyEffect(s,{lifeGoal:{id:'kazimierz-competition-career',title:'競技騎士として働き、暮らしを立てる',priority:'仕事と身体',action:'start'}});
+    s.lifeRecord.affiliations.push({id:'kazimierz-competition-career',title:'カジミエーシュの競技騎士としての職業',kind:'individual-career',status:'active',role:'競技騎士',startedYear:1088,endedYear:null,episodes:[{startedYear:1088,endedYear:null,roleAtStart:'競技騎士',returning:false,basis:'recorded'}],history:[]});
     s.year=1100;
    }
    if(jobId===7)applyEffect(s,{lifeSkill:{id:'engineering-experience',title:'技術経験',delta:12,context:'所属範囲監査用の実在求人'}});
