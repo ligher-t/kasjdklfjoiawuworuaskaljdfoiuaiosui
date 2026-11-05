@@ -2,6 +2,7 @@
 function prepareAnnualPersonalBudget(s, services, a, t, f) {
   if (
     !s.job &&
+    !s.world?.occupationWorld &&
     travelPresence(s).mode === "residence" &&
     !s.lifeRecord?.careerChanges?.length &&
     !s.fl.retired &&
@@ -18,6 +19,7 @@ function prepareAnnualPersonalBudget(s, services, a, t, f) {
   services.reconcileWorkContract(s);
   services.reconcileEquity(s);
   const j = services.J[s.job],
+    episodeWageBase = employmentAnnualWageBase(s, s.year),
     pm = s.res.pm,
     householdCoversPersonalCosts = services.inSharedHousehold(s),
     costPm = pm * s.priceIndex * services.localityLivingMultiplier(s),
@@ -55,8 +57,9 @@ function prepareAnnualPersonalBudget(s, services, a, t, f) {
         ? s.fl.seg_work
           ? services.P("economy.segregationWorkAnnualPay") * pm
           : 0
-        : !s.fl.retired && (a < services.P("economy.employmentAgeLimit") || s.job > 0)
-          ? j.pay *
+        : (episodeWageBase != null && episodeWageBase > 0) ||
+          (!s.fl.retired && (a < services.P("economy.employmentAgeLimit") || s.job > 0))
+          ? (episodeWageBase ?? j.pay) *
             pm *
             travelHomeWorkIncomeShare(s, s.year - 1) *
             services.contractIncomeFactor(s) * services.personalWorkCapacity(s) *
