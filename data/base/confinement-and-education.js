@@ -1272,7 +1272,7 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
         {educationAction:"case:search-adjacent"}]),
       $terraData.K("学校外で読み書きや手仕事を学ぶ",{
         show:s=>educationActiveCase(s)?.phase==="planning"
-      },[1,"今年は学校へ通う手続を置き、家や仕事場で学べることから始めると決めた。学校の免状を得たことにはならない。",
+      },[1,"今年は学校へ通う手続を置き、家や仕事場で学べることから始めると決めた。読み書きや手仕事を教わる相手を探し始めた。",
         {educationAction:"case:nonformal",k:2}]),
       $terraData.K("今年の進学は見送る",{
         show:s=>educationActiveCase(s)?.phase==="planning"
