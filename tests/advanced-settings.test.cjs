@@ -167,4 +167,26 @@ const completedSchoolLabel=run(`S.educationPath={version:1,status:'completed',st
  return educationStandingLabel(S);`);
 assert.match(completedSchoolLabel,/後期中等課程修了/);
 
+fresh();
+assert.deepEqual(run(`const insurance=EV.find(e=>e.id==='asset_choice_catastrophe_insurance');
+ const oldRegion=S.res;S.res=REG.find(r=>r.n==='イベリア');const outside=insurance.show(S);
+ S.res=REG.find(r=>r.n==='クルビア');const inside=insurance.show(S);
+ return {outside,inside,catastropheClaim:EV.some(e=>e.id==='asset_catastrophe_insurance_claim')};`),
+ {outside:false,inside:true,catastropheClaim:false});
+
+fresh();
+assert.deepEqual(run(`S.local={...S.local,educationAreaId:'empty-area'};
+ S.educationAccess={version:1,knownOfferings:{},searches:[{
+   caseId:'old-search',stage:'primary',scope:'local',areaIds:['empty-area'],
+   checkedAt:{year:S.year-1,month:1},foundIds:[],basis:'locality-inquiry'
+ }],applications:{},notices:{}};
+ const event=EV.find(e=>e.id==='education_return_path');
+ const sameArea={allowed:educationReturnPathSearchAllowed(S,'primary'),
+   eventShown:event.show(S)};
+ S.local={...S.local,educationAreaId:'moved-area'};
+ const afterMove={allowed:educationReturnPathSearchAllowed(S,'primary'),
+   eventShown:event.show(S)};
+ return {sameArea,afterMove};`),
+ {sameArea:{allowed:false,eventShown:false},afterMove:{allowed:true,eventShown:true}});
+
 console.log('PASS advanced settings, preserved priority slots, native automatic admission and life-specific resume');
