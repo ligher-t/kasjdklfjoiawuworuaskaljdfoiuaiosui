@@ -61,10 +61,11 @@ const employmentStartSource=(affiliationId,jobId)=>{
  let fallback=null;
  for(const row of context.window.GAME_DATA.EV)for(let choiceIndex=0;choiceIndex<(row.c||[]).length;choiceIndex++)
   for(let outcomeIndex=0;outcomeIndex<(row.c[choiceIndex].o||[]).length;outcomeIndex++){
-   const effect=row.c[choiceIndex].o[outcomeIndex][2],memberships=[effect?.lifeAffiliation,...(effect?.lifeAffiliations||[])];
-   if(effect?.job===jobId&&memberships.length===1&&memberships[0]?.id===affiliationId&&
-     ['join','assign'].includes(memberships[0].action||'join')&&
-     typeof memberships[0].title==='string'&&memberships[0].title.trim()){
+   const effect=row.c[choiceIndex].o[outcomeIndex][2],memberships=[effect?.lifeAffiliation,...(effect?.lifeAffiliations||[])].filter(Boolean),
+    starts=memberships.filter(item=>['join','assign'].includes(item.action||'join'));
+   if(effect?.job===jobId&&starts.length===1&&starts[0]?.id===affiliationId&&
+     memberships.every(item=>item===starts[0]||item.action==='leave')&&
+     typeof starts[0].title==='string'&&starts[0].title.trim()){
     const establishedVisit=vm.runInContext(
      'EMPLOYMENT_PHYSICAL_INTERVIEWS[__eventId]===__affiliationId||EMPLOYMENT_ONBOARD_APPOINTMENT_SOURCES[__eventId]===__affiliationId',
      Object.assign(context,{__eventId:row.id,__affiliationId:affiliationId}));
