@@ -57,6 +57,23 @@ const affiliationEffect=(eventId,affiliationId,action='join')=>{
  }
  assert.fail(`${eventId} has no ${action} outcome for ${affiliationId}`);
 };
+const employmentStartSource=(affiliationId,jobId)=>{
+ let fallback=null;
+ for(const row of context.window.GAME_DATA.EV)for(let choiceIndex=0;choiceIndex<(row.c||[]).length;choiceIndex++)
+  for(let outcomeIndex=0;outcomeIndex<(row.c[choiceIndex].o||[]).length;outcomeIndex++){
+   const effect=row.c[choiceIndex].o[outcomeIndex][2],memberships=[effect?.lifeAffiliation,...(effect?.lifeAffiliations||[])];
+   if(effect?.job===jobId&&memberships.some(item=>item?.id===affiliationId&&
+     ['join','assign','return','continue','role'].includes(item.action||'join'))){
+    const establishedVisit=vm.runInContext(
+     'EMPLOYMENT_PHYSICAL_INTERVIEWS[__eventId]===__affiliationId||EMPLOYMENT_ONBOARD_APPOINTMENT_SOURCES[__eventId]===__affiliationId',
+     Object.assign(context,{__eventId:row.id,__affiliationId:affiliationId}));
+    const source={eventId:row.id,choiceIndex,outcomeIndex};
+    if(establishedVisit)return source;
+    if(!fallback)fallback=source;
+   }
+  }
+ return fallback;
+};
 const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(context,{__state:state}),{timeout:30000});
 {
  const start=affiliationEffect('car','kjerag-village-transporter'),state=routeState(870081,'イェラグ',0);
@@ -259,12 +276,21 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
   const rule=rules[id],s=routeState(872000+i,rule.region||'ヴィクトリア',rule.jobs?.[0]||0);
   const appOnly=id==='rhodes-employment';
   if(rule.scope==='workplace'){
-   const jobId=rule.jobs[0],opening=provisionOpening(s,jobId,'scope:'+id);
+   const jobId=rule.jobs[0];
    s.job=0;s.k=Math.max(50,s.k||0);s.socialLearning||={};s.socialLearning.literacy=60;
    if(jobId===7)applyEffect(s,{lifeSkill:{id:'engineering-experience',title:'技術経験',delta:12,context:'所属範囲監査用の実在求人'}});
-   applyEffect(s,{employmentAction:{action:'accept-local-opening',jobId,openingId:opening.openingId}});
+   context.__id=id;
+   const spec=vm.runInContext('EMPLOYMENT_APPOINTMENT_SITES.find(row=>row.affiliationId===__id)',context);
+   assert(spec,id+' has a worksite appointment definition');
+   s.year=Math.max(s.year,spec.fromYear);
+   const source=employmentStartSource(id,jobId);
+   assert(source,id+' has a source-backed employment start');
+   context.__state=s;context.__source=source;context.__jobId=jobId;
+   vm.runInContext('S=__state;applyEmploymentAppointmentFixture(__source.eventId,__jobId,__id,__source.choiceIndex,__source.outcomeIndex)',context,{timeout:30000});
   }
-  applyEffect(s,{lifeAffiliation:{id,title:id,action:appOnly?'contact':id==='ursus-kleini-sever-mine'?'assign':'join'}});
+  const existing=s.lifeRecord.affiliations.find(row=>row.id===id);
+  if(!existing||!['active','crisis','suspended'].includes(existing.status))
+   applyEffect(s,{lifeAffiliation:{id,title:id,action:appOnly?'contact':id==='ursus-kleini-sever-mine'?'assign':'join'}});
   const a=s.lifeRecord.affiliations.find(row=>row.id===id),key=a.anchor?.localityKey;
   assert(a.origin?.localityKey,id+' retains its first contact place');
   if(appOnly){applyEffect(s,{lifeAffiliation:{id,action:'followup'}});applyEffect(s,{lifeAffiliation:{id,action:'decline'}});assert.equal(a.status,'outside');continue;}

@@ -14,6 +14,7 @@ on:
       - 'debug.js'
       - 'package.json'
       - '.github/workflows/p0-education-work.yml'
+      - 'docs/employment/**'
   pull_request:
     branches: [main]
     paths:
@@ -28,7 +29,11 @@ on:
       - 'debug.js'
       - 'package.json'
       - '.github/workflows/p0-education-work.yml'
+      - 'docs/employment/**'
   workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:

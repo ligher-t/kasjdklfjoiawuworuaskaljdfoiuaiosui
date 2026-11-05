@@ -8,6 +8,10 @@ const {context,setup}=require('./support/annual-cases.cjs');
 const root=path.resolve(__dirname,'..');
 const review=JSON.parse(fs.readFileSync(path.join(root,
   'docs/employment/W01_A175_OUTCOME_703_SEMANTIC_DECISIONS_20261104.json'),'utf8'));
+const dependentQueue=JSON.parse(fs.readFileSync(path.join(root,
+  'docs/employment/W11_BCD862_DEPENDENT_EVENT_QUEUE_20261104.json'),'utf8'));
+const recoveredSources=JSON.parse(fs.readFileSync(path.join(root,
+  'docs/employment/W12_B81_SOURCE_RECOVERY_SUPPLEMENT_20261104.json'),'utf8'));
 const {ctx}=context(root);
 setup(ctx,{id:'employment-a175-runtime-review',seed:202611051,region:'クルビア',age:30});
 ctx.A175_REVIEW=JSON.stringify(review);
@@ -115,3 +119,54 @@ assert.equal(report.outcomes,698,'all current A175 result branches reach runtime
 assert.equal(reviewedBranchKeys.size,9);
 assert.equal(report.jobStartsRejectedWithoutEvidence+report.communityLivelihoodsRetained>0,true);
 console.log(`PASS W01 current runtime review: ${report.events} events, ${report.choices} choices, ${report.outcomes} outcomes; 7 reviewed source-shape deltas; 9 content-bound branches; unsupported starts rejected ${report.jobStartsRejectedWithoutEvidence}, evidence-backed livelihoods retained ${report.communityLivelihoodsRetained}`);
+
+// W11 is a screening inventory, not a semantic approval. Runtime-check its
+// high-priority employer/facility branches and the recovered W12 source events
+// against the same no-opening boundary used by event dispatch.
+const nonRuntimeRecovered=new Set(recoveredSources.summary.nonRuntime.map(row=>row.id));
+const dependentEventIds=new Set(dependentQueue.entries
+  .filter(row=>['P0','P1'].includes(row.classification) && row.why==='org-or-job-mechanics')
+  .map(row=>row.eventId));
+for(const row of recoveredSources.events)
+  if(!nonRuntimeRecovered.has(row.id))dependentEventIds.add(row.id);
+assert.equal(dependentEventIds.size,81,'W11 employer/facility screen plus runtime W12 source set');
+const dependentReport={events:0,choices:0,outcomes:0,blockedJobStarts:0,retainedLivelihoods:0};
+for(const eventId of dependentEventIds){
+  const event=EV.find(row=>row.id===eventId);
+  assert(event,`W11/W12 runtime source event is missing: ${eventId}`);
+  dependentReport.events++;
+  for(const choice of event.c||[]){
+    dependentReport.choices++;
+    const assessments=[];
+    for(const outcome of choice.o||[]){
+      const effect=outcome[2],work=S.world.occupationWorld,
+        before=JSON.stringify({job:S.job,episodes:S.employmentState.episodes,
+          finance:S.employmentState.finance,contract:S.workContract,
+          sites:Object.keys(work.sites).length,openings:Object.keys(work.openings).length,
+          rng:S.rngState}),
+        assessment=employmentEffectAssessment(S,effect,event.id),
+        after=JSON.stringify({job:S.job,episodes:S.employmentState.episodes,
+          finance:S.employmentState.finance,contract:S.workContract,
+          sites:Object.keys(work.sites).length,openings:Object.keys(work.openings).length,
+          rng:S.rngState});
+      assert.equal(before,after,`${event.id} runtime employment review must be read-only`);
+      assessments.push(assessment);
+      dependentReport.outcomes++;
+      if(Number.isInteger(effect?.job)&&effect.job>0){
+        if(assessment.canStart){
+          assert.equal(assessment.kind,'livelihood',
+            `${event.id} cannot start named employment without a live opening`);
+          assert(assessment.resource,`${event.id} livelihood must have a recorded local resource`);
+          dependentReport.retainedLivelihoods++;
+        }else dependentReport.blockedJobStarts++;
+      }
+    }
+    if((choice.o||[]).some(row=>Number.isInteger(row[2]?.job)&&row[2].job>0) &&
+       assessments.some((row,index)=>Number.isInteger(choice.o[index][2]?.job)&&
+         choice.o[index][2].job>0&&!row.canStart))
+      assert.equal(employmentChoiceCanResolve(event,choice,S),false,
+        `${event.id} choice must be hidden when its current-work outcome has no opening`);
+  }
+}
+assert(dependentReport.choices>0 && dependentReport.outcomes>0);
+console.log(`PASS W11/W12 runtime employment review: ${dependentReport.events} employer/facility-dependent events, ${dependentReport.choices} choices, ${dependentReport.outcomes} outcomes; unsupported starts rejected ${dependentReport.blockedJobStarts}, evidence-backed livelihoods retained ${dependentReport.retainedLivelihoods}`);
