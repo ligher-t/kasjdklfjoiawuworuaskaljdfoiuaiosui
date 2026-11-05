@@ -15,8 +15,25 @@ const rows=vm.runInNewContext(String.raw`(()=>{
  const failedIntro=setup(981002);apply('car',entryIndex,1);const failedEntry={hasAffiliation:failedIntro.lifeRecord.affiliations.some(row=>row.id==='sargon-market-guard-contracts'),followHidden:!follow.show(failedIntro),audit:auditLifeState(failedIntro)};
  const followFailure=setup(981003);apply('car',entryIndex,0);followFailure.year+=2;followFailure.age+=2;apply(follow.id,0,1);
  const paused={status:followFailure.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work')?.status,episodes:followFailure.lifeRecord.affiliations.find(row=>row.id==='sargon-market-guard-contracts')?.episodes.length,audit:auditLifeState(followFailure)};
- const transport=setup(981004);apply('car',entryIndex,0);transport.year+=2;transport.age+=2;apply(follow.id,1);
- const moved={job:transport.job,goal:transport.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work')?.status,audit:auditLifeState(transport)};
+ const transport=setup(981004);apply('car',entryIndex,0);transport.year+=2;transport.age+=2;
+ ensureOccupationWorkArea(transport);
+ if(!employmentOpeningForChoice(transport,16)){
+   const areaId=occupationWorkAreaKey(transport),w=transport.world.occupationWorld,
+     employerId='test-sargon-transport',siteId='test-sargon-transport-site',
+     positionId='test-sargon-transport-position',openingId='test-sargon-transport-opening';
+   w.employers[employerId]={employerId,organizationKey:null,areaId};
+   w.sites[siteId]={siteId,employerId,areaId,status:'open',positionIds:[positionId]};
+   w.positions[positionId]={positionId,siteId,jobId:16,capacity:1,
+     aggregateOccupiedSlots:0,identifiedOccupiedSlots:0,reservedSlots:0,
+     vacancyCount:1,openingIds:[openingId]};
+   w.openings[openingId]={openingId,positionId,siteId,employerId,areaId,
+     status:'open',slots:1,validFromYear:transport.year};
+ }
+ const transportOffer=follow.c[1].show(transport);
+ apply(follow.id,1);
+ const moved={job:transport.job,goal:transport.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work')?.status,
+   basis:transport.workContract?.basis,episodeId:transport.employmentState?.activeEpisodeId,
+   audit:auditLifeState(transport)};
  const stopped=setup(981005);apply('car',entryIndex,0);stopped.year+=2;stopped.age+=2;apply(follow.id,2);
  const exit={job:stopped.job,goal:stopped.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work')?.status,audit:auditLifeState(stopped)};
  const concurrentWork=setup(981008);concurrentWork.job=2;
@@ -44,13 +61,16 @@ const rows=vm.runInNewContext(String.raw`(()=>{
  const retiredGuardJob=retiredGuard.job;
  const regionGate=setup(981006);apply('car',entryIndex,0);regionGate.year+=2;regionGate.age+=2;regionGate.res=REG.find(row=>row.n==='龍門');const outsideRegionHidden=!follow.show(regionGate);
  const ecologyGate=setup(981007);apply('car',entryIndex,0);ecologyGate.year+=2;ecologyGate.age+=2;ecologyGate.local.ecology='熱帯雨林';const outsideEcologyHidden=!follow.show(ecologyGate);
- return {careerChoices:career.c.length,entryIndex,visible,initialJob,followChoices:follow.c.length,oneYearHidden,twoYearVisible,goalAtStart:goal?.status,repeat,failedEntry,paused,moved,exit,sideGig,ongoingGuardResult,deniedGuardJob,retiredGuardJob,outsideRegionHidden,outsideEcologyHidden};
+ return {careerChoices:career.c.length,entryIndex,visible,initialJob,followChoices:follow.c.length,oneYearHidden,twoYearVisible,goalAtStart:goal?.status,repeat,failedEntry,paused,moved,exit,sideGig,ongoingGuardResult,deniedGuardJob,retiredGuardJob,transportOffer,outsideRegionHidden,outsideEcologyHidden};
 })()`,ctx,{timeout:45000});
 assert(rows.visible,'the contract work is limited to Sargonian desert/oasis lives: '+JSON.stringify({entryIndex:rows.entryIndex,visible:rows.visible}));
 assert.equal(rows.followChoices,3);assert(rows.oneYearHidden&&rows.twoYearVisible,'the reflection waits until two years after an accepted contract');
 assert.equal(rows.initialJob,0,'the first one-off hire ends before the next decision');assert.equal(rows.goalAtStart,'active');assert.equal(rows.repeat.status,'left');assert.equal(rows.repeat.episodes.length,2,'each accepted job is a bounded individual assignment, not continuous unit membership');assert.equal(rows.repeat.goal,'active');assert.equal(rows.repeat.job,0,'a completed short contract must leave no active mercenary occupation');assert.equal(rows.repeat.audit.length,0);
 assert.deepEqual([rows.failedEntry.hasAffiliation,rows.failedEntry.followHidden,rows.failedEntry.audit.length],[false,true,0],'a failed introduction creates no employment history or follow-up');
 assert.deepEqual([rows.paused.status,rows.paused.episodes,rows.paused.audit.length],['paused',1,0]);
+assert.equal(rows.transportOffer,true,'transport work is offered only when a real vacancy is available');
+assert.equal(rows.moved.basis,'occupation-episode');
+assert(rows.moved.episodeId,'transport work creates an individual paid work episode');
 assert.deepEqual([rows.moved.job,rows.moved.goal,rows.moved.audit.length],[16,'compromised',0]);
 assert.deepEqual([rows.exit.job,rows.exit.goal,rows.exit.audit.length],[0,'abandoned',0]);
 assert.equal(rows.sideGig.job,2,'short guard duty does not displace another occupation');
