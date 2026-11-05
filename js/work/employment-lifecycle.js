@@ -85,8 +85,10 @@ function endPlayerEmployment(s, reason = "voluntary-leave") {
   return episode;
 }
 function applyPlayerEmploymentAction(s, action) {
-  if (!action || !["accept-local-opening", "leave"].includes(action.action))
+  if (!action || !["accept-local-opening", "leave", "complete-gig"].includes(action.action))
     throw Error("採用案件の操作が不正");
+  if (action.action === "complete-gig")
+    return recordCompletedGig(s, action);
   if (action.action === "leave") {
     if (!currentPlayerEmployment(s)) throw Error("終了する現職の記録がない");
     return endPlayerEmployment(s, action.reason || "voluntary-leave");
@@ -153,10 +155,40 @@ function applyPlayerEmploymentAction(s, action) {
   });
   return episode;
 }
+/**
+ * Completed one-off work is evidence of a specific task and payment, never an
+ * indefinite employer or monthly salary. An event's money effect performs the
+ * actual transfer; this record only attributes it to the completed assignment.
+ */
+function recordCompletedGig(s, action) {
+  const kind = action.kind;
+  if (!["cargo-handling", "short-sentry", "local-errand", "market-watch"].includes(kind))
+    throw Error("短期業務の種類が不正");
+  if (!Number.isSafeInteger(action.cashReceived) || action.cashReceived < 0 ||
+      !action.sourceEventId || typeof action.sourceEventId !== "string")
+    throw Error("短期業務の支払根拠が不正");
+  const month = Number.isInteger(s.mo) && s.mo >= 1 && s.mo <= 12 ? s.mo : 1,
+    state = playerEmploymentState(s),
+    sourceKey = action.sourceEventId + ":" + kind + ":" + s.year + ":" + month;
+  if (state.episodes.some(row => row.sourceKey === sourceKey))
+    throw Error("同じ短期業務の成果を二重に記録できない");
+  const personId = s.personId || s.identity?.id || "protagonist",
+    episode = {
+      episodeId: "gig:" + personId + ":" + (state.episodes.length + 1),
+      personId, sourceKey, sourceEventId: action.sourceEventId, kind: "gig",
+      taskKind: kind, jobId: null, employerId: null, siteId: null,
+      status: "completed", startYear: s.year, startMonth: month,
+      endYear: s.year, endMonth: month, cashReceived: action.cashReceived,
+      basis: "single-event-completed-work",
+      history: [{ status: "completed", year: s.year, month }]
+    };
+  state.episodes.push(episode);
+  return episode;
+}
 // Sum the actual months in this annual accounting period. End month is exclusive.
 function employmentAnnualWageBase(s, year) {
   const episodes = s.employmentState?.episodes;
-  if (!episodes?.length) return null;
+  if (!episodes?.some(row => row.kind === "wage-employment")) return null;
   let earnings = 0;
   for (const row of episodes) {
     if (row.kind !== "wage-employment" || row.startYear > year ||
