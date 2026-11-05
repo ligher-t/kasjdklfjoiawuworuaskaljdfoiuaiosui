@@ -505,7 +505,7 @@ function ask(e, T, t, before, resumed = false) {
       choiceIndex = e.c.indexOf(c);
     recordSimulationOutcome(e, choiceIndex, outcomeIndex);
     const result = tpl(o[1], s);
-    const choiceLabel = tpl(c.l, s);
+    const choiceLabel = tpl(eventTextValue(c.l, s, T), s);
     L(
       `<span class="${evt(c)}">${by ? (e.id === "parent_treatment_review" ? "親の判断:" : "養育者の判断:") : ""}「${choiceLabel}` +
         `」</span><span class="${tone(o[2])}">${result}</span>`
@@ -605,7 +605,8 @@ function ask(e, T, t, before, resumed = false) {
   cs.forEach((c, i) => {
     const b = document.createElement("button"),
       k = ab.includes(c);
-    const label = i + 1 + ". " + tpl(c.l, s);
+    const choiceLabel = tpl(eventTextValue(c.l, s, T), s);
+    const label = i + 1 + ". " + choiceLabel;
     // Keep the spoken label whole, while separating shortcut and action visually.
     b.setAttribute("aria-label", label);
     const number = document.createElement("span"), action = document.createElement("span");
@@ -613,7 +614,7 @@ function ask(e, T, t, before, resumed = false) {
     number.textContent = `${i + 1}. `;
     number.setAttribute("aria-hidden", "true");
     action.className = "choice-label";
-    action.textContent = tpl(c.l, s);
+    action.textContent = choiceLabel;
     b.append(number);
     b.append(action);
     if (!k) {

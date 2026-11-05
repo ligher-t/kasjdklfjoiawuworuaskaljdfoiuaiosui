@@ -49,6 +49,8 @@ const fixture = () => {
       stage = 'decline';
       one('#employment-opening-0').click();
       expect(document.activeElement.id==='mt' && S.ev?.id==='work_known_opening_review','Offer must open and focus its choice sheet');
+      expect(one('#mc button:first-child').textContent.includes('条件を確かめ、この働き口を引き受ける'),
+        'Offer must render its state-dependent acceptance label');
       one('#mc button:nth-child(2)').click();
       expect(!S.ev && !currentPlayerEmployment(S) && world.openings[openingId].slots===1,'Decline must preserve vacancy');
       S.mo++;
