@@ -113,4 +113,39 @@ assert.equal(site.noKnowledge.canApply,false,'unknown vacancy cannot be a public
 assert.equal(site.noSpecial.canApply,false,'special employer cannot be a general random opening');
 assert.equal(site.noVacancy.canApply,false,'zero vacancies cannot be applied for');
 assert.equal(site.rngSame,true);
+const annual=evaluate(`
+  const clone=JSON.parse(JSON.stringify(S)),work=clone.world.occupationWorld;
+  const oldYear=clone.year,area=occupationAreaSnapshot(clone),
+    startingSites=area.siteIds.length,firstRng=clone.rngState;
+  clone.year=oldYear+1;
+  advanceOccupationWorkArea(clone,clone.year,{jobs:0.2});
+  const allStrained=area.siteIds.every(id=>work.sites[id].status==='strained');
+  const noActive=Object.values(work.openings).every(o=>o.status!=='open');
+  const expiredHaveEnd=Object.values(work.openings)
+    .filter(o=>o.status==='expired').every(o=>o.validToYear===oldYear);
+  const beforeRepeat=JSON.stringify(work);
+  advanceOccupationWorkArea(clone,clone.year,{jobs:0.2});
+  const repeatSame=beforeRepeat===JSON.stringify(work);
+  clone.year++;
+  advanceOccupationWorkArea(clone,clone.year,{jobs:0.95});
+  const allReopened=area.siteIds.every(id=>work.sites[id].status==='open');
+  const noPastResurrection=Object.values(work.openings)
+    .filter(o=>o.status==='expired').every(o=>o.validToYear<=oldYear+1);
+  const snapshot=JSON.stringify(clone.world.occupationWorld);
+  const reloaded=JSON.parse(JSON.stringify(clone));
+  advanceOccupationWorkArea(reloaded,reloaded.year,{jobs:0.95});
+  return {startingSites,allStrained,noActive,expiredHaveEnd,repeatSame,
+    allReopened,noPastResurrection,saveStable:snapshot===JSON.stringify(reloaded.world.occupationWorld),
+    rngSame:clone.rngState===firstRng,originalSame:occupationAreaSnapshot(S).areaId===area.areaId};
+`);
+assert(annual.startingSites>0);
+assert.equal(annual.allStrained,true);
+assert.equal(annual.noActive,true);
+assert.equal(annual.expiredHaveEnd,true);
+assert.equal(annual.repeatSame,true,'repeated annual update does not create duplicate vacancies');
+assert.equal(annual.allReopened,true);
+assert.equal(annual.noPastResurrection,true);
+assert.equal(annual.saveStable,true,'save and restore does not reopen expired listings');
+assert.equal(annual.rngSame,true,'site annual updates consume no player RNG');
+assert.equal(annual.originalSame,true);
 console.log('PASS employment I-1: 66 policies, 83 jobs, 19x13 work areas, blocked joins and read-only access');
