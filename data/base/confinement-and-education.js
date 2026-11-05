@@ -439,28 +439,32 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
       id:"education_return_path",conf:"S",references:["SRC_EDUCATION_ACCESS"],
       st:["児童","少年","青年","壮年"],cd:3,w:0.65,
       show:s=>s.age>=8 && !educationOccupied(s) &&
-        !(educationHas(s,"upper") || s.educationPath?.equivalency?.includes("upper")),
+        !(educationHas(s,"upper") || s.educationPath?.equivalency?.includes("upper")) &&
+        educationReturnPathSearchAvailable(s),
       t:"途中で学び舎を離れたか、そもそも机を並べる機会がないまま歳月が過ぎた。今の読み書きの力と懐具合で、もう一度学べる場所がないか探してみた。",
       c:[
         $terraData.K("初等課程の募集先を探し、遅れて入れるか相談する",{
-          show:s=>s.age<=14 && !educationHas(s,"primary"),
+          show:s=>s.age<=14 && !educationHas(s,"primary") &&
+            educationReturnPathSearchAllowed(s,"primary"),
           en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
         },[1,"年下の子と同じ教室に通うことも考え、まず受け入れる学校があるか調べることにした。入学はまだ決まっていない。",
            {educationAction:"case:begin:reentry:primary:1"}]),
         $terraData.K("中断した前期中等課程の受入先を探す",{
           show:s=>s.age<=20 && s.educationPath?.stage==="lower" &&
-            ["withdrawn","outside"].includes(s.educationPath.status),
+            ["withdrawn","outside"].includes(s.educationPath.status) &&
+            educationReturnPathSearchAllowed(s,"lower"),
           en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
         },[1,"以前の履修記録を確かめ、前期中等の課程を再開できる学校へ相談することにした。",
            {educationAction:"case:begin:reentry:lower:1"}]),
         $terraData.K("中断した後期中等課程の受入先を探す",{
           show:s=>s.age<=20 && s.educationPath?.stage==="upper" &&
-            ["withdrawn","outside"].includes(s.educationPath.status),
+            ["withdrawn","outside"].includes(s.educationPath.status) &&
+            educationReturnPathSearchAllowed(s,"upper"),
           en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
         },[1,"以前の履修記録を確かめ、後期中等の課程を再開できる学校へ相談することにした。",
            {educationAction:"case:begin:reentry:upper:1"}]),
         $terraData.K("働きながら学べる正式準備課程を探す",{
-          show:s=>s.age>=16,
+          show:s=>s.age>=16 && educationReturnPathSearchAllowed(s,"preparatory"),
           en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
         },[1,"働きながら受けられる正式な準備課程があるか、募集期間と通学条件を調べることにした。",
            {educationAction:"case:begin:reentry:preparatory:1"}]),
