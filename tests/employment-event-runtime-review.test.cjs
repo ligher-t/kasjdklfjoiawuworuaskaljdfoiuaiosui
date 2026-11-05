@@ -130,43 +130,45 @@ const dependentEventIds=new Set(dependentQueue.entries
 for(const row of recoveredSources.events)
   if(!nonRuntimeRecovered.has(row.id))dependentEventIds.add(row.id);
 assert.equal(dependentEventIds.size,81,'W11 employer/facility screen plus runtime W12 source set');
-const dependentReport={events:0,choices:0,outcomes:0,blockedJobStarts:0,retainedLivelihoods:0};
-for(const eventId of dependentEventIds){
-  const event=EV.find(row=>row.id===eventId);
-  assert(event,`W11/W12 runtime source event is missing: ${eventId}`);
-  dependentReport.events++;
-  for(const choice of event.c||[]){
-    dependentReport.choices++;
-    const assessments=[];
-    for(const outcome of choice.o||[]){
-      const effect=outcome[2],work=S.world.occupationWorld,
-        before=JSON.stringify({job:S.job,episodes:S.employmentState.episodes,
-          finance:S.employmentState.finance,contract:S.workContract,
-          sites:Object.keys(work.sites).length,openings:Object.keys(work.openings).length,
-          rng:S.rngState}),
-        assessment=employmentEffectAssessment(S,effect,event.id),
-        after=JSON.stringify({job:S.job,episodes:S.employmentState.episodes,
-          finance:S.employmentState.finance,contract:S.workContract,
-          sites:Object.keys(work.sites).length,openings:Object.keys(work.openings).length,
-          rng:S.rngState});
-      assert.equal(before,after,`${event.id} runtime employment review must be read-only`);
-      assessments.push(assessment);
-      dependentReport.outcomes++;
-      if(Number.isInteger(effect?.job)&&effect.job>0){
-        if(assessment.canStart){
-          assert.equal(assessment.kind,'livelihood',
-            `${event.id} cannot start named employment without a live opening`);
-          assert(assessment.resource,`${event.id} livelihood must have a recorded local resource`);
-          dependentReport.retainedLivelihoods++;
-        }else dependentReport.blockedJobStarts++;
+ctx.DEPENDENT_EVENT_IDS=[...dependentEventIds];
+const dependentReport=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+  const result={events:0,choices:0,outcomes:0,blockedJobStarts:0,retainedLivelihoods:0};
+  for(const eventId of DEPENDENT_EVENT_IDS){
+    const event=EV.find(row=>row.id===eventId);
+    if(!event)throw Error('W11/W12 runtime source event is missing: '+eventId);
+    result.events++;
+    for(const choice of event.c||[]){
+      result.choices++;
+      const assessments=[];
+      for(const outcome of choice.o||[]){
+        const effect=outcome[2],work=S.world.occupationWorld,
+          before=JSON.stringify({job:S.job,episodes:S.employmentState.episodes,
+            finance:S.employmentState.finance,contract:S.workContract,
+            sites:Object.keys(work.sites).length,openings:Object.keys(work.openings).length,
+            rng:S.rngState}),
+          assessment=employmentEffectAssessment(S,effect,event.id),
+          after=JSON.stringify({job:S.job,episodes:S.employmentState.episodes,
+            finance:S.employmentState.finance,contract:S.workContract,
+            sites:Object.keys(work.sites).length,openings:Object.keys(work.openings).length,
+            rng:S.rngState});
+        if(before!==after)throw Error(event.id+' runtime employment review must be read-only');
+        assessments.push(assessment);
+        result.outcomes++;
+        if(Number.isInteger(effect?.job)&&effect.job>0){
+          if(assessment.canStart){
+            if(assessment.kind!=='livelihood'||!assessment.resource)
+              throw Error(event.id+' cannot start named employment without a live opening');
+            result.retainedLivelihoods++;
+          }else result.blockedJobStarts++;
+        }
       }
+      if((choice.o||[]).some(row=>Number.isInteger(row[2]?.job)&&row[2].job>0) &&
+         assessments.some((row,index)=>Number.isInteger(choice.o[index][2]?.job)&&
+           choice.o[index][2].job>0&&!row.canStart) && employmentChoiceCanResolve(event,choice,S))
+        throw Error(event.id+' choice must be hidden when its current-work outcome has no opening');
     }
-    if((choice.o||[]).some(row=>Number.isInteger(row[2]?.job)&&row[2].job>0) &&
-       assessments.some((row,index)=>Number.isInteger(choice.o[index][2]?.job)&&
-         choice.o[index][2].job>0&&!row.canStart))
-      assert.equal(employmentChoiceCanResolve(event,choice,S),false,
-        `${event.id} choice must be hidden when its current-work outcome has no opening`);
   }
-}
+  return result;
+})())`,ctx,{timeout:30000}));
 assert(dependentReport.choices>0 && dependentReport.outcomes>0);
 console.log(`PASS W11/W12 runtime employment review: ${dependentReport.events} employer/facility-dependent events, ${dependentReport.choices} choices, ${dependentReport.outcomes} outcomes; unsupported starts rejected ${dependentReport.blockedJobStarts}, evidence-backed livelihoods retained ${dependentReport.retainedLivelihoods}`);
