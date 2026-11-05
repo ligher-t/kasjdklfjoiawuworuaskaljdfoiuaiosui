@@ -1,6 +1,6 @@
 ## 2026-11-05：雇用I-1 実コード第一段階（世界先行と採用政策）
 
-- [x] `js/work/employment-policy.js`：66組織を全件対応させた読み取り専用の新規プレイヤー雇用判定を追加。J28〜82の55組織専用職は職業から正規化。BLOCKED 2組織への新規加入を `js/effects/apply.js` の事前判定で拒否。採用資格照会 `js/core/state.js:careerOpeningAssessment` は明示した職業・企業を同じ判定へ接続。
+- [x] `js/work/employment-policy.js`：66組織を全件対応させた読み取り専用の新規プレイヤー雇用判定を追加。J28〜82の55組織専用職は職業から正規化。BLOCKED 2組織への新規加入を `js/effects/apply.js` の事前判定に加え、`js/life/records.js:applyLifeAffiliation` の直接加入・強制配属・復帰入口でも拒否。採用資格照会 `js/core/state.js:careerOpeningAssessment` は明示した職業・企業を同じ判定へ接続。
 - [x] `js/work/occupation-world.js`：19地域×13産業の仮説行列から、地域/地区/世界seedごとに独立した匿名事業者・職場・職位・求人枠を決定。新サイトは主人公の現在の職業IDから生成せず、`js/world/locality.js:localityAdvanceOne` で世界側を初期化。画面用の `occupationAreaSnapshot` は読み取り専用。
 - [x] `index.html` と改訂値を同期し、`tests/v89_employment_i1_access_world.test.cjs` を登録。対象の既存選定CIでの検証を実施。
 - [x] `advanceOccupationWorkArea`：生活圏の年次更新で求人期限を閉じ、地域の雇用環境悪化に応じて新規募集を停止。現場・旧募集履歴を維持し、同年反復・保存復元時の重複生成を防止。
