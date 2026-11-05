@@ -292,6 +292,7 @@ function reconcileAffiliationWork(s, preserveCurrentJob = false) {
     // Regional career IDs 41–82 have no transferable employment contract.
     // A personal, regional or network affiliation can close without a workplace scope.
     if (!preserveCurrentJob && priorJob && (
+      activeEpisode?.affiliationId === a.id ||
       ["workplace", "organization"].includes(rule.scope) ||
       ["higashi-service", "kazimierz-competition-career", "rim-catastrophe-survey-assistant"].includes(a.id) ||
       (s.job >= 41 && s.job <= 82)

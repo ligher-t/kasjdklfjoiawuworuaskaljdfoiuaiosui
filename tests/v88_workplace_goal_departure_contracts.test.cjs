@@ -125,7 +125,8 @@ for(let i=0;i<regionalPlacements.length;i++){
    const before={job:S.job,contract:S.workContract?.siteId||null,
      affiliation:S.lifeRecord.affiliations.find(a=>a.id===TARGET.aff)?.status,
      goal:S.lifeRecord.goals.find(g=>g.id===TARGET.goal)?.status};
-   const historyLength=S.workContractHistory.length;
+   const historyLength=S.workContractHistory.length,
+     careerLength=S.lifeRecord.careerChanges.length;
    if(MODE==='relocate'){
      const dest=moveDestinations(S).find(x=>x.n!==S.res.n);
      if(!dest)throw Error('No cross-region route for '+TARGET.region);
@@ -140,7 +141,7 @@ for(let i=0;i<regionalPlacements.length;i++){
      career=S.lifeRecord.careerChanges.at(-1);
    return {before,job:S.job,affiliation:a.status,goal:g.status,
      contract:S.workContract?.siteId||null,site:S.siteAffiliations?.workplace?.facilityId||null,
-     career:{from:career?.fromJobId,to:career?.toJobId},
+     careerChanges:S.lifeRecord.careerChanges.slice(careerLength).map(x=>[x.fromJobId,x.toJobId]),
      ended:S.workContractHistory.slice(historyLength).filter(x=>x.action==='ended').length,
      phantomStarts:S.workContractHistory.slice(historyLength).filter(x=>x.action==='started').length,
      issues:auditLifeState(S)};
@@ -150,8 +151,8 @@ for(let i=0;i<regionalPlacements.length;i++){
   assert.equal(result.affiliation,'left',cfg.aff+' must leave the original job posting on '+mode);
   assert.equal(result.goal,'compromised',cfg.aff+' career goal reflects ended placement on '+mode);
   assert.equal(result.job,mode==='change-job'?2:0,cfg.aff+' correct occupation after '+mode);
-  assert.equal(result.career.from,cfg.job,cfg.aff+' change source');
-  assert.equal(result.career.to,mode==='change-job'?2:0,cfg.aff+' change destination');
+  assert.deepEqual(result.careerChanges,mode==='change-job'?[[cfg.job,0],[0,2]]:[[cfg.job,0]],
+    cfg.aff+' explicit employment transition history on '+mode);
   if(mode==='relocate'||mode==='retire'){
     assert.equal(result.contract,null,cfg.aff+' old contract must close');
     assert.equal(result.site,null,cfg.aff+' former worksite must close');
