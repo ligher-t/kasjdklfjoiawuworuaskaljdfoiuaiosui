@@ -502,6 +502,17 @@ function currentCareerPlacement(s, id) {
     !!s.lifeRecord?.affiliations?.some(row => row.id === id && ["active", "crisis"].includes(row.status))
   );
 }
+function reconcileGenericWorkGoal(s) {
+  const goal=s?.lifeRecord?.goals?.find(row=>row.id==="craft");
+  if(!goal)return;
+  const pauseNote="現在の仕事を離れたため、仕事の技能目標を休止";
+  if(s.job===0 && ["active","compromised"].includes(goal.status)) {
+    applyLifeGoal({id:"craft",action:"pause",note:pauseNote});
+    return;
+  }
+  if(s.job>0 && goal.status==="paused" && goal.history?.at(-1)?.note===pauseNote)
+    applyLifeGoal({id:"craft",action:"continue",note:"新しい仕事に就き、仕事の技能目標を再開"});
+}
 function reconcileCareerPlacements(s, preserveCurrentPay = false, assignedPlacements = null) {
   if (s !== S) return;
   const jobAtStart = s.job;
@@ -537,6 +548,7 @@ function reconcileCareerPlacements(s, preserveCurrentPay = false, assignedPlacem
     }
   }
   reconcileAffiliationWork(s, preserveCurrentPay);
+  reconcileGenericWorkGoal(s);
   if (s.job !== jobAtStart) {
     siteAffiliation(s, "workplace");
     reconcileWorkContract(s);
