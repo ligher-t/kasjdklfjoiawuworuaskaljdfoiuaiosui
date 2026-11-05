@@ -83,10 +83,10 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             { p: -8, cash: -3e4 }
           ]
         ),
-        $terraData.K("工場労働者として働く", {}, [
+        $terraData.K("工場労働者として働く", { show: s => !!employmentOpeningForChoice(s, 2) }, [
           1,
           "製造工場の働き口を得た。交代のベルが鳴り響くたび、機械油で黒ずんだ手を布で拭い、熱気のこもる持ち場へと向かった。",
-          { job: 2 }
+          { employmentAction: { action: "accept-local-opening", jobId: 2 } }
         ]),
         $terraData.K(
           "ウルサスの鉱山で働く",
@@ -168,10 +168,10 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             { p: -2 }
           ]
         ),
-        $terraData.K("飲食店や宿の仕事を探す", {}, [
+        $terraData.K("飲食店や宿の仕事を探す", { show: s => !!employmentOpeningForChoice(s, 17) }, [
           1,
           "湯気と脂の匂いが満ちる食堂で、皿洗いと配膳を任された。旅慣れた客の雑談から遠い土地の噂を聞く一方、混み合う夜は自分の賄いをかき込む暇もなかった。",
-          { job: 17, rl: 3 }
+          { employmentAction: { action: "accept-local-opening", jobId: 17 }, rl: 3 }
         ]),
         $terraData.K(
           "修理工房で技術を習う",
