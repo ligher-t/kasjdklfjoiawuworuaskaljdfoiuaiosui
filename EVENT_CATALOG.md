@@ -77063,7 +77063,8 @@ s => {
   "fx": {
     "p": -3
   },
-  "groundOnly": true
+  "groundOnly": true,
+  "displayTone": "bad"
 }
 ```
 
@@ -77737,7 +77738,8 @@ s => {
   "fx": {
     "p": -3
   },
-  "groundOnly": true
+  "groundOnly": true,
+  "displayTone": "bad"
 }
 ```
 
@@ -78047,7 +78049,8 @@ s => {
   "show": {
     "dynamicFunction": "s => !!s.known?.thelazia_dead"
   },
-  "once": true
+  "once": true,
+  "displayTone": "bad"
 }
 ```
 
@@ -80738,7 +80741,8 @@ s => {
   ],
   "fx": {
     "p": -2
-  }
+  },
+  "displayTone": "bad"
 }
 ```
 
@@ -98857,7 +98861,8 @@ s => {
   ],
   "fx": {
     "p": -1
-  }
+  },
+  "displayTone": "bad"
 }
 ```
 
@@ -102997,7 +103002,8 @@ s => {
   ],
   "fx": {
     "p": -3
-  }
+  },
+  "displayTone": "bad"
 }
 ```
 
@@ -115226,7 +115232,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   ],
   "fx": {
     "p": 3
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -116486,7 +116493,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   ],
   "fx": {
     "p": -2
-  }
+  },
+  "displayTone": "bad"
 }
 ```
 
@@ -129157,7 +129165,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   ],
   "fx": {
     "p": 2
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -131509,7 +131518,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
     "cash": 1600,
     "cr": 2,
     "p": 2
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -135869,7 +135879,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
     "cash": 1200,
     "cr": 2,
     "p": 2
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -135918,7 +135929,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "fx": {
     "h": -1,
     "p": 2
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -143135,7 +143147,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   ],
   "fx": {
     "p": 3
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -144472,7 +144485,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   ],
   "fx": {
     "p": -3
-  }
+  },
+  "displayTone": "bad"
 }
 ```
 
@@ -145047,7 +145061,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
     "cash": 1400,
     "cr": 2,
     "p": 2
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -145144,7 +145159,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "fx": {
     "h": 1,
     "p": 2
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -147640,7 +147656,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "fx": {
     "h": 2,
     "p": 1
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -152340,7 +152357,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   ],
   "fx": {
     "p": 2
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -152481,7 +152499,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
     "cash": -800,
     "h": 1,
     "p": 2
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -153724,7 +153743,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "fx": {
     "cash": -3000,
     "p": -2
-  }
+  },
+  "displayTone": "bad"
 }
 ```
 
@@ -158373,7 +158393,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   ],
   "fx": {
     "p": -3
-  }
+  },
+  "displayTone": "bad"
 }
 ```
 
@@ -158827,7 +158848,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "fx": {
     "p": 2,
     "k": 1
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -163893,7 +163915,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "fx": {
     "p": 3,
     "k": 1
-  }
+  },
+  "displayTone": "good"
 }
 ```
 
@@ -231636,7 +231659,8 @@ s => (s && (s.infected || (s.tags && s.tags.includes("感染者"))))
   ],
   "fx": {
     "p": -2
-  }
+  },
+  "displayTone": "bad"
 }
 ```
 
@@ -287454,7 +287478,8 @@ s => s.job > 0
     "dynamicFunction": "()=>false"
   },
   "fx": {},
-  "w": 1
+  "w": 1,
+  "displayTone": "bad"
 }
 ```
 
@@ -287505,7 +287530,8 @@ s => s.job > 0
     "dynamicFunction": "()=>false"
   },
   "fx": {},
-  "w": 1
+  "w": 1,
+  "displayTone": "bad"
 }
 ```
 
@@ -287556,7 +287582,8 @@ s => s.job > 0
     "dynamicFunction": "()=>false"
   },
   "fx": {},
-  "w": 1
+  "w": 1,
+  "displayTone": "bad"
 }
 ```
 
@@ -287607,7 +287634,8 @@ s => s.job > 0
     "dynamicFunction": "()=>false"
   },
   "fx": {},
-  "w": 1
+  "w": 1,
+  "displayTone": "bad"
 }
 ```
 
@@ -287658,7 +287686,8 @@ s => s.job > 0
     "dynamicFunction": "()=>false"
   },
   "fx": {},
-  "w": 1
+  "w": 1,
+  "displayTone": "bad"
 }
 ```
 
