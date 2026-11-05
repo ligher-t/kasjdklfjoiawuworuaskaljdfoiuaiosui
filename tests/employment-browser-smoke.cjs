@@ -9,15 +9,20 @@ const { pathToFileURL } = require('node:url');
 const root = path.resolve(__dirname, '..');
 const fixture = () => {
   document.addEventListener('DOMContentLoaded', () => {
+    let stage = 'startup', handlerError;
+    window.addEventListener('error', event => { handlerError = event.message; });
     const expect = (condition, message) => { if (!condition) throw Error(message); };
     const one = selector => {
       const element = document.querySelector(selector);
-      expect(element && !element.disabled && element.getClientRects().length, 'Unavailable: ' + selector);
+      expect(element && !element.disabled && element.getAttribute('aria-disabled') !== 'true' &&
+        element.getClientRects().length, 'Unavailable: ' + selector +
+        ' (exists=' + !!element + ', disabled=' + element?.disabled + ', rects=' + element?.getClientRects().length + ')');
       return element;
     };
     try {
       born({seed:20261105,by:1077,region:'クルビア'});
       S.age=24;S.year=S.by+S.age;S.mo=2;S.job=0;S.fl.sch=0;
+      S.educationDecision=null;S.educationPath=null;
       const area=occupationAreaSnapshot(S), world=S.world.occupationWorld;
       const siteId='browser-site', positionId='browser-position', openingId='browser-opening', employerId='browser-employer';
       world.employers[employerId]={employerId,organizationKey:null};
@@ -29,12 +34,16 @@ const fixture = () => {
       area.siteIds=[siteId];
       rd();
       openLifeLedger('work');
+      stage = 'inquire';
       expect(!document.querySelector('#employment-opening-0'),'Unknown offer must be hidden');
       const inquiry=one('#employment-inquire');
       inquiry.focus();
       inquiry.click();
       expect(document.activeElement.id==='employment-inquire','Inquiry must restore focus after re-render');
       expect(!currentPlayerEmployment(S),'Inquiry must leave employment unchanged');
+      expect(employmentKnownOpenings(S).some(row=>row.openingId===openingId && row.isCurrentArea),
+        'Inquiry must record the current opening');
+      stage = 'decline';
       one('#employment-opening-0').click();
       expect(document.activeElement.id==='mt' && S.ev?.id==='work_known_opening_review','Offer must open and focus its choice sheet');
       one('#mc button:nth-child(2)').click();
@@ -42,12 +51,14 @@ const fixture = () => {
       S.mo++;
       rd();
       openLifeLedger('work');
+      stage = 'accept';
       one('#employment-opening-0').click();
       one('#mc button:first-child').click();
       expect(!S.ev && currentPlayerEmployment(S)?.siteId===siteId && world.openings[openingId].slots===0,'Acceptance must start work and consume the vacancy');
       document.documentElement.dataset.employmentSmoke='passed';
     } catch (error) {
-      document.documentElement.dataset.employmentSmoke=error.message;
+      document.documentElement.dataset.employmentSmoke=stage + ': ' + error.message +
+        (handlerError ? ' / ' + handlerError : '');
     }
   });
 };
