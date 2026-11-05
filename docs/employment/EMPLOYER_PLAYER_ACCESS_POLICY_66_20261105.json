@@ -22,7 +22,8 @@
     "J0-82や既存イベントの直接job変更、汎用紹介、家族の雇用、自動初職、再就職、昇進、転属、ロード修復の全入口で同じ政策を呼ぶ。",
     "非雇用の単発業務はgig/contract協力として記録し、主職・継続給与・企業所属を発行しない。",
     "歴史保存や旧セーブの過去職歴を削除・遡及無効化しない。新規応募と再雇用だけを現行政策で評価。",
-    "採用禁止で空いた専用職業IDは削除せず互換番号として保全し、今後の入口と一般名称の転用を個別改修する。"
+    "採用禁止で空いた専用職業IDは削除せず互換番号として保全し、今後の入口と一般名称の転用を個別改修する。",
+    "非雇用の接触・単発契約も一律に自動可とはせず、独立した原文/イベント/年月の根拠を要する。HISTORICALは当該過去年代、SOURCE_HOLDは名前付き接触を史料確認まで保留。"
   ],
   "modeSummary": {
     "GENERAL": 17,
@@ -57,7 +58,8 @@
       ],
       "rationale": "職員の公募・任命と医療相談・協力を分け、実在配属先と職位を要求",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhodes_Island"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhodes_Island",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "blacksteel-worldwide",
@@ -82,7 +84,8 @@
       ],
       "rationale": "PMCの見習い・正規・特務を個別の採用・配属とする",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Blacksteel"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Blacksteel",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "rhine-lab",
@@ -107,7 +110,8 @@
       ],
       "rationale": "研究所・部門・実習・専任・主任の選抜を別々に扱う",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhine_Lab%3A_Access"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhine_Lab%3A_Access",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "karlan-trade",
@@ -132,7 +136,8 @@
       ],
       "rationale": "実際の支部・事業と時代を確認した限定採用経路のみ",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Karlan_Trade"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Karlan_Trade",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "lungmen-guard-department",
@@ -157,7 +162,8 @@
       ],
       "rationale": "公的任用と身元・職位・年限の根拠を要求",
       "originalRecruitmentRule": "public-appointment",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Lungmen"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Lungmen",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "penguin-logistics",
@@ -175,7 +181,8 @@
       ],
       "rationale": "固定的な固有メンバー中心の小組織として主人公の新規雇用を禁止",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Penguin_Logistics"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Penguin_Logistics",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "mountaindash-logistics",
@@ -200,7 +207,8 @@
       ],
       "rationale": "普通の輸送事業として実在拠点と募集枠が確認できる場合のみ",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/MountainDash_Logistics"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/MountainDash_Logistics",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "lee-detective-agency",
@@ -218,7 +226,8 @@
       ],
       "rationale": "少人数の固定的な私設事務所として主人公の新規雇用を禁止",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Lee%27s_Detective_Agency"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Lee%27s_Detective_Agency",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "kazimierz-arena",
@@ -243,7 +252,8 @@
       ],
       "rationale": "個別会場の警備・清掃・運営等は一般職として募集可能",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_Major"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_Major",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "kazimierz-general-chamber",
@@ -268,7 +278,8 @@
       ],
       "rationale": "連合会加入企業の社員と連合会本体の職員を分離",
       "originalRecruitmentRule": "chamber-staff-only-or-affiliate-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "kazimierz-corporate-knight-club",
@@ -293,7 +304,8 @@
       ],
       "rationale": "スポンサー・クラブ契約・競技資格を必要とする",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "mieszko-group",
@@ -318,7 +330,8 @@
       ],
       "rationale": "確認済み企業の実在部門と募集枠でのみ一般採用",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "rose-papers-union",
@@ -343,7 +356,8 @@
       ],
       "rationale": "確認済み事業所の通常労働と組織加入を分離",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "sloma-food-corporation",
@@ -368,7 +382,8 @@
       ],
       "rationale": "確認済み食品事業所の雇用のみ",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "ellen-select-technology",
@@ -393,7 +408,8 @@
       ],
       "rationale": "確認済み研究・製造事業所と募集職位のみ",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "gale-industries",
@@ -418,7 +434,8 @@
       ],
       "rationale": "確認済み製造事業所と募集職位のみ",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "kazimierz-armorless-union",
@@ -436,7 +453,8 @@
       ],
       "rationale": "秘匿された暗殺集団への一般的・正式な新規就職を禁止し接触・依頼のみ",
       "originalRecruitmentRule": "secret-organization-contact-only",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Armorless_Union"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Armorless_Union",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "rhein-sami-station",
@@ -461,7 +479,8 @@
       ],
       "rationale": "ライン生命からの実配属・転勤を要しサーミ全域募集を作らない",
       "originalRecruitmentRule": "organization-transfer-or-vetted-field-assignment",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhine_Lab%3A_Access"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhine_Lab%3A_Access",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "raythean-industries",
@@ -486,7 +505,8 @@
       ],
       "rationale": "製品流通先を支社と推定せず実在サイトの求人だけ",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Raythean"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Raythean",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "mama-johns",
@@ -511,7 +531,8 @@
       ],
       "rationale": "店舗・年代・募集の実在がある場合の通常店舗職のみ",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Mama_John%27s"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Mama_John%27s",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "maylander-foundation",
@@ -529,7 +550,8 @@
       ],
       "rationale": "秘密活動の協力と正式所属を区別し一般採用を禁止",
       "originalRecruitmentRule": "restricted-secret-organization",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Maylander_Foundation"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Maylander_Foundation",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "beachbrella",
@@ -554,7 +576,8 @@
       ],
       "rationale": "確認済み通常事業所と職位がある場合だけ",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Columbia/Branches"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Columbia/Branches",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "volvort-kochinski",
@@ -579,7 +602,8 @@
       ],
       "rationale": "確認済み工業等の実在サイトからのみ募集",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Columbia/Branches"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Columbia/Branches",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "haydn-pharmaceuticals",
@@ -604,7 +628,8 @@
       ],
       "rationale": "事件時点の研究施設の存否・アクセス・資格を要する",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhine_Lab%3A_Access"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhine_Lab%3A_Access",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "columbia-frontier-program",
@@ -629,7 +654,8 @@
       ],
       "rationale": "個別開拓キャンプの雇用と農場自営を分ける",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Columbia"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Columbia",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "laterano-notarial-hall",
@@ -654,7 +680,8 @@
       ],
       "rationale": "公的任用・任命権限と資格・現地部署が必要",
       "originalRecruitmentRule": "public-appointment",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "laterano-curia-sixth",
@@ -679,7 +706,8 @@
       ],
       "rationale": "裁判所の役職を特別任命扱いとし全国一般求人にしない",
       "originalRecruitmentRule": "public-appointment",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "laterano-cohors",
@@ -704,7 +732,8 @@
       ],
       "rationale": "軍務の正式配属・任期と雇用を区別",
       "originalRecruitmentRule": "organization-service",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "laterano-landen-monastery",
@@ -716,13 +745,14 @@
       "playerNewEmploymentAllowed": false,
       "playerCommunityRoleAllowed": false,
       "generalRandomVacancyEligible": false,
-      "contactOrOneOffAllowed": true,
+      "contactOrOneOffAllowed": false,
       "requiredGates": [
         "no-new-player-employment"
       ],
       "rationale": "個別固有名が未照合であり名前付き採用を保留",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview",
+      "nonEmploymentInteractionPolicy": "named-contact-held-until-source-verification"
     },
     {
       "organizationKey": "karlan-rail",
@@ -747,7 +777,8 @@
       ],
       "rationale": "鉄道供用開始・具体路線・実施工事業者の募集を条件とする",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kjerag"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kjerag",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "rmia",
@@ -765,7 +796,8 @@
       ],
       "rationale": "鉱業協会加盟と協会が直接雇用する職員を混同しない",
       "originalRecruitmentRule": "association-or-member-site",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Stationary_Security_Service/Missions/Former"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Stationary_Security_Service/Missions/Former",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "rim-billiton-mining-conglomerates",
@@ -790,7 +822,8 @@
       ],
       "rationale": "稼働鉱区・企業ごとの坑道・募集枠に限定",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Rim_Billiton"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rim_Billiton",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "siesta-city-council",
@@ -815,7 +848,8 @@
       ],
       "rationale": "市政職員の公的任用・時代と所在を条件とする",
       "originalRecruitmentRule": "public-appointment",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "siesta-volcanology-center",
@@ -840,7 +874,8 @@
       ],
       "rationale": "専門職位・観測施設の存続と資格を要求",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "siesta-hot-springs-hotel",
@@ -865,7 +900,8 @@
       ],
       "rationale": "営業中の実在ホテルでの一般雇用は成立し得る",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "mountaincomm-trade",
@@ -890,7 +926,8 @@
       ],
       "rationale": "子会社・独立の年代と日本語名称の照合まで限定採用",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "scwire-group",
@@ -915,7 +952,8 @@
       ],
       "rationale": "事業部・年代・地理と募集を確認し本社名だけで全支部を作らない",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Swire/Operator_Record"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Swire/Operator_Record",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "iberian-inquisition-and-coastal-sites",
@@ -940,7 +978,8 @@
       ],
       "rationale": "審問官等の任命と沿岸労働を別職位にする",
       "originalRecruitmentRule": "public-appointment",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Inquisition"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Inquisition",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "sargon-acahualla-community",
@@ -962,7 +1001,8 @@
       ],
       "rationale": "共同体内の認知・承認・役割として処理し企業求人を作らない",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Sargon/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Sargon/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "sargon-padishah-palace",
@@ -987,7 +1027,8 @@
       ],
       "rationale": "実在する宮廷・任命者・近衛役職と本人の接点を要求",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Sargon/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Sargon/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "sami-tribes",
@@ -1009,7 +1050,8 @@
       ],
       "rationale": "氏族奉仕・雪祀・北方哨戒は共同体役務と季節配分で管理",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Sami/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Sami/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "kazdel-military-commission",
@@ -1034,7 +1076,8 @@
       ],
       "rationale": "軍の正式任用・徴用・指揮系統・当該時代を確認",
       "originalRecruitmentRule": "organization-service-or-conscript-assignment",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazdel"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazdel",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "babel-historical",
@@ -1046,13 +1089,14 @@
       "playerNewEmploymentAllowed": false,
       "playerCommunityRoleAllowed": false,
       "generalRandomVacancyEligible": false,
-      "contactOrOneOffAllowed": true,
+      "contactOrOneOffAllowed": false,
       "requiredGates": [
         "no-new-player-employment"
       ],
       "rationale": "歴史上の組織で後年の現役求人を生成しない",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhodes_Island"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhodes_Island",
+      "nonEmploymentInteractionPolicy": "historical-scene-in-supported-era-only"
     },
     {
       "organizationKey": "higashi-household-retainers",
@@ -1077,7 +1121,8 @@
       ],
       "rationale": "家臣団への縁故・主従関係・任命と地域を要する",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Higashi/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Higashi/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "higashi-cyberninja-scenario",
@@ -1089,13 +1134,14 @@
       "playerNewEmploymentAllowed": false,
       "playerCommunityRoleAllowed": false,
       "generalRandomVacancyEligible": false,
-      "contactOrOneOffAllowed": true,
+      "contactOrOneOffAllowed": false,
       "requiredGates": [
         "no-new-player-employment"
       ],
       "rationale": "創作的な現行職名を史実の採用先として活性化しない",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": null
+      "sourceUrl": null,
+      "nonEmploymentInteractionPolicy": "named-contact-held-until-source-verification"
     },
     {
       "organizationKey": "higashi-touhou-heavy-scenario",
@@ -1107,13 +1153,14 @@
       "playerNewEmploymentAllowed": false,
       "playerCommunityRoleAllowed": false,
       "generalRandomVacancyEligible": false,
-      "contactOrOneOffAllowed": true,
+      "contactOrOneOffAllowed": false,
       "requiredGates": [
         "no-new-player-employment"
       ],
       "rationale": "固有企業名が未照合のため名前付き求人は保留",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": null
+      "sourceUrl": null,
+      "nonEmploymentInteractionPolicy": "named-contact-held-until-source-verification"
     },
     {
       "organizationKey": "higashi-religious-institution",
@@ -1138,7 +1185,8 @@
       ],
       "rationale": "実際の寺社・奉仕と師弟関係・役職を要する",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Higashi/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Higashi/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "ursus-imperial-forces",
@@ -1163,7 +1211,8 @@
       ],
       "rationale": "軍の徴募・軍属・強制配属を別入口で管理",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Ursus/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Ursus/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "ursus-science-academy-scenario",
@@ -1175,13 +1224,14 @@
       "playerNewEmploymentAllowed": false,
       "playerCommunityRoleAllowed": false,
       "generalRandomVacancyEligible": false,
-      "contactOrOneOffAllowed": true,
+      "contactOrOneOffAllowed": false,
       "requiredGates": [
         "no-new-player-employment"
       ],
       "rationale": "名称が未照合の専門研究機関として直接採用を保留",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": null
+      "sourceUrl": null,
+      "nonEmploymentInteractionPolicy": "named-contact-held-until-source-verification"
     },
     {
       "organizationKey": "victoria-military-authorities",
@@ -1206,7 +1256,8 @@
       ],
       "rationale": "正規軍・公爵軍・亡命部隊の所属と指揮権限を分離",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Victoria/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Victoria/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "victoria-legislative-administration",
@@ -1231,7 +1282,8 @@
       ],
       "rationale": "議会官職や行政の個別任命手続きが必要",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Victoria/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Victoria/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "victoria-rail-works",
@@ -1256,7 +1308,8 @@
       ],
       "rationale": "個別工廠・鉄道事業者の稼働求人と技能条件を確認",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Victoria/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Victoria/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "yan-civil-service",
@@ -1281,7 +1334,8 @@
       ],
       "rationale": "現実の官署・試験・選任・身分の証拠が必要",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Yan/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Yan/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "yan-supervisory-authority",
@@ -1293,13 +1347,14 @@
       "playerNewEmploymentAllowed": false,
       "playerCommunityRoleAllowed": false,
       "generalRandomVacancyEligible": false,
-      "contactOrOneOffAllowed": true,
+      "contactOrOneOffAllowed": false,
       "requiredGates": [
         "no-new-player-employment"
       ],
       "rationale": "異なる機関を一つに統合した職名のため固有採用を保留",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Yan/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Yan/Overview",
+      "nonEmploymentInteractionPolicy": "named-contact-held-until-source-verification"
     },
     {
       "organizationKey": "yan-tianshi-office",
@@ -1324,7 +1379,8 @@
       ],
       "rationale": "天師の修業・任用と所属する具体機関を要求",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Yan/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Yan/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "lungmen-underground-brokerage",
@@ -1342,7 +1398,8 @@
       ],
       "rationale": "非合法の仲介・依頼経路のみを扱い一社の恒久雇用を作らない",
       "originalRecruitmentRule": "contact-only",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Lungmen"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Lungmen",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "leithanien-court",
@@ -1367,7 +1424,8 @@
       ],
       "rationale": "選帝侯領・宮廷の任命と時期・個別の役職を要する",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Leithanien/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Leithanien/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "leithanien-legal-enforcement-scenario",
@@ -1379,13 +1437,14 @@
       "playerNewEmploymentAllowed": false,
       "playerCommunityRoleAllowed": false,
       "generalRandomVacancyEligible": false,
-      "contactOrOneOffAllowed": true,
+      "contactOrOneOffAllowed": false,
       "requiredGates": [
         "no-new-player-employment"
       ],
       "rationale": "名称と制度の史料照合まで固有採用を保留",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": null
+      "sourceUrl": null,
+      "nonEmploymentInteractionPolicy": "named-contact-held-until-source-verification"
     },
     {
       "organizationKey": "siracusa-family",
@@ -1403,7 +1462,8 @@
       ],
       "rationale": "特定のファミリーと関係を得る過程は社会所属・請負として扱う",
       "originalRecruitmentRule": "contact-only",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Siracusa/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siracusa/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "siracusa-volsinii-court",
@@ -1428,7 +1488,8 @@
       ],
       "rationale": "特定都市の裁判所・司法職の正式任用と時代が必要",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Siracusa/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siracusa/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "dossoles-police",
@@ -1453,7 +1514,8 @@
       ],
       "rationale": "特区警務への任命と勤務地点を要する",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Bol%C3%ADvar/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Bol%C3%ADvar/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "bolivar-faction-military",
@@ -1478,7 +1540,8 @@
       ],
       "rationale": "各派軍の兵役・拘束・契約を別の時系列で扱う",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Bol%C3%ADvar/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Bol%C3%ADvar/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "kazdel-craft-workshop",
@@ -1500,7 +1563,8 @@
       ],
       "rationale": "工房の見習い・家業・自営は資源と共同体関係を根拠にする",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazdel/Overview"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazdel/Overview",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "kjerag-monastery",
@@ -1525,7 +1589,8 @@
       ],
       "rationale": "宗教機関の修行・護衛任命と山岳拠点へのアクセスが必要",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Kjerag"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kjerag",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "minos-hero-temple-arena",
@@ -1550,7 +1615,8 @@
       ],
       "rationale": "競技・神殿奉仕の個別承認と現場・年代を要求",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Minos"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Minos",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     },
     {
       "organizationKey": "minos-civic-court",
@@ -1575,7 +1641,8 @@
       ],
       "rationale": "市民集会への参加資格と職務上の任用・報酬を分離",
       "originalRecruitmentRule": "verified-site-and-individual-position",
-      "sourceUrl": "https://arknights.wiki.gg/wiki/Minos"
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Minos",
+      "nonEmploymentInteractionPolicy": "only-when-independent-story-or-gig-evidence-exists"
     }
   ]
 }
