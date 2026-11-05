@@ -216,4 +216,28 @@ assert.deepEqual(run(`S.res=REG.find(r=>r.n==='イベリア');S.age=79;S.h=13;
  return {weak,able,inland,coastal,once:coast.once};`),
  {weak:false,able:true,inland:false,coastal:true,once:true});
 
+fresh();
+assert.deepEqual(run(`S.age=32;mortalityState(S).crisis={status:'active',years:3,lastDecisionYear:null,
+ consultCount:0,supportedUntilYear:null};
+ const initial=EV.find(e=>e.id==='life_mental_crisis_support'),
+   recurrence=EV.find(e=>e.id==='life_mental_crisis_recurrence');
+ const first={initial:initial.show(S),recurrence:recurrence.show(S),priority:initial.pri===true,
+   recurrencePriority:recurrence.pri===true};
+ S.mortality.crisis.consultCount=1;S.mortality.crisis.lastAction='rest';
+ const later={initial:initial.show(S),recurrence:recurrence.show(S)};
+ return {first,later};`),{
+ first:{initial:true,recurrence:false,priority:true,recurrencePriority:false},
+ later:{initial:false,recurrence:true}
+});
+
+fresh();
+assert.deepEqual(run(`S.res=REG.find(r=>r.n==='イベリア');S.age=30;S.priceIndex=1.4;
+ const discovery=EV.find(e=>e.id==='choice_iberia_09'),
+   follow=EV.find(e=>e.id==='choice_iberia_telescope_observation_followup');
+ const before=(S.cash||0)+(S.house?.cash||0);ap(discovery.c[0].o[0][2]);
+ const after=(S.cash||0)+(S.house?.cash||0);
+ return {once:discovery.once,repaired:S.fl.iberia_telescope_repaired,
+   paid:Math.round((before-after)*10)/10,followShown:follow.show(S)};`),
+ {once:true,repaired:1,paid:28000,followShown:true});
+
 console.log('PASS advanced settings, preserved priority slots, native automatic admission and life-specific resume');
