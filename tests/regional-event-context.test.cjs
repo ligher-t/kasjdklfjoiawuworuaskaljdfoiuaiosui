@@ -93,7 +93,10 @@ for (const id of personalGunScenes)
 run(`S.r=RACE.find(x=>x.n==='リーベリ');`);
 for (const id of personalGunScenes)
   assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), false, id+' does not give a non-Sankta their own guardian gun');
-assert.equal(run(`ok(EV.find(e=>e.id==='choice_laterano_10').c[0].en,S,tags(S))`), false,'celebration shooting also requires the actual gun route');
+const lateranoLocalGathering = plain(`return EV.find(e=>e.id==='choice_laterano_10');`);
+assert.equal(lateranoLocalGathering.c[0].l, '屋台の配膳を手伝う');
+assert.doesNotMatch(JSON.stringify(lateranoLocalGathering), /祝砲|守護銃で空へ撃つ/,
+  'the rewritten local gathering no longer invents a personal-gun celebration route');
 
 const prose = plain(`
   return ['choice_columbia_10','daily_columbia_40','choice_higashi_10','choice_victoria_10']
