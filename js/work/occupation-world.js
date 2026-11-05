@@ -289,9 +289,12 @@ const OCCUPATION_REGION_TIERS = Object.freeze({
   ]
 });
 const OCCUPATION_TIER_PROBABILITIES = Object.freeze([0.04, 0.20, 0.55, 0.85]);
-const OCCUPATION_SECTOR_PRIMARY_JOBS = Object.freeze({
-  AGR: 1, MIN: 3, MFG: 2, LOG: 16, COM: 17, CIV: 21, MIL: 14,
-  MED: 20, EDU: 12, SCI: 7, CRE: 13, REL: 9, REC: 17
+// Only ordinary recruitment roles. Military, clergy, and registered professions
+// require their own appointment/qualification route; their sectors can still exist.
+const OCCUPATION_SECTOR_GENERAL_JOBS = Object.freeze({
+  AGR: [1, 23], MIN: [3], MFG: [2, 18, 22], LOG: [16, 1],
+  COM: [17, 21], CIV: [19, 21], MIL: [],
+  MED: [20], EDU: [12], SCI: [7], CRE: [25], REL: [], REC: [17, 25]
 });
 
 function occupationWorkAreaKey(s) {
@@ -355,36 +358,42 @@ function ensureOccupationWorkArea(s) {
     // The existence of a sector/site does not guarantee a job or a vacant slot.
     const employerId = "local-operator:" + areaId + ":" + sector,
       siteId = "local-site:" + areaId + ":" + sector,
-      positionId = "local-position:" + areaId + ":" + sector,
-      openingId = "local-opening:" + areaId + ":" + sector + ":" + s.year;
-    const capacity = 2 + Math.floor(keyedRoll(siteId + ":capacity") * 10),
-      occupied = Math.floor(keyedRoll(siteId + ":occupied") * (capacity + 1)),
-      vacant = Math.max(0, capacity - occupied),
-      advertised = vacant > 0 && keyedRoll(siteId + ":recruitment") < 0.45;
+      roles = OCCUPATION_SECTOR_GENERAL_JOBS[sector],
+      capacity = 3 + Math.floor(keyedRoll(siteId + ":capacity") * 10);
     occupationWorld.employers[employerId] = {
       employerId, organizationKey: null, areaId, sector, kind: "anonymous-operator",
       basis: "game-model"
     };
-    occupationWorld.sites[siteId] = {
+    const site = occupationWorld.sites[siteId] = {
       siteId, employerId, areaId, sector, status: "open", createdYear: s.year,
-      lastYear: s.year, history: [],
-      positionIds: [positionId], capacityBand: capacity < 5 ? "micro" : "small",
+      lastYear: s.year, history: [], positionIds: [],
+      capacityBand: capacity < 6 ? "micro" : "small",
       basis: "game-model"
     };
-    occupationWorld.positions[positionId] = {
-      positionId, siteId, sector, jobId: OCCUPATION_SECTOR_PRIMARY_JOBS[sector],
-      capacity, aggregateOccupiedSlots: occupied,
-      identifiedOccupiedSlots: 0, reservedSlots: 0, vacancyCount: vacant,
-      openingIds: advertised ? [openingId] : [],
-      basis: "game-model"
-    };
-    if (advertised) occupationWorld.openings[openingId] = {
-      openingId, positionId, employerId, siteId, areaId,
-      kind: "general-public", validFromYear: s.year,
-      status: "open", slots: Math.min(2, vacant), basis: "game-model",
-      // This is a world fact. The person must separately learn it before applying.
-      visibleToPlayer: false
-    };
+    for (let roleIndex = 0; roleIndex < roles.length; roleIndex++) {
+      const jobId = roles[roleIndex],
+        positionId = "local-position:" + areaId + ":" + sector + ":j" + jobId,
+        openingId = "local-opening:" + areaId + ":" + sector + ":j" + jobId + ":" + s.year,
+        roleCapacity = Math.floor(capacity / roles.length) +
+          (roleIndex < capacity % roles.length ? 1 : 0),
+        occupied = Math.floor(keyedRoll(positionId + ":occupied") * (roleCapacity + 1)),
+        vacant = roleCapacity - occupied,
+        advertised = vacant > 0 && keyedRoll(openingId + ":recruitment") < 0.45;
+      site.positionIds.push(positionId);
+      occupationWorld.positions[positionId] = {
+        positionId, siteId, sector, jobId, capacity: roleCapacity,
+        aggregateOccupiedSlots: occupied, identifiedOccupiedSlots: 0,
+        reservedSlots: 0, vacancyCount: vacant,
+        openingIds: advertised ? [openingId] : [], basis: "game-model"
+      };
+      if (advertised) occupationWorld.openings[openingId] = {
+        openingId, positionId, employerId, siteId, areaId,
+        kind: "general-public", validFromYear: s.year,
+        status: "open", slots: Math.min(2, vacant), basis: "game-model",
+        // A world's vacancy must be learned by this person before applying.
+        visibleToPlayer: false
+      };
+    }
     area.siteIds.push(siteId);
   }
   occupationWorld.areas[areaId] = area;
@@ -404,8 +413,6 @@ function advanceOccupationWorkArea(s, year, metrics) {
   for (const siteId of area.siteIds) {
     const site = work.sites[siteId];
     if (!site || (site.lastYear ?? site.createdYear) >= year) continue;
-    const position = work.positions[site.positionIds[0]];
-    if (!position) continue;
     // Temporary limitations affect the ability to advertise new vacancies.
     const nextStatus = jobAccess < 0.40 ? "strained" : "open";
     if (nextStatus !== site.status) {
@@ -416,37 +423,41 @@ function advanceOccupationWorkArea(s, year, metrics) {
     }
     site.status = nextStatus;
     site.lastYear = year;
-    for (const id of position.openingIds || []) {
-      const prior = work.openings[id];
-      if (!prior || prior.status !== "open") continue;
-      prior.status = "expired";
-      prior.validToYear = year - 1;
+    for (const positionId of site.positionIds) {
+      const position = work.positions[positionId];
+      if (!position) continue;
+      for (const id of position.openingIds || []) {
+        const prior = work.openings[id];
+        if (!prior || prior.status !== "open") continue;
+        prior.status = "expired";
+        prior.validToYear = year - 1;
+      }
+      position.openingIds = [];
+      position.vacancyCount = Math.max(0,
+        position.capacity - position.aggregateOccupiedSlots -
+        position.identifiedOccupiedSlots - position.reservedSlots);
+      if (site.status !== "open" || position.vacancyCount === 0) continue;
+      const openingId = positionId.replace("local-position:", "local-opening:") + ":" + year;
+      if (keyedRoll(openingId + ":recruitment") >= 0.45) continue;
+      work.openings[openingId] = {
+        openingId, positionId, employerId: site.employerId,
+        siteId, areaId: area.areaId, kind: "general-public",
+        validFromYear: year, status: "open",
+        slots: Math.min(2, position.vacancyCount),
+        basis: "game-model", visibleToPlayer: false
+      };
+      position.openingIds.push(openingId);
     }
-    position.openingIds = [];
-    position.vacancyCount = Math.max(0,
-      position.capacity - position.aggregateOccupiedSlots -
-      position.identifiedOccupiedSlots - position.reservedSlots);
-    if (site.status !== "open" || position.vacancyCount === 0) continue;
-    const openingId = "local-opening:" + area.areaId + ":" + site.sector + ":" + year;
-    if (keyedRoll(openingId + ":recruitment") >= 0.45) continue;
-    work.openings[openingId] = {
-      openingId, positionId: position.positionId, employerId: site.employerId,
-      siteId, areaId: area.areaId, kind: "general-public",
-      validFromYear: year, status: "open",
-      slots: Math.min(2, position.vacancyCount),
-      basis: "game-model", visibleToPlayer: false
-    };
-    position.openingIds.push(openingId);
   }
   return area;
 }
 
 // Read-only candidate lookup. Seeking work never causes the world to generate a vacancy.
-function occupationOpeningFor(s, jobId) {
+function occupationOpeningsFor(s, jobId) {
   if (!Number.isInteger(jobId) || jobId <= 0 || s?.fl?.retired ||
-      s?.fl?.detained || s?.fl?.segregated || s?.age < 16) return null;
+      s?.fl?.detained || s?.fl?.segregated || s?.age < 16) return [];
   const areaId = occupationWorkAreaKey(s), work = s.world?.occupationWorld;
-  if (!areaId || !work?.areas?.[areaId]) return null;
+  if (!areaId || !work?.areas?.[areaId]) return [];
   return Object.values(work.openings).filter(row => {
     const site = work.sites[row.siteId], position = work.positions[row.positionId];
     return row.areaId === areaId && row.status === "open" && row.slots > 0 &&
@@ -456,7 +467,10 @@ function occupationOpeningFor(s, jobId) {
       site.employerId === row.employerId &&
       position?.siteId === site.siteId && position.jobId === jobId &&
       position.vacancyCount > 0;
-  }).sort((a,b)=>a.openingId.localeCompare(b.openingId))[0] || null;
+  }).sort((a,b)=>a.openingId.localeCompare(b.openingId));
+}
+function occupationOpeningFor(s, jobId) {
+  return occupationOpeningsFor(s, jobId)[0] || null;
 }
 
 function occupationAreaSnapshot(s) {
