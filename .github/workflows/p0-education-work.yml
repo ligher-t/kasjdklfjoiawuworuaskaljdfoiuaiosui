@@ -32,6 +32,8 @@ jobs:
         run: node tools/check-efficient.cjs run v87_household_accounting.js
       - name: Catalog validation and rejected condition keys
         run: node tools/check-efficient.cjs run audit-diagnostics.test.cjs
+      - name: Player prose warning candidates
+        run: node tools/check-player-prose-warnings.cjs
       - name: Regional conditions, text and actual spending
         run: node tools/check-efficient.cjs run regional-event-context.test.cjs
       - name: Rhodes residence, departure and real event dispatch
