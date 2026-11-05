@@ -31,7 +31,18 @@ const rows=vm.runInNewContext(String.raw`(()=>{
      status:'open',slots:1,validFromYear:transport.year};
  }
  const transportOffer=follow.c[1].show(transport);
- apply(follow.id,1);
+ const beforeTransport=assessEmploymentChoice(transport,16);
+ try { apply(follow.id,1); }
+ catch (error) {
+   const afterTransport=assessEmploymentChoice(transport,16);
+   throw Error('transport eligibility diagnostics: '+JSON.stringify({
+     offered:transportOffer,before:beforeTransport.canStart,
+     reason:beforeTransport.reasonCode,after:afterTransport.canStart,
+     afterward:afterTransport.reasonCode,job:transport.job,
+     travel:travelPresence(transport).mode,
+     localId:occupationWorkAreaKey(transport)
+   })+'; '+error.message);
+ }
  const moved={job:transport.job,goal:transport.lifeRecord.goals.find(row=>row.id==='sargon-market-guard-work')?.status,
    basis:transport.workContract?.basis,episodeId:transport.employmentState?.activeEpisodeId,
    audit:auditLifeState(transport)};
