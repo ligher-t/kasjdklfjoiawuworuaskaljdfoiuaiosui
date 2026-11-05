@@ -217,6 +217,22 @@ assert.deepEqual(run(`S.res=REG.find(r=>r.n==='イベリア');S.age=79;S.h=13;
  {weak:false,able:true,inland:false,coastal:true,once:true});
 
 fresh();
+assert.deepEqual(run(`S.res=REG.find(r=>r.n==='イベリア');S.local={...S.local,kind:'小規模な定住地'};S.h=20;
+ const shadow=EV.find(e=>e.id==='daily_iberia_36'),salt=EV.find(e=>e.id==='daily_iberia_37'),
+ music=EV.find(e=>e.id==='daily_iberia_04'),glass=EV.find(e=>e.id==='daily_iberia_06'),
+ wall=EV.find(e=>e.id==='daily_iberia_59'),lights=EV.find(e=>e.id==='daily_iberia_60');
+ const inland={shadow:shadow.show?.(S)??true,wall:wall.show?.(S)??true,lights:lights.show?.(S)??true};
+ const weak=salt.show?.(S)??true;S.h=30;const fit=salt.show?.(S)??true;
+ S.local={...S.local,kind:'漁村・沿岸集落'};
+ const coast={shadow:shadow.show?.(S)??true,wall:wall.show?.(S)??true,lights:lights.show?.(S)??true};
+ return {inland,weak,fit,coast,shadowOnce:shadow.once===true,saltStages:salt.st,
+   musicCd:music.cd,glassCd:glass.cd};`),{
+ inland:{shadow:false,wall:false,lights:false},weak:false,fit:true,
+ coast:{shadow:true,wall:true,lights:true},shadowOnce:true,
+ saltStages:['青年','壮年'],musicCd:4,glassCd:4
+});
+
+fresh();
 assert.deepEqual(run(`S.age=32;mortalityState(S).crisis={status:'active',years:3,lastDecisionYear:null,
  consultCount:0,supportedUntilYear:null};
  const initial=EV.find(e=>e.id==='life_mental_crisis_support'),
