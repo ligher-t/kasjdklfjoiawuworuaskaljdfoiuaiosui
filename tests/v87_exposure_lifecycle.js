@@ -3,11 +3,13 @@ const assert = require('node:assert/strict'),
   path = require('node:path'),
   vm = require('node:vm'),
   root = path.resolve(__dirname, '..'),
-  { context, setup } = require('./support/annual-cases.cjs');
+  { context, setup } = require('./support/annual-cases.cjs'),
+  { installGeneralEmploymentFixture } = require('./support/general-employment-fixture.cjs');
 
 function fresh(id, region, age = 32) {
   const { ctx } = context(root);
   setup(ctx, { id, seed: 905121, region, age });
+  installGeneralEmploymentFixture(ctx);
   return ctx;
 }
 
@@ -451,8 +453,9 @@ console.log('PASS scheduled followups, real elapsed text, target identity and di
 // Short stateful regressions: resolve actual choices, then inspect specific future slots.
 {
   const ctx=fresh('repeat-review-context','ヴィクトリア');
+  ctx.startGeneralEmploymentFixture(2,'repeat-review-context');
   const r=vm.runInContext(`(()=>{
-    S.job=2;S.cash=10000000;reconcileWorkContract(S);
+    S.cash=10000000;
     const e=EV.find(x=>x.id==='v77_written_application');
     const untouched=!S.eventReviews;
     DEBUG_RANDOM=()=>0.999;fire(e,S,tags(S));DEBUG_RANDOM=null;
@@ -523,8 +526,9 @@ console.log('PASS scheduled followups, real elapsed text, target identity and di
 }
 {
   const ctx=fresh('scoped-institutional-knowledge','ウルサス');
+  ctx.startGeneralEmploymentFixture(2,'scoped-institutional-knowledge');
   const r=vm.runInContext(`(()=>{
-    S.inf=1;S.fl.dg=1;S.job=2;reconcileWorkContract(S);
+    S.inf=1;S.fl.dg=1;
     const sweep=EV.find(e=>e.id==='urs_sweep');
     const add=(audience,more={})=>recordInfectionAwareness(S,{subject:'protagonist',audience,
       certainty:'confirmed',source:'self-disclosure',consent:'voluntary',...more});

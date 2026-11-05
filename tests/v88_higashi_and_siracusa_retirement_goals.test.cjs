@@ -1,7 +1,9 @@
 'use strict';
 const assert=require('node:assert/strict'),path=require('node:path'),vm=require('node:vm');
 const {context}=require('./support/annual-cases.cjs');
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
 const {ctx}=context(path.resolve(__dirname,'..'));
+installEmploymentAppointmentFixture(ctx);
 const inspect=code=>JSON.parse(vm.runInContext('JSON.stringify((()=>{'+code+'})())',ctx,{timeout:30000}));
 const endings=[
   {event:'hig_service_review',choice:1,outcome:0,job:16,newGoal:'transporter-work'},
@@ -14,14 +16,11 @@ for(let i=0;i<endings.length;i++){
   ctx.CASE=endings[i];ctx.SEED=i;
   const result=inspect(`
     born({seed:209300+SEED,by:1058,region:'極東'});
-    S.year=1092;S.age=34;S.job=14;S.fl.higashi_service=1;
-    ap({lifeAffiliation:{id:'higashi-service',title:'極東の軍務・兵站職',kind:'career',
-        action:'join',role:'街道警備と物資の受け渡し'},
-        lifeGoal:{id:'higashi-service',
-          title:'軍務を通じて生活を支え、地域の安全に関わる',action:'start'}});
+    S.year=1092;S.age=34;applyEmploymentAppointmentFixture('hig_tension',14,'higashi-service',0,0);
     S.sn.hig_tension=1092;S.year=1111;S.age=53;
     const event=EV.find(e=>e.id===CASE.event),
       before=elig(event,S,tags(S));
+    if(CASE.job===16)prepareEmploymentAppointmentFixture(CASE.event,16,'terra-general-transporter');
     ap(event.c[CASE.choice].o[CASE.outcome][2]);
     const affiliation=S.lifeRecord.affiliations.find(a=>a.id==='higashi-service'),
       goal=S.lifeRecord.goals.find(g=>g.id==='higashi-service');
@@ -43,11 +42,8 @@ for(let i=0;i<endings.length;i++){
 }
 const older=inspect(`
   born({seed:209401,by:1030,region:'シラクーザ'});
-  S.year=1094;S.age=64;S.job=16;
-  ap({lifeAffiliation:{id:'siracusa-post-family-work',title:'シラクーザのファミリー離脱後の地域就労',
-        kind:'occupation',action:'join',role:'配達'},
-      lifeGoal:{id:'siracusa-post-family-work',
-        title:'ファミリーを離れ、地域の仕事で生計を立てる',action:'start'}});
+  S.year=1094;S.age=64;
+  applyEmploymentAppointmentFixture('sir_family_afterwork',16,'siracusa-post-family-work',0,0);
   const event=EV.find(e=>e.id==='sir_family_later_work'),
     before=elig(event,S,tags(S));
   ap(event.c[2].o[0][2]);
@@ -68,14 +64,9 @@ for(let i=0;i<2;i++){
   ctx.MODE=i;
   const boundary=inspect(`
     born({seed:209500+MODE,by:1059,region:'極東'});
-    S.year=1090;S.age=31;S.job=14;S.fl.higashi_service=1;
-    ap({lifeAffiliation:{id:'higashi-service',title:'極東の軍務・兵站職',
-      kind:'career',action:'join',role:'街道警備'}});
-    if(MODE===0){
-      ap({lifeGoal:{id:'higashi-service',
-        title:'軍務を通じて生活を支え、地域の安全に関わる',action:'start'}});
-      ap({lifeGoal:{id:'higashi-service',action:'pause'}});
-    }
+    S.year=1090;S.age=31;applyEmploymentAppointmentFixture('hig_tension',14,'higashi-service',0,0);
+    if(MODE===0)ap({lifeGoal:{id:'higashi-service',action:'pause'}});
+    else S.lifeRecord.goals=S.lifeRecord.goals.filter(row=>row.id!=='higashi-service');
     S.year=1101;S.age=42;
     ap(EV.find(e=>e.id==='hig_service_review').c[2].o[0][2]);
     const goal=S.lifeRecord.goals.find(g=>g.id==='higashi-service');

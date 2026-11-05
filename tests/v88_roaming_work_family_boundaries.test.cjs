@@ -7,8 +7,23 @@ const {ctx} = context(path.resolve(__dirname,'..'));
 function scenarios() {
   born({seed:110401,by:1062,region:"クルビア"});
   const s=S;
-  s.year=1094;s.age=32;s.mo=3;s.job=2;
+  s.year=1094;s.age=32;s.mo=3;s.job=0;s.k=50;
+  s.socialLearning||={};s.socialLearning.literacy=60;
+  const area=occupationAreaSnapshot(s),work=s.world.occupationWorld,
+    employerId="roaming-work-employer",siteId="roaming-work-site",
+    positionId="roaming-work-position",openingId="roaming-work-opening";
+  work.employers[employerId]={employerId,organizationKey:null,kind:"anonymous-operator"};
+  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:"open",sector:"MFG",positionIds:[positionId]};
+  work.positions[positionId]={positionId,siteId,jobId:2,capacity:1,aggregateOccupiedSlots:0,
+    identifiedOccupiedSlots:0,reservedSlots:0,vacancyCount:1,openingIds:[openingId]};
+  work.openings[openingId]={openingId,employerId,siteId,positionId,areaId:area.areaId,
+    kind:"general-public",status:"open",slots:1,validFromYear:s.year};
+  area.siteIds.push(siteId);
+  const hiring=employmentEffectAssessment(s,{job:2},null);
+  if(!hiring.canStart)throw Error("general opening fixture rejected: "+hiring.reasonCode);
+  ap({employmentAction:{action:"accept-local-opening",jobId:2,openingId}});
   s.residenceArrangement="independent";s.fl.household_separated=1;s.cash=30000000;
+  const noTravel=JSON.parse(JSON.stringify(s));
   const site=activeFacility(s,"workplace");
   const contractBefore=reconcileWorkContract(s);
   const destination=(MIGRATION_ROUTES[s.res.n]||[]).find(x=>
@@ -23,12 +38,14 @@ function scenarios() {
   const share=travelHomeWorkIncomeShare(s,1094);
   const noFutureAbsence=travelHomeWorkIncomeShare(s,1095);
   const returnContract=reconcileWorkContract(s);
-  const saved=JSON.parse(JSON.stringify(s.travelState));
+  settleEmploymentThrough(s,1094,12);
+  const travelPayroll=employmentPaidForYear(s,1094);
+  settleEmploymentThrough(noTravel,1094,12);
+  const fullPresencePayroll=employmentPaidForYear(noTravel,1094);
   s.year=1095;s.age=33;s.mo=0;
   const annualWithTravel=prepareAnnualPersonalBudget(s,ANNUAL_SERVICES,s.age,s.t,0).inc;
-  s.travelState=null;
-  const annualAllHome=prepareAnnualPersonalBudget(s,ANNUAL_SERVICES,s.age,s.t,0).inc;
-  s.travelState=saved;
+  noTravel.year=1095;noTravel.age=33;noTravel.mo=0;
+  const annualAllHome=prepareAnnualPersonalBudget(noTravel,ANNUAL_SERVICES,noTravel.age,noTravel.t,0).inc;
 
   born({seed:110402,by:1062,region:"クルビア"});
   const f=S;f.year=1094;f.age=32;f.mo=6;f.cash=30000000;
@@ -63,7 +80,8 @@ function scenarios() {
   }
   return {site:site?.id||null,contractBefore:contractBefore?.siteId||null,
     contractDuring:contractDuring?.siteId||null,returnContract:returnContract?.siteId||null,
-    share,noFutureAbsence,annualWithTravel,annualAllHome,workAudit:auditTravelState(s),
+    share,noFutureAbsence,travelPayroll,fullPresencePayroll,
+    annualWithTravel,annualAllHome,workAudit:auditTravelState(s),
     noCaretaker,noUnapprovedJourney,spousePresent,
     status:agreement?.status||null,
     repeatSame:agreement===repeat,requiresAgreement,
@@ -75,6 +93,8 @@ function scenarios() {
 const r=JSON.parse(vm.runInContext('JSON.stringify(('+scenarios.toString()+')())',ctx,{timeout:30000}));
 assert.equal(r.share,9/12,'absence from March through May is three months');
 assert.equal(r.noFutureAbsence,1);
+assert(r.travelPayroll<r.fullPresencePayroll,
+  `travel months do not accrue home-bound wages (${r.travelPayroll} vs ${r.fullPresencePayroll})`);
 assert(r.annualWithTravel<r.annualAllHome,'home-bound wage component is reduced');
 assert.deepEqual(r.workAudit,[]);
 assert.equal(r.contractDuring,r.contractBefore,'temporary travel must retain current job contract');

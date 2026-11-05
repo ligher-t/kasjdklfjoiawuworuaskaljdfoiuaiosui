@@ -1057,7 +1057,8 @@ window.TERRA_DATA_BUILD.run("base/regional-east", function ($terraData, $define,
       c: [
         $terraData.K(
           "軍務・兵站の職に志願する",
-          { show: { ban: ["健康不良"] } },
+          { show: s => !tags(s).has("健康不良") &&
+            employmentEffectAssessment(s, { job: 14, lifeAffiliation: { id: "higashi-service", action: "join" } }, "hig_tension").canStart },
           [
             0.6,
             "陣屋の選考を通過し、兵站と街道警備の職に就いた。荷駄の検め方や関所の立ち番を覚え、北や南から物々しい早馬が届くたびに、いくさの影が自分の背中にも張りついているのを感じた。",
@@ -1148,7 +1149,9 @@ window.TERRA_DATA_BUILD.run("base/regional-east", function ($terraData, $define,
             p: -2
           }
         ]),
-        $terraData.K("民間のトランスポーターへ転じる", {}, [
+        $terraData.K("民間のトランスポーターへ転じる", {
+          show: s => employmentEffectAssessment(s, { job: 16, lifeAffiliation: { id: "terra-general-transporter", action: "join" } }, "hig_service_review").canStart
+        }, [
           1,
           "任期の区切りで陣屋を退き、街のトランスポーターとして荷や書状を運ぶ仕事に就いた。実入りは少し減ったが、兵站で叩き込まれた荷崩れしない縄掛けや街道の抜け道がそのまま役に立った。",
           {
@@ -1265,7 +1268,9 @@ window.TERRA_DATA_BUILD.run("base/regional-east", function ($terraData, $define,
         ]),
         $terraData.K(
           "任期を終え、民間のトランスポーターへ転じる",
-          {},
+          {
+            show: s => employmentEffectAssessment(s, { job: 16, lifeAffiliation: { id: "terra-general-transporter", action: "join" } }, "hig_service_later_career_review").canStart
+          },
           [
             0.55,
             "長年の務めに区切りをつけて陣屋を退き、地域の運送屋にトランスポーターとして迎えられた。街道の難所や天候の読みなど、兵站で培った勘所が新しい職場でも重宝された。",

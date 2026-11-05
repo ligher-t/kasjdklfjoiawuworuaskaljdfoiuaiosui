@@ -698,7 +698,8 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
       c: [
         $terraData.K(
           "工場の選考に応募してみる",
-          {},
+          { show: s => employmentEffectAssessment(s, { job: 2,
+            lifeAffiliation: { id: "ursus-zelgrad-factory", action: "join" } }, "life_ursus_zelgrad_recruitment").canStart },
           [
             0.42,
             "紹介を頼りに選考へ進み、移動都市ゼルグラードの工場補助職に採用された。仕事場へ通うため労働区画の狭い部屋へ荷物を運び込み、油と鉄の匂いがこもる現場で不慣れな作業を覚え始めた。",
@@ -861,7 +862,8 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
     c: [
       $terraData.K(
         "紹介を頼りに、今度こそ選考を受ける",
-        {},
+        { show: s => employmentEffectAssessment(s, { job: 2,
+          lifeAffiliation: { id: "ursus-zelgrad-factory", action: "join" } }, "life_ursus_zelgrad_recruitment_review").canStart },
         [
           0.42,
           "親戚に採用係へのつなぎを取ってもらって応募し、無事に採用が決まった。ゼルグラードの労働区画へ荷物を運び込み、機械の熱気と騒音のなかで作業の手順を覚え始めた。",
@@ -1373,7 +1375,8 @@ window.TERRA_DATA_BUILD.run("relationships/close-disclosure", function ($terraDa
       c: [
         $terraData.K(
           "修理工房を訪ね、工場で培った経験を話して雇ってもらえないか頼む",
-          {},
+          { show: s => employmentEffectAssessment(s, { job: 2,
+            lifeAffiliation: { id: "ursus-displaced-repair-workshop", action: "join" } }, "life_ursus_zelgrad_displaced_work").canStart },
           [
             0.38,
             "工場で扱っていた部品や検品のやり方を実演してみせると、親方がうなずいて補助職として雇ってくれた。油の染みた作業台で、部品の仕分けから新しい仕事が始まった。",

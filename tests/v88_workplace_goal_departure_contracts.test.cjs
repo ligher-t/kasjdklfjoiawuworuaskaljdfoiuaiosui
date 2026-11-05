@@ -129,8 +129,8 @@ for(let i=0;i<regionalPlacements.length;i++){
      if(!dest)throw Error('No cross-region route for '+TARGET.region);
      ap({resTo:dest.n,resFareCovered:true});
    }else if(MODE==='change-job'){
-     provisionGeneralOpening(19,'transition-destination:'+TARGET.job);
-     ap({job:19});
+     const openingId=provisionGeneralOpening(19,'transition-destination:'+TARGET.job);
+     ap({employmentAction:{action:'accept-local-opening',jobId:19,openingId}});
    }
    else if(MODE==='retire')ap({fl:{retired:1}});
    const a=S.lifeRecord.affiliations.find(x=>x.id===TARGET.aff),

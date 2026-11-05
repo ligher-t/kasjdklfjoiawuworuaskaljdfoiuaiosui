@@ -2,14 +2,18 @@
 const assert=require('node:assert/strict');
 const path=require('node:path'),vm=require('node:vm');
 const annual=require('./support/annual-cases.cjs');
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
+const {installGeneralEmploymentFixture}=require('./support/general-employment-fixture.cjs');
 const root=path.resolve(__dirname,'..');
 const {ctx}=annual.context(root);
+installEmploymentAppointmentFixture(ctx);installGeneralEmploymentFixture(ctx);
 annual.setup(ctx,{id:'p0-education-service',seed:948101,region:'ヴィクトリア',age:8});
 function inspect(age,region,id){
   ctx.__scenario={age,region,id};
   return vm.runInContext(`(()=>{
     const {age,region,id}=__scenario;
     S.age=age;S.year=S.by+age;S.res=REG.find(r=>r.n===region);
+    if(id==='car'&&age===18&&region==='ヴィクトリア')prepareEmploymentAppointmentFixture('car',14,'military-service-entry');
     const scene=EV.find(e=>e.id===id),tagsNow=tags(S);
     return {eligible:elig(scene,S,tagsNow),shown:scene.c.map(c=>({label:c.l,visible:ok(c.show,S,tagsNow),enabled:ok(c.en,S,tagsNow)}))};
   })()`,ctx,{timeout:15000});
@@ -130,7 +134,7 @@ for(const [eventId,label,outcomeIndex,expectedJob,trauma] of [
 ]){
  annual.setup(ctx,{id:'service-outcome',seed:948109,region:'ヴィクトリア',age:18});
  ctx.effectCase={eventId,label,outcomeIndex};
- const outcome=vm.runInContext(`(()=>{const c=EV.find(e=>e.id===effectCase.eventId).c.find(c=>c.l===effectCase.label);ap(c.o[effectCase.outcomeIndex][2]);return {job:occupationLabel(S),trauma:!!S.fl.trauma_war,service:!!S.fl.veteran};})()`,ctx);
+ const outcome=vm.runInContext(`(()=>{const c=EV.find(e=>e.id===effectCase.eventId).c.find(c=>c.l===effectCase.label);if(effectCase.eventId==='car'&&effectCase.outcomeIndex===0)prepareEmploymentAppointmentFixture('car',14,'military-service-entry');ap(c.o[effectCase.outcomeIndex][2]);return {job:occupationLabel(S),trauma:!!S.fl.trauma_war,service:!!S.fl.veteran};})()`,ctx);
  assert.equal(outcome.job,expectedJob,'effect application preserves the declared occupation');
  assert.equal(outcome.trauma,trauma,'only explicit combat injury establishes war trauma');
  assert.equal(outcome.service,true,'service history survives the real effect pipeline');
@@ -138,6 +142,6 @@ for(const [eventId,label,outcomeIndex,expectedJob,trauma] of [
 annual.setup(ctx,{id:'medical-assistant',seed:948110,region:'クルビア',age:22});
 assert.equal(vm.runInContext(`(()=>{
  const route=EV.find(e=>e.id==='study_to_work').c.find(c=>c.l==='診療・研究機関の補助職へ応募する');
- ap(route.o[0][2]);return occupationLabel(S);
+ prepareGeneralEmploymentOpeningFixture(20,'p0-medical-assistant');ap(route.o[0][2]);return occupationLabel(S);
 })()`,ctx),'医療補助・薬局手伝い','an assistant appointment must not confer physician/researcher employment');
 console.log('PASS P0 education, local school access, service occupation, combat trauma and retirement boundaries');

@@ -1156,8 +1156,9 @@ window.TERRA_DATA_BUILD.fragment(
           show: { ge: { literacy: 40 } },
           en: s =>
             $rules.economy.availableFunds(s) >=
-            5e3 * s.res.pm * (s.priceIndex || 1) + $rules.economy.annualReserve(s),
-          why: "応募・移動費5,000龍門幣と生活予備費を残せない"
+            5e3 * s.res.pm * (s.priceIndex || 1) + $rules.economy.annualReserve(s) &&
+            !!employmentOpeningForChoice(s, 21, null, true),
+          why: "応募費と生活予備費を残せないか、現在地の事務補助に募集枠がない"
         },
         [
           0.45,

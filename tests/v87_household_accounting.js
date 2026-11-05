@@ -3,8 +3,10 @@ const assert = require('node:assert/strict'),
   path = require('node:path'),
   vm = require('node:vm'),
   { context, setup } = require('./support/annual-cases.cjs'),
+  { installGeneralEmploymentFixture } = require('./support/general-employment-fixture.cjs'),
   root = path.resolve(__dirname, '..'),
   { ctx } = context(root);
+installGeneralEmploymentFixture(ctx);
 
 function prepare(age, arrangement, infected = false) {
   setup(ctx, { id: 'household-accounting', seed: 905120 + age, region: 'カジミエーシュ', age });
@@ -249,8 +251,9 @@ assert.deepEqual(JSON.parse(JSON.stringify(householdContractLedger)),
 console.log('PASS household and personal ledgers, contractual debt, uncontracted deficit interest, repayments, and death balance');
 
 prepare(32,'independent');
+ctx.startGeneralEmploymentFixture(2,'household-capacity-and-debt');
 const capacityAndDebt=vm.runInContext(`(()=>{
-  S.job=2;S.fl.retired=0;S.debt=10000000;S.cash=0;S.w={...S.w,i:4};S.h=80;
+  S.fl.retired=0;S.debt=10000000;S.cash=0;S.w={...S.w,i:4};S.h=80;
   const budget=()=>prepareAnnualPersonalBudget(S,ANNUAL_SERVICES,S.age,S.t,S.f);
   const healthy=budget();S.h=0;const limited=budget(),travel=infectionCareTravelCostScale(S);
   S.h=80;const normalTravel=infectionCareTravelCostScale(S);

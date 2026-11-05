@@ -2,6 +2,18 @@
 // Exact named places follow existing event/source anchors. An unnamed military
 // unit/office is an explicit game-model archetype, not a nationwide branch.
 const EMPLOYMENT_APPOINTMENT_SITES = Object.freeze([
+  ["military-service-entry",null,[14],null,null,1090,"archetype","任地の補助部隊"],
+  ["higashi-service",null,[14],"極東",null,1072,"archetype","兵站・街道警備の陣屋"],
+  ["terra-general-transporter",null,[16],null,null,1090,"archetype","地域の運送仕事の口入れ先"],
+  ["kjerag-village-transporter",null,[16],"イェラグ",null,1090,"archetype","山間の荷受け場所"],
+  ["columbia-technical-work",null,[7],"クルビア",null,1090,"archetype","研究設備の技師職"],
+  ["victoria-insurance-clerk",null,[21],"ヴィクトリア",null,1090,"archetype","保険仲介所"],
+  ["rim-catastrophe-survey-assistant",null,[27],"レム・ビリトン",null,1090,"archetype","鉱山調査の観測助手"],
+  ["ursus-zelgrad-factory",null,[2],"ウルサス",null,1102,"scenario","ゼルグラードの工場補助"],
+  ["ursus-displaced-repair-workshop",null,[2],"ウルサス",null,1103,"scenario","避難先の修理工房"],
+  ["ursus-military-factory-contract",null,[2],"ウルサス",null,1090,"archetype","軍需工場の生産ライン"],
+  ["siracusa-post-family-work",null,[16],"シラクーザ",null,1090,"archetype","地区の近距離配達先"],
+  ["displaced-recovery-survey",null,[27],null,null,1090,"scenario","避難先の復旧調査班"],
   ["rhodes-staff","rhodes-island",[28,29,30,31,33,34],null,null,1095,"mobile","ロドスの採用窓口"],
   ["bsw-contract","blacksteel-worldwide",[35,36,37],"クルビア",null,1090,"mobile","BSW本艦の採用窓口"],
   ["rhine-lab","rhine-lab",[38,39,40],"クルビア","トリマウンツ",1093,"campus","ライン生命研究所"],
@@ -40,6 +52,7 @@ const EMPLOYMENT_APPOINTMENT_SITES = Object.freeze([
   Object.freeze({affiliationId,organizationKey,jobs,region,city,fromYear,kind,label})));
 
 const APPOINTMENT_JOB_SECTORS = Object.freeze({
+  2:"MFG",7:"SCI",14:"MIL",16:"LOG",21:"CIV",27:"SCI",
   32:"REC",41:"CIV",43:"CIV",44:"CIV",46:"MIL",47:"MIL",49:"REL",51:"MIL",52:"MIL",
   54:"MIL",55:"MIL",56:"CIV",57:"MFG",59:"CRE",60:"CIV",62:"AGR",63:"REC",66:"CIV",
   67:"SCI",68:"MIL",73:"REL",74:"MIL",76:"CIV",77:"SCI",78:"MIL",79:"CIV",80:"MIN",81:"REC",82:"CIV"
@@ -56,18 +69,20 @@ function ensureAppointmentWorld(s) {
   const work=s.world?.occupationWorld;
   if(!work)return;
   for(const spec of EMPLOYMENT_APPOINTMENT_SITES) {
-    const mode=EMPLOYER_PLAYER_ACCESS_MODES[spec.organizationKey];
+    const mode=spec.organizationKey ? EMPLOYER_PLAYER_ACCESS_MODES[spec.organizationKey] : "GENERAL";
     if(!["GENERAL","SPECIAL"].includes(mode))continue;
     const localArchetype=appointmentIsLocalArchetype(spec),area=occupationAreaSnapshot(s),
       sector=APPOINTMENT_JOB_SECTORS[spec.jobs[0]];
-    if(localArchetype && (!area || spec.region!==s.res?.n || !area.sectorPresence[sector]))continue;
-    const siteId=appointmentWorldSiteId(spec,s),employerId="organization-employer:"+spec.organizationKey+
-      (localArchetype?":"+area.areaId:"");
-    work.employers[employerId] ||= {employerId,organizationKey:spec.organizationKey,
-      kind:spec.kind==="archetype"?"institution-archetype":"named-organization",
+    if(localArchetype && (!area || spec.region && spec.region!==s.res?.n ||
+        sector && !area.sectorPresence[sector]))continue;
+    const siteId=appointmentWorldSiteId(spec,s),employerId=spec.organizationKey
+      ? "organization-employer:"+spec.organizationKey+(localArchetype?":"+area.areaId:"")
+      : "scenario-employer:"+spec.affiliationId+(localArchetype?":"+area.areaId:"");
+    work.employers[employerId] ||= {employerId,organizationKey:spec.organizationKey||null,
+      kind:spec.organizationKey ? spec.kind==="archetype"?"institution-archetype":"named-organization" : "scenario-operator",
       basis:localArchetype?"game-model":"existing-event-source"};
     const site=work.sites[siteId] ||= {siteId,employerId,areaId:localArchetype?area.areaId:"appointment-area:"+spec.affiliationId,
-      region:spec.region,city:localArchetype?s.local?.city||null:spec.city,kind:spec.kind,label:spec.label,
+      region:spec.region||s.res?.n,city:localArchetype?s.local?.city||null:spec.city,kind:spec.kind,label:spec.label,
       locationPrecision:spec.city?"city":spec.kind==="mobile"?"mobile-platform":"region-and-appointment",
       status:s.year<spec.fromYear?"planned":"open",createdYear:spec.fromYear,
       operationFrom:{year:spec.fromYear,month:1},positionIds:[],history:[],

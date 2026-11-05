@@ -1,5 +1,6 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
 const root=path.resolve(__dirname,'..'),nodes=new Map(),storage=new Map();
 function node(id=''){if(!nodes.has(id))nodes.set(id,{id,hidden:false,value:'',textContent:'',innerHTML:'',dataset:{},style:{},children:[],classList:{toggle(){},add(){},remove(){}},setAttribute(){},
   append(...items){for(const child of items)this.insertBefore(child,null)},
@@ -22,6 +23,7 @@ const document={currentScript:null,getElementById:id=>node(id),querySelectorAll(
 const ctx={window:{addEventListener(){}},document,console,Date,setTimeout(){},setInterval(){},alert(){},confirm(){return true},localStorage:{getItem:key=>storage.get(key)||null,setItem:(key,value)=>storage.set(key,String(value))}};
 vm.runInNewContext(require('../tools/runtime.cjs').readData(root),ctx,{timeout:15000});
 vm.runInNewContext(require('../tools/runtime.cjs').readEngine(root),ctx,{timeout:15000});
+installEmploymentAppointmentFixture(ctx);
 const result=vm.runInNewContext(String.raw`(()=>{
  HL=1;AU='r';STAT.ev={};STAT.op={};STAT.currentLife=0;STAT.choiceMonths=new Set();
  born({seed:871231,by:1077,region:'カジミエーシュ'});S.age=20;S.year=1097;S.mo=11;S.home='移動都市';S.local=makeLocality('移動都市','カジミエーシュ');ensureLocalityState(S);S.known.kazimierz_major=1;S.world.events.kazimierz_major=1097;
@@ -31,7 +33,7 @@ const result=vm.runInNewContext(String.raw`(()=>{
  recordInformationClaimAction(S,statement.c[0].o[0][2].informationClaimAction,statement.id);S.year=1098;S.age=21;S.mo=4;S.friendContact=ensureSocialContact(S,'friend');
  const share=follow.c.find(choice=>choice.o.some(outcome=>outcome[2]?.informationClaimAction?.action==='share-unverified-close-person'&&outcome[2].informationClaimAction.recipientKind==='friend'&&outcome[2].informationClaimAction.claimId==='kazimierz-grid-restoration'));recordInformationClaimAction(S,share.o[0][2].informationClaimAction,follow.id);
  const secondRecipient=follow.c.find(choice=>choice.o.some(outcome=>['father','mother'].includes(outcome[2]?.informationClaimAction?.recipientKind)&&outcome[2].informationClaimAction.claimId==='kazimierz-grid-restoration')&&choice.show(S));if(!secondRecipient)throw Error('a second reachable person should be available');recordInformationClaimAction(S,secondRecipient.o[0][2].informationClaimAction,follow.id);
- S.job=32;applyLifeAffiliation({id:'kazimierz-arena-staff',title:'競技会場の運営職',kind:'employer',action:'join',role:'施設運営・整備'});
+ applyEmploymentAppointmentFixture('sr_kazimierz_arena_backstage',32,'kazimierz-arena-staff',0,0);
  const statementFollow=EV.find(row=>row.id==='sr_kazimierz_outage_statement_followup'),statementShare=statementFollow.c.find(choice=>choice.o.some(outcome=>outcome[2]?.informationClaimAction?.action==='share-unverified-close-person'&&outcome[2].informationClaimAction.recipientKind==='friend'&&outcome[2].informationClaimAction.claimId==='kazimierz-campaign-knight-panic'));recordInformationClaimAction(S,statementShare.o[0][2].informationClaimAction,statementFollow.id);
  const workplaceShare=statementFollow.c.find(choice=>choice.o.some(outcome=>outcome[2]?.informationClaimAction?.action==='present-unverified-to-workplace'&&outcome[2].informationClaimAction.claimId==='kazimierz-campaign-knight-panic'));if(!workplaceShare.show(S))throw Error('active Kazimierz arena employment should unlock a local workplace transmission');recordInformationClaimAction(S,workplaceShare.o[0][2].informationClaimAction,statementFollow.id);
  const verify=statementFollow.c.find(choice=>choice.o.some(outcome=>outcome[2]?.informationClaimAction?.action==='verify-emergency-entry-rule'&&outcome[2].informationClaimAction.claimId==='kazimierz-campaign-knight-panic'));recordInformationClaimAction(S,verify.o[0][2].informationClaimAction,statementFollow.id);S.year=1099;S.age=22;

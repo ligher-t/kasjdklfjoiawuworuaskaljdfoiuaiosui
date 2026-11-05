@@ -196,16 +196,21 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
       c: [
         $terraData.K(
           "背に腹は代えられず応募する",
-          {},
+          { show: s => employmentEffectAssessment(s, { job: 2,
+            lifeAffiliation: { id: "ursus-military-factory-contract", action: "join" } }, "urs_conscript").canStart },
           [
             0.8,
             "募集窓口で契約書に署名し、軍需工場の生産ラインに入った。確かに給金は上がったが、休日に街へ出るのにもいちいち衛兵の通行証が要る息苦しい暮らしが始まった。",
-            { job: 2, payBonus: 0.1, cash: 1e5, p: -4, fl: { military_contract: 1 } }
+            { job: 2, payBonus: 0.1, cash: 1e5, p: -4, fl: { military_contract: 1 },
+              lifeAffiliation: { id: "ursus-military-factory-contract", title: "ウルサスの軍需工場契約", kind: "employer",
+                action: "join", role: "生産ライン勤務", note: "戦乱期の募集票から結んだ個別契約" } }
           ],
           [
             1,
             "後方工場での作業と聞いて署名したはずが、到着した先で渡されたのは重い背嚢と軍務命令書だった。抗議する暇もなく輸送車に押し込まれ、砲声の響く前線近くの補給基地へ回された。",
-            { job: 14, h: -20, p: -12, fl: { conscripted: 1 } }
+            { employmentAction: { action: "start-livelihood", kind: "coerced-assignment", jobId: 14,
+                sourceEventId: "urs_conscript", roleId: "ursus-conscripted-supply-placement", resourceId: "local-resource",
+                projectAsJob: true }, h: -20, p: -12, fl: { conscripted: 1 } }
           ]
         ),
         $terraData.K("窓口で配属先と退職条件を詳しく尋ねる", {}, [
@@ -721,43 +726,43 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
         $terraData.K(
           "研究室の選考を受ける",
           {
-            show: { ge: { literacy: 40 } },
+            show: s => literacyValue(s) >= 40 && !!employmentOpeningForChoice(s, 7),
             en: s => careerOpeningAssessment(s, { role: "technical" }).canApply && s.k >= 30,
             why: "研究所の機器を扱うための専門課程または実務経験と基礎知識が足りない"
           },
           [
             0.45,
             "筆記と実技の選考を突破し、研究所の測定機器を管理する技師として採用された。真新しい白衣の寸法を測ってもらいながら、空調の効いた清潔な職場を見回して胸を躍らせた。",
-            { job: 7, cr: 5, p: 4 }
+            { employmentAction: { action: "accept-local-opening", jobId: 7 }, cr: 5, p: 4 }
           ],
           [
             0.7,
             "正技師の枠には届かなかったが、データ記録や機器清掃を担う研究補助として雇われた。初任給は高くないものの、最新の設備に触れながら腕を磨ける環境だ。",
-            { job: 7, cr: 2, k: 2 }
+            { employmentAction: { action: "accept-local-opening", jobId: 7 }, cr: 2, k: 2 }
           ],
           [1, "面接官の反応は芳しくなく、数日後に不採用の通知が届いた。ガラス張りのビルを見上げ、帰りの路面電車の時刻表に目を落とした。", { p: -4 }]
         ),
         $terraData.K(
           "工場の技術職に応募する",
           {
-            show: { ge: { literacy: 35 } },
+            show: s => literacyValue(s) >= 35 && !!employmentOpeningForChoice(s, 7),
             en: s => careerOpeningAssessment(s, { role: "technical" }).canApply,
             why: "技術職として応募するための課程修了または現場技能の証明が足りない"
           },
           [
             0.6,
             "実技試験で工具を手際よく扱い、機械の調整手順を正確に説明して採用を勝ち取った。来週の初出勤から使う専用レンチの型番を誇らしい気持ちで控えた。",
-            { job: 7, cr: 3, k: 2 }
+            { employmentAction: { action: "accept-local-opening", jobId: 7 }, cr: 3, k: 2 }
           ],
           [1, "技術職の枠は経験者で埋まってしまったと断られた。今の仕事を続けながら、また空きが出るのを待つことにした。", { p: -2 }]
         ),
         $terraData.K(
           "製造ラインの工員募集に応募する",
-          {},
+          { show: s => !!employmentOpeningForChoice(s, 2) },
           [
             0.7,
             "簡単な面接を通過し、ベルトコンベアの前で部品を組み立てるライン工として採用された。一日中立ちっぱなしの仕事になるが、毎月の決まった給料が入るのはありがたい。",
-            { job: 2, p: 1 }
+            { employmentAction: { action: "accept-local-opening", jobId: 2 }, p: 1 }
           ],
           [1, "履歴書を提出したものの、定型文の不採用通知が封筒で返ってきた。受付に理由を尋ねても、困ったように首を振られるだけだった。", { p: -3 }]
         ),
@@ -2277,7 +2282,8 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
       c: [
         $terraData.K(
           "近距離の荷物を運ぶ仕事に応募する",
-          {},
+          { show: s => employmentEffectAssessment(s, { job: 16,
+            lifeAffiliation: { id: "siracusa-post-family-work", action: "join" } }, "sir_family_afterwork").canStart },
           [
             0.5,
             "店と住民の荷物を近距離で運ぶ仕事に採用された。以前の用事で覚えた道順や伝言の段取りを、今度は配達の仕事で使うことになった。",

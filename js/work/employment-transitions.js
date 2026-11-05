@@ -1,8 +1,5 @@
 // Shared effect admission. Assessments only read established world and person records.
 let EMPLOYMENT_EFFECT_SOURCES;
-// Exact-source appointment-backed choices require the recorded site, vacancy,
-// affiliation and time to agree before their employment effect can commit.
-const EMPLOYMENT_STRICT_DIRECT_EVENTS = new Set(["choice_columbia_06"]);
 function employmentEffectSource(effect) {
   if (TRACE_RESOLUTION?.id) return TRACE_RESOLUTION.id;
   if (!EMPLOYMENT_EFFECT_SOURCES) {
@@ -82,7 +79,6 @@ function employmentEffectAssessment(s, effect, sourceEventId = employmentEffectS
     return { canStart: true, kind: "continue", episode: current };
   const appointmentBacked = EMPLOYMENT_APPOINTMENT_SITES.some(spec =>
       spec.jobs.includes(jobId) && (!membership || membership.id === spec.affiliationId)),
-    strict = EMPLOYMENT_STRICT_DIRECT_EVENTS.has(sourceEventId) || !!membership && appointmentBacked,
     priorRoute = { canStart: false, kind: "rejected", reasonCode: "verified-position-and-opening-required" };
   if (sourceEventId === "ursus_mine_assignment_offer" && jobId === 3 &&
       membership?.id === "ursus-kleini-sever-mine" && membership.action === "assign" && s.res.n === "ウルサス") {
@@ -102,9 +98,9 @@ function employmentEffectAssessment(s, effect, sourceEventId = employmentEffectS
       kind: "livelihood", resource, livelihoodKind: kind, jobId,
       affiliationId: membership?.id, sourceEventId };
   }
-  if (EMPLOYER_JOB_ORGANIZATIONS[jobId] && membership) {
+  if (membership && appointmentBacked) {
     const assessed = assessEmploymentAppointment(s, { jobId, affiliationId: membership.id, sourceEventId });
-    if (assessed.canStart || strict && assessed.canApply)
+    if (assessed.canStart)
       return { ...assessed, kind: "opening", sourceEventId, affiliationId: membership.id };
     return priorRoute;
   }

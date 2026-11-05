@@ -646,7 +646,11 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
           "伝手をたどって親類や知人を訪ね、部屋の片隅に布団を敷かせてもらった。礼として幾ばくかの生活費を渡し、久しぶりに屋根の下で足を伸ばして眠った。",
           { p: 3, rl: 4, cash: -1e5, fl: { war_displaced: 0 }, displacement: "housed" }
         ]),
-        $terraData.K("配給と日雇いの復旧仕事で暮らしを立て直す", { show: { need: ["成人"] } }, [
+        $terraData.K("配給と日雇いの復旧仕事で暮らしを立て直す", {
+          show: { need: ["成人"] },
+          en: s => employmentEffectAssessment(s, { job: 27, lifeAffiliation: { id: "displaced-recovery-survey", action: "join" } }, "displacement_after").canStart,
+          why: "測量補助を受け入れる復旧調査班が現在地にない"
+        }, [
           1,
           "配給で飢えをしのぎながら、瓦礫の片づけや荷運びの日雇いに精を出した。やがて現場監督に働きぶりを買われて測量の補助も任されるようになり、この町で生きていく足がかりができた。",
           {
@@ -654,6 +658,9 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
             cr: 2,
             cash: 8e4,
             job: 27,
+            lifeAffiliation: { id: "displaced-recovery-survey", title: "避難先の復旧調査班", kind: "individual-career",
+              action: "join", role: "測量・復旧記録の補助",
+              note: "この避難先でのゲーム上の受け入れ先。全地域共通の復旧組織を示さない" },
             fl: { war_displaced: 0 },
             displacement: "rebuilt"
           }

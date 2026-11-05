@@ -1319,6 +1319,7 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
   $terraData.EVENT_EFFECT_TYPES.object.push("childFutureSupport", "childResidenceProposal");
 
   $terraData.EVENT_EFFECT_TYPES.object.push("infectionWorkplaceAction");
+  $terraData.EVENT_EFFECT_TYPES.object.push("employmentResourceIncident");
   $terraData.EVENT_EFFECT_TYPES.object.push("languageAction");
 
   $terraData.EVENT_EFFECT_TYPES.objectArray.push("bodyChanges", "infectionAwarenessActions");
@@ -1354,6 +1355,7 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
     loanCharge:{unit:"契約外追加請求",meaning:"既存契約への追加請求と異議を記録する",status:"S",valueType:"object"},
     personalWishes:{unit:"本人の希望",meaning:"本人が選んだ終盤の希望を記録する",status:"S",valueType:"object"},
     languageAction:{unit:"言語操作",meaning:"言語能力学習・現場符牒獲得・通訳手配・遭遇記録などの言語状態機械操作",status:"S",valueType:"object"},
+    employmentResourceIncident:{unit:"生計資源の変化",meaning:"現役の自営生計に対する出典付き資源損失だけを、実際の農地・資源状態へ記録する",status:"S",valueType:"object"},
     infectionRoute:{unit:"源石曝露の経路",meaning:"明示された粉塵・創傷・深い創傷・混合曝露を初期病状へ接続する",status:"S",valueType:"text"}
   });
 

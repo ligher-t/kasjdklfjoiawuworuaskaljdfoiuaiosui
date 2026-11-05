@@ -25664,10 +25664,7 @@
 ```json
 {
   "show": {
-    "any": [
-      "国:ウルサス",
-      "国:ヴィクトリア"
-    ]
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
   }
 }
 ```
@@ -25692,7 +25689,15 @@
   "h": -8,
   "cr": 7,
   "p": -1,
-  "payBonus": 0.05
+  "payBonus": 0.05,
+  "lifeAffiliation": {
+    "id": "military-service-entry",
+    "title": "任地の補助部隊",
+    "kind": "career",
+    "action": "join",
+    "role": "補助部隊の訓練・哨戒",
+    "note": "一任地でのゲーム上の勤務経歴"
+  }
 }
 ```
 
@@ -33847,10 +33852,12 @@ s => {
 ```json
 {
   "show": {
-    "need": [
-      "成人"
-    ]
-  }
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  },
+  "en": {
+    "dynamicFunction": "s => employmentEffectAssessment(s, { job: 27, lifeAffiliation: { id: \"displaced-recovery-survey\", action: \"join\" } }, \"displacement_after\").canStart"
+  },
+  "why": "測量補助を受け入れる復旧調査班が現在地にない"
 }
 ```
 
@@ -33871,6 +33878,14 @@ s => {
   "cr": 2,
   "cash": 80000,
   "job": 27,
+  "lifeAffiliation": {
+    "id": "displaced-recovery-survey",
+    "title": "避難先の復旧調査班",
+    "kind": "individual-career",
+    "action": "join",
+    "role": "測量・復旧記録の補助",
+    "note": "この避難先でのゲーム上の受け入れ先。全地域共通の復旧組織を示さない"
+  },
   "fl": {
     "war_displaced": 0
   },
@@ -49407,6 +49422,16 @@ s => {
 <a id="choice-urs_conscript-0"></a>
 選択肢文：背に腹は代えられず応募する
 
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  }
+}
+```
+
 旧シム観測：表示 12963、選択可能 12963
 
 結果枝：
@@ -49426,6 +49451,14 @@ s => {
   "p": -4,
   "fl": {
     "military_contract": 1
+  },
+  "lifeAffiliation": {
+    "id": "ursus-military-factory-contract",
+    "title": "ウルサスの軍需工場契約",
+    "kind": "employer",
+    "action": "join",
+    "role": "生産ライン勤務",
+    "note": "戦乱期の募集票から結んだ個別契約"
   }
 }
 ```
@@ -49441,7 +49474,15 @@ s => {
 
 ```json
 {
-  "job": 14,
+  "employmentAction": {
+    "action": "start-livelihood",
+    "kind": "coerced-assignment",
+    "jobId": 14,
+    "sourceEventId": "urs_conscript",
+    "roleId": "ursus-conscripted-supply-placement",
+    "resourceId": "local-resource",
+    "projectAsJob": true
+  },
   "h": -20,
   "p": -12,
   "fl": {
@@ -51465,9 +51506,7 @@ s => {
 ```json
 {
   "show": {
-    "ge": {
-      "literacy": 40
-    }
+    "dynamicFunction": "s => literacyValue(s) >= 40 && !!employmentOpeningForChoice(s, 7)"
   },
   "en": {
     "dynamicFunction": "s => careerOpeningAssessment(s, { role: \"technical\" }).canApply && s.k >= 30"
@@ -51489,7 +51528,10 @@ s => {
 
 ```json
 {
-  "job": 7,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 7
+  },
   "cr": 5,
   "p": 4
 }
@@ -51506,7 +51548,10 @@ s => {
 
 ```json
 {
-  "job": 7,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 7
+  },
   "cr": 2,
   "k": 2
 }
@@ -51539,9 +51584,7 @@ s => {
 ```json
 {
   "show": {
-    "ge": {
-      "literacy": 35
-    }
+    "dynamicFunction": "s => literacyValue(s) >= 35 && !!employmentOpeningForChoice(s, 7)"
   },
   "en": {
     "dynamicFunction": "s => careerOpeningAssessment(s, { role: \"technical\" }).canApply"
@@ -51563,7 +51606,10 @@ s => {
 
 ```json
 {
-  "job": 7,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 7
+  },
   "cr": 3,
   "k": 2
 }
@@ -51591,6 +51637,16 @@ s => {
 <a id="choice-col_hire-2"></a>
 選択肢文：製造ラインの工員募集に応募する
 
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !!employmentOpeningForChoice(s, 2)"
+  }
+}
+```
+
 旧シム観測：表示 2847、選択可能 2847
 
 結果枝：
@@ -51604,7 +51660,10 @@ s => {
 
 ```json
 {
-  "job": 2,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 2
+  },
   "p": 1
 }
 ```
@@ -95759,12 +95818,12 @@ s => {
 {
   "intent": "procedure",
   "en": {
-    "ge": {
-      "h": 60,
-      "cr": 45
-    }
+    "dynamicFunction": "s => s.h >= 60 && s.cr >= 45 && employmentEffectAssessment(s, { job: 14, lifeAffiliation: { id: \"military-service-entry\", action: \"join\" } }, \"choice_ursus_04\").canStart"
   },
-  "why": "過酷な軍役に耐えうる体力と度胸がない。"
+  "why": "軍役の身体条件または任地の補助部隊に空きがない。",
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  }
 }
 ```
 
@@ -95785,6 +95844,13 @@ s => {
   "cr": 8,
   "p": 5,
   "job": 14,
+  "lifeAffiliation": {
+    "id": "military-service-entry",
+    "title": "任地の補助部隊",
+    "kind": "career",
+    "action": "join",
+    "role": "補助部隊の訓練・哨戒"
+  },
   "residenceArrangement": "independent_rental",
   "fl": {
     "household_separated": 1,
@@ -169929,12 +169995,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 ```json
 {
   "show": {
-    "need": [
-      "uni"
-    ],
-    "ge": {
-      "literacy": 35
-    }
+    "dynamicFunction": "s => tags(s).has(\"uni\") && literacyValue(s) >= 35 && !!employmentOpeningForChoice(s, 7)"
   }
 }
 ```
@@ -169952,7 +170013,10 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ```json
 {
-  "job": 7,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 7
+  },
   "cr": 3,
   "p": 4
 }
@@ -169985,12 +170049,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 ```json
 {
   "show": {
-    "need": [
-      "uni"
-    ],
-    "ge": {
-      "literacy": 40
-    }
+    "dynamicFunction": "s => tags(s).has(\"uni\") && literacyValue(s) >= 40 && !!employmentOpeningForChoice(s, 20)"
   }
 }
 ```
@@ -170008,7 +170067,10 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ```json
 {
-  "job": 20,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 20
+  },
   "cr": 2,
   "p": 3
 }
@@ -176425,9 +176487,9 @@ s => {
     }
   },
   "en": {
-    "dynamicFunction": "s =>\n            $rules.economy.availableFunds(s) >=\n            5e3 * s.res.pm * (s.priceIndex || 1) + $rules.economy.annualReserve(s)"
+    "dynamicFunction": "s =>\n            $rules.economy.availableFunds(s) >=\n            5e3 * s.res.pm * (s.priceIndex || 1) + $rules.economy.annualReserve(s) &&\n            !!employmentOpeningForChoice(s, 21, null, true)"
   },
-  "why": "応募・移動費5,000龍門幣と生活予備費を残せない"
+  "why": "応募費と生活予備費を残せないか、現在地の事務補助に募集枠がない"
 }
 ```
 

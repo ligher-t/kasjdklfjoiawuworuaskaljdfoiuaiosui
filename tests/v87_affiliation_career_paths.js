@@ -2,6 +2,9 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),context=require('./support/annual-cases.cjs').context(root).ctx;
 context.rd=()=>{};
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
+const {installGeneralEmploymentFixture}=require('./support/general-employment-fixture.cjs');
+installEmploymentAppointmentFixture(context);installGeneralEmploymentFixture(context);
 const event=id=>context.window.GAME_DATA.EV.find(row=>row.id===id);
 const expected={kaz_merc:['procedure','withdrawal'],sr_kazimierz_arena_backstage:['procedure','procedure','withdrawal'],sr_kazimierz_arena_shift:['procedure','self-or-family-care','withdrawal'],life_rhodes_research_pause_review:['organization-participation','defer','withdrawal']};
 for(const [id,intents] of Object.entries(expected)){
@@ -24,6 +27,7 @@ for(const choice of research.c){
  assert.equal(result.affiliation,expectedAffiliation);assert.equal(result.goal,expectedGoal);assert.deepEqual(Array.from(result.audit),[]);states.push({affiliation:result.affiliation,goal:result.goal});
 }
 const routeState=(seed,region,job,age=24)=>vm.runInContext(`(()=>{born({seed:${seed},by:1076,region:${JSON.stringify(region)}});S.age=${age};S.year=1100;S.mo=6;S.res=REG.find(row=>row.n===${JSON.stringify(region)});S.job=${job};S.sn.car=1100;return S})()`,context,{timeout:30000});
+const provisionAppointment=(state,eventId,jobId,affiliationId)=>{context.__state=state;vm.runInContext(`S=__state;prepareEmploymentAppointmentFixture(${JSON.stringify(eventId)},${jobId},${JSON.stringify(affiliationId)})`,context,{timeout:30000});};
 const applyEffect=(state,effect)=>{context.__state=state;context.__effect=effect;vm.runInContext('S=__state;ap(__effect);',context,{timeout:30000});};
 const provisionOpening=(state,jobId,suffix)=>{
  context.__state=state;context.__jobId=jobId;context.__suffix=suffix;
@@ -53,6 +57,7 @@ const affiliationEffect=(eventId,affiliationId,action='join')=>{
 const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(context,{__state:state}),{timeout:30000});
 {
  const start=affiliationEffect('car','kjerag-village-transporter'),state=routeState(870081,'イェラグ',0);
+ provisionAppointment(state,'car',16,'kjerag-village-transporter');
  applyEffect(state,start);
  assert.equal(state.job,16,'the Kjerag village route starts in the transporter occupation');
  assert.equal(state.lifeRecord.affiliations.find(row=>row.id==='kjerag-village-transporter').status,'active');
@@ -66,7 +71,7 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
  applyEffect(state,review.c[0].o[0][2]);
  assert.equal(state.lifeRecord.affiliations.find(row=>row.id==='kjerag-village-transporter').role,'受け入れが決まった荷受け場所間の配達');
  assert.deepEqual(Array.from(auditRoute(state)),[],'continued Kjerag route remains auditable');
- const exitState=routeState(870082,'イェラグ',0);applyEffect(exitState,start);exitState.year=1102;exitState.age+=2;
+ const exitState=routeState(870082,'イェラグ',0);provisionAppointment(exitState,'car',16,'kjerag-village-transporter');applyEffect(exitState,start);exitState.year=1102;exitState.age+=2;
  applyEffect(exitState,review.c[2].o[0][2]);
  assert.equal(exitState.lifeRecord.affiliations.find(row=>row.id==='kjerag-village-transporter').status,'left');
  assert.equal(exitState.lifeRecord.goals.find(row=>row.id==='kjerag-transporter-route').status,'abandoned');
@@ -75,6 +80,7 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
 }
 {
  const start=affiliationEffect('car','rim-catastrophe-survey-assistant'),state=routeState(870083,'レム・ビリトン',0);
+ provisionAppointment(state,'car',27,'rim-catastrophe-survey-assistant');
  applyEffect(state,start);
  assert.equal(state.job,27,'the Rim route starts as an investigation assistant, not an independent forecaster');
  const review=event('rim_catastrophe_transporter_review');
@@ -88,10 +94,11 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
  assert.match(assistant.history.at(-1).note,/予測・警報発信を独立して担う職務ではない/);
  assert.equal(state.job,27,'observation assistance does not silently promote the person to a transporter');
  assert.deepEqual(Array.from(auditRoute(state)),[],'Rim assistant role update remains auditable');
- const exitState=routeState(870084,'レム・ビリトン',0);applyEffect(exitState,start);exitState.year=1102;exitState.age+=2;
+ const exitState=routeState(870084,'レム・ビリトン',0);provisionAppointment(exitState,'car',27,'rim-catastrophe-survey-assistant');applyEffect(exitState,start);exitState.year=1102;exitState.age+=2;
  assert.match(review.c[2].l,/地域のトランスポーターとして働く/,'the selected transition begins the new job rather than only searching for one');
  assert.match(review.c[2].o[0][1],/トランスポーターへ移った/,'the result text matches the active transporter affiliation');
  assert.doesNotMatch(review.c[2].o[0][1],/求人を探し始めた/,'the result does not defer a job search after applying its hire effect');
+ provisionAppointment(exitState,'rim_catastrophe_transporter_review',16,'terra-general-transporter');
  applyEffect(exitState,review.c[2].o[0][2]);
  assert.equal(exitState.lifeRecord.affiliations.find(row=>row.id==='rim-catastrophe-survey-assistant').status,'left');
  assert.equal(exitState.lifeRecord.affiliations.find(row=>row.id==='terra-general-transporter').status,'active');
@@ -100,6 +107,7 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
 }
 {
  const start=affiliationEffect('car','victoria-insurance-clerk'),state=routeState(870085,'ヴィクトリア',0);
+ provisionAppointment(state,'car',21,'victoria-insurance-clerk');
  applyEffect(state,start);
  assert.equal(state.job,21);assert.equal(state.fl.vic_clerk_employed,1);
  const contract=event('vic_clerk_contract_review'),role=event('vic_clerk_role_review'),after=event('vic_clerk_after_departure');
@@ -430,7 +438,8 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
 }
 {
  const ui=require('./support/presentation-cases.cjs').context(root);
- vm.runInContext("born({seed:872320,by:1077,region:'ヴィクトリア'});S.age=25;S.year=1102;ap({job:28,lifeAffiliation:{id:'rhodes-staff',title:'ロドス',action:'join'}});ap({lifeAffiliation:{id:'rhodes-staff',action:'role',role:'本艦・船内居住',bindAt:'destination'}});HL=0;rd();",ui.ctx);
+ installEmploymentAppointmentFixture(ui.ctx);
+ vm.runInContext("born({seed:872320,by:1077,region:'ヴィクトリア'});S.age=25;S.year=1102;prepareEmploymentAppointmentFixture('sr_rhodes_hiring_review',28,'rhodes-staff');TRACE_RESOLUTION={kind:'choice',id:'sr_rhodes_hiring_review',label:'fixture'};ap({job:28,lifeAffiliation:{id:'rhodes-staff',title:'ロドス',action:'join'}});TRACE_RESOLUTION=null;ap({lifeAffiliation:{id:'rhodes-staff',action:'role',role:'本艦・船内居住',bindAt:'destination'}});HL=0;rd();",ui.ctx);
  assert(ui.nodes.get('pf').innerHTML.includes('ロドス本艦'),'the profile renders the ship as the actual residence, not the old land district');
  vm.runInContext("ap({lifeAffiliation:{id:'rhodes-staff',action:'role',role:'地域支部・地上拠点勤務',bindAt:'destination'}});rd();",ui.ctx);
  assert(!ui.nodes.get('pf').innerHTML.includes('ロドス本艦'),'the residence display follows the move back to land');
@@ -447,7 +456,7 @@ console.log('PASS affiliation scopes and lifecycles, current-version restoration
 
 const project=vm.runInContext(`(()=>{
   HL=1;AU='r';born({seed:909121,by:1077,region:'ヴィクトリア'});
-  S.age=32;S.year=S.by+32;S.job=2;reconcileWorkContract(S);S.workContract.hours="regular";
+  S.age=32;S.year=S.by+32;startGeneralEmploymentFixture(2,'work-project-setback');S.workContract.hours="regular";
   const e=EV.find(e=>e.id==='life_work_project_setback'),T=tags(S);
   const visible=elig(e,S,T);DEBUG_RANDOM=()=>0.999;fire(e,S,T);DEBUG_RANDOM=null;
   const short=S.workContract.hours,choice=S.eventReviews[e.id].choice,

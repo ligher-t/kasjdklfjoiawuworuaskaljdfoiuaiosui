@@ -1,9 +1,10 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
 const root=path.resolve(__dirname,'..'),document={currentScript:null,getElementById(){return{hidden:false,textContent:'',value:'',dataset:{},innerHTML:'',insertAdjacentHTML(){}}},querySelectorAll(){return[]}};
 const ctx={window:{},document,console,Date,setTimeout(){},setInterval(){},localStorage:{getItem(){return null},setItem(){}}};
 vm.runInNewContext(require('../tools/runtime.cjs').readData(root),ctx,{timeout:15000});
-vm.runInNewContext(require('../tools/runtime.cjs').readEngine(root).split('/* ===== UI ===== */')[0],ctx,{timeout:15000});ctx.rd=()=>{};
+vm.runInNewContext(require('../tools/runtime.cjs').readEngine(root).split('/* ===== UI ===== */')[0],ctx,{timeout:15000});ctx.rd=()=>{};installEmploymentAppointmentFixture(ctx);
 const reportWindow=vm.runInNewContext(`(()=>{
  born({seed:871231,by:1077,region:'カジミエーシュ'});S.age=20;S.year=1097;S.home='移動都市';S.local=makeLocality('移動都市','カジミエーシュ');S.world.events.kazimierz_major=1097;
  const report=EV.find(row=>row.id==='sr_kazimierz_outage_report'),statement=EV.find(row=>row.id==='sr_kazimierz_outage_statement');
@@ -22,7 +23,7 @@ const result=vm.runInNewContext(String.raw`(()=>{
  try{recordInformationClaimAction({...S,mo:10,informationClaims:[]},claimAction,report.id)}catch{wrongMonthRejected=true}
  const available=report.show(S),contact=S.friendContact=ensureSocialContact(S,'friend');recordInformationClaimAction(S,claimAction,report.id);
  S.mo=12;const statementAvailable=statement.show(S);recordInformationClaimAction(S,statement.c[0].o[0][2].informationClaimAction,statement.id);
- S.year=1098;S.age++;S.job=32;applyLifeAffiliation({id:"kazimierz-arena-staff",title:"競技会場の運営職",kind:"employer",action:"join",role:"施設運営・整備"});
+ S.year=1098;S.age++;applyEmploymentAppointmentFixture('sr_kazimierz_arena_backstage',32,'kazimierz-arena-staff',0,0);
  const share=follow.c.find(choice=>choice.o.some(outcome=>outcome[2]?.informationClaimAction?.action==='share-unverified-close-person'&&outcome[2].informationClaimAction.recipientKind==='friend'));
  let wrongFollowupRegionRejected=false;try{recordInformationClaimAction({...S,res:{n:'ヴィクトリア'}},share.o[0][2].informationClaimAction,follow.id)}catch{wrongFollowupRegionRejected=true}
  const shareAvailable=share.show(S);recordInformationClaimAction(S,share.o[0][2].informationClaimAction,follow.id);

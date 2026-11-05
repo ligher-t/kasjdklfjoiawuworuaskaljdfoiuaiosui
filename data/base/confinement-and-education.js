@@ -875,11 +875,11 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
       c: [
         $terraData.K(
           "技術職の採用試験を受ける",
-          { show: { need: ["uni"], ge: { literacy: 35 } } },
+          { show: s => tags(s).has("uni") && literacyValue(s) >= 35 && !!employmentOpeningForChoice(s, 7) },
           [
             0.65,
             "筆記と面接をくぐり抜け、技術部門の補助として働き始めた。教本で覚えた数式より、現場の油と熱の中で確かめることの方がずっと多かった。",
-            { job: 7, cr: 3, p: 4 }
+            { employmentAction: { action: "accept-local-opening", jobId: 7 }, cr: 3, p: 4 }
           ],
           [
             1,
@@ -889,11 +889,11 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
         ),
         $terraData.K(
           "診療・研究機関の補助職へ応募する",
-          { show: { need: ["uni"], ge: { literacy: 40 } } },
+          { show: s => tags(s).has("uni") && literacyValue(s) >= 40 && !!employmentOpeningForChoice(s, 20) },
           [
             0.55,
             "消毒液の匂う施設で、検査記録の整理と器具の支度を任された。病棟と研究室のどちらへ届ける品か、最初のうちは何度も指差しで確かめた。",
-            { job: 20, cr: 2, p: 3 }
+            { employmentAction: { action: "accept-local-opening", jobId: 20 }, cr: 2, p: 3 }
           ],
           [
             1,

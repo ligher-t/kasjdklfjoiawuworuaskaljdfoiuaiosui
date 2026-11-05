@@ -43,11 +43,14 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
       c: [
         $terraData.K(
           "軍務に志願する",
-          { show: { "any": ["国:ウルサス", "国:ヴィクトリア"] } },
+          { show: s => ["ウルサス", "ヴィクトリア"].includes(s.res?.n) &&
+            employmentEffectAssessment(s, { job: 14, lifeAffiliation: { id: "military-service-entry", action: "join" } }, "car").canStart },
           [
             0.6,
             "補助部隊に採用され、泥にまみれる訓練と哨戒任務の日々が始まった。給金は決まった日に出たが、故郷の土を踏める休暇はほとんどなかった。",
-            { job: 14, fl: { veteran: 1 }, h: -8, cr: 7, p: -1, payBonus: 0.05 }
+            { job: 14, fl: { veteran: 1 }, h: -8, cr: 7, p: -1, payBonus: 0.05,
+              lifeAffiliation: { id: "military-service-entry", title: "任地の補助部隊", kind: "career",
+                action: "join", role: "補助部隊の訓練・哨戒", note: "一任地でのゲーム上の勤務経歴" } }
           ],
           [
             1,
@@ -106,7 +109,8 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         ),
         $terraData.K(
           "トランスポーターの仕事を請ける",
-          { show: { any: ["国:龍門", "国:クルビア", "国:ヴィクトリア", "国:シラクーザ", "国:ボリバル", "国:レム・ビリトン"] } },
+          { show: s => ["龍門", "クルビア", "ヴィクトリア", "シラクーザ", "ボリバル", "レム・ビリトン"].includes(s.res?.n) &&
+            employmentEffectAssessment(s, { job: 16, lifeAffiliation: { id: "terra-general-transporter", action: "join" } }, "car").canStart },
           [
             1,
             "荷札の宛先を確かめ、鞄を肩に食い込ませて街区から街区へ荷物や書状を運んだ。抜け道を覚えるほど足は速くなったが、夜更けの急な呼び出しも増えていった。",
@@ -139,7 +143,8 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         ),
         $terraData.K(
           "山間の集落へ荷を運ぶ便に応募する",
-          { show: { need: ["国:イェラグ"] } },
+          { show: s => s.res?.n === "イェラグ" &&
+            employmentEffectAssessment(s, { job: 16, lifeAffiliation: { id: "kjerag-village-transporter", action: "join" } }, "car").canStart },
           [
             0.65,
             "雪深い山道の集落へ荷を届ける仕事に採用された。荷札の村名を確かめ、受け入れが決まった集落の戸口へ日用品や手紙を背負い上げる。雪崩やぬかるみで道が荒れるたび、歩を進める予定はその場で変わっていった。",
@@ -213,7 +218,8 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         $terraData.K(
           "応募・移動費 {colTechApplicationCost} を払って、クルビアの研究企業の技師職に挑む",
           {
-            show: { need: ["国:クルビア"], ge: { k: 30, literacy: 35 } },
+            show: s => s.res?.n === "クルビア" && s.k >= 30 && literacyValue(s) >= 35 &&
+              employmentEffectAssessment(s, { job: 7, lifeAffiliation: { id: "columbia-technical-work", action: "join" } }, "car").canStart,
             en: (s, T) =>
               careerOpeningAssessment(s, { role: "technical" }).canApply &&
               ok({ affordableCashAfterReserve: 5e4 }, s, T),
@@ -291,7 +297,8 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         $terraData.K(
           "応募費 {vicClerkApplicationCost} を払って、ヴィクトリアの保険仲介所で帳簿係を探す",
           {
-            show: { need: ["国:ヴィクトリア"], ge: { k: 20, literacy: 40 } },
+            show: s => s.res?.n === "ヴィクトリア" && s.k >= 20 && literacyValue(s) >= 40 &&
+              employmentEffectAssessment(s, { job: 21, lifeAffiliation: { id: "victoria-insurance-clerk", action: "join" } }, "car").canStart,
             en: { affordableCashAfterReserve: 3e4 },
             why: "応募費を払うと、当面の暮らしを支える蓄えが残らない"
           },
@@ -406,7 +413,8 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         ]),
         $terraData.K(
           "天災後の鉱区調査隊で助手に応募する",
-          { show: { need: ["国:レム・ビリトン"], ge: { k: 20 } } },
+          { show: s => s.res?.n === "レム・ビリトン" && s.k >= 20 &&
+            employmentEffectAssessment(s, { job: 27, lifeAffiliation: { id: "rim-catastrophe-survey-assistant", action: "join" } }, "car").canStart },
           [
             0.55,
             "鉱山隊に同行する天災トランスポーターの募集を聞きつけ、崩れた地形や源石の露出を測る助手として採用された。焦げた土の匂いが残る天災後の鉱区を歩き、観測の記録を取り始めた。",
@@ -833,7 +841,10 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             cash: 50000
           }
         ]),
-        $terraData.K("鉱区を離れ、地域のトランスポーターとして働く", {}, [
+        $terraData.K("鉱区を離れ、地域のトランスポーターとして働く", {
+          show: s => employmentEffectAssessment(s, { job: 16,
+            lifeAffiliation: { id: "terra-general-transporter", action: "join" } }, "rim_catastrophe_transporter_review").canStart
+        }, [
           1,
           "粉塵の舞う調査現場を離れ、街と街を結んで荷や手紙を運ぶ地域のトランスポーターへ移った。荒野の道で培った足腰を頼りに、荷物を背負って次の届け先へと歩き出した。",
           {

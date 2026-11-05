@@ -1,7 +1,9 @@
 'use strict';
 const path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const {context}=require('./support/presentation-cases.cjs');
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
 const {ctx}=context(path.resolve(__dirname,'..'));
+installEmploymentAppointmentFixture(ctx);
 const run=source=>JSON.parse(vm.runInContext(`JSON.stringify((()=>{${source}})())`,ctx));
 const crisis=run(`
  born({seed:41125,by:1080,region:'龍門'});
@@ -39,7 +41,7 @@ const medical=run(`
  born({seed:107701,by:1077,region:'クルビア'});
  S.year=1100;S.age=23;S.job=0;S.h=75;S.cash=50000;
  for(const id of ['sr_rhodes_recruitment_contact','sr_rhodes_hiring_review','sr_rhodes_posting_review']){
-   ap(EV.find(e=>e.id===id).c[0].o[0][2]);S.year++;S.age++;
+   if(id==='sr_rhodes_hiring_review')applyEmploymentAppointmentFixture(id,28,'rhodes-staff',0,0);else ap(EV.find(e=>e.id===id).c[0].o[0][2]);S.year++;S.age++;
  }
  S.inf=1;S.ob=10;S.h=100;S.mortality={episodes:[]};
  const light=D(S).filter(x=>x.c.includes('看取り'));

@@ -6,6 +6,7 @@ const FXK = [
   "socialConflictAction",
   "workContractAction",
   "employmentAction",
+  "employmentResourceIncident",
   "intergroupAction",
   "siteAction",
   "facilityPersonAction",
