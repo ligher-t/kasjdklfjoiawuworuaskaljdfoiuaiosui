@@ -9,33 +9,41 @@ function currentPlayerEmployment(s) {
   return records?.episodes?.find(row =>
     row.episodeId === records.activeEpisodeId && row.status === "active") || null;
 }
-function employmentOpeningForChoice(s, jobId) {
-  if (s.dead || s.job > 0 || currentPlayerEmployment(s) ||
-      s.fl?.retired || restricted(s) || travelPresence(s).mode !== "residence")
-    return null;
-  return occupationOpeningFor(s, jobId);
-}
 function employmentQualificationRole(jobId) {
   return jobId === 7 ? "technical" : jobId === 12 ? "teacher" :
     jobId === 20 ? "medical-assistant" : jobId === 21 ? "office-assistant" : "general";
 }
-function assessEmploymentChoice(s, jobId, openingId = null) {
-  const opening = openingId
-    ? s.world?.occupationWorld?.openings?.[openingId]
-    : employmentOpeningForChoice(s, jobId);
-  if (!opening || (openingId && employmentOpeningForChoice(s, jobId)?.openingId !== openingId))
-    return { canStart: false, reasonCode: "no-available-opening" };
-  const site = s.world.occupationWorld.sites[opening.siteId];
-  const employer = s.world.occupationWorld.employers[opening.employerId];
-  const request = {
+function employmentOpeningRequest(s, jobId, opening) {
+  const employer = s.world?.occupationWorld?.employers?.[opening.employerId];
+  return {
     jobId, organizationKey: employer?.organizationKey || undefined,
-    siteId: opening.siteId, positionId: opening.positionId, openingId: opening.openingId,
-    role: employmentQualificationRole(jobId),
+    siteId: opening.siteId, positionId: opening.positionId,
+    openingId: opening.openingId, role: employmentQualificationRole(jobId),
     knownToPerson: true, selected: true, accepted: true, started: true,
     specialPath: false
   };
-  const access = careerOpeningAssessment(s, request);
-  const gate = assessPlayerEmploymentAccess(s, request);
+}
+// Read-only eligibility check. A visible offer has to be one the person can
+// actually accept, not merely the first site with an unfilled position.
+function employmentOpeningForChoice(s, jobId, openingId = null) {
+  if (s.dead || s.job > 0 || currentPlayerEmployment(s) ||
+      s.fl?.retired || restricted(s) || travelPresence(s).mode !== "residence")
+    return null;
+  return occupationOpeningsFor(s, jobId).find(opening => {
+    if (openingId && opening.openingId !== openingId) return false;
+    const request = employmentOpeningRequest(s, jobId, opening);
+    return assessPlayerEmploymentAccess(s, request).canStart &&
+      careerOpeningAssessment(s, request).canBeAssigned;
+  }) || null;
+}
+function assessEmploymentChoice(s, jobId, openingId = null) {
+  const opening = employmentOpeningForChoice(s, jobId, openingId);
+  if (!opening) return { canStart: false, reasonCode: "no-qualified-opening" };
+  const request = employmentOpeningRequest(s, jobId, opening),
+    work = s.world.occupationWorld,
+    site = work.sites[opening.siteId],
+    access = careerOpeningAssessment(s, request),
+    gate = assessPlayerEmploymentAccess(s, request);
   return {
     canStart: gate.canStart && access.canBeAssigned && !!site &&
       site.areaId === occupationWorkAreaKey(s),
