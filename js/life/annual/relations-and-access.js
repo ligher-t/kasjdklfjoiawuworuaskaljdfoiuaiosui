@@ -44,6 +44,9 @@ function advanceAnnualRelationsAndAccess(s, services) {
     }
   }
   if (s.fl.insured && s.res.n !== "クルビア") {
+    services.L(
+      '<span class="nt">クルビアを離れたため、現地で結んでいた医療保険の契約は更新しなかった。</span>'
+    );
     s.fl.insured = 0;
     s.insurancePaidYear = null;
   }
