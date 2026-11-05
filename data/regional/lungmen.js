@@ -408,7 +408,7 @@ window.TERRA_DATA_BUILD.run("regional/lungmen", function ($terraData, $define, $
         K("知り合いの屋台で仕込みと配膳を手伝う", { intent: "service" },
           [1, "包み紙を折り、料理を渡し、閉店まで客をさばいた。店主から日当を受け取った。", { cash: 10000, p: 2, cr: 1 }]),
         K("気になる屋台を二、三軒回る", { intent: "enjoyment", en: { affordableCash: 4000 }, why: "食べ歩きに回せる小遣いがない。" },
-          [1, "少量ずつ買って味を比べ、腹が満ちたところで夜市を後にした。", { cash: -4000, p: 3 }]),
+          [1, "少量ずつ買って味を比べ、腹が満ちたところで夜市を後にした。", { cash: -4000, pm: 1, p: 3 }]),
         K("混雑を避けて買い物だけ済ませる", { intent: "withdrawal" },
           [1, "必要な品だけ買い、人の少ない路地から帰った。", { p: 1 }])
       ]
