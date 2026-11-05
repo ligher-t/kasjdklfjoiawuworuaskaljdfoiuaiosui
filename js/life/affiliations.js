@@ -5,6 +5,14 @@
 // 移転による休止を個人的な休止と分け、帰還だけで休止前の危機が解消したことにしない。
 const affiliationRule = (scope, region, jobs, goal, source, reason) => ({scope, region, jobs, goal, source, reason});
 const AFFILIATION_RULES = Object.freeze({
+  "hist-columbia_independence": affiliationRule("district", "クルビア", null, "hist-columbia_independence-path", "timeline_columbia_independence/history_path_review_columbia_independence", "開拓地区の自治組織への本人参加。登記申請中であることを自治地位や職員雇用と混同しない"),
+  "hist-kazdel_commission_founded": affiliationRule("district", "カズデル", null, "hist-kazdel_commission_founded-path", "timeline_kazdel_commission_founded/history_path_review_kazdel_commission_founded", "現地補給班の継続的な地域参加。軍事委員会の正式兵籍・常勤給与とは切り離す"),
+  "hist-siracusa_unification": affiliationRule("district", "シラクーザ", null, "hist-siracusa_unification-path", "timeline_siracusa_unification/history_path_review_siracusa_unification", "地区の掟を担う個人の約束。特定ファミリーの正式職員資格とは切り離す"),
+  "hist-ursus_great_rebellion": affiliationRule("district", "ウルサス", null, "hist-ursus_great_rebellion-path", "timeline_ursus_great_rebellion/history_path_review_ursus_great_rebellion", "待遇要求に加わった現地の労働者の活動。雇用契約や所在地の証明とは区別する"),
+  "hist-rim_billiton_independence": affiliationRule("district", "レム・ビリトン", null, "hist-rim_billiton_independence-path", "timeline_rim_billiton_independence/history_path_review_rim_billiton_independence", "鉱区自治に関する地区内の当番。鉱業会社との雇用を意味しない"),
+  "hist-leith_revolution": affiliationRule("district", "リターニア", null, "hist-leith_revolution-path", "timeline_leith_revolution/history_path_review_leith_revolution", "地区での政治的な参加・連絡。宮廷職や新政権の官職に自動採用しない"),
+  "hist-kazdel_war_declared": affiliationRule("district", "カズデル", null, "hist-kazdel_war_declared-path", "timeline_kazdel_war_declared/history_path_review_kazdel_war_declared", "当該地区の後方補給の役務。正規軍への雇用や徴兵歴を自動発行しない"),
+  "hist-kazdel_civil_war": affiliationRule("district", "カズデル", null, "hist-kazdel_civil_war-path", "timeline_kazdel_civil_war/history_path_review_kazdel_civil_war", "避難者の現地生活再建活動。実際の業務報酬・被雇用者資格とは区別する"),
   "terra-general-transporter": affiliationRule("occupation", null, [16], "transporter-work", "car/transporter_contract_review", "各地で続ける職業。転居だけでは終わらず、転職・退職で現役を終える"),
   "kjerag-village-transporter": affiliationRule("region", "イェラグ", [16], "kjerag-transporter-route", "car/kjerag_transporter_route_review", "複数集落を結ぶ便。村一つに固定せず国外転居・転職で終了"),
   "columbia-technical-work": affiliationRule("workplace", "クルビア", [7], "columbia-technical-work", "col_tech_*", "同じ企業の設備・調達案件。別の街区・職場へ持ち越さず、退職後の技能は残す"),
