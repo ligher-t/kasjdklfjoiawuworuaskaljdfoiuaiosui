@@ -10,6 +10,7 @@ const approved=Object.freeze([
   "p20-education-completion.test.cjs",
   "p15-education-regional-paths.test.cjs",
   "p0-career-credential-lifecycle.test.cjs",
+  "v89_employment_i1_access_world.test.cjs",
   "p0-education-nonstandard.test.cjs",
   "p0-school-progression.test.cjs",
   "p0-school-regional-access.test.cjs",
