@@ -4,6 +4,7 @@ function finalizeLifeLedgerAtDeath(s) {
 }
 function ap(e, routeReserve = 0) {
   if (!e) return;
+  assertPlayerEmploymentEffectAllowed(e);
   const disclosureOrigin=disclosureImpactContext(S);
   e=disclosureAdjustedEffect(S,e);
   const cashAlreadyScaled = typeof e.cash === "function";
