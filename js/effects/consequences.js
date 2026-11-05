@@ -47,7 +47,7 @@ function recordEffectConsequences(e, s, jobBefore, assetsBefore, debtBefore, inv
     });
     if (s.moneyLog.length > CHOICE_ECONOMY_HISTORY_LIMIT) s.moneyLog.shift();
   }
-  if (s.job !== jobBefore) {
+  if (s.job !== jobBefore && !e.employmentAction) {
     if (s.fl?.ed_work_disadvantage) s.fl.ed_work_disadvantage = 0;
     recordCareerChange(s, jobBefore, s.job);
   }
