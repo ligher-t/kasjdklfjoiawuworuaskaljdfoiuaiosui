@@ -3,7 +3,8 @@
 - [x] `js/work/employment-policy.js`：66組織を全件対応させた読み取り専用の新規プレイヤー雇用判定を追加。J28〜82の55組織専用職は職業から正規化。BLOCKED 2組織への新規加入を `js/effects/apply.js` の事前判定で拒否。採用資格照会 `js/core/state.js:careerOpeningAssessment` は明示した職業・企業を同じ判定へ接続。
 - [x] `js/work/occupation-world.js`：19地域×13産業の仮説行列から、地域/地区/世界seedごとに独立した匿名事業者・職場・職位・求人枠を決定。新サイトは主人公の現在の職業IDから生成せず、`js/world/locality.js:localityAdvanceOne` で世界側を初期化。画面用の `occupationAreaSnapshot` は読み取り専用。
 - [x] `index.html` と改訂値を同期し、`tests/v89_employment_i1_access_world.test.cjs` を登録。対象の既存選定CIでの検証を実施。
-- [ ] **I-1を継続**：具体拠点の年次稼働/廃業/災害・求人の期限と欠員予約、実際の採用における募集元の正本検証、匿名地区と移動都市・旧セーブの同一性。名前付き企業のサイトを全土へ自動生成しない。
+- [x] `advanceOccupationWorkArea`：生活圏の年次更新で求人期限を閉じ、地域の雇用環境悪化に応じて新規募集を停止。現場・旧募集履歴を維持し、同年反復・保存復元時の重複生成を防止。
+- [ ] **I-1を継続**：確認済み個別拠点の年月付き稼働/閉鎖/災害、具体企業の採用権限、採用時の欠員予約・背景労働者から実社員への移行、匿名地区と移動都市・旧セーブの同一性。名前付き企業のサイトを全土へ自動生成しない。
 - [ ] **I-2移行で接続**：現行の `facilitySpecsFor`・`reconcileWorkContract`・`pickStarterJob` と `J.pay` に残る旧合成職場・契約・給与の自動生成を `employmentEpisode` 正本へ置換。既存イベントの直接 `job` 書込・役職付与・全家族の職歴経路を同一雇用アクセスで監査。新台帳を実際の採用/賃金へ結び付けるまでI-1を全面完了扱いにしない。
 
 ## 2026-11-05：雇用・職業・生計 統合設計v3.0（設計完了、実装未着手）
