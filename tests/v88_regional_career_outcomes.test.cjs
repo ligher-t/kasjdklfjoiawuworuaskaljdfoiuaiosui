@@ -1052,6 +1052,23 @@ for(const choiceIndex of [0,1]){
     const paused=target.status;
     const genericOpen=elig(generic,S,tags(S));
     ap(generic.c[0].o[0][2]);
+    const oneOff={job:S.job,kind:S.employmentState?.episodes?.at(-1)?.kind};
+    ensureOccupationWorkArea(S);
+    if (!employmentOpeningForChoice(S,2)) {
+      const areaId=occupationWorkAreaKey(S),w=S.world.occupationWorld,
+        employerId='fixture-frontier-reentry-employer',
+        siteId='fixture-frontier-reentry-site',
+        positionId='fixture-frontier-reentry-position',
+        openingId='fixture-frontier-reentry-opening';
+      w.employers[employerId]={employerId,organizationKey:null,areaId};
+      w.sites[siteId]={siteId,employerId,areaId,status:'open',positionIds:[positionId]};
+      w.positions[positionId]={positionId,siteId,jobId:2,capacity:1,
+        aggregateOccupiedSlots:0,identifiedOccupiedSlots:0,reservedSlots:0,
+        vacancyCount:1,openingIds:[openingId]};
+      w.openings[openingId]={openingId,positionId,siteId,employerId,areaId,
+        status:'open',slots:1,validFromYear:S.year};
+    }
+    ap(generic.c[1].o[0][2]);
     S.year+=3;S.age+=3;
     const employed={job:S.job,employer:a.status,
       goal:target.status,choices:after.c.map(x=>x.show(S,tags(S)))};
@@ -1061,7 +1078,7 @@ for(const choiceIndex of [0,1]){
       former:a.status,formerEpisodes:a.episodes.length,
       review:after.show(S),issues:auditLifeState(S)};
     return {offered,initial,eligibleReview,eligibleRecovery,continued,
-      departed,ready,choices,seeking,paused,genericOpen,employed,achieved};
+      departed,ready,choices,seeking,paused,genericOpen,oneOff,employed,achieved};
   `);
   assert.equal(result.offered,true);
   assert.deepEqual(result.initial,{
@@ -1092,11 +1109,13 @@ for(const choiceIndex of [0,1]){
   });
   assert.equal(result.paused,'paused');
   assert.equal(result.genericOpen,true);
+  assert.deepEqual(result.oneOff,{job:0,kind:'gig'},
+    'a paid cargo shift leaves the applicant free to find continuing work');
   assert.deepEqual(result.employed,{
-    job:1,employer:'left',goal:'paused',choices:[false,false,true]
+    job:2,employer:'left',goal:'paused',choices:[false,false,true]
   });
   assert.deepEqual(result.achieved,{
-    job:1,goal:'achieved',
+    job:2,goal:'achieved',
     history:['start','continue','pause','complete'],
     former:'left',formerEpisodes:1,review:false,issues:[]
   },'a short failed camp contract and a later voluntary exit each recover through real work');
