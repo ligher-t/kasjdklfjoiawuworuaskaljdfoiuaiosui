@@ -270,7 +270,7 @@ function ensureLocalityState(s) {
   // 現職・居住地を変更した直後でも旧勤務契約が現在在籍として残らない。
   // この場所では activeFacility を再帰呼出しせず、既にある台帳だけを見る。
   if (
-    s.workContract &&
+    s.workContract && s.workContract.basis !== "occupation-episode" &&
     (!s.siteAffiliations?.workplace ||
       s.workContract.siteId !== s.siteAffiliations.workplace.facilityId ||
       s.workContract.jobId !== s.job ||
