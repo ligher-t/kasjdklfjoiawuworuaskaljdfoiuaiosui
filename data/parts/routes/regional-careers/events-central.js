@@ -94,7 +94,7 @@ window.TERRA_DATA_BUILD.fragment(
       w: 0.45,
       ge: { age: 22 },
       show: s => s.res?.n === "カジミエーシュ" && $terraData.regionalCareerOnDuty(s, "kaz_comp_knight"),
-      t: "メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する』。八百長を呑んで巨額の富を手にするか、騎士の誇りを賭けて真正面から勝利を掴むか。",
+      t: "メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFixOffer}を約束する』。八百長を呑んで巨額の富を手にするか、騎士の誇りを賭けて真正面から勝利を掴むか。",
       c: [
         $terraData.K("八百長を断固拒絶し、全霊を賭けて決勝戦で打ち倒す", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
@@ -111,7 +111,7 @@ window.TERRA_DATA_BUILD.fragment(
         ]),
         $terraData.K("裏取引を呑み、第3ラウンドでわざと倒れる", { ethics: { reviewed: true, policyVersion: 87, intent: "self-or-family-care" } }, [
           1,
-          "見事な負け芝居を打ち、五百万龍門幣の裏金を受け取った。だがファンからの激しい罵声が耳に焼き付いた。",
+          "見事な負け芝居を打ち、約束された{kazMatchFixOffer}の裏金を受け取った。だがファンからの激しい罵声が耳に焼き付いた。",
           { cash: 5000000, cr: -5, p: -8 }
         ])
       ]
