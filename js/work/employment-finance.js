@@ -110,6 +110,42 @@ function employmentMealOffset(s, year, wallet) {
   return (s.employmentState?.finance?.meals || []).find(row =>
     row.year === year && row.wallet === wallet)?.livingCostOffset || 0;
 }
+function employmentInKindOffset(s, year, wallet) {
+  return (s.employmentState?.finance?.inKindAllocations || []).filter(row =>
+    row.serviceYear === year && row.wallet === wallet)
+    .reduce((sum, row) => sum + row.livingCostOffset, 0);
+}
+function employmentInKindSupportAvailable(s, sourceEventId) {
+  const episode=currentPlayerEmployment(s), month=s.mo || 1,
+    eligible=sourceEventId==="work_sami_winter_food_share" && s.res?.n==="サーミ" &&
+      month>=8 && month<=10 && episode?.kind==="family-community" &&
+      [69,70,71].includes(episode.jobId) && !!episode.resourceId &&
+      episode.localityKey===localityKey(s) &&
+      !s.dead && !restricted(s) && travelPresence(s).mode==="residence";
+  if(!eligible)return false;
+  const allocationId="sami-winter-share:"+episode.resourceId+":"+s.year;
+  return !(s.employmentState?.finance?.inKindAllocations || []).some(row=>row.allocationId===allocationId);
+}
+function recordEmploymentInKindAllocation(s, sourceEventId, supportShare) {
+  if(!employmentInKindSupportAvailable(s,sourceEventId) || ![0.5,1].includes(supportShare))
+    throw Error("冬季の現物分配を受け取る条件が変わった");
+  const episode=currentPlayerEmployment(s), finance=employmentFinance(s), month=s.mo || 1,
+    allocationId="sami-winter-share:"+episode.resourceId+":"+s.year,
+    wallet=inSharedHousehold(s)?"household":"personal",
+    first=month+1, mealValue=P("economy.minimumExpenseBase")*s.res.pm*(s.priceIndex||1)/(365*3),
+    rows=[];
+  finance.inKindAllocations ||= [];
+  for(let offset=0;offset<4;offset++){
+    const absolute=first+offset, serviceYear=s.year+Math.floor((absolute-1)/12),
+      serviceMonth=((absolute-1)%12)+1;
+    const row={allocationId,episodeId:episode.episodeId,resourceId:episode.resourceId,
+      sourceEventId,recipientId:wallet==="household"?(s.householdId||"shared-household"):episode.personId,
+      wallet,serviceYear,serviceMonth,livingCostOffset:mealValue*30*supportShare,
+      basis:"recorded-community-winter-ration"};
+    finance.inKindAllocations.push(row);rows.push(row);
+  }
+  return rows;
+}
 function employmentUnpaidAmount(s, episodeId = null) {
   return (s.employmentState?.finance?.claims || []).filter(row => row.status === "unpaid" &&
     (!episodeId || row.episodeId === episodeId)).reduce((sum, row) => sum + row.amount, 0);

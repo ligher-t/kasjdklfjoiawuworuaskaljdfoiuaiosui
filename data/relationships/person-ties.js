@@ -11,7 +11,10 @@ window.TERRA_DATA_BUILD.run("relationships/person-ties", function ($terraData, $
     "v82p",
     (s, kind) => {
       const a = s.community?.people || {},
-        site = s.siteAffiliations?.[kind];
+        episode = kind === "workplace" ? currentPlayerEmployment(s) : null,
+        site = kind === "workplace"
+          ? episode?.kind === "wage-employment" ? { facilityId:episode.siteId } : null
+          : s.siteAffiliations?.[kind];
       if (!site) return null;
       return (
         Object.values(a)

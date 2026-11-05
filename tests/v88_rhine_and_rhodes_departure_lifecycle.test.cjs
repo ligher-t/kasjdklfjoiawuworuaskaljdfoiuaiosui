@@ -3,23 +3,24 @@ const assert=require('node:assert/strict');
 const path=require('node:path');
 const vm=require('node:vm');
 const {context}=require('./support/annual-cases.cjs');
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
 const {ctx}=context(path.resolve(__dirname,'..'));
+installEmploymentAppointmentFixture(ctx);
 const inspect=source=>JSON.parse(vm.runInContext('JSON.stringify((()=>{'+source+'})())',ctx,{timeout:30000}));
 
 for(let i=0;i<2;i++){
   ctx.BRANCH=i;
   const result=inspect(`
     born({seed:20261131+BRANCH,by:1064,region:'クルビア'});
-    S.year=1098;S.age=34;S.job=39;
-    ap({lifeAffiliation:{id:'rhine-lab',title:'ライン生命医科学研究所',
-        kind:'employer',action:'join',role:'専任研究員'},
-        lifeGoal:{id:'rhine-research',
-          title:'ライン生命で最先端科学の真理を開拓する',action:'start'}});
+    S.year=1098;S.age=34;S.job=0;S.k=100;
+    applyEmploymentAppointmentFixture('sr_rhine_recruitment_exam',38,'rhine-lab',0,0);
+    applyEmploymentAppointmentFixture('sr_rhine_section_assignment',39,'rhine-lab',0,0);
     S.fl.rhine_whistleblower=1;
     const event=EV.find(e=>e.id==='sr_rhine_rhodes_asylum'),
       ethics=EV.find(e=>e.id==='sr_rhine_diabolic_ethical_crossroad');
     const before=elig(event,S,tags(S));
-    ap(event.c[BRANCH].o[0][2]);
+    if(BRANCH===0)applyEmploymentAppointmentFixture(event.id,30,'rhodes-staff',0,0);
+    else ap(event.c[BRANCH].o[0][2]);
     const aff=S.lifeRecord.affiliations.find(a=>a.id==='rhine-lab'),
       goal=S.lifeRecord.goals.find(g=>g.id==='rhine-research'),
       staff=S.lifeRecord.affiliations.find(a=>a.id==='rhodes-staff'),
@@ -54,10 +55,10 @@ for(let i=0;i<2;i++){
 }
 const research=inspect(`
  born({seed:20261141,by:1064,region:'クルビア'});
- S.year=1102;S.age=38;S.job=29;
- ap({lifeAffiliation:{id:'rhodes-staff',title:'ロドス・アイランド',
-     kind:'employer',action:'join',role:'医療補助'},
-     lifeGoal:{id:'rhodes-work',title:'ロドスで担当する仕事を無理なく続ける',action:'start'}});
+ S.year=1102;S.age=38;S.job=0;S.k=100;S.local.access=1;
+ ap(EV.find(e=>e.id==='sr_rhodes_recruitment_contact').c[0].o[0][2]);
+ S.year=1103;S.age=39;
+ applyEmploymentAppointmentFixture('sr_rhodes_hiring_review',29,'rhodes-staff',2,0);
  ap({lifeAffiliation:{id:'rhodes-research',title:'ロドスの鉱石病経過研究',
      kind:'project',action:'join'},
      lifeGoal:{id:'oripathy-research',title:'病状を記録する研究を続ける',action:'start'}});
@@ -79,10 +80,8 @@ assert.equal(research.job,0);
 assert.deepEqual(research.issues,[]);
 const arena=inspect(`
  born({seed:20261142,by:1063,region:'カジミエーシュ'});
- S.year=1101;S.age=38;S.job=32;
- ap({lifeAffiliation:{id:'kazimierz-arena-staff',title:'競技会場の運営職',kind:'employer',
-     action:'join',role:'施設運営・整備'},
-     lifeGoal:{id:'kazimierz-arena-work',title:'会場の仕事で生活を立てる',action:'start'}});
+ S.year=1101;S.age=38;S.job=0;
+ applyEmploymentAppointmentFixture('sr_kazimierz_arena_backstage',32,'kazimierz-arena-staff',0,0);
  const e=EV.find(x=>x.id==='sr_kazimierz_arena_shift');
  const eligibleBefore=elig(e,S,tags(S));
  ap(e.c[2].o[0][2]);
@@ -114,8 +113,8 @@ const yearBounds=inspect(`
     promotion:promotion.show(S),patent:patent.show(S)
   };
   S.job=0;
-  ap(EV.find(e=>e.id==='sr_rhine_recruitment_exam').c[0].o[0][2]);
-  ap(EV.find(e=>e.id==='sr_rhine_section_assignment').c[0].o[0][2]);
+  applyEmploymentAppointmentFixture('sr_rhine_recruitment_exam',38,'rhine-lab',0,0);
+  applyEmploymentAppointmentFixture('sr_rhine_section_assignment',39,'rhine-lab',0,0);
   const collect=(y,m)=>{
     S.year=y;S.mo=m;S.age=y-1068;
     return {base:elig(base,S,tags(S)),horizon:elig(horizon,S,tags(S))};
@@ -149,8 +148,8 @@ assert.equal(yearBounds.again,false,'a historic sky-breaking event cannot repeat
 const postRhine=inspect(`
   born({seed:20261184,by:1068,region:'クルビア'});
   S.year=1099;S.age=31;S.mo=11;S.job=0;S.k=100;
-  ap(EV.find(e=>e.id==='sr_rhine_recruitment_exam').c[0].o[0][2]);
-  ap(EV.find(e=>e.id==='sr_rhine_section_assignment').c[0].o[0][2]);
+  applyEmploymentAppointmentFixture('sr_rhine_recruitment_exam',38,'rhine-lab',0,0);
+  applyEmploymentAppointmentFixture('sr_rhine_section_assignment',39,'rhine-lab',0,0);
   const horizon=EV.find(e=>e.id==='sr_rhine_lone_trail_sky_horizon'),
     review=EV.find(e=>e.id==='sr_rhine_post_lone_trail_career_review'),
     livelihood=EV.find(e=>e.id==='sr_rhine_after_departure_livelihood'),
@@ -189,7 +188,7 @@ const postRhine=inspect(`
   S.year=1105;S.age=37;S.h=100;
   const bsw=EV.find(e=>e.id==='sr_bsw_recruitment_assessment');
   const realOffer=bsw.show(S);
-  ap(bsw.c[0].o[0][2]);
+  applyEmploymentAppointmentFixture(bsw.id,35,'bsw-contract',0,0);
   const hired={job:S.job,bsw:S.lifeRecord.affiliations.find(a=>a.id==='bsw-contract')?.status,
     former:former.status,oldGoal:oldGoal.status,
     newGoal:newGoal.status,
@@ -230,8 +229,8 @@ assert.deepEqual(postRhine.achieved,{
 const nonResigner=inspect(`
   born({seed:20261185,by:1068,region:'クルビア'});
   S.year=1099;S.age=31;S.mo=11;S.k=100;S.job=0;
-  ap(EV.find(e=>e.id==='sr_rhine_recruitment_exam').c[0].o[0][2]);
-  ap(EV.find(e=>e.id==='sr_rhine_section_assignment').c[0].o[0][2]);
+  applyEmploymentAppointmentFixture('sr_rhine_recruitment_exam',38,'rhine-lab',0,0);
+  applyEmploymentAppointmentFixture('sr_rhine_section_assignment',39,'rhine-lab',0,0);
   const horizon=EV.find(e=>e.id==='sr_rhine_lone_trail_sky_horizon'),
     review=EV.find(e=>e.id==='sr_rhine_post_lone_trail_career_review'),
     livelihood=EV.find(e=>e.id==='sr_rhine_after_departure_livelihood');
@@ -263,12 +262,12 @@ const reinstatement=inspect(`
   if(!hire||!promotion||!ethics||!asylum||!review)
     throw Error('Rhine whistleblower path event missing');
   const initially=hire.show(S);
-  ap(hire.c[0].o[0][2]);
-  ap(promotion.c[0].o[0][2]);
+  applyEmploymentAppointmentFixture(hire.id,38,'rhine-lab',0,0);
+  applyEmploymentAppointmentFixture(promotion.id,39,'rhine-lab',0,0);
   ap(ethics.c[0].o[0][2]);
   const disclosed={job:S.job,flag:S.fl.rhine_whistleblower,
     ordinaryRecruitment:hire.show(S),review:review.show(S)};
-  ap(asylum.c[0].o[0][2]);
+  applyEmploymentAppointmentFixture(asylum.id,30,'rhodes-staff',0,0);
   const aff=S.lifeRecord.affiliations.find(a=>a.id==='rhine-lab'),
     goal=S.lifeRecord.goals.find(g=>g.id==='rhine-research'),
     rhodes=S.lifeRecord.affiliations.find(a=>a.id==='rhodes-staff');
@@ -297,7 +296,7 @@ const reinstatement=inspect(`
     job:S.job,recruitment:elig(hire,S,tags(S)),
     review:review.show(S),
     former:aff.status,oldGoal:goal.status};
-  ap(hire.c[0].o[0][2]);
+  applyEmploymentAppointmentFixture(hire.id,38,'rhine-lab',0,0);
   const rehired={
     job:S.job,aff:aff.status,episodes:aff.episodes.length,
     oldEnded:aff.episodes[0]?.endedYear,
@@ -353,14 +352,14 @@ for(const corp of ['rhine','bsw']){
       hire=EV.find(e=>e.id=== (rhine?'sr_rhine_recruitment_exam':'sr_bsw_recruitment_assessment')),
       affId=rhine?'rhine-lab':'bsw-contract',
       goalId=rhine?'rhine-research':'bsw-work';
-    ap(hire.c[0].o[0][2]);
+    applyEmploymentAppointmentFixture(hire.id,rhine?38:35,affId,0,0);
     ap({lifeGoal:{id:goalId,action:'complete',note:'前の在籍期間に達成'}});
     const membership=S.lifeRecord.affiliations.find(a=>a.id===affId),
       objective=S.lifeRecord.goals.find(g=>g.id===goalId);
     ap({job:0,lifeAffiliation:{id:affId,action:'leave',note:'契約を終了'}});
     S.year+=3;S.age+=3;
     const allowed=elig(hire,S,tags(S));
-    ap(hire.c[0].o[0][2]);
+    applyEmploymentAppointmentFixture(hire.id,rhine?38:35,affId,0,0);
     return {allowed,job:S.job,status:membership.status,
       episodes:membership.episodes.length,oldEnd:membership.episodes[0]?.endedYear,
       currentStart:membership.episodes.at(-1)?.startedYear,

@@ -25,6 +25,21 @@ for(const choice of research.c){
 }
 const routeState=(seed,region,job,age=24)=>vm.runInContext(`(()=>{born({seed:${seed},by:1076,region:${JSON.stringify(region)}});S.age=${age};S.year=1100;S.mo=6;S.res=REG.find(row=>row.n===${JSON.stringify(region)});S.job=${job};S.sn.car=1100;return S})()`,context,{timeout:30000});
 const applyEffect=(state,effect)=>{context.__state=state;context.__effect=effect;vm.runInContext('S=__state;ap(__effect);',context,{timeout:30000});};
+const provisionOpening=(state,jobId,suffix)=>{
+ context.__state=state;context.__jobId=jobId;context.__suffix=suffix;
+ return JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+  const area=ensureOccupationWorkArea(__state),work=__state.world.occupationWorld,
+   employerId='career-route-employer:'+__suffix,siteId='career-route-site:'+__suffix,
+   positionId='career-route-position:'+__suffix,openingId='career-route-opening:'+__suffix;
+  work.employers[employerId]={employerId,organizationKey:null};
+  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',sector:'MFG',positionIds:[positionId]};
+  work.positions[positionId]={positionId,siteId,jobId:__jobId,capacity:1,aggregateOccupiedSlots:0,
+   identifiedOccupiedSlots:0,reservedSlots:0,vacancyCount:1,openingIds:[openingId]};
+  work.openings[openingId]={openingId,siteId,positionId,employerId,areaId:area.areaId,
+   kind:'general-public',status:'open',slots:1,validFromYear:__state.year};
+  area.siteIds.push(siteId);return {openingId,siteId};
+ })())`,context,{timeout:30000}));
+};
 const restoreState=state=>{context.__state=state;return vm.runInContext('(()=>{S=__state;const saved=normalizeResumeImport(makeResumeSnapshot());replaceCurrentLife(saved.S);replaceWorldKnowledge(saved.W);S.known=W;restoreLifeRandom(S);return S})()',context);};
 const eligible=(row,state)=>{context.__event=row;context.__state=state;return vm.runInContext('elig(__event,__state,tags(__state))',context,{timeout:30000});};
 const affiliationEffect=(eventId,affiliationId,action='join')=>{
@@ -283,14 +298,21 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
  assert(a.anchor.workplaceId);
 }
 {
- const s=routeState(872120,'クルビア',7);
+ const s=routeState(872120,'クルビア',0);
+ s.k=50;s.socialLearning||={};s.socialLearning.literacy=60;s.lifeRecord.skills||=[];
+ s.lifeRecord.skills.push({id:'engineering-experience',level:12,basis:'acceptance-fixture'});
+ const first=provisionOpening(s,7,'first'),second=provisionOpening(s,7,'second');
+ context.__state=s;context.__opening=first.openingId;
+ vm.runInContext("S=__state;applyPlayerEmploymentAction(S,{action:'accept-local-opening',jobId:7,openingId:__opening})",context,{timeout:30000});
  applyEffect(s,{lifeAffiliation:{id:'columbia-technical-work',title:'研究企業',action:'join'}});
  context.__state=s;
  const available=vm.runInContext("alternativeFacility(__state,'workplace')",context);
- assert(available,'the site-transfer case has a different available employer');
+ assert.equal(available?.id,second.siteId,'the alternative is an actual second employer opening');
  applyEffect(s,{siteAction:{kind:'workplace',action:'switch'}});
  assert.equal(s.lifeRecord.affiliations.find(row=>row.id==='columbia-technical-work').status,'left','same occupation at another workplace is not the old company');
  assert.equal(s.job,7,'a confirmed new placement retains the occupation');
+ context.__state=s;assert.equal(vm.runInContext('S=__state;currentPlayerEmployment(S).siteId',context),second.siteId);
+ assert(s.siteAffiliationHistory.some(row=>row.kind==='workplace'&&row.action==='ended'&&row.reason==='chosen-transfer'));
  s.fl.workplace_hazard=1;applyEffect(s,{job:0});assert.equal(s.fl.workplace_hazard,0,'past hazardous work does not remain a current workplace exposure');
 }
 {

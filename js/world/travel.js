@@ -67,7 +67,8 @@ function travelAwayDuringMonth(state, year, month,personId="protagonist") {
 // Home-bound work uses the actual months spent away. Portable assignments
 // require their own contract evidence before being treated as uninterrupted.
 function travelHomeWorkIncomeShare(state, year) {
-  if (!state || !contractEligibleJob(state)) return 1;
+  const episode = currentPlayerEmployment(state);
+  if (!episode || episode.mobility === "mobile" || state.workContract?.assignment === "external") return 1;
   let available = 0;
   for (let month = 1; month <= 12; month++)
     if (!travelAwayDuringMonth(state, year, month)) available++;

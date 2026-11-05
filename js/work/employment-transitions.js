@@ -43,9 +43,21 @@ function employmentDirectLivelihoodKind(jobId) {
 }
 function employmentEffectAssessment(s, effect, sourceEventId = employmentEffectSource(effect)) {
   if (!effect || typeof effect !== "object") return { canStart: true, kind: "none" };
+  if (effect.employmentResourceIncident) {
+    const incident = effect.employmentResourceIncident, episode = currentPlayerEmployment(s),
+      resource = episode && occupationAreaSnapshot(s)?.resources?.[episode.resourceId],
+      canLose = incident.action === "lose-current" && sourceEventId === incident.sourceEventId &&
+        episode?.kind === "self-employment" && episode.affiliationId === incident.affiliationId &&
+        !!episode.resourceId && resource?.status === "available";
+    return canLose ? { canStart:true, kind:"resource-incident", episode, resource, sourceEventId } :
+      { canStart:false, reasonCode:"resource-incident-no-current-livelihood" };
+  }
   const action = effect.employmentAction;
   if (action?.action === "receive-work-meal")
     return { canStart: employmentMealAvailable(s, action.sourceEventId), kind: "work-meal" };
+  if (action?.action === "record-in-kind-allocation")
+    return { canStart: employmentInKindSupportAvailable(s, action.sourceEventId) &&
+      [0.5,1].includes(action.supportShare), kind: "in-kind-allocation" };
   if (action?.action === "start-livelihood") {
     const resource = resolveEmploymentLivelihoodResource(s, action.kind, action.jobId, action.resourceId);
     return { canStart: !!resource && !s.dead && !restricted(s), kind: "livelihood", resource };
@@ -69,10 +81,9 @@ function employmentEffectAssessment(s, effect, sourceEventId = employmentEffectS
   if (current?.jobId === jobId && (!membership || current.affiliationId === membership.id))
     return { canStart: true, kind: "continue", episode: current };
   const appointmentBacked = EMPLOYMENT_APPOINTMENT_SITES.some(spec =>
-    spec.jobs.includes(jobId) && (!membership || membership.id === spec.affiliationId)),
-    strict = EMPLOYMENT_STRICT_DIRECT_EVENTS.has(sourceEventId) ||
-      !!membership && appointmentBacked,
-    priorRoute = { canStart: !strict, kind: "existing-route", reasonCode: "worksite-migration-pending" };
+      spec.jobs.includes(jobId) && (!membership || membership.id === spec.affiliationId)),
+    strict = EMPLOYMENT_STRICT_DIRECT_EVENTS.has(sourceEventId) || !!membership && appointmentBacked,
+    priorRoute = { canStart: false, kind: "rejected", reasonCode: "verified-position-and-opening-required" };
   if (sourceEventId === "ursus_mine_assignment_offer" && jobId === 3 &&
       membership?.id === "ursus-kleini-sever-mine" && membership.action === "assign" && s.res.n === "ウルサス") {
     return { canStart: !s.dead, kind:"livelihood", livelihoodKind:"coerced-assignment", jobId,
@@ -113,6 +124,13 @@ function employmentChoiceCanResolve(event, choice, s) {
   });
 }
 function commitEmploymentEffect(s, effect, assessment) {
+  if (assessment?.kind === "resource-incident") {
+    const { episode, resource, sourceEventId } = assessment;
+    resource.status = "lost";
+    resource.history ||= [];
+    resource.history.push({ year:s.year, month:s.mo || 1, from:"available", to:"lost",
+      sourceEventId, episodeId:episode.episodeId, basis:"source-supported-resource-loss" });
+  }
   if (!Number.isInteger(effect.job)) return;
   if (effect.job === 0) { endPlayerEmployment(s, "resolved-job-exit"); return; }
   if (!assessment?.canStart) throw Error("実際の仕事口または役割の成立条件がない");

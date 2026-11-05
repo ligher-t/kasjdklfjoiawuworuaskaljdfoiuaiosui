@@ -3,8 +3,10 @@ const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const path = require('node:path');
 const {context, setup} = require('./support/annual-cases.cjs');
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
 
 const {ctx} = context(path.resolve(__dirname, '..'));
+installEmploymentAppointmentFixture(ctx);
 const inspect = source => JSON.parse(vm.runInContext('JSON.stringify((()=>{' + source + '})())',ctx));
 let seed = 192901;
 const unitCases = [
@@ -41,7 +43,7 @@ for(const scenario of unitCases) {
       rehabVisible:rehabilitation.show(S),
       originalGuard:shelter.show(S)
     };
-    ap(rehabilitation.c[0].o[0][2]);
+    applyEmploymentAppointmentFixture(rehabilitation.id,28,'rhodes-staff',0,0);
     const staff=S.lifeRecord.affiliations.find(a=>a.id==='rhodes-staff'),
           employment=S.lifeRecord.affiliations.find(a=>a.id==='rhodes-employment');
     return {eligible,after,staff:staff?.status,job:S.job,
@@ -111,10 +113,10 @@ for(const infectionRoute of [false,true]){
     const medical=!!BSW_INFECTION_ROUTE;
     S.inf=medical?1:0;
     const hire=EV.find(e=>e.id==='sr_bsw_recruitment_assessment');
-    ap(hire.c[0].o[0][2]);
+    applyEmploymentAppointmentFromSource(hire.id,35,0,0);
     if(!medical) {
       const promotion=EV.find(e=>e.id==='sr_bsw_promotion_tactical');
-      ap(promotion.c[0].o[0][2]);
+      applyEmploymentAppointmentFixture(promotion.id,36,'bsw-contract',0,0);
     }
     const offer=EV.find(e=>e.id==='sr_bsw_rhodes_secondment'),
       infected=EV.find(e=>e.id==='sr_bsw_infected_squad_policy'),

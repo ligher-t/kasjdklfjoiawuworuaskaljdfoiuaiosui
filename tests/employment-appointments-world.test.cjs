@@ -128,4 +128,6 @@ assert(distribution.every(row=>row.sectors===13 && row.knownBefore===0 &&
   'one local inquiry reveals actual openings and never hires or imports another region’s vacancies');
 const totals=Object.fromEntries(['sectors','present','workplaces','openings','known','eligible'].map(key=>
   [key,distribution.reduce((sum,row)=>sum+row[key],0)]));
+assert.deepEqual(totals,{sectors:247,present:148,workplaces:148,openings:67,known:67,eligible:49},
+  'fixed-seed regional observation remains a reviewable opportunity baseline, not a population rate');
 console.log('Bounded regional opportunity observation (one area per region): '+JSON.stringify(totals));

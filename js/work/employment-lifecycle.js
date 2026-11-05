@@ -91,6 +91,8 @@ function applyPlayerEmploymentAction(s, action) {
     return resolveKnownEmploymentOpening(s, action.action === "accept-known-opening");
   if (action?.action === "start-livelihood") return startEmploymentLivelihood(s, action);
   if (action?.action === "receive-work-meal") return recordEmploymentMeal(s, action.sourceEventId);
+  if (action?.action === "record-in-kind-allocation")
+    return recordEmploymentInKindAllocation(s, action.sourceEventId, action.supportShare);
   if (action?.action === "site-incident") return applyEmploymentSiteIncident(s, action);
   if (!action || !["accept-local-opening", "leave", "complete-gig", "suspend", "resume", "pay-arrears"].includes(action.action))
     throw Error("採用案件の操作が不正");
@@ -157,6 +159,14 @@ function commitEmploymentOpening(s, assessed, options = {}) {
   state.cases.push(application);
   state.episodes.push(episode);
   state.activeEpisodeId = episodeId;
+  const affiliation = episode.affiliationId && s.lifeRecord?.affiliations?.find(row => row.id === episode.affiliationId);
+  if (affiliation && AFFILIATION_RULES[affiliation.id]?.scope === "workplace" && episode.siteId) {
+    affiliation.anchor ||= {};
+    affiliation.anchor.localityKey = localityKey(s);
+    affiliation.anchor.workplaceId = episode.siteId;
+    const history = affiliation.history?.at(-1);
+    if (history && history.year === s.year) history.anchor = { ...affiliation.anchor };
+  }
   const priorJob = s.job;
   s.job = jobId;
   s.workPayBonus = 0;

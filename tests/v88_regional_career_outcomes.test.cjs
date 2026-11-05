@@ -4,13 +4,26 @@ const assert = require('node:assert/strict');
 const path = require('node:path');
 const vm = require('node:vm');
 const {context, setup} = require('./support/annual-cases.cjs');
+const {employmentAppointmentFixture,installEmploymentAppointmentFixture} = require('./support/employment-appointment-fixture.cjs');
 const {ctx} = context(path.resolve(__dirname, '..'));
+installEmploymentAppointmentFixture(ctx);
 const run = src => vm.runInContext(src,ctx);
 const snap = src => JSON.parse(run('JSON.stringify((()=>{'+src+'})())'));
 function start(region, species='エラフィア') {
   setup(ctx,{id:'regional-career-outcomes',seed:740011,region,age:24});
   ctx.TEST_SPECIES=species;
   run('S.r={...S.r,n:TEST_SPECIES}; S.age=24; S.year=1098; S.mo=6; S.job=0; S.fl.retired=0; S.sn={};');
+}
+function provisionFrontierFarm(resourceId,siteId) {
+  ctx.FARM_FIXTURE={resourceId,siteId};
+  run(`(()=>{
+    const {resourceId,siteId}=FARM_FIXTURE,area=ensureOccupationWorkArea(S),work=S.world.occupationWorld;
+    for(const resource of Object.values(area.resources||{}))if(resource.sector==='AGR')resource.status='lost';
+    work.sites[siteId]={siteId,status:'open',areaId:area.areaId,sector:'AGR',positionIds:[],
+      basis:'acceptance-fixture-existing-frontier-resource'};
+    area.resources[resourceId]={resourceId,siteId,sector:'AGR',kind:'cultivated-land',
+      status:'available',basis:'acceptance-fixture-existing-frontier-resource'};
+  })()`);
 }
 // Exercise the actual event dispatcher once, not a manually fabricated result.
 // These fictional job applications must not silently depend on a nonexistent
@@ -32,6 +45,7 @@ for(const [region,eventId] of [
 }
 
 start('イベリア');
+employmentAppointmentFixture(ctx,{eventId:'car_ibe_inq_entry',jobId:76,affiliationId:'iberia-inquisition-officer'});
 const dispatchResult=snap(`
   AU='r';HL=0;
   rd=()=>{}; syncUIDialogs=()=>{}; $('stt').focus=()=>{}; // VM has no visual DOM
@@ -48,13 +62,14 @@ assert.equal(dispatchResult.year,dispatchResult.sn,'result year must match the e
 assert.equal(dispatchResult.valid,true,'recorded indices must identify the selected choice and actual result');
 
 start('イベリア');
+employmentAppointmentFixture(ctx,{eventId:'car_ibe_inq_entry',jobId:76,affiliationId:'iberia-inquisition-officer'});
 assert.deepEqual(snap(`
   const e=EV.find(x=>x.id==='car_ibe_inq_entry'), choices=simulationChoiceStates(e,S,tags(S));
   return {eligible:elig(e,S,tags(S)),visible:choices.map(x=>x.shown)};
 `),{eligible:true,visible:[true,false,true]},'non-Aegir applicant cannot receive the Aegir-only result');
 let ordinary=snap(`
   const e=EV.find(x=>x.id==='car_ibe_inq_entry');
-  ap(e.c[0].o[0][2]);
+  applyEmploymentAppointmentFixture(e.id,76,'iberia-inquisition-officer',0,0);
   return {job:S.job,detained:!!S.fl.detained,
     employer:S.lifeRecord.affiliations.find(x=>x.id==='iberia-inquisition-officer')?.status,
     role:S.lifeRecord.affiliations.find(x=>x.id==='iberia-inquisition-officer')?.role};
@@ -65,13 +80,14 @@ assert.equal(ordinary.employer,'active');
 assert.equal(ordinary.role,'見習い審問官');
 
 start('イベリア','エーギル');
+employmentAppointmentFixture(ctx,{eventId:'car_ibe_inq_entry',jobId:76,affiliationId:'iberia-inquisition-officer'});
 assert.deepEqual(snap(`
   const e=EV.find(x=>x.id==='car_ibe_inq_entry'), choices=simulationChoiceStates(e,S,tags(S));
   return {eligible:elig(e,S,tags(S)),visible:choices.map(x=>x.shown)};
 `),{eligible:true,visible:[false,true,true]},'Aegir applicant sees only the species-specific route plus withdrawal');
 const detention=snap(`
   const e=EV.find(x=>x.id==='car_ibe_inq_entry');
-  ap(e.c[1].o[1][2]);
+  applyEmploymentAppointmentFixture(e.id,76,'iberia-inquisition-officer',1,1);
   const confined=EV.find(x=>x.id==='detain_life'),
     now={restricted:restricted(S),job:S.job,available:elig(confined,S,tags(S))};
   ap(confined.c[2].o[0][2]);
@@ -81,10 +97,11 @@ assert.deepEqual(detention,{now:{restricted:true,job:0,available:true},released:
   'actual detention opens confinement, and review release closes it');
 
 start('サルゴン');
+employmentAppointmentFixture(ctx,{eventId:'car_sar_guard_entry',jobId:68,affiliationId:'sargon-padishah-guard'});
 const outcome=snap(`
   const entry=EV.find(x=>x.id==='car_sar_guard_entry'),
     incident=EV.find(x=>x.id==='car_sar_guard_choice_assassination');
-  ap(entry.c[0].o[0][2]);
+  applyEmploymentAppointmentFixture(entry.id,68,'sargon-padishah-guard',0,0);
   const before=S.lifeRecord.affiliations.find(x=>x.id==='sargon-padishah-guard');
   const eligible=elig(incident,S,tags(S));
   const former=before.role;
@@ -124,8 +141,8 @@ for(const entry of [
   const result=snap(`
     const c=EMPLOYMENT_CASE;
     S.cash=10000000;S.house.cash=10000000;
-    ap({job:c.job,lifeAffiliation:{id:c.id,title:'地域固有の勤務',action:'join',role:'現地の担当'},
-        lifeGoal:{id:c.goal,title:'地域の仕事を続ける',action:'start'}});
+    if(c.job===59)applyEmploymentAppointmentFixture('car_lei_court_entry',59,'leithania-court-musician',0,0);
+    else applyEventOutcomeFixture(c.job===45?'car_lmd_black_entry':'car_sam_warrior_entry',0,0);
     const prior={job:S.job,status:S.lifeRecord.affiliations.find(x=>x.id===c.id).status};
     const destination=moveDestinations(S).find(x=>x.n!==S.res.n);
     if(!destination)throw Error('No regional route from '+c.region);
@@ -151,6 +168,16 @@ for(const entry of [
 start('イェラグ');
 const portable=snap(`
   S.cash=10000000;S.house.cash=10000000;
+  const area=ensureOccupationWorkArea(S),work=S.world.occupationWorld,
+    employerId='kjerag-portable-employer',siteId='kjerag-portable-site',
+    positionId='kjerag-portable-position',openingId='kjerag-portable-opening';
+  work.employers[employerId]={employerId,organizationKey:null};
+  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',sector:'LOG',positionIds:[positionId]};
+  work.positions[positionId]={positionId,siteId,jobId:16,capacity:1,aggregateOccupiedSlots:0,
+    identifiedOccupiedSlots:0,reservedSlots:0,vacancyCount:1,openingIds:[openingId]};
+  work.openings[openingId]={openingId,siteId,positionId,employerId,areaId:area.areaId,
+    kind:'general-public',status:'open',slots:1,validFromYear:S.year};
+  area.siteIds.push(siteId);
   ap({job:16,
     lifeAffiliation:{id:'terra-general-transporter',title:'各地の運送業',action:'join'},
     lifeAffiliations:[{id:'kjerag-village-transporter',title:'集落間の便',action:'join'}]});
@@ -174,13 +201,15 @@ for(const row of [
   {region:'サーミ',event:'car_sam_warrior_entry',job:71,affiliation:'sami-scar-warrior',goal:'sami-scar-demon-defense',achieved:false}
 ]){
   start(row.region);
+  if(row.job===59) employmentAppointmentFixture(ctx,{eventId:row.event,jobId:row.job,affiliationId:row.affiliation});
   ctx.REHIRE_CASE=row;
   const outcome=snap(`
     const c=REHIRE_CASE,e=EV.find(x=>x.id===c.event);
     if(!e)throw Error('Regional career event missing: '+c.event);
     S.cash=10000000;S.house.cash=10000000;
     const firstChoice=e.c[0].o[0][2];
-    ap(firstChoice);
+    if(c.job===59)applyEmploymentAppointmentFixture(e.id,c.job,c.affiliation,0,0);
+    else ap(firstChoice);
     S.sn[e.id]=S.year;
     const initial=S.lifeRecord.affiliations.find(x=>x.id===c.affiliation);
     const goal=S.lifeRecord.goals.find(x=>x.id===c.goal);
@@ -252,6 +281,7 @@ const sourceHeld = new Set([42,48,50,53,58,61]);
 for(const career of regionalCareers){
   start(career.region,career.job===60?'サンクタ':'エラフィア');
   ctx.REGIONAL_MATRIX_CASE=career;
+  if(career.job===62)provisionFrontierFarm('regional-frontier-farm-resource','regional-frontier-farm-site');
   if(sourceHeld.has(career.job)) {
     const result=snap(`
       const row=REGIONAL_MATRIX_CASE, event=EV.find(e=>e.id===row.id),
@@ -268,6 +298,8 @@ for(const career of regionalCareers){
     const c=REGIONAL_MATRIX_CASE,entry=EV.find(e=>e.id===c.id),
       choice=entry.c.flatMap(x=>x.o).find(o=>o[2]?.job===c.job),
       success=choice[2],
+      choiceIndex=entry.c.findIndex(row=>row.o.includes(choice)),
+      outcomeIndex=entry.c[choiceIndex].o.indexOf(choice),
       duties=EV.filter(e=>e.id.startsWith('car_'+c.key+'_') &&
         (e.id.includes('_daily_')||e.id.includes('_choice_')));
     S.cash=15000000;S.house.cash=15000000;
@@ -275,7 +307,12 @@ for(const career of regionalCareers){
     S.mo=entry.months?.[0]||4;
     if(c.key==='hig_cyber')S.fl.cyber_trace=1;
     const before={shown:entry.show(S),eligible:elig(entry,S,tags(S))};
-    ap(success);
+    if(EMPLOYMENT_APPOINTMENT_SITES.some(spec=>spec.jobs.includes(c.job)&&spec.affiliationId===c.affiliation))
+      applyEmploymentAppointmentFixture(entry.id,c.job,c.affiliation,choiceIndex,outcomeIndex);
+    else {
+      const assessment=employmentEffectAssessment(S,success,entry.id);
+      try{ap(success)}catch(error){throw Error(entry.id+' J'+c.job+' '+c.affiliation+' '+assessment.reasonCode+': '+error.message)}
+    }
     S.sn[entry.id]=S.year;
     const member=S.lifeRecord.affiliations.find(a=>a.id===c.affiliation);
     const goal=S.lifeRecord.goals.find(g=>g.id===c.goal);
@@ -299,7 +336,9 @@ for(const career of regionalCareers){
     S.job=0;
     S.year+=3;S.age+=3;S.mo=entry.months?.[0]||4;
     const canRehire={shown:entry.show(S),eligible:elig(entry,S,tags(S))};
-    ap(success);
+    if(EMPLOYMENT_APPOINTMENT_SITES.some(spec=>spec.jobs.includes(c.job)&&spec.affiliationId===c.affiliation))
+      applyEmploymentAppointmentFixture(entry.id,c.job,c.affiliation,choiceIndex,outcomeIndex);
+    else ap(success);
     const hiredAgain={
       job:S.job,status:member.status,goal:goal.status,
       episodes:member.episodes.map(x=>({startedYear:x.startedYear,endedYear:x.endedYear,returning:x.returning})),
@@ -392,7 +431,7 @@ for(const branch of [0,1]){
   const result=snap(`
     const entry=EV.find(x=>x.id==='car_hig_ninja_entry'),
       escape=EV.find(x=>x.id==='car_hig_ninja_choice_escape');
-    ap(entry.c[0].o[0][2]);
+    applyEmploymentAppointmentFromSource(entry.id,47,0,0);
     const before={job:S.job,affiliation:S.lifeRecord.affiliations.find(a=>a.id==='higashi-ninja-clan').status};
     ap(escape.c[0].o[NINJA_OUTCOME][2]);
     S.year+=3;S.age+=3;
@@ -422,7 +461,7 @@ const victorianExile=snap(`
   S.year=1094;S.by=1070;S.age=24;S.mo=6;
   S.k=100;S.cr=100;S.p=100;S.cash=10000000;S.house.cash=10000000;
   const hiring=entry.c[0].o[0][2];
-  ap(hiring);
+  applyEmploymentAppointmentFromSource(entry.id,55,0,0);
   const old=S.lifeRecord.affiliations.find(a=>a.id==='victoria-royal-officer'),
     priorGoal=S.lifeRecord.goals.find(g=>g.id==='victoria-officer-career');
   const initially={
@@ -529,7 +568,7 @@ const royalSurrender=snap(`
     coup=EV.find(e=>e.id==='car_vic_royal_choice_coup'),
     review=EV.find(e=>e.id==='car_vic_exile_command_review');
   S.year=1094;S.by=1070;S.age=24;S.k=100;S.cr=100;
-  ap(entry.c[0].o[0][2]);
+  applyEmploymentAppointmentFromSource(entry.id,55,0,0);
   ap(coup.c[1].o[0][2]);
   S.sn[coup.id]=S.year;
   S.eventOutcomes ||= {};
@@ -553,7 +592,7 @@ const missingExile=snap(`
     coup=EV.find(e=>e.id==='car_vic_royal_choice_coup'),
     review=EV.find(e=>e.id==='car_vic_exile_command_review');
   S.year=1099;S.age=29;S.by=1070;
-  ap(entry.c[0].o[0][2]);
+  applyEmploymentAppointmentFromSource(entry.id,55,0,0);
   S.sn[coup.id]=1094;
   S.eventOutcomes={[coup.id]:{year:1094,choiceIndex:0,outcomeIndex:0}};
   const postwar=EV.find(e=>e.id==='car_vic_exile_postwar_review');
@@ -601,7 +640,7 @@ for(const c of departureCases){
       throw Error('Departure pathway missing: '+c.incident);
     const startYear=S.year;
     S.cash=10000000;S.house.cash=10000000;S.k=100;S.cr=100;
-    ap(hiring);
+    applyEmploymentAppointmentFromSource(entry.id,c.oldJob,0,0);
     const member=S.lifeRecord.affiliations.find(a=>a.id===c.former),
       formerGoal=S.lifeRecord.goals.find(g=>g.id===c.oldGoal);
     const onDuty=incident.show(S);
@@ -634,9 +673,11 @@ for(const c of departureCases){
     S.sn[review.id]=S.year;
     const resting={job:S.job,goal:nextGoal.status,
       action:nextGoal.history.at(-1)?.action};
-    const otherHiring=other.c.flatMap(ch=>ch.o).find(out=>out[2]?.job===c.otherJob)?.[2];
+    const otherChoiceIndex=other.c.findIndex(ch=>ch.o.some(out=>out[2]?.job===c.otherJob)),
+      otherOutcomeIndex=otherChoiceIndex<0?-1:other.c[otherChoiceIndex].o.findIndex(out=>out[2]?.job===c.otherJob),
+      otherHiring=otherOutcomeIndex<0?null:other.c[otherChoiceIndex].o[otherOutcomeIndex][2];
     if(!otherHiring) throw Error('Actual alternative employer hiring missing: '+c.other);
-    ap(otherHiring);
+    applyEmploymentAppointmentFromSource(other.id,c.otherJob,otherChoiceIndex,otherOutcomeIndex);
     S.year+=3;S.age+=3;
     const hired={job:S.job,former:member.status,
       nextGoal:nextGoal.status,oldGoal:formerGoal.status,
@@ -723,7 +764,7 @@ for(const c of [
     if(!hire||!original||!hearing||!after)
       throw Error('Missing exceptional military career event '+c.entry);
     S.year=1094;S.age=26;S.by=1068;S.cr=90;S.k=90;S.h=90;
-    ap(hire.c[0].o[0][2]);
+    applyEmploymentAppointmentFromSource(hire.id,c.job,0,0);
     const group=S.lifeRecord.affiliations.find(x=>x.id===c.employer);
     const oldGoal=S.lifeRecord.goals.find(x=>x.id===c.formerGoal);
     ap(original.c[1].o[0][2]);
@@ -758,7 +799,7 @@ for(const c of [
       reviewOnceMore:elig(hearing,S,tags(S)),
       episodes:group.episodes.length,issues:auditLifeState(S)
     };
-    ap(hire.c[0].o[0][2]);
+    applyEmploymentAppointmentFromSource(hire.id,c.job,0,0);
     const again={
       job:S.job,status:group.status,episodes:group.episodes.length,
       firstEnded:group.episodes[0]?.endedYear,
@@ -859,6 +900,7 @@ const jobLossCases=[
 for(const c of jobLossCases){
   start(c.region);
   ctx.JOB_LOSS_CASE=c;
+  if(c.oldJob===62)provisionFrontierFarm('lost-frontier-farm-resource','lost-frontier-farm-site');
   const result=snap(`
     const c=JOB_LOSS_CASE,
       entry=EV.find(e=>e.id===c.entry),
@@ -871,7 +913,23 @@ for(const c of jobLossCases){
     S.year=1098;S.age=24;S.by=1074;S.mo=4;S.k=100;S.h=100;S.cr=100;
     S.cash=10000000;S.house.cash=10000000;
     const firstOffer=elig(entry,S,tags(S));
-    ap(entry.c[0].o[0][2]);
+    const hireChoiceIndex=entry.c.findIndex(choice=>choice.o.some(outcome=>outcome[2]?.job===c.oldJob)),
+      hireOutcomeIndex=entry.c[hireChoiceIndex].o.findIndex(outcome=>outcome[2]?.job===c.oldJob),
+      hireEffect=entry.c[hireChoiceIndex].o[hireOutcomeIndex][2],
+      hireAffiliation=hireEffect.lifeAffiliation?.id;
+    if(c.oldJob===62){
+      const area=ensureOccupationWorkArea(S),work=S.world.occupationWorld,
+        resourceId='frontier-farm-resource',siteId='frontier-farm-resource-site';
+      if(!Object.values(area.resources||{}).some(row=>row.sector==='AGR'&&work.sites[row.siteId]?.status==='open')){
+        work.sites[siteId]={siteId,status:'open',areaId:area.areaId,sector:'AGR',positionIds:[],
+          basis:'acceptance-fixture-existing-frontier-resource'};
+        area.resources[resourceId]={resourceId,siteId,sector:'AGR',kind:'cultivated-land',
+          status:'available',basis:'acceptance-fixture-existing-frontier-resource'};
+      }
+    }
+    if(EMPLOYMENT_APPOINTMENT_SITES.some(spec=>spec.jobs.includes(c.oldJob)&&spec.affiliationId===hireAffiliation))
+      applyEmploymentAppointmentFixture(entry.id,c.oldJob,hireAffiliation,hireChoiceIndex,hireOutcomeIndex);
+    else applyEventOutcomeFixture(entry.id,hireChoiceIndex,hireOutcomeIndex);
     const old=S.lifeRecord.affiliations.find(a=>a.id===c.former),
       oldGoal=S.lifeRecord.goals.find(g=>g.id===c.oldGoal);
     const originalJob=S.job,onDuty=loss.show(S);
@@ -983,27 +1041,44 @@ for(const c of jobLossCases){
 // Reopening a pioneer farm is a distinct hiring episode, not a revival of
 // a previously seized property. A job ID alone is insufficient.
 start('クルビア');
-const pioneerReturn=snap(`
+run('S.year=1098;S.age=24;S.by=1074;S.k=100;S.h=100;S.cr=100;S.mo=6;');
+provisionFrontierFarm('pioneer-first-farm-resource','pioneer-first-farm-site');
+const dispossession=snap(`
   S.year=1098;S.age=24;S.by=1074;S.k=100;S.h=100;S.cr=100;S.mo=6;
   const entry=EV.find(x=>x.id==='car_col_pioneer_entry'),
     loss=EV.find(x=>x.id==='car_col_pioneer_choice_bandits'),
     followup=EV.find(x=>x.id==='car_col_pioneer_after_dispossession');
-  ap(entry.c[0].o[0][2]);
+  applyEventOutcomeFixture(entry.id,0,0);
+  const firstResourceId=currentPlayerEmployment(S).resourceId;
   ap(loss.c[1].o[0][2]);
   S.sn[loss.id]=S.year;
   S.eventOutcomes={[loss.id]:{year:S.year,choiceIndex:1,outcomeIndex:0}};
-  S.year=1101;S.age=27;
   const former=S.lifeRecord.affiliations.find(a=>a.id==='columbia-frontier-pioneer');
-  const canHire=entry.show(S);
-  ap(entry.c[0].o[0][2]);
+  const oldResource=occupationAreaSnapshot(S).resources[firstResourceId];
+  S.year=1101;S.age=27;
+  const canHire=entry.show(S),assessment=employmentEffectAssessment(S,entry.c[0].o[0][2],entry.id);
+  return {canHire,resourceStatus:oldResource.status,assessment:assessment.reasonCode,
+    formerEpisodes:former.episodes.length};
+`);
+assert.equal(dispossession.canHire,true);
+assert.equal(dispossession.resourceStatus,'lost','a raided farm resource is closed');
+assert.equal(dispossession.assessment,'verified-position-and-opening-required','no job ID alone can reopen the lost land');
+assert.equal(dispossession.formerEpisodes,1);
+provisionFrontierFarm('pioneer-second-farm-resource','pioneer-second-farm-site');
+const pioneerReturn=snap(`
+  const entry=EV.find(x=>x.id==='car_col_pioneer_entry'),
+    followup=EV.find(x=>x.id==='car_col_pioneer_after_dispossession'),
+    former=S.lifeRecord.affiliations.find(a=>a.id==='columbia-frontier-pioneer');
+  applyEventOutcomeFixture(entry.id,0,0);
   const legit={job:S.job,episodes:former.episodes.length,
     firstEnd:former.episodes[0].endedYear,
     secondStart:former.episodes.at(-1)?.startedYear,
+    resourceId:currentPlayerEmployment(S).resourceId,
     choices:followup.c.map(c=>c.show(S,tags(S)))};
-  return{canHire,legit};
+  return{legit};
 `);
 assert.deepEqual(pioneerReturn,{
-  canHire:true,legit:{job:62,episodes:2,firstEnd:1098,
+  legit:{job:62,episodes:2,firstEnd:1098,resourceId:'pioneer-second-farm-resource',
     secondStart:1101,choices:[false,false,true]}
 },'a separately obtained second farm can settle the first dispossession livelihood goal');
 
@@ -1025,7 +1100,7 @@ for(const choiceIndex of [0,1]){
     S.debt=cfg.choiceIndex===0?2000000:0;
     S.fl.frontier_contract=0;
     const offered=elig(offer,S,tags(S));
-    ap(offer.c[cfg.choiceIndex].o[cfg.outcomeIndex][2]);
+    applyEmploymentAppointmentFromSource(offer.id,62,cfg.choiceIndex,cfg.outcomeIndex);
     S.sn[offer.id]=S.year;
     S.eventOutcomes={[offer.id]:{
       year:S.year,choiceIndex:cfg.choiceIndex,outcomeIndex:cfg.outcomeIndex

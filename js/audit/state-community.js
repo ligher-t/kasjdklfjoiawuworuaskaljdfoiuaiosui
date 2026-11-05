@@ -224,7 +224,8 @@ function auditCareAndWorkplaceState(s, problems, services = STATE_AUDIT_SERVICES
     problems.push("施設在籍履歴が不正");
   if (
     s.siteAffiliations?.workplace &&
-    (!s.job ||
+    (!s.job || !currentPlayerEmployment(s) ||
+      currentPlayerEmployment(s).siteId !== s.siteAffiliations.workplace.facilityId ||
       String(s.job) !== s.siteAffiliations.workplace.extra ||
       s.siteAffiliations.workplace.areaKey !== s.community?.key)
   )
@@ -244,7 +245,7 @@ function auditCareAndWorkplaceState(s, problems, services = STATE_AUDIT_SERVICES
             row.startYear === s.workContract.startYear &&
             s.world?.occupationWorld?.sites?.[row.siteId]?.siteId === row.siteId &&
             s.world?.occupationWorld?.positions?.[row.positionId]?.siteId === row.siteId)
-        : s.workContract.siteId !== s.siteAffiliations?.workplace?.facilityId) ||
+        : true) ||
       !Number.isInteger(s.workContract.startYear) ||
       s.workContract.startYear > s.year ||
       s.workContract.wagePremium < 0 ||

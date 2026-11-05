@@ -186,6 +186,7 @@ window.TERRA_DATA_BUILD.run("model/guide", function ($terraData, $define, $rules
         ]
       },
       namedCities: {
+        "クルビア": ["トリマウンツ"],
         "炎国": ["玉門", "尚蜀"],
         "龍門": ["龍門"],
         "ヴィクトリア": ["ロンディニウム"],

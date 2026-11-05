@@ -108,13 +108,18 @@ function recordEmploymentPrompt(event, s, options = {}) {
     const kind = options.protected && meta.kind === "routine" ? "deadline" : meta.kind;
     ux.presented.push({ eventId: event.id, year: s.year, month: s.mo, kind });
     ux.presented = ux.presented.slice(-5);
-    ux.metrics ||= { employmentDecisionsShown: 0, routineEmploymentDecisionStreakMax: 0,
-      routineEmploymentDecisionsInFive: 0, repeatPromptSameTopicWithoutRevision: 0 };
+    ux.metrics ||= {};
+    for (const key of ["employmentDecisionsShown", "routineEmploymentDecisionStreakMax",
+      "routineEmploymentDecisionsInFive", "routineEmploymentDecisionsInFiveMax",
+      "repeatPromptSameTopicWithoutRevision"])
+      if (!Number.isFinite(ux.metrics[key])) ux.metrics[key] = 0;
     if (meta.kind !== "none") ux.metrics.employmentDecisionsShown++;
     let streak = 0;
     for (const row of ux.presented.slice().reverse()) { if (row.kind !== "routine") break; streak++; }
     ux.metrics.routineEmploymentDecisionStreakMax = Math.max(ux.metrics.routineEmploymentDecisionStreakMax, streak);
     ux.metrics.routineEmploymentDecisionsInFive = ux.presented.filter(row => row.kind === "routine").length;
+    ux.metrics.routineEmploymentDecisionsInFiveMax = Math.max(
+      ux.metrics.routineEmploymentDecisionsInFiveMax, ux.metrics.routineEmploymentDecisionsInFive);
   }
   if (meta.topicKey) {
     const revision = employmentTopicRevision(event, s), prior = ux.topics[meta.topicKey];

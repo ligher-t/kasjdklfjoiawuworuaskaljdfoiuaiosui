@@ -153,8 +153,11 @@ function affiliationWorkAvailable(s, id) {
   if (a.posting?.kind === "ship" && s.residenceBase?.id !== "rhodes-landship") return false;
   if (["初期移動野営地","チェルノボーグ臨時拠点","国境野営地","移動隊"].includes(a.posting?.kind) &&
       (a.role||"").startsWith(a.posting.kind+"・") && a.posting.localityKey !== localityKey(s)) return false;
-  if (rule?.scope === "workplace" && a.anchor?.workplaceId && s.siteAffiliations?.workplace)
-    return a.anchor.workplaceId === s.siteAffiliations.workplace.facilityId;
+  if (rule?.scope === "workplace") {
+    const episode = currentPlayerEmployment(s);
+    if (!episode || episode.jobId !== s.job) return false;
+    if (a.anchor?.workplaceId && a.anchor.workplaceId !== episode.siteId) return false;
+  }
   return true;
 }
 function affiliationAppointmentHere(s, id) {
@@ -269,10 +272,12 @@ function reconcileAffiliationWork(s, preserveCurrentJob = false) {
       continue;
     }
     if (!rule?.jobs || !["active", "crisis"].includes(a.status)) continue;
-    const matches = rule.jobs.includes(s.job) && !s.fl?.retired && !restricted(s) &&
+    const activeEpisode = currentPlayerEmployment(s),
+      matches = rule.jobs.includes(s.job) && !s.fl?.retired && !restricted(s) &&
       (!rule.region || s.res.n === rule.region) &&
       (rule.scope !== "workplace" || !a.anchor || a.anchor.localityKey === localityKey(s)) &&
-      (!a.anchor?.workplaceId || !s.siteAffiliations?.workplace || a.anchor.workplaceId === s.siteAffiliations.workplace.facilityId) &&
+      (rule.scope !== "workplace" || activeEpisode?.jobId === s.job) &&
+      (!a.anchor?.workplaceId || a.anchor.workplaceId === activeEpisode?.siteId) &&
       (a.posting?.kind !== "branch" || a.posting.localityKey === localityKey(s));
     const posted = a.posting?.kind !== "ship" || s.residenceBase?.id === "rhodes-landship";
     if (matches && posted) continue;

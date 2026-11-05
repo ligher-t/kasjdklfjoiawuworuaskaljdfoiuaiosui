@@ -212,9 +212,6 @@ const ANNUAL_SERVICES = Object.freeze({
   endCareNetworkPeopleRoles(...args) {
     return endCareNetworkPeopleRoles(...args);
   },
-  pickStarterJob(...args) {
-    return pickStarterJob(...args);
-  },
   reconcileWorkContract(...args) {
     return reconcileWorkContract(...args);
   },

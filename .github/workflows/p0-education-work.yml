@@ -188,7 +188,7 @@ jobs:
 
   employment-boundaries:
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -202,6 +202,20 @@ jobs:
           v91_employment_ordinary_positions_and_gigs.test.cjs
           employment-appointments-world.test.cjs
           employment-finance-transitions.test.cjs
+          employment-event-runtime-review.test.cjs
+          employment-135-case-manifest.test.cjs
+          employment-legacy-route-removal.test.cjs
+          employment-normal-play-frequency.test.cjs
+          v88_regional_career_outcomes.test.cjs
+          v88_effect_subject_finance_and_infection.test.cjs
+          v88_workplace_goal_departure_contracts.test.cjs
+          v88_rhine_and_rhodes_departure_lifecycle.test.cjs
+          v88_cross_faction_affiliation_transitions.test.cjs
+          v88_family_child_future_and_memories.test.cjs
+          v88_death_job_and_year_basis.test.cjs
+          v88_roaming_work_family_boundaries.test.cjs
+          v88_zelgrad_second_job_loss_and_mobility.test.cjs
+          p0-career-credential-lifecycle.test.cjs
           v87_affiliation_career_ursus_mine.js
           employment-family-periods.test.cjs
           employment-ux.test.cjs

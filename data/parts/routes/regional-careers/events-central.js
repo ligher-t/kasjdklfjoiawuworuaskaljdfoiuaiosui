@@ -53,6 +53,8 @@ window.TERRA_DATA_BUILD.fragment(
           1,
           "命からがら農場を離れ、近くの避難場所へ逃げ延びた。畑も収穫物も略奪されたが、命だけはつないだ。",
           { job: 0, cash: -500000, p: -5,
+            employmentResourceIncident: { action:"lose-current", sourceEventId:"car_col_pioneer_choice_bandits",
+              affiliationId:"columbia-frontier-pioneer" },
             lifeAffiliation: { id: "columbia-frontier-pioneer", action: "leave",
               note: "農場を襲撃されて土地を離れ、開拓の仕事を終えた" },
             lifeGoals: [

@@ -179,7 +179,9 @@ function assessEmploymentAppointment(s,input={}) {
     return reject("no-appointment-opening");
   const current=currentPlayerEmployment(s),
     physicalScene=EMPLOYMENT_PHYSICAL_INTERVIEWS[input.sourceEventId]===spec.affiliationId,
-    reached=current?.siteId===site.siteId || (spec.organizationKey==="rhodes-island" &&
+    reached=current?.siteId===site.siteId ||
+      EMPLOYMENT_ONBOARD_APPOINTMENT_SOURCES[input.sourceEventId]===spec.affiliationId ||
+      (spec.organizationKey==="rhodes-island" &&
       s.residenceBase?.id==="rhodes-landship") || s.appointmentEncounters?.some(row=>
       row.siteId===site.siteId && row.sourceEventId===input.sourceEventId && row.year===s.year && row.month===(s.mo||1)),
     needsEncounter=["headquarters","mobile"].includes(spec.kind) && !spec.city;
@@ -199,6 +201,10 @@ const EMPLOYMENT_PHYSICAL_INTERVIEWS = Object.freeze({
   choice_columbia_06:"bsw-contract",
   car_kje_karlan_entry:"kjerag-karlan-commercial",
   sr_rhodes_hiring_review:"rhodes-staff"
+});
+const EMPLOYMENT_ONBOARD_APPOINTMENT_SOURCES = Object.freeze({
+  sr_rhine_rhodes_asylum:"rhodes-staff",
+  sr_reunion_turncoat_rehabilitation:"rhodes-staff"
 });
 function hasEmploymentPhysicalInterview(eventId) { return Object.hasOwn(EMPLOYMENT_PHYSICAL_INTERVIEWS, eventId); }
 /** Only actual presentation of the physical scene establishes arrival. */

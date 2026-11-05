@@ -1,7 +1,31 @@
 'use strict';
 const assert=require('node:assert/strict'),path=require('node:path'),vm=require('node:vm');
 const {context}=require('./support/annual-cases.cjs');
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
 const {ctx}=context(path.resolve(__dirname,'..'));
+installEmploymentAppointmentFixture(ctx);
+vm.runInContext(`globalThis.provisionGeneralOpening=function(jobId,token){
+  const area=occupationAreaSnapshot(S),work=S.world.occupationWorld,
+    employerId='workplace-goal-employer:'+token,siteId='workplace-goal-site:'+token,
+    positionId='workplace-goal-position:'+token,openingId='workplace-goal-opening:'+token;
+  work.employers[employerId]={employerId,organizationKey:null,kind:'anonymous-operator'};
+  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',sector:jobId===7?'MFG':'CIV',positionIds:[positionId]};
+  work.positions[positionId]={positionId,siteId,jobId,capacity:1,aggregateOccupiedSlots:0,
+    identifiedOccupiedSlots:0,reservedSlots:0,vacancyCount:1,openingIds:[openingId]};
+  work.openings[openingId]={openingId,siteId,positionId,employerId,areaId:area.areaId,
+    kind:'general-public',status:'open',slots:1,validFromYear:S.year};
+  area.siteIds.push(siteId);
+  return openingId;
+};
+globalThis.seedGeneralEmployment=function(jobId,token){
+  S.k=50;S.socialLearning||={};S.socialLearning.literacy=60;
+  if(jobId===7)ap({lifeSkill:{id:'engineering-experience',title:'技術経験',delta:12,context:'勤務開始の受入fixture'}});
+  const openingId=provisionGeneralOpening(jobId,token);
+  const assessment=assessEmploymentChoice(S,jobId,openingId);
+  if(!assessment.canStart)throw Error('General employment fixture rejected J'+jobId+': '+assessment.reasonCode);
+  ap({employmentAction:{action:'accept-local-opening',jobId,openingId}});
+  return openingId;
+};`,ctx);
 const inspect=source=>JSON.parse(vm.runInContext('JSON.stringify((()=>{'+source+'})())',ctx,{timeout:30000}));
 
 const workplaceCases=[
@@ -17,8 +41,13 @@ for(let i=0;i<workplaceCases.length;i++){
  const result=inspect(`
   const c=TARGET;
   born({seed:SEED,by:1065,region:c.region});
-  S.year=1102;S.age=37;S.job=c.job;
-  ap({lifeAffiliation:{id:c.aff,title:'仕事と所属',kind:'workplace',action:'join',role:'職員'},
+  S.year=1102;S.age=37;S.job=0;S.mo=4;
+  if(c.job===28){
+    applyEmploymentAppointmentFixture('sr_rhodes_hiring_review',28,'rhodes-staff',0,0);
+  }else{
+    seedGeneralEmployment(c.job,'event:'+c.job);
+  }
+  if(c.job!==28)ap({lifeAffiliation:{id:c.aff,title:'仕事と所属',kind:'workplace',action:'join',role:'職員'},
     lifeGoal:{id:c.goal,title:'職場での仕事を続ける',action:'start'}});
   const before={aff:S.lifeRecord.affiliations.find(x=>x.id===c.aff).status,
     goal:S.lifeRecord.goals.find(x=>x.id===c.goal).status};
@@ -83,10 +112,14 @@ for(let i=0;i<regionalPlacements.length;i++){
   ctx.TARGET=cfg;ctx.MODE=mode;ctx.SEED=204000+i*10+['relocate','change-job','retire'].indexOf(mode);
   const result=inspect(`
    born({seed:SEED,by:1065,region:TARGET.region});
-   S.year=1102;S.age=37;S.mo=4;S.cash=10000000;S.house.cash=10000000;
-   ap({job:TARGET.job,
-     lifeAffiliation:{id:TARGET.aff,title:'現地の勤務先',kind:'workplace',action:'join',role:'職員'},
-     lifeGoal:{id:TARGET.goal,title:'この職場の仕事を続ける',action:'start'}});
+   S.year=1102;S.age=37;S.mo=4;S.cash=10000000;S.house.cash=10000000;S.k=100;S.h=100;
+   if(TARGET.job===35)applyEmploymentAppointmentFixture('sr_bsw_recruitment_assessment',35,'bsw-contract',0,0);
+   else if(TARGET.job===38)applyEmploymentAppointmentFixture('sr_rhine_recruitment_exam',38,'rhine-lab',0,0);
+   else{
+     seedGeneralEmployment(TARGET.job,'transition:'+TARGET.job);
+     ap({lifeAffiliation:{id:TARGET.aff,title:'現地の勤務先',kind:'workplace',action:'join',role:'職員'},
+       lifeGoal:{id:TARGET.goal,title:'この職場の仕事を続ける',action:'start'}});
+   }
    const before={job:S.job,contract:S.workContract?.siteId||null,
      affiliation:S.lifeRecord.affiliations.find(a=>a.id===TARGET.aff)?.status,
      goal:S.lifeRecord.goals.find(g=>g.id===TARGET.goal)?.status};
@@ -95,7 +128,10 @@ for(let i=0;i<regionalPlacements.length;i++){
      const dest=moveDestinations(S).find(x=>x.n!==S.res.n);
      if(!dest)throw Error('No cross-region route for '+TARGET.region);
      ap({resTo:dest.n,resFareCovered:true});
-   }else if(MODE==='change-job')ap({job:19});
+   }else if(MODE==='change-job'){
+     provisionGeneralOpening(19,'transition-destination:'+TARGET.job);
+     ap({job:19});
+   }
    else if(MODE==='retire')ap({fl:{retired:1}});
    const a=S.lifeRecord.affiliations.find(x=>x.id===TARGET.aff),
      g=S.lifeRecord.goals.find(x=>x.id===TARGET.goal),

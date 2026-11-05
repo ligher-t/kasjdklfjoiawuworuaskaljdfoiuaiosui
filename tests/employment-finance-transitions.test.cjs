@@ -106,6 +106,58 @@ for (const [region, entryId, mealId, wallet] of [
 }
 console.log('Community and family work meals, save and separate annual budgets PASS');
 
+setup(ctx,{id:'employment-seasonal-community-share',seed:202611051,region:'サーミ',age:24});
+const winterShare=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+  S.year=1100;S.mo=10;S.fl.sch=0;S.educationPath=null;S.educationDecision=null;
+  S.fl.household_separated=0;S.residenceArrangement='family_home_shared_budget';
+  const entry=EV.find(e=>e.id==='car_sam_priest_entry'),event=EV.find(e=>e.id==='work_sami_winter_food_share');
+  ap(entry.c[0].o[0][2]);
+  S.mo=10;
+  const episode=currentPlayerEmployment(S),before={job:S.job,episodeId:episode?.episodeId,
+    personal:S.cash,house:S.house.cash,receipts:employmentPaidForYear(S,S.year,'household')};
+  const available=event.show(S),effect=event.c[0].o[0][2],assessment=employmentEffectAssessment(S,effect,event.id);
+  ap(effect);
+  const rows=S.employmentState.finance.inKindAllocations,
+    current=currentPlayerEmployment(S),after={job:S.job,episodeId:current?.episodeId,
+      personal:S.cash,house:S.house.cash,receipts:employmentPaidForYear(S,S.year,'household')};
+  const expectedByYear=Object.fromEntries([1100,1101].map(year=>[year,
+    rows.filter(row=>row.serviceYear===year).reduce((sum,row)=>sum+row.livingCostOffset,0)]));
+  const snapshot=makeResumeSnapshot(),restored=cont(snapshot),restoredCount=S.employmentState.finance.inKindAllocations.length,
+    restoredOffset=employmentInKindOffset(S,1100,'household');
+  let duplicateRejected=false;
+  try{ap(effect);}catch(error){duplicateRejected=/条件が変わった/.test(error.message);}
+  const withFirst=JSON.parse(JSON.stringify(S)),withoutFirst=JSON.parse(JSON.stringify(S));
+  withoutFirst.employmentState.finance.inKindAllocations=[];
+  withFirst.year=withoutFirst.year=1101;
+  settleAnnualHouseholdBudget(withFirst,ANNUAL_SERVICES,withFirst.age);
+  settleAnnualHouseholdBudget(withoutFirst,ANNUAL_SERVICES,withoutFirst.age);
+  const firstYearLivingDifference=withoutFirst.house.flow.expense.living-withFirst.house.flow.expense.living;
+  const withSecond=JSON.parse(JSON.stringify(S)),withoutSecond=JSON.parse(JSON.stringify(S));
+  withoutSecond.employmentState.finance.inKindAllocations=[];
+  withSecond.year=withoutSecond.year=1102;
+  settleAnnualHouseholdBudget(withSecond,ANNUAL_SERVICES,withSecond.age);
+  settleAnnualHouseholdBudget(withoutSecond,ANNUAL_SERVICES,withoutSecond.age);
+  const secondYearLivingDifference=withoutSecond.house.flow.expense.living-withSecond.house.flow.expense.living;
+  return {available,assessment:assessment.canStart,before,after,kind:episode?.kind,
+    rows:rows.map(row=>({year:row.serviceYear,month:row.serviceMonth,offset:row.livingCostOffset})),
+    expectedByYear,restored,restoredCount,restoredOffset,duplicateRejected,
+    firstYearLivingDifference,secondYearLivingDifference};
+})())`,ctx,{timeout:20000}));
+assert.equal(winterShare.available,true,'Sami community work exposes the season-bound store choice');
+assert.equal(winterShare.assessment,true);
+assert.equal(winterShare.kind,'family-community');
+assert.deepEqual([winterShare.before.job,winterShare.before.episodeId],
+  [winterShare.after.job,winterShare.after.episodeId],'in-kind support must not create a job or replace the role');
+assert.deepEqual([winterShare.before.personal,winterShare.before.house,winterShare.before.receipts],
+  [winterShare.after.personal,winterShare.after.house,winterShare.after.receipts],
+  'seasonal provisions never become cash wages or receipts');
+assert.deepEqual(winterShare.rows.map(row=>[row.year,row.month]),[[1100,11],[1100,12],[1101,1],[1101,2]]);
+assert(Math.abs(winterShare.firstYearLivingDifference-winterShare.expectedByYear[1100])<0.001);
+assert(Math.abs(winterShare.secondYearLivingDifference-winterShare.expectedByYear[1101])<0.001);
+assert(winterShare.restored && winterShare.restoredCount===4 && winterShare.restoredOffset>0,
+  'same-version restore preserves the scheduled community support');
+assert.equal(winterShare.duplicateRejected,true,'one shared reserve cannot be collected twice in the same winter');
+
 setup(ctx,{id:'employment-secondment',seed:20261105,region:'クルビア',age:25});
 const posting=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
   const find=id=>EV.find(e=>e.id===id);

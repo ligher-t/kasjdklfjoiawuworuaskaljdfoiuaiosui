@@ -70,6 +70,76 @@ const vacancy = run(`
 `);
 assert.deepEqual(vacancy, {secondRejected:true,consumed:1,slots:0,released:0,vacancies:1,episodes:1});
 
+const familyMove=run(`
+  born({seed:202611061,by:1070,region:'クルビア'});
+  S.year=1100;S.mo=2;S.priceIndex=1;S.cash=10000000;S.residenceArrangement='independent';
+  const from=S.res.n,work=S.world.occupationWorld,
+    addOpening=(prefix,region,jobId)=>{
+      const areaId='area:'+prefix,employerId='employer:'+prefix,siteId='site:'+prefix,
+        positionId='position:'+prefix,openingId='opening:'+prefix;
+      work.areas[areaId]={areaId,region,district:'family-fixture',sectorPresence:{MFG:true},siteIds:[siteId]};
+      work.employers[employerId]={employerId,organizationKey:null,region};
+      work.sites[siteId]={siteId,employerId,areaId,region,status:'open',lastYear:S.year,
+        positionIds:[positionId]};
+      work.positions[positionId]={positionId,siteId,jobId,capacity:1,aggregateOccupiedSlots:0,
+        identifiedOccupiedSlots:0,reservedSlots:0,vacancyCount:1,openingIds:[openingId]};
+      work.openings[openingId]={openingId,siteId,employerId,positionId,areaId,kind:'general-public',
+        status:'open',slots:1,validFromYear:S.year};
+      return {siteId,employerId,positionId,openingId};
+    },
+    origin=addOpening('origin',from,2),
+    spouse=S.sp={id:'relocating-spouse',j:2,d:0,by:1071,employmentStatus:'employed',
+      residenceRegion:from,knownResidenceRegion:from,sharesHousehold:false,householdArrangement:'separate',
+      personalFinance:{status:'modeled_balance',startedYear:S.year,expenseTier:2,cash:1000000000,
+        debt:0,history:[],transfers:[],netChangeSinceStart:0},
+      workReviewYear:S.year+5,independentMoveReviewYear:S.year,workEarningsLedger:[]};
+  recordDependentEmployment(S,spouse,{...origin,jobId:2,source:'family-known-opening',kind:'wage-employment',
+    region:from,knownToPerson:true,selected:true,accepted:true,started:true});
+  const oldEpisode=spouse.employmentState.episodes[0],originSite=work.sites[origin.siteId];
+  originSite.operationTo={year:S.year,month:4};
+  advanceOccupationSiteOperations(S,originSite,S.year,4);
+  const siteClosed=originSite.status==='closed';
+  const sitesBeforeMove=Object.keys(work.sites).length;
+  DEBUG_RANDOM=()=>0;S.mo=4;advanceSpouseIndependentMove(S);DEBUG_RANDOM=null;
+  const destination=spouse.residenceRegion,afterMoveEpisode=spouse.employmentState.episodes.find(e=>e.episodeId===
+    spouse.employmentState.activeEpisodeId),sitesAfterMove=Object.keys(work.sites).length,
+    move=spouse.residenceHistory.at(-1),ended=spouse.employmentState.episodes[0];
+  const movedWithoutNewEmployer=destination!==from&&!afterMoveEpisode&&sitesAfterMove===sitesBeforeMove;
+  const next=addOpening('destination',destination,3);S.mo=5;
+  const newEpisode=recordDependentEmployment(S,spouse,{...next,jobId:3,source:'spouse-destination-offer',
+    kind:'wage-employment',region:destination,knownToPerson:true,selected:true,accepted:true,started:true});
+  spouse.j=3;spouse.employmentStatus='employed';
+  const income=dependentEmploymentAnnualIncome(S,spouse,S.year),
+    expected=(J[2].pay*2/12*REG.find(r=>r.n===from).pm)+
+      (J[3].pay*8/12*REG.find(r=>r.n===destination).pm),
+    nextYear=dependentEmploymentAnnualIncome(S,spouse,S.year+1),
+    shareAfterMove=spouseHouseholdIncome(S),
+    shareExpected=income*P('economy.spouseSeparateHouseholdIncomeShare'),
+    receipt=recordDependentEmploymentPayment(S,spouse,{amount:income,recipientId:spouse.id,source:'annual-settlement'});
+  recordDependentEmploymentPayment(S,spouse,{amount:income,recipientId:spouse.id,source:'annual-settlement'});
+  const nextYearExpected=J[3].pay*REG.find(r=>r.n===destination).pm;
+  return {from,destination,siteClosed,movedWithoutNewEmployer,move:move&&{from:move.from,to:move.to},
+    ended:{status:ended.status,reason:ended.leaveReason,month:ended.endMonth,site:ended.siteId},
+    oldSiteStillClosed:originSite.status==='closed',newEpisode:{site:newEpisode.siteId,region:newEpisode.region,
+      basis:newEpisode.basis},destinationVacancyConsumed:work.openings[next.openingId].slots===0,
+    income,expected,nextYear,nextYearExpected,shareAfterMove,shareExpected,receiptCount:spouse.workEarningsLedger.length,
+    duplicateStable:spouse.workEarningsLedger.filter(r=>r.txId===receipt.txId).length===1};
+`);
+assert.equal(familyMove.siteClosed,true,'the old employer closes on its recorded date');
+assert.equal(familyMove.movedWithoutNewEmployer,true,'family relocation closes the old work period and creates no destination employer');
+assert.notEqual(familyMove.destination,familyMove.from);
+assert.deepEqual(familyMove.move,{from:familyMove.from,to:familyMove.destination});
+assert.deepEqual(familyMove.ended,{status:'terminated',reason:'relocation',month:4,site:'site:origin'});
+assert.equal(familyMove.oldSiteStillClosed,true,'a later work check cannot reopen the closed company');
+assert.deepEqual(familyMove.newEpisode,{site:'site:destination',region:familyMove.destination,basis:'verified-family-work-period'});
+assert.equal(familyMove.destinationVacancyConsumed,true,'family rehire consumes the actual destination opening');
+close(familyMove.income,familyMove.expected);
+close(familyMove.nextYear,familyMove.nextYearExpected,'only the new local work period contributes in the next year');
+close(familyMove.shareAfterMove,familyMove.shareExpected,
+  'separate-household income uses its own contribution rate, not the protagonist employment rate');
+assert.equal(familyMove.receiptCount,1);
+assert.equal(familyMove.duplicateStable,true);
+
 const household = run(`
   S.year=1101;S.mo=1;S.job=0;S.priceIndex=1;
   S.sp={id:'spouse-ledger',j:2,d:0,by:1070,employmentStatus:'employed',

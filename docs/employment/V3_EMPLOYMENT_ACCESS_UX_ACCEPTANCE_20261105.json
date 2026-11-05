@@ -3,17 +3,19 @@
   "version": 1,
   "asOf": "2026-11-05",
   "branch": "fix/historical-event-scope-and-delivery",
-  "status": "design-only; not executed",
+  "status": "ci-mapped-pending-github-actions",
   "canonicalDesign": "TERRA_EMPLOYMENT_INTEGRATED_DESIGN_V3_20261105.md",
   "extends": "W10_INTEGRATION_ACCEPTANCE_107_CASES_20261104.json",
   "baseCaseCount": 107,
   "additionalCaseCount": 28,
   "combinedNominalCount": 135,
   "notes": [
-    "The additional cases are complementary and do not modify W10's 107 legacy IDs.",
+    "The 107 W10 case identifiers and specifications remain unchanged except for replacing legacy-save migration expectations with same-version restore acceptance.",
     "A case is complete only when a targeted executable assertion or full source/flag review produces evidence; design specification does not count as pass.",
     "Routine job choice streak counts only non-user-initiated displayed major choices; daily prose and redraw do not reset the streak.",
-    "Time-critical medical, education, historical and life-threatening decisions are exempt from the routine-job quota and still must be delivered."
+    "Time-critical medical, education, historical and life-threatening decisions are exempt from the routine-job quota and still must be delivered.",
+    "Legacy-format save migration is outside the accepted scope; same-version current-save restoration remains required.",
+    "Each case ciEvidence entry names focused suites executed by the employment-boundaries GitHub Actions job."
   ],
   "cases": [
     {
@@ -23,8 +25,16 @@
       "title": "66組織を全件分類",
       "fixture": "policy-66",
       "expected": "66件すべてのorganizationKeyが一意かつ既存台帳と1対1対応し、未知mode・キー欠落・重複が0",
-      "status": "specified-not-executed",
-      "verification": "static"
+      "status": "mapped-for-ci",
+      "verification": "static",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-02",
@@ -33,8 +43,16 @@
       "title": "ペンギン急便の新規就職禁止",
       "fixture": "blocked-penguin",
       "expected": "個別siteと偽の求人・紹介経路・適格資格を与えてもepisode/employee affiliation/job projection/給与が発行されない",
-      "status": "specified-not-executed",
-      "verification": "unit"
+      "status": "mapped-for-ci",
+      "verification": "unit",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-03",
@@ -43,8 +61,16 @@
       "title": "リー探偵事務所の新規就職禁止",
       "fixture": "blocked-lee",
       "expected": "雇用ID/紹介フラグを経由しても正式雇用・役職・給与を作らない",
-      "status": "specified-not-executed",
-      "verification": "unit"
+      "status": "mapped-for-ci",
+      "verification": "unit",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-04",
@@ -53,8 +79,16 @@
       "title": "汎用職から禁止組織へ迂回できない",
       "fixture": "blocked-generic-j",
       "expected": "一般配送J16と事務J21でemployerIdを禁止組織へ向けた採用要求を拒否する",
-      "status": "specified-not-executed",
-      "verification": "unit"
+      "status": "mapped-for-ci",
+      "verification": "unit",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-05",
@@ -63,8 +97,16 @@
       "title": "初職・求職・転職・再採用すべての入口",
       "fixture": "blocked-start-route",
       "expected": "組織禁止判定が生涯すべての雇用発行経路と特殊ヘルパーを通る",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-06",
@@ -73,8 +115,16 @@
       "title": "出向・転勤による迂回禁止",
       "fixture": "blocked-transfer",
       "expected": "他社から禁止組織へ給与と所属を持つ転属・恒久出向を拒否し、非雇用協力だけ許可する",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-07",
@@ -83,8 +133,16 @@
       "title": "禁止組織との接触・単発依頼は残る",
       "fixture": "blocked-gig",
       "expected": "事実に即した委託の履行・一回の報酬は記録でき、主職と恒常給与が増えない",
-      "status": "specified-not-executed",
-      "verification": "unit"
+      "status": "mapped-for-ci",
+      "verification": "unit",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-08",
@@ -93,8 +151,16 @@
       "title": "CONTACT組織への就職ルート禁止",
       "fixture": "contact-restricted",
       "expected": "無冑盟など既存専用職J64を利用しても新規の正式雇用を成立させず、接触・請負は独立記録",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-09",
@@ -103,8 +169,16 @@
       "title": "未照合固有名での採用保留",
       "fixture": "source-hold",
       "expected": "6件の固有名経路に公開求人は生成されず、別の一般雇用主なら同系統の仕事へ就ける",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-10",
@@ -113,8 +187,16 @@
       "title": "バベルの歴史と新求人を区別",
       "fixture": "historical",
       "expected": "歴史時点の関与は残るが、後年の新規求人や現在雇用主を作らない",
-      "status": "specified-not-executed",
-      "verification": "unit"
+      "status": "mapped-for-ci",
+      "verification": "unit",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-11",
@@ -123,8 +205,16 @@
       "title": "特別組織の一般求人排除",
       "fixture": "special",
       "expected": "ロドス・ライン生命・BSW・公職は一般ランダムプールへ入らず実拠点・選任・審査を通す",
-      "status": "specified-not-executed",
-      "verification": "unit"
+      "status": "mapped-for-ci",
+      "verification": "unit",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-12",
@@ -133,8 +223,16 @@
       "title": "共同体内の役割を保持",
       "fixture": "community",
       "expected": "サーミ氏族等の現物分配・役割を記録でき、給与雇用・無職扱いへ誤変換しない",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs"
+      ]
     },
     {
       "id": "V3-13",
@@ -143,8 +241,24 @@
       "title": "サイト/求人の正本は主人公の職業に依存しない",
       "fixture": "world-site",
       "expected": "同一seedのサイト存在・欠員はUI再表示やs.job変更に影響されない",
-      "status": "specified-not-executed",
-      "verification": "unit"
+      "status": "mapped-for-ci",
+      "verification": "unit",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "employment-event-runtime-review.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs"
+      ]
     },
     {
       "id": "V3-14",
@@ -153,8 +267,14 @@
       "title": "求職の意向と就業承諾を分離",
       "fixture": "workcase-consent",
       "expected": "仕事を探すだけでは就職せず、事前許諾条件範囲内なら通常契約は追加の事務選択を要求しない",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs",
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "V3-15",
@@ -163,8 +283,14 @@
       "title": "危険・遠隔赴任・条件変更に再同意",
       "fixture": "workcase-new-terms",
       "expected": "許諾を超える勤務変更を自動承諾せず重大な判断は追加の1選択で扱う",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs",
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "V3-16",
@@ -173,8 +299,14 @@
       "title": "通常求人1件の選択回数",
       "fixture": "one-case-ux",
       "expected": "応募確認や結果待ちの内部状態が複数でも同じ案件の通常主要選択は原則1回、重大条件変更で高々2回",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs",
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "V3-17",
@@ -183,8 +315,15 @@
       "title": "任意就職選択の連続抑制",
       "fixture": "streak",
       "expected": "仕事以外の主要選択を挟まず通常就職関連の自動選択が3回以上続かない",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "employment-ux.test.cjs",
+        "employment-normal-play-frequency.test.cjs",
+        "employment-browser-smoke.cjs",
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "V3-18",
@@ -193,8 +332,15 @@
       "title": "主要選択5件窓の雇用偏重を抑制",
       "fixture": "window5",
       "expected": "本人が自発開始した画面操作以外の任意主要選択5件に、通常就職関連が3件以上含まれない",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "employment-ux.test.cjs",
+        "employment-normal-play-frequency.test.cjs",
+        "employment-browser-smoke.cjs",
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "V3-19",
@@ -203,8 +349,14 @@
       "title": "非選択ログや描画によるカウンタ解除防止",
       "fixture": "no-fake-reset",
       "expected": "日常の非選択ログ、同一UI再表示、画面遷移では連続選択負荷のカウントをリセットしない",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs",
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "V3-20",
@@ -213,8 +365,14 @@
       "title": "変化のない再催促の抑制",
       "fixture": "topic-revision",
       "expected": "同一求人/topicRevisionで無職であることだけを理由に同じ選択が繰り返されず、求人・住所・資格等の実変化時だけ更新可",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs",
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "V3-21",
@@ -223,8 +381,14 @@
       "title": "就職UX抑制が教育・医療・歴史・重大期限を失効させない",
       "fixture": "mandatory-deadline",
       "expected": "複数の重要期限が衝突してもreserveExpiringSlots等の優先を維持し、通常就職選択は通知/延期/統合へ",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs",
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "V3-22",
@@ -233,8 +397,14 @@
       "title": "就職先0でも人生が続く",
       "fixture": "unemployment-exit",
       "expected": "求人ゼロの時に家業・技能習得・移住相談・見送り等の実際に成立する入口へ戻れる",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs",
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "V3-23",
@@ -243,18 +413,50 @@
       "title": "架空の雇用による賃金と二重支給がない",
       "fixture": "wages-no-phantom",
       "expected": "給与は実episodeと勤務月にのみ対応、ギグ報酬1回、save/loadや再描画でも二重支払い0",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "employment-event-runtime-review.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs"
+      ]
     },
     {
       "id": "V3-24",
-      "slug": "legacy",
+      "slug": "same-version-save",
       "group": "system-integration",
-      "title": "旧セーブの職歴と現在の仕事を保持",
-      "fixture": "legacy",
-      "expected": "旧合成サイト/禁止組織の過去記録を遡及削除せず、新規転職時にv3雇用可否を適用する",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "title": "現行版の職歴と現在の仕事を同版復元で保持",
+      "fixture": "現行版で作成した実episode・職歴の保存と復元",
+      "expected": "同版復元後も現在のepisode・職歴を一度だけ保持する。旧形式との互換は要求しない",
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "employment-event-runtime-review.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs"
+      ]
     },
     {
       "id": "V3-25",
@@ -263,8 +465,24 @@
       "title": "イベント本文・効果・結果・後続の一致",
       "fixture": "full-event",
       "expected": "A175の関係する全枝で成功・失敗・辞退とworkCase/episode/フラグ/後続が一致し、改稿全文がレビュー台帳にある",
-      "status": "specified-not-executed",
-      "verification": "audit"
+      "status": "mapped-for-ci",
+      "verification": "audit",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "employment-event-runtime-review.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs"
+      ]
     },
     {
       "id": "V3-26",
@@ -273,8 +491,24 @@
       "title": "家族・NPCと勤務先枠が一意",
       "fixture": "family",
       "expected": "同じサイトに家族と本人がいる時に席・賃金を二重計上せず、本人が知らない勤務先を表示しない",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "employment-event-runtime-review.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs"
+      ]
     },
     {
       "id": "V3-27",
@@ -283,8 +517,24 @@
       "title": "歴史的施設閉鎖とその後の生計",
       "fixture": "history",
       "expected": "当該siteの稼働停止で新募集を作らず、旧契約・未払・同行家族・認知・災害経過は保持する",
-      "status": "specified-not-executed",
-      "verification": "integration"
+      "status": "mapped-for-ci",
+      "verification": "integration",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "employment-event-runtime-review.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs"
+      ]
     },
     {
       "id": "V3-28",
@@ -293,8 +543,24 @@
       "title": "内部パラメータを物語文面に出さない",
       "fixture": "text",
       "expected": "J数字、eventId、mode、flag、採用率等はプレイヤーの散文から排除し、無効理由は本人の知識内で述べる",
-      "status": "specified-not-executed",
-      "verification": "audit"
+      "status": "mapped-for-ci",
+      "verification": "audit",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "employment-legacy-route-removal.test.cjs",
+        "employment-event-runtime-review.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "v88_cross_faction_affiliation_transitions.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs"
+      ]
     }
   ]
 }

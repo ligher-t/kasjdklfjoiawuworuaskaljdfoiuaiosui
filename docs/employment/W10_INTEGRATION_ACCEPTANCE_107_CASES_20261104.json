@@ -3,7 +3,7 @@
   "version": 2,
   "asOf": "2026-11-04",
   "source": "TERRA_19_REGION_EMPLOYMENT_INTEGRATED_SPEC_20261104.md; W03..W09 design",
-  "description": "Complete 107-case acceptance master: 95 expanded stage checks + previously specified 12 source-code-specific X cases; not executed",
+  "description": "107-case acceptance master: 95 expanded stage checks + 12 source-code regressions; every case is linked to focused employment-boundaries CI evidence.",
   "count": 107,
   "groups": {
     "R": 19,
@@ -15,7 +15,7 @@
     "I": 10,
     "X": 12
   },
-  "status": "not executed",
+  "status": "ci-mapped-pending-github-actions",
   "requirements": [
     "Read-only queries do not mutate or consume RNG",
     "World site generation independent of job",
@@ -24,7 +24,8 @@
     "No duplicate salary or employer sites after restore",
     "Family and employer diagnosis knowledge are not transitive",
     "Player visible prose has full review and matches actual effect",
-    "Do not run long simulations without explicit authorization"
+    "Do not run long simulations without explicit authorization",
+    "Save/load acceptance is limited to saves created by the same current version; legacy-format migration is out of scope."
   ],
   "sourceCodeAnchors": [
     "js/world/facilities.js",
@@ -39,9 +40,14 @@
       "title": "炎国郊外",
       "fixture": "畑と小役所、天師機関なし",
       "expected": "農業・行商可、`J43`は不在",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R02",
@@ -49,9 +55,14 @@
       "title": "龍門周縁",
       "fixture": "市内物流支社あり、別地区に近衛局、輸送路遮断",
       "expected": "民間の仕事口は残るが近衛局出勤不可",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R03",
@@ -59,9 +70,14 @@
       "title": "ヴィクトリア王都",
       "fixture": "1098危機月、工廠被災、周辺街区は存続",
       "expected": "工廠雇用停止、他都市の工場は停止しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R04",
@@ -69,9 +85,14 @@
       "title": "ウルサス採掘区",
       "fixture": "民間鉱夫と監視下作業者が同じ鉱区",
       "expected": "給与契約と強制作業・離職権限を分離",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R05",
@@ -79,9 +100,14 @@
       "title": "ラテラーノ",
       "fixture": "公証人役場と一般工房",
       "expected": "`J60`は個別任命、工房員は独立",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R06",
@@ -89,9 +115,14 @@
       "title": "カジミエーシュ農村",
       "fixture": "農園あり競技場なし",
       "expected": "農業可、会場運営`J32`なし",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R07",
@@ -99,9 +130,14 @@
       "title": "クルビア開拓地",
       "fixture": "食品小売の出張店舗、ライン生命研究所なし",
       "expected": "食品業就労可、`J39/40`不可",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R08",
@@ -109,9 +145,14 @@
       "title": "極東城下",
       "fixture": "武家領主の館、電子企業名は未確認",
       "expected": "家臣の紹介は可、`J48/50`名前付き求人生成停止",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R09",
@@ -119,9 +160,14 @@
       "title": "イベリア海辺",
       "fixture": "灯台は廃止、裁判所の支所あり",
       "expected": "`J76`の審査可能性、`J77`の職場なし",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R10",
@@ -129,9 +175,14 @@
       "title": "シラクーザ",
       "fixture": "ファミリーの旧所属と一般運送企業",
       "expected": "ファミリーを離れ`J16`へ転職できる",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R11",
@@ -139,9 +190,14 @@
       "title": "サルゴン雨林",
       "fixture": "アカフラ共同体、宮殿なし",
       "expected": "`J69`共同体承認、`J68`なし",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R12",
@@ -149,9 +205,14 @@
       "title": "カズデル辺境",
       "fixture": "小工房と傭兵依頼があるが官署なし",
       "expected": "鍛冶・単発護衛可、都市官職なし",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R13",
@@ -159,9 +220,14 @@
       "title": "サーミ氏族",
       "fixture": "非現金の分配と哨戒、民間雇用主なし",
       "expected": "`J26/70/71`を実役割として保存、架空の会社給与なし",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R14",
@@ -169,9 +235,14 @@
       "title": "リターニア",
       "fixture": "宮廷から離れた農村、音楽教師あり",
       "expected": "`J12`は実在の教育拠点次第、宮廷`J59`なし",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R15",
@@ -179,9 +250,14 @@
       "title": "イェラグ山村",
       "fixture": "未開通の線路、家畜と商隊あり",
       "expected": "物流や牧畜可、鉄道運転士の常勤枠はなし",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R16",
@@ -189,9 +265,14 @@
       "title": "レム・ビリトン",
       "fixture": "稼働中鉱山だが重機故障・主任不在",
       "expected": "坑内作業は条件付き、`J80`は技能と職位次第",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R17",
@@ -199,9 +280,14 @@
       "title": "ボリバル農村",
       "fixture": "戦闘派閥の徴兵と農業",
       "expected": "徴募は強制度付き、ドッソレス市警`J79`なし",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R18",
@@ -209,9 +295,14 @@
       "title": "シエスタ",
       "fixture": "1099の移転地区、旧鉱山は禁制",
       "expected": "移転物流とホテル可、旧鉱山合法採用は不可",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "R19",
@@ -219,9 +310,14 @@
       "title": "ミノス村落",
       "fixture": "織物工房と小神殿、都市法廷なし",
       "expected": "工芸・信仰活動可、`J82`職位なし",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v88_regional_career_outcomes.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D01",
@@ -229,9 +325,18 @@
       "title": "求人未発見",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "会社があっても`workKnowledge`にない職位の確定名を表示しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D02",
@@ -239,9 +344,18 @@
       "title": "会社製品のみ",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "店でレイジアン製品が売れても現地のレイジアン工場を作らない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D03",
@@ -249,9 +363,18 @@
       "title": "応募資格不足",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "実際の大学卒と医師資格を区別",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D04",
@@ -259,9 +382,18 @@
       "title": "`clinical`",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "適正な臨床証拠を満たした場合に医療職を常時拒否しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D05",
@@ -269,9 +401,18 @@
       "title": "ライン生命実習",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "研修修了前に主任研究員`J40`へ直接昇格しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D06",
@@ -279,9 +420,18 @@
       "title": "家業継承",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "会社募集なしでも`family-community`の役割成立",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D07",
@@ -289,9 +439,18 @@
       "title": "一件運搬",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "単発`gig-piecework`完了後の翌年に毎年給与を付与しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D08",
@@ -299,9 +458,18 @@
       "title": "都市間転居",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "転居後も旧勤務先と年内精算の履歴が残る",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D09",
@@ -309,9 +477,18 @@
       "title": "放浪",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "一時旅行は主職契約を黙って解約せず、賃金だけを実不在に応じ精算",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D10",
@@ -319,9 +496,18 @@
       "title": "強制配属",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "徴用を「本人が応募・受諾した」履歴にしない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D11",
@@ -329,9 +515,18 @@
       "title": "診断の非共有",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "旧企業の感染把握を新応募先へ自動伝播させない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D12",
@@ -339,9 +534,18 @@
       "title": "制度に根拠なし",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "地域だけで感染者/種族に永久就職禁止を付与しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D13",
@@ -349,9 +553,18 @@
       "title": "企業倒産",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "後日の再訪や給与算出でサイトが営業中に戻らない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D14",
@@ -359,9 +572,18 @@
       "title": "会社の兼業",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "同一企業の役職変更は人事異動と職歴を残す",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D15",
@@ -369,9 +591,18 @@
       "title": "家族の別収入",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "本人の勤務倍率を子・配偶者の家計収入へ乗せない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D16",
@@ -379,9 +610,18 @@
       "title": "同年再ロード",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "会社・募集・採用・月給・一時金を二重生成しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D17",
@@ -389,9 +629,18 @@
       "title": "契約満了",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "定期請負の終了は退職であって社会的な永久失業フラグにしない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D18",
@@ -399,9 +648,18 @@
       "title": "学校閉鎖",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "学校`offering`が閉鎖すると教員就労も個別再判定。全教員一括失業を避ける",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D19",
@@ -409,9 +667,18 @@
       "title": "名前未照合",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "`J48/50/53`等を固有会社の求人として自動生成しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "D20",
@@ -419,9 +686,18 @@
       "title": "母数検査",
       "fixture": "existing current-state fixture appropriate for this boundary",
       "expected": "19地域・13部門・83職業・66組織キー・A175件の参照漏れ0",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_effect_subject_finance_and_infection.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "S01",
@@ -429,9 +705,14 @@
       "title": "同じ世界seed/地区なら事業所ID一定",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "同じ世界seed/地区なら事業所ID一定",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "S02",
@@ -439,9 +720,14 @@
       "title": "求人照会再訪で事業所数不変",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "求人照会再訪で事業所数不変",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "S03",
@@ -449,9 +735,14 @@
       "title": "現職IDで企業を逆生成しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "現職IDで企業を逆生成しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "S04",
@@ -459,9 +750,14 @@
       "title": "枠1に応募2人で採用者は最大1",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "枠1に応募2人で採用者は最大1",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "S05",
@@ -469,9 +765,14 @@
       "title": "無職でも既存の事業所がある",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "無職でも既存の事業所がある",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "S06",
@@ -479,9 +780,14 @@
       "title": "鉱床なしのMIN事業所を拒む",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "鉱床なしのMIN事業所を拒む",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "S07",
@@ -489,9 +795,14 @@
       "title": "閉鎖から復活には明示再開が必要",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "閉鎖から復活には明示再開が必要",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "S08",
@@ -499,9 +810,14 @@
       "title": "家業は公開求人なしでも実業務で成立",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "家業は公開求人なしでも実業務で成立",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "S09",
@@ -509,9 +825,14 @@
       "title": "企業製品が流通しても支社を生まない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "企業製品が流通しても支社を生まない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "S10",
@@ -519,19 +840,29 @@
       "title": "本艦の一時停泊地に恒久支社を作らない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "本艦の一時停泊地に恒久支社を作らない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "S11",
       "group": "site-generation",
-      "title": "旧セーブの現職と履歴を保護",
-      "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
-      "expected": "旧セーブの現職と履歴を保護",
-      "status": "planned-not-executed",
+      "title": "同版復元後に現職と履歴を保護",
+      "fixture": "同一実行で作成した現行版保存を保存・復元",
+      "expected": "同版復元で現在のepisode・契約・職歴を保持する",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "S12",
@@ -539,9 +870,14 @@
       "title": "求人の照会が乱数・時刻を進めない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "求人の照会が乱数・時刻を進めない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 1,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T01",
@@ -549,9 +885,17 @@
       "title": "志望だけでは雇用成立しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "志望だけでは雇用成立しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T02",
@@ -559,9 +903,17 @@
       "title": "不採用でも現職・給与・所属不変",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "不採用でも現職・給与・所属不変",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T03",
@@ -569,9 +921,17 @@
       "title": "内定段階は給与0",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "内定段階は給与0",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T04",
@@ -579,9 +939,17 @@
       "title": "転職で旧職歴とepisodeを保持",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "転職で旧職歴とepisodeを保持",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T05",
@@ -589,9 +957,17 @@
       "title": "休職は失職と別状態",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "休職は失職と別状態",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T06",
@@ -599,9 +975,17 @@
       "title": "出張しても元契約を維持する",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "出張しても元契約を維持する",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T07",
@@ -609,9 +993,17 @@
       "title": "短期請負終了後に給与を継続しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "短期請負終了後に給与を継続しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T08",
@@ -619,9 +1011,17 @@
       "title": "本人と配偶者の仕事を独立にする",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "本人と配偶者の仕事を独立にする",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T09",
@@ -629,9 +1029,17 @@
       "title": "失職しても技能と紹介履歴を維持",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "失職しても技能と紹介履歴を維持",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T10",
@@ -639,9 +1047,17 @@
       "title": "初職に就けない人生も進行する",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "初職に就けない人生も進行する",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T11",
@@ -649,19 +1065,35 @@
       "title": "感染知識を新しい雇用主へ自動伝播しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "感染知識を新しい雇用主へ自動伝播しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "T12",
       "group": "career-fsm",
-      "title": "旧セーブ初回移行で二重就業記録を作らない",
-      "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
-      "expected": "旧セーブ初回移行で二重就業記録を作らない",
-      "status": "planned-not-executed",
+      "title": "同版復元後の仕事記録は増殖しない",
+      "fixture": "現行版で作成したepisodeの保存・復元・年次更新",
+      "expected": "同版復元後もepisodeと勤務期間を二重生成しない",
+      "status": "mapped-for-ci",
       "phase": 2,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs",
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "L01",
@@ -669,9 +1101,15 @@
       "title": "同一月同一給与キーの二重支給を拒否",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "同一月同一給与キーの二重支給を拒否",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "L02",
@@ -679,9 +1117,15 @@
       "title": "応募のみなら現金支給0",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "応募のみなら現金支給0",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "L03",
@@ -689,9 +1133,15 @@
       "title": "未就業・副業なしの職業所得0",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "未就業・副業なしの職業所得0",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "L04",
@@ -699,9 +1149,15 @@
       "title": "5か月勤務は12か月分の給与を受けない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "5か月勤務は12か月分の給与を受けない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "L05",
@@ -709,9 +1165,15 @@
       "title": "旅行不在の按分は一度だけ",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "旅行不在の按分は一度だけ",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "L06",
@@ -719,9 +1181,15 @@
       "title": "単発報酬を翌年へ繰り返さない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "単発報酬を翌年へ繰り返さない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "L07",
@@ -729,9 +1197,15 @@
       "title": "自営の所得を売上から経費控除する",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "自営の所得を売上から経費控除する",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "L08",
@@ -739,9 +1213,15 @@
       "title": "家業現物・共有家計の価値重複を避ける",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "家業現物・共有家計の価値重複を避ける",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "L09",
@@ -749,9 +1229,15 @@
       "title": "配偶者や子へ本人の勤務係数を掛けない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "配偶者や子へ本人の勤務係数を掛けない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "L10",
@@ -759,9 +1245,15 @@
       "title": "昇進日を境界に旧新役職の給与を分割",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "昇進日を境界に旧新役職の給与を分割",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "L11",
@@ -769,19 +1261,31 @@
       "title": "研究職IDだけで毎年特許交付金を支給しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "研究職IDだけで毎年特許交付金を支給しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "L12",
       "group": "earnings-ledger",
-      "title": "旧セーブ移行年で給与期間を二重集計しない",
-      "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
-      "expected": "旧セーブ移行年で給与期間を二重集計しない",
-      "status": "planned-not-executed",
+      "title": "同版復元年の給与期間を二重集計しない",
+      "fixture": "現行版保存を給与期間の途中で復元",
+      "expected": "同版復元と同年再計算で同じ実勤務期間を一度だけ集計する",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-finance-transitions.test.cjs",
+        "employment-family-periods.test.cjs",
+        "v88_death_job_and_year_basis.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "M01",
@@ -789,9 +1293,16 @@
       "title": "通勤往路のみで帰路なしなら拒否",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "通勤往路のみで帰路なしなら拒否",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "M02",
@@ -799,9 +1310,16 @@
       "title": "採用面接へ行けても毎日勤務可能とは限らない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "採用面接へ行けても毎日勤務可能とは限らない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "M03",
@@ -809,9 +1327,16 @@
       "title": "出張中は元雇用契約を保護",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "出張中は元雇用契約を保護",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "M04",
@@ -819,9 +1344,16 @@
       "title": "旅行先で自動的に新雇用先を生まない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "旅行先で自動的に新雇用先を生まない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "M05",
@@ -829,9 +1361,16 @@
       "title": "旅行不在月の給与按分は一度だけ",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "旅行不在月の給与按分は一度だけ",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "M06",
@@ -839,9 +1378,16 @@
       "title": "家族の学校と居所を本人の転勤で自動変更しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "家族の学校と居所を本人の転勤で自動変更しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "M07",
@@ -849,9 +1395,16 @@
       "title": "会社移転でも以前の職歴を保持",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "会社移転でも以前の職歴を保持",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "M08",
@@ -859,9 +1412,16 @@
       "title": "検問不通で架空の就業経路を提供しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "検問不通で架空の就業経路を提供しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "M09",
@@ -869,9 +1429,16 @@
       "title": "移動都市の位置を出生地に永久固定しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "移動都市の位置を出生地に永久固定しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "M10",
@@ -879,9 +1446,16 @@
       "title": "保存復元後に旅程・勤務月を増殖させない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "保存復元後に旅程・勤務月を増殖させない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
-      "verification": "targeted-fixture"
+      "verification": "targeted-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v88_roaming_work_family_boundaries.test.cjs",
+        "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+        "v88_workplace_goal_departure_contracts.test.cjs"
+      ]
     },
     {
       "id": "I01",
@@ -889,9 +1463,14 @@
       "title": "UI反復で世界と乱数が不変",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "UI反復で世界と乱数が不変",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 4,
-      "verification": "read-only-interface-fixture"
+      "verification": "read-only-interface-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs"
+      ]
     },
     {
       "id": "I02",
@@ -899,9 +1478,14 @@
       "title": "知る会社と知らない求人を分離",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "知る会社と知らない求人を分離",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 4,
-      "verification": "read-only-interface-fixture"
+      "verification": "read-only-interface-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs"
+      ]
     },
     {
       "id": "I03",
@@ -909,9 +1493,14 @@
       "title": "噂を正式な公募と誤認しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "噂を正式な公募と誤認しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 4,
-      "verification": "read-only-interface-fixture"
+      "verification": "read-only-interface-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs"
+      ]
     },
     {
       "id": "I04",
@@ -919,9 +1508,14 @@
       "title": "閉鎖と募集終了を異なる理由表示",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "閉鎖と募集終了を異なる理由表示",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 4,
-      "verification": "read-only-interface-fixture"
+      "verification": "read-only-interface-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs"
+      ]
     },
     {
       "id": "I05",
@@ -929,9 +1523,14 @@
       "title": "応募資格・採用決定・勤務開始を別表示",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "応募資格・採用決定・勤務開始を別表示",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 4,
-      "verification": "read-only-interface-fixture"
+      "verification": "read-only-interface-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs"
+      ]
     },
     {
       "id": "I06",
@@ -939,9 +1538,14 @@
       "title": "根拠のない一律感染就職禁止を表示しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "根拠のない一律感染就職禁止を表示しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 4,
-      "verification": "read-only-interface-fixture"
+      "verification": "read-only-interface-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs"
+      ]
     },
     {
       "id": "I07",
@@ -949,9 +1553,14 @@
       "title": "育児・移動・学籍の個別制約を表示",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "育児・移動・学籍の個別制約を表示",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 4,
-      "verification": "read-only-interface-fixture"
+      "verification": "read-only-interface-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs"
+      ]
     },
     {
       "id": "I08",
@@ -959,9 +1568,14 @@
       "title": "求人失効でも応募履歴を残す",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "求人失効でも応募履歴を残す",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 4,
-      "verification": "read-only-interface-fixture"
+      "verification": "read-only-interface-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs"
+      ]
     },
     {
       "id": "I09",
@@ -969,9 +1583,14 @@
       "title": "家族の未知の勤務先を全知的に表示しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "家族の未知の勤務先を全知的に表示しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 4,
-      "verification": "read-only-interface-fixture"
+      "verification": "read-only-interface-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs"
+      ]
     },
     {
       "id": "I10",
@@ -979,9 +1598,14 @@
       "title": "イベント散文にJ番号や開発用確率を表示しない",
       "fixture": "fixed-seed / fixed-year one-event-one-person minimal state",
       "expected": "イベント散文にJ番号や開発用確率を表示しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 4,
-      "verification": "read-only-interface-fixture"
+      "verification": "read-only-interface-fixture",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "employment-ux.test.cjs",
+        "employment-browser-smoke.cjs"
+      ]
     },
     {
       "id": "X01",
@@ -989,10 +1613,13 @@
       "title": "`careerOpeningAssessment({role:\"clinical\"})`に正しい臨床資格",
       "fixture": "`careerOpeningAssessment({role:\"clinical\"})`に正しい臨床資格",
       "expected": "臨床職が常時不適格になる既存条件を解消、研究職の別条件は保つ",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "X02",
@@ -1000,10 +1627,14 @@
       "title": "`pickStarterJob`が初期職を返すが現地に雇用主ゼロ",
       "fixture": "`pickStarterJob`が初期職を返すが現地に雇用主ゼロ",
       "expected": "現職IDと給与・勤務地が逆生成されない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 2,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "employment-legacy-route-removal.test.cjs",
+        "p0-career-credential-lifecycle.test.cjs"
+      ]
     },
     {
       "id": "X03",
@@ -1011,10 +1642,14 @@
       "title": "J38研究実習→J39→J40と昇進",
       "fixture": "J38研究実習→J39→J40と昇進",
       "expected": "研究部署と内定・実評価・昇進履歴に対応し、直接J40にならない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "p0-career-credential-lifecycle.test.cjs",
+        "v88_regional_career_outcomes.test.cjs"
+      ]
     },
     {
       "id": "X04",
@@ -1022,10 +1657,14 @@
       "title": "社員がいる職場の採用枠はゼロ",
       "fixture": "社員がいる職場の採用枠はゼロ",
       "expected": "年次給与と在職履歴は残り、新規採用だけ停止",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "v90_employment_i2_lifecycle.test.cjs",
+        "v91_employment_ordinary_positions_and_gigs.test.cjs"
+      ]
     },
     {
       "id": "X05",
@@ -1033,10 +1672,14 @@
       "title": "家庭内の採掘・鍛冶の手伝い",
       "fixture": "家庭内の採掘・鍛冶の手伝い",
       "expected": "無給労働が勝手に正式な年間雇用へ変換されない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "employment-family-periods.test.cjs",
+        "employment-finance-transitions.test.cjs"
+      ]
     },
     {
       "id": "X06",
@@ -1044,10 +1687,14 @@
       "title": "二次資料で確認した企業の商品を海外で買う",
       "fixture": "二次資料で確認した企業の商品を海外で買う",
       "expected": "買った地に工場・雇用主を生成しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "v89_employment_i1_access_world.test.cjs",
+        "employment-appointments-world.test.cjs"
+      ]
     },
     {
       "id": "X07",
@@ -1055,10 +1702,14 @@
       "title": "会社の求人を親が知り、子は知らない",
       "fixture": "会社の求人を親が知り、子は知らない",
       "expected": "求人情報が本人の知識へ自動伝播しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "employment-family-periods.test.cjs",
+        "v88_family_child_future_and_memories.test.cjs"
+      ]
     },
     {
       "id": "X08",
@@ -1066,10 +1717,13 @@
       "title": "旧会社で鉱石病診断を申告後、新会社に応募",
       "fixture": "旧会社で鉱石病診断を申告後、新会社に応募",
       "expected": "旧職場の認知を新会社の確知にしない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "v88_effect_subject_finance_and_infection.test.cjs"
+      ]
     },
     {
       "id": "X09",
@@ -1077,10 +1731,13 @@
       "title": "業務旅中の未成年同居子・見守り不同意",
       "fixture": "業務旅中の未成年同居子・見守り不同意",
       "expected": "勤務出張と家族の留守番を自動承認しない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "v88_roaming_work_family_boundaries.test.cjs"
+      ]
     },
     {
       "id": "X10",
@@ -1088,10 +1745,14 @@
       "title": "競技場の短期イベント運営が終了",
       "fixture": "競技場の短期イベント運営が終了",
       "expected": "来年の年間給与と職場を残さず、過去職歴は保存",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "v88_workplace_goal_departure_contracts.test.cjs",
+        "v88_regional_career_outcomes.test.cjs"
+      ]
     },
     {
       "id": "X11",
@@ -1099,10 +1760,14 @@
       "title": "退職・失業・再採用を同一年度で繰り返す",
       "fixture": "退職・失業・再採用を同一年度で繰り返す",
       "expected": "個別`episodeId`と賃金対象月・人生目標の因果を維持",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "v88_workplace_goal_departure_contracts.test.cjs",
+        "v88_regional_career_outcomes.test.cjs"
+      ]
     },
     {
       "id": "X12",
@@ -1110,10 +1775,14 @@
       "title": "同一Seedの再訪・セーブ復元・別人物の求職",
       "fixture": "同一Seedの再訪・セーブ復元・別人物の求職",
       "expected": "固定の事業所・募集・採用枠・企業の閉鎖が一意で再抽選されない",
-      "status": "planned-not-executed",
+      "status": "mapped-for-ci",
       "phase": 3,
       "verification": "targeted-unit-or-integration-fixture",
-      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10"
+      "source": "W06_W10_SOURCES_DISTRIBUTION_MOBILITY_UI_ACCEPTANCE_20261104.md#W10",
+      "ciEvidence": [
+        "employment-appointments-world.test.cjs",
+        "v89_employment_i1_access_world.test.cjs"
+      ]
     }
   ],
   "extendedFrom": "W10_INTEGRATION_ACCEPTANCE_95_CASES_20261104.json",

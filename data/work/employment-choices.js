@@ -36,6 +36,21 @@ window.TERRA_DATA_BUILD.run("work/employment-choices", function ($terraData) {
     ]
   });
   $terraData.EV.push({
+    id: "work_sami_winter_food_share", conf: "S", references: ["SRC_V76_EMPLOYMENT"],
+    st: ["青年", "壮年", "老年"], cd: 1, w: 0.12, months: [8, 9, 10],
+    ge: { age: 18 },
+    show: s => employmentInKindSupportAvailable(s, "work_sami_winter_food_share"),
+    t: "雪が深くなる前に、集めた保存食を共同倉へ置く相談が回ってきた。家の人数を書いた木札を添えておけば、冬の間、必要な時に少しずつ受け取れる。",
+    c: [
+      $terraData.K("自分たちの分も共同倉へ預ける", {},
+        [1, "袋を倉の棚へ運び、家の人数を書いた木札を結んだ。冬の間、食料の一部を分けてもらう段取りがついた。",
+          { employmentAction: { action: "record-in-kind-allocation", sourceEventId: "work_sami_winter_food_share", supportShare: 1 } }]),
+      $terraData.K("近隣の家族へ一部を届け、残りを共同倉へ預ける", {},
+        [1, "重い袋を近隣の家へ届け、残りの分に家の印を付けた。受け取れる量は少なくても、冷え込む月の助けになる。",
+          { employmentAction: { action: "record-in-kind-allocation", sourceEventId: "work_sami_winter_food_share", supportShare: 0.5 } }])
+    ]
+  });
+  $terraData.EV.push({
     id: "work_family_shop_in_kind", conf: "S", references: ["SRC_V76_EMPLOYMENT"],
     st: ["青年", "壮年"], cd: 1, w: 0.12, ge: { age: 18 },
     show: s => employmentMealAvailable(s, "work_family_shop_in_kind"),

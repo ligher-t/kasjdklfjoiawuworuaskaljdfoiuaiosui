@@ -22,11 +22,19 @@ function recordIntergroupContact(s, action) {
 /* 出自・職種・地区の変化に追随する施設への所属。医院は「問い合わせ先」であり患者登録ではない。
    旧データの第1施設IDを保持し、過去の契約があったように遡及生成しない。 */
 function siteAffiliation(s, kind) {
-  if (kind === "workplace" && currentPlayerEmployment(s)) {
-    const episode = currentPlayerEmployment(s), site = s.world?.occupationWorld?.sites?.[episode?.siteId];
-    return site && episode.kind === "wage-employment" ? { facilityId: site.siteId,
-      areaKey: site.areaId, kind, extra: String(episode.jobId), sinceYear: episode.startYear,
-      relation: "employment", basis: "occupation-episode" } : null;
+  if (kind === "workplace") {
+    const episode = currentPlayerEmployment(s), site = episode?.kind === "wage-employment"
+      ? s.world?.occupationWorld?.sites?.[episode.siteId] : null,
+      old = s.siteAffiliations?.workplace;
+    if (old && old.facilityId !== site?.siteId) {
+      s.siteAffiliationHistory ||= [];
+      s.siteAffiliationHistory.push({ year:s.year, kind, facilityId:old.facilityId,
+        areaKey:old.areaKey, action:"ended", reason:"employment-source-replaced", basis:old.basis || "prior-model" });
+      delete s.siteAffiliations.workplace;
+    }
+    return site ? { facilityId:site.siteId, areaKey:site.areaId, kind,
+      extra:String(episode.jobId), sinceYear:episode.startYear,
+      relation:"employment", basis:"occupation-episode" } : null;
   }
   const area = ensureLocalityState(s);
   if (!area) return null;
@@ -108,7 +116,7 @@ function siteAffiliation(s, kind) {
   return current;
 }
 function activeFacility(s, kind) {
-  if (kind === "workplace" && currentPlayerEmployment(s)) {
+  if (kind === "workplace") {
     const link = siteAffiliation(s, kind), site = s.world?.occupationWorld?.sites?.[link?.facilityId];
     return site ? { ...site, id: site.siteId, kind, extra: link.extra,
       status: site.status === "open" ? "available" : site.status === "closed" ? "limited" : site.status } : null;
@@ -122,14 +130,25 @@ function activeFacility(s, kind) {
   return f || null;
 }
 function alternativeFacility(s, kind) {
+  if (kind === "workplace") {
+    const episode = currentPlayerEmployment(s);
+    if (!episode || episode.kind !== "wage-employment") return null;
+    for (const opening of occupationOpeningsFor(s, episode.jobId)) {
+      if (opening.siteId === episode.siteId ||
+          !assessEmploymentChoice(s, episode.jobId, opening.openingId, true).canStart) continue;
+      const site = s.world?.occupationWorld?.sites?.[opening.siteId];
+      if (site) return { ...site, id:site.siteId, kind, extra:String(episode.jobId),
+        status:site.status === "open" ? "available" : site.status, openingId:opening.openingId };
+    }
+    return null;
+  }
   const current = activeFacility(s, kind);
   if (!current) return null;
   return (
     localSites(s.community, kind, current.extra).find(
       x =>
         x.id !== current.id &&
-        x.status !== "limited" &&
-        (kind !== "workplace" || !contractEligibleJob(s) || ensureWorkplaceLedger(s, x)?.openings > 0)
+        x.status !== "limited"
     ) || null
   );
 }
@@ -141,6 +160,27 @@ function applySiteAction(s, action) {
   const original = activeFacility(s, action.kind),
     target = alternativeFacility(s, action.kind);
   if (!original || !target) throw Error("変更先の施設が利用できない");
+  if (action.kind === "workplace") {
+    const episode = currentPlayerEmployment(s);
+    if (!episode || episode.siteId !== original.id || !target.openingId)
+      throw Error("勤務先の転属根拠または募集枠がない");
+    s.siteAffiliationHistory ||= [];
+    s.siteAffiliationHistory.push({ year:s.year, kind:"workplace", facilityId:original.id,
+      areaKey:original.areaId, action:"ended", reason:"chosen-transfer", basis:"player-choice" });
+    applyPlayerEmploymentAction(s, { action:"accept-local-opening", jobId:episode.jobId,
+      openingId:target.openingId, replaceCurrent:true });
+    const next = currentPlayerEmployment(s);
+    s.siteAffiliationHistory.push({ year:s.year, kind:"workplace", facilityId:next.siteId,
+      areaKey:next.areaId, action:"transferred", reason:"confirmed-placement", basis:"player-choice" });
+    s.siteAffiliationHistory = s.siteAffiliationHistory.slice(-96);
+    s.facilityContacts ||= [];
+    s.facilityContacts.push({ year:s.year, areaKey:s.community?.key || null,
+      facilityId:next.siteId, kind:"workplace", action:"new-site", description:"同じ職種で別の勤務先へ移った" });
+    s.facilityContacts = s.facilityContacts.slice(-80);
+    s.fl.workplace_hazard=0;
+    reconcileAffiliationWork(s, true);
+    return activeFacility(s, "workplace");
+  }
   const record = s.siteAffiliations[action.kind];
   s.siteAffiliationHistory.push({
     year: s.year,
@@ -179,11 +219,6 @@ function applySiteAction(s, action) {
           : "別の診療窓口を今後の問い合わせ先にした"
   });
   s.facilityContacts = s.facilityContacts.slice(-80);
-  if (action.kind === "workplace") {
-    s.fl.workplace_hazard=0;
-    reconcileWorkContract(s);
-    reconcileAffiliationWork(s, true);
-  }
   return target;
 }
 /* 身近な施設を介して知り合った人物の持続履歴。具体の原作人物・施設職員名簿ではない。 */
