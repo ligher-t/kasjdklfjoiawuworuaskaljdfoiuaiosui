@@ -41,6 +41,8 @@ jobs:
         run: node tools/check-efficient.cjs run v87_sim_audit_fixes_and_metrics.test.cjs
       - name: P0 credential and hiring lifecycle
         run: node tools/check-efficient.cjs run p0-career-credential-lifecycle.test.cjs
+      - name: Employer access and fixed world I-1 boundaries
+        run: node tools/check-efficient.cjs run v89_employment_i1_access_world.test.cjs
       - name: Mandatory schooling and entrance examinations
         run: node tools/check-efficient.cjs run p0-school-progression.test.cjs
       - name: Regional school admissions and school facility conditions
