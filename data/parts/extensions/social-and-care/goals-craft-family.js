@@ -40,7 +40,8 @@ window.TERRA_DATA_BUILD.fragment(
       "col_tech_waiver_pending",
       "higashi_service",
       "infection_community_rumor_current_area",
-      "infection_housing_rumor_current_home"
+      "infection_housing_rumor_current_home",
+      "iberia_telescope_repaired"
     ]),
     false
   );
