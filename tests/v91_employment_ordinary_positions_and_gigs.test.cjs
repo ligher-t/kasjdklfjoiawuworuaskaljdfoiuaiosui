@@ -69,17 +69,18 @@ const gig=inspect(`
   S.job=0;S.mo=7;
   const effect=EV.find(e=>e.id==='work_unemployed_reentry').c
     .find(c=>c.l.includes('荷揚げ場')).o[0][2];
-  const cashBefore=S.cash, wagesBefore=employmentAnnualWageBase(S,S.year);
+  const walletTotal=()=>S.cash+(S.house?.cash||0),
+    cashBefore=walletTotal(), wagesBefore=employmentAnnualWageBase(S,S.year);
   ap(effect);
   const episodes=S.employmentState?.episodes||[];
-  const actual=episodes.at(-1),cashAfter=S.cash,jobAfter=S.job,
+  const actual=episodes.at(-1),cashAfter=walletTotal(),jobAfter=S.job,
     wagesAfter=employmentAnnualWageBase(S,S.year);
   let duplicateDenied=false,wrongPayDenied=false;
   try { ap(effect); } catch(e) { duplicateDenied=/二重/.test(e.message); }
-  const cashAfterRepeat=S.cash, episodesAfterRepeat=S.employmentState.episodes.length;
+  const cashAfterRepeat=walletTotal(), episodesAfterRepeat=S.employmentState.episodes.length;
   try { ap({ employmentAction:effect.employmentAction,cash:effect.cash+1 }); }
   catch(e) { wrongPayDenied=/一致しない/.test(e.message); }
-  const zeroSideEffects=S.cash===cashAfter &&
+  const zeroSideEffects=walletTotal()===cashAfter &&
     S.employmentState.episodes.length===episodesAfterRepeat;
   return {
     cashBefore,cashAfter,jobAfter,wagesBefore,wagesAfter,
