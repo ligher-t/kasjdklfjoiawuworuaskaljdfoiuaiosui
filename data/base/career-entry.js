@@ -376,21 +376,21 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         $terraData.K(
           "農漁業や採集の手伝いに入る",
           {
-            show: { any: ["国:サルゴン", "国:イェラグ", "国:ミノス", "国:シエスタ", "国:サーミ", "国:炎国"] }
+            show: s => ["サルゴン", "イェラグ", "ミノス", "シエスタ", "サーミ", "炎国"].includes(s.res?.n) && !!employmentOpeningForChoice(s, 23)
           },
           [
             1,
             "空模様と風向きを読みながら、夜明け前に畑や水辺へ出た。どれほど収穫があっても、買い叩く仲買人や悪路のせいで手元に残る金はわずかだった。",
-            { job: 23, fl: { workplace_hazard: 1 } }
+            { employmentAction: { action: "accept-local-opening", jobId: 23 }, fl: { workplace_hazard: 1 } }
           ]
         ),
         $terraData.K(
           "露店や家族の小商いを手伝う",
-          { show: { need: ["家計を担う親あり"] } },
+          { show: s => !!resolveEmploymentLivelihoodResource(s, "family-community", 24, "family-business") },
           [
             0.75,
             "夜明けの市場から運んだ品を木箱に並べ、夕方には売れ残りを数えた。家の商いを肌で覚えるかわりに、大通りが静まるまで店を閉められなくなった。",
-            { job: 24, rl: 3 }
+            { employmentAction: { action: "start-livelihood", kind: "family-community", jobId: 24, sourceEventId: "car", roleId: "family-stall-helper", resourceId: "family-business", projectAsJob: false, workFraction: 0.25 }, rl: 3 }
           ],
           [1, "仕入れに回す元手がどうしても足りず、人手を増やす話は立ち消えになった。外で別の働き口を探すしかなかった。", { p: -2 }]
         ),
@@ -460,11 +460,11 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         ),
         $terraData.K(
           "競技団体の裏方仕事を探す",
-          { show: { need: ["国:カジミエーシュ"] } },
+          { show: s => s.res?.n === "カジミエーシュ" && employmentLivelihoodResource(s, "seasonal-contract", 1)?.canStart === true },
           [
             0.7,
             "競技場の柵の設営や武具運びの仕事を得た。歓声の中で騎士たちの名が華やかに呼ばれていく裏で、その日の汗の分だけ日当を受け取った。",
-            { job: 1, cr: 2 }
+            { employmentAction: { action: "complete-gig", kind: "cargo-handling", sourceEventId: "car", resourceId: "local-resource", nominalCash: 50000 }, cash: 50000, cr: 2 }
           ],
           [1, "ツテがなく裏方の枠に入れなかった。次の競技会が開かれるまで、日雇いの口を探すしかなかった。", { p: -3 }]
         ),
@@ -2297,20 +2297,20 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         ),
         $terraData.K(
           "大通りや裏路地の一角で、細々と露店・小商いを始める",
-          { en: { affordableCash: 30000 }, why: "仕入れに必要な3万龍門幣が足りない" },
+          { show: s => employmentLivelihoodResource(s, "self-employment", 24)?.canStart === true, en: { affordableCash: 30000 }, why: "仕入れに必要な3万龍門幣が足りない" },
           [
             1,
             "手持ちの小銭で古道具や日用品を仕入れ、木箱を並べて露店を開いた。呼び込みの声に足を止める客も現れ、自活の第一歩を踏み出した。",
-            { job: 24, cash: -30000, pm: 1, p: 3, cr: 2 }
+            { employmentAction: { action: "start-livelihood", kind: "self-employment", jobId: 24, sourceEventId: "work_unemployed_reentry", roleId: "market-vendor", resourceId: "local-resource", projectAsJob: true }, cash: -30000, pm: 1, p: 3, cr: 2 }
           ]
         ),
         $terraData.K(
           "荒野の隊商や商会の護衛・警備の契約に応募する",
-          { en: { ge: { h: 40 } }, why: "護衛任務に耐えうる体力が足りない" },
+          { show: s => employmentLivelihoodResource(s, "seasonal-contract", 4)?.canStart === true, en: { ge: { h: 40 } }, why: "護衛任務に耐えうる体力が足りない" },
           [
             1,
-            "隊商の警備員として雇われた。移動都市の外縁を巡回する過酷な任務だが、危険手当を含めた給金で生活の立て直しに目処がついた。",
-            { job: 4, cash: 80000, p: 1, h: -5 }
+            "隊商から頼まれた一度の警備に就き、荷が外縁の倉庫へ入るまで見届けた。手当を受け取ると契約は終わり、次の口を探すため詰め所へ戻った。",
+            { employmentAction: { action: "complete-gig", kind: "short-sentry", sourceEventId: "work_unemployed_reentry", resourceId: "local-resource", nominalCash: 80000 }, cash: 80000, p: 1, h: -5 }
           ]
         ),
         $terraData.K(
@@ -2336,20 +2336,20 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
       c: [
         $terraData.K(
           "路地裏の露店で、古着や手細工の小商いを始める",
-          {},
+          { show: s => employmentLivelihoodResource(s, "self-employment", 24)?.canStart === true },
           [
             1,
             "軒先に小さな敷物を広げ、繕った布や小物を並べた。近所の住人と言葉を交わしながら、自分のペースで小銭を稼ぐ穏やかな日々が始まった。",
-            { job: 24, p: 3, rl: 3 }
+            { employmentAction: { action: "start-livelihood", kind: "self-employment", jobId: 24, sourceEventId: "work_elder_reentry", roleId: "market-vendor", resourceId: "local-resource", projectAsJob: true, workFraction: 0.4 }, p: 3, rl: 3 }
           ]
         ),
         $terraData.K(
           "集会所や長屋の掃除・管理人見習いとして手伝う",
-          {},
+          { show: s => employmentLivelihoodResource(s, "seasonal-contract", 1)?.canStart === true },
           [
             1,
-            "近隣の顔役から共同便所や広場の清掃を頼まれ、日当をもらうことになった。若い頃のような無理は利かないが、地域に居場所を取り戻した。",
-            { job: 1, p: 2, rl: 4 }
+            "近隣の顔役から頼まれた共同便所や広場の清掃を終え、その日の日当を受け取った。若い頃のような無理は利かないが、ほうきを返すときに労いの声をかけられた。",
+            { employmentAction: { action: "complete-gig", kind: "local-errand", sourceEventId: "work_elder_reentry", resourceId: "local-resource", nominalCash: 20000 }, cash: 20000, p: 2, rl: 4 }
           ]
         ),
         $terraData.K(

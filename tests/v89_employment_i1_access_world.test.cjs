@@ -22,7 +22,7 @@ for(const row of legacyJobs.jobs.filter(row=>row.organizationKey))
 assert.equal(mapped.regionCount,19);
 assert.equal(mapped.sectors,13);
 const world=evaluate(`
-  const area=occupationAreaSnapshot(S),work=S.world.occupationWorld;
+  const area=ensureOccupationWorkArea(S),work=S.world.occupationWorld;
   const before=JSON.stringify(work),rng=S.rngState,job=S.job;
   S.job=16;ensureOccupationWorkArea(S);
   const same=JSON.stringify(work)===before;
@@ -32,8 +32,8 @@ const world=evaluate(`
     siteIds:area?.siteIds||[],areas:Object.keys(work.areas).length,
     worldSame:same,readOnly:area?.areaId===readOnly?.areaId,
     rngSame:rng===S.rngState,
-    anonymous:Object.values(work.employers).every(row=>row.organizationKey===null),
-    jobsAreIndependent:Object.values(work.sites).every(row=>row.basis==='game-model'),
+    anonymous:area.siteIds.every(id=>work.employers[work.sites[id].employerId].organizationKey===null),
+    jobsAreIndependent:area.siteIds.every(id=>work.sites[id].basis==='game-model'),
     positionLinks:Object.values(work.positions).every(p=>work.sites[p.siteId]),
     openingLinks:Object.values(work.openings).every(o=>
       work.sites[o.siteId]&&work.positions[o.positionId]&&

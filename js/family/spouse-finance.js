@@ -236,6 +236,8 @@ function recordSpouseAnnualFinance(
   if (!spouse || spouse.d) return null;
   repairSpouseFinance(s);
   const finance = spouse.personalFinance;
+  const previous = finance.history.find(row => row.year === s.year);
+  if (previous) return previous;
   if (!finance.history.length && finance.startedYear > s.year) finance.startedYear = s.year;
   const interest =
       finance.status === "modeled_balance"
@@ -287,6 +289,12 @@ function recordSpouseAnnualFinance(
     row.condition = "unknown";
   }
   finance.history.push(row);
+  if (finance.status === "modeled_balance") {
+    recordDependentEmploymentPayment(s, spouse, {amount: income, recipientId: spouse.id,
+      year: s.year, source: "spouse-annual-finance"});
+    recordDependentEmploymentPayment(s, spouse, {amount: contribution, recipientId: "protagonist-household",
+      year: s.year, kind: "household-contribution", source: "spouse-annual-finance"});
+  }
   finance.history = finance.history.slice(-20);
   finance.updatedYear = s.year;
   return row;

@@ -4,12 +4,17 @@ function finalizeLifeLedgerAtDeath(s) {
 }
 function ap(e, routeReserve = 0) {
   if (!e) return;
-  if (e.employmentAction && e.job != null)
+  if (e.employmentAction && e.employmentAction.action !== "site-incident" && e.job != null)
     throw Error("採用案件と旧職業IDの直接付与を同時に処理できない");
   if (e.employmentAction?.action === "complete-gig" &&
       (!Number.isSafeInteger(e.cash) || e.cash !== e.employmentAction.nominalCash))
     throw Error("短期業務に記録された対価と実際の金銭効果が一致しない");
+  const original = e;
+  e = normalizeEmploymentAffiliationEffects(e);
   assertPlayerEmploymentEffectAllowed(e);
+  const employmentAssessment = employmentEffectAssessment(S, original);
+  if (!employmentAssessment.canStart) throw Error("勤務開始の条件が変わったため、この仕事は成立しない");
+  settleEmploymentThrough(S, S.year, Math.max(0, (S.mo || 1) - 1));
   const disclosureOrigin=disclosureImpactContext(S);
   e=disclosureAdjustedEffect(S,e);
   const cashAlreadyScaled = typeof e.cash === "function";
@@ -30,7 +35,8 @@ function ap(e, routeReserve = 0) {
     else throw Error("不明な旅程操作");
   }
   applyLifeRecordEffects(e, s);
-  if (e.employmentAction) applyPlayerEmploymentAction(s, e.employmentAction);
+  if (e.employmentAction && e.employmentAction.action !== "site-incident")
+    applyPlayerEmploymentAction(s, e.employmentAction);
   const assetsBefore = (s.cash || 0) + (s.house?.cash || 0) + (s.investment || 0),
     debtBefore = (s.debt || 0) + (s.house?.debt || 0),
     investmentBefore = s.investment || 0,
@@ -49,6 +55,8 @@ function ap(e, routeReserve = 0) {
     }
   };
   applyMoneyEffects(e, s, cashScale, addMoney, cashAlreadyScaled);
+  if (e.employmentAction?.action === "complete-gig")
+    recordEmploymentGigPayment(s, e.employmentAction, e.cash * cashScale, inSharedHousehold(s) ? "household" : "personal");
   applyWorkAndCareEffects(e, s, fromRegion);
   applyRelationshipAndSiblingHealthEffects(e, s);
   applySiblingSupportEffects(e, s);
@@ -58,6 +66,9 @@ function ap(e, routeReserve = 0) {
   finishAffiliationPlaces(e, s);
   const resolvedId = TRACE_RESOLUTION?.id;
   applyNeighbourAndWorkplaceEffects(e, s, resolvedId,disclosureOrigin);
+  commitEmploymentEffect(s, e, employmentAssessment);
+  if (e.employmentAction?.action === "site-incident") applyPlayerEmploymentAction(s, e.employmentAction);
+  reconcileWorkContract(s);
   reconcileRelationshipStatusFlags(s);
   recordEffectConsequences(e, s, jobBefore, assetsBefore, debtBefore, investmentBefore, cashBefore);
   reconcileSocialAndInformationEffects(e, s);

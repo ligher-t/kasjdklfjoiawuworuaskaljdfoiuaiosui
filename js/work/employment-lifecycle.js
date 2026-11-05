@@ -54,6 +54,7 @@ function assessEmploymentChoice(s, jobId, openingId = null) {
 function endPlayerEmployment(s, reason = "voluntary-leave") {
   const episode = currentPlayerEmployment(s);
   if (!episode) return null;
+  settleEmploymentThrough(s, s.year, Math.max(0, (s.mo || 1) - 1));
   const work = s.world?.occupationWorld;
   const position = work?.positions?.[episode.positionId];
   if (position) {
@@ -63,12 +64,12 @@ function endPlayerEmployment(s, reason = "voluntary-leave") {
   }
   episode.status = "terminated";
   episode.endYear = s.year;
-  episode.endMonth = Number.isInteger(s.mo) ? s.mo : 1;
+  episode.endMonth = Math.max(1, s.mo || 1);
   episode.leaveReason = reason;
   episode.history.push({ year: s.year, month: episode.endMonth, status: "terminated", reason });
   const state = playerEmploymentState(s);
   state.activeEpisodeId = null;
-  if (s.job === episode.jobId) {
+  if (reason !== "death" && s.job === episode.jobId) {
     const previousJob = s.job;
     s.job = 0;
     recordCareerChange(s, previousJob, 0);
@@ -85,8 +86,14 @@ function endPlayerEmployment(s, reason = "voluntary-leave") {
   return episode;
 }
 function applyPlayerEmploymentAction(s, action) {
-  if (!action || !["accept-local-opening", "leave", "complete-gig"].includes(action.action))
+  if (["accept-known-opening", "decline-known-opening"].includes(action?.action))
+    return resolveKnownEmploymentOpening(s, action.action === "accept-known-opening");
+  if (action?.action === "start-livelihood") return startEmploymentLivelihood(s, action);
+  if (action?.action === "site-incident") return applyEmploymentSiteIncident(s, action);
+  if (!action || !["accept-local-opening", "leave", "complete-gig", "suspend", "resume", "pay-arrears"].includes(action.action))
     throw Error("採用案件の操作が不正");
+  if (action.action === "pay-arrears") return payEmploymentArrears(s, action.episodeId);
+  if (["suspend", "resume"].includes(action.action)) return changeEmploymentAvailability(s, action);
   if (action.action === "complete-gig")
     return recordCompletedGig(s, action);
   if (action.action === "leave") {
@@ -95,6 +102,10 @@ function applyPlayerEmploymentAction(s, action) {
   }
   const jobId = action.jobId, assessed = assessEmploymentChoice(s, jobId, action.openingId);
   if (!assessed.canStart) throw Error("募集と本人の資格・通勤・勤務開始条件が一致しない");
+  return commitEmploymentOpening(s, assessed);
+}
+function commitEmploymentOpening(s, assessed, options = {}) {
+  const jobId = assessed.request.jobId;
   // All checks precede mutation. One player decision may commit the ordinary
   // clerical stages without requiring several consecutive choice events.
   const { opening, request } = assessed;
@@ -106,8 +117,10 @@ function applyPlayerEmploymentAction(s, action) {
       site.status !== "open" || position.jobId !== jobId)
     throw Error("求人枠または職位がすでに埋まっている");
   const state = playerEmploymentState(s);
-  if (state.activeEpisodeId || state.episodes.some(row => row.status === "active"))
-    throw Error("すでに別の職業で勤務している");
+  if (currentPlayerEmployment(s)) {
+    if (!options.transition) throw Error("すでに別の職業で勤務している");
+    endPlayerEmployment(s, options.reason || "new-position");
+  }
   const month = Number.isInteger(s.mo) && s.mo >= 1 && s.mo <= 12 ? s.mo : 1,
     personId = s.personId || s.identity?.id || "protagonist",
     caseId = "work-case:" + personId + ":" + (state.cases.length + 1),
@@ -124,6 +137,8 @@ function applyPlayerEmploymentAction(s, action) {
     organizationKey: employer.organizationKey || null,
     siteId: site.siteId, positionId: position.positionId, jobId, kind: "wage-employment",
     status: "active", startYear: s.year, startMonth: month,
+    sourceEventId: options.sourceEventId || TRACE_RESOLUTION?.id || null,
+    affiliationId: options.affiliationId || null, payRegionPm: s.res.pm, areaId: site.areaId,
     endYear: null, endMonth: null, workFraction: 1, basis: "confirmed-local-opening",
     history: [{ year: s.year, month, status: "active", caseId }]
   };
@@ -149,6 +164,7 @@ function applyPlayerEmploymentAction(s, action) {
     wagePremium: 0, hours: "regular", assignment: "usual",
     knownConditions: "basic", basis: "occupation-episode"
   };
+  closeInfectionWorkplaceDisclosureIfEmploymentChanged(s);
   s.workContractHistory.push({
     year: s.year, siteId: episode.siteId, jobId, episodeId,
     action: "started", basis: "occupation-episode"
@@ -167,6 +183,8 @@ function recordCompletedGig(s, action) {
   if (!Number.isSafeInteger(action.nominalCash) || action.nominalCash < 0 ||
       !action.sourceEventId || typeof action.sourceEventId !== "string")
     throw Error("短期業務の支払根拠が不正");
+  const resource = action.resourceId ? resolveEmploymentLivelihoodResource(s, "seasonal-contract", 1, action.resourceId) : null;
+  if (action.resourceId && !resource) throw Error("短期業務の現場がない");
   const month = Number.isInteger(s.mo) && s.mo >= 1 && s.mo <= 12 ? s.mo : 1,
     state = playerEmploymentState(s),
     sourceKey = action.sourceEventId + ":" + kind + ":" + s.year + ":" + month;
@@ -176,7 +194,8 @@ function recordCompletedGig(s, action) {
     episode = {
       episodeId: "gig:" + personId + ":" + (state.episodes.length + 1),
       personId, sourceKey, sourceEventId: action.sourceEventId, kind: "gig",
-      taskKind: kind, jobId: null, employerId: null, siteId: null,
+      taskKind: kind, jobId: null, employerId: resource?.employerId || null, siteId: resource?.siteId || null,
+      resourceId: resource?.resourceId || null,
       status: "completed", startYear: s.year, startMonth: month,
       endYear: s.year, endMonth: month, nominalCash: action.nominalCash,
       basis: "single-event-completed-work",

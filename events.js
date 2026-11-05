@@ -57,6 +57,7 @@
       "relationships/facility-people",
       "life/goals-and-family",
       "work/contracts",
+      "work/employment-choices",
       "social/learning",
       "social/conflict",
       "review/choice-policy",

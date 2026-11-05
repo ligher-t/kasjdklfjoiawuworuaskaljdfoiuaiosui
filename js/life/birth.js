@@ -393,6 +393,10 @@ function born(birth = {}) {
   initializeSocialClass(S);
   initializeCareNetworkPeople(S);
   assignRelativeIds(S);
+  playerEmploymentState(S);
+  for (const parent of Object.values(S.par)) if (parent && !parent.d)
+    recordDependentEmployment(S, parent, {jobId:parent.j,region:S.res.n,
+      source:"family-background-at-birth",kind:"background-livelihood",month:1});
   advanceRelativeMilestones(S);
   if (S.inf) {
     S.ob = rnd(P("infection.diagnosisRollMin"), P("infection.diagnosisRollMax"));

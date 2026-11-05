@@ -80,6 +80,7 @@ function applyChildEffects(e, s, addMoney) {
         child.remittanceEndedYear = s.year;
       }
       if (e.childPlan === "study") {
+        closeDependentEmployment(s, child, "education-or-supported");
         child.householdStatus = "study";
         child.studyEndYear = s.year + rnd(2, 4);
         child.futurePlanReviewYear = child.studyEndYear;
@@ -92,6 +93,8 @@ function applyChildEffects(e, s, addMoney) {
             w: p.w * (p.jobId <= 2 ? [3, 2, 1, 0.5, 0.2][wealthIndex] : [0.2, 0.5, 1, 2, 4][wealthIndex])
           }));
         child.jobId = wp(pool).jobId;
+        recordDependentEmployment(s, child, {jobId:child.jobId,region:child.region||s.res.n,
+          source:TRACE_RESOLUTION?.id||"child-work-choice",kind:"background-livelihood"});
       } else if (e.childPlan === "independent") {
         child.householdStatus = "independent";
         child.independentSinceYear = s.year;

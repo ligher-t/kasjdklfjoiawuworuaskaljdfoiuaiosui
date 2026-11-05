@@ -1,4 +1,5 @@
 function renderLifeAndKnowledgePanel(s, services) {
+  renderEmploymentDesk(s);
   const recordMarkup = services
     .lifeRows(s)
     .map(([k, v]) => `<dt>${services.esc(k)}</dt><dd>${services.esc(v)}</dd>`)

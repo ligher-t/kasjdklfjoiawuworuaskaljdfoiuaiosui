@@ -44,12 +44,6 @@ jobs:
         run: node tools/check-efficient.cjs run v87_sim_audit_fixes_and_metrics.test.cjs
       - name: P0 credential and hiring lifecycle
         run: node tools/check-efficient.cjs run p0-career-credential-lifecycle.test.cjs
-      - name: Employer access and fixed world I-1 boundaries
-        run: node tools/check-efficient.cjs run v89_employment_i1_access_world.test.cjs
-      - name: Actual hiring, episode and wages I-2 boundaries
-        run: node tools/check-efficient.cjs run v90_employment_i2_lifecycle.test.cjs
-      - name: Ordinary career roles and one-off gig accounting I-2
-        run: node tools/check-efficient.cjs run v91_employment_ordinary_positions_and_gigs.test.cjs
       - name: Mandatory schooling and entrance examinations
         run: node tools/check-efficient.cjs run p0-school-progression.test.cjs
       - name: Regional school admissions and school facility conditions
@@ -141,3 +135,22 @@ jobs:
         run: node tools/check-efficient.cjs run v87_dev_simulation_diagnostics.js
       - name: Generated event catalogue matches review metadata
         run: node tools/generate-event-catalog.cjs --check
+
+  employment-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Employment appointment, payroll, family and player decisions
+        run: >-
+          node tools/check-efficient.cjs run
+          v89_employment_i1_access_world.test.cjs
+          v90_employment_i2_lifecycle.test.cjs
+          v91_employment_ordinary_positions_and_gigs.test.cjs
+          employment-appointments-world.test.cjs
+          employment-finance-transitions.test.cjs
+          employment-family-periods.test.cjs
+          employment-ux.test.cjs

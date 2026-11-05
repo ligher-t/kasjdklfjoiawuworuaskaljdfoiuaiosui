@@ -3,6 +3,7 @@ function die(c, l, monthBasis = null, episodeId = null) {
   const s = S;
   if (s.dead) return;
   const before = traceState(s);
+  endPlayerEmployment(s, "death");
   if(educationLive(s)||s.educationPath?.status==="paused")
     educationEnd(s,"deceased","在学中に死亡し、課程を修了できなかった","death");
   const journeyLocation = travelDeathLocation(s);

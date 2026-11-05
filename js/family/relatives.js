@@ -706,6 +706,11 @@ function advanceRelativeMilestones(s) {
       }
     }
   for (const person of people) {
+    if (person.d)
+      closeDependentEmployment(s, person, "death", {
+        year: Number.isInteger(person.d) ? person.d : person.deathYear || s.year,
+        month: person.deathMonth || person.actualDeathMonth || 1
+      });
     const birth = Number.isFinite(person.by) ? person.by : person.metYear;
     if (!Number.isFinite(birth)) continue;
     const next =
@@ -739,6 +744,7 @@ function advanceParentWorkLives(s) {
         keyedRoll(`${parent.id || key}|${parent.nm}|${parent.by}|${s.year}|parent-death`) < mortality.risk)
     ) {
       parent.d = s.year;
+      closeDependentEmployment(s, parent, "death", {year: s.year, month: parent.deathMonth || s.mo});
       parent.dead = true;
       parent.deathCause = mortality.cause;
       parent.deathKnownYear = s.year;

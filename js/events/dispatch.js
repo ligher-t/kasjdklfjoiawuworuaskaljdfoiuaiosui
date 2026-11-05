@@ -134,7 +134,7 @@ function simulationChoiceStates(event, s, T) {
   const who = typeof event.who === "function" ? event.who(s) : event.who || (stg(s) <= 1 ? "parent" : "self");
   return event.c.map((choice, index) => {
     const shown = ok(choice.show, s, T),
-      gateEnabled = shown && ok(choice.en, s, T),
+      gateEnabled = shown && ok(choice.en, s, T) && employmentChoiceCanResolve(event, choice, s),
       ethicalBlocked = gateEnabled && ethicalLock(event, choice, s, who);
     return { c: choice, index, shown, gateEnabled, enabled: gateEnabled && !ethicalBlocked, ethicalBlocked };
   });
@@ -146,6 +146,7 @@ function slot(x) {
     return;
   }
   s.mo = Math.floor(x * CALENDAR_MONTHS) + 1;
+  settleEmploymentThrough(s, s.year, Math.max(0, s.mo - 1));
   advanceJourneyThrough(s, s.year, s.mo);
   if(s.educationPath?.offeringId)
     educationSimulateAttendanceThrough(s,s.year,s.mo-1);
@@ -212,23 +213,22 @@ function slot(x) {
     !s.sn?.[event.id] &&
     hasActionableChoice(event)
   );
-  // The mandatory post-school decision is already handled by schoolReview.
-  // Later higher-education reconsiderations must obey the player's choice-frequency setting.
-  const priorityChoices = mj.filter(event => event.pri && event.id !== "higher_ed");
+  const optionalChoices = mj.filter(event => employmentRoutineAvailable(event, s));
+  const priorityChoices = optionalChoices.filter(event => event.pri && event.id !== "higher_ed");
   const livelihoodRecovery = s.job === 0 && s.age >= 20 && s.age <= 60
-    ? mj.find(event => event.id === "work_unemployed_reentry")
+    ? optionalChoices.find(event => event.id === "work_unemployed_reentry")
     : null;
   let e = schoolReview ||
     medicalReview ||
     expiringFollowup ||
     mj.find(event=>event.id==="journey_decision_review") ||
     localTimelineChoice ||
-    nextScheduledFollowup(mj,s) ||
+    nextScheduledFollowup(optionalChoices,s) ||
     livelihoodRecovery ||
     wpk(priorityChoices, s, T) || institutional;
   const serviceOnly=s.eventSchedule?.year===s.year&&s.eventSchedule.servicePositions.includes(x);
   if(!e&&serviceOnly)return;
-  if(!e)e=R()<playChoiceChance(s)?wpk(mj,s,T):null;
+  if(!e)e=R()<playChoiceChance(s)?wpk(optionalChoices,s,T):null;
   if (!e) {
     const inCrisis = isLocationInCrisis(s);
     const r = R(),
@@ -252,6 +252,7 @@ function fire(e, s, T) {
   }
   if(["dg"].includes(e?.id))importantLifeNotification(s,"diagnosis");
   if(["family_spouse_death","family_former_spouse_death_notice","family_sibling_bereavement","family_child_bereavement"].includes(e?.id))importantLifeNotification(s,"family-death");
+  if (e.c && hasEmploymentPhysicalInterview(e.id)) recordEmploymentAppointmentEncounter(s, e.id);
   if (HL) STAT.currentEventId = e?.id || null;
   // A dated scene records a witnessed encounter only when it actually
   // appears in the city to which the historical scene is grounded.
@@ -467,6 +468,11 @@ function ask(e, T, t, before, resumed = false) {
     recordTrace("choice-blocked", e.id, { text: t, reason: "no-available-choice" }, before);
     return;
   }
+  recordEmploymentPrompt(e, s, {
+    resumed, userInitiated: s.employmentUserInitiated === e.id,
+    protected: nextExpiringFollowup([e], s) === e
+  });
+  delete s.employmentUserInitiated;
   if (HL) {
     const key = `${STAT.currentLife}:${s.year}:${s.mo}`;
     if (STAT.choiceMonths.has(key)) STAT.duplicateChoiceMonths++;
@@ -485,6 +491,10 @@ function ask(e, T, t, before, resumed = false) {
     if((e.timelineFlag||e.id==="journey_decision_review")&&
       (e.timelineFlag&&!historicalSceneEligibility(e,s).eligible||!ok(c.show,s,T)||!ok(c.en,s,T))){
       s.ev=null;$("md").hidden=1;$("resumeChoice").hidden=1;syncUIDialogs();rd();return;
+    }
+    if (!employmentChoiceCanResolve(e, c, s)) {
+      ask(e, tags(s), t, before, true);
+      return;
     }
     const resolutionBefore = s.evBefore || before;
     const roll = R(),
@@ -528,6 +538,7 @@ function ask(e, T, t, before, resumed = false) {
           ? { romanceId } : {})
       };
       recordEventReview(e,s,choiceLabel);
+      recordEmploymentDecision(e,s,choiceLabel);
     } finally {
       TRACE_RESOLUTION = previousResolution;
       s.eventRelativeId = null;

@@ -1150,6 +1150,7 @@ window.TERRA_DATA_BUILD.fragment(
         "references": ["SRC_TERRA_19REGIONS_LIFE_20261030", "SRC_ORIPATHY_SOCIAL"],
         "st": ["青年", "壮年"],
         "need": ["国:ヴィクトリア", "就労中"],
+        "show": s => !!employmentEventWorksite(s, "framed-debt"),
         "any": ["ターラー系の家の記録", "感染診断済", "貧困"],
         "once": true,
         "w": 0.5,
@@ -1160,8 +1161,8 @@ window.TERRA_DATA_BUILD.fragment(
             "o": [
               [
                 1,
-                "署名は拒んだものの即座に解雇され、給与は一銭も支払われなかった。さらに街の工場主連名でブラックリストに入れられ、同業への再就職を断たれた。",
-                { "p": -6, "rl": 1, "job": 0, "fl": { "ed_work_disadvantage": 1, "ed_work_record": 1 } }
+                "署名は拒んだものの即座に解雇され、働いた分の給金も未払いのまま門の外へ押し出された。工場主が近隣の同業者へ悪評を流したと聞き、次の働き口を探す足も重くなった。",
+                { "employmentAction": { "action": "site-incident", "kind": "framed-debt", "incident": "dismissed-with-unpaid-wages", "terminate": true }, "p": -6, "rl": 1, "fl": { "ed_work_disadvantage": 1, "ed_work_record": 1 } }
               ]
             ]
           },
@@ -1170,8 +1171,8 @@ window.TERRA_DATA_BUILD.fragment(
             "o": [
               [
                 1,
-                "身に覚えのない巨額の負債を背負わされ、給与明細はすべて借金の天引きとなった。日々のパンを買う小銭すら底をついた。",
-                { "debt": 150000, "p": -10, "h": -4, "fl": { "ed_work_disadvantage": 1 } }
+                "身に覚えのない十五万龍門幣の賠償証文に署名させられた。工場主は給金も押さえると言い、今月働いた分は支払われなかった。証文を握りしめ、日々のパンをどう買うか考えた。",
+                { "employmentAction": { "action": "site-incident", "kind": "framed-debt", "incident": "coerced-debt-note" }, "debt": 150000, "p": -10, "h": -4, "fl": { "ed_work_disadvantage": 1 } }
               ]
             ]
           }

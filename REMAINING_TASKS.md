@@ -19,88 +19,20 @@
 - [x] **文章品質・警告級**：`tools/check-player-prose-warnings.cjs` を追加。公開イベント本文・選択肢・結果・不能理由から警告候補を抽出し、一律禁止せず人手校閲へ回す運用を基準書へ記載。
 - [x] **生成物同期**：`js/version.js` を正規ハッシュへ同期し、削除4イベント・追加2イベントを `event-catalog-metadata.json` で明示整合したうえで、`node tools/generate-event-catalog.cjs --write` の正規生成結果を `EVENT_CATALOG.md` へ反映。生成物の手編集なし。
 
-## 2026-11-05：雇用I-2横断確認と求人参照効率化
+## 雇用・職業・生計
 
-- [x] 識字条件の動的求職判定を `v87_education_path.js` から検査できるようにし、医療補助28・事務40の従来条件を維持。
-- [x] サルゴンの単発警戒契約を本業の職業IDから分離。二度目の警戒契約をギグとして記録し、断念・不成立では無関係な現職を解除しない。
-- [x] サルゴンの恒常的なトランスポーター転向を実職位・求人・本人条件と接続。`v87_sargon_contract_lifecourse.js` で単発請負後の転職を検証。
-- [x] `js/work/occupation-world.js` の募集照会を生活圏site→position→当年度openingへ限定。過去の全求人を毎回列挙する処理を撤去。索引に未登録の孤立求人を候補にしない `v91` 検査を追加。
-- [x] 境界テスト用の職場siteにも `area.siteIds`、`createdYear`、`lastYear` を設定し、本番の事業所更新規則に統一。
-- [x] [歴史境界CI #41960927376](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41960927376) は全項目PASS。教育・生計CI #41960927442では雇用I-1/I-2および教育経路を含む通常の境界テスト59項目PASS。
-- [x] 12人×100年を含む `v87_dev_simulation_diagnostics.js` は毎回のPR検証で120秒上限を超えていたため、長期シミュレーションを明示的に実行する場合に限り起動するよう既存ワークフローを変更。テスト本体は保持し、`node tools/check-efficient.cjs run v87_dev_simulation_diagnostics.js` から手動実行可能。
-- [ ] **生成カタログの同期**：教育・生計CIの残る失敗は `EVENT_CATALOG.md` の生成結果との差分。約12MBの生成物であり、I-2〜I-4のイベント本文・選択・結果枝の移行を区切った際に、リポジトリ内で `node tools/generate-event-catalog.cjs --write` を実行し、その後 `--check` を通す。生成物を手編集して既存校閲記録を上書きしない。
-- [ ] 次の実装：家業・自営の役割と収支、固有組織・強制配属・転職の実職位連結、月次債権と家計精算、および旧 `job` 付与の残枝の意味監査。
+設計正本は [統合設計v3](docs/employment/TERRA_EMPLOYMENT_INTEGRATED_DESIGN_V3_20261105.md)。確定済みの設計と実装を区別し、当該コミットの受入証拠がある範囲を完了とする。
 
-## 2026-11-05：I-2の横断不整合修正とサルゴン請負の接続
+現行実装では、一般求人の欠員消費、固有任用先と採用場面の照合、勤務期間と月ごとの支払、家族本人の仕事・収入、家業の手伝いと引継ぎ、単発報酬、本人が確認した求人からの承諾と辞退を接続。生成カタログを正規ツールで再生成し、変更した文面の全文は [PLAYER_TEXT_REVIEW](docs/PLAYER_TEXT_REVIEW.md) に収録。旧セーブ移行は `AGENTS.md` に従い対象外。同版復元を検査する。
 
-- [x] `v87_education_path.js`：実求人があるときだけ表示する医療補助・事務進路について、既存の識字条件28/40を動的判定の原文から監査する。資格条件自体は維持。
-- [x] `v87_sargon_contract_lifecourse.js`：初職がない人物の単発契約と、別の本業がある人物の副業記録を分離して検証。
-- [x] `sargon_market_contract_review`：短期護衛の成功・不成立・辞退で、無関係な継続雇用を無職へ戻す効果を修正。再依頼はギグとして記録。
-- [x] サルゴンのトランスポーター転向を現地の求人・本人適格性・実契約に接続し、欠員のない会社への採用を抑制。
-- [ ] 同イベント以外の単発請負から継続職への移行、家業・自営と家計の現金/現物会計、強制配属、公職と企業任用の正本接続を継続。
-- [ ] 最終CI結果に応じて対象の試験と引継ぎ状態を更新する。
-
-## 2026-11-05 雇用I-2追加：一般職の複数職位と単発業務
-
-- [x] 産業別に複数職位と募集枠を保持するよう拡張。地域と職場は固定IDで保持。
-- [x] 本人の資格まで照合して応募可能な求人を選定する。
-- [x] 既存の一般就職選択6件を実際の欠員に接続。
-- [x] 単発の請負・日雇いの実績を継続的な勤務契約から分離。重複した実績記録を拒否。
-- [x] 歴史イベント8件の現地活動について、所属スコープを追加。
-- [x] 新規境界テストv91を追加。I-1、I-2と合わせた個別テストはPASS。
-- [ ] 固有組織の採用・任用、家業・自営業、休職・再就職、月次収支の実台帳を接続。
-- [ ] 既存イベントの直接的な職業変更について、実際の勤務先・本人の認知・後続分岐を継続監査。
-
-## 2026-11-05：雇用I-2 第一段階（実求人→実職歴→収入の基準額）
-
-- [x] **採用案件と実勤務期間**：`js/work/employment-lifecycle.js` に本人選択に基づく `workCase`・`employmentEpisode` を追加。求人存在、現地、募集枠、職位、組織別採用制限、本人の技能と意思を開始前に照合。内部の発見/照会/応募/選考/内定/承諾/契約/就業を1回の通常選択の裏で履歴化。欠員枠は一度だけ消費。辞退・離職後の再雇用には新caseを要求。
-- [x] **職業と職場の因果接続**：匿名事業所の13産業それぞれに既存J職業を対応。確認済み募集がない職種は選択肢を表示せず、現職episodeの契約を `s.job` と `workContract` に互換投影。新しいepisodeから旧合成職場を生成しない。 `applyLifeRecordEffects`・`recordEffectConsequences` の書込順を整理し、職歴の二重登録を防止。
-- [x] **3既存結果枝を実求人へ接続**：`car`の工場・飲食宿、`work_unemployed_reentry`の町工場。表示本文は変更なし、可視選択・結果の全文は[PLAYER_TEXT_REVIEW](docs/PLAYER_TEXT_REVIEW.md)へ掲載。結果の `job=2/17` を `employmentAction` へ移行。検証時点の適格求人がなければ採用を成立させない。
-- [x] **勤務月と収入・資格**：採用/離職年月から `employmentAnnualWageBase` を計算し、年度賃金基準額を実勤務期間に合わせる。新しい人生の根拠のない `pickStarterJob` 自動付与を停止。臨床業務は学位・臨床実務証拠・知識/識字を区別し、学位のみで医師免許を推定しない。
-- [x] **検証**：`tests/v90_employment_i2_lifecycle.test.cjs` をCIへ登録。実際の工場採用→求人枠消費→職歴/契約→二重採用防止→年途中離職→給与月数→保存復元、臨床資格証拠の条件を対象テストでPASS。既存I-1テストもPASS。広域CIの別件 `v87_affiliation_career_paths.js` 未登録歴史所属ID監査は先行タスクを継続。
-- [ ] **残るI-2**：残りの一般職と固有組織/公職の実採用・選任の正本接続、一般初職/短期請負/家業/非自由徴用/休職/転勤/昇進の個別FSM。既存A175の直接 `job`・所属効果全枝を監査し、旧セーブでの現役合成契約・家族・地域履歴を維持する。
-- [ ] **I-3以降に接続**：年次基準賃金を月次の実債権/支給・未払・家計共有台帳へ移し、同一年で新episodeと旧イベント生計を組み合わせた際の収入二重計上を封じる。現段階は既存年次会計の内部に実勤務率を投影。全135受入ケースを実行済みと扱わない。
-
-## 2026-11-05：雇用I-1 実コード第一段階（世界先行と採用政策）
-
-- [x] `js/work/employment-policy.js`：66組織を全件対応させた読み取り専用の新規プレイヤー雇用判定を追加。J28〜82の55組織専用職は職業から正規化。BLOCKED 2組織への新規加入を `js/effects/apply.js` の事前判定に加え、`js/life/records.js:applyLifeAffiliation` の直接加入・強制配属・復帰入口でも拒否。採用資格照会 `js/core/state.js:careerOpeningAssessment` は明示した職業・企業を同じ判定へ接続。
-- [x] `js/work/occupation-world.js`：19地域×13産業の仮説行列から、地域/地区/世界seedごとに独立した匿名事業者・職場・職位・求人枠を決定。新サイトは主人公の現在の職業IDから生成せず、`js/world/locality.js:localityAdvanceOne` で世界側を初期化。画面用の `occupationAreaSnapshot` は読み取り専用。
-- [x] `index.html` と改訂値を同期し、`tests/v89_employment_i1_access_world.test.cjs` を登録。対象の既存選定CIでの検証を実施。
-- [x] `advanceOccupationWorkArea`：生活圏の年次更新で求人期限を閉じ、地域の雇用環境悪化に応じて新規募集を停止。現場・旧募集履歴を維持し、同年反復・保存復元時の重複生成を防止。
-- [ ] **I-1を継続**：確認済み個別拠点の年月付き稼働/閉鎖/災害、具体企業の採用権限、採用時の欠員予約・背景労働者から実社員への移行、匿名地区と移動都市・旧セーブの同一性。名前付き企業のサイトを全土へ自動生成しない。
-- [ ] **I-2移行で接続**：現行の `facilitySpecsFor`・`reconcileWorkContract`・`pickStarterJob` と `J.pay` に残る旧合成職場・契約・給与の自動生成を `employmentEpisode` 正本へ置換。既存イベントの直接 `job` 書込・役職付与・全家族の職歴経路を同一雇用アクセスで監査。新台帳を実際の採用/賃金へ結び付けるまでI-1を全面完了扱いにしない。
-
-## 2026-11-05：雇用・職業・生計 統合設計v3.0（設計完了、実装未着手）
-
-- [x] **設計正本を統合**：[v3.0統合設計書](docs/employment/TERRA_EMPLOYMENT_INTEGRATED_DESIGN_V3_20261105.md) を本作業の入口とする。既存W00〜W12・19地域×13部門・J0〜82・66組織・A175/488/703・B/C/D862・受入107件を継承。新規文面・ゲームロジック・セーブ形式は今回の作業で変更していない。
-- [x] **特定組織への就職禁止を仕様化**：[66組織アクセス政策](docs/employment/EMPLOYER_PLAYER_ACCESS_POLICY_66_20261105.json)を全キー分類（GENERAL17/SPECIAL32/COMMUNITY3/CONTACT5/BLOCKED2/HISTORICAL1/SOURCE_HOLD6）。ペンギン急便・リー探偵事務所は新規雇用禁止。汎用J職、初職自動生成、転職、紹介、所属変更、家族・NPC、自動契約による迂回も同じゲートを通す。過去の旧セーブ職歴は保持。
-- [x] **UX負荷と受入を仕様化**：内部の求職FSMとプレイヤーの主要選択を分離。通常1案件は原則1選択、重大条件変更時のみ2選択。任意の就職選択は3連続禁止、直近5主要選択で最大2、本人の自発画面操作は別扱い。期限付き教育・医療・歴史・重大危機の優先は維持。[新規28受入ケース](docs/employment/V3_EMPLOYMENT_ACCESS_UX_ACCEPTANCE_20261105.json)を追加し、既存107件と合わせて135件の仕様母集団（未実行）。
-- [ ] **I-1 世界・雇用主**：66組織policyの中央判定、禁止された新規episode/給与/所属、地区固定site・求人・背景労働力、保存復元とS01〜S12を実装・個別検証。
-- [ ] **I-2 資格・就職FSM**：83職業の条件、workCase/episode、初職なし、家業/請負/徴用、clinical資格の既存誤判定、A175のP0枝とT01〜T12を改修。
-- [ ] **I-3 会計・家族・移動**：実勤務月・賃金債権/実支給、現物/ギグ、親/配偶者/子、旅・出向・閉鎖・転居を接続。二重受取と旅行不在の二重按分を防止。
-- [ ] **I-4 イベント意味校閲・接続**：A175・703結果枝の実ランタイム副作用、フラグ解除と後続、B/C/D862・W12重要候補を優先度順に修正。プレイヤー表示全文は `docs/PLAYER_TEXT_REVIEW.md` へ。
-- [ ] **I-5 求職UX**：就職情報画面/本人認知/同一案件統合/任意選択の連続抑制、期限付き重大イベント保全、追加v3 UXケースを対象検証。
-- [ ] **I-6 受入と確率較正**：既存107＋追加28の重複なく受入、少数の代表人生・seed・旧セーブで実測。組織名の日本語原典照合、企業規模と求人数の［S］値、散文のユーザー可視全文を最終点検。無差別な長期全人生シミュレーションを前提にしない。
-
-## 2026-11-04：地域労働・実装前準備W03〜W11の追加深化（ゲーム本体未変更）
-- [x] 先行の[W00引継ぎ](docs/employment/W00_EMPLOYMENT_PREPARATION_HANDOFF_20261104.md)とv1.0を保持し、[v2.0統合引継ぎ](docs/employment/TERRA_19_REGION_EMPLOYMENT_PREIMPLEMENTATION_HANDOFF_V2_20261104.md)を追加。W03事業所・求人、W04生涯職歴とNPC/家族、W05月給・一件請負・自営/共同体の会計、W07分布、W08移動、W09情報UIを各々詳細な仕様書に分離した。
-- [x] W06：**66組織**について史料・日本語名・実稼働site・公開採用の活性化ゲートを全件作成。Mountaincomm Tradeの子会社からの独立経緯、Schwire Groupの表記・地域スコープを、転載物語原文と既存二次資料で照合して組織台帳を追補。正式日本語名称と効力発生日は要原文確認。
-- [x] W10：先行の51件（R19/D20/X12）と新規95件（R19/D20/S12/T12/L12/M10/I10）を統合し、共通R/Dを一度だけ数える[**107件の受入ケース**](docs/employment/W10_INTEGRATION_ACCEPTANCE_107_CASES_20261104.json)を作成。**すべて設計上の期待値で、実行結果ではない。**
-- [x] W11：B262/C526/D74の**862候補**を一件ずつ参照できる優先度キューに分類。[散文本文・選択・結果が揃った新規10件・20選択肢](docs/employment/W11_PROPOSED_10_JOB_EVENTS_PLAYER_FULL_TEXT_20261104.md)を作成。先行36コンセプトと既存イベントの近接関係を列挙し、同義イベント量産と収入二重計上を防ぐ。**ゲームへのイベント追加は未着手。**
-- [ ] 実装直前の残課題：W01のA175に含まれる条件付き結果の**個別ランタイム効果・フラグ・後続を最終意味裁定**。旧台帳のlife_rhodes_role_review選択数の差を生成元から解消。企業の日本語原文・年月確認の保留を個別に処理し、変更後のイベント可視全文をPLAYER_TEXT_REVIEWへ記録する。
-- [ ] 実装開始時にW03世界固定ID→W04採用とepisode→W05金銭/家族→W08移動→W09情報UI→A175校閲の順で接続。**107受入ケースから変更境界を見て限定検証**。長期人生の全件ランダム試験は無断実施しない。
-
-## 2026-11-04：地域労働W01〜W11 実装前準備（設計資料のみ）
-- [x] 全19地域×13産業と現行J0〜J82を正本として、`docs/employment/W00_EMPLOYMENT_PREPARATION_HANDOFF_20261104.md`から各準備の結果へ接続した。新しい世界側の雇用主・職場・職位・求人、資格、本人の認知、家族、短期就労、給与、通勤、UI、受入を設計。実ゲームコード・イベント本文への変更なし。
-- [x] W01：A分類175イベント、現行35ソース、488選択枝の原文・条件・結果効果の抽出、危険箇所の個別トリアージ。現行の`life_rhodes_role_review`は実コード3選択とカタログ4選択の差。職業ID表示、職場逆生成、`car`放浪の`job=1`を優先問題に特定。
-- [x] W02：83職業IDの職位・資格証拠・働き方の機械契約。W03–05：世界の雇用サイト・人物就業履歴・NPC／親子家族・賃金と一時金・現物支給・年次会計の設計。W06–10：史料・66組織、11段階の分布指標、通勤、就職UI、51受入ケース。W11：全2,566イベントIDとの完全一致衝突0の新規36コンセプト。
-- [x] **共通執筆／校閲方針**：`docs/EVENT_PROSE_CAUSALITY_AND_REVIEW_STANDARD.md`を新設し、`docs/CONTENT_REVIEW_WORKFLOW.md`から参照。全イベントでフラグ・因果・接続・生活に根差した散文、過酷なものから平凡なものまでの温度差、現行日本語版の用語・根拠、プレイヤー可視全文のレビューを要求。
-- [ ] 実装入口で残すW01：A175の**個別結果枝の最終意味承認**、その発火条件と後続ID・効果の正本一致、変更した文面全文の`docs/PLAYER_TEXT_REVIEW.md`への掲載。B/C/D等の個別意味校閲、史料にない固有組織名の日本語原文照合、確率較正は後続。
-- [ ] 地域雇用実装：`occupationWorld`→`workCase`→`employmentEpisode`→支給・離職→既存イベント→UIの順で、51件の受入仕様から直接変わる境界だけを検証。無差別な長期全人生シミュレーションを実施しない。
+- [ ] **I-1／I-2** 個別史料で保留した組織・拠点の確定、未接続の職位・施設・転勤／出向・非自由配属の個別成立経路。政策上の不採用組織との非雇用の関係を維持する。
+- [ ] **I-3** 家業・共同体の現物分配、詳細な家族任用の通常経路、会社閉鎖・転勤・家族移動が重なる事例の受入。給与・単発業務・家計への同じ支払を重複させない。
+- [ ] **I-4** W01のA175／703結果を現行の動的効果と後続に照合。優先改修済みの家業、兵站、工場争議、研究記録、BSW内定、薬局への転職と区別し、W12とB/C/Dの現職・施設依存候補を個別処理。
+- [ ] **I-5／I-6** 求職画面の実ブラウザー操作と頻度の受入、135ケースへの検査証拠対応、代表地域の機会分布の観測と数値較正。未確認の日本語原典・年代は保留。36構想・10草案の採否は既存場面との重複と不足で決める。
 
 ## 2026-11-03 U-19：地域固有職の再採用と達成済み人生目標の保全
 
-- [ ] 所属スコープ監査の未一致：`v87_affiliation_career_paths.js:228` で歴史イベントの `hist-*` 8所属IDが `AFFILIATION_RULES` と一致せず、教育CIが失敗する。`hist-columbia_independence`、`hist-kazdel_civil_war`、`hist-kazdel_commission_founded`、`hist-kazdel_war_declared`、`hist-leith_revolution`、`hist-rim_billiton_independence`、`hist-siracusa_unification`、`hist-ursus_great_rebellion` の物理／遠隔スコープと実加入を照合して是正する。高度な設定の着手前 `187acfb` の[CI](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41923058310)でも同じ工程が失敗し、今回 `917d6ec` の[CI](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41928529347)とローカル実行でID差分を確認した。期待一覧の追加だけで校閲済みと扱わない。
+- [x] 所属スコープ監査の過去の不一致：`v87_affiliation_career_paths.js:228` で歴史イベントの `hist-*` 8所属IDが `AFFILIATION_RULES` と一致せず、教育CIが失敗する。`hist-columbia_independence`、`hist-kazdel_civil_war`、`hist-kazdel_commission_founded`、`hist-kazdel_war_declared`、`hist-leith_revolution`、`hist-rim_billiton_independence`、`hist-siracusa_unification`、`hist-ursus_great_rebellion` の物理／遠隔スコープと実加入を照合して是正する。高度な設定の着手前 `187acfb` の[CI](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41923058310)でも同じ工程が失敗し、今回 `917d6ec` の[CI](https://github.com/ligher-t/kasjdklfjoiawuworuaskaljdfoiuaiosui/actions/runs/41928529347)とローカル実行でID差分を確認した。期待一覧の追加だけで校閲済みと扱わない。
 
 - 地域固有職（職業ID 41〜82）の採用結果は、離職後のクールダウンを経て同じ仕事へ戻れる。採用時の `lifeGoal.start` に `preserveAchievement` を明示し、既に達成済みの目標を活動中へ戻さない。未達成の `compromised` 目標は通常どおり `active` へ復帰する。
 - 所属ID・目標IDは維持し、復職時は新しい在籍期間を追加する。初回離職年、最初の達成年、職業変遷、再採用年をそれぞれ保持する。プレイヤー表示文面の追加・改稿なし。

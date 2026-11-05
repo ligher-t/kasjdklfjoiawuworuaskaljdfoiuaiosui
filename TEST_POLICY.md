@@ -18,6 +18,10 @@
 | advanced-settings.test.cjs | 高 | 設定の人生別保存、抽選枠と強制枠、既存の実進学・費用・保護者判定による自動化と復元を確認。 |
 | parent-oripathy-bereavement.test.cjs | 高 | 親の実死亡更新からの即時通知、5種類・人物別一回性、実曝露だけの感染、生死別の親イベントを確認。 |
 |---|---|---|
+| employment-family-periods.test.cjs | 高 | 家族本人の勤務期間、別財布・支払の重複、情報を捏造しない収入照会を実処理で確認。 |
+| employment-appointments-world.test.cjs | 高 | 固有採用の実拠点・年月・権限、地域外採用・禁止組織の迂回と資源不足を実処理で検出。 |
+| employment-ux.test.cjs | 高 | 本人既知の求人、承諾・辞退、保存復元、通常就職選択の頻度と重要期限の優先を確認。 |
+| employment-finance-transitions.test.cjs | 高 | 実勤務月の支払、二重精算、休職・年途中転職、単発報酬と家業の因果を直接確認。 |
 | v88-history-roaming-completion.test.cjs | 高 | 37年表根拠・40場面の日時と場所、登録検問、迂回と往路／帰路の別決済、現地就労、同行同意、定住と実保存復元を実処理で検出する。長期人口生成を含まない。 |
 | p15-education-regional-paths.test.cjs | 高 | P15 R01〜R19の指定年月・学校・本人条件を実際の進路、出席、年次認定、被災、非正規学習につなぎ、誤った入学・資格や履歴消去を直接検出。地域別の大量人生は生成しない。 |
 | p20-education-completion.test.cjs | 高 | 未受入原因別ケース、通常の窓口からの申請・遅延回答と同版復元、混合負担・学校中止返金・人物別知識を実エンジンで直接検出。I07/I08変更時に選択。 |

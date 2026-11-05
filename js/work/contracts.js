@@ -47,9 +47,15 @@ function advanceWorkplaceLedger(s, facility, year) {
 function reconcileWorkContract(s) {
   const episode = currentPlayerEmployment(s);
   if (episode) {
-    if (s.job !== episode.jobId || s.fl?.retired || restricted(s)) {
+    const site = s.world?.occupationWorld?.sites?.[episode.siteId],
+      term = episode.scheduledEndAt,
+      termEnded = term && s.year * 12 + (s.mo || 1) >= term.year * 12 + term.month,
+      moved = episode.areaId && site?.kind !== "mobile" && !episode.affiliationId &&
+        occupationWorkAreaKey(s) !== episode.areaId;
+    if ((s.job !== episode.jobId && episode.projectAsJob !== false) || s.fl?.retired ||
+        (restricted(s) && episode.kind !== "coerced-assignment") || site?.status === "closed" || termEnded || moved) {
       endPlayerEmployment(s, "occupation-or-availability-changed");
-    } else {
+    } else if (episode.kind === "wage-employment") {
       // The actual site is a persistent world record, never a local synthetic workplace.
       if (!s.workContract || s.workContract.basis !== "occupation-episode" ||
           s.workContract.episodeId !== episode.episodeId) {
@@ -63,51 +69,13 @@ function reconcileWorkContract(s) {
       return s.workContract;
     }
   }
-  s.workContractHistory ||= [];
-  const prior = s.workContract;
-  const eligible = contractEligibleJob(s) && !s.fl?.retired && !restricted(s);
-  const away = travelPresence(s).mode !== "residence";
-  // Temporary absence neither terminates an existing job nor creates a
-  // new local employer contract at an unattended home workplace.
-  if (away && prior?.status === "active" && eligible && prior.jobId === s.job)
-    return prior;
-  const site = eligible && !away ? activeFacility(s, "workplace") : null;
-  if (prior && (!site || prior.siteId !== site.id || prior.jobId !== s.job || prior.status !== "active")) {
-    if (prior.status === "active")
-      s.workContractHistory.push({
-        year: s.year,
-        siteId: prior.siteId,
-        jobId: prior.jobId,
-        action: "ended",
-        reason: !eligible ? "employment-ended" : prior.jobId !== s.job ? "occupation-changed" : "site-changed",
-        assignment: prior.assignment
-      });
+  // Unrecorded J values are never proof of an employer, a site or a contract.
+  if (s.workContract) {
+    s.workContractHistory ||= [];
+    s.workContractHistory.push({year:s.year,siteId:s.workContract.siteId,jobId:s.workContract.jobId,
+      action:"ended",reason:"no-active-employment-episode"});
     s.workContract = null;
   }
-  if (site) {
-    const employer = ensureWorkplaceLedger(s, site);
-    if (!s.workContract) {
-      s.workContract = {
-        siteId: site.id,
-        jobId: s.job,
-        startYear: s.year,
-        status: "active",
-        wagePremium: 0,
-        hours: employer.shift,
-        assignment: "usual",
-        knownConditions: "basic",
-        basis: "current-year-model"
-      };
-      s.workContractHistory.push({
-        year: s.year,
-        siteId: site.id,
-        jobId: s.job,
-        action: "started",
-        basis: "current-year-model"
-      });
-    }
-  }
-  s.workContractHistory = s.workContractHistory.slice(-80);
   closeInfectionWorkplaceDisclosureIfEmploymentChanged(s);
   return s.workContract || null;
 }
@@ -150,6 +118,7 @@ function contractIncomeFactor(s) {
 function applyWorkContractAction(s, action) {
   if (!action || !["review", "negotiate", "hours", "assignment"].includes(action.action))
     throw Error("職場契約への行動が不正");
+  settleEmploymentThrough(s, s.year, Math.max(0, (s.mo || 1) - 1));
   const result = action.result || "approved";
   if (!["approved", "declined"].includes(result)) throw Error("契約協議の結果が不正");
   const contract = reconcileWorkContract(s);

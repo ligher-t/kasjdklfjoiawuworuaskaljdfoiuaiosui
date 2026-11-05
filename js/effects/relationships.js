@@ -145,6 +145,9 @@ function applyRelationshipAndSiblingHealthEffects(e, s) {
     };
     s.romance = null;
   }
+  if (s.sp && !s.sp.d && !s.sp.employmentState)
+    recordDependentEmployment(s, s.sp, {jobId:s.sp.j,region:s.sp.region||s.res.n,
+      source:TRACE_RESOLUTION?.id||"marriage-known-livelihood",kind:"background-livelihood"});
   if (s.sp && !s.sp.d && s.sp.marriedYear === s.year && s.sp.sharesHousehold == null) {
     const familyHome =
       (s.residenceArrangement || "family_home_shared_budget").startsWith("family_home_") &&

@@ -21,22 +21,16 @@ function settleAnnualHouseholdBudget(s, services, a) {
     const householdWealthIndex = Math.min(services.EXP.length - 1,
       services.P("economy.wealthClassReserveYears").filter(x => householdYears >= x).length);
     const parents = (s.care.parentKeys || ["fa", "mo"]).map(k => s.par[k]).filter(x => x && !x.d);
-    const grossParentIncome = parents.reduce(
-        (sum, x) => sum + (services.J[x.j]?.pay || 0) * (x.workShare ?? 1),
-        0
-      ),
-      unemployedParent = s.par?.[s.parentUnemploymentTargetKey],
-      lostParentIncome =
-        s.fl.parent_unemployed && unemployedParent && !unemployedParent.d
-          ? (services.J[unemployedParent.j]?.pay || 0) * (unemployedParent.workShare ?? 1)
-          : 0;
-    const wageIndex = (1 + (s.priceIndex - 1) * 0.65) * services.localityEarningsMultiplier(s),
+    const parentContributions = parents.map(parent => ({ parent, amount:
+      dependentEmploymentAnnualIncome(s, parent, s.year, { region:s.res.n,
+        unemployed: !!s.fl.parent_unemployed && parent === s.par?.[s.parentUnemploymentTargetKey] }) *
+      s.care.parentShare * services.localityEarningsMultiplier(s) })),
+      parentIncome = parentContributions.reduce((sum, row) => sum + row.amount, 0),
+      wageIndex = (1 + (s.priceIndex - 1) * 0.65) * services.localityEarningsMultiplier(s),
       networkIncome = s.care.networkIncome * s.res.pm * wageIndex,
       capitalIncome = [0, 0, 3e5, 2e6, 6e6][householdWealthIndex] * s.res.pm * wageIndex,
-      hinc =
-        Math.max(0, grossParentIncome - lostParentIncome) * s.care.parentShare * s.res.pm * wageIndex +
-        networkIncome +
-        capitalIncome;
+      prepaidWages = employmentPaidForYear(s, s.year - 1, "household"),
+      hinc = parentIncome + networkIncome + capitalIncome;
     // 共有家計を続ける限り、成人後も本人の生活・治療をこの帳簿で負担する。
     // 個人会計を選んだ場合は本人分を家計人数・治療費から外し、本人会計へ載せる。
     const householdCoversProtagonist =
@@ -117,13 +111,16 @@ function settleAnnualHouseholdBudget(s, services, a) {
       accrueUncontractedDebtInterest(s,"household",services.P("economy.debtInterest"));
     else house.debt *= 1 + services.P("economy.debtInterest");
     const educationTuition=educationAnnualOutflow(s,s.year,"household");
-    house.inc = hinc + reserveContribution;
+    for (const { parent, amount } of parentContributions) if (amount > 0 && parent.id)
+      recordDependentEmploymentPayment(s, parent, { amount, recipientId:"shared-household",
+        source:"annual-shared-household", kind:"household-contribution" });
+    house.inc = hinc + reserveContribution + prepaidWages;
     house.exp = hex + educationTuition;
     house.flow = {
       year: s.year,
       income: {
-        caregivers:
-          Math.max(0, grossParentIncome - lostParentIncome) * s.care.parentShare * s.res.pm * wageIndex,
+        caregivers: parentIncome,
+        ...(prepaidWages > 0 ? { protagonistWages: prepaidWages } : {}),
         network: networkIncome,
         capital: capitalIncome,
         ...(reserveContribution > 0 ? { protagonistReserve: reserveContribution } : {})
@@ -140,7 +137,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
         siblingCare: (siblingCareCost - siblingCareTravel) * s.priceIndex,
         medicalTravel: (treatmentTravel + parentTreatmentTravel + siblingCareTravel) * s.priceIndex
       },
-      net: hnet + reserveContribution - educationTuition
+      net: hnet + reserveContribution + prepaidWages - educationTuition
     };
     const network = s.care.supportNetwork;
     if (network && network.status === "active") {

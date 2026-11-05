@@ -208,6 +208,15 @@ function advanceSeparatedParentRelocation(s, ledger, house, dependents) {
     fromHome = ledger.home,
     originPm = ledger.res?.pm || 1;
   ledger.region = destination.n;
+  for (const id of ledger.caregiverIds || []) {
+    const parent = [s.par?.fa, s.par?.mo].find(person => person?.id === id);
+    if (!parent || parent.d) continue;
+    closeDependentEmployment(s, parent, "relocation");
+    // A changed place creates no company, vacancy, or appointment. The next
+    // work review, rather than the move itself, supplies the new livelihood.
+    parent.workReviewYear = s.year + 1;
+    parent.employmentRelocationPending = true;
+  }
   ledger.res = { ...destination };
   ledger.local = makeLocality(fromHome, destination.n);
   ledger.moveHistory || (ledger.moveHistory = []);
@@ -283,15 +292,12 @@ function advanceSeparatedParentHousehold(s) {
   ledger.siblingContributionHistory = (ledger.siblingContributionHistory || [])
     .concat(siblingContributionRows)
     .slice(-32);
-  const grossIncome = parents.reduce(
-      (sum, parent) => sum + (J[parent.j]?.pay || 0) * (parent.workShare ?? 1),
-      0
-    ),
-    lostIncome =
-      s.fl.parent_unemployed && parents.includes(s.par?.[s.parentUnemploymentTargetKey])
-        ? (J[s.parentUnemploymentTargetKey.j]?.pay || 0) * (s.parentUnemploymentTargetKey.workShare ?? 1)
-        : 0,
-    income = Math.max(0, grossIncome - lostIncome) * context.res.pm * (1 + (priceIndex - 1) * 0.65),
+  const parentEarnings = parents.map(parent => ({parent,
+      amount: parent.employmentRelocationPending ? 0 : dependentEmploymentAnnualIncome(s, parent, s.year, {
+        jobId: parent.j, region: context.res.n, priceIndex,
+        unemployed: !!s.fl.parent_unemployed && s.par?.[s.parentUnemploymentTargetKey] === parent
+      })})),
+    income = parentEarnings.reduce((sum, row) => sum + row.amount, 0),
     units = Math.max(1, parents.length) + 0.5 * dependents.length,
     baseLivingRaw = Math.max(
       P("economy.minimumExpenseBase") * context.res.pm * priceIndex,
@@ -337,6 +343,9 @@ function advanceSeparatedParentHousehold(s) {
   const debtInterest = (house.debt || 0) * P("economy.debtInterest");
   house.debt = (house.debt || 0) + debtInterest;
   house.inc = income + familySupport + siblingSupport;
+  for (const {parent, amount} of parentEarnings)
+    recordDependentEmploymentPayment(s, parent, {amount, recipientId: "parent-household",
+      year: s.year, source: "separated-parent-annual-settlement"});
   house.exp = baseLiving + treatment + siblingTreatment + movingCost + debtInterest;
   house.flow = {
     year: s.year,

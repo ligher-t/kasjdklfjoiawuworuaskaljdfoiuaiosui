@@ -164,6 +164,8 @@ function applyResidenceEffects(e, routeReserve, s, fromRegion, fundsBeforeEffect
     if (e.fl.parent_unemployed === 1 && !s.fl.parent_unemployed) {
       const candidates = (s.care?.parentKeys || ["fa", "mo"]).filter(key => s.par?.[key] && !s.par[key].d);
       s.parentUnemploymentTargetKey = candidates.length ? pick(candidates) : null;
+      const target = s.par?.[s.parentUnemploymentTargetKey];
+      if (target) closeDependentEmployment(s, target, "unemployment");
     }
     Object.assign(s.fl, e.fl);
     for (const key of Object.keys(HOBBY_META)) {
@@ -176,7 +178,12 @@ function applyResidenceEffects(e, routeReserve, s, fromRegion, fundsBeforeEffect
       else if (e.fl[key] === 0 && hobbyWasActive[key])
         applyHobbyJourney(key, "pause", "家計または生活上の事情で休止");
     }
-    if (e.fl.parent_unemployed === 0) s.parentUnemploymentTargetKey = null;
+    if (e.fl.parent_unemployed === 0) {
+      const target = s.par?.[s.parentUnemploymentTargetKey];
+      if (target && !target.d) recordDependentEmployment(s, target, {jobId:target.j,region:s.res.n,
+        source:TRACE_RESOLUTION?.id||"parent-work-resumed",kind:"background-livelihood"});
+      s.parentUnemploymentTargetKey = null;
+    }
     if (e.fl.household_separated === 1) beginSeparatedParentLedger(s);
     if (e.fl.detained === 1) {
       s.fl.segregated = 0;

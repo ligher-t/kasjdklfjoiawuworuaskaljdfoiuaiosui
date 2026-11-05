@@ -233,17 +233,18 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:ヴィクトリア", "就労中"],
+      show: s => !!employmentEventWorksite(s, "factory-dispute"),
       w: 0.85,
       cd: 8,
       t: "勤め先の現場で、度重なる賃金カットと安全対策の軽視に反発し、労働組合が一斉ストライキに踏み切った。正門前でピケを張る仲間から合流を呼びかけられている。",
       c: [
         K("仲間とともにストライキの最前線に立ち、正当な権利を要求する", { intent: "oppose-exclusion", en: { ge: { cr: 40 } }, why: "雇用主からの報復を恐れる気持ちが勝る。" },
-          [0.75, "粘り強い座り込みの末に経営陣を交渉の席に着かせ、賃金改善と安全装備の支給を勝ち取った。組合の英雄となった。", { cash: 20000, cr: 6, p: 5, rl: 4 }],
-          [1, "警察の騎馬隊が突入して強制排除され、警棒で殴られて負傷。職場も解雇されてしまった。", { h: -15, p: -6, job: 0 }]),
+          [0.75, "粘り強い座り込みの末に経営陣を交渉の席に着かせた。職場の給金を引き上げる合意書が読み上げられ、持ち場には新しい安全装備が届いた。帰り道、仲間とようやく肩の力を抜いた。", { employmentAction: { action: "site-incident", kind: "factory-dispute", incident: "agreement", payFactor: 1.05, safetyImproved: true }, cash: 20000, cr: 6, p: 5, rl: 4 }],
+          [1, "警察の騎馬隊が突入して強制排除され、警棒で殴られて負傷。職場も解雇されてしまった。", { employmentAction: { action: "site-incident", kind: "factory-dispute", incident: "dismissal", terminate: true }, h: -15, p: -6 }]),
         K("ストライキには参加せず、裏口から現場へ入り通常勤務を続ける", { intent: "procedure" },
-          [1, "経営陣から忠誠を評価されて特別手当を受け取ったが、同僚たちからは「裏切り者」と冷たい視線を浴びた。", { cash: 30000, p: -3, rl: -3 }]),
+          [1, "経営陣から忠誠を評価されて特別手当を受け取ったが、同僚たちからは「裏切り者」と冷たい視線を浴びた。", { employmentAction: { action: "site-incident", kind: "factory-dispute", incident: "worked-during-strike" }, cash: 30000, p: -3, rl: -3 }]),
         K("争いが収まるまで病気と偽って自宅で待機する", { intent: "withdrawal" },
-          [1, "無用な衝突を避け、家で事態の推移を見守った。やがて妥協案が成立して職場へ戻った。", { p: 1 }])
+          [1, "無用な衝突を避け、家で事態の推移を見守った。やがて妥協案が成立して職場へ戻った。", { employmentAction: { action: "site-incident", kind: "factory-dispute", incident: "waited-for-settlement" }, p: 1 }])
       ]
     },
     // 2. 霧の夜の街の迷子とスリ集団

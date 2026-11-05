@@ -126,15 +126,40 @@ const EMPLOYER_JOB_ORGANIZATIONS = Object.freeze({
   "82": "minos-civic-court"
 });
 
+// Affiliation IDs describe a relationship; policy IDs describe the legal or
+// social institution. Normalize aliases before applying employment policy.
+const EMPLOYER_AFFILIATION_ORGANIZATIONS = Object.freeze({
+  "rhodes-staff":"rhodes-island", "bsw-contract":"blacksteel-worldwide",
+  "yan-suis-inquisition":"yan-supervisory-authority",
+  "higashi-cyber-intelligence":"higashi-cyberninja-scenario",
+  "higashi-touhou-heavy":"higashi-touhou-heavy-scenario",
+  "ursus-imperial-academy-science":"ursus-science-academy-scenario",
+  "leithania-golden-law":"leithanien-legal-enforcement-scenario",
+  "lungmen-black-market":"lungmen-underground-brokerage",
+  "siracusa-mafia-soldier":"siracusa-family"
+});
+function employmentOrganizationKey(input={}) {
+  const raw=input.organizationKey || input.employerOrganizationKey || input.id || input.employerId;
+  return EMPLOYER_AFFILIATION_ORGANIZATIONS[raw] || raw ||
+    EMPLOYER_JOB_ORGANIZATIONS[input.jobId] || null;
+}
+
 /** A read-only access decision. No application, post, affiliation or salary is created here. */
 function assessPlayerEmploymentAccess(s, request = {}) {
+  const world=s?.world?.occupationWorld,
+    requestedSite=world?.sites?.[request.siteId],
+    resolvedEmployer=world?.employers?.[request.employerId || requestedSite?.employerId],
+    actualKey=resolvedEmployer?.organizationKey || null;
   const hasJob = Number.isInteger(request.jobId),
     mappedKey = hasJob ? EMPLOYER_JOB_ORGANIZATIONS[request.jobId] : null,
-    requestedKey = request.organizationKey || request.employerOrganizationKey || null;
+    requestedKey = request.organizationKey || request.employerOrganizationKey || actualKey ||
+      (Object.hasOwn(EMPLOYER_PLAYER_ACCESS_MODES,request.employerId || "")?request.employerId:null);
   if (hasJob && (request.jobId < 0 || request.jobId > 82 || request.jobId === 0))
     return { canApply: false, canStart: false, mode: null, reasonCode: "unknown-occupation" };
   if (mappedKey && requestedKey && requestedKey !== mappedKey)
     return { canApply: false, canStart: false, mode: null, reasonCode: "occupation-employer-mismatch" };
+  if(actualKey && requestedKey!==actualKey)
+    return {canApply:false,canStart:false,mode:null,reasonCode:"actual-employer-mismatch"};
   const organizationKey = mappedKey || requestedKey;
   const specificRequest = !!(request.siteId || request.positionId || request.openingId);
   // Ordinary credential inquiries without a concrete offer remain read-only eligibility probes.
@@ -192,8 +217,10 @@ function assertPlayerEmploymentEffectAllowed(effect) {
   const membership = [effect?.lifeAffiliation, ...(effect?.lifeAffiliations || [])];
   for (const entry of membership) {
     if (!entry || entry.action !== "join" || entry.kind !== "employer") continue;
-    const key = entry.organizationKey || entry.employerOrganizationKey || entry.id;
+    const key = employmentOrganizationKey(entry);
     if (EMPLOYER_PLAYER_ACCESS_MODES[key] === "BLOCKED")
       throw Error("プレイヤーの新規加入対象外となる組織への雇用効果");
+    if (["CONTACT","HISTORICAL","SOURCE_HOLD","COMMUNITY"].includes(EMPLOYER_PLAYER_ACCESS_MODES[key]))
+      throw Error("この組織との関係は正式な雇用として開始できない");
   }
 }

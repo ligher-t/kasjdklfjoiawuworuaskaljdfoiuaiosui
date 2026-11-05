@@ -304,10 +304,12 @@ function occupationWorkAreaKey(s) {
   // Retain the locality profile for unnamed settlements and the physical base for mobile sites.
   const anchor = s.residenceBase?.id
     ? "base:" + s.residenceBase.id
-    : local.city ? "city:" + local.city : "unnamed";
-  const profile = [local.kind || "", s.home || "", local.access, local.hazard, local.info]
-    .map(value => Number.isFinite(value) ? Number(value).toFixed(6) : String(value ?? "")).join(":");
-  return JSON.stringify([s.res.n, anchor, profile, s.randomSeed ?? 0]);
+    : local.city ? "city:" + (local.city === "エル・ソル" ? "ドッソレス" : local.city)
+      : local.placeId || "unnamed";
+  // Access, hazard and information change with the economy. They must never
+  // create a second mine or employer when the same settlement is revisited.
+  const profile = s.residenceBase?.id ? "" : [local.kind || "", s.home || ""].join(":");
+  return JSON.stringify([s.residenceBase?.id ? "mobile" : s.res.n, anchor, profile, s.world?.seed ?? s.randomSeed ?? 0]);
 }
 
 function occupationSectorPresence(s, areaId, sector, tier, index) {
@@ -327,7 +329,8 @@ function occupationSectorPresence(s, areaId, sector, tier, index) {
   const infrastructure = keyedRoll("occupation-geography:" + areaId);
   if (["MFG","LOG","SCI","MED"].includes(sector))
     chance += (infrastructure - 0.5) * 0.18;
-  if (sector === "MIN" && tier === 0) return false;
+  if (sector === "MIN" && (tier === 0 || s.local?.resources?.mineral === false ||
+      s.local?.resources?.ore === false)) return false;
   return keyedRoll("occupation-sector:" + areaId + ":" + index) <
     Math.max(0, Math.min(0.98, chance));
 }
@@ -339,13 +342,16 @@ function ensureOccupationWorkArea(s) {
   const occupationWorld = world.occupationWorld ||= {
     version: 1, areas: {}, employers: {}, sites: {}, positions: {}, openings: {}, transitions: []
   };
-  if (occupationWorld.areas[areaId]) return occupationWorld.areas[areaId];
+  if (occupationWorld.areas[areaId]) {
+    if (typeof ensureAppointmentWorld === "function") ensureAppointmentWorld(s);
+    return occupationWorld.areas[areaId];
+  }
   const region = OCCUPATION_REGION_TIERS[s.res.n];
   if (!region) return null;
   const area = {
     areaId, region: s.res.n, city: s.local?.city || null,
     districtKind: s.local?.kind || null, createdYear: s.year,
-    sectorTiers: {}, sectorPresence: {}, siteIds: [],
+    sectorTiers: {}, sectorPresence: {}, siteIds: [], resources: {},
     basis: "regional-sector-presence-game-model"
   };
   for (let i = 0; i < OCCUPATION_SECTORS.length; i++) {
@@ -368,6 +374,7 @@ function ensureOccupationWorkArea(s) {
       siteId, employerId, areaId, sector, status: "open", createdYear: s.year,
       lastYear: s.year, history: [], positionIds: [],
       capacityBand: capacity < 6 ? "micro" : "small",
+      region: s.res.n, city: s.local?.city || null,
       basis: "game-model"
     };
     for (let roleIndex = 0; roleIndex < roles.length; roleIndex++) {
@@ -395,8 +402,18 @@ function ensureOccupationWorkArea(s) {
       };
     }
     area.siteIds.push(siteId);
+    const resourceKind = ({AGR:"cultivated-land", COM:"market-space", MFG:"workshop-space",
+      MIN:"mineral-worksite", MIL:"service-post", CIV:"public-office", MED:"care-worksite",
+      EDU:"teaching-space", SCI:"survey-worksite", REC:"seasonal-service-space",
+      CRE:"performance-space", REL:"community-service", LOG:"delivery-route"})[sector];
+    if (resourceKind) {
+      const resourceId = "work-resource:" + areaId + ":" + sector;
+      area.resources[resourceId] = {resourceId, siteId, sector, kind:resourceKind,
+        status:"available", basis:"regional-resource-game-model"};
+    }
   }
   occupationWorld.areas[areaId] = area;
+  if (typeof ensureAppointmentWorld === "function") ensureAppointmentWorld(s);
   return area;
 }
 
@@ -409,9 +426,12 @@ function advanceOccupationWorkArea(s, year, metrics) {
   const area = ensureOccupationWorkArea(s);
   if (!area || !Number.isInteger(year)) return area;
   const work = s.world.occupationWorld;
+  if (typeof advanceAppointmentWorld === "function") advanceAppointmentWorld(s, year, s.mo || 1);
   const jobAccess = Number.isFinite(metrics?.jobs) ? metrics.jobs : 0.7;
   for (const siteId of area.siteIds) {
     const site = work.sites[siteId];
+    if (typeof advanceOccupationSiteOperations === "function") advanceOccupationSiteOperations(s, site, year, s.mo || 1);
+    if (site?.status === "closed" || site?.status === "suspended") continue;
     if (!site || (site.lastYear ?? site.createdYear) >= year) continue;
     // Temporary limitations affect the ability to advertise new vacancies.
     const nextStatus = jobAccess < 0.40 ? "strained" : "open";
@@ -491,4 +511,18 @@ function occupationAreaSnapshot(s) {
   // Read-only; a UI inquiry never initializes a site, opening or RNG.
   const areaId = occupationWorkAreaKey(s);
   return areaId ? s.world?.occupationWorld?.areas?.[areaId] || null : null;
+}
+
+/** Existing resources support a livelihood; asking never invents a shop or land. */
+function employmentLivelihoodResource(s, kind, jobId) {
+  const sector = ({1:"AGR",2:"MFG",3:"MIN",4:"MIL",5:"COM",6:"CIV",7:"MFG",8:"MED",9:"REL",
+    10:"CRE",11:"MFG",12:"EDU",13:"CRE",14:"MIL",15:"SCI",16:"LOG",17:"COM",18:"MFG",
+    19:"MFG",20:"MED",21:"CIV",22:"MFG",23:"AGR",24:"COM",25:"CRE",26:"REL",27:"SCI",
+    62:"AGR",69:"AGR",70:"REL",71:"MIL",73:"REL",75:"MFG"})[jobId];
+  const area = occupationAreaSnapshot(s), work=s.world?.occupationWorld;
+  if (!sector || !area || s.dead || s.fl?.retired || s.fl?.detained || s.fl?.segregated)
+    return {canStart:false,reasonCode:"no-work-resource"};
+  const resource = Object.values(area.resources || {}).find(row => row.sector===sector &&
+    row.status==="available" && work?.sites?.[row.siteId]?.status==="open");
+  return resource ? {...resource,canStart:true} : {canStart:false,reasonCode:"no-work-resource"};
 }

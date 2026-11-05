@@ -20,7 +20,7 @@ window.TERRA_DATA_BUILD.fragment(
       ge: { year: 1090, age: 18 },
       le: { age: 48 },
       show: s => s.res?.n === "クルビア" && s.h >= 55 && !s.fl?.detained && !s.job,
-      t: "クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新鋭の射撃シミュレータと過酷な障害物走が受験者に課されている。",
+      t: "紹介された募集日程を確かめ、BSWの本艦に設けられた採用試験の受付へ来た。甲板の向こうでは、射撃シミュレータの音と障害物走の掛け声が響いている。提示された任務と報酬を読み、審査を受けるか考えた。",
       c: [
         $terraData.K("銃器適性と体力審査に挑み、BSW契約警備員として署名する", {}, [
           1,
@@ -94,7 +94,7 @@ window.TERRA_DATA_BUILD.fragment(
       c: [
         $terraData.K("実技審査と戦術筆記試験を突破し、正規戦術オペレーターへ昇格する", {}, [
           1,
-          "社内ライセンス審査を堂々の成績で突破し、BSWの正規戦術オペレーター（J 36）として辞令を受けた。国際任務への派遣権限と大幅な昇給が認められた。",
+          "社内ライセンス審査を堂々の成績で突破し、BSWの正規戦術オペレーターとして辞令を受けた。国際任務への派遣権限と大幅な昇給が認められた。",
           {
             job: 36,
             payBonus: 0.2,
@@ -134,22 +134,15 @@ window.TERRA_DATA_BUILD.fragment(
       c: [
         $terraData.K("「BSWの契約は金では買えない」と通信を叩き切り、要人を死守する", {}, [
           1,
-          "通信を即座に遮断し、閃光弾と精密射撃で敵の包囲網を粉砕した。無傷で要人を目的地へ送り届け、依頼主の企業とBSW本社から破格の報奨金と特務スペシャリスト（J 37）への昇格内定が贈られた。",
+          "通信を即座に遮断し、閃光弾と精密射撃で敵の包囲網を退けた。要人を目的地へ送り届けると、依頼主とBSW本社から報奨金が届いた。後日の面談では特務の任務を引き受ける意思を尋ねられるという。",
           {
-            job: 37,
             cash: 300000,
-            payBonus: 0.25,
+            employmentAction: { action: "site-incident", kind: "promotion-offer", incident: "bsw-specialist", jobId: 37 },
             groupStanding: {
               id: "bsw-colleagues",
               title: "BSWの同僚・小隊員",
               delta: 3,
               reason: "要人警護で買収を跳ね除け完璧に任務を遂行した"
-            },
-            lifeAffiliation: {
-              id: "bsw-contract",
-              title: "ブラックスチール・ワールドワイド",
-              action: "role",
-              role: "BSW特務スペシャリスト・要人警護主任"
             },
             p: 3,
             cr: 2
@@ -162,8 +155,33 @@ window.TERRA_DATA_BUILD.fragment(
         ]),
         $terraData.K("圧倒的な敵の包囲を前に、要人と共に投降して人質交渉を図る", {}, [
           1,
-          "部隊の全滅を避けるためやむなく交渉に応じた。命は助かったものの、警備任務の失敗として社内査問を受け、減俸処分が下された。",
+          "部隊の全滅を避けるためやむなく交渉に応じた。命は助かったものの、警備任務の失敗として社内査問を受け、五万龍門幣の違約金を請求された。",
           { p: -2, cash: -50000 }
+        ])
+      ]
+    },
+    {
+      id: "sr_bsw_specialist_offer_review",
+      conf: "S",
+      references: ["SRC_BSW_PMC"],
+      st: ["青年", "壮年", "老年"],
+      after: { id: "sr_bsw_vip_escort_ambush", min: 0, choice: 0, outcome: 0 },
+      cd: 1,
+      w: 1,
+      show: s => onBsw(s) && s.job === 36 && !!employmentPromotionOffer(s, "bsw-specialist"),
+      t: "BSW本部の面談室で、特務担当への辞令案を差し出された。報酬は上がるが、要人警護の責任も重くなる。担当者は書類を机に置き、返事を待った。",
+      c: [
+        $terraData.K("任務と報酬を確かめ、特務担当への昇格を受ける", {}, [
+          1,
+          "任務の範囲と報酬を読み直して署名した。正式な辞令を受け取り、次の警護計画を引き継いだ。",
+          { employmentAction: { action: "site-incident", kind: "promotion-offer", incident: "accepted", offerId: "bsw-specialist", jobId: 37 },
+            lifeAffiliation: { id: "bsw-contract", title: "ブラックスチール・ワールドワイド",
+              action: "role", role: "BSW特務スペシャリスト・要人警護主任" }, p: 2 }
+        ]),
+        $terraData.K("昇格を辞退し、今の担当を続ける", {}, [
+          1,
+          "今の仕事を続けたいと伝え、辞令案を返した。担当者は頷き、これまでの持ち場へ戻るよう告げた。",
+          { employmentAction: { action: "site-incident", kind: "promotion-offer", incident: "declined", offerId: "bsw-specialist" }, p: 1 }
         ])
       ]
     },

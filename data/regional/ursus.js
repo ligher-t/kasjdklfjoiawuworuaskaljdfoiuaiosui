@@ -302,8 +302,8 @@ window.TERRA_DATA_BUILD.run("regional/ursus", function ($terraData, $define, $ru
         K("武功を立てて立身出世するため、陸軍に志願入隊する", { intent: "procedure", en: { ge: { h: 60, cr: 45 } }, why: "過酷な軍役に耐えうる体力と度胸がない。" },
           [0.75, "厳しい新兵訓練を首席で終え、下士官候補として配属。多額の支度金と軍人の栄誉を手にした。", { cash: 80000, cr: 8, p: 5, job: 14, residenceArrangement: "independent_rental", fl: { household_separated: 1, sch: 0 } }],
           [1, "過酷な訓練で重傷を負い、除隊を余儀なくされた。わずかな見舞金とともに故郷へ送還された。", { h: -20, cash: 20000, p: -4, job: 0 }]),
-        K("軍務を辞退し、後方の兵站工場で物資製造に従事する", { intent: "self-or-family-care" },
-          [1, "安全な工場で軍用缶詰や外套の生産に励み、手堅い月給と食糧配給を確保した。", { cash: 25000, p: 2 }]),
+        K("軍務を辞退し、募集を出している地元の工場で働く", { intent: "self-or-family-care", show: s => !!employmentOpeningForChoice(s, 2) },
+          [1, "募集を出していた地元の工場を訪ね、勤務時間と給金を確かめて契約した。軍服に袖を通す代わりに作業着を受け取り、機械の音が響く持ち場に立った。", { employmentAction: { action: "accept-local-opening", jobId: 2 }, p: 2 }]),
         K("軍への関与を一切断り、民間の一市民として暮らす", { intent: "withdrawal" },
           [1, "徴募官の鋭い視線を避けて応募を見送った。慎ましくも平穏な日々に感謝した。", { p: 1 }])
       ]

@@ -38,9 +38,9 @@ function childHouseholdFinances(s, costPm, regionPm = s.res.pm) {
       education += P("economy.adultChildStudyAnnualCost") * share * childCostPm;
     if (dependent && child.householdStatus === "working" && Number.isInteger(child.jobId) && J[child.jobId])
       income +=
-        ((J[child.jobId].pay * localPm) / (s.res?.pm || 1)) *
-        regionPm *
-        (s.priceIndex || 1) *
+        dependentEmploymentAnnualIncome(s, child, s.year, {
+          jobId: child.jobId, region: child.region || s.res.n
+        }) *
         P("economy.childHouseholdContributionShare") *
         share;
     if (child.householdStatus === "independent" && child.remittanceAnnual > 0)
@@ -275,6 +275,8 @@ function advanceIndependentChildLives(s) {
       from = child.region;
     child.region = destination.n;
     child.jobId = job;
+    recordDependentEmployment(s, child, {jobId: job, region: destination.n,
+      source: "independent-child-work-and-move", kind: "background-livelihood"});
     child.moveHistory || (child.moveHistory = []);
     child.moveHistory.push({ year: s.year, from, to: destination.n, jobId: job, cause: "仕事や暮らしの縁" });
     child.returnOfferYear = null;
@@ -298,7 +300,9 @@ function advanceIndependentChildBudgets(s) {
     if (child.budgetHistory.some(row => row.year === s.year)) continue;
     const priceIndex = Math.max(0.1, s.priceIndex || 1),
       job = Number.isInteger(child.jobId) ? J[child.jobId] : null,
-      income = job ? Math.max(0, job.pay || 0) * region.pm * (1 + (priceIndex - 1) * 0.65) : null,
+      income = job ? dependentEmploymentAnnualIncome(s, child, s.year, {
+        jobId: child.jobId, region: region.n, priceIndex
+      }) : null,
       living =
         Math.max(P("economy.minimumExpenseBase"), EXP[child.budgetExpenseTier] || EXP[2]) *
         region.pm *

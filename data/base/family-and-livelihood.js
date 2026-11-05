@@ -699,16 +699,17 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
       c: [
         $terraData.K(
           "自分も働きに出る",
-          { show: s => s.age >= $rules.parameters.value("life.workStartAge") },
+          { show: s => s.age >= $rules.parameters.value("life.workStartAge") &&
+              employmentLivelihoodResource(s, "seasonal-contract", 1)?.canStart === true },
           [
             0.7,
-            "学ぶ時間も削り、日雇いの荷運びに出た。泥だらけで持ち帰った小銭で食卓はつないだが、親の働き口はまだ見つからない。",
-            { job: 1, educationAction: "leave-school", fl: { parent_unemployed: 1 }, cash: 5e4, p: -5, h: -5 }
+            "学ぶ時間の合間に、近所の荷揚げ場で頼まれた荷運びをした。泥だらけで持ち帰った日当で食卓はつないだが、親の働き口はまだ見つからない。",
+            { employmentAction: { action: "complete-gig", kind: "cargo-handling", sourceEventId: "fam_unemploy", resourceId: "local-resource", nominalCash: 50000 }, fl: { parent_unemployed: 1 }, cash: 5e4, p: -5, h: -5 }
           ],
           [
             1,
-            "大人の嫌がる危険な現場しか口がなく、無理がたたって体を壊した。親の仕事も決まらず、食費と薬代のどちらを先に出すかで家が暗くなった。",
-            { job: 1, educationAction: "leave-school", fl: { workplace_hazard: 1, parent_unemployed: 1 }, cash: 5e4, h: -15, p: -8 }
+            "荷揚げ場の危ない足場で無理を重ね、日当を持ち帰った晩には体が動かなくなった。親の仕事も決まらず、食費と薬代のどちらを先に出すかで家が暗くなった。",
+            { employmentAction: { action: "complete-gig", kind: "cargo-handling", sourceEventId: "fam_unemploy", resourceId: "local-resource", nominalCash: 50000 }, fl: { parent_unemployed: 1 }, cash: 5e4, h: -15, p: -8 }
           ]
         ),
         $terraData.K(
@@ -808,11 +809,13 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
         ),
         $terraData.K(
           "自分が身代わりになって出頭する",
-          { show: { ban: ["健康不良"] } },
+          { show: s => s.h >= 30 && employmentLivelihoodResource(s, "coerced-assignment", 14)?.canStart === true },
           [
             0.5,
             "きょうだいを家に残し、自分が徴集の列に入った。泥にまみれる訓練と行軍の日々が始まり、故郷からの便りは次第に途絶えていった。",
-            { job: 14, fl: { conscripted: 1, veteran: 1 }, cr: 5, h: -10 }
+            { employmentAction: { action: "start-livelihood", kind: "coerced-assignment", jobId: 14,
+                sourceEventId: "fam_conscript", roleId: "conscripted-substitute", resourceId: "local-resource",
+                projectAsJob: true }, fl: { conscripted: 1, veteran: 1 }, cr: 5, h: -10 }
           ],
           [
             1,
@@ -1104,10 +1107,13 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
         }
       ],
       c: [
-        $terraData.K("親の店に入り、商いを覚える", { show: s => !educationMigrationCurrent(s) }, [
+        $terraData.K("親の店に入り、商いを覚える", { show: s => !educationMigrationCurrent(s) &&
+            !!resolveEmploymentLivelihoodResource(s, "family-community", 5, "family-business") }, [
           1,
           "前掛けを締め、親の隣で仕入れ先との駆け引きや算盤を覚え始めた。看板を継ぐのはまだ先だが、常連客に顔を覚えてもらうのが嬉しかった。",
-          { job: 5, cr: 2, rl: 6, p: 3 }
+          { employmentAction: { action: "start-livelihood", kind: "family-community", jobId: 5,
+              sourceEventId: "fam_inherit", roleId: "apprentice", resourceId: "family-business",
+              workFraction: 0.25, projectAsJob: false }, cr: 2, rl: 6, p: 3 }
         ]),
         $terraData.K("今は学業を続けたいと伝える", { show: s => !!educationMigrationCurrent(s) }, [
           1,
@@ -1123,6 +1129,33 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
           1,
           "まだ心の整理がつかないと正直に伝えた。夜、店を閉めるシャッターの音を聞きながら、自分が帳場に立つ姿を思い描いてみた。",
           { p: -1, rl: 2 }
+        ])
+      ]
+    },
+    {
+      id: "fam_business_handover",
+      conf: "S",
+      references: ["SRC_TERRA_FAMILY", "SRC_TERRA_LIFECOURSE"],
+      st: ["青年", "壮年"],
+      after: { id: "fam_inherit", min: 2, choice: 0, outcome: 0 },
+      once: true,
+      w: 0.8,
+      show: s => !s.job && !!resolveEmploymentLivelihoodResource(s, "family-community", 5, "family-business") &&
+        (s.employmentState?.episodes || []).some(row => row.kind === "family-community" &&
+          row.roleId === "apprentice" && row.status === "active" && s.year - row.startYear >= 2),
+      t: "閉店後、親が古い帳簿と店の鍵を並べた。「これからはお前に任せたい」と言う声には、疲れとためらいが混じっていた。仕入れの支払いや日々の赤字も引き受けることになる。",
+      c: [
+        $terraData.K("帳簿を一緒に確かめ、親と合意して店を引き継ぐ", {}, [
+          1,
+          "残った品と支払予定を親と確かめ、これからの商いを引き受けると伝えた。親は頷いて鍵を渡し、取引先へ代替わりの挨拶に同行した。翌朝は自分が先に店の戸を開けた。",
+          { employmentAction: { action: "start-livelihood", kind: "self-employment", jobId: 5,
+              sourceEventId: "fam_business_handover", roleId: "owner", resourceId: "family-business",
+              ownershipTransfer: true, projectAsJob: true }, cr: 2, p: 2, rl: 3 }
+        ]),
+        $terraData.K("店の責任者にはならず、今までどおり手伝うと伝える", {}, [
+          1,
+          "店を背負う覚悟はまだ持てないと話した。鍵は親の手元に戻り、仕入れや売上の判断は引き続き親に任せることになった。明日も同じ前掛けを締めて、できる仕事から手伝う。",
+          { p: -1, rl: 1 }
         ])
       ]
     },

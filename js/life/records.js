@@ -565,7 +565,7 @@ function lifeAffiliationAwayFromRecordedLocality(s, id) {
   return !!affiliation?.localityKey && !!currentKey && affiliation.localityKey !== currentKey;
 }
 function applyLifeAffiliation(input) {
-  const employerKey = input?.organizationKey || input?.employerOrganizationKey || input?.id;
+  const employerKey = employmentOrganizationKey(input);
   if (["join", "assign", "return"].includes(input?.action || "join") &&
       EMPLOYER_PLAYER_ACCESS_MODES[employerKey] === "BLOCKED")
     throw Error("プレイヤーの新規加入対象外となる組織への所属");

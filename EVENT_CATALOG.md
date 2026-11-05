@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2584　選択肢数：3292　結果枝数：4097
+イベント数：2588　選択肢数：3300　結果枝数：4105
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -12,7 +12,7 @@
 
 ## 国・地域別索引
 
-[イェラグ (84)](#tag-region-0)　・　[イベリア (109)](#tag-region-1)　・　[ヴィクトリア (145)](#tag-region-2)　・　[ウルサス (170)](#tag-region-3)　・　[カジミエーシュ (102)](#tag-region-4)　・　[カズデル (118)](#tag-region-5)　・　[クルビア (117)](#tag-region-6)　・　[サーミ (91)](#tag-region-7)　・　[サルゴン (98)](#tag-region-8)　・　[シエスタ (80)](#tag-region-9)　・　[シラクーザ (98)](#tag-region-10)　・　[ボリバル (94)](#tag-region-11)　・　[ミノス (85)](#tag-region-12)　・　[ラテラーノ (88)](#tag-region-13)　・　[リターニア (103)](#tag-region-14)　・　[レム・ビリトン (93)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (86)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (90)](#tag-region-19)　・　[未特定 (766)](#tag-region-20)　・　[龍門 (106)](#tag-region-21)
+[イェラグ (84)](#tag-region-0)　・　[イベリア (109)](#tag-region-1)　・　[ヴィクトリア (145)](#tag-region-2)　・　[ウルサス (170)](#tag-region-3)　・　[カジミエーシュ (102)](#tag-region-4)　・　[カズデル (118)](#tag-region-5)　・　[クルビア (117)](#tag-region-6)　・　[サーミ (91)](#tag-region-7)　・　[サルゴン (98)](#tag-region-8)　・　[シエスタ (80)](#tag-region-9)　・　[シラクーザ (98)](#tag-region-10)　・　[ボリバル (94)](#tag-region-11)　・　[ミノス (85)](#tag-region-12)　・　[ラテラーノ (88)](#tag-region-13)　・　[リターニア (103)](#tag-region-14)　・　[レム・ビリトン (93)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (86)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (90)](#tag-region-19)　・　[未特定 (770)](#tag-region-20)　・　[龍門 (106)](#tag-region-21)
 
 <a id="tag-region-0"></a>
 ### イェラグ（84）
@@ -93,7 +93,7 @@
 - [choice_kjerag_08](#event-choice_kjerag_08) — カランド貿易が外国から最新の滅菌器や手術器具を寄贈しようとしたが、寺院の頑固な古老たちが「神聖な寺院に得体の知れない外国の機械を入れるな」と拒絶して…
 - [choice_kjerag_09](#event-choice_kjerag_09) — 聖山を貫く鉄道トンネルの難所工事現場で、硬い花崗岩の岩盤が行く手を阻み、地下水の噴出が発生した。工期が遅れれば雪の季節に間に合わない。緊急の支保工補…
 - [choice_kjerag_10](#event-choice_kjerag_10) — 聖峰へ向かう人が増える時期になり、麓の集落では宿と食事の準備に追われていた。遠くから来た参詣者もいるが、誰がどこから来たのかまでは分からない。
-- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — 雪に閉ざされた聖山イェラグを近代化へ導く、シルバーアッシュ総長率いる『カランド貿易』。伝統に固執する三大家族や曼珠院の保守派と対峙しながら、最新式の…
+- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — カランド貿易から案内された面接会場へ来た。受付には輸送路の警備や貨物の扱いを説明する紙が並び、武装社員の募集担当者が応募者の名を呼んでいる。慣れ親し…
 - [car_kje_monk_entry](#event-car_kje_monk_entry) — カランドの女神を祀る神聖なる曼珠院。古くからの信仰を守り、聖山への立ち入りを監視する護衛僧の入門式が開かれていた。俗世の銃器を退け、杖と信仰の祈りで…
 - [car_kje_karlan_daily_01](#event-car_kje_karlan_daily_01) — 雪山を貫く鉄路沿いの保線基地で、最新式のアサルトライフルの分解清掃を行った。他国から運ばれてくる工業資材のコンテナを検品する。保守的な三族議会の視線…
 - [car_kje_karlan_choice_ambush](#event-car_kje_karlan_choice_ambush) — 物資を満載した貨物列車が渓谷の鉄橋に差し掛かった瞬間、伝統派の刺客集団が爆薬を仕掛けて突撃してきた。列車の脱線はイェラグ全土の経済崩壊を招く。銃を連…
@@ -851,10 +851,10 @@
 - [daily_columbia_63](#event-daily_columbia_63) — 開拓地の酒場で、保安官が「大企業がこの区画の採掘権を買った。文句がある奴は荒野へ放り出す」と銃の手入れをしながら冷たく言い放った。
 - [choice_columbia_01](#event-choice_columbia_01) — 独自に考案したアーツ回路の特許に対し、巨大複合企業（メガコープ）から身に覚えのない特許侵害訴訟が起こされた。法外な和解金で技術を丸ごと奪い取る企みだ…
 - [choice_columbia_02](#event-choice_columbia_02) — 開拓地の未踏の渓谷で、良質な高純度源石の未発見の鉱脈を偶然見つけた。州政府の登記所に採掘権を申請すれば巨万の富が得られるが、地元の強盗団が嗅ぎつけて…
-- [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
+- [choice_columbia_03](#event-choice_columbia_03) — 配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机…
 - [choice_columbia_04](#event-choice_columbia_04) — 繁華街の広場で、実験中の大型輸送ドローンが制御不能に陥り、群衆の上へ墜落しかけた。管制コンソールがパニックに陥る中、手動オーバーライドの緊急操作が求…
 - [choice_columbia_05](#event-choice_columbia_05) — 新設された郊外の巨大モールに、自分の飲食店または雑貨店を出店する一等地が空いた。保証金と内装費は高額だが、当たれば莫大な日銭が入る。
-- [choice_columbia_06](#event-choice_columbia_06) — 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚…
+- [choice_columbia_06](#event-choice_columbia_06) — BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練…
 - [choice_columbia_07](#event-choice_columbia_07) — 大平原を巨大な竜巻（トルネード）が直撃し、開拓村の納屋や家屋が数棟吹き飛ばされた。住民たちが瓦礫の片付けと負傷者の救護に奔走している。
 - [choice_columbia_08](#event-choice_columbia_08) — 同僚の労働者が、給金を担保にした短期高利貸付で法外な利息を背負わされ、給料日に全額巻き上げられて生活破綻寸前に追い込まれていた。民間の取り立て屋が職…
 - [choice_columbia_09](#event-choice_columbia_09) — 大陸横断回廊を舞台に、改造車両や運搬車で数百マイルの荒野を走破する過酷な「フロンティア・ラリー」が開催された。優勝者には巨額の賞金とスポンサー契約が…
@@ -868,7 +868,7 @@
 - [ori_columbia_insurance_records](#event-ori_columbia_insurance_records) — 鉱石病の診断が出たあと、クルビアの保険窓口へ治療費の補助が出るか掛け合いに行った。担当者が広げた約款には小さな文字で除外条項が並び、結局いくらの薬代…
 - [sr_rhodes_posting_review](#event-sr_rhodes_posting_review) — ロドスに入って最初の配属面談が呼ばれた。移動し続ける本艦の船内宿舎に部屋をもらうか、それとも今暮らしている国の地上支部へ通うかを選べるという。どちら…
 - [sr_rhodes_posting_transfer](#event-sr_rhodes_posting_transfer) — 本艦での船内生活にもすっかり慣れた頃、今航行している国の地上支部に欠員が出たという話が回ってきた。手を挙げれば地上の街で暮らせるようになるが、本艦で…
-- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新…
+- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — 紹介された募集日程を確かめ、BSWの本艦に設けられた採用試験の受付へ来た。甲板の向こうでは、射撃シミュレータの音と障害物走の掛け声が響いている。提示…
 - [sr_bsw_promotion_tactical](#event-sr_bsw_promotion_tactical) — 見習い期間中の優れた実績が評価され、BSWクルビア本部から正規戦術オペレーターへの昇格審査に召集された。高難度の実地想定演習と銃器ライセンス更新が課…
 - [sr_bsw_rhodes_secondment](#event-sr_bsw_rhodes_secondment) — BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛に…
 - [sr_rhine_recruitment_exam](#event-sr_rhine_recruitment_exam) — クルビア連邦トリマウンツにそびえるライン生命本社ビル。テラ最先端の科学技術と莫大な資本が集うこの学術コンソーシアムで、研究実習生の公募選考が行われて…
@@ -1928,7 +1928,7 @@
 - [car_hig_touhou_daily_01](#event-car_hig_touhou_daily_01) — 東方重工の工場内で、最新鋭の旋盤から削り出された手裏剣『シルバーウィンド』同型刃の寸法と硬度を測定した。特殊合金の焼き入れムラがないか、顕微鏡で結晶…
 
 <a id="tag-region-20"></a>
-### 未特定（766）
+### 未特定（770）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
@@ -1978,6 +1978,7 @@
 - [fam_rehire](#event-fam_rehire) — 職を探していた親に、ようやく一件の口利きがあった。ただ、日当は安く、仕事に使う道具も自前で揃えなければならないらしい。夕食の席で親の迷う顔を見て、自…
 - [fam_infected](#event-fam_infected) — {parentName}が鉱石病だと分かった。その夜から、家では窓を閉め切ってひそひそ声で話すようになった。よそで絶対に口にするなと言い含められたが…
 - [fam_inherit](#event-fam_inherit) — 商いを切り盛りする親から、そろそろ店の仕事を手伝わないかと切り出された。まだ学業を続けたい気持ちもあるが、年々白髪の増える親の横顔を見ると簡単には断…
+- [fam_business_handover](#event-fam_business_handover) — 閉店後、親が古い帳簿と店の鍵を並べた。「これからはお前に任せたい」と言う声には、疲れとためらいが混じっていた。仕入れの支払いや日々の赤字も引き受ける…
 - [parent_work_news](#event-parent_work_news) — {parentName}から封書が届き、長く続けた{parentOldWork}を辞めて{parentWork}に移ったと知らされた。少し震えた文字…
 - [parent_household_move_news](#event-parent_household_move_news) — 親から転居の便りが届いた。住み慣れた{parentHouseholdFrom}を引き払い、きょうだいと一緒に{parentHouseholdTo}へ…
 - [parent_treatment_review](#event-parent_treatment_review) — 実家の台所事情がいよいよ苦しくなり、{parentName}の療養費を出し続けるのが限界に近づいていた。病院の窓口で支払いの見通しを問われ、親は重い…
@@ -2468,14 +2469,16 @@
 - [sr_reunion_turncoat_rehabilitation](#event-sr_reunion_turncoat_rehabilitation) — ロドス本艦での投薬と療養によって体調が劇的に回復した。過去の経歴審査を終えた人事担当者から「船内で働きながら、新しい人生を歩み直してみないか」と更生…
 - [sr_bsw_convoy_protection](#event-sr_bsw_convoy_protection) — 荒野を渡る鉱石採掘企業の大型輸送コンボイの護衛任務中、突如として砂塵の向こうから武装した略奪者集団が急襲してきた。先頭の車両が被弾し、激しい銃撃戦が…
 - [sr_bsw_vip_escort_ambush](#event-sr_bsw_vip_escort_ambush) — 移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の…
+- [sr_bsw_specialist_offer_review](#event-sr_bsw_specialist_offer_review) — BSW本部の面談室で、特務担当への辞令案を差し出された。報酬は上がるが、要人警護の責任も重くなる。担当者は書類を机に置き、返事を待った。
 - [sr_bsw_davistown_debt_conflict](#event-sr_bsw_davistown_debt_conflict) — 衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援す…
 - [sr_bsw_infected_squad_policy](#event-sr_bsw_infected_squad_policy) — 定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混…
 - [sr_bsw_secondment_posting_review](#event-sr_bsw_secondment_posting_review) — ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生か…
-- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ…
+- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の分析能力が認められ、専任研究員への昇格面談に呼ばれた。希望する専門科と、これから担当したい仕事を尋ねられた。
 - [sr_rhine_patent_breakthrough](#event-sr_rhine_patent_breakthrough) — 数か月に及ぶ実験の末、世界初となる新素材の合成と高効率反応モデルの構築に成功した。学会での注目と特許申請の手続きが目の前に控えている。
-- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの傑出した学術業績と特許取得がクリステン総括の目に留まり、自らの研究室と莫大な予算枠を持つ主任研究員（J 40）への昇格面談に呼ばれた。
+- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの研究成果が認められ、主任研究員への昇格面談に呼ばれた。研究室と予算を預かる代わりに、同僚や実験の安全にも責任を持つという。書類の端を押さえ…
 - [sr_rhine_diabolic_ethical_crossroad](#event-sr_rhine_diabolic_ethical_crossroad) — 深夜、立ち入り制限区画の地下ラボで『炎魔計画』の機密ファイルを目撃してしまった。そこには、幼い感染児の体内に活性源石を強制作動させ、生体兵器へと造り…
 - [sr_rhine_rhodes_asylum](#event-sr_rhine_rhodes_asylum) — トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格…
+- [sr_rhine_after_asylum_livelihood](#event-sr_rhine_after_asylum_livelihood) — 研究室を離れてから、細かな出費ばかりが帳面に増えていた。以前の実験ノートをしまい、今の土地でできる仕事を探すことにした。
 - [sr_rhine_359_transmitter_consent](#event-sr_rhine_359_transmitter_consent) — トリマウンツ郊外の359号基地にて、アーツ応用課のドロシー主任が進める「伝達物質」の大規模治験に立ち会った。神経信号を結合して人々の意識を共有し、能…
 - [sr_rhine_lone_trail_sky_horizon](#event-sr_rhine_lone_trail_sky_horizon) — 1099年晩秋、トリマウンツ上空。クリステン統括が主導した『ホライズンアーク計画』が極大の光を放ち、フォーカスジェネレーターが天空を穿った。何千年も…
 - [sr_rhine_post_lone_trail_career_review](#event-sr_rhine_post_lone_trail_career_review) — トリマウンツの空にあの光が走ってから、季節が巡った。研究室には残った装置と書類が積まれ、担当者たちは研究を続けている。ここで仕事を続けるか、職員証を…
@@ -2533,6 +2536,7 @@
 - [job_contract_negotiation_v76](#event-job_contract_negotiation_v76) — 今の仕事にもだいぶ手が馴染み、周囲より多くの荷や工程を回せるようになってきた。責任者が一人で帳面をつけている隙を見て、給金の色をつけてもらえないか切…
 - [job_contract_family_schedule_v76](#event-job_contract_family_schedule_v76) — 家の用事や暮らしの段取りと、長い勤務時間の折り合いがつかなくなってきた。稼ぎが減るのを覚悟で、少し早く上がれるよう責任者に掛け合うか迷った。
 - [inter_prior_contact_followup_v76](#event-inter_prior_contact_followup_v76) — 数年前に窓口でたらい回しにされ、曖昧な理由で待たされた一件が、新しい手続きの場でふいにぶり返した。当時の控えを突きつけて筋を通すか、蒸し返さずに今日…
+- [work_known_opening_review](#event-work_known_opening_review) — （動的本文）
 - [v77_family_rumor](#event-v77_family_rumor) — 家の大人たちが食卓で、感染者やサルカズをひとくくりにして悪しざまに喋っていた。昼間に通りで見かけたあの人の横顔を思い出すと、大人の言うことをそのまま…
 - [v77_family_solidarity_and_caution](#event-v77_family_solidarity_and_caution) — （動的本文）
 - [v77_child_informal_study](#event-v77_child_informal_study) — 家に届いた書き付けや店の帳面の字が読めず、周りの大人に読み上げてもらうしかなかった。学校という場所には、もうしばらく通っていない。
@@ -2807,7 +2811,7 @@
 
 ## ジャンル別索引
 
-[移動・物流 (244)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (367)](#tag-genre-2)　・　[感染・医療 (418)](#tag-genre-3)　・　[教育・文化 (445)](#tag-genre-4)　・　[差別・制度 (156)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (244)](#tag-genre-7)　・　[戦争・政治 (146)](#tag-genre-8)　・　[天災・避難 (201)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (394)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (896)](#tag-genre-13)　・　[労働・経済 (764)](#tag-genre-14)
+[移動・物流 (244)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (368)](#tag-genre-2)　・　[感染・医療 (419)](#tag-genre-3)　・　[教育・文化 (446)](#tag-genre-4)　・　[差別・制度 (156)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (244)](#tag-genre-7)　・　[戦争・政治 (146)](#tag-genre-8)　・　[天災・避難 (201)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (394)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (896)](#tag-genre-13)　・　[労働・経済 (768)](#tag-genre-14)
 
 <a id="tag-genre-0"></a>
 ### 移動・物流（244）
@@ -3061,7 +3065,7 @@
 - [life_debt_budget_review](#event-life_debt_budget_review) — テーブルの上に給金袋と借金の督促状を並べ、ため息をついた。今の稼ぎだけではとても一度には返しきれず、腹をくくって日々の食い扶持を削るか、身体を壊さな…
 
 <a id="tag-genre-2"></a>
-### 家族・介護（367）
+### 家族・介護（368）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -3095,6 +3099,7 @@
 - [fam_gunrite](#event-fam_gunrite) — 教会から、守護銃の授与と訓練の知らせが届いた。家の人たちは晴れがましい顔で、あなたが一丁の銃を受け取る日を心待ちにしている。
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 - [fam_inherit](#event-fam_inherit) — 商いを切り盛りする親から、そろそろ店の仕事を手伝わないかと切り出された。まだ学業を続けたい気持ちもあるが、年々白髪の増える親の横顔を見ると簡単には断…
+- [fam_business_handover](#event-fam_business_handover) — 閉店後、親が古い帳簿と店の鍵を並べた。「これからはお前に任せたい」と言う声には、疲れとためらいが混じっていた。仕入れの支払いや日々の赤字も引き受ける…
 - [parent_work_news](#event-parent_work_news) — {parentName}から封書が届き、長く続けた{parentOldWork}を辞めて{parentWork}に移ったと知らされた。少し震えた文字…
 - [parent_household_move_news](#event-parent_household_move_news) — 親から転居の便りが届いた。住み慣れた{parentHouseholdFrom}を引き払い、きょうだいと一緒に{parentHouseholdTo}へ…
 - [parent_treatment_review](#event-parent_treatment_review) — 実家の台所事情がいよいよ苦しくなり、{parentName}の療養費を出し続けるのが限界に近づいていた。病院の窓口で支払いの見通しを問われ、親は重い…
@@ -3378,7 +3383,7 @@
 - [sr_bsw_davistown_debt_conflict](#event-sr_bsw_davistown_debt_conflict) — 衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援す…
 - [sr_rhine_359_transmitter_consent](#event-sr_rhine_359_transmitter_consent) — トリマウンツ郊外の359号基地にて、アーツ応用課のドロシー主任が進める「伝達物質」の大規模治験に立ち会った。神経信号を結合して人々の意識を共有し、能…
 - [car_sar_guard_entry](#event-car_sar_guard_entry) — オアシス都市にそびえる豪壮な宮殿。サルゴンの地方領主『パーディシャー』が、自らの身辺を護る屈強な親衛隊を募っていた。主君への絶対の服従と、灼熱の砂漠…
-- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — 雪に閉ざされた聖山イェラグを近代化へ導く、シルバーアッシュ総長率いる『カランド貿易』。伝統に固執する三大家族や曼珠院の保守派と対峙しながら、最新式の…
+- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — カランド貿易から案内された面接会場へ来た。受付には輸送路の警備や貨物の扱いを説明する紙が並び、武装社員の募集担当者が応募者の名を呼んでいる。慣れ親し…
 - [car_bol_soldier_entry](#event-car_bol_soldier_entry) — 三つ巴の内戦で国土が焦土と化すボリバル。日当目当ての若者や強制徴募された農民が、泥濘の塹壕へ集められていた。軍靴代や弾薬代すら給料から天引きされる、…
 - [car_urs_officer_choice_purge](#event-car_urs_officer_choice_purge) — 軍団長から極秘の密命が下された。反皇帝派の疑いがある同僚の貴族将校を、演習中の事故に見せかけて抹殺せよという。従えば軍団長の側近へ引き立てられるが、…
 - [car_vic_infantry_daily_01](#event-car_vic_infantry_daily_01) — 冷たい雨が降り続くヴィクトリア軍の演習陣地。膝まで泥に浸かりながら塹壕の土嚢を積み直し、油布で小銃のボルトを拭った。貴族将校が天幕で温かいスープを飲…
@@ -3431,7 +3436,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-genre-3"></a>
-### 感染・医療（418）
+### 感染・医療（419）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
@@ -3559,7 +3564,7 @@
 - [daily_columbia_55](#event-daily_columbia_55) — 街のクリニックの前を通りかかると、医療保険の告知義務や審査基準の厳格化について告知板に張り出されていた。病歴ひとつで生活が脅かされかねない能力主義の…
 - [daily_columbia_56](#event-daily_columbia_56) — 感染者労働者の権利を守る草の根の互助会に参加した。不当解雇に対抗するための法的手続きのノウハウを仲間たちと共有した。
 - [daily_columbia_61](#event-daily_columbia_61) — 社内掲示板に、民間保険の適用外となった「潜在的医療リスク指定者」の社員番号が張り出されていた。該当者が無言でデスクの私物を段ボールに詰めていた。
-- [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
+- [choice_columbia_03](#event-choice_columbia_03) — 配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机…
 - [daily_kazimierz_53](#event-daily_kazimierz_53) — 鉱石病の発症により表舞台のメジャーから追放され、薄暗い地下闘技場のチラシを見つめた。命を削って見世物になるしか道がないのかと唇を噛んだ。
 - [daily_kazimierz_54](#event-daily_kazimierz_54) — 地下で活動する「感染者騎士団」の秘密の支援集会に参加した。不当な奴隷契約に抗い、尊厳を求めて戦う仲間たちと固く手を取り合った。
 - [daily_kazimierz_55](#event-daily_kazimierz_55) — アリーナの金属探知機を通過する際、防具の下の源石結晶が反応しないか全身が強張った。何事もなく通過できた瞬間、どっと冷や汗が吹き出した。
@@ -3764,10 +3769,11 @@
 - [sr_bsw_rhodes_secondment](#event-sr_bsw_rhodes_secondment) — BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛に…
 - [sr_bsw_infected_squad_policy](#event-sr_bsw_infected_squad_policy) — 定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混…
 - [sr_bsw_secondment_posting_review](#event-sr_bsw_secondment_posting_review) — ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生か…
-- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ…
+- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の分析能力が認められ、専任研究員への昇格面談に呼ばれた。希望する専門科と、これから担当したい仕事を尋ねられた。
 - [sr_rhine_patent_breakthrough](#event-sr_rhine_patent_breakthrough) — 数か月に及ぶ実験の末、世界初となる新素材の合成と高効率反応モデルの構築に成功した。学会での注目と特許申請の手続きが目の前に控えている。
 - [sr_rhine_diabolic_ethical_crossroad](#event-sr_rhine_diabolic_ethical_crossroad) — 深夜、立ち入り制限区画の地下ラボで『炎魔計画』の機密ファイルを目撃してしまった。そこには、幼い感染児の体内に活性源石を強制作動させ、生体兵器へと造り…
 - [sr_rhine_rhodes_asylum](#event-sr_rhine_rhodes_asylum) — トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格…
+- [sr_rhine_after_asylum_livelihood](#event-sr_rhine_after_asylum_livelihood) — 研究室を離れてから、細かな出費ばかりが帳面に増えていた。以前の実験ノートをしまい、今の土地でできる仕事を探すことにした。
 - [car_urs_officer_entry](#event-car_urs_officer_entry) — 要塞司令部の豪奢な執務室で、貴族将校たちが書類に目を落としていた。ウルサス帝国軍の指揮官枠――それは貴族の血筋と巨額の軍資金を握る選民だけの特権であ…
 - [car_urs_guard_entry](#event-car_urs_guard_entry) — ツンドラの冷風が吹きすさぶ兵舎で、国境警備部隊と感染者鉱山を監視する憲兵の徴募が行われていた。厳しい学歴は問われず、頑丈な体さえあれば誰でも雇われる…
 - [car_vic_works_entry](#event-car_vic_works_entry) — 巨大な蒸気機関車と鉄鋼レールが並ぶヴィクトリアの鉄道工廠。産業革命の鼓動が響くこの巨大施設で、高圧蒸気パイプラインや機関車エンジンの整備を担う技術者…
@@ -3852,7 +3858,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-genre-4"></a>
-### 教育・文化（445）
+### 教育・文化（446）
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_model](#event-bias_family_model) — 夕餉の食卓で、大人たちが近所にいる鉱石病患者の噂話をしていた。誰かが吐き捨てるように『ああいう連中は決まりも守らない』と言い、周りの大人も誰一人とし…
@@ -4173,6 +4179,7 @@
 - [daily_rhodes_60](#event-daily_rhodes_60) — （動的本文）
 - [sr_intersect_battlefield_mercy](#event-sr_intersect_battlefield_mercy) — 硝煙の立ち込める市街戦の廃墟で外勤任務中、倒壊した建物の瓦礫の陰に、深手を負って倒れているレユニオンの感染者戦闘員を見かけた。こちらに気づいた相手は…
 - [sr_reunion_to_rhodes_sanctuary](#event-sr_reunion_to_rhodes_sanctuary) — 組織の瓦解と激しい内紛の果て、極寒の荒野で吹雪に巻かれて倒れ伏した。全身の源石結晶が激痛を放ち、意識が遠のく中、巨大な陸上移動艦の轟音とともに白い防…
+- [sr_rhine_after_asylum_livelihood](#event-sr_rhine_after_asylum_livelihood) — 研究室を離れてから、細かな出費ばかりが帳面に増えていた。以前の実験ノートをしまい、今の土地でできる仕事を探すことにした。
 - [car_hig_touhou_entry](#event-car_hig_touhou_entry) — 煙突から黒煙を吐き出す巨大な近代工場群――東方重工。シラユキの手裏剣『シルバーウィンド』をはじめ、伝統的な刀剣や手裏剣を高精度の工業ラインで大量生産…
 - [car_vic_infantry_entry](#event-car_vic_infantry_entry) — ヴィクトリアの各都市で、正規陸軍の平民歩兵の募集が行われていた。伝統と栄光を謳う帝国だが、平民出身の兵士はどれほど戦功を立てても下士官止まりであり、…
 - [car_vic_royal_entry](#event-car_vic_royal_entry) — ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要…
@@ -4181,7 +4188,7 @@
 - [car_kaz_comp_knight_entry](#event-car_kaz_comp_knight_entry) — ネオン輝く大都市カヴァレリエルキ。歓声と巨額の賭け金が飛び交う騎士競技のメジャー大会で、企業スポンサー付きの『競技騎士』になるための公開トライアウト…
 - [car_sir_police_entry](#event-car_sir_police_entry) — マフィアの支配から脱却し、法と秩序による統治を目指す新移動都市ヌオバ・ウォルシーニ。裁判所直属の都市警察官として、ファミリーからの脅迫や買収に屈せず…
 - [car_sar_warrior_entry](#event-car_sar_warrior_entry) — ジャングルの熱気と歓声が渦巻くアカフラ。部族の力比べ大祭で、己の肉体一本で戦う『大勇士』の挑戦者を募っていた。難しい理屈は一切不要、ただ目の前の猛者…
-- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — 雪に閉ざされた聖山イェラグを近代化へ導く、シルバーアッシュ総長率いる『カランド貿易』。伝統に固執する三大家族や曼珠院の保守派と対峙しながら、最新式の…
+- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — カランド貿易から案内された面接会場へ来た。受付には輸送路の警備や貨物の扱いを説明する紙が並び、武装社員の募集担当者が応募者の名を呼んでいる。慣れ親し…
 - [car_kje_monk_entry](#event-car_kje_monk_entry) — カランドの女神を祀る神聖なる曼珠院。古くからの信仰を守り、聖山への立ち入りを監視する護衛僧の入門式が開かれていた。俗世の銃器を退け、杖と信仰の祈りで…
 - [car_kazdel_bone_entry](#event-car_kazdel_bone_entry) — 巨大な魔獣の頭骨や鉱石病の遺骨から武器や触媒を削り出す、カズデル伝統の『骨鍛冶（ボーンスミス）』。源石アーツの呪術と繊細な彫刻工芸を組み合わせる、サ…
 - [car_min_orator_entry](#event-car_min_orator_entry) — 市民たちが集い、哲学と民主的な議論を交わすミノスのアゴラ（広場）。法廷での弁論や政策の立案を担う『弁論官』が募集されていた。雄弁な論理、確固たる正義…
@@ -4495,7 +4502,7 @@
 - [choice_leithanien_04](#event-choice_leithanien_04) — 名高い銘醸ブドウ畑の相続を巡り、伝統ある小作農家と新興の貴族商人の間で激しい係争が起きていた。地域の長老であるあなたに、仲裁の立会人としての要請が届…
 - [choice_laterano_06](#event-choice_laterano_06) — 波止場の倉庫街で、厳重に管理されているはずのラテラーノ製守護銃用弾薬が、国外の密輸船に不正に積み込まれようとしている場面を目撃した。執行人に通報する…
 - [daily_columbia_56](#event-daily_columbia_56) — 感染者労働者の権利を守る草の根の互助会に参加した。不当解雇に対抗するための法的手続きのノウハウを仲間たちと共有した。
-- [choice_columbia_06](#event-choice_columbia_06) — 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚…
+- [choice_columbia_06](#event-choice_columbia_06) — BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練…
 - [choice_columbia_08](#event-choice_columbia_08) — 同僚の労働者が、給金を担保にした短期高利貸付で法外な利息を背負わされ、給料日に全額巻き上げられて生活破綻寸前に追い込まれていた。民間の取り立て屋が職…
 - [daily_kazimierz_54](#event-daily_kazimierz_54) — 地下で活動する「感染者騎士団」の秘密の支援集会に参加した。不当な奴隷契約に抗い、尊厳を求めて戦う仲間たちと固く手を取り合った。
 - [choice_kazimierz_01](#event-choice_kazimierz_01) — 明日の公式戦を前に、大手ブックメーカーの代理人が控え室に忍び込んできた。「第2ラウンドで派手に倒れてくれれば、負けてもこの大金をやる」と札束の詰まっ…
@@ -4692,8 +4699,8 @@
 - [sr_bsw_rhodes_secondment](#event-sr_bsw_rhodes_secondment) — BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛に…
 - [sr_bsw_infected_squad_policy](#event-sr_bsw_infected_squad_policy) — 定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混…
 - [sr_bsw_secondment_posting_review](#event-sr_bsw_secondment_posting_review) — ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生か…
-- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ…
-- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの傑出した学術業績と特許取得がクリステン総括の目に留まり、自らの研究室と莫大な予算枠を持つ主任研究員（J 40）への昇格面談に呼ばれた。
+- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の分析能力が認められ、専任研究員への昇格面談に呼ばれた。希望する専門科と、これから担当したい仕事を尋ねられた。
+- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの研究成果が認められ、主任研究員への昇格面談に呼ばれた。研究室と予算を預かる代わりに、同僚や実験の安全にも責任を持つという。書類の端を押さえ…
 - [sr_rhine_rhodes_asylum](#event-sr_rhine_rhodes_asylum) — トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格…
 - [sr_rhine_lone_trail_sky_horizon](#event-sr_rhine_lone_trail_sky_horizon) — 1099年晩秋、トリマウンツ上空。クリステン統括が主導した『ホライズンアーク計画』が極大の光を放ち、フォーカスジェネレーターが天空を穿った。何千年も…
 - [car_hig_cyber_entry](#event-car_hig_cyber_entry) — 深夜2時、自室の端末が突如として外部電源なしに起動した。黒い画面に、かつて保存した鎖川の極秘暗号プロトコルが自動展開される。国家中枢の電子防諜を担う…
@@ -4775,7 +4782,7 @@
 - [choice_leithanien_02](#event-choice_leithanien_02) — 数百年前の名工が遺した伝説のバイオリンが、響板の大破損状態であなたの工房（または知人の店）に持ち込まれた。修復に成功すれば世界に名が轟くが、失敗すれ…
 - [choice_leithanien_04](#event-choice_leithanien_04) — 名高い銘醸ブドウ畑の相続を巡り、伝統ある小作農家と新興の貴族商人の間で激しい係争が起きていた。地域の長老であるあなたに、仲裁の立会人としての要請が届…
 - [choice_leithanien_06](#event-choice_leithanien_06) — 好戦的な貴族が、聴く者の神経を破壊する非人道的な音波アーツ砲を秘密裏に試作していた。開発に協力させられそうになった技師から、設計図の破棄を手伝ってほ…
-- [choice_columbia_06](#event-choice_columbia_06) — 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚…
+- [choice_columbia_06](#event-choice_columbia_06) — BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練…
 - [choice_kazimierz_02](#event-choice_kazimierz_02) — 下層区の違法地下リングで、怪我を負った感染者奴隷騎士が無理やり獰猛な猛獣と戦わされようとしていた。友好的な知人が観客席で泣き崩れている。
 - [choice_kazimierz_03](#event-choice_kazimierz_03) — 怪我で一時休養を決めた若手騎士が、悪質なスポンサー企業から一方的な契約不履行を理由に法外な違約金を請求され、借金奴隷に落とされかけていた。助けを求め…
 - [daily_siracusa_53](#event-daily_siracusa_53) — 商業地区の夜間パトロール中、裏路地で見張りをする黒服の男たちと目が合った。互いに深く追求せず、会釈だけを交わして通り過ぎるのがこの街の暗黙の協調だ。
@@ -4817,10 +4824,10 @@
 - [sr_intersect_hostage_sympathy](#event-sr_intersect_hostage_sympathy) — 哨戒任務中、立ち往生していた大型医療装甲車を包囲した。車体にはロドス・アイランドの紋章が刻まれており、白衣を着た医療スタッフたちが、荷台に積まれた感…
 - [sr_rhodes_to_reunion_turning_point](#event-sr_rhodes_to_reunion_turning_point) — 移動都市の路地裏で、正規軍と警官隊による感染者強制隔離区画の無差別掃討を目撃した。泣き叫ぶ子供や無抵抗の老人が銃床で殴り倒されている。しかし通信機か…
 - [sr_reunion_turncoat_rehabilitation](#event-sr_reunion_turncoat_rehabilitation) — ロドス本艦での投薬と療養によって体調が劇的に回復した。過去の経歴審査を終えた人事担当者から「船内で働きながら、新しい人生を歩み直してみないか」と更生…
-- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新…
+- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — 紹介された募集日程を確かめ、BSWの本艦に設けられた採用試験の受付へ来た。甲板の向こうでは、射撃シミュレータの音と障害物走の掛け声が響いている。提示…
 - [sr_bsw_convoy_protection](#event-sr_bsw_convoy_protection) — 荒野を渡る鉱石採掘企業の大型輸送コンボイの護衛任務中、突如として砂塵の向こうから武装した略奪者集団が急襲してきた。先頭の車両が被弾し、激しい銃撃戦が…
 - [sr_bsw_davistown_debt_conflict](#event-sr_bsw_davistown_debt_conflict) — 衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援す…
-- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの傑出した学術業績と特許取得がクリステン総括の目に留まり、自らの研究室と莫大な予算枠を持つ主任研究員（J 40）への昇格面談に呼ばれた。
+- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの研究成果が認められ、主任研究員への昇格面談に呼ばれた。研究室と予算を預かる代わりに、同僚や実験の安全にも責任を持つという。書類の端を押さえ…
 - [sr_rhine_359_transmitter_consent](#event-sr_rhine_359_transmitter_consent) — トリマウンツ郊外の359号基地にて、アーツ応用課のドロシー主任が進める「伝達物質」の大規模治験に立ち会った。神経信号を結合して人々の意識を共有し、能…
 - [sr_rhine_lone_trail_sky_horizon](#event-sr_rhine_lone_trail_sky_horizon) — 1099年晩秋、トリマウンツ上空。クリステン統括が主導した『ホライズンアーク計画』が極大の光を放ち、フォーカスジェネレーターが天空を穿った。何千年も…
 - [car_hig_cyber_discovery](#event-car_hig_cyber_discovery) — 街のジャンク屋で手に入れた旧式電子端末のログを解析していたところ、奇妙な暗号通信の痕跡に行き当たった。1088年に北朝の本拠『鎖川』を麻痺させた大規…
@@ -5031,11 +5038,11 @@
 - [sr_reunion_moving_column_daily](#event-sr_reunion_moving_column_daily) — 荒涼とした大地を進む移動隊は、次の水場と風を避けられる野営地を探していた。地平線の彼方には不気味な天災雲が垂れ込め、ぬかるみに足を取られた荷車の列が…
 - [sr_intersect_hostage_sympathy](#event-sr_intersect_hostage_sympathy) — 哨戒任務中、立ち往生していた大型医療装甲車を包囲した。車体にはロドス・アイランドの紋章が刻まれており、白衣を着た医療スタッフたちが、荷台に積まれた感…
 - [sr_rhodes_to_reunion_turning_point](#event-sr_rhodes_to_reunion_turning_point) — 移動都市の路地裏で、正規軍と警官隊による感染者強制隔離区画の無差別掃討を目撃した。泣き叫ぶ子供や無抵抗の老人が銃床で殴り倒されている。しかし通信機か…
-- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新…
+- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — 紹介された募集日程を確かめ、BSWの本艦に設けられた採用試験の受付へ来た。甲板の向こうでは、射撃シミュレータの音と障害物走の掛け声が響いている。提示…
 - [sr_bsw_vip_escort_ambush](#event-sr_bsw_vip_escort_ambush) — 移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の…
 - [sr_bsw_davistown_debt_conflict](#event-sr_bsw_davistown_debt_conflict) — 衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援す…
 - [sr_bsw_infected_squad_policy](#event-sr_bsw_infected_squad_policy) — 定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混…
-- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ…
+- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の分析能力が認められ、専任研究員への昇格面談に呼ばれた。希望する専門科と、これから担当したい仕事を尋ねられた。
 - [sr_rhine_diabolic_ethical_crossroad](#event-sr_rhine_diabolic_ethical_crossroad) — 深夜、立ち入り制限区画の地下ラボで『炎魔計画』の機密ファイルを目撃してしまった。そこには、幼い感染児の体内に活性源石を強制作動させ、生体兵器へと造り…
 - [sr_rhine_359_transmitter_consent](#event-sr_rhine_359_transmitter_consent) — トリマウンツ郊外の359号基地にて、アーツ応用課のドロシー主任が進める「伝達物質」の大規模治験に立ち会った。神経信号を結合して人々の意識を共有し、能…
 - [car_hig_shinto_entry](#event-car_hig_shinto_entry) — 緑深き山あいの神社と古刹の門前で、若き神職や僧侶を志す者が集まっていた。テラでは珍しく神仏が共に息づく極東において、人々の穢れを祓い、病や天災による…
@@ -6368,7 +6375,7 @@
 - [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
 
 <a id="tag-genre-14"></a>
-### 労働・経済（764）
+### 労働・経済（768）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -6434,6 +6441,7 @@
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 - [fam_mafia](#event-fam_mafia) — ファミリーの下働きで最初の夜を終えると、奥の部屋で年長者が革張りの帳簿をパタンと閉じた。「いいか、表で喋っていいことと、墓まで持っていくことがある」…
 - [fam_inherit](#event-fam_inherit) — 商いを切り盛りする親から、そろそろ店の仕事を手伝わないかと切り出された。まだ学業を続けたい気持ちもあるが、年々白髪の増える親の横顔を見ると簡単には断…
+- [fam_business_handover](#event-fam_business_handover) — 閉店後、親が古い帳簿と店の鍵を並べた。「これからはお前に任せたい」と言う声には、疲れとためらいが混じっていた。仕入れの支払いや日々の赤字も引き受ける…
 - [parent_work_news](#event-parent_work_news) — {parentName}から封書が届き、長く続けた{parentOldWork}を辞めて{parentWork}に移ったと知らされた。少し震えた文字…
 - [parent_household_move_news](#event-parent_household_move_news) — 親から転居の便りが届いた。住み慣れた{parentHouseholdFrom}を引き払い、きょうだいと一緒に{parentHouseholdTo}へ…
 - [parent_treatment_review](#event-parent_treatment_review) — 実家の台所事情がいよいよ苦しくなり、{parentName}の療養費を出し続けるのが限界に近づいていた。病院の窓口で支払いの見通しを問われ、親は重い…
@@ -6647,7 +6655,7 @@
 - [daily_columbia_56](#event-daily_columbia_56) — 感染者労働者の権利を守る草の根の互助会に参加した。不当解雇に対抗するための法的手続きのノウハウを仲間たちと共有した。
 - [choice_columbia_01](#event-choice_columbia_01) — 独自に考案したアーツ回路の特許に対し、巨大複合企業（メガコープ）から身に覚えのない特許侵害訴訟が起こされた。法外な和解金で技術を丸ごと奪い取る企みだ…
 - [choice_columbia_05](#event-choice_columbia_05) — 新設された郊外の巨大モールに、自分の飲食店または雑貨店を出店する一等地が空いた。保証金と内装費は高額だが、当たれば莫大な日銭が入る。
-- [choice_columbia_06](#event-choice_columbia_06) — 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚…
+- [choice_columbia_06](#event-choice_columbia_06) — BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練…
 - [choice_columbia_07](#event-choice_columbia_07) — 大平原を巨大な竜巻（トルネード）が直撃し、開拓村の納屋や家屋が数棟吹き飛ばされた。住民たちが瓦礫の片付けと負傷者の救護に奔走している。
 - [choice_columbia_08](#event-choice_columbia_08) — 同僚の労働者が、給金を担保にした短期高利貸付で法外な利息を背負わされ、給料日に全額巻き上げられて生活破綻寸前に追い込まれていた。民間の取り立て屋が職…
 - [choice_columbia_09](#event-choice_columbia_09) — 大陸横断回廊を舞台に、改造車両や運搬車で数百マイルの荒野を走破する過酷な「フロンティア・ラリー」が開催された。優勝者には巨額の賞金とスポンサー契約が…
@@ -6966,14 +6974,16 @@
 - [sr_reunion_border_relocation](#event-sr_reunion_border_relocation) — 国境の村を畳み、サンクト・グリファーブルクの方面へ向かう移動隊の支度が始まった。荷車を引いて旅立つ者もいれば、せっかく耕した畑と小屋を守るため村に残…
 - [sr_reunion_departure_legacy](#event-sr_reunion_departure_legacy) — レユニオンの隊を離れてから数年が過ぎたある日、古い背嚢の底から木の配給札が転がり出た。裏側には、かつて薬を届けた一家が引っ越し先の番地を鉛筆で書き残…
 - [sr_reunion_turncoat_rehabilitation](#event-sr_reunion_turncoat_rehabilitation) — ロドス本艦での投薬と療養によって体調が劇的に回復した。過去の経歴審査を終えた人事担当者から「船内で働きながら、新しい人生を歩み直してみないか」と更生…
-- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新…
+- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — 紹介された募集日程を確かめ、BSWの本艦に設けられた採用試験の受付へ来た。甲板の向こうでは、射撃シミュレータの音と障害物走の掛け声が響いている。提示…
 - [sr_bsw_convoy_protection](#event-sr_bsw_convoy_protection) — 荒野を渡る鉱石採掘企業の大型輸送コンボイの護衛任務中、突如として砂塵の向こうから武装した略奪者集団が急襲してきた。先頭の車両が被弾し、激しい銃撃戦が…
 - [sr_bsw_promotion_tactical](#event-sr_bsw_promotion_tactical) — 見習い期間中の優れた実績が評価され、BSWクルビア本部から正規戦術オペレーターへの昇格審査に召集された。高難度の実地想定演習と銃器ライセンス更新が課…
 - [sr_bsw_vip_escort_ambush](#event-sr_bsw_vip_escort_ambush) — 移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の…
+- [sr_bsw_specialist_offer_review](#event-sr_bsw_specialist_offer_review) — BSW本部の面談室で、特務担当への辞令案を差し出された。報酬は上がるが、要人警護の責任も重くなる。担当者は書類を机に置き、返事を待った。
 - [sr_bsw_rhodes_secondment](#event-sr_bsw_rhodes_secondment) — BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛に…
 - [sr_bsw_davistown_debt_conflict](#event-sr_bsw_davistown_debt_conflict) — 衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援す…
 - [sr_bsw_secondment_posting_review](#event-sr_bsw_secondment_posting_review) — ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生か…
 - [sr_rhine_recruitment_exam](#event-sr_rhine_recruitment_exam) — クルビア連邦トリマウンツにそびえるライン生命本社ビル。テラ最先端の科学技術と莫大な資本が集うこの学術コンソーシアムで、研究実習生の公募選考が行われて…
+- [sr_rhine_after_asylum_livelihood](#event-sr_rhine_after_asylum_livelihood) — 研究室を離れてから、細かな出費ばかりが帳面に増えていた。以前の実験ノートをしまい、今の土地でできる仕事を探すことにした。
 - [sr_rhine_post_lone_trail_career_review](#event-sr_rhine_post_lone_trail_career_review) — トリマウンツの空にあの光が走ってから、季節が巡った。研究室には残った装置と書類が積まれ、担当者たちは研究を続けている。ここで仕事を続けるか、職員証を…
 - [sr_rhine_after_departure_livelihood](#event-sr_rhine_after_departure_livelihood) — 研究所を離れたとき、次の仕事は決まっていなかった。あれからいくつかの季節が過ぎた。白衣のままでは入れない職場もあれば、実験室で覚えた手順を役立てられ…
 - [sr_rhine_whistleblower_return_review](#event-sr_rhine_whistleblower_return_review) — ライン生命では、あの事件の後に役員と研究倫理の審査体制が変わった。以前の告発について、人事部に記録が残っている。研究所で再び働くことを考えるなら、退…
@@ -7056,6 +7066,7 @@
 - [inter_laterano_resident_sarkaz_review_v76](#event-inter_laterano_resident_sarkaz_review_v76) — 居住登録の更新で窓口へ書類を出すと、係員は「サルカズ」の欄で目を細め、奥の棚から分厚い別帳面を引っ張り出してきた。「記録を照合するから追って沙汰を待…
 - [inter_prior_contact_followup_v76](#event-inter_prior_contact_followup_v76) — 数年前に窓口でたらい回しにされ、曖昧な理由で待たされた一件が、新しい手続きの場でふいにぶり返した。当時の控えを突きつけて筋を通すか、蒸し返さずに今日…
 - [inter_laterano_sarkaz_route_review_v87](#event-inter_laterano_sarkaz_route_review_v87) — 以前、ラテラーノ方面への荷運びについて通行資格を問い合わせてから、もう二年以上が経つ。いまだに色よい返事はなく、返事を待ちながら今の暮らしを続けてき…
+- [work_known_opening_review](#event-work_known_opening_review) — （動的本文）
 - [v77_written_application](#event-v77_written_application) — 今の仕事を続けながら、もう少し条件のいい働き口の募集を見つけた。だが応募用紙の職歴欄や保証人の欄を前にして、何と書けばいいのかペンが止まった。
 - [v77_prejudice_infected_workplace](#event-v77_prejudice_infected_workplace) — 鉱石病と診断されたばかりの働き手が、同じ現場に入ることになった。休憩室では「源石の粉とあいつ、どっちが危ないんだ」と心ない冗談が飛び交い、同僚たちが…
 - [v77_exclusion_review](#event-v77_exclusion_review) — 以前、出自や境遇を理由に門前払いされた一件が、いまだに尾を引いている。あのとき曖昧に濁された理由が、今の暮らしの手続きにも暗い影を落としていた。
@@ -7136,7 +7147,7 @@
 
 ## 状況別索引
 
-[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (141)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (255)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[記録・説明責任 (1)](#tag-situation-108)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-109)　・　[記録と責任 (1)](#tag-situation-110)　・　[技師 (1)](#tag-situation-111)　・　[技能条件 (1)](#tag-situation-112)　・　[求職 (2)](#tag-situation-113)　・　[求職・紹介 (1)](#tag-situation-114)　・　[旧坑区の荷札照会 (1)](#tag-situation-115)　・　[競技会場の仮設席設営 (1)](#tag-situation-116)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-117)　・　[競技騎士の肩の負傷 (1)](#tag-situation-118)　・　[競技祭 (1)](#tag-situation-119)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-120)　・　[脅迫を受ける (1)](#tag-situation-121)　・　[脅迫記録の解除分岐 (1)](#tag-situation-122)　・　[極東 (1)](#tag-situation-123)　・　[極東の軍務・兵站ルート (2)](#tag-situation-124)　・　[極東の神社 (1)](#tag-situation-125)　・　[勤務縮小後 (1)](#tag-situation-126)　・　[近隣からの相談 (1)](#tag-situation-127)　・　[近隣との情報交換 (1)](#tag-situation-128)　・　[近隣の若年者との交流 (1)](#tag-situation-129)　・　[近隣互助 (1)](#tag-situation-130)　・　[軍務・護衛の継続 (1)](#tag-situation-131)　・　[契約確認 (1)](#tag-situation-132)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-133)　・　[継続／民間移行／求職 (1)](#tag-situation-134)　・　[継続後の振り返り (1)](#tag-situation-135)　・　[継続後の窓口 (1)](#tag-situation-136)　・　[警戒・質問の選択 (1)](#tag-situation-137)　・　[検査延期後の再検討 (1)](#tag-situation-138)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-139)　・　[源石片による負傷・曝露 (1)](#tag-situation-140)　・　[源石片への接触回避 (1)](#tag-situation-141)　・　[言葉の行き違い (1)](#tag-situation-142)　・　[個人情報 (1)](#tag-situation-143)　・　[古傷による職業転換 (1)](#tag-situation-144)　・　[固定集落への配達 (1)](#tag-situation-145)　・　[固定都市 (1)](#tag-situation-146)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-147)　・　[交易所の共用端末 (1)](#tag-situation-148)　・　[公証人役場 (1)](#tag-situation-149)　・　[工業区域 (1)](#tag-situation-150)　・　[工場労働者 (1)](#tag-situation-151)　・　[港湾労働 (2)](#tag-situation-152)　・　[鉱区事故 (1)](#tag-situation-153)　・　[鉱山の交替減少 (1)](#tag-situation-154)　・　[鉱山労働 (1)](#tag-situation-155)　・　[鉱石病以外の回復期 (1)](#tag-situation-156)　・　[鉱石病診断済み (1)](#tag-situation-157)　・　[鉱夫 (1)](#tag-situation-158)　・　[鉱夫分岐 (1)](#tag-situation-159)　・　[高等教育経験者の教員応募 (1)](#tag-situation-160)　・　[高齢期 (1)](#tag-situation-161)　・　[高齢期の就労 (1)](#tag-situation-162)　・　[告示の交代 (1)](#tag-situation-163)　・　[国の発生条件あり (1560)](#tag-situation-164)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-165)　・　[再受付・別の診療先の探索 (1)](#tag-situation-166)　・　[採掘坑内の換気停止 (1)](#tag-situation-167)　・　[採掘地域 (1)](#tag-situation-168)　・　[採掘地域に限定 (1)](#tag-situation-169)　・　[採掘中 (1)](#tag-situation-170)　・　[災害後の商店再開 (1)](#tag-situation-171)　・　[祭典 (1)](#tag-situation-172)　・　[作業技能 (1)](#tag-situation-173)　・　[作業停止・退避 (1)](#tag-situation-174)　・　[山道の情報共有 (1)](#tag-situation-175)　・　[山麓の宿への道案内 (1)](#tag-situation-176)　・　[仕送り (1)](#tag-situation-177)　・　[子どもの就学 (1)](#tag-situation-178)　・　[子どもの誕生・養育 (1)](#tag-situation-179)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-180)　・　[子への訃報 (1)](#tag-situation-181)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-182)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-183)　・　[思春期 (1)](#tag-situation-184)　・　[支援の受入れ (1)](#tag-situation-185)　・　[氏族養育 (1)](#tag-situation-186)　・　[資格取得後の求職 (1)](#tag-situation-187)　・　[飼育動物の世話 (1)](#tag-situation-188)　・　[次便待ち (1)](#tag-situation-189)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-190)　・　[自動発生イベント (1428)](#tag-situation-191)　・　[湿地地勢 (1)](#tag-situation-192)　・　[守秘と名簿 (1)](#tag-situation-193)　・　[種族差別 (2)](#tag-situation-194)　・　[種族差別後 (1)](#tag-situation-195)　・　[酒類の仕入れ帳 (1)](#tag-situation-196)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-197)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-198)　・　[授業担当者との接点 (1)](#tag-situation-199)　・　[収容・隔離中 (1)](#tag-situation-200)　・　[収容・隔離中の診療 (1)](#tag-situation-201)　・　[収容中 (4)](#tag-situation-202)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-203)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-204)　・　[就労中 (2)](#tag-situation-205)　・　[就労中の鉱夫 (1)](#tag-situation-206)　・　[住居差別 (1)](#tag-situation-207)　・　[住居差別後 (1)](#tag-situation-208)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-209)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-210)　・　[宿泊拒否 (1)](#tag-situation-211)　・　[宿泊拒否後 (1)](#tag-situation-212)　・　[出場・観戦・場外見物 (1)](#tag-situation-213)　・　[所持金による本文・選択肢 (1)](#tag-situation-214)　・　[小舞台 (1)](#tag-situation-215)　・　[少年・青年 (2)](#tag-situation-216)　・　[少年・青年・壮年 (3)](#tag-situation-217)　・　[消息不明者の生存確認 (1)](#tag-situation-218)　・　[症状進行中 (1)](#tag-situation-219)　・　[情報網の高い居住地 (1)](#tag-situation-220)　・　[条件付き本文 (210)](#tag-situation-221)　・　[職業課程の継続 (1)](#tag-situation-222)　・　[職業課程の修了 (1)](#tag-situation-223)　・　[職業条件あり (71)](#tag-situation-224)　・　[職場・近隣で露見の兆し (1)](#tag-situation-225)　・　[職場の排斥 (1)](#tag-situation-226)　・　[食堂の客足 (1)](#tag-situation-227)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-228)　・　[食料不足 (1)](#tag-situation-229)　・　[森林地勢 (1)](#tag-situation-230)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-231)　・　[親の家計判断 (1)](#tag-situation-232)　・　[親の感染 (1)](#tag-situation-233)　・　[親の死後 (1)](#tag-situation-234)　・　[親子の記憶 (1)](#tag-situation-235)　・　[診断済み (1)](#tag-situation-236)　・　[診断済み・未治療 (1)](#tag-situation-237)　・　[診療・休養・記録から選択 (1)](#tag-situation-238)　・　[診療・作業調整 (1)](#tag-situation-239)　・　[診療・動作を避ける選択 (1)](#tag-situation-240)　・　[診療・付き添いの依頼 (1)](#tag-situation-241)　・　[診療・負担軽減から選択 (1)](#tag-situation-242)　・　[診療延期後 (1)](#tag-situation-243)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-244)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-245)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-246)　・　[身近な人への支援依頼 (1)](#tag-situation-247)　・　[身近な連絡先あり (1)](#tag-situation-248)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-249)　・　[睡眠不足 (1)](#tag-situation-250)　・　[世界イベント後 (1)](#tag-situation-251)　・　[成人 (4)](#tag-situation-252)　・　[成人・返済支援の選択 (1)](#tag-situation-253)　・　[成人した子 (2)](#tag-situation-254)　・　[成人の種族偏見に触れる (1)](#tag-situation-255)　・　[生活上の備え (1)](#tag-situation-256)　・　[青年・壮年 (5)](#tag-situation-257)　・　[青年・壮年・老年 (3)](#tag-situation-258)　・　[雪祭司・聖樹 (1)](#tag-situation-259)　・　[選択イベント (1097)](#tag-situation-260)　・　[前段で残留した人 (1)](#tag-situation-261)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-262)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-263)　・　[全年齢の循環器系エピソード (1)](#tag-situation-264)　・　[全年齢の食料不足 (1)](#tag-situation-265)　・　[全年齢の負傷後の痛み (1)](#tag-situation-266)　・　[組織・所属に言及 (175)](#tag-situation-267)　・　[組織離脱後 (1)](#tag-situation-268)　・　[相談・医療・休養 (1)](#tag-situation-269)　・　[相談・記録 (1)](#tag-situation-270)　・　[相談・記録・経路変更 (1)](#tag-situation-271)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-272)　・　[足場や荷の異常 (1)](#tag-situation-273)　・　[退会後の関係 (1)](#tag-situation-274)　・　[退職選択 (1)](#tag-situation-275)　・　[大いなる静謐後 (1)](#tag-situation-276)　・　[大学課程の継続 (1)](#tag-situation-277)　・　[大学課程の修了 (1)](#tag-situation-278)　・　[短期雇用 (1)](#tag-situation-279)　・　[短期雇用と現場危険 (1)](#tag-situation-280)　・　[地域の供給不安定 (1)](#tag-situation-281)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-282)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-283)　・　[地域学習会・独学の選択 (1)](#tag-situation-284)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-285)　・　[仲間の捜索 (1)](#tag-situation-286)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-287)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-288)　・　[通学していない (1)](#tag-situation-289)　・　[通学中 (1)](#tag-situation-290)　・　[通行止め・迂回 (1)](#tag-situation-291)　・　[天災・戦乱による避難中 (1)](#tag-situation-292)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-293)　・　[店舗からの排斥集会 (1)](#tag-situation-294)　・　[転居後の近隣交流 (1)](#tag-situation-295)　・　[都市街区での襲撃 (1)](#tag-situation-296)　・　[動的表示条件 (687)](#tag-situation-297)　・　[動的本文 (31)](#tag-situation-298)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-299)　・　[同一都市の周縁区への転居 (1)](#tag-situation-300)　・　[同郷者との交流 (1)](#tag-situation-301)　・　[同行者との交流 (1)](#tag-situation-302)　・　[匿名動画の出所確認 (1)](#tag-situation-303)　・　[独立商業所属 (1)](#tag-situation-304)　・　[読み書きに困難がある (1)](#tag-situation-305)　・　[日雇い (1)](#tag-situation-306)　・　[乳児の成長 (1)](#tag-situation-307)　・　[任意応募・採用選考 (1)](#tag-situation-308)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-309)　・　[年齢：35歳以上 (2)](#tag-situation-310)　・　[年齢：児童 (975)](#tag-situation-311)　・　[年齢：少年 (1211)](#tag-situation-312)　・　[年齢：青年 (2378)](#tag-situation-313)　・　[年齢：壮年 (2318)](#tag-situation-314)　・　[年齢：乳児 (20)](#tag-situation-315)　・　[年齢：幼児 (37)](#tag-situation-316)　・　[年齢：老年 (1522)](#tag-situation-317)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-318)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-319)　・　[配給・食料不足 (1)](#tag-situation-320)　・　[配給・寝床・診療案内 (1)](#tag-situation-321)　・　[配給と地域支援 (1)](#tag-situation-322)　・　[配給登録 (1)](#tag-situation-323)　・　[配偶者との死別 (1)](#tag-situation-324)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-325)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-326)　・　[班間の点検記録 (1)](#tag-situation-327)　・　[班内の技能伝達 (1)](#tag-situation-328)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-329)　・　[避難中 (1)](#tag-situation-330)　・　[非感染者 (1)](#tag-situation-331)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-332)　・　[付き添い依頼・受診延期 (1)](#tag-situation-333)　・　[付き添い相談 (1)](#tag-situation-334)　・　[扶養中の子 (2)](#tag-situation-335)　・　[扶養中の子の看病 (1)](#tag-situation-336)　・　[負傷後の職務調整 (1)](#tag-situation-337)　・　[部品寸法 (1)](#tag-situation-338)　・　[復旧作業中の負傷 (1)](#tag-situation-339)　・　[粉塵への接触懸念 (1)](#tag-situation-340)　・　[粉塵曝露 (2)](#tag-situation-341)　・　[兵士の消息不明 (1)](#tag-situation-342)　・　[兵役招集 (1)](#tag-situation-343)　・　[別居・転居 (1)](#tag-situation-344)　・　[亡命・移住 (2)](#tag-situation-345)　・　[未診断の感染者 (1)](#tag-situation-346)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-347)　・　[未成年は養育者判断 (8)](#tag-situation-348)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-349)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-350)　・　[名前を知る相手 (1)](#tag-situation-351)　・　[夜間の世話 (1)](#tag-situation-352)　・　[友人との文通再開 (1)](#tag-situation-353)　・　[友人への恋心 (1)](#tag-situation-354)　・　[傭兵・護衛勤務 (1)](#tag-situation-355)　・　[傭兵隊の護衛契約 (1)](#tag-situation-356)　・　[傭兵隊の通過 (1)](#tag-situation-357)　・　[幼い子の養育 (1)](#tag-situation-358)　・　[用事の再開・再診 (1)](#tag-situation-359)　・　[養育者の視点 (1)](#tag-situation-360)　・　[離婚後の元配偶者の死 (1)](#tag-situation-361)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-362)　・　[離婚後の子育て・連絡 (1)](#tag-situation-363)　・　[龍門 (1)](#tag-situation-364)　・　[龍門の移動都市居住区 (1)](#tag-situation-365)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-366)　・　[龍門の商業街 (1)](#tag-situation-367)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-368)　・　[隣人との死別 (1)](#tag-situation-369)　・　[隣人との伝言再開 (1)](#tag-situation-370)　・　[隣人の消息不明 (1)](#tag-situation-371)　・　[隣人の生存確認 (1)](#tag-situation-372)　・　[連絡・休息の継続 (1)](#tag-situation-373)　・　[連絡先と家の用事の相談 (1)](#tag-situation-374)　・　[労務補償 (1)](#tag-situation-375)
+[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (141)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (255)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[記録・説明責任 (1)](#tag-situation-108)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-109)　・　[記録と責任 (1)](#tag-situation-110)　・　[技師 (1)](#tag-situation-111)　・　[技能条件 (1)](#tag-situation-112)　・　[求職 (2)](#tag-situation-113)　・　[求職・紹介 (1)](#tag-situation-114)　・　[旧坑区の荷札照会 (1)](#tag-situation-115)　・　[競技会場の仮設席設営 (1)](#tag-situation-116)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-117)　・　[競技騎士の肩の負傷 (1)](#tag-situation-118)　・　[競技祭 (1)](#tag-situation-119)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-120)　・　[脅迫を受ける (1)](#tag-situation-121)　・　[脅迫記録の解除分岐 (1)](#tag-situation-122)　・　[極東 (1)](#tag-situation-123)　・　[極東の軍務・兵站ルート (2)](#tag-situation-124)　・　[極東の神社 (1)](#tag-situation-125)　・　[勤務縮小後 (1)](#tag-situation-126)　・　[近隣からの相談 (1)](#tag-situation-127)　・　[近隣との情報交換 (1)](#tag-situation-128)　・　[近隣の若年者との交流 (1)](#tag-situation-129)　・　[近隣互助 (1)](#tag-situation-130)　・　[軍務・護衛の継続 (1)](#tag-situation-131)　・　[契約確認 (1)](#tag-situation-132)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-133)　・　[継続／民間移行／求職 (1)](#tag-situation-134)　・　[継続後の振り返り (1)](#tag-situation-135)　・　[継続後の窓口 (1)](#tag-situation-136)　・　[警戒・質問の選択 (1)](#tag-situation-137)　・　[検査延期後の再検討 (1)](#tag-situation-138)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-139)　・　[源石片による負傷・曝露 (1)](#tag-situation-140)　・　[源石片への接触回避 (1)](#tag-situation-141)　・　[言葉の行き違い (1)](#tag-situation-142)　・　[個人情報 (1)](#tag-situation-143)　・　[古傷による職業転換 (1)](#tag-situation-144)　・　[固定集落への配達 (1)](#tag-situation-145)　・　[固定都市 (1)](#tag-situation-146)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-147)　・　[交易所の共用端末 (1)](#tag-situation-148)　・　[公証人役場 (1)](#tag-situation-149)　・　[工業区域 (1)](#tag-situation-150)　・　[工場労働者 (1)](#tag-situation-151)　・　[港湾労働 (2)](#tag-situation-152)　・　[鉱区事故 (1)](#tag-situation-153)　・　[鉱山の交替減少 (1)](#tag-situation-154)　・　[鉱山労働 (1)](#tag-situation-155)　・　[鉱石病以外の回復期 (1)](#tag-situation-156)　・　[鉱石病診断済み (1)](#tag-situation-157)　・　[鉱夫 (1)](#tag-situation-158)　・　[鉱夫分岐 (1)](#tag-situation-159)　・　[高等教育経験者の教員応募 (1)](#tag-situation-160)　・　[高齢期 (1)](#tag-situation-161)　・　[高齢期の就労 (1)](#tag-situation-162)　・　[告示の交代 (1)](#tag-situation-163)　・　[国の発生条件あり (1560)](#tag-situation-164)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-165)　・　[再受付・別の診療先の探索 (1)](#tag-situation-166)　・　[採掘坑内の換気停止 (1)](#tag-situation-167)　・　[採掘地域 (1)](#tag-situation-168)　・　[採掘地域に限定 (1)](#tag-situation-169)　・　[採掘中 (1)](#tag-situation-170)　・　[災害後の商店再開 (1)](#tag-situation-171)　・　[祭典 (1)](#tag-situation-172)　・　[作業技能 (1)](#tag-situation-173)　・　[作業停止・退避 (1)](#tag-situation-174)　・　[山道の情報共有 (1)](#tag-situation-175)　・　[山麓の宿への道案内 (1)](#tag-situation-176)　・　[仕送り (1)](#tag-situation-177)　・　[子どもの就学 (1)](#tag-situation-178)　・　[子どもの誕生・養育 (1)](#tag-situation-179)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-180)　・　[子への訃報 (1)](#tag-situation-181)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-182)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-183)　・　[思春期 (1)](#tag-situation-184)　・　[支援の受入れ (1)](#tag-situation-185)　・　[氏族養育 (1)](#tag-situation-186)　・　[資格取得後の求職 (1)](#tag-situation-187)　・　[飼育動物の世話 (1)](#tag-situation-188)　・　[次便待ち (1)](#tag-situation-189)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-190)　・　[自動発生イベント (1428)](#tag-situation-191)　・　[湿地地勢 (1)](#tag-situation-192)　・　[守秘と名簿 (1)](#tag-situation-193)　・　[種族差別 (2)](#tag-situation-194)　・　[種族差別後 (1)](#tag-situation-195)　・　[酒類の仕入れ帳 (1)](#tag-situation-196)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-197)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-198)　・　[授業担当者との接点 (1)](#tag-situation-199)　・　[収容・隔離中 (1)](#tag-situation-200)　・　[収容・隔離中の診療 (1)](#tag-situation-201)　・　[収容中 (4)](#tag-situation-202)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-203)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-204)　・　[就労中 (2)](#tag-situation-205)　・　[就労中の鉱夫 (1)](#tag-situation-206)　・　[住居差別 (1)](#tag-situation-207)　・　[住居差別後 (1)](#tag-situation-208)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-209)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-210)　・　[宿泊拒否 (1)](#tag-situation-211)　・　[宿泊拒否後 (1)](#tag-situation-212)　・　[出場・観戦・場外見物 (1)](#tag-situation-213)　・　[所持金による本文・選択肢 (1)](#tag-situation-214)　・　[小舞台 (1)](#tag-situation-215)　・　[少年・青年 (2)](#tag-situation-216)　・　[少年・青年・壮年 (3)](#tag-situation-217)　・　[消息不明者の生存確認 (1)](#tag-situation-218)　・　[症状進行中 (1)](#tag-situation-219)　・　[情報網の高い居住地 (1)](#tag-situation-220)　・　[条件付き本文 (210)](#tag-situation-221)　・　[職業課程の継続 (1)](#tag-situation-222)　・　[職業課程の修了 (1)](#tag-situation-223)　・　[職業条件あり (71)](#tag-situation-224)　・　[職場・近隣で露見の兆し (1)](#tag-situation-225)　・　[職場の排斥 (1)](#tag-situation-226)　・　[食堂の客足 (1)](#tag-situation-227)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-228)　・　[食料不足 (1)](#tag-situation-229)　・　[森林地勢 (1)](#tag-situation-230)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-231)　・　[親の家計判断 (1)](#tag-situation-232)　・　[親の感染 (1)](#tag-situation-233)　・　[親の死後 (1)](#tag-situation-234)　・　[親子の記憶 (1)](#tag-situation-235)　・　[診断済み (1)](#tag-situation-236)　・　[診断済み・未治療 (1)](#tag-situation-237)　・　[診療・休養・記録から選択 (1)](#tag-situation-238)　・　[診療・作業調整 (1)](#tag-situation-239)　・　[診療・動作を避ける選択 (1)](#tag-situation-240)　・　[診療・付き添いの依頼 (1)](#tag-situation-241)　・　[診療・負担軽減から選択 (1)](#tag-situation-242)　・　[診療延期後 (1)](#tag-situation-243)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-244)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-245)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-246)　・　[身近な人への支援依頼 (1)](#tag-situation-247)　・　[身近な連絡先あり (1)](#tag-situation-248)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-249)　・　[睡眠不足 (1)](#tag-situation-250)　・　[世界イベント後 (1)](#tag-situation-251)　・　[成人 (4)](#tag-situation-252)　・　[成人・返済支援の選択 (1)](#tag-situation-253)　・　[成人した子 (2)](#tag-situation-254)　・　[成人の種族偏見に触れる (1)](#tag-situation-255)　・　[生活上の備え (1)](#tag-situation-256)　・　[青年・壮年 (5)](#tag-situation-257)　・　[青年・壮年・老年 (3)](#tag-situation-258)　・　[雪祭司・聖樹 (1)](#tag-situation-259)　・　[選択イベント (1101)](#tag-situation-260)　・　[前段で残留した人 (1)](#tag-situation-261)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-262)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-263)　・　[全年齢の循環器系エピソード (1)](#tag-situation-264)　・　[全年齢の食料不足 (1)](#tag-situation-265)　・　[全年齢の負傷後の痛み (1)](#tag-situation-266)　・　[組織・所属に言及 (175)](#tag-situation-267)　・　[組織離脱後 (1)](#tag-situation-268)　・　[相談・医療・休養 (1)](#tag-situation-269)　・　[相談・記録 (1)](#tag-situation-270)　・　[相談・記録・経路変更 (1)](#tag-situation-271)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-272)　・　[足場や荷の異常 (1)](#tag-situation-273)　・　[退会後の関係 (1)](#tag-situation-274)　・　[退職選択 (1)](#tag-situation-275)　・　[大いなる静謐後 (1)](#tag-situation-276)　・　[大学課程の継続 (1)](#tag-situation-277)　・　[大学課程の修了 (1)](#tag-situation-278)　・　[短期雇用 (1)](#tag-situation-279)　・　[短期雇用と現場危険 (1)](#tag-situation-280)　・　[地域の供給不安定 (1)](#tag-situation-281)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-282)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-283)　・　[地域学習会・独学の選択 (1)](#tag-situation-284)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-285)　・　[仲間の捜索 (1)](#tag-situation-286)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-287)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-288)　・　[通学していない (1)](#tag-situation-289)　・　[通学中 (1)](#tag-situation-290)　・　[通行止め・迂回 (1)](#tag-situation-291)　・　[天災・戦乱による避難中 (1)](#tag-situation-292)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-293)　・　[店舗からの排斥集会 (1)](#tag-situation-294)　・　[転居後の近隣交流 (1)](#tag-situation-295)　・　[都市街区での襲撃 (1)](#tag-situation-296)　・　[動的表示条件 (691)](#tag-situation-297)　・　[動的本文 (32)](#tag-situation-298)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-299)　・　[同一都市の周縁区への転居 (1)](#tag-situation-300)　・　[同郷者との交流 (1)](#tag-situation-301)　・　[同行者との交流 (1)](#tag-situation-302)　・　[匿名動画の出所確認 (1)](#tag-situation-303)　・　[独立商業所属 (1)](#tag-situation-304)　・　[読み書きに困難がある (1)](#tag-situation-305)　・　[日雇い (1)](#tag-situation-306)　・　[乳児の成長 (1)](#tag-situation-307)　・　[任意応募・採用選考 (1)](#tag-situation-308)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-309)　・　[年齢：35歳以上 (2)](#tag-situation-310)　・　[年齢：児童 (975)](#tag-situation-311)　・　[年齢：少年 (1211)](#tag-situation-312)　・　[年齢：青年 (2381)](#tag-situation-313)　・　[年齢：壮年 (2321)](#tag-situation-314)　・　[年齢：乳児 (20)](#tag-situation-315)　・　[年齢：幼児 (37)](#tag-situation-316)　・　[年齢：老年 (1524)](#tag-situation-317)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-318)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-319)　・　[配給・食料不足 (1)](#tag-situation-320)　・　[配給・寝床・診療案内 (1)](#tag-situation-321)　・　[配給と地域支援 (1)](#tag-situation-322)　・　[配給登録 (1)](#tag-situation-323)　・　[配偶者との死別 (1)](#tag-situation-324)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-325)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-326)　・　[班間の点検記録 (1)](#tag-situation-327)　・　[班内の技能伝達 (1)](#tag-situation-328)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-329)　・　[避難中 (1)](#tag-situation-330)　・　[非感染者 (1)](#tag-situation-331)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-332)　・　[付き添い依頼・受診延期 (1)](#tag-situation-333)　・　[付き添い相談 (1)](#tag-situation-334)　・　[扶養中の子 (2)](#tag-situation-335)　・　[扶養中の子の看病 (1)](#tag-situation-336)　・　[負傷後の職務調整 (1)](#tag-situation-337)　・　[部品寸法 (1)](#tag-situation-338)　・　[復旧作業中の負傷 (1)](#tag-situation-339)　・　[粉塵への接触懸念 (1)](#tag-situation-340)　・　[粉塵曝露 (2)](#tag-situation-341)　・　[兵士の消息不明 (1)](#tag-situation-342)　・　[兵役招集 (1)](#tag-situation-343)　・　[別居・転居 (1)](#tag-situation-344)　・　[亡命・移住 (2)](#tag-situation-345)　・　[未診断の感染者 (1)](#tag-situation-346)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-347)　・　[未成年は養育者判断 (8)](#tag-situation-348)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-349)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-350)　・　[名前を知る相手 (1)](#tag-situation-351)　・　[夜間の世話 (1)](#tag-situation-352)　・　[友人との文通再開 (1)](#tag-situation-353)　・　[友人への恋心 (1)](#tag-situation-354)　・　[傭兵・護衛勤務 (1)](#tag-situation-355)　・　[傭兵隊の護衛契約 (1)](#tag-situation-356)　・　[傭兵隊の通過 (1)](#tag-situation-357)　・　[幼い子の養育 (1)](#tag-situation-358)　・　[用事の再開・再診 (1)](#tag-situation-359)　・　[養育者の視点 (1)](#tag-situation-360)　・　[離婚後の元配偶者の死 (1)](#tag-situation-361)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-362)　・　[離婚後の子育て・連絡 (1)](#tag-situation-363)　・　[龍門 (1)](#tag-situation-364)　・　[龍門の移動都市居住区 (1)](#tag-situation-365)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-366)　・　[龍門の商業街 (1)](#tag-situation-367)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-368)　・　[隣人との死別 (1)](#tag-situation-369)　・　[隣人との伝言再開 (1)](#tag-situation-370)　・　[隣人の消息不明 (1)](#tag-situation-371)　・　[隣人の生存確認 (1)](#tag-situation-372)　・　[連絡・休息の継続 (1)](#tag-situation-373)　・　[連絡先と家の用事の相談 (1)](#tag-situation-374)　・　[労務補償 (1)](#tag-situation-375)
 
 <a id="tag-situation-0"></a>
 ### 1072年以降は戦役後の導入文（1）
@@ -7483,7 +7494,7 @@
 - [sr_reunion_border_refugees](#event-sr_reunion_border_refugees) — 北方の鉱区から逃げてきたという感染者の一団が、村の入り口で立ち尽くしていると見張りから知らせが入った。誰も武器は持っておらず、足をひきずって仲間に肩…
 - [sr_intersect_hostage_sympathy](#event-sr_intersect_hostage_sympathy) — 哨戒任務中、立ち往生していた大型医療装甲車を包囲した。車体にはロドス・アイランドの紋章が刻まれており、白衣を着た医療スタッフたちが、荷台に積まれた感…
 - [sr_rhodes_to_reunion_turning_point](#event-sr_rhodes_to_reunion_turning_point) — 移動都市の路地裏で、正規軍と警官隊による感染者強制隔離区画の無差別掃討を目撃した。泣き叫ぶ子供や無抵抗の老人が銃床で殴り倒されている。しかし通信機か…
-- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新…
+- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — 紹介された募集日程を確かめ、BSWの本艦に設けられた採用試験の受付へ来た。甲板の向こうでは、射撃シミュレータの音と障害物走の掛け声が響いている。提示…
 - [sr_bsw_vip_escort_ambush](#event-sr_bsw_vip_escort_ambush) — 移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の…
 - [sr_bsw_davistown_debt_conflict](#event-sr_bsw_davistown_debt_conflict) — 衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援す…
 - [car_urs_academy_entry](#event-car_urs_academy_entry) — 巨大な軍用装甲列車や重工業都市の設計を手掛けるウルサス帝国科学院。硬質な鉄と源石動力の極致を追求するこの研究機関で、構造工学と動力回路の専門技師が募…
@@ -7724,7 +7735,7 @@
 - [daily_columbia_54](#event-daily_columbia_54) — 怪しげな製薬ベンチャーから、高額の日当と引き換えに未承認の鉱石病抑制アーツの新薬治験を提案された。契約書の免責条項の多さに背筋が凍った。
 - [daily_columbia_55](#event-daily_columbia_55) — 街のクリニックの前を通りかかると、医療保険の告知義務や審査基準の厳格化について告知板に張り出されていた。病歴ひとつで生活が脅かされかねない能力主義の…
 - [daily_columbia_56](#event-daily_columbia_56) — 感染者労働者の権利を守る草の根の互助会に参加した。不当解雇に対抗するための法的手続きのノウハウを仲間たちと共有した。
-- [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
+- [choice_columbia_03](#event-choice_columbia_03) — 配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机…
 - [daily_kazimierz_53](#event-daily_kazimierz_53) — 鉱石病の発症により表舞台のメジャーから追放され、薄暗い地下闘技場のチラシを見つめた。命を削って見世物になるしか道がないのかと唇を噛んだ。
 - [daily_kazimierz_54](#event-daily_kazimierz_54) — 地下で活動する「感染者騎士団」の秘密の支援集会に参加した。不当な奴隷契約に抗い、尊厳を求めて戦う仲間たちと固く手を取り合った。
 - [daily_kazimierz_55](#event-daily_kazimierz_55) — アリーナの金属探知機を通過する際、防具の下の源石結晶が反応しないか全身が強張った。何事もなく通過できた瞬間、どっと冷や汗が吹き出した。
@@ -7849,7 +7860,7 @@
 - [sr_rhodes_to_reunion_turning_point](#event-sr_rhodes_to_reunion_turning_point) — 移動都市の路地裏で、正規軍と警官隊による感染者強制隔離区画の無差別掃討を目撃した。泣き叫ぶ子供や無抵抗の老人が銃床で殴り倒されている。しかし通信機か…
 - [sr_bsw_rhodes_secondment](#event-sr_bsw_rhodes_secondment) — BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛に…
 - [sr_bsw_infected_squad_policy](#event-sr_bsw_infected_squad_policy) — 定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混…
-- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ…
+- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の分析能力が認められ、専任研究員への昇格面談に呼ばれた。希望する専門科と、これから担当したい仕事を尋ねられた。
 - [sr_rhine_diabolic_ethical_crossroad](#event-sr_rhine_diabolic_ethical_crossroad) — 深夜、立ち入り制限区画の地下ラボで『炎魔計画』の機密ファイルを目撃してしまった。そこには、幼い感染児の体内に活性源石を強制作動させ、生体兵器へと造り…
 - [sr_rhine_rhodes_asylum](#event-sr_rhine_rhodes_asylum) — トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格…
 - [car_urs_officer_entry](#event-car_urs_officer_entry) — 要塞司令部の豪奢な執務室で、貴族将校たちが書類に目を落としていた。ウルサス帝国軍の指揮官枠――それは貴族の血筋と巨額の軍資金を握る選民だけの特権であ…
@@ -7907,7 +7918,7 @@
 - [choice_lungmen_03](#event-choice_lungmen_03) — 近衛局から「街に潜伏する不法滞在者や未登録感染者の情報提供者に高額の報奨金を出す」という通達が回ってきた。最近越してきた隣家の住人は、夜間にこっそり…
 - [daily_ursus_55](#event-daily_ursus_55) — 廃坑の奥深くに作られた感染者たちの隠れ処で、わずかな焚き火を囲んだ。互いの身の上を語り合い、生き抜くための知恵を共有した。
 - [daily_ursus_62](#event-daily_ursus_62) — 街角のレンガ壁に、憲兵隊による「不穏分子と隠れ感染者を密告せよ」という赤い墨の張り紙が何枚も重ねて貼られていた。道行く人々は目を伏せて早足に通り過ぎ…
-- [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
+- [choice_columbia_03](#event-choice_columbia_03) — 配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机…
 - [daily_kazimierz_54](#event-daily_kazimierz_54) — 地下で活動する「感染者騎士団」の秘密の支援集会に参加した。不当な奴隷契約に抗い、尊厳を求めて戦う仲間たちと固く手を取り合った。
 - [choice_kazimierz_02](#event-choice_kazimierz_02) — 下層区の違法地下リングで、怪我を負った感染者奴隷騎士が無理やり獰猛な猛獣と戦わされようとしていた。友好的な知人が観客席で泣き崩れている。
 - [family_spouse_oripathy_disclosure](#event-family_spouse_oripathy_disclosure) — 夜更け、薄暗い灯りの下で配偶者がゆっくりと袖をまくった。肌の下に、小さな黒い結晶が浮き出ている。「一緒になる前から、鉱石病だと診断されていた。打ち明…
@@ -8942,10 +8953,10 @@
 - [daily_columbia_63](#event-daily_columbia_63) — 開拓地の酒場で、保安官が「大企業がこの区画の採掘権を買った。文句がある奴は荒野へ放り出す」と銃の手入れをしながら冷たく言い放った。
 - [choice_columbia_01](#event-choice_columbia_01) — 独自に考案したアーツ回路の特許に対し、巨大複合企業（メガコープ）から身に覚えのない特許侵害訴訟が起こされた。法外な和解金で技術を丸ごと奪い取る企みだ…
 - [choice_columbia_02](#event-choice_columbia_02) — 開拓地の未踏の渓谷で、良質な高純度源石の未発見の鉱脈を偶然見つけた。州政府の登記所に採掘権を申請すれば巨万の富が得られるが、地元の強盗団が嗅ぎつけて…
-- [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
+- [choice_columbia_03](#event-choice_columbia_03) — 配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机…
 - [choice_columbia_04](#event-choice_columbia_04) — 繁華街の広場で、実験中の大型輸送ドローンが制御不能に陥り、群衆の上へ墜落しかけた。管制コンソールがパニックに陥る中、手動オーバーライドの緊急操作が求…
 - [choice_columbia_05](#event-choice_columbia_05) — 新設された郊外の巨大モールに、自分の飲食店または雑貨店を出店する一等地が空いた。保証金と内装費は高額だが、当たれば莫大な日銭が入る。
-- [choice_columbia_06](#event-choice_columbia_06) — 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚…
+- [choice_columbia_06](#event-choice_columbia_06) — BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練…
 - [choice_columbia_07](#event-choice_columbia_07) — 大平原を巨大な竜巻（トルネード）が直撃し、開拓村の納屋や家屋が数棟吹き飛ばされた。住民たちが瓦礫の片付けと負傷者の救護に奔走している。
 - [choice_columbia_08](#event-choice_columbia_08) — 同僚の労働者が、給金を担保にした短期高利貸付で法外な利息を背負わされ、給料日に全額巻き上げられて生活破綻寸前に追い込まれていた。民間の取り立て屋が職…
 - [choice_columbia_09](#event-choice_columbia_09) — 大陸横断回廊を舞台に、改造車両や運搬車で数百マイルの荒野を走破する過酷な「フロンティア・ラリー」が開催された。優勝者には巨額の賞金とスポンサー契約が…
@@ -11626,7 +11637,7 @@
 - [f109](#event-f109) — 就労中 新しい働き口に書類を出すと、出身の分類を上から確認し直すと言われた。誰に聞いてもはっきりした理由は返ってこず、働き始める日だけがずるずると先…
 - [f110](#event-f110) — 子あり 眠る前の子どもに、うちの家族が辿ってきた昔の話を聞かせた。まだその子が生まれる前の町の匂いや暮らしぶりを語るうち、「その時どこに住んでいたの…
 - [choice_columbia_01](#event-choice_columbia_01) — 独自に考案したアーツ回路の特許に対し、巨大複合企業（メガコープ）から身に覚えのない特許侵害訴訟が起こされた。法外な和解金で技術を丸ごと奪い取る企みだ…
-- [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
+- [choice_columbia_03](#event-choice_columbia_03) — 配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机…
 - [confinement_wait](#event-confinement_wait) — 収容中 朝の点呼が終わると、灰色の壁に背を預けて次の合図を待った。今日が何月何日なのか思い出すのに、ずいぶん時間がかかった。 隣の寝床の住人と、外に…
 - [confinement_letter](#event-confinement_letter) — 外にいる人へ宛てて、今の居場所と無事だけを知らせる手紙を書いた。ほんとうは書きたいことが山ほどあったのに、検閲を通るよう短い文面に押し込めた。 外か…
 - [confinement_learning](#event-confinement_learning) — 同じ部屋で暮らす年長者から、これまで読めなかった難しい字を一つ教わった。翌日はお礼代わりに、自分が仕事で覚えた暗算のコツを教えた。 包み紙の白い裏側…
@@ -11909,7 +11920,7 @@
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 
 <a id="tag-situation-260"></a>
-### 選択イベント（1097）
+### 選択イベント（1101）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -11987,6 +11998,7 @@
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 - [fam_mafia](#event-fam_mafia) — ファミリーの下働きで最初の夜を終えると、奥の部屋で年長者が革張りの帳簿をパタンと閉じた。「いいか、表で喋っていいことと、墓まで持っていくことがある」…
 - [fam_inherit](#event-fam_inherit) — 商いを切り盛りする親から、そろそろ店の仕事を手伝わないかと切り出された。まだ学業を続けたい気持ちもあるが、年々白髪の増える親の横顔を見ると簡単には断…
+- [fam_business_handover](#event-fam_business_handover) — 閉店後、親が古い帳簿と店の鍵を並べた。「これからはお前に任せたい」と言う声には、疲れとためらいが混じっていた。仕入れの支払いや日々の赤字も引き受ける…
 - [parent_work_news](#event-parent_work_news) — {parentName}から封書が届き、長く続けた{parentOldWork}を辞めて{parentWork}に移ったと知らされた。少し震えた文字…
 - [parent_household_move_news](#event-parent_household_move_news) — 親から転居の便りが届いた。住み慣れた{parentHouseholdFrom}を引き払い、きょうだいと一緒に{parentHouseholdTo}へ…
 - [parent_treatment_review](#event-parent_treatment_review) — 実家の台所事情がいよいよ苦しくなり、{parentName}の療養費を出し続けるのが限界に近づいていた。病院の窓口で支払いの見通しを問われ、親は重い…
@@ -12178,10 +12190,10 @@
 - [choice_laterano_10](#event-choice_laterano_10) — 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 - [choice_columbia_01](#event-choice_columbia_01) — 独自に考案したアーツ回路の特許に対し、巨大複合企業（メガコープ）から身に覚えのない特許侵害訴訟が起こされた。法外な和解金で技術を丸ごと奪い取る企みだ…
 - [choice_columbia_02](#event-choice_columbia_02) — 開拓地の未踏の渓谷で、良質な高純度源石の未発見の鉱脈を偶然見つけた。州政府の登記所に採掘権を申請すれば巨万の富が得られるが、地元の強盗団が嗅ぎつけて…
-- [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
+- [choice_columbia_03](#event-choice_columbia_03) — 配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机…
 - [choice_columbia_04](#event-choice_columbia_04) — 繁華街の広場で、実験中の大型輸送ドローンが制御不能に陥り、群衆の上へ墜落しかけた。管制コンソールがパニックに陥る中、手動オーバーライドの緊急操作が求…
 - [choice_columbia_05](#event-choice_columbia_05) — 新設された郊外の巨大モールに、自分の飲食店または雑貨店を出店する一等地が空いた。保証金と内装費は高額だが、当たれば莫大な日銭が入る。
-- [choice_columbia_06](#event-choice_columbia_06) — 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚…
+- [choice_columbia_06](#event-choice_columbia_06) — BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練…
 - [choice_columbia_07](#event-choice_columbia_07) — 大平原を巨大な竜巻（トルネード）が直撃し、開拓村の納屋や家屋が数棟吹き飛ばされた。住民たちが瓦礫の片付けと負傷者の救護に奔走している。
 - [choice_columbia_08](#event-choice_columbia_08) — 同僚の労働者が、給金を担保にした短期高利貸付で法外な利息を背負わされ、給料日に全額巻き上げられて生活破綻寸前に追い込まれていた。民間の取り立て屋が職…
 - [choice_columbia_09](#event-choice_columbia_09) — 大陸横断回廊を舞台に、改造車両や運搬車で数百マイルの荒野を走破する過酷な「フロンティア・ラリー」が開催された。優勝者には巨額の賞金とスポンサー契約が…
@@ -12657,20 +12669,22 @@
 - [sr_rhodes_to_reunion_turning_point](#event-sr_rhodes_to_reunion_turning_point) — 移動都市の路地裏で、正規軍と警官隊による感染者強制隔離区画の無差別掃討を目撃した。泣き叫ぶ子供や無抵抗の老人が銃床で殴り倒されている。しかし通信機か…
 - [sr_reunion_to_rhodes_sanctuary](#event-sr_reunion_to_rhodes_sanctuary) — 組織の瓦解と激しい内紛の果て、極寒の荒野で吹雪に巻かれて倒れ伏した。全身の源石結晶が激痛を放ち、意識が遠のく中、巨大な陸上移動艦の轟音とともに白い防…
 - [sr_reunion_turncoat_rehabilitation](#event-sr_reunion_turncoat_rehabilitation) — ロドス本艦での投薬と療養によって体調が劇的に回復した。過去の経歴審査を終えた人事担当者から「船内で働きながら、新しい人生を歩み直してみないか」と更生…
-- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新…
+- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — 紹介された募集日程を確かめ、BSWの本艦に設けられた採用試験の受付へ来た。甲板の向こうでは、射撃シミュレータの音と障害物走の掛け声が響いている。提示…
 - [sr_bsw_convoy_protection](#event-sr_bsw_convoy_protection) — 荒野を渡る鉱石採掘企業の大型輸送コンボイの護衛任務中、突如として砂塵の向こうから武装した略奪者集団が急襲してきた。先頭の車両が被弾し、激しい銃撃戦が…
 - [sr_bsw_promotion_tactical](#event-sr_bsw_promotion_tactical) — 見習い期間中の優れた実績が評価され、BSWクルビア本部から正規戦術オペレーターへの昇格審査に召集された。高難度の実地想定演習と銃器ライセンス更新が課…
 - [sr_bsw_vip_escort_ambush](#event-sr_bsw_vip_escort_ambush) — 移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の…
+- [sr_bsw_specialist_offer_review](#event-sr_bsw_specialist_offer_review) — BSW本部の面談室で、特務担当への辞令案を差し出された。報酬は上がるが、要人警護の責任も重くなる。担当者は書類を机に置き、返事を待った。
 - [sr_bsw_rhodes_secondment](#event-sr_bsw_rhodes_secondment) — BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛に…
 - [sr_bsw_davistown_debt_conflict](#event-sr_bsw_davistown_debt_conflict) — 衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援す…
 - [sr_bsw_infected_squad_policy](#event-sr_bsw_infected_squad_policy) — 定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混…
 - [sr_bsw_secondment_posting_review](#event-sr_bsw_secondment_posting_review) — ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生か…
 - [sr_rhine_recruitment_exam](#event-sr_rhine_recruitment_exam) — クルビア連邦トリマウンツにそびえるライン生命本社ビル。テラ最先端の科学技術と莫大な資本が集うこの学術コンソーシアムで、研究実習生の公募選考が行われて…
-- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ…
+- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の分析能力が認められ、専任研究員への昇格面談に呼ばれた。希望する専門科と、これから担当したい仕事を尋ねられた。
 - [sr_rhine_patent_breakthrough](#event-sr_rhine_patent_breakthrough) — 数か月に及ぶ実験の末、世界初となる新素材の合成と高効率反応モデルの構築に成功した。学会での注目と特許申請の手続きが目の前に控えている。
-- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの傑出した学術業績と特許取得がクリステン総括の目に留まり、自らの研究室と莫大な予算枠を持つ主任研究員（J 40）への昇格面談に呼ばれた。
+- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの研究成果が認められ、主任研究員への昇格面談に呼ばれた。研究室と予算を預かる代わりに、同僚や実験の安全にも責任を持つという。書類の端を押さえ…
 - [sr_rhine_diabolic_ethical_crossroad](#event-sr_rhine_diabolic_ethical_crossroad) — 深夜、立ち入り制限区画の地下ラボで『炎魔計画』の機密ファイルを目撃してしまった。そこには、幼い感染児の体内に活性源石を強制作動させ、生体兵器へと造り…
 - [sr_rhine_rhodes_asylum](#event-sr_rhine_rhodes_asylum) — トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格…
+- [sr_rhine_after_asylum_livelihood](#event-sr_rhine_after_asylum_livelihood) — 研究室を離れてから、細かな出費ばかりが帳面に増えていた。以前の実験ノートをしまい、今の土地でできる仕事を探すことにした。
 - [sr_rhine_359_transmitter_consent](#event-sr_rhine_359_transmitter_consent) — トリマウンツ郊外の359号基地にて、アーツ応用課のドロシー主任が進める「伝達物質」の大規模治験に立ち会った。神経信号を結合して人々の意識を共有し、能…
 - [sr_rhine_lone_trail_sky_horizon](#event-sr_rhine_lone_trail_sky_horizon) — 1099年晩秋、トリマウンツ上空。クリステン統括が主導した『ホライズンアーク計画』が極大の光を放ち、フォーカスジェネレーターが天空を穿った。何千年も…
 - [sr_rhine_post_lone_trail_career_review](#event-sr_rhine_post_lone_trail_career_review) — トリマウンツの空にあの光が走ってから、季節が巡った。研究室には残った装置と書類が積まれ、担当者たちは研究を続けている。ここで仕事を続けるか、職員証を…
@@ -12708,7 +12722,7 @@
 - [car_sar_warrior_entry](#event-car_sar_warrior_entry) — ジャングルの熱気と歓声が渦巻くアカフラ。部族の力比べ大祭で、己の肉体一本で戦う『大勇士』の挑戦者を募っていた。難しい理屈は一切不要、ただ目の前の猛者…
 - [car_sam_priest_entry](#event-car_sam_priest_entry) — 氷結した古代の巨木がそびえるサーミの深き森。部族を導き、巨獣と森の意志を読み取る『雪祀（雪祭司）』の継承者が選ばれようとしていた。文明の機械を排し、…
 - [car_sam_warrior_entry](#event-car_sam_warrior_entry) — 北の果てなき氷原から侵食する正体不明の存在――『悪魔』。その脅威を文明圏から隔離するため、木々に傷を刻み境界を守護する『樹痕の戦士』。命の保証はなく…
-- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — 雪に閉ざされた聖山イェラグを近代化へ導く、シルバーアッシュ総長率いる『カランド貿易』。伝統に固執する三大家族や曼珠院の保守派と対峙しながら、最新式の…
+- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — カランド貿易から案内された面接会場へ来た。受付には輸送路の警備や貨物の扱いを説明する紙が並び、武装社員の募集担当者が応募者の名を呼んでいる。慣れ親し…
 - [car_kje_monk_entry](#event-car_kje_monk_entry) — カランドの女神を祀る神聖なる曼珠院。古くからの信仰を守り、聖山への立ち入りを監視する護衛僧の入門式が開かれていた。俗世の銃器を退け、杖と信仰の祈りで…
 - [car_kazdel_mil_entry](#event-car_kazdel_mil_entry) — 瓦礫と怨嗟が渦巻くカズデル。摂政王テレシス率いる軍事委員会が、ロンディニウム遠征とサルカズの復讐を果たすべく兵を集めていた。何千年も虐げられてきたサ…
 - [car_kazdel_bone_entry](#event-car_kazdel_bone_entry) — 巨大な魔獣の頭骨や鉱石病の遺骨から武器や触媒を削り出す、カズデル伝統の『骨鍛冶（ボーンスミス）』。源石アーツの呪術と繊細な彫刻工芸を組み合わせる、サ…
@@ -12861,6 +12875,7 @@
 - [inter_laterano_resident_sarkaz_review_v76](#event-inter_laterano_resident_sarkaz_review_v76) — 居住登録の更新で窓口へ書類を出すと、係員は「サルカズ」の欄で目を細め、奥の棚から分厚い別帳面を引っ張り出してきた。「記録を照合するから追って沙汰を待…
 - [inter_prior_contact_followup_v76](#event-inter_prior_contact_followup_v76) — 数年前に窓口でたらい回しにされ、曖昧な理由で待たされた一件が、新しい手続きの場でふいにぶり返した。当時の控えを突きつけて筋を通すか、蒸し返さずに今日…
 - [inter_laterano_sarkaz_route_review_v87](#event-inter_laterano_sarkaz_route_review_v87) — 以前、ラテラーノ方面への荷運びについて通行資格を問い合わせてから、もう二年以上が経つ。いまだに色よい返事はなく、返事を待ちながら今の暮らしを続けてき…
+- [work_known_opening_review](#event-work_known_opening_review) — （動的本文）
 - [v77_family_rumor](#event-v77_family_rumor) — 家の大人たちが食卓で、感染者やサルカズをひとくくりにして悪しざまに喋っていた。昼間に通りで見かけたあの人の横顔を思い出すと、大人の言うことをそのまま…
 - [v77_family_solidarity_and_caution](#event-v77_family_solidarity_and_caution) — （動的本文）
 - [v77_written_application](#event-v77_written_application) — 今の仕事を続けながら、もう少し条件のいい働き口の募集を見つけた。だが応募用紙の職歴欄や保証人の欄を前にして、何と書けばいいのかペンが止まった。
@@ -13052,7 +13067,7 @@
 - [wld_rhodes](#event-wld_rhodes) — ロドスの支援隊が通り沿いに診療場所を設けた。受付では順番と薬の在庫を確かめており、診察を待つ人の列ができている。
 - [f85](#event-f85) — 仕入れ先の店主が、あるファミリーの名を耳にした途端にぱたりと帳面を閉じた。あんたの商いには関わりのない話だと言われたが、背中に冷たいものを感じながら…
 - [omerta_black_ribbon_daily](#event-omerta_black_ribbon_daily) — 朝、自宅のドアノブに血のついた黒いリボンが結びつけられていた。通りを行き交うファミリーの若衆たちが自分と視線を合わせず足早に通り過ぎていくのを見て、…
-- [choice_columbia_06](#event-choice_columbia_06) — 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚…
+- [choice_columbia_06](#event-choice_columbia_06) — BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練…
 - [daily_siracusa_41](#event-daily_siracusa_41) — 伝統料理店の支店で、仕込みの合間に「ファミリーへの納品料理は絶対に冷ますな」という厨房の鉄則を改めて叩き込まれた。
 - [daily_siracusa_43](#event-daily_siracusa_43) — かつて街を仕切っていた古いファミリーの屋敷が取り壊され、新しい近代的な集合住宅の工事が始まっていた。時代の移り変わりを実感する。
 - [daily_siracusa_44](#event-daily_siracusa_44) — シラクーザの裏通りにある無認可の診療所で、咳き込む感染者の仲間たちと薬の配給を待った。ファミリーの目が届かない地下水道近くで、細々と命を繋いでいる。
@@ -13328,7 +13343,7 @@
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
 <a id="tag-situation-297"></a>
-### 動的表示条件（687）
+### 動的表示条件（691）
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
@@ -13354,6 +13369,7 @@
 - [disaster_displacement_after](#event-disaster_displacement_after) — （動的本文）
 - [old_followup](#event-old_followup) — 仕事の時間を減らしてから何年かが過ぎた。体をいたわる暮らしには慣れたものの、懐具合や体力の衰えは年々変わっていく。職場から、来期はどうするか声がかか…
 - [family_allowance_support](#event-family_allowance_support) — 実家の親から定期の便りと小包が届いた。手紙には近況を気遣う言葉とともに、何かと物入りの多い時期だろうからと、日々の暮らしを支えるための仕送りの為替が…
+- [fam_business_handover](#event-fam_business_handover) — 閉店後、親が古い帳簿と店の鍵を並べた。「これからはお前に任せたい」と言う声には、疲れとためらいが混じっていた。仕入れの支払いや日々の赤字も引き受ける…
 - [fam_child_care](#event-fam_child_care) — 診療所からの帰り道、{infectedKid}の薬袋を提げて歩いた。子どもの体を守るための出費と、家の毎月の暮らし向きをどう両立させるか、いつも頭か…
 - [f25](#event-f25) — 別れたあとの帰り道も、{friendName}の声がずっと耳の奥に残っていた。気楽な友人のままでいたい気持ちと、もっと特別な距離に踏み込みたい気持ち…
 - [vic_war](#event-vic_war) — ロンディニウムの居住区まで激しい砲撃の音が迫り、窓ガラスがビリビリと震え続けている。昨日まで通れた大通りが今日は瓦礫で塞がり、飲み水と今夜の寝床を確…
@@ -13454,8 +13470,8 @@
 - [daily_columbia_41](#event-daily_columbia_41) — 担当する回路の技術説明をまとめ、特許出願に向けた職場の検討会へ提出した。部品の構成と検証結果を説明し、資料作成の手当を受け取った。
 - [daily_columbia_42](#event-daily_columbia_42) — 職場で取り扱う研究・技術資料の秘密保持条件を読み直した。更新書類の説明を受け、持ち出せる資料と保管先を同僚と確かめた。
 - [daily_columbia_43](#event-daily_columbia_43) — 職場の改善提案会で、担当設備の運用案を説明した。質問への回答を持ち帰り、次の試作に向けて同僚と資料を整えた。
-- [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
-- [choice_columbia_06](#event-choice_columbia_06) — 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚…
+- [choice_columbia_03](#event-choice_columbia_03) — 配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机…
+- [choice_columbia_06](#event-choice_columbia_06) — BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練…
 - [choice_iberia_telescope_observation_followup](#event-choice_iberia_telescope_observation_followup) — 修理して手元に残した望遠鏡は、しばらく布をかけたまま置いてあった。雲の少ない夜、窓の外を見て、久しぶりに筒を外へ向けることにした。
 - [education_return_path](#event-education_return_path) — 途中で学び舎を離れたか、そもそも机を並べる機会がないまま歳月が過ぎた。今の読み書きの力と懐具合で、もう一度学べる場所がないか探してみた。
 - [education_paused_life](#event-education_paused_life) — 家計の都合や暮らしの混乱から、学校の席を休学にしてしばらく経った。同年代の生徒たちが鞄を抱えて通りを行き交う姿を見送りながら、この休みをどう過ごして…
@@ -13683,20 +13699,22 @@
 - [sr_rhodes_to_reunion_turning_point](#event-sr_rhodes_to_reunion_turning_point) — 移動都市の路地裏で、正規軍と警官隊による感染者強制隔離区画の無差別掃討を目撃した。泣き叫ぶ子供や無抵抗の老人が銃床で殴り倒されている。しかし通信機か…
 - [sr_reunion_to_rhodes_sanctuary](#event-sr_reunion_to_rhodes_sanctuary) — 組織の瓦解と激しい内紛の果て、極寒の荒野で吹雪に巻かれて倒れ伏した。全身の源石結晶が激痛を放ち、意識が遠のく中、巨大な陸上移動艦の轟音とともに白い防…
 - [sr_reunion_turncoat_rehabilitation](#event-sr_reunion_turncoat_rehabilitation) — ロドス本艦での投薬と療養によって体調が劇的に回復した。過去の経歴審査を終えた人事担当者から「船内で働きながら、新しい人生を歩み直してみないか」と更生…
-- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新…
+- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — 紹介された募集日程を確かめ、BSWの本艦に設けられた採用試験の受付へ来た。甲板の向こうでは、射撃シミュレータの音と障害物走の掛け声が響いている。提示…
 - [sr_bsw_convoy_protection](#event-sr_bsw_convoy_protection) — 荒野を渡る鉱石採掘企業の大型輸送コンボイの護衛任務中、突如として砂塵の向こうから武装した略奪者集団が急襲してきた。先頭の車両が被弾し、激しい銃撃戦が…
 - [sr_bsw_promotion_tactical](#event-sr_bsw_promotion_tactical) — 見習い期間中の優れた実績が評価され、BSWクルビア本部から正規戦術オペレーターへの昇格審査に召集された。高難度の実地想定演習と銃器ライセンス更新が課…
 - [sr_bsw_vip_escort_ambush](#event-sr_bsw_vip_escort_ambush) — 移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の…
+- [sr_bsw_specialist_offer_review](#event-sr_bsw_specialist_offer_review) — BSW本部の面談室で、特務担当への辞令案を差し出された。報酬は上がるが、要人警護の責任も重くなる。担当者は書類を机に置き、返事を待った。
 - [sr_bsw_rhodes_secondment](#event-sr_bsw_rhodes_secondment) — BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛に…
 - [sr_bsw_davistown_debt_conflict](#event-sr_bsw_davistown_debt_conflict) — 衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援す…
 - [sr_bsw_infected_squad_policy](#event-sr_bsw_infected_squad_policy) — 定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混…
 - [sr_bsw_secondment_posting_review](#event-sr_bsw_secondment_posting_review) — ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生か…
 - [sr_rhine_recruitment_exam](#event-sr_rhine_recruitment_exam) — クルビア連邦トリマウンツにそびえるライン生命本社ビル。テラ最先端の科学技術と莫大な資本が集うこの学術コンソーシアムで、研究実習生の公募選考が行われて…
-- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ…
+- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の分析能力が認められ、専任研究員への昇格面談に呼ばれた。希望する専門科と、これから担当したい仕事を尋ねられた。
 - [sr_rhine_patent_breakthrough](#event-sr_rhine_patent_breakthrough) — 数か月に及ぶ実験の末、世界初となる新素材の合成と高効率反応モデルの構築に成功した。学会での注目と特許申請の手続きが目の前に控えている。
-- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの傑出した学術業績と特許取得がクリステン総括の目に留まり、自らの研究室と莫大な予算枠を持つ主任研究員（J 40）への昇格面談に呼ばれた。
+- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの研究成果が認められ、主任研究員への昇格面談に呼ばれた。研究室と予算を預かる代わりに、同僚や実験の安全にも責任を持つという。書類の端を押さえ…
 - [sr_rhine_diabolic_ethical_crossroad](#event-sr_rhine_diabolic_ethical_crossroad) — 深夜、立ち入り制限区画の地下ラボで『炎魔計画』の機密ファイルを目撃してしまった。そこには、幼い感染児の体内に活性源石を強制作動させ、生体兵器へと造り…
 - [sr_rhine_rhodes_asylum](#event-sr_rhine_rhodes_asylum) — トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格…
+- [sr_rhine_after_asylum_livelihood](#event-sr_rhine_after_asylum_livelihood) — 研究室を離れてから、細かな出費ばかりが帳面に増えていた。以前の実験ノートをしまい、今の土地でできる仕事を探すことにした。
 - [sr_rhine_359_transmitter_consent](#event-sr_rhine_359_transmitter_consent) — トリマウンツ郊外の359号基地にて、アーツ応用課のドロシー主任が進める「伝達物質」の大規模治験に立ち会った。神経信号を結合して人々の意識を共有し、能…
 - [sr_rhine_lone_trail_sky_horizon](#event-sr_rhine_lone_trail_sky_horizon) — 1099年晩秋、トリマウンツ上空。クリステン統括が主導した『ホライズンアーク計画』が極大の光を放ち、フォーカスジェネレーターが天空を穿った。何千年も…
 - [sr_rhine_post_lone_trail_career_review](#event-sr_rhine_post_lone_trail_career_review) — トリマウンツの空にあの光が走ってから、季節が巡った。研究室には残った装置と書類が積まれ、担当者たちは研究を続けている。ここで仕事を続けるか、職員証を…
@@ -13734,7 +13752,7 @@
 - [car_sar_warrior_entry](#event-car_sar_warrior_entry) — ジャングルの熱気と歓声が渦巻くアカフラ。部族の力比べ大祭で、己の肉体一本で戦う『大勇士』の挑戦者を募っていた。難しい理屈は一切不要、ただ目の前の猛者…
 - [car_sam_priest_entry](#event-car_sam_priest_entry) — 氷結した古代の巨木がそびえるサーミの深き森。部族を導き、巨獣と森の意志を読み取る『雪祀（雪祭司）』の継承者が選ばれようとしていた。文明の機械を排し、…
 - [car_sam_warrior_entry](#event-car_sam_warrior_entry) — 北の果てなき氷原から侵食する正体不明の存在――『悪魔』。その脅威を文明圏から隔離するため、木々に傷を刻み境界を守護する『樹痕の戦士』。命の保証はなく…
-- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — 雪に閉ざされた聖山イェラグを近代化へ導く、シルバーアッシュ総長率いる『カランド貿易』。伝統に固執する三大家族や曼珠院の保守派と対峙しながら、最新式の…
+- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — カランド貿易から案内された面接会場へ来た。受付には輸送路の警備や貨物の扱いを説明する紙が並び、武装社員の募集担当者が応募者の名を呼んでいる。慣れ親し…
 - [car_kje_monk_entry](#event-car_kje_monk_entry) — カランドの女神を祀る神聖なる曼珠院。古くからの信仰を守り、聖山への立ち入りを監視する護衛僧の入門式が開かれていた。俗世の銃器を退け、杖と信仰の祈りで…
 - [car_kazdel_mil_entry](#event-car_kazdel_mil_entry) — 瓦礫と怨嗟が渦巻くカズデル。摂政王テレシス率いる軍事委員会が、ロンディニウム遠征とサルカズの復讐を果たすべく兵を集めていた。何千年も虐げられてきたサ…
 - [car_kazdel_bone_entry](#event-car_kazdel_bone_entry) — 巨大な魔獣の頭骨や鉱石病の遺骨から武器や触媒を削り出す、カズデル伝統の『骨鍛冶（ボーンスミス）』。源石アーツの呪術と繊細な彫刻工芸を組み合わせる、サ…
@@ -13855,6 +13873,7 @@
 - [inter_laterano_resident_sarkaz_review_v76](#event-inter_laterano_resident_sarkaz_review_v76) — 居住登録の更新で窓口へ書類を出すと、係員は「サルカズ」の欄で目を細め、奥の棚から分厚い別帳面を引っ張り出してきた。「記録を照合するから追って沙汰を待…
 - [inter_prior_contact_followup_v76](#event-inter_prior_contact_followup_v76) — 数年前に窓口でたらい回しにされ、曖昧な理由で待たされた一件が、新しい手続きの場でふいにぶり返した。当時の控えを突きつけて筋を通すか、蒸し返さずに今日…
 - [inter_laterano_sarkaz_route_review_v87](#event-inter_laterano_sarkaz_route_review_v87) — 以前、ラテラーノ方面への荷運びについて通行資格を問い合わせてから、もう二年以上が経つ。いまだに色よい返事はなく、返事を待ちながら今の暮らしを続けてき…
+- [work_known_opening_review](#event-work_known_opening_review) — （動的本文）
 - [v77_family_solidarity_and_caution](#event-v77_family_solidarity_and_caution) — （動的本文）
 - [v77_written_application](#event-v77_written_application) — 今の仕事を続けながら、もう少し条件のいい働き口の募集を見つけた。だが応募用紙の職歴欄や保証人の欄を前にして、何と書けばいいのかペンが止まった。
 - [v77_prejudice_infected_workplace](#event-v77_prejudice_infected_workplace) — 鉱石病と診断されたばかりの働き手が、同じ現場に入ることになった。休憩室では「源石の粉とあいつ、どっちが危ないんだ」と心ない冗談が飛び交い、同僚たちが…
@@ -14018,7 +14037,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-situation-298"></a>
-### 動的本文（31）
+### 動的本文（32）
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
 - [nat](#event-nat) — （動的本文）
@@ -14034,6 +14053,7 @@
 - [daily_rhodes_07](#event-daily_rhodes_07) — （動的本文）
 - [daily_rhodes_60](#event-daily_rhodes_60) — （動的本文）
 - [sr_siracusa_trade_followup](#event-sr_siracusa_trade_followup) — （動的本文）
+- [work_known_opening_review](#event-work_known_opening_review) — （動的本文）
 - [v77_family_solidarity_and_caution](#event-v77_family_solidarity_and_caution) — （動的本文）
 - [v87_hardline_sarkaz_employer_review](#event-v87_hardline_sarkaz_employer_review) — （動的本文）
 - [v78_prejudice_to_patient](#event-v78_prejudice_to_patient) — （動的本文）
@@ -16293,7 +16313,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-situation-313"></a>
-### 年齢：青年（2378）
+### 年齢：青年（2381）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -16345,6 +16365,7 @@
 - [family_separation](#event-family_separation) — 自分の稼ぎを家に入れるようになってしばらく経った。このまま家族と同じ財布で暮らすか、自分の所帯や収支を分けるか、身の振り方を話し合った。 家の借金は…
 - [family_allowance_support](#event-family_allowance_support) — 実家の親から定期の便りと小包が届いた。手紙には近況を気遣う言葉とともに、何かと物入りの多い時期だろうからと、日々の暮らしを支えるための仕送りの為替が…
 - [fam_inherit](#event-fam_inherit) — 商いを切り盛りする親から、そろそろ店の仕事を手伝わないかと切り出された。まだ学業を続けたい気持ちもあるが、年々白髪の増える親の横顔を見ると簡単には断…
+- [fam_business_handover](#event-fam_business_handover) — 閉店後、親が古い帳簿と店の鍵を並べた。「これからはお前に任せたい」と言う声には、疲れとためらいが混じっていた。仕入れの支払いや日々の赤字も引き受ける…
 - [parent_work_news](#event-parent_work_news) — {parentName}から封書が届き、長く続けた{parentOldWork}を辞めて{parentWork}に移ったと知らされた。少し震えた文字…
 - [parent_household_move_news](#event-parent_household_move_news) — 親から転居の便りが届いた。住み慣れた{parentHouseholdFrom}を引き払い、きょうだいと一緒に{parentHouseholdTo}へ…
 - [parent_treatment_review](#event-parent_treatment_review) — 実家の台所事情がいよいよ苦しくなり、{parentName}の療養費を出し続けるのが限界に近づいていた。病院の窓口で支払いの見通しを問われ、親は重い…
@@ -17145,10 +17166,10 @@
 - [daily_columbia_63](#event-daily_columbia_63) — 開拓地の酒場で、保安官が「大企業がこの区画の採掘権を買った。文句がある奴は荒野へ放り出す」と銃の手入れをしながら冷たく言い放った。
 - [choice_columbia_01](#event-choice_columbia_01) — 独自に考案したアーツ回路の特許に対し、巨大複合企業（メガコープ）から身に覚えのない特許侵害訴訟が起こされた。法外な和解金で技術を丸ごと奪い取る企みだ…
 - [choice_columbia_02](#event-choice_columbia_02) — 開拓地の未踏の渓谷で、良質な高純度源石の未発見の鉱脈を偶然見つけた。州政府の登記所に採掘権を申請すれば巨万の富が得られるが、地元の強盗団が嗅ぎつけて…
-- [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
+- [choice_columbia_03](#event-choice_columbia_03) — 配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机…
 - [choice_columbia_04](#event-choice_columbia_04) — 繁華街の広場で、実験中の大型輸送ドローンが制御不能に陥り、群衆の上へ墜落しかけた。管制コンソールがパニックに陥る中、手動オーバーライドの緊急操作が求…
 - [choice_columbia_05](#event-choice_columbia_05) — 新設された郊外の巨大モールに、自分の飲食店または雑貨店を出店する一等地が空いた。保証金と内装費は高額だが、当たれば莫大な日銭が入る。
-- [choice_columbia_06](#event-choice_columbia_06) — 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚…
+- [choice_columbia_06](#event-choice_columbia_06) — BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練…
 - [choice_columbia_07](#event-choice_columbia_07) — 大平原を巨大な竜巻（トルネード）が直撃し、開拓村の納屋や家屋が数棟吹き飛ばされた。住民たちが瓦礫の片付けと負傷者の救護に奔走している。
 - [choice_columbia_08](#event-choice_columbia_08) — 同僚の労働者が、給金を担保にした短期高利貸付で法外な利息を背負わされ、給料日に全額巻き上げられて生活破綻寸前に追い込まれていた。民間の取り立て屋が職…
 - [choice_columbia_09](#event-choice_columbia_09) — 大陸横断回廊を舞台に、改造車両や運搬車で数百マイルの荒野を走破する過酷な「フロンティア・ラリー」が開催された。優勝者には巨額の賞金とスポンサー契約が…
@@ -18309,19 +18330,21 @@
 - [sr_rhodes_to_reunion_turning_point](#event-sr_rhodes_to_reunion_turning_point) — 移動都市の路地裏で、正規軍と警官隊による感染者強制隔離区画の無差別掃討を目撃した。泣き叫ぶ子供や無抵抗の老人が銃床で殴り倒されている。しかし通信機か…
 - [sr_reunion_to_rhodes_sanctuary](#event-sr_reunion_to_rhodes_sanctuary) — 組織の瓦解と激しい内紛の果て、極寒の荒野で吹雪に巻かれて倒れ伏した。全身の源石結晶が激痛を放ち、意識が遠のく中、巨大な陸上移動艦の轟音とともに白い防…
 - [sr_reunion_turncoat_rehabilitation](#event-sr_reunion_turncoat_rehabilitation) — ロドス本艦での投薬と療養によって体調が劇的に回復した。過去の経歴審査を終えた人事担当者から「船内で働きながら、新しい人生を歩み直してみないか」と更生…
-- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新…
+- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — 紹介された募集日程を確かめ、BSWの本艦に設けられた採用試験の受付へ来た。甲板の向こうでは、射撃シミュレータの音と障害物走の掛け声が響いている。提示…
 - [sr_bsw_convoy_protection](#event-sr_bsw_convoy_protection) — 荒野を渡る鉱石採掘企業の大型輸送コンボイの護衛任務中、突如として砂塵の向こうから武装した略奪者集団が急襲してきた。先頭の車両が被弾し、激しい銃撃戦が…
 - [sr_bsw_promotion_tactical](#event-sr_bsw_promotion_tactical) — 見習い期間中の優れた実績が評価され、BSWクルビア本部から正規戦術オペレーターへの昇格審査に召集された。高難度の実地想定演習と銃器ライセンス更新が課…
 - [sr_bsw_vip_escort_ambush](#event-sr_bsw_vip_escort_ambush) — 移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の…
+- [sr_bsw_specialist_offer_review](#event-sr_bsw_specialist_offer_review) — BSW本部の面談室で、特務担当への辞令案を差し出された。報酬は上がるが、要人警護の責任も重くなる。担当者は書類を机に置き、返事を待った。
 - [sr_bsw_rhodes_secondment](#event-sr_bsw_rhodes_secondment) — BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛に…
 - [sr_bsw_davistown_debt_conflict](#event-sr_bsw_davistown_debt_conflict) — 衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援す…
 - [sr_bsw_infected_squad_policy](#event-sr_bsw_infected_squad_policy) — 定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混…
 - [sr_bsw_secondment_posting_review](#event-sr_bsw_secondment_posting_review) — ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生か…
 - [sr_rhine_recruitment_exam](#event-sr_rhine_recruitment_exam) — クルビア連邦トリマウンツにそびえるライン生命本社ビル。テラ最先端の科学技術と莫大な資本が集うこの学術コンソーシアムで、研究実習生の公募選考が行われて…
-- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ…
+- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の分析能力が認められ、専任研究員への昇格面談に呼ばれた。希望する専門科と、これから担当したい仕事を尋ねられた。
 - [sr_rhine_patent_breakthrough](#event-sr_rhine_patent_breakthrough) — 数か月に及ぶ実験の末、世界初となる新素材の合成と高効率反応モデルの構築に成功した。学会での注目と特許申請の手続きが目の前に控えている。
 - [sr_rhine_diabolic_ethical_crossroad](#event-sr_rhine_diabolic_ethical_crossroad) — 深夜、立ち入り制限区画の地下ラボで『炎魔計画』の機密ファイルを目撃してしまった。そこには、幼い感染児の体内に活性源石を強制作動させ、生体兵器へと造り…
 - [sr_rhine_rhodes_asylum](#event-sr_rhine_rhodes_asylum) — トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格…
+- [sr_rhine_after_asylum_livelihood](#event-sr_rhine_after_asylum_livelihood) — 研究室を離れてから、細かな出費ばかりが帳面に増えていた。以前の実験ノートをしまい、今の土地でできる仕事を探すことにした。
 - [sr_rhine_359_transmitter_consent](#event-sr_rhine_359_transmitter_consent) — トリマウンツ郊外の359号基地にて、アーツ応用課のドロシー主任が進める「伝達物質」の大規模治験に立ち会った。神経信号を結合して人々の意識を共有し、能…
 - [sr_rhine_lone_trail_sky_horizon](#event-sr_rhine_lone_trail_sky_horizon) — 1099年晩秋、トリマウンツ上空。クリステン統括が主導した『ホライズンアーク計画』が極大の光を放ち、フォーカスジェネレーターが天空を穿った。何千年も…
 - [sr_rhine_post_lone_trail_career_review](#event-sr_rhine_post_lone_trail_career_review) — トリマウンツの空にあの光が走ってから、季節が巡った。研究室には残った装置と書類が積まれ、担当者たちは研究を続けている。ここで仕事を続けるか、職員証を…
@@ -18359,7 +18382,7 @@
 - [car_sar_warrior_entry](#event-car_sar_warrior_entry) — ジャングルの熱気と歓声が渦巻くアカフラ。部族の力比べ大祭で、己の肉体一本で戦う『大勇士』の挑戦者を募っていた。難しい理屈は一切不要、ただ目の前の猛者…
 - [car_sam_priest_entry](#event-car_sam_priest_entry) — 氷結した古代の巨木がそびえるサーミの深き森。部族を導き、巨獣と森の意志を読み取る『雪祀（雪祭司）』の継承者が選ばれようとしていた。文明の機械を排し、…
 - [car_sam_warrior_entry](#event-car_sam_warrior_entry) — 北の果てなき氷原から侵食する正体不明の存在――『悪魔』。その脅威を文明圏から隔離するため、木々に傷を刻み境界を守護する『樹痕の戦士』。命の保証はなく…
-- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — 雪に閉ざされた聖山イェラグを近代化へ導く、シルバーアッシュ総長率いる『カランド貿易』。伝統に固執する三大家族や曼珠院の保守派と対峙しながら、最新式の…
+- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — カランド貿易から案内された面接会場へ来た。受付には輸送路の警備や貨物の扱いを説明する紙が並び、武装社員の募集担当者が応募者の名を呼んでいる。慣れ親し…
 - [car_kje_monk_entry](#event-car_kje_monk_entry) — カランドの女神を祀る神聖なる曼珠院。古くからの信仰を守り、聖山への立ち入りを監視する護衛僧の入門式が開かれていた。俗世の銃器を退け、杖と信仰の祈りで…
 - [car_kazdel_mil_entry](#event-car_kazdel_mil_entry) — 瓦礫と怨嗟が渦巻くカズデル。摂政王テレシス率いる軍事委員会が、ロンディニウム遠征とサルカズの復讐を果たすべく兵を集めていた。何千年も虐げられてきたサ…
 - [car_kazdel_bone_entry](#event-car_kazdel_bone_entry) — 巨大な魔獣の頭骨や鉱石病の遺骨から武器や触媒を削り出す、カズデル伝統の『骨鍛冶（ボーンスミス）』。源石アーツの呪術と繊細な彫刻工芸を組み合わせる、サ…
@@ -18674,7 +18697,7 @@
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 
 <a id="tag-situation-314"></a>
-### 年齢：壮年（2318）
+### 年齢：壮年（2321）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -18723,6 +18746,7 @@
 - [hobby_strain](#event-hobby_strain) — 稽古の月謝を出せば、今週の食卓がさらに寂しくなる。借りている楽器を返せば楽になるのは分かっているが、週に一度の息抜きの場まで失うのが惜しかった。 手…
 - [dis](#event-dis) — 現場の監督から、あなたの種族を理由に条件の悪い持ち場へ移るよう言い渡された。「上の決まりだ」の一点張りで、どんな規則なのか尋ねても取り合わなかった。…
 - [family_allowance_support](#event-family_allowance_support) — 実家の親から定期の便りと小包が届いた。手紙には近況を気遣う言葉とともに、何かと物入りの多い時期だろうからと、日々の暮らしを支えるための仕送りの為替が…
+- [fam_business_handover](#event-fam_business_handover) — 閉店後、親が古い帳簿と店の鍵を並べた。「これからはお前に任せたい」と言う声には、疲れとためらいが混じっていた。仕入れの支払いや日々の赤字も引き受ける…
 - [parent_work_news](#event-parent_work_news) — {parentName}から封書が届き、長く続けた{parentOldWork}を辞めて{parentWork}に移ったと知らされた。少し震えた文字…
 - [parent_household_move_news](#event-parent_household_move_news) — 親から転居の便りが届いた。住み慣れた{parentHouseholdFrom}を引き払い、きょうだいと一緒に{parentHouseholdTo}へ…
 - [parent_treatment_review](#event-parent_treatment_review) — 実家の台所事情がいよいよ苦しくなり、{parentName}の療養費を出し続けるのが限界に近づいていた。病院の窓口で支払いの見通しを問われ、親は重い…
@@ -19477,10 +19501,10 @@
 - [daily_columbia_63](#event-daily_columbia_63) — 開拓地の酒場で、保安官が「大企業がこの区画の採掘権を買った。文句がある奴は荒野へ放り出す」と銃の手入れをしながら冷たく言い放った。
 - [choice_columbia_01](#event-choice_columbia_01) — 独自に考案したアーツ回路の特許に対し、巨大複合企業（メガコープ）から身に覚えのない特許侵害訴訟が起こされた。法外な和解金で技術を丸ごと奪い取る企みだ…
 - [choice_columbia_02](#event-choice_columbia_02) — 開拓地の未踏の渓谷で、良質な高純度源石の未発見の鉱脈を偶然見つけた。州政府の登記所に採掘権を申請すれば巨万の富が得られるが、地元の強盗団が嗅ぎつけて…
-- [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
+- [choice_columbia_03](#event-choice_columbia_03) — 配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机…
 - [choice_columbia_04](#event-choice_columbia_04) — 繁華街の広場で、実験中の大型輸送ドローンが制御不能に陥り、群衆の上へ墜落しかけた。管制コンソールがパニックに陥る中、手動オーバーライドの緊急操作が求…
 - [choice_columbia_05](#event-choice_columbia_05) — 新設された郊外の巨大モールに、自分の飲食店または雑貨店を出店する一等地が空いた。保証金と内装費は高額だが、当たれば莫大な日銭が入る。
-- [choice_columbia_06](#event-choice_columbia_06) — 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚…
+- [choice_columbia_06](#event-choice_columbia_06) — BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練…
 - [choice_columbia_07](#event-choice_columbia_07) — 大平原を巨大な竜巻（トルネード）が直撃し、開拓村の納屋や家屋が数棟吹き飛ばされた。住民たちが瓦礫の片付けと負傷者の救護に奔走している。
 - [choice_columbia_08](#event-choice_columbia_08) — 同僚の労働者が、給金を担保にした短期高利貸付で法外な利息を背負わされ、給料日に全額巻き上げられて生活破綻寸前に追い込まれていた。民間の取り立て屋が職…
 - [choice_columbia_09](#event-choice_columbia_09) — 大陸横断回廊を舞台に、改造車両や運搬車で数百マイルの荒野を走破する過酷な「フロンティア・ラリー」が開催された。優勝者には巨額の賞金とスポンサー契約が…
@@ -20640,20 +20664,22 @@
 - [sr_rhodes_to_reunion_turning_point](#event-sr_rhodes_to_reunion_turning_point) — 移動都市の路地裏で、正規軍と警官隊による感染者強制隔離区画の無差別掃討を目撃した。泣き叫ぶ子供や無抵抗の老人が銃床で殴り倒されている。しかし通信機か…
 - [sr_reunion_to_rhodes_sanctuary](#event-sr_reunion_to_rhodes_sanctuary) — 組織の瓦解と激しい内紛の果て、極寒の荒野で吹雪に巻かれて倒れ伏した。全身の源石結晶が激痛を放ち、意識が遠のく中、巨大な陸上移動艦の轟音とともに白い防…
 - [sr_reunion_turncoat_rehabilitation](#event-sr_reunion_turncoat_rehabilitation) — ロドス本艦での投薬と療養によって体調が劇的に回復した。過去の経歴審査を終えた人事担当者から「船内で働きながら、新しい人生を歩み直してみないか」と更生…
-- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新…
+- [sr_bsw_recruitment_assessment](#event-sr_bsw_recruitment_assessment) — 紹介された募集日程を確かめ、BSWの本艦に設けられた採用試験の受付へ来た。甲板の向こうでは、射撃シミュレータの音と障害物走の掛け声が響いている。提示…
 - [sr_bsw_convoy_protection](#event-sr_bsw_convoy_protection) — 荒野を渡る鉱石採掘企業の大型輸送コンボイの護衛任務中、突如として砂塵の向こうから武装した略奪者集団が急襲してきた。先頭の車両が被弾し、激しい銃撃戦が…
 - [sr_bsw_promotion_tactical](#event-sr_bsw_promotion_tactical) — 見習い期間中の優れた実績が評価され、BSWクルビア本部から正規戦術オペレーターへの昇格審査に召集された。高難度の実地想定演習と銃器ライセンス更新が課…
 - [sr_bsw_vip_escort_ambush](#event-sr_bsw_vip_escort_ambush) — 移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の…
+- [sr_bsw_specialist_offer_review](#event-sr_bsw_specialist_offer_review) — BSW本部の面談室で、特務担当への辞令案を差し出された。報酬は上がるが、要人警護の責任も重くなる。担当者は書類を机に置き、返事を待った。
 - [sr_bsw_rhodes_secondment](#event-sr_bsw_rhodes_secondment) — BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛に…
 - [sr_bsw_davistown_debt_conflict](#event-sr_bsw_davistown_debt_conflict) — 衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援す…
 - [sr_bsw_infected_squad_policy](#event-sr_bsw_infected_squad_policy) — 定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混…
 - [sr_bsw_secondment_posting_review](#event-sr_bsw_secondment_posting_review) — ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生か…
 - [sr_rhine_recruitment_exam](#event-sr_rhine_recruitment_exam) — クルビア連邦トリマウンツにそびえるライン生命本社ビル。テラ最先端の科学技術と莫大な資本が集うこの学術コンソーシアムで、研究実習生の公募選考が行われて…
-- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ…
+- [sr_rhine_section_assignment](#event-sr_rhine_section_assignment) — 実習期間中の分析能力が認められ、専任研究員への昇格面談に呼ばれた。希望する専門科と、これから担当したい仕事を尋ねられた。
 - [sr_rhine_patent_breakthrough](#event-sr_rhine_patent_breakthrough) — 数か月に及ぶ実験の末、世界初となる新素材の合成と高効率反応モデルの構築に成功した。学会での注目と特許申請の手続きが目の前に控えている。
-- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの傑出した学術業績と特許取得がクリステン総括の目に留まり、自らの研究室と莫大な予算枠を持つ主任研究員（J 40）への昇格面談に呼ばれた。
+- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの研究成果が認められ、主任研究員への昇格面談に呼ばれた。研究室と予算を預かる代わりに、同僚や実験の安全にも責任を持つという。書類の端を押さえ…
 - [sr_rhine_diabolic_ethical_crossroad](#event-sr_rhine_diabolic_ethical_crossroad) — 深夜、立ち入り制限区画の地下ラボで『炎魔計画』の機密ファイルを目撃してしまった。そこには、幼い感染児の体内に活性源石を強制作動させ、生体兵器へと造り…
 - [sr_rhine_rhodes_asylum](#event-sr_rhine_rhodes_asylum) — トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格…
+- [sr_rhine_after_asylum_livelihood](#event-sr_rhine_after_asylum_livelihood) — 研究室を離れてから、細かな出費ばかりが帳面に増えていた。以前の実験ノートをしまい、今の土地でできる仕事を探すことにした。
 - [sr_rhine_359_transmitter_consent](#event-sr_rhine_359_transmitter_consent) — トリマウンツ郊外の359号基地にて、アーツ応用課のドロシー主任が進める「伝達物質」の大規模治験に立ち会った。神経信号を結合して人々の意識を共有し、能…
 - [sr_rhine_lone_trail_sky_horizon](#event-sr_rhine_lone_trail_sky_horizon) — 1099年晩秋、トリマウンツ上空。クリステン統括が主導した『ホライズンアーク計画』が極大の光を放ち、フォーカスジェネレーターが天空を穿った。何千年も…
 - [sr_rhine_post_lone_trail_career_review](#event-sr_rhine_post_lone_trail_career_review) — トリマウンツの空にあの光が走ってから、季節が巡った。研究室には残った装置と書類が積まれ、担当者たちは研究を続けている。ここで仕事を続けるか、職員証を…
@@ -20690,7 +20716,7 @@
 - [car_sar_warrior_entry](#event-car_sar_warrior_entry) — ジャングルの熱気と歓声が渦巻くアカフラ。部族の力比べ大祭で、己の肉体一本で戦う『大勇士』の挑戦者を募っていた。難しい理屈は一切不要、ただ目の前の猛者…
 - [car_sam_priest_entry](#event-car_sam_priest_entry) — 氷結した古代の巨木がそびえるサーミの深き森。部族を導き、巨獣と森の意志を読み取る『雪祀（雪祭司）』の継承者が選ばれようとしていた。文明の機械を排し、…
 - [car_sam_warrior_entry](#event-car_sam_warrior_entry) — 北の果てなき氷原から侵食する正体不明の存在――『悪魔』。その脅威を文明圏から隔離するため、木々に傷を刻み境界を守護する『樹痕の戦士』。命の保証はなく…
-- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — 雪に閉ざされた聖山イェラグを近代化へ導く、シルバーアッシュ総長率いる『カランド貿易』。伝統に固執する三大家族や曼珠院の保守派と対峙しながら、最新式の…
+- [car_kje_karlan_entry](#event-car_kje_karlan_entry) — カランド貿易から案内された面接会場へ来た。受付には輸送路の警備や貨物の扱いを説明する紙が並び、武装社員の募集担当者が応募者の名を呼んでいる。慣れ親し…
 - [car_kje_monk_entry](#event-car_kje_monk_entry) — カランドの女神を祀る神聖なる曼珠院。古くからの信仰を守り、聖山への立ち入りを監視する護衛僧の入門式が開かれていた。俗世の銃器を退け、杖と信仰の祈りで…
 - [car_kazdel_mil_entry](#event-car_kazdel_mil_entry) — 瓦礫と怨嗟が渦巻くカズデル。摂政王テレシス率いる軍事委員会が、ロンディニウム遠征とサルカズの復讐を果たすべく兵を集めていた。何千年も虐げられてきたサ…
 - [car_kazdel_bone_entry](#event-car_kazdel_bone_entry) — 巨大な魔獣の頭骨や鉱石病の遺骨から武器や触媒を削り出す、カズデル伝統の『骨鍛冶（ボーンスミス）』。源石アーツの呪術と繊細な彫刻工芸を組み合わせる、サ…
@@ -21058,7 +21084,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-situation-317"></a>
-### 年齢：老年（1522）
+### 年齢：老年（1524）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -22382,14 +22408,16 @@
 - [sr_reunion_turncoat_rehabilitation](#event-sr_reunion_turncoat_rehabilitation) — ロドス本艦での投薬と療養によって体調が劇的に回復した。過去の経歴審査を終えた人事担当者から「船内で働きながら、新しい人生を歩み直してみないか」と更生…
 - [sr_bsw_convoy_protection](#event-sr_bsw_convoy_protection) — 荒野を渡る鉱石採掘企業の大型輸送コンボイの護衛任務中、突如として砂塵の向こうから武装した略奪者集団が急襲してきた。先頭の車両が被弾し、激しい銃撃戦が…
 - [sr_bsw_vip_escort_ambush](#event-sr_bsw_vip_escort_ambush) — 移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の…
+- [sr_bsw_specialist_offer_review](#event-sr_bsw_specialist_offer_review) — BSW本部の面談室で、特務担当への辞令案を差し出された。報酬は上がるが、要人警護の責任も重くなる。担当者は書類を机に置き、返事を待った。
 - [sr_bsw_rhodes_secondment](#event-sr_bsw_rhodes_secondment) — BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛に…
 - [sr_bsw_davistown_debt_conflict](#event-sr_bsw_davistown_debt_conflict) — 衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援す…
 - [sr_bsw_infected_squad_policy](#event-sr_bsw_infected_squad_policy) — 定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混…
 - [sr_bsw_secondment_posting_review](#event-sr_bsw_secondment_posting_review) — ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生か…
 - [sr_rhine_patent_breakthrough](#event-sr_rhine_patent_breakthrough) — 数か月に及ぶ実験の末、世界初となる新素材の合成と高効率反応モデルの構築に成功した。学会での注目と特許申請の手続きが目の前に控えている。
-- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの傑出した学術業績と特許取得がクリステン総括の目に留まり、自らの研究室と莫大な予算枠を持つ主任研究員（J 40）への昇格面談に呼ばれた。
+- [sr_rhine_promotion_chief](#event-sr_rhine_promotion_chief) — これまでの研究成果が認められ、主任研究員への昇格面談に呼ばれた。研究室と予算を預かる代わりに、同僚や実験の安全にも責任を持つという。書類の端を押さえ…
 - [sr_rhine_diabolic_ethical_crossroad](#event-sr_rhine_diabolic_ethical_crossroad) — 深夜、立ち入り制限区画の地下ラボで『炎魔計画』の機密ファイルを目撃してしまった。そこには、幼い感染児の体内に活性源石を強制作動させ、生体兵器へと造り…
 - [sr_rhine_rhodes_asylum](#event-sr_rhine_rhodes_asylum) — トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格…
+- [sr_rhine_after_asylum_livelihood](#event-sr_rhine_after_asylum_livelihood) — 研究室を離れてから、細かな出費ばかりが帳面に増えていた。以前の実験ノートをしまい、今の土地でできる仕事を探すことにした。
 - [sr_rhine_359_transmitter_consent](#event-sr_rhine_359_transmitter_consent) — トリマウンツ郊外の359号基地にて、アーツ応用課のドロシー主任が進める「伝達物質」の大規模治験に立ち会った。神経信号を結合して人々の意識を共有し、能…
 - [sr_rhine_lone_trail_sky_horizon](#event-sr_rhine_lone_trail_sky_horizon) — 1099年晩秋、トリマウンツ上空。クリステン統括が主導した『ホライズンアーク計画』が極大の光を放ち、フォーカスジェネレーターが天空を穿った。何千年も…
 - [sr_rhine_post_lone_trail_career_review](#event-sr_rhine_post_lone_trail_career_review) — トリマウンツの空にあの光が走ってから、季節が巡った。研究室には残った装置と書類が積まれ、担当者たちは研究を続けている。ここで仕事を続けるか、職員証を…
@@ -26500,14 +26528,7 @@
 ```json
 {
   "show": {
-    "any": [
-      "国:サルゴン",
-      "国:イェラグ",
-      "国:ミノス",
-      "国:シエスタ",
-      "国:サーミ",
-      "国:炎国"
-    ]
+    "dynamicFunction": "s => [\"サルゴン\", \"イェラグ\", \"ミノス\", \"シエスタ\", \"サーミ\", \"炎国\"].includes(s.res?.n) && !!employmentOpeningForChoice(s, 23)"
   }
 }
 ```
@@ -26525,7 +26546,10 @@
 
 ```json
 {
-  "job": 23,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 23
+  },
   "fl": {
     "workplace_hazard": 1
   }
@@ -26544,9 +26568,7 @@
 ```json
 {
   "show": {
-    "need": [
-      "家計を担う親あり"
-    ]
+    "dynamicFunction": "s => !!resolveEmploymentLivelihoodResource(s, \"family-community\", 24, \"family-business\")"
   }
 }
 ```
@@ -26564,7 +26586,16 @@
 
 ```json
 {
-  "job": 24,
+  "employmentAction": {
+    "action": "start-livelihood",
+    "kind": "family-community",
+    "jobId": 24,
+    "sourceEventId": "car",
+    "roleId": "family-stall-helper",
+    "resourceId": "family-business",
+    "projectAsJob": false,
+    "workFraction": 0.25
+  },
   "rl": 3
 }
 ```
@@ -26818,9 +26849,7 @@
 ```json
 {
   "show": {
-    "need": [
-      "国:カジミエーシュ"
-    ]
+    "dynamicFunction": "s => s.res?.n === \"カジミエーシュ\" && employmentLivelihoodResource(s, \"seasonal-contract\", 1)?.canStart === true"
   }
 }
 ```
@@ -26838,7 +26867,14 @@
 
 ```json
 {
-  "job": 1,
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "cargo-handling",
+    "sourceEventId": "car",
+    "resourceId": "local-resource",
+    "nominalCash": 50000
+  },
+  "cash": 50000,
   "cr": 2
 }
 ```
@@ -31169,6 +31205,9 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 ```json
 {
+  "show": {
+    "dynamicFunction": "s => employmentLivelihoodResource(s, \"self-employment\", 24)?.canStart === true"
+  },
   "en": {
     "affordableCash": 30000
   },
@@ -31189,7 +31228,15 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 ```json
 {
-  "job": 24,
+  "employmentAction": {
+    "action": "start-livelihood",
+    "kind": "self-employment",
+    "jobId": 24,
+    "sourceEventId": "work_unemployed_reentry",
+    "roleId": "market-vendor",
+    "resourceId": "local-resource",
+    "projectAsJob": true
+  },
   "cash": -30000,
   "pm": 1,
   "p": 3,
@@ -31208,6 +31255,9 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 ```json
 {
+  "show": {
+    "dynamicFunction": "s => employmentLivelihoodResource(s, \"seasonal-contract\", 4)?.canStart === true"
+  },
   "en": {
     "ge": {
       "h": 40
@@ -31224,13 +31274,19 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 - **結果 1（設定確率 100%）**
 
-> 隊商の警備員として雇われた。移動都市の外縁を巡回する過酷な任務だが、危険手当を含めた給金で生活の立て直しに目処がついた。
+> 隊商から頼まれた一度の警備に就き、荷が外縁の倉庫へ入るまで見届けた。手当を受け取ると契約は終わり、次の口を探すため詰め所へ戻った。
 
 効果：
 
 ```json
 {
-  "job": 4,
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "short-sentry",
+    "sourceEventId": "work_unemployed_reentry",
+    "resourceId": "local-resource",
+    "nominalCash": 80000
+  },
   "cash": 80000,
   "p": 1,
   "h": -5
@@ -31313,6 +31369,16 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="choice-work_elder_reentry-0"></a>
 選択肢文：路地裏の露店で、古着や手細工の小商いを始める
 
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => employmentLivelihoodResource(s, \"self-employment\", 24)?.canStart === true"
+  }
+}
+```
+
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
@@ -31326,7 +31392,16 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 ```json
 {
-  "job": 24,
+  "employmentAction": {
+    "action": "start-livelihood",
+    "kind": "self-employment",
+    "jobId": 24,
+    "sourceEventId": "work_elder_reentry",
+    "roleId": "market-vendor",
+    "resourceId": "local-resource",
+    "projectAsJob": true,
+    "workFraction": 0.4
+  },
   "p": 3,
   "rl": 3
 }
@@ -31339,6 +31414,16 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="choice-work_elder_reentry-1"></a>
 選択肢文：集会所や長屋の掃除・管理人見習いとして手伝う
 
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => employmentLivelihoodResource(s, \"seasonal-contract\", 1)?.canStart === true"
+  }
+}
+```
+
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
@@ -31346,13 +31431,20 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 - **結果 1（設定確率 100%）**
 
-> 近隣の顔役から共同便所や広場の清掃を頼まれ、日当をもらうことになった。若い頃のような無理は利かないが、地域に居場所を取り戻した。
+> 近隣の顔役から頼まれた共同便所や広場の清掃を終え、その日の日当を受け取った。若い頃のような無理は利かないが、ほうきを返すときに労いの声をかけられた。
 
 効果：
 
 ```json
 {
-  "job": 1,
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "local-errand",
+    "sourceEventId": "work_elder_reentry",
+    "resourceId": "local-resource",
+    "nominalCash": 20000
+  },
+  "cash": 20000,
   "p": 2,
   "rl": 4
 }
@@ -38248,7 +38340,7 @@ s => {
 ```json
 {
   "show": {
-    "dynamicFunction": "s => s.age >= $rules.parameters.value(\"life.workStartAge\")"
+    "dynamicFunction": "s => s.age >= $rules.parameters.value(\"life.workStartAge\") &&\n              employmentLivelihoodResource(s, \"seasonal-contract\", 1)?.canStart === true"
   }
 }
 ```
@@ -38260,14 +38352,19 @@ s => {
 
 - **結果 1（設定確率 70%）**
 
-> 学ぶ時間も削り、日雇いの荷運びに出た。泥だらけで持ち帰った小銭で食卓はつないだが、親の働き口はまだ見つからない。
+> 学ぶ時間の合間に、近所の荷揚げ場で頼まれた荷運びをした。泥だらけで持ち帰った日当で食卓はつないだが、親の働き口はまだ見つからない。
 
 効果：
 
 ```json
 {
-  "job": 1,
-  "educationAction": "leave-school",
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "cargo-handling",
+    "sourceEventId": "fam_unemploy",
+    "resourceId": "local-resource",
+    "nominalCash": 50000
+  },
   "fl": {
     "parent_unemployed": 1
   },
@@ -38282,16 +38379,20 @@ s => {
 
 - **結果 2（設定確率 30%）**
 
-> 大人の嫌がる危険な現場しか口がなく、無理がたたって体を壊した。親の仕事も決まらず、食費と薬代のどちらを先に出すかで家が暗くなった。
+> 荷揚げ場の危ない足場で無理を重ね、日当を持ち帰った晩には体が動かなくなった。親の仕事も決まらず、食費と薬代のどちらを先に出すかで家が暗くなった。
 
 効果：
 
 ```json
 {
-  "job": 1,
-  "educationAction": "leave-school",
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "cargo-handling",
+    "sourceEventId": "fam_unemploy",
+    "resourceId": "local-resource",
+    "nominalCash": 50000
+  },
   "fl": {
-    "workplace_hazard": 1,
     "parent_unemployed": 1
   },
   "cash": 50000,
@@ -38690,9 +38791,7 @@ s => {
 ```json
 {
   "show": {
-    "ban": [
-      "健康不良"
-    ]
+    "dynamicFunction": "s => s.h >= 30 && employmentLivelihoodResource(s, \"coerced-assignment\", 14)?.canStart === true"
   }
 }
 ```
@@ -38710,7 +38809,15 @@ s => {
 
 ```json
 {
-  "job": 14,
+  "employmentAction": {
+    "action": "start-livelihood",
+    "kind": "coerced-assignment",
+    "jobId": 14,
+    "sourceEventId": "fam_conscript",
+    "roleId": "conscripted-substitute",
+    "resourceId": "local-resource",
+    "projectAsJob": true
+  },
   "fl": {
     "conscripted": 1,
     "veteran": 1
@@ -39803,7 +39910,7 @@ s => {
 ```json
 {
   "show": {
-    "dynamicFunction": "s => !educationMigrationCurrent(s)"
+    "dynamicFunction": "s => !educationMigrationCurrent(s) &&\n            !!resolveEmploymentLivelihoodResource(s, \"family-community\", 5, \"family-business\")"
   }
 }
 ```
@@ -39821,7 +39928,16 @@ s => {
 
 ```json
 {
-  "job": 5,
+  "employmentAction": {
+    "action": "start-livelihood",
+    "kind": "family-community",
+    "jobId": 5,
+    "sourceEventId": "fam_inherit",
+    "roleId": "apprentice",
+    "resourceId": "family-business",
+    "workFraction": 0.25,
+    "projectAsJob": false
+  },
   "cr": 2,
   "rl": 6,
   "p": 3
@@ -39926,6 +40042,118 @@ s => {
 ```
 
 旧シム観測回数：7
+
+
+<a id="event-fam_business_handover"></a>
+## fam_business_handover
+
+- 出典位置：data/base/family-and-livelihood.js:1136
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：家族・介護、労働・経済
+- 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 閉店後、親が古い帳簿と店の鍵を並べた。「これからはお前に任せたい」と言う声には、疲れとためらいが混じっていた。仕入れの支払いや日々の赤字も引き受けることになる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "fam_business_handover",
+  "conf": "S",
+  "references": [
+    "SRC_TERRA_FAMILY",
+    "SRC_TERRA_LIFECOURSE"
+  ],
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "after": {
+    "id": "fam_inherit",
+    "min": 2,
+    "choice": 0,
+    "outcome": 0
+  },
+  "once": true,
+  "w": 0.8,
+  "show": {
+    "dynamicFunction": "s => !s.job && !!resolveEmploymentLivelihoodResource(s, \"family-community\", 5, \"family-business\") &&\n        (s.employmentState?.episodes || []).some(row => row.kind === \"family-community\" &&\n          row.roleId === \"apprentice\" && row.status === \"active\" && s.year - row.startYear >= 2)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-fam_business_handover-0"></a>
+選択肢文：帳簿を一緒に確かめ、親と合意して店を引き継ぐ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-fam_business_handover-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 残った品と支払予定を親と確かめ、これからの商いを引き受けると伝えた。親は頷いて鍵を渡し、取引先へ代替わりの挨拶に同行した。翌朝は自分が先に店の戸を開けた。
+
+効果：
+
+```json
+{
+  "employmentAction": {
+    "action": "start-livelihood",
+    "kind": "self-employment",
+    "jobId": 5,
+    "sourceEventId": "fam_business_handover",
+    "roleId": "owner",
+    "resourceId": "family-business",
+    "ownershipTransfer": true,
+    "projectAsJob": true
+  },
+  "cr": 2,
+  "p": 2,
+  "rl": 3
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-fam_business_handover-1"></a>
+選択肢文：店の責任者にはならず、今までどおり手伝うと伝える
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-fam_business_handover-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 店を背負う覚悟はまだ持てないと話した。鍵は親の手元に戻り、仕入れや売上の判断は引き続き親に任せることになった。明日も同じ前掛けを締めて、できる仕事から手伝う。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "rl": 1
+}
+```
+
+旧シム観測回数：未計測
 
 
 <a id="event-parent_work_news"></a>
@@ -95563,13 +95791,16 @@ s => {
 #### 選択肢 2
 
 <a id="choice-choice_ursus_04-1"></a>
-選択肢文：軍務を辞退し、後方の兵站工場で物資製造に従事する
+選択肢文：軍務を辞退し、募集を出している地元の工場で働く
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "self-or-family-care"
+  "intent": "self-or-family-care",
+  "show": {
+    "dynamicFunction": "s => !!employmentOpeningForChoice(s, 2)"
+  }
 }
 ```
 
@@ -95580,13 +95811,16 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 安全な工場で軍用缶詰や外套の生産に励み、手堅い月給と食糧配給を確保した。
+> 募集を出していた地元の工場を訪ね、勤務時間と給金を確かめて契約した。軍服に袖を通す代わりに作業着を受け取り、機械の音が響く持ち場に立った。
 
 効果：
 
 ```json
 {
-  "cash": 25000,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 2
+  },
   "p": 2
 }
 ```
@@ -99569,6 +99803,9 @@ s => {
     "国:ヴィクトリア",
     "就労中"
   ],
+  "show": {
+    "dynamicFunction": "s => !!employmentEventWorksite(s, \"factory-dispute\")"
+  },
   "w": 0.85,
   "cd": 8
 }
@@ -99606,12 +99843,19 @@ s => {
 
 - **結果 1（設定確率 75%）**
 
-> 粘り強い座り込みの末に経営陣を交渉の席に着かせ、賃金改善と安全装備の支給を勝ち取った。組合の英雄となった。
+> 粘り強い座り込みの末に経営陣を交渉の席に着かせた。職場の給金を引き上げる合意書が読み上げられ、持ち場には新しい安全装備が届いた。帰り道、仲間とようやく肩の力を抜いた。
 
 効果：
 
 ```json
 {
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "factory-dispute",
+    "incident": "agreement",
+    "payFactor": 1.05,
+    "safetyImproved": true
+  },
   "cash": 20000,
   "cr": 6,
   "p": 5,
@@ -99630,9 +99874,14 @@ s => {
 
 ```json
 {
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "factory-dispute",
+    "incident": "dismissal",
+    "terminate": true
+  },
   "h": -15,
-  "p": -6,
-  "job": 0
+  "p": -6
 }
 ```
 
@@ -99664,6 +99913,11 @@ s => {
 
 ```json
 {
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "factory-dispute",
+    "incident": "worked-during-strike"
+  },
   "cash": 30000,
   "p": -3,
   "rl": -3
@@ -99698,6 +99952,11 @@ s => {
 
 ```json
 {
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "factory-dispute",
+    "incident": "waited-for-settlement"
+  },
   "p": 1
 }
 ```
@@ -113372,25 +113631,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-#### 条件付き本文 1
-
-条件：
-```json
-{
-  "dynamicFunction": "s => /ライン生命/.test($terraData.J[s.job]?.n || \"\")"
-}
-```
-
-> 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監査局かマスコミへ告発するか迫られた。
-
-#### 条件付き本文 2
-
-条件：
-```json
-"(条件指定なし)"
-```
-
-> 勤め先のバイオ研究所で、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監査局かマスコミへ告発するか迫られた。
+> 配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机の前で考え込んだ。
 
 ### 発生条件・構造
 
@@ -113410,7 +113651,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
     "就労中"
   ],
   "show": {
-    "dynamicFunction": "s => s.job > 0 && /ライン生命|研究|医師|医療|技師|バイオ/.test($terraData.J[s.job]?.n || \"\")"
+    "dynamicFunction": "s => !!employmentEventWorksite(s, \"research-records\")"
   },
   "w": 0.75,
   "cd": 10
@@ -113449,12 +113690,17 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 75%）**
 
-> 新聞の一面を飾る大スクープとなり、悪徳研究所は強制捜査で解体。多くの被験者を救い出し、歴史に名を残す内部告発者となった。
+> 資料を受け取った記者が被験者や家族への取材を始め、監査側からも照会が届いた。廊下には張り詰めた声が響いたが、どこまで明らかになるかはまだ分からなかった。
 
 効果：
 
 ```json
 {
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "research-investigation",
+    "incident": "investigation-opened"
+  },
   "cr": 8,
   "p": 7,
   "rl": 5
@@ -113466,15 +113712,20 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 2（設定確率 25%）**
 
-> 警備部隊に脱出を察知され、追跡を受けて負傷。データは奪われ、指名手配される羽目になった。
+> 資料の持ち出しを警備員に察知され、追跡を受けて負傷した。写しは奪われ、その職場には戻れなくなった。
 
 効果：
 
 ```json
 {
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "research-investigation",
+    "incident": "evidence-seized",
+    "terminate": true
+  },
   "h": -20,
-  "p": -8,
-  "job": 0
+  "p": -8
 }
 ```
 
@@ -113506,15 +113757,20 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 身元を巧みに隠して都市の世論を激震させ、研究所を社会的制裁に追い込んだ。自らは安全に退職した。
+> 匿名の窓口へ資料を渡し、職場へ退職を申し出た。照会番号を記した紙をしまい、荷物をまとめた。捜査の行方や、自分の身元が守られるかまでは見通せなかった。
 
 効果：
 
 ```json
 {
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "research-investigation",
+    "incident": "anonymous-report",
+    "terminate": true
+  },
   "k": 3,
-  "p": 4,
-  "job": 0
+  "p": 4
 }
 ```
 
@@ -113540,12 +113796,17 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 恐怖に屈して目を伏せた。安全は守られたが、良心の呵責に苛まれ続けた。
+> 手元の写しを消し、何も見なかったように席へ戻った。呼び出しはなかったが、記録にあった人々の名が頭から離れなかった。
 
 効果：
 
 ```json
 {
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "research-investigation",
+    "incident": "copy-destroyed"
+  },
   "p": -4
 }
 ```
@@ -113910,7 +114171,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚生が付与される。
+> BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練場の標的を眺め、自分の経験を生かせるか考えた。
 
 ### 発生条件・構造
 
@@ -113933,7 +114194,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
     "ロドス職員として活動中"
   ],
   "show": {
-    "dynamicFunction": "s => !s.fl?.rhodes && !s.fl?.rhodes_landship"
+    "dynamicFunction": "s => !s.fl?.rhodes && !s.fl?.rhodes_landship &&\n        [36, 37].some(jobId => assessEmploymentAppointment(s, { jobId, affiliationId: \"bsw-contract\", sourceEventId: \"choice_columbia_06\" }).canApply)"
   },
   "w": 0.75,
   "cd": 8
@@ -113949,20 +114210,23 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_columbia_06-0"></a>
-選択肢文：模擬実戦試験に臨み、圧倒的な戦術技能と気迫を見せつける
+選択肢文：実戦技能の試験を受け、合格なら教官の勤務条件に署名する
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "intent": "procedure",
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  },
   "en": {
     "ge": {
       "cr": 45,
       "h": 60
     }
   },
-  "why": "プロの傭兵を凌駕する実戦技能がない。"
+  "why": "訓練を指導するための体力と実戦技能が足りない。"
 }
 ```
 
@@ -113973,12 +114237,27 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 80%）**
 
-> 試験官を完璧に制圧し、満場一致で専属インストラクターに合格。破格の契約金と高給を手に入れた。
+> 射撃と模擬戦の審査を通過し、教官として担当する訓練と報酬の説明を受けた。契約に署名して支度金を受け取り、次の訓練日の予定を手帳に書いた。
 
 効果：
 
 ```json
 {
+  "job": 37,
+  "lifeAffiliation": {
+    "id": "bsw-contract",
+    "title": "ブラックスチール・ワールドワイド",
+    "kind": "employer",
+    "action": "join",
+    "role": "BSW戦術教官"
+  },
+  "lifeGoal": {
+    "id": "bsw-work",
+    "title": "民間軍事会社BSWでプロとしての契約を果たす",
+    "priority": "生業",
+    "action": "start",
+    "preserveAchievement": true
+  },
   "cash": 90000,
   "cr": 8,
   "p": 6
@@ -114007,13 +114286,16 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 2
 
 <a id="choice-choice_columbia_06-1"></a>
-選択肢文：戦術シミュレーターのデータ分析官の採用試験に切り替える
+選択肢文：分析担当の審査を受け、勤務条件を確かめて契約する
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "information",
+  "intent": "procedure",
+  "show": {
+    "dynamicFunction": "(s, tags) => $rules.conditions.matches(show, s,\n      tags || (show != null && typeof show !== \"function\" ? $rules.conditions.inspectTags(s) : undefined)) &&\n      $rules.affiliations.canChoose(choice, s)"
+  },
   "en": {
     "ge": {
       "k": 35
@@ -114030,12 +114312,27 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 優れた戦術理論を高く評価され、後方の戦術アナリストとして採用された。手堅い高給を得た。
+> 演習データの読み取りと報告書の審査を終え、後方の分析担当として契約した。支度金を受け取り、机に積まれた訓練記録へ目を通し始めた。
 
 効果：
 
 ```json
 {
+  "job": 36,
+  "lifeAffiliation": {
+    "id": "bsw-contract",
+    "title": "ブラックスチール・ワールドワイド",
+    "kind": "employer",
+    "action": "join",
+    "role": "BSW戦術分析担当"
+  },
+  "lifeGoal": {
+    "id": "bsw-work",
+    "title": "民間軍事会社BSWでプロとしての契約を果たす",
+    "priority": "生業",
+    "action": "start",
+    "preserveAchievement": true
+  },
   "cash": 50000,
   "k": 2,
   "p": 3
@@ -193691,6 +193988,9 @@ s => {
     "国:ヴィクトリア",
     "就労中"
   ],
+  "show": {
+    "dynamicFunction": "s => !!employmentEventWorksite(s, \"framed-debt\")"
+  },
   "any": [
     "ターラー系の家の記録",
     "感染診断済",
@@ -193719,15 +194019,20 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 署名は拒んだものの即座に解雇され、給与は一銭も支払われなかった。さらに街の工場主連名でブラックリストに入れられ、同業への再就職を断たれた。
+> 署名は拒んだものの即座に解雇され、働いた分の給金も未払いのまま門の外へ押し出された。工場主が近隣の同業者へ悪評を流したと聞き、次の働き口を探す足も重くなった。
 
 効果：
 
 ```json
 {
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "framed-debt",
+    "incident": "dismissed-with-unpaid-wages",
+    "terminate": true
+  },
   "p": -6,
   "rl": 1,
-  "job": 0,
   "fl": {
     "ed_work_disadvantage": 1,
     "ed_work_record": 1
@@ -193749,12 +194054,17 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 身に覚えのない巨額の負債を背負わされ、給与明細はすべて借金の天引きとなった。日々のパンを買う小銭すら底をついた。
+> 身に覚えのない十五万龍門幣の賠償証文に署名させられた。工場主は給金も押さえると言い、今月働いた分は支払われなかった。証文を握りしめ、日々のパンをどう買うか考えた。
 
 効果：
 
 ```json
 {
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "framed-debt",
+    "incident": "coerced-debt-note"
+  },
   "debt": 150000,
   "p": -10,
   "h": -4,
@@ -237243,7 +237553,7 @@ s => {
 
 ### 本文
 
-> クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新鋭の射撃シミュレータと過酷な障害物走が受験者に課されている。
+> 紹介された募集日程を確かめ、BSWの本艦に設けられた採用試験の受付へ来た。甲板の向こうでは、射撃シミュレータの音と障害物走の掛け声が響いている。提示された任務と報酬を読み、審査を受けるか考えた。
 
 ### 発生条件・構造
 
@@ -237561,7 +237871,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 社内ライセンス審査を堂々の成績で突破し、BSWの正規戦術オペレーター（J 36）として辞令を受けた。国際任務への派遣権限と大幅な昇給が認められた。
+> 社内ライセンス審査を堂々の成績で突破し、BSWの正規戦術オペレーターとして辞令を受けた。国際任務への派遣権限と大幅な昇給が認められた。
 
 効果：
 
@@ -237673,26 +237983,24 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 通信を即座に遮断し、閃光弾と精密射撃で敵の包囲網を粉砕した。無傷で要人を目的地へ送り届け、依頼主の企業とBSW本社から破格の報奨金と特務スペシャリスト（J 37）への昇格内定が贈られた。
+> 通信を即座に遮断し、閃光弾と精密射撃で敵の包囲網を退けた。要人を目的地へ送り届けると、依頼主とBSW本社から報奨金が届いた。後日の面談では特務の任務を引き受ける意思を尋ねられるという。
 
 効果：
 
 ```json
 {
-  "job": 37,
   "cash": 300000,
-  "payBonus": 0.25,
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "promotion-offer",
+    "incident": "bsw-specialist",
+    "jobId": 37
+  },
   "groupStanding": {
     "id": "bsw-colleagues",
     "title": "BSWの同僚・小隊員",
     "delta": 3,
     "reason": "要人警護で買収を跳ね除け完璧に任務を遂行した"
-  },
-  "lifeAffiliation": {
-    "id": "bsw-contract",
-    "title": "ブラックスチール・ワールドワイド",
-    "action": "role",
-    "role": "BSW特務スペシャリスト・要人警護主任"
   },
   "p": 3,
   "cr": 2
@@ -237739,7 +238047,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 部隊の全滅を避けるためやむなく交渉に応じた。命は助かったものの、警備任務の失敗として社内査問を受け、減俸処分が下された。
+> 部隊の全滅を避けるためやむなく交渉に応じた。命は助かったものの、警備任務の失敗として社内査問を受け、五万龍門幣の違約金を請求された。
 
 効果：
 
@@ -237747,6 +238055,124 @@ s => {
 {
   "p": -2,
   "cash": -50000
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-sr_bsw_specialist_offer_review"></a>
+## sr_bsw_specialist_offer_review
+
+- 出典位置：data/parts/routes/rhodes-and-factions/bsw-routes.js:164
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> BSW本部の面談室で、特務担当への辞令案を差し出された。報酬は上がるが、要人警護の責任も重くなる。担当者は書類を机に置き、返事を待った。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "sr_bsw_specialist_offer_review",
+  "conf": "S",
+  "references": [
+    "SRC_BSW_PMC"
+  ],
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "after": {
+    "id": "sr_bsw_vip_escort_ambush",
+    "min": 0,
+    "choice": 0,
+    "outcome": 0
+  },
+  "cd": 1,
+  "w": 1,
+  "show": {
+    "dynamicFunction": "s => onBsw(s) && s.job === 36 && !!employmentPromotionOffer(s, \"bsw-specialist\")"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-sr_bsw_specialist_offer_review-0"></a>
+選択肢文：任務と報酬を確かめ、特務担当への昇格を受ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-sr_bsw_specialist_offer_review-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 任務の範囲と報酬を読み直して署名した。正式な辞令を受け取り、次の警護計画を引き継いだ。
+
+効果：
+
+```json
+{
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "promotion-offer",
+    "incident": "accepted",
+    "offerId": "bsw-specialist",
+    "jobId": 37
+  },
+  "lifeAffiliation": {
+    "id": "bsw-contract",
+    "title": "ブラックスチール・ワールドワイド",
+    "action": "role",
+    "role": "BSW特務スペシャリスト・要人警護主任"
+  },
+  "p": 2
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-sr_bsw_specialist_offer_review-1"></a>
+選択肢文：昇格を辞退し、今の担当を続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-sr_bsw_specialist_offer_review-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 今の仕事を続けたいと伝え、辞令案を返した。担当者は頷き、これまでの持ち場へ戻るよう告げた。
+
+効果：
+
+```json
+{
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "promotion-offer",
+    "incident": "declined",
+    "offerId": "bsw-specialist"
+  },
+  "p": 1
 }
 ```
 
@@ -238342,7 +238768,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 厳格な学術審査と口頭試問をパスし、ライン生命の研究実習生（J 38）としてIDカードを受領した。最先端の分析機器と膨大な学術アーカイブに囲まれる日々が始まった。
+> 厳格な学術審査と口頭試問をパスし、ライン生命の研究実習生としてIDカードを受領した。最先端の分析機器と膨大な学術アーカイブに囲まれる日々が始まった。
 
 効果：
 
@@ -238422,7 +238848,7 @@ s => {
 
 ### 本文
 
-> 実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ迎え入れようとしている。
+> 実習期間中の分析能力が認められ、専任研究員への昇格面談に呼ばれた。希望する専門科と、これから担当したい仕事を尋ねられた。
 
 ### 発生条件・構造
 
@@ -238540,6 +238966,11 @@ s => {
 ```json
 {
   "job": 39,
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "research-access",
+    "incident": "assigned-biomedical-records"
+  },
   "payBonus": 0.15,
   "lifeAffiliation": {
     "id": "rhine-lab",
@@ -238649,14 +239080,20 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 特許庁に受理され、学会での発表は大反響を呼んだ。会社から莫大な発明奨励金と継続的なロイヤリティ支給が認められ、学術界にその名が轟いた。
+> 特許申請が受理され、学会で成果を発表した。会社から五十万龍門幣の発明奨励金を受け取り、次の実験へ戻った。継続的な分配があるかは、別の契約を待つことになった。
 
 効果：
 
 ```json
 {
   "cash": 500000,
-  "payBonus": 0.2,
+  "employmentAction": {
+    "action": "site-incident",
+    "kind": "research-grant",
+    "incident": "patent-award",
+    "amount": 500000,
+    "sourceEventId": "sr_rhine_patent_breakthrough"
+  },
   "k": 4,
   "p": 3
 }
@@ -238736,7 +239173,7 @@ s => {
 
 ### 本文
 
-> これまでの傑出した学術業績と特許取得がクリステン総括の目に留まり、自らの研究室と莫大な予算枠を持つ主任研究員（J 40）への昇格面談に呼ばれた。
+> これまでの研究成果が認められ、主任研究員への昇格面談に呼ばれた。研究室と予算を預かる代わりに、同僚や実験の安全にも責任を持つという。書類の端を押さえ、説明を聞いた。
 
 ### 発生条件・構造
 
@@ -238781,7 +239218,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 専用の研究フロアと数十人の助手、そして巨額の自由予算を手に入れた。テラ科学の最先端を牽引する主任研究員（J 40）として、誰も到達したことのない真理への扉を開く日々が始まった。
+> 辞令に署名し、担当する研究室と予算の説明を受けた。主任研究員として同僚の仕事を預かることになり、白衣のポケットに入れた予定表は以前より厚くなった。
 
 効果：
 
@@ -239014,7 +239451,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-sr_rhine_rhodes_asylum-0"></a>
-選択肢文：持ち出した研究資料をロドスへ託し、医療・研究補助職員（J 30）として身を寄せる
+選択肢文：研究資料を託し、審査と勤務条件を確かめてロドスの研究補助職へ移る
 
 表示・選択条件と補助情報：
 
@@ -239033,7 +239470,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 機密データをロドスの医療部へ引き渡し、正式に医療・研究補助職員（J 30）として迎え入れられた。過去の実験への贖罪を胸に、今度は誰かを傷つけるためではなく、感染者の命を救うための研究にその頭脳を捧げる道を選んだ。
+> 機密資料を医療部へ託したあと、人事担当者と経歴や担当業務を確認した。提示された条件に署名し、研究補助の職員証を受け取った。以前の研究室を離れ、船内の机で仕事を始めた。
 
 効果：
 
@@ -239080,7 +239517,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-sr_rhine_rhodes_asylum-1"></a>
-選択肢文：ロドスには留まらず、地方の町で名もなき薬局手伝いとしてひっそり暮らす
+選択肢文：研究職を離れ、組織に属さず次の暮らしを探す
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -239089,13 +239526,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 巨大組織の争いに疲れ果て、旅の途中で船を降りた。地方都市の静かな薬局で、処方箋を調合しながら平穏な余生を過ごすことにした。
+> 研究室へ戻らないと伝え、借りた寝床で荷物をまとめた。診療所の補助仕事なども思い浮かべたが、行き先も働き口もまだ決まっていない。まずは手元の金で暮らしをつなぐことにした。
 
 効果：
 
 ```json
 {
-  "job": 20,
+  "job": 0,
   "lifeAffiliation": {
     "id": "rhine-lab",
     "title": "ライン生命医科学研究所",
@@ -239109,6 +239546,122 @@ s => {
     "note": "研究界を離脱し隠遁"
   },
   "p": 1
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-sr_rhine_after_asylum_livelihood"></a>
+## sr_rhine_after_asylum_livelihood
+
+- 出典位置：data/parts/routes/rhodes-and-factions/rhine-routes.js:315
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済、感染・医療、教育・文化
+- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 研究室を離れてから、細かな出費ばかりが帳面に増えていた。以前の実験ノートをしまい、今の土地でできる仕事を探すことにした。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "sr_rhine_after_asylum_livelihood",
+  "conf": "S",
+  "references": [
+    "SRC_RHINE_LAB",
+    "SRC_TERRA_LIFECOURSE"
+  ],
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "after": {
+    "id": "sr_rhine_rhodes_asylum",
+    "min": 1,
+    "choice": 1,
+    "outcome": 0
+  },
+  "once": true,
+  "w": 1,
+  "show": {
+    "dynamicFunction": "s => !s.job && !s.fl?.detained && !s.fl?.retired"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-sr_rhine_after_asylum_livelihood-0"></a>
+選択肢文：募集のある診療所で、担当できる補助業務を確かめて働く
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !!employmentOpeningForChoice(s, 20)"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-sr_rhine_after_asylum_livelihood-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 診療所を訪ね、読み書きや手順の確認を受けた。専門の診療を任されるわけではないが、器具の準備や記録の整理なら手を貸せる。勤務条件に合意し、新しい持ち場に立った。
+
+効果：
+
+```json
+{
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 20
+  },
+  "p": 2,
+  "rl": 1
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-sr_rhine_after_asylum_livelihood-1"></a>
+選択肢文：今は働き口を決めず、節約しながら探し続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-sr_rhine_after_asylum_livelihood-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 今日の募集には飛びつかず、支出を書き直した。知っている人へ手紙を出し、無理なく続けられる仕事がないか尋ねた。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "k": 1
 }
 ```
 
@@ -244988,7 +245541,7 @@ s => {
 
 ### 本文
 
-> 雪に閉ざされた聖山イェラグを近代化へ導く、シルバーアッシュ総長率いる『カランド貿易』。伝統に固執する三大家族や曼珠院の保守派と対峙しながら、最新式の重火器と近代流通網を駆使して国を開く武装社員が募集されていた。
+> カランド貿易から案内された面接会場へ来た。受付には輸送路の警備や貨物の扱いを説明する紙が並び、武装社員の募集担当者が応募者の名を呼んでいる。慣れ親しんだ雪道が仕事場になるかもしれないと思い、条件書を手に取った。
 
 ### 発生条件・構造
 
@@ -264342,6 +264895,116 @@ s => educationLegacySceneGuard(s,"education_school_classroom")
 ```
 
 旧シム観測回数：5
+
+
+<a id="event-work_known_opening_review"></a>
+## work_known_opening_review
+
+- 出典位置：data/work/employment-choices.js:5
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：選択イベント、動的本文、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+**動的本文**：実行時状態から文章を組み立てます。本文を一つに固定せず、生成関数を示します。
+
+```js
+s => {
+      const opening = employmentPendingOpening(s);
+      return opening ? "問い合わせた先から、" + opening.jobLabel + "の働き口について返事が届いた。勤めに出るなら、今の暮らしの時間をその仕事へ割くことになる。返事をする前に、手元の案内をもう一度読み返した。" : "";
+    }
+```
+
+### 発生条件・構造
+
+```json
+{
+  "id": "work_known_opening_review",
+  "conf": "S",
+  "references": [
+    "SRC_V76_EMPLOYMENT"
+  ],
+  "cd": 0,
+  "w": 0,
+  "show": {
+    "dynamicFunction": "s => !!employmentPendingOpening(s)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-work_known_opening_review-0"></a>
+選択肢文：条件を確かめ、この働き口を引き受ける
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "dynamicFunction": "s => {\n          const row = employmentPendingOpening(s);\n          return !!row && !!employmentOpeningForChoice(s, row.jobId, row.openingId);\n        }"
+  },
+  "why": "募集が終わったか、今の生活や資格では勤務を始められない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-work_known_opening_review-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 案内の条件にうなずき、引き受けると返事をした。初めて持ち場に立つと、道具の置き場所と一日の手順を教わった。
+
+効果：
+
+```json
+{
+  "employmentAction": {
+    "action": "accept-known-opening"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-work_known_opening_review-1"></a>
+選択肢文：今回は見送り、今の暮らしを続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-work_known_opening_review-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 案内を畳み、今回は引き受けないと伝えた。仕事を始める約束はせず、手元の予定を組み直した。
+
+効果：
+
+```json
+{
+  "employmentAction": {
+    "action": "decline-known-opening"
+  }
+}
+```
+
+旧シム観測回数：未計測
 
 
 <a id="event-v77_family_rumor"></a>

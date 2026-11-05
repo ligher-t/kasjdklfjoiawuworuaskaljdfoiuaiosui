@@ -174,13 +174,12 @@ function spouseGrossAnnualIncome(s) {
   const spouse = s.sp,
     job = Number.isInteger(spouse?.j) ? J[spouse.j] : null,
     region = spouseResidenceRegion(s);
-  if (!spouse || spouse.d || !job || spouseEmploymentStatus(spouse) !== "employed") return 0;
-  return (
-    Math.max(0, job.pay) *
-    region.pm *
-    (1 + ((s.priceIndex || 1) - 1) * 0.65) *
-    spouseHealthWorkCapacity(spouse, s.year)
-  );
+  if (!spouse || !job) return 0;
+  return dependentEmploymentAnnualIncome(s, spouse, s.year, {
+    jobId: spouse.j, region: region.n,
+    unemployed: spouseEmploymentStatus(spouse) !== "employed",
+    capacity: spouseHealthWorkCapacity(spouse, s.year)
+  });
 }
 function spouseHouseholdIncome(s) {
   const spouse = s.sp,
