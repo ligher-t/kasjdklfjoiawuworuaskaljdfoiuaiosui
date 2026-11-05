@@ -97,11 +97,11 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         ]),
         $terraData.K(
           "ウルサスの鉱山で働く",
-          { show: { need: ["国:ウルサス"], or: [{ ban: ["感染診断済"] }, { need: ["隠蔽"] }] } },
+          { show: { need: ["国:ウルサス"], or: [{ ban: ["感染診断済"] }, { need: ["隠蔽"] }] }, en: s => !!employmentOpeningForChoice(s, 3), why: "この地域では採掘班の募集を確認できない" },
           [
             1,
             "軍需を支える鉱山の募集に応じ、採掘班に組み込まれた。渡された防塵具だけで坑道の黒い粉塵をしのげるのか、確かめる術もないまま暗い坑口へ入った。",
-            { job: 3, fl: { workplace_hazard: 1 } }
+            { employmentAction: { action: "accept-local-opening", jobId: 3 }, fl: { workplace_hazard: 1 } }
           ]
         ),
         $terraData.K(
@@ -182,31 +182,31 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         ]),
         $terraData.K(
           "修理工房で技術を習う",
-          { show: { any: ["国:クルビア", "国:ヴィクトリア", "国:龍門", "国:レム・ビリトン", "国:炎国"] } },
+          { show: s => ["クルビア", "ヴィクトリア", "龍門", "レム・ビリトン", "炎国"].includes(s.res?.n) && !!employmentOpeningForChoice(s, 18) },
           [
             0.8,
             "鉄と機械油の匂う工房で、工具の呼び名と部品の型から叩き込まれた。見習いの給金はわずかだったが、壊れた装置が息を吹き返す感触が指先に残った。",
-            { job: 18, k: 3, cr: 2 }
+            { employmentAction: { action: "accept-local-opening", jobId: 18 }, k: 3, cr: 2 }
           ],
           [1, "自前の工具代も親方への紹介状も揃わず、見習いの枠は別の若者に埋まった。", { p: -2 }]
         ),
         $terraData.K(
           "医療補助や薬局の手伝いをする",
-          { show: { ge: { k: 15, literacy: 28 } } },
+          { show: s => s.k >= 15 && literacyValue(s) >= 28 && !!employmentOpeningForChoice(s, 20) },
           [
             0.75,
             "消毒薬の匂う棚で薬瓶の数を揃え、青い顔をした患者を診察室へ案内した。病を治す知識はなくても、長い順番を待つ人の不安な声に耳を傾ける時間はあった。",
-            { job: 20, k: 2, rl: 3 }
+            { employmentAction: { action: "accept-local-opening", jobId: 20 }, k: 2, rl: 3 }
           ],
           [1, "読み書きのできる応募者が多く、薬局の働き口は経験のある人に決まった。", { p: -2 }]
         ),
         $terraData.K(
           "事務・記録の仕事を探す",
-          { show: { ge: { k: 20, literacy: 40 } } },
+          { show: s => s.k >= 20 && literacyValue(s) >= 40 && !!employmentOpeningForChoice(s, 21) },
           [
             0.8,
             "インクの匂う机で帳簿を書き写し、窓口を訪れた人の事情を取り次いだ。自分が整える一行の数字が、誰かの住まいや暮らしを左右するのだと肌で知った。",
-            { job: 21, k: 3, cr: 3 }
+            { employmentAction: { action: "accept-local-opening", jobId: 21 }, k: 3, cr: 3 }
           ],
           [1, "実務の経験がないことを理由に断られ、採用には至らなかった。", { p: -2 }]
         ),
@@ -366,11 +366,11 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         ),
         $terraData.K(
           "職人の工房で手仕事を覚える",
-          { show: { any: ["国:カジミエーシュ", "国:リターニア", "国:炎国", "国:極東", "国:イェラグ"] } },
+          { show: s => ["カジミエーシュ", "リターニア", "炎国", "極東", "イェラグ"].includes(s.res?.n) && !!employmentOpeningForChoice(s, 22) },
           [
             1,
             "工房の隅で布の裁断や金具の下ごしらえを任された。ようやく仕上がった品が表の棚に並んでも、売値の大半は材料代と親方の懐へ消えていった。",
-            { job: 22, ar: 2, k: 1 }
+            { employmentAction: { action: "accept-local-opening", jobId: 22 }, ar: 2, k: 1 }
           ]
         ),
         $terraData.K(
@@ -399,10 +399,10 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           "学び舎に残り、もう少し先まで進路を見極めることにした。学費や教本代の工面は続くが、まだ危険な現場へ身を投じずに済んだ。",
           { job: 0, k: 3, cash: -5e4, p: 2 }
         ]),
-        $terraData.K("鉱区へ働きに出る", { show: { need: ["国:レム・ビリトン"] } }, [
+        $terraData.K("鉱区へ働きに出る", { show: s => s.res?.n === "レム・ビリトン" && !!employmentOpeningForChoice(s, 3) }, [
           1,
           "地元業者が仕切る鉱区で採掘班の働き口を得た。落盤や粉塵への対策は曖昧に濁されたまま、ツルハシを担いで薄暗い坑道へ入った。",
-          { job: 3, fl: { workplace_hazard: 1 } }
+          { employmentAction: { action: "accept-local-opening", jobId: 3 }, fl: { workplace_hazard: 1 } }
         ]),
         $terraData.K(
           "天災後の鉱区調査隊で助手に応募する",
