@@ -100,12 +100,25 @@ assert.equal(result.afterEnd.status,'terminated');
 assert.equal(result.afterEnd.reason,'voluntary-leave');
 assert.equal(result.afterEnd.occupied,result.initialSlot);
 assert.equal(result.afterEnd.vacancy,result.postHire.vacancy+1);
-assert(Math.abs(result.afterEnd.wages-JsPay()*8/12)<0.001,
+assert(Math.abs(result.afterEnd.wages-result.postHire.expectedWage*8/11)<0.001,
   'work that ended in October must not receive October through December wages');
 assert.equal(result.afterEnd.careerChange.toJobId,0);
 assert.equal(result.afterEnd.contract,null);
 assert.equal(result.stable,true);
 assert.equal(result.followingYearPay,0);
 assert.equal(result.noStarterCandidate,true);
-function JsPay(){return 1200000;}
+const clinical=evaluate(`
+  const applicant={...S,job:0,fl:{...S.fl,uni:1},k:75,
+    socialLearning:{...(S.socialLearning||{}),literacy:72},
+    lifeRecord:{...(S.lifeRecord||{}),skills:[{id:'medical-clinical-practice',level:20}]}};
+  const snapshot=JSON.stringify(applicant),rng=S.rngState;
+  const earned=careerOpeningAssessment(applicant,{role:'clinical'});
+  applicant.lifeRecord.skills=[];
+  const unsupported=careerOpeningAssessment(applicant,{role:'clinical'});
+  return {earned:earned.canApply,unsupported:unsupported.canApply,
+    rngSame:rng===S.rngState,originalAward:applicant.fl.uni===1};
+`);
+assert.equal(clinical.earned,true,'earned clinical evidence and degree permit individual assessment');
+assert.equal(clinical.unsupported,false,'degree without supervised clinical training is insufficient');
+assert.equal(clinical.rngSame,true);
 console.log('PASS employment I-2: real vacancy consumed, career episode, contract, ended wages, no duplicate hire');
