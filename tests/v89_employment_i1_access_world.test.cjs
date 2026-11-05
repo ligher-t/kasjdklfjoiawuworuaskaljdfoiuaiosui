@@ -43,7 +43,7 @@ assert.equal(world.created,true,'birth/annual locality progression creates work 
 assert.equal(world.region,'クルビア');
 assert.equal(world.sectors,13);
 assert.equal(world.areas,1);
-assert.equal(world.worldSame,true,'changing the player's job cannot create workplaces');
+assert.equal(world.worldSame,true,"changing the player\'s job cannot create workplaces");
 assert.equal(world.readOnly,true);
 assert.equal(world.rngSame,true,'world inspection does not advance personal RNG');
 assert.equal(world.anonymous,true,'industrial presence does not clone named companies');
