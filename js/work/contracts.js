@@ -9,7 +9,8 @@ function reconcileWorkContract(s) {
     if ((s.job !== episode.jobId && episode.projectAsJob !== false) || s.fl?.retired ||
         (restricted(s) && episode.kind !== "coerced-assignment") || site?.status === "closed" || termEnded || moved) {
       endPlayerEmployment(s, site?.status === "closed" ? "worksite-closed" : termEnded ? "term-completed" :
-        "occupation-or-availability-changed", site?.status === "closed" ? site.operationTo : termEnded ? term : null);
+        moved ? "relocation" : "occupation-or-availability-changed",
+        site?.status === "closed" ? site.operationTo : termEnded ? term : null);
     } else if (episode.kind === "wage-employment") {
       // The actual site is a persistent world record, never a local synthetic workplace.
       if (!s.workContract || s.workContract.basis !== "occupation-episode" ||

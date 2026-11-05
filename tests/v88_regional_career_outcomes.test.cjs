@@ -5,9 +5,8 @@ const path = require('node:path');
 const vm = require('node:vm');
 const {context, setup} = require('./support/annual-cases.cjs');
 const {employmentAppointmentFixture,installEmploymentAppointmentFixture} = require('./support/employment-appointment-fixture.cjs');
-const {installGeneralEmploymentFixture} = require('./support/general-employment-fixture.cjs');
 const {ctx} = context(path.resolve(__dirname, '..'));
-installEmploymentAppointmentFixture(ctx);installGeneralEmploymentFixture(ctx);
+installEmploymentAppointmentFixture(ctx);
 const run = src => vm.runInContext(src,ctx);
 const snap = src => JSON.parse(run('JSON.stringify((()=>{'+src+'})())'));
 function start(region, species='エラフィア') {
@@ -167,22 +166,23 @@ for(const entry of [
   assert.deepEqual(result.issues,[],entry.id+' state audit');
 }
 start('イェラグ');
+employmentAppointmentFixture(ctx,{eventId:'car',jobId:16,affiliationId:'kjerag-village-transporter'});
 const portable=snap(`
   S.cash=10000000;S.house.cash=10000000;
-  startGeneralEmploymentFixture(16,'kjerag-portable-transporter');
-  ap({lifeAffiliation:{id:'terra-general-transporter',title:'各地の運送業',action:'join'},
-    lifeAffiliations:[{id:'kjerag-village-transporter',title:'集落間の便',action:'join'}]});
+  const entry=EV.find(e=>e.id==='car'),start=entry.c.flatMap(c=>c.o).map(o=>o[2]).find(effect=>
+    effect?.job===16&&effect.lifeAffiliation?.id==='kjerag-village-transporter');
+  if(!start)throw Error('Kjerag transporter admission effect not found');
+  const prior=TRACE_RESOLUTION;TRACE_RESOLUTION={kind:'choice',id:'car',label:'fixture'};
+  try{ap(start);}finally{TRACE_RESOLUTION=prior;}
   const destination=moveDestinations(S).find(x=>x.n!==S.res.n);
   if(!destination)throw Error('No exit from Kjerag');
   ap({resTo:destination.n,resFareCovered:true});
   return {job:S.job,local:S.lifeRecord.affiliations.find(x=>x.id==='kjerag-village-transporter').status,
-    general:S.lifeRecord.affiliations.find(x=>x.id==='terra-general-transporter').status,
     contract:!!S.workContract,issues:auditLifeState(S)};
 `);
-assert.equal(portable.job,16,'ordinary transporter keeps the portable occupation');
-assert.equal(portable.local,'left','original village route closes after departure');
-assert.equal(portable.general,'active','general transporter work remains active');
-assert.equal(portable.contract,true,'a new current-region employer is modeled for the portable job');
+assert.equal(portable.job,0,'a location-bound Kjerag role ends after departure');
+assert.equal(portable.local,'left','the village transport posting closes after departure');
+assert.equal(portable.contract,false,'relocation does not invent a destination employer');
 assert.deepEqual(portable.issues,[],'portable occupation audit');
 
 
@@ -206,7 +206,7 @@ for(const row of [
     const goal=S.lifeRecord.goals.find(x=>x.id===c.goal);
     if(c.achieved)applyLifeGoal({id:c.goal,action:'complete',note:'第一の勤務期間で目標を達成した'});
     const completedYear=goal.lastChangedYear;
-    ap({job:0});
+    ap({employmentAction:{action:'leave'}});
     const afterExit={job:S.job,affiliation:initial.status,goal:goal.status,episodes:initial.episodes.length};
     S.year+=3;S.age+=3;S.mo=4;
     const canApply=elig(e,S,tags(S)),canChoose=e.c[0].show(S,tags(S));

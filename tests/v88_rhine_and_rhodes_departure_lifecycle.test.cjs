@@ -273,7 +273,7 @@ const reinstatement=inspect(`
     rhodes=S.lifeRecord.affiliations.find(a=>a.id==='rhodes-staff');
   S.year=1100;S.age=30;
   const stillEmployed={job:S.job,review:review.show(S)};
-  ap({job:0,
+  ap({employmentAction:{action:'leave'},
     lifeAffiliation:{id:'rhodes-staff',action:'leave',note:'ロドスを本人の意思で退職'},
     lifeGoal:{id:'rhodes-work',action:'abandon',
       note:'ロドスへの所属終了にあわせ勤務目標を終了'}});
@@ -356,7 +356,7 @@ for(const corp of ['rhine','bsw']){
     ap({lifeGoal:{id:goalId,action:'complete',note:'前の在籍期間に達成'}});
     const membership=S.lifeRecord.affiliations.find(a=>a.id===affId),
       objective=S.lifeRecord.goals.find(g=>g.id===goalId);
-    ap({job:0,lifeAffiliation:{id:affId,action:'leave',note:'契約を終了'}});
+    ap({employmentAction:{action:'leave'},lifeAffiliation:{id:affId,action:'leave',note:'契約を終了'}});
     S.year+=3;S.age+=3;
     const allowed=elig(hire,S,tags(S));
     applyEmploymentAppointmentFixture(hire.id,rhine?38:35,affId,0,0);

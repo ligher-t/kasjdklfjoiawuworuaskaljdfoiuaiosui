@@ -259,6 +259,8 @@ const capacityAndDebt=vm.runInContext(`(()=>{
   healthyState.h=80;limitedState.h=0;
   settleEmploymentThrough(healthyState,healthyState.year,12);
   settleEmploymentThrough(limitedState,limitedState.year,12);
+  healthyState.year++;healthyState.age++;
+  limitedState.year++;limitedState.age++;
   const healthy=prepareAnnualPersonalBudget(healthyState,ANNUAL_SERVICES,healthyState.age,healthyState.t,healthyState.f),
     limited=prepareAnnualPersonalBudget(limitedState,ANNUAL_SERVICES,limitedState.age,limitedState.t,limitedState.f);
   S.h=0;const travel=infectionCareTravelCostScale(S);

@@ -34,9 +34,12 @@ const provisionOpening=(state,jobId,suffix)=>{
  return JSON.parse(vm.runInContext(`JSON.stringify((()=>{
   const area=ensureOccupationWorkArea(__state),work=__state.world.occupationWorld,
    employerId='career-route-employer:'+__suffix,siteId='career-route-site:'+__suffix,
-   positionId='career-route-position:'+__suffix,openingId='career-route-opening:'+__suffix;
+   positionId='career-route-position:'+__suffix,openingId='career-route-opening:'+__suffix,
+   sectorByJob={2:'MFG',3:'MIN',7:'SCI',14:'MIL',16:'LOG',21:'CIV',27:'SCI',32:'REC'},
+   sector=sectorByJob[__jobId]||'MFG';
+  area.sectorPresence||={};area.sectorPresence[sector]=true;
   work.employers[employerId]={employerId,organizationKey:null};
-  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',sector:'MFG',positionIds:[positionId]};
+  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',sector,positionIds:[positionId]};
   work.positions[positionId]={positionId,siteId,jobId:__jobId,capacity:1,aggregateOccupiedSlots:0,
    identifiedOccupiedSlots:0,reservedSlots:0,vacancyCount:1,openingIds:[openingId]};
   work.openings[openingId]={openingId,siteId,positionId,employerId,areaId:area.areaId,
@@ -250,11 +253,17 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
   for(const a of [e.lifeAffiliation,...(e.lifeAffiliations||[])].filter(Boolean))ids.add(a.id);
  }
  assert.deepEqual([...ids].sort(),Object.keys(rules).sort(),'new or unreviewed affiliation IDs cannot bypass the scope audit');
- const localWorkers=new Set(['columbia-technical-work','victoria-insurance-clerk','ursus-kleini-sever-mine','siracusa-post-family-work','kazimierz-arena-staff','ursus-zelgrad-factory','ursus-displaced-repair-workshop']);
+ const localWorkers=new Set(['military-service-entry','displaced-recovery-survey','ursus-military-factory-contract','columbia-technical-work','victoria-insurance-clerk','ursus-kleini-sever-mine','siracusa-post-family-work','kazimierz-arena-staff','ursus-zelgrad-factory','ursus-displaced-repair-workshop']);
  const localDuties=new Set(['local-mutual-aid','infected-exclusion','infected-mutual-aid','londinium-mutual-aid','leithanian-district-petition','leithanian-noble-household','siracusa-independent-trade','hist-columbia_independence','hist-kazdel_commission_founded','hist-siracusa_unification','hist-ursus_great_rebellion','hist-rim_billiton_independence','hist-leith_revolution','hist-kazdel_war_declared','hist-kazdel_civil_war']);
  for(const [i,id] of [...ids].sort().entries()){
   const rule=rules[id],s=routeState(872000+i,rule.region||'ヴィクトリア',rule.jobs?.[0]||0);
   const appOnly=id==='rhodes-employment';
+  if(rule.scope==='workplace'){
+   const jobId=rule.jobs[0],opening=provisionOpening(s,jobId,'scope:'+id);
+   s.job=0;s.k=Math.max(50,s.k||0);s.socialLearning||={};s.socialLearning.literacy=60;
+   if(jobId===7)applyEffect(s,{lifeSkill:{id:'engineering-experience',title:'技術経験',delta:12,context:'所属範囲監査用の実在求人'}});
+   applyEffect(s,{employmentAction:{action:'accept-local-opening',jobId,openingId:opening.openingId}});
+  }
   applyEffect(s,{lifeAffiliation:{id,title:id,action:appOnly?'contact':id==='ursus-kleini-sever-mine'?'assign':'join'}});
   const a=s.lifeRecord.affiliations.find(row=>row.id===id),key=a.anchor?.localityKey;
   assert(a.origin?.localityKey,id+' retains its first contact place');
@@ -440,7 +449,7 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
 {
  const ui=require('./support/presentation-cases.cjs').context(root);
  installEmploymentAppointmentFixture(ui.ctx);
- vm.runInContext("born({seed:872320,by:1077,region:'ヴィクトリア'});S.age=25;S.year=1102;prepareEmploymentAppointmentFixture('sr_rhodes_hiring_review',28,'rhodes-staff');TRACE_RESOLUTION={kind:'choice',id:'sr_rhodes_hiring_review',label:'fixture'};ap({job:28,lifeAffiliation:{id:'rhodes-staff',title:'ロドス',action:'join'}});TRACE_RESOLUTION=null;ap({lifeAffiliation:{id:'rhodes-staff',action:'role',role:'本艦・船内居住',bindAt:'destination'}});HL=0;rd();",ui.ctx);
+ vm.runInContext("born({seed:872320,by:1077,region:'ヴィクトリア'});S.age=25;S.year=1102;applyEmploymentAppointmentFixture('sr_rhodes_hiring_review',28,'rhodes-staff',0,0);ap({lifeAffiliation:{id:'rhodes-staff',action:'role',role:'本艦・船内居住',bindAt:'destination'}});HL=0;rd();",ui.ctx);
  assert(ui.nodes.get('pf').innerHTML.includes('ロドス本艦'),'the profile renders the ship as the actual residence, not the old land district');
  vm.runInContext("ap({lifeAffiliation:{id:'rhodes-staff',action:'role',role:'地域支部・地上拠点勤務',bindAt:'destination'}});rd();",ui.ctx);
  assert(!ui.nodes.get('pf').innerHTML.includes('ロドス本艦'),'the residence display follows the move back to land');

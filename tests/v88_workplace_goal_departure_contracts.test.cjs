@@ -132,7 +132,7 @@ for(let i=0;i<regionalPlacements.length;i++){
      ap({resTo:dest.n,resFareCovered:true});
    }else if(MODE==='change-job'){
      const openingId=provisionGeneralOpening(2,'transition-destination:'+TARGET.job);
-     ap({employmentAction:{action:'accept-local-opening',jobId:2,openingId}});
+     ap({employmentAction:{action:'accept-local-opening',jobId:2,openingId,replaceCurrent:true}});
    }
    else if(MODE==='retire')ap({fl:{retired:1}});
    const a=S.lifeRecord.affiliations.find(x=>x.id===TARGET.aff),

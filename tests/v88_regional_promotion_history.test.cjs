@@ -57,7 +57,7 @@ for(const [region,incidentId,affiliationId,rank] of promotions){
       episodes:member.episodes.length};
     applyLifeAffiliation(onSuccess);
     const duplicateCount=member.history.filter(row=>row.action==='role'&&row.role===c.rank).length;
-    ap({job:0});
+    ap({employmentAction:{action:'leave'}});
     const departed={job:S.job,status:member.status,role:member.role,
       pastRank:member.history.some(row=>row.action==='role'&&row.role===c.rank),
       duty:incident.show(S)};
