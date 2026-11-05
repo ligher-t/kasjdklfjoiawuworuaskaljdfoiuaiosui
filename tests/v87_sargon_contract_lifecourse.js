@@ -25,9 +25,26 @@ const rows=vm.runInNewContext(String.raw`(()=>{
    kind:concurrentWork.employmentState?.episodes?.at(-1)?.kind,
    employerId:concurrentWork.employmentState?.episodes?.at(-1)?.employerId,
    ongoingEmployment:concurrentWork.employmentState?.activeEpisodeId??null};
+ const ongoingGuard=setup(981009);ongoingGuard.job=2;
+ apply('car',entryIndex,0);ongoingGuard.year+=2;ongoingGuard.age+=2;
+ apply(follow.id,0,0);
+ const ongoingGuardResult={
+   job:ongoingGuard.job,
+   gigCount:ongoingGuard.employmentState.episodes.filter(x=>x.kind==='gig').length,
+   guardAffiliation:ongoingGuard.lifeRecord.affiliations
+     .find(x=>x.id==='sargon-market-guard-contracts')?.status
+ };
+ const deniedGuard=setup(981010);deniedGuard.job=2;
+ apply('car',entryIndex,0);deniedGuard.year+=2;deniedGuard.age+=2;
+ apply(follow.id,0,1);
+ const deniedGuardJob=deniedGuard.job;
+ const retiredGuard=setup(981011);retiredGuard.job=2;
+ apply('car',entryIndex,0);retiredGuard.year+=2;retiredGuard.age+=2;
+ apply(follow.id,2);
+ const retiredGuardJob=retiredGuard.job;
  const regionGate=setup(981006);apply('car',entryIndex,0);regionGate.year+=2;regionGate.age+=2;regionGate.res=REG.find(row=>row.n==='龍門');const outsideRegionHidden=!follow.show(regionGate);
  const ecologyGate=setup(981007);apply('car',entryIndex,0);ecologyGate.year+=2;ecologyGate.age+=2;ecologyGate.local.ecology='熱帯雨林';const outsideEcologyHidden=!follow.show(ecologyGate);
- return {careerChoices:career.c.length,entryIndex,visible,initialJob,followChoices:follow.c.length,oneYearHidden,twoYearVisible,goalAtStart:goal?.status,repeat,failedEntry,paused,moved,exit,sideGig,outsideRegionHidden,outsideEcologyHidden};
+ return {careerChoices:career.c.length,entryIndex,visible,initialJob,followChoices:follow.c.length,oneYearHidden,twoYearVisible,goalAtStart:goal?.status,repeat,failedEntry,paused,moved,exit,sideGig,ongoingGuardResult,deniedGuardJob,retiredGuardJob,outsideRegionHidden,outsideEcologyHidden};
 })()`,ctx,{timeout:45000});
 assert(rows.visible,'the contract work is limited to Sargonian desert/oasis lives: '+JSON.stringify({entryIndex:rows.entryIndex,visible:rows.visible}));
 assert.equal(rows.followChoices,3);assert(rows.oneYearHidden&&rows.twoYearVisible,'the reflection waits until two years after an accepted contract');
@@ -40,5 +57,10 @@ assert.equal(rows.sideGig.job,2,'short guard duty does not displace another occu
 assert.equal(rows.sideGig.kind,'gig');
 assert.equal(rows.sideGig.employerId,null);
 assert.equal(rows.sideGig.ongoingEmployment,null);
+assert.equal(rows.ongoingGuardResult.job,2,'a follow-up guard shift preserves independent work');
+assert.equal(rows.ongoingGuardResult.gigCount,2,'both individual assignments are recorded once');
+assert.equal(rows.ongoingGuardResult.guardAffiliation,'left');
+assert.equal(rows.deniedGuardJob,2,'rejected guard work preserves the unrelated current job');
+assert.equal(rows.retiredGuardJob,2,'declining more guard work preserves an unrelated current job');
 assert(rows.outsideRegionHidden&&rows.outsideEcologyHidden,'later choices stay within the modeled Sargonian local context');
 console.log(JSON.stringify({passed:true,individualContractsOnly:true,twoYearFollowup:true,failedAndDeclinedRoutesDoNotInventMembership:true,regionAndEcologyGates:true,auditErrors:0},null,2));
