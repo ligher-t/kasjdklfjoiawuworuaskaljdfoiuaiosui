@@ -106,11 +106,15 @@ window.TERRA_DATA_BUILD.fragment(
       c: [
         $terraData.K(
           "初年度の保険料を納めて加入する",
-          { en: { affordableCash: 150000 }, why: "初年度の保険料を払える現金が足りない" },
+          {
+            en: s => $rules.economy.availableFunds(s) >=
+              150000 * (s.priceIndex || 1) + $rules.economy.annualReserve(s),
+            why: "生活予備費を残すと、初年度の保険料を払える現金が足りない"
+          },
           [
             1,
             "窓口で契約内容を確かめて署名し、初年度の保険料を納めた。次の更新までは、契約で定められた範囲の治療費補助を受けられる。",
-            { cash: -150000, fl: { insured: 1 }, p: 2 }
+            { cash: s => -150000 * (s.priceIndex || 1), fl: { insured: 1 }, p: 2 }
           ]
         ),
         $terraData.K(
