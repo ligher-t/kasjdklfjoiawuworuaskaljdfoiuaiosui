@@ -255,7 +255,13 @@ ctx.startGeneralEmploymentFixture(2,'household-capacity-and-debt');
 const capacityAndDebt=vm.runInContext(`(()=>{
   S.fl.retired=0;S.debt=10000000;S.cash=0;S.w={...S.w,i:4};S.h=80;
   const budget=()=>prepareAnnualPersonalBudget(S,ANNUAL_SERVICES,S.age,S.t,S.f);
-  const healthy=budget();S.h=0;const limited=budget(),travel=infectionCareTravelCostScale(S);
+  const healthyState=JSON.parse(JSON.stringify(S)),limitedState=JSON.parse(JSON.stringify(S));
+  healthyState.h=80;limitedState.h=0;
+  settleEmploymentThrough(healthyState,healthyState.year,12);
+  settleEmploymentThrough(limitedState,limitedState.year,12);
+  const healthy=prepareAnnualPersonalBudget(healthyState,ANNUAL_SERVICES,healthyState.age,healthyState.t,healthyState.f),
+    limited=prepareAnnualPersonalBudget(limitedState,ANNUAL_SERVICES,limitedState.age,limitedState.t,limitedState.f);
+  S.h=0;const travel=infectionCareTravelCostScale(S);
   S.h=80;const normalTravel=infectionCareTravelCostScale(S);
   ap({debtPlan:'frugal'});const frugal=budget();ap({debtPlan:'maintain'});const kept=budget();
   S.debt=2*Math.max(annualCashReserve(S),S.inc||0,S.exp||0);

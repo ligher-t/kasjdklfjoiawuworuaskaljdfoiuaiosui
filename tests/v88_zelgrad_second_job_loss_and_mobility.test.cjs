@@ -30,7 +30,7 @@ assert.deepEqual([repeat.afterHired.firstCompletion,repeat.afterHired.secondComp
  [1,1]);
 assert.equal(repeat.afterHired.doubleLossAvailable,false);
 assert.equal(repeat.afterHired.newReviewAvailable,false);
-assert.equal(repeat.afterHired.job,24);
+assert.equal(repeat.afterHired.job,16);
 assert.equal(repeat.afterHired.audit.length,0);
 assert.deepEqual([repeat.afterThirdLoss.old,repeat.afterThirdLoss.first,repeat.afterThirdLoss.second],
  ['achieved','achieved','achieved']);

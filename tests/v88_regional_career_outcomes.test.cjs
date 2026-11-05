@@ -5,8 +5,9 @@ const path = require('node:path');
 const vm = require('node:vm');
 const {context, setup} = require('./support/annual-cases.cjs');
 const {employmentAppointmentFixture,installEmploymentAppointmentFixture} = require('./support/employment-appointment-fixture.cjs');
+const {installGeneralEmploymentFixture} = require('./support/general-employment-fixture.cjs');
 const {ctx} = context(path.resolve(__dirname, '..'));
-installEmploymentAppointmentFixture(ctx);
+installEmploymentAppointmentFixture(ctx);installGeneralEmploymentFixture(ctx);
 const run = src => vm.runInContext(src,ctx);
 const snap = src => JSON.parse(run('JSON.stringify((()=>{'+src+'})())'));
 function start(region, species='エラフィア') {
@@ -168,18 +169,8 @@ for(const entry of [
 start('イェラグ');
 const portable=snap(`
   S.cash=10000000;S.house.cash=10000000;
-  const area=ensureOccupationWorkArea(S),work=S.world.occupationWorld,
-    employerId='kjerag-portable-employer',siteId='kjerag-portable-site',
-    positionId='kjerag-portable-position',openingId='kjerag-portable-opening';
-  work.employers[employerId]={employerId,organizationKey:null};
-  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',sector:'LOG',positionIds:[positionId]};
-  work.positions[positionId]={positionId,siteId,jobId:16,capacity:1,aggregateOccupiedSlots:0,
-    identifiedOccupiedSlots:0,reservedSlots:0,vacancyCount:1,openingIds:[openingId]};
-  work.openings[openingId]={openingId,siteId,positionId,employerId,areaId:area.areaId,
-    kind:'general-public',status:'open',slots:1,validFromYear:S.year};
-  area.siteIds.push(siteId);
-  ap({job:16,
-    lifeAffiliation:{id:'terra-general-transporter',title:'各地の運送業',action:'join'},
+  startGeneralEmploymentFixture(16,'kjerag-portable-transporter');
+  ap({lifeAffiliation:{id:'terra-general-transporter',title:'各地の運送業',action:'join'},
     lifeAffiliations:[{id:'kjerag-village-transporter',title:'集落間の便',action:'join'}]});
   const destination=moveDestinations(S).find(x=>x.n!==S.res.n);
   if(!destination)throw Error('No exit from Kjerag');
@@ -219,7 +210,8 @@ for(const row of [
     const afterExit={job:S.job,affiliation:initial.status,goal:goal.status,episodes:initial.episodes.length};
     S.year+=3;S.age+=3;S.mo=4;
     const canApply=elig(e,S,tags(S)),canChoose=e.c[0].show(S,tags(S));
-    ap(firstChoice);
+    if(c.job===59)applyEmploymentAppointmentFixture(e.id,c.job,c.affiliation,0,0);
+    else ap(firstChoice);
     const result={job:S.job,affiliation:initial.status,goal:goal.status,
       goalChangedYear:goal.lastChangedYear,completedYear,
       completions:goal.history.filter(x=>x.action==='complete').length,

@@ -7,9 +7,11 @@ installEmploymentAppointmentFixture(ctx);
 vm.runInContext(`globalThis.provisionGeneralOpening=function(jobId,token){
   const area=occupationAreaSnapshot(S),work=S.world.occupationWorld,
     employerId='workplace-goal-employer:'+token,siteId='workplace-goal-site:'+token,
-    positionId='workplace-goal-position:'+token,openingId='workplace-goal-opening:'+token;
+    positionId='workplace-goal-position:'+token,openingId='workplace-goal-opening:'+token,
+    sector=jobId===21?'CIV':'MFG';
+  area.sectorPresence||={};area.sectorPresence[sector]=true;
   work.employers[employerId]={employerId,organizationKey:null,kind:'anonymous-operator'};
-  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',sector:jobId===7?'MFG':'CIV',positionIds:[positionId]};
+  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',sector,positionIds:[positionId]};
   work.positions[positionId]={positionId,siteId,jobId,capacity:1,aggregateOccupiedSlots:0,
     identifiedOccupiedSlots:0,reservedSlots:0,vacancyCount:1,openingIds:[openingId]};
   work.openings[openingId]={openingId,siteId,positionId,employerId,areaId:area.areaId,
@@ -129,8 +131,8 @@ for(let i=0;i<regionalPlacements.length;i++){
      if(!dest)throw Error('No cross-region route for '+TARGET.region);
      ap({resTo:dest.n,resFareCovered:true});
    }else if(MODE==='change-job'){
-     const openingId=provisionGeneralOpening(19,'transition-destination:'+TARGET.job);
-     ap({employmentAction:{action:'accept-local-opening',jobId:19,openingId}});
+     const openingId=provisionGeneralOpening(2,'transition-destination:'+TARGET.job);
+     ap({employmentAction:{action:'accept-local-opening',jobId:2,openingId}});
    }
    else if(MODE==='retire')ap({fl:{retired:1}});
    const a=S.lifeRecord.affiliations.find(x=>x.id===TARGET.aff),
@@ -147,9 +149,9 @@ for(let i=0;i<regionalPlacements.length;i++){
     [cfg.job,'active','active'],cfg.aff+' entered employment');
   assert.equal(result.affiliation,'left',cfg.aff+' must leave the original job posting on '+mode);
   assert.equal(result.goal,'compromised',cfg.aff+' career goal reflects ended placement on '+mode);
-  assert.equal(result.job,mode==='change-job'?19:0,cfg.aff+' correct occupation after '+mode);
+  assert.equal(result.job,mode==='change-job'?2:0,cfg.aff+' correct occupation after '+mode);
   assert.equal(result.career.from,cfg.job,cfg.aff+' change source');
-  assert.equal(result.career.to,mode==='change-job'?19:0,cfg.aff+' change destination');
+  assert.equal(result.career.to,mode==='change-job'?2:0,cfg.aff+' change destination');
   if(mode==='relocate'||mode==='retire'){
     assert.equal(result.contract,null,cfg.aff+' old contract must close');
     assert.equal(result.site,null,cfg.aff+' former worksite must close');

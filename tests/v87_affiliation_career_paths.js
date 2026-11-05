@@ -235,6 +235,7 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
  assert.deepEqual(Array.from(auditRoute(state)),[],'rejected and renewed application states remain auditable');
  const hired=routeState(870087,'クルビア',0);hired.local.access=0.8;
  applyEffect(hired,contact.c[0].o[0][2]);hired.year=1101;hired.age+=1;
+ provisionAppointment(hired,'sr_rhodes_hiring_review',28,'rhodes-staff');
  applyEffect(hired,hiring.c[0].o[0][2]);
  assert.equal(hired.lifeRecord.affiliations.find(row=>row.id==='rhodes-employment').status,'outside');
  assert.equal(hired.lifeRecord.affiliations.find(row=>row.id==='rhodes-staff').status,'active','accepted application transitions into active staff membership');

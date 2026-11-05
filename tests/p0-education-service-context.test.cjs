@@ -141,6 +141,7 @@ for(const [eventId,label,outcomeIndex,expectedJob,trauma] of [
 }
 annual.setup(ctx,{id:'medical-assistant',seed:948110,region:'クルビア',age:22});
 assert.equal(vm.runInContext(`(()=>{
+ S.fl.uni=1;S.k=50;S.socialLearning||={};S.socialLearning.literacy=60;
  const route=EV.find(e=>e.id==='study_to_work').c.find(c=>c.l==='診療・研究機関の補助職へ応募する');
  prepareGeneralEmploymentOpeningFixture(20,'p0-medical-assistant');ap(route.o[0][2]);return occupationLabel(S);
 })()`,ctx),'医療補助・薬局手伝い','an assistant appointment must not confer physician/researcher employment');
