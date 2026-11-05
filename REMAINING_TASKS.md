@@ -1,3 +1,11 @@
+## 2026-11-05：雇用I-1 実コード第一段階（世界先行と採用政策）
+
+- [x] `js/work/employment-policy.js`：66組織を全件対応させた読み取り専用の新規プレイヤー雇用判定を追加。J28〜82の55組織専用職は職業から正規化。BLOCKED 2組織への新規加入を `js/effects/apply.js` の事前判定で拒否。採用資格照会 `js/core/state.js:careerOpeningAssessment` は明示した職業・企業を同じ判定へ接続。
+- [x] `js/work/occupation-world.js`：19地域×13産業の仮説行列から、地域/地区/世界seedごとに独立した匿名事業者・職場・職位・求人枠を決定。新サイトは主人公の現在の職業IDから生成せず、`js/world/locality.js:localityAdvanceOne` で世界側を初期化。画面用の `occupationAreaSnapshot` は読み取り専用。
+- [x] `index.html` と改訂値を同期し、`tests/v89_employment_i1_access_world.test.cjs` を登録。対象の既存選定CIでの検証を実施。
+- [ ] **I-1を継続**：具体拠点の年次稼働/廃業/災害・求人の期限と欠員予約、実際の採用における募集元の正本検証、匿名地区と移動都市・旧セーブの同一性。名前付き企業のサイトを全土へ自動生成しない。
+- [ ] **I-2移行で接続**：現行の `facilitySpecsFor`・`reconcileWorkContract`・`pickStarterJob` と `J.pay` に残る旧合成職場・契約・給与の自動生成を `employmentEpisode` 正本へ置換。既存イベントの直接 `job` 書込・役職付与・全家族の職歴経路を同一雇用アクセスで監査。新台帳を実際の採用/賃金へ結び付けるまでI-1を全面完了扱いにしない。
+
 ## 2026-11-05：雇用・職業・生計 統合設計v3.0（設計完了、実装未着手）
 
 - [x] **設計正本を統合**：[v3.0統合設計書](docs/employment/TERRA_EMPLOYMENT_INTEGRATED_DESIGN_V3_20261105.md) を本作業の入口とする。既存W00〜W12・19地域×13部門・J0〜82・66組織・A175/488/703・B/C/D862・受入107件を継承。新規文面・ゲームロジック・セーブ形式は今回の作業で変更していない。
