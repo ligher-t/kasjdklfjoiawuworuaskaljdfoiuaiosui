@@ -1,6 +1,13 @@
 // base/career-entry: ordered game data; see DATA_MODULES.md.
 window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, $rules) {
   "use strict";
+  $terraData.EVENT_EFFECT_TYPES.object.push("employmentAction");
+  $terraData.EVENT_FIELD_META.employmentAction = {
+    unit: "求人・就業案件への本人の意思決定",
+    meaning: "実在する求人枠、資格、本人の承諾から採用案件と実勤務期間を開始・終了する。職業IDのみでは雇用しない",
+    status: "S",
+    valueType: "object"
+  };
   $terraData.EV.push(
     {
       id: "car",
