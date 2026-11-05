@@ -23,6 +23,7 @@ const rows=vm.runInNewContext(String.raw`(()=>{
      positionId='test-sargon-transport-position',openingId='test-sargon-transport-opening';
    w.employers[employerId]={employerId,organizationKey:null,areaId};
    w.sites[siteId]={siteId,employerId,areaId,status:'open',positionIds:[positionId]};
+   w.areas[areaId].siteIds.push(siteId);
    w.positions[positionId]={positionId,siteId,jobId:16,capacity:1,
      aggregateOccupiedSlots:0,identifiedOccupiedSlots:0,reservedSlots:0,
      vacancyCount:1,openingIds:[openingId]};
