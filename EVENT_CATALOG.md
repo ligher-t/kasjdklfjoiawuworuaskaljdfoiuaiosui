@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2586　選択肢数：3296　結果枝数：4125
+イベント数：2584　選択肢数：3292　結果枝数：4097
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -12,7 +12,7 @@
 
 ## 国・地域別索引
 
-[イェラグ (84)](#tag-region-0)　・　[イベリア (109)](#tag-region-1)　・　[ヴィクトリア (145)](#tag-region-2)　・　[ウルサス (170)](#tag-region-3)　・　[カジミエーシュ (102)](#tag-region-4)　・　[カズデル (119)](#tag-region-5)　・　[クルビア (116)](#tag-region-6)　・　[サーミ (91)](#tag-region-7)　・　[サルゴン (98)](#tag-region-8)　・　[シエスタ (80)](#tag-region-9)　・　[シラクーザ (98)](#tag-region-10)　・　[ボリバル (94)](#tag-region-11)　・　[ミノス (86)](#tag-region-12)　・　[ラテラーノ (88)](#tag-region-13)　・　[リターニア (103)](#tag-region-14)　・　[レム・ビリトン (93)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (86)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (90)](#tag-region-19)　・　[未特定 (767)](#tag-region-20)　・　[龍門 (106)](#tag-region-21)
+[イェラグ (84)](#tag-region-0)　・　[イベリア (109)](#tag-region-1)　・　[ヴィクトリア (145)](#tag-region-2)　・　[ウルサス (170)](#tag-region-3)　・　[カジミエーシュ (102)](#tag-region-4)　・　[カズデル (118)](#tag-region-5)　・　[クルビア (117)](#tag-region-6)　・　[サーミ (91)](#tag-region-7)　・　[サルゴン (98)](#tag-region-8)　・　[シエスタ (80)](#tag-region-9)　・　[シラクーザ (98)](#tag-region-10)　・　[ボリバル (94)](#tag-region-11)　・　[ミノス (85)](#tag-region-12)　・　[ラテラーノ (88)](#tag-region-13)　・　[リターニア (103)](#tag-region-14)　・　[レム・ビリトン (93)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (86)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (90)](#tag-region-19)　・　[未特定 (766)](#tag-region-20)　・　[龍門 (106)](#tag-region-21)
 
 <a id="tag-region-0"></a>
 ### イェラグ（84）
@@ -92,7 +92,7 @@
 - [choice_kjerag_07](#event-choice_kjerag_07) — 春の訪れとともに、山上の放牧地でヤクの毛刈りの季節がやってきた。ヤクの胸元の産毛から採れる柔らかな最高級カシミヤ毛糸を紡ぎ、名産ショールを織り上げる…
 - [choice_kjerag_08](#event-choice_kjerag_08) — カランド貿易が外国から最新の滅菌器や手術器具を寄贈しようとしたが、寺院の頑固な古老たちが「神聖な寺院に得体の知れない外国の機械を入れるな」と拒絶して…
 - [choice_kjerag_09](#event-choice_kjerag_09) — 聖山を貫く鉄道トンネルの難所工事現場で、硬い花崗岩の岩盤が行く手を阻み、地下水の噴出が発生した。工期が遅れれば雪の季節に間に合わない。緊急の支保工補…
-- [choice_kjerag_10](#event-choice_kjerag_10) — 年に一度、イェラグ全土の信徒が聖峰の麓に集う「カランド年次大祭」が開幕した。山々には祈りのホルンの音が響き渡り、巫女による神聖な祝福の儀が執り行われ…
+- [choice_kjerag_10](#event-choice_kjerag_10) — 聖峰へ向かう人が増える時期になり、麓の集落では宿と食事の準備に追われていた。遠くから来た参詣者もいるが、誰がどこから来たのかまでは分からない。
 - [car_kje_karlan_entry](#event-car_kje_karlan_entry) — 雪に閉ざされた聖山イェラグを近代化へ導く、シルバーアッシュ総長率いる『カランド貿易』。伝統に固執する三大家族や曼珠院の保守派と対峙しながら、最新式の…
 - [car_kje_monk_entry](#event-car_kje_monk_entry) — カランドの女神を祀る神聖なる曼珠院。古くからの信仰を守り、聖山への立ち入りを監視する護衛僧の入門式が開かれていた。俗世の銃器を退け、杖と信仰の祈りで…
 - [car_kje_karlan_daily_01](#event-car_kje_karlan_daily_01) — 雪山を貫く鉄路沿いの保線基地で、最新式のアサルトライフルの分解清掃を行った。他国から運ばれてくる工業資材のコンテナを検品する。保守的な三族議会の視線…
@@ -123,9 +123,9 @@
 - [daily_iberia_01](#event-daily_iberia_01) — 白壁の民家の路地で、天日に干された塩魚と完熟オリーブの素朴な昼餉をいただいた。塩気とオリーブ油の豊かな風味が滋味深く、歩き疲れた身体を満たした。
 - [daily_iberia_02](#event-daily_iberia_02) — 丘の上のオリーブ畑から、どこまでも静まり返った群青の海を見下ろした。黄金時代の面影を残す穏やかな潮風に吹かれ、心が静かに洗われた。
 - [daily_iberia_03](#event-daily_iberia_03) — 街角のパン屋で、オレンジの花水で香りづけされた焼き菓子を買った。柑橘の爽やかな甘みが口いっぱいに広がり、確かな幸福感を得た。
-- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段で、潮風に当たりながら手入れの行き届いた古いアコースティックギターを爪弾いた。哀愁を帯びた調べが静かな午後に響き渡った。
+- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段の近くで、誰かが古い弦楽器を静かに爪弾いていた。途切れ途切れの調べを聞きながら、しばらく足を止めた。
 - [daily_iberia_05](#event-daily_iberia_05) — 近所の塩田の管理人から、初摘みの真っ白な天日塩（フルール・ド・セル）を一袋分けてもらった。大地の恵みに感謝した。
-- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で磨き上げた。差し込む光が色鮮やかな幾何学模様を石畳に落とし、心が安らいだ。
+- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で拭く手伝いをした。差し込む光が色のついた模様を石畳に落とした。
 - [daily_iberia_07](#event-daily_iberia_07) — 涼しい夕暮れ時、広場の井戸端で近所の人々と穏やかな世間話を交わした。厳しい時代の中にも息づく人の温もりに触れた。
 - [daily_iberia_08](#event-daily_iberia_08) — 路地裏の古道具屋で、かつて黄金時代に使われていた真鍮製の小さな羅針盤を見つけた。針が静かに北を指す様子に、失われゆく航海のロマンを感じた。
 - [daily_iberia_09](#event-daily_iberia_09) — 強い日差しを遮る白い布の天蓋の下で、冷たいレモン水を飲んだ。渇いた喉に心地よい刺激が走り、元気が回復した。
@@ -155,8 +155,8 @@
 - [daily_iberia_33](#event-daily_iberia_33) — 夜半、海の方角から霧が立ち込め、街全体を冷たく湿った白い帳が包み込んでいった。
 - [daily_iberia_34](#event-daily_iberia_34) — 仕立て屋の店先で、黒いラシャ布で仕立てられた質素で頑丈な作業着を眺めた。
 - [daily_iberia_35](#event-daily_iberia_35) — 審問所の巡回兵に突然路上で呼び止められ、持ち物をすべて地面にぶちまけられて執拗な尋問を受け、ひどい恐怖と屈辱を味わった。
-- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、異様な生臭さと蠢く影を目撃し、背筋の凍る悪寒に襲われて一目散に逃げ出した。
-- [daily_iberia_37](#event-daily_iberia_37) — 塩田で過酷な炎天下の重労働を続け、脱水症状と日焼けで倒れ込みそうになった。
+- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、風向きとは合わない生臭さと、崩れた家屋の奥で動く影を見かけた。正体を確かめず、その場を離れた。
+- [daily_iberia_37](#event-daily_iberia_37) — 塩田の作業を長く続けた日、強い日差しで喉が渇き、腕も重くなった。休憩所まで戻って水を飲み、しばらく日陰で身体を冷ました。
 - [daily_iberia_38](#event-daily_iberia_38) — 近所の住人が夜のうちに審問所へ連行されたという噂が広まり、重苦しい沈黙が界隈を支配した。
 - [daily_iberia_39](#event-daily_iberia_39) — 審問所の外郭警備任務に就いた。ランタンの灯りを掲げ、暗闇の海岸線から這い上がる脅威に目を光らせた。
 - [daily_iberia_40](#event-daily_iberia_40) — 広場の石壁に張り出された審問所の布告を眺めた。「我らは沈黙に抗い、光を守る最後の砦である」という峻厳な文言に、この国を覆う緊張感を肌で感じた。
@@ -178,8 +178,8 @@
 - [daily_iberia_56](#event-daily_iberia_56) — 教会の聖歌隊の練習に参加し、澄み切った高音で賛美歌を歌い上げた。神聖なハーモニーに包まれ、心が洗われた。
 - [daily_iberia_57](#event-daily_iberia_57) — 海を見下ろす古いテラスで、古老たちが「海がまだ豊かだった黄金の時代」について静かに語り合っているのを耳にした。失われた繁栄の記憶に、静かに耳を傾けた…
 - [daily_iberia_58](#event-daily_iberia_58) — 長年使い続けてきた革張りの聖書と祈祷書を蜜蝋で手入れした。どんな暗雲の時代であっても信仰と希望を失わない決意を固めた。
-- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の町グランファロの古い石壁に沿って歩いた。潮の匂いを含んだ風が壁の隙間を吹き抜け、かつての住民たちが残した古い標識が静かに佇んでいた。
-- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、グランファロの街頭にガス灯が一斉に灯された。潮風に揺れる柔らかな灯火が石畳を照らし出し、荒涼とした沿岸の町に静かな安らぎをもたらしていた。
+- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の古い集落で、風雨に削られた石壁に沿って歩いた。壁の隙間を潮風が抜け、昔の住民が残した標識がところどころに残っていた。
+- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、沿岸の集落で街灯が順に灯された。風に揺れる明かりが石畳を照らし、人通りの減った道に細い光が続いた。
 - [daily_iberia_61](#event-daily_iberia_61) — 夜半、審問官の黒外套が翻り、窓の隙間から細いランタンの光が室内の壁を舐めるように走った。呼吸すら止め、闇の中で身を縮こまらせた。
 - [daily_iberia_62](#event-daily_iberia_62) — 朝、近所の路地を通ると、知り合いの民家の扉に審問所の印が刻まれた赤い封印札が貼られていた。誰もその家の名を口にしなくなった。
 - [daily_iberia_63](#event-daily_iberia_63) — 礼拝の終わりに、厳格な司祭が会衆を見回しながら帳面へ何事かを書き留めていた。周囲の信徒たちの視線が疑心暗鬼に泳ぎ、教会内に張り詰めた沈黙が流れた。
@@ -190,10 +190,10 @@
 - [choice_iberia_04](#event-choice_iberia_04) — 夏の強い日差しによって塩田の水が一気に干上がり、結晶化した純白の天日塩の収穫期を迎えた。重い塩を木舟ですくい上げ、乾燥小屋へ運ぶ過酷な力仕事が募集さ…
 - [choice_iberia_05](#event-choice_iberia_05) — 古い教会の床下から、黄金時代の大航海時代に描かれた羊皮紙の古航海図が発見された。暗号化された緯度経度と海流データが記されている。解読できれば失われた…
 - [choice_iberia_06](#event-choice_iberia_06) — 秋の丘陵地帯で、たわわに実った黒オリーブの一斉収穫が始まった。枝を揺すって実を落とし、大樽に集めて石臼で搾る村を挙げた大仕事だ。
-- [choice_iberia_07](#event-choice_iberia_07) — 沿岸の入り江で、夜陰に乗じて外国の密輸船が危険な禁制品（未検査の海洋生物や武器）を陸揚げしようとしているのを目撃した。見張りの男たちが周囲を警戒して…
-- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔の海外渡航歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と泣きつ…
-- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に製作された大型の真鍮製屈折望遠鏡が発見された。レンズは曇り、歯車は錆びついている。修復して澄み切った星空を観測しようと…
-- [choice_iberia_10](#event-choice_iberia_10) — 大いなる静謐の犠牲者を追悼し、未来への希望を灯す「光のランタン祭」が開催された。広場から丘の上まで無数のランタンが灯され、厳かな祈りと賛美歌が夜空へ…
+- [choice_iberia_07](#event-choice_iberia_07) — 夜の入り江で、船籍の分からない小型舟艇から、布をかぶせた荷箱が浜へ運び込まれているのを見かけた。荷の中身も運び手の素性も分からないまま、見張り役らし…
+- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔に他国を訪れた経歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と…
+- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に作られた真鍮製の望遠鏡を見つけた。レンズは曇り、歯車には錆が浮いている。自分で分解する前に、どう扱うか考えた。
+- [choice_iberia_telescope_observation_followup](#event-choice_iberia_telescope_observation_followup) — 修理して手元に残した望遠鏡は、しばらく布をかけたまま置いてあった。雲の少ない夜、窓の外を見て、久しぶりに筒を外へ向けることにした。
 - [daily_bolivar_48](#event-daily_bolivar_48) — 集落の自警団として夜間の見張りに立った。近隣のゲリラや略奪者から村人たちの平和な眠りを守り抜いた。
 - [daily_rim_42](#event-daily_rim_42) — 鉱区の火薬庫とオリジニウム保管庫の警備に就いた。厳格な入退室チェックと生体認証を行い、不正な持ち出しを徹底して防いだ。
 - [daily_minos_48](#event-daily_minos_48) — アクロポリスの城門で、警備兵として槍を立てて直立した。ポリスの秩序と市民の平穏を守る誇りを胸に職務を果たした。
@@ -468,7 +468,7 @@
 - [choice_ursus_07](#event-choice_ursus_07) — 過酷な鉱区から脱走してきた感染者の若い鉱夫が、凍傷で足を引きずりながらあなたの納屋に転がり込んできた。「追っ手に見つかれば射殺される」と絶望の目で震…
 - [choice_ursus_08](#event-choice_ursus_08) — 豪奢な貴族の屋敷の大屋根に分厚い雪が積もり、倒壊の危険があるため高額な日当で臨時の雪下ろし人足が募集されていた。足場は凍りつき極めて滑りやすい。
 - [choice_ursus_09](#event-choice_ursus_09) — 郊外の打ち捨てられた古い要塞の地下で、旧公爵家が秘匿していたとされる非公開の蔵書庫が見つかった。学術調査隊が同行者を募っている。
-- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わりを告げ、春の訪れを祝う伝統行事「マースレニツァ」の日が訪れた。広場では藁人形が燃やされ、太陽を象徴する丸いクレープ（ブリヌイ）が山のように…
+- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わり、地区の広場に食べ物の屋台が数軒出て、人々が長い寒さの区切りをつけるように集まっていた。呼び名や祝い方は土地ごとに違うらしい。
 - [daily_siracusa_53](#event-daily_siracusa_53) — 商業地区の夜間パトロール中、裏路地で見張りをする黒服の男たちと目が合った。互いに深く追求せず、会釈だけを交わして通り過ぎるのがこの街の暗黙の協調だ。
 - [daily_siesta_55](#event-daily_siesta_55) — ビーチのライフセーバーとして監視塔から海を見守った。離岸流に流されそうになった遊泳者を素早く発見し、笛を鳴らして誘導した。
 - [daily_kjerag_47](#event-daily_kjerag_47) — 山間の関所で、外部から持ち込まれる危険物資の検査を行った。三大家族の掟と国家の安全を守るため、厳格に職務を遂行した。
@@ -617,7 +617,7 @@
 - [choice_kazimierz_07](#event-choice_kazimierz_07) — 大手飲料メーカーから、「新発売のエナジードリンクの宣伝として街頭ビジョンやポスターに出てほしい」と破格の報酬でオファーされた。ただし過激な演出が求め…
 - [choice_kazimierz_08](#event-choice_kazimierz_08) — かつて街の英雄だった老騎士が、病と借金で住まいを追い出されそうになっていた。商業連盟の取り立て屋が無慈悲に退去を迫っている。
 - [choice_kazimierz_09](#event-choice_kazimierz_09) — ある情報屋から、「商業連盟の大物幹部が関与する八百長試合の決定的な帳簿データがある。高値で買って告発するか、企業に買い取らせるか選べ」と取引を持ちか…
-- [choice_kazimierz_10](#event-choice_kazimierz_10) — 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、…
+- [choice_kazimierz_10](#event-choice_kazimierz_10) — 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募って…
 - [kaz_knight_injury_adaptation](#event-kaz_knight_injury_adaptation) — 競技中に深く傷めた肩が、腕を高く上げる作業や重い荷を抱えるたびに鈍く疼く。競技場からは治療費も補償の音沙汰もないまま、この身体でどうやって日々の仕事…
 - [kaz_knight_injury_job_transition](#event-kaz_knight_injury_job_transition) — 古傷の肩をかばいながら働く要領は覚えたものの、無理が重なる日は夜も眠れないほど疼く。街の求人板で帳簿つけや受付補助の募集を見かけ、力仕事を離れて新し…
 - [kaz_knight_later_career_review](#event-kaz_knight_later_career_review) — 競技場の砂塵のなかで剣を振るい続けて、もう十年以上が過ぎた。どれだけ試合を重ねても、傷んだ武具の修理代や次の大会の登録料は自分の懐から出ていく。若い…
@@ -635,12 +635,12 @@
 - [car_kaz_comp_knight_entry](#event-car_kaz_comp_knight_entry) — ネオン輝く大都市カヴァレリエルキ。歓声と巨額の賭け金が飛び交う騎士競技のメジャー大会で、企業スポンサー付きの『競技騎士』になるための公開トライアウト…
 - [car_kaz_armorless_entry](#event-car_kaz_armorless_entry) — 商業連合会の暗部――金で動く騎士たちの背後で、邪魔な感染者騎士や監査会の役人を密かに始末する影の暗殺組織『無冑盟』。一度足を踏み入れれば抜け出すこと…
 - [car_kaz_comp_knight_daily_01](#event-car_kaz_comp_knight_daily_01) — 照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と…
-- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する…
+- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFi…
 - [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。…
 - [cl_kazimierz_sponsorship](#event-cl_kazimierz_sponsorship) — カジミエーシュの眩い競技場の裏手では、ネオンの影で無数の清掃夫や整備工が油まみれになって働いていた。顔なじみの業者から「競技場の裏方の口があるぞ」と…
 
 <a id="tag-region-5"></a>
-### カズデル（119）
+### カズデル（118）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [fam_conscript](#event-fam_conscript) — 戦火が迫るなか、きょうだいの一人に部隊への招集状が届いた。泣き崩れる家族のそばで、免除を願い出るか、自分が身代わりに出るか、重苦しい相談が続いた。
 - [kaz_merc](#event-kaz_merc) — カズデルの傭兵隊が、荒野を抜ける輸送隊の護衛を募っていた。分け前は悪くないが、生きて帰れる保証もない長旅になる。
@@ -732,7 +732,6 @@
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
 - [choice_kazdel_09](#event-choice_kazdel_09) — 移動集落の定住化を進めるため、荒野の地下深くを流れる水脈を探り当て、新たな深井戸を掘削する大事業が始まった。硬い岩盤を貫く難工事となっている。
-- [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
 - [daily_iberia_43](#event-daily_iberia_43) — 塩田で木枠を組んで浅い結晶池を補修した。海水を効率よく天日乾燥させる伝統の構造を狂いなく整備した。
 - [daily_iberia_44](#event-daily_iberia_44) — オリーブの圧搾工場で、石臼を回して一番搾りの黄金色に輝くエクストラバージンオイルを抽出した。芳醇な香りに満たされた。
 - [daily_bolivar_46](#event-daily_bolivar_46) — 木製の焙煎器を炭火の上で回し、自家製の深煎りコーヒーを淹れた。深い苦味と豊かなコクに、疲れた身体が芯から癒された。
@@ -762,7 +761,7 @@
 - [v78_sarkaz_self_protection](#event-v78_sarkaz_self_protection) — 新しい仕事場の面接で、担当者はあなたの角を一瞥するなり履歴書を脇へ押しやった。「お前たちサルカズが何をしてきたか、知らないとは言わせないぞ」。これま…
 
 <a id="tag-region-6"></a>
-### クルビア（116）
+### クルビア（117）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [col_tech_safety_review](#event-col_tech_safety_review) — 試作装置の点検表と、現場監督から渡された稼働手順の数値が食い違っていた。監督は試験の日程を一日たりとも動かさないと言う。始業のベルが作業場に鳴り響く…
 - [col_tech_safety_aftermath](#event-col_tech_safety_aftermath) — あの試作試験から二年が過ぎた。訂正印が押された点検表は今もロッカーの奥に眠っているが、現場ではまたしても安全手順を省くよう急かす声が飛び交い始めた。…
@@ -864,6 +863,7 @@
 - [education_funding_review](#event-education_funding_review) — 次の期の学費納付書が届き、家族と頭を突き合わせて蓄えを数えた。このまま通い続けられるか、いったん休学して働くか、苦しい選択を迫られた。
 - [columbia_credit_collection](#event-columbia_credit_collection) — 工業区の部品問屋から来た取立人が、用心棒を伴ってアパートの扉を叩いた。期限を過ぎたツケと借金の残額を突きつけられ、今払えるのかと詰め寄られた。
 - [earth_persecution_columbia_clinical_trap](#event-earth_persecution_columbia_clinical_trap) — 医療費の支払いが滞り、アパートの立ち退き期限が迫る中、身なりの良い民間製薬企業の代理人が訪ねてきた。『当社の新薬抑制剤の治験プログラムに参加すれば、…
+- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 - [life_columbia_clinical_trap_decision](#event-life_columbia_clinical_trap_decision) — 多額の負債と生活苦のなか、製薬企業の代理人を名乗る男から『新薬の短期被験者になるだけで借金を全額肩代わりする』という契約書を差し出された。だが添付さ…
 - [ori_columbia_insurance_records](#event-ori_columbia_insurance_records) — 鉱石病の診断が出たあと、クルビアの保険窓口へ治療費の補助が出るか掛け合いに行った。担当者が広げた約款には小さな文字で除外条項が並び、結局いくらの薬代…
 - [sr_rhodes_posting_review](#event-sr_rhodes_posting_review) — ロドスに入って最初の配属面談が呼ばれた。移動し続ける本艦の船内宿舎に部屋をもらうか、それとも今暮らしている国の地上支部へ通うかを選べるという。どちら…
@@ -965,7 +965,7 @@
 - [choice_sami_07](#event-choice_sami_07) — 冬が本格化する前に、集落総出で大量の保存食の仕込みが行われた。川で獲れた鮭の燻製、山で摘んだコケモモのジャム煮、キノコの乾燥作業に追われている。
 - [choice_sami_08](#event-choice_sami_08) — 極寒の夜を乗り切るため、発酵させたコケモモと大麦、薬草を蒸留器にかけ、度数の高いサーミ特製の薬用蒸留酒（アクアビット）を造ることになった。
 - [choice_sami_09](#event-choice_sami_09) — クルビアの大手研究所から派遣された学術調査隊が、サーミの原生林の生態系調査のため、現地の地形を知り尽くした案内人を高額の日当で募集している。
-- [choice_sami_10](#event-choice_sami_10) — 長い極夜が終わり、数ヶ月ぶりに地平線の上に太陽の光が戻ってくる「太陽迎えの冬至祭」が開幕した。広場には巨大なかがり火が焚かれ、全部族が手を取り合って…
+- [choice_sami_10](#event-choice_sami_10) — 冬の日照が短い時期、近くの人々が火のそばに集まり、温かい食事を分けていた。氏族や地域ごとの慣習は違うが、この場では寒さをしのぐために人が寄り合ってい…
 - [family_child_future](#event-family_child_future) — 大きくなった{kid}のこれからについて、近しい仲間や家族と膝を突き合わせた。鉱山や工場の見習いに入るか、よそへ学びに出るか、それとも独立するか。最…
 - [car_sam_priest_entry](#event-car_sam_priest_entry) — 氷結した古代の巨木がそびえるサーミの深き森。部族を導き、巨獣と森の意志を読み取る『雪祀（雪祭司）』の継承者が選ばれようとしていた。文明の機械を排し、…
 - [car_sam_warrior_entry](#event-car_sam_warrior_entry) — 北の果てなき氷原から侵食する正体不明の存在――『悪魔』。その脅威を文明圏から隔離するため、木々に傷を刻み境界を守護する『樹痕の戦士』。命の保証はなく…
@@ -1061,7 +1061,7 @@
 - [choice_sargon_07](#event-choice_sargon_07) — 隊商に同行して砂漠の峠を越える途中、岩陰から武装した砂漠の盗賊団が姿を現し、荷物の引き渡しを要求してきた。護衛の兵士たちと一触即発の睨み合いとなって…
 - [choice_sargon_08](#event-choice_sargon_08) — 雨林の祭祀場で、各部族の誉れを賭けた古式武闘の儀が執り行われていた。熱狂する部族民たちの前で、踏み固められた土俵で鍛え抜かれた勇士たちが技と力、アー…
 - [choice_sargon_09](#event-choice_sargon_09) — パーディシャーの配下の代官が、砂漠の関所での通行税を不当に引き上げた。このままでは小規模な商人や農民たちが破産してしまう。商人組合が連名で宮殿へ減税…
-- [choice_sargon_10](#event-choice_sargon_10) — 年に一度、砂漠中の隊商とオアシス住民が集う「大バザール祝祭」が開幕した。広大な広場には数千の天幕が立ち並び、オリエントの秘宝、珍しい動物、香辛料、甘…
+- [choice_sargon_10](#event-choice_sargon_10) — 交易路沿いのオアシスに隊商が何組か到着し、広場へ臨時の市が立った。食料、布、道具などが並ぶが、どこから来た品か分からないものも混じっている。
 - [ori_waterway_cleaning](#event-ori_waterway_cleaning) — 水路の泥さらいの人手が足りないと声がかかった。岸辺の澱みには、腐った布切れに混じって黒く光る粒が溜まっている。どこまで素手で踏み込んでいいものかため…
 - [ori_sargon_sandstorm_check](#event-ori_sargon_sandstorm_check) — サルゴンの乾いた風がうなりを上げ、砂嵐の気配が濃くなってきた。出発の時刻は迫り、同行者は目と口を幾重にも布で覆っている。このまま荷を出せば、風に混じ…
 - [sr_rhodes_posting_review](#event-sr_rhodes_posting_review) — ロドスに入って最初の配属面談が呼ばれた。移動し続ける本艦の船内宿舎に部屋をもらうか、それとも今暮らしている国の地上支部へ通うかを選べるという。どちら…
@@ -1246,7 +1246,7 @@
 - [choice_siracusa_07](#event-choice_siracusa_07) — 近所のパン屋の主人が青ざめた顔で相談してきた。シマを仕切るファミリーが代替わりし、みかじめ料を一気に2倍に跳ね上げると通告してきたという。このままで…
 - [choice_siracusa_08](#event-choice_siracusa_08) — 旧市街の古い居住区画に、大手開発企業と手を組んだファミリーの使いが現れ、新都市構想のための立ち退きを迫ってきた。長年住み慣れた住民たちは路頭に迷うと…
 - [choice_siracusa_09](#event-choice_siracusa_09) — 夜の運河沿いの倉庫街を歩いていると、霧の向こうで小型船から密輸された武器とオリジニウム製品を陸揚げしている現場に鉢合わせてしまった。見張りの男たちが…
-- [choice_siracusa_10](#event-choice_siracusa_10) — 新都市ウォルシーニの市民広場で、古くから伝わる伝統の手打ち麺料理を競い合う祝祭料理市が開かれた。広場には各街区の名だたる料理人や腕自慢が集まり、オリ…
+- [choice_siracusa_10](#event-choice_siracusa_10) — 近くの市民市場で料理の屋台が増え、店ごとに麺料理や煮込みを出していた。特別な全国行事という様子ではなく、街区の人が食事を楽しむ小さな催しらしい。
 - [siracusa_credit_collection](#event-siracusa_credit_collection) — シラクーザのファミリーに雇われた会計役が、黒服の男を連れて食堂の席へ割り込んできた。返済期限はすでに過ぎている。静かな声で突きつけられた残額を前に、…
 - [family_child_future](#event-family_child_future) — 大きくなった{kid}のこれからについて、近しい仲間や家族と膝を突き合わせた。鉱山や工場の見習いに入るか、よそへ学びに出るか、それとも独立するか。最…
 - [life_omerta_hitman_confrontation](#event-life_omerta_hitman_confrontation) — 雨の降りしきるシラクーザの路地裏で、前後の出口に見覚えのない黒塗りのコートを着た男たちが立った。冷たい銃口が向けられ、オメルタを破った裏切り者への『…
@@ -1342,7 +1342,7 @@
 - [choice_bolivar_07](#event-choice_bolivar_07) — 過去の戦闘で屋根が吹き飛び、放置されていた村の小学校の校舎を再建する運動が始まった。「子供たちに銃ではなくペンを持たせたい」という村人たちの願いが込…
 - [choice_bolivar_08](#event-choice_bolivar_08) — ドッソレスの繁華街にある裏カジノで、外国マフィアがイカサマ装置を使って観光客から不当に金を巻き上げている現場の証拠を掴んだ。市警に通報するか、直接取…
 - [choice_bolivar_09](#event-choice_bolivar_09) — 深い渓谷に架かる古い蔓と木の吊り橋が老朽化し、踏み板が抜けて渡るのが命がけになっている。対岸の集落と協力し、鋼鉄ワイヤーを使った頑丈な吊り橋に架け替…
-- [choice_bolivar_10](#event-choice_bolivar_10) — 内戦の銃声が止んだ収穫の季節、全村を挙げた「大地への感謝大祭」が開幕した。広場には焼きトウモロコシと豆料理の大鍋が並び、マリカの陽気なリズムに合わせ…
+- [choice_bolivar_10](#event-choice_bolivar_10) — 収穫を終えた近隣の農家が広場へ野菜や穀物を持ち寄り、小さな市が立った。食べ物を交換する人のそばで、仕事を終えた者たちが音楽を鳴らして休んでいる。
 - [ori_waterway_cleaning](#event-ori_waterway_cleaning) — 水路の泥さらいの人手が足りないと声がかかった。岸辺の澱みには、腐った布切れに混じって黒く光る粒が溜まっている。どこまで素手で踏み込んでいいものかため…
 - [sr_rhodes_posting_review](#event-sr_rhodes_posting_review) — ロドスに入って最初の配属面談が呼ばれた。移動し続ける本艦の船内宿舎に部屋をもらうか、それとも今暮らしている国の地上支部へ通うかを選べるという。どちら…
 - [sr_rhodes_posting_transfer](#event-sr_rhodes_posting_transfer) — 本艦での船内生活にもすっかり慣れた頃、今航行している国の地上支部に欠員が出たという話が回ってきた。手を挙げれば地上の街で暮らせるようになるが、本艦で…
@@ -1357,7 +1357,7 @@
 - [cl_bolivar_crop_labor](#event-cl_bolivar_crop_labor) — 刈り入れの手伝いに駆り出され、汗だくになって麻袋を荷車へ積み上げた。作業が終わると、帳面を持った男が取り分を量り始めた。自分の手元に残る袋は驚くほど…
 
 <a id="tag-region-12"></a>
-### ミノス（86）
+### ミノス（85）
 - [minos_hero_spirit_stigma](#event-minos_hero_spirit_stigma) — 診療所の帰り道、通りがかりの大人が『鉱石病は英雄の気高い魂まで蝕む』と噂していた。治療を続ける親は、家の病のことを近所にだけは悟られるなと唇に指を当…
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [min_hero](#event-min_hero) — ミノスの伝統競技祭が近づき、街角の広場は出場者と見物客の熱気でざわめいている。登録料と遠征費を出して自ら挑むか、観客席から声援を送るか、それとも外か…
@@ -1437,7 +1437,6 @@
 - [choice_minos_07](#event-choice_minos_07) — アスクレピオスの神殿施療院で、秋の季節の変わり目に体調を崩した多くの巡礼者たちが訪れている。野生の薬草の調合や、温泉治療の入浴補助を行うボランティア…
 - [choice_minos_08](#event-choice_minos_08) — 隣接する二つのポリスの間で、水源の利用権とオリーブ畑の境界線を巡って激しい口論となり、一触即発の武力衝突の危機が生じた。公正中立な市民陪審員として調…
 - [choice_minos_09](#event-choice_minos_09) — 秋空の下、丘のブドウ園で糖度の乗った黒ブドウの一斉収穫が始まった。大きな木桶にブドウを放り込み、裸足になって皆で踏み潰す伝統の果汁絞りが繰り広げられ…
-- [choice_minos_10](#event-choice_minos_10) — ミノス全ポリスが一つになり、建国の十二英雄を称える世紀の「十二英雄合同大祭」が開幕した。アクロポリスから麓の広場まで聖火のパレードが続き、荘厳なホル…
 - [car_min_champ_entry](#event-car_min_champ_entry) — 古代ポリスの自由と鍛錬の美を重んじるミノス。神々に捧げるアクロポリスの大競技会で、都市の名誉を背負って戦う『競技勇士』の選抜会が開かれていた。鋼の筋…
 - [car_min_orator_entry](#event-car_min_orator_entry) — 市民たちが集い、哲学と民主的な議論を交わすミノスのアゴラ（広場）。法廷での弁論や政策の立案を担う『弁論官』が募集されていた。雄弁な論理、確固たる正義…
 - [car_min_champ_daily_01](#event-car_min_champ_daily_01) — 青空の下、神殿の白亜の円形闘技場で全身にオリーブ油を塗り、パンクラチオンの組み手稽古に汗を流した。鍛え上げられた筋肉と槍の一突き。神々とポリスの自由…
@@ -1522,7 +1521,7 @@
 - [choice_laterano_07](#event-choice_laterano_07) — 聖都で長年愛されてきた焼き菓子舗の店主が、高齢のため信頼できる共同経営者を探していた。出資して新店舗の出店に加われば、安定した配当と菓子開発の権利が…
 - [choice_laterano_08](#event-choice_laterano_08) — ラテラーノの難解な公証法の手続きに困り果てていた地方出身のリーベリの商人が、店舗の営業許可申請が通らず立ち往生していた。あなたの法知識と助力を求めて…
 - [choice_laterano_09](#event-choice_laterano_09) — 聖都の大聖堂の鐘楼にある巨大な大鐘「福音の鐘」の固定金具が緩み、調律が狂い始めていた。地上数十メートルの吹きさらしの足場で、金具の締め直しと調律を行…
-- [choice_laterano_10](#event-choice_laterano_10) — 春の復活祭を迎え、聖都の広場という広場が色とりどりの砂糖菓子と花々で飾り付けられた。巨大な特製ケーキが切り分けられ、誰もが平和と甘味を分かち合う最大…
+- [choice_laterano_10](#event-choice_laterano_10) — 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 - [life_honor_martyrdom_decision](#event-life_honor_martyrdom_decision) — 敵陣の地下牢に捕らわれ、尋問官が無言で冷たい拷問器具を机に並べ始めた。『仲間の潜伏先を話せば命だけは助けてやる』と告げられたが、武人・騎士としての誇…
 - [ori_laterano_citizenship_record](#event-ori_laterano_citizenship_record) — 鉱石病の診断が下りたあと、ラテラーノの市民窓口でこのまま街に暮らせるのか尋ねた。正規の市民登録があっても、感染者がいつまで留まれるのか、係員は歯切れ…
 - [car_lat_executor_entry](#event-car_lat_executor_entry) — 鐘の音が鳴り響くラテラーノ公証人役場。教皇庁の法典を執行し、遺言・契約の履行と国内外の紛争調停を担う『執行人』の審査が行われていた。絶対の信仰と守護…
@@ -1620,7 +1619,7 @@
 - [choice_leithanien_07](#event-choice_leithanien_07) — 百年以上続く老舗カフェの老パティシエが、引退を前に秘伝の「ザッハトルテ」の調合ノートを受け継ぐ後継者を探している。厳格な味覚と職人気質が求められる。
 - [choice_leithanien_08](#event-choice_leithanien_08) — 表舞台を追われた感染者音楽家たちが、廃教会の地下で密かに市民向けの慈善演奏会を計画していた。憲兵に見つかれば全員逮捕だが、彼らは音楽の灯を消したくな…
 - [choice_leithanien_09](#event-choice_leithanien_09) — 雪深き山頂の感染者療養所へ、冬越しのための医薬品と食料を届けるトランスポーターが募集されていた。急峻な崖道と吹雪を越える命がけの輸送任務だ。
-- [choice_leithanien_10](#event-choice_leithanien_10) — 街路樹が初夏の花を咲かせる季節を迎え、都の広場で市民総出の初夏祭が開かれた。広場には焼き菓子や伝統料理の屋台が並び、優雅な円舞曲（ワルツ）に合わせて…
+- [choice_leithanien_10](#event-choice_leithanien_10) — 初夏の午後、広場の一角で小さな市が開かれ、焼き菓子の屋台のそばで数人の演奏家が曲を奏でていた。通りがかりの人が足を止め、短い休息を取っている。
 - [life_leithanian_civic_entry](#event-life_leithanian_civic_entry) — 川にかかる橋の踏み板が抜けてから、荷車は毎日ぐるりと遠回りを強いられていた。街角の集会所では、住民たちの声を集めて領主側の役人へ修繕を掛け合おうとい…
 - [life_leithanian_civic_routine](#event-life_leithanian_civic_routine) — 街角の集まりに顔を出すようになってから、橋だけでなく石畳の陥没や街灯の故障まで様々な苦情が持ち込まれるようになった。今夜も仕事終わりに集会所へ集まる…
 - [life_leithanian_civic_activity](#event-life_leithanian_civic_activity) — 役人へ陳情を出してから何度も集まりを重ねたが、橋の板は抜けたままで、冬場に凍りつく坂道の話まで重なってきた。なかなか動かない役人を相手にこのまま声を…
@@ -1723,7 +1722,7 @@
 - [choice_rim_07](#event-choice_rim_07) — 週末の夜、鉱山街最大のパブ「ドリル＆ホップ」で恒例の力自慢腕相撲トーナメントが開催された。熱狂する鉱夫たちの声援の中、屈強な猛者たちがテーブルを挟ん…
 - [choice_rim_08](#event-choice_rim_08) — 鉱区住宅の粉塵被害を軽減するため、慈善基金から寄贈された高性能エアフィルターと換気ファンを、高齢者や呼吸器の弱い家庭へ一軒ずつ取り付けて回るボランテ…
 - [choice_rim_09](#event-choice_rim_09) — 鉱区の北東方向に大規模な天災雲（源石嵐）が観測された。採掘プラットフォームを安全地帯へ緊急移動させるため、脚部アンカーの引き抜きと移動機構の最終点検…
-- [choice_rim_10](#event-choice_rim_10) — 過酷な鉱山から無事に生還した日々を祝い、大地の恵みに感謝する伝統の「採掘安全祈願ランタン祭」が執り行われた。数千の安全ヘルメットのライトと真鍮ランタ…
+- [choice_rim_10](#event-choice_rim_10) — 鉱区の勤務が一区切りついた夜、作業場の前で無事故だった班を労う食事が出された。ヘルメットを机へ置いた人々が、温かい料理を囲んでその日の仕事を振り返っ…
 - [infection_mine_crystal_contact](#event-infection_mine_crystal_contact) — 採掘坑の古い支柱がミシミシと軋んでずれ、崩れた壁面から生々しい源石の結晶がむき出しになった。換気扇は止まり、きらめく粉塵がカンテラの光を濁らせている…
 - [life_rim_supply_delay](#event-life_rim_supply_delay) — 鉱区へ届くはずの交換部品の輸送便が遅れ、急ぎの修理に必要な部材が底をついた。止まった重機の警報音が作業場中に鳴り響いている。自腹で消耗品を買い足して…
 - [life_rim_skill_handover](#event-life_rim_skill_handover) — 整備の現場にもすっかり慣れ、機械の異音を聞き分けるのも早くなった。最近入ってきた新人が、外した部品の戻し方や異音の見極め方で立ち往生し、休憩時間に心…
@@ -1929,7 +1928,7 @@
 - [car_hig_touhou_daily_01](#event-car_hig_touhou_daily_01) — 東方重工の工場内で、最新鋭の旋盤から削り出された手裏剣『シルバーウィンド』同型刃の寸法と硬度を測定した。特殊合金の焼き入れムラがないか、顕微鏡で結晶…
 
 <a id="tag-region-20"></a>
-### 未特定（767）
+### 未特定（766）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
@@ -2155,9 +2154,9 @@
 - [family_spouse_disclosure_followup](#event-family_spouse_disclosure_followup) — 鉱石病を打ち明けられた夜から、二人は同じ家の別々の部屋で眠るようになった。次の通院のことも、ずっと隠されていた年月のことも、食卓では互いに口に出せな…
 - [family_newlywed_residence](#event-family_newlywed_residence) — 結婚が決まってから、二人でどこに新居を構えるかの話し合いが続いた。借家の敷金や親の面倒、互いの職場までの道のりを考え合わせると、簡単には決められなか…
 - [old_reemployment_review](#event-old_reemployment_review) — 朝起きて仕事着に袖を通すたび、年々抜けない疲れを実感するようになった。これまでと同じ日数働き続けるか、そろそろ荷を下ろすか考える時期が来た。
-- [life_goal_start](#event-life_goal_start) — 仕事帰りに借りていた道具を返し、夕餉の食材を買い込んで家路を歩いた。ただ今日を回すだけで過ぎていく日々のなかで、これから先、自分が何を支えに生きてい…
+- [life_goal_start](#event-life_goal_start) — 仕事を終えて家路につく途中、今日の失敗やうまくいった手順を思い返した。ただ一日を回すだけで過ぎていく暮らしのなかで、これから先、自分が何を支えに生き…
 - [life_goal_review](#event-life_goal_review) — かつて心に決めた目標を、日々の忙しさのなかでふと思い返した。仕事や家の事情もあの頃とは変わり、これからどう向き合っていくか考え直した。
-- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると手元が狂いそうになる。居残りで手を動かして慣らすか、自前で道具を揃えて熟練の先輩にコツを教わるか考え…
+- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると判断や手順が乱れそうになる。終業後に苦手な流れを確かめるか、自分で必要な教材や道具を用意して経験の長…
 - [life_goal_resume](#event-life_goal_resume) — しばらく胸の奥にしまい込んでいたかつての目標を、ふとした折に思い出した。日々の暮らしが少し落ち着いた今、もう一度手をつけてみるか考えた。
 - [life_local_mutual_aid](#event-life_local_mutual_aid) — 路地の給水栓や共同ボイラーの世話が同じ人ばかりに押しつけられ、隣人たちの間で曜日ごとに当番を回そうという話が持ち上がった。道具置き場の鍵を預かり、全…
 - [life_local_mutual_aid_review](#event-life_local_mutual_aid_review) — 共同ボイラーの燃料運びや水場の掃除が、いつの間にか真面目な数人ばかりに偏っていた。このままでは立ち行かなくなると、隣人たちを集めてこれからの回し方を…
@@ -2320,8 +2319,6 @@
 - [asset_daily_property_comfort](#event-asset_daily_property_comfort) — 自ら買い取った住まいの壁を塗り直し、居心地の良い家具を整えた。毎月の家賃の心配がない生活は、心に大きな余裕と安定をもたらしている。
 - [asset_choice_workshop_open](#event-asset_choice_workshop_open) — これまでに培った技術と知見を活かし、自らの看板を掲げて小さな工房や店舗（仕立て屋、パン屋、修理工房、薬草店）を開業する相談を持ちかけられた。
 - [asset_daily_workshop_revenue](#event-asset_daily_workshop_revenue) — 工房の店先で注文主と打ち合わせをし、丹精込めて仕上げた品を納品した。手渡された代金を金庫に収め、自らの腕で稼ぎ出す手応えを噛み締めた。
-- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — 不意の天災や移動都市の区画被災に備え、民間保険会社が提供する「天災総合避難・再建保険」の案内が届いた。年々の保険料を納めることで、被災時に速やかな補…
-- [asset_catastrophe_insurance_claim](#event-asset_catastrophe_insurance_claim) — 天災の混乱の中、避難所で保険会社の臨時窓口を見つけた。避難証明書と保険証書を提示したところ、迅速な審査が行われた。
 - [family_spouse_household_arrangement](#event-family_spouse_household_arrangement) — 前に決めた家計や家事の分担が今の暮らしに合っているか、夜の食卓で改めて話し合った。互いの仕事や家族の事情も変わり、見直す時期が来ていた。 夕食の後、…
 - [family_spouse_finance_strain](#event-family_spouse_finance_strain) — 夜遅く、{sp}が浮かない顔で借金の返済と日々の出費が重なって苦しいと打ち明けた。溜まった請求書を前に、どう乗り切るか二人で頭を寄せた。
 - [family_spouse_health_review](#event-family_spouse_health_review) — 最近、朝起きても疲れが抜けないと{sp}がこぼした。外での仕事と家の用事が重なり、顔色も優れない日が続いていた。医者に診せるか、家の負担を減らすか、…
@@ -2342,7 +2339,8 @@
 - [life_medical_oripathy](#event-life_medical_oripathy) — 鉱石病の疼きと重だるさが年々深まり、昔なら一気に片づいた仕事にも何度も息継ぎが要るようになった。次の抑制薬を買う金と診察の日取りを思い浮かべ、ため息…
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
-- [life_mental_crisis_support](#event-life_mental_crisis_support) — （動的本文）
+- [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
+- [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_mental_crisis_recovery](#event-life_mental_crisis_recovery) — 底のない暗がりの中にいた頃より、外の光を浴びて歩ける日が増えてきた。それでもふとした拍子に胸がざわつく夜はある。自分の心とどう折り合いをつけていくか…
 - [life_violence_threat_safety](#event-life_violence_threat_safety) — 帰り道で浴びせられた脅し文句が、扉の鍵を閉めたあとも耳の奥にこびりついている。翌朝、表へ出る前に足がすくんだ。どうやって自分の身を守るか考えなければ…
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
@@ -2786,7 +2784,7 @@
 - [choice_lungmen_07](#event-choice_lungmen_07) — スラム街で貧民や感染者を無償で診ている地下診療所が、止血剤と抗感染薬の在庫が底をついて閉鎖の危機に瀕していた。医師が悲痛な面持ちで支援を呼びかけてい…
 - [choice_lungmen_08](#event-choice_lungmen_08) — ネオン街の裏路地で、上等な絹の服を着て泣きじゃくっている迷子の小さな子どもを見かけた。身につけている装飾品から、上層区の富裕層の令息であることが窺え…
 - [choice_lungmen_09](#event-choice_lungmen_09) — 雑居ビルの低層階から火の手が上がり、黒煙が階段を駆け上がった。非常ベルが鳴り響く中、煙に巻かれて逃げ遅れた住人たちが上の階から助けを求めている。
-- [choice_lungmen_10](#event-choice_lungmen_10) — 年に一度の「九龍美食競宴」が開催され、誰でもオリジナル料理で出店できる看板屋台大会が開かれていた。優勝すれば龍門全土に名が売れ、多額の賞金が出る。
+- [choice_lungmen_10](#event-choice_lungmen_10) — 夜市の一角で、数軒の屋台が新しい料理を出して客の反応を競う小さな催しを始めていた。客足が増え、臨時の手伝いを探す店もある。
 - [daily_siracusa_53](#event-daily_siracusa_53) — 商業地区の夜間パトロール中、裏路地で見張りをする黒服の男たちと目が合った。互いに深く追求せず、会釈だけを交わして通り過ぎるのがこの街の暗黙の協調だ。
 - [daily_siesta_55](#event-daily_siesta_55) — ビーチのライフセーバーとして監視塔から海を見守った。離岸流に流されそうになった遊泳者を素早く発見し、笛を鳴らして誘導した。
 - [daily_kjerag_47](#event-daily_kjerag_47) — 山間の関所で、外部から持ち込まれる危険物資の検査を行った。三大家族の掟と国家の安全を守るため、厳格に職務を遂行した。
@@ -2809,7 +2807,7 @@
 
 ## ジャンル別索引
 
-[移動・物流 (244)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (367)](#tag-genre-2)　・　[感染・医療 (416)](#tag-genre-3)　・　[教育・文化 (447)](#tag-genre-4)　・　[差別・制度 (156)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (244)](#tag-genre-7)　・　[戦争・政治 (146)](#tag-genre-8)　・　[天災・避難 (203)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (396)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (895)](#tag-genre-13)　・　[労働・経済 (763)](#tag-genre-14)
+[移動・物流 (244)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (367)](#tag-genre-2)　・　[感染・医療 (418)](#tag-genre-3)　・　[教育・文化 (445)](#tag-genre-4)　・　[差別・制度 (156)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (244)](#tag-genre-7)　・　[戦争・政治 (146)](#tag-genre-8)　・　[天災・避難 (201)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (394)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (896)](#tag-genre-13)　・　[労働・経済 (764)](#tag-genre-14)
 
 <a id="tag-genre-0"></a>
 ### 移動・物流（244）
@@ -2932,7 +2930,7 @@
 - [daily_sargon_56](#event-daily_sargon_56) — 日射病やサソリの刺傷に苦しむ旅人たちを、砂漠特産の薬草と泥湿布で手当てした。確かな治療に感謝の言葉をかけられた。
 - [daily_sargon_60](#event-daily_sargon_60) — 若いキャラバンの旅立ちに際し、かつて自分が砂嵐を切り抜けた時に使っていた年代物の真鍮製コンパスを譲り渡した。旅人の魂が継承された。
 - [choice_sargon_07](#event-choice_sargon_07) — 隊商に同行して砂漠の峠を越える途中、岩陰から武装した砂漠の盗賊団が姿を現し、荷物の引き渡しを要求してきた。護衛の兵士たちと一触即発の睨み合いとなって…
-- [choice_sargon_10](#event-choice_sargon_10) — 年に一度、砂漠中の隊商とオアシス住民が集う「大バザール祝祭」が開幕した。広大な広場には数千の天幕が立ち並び、オリエントの秘宝、珍しい動物、香辛料、甘…
+- [choice_sargon_10](#event-choice_sargon_10) — 交易路沿いのオアシスに隊商が何組か到着し、広場へ臨時の市が立った。食料、布、道具などが並ぶが、どこから来た品か分からないものも混じっている。
 - [daily_sami_21](#event-daily_sami_21) — 湿地交易の行商人がソリを引いて集落に現れ、南方の塩や鉄器と北方の毛皮を交換していた。
 - [daily_sami_47](#event-daily_sami_47) — 南部湿地帯の交易所で、他国から持ち込まれた薬用酒と金属製ケトルを仕入れた。寒冷地で真に価値を持つ品を見極めて商った。
 - [choice_sami_04](#event-choice_sami_04) — 年に数回開かれる南部湿地帯の交易市にやってきた。サーミ各地の部族や外国の商人たちが集まり、珍しい交易品を並べている。手持ちの毛皮や薬草を何と交換する…
@@ -2944,7 +2942,7 @@
 - [choice_kazdel_01](#event-choice_kazdel_01) — 荒野に残された巨大な装甲車の残骸を解体し、分厚い装甲板から農具の鍬や大鍋を大量に鍛造するプロジェクトが立ち上がった。溶接と鍛冶の腕利きの助手が求めら…
 - [choice_kazdel_04](#event-choice_kazdel_04) — 瓦礫の撤去作業中、地下数メートルの地層から古代サルカズの楔形文字が刻まれた巨大な黒曜石の石板が発掘された。太古の歴史と失われたアーツ技術の手がかりが…
 - [daily_iberia_17](#event-daily_iberia_17) — 荷車に積まれたオリーブの木樽を、軋む車輪を押しながら坂の上の加工所まで運んだ。
-- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔の海外渡航歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と泣きつ…
+- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔に他国を訪れた経歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と…
 - [daily_bolivar_15](#event-daily_bolivar_15) — 荷車を引くロバの背中に、収穫されたばかりの青いバナナの房が山積みになって揺れていた。
 - [daily_bolivar_21](#event-daily_bolivar_21) — 荷物を背負ったトランスポーターが、ぬかるんだ山道を慎重に歩いて峠を越えていった。
 - [choice_bolivar_05](#event-choice_bolivar_05) — 勢力間の緩衝地帯に位置する谷あいの広場で、月に一度の「停戦交易市」が開かれた。普段は対立する陣営の商人たちも武器を置き、塩、油、布、薬の物々交換を行…
@@ -3182,14 +3180,14 @@
 - [daily_laterano_32](#event-daily_laterano_32) — 公証人役場の厳格な書類審査で、祖父母の古い財産目録の不備を指摘され、数時間にわたる冷淡な再審査を命じられて疲労困憊した。
 - [daily_laterano_51](#event-daily_laterano_51) — 修道院の果樹園で、神父たちと一緒にオレンジの収穫を手伝った。搾りたてのフレッシュジュースをいただき、爽快な汗を流した。
 - [choice_laterano_03](#event-choice_laterano_03) — 鉱石病により国外の荒野へ追放された親しい親族から、天災で避難所を失い当面の薬代と食料が尽きたという悲痛な便りが届いた。公証役場を通じた正規送金には高…
-- [choice_laterano_10](#event-choice_laterano_10) — 春の復活祭を迎え、聖都の広場という広場が色とりどりの砂糖菓子と花々で飾り付けられた。巨大な特製ケーキが切り分けられ、誰もが平和と甘味を分かち合う最大…
+- [choice_laterano_10](#event-choice_laterano_10) — 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 - [daily_columbia_30](#event-daily_columbia_30) — 診療所の待合室で、民間医療保険の料率引き上げ通知を前に頭を抱える家族の姿を見かけた。容赦ない約款の見直しに、暗い影が落ちていた。
 - [daily_kazimierz_04](#event-daily_kazimierz_04) — 騎士訓練場の近くの原っぱで、子どもたちが木剣を振るって騎士ごっこに興じていた。真剣な眼差しと無邪気な笑顔に、失われゆく騎士道の純粋さを見た。
 - [daily_kazimierz_23](#event-daily_kazimierz_23) — 広場の噴水のふちで、大道芸人が木刀の手品を披露していた。子どもたちの無邪気な歓声に、大道芸人は深々とお辞儀をして帽子を差し出した。
 - [daily_kazimierz_37](#event-daily_kazimierz_37) — 街角の掲示板に、競技シーズンに伴う宿泊施設の再編と区画整理の告知が張り出されていた。慣れ親しんだ街並みが慌ただしく姿を変えていく。
 - [daily_kazimierz_60](#event-daily_kazimierz_60) — 高額な騎士学校の学費と武具の維持費の請求書を前に、親が深いため息をついていた。期待に応えなければならないプレッシャーが重く圧し掛かった。
 - [choice_kazimierz_04](#event-choice_kazimierz_04) — 偶然手に入った決勝戦の超プラチナ特等席チケット。ダフ屋に転売すれば生活費数ヶ月分の莫大な利益になるが、自ら会場で歴史的一戦を見ることもできる。
-- [choice_kazimierz_10](#event-choice_kazimierz_10) — 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、…
+- [choice_kazimierz_10](#event-choice_kazimierz_10) — 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募って…
 - [daily_siracusa_29](#event-daily_siracusa_29) — 近所の子どもたちが木箱と棒切れを使って、劇場の役者の真似事をして遊んでいた。台詞回しは驚くほど堂に入っている。
 - [daily_siracusa_53](#event-daily_siracusa_53) — 商業地区の夜間パトロール中、裏路地で見張りをする黒服の男たちと目が合った。互いに深く追求せず、会釈だけを交わして通り過ぎるのがこの街の暗黙の協調だ。
 - [daily_siesta_55](#event-daily_siesta_55) — ビーチのライフセーバーとして監視塔から海を見守った。離岸流に流されそうになった遊泳者を素早く発見し、笛を鳴らして誘導した。
@@ -3209,7 +3207,7 @@
 - [daily_kazdel_60](#event-daily_kazdel_60) — 手元に余裕ができた折、復興支援の炊き出し小屋に立ち寄って温かいスープを配る手伝いをした。湯気の中ではにかむ子どもたちの笑顔に、心が洗われる思いがした…
 - [choice_kazdel_03](#event-choice_kazdel_03) — 吹きさらしのテント暮らしを脱するため、数十家族が身を寄せ合える堅牢な石造り共同住宅の建設が始まった。寒風が吹きすさぶ中、レンガ積みと屋根架けの急ピッ…
 - [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書き…
-- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔の海外渡航歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と泣きつ…
+- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔に他国を訪れた経歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と…
 - [daily_bolivar_09](#event-daily_bolivar_09) — 夕暮れ時、家族や近所の人々と囲炉裏を囲み、温かい豆スープを分け合って啜った。互いを思いやる温もりに胸が熱くなった。
 - [daily_bolivar_48](#event-daily_bolivar_48) — 集落の自警団として夜間の見張りに立った。近隣のゲリラや略奪者から村人たちの平和な眠りを守り抜いた。
 - [daily_bolivar_57](#event-daily_bolivar_57) — 父親からコーヒー豆の選別と土作りの基礎を教わった。大地に根差して生きる農民の誇りを学んだ。
@@ -3244,7 +3242,7 @@
 - [family_divorce_parenting_review](#event-family_divorce_parenting_review) — 前に送った子どもの予定についての便りに、まだ{formerSpouse}から返事がない。休みが近づき、もう一度手紙を出すべきか迷った。 知人に間へ入…
 - [family_spouse_disclosure_followup](#event-family_spouse_disclosure_followup) — 鉱石病を打ち明けられた夜から、二人は同じ家の別々の部屋で眠るようになった。次の通院のことも、ずっと隠されていた年月のことも、食卓では互いに口に出せな…
 - [family_newlywed_residence](#event-family_newlywed_residence) — 結婚が決まってから、二人でどこに新居を構えるかの話し合いが続いた。借家の敷金や親の面倒、互いの職場までの道のりを考え合わせると、簡単には決められなか…
-- [life_goal_start](#event-life_goal_start) — 仕事帰りに借りていた道具を返し、夕餉の食材を買い込んで家路を歩いた。ただ今日を回すだけで過ぎていく日々のなかで、これから先、自分が何を支えに生きてい…
+- [life_goal_start](#event-life_goal_start) — 仕事を終えて家路につく途中、今日の失敗やうまくいった手順を思い返した。ただ一日を回すだけで過ぎていく暮らしのなかで、これから先、自分が何を支えに生き…
 - [life_rhodes_referral](#event-life_rhodes_referral) — 町の診療所で鉱石病の診断を受けた際、医師が声を潜めて「ロドス・アイランドという組織の巡回医療につなぐ紹介状を書ける」と教えてくれた。自分の身体とこれ…
 - [life_rhodes_referral_response](#event-life_rhodes_referral_response) — ロドスの連絡員から便りが届き、近いうちにこの地域へ巡回医療班が立ち寄ると知らされた。仕事を抜ける口実と診察代の工面をどうするか考えた。
 - [life_infected_association_choice](#event-life_infected_association_choice) — 通りの商店の軒先に「感染者入店お断り」の木札が掲げられるようになり、町内の寄り合いでも感染者を職場や借家から締め出そうという声が勢いを増していた。会…
@@ -3338,7 +3336,7 @@
 - [life_medical_injury](#event-life_medical_injury) — 表の傷口はふさがったのに、重い物を持ち上げると奥が鋭く疼く。帰り道でも痛みに足を引きずり、何度か立ち止まって息をついた。
 - [life_medical_nutrition](#event-life_medical_nutrition) — 一日の食事を一度に減らす日が続き、朝起きても手足に力が入らない。空腹をごまかすために水ばかり飲みながら、戸棚の奥に残ったわずかな乾物を数えた。
 - [life_medical_oripathy](#event-life_medical_oripathy) — 鉱石病の疼きと重だるさが年々深まり、昔なら一気に片づいた仕事にも何度も息継ぎが要るようになった。次の抑制薬を買う金と診察の日取りを思い浮かべ、ため息…
-- [life_mental_crisis_support](#event-life_mental_crisis_support) — （動的本文）
+- [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
 - [life_mental_crisis_recovery](#event-life_mental_crisis_recovery) — 底のない暗がりの中にいた頃より、外の光を浴びて歩ける日が増えてきた。それでもふとした拍子に胸がざわつく夜はある。自分の心とどう折り合いをつけていくか…
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
 - [life_late_care_planning](#event-life_late_care_planning) — 買い物袋を提げて帰る途中で、息が切れて立ち止まる日が増えた。昔は何ともなかった段差や水汲みが、今はやけにこたえる。自分が動けなくなった時のことを、そ…
@@ -3433,7 +3431,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-genre-3"></a>
-### 感染・医療（416）
+### 感染・医療（418）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
@@ -3691,6 +3689,7 @@
 - [life_ursus_student_assembly_pause_review](#event-life_ursus_student_assembly_pause_review) — あの冬のあと、学生連合の活動から距離を置いて数年が経った。街でかつての知人の噂を耳にし、無事を確かめたい思いが胸をかすめる。今の平穏な暮らしを守りつ…
 - [elder_choice_make_will](#event-elder_choice_make_will) — 万が一の時に備え、公証人を招いて正式な遺言書を作成する機会を持った。これまで蓄えてきた財産や家財の処遇をどう定めるか熟考した。
 - [elder_choice_palliative_care_switch](#event-elder_choice_palliative_care_switch) — 身体の痛みや衰えが日増しに強くなり、医師から今後の療養方針を尋ねられた。身体に負担の大きい積極的な投薬を続けるか、それとも痛みを和らげ自然な安らぎを…
+- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 - [family_spouse_health_review](#event-family_spouse_health_review) — 最近、朝起きても疲れが抜けないと{sp}がこぼした。外での仕事と家の用事が重なり、顔色も優れない日が続いていた。医者に診せるか、家の負担を減らすか、…
 - [family_spouse_separate_life](#event-family_spouse_separate_life) — 別々に暮らすようになってから、手紙や伝言が届くたびに遠くの街にいる{sp}の顔を思い浮かべた。これからどのくらい連絡を取り合い、生活費や薬代をどう支…
 - [family_spouse_infected_housing_pressure](#event-family_spouse_infected_housing_pressure) — 離れて暮らす{sp}のアパートで、契約更新の紙に健康状態を詳しく書くよう求められたという。病名は伏せていたが、肌の表面の結晶や通院の様子から勘づかれ…
@@ -3705,7 +3704,8 @@
 - [life_medical_oripathy](#event-life_medical_oripathy) — 鉱石病の疼きと重だるさが年々深まり、昔なら一気に片づいた仕事にも何度も息継ぎが要るようになった。次の抑制薬を買う金と診察の日取りを思い浮かべ、ため息…
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
-- [life_mental_crisis_support](#event-life_mental_crisis_support) — （動的本文）
+- [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
+- [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_mental_crisis_recovery](#event-life_mental_crisis_recovery) — 底のない暗がりの中にいた頃より、外の光を浴びて歩ける日が増えてきた。それでもふとした拍子に胸がざわつく夜はある。自分の心とどう折り合いをつけていくか…
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
 - [life_severe_illness_companionship](#event-life_severe_illness_companionship) — 病が深まり、一日の大半を寝床で過ごすようになった。窓から差す光の傾きを眺めながら、そばにいてくれる人へ何を伝え、残りの時間をどう過ごすか考えた。
@@ -3780,7 +3780,7 @@
 - [car_hig_samurai_choice_duel](#event-car_hig_samurai_choice_duel) — 北朝と南朝の軍勢が川を挟んで対峙する合戦場。敵陣から名うての剛の者が馬を進め、大音声で一騎打ちを呼びかけてきた。主君の御前で名乗りを上げ、武士の誉れ…
 - [car_hig_shinto_daily_01](#event-car_hig_shinto_daily_01) — 朝露の残る神社の石段を竹箒で掃き清め、本堂の蝋燭に火を灯した。病や天災に怯える信徒たちが訪れ、鉱石病の平癒を祈願する。鈴の音を響かせ、真摯に祓いの詞…
 - [car_urs_guard_choice_riot](#event-car_urs_guard_choice_riot) — 監視する感染者炭鉱の地下最深部で、虐待に耐えかねた囚人たちがツルハシを手に一斉に暴動を起こした。坑道の出入口を塞ぐ鉄扉の前で、援軍が来るまで銃剣で死…
-- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する…
+- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFi…
 - [car_sar_guard_choice_assassination](#event-car_sar_guard_choice_assassination) — 深夜、宮殿の奥から短い叫び声と金属のぶつかる音がした。回廊に倒れた衛兵のそばで、夜番の鐘が鳴り始める。寝所へ続く扉は半ば開いたままだった。
 - [car_ibe_inq_choice_seaborn_attack](#event-car_ibe_inq_choice_seaborn_attack) — 夜更けの海岸線で、波間から無数の恐魚（海の怪物）が這い上がってきた。集落が呑み込まれる寸前である。審問官としてランタンの光を最大出力で解き放ち、剣を…
 - [car_rim_eng_choice_gas_leak](#event-car_rim_eng_choice_gas_leak) — 地下数百メートルの最下層坑道で、高濃度の源石ガスが突如噴出した。警報器が狂ったように鳴り響く。遮断弁を手動で締めに行かなければ、坑道全体が誘爆して数…
@@ -3852,7 +3852,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-genre-4"></a>
-### 教育・文化（447）
+### 教育・文化（445）
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_model](#event-bias_family_model) — 夕餉の食卓で、大人たちが近所にいる鉱石病患者の噂話をしていた。誰かが吐き捨てるように『ああいう連中は決まりも守らない』と言い、周りの大人も誰一人とし…
@@ -3941,7 +3941,7 @@
 - [daily_lungmen_15](#event-daily_lungmen_15) — 露天商が威勢のいい龍門方言の声で客を呼び込み、買い物客との間で激しい値引き交渉が繰り広げられていた。算盤を弾く指が目にも留まらぬ速さで動く。
 - [daily_lungmen_58](#event-daily_lungmen_58) — 近代的な学び舎の情報端末室で、国際金融と情報処理の演習に取り組んだ。世界を股にかけるビジネスの仕組みに知的好奇心を刺激された。
 - [daily_lungmen_59](#event-daily_lungmen_59) — 放課後、クラスメイトたちと大衆軽食店に寄り道し、山盛りの揚げ芋をつまみながら他愛のない雑談や流行の音楽で盛り上がった。
-- [choice_lungmen_10](#event-choice_lungmen_10) — 年に一度の「九龍美食競宴」が開催され、誰でもオリジナル料理で出店できる看板屋台大会が開かれていた。優勝すれば龍門全土に名が売れ、多額の賞金が出る。
+- [choice_lungmen_10](#event-choice_lungmen_10) — 夜市の一角で、数軒の屋台が新しい料理を出して客の反応を競う小さな催しを始めていた。客足が増え、臨時の手伝いを探す店もある。
 - [daily_higashi_09](#event-daily_higashi_09) — 冬の夜、囲炉裏の炭火で餅を焼き、家族と他愛のない昔話を語り合った。パチパチと爆ぜる炭の温もりが、冷えた夜を優しく包んでいた。
 - [daily_higashi_17](#event-daily_higashi_17) — 青果店の店先に、泥つきの根菜や瑞々しい冬菜が籠いっぱいに並んでいた。店主と客が、今年の寒さの厳しさについて長閑に言葉を交わす。
 - [daily_higashi_24](#event-daily_higashi_24) — 南院の流行発信地で、街頭アイドルのサイン会告知やモダンな着物の展示を眺めた。伝統芸能と新しい大衆文化が混ざり合う極東のいまを感じた。
@@ -3955,7 +3955,7 @@
 - [daily_ursus_59](#event-daily_ursus_59) — 冬の通学路、深い雪をかき分けながら級友と肩を並べて歩いた。互いの白い息を笑い合いながら、温かい教室を目指して足を急いだ。
 - [choice_ursus_03](#event-choice_ursus_03) — 憲兵隊が「反体制的な思想書を隠し持つ者の密告に金貨と優先配給券を出す」と町中に触れを出した。親しくしていた隣人の教師の家で、夜間に不穏な印刷機が動い…
 - [choice_ursus_06](#event-choice_ursus_06) — 村の老木工職人が、白樺の樹皮を使った伝統の防湿木箱「ベレスタ」の製作技術を教えてくれるという。冬の長いウルサスで貴重な冬仕事になる。
-- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わりを告げ、春の訪れを祝う伝統行事「マースレニツァ」の日が訪れた。広場では藁人形が燃やされ、太陽を象徴する丸いクレープ（ブリヌイ）が山のように…
+- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わり、地区の広場に食べ物の屋台が数軒出て、人々が長い寒さの区切りをつけるように集まっていた。呼び名や祝い方は土地ごとに違うらしい。
 - [daily_victoria_04](#event-daily_victoria_04) — 街角の書店で、旧時代のヴィクトリアを舞台にした重厚な推理小説を手に入れた。格調高い装幀の本を抱え、暖炉の前で読書に耽る楽しみができた。
 - [daily_victoria_09](#event-daily_victoria_09) — 路地裏の広場で、旅の音楽家が奏でるバイオリンの哀愁を帯びたターラーの古い民謡に聞き入った。通りがかりの人々とともに温かい拍手を送った。
 - [daily_victoria_27](#event-daily_victoria_27) — 伝統ある紳士服店のショーウィンドウに飾られた、隙のない仕立ての正礼装を眺めた。階級社会の厳格な秩序を無言で物語っている。
@@ -3985,7 +3985,7 @@
 - [choice_leithanien_04](#event-choice_leithanien_04) — 名高い銘醸ブドウ畑の相続を巡り、伝統ある小作農家と新興の貴族商人の間で激しい係争が起きていた。地域の長老であるあなたに、仲裁の立会人としての要請が届…
 - [choice_leithanien_05](#event-choice_leithanien_05) — 選帝侯も臨席する大聖堂の演奏会直前、主役のチェロ奏者が急病で倒れた。楽団の控え奏者として舞台裏に控えていたあなたに、指揮者から「代役として協奏曲を弾…
 - [choice_leithanien_08](#event-choice_leithanien_08) — 表舞台を追われた感染者音楽家たちが、廃教会の地下で密かに市民向けの慈善演奏会を計画していた。憲兵に見つかれば全員逮捕だが、彼らは音楽の灯を消したくな…
-- [choice_leithanien_10](#event-choice_leithanien_10) — 街路樹が初夏の花を咲かせる季節を迎え、都の広場で市民総出の初夏祭が開かれた。広場には焼き菓子や伝統料理の屋台が並び、優雅な円舞曲（ワルツ）に合わせて…
+- [choice_leithanien_10](#event-choice_leithanien_10) — 初夏の午後、広場の一角で小さな市が開かれ、焼き菓子の屋台のそばで数人の演奏家が曲を奏でていた。通りがかりの人が足を止め、短い休息を取っている。
 - [daily_laterano_23](#event-daily_laterano_23) — 路地の仕立て屋で、白を基調とした伝統的な市民服のほつれを直してもらった。すっきりと清潔な布の感触に背筋が伸びた。
 - [daily_laterano_37](#event-daily_laterano_37) — 公証役場の前に、鉱石病を理由に聖都から追放通告を受けた一家が荷物をまとめて立ち尽くしていた。冷酷な法の前で言葉を失った。
 - [daily_laterano_39](#event-daily_laterano_39) — 同胞のサンクタたちとカフェで談笑した。言葉を交わす前から光輪の共感を通じて互いの穏やかな感情が伝わり合い、至福の調和を感じた。
@@ -3994,7 +3994,7 @@
 - [daily_laterano_49](#event-daily_laterano_49) — 神学の授業で、古の教皇教書とラテラーノ法の条文解釈を学んだ。信仰と現実の統治が織りなす高度な論理体系に深く引き込まれた。
 - [daily_laterano_52](#event-daily_laterano_52) — 学校の射撃大会でクラス代表として出場し、見事に的を射抜いて準優勝の銀メダルを獲得した。級友たちと肩を組んで歓声を上げた。
 - [choice_laterano_02](#event-choice_laterano_02) — 聖都全土が熱狂する「ラテラーノ菓子大賞」が開催され、市民部門のオリジナルスイーツコンテストの募集が始まった。優勝すれば教皇庁御用達の栄誉と多額の賞金…
-- [choice_laterano_10](#event-choice_laterano_10) — 春の復活祭を迎え、聖都の広場という広場が色とりどりの砂糖菓子と花々で飾り付けられた。巨大な特製ケーキが切り分けられ、誰もが平和と甘味を分かち合う最大…
+- [choice_laterano_10](#event-choice_laterano_10) — 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 - [daily_columbia_05](#event-daily_columbia_05) — 休日の晴れた午後、郊外の広場で近所の人々と野外炊飯を楽しんだ。香ばしく焼ける肉の匂いと陽気な弦楽器の音色に、開拓地の温かな団欒を味わった。
 - [daily_columbia_08](#event-daily_columbia_08) — 地元の広場で、開拓民たちが集まる伝統の球技大会を観戦した。劇的な逆転得点の瞬間に観客が一斉に立ち上がり、紙包みの軽食を掲げて大歓声を上げた。
 - [daily_columbia_17](#event-daily_columbia_17) — 電器店のガラス越しに、最新型の通信端末や音楽再生機の鮮やかな広告映像を眺めた。若者たちが足を止め、欲しい機能を熱心に語り合っている。
@@ -4012,7 +4012,7 @@
 - [daily_kazimierz_57](#event-daily_kazimierz_57) — 騎士学校の訓練場で、重いランスを構えて突撃訓練を繰り返した。教官の激しい檄が飛ぶ中、泥だらけになって技術を磨き上げた。
 - [daily_kazimierz_59](#event-daily_kazimierz_59) — 商業倫理の講義で、現代騎士競技におけるスポンサーシップと八百長対策の法規制を学んだ。夢の舞台の裏にある現実の複雑さを知った。
 - [daily_kazimierz_60](#event-daily_kazimierz_60) — 高額な騎士学校の学費と武具の維持費の請求書を前に、親が深いため息をついていた。期待に応えなければならないプレッシャーが重く圧し掛かった。
-- [choice_kazimierz_10](#event-choice_kazimierz_10) — 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、…
+- [choice_kazimierz_10](#event-choice_kazimierz_10) — 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募って…
 - [daily_siracusa_41](#event-daily_siracusa_41) — 伝統料理店の支店で、仕込みの合間に「ファミリーへの納品料理は絶対に冷ますな」という厨房の鉄則を改めて叩き込まれた。
 - [daily_siracusa_56](#event-daily_siracusa_56) — 伝統の革靴工房で、厚手の牛革を木型に合わせて丹念に釘を打ち込んだ。シラクーザの紳士たちが愛用する頑丈で美しい革靴を仕上げた。
 - [daily_siracusa_60](#event-daily_siracusa_60) — ウォルシーニの市民広場で、新設された移動型フードトラックから出来立てのパニーニを買った。伝統的な街並みの中に新しい活気が芽生えている。
@@ -4020,7 +4020,7 @@
 - [choice_siracusa_03](#event-choice_siracusa_03) — 街の有名な歌劇場の裏手を通りかかると、支配人が頭を抱えて取り乱していた。今夜の看板オペラで重要な脇役を務める役者が急な喉の不調で倒れ、開演まであと数…
 - [choice_siracusa_04](#event-choice_siracusa_04) — 新設された裁判所の前で、若き清廉な裁判官から声をかけられた。先週起きたファミリー幹部による一般市民への暴行事件について、目撃者を探しているという。証…
 - [choice_siracusa_06](#event-choice_siracusa_06) — 郊外の伝統あるブドウ農園で、ワインの仕込みの季節に伴い短期の収穫・圧搾の手伝いが募集されていた。広大なブドウ畑にはたわわに実った黒ブドウが甘い香りを…
-- [choice_siracusa_10](#event-choice_siracusa_10) — 新都市ウォルシーニの市民広場で、古くから伝わる伝統の手打ち麺料理を競い合う祝祭料理市が開かれた。広場には各街区の名だたる料理人や腕自慢が集まり、オリ…
+- [choice_siracusa_10](#event-choice_siracusa_10) — 近くの市民市場で料理の屋台が増え、店ごとに麺料理や煮込みを出していた。特別な全国行事という様子ではなく、街区の人が食事を楽しむ小さな催しらしい。
 - [daily_siesta_54](#event-daily_siesta_54) — サーフボードのリペア工房で、グラスファイバーと樹脂を使って傷ついたボードの補修を行った。波を愛するサーファーたちから信頼されている。
 - [choice_siesta_01](#event-choice_siesta_01) — オブシディアン・フェスティバルのサブステージで、出演予定だった前座バンドが機材トラブルで急遽出演不能になった。運営スタッフが「誰かステージで3曲演奏…
 - [choice_siesta_10](#event-choice_siesta_10) — シエスタ市民会館で、迫り来る火山噴火に備えた「新シエスタ移動都市」への全面移転計画に関する大規模な公聴会が開かれた。都市の文化、音楽、そして住民の生…
@@ -4032,7 +4032,7 @@
 - [choice_sargon_04](#event-choice_sargon_04) — 雨林の奥地からやってきた探検隊が、密林の奥底に眠る古代のオリジニウム祭壇の調査のため、土地鑑のある同行者を求めている。未知の猛獣や部族の縄張りを抜け…
 - [choice_sargon_06](#event-choice_sargon_06) — 砂漠のオアシスに立ち寄った遊牧民の大部族から、伝統の歓迎の宴に招かれた。巨大な天幕の中には焚き火が燃え盛り、丸焼きの羊肉と強い蒸留酒、激しい太鼓の演…
 - [choice_sargon_08](#event-choice_sargon_08) — 雨林の祭祀場で、各部族の誉れを賭けた古式武闘の儀が執り行われていた。熱狂する部族民たちの前で、踏み固められた土俵で鍛え抜かれた勇士たちが技と力、アー…
-- [choice_sargon_10](#event-choice_sargon_10) — 年に一度、砂漠中の隊商とオアシス住民が集う「大バザール祝祭」が開幕した。広大な広場には数千の天幕が立ち並び、オリエントの秘宝、珍しい動物、香辛料、甘…
+- [choice_sargon_10](#event-choice_sargon_10) — 交易路沿いのオアシスに隊商が何組か到着し、広場へ臨時の市が立った。食料、布、道具などが並ぶが、どこから来た品か分からないものも混じっている。
 - [daily_sami_04](#event-daily_sami_04) — 白樺の木皮を細工して、頑丈で美しい伝統の小物入れを編み上げた。樹皮の甘い香りに包まれ、静かな創作の時間に心が満ち足りた。
 - [daily_sami_08](#event-daily_sami_08) — 暖かい毛皮の敷物の上で、野草茶をすすりながら古老の語る森の昔話に耳を傾けた。古き知恵に心がじんわりと温まった。
 - [daily_sami_19](#event-daily_sami_19) — 木彫りのナイフで、トナカイの角の破片を少しずつ削り、伝統的な魔除けの文様を刻んだ。
@@ -4043,7 +4043,7 @@
 - [choice_sami_04](#event-choice_sami_04) — 年に数回開かれる南部湿地帯の交易市にやってきた。サーミ各地の部族や外国の商人たちが集まり、珍しい交易品を並べている。手持ちの毛皮や薬草を何と交換する…
 - [choice_sami_05](#event-choice_sami_05) — 樹齢数百年の倒木となった白樺の巨木を使って、湿地帯の川を渡る伝統の丸木舟を削り出すことになった。職人の腕と根気が試される大仕事だ。
 - [choice_sami_09](#event-choice_sami_09) — クルビアの大手研究所から派遣された学術調査隊が、サーミの原生林の生態系調査のため、現地の地形を知り尽くした案内人を高額の日当で募集している。
-- [choice_sami_10](#event-choice_sami_10) — 長い極夜が終わり、数ヶ月ぶりに地平線の上に太陽の光が戻ってくる「太陽迎えの冬至祭」が開幕した。広場には巨大なかがり火が焚かれ、全部族が手を取り合って…
+- [choice_sami_10](#event-choice_sami_10) — 冬の日照が短い時期、近くの人々が火のそばに集まり、温かい食事を分けていた。氏族や地域ごとの慣習は違うが、この場では寒さをしのぐために人が寄り合ってい…
 - [daily_kjerag_32](#event-daily_kjerag_32) — 駅前の広場で、外国から持ち込まれた蓄音機から流れる珍しい音楽に子供たちが集まっていた。
 - [daily_kjerag_41](#event-daily_kjerag_41) — シルバーアッシュ家の推し進める新工場の建設現場を視察した。伝統を守る頑固な古老たちと、最新の機械設備が共存する過渡期の熱気を感じた。
 - [daily_kjerag_48](#event-daily_kjerag_48) — ペイルロッシュ家とブラウジング家の長老たちが広場で議論を交わしているのを見かけた。伝統への誇りと時代の変革の狭間で揺れる国の現実を見た。
@@ -4053,7 +4053,7 @@
 - [choice_kjerag_05](#event-choice_kjerag_05) — 秋の収穫を祝い、寺院の門前で伝統のバター茶と香ばしいツァンパを村人全員に振る舞う大盤振る舞いの宴が催された。大勢の人々が木椀を手に行列を作っている。
 - [choice_kjerag_07](#event-choice_kjerag_07) — 春の訪れとともに、山上の放牧地でヤクの毛刈りの季節がやってきた。ヤクの胸元の産毛から採れる柔らかな最高級カシミヤ毛糸を紡ぎ、名産ショールを織り上げる…
 - [choice_kjerag_08](#event-choice_kjerag_08) — カランド貿易が外国から最新の滅菌器や手術器具を寄贈しようとしたが、寺院の頑固な古老たちが「神聖な寺院に得体の知れない外国の機械を入れるな」と拒絶して…
-- [choice_kjerag_10](#event-choice_kjerag_10) — 年に一度、イェラグ全土の信徒が聖峰の麓に集う「カランド年次大祭」が開幕した。山々には祈りのホルンの音が響き渡り、巫女による神聖な祝福の儀が執り行われ…
+- [choice_kjerag_10](#event-choice_kjerag_10) — 聖峰へ向かう人が増える時期になり、麓の集落では宿と食事の準備に追われていた。遠くから来た参詣者もいるが、誰がどこから来たのかまでは分からない。
 - [daily_kazdel_06](#event-daily_kazdel_06) — 近所のテントの母親から、手縫いの温かいウール靴下を贈られた。「いつも子供たちを見守ってくれてありがとう」という言葉に目頭が熱くなった。
 - [daily_kazdel_17](#event-daily_kazdel_17) — すれ違う同胞たちと、サルカズ伝統の拳を胸に当てる挨拶を交わした。言葉はなくとも通じ合う絆がある。
 - [daily_kazdel_24](#event-daily_kazdel_24) — 壊れたラジオのダイヤルを回すと、雑音の向こうから遠くの国の音楽放送が途切れ途切れに聞こえてきた。
@@ -4065,12 +4065,11 @@
 - [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書き…
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
-- [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
 - [daily_iberia_26](#event-daily_iberia_26) — 陶器工房で、伝統的な青と黄色の釉薬をかけた絵皿を窯に並べる作業を手伝った。
 - [daily_iberia_43](#event-daily_iberia_43) — 塩田で木枠を組んで浅い結晶池を補修した。海水を効率よく天日乾燥させる伝統の構造を狂いなく整備した。
 - [daily_iberia_44](#event-daily_iberia_44) — オリーブの圧搾工場で、石臼を回して一番搾りの黄金色に輝くエクストラバージンオイルを抽出した。芳醇な香りに満たされた。
 - [choice_iberia_02](#event-choice_iberia_02) — 薄暗い夕暮れの路地で、黒外套の審問官たちに突然進路を塞がれた。「怪しい気配が漂っている。所属と所持品、昨夜の行動を答えよ」と冷徹なランタンの光を顔に…
-- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に製作された大型の真鍮製屈折望遠鏡が発見された。レンズは曇り、歯車は錆びついている。修復して澄み切った星空を観測しようと…
+- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に作られた真鍮製の望遠鏡を見つけた。レンズは曇り、歯車には錆が浮いている。自分で分解する前に、どう扱うか考えた。
 - [daily_bolivar_05](#event-daily_bolivar_05) — 広場の木陰で、旅の楽士が陽気なマリカとギターで伝統音楽を奏でていた。手拍子を合わせて皆で歌い、つかの間の平和な時間を心から楽しんだ。
 - [daily_bolivar_40](#event-daily_bolivar_40) — ドッソレスの巨大プールスタジアムで、熱狂的なウォーターフェスティバルの水上バトルを観戦した。水飛沫と音楽の渦に大興奮した。
 - [daily_bolivar_46](#event-daily_bolivar_46) — 木製の焙煎器を炭火の上で回し、自家製の深煎りコーヒーを淹れた。深い苦味と豊かなコクに、疲れた身体が芯から癒された。
@@ -4078,10 +4077,10 @@
 - [daily_bolivar_60](#event-daily_bolivar_60) — カラフルな糸を使って伝統のハンモックを手編みで仕上げた。木陰に吊るすと心地よい風が通り抜け、高く売れた。
 - [choice_bolivar_06](#event-choice_bolivar_06) — 医療の届かない孤立集落に、外部の民間人道組織（ロドス等の巡回医療班）の移動診療車がやってきた。通訳や受付、患者の誘導を行う助手が求められている。
 - [choice_bolivar_07](#event-choice_bolivar_07) — 過去の戦闘で屋根が吹き飛び、放置されていた村の小学校の校舎を再建する運動が始まった。「子供たちに銃ではなくペンを持たせたい」という村人たちの願いが込…
-- [choice_bolivar_10](#event-choice_bolivar_10) — 内戦の銃声が止んだ収穫の季節、全村を挙げた「大地への感謝大祭」が開幕した。広場には焼きトウモロコシと豆料理の大鍋が並び、マリカの陽気なリズムに合わせ…
+- [choice_bolivar_10](#event-choice_bolivar_10) — 収穫を終えた近隣の農家が広場へ野菜や穀物を持ち寄り、小さな市が立った。食べ物を交換する人のそばで、仕事を終えた者たちが音楽を鳴らして休んでいる。
 - [daily_rim_59](#event-daily_rim_59) — 鉱石の母岩（オパール原石）を丁寧に研磨し、虹色に輝くペンダントを制作した。レム・ビリトンの美しさを閉じ込めた逸品となった。
 - [choice_rim_04](#event-choice_rim_04) — 鉱山共同体の収穫期を祝う、伝統のニンジン焼き菓子品評会が開催された。広場には鉱夫街の腕自慢やパン職人が集まり、甘いスパイスと香ばしいパイ生地の匂いが…
-- [choice_rim_10](#event-choice_rim_10) — 過酷な鉱山から無事に生還した日々を祝い、大地の恵みに感謝する伝統の「採掘安全祈願ランタン祭」が執り行われた。数千の安全ヘルメットのライトと真鍮ランタ…
+- [choice_rim_10](#event-choice_rim_10) — 鉱区の勤務が一区切りついた夜、作業場の前で無事故だった班を労う食事が出された。ヘルメットを机へ置いた人々が、温かい料理を囲んでその日の仕事を振り返っ…
 - [daily_minos_04](#event-daily_minos_04) — 古代円形劇場の石段に座り、若き劇団員たちが朗々と吟じる悲劇の詩劇を鑑賞した。迫真の演技と言葉の力に胸を激しく揺さぶられた。
 - [daily_minos_06](#event-daily_minos_06) — 陶器工房で、伝統的な赤絵式の美しいアンフォラ（双耳壺）を眺めた。英雄と神々の戦いが躍動感あふれる筆致で描かれており、見惚れてしまった。
 - [daily_minos_07](#event-daily_minos_07) — 日当たりの良い広場で、老人たちが真鍮のコインを投げて遊ぶ伝統のゲームを眺めた。陽気な笑い声に包まれ、心が穏やかに和んだ。
@@ -4094,7 +4093,6 @@
 - [choice_minos_03](#event-choice_minos_03) — 聖なる競技場で、ミノス全ポリスから集まった屈強な戦士たちが技を競う「体育競技大祭」が開幕した。メイン種目は伝統のパレストラ（レスリング）と円盤投げ。…
 - [choice_minos_06](#event-choice_minos_06) — 新神殿の列柱に用いる純白の大理石モノリス（巨大一枚岩）を山肌から切り出す大工事が始まった。ノミと木の楔を打ち込み、水を吸わせて岩を割る伝統の切り出し…
 - [choice_minos_09](#event-choice_minos_09) — 秋空の下、丘のブドウ園で糖度の乗った黒ブドウの一斉収穫が始まった。大きな木桶にブドウを放り込み、裸足になって皆で踏み潰す伝統の果汁絞りが繰り広げられ…
-- [choice_minos_10](#event-choice_minos_10) — ミノス全ポリスが一つになり、建国の十二英雄を称える世紀の「十二英雄合同大祭」が開幕した。アクロポリスから麓の広場まで聖火のパレードが続き、荘厳なホル…
 - [education_return_path](#event-education_return_path) — 途中で学び舎を離れたか、そもそも机を並べる機会がないまま歳月が過ぎた。今の読み書きの力と懐具合で、もう一度学べる場所がないか探してみた。
 - [education_paused_life](#event-education_paused_life) — 家計の都合や暮らしの混乱から、学校の席を休学にしてしばらく経った。同年代の生徒たちが鞄を抱えて通りを行き交う姿を見送りながら、この休みをどう過ごして…
 - [education_school_classroom](#event-education_school_classroom) — 放課後の教室で、黒板の脇に補習と共同課題の予定が書き出された。夕日が差し込むなか、同じ組の仲間と机を並べて片づけた。
@@ -4370,7 +4368,7 @@
 - [daily_sami_51](#event-daily_sami_51) — サーミの大自然において、病者もまた生ける命の一部として受け入れられる。過酷な寒さは患部に痛むが、村の温かい焚き火に差別はなかった。
 - [daily_iberia_18](#event-daily_iberia_18) — 海岸へ通じる道路に設けられた審問所の検問所で、通行証の確認を待つ農民たちの列を見かけた。
 - [daily_iberia_52](#event-daily_iberia_52) — 険しい内陸の峠道を見上げ、もし検問を避けて旅をするならあの厳しい山道を越えねばならないのかと思いを巡らせた。星明かりの下、静まり返る山並みに身震いし…
-- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔の海外渡航歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と泣きつ…
+- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔に他国を訪れた経歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と…
 - [daily_bolivar_35](#event-daily_bolivar_35) — 街道の検問所で武装部隊の兵士たちに威圧的な尋問を受け、所持金から「通行保安料」を強引に巻き上げられた。
 - [daily_minos_52](#event-daily_minos_52) — 偏見の少ない郊外のブドウ園で、仲間たちと共に収穫の汗を流した。大地と太陽の恵みは誰に対しても公平だった。
 - [hid_exposed](#event-hid_exposed) — 作業中にめくれた袖口から、黒い結晶を誰かに見られたらしい。翌朝、現場の責任者に声を潜めて呼び止められた。誰が言いふらし、どこまで知られているのか見当…
@@ -4861,7 +4859,7 @@
 - [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 
 <a id="tag-genre-9"></a>
-### 天災・避難（203）
+### 天災・避難（201）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [rim_catastrophe_transporter_review](#event-rim_catastrophe_transporter_review) — 天災が爪痕を残した坑道を調べる助手になって二年が過ぎた。崩落した岩肌や黒く光る源石の露出を図面に落とし込む隣で、同行する天災トランスポーターは絶えず…
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
@@ -4997,8 +4995,6 @@
 - [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — 子や孫から近況を知らせる便りが届いた。日々の遊びや家の出来事を綴った文字を、眼鏡を掛け直して何度も嬉しそうに読み返した。
 - [elder_choice_family_folklore](#event-elder_choice_family_folklore) — 夕暮れ時、暖炉の周りに集まった子供や孫たちから「昔のテラの大地や旅の話を聞かせてほしい」とせがまれた。
 - [elder_choice_life_reflection](#event-elder_choice_life_reflection) — 暮れゆく夕焼け空を見つめながら、自らが歩んできた長い生涯を静かに振り返った。天災、戦争、病、飢え……幾多の苦難が渦巻くテラの大地で、自分は今日まで確…
-- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — 不意の天災や移動都市の区画被災に備え、民間保険会社が提供する「天災総合避難・再建保険」の案内が届いた。年々の保険料を納めることで、被災時に速やかな補…
-- [asset_catastrophe_insurance_claim](#event-asset_catastrophe_insurance_claim) — 天災の混乱の中、避難所で保険会社の臨時窓口を見つけた。避難証明書と保険証書を提示したところ、迅速な審査が行われた。
 - [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
 - [life_mine_collapse_crisis](#event-life_mine_collapse_crisis) — 地下深くの坑道で削岩機を動かしていたその時、頭上の岩盤から耳をつんざく地鳴りと共に支柱が砕け散る音が響いた。天井に巨大な亀裂が走り、無数の岩石が雨の…
@@ -5071,7 +5067,7 @@
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
 <a id="tag-genre-11"></a>
-### 日常（396）
+### 日常（394）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
@@ -5237,7 +5233,7 @@
 - [choice_ursus_01](#event-choice_ursus_01) — 近くの炭鉱で落盤事故が発生し、坑道奥に作業班が閉じ込められた。二次崩落の危険がある中、救助隊への志願者が募られている。
 - [choice_ursus_07](#event-choice_ursus_07) — 過酷な鉱区から脱走してきた感染者の若い鉱夫が、凍傷で足を引きずりながらあなたの納屋に転がり込んできた。「追っ手に見つかれば射殺される」と絶望の目で震…
 - [choice_ursus_08](#event-choice_ursus_08) — 豪奢な貴族の屋敷の大屋根に分厚い雪が積もり、倒壊の危険があるため高額な日当で臨時の雪下ろし人足が募集されていた。足場は凍りつき極めて滑りやすい。
-- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わりを告げ、春の訪れを祝う伝統行事「マースレニツァ」の日が訪れた。広場では藁人形が燃やされ、太陽を象徴する丸いクレープ（ブリヌイ）が山のように…
+- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わり、地区の広場に食べ物の屋台が数軒出て、人々が長い寒さの区切りをつけるように集まっていた。呼び名や祝い方は土地ごとに違うらしい。
 - [daily_victoria_02](#event-daily_victoria_02) — 近所の大衆食堂で、揚げたての白身魚と香ばしい揚げ芋を頬張りながら麦茶を啜った。カリッとした衣の旨味に、一日の疲れが吹き飛んだ。
 - [daily_victoria_03](#event-daily_victoria_03) — 公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。
 - [daily_victoria_07](#event-daily_victoria_07) — 近所の仕立て屋で、綻びていた上着の裏地を美しく修繕してもらった。丁寧な職人技により、新品のように生まれ変わった服に誇らしさを感じた。
@@ -5259,7 +5255,7 @@
 - [daily_columbia_48](#event-daily_columbia_48) — 開拓地の夕暮れ、満天の星空の下で焚き火を囲み、ギターをつま弾きながら開拓者の歌を歌った。厳しい生活の中にある、真の自由を実感した。
 - [daily_kazimierz_34](#event-daily_kazimierz_34) — 商業連盟の借金取りが近所の家に怒鳴り込み、家財を差し押さえる悲惨な光景を目撃した。資本の非情さに背筋が凍りついた。
 - [choice_kazimierz_08](#event-choice_kazimierz_08) — かつて街の英雄だった老騎士が、病と借金で住まいを追い出されそうになっていた。商業連盟の取り立て屋が無慈悲に退去を迫っている。
-- [choice_kazimierz_10](#event-choice_kazimierz_10) — 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、…
+- [choice_kazimierz_10](#event-choice_kazimierz_10) — 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募って…
 - [daily_siracusa_02](#event-daily_siracusa_02) — 夕暮れどきの広場で、近所の老人たちが木製のベンチに腰掛け、ジェスチャーを激しく交えながら今日の出来事について熱弁を振るっていた。陽気な笑い声に心が温…
 - [daily_siracusa_06](#event-daily_siracusa_06) — 近所の魚屋に沿岸の港から届いた新鮮な小魚が並んでいた。店主が気前よくおまけをつけてくれ、美味しい夕餉の支度ができた。
 - [daily_siracusa_09](#event-daily_siracusa_09) — 通りを歩いていると、近所の老婦人が「これ持っていきなさい」と庭で採れたばかりの完熟柑橘を手渡してくれた。爽やかな甘酸っぱさに元気づけられた。
@@ -5281,20 +5277,18 @@
 - [daily_sami_43](#event-daily_sami_43) — 雪祭司の焚く香草の煙が立ち込める儀礼の場に参列した。木彫りの精霊面の前で捧げられる祈祷の歌に、厳かな畏怖の念を抱いた。
 - [choice_sami_02](#event-choice_sami_02) — 集落の最高位の雪祭司から、聖なる巨木の広場で開かれる「森の囁きを聞く夜儀式」の助手を頼まれた。薬草の煙と祈りの歌が響く中、大自然からの啓示を受け止め…
 - [choice_sami_05](#event-choice_sami_05) — 樹齢数百年の倒木となった白樺の巨木を使って、湿地帯の川を渡る伝統の丸木舟を削り出すことになった。職人の腕と根気が試される大仕事だ。
-- [choice_sami_10](#event-choice_sami_10) — 長い極夜が終わり、数ヶ月ぶりに地平線の上に太陽の光が戻ってくる「太陽迎えの冬至祭」が開幕した。広場には巨大なかがり火が焚かれ、全部族が手を取り合って…
+- [choice_sami_10](#event-choice_sami_10) — 冬の日照が短い時期、近くの人々が火のそばに集まり、温かい食事を分けていた。氏族や地域ごとの慣習は違うが、この場では寒さをしのぐために人が寄り合ってい…
 - [daily_kjerag_09](#event-daily_kjerag_09) — 近所の農家で、ヤクの搾りたてミルクから作られた硬質チーズを味見した。独特の酸味と芳醇な風味が口いっぱいに広がった。
 - [daily_kazdel_06](#event-daily_kazdel_06) — 近所のテントの母親から、手縫いの温かいウール靴下を贈られた。「いつも子供たちを見守ってくれてありがとう」という言葉に目頭が熱くなった。
 - [daily_kazdel_41](#event-daily_kazdel_41) — 荒野の赤土を捏ねて素焼きのスープ皿と水甕を窯で焼き上げた。同胞たちの食卓を彩る素朴な器が美しく焼き上がった。
 - [daily_kazdel_55](#event-daily_kazdel_55) — 瓦礫の広場で、手作りの布ボールを蹴り合って友達と元気にボール遊びを楽しんだ。的に当たるたびに歓声を上げて跳び上がった。
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
-- [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
 - [daily_iberia_05](#event-daily_iberia_05) — 近所の塩田の管理人から、初摘みの真っ白な天日塩（フルール・ド・セル）を一袋分けてもらった。大地の恵みに感謝した。
 - [daily_iberia_07](#event-daily_iberia_07) — 涼しい夕暮れ時、広場の井戸端で近所の人々と穏やかな世間話を交わした。厳しい時代の中にも息づく人の温もりに触れた。
 - [daily_iberia_16](#event-daily_iberia_16) — 路地の洗濯紐に掛けられた粗末な白いシャツが、海からの湿った風に吹かれてバタバタと音を立てていた。
 - [daily_iberia_38](#event-daily_iberia_38) — 近所の住人が夜のうちに審問所へ連行されたという噂が広まり、重苦しい沈黙が界隈を支配した。
 - [daily_iberia_56](#event-daily_iberia_56) — 教会の聖歌隊の練習に参加し、澄み切った高音で賛美歌を歌い上げた。神聖なハーモニーに包まれ、心が洗われた。
 - [daily_iberia_62](#event-daily_iberia_62) — 朝、近所の路地を通ると、知り合いの民家の扉に審問所の印が刻まれた赤い封印札が貼られていた。誰もその家の名を口にしなくなった。
-- [choice_iberia_10](#event-choice_iberia_10) — 大いなる静謐の犠牲者を追悼し、未来への希望を灯す「光のランタン祭」が開催された。広場から丘の上まで無数のランタンが灯され、厳かな祈りと賛美歌が夜空へ…
 - [daily_bolivar_04](#event-daily_bolivar_04) — 近所の農家から、採れたての甘いパパイヤとライムをお裾分けしてもらった。瑞々しい果汁が喉を潤し、爽快な気分になった。
 - [daily_bolivar_05](#event-daily_bolivar_05) — 広場の木陰で、旅の楽士が陽気なマリカとギターで伝統音楽を奏でていた。手拍子を合わせて皆で歌い、つかの間の平和な時間を心から楽しんだ。
 - [daily_bolivar_09](#event-daily_bolivar_09) — 夕暮れ時、家族や近所の人々と囲炉裏を囲み、温かい豆スープを分け合って啜った。互いを思いやる温もりに胸が熱くなった。
@@ -5302,9 +5296,9 @@
 - [daily_bolivar_29](#event-daily_bolivar_29) — 小川の浅瀬に置かれた平たい石の上で、洗濯板を使って衣服の泥汚れをゴシゴシと洗い落とした。
 - [choice_bolivar_04](#event-choice_bolivar_04) — ゲリラ豪雨により、村と都市を結ぶ唯一の赤土の幹線道路が大規模な土砂崩れで寸断された。孤立した集落に食糧を届けるため、即席の復旧隊が結成された。
 - [choice_bolivar_06](#event-choice_bolivar_06) — 医療の届かない孤立集落に、外部の民間人道組織（ロドス等の巡回医療班）の移動診療車がやってきた。通訳や受付、患者の誘導を行う助手が求められている。
-- [choice_bolivar_10](#event-choice_bolivar_10) — 内戦の銃声が止んだ収穫の季節、全村を挙げた「大地への感謝大祭」が開幕した。広場には焼きトウモロコシと豆料理の大鍋が並び、マリカの陽気なリズムに合わせ…
+- [choice_bolivar_10](#event-choice_bolivar_10) — 収穫を終えた近隣の農家が広場へ野菜や穀物を持ち寄り、小さな市が立った。食べ物を交換する人のそばで、仕事を終えた者たちが音楽を鳴らして休んでいる。
 - [daily_rim_04](#event-daily_rim_04) — 近所のカウタスの家庭から、じっくり煮込んだ牛肉と根菜のシチューを分けてもらった。家庭的な温かい味に心がじんわりと温まった。
-- [choice_rim_10](#event-choice_rim_10) — 過酷な鉱山から無事に生還した日々を祝い、大地の恵みに感謝する伝統の「採掘安全祈願ランタン祭」が執り行われた。数千の安全ヘルメットのライトと真鍮ランタ…
+- [choice_rim_10](#event-choice_rim_10) — 鉱区の勤務が一区切りついた夜、作業場の前で無事故だった班を労う食事が出された。ヘルメットを机へ置いた人々が、温かい料理を囲んでその日の仕事を振り返っ…
 - [daily_minos_05](#event-daily_minos_05) — 近所のブドウ園の主から、今年初搾りの甘い白ブドウ果汁を一杯振る舞われた。爽やかな果実の芳香が喉を潤し、至福のひとときを過ごした。
 - [daily_minos_08](#event-daily_minos_08) — 香草の茂る小道を散歩し、野生のオレガノとタイムの爽やかな香りを胸いっぱいに吸い込んだ。身体の芯からリフレッシュした。
 - [daily_minos_10](#event-daily_minos_10) — 夕暮れ時、茜色に染まるアクロポリスの神殿を見上げながら散歩した。千年の歴史が静かに語りかけてくるような荘厳な美しさに打たれた。
@@ -5312,7 +5306,6 @@
 - [daily_minos_41](#event-daily_minos_41) — 神殿施療院で、薬草風呂と食事療法による患者たちの静養を看護した。心身を整える伝統医学を実践した。
 - [daily_minos_54](#event-daily_minos_54) — 市場の裏手で、見切り品の野菜や果実を値切って買い求める庶民の賑わいを見かけた。質素ながらも逞しく日々の食卓を整える人々の生活力を感じた。
 - [choice_minos_05](#event-choice_minos_05) — 盲目の老吟遊詩人が、ミノス十二英雄の壮大な叙事詩をすべて記憶し歌い継ぐ若き後継者を探している。何千行もの詩節を記憶し、竪琴を奏でながら民衆の心を揺さ…
-- [choice_minos_10](#event-choice_minos_10) — ミノス全ポリスが一つになり、建国の十二英雄を称える世紀の「十二英雄合同大祭」が開幕した。アクロポリスから麓の広場まで聖火のパレードが続き、荘厳なホル…
 - [confined_pet_care](#event-confined_pet_care) — 隔離された生活が長引き、ずっと家を空けたままになっている。部屋に残してきた生き物の水や餌を誰に頼むか、そして預けたあとの餌代をどう送り続けるかで頭が…
 - [confinement_wait](#event-confinement_wait) — 収容中 朝の点呼が終わると、灰色の壁に背を預けて次の合図を待った。今日が何月何日なのか思い出すのに、ずいぶん時間がかかった。 隣の寝床の住人と、外に…
 - [hid_exposed](#event-hid_exposed) — 作業中にめくれた袖口から、黒い結晶を誰かに見られたらしい。翌朝、現場の責任者に声を潜めて呼び止められた。誰が言いふらし、どこまで知られているのか見当…
@@ -5328,7 +5321,7 @@
 - [family_spouse_death](#event-family_spouse_death) — {spouseDeathTiming}、連れ合いの{sp}が亡くなったという知らせが届いた。食卓には二人で食べようと買っておいた食材がそのまま残り、…
 - [family_daily_small_care](#event-family_daily_small_care) — （動的本文） {dailyFamilyName}と帰ると、食卓には冷めかけた汁物があった。今日見たものを話しながら、二人で湯を足した。 {daily…
 - [family_former_spouse_death_notice](#event-family_former_spouse_death_notice) — かつて婚姻関係にあった{formerSpouse}が亡くなったという知らせが届いた。食卓に腰を下ろすと、言い争った日も笑い合った日も入り混じって胸に…
-- [life_goal_start](#event-life_goal_start) — 仕事帰りに借りていた道具を返し、夕餉の食材を買い込んで家路を歩いた。ただ今日を回すだけで過ぎていく日々のなかで、これから先、自分が何を支えに生きてい…
+- [life_goal_start](#event-life_goal_start) — 仕事を終えて家路につく途中、今日の失敗やうまくいった手順を思い返した。ただ一日を回すだけで過ぎていく暮らしのなかで、これから先、自分が何を支えに生き…
 - [life_chernobog_worksite_errand](#event-life_chernobog_worksite_errand) — 鉱山へ続く道の脇に立ち入り禁止の柵が次々と組まれ、重い幌をかけた荷車がひっきりなしに行き交うようになった。行きつけの食堂の壁に、その柵の手前まで板材…
 - [life_local_mutual_aid](#event-life_local_mutual_aid) — 路地の給水栓や共同ボイラーの世話が同じ人ばかりに押しつけられ、隣人たちの間で曜日ごとに当番を回そうという話が持ち上がった。道具置き場の鍵を預かり、全…
 - [life_local_mutual_aid_review](#event-life_local_mutual_aid_review) — 共同ボイラーの燃料運びや水場の掃除が、いつの間にか真面目な数人ばかりに偏っていた。このままでは立ち行かなくなると、隣人たちを集めてこれからの回し方を…
@@ -5400,7 +5393,8 @@
 - [life_medical_nutrition](#event-life_medical_nutrition) — 一日の食事を一度に減らす日が続き、朝起きても手足に力が入らない。空腹をごまかすために水ばかり飲みながら、戸棚の奥に残ったわずかな乾物を数えた。
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
-- [life_mental_crisis_support](#event-life_mental_crisis_support) — （動的本文）
+- [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
+- [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_mental_crisis_recovery](#event-life_mental_crisis_recovery) — 底のない暗がりの中にいた頃より、外の光を浴びて歩ける日が増えてきた。それでもふとした拍子に胸がざわつく夜はある。自分の心とどう折り合いをつけていくか…
 - [life_violence_threat_safety](#event-life_violence_threat_safety) — 帰り道で浴びせられた脅し文句が、扉の鍵を閉めたあとも耳の奥にこびりついている。翌朝、表へ出る前に足がすくんだ。どうやって自分の身を守るか考えなければ…
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
@@ -5475,7 +5469,7 @@
 - [fam_mafia](#event-fam_mafia) — ファミリーの下働きで最初の夜を終えると、奥の部屋で年長者が革張りの帳簿をパタンと閉じた。「いいか、表で喋っていいことと、墓まで持っていくことがある」…
 
 <a id="tag-genre-13"></a>
-### 未分類（895）
+### 未分類（896）
 - [investment_exit](#event-investment_exit) — 出資先から精算の知らせが届いた。いま持分を手放せば{investmentCurrentValue}になり、出した元手を上回るという。ここで現金に替え…
 - [f1](#event-f1) — {caregiverArms}まどろむ日が続いた。ふと目を開けると、すぐそばで誰かが声を潜めて語りかけていた。 やわらかな布にくるまれて眠った。目を…
 - [f2](#event-f2) — 戸口から差し込む光の筋を、まばたきもせずに目で追った。人の影がそれを横切ると、そちらへ首をめぐらせた。 風に揺れる布の影をじっと見つめた。つかまえよ…
@@ -6126,8 +6120,8 @@
 - [daily_iberia_01](#event-daily_iberia_01) — 白壁の民家の路地で、天日に干された塩魚と完熟オリーブの素朴な昼餉をいただいた。塩気とオリーブ油の豊かな風味が滋味深く、歩き疲れた身体を満たした。
 - [daily_iberia_02](#event-daily_iberia_02) — 丘の上のオリーブ畑から、どこまでも静まり返った群青の海を見下ろした。黄金時代の面影を残す穏やかな潮風に吹かれ、心が静かに洗われた。
 - [daily_iberia_03](#event-daily_iberia_03) — 街角のパン屋で、オレンジの花水で香りづけされた焼き菓子を買った。柑橘の爽やかな甘みが口いっぱいに広がり、確かな幸福感を得た。
-- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段で、潮風に当たりながら手入れの行き届いた古いアコースティックギターを爪弾いた。哀愁を帯びた調べが静かな午後に響き渡った。
-- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で磨き上げた。差し込む光が色鮮やかな幾何学模様を石畳に落とし、心が安らいだ。
+- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段の近くで、誰かが古い弦楽器を静かに爪弾いていた。途切れ途切れの調べを聞きながら、しばらく足を止めた。
+- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で拭く手伝いをした。差し込む光が色のついた模様を石畳に落とした。
 - [daily_iberia_08](#event-daily_iberia_08) — 路地裏の古道具屋で、かつて黄金時代に使われていた真鍮製の小さな羅針盤を見つけた。針が静かに北を指す様子に、失われゆく航海のロマンを感じた。
 - [daily_iberia_09](#event-daily_iberia_09) — 強い日差しを遮る白い布の天蓋の下で、冷たいレモン水を飲んだ。渇いた喉に心地よい刺激が走り、元気が回復した。
 - [daily_iberia_10](#event-daily_iberia_10) — 夜、静まり返った街の上空に広がる澄み切った満天の星空を眺めた。波音だけが遠く聞こえる静寂の中に、深い安らぎを見出した。
@@ -6150,7 +6144,7 @@
 - [daily_iberia_32](#event-daily_iberia_32) — 中庭の噴水のふちに腰掛け、静かに落ちる水滴の音に耳を傾けながら午後の時間をやり過ごした。
 - [daily_iberia_33](#event-daily_iberia_33) — 夜半、海の方角から霧が立ち込め、街全体を冷たく湿った白い帳が包み込んでいった。
 - [daily_iberia_35](#event-daily_iberia_35) — 審問所の巡回兵に突然路上で呼び止められ、持ち物をすべて地面にぶちまけられて執拗な尋問を受け、ひどい恐怖と屈辱を味わった。
-- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、異様な生臭さと蠢く影を目撃し、背筋の凍る悪寒に襲われて一目散に逃げ出した。
+- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、風向きとは合わない生臭さと、崩れた家屋の奥で動く影を見かけた。正体を確かめず、その場を離れた。
 - [daily_iberia_39](#event-daily_iberia_39) — 審問所の外郭警備任務に就いた。ランタンの灯りを掲げ、暗闇の海岸線から這い上がる脅威に目を光らせた。
 - [daily_iberia_40](#event-daily_iberia_40) — 広場の石壁に張り出された審問所の布告を眺めた。「我らは沈黙に抗い、光を守る最後の砦である」という峻厳な文言に、この国を覆う緊張感を肌で感じた。
 - [daily_iberia_41](#event-daily_iberia_41) — 地方裁判所の書記官として、沿岸居住者の戸籍台帳と渡航禁止区域の申請書類を整理した。厳格な法秩序を支えた。
@@ -6163,14 +6157,15 @@
 - [daily_iberia_55](#event-daily_iberia_55) — 広場の石畳にチョークで船の絵を描き、友達と帆船ごっこをして遊んだ。大人たちの厳しい視線を避けて無邪気に笑い転げた。
 - [daily_iberia_57](#event-daily_iberia_57) — 海を見下ろす古いテラスで、古老たちが「海がまだ豊かだった黄金の時代」について静かに語り合っているのを耳にした。失われた繁栄の記憶に、静かに耳を傾けた…
 - [daily_iberia_58](#event-daily_iberia_58) — 長年使い続けてきた革張りの聖書と祈祷書を蜜蝋で手入れした。どんな暗雲の時代であっても信仰と希望を失わない決意を固めた。
-- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の町グランファロの古い石壁に沿って歩いた。潮の匂いを含んだ風が壁の隙間を吹き抜け、かつての住民たちが残した古い標識が静かに佇んでいた。
-- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、グランファロの街頭にガス灯が一斉に灯された。潮風に揺れる柔らかな灯火が石畳を照らし出し、荒涼とした沿岸の町に静かな安らぎをもたらしていた。
+- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の古い集落で、風雨に削られた石壁に沿って歩いた。壁の隙間を潮風が抜け、昔の住民が残した標識がところどころに残っていた。
+- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、沿岸の集落で街灯が順に灯された。風に揺れる明かりが石畳を照らし、人通りの減った道に細い光が続いた。
 - [daily_iberia_61](#event-daily_iberia_61) — 夜半、審問官の黒外套が翻り、窓の隙間から細いランタンの光が室内の壁を舐めるように走った。呼吸すら止め、闇の中で身を縮こまらせた。
 - [daily_iberia_63](#event-daily_iberia_63) — 礼拝の終わりに、厳格な司祭が会衆を見回しながら帳面へ何事かを書き留めていた。周囲の信徒たちの視線が疑心暗鬼に泳ぎ、教会内に張り詰めた沈黙が流れた。
 - [daily_iberia_64](#event-daily_iberia_64) — 海岸へ続く立ち入り禁止の小道に鉄条網が張り巡らされ、潮風に晒された警告板が打ち捨てられていた。海への恐怖と警戒が染み付いた土地の空気に、背筋が寒くな…
 - [choice_iberia_03](#event-choice_iberia_03) — 立ち入り禁止区域に近い海岸の砂浜に、不気味な青黒い結晶で覆われた大型の漂着物が打ち上げられていた。怪物の残骸のようにも見えるが、旧時代の合金コンテナ…
 - [choice_iberia_05](#event-choice_iberia_05) — 古い教会の床下から、黄金時代の大航海時代に描かれた羊皮紙の古航海図が発見された。暗号化された緯度経度と海流データが記されている。解読できれば失われた…
-- [choice_iberia_07](#event-choice_iberia_07) — 沿岸の入り江で、夜陰に乗じて外国の密輸船が危険な禁制品（未検査の海洋生物や武器）を陸揚げしようとしているのを目撃した。見張りの男たちが周囲を警戒して…
+- [choice_iberia_07](#event-choice_iberia_07) — 夜の入り江で、船籍の分からない小型舟艇から、布をかぶせた荷箱が浜へ運び込まれているのを見かけた。荷の中身も運び手の素性も分からないまま、見張り役らし…
+- [choice_iberia_telescope_observation_followup](#event-choice_iberia_telescope_observation_followup) — 修理して手元に残した望遠鏡は、しばらく布をかけたまま置いてあった。雲の少ない夜、窓の外を見て、久しぶりに筒を外へ向けることにした。
 - [daily_bolivar_01](#event-daily_bolivar_01) — 集落の木陰で、焼きたての香ばしいトウモロコシ粉の薄焼きパン（アレパ）にチーズを挟んで食べた。素朴で優しい甘みが口に広がり、力強い活力を得た。
 - [daily_bolivar_02](#event-daily_bolivar_02) — 突然の激しいスコールが通り過ぎ、洗い流された熱帯の木々の緑が鮮やかに輝いていた。立ち上る雨上がりの土の匂いに、大地の豊かな生命力を感じた。
 - [daily_bolivar_03](#event-daily_bolivar_03) — 小高い丘の展望台から、緑豊かなボリバルの山並みを見渡した。遠くの雲間から光が射し込む雄大な風景に、平和への祈りが静かに湧き上がった。
@@ -6373,7 +6368,7 @@
 - [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
 
 <a id="tag-genre-14"></a>
-### 労働・経済（763）
+### 労働・経済（764）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -6708,7 +6703,7 @@
 - [choice_kazdel_03](#event-choice_kazdel_03) — 吹きさらしのテント暮らしを脱するため、数十家族が身を寄せ合える堅牢な石造り共同住宅の建設が始まった。寒風が吹きすさぶ中、レンガ積みと屋根架けの急ピッ…
 - [daily_iberia_19](#event-daily_iberia_19) — 魚屋の店先で、沿岸の浅瀬で獲れた小魚の干物が竹串に通されてずらりと並んでいた。
 - [daily_iberia_34](#event-daily_iberia_34) — 仕立て屋の店先で、黒いラシャ布で仕立てられた質素で頑丈な作業着を眺めた。
-- [daily_iberia_37](#event-daily_iberia_37) — 塩田で過酷な炎天下の重労働を続け、脱水症状と日焼けで倒れ込みそうになった。
+- [daily_iberia_37](#event-daily_iberia_37) — 塩田の作業を長く続けた日、強い日差しで喉が渇き、腕も重くなった。休憩所まで戻って水を飲み、しばらく日陰で身体を冷ました。
 - [daily_iberia_43](#event-daily_iberia_43) — 塩田で木枠を組んで浅い結晶池を補修した。海水を効率よく天日乾燥させる伝統の構造を狂いなく整備した。
 - [daily_iberia_44](#event-daily_iberia_44) — オリーブの圧搾工場で、石臼を回して一番搾りの黄金色に輝くエクストラバージンオイルを抽出した。芳醇な香りに満たされた。
 - [daily_iberia_49](#event-daily_iberia_49) — 古書店先で、黄金時代の海洋詩篇を立ち読みした。「波濤を越え、光をもたらす」という勇壮な一節に胸を打たれた。
@@ -6779,9 +6774,9 @@
 - [family_newlywed_residence](#event-family_newlywed_residence) — 結婚が決まってから、二人でどこに新居を構えるかの話し合いが続いた。借家の敷金や親の面倒、互いの職場までの道のりを考え合わせると、簡単には決められなか…
 - [kazimierz_knight_entry](#event-kazimierz_knight_entry) — 仕事帰りに競技会場へ立ち寄り、きらびやかなネオンの奥にある受付で、騎士競技の舞台に立つ手順を尋ねてみた。自前で登録料と武具を揃えて予選に挑むか、有力…
 - [old_reemployment_review](#event-old_reemployment_review) — 朝起きて仕事着に袖を通すたび、年々抜けない疲れを実感するようになった。これまでと同じ日数働き続けるか、そろそろ荷を下ろすか考える時期が来た。
-- [life_goal_start](#event-life_goal_start) — 仕事帰りに借りていた道具を返し、夕餉の食材を買い込んで家路を歩いた。ただ今日を回すだけで過ぎていく日々のなかで、これから先、自分が何を支えに生きてい…
+- [life_goal_start](#event-life_goal_start) — 仕事を終えて家路につく途中、今日の失敗やうまくいった手順を思い返した。ただ一日を回すだけで過ぎていく暮らしのなかで、これから先、自分が何を支えに生き…
 - [life_goal_review](#event-life_goal_review) — かつて心に決めた目標を、日々の忙しさのなかでふと思い返した。仕事や家の事情もあの頃とは変わり、これからどう向き合っていくか考え直した。
-- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると手元が狂いそうになる。居残りで手を動かして慣らすか、自前で道具を揃えて熟練の先輩にコツを教わるか考え…
+- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると判断や手順が乱れそうになる。終業後に苦手な流れを確かめるか、自分で必要な教材や道具を用意して経験の長…
 - [life_rim_supply_delay](#event-life_rim_supply_delay) — 鉱区へ届くはずの交換部品の輸送便が遅れ、急ぎの修理に必要な部材が底をついた。止まった重機の警報音が作業場中に鳴り響いている。自腹で消耗品を買い足して…
 - [life_rim_skill_handover](#event-life_rim_skill_handover) — 整備の現場にもすっかり慣れ、機械の異音を聞き分けるのも早くなった。最近入ってきた新人が、外した部品の戻し方や異音の見極め方で立ち往生し、休憩時間に心…
 - [life_chernobog_worksite_errand](#event-life_chernobog_worksite_errand) — 鉱山へ続く道の脇に立ち入り禁止の柵が次々と組まれ、重い幌をかけた荷車がひっきりなしに行き交うようになった。行きつけの食堂の壁に、その柵の手前まで板材…
@@ -6896,6 +6891,7 @@
 - [asset_choice_property_purchase](#event-asset_choice_property_purchase) — 長年蓄えてきた手元の資金を確かめ、都市の不動産区画で自己所有の居住権（持ち家・アパート）を購入する好機が訪れた。家賃の支払いから解放され、地に足をつ…
 - [asset_choice_workshop_open](#event-asset_choice_workshop_open) — これまでに培った技術と知見を活かし、自らの看板を掲げて小さな工房や店舗（仕立て屋、パン屋、修理工房、薬草店）を開業する相談を持ちかけられた。
 - [asset_daily_workshop_revenue](#event-asset_daily_workshop_revenue) — 工房の店先で注文主と打ち合わせをし、丹精込めて仕上げた品を納品した。手渡された代金を金庫に収め、自らの腕で稼ぎ出す手応えを噛み締めた。
+- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 - [life_rim_skill_handover_followup](#event-life_rim_skill_handover_followup) — 見習いと一緒に機械の点検手順を確かめ合った頃から、ずいぶん年月が経った。ある日、若い作業員が油の染みた古い点検メモを手にやって来た。昔の手帳を開いて…
 - [life_rim_workmate_followup](#event-life_rim_workmate_followup) — 昔、作業の手ほどきを頼んできた{rimWorkmateName}と作業場の外で久しぶりに顔を合わせた。あの頃一緒にやった点検のことで聞きたいことがあ…
 - [life_savra_late_craft](#event-life_savra_late_craft) — 長年続けてきた整備の仕事も、若い頃のように手早くはこなせなくなった。節々が痛む日は重い部品を若手に任せ、代わりに金属の異音や摩耗を見分ける勘所を教え…
@@ -7140,7 +7136,7 @@
 
 ## 状況別索引
 
-[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (143)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (255)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[記録・説明責任 (1)](#tag-situation-108)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-109)　・　[記録と責任 (1)](#tag-situation-110)　・　[技師 (1)](#tag-situation-111)　・　[技能条件 (1)](#tag-situation-112)　・　[求職 (2)](#tag-situation-113)　・　[求職・紹介 (1)](#tag-situation-114)　・　[旧坑区の荷札照会 (1)](#tag-situation-115)　・　[競技会場の仮設席設営 (1)](#tag-situation-116)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-117)　・　[競技騎士の肩の負傷 (1)](#tag-situation-118)　・　[競技祭 (1)](#tag-situation-119)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-120)　・　[脅迫を受ける (1)](#tag-situation-121)　・　[脅迫記録の解除分岐 (1)](#tag-situation-122)　・　[極東 (1)](#tag-situation-123)　・　[極東の軍務・兵站ルート (2)](#tag-situation-124)　・　[極東の神社 (1)](#tag-situation-125)　・　[勤務縮小後 (1)](#tag-situation-126)　・　[近隣からの相談 (1)](#tag-situation-127)　・　[近隣との情報交換 (1)](#tag-situation-128)　・　[近隣の若年者との交流 (1)](#tag-situation-129)　・　[近隣互助 (1)](#tag-situation-130)　・　[軍務・護衛の継続 (1)](#tag-situation-131)　・　[契約確認 (1)](#tag-situation-132)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-133)　・　[継続／民間移行／求職 (1)](#tag-situation-134)　・　[継続後の振り返り (1)](#tag-situation-135)　・　[継続後の窓口 (1)](#tag-situation-136)　・　[警戒・質問の選択 (1)](#tag-situation-137)　・　[検査延期後の再検討 (1)](#tag-situation-138)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-139)　・　[源石片による負傷・曝露 (1)](#tag-situation-140)　・　[源石片への接触回避 (1)](#tag-situation-141)　・　[言葉の行き違い (1)](#tag-situation-142)　・　[個人情報 (1)](#tag-situation-143)　・　[古傷による職業転換 (1)](#tag-situation-144)　・　[固定集落への配達 (1)](#tag-situation-145)　・　[固定都市 (1)](#tag-situation-146)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-147)　・　[交易所の共用端末 (1)](#tag-situation-148)　・　[公証人役場 (1)](#tag-situation-149)　・　[工業区域 (1)](#tag-situation-150)　・　[工場労働者 (1)](#tag-situation-151)　・　[港湾労働 (2)](#tag-situation-152)　・　[鉱区事故 (1)](#tag-situation-153)　・　[鉱山の交替減少 (1)](#tag-situation-154)　・　[鉱山労働 (1)](#tag-situation-155)　・　[鉱石病以外の回復期 (1)](#tag-situation-156)　・　[鉱石病診断済み (1)](#tag-situation-157)　・　[鉱夫 (1)](#tag-situation-158)　・　[鉱夫分岐 (1)](#tag-situation-159)　・　[高等教育経験者の教員応募 (1)](#tag-situation-160)　・　[高齢期 (1)](#tag-situation-161)　・　[高齢期の就労 (1)](#tag-situation-162)　・　[告示の交代 (1)](#tag-situation-163)　・　[国の発生条件あり (1561)](#tag-situation-164)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-165)　・　[再受付・別の診療先の探索 (1)](#tag-situation-166)　・　[採掘坑内の換気停止 (1)](#tag-situation-167)　・　[採掘地域 (1)](#tag-situation-168)　・　[採掘地域に限定 (1)](#tag-situation-169)　・　[採掘中 (1)](#tag-situation-170)　・　[災害後の商店再開 (1)](#tag-situation-171)　・　[祭典 (1)](#tag-situation-172)　・　[作業技能 (1)](#tag-situation-173)　・　[作業停止・退避 (1)](#tag-situation-174)　・　[山道の情報共有 (1)](#tag-situation-175)　・　[山麓の宿への道案内 (1)](#tag-situation-176)　・　[仕送り (1)](#tag-situation-177)　・　[子どもの就学 (1)](#tag-situation-178)　・　[子どもの誕生・養育 (1)](#tag-situation-179)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-180)　・　[子への訃報 (1)](#tag-situation-181)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-182)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-183)　・　[思春期 (1)](#tag-situation-184)　・　[支援の受入れ (1)](#tag-situation-185)　・　[氏族養育 (1)](#tag-situation-186)　・　[資格取得後の求職 (1)](#tag-situation-187)　・　[飼育動物の世話 (1)](#tag-situation-188)　・　[次便待ち (1)](#tag-situation-189)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-190)　・　[自動発生イベント (1428)](#tag-situation-191)　・　[湿地地勢 (1)](#tag-situation-192)　・　[守秘と名簿 (1)](#tag-situation-193)　・　[種族差別 (2)](#tag-situation-194)　・　[種族差別後 (1)](#tag-situation-195)　・　[酒類の仕入れ帳 (1)](#tag-situation-196)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-197)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-198)　・　[授業担当者との接点 (1)](#tag-situation-199)　・　[収容・隔離中 (1)](#tag-situation-200)　・　[収容・隔離中の診療 (1)](#tag-situation-201)　・　[収容中 (4)](#tag-situation-202)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-203)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-204)　・　[就労中 (2)](#tag-situation-205)　・　[就労中の鉱夫 (1)](#tag-situation-206)　・　[住居差別 (1)](#tag-situation-207)　・　[住居差別後 (1)](#tag-situation-208)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-209)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-210)　・　[宿泊拒否 (1)](#tag-situation-211)　・　[宿泊拒否後 (1)](#tag-situation-212)　・　[出場・観戦・場外見物 (1)](#tag-situation-213)　・　[所持金による本文・選択肢 (1)](#tag-situation-214)　・　[小舞台 (1)](#tag-situation-215)　・　[少年・青年 (2)](#tag-situation-216)　・　[少年・青年・壮年 (3)](#tag-situation-217)　・　[消息不明者の生存確認 (1)](#tag-situation-218)　・　[症状進行中 (1)](#tag-situation-219)　・　[情報網の高い居住地 (1)](#tag-situation-220)　・　[条件付き本文 (210)](#tag-situation-221)　・　[職業課程の継続 (1)](#tag-situation-222)　・　[職業課程の修了 (1)](#tag-situation-223)　・　[職業条件あり (71)](#tag-situation-224)　・　[職場・近隣で露見の兆し (1)](#tag-situation-225)　・　[職場の排斥 (1)](#tag-situation-226)　・　[食堂の客足 (1)](#tag-situation-227)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-228)　・　[食料不足 (1)](#tag-situation-229)　・　[森林地勢 (1)](#tag-situation-230)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-231)　・　[親の家計判断 (1)](#tag-situation-232)　・　[親の感染 (1)](#tag-situation-233)　・　[親の死後 (1)](#tag-situation-234)　・　[親子の記憶 (1)](#tag-situation-235)　・　[診断済み (1)](#tag-situation-236)　・　[診断済み・未治療 (1)](#tag-situation-237)　・　[診療・休養・記録から選択 (1)](#tag-situation-238)　・　[診療・作業調整 (1)](#tag-situation-239)　・　[診療・動作を避ける選択 (1)](#tag-situation-240)　・　[診療・付き添いの依頼 (1)](#tag-situation-241)　・　[診療・負担軽減から選択 (1)](#tag-situation-242)　・　[診療延期後 (1)](#tag-situation-243)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-244)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-245)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-246)　・　[身近な人への支援依頼 (1)](#tag-situation-247)　・　[身近な連絡先あり (1)](#tag-situation-248)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-249)　・　[睡眠不足 (1)](#tag-situation-250)　・　[世界イベント後 (1)](#tag-situation-251)　・　[成人 (4)](#tag-situation-252)　・　[成人・返済支援の選択 (1)](#tag-situation-253)　・　[成人した子 (2)](#tag-situation-254)　・　[成人の種族偏見に触れる (1)](#tag-situation-255)　・　[生活上の備え (1)](#tag-situation-256)　・　[青年・壮年 (5)](#tag-situation-257)　・　[青年・壮年・老年 (3)](#tag-situation-258)　・　[雪祭司・聖樹 (1)](#tag-situation-259)　・　[選択イベント (1099)](#tag-situation-260)　・　[前段で残留した人 (1)](#tag-situation-261)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-262)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-263)　・　[全年齢の循環器系エピソード (1)](#tag-situation-264)　・　[全年齢の食料不足 (1)](#tag-situation-265)　・　[全年齢の負傷後の痛み (1)](#tag-situation-266)　・　[組織・所属に言及 (175)](#tag-situation-267)　・　[組織離脱後 (1)](#tag-situation-268)　・　[相談・医療・休養 (1)](#tag-situation-269)　・　[相談・記録 (1)](#tag-situation-270)　・　[相談・記録・経路変更 (1)](#tag-situation-271)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-272)　・　[足場や荷の異常 (1)](#tag-situation-273)　・　[退会後の関係 (1)](#tag-situation-274)　・　[退職選択 (1)](#tag-situation-275)　・　[大いなる静謐後 (1)](#tag-situation-276)　・　[大学課程の継続 (1)](#tag-situation-277)　・　[大学課程の修了 (1)](#tag-situation-278)　・　[短期雇用 (1)](#tag-situation-279)　・　[短期雇用と現場危険 (1)](#tag-situation-280)　・　[地域の供給不安定 (1)](#tag-situation-281)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-282)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-283)　・　[地域学習会・独学の選択 (1)](#tag-situation-284)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-285)　・　[仲間の捜索 (1)](#tag-situation-286)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-287)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-288)　・　[通学していない (1)](#tag-situation-289)　・　[通学中 (1)](#tag-situation-290)　・　[通行止め・迂回 (1)](#tag-situation-291)　・　[天災・戦乱による避難中 (1)](#tag-situation-292)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-293)　・　[店舗からの排斥集会 (1)](#tag-situation-294)　・　[転居後の近隣交流 (1)](#tag-situation-295)　・　[都市街区での襲撃 (1)](#tag-situation-296)　・　[動的表示条件 (686)](#tag-situation-297)　・　[動的本文 (30)](#tag-situation-298)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-299)　・　[同一都市の周縁区への転居 (1)](#tag-situation-300)　・　[同郷者との交流 (1)](#tag-situation-301)　・　[同行者との交流 (1)](#tag-situation-302)　・　[匿名動画の出所確認 (1)](#tag-situation-303)　・　[独立商業所属 (1)](#tag-situation-304)　・　[読み書きに困難がある (1)](#tag-situation-305)　・　[日雇い (1)](#tag-situation-306)　・　[乳児の成長 (1)](#tag-situation-307)　・　[任意応募・採用選考 (1)](#tag-situation-308)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-309)　・　[年齢：35歳以上 (2)](#tag-situation-310)　・　[年齢：児童 (978)](#tag-situation-311)　・　[年齢：少年 (1213)](#tag-situation-312)　・　[年齢：青年 (2380)](#tag-situation-313)　・　[年齢：壮年 (2320)](#tag-situation-314)　・　[年齢：乳児 (20)](#tag-situation-315)　・　[年齢：幼児 (37)](#tag-situation-316)　・　[年齢：老年 (1524)](#tag-situation-317)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-318)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-319)　・　[配給・食料不足 (1)](#tag-situation-320)　・　[配給・寝床・診療案内 (1)](#tag-situation-321)　・　[配給と地域支援 (1)](#tag-situation-322)　・　[配給登録 (1)](#tag-situation-323)　・　[配偶者との死別 (1)](#tag-situation-324)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-325)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-326)　・　[班間の点検記録 (1)](#tag-situation-327)　・　[班内の技能伝達 (1)](#tag-situation-328)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-329)　・　[避難中 (1)](#tag-situation-330)　・　[非感染者 (1)](#tag-situation-331)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-332)　・　[付き添い依頼・受診延期 (1)](#tag-situation-333)　・　[付き添い相談 (1)](#tag-situation-334)　・　[扶養中の子 (2)](#tag-situation-335)　・　[扶養中の子の看病 (1)](#tag-situation-336)　・　[負傷後の職務調整 (1)](#tag-situation-337)　・　[部品寸法 (1)](#tag-situation-338)　・　[復旧作業中の負傷 (1)](#tag-situation-339)　・　[粉塵への接触懸念 (1)](#tag-situation-340)　・　[粉塵曝露 (2)](#tag-situation-341)　・　[兵士の消息不明 (1)](#tag-situation-342)　・　[兵役招集 (1)](#tag-situation-343)　・　[別居・転居 (1)](#tag-situation-344)　・　[亡命・移住 (2)](#tag-situation-345)　・　[未診断の感染者 (1)](#tag-situation-346)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-347)　・　[未成年は養育者判断 (8)](#tag-situation-348)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-349)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-350)　・　[名前を知る相手 (1)](#tag-situation-351)　・　[夜間の世話 (1)](#tag-situation-352)　・　[友人との文通再開 (1)](#tag-situation-353)　・　[友人への恋心 (1)](#tag-situation-354)　・　[傭兵・護衛勤務 (1)](#tag-situation-355)　・　[傭兵隊の護衛契約 (1)](#tag-situation-356)　・　[傭兵隊の通過 (1)](#tag-situation-357)　・　[幼い子の養育 (1)](#tag-situation-358)　・　[用事の再開・再診 (1)](#tag-situation-359)　・　[養育者の視点 (1)](#tag-situation-360)　・　[離婚後の元配偶者の死 (1)](#tag-situation-361)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-362)　・　[離婚後の子育て・連絡 (1)](#tag-situation-363)　・　[龍門 (1)](#tag-situation-364)　・　[龍門の移動都市居住区 (1)](#tag-situation-365)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-366)　・　[龍門の商業街 (1)](#tag-situation-367)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-368)　・　[隣人との死別 (1)](#tag-situation-369)　・　[隣人との伝言再開 (1)](#tag-situation-370)　・　[隣人の消息不明 (1)](#tag-situation-371)　・　[隣人の生存確認 (1)](#tag-situation-372)　・　[連絡・休息の継続 (1)](#tag-situation-373)　・　[連絡先と家の用事の相談 (1)](#tag-situation-374)　・　[労務補償 (1)](#tag-situation-375)
+[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (141)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (255)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[記録・説明責任 (1)](#tag-situation-108)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-109)　・　[記録と責任 (1)](#tag-situation-110)　・　[技師 (1)](#tag-situation-111)　・　[技能条件 (1)](#tag-situation-112)　・　[求職 (2)](#tag-situation-113)　・　[求職・紹介 (1)](#tag-situation-114)　・　[旧坑区の荷札照会 (1)](#tag-situation-115)　・　[競技会場の仮設席設営 (1)](#tag-situation-116)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-117)　・　[競技騎士の肩の負傷 (1)](#tag-situation-118)　・　[競技祭 (1)](#tag-situation-119)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-120)　・　[脅迫を受ける (1)](#tag-situation-121)　・　[脅迫記録の解除分岐 (1)](#tag-situation-122)　・　[極東 (1)](#tag-situation-123)　・　[極東の軍務・兵站ルート (2)](#tag-situation-124)　・　[極東の神社 (1)](#tag-situation-125)　・　[勤務縮小後 (1)](#tag-situation-126)　・　[近隣からの相談 (1)](#tag-situation-127)　・　[近隣との情報交換 (1)](#tag-situation-128)　・　[近隣の若年者との交流 (1)](#tag-situation-129)　・　[近隣互助 (1)](#tag-situation-130)　・　[軍務・護衛の継続 (1)](#tag-situation-131)　・　[契約確認 (1)](#tag-situation-132)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-133)　・　[継続／民間移行／求職 (1)](#tag-situation-134)　・　[継続後の振り返り (1)](#tag-situation-135)　・　[継続後の窓口 (1)](#tag-situation-136)　・　[警戒・質問の選択 (1)](#tag-situation-137)　・　[検査延期後の再検討 (1)](#tag-situation-138)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-139)　・　[源石片による負傷・曝露 (1)](#tag-situation-140)　・　[源石片への接触回避 (1)](#tag-situation-141)　・　[言葉の行き違い (1)](#tag-situation-142)　・　[個人情報 (1)](#tag-situation-143)　・　[古傷による職業転換 (1)](#tag-situation-144)　・　[固定集落への配達 (1)](#tag-situation-145)　・　[固定都市 (1)](#tag-situation-146)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-147)　・　[交易所の共用端末 (1)](#tag-situation-148)　・　[公証人役場 (1)](#tag-situation-149)　・　[工業区域 (1)](#tag-situation-150)　・　[工場労働者 (1)](#tag-situation-151)　・　[港湾労働 (2)](#tag-situation-152)　・　[鉱区事故 (1)](#tag-situation-153)　・　[鉱山の交替減少 (1)](#tag-situation-154)　・　[鉱山労働 (1)](#tag-situation-155)　・　[鉱石病以外の回復期 (1)](#tag-situation-156)　・　[鉱石病診断済み (1)](#tag-situation-157)　・　[鉱夫 (1)](#tag-situation-158)　・　[鉱夫分岐 (1)](#tag-situation-159)　・　[高等教育経験者の教員応募 (1)](#tag-situation-160)　・　[高齢期 (1)](#tag-situation-161)　・　[高齢期の就労 (1)](#tag-situation-162)　・　[告示の交代 (1)](#tag-situation-163)　・　[国の発生条件あり (1560)](#tag-situation-164)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-165)　・　[再受付・別の診療先の探索 (1)](#tag-situation-166)　・　[採掘坑内の換気停止 (1)](#tag-situation-167)　・　[採掘地域 (1)](#tag-situation-168)　・　[採掘地域に限定 (1)](#tag-situation-169)　・　[採掘中 (1)](#tag-situation-170)　・　[災害後の商店再開 (1)](#tag-situation-171)　・　[祭典 (1)](#tag-situation-172)　・　[作業技能 (1)](#tag-situation-173)　・　[作業停止・退避 (1)](#tag-situation-174)　・　[山道の情報共有 (1)](#tag-situation-175)　・　[山麓の宿への道案内 (1)](#tag-situation-176)　・　[仕送り (1)](#tag-situation-177)　・　[子どもの就学 (1)](#tag-situation-178)　・　[子どもの誕生・養育 (1)](#tag-situation-179)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-180)　・　[子への訃報 (1)](#tag-situation-181)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-182)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-183)　・　[思春期 (1)](#tag-situation-184)　・　[支援の受入れ (1)](#tag-situation-185)　・　[氏族養育 (1)](#tag-situation-186)　・　[資格取得後の求職 (1)](#tag-situation-187)　・　[飼育動物の世話 (1)](#tag-situation-188)　・　[次便待ち (1)](#tag-situation-189)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-190)　・　[自動発生イベント (1428)](#tag-situation-191)　・　[湿地地勢 (1)](#tag-situation-192)　・　[守秘と名簿 (1)](#tag-situation-193)　・　[種族差別 (2)](#tag-situation-194)　・　[種族差別後 (1)](#tag-situation-195)　・　[酒類の仕入れ帳 (1)](#tag-situation-196)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-197)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-198)　・　[授業担当者との接点 (1)](#tag-situation-199)　・　[収容・隔離中 (1)](#tag-situation-200)　・　[収容・隔離中の診療 (1)](#tag-situation-201)　・　[収容中 (4)](#tag-situation-202)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-203)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-204)　・　[就労中 (2)](#tag-situation-205)　・　[就労中の鉱夫 (1)](#tag-situation-206)　・　[住居差別 (1)](#tag-situation-207)　・　[住居差別後 (1)](#tag-situation-208)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-209)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-210)　・　[宿泊拒否 (1)](#tag-situation-211)　・　[宿泊拒否後 (1)](#tag-situation-212)　・　[出場・観戦・場外見物 (1)](#tag-situation-213)　・　[所持金による本文・選択肢 (1)](#tag-situation-214)　・　[小舞台 (1)](#tag-situation-215)　・　[少年・青年 (2)](#tag-situation-216)　・　[少年・青年・壮年 (3)](#tag-situation-217)　・　[消息不明者の生存確認 (1)](#tag-situation-218)　・　[症状進行中 (1)](#tag-situation-219)　・　[情報網の高い居住地 (1)](#tag-situation-220)　・　[条件付き本文 (210)](#tag-situation-221)　・　[職業課程の継続 (1)](#tag-situation-222)　・　[職業課程の修了 (1)](#tag-situation-223)　・　[職業条件あり (71)](#tag-situation-224)　・　[職場・近隣で露見の兆し (1)](#tag-situation-225)　・　[職場の排斥 (1)](#tag-situation-226)　・　[食堂の客足 (1)](#tag-situation-227)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-228)　・　[食料不足 (1)](#tag-situation-229)　・　[森林地勢 (1)](#tag-situation-230)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-231)　・　[親の家計判断 (1)](#tag-situation-232)　・　[親の感染 (1)](#tag-situation-233)　・　[親の死後 (1)](#tag-situation-234)　・　[親子の記憶 (1)](#tag-situation-235)　・　[診断済み (1)](#tag-situation-236)　・　[診断済み・未治療 (1)](#tag-situation-237)　・　[診療・休養・記録から選択 (1)](#tag-situation-238)　・　[診療・作業調整 (1)](#tag-situation-239)　・　[診療・動作を避ける選択 (1)](#tag-situation-240)　・　[診療・付き添いの依頼 (1)](#tag-situation-241)　・　[診療・負担軽減から選択 (1)](#tag-situation-242)　・　[診療延期後 (1)](#tag-situation-243)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-244)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-245)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-246)　・　[身近な人への支援依頼 (1)](#tag-situation-247)　・　[身近な連絡先あり (1)](#tag-situation-248)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-249)　・　[睡眠不足 (1)](#tag-situation-250)　・　[世界イベント後 (1)](#tag-situation-251)　・　[成人 (4)](#tag-situation-252)　・　[成人・返済支援の選択 (1)](#tag-situation-253)　・　[成人した子 (2)](#tag-situation-254)　・　[成人の種族偏見に触れる (1)](#tag-situation-255)　・　[生活上の備え (1)](#tag-situation-256)　・　[青年・壮年 (5)](#tag-situation-257)　・　[青年・壮年・老年 (3)](#tag-situation-258)　・　[雪祭司・聖樹 (1)](#tag-situation-259)　・　[選択イベント (1097)](#tag-situation-260)　・　[前段で残留した人 (1)](#tag-situation-261)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-262)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-263)　・　[全年齢の循環器系エピソード (1)](#tag-situation-264)　・　[全年齢の食料不足 (1)](#tag-situation-265)　・　[全年齢の負傷後の痛み (1)](#tag-situation-266)　・　[組織・所属に言及 (175)](#tag-situation-267)　・　[組織離脱後 (1)](#tag-situation-268)　・　[相談・医療・休養 (1)](#tag-situation-269)　・　[相談・記録 (1)](#tag-situation-270)　・　[相談・記録・経路変更 (1)](#tag-situation-271)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-272)　・　[足場や荷の異常 (1)](#tag-situation-273)　・　[退会後の関係 (1)](#tag-situation-274)　・　[退職選択 (1)](#tag-situation-275)　・　[大いなる静謐後 (1)](#tag-situation-276)　・　[大学課程の継続 (1)](#tag-situation-277)　・　[大学課程の修了 (1)](#tag-situation-278)　・　[短期雇用 (1)](#tag-situation-279)　・　[短期雇用と現場危険 (1)](#tag-situation-280)　・　[地域の供給不安定 (1)](#tag-situation-281)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-282)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-283)　・　[地域学習会・独学の選択 (1)](#tag-situation-284)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-285)　・　[仲間の捜索 (1)](#tag-situation-286)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-287)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-288)　・　[通学していない (1)](#tag-situation-289)　・　[通学中 (1)](#tag-situation-290)　・　[通行止め・迂回 (1)](#tag-situation-291)　・　[天災・戦乱による避難中 (1)](#tag-situation-292)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-293)　・　[店舗からの排斥集会 (1)](#tag-situation-294)　・　[転居後の近隣交流 (1)](#tag-situation-295)　・　[都市街区での襲撃 (1)](#tag-situation-296)　・　[動的表示条件 (687)](#tag-situation-297)　・　[動的本文 (31)](#tag-situation-298)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-299)　・　[同一都市の周縁区への転居 (1)](#tag-situation-300)　・　[同郷者との交流 (1)](#tag-situation-301)　・　[同行者との交流 (1)](#tag-situation-302)　・　[匿名動画の出所確認 (1)](#tag-situation-303)　・　[独立商業所属 (1)](#tag-situation-304)　・　[読み書きに困難がある (1)](#tag-situation-305)　・　[日雇い (1)](#tag-situation-306)　・　[乳児の成長 (1)](#tag-situation-307)　・　[任意応募・採用選考 (1)](#tag-situation-308)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-309)　・　[年齢：35歳以上 (2)](#tag-situation-310)　・　[年齢：児童 (975)](#tag-situation-311)　・　[年齢：少年 (1211)](#tag-situation-312)　・　[年齢：青年 (2378)](#tag-situation-313)　・　[年齢：壮年 (2318)](#tag-situation-314)　・　[年齢：乳児 (20)](#tag-situation-315)　・　[年齢：幼児 (37)](#tag-situation-316)　・　[年齢：老年 (1522)](#tag-situation-317)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-318)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-319)　・　[配給・食料不足 (1)](#tag-situation-320)　・　[配給・寝床・診療案内 (1)](#tag-situation-321)　・　[配給と地域支援 (1)](#tag-situation-322)　・　[配給登録 (1)](#tag-situation-323)　・　[配偶者との死別 (1)](#tag-situation-324)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-325)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-326)　・　[班間の点検記録 (1)](#tag-situation-327)　・　[班内の技能伝達 (1)](#tag-situation-328)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-329)　・　[避難中 (1)](#tag-situation-330)　・　[非感染者 (1)](#tag-situation-331)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-332)　・　[付き添い依頼・受診延期 (1)](#tag-situation-333)　・　[付き添い相談 (1)](#tag-situation-334)　・　[扶養中の子 (2)](#tag-situation-335)　・　[扶養中の子の看病 (1)](#tag-situation-336)　・　[負傷後の職務調整 (1)](#tag-situation-337)　・　[部品寸法 (1)](#tag-situation-338)　・　[復旧作業中の負傷 (1)](#tag-situation-339)　・　[粉塵への接触懸念 (1)](#tag-situation-340)　・　[粉塵曝露 (2)](#tag-situation-341)　・　[兵士の消息不明 (1)](#tag-situation-342)　・　[兵役招集 (1)](#tag-situation-343)　・　[別居・転居 (1)](#tag-situation-344)　・　[亡命・移住 (2)](#tag-situation-345)　・　[未診断の感染者 (1)](#tag-situation-346)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-347)　・　[未成年は養育者判断 (8)](#tag-situation-348)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-349)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-350)　・　[名前を知る相手 (1)](#tag-situation-351)　・　[夜間の世話 (1)](#tag-situation-352)　・　[友人との文通再開 (1)](#tag-situation-353)　・　[友人への恋心 (1)](#tag-situation-354)　・　[傭兵・護衛勤務 (1)](#tag-situation-355)　・　[傭兵隊の護衛契約 (1)](#tag-situation-356)　・　[傭兵隊の通過 (1)](#tag-situation-357)　・　[幼い子の養育 (1)](#tag-situation-358)　・　[用事の再開・再診 (1)](#tag-situation-359)　・　[養育者の視点 (1)](#tag-situation-360)　・　[離婚後の元配偶者の死 (1)](#tag-situation-361)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-362)　・　[離婚後の子育て・連絡 (1)](#tag-situation-363)　・　[龍門 (1)](#tag-situation-364)　・　[龍門の移動都市居住区 (1)](#tag-situation-365)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-366)　・　[龍門の商業街 (1)](#tag-situation-367)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-368)　・　[隣人との死別 (1)](#tag-situation-369)　・　[隣人との伝言再開 (1)](#tag-situation-370)　・　[隣人の消息不明 (1)](#tag-situation-371)　・　[隣人の生存確認 (1)](#tag-situation-372)　・　[連絡・休息の継続 (1)](#tag-situation-373)　・　[連絡先と家の用事の相談 (1)](#tag-situation-374)　・　[労務補償 (1)](#tag-situation-375)
 
 <a id="tag-situation-0"></a>
 ### 1072年以降は戦役後の導入文（1）
@@ -7180,7 +7176,7 @@
 
 <a id="tag-situation-9"></a>
 ### 14歳以上・危機状態（1）
-- [life_mental_crisis_support](#event-life_mental_crisis_support) — （動的本文）
+- [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
 
 <a id="tag-situation-10"></a>
 ### 15歳以上（1）
@@ -7367,7 +7363,7 @@
 - [siesta_shop_reopens_after_move](#event-siesta_shop_reopens_after_move) — 移動都市へと姿を変えた新しいシエスタで、勤め先の店をようやく再開した。まだ人通りのまばらな通りに面して木の案内札を立て、届いたばかりの商品を一品ずつ…
 
 <a id="tag-situation-55"></a>
-### 移動都市・避難に言及（143）
+### 移動都市・避難に言及（141）
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
 - [lov](#event-lov) — 仕事帰りにたびたび顔を合わせる人と、雨宿りの軒先で立ち話をした。もっと話していたい気持ちはあったが、今月の支払いに追われる暮らしを思うと、次の一歩を…
 - [nat](#event-nat) — （動的本文）
@@ -7465,8 +7461,6 @@
 - [family_care_network_member_missing_news](#event-family_care_network_member_missing_news) — 昔世話になった{careMemberName}が{careMemberMissingYear}年、{careMemberMissingRegion}…
 - [life_ursus_katorga_life](#event-life_ursus_katorga_life) — 送り込まれたカトルガ区画では、稼働停止とともに照明も暖房も断ち切られ、外の扉には重い鎖がかけられた。叩いても返事のない扉が並び、白い息が凍りつく暗闇…
 - [elder_daily_grandchild_letter](#event-elder_daily_grandchild_letter) — 子や孫から近況を知らせる便りが届いた。日々の遊びや家の出来事を綴った文字を、眼鏡を掛け直して何度も嬉しそうに読み返した。
-- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — 不意の天災や移動都市の区画被災に備え、民間保険会社が提供する「天災総合避難・再建保険」の案内が届いた。年々の保険料を納めることで、被災時に速やかな補…
-- [asset_catastrophe_insurance_claim](#event-asset_catastrophe_insurance_claim) — 天災の混乱の中、避難所で保険会社の臨時窓口を見つけた。避難証明書と保険証書を提示したところ、迅速な審査が行われた。
 - [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [ori_post_catastrophe_ground](#event-ori_post_catastrophe_ground) — 崩れた通りを歩いていると、ぬかるんだ土の中に黒く光る欠片がいくつも混じっているのが目に入った。ただの石炭か、それとも活性を持った源石の欠片か、遠目に…
 - [ori_protection_after_displacement](#event-ori_protection_after_displacement) — 避難先の仮宿でやっと荷をほどいたとき、家から持ち出した商売道具の隙間に、黒く光る破片が食い込んでいるのに気づいた。削り落として使い続けるか、泣く泣く…
@@ -8248,7 +8242,7 @@
 - [f102](#event-f102) — 広場の掲示板に、真新しい印章が押された布告が張り出されていた。その端から、昨日までの古い告示が半分だけ破れてのぞいている。人垣の後ろから新しい文面を…
 
 <a id="tag-situation-164"></a>
-### 国の発生条件あり（1561）
+### 国の発生条件あり（1560）
 - [minos_hero_spirit_stigma](#event-minos_hero_spirit_stigma) — 診療所の帰り道、通りがかりの大人が『鉱石病は英雄の気高い魂まで蝕む』と噂していた。治療を続ける親は、家の病のことを近所にだけは悟られるなと唇に指を当…
 - [kjerag_transporter_route_review](#event-kjerag_transporter_route_review) — 雪の山道を荷を背負って登り始めて二年になる。新しい荷受け場所を設けたいと集落を回ると、温かい茶を出して歓迎してくれる村もあれば、よそ者の出入りを嫌っ…
 - [rim_catastrophe_transporter_review](#event-rim_catastrophe_transporter_review) — 天災が爪痕を残した坑道を調べる助手になって二年が過ぎた。崩落した岩肌や黒く光る源石の露出を図面に落とし込む隣で、同行する天災トランスポーターは絶えず…
@@ -8525,7 +8519,7 @@
 - [choice_lungmen_07](#event-choice_lungmen_07) — スラム街で貧民や感染者を無償で診ている地下診療所が、止血剤と抗感染薬の在庫が底をついて閉鎖の危機に瀕していた。医師が悲痛な面持ちで支援を呼びかけてい…
 - [choice_lungmen_08](#event-choice_lungmen_08) — ネオン街の裏路地で、上等な絹の服を着て泣きじゃくっている迷子の小さな子どもを見かけた。身につけている装飾品から、上層区の富裕層の令息であることが窺え…
 - [choice_lungmen_09](#event-choice_lungmen_09) — 雑居ビルの低層階から火の手が上がり、黒煙が階段を駆け上がった。非常ベルが鳴り響く中、煙に巻かれて逃げ遅れた住人たちが上の階から助けを求めている。
-- [choice_lungmen_10](#event-choice_lungmen_10) — 年に一度の「九龍美食競宴」が開催され、誰でもオリジナル料理で出店できる看板屋台大会が開かれていた。優勝すれば龍門全土に名が売れ、多額の賞金が出る。
+- [choice_lungmen_10](#event-choice_lungmen_10) — 夜市の一角で、数軒の屋台が新しい料理を出して客の反応を競う小さな催しを始めていた。客足が増え、臨時の手伝いを探す店もある。
 - [daily_higashi_01](#event-daily_higashi_01) — 山あいの鄙びた温泉宿で湯煙に包まれ、手足を伸ばして湯治を楽しんだ。硫黄の香りと清らかなせせらぎに、日頃の凝りが芯からほぐれていった。
 - [daily_higashi_02](#event-daily_higashi_02) — 春風に揺れる桜並木の下を歩いた。花びらがはらはらと肩に舞い散り、道行く人々も足を止めて春の訪れを静かに愛でていた。
 - [daily_higashi_03](#event-daily_higashi_03) — 朝餉に炊きたての新米と香ばしい焼き魚、大根の味噌汁をいただいた。素朴ながら滋味豊かな味わいに、身体の奥から力が湧いてきた。
@@ -8669,7 +8663,7 @@
 - [choice_ursus_07](#event-choice_ursus_07) — 過酷な鉱区から脱走してきた感染者の若い鉱夫が、凍傷で足を引きずりながらあなたの納屋に転がり込んできた。「追っ手に見つかれば射殺される」と絶望の目で震…
 - [choice_ursus_08](#event-choice_ursus_08) — 豪奢な貴族の屋敷の大屋根に分厚い雪が積もり、倒壊の危険があるため高額な日当で臨時の雪下ろし人足が募集されていた。足場は凍りつき極めて滑りやすい。
 - [choice_ursus_09](#event-choice_ursus_09) — 郊外の打ち捨てられた古い要塞の地下で、旧公爵家が秘匿していたとされる非公開の蔵書庫が見つかった。学術調査隊が同行者を募っている。
-- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わりを告げ、春の訪れを祝う伝統行事「マースレニツァ」の日が訪れた。広場では藁人形が燃やされ、太陽を象徴する丸いクレープ（ブリヌイ）が山のように…
+- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わり、地区の広場に食べ物の屋台が数軒出て、人々が長い寒さの区切りをつけるように集まっていた。呼び名や祝い方は土地ごとに違うらしい。
 - [daily_victoria_01](#event-daily_victoria_01) — 午後の茶の時間に、素朴な焼き菓子に濃厚な生クリームと果実ジャムを添え、柑橘の香る温かい銘茶を味わった。贅沢な甘みに心が満たされた。
 - [daily_victoria_02](#event-daily_victoria_02) — 近所の大衆食堂で、揚げたての白身魚と香ばしい揚げ芋を頬張りながら麦茶を啜った。カリッとした衣の旨味に、一日の疲れが吹き飛んだ。
 - [daily_victoria_03](#event-daily_victoria_03) — 公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。
@@ -8812,7 +8806,7 @@
 - [choice_leithanien_07](#event-choice_leithanien_07) — 百年以上続く老舗カフェの老パティシエが、引退を前に秘伝の「ザッハトルテ」の調合ノートを受け継ぐ後継者を探している。厳格な味覚と職人気質が求められる。
 - [choice_leithanien_08](#event-choice_leithanien_08) — 表舞台を追われた感染者音楽家たちが、廃教会の地下で密かに市民向けの慈善演奏会を計画していた。憲兵に見つかれば全員逮捕だが、彼らは音楽の灯を消したくな…
 - [choice_leithanien_09](#event-choice_leithanien_09) — 雪深き山頂の感染者療養所へ、冬越しのための医薬品と食料を届けるトランスポーターが募集されていた。急峻な崖道と吹雪を越える命がけの輸送任務だ。
-- [choice_leithanien_10](#event-choice_leithanien_10) — 街路樹が初夏の花を咲かせる季節を迎え、都の広場で市民総出の初夏祭が開かれた。広場には焼き菓子や伝統料理の屋台が並び、優雅な円舞曲（ワルツ）に合わせて…
+- [choice_leithanien_10](#event-choice_leithanien_10) — 初夏の午後、広場の一角で小さな市が開かれ、焼き菓子の屋台のそばで数人の演奏家が曲を奏でていた。通りがかりの人が足を止め、短い休息を取っている。
 - [daily_laterano_01](#event-daily_laterano_01) — 聖都の有名な菓子舗で、焼きたての大判アップルパイを買って頬張った。シナモンと焦がしバターの極上の甘みに、思わず頬が緩むほどの幸福感を味わった。
 - [daily_laterano_02](#event-daily_laterano_02) — 広場のカフェのテラス席で、何種類ものベリーが山盛りに盛られたパフェをいただいた。甘いクリームと爽やかな酸味に、疲れが綺麗に溶け去った。
 - [daily_laterano_03](#event-daily_laterano_03) — 大聖堂の美しいステンドグラスから差し込む光のシャワーの下、聖歌隊の透き通るような賛美歌を聞いた。清らかな祈りに心が洗われた。
@@ -8882,7 +8876,7 @@
 - [choice_laterano_07](#event-choice_laterano_07) — 聖都で長年愛されてきた焼き菓子舗の店主が、高齢のため信頼できる共同経営者を探していた。出資して新店舗の出店に加われば、安定した配当と菓子開発の権利が…
 - [choice_laterano_08](#event-choice_laterano_08) — ラテラーノの難解な公証法の手続きに困り果てていた地方出身のリーベリの商人が、店舗の営業許可申請が通らず立ち往生していた。あなたの法知識と助力を求めて…
 - [choice_laterano_09](#event-choice_laterano_09) — 聖都の大聖堂の鐘楼にある巨大な大鐘「福音の鐘」の固定金具が緩み、調律が狂い始めていた。地上数十メートルの吹きさらしの足場で、金具の締め直しと調律を行…
-- [choice_laterano_10](#event-choice_laterano_10) — 春の復活祭を迎え、聖都の広場という広場が色とりどりの砂糖菓子と花々で飾り付けられた。巨大な特製ケーキが切り分けられ、誰もが平和と甘味を分かち合う最大…
+- [choice_laterano_10](#event-choice_laterano_10) — 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 - [daily_columbia_01](#event-daily_columbia_01) — ダイナーのカウンターで、焼きたての分厚い挽肉を挟んだ肉パンと大盛りの揚げ芋を頬張った。冷たい炭酸水を飲み干し、開拓者の活力を補給した。
 - [daily_columbia_02](#event-daily_columbia_02) — 市場の食料品店で、特売の大きな豆ペーストの瓶と山積みの素焼きパンを買い込んだ。開拓地ならではの規格外の大きさに、思わず笑みがこぼれた。
 - [daily_columbia_03](#event-daily_columbia_03) — 幹線道路沿いの休憩所で、淹れたての熱い穀物茶と揚げ菓子のセットを頼んだ。どこまでも続くまっすぐな地平線を眺めながら、自由な風を感じた。
@@ -9025,7 +9019,7 @@
 - [choice_kazimierz_07](#event-choice_kazimierz_07) — 大手飲料メーカーから、「新発売のエナジードリンクの宣伝として街頭ビジョンやポスターに出てほしい」と破格の報酬でオファーされた。ただし過激な演出が求め…
 - [choice_kazimierz_08](#event-choice_kazimierz_08) — かつて街の英雄だった老騎士が、病と借金で住まいを追い出されそうになっていた。商業連盟の取り立て屋が無慈悲に退去を迫っている。
 - [choice_kazimierz_09](#event-choice_kazimierz_09) — ある情報屋から、「商業連盟の大物幹部が関与する八百長試合の決定的な帳簿データがある。高値で買って告発するか、企業に買い取らせるか選べ」と取引を持ちか…
-- [choice_kazimierz_10](#event-choice_kazimierz_10) — 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、…
+- [choice_kazimierz_10](#event-choice_kazimierz_10) — 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募って…
 - [daily_siracusa_01](#event-daily_siracusa_01) — 石畳の細い路地を歩いていると、どこかの民家の換気口から焦がしたニンニクと完熟トマトの濃密な香りが漂ってきた。シラクーザの路地裏には、いつでも誰かの家…
 - [daily_siracusa_02](#event-daily_siracusa_02) — 夕暮れどきの広場で、近所の老人たちが木製のベンチに腰掛け、ジェスチャーを激しく交えながら今日の出来事について熱弁を振るっていた。陽気な笑い声に心が温…
 - [daily_siracusa_03](#event-daily_siracusa_03) — 街角の喫茶店で、淹れたての濃い珈琲を一杯飲んだ。深い苦味が喉を潤し、頭が冴え渡って仕事の能率が上がった。
@@ -9095,7 +9089,7 @@
 - [choice_siracusa_07](#event-choice_siracusa_07) — 近所のパン屋の主人が青ざめた顔で相談してきた。シマを仕切るファミリーが代替わりし、みかじめ料を一気に2倍に跳ね上げると通告してきたという。このままで…
 - [choice_siracusa_08](#event-choice_siracusa_08) — 旧市街の古い居住区画に、大手開発企業と手を組んだファミリーの使いが現れ、新都市構想のための立ち退きを迫ってきた。長年住み慣れた住民たちは路頭に迷うと…
 - [choice_siracusa_09](#event-choice_siracusa_09) — 夜の運河沿いの倉庫街を歩いていると、霧の向こうで小型船から密輸された武器とオリジニウム製品を陸揚げしている現場に鉢合わせてしまった。見張りの男たちが…
-- [choice_siracusa_10](#event-choice_siracusa_10) — 新都市ウォルシーニの市民広場で、古くから伝わる伝統の手打ち麺料理を競い合う祝祭料理市が開かれた。広場には各街区の名だたる料理人や腕自慢が集まり、オリ…
+- [choice_siracusa_10](#event-choice_siracusa_10) — 近くの市民市場で料理の屋台が増え、店ごとに麺料理や煮込みを出していた。特別な全国行事という様子ではなく、街区の人が食事を楽しむ小さな催しらしい。
 - [daily_siesta_01](#event-daily_siesta_01) — どこまでも青く広がるシエスタの海辺を散歩した。寄せては返す白い波頭と心地よい潮風に吹かれ、日頃の疲れが綺麗に洗い流された。
 - [daily_siesta_02](#event-daily_siesta_02) — ビーチ沿いのオープンカフェで、冷たいトロピカルフルーツのジュースを注文した。爽やかな酸味と甘みが渇いた喉を潤し、至福のひとときを過ごした。
 - [daily_siesta_03](#event-daily_siesta_03) — 広場の特設ステージから、軽快なギターとドラムのセッションが聞こえてきた。道行く人々が足を止め、リズムに合わせて楽しそうに体を揺らしている。
@@ -9235,7 +9229,7 @@
 - [choice_sargon_07](#event-choice_sargon_07) — 隊商に同行して砂漠の峠を越える途中、岩陰から武装した砂漠の盗賊団が姿を現し、荷物の引き渡しを要求してきた。護衛の兵士たちと一触即発の睨み合いとなって…
 - [choice_sargon_08](#event-choice_sargon_08) — 雨林の祭祀場で、各部族の誉れを賭けた古式武闘の儀が執り行われていた。熱狂する部族民たちの前で、踏み固められた土俵で鍛え抜かれた勇士たちが技と力、アー…
 - [choice_sargon_09](#event-choice_sargon_09) — パーディシャーの配下の代官が、砂漠の関所での通行税を不当に引き上げた。このままでは小規模な商人や農民たちが破産してしまう。商人組合が連名で宮殿へ減税…
-- [choice_sargon_10](#event-choice_sargon_10) — 年に一度、砂漠中の隊商とオアシス住民が集う「大バザール祝祭」が開幕した。広大な広場には数千の天幕が立ち並び、オリエントの秘宝、珍しい動物、香辛料、甘…
+- [choice_sargon_10](#event-choice_sargon_10) — 交易路沿いのオアシスに隊商が何組か到着し、広場へ臨時の市が立った。食料、布、道具などが並ぶが、どこから来た品か分からないものも混じっている。
 - [daily_sami_01](#event-daily_sami_01) — 木造小屋の中央の炉に乾いた白樺の薪をくべた。パチパチとはぜる心地よい音とともに温かな橙色の炎が広がり、冷えた指先を芯から温めた。
 - [daily_sami_02](#event-daily_sami_02) — 原生林の茂みで、霜の降りた完熟コケモモの実を籠いっぱいに摘み取った。口に含むと鮮烈な酸味とほのかな甘みが広がり、疲れが吹き飛んだ。
 - [daily_sami_03](#event-daily_sami_03) — 澄み切った極北の夜空に、巨大な緑と紫のオーロラが天幕のように揺らめいた。息を呑むような大自然の神々しさに、魂が洗われるような感動を覚えた。
@@ -9305,7 +9299,7 @@
 - [choice_sami_07](#event-choice_sami_07) — 冬が本格化する前に、集落総出で大量の保存食の仕込みが行われた。川で獲れた鮭の燻製、山で摘んだコケモモのジャム煮、キノコの乾燥作業に追われている。
 - [choice_sami_08](#event-choice_sami_08) — 極寒の夜を乗り切るため、発酵させたコケモモと大麦、薬草を蒸留器にかけ、度数の高いサーミ特製の薬用蒸留酒（アクアビット）を造ることになった。
 - [choice_sami_09](#event-choice_sami_09) — クルビアの大手研究所から派遣された学術調査隊が、サーミの原生林の生態系調査のため、現地の地形を知り尽くした案内人を高額の日当で募集している。
-- [choice_sami_10](#event-choice_sami_10) — 長い極夜が終わり、数ヶ月ぶりに地平線の上に太陽の光が戻ってくる「太陽迎えの冬至祭」が開幕した。広場には巨大なかがり火が焚かれ、全部族が手を取り合って…
+- [choice_sami_10](#event-choice_sami_10) — 冬の日照が短い時期、近くの人々が火のそばに集まり、温かい食事を分けていた。氏族や地域ごとの慣習は違うが、この場では寒さをしのぐために人が寄り合ってい…
 - [daily_kjerag_01](#event-daily_kjerag_01) — 山あいの民家の軒先で、淹れたての温かいバター茶を振る舞われた。濃厚なヤクの乳のコクと塩気が冷えた身体を芯から温め、深い安らぎを得た。
 - [daily_kjerag_02](#event-daily_kjerag_02) — 霊峰カランドの山頂が朝日に照らされ、黄金色に輝く「日照金山」の奇跡のような絶景を仰ぎ見た。清らかな祈りの心に満たされ、力が湧いた。
 - [daily_kjerag_03](#event-daily_kjerag_03) — 青麦（ツァンパ）を香ばしく炒って練り上げた主食を昼餉に食べた。素朴ながら噛むほどに広がる穀物の甘みに、確かな活力を得た。
@@ -9375,7 +9369,7 @@
 - [choice_kjerag_07](#event-choice_kjerag_07) — 春の訪れとともに、山上の放牧地でヤクの毛刈りの季節がやってきた。ヤクの胸元の産毛から採れる柔らかな最高級カシミヤ毛糸を紡ぎ、名産ショールを織り上げる…
 - [choice_kjerag_08](#event-choice_kjerag_08) — カランド貿易が外国から最新の滅菌器や手術器具を寄贈しようとしたが、寺院の頑固な古老たちが「神聖な寺院に得体の知れない外国の機械を入れるな」と拒絶して…
 - [choice_kjerag_09](#event-choice_kjerag_09) — 聖山を貫く鉄道トンネルの難所工事現場で、硬い花崗岩の岩盤が行く手を阻み、地下水の噴出が発生した。工期が遅れれば雪の季節に間に合わない。緊急の支保工補…
-- [choice_kjerag_10](#event-choice_kjerag_10) — 年に一度、イェラグ全土の信徒が聖峰の麓に集う「カランド年次大祭」が開幕した。山々には祈りのホルンの音が響き渡り、巫女による神聖な祝福の儀が執り行われ…
+- [choice_kjerag_10](#event-choice_kjerag_10) — 聖峰へ向かう人が増える時期になり、麓の集落では宿と食事の準備に追われていた。遠くから来た参詣者もいるが、誰がどこから来たのかまでは分からない。
 - [daily_kazdel_01](#event-daily_kazdel_01) — 移動テントの真ん中で、仲間たちと大鍋の芋と干し肉のシチューを囲んだ。湯気立つ素朴な温もりに、生き延びている実感と深い団結を噛み締めた。
 - [daily_kazdel_02](#event-daily_kazdel_02) — 荒野の廃材置き場から、まだ十分に使える厚手の真鍮板と頑丈なボルトを見つけ出した。生活の補修に役立つ思わぬ拾い物に胸を躍らせた。
 - [daily_kazdel_03](#event-daily_kazdel_03) — 夜、焚き火のそばで年老いたサルカズが弾く素朴な二弦琴の音色を聴いた。哀愁と誇りに満ちた旋律が荒野の夜風に溶け、心に深く染み渡った。
@@ -9445,13 +9439,12 @@
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
 - [choice_kazdel_09](#event-choice_kazdel_09) — 移動集落の定住化を進めるため、荒野の地下深くを流れる水脈を探り当て、新たな深井戸を掘削する大事業が始まった。硬い岩盤を貫く難工事となっている。
-- [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
 - [daily_iberia_01](#event-daily_iberia_01) — 白壁の民家の路地で、天日に干された塩魚と完熟オリーブの素朴な昼餉をいただいた。塩気とオリーブ油の豊かな風味が滋味深く、歩き疲れた身体を満たした。
 - [daily_iberia_02](#event-daily_iberia_02) — 丘の上のオリーブ畑から、どこまでも静まり返った群青の海を見下ろした。黄金時代の面影を残す穏やかな潮風に吹かれ、心が静かに洗われた。
 - [daily_iberia_03](#event-daily_iberia_03) — 街角のパン屋で、オレンジの花水で香りづけされた焼き菓子を買った。柑橘の爽やかな甘みが口いっぱいに広がり、確かな幸福感を得た。
-- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段で、潮風に当たりながら手入れの行き届いた古いアコースティックギターを爪弾いた。哀愁を帯びた調べが静かな午後に響き渡った。
+- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段の近くで、誰かが古い弦楽器を静かに爪弾いていた。途切れ途切れの調べを聞きながら、しばらく足を止めた。
 - [daily_iberia_05](#event-daily_iberia_05) — 近所の塩田の管理人から、初摘みの真っ白な天日塩（フルール・ド・セル）を一袋分けてもらった。大地の恵みに感謝した。
-- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で磨き上げた。差し込む光が色鮮やかな幾何学模様を石畳に落とし、心が安らいだ。
+- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で拭く手伝いをした。差し込む光が色のついた模様を石畳に落とした。
 - [daily_iberia_07](#event-daily_iberia_07) — 涼しい夕暮れ時、広場の井戸端で近所の人々と穏やかな世間話を交わした。厳しい時代の中にも息づく人の温もりに触れた。
 - [daily_iberia_08](#event-daily_iberia_08) — 路地裏の古道具屋で、かつて黄金時代に使われていた真鍮製の小さな羅針盤を見つけた。針が静かに北を指す様子に、失われゆく航海のロマンを感じた。
 - [daily_iberia_09](#event-daily_iberia_09) — 強い日差しを遮る白い布の天蓋の下で、冷たいレモン水を飲んだ。渇いた喉に心地よい刺激が走り、元気が回復した。
@@ -9481,8 +9474,8 @@
 - [daily_iberia_33](#event-daily_iberia_33) — 夜半、海の方角から霧が立ち込め、街全体を冷たく湿った白い帳が包み込んでいった。
 - [daily_iberia_34](#event-daily_iberia_34) — 仕立て屋の店先で、黒いラシャ布で仕立てられた質素で頑丈な作業着を眺めた。
 - [daily_iberia_35](#event-daily_iberia_35) — 審問所の巡回兵に突然路上で呼び止められ、持ち物をすべて地面にぶちまけられて執拗な尋問を受け、ひどい恐怖と屈辱を味わった。
-- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、異様な生臭さと蠢く影を目撃し、背筋の凍る悪寒に襲われて一目散に逃げ出した。
-- [daily_iberia_37](#event-daily_iberia_37) — 塩田で過酷な炎天下の重労働を続け、脱水症状と日焼けで倒れ込みそうになった。
+- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、風向きとは合わない生臭さと、崩れた家屋の奥で動く影を見かけた。正体を確かめず、その場を離れた。
+- [daily_iberia_37](#event-daily_iberia_37) — 塩田の作業を長く続けた日、強い日差しで喉が渇き、腕も重くなった。休憩所まで戻って水を飲み、しばらく日陰で身体を冷ました。
 - [daily_iberia_38](#event-daily_iberia_38) — 近所の住人が夜のうちに審問所へ連行されたという噂が広まり、重苦しい沈黙が界隈を支配した。
 - [daily_iberia_39](#event-daily_iberia_39) — 審問所の外郭警備任務に就いた。ランタンの灯りを掲げ、暗闇の海岸線から這い上がる脅威に目を光らせた。
 - [daily_iberia_40](#event-daily_iberia_40) — 広場の石壁に張り出された審問所の布告を眺めた。「我らは沈黙に抗い、光を守る最後の砦である」という峻厳な文言に、この国を覆う緊張感を肌で感じた。
@@ -9504,8 +9497,8 @@
 - [daily_iberia_56](#event-daily_iberia_56) — 教会の聖歌隊の練習に参加し、澄み切った高音で賛美歌を歌い上げた。神聖なハーモニーに包まれ、心が洗われた。
 - [daily_iberia_57](#event-daily_iberia_57) — 海を見下ろす古いテラスで、古老たちが「海がまだ豊かだった黄金の時代」について静かに語り合っているのを耳にした。失われた繁栄の記憶に、静かに耳を傾けた…
 - [daily_iberia_58](#event-daily_iberia_58) — 長年使い続けてきた革張りの聖書と祈祷書を蜜蝋で手入れした。どんな暗雲の時代であっても信仰と希望を失わない決意を固めた。
-- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の町グランファロの古い石壁に沿って歩いた。潮の匂いを含んだ風が壁の隙間を吹き抜け、かつての住民たちが残した古い標識が静かに佇んでいた。
-- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、グランファロの街頭にガス灯が一斉に灯された。潮風に揺れる柔らかな灯火が石畳を照らし出し、荒涼とした沿岸の町に静かな安らぎをもたらしていた。
+- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の古い集落で、風雨に削られた石壁に沿って歩いた。壁の隙間を潮風が抜け、昔の住民が残した標識がところどころに残っていた。
+- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、沿岸の集落で街灯が順に灯された。風に揺れる明かりが石畳を照らし、人通りの減った道に細い光が続いた。
 - [daily_iberia_61](#event-daily_iberia_61) — 夜半、審問官の黒外套が翻り、窓の隙間から細いランタンの光が室内の壁を舐めるように走った。呼吸すら止め、闇の中で身を縮こまらせた。
 - [daily_iberia_62](#event-daily_iberia_62) — 朝、近所の路地を通ると、知り合いの民家の扉に審問所の印が刻まれた赤い封印札が貼られていた。誰もその家の名を口にしなくなった。
 - [daily_iberia_63](#event-daily_iberia_63) — 礼拝の終わりに、厳格な司祭が会衆を見回しながら帳面へ何事かを書き留めていた。周囲の信徒たちの視線が疑心暗鬼に泳ぎ、教会内に張り詰めた沈黙が流れた。
@@ -9516,10 +9509,10 @@
 - [choice_iberia_04](#event-choice_iberia_04) — 夏の強い日差しによって塩田の水が一気に干上がり、結晶化した純白の天日塩の収穫期を迎えた。重い塩を木舟ですくい上げ、乾燥小屋へ運ぶ過酷な力仕事が募集さ…
 - [choice_iberia_05](#event-choice_iberia_05) — 古い教会の床下から、黄金時代の大航海時代に描かれた羊皮紙の古航海図が発見された。暗号化された緯度経度と海流データが記されている。解読できれば失われた…
 - [choice_iberia_06](#event-choice_iberia_06) — 秋の丘陵地帯で、たわわに実った黒オリーブの一斉収穫が始まった。枝を揺すって実を落とし、大樽に集めて石臼で搾る村を挙げた大仕事だ。
-- [choice_iberia_07](#event-choice_iberia_07) — 沿岸の入り江で、夜陰に乗じて外国の密輸船が危険な禁制品（未検査の海洋生物や武器）を陸揚げしようとしているのを目撃した。見張りの男たちが周囲を警戒して…
-- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔の海外渡航歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と泣きつ…
-- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に製作された大型の真鍮製屈折望遠鏡が発見された。レンズは曇り、歯車は錆びついている。修復して澄み切った星空を観測しようと…
-- [choice_iberia_10](#event-choice_iberia_10) — 大いなる静謐の犠牲者を追悼し、未来への希望を灯す「光のランタン祭」が開催された。広場から丘の上まで無数のランタンが灯され、厳かな祈りと賛美歌が夜空へ…
+- [choice_iberia_07](#event-choice_iberia_07) — 夜の入り江で、船籍の分からない小型舟艇から、布をかぶせた荷箱が浜へ運び込まれているのを見かけた。荷の中身も運び手の素性も分からないまま、見張り役らし…
+- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔に他国を訪れた経歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と…
+- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に作られた真鍮製の望遠鏡を見つけた。レンズは曇り、歯車には錆が浮いている。自分で分解する前に、どう扱うか考えた。
+- [choice_iberia_telescope_observation_followup](#event-choice_iberia_telescope_observation_followup) — 修理して手元に残した望遠鏡は、しばらく布をかけたまま置いてあった。雲の少ない夜、窓の外を見て、久しぶりに筒を外へ向けることにした。
 - [daily_bolivar_01](#event-daily_bolivar_01) — 集落の木陰で、焼きたての香ばしいトウモロコシ粉の薄焼きパン（アレパ）にチーズを挟んで食べた。素朴で優しい甘みが口に広がり、力強い活力を得た。
 - [daily_bolivar_02](#event-daily_bolivar_02) — 突然の激しいスコールが通り過ぎ、洗い流された熱帯の木々の緑が鮮やかに輝いていた。立ち上る雨上がりの土の匂いに、大地の豊かな生命力を感じた。
 - [daily_bolivar_03](#event-daily_bolivar_03) — 小高い丘の展望台から、緑豊かなボリバルの山並みを見渡した。遠くの雲間から光が射し込む雄大な風景に、平和への祈りが静かに湧き上がった。
@@ -9589,7 +9582,7 @@
 - [choice_bolivar_07](#event-choice_bolivar_07) — 過去の戦闘で屋根が吹き飛び、放置されていた村の小学校の校舎を再建する運動が始まった。「子供たちに銃ではなくペンを持たせたい」という村人たちの願いが込…
 - [choice_bolivar_08](#event-choice_bolivar_08) — ドッソレスの繁華街にある裏カジノで、外国マフィアがイカサマ装置を使って観光客から不当に金を巻き上げている現場の証拠を掴んだ。市警に通報するか、直接取…
 - [choice_bolivar_09](#event-choice_bolivar_09) — 深い渓谷に架かる古い蔓と木の吊り橋が老朽化し、踏み板が抜けて渡るのが命がけになっている。対岸の集落と協力し、鋼鉄ワイヤーを使った頑丈な吊り橋に架け替…
-- [choice_bolivar_10](#event-choice_bolivar_10) — 内戦の銃声が止んだ収穫の季節、全村を挙げた「大地への感謝大祭」が開幕した。広場には焼きトウモロコシと豆料理の大鍋が並び、マリカの陽気なリズムに合わせ…
+- [choice_bolivar_10](#event-choice_bolivar_10) — 収穫を終えた近隣の農家が広場へ野菜や穀物を持ち寄り、小さな市が立った。食べ物を交換する人のそばで、仕事を終えた者たちが音楽を鳴らして休んでいる。
 - [daily_rim_01](#event-daily_rim_01) — 鉱山街のベーカリーで、焼き立ての特製ニンジンパイを買い求めた。シナモンの甘い香りとニンジンの濃厚な甘みが広がり、心も身体も満たされた。
 - [daily_rim_02](#event-daily_rim_02) — 夕暮れ時、作業を終えた鉱夫たちが集まる大衆食堂の前を通った。窓から漏れる賑やかな笑い声と香ばしい料理の匂いに、街の素朴な活気を感じた。
 - [daily_rim_03](#event-daily_rim_03) — 広大な露天掘り鉱区を見下ろす丘の上から、沈みゆく夕日を眺めた。幾重にも削られた大地の段々畑が黄金色に染まる壮大な光景に息を呑んだ。
@@ -9659,7 +9652,7 @@
 - [choice_rim_07](#event-choice_rim_07) — 週末の夜、鉱山街最大のパブ「ドリル＆ホップ」で恒例の力自慢腕相撲トーナメントが開催された。熱狂する鉱夫たちの声援の中、屈強な猛者たちがテーブルを挟ん…
 - [choice_rim_08](#event-choice_rim_08) — 鉱区住宅の粉塵被害を軽減するため、慈善基金から寄贈された高性能エアフィルターと換気ファンを、高齢者や呼吸器の弱い家庭へ一軒ずつ取り付けて回るボランテ…
 - [choice_rim_09](#event-choice_rim_09) — 鉱区の北東方向に大規模な天災雲（源石嵐）が観測された。採掘プラットフォームを安全地帯へ緊急移動させるため、脚部アンカーの引き抜きと移動機構の最終点検…
-- [choice_rim_10](#event-choice_rim_10) — 過酷な鉱山から無事に生還した日々を祝い、大地の恵みに感謝する伝統の「採掘安全祈願ランタン祭」が執り行われた。数千の安全ヘルメットのライトと真鍮ランタ…
+- [choice_rim_10](#event-choice_rim_10) — 鉱区の勤務が一区切りついた夜、作業場の前で無事故だった班を労う食事が出された。ヘルメットを机へ置いた人々が、温かい料理を囲んでその日の仕事を振り返っ…
 - [daily_minos_01](#event-daily_minos_01) — 大理石の白い列柱が並ぶ回廊の木陰で、冷たい湧き水に完熟イチジクを浸して食べた。蜜のように甘い果汁が口いっぱいに広がり、深い幸福感に包まれた。
 - [daily_minos_02](#event-daily_minos_02) — 小高い丘の上の神殿から、どこまでも青く広がる空と緑のオリーブ畑を見下ろした。吹き抜ける涼風に英雄たちの伝説の息吹を感じ、心が洗われた。
 - [daily_minos_03](#event-daily_minos_03) — 広場の露店で、素焼きの小壺に入った搾りたての蜂蜜と山羊のフレッシュチーズを買った。素朴で濃厚な味わいに確かな活力を得た。
@@ -9729,7 +9722,6 @@
 - [choice_minos_07](#event-choice_minos_07) — アスクレピオスの神殿施療院で、秋の季節の変わり目に体調を崩した多くの巡礼者たちが訪れている。野生の薬草の調合や、温泉治療の入浴補助を行うボランティア…
 - [choice_minos_08](#event-choice_minos_08) — 隣接する二つのポリスの間で、水源の利用権とオリーブ畑の境界線を巡って激しい口論となり、一触即発の武力衝突の危機が生じた。公正中立な市民陪審員として調…
 - [choice_minos_09](#event-choice_minos_09) — 秋空の下、丘のブドウ園で糖度の乗った黒ブドウの一斉収穫が始まった。大きな木桶にブドウを放り込み、裸足になって皆で踏み潰す伝統の果汁絞りが繰り広げられ…
-- [choice_minos_10](#event-choice_minos_10) — ミノス全ポリスが一つになり、建国の十二英雄を称える世紀の「十二英雄合同大祭」が開幕した。アクロポリスから麓の広場まで聖火のパレードが続き、荘厳なホル…
 - [kazimierz_knight_entry](#event-kazimierz_knight_entry) — 仕事帰りに競技会場へ立ち寄り、きらびやかなネオンの奥にある受付で、騎士競技の舞台に立つ手順を尋ねてみた。自前で登録料と武具を揃えて予選に挑むか、有力…
 - [life_rim_supply_delay](#event-life_rim_supply_delay) — 鉱区へ届くはずの交換部品の輸送便が遅れ、急ぎの修理に必要な部材が底をついた。止まった重機の警報音が作業場中に鳴り響いている。自腹で消耗品を買い足して…
 - [life_rim_skill_handover](#event-life_rim_skill_handover) — 整備の現場にもすっかり慣れ、機械の異音を聞き分けるのも早くなった。最近入ってきた新人が、外した部品の戻し方や異音の見極め方で立ち往生し、休憩時間に心…
@@ -9771,6 +9763,7 @@
 - [life_leithanian_noble_household_later_active](#event-life_leithanian_noble_household_later_active) — 屋敷の務めを続けて、さらに何年もの歳月が流れた。どれだけ実務を回しても一族の重要な決定の場には呼ばれず、回ってくるのは面倒な後始末ばかりだった。この…
 - [life_leithanian_noble_household_later_suspended](#event-life_leithanian_noble_household_later_suspended) — 屋敷の務めから距離を置いて数年が経った。親族から新たに呼び戻されることもなく、静かな日々が続いている。このまま自分の暮らしを続けるか、少しだけ屋敷に…
 - [life_leithanian_noble_household_after_exit](#event-life_leithanian_noble_household_after_exit) — 屋敷の務めを離れてから、ずいぶん長い年月が経った。それでも、複雑な出納や古い目録をさばいた手際は、今の仕事や暮らしの中でもふとした拍子に顔を出す。あ…
+- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 - [life_rim_skill_handover_followup](#event-life_rim_skill_handover_followup) — 見習いと一緒に機械の点検手順を確かめ合った頃から、ずいぶん年月が経った。ある日、若い作業員が油の染みた古い点検メモを手にやって来た。昔の手帳を開いて…
 - [life_rim_workmate_followup](#event-life_rim_workmate_followup) — 昔、作業の手ほどきを頼んできた{rimWorkmateName}と作業場の外で久しぶりに顔を合わせた。あの頃一緒にやった点検のことで聞きたいことがあ…
 - [life_ursus_school_habit](#event-life_ursus_school_habit) — 学校へ通える日は、冷たい空気の教室で授業を受けた。試験が近づくにつれ、放課後に残って勉強するか、まっすぐ帰って家の手伝いをするか迷った。家に帰れば、…
@@ -10994,9 +10987,9 @@
 - [daily_iberia_01](#event-daily_iberia_01) — 白壁の民家の路地で、天日に干された塩魚と完熟オリーブの素朴な昼餉をいただいた。塩気とオリーブ油の豊かな風味が滋味深く、歩き疲れた身体を満たした。
 - [daily_iberia_02](#event-daily_iberia_02) — 丘の上のオリーブ畑から、どこまでも静まり返った群青の海を見下ろした。黄金時代の面影を残す穏やかな潮風に吹かれ、心が静かに洗われた。
 - [daily_iberia_03](#event-daily_iberia_03) — 街角のパン屋で、オレンジの花水で香りづけされた焼き菓子を買った。柑橘の爽やかな甘みが口いっぱいに広がり、確かな幸福感を得た。
-- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段で、潮風に当たりながら手入れの行き届いた古いアコースティックギターを爪弾いた。哀愁を帯びた調べが静かな午後に響き渡った。
+- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段の近くで、誰かが古い弦楽器を静かに爪弾いていた。途切れ途切れの調べを聞きながら、しばらく足を止めた。
 - [daily_iberia_05](#event-daily_iberia_05) — 近所の塩田の管理人から、初摘みの真っ白な天日塩（フルール・ド・セル）を一袋分けてもらった。大地の恵みに感謝した。
-- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で磨き上げた。差し込む光が色鮮やかな幾何学模様を石畳に落とし、心が安らいだ。
+- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で拭く手伝いをした。差し込む光が色のついた模様を石畳に落とした。
 - [daily_iberia_07](#event-daily_iberia_07) — 涼しい夕暮れ時、広場の井戸端で近所の人々と穏やかな世間話を交わした。厳しい時代の中にも息づく人の温もりに触れた。
 - [daily_iberia_08](#event-daily_iberia_08) — 路地裏の古道具屋で、かつて黄金時代に使われていた真鍮製の小さな羅針盤を見つけた。針が静かに北を指す様子に、失われゆく航海のロマンを感じた。
 - [daily_iberia_09](#event-daily_iberia_09) — 強い日差しを遮る白い布の天蓋の下で、冷たいレモン水を飲んだ。渇いた喉に心地よい刺激が走り、元気が回復した。
@@ -11026,8 +11019,8 @@
 - [daily_iberia_33](#event-daily_iberia_33) — 夜半、海の方角から霧が立ち込め、街全体を冷たく湿った白い帳が包み込んでいった。
 - [daily_iberia_34](#event-daily_iberia_34) — 仕立て屋の店先で、黒いラシャ布で仕立てられた質素で頑丈な作業着を眺めた。
 - [daily_iberia_35](#event-daily_iberia_35) — 審問所の巡回兵に突然路上で呼び止められ、持ち物をすべて地面にぶちまけられて執拗な尋問を受け、ひどい恐怖と屈辱を味わった。
-- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、異様な生臭さと蠢く影を目撃し、背筋の凍る悪寒に襲われて一目散に逃げ出した。
-- [daily_iberia_37](#event-daily_iberia_37) — 塩田で過酷な炎天下の重労働を続け、脱水症状と日焼けで倒れ込みそうになった。
+- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、風向きとは合わない生臭さと、崩れた家屋の奥で動く影を見かけた。正体を確かめず、その場を離れた。
+- [daily_iberia_37](#event-daily_iberia_37) — 塩田の作業を長く続けた日、強い日差しで喉が渇き、腕も重くなった。休憩所まで戻って水を飲み、しばらく日陰で身体を冷ました。
 - [daily_iberia_38](#event-daily_iberia_38) — 近所の住人が夜のうちに審問所へ連行されたという噂が広まり、重苦しい沈黙が界隈を支配した。
 - [daily_iberia_39](#event-daily_iberia_39) — 審問所の外郭警備任務に就いた。ランタンの灯りを掲げ、暗闇の海岸線から這い上がる脅威に目を光らせた。
 - [daily_iberia_40](#event-daily_iberia_40) — 広場の石壁に張り出された審問所の布告を眺めた。「我らは沈黙に抗い、光を守る最後の砦である」という峻厳な文言に、この国を覆う緊張感を肌で感じた。
@@ -11049,8 +11042,8 @@
 - [daily_iberia_56](#event-daily_iberia_56) — 教会の聖歌隊の練習に参加し、澄み切った高音で賛美歌を歌い上げた。神聖なハーモニーに包まれ、心が洗われた。
 - [daily_iberia_57](#event-daily_iberia_57) — 海を見下ろす古いテラスで、古老たちが「海がまだ豊かだった黄金の時代」について静かに語り合っているのを耳にした。失われた繁栄の記憶に、静かに耳を傾けた…
 - [daily_iberia_58](#event-daily_iberia_58) — 長年使い続けてきた革張りの聖書と祈祷書を蜜蝋で手入れした。どんな暗雲の時代であっても信仰と希望を失わない決意を固めた。
-- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の町グランファロの古い石壁に沿って歩いた。潮の匂いを含んだ風が壁の隙間を吹き抜け、かつての住民たちが残した古い標識が静かに佇んでいた。
-- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、グランファロの街頭にガス灯が一斉に灯された。潮風に揺れる柔らかな灯火が石畳を照らし出し、荒涼とした沿岸の町に静かな安らぎをもたらしていた。
+- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の古い集落で、風雨に削られた石壁に沿って歩いた。壁の隙間を潮風が抜け、昔の住民が残した標識がところどころに残っていた。
+- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、沿岸の集落で街灯が順に灯された。風に揺れる明かりが石畳を照らし、人通りの減った道に細い光が続いた。
 - [daily_iberia_61](#event-daily_iberia_61) — 夜半、審問官の黒外套が翻り、窓の隙間から細いランタンの光が室内の壁を舐めるように走った。呼吸すら止め、闇の中で身を縮こまらせた。
 - [daily_iberia_62](#event-daily_iberia_62) — 朝、近所の路地を通ると、知り合いの民家の扉に審問所の印が刻まれた赤い封印札が貼られていた。誰もその家の名を口にしなくなった。
 - [daily_iberia_63](#event-daily_iberia_63) — 礼拝の終わりに、厳格な司祭が会衆を見回しながら帳面へ何事かを書き留めていた。周囲の信徒たちの視線が疑心暗鬼に泳ぎ、教会内に張り詰めた沈黙が流れた。
@@ -11916,7 +11909,7 @@
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 
 <a id="tag-situation-260"></a>
-### 選択イベント（1099）
+### 選択イベント（1097）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -12132,7 +12125,7 @@
 - [choice_lungmen_07](#event-choice_lungmen_07) — スラム街で貧民や感染者を無償で診ている地下診療所が、止血剤と抗感染薬の在庫が底をついて閉鎖の危機に瀕していた。医師が悲痛な面持ちで支援を呼びかけてい…
 - [choice_lungmen_08](#event-choice_lungmen_08) — ネオン街の裏路地で、上等な絹の服を着て泣きじゃくっている迷子の小さな子どもを見かけた。身につけている装飾品から、上層区の富裕層の令息であることが窺え…
 - [choice_lungmen_09](#event-choice_lungmen_09) — 雑居ビルの低層階から火の手が上がり、黒煙が階段を駆け上がった。非常ベルが鳴り響く中、煙に巻かれて逃げ遅れた住人たちが上の階から助けを求めている。
-- [choice_lungmen_10](#event-choice_lungmen_10) — 年に一度の「九龍美食競宴」が開催され、誰でもオリジナル料理で出店できる看板屋台大会が開かれていた。優勝すれば龍門全土に名が売れ、多額の賞金が出る。
+- [choice_lungmen_10](#event-choice_lungmen_10) — 夜市の一角で、数軒の屋台が新しい料理を出して客の反応を競う小さな催しを始めていた。客足が増え、臨時の手伝いを探す店もある。
 - [choice_higashi_01](#event-choice_higashi_01) — 通っている剣術道場に、他国から腕自慢の他流試合の武芸者が道場破りに現れた。師範が不在の中、道場の看板を守るため誰かが立ち会わなければならない。
 - [choice_higashi_02](#event-choice_higashi_02) — 村の誇りである名湯の源泉が、先日の地震で湯量が激減してしまった。危険な岩盤の洞窟へ潜って配管の詰まりや亀裂を直す有志が募られている。
 - [choice_higashi_03](#event-choice_higashi_03) — 雨の夜、裏木戸を叩く音に開けると、手負いの若い武士が崩れ落ちてきた。内乱で敗れた南朝の大名家の郎党で、追っ手の目を逃れて山越えの道を教えてほしいと懇…
@@ -12152,7 +12145,7 @@
 - [choice_ursus_07](#event-choice_ursus_07) — 過酷な鉱区から脱走してきた感染者の若い鉱夫が、凍傷で足を引きずりながらあなたの納屋に転がり込んできた。「追っ手に見つかれば射殺される」と絶望の目で震…
 - [choice_ursus_08](#event-choice_ursus_08) — 豪奢な貴族の屋敷の大屋根に分厚い雪が積もり、倒壊の危険があるため高額な日当で臨時の雪下ろし人足が募集されていた。足場は凍りつき極めて滑りやすい。
 - [choice_ursus_09](#event-choice_ursus_09) — 郊外の打ち捨てられた古い要塞の地下で、旧公爵家が秘匿していたとされる非公開の蔵書庫が見つかった。学術調査隊が同行者を募っている。
-- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わりを告げ、春の訪れを祝う伝統行事「マースレニツァ」の日が訪れた。広場では藁人形が燃やされ、太陽を象徴する丸いクレープ（ブリヌイ）が山のように…
+- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わり、地区の広場に食べ物の屋台が数軒出て、人々が長い寒さの区切りをつけるように集まっていた。呼び名や祝い方は土地ごとに違うらしい。
 - [choice_victoria_01](#event-choice_victoria_01) — 勤め先の現場で、度重なる賃金カットと安全対策の軽視に反発し、労働組合が一斉ストライキに踏み切った。正門前でピケを張る仲間から合流を呼びかけられている…
 - [choice_victoria_02](#event-choice_victoria_02) — 濃霧が立ち込める夜の裏通りで、裕福そうな老婦人が方向を見失って立ち往生していた。路地の影から、浮浪児のスリ集団がじわじわと包囲を狭めている。
 - [choice_victoria_03](#event-choice_victoria_03) — 長屋の強欲な大家が、ターラー系の一家の部屋だけを狙い撃ちにして倍額の家賃を突きつけ、立ち退きを迫っていた。一家の主が途方に暮れて中庭で頭を抱えている…
@@ -12172,7 +12165,7 @@
 - [choice_leithanien_07](#event-choice_leithanien_07) — 百年以上続く老舗カフェの老パティシエが、引退を前に秘伝の「ザッハトルテ」の調合ノートを受け継ぐ後継者を探している。厳格な味覚と職人気質が求められる。
 - [choice_leithanien_08](#event-choice_leithanien_08) — 表舞台を追われた感染者音楽家たちが、廃教会の地下で密かに市民向けの慈善演奏会を計画していた。憲兵に見つかれば全員逮捕だが、彼らは音楽の灯を消したくな…
 - [choice_leithanien_09](#event-choice_leithanien_09) — 雪深き山頂の感染者療養所へ、冬越しのための医薬品と食料を届けるトランスポーターが募集されていた。急峻な崖道と吹雪を越える命がけの輸送任務だ。
-- [choice_leithanien_10](#event-choice_leithanien_10) — 街路樹が初夏の花を咲かせる季節を迎え、都の広場で市民総出の初夏祭が開かれた。広場には焼き菓子や伝統料理の屋台が並び、優雅な円舞曲（ワルツ）に合わせて…
+- [choice_leithanien_10](#event-choice_leithanien_10) — 初夏の午後、広場の一角で小さな市が開かれ、焼き菓子の屋台のそばで数人の演奏家が曲を奏でていた。通りがかりの人が足を止め、短い休息を取っている。
 - [choice_laterano_01](#event-choice_laterano_01) — 公証役場から、国外で死亡した老公民の遺産目録の中に、未登録の特殊な守護銃が含まれているとの調査協力を求められた。遺族は困惑しており、法令の適用を巡る…
 - [choice_laterano_02](#event-choice_laterano_02) — 聖都全土が熱狂する「ラテラーノ菓子大賞」が開催され、市民部門のオリジナルスイーツコンテストの募集が始まった。優勝すれば教皇庁御用達の栄誉と多額の賞金…
 - [choice_laterano_03](#event-choice_laterano_03) — 鉱石病により国外の荒野へ追放された親しい親族から、天災で避難所を失い当面の薬代と食料が尽きたという悲痛な便りが届いた。公証役場を通じた正規送金には高…
@@ -12182,7 +12175,7 @@
 - [choice_laterano_07](#event-choice_laterano_07) — 聖都で長年愛されてきた焼き菓子舗の店主が、高齢のため信頼できる共同経営者を探していた。出資して新店舗の出店に加われば、安定した配当と菓子開発の権利が…
 - [choice_laterano_08](#event-choice_laterano_08) — ラテラーノの難解な公証法の手続きに困り果てていた地方出身のリーベリの商人が、店舗の営業許可申請が通らず立ち往生していた。あなたの法知識と助力を求めて…
 - [choice_laterano_09](#event-choice_laterano_09) — 聖都の大聖堂の鐘楼にある巨大な大鐘「福音の鐘」の固定金具が緩み、調律が狂い始めていた。地上数十メートルの吹きさらしの足場で、金具の締め直しと調律を行…
-- [choice_laterano_10](#event-choice_laterano_10) — 春の復活祭を迎え、聖都の広場という広場が色とりどりの砂糖菓子と花々で飾り付けられた。巨大な特製ケーキが切り分けられ、誰もが平和と甘味を分かち合う最大…
+- [choice_laterano_10](#event-choice_laterano_10) — 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 - [choice_columbia_01](#event-choice_columbia_01) — 独自に考案したアーツ回路の特許に対し、巨大複合企業（メガコープ）から身に覚えのない特許侵害訴訟が起こされた。法外な和解金で技術を丸ごと奪い取る企みだ…
 - [choice_columbia_02](#event-choice_columbia_02) — 開拓地の未踏の渓谷で、良質な高純度源石の未発見の鉱脈を偶然見つけた。州政府の登記所に採掘権を申請すれば巨万の富が得られるが、地元の強盗団が嗅ぎつけて…
 - [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
@@ -12202,7 +12195,7 @@
 - [choice_kazimierz_07](#event-choice_kazimierz_07) — 大手飲料メーカーから、「新発売のエナジードリンクの宣伝として街頭ビジョンやポスターに出てほしい」と破格の報酬でオファーされた。ただし過激な演出が求め…
 - [choice_kazimierz_08](#event-choice_kazimierz_08) — かつて街の英雄だった老騎士が、病と借金で住まいを追い出されそうになっていた。商業連盟の取り立て屋が無慈悲に退去を迫っている。
 - [choice_kazimierz_09](#event-choice_kazimierz_09) — ある情報屋から、「商業連盟の大物幹部が関与する八百長試合の決定的な帳簿データがある。高値で買って告発するか、企業に買い取らせるか選べ」と取引を持ちか…
-- [choice_kazimierz_10](#event-choice_kazimierz_10) — 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、…
+- [choice_kazimierz_10](#event-choice_kazimierz_10) — 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募って…
 - [choice_siracusa_01](#event-choice_siracusa_01) — 伝統料理店の厨房で、頑固な老シェフと新入りの若手料理人が激しく衝突していた。若手が「回転率を上げるため、ソースの煮込み時間を短縮し市販の調味料を足そ…
 - [choice_siracusa_02](#event-choice_siracusa_02) — 夜の帰り道、路地裏で顔なじみのファミリーの下っ端から声をかけられた。「頼む、この革の鞄を明日の朝まで誰にも見つからない場所に預かってくれ。手間賃とし…
 - [choice_siracusa_03](#event-choice_siracusa_03) — 街の有名な歌劇場の裏手を通りかかると、支配人が頭を抱えて取り乱していた。今夜の看板オペラで重要な脇役を務める役者が急な喉の不調で倒れ、開演まであと数…
@@ -12212,7 +12205,7 @@
 - [choice_siracusa_07](#event-choice_siracusa_07) — 近所のパン屋の主人が青ざめた顔で相談してきた。シマを仕切るファミリーが代替わりし、みかじめ料を一気に2倍に跳ね上げると通告してきたという。このままで…
 - [choice_siracusa_08](#event-choice_siracusa_08) — 旧市街の古い居住区画に、大手開発企業と手を組んだファミリーの使いが現れ、新都市構想のための立ち退きを迫ってきた。長年住み慣れた住民たちは路頭に迷うと…
 - [choice_siracusa_09](#event-choice_siracusa_09) — 夜の運河沿いの倉庫街を歩いていると、霧の向こうで小型船から密輸された武器とオリジニウム製品を陸揚げしている現場に鉢合わせてしまった。見張りの男たちが…
-- [choice_siracusa_10](#event-choice_siracusa_10) — 新都市ウォルシーニの市民広場で、古くから伝わる伝統の手打ち麺料理を競い合う祝祭料理市が開かれた。広場には各街区の名だたる料理人や腕自慢が集まり、オリ…
+- [choice_siracusa_10](#event-choice_siracusa_10) — 近くの市民市場で料理の屋台が増え、店ごとに麺料理や煮込みを出していた。特別な全国行事という様子ではなく、街区の人が食事を楽しむ小さな催しらしい。
 - [choice_siesta_01](#event-choice_siesta_01) — オブシディアン・フェスティバルのサブステージで、出演予定だった前座バンドが機材トラブルで急遽出演不能になった。運営スタッフが「誰かステージで3曲演奏…
 - [choice_siesta_02](#event-choice_siesta_02) — 大混雑するビーチの波打ち際で、浮き輪を抱えて大声で泣きじゃくる小さな子どもを見かけた。親とはぐれてパニックになっているようだ。
 - [choice_siesta_03](#event-choice_siesta_03) — シエスタ火山観測所で、突発的な地殻振動が記録された。研究員たちが「観測データの入力と地質サンプルの比重分析が追いつかない」と臨時助手を求めている。
@@ -12232,7 +12225,7 @@
 - [choice_sargon_07](#event-choice_sargon_07) — 隊商に同行して砂漠の峠を越える途中、岩陰から武装した砂漠の盗賊団が姿を現し、荷物の引き渡しを要求してきた。護衛の兵士たちと一触即発の睨み合いとなって…
 - [choice_sargon_08](#event-choice_sargon_08) — 雨林の祭祀場で、各部族の誉れを賭けた古式武闘の儀が執り行われていた。熱狂する部族民たちの前で、踏み固められた土俵で鍛え抜かれた勇士たちが技と力、アー…
 - [choice_sargon_09](#event-choice_sargon_09) — パーディシャーの配下の代官が、砂漠の関所での通行税を不当に引き上げた。このままでは小規模な商人や農民たちが破産してしまう。商人組合が連名で宮殿へ減税…
-- [choice_sargon_10](#event-choice_sargon_10) — 年に一度、砂漠中の隊商とオアシス住民が集う「大バザール祝祭」が開幕した。広大な広場には数千の天幕が立ち並び、オリエントの秘宝、珍しい動物、香辛料、甘…
+- [choice_sargon_10](#event-choice_sargon_10) — 交易路沿いのオアシスに隊商が何組か到着し、広場へ臨時の市が立った。食料、布、道具などが並ぶが、どこから来た品か分からないものも混じっている。
 - [choice_sami_01](#event-choice_sami_01) — 猛烈な地吹雪が吹き荒れる夕暮れ、南方の探検隊の生き残りが集落へ転がり込んできた。「森の奥で仲間がはぐれて動けなくなった」と泣きつかれた。外は視界ゼロ…
 - [choice_sami_02](#event-choice_sami_02) — 集落の最高位の雪祭司から、聖なる巨木の広場で開かれる「森の囁きを聞く夜儀式」の助手を頼まれた。薬草の煙と祈りの歌が響く中、大自然からの啓示を受け止め…
 - [choice_sami_03](#event-choice_sami_03) — 厳冬の森で、巨木のような大角を持つ伝説的な巨獣ヘラジカの足跡が発見された。村の長老から「冬の食糧と防寒具のため、この獲物を仕留められるか」と問われた…
@@ -12242,7 +12235,7 @@
 - [choice_sami_07](#event-choice_sami_07) — 冬が本格化する前に、集落総出で大量の保存食の仕込みが行われた。川で獲れた鮭の燻製、山で摘んだコケモモのジャム煮、キノコの乾燥作業に追われている。
 - [choice_sami_08](#event-choice_sami_08) — 極寒の夜を乗り切るため、発酵させたコケモモと大麦、薬草を蒸留器にかけ、度数の高いサーミ特製の薬用蒸留酒（アクアビット）を造ることになった。
 - [choice_sami_09](#event-choice_sami_09) — クルビアの大手研究所から派遣された学術調査隊が、サーミの原生林の生態系調査のため、現地の地形を知り尽くした案内人を高額の日当で募集している。
-- [choice_sami_10](#event-choice_sami_10) — 長い極夜が終わり、数ヶ月ぶりに地平線の上に太陽の光が戻ってくる「太陽迎えの冬至祭」が開幕した。広場には巨大なかがり火が焚かれ、全部族が手を取り合って…
+- [choice_sami_10](#event-choice_sami_10) — 冬の日照が短い時期、近くの人々が火のそばに集まり、温かい食事を分けていた。氏族や地域ごとの慣習は違うが、この場では寒さをしのぐために人が寄り合ってい…
 - [choice_kjerag_01](#event-choice_kjerag_01) — 聖山カランドへ続く急峻な巡礼路で雪崩による石段の崩落が発生した。大祭を控え、大勢の巡礼者が立ち往生している。寺院が復旧隊のボランティアを募っている。
 - [choice_kjerag_02](#event-choice_kjerag_02) — カランド貿易が外国から導入した最新鋭の耐寒式蒸気機関車の試運転が行われることになった。急勾配と氷点下の過酷な環境での運行試験に、機関士や添乗技術者の…
 - [choice_kjerag_03](#event-choice_kjerag_03) — 村の集会所で、外国製品の関税と教会の伝統行事の予算配分を巡り、シルバーアッシュ派の若手とペイルロッシュ派の長老が怒鳴り合いの口論になっていた。周囲も…
@@ -12252,7 +12245,7 @@
 - [choice_kjerag_07](#event-choice_kjerag_07) — 春の訪れとともに、山上の放牧地でヤクの毛刈りの季節がやってきた。ヤクの胸元の産毛から採れる柔らかな最高級カシミヤ毛糸を紡ぎ、名産ショールを織り上げる…
 - [choice_kjerag_08](#event-choice_kjerag_08) — カランド貿易が外国から最新の滅菌器や手術器具を寄贈しようとしたが、寺院の頑固な古老たちが「神聖な寺院に得体の知れない外国の機械を入れるな」と拒絶して…
 - [choice_kjerag_09](#event-choice_kjerag_09) — 聖山を貫く鉄道トンネルの難所工事現場で、硬い花崗岩の岩盤が行く手を阻み、地下水の噴出が発生した。工期が遅れれば雪の季節に間に合わない。緊急の支保工補…
-- [choice_kjerag_10](#event-choice_kjerag_10) — 年に一度、イェラグ全土の信徒が聖峰の麓に集う「カランド年次大祭」が開幕した。山々には祈りのホルンの音が響き渡り、巫女による神聖な祝福の儀が執り行われ…
+- [choice_kjerag_10](#event-choice_kjerag_10) — 聖峰へ向かう人が増える時期になり、麓の集落では宿と食事の準備に追われていた。遠くから来た参詣者もいるが、誰がどこから来たのかまでは分からない。
 - [choice_kazdel_01](#event-choice_kazdel_01) — 荒野に残された巨大な装甲車の残骸を解体し、分厚い装甲板から農具の鍬や大鍋を大量に鍛造するプロジェクトが立ち上がった。溶接と鍛冶の腕利きの助手が求めら…
 - [choice_kazdel_02](#event-choice_kazdel_02) — テント酒場で見知らぬ外国の代理人から声をかけられた。「お前のような腕利きのサルカズが泥まみれで瓦礫を運ぶのは勿体ない。隣国の紛争地へ行けば、この金貨…
 - [choice_kazdel_03](#event-choice_kazdel_03) — 吹きさらしのテント暮らしを脱するため、数十家族が身を寄せ合える堅牢な石造り共同住宅の建設が始まった。寒風が吹きすさぶ中、レンガ積みと屋根架けの急ピッ…
@@ -12262,17 +12255,16 @@
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
 - [choice_kazdel_09](#event-choice_kazdel_09) — 移動集落の定住化を進めるため、荒野の地下深くを流れる水脈を探り当て、新たな深井戸を掘削する大事業が始まった。硬い岩盤を貫く難工事となっている。
-- [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
 - [choice_iberia_01](#event-choice_iberia_01) — 海岸線にそびえる旧時代の巨大灯台「目の前の塔」の非常用電源と反射鏡の点検隊が編成された。潮風と海の怪物の恐怖に晒される危険な高所作業だが、航路警備の…
 - [choice_iberia_02](#event-choice_iberia_02) — 薄暗い夕暮れの路地で、黒外套の審問官たちに突然進路を塞がれた。「怪しい気配が漂っている。所属と所持品、昨夜の行動を答えよ」と冷徹なランタンの光を顔に…
 - [choice_iberia_03](#event-choice_iberia_03) — 立ち入り禁止区域に近い海岸の砂浜に、不気味な青黒い結晶で覆われた大型の漂着物が打ち上げられていた。怪物の残骸のようにも見えるが、旧時代の合金コンテナ…
 - [choice_iberia_04](#event-choice_iberia_04) — 夏の強い日差しによって塩田の水が一気に干上がり、結晶化した純白の天日塩の収穫期を迎えた。重い塩を木舟ですくい上げ、乾燥小屋へ運ぶ過酷な力仕事が募集さ…
 - [choice_iberia_05](#event-choice_iberia_05) — 古い教会の床下から、黄金時代の大航海時代に描かれた羊皮紙の古航海図が発見された。暗号化された緯度経度と海流データが記されている。解読できれば失われた…
 - [choice_iberia_06](#event-choice_iberia_06) — 秋の丘陵地帯で、たわわに実った黒オリーブの一斉収穫が始まった。枝を揺すって実を落とし、大樽に集めて石臼で搾る村を挙げた大仕事だ。
-- [choice_iberia_07](#event-choice_iberia_07) — 沿岸の入り江で、夜陰に乗じて外国の密輸船が危険な禁制品（未検査の海洋生物や武器）を陸揚げしようとしているのを目撃した。見張りの男たちが周囲を警戒して…
-- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔の海外渡航歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と泣きつ…
-- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に製作された大型の真鍮製屈折望遠鏡が発見された。レンズは曇り、歯車は錆びついている。修復して澄み切った星空を観測しようと…
-- [choice_iberia_10](#event-choice_iberia_10) — 大いなる静謐の犠牲者を追悼し、未来への希望を灯す「光のランタン祭」が開催された。広場から丘の上まで無数のランタンが灯され、厳かな祈りと賛美歌が夜空へ…
+- [choice_iberia_07](#event-choice_iberia_07) — 夜の入り江で、船籍の分からない小型舟艇から、布をかぶせた荷箱が浜へ運び込まれているのを見かけた。荷の中身も運び手の素性も分からないまま、見張り役らし…
+- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔に他国を訪れた経歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と…
+- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に作られた真鍮製の望遠鏡を見つけた。レンズは曇り、歯車には錆が浮いている。自分で分解する前に、どう扱うか考えた。
+- [choice_iberia_telescope_observation_followup](#event-choice_iberia_telescope_observation_followup) — 修理して手元に残した望遠鏡は、しばらく布をかけたまま置いてあった。雲の少ない夜、窓の外を見て、久しぶりに筒を外へ向けることにした。
 - [choice_bolivar_01](#event-choice_bolivar_01) — 高原農村で特産のプレミアム・コーヒー豆の収穫期を迎えた。病気に強く風味の豊かな新品種の選定と収穫作業に、熱心な農民たちが集まっている。
 - [choice_bolivar_02](#event-choice_bolivar_02) — 村の広場に武装した正規軍の巡回小隊が現れ、「軍用食糧として村の穀物と家畜を半分差し出せ」と理不尽な徴発を通告してきた。このままでは冬を越せない農民た…
 - [choice_bolivar_03](#event-choice_bolivar_03) — ドッソレスの巨大プール施設で、水上ジェットスキーのレース中に暴走した機体が観客席の防護柵に激突しかける事故が発生した。大混乱に陥る会場で、緊急の救助…
@@ -12282,7 +12274,7 @@
 - [choice_bolivar_07](#event-choice_bolivar_07) — 過去の戦闘で屋根が吹き飛び、放置されていた村の小学校の校舎を再建する運動が始まった。「子供たちに銃ではなくペンを持たせたい」という村人たちの願いが込…
 - [choice_bolivar_08](#event-choice_bolivar_08) — ドッソレスの繁華街にある裏カジノで、外国マフィアがイカサマ装置を使って観光客から不当に金を巻き上げている現場の証拠を掴んだ。市警に通報するか、直接取…
 - [choice_bolivar_09](#event-choice_bolivar_09) — 深い渓谷に架かる古い蔓と木の吊り橋が老朽化し、踏み板が抜けて渡るのが命がけになっている。対岸の集落と協力し、鋼鉄ワイヤーを使った頑丈な吊り橋に架け替…
-- [choice_bolivar_10](#event-choice_bolivar_10) — 内戦の銃声が止んだ収穫の季節、全村を挙げた「大地への感謝大祭」が開幕した。広場には焼きトウモロコシと豆料理の大鍋が並び、マリカの陽気なリズムに合わせ…
+- [choice_bolivar_10](#event-choice_bolivar_10) — 収穫を終えた近隣の農家が広場へ野菜や穀物を持ち寄り、小さな市が立った。食べ物を交換する人のそばで、仕事を終えた者たちが音楽を鳴らして休んでいる。
 - [choice_rim_01](#event-choice_rim_01) — 地下大鉱道の命綱である主換気シャフトのファンモーターから異音が発生し、回転数が急低下した。このままでは坑道内に有毒ガスが充満してしまう。高所シャフト…
 - [choice_rim_02](#event-choice_rim_02) — 相次ぐ落盤の危険を受け、鉱山労働組合が企業幹部との緊急団体交渉に臨むことになった。防塵マスクの無償支給と退避シェルターの増設を勝ち取れるか、現場代表…
 - [choice_rim_03](#event-choice_rim_03) — 第5坑道の奥で局所的な落盤が発生し、作業員3名が崩落した岩石の向こうに閉じ込められた。エアパイプは生きているが、残された酸素は少ない。決死の救助隊が…
@@ -12292,7 +12284,7 @@
 - [choice_rim_07](#event-choice_rim_07) — 週末の夜、鉱山街最大のパブ「ドリル＆ホップ」で恒例の力自慢腕相撲トーナメントが開催された。熱狂する鉱夫たちの声援の中、屈強な猛者たちがテーブルを挟ん…
 - [choice_rim_08](#event-choice_rim_08) — 鉱区住宅の粉塵被害を軽減するため、慈善基金から寄贈された高性能エアフィルターと換気ファンを、高齢者や呼吸器の弱い家庭へ一軒ずつ取り付けて回るボランテ…
 - [choice_rim_09](#event-choice_rim_09) — 鉱区の北東方向に大規模な天災雲（源石嵐）が観測された。採掘プラットフォームを安全地帯へ緊急移動させるため、脚部アンカーの引き抜きと移動機構の最終点検…
-- [choice_rim_10](#event-choice_rim_10) — 過酷な鉱山から無事に生還した日々を祝い、大地の恵みに感謝する伝統の「採掘安全祈願ランタン祭」が執り行われた。数千の安全ヘルメットのライトと真鍮ランタ…
+- [choice_rim_10](#event-choice_rim_10) — 鉱区の勤務が一区切りついた夜、作業場の前で無事故だった班を労う食事が出された。ヘルメットを机へ置いた人々が、温かい料理を囲んでその日の仕事を振り返っ…
 - [choice_minos_01](#event-choice_minos_01) — ミノスの古代円形劇場で、市民の叡智を競う都市連合の哲学弁論会が開催された。テーマは「個人の幸福と共同体の調和」。演壇に立ち、大勢の市民と哲学者たちの…
 - [choice_minos_02](#event-choice_minos_02) — 大神殿の前に奉納する、高さ3メートルを超える巨大な青銅製の神像トリポッド（三脚台座）の鋳造プロジェクトが立ち上がった。溶けた灼熱の青銅を巨大な鋳型に…
 - [choice_minos_03](#event-choice_minos_03) — 聖なる競技場で、ミノス全ポリスから集まった屈強な戦士たちが技を競う「体育競技大祭」が開幕した。メイン種目は伝統のパレストラ（レスリング）と円盤投げ。…
@@ -12302,7 +12294,6 @@
 - [choice_minos_07](#event-choice_minos_07) — アスクレピオスの神殿施療院で、秋の季節の変わり目に体調を崩した多くの巡礼者たちが訪れている。野生の薬草の調合や、温泉治療の入浴補助を行うボランティア…
 - [choice_minos_08](#event-choice_minos_08) — 隣接する二つのポリスの間で、水源の利用権とオリーブ畑の境界線を巡って激しい口論となり、一触即発の武力衝突の危機が生じた。公正中立な市民陪審員として調…
 - [choice_minos_09](#event-choice_minos_09) — 秋空の下、丘のブドウ園で糖度の乗った黒ブドウの一斉収穫が始まった。大きな木桶にブドウを放り込み、裸足になって皆で踏み潰す伝統の果汁絞りが繰り広げられ…
-- [choice_minos_10](#event-choice_minos_10) — ミノス全ポリスが一つになり、建国の十二英雄を称える世紀の「十二英雄合同大祭」が開幕した。アクロポリスから麓の広場まで聖火のパレードが続き、荘厳なホル…
 - [confined_care](#event-confined_care) — 皮膚の下の結晶が疼き、夜中に目を覚ます日が増えた。外の街の診療所へは足を運べず、閉ざされた区画の中で順番が回ってくるのをじっと待っている。
 - [confined_pet_care](#event-confined_pet_care) — 隔離された生活が長引き、ずっと家を空けたままになっている。部屋に残してきた生き物の水や餌を誰に頼むか、そして預けたあとの餌代をどう送り続けるかで頭が…
 - [detain_life](#event-detain_life) — 外の相談所へ自分が収容されている場所を知らせると、異議申立ての用紙が差し入れられた。だが、それをどの役人へ出せばいいのかは誰にも教えてもらえなかった…
@@ -12354,9 +12345,9 @@
 - [family_newlywed_residence](#event-family_newlywed_residence) — 結婚が決まってから、二人でどこに新居を構えるかの話し合いが続いた。借家の敷金や親の面倒、互いの職場までの道のりを考え合わせると、簡単には決められなか…
 - [kazimierz_knight_entry](#event-kazimierz_knight_entry) — 仕事帰りに競技会場へ立ち寄り、きらびやかなネオンの奥にある受付で、騎士競技の舞台に立つ手順を尋ねてみた。自前で登録料と武具を揃えて予選に挑むか、有力…
 - [old_reemployment_review](#event-old_reemployment_review) — 朝起きて仕事着に袖を通すたび、年々抜けない疲れを実感するようになった。これまでと同じ日数働き続けるか、そろそろ荷を下ろすか考える時期が来た。
-- [life_goal_start](#event-life_goal_start) — 仕事帰りに借りていた道具を返し、夕餉の食材を買い込んで家路を歩いた。ただ今日を回すだけで過ぎていく日々のなかで、これから先、自分が何を支えに生きてい…
+- [life_goal_start](#event-life_goal_start) — 仕事を終えて家路につく途中、今日の失敗やうまくいった手順を思い返した。ただ一日を回すだけで過ぎていく暮らしのなかで、これから先、自分が何を支えに生き…
 - [life_goal_review](#event-life_goal_review) — かつて心に決めた目標を、日々の忙しさのなかでふと思い返した。仕事や家の事情もあの頃とは変わり、これからどう向き合っていくか考え直した。
-- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると手元が狂いそうになる。居残りで手を動かして慣らすか、自前で道具を揃えて熟練の先輩にコツを教わるか考え…
+- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると判断や手順が乱れそうになる。終業後に苦手な流れを確かめるか、自分で必要な教材や道具を用意して経験の長…
 - [life_rim_supply_delay](#event-life_rim_supply_delay) — 鉱区へ届くはずの交換部品の輸送便が遅れ、急ぎの修理に必要な部材が底をついた。止まった重機の警報音が作業場中に鳴り響いている。自腹で消耗品を買い足して…
 - [life_rim_skill_handover](#event-life_rim_skill_handover) — 整備の現場にもすっかり慣れ、機械の異音を聞き分けるのも早くなった。最近入ってきた新人が、外した部品の戻し方や異音の見極め方で立ち往生し、休憩時間に心…
 - [life_goal_resume](#event-life_goal_resume) — しばらく胸の奥にしまい込んでいたかつての目標を、ふとした折に思い出した。日々の暮らしが少し落ち着いた今、もう一度手をつけてみるか考えた。
@@ -12541,8 +12532,7 @@
 - [elder_choice_life_reflection](#event-elder_choice_life_reflection) — 暮れゆく夕焼け空を見つめながら、自らが歩んできた長い生涯を静かに振り返った。天災、戦争、病、飢え……幾多の苦難が渦巻くテラの大地で、自分は今日まで確…
 - [asset_choice_property_purchase](#event-asset_choice_property_purchase) — 長年蓄えてきた手元の資金を確かめ、都市の不動産区画で自己所有の居住権（持ち家・アパート）を購入する好機が訪れた。家賃の支払いから解放され、地に足をつ…
 - [asset_choice_workshop_open](#event-asset_choice_workshop_open) — これまでに培った技術と知見を活かし、自らの看板を掲げて小さな工房や店舗（仕立て屋、パン屋、修理工房、薬草店）を開業する相談を持ちかけられた。
-- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — 不意の天災や移動都市の区画被災に備え、民間保険会社が提供する「天災総合避難・再建保険」の案内が届いた。年々の保険料を納めることで、被災時に速やかな補…
-- [asset_catastrophe_insurance_claim](#event-asset_catastrophe_insurance_claim) — 天災の混乱の中、避難所で保険会社の臨時窓口を見つけた。避難証明書と保険証書を提示したところ、迅速な審査が行われた。
+- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 - [life_rim_skill_handover_followup](#event-life_rim_skill_handover_followup) — 見習いと一緒に機械の点検手順を確かめ合った頃から、ずいぶん年月が経った。ある日、若い作業員が油の染みた古い点検メモを手にやって来た。昔の手帳を開いて…
 - [life_rim_workmate_followup](#event-life_rim_workmate_followup) — 昔、作業の手ほどきを頼んできた{rimWorkmateName}と作業場の外で久しぶりに顔を合わせた。あの頃一緒にやった点検のことで聞きたいことがあ…
 - [life_savra_late_craft](#event-life_savra_late_craft) — 長年続けてきた整備の仕事も、若い頃のように手早くはこなせなくなった。節々が痛む日は重い部品を若手に任せ、代わりに金属の異音や摩耗を見分ける勘所を教え…
@@ -12564,6 +12554,7 @@
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
+- [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_arts_overload_crisis](#event-life_arts_overload_crisis) — 激しい精神の昂ぶりと疲弊のなか、体内の源石結晶が異常励起を起こし、アーツの奔流が意識の制御を離れて逆流し始めた。皮膚下の結晶が赤黒く脈打って熱を帯び…
 - [life_columbia_clinical_trap_decision](#event-life_columbia_clinical_trap_decision) — 多額の負債と生活苦のなか、製薬企業の代理人を名乗る男から『新薬の短期被験者になるだけで借金を全額肩代わりする』という契約書を差し出された。だが添付さ…
 - [life_lynch_mob_siege](#event-life_lynch_mob_siege) — 夜更け、怒号と松明の火がアパートの窓を赤く照らし出した。棍棒を持った排斥暴徒が『忌み者を焼き出せ』と叫びながら玄関扉を叩き壊そうとしている。廊下には…
@@ -12768,7 +12759,7 @@
 - [car_col_pioneer_daily_01](#event-car_col_pioneer_daily_01) — 乾いた土煙が舞う荒野の農場で、地下水汲み上げポンプのモーターを分解修理した。厳しい日差しの中、自らの手で開墾した畑に緑の芽が吹くのを見つめる。すべて…
 - [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
 - [car_kaz_comp_knight_daily_01](#event-car_kaz_comp_knight_daily_01) — 照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と…
-- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する…
+- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFi…
 - [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。…
 - [car_sir_soldier_daily_01](#event-car_sir_soldier_daily_01) — 石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コー…
 - [car_sir_soldier_choice_turf_war](#event-car_sir_soldier_choice_turf_war) — 隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。…
@@ -13225,7 +13216,7 @@
 
 <a id="tag-situation-269"></a>
 ### 相談・医療・休養（1）
-- [life_mental_crisis_support](#event-life_mental_crisis_support) — （動的本文）
+- [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
 
 <a id="tag-situation-270"></a>
 ### 相談・記録（1）
@@ -13337,7 +13328,7 @@
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
 <a id="tag-situation-297"></a>
-### 動的表示条件（686）
+### 動的表示条件（687）
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
@@ -13465,6 +13456,7 @@
 - [daily_columbia_43](#event-daily_columbia_43) — 職場の改善提案会で、担当設備の運用案を説明した。質問への回答を持ち帰り、次の試作に向けて同僚と資料を整えた。
 - [choice_columbia_03](#event-choice_columbia_03) — 配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監…
 - [choice_columbia_06](#event-choice_columbia_06) — 大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚…
+- [choice_iberia_telescope_observation_followup](#event-choice_iberia_telescope_observation_followup) — 修理して手元に残した望遠鏡は、しばらく布をかけたまま置いてあった。雲の少ない夜、窓の外を見て、久しぶりに筒を外へ向けることにした。
 - [education_return_path](#event-education_return_path) — 途中で学び舎を離れたか、そもそも机を並べる機会がないまま歳月が過ぎた。今の読み書きの力と懐具合で、もう一度学べる場所がないか探してみた。
 - [education_paused_life](#event-education_paused_life) — 家計の都合や暮らしの混乱から、学校の席を休学にしてしばらく経った。同年代の生徒たちが鞄を抱えて通りを行き交う姿を見送りながら、この休みをどう過ごして…
 - [education_school_classroom](#event-education_school_classroom) — 放課後の教室で、黒板の脇に補習と共同課題の予定が書き出された。夕日が差し込むなか、同じ組の仲間と机を並べて片づけた。
@@ -13566,11 +13558,11 @@
 - [asset_daily_property_comfort](#event-asset_daily_property_comfort) — 自ら買い取った住まいの壁を塗り直し、居心地の良い家具を整えた。毎月の家賃の心配がない生活は、心に大きな余裕と安定をもたらしている。
 - [asset_choice_workshop_open](#event-asset_choice_workshop_open) — これまでに培った技術と知見を活かし、自らの看板を掲げて小さな工房や店舗（仕立て屋、パン屋、修理工房、薬草店）を開業する相談を持ちかけられた。
 - [asset_daily_workshop_revenue](#event-asset_daily_workshop_revenue) — 工房の店先で注文主と打ち合わせをし、丹精込めて仕上げた品を納品した。手渡された代金を金庫に収め、自らの腕で稼ぎ出す手応えを噛み締めた。
-- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — 不意の天災や移動都市の区画被災に備え、民間保険会社が提供する「天災総合避難・再建保険」の案内が届いた。年々の保険料を納めることで、被災時に速やかな補…
-- [asset_catastrophe_insurance_claim](#event-asset_catastrophe_insurance_claim) — 天災の混乱の中、避難所で保険会社の臨時窓口を見つけた。避難証明書と保険証書を提示したところ、迅速な審査が行われた。
+- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
+- [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_arts_overload_crisis](#event-life_arts_overload_crisis) — 激しい精神の昂ぶりと疲弊のなか、体内の源石結晶が異常励起を起こし、アーツの奔流が意識の制御を離れて逆流し始めた。皮膚下の結晶が赤黒く脈打って熱を帯び…
 - [life_columbia_clinical_trap_decision](#event-life_columbia_clinical_trap_decision) — 多額の負債と生活苦のなか、製薬企業の代理人を名乗る男から『新薬の短期被験者になるだけで借金を全額肩代わりする』という契約書を差し出された。だが添付さ…
 - [life_lynch_mob_siege](#event-life_lynch_mob_siege) — 夜更け、怒号と松明の火がアパートの窓を赤く照らし出した。棍棒を持った排斥暴徒が『忌み者を焼き出せ』と叫びながら玄関扉を叩き壊そうとしている。廊下には…
@@ -13793,7 +13785,7 @@
 - [car_col_pioneer_daily_01](#event-car_col_pioneer_daily_01) — 乾いた土煙が舞う荒野の農場で、地下水汲み上げポンプのモーターを分解修理した。厳しい日差しの中、自らの手で開墾した畑に緑の芽が吹くのを見つめる。すべて…
 - [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
 - [car_kaz_comp_knight_daily_01](#event-car_kaz_comp_knight_daily_01) — 照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と…
-- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する…
+- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFi…
 - [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。…
 - [car_sir_soldier_daily_01](#event-car_sir_soldier_daily_01) — 石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コー…
 - [car_sir_soldier_choice_turf_war](#event-car_sir_soldier_choice_turf_war) — 隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。…
@@ -14026,7 +14018,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-situation-298"></a>
-### 動的本文（30）
+### 動的本文（31）
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
 - [nat](#event-nat) — （動的本文）
@@ -14035,6 +14027,7 @@
 - [fam_care_followup](#event-fam_care_followup) — 親の世話を始めてから二年が過ぎた。{parentName}の通院や身の回りの手伝いはまだ終わらず、こちらの体や暮らしの予定にも疲れが溜まってきている…
 - [life_kazdel_displaced_start](#event-life_kazdel_displaced_start) — （動的本文）
 - [infection_workplace_review](#event-infection_workplace_review) — （動的本文）
+- [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [ori_diagnosis_decision](#event-ori_diagnosis_decision) — （動的本文）
 - [ori_followup_access](#event-ori_followup_access) — （動的本文）
 - [daily_rhodes_03](#event-daily_rhodes_03) — （動的本文）
@@ -14108,7 +14101,7 @@
 - [fam_care_followup](#event-fam_care_followup) — 親の世話を始めてから二年が過ぎた。{parentName}の通院や身の回りの手伝いはまだ終わらず、こちらの体や暮らしの予定にも疲れが溜まってきている…
 
 <a id="tag-situation-311"></a>
-### 年齢：児童（978）
+### 年齢：児童（975）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -14316,7 +14309,7 @@
 - [daily_ursus_38](#event-daily_ursus_38) — 雪解けの泥濘に荷車の車輪が深く沈み込み、何時間も立ち往生した。泥まみれになりながら押し出したが、衣服は台無しになり疲労困憊した。
 - [daily_ursus_61](#event-daily_ursus_61) — 深夜、集合住宅の薄い壁の向こうで重い軍靴の音が響き、どこかの扉が乱暴に叩き壊された。毛布を頭から被り、息を殺して憲兵が通り過ぎるのを待った。
 - [daily_ursus_64](#event-daily_ursus_64) — 毎朝挨拶を交わしていた隣家の窓に、突然黒い板が打ち付けられていた。昨夜、荷車が止まっていたこと以外、誰も何も語ろうとしなかった。
-- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わりを告げ、春の訪れを祝う伝統行事「マースレニツァ」の日が訪れた。広場では藁人形が燃やされ、太陽を象徴する丸いクレープ（ブリヌイ）が山のように…
+- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わり、地区の広場に食べ物の屋台が数軒出て、人々が長い寒さの区切りをつけるように集まっていた。呼び名や祝い方は土地ごとに違うらしい。
 - [daily_victoria_01](#event-daily_victoria_01) — 午後の茶の時間に、素朴な焼き菓子に濃厚な生クリームと果実ジャムを添え、柑橘の香る温かい銘茶を味わった。贅沢な甘みに心が満たされた。
 - [daily_victoria_02](#event-daily_victoria_02) — 近所の大衆食堂で、揚げたての白身魚と香ばしい揚げ芋を頬張りながら麦茶を啜った。カリッとした衣の旨味に、一日の疲れが吹き飛んだ。
 - [daily_victoria_03](#event-daily_victoria_03) — 公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。
@@ -14393,7 +14386,7 @@
 - [daily_leithanien_36](#event-daily_leithanien_36) — 感染者を糾弾する狂信的な演説集団が広場を占拠し、通行人に罵詈雑言を浴びせていた。憎悪に満ちた空気に気分を悪くし、足早に立ち去った。
 - [daily_leithanien_37](#event-daily_leithanien_37) — 老舗カフェで上流気取りの客から身なりを侮辱され、席を立つよう冷淡に要求された。周囲の冷淡な視線に、やるせない孤立感を味わった。
 - [daily_leithanien_38](#event-daily_leithanien_38) — 石畳の急な坂道で凍結に足を滑らせ、派手に転倒して膝を強く擦りむいた。破れたズボンと痛む足を引きずりながら家路についた。
-- [choice_leithanien_10](#event-choice_leithanien_10) — 街路樹が初夏の花を咲かせる季節を迎え、都の広場で市民総出の初夏祭が開かれた。広場には焼き菓子や伝統料理の屋台が並び、優雅な円舞曲（ワルツ）に合わせて…
+- [choice_leithanien_10](#event-choice_leithanien_10) — 初夏の午後、広場の一角で小さな市が開かれ、焼き菓子の屋台のそばで数人の演奏家が曲を奏でていた。通りがかりの人が足を止め、短い休息を取っている。
 - [daily_laterano_01](#event-daily_laterano_01) — 聖都の有名な菓子舗で、焼きたての大判アップルパイを買って頬張った。シナモンと焦がしバターの極上の甘みに、思わず頬が緩むほどの幸福感を味わった。
 - [daily_laterano_02](#event-daily_laterano_02) — 広場のカフェのテラス席で、何種類ものベリーが山盛りに盛られたパフェをいただいた。甘いクリームと爽やかな酸味に、疲れが綺麗に溶け去った。
 - [daily_laterano_03](#event-daily_laterano_03) — 大聖堂の美しいステンドグラスから差し込む光のシャワーの下、聖歌隊の透き通るような賛美歌を聞いた。清らかな祈りに心が洗われた。
@@ -14432,7 +14425,7 @@
 - [daily_laterano_36](#event-daily_laterano_36) — 大雨で石畳の坂道が滑りやすくなり、足をとられて派手に転倒した。大切な守護銃のケースを泥まみれにしてしまい、清掃に半日を費やした。
 - [daily_laterano_37](#event-daily_laterano_37) — 公証役場の前に、鉱石病を理由に聖都から追放通告を受けた一家が荷物をまとめて立ち尽くしていた。冷酷な法の前で言葉を失った。
 - [daily_laterano_38](#event-daily_laterano_38) — 路地の角で、銃の手入れを巡る血気盛んな若者同士の激しい口論が起きた。いつ銃声が鳴り響くか息を呑み、壁に身を寄せて逃げ出した。
-- [choice_laterano_10](#event-choice_laterano_10) — 春の復活祭を迎え、聖都の広場という広場が色とりどりの砂糖菓子と花々で飾り付けられた。巨大な特製ケーキが切り分けられ、誰もが平和と甘味を分かち合う最大…
+- [choice_laterano_10](#event-choice_laterano_10) — 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 - [daily_columbia_01](#event-daily_columbia_01) — ダイナーのカウンターで、焼きたての分厚い挽肉を挟んだ肉パンと大盛りの揚げ芋を頬張った。冷たい炭酸水を飲み干し、開拓者の活力を補給した。
 - [daily_columbia_02](#event-daily_columbia_02) — 市場の食料品店で、特売の大きな豆ペーストの瓶と山積みの素焼きパンを買い込んだ。開拓地ならではの規格外の大きさに、思わず笑みがこぼれた。
 - [daily_columbia_03](#event-daily_columbia_03) — 幹線道路沿いの休憩所で、淹れたての熱い穀物茶と揚げ菓子のセットを頼んだ。どこまでも続くまっすぐな地平線を眺めながら、自由な風を感じた。
@@ -14508,7 +14501,7 @@
 - [daily_kazimierz_36](#event-daily_kazimierz_36) — 路地裏で違法な賭博闘技場の客引きにしつこく絡まれ、強引に金銭を要求されそうになった。隙を見て逃げ出したが、冷や汗が止まらなかった。
 - [daily_kazimierz_37](#event-daily_kazimierz_37) — 街角の掲示板に、競技シーズンに伴う宿泊施設の再編と区画整理の告知が張り出されていた。慣れ親しんだ街並みが慌ただしく姿を変えていく。
 - [daily_kazimierz_38](#event-daily_kazimierz_38) — 電光看板の漏電による小火騒ぎがあり、黒煙が路地に充満した。激しく咳き込みながら逃げ出したが、煤で衣服を汚してしまった。
-- [choice_kazimierz_10](#event-choice_kazimierz_10) — 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、…
+- [choice_kazimierz_10](#event-choice_kazimierz_10) — 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募って…
 - [daily_siracusa_01](#event-daily_siracusa_01) — 石畳の細い路地を歩いていると、どこかの民家の換気口から焦がしたニンニクと完熟トマトの濃密な香りが漂ってきた。シラクーザの路地裏には、いつでも誰かの家…
 - [daily_siracusa_02](#event-daily_siracusa_02) — 夕暮れどきの広場で、近所の老人たちが木製のベンチに腰掛け、ジェスチャーを激しく交えながら今日の出来事について熱弁を振るっていた。陽気な笑い声に心が温…
 - [daily_siracusa_03](#event-daily_siracusa_03) — 街角の喫茶店で、淹れたての濃い珈琲を一杯飲んだ。深い苦味が喉を潤し、頭が冴え渡って仕事の能率が上がった。
@@ -14548,7 +14541,7 @@
 - [daily_siracusa_37](#event-daily_siracusa_37) — 街灯の付け根に誰かが供えた小さな白百合の花束が置かれていた。昨晩、ここで誰かの命が失われたことを無言で物語っており、背筋が寒くなった。
 - [daily_siracusa_38](#event-daily_siracusa_38) — 雨の日の濡れた石畳で足を滑らせ、派手に転んで膝を強打してしまった。泥水で衣服が汚れ、痛みをこらえて帰宅した。
 - [daily_siracusa_50](#event-daily_siracusa_50) — 放課後、教会の回廊で友達と宿題を広げた。厳しい修道士に見つからないよう小声でおしゃべりしながら、古典文学の暗記を終えた。
-- [choice_siracusa_10](#event-choice_siracusa_10) — 新都市ウォルシーニの市民広場で、古くから伝わる伝統の手打ち麺料理を競い合う祝祭料理市が開かれた。広場には各街区の名だたる料理人や腕自慢が集まり、オリ…
+- [choice_siracusa_10](#event-choice_siracusa_10) — 近くの市民市場で料理の屋台が増え、店ごとに麺料理や煮込みを出していた。特別な全国行事という様子ではなく、街区の人が食事を楽しむ小さな催しらしい。
 - [daily_siesta_01](#event-daily_siesta_01) — どこまでも青く広がるシエスタの海辺を散歩した。寄せては返す白い波頭と心地よい潮風に吹かれ、日頃の疲れが綺麗に洗い流された。
 - [daily_siesta_02](#event-daily_siesta_02) — ビーチ沿いのオープンカフェで、冷たいトロピカルフルーツのジュースを注文した。爽やかな酸味と甘みが渇いた喉を潤し、至福のひとときを過ごした。
 - [daily_siesta_03](#event-daily_siesta_03) — 広場の特設ステージから、軽快なギターとドラムのセッションが聞こえてきた。道行く人々が足を止め、リズムに合わせて楽しそうに体を揺らしている。
@@ -14630,7 +14623,7 @@
 - [daily_sargon_57](#event-daily_sargon_57) — オアシスの砂丘の斜面を、木切れのソリに乗って何度も滑り降りて遊んだ。砂まみれになりながら友達と大笑いした。
 - [choice_sargon_02](#event-choice_sargon_02) — 地平線の彼方に、空を覆い尽くすほどの黒褐色の巨大な砂嵐（ハブーブ）の壁が迫ってきた。市場の広場には暴れる荷獣と取り残された商人たちが大パニックに陥っ…
 - [choice_sargon_06](#event-choice_sargon_06) — 砂漠のオアシスに立ち寄った遊牧民の大部族から、伝統の歓迎の宴に招かれた。巨大な天幕の中には焚き火が燃え盛り、丸焼きの羊肉と強い蒸留酒、激しい太鼓の演…
-- [choice_sargon_10](#event-choice_sargon_10) — 年に一度、砂漠中の隊商とオアシス住民が集う「大バザール祝祭」が開幕した。広大な広場には数千の天幕が立ち並び、オリエントの秘宝、珍しい動物、香辛料、甘…
+- [choice_sargon_10](#event-choice_sargon_10) — 交易路沿いのオアシスに隊商が何組か到着し、広場へ臨時の市が立った。食料、布、道具などが並ぶが、どこから来た品か分からないものも混じっている。
 - [daily_sami_01](#event-daily_sami_01) — 木造小屋の中央の炉に乾いた白樺の薪をくべた。パチパチとはぜる心地よい音とともに温かな橙色の炎が広がり、冷えた指先を芯から温めた。
 - [daily_sami_02](#event-daily_sami_02) — 原生林の茂みで、霜の降りた完熟コケモモの実を籠いっぱいに摘み取った。口に含むと鮮烈な酸味とほのかな甘みが広がり、疲れが吹き飛んだ。
 - [daily_sami_03](#event-daily_sami_03) — 澄み切った極北の夜空に、巨大な緑と紫のオーロラが天幕のように揺らめいた。息を呑むような大自然の神々しさに、魂が洗われるような感動を覚えた。
@@ -14671,7 +14664,7 @@
 - [daily_sami_38](#event-daily_sami_38) — 屋根に積もった重い雪が突然崩落し、軒下の作業場を直撃して道具を壊してしまった。
 - [daily_sami_57](#event-daily_sami_57) — 凍った雪の斜面で、木製の小ソリに乗って風を切りながら滑り降りた。転んで雪だるまになりながら歓声を上げた。
 - [choice_sami_07](#event-choice_sami_07) — 冬が本格化する前に、集落総出で大量の保存食の仕込みが行われた。川で獲れた鮭の燻製、山で摘んだコケモモのジャム煮、キノコの乾燥作業に追われている。
-- [choice_sami_10](#event-choice_sami_10) — 長い極夜が終わり、数ヶ月ぶりに地平線の上に太陽の光が戻ってくる「太陽迎えの冬至祭」が開幕した。広場には巨大なかがり火が焚かれ、全部族が手を取り合って…
+- [choice_sami_10](#event-choice_sami_10) — 冬の日照が短い時期、近くの人々が火のそばに集まり、温かい食事を分けていた。氏族や地域ごとの慣習は違うが、この場では寒さをしのぐために人が寄り合ってい…
 - [daily_kjerag_01](#event-daily_kjerag_01) — 山あいの民家の軒先で、淹れたての温かいバター茶を振る舞われた。濃厚なヤクの乳のコクと塩気が冷えた身体を芯から温め、深い安らぎを得た。
 - [daily_kjerag_02](#event-daily_kjerag_02) — 霊峰カランドの山頂が朝日に照らされ、黄金色に輝く「日照金山」の奇跡のような絶景を仰ぎ見た。清らかな祈りの心に満たされ、力が湧いた。
 - [daily_kjerag_03](#event-daily_kjerag_03) — 青麦（ツァンパ）を香ばしく炒って練り上げた主食を昼餉に食べた。素朴ながら噛むほどに広がる穀物の甘みに、確かな活力を得た。
@@ -14712,7 +14705,7 @@
 - [daily_kjerag_38](#event-daily_kjerag_38) — 夜間に急激に気温が下がり、水道管が凍結して破裂。朝から冷たい水浸しの部屋の片付けに追われた。
 - [daily_kjerag_57](#event-daily_kjerag_57) — 雪の積もった寺院の広場で、友達と手作りの木製コマを回して遊んだ。冷たい風も忘れて夢中になった。
 - [choice_kjerag_05](#event-choice_kjerag_05) — 秋の収穫を祝い、寺院の門前で伝統のバター茶と香ばしいツァンパを村人全員に振る舞う大盤振る舞いの宴が催された。大勢の人々が木椀を手に行列を作っている。
-- [choice_kjerag_10](#event-choice_kjerag_10) — 年に一度、イェラグ全土の信徒が聖峰の麓に集う「カランド年次大祭」が開幕した。山々には祈りのホルンの音が響き渡り、巫女による神聖な祝福の儀が執り行われ…
+- [choice_kjerag_10](#event-choice_kjerag_10) — 聖峰へ向かう人が増える時期になり、麓の集落では宿と食事の準備に追われていた。遠くから来た参詣者もいるが、誰がどこから来たのかまでは分からない。
 - [daily_kazdel_01](#event-daily_kazdel_01) — 移動テントの真ん中で、仲間たちと大鍋の芋と干し肉のシチューを囲んだ。湯気立つ素朴な温もりに、生き延びている実感と深い団結を噛み締めた。
 - [daily_kazdel_02](#event-daily_kazdel_02) — 荒野の廃材置き場から、まだ十分に使える厚手の真鍮板と頑丈なボルトを見つけ出した。生活の補修に役立つ思わぬ拾い物に胸を躍らせた。
 - [daily_kazdel_03](#event-daily_kazdel_03) — 夜、焚き火のそばで年老いたサルカズが弾く素朴な二弦琴の音色を聴いた。哀愁と誇りに満ちた旋律が荒野の夜風に溶け、心に深く染み渡った。
@@ -14752,13 +14745,12 @@
 - [daily_kazdel_37](#event-daily_kazdel_37) — 外国の悪質な武器商人が持ち込んだ粗悪な発電機が爆発し、貴重な燃料を失ってしまった。
 - [daily_kazdel_38](#event-daily_kazdel_38) — 戦場で命を落としたかつての戦友たちの墓標の前を通りかかり、抑えきれない悲痛な哀愁に胸が締め付けられた。
 - [daily_kazdel_55](#event-daily_kazdel_55) — 瓦礫の広場で、手作りの布ボールを蹴り合って友達と元気にボール遊びを楽しんだ。的に当たるたびに歓声を上げて跳び上がった。
-- [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
 - [daily_iberia_01](#event-daily_iberia_01) — 白壁の民家の路地で、天日に干された塩魚と完熟オリーブの素朴な昼餉をいただいた。塩気とオリーブ油の豊かな風味が滋味深く、歩き疲れた身体を満たした。
 - [daily_iberia_02](#event-daily_iberia_02) — 丘の上のオリーブ畑から、どこまでも静まり返った群青の海を見下ろした。黄金時代の面影を残す穏やかな潮風に吹かれ、心が静かに洗われた。
 - [daily_iberia_03](#event-daily_iberia_03) — 街角のパン屋で、オレンジの花水で香りづけされた焼き菓子を買った。柑橘の爽やかな甘みが口いっぱいに広がり、確かな幸福感を得た。
-- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段で、潮風に当たりながら手入れの行き届いた古いアコースティックギターを爪弾いた。哀愁を帯びた調べが静かな午後に響き渡った。
+- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段の近くで、誰かが古い弦楽器を静かに爪弾いていた。途切れ途切れの調べを聞きながら、しばらく足を止めた。
 - [daily_iberia_05](#event-daily_iberia_05) — 近所の塩田の管理人から、初摘みの真っ白な天日塩（フルール・ド・セル）を一袋分けてもらった。大地の恵みに感謝した。
-- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で磨き上げた。差し込む光が色鮮やかな幾何学模様を石畳に落とし、心が安らいだ。
+- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で拭く手伝いをした。差し込む光が色のついた模様を石畳に落とした。
 - [daily_iberia_07](#event-daily_iberia_07) — 涼しい夕暮れ時、広場の井戸端で近所の人々と穏やかな世間話を交わした。厳しい時代の中にも息づく人の温もりに触れた。
 - [daily_iberia_08](#event-daily_iberia_08) — 路地裏の古道具屋で、かつて黄金時代に使われていた真鍮製の小さな羅針盤を見つけた。針が静かに北を指す様子に、失われゆく航海のロマンを感じた。
 - [daily_iberia_09](#event-daily_iberia_09) — 強い日差しを遮る白い布の天蓋の下で、冷たいレモン水を飲んだ。渇いた喉に心地よい刺激が走り、元気が回復した。
@@ -14788,13 +14780,12 @@
 - [daily_iberia_33](#event-daily_iberia_33) — 夜半、海の方角から霧が立ち込め、街全体を冷たく湿った白い帳が包み込んでいった。
 - [daily_iberia_34](#event-daily_iberia_34) — 仕立て屋の店先で、黒いラシャ布で仕立てられた質素で頑丈な作業着を眺めた。
 - [daily_iberia_35](#event-daily_iberia_35) — 審問所の巡回兵に突然路上で呼び止められ、持ち物をすべて地面にぶちまけられて執拗な尋問を受け、ひどい恐怖と屈辱を味わった。
-- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、異様な生臭さと蠢く影を目撃し、背筋の凍る悪寒に襲われて一目散に逃げ出した。
-- [daily_iberia_37](#event-daily_iberia_37) — 塩田で過酷な炎天下の重労働を続け、脱水症状と日焼けで倒れ込みそうになった。
+- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、風向きとは合わない生臭さと、崩れた家屋の奥で動く影を見かけた。正体を確かめず、その場を離れた。
+- [daily_iberia_37](#event-daily_iberia_37) — 塩田の作業を長く続けた日、強い日差しで喉が渇き、腕も重くなった。休憩所まで戻って水を飲み、しばらく日陰で身体を冷ました。
 - [daily_iberia_38](#event-daily_iberia_38) — 近所の住人が夜のうちに審問所へ連行されたという噂が広まり、重苦しい沈黙が界隈を支配した。
 - [daily_iberia_55](#event-daily_iberia_55) — 広場の石畳にチョークで船の絵を描き、友達と帆船ごっこをして遊んだ。大人たちの厳しい視線を避けて無邪気に笑い転げた。
 - [daily_iberia_61](#event-daily_iberia_61) — 夜半、審問官の黒外套が翻り、窓の隙間から細いランタンの光が室内の壁を舐めるように走った。呼吸すら止め、闇の中で身を縮こまらせた。
 - [choice_iberia_06](#event-choice_iberia_06) — 秋の丘陵地帯で、たわわに実った黒オリーブの一斉収穫が始まった。枝を揺すって実を落とし、大樽に集めて石臼で搾る村を挙げた大仕事だ。
-- [choice_iberia_10](#event-choice_iberia_10) — 大いなる静謐の犠牲者を追悼し、未来への希望を灯す「光のランタン祭」が開催された。広場から丘の上まで無数のランタンが灯され、厳かな祈りと賛美歌が夜空へ…
 - [daily_bolivar_01](#event-daily_bolivar_01) — 集落の木陰で、焼きたての香ばしいトウモロコシ粉の薄焼きパン（アレパ）にチーズを挟んで食べた。素朴で優しい甘みが口に広がり、力強い活力を得た。
 - [daily_bolivar_02](#event-daily_bolivar_02) — 突然の激しいスコールが通り過ぎ、洗い流された熱帯の木々の緑が鮮やかに輝いていた。立ち上る雨上がりの土の匂いに、大地の豊かな生命力を感じた。
 - [daily_bolivar_03](#event-daily_bolivar_03) — 小高い丘の展望台から、緑豊かなボリバルの山並みを見渡した。遠くの雲間から光が射し込む雄大な風景に、平和への祈りが静かに湧き上がった。
@@ -14834,7 +14825,7 @@
 - [daily_bolivar_37](#event-daily_bolivar_37) — 遠くの山岳地帯から重砲の砲声のような轟音が響き渡り、不穏な戦雲に生きた心地がしなかった。
 - [daily_bolivar_38](#event-daily_bolivar_38) — 郊外の農地で害獣やイナゴの群れが発生し、トウモロコシの収穫に大きな被害が出たと聞いた。市場での主食の値上がりや物資不足の懸念に、街角が重苦しい空気に…
 - [daily_bolivar_56](#event-daily_bolivar_56) — スコール上がりのぬかるんだ広場で、裸足になって泥んこになりながら友達と追いかけっこをして遊んだ。
-- [choice_bolivar_10](#event-choice_bolivar_10) — 内戦の銃声が止んだ収穫の季節、全村を挙げた「大地への感謝大祭」が開幕した。広場には焼きトウモロコシと豆料理の大鍋が並び、マリカの陽気なリズムに合わせ…
+- [choice_bolivar_10](#event-choice_bolivar_10) — 収穫を終えた近隣の農家が広場へ野菜や穀物を持ち寄り、小さな市が立った。食べ物を交換する人のそばで、仕事を終えた者たちが音楽を鳴らして休んでいる。
 - [daily_rim_01](#event-daily_rim_01) — 鉱山街のベーカリーで、焼き立ての特製ニンジンパイを買い求めた。シナモンの甘い香りとニンジンの濃厚な甘みが広がり、心も身体も満たされた。
 - [daily_rim_02](#event-daily_rim_02) — 夕暮れ時、作業を終えた鉱夫たちが集まる大衆食堂の前を通った。窓から漏れる賑やかな笑い声と香ばしい料理の匂いに、街の素朴な活気を感じた。
 - [daily_rim_03](#event-daily_rim_03) — 広大な露天掘り鉱区を見下ろす丘の上から、沈みゆく夕日を眺めた。幾重にも削られた大地の段々畑が黄金色に染まる壮大な光景に息を呑んだ。
@@ -14875,7 +14866,7 @@
 - [daily_rim_38](#event-daily_rim_38) — 近隣の採掘区で局所的な落盤事故の警報が鳴り響き、家族や仲間の安否を心配して生きた心地がしなかった。
 - [daily_rim_55](#event-daily_rim_55) — 街の工房の広場前を通ると、子どもたちが手押しトロッコの木製模型を組み立てて競い合っていた。車輪が滑らかに回るたびに上がる歓声に、ものづくりの楽しさを…
 - [choice_rim_04](#event-choice_rim_04) — 鉱山共同体の収穫期を祝う、伝統のニンジン焼き菓子品評会が開催された。広場には鉱夫街の腕自慢やパン職人が集まり、甘いスパイスと香ばしいパイ生地の匂いが…
-- [choice_rim_10](#event-choice_rim_10) — 過酷な鉱山から無事に生還した日々を祝い、大地の恵みに感謝する伝統の「採掘安全祈願ランタン祭」が執り行われた。数千の安全ヘルメットのライトと真鍮ランタ…
+- [choice_rim_10](#event-choice_rim_10) — 鉱区の勤務が一区切りついた夜、作業場の前で無事故だった班を労う食事が出された。ヘルメットを机へ置いた人々が、温かい料理を囲んでその日の仕事を振り返っ…
 - [daily_minos_01](#event-daily_minos_01) — 大理石の白い列柱が並ぶ回廊の木陰で、冷たい湧き水に完熟イチジクを浸して食べた。蜜のように甘い果汁が口いっぱいに広がり、深い幸福感に包まれた。
 - [daily_minos_02](#event-daily_minos_02) — 小高い丘の上の神殿から、どこまでも青く広がる空と緑のオリーブ畑を見下ろした。吹き抜ける涼風に英雄たちの伝説の息吹を感じ、心が洗われた。
 - [daily_minos_03](#event-daily_minos_03) — 広場の露店で、素焼きの小壺に入った搾りたての蜂蜜と山羊のフレッシュチーズを買った。素朴で濃厚な味わいに確かな活力を得た。
@@ -14916,7 +14907,6 @@
 - [daily_minos_38](#event-daily_minos_38) — 害虫の大量発生によってオリーブの果実が大きな被害を受け、今年の収穫への不安が街中に広がった。
 - [daily_minos_55](#event-daily_minos_55) — 広場の石畳で、木製の小盾と棒切れを持って英雄ごっこをして遊んだ。十二英雄の真似をして元気に駆け回った。
 - [choice_minos_09](#event-choice_minos_09) — 秋空の下、丘のブドウ園で糖度の乗った黒ブドウの一斉収穫が始まった。大きな木桶にブドウを放り込み、裸足になって皆で踏み潰す伝統の果汁絞りが繰り広げられ…
-- [choice_minos_10](#event-choice_minos_10) — ミノス全ポリスが一つになり、建国の十二英雄を称える世紀の「十二英雄合同大祭」が開幕した。アクロポリスから麓の広場まで聖火のパレードが続き、荘厳なホル…
 - [education_return_path](#event-education_return_path) — 途中で学び舎を離れたか、そもそも机を並べる機会がないまま歳月が過ぎた。今の読み書きの力と懐具合で、もう一度学べる場所がないか探してみた。
 - [education_paused_life](#event-education_paused_life) — 家計の都合や暮らしの混乱から、学校の席を休学にしてしばらく経った。同年代の生徒たちが鞄を抱えて通りを行き交う姿を見送りながら、この休みをどう過ごして…
 - [education_school_classroom](#event-education_school_classroom) — 放課後の教室で、黒板の脇に補習と共同課題の予定が書き出された。夕日が差し込むなか、同じ組の仲間と机を並べて片づけた。
@@ -15089,7 +15079,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-situation-312"></a>
-### 年齢：少年（1213）
+### 年齢：少年（1211）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
@@ -15389,7 +15379,7 @@
 - [daily_ursus_62](#event-daily_ursus_62) — 街角のレンガ壁に、憲兵隊による「不穏分子と隠れ感染者を密告せよ」という赤い墨の張り紙が何枚も重ねて貼られていた。道行く人々は目を伏せて早足に通り過ぎ…
 - [daily_ursus_64](#event-daily_ursus_64) — 毎朝挨拶を交わしていた隣家の窓に、突然黒い板が打ち付けられていた。昨夜、荷車が止まっていたこと以外、誰も何も語ろうとしなかった。
 - [choice_ursus_06](#event-choice_ursus_06) — 村の老木工職人が、白樺の樹皮を使った伝統の防湿木箱「ベレスタ」の製作技術を教えてくれるという。冬の長いウルサスで貴重な冬仕事になる。
-- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わりを告げ、春の訪れを祝う伝統行事「マースレニツァ」の日が訪れた。広場では藁人形が燃やされ、太陽を象徴する丸いクレープ（ブリヌイ）が山のように…
+- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わり、地区の広場に食べ物の屋台が数軒出て、人々が長い寒さの区切りをつけるように集まっていた。呼び名や祝い方は土地ごとに違うらしい。
 - [daily_victoria_01](#event-daily_victoria_01) — 午後の茶の時間に、素朴な焼き菓子に濃厚な生クリームと果実ジャムを添え、柑橘の香る温かい銘茶を味わった。贅沢な甘みに心が満たされた。
 - [daily_victoria_02](#event-daily_victoria_02) — 近所の大衆食堂で、揚げたての白身魚と香ばしい揚げ芋を頬張りながら麦茶を啜った。カリッとした衣の旨味に、一日の疲れが吹き飛んだ。
 - [daily_victoria_03](#event-daily_victoria_03) — 公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。
@@ -15476,7 +15466,7 @@
 - [daily_leithanien_58](#event-daily_leithanien_58) — 学び舎の音楽教室で、古いアーツ記譜法と合奏の構成理論を学んだ。旋律が織りなす整然とした規則性に触れ、音の奥深さに視界が一気に開けた。
 - [daily_leithanien_59](#event-daily_leithanien_59) — （動的本文）
 - [daily_leithanien_60](#event-daily_leithanien_60) — 実技試験の前夜、過度の緊張と不安で眠れず、胃を痛めてしまった。温かいカモミールティーを啜りながら、必死に心を落ち着かせた。
-- [choice_leithanien_10](#event-choice_leithanien_10) — 街路樹が初夏の花を咲かせる季節を迎え、都の広場で市民総出の初夏祭が開かれた。広場には焼き菓子や伝統料理の屋台が並び、優雅な円舞曲（ワルツ）に合わせて…
+- [choice_leithanien_10](#event-choice_leithanien_10) — 初夏の午後、広場の一角で小さな市が開かれ、焼き菓子の屋台のそばで数人の演奏家が曲を奏でていた。通りがかりの人が足を止め、短い休息を取っている。
 - [daily_laterano_01](#event-daily_laterano_01) — 聖都の有名な菓子舗で、焼きたての大判アップルパイを買って頬張った。シナモンと焦がしバターの極上の甘みに、思わず頬が緩むほどの幸福感を味わった。
 - [daily_laterano_02](#event-daily_laterano_02) — 広場のカフェのテラス席で、何種類ものベリーが山盛りに盛られたパフェをいただいた。甘いクリームと爽やかな酸味に、疲れが綺麗に溶け去った。
 - [daily_laterano_03](#event-daily_laterano_03) — 大聖堂の美しいステンドグラスから差し込む光のシャワーの下、聖歌隊の透き通るような賛美歌を聞いた。清らかな祈りに心が洗われた。
@@ -15521,7 +15511,7 @@
 - [daily_laterano_48](#event-daily_laterano_48) — 修道院付属学校の聖堂で、早朝の聖歌の合唱練習に参加した。澄み切った高音がドーム状の天井に美しく反響し、神聖な静寂に包まれた。
 - [daily_laterano_49](#event-daily_laterano_49) — 神学の授業で、古の教皇教書とラテラーノ法の条文解釈を学んだ。信仰と現実の統治が織りなす高度な論理体系に深く引き込まれた。
 - [daily_laterano_52](#event-daily_laterano_52) — 学校の射撃大会でクラス代表として出場し、見事に的を射抜いて準優勝の銀メダルを獲得した。級友たちと肩を組んで歓声を上げた。
-- [choice_laterano_10](#event-choice_laterano_10) — 春の復活祭を迎え、聖都の広場という広場が色とりどりの砂糖菓子と花々で飾り付けられた。巨大な特製ケーキが切り分けられ、誰もが平和と甘味を分かち合う最大…
+- [choice_laterano_10](#event-choice_laterano_10) — 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 - [daily_columbia_01](#event-daily_columbia_01) — ダイナーのカウンターで、焼きたての分厚い挽肉を挟んだ肉パンと大盛りの揚げ芋を頬張った。冷たい炭酸水を飲み干し、開拓者の活力を補給した。
 - [daily_columbia_02](#event-daily_columbia_02) — 市場の食料品店で、特売の大きな豆ペーストの瓶と山積みの素焼きパンを買い込んだ。開拓地ならではの規格外の大きさに、思わず笑みがこぼれた。
 - [daily_columbia_03](#event-daily_columbia_03) — 幹線道路沿いの休憩所で、淹れたての熱い穀物茶と揚げ菓子のセットを頼んだ。どこまでも続くまっすぐな地平線を眺めながら、自由な風を感じた。
@@ -15605,7 +15595,7 @@
 - [daily_kazimierz_58](#event-daily_kazimierz_58) — 放課後、クラスメイトたちと憧れの競技騎士のトレーディングカードの交換会を開いた。お目当ての激レアカードを手に入れて飛び上がって喜んだ。
 - [daily_kazimierz_59](#event-daily_kazimierz_59) — 商業倫理の講義で、現代騎士競技におけるスポンサーシップと八百長対策の法規制を学んだ。夢の舞台の裏にある現実の複雑さを知った。
 - [daily_kazimierz_60](#event-daily_kazimierz_60) — 高額な騎士学校の学費と武具の維持費の請求書を前に、親が深いため息をついていた。期待に応えなければならないプレッシャーが重く圧し掛かった。
-- [choice_kazimierz_10](#event-choice_kazimierz_10) — 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、…
+- [choice_kazimierz_10](#event-choice_kazimierz_10) — 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募って…
 - [daily_siracusa_01](#event-daily_siracusa_01) — 石畳の細い路地を歩いていると、どこかの民家の換気口から焦がしたニンニクと完熟トマトの濃密な香りが漂ってきた。シラクーザの路地裏には、いつでも誰かの家…
 - [daily_siracusa_02](#event-daily_siracusa_02) — 夕暮れどきの広場で、近所の老人たちが木製のベンチに腰掛け、ジェスチャーを激しく交えながら今日の出来事について熱弁を振るっていた。陽気な笑い声に心が温…
 - [daily_siracusa_03](#event-daily_siracusa_03) — 街角の喫茶店で、淹れたての濃い珈琲を一杯飲んだ。深い苦味が喉を潤し、頭が冴え渡って仕事の能率が上がった。
@@ -15647,7 +15637,7 @@
 - [daily_siracusa_50](#event-daily_siracusa_50) — 放課後、教会の回廊で友達と宿題を広げた。厳しい修道士に見つからないよう小声でおしゃべりしながら、古典文学の暗記を終えた。
 - [daily_siracusa_51](#event-daily_siracusa_51) — 広場で開かれた市民討論会を遠巻きに眺めた。若い法学生たちが「ファミリーの暴力ではなく、市民の手による法の支配を」と熱く演説していた。
 - [choice_siracusa_05](#event-choice_siracusa_05) — 雨上がりの路地裏で、血を流して倒れている男を見つけた。肩口を深く撃たれて息も絶え絶えだが、仕立ての良いスーツを着ており、どこかの構成員であることは明…
-- [choice_siracusa_10](#event-choice_siracusa_10) — 新都市ウォルシーニの市民広場で、古くから伝わる伝統の手打ち麺料理を競い合う祝祭料理市が開かれた。広場には各街区の名だたる料理人や腕自慢が集まり、オリ…
+- [choice_siracusa_10](#event-choice_siracusa_10) — 近くの市民市場で料理の屋台が増え、店ごとに麺料理や煮込みを出していた。特別な全国行事という様子ではなく、街区の人が食事を楽しむ小さな催しらしい。
 - [daily_siesta_01](#event-daily_siesta_01) — どこまでも青く広がるシエスタの海辺を散歩した。寄せては返す白い波頭と心地よい潮風に吹かれ、日頃の疲れが綺麗に洗い流された。
 - [daily_siesta_02](#event-daily_siesta_02) — ビーチ沿いのオープンカフェで、冷たいトロピカルフルーツのジュースを注文した。爽やかな酸味と甘みが渇いた喉を潤し、至福のひとときを過ごした。
 - [daily_siesta_03](#event-daily_siesta_03) — 広場の特設ステージから、軽快なギターとドラムのセッションが聞こえてきた。道行く人々が足を止め、リズムに合わせて楽しそうに体を揺らしている。
@@ -15737,7 +15727,7 @@
 - [choice_sargon_02](#event-choice_sargon_02) — 地平線の彼方に、空を覆い尽くすほどの黒褐色の巨大な砂嵐（ハブーブ）の壁が迫ってきた。市場の広場には暴れる荷獣と取り残された商人たちが大パニックに陥っ…
 - [choice_sargon_06](#event-choice_sargon_06) — 砂漠のオアシスに立ち寄った遊牧民の大部族から、伝統の歓迎の宴に招かれた。巨大な天幕の中には焚き火が燃え盛り、丸焼きの羊肉と強い蒸留酒、激しい太鼓の演…
 - [choice_sargon_08](#event-choice_sargon_08) — 雨林の祭祀場で、各部族の誉れを賭けた古式武闘の儀が執り行われていた。熱狂する部族民たちの前で、踏み固められた土俵で鍛え抜かれた勇士たちが技と力、アー…
-- [choice_sargon_10](#event-choice_sargon_10) — 年に一度、砂漠中の隊商とオアシス住民が集う「大バザール祝祭」が開幕した。広大な広場には数千の天幕が立ち並び、オリエントの秘宝、珍しい動物、香辛料、甘…
+- [choice_sargon_10](#event-choice_sargon_10) — 交易路沿いのオアシスに隊商が何組か到着し、広場へ臨時の市が立った。食料、布、道具などが並ぶが、どこから来た品か分からないものも混じっている。
 - [daily_sami_01](#event-daily_sami_01) — 木造小屋の中央の炉に乾いた白樺の薪をくべた。パチパチとはぜる心地よい音とともに温かな橙色の炎が広がり、冷えた指先を芯から温めた。
 - [daily_sami_02](#event-daily_sami_02) — 原生林の茂みで、霜の降りた完熟コケモモの実を籠いっぱいに摘み取った。口に含むと鮮烈な酸味とほのかな甘みが広がり、疲れが吹き飛んだ。
 - [daily_sami_03](#event-daily_sami_03) — 澄み切った極北の夜空に、巨大な緑と紫のオーロラが天幕のように揺らめいた。息を呑むような大自然の神々しさに、魂が洗われるような感動を覚えた。
@@ -15779,7 +15769,7 @@
 - [daily_sami_57](#event-daily_sami_57) — 凍った雪の斜面で、木製の小ソリに乗って風を切りながら滑り降りた。転んで雪だるまになりながら歓声を上げた。
 - [daily_sami_58](#event-daily_sami_58) — 父親から初めて自分専用の小型の狩猟弓を授かった。弓の弦を力強く引き絞り、狩人としての自覚が芽生えた。
 - [choice_sami_07](#event-choice_sami_07) — 冬が本格化する前に、集落総出で大量の保存食の仕込みが行われた。川で獲れた鮭の燻製、山で摘んだコケモモのジャム煮、キノコの乾燥作業に追われている。
-- [choice_sami_10](#event-choice_sami_10) — 長い極夜が終わり、数ヶ月ぶりに地平線の上に太陽の光が戻ってくる「太陽迎えの冬至祭」が開幕した。広場には巨大なかがり火が焚かれ、全部族が手を取り合って…
+- [choice_sami_10](#event-choice_sami_10) — 冬の日照が短い時期、近くの人々が火のそばに集まり、温かい食事を分けていた。氏族や地域ごとの慣習は違うが、この場では寒さをしのぐために人が寄り合ってい…
 - [daily_kjerag_01](#event-daily_kjerag_01) — 山あいの民家の軒先で、淹れたての温かいバター茶を振る舞われた。濃厚なヤクの乳のコクと塩気が冷えた身体を芯から温め、深い安らぎを得た。
 - [daily_kjerag_02](#event-daily_kjerag_02) — 霊峰カランドの山頂が朝日に照らされ、黄金色に輝く「日照金山」の奇跡のような絶景を仰ぎ見た。清らかな祈りの心に満たされ、力が湧いた。
 - [daily_kjerag_03](#event-daily_kjerag_03) — 青麦（ツァンパ）を香ばしく炒って練り上げた主食を昼餉に食べた。素朴ながら噛むほどに広がる穀物の甘みに、確かな活力を得た。
@@ -15821,7 +15811,7 @@
 - [daily_kjerag_57](#event-daily_kjerag_57) — 雪の積もった寺院の広場で、友達と手作りの木製コマを回して遊んだ。冷たい風も忘れて夢中になった。
 - [daily_kjerag_58](#event-daily_kjerag_58) — 長老から高山特有の気象の読み方を教わった。「雲が山頂に傘をかけたら午後は吹雪になる」という教えをしっかり記憶した。
 - [choice_kjerag_05](#event-choice_kjerag_05) — 秋の収穫を祝い、寺院の門前で伝統のバター茶と香ばしいツァンパを村人全員に振る舞う大盤振る舞いの宴が催された。大勢の人々が木椀を手に行列を作っている。
-- [choice_kjerag_10](#event-choice_kjerag_10) — 年に一度、イェラグ全土の信徒が聖峰の麓に集う「カランド年次大祭」が開幕した。山々には祈りのホルンの音が響き渡り、巫女による神聖な祝福の儀が執り行われ…
+- [choice_kjerag_10](#event-choice_kjerag_10) — 聖峰へ向かう人が増える時期になり、麓の集落では宿と食事の準備に追われていた。遠くから来た参詣者もいるが、誰がどこから来たのかまでは分からない。
 - [daily_kazdel_01](#event-daily_kazdel_01) — 移動テントの真ん中で、仲間たちと大鍋の芋と干し肉のシチューを囲んだ。湯気立つ素朴な温もりに、生き延びている実感と深い団結を噛み締めた。
 - [daily_kazdel_02](#event-daily_kazdel_02) — 荒野の廃材置き場から、まだ十分に使える厚手の真鍮板と頑丈なボルトを見つけ出した。生活の補修に役立つ思わぬ拾い物に胸を躍らせた。
 - [daily_kazdel_03](#event-daily_kazdel_03) — 夜、焚き火のそばで年老いたサルカズが弾く素朴な二弦琴の音色を聴いた。哀愁と誇りに満ちた旋律が荒野の夜風に溶け、心に深く染み渡った。
@@ -15862,13 +15852,12 @@
 - [daily_kazdel_38](#event-daily_kazdel_38) — 戦場で命を落としたかつての戦友たちの墓標の前を通りかかり、抑えきれない悲痛な哀愁に胸が締め付けられた。
 - [daily_kazdel_55](#event-daily_kazdel_55) — 瓦礫の広場で、手作りの布ボールを蹴り合って友達と元気にボール遊びを楽しんだ。的に当たるたびに歓声を上げて跳び上がった。
 - [daily_kazdel_56](#event-daily_kazdel_56) — 青空教室のテントで、文字の読み書きと計算を熱心に勉強した。「知識こそが国を再建する力だ」という先生の言葉を胸に刻んだ。
-- [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
 - [daily_iberia_01](#event-daily_iberia_01) — 白壁の民家の路地で、天日に干された塩魚と完熟オリーブの素朴な昼餉をいただいた。塩気とオリーブ油の豊かな風味が滋味深く、歩き疲れた身体を満たした。
 - [daily_iberia_02](#event-daily_iberia_02) — 丘の上のオリーブ畑から、どこまでも静まり返った群青の海を見下ろした。黄金時代の面影を残す穏やかな潮風に吹かれ、心が静かに洗われた。
 - [daily_iberia_03](#event-daily_iberia_03) — 街角のパン屋で、オレンジの花水で香りづけされた焼き菓子を買った。柑橘の爽やかな甘みが口いっぱいに広がり、確かな幸福感を得た。
-- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段で、潮風に当たりながら手入れの行き届いた古いアコースティックギターを爪弾いた。哀愁を帯びた調べが静かな午後に響き渡った。
+- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段の近くで、誰かが古い弦楽器を静かに爪弾いていた。途切れ途切れの調べを聞きながら、しばらく足を止めた。
 - [daily_iberia_05](#event-daily_iberia_05) — 近所の塩田の管理人から、初摘みの真っ白な天日塩（フルール・ド・セル）を一袋分けてもらった。大地の恵みに感謝した。
-- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で磨き上げた。差し込む光が色鮮やかな幾何学模様を石畳に落とし、心が安らいだ。
+- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で拭く手伝いをした。差し込む光が色のついた模様を石畳に落とした。
 - [daily_iberia_07](#event-daily_iberia_07) — 涼しい夕暮れ時、広場の井戸端で近所の人々と穏やかな世間話を交わした。厳しい時代の中にも息づく人の温もりに触れた。
 - [daily_iberia_08](#event-daily_iberia_08) — 路地裏の古道具屋で、かつて黄金時代に使われていた真鍮製の小さな羅針盤を見つけた。針が静かに北を指す様子に、失われゆく航海のロマンを感じた。
 - [daily_iberia_09](#event-daily_iberia_09) — 強い日差しを遮る白い布の天蓋の下で、冷たいレモン水を飲んだ。渇いた喉に心地よい刺激が走り、元気が回復した。
@@ -15898,8 +15887,8 @@
 - [daily_iberia_33](#event-daily_iberia_33) — 夜半、海の方角から霧が立ち込め、街全体を冷たく湿った白い帳が包み込んでいった。
 - [daily_iberia_34](#event-daily_iberia_34) — 仕立て屋の店先で、黒いラシャ布で仕立てられた質素で頑丈な作業着を眺めた。
 - [daily_iberia_35](#event-daily_iberia_35) — 審問所の巡回兵に突然路上で呼び止められ、持ち物をすべて地面にぶちまけられて執拗な尋問を受け、ひどい恐怖と屈辱を味わった。
-- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、異様な生臭さと蠢く影を目撃し、背筋の凍る悪寒に襲われて一目散に逃げ出した。
-- [daily_iberia_37](#event-daily_iberia_37) — 塩田で過酷な炎天下の重労働を続け、脱水症状と日焼けで倒れ込みそうになった。
+- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、風向きとは合わない生臭さと、崩れた家屋の奥で動く影を見かけた。正体を確かめず、その場を離れた。
+- [daily_iberia_37](#event-daily_iberia_37) — 塩田の作業を長く続けた日、強い日差しで喉が渇き、腕も重くなった。休憩所まで戻って水を飲み、しばらく日陰で身体を冷ました。
 - [daily_iberia_38](#event-daily_iberia_38) — 近所の住人が夜のうちに審問所へ連行されたという噂が広まり、重苦しい沈黙が界隈を支配した。
 - [daily_iberia_55](#event-daily_iberia_55) — 広場の石畳にチョークで船の絵を描き、友達と帆船ごっこをして遊んだ。大人たちの厳しい視線を避けて無邪気に笑い転げた。
 - [daily_iberia_56](#event-daily_iberia_56) — 教会の聖歌隊の練習に参加し、澄み切った高音で賛美歌を歌い上げた。神聖なハーモニーに包まれ、心が洗われた。
@@ -15908,7 +15897,6 @@
 - [daily_iberia_64](#event-daily_iberia_64) — 海岸へ続く立ち入り禁止の小道に鉄条網が張り巡らされ、潮風に晒された警告板が打ち捨てられていた。海への恐怖と警戒が染み付いた土地の空気に、背筋が寒くな…
 - [choice_iberia_02](#event-choice_iberia_02) — 薄暗い夕暮れの路地で、黒外套の審問官たちに突然進路を塞がれた。「怪しい気配が漂っている。所属と所持品、昨夜の行動を答えよ」と冷徹なランタンの光を顔に…
 - [choice_iberia_06](#event-choice_iberia_06) — 秋の丘陵地帯で、たわわに実った黒オリーブの一斉収穫が始まった。枝を揺すって実を落とし、大樽に集めて石臼で搾る村を挙げた大仕事だ。
-- [choice_iberia_10](#event-choice_iberia_10) — 大いなる静謐の犠牲者を追悼し、未来への希望を灯す「光のランタン祭」が開催された。広場から丘の上まで無数のランタンが灯され、厳かな祈りと賛美歌が夜空へ…
 - [daily_bolivar_01](#event-daily_bolivar_01) — 集落の木陰で、焼きたての香ばしいトウモロコシ粉の薄焼きパン（アレパ）にチーズを挟んで食べた。素朴で優しい甘みが口に広がり、力強い活力を得た。
 - [daily_bolivar_02](#event-daily_bolivar_02) — 突然の激しいスコールが通り過ぎ、洗い流された熱帯の木々の緑が鮮やかに輝いていた。立ち上る雨上がりの土の匂いに、大地の豊かな生命力を感じた。
 - [daily_bolivar_03](#event-daily_bolivar_03) — 小高い丘の展望台から、緑豊かなボリバルの山並みを見渡した。遠くの雲間から光が射し込む雄大な風景に、平和への祈りが静かに湧き上がった。
@@ -15949,7 +15937,7 @@
 - [daily_bolivar_38](#event-daily_bolivar_38) — 郊外の農地で害獣やイナゴの群れが発生し、トウモロコシの収穫に大きな被害が出たと聞いた。市場での主食の値上がりや物資不足の懸念に、街角が重苦しい空気に…
 - [daily_bolivar_56](#event-daily_bolivar_56) — スコール上がりのぬかるんだ広場で、裸足になって泥んこになりながら友達と追いかけっこをして遊んだ。
 - [daily_bolivar_57](#event-daily_bolivar_57) — 父親からコーヒー豆の選別と土作りの基礎を教わった。大地に根差して生きる農民の誇りを学んだ。
-- [choice_bolivar_10](#event-choice_bolivar_10) — 内戦の銃声が止んだ収穫の季節、全村を挙げた「大地への感謝大祭」が開幕した。広場には焼きトウモロコシと豆料理の大鍋が並び、マリカの陽気なリズムに合わせ…
+- [choice_bolivar_10](#event-choice_bolivar_10) — 収穫を終えた近隣の農家が広場へ野菜や穀物を持ち寄り、小さな市が立った。食べ物を交換する人のそばで、仕事を終えた者たちが音楽を鳴らして休んでいる。
 - [daily_rim_01](#event-daily_rim_01) — 鉱山街のベーカリーで、焼き立ての特製ニンジンパイを買い求めた。シナモンの甘い香りとニンジンの濃厚な甘みが広がり、心も身体も満たされた。
 - [daily_rim_02](#event-daily_rim_02) — 夕暮れ時、作業を終えた鉱夫たちが集まる大衆食堂の前を通った。窓から漏れる賑やかな笑い声と香ばしい料理の匂いに、街の素朴な活気を感じた。
 - [daily_rim_03](#event-daily_rim_03) — 広大な露天掘り鉱区を見下ろす丘の上から、沈みゆく夕日を眺めた。幾重にも削られた大地の段々畑が黄金色に染まる壮大な光景に息を呑んだ。
@@ -15991,7 +15979,7 @@
 - [daily_rim_55](#event-daily_rim_55) — 街の工房の広場前を通ると、子どもたちが手押しトロッコの木製模型を組み立てて競い合っていた。車輪が滑らかに回るたびに上がる歓声に、ものづくりの楽しさを…
 - [daily_rim_56](#event-daily_rim_56) — 父親のヘルメットを被って鏡の前に立ち、一人前の鉱夫になった姿を想像した。家族を支える誇りを胸に抱いた。
 - [choice_rim_04](#event-choice_rim_04) — 鉱山共同体の収穫期を祝う、伝統のニンジン焼き菓子品評会が開催された。広場には鉱夫街の腕自慢やパン職人が集まり、甘いスパイスと香ばしいパイ生地の匂いが…
-- [choice_rim_10](#event-choice_rim_10) — 過酷な鉱山から無事に生還した日々を祝い、大地の恵みに感謝する伝統の「採掘安全祈願ランタン祭」が執り行われた。数千の安全ヘルメットのライトと真鍮ランタ…
+- [choice_rim_10](#event-choice_rim_10) — 鉱区の勤務が一区切りついた夜、作業場の前で無事故だった班を労う食事が出された。ヘルメットを机へ置いた人々が、温かい料理を囲んでその日の仕事を振り返っ…
 - [daily_minos_01](#event-daily_minos_01) — 大理石の白い列柱が並ぶ回廊の木陰で、冷たい湧き水に完熟イチジクを浸して食べた。蜜のように甘い果汁が口いっぱいに広がり、深い幸福感に包まれた。
 - [daily_minos_02](#event-daily_minos_02) — 小高い丘の上の神殿から、どこまでも青く広がる空と緑のオリーブ畑を見下ろした。吹き抜ける涼風に英雄たちの伝説の息吹を感じ、心が洗われた。
 - [daily_minos_03](#event-daily_minos_03) — 広場の露店で、素焼きの小壺に入った搾りたての蜂蜜と山羊のフレッシュチーズを買った。素朴で濃厚な味わいに確かな活力を得た。
@@ -16035,7 +16023,6 @@
 - [choice_minos_03](#event-choice_minos_03) — 聖なる競技場で、ミノス全ポリスから集まった屈強な戦士たちが技を競う「体育競技大祭」が開幕した。メイン種目は伝統のパレストラ（レスリング）と円盤投げ。…
 - [choice_minos_05](#event-choice_minos_05) — 盲目の老吟遊詩人が、ミノス十二英雄の壮大な叙事詩をすべて記憶し歌い継ぐ若き後継者を探している。何千行もの詩節を記憶し、竪琴を奏でながら民衆の心を揺さ…
 - [choice_minos_09](#event-choice_minos_09) — 秋空の下、丘のブドウ園で糖度の乗った黒ブドウの一斉収穫が始まった。大きな木桶にブドウを放り込み、裸足になって皆で踏み潰す伝統の果汁絞りが繰り広げられ…
-- [choice_minos_10](#event-choice_minos_10) — ミノス全ポリスが一つになり、建国の十二英雄を称える世紀の「十二英雄合同大祭」が開幕した。アクロポリスから麓の広場まで聖火のパレードが続き、荘厳なホル…
 - [confined_care](#event-confined_care) — 皮膚の下の結晶が疼き、夜中に目を覚ます日が増えた。外の街の診療所へは足を運べず、閉ざされた区画の中で順番が回ってくるのをじっと待っている。
 - [confined_pet_care](#event-confined_pet_care) — 隔離された生活が長引き、ずっと家を空けたままになっている。部屋に残してきた生き物の水や餌を誰に頼むか、そして預けたあとの餌代をどう送り続けるかで頭が…
 - [confinement_wait](#event-confinement_wait) — 収容中 朝の点呼が終わると、灰色の壁に背を預けて次の合図を待った。今日が何月何日なのか思い出すのに、ずいぶん時間がかかった。 隣の寝床の住人と、外に…
@@ -16100,6 +16087,7 @@
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
+- [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [ori_work_safety_instruction](#event-ori_work_safety_instruction) — 粉塵の舞う工程へ入る前、使い回しの手袋に黒っぽい粉がこびりついているのに気づいた。頭上の換気扇からは乾いた異音が響いている。
 - [ori_post_catastrophe_ground](#event-ori_post_catastrophe_ground) — 崩れた通りを歩いていると、ぬかるんだ土の中に黒く光る欠片がいくつも混じっているのが目に入った。ただの石炭か、それとも活性を持った源石の欠片か、遠目に…
 - [ori_school_fragment](#event-ori_school_fragment) — 遊びからの帰り道、前を歩いていた友だちが道端に落ちていた黒く光る石ころに手を伸ばした。ただのガラス片か源石の欠片か咄嗟には分からず、胸がひやりとした…
@@ -16305,7 +16293,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-situation-313"></a>
-### 年齢：青年（2380）
+### 年齢：青年（2378）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -16734,7 +16722,7 @@
 - [choice_lungmen_07](#event-choice_lungmen_07) — スラム街で貧民や感染者を無償で診ている地下診療所が、止血剤と抗感染薬の在庫が底をついて閉鎖の危機に瀕していた。医師が悲痛な面持ちで支援を呼びかけてい…
 - [choice_lungmen_08](#event-choice_lungmen_08) — ネオン街の裏路地で、上等な絹の服を着て泣きじゃくっている迷子の小さな子どもを見かけた。身につけている装飾品から、上層区の富裕層の令息であることが窺え…
 - [choice_lungmen_09](#event-choice_lungmen_09) — 雑居ビルの低層階から火の手が上がり、黒煙が階段を駆け上がった。非常ベルが鳴り響く中、煙に巻かれて逃げ遅れた住人たちが上の階から助けを求めている。
-- [choice_lungmen_10](#event-choice_lungmen_10) — 年に一度の「九龍美食競宴」が開催され、誰でもオリジナル料理で出店できる看板屋台大会が開かれていた。優勝すれば龍門全土に名が売れ、多額の賞金が出る。
+- [choice_lungmen_10](#event-choice_lungmen_10) — 夜市の一角で、数軒の屋台が新しい料理を出して客の反応を競う小さな催しを始めていた。客足が増え、臨時の手伝いを探す店もある。
 - [daily_higashi_01](#event-daily_higashi_01) — 山あいの鄙びた温泉宿で湯煙に包まれ、手足を伸ばして湯治を楽しんだ。硫黄の香りと清らかなせせらぎに、日頃の凝りが芯からほぐれていった。
 - [daily_higashi_02](#event-daily_higashi_02) — 春風に揺れる桜並木の下を歩いた。花びらがはらはらと肩に舞い散り、道行く人々も足を止めて春の訪れを静かに愛でていた。
 - [daily_higashi_03](#event-daily_higashi_03) — 朝餉に炊きたての新米と香ばしい焼き魚、大根の味噌汁をいただいた。素朴ながら滋味豊かな味わいに、身体の奥から力が湧いてきた。
@@ -16878,7 +16866,7 @@
 - [choice_ursus_07](#event-choice_ursus_07) — 過酷な鉱区から脱走してきた感染者の若い鉱夫が、凍傷で足を引きずりながらあなたの納屋に転がり込んできた。「追っ手に見つかれば射殺される」と絶望の目で震…
 - [choice_ursus_08](#event-choice_ursus_08) — 豪奢な貴族の屋敷の大屋根に分厚い雪が積もり、倒壊の危険があるため高額な日当で臨時の雪下ろし人足が募集されていた。足場は凍りつき極めて滑りやすい。
 - [choice_ursus_09](#event-choice_ursus_09) — 郊外の打ち捨てられた古い要塞の地下で、旧公爵家が秘匿していたとされる非公開の蔵書庫が見つかった。学術調査隊が同行者を募っている。
-- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わりを告げ、春の訪れを祝う伝統行事「マースレニツァ」の日が訪れた。広場では藁人形が燃やされ、太陽を象徴する丸いクレープ（ブリヌイ）が山のように…
+- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わり、地区の広場に食べ物の屋台が数軒出て、人々が長い寒さの区切りをつけるように集まっていた。呼び名や祝い方は土地ごとに違うらしい。
 - [daily_victoria_01](#event-daily_victoria_01) — 午後の茶の時間に、素朴な焼き菓子に濃厚な生クリームと果実ジャムを添え、柑橘の香る温かい銘茶を味わった。贅沢な甘みに心が満たされた。
 - [daily_victoria_02](#event-daily_victoria_02) — 近所の大衆食堂で、揚げたての白身魚と香ばしい揚げ芋を頬張りながら麦茶を啜った。カリッとした衣の旨味に、一日の疲れが吹き飛んだ。
 - [daily_victoria_03](#event-daily_victoria_03) — 公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。
@@ -17021,7 +17009,7 @@
 - [choice_leithanien_07](#event-choice_leithanien_07) — 百年以上続く老舗カフェの老パティシエが、引退を前に秘伝の「ザッハトルテ」の調合ノートを受け継ぐ後継者を探している。厳格な味覚と職人気質が求められる。
 - [choice_leithanien_08](#event-choice_leithanien_08) — 表舞台を追われた感染者音楽家たちが、廃教会の地下で密かに市民向けの慈善演奏会を計画していた。憲兵に見つかれば全員逮捕だが、彼らは音楽の灯を消したくな…
 - [choice_leithanien_09](#event-choice_leithanien_09) — 雪深き山頂の感染者療養所へ、冬越しのための医薬品と食料を届けるトランスポーターが募集されていた。急峻な崖道と吹雪を越える命がけの輸送任務だ。
-- [choice_leithanien_10](#event-choice_leithanien_10) — 街路樹が初夏の花を咲かせる季節を迎え、都の広場で市民総出の初夏祭が開かれた。広場には焼き菓子や伝統料理の屋台が並び、優雅な円舞曲（ワルツ）に合わせて…
+- [choice_leithanien_10](#event-choice_leithanien_10) — 初夏の午後、広場の一角で小さな市が開かれ、焼き菓子の屋台のそばで数人の演奏家が曲を奏でていた。通りがかりの人が足を止め、短い休息を取っている。
 - [daily_laterano_01](#event-daily_laterano_01) — 聖都の有名な菓子舗で、焼きたての大判アップルパイを買って頬張った。シナモンと焦がしバターの極上の甘みに、思わず頬が緩むほどの幸福感を味わった。
 - [daily_laterano_02](#event-daily_laterano_02) — 広場のカフェのテラス席で、何種類ものベリーが山盛りに盛られたパフェをいただいた。甘いクリームと爽やかな酸味に、疲れが綺麗に溶け去った。
 - [daily_laterano_03](#event-daily_laterano_03) — 大聖堂の美しいステンドグラスから差し込む光のシャワーの下、聖歌隊の透き通るような賛美歌を聞いた。清らかな祈りに心が洗われた。
@@ -17091,7 +17079,7 @@
 - [choice_laterano_07](#event-choice_laterano_07) — 聖都で長年愛されてきた焼き菓子舗の店主が、高齢のため信頼できる共同経営者を探していた。出資して新店舗の出店に加われば、安定した配当と菓子開発の権利が…
 - [choice_laterano_08](#event-choice_laterano_08) — ラテラーノの難解な公証法の手続きに困り果てていた地方出身のリーベリの商人が、店舗の営業許可申請が通らず立ち往生していた。あなたの法知識と助力を求めて…
 - [choice_laterano_09](#event-choice_laterano_09) — 聖都の大聖堂の鐘楼にある巨大な大鐘「福音の鐘」の固定金具が緩み、調律が狂い始めていた。地上数十メートルの吹きさらしの足場で、金具の締め直しと調律を行…
-- [choice_laterano_10](#event-choice_laterano_10) — 春の復活祭を迎え、聖都の広場という広場が色とりどりの砂糖菓子と花々で飾り付けられた。巨大な特製ケーキが切り分けられ、誰もが平和と甘味を分かち合う最大…
+- [choice_laterano_10](#event-choice_laterano_10) — 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 - [daily_columbia_01](#event-daily_columbia_01) — ダイナーのカウンターで、焼きたての分厚い挽肉を挟んだ肉パンと大盛りの揚げ芋を頬張った。冷たい炭酸水を飲み干し、開拓者の活力を補給した。
 - [daily_columbia_02](#event-daily_columbia_02) — 市場の食料品店で、特売の大きな豆ペーストの瓶と山積みの素焼きパンを買い込んだ。開拓地ならではの規格外の大きさに、思わず笑みがこぼれた。
 - [daily_columbia_03](#event-daily_columbia_03) — 幹線道路沿いの休憩所で、淹れたての熱い穀物茶と揚げ菓子のセットを頼んだ。どこまでも続くまっすぐな地平線を眺めながら、自由な風を感じた。
@@ -17234,7 +17222,7 @@
 - [choice_kazimierz_07](#event-choice_kazimierz_07) — 大手飲料メーカーから、「新発売のエナジードリンクの宣伝として街頭ビジョンやポスターに出てほしい」と破格の報酬でオファーされた。ただし過激な演出が求め…
 - [choice_kazimierz_08](#event-choice_kazimierz_08) — かつて街の英雄だった老騎士が、病と借金で住まいを追い出されそうになっていた。商業連盟の取り立て屋が無慈悲に退去を迫っている。
 - [choice_kazimierz_09](#event-choice_kazimierz_09) — ある情報屋から、「商業連盟の大物幹部が関与する八百長試合の決定的な帳簿データがある。高値で買って告発するか、企業に買い取らせるか選べ」と取引を持ちか…
-- [choice_kazimierz_10](#event-choice_kazimierz_10) — 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、…
+- [choice_kazimierz_10](#event-choice_kazimierz_10) — 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募って…
 - [daily_siracusa_01](#event-daily_siracusa_01) — 石畳の細い路地を歩いていると、どこかの民家の換気口から焦がしたニンニクと完熟トマトの濃密な香りが漂ってきた。シラクーザの路地裏には、いつでも誰かの家…
 - [daily_siracusa_02](#event-daily_siracusa_02) — 夕暮れどきの広場で、近所の老人たちが木製のベンチに腰掛け、ジェスチャーを激しく交えながら今日の出来事について熱弁を振るっていた。陽気な笑い声に心が温…
 - [daily_siracusa_03](#event-daily_siracusa_03) — 街角の喫茶店で、淹れたての濃い珈琲を一杯飲んだ。深い苦味が喉を潤し、頭が冴え渡って仕事の能率が上がった。
@@ -17300,7 +17288,7 @@
 - [choice_siracusa_07](#event-choice_siracusa_07) — 近所のパン屋の主人が青ざめた顔で相談してきた。シマを仕切るファミリーが代替わりし、みかじめ料を一気に2倍に跳ね上げると通告してきたという。このままで…
 - [choice_siracusa_08](#event-choice_siracusa_08) — 旧市街の古い居住区画に、大手開発企業と手を組んだファミリーの使いが現れ、新都市構想のための立ち退きを迫ってきた。長年住み慣れた住民たちは路頭に迷うと…
 - [choice_siracusa_09](#event-choice_siracusa_09) — 夜の運河沿いの倉庫街を歩いていると、霧の向こうで小型船から密輸された武器とオリジニウム製品を陸揚げしている現場に鉢合わせてしまった。見張りの男たちが…
-- [choice_siracusa_10](#event-choice_siracusa_10) — 新都市ウォルシーニの市民広場で、古くから伝わる伝統の手打ち麺料理を競い合う祝祭料理市が開かれた。広場には各街区の名だたる料理人や腕自慢が集まり、オリ…
+- [choice_siracusa_10](#event-choice_siracusa_10) — 近くの市民市場で料理の屋台が増え、店ごとに麺料理や煮込みを出していた。特別な全国行事という様子ではなく、街区の人が食事を楽しむ小さな催しらしい。
 - [daily_siesta_01](#event-daily_siesta_01) — どこまでも青く広がるシエスタの海辺を散歩した。寄せては返す白い波頭と心地よい潮風に吹かれ、日頃の疲れが綺麗に洗い流された。
 - [daily_siesta_02](#event-daily_siesta_02) — ビーチ沿いのオープンカフェで、冷たいトロピカルフルーツのジュースを注文した。爽やかな酸味と甘みが渇いた喉を潤し、至福のひとときを過ごした。
 - [daily_siesta_03](#event-daily_siesta_03) — 広場の特設ステージから、軽快なギターとドラムのセッションが聞こえてきた。道行く人々が足を止め、リズムに合わせて楽しそうに体を揺らしている。
@@ -17435,7 +17423,7 @@
 - [choice_sargon_07](#event-choice_sargon_07) — 隊商に同行して砂漠の峠を越える途中、岩陰から武装した砂漠の盗賊団が姿を現し、荷物の引き渡しを要求してきた。護衛の兵士たちと一触即発の睨み合いとなって…
 - [choice_sargon_08](#event-choice_sargon_08) — 雨林の祭祀場で、各部族の誉れを賭けた古式武闘の儀が執り行われていた。熱狂する部族民たちの前で、踏み固められた土俵で鍛え抜かれた勇士たちが技と力、アー…
 - [choice_sargon_09](#event-choice_sargon_09) — パーディシャーの配下の代官が、砂漠の関所での通行税を不当に引き上げた。このままでは小規模な商人や農民たちが破産してしまう。商人組合が連名で宮殿へ減税…
-- [choice_sargon_10](#event-choice_sargon_10) — 年に一度、砂漠中の隊商とオアシス住民が集う「大バザール祝祭」が開幕した。広大な広場には数千の天幕が立ち並び、オリエントの秘宝、珍しい動物、香辛料、甘…
+- [choice_sargon_10](#event-choice_sargon_10) — 交易路沿いのオアシスに隊商が何組か到着し、広場へ臨時の市が立った。食料、布、道具などが並ぶが、どこから来た品か分からないものも混じっている。
 - [daily_sami_01](#event-daily_sami_01) — 木造小屋の中央の炉に乾いた白樺の薪をくべた。パチパチとはぜる心地よい音とともに温かな橙色の炎が広がり、冷えた指先を芯から温めた。
 - [daily_sami_02](#event-daily_sami_02) — 原生林の茂みで、霜の降りた完熟コケモモの実を籠いっぱいに摘み取った。口に含むと鮮烈な酸味とほのかな甘みが広がり、疲れが吹き飛んだ。
 - [daily_sami_03](#event-daily_sami_03) — 澄み切った極北の夜空に、巨大な緑と紫のオーロラが天幕のように揺らめいた。息を呑むような大自然の神々しさに、魂が洗われるような感動を覚えた。
@@ -17501,7 +17489,7 @@
 - [choice_sami_07](#event-choice_sami_07) — 冬が本格化する前に、集落総出で大量の保存食の仕込みが行われた。川で獲れた鮭の燻製、山で摘んだコケモモのジャム煮、キノコの乾燥作業に追われている。
 - [choice_sami_08](#event-choice_sami_08) — 極寒の夜を乗り切るため、発酵させたコケモモと大麦、薬草を蒸留器にかけ、度数の高いサーミ特製の薬用蒸留酒（アクアビット）を造ることになった。
 - [choice_sami_09](#event-choice_sami_09) — クルビアの大手研究所から派遣された学術調査隊が、サーミの原生林の生態系調査のため、現地の地形を知り尽くした案内人を高額の日当で募集している。
-- [choice_sami_10](#event-choice_sami_10) — 長い極夜が終わり、数ヶ月ぶりに地平線の上に太陽の光が戻ってくる「太陽迎えの冬至祭」が開幕した。広場には巨大なかがり火が焚かれ、全部族が手を取り合って…
+- [choice_sami_10](#event-choice_sami_10) — 冬の日照が短い時期、近くの人々が火のそばに集まり、温かい食事を分けていた。氏族や地域ごとの慣習は違うが、この場では寒さをしのぐために人が寄り合ってい…
 - [daily_kjerag_01](#event-daily_kjerag_01) — 山あいの民家の軒先で、淹れたての温かいバター茶を振る舞われた。濃厚なヤクの乳のコクと塩気が冷えた身体を芯から温め、深い安らぎを得た。
 - [daily_kjerag_02](#event-daily_kjerag_02) — 霊峰カランドの山頂が朝日に照らされ、黄金色に輝く「日照金山」の奇跡のような絶景を仰ぎ見た。清らかな祈りの心に満たされ、力が湧いた。
 - [daily_kjerag_03](#event-daily_kjerag_03) — 青麦（ツァンパ）を香ばしく炒って練り上げた主食を昼餉に食べた。素朴ながら噛むほどに広がる穀物の甘みに、確かな活力を得た。
@@ -17567,7 +17555,7 @@
 - [choice_kjerag_07](#event-choice_kjerag_07) — 春の訪れとともに、山上の放牧地でヤクの毛刈りの季節がやってきた。ヤクの胸元の産毛から採れる柔らかな最高級カシミヤ毛糸を紡ぎ、名産ショールを織り上げる…
 - [choice_kjerag_08](#event-choice_kjerag_08) — カランド貿易が外国から最新の滅菌器や手術器具を寄贈しようとしたが、寺院の頑固な古老たちが「神聖な寺院に得体の知れない外国の機械を入れるな」と拒絶して…
 - [choice_kjerag_09](#event-choice_kjerag_09) — 聖山を貫く鉄道トンネルの難所工事現場で、硬い花崗岩の岩盤が行く手を阻み、地下水の噴出が発生した。工期が遅れれば雪の季節に間に合わない。緊急の支保工補…
-- [choice_kjerag_10](#event-choice_kjerag_10) — 年に一度、イェラグ全土の信徒が聖峰の麓に集う「カランド年次大祭」が開幕した。山々には祈りのホルンの音が響き渡り、巫女による神聖な祝福の儀が執り行われ…
+- [choice_kjerag_10](#event-choice_kjerag_10) — 聖峰へ向かう人が増える時期になり、麓の集落では宿と食事の準備に追われていた。遠くから来た参詣者もいるが、誰がどこから来たのかまでは分からない。
 - [daily_kazdel_01](#event-daily_kazdel_01) — 移動テントの真ん中で、仲間たちと大鍋の芋と干し肉のシチューを囲んだ。湯気立つ素朴な温もりに、生き延びている実感と深い団結を噛み締めた。
 - [daily_kazdel_02](#event-daily_kazdel_02) — 荒野の廃材置き場から、まだ十分に使える厚手の真鍮板と頑丈なボルトを見つけ出した。生活の補修に役立つ思わぬ拾い物に胸を躍らせた。
 - [daily_kazdel_03](#event-daily_kazdel_03) — 夜、焚き火のそばで年老いたサルカズが弾く素朴な二弦琴の音色を聴いた。哀愁と誇りに満ちた旋律が荒野の夜風に溶け、心に深く染み渡った。
@@ -17633,13 +17621,12 @@
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
 - [choice_kazdel_09](#event-choice_kazdel_09) — 移動集落の定住化を進めるため、荒野の地下深くを流れる水脈を探り当て、新たな深井戸を掘削する大事業が始まった。硬い岩盤を貫く難工事となっている。
-- [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
 - [daily_iberia_01](#event-daily_iberia_01) — 白壁の民家の路地で、天日に干された塩魚と完熟オリーブの素朴な昼餉をいただいた。塩気とオリーブ油の豊かな風味が滋味深く、歩き疲れた身体を満たした。
 - [daily_iberia_02](#event-daily_iberia_02) — 丘の上のオリーブ畑から、どこまでも静まり返った群青の海を見下ろした。黄金時代の面影を残す穏やかな潮風に吹かれ、心が静かに洗われた。
 - [daily_iberia_03](#event-daily_iberia_03) — 街角のパン屋で、オレンジの花水で香りづけされた焼き菓子を買った。柑橘の爽やかな甘みが口いっぱいに広がり、確かな幸福感を得た。
-- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段で、潮風に当たりながら手入れの行き届いた古いアコースティックギターを爪弾いた。哀愁を帯びた調べが静かな午後に響き渡った。
+- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段の近くで、誰かが古い弦楽器を静かに爪弾いていた。途切れ途切れの調べを聞きながら、しばらく足を止めた。
 - [daily_iberia_05](#event-daily_iberia_05) — 近所の塩田の管理人から、初摘みの真っ白な天日塩（フルール・ド・セル）を一袋分けてもらった。大地の恵みに感謝した。
-- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で磨き上げた。差し込む光が色鮮やかな幾何学模様を石畳に落とし、心が安らいだ。
+- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で拭く手伝いをした。差し込む光が色のついた模様を石畳に落とした。
 - [daily_iberia_07](#event-daily_iberia_07) — 涼しい夕暮れ時、広場の井戸端で近所の人々と穏やかな世間話を交わした。厳しい時代の中にも息づく人の温もりに触れた。
 - [daily_iberia_08](#event-daily_iberia_08) — 路地裏の古道具屋で、かつて黄金時代に使われていた真鍮製の小さな羅針盤を見つけた。針が静かに北を指す様子に、失われゆく航海のロマンを感じた。
 - [daily_iberia_09](#event-daily_iberia_09) — 強い日差しを遮る白い布の天蓋の下で、冷たいレモン水を飲んだ。渇いた喉に心地よい刺激が走り、元気が回復した。
@@ -17669,8 +17656,8 @@
 - [daily_iberia_33](#event-daily_iberia_33) — 夜半、海の方角から霧が立ち込め、街全体を冷たく湿った白い帳が包み込んでいった。
 - [daily_iberia_34](#event-daily_iberia_34) — 仕立て屋の店先で、黒いラシャ布で仕立てられた質素で頑丈な作業着を眺めた。
 - [daily_iberia_35](#event-daily_iberia_35) — 審問所の巡回兵に突然路上で呼び止められ、持ち物をすべて地面にぶちまけられて執拗な尋問を受け、ひどい恐怖と屈辱を味わった。
-- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、異様な生臭さと蠢く影を目撃し、背筋の凍る悪寒に襲われて一目散に逃げ出した。
-- [daily_iberia_37](#event-daily_iberia_37) — 塩田で過酷な炎天下の重労働を続け、脱水症状と日焼けで倒れ込みそうになった。
+- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、風向きとは合わない生臭さと、崩れた家屋の奥で動く影を見かけた。正体を確かめず、その場を離れた。
+- [daily_iberia_37](#event-daily_iberia_37) — 塩田の作業を長く続けた日、強い日差しで喉が渇き、腕も重くなった。休憩所まで戻って水を飲み、しばらく日陰で身体を冷ました。
 - [daily_iberia_38](#event-daily_iberia_38) — 近所の住人が夜のうちに審問所へ連行されたという噂が広まり、重苦しい沈黙が界隈を支配した。
 - [daily_iberia_39](#event-daily_iberia_39) — 審問所の外郭警備任務に就いた。ランタンの灯りを掲げ、暗闇の海岸線から這い上がる脅威に目を光らせた。
 - [daily_iberia_40](#event-daily_iberia_40) — 広場の石壁に張り出された審問所の布告を眺めた。「我らは沈黙に抗い、光を守る最後の砦である」という峻厳な文言に、この国を覆う緊張感を肌で感じた。
@@ -17688,8 +17675,8 @@
 - [daily_iberia_52](#event-daily_iberia_52) — 険しい内陸の峠道を見上げ、もし検問を避けて旅をするならあの厳しい山道を越えねばならないのかと思いを巡らせた。星明かりの下、静まり返る山並みに身震いし…
 - [daily_iberia_53](#event-daily_iberia_53) — 塩気の強い安物の雑穀パンをぬるま湯に浸してすすった。冷え込む夜、隙間風の入る粗末な納屋で毛布を被って丸くなった。
 - [daily_iberia_54](#event-daily_iberia_54) — 海岸の立ち入り禁止区域の手前で、波に打ち寄せられた海藻や流木を拾い集めて燃料にした。厳しい生活を耐え抜いた。
-- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の町グランファロの古い石壁に沿って歩いた。潮の匂いを含んだ風が壁の隙間を吹き抜け、かつての住民たちが残した古い標識が静かに佇んでいた。
-- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、グランファロの街頭にガス灯が一斉に灯された。潮風に揺れる柔らかな灯火が石畳を照らし出し、荒涼とした沿岸の町に静かな安らぎをもたらしていた。
+- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の古い集落で、風雨に削られた石壁に沿って歩いた。壁の隙間を潮風が抜け、昔の住民が残した標識がところどころに残っていた。
+- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、沿岸の集落で街灯が順に灯された。風に揺れる明かりが石畳を照らし、人通りの減った道に細い光が続いた。
 - [daily_iberia_61](#event-daily_iberia_61) — 夜半、審問官の黒外套が翻り、窓の隙間から細いランタンの光が室内の壁を舐めるように走った。呼吸すら止め、闇の中で身を縮こまらせた。
 - [daily_iberia_62](#event-daily_iberia_62) — 朝、近所の路地を通ると、知り合いの民家の扉に審問所の印が刻まれた赤い封印札が貼られていた。誰もその家の名を口にしなくなった。
 - [daily_iberia_63](#event-daily_iberia_63) — 礼拝の終わりに、厳格な司祭が会衆を見回しながら帳面へ何事かを書き留めていた。周囲の信徒たちの視線が疑心暗鬼に泳ぎ、教会内に張り詰めた沈黙が流れた。
@@ -17700,10 +17687,10 @@
 - [choice_iberia_04](#event-choice_iberia_04) — 夏の強い日差しによって塩田の水が一気に干上がり、結晶化した純白の天日塩の収穫期を迎えた。重い塩を木舟ですくい上げ、乾燥小屋へ運ぶ過酷な力仕事が募集さ…
 - [choice_iberia_05](#event-choice_iberia_05) — 古い教会の床下から、黄金時代の大航海時代に描かれた羊皮紙の古航海図が発見された。暗号化された緯度経度と海流データが記されている。解読できれば失われた…
 - [choice_iberia_06](#event-choice_iberia_06) — 秋の丘陵地帯で、たわわに実った黒オリーブの一斉収穫が始まった。枝を揺すって実を落とし、大樽に集めて石臼で搾る村を挙げた大仕事だ。
-- [choice_iberia_07](#event-choice_iberia_07) — 沿岸の入り江で、夜陰に乗じて外国の密輸船が危険な禁制品（未検査の海洋生物や武器）を陸揚げしようとしているのを目撃した。見張りの男たちが周囲を警戒して…
-- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔の海外渡航歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と泣きつ…
-- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に製作された大型の真鍮製屈折望遠鏡が発見された。レンズは曇り、歯車は錆びついている。修復して澄み切った星空を観測しようと…
-- [choice_iberia_10](#event-choice_iberia_10) — 大いなる静謐の犠牲者を追悼し、未来への希望を灯す「光のランタン祭」が開催された。広場から丘の上まで無数のランタンが灯され、厳かな祈りと賛美歌が夜空へ…
+- [choice_iberia_07](#event-choice_iberia_07) — 夜の入り江で、船籍の分からない小型舟艇から、布をかぶせた荷箱が浜へ運び込まれているのを見かけた。荷の中身も運び手の素性も分からないまま、見張り役らし…
+- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔に他国を訪れた経歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と…
+- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に作られた真鍮製の望遠鏡を見つけた。レンズは曇り、歯車には錆が浮いている。自分で分解する前に、どう扱うか考えた。
+- [choice_iberia_telescope_observation_followup](#event-choice_iberia_telescope_observation_followup) — 修理して手元に残した望遠鏡は、しばらく布をかけたまま置いてあった。雲の少ない夜、窓の外を見て、久しぶりに筒を外へ向けることにした。
 - [daily_bolivar_01](#event-daily_bolivar_01) — 集落の木陰で、焼きたての香ばしいトウモロコシ粉の薄焼きパン（アレパ）にチーズを挟んで食べた。素朴で優しい甘みが口に広がり、力強い活力を得た。
 - [daily_bolivar_02](#event-daily_bolivar_02) — 突然の激しいスコールが通り過ぎ、洗い流された熱帯の木々の緑が鮮やかに輝いていた。立ち上る雨上がりの土の匂いに、大地の豊かな生命力を感じた。
 - [daily_bolivar_03](#event-daily_bolivar_03) — 小高い丘の展望台から、緑豊かなボリバルの山並みを見渡した。遠くの雲間から光が射し込む雄大な風景に、平和への祈りが静かに湧き上がった。
@@ -17769,7 +17756,7 @@
 - [choice_bolivar_07](#event-choice_bolivar_07) — 過去の戦闘で屋根が吹き飛び、放置されていた村の小学校の校舎を再建する運動が始まった。「子供たちに銃ではなくペンを持たせたい」という村人たちの願いが込…
 - [choice_bolivar_08](#event-choice_bolivar_08) — ドッソレスの繁華街にある裏カジノで、外国マフィアがイカサマ装置を使って観光客から不当に金を巻き上げている現場の証拠を掴んだ。市警に通報するか、直接取…
 - [choice_bolivar_09](#event-choice_bolivar_09) — 深い渓谷に架かる古い蔓と木の吊り橋が老朽化し、踏み板が抜けて渡るのが命がけになっている。対岸の集落と協力し、鋼鉄ワイヤーを使った頑丈な吊り橋に架け替…
-- [choice_bolivar_10](#event-choice_bolivar_10) — 内戦の銃声が止んだ収穫の季節、全村を挙げた「大地への感謝大祭」が開幕した。広場には焼きトウモロコシと豆料理の大鍋が並び、マリカの陽気なリズムに合わせ…
+- [choice_bolivar_10](#event-choice_bolivar_10) — 収穫を終えた近隣の農家が広場へ野菜や穀物を持ち寄り、小さな市が立った。食べ物を交換する人のそばで、仕事を終えた者たちが音楽を鳴らして休んでいる。
 - [daily_rim_01](#event-daily_rim_01) — 鉱山街のベーカリーで、焼き立ての特製ニンジンパイを買い求めた。シナモンの甘い香りとニンジンの濃厚な甘みが広がり、心も身体も満たされた。
 - [daily_rim_02](#event-daily_rim_02) — 夕暮れ時、作業を終えた鉱夫たちが集まる大衆食堂の前を通った。窓から漏れる賑やかな笑い声と香ばしい料理の匂いに、街の素朴な活気を感じた。
 - [daily_rim_03](#event-daily_rim_03) — 広大な露天掘り鉱区を見下ろす丘の上から、沈みゆく夕日を眺めた。幾重にも削られた大地の段々畑が黄金色に染まる壮大な光景に息を呑んだ。
@@ -17835,7 +17822,7 @@
 - [choice_rim_07](#event-choice_rim_07) — 週末の夜、鉱山街最大のパブ「ドリル＆ホップ」で恒例の力自慢腕相撲トーナメントが開催された。熱狂する鉱夫たちの声援の中、屈強な猛者たちがテーブルを挟ん…
 - [choice_rim_08](#event-choice_rim_08) — 鉱区住宅の粉塵被害を軽減するため、慈善基金から寄贈された高性能エアフィルターと換気ファンを、高齢者や呼吸器の弱い家庭へ一軒ずつ取り付けて回るボランテ…
 - [choice_rim_09](#event-choice_rim_09) — 鉱区の北東方向に大規模な天災雲（源石嵐）が観測された。採掘プラットフォームを安全地帯へ緊急移動させるため、脚部アンカーの引き抜きと移動機構の最終点検…
-- [choice_rim_10](#event-choice_rim_10) — 過酷な鉱山から無事に生還した日々を祝い、大地の恵みに感謝する伝統の「採掘安全祈願ランタン祭」が執り行われた。数千の安全ヘルメットのライトと真鍮ランタ…
+- [choice_rim_10](#event-choice_rim_10) — 鉱区の勤務が一区切りついた夜、作業場の前で無事故だった班を労う食事が出された。ヘルメットを机へ置いた人々が、温かい料理を囲んでその日の仕事を振り返っ…
 - [daily_minos_01](#event-daily_minos_01) — 大理石の白い列柱が並ぶ回廊の木陰で、冷たい湧き水に完熟イチジクを浸して食べた。蜜のように甘い果汁が口いっぱいに広がり、深い幸福感に包まれた。
 - [daily_minos_02](#event-daily_minos_02) — 小高い丘の上の神殿から、どこまでも青く広がる空と緑のオリーブ畑を見下ろした。吹き抜ける涼風に英雄たちの伝説の息吹を感じ、心が洗われた。
 - [daily_minos_03](#event-daily_minos_03) — 広場の露店で、素焼きの小壺に入った搾りたての蜂蜜と山羊のフレッシュチーズを買った。素朴で濃厚な味わいに確かな活力を得た。
@@ -17901,7 +17888,6 @@
 - [choice_minos_07](#event-choice_minos_07) — アスクレピオスの神殿施療院で、秋の季節の変わり目に体調を崩した多くの巡礼者たちが訪れている。野生の薬草の調合や、温泉治療の入浴補助を行うボランティア…
 - [choice_minos_08](#event-choice_minos_08) — 隣接する二つのポリスの間で、水源の利用権とオリーブ畑の境界線を巡って激しい口論となり、一触即発の武力衝突の危機が生じた。公正中立な市民陪審員として調…
 - [choice_minos_09](#event-choice_minos_09) — 秋空の下、丘のブドウ園で糖度の乗った黒ブドウの一斉収穫が始まった。大きな木桶にブドウを放り込み、裸足になって皆で踏み潰す伝統の果汁絞りが繰り広げられ…
-- [choice_minos_10](#event-choice_minos_10) — ミノス全ポリスが一つになり、建国の十二英雄を称える世紀の「十二英雄合同大祭」が開幕した。アクロポリスから麓の広場まで聖火のパレードが続き、荘厳なホル…
 - [confined_care](#event-confined_care) — 皮膚の下の結晶が疼き、夜中に目を覚ます日が増えた。外の街の診療所へは足を運べず、閉ざされた区画の中で順番が回ってくるのをじっと待っている。
 - [confined_pet_care](#event-confined_pet_care) — 隔離された生活が長引き、ずっと家を空けたままになっている。部屋に残してきた生き物の水や餌を誰に頼むか、そして預けたあとの餌代をどう送り続けるかで頭が…
 - [confinement_wait](#event-confinement_wait) — 収容中 朝の点呼が終わると、灰色の壁に背を預けて次の合図を待った。今日が何月何日なのか思い出すのに、ずいぶん時間がかかった。 隣の寝床の住人と、外に…
@@ -17952,9 +17938,9 @@
 - [family_spouse_disclosure_followup](#event-family_spouse_disclosure_followup) — 鉱石病を打ち明けられた夜から、二人は同じ家の別々の部屋で眠るようになった。次の通院のことも、ずっと隠されていた年月のことも、食卓では互いに口に出せな…
 - [family_newlywed_residence](#event-family_newlywed_residence) — 結婚が決まってから、二人でどこに新居を構えるかの話し合いが続いた。借家の敷金や親の面倒、互いの職場までの道のりを考え合わせると、簡単には決められなか…
 - [kazimierz_knight_entry](#event-kazimierz_knight_entry) — 仕事帰りに競技会場へ立ち寄り、きらびやかなネオンの奥にある受付で、騎士競技の舞台に立つ手順を尋ねてみた。自前で登録料と武具を揃えて予選に挑むか、有力…
-- [life_goal_start](#event-life_goal_start) — 仕事帰りに借りていた道具を返し、夕餉の食材を買い込んで家路を歩いた。ただ今日を回すだけで過ぎていく日々のなかで、これから先、自分が何を支えに生きてい…
+- [life_goal_start](#event-life_goal_start) — 仕事を終えて家路につく途中、今日の失敗やうまくいった手順を思い返した。ただ一日を回すだけで過ぎていく暮らしのなかで、これから先、自分が何を支えに生き…
 - [life_goal_review](#event-life_goal_review) — かつて心に決めた目標を、日々の忙しさのなかでふと思い返した。仕事や家の事情もあの頃とは変わり、これからどう向き合っていくか考え直した。
-- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると手元が狂いそうになる。居残りで手を動かして慣らすか、自前で道具を揃えて熟練の先輩にコツを教わるか考え…
+- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると判断や手順が乱れそうになる。終業後に苦手な流れを確かめるか、自分で必要な教材や道具を用意して経験の長…
 - [life_rim_supply_delay](#event-life_rim_supply_delay) — 鉱区へ届くはずの交換部品の輸送便が遅れ、急ぎの修理に必要な部材が底をついた。止まった重機の警報音が作業場中に鳴り響いている。自腹で消耗品を買い足して…
 - [life_rim_skill_handover](#event-life_rim_skill_handover) — 整備の現場にもすっかり慣れ、機械の異音を聞き分けるのも早くなった。最近入ってきた新人が、外した部品の戻し方や異音の見極め方で立ち往生し、休憩時間に心…
 - [life_goal_resume](#event-life_goal_resume) — しばらく胸の奥にしまい込んでいたかつての目標を、ふとした折に思い出した。日々の暮らしが少し落ち着いた今、もう一度手をつけてみるか考えた。
@@ -18143,8 +18129,7 @@
 - [life_leithanian_noble_household_after_exit](#event-life_leithanian_noble_household_after_exit) — 屋敷の務めを離れてから、ずいぶん長い年月が経った。それでも、複雑な出納や古い目録をさばいた手際は、今の仕事や暮らしの中でもふとした拍子に顔を出す。あ…
 - [asset_choice_workshop_open](#event-asset_choice_workshop_open) — これまでに培った技術と知見を活かし、自らの看板を掲げて小さな工房や店舗（仕立て屋、パン屋、修理工房、薬草店）を開業する相談を持ちかけられた。
 - [asset_daily_workshop_revenue](#event-asset_daily_workshop_revenue) — 工房の店先で注文主と打ち合わせをし、丹精込めて仕上げた品を納品した。手渡された代金を金庫に収め、自らの腕で稼ぎ出す手応えを噛み締めた。
-- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — 不意の天災や移動都市の区画被災に備え、民間保険会社が提供する「天災総合避難・再建保険」の案内が届いた。年々の保険料を納めることで、被災時に速やかな補…
-- [asset_catastrophe_insurance_claim](#event-asset_catastrophe_insurance_claim) — 天災の混乱の中、避難所で保険会社の臨時窓口を見つけた。避難証明書と保険証書を提示したところ、迅速な審査が行われた。
+- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 - [life_rim_skill_handover_followup](#event-life_rim_skill_handover_followup) — 見習いと一緒に機械の点検手順を確かめ合った頃から、ずいぶん年月が経った。ある日、若い作業員が油の染みた古い点検メモを手にやって来た。昔の手帳を開いて…
 - [life_rim_workmate_followup](#event-life_rim_workmate_followup) — 昔、作業の手ほどきを頼んできた{rimWorkmateName}と作業場の外で久しぶりに顔を合わせた。あの頃一緒にやった点検のことで聞きたいことがあ…
 - [family_spouse_household_arrangement](#event-family_spouse_household_arrangement) — 前に決めた家計や家事の分担が今の暮らしに合っているか、夜の食卓で改めて話し合った。互いの仕事や家族の事情も変わり、見直す時期が来ていた。 夕食の後、…
@@ -18162,6 +18147,7 @@
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
+- [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_arts_overload_crisis](#event-life_arts_overload_crisis) — 激しい精神の昂ぶりと疲弊のなか、体内の源石結晶が異常励起を起こし、アーツの奔流が意識の制御を離れて逆流し始めた。皮膚下の結晶が赤黒く脈打って熱を帯び…
 - [life_columbia_clinical_trap_decision](#event-life_columbia_clinical_trap_decision) — 多額の負債と生活苦のなか、製薬企業の代理人を名乗る男から『新薬の短期被験者になるだけで借金を全額肩代わりする』という契約書を差し出された。だが添付さ…
 - [life_lynch_mob_siege](#event-life_lynch_mob_siege) — 夜更け、怒号と松明の火がアパートの窓を赤く照らし出した。棍棒を持った排斥暴徒が『忌み者を焼き出せ』と叫びながら玄関扉を叩き壊そうとしている。廊下には…
@@ -18424,7 +18410,7 @@
 - [car_col_pioneer_daily_01](#event-car_col_pioneer_daily_01) — 乾いた土煙が舞う荒野の農場で、地下水汲み上げポンプのモーターを分解修理した。厳しい日差しの中、自らの手で開墾した畑に緑の芽が吹くのを見つめる。すべて…
 - [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
 - [car_kaz_comp_knight_daily_01](#event-car_kaz_comp_knight_daily_01) — 照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と…
-- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する…
+- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFi…
 - [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。…
 - [car_sir_soldier_daily_01](#event-car_sir_soldier_daily_01) — 石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コー…
 - [car_sir_soldier_choice_turf_war](#event-car_sir_soldier_choice_turf_war) — 隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。…
@@ -18688,7 +18674,7 @@
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 
 <a id="tag-situation-314"></a>
-### 年齢：壮年（2320）
+### 年齢：壮年（2318）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -19095,7 +19081,7 @@
 - [choice_lungmen_07](#event-choice_lungmen_07) — スラム街で貧民や感染者を無償で診ている地下診療所が、止血剤と抗感染薬の在庫が底をついて閉鎖の危機に瀕していた。医師が悲痛な面持ちで支援を呼びかけてい…
 - [choice_lungmen_08](#event-choice_lungmen_08) — ネオン街の裏路地で、上等な絹の服を着て泣きじゃくっている迷子の小さな子どもを見かけた。身につけている装飾品から、上層区の富裕層の令息であることが窺え…
 - [choice_lungmen_09](#event-choice_lungmen_09) — 雑居ビルの低層階から火の手が上がり、黒煙が階段を駆け上がった。非常ベルが鳴り響く中、煙に巻かれて逃げ遅れた住人たちが上の階から助けを求めている。
-- [choice_lungmen_10](#event-choice_lungmen_10) — 年に一度の「九龍美食競宴」が開催され、誰でもオリジナル料理で出店できる看板屋台大会が開かれていた。優勝すれば龍門全土に名が売れ、多額の賞金が出る。
+- [choice_lungmen_10](#event-choice_lungmen_10) — 夜市の一角で、数軒の屋台が新しい料理を出して客の反応を競う小さな催しを始めていた。客足が増え、臨時の手伝いを探す店もある。
 - [daily_higashi_01](#event-daily_higashi_01) — 山あいの鄙びた温泉宿で湯煙に包まれ、手足を伸ばして湯治を楽しんだ。硫黄の香りと清らかなせせらぎに、日頃の凝りが芯からほぐれていった。
 - [daily_higashi_02](#event-daily_higashi_02) — 春風に揺れる桜並木の下を歩いた。花びらがはらはらと肩に舞い散り、道行く人々も足を止めて春の訪れを静かに愛でていた。
 - [daily_higashi_03](#event-daily_higashi_03) — 朝餉に炊きたての新米と香ばしい焼き魚、大根の味噌汁をいただいた。素朴ながら滋味豊かな味わいに、身体の奥から力が湧いてきた。
@@ -19228,7 +19214,7 @@
 - [choice_ursus_07](#event-choice_ursus_07) — 過酷な鉱区から脱走してきた感染者の若い鉱夫が、凍傷で足を引きずりながらあなたの納屋に転がり込んできた。「追っ手に見つかれば射殺される」と絶望の目で震…
 - [choice_ursus_08](#event-choice_ursus_08) — 豪奢な貴族の屋敷の大屋根に分厚い雪が積もり、倒壊の危険があるため高額な日当で臨時の雪下ろし人足が募集されていた。足場は凍りつき極めて滑りやすい。
 - [choice_ursus_09](#event-choice_ursus_09) — 郊外の打ち捨てられた古い要塞の地下で、旧公爵家が秘匿していたとされる非公開の蔵書庫が見つかった。学術調査隊が同行者を募っている。
-- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わりを告げ、春の訪れを祝う伝統行事「マースレニツァ」の日が訪れた。広場では藁人形が燃やされ、太陽を象徴する丸いクレープ（ブリヌイ）が山のように…
+- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わり、地区の広場に食べ物の屋台が数軒出て、人々が長い寒さの区切りをつけるように集まっていた。呼び名や祝い方は土地ごとに違うらしい。
 - [daily_victoria_01](#event-daily_victoria_01) — 午後の茶の時間に、素朴な焼き菓子に濃厚な生クリームと果実ジャムを添え、柑橘の香る温かい銘茶を味わった。贅沢な甘みに心が満たされた。
 - [daily_victoria_02](#event-daily_victoria_02) — 近所の大衆食堂で、揚げたての白身魚と香ばしい揚げ芋を頬張りながら麦茶を啜った。カリッとした衣の旨味に、一日の疲れが吹き飛んだ。
 - [daily_victoria_03](#event-daily_victoria_03) — 公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。
@@ -19363,7 +19349,7 @@
 - [choice_leithanien_07](#event-choice_leithanien_07) — 百年以上続く老舗カフェの老パティシエが、引退を前に秘伝の「ザッハトルテ」の調合ノートを受け継ぐ後継者を探している。厳格な味覚と職人気質が求められる。
 - [choice_leithanien_08](#event-choice_leithanien_08) — 表舞台を追われた感染者音楽家たちが、廃教会の地下で密かに市民向けの慈善演奏会を計画していた。憲兵に見つかれば全員逮捕だが、彼らは音楽の灯を消したくな…
 - [choice_leithanien_09](#event-choice_leithanien_09) — 雪深き山頂の感染者療養所へ、冬越しのための医薬品と食料を届けるトランスポーターが募集されていた。急峻な崖道と吹雪を越える命がけの輸送任務だ。
-- [choice_leithanien_10](#event-choice_leithanien_10) — 街路樹が初夏の花を咲かせる季節を迎え、都の広場で市民総出の初夏祭が開かれた。広場には焼き菓子や伝統料理の屋台が並び、優雅な円舞曲（ワルツ）に合わせて…
+- [choice_leithanien_10](#event-choice_leithanien_10) — 初夏の午後、広場の一角で小さな市が開かれ、焼き菓子の屋台のそばで数人の演奏家が曲を奏でていた。通りがかりの人が足を止め、短い休息を取っている。
 - [daily_laterano_01](#event-daily_laterano_01) — 聖都の有名な菓子舗で、焼きたての大判アップルパイを買って頬張った。シナモンと焦がしバターの極上の甘みに、思わず頬が緩むほどの幸福感を味わった。
 - [daily_laterano_02](#event-daily_laterano_02) — 広場のカフェのテラス席で、何種類ものベリーが山盛りに盛られたパフェをいただいた。甘いクリームと爽やかな酸味に、疲れが綺麗に溶け去った。
 - [daily_laterano_03](#event-daily_laterano_03) — 大聖堂の美しいステンドグラスから差し込む光のシャワーの下、聖歌隊の透き通るような賛美歌を聞いた。清らかな祈りに心が洗われた。
@@ -19429,7 +19415,7 @@
 - [choice_laterano_07](#event-choice_laterano_07) — 聖都で長年愛されてきた焼き菓子舗の店主が、高齢のため信頼できる共同経営者を探していた。出資して新店舗の出店に加われば、安定した配当と菓子開発の権利が…
 - [choice_laterano_08](#event-choice_laterano_08) — ラテラーノの難解な公証法の手続きに困り果てていた地方出身のリーベリの商人が、店舗の営業許可申請が通らず立ち往生していた。あなたの法知識と助力を求めて…
 - [choice_laterano_09](#event-choice_laterano_09) — 聖都の大聖堂の鐘楼にある巨大な大鐘「福音の鐘」の固定金具が緩み、調律が狂い始めていた。地上数十メートルの吹きさらしの足場で、金具の締め直しと調律を行…
-- [choice_laterano_10](#event-choice_laterano_10) — 春の復活祭を迎え、聖都の広場という広場が色とりどりの砂糖菓子と花々で飾り付けられた。巨大な特製ケーキが切り分けられ、誰もが平和と甘味を分かち合う最大…
+- [choice_laterano_10](#event-choice_laterano_10) — 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 - [daily_columbia_01](#event-daily_columbia_01) — ダイナーのカウンターで、焼きたての分厚い挽肉を挟んだ肉パンと大盛りの揚げ芋を頬張った。冷たい炭酸水を飲み干し、開拓者の活力を補給した。
 - [daily_columbia_02](#event-daily_columbia_02) — 市場の食料品店で、特売の大きな豆ペーストの瓶と山積みの素焼きパンを買い込んだ。開拓地ならではの規格外の大きさに、思わず笑みがこぼれた。
 - [daily_columbia_03](#event-daily_columbia_03) — 幹線道路沿いの休憩所で、淹れたての熱い穀物茶と揚げ菓子のセットを頼んだ。どこまでも続くまっすぐな地平線を眺めながら、自由な風を感じた。
@@ -19564,7 +19550,7 @@
 - [choice_kazimierz_07](#event-choice_kazimierz_07) — 大手飲料メーカーから、「新発売のエナジードリンクの宣伝として街頭ビジョンやポスターに出てほしい」と破格の報酬でオファーされた。ただし過激な演出が求め…
 - [choice_kazimierz_08](#event-choice_kazimierz_08) — かつて街の英雄だった老騎士が、病と借金で住まいを追い出されそうになっていた。商業連盟の取り立て屋が無慈悲に退去を迫っている。
 - [choice_kazimierz_09](#event-choice_kazimierz_09) — ある情報屋から、「商業連盟の大物幹部が関与する八百長試合の決定的な帳簿データがある。高値で買って告発するか、企業に買い取らせるか選べ」と取引を持ちか…
-- [choice_kazimierz_10](#event-choice_kazimierz_10) — 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、…
+- [choice_kazimierz_10](#event-choice_kazimierz_10) — 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募って…
 - [daily_siracusa_01](#event-daily_siracusa_01) — 石畳の細い路地を歩いていると、どこかの民家の換気口から焦がしたニンニクと完熟トマトの濃密な香りが漂ってきた。シラクーザの路地裏には、いつでも誰かの家…
 - [daily_siracusa_02](#event-daily_siracusa_02) — 夕暮れどきの広場で、近所の老人たちが木製のベンチに腰掛け、ジェスチャーを激しく交えながら今日の出来事について熱弁を振るっていた。陽気な笑い声に心が温…
 - [daily_siracusa_03](#event-daily_siracusa_03) — 街角の喫茶店で、淹れたての濃い珈琲を一杯飲んだ。深い苦味が喉を潤し、頭が冴え渡って仕事の能率が上がった。
@@ -19631,7 +19617,7 @@
 - [choice_siracusa_07](#event-choice_siracusa_07) — 近所のパン屋の主人が青ざめた顔で相談してきた。シマを仕切るファミリーが代替わりし、みかじめ料を一気に2倍に跳ね上げると通告してきたという。このままで…
 - [choice_siracusa_08](#event-choice_siracusa_08) — 旧市街の古い居住区画に、大手開発企業と手を組んだファミリーの使いが現れ、新都市構想のための立ち退きを迫ってきた。長年住み慣れた住民たちは路頭に迷うと…
 - [choice_siracusa_09](#event-choice_siracusa_09) — 夜の運河沿いの倉庫街を歩いていると、霧の向こうで小型船から密輸された武器とオリジニウム製品を陸揚げしている現場に鉢合わせてしまった。見張りの男たちが…
-- [choice_siracusa_10](#event-choice_siracusa_10) — 新都市ウォルシーニの市民広場で、古くから伝わる伝統の手打ち麺料理を競い合う祝祭料理市が開かれた。広場には各街区の名だたる料理人や腕自慢が集まり、オリ…
+- [choice_siracusa_10](#event-choice_siracusa_10) — 近くの市民市場で料理の屋台が増え、店ごとに麺料理や煮込みを出していた。特別な全国行事という様子ではなく、街区の人が食事を楽しむ小さな催しらしい。
 - [daily_siesta_01](#event-daily_siesta_01) — どこまでも青く広がるシエスタの海辺を散歩した。寄せては返す白い波頭と心地よい潮風に吹かれ、日頃の疲れが綺麗に洗い流された。
 - [daily_siesta_02](#event-daily_siesta_02) — ビーチ沿いのオープンカフェで、冷たいトロピカルフルーツのジュースを注文した。爽やかな酸味と甘みが渇いた喉を潤し、至福のひとときを過ごした。
 - [daily_siesta_03](#event-daily_siesta_03) — 広場の特設ステージから、軽快なギターとドラムのセッションが聞こえてきた。道行く人々が足を止め、リズムに合わせて楽しそうに体を揺らしている。
@@ -19766,7 +19752,7 @@
 - [choice_sargon_07](#event-choice_sargon_07) — 隊商に同行して砂漠の峠を越える途中、岩陰から武装した砂漠の盗賊団が姿を現し、荷物の引き渡しを要求してきた。護衛の兵士たちと一触即発の睨み合いとなって…
 - [choice_sargon_08](#event-choice_sargon_08) — 雨林の祭祀場で、各部族の誉れを賭けた古式武闘の儀が執り行われていた。熱狂する部族民たちの前で、踏み固められた土俵で鍛え抜かれた勇士たちが技と力、アー…
 - [choice_sargon_09](#event-choice_sargon_09) — パーディシャーの配下の代官が、砂漠の関所での通行税を不当に引き上げた。このままでは小規模な商人や農民たちが破産してしまう。商人組合が連名で宮殿へ減税…
-- [choice_sargon_10](#event-choice_sargon_10) — 年に一度、砂漠中の隊商とオアシス住民が集う「大バザール祝祭」が開幕した。広大な広場には数千の天幕が立ち並び、オリエントの秘宝、珍しい動物、香辛料、甘…
+- [choice_sargon_10](#event-choice_sargon_10) — 交易路沿いのオアシスに隊商が何組か到着し、広場へ臨時の市が立った。食料、布、道具などが並ぶが、どこから来た品か分からないものも混じっている。
 - [daily_sami_01](#event-daily_sami_01) — 木造小屋の中央の炉に乾いた白樺の薪をくべた。パチパチとはぜる心地よい音とともに温かな橙色の炎が広がり、冷えた指先を芯から温めた。
 - [daily_sami_02](#event-daily_sami_02) — 原生林の茂みで、霜の降りた完熟コケモモの実を籠いっぱいに摘み取った。口に含むと鮮烈な酸味とほのかな甘みが広がり、疲れが吹き飛んだ。
 - [daily_sami_03](#event-daily_sami_03) — 澄み切った極北の夜空に、巨大な緑と紫のオーロラが天幕のように揺らめいた。息を呑むような大自然の神々しさに、魂が洗われるような感動を覚えた。
@@ -19833,7 +19819,7 @@
 - [choice_sami_07](#event-choice_sami_07) — 冬が本格化する前に、集落総出で大量の保存食の仕込みが行われた。川で獲れた鮭の燻製、山で摘んだコケモモのジャム煮、キノコの乾燥作業に追われている。
 - [choice_sami_08](#event-choice_sami_08) — 極寒の夜を乗り切るため、発酵させたコケモモと大麦、薬草を蒸留器にかけ、度数の高いサーミ特製の薬用蒸留酒（アクアビット）を造ることになった。
 - [choice_sami_09](#event-choice_sami_09) — クルビアの大手研究所から派遣された学術調査隊が、サーミの原生林の生態系調査のため、現地の地形を知り尽くした案内人を高額の日当で募集している。
-- [choice_sami_10](#event-choice_sami_10) — 長い極夜が終わり、数ヶ月ぶりに地平線の上に太陽の光が戻ってくる「太陽迎えの冬至祭」が開幕した。広場には巨大なかがり火が焚かれ、全部族が手を取り合って…
+- [choice_sami_10](#event-choice_sami_10) — 冬の日照が短い時期、近くの人々が火のそばに集まり、温かい食事を分けていた。氏族や地域ごとの慣習は違うが、この場では寒さをしのぐために人が寄り合ってい…
 - [daily_kjerag_01](#event-daily_kjerag_01) — 山あいの民家の軒先で、淹れたての温かいバター茶を振る舞われた。濃厚なヤクの乳のコクと塩気が冷えた身体を芯から温め、深い安らぎを得た。
 - [daily_kjerag_02](#event-daily_kjerag_02) — 霊峰カランドの山頂が朝日に照らされ、黄金色に輝く「日照金山」の奇跡のような絶景を仰ぎ見た。清らかな祈りの心に満たされ、力が湧いた。
 - [daily_kjerag_03](#event-daily_kjerag_03) — 青麦（ツァンパ）を香ばしく炒って練り上げた主食を昼餉に食べた。素朴ながら噛むほどに広がる穀物の甘みに、確かな活力を得た。
@@ -19900,7 +19886,7 @@
 - [choice_kjerag_07](#event-choice_kjerag_07) — 春の訪れとともに、山上の放牧地でヤクの毛刈りの季節がやってきた。ヤクの胸元の産毛から採れる柔らかな最高級カシミヤ毛糸を紡ぎ、名産ショールを織り上げる…
 - [choice_kjerag_08](#event-choice_kjerag_08) — カランド貿易が外国から最新の滅菌器や手術器具を寄贈しようとしたが、寺院の頑固な古老たちが「神聖な寺院に得体の知れない外国の機械を入れるな」と拒絶して…
 - [choice_kjerag_09](#event-choice_kjerag_09) — 聖山を貫く鉄道トンネルの難所工事現場で、硬い花崗岩の岩盤が行く手を阻み、地下水の噴出が発生した。工期が遅れれば雪の季節に間に合わない。緊急の支保工補…
-- [choice_kjerag_10](#event-choice_kjerag_10) — 年に一度、イェラグ全土の信徒が聖峰の麓に集う「カランド年次大祭」が開幕した。山々には祈りのホルンの音が響き渡り、巫女による神聖な祝福の儀が執り行われ…
+- [choice_kjerag_10](#event-choice_kjerag_10) — 聖峰へ向かう人が増える時期になり、麓の集落では宿と食事の準備に追われていた。遠くから来た参詣者もいるが、誰がどこから来たのかまでは分からない。
 - [daily_kazdel_01](#event-daily_kazdel_01) — 移動テントの真ん中で、仲間たちと大鍋の芋と干し肉のシチューを囲んだ。湯気立つ素朴な温もりに、生き延びている実感と深い団結を噛み締めた。
 - [daily_kazdel_02](#event-daily_kazdel_02) — 荒野の廃材置き場から、まだ十分に使える厚手の真鍮板と頑丈なボルトを見つけ出した。生活の補修に役立つ思わぬ拾い物に胸を躍らせた。
 - [daily_kazdel_03](#event-daily_kazdel_03) — 夜、焚き火のそばで年老いたサルカズが弾く素朴な二弦琴の音色を聴いた。哀愁と誇りに満ちた旋律が荒野の夜風に溶け、心に深く染み渡った。
@@ -19967,13 +19953,12 @@
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
 - [choice_kazdel_08](#event-choice_kazdel_08) — 巨大な荒野の猛獣の骨を素材に、サルカズ伝統の「ボーンスミス」の技法を用いた装飾短剣や彫刻を制作することになった。緻密な彫刻とアーツ伝導率の調整が求め…
 - [choice_kazdel_09](#event-choice_kazdel_09) — 移動集落の定住化を進めるため、荒野の地下深くを流れる水脈を探り当て、新たな深井戸を掘削する大事業が始まった。硬い岩盤を貫く難工事となっている。
-- [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
 - [daily_iberia_01](#event-daily_iberia_01) — 白壁の民家の路地で、天日に干された塩魚と完熟オリーブの素朴な昼餉をいただいた。塩気とオリーブ油の豊かな風味が滋味深く、歩き疲れた身体を満たした。
 - [daily_iberia_02](#event-daily_iberia_02) — 丘の上のオリーブ畑から、どこまでも静まり返った群青の海を見下ろした。黄金時代の面影を残す穏やかな潮風に吹かれ、心が静かに洗われた。
 - [daily_iberia_03](#event-daily_iberia_03) — 街角のパン屋で、オレンジの花水で香りづけされた焼き菓子を買った。柑橘の爽やかな甘みが口いっぱいに広がり、確かな幸福感を得た。
-- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段で、潮風に当たりながら手入れの行き届いた古いアコースティックギターを爪弾いた。哀愁を帯びた調べが静かな午後に響き渡った。
+- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段の近くで、誰かが古い弦楽器を静かに爪弾いていた。途切れ途切れの調べを聞きながら、しばらく足を止めた。
 - [daily_iberia_05](#event-daily_iberia_05) — 近所の塩田の管理人から、初摘みの真っ白な天日塩（フルール・ド・セル）を一袋分けてもらった。大地の恵みに感謝した。
-- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で磨き上げた。差し込む光が色鮮やかな幾何学模様を石畳に落とし、心が安らいだ。
+- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で拭く手伝いをした。差し込む光が色のついた模様を石畳に落とした。
 - [daily_iberia_07](#event-daily_iberia_07) — 涼しい夕暮れ時、広場の井戸端で近所の人々と穏やかな世間話を交わした。厳しい時代の中にも息づく人の温もりに触れた。
 - [daily_iberia_08](#event-daily_iberia_08) — 路地裏の古道具屋で、かつて黄金時代に使われていた真鍮製の小さな羅針盤を見つけた。針が静かに北を指す様子に、失われゆく航海のロマンを感じた。
 - [daily_iberia_09](#event-daily_iberia_09) — 強い日差しを遮る白い布の天蓋の下で、冷たいレモン水を飲んだ。渇いた喉に心地よい刺激が走り、元気が回復した。
@@ -20003,8 +19988,8 @@
 - [daily_iberia_33](#event-daily_iberia_33) — 夜半、海の方角から霧が立ち込め、街全体を冷たく湿った白い帳が包み込んでいった。
 - [daily_iberia_34](#event-daily_iberia_34) — 仕立て屋の店先で、黒いラシャ布で仕立てられた質素で頑丈な作業着を眺めた。
 - [daily_iberia_35](#event-daily_iberia_35) — 審問所の巡回兵に突然路上で呼び止められ、持ち物をすべて地面にぶちまけられて執拗な尋問を受け、ひどい恐怖と屈辱を味わった。
-- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、異様な生臭さと蠢く影を目撃し、背筋の凍る悪寒に襲われて一目散に逃げ出した。
-- [daily_iberia_37](#event-daily_iberia_37) — 塩田で過酷な炎天下の重労働を続け、脱水症状と日焼けで倒れ込みそうになった。
+- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、風向きとは合わない生臭さと、崩れた家屋の奥で動く影を見かけた。正体を確かめず、その場を離れた。
+- [daily_iberia_37](#event-daily_iberia_37) — 塩田の作業を長く続けた日、強い日差しで喉が渇き、腕も重くなった。休憩所まで戻って水を飲み、しばらく日陰で身体を冷ました。
 - [daily_iberia_38](#event-daily_iberia_38) — 近所の住人が夜のうちに審問所へ連行されたという噂が広まり、重苦しい沈黙が界隈を支配した。
 - [daily_iberia_39](#event-daily_iberia_39) — 審問所の外郭警備任務に就いた。ランタンの灯りを掲げ、暗闇の海岸線から這い上がる脅威に目を光らせた。
 - [daily_iberia_40](#event-daily_iberia_40) — 広場の石壁に張り出された審問所の布告を眺めた。「我らは沈黙に抗い、光を守る最後の砦である」という峻厳な文言に、この国を覆う緊張感を肌で感じた。
@@ -20023,8 +20008,8 @@
 - [daily_iberia_53](#event-daily_iberia_53) — 塩気の強い安物の雑穀パンをぬるま湯に浸してすすった。冷え込む夜、隙間風の入る粗末な納屋で毛布を被って丸くなった。
 - [daily_iberia_54](#event-daily_iberia_54) — 海岸の立ち入り禁止区域の手前で、波に打ち寄せられた海藻や流木を拾い集めて燃料にした。厳しい生活を耐え抜いた。
 - [daily_iberia_58](#event-daily_iberia_58) — 長年使い続けてきた革張りの聖書と祈祷書を蜜蝋で手入れした。どんな暗雲の時代であっても信仰と希望を失わない決意を固めた。
-- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の町グランファロの古い石壁に沿って歩いた。潮の匂いを含んだ風が壁の隙間を吹き抜け、かつての住民たちが残した古い標識が静かに佇んでいた。
-- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、グランファロの街頭にガス灯が一斉に灯された。潮風に揺れる柔らかな灯火が石畳を照らし出し、荒涼とした沿岸の町に静かな安らぎをもたらしていた。
+- [daily_iberia_59](#event-daily_iberia_59) — 沿岸の古い集落で、風雨に削られた石壁に沿って歩いた。壁の隙間を潮風が抜け、昔の住民が残した標識がところどころに残っていた。
+- [daily_iberia_60](#event-daily_iberia_60) — 夕暮れ時、沿岸の集落で街灯が順に灯された。風に揺れる明かりが石畳を照らし、人通りの減った道に細い光が続いた。
 - [daily_iberia_61](#event-daily_iberia_61) — 夜半、審問官の黒外套が翻り、窓の隙間から細いランタンの光が室内の壁を舐めるように走った。呼吸すら止め、闇の中で身を縮こまらせた。
 - [daily_iberia_62](#event-daily_iberia_62) — 朝、近所の路地を通ると、知り合いの民家の扉に審問所の印が刻まれた赤い封印札が貼られていた。誰もその家の名を口にしなくなった。
 - [daily_iberia_63](#event-daily_iberia_63) — 礼拝の終わりに、厳格な司祭が会衆を見回しながら帳面へ何事かを書き留めていた。周囲の信徒たちの視線が疑心暗鬼に泳ぎ、教会内に張り詰めた沈黙が流れた。
@@ -20035,10 +20020,10 @@
 - [choice_iberia_04](#event-choice_iberia_04) — 夏の強い日差しによって塩田の水が一気に干上がり、結晶化した純白の天日塩の収穫期を迎えた。重い塩を木舟ですくい上げ、乾燥小屋へ運ぶ過酷な力仕事が募集さ…
 - [choice_iberia_05](#event-choice_iberia_05) — 古い教会の床下から、黄金時代の大航海時代に描かれた羊皮紙の古航海図が発見された。暗号化された緯度経度と海流データが記されている。解読できれば失われた…
 - [choice_iberia_06](#event-choice_iberia_06) — 秋の丘陵地帯で、たわわに実った黒オリーブの一斉収穫が始まった。枝を揺すって実を落とし、大樽に集めて石臼で搾る村を挙げた大仕事だ。
-- [choice_iberia_07](#event-choice_iberia_07) — 沿岸の入り江で、夜陰に乗じて外国の密輸船が危険な禁制品（未検査の海洋生物や武器）を陸揚げしようとしているのを目撃した。見張りの男たちが周囲を警戒して…
-- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔の海外渡航歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と泣きつ…
-- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に製作された大型の真鍮製屈折望遠鏡が発見された。レンズは曇り、歯車は錆びついている。修復して澄み切った星空を観測しようと…
-- [choice_iberia_10](#event-choice_iberia_10) — 大いなる静謐の犠牲者を追悼し、未来への希望を灯す「光のランタン祭」が開催された。広場から丘の上まで無数のランタンが灯され、厳かな祈りと賛美歌が夜空へ…
+- [choice_iberia_07](#event-choice_iberia_07) — 夜の入り江で、船籍の分からない小型舟艇から、布をかぶせた荷箱が浜へ運び込まれているのを見かけた。荷の中身も運び手の素性も分からないまま、見張り役らし…
+- [choice_iberia_08](#event-choice_iberia_08) — 夜半、隣の家の主人が青ざめて訪ねてきた。「昔に他国を訪れた経歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と…
+- [choice_iberia_09](#event-choice_iberia_09) — 古い洋館の屋根裏で、黄金時代に作られた真鍮製の望遠鏡を見つけた。レンズは曇り、歯車には錆が浮いている。自分で分解する前に、どう扱うか考えた。
+- [choice_iberia_telescope_observation_followup](#event-choice_iberia_telescope_observation_followup) — 修理して手元に残した望遠鏡は、しばらく布をかけたまま置いてあった。雲の少ない夜、窓の外を見て、久しぶりに筒を外へ向けることにした。
 - [daily_bolivar_01](#event-daily_bolivar_01) — 集落の木陰で、焼きたての香ばしいトウモロコシ粉の薄焼きパン（アレパ）にチーズを挟んで食べた。素朴で優しい甘みが口に広がり、力強い活力を得た。
 - [daily_bolivar_02](#event-daily_bolivar_02) — 突然の激しいスコールが通り過ぎ、洗い流された熱帯の木々の緑が鮮やかに輝いていた。立ち上る雨上がりの土の匂いに、大地の豊かな生命力を感じた。
 - [daily_bolivar_03](#event-daily_bolivar_03) — 小高い丘の展望台から、緑豊かなボリバルの山並みを見渡した。遠くの雲間から光が射し込む雄大な風景に、平和への祈りが静かに湧き上がった。
@@ -20105,7 +20090,7 @@
 - [choice_bolivar_07](#event-choice_bolivar_07) — 過去の戦闘で屋根が吹き飛び、放置されていた村の小学校の校舎を再建する運動が始まった。「子供たちに銃ではなくペンを持たせたい」という村人たちの願いが込…
 - [choice_bolivar_08](#event-choice_bolivar_08) — ドッソレスの繁華街にある裏カジノで、外国マフィアがイカサマ装置を使って観光客から不当に金を巻き上げている現場の証拠を掴んだ。市警に通報するか、直接取…
 - [choice_bolivar_09](#event-choice_bolivar_09) — 深い渓谷に架かる古い蔓と木の吊り橋が老朽化し、踏み板が抜けて渡るのが命がけになっている。対岸の集落と協力し、鋼鉄ワイヤーを使った頑丈な吊り橋に架け替…
-- [choice_bolivar_10](#event-choice_bolivar_10) — 内戦の銃声が止んだ収穫の季節、全村を挙げた「大地への感謝大祭」が開幕した。広場には焼きトウモロコシと豆料理の大鍋が並び、マリカの陽気なリズムに合わせ…
+- [choice_bolivar_10](#event-choice_bolivar_10) — 収穫を終えた近隣の農家が広場へ野菜や穀物を持ち寄り、小さな市が立った。食べ物を交換する人のそばで、仕事を終えた者たちが音楽を鳴らして休んでいる。
 - [daily_rim_01](#event-daily_rim_01) — 鉱山街のベーカリーで、焼き立ての特製ニンジンパイを買い求めた。シナモンの甘い香りとニンジンの濃厚な甘みが広がり、心も身体も満たされた。
 - [daily_rim_02](#event-daily_rim_02) — 夕暮れ時、作業を終えた鉱夫たちが集まる大衆食堂の前を通った。窓から漏れる賑やかな笑い声と香ばしい料理の匂いに、街の素朴な活気を感じた。
 - [daily_rim_03](#event-daily_rim_03) — 広大な露天掘り鉱区を見下ろす丘の上から、沈みゆく夕日を眺めた。幾重にも削られた大地の段々畑が黄金色に染まる壮大な光景に息を呑んだ。
@@ -20172,7 +20157,7 @@
 - [choice_rim_07](#event-choice_rim_07) — 週末の夜、鉱山街最大のパブ「ドリル＆ホップ」で恒例の力自慢腕相撲トーナメントが開催された。熱狂する鉱夫たちの声援の中、屈強な猛者たちがテーブルを挟ん…
 - [choice_rim_08](#event-choice_rim_08) — 鉱区住宅の粉塵被害を軽減するため、慈善基金から寄贈された高性能エアフィルターと換気ファンを、高齢者や呼吸器の弱い家庭へ一軒ずつ取り付けて回るボランテ…
 - [choice_rim_09](#event-choice_rim_09) — 鉱区の北東方向に大規模な天災雲（源石嵐）が観測された。採掘プラットフォームを安全地帯へ緊急移動させるため、脚部アンカーの引き抜きと移動機構の最終点検…
-- [choice_rim_10](#event-choice_rim_10) — 過酷な鉱山から無事に生還した日々を祝い、大地の恵みに感謝する伝統の「採掘安全祈願ランタン祭」が執り行われた。数千の安全ヘルメットのライトと真鍮ランタ…
+- [choice_rim_10](#event-choice_rim_10) — 鉱区の勤務が一区切りついた夜、作業場の前で無事故だった班を労う食事が出された。ヘルメットを机へ置いた人々が、温かい料理を囲んでその日の仕事を振り返っ…
 - [daily_minos_01](#event-daily_minos_01) — 大理石の白い列柱が並ぶ回廊の木陰で、冷たい湧き水に完熟イチジクを浸して食べた。蜜のように甘い果汁が口いっぱいに広がり、深い幸福感に包まれた。
 - [daily_minos_02](#event-daily_minos_02) — 小高い丘の上の神殿から、どこまでも青く広がる空と緑のオリーブ畑を見下ろした。吹き抜ける涼風に英雄たちの伝説の息吹を感じ、心が洗われた。
 - [daily_minos_03](#event-daily_minos_03) — 広場の露店で、素焼きの小壺に入った搾りたての蜂蜜と山羊のフレッシュチーズを買った。素朴で濃厚な味わいに確かな活力を得た。
@@ -20239,7 +20224,6 @@
 - [choice_minos_07](#event-choice_minos_07) — アスクレピオスの神殿施療院で、秋の季節の変わり目に体調を崩した多くの巡礼者たちが訪れている。野生の薬草の調合や、温泉治療の入浴補助を行うボランティア…
 - [choice_minos_08](#event-choice_minos_08) — 隣接する二つのポリスの間で、水源の利用権とオリーブ畑の境界線を巡って激しい口論となり、一触即発の武力衝突の危機が生じた。公正中立な市民陪審員として調…
 - [choice_minos_09](#event-choice_minos_09) — 秋空の下、丘のブドウ園で糖度の乗った黒ブドウの一斉収穫が始まった。大きな木桶にブドウを放り込み、裸足になって皆で踏み潰す伝統の果汁絞りが繰り広げられ…
-- [choice_minos_10](#event-choice_minos_10) — ミノス全ポリスが一つになり、建国の十二英雄を称える世紀の「十二英雄合同大祭」が開幕した。アクロポリスから麓の広場まで聖火のパレードが続き、荘厳なホル…
 - [confined_care](#event-confined_care) — 皮膚の下の結晶が疼き、夜中に目を覚ます日が増えた。外の街の診療所へは足を運べず、閉ざされた区画の中で順番が回ってくるのをじっと待っている。
 - [confined_pet_care](#event-confined_pet_care) — 隔離された生活が長引き、ずっと家を空けたままになっている。部屋に残してきた生き物の水や餌を誰に頼むか、そして預けたあとの餌代をどう送り続けるかで頭が…
 - [confinement_wait](#event-confinement_wait) — 収容中 朝の点呼が終わると、灰色の壁に背を預けて次の合図を待った。今日が何月何日なのか思い出すのに、ずいぶん時間がかかった。 隣の寝床の住人と、外に…
@@ -20287,9 +20271,9 @@
 - [family_spouse_disclosure_followup](#event-family_spouse_disclosure_followup) — 鉱石病を打ち明けられた夜から、二人は同じ家の別々の部屋で眠るようになった。次の通院のことも、ずっと隠されていた年月のことも、食卓では互いに口に出せな…
 - [family_newlywed_residence](#event-family_newlywed_residence) — 結婚が決まってから、二人でどこに新居を構えるかの話し合いが続いた。借家の敷金や親の面倒、互いの職場までの道のりを考え合わせると、簡単には決められなか…
 - [kazimierz_knight_entry](#event-kazimierz_knight_entry) — 仕事帰りに競技会場へ立ち寄り、きらびやかなネオンの奥にある受付で、騎士競技の舞台に立つ手順を尋ねてみた。自前で登録料と武具を揃えて予選に挑むか、有力…
-- [life_goal_start](#event-life_goal_start) — 仕事帰りに借りていた道具を返し、夕餉の食材を買い込んで家路を歩いた。ただ今日を回すだけで過ぎていく日々のなかで、これから先、自分が何を支えに生きてい…
+- [life_goal_start](#event-life_goal_start) — 仕事を終えて家路につく途中、今日の失敗やうまくいった手順を思い返した。ただ一日を回すだけで過ぎていく暮らしのなかで、これから先、自分が何を支えに生き…
 - [life_goal_review](#event-life_goal_review) — かつて心に決めた目標を、日々の忙しさのなかでふと思い返した。仕事や家の事情もあの頃とは変わり、これからどう向き合っていくか考え直した。
-- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると手元が狂いそうになる。居残りで手を動かして慣らすか、自前で道具を揃えて熟練の先輩にコツを教わるか考え…
+- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると判断や手順が乱れそうになる。終業後に苦手な流れを確かめるか、自分で必要な教材や道具を用意して経験の長…
 - [life_rim_supply_delay](#event-life_rim_supply_delay) — 鉱区へ届くはずの交換部品の輸送便が遅れ、急ぎの修理に必要な部材が底をついた。止まった重機の警報音が作業場中に鳴り響いている。自腹で消耗品を買い足して…
 - [life_rim_skill_handover](#event-life_rim_skill_handover) — 整備の現場にもすっかり慣れ、機械の異音を聞き分けるのも早くなった。最近入ってきた新人が、外した部品の戻し方や異音の見極め方で立ち往生し、休憩時間に心…
 - [life_goal_resume](#event-life_goal_resume) — しばらく胸の奥にしまい込んでいたかつての目標を、ふとした折に思い出した。日々の暮らしが少し落ち着いた今、もう一度手をつけてみるか考えた。
@@ -20476,8 +20460,7 @@
 - [asset_daily_property_comfort](#event-asset_daily_property_comfort) — 自ら買い取った住まいの壁を塗り直し、居心地の良い家具を整えた。毎月の家賃の心配がない生活は、心に大きな余裕と安定をもたらしている。
 - [asset_choice_workshop_open](#event-asset_choice_workshop_open) — これまでに培った技術と知見を活かし、自らの看板を掲げて小さな工房や店舗（仕立て屋、パン屋、修理工房、薬草店）を開業する相談を持ちかけられた。
 - [asset_daily_workshop_revenue](#event-asset_daily_workshop_revenue) — 工房の店先で注文主と打ち合わせをし、丹精込めて仕上げた品を納品した。手渡された代金を金庫に収め、自らの腕で稼ぎ出す手応えを噛み締めた。
-- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — 不意の天災や移動都市の区画被災に備え、民間保険会社が提供する「天災総合避難・再建保険」の案内が届いた。年々の保険料を納めることで、被災時に速やかな補…
-- [asset_catastrophe_insurance_claim](#event-asset_catastrophe_insurance_claim) — 天災の混乱の中、避難所で保険会社の臨時窓口を見つけた。避難証明書と保険証書を提示したところ、迅速な審査が行われた。
+- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 - [life_rim_skill_handover_followup](#event-life_rim_skill_handover_followup) — 見習いと一緒に機械の点検手順を確かめ合った頃から、ずいぶん年月が経った。ある日、若い作業員が油の染みた古い点検メモを手にやって来た。昔の手帳を開いて…
 - [life_rim_workmate_followup](#event-life_rim_workmate_followup) — 昔、作業の手ほどきを頼んできた{rimWorkmateName}と作業場の外で久しぶりに顔を合わせた。あの頃一緒にやった点検のことで聞きたいことがあ…
 - [family_spouse_household_arrangement](#event-family_spouse_household_arrangement) — 前に決めた家計や家事の分担が今の暮らしに合っているか、夜の食卓で改めて話し合った。互いの仕事や家族の事情も変わり、見直す時期が来ていた。 夕食の後、…
@@ -20495,6 +20478,7 @@
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
+- [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_arts_overload_crisis](#event-life_arts_overload_crisis) — 激しい精神の昂ぶりと疲弊のなか、体内の源石結晶が異常励起を起こし、アーツの奔流が意識の制御を離れて逆流し始めた。皮膚下の結晶が赤黒く脈打って熱を帯び…
 - [life_columbia_clinical_trap_decision](#event-life_columbia_clinical_trap_decision) — 多額の負債と生活苦のなか、製薬企業の代理人を名乗る男から『新薬の短期被験者になるだけで借金を全額肩代わりする』という契約書を差し出された。だが添付さ…
 - [life_lynch_mob_siege](#event-life_lynch_mob_siege) — 夜更け、怒号と松明の火がアパートの窓を赤く照らし出した。棍棒を持った排斥暴徒が『忌み者を焼き出せ』と叫びながら玄関扉を叩き壊そうとしている。廊下には…
@@ -20757,7 +20741,7 @@
 - [car_col_pioneer_daily_01](#event-car_col_pioneer_daily_01) — 乾いた土煙が舞う荒野の農場で、地下水汲み上げポンプのモーターを分解修理した。厳しい日差しの中、自らの手で開墾した畑に緑の芽が吹くのを見つめる。すべて…
 - [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
 - [car_kaz_comp_knight_daily_01](#event-car_kaz_comp_knight_daily_01) — 照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と…
-- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する…
+- [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFi…
 - [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。…
 - [car_sir_soldier_daily_01](#event-car_sir_soldier_daily_01) — 石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コー…
 - [car_sir_soldier_choice_turf_war](#event-car_sir_soldier_choice_turf_war) — 隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。…
@@ -21074,7 +21058,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-situation-317"></a>
-### 年齢：老年（1524）
+### 年齢：老年（1522）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -21395,7 +21379,7 @@
 - [daily_ursus_61](#event-daily_ursus_61) — 深夜、集合住宅の薄い壁の向こうで重い軍靴の音が響き、どこかの扉が乱暴に叩き壊された。毛布を頭から被り、息を殺して憲兵が通り過ぎるのを待った。
 - [daily_ursus_62](#event-daily_ursus_62) — 街角のレンガ壁に、憲兵隊による「不穏分子と隠れ感染者を密告せよ」という赤い墨の張り紙が何枚も重ねて貼られていた。道行く人々は目を伏せて早足に通り過ぎ…
 - [daily_ursus_64](#event-daily_ursus_64) — 毎朝挨拶を交わしていた隣家の窓に、突然黒い板が打ち付けられていた。昨夜、荷車が止まっていたこと以外、誰も何も語ろうとしなかった。
-- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わりを告げ、春の訪れを祝う伝統行事「マースレニツァ」の日が訪れた。広場では藁人形が燃やされ、太陽を象徴する丸いクレープ（ブリヌイ）が山のように…
+- [choice_ursus_10](#event-choice_ursus_10) — 冬の終わり、地区の広場に食べ物の屋台が数軒出て、人々が長い寒さの区切りをつけるように集まっていた。呼び名や祝い方は土地ごとに違うらしい。
 - [daily_victoria_01](#event-daily_victoria_01) — 午後の茶の時間に、素朴な焼き菓子に濃厚な生クリームと果実ジャムを添え、柑橘の香る温かい銘茶を味わった。贅沢な甘みに心が満たされた。
 - [daily_victoria_02](#event-daily_victoria_02) — 近所の大衆食堂で、揚げたての白身魚と香ばしい揚げ芋を頬張りながら麦茶を啜った。カリッとした衣の旨味に、一日の疲れが吹き飛んだ。
 - [daily_victoria_03](#event-daily_victoria_03) — 公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。
@@ -21474,7 +21458,7 @@
 - [daily_leithanien_36](#event-daily_leithanien_36) — 感染者を糾弾する狂信的な演説集団が広場を占拠し、通行人に罵詈雑言を浴びせていた。憎悪に満ちた空気に気分を悪くし、足早に立ち去った。
 - [daily_leithanien_37](#event-daily_leithanien_37) — 老舗カフェで上流気取りの客から身なりを侮辱され、席を立つよう冷淡に要求された。周囲の冷淡な視線に、やるせない孤立感を味わった。
 - [daily_leithanien_38](#event-daily_leithanien_38) — 石畳の急な坂道で凍結に足を滑らせ、派手に転倒して膝を強く擦りむいた。破れたズボンと痛む足を引きずりながら家路についた。
-- [choice_leithanien_10](#event-choice_leithanien_10) — 街路樹が初夏の花を咲かせる季節を迎え、都の広場で市民総出の初夏祭が開かれた。広場には焼き菓子や伝統料理の屋台が並び、優雅な円舞曲（ワルツ）に合わせて…
+- [choice_leithanien_10](#event-choice_leithanien_10) — 初夏の午後、広場の一角で小さな市が開かれ、焼き菓子の屋台のそばで数人の演奏家が曲を奏でていた。通りがかりの人が足を止め、短い休息を取っている。
 - [daily_laterano_01](#event-daily_laterano_01) — 聖都の有名な菓子舗で、焼きたての大判アップルパイを買って頬張った。シナモンと焦がしバターの極上の甘みに、思わず頬が緩むほどの幸福感を味わった。
 - [daily_laterano_02](#event-daily_laterano_02) — 広場のカフェのテラス席で、何種類ものベリーが山盛りに盛られたパフェをいただいた。甘いクリームと爽やかな酸味に、疲れが綺麗に溶け去った。
 - [daily_laterano_03](#event-daily_laterano_03) — 大聖堂の美しいステンドグラスから差し込む光のシャワーの下、聖歌隊の透き通るような賛美歌を聞いた。清らかな祈りに心が洗われた。
@@ -21513,7 +21497,7 @@
 - [daily_laterano_36](#event-daily_laterano_36) — 大雨で石畳の坂道が滑りやすくなり、足をとられて派手に転倒した。大切な守護銃のケースを泥まみれにしてしまい、清掃に半日を費やした。
 - [daily_laterano_37](#event-daily_laterano_37) — 公証役場の前に、鉱石病を理由に聖都から追放通告を受けた一家が荷物をまとめて立ち尽くしていた。冷酷な法の前で言葉を失った。
 - [daily_laterano_38](#event-daily_laterano_38) — 路地の角で、銃の手入れを巡る血気盛んな若者同士の激しい口論が起きた。いつ銃声が鳴り響くか息を呑み、壁に身を寄せて逃げ出した。
-- [choice_laterano_10](#event-choice_laterano_10) — 春の復活祭を迎え、聖都の広場という広場が色とりどりの砂糖菓子と花々で飾り付けられた。巨大な特製ケーキが切り分けられ、誰もが平和と甘味を分かち合う最大…
+- [choice_laterano_10](#event-choice_laterano_10) — 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 - [daily_columbia_01](#event-daily_columbia_01) — ダイナーのカウンターで、焼きたての分厚い挽肉を挟んだ肉パンと大盛りの揚げ芋を頬張った。冷たい炭酸水を飲み干し、開拓者の活力を補給した。
 - [daily_columbia_02](#event-daily_columbia_02) — 市場の食料品店で、特売の大きな豆ペーストの瓶と山積みの素焼きパンを買い込んだ。開拓地ならではの規格外の大きさに、思わず笑みがこぼれた。
 - [daily_columbia_03](#event-daily_columbia_03) — 幹線道路沿いの休憩所で、淹れたての熱い穀物茶と揚げ菓子のセットを頼んだ。どこまでも続くまっすぐな地平線を眺めながら、自由な風を感じた。
@@ -21590,7 +21574,7 @@
 - [daily_kazimierz_36](#event-daily_kazimierz_36) — 路地裏で違法な賭博闘技場の客引きにしつこく絡まれ、強引に金銭を要求されそうになった。隙を見て逃げ出したが、冷や汗が止まらなかった。
 - [daily_kazimierz_37](#event-daily_kazimierz_37) — 街角の掲示板に、競技シーズンに伴う宿泊施設の再編と区画整理の告知が張り出されていた。慣れ親しんだ街並みが慌ただしく姿を変えていく。
 - [daily_kazimierz_38](#event-daily_kazimierz_38) — 電光看板の漏電による小火騒ぎがあり、黒煙が路地に充満した。激しく咳き込みながら逃げ出したが、煤で衣服を汚してしまった。
-- [choice_kazimierz_10](#event-choice_kazimierz_10) — 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、…
+- [choice_kazimierz_10](#event-choice_kazimierz_10) — 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募って…
 - [daily_siracusa_01](#event-daily_siracusa_01) — 石畳の細い路地を歩いていると、どこかの民家の換気口から焦がしたニンニクと完熟トマトの濃密な香りが漂ってきた。シラクーザの路地裏には、いつでも誰かの家…
 - [daily_siracusa_02](#event-daily_siracusa_02) — 夕暮れどきの広場で、近所の老人たちが木製のベンチに腰掛け、ジェスチャーを激しく交えながら今日の出来事について熱弁を振るっていた。陽気な笑い声に心が温…
 - [daily_siracusa_03](#event-daily_siracusa_03) — 街角の喫茶店で、淹れたての濃い珈琲を一杯飲んだ。深い苦味が喉を潤し、頭が冴え渡って仕事の能率が上がった。
@@ -21634,7 +21618,7 @@
 - [daily_siracusa_54](#event-daily_siracusa_54) — 昔ながらの理髪店で、温かい蒸しタオルを当てられながら髭を剃ってもらった。店主の穏やかな語り口と剃刀の滑らかな感触に、日々の疲れが溶けていった。
 - [daily_siracusa_55](#event-daily_siracusa_55) — 公園の木陰で、昔の抗争の時代を生き抜いた旧友とチェス盤を挟んだ。「今の若い奴らは掟の重みも知らん」とぼやきながら、静かな午後を過ごした。
 - [choice_siracusa_08](#event-choice_siracusa_08) — 旧市街の古い居住区画に、大手開発企業と手を組んだファミリーの使いが現れ、新都市構想のための立ち退きを迫ってきた。長年住み慣れた住民たちは路頭に迷うと…
-- [choice_siracusa_10](#event-choice_siracusa_10) — 新都市ウォルシーニの市民広場で、古くから伝わる伝統の手打ち麺料理を競い合う祝祭料理市が開かれた。広場には各街区の名だたる料理人や腕自慢が集まり、オリ…
+- [choice_siracusa_10](#event-choice_siracusa_10) — 近くの市民市場で料理の屋台が増え、店ごとに麺料理や煮込みを出していた。特別な全国行事という様子ではなく、街区の人が食事を楽しむ小さな催しらしい。
 - [daily_siesta_01](#event-daily_siesta_01) — どこまでも青く広がるシエスタの海辺を散歩した。寄せては返す白い波頭と心地よい潮風に吹かれ、日頃の疲れが綺麗に洗い流された。
 - [daily_siesta_02](#event-daily_siesta_02) — ビーチ沿いのオープンカフェで、冷たいトロピカルフルーツのジュースを注文した。爽やかな酸味と甘みが渇いた喉を潤し、至福のひとときを過ごした。
 - [daily_siesta_03](#event-daily_siesta_03) — 広場の特設ステージから、軽快なギターとドラムのセッションが聞こえてきた。道行く人々が足を止め、リズムに合わせて楽しそうに体を揺らしている。
@@ -21721,7 +21705,7 @@
 - [daily_sargon_60](#event-daily_sargon_60) — 若いキャラバンの旅立ちに際し、かつて自分が砂嵐を切り抜けた時に使っていた年代物の真鍮製コンパスを譲り渡した。旅人の魂が継承された。
 - [choice_sargon_02](#event-choice_sargon_02) — 地平線の彼方に、空を覆い尽くすほどの黒褐色の巨大な砂嵐（ハブーブ）の壁が迫ってきた。市場の広場には暴れる荷獣と取り残された商人たちが大パニックに陥っ…
 - [choice_sargon_06](#event-choice_sargon_06) — 砂漠のオアシスに立ち寄った遊牧民の大部族から、伝統の歓迎の宴に招かれた。巨大な天幕の中には焚き火が燃え盛り、丸焼きの羊肉と強い蒸留酒、激しい太鼓の演…
-- [choice_sargon_10](#event-choice_sargon_10) — 年に一度、砂漠中の隊商とオアシス住民が集う「大バザール祝祭」が開幕した。広大な広場には数千の天幕が立ち並び、オリエントの秘宝、珍しい動物、香辛料、甘…
+- [choice_sargon_10](#event-choice_sargon_10) — 交易路沿いのオアシスに隊商が何組か到着し、広場へ臨時の市が立った。食料、布、道具などが並ぶが、どこから来た品か分からないものも混じっている。
 - [daily_sami_01](#event-daily_sami_01) — 木造小屋の中央の炉に乾いた白樺の薪をくべた。パチパチとはぜる心地よい音とともに温かな橙色の炎が広がり、冷えた指先を芯から温めた。
 - [daily_sami_02](#event-daily_sami_02) — 原生林の茂みで、霜の降りた完熟コケモモの実を籠いっぱいに摘み取った。口に含むと鮮烈な酸味とほのかな甘みが広がり、疲れが吹き飛んだ。
 - [daily_sami_03](#event-daily_sami_03) — 澄み切った極北の夜空に、巨大な緑と紫のオーロラが天幕のように揺らめいた。息を呑むような大自然の神々しさに、魂が洗われるような感動を覚えた。
@@ -21765,7 +21749,7 @@
 - [daily_sami_59](#event-daily_sami_59) — 炉辺でパイプを燻らせながら、若い世代に厳冬期を生き抜くための吹雪の兆候を伝授した。先人の知恵を継承させた。
 - [daily_sami_60](#event-daily_sami_60) — 何十年も森と共に生きてきた自らの手を眺めた。節くれだった指先のひとつひとつに、サーミの自然への敬意が刻まれていた。
 - [choice_sami_07](#event-choice_sami_07) — 冬が本格化する前に、集落総出で大量の保存食の仕込みが行われた。川で獲れた鮭の燻製、山で摘んだコケモモのジャム煮、キノコの乾燥作業に追われている。
-- [choice_sami_10](#event-choice_sami_10) — 長い極夜が終わり、数ヶ月ぶりに地平線の上に太陽の光が戻ってくる「太陽迎えの冬至祭」が開幕した。広場には巨大なかがり火が焚かれ、全部族が手を取り合って…
+- [choice_sami_10](#event-choice_sami_10) — 冬の日照が短い時期、近くの人々が火のそばに集まり、温かい食事を分けていた。氏族や地域ごとの慣習は違うが、この場では寒さをしのぐために人が寄り合ってい…
 - [daily_kjerag_01](#event-daily_kjerag_01) — 山あいの民家の軒先で、淹れたての温かいバター茶を振る舞われた。濃厚なヤクの乳のコクと塩気が冷えた身体を芯から温め、深い安らぎを得た。
 - [daily_kjerag_02](#event-daily_kjerag_02) — 霊峰カランドの山頂が朝日に照らされ、黄金色に輝く「日照金山」の奇跡のような絶景を仰ぎ見た。清らかな祈りの心に満たされ、力が湧いた。
 - [daily_kjerag_03](#event-daily_kjerag_03) — 青麦（ツァンパ）を香ばしく炒って練り上げた主食を昼餉に食べた。素朴ながら噛むほどに広がる穀物の甘みに、確かな活力を得た。
@@ -21807,7 +21791,7 @@
 - [daily_kjerag_59](#event-daily_kjerag_59) — 日向ぼっこをしながら、手の中でマニ車を静かに回し続けた。移りゆく時代を穏やかに見つめ、心の安寧を保った。
 - [daily_kjerag_60](#event-daily_kjerag_60) — 山あいに敷かれた鉄道のレールを見つめながら、かつて徒歩で何日もかけて山を越えていた昔を懐かしんだ。技術の進歩に深く感じ入った。
 - [choice_kjerag_05](#event-choice_kjerag_05) — 秋の収穫を祝い、寺院の門前で伝統のバター茶と香ばしいツァンパを村人全員に振る舞う大盤振る舞いの宴が催された。大勢の人々が木椀を手に行列を作っている。
-- [choice_kjerag_10](#event-choice_kjerag_10) — 年に一度、イェラグ全土の信徒が聖峰の麓に集う「カランド年次大祭」が開幕した。山々には祈りのホルンの音が響き渡り、巫女による神聖な祝福の儀が執り行われ…
+- [choice_kjerag_10](#event-choice_kjerag_10) — 聖峰へ向かう人が増える時期になり、麓の集落では宿と食事の準備に追われていた。遠くから来た参詣者もいるが、誰がどこから来たのかまでは分からない。
 - [daily_kazdel_01](#event-daily_kazdel_01) — 移動テントの真ん中で、仲間たちと大鍋の芋と干し肉のシチューを囲んだ。湯気立つ素朴な温もりに、生き延びている実感と深い団結を噛み締めた。
 - [daily_kazdel_02](#event-daily_kazdel_02) — 荒野の廃材置き場から、まだ十分に使える厚手の真鍮板と頑丈なボルトを見つけ出した。生活の補修に役立つ思わぬ拾い物に胸を躍らせた。
 - [daily_kazdel_03](#event-daily_kazdel_03) — 夜、焚き火のそばで年老いたサルカズが弾く素朴な二弦琴の音色を聴いた。哀愁と誇りに満ちた旋律が荒野の夜風に溶け、心に深く染み渡った。
@@ -21851,13 +21835,12 @@
 - [daily_kazdel_60](#event-daily_kazdel_60) — 手元に余裕ができた折、復興支援の炊き出し小屋に立ち寄って温かいスープを配る手伝いをした。湯気の中ではにかむ子どもたちの笑顔に、心が洗われる思いがした…
 - [choice_kazdel_05](#event-choice_kazdel_05) — 戦災で親を失った多くの子供たちが、勉強する場もなく荒野で遊んでいる。大きな天幕を教室に仕立て、子供たちに読み書きや計算を教えるその場でできる読み書き…
 - [choice_kazdel_07](#event-choice_kazdel_07) — 他国の戦場からカズデルへ帰還したものの、激しいトラウマ（戦争神経症）に苦しみ、天幕に引きこもって震えている元傭兵たちがいる。彼らの心を開くための温か…
-- [choice_kazdel_10](#event-choice_kazdel_10) — 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌…
 - [daily_iberia_01](#event-daily_iberia_01) — 白壁の民家の路地で、天日に干された塩魚と完熟オリーブの素朴な昼餉をいただいた。塩気とオリーブ油の豊かな風味が滋味深く、歩き疲れた身体を満たした。
 - [daily_iberia_02](#event-daily_iberia_02) — 丘の上のオリーブ畑から、どこまでも静まり返った群青の海を見下ろした。黄金時代の面影を残す穏やかな潮風に吹かれ、心が静かに洗われた。
 - [daily_iberia_03](#event-daily_iberia_03) — 街角のパン屋で、オレンジの花水で香りづけされた焼き菓子を買った。柑橘の爽やかな甘みが口いっぱいに広がり、確かな幸福感を得た。
-- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段で、潮風に当たりながら手入れの行き届いた古いアコースティックギターを爪弾いた。哀愁を帯びた調べが静かな午後に響き渡った。
+- [daily_iberia_04](#event-daily_iberia_04) — 日当たりの良い石段の近くで、誰かが古い弦楽器を静かに爪弾いていた。途切れ途切れの調べを聞きながら、しばらく足を止めた。
 - [daily_iberia_05](#event-daily_iberia_05) — 近所の塩田の管理人から、初摘みの真っ白な天日塩（フルール・ド・セル）を一袋分けてもらった。大地の恵みに感謝した。
-- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で磨き上げた。差し込む光が色鮮やかな幾何学模様を石畳に落とし、心が安らいだ。
+- [daily_iberia_06](#event-daily_iberia_06) — 古い教会の回廊で、埃をかぶったステンドグラスを布で拭く手伝いをした。差し込む光が色のついた模様を石畳に落とした。
 - [daily_iberia_07](#event-daily_iberia_07) — 涼しい夕暮れ時、広場の井戸端で近所の人々と穏やかな世間話を交わした。厳しい時代の中にも息づく人の温もりに触れた。
 - [daily_iberia_08](#event-daily_iberia_08) — 路地裏の古道具屋で、かつて黄金時代に使われていた真鍮製の小さな羅針盤を見つけた。針が静かに北を指す様子に、失われゆく航海のロマンを感じた。
 - [daily_iberia_09](#event-daily_iberia_09) — 強い日差しを遮る白い布の天蓋の下で、冷たいレモン水を飲んだ。渇いた喉に心地よい刺激が走り、元気が回復した。
@@ -21887,8 +21870,8 @@
 - [daily_iberia_33](#event-daily_iberia_33) — 夜半、海の方角から霧が立ち込め、街全体を冷たく湿った白い帳が包み込んでいった。
 - [daily_iberia_34](#event-daily_iberia_34) — 仕立て屋の店先で、黒いラシャ布で仕立てられた質素で頑丈な作業着を眺めた。
 - [daily_iberia_35](#event-daily_iberia_35) — 審問所の巡回兵に突然路上で呼び止められ、持ち物をすべて地面にぶちまけられて執拗な尋問を受け、ひどい恐怖と屈辱を味わった。
-- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、異様な生臭さと蠢く影を目撃し、背筋の凍る悪寒に襲われて一目散に逃げ出した。
-- [daily_iberia_37](#event-daily_iberia_37) — 塩田で過酷な炎天下の重労働を続け、脱水症状と日焼けで倒れ込みそうになった。
+- [daily_iberia_36](#event-daily_iberia_36) — 海沿いの廃村の近くで、風向きとは合わない生臭さと、崩れた家屋の奥で動く影を見かけた。正体を確かめず、その場を離れた。
+- [daily_iberia_37](#event-daily_iberia_37) — 塩田の作業を長く続けた日、強い日差しで喉が渇き、腕も重くなった。休憩所まで戻って水を飲み、しばらく日陰で身体を冷ました。
 - [daily_iberia_38](#event-daily_iberia_38) — 近所の住人が夜のうちに審問所へ連行されたという噂が広まり、重苦しい沈黙が界隈を支配した。
 - [daily_iberia_57](#event-daily_iberia_57) — 海を見下ろす古いテラスで、古老たちが「海がまだ豊かだった黄金の時代」について静かに語り合っているのを耳にした。失われた繁栄の記憶に、静かに耳を傾けた…
 - [daily_iberia_58](#event-daily_iberia_58) — 長年使い続けてきた革張りの聖書と祈祷書を蜜蝋で手入れした。どんな暗雲の時代であっても信仰と希望を失わない決意を固めた。
@@ -21896,7 +21879,7 @@
 - [daily_iberia_62](#event-daily_iberia_62) — 朝、近所の路地を通ると、知り合いの民家の扉に審問所の印が刻まれた赤い封印札が貼られていた。誰もその家の名を口にしなくなった。
 - [daily_iberia_63](#event-daily_iberia_63) — 礼拝の終わりに、厳格な司祭が会衆を見回しながら帳面へ何事かを書き留めていた。周囲の信徒たちの視線が疑心暗鬼に泳ぎ、教会内に張り詰めた沈黙が流れた。
 - [choice_iberia_06](#event-choice_iberia_06) — 秋の丘陵地帯で、たわわに実った黒オリーブの一斉収穫が始まった。枝を揺すって実を落とし、大樽に集めて石臼で搾る村を挙げた大仕事だ。
-- [choice_iberia_10](#event-choice_iberia_10) — 大いなる静謐の犠牲者を追悼し、未来への希望を灯す「光のランタン祭」が開催された。広場から丘の上まで無数のランタンが灯され、厳かな祈りと賛美歌が夜空へ…
+- [choice_iberia_telescope_observation_followup](#event-choice_iberia_telescope_observation_followup) — 修理して手元に残した望遠鏡は、しばらく布をかけたまま置いてあった。雲の少ない夜、窓の外を見て、久しぶりに筒を外へ向けることにした。
 - [daily_bolivar_01](#event-daily_bolivar_01) — 集落の木陰で、焼きたての香ばしいトウモロコシ粉の薄焼きパン（アレパ）にチーズを挟んで食べた。素朴で優しい甘みが口に広がり、力強い活力を得た。
 - [daily_bolivar_02](#event-daily_bolivar_02) — 突然の激しいスコールが通り過ぎ、洗い流された熱帯の木々の緑が鮮やかに輝いていた。立ち上る雨上がりの土の匂いに、大地の豊かな生命力を感じた。
 - [daily_bolivar_03](#event-daily_bolivar_03) — 小高い丘の展望台から、緑豊かなボリバルの山並みを見渡した。遠くの雲間から光が射し込む雄大な風景に、平和への祈りが静かに湧き上がった。
@@ -21939,7 +21922,7 @@
 - [daily_bolivar_58](#event-daily_bolivar_58) — ポーチの揺り椅子に揺られながら、幾度もの戦争を生き抜いてきた自らの人生を振り返った。静かな黄昏に感謝した。
 - [daily_bolivar_59](#event-daily_bolivar_59) — 若い農民たちに、伝統的なトウモロコシの輪作農法を教え伝えた。痩せた土地を蘇らせる先人の知恵を継承させた。
 - [choice_bolivar_07](#event-choice_bolivar_07) — 過去の戦闘で屋根が吹き飛び、放置されていた村の小学校の校舎を再建する運動が始まった。「子供たちに銃ではなくペンを持たせたい」という村人たちの願いが込…
-- [choice_bolivar_10](#event-choice_bolivar_10) — 内戦の銃声が止んだ収穫の季節、全村を挙げた「大地への感謝大祭」が開幕した。広場には焼きトウモロコシと豆料理の大鍋が並び、マリカの陽気なリズムに合わせ…
+- [choice_bolivar_10](#event-choice_bolivar_10) — 収穫を終えた近隣の農家が広場へ野菜や穀物を持ち寄り、小さな市が立った。食べ物を交換する人のそばで、仕事を終えた者たちが音楽を鳴らして休んでいる。
 - [daily_rim_01](#event-daily_rim_01) — 鉱山街のベーカリーで、焼き立ての特製ニンジンパイを買い求めた。シナモンの甘い香りとニンジンの濃厚な甘みが広がり、心も身体も満たされた。
 - [daily_rim_02](#event-daily_rim_02) — 夕暮れ時、作業を終えた鉱夫たちが集まる大衆食堂の前を通った。窓から漏れる賑やかな笑い声と香ばしい料理の匂いに、街の素朴な活気を感じた。
 - [daily_rim_03](#event-daily_rim_03) — 広大な露天掘り鉱区を見下ろす丘の上から、沈みゆく夕日を眺めた。幾重にも削られた大地の段々畑が黄金色に染まる壮大な光景に息を呑んだ。
@@ -21983,7 +21966,7 @@
 - [daily_rim_58](#event-daily_rim_58) — 引退したベテラン鉱夫仲間とパブのテラスでパイプを燻らせた。互いの無事な余生を祝ってジョッキを合わせた。
 - [choice_rim_04](#event-choice_rim_04) — 鉱山共同体の収穫期を祝う、伝統のニンジン焼き菓子品評会が開催された。広場には鉱夫街の腕自慢やパン職人が集まり、甘いスパイスと香ばしいパイ生地の匂いが…
 - [choice_rim_08](#event-choice_rim_08) — 鉱区住宅の粉塵被害を軽減するため、慈善基金から寄贈された高性能エアフィルターと換気ファンを、高齢者や呼吸器の弱い家庭へ一軒ずつ取り付けて回るボランテ…
-- [choice_rim_10](#event-choice_rim_10) — 過酷な鉱山から無事に生還した日々を祝い、大地の恵みに感謝する伝統の「採掘安全祈願ランタン祭」が執り行われた。数千の安全ヘルメットのライトと真鍮ランタ…
+- [choice_rim_10](#event-choice_rim_10) — 鉱区の勤務が一区切りついた夜、作業場の前で無事故だった班を労う食事が出された。ヘルメットを机へ置いた人々が、温かい料理を囲んでその日の仕事を振り返っ…
 - [daily_minos_01](#event-daily_minos_01) — 大理石の白い列柱が並ぶ回廊の木陰で、冷たい湧き水に完熟イチジクを浸して食べた。蜜のように甘い果汁が口いっぱいに広がり、深い幸福感に包まれた。
 - [daily_minos_02](#event-daily_minos_02) — 小高い丘の上の神殿から、どこまでも青く広がる空と緑のオリーブ畑を見下ろした。吹き抜ける涼風に英雄たちの伝説の息吹を感じ、心が洗われた。
 - [daily_minos_03](#event-daily_minos_03) — 広場の露店で、素焼きの小壺に入った搾りたての蜂蜜と山羊のフレッシュチーズを買った。素朴で濃厚な味わいに確かな活力を得た。
@@ -22026,7 +22009,6 @@
 - [daily_minos_58](#event-daily_minos_58) — 先祖代々のオリーブ農園を見渡し、百年以上実をつけ続ける古木を愛おしそうに撫でた。大地の絆に深く感謝した。
 - [daily_minos_59](#event-daily_minos_59) — 丘の上の大邸宅のテラスから、名士たちが集う知的な夜会の賑やかな声と竪琴の音色が漏れ聞こえてきた。オリーブの木陰からその華やかな宴の明かりを見上げた。
 - [choice_minos_09](#event-choice_minos_09) — 秋空の下、丘のブドウ園で糖度の乗った黒ブドウの一斉収穫が始まった。大きな木桶にブドウを放り込み、裸足になって皆で踏み潰す伝統の果汁絞りが繰り広げられ…
-- [choice_minos_10](#event-choice_minos_10) — ミノス全ポリスが一つになり、建国の十二英雄を称える世紀の「十二英雄合同大祭」が開幕した。アクロポリスから麓の広場まで聖火のパレードが続き、荘厳なホル…
 - [confined_care](#event-confined_care) — 皮膚の下の結晶が疼き、夜中に目を覚ます日が増えた。外の街の診療所へは足を運べず、閉ざされた区画の中で順番が回ってくるのをじっと待っている。
 - [confined_pet_care](#event-confined_pet_care) — 隔離された生活が長引き、ずっと家を空けたままになっている。部屋に残してきた生き物の水や餌を誰に頼むか、そして預けたあとの餌代をどう送り続けるかで頭が…
 - [confinement_wait](#event-confinement_wait) — 収容中 朝の点呼が終わると、灰色の壁に背を預けて次の合図を待った。今日が何月何日なのか思い出すのに、ずいぶん時間がかかった。 隣の寝床の住人と、外に…
@@ -22065,7 +22047,7 @@
 - [family_newlywed_residence](#event-family_newlywed_residence) — 結婚が決まってから、二人でどこに新居を構えるかの話し合いが続いた。借家の敷金や親の面倒、互いの職場までの道のりを考え合わせると、簡単には決められなか…
 - [old_reemployment_review](#event-old_reemployment_review) — 朝起きて仕事着に袖を通すたび、年々抜けない疲れを実感するようになった。これまでと同じ日数働き続けるか、そろそろ荷を下ろすか考える時期が来た。
 - [life_goal_review](#event-life_goal_review) — かつて心に決めた目標を、日々の忙しさのなかでふと思い返した。仕事や家の事情もあの頃とは変わり、これからどう向き合っていくか考え直した。
-- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると手元が狂いそうになる。居残りで手を動かして慣らすか、自前で道具を揃えて熟練の先輩にコツを教わるか考え…
+- [life_skill_practice](#event-life_skill_practice) — 普段こなしている仕事でも、現場が慌ただしくなると判断や手順が乱れそうになる。終業後に苦手な流れを確かめるか、自分で必要な教材や道具を用意して経験の長…
 - [life_rim_supply_delay](#event-life_rim_supply_delay) — 鉱区へ届くはずの交換部品の輸送便が遅れ、急ぎの修理に必要な部材が底をついた。止まった重機の警報音が作業場中に鳴り響いている。自腹で消耗品を買い足して…
 - [life_rim_skill_handover](#event-life_rim_skill_handover) — 整備の現場にもすっかり慣れ、機械の異音を聞き分けるのも早くなった。最近入ってきた新人が、外した部品の戻し方や異音の見極め方で立ち往生し、休憩時間に心…
 - [life_goal_resume](#event-life_goal_resume) — しばらく胸の奥にしまい込んでいたかつての目標を、ふとした折に思い出した。日々の暮らしが少し落ち着いた今、もう一度手をつけてみるか考えた。
@@ -22237,8 +22219,7 @@
 - [asset_daily_property_comfort](#event-asset_daily_property_comfort) — 自ら買い取った住まいの壁を塗り直し、居心地の良い家具を整えた。毎月の家賃の心配がない生活は、心に大きな余裕と安定をもたらしている。
 - [asset_choice_workshop_open](#event-asset_choice_workshop_open) — これまでに培った技術と知見を活かし、自らの看板を掲げて小さな工房や店舗（仕立て屋、パン屋、修理工房、薬草店）を開業する相談を持ちかけられた。
 - [asset_daily_workshop_revenue](#event-asset_daily_workshop_revenue) — 工房の店先で注文主と打ち合わせをし、丹精込めて仕上げた品を納品した。手渡された代金を金庫に収め、自らの腕で稼ぎ出す手応えを噛み締めた。
-- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — 不意の天災や移動都市の区画被災に備え、民間保険会社が提供する「天災総合避難・再建保険」の案内が届いた。年々の保険料を納めることで、被災時に速やかな補…
-- [asset_catastrophe_insurance_claim](#event-asset_catastrophe_insurance_claim) — 天災の混乱の中、避難所で保険会社の臨時窓口を見つけた。避難証明書と保険証書を提示したところ、迅速な審査が行われた。
+- [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 - [life_rim_skill_handover_followup](#event-life_rim_skill_handover_followup) — 見習いと一緒に機械の点検手順を確かめ合った頃から、ずいぶん年月が経った。ある日、若い作業員が油の染みた古い点検メモを手にやって来た。昔の手帳を開いて…
 - [life_rim_workmate_followup](#event-life_rim_workmate_followup) — 昔、作業の手ほどきを頼んできた{rimWorkmateName}と作業場の外で久しぶりに顔を合わせた。あの頃一緒にやった点検のことで聞きたいことがあ…
 - [life_savra_late_craft](#event-life_savra_late_craft) — 長年続けてきた整備の仕事も、若い頃のように手早くはこなせなくなった。節々が痛む日は重い部品を若手に任せ、代わりに金属の異音や摩耗を見分ける勘所を教え…
@@ -22257,6 +22238,7 @@
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
+- [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_arts_overload_crisis](#event-life_arts_overload_crisis) — 激しい精神の昂ぶりと疲弊のなか、体内の源石結晶が異常励起を起こし、アーツの奔流が意識の制御を離れて逆流し始めた。皮膚下の結晶が赤黒く脈打って熱を帯び…
 - [life_lynch_mob_siege](#event-life_lynch_mob_siege) — 夜更け、怒号と松明の火がアパートの窓を赤く照らし出した。棍棒を持った排斥暴徒が『忌み者を焼き出せ』と叫びながら玄関扉を叩き壊そうとしている。廊下には…
 - [life_terminal_despair_choice](#event-life_terminal_despair_choice) — 辛さが長く続き、今日をどう過ごせばよいのか考えることさえ苦しくなった。今の気持ちを誰かに伝えるか、用事を止めて休むか、これからどうするかを考えた。
@@ -25715,7 +25697,12 @@
 
 ```json
 {
-  "job": 4,
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "short-sentry",
+    "sourceEventId": "car",
+    "nominalCash": 120000
+  },
   "fl": {
     "veteran": 1
   },
@@ -25829,6 +25816,16 @@
 <a id="choice-car-3"></a>
 選択肢文：工場労働者として働く
 
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !!employmentOpeningForChoice(s, 2)"
+  }
+}
+```
+
 旧シム観測：表示 899、選択可能 899
 
 結果枝：
@@ -25842,7 +25839,10 @@
 
 ```json
 {
-  "job": 2
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 2
+  }
 }
 ```
 
@@ -25873,7 +25873,11 @@
         ]
       }
     ]
-  }
+  },
+  "en": {
+    "dynamicFunction": "s => !!employmentOpeningForChoice(s, 3)"
+  },
+  "why": "この地域では採掘班の募集を確認できない"
 }
 ```
 
@@ -25890,7 +25894,10 @@
 
 ```json
 {
-  "job": 3,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 3
+  },
   "fl": {
     "workplace_hazard": 1
   }
@@ -26031,6 +26038,16 @@
 <a id="choice-car-7"></a>
 選択肢文：飲食店や宿の仕事を探す
 
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !!employmentOpeningForChoice(s, 17)"
+  }
+}
+```
+
 旧シム観測：表示 899、選択可能 899
 
 結果枝：
@@ -26044,7 +26061,10 @@
 
 ```json
 {
-  "job": 17,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 17
+  },
   "rl": 3
 }
 ```
@@ -26061,13 +26081,7 @@
 ```json
 {
   "show": {
-    "any": [
-      "国:クルビア",
-      "国:ヴィクトリア",
-      "国:龍門",
-      "国:レム・ビリトン",
-      "国:炎国"
-    ]
+    "dynamicFunction": "s => [\"クルビア\", \"ヴィクトリア\", \"龍門\", \"レム・ビリトン\", \"炎国\"].includes(s.res?.n) && !!employmentOpeningForChoice(s, 18)"
   }
 }
 ```
@@ -26085,7 +26099,10 @@
 
 ```json
 {
-  "job": 18,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 18
+  },
   "k": 3,
   "cr": 2
 }
@@ -26118,10 +26135,7 @@
 ```json
 {
   "show": {
-    "ge": {
-      "k": 15,
-      "literacy": 28
-    }
+    "dynamicFunction": "s => s.k >= 15 && literacyValue(s) >= 28 && !!employmentOpeningForChoice(s, 20)"
   }
 }
 ```
@@ -26139,7 +26153,10 @@
 
 ```json
 {
-  "job": 20,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 20
+  },
   "k": 2,
   "rl": 3
 }
@@ -26172,10 +26189,7 @@
 ```json
 {
   "show": {
-    "ge": {
-      "k": 20,
-      "literacy": 40
-    }
+    "dynamicFunction": "s => s.k >= 20 && literacyValue(s) >= 40 && !!employmentOpeningForChoice(s, 21)"
   }
 }
 ```
@@ -26193,7 +26207,10 @@
 
 ```json
 {
-  "job": 21,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 21
+  },
   "k": 3,
   "cr": 3
 }
@@ -26444,13 +26461,7 @@
 ```json
 {
   "show": {
-    "any": [
-      "国:カジミエーシュ",
-      "国:リターニア",
-      "国:炎国",
-      "国:極東",
-      "国:イェラグ"
-    ]
+    "dynamicFunction": "s => [\"カジミエーシュ\", \"リターニア\", \"炎国\", \"極東\", \"イェラグ\"].includes(s.res?.n) && !!employmentOpeningForChoice(s, 22)"
   }
 }
 ```
@@ -26468,7 +26479,10 @@
 
 ```json
 {
-  "job": 22,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 22
+  },
   "ar": 2,
   "k": 1
 }
@@ -26621,9 +26635,7 @@
 ```json
 {
   "show": {
-    "need": [
-      "国:レム・ビリトン"
-    ]
+    "dynamicFunction": "s => s.res?.n === \"レム・ビリトン\" && !!employmentOpeningForChoice(s, 3)"
   }
 }
 ```
@@ -26641,7 +26653,10 @@
 
 ```json
 {
-  "job": 3,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 3
+  },
   "fl": {
     "workplace_hazard": 1
   }
@@ -26756,7 +26771,12 @@
 
 ```json
 {
-  "job": 1,
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "local-errand",
+    "sourceEventId": "car",
+    "nominalCash": 300000
+  },
   "fl": {
     "criminal_yakuza": 1
   },
@@ -26777,7 +26797,7 @@
 
 ```json
 {
-  "job": 1,
+  "job": 0,
   "fl": {
     "criminal_yakuza": 1,
     "trauma_crime": 1
@@ -26873,7 +26893,7 @@
 ```json
 {
   "res": 1,
-  "job": 1,
+  "job": 0,
   "rl": -15,
   "p": 4,
   "residenceArrangement": "independent_rental",
@@ -26913,8 +26933,13 @@
 
 ```json
 {
-  "job": 0,
   "cash": 80000,
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "market-watch",
+    "sourceEventId": "car",
+    "nominalCash": 80000
+  },
   "h": -5,
   "lifeAffiliations": [
     {
@@ -28120,8 +28145,13 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 ```json
 {
-  "job": 0,
   "cash": 80000,
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "market-watch",
+    "sourceEventId": "sargon_market_contract_review",
+    "nominalCash": 80000
+  },
   "h": -5,
   "lifeAffiliations": [
     {
@@ -28154,7 +28184,6 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 ```json
 {
-  "job": 0,
   "cash": -20000,
   "lifeGoal": {
     "id": "sargon-market-guard-work",
@@ -28194,7 +28223,10 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 ```json
 {
-  "job": 16,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 16
+  },
   "rl": 2,
   "lifeAffiliation": {
     "id": "terra-general-transporter",
@@ -28240,7 +28272,6 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 ```json
 {
-  "job": 0,
   "lifeGoal": {
     "id": "sargon-market-guard-work",
     "action": "abandon",
@@ -31076,7 +31107,12 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 ```json
 {
-  "job": 1,
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "cargo-handling",
+    "sourceEventId": "work_unemployed_reentry",
+    "nominalCash": 50000
+  },
   "cash": 50000,
   "p": 2,
   "h": -2
@@ -31089,6 +31125,16 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 <a id="choice-work_unemployed_reentry-1"></a>
 選択肢文：街外れの町工場や工房で、製造工として雇ってもらう
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !!employmentOpeningForChoice(s, 2)"
+  }
+}
+```
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -31103,7 +31149,10 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 
 ```json
 {
-  "job": 2,
+  "employmentAction": {
+    "action": "accept-local-opening",
+    "jobId": 2
+  },
   "p": 3,
   "rl": 2
 }
@@ -77007,8 +77056,9 @@ s => {
     "老年"
   ],
   "show": {
-    "dynamicFunction": "s => s.res?.n === \"イベリア\" && (s.local?.kind === \"漁村・沿岸集落\" || s.r?.n === \"エーギル\")"
+    "dynamicFunction": "s => s.res?.n === \"イベリア\" && s.local?.kind === \"漁村・沿岸集落\""
   },
+  "once": true,
   "cd": 4,
   "w": 0.25,
   "fx": {
@@ -87443,7 +87493,7 @@ s => {
 
 ### 本文
 
-> 年に一度の「九龍美食競宴」が開催され、誰でもオリジナル料理で出店できる看板屋台大会が開かれていた。優勝すれば龍門全土に名が売れ、多額の賞金が出る。
+> 夜市の一角で、数軒の屋台が新しい料理を出して客の反応を競う小さな催しを始めていた。客足が増え、臨時の手伝いを探す店もある。
 
 ### 発生条件・構造
 
@@ -87461,8 +87511,8 @@ s => {
   "need": [
     "国:龍門"
   ],
-  "w": 0.8,
-  "cd": 8
+  "once": true,
+  "w": 0.55
 }
 ```
 
@@ -87475,19 +87525,13 @@ s => {
 #### 選択肢 1
 
 <a id="choice-choice_lungmen_10-0"></a>
-選択肢文：独自に研究した極上の創作点心で勝負に出る
+選択肢文：知り合いの屋台で仕込みと配膳を手伝う
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "procedure",
-  "en": {
-    "ge": {
-      "k": 35
-    }
-  },
-  "why": "料理の工夫や技術が足りない。"
+  "intent": "service"
 }
 ```
 
@@ -87496,34 +87540,17 @@ s => {
 結果枝：
 <a id="outcome-choice_lungmen_10-0-0"></a>
 
-- **結果 1（設定確率 70%）**
+- **結果 1（設定確率 100%）**
 
-> 審査員の舌を唸らせて見事に金賞を受賞。賞金と栄誉ある看板を掲げることができた。
-
-効果：
-
-```json
-{
-  "cash": 80000,
-  "p": 6,
-  "k": 2
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_lungmen_10-0-1"></a>
-
-- **結果 2（設定確率 30%）**
-
-> 工夫が裏目に出て平凡な評価に終わった。だが料理の腕は格段に上がった。
+> 包み紙を折り、料理を渡し、閉店まで客をさばいた。店主から日当を受け取った。
 
 効果：
 
 ```json
 {
-  "cash": -10000,
-  "p": 1,
-  "k": 3
+  "cash": 10000,
+  "p": 2,
+  "cr": 1
 }
 ```
 
@@ -87532,13 +87559,17 @@ s => {
 #### 選択肢 2
 
 <a id="choice-choice_lungmen_10-1"></a>
-選択肢文：手堅い定番の焼き小籠包と冷茶のセットで手堅く稼ぐ
+選択肢文：気になる屋台を二、三軒回る
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "self-or-family-care"
+  "intent": "enjoyment",
+  "en": {
+    "affordableCash": 4000
+  },
+  "why": "食べ歩きに回せる小遣いがない。"
 }
 ```
 
@@ -87549,13 +87580,14 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> コンテストの順位は逃したが、大勢の観光客に飛ぶように売れて手堅い利益を出した。
+> 少量ずつ買って味を比べ、腹が満ちたところで夜市を後にした。
 
 効果：
 
 ```json
 {
-  "cash": 30000,
+  "cash": -4000,
+  "pm": 1,
   "p": 3
 }
 ```
@@ -87565,7 +87597,7 @@ s => {
 #### 選択肢 3
 
 <a id="choice-choice_lungmen_10-2"></a>
-選択肢文：観客として各地の名物料理を食べ歩いて満喫する
+選択肢文：混雑を避けて買い物だけ済ませる
 
 表示・選択条件と補助情報：
 
@@ -87582,14 +87614,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 祭り気分を心ゆくまで味わい、美味しい料理に舌鼓を打って英気を養った。
+> 必要な品だけ買い、人の少ない路地から帰った。
 
 効果：
 
 ```json
 {
-  "cash": -5000,
-  "p": 4
+  "p": 1
 }
 ```
 
@@ -95061,7 +95092,13 @@ s => {
 
 ```json
 {
-  "intent": "procedure"
+  "intent": "procedure",
+  "en": {
+    "ge": {
+      "h": 25
+    }
+  },
+  "why": "救助現場で動き続ける体力が足りない。"
 }
 ```
 
@@ -96372,7 +96409,13 @@ s => {
 
 ```json
 {
-  "intent": "procedure"
+  "intent": "procedure",
+  "en": {
+    "ge": {
+      "h": 25
+    }
+  },
+  "why": "重い木箱を運ぶ体力が足りない。"
 }
 ```
 
@@ -96443,7 +96486,7 @@ s => {
 
 ### 本文
 
-> 冬の終わりを告げ、春の訪れを祝う伝統行事「マースレニツァ」の日が訪れた。広場では藁人形が燃やされ、太陽を象徴する丸いクレープ（ブリヌイ）が山のように焼かれている。
+> 冬の終わり、地区の広場に食べ物の屋台が数軒出て、人々が長い寒さの区切りをつけるように集まっていた。呼び名や祝い方は土地ごとに違うらしい。
 
 ### 発生条件・構造
 
@@ -96468,8 +96511,8 @@ s => {
   "need": [
     "国:ウルサス"
   ],
-  "w": 0.85,
-  "cd": 8
+  "once": true,
+  "w": 0.5
 }
 ```
 
@@ -96482,20 +96525,19 @@ s => {
 #### 選択肢 1
 
 <a id="choice-choice_ursus_10-0"></a>
-選択肢文：祭りの柱登り競争に参加し、一番上の賞品を目指す
+選択肢文：屋台の雪かきと荷運びを手伝う
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "procedure",
+  "intent": "service",
   "en": {
     "ge": {
-      "h": 55,
-      "cr": 30
+      "h": 25
     }
   },
-  "why": "丸太をよじ登る腕力と度胸がない。"
+  "why": "雪の中で荷を運ぶ体力が足りない。"
 }
 ```
 
@@ -96504,33 +96546,17 @@ s => {
 結果枝：
 <a id="outcome-choice_ursus_10-0-0"></a>
 
-- **結果 1（設定確率 75%）**
+- **結果 1（設定確率 100%）**
 
-> 凍りついた高い柱を見事に登りきり、天辺の豪華な毛皮のブーツと大歓声を勝ち取った。
-
-効果：
-
-```json
-{
-  "cash": 40000,
-  "cr": 4,
-  "p": 6
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_ursus_10-0-1"></a>
-
-- **結果 2（設定確率 25%）**
-
-> 途中で滑り落ちて尻を強打し、群衆の笑い草になった。だが祭り気分を大いに楽しんだ。
+> 通路の雪をどけて荷箱を運び、店主から温かい食事を一皿もらった。
 
 効果：
 
 ```json
 {
-  "h": -4,
-  "p": 2
+  "cr": 1,
+  "p": 2,
+  "h": -1
 }
 ```
 
@@ -96539,17 +96565,17 @@ s => {
 #### 選択肢 2
 
 <a id="choice-choice_ursus_10-1"></a>
-選択肢文：大判のブリヌイを何十枚も焼き、近所の人々に振る舞う
+選択肢文：温かい焼き菓子を買って食べる
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "voluntary-aid",
+  "intent": "enjoyment",
   "en": {
-    "affordableCash": 15000
+    "affordableCash": 2000
   },
-  "why": "材料費の蓄えがない。"
+  "why": "食べ物に回せる小遣いがない。"
 }
 ```
 
@@ -96560,16 +96586,15 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> バターたっぷりの焼きたてクレープを笑顔で配り、町中の人々から温かい感謝と祝福を受けた。
+> 紙に包まれた熱い焼き菓子を手に、しばらく広場の人波を眺めた。
 
 効果：
 
 ```json
 {
-  "cash": -15000,
+  "cash": -2000,
   "pm": 1,
-  "p": 6,
-  "rl": 4
+  "p": 2
 }
 ```
 
@@ -96578,13 +96603,13 @@ s => {
 #### 選択肢 3
 
 <a id="choice-choice_ursus_10-2"></a>
-選択肢文：屋台で甘いジャム付きブリヌイを買い、のんびり祭りを見物する
+選択肢文：寒くなる前に帰る
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "withdrawal"
+  "intent": "caution"
 }
 ```
 
@@ -96595,14 +96620,13 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 素朴な甘さを味わいながら藁人形が燃え盛るのを眺め、長い冬の終わりを実感した。
+> 日が傾く前に広場を離れ、凍った道を慎重に歩いて帰った。
 
 効果：
 
 ```json
 {
-  "cash": -2000,
-  "p": 3
+  "p": 1
 }
 ```
 
@@ -99736,10 +99760,11 @@ s => {
   "intent": "voluntary-aid",
   "en": {
     "ge": {
+      "h": 30,
       "cr": 35
     }
   },
-  "why": "不良少年たちの刃物が怖い。"
+  "why": "刃物を持つ相手と距離を取りながら護衛する体力か度胸が足りない。"
 }
 ```
 
@@ -105474,7 +105499,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 街路樹が初夏の花を咲かせる季節を迎え、都の広場で市民総出の初夏祭が開かれた。広場には焼き菓子や伝統料理の屋台が並び、優雅な円舞曲（ワルツ）に合わせて老若男女が手を取り合っている。
+> 初夏の午後、広場の一角で小さな市が開かれ、焼き菓子の屋台のそばで数人の演奏家が曲を奏でていた。通りがかりの人が足を止め、短い休息を取っている。
 
 ### 発生条件・構造
 
@@ -105499,8 +105524,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:リターニア"
   ],
-  "w": 0.85,
-  "cd": 8
+  "once": true,
+  "w": 0.5
 }
 ```
 
@@ -105513,19 +105538,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_leithanien_10-0"></a>
-選択肢文：広場の中央で華麗なステップを踏み、ワルツの輪をリードする
+選択肢文：空いた場所で演奏を聴く
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "procedure",
-  "en": {
-    "ge": {
-      "cr": 30
-    }
-  },
-  "why": "人前で踊る社交性と度胸がない。"
+  "intent": "enjoyment"
 }
 ```
 
@@ -105534,33 +105553,15 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 結果枝：
 <a id="outcome-choice_leithanien_10-0-0"></a>
 
-- **結果 1（設定確率 85%）**
+- **結果 1（設定確率 100%）**
 
-> 見事なダンスで拍手喝采を浴び、今年の「祭りの花形」に選ばれて記念の品と賞金を授与された。
-
-効果：
-
-```json
-{
-  "cash": 30000,
-  "p": 6,
-  "rl": 3
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_leithanien_10-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 足をもつれさせてパートナーと転倒し、恥をかいた。だが皆で大笑いして楽しい思い出となった。
+> 曲が終わるまで立ち止まり、拍手をしてから歩き出した。
 
 効果：
 
 ```json
 {
-  "p": 3,
-  "rl": 2
+  "p": 2
 }
 ```
 
@@ -105569,13 +105570,17 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 2
 
 <a id="choice-choice_leithanien_10-1"></a>
-選択肢文：屋台で名物の白ソーセージと焼き菓子を買い、仲間と語り明かす
+選択肢文：焼き菓子を買って近くの人と分ける
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "self-or-family-care"
+  "intent": "self-or-family-care",
+  "en": {
+    "affordableCash": 2500
+  },
+  "why": "焼き菓子に回せる小遣いがない。"
 }
 ```
 
@@ -105586,15 +105591,16 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 香ばしいソーセージと甘い焼き菓子を味わい、音楽の都の温かな祝宴を心ゆくまで満喫した。
+> 紙包みの焼き菓子を分け合い、仕事や家の話をしながらしばらく休んだ。
 
 効果：
 
 ```json
 {
-  "cash": -3000,
-  "p": 4,
-  "rl": 2
+  "cash": -2500,
+  "pm": 1,
+  "p": 2,
+  "rl": 1
 }
 ```
 
@@ -105603,7 +105609,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 3
 
 <a id="choice-choice_leithanien_10-2"></a>
-選択肢文：木陰のベンチで静かに本を読みながら祭りの喧騒を眺める
+選択肢文：混み始める前に帰る
 
 表示・選択条件と補助情報：
 
@@ -105620,13 +105626,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 穏やかな初夏の風と甘い花の香りに包まれ、贅沢な休日の午後を過ごした。
+> 演奏が遠ざかる道を選び、静かなうちに家へ戻った。
 
 効果：
 
 ```json
 {
-  "p": 2
+  "p": 1
 }
 ```
 
@@ -109889,7 +109895,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 春の復活祭を迎え、聖都の広場という広場が色とりどりの砂糖菓子と花々で飾り付けられた。巨大な特製ケーキが切り分けられ、誰もが平和と甘味を分かち合う最大の祝祭だ。
+> 春の休日、広場の一角に菓子店や飲み物の屋台が並び、近所の人が立ち寄っていた。大きな行事というより、暖かくなった季節の小さな賑わいだ。
 
 ### 発生条件・構造
 
@@ -109915,8 +109921,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:ラテラーノ"
   ],
-  "w": 0.85,
-  "cd": 8
+  "once": true,
+  "w": 0.5
 }
 ```
 
@@ -109929,24 +109935,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_laterano_10-0"></a>
-選択肢文：広場の特設ステージで守護銃の祝砲演舞を披露し祭りを盛り上げる
+選択肢文：屋台の配膳を手伝う
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "procedure",
-  "en": {
-    "need": [
-      "種族:サンクタ",
-      "gun"
-    ],
-    "ge": {
-      "age": 14,
-      "cr": 40
-    }
-  },
-  "why": "守護銃の受領・訓練と演舞の準備が整っていない。"
+  "intent": "service"
 }
 ```
 
@@ -109955,35 +109950,16 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 結果枝：
 <a id="outcome-choice_laterano_10-0-0"></a>
 
-- **結果 1（設定確率 85%）**
+- **結果 1（設定確率 100%）**
 
-> 華麗な連続射撃演舞で空を鮮やかに彩り、万雷の拍手を浴びた。教皇庁から特別栄誉メダルを授与された。
-
-効果：
-
-```json
-{
-  "cash": 40000,
-  "cr": 6,
-  "p": 7,
-  "rl": 3
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_laterano_10-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 薬莢の排出で軽い火傷を負ったが、最後まで演舞をやり遂げて大きな拍手を受けた。
+> 紙皿と飲み物を渡し続け、混雑が引いたころに店主から焼き菓子を一つ分けてもらった。
 
 効果：
 
 ```json
 {
-  "h": -4,
-  "p": 4,
-  "cr": 2
+  "cr": 1,
+  "p": 2
 }
 ```
 
@@ -109992,17 +109968,17 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 2
 
 <a id="choice-choice_laterano_10-1"></a>
-選択肢文：特製の大鍋で甘いホットチョコレートを作り、広場の子どもたちに配る
+選択肢文：菓子を一つ買い、広場の端で食べる
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "voluntary-aid",
+  "intent": "enjoyment",
   "en": {
-    "affordableCash": 15000
+    "affordableCash": 1500
   },
-  "why": "材料費の蓄えがない。"
+  "why": "菓子に使う小遣いがない。"
 }
 ```
 
@@ -110013,16 +109989,15 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 笑顔でカップを配り歩き、街中の人々と幸福な温もりを分かち合った。感謝の祝福を受けた。
+> 甘い菓子を食べながら、行き交う人と鐘の音をしばらく眺めた。
 
 効果：
 
 ```json
 {
-  "cash": -15000,
+  "cash": -1500,
   "pm": 1,
-  "p": 6,
-  "rl": 4
+  "p": 2
 }
 ```
 
@@ -110031,7 +110006,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 3
 
 <a id="choice-choice_laterano_10-2"></a>
-選択肢文：屋台で切り分けられた記念ケーキをいただき、のんびり広場の音楽を聴く
+選択肢文：用事を済ませて、そのまま帰る
 
 表示・選択条件と補助情報：
 
@@ -110048,13 +110023,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 極上の甘さと穏やかな日差しに包まれ、ラテラーノの平和を心から噛み締めた。
+> 賑わいを横目に必要な買い物だけ済ませ、普段どおり家へ戻った。
 
 効果：
 
 ```json
 {
-  "p": 4
+  "p": 1
 }
 ```
 
@@ -119131,7 +119106,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 商業連合会が主催する年に一度の「騎士競技ファン感謝フェスタ」が開催された。広場にはスポンサー企業の屋台が立ち並び、人気騎士たちとのサイン会や握手会、模擬馬上槍試合で大賑わいとなっている。
+> 競技場の周囲にスポンサー企業の臨時売店と小さな催し物が並び、試合を見に来た客で通りが混み合っていた。普段より人手が要るらしく、短時間の手伝いも募っている。
 
 ### 発生条件・構造
 
@@ -119152,8 +119127,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:カジミエーシュ"
   ],
-  "w": 0.85,
-  "cd": 8
+  "once": true,
+  "w": 0.55
 }
 ```
 
@@ -119166,19 +119141,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_kazimierz_10-0"></a>
-選択肢文：市民代表として馬上槍試合のエキシビションに飛び入り参加する
+選択肢文：売店の品出しと列整理を手伝う
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "procedure",
-  "en": {
-    "ge": {
-      "cr": 40
-    }
-  },
-  "why": "大観衆の前で槍を構える度胸がない。"
+  "intent": "service"
 }
 ```
 
@@ -119187,34 +119156,17 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 結果枝：
 <a id="outcome-choice_kazimierz_10-0-0"></a>
 
-- **結果 1（設定確率 85%）**
+- **結果 1（設定確率 100%）**
 
-> 見事な馬上槍捌きを披露して競技連盟から絶賛され、記念の特製サーベルとトロフィーを授与された。
-
-効果：
-
-```json
-{
-  "cash": 35000,
-  "cr": 6,
-  "p": 6,
-  "rl": 2
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_kazimierz_10-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 槍の反動で落馬して派手に転び、観客の笑いを誘った。だが怪我はなく祭りを楽しんだ。
+> 商品箱を運び、列が詰まらないよう声をかけて回った。閉店前に日当と余った軽食を受け取った。
 
 効果：
 
 ```json
 {
-  "p": 3,
-  "rl": 2
+  "cash": 8000,
+  "cr": 2,
+  "p": 2
 }
 ```
 
@@ -119223,17 +119175,17 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 2
 
 <a id="choice-choice_kazimierz_10-1"></a>
-選択肢文：子どもたちを連れてサイン会を回り、名物ソーセージをご馳走する
+選択肢文：小遣いの範囲で軽食を買い、試合前の人波を眺める
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "voluntary-aid",
+  "intent": "enjoyment",
   "en": {
-    "affordableCash": 10000
+    "affordableCash": 2500
   },
-  "why": "おごる金銭の余裕がない。"
+  "why": "軽食に回せる小遣いがない。"
 }
 ```
 
@@ -119244,16 +119196,15 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 子どもたちの満面の笑顔に囲まれ、家族や近所との絆を深めた。温かい幸福感に満たされた。
+> 紙袋の軽食を手に、スポンサー広告と観客の声で騒がしい通りを歩いた。
 
 効果：
 
 ```json
 {
-  "cash": -10000,
+  "cash": -2500,
   "pm": 1,
-  "p": 6,
-  "rl": 4
+  "p": 2
 }
 ```
 
@@ -119262,7 +119213,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 3
 
 <a id="choice-choice_kazimierz_10-2"></a>
-選択肢文：広場のベンチで冷たい林檎ジュースを飲みながら華やかなパレードを眺める
+選択肢文：混雑を避け、裏通りから帰る
 
 表示・選択条件と補助情報：
 
@@ -119279,14 +119230,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 賑やかな音楽と紙吹雪を眺め、騎士の国の華やかな祝祭を心ゆくまで楽しんだ。
+> 人混みから離れると歓声だけが建物越しに聞こえた。そのまま静かな道を選んで帰った。
 
 効果：
 
 ```json
 {
-  "cash": -1500,
-  "p": 3
+  "p": 1
 }
 ```
 
@@ -123811,7 +123761,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 新都市ウォルシーニの市民広場で、古くから伝わる伝統の手打ち麺料理を競い合う祝祭料理市が開かれた。広場には各街区の名だたる料理人や腕自慢が集まり、オリーブとトマトソースの香ばしい匂いが立ち込めている。
+> 近くの市民市場で料理の屋台が増え、店ごとに麺料理や煮込みを出していた。特別な全国行事という様子ではなく、街区の人が食事を楽しむ小さな催しらしい。
 
 ### 発生条件・構造
 
@@ -123832,8 +123782,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:シラクーザ"
   ],
-  "w": 0.85,
-  "cd": 8
+  "once": true,
+  "w": 0.5
 }
 ```
 
@@ -123846,119 +123796,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_siracusa_10-0"></a>
-選択肢文：代々伝わる自家製手打ちタリアテッレと煮込みソースで品評会にエントリーする
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "procedure",
-  "en": {
-    "ge": {
-      "k": 30
-    }
-  },
-  "why": "手打ちパスタを完璧に仕上げる技術がない。"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_siracusa_10-0-0"></a>
-
-- **結果 1（設定確率 75%）**
-
-> 伝統の技と絶妙な茹で加減が審査員から絶賛され、名誉ある最優秀賞を獲得した。広場に詰めかけた市民から大きな喝采を浴びた。
-
-効果：
-
-```json
-{
-  "cash": 50000,
-  "cr": 10,
-  "p": 8
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_siracusa_10-0-1"></a>
-
-- **結果 2（設定確率 25%）**
-
-> 麺の仕上がりがわずかに固くなり入賞は逃したものの、「伝統に真摯な味」と審査員から労われた。
-
-効果：
-
-```json
-{
-  "p": -2
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 2
-
-<a id="choice-choice_siracusa_10-1"></a>
-選択肢文：市民市場の屋台を巡り、各地区の素朴な名物料理を味わい歩く
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "enjoyment",
-  "en": {
-    "affordableCash": 2500
-  },
-  "why": "屋台を巡る小遣いがない。"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_siracusa_10-1-0"></a>
-
-- **結果 1（設定確率 90%）**
-
-> 濃厚なチーズや地魚のソースなど、シラクーザ伝統の滋味を腹一杯平らげて至福の時間を過ごした。
-
-効果：
-
-```json
-{
-  "cash": -2500,
-  "pm": 1,
-  "h": 3,
-  "p": 5
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_siracusa_10-1-1"></a>
-
-- **結果 2（設定確率 10%）**
-
-> 美味しさのあまり食べすぎてしまい、腹を壊して救護テントで休む羽目になった。
-
-効果：
-
-```json
-{
-  "cash": -2500,
-  "pm": 1,
-  "h": -4,
-  "p": -1
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 3
-
-<a id="choice-choice_siracusa_10-2"></a>
-選択肢文：広場の整理や案内役を引き受け、料理市の安全と運営を支える
+選択肢文：屋台の仕込みと皿洗いを手伝う
 
 表示・選択条件と補助情報：
 
@@ -123971,18 +123809,88 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-choice_siracusa_10-2-0"></a>
+<a id="outcome-choice_siracusa_10-0-0"></a>
 
 - **結果 1（設定確率 100%）**
 
-> 混雑する広場で丁寧な案内を行い、祝祭の進行を大いに支えた。市場の世話役から感謝され、上質なオリーブオイルを貰った。
+> 野菜を刻み、空いた皿を洗い続けた。店じまいのあと、日当と残った一皿を受け取った。
 
 効果：
 
 ```json
 {
-  "cr": 4,
-  "p": 4
+  "cash": 7000,
+  "p": 2
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-choice_siracusa_10-1"></a>
+選択肢文：屋台をいくつか回って食べ比べる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "intent": "enjoyment",
+  "en": {
+    "affordableCash": 2500
+  },
+  "why": "食べ歩きに回せる小遣いがない。"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-choice_siracusa_10-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 少量ずつ注文して味を比べ、腹が満ちるまで市場を歩いた。
+
+効果：
+
+```json
+{
+  "cash": -2500,
+  "pm": 1,
+  "p": 3
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-choice_siracusa_10-2"></a>
+選択肢文：混雑を避けて市場を出る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "intent": "withdrawal"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-choice_siracusa_10-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 人の増えた通路を避け、買い物だけ済ませて家へ戻った。
+
+効果：
+
+```json
+{
+  "p": 1
 }
 ```
 
@@ -133127,7 +133035,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 年に一度、砂漠中の隊商とオアシス住民が集う「大バザール祝祭」が開幕した。広大な広場には数千の天幕が立ち並び、オリエントの秘宝、珍しい動物、香辛料、甘い菓子が溢れかえっている。
+> 交易路沿いのオアシスに隊商が何組か到着し、広場へ臨時の市が立った。食料、布、道具などが並ぶが、どこから来た品か分からないものも混じっている。
 
 ### 発生条件・構造
 
@@ -133148,8 +133056,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:サルゴン"
   ],
-  "w": 0.85,
-  "cd": 8
+  "once": true,
+  "w": 0.55
 }
 ```
 
@@ -133162,66 +133070,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_sargon_10-0"></a>
-選択肢文：自慢の特産品を揃えた特設露店を出店し、大勢の旅人たちに売りさばく
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "procedure",
-  "en": {
-    "ge": {
-      "cr": 25
-    },
-    "affordableCash": 15000
-  },
-  "why": "出店用の元手資金または信用がない。"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_sargon_10-0-0"></a>
-
-- **結果 1（設定確率 85%）**
-
-> 飛ぶように商品が売れ、持参した在庫が完売！ 巨額の売上と新しい取引先を大量に獲得した！
-
-効果：
-
-```json
-{
-  "cash": 60000,
-  "pm": 1,
-  "cr": 8,
-  "p": 6
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_sargon_10-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> ライバル店の叩き売りに押され、利益はトントンに終わったが祭りは楽しんだ。
-
-効果：
-
-```json
-{
-  "cash": 5000,
-  "pm": 1,
-  "p": 2
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 2
-
-<a id="choice-choice_sargon_10-1"></a>
-選択肢文：祝祭の警備ボランティアとして、迷子の保護やスリの取り締まりに汗を流す
+選択肢文：荷下ろしを手伝って日当を得る
 
 表示・選択条件と補助情報：
 
@@ -133234,34 +133083,56 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-choice_sargon_10-1-0"></a>
+<a id="outcome-choice_sargon_10-0-0"></a>
 
-- **結果 1（設定確率 90%）**
+- **結果 1（設定確率 100%）**
 
-> 平和で安全な祝祭の運営に大いに貢献し、市場の長老から金メダルと特産品の詰め合わせを贈られた。
+> 荷箱を天幕まで運び、積み荷の数を確かめる仕事を手伝った。夕方に小さな日当を受け取った。
 
 効果：
 
 ```json
 {
-  "cr": 8,
-  "p": 6
+  "cash": 8000,
+  "h": -1,
+  "p": 2
 }
 ```
 
 旧シム観測回数：未計測
-<a id="outcome-choice_sargon_10-1-1"></a>
 
-- **結果 2（設定確率 10%）**
+#### 選択肢 2
 
-> 人混みの整理で一日中声を張り上げ喉を痛めたが、大役を果たした。
+<a id="choice-choice_sargon_10-1"></a>
+選択肢文：必要な食料と香辛料を買う
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "intent": "self-or-family-care",
+  "en": {
+    "affordableCash": 3500
+  },
+  "why": "買い物に回せる現金が足りない。"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-choice_sargon_10-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 値段を聞き比べ、必要な品だけを選んで袋に詰めてもらった。
 
 効果：
 
 ```json
 {
-  "cr": 4,
-  "h": -3,
+  "cash": -3500,
+  "pm": 1,
   "p": 2
 }
 ```
@@ -133271,17 +133142,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 3
 
 <a id="choice-choice_sargon_10-2"></a>
-選択肢文：財布を片手にスークを巡り、珍しいスパイス料理や異国の芸を堪能する
+選択肢文：品物を見るだけにする
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "enjoyment",
-  "en": {
-    "affordableCash": 3000
-  },
-  "why": "祝祭を楽しむ小遣いがない。"
+  "intent": "withdrawal"
 }
 ```
 
@@ -133292,16 +133159,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 甘いナツメヤシのケーキや羊肉の串焼きを腹一杯食べ、幻想的な夜を過ごした。
+> 見慣れない品を眺めながら市を一周し、何も買わずに戻った。
 
 効果：
 
 ```json
 {
-  "cash": -3000,
-  "pm": 1,
-  "h": 2,
-  "p": 5
+  "p": 1
 }
 ```
 
@@ -137811,7 +137675,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 長い極夜が終わり、数ヶ月ぶりに地平線の上に太陽の光が戻ってくる「太陽迎えの冬至祭」が開幕した。広場には巨大なかがり火が焚かれ、全部族が手を取り合って輪になって踊っている。
+> 冬の日照が短い時期、近くの人々が火のそばに集まり、温かい食事を分けていた。氏族や地域ごとの慣習は違うが、この場では寒さをしのぐために人が寄り合っている。
 
 ### 発生条件・構造
 
@@ -137832,8 +137696,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:サーミ"
   ],
-  "w": 0.85,
-  "cd": 8
+  "once": true,
+  "w": 0.45
 }
 ```
 
@@ -137846,63 +137710,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_sami_10-0"></a>
-選択肢文：伝統の太鼓を打ち鳴らし、太陽への感謝を歌い上げる輪の中心で踊る
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "enjoyment",
-  "en": {
-    "ge": {
-      "cr": 20
-    }
-  },
-  "why": "皆の前で踊る度胸と信用がない。"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_sami_10-0-0"></a>
-
-- **結果 1（設定確率 85%）**
-
-> 地平線から黄金の陽光が差し込んだ瞬間、広場全体が歓喜の涙と抱擁に包まれた！ 心の底からの深い幸福感を味わった！
-
-効果：
-
-```json
-{
-  "cr": 8,
-  "p": 10,
-  "h": 4
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_sami_10-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 踊り疲れて雪の上に倒れ込んだが、顔に当たる朝日の暖かさに胸を打たれた。
-
-効果：
-
-```json
-{
-  "p": 6,
-  "h": 2
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 2
-
-<a id="choice-choice_sami_10-1"></a>
-選択肢文：祝祭の広場で、熱いハーブスープと焼き肉を大鍋で振る舞う炊き出しを手伝う
+選択肢文：薪を運び、火が消えないよう見張る
 
 表示・選択条件と補助情報：
 
@@ -137915,34 +137723,49 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-choice_sami_10-1-0"></a>
+<a id="outcome-choice_sami_10-0-0"></a>
 
-- **結果 1（設定確率 90%）**
+- **結果 1（設定確率 100%）**
 
-> 寒さに震える人々に温かい食事を行き渡らせ、全員から笑顔で感謝された。
+> 薪を継ぎ足し、風向きが変わるたび火の粉を払った。身体が冷える前に温かい椀を一つ受け取った。
 
 効果：
 
 ```json
 {
-  "cr": 6,
-  "p": 6
+  "p": 2,
+  "h": -1
 }
 ```
 
 旧シム観測回数：未計測
-<a id="outcome-choice_sami_10-1-1"></a>
 
-- **結果 2（設定確率 10%）**
+#### 選択肢 2
 
-> 大鍋の湯気で前が見えないほど忙しかったが、充実した祝祭となった。
+<a id="choice-choice_sami_10-1"></a>
+選択肢文：温かい食事を分けてもらい、話を聞く
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "intent": "enjoyment"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-choice_sami_10-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 湯気の立つ食事を口にしながら、雪道や狩り場について交わされる話を聞いた。
 
 効果：
 
 ```json
 {
-  "cr": 4,
-  "h": -2,
   "p": 3
 }
 ```
@@ -137952,13 +137775,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 3
 
 <a id="choice-choice_sami_10-2"></a>
-選択肢文：丘の頂上に登り、沈黙の中で太陽が地平線を割る神聖な瞬間を見届ける
+選択肢文：暗くなる前に家へ戻る
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "voluntary-aid"
+  "intent": "caution"
 }
 ```
 
@@ -137969,13 +137792,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 暗闇の終わりと光の誕生を静かに祈り、新たな一年に向けて決意を固めた。
+> 火の明かりを背に、足元が見えるうちに帰路についた。
 
 効果：
 
 ```json
 {
-  "p": 6
+  "p": 1
 }
 ```
 
@@ -142431,7 +142254,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 年に一度、イェラグ全土の信徒が聖峰の麓に集う「カランド年次大祭」が開幕した。山々には祈りのホルンの音が響き渡り、巫女による神聖な祝福の儀が執り行われている。
+> 聖峰へ向かう人が増える時期になり、麓の集落では宿と食事の準備に追われていた。遠くから来た参詣者もいるが、誰がどこから来たのかまでは分からない。
 
 ### 発生条件・構造
 
@@ -142452,8 +142275,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:イェラグ"
   ],
-  "w": 0.85,
-  "cd": 8
+  "once": true,
+  "w": 0.5
 }
 ```
 
@@ -142466,63 +142289,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_kjerag_10-0"></a>
-選択肢文：信徒の代表として祭壇の前に進み出て、国の安寧と繁栄を祈る献灯を行う
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "voluntary-aid",
-  "en": {
-    "ge": {
-      "cr": 35
-    }
-  },
-  "why": "全山を代表して登壇する信望がない。"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_kjerag_10-0-0"></a>
-
-- **結果 1（設定確率 85%）**
-
-> 巫女から直々に清めの聖水を授けられ、全信徒から割れんばかりの歓声を受けた！ 心洗われる最高の栄誉を授かった！
-
-効果：
-
-```json
-{
-  "cr": 12,
-  "p": 10,
-  "h": 4
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_kjerag_10-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 大観衆の視線に圧倒されて足がすくんだが、無事に灯明を捧げ終えた。
-
-効果：
-
-```json
-{
-  "cr": 6,
-  "p": 4
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 2
-
-<a id="choice-choice_kjerag_10-1"></a>
-選択肢文：祭りの運営委員として、全国から集まった巡礼者の宿坊の手配や炊き出しを支える
+選択肢文：宿の水汲みと寝具の準備を手伝う
 
 表示・選択条件と補助情報：
 
@@ -142535,35 +142302,52 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-choice_kjerag_10-1-0"></a>
+<a id="outcome-choice_kjerag_10-0-0"></a>
 
-- **結果 1（設定確率 90%）**
+- **結果 1（設定確率 100%）**
 
-> 混乱なく数千人の巡礼者を案内し、寺院長から感謝の念珠を授与された。
+> 水桶を運び、空いた部屋へ寝具を敷いた。宿の人から温かい茶と礼を受け取った。
 
 効果：
 
 ```json
 {
-  "cr": 8,
-  "p": 6
+  "cr": 2,
+  "p": 2,
+  "h": -1
 }
 ```
 
 旧シム観測回数：未計測
-<a id="outcome-choice_kjerag_10-1-1"></a>
 
-- **結果 2（設定確率 10%）**
+#### 選択肢 2
 
-> 足が棒になるほど走り回ったが、大祭の大成功を見届けて胸がいっぱいになった。
+<a id="choice-choice_kjerag_10-1"></a>
+選択肢文：道を尋ねる参詣者に、分かる範囲で道順を教える
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "intent": "voluntary-aid"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-choice_kjerag_10-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 知っている峠道と休める場所だけを伝えた。相手は礼を言い、荷を背負い直して歩き出した。
 
 効果：
 
 ```json
 {
-  "cr": 4,
-  "h": -4,
-  "p": 3
+  "cr": 1,
+  "p": 2
 }
 ```
 
@@ -142572,13 +142356,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 3
 
 <a id="choice-choice_kjerag_10-2"></a>
-選択肢文：広場の信徒たちの輪に加わり、太鼓とホルンの荘厳な調べに合わせて静かに祈る
+選択肢文：人の増えた道を避け、いつもの仕事へ戻る
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "enjoyment"
+  "intent": "withdrawal"
 }
 ```
 
@@ -142589,13 +142373,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 全山が一つになる神秘的な一体感に包まれ、深い心の平安を得た。
+> 賑わいを遠目に見ながら、混雑の少ない道を選んで日常へ戻った。
 
 効果：
 
 ```json
 {
-  "p": 6
+  "p": 1
 }
 ```
 
@@ -147058,191 +146842,6 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測回数：未計測
 
 
-<a id="event-choice_kazdel_10"></a>
-## choice_kazdel_10
-
-- 出典位置：data/regional/kazdel.js:404
-- 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
-- 国・地域：カズデル
-- ジャンル：日常、教育・文化
-- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
-
-### 本文
-
-> 復興区画の完成を記念し、かつて戦乱の合図だった狼煙台から七色の祝祭の煙を上げる「平和の狼煙大祭」が開催された。広場には全支族が集い、肩を抱き合って歌っている。
-
-### 発生条件・構造
-
-```json
-{
-  "id": "choice_kazdel_10",
-  "conf": "S",
-  "references": [
-    "SRC_TERRA_19REGIONS_LIFE_20261030"
-  ],
-  "st": [
-    "児童",
-    "少年",
-    "青年",
-    "壮年",
-    "老年"
-  ],
-  "need": [
-    "国:カズデル"
-  ],
-  "w": 0.85,
-  "cd": 8
-}
-```
-
-### 旧1000人シムの観測
-
-未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
-
-### 選択肢と結果枝
-
-#### 選択肢 1
-
-<a id="choice-choice_kazdel_10-0"></a>
-選択肢文：祝祭の頂上で平和の狼煙に点火し、サルカズの未来への宣誓を高らかに読み上げる
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "oppose-exclusion",
-  "en": {
-    "ge": {
-      "cr": 35
-    }
-  },
-  "why": "同胞を代表して宣誓する信望と度胸がない。"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_kazdel_10-0-0"></a>
-
-- **結果 1（設定確率 85%）**
-
-> 七色の煙が青空へ昇った瞬間、数千人の同胞から割れんばかりの歓声と涙の拍手が湧き起こった！ カズデルの歴史に刻まれる栄誉を分かち合った！
-
-効果：
-
-```json
-{
-  "cr": 15,
-  "p": 12,
-  "h": 4
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_kazdel_10-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 大観衆の熱気に圧倒されて感極まり、涙声になりながらも宣誓をやり遂げた。
-
-効果：
-
-```json
-{
-  "cr": 8,
-  "p": 6
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 2
-
-<a id="choice-choice_kazdel_10-1"></a>
-選択肢文：広場の中央で大鍋料理を振る舞い、老若男女全員の杯に温かい果実酒を満たす
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "service"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_kazdel_10-1-0"></a>
-
-- **結果 1（設定確率 90%）**
-
-> 一人も飢えることなく全員が腹一杯飲み食いし、最高の笑顔を引き出した。
-
-効果：
-
-```json
-{
-  "cr": 8,
-  "p": 8
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_kazdel_10-1-1"></a>
-
-- **結果 2（設定確率 10%）**
-
-> 配膳に追われて息つく暇もなかったが、祭りの熱気に包まれて幸福だった。
-
-効果：
-
-```json
-{
-  "cr": 4,
-  "h": -3,
-  "p": 4
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 3
-
-<a id="choice-choice_kazdel_10-2"></a>
-選択肢文：同胞たちの輪に加わり、肩を組んで古きサルカズの民謡を声を嗄らして合唱する
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "enjoyment"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_kazdel_10-2-0"></a>
-
-- **結果 1（設定確率 100%）**
-
-> 大地を揺るがす歌声の中に溶け込み、不屈の民族の誇りを胸に深く刻んだ。
-
-効果：
-
-```json
-{
-  "p": 8
-}
-```
-
-旧シム観測回数：未計測
-
-
 <a id="event-daily_iberia_01"></a>
 ## daily_iberia_01
 
@@ -147397,7 +146996,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 日当たりの良い石段で、潮風に当たりながら手入れの行き届いた古いアコースティックギターを爪弾いた。哀愁を帯びた調べが静かな午後に響き渡った。
+> 日当たりの良い石段の近くで、誰かが古い弦楽器を静かに爪弾いていた。途切れ途切れの調べを聞きながら、しばらく足を止めた。
 
 ### 発生条件・構造
 
@@ -147415,6 +147014,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:イベリア"
   ],
+  "cd": 4,
   "fx": {
     "p": 2
   }
@@ -147490,7 +147090,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 古い教会の回廊で、埃をかぶったステンドグラスを布で磨き上げた。差し込む光が色鮮やかな幾何学模様を石畳に落とし、心が安らいだ。
+> 古い教会の回廊で、埃をかぶったステンドグラスを布で拭く手伝いをした。差し込む光が色のついた模様を石畳に落とした。
 
 ### 発生条件・構造
 
@@ -147508,6 +147108,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:イベリア"
   ],
+  "cd": 4,
   "fx": {
     "p": 2,
     "cr": 1
@@ -148825,7 +148426,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 海沿いの廃村の近くで、異様な生臭さと蠢く影を目撃し、背筋の凍る悪寒に襲われて一目散に逃げ出した。
+> 海沿いの廃村の近くで、風向きとは合わない生臭さと、崩れた家屋の奥で動く影を見かけた。正体を確かめず、その場を離れた。
 
 ### 発生条件・構造
 
@@ -148834,15 +148435,17 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "id": "daily_iberia_36",
   "conf": "S",
   "st": [
-    "児童",
     "少年",
     "青年",
-    "壮年",
-    "老年"
+    "壮年"
   ],
   "need": [
     "国:イベリア"
   ],
+  "show": {
+    "dynamicFunction": "s => s.local?.kind === \"漁村・沿岸集落\""
+  },
+  "once": true,
   "fx": {
     "h": -2,
     "p": -3
@@ -148872,7 +148475,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 塩田で過酷な炎天下の重労働を続け、脱水症状と日焼けで倒れ込みそうになった。
+> 塩田の作業を長く続けた日、強い日差しで喉が渇き、腕も重くなった。休憩所まで戻って水を飲み、しばらく日陰で身体を冷ました。
 
 ### 発生条件・構造
 
@@ -148881,15 +148484,16 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "id": "daily_iberia_37",
   "conf": "S",
   "st": [
-    "児童",
-    "少年",
     "青年",
-    "壮年",
-    "老年"
+    "壮年"
   ],
   "need": [
     "国:イベリア"
   ],
+  "show": {
+    "dynamicFunction": "s => s.h >= 25"
+  },
+  "cd": 5,
   "fx": {
     "h": -3,
     "p": -2
@@ -149927,7 +149531,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 沿岸の町グランファロの古い石壁に沿って歩いた。潮の匂いを含んだ風が壁の隙間を吹き抜け、かつての住民たちが残した古い標識が静かに佇んでいた。
+> 沿岸の古い集落で、風雨に削られた石壁に沿って歩いた。壁の隙間を潮風が抜け、昔の住民が残した標識がところどころに残っていた。
 
 ### 発生条件・構造
 
@@ -149942,6 +149546,10 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:イベリア"
   ],
+  "show": {
+    "dynamicFunction": "s => s.local?.kind === \"漁村・沿岸集落\""
+  },
+  "cd": 6,
   "fx": {
     "p": 1
   }
@@ -149970,7 +149578,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 夕暮れ時、グランファロの街頭にガス灯が一斉に灯された。潮風に揺れる柔らかな灯火が石畳を照らし出し、荒涼とした沿岸の町に静かな安らぎをもたらしていた。
+> 夕暮れ時、沿岸の集落で街灯が順に灯された。風に揺れる明かりが石畳を照らし、人通りの減った道に細い光が続いた。
 
 ### 発生条件・構造
 
@@ -149985,6 +149593,10 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:イベリア"
   ],
+  "show": {
+    "dynamicFunction": "s => s.local?.kind === \"漁村・沿岸集落\""
+  },
+  "cd": 6,
   "fx": {
     "p": 2
   }
@@ -151228,7 +150840,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ```json
 {
-  "intent": "procedure"
+  "intent": "procedure",
+  "en": {
+    "ge": {
+      "h": 25
+    }
+  },
+  "why": "圧搾作業を続ける体力がない。"
 }
 ```
 
@@ -151317,7 +150935,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 沿岸の入り江で、夜陰に乗じて外国の密輸船が危険な禁制品（未検査の海洋生物や武器）を陸揚げしようとしているのを目撃した。見張りの男たちが周囲を警戒している。
+> 夜の入り江で、船籍の分からない小型舟艇から、布をかぶせた荷箱が浜へ運び込まれているのを見かけた。荷の中身も運び手の素性も分からないまま、見張り役らしい者が周囲を警戒している。
 
 ### 発生条件・構造
 
@@ -151335,6 +150953,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:イベリア"
   ],
+  "show": {
+    "dynamicFunction": "s => s.local?.kind === \"漁村・沿岸集落\""
+  },
   "w": 0.8,
   "cd": 9
 }
@@ -151349,7 +150970,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_iberia_07-0"></a>
-選択肢文：物陰から気配を殺して接近し、警笛を鳴らして審問所の沿岸警備隊を一気に誘導する
+選択肢文：物陰から距離を取り、警笛で近くの警備担当へ知らせる
 
 表示・選択条件と補助情報：
 
@@ -151373,7 +150994,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 85%）**
 
-> 警備隊が即座に突入し、密輸団を一網打尽に拿捕！ 沿岸の安全を守った功労者として莫大な懸賞金と勲章を授与された！
+> 警笛を聞いた警備担当が浜へ向かい、荷を運んでいた者たちは舟を残して散った。事情を聞かれ、見た範囲のことを伝えた。
 
 効果：
 
@@ -151390,7 +151011,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 2（設定確率 15%）**
 
-> 密輸団に気づかれて銃撃を受け、命からがら逃げ出したが警備隊に通報した。
+> 見張り役に気づかれて追われたが、路地へ逃げ込み、あとから警備担当へ見た場所と人数を伝えた。
 
 効果：
 
@@ -151407,7 +151028,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 2
 
 <a id="choice-choice_iberia_07-1"></a>
-選択肢文：密輸船の船籍と積荷の荷印を暗闇の中で詳細にメモし、後から匿名で通報する
+選択肢文：舟と荷箱の印を遠目に書き留め、あとから匿名で知らせる
 
 表示・選択条件と補助情報：
 
@@ -151419,7 +151040,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
       "k": 25
     }
   },
-  "why": "暗号化された荷印を読み解く知識がない。"
+  "why": "暗がりで特徴を見分けて記録する知識が足りない。"
 }
 ```
 
@@ -151430,7 +151051,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 90%）**
 
-> 的確な情報提供により、後日内陸の密輸アジトが摘発された。安全に謝礼金を受け取った。
+> 書き留めた特徴が照合の手掛かりになったと、後日小さな謝礼が届いた。荷の正体までは知らされなかった。
 
 効果：
 
@@ -151506,7 +151127,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 夜半、隣の家の主人が青ざめて訪ねてきた。「昔の海外渡航歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と泣きつかれた。
+> 夜半、隣の家の主人が青ざめて訪ねてきた。「昔に他国を訪れた経歴を理由に、悪意ある者から審問所へ虚偽の密告をされた。明日にも連行されるかもしれない」と泣きつかれた。
 
 ### 発生条件・構造
 
@@ -151692,7 +151313,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 古い洋館の屋根裏で、黄金時代に製作された大型の真鍮製屈折望遠鏡が発見された。レンズは曇り、歯車は錆びついている。修復して澄み切った星空を観測しようと思い立った。
+> 古い洋館の屋根裏で、黄金時代に作られた真鍮製の望遠鏡を見つけた。レンズは曇り、歯車には錆が浮いている。自分で分解する前に、どう扱うか考えた。
 
 ### 発生条件・構造
 
@@ -151710,8 +151331,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:イベリア"
   ],
-  "w": 0.8,
-  "cd": 9
+  "w": 0.7,
+  "once": true
 }
 ```
 
@@ -151724,7 +151345,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_iberia_09-0"></a>
-選択肢文：微細な研磨剤でレンズの曇りを磨き上げ、精密歯車を噛み合わせて完璧に修復する
+選択肢文：光学器具を扱う修理工を探し、状態を見てもらう
 
 表示・選択条件と補助情報：
 
@@ -151732,12 +151353,9 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 {
   "intent": "procedure",
   "en": {
-    "ge": {
-      "k": 30,
-      "p": 25
-    }
+    "dynamicFunction": "s => $rules.economy.availableFunds(s) >=\n            20000 * (s.priceIndex || 1) + $rules.economy.annualReserve(s)"
   },
-  "why": "光学機器の修復技術と根気がない。"
+  "why": "点検と修理に回せる現金が足りない。"
 }
 ```
 
@@ -151746,34 +151364,43 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 結果枝：
 <a id="outcome-choice_iberia_09-0-0"></a>
 
-- **結果 1（設定確率 85%）**
+- **結果 1（設定確率 80%）**
 
-> 望遠鏡は見事に蘇り、月面のクレーターや遠くの星雲を息を呑む鮮明さで捉えた！ 学術的価値を認められ、愛好家に高値で売却できた！
+> 修理工はレンズと歯車を一つずつ確かめ、交換できる部品を使って動く状態まで戻した。費用を払い、望遠鏡を家へ持ち帰った。
 
 効果：
 
 ```json
 {
-  "cash": 45000,
-  "k": 8,
-  "p": 8
+  "cash": {
+    "dynamicFunction": "s => -20000 * (s.priceIndex || 1)"
+  },
+  "fl": {
+    "iberia_telescope_repaired": 1
+  },
+  "k": 2,
+  "p": 3
 }
 ```
 
 旧シム観測回数：未計測
 <a id="outcome-choice_iberia_09-0-1"></a>
 
-- **結果 2（設定確率 15%）**
+- **結果 2（設定確率 20%）**
 
-> レンズの端に微小な擦り傷をつけてしまったが、夜空の観測には十分な性能を取り戻した。
+> 修理工に見てもらったが、合う部品が手に入らず、その場では直せなかった。点検料だけを払い、望遠鏡は元の布に包んで持ち帰った。
 
 効果：
 
 ```json
 {
-  "cash": 15000,
-  "k": 4,
-  "p": 2
+  "cash": {
+    "dynamicFunction": "s => -5000 * (s.priceIndex || 1)"
+  },
+  "fl": {
+    "iberia_telescope_inspected": 1
+  },
+  "k": 1
 }
 ```
 
@@ -151782,13 +151409,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 2
 
 <a id="choice-choice_iberia_09-1"></a>
-選択肢文：地元の学校や青少年の学習用として望遠鏡を寄贈し、天体観測会を開く
+選択肢文：古物商へ持ち込み、現状のまま引き取ってもらう
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "voluntary-aid"
+  "intent": "caution"
 }
 ```
 
@@ -151797,32 +151424,21 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 結果枝：
 <a id="outcome-choice_iberia_09-1-0"></a>
 
-- **結果 1（設定確率 90%）**
+- **結果 1（設定確率 100%）**
 
-> 初めて見る美しい星々に子供たちから歓声が上がり、地域から深く感謝された。
-
-効果：
-
-```json
-{
-  "cr": 8,
-  "p": 6
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_iberia_09-1-1"></a>
-
-- **結果 2（設定確率 10%）**
-
-> 天気が曇って観測会は延期となったが、子供たちに喜ばれた。
+> 古物商は傷んだレンズと真鍮の筒を確かめ、部品取りを含めた古道具として買い取った。
 
 効果：
 
 ```json
 {
-  "cr": 4,
-  "p": 2
+  "cash": {
+    "dynamicFunction": "s => 15000 * (s.priceIndex || 1)"
+  },
+  "fl": {
+    "iberia_telescope_sold": 1
+  },
+  "p": 1
 }
 ```
 
@@ -151831,7 +151447,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 3
 
 <a id="choice-choice_iberia_09-2"></a>
-選択肢文：修復は諦め、真鍮の金属スクラップとして回収業者へ売却する
+選択肢文：修理はせず、使える金属部品だけ回収業者へ渡す
 
 表示・選択条件と補助情報：
 
@@ -151848,48 +151464,50 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 手頃な臨時収入を手に入れた。現実的な判断を下した。
+> 錆びた機構を無理に動かさず、回収業者に引き渡した。手元には小さな代金だけが残った。
 
 効果：
 
 ```json
 {
-  "cash": 10000,
-  "p": 1
+  "cash": {
+    "dynamicFunction": "s => 5000 * (s.priceIndex || 1)"
+  },
+  "fl": {
+    "iberia_telescope_scrapped": 1
+  }
 }
 ```
 
 旧シム観測回数：未計測
 
 
-<a id="event-choice_iberia_10"></a>
-## choice_iberia_10
+<a id="event-choice_iberia_telescope_observation_followup"></a>
+## choice_iberia_telescope_observation_followup
 
-- 出典位置：data/regional/iberia.js:427
+- 出典位置：data/regional/iberia.js:446
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
-- ジャンル：日常
-- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、国の発生条件あり
+- ジャンル：未分類
+- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：2026-11-05実ログ監査で望遠鏡発見から分離した後日談。
 
 ### 本文
 
-> 大いなる静謐の犠牲者を追悼し、未来への希望を灯す「光のランタン祭」が開催された。広場から丘の上まで無数のランタンが灯され、厳かな祈りと賛美歌が夜空へ響き渡っている。
+> 修理して手元に残した望遠鏡は、しばらく布をかけたまま置いてあった。雲の少ない夜、窓の外を見て、久しぶりに筒を外へ向けることにした。
 
 ### 発生条件・構造
 
 ```json
 {
-  "id": "choice_iberia_10",
+  "id": "choice_iberia_telescope_observation_followup",
   "conf": "S",
   "references": [
     "SRC_TERRA_19REGIONS_LIFE_20261030"
   ],
   "st": [
-    "児童",
-    "少年",
     "青年",
     "壮年",
     "老年"
@@ -151897,8 +151515,15 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:イベリア"
   ],
-  "w": 0.85,
-  "cd": 8
+  "after": {
+    "id": "choice_iberia_09",
+    "min": 2
+  },
+  "once": true,
+  "w": 0.35,
+  "show": {
+    "dynamicFunction": "s => s.fl?.iberia_telescope_repaired === 1"
+  }
 }
 ```
 
@@ -151910,113 +151535,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 #### 選択肢 1
 
-<a id="choice-choice_iberia_10-0"></a>
-選択肢文：祈りのランタンを掲げて巡礼の先頭に立ち、希望の歌を高らかに歌い上げる
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "voluntary-aid",
-  "en": {
-    "ge": {
-      "cr": 35
-    }
-  },
-  "why": "信徒の先頭に立つ信望と度胸がない。"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_iberia_10-0-0"></a>
-
-- **結果 1（設定確率 85%）**
-
-> 無数のランタンの光が夜の海を照らし出し、全市民が涙とともに一つになった！ 永遠に語り継がれる奇跡のような夜を創り出した！
-
-効果：
-
-```json
-{
-  "cr": 12,
-  "p": 12,
-  "h": 4
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_iberia_10-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 感極まって涙で歌が詰まったが、周囲の人々が温かく合唱を支えてくれた。
-
-効果：
-
-```json
-{
-  "cr": 6,
-  "p": 6
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 2
-
-<a id="choice-choice_iberia_10-1"></a>
-選択肢文：ランタンの点火用オイルと芯を配り、風で消えた灯火を灯して回る奉仕を行う
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "service"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_iberia_10-1-0"></a>
-
-- **結果 1（設定確率 90%）**
-
-> 街中の灯りを絶やさず守り抜き、大聖堂の司祭から祝福の記念品を授かった。
-
-効果：
-
-```json
-{
-  "cr": 6,
-  "p": 6
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_iberia_10-1-1"></a>
-
-- **結果 2（設定確率 10%）**
-
-> 夜風に煽られて何度も火をつけ直したが、温かな光に包まれて満たされた。
-
-効果：
-
-```json
-{
-  "cr": 4,
-  "p": 3
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 3
-
-<a id="choice-choice_iberia_10-2"></a>
-選択肢文：静かに自分のランタンを石段に置き、失われた人々の魂へ深く祈りを捧げる
+<a id="choice-choice_iberia_telescope_observation_followup-0"></a>
+選択肢文：月と明るい星をゆっくり観察する
 
 表示・選択条件と補助情報：
 
@@ -152029,17 +151549,90 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-choice_iberia_10-2-0"></a>
+<a id="outcome-choice_iberia_telescope_observation_followup-0-0"></a>
 
 - **結果 1（設定確率 100%）**
 
-> 厳かな光の海の中で静寂を味わい、明日を生きる清らかな力を得た。
+> 焦点を合わせると、肉眼では見えにくい月面の陰影が浮かんだ。しばらく寒さを忘れて覗き込んだ。
 
 効果：
 
 ```json
 {
-  "p": 6
+  "k": 2,
+  "p": 3
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-choice_iberia_telescope_observation_followup-1"></a>
+選択肢文：扱い方を紙に書き、壊さないよう保管し直す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "intent": "caution"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-choice_iberia_telescope_observation_followup-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 歯車を無理に回さない順序とレンズの手入れを紙に残し、乾いた布をかけて保管した。
+
+効果：
+
+```json
+{
+  "k": 1,
+  "p": 1
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-choice_iberia_telescope_observation_followup-2"></a>
+選択肢文：使う機会が少ないので古物商へ売る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "intent": "self-or-family-care"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-choice_iberia_telescope_observation_followup-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 修理済みであることを伝えて査定を受け、望遠鏡を手放した。置き場所は空き、代金が手元に残った。
+
+効果：
+
+```json
+{
+  "cash": {
+    "dynamicFunction": "s => 30000 * (s.priceIndex || 1)"
+  },
+  "fl": {
+    "iberia_telescope_repaired": 0,
+    "iberia_telescope_sold": 1
+  },
+  "p": 1
 }
 ```
 
@@ -156108,7 +155701,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ```json
 {
-  "intent": "voluntary-aid"
+  "intent": "voluntary-aid",
+  "en": {
+    "ge": {
+      "h": 25
+    }
+  },
+  "why": "瓦礫を運び続ける体力が足りない。"
 }
 ```
 
@@ -156551,7 +156150,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 内戦の銃声が止んだ収穫の季節、全村を挙げた「大地への感謝大祭」が開幕した。広場には焼きトウモロコシと豆料理の大鍋が並び、マリカの陽気なリズムに合わせて老若男女が輪になって踊っている。
+> 収穫を終えた近隣の農家が広場へ野菜や穀物を持ち寄り、小さな市が立った。食べ物を交換する人のそばで、仕事を終えた者たちが音楽を鳴らして休んでいる。
 
 ### 発生条件・構造
 
@@ -156572,8 +156171,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:ボリバル"
   ],
-  "w": 0.85,
-  "cd": 8
+  "once": true,
+  "w": 0.55
 }
 ```
 
@@ -156586,63 +156185,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_bolivar_10-0"></a>
-選択肢文：伝統の太鼓を打ち鳴らし、平和を願うボリバルの民謡を全員の先頭で合唱する
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "enjoyment",
-  "en": {
-    "ge": {
-      "cr": 25
-    }
-  },
-  "why": "皆の前で歌い踊る度胸と信用がない。"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_bolivar_10-0-0"></a>
-
-- **結果 1（設定確率 85%）**
-
-> 広場全体が一つになり、歓喜のステップと笑顔の輪が夜通し広がった！ 胸に熱い誇りと生きる勇気が満ち溢れた！
-
-効果：
-
-```json
-{
-  "cr": 10,
-  "p": 10,
-  "h": 4
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_bolivar_10-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 踊り疲れて広場の芝生に倒れ込んだが、満天の星と人々の笑顔に満たされた。
-
-効果：
-
-```json
-{
-  "p": 6,
-  "h": 2
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 2
-
-<a id="choice-choice_bolivar_10-1"></a>
-選択肢文：広場の大鍋でアレパと煮込み料理を大盤振る舞いし、全員に満腹になってもらう
+選択肢文：荷ほどきと売り場づくりを手伝う
 
 表示・選択条件と補助情報：
 
@@ -156655,35 +156198,58 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-choice_bolivar_10-1-0"></a>
+<a id="outcome-choice_bolivar_10-0-0"></a>
 
-- **結果 1（設定確率 90%）**
+- **結果 1（設定確率 100%）**
 
-> 一人も飢えることなく全員が温かい料理を行き渡らせ、感謝の言葉を浴びた。
+> 木箱を運び、品物を並べる場所を整えた。夕方、手伝った礼に野菜と温かい料理を分けてもらった。
 
 効果：
 
 ```json
 {
-  "cr": 8,
-  "p": 6
+  "cr": 2,
+  "p": 3,
+  "h": -1
 }
 ```
 
 旧シム観測回数：未計測
-<a id="outcome-choice_bolivar_10-1-1"></a>
 
-- **結果 2（設定確率 10%）**
+#### 選択肢 2
 
-> 煙で目を真っ赤にしながら料理を作り続けたが、大役を果たした。
+<a id="choice-choice_bolivar_10-1"></a>
+選択肢文：手持ちの食材を持ち寄り、近くの人と食事を分け合う
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "intent": "self-or-family-care",
+  "en": {
+    "affordableCash": 3000
+  },
+  "why": "持ち寄りに回せる余裕がない。"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-choice_bolivar_10-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 鍋のそばで互いの収穫や仕事の話を聞きながら、簡単な食事を分け合った。
 
 効果：
 
 ```json
 {
-  "cr": 4,
-  "h": -2,
-  "p": 3
+  "cash": -3000,
+  "pm": 1,
+  "p": 3,
+  "rl": 1
 }
 ```
 
@@ -156692,13 +156258,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 3
 
 <a id="choice-choice_bolivar_10-2"></a>
-選択肢文：木陰のベンチで、冷たい果実水を飲みながら愛する故郷の祭りを穏やかに眺める
+選択肢文：市を一回りしてから家へ戻る
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "enjoyment"
+  "intent": "withdrawal"
 }
 ```
 
@@ -156709,13 +156275,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 素朴な音楽と人々の笑顔を胸に刻み、平和の尊さを深く噛み締めた。
+> 並んだ作物と行き交う人を眺め、必要なものだけ買って帰った。
 
 効果：
 
 ```json
 {
-  "p": 6
+  "p": 1
 }
 ```
 
@@ -161166,7 +160732,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 ### 本文
 
-> 過酷な鉱山から無事に生還した日々を祝い、大地の恵みに感謝する伝統の「採掘安全祈願ランタン祭」が執り行われた。数千の安全ヘルメットのライトと真鍮ランタンが一斉に灯され、暗い荒野に浮かぶ鉱山都市を温かな光で包み込んでいる。
+> 鉱区の勤務が一区切りついた夜、作業場の前で無事故だった班を労う食事が出された。ヘルメットを机へ置いた人々が、温かい料理を囲んでその日の仕事を振り返っている。
 
 ### 発生条件・構造
 
@@ -161187,8 +160753,8 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "need": [
     "国:レム・ビリトン"
   ],
-  "w": 0.85,
-  "cd": 8
+  "once": true,
+  "w": 0.5
 }
 ```
 
@@ -161201,63 +160767,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 1
 
 <a id="choice-choice_rim_10-0"></a>
-選択肢文：真鍮のランタンを掲げて鉱夫たちの行進に加わり、安全祈願の大地の歌を合唱する
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "enjoyment",
-  "en": {
-    "ge": {
-      "cr": 30
-    }
-  },
-  "why": "パレードの先頭に立つ信望と度胸がない。"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_rim_10-0-0"></a>
-
-- **結果 1（設定確率 85%）**
-
-> 鉱山都市全体が温かな光と誇りに包まれ、荒野の夜空へ祈りの歌声が響き渡った。危険と隣り合わせで生きる同胞たちとの深い連帯を噛み締めた。
-
-効果：
-
-```json
-{
-  "cr": 12,
-  "p": 12,
-  "h": 4
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_rim_10-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 熱気に圧倒されながらも、力強くランタンを掲げて列を進んだ。大地の厳しさと仲間の絆を胸に刻んだ。
-
-効果：
-
-```json
-{
-  "cr": 6,
-  "p": 6
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 2
-
-<a id="choice-choice_rim_10-1"></a>
-選択肢文：炊き出しの広場で、名物のニンジン煮込みと温かいスープを大鍋で振る舞う
+選択肢文：配膳と片付けを手伝う
 
 表示・選択条件と補助情報：
 
@@ -161270,35 +160780,52 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
-<a id="outcome-choice_rim_10-1-0"></a>
+<a id="outcome-choice_rim_10-0-0"></a>
 
-- **結果 1（設定確率 90%）**
+- **結果 1（設定確率 100%）**
 
-> 寒空の下で作業を終えた仲間たちの胃袋を温かい料理で満たし、互いの無事を労い合った。
+> 鍋を運び、空いた器を片づけた。最後に自分の分の温かいスープも受け取った。
 
 効果：
 
 ```json
 {
-  "cr": 8,
-  "p": 8
+  "cr": 1,
+  "p": 2,
+  "h": -1
 }
 ```
 
 旧シム観測回数：未計測
-<a id="outcome-choice_rim_10-1-1"></a>
 
-- **結果 2（設定確率 10%）**
+#### 選択肢 2
 
-> 大鍋の湯気で前が見えないほど忙しかったが、最高の夜を共有した。
+<a id="choice-choice_rim_10-1"></a>
+選択肢文：同じ持ち場の人と食事をする
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "intent": "enjoyment"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-choice_rim_10-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 機械の調子や翌日の段取りを話しながら、ゆっくり食事を取った。
 
 効果：
 
 ```json
 {
-  "cr": 4,
-  "h": -2,
-  "p": 4
+  "p": 3,
+  "rl": 1
 }
 ```
 
@@ -161307,17 +160834,13 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 #### 選択肢 3
 
 <a id="choice-choice_rim_10-2"></a>
-選択肢文：広場のベンチで仲間たちとジョッキを傾け、光の海を眺めながら静かに語り合う
+選択肢文：疲れているので早めに帰る
 
 表示・選択条件と補助情報：
 
 ```json
 {
-  "intent": "enjoyment",
-  "en": {
-    "affordableCash": 2000
-  },
-  "why": "ビール代がない。"
+  "intent": "withdrawal"
 }
 ```
 
@@ -161328,15 +160851,14 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 美しく揺れる灯火を見つめ、互いの無事とこれまでの歩みを深く労い合った。
+> 挨拶だけして作業場を離れ、身体を休めることを優先した。
 
 効果：
 
 ```json
 {
-  "cash": -2000,
-  "pm": 1,
-  "p": 6
+  "h": 2,
+  "p": 1
 }
 ```
 
@@ -165848,192 +165370,6 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 旧シム観測回数：未計測
 
 
-<a id="event-choice_minos_10"></a>
-## choice_minos_10
-
-- 出典位置：data/regional/minos.js:406
-- 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
-- 国・地域：ミノス
-- ジャンル：日常、教育・文化
-- 状況：年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、国の発生条件あり
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
-
-### 本文
-
-> ミノス全ポリスが一つになり、建国の十二英雄を称える世紀の「十二英雄合同大祭」が開幕した。アクロポリスから麓の広場まで聖火のパレードが続き、荘厳なホルンと竪琴の調べが夜空を震わせている。
-
-### 発生条件・構造
-
-```json
-{
-  "id": "choice_minos_10",
-  "conf": "S",
-  "references": [
-    "SRC_TERRA_19REGIONS_LIFE_20261030"
-  ],
-  "st": [
-    "児童",
-    "少年",
-    "青年",
-    "壮年",
-    "老年"
-  ],
-  "need": [
-    "国:ミノス"
-  ],
-  "w": 0.85,
-  "cd": 8
-}
-```
-
-### 旧1000人シムの観測
-
-未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
-
-### 選択肢と結果枝
-
-#### 選択肢 1
-
-<a id="choice-choice_minos_10-0"></a>
-選択肢文：聖火ランナーの最終走者として大階段を駆け上がり、大神殿前の大聖火台へ点火する
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "oppose-exclusion",
-  "en": {
-    "ge": {
-      "h": 30,
-      "cr": 35
-    }
-  },
-  "why": "全ポリスの代表として点火する栄誉と体力がない。"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_minos_10-0-0"></a>
-
-- **結果 1（設定確率 85%）**
-
-> 巨大な聖火が夜空へ黄金の炎を吹き上げた瞬間、十万人の市民から割れんばかりの歓声と賛美の歌が湧き起こった！ ミノスの歴史に名を刻む不滅の栄光を掴んだ！
-
-効果：
-
-```json
-{
-  "cr": 18,
-  "p": 15,
-  "h": 4
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_minos_10-0-1"></a>
-
-- **結果 2（設定確率 15%）**
-
-> 大観衆の視線に心臓が高鳴ったが、最後まで炎を高く掲げて見事に点火した。
-
-効果：
-
-```json
-{
-  "cr": 8,
-  "p": 6
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 2
-
-<a id="choice-choice_minos_10-1"></a>
-選択肢文：祭りの大宴会で、全市民に振る舞う大鍋の肉料理とワインの配膳を統括する
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "service"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_minos_10-1-0"></a>
-
-- **結果 1（設定確率 90%）**
-
-> 一人として取り残さず全員の杯を満たし、満面の笑顔と祝福に包まれた。
-
-効果：
-
-```json
-{
-  "cr": 8,
-  "p": 8
-}
-```
-
-旧シム観測回数：未計測
-<a id="outcome-choice_minos_10-1-1"></a>
-
-- **結果 2（設定確率 10%）**
-
-> 広場を何往復も走り回って足が棒になったが、最高の祝祭を支え切った。
-
-効果：
-
-```json
-{
-  "cr": 4,
-  "h": -2,
-  "p": 4
-}
-```
-
-旧シム観測回数：未計測
-
-#### 選択肢 3
-
-<a id="choice-choice_minos_10-2"></a>
-選択肢文：広場の中央で手を取り合い、全ポリスの同胞たちと伝統の輪舞を夜明けまで踊る
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "intent": "enjoyment"
-}
-```
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-choice_minos_10-2-0"></a>
-
-- **結果 1（設定確率 100%）**
-
-> 古代から受け継がれた悠久の絆に抱かれ、生きている喜びを全身で謳歌した。
-
-効果：
-
-```json
-{
-  "p": 8
-}
-```
-
-旧シム観測回数：未計測
-
-
 <a id="event-confined_care"></a>
 ## confined_care
 
@@ -167821,7 +167157,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
   "cd": 3,
   "w": 0.65,
   "show": {
-    "dynamicFunction": "s=>s.age>=8 && !educationOccupied(s) &&\n        !(educationHas(s,\"upper\") || s.educationPath?.equivalency?.includes(\"upper\"))"
+    "dynamicFunction": "s=>s.age>=8 && !educationOccupied(s) &&\n        !(educationHas(s,\"upper\") || s.educationPath?.equivalency?.includes(\"upper\")) &&\n        educationReturnPathSearchAvailable(s)"
   }
 }
 ```
@@ -167842,7 +167178,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 ```json
 {
   "show": {
-    "dynamicFunction": "s=>s.age<=14 && !educationHas(s,\"primary\")"
+    "dynamicFunction": "s=>s.age<=14 && !educationHas(s,\"primary\") &&\n            educationReturnPathSearchAllowed(s,\"primary\")"
   },
   "en": {
     "dynamicFunction": "s=>!educationActiveCase(s)"
@@ -167880,7 +167216,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 ```json
 {
   "show": {
-    "dynamicFunction": "s=>s.age<=20 && s.educationPath?.stage===\"lower\" &&\n            [\"withdrawn\",\"outside\"].includes(s.educationPath.status)"
+    "dynamicFunction": "s=>s.age<=20 && s.educationPath?.stage===\"lower\" &&\n            [\"withdrawn\",\"outside\"].includes(s.educationPath.status) &&\n            educationReturnPathSearchAllowed(s,\"lower\")"
   },
   "en": {
     "dynamicFunction": "s=>!educationActiveCase(s)"
@@ -167918,7 +167254,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 ```json
 {
   "show": {
-    "dynamicFunction": "s=>s.age<=20 && s.educationPath?.stage===\"upper\" &&\n            [\"withdrawn\",\"outside\"].includes(s.educationPath.status)"
+    "dynamicFunction": "s=>s.age<=20 && s.educationPath?.stage===\"upper\" &&\n            [\"withdrawn\",\"outside\"].includes(s.educationPath.status) &&\n            educationReturnPathSearchAllowed(s,\"upper\")"
   },
   "en": {
     "dynamicFunction": "s=>!educationActiveCase(s)"
@@ -167956,7 +167292,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 ```json
 {
   "show": {
-    "dynamicFunction": "s=>s.age>=16"
+    "dynamicFunction": "s=>s.age>=16 && educationReturnPathSearchAllowed(s,\"preparatory\")"
   },
   "en": {
     "dynamicFunction": "s=>!educationActiveCase(s)"
@@ -172270,7 +171606,7 @@ s => educationLegacySceneGuard(s,"daily_leithanien_57") &&
 
 - **結果 1（設定確率 100%）**
 
-> 今年は学校へ通う手続を置き、家や仕事場で学べることから始めると決めた。学校の免状を得たことにはならない。
+> 今年は学校へ通う手続を置き、家や仕事場で学べることから始めると決めた。読み書きや手仕事を教わる相手を探し始めた。
 
 効果：
 
@@ -177908,7 +177244,7 @@ s => {
 
 ### 本文
 
-> 仕事帰りに借りていた道具を返し、夕餉の食材を買い込んで家路を歩いた。ただ今日を回すだけで過ぎていく日々のなかで、これから先、自分が何を支えに生きていきたいかふと立ち止まって考えた。
+> 仕事を終えて家路につく途中、今日の失敗やうまくいった手順を思い返した。ただ一日を回すだけで過ぎていく暮らしのなかで、これから先、自分が何を支えに生きていきたいか考えた。
 
 ### 発生条件・構造
 
@@ -177949,7 +177285,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-life_goal_start-0"></a>
-選択肢文：仕事の腕を磨き、誰にも負けない技術を身につける
+選択肢文：今の仕事でできることを増やし、腕を磨いていく
 
 旧シム観測：表示 1220、選択可能 1220
 
@@ -177958,7 +177294,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 今の現場で一つずつ難しい作業を自分のものにし、腕一本で食べていける職人を目指そうと心に決めた。
+> 今の仕事で迷う手順や判断を一つずつ身につけ、任される仕事を増やしていこうと心に決めた。
 
 効果：
 
@@ -178244,7 +177580,7 @@ s => {
 
 ### 本文
 
-> 普段こなしている仕事でも、現場が慌ただしくなると手元が狂いそうになる。居残りで手を動かして慣らすか、自前で道具を揃えて熟練の先輩にコツを教わるか考えた。
+> 普段こなしている仕事でも、現場が慌ただしくなると判断や手順が乱れそうになる。終業後に苦手な流れを確かめるか、自分で必要な教材や道具を用意して経験の長い同僚に教わるか考えた。
 
 ### 発生条件・構造
 
@@ -178289,7 +177625,7 @@ s => {
 #### 選択肢 1
 
 <a id="choice-life_skill_practice-0"></a>
-選択肢文：仕事の合間や終業後に、自分の手で反復練習する
+選択肢文：仕事の合間や終業後に、苦手な手順を反復して確かめる
 
 旧シム観測：表示 145834、選択可能 145834
 
@@ -178298,7 +177634,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 焦りやすい工程を何度も手で確かめ、翌日の現場で試してみた。頭で考えなくても手が勝手に動く作業がまた一つ増えた。
+> 迷いやすい手順を何度も確かめ、翌日の仕事で試してみた。慌ただしい時にも順序を崩さず進められる場面が少し増えた。
 
 効果：
 
@@ -178320,7 +177656,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-life_skill_practice-1"></a>
-選択肢文：自前で道具と端材を買い揃え（2万龍門幣）、熟練の職人に教えを請う
+選択肢文：必要な教材や道具を自分で用意し、経験の長い同僚に教えを請う
 
 表示・選択条件と補助情報：
 
@@ -178329,7 +177665,7 @@ s => {
   "en": {
     "dynamicFunction": "s => $rules.economy.availableFunds(s) >= 20000 + $rules.economy.annualReserve(s)"
   },
-  "why": "家計の予備費を残しても、道具と材料の2万龍門幣を用意できない"
+  "why": "家計の予備費を残すと、練習に必要な教材や道具を用意できない"
 }
 ```
 
@@ -178340,7 +177676,7 @@ s => {
 
 - **結果 1（設定確率 80%）**
 
-> 自前の道具を持って頭を下げると、ベテランの職人が休憩時間を割いて刃の入れ方や手入れの勘所を実演してくれた。目から鱗が落ちる思いでその手つきを焼きつけた。
+> 用意した教材や道具を持って相談すると、経験の長い同僚が休憩時間を割き、判断の順序や仕事の勘所を実際の作業に沿って教えてくれた。
 
 効果：
 
@@ -178364,7 +177700,7 @@ s => {
 
 - **結果 2（設定確率 20%）**
 
-> 職人に教えを頼んだが、急ぎの現場が入って手が離せないと断られた。せっかく買った道具と端材を使い、自分ひとりで手応えを確かめながら練習を重ねた。
+> 教えを頼んだ同僚は急ぎの仕事で手が離せなかった。用意した教材や道具を使い、自分で手順を確かめながら練習を重ねた。
 
 効果：
 
@@ -198255,7 +197591,17 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
 "(条件指定なし)"
 ```
 
-> 付き合いが長くなった頃、{romancePartner}が別の地区へ働きに出るかもしれないと打ち明けた。離ればなれになってもこの縁を繋ぎ止められるのか、すぐには答えが出なかった。
+#### 本文候補 1
+
+> 付き合いが長くなるにつれ、{romancePartner}と会う時間には、食事や仕事の話だけでなく、この先どこでどう暮らしたいかという話も混じるようになった。二人とも、そろそろ曖昧なままにはしておけないと感じていた。
+
+#### 本文候補 2
+
+> {romancePartner}と休みの日の予定を立てているうちに、これから先も同じ暮らしの中で会い続けるのかという話になった。仕事や住まいをどうするか、二人で一つずつ考えることにした。
+
+#### 本文候補 3
+
+> いつもの帰り道で、{romancePartner}と家賃や仕事、家族との付き合い方について話した。今の関係をこの先どうしたいのか、互いの考えを確かめる時期が来ていた。
 
 ### 発生条件・構造
 
@@ -210806,15 +210152,15 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 - 出典位置：data/parts/extensions/education-and-later-life/assets-and-property.js:98
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
-- 国・地域：未特定
-- ジャンル：天災・避難
-- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、移動都市・避難に言及
+- 国・地域：クルビア
+- ジャンル：労働・経済、感染・医療
+- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、国の発生条件あり
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：2026-11-05実ログ監査でクルビア民間医療保険へ意味を統一。天災再建給付とは分離。
 
 ### 本文
 
-> 不意の天災や移動都市の区画被災に備え、民間保険会社が提供する「天災総合避難・再建保険」の案内が届いた。年々の保険料を納めることで、被災時に速やかな補償が受けられる。
+> クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 
 ### 発生条件・構造
 
@@ -210834,7 +210180,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
   "cd": 4,
   "w": 0.35,
   "show": {
-    "dynamicFunction": "s => (s.cash || 0) >= 200000 && !s.fl?.insured"
+    "dynamicFunction": "s => s.res?.n === \"クルビア\" && !s.fl?.insured"
   }
 }
 ```
@@ -210848,18 +210194,16 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 #### 選択肢 1
 
 <a id="choice-asset_choice_catastrophe_insurance-0"></a>
-選択肢文：天災総合保険に加入する（初期掛金 150,000）
+選択肢文：初年度の保険料を納めて加入する
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "en": {
-    "ge": {
-      "cash": 150000
-    }
+    "dynamicFunction": "s => $rules.economy.availableFunds(s) >=\n              150000 * (s.priceIndex || 1) + $rules.economy.annualReserve(s)"
   },
-  "why": "掛金を払う現金が足りない"
+  "why": "生活予備費を残すと、初年度の保険料を払える現金が足りない"
 }
 ```
 
@@ -210870,17 +210214,19 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 
 - **結果 1（設定確率 100%）**
 
-> 保険証書に署名し、最初の掛金を納付した。万が一の天災に際しても、最低限の生活再建資金が保障される安心感を得た。
+> 窓口で契約内容を確かめて署名し、初年度の保険料を納めた。次の更新までは、契約で定められた範囲の治療費補助を受けられる。
 
 効果：
 
 ```json
 {
-  "cash": -150000,
+  "cash": {
+    "dynamicFunction": "s => -150000 * (s.priceIndex || 1)"
+  },
   "fl": {
     "insured": 1
   },
-  "p": 3
+  "p": 2
 }
 ```
 
@@ -210889,7 +210235,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 #### 選択肢 2
 
 <a id="choice-asset_choice_catastrophe_insurance-1"></a>
-選択肢文：保険には頼らず、自己責任で備える
+選択肢文：今回は加入を見送る
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
@@ -210898,85 +210244,13 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 
 - **結果 1（設定確率 100%）**
 
-> 保険料の支出を惜しみ、加入を見送った。天災の進路から逃れるのは自らの足と運次第だと気を引き締めた。
+> 案内を畳んで持ち帰り、今年は保険料を払わずに暮らすことにした。
 
 効果：
 
 ```json
 {
   "p": 0
-}
-```
-
-旧シム観測回数：未計測
-
-
-<a id="event-asset_catastrophe_insurance_claim"></a>
-## asset_catastrophe_insurance_claim
-
-- 出典位置：data/parts/extensions/education-and-later-life/assets-and-property.js:128
-- 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
-- 国・地域：未特定
-- ジャンル：天災・避難
-- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件、移動都市・避難に言及
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
-
-### 本文
-
-> 天災の混乱の中、避難所で保険会社の臨時窓口を見つけた。避難証明書と保険証書を提示したところ、迅速な審査が行われた。
-
-### 発生条件・構造
-
-```json
-{
-  "id": "asset_catastrophe_insurance_claim",
-  "conf": "S",
-  "references": [
-    "SRC_COLUMBIA_INSURANCE",
-    "SRC_LIFE_ENDING_GAME"
-  ],
-  "st": [
-    "青年",
-    "壮年",
-    "老年"
-  ],
-  "cd": 3,
-  "w": 0.6,
-  "show": {
-    "dynamicFunction": "s => s.fl?.insured === 1 && s.displacement?.status === \"shelter\""
-  }
-}
-```
-
-### 旧1000人シムの観測
-
-未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
-
-### 選択肢と結果枝
-
-#### 選択肢 1
-
-<a id="choice-asset_catastrophe_insurance_claim-0"></a>
-選択肢文：天災生活再建保険金を受給し、新しい住まいを手配する
-
-旧シム観測：未計測（記録なし。0件ではありません。）
-
-結果枝：
-<a id="outcome-asset_catastrophe_insurance_claim-0-0"></a>
-
-- **結果 1（設定確率 100%）**
-
-> 再建保険金としてまとまった現金が口座に振り込まれた。避難所の雑魚寝から速やかに脱出し、安全な区画に新たな仮住まいを借りることができた。
-
-効果：
-
-```json
-{
-  "cash": 800000,
-  "displacement": "rebuilt",
-  "p": 5
 }
 ```
 
@@ -215517,14 +214791,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 
 ### 本文
 
-**動的本文**：実行時状態から文章を組み立てます。本文を一つに固定せず、生成関数を示します。
-
-```js
-s =>
-        (s.mortality?.crisis?.consultCount || 0) > 0
-          ? "以前の苦しさがまたぶり返し、夜の静寂が重くのしかかる。かつて相談した経験や周囲の支えを思い返し、長引く不調の波とどう折り合いをつけていくか考えた。"
-          : "幾晩もまともに眠れず、人の声や視線に触れるだけで胸が張り裂けそうになる。昨日何を口にしたかも思い出せないまま、薄暗い寝床の脇に置いた水だけを見つめていた。"
-```
+> 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考えた。
 
 ### 発生条件・構造
 
@@ -215546,7 +214813,7 @@ s =>
   "w": 1,
   "pri": true,
   "show": {
-    "dynamicFunction": "s =>\n        s.age >= 14 &&\n        s.mortality?.crisis?.status === \"active\" &&\n        s.mortality.crisis.lastDecisionYear !== s.year"
+    "dynamicFunction": "s =>\n        s.age >= 14 &&\n        s.mortality?.crisis?.status === \"active\" &&\n        (s.mortality.crisis.consultCount || 0) === 0 &&\n        s.mortality.crisis.lastDecisionYear !== s.year"
   }
 }
 ```
@@ -215565,7 +214832,7 @@ s =>
 #### 選択肢 1
 
 <a id="choice-life_mental_crisis_support-0"></a>
-選択肢文：心を許せる相手に、再び波が来たと打ち明ける
+選択肢文：心を許せる相手に、今の苦しさを打ち明ける
 
 表示・選択条件と補助情報：
 
@@ -215584,7 +214851,7 @@ s =>
 
 - **結果 1（設定確率 100%）**
 
-> 途切れ途切れの声で、また息が詰まりそうだと伝えた。相手は静かに寄り添い、焦らなくていいと背中に手を当ててくれた。
+> 途切れ途切れでも今の状態を伝えた。相手と、苦しくなった時に声をかけることと、一人で抱え込まないことを決めた。
 
 効果：
 
@@ -215604,7 +214871,7 @@ s =>
 #### 選択肢 2
 
 <a id="choice-life_mental_crisis_support-1"></a>
-選択肢文：診療所や相談窓口へ行き、これまでの経過を話す
+選択肢文：診療所や相談窓口へ行き、今までの経過を話す
 
 表示・選択条件と補助情報：
 
@@ -215624,7 +214891,7 @@ s =>
 
 - **結果 1（設定確率 100%）**
 
-> 重い足を引きずって窓口を訪ね、不調の波がぶり返したことを打ち明けた。これまでの経過を踏まえた助言と、眠りを助ける薬を受け取った。
+> 窓口で眠れない日や食事が取れない日のことを話し、今後の相談先と、次に苦しくなった時の連絡方法を確かめた。
 
 効果：
 
@@ -215645,7 +214912,7 @@ s =>
 #### 選択肢 3
 
 <a id="choice-life_mental_crisis_support-2"></a>
-選択肢文：予定も用事もすべて投げ出し、毛布をかぶって目を閉じる
+選択肢文：今日の予定を止め、食事と休息を優先する
 
 旧シム観測：表示 9、選択可能 9
 
@@ -215654,7 +214921,7 @@ s =>
 
 - **結果 1（設定確率 100%）**
 
-> 起き上がることも人と話すことも諦め、薄暗い部屋でただ息を潜めた。思考が鈍るのを待ちながら、深い静寂に身を沈めた。
+> 急ぎでない用事を断り、水分と食べられる物を少しずつ取りながら横になった。今日は先のことを決めず、身体を休めることにした。
 
 効果：
 
@@ -215669,6 +214936,172 @@ s =>
 ```
 
 旧シム観測回数：4
+
+
+<a id="event-life_mental_crisis_recurrence"></a>
+## life_mental_crisis_recurrence
+
+- 出典位置：data/health/mortality.js:316
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：日常、感染・医療
+- 状況：年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的本文、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：2026-11-05実ログ監査で初回危機対応から分離した再発時の通常抽選イベント。
+
+### 本文
+
+**動的本文**：実行時状態から文章を組み立てます。本文を一つに固定せず、生成関数を示します。
+
+```js
+s => {
+        const prior = s.mortality?.crisis?.lastAction;
+        if (prior === "clinic")
+          return "以前に相談したあとも、しばらくすると眠れない夜や何も手につかない日が戻ってきた。前に確かめた相談先を使うか、暮らしの負担を減らすか考え直した。";
+        if (prior === "support")
+          return "以前に身近な人へ苦しさを話したあとも、また日々の負担が重くなってきた。前に決めた助けの求め方を使うか、別の支えを探すか考えた。";
+        return "前に用事を止めて休んだあとも、不調の波がまた強くなった。休むだけで凌ぐか、今度は誰かに状態を伝えるか考えた。";
+      }
+```
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_mental_crisis_recurrence",
+  "conf": "S",
+  "references": [
+    "SRC_LIFE_ENDING_GAME",
+    "SRC_LIFE_ENDING_LW02"
+  ],
+  "st": [
+    "少年",
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "cd": 4,
+  "w": 0.5,
+  "show": {
+    "dynamicFunction": "s =>\n        s.age >= 14 &&\n        s.mortality?.crisis?.status === \"active\" &&\n        (s.mortality.crisis.consultCount || 0) > 0 &&\n        s.mortality.crisis.lastDecisionYear !== s.year"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_mental_crisis_recurrence-0"></a>
+選択肢文：前に頼った相手や身近な人へ、また状態が悪くなったと伝える
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !!(s.sp || (s.kids && s.kids.length > 0) || (s.personTies && s.personTies.length > 0) || (s.siblings && s.siblings.length > 0) || (!s.fl?.household_separated && (s.par?.fa || s.par?.mo)))"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_mental_crisis_recurrence-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 前に話した時から何が変わったかを伝え、苦しい日に連絡する方法をもう一度確かめた。
+
+効果：
+
+```json
+{
+  "mortalityCare": {
+    "kind": "crisis",
+    "action": "support"
+  },
+  "rl": 2,
+  "p": 2
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_mental_crisis_recurrence-1"></a>
+選択肢文：相談窓口へもう一度連絡し、その後の経過を話す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "en": {
+    "affordableMedicalCash": 20000
+  },
+  "why": "移動と相談に必要な費用が足りない"
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_mental_crisis_recurrence-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 前回から眠りや食事、日々の負担がどう変わったかを伝え、次に状態が崩れた時の相談方法を確認した。
+
+効果：
+
+```json
+{
+  "cash": -20000,
+  "med": 1,
+  "mortalityCare": {
+    "kind": "crisis",
+    "action": "clinic"
+  },
+  "p": 2
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_mental_crisis_recurrence-2"></a>
+選択肢文：今週の予定を減らし、食事と睡眠を立て直す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_mental_crisis_recurrence-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 急ぎでない用事をいくつか後へ回し、食事と眠る時間を確保した。調子が戻らなければ相談することにした。
+
+効果：
+
+```json
+{
+  "mortalityCare": {
+    "kind": "crisis",
+    "action": "rest"
+  },
+  "p": 1
+}
+```
+
+旧シム観測回数：未計測
 
 
 <a id="event-life_mental_crisis_recovery"></a>
@@ -221240,7 +220673,7 @@ s => {
 
 ### 本文
 
-> 街を回っていたロドスの巡回医療班に同行していた職員が、荷の仕分けや設備の保守、事務手伝いの募集案内を配っていた。短期の募集で、配属先もまだ決まっていないという。今の仕事や家の暮らしを思い浮かべ、すぐには返事ができなかった。
+> 街を回っていたロドスの巡回医療班に同行していた職員が、荷の仕分けや設備の保守、事務手伝いの募集案内を配っていた。短期の募集で、配属先もまだ決まっていないという。家の暮らしや今後の働き方を思い浮かべ、すぐには返事ができなかった。
 
 ### 発生条件・構造
 
@@ -221309,7 +220742,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> これまで働いてきた場所と扱える道具を書き添えて応募した。返事を待つあいだも、毎朝いつもの仕事場へ通った。
+> これまで経験した作業や、扱える道具を書き添えて応募した。返事が来るまでは今の暮らしを続けた。
 
 効果：
 
@@ -221332,7 +220765,7 @@ s => {
 #### 選択肢 2
 
 <a id="choice-sr_rhodes_recruitment_contact-1"></a>
-選択肢文：今の職場を続けながら、次の募集案内だけ届くように頼む
+選択肢文：今は応募せず、次の募集案内だけ届くように頼む
 
 旧シム観測：表示 84216、選択可能 84216
 
@@ -221341,7 +220774,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 次に人手が必要になったら知らせてもらえるよう連絡先を伝え、翌朝もいつもの持ち場へ出た。
+> 次に人手が必要になったら知らせてもらえるよう連絡先を伝え、その日は案内を持って家へ戻った。
 
 効果：
 
@@ -221365,7 +220798,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 家の段取りや今の働き方を考え合わせると、すぐには動けそうになかった。案内状をそっと返し、いつもの仕事場へ足を向けた。
+> 家の段取りや今後の働き方を考え合わせると、すぐには動けそうになかった。案内状をそっと返し、今回は見送った。
 
 効果：
 
@@ -252150,7 +251583,7 @@ s => {
 
 ### 本文
 
-> メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する』。八百長を呑んで巨額の富を手にするか、騎士の誇りを賭けて真正面から勝利を掴むか。
+> メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFixOffer}を約束する』。八百長を呑んで巨額の富を手にするか、騎士の誇りを賭けて真正面から勝利を掴むか。
 
 ### 発生条件・構造
 
@@ -252257,7 +251690,7 @@ s => {
 
 - **結果 1（設定確率 100%）**
 
-> 見事な負け芝居を打ち、五百万龍門幣の裏金を受け取った。だがファンからの激しい罵声が耳に焼き付いた。
+> 見事な負け芝居を打ち、約束された{kazMatchFixOffer}の裏金を受け取った。だがファンからの激しい罵声が耳に焼き付いた。
 
 効果：
 
@@ -263684,7 +263117,7 @@ s => educationLegacySceneGuard(s,"education_school_classroom")
 
 - **結果 1（設定確率 100%）**
 
-> 年寄りや急患がパッと見て迷いそうな一行を指さした。係はなるほどと頷き、すぐさま筆を取り直した。個人の意見が施設の手順を変えたことにはならないが、その場で少し役には立ったようだ。
+> 年寄りや急患がパッと見て迷いそうな一行を指さした。係はなるほどと頷き、その箇所の言い回しを手元の案で書き直した。
 
 効果：
 
