@@ -25,7 +25,9 @@ function employmentMonthlyTerms(s, episode, year, month) {
     kind = episode.kind,
     wage = ["wage-employment", "seasonal-contract"].includes(kind),
     self = kind === "self-employment",
-    active = episode.status === "active" && eligible,
+    closes = site?.operationTo,
+    beforeClosure = !closes || year * 12 + month < closes.year * 12 + closes.month,
+    active = episode.status === "active" && eligible && beforeClosure,
     price = 1 + ((s.priceIndex || 1) - 1) * 0.65,
     bonus = 1 + (contract?.wagePremium || 0) + (s.workPayBonus || 0),
     knowledge = 1 + s.k / P("economy.knowledgeIncomeScale"),
@@ -38,7 +40,7 @@ function employmentMonthlyTerms(s, episode, year, month) {
         (1 - employmentDiscriminationPenalty(s)) * (s.fl.reduced_work ? 0.65 : 1)) : 0,
     expenses = self ? gross * (episode.expenseShare ?? 0.35) : 0;
   return { gross, expenses, net: Math.max(0, gross - expenses),
-    paid: !["suspended", "closed"].includes(site?.status) && episode.paymentStatus !== "withheld",
+    paid: site?.status !== "suspended" && episode.paymentStatus !== "withheld",
     siteStatus: site?.status || null, present, workFraction: active ? fraction : 0 };
 }
 function settleEmploymentThrough(s, year, throughMonth) {

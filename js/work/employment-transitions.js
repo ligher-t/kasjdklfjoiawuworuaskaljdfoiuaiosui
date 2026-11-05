@@ -69,7 +69,7 @@ function employmentEffectAssessment(s, effect, sourceEventId = employmentEffectS
   const strict = EMPLOYMENT_STRICT_DIRECT_EVENTS.has(sourceEventId),
     priorRoute = { canStart: !strict, kind: "existing-route", reasonCode: "worksite-migration-pending" };
   const kind = employmentDirectLivelihoodKind(jobId);
-  if (kind && (!membership || ["COMMUNITY", "CONTACT"].includes(mode) || jobId === 62 && membership.id === "columbia-frontier-pioneer")) {
+  if (kind && sourceEventId && (!membership || ["COMMUNITY", "CONTACT"].includes(mode) || jobId === 62 && membership.id === "columbia-frontier-pioneer")) {
     const resource = resolveEmploymentLivelihoodResource(s, kind, jobId) ||
       (membership && ["CONTACT", "COMMUNITY"].includes(mode) && sourceEventId ? {
         resourceId: "role:" + membership.id + ":" + localityKey(s),
@@ -136,10 +136,13 @@ function startEmploymentLivelihood(s, action) {
     payRegionPm: s.res.pm, expenseShare: 0.35, basis: resource.basis || "game-model-local-resource",
     projectAsJob: action.projectAsJob !== false && action.roleId !== "apprentice",
     history: [{ status: "active", year: s.year, month, sourceEventId: action.sourceEventId }] };
-  if (action.kind === "seasonal-contract") episode.scheduledEndAt = { year: s.year, month: Math.min(13, month + 1) };
+  if (action.kind === "seasonal-contract") episode.scheduledEndAt = month === 12
+    ? { year: s.year + 1, month: 1 } : { year: s.year, month: month + 1 };
   state.episodes.push(episode); state.activeEpisodeId = episode.episodeId;
   const jobBefore = s.job;
   s.job = episode.projectAsJob ? action.jobId : 0;
+  if (episode.projectAsJob) s.fl.retired = 0;
+  s.workPayBonus = 0;
   if (jobBefore !== s.job) recordCareerChange(s, jobBefore, s.job);
   s.workContract = null;
   if (action.ownershipTransfer && resource.ownerId) {

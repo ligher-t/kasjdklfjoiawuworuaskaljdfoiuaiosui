@@ -216,7 +216,7 @@ function resolveKnownEmploymentOpening(s, accepted) {
   if (known.observedStatus === "unavailable" || !known.isCurrentArea)
     throw Error("この働き口には今いる場所から就けません");
   const episode = applyPlayerEmploymentAction(s, { action: "accept-local-opening",
-    jobId: known.jobId, openingId: known.openingId });
+    jobId: known.jobId, openingId: known.openingId, replaceCurrent: true });
   ux.consentScope = { openingId: known.openingId, jobId: known.jobId,
     year: s.year, month: s.mo, kind: "accepted-specific-opening" };
   ux.pendingOpeningId = null;
@@ -257,7 +257,7 @@ function employmentDeskModel(s) {
     endYear: row.endYear, endMonth: row.endMonth
   }));
   return {
-    current: current ? `${J[current.jobId]?.n || "仕事"}・${status[current.status] || "勤務中"}` :
+    current: current ? `${J[current.jobId]?.n || "仕事"}・${current.onLeave ? "休職中" : status[current.status] || "勤務中"}` :
       s.job > 0 ? occupationLabel(s) : "今は継続して勤める仕事を持っていません。",
     since: current ? `${current.startYear}年${current.startMonth || 1}月から` : "",
     workplace: current ? s.world?.occupationWorld?.sites?.[current.siteId]?.label || "" : "",
@@ -318,7 +318,7 @@ function renderEmploymentDesk(s) {
       if (row.isCurrentArea && row.observedStatus !== "unavailable") {
         const choose = element("button", "この働き口の条件を確かめる", item);
         choose.type = "button"; choose.id = "employment-opening-" + index;
-        choose.disabled = model.disabled || model.choiceUsed || model.hasWork;
+        choose.disabled = model.disabled || model.choiceUsed;
         choose.addEventListener("click", () => employmentDeskAction({ kind: "choose", openingId: row.openingId }));
       }
     });

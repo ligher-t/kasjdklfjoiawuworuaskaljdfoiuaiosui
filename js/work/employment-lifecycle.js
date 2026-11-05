@@ -25,8 +25,8 @@ function employmentOpeningRequest(s, jobId, opening) {
 }
 // Read-only eligibility check. A visible offer has to be one the person can
 // actually accept, not merely the first site with an unfilled position.
-function employmentOpeningForChoice(s, jobId, openingId = null) {
-  if (s.dead || s.job > 0 || currentPlayerEmployment(s) ||
+function employmentOpeningForChoice(s, jobId, openingId = null, allowTransfer = false) {
+  if (s.dead || (!allowTransfer && (s.job > 0 || currentPlayerEmployment(s))) ||
       s.fl?.retired || restricted(s) || travelPresence(s).mode !== "residence")
     return null;
   return occupationOpeningsFor(s, jobId).find(opening => {
@@ -36,8 +36,8 @@ function employmentOpeningForChoice(s, jobId, openingId = null) {
       careerOpeningAssessment(s, request).canBeAssigned;
   }) || null;
 }
-function assessEmploymentChoice(s, jobId, openingId = null) {
-  const opening = employmentOpeningForChoice(s, jobId, openingId);
+function assessEmploymentChoice(s, jobId, openingId = null, allowTransfer = false) {
+  const opening = employmentOpeningForChoice(s, jobId, openingId, allowTransfer);
   if (!opening) return { canStart: false, reasonCode: "no-qualified-opening" };
   const request = employmentOpeningRequest(s, jobId, opening),
     work = s.world.occupationWorld,
@@ -51,10 +51,11 @@ function assessEmploymentChoice(s, jobId, openingId = null) {
     request, opening
   };
 }
-function endPlayerEmployment(s, reason = "voluntary-leave") {
+function endPlayerEmployment(s, reason = "voluntary-leave", endAt = null) {
   const episode = currentPlayerEmployment(s);
   if (!episode) return null;
-  settleEmploymentThrough(s, s.year, Math.max(0, (s.mo || 1) - 1));
+  const date = endAt || {year:s.year, month:Math.max(1,s.mo || 1)};
+  settleEmploymentThrough(s, date.year, date.month - 1);
   const work = s.world?.occupationWorld;
   const position = work?.positions?.[episode.positionId];
   if (position) {
@@ -63,8 +64,8 @@ function endPlayerEmployment(s, reason = "voluntary-leave") {
       position.identifiedOccupiedSlots - (position.reservedSlots || 0));
   }
   episode.status = "terminated";
-  episode.endYear = s.year;
-  episode.endMonth = Math.max(1, s.mo || 1);
+  episode.endYear = date.year;
+  episode.endMonth = date.month;
   episode.leaveReason = reason;
   episode.history.push({ year: s.year, month: episode.endMonth, status: "terminated", reason });
   const state = playerEmploymentState(s);
@@ -100,9 +101,9 @@ function applyPlayerEmploymentAction(s, action) {
     if (!currentPlayerEmployment(s)) throw Error("終了する現職の記録がない");
     return endPlayerEmployment(s, action.reason || "voluntary-leave");
   }
-  const jobId = action.jobId, assessed = assessEmploymentChoice(s, jobId, action.openingId);
+  const jobId = action.jobId, assessed = assessEmploymentChoice(s, jobId, action.openingId, action.replaceCurrent === true);
   if (!assessed.canStart) throw Error("募集と本人の資格・通勤・勤務開始条件が一致しない");
-  return commitEmploymentOpening(s, assessed);
+  return commitEmploymentOpening(s, assessed, {transition:action.replaceCurrent === true});
 }
 function commitEmploymentOpening(s, assessed, options = {}) {
   const jobId = assessed.request.jobId;
@@ -139,7 +140,7 @@ function commitEmploymentOpening(s, assessed, options = {}) {
     status: "active", startYear: s.year, startMonth: month,
     sourceEventId: options.sourceEventId || TRACE_RESOLUTION?.id || null,
     affiliationId: options.affiliationId || null, payRegionPm: s.res.pm, areaId: site.areaId,
-    endYear: null, endMonth: null, workFraction: 1, basis: "confirmed-local-opening",
+    endYear: null, endMonth: null, workFraction: 1, basis: options.affiliationId ? "confirmed-appointment" : "confirmed-local-opening",
     history: [{ year: s.year, month, status: "active", caseId }]
   };
   opening.slots--;
@@ -157,6 +158,8 @@ function commitEmploymentOpening(s, assessed, options = {}) {
   state.activeEpisodeId = episodeId;
   const priorJob = s.job;
   s.job = jobId;
+  s.workPayBonus = 0;
+  s.fl.retired = 0;
   recordCareerChange(s, priorJob, jobId);
   s.workContractHistory ||= [];
   s.workContract = {

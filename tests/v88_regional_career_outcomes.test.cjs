@@ -269,7 +269,10 @@ for(const career of regionalCareers){
     const employed={
       job:S.job,affiliation:member?.status,goal:goal?.status,
       duty:duties.map(e=>({id:e.id,shown:e.show(S)})),
-      contract:!!S.workContract
+      contract:!!S.workContract,
+      verifiedContract:!S.workContract || (S.workContract.basis==='occupation-episode' &&
+        S.workContract.episodeId===currentPlayerEmployment(S)?.episodeId &&
+        S.world.occupationWorld.sites[S.workContract.siteId]?.siteId===S.workContract.siteId)
     };
     ap({lifeAffiliation:{id:c.affiliation,action:'leave'}});
     const ended={
@@ -299,7 +302,7 @@ for(const career of regionalCareers){
   assert.equal(result.employed.job,career.job,career.id+' actually sets intended occupation');
   assert.equal(result.employed.affiliation,'active',career.id+' actually joins the employer');
   assert.equal(result.employed.goal,'active',career.id+' starts a livelihood goal');
-  assert.equal(result.employed.contract,false,career.id+' uses the regional affiliation and base pay, not a fabricated standard-work contract');
+  assert.equal(result.employed.verifiedContract,true,career.id+' uses a real worksite when it starts a contract');
   checkedRegionalDutyEvents+=result.employed.duty.length;
   assert(result.employed.duty.every(e=>e.shown),career.id+' has all current duty scenes available');
   assert.equal(result.ended.job,0,career.id+' explicit leave removes old occupation');

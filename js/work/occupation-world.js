@@ -526,3 +526,22 @@ function employmentLivelihoodResource(s, kind, jobId) {
     row.status==="available" && work?.sites?.[row.siteId]?.status==="open");
   return resource ? {...resource,canStart:true} : {canStart:false,reasonCode:"no-work-resource"};
 }
+
+// A scheduled closure takes effect even if the player skips that month's scene.
+function advanceCurrentWorksites(s, year, month) {
+  const work = s.world?.occupationWorld;
+  if (!work) return;
+  const current = currentPlayerEmployment(s), area = occupationAreaSnapshot(s);
+  const siteIds = new Set([...(area?.siteIds || []), current?.siteId].filter(Boolean));
+  for (const siteId of siteIds) {
+    const site = work.sites[siteId];
+    advanceOccupationSiteOperations(s, site, year, month);
+    if (site?.status === "closed") for (const positionId of site.positionIds || []) {
+      const position = work.positions[positionId];
+      for (const openingId of position?.openingIds || []) {
+        const opening = work.openings[openingId];
+        if (opening?.status === "open") opening.status = "closed";
+      }
+    }
+  }
+}

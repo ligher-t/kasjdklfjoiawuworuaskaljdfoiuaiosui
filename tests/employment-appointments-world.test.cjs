@@ -97,3 +97,35 @@ assert.equal(operations.noResurrection,true);
 assert.equal(operations.restored,true);
 assert.equal(operations.noOre,false,'explicitly absent mineral resources reject a mine even at high regional tier');
 console.log('employment appointment authority, physical identity and dated operations PASS');
+
+// A bounded observation across all model regions, with one distinct life per
+// region and no annual simulation. World jobs, personal knowledge and access
+// each have their own denominator.
+const distribution=run(`
+  const regions=REG.map(row=>row.n), summaries=[];
+  for (const [index,region] of regions.entries()) {
+    born({seed:202611050+index,by:1077,region});
+    S.age=24; S.year=S.by+24; S.mo=5;
+    advanceOccupationWorkArea(S,S.year,{jobs:0.75});
+    const area=occupationAreaSnapshot(S), work=S.world.occupationWorld;
+    const openings=Object.values(work.openings).filter(row=>row.kind==='general-public' &&
+      row.areaId===area.areaId && row.status==='open' && row.validFromYear===S.year);
+    const knownBefore=employmentKnownOpenings(S).length;
+    discoverEmploymentOpenings(S,'local-inquiry','local');
+    const known=employmentKnownOpenings(S).filter(row=>row.observedStatus!=='unavailable');
+    const eligible=known.filter(row=>employmentOpeningForChoice(S,row.jobId,row.openingId));
+    summaries.push({region,sectors:Object.keys(area.sectorPresence).length,
+      present:Object.values(area.sectorPresence).filter(Boolean).length,
+      workplaces:area.siteIds.length, openings:openings.length, knownBefore,
+      known:known.length, eligible:eligible.length, job:S.job,
+      foreign:known.some(row=>!openings.some(opening=>opening.openingId===row.openingId))});
+  }
+  return summaries;
+`);
+assert.equal(distribution.length,19);
+assert(distribution.every(row=>row.sectors===13 && row.knownBefore===0 &&
+  !row.foreign && row.eligible<=row.known && row.known<=row.openings && row.job===0),
+  'one local inquiry reveals actual openings and never hires or imports another region’s vacancies');
+const totals=Object.fromEntries(['sectors','present','workplaces','openings','known','eligible'].map(key=>
+  [key,distribution.reduce((sum,row)=>sum+row[key],0)]));
+console.log('Bounded regional opportunity observation (one area per region): '+JSON.stringify(totals));

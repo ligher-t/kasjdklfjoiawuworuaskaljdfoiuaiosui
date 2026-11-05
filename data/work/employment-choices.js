@@ -11,10 +11,11 @@ window.TERRA_DATA_BUILD.run("work/employment-choices", function ($terraData) {
       return opening ? "問い合わせた先から、" + opening.jobLabel + "の働き口について返事が届いた。勤めに出るなら、今の暮らしの時間をその仕事へ割くことになる。返事をする前に、手元の案内をもう一度読み返した。" : "";
     },
     c: [
-      $terraData.K("条件を確かめ、この働き口を引き受ける", {
+      $terraData.K(s => s.job > 0 || currentPlayerEmployment(s)
+        ? "今の仕事を終え、この働き口を引き受ける" : "条件を確かめ、この働き口を引き受ける", {
         en: s => {
           const row = employmentPendingOpening(s);
-          return !!row && !!employmentOpeningForChoice(s, row.jobId, row.openingId);
+          return !!row && !!employmentOpeningForChoice(s, row.jobId, row.openingId, true);
         }, why: "募集が終わったか、今の生活や資格では勤務を始められない"
       }, [1, "案内の条件にうなずき、引き受けると返事をした。初めて持ち場に立つと、道具の置き場所と一日の手順を教わった。", { employmentAction: { action: "accept-known-opening" } }]),
       $terraData.K("今回は見送り、今の暮らしを続ける", {},

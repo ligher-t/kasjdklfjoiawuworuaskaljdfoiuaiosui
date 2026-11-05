@@ -264949,14 +264949,21 @@ s => {
 #### 選択肢 1
 
 <a id="choice-work_known_opening_review-0"></a>
-選択肢文：条件を確かめ、この働き口を引き受ける
+選択肢文：動的ラベル
+
+**動的本文**：実行時状態から文章を組み立てます。本文を一つに固定せず、生成関数を示します。
+
+```js
+s => s.job > 0 || currentPlayerEmployment(s)
+        ? "今の仕事を終え、この働き口を引き受ける" : "条件を確かめ、この働き口を引き受ける"
+```
 
 表示・選択条件と補助情報：
 
 ```json
 {
   "en": {
-    "dynamicFunction": "s => {\n          const row = employmentPendingOpening(s);\n          return !!row && !!employmentOpeningForChoice(s, row.jobId, row.openingId);\n        }"
+    "dynamicFunction": "s => {\n          const row = employmentPendingOpening(s);\n          return !!row && !!employmentOpeningForChoice(s, row.jobId, row.openingId, true);\n        }"
   },
   "why": "募集が終わったか、今の生活や資格では勤務を始められない"
 }

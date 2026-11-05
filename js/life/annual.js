@@ -12,6 +12,7 @@ function advanceCurrentLifeYear(s, services) {
       delete s.educationYearClosing;
     }
   }
+  advanceCurrentWorksites(s, s.year, 12);
   settleEmploymentThrough(s, s.year, 12);
   advanceJourneyThrough(s, s.year, 12);
   educationExpireCases(s,s.year+1);

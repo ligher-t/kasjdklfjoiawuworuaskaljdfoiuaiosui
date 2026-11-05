@@ -146,6 +146,7 @@ function slot(x) {
     return;
   }
   s.mo = Math.floor(x * CALENDAR_MONTHS) + 1;
+  advanceCurrentWorksites(s, s.year, s.mo);
   settleEmploymentThrough(s, s.year, Math.max(0, s.mo - 1));
   advanceJourneyThrough(s, s.year, s.mo);
   if(s.educationPath?.offeringId)
@@ -157,6 +158,7 @@ function slot(x) {
   activateHistoricalWorldEvents(s);
   releasePendingHistoricalNews(s);
   reconcileCareerPlacements(s);
+  if (currentPlayerEmployment(s)) reconcileWorkContract(s);
   educationCaseReserveSlots(s);
   const T = tags(s),
     choiceAlreadyUsed = s.majorEventMonth?.year === s.year && s.majorEventMonth?.month === s.mo,
