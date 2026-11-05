@@ -182,3 +182,14 @@ function canRecognizeCommunityWork(s, request = {}) {
   return EMPLOYER_PLAYER_ACCESS_MODES[key] === "COMMUNITY" &&
     !!request.communityRoleId && request.roleAccepted === true;
 }
+
+/** Prevent a forbidden named organization from being joined through a legacy effect. */
+function assertPlayerEmploymentEffectAllowed(effect) {
+  const membership = [effect?.lifeAffiliation, ...(effect?.lifeAffiliations || [])];
+  for (const entry of membership) {
+    if (!entry || entry.action !== "join" || entry.kind !== "employer") continue;
+    const key = entry.organizationKey || entry.employerOrganizationKey || entry.id;
+    if (EMPLOYER_PLAYER_ACCESS_MODES[key] === "BLOCKED")
+      throw Error("プレイヤーの新規加入対象外となる組織への雇用効果");
+  }
+}
