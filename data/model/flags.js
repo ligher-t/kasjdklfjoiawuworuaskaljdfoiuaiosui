@@ -253,6 +253,26 @@ window.TERRA_DATA_BUILD.run("model/flags", function ($terraData, $define, $rules
         engine: "年次評価・売却選択",
         tags: ["投資保有中"]
       },
+      iberia_telescope_repaired: {
+        label: "イベリアの古い望遠鏡を修理して保管中",
+        description: "本人が発見した古い望遠鏡を専門の修理工へ持ち込み、使用できる状態で手元に残している。",
+        engine: "望遠鏡の後日談"
+      },
+      iberia_telescope_inspected: {
+        label: "イベリアの古い望遠鏡を点検した",
+        description: "発見した古い望遠鏡を修理工へ持ち込んだが、その時点では修理できなかった経験。",
+        engine: "経歴表示"
+      },
+      iberia_telescope_sold: {
+        label: "イベリアの古い望遠鏡を売却した",
+        description: "発見または修理した古い望遠鏡を古物商へ売却した経験。",
+        engine: "望遠鏡の後日談"
+      },
+      iberia_telescope_scrapped: {
+        label: "イベリアの古い望遠鏡を回収業者へ渡した",
+        description: "発見した古い望遠鏡を修理せず、金属部品として回収業者へ渡した経験。",
+        engine: "経歴表示"
+      },
       friend_unpaid: {
         label: "旧友からの未返済",
         description: "旧友への貸付が返済されず、返済を求める・免除する判断が残っている状態。",
