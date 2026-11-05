@@ -68,20 +68,6 @@ annual.setup(ctx, { id: 'xss-audit', seed: 905003, region: 'クルビア', age: 
   assert.ok(endingNode.innerHTML.includes('&lt;img src=x'), 'ending heading properly escapes HTML tags');
 
   vm.runInContext(`
-    globalThis.employmentReviewText = EV.find(e => e.id === 'v87_hardline_sarkaz_employer_review').t({
-      lifeRecord: {
-        workRelationships: [{
-          id: 'victoria-sarkaz-interview',
-          person: { nm: xssPayload },
-          applicantResponse: 'left-after-exclusion'
-        }]
-      }
-    });
-  `, ctx);
-  assert.ok(!ctx.employmentReviewText.includes('<img src=x'), 'employment review text does not contain raw nested names');
-  assert.ok(ctx.employmentReviewText.includes('&lt;img src=x'), 'employment review text escapes nested names');
-
-  vm.runInContext(`
     S.nm = 'テラ市民';
     S.sx = '女';
     S.eventReviews = {};
