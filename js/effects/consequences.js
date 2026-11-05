@@ -49,7 +49,13 @@ function recordEffectConsequences(e, s, jobBefore, assetsBefore, debtBefore, inv
   }
   if (s.job !== jobBefore && !e.employmentAction) {
     if (s.fl?.ed_work_disadvantage) s.fl.ed_work_disadvantage = 0;
-    recordCareerChange(s, jobBefore, s.job);
+    const last = s.lifeRecord?.careerChanges?.at(-1), source = TRACE_RESOLUTION;
+    const alreadyRecorded = last?.year === s.year && last.fromJobId === jobBefore &&
+      last.toJobId === s.job && last.eventId === (source?.id || null) &&
+      last.choice === (source?.label || null);
+    // Relocation and employment reconciliation can record the same transition
+    // before this aggregate consequence pass observes the changed job.
+    if (!alreadyRecorded) recordCareerChange(s, jobBefore, s.job);
   }
   reconcileCareerPlacements(
     s,
