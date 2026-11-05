@@ -937,8 +937,8 @@ for(const c of jobLossCases){
   assert.equal(result.paused,'paused');
   assert.equal(result.workOpen,true,'the general search event is available');
   assert.deepEqual(result.gigOnly,{
-    job:0,kind:'gig',eligible:true,choices:[true,true,false]
-  },'day labor creates no ongoing employment or settlement permission');
+    job:0,kind:'gig',eligible:false,choices:[true,true,false]
+  },'day labor creates no ongoing employment or immediate repeated settlement review');
   assert.deepEqual(result.employed,{
     job:2,former:'left',formerGoal:'abandoned',nextGoal:'paused',
     eligible:true,choices:[false,false,true]
