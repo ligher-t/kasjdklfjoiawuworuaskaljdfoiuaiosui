@@ -358,7 +358,9 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
 {
  const s=routeState(872110,'ウルサス',0);s.inf=1;s.fl.dg=1;s.cash=10000000;
  const entry=event('life_ursus_zelgrad_recruitment'),from=s.community.key;
- applyEffect(s,entry.c[0].o[0][2]);
+ assert(entry,'Ursus factory recruitment source exists');
+ s.year=1102;s.age+=2;context.__state=s;
+ vm.runInContext("S=__state;applyEmploymentAppointmentFixture('life_ursus_zelgrad_recruitment',2,'ursus-zelgrad-factory',0,0)",context,{timeout:30000});
  const a=s.lifeRecord.affiliations.find(row=>row.id==='ursus-zelgrad-factory');
  assert.equal(s.local.city,'ゼルグラード');assert.equal(a.status,'active');assert.equal(s.job,2);
  assert.equal(a.origin.localityKey,from,'the recruitment origin is retained separately');
