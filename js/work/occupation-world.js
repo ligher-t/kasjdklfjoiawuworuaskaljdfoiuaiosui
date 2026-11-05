@@ -352,7 +352,7 @@ function ensureOccupationWorkArea(s) {
     const employerId = "local-operator:" + areaId + ":" + sector,
       siteId = "local-site:" + areaId + ":" + sector,
       positionId = "local-position:" + areaId + ":" + sector,
-      openingId = "local-opening:" + areaId + ":" + sector;
+      openingId = "local-opening:" + areaId + ":" + sector + ":" + s.year;
     const capacity = 2 + Math.floor(keyedRoll(siteId + ":capacity") * 10),
       occupied = Math.floor(keyedRoll(siteId + ":occupied") * (capacity + 1)),
       vacant = Math.max(0, capacity - occupied),
@@ -363,6 +363,7 @@ function ensureOccupationWorkArea(s) {
     };
     occupationWorld.sites[siteId] = {
       siteId, employerId, areaId, sector, status: "open", createdYear: s.year,
+      lastYear: s.year, history: [],
       positionIds: [positionId], capacityBand: capacity < 5 ? "micro" : "small",
       basis: "game-model"
     };
@@ -382,6 +383,56 @@ function ensureOccupationWorkArea(s) {
     area.siteIds.push(siteId);
   }
   occupationWorld.areas[areaId] = area;
+  return area;
+}
+
+/**
+ * Annual operational availability for already placed anonymous sites.
+ * A local economic shock may suspend recruitment, but does not fabricate a
+ * canonical company closure or cancel employment episodes.
+ */
+function advanceOccupationWorkArea(s, year, metrics) {
+  const area = ensureOccupationWorkArea(s);
+  if (!area || !Number.isInteger(year)) return area;
+  const work = s.world.occupationWorld;
+  const jobAccess = Number.isFinite(metrics?.jobs) ? metrics.jobs : 0.7;
+  for (const siteId of area.siteIds) {
+    const site = work.sites[siteId];
+    if (!site || (site.lastYear ?? site.createdYear) >= year) continue;
+    const position = work.positions[site.positionIds[0]];
+    if (!position) continue;
+    // Temporary limitations affect the ability to advertise new vacancies.
+    const nextStatus = jobAccess < 0.40 ? "strained" : "open";
+    if (nextStatus !== site.status) {
+      site.history ||= [];
+      site.history.push({
+        year, from: site.status, to: nextStatus, basis: "local-economic-pressure-game-model"
+      });
+    }
+    site.status = nextStatus;
+    site.lastYear = year;
+    for (const id of position.openingIds || []) {
+      const prior = work.openings[id];
+      if (!prior || prior.status !== "open") continue;
+      prior.status = "expired";
+      prior.validToYear = year - 1;
+    }
+    position.openingIds = [];
+    position.vacancyCount = Math.max(0,
+      position.capacity - position.aggregateOccupiedSlots -
+      position.identifiedOccupiedSlots - position.reservedSlots);
+    if (site.status !== "open" || position.vacancyCount === 0) continue;
+    const openingId = "local-opening:" + area.areaId + ":" + site.sector + ":" + year;
+    if (keyedRoll(openingId + ":recruitment") >= 0.45) continue;
+    work.openings[openingId] = {
+      openingId, positionId: position.positionId, employerId: site.employerId,
+      siteId, areaId: area.areaId, kind: "general-public",
+      validFromYear: year, status: "open",
+      slots: Math.min(2, position.vacancyCount),
+      basis: "game-model", visibleToPlayer: false
+    };
+    position.openingIds.push(openingId);
+  }
   return area;
 }
 
