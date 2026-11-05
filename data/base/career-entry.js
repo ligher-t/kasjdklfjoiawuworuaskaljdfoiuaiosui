@@ -61,7 +61,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           [
             0.6,
             "短期契約の前金を懐に収め、荒野の見張り任務に就いた。手渡された報酬で当座の暮らしは息をついた。仕事が明けたあとも、武具の手入れをしながら次の依頼を待つ暮らしに入った。",
-            { job: 4, fl: { veteran: 1 }, h: -14, cr: -3, p: -2, cash: 120000 }
+            { employmentAction: { action: "complete-gig", kind: "short-sentry", sourceEventId: "car", nominalCash: 120000 }, fl: { veteran: 1 }, h: -14, cr: -3, p: -2, cash: 120000 }
           ],
           [
             1,
@@ -450,12 +450,12 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           [
             0.7,
             "街の顔役を通じてファミリーの雑用を請け負った。渡された前金で急場はしのげたが、次に持ち込まれる頼みを断れる保証はどこにもない。",
-            { job: 1, fl: { criminal_yakuza: 1 }, cash: 3e5, cr: -5, p: 2 }
+            { employmentAction: { action: "complete-gig", kind: "local-errand", sourceEventId: "car", nominalCash: 300000 }, fl: { criminal_yakuza: 1 }, cash: 3e5, cr: -5, p: 2 }
           ],
           [
             1,
             "最初から危ない橋を渡る使い走りを押しつけられ、路地裏を逃げ惑う途中で深い傷を負った。",
-            { job: 1, fl: { criminal_yakuza: 1, trauma_crime: 1 }, h: -15 }
+            { job: 0, fl: { criminal_yakuza: 1, trauma_crime: 1 }, h: -15 }
           ]
         ),
         $terraData.K(
@@ -479,7 +479,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             "手元の金で切符が買える行き先を選び、荷物を一つまとめて故郷を出た。帰る場所は遠ざかったが、見知らぬ土地でやり直す余地だけは広がった。",
             {
               res: 1,
-              job: 1,
+              job: 0,
               rl: -15,
               p: 4,
               residenceArrangement: "independent_rental",
@@ -494,8 +494,8 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             0.6,
             "移動バザールを行き来するトランスポーターの口利きで、隊商の荷を守る短期の警戒任務を請けた。手渡された前金で当座の暮らしは息をついたが、砂塵の旅が一往復終わると次の依頼は来なかった。",
             {
-              job: 0,
               cash: 80000,
+              employmentAction: { action: "complete-gig", kind: "market-watch", sourceEventId: "car", nominalCash: 80000 },
               h: -5,
               lifeAffiliations: [
                 {
@@ -2282,7 +2282,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           [
             1,
             "人手不足の荷揚げ場で荷車引きの仕事を得た。重い荷に腰がきしむが、その日のうちに日当を受け取り、暮らしの足場を固め直した。",
-            { job: 1, cash: 50000, p: 2, h: -2 }
+            { employmentAction: { action: "complete-gig", kind: "cargo-handling", sourceEventId: "work_unemployed_reentry", nominalCash: 50000 }, cash: 50000, p: 2, h: -2 }
           ]
         ),
         $terraData.K(
