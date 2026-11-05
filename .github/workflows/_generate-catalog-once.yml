@@ -1,0 +1,35 @@
+name: Generate event catalog once
+
+on:
+  push:
+    branches:
+      - fix/historical-event-scope-and-delivery
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/historical-event-scope-and-delivery
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate catalog
+        run: node tools/generate-event-catalog.cjs --write
+      - name: Commit generated catalog
+        shell: bash
+        run: |
+          if git diff --quiet -- EVENT_CATALOG.md; then
+            echo "EVENT_CATALOG.md is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add EVENT_CATALOG.md
+          git commit -m "Regenerate event catalog after play-log remediation"
+          git push origin HEAD:fix/historical-event-scope-and-delivery
