@@ -283,6 +283,13 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
    if(id==='ursus-displaced-repair-workshop')applyEffect(s,{lifeAffiliation:{
     id:'ursus-zelgrad-factory',title:'ゼルグラードの工場',kind:'employer',action:'join',role:'工場補助'}
    });
+   if(id==='kazimierz-arena-staff'){
+    s.age=55;s.year=1088;
+    applyEffect(s,{lifeAffiliation:{id:'kazimierz-competition-career',title:'カジミエーシュの競技騎士としての職業',kind:'individual-career',action:'join',role:'競技騎士'}});
+    applyEffect(s,{lifeGoal:{id:'kazimierz-competition-career',title:'競技騎士として働き、暮らしを立てる',priority:'仕事と身体',action:'start'}});
+    s.year=1100;
+    assert(event('kaz_knight_later_career_review').show(s),'late-career source is established after ten years of active competition');
+   }
    if(jobId===7)applyEffect(s,{lifeSkill:{id:'engineering-experience',title:'技術経験',delta:12,context:'所属範囲監査用の実在求人'}});
    context.__id=id;
    const spec=vm.runInContext('EMPLOYMENT_APPOINTMENT_SITES.find(row=>row.affiliationId===__id)',context);
