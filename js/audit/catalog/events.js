@@ -52,7 +52,9 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
     if (e.groundOnly != null && typeof e.groundOnly !== "boolean")
       W_.push(`${w}: groundOnlyは真偽値ではない`);
     if (!e.t) W_.push(`${w}: 本文がない`);
-    else if (Array.isArray(e.t)) {
+    if (e.displayTone != null && !["good", "bad"].includes(e.displayTone))
+      W_.push(`${w}: displayToneはgood/badのいずれでもない`);
+    if (Array.isArray(e.t)) {
       e.t.forEach(v => cc(v.when, w));
       if (e.t.every(v => v.when)) W_.push(`${w}: 条件なしの既定文がない`);
     }
@@ -69,14 +71,16 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
           let prev = 0;
           c.o.forEach((o, j) => {
             const y = `${x} 結果#${j + 1}`;
-            if (!Array.isArray(o) || o.length !== 3) {
-              W_.push(`${y}: 結果は[累積確率,本文,効果]でない`);
+            if (!Array.isArray(o) || (o.length !== 3 && o.length !== 4)) {
+              W_.push(`${y}: 結果は[累積確率,本文,効果,(displayTone)]でない`);
               return;
             }
             if (typeof o[0] !== "number" || !Number.isFinite(o[0]) || o[0] <= prev || o[0] > 1)
               W_.push(`${y}: 累積確率が0〜1の範囲で単調増加していない`);
             else prev = o[0];
             if (typeof o[1] !== "string" || !o[1].trim()) W_.push(`${y}: 結果本文がない`);
+            if (o.length === 4 && !["good", "bad"].includes(o[3]))
+              W_.push(`${y}: displayToneはgood/badのいずれでもない`);
             fx(o[2], x);
             checkAffordableCashEffect(c.en, o[2], y);
             checkCashGateEffect([e, c.en, c.show], o[2], y);

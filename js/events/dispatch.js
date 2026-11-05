@@ -441,8 +441,9 @@ function fire(e, s, T) {
       d = STAT.ev[e.id] || (STAT.ev[e.id] = {});
     d[k] = (d[k] || 0) + 1;
   }
-  L(`<span class="${tone(e.fx)}">${t}</span>`);
-  cnt(tone(e.fx));
+  const eventTone = tone(e.fx, e.displayTone);
+  L(`<span class="${eventTone}">${t}</span>`);
+  cnt(eventTone);
   const previousResolution = TRACE_RESOLUTION;
   TRACE_RESOLUTION = { kind: "daily", id: e.id };
   try {
@@ -487,7 +488,7 @@ function ask(e, T, t, before, resumed = false) {
       d = STAT.ev[e.id] || (STAT.ev[e.id] = {});
     d[k] = (d[k] || 0) + 1;
   }
-  if (!resumed) L(t);
+  if (!resumed) L(e.displayTone ? `<span class="${tone(e.fx, e.displayTone)}">${t}</span>` : t);
   const pk = (c, by) => {
     if (s.ev !== e) return;
     if((e.timelineFlag||e.id==="journey_decision_review")&&
@@ -506,9 +507,10 @@ function ask(e, T, t, before, resumed = false) {
     recordSimulationOutcome(e, choiceIndex, outcomeIndex);
     const result = tpl(o[1], s);
     const choiceLabel = tpl(eventTextValue(c.l, s, T), s);
+    const outcomeTone = tone(o[2], o[3]);
     L(
       `<span class="${evt(c)}">${by ? (e.id === "parent_treatment_review" ? "親の判断:" : "養育者の判断:") : ""}「${choiceLabel}` +
-        `」</span><span class="${tone(o[2])}">${result}</span>`
+        `」</span><span class="${outcomeTone}">${result}</span>`
     );
     const routeReserve = typeof c.en?.affordableRoute === "number" ? c.en.affordableRoute : 0;
     const choiceReturnSpeed = Number.isInteger(s.choiceReturnSpeed) ? s.choiceReturnSpeed : null;
@@ -519,7 +521,7 @@ function ask(e, T, t, before, resumed = false) {
     $("resumeChoice").hidden = 1;
     syncUIDialogs();
     UI_FOCUS_RETURNS.delete("md");
-    cnt(tone(o[2]));
+    cnt(outcomeTone);
     const previousResolution = TRACE_RESOLUTION;
     const historicalExposure=e.timelineFlag&&o[2]?.d?historicalSceneExposure(e,s,choiceIndex,outcomeIndex):null;
     if(e.timelineFlag&&o[2]?.d&&!historicalExposure)throw Error("歴史的な死亡結果に現場の曝露根拠がない");

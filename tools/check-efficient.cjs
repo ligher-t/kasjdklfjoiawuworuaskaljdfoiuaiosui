@@ -23,6 +23,7 @@ const approved=Object.freeze([
   "v91_employment_ordinary_positions_and_gigs.test.cjs",
   "p0-education-nonstandard.test.cjs",
   "p0-school-progression.test.cjs",
+  "event-outcome-tone.test.cjs",
   "p0-school-regional-access.test.cjs",
   "p18-education-world-determinism.test.cjs",
   "p19-education-observation.test.cjs",
