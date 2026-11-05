@@ -236,6 +236,7 @@ const legacyRoutes=run(function(){
     reentryActions:reentry.c.slice(0,4).map(c=>c.o[0][2].educationAction),
     transfersViaApproval:event("education_transfer_review").c[0].o[0][2].educationAction,
     unemploymentExit:unemployment.c[0].o.map(o=>o[2].educationAction),
+    unemploymentGigs:unemployment.c[0].o.map(o=>o[2].employmentAction?.action),
     childAidCash:childAid.c.map(c=>c.o[0][2].cash??0),
     minorityClassroom:minority.t[0].when(s,tagset),
     generatedClasses:["f17","f18"].map(id=>event(id).show(s)),
@@ -250,7 +251,8 @@ assert.deepEqual(legacyRoutes.reentryActions,[
   "case:begin:reentry:preparatory:1"
 ]);
 assert.equal(legacyRoutes.transfersViaApproval,"event:E41:A");
-assert.deepEqual(legacyRoutes.unemploymentExit,["leave-school","leave-school"]);
+assert.deepEqual(legacyRoutes.unemploymentExit,[null,null],"one-off work does not end schooling");
+assert.deepEqual(legacyRoutes.unemploymentGigs,["complete-gig","complete-gig"]);
 assert.deepEqual(legacyRoutes.childAidCash,[0,0]);
 assert.equal(legacyRoutes.minorityClassroom,false);
 assert.deepEqual(legacyRoutes.generatedClasses,[false,false]);

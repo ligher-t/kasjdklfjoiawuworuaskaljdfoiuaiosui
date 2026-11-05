@@ -100,7 +100,8 @@ for(const outcome of replacement.o){
   assert.equal(outcome[2].fl?.trauma_war,undefined,'training or recruitment without combat cannot establish war trauma');
   assert.equal(outcome[2].fl?.veteran,1,'both service outcomes retain service history');
 }
-assert.equal(vm.runInContext('J',ctx)[replacement.o[0][2].job].n,'軍務・兵站');
+assert.equal(replacement.o[0][2].employmentAction?.kind,'coerced-assignment');
+assert.equal(vm.runInContext('J',ctx)[replacement.o[0][2].employmentAction.jobId].n,'軍務・兵站');
 for(const route of [service,guard])assert.equal(route.o[1][2].fl.veteran,1,'first-duty injury retains the service history');
 assert.equal(guard.o[1][2].fl.trauma_war,undefined,'an unspecified first-duty injury does not prove combat');
 assert.doesNotMatch(olderVeteran.t,/古傷/,'a worker without an injury record must not be assigned an old wound');

@@ -4,7 +4,7 @@ window.TERRA_DATA_BUILD.run("work/employment-choices", function ($terraData) {
   "use strict";
   $terraData.EV.push({
     id: "work_known_opening_review", conf: "S", references: ["SRC_V76_EMPLOYMENT"],
-    cd: 0, w: 0,
+    cd: 0, w: 0.01, ge: { age: 16 },
     show: s => !!employmentPendingOpening(s),
     t: s => {
       const opening = employmentPendingOpening(s);

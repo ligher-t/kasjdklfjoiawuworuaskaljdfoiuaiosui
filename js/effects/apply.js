@@ -11,8 +11,11 @@ function ap(e, routeReserve = 0) {
     throw Error("短期業務に記録された対価と実際の金銭効果が一致しない");
   const original = e;
   e = normalizeEmploymentAffiliationEffects(e);
-  assertPlayerEmploymentEffectAllowed(e);
   const employmentAssessment = employmentEffectAssessment(S, original);
+  if (employmentAssessment.kind !== "existing-route") assertPlayerEmploymentEffectAllowed(e);
+  else if ([e.lifeAffiliation, ...(e.lifeAffiliations || [])].some(row =>
+    EMPLOYER_PLAYER_ACCESS_MODES[employmentOrganizationKey(row)] === "BLOCKED"))
+    assertPlayerEmploymentEffectAllowed(e);
   if (!employmentAssessment.canStart) throw Error("勤務開始の条件が変わったため、この仕事は成立しない");
   settleEmploymentThrough(S, S.year, Math.max(0, (S.mo || 1) - 1));
   const disclosureOrigin=disclosureImpactContext(S);
@@ -68,7 +71,7 @@ function ap(e, routeReserve = 0) {
   applyNeighbourAndWorkplaceEffects(e, s, resolvedId,disclosureOrigin);
   commitEmploymentEffect(s, e, employmentAssessment);
   if (e.employmentAction?.action === "site-incident") applyPlayerEmploymentAction(s, e.employmentAction);
-  reconcileWorkContract(s);
+  if (currentPlayerEmployment(s)) reconcileWorkContract(s);
   reconcileRelationshipStatusFlags(s);
   recordEffectConsequences(e, s, jobBefore, assetsBefore, debtBefore, investmentBefore, cashBefore);
   reconcileSocialAndInformationEffects(e, s);

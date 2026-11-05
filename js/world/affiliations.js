@@ -22,7 +22,7 @@ function recordIntergroupContact(s, action) {
 /* 出自・職種・地区の変化に追随する施設への所属。医院は「問い合わせ先」であり患者登録ではない。
    旧データの第1施設IDを保持し、過去の契約があったように遡及生成しない。 */
 function siteAffiliation(s, kind) {
-  if (kind === "workplace") {
+  if (kind === "workplace" && currentPlayerEmployment(s)) {
     const episode = currentPlayerEmployment(s), site = s.world?.occupationWorld?.sites?.[episode?.siteId];
     return site && episode.kind === "wage-employment" ? { facilityId: site.siteId,
       areaKey: site.areaId, kind, extra: String(episode.jobId), sinceYear: episode.startYear,
@@ -108,7 +108,7 @@ function siteAffiliation(s, kind) {
   return current;
 }
 function activeFacility(s, kind) {
-  if (kind === "workplace") {
+  if (kind === "workplace" && currentPlayerEmployment(s)) {
     const link = siteAffiliation(s, kind), site = s.world?.occupationWorld?.sites?.[link?.facilityId];
     return site ? { ...site, id: site.siteId, kind, extra: link.extra,
       status: site.status === "open" ? "available" : site.status === "closed" ? "limited" : site.status } : null;

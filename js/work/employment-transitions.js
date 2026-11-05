@@ -1,5 +1,8 @@
 // Shared effect admission. Assessments only read established world and person records.
 let EMPLOYMENT_EFFECT_SOURCES;
+// These authored choices now require the verified route. Keep existing paths
+// operable while their exact worksite, role or outcome contract is migrated.
+const EMPLOYMENT_STRICT_DIRECT_EVENTS = new Set(["choice_columbia_06"]);
 function employmentEffectSource(effect) {
   if (TRACE_RESOLUTION?.id) return TRACE_RESOLUTION.id;
   if (!EMPLOYMENT_EFFECT_SOURCES) {
@@ -59,29 +62,38 @@ function employmentEffectAssessment(s, effect, sourceEventId = employmentEffectS
     membership = [effect.lifeAffiliation, ...(effect.lifeAffiliations || [])].find(row => row &&
       ["join", "return", "assign", "role", "continue"].includes(row.action || "join")),
     mode = EMPLOYER_PLAYER_ACCESS_MODES[EMPLOYER_JOB_ORGANIZATIONS[jobId]];
-  if (["BLOCKED", "SOURCE_HOLD", "HISTORICAL"].includes(mode))
+  if (["BLOCKED", "HISTORICAL"].includes(mode))
     return { canStart: false, reasonCode: "non-recruiting-organization" };
   if (current?.jobId === jobId && (!membership || current.affiliationId === membership.id))
     return { canStart: true, kind: "continue", episode: current };
+  const strict = EMPLOYMENT_STRICT_DIRECT_EVENTS.has(sourceEventId),
+    priorRoute = { canStart: !strict, kind: "existing-route", reasonCode: "worksite-migration-pending" };
   const kind = employmentDirectLivelihoodKind(jobId);
   if (kind && (!membership || ["COMMUNITY", "CONTACT"].includes(mode) || jobId === 62 && membership.id === "columbia-frontier-pioneer")) {
-    const resource = resolveEmploymentLivelihoodResource(s, kind, jobId);
+    const resource = resolveEmploymentLivelihoodResource(s, kind, jobId) ||
+      (membership && ["CONTACT", "COMMUNITY"].includes(mode) && sourceEventId ? {
+        resourceId: "role:" + membership.id + ":" + localityKey(s),
+        basis: "recorded-participation", canStart: true
+      } : null);
+    if (!resource) return priorRoute;
     return { canStart: !!resource && !s.dead && (!restricted(s) || membership?.action === "assign"),
       kind: "livelihood", resource, livelihoodKind: kind, jobId,
       affiliationId: membership?.id, sourceEventId };
   }
   if (EMPLOYER_JOB_ORGANIZATIONS[jobId] && membership) {
     const assessed = assessEmploymentAppointment(s, { jobId, affiliationId: membership.id, sourceEventId });
-    return { ...assessed, kind: "opening", sourceEventId, affiliationId: membership.id };
+    if (assessed.canStart || strict && assessed.canApply)
+      return { ...assessed, kind: "opening", sourceEventId, affiliationId: membership.id };
+    return priorRoute;
   }
-  if (s.dead || restricted(s) || educationFullTime(s)) return { canStart: false, reasonCode: "unable-to-start" };
+  if (s.dead || restricted(s) || educationFullTime(s)) return priorRoute;
   const opening = occupationOpeningsFor(s, jobId).find(row => {
     const request = employmentOpeningRequest(s, jobId, row);
     return assessPlayerEmploymentAccess(s, request).canStart && careerOpeningAssessment(s, request).canBeAssigned;
   });
   return opening ? { canStart: true, kind: "opening", opening,
     request: employmentOpeningRequest(s, jobId, opening), sourceEventId, affiliationId: membership?.id || null }
-    : { canStart: false, reasonCode: "no-qualified-opening" };
+    : priorRoute;
 }
 function employmentChoiceCanResolve(event, choice, s) {
   return (choice.o || []).every(outcome => {

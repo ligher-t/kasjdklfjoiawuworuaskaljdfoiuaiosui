@@ -69,13 +69,53 @@ function reconcileWorkContract(s) {
       return s.workContract;
     }
   }
-  // Unrecorded J values are never proof of an employer, a site or a contract.
-  if (s.workContract) {
-    s.workContractHistory ||= [];
-    s.workContractHistory.push({year:s.year,siteId:s.workContract.siteId,jobId:s.workContract.jobId,
-      action:"ended",reason:"no-active-employment-episode"});
+  // Non-wage roles never fall through to the existing contract model.
+  if (currentPlayerEmployment(s)) return null;
+  s.workContractHistory ||= [];
+  const prior = s.workContract;
+  const eligible = contractEligibleJob(s) && !s.fl?.retired && !restricted(s);
+  const away = travelPresence(s).mode !== "residence";
+  // Temporary absence neither terminates an existing job nor creates a
+  // new local employer contract at an unattended home workplace.
+  if (away && prior?.status === "active" && eligible && prior.jobId === s.job)
+    return prior;
+  const site = eligible && !away ? activeFacility(s, "workplace") : null;
+  if (prior && (!site || prior.siteId !== site.id || prior.jobId !== s.job || prior.status !== "active")) {
+    if (prior.status === "active")
+      s.workContractHistory.push({
+        year: s.year,
+        siteId: prior.siteId,
+        jobId: prior.jobId,
+        action: "ended",
+        reason: !eligible ? "employment-ended" : prior.jobId !== s.job ? "occupation-changed" : "site-changed",
+        assignment: prior.assignment
+      });
     s.workContract = null;
   }
+  if (site) {
+    const employer = ensureWorkplaceLedger(s, site);
+    if (!s.workContract) {
+      s.workContract = {
+        siteId: site.id,
+        jobId: s.job,
+        startYear: s.year,
+        status: "active",
+        wagePremium: 0,
+        hours: employer.shift,
+        assignment: "usual",
+        knownConditions: "basic",
+        basis: "current-year-model"
+      };
+      s.workContractHistory.push({
+        year: s.year,
+        siteId: site.id,
+        jobId: s.job,
+        action: "started",
+        basis: "current-year-model"
+      });
+    }
+  }
+  s.workContractHistory = s.workContractHistory.slice(-80);
   closeInfectionWorkplaceDisclosureIfEmploymentChanged(s);
   return s.workContract || null;
 }
