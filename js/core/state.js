@@ -250,7 +250,9 @@ function educationStandingLabel(s) {
       preparatory:"同等資格の準備課程",university:"大学課程",vocational:"職業専門課程",arts:"アーツ専門学院"},
     currentCourse = educationLive(s) ?
       stages[s.educationPath.stage] + "・" + (s.educationPath.yearsCompleted + 1) + "年次在籍中" : null,
+    generalCompleted = ["upper", "lower", "primary"].find(stage => s.educationPath?.completed?.includes(stage)),
     completed = [
+      generalCompleted ? stages[generalCompleted] + "修了" : null,
       educationCredential(s, "university") ? "大学課程修了" : null,
       educationCredential(s, "vocational") ? "職業課程修了" : null,
       educationCredential(s, "arts") ? "アーツ学院修了" : null
