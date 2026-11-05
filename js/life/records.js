@@ -569,6 +569,8 @@ function applyLifeAffiliation(input) {
   if (["join", "assign", "return"].includes(input?.action || "join") &&
       EMPLOYER_PLAYER_ACCESS_MODES[employerKey] === "BLOCKED")
     throw Error("プレイヤーの新規加入対象外となる組織への所属");
+  const priorKind = S.lifeRecord?.affiliations?.find(row => row.id === input.id)?.kind;
+  assertPlayerEmploymentEffectAllowed({lifeAffiliation:{...input, kind:input.kind || priorKind}});
   const r = ensureLifeRecord(S),
     id = String(input.id || "").trim(),
     requestedAction = input.action || "join";

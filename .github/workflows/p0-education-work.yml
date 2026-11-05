@@ -202,5 +202,6 @@ jobs:
           v91_employment_ordinary_positions_and_gigs.test.cjs
           employment-appointments-world.test.cjs
           employment-finance-transitions.test.cjs
+          v87_affiliation_career_ursus_mine.js
           employment-family-periods.test.cjs
           employment-ux.test.cjs

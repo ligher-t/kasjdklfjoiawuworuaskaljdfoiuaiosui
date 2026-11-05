@@ -62,12 +62,18 @@ function employmentEffectAssessment(s, effect, sourceEventId = employmentEffectS
     membership = [effect.lifeAffiliation, ...(effect.lifeAffiliations || [])].find(row => row &&
       ["join", "return", "assign", "role", "continue"].includes(row.action || "join")),
     mode = EMPLOYER_PLAYER_ACCESS_MODES[EMPLOYER_JOB_ORGANIZATIONS[jobId]];
-  if (["BLOCKED", "HISTORICAL"].includes(mode))
+  if (["BLOCKED", "HISTORICAL", "SOURCE_HOLD"].includes(mode))
     return { canStart: false, reasonCode: "non-recruiting-organization" };
   if (current?.jobId === jobId && (!membership || current.affiliationId === membership.id))
     return { canStart: true, kind: "continue", episode: current };
   const strict = EMPLOYMENT_STRICT_DIRECT_EVENTS.has(sourceEventId),
     priorRoute = { canStart: !strict, kind: "existing-route", reasonCode: "worksite-migration-pending" };
+  if (sourceEventId === "ursus_mine_assignment_offer" && jobId === 3 &&
+      membership?.id === "ursus-kleini-sever-mine" && membership.action === "assign" && s.res.n === "ウルサス") {
+    return { canStart: !s.dead, kind:"livelihood", livelihoodKind:"coerced-assignment", jobId,
+      affiliationId:membership.id, sourceEventId,
+      resource:{resourceId:"placement:"+membership.id,basis:"recorded-coercive-placement"} };
+  }
   const kind = employmentDirectLivelihoodKind(jobId);
   if (kind && sourceEventId && (!membership || ["COMMUNITY", "CONTACT"].includes(mode) || jobId === 62 && membership.id === "columbia-frontier-pioneer")) {
     const resource = resolveEmploymentLivelihoodResource(s, kind, jobId) ||
@@ -106,8 +112,10 @@ function commitEmploymentEffect(s, effect, assessment) {
   if (effect.job === 0) { endPlayerEmployment(s, "resolved-job-exit"); return; }
   if (!assessment?.canStart) throw Error("実際の仕事口または役割の成立条件がない");
   if (assessment.kind === "opening") {
+    const awardedPremium = Number.isFinite(effect.payBonus) ? s.workPayBonus : 0;
     const episode = commitEmploymentOpening(s, assessment, { transition: true,
       affiliationId: assessment.affiliationId, sourceEventId: assessment.sourceEventId });
+    s.workPayBonus = awardedPremium;
     const site = s.world.occupationWorld.sites[episode.siteId];
     if (site.kind === "mobile") episode.mobility = "mobile";
   } else if (assessment.kind === "livelihood") {
@@ -216,4 +224,21 @@ function changeEmploymentAvailability(s, action) {
   episode.onLeave = action.action === "suspend";
   episode.workFraction = episode.onLeave ? 0 : 1;
   episode.history.push({ year: s.year, month: s.mo, status: episode.onLeave ? "suspended" : "active", reason: action.reason || action.action });
+}
+
+// A secondment changes the place of work. The hiring contract and payer stay
+// attached to the original episode, including during the return to BSW.
+function reconcileEmploymentPosting(s) {
+  const episode = currentPlayerEmployment(s);
+  if (episode?.organizationKey !== "blacksteel-worldwide") return;
+  const host = s.lifeRecord?.affiliations?.find(row => row.id === "rhodes-staff" &&
+    ["active", "crisis"].includes(row.status) && row.role?.startsWith("本艦・BSW出向"));
+  const hostSite = s.world?.occupationWorld?.sites?.["appointment-site:rhodes-staff"];
+  const aboard = s.residenceBase?.id === "rhodes-landship";
+  const siteId = host && aboard && hostSite && occupationSiteOperationalAt(hostSite,s.year,s.mo||1)
+    ? hostSite.siteId : null;
+  if ((episode.postingSiteId || null) === siteId) return;
+  episode.history.push({ status:"active", year:s.year, month:Math.max(1,s.mo||1),
+    reason:siteId ? "secondment-started" : "secondment-ended", postingSiteId:siteId });
+  episode.postingSiteId = siteId;
 }

@@ -64,6 +64,7 @@ function settleEmploymentThrough(s, year, throughMonth) {
         wallet = inSharedHousehold(s) ? "household" : "personal",
         claim = { claimId, episodeId: episode.episodeId, personId: episode.personId,
           employerId: episode.employerId, siteId: episode.siteId,
+          worksiteId: episode.postingSiteId || episode.siteId,
           year, month: payMonth, kind: episode.kind,
           gross: terms.gross, expenses: terms.expenses, amount: terms.net,
           wallet, status: terms.paid ? "paid" : "unpaid", ...{ workFraction: terms.workFraction } };

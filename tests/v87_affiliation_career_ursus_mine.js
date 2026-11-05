@@ -11,6 +11,11 @@ const scenarios=vm.runInNewContext(String.raw`(()=>{
  const absent=setup(870701),absentHidden=!follow.show(absent);
  const forced=setup(870702);apply(offer.id,0,0);
  const affiliation=forced.lifeRecord.affiliations.find(row=>row.id==='ursus-kleini-sever-mine');
+ const period=currentPlayerEmployment(forced);
+ settleEmploymentThrough(forced,forced.year,forced.mo);
+ const forcedEmployment={kind:period?.kind, opening:period?.sourceCaseId??null,
+   employer:period?.employerId??null, contract:forced.workContract??null,
+   paid:employmentPaidForYear(forced,forced.year)+employmentPaidForYear(forced,forced.year,"household")};
  const assignment=affiliation?.history?.[0];let duplicateRejected=false;try{applyLifeAffiliation({id:'ursus-kleini-sever-mine',action:'assign',role:'再配属'});}catch{duplicateRejected=true}
  forced.year+=2;forced.age+=2;const followVisible=follow.show(forced);apply(follow.id,0,0);
  const exit={status:affiliation.status,goal:forced.lifeRecord.goals.find(row=>row.id==='ursus-kleini-sever-survival')?.status,job:forced.job,audit:auditLifeState(forced)};
@@ -20,12 +25,14 @@ const scenarios=vm.runInNewContext(String.raw`(()=>{
  const hold={status:failed.lifeRecord.affiliations.find(row=>row.id==='ursus-kleini-sever-mine')?.status,role:failed.lifeRecord.affiliations.find(row=>row.id==='ursus-kleini-sever-mine')?.role,health:failed.h,audit:auditLifeState(failed)};
  const peers=setup(870705);apply(offer.id,0,0);peers.year+=2;peers.age+=2;apply(follow.id,1,0);
  const peerPath={status:peers.lifeRecord.affiliations.find(row=>row.id==='ursus-kleini-sever-mine')?.status,goal:peers.lifeRecord.goals.find(row=>row.id==='ursus-kleini-sever-survival')?.status,standing:peers.lifeRecord.groupStandings.find(row=>row.id==='ursus-north-miners')?.value,audit:auditLifeState(peers)};
- return {offerCount:offer.c.length,absentHidden,followVisible,assignment,assignmentBasis:affiliation?.episodes?.[0]?.basis,duplicateRejected,refusal,exit,hold,peerPath};
+ return {forcedEmployment,offerCount:offer.c.length,absentHidden,followVisible,assignment,assignmentBasis:affiliation?.episodes?.[0]?.basis,duplicateRejected,refusal,exit,hold,peerPath};
 })()`,ctx,{timeout:45000});
 assert.equal(scenarios.offerCount,2,'the local assignment offer has comply and seek-help routes');
 assert(scenarios.absentHidden,'the later mine route does not appear without an assigned mine affiliation');
 assert(scenarios.followVisible,'the later route appears after two years of recorded assignment');
 assert.equal(scenarios.assignment.action,'assign','coercive assignment is recorded separately from voluntary membership');
+assert.deepEqual(JSON.parse(JSON.stringify(scenarios.forcedEmployment)),
+  {kind:"coerced-assignment",opening:null,employer:null,contract:null,paid:0});
 assert.equal(scenarios.assignmentBasis,'coercive-assignment');
 assert(scenarios.duplicateRejected,'an assignment cannot be stacked on an active affiliation');
 assert.equal(scenarios.refusal.affiliation,undefined,'successful resistance does not record a forced assignment');

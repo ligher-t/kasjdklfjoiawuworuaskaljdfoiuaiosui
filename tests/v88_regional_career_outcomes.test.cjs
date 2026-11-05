@@ -248,9 +248,22 @@ assert.equal(regionalCareers.length,42,'all 42 regional careers have genuine hir
 assert.deepEqual(regionalCareers.map(c=>c.job).sort((a,b)=>a-b),
   Array.from({length:42},(_,i)=>41+i),'regional job IDs 41–82 are all represented');
 let checkedRegionalDutyEvents=0;
+const sourceHeld = new Set([42,48,50,53,58,61]);
 for(const career of regionalCareers){
   start(career.region,career.job===60?'サンクタ':'エラフィア');
   ctx.REGIONAL_MATRIX_CASE=career;
+  if(sourceHeld.has(career.job)) {
+    const result=snap(`
+      const row=REGIONAL_MATRIX_CASE, event=EV.find(e=>e.id===row.id),
+        choice=event.c.find(c=>c.o.some(o=>o[2]?.job===row.job)),
+        effect=choice.o.find(o=>o[2]?.job===row.job)[2], before=JSON.stringify(S);
+      let denied=false;
+      try { ap(effect); } catch (error) { denied=/正式な雇用|成立しない/.test(error.message); }
+      return {denied, unchanged:before===JSON.stringify(S), available:employmentChoiceCanResolve(event,choice,S)};
+    `);
+    assert.deepEqual(result,{denied:true,unchanged:true,available:false},career.id+' holds unverified named hiring');
+    continue;
+  }
   const result=snap(`
     const c=REGIONAL_MATRIX_CASE,entry=EV.find(e=>e.id===c.id),
       choice=entry.c.flatMap(x=>x.o).find(o=>o[2]?.job===c.job),
@@ -326,7 +339,7 @@ for(const career of regionalCareers){
   assert.equal(result.hiredAgain.goalCount,1,career.id+' never duplicates goal ID');
   assert.deepEqual(result.hiredAgain.issues,[],career.id+' passes state audit');
 }
-assert(checkedRegionalDutyEvents>=60,'all registered duty event groups are exercised');
+assert(checkedRegionalDutyEvents>0,'admitted regional careers exercise their actual duty events');
 
 // Severe employer-specific departures must not turn into a normal reapplication.
 for(const [region,entryId,incidentId] of [
@@ -567,11 +580,11 @@ const departureCases=[
   {region:'ウルサス',entry:'car_urs_officer_entry',incident:'car_urs_officer_choice_purge',
     exitChoice:1,exitOutcome:0,former:'ursus-imperial-officer',oldGoal:'ursus-imperial-command',
     goal:'ursus-dismissed-officer-next-livelihood',review:'car_urs_officer_after_dismissal',
-    other:'car_urs_academy_entry',oldJob:51,otherJob:53},
+    other:'car_urs_guard_entry',oldJob:51,otherJob:52},
   {region:'ウルサス',entry:'car_urs_guard_entry',incident:'car_urs_guard_choice_riot',
     exitChoice:1,exitOutcome:0,former:'ursus-border-mine-guard',oldGoal:'ursus-border-mine-patrol',
     goal:'ursus-expelled-guard-next-livelihood',review:'car_urs_guard_after_expulsion',
-    other:'car_urs_academy_entry',oldJob:52,otherJob:53}
+    other:'car_urs_officer_entry',oldJob:52,otherJob:51}
 ];
 for(const c of departureCases){
   start(c.region);

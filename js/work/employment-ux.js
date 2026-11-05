@@ -260,7 +260,7 @@ function employmentDeskModel(s) {
     current: current ? `${J[current.jobId]?.n || "仕事"}・${current.onLeave ? "休職中" : status[current.status] || "勤務中"}` :
       s.job > 0 ? occupationLabel(s) : "今は継続して勤める仕事を持っていません。",
     since: current ? `${current.startYear}年${current.startMonth || 1}月から` : "",
-    workplace: current ? s.world?.occupationWorld?.sites?.[current.siteId]?.label || "" : "",
+    workplace: current ? s.world?.occupationWorld?.sites?.[current.postingSiteId || current.siteId]?.label || "" : "",
     unpaid: (s.employmentState?.finance?.claims || []).filter(row => row.status === "unpaid")
       .reduce((sum, row) => sum + (row.amount || 0), 0),
     lastReceipt: (s.employmentState?.finance?.receipts || []).at(-1) || null,

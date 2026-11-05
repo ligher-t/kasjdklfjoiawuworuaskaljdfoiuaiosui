@@ -216,7 +216,7 @@ function canRecognizeCommunityWork(s, request = {}) {
 function assertPlayerEmploymentEffectAllowed(effect) {
   const membership = [effect?.lifeAffiliation, ...(effect?.lifeAffiliations || [])];
   for (const entry of membership) {
-    if (!entry || entry.action !== "join" || entry.kind !== "employer") continue;
+    if (entry?.kind !== "employer" || !["join", "assign", "return"].includes(entry.action || "join")) continue;
     const key = employmentOrganizationKey(entry);
     if (EMPLOYER_PLAYER_ACCESS_MODES[key] === "BLOCKED")
       throw Error("プレイヤーの新規加入対象外となる組織への雇用効果");

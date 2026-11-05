@@ -60,3 +60,28 @@ assert(result.noPayAfterExit);
 assert.equal(result.projected,result.paid);
 assert(Math.abs(result.annualNet-result.cashDelta-result.paid)<0.001,'annual cash settlement must not pay monthly receipts again');
 console.log('Employment pay periods, leave, arrears and annual projection PASS');
+
+setup(ctx,{id:'employment-secondment',seed:20261105,region:'クルビア',age:25});
+const posting=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+  const find=id=>EV.find(e=>e.id===id);
+  S.job=0;S.mo=2;S.fl.sch=0;S.educationPath=null;S.educationDecision=null;
+  ensureOccupationWorkArea(S);
+  recordEmploymentAppointmentEncounter(S,'sr_bsw_recruitment_assessment');
+  ap(find('sr_bsw_recruitment_assessment').c[0].o[0][2]);
+  ap(find('sr_bsw_promotion_tactical').c[0].o[0][2]);
+  const episode=currentPlayerEmployment(S),id=episode.episodeId,payer=episode.employerId;
+  S.mo=4;ap(find('sr_bsw_rhodes_secondment').c[0].o[0][2]);
+  const onBoard=episode.postingSiteId==='appointment-site:rhodes-staff' &&
+    S.residenceBase?.id==='rhodes-landship' && S.workContract.episodeId===id;
+  S.mo=5;settleEmploymentThrough(S,S.year,4);
+  const monthly=employmentFinance(S).claims.filter(row=>row.year===S.year && row.month===4 && row.amount>0);
+  const snapshot=makeResumeSnapshot();
+  const restored=cont(snapshot) && currentPlayerEmployment(S)?.postingSiteId==='appointment-site:rhodes-staff';
+  ap(find('sr_bsw_secondment_posting_review').c[1].o[0][2]);
+  return {onBoard,restored,monthly:monthly.map(row=>({employerId:row.employerId,worksiteId:row.worksiteId})),payer,
+    returned:currentPlayerEmployment(S)?.episodeId===id && !currentPlayerEmployment(S)?.postingSiteId};
+})())`,ctx,{timeout:15000}));
+assert(posting.onBoard);
+assert(posting.restored);
+assert.deepEqual(posting.monthly,[{employerId:posting.payer,worksiteId:'appointment-site:rhodes-staff'}]);
+assert(posting.returned);
