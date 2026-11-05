@@ -889,6 +889,23 @@ for(const c of jobLossCases){
     const paused=next.status;
     const workOpen=elig(civilian,S,tags(S));
     ap(civilian.c[0].o[0][2]);
+    const gigOnly={job:S.job,kind:S.employmentState?.episodes?.at(-1)?.kind,
+      eligible:elig(review,S,tags(S)),choices:review.c.map(q=>q.show(S,tags(S)))};
+    // Day labor is a paid single task, not a permanent job.
+    ensureOccupationWorkArea(S);
+    if (!employmentOpeningForChoice(S,2)) {
+      const areaId=occupationWorkAreaKey(S),w=S.world.occupationWorld,
+        employerId='fixture-reentry-employer',siteId='fixture-reentry-site',
+        positionId='fixture-reentry-position',openingId='fixture-reentry-opening';
+      w.employers[employerId]={employerId,organizationKey:null,areaId};
+      w.sites[siteId]={siteId,employerId,areaId,status:'open',positionIds:[positionId]};
+      w.positions[positionId]={positionId,siteId,jobId:2,capacity:1,
+        aggregateOccupiedSlots:0,identifiedOccupiedSlots:0,reservedSlots:0,
+        vacancyCount:1,openingIds:[openingId]};
+      w.openings[openingId]={openingId,positionId,siteId,employerId,areaId,
+        status:'open',slots:1,validFromYear:S.year};
+    }
+    ap(civilian.c[1].o[0][2]);
     S.year+=3;S.age+=3;
     const employed={job:S.job,former:old.status,formerGoal:oldGoal.status,
       nextGoal:next.status,eligible:elig(review,S,tags(S)),
@@ -898,7 +915,7 @@ for(const c of jobLossCases){
       formerGoal:oldGoal.status,history:next.history.map(e=>e.action),
       eligible:elig(review,S,tags(S)),issues:auditLifeState(S)};
     return{firstOffer,originalJob,onDuty,lost,premature,inCustody,ready,
-      seeking,paused,workOpen,employed,completed};
+      seeking,paused,workOpen,gigOnly,employed,completed};
   `);
   assert.equal(result.firstOffer,true,c.entry+' must be real, permitted hiring');
   assert.equal(result.originalJob,c.oldJob);
@@ -918,13 +935,16 @@ for(const c of jobLossCases){
     job:0,status:'active',action:'continue',repeat:false
   },'searching cannot invent employment');
   assert.equal(result.paused,'paused');
-  assert.equal(result.workOpen,true,'an actual general reemployment offer is available');
+  assert.equal(result.workOpen,true,'the general search event is available');
+  assert.deepEqual(result.gigOnly,{
+    job:0,kind:'gig',eligible:true,choices:[true,true,false]
+  },'day labor creates no ongoing employment or settlement permission');
   assert.deepEqual(result.employed,{
-    job:1,former:'left',formerGoal:'abandoned',nextGoal:'paused',
+    job:2,former:'left',formerGoal:'abandoned',nextGoal:'paused',
     eligible:true,choices:[false,false,true]
   },'independent paid work opens an optional livelihood settlement');
   assert.deepEqual(result.completed,{
-    job:1,next:'achieved',old:'left',formerGoal:'abandoned',
+    job:2,next:'achieved',old:'left',formerGoal:'abandoned',
     history:['start','continue','pause','complete'],eligible:false,issues:[]
   },'goal completion leaves the old loss episode intact and makes review terminal');
 }
