@@ -510,7 +510,7 @@ const txt = (e, s, T) => {
     if(action)t=`前回は${action}。{kid}の今の学校・仕事・住まいを確かめ、支え方を見直した。`;
   }
   if(CONTEXT_REVIEW_EVENTS.has(e.id) && s.eventReviews?.[e.id])
-    t=`前回は「${s.eventReviews[e.id].choice}」と決めた。その後の状況を踏まえて、改めて考えた。${t}`;
+    t=`前回は「${esc(s.eventReviews[e.id].choice)}」と決めた。その後の状況を踏まえて、改めて考えた。${t}`;
   return tpl(t, s);
 };
 function rejectEligibility(e, reason, options) {

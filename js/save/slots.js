@@ -195,6 +195,18 @@ function exportResumeSlot(index) {
 function isValidPersonName(name) {
   return typeof name === "string" && name.trim().length > 0 && name.length <= 50 && !/[<>]/.test(name);
 }
+function isValidResumeEventReviews(reviews, currentYear) {
+  if (reviews == null) return true;
+  if (typeof reviews !== "object" || Array.isArray(reviews)) return false;
+  return Object.entries(reviews).every(([id, review]) =>
+    id.length > 0 && id.length <= 128 &&
+    review && typeof review === "object" && !Array.isArray(review) &&
+    Number.isInteger(review.year) && review.year <= currentYear &&
+    typeof review.signature === "string" && review.signature.length <= 4096 &&
+    typeof review.choice === "string" && review.choice.trim().length > 0 &&
+    review.choice.length <= 200 && !/[<>]/.test(review.choice)
+  );
+}
 function normalizeResumeImport(data) {
   if (data?.format !== "terra-resume-save" || data.version !== SAVE_VERSION)
     throw new Error("この中断データは現在のゲームと同じ保存版ではありません。");
@@ -206,6 +218,7 @@ function normalizeResumeImport(data) {
     !Number.isFinite(data.acc) || !Number.isInteger(data.sp) || data.sp < 0 || data.sp >= SPD.length ||
     typeof data.AU !== "string" || !Array.isArray(data.log) ||
     !Number.isInteger(state.by) || !Number.isInteger(state.year) || !Number.isInteger(state.age) ||
+    !isValidResumeEventReviews(state.eventReviews, state.year) ||
     !Number.isInteger(state.randomSeed) || !Number.isInteger(state.rngState) ||
     state.randomAlgorithm !== RANDOM_ALGORITHM ||
     !state.world || typeof state.world !== "object" || !state.world.events || typeof state.world.events !== "object" ||

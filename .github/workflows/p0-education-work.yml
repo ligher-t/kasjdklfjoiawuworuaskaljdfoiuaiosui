@@ -47,6 +47,8 @@ jobs:
           node-version: '22'
       - name: Runtime syntax and generated revision
         run: node tools/check-efficient.cjs syntax
+      - name: Save import and HTML output security regressions
+        run: node tools/check-efficient.cjs run v88_audit_fixes_xss_and_causes.test.cjs
       - name: Contract and household debt accounting
         if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v87_household_accounting.js

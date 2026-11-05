@@ -104,7 +104,7 @@ function renderEconomyPanel(s, services) {
       flowRows.length ? flowRows.map(([k, v]) => `${k} ${v}`).join("・") : "内訳は次の年次更新後に表示"
     ]
   ]
-    .map(x => `<dt>${x[0]}</dt><dd>${x[1]}</dd>`)
+    .map(([label, value]) => `<dt>${esc(label)}</dt><dd>${esc(value)}</dd>`)
     .join("");
   services.$("fh").innerHTML = services.annualEconomyHistoryMarkup(s.flowHistory);
   services.$("ch").innerHTML = services.choiceEconomyHistoryMarkup(s.moneyLog);

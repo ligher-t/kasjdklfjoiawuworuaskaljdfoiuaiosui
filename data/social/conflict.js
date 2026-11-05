@@ -318,7 +318,7 @@ window.TERRA_DATA_BUILD.run("social/conflict", function ($terraData, $define, $r
         ),
       t: s => {
         const row = s.lifeRecord.workRelationships.find(r => r.id === "victoria-sarkaz-interview");
-        return `二年以上前、${row.person.nm}というサルカズの求職者が面接に来た日のことが、人手不足の現場で蒸し返された。あの人は当時、${row.applicantResponse === "left-after-exclusion" ? "噂話を理由に門前払いされた" : "採用基準を淡々と尋ねて帰った"}。採用担当は古い控えを机に広げ、今後もサルカズの応募者を同じように扱うつもりか、あなたの考えを聞いてきた。`;
+        return `二年以上前、${esc(row.person.nm)}というサルカズの求職者が面接に来た日のことが、人手不足の現場で蒸し返された。あの人は当時、${row.applicantResponse === "left-after-exclusion" ? "噂話を理由に門前払いされた" : "採用基準を淡々と尋ねて帰った"}。採用担当は古い控えを机に広げ、今後もサルカズの応募者を同じように扱うつもりか、あなたの考えを聞いてきた。`;
       },
       c: [
         $terraData.K("当時の考えは変えず、同じ扱いを続ける", {}, [

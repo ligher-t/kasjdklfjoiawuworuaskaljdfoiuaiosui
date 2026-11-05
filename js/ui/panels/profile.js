@@ -41,13 +41,18 @@ function getAffiliationBadgeData(s) {
 
 function renderProfilePanel(s, services, st) {
   const badge = getAffiliationBadgeData(s);
+  const languageSummary = typeof services.formatLanguageSummaryForProfile === "function"
+    ? services.formatLanguageSummaryForProfile(s, services)
+    : typeof formatLanguageSummaryForProfile === "function"
+      ? formatLanguageSummaryForProfile(s, services)
+      : "未記録";
   const badgeHtml = badge
     ? `<span class="ui-affiliation-badge ui-badge-${badge.code}" title="${badge.label} / ${badge.eng}"><span class="badge-tag">${badge.eng}</span><span class="badge-text">${badge.label}</span></span>`
     : "";
   services.$("tn").innerHTML = `${esc(s.nm)} ${badgeHtml}`;
   services.$("ty").textContent = `${s.age}歳 ・ テラ暦${s.year}年`;
   services.$("pf").innerHTML = [
-    ["名前", esc(s.nm)],
+    ["名前", s.nm],
     ["所属・身分", badge ? `${badge.label} (${badge.eng})` : "市井の生活者（特定組織への所属なし）"],
     ["性別", s.sx],
     ["生年月日", `テラ暦${s.by}年${s.bd === "月日未記録" ? "（月日未記録）" : s.bd}`],
@@ -61,7 +66,7 @@ function renderProfilePanel(s, services, st) {
     ],
     ["地域の情報の届きやすさ（推計）", Math.round(s.local.info * 100) + "/100"],
     ["種族", s.r.n],
-    ["使用言語・母語", typeof services.formatLanguageSummaryForProfile === "function" ? services.formatLanguageSummaryForProfile(s, services) : (typeof formatLanguageSummaryForProfile === "function" ? formatLanguageSummaryForProfile(s, services) : "未記録")],
+    ["使用言語・母語", languageSummary],
     [
       "生家の立場",
       `${s.socialClass?.origin || s.socialPosition || "未記録"}`
@@ -97,6 +102,6 @@ function renderProfilePanel(s, services, st) {
     ["再現用seed", String(s.randomSeed ?? "未記録")],
     ["地域で見られる信仰", s.res.fa || "資料なし"]
   ]
-    .map(x => `<dt>${x[0]}</dt><dd>${x[1]}</dd>`)
+    .map(([label, value]) => `<dt>${esc(label)}</dt><dd>${esc(value)}</dd>`)
     .join("");
 }

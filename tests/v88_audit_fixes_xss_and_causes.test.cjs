@@ -15,6 +15,8 @@ annual.setup(ctx, { id: 'xss-audit', seed: 905003, region: 'クルビア', age: 
     tab = () => {};
     rd = () => {};
     S.nm = '<img src=x onerror=alert("xss")>';
+    S.sx = '<svg onload=alert("xss")>';
+    S.socialClass = { ...(S.socialClass || {}), origin: '<img src=x onerror=alert("class")>' };
     renderProfilePanel(S, {
       $: id => $(id),
       occupationLabel: s => '無職',
@@ -33,6 +35,28 @@ annual.setup(ctx, { id: 'xss-audit', seed: 905003, region: 'クルビア', age: 
   assert.ok(pfNode, 'pf node exists in DOM mock');
   assert.ok(!pfNode.innerHTML.includes('<img src=x'), 'profile details table does not contain raw img tag');
   assert.ok(pfNode.innerHTML.includes('&lt;img src=x'), 'profile details table properly escapes HTML tags');
+  assert.ok(!pfNode.innerHTML.includes('<svg'), 'profile sex value is not interpreted as markup');
+  assert.ok(pfNode.innerHTML.includes('&lt;svg'), 'profile sex value is escaped');
+
+  const payload = '<img src=x onerror=alert("xss")>';
+  const economyNodes = { fn: { innerHTML: '' }, fh: { innerHTML: '' }, ch: { innerHTML: '' } };
+  ctx.xssPayload = payload;
+  ctx.economyNodes = economyNodes;
+  ctx.economyServices = {
+    $: id => economyNodes[id],
+    m: value => String(value),
+    householdStrained: () => false,
+    annualEconomyHistoryMarkup: () => '',
+    choiceEconomyHistoryMarkup: () => ''
+  };
+  vm.runInContext(`
+    S.investment = 1;
+    S.investmentType = xssPayload;
+    S.flow = { expense: { [xssPayload]: 1 }, income: {} };
+    renderEconomyPanel(S, economyServices);
+  `, ctx);
+  assert.ok(!economyNodes.fn.innerHTML.includes('<img src=x'), 'economy panel does not contain raw imported markup');
+  assert.ok(economyNodes.fn.innerHTML.includes('&lt;img src=x'), 'economy panel escapes investment and expense labels');
 
   // Ending panel XSS test
   vm.runInContext(`
@@ -42,6 +66,28 @@ annual.setup(ctx, { id: 'xss-audit', seed: 905003, region: 'クルビア', age: 
   assert.ok(endingNode, 'rs ending node exists in DOM mock');
   assert.ok(!endingNode.innerHTML.includes('<img src=x'), 'ending heading does not contain raw img tag');
   assert.ok(endingNode.innerHTML.includes('&lt;img src=x'), 'ending heading properly escapes HTML tags');
+
+  vm.runInContext(`
+    globalThis.employmentReviewText = EV.find(e => e.id === 'v87_hardline_sarkaz_employer_review').t({
+      lifeRecord: {
+        workRelationships: [{
+          id: 'victoria-sarkaz-interview',
+          person: { nm: xssPayload },
+          applicantResponse: 'left-after-exclusion'
+        }]
+      }
+    });
+  `, ctx);
+  assert.ok(!ctx.employmentReviewText.includes('<img src=x'), 'employment review text does not contain raw nested names');
+  assert.ok(ctx.employmentReviewText.includes('&lt;img src=x'), 'employment review text escapes nested names');
+
+  vm.runInContext(`
+    S.nm = 'テラ市民';
+    S.sx = '女';
+    S.eventReviews = {};
+    S.investmentType = '共同事業';
+    S.flow = { year: S.year, expense: { living: 1 }, income: {} };
+  `, ctx);
 }
 
 // 2. Save import validation (slots.js & auditLifeState)
@@ -74,6 +120,53 @@ annual.setup(ctx, { id: 'xss-audit', seed: 905003, region: 'クルビア', age: 
   rawSave.S.nm = 'テラ市民';
   const imported = vm.runInContext(`normalizeResumeImport(${JSON.stringify(rawSave)})`, ctx);
   assert.equal(imported.S.nm, 'テラ市民', 'valid name is preserved on clean import');
+
+  const maliciousReviewSave = JSON.parse(JSON.stringify(rawSave));
+  maliciousReviewSave.S.eventReviews = {
+    life_debt_budget_review: {
+      year: maliciousReviewSave.S.year,
+      signature: '{}',
+      choice: '<img src=x onerror=alert("xss")>'
+    }
+  };
+  assert.throws(
+    () => vm.runInContext(`normalizeResumeImport(${JSON.stringify(maliciousReviewSave)})`, ctx),
+    /現行版の中断データとして必要な状態が揃っていません/,
+    'import rejects HTML in event review labels'
+  );
+
+  vm.runInContext(`
+    S.eventReviews = {
+      life_debt_budget_review: {
+        year: S.year,
+        signature: '{}',
+        choice: xssPayload
+      }
+    };
+    globalThis.reviewText = txt({ id: 'life_debt_budget_review', t: '状況を振り返った。' }, S, {});
+  `, ctx);
+  assert.ok(!ctx.reviewText.includes('<img src=x'), 'event review text does not contain raw markup');
+  assert.ok(ctx.reviewText.includes('&lt;img src=x'), 'event review text escapes imported choice labels');
+
+  vm.runInContext(`
+    globalThis.xssEmploymentRow = applyLifeWorkRelationship({
+      id: 'xss-import-name',
+      title: '職場関係',
+      response: 'accepted'
+    });
+    S.eventReviews = {};
+    xssEmploymentRow.person.nm = xssPayload;
+  `, ctx);
+  assert.equal(
+    vm.runInContext('workRelationshipValid(xssEmploymentRow, S)', ctx),
+    false,
+    'employment record audit rejects an unsafe nested person name'
+  );
+  assert.throws(
+    () => vm.runInContext('normalizeResumeImport(makeResumeSnapshot())', ctx),
+    /保存状態が現行版の監査に通りません/,
+    'import rejects unsafe nested employment names'
+  );
 }
 
 // 3. Unreachable condition fix: clinical trial risk by debt (death-risk.js)

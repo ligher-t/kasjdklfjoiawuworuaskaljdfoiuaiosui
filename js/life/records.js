@@ -343,7 +343,10 @@ function workRelationshipValid(row, s) {
     !row?.id ||
     !row.title ||
     !row.person?.id ||
-    !row.person?.nm ||
+    typeof row.person?.nm !== "string" ||
+    !row.person.nm.trim() ||
+    row.person.nm.length > 50 ||
+    /[<>]/.test(row.person.nm) ||
     !RACE.some(r => r.n === row.person?.r?.n) ||
     !Number.isInteger(row.person?.by) ||
     !Number.isInteger(row.startedYear) ||

@@ -381,11 +381,10 @@ function clampLanguageSkill(val) {
     work: "職場・業務実務"
   });
 
-  function formatLanguageSummaryForProfile(s, services) {
-    const escFn = services?.esc || (str => String(str ?? ""));
-    if (!s) return escFn("未記録");
+  function formatLanguageSummaryForProfile(s) {
+    if (!s) return "未記録";
     const ls = s.languageState || (typeof ensureLanguageState === "function" ? ensureLanguageState(s) : null);
-    if (!ls || !ls.skills) return escFn("未記録");
+    if (!ls || !ls.skills) return "未記録";
 
     const registry = (typeof LANGUAGE_REGISTRY !== "undefined" ? LANGUAGE_REGISTRY : null) || window.GAME_DATA?.LANGUAGE_REGISTRY || {};
     const activeLangs = Object.entries(ls.skills)
@@ -400,7 +399,7 @@ function clampLanguageSkill(val) {
       });
 
     if (!activeLangs.length) {
-      return escFn(s.age < 3 ? "言語習得の途上（聞き取り中）" : "日常会話（未記録）");
+      return s.age < 3 ? "言語習得の途上（聞き取り中）" : "日常会話（未記録）";
     }
 
     const items = activeLangs.map(([id, sk]) => {
@@ -418,7 +417,7 @@ function clampLanguageSkill(val) {
       return `${name}（${desc}）`;
     });
 
-    return escFn(items.join("、"));
+    return items.join("、");
   }
 
   function formatLanguageMetric(s) {
