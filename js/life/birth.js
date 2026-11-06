@@ -359,11 +359,14 @@ function born(birth = {}) {
     hd: {},
     cn: { g: 0, b: 0, n: 0 },
     majorEventMonth: null,
+    minorEventMonth: null,
     textDeck: {},
     trace: [],
     dataFingerprintAtBirth: DATA_FINGERPRINT,
     sourceFingerprintAtBirth: SOURCE_FINGERPRINT
   });
+  S.artsProfile = createArtsProfile(S.ar);
+  S.artsEquipment = createArtsEquipmentState();
   ensureLocalityState(S);
   ensureEducationWorldForResidence(S);
   educationCreateMobilityState(S);

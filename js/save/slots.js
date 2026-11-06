@@ -218,6 +218,10 @@ function normalizeResumeImport(data) {
     !Number.isFinite(data.acc) || !Number.isInteger(data.sp) || data.sp < 0 || data.sp >= SPD.length ||
     typeof data.AU !== "string" || !Array.isArray(data.log) ||
     !Number.isInteger(state.by) || !Number.isInteger(state.year) || !Number.isInteger(state.age) ||
+    !isValidArtsProfileState(state.artsProfile, state.year) ||
+    !isValidArtsEquipmentState(state.artsEquipment, state.year) ||
+    !isValidEventMonthMarker(state.majorEventMonth, state.year) ||
+    !isValidEventMonthMarker(state.minorEventMonth, state.year) ||
     !isValidResumeEventReviews(state.eventReviews, state.year) ||
     !Number.isInteger(state.randomSeed) || !Number.isInteger(state.rngState) ||
     state.randomAlgorithm !== RANDOM_ALGORITHM ||

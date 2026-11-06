@@ -306,9 +306,9 @@ U-19の再編レユニオン目標名欠落（旧再現seed `1430292801`）とU-
 
 ## 現在の統合状況と検査ステータス
 
-- **コードHEAD / バージョン**: `v88` (SAVE_VERSION: 87, TRACE_VERSION: 69)
-- **テスト自動化**: 全26テストスイート（`v88_timeline_local_events.test.cjs`, `v88_language_system.test.cjs`, `v88_system_audit_fixes.test.cjs`, `annual-phases`, `audit-diagnostics`, `data-fragments`, `data-modules`, `eligibility-rules`, `ending-comparison`, `log-modes`, `p0-career-credential-lifecycle`, `p0-education-nonstandard`, `p0-education-service-context`, `p0-school-progression`, `p0-school-regional-access`, `rule-api`, `state-ownership`, `terra-death-causes-diversity`, `ui-choice-presentation`, `ui-ending-chart`, `ui-log-archive`, `ui-log-years`, `ui-record-evidence`, `ui-summary-display-boundaries`, `ui-summary-focus`, `ui-title-resume`, `v87_rhodes_landship_reforms`, `v87_sim_audit_fixes_and_metrics`）が **100% PASS**。
-- **カタログ整備**: `tools/generate-event-catalog.cjs`（2,429件）および `ALL_EVENTS_COMPREHENSIVE_DIRECTORY.md`（3.22 MB）を完全同期。
+- **変更前のコードHEAD / バージョン**: `f42bf77c15780fed5fe69bc73ddfa3f6c1ddfc2b` (`SAVE_VERSION: 87`, `TRACE_VERSION: 69`)。現在の作業差分ではSAVE_VERSIONを88へ更新。
+- **変更前のテスト記録**: 既存PASS記録はこの作業差分を含まず、記載件数にも一覧との不一致がある。今回のテストは未実施。
+- **カタログ**: 旧欄は2,429件だったが、作業開始時点の正規入力2,715件に今回の新規9件を加え、2,724件へ更新。`tools/event-catalog-metadata.json` と `EVENT_CATALOG.md` を生成し、`ENGINE_REVISION` も再生成した。
 
 ---
 
@@ -326,6 +326,20 @@ U-19の再編レユニオン目標名欠落（旧再現seed `1430292801`）とU-
 - [ ] **P3-F03 他の特定組織ルート（レユニオン、BSW、ライン生命等）のロドス水準への引き上げ検討**
   - 今回実施した「ロドス本艦生活改革」と同様に、レユニオンやBSW、ライン生命などの所属ルートについても、固有日常イベントや所属特有の死因・安全対策の解像度向上を順次検討。
 
+
+## 2026-11-07 アーツ基盤・軽選択の初回実装
+
+- [x] 新規出生でartsProfileを生成し、既存の出生乱数から適性帯を導出して追加の乱数消費を避ける。正式なアーツ課程への入学時は選考成立を評価履歴に記録し、技能・出席・資格とは分ける。履歴を上限内で集約し、同版復元と状態監査へ接続。
+- [x] interactionScopeをイベント分類の入力にし、社会イベントの候補とカテゴリ予算を保持。優先／社会選択後、通常minorと日常場面を一回の枠で抽選する初期20%を接続し、月内の再提示をエンジン・イベント照会の両方で抑制。
+- [ ] W04の残り：scheduled scopeは既存のID別期日判定に限られ、新しい案件向けの汎用期日正本は未実装。通常minorのカテゴリ別予算は、異なる通常minorカテゴリを導入する段階で設計・検査する。
+- [x] 同年に実在するアーツ課程へ出席した後に限り、練習場面3件を候補化。成功・観察・理論・実技未達を別記録にし、表示全文と出典区分を docs/PLAYER_TEXT_REVIEW.md に登録。
+- [ ] W01の残り：旧s.arの出生・年次成長・入学判定・職業要件を用途別に照合し、技能や適格性の正本へ段階移行する。今回は残る既存イベントを置換していない。
+- [ ] W02の残り：学校外の指導者・場所・出席根拠、実技評価と修了・受験・中断・後続経路を実装して文章レビューする。
+- [x] W03初回実装：同版保存・監査済みの個別機器台帳、学校所有の貸与・返却、点検・修理依頼・部品到着・修理完了のID連鎖を追加。
+- [ ] W03残り：現職の工房・職業要件、使用安全、一般機器の所有権、T074の明細圧縮回帰。
+- [ ] W05〜W08：地域警報・設備事故・配送、危機契約の一意精算、研究同意と共同体文化を既存状態のIDへ接続する。
+- [x] 変更イベントの校閲メタデータを未校閲状態で登録し、正規EVENT_CATALOGとエンジン指紋を再生成。
+- [ ] W09：SAVE_VERSION 88の同版セーブ復元と変更境界の回帰検査を受入確認する。今回この差分へのテストは未実施。
 
 ## 2026-11-06 社会的制約イベント v3 実装
 

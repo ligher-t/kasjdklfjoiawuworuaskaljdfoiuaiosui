@@ -89,6 +89,9 @@ function renderProfilePanel(s, services, st) {
     ],
     ["職業", services.occupationLabel(s)],
     ["学歴・就学", services.educationStandingLabel(s)],
+    ["アーツの素質（先天的な目安）", artsInnateBandLabel(s)],
+    ["アーツの練習記録", artsPracticeSummary(s)],
+    ["アーツ器具", artsEquipmentStatusSummary(s)],
     ["現在の正規履修記録", s.educationPath?.offeringId ?
       (()=>{
         const id=s.educationPath.currentEnrollmentId,

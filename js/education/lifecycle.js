@@ -243,6 +243,8 @@ function educationStart(s,stage,tier = 1,source = null) {
     history:[...(previous?.history || [])].slice(-60),sourceEventId:source
   };
   s.educationPath.institutionId = educationInstitutionRef(s,stage);
+  if(stage === "arts" && typeof recordArtsFormalAdmissionAssessment === "function")
+    recordArtsFormalAdmissionAssessment(s,source);
   educationAppendHistory(s,"enrolled",{stage,tier,source,
     schoolSiteId:s.educationPath.institutionId || null
   });

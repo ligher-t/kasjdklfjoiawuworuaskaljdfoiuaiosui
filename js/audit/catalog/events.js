@@ -4,6 +4,13 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
     if (!w || ids.has(w)) W_.push(`重複または空のid: ${w}`);
     ids.add(w);
     if (e.conf && !services.DATA_GUIDE.confidence[e.conf]) W_.push(`${w}: 未知の確度ラベル「${e.conf}」`);
+    if (e.interactionScope != null &&
+        !["major", "minor", "daily", "scheduled"].includes(e.interactionScope))
+      W_.push(`${w}: interactionScopeがmajor/minor/daily/scheduledのいずれでもない`);
+    if (["major", "minor", "scheduled"].includes(e.interactionScope) && !e.c)
+      W_.push(`${w}: 選択イベントのinteractionScopeに選択肢がない`);
+    if (e.interactionScope === "daily" && e.c)
+      W_.push(`${w}: dailyイベントに選択肢がある`);
     (e.references || []).forEach(ref => {
       if (!services.SETTING_SOURCES[ref]) W_.push(`${w}: 未定義の資料ID「${ref}」`);
     });

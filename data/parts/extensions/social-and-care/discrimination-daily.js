@@ -25,7 +25,7 @@ function socialConstraintMetadata(row) {
     householdContext = /食事を共にする|同居する家族|同じ世帯/.test(conditions);
   return {
     group: row.group,
-    presentation: minor ? 'minor-choice' : 'major-choice',
+    interactionScope: minor ? 'minor' : 'major',
     sceneBinding: row.sceneBinding,
     target: row.target,
     domain: row.domain,
@@ -74,7 +74,7 @@ function compileSocialEvent(row) {
     once: row.once,
     ...(Number.isFinite(meta.ageRange?.min) ? { ge: { age: meta.ageRange.min } } : {}),
     ...(Number.isFinite(meta.ageRange?.max) ? { le: { age: meta.ageRange.max } } : {}),
-    presentation: meta.presentation,
+    interactionScope: meta.interactionScope,
     socialConstraint: meta,
     t: row.text,
     c: row.choices.map(choice => ({

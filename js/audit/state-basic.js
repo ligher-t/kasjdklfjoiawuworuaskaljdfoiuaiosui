@@ -91,6 +91,16 @@ function auditCommunityAndRandomState(s, problems, services = STATE_AUDIT_SERVIC
 function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICES) {
   const isValidName = name =>
     typeof name === "string" && name.trim().length > 0 && name.length <= 50 && !/[<>]/.test(name);
+  if (typeof isValidArtsProfileState !== "function" ||
+      !isValidArtsProfileState(s.artsProfile, s.year))
+    problems.push("アーツ適性・実績の状態が不正");
+  if (typeof isValidArtsEquipmentState !== "function" ||
+      !isValidArtsEquipmentState(s.artsEquipment, s.year))
+    problems.push("アーツ機器・貸与・点検の状態が不正");
+  if (typeof isValidEventMonthMarker !== "function" ||
+      !isValidEventMonthMarker(s.majorEventMonth, s.year) ||
+      !isValidEventMonthMarker(s.minorEventMonth, s.year))
+    problems.push("月間イベント選択記録が不正");
   if (!isValidName(s.nm)) problems.push("名前が不正");
   if (s.sp && !isValidName(s.sp.nm)) problems.push("配偶者の名前が不正");
   if (Array.isArray(s.kids) && s.kids.some(k => k && k.nm != null && !isValidName(k.nm))) problems.push("子どもの名前が不正");

@@ -35,6 +35,7 @@ function ap(e, routeReserve = 0) {
     else throw Error("不明な旅程操作");
   }
   applyLifeRecordEffects(e, s);
+  if (e.artsAction) applyArtsAction(s, e.artsAction);
   if (e.employmentAction && e.employmentAction.action !== "site-incident")
     applyPlayerEmploymentAction(s, e.employmentAction);
   const assetsBefore = (s.cash || 0) + (s.house?.cash || 0) + (s.investment || 0),

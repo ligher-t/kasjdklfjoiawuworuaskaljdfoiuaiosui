@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2715　選択肢数：3556　結果枝数：4362
+イベント数：2724　選択肢数：3575　結果枝数：4381
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -12,7 +12,7 @@
 
 ## 国・地域別索引
 
-[イェラグ (86)](#tag-region-0)　・　[イベリア (112)](#tag-region-1)　・　[ヴィクトリア (151)](#tag-region-2)　・　[ウルサス (173)](#tag-region-3)　・　[カジミエーシュ (104)](#tag-region-4)　・　[カズデル (119)](#tag-region-5)　・　[クルビア (122)](#tag-region-6)　・　[サーミ (93)](#tag-region-7)　・　[サルゴン (102)](#tag-region-8)　・　[シエスタ (83)](#tag-region-9)　・　[シラクーザ (100)](#tag-region-10)　・　[ボリバル (96)](#tag-region-11)　・　[ミノス (87)](#tag-region-12)　・　[ラテラーノ (90)](#tag-region-13)　・　[リターニア (105)](#tag-region-14)　・　[レム・ビリトン (95)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (88)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (94)](#tag-region-19)　・　[未特定 (861)](#tag-region-20)　・　[龍門 (107)](#tag-region-21)
+[イェラグ (86)](#tag-region-0)　・　[イベリア (112)](#tag-region-1)　・　[ヴィクトリア (151)](#tag-region-2)　・　[ウルサス (173)](#tag-region-3)　・　[カジミエーシュ (104)](#tag-region-4)　・　[カズデル (119)](#tag-region-5)　・　[クルビア (122)](#tag-region-6)　・　[サーミ (93)](#tag-region-7)　・　[サルゴン (102)](#tag-region-8)　・　[シエスタ (83)](#tag-region-9)　・　[シラクーザ (100)](#tag-region-10)　・　[ボリバル (96)](#tag-region-11)　・　[ミノス (87)](#tag-region-12)　・　[ラテラーノ (90)](#tag-region-13)　・　[リターニア (105)](#tag-region-14)　・　[レム・ビリトン (95)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (88)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (94)](#tag-region-19)　・　[未特定 (870)](#tag-region-20)　・　[龍門 (107)](#tag-region-21)
 
 <a id="tag-region-0"></a>
 ### イェラグ（86）
@@ -1977,7 +1977,7 @@
 - [car_hig_touhou_daily_01](#event-car_hig_touhou_daily_01) — 東方重工の工場内で、最新鋭の旋盤から削り出された手裏剣『シルバーウィンド』同型刃の寸法と硬度を測定した。特殊合金の焼き入れムラがないか、顕微鏡で結晶…
 
 <a id="tag-region-20"></a>
-### 未特定（861）
+### 未特定（870）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
@@ -2384,6 +2384,15 @@
 - [life_parent_visit](#event-life_parent_visit) — 故郷の親から届いた手紙に、『たまには顔を見せておくれ』とあった。高い往復の運賃を出せば、今月の支払いをひとつ我慢しなければならない。 親からの手紙に…
 - [life_room_repair](#event-life_room_repair) — 部屋の歪んだ窓枠から、夜になると冷たい隙間風が吹き込む。大家に言えば面倒な押し問答になりそうだが、自分で板やパテを買って塞ぐにも金がかかる。 長雨の…
 - [life_neighbor_mutual_aid](#event-life_neighbor_mutual_aid) — 階段の上り下りで息を切らしていると、近所の顔なじみの{neighborName}が「買い物や水運び、ついでにやってこようか」と声をかけてくれた。袋を…
+- [life_arts_training_first_lesson](#event-life_arts_training_first_lesson) — 教室の木箱には、小さな金属片がいくつも並んでいた。教師は「まずは同じ動きを繰り返して」と言った。隣の生徒が器具を動かすあいだ、自分の箱はかすかな音も…
+- [life_arts_lowaptitude_class](#event-life_arts_lowaptitude_class) — 授業の終わりを告げる鐘が鳴っても、練習台の印はほとんど動かなかった。教師が器具を調べたあと、背後で誰かの椅子が床を擦った。机の上には、やり直した線が…
+- [life_arts_training_repeat](#event-life_arts_training_repeat) — 前に書いた線を、同じ練習台でもう一度なぞった。教師はすぐ答えを示さず、手首の角度だけを指で示す。最初の印はかすれたが、二度目には道具がわずかに応えた…
+- [life_arts_unit_borrow](#event-life_arts_unit_borrow) — 授業のあと、保管庫の係が練習用の小型器具を机に置いた。貸出票には返却日と、授業の監督下で使うことが記されている。
+- [life_arts_unit_return](#event-life_arts_unit_return) — 返却日が近づき、授業用の器具を袋から取り出した。金具に練習の跡が残っている。貸出票の控えには、返却窓口の場所が書かれていた。
+- [life_arts_unit_inspection](#event-life_arts_unit_inspection) — 練習用の器具を返す前に、授業担当者が接続部を確かめるよう言った。金具の縁に黒い跡がある。汚れなのか、熱で変色したのかは、まだ分からない。
+- [life_arts_unit_repair](#event-life_arts_unit_repair) — 点検担当者は、接続部の焼け跡を見て使用を止めた。授業で使う予備器具は今すぐには出せないという。修理票には部品の型番と、預かり先を書く欄がある。
+- [life_arts_unit_repair_parts](#event-life_arts_unit_repair_parts) — 保管庫から、修理に必要な交換部品が届いたという知らせがあった。受取確認が済むまでは器具に使えず、担当者は組み直しと動作確認にも日を置きたいと言う。
+- [life_arts_unit_repair_complete](#event-life_arts_unit_repair_complete) — 担当者から、器具の接続部を組み直したと連絡があった。受け渡しの前に、修理票と照らしながら状態を確かめる必要があるという。
 - [romance_followup](#event-romance_followup) — {romancePartner}とまた会おうと約束してから、仕事帰りに同じ食堂で何度もテーブルを挟んだ。ある夜は職場の愚痴を聞いて笑い合い、別の夜は…
 - [romance_future_talk](#event-romance_future_talk) — {romancePartner}とこれからの暮らしを話すたび、部屋の狭さや家賃、もしどちらかが倒れて働けなくなった時の不安が口をついて出た。それでも…
 - [romance_marriage_choice](#event-romance_marriage_choice) — 互いの家族へ挨拶に行く日取りや、ささやかな祝いの席にいくらかかるかを指折り数えた。仕事を休める日も見計らいながら、{romancePartner}と…
@@ -2952,7 +2961,7 @@
 
 ## ジャンル別索引
 
-[移動・物流 (265)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (393)](#tag-genre-2)　・　[感染・医療 (495)](#tag-genre-3)　・　[教育・文化 (465)](#tag-genre-4)　・　[差別・制度 (157)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (253)](#tag-genre-7)　・　[戦争・政治 (147)](#tag-genre-8)　・　[天災・避難 (203)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (426)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (903)](#tag-genre-13)　・　[労働・経済 (789)](#tag-genre-14)
+[移動・物流 (265)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (393)](#tag-genre-2)　・　[感染・医療 (495)](#tag-genre-3)　・　[教育・文化 (473)](#tag-genre-4)　・　[差別・制度 (157)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (253)](#tag-genre-7)　・　[戦争・政治 (147)](#tag-genre-8)　・　[天災・避難 (203)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (426)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (904)](#tag-genre-13)　・　[労働・経済 (789)](#tag-genre-14)
 
 <a id="tag-genre-0"></a>
 ### 移動・物流（265）
@@ -4121,7 +4130,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-genre-4"></a>
-### 教育・文化（465）
+### 教育・文化（473）
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_model](#event-bias_family_model) — 夕餉の席で、親の一人が近所に越してきた感染者の一家について話した。『ああいう家とは付き合うな。厄介事を持ち込まれる』。煮物を取り分ける手は止まらず、…
@@ -4428,6 +4437,14 @@
 - [life_night_study](#event-life_night_study) — 家計逼迫 働きながら通える夜間講習の貼り紙が職場の壁に出ていた。くたくたに疲れた仕事帰りの体と、教材を買う金と、どちらも今の苦しい暮らしから絞り出さ…
 - [life_youth_apprenticeship](#event-life_youth_apprenticeship) — （動的本文）
 - [life_hobby_budget](#event-life_hobby_budget) — 通っている音楽の稽古場の月謝が来月から上がるという。楽器ケースの留め金を閉じた瞬間、月末の家賃と食費の計算が頭をよぎった。 借りている小さな菜園の更…
+- [life_arts_training_first_lesson](#event-life_arts_training_first_lesson) — 教室の木箱には、小さな金属片がいくつも並んでいた。教師は「まずは同じ動きを繰り返して」と言った。隣の生徒が器具を動かすあいだ、自分の箱はかすかな音も…
+- [life_arts_lowaptitude_class](#event-life_arts_lowaptitude_class) — 授業の終わりを告げる鐘が鳴っても、練習台の印はほとんど動かなかった。教師が器具を調べたあと、背後で誰かの椅子が床を擦った。机の上には、やり直した線が…
+- [life_arts_training_repeat](#event-life_arts_training_repeat) — 前に書いた線を、同じ練習台でもう一度なぞった。教師はすぐ答えを示さず、手首の角度だけを指で示す。最初の印はかすれたが、二度目には道具がわずかに応えた…
+- [life_arts_unit_borrow](#event-life_arts_unit_borrow) — 授業のあと、保管庫の係が練習用の小型器具を机に置いた。貸出票には返却日と、授業の監督下で使うことが記されている。
+- [life_arts_unit_return](#event-life_arts_unit_return) — 返却日が近づき、授業用の器具を袋から取り出した。金具に練習の跡が残っている。貸出票の控えには、返却窓口の場所が書かれていた。
+- [life_arts_unit_inspection](#event-life_arts_unit_inspection) — 練習用の器具を返す前に、授業担当者が接続部を確かめるよう言った。金具の縁に黒い跡がある。汚れなのか、熱で変色したのかは、まだ分からない。
+- [life_arts_unit_repair](#event-life_arts_unit_repair) — 点検担当者は、接続部の焼け跡を見て使用を止めた。授業で使う予備器具は今すぐには出せないという。修理票には部品の型番と、預かり先を書く欄がある。
+- [life_arts_unit_repair_complete](#event-life_arts_unit_repair_complete) — 担当者から、器具の接続部を組み直したと連絡があった。受け渡しの前に、修理票と照らしながら状態を確かめる必要があるという。
 - [family_sibling_birth](#event-family_sibling_birth) — 親から、もうすぐ家に赤ん坊が生まれると聞かされた。嬉しい知らせのはずなのに、狭い部屋のどこに寝かせるか、食費やあなたの家の手伝いがどう増えるか、大人…
 - [family_daily_spouse_health_care](#event-family_daily_spouse_health_care) — 一日中立ち仕事で強張った背中を、{sp}が温かい手でさすってくれた。淹れてくれたハーブの香る茶をすすりながら、明日もまた二人で乗り切ろうと静かに頷き…
 - [family_care_network_member_death_notice](#event-family_care_network_member_death_notice) — 昔世話になった{careMemberName}が{careMemberDeathYear}年に亡くなったと、{careMemberDeathChan…
@@ -5803,7 +5820,7 @@
 - [fam_mafia](#event-fam_mafia) — ファミリーの下働きで最初の夜を終えると、奥の部屋で年長者が革張りの帳簿をパタンと閉じた。「いいか、表で喋っていいことと、墓まで持っていくことがある」…
 
 <a id="tag-genre-13"></a>
-### 未分類（903）
+### 未分類（904）
 - [investment_exit](#event-investment_exit) — 出資先から精算の知らせが届いた。いま持分を手放せば{investmentCurrentValue}になり、出した元手を上回るという。ここで現金に替え…
 - [f1](#event-f1) — {caregiverArms}まどろむ日が続いた。ふと目を開けると、すぐそばで誰かが声を潜めて語りかけていた。 やわらかな布にくるまれて眠った。目を…
 - [f2](#event-f2) — 戸口から差し込む光の筋を、まばたきもせずに目で追った。人の影がそれを横切ると、そちらへ首をめぐらせた。 風に揺れる布の影をじっと見つめた。つかまえよ…
@@ -6637,6 +6654,7 @@
 - [disc_day_ct03](#event-disc_day_ct03) — 壊れた戸を直しているサルカズの職人が、隣家の男に釘を求めた。男は釘を一握り渡し、「足りなければまた来い」と言った。
 - [soc_gap_02](#event-soc_gap_02) — 窓口で用件を伝え、名前を書こうとしたところ、係員が「その名前はどこの出身だ」と尋ねた。あなたが答えると、係員は書きかけた欄を指でなぞり直した。
 - [soc_gap_05](#event-soc_gap_05) — 作業台の奥にある留め金へ腕が届かず、手元の部品が床へ転がった。監督は次の作業へ急ぐよう促した。
+- [life_arts_unit_repair_parts](#event-life_arts_unit_repair_parts) — 保管庫から、修理に必要な交換部品が届いたという知らせがあった。受取確認が済むまでは器具に使えず、担当者は組み直しと動作確認にも日を置きたいと言う。
 - [romance_daily_rain_shelter](#event-romance_daily_rain_shelter) — 都市の移動に伴う天候変化で、突然の冷たい通り雨に見舞われた。アーケードの軒下で{romancePartner}と身を寄せ合い、温かい茶の缶を二人で包…
 - [romance_daily_modest_gift](#event-romance_daily_modest_gift) — 街角の小間物屋で、{romancePartner}の髪や服に似合いそうなささやかな留め具を見つけて買い求めた。次に会ったときに手渡すと、相手は驚いた…
 - [romance_daily_shared_meal](#event-romance_daily_shared_meal) — 休日の昼下がり、お互いに持ち寄った食材で簡単な温かいスープを作った。味付けの濃淡を言い合いながら{romancePartner}と鍋を囲む時間は、ど…
@@ -7502,7 +7520,7 @@
 
 ## 状況別索引
 
-[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (143)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (331)](#tag-situation-87)　・　[感染の開示・露見に言及 (53)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[季節の現物分配 (1)](#tag-situation-108)　・　[記録・説明責任 (1)](#tag-situation-109)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-110)　・　[記録と責任 (1)](#tag-situation-111)　・　[技師 (1)](#tag-situation-112)　・　[技能条件 (1)](#tag-situation-113)　・　[求職 (2)](#tag-situation-114)　・　[求職・紹介 (1)](#tag-situation-115)　・　[旧坑区の荷札照会 (1)](#tag-situation-116)　・　[競技会場の仮設席設営 (1)](#tag-situation-117)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-118)　・　[競技騎士の肩の負傷 (1)](#tag-situation-119)　・　[競技祭 (1)](#tag-situation-120)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-121)　・　[脅迫を受ける (1)](#tag-situation-122)　・　[脅迫記録の解除分岐 (1)](#tag-situation-123)　・　[極東 (1)](#tag-situation-124)　・　[極東の軍務・兵站ルート (2)](#tag-situation-125)　・　[極東の神社 (1)](#tag-situation-126)　・　[勤務縮小後 (1)](#tag-situation-127)　・　[近隣からの相談 (1)](#tag-situation-128)　・　[近隣との情報交換 (1)](#tag-situation-129)　・　[近隣の若年者との交流 (1)](#tag-situation-130)　・　[近隣互助 (1)](#tag-situation-131)　・　[軍務・護衛の継続 (1)](#tag-situation-132)　・　[契約確認 (1)](#tag-situation-133)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-134)　・　[継続／民間移行／求職 (1)](#tag-situation-135)　・　[継続後の振り返り (1)](#tag-situation-136)　・　[継続後の窓口 (1)](#tag-situation-137)　・　[警戒・質問の選択 (1)](#tag-situation-138)　・　[検査延期後の再検討 (1)](#tag-situation-139)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-140)　・　[源石片による負傷・曝露 (1)](#tag-situation-141)　・　[源石片への接触回避 (1)](#tag-situation-142)　・　[言葉の行き違い (1)](#tag-situation-143)　・　[個人情報 (1)](#tag-situation-144)　・　[古傷による職業転換 (1)](#tag-situation-145)　・　[固定集落への配達 (1)](#tag-situation-146)　・　[固定都市 (1)](#tag-situation-147)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-148)　・　[交易所の共用端末 (1)](#tag-situation-149)　・　[公証人役場 (1)](#tag-situation-150)　・　[工業区域 (1)](#tag-situation-151)　・　[工場労働者 (1)](#tag-situation-152)　・　[港湾労働 (2)](#tag-situation-153)　・　[鉱区事故 (1)](#tag-situation-154)　・　[鉱山の交替減少 (1)](#tag-situation-155)　・　[鉱山労働 (1)](#tag-situation-156)　・　[鉱石病以外の回復期 (1)](#tag-situation-157)　・　[鉱石病診断済み (1)](#tag-situation-158)　・　[鉱夫 (1)](#tag-situation-159)　・　[鉱夫分岐 (1)](#tag-situation-160)　・　[高等教育経験者の教員応募 (1)](#tag-situation-161)　・　[高齢期 (1)](#tag-situation-162)　・　[高齢期の就労 (1)](#tag-situation-163)　・　[告示の交代 (1)](#tag-situation-164)　・　[国の発生条件あり (1560)](#tag-situation-165)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-166)　・　[再受付・別の診療先の探索 (1)](#tag-situation-167)　・　[採掘坑内の換気停止 (1)](#tag-situation-168)　・　[採掘地域 (1)](#tag-situation-169)　・　[採掘地域に限定 (1)](#tag-situation-170)　・　[採掘中 (1)](#tag-situation-171)　・　[災害後の商店再開 (1)](#tag-situation-172)　・　[祭典 (1)](#tag-situation-173)　・　[作業技能 (1)](#tag-situation-174)　・　[作業停止・退避 (1)](#tag-situation-175)　・　[山道の情報共有 (1)](#tag-situation-176)　・　[山麓の宿への道案内 (1)](#tag-situation-177)　・　[仕送り (1)](#tag-situation-178)　・　[子どもの就学 (1)](#tag-situation-179)　・　[子どもの誕生・養育 (1)](#tag-situation-180)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-181)　・　[子への訃報 (1)](#tag-situation-182)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-183)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-184)　・　[思春期 (1)](#tag-situation-185)　・　[支援の受入れ (1)](#tag-situation-186)　・　[氏族養育 (1)](#tag-situation-187)　・　[資格取得後の求職 (1)](#tag-situation-188)　・　[飼育動物の世話 (1)](#tag-situation-189)　・　[次便待ち (1)](#tag-situation-190)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-191)　・　[自動発生イベント (1428)](#tag-situation-192)　・　[湿地地勢 (1)](#tag-situation-193)　・　[守秘と名簿 (1)](#tag-situation-194)　・　[種族差別 (2)](#tag-situation-195)　・　[種族差別後 (1)](#tag-situation-196)　・　[酒類の仕入れ帳 (1)](#tag-situation-197)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-198)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-199)　・　[授業担当者との接点 (1)](#tag-situation-200)　・　[収容・隔離中 (1)](#tag-situation-201)　・　[収容・隔離中の診療 (1)](#tag-situation-202)　・　[収容中 (4)](#tag-situation-203)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-204)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-205)　・　[就労中 (2)](#tag-situation-206)　・　[就労中の鉱夫 (1)](#tag-situation-207)　・　[住居差別 (1)](#tag-situation-208)　・　[住居差別後 (1)](#tag-situation-209)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-210)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-211)　・　[宿泊拒否 (1)](#tag-situation-212)　・　[宿泊拒否後 (1)](#tag-situation-213)　・　[出場・観戦・場外見物 (1)](#tag-situation-214)　・　[所持金による本文・選択肢 (1)](#tag-situation-215)　・　[小舞台 (1)](#tag-situation-216)　・　[少年・青年 (2)](#tag-situation-217)　・　[少年・青年・壮年 (3)](#tag-situation-218)　・　[消息不明者の生存確認 (1)](#tag-situation-219)　・　[症状進行中 (1)](#tag-situation-220)　・　[情報網の高い居住地 (1)](#tag-situation-221)　・　[条件付き本文 (210)](#tag-situation-222)　・　[職業課程の継続 (1)](#tag-situation-223)　・　[職業課程の修了 (1)](#tag-situation-224)　・　[職業条件あり (71)](#tag-situation-225)　・　[職場・近隣で露見の兆し (1)](#tag-situation-226)　・　[職場の排斥 (1)](#tag-situation-227)　・　[食堂の客足 (1)](#tag-situation-228)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-229)　・　[食料不足 (1)](#tag-situation-230)　・　[森林地勢 (1)](#tag-situation-231)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-232)　・　[親の家計判断 (1)](#tag-situation-233)　・　[親の感染 (1)](#tag-situation-234)　・　[親の死後 (1)](#tag-situation-235)　・　[親子の記憶 (1)](#tag-situation-236)　・　[診断済み (1)](#tag-situation-237)　・　[診断済み・未治療 (1)](#tag-situation-238)　・　[診療・休養・記録から選択 (1)](#tag-situation-239)　・　[診療・作業調整 (1)](#tag-situation-240)　・　[診療・支援・休息・緩和希望の記録 (1)](#tag-situation-241)　・　[診療・動作を避ける選択 (1)](#tag-situation-242)　・　[診療・付き添いの依頼 (1)](#tag-situation-243)　・　[診療・負担軽減から選択 (1)](#tag-situation-244)　・　[診療延期後 (1)](#tag-situation-245)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-246)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-247)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-248)　・　[身近な人への支援依頼 (1)](#tag-situation-249)　・　[身近な連絡先あり (1)](#tag-situation-250)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-251)　・　[睡眠不足 (1)](#tag-situation-252)　・　[世界イベント後 (1)](#tag-situation-253)　・　[成人 (4)](#tag-situation-254)　・　[成人・返済支援の選択 (1)](#tag-situation-255)　・　[成人した子 (2)](#tag-situation-256)　・　[成人の種族偏見に触れる (1)](#tag-situation-257)　・　[生活上の備え (1)](#tag-situation-258)　・　[青年・壮年 (5)](#tag-situation-259)　・　[青年・壮年・老年 (3)](#tag-situation-260)　・　[雪祭司・聖樹 (1)](#tag-situation-261)　・　[選択イベント (1228)](#tag-situation-262)　・　[前段で残留した人 (1)](#tag-situation-263)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-264)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-265)　・　[全年齢の重い病状 (1)](#tag-situation-266)　・　[全年齢の循環器系エピソード (1)](#tag-situation-267)　・　[全年齢の食料不足 (1)](#tag-situation-268)　・　[全年齢の負傷後の痛み (1)](#tag-situation-269)　・　[組織・所属に言及 (181)](#tag-situation-270)　・　[組織離脱後 (1)](#tag-situation-271)　・　[相談・医療・休養 (1)](#tag-situation-272)　・　[相談・記録 (1)](#tag-situation-273)　・　[相談・記録・経路変更 (1)](#tag-situation-274)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-275)　・　[足場や荷の異常 (1)](#tag-situation-276)　・　[体力0の危篤状態 (1)](#tag-situation-277)　・　[退会後の関係 (1)](#tag-situation-278)　・　[退職選択 (1)](#tag-situation-279)　・　[大いなる静謐後 (1)](#tag-situation-280)　・　[大学課程の継続 (1)](#tag-situation-281)　・　[大学課程の修了 (1)](#tag-situation-282)　・　[短期雇用 (1)](#tag-situation-283)　・　[短期雇用と現場危険 (1)](#tag-situation-284)　・　[地域の供給不安定 (1)](#tag-situation-285)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-286)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-287)　・　[地域学習会・独学の選択 (1)](#tag-situation-288)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-289)　・　[仲間の捜索 (1)](#tag-situation-290)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-291)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-292)　・　[通学していない (1)](#tag-situation-293)　・　[通学中 (1)](#tag-situation-294)　・　[通行止め・迂回 (1)](#tag-situation-295)　・　[天災・戦乱による避難中 (1)](#tag-situation-296)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-297)　・　[店舗からの排斥集会 (1)](#tag-situation-298)　・　[転居後の近隣交流 (1)](#tag-situation-299)　・　[都市街区での襲撃 (1)](#tag-situation-300)　・　[動的表示条件 (694)](#tag-situation-301)　・　[動的本文 (32)](#tag-situation-302)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-303)　・　[同一都市の周縁区への転居 (1)](#tag-situation-304)　・　[同郷者との交流 (1)](#tag-situation-305)　・　[同行者との交流 (1)](#tag-situation-306)　・　[匿名動画の出所確認 (1)](#tag-situation-307)　・　[独立商業所属 (1)](#tag-situation-308)　・　[読み書きに困難がある (1)](#tag-situation-309)　・　[日雇い (1)](#tag-situation-310)　・　[乳児の成長 (1)](#tag-situation-311)　・　[任意応募・採用選考 (1)](#tag-situation-312)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-313)　・　[年齢：35歳以上 (2)](#tag-situation-314)　・　[年齢：児童 (974)](#tag-situation-315)　・　[年齢：少年 (1210)](#tag-situation-316)　・　[年齢：青年 (2383)](#tag-situation-317)　・　[年齢：壮年 (2323)](#tag-situation-318)　・　[年齢：乳児 (20)](#tag-situation-319)　・　[年齢：幼児 (36)](#tag-situation-320)　・　[年齢：老年 (1525)](#tag-situation-321)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-322)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-323)　・　[配給・食料不足 (1)](#tag-situation-324)　・　[配給・寝床・診療案内 (1)](#tag-situation-325)　・　[配給と地域支援 (1)](#tag-situation-326)　・　[配給登録 (1)](#tag-situation-327)　・　[配偶者との死別 (1)](#tag-situation-328)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-329)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-330)　・　[班間の点検記録 (1)](#tag-situation-331)　・　[班内の技能伝達 (1)](#tag-situation-332)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-333)　・　[避難中 (1)](#tag-situation-334)　・　[非感染者 (1)](#tag-situation-335)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-336)　・　[付き添い依頼・受診延期 (1)](#tag-situation-337)　・　[付き添い相談 (1)](#tag-situation-338)　・　[扶養中の子 (2)](#tag-situation-339)　・　[扶養中の子の看病 (1)](#tag-situation-340)　・　[負傷後の職務調整 (1)](#tag-situation-341)　・　[部品寸法 (1)](#tag-situation-342)　・　[復旧作業中の負傷 (1)](#tag-situation-343)　・　[粉塵への接触懸念 (1)](#tag-situation-344)　・　[粉塵曝露 (2)](#tag-situation-345)　・　[兵士の消息不明 (1)](#tag-situation-346)　・　[兵役招集 (1)](#tag-situation-347)　・　[別居・転居 (1)](#tag-situation-348)　・　[亡命・移住 (2)](#tag-situation-349)　・　[未診断の感染者 (1)](#tag-situation-350)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-351)　・　[未成年は養育者判断 (8)](#tag-situation-352)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-353)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-354)　・　[名前を知る相手 (1)](#tag-situation-355)　・　[夜間の世話 (1)](#tag-situation-356)　・　[友人との文通再開 (1)](#tag-situation-357)　・　[友人への恋心 (1)](#tag-situation-358)　・　[傭兵・護衛勤務 (1)](#tag-situation-359)　・　[傭兵隊の護衛契約 (1)](#tag-situation-360)　・　[傭兵隊の通過 (1)](#tag-situation-361)　・　[幼い子の養育 (1)](#tag-situation-362)　・　[用事の再開・再診 (1)](#tag-situation-363)　・　[養育者の視点 (1)](#tag-situation-364)　・　[離婚後の元配偶者の死 (1)](#tag-situation-365)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-366)　・　[離婚後の子育て・連絡 (1)](#tag-situation-367)　・　[龍門 (1)](#tag-situation-368)　・　[龍門の移動都市居住区 (1)](#tag-situation-369)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-370)　・　[龍門の商業街 (1)](#tag-situation-371)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-372)　・　[隣人との死別 (1)](#tag-situation-373)　・　[隣人との伝言再開 (1)](#tag-situation-374)　・　[隣人の消息不明 (1)](#tag-situation-375)　・　[隣人の生存確認 (1)](#tag-situation-376)　・　[連絡・休息の継続 (1)](#tag-situation-377)　・　[連絡先と家の用事の相談 (1)](#tag-situation-378)　・　[労務補償 (1)](#tag-situation-379)
+[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (143)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (331)](#tag-situation-87)　・　[感染の開示・露見に言及 (53)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[季節の現物分配 (1)](#tag-situation-108)　・　[記録・説明責任 (1)](#tag-situation-109)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-110)　・　[記録と責任 (1)](#tag-situation-111)　・　[技師 (1)](#tag-situation-112)　・　[技能条件 (1)](#tag-situation-113)　・　[求職 (2)](#tag-situation-114)　・　[求職・紹介 (1)](#tag-situation-115)　・　[旧坑区の荷札照会 (1)](#tag-situation-116)　・　[競技会場の仮設席設営 (1)](#tag-situation-117)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-118)　・　[競技騎士の肩の負傷 (1)](#tag-situation-119)　・　[競技祭 (1)](#tag-situation-120)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-121)　・　[脅迫を受ける (1)](#tag-situation-122)　・　[脅迫記録の解除分岐 (1)](#tag-situation-123)　・　[極東 (1)](#tag-situation-124)　・　[極東の軍務・兵站ルート (2)](#tag-situation-125)　・　[極東の神社 (1)](#tag-situation-126)　・　[勤務縮小後 (1)](#tag-situation-127)　・　[近隣からの相談 (1)](#tag-situation-128)　・　[近隣との情報交換 (1)](#tag-situation-129)　・　[近隣の若年者との交流 (1)](#tag-situation-130)　・　[近隣互助 (1)](#tag-situation-131)　・　[軍務・護衛の継続 (1)](#tag-situation-132)　・　[契約確認 (1)](#tag-situation-133)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-134)　・　[継続／民間移行／求職 (1)](#tag-situation-135)　・　[継続後の振り返り (1)](#tag-situation-136)　・　[継続後の窓口 (1)](#tag-situation-137)　・　[警戒・質問の選択 (1)](#tag-situation-138)　・　[検査延期後の再検討 (1)](#tag-situation-139)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-140)　・　[源石片による負傷・曝露 (1)](#tag-situation-141)　・　[源石片への接触回避 (1)](#tag-situation-142)　・　[言葉の行き違い (1)](#tag-situation-143)　・　[個人情報 (1)](#tag-situation-144)　・　[古傷による職業転換 (1)](#tag-situation-145)　・　[固定集落への配達 (1)](#tag-situation-146)　・　[固定都市 (1)](#tag-situation-147)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-148)　・　[交易所の共用端末 (1)](#tag-situation-149)　・　[公証人役場 (1)](#tag-situation-150)　・　[工業区域 (1)](#tag-situation-151)　・　[工場労働者 (1)](#tag-situation-152)　・　[港湾労働 (2)](#tag-situation-153)　・　[鉱区事故 (1)](#tag-situation-154)　・　[鉱山の交替減少 (1)](#tag-situation-155)　・　[鉱山労働 (1)](#tag-situation-156)　・　[鉱石病以外の回復期 (1)](#tag-situation-157)　・　[鉱石病診断済み (1)](#tag-situation-158)　・　[鉱夫 (1)](#tag-situation-159)　・　[鉱夫分岐 (1)](#tag-situation-160)　・　[高等教育経験者の教員応募 (1)](#tag-situation-161)　・　[高齢期 (1)](#tag-situation-162)　・　[高齢期の就労 (1)](#tag-situation-163)　・　[告示の交代 (1)](#tag-situation-164)　・　[国の発生条件あり (1560)](#tag-situation-165)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-166)　・　[再受付・別の診療先の探索 (1)](#tag-situation-167)　・　[採掘坑内の換気停止 (1)](#tag-situation-168)　・　[採掘地域 (1)](#tag-situation-169)　・　[採掘地域に限定 (1)](#tag-situation-170)　・　[採掘中 (1)](#tag-situation-171)　・　[災害後の商店再開 (1)](#tag-situation-172)　・　[祭典 (1)](#tag-situation-173)　・　[作業技能 (1)](#tag-situation-174)　・　[作業停止・退避 (1)](#tag-situation-175)　・　[山道の情報共有 (1)](#tag-situation-176)　・　[山麓の宿への道案内 (1)](#tag-situation-177)　・　[仕送り (1)](#tag-situation-178)　・　[子どもの就学 (1)](#tag-situation-179)　・　[子どもの誕生・養育 (1)](#tag-situation-180)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-181)　・　[子への訃報 (1)](#tag-situation-182)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-183)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-184)　・　[思春期 (1)](#tag-situation-185)　・　[支援の受入れ (1)](#tag-situation-186)　・　[氏族養育 (1)](#tag-situation-187)　・　[資格取得後の求職 (1)](#tag-situation-188)　・　[飼育動物の世話 (1)](#tag-situation-189)　・　[次便待ち (1)](#tag-situation-190)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-191)　・　[自動発生イベント (1428)](#tag-situation-192)　・　[湿地地勢 (1)](#tag-situation-193)　・　[守秘と名簿 (1)](#tag-situation-194)　・　[種族差別 (2)](#tag-situation-195)　・　[種族差別後 (1)](#tag-situation-196)　・　[酒類の仕入れ帳 (1)](#tag-situation-197)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-198)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-199)　・　[授業担当者との接点 (1)](#tag-situation-200)　・　[収容・隔離中 (1)](#tag-situation-201)　・　[収容・隔離中の診療 (1)](#tag-situation-202)　・　[収容中 (4)](#tag-situation-203)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-204)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-205)　・　[就労中 (2)](#tag-situation-206)　・　[就労中の鉱夫 (1)](#tag-situation-207)　・　[住居差別 (1)](#tag-situation-208)　・　[住居差別後 (1)](#tag-situation-209)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-210)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-211)　・　[宿泊拒否 (1)](#tag-situation-212)　・　[宿泊拒否後 (1)](#tag-situation-213)　・　[出場・観戦・場外見物 (1)](#tag-situation-214)　・　[所持金による本文・選択肢 (1)](#tag-situation-215)　・　[小舞台 (1)](#tag-situation-216)　・　[少年・青年 (2)](#tag-situation-217)　・　[少年・青年・壮年 (3)](#tag-situation-218)　・　[消息不明者の生存確認 (1)](#tag-situation-219)　・　[症状進行中 (1)](#tag-situation-220)　・　[情報網の高い居住地 (1)](#tag-situation-221)　・　[条件付き本文 (210)](#tag-situation-222)　・　[職業課程の継続 (1)](#tag-situation-223)　・　[職業課程の修了 (1)](#tag-situation-224)　・　[職業条件あり (71)](#tag-situation-225)　・　[職場・近隣で露見の兆し (1)](#tag-situation-226)　・　[職場の排斥 (1)](#tag-situation-227)　・　[食堂の客足 (1)](#tag-situation-228)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-229)　・　[食料不足 (1)](#tag-situation-230)　・　[森林地勢 (1)](#tag-situation-231)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-232)　・　[親の家計判断 (1)](#tag-situation-233)　・　[親の感染 (1)](#tag-situation-234)　・　[親の死後 (1)](#tag-situation-235)　・　[親子の記憶 (1)](#tag-situation-236)　・　[診断済み (1)](#tag-situation-237)　・　[診断済み・未治療 (1)](#tag-situation-238)　・　[診療・休養・記録から選択 (1)](#tag-situation-239)　・　[診療・作業調整 (1)](#tag-situation-240)　・　[診療・支援・休息・緩和希望の記録 (1)](#tag-situation-241)　・　[診療・動作を避ける選択 (1)](#tag-situation-242)　・　[診療・付き添いの依頼 (1)](#tag-situation-243)　・　[診療・負担軽減から選択 (1)](#tag-situation-244)　・　[診療延期後 (1)](#tag-situation-245)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-246)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-247)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-248)　・　[身近な人への支援依頼 (1)](#tag-situation-249)　・　[身近な連絡先あり (1)](#tag-situation-250)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-251)　・　[睡眠不足 (1)](#tag-situation-252)　・　[世界イベント後 (1)](#tag-situation-253)　・　[成人 (4)](#tag-situation-254)　・　[成人・返済支援の選択 (1)](#tag-situation-255)　・　[成人した子 (2)](#tag-situation-256)　・　[成人の種族偏見に触れる (1)](#tag-situation-257)　・　[生活上の備え (1)](#tag-situation-258)　・　[青年・壮年 (5)](#tag-situation-259)　・　[青年・壮年・老年 (3)](#tag-situation-260)　・　[雪祭司・聖樹 (1)](#tag-situation-261)　・　[選択イベント (1237)](#tag-situation-262)　・　[前段で残留した人 (1)](#tag-situation-263)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-264)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-265)　・　[全年齢の重い病状 (1)](#tag-situation-266)　・　[全年齢の循環器系エピソード (1)](#tag-situation-267)　・　[全年齢の食料不足 (1)](#tag-situation-268)　・　[全年齢の負傷後の痛み (1)](#tag-situation-269)　・　[組織・所属に言及 (181)](#tag-situation-270)　・　[組織離脱後 (1)](#tag-situation-271)　・　[相談・医療・休養 (1)](#tag-situation-272)　・　[相談・記録 (1)](#tag-situation-273)　・　[相談・記録・経路変更 (1)](#tag-situation-274)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-275)　・　[足場や荷の異常 (1)](#tag-situation-276)　・　[体力0の危篤状態 (1)](#tag-situation-277)　・　[退会後の関係 (1)](#tag-situation-278)　・　[退職選択 (1)](#tag-situation-279)　・　[大いなる静謐後 (1)](#tag-situation-280)　・　[大学課程の継続 (1)](#tag-situation-281)　・　[大学課程の修了 (1)](#tag-situation-282)　・　[短期雇用 (1)](#tag-situation-283)　・　[短期雇用と現場危険 (1)](#tag-situation-284)　・　[地域の供給不安定 (1)](#tag-situation-285)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-286)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-287)　・　[地域学習会・独学の選択 (1)](#tag-situation-288)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-289)　・　[仲間の捜索 (1)](#tag-situation-290)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-291)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-292)　・　[通学していない (1)](#tag-situation-293)　・　[通学中 (1)](#tag-situation-294)　・　[通行止め・迂回 (1)](#tag-situation-295)　・　[天災・戦乱による避難中 (1)](#tag-situation-296)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-297)　・　[店舗からの排斥集会 (1)](#tag-situation-298)　・　[転居後の近隣交流 (1)](#tag-situation-299)　・　[都市街区での襲撃 (1)](#tag-situation-300)　・　[動的表示条件 (703)](#tag-situation-301)　・　[動的本文 (32)](#tag-situation-302)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-303)　・　[同一都市の周縁区への転居 (1)](#tag-situation-304)　・　[同郷者との交流 (1)](#tag-situation-305)　・　[同行者との交流 (1)](#tag-situation-306)　・　[匿名動画の出所確認 (1)](#tag-situation-307)　・　[独立商業所属 (1)](#tag-situation-308)　・　[読み書きに困難がある (1)](#tag-situation-309)　・　[日雇い (1)](#tag-situation-310)　・　[乳児の成長 (1)](#tag-situation-311)　・　[任意応募・採用選考 (1)](#tag-situation-312)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-313)　・　[年齢：35歳以上 (2)](#tag-situation-314)　・　[年齢：児童 (974)](#tag-situation-315)　・　[年齢：少年 (1210)](#tag-situation-316)　・　[年齢：青年 (2383)](#tag-situation-317)　・　[年齢：壮年 (2323)](#tag-situation-318)　・　[年齢：乳児 (20)](#tag-situation-319)　・　[年齢：幼児 (36)](#tag-situation-320)　・　[年齢：老年 (1525)](#tag-situation-321)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-322)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-323)　・　[配給・食料不足 (1)](#tag-situation-324)　・　[配給・寝床・診療案内 (1)](#tag-situation-325)　・　[配給と地域支援 (1)](#tag-situation-326)　・　[配給登録 (1)](#tag-situation-327)　・　[配偶者との死別 (1)](#tag-situation-328)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-329)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-330)　・　[班間の点検記録 (1)](#tag-situation-331)　・　[班内の技能伝達 (1)](#tag-situation-332)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-333)　・　[避難中 (1)](#tag-situation-334)　・　[非感染者 (1)](#tag-situation-335)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-336)　・　[付き添い依頼・受診延期 (1)](#tag-situation-337)　・　[付き添い相談 (1)](#tag-situation-338)　・　[扶養中の子 (2)](#tag-situation-339)　・　[扶養中の子の看病 (1)](#tag-situation-340)　・　[負傷後の職務調整 (1)](#tag-situation-341)　・　[部品寸法 (1)](#tag-situation-342)　・　[復旧作業中の負傷 (1)](#tag-situation-343)　・　[粉塵への接触懸念 (1)](#tag-situation-344)　・　[粉塵曝露 (2)](#tag-situation-345)　・　[兵士の消息不明 (1)](#tag-situation-346)　・　[兵役招集 (1)](#tag-situation-347)　・　[別居・転居 (1)](#tag-situation-348)　・　[亡命・移住 (2)](#tag-situation-349)　・　[未診断の感染者 (1)](#tag-situation-350)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-351)　・　[未成年は養育者判断 (8)](#tag-situation-352)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-353)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-354)　・　[名前を知る相手 (1)](#tag-situation-355)　・　[夜間の世話 (1)](#tag-situation-356)　・　[友人との文通再開 (1)](#tag-situation-357)　・　[友人への恋心 (1)](#tag-situation-358)　・　[傭兵・護衛勤務 (1)](#tag-situation-359)　・　[傭兵隊の護衛契約 (1)](#tag-situation-360)　・　[傭兵隊の通過 (1)](#tag-situation-361)　・　[幼い子の養育 (1)](#tag-situation-362)　・　[用事の再開・再診 (1)](#tag-situation-363)　・　[養育者の視点 (1)](#tag-situation-364)　・　[離婚後の元配偶者の死 (1)](#tag-situation-365)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-366)　・　[離婚後の子育て・連絡 (1)](#tag-situation-367)　・　[龍門 (1)](#tag-situation-368)　・　[龍門の移動都市居住区 (1)](#tag-situation-369)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-370)　・　[龍門の商業街 (1)](#tag-situation-371)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-372)　・　[隣人との死別 (1)](#tag-situation-373)　・　[隣人との伝言再開 (1)](#tag-situation-374)　・　[隣人の消息不明 (1)](#tag-situation-375)　・　[隣人の生存確認 (1)](#tag-situation-376)　・　[連絡・休息の継続 (1)](#tag-situation-377)　・　[連絡先と家の用事の相談 (1)](#tag-situation-378)　・　[労務補償 (1)](#tag-situation-379)
 
 <a id="tag-situation-0"></a>
 ### 1072年以降は戦役後の導入文（1）
@@ -12371,7 +12389,7 @@
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 
 <a id="tag-situation-262"></a>
-### 選択イベント（1228）
+### 選択イベント（1237）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -13055,6 +13073,15 @@
 - [life_parent_visit](#event-life_parent_visit) — 故郷の親から届いた手紙に、『たまには顔を見せておくれ』とあった。高い往復の運賃を出せば、今月の支払いをひとつ我慢しなければならない。 親からの手紙に…
 - [life_room_repair](#event-life_room_repair) — 部屋の歪んだ窓枠から、夜になると冷たい隙間風が吹き込む。大家に言えば面倒な押し問答になりそうだが、自分で板やパテを買って塞ぐにも金がかかる。 長雨の…
 - [life_neighbor_mutual_aid](#event-life_neighbor_mutual_aid) — 階段の上り下りで息を切らしていると、近所の顔なじみの{neighborName}が「買い物や水運び、ついでにやってこようか」と声をかけてくれた。袋を…
+- [life_arts_training_first_lesson](#event-life_arts_training_first_lesson) — 教室の木箱には、小さな金属片がいくつも並んでいた。教師は「まずは同じ動きを繰り返して」と言った。隣の生徒が器具を動かすあいだ、自分の箱はかすかな音も…
+- [life_arts_lowaptitude_class](#event-life_arts_lowaptitude_class) — 授業の終わりを告げる鐘が鳴っても、練習台の印はほとんど動かなかった。教師が器具を調べたあと、背後で誰かの椅子が床を擦った。机の上には、やり直した線が…
+- [life_arts_training_repeat](#event-life_arts_training_repeat) — 前に書いた線を、同じ練習台でもう一度なぞった。教師はすぐ答えを示さず、手首の角度だけを指で示す。最初の印はかすれたが、二度目には道具がわずかに応えた…
+- [life_arts_unit_borrow](#event-life_arts_unit_borrow) — 授業のあと、保管庫の係が練習用の小型器具を机に置いた。貸出票には返却日と、授業の監督下で使うことが記されている。
+- [life_arts_unit_return](#event-life_arts_unit_return) — 返却日が近づき、授業用の器具を袋から取り出した。金具に練習の跡が残っている。貸出票の控えには、返却窓口の場所が書かれていた。
+- [life_arts_unit_inspection](#event-life_arts_unit_inspection) — 練習用の器具を返す前に、授業担当者が接続部を確かめるよう言った。金具の縁に黒い跡がある。汚れなのか、熱で変色したのかは、まだ分からない。
+- [life_arts_unit_repair](#event-life_arts_unit_repair) — 点検担当者は、接続部の焼け跡を見て使用を止めた。授業で使う予備器具は今すぐには出せないという。修理票には部品の型番と、預かり先を書く欄がある。
+- [life_arts_unit_repair_parts](#event-life_arts_unit_repair_parts) — 保管庫から、修理に必要な交換部品が届いたという知らせがあった。受取確認が済むまでは器具に使えず、担当者は組み直しと動作確認にも日を置きたいと言う。
+- [life_arts_unit_repair_complete](#event-life_arts_unit_repair_complete) — 担当者から、器具の接続部を組み直したと連絡があった。受け渡しの前に、修理票と照らしながら状態を確かめる必要があるという。
 - [romance_followup](#event-romance_followup) — {romancePartner}とまた会おうと約束してから、仕事帰りに同じ食堂で何度もテーブルを挟んだ。ある夜は職場の愚痴を聞いて笑い合い、別の夜は…
 - [romance_future_talk](#event-romance_future_talk) — {romancePartner}とこれからの暮らしを話すたび、部屋の狭さや家賃、もしどちらかが倒れて働けなくなった時の不安が口をついて出た。それでも…
 - [romance_marriage_choice](#event-romance_marriage_choice) — 互いの家族へ挨拶に行く日取りや、ささやかな祝いの席にいくらかかるかを指折り数えた。仕事を休める日も見計らいながら、{romancePartner}と…
@@ -13935,7 +13962,7 @@
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
 <a id="tag-situation-301"></a>
-### 動的表示条件（694）
+### 動的表示条件（703）
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
@@ -14135,6 +14162,15 @@
 - [earth_discr_g2_work_lunch](#event-earth_discr_g2_work_lunch) — 工場の昼休憩、手洗いを済ませて食堂のテーブルへ向かった。昨日まで一緒に並んでスープを飲んでいた同僚たちが、あなたの姿を認めた途端に小声で囁き交わし、…
 - [earth_discr_g2_water_well](#event-earth_discr_g2_water_well) — 長屋の共同給水所で、夕餉の水汲みの列に並んだ。バケツを持ってあなたの番が近づいた瞬間、手桶を持っていた前の住人がさっと手を引っ込め、後ろに並んでいた…
 - [earth_discr_g3_corridor_whisper](#event-earth_discr_g3_corridor_whisper) — アパートの薄暗い廊下を歩いていると、角の階段下から住人たちの密談が漏れ聞こえてきた。「あそこの部屋、夜中に酷い咳が響いてるのよ」「子どもにうつったら…
+- [life_arts_training_first_lesson](#event-life_arts_training_first_lesson) — 教室の木箱には、小さな金属片がいくつも並んでいた。教師は「まずは同じ動きを繰り返して」と言った。隣の生徒が器具を動かすあいだ、自分の箱はかすかな音も…
+- [life_arts_lowaptitude_class](#event-life_arts_lowaptitude_class) — 授業の終わりを告げる鐘が鳴っても、練習台の印はほとんど動かなかった。教師が器具を調べたあと、背後で誰かの椅子が床を擦った。机の上には、やり直した線が…
+- [life_arts_training_repeat](#event-life_arts_training_repeat) — 前に書いた線を、同じ練習台でもう一度なぞった。教師はすぐ答えを示さず、手首の角度だけを指で示す。最初の印はかすれたが、二度目には道具がわずかに応えた…
+- [life_arts_unit_borrow](#event-life_arts_unit_borrow) — 授業のあと、保管庫の係が練習用の小型器具を机に置いた。貸出票には返却日と、授業の監督下で使うことが記されている。
+- [life_arts_unit_return](#event-life_arts_unit_return) — 返却日が近づき、授業用の器具を袋から取り出した。金具に練習の跡が残っている。貸出票の控えには、返却窓口の場所が書かれていた。
+- [life_arts_unit_inspection](#event-life_arts_unit_inspection) — 練習用の器具を返す前に、授業担当者が接続部を確かめるよう言った。金具の縁に黒い跡がある。汚れなのか、熱で変色したのかは、まだ分からない。
+- [life_arts_unit_repair](#event-life_arts_unit_repair) — 点検担当者は、接続部の焼け跡を見て使用を止めた。授業で使う予備器具は今すぐには出せないという。修理票には部品の型番と、預かり先を書く欄がある。
+- [life_arts_unit_repair_parts](#event-life_arts_unit_repair_parts) — 保管庫から、修理に必要な交換部品が届いたという知らせがあった。受取確認が済むまでは器具に使えず、担当者は組み直しと動作確認にも日を置きたいと言う。
+- [life_arts_unit_repair_complete](#event-life_arts_unit_repair_complete) — 担当者から、器具の接続部を組み直したと連絡があった。受け渡しの前に、修理票と照らしながら状態を確かめる必要があるという。
 - [romance_resolve_safety](#event-romance_resolve_safety) — {romancePartner}と付き合い始めてから長い年月が流れた。互いの癖も日々の暮らしも知り尽くした今、このまま曖昧な距離を保ち続けるか、それ…
 - [infection_family_disclosure_choice](#event-infection_family_disclosure_choice) — 鉱石病の診断書を、人目につかないよう鞄の底へ押し込んだ。近所では病気がバレて下宿を追い出された人もいる。これから通院を続けるのに、誰かひとりでも打ち…
 - [infection_visible_crystal_question](#event-infection_visible_crystal_question) — 診療所の待合室で、ふとした拍子に袖口から黒い結晶がのぞいた。向かいに座っていた客がぎょっとして、部屋中に響く声で「おい、鉱石病じゃないのか」と声を上…
@@ -196772,7 +196808,7 @@ s => {
 <a id="event-disc_day_ob01"></a>
 ## disc_day_ob01
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:119
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:123
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -196800,10 +196836,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "商店・会計",
@@ -196924,7 +196960,7 @@ s => {
 <a id="event-disc_day_ob02"></a>
 ## disc_day_ob02
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:169
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:173
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -196952,10 +196988,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "食堂・座席",
@@ -197075,7 +197111,7 @@ s => {
 <a id="event-disc_day_ob03"></a>
 ## disc_day_ob03
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:218
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:222
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -197103,10 +197139,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "水場・近隣",
@@ -197227,7 +197263,7 @@ s => {
 <a id="event-disc_day_ob04"></a>
 ## disc_day_ob04
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:269
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:273
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -197255,10 +197291,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "郵便・届け物",
@@ -197378,7 +197414,7 @@ s => {
 <a id="event-disc_day_ob05"></a>
 ## disc_day_ob05
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:318
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:322
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -197406,10 +197442,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "遊び場・目撃",
@@ -197529,7 +197565,7 @@ s => {
 <a id="event-disc_day_ob06"></a>
 ## disc_day_ob06
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:367
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:371
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -197557,10 +197593,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "商店・優先順",
@@ -197681,7 +197717,7 @@ s => {
 <a id="event-disc_day_ob07"></a>
 ## disc_day_ob07
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:418
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:422
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -197709,10 +197745,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "市場・貸道具",
@@ -197833,7 +197869,7 @@ s => {
 <a id="event-disc_day_ob08"></a>
 ## disc_day_ob08
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:469
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:473
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -197861,10 +197897,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "路地・近隣",
@@ -197984,7 +198020,7 @@ s => {
 <a id="event-disc_day_ob09"></a>
 ## disc_day_ob09
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:518
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:522
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -198012,10 +198048,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "配膳・祭礼",
@@ -198136,7 +198172,7 @@ s => {
 <a id="event-disc_day_ob10"></a>
 ## disc_day_ob10
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:569
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:573
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -198164,10 +198200,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "掲示・求人",
@@ -198288,7 +198324,7 @@ s => {
 <a id="event-disc_day_ob11"></a>
 ## disc_day_ob11
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:620
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:624
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -198316,10 +198352,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "祭り・寄付",
@@ -198439,7 +198475,7 @@ s => {
 <a id="event-disc_day_ob12"></a>
 ## disc_day_ob12
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:669
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:673
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -198467,10 +198503,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "近隣・家事",
@@ -198591,7 +198627,7 @@ s => {
 <a id="event-disc_day_ob13"></a>
 ## disc_day_ob13
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:720
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:724
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -198619,10 +198655,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "街灯・警備",
@@ -198743,7 +198779,7 @@ s => {
 <a id="event-disc_day_ob14"></a>
 ## disc_day_ob14
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:771
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:775
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -198771,10 +198807,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "市場・噂",
@@ -198894,7 +198930,7 @@ s => {
 <a id="event-disc_day_ob15"></a>
 ## disc_day_ob15
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:820
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:824
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -198922,10 +198958,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "会合・街区",
@@ -199046,7 +199082,7 @@ s => {
 <a id="event-disc_day_ob16"></a>
 ## disc_day_ob16
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:871
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:875
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -199074,10 +199110,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "荷運び・商業",
@@ -199198,7 +199234,7 @@ s => {
 <a id="event-disc_day_ob17"></a>
 ## disc_day_ob17
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:922
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:926
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -199226,10 +199262,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "掃除・通り",
@@ -199350,7 +199386,7 @@ s => {
 <a id="event-disc_day_ob18"></a>
 ## disc_day_ob18
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:973
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:977
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -199378,10 +199414,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "修理・サービス",
@@ -199502,7 +199538,7 @@ s => {
 <a id="event-disc_day_vi01"></a>
 ## disc_day_vi01
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1024
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1028
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -199530,10 +199566,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "小売・買い物",
@@ -199654,7 +199690,7 @@ s => {
 <a id="event-disc_day_vi02"></a>
 ## disc_day_vi02
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1077
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1081
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -199682,10 +199718,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "商い・受取",
@@ -199807,7 +199843,7 @@ s => {
 <a id="event-disc_day_vi03"></a>
 ## disc_day_vi03
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1131
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1135
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -199835,10 +199871,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "理容・サービス",
@@ -199959,7 +199995,7 @@ s => {
 <a id="event-disc_day_vi04"></a>
 ## disc_day_vi04
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1184
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1188
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -199987,10 +200023,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "家事・注文",
@@ -200111,7 +200147,7 @@ s => {
 <a id="event-disc_day_vi05"></a>
 ## disc_day_vi05
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1237
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1241
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -200139,10 +200175,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "近隣・情報",
@@ -200264,7 +200300,7 @@ s => {
 <a id="event-disc_day_vi06"></a>
 ## disc_day_vi06
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1291
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1295
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -200292,10 +200328,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "共同生活・暖房",
@@ -200416,7 +200452,7 @@ s => {
 <a id="event-disc_day_vi07"></a>
 ## disc_day_vi07
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1344
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1348
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -200444,10 +200480,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "current-worksite",
     "target": "感染者",
     "domain": "共同作業・工房",
@@ -200577,7 +200613,7 @@ s => {
 <a id="event-disc_day_vi08"></a>
 ## disc_day_vi08
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1408
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1412
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -200605,10 +200641,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "商売・接客",
@@ -200730,7 +200766,7 @@ s => {
 <a id="event-disc_day_vi09"></a>
 ## disc_day_vi09
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1462
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1466
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -200758,10 +200794,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "地域・受付",
@@ -200882,7 +200918,7 @@ s => {
 <a id="event-disc_day_vi10"></a>
 ## disc_day_vi10
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1515
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1519
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -200910,10 +200946,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "市場・買い物",
@@ -201034,7 +201070,7 @@ s => {
 <a id="event-disc_day_vi11"></a>
 ## disc_day_vi11
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1568
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1572
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -201065,10 +201101,10 @@ s => {
   "le": {
     "age": 15
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "子ども・余暇",
@@ -201189,7 +201225,7 @@ s => {
 <a id="event-disc_day_vi12"></a>
 ## disc_day_vi12
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1621
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1625
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -201217,10 +201253,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "祈り・日常",
@@ -201342,7 +201378,7 @@ s => {
 <a id="event-disc_day_vi13"></a>
 ## disc_day_vi13
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1675
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1679
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -201370,10 +201406,10 @@ s => {
   "ge": {
     "age": 16
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "町内・便り",
@@ -201493,7 +201529,7 @@ s => {
 <a id="event-disc_day_vi14"></a>
 ## disc_day_vi14
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1726
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1730
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -201521,10 +201557,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "商店・登録",
@@ -201648,7 +201684,7 @@ s => {
 <a id="event-disc_day_vs01"></a>
 ## disc_day_vs01
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1784
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1788
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -201676,10 +201712,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "市場・食べ物",
@@ -201800,7 +201836,7 @@ s => {
 <a id="event-disc_day_vs02"></a>
 ## disc_day_vs02
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1835
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1839
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -201828,10 +201864,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "帳場・姓名",
@@ -201952,7 +201988,7 @@ s => {
 <a id="event-disc_day_vs03"></a>
 ## disc_day_vs03
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1886
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1890
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -201980,10 +202016,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "サルカズ",
     "domain": "運送・同乗",
@@ -202104,7 +202140,7 @@ s => {
 <a id="event-disc_day_vs04"></a>
 ## disc_day_vs04
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1937
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1941
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -202132,10 +202168,10 @@ s => {
   "ge": {
     "age": 18
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "食堂・社交",
@@ -202256,7 +202292,7 @@ s => {
 <a id="event-disc_day_vs05"></a>
 ## disc_day_vs05
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1987
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:1991
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -202284,10 +202320,10 @@ s => {
   "ge": {
     "age": 18
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "current-worksite",
     "target": "サルカズ",
     "domain": "職場・工房",
@@ -202415,7 +202451,7 @@ s => {
 <a id="event-disc_day_vs06"></a>
 ## disc_day_vs06
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2047
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2051
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -202443,10 +202479,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "居住・身元確認",
@@ -202567,7 +202603,7 @@ s => {
 <a id="event-disc_day_vs07"></a>
 ## disc_day_vs07
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2098
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2102
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -202595,10 +202631,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "サルカズ",
     "domain": "祭礼・手伝い",
@@ -202719,7 +202755,7 @@ s => {
 <a id="event-disc_day_vs08"></a>
 ## disc_day_vs08
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2149
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2153
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -202747,10 +202783,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "薬屋・日常",
@@ -202871,7 +202907,7 @@ s => {
 <a id="event-disc_day_vs09"></a>
 ## disc_day_vs09
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2200
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2204
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -202899,10 +202935,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "市場・信用",
@@ -203023,7 +203059,7 @@ s => {
 <a id="event-disc_day_vs11"></a>
 ## disc_day_vs11
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2250
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2254
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -203051,10 +203087,10 @@ s => {
   "ge": {
     "age": 18
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "current-worksite",
     "target": "サルカズ",
     "domain": "近隣・労働",
@@ -203178,7 +203214,7 @@ s => {
 <a id="event-disc_day_vs12"></a>
 ## disc_day_vs12
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2306
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2310
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -203206,10 +203242,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "祭礼・娯楽",
@@ -203330,7 +203366,7 @@ s => {
 <a id="event-disc_day_vs13"></a>
 ## disc_day_vs13
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2357
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2361
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -203358,10 +203394,10 @@ s => {
   "ge": {
     "age": 8
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "学び・読書",
@@ -203482,7 +203518,7 @@ s => {
 <a id="event-disc_day_ac01"></a>
 ## disc_day_ac01
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2408
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2412
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -203510,10 +203546,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "通り・雨宿り",
@@ -203634,7 +203670,7 @@ s => {
 <a id="event-disc_day_ac02"></a>
 ## disc_day_ac02
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2458
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2462
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -203662,10 +203698,10 @@ s => {
   "ge": {
     "age": 14
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "current-worksite",
     "target": "感染者だという噂の対象者",
     "domain": "商店・接客",
@@ -203789,7 +203825,7 @@ s => {
 <a id="event-disc_day_ac03"></a>
 ## disc_day_ac03
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2514
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2518
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -203817,10 +203853,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "仲間・雑談",
@@ -203940,7 +203976,7 @@ s => {
 <a id="event-disc_day_ac04"></a>
 ## disc_day_ac04
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2564
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2568
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -203968,10 +204004,10 @@ s => {
   "ge": {
     "age": 12
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "掲示・自治",
@@ -204092,7 +204128,7 @@ s => {
 <a id="event-disc_day_ac05"></a>
 ## disc_day_ac05
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2615
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2619
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -204120,10 +204156,10 @@ s => {
   "ge": {
     "age": 18
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "職場・分担",
@@ -204244,7 +204280,7 @@ s => {
 <a id="event-disc_day_ac06"></a>
 ## disc_day_ac06
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2666
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2670
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -204272,10 +204308,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "食卓・噂",
@@ -204395,7 +204431,7 @@ s => {
 <a id="event-disc_day_ac07"></a>
 ## disc_day_ac07
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2715
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2719
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -204423,10 +204459,10 @@ s => {
   "ge": {
     "age": 18
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "current-worksite",
     "target": "サルカズ",
     "domain": "商店・仕事",
@@ -204551,7 +204587,7 @@ s => {
 <a id="event-disc_day_ac08"></a>
 ## disc_day_ac08
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2772
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2776
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -204579,10 +204615,10 @@ s => {
   "ge": {
     "age": 14
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "食堂・客席",
@@ -204702,7 +204738,7 @@ s => {
 <a id="event-disc_day_ac09"></a>
 ## disc_day_ac09
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2821
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2825
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -204730,10 +204766,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "農作業・共同作業",
@@ -204854,7 +204890,7 @@ s => {
 <a id="event-disc_day_ac10"></a>
 ## disc_day_ac10
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2872
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2876
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -204882,10 +204918,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "近隣・社交",
@@ -205005,7 +205041,7 @@ s => {
 <a id="event-disc_day_ac11"></a>
 ## disc_day_ac11
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2923
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2927
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア
@@ -205033,10 +205069,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "ターラー系",
     "domain": "市井・言語",
@@ -205159,7 +205195,7 @@ s => {
 <a id="event-disc_day_ac12"></a>
 ## disc_day_ac12
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2972
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:2976
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -205187,10 +205223,10 @@ s => {
   "ge": {
     "age": 18
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "current-worksite",
     "target": "感染者だという噂のある届け先",
     "domain": "商店・配送",
@@ -205314,7 +205350,7 @@ s => {
 <a id="event-disc_day_ac13"></a>
 ## disc_day_ac13
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3027
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3031
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -205342,10 +205378,10 @@ s => {
   "ge": {
     "age": 12
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "共同修繕・作業",
@@ -205465,7 +205501,7 @@ s => {
 <a id="event-disc_day_ac14"></a>
 ## disc_day_ac14
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3076
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3080
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -205493,10 +205529,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "家庭・交友",
@@ -205617,7 +205653,7 @@ s => {
 <a id="event-disc_day_ch01"></a>
 ## disc_day_ch01
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3127
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3131
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -205648,10 +205684,10 @@ s => {
   "le": {
     "age": 13
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "家庭・社会化",
@@ -205771,7 +205807,7 @@ s => {
 <a id="event-disc_day_ch02"></a>
 ## disc_day_ch02
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3177
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3181
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -205802,10 +205838,10 @@ s => {
   "le": {
     "age": 13
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "家庭・社会化",
@@ -205925,7 +205961,7 @@ s => {
 <a id="event-disc_day_ch03"></a>
 ## disc_day_ch03
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3227
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3231
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -205956,10 +205992,10 @@ s => {
   "le": {
     "age": 14
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "路地・遊び",
@@ -206080,7 +206116,7 @@ s => {
 <a id="event-disc_day_ch04"></a>
 ## disc_day_ch04
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3278
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3282
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -206111,10 +206147,10 @@ s => {
   "le": {
     "age": 14
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "遊び場・仲間",
@@ -206234,7 +206270,7 @@ s => {
 <a id="event-disc_day_ch05"></a>
 ## disc_day_ch05
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3328
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3332
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -206265,10 +206301,10 @@ s => {
   "le": {
     "age": 17
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "学校・仲間",
@@ -206388,7 +206424,7 @@ s => {
 <a id="event-disc_day_ch06"></a>
 ## disc_day_ch06
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3378
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3382
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -206419,10 +206455,10 @@ s => {
   "le": {
     "age": 16
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "学校外・手伝い",
@@ -206542,7 +206578,7 @@ s => {
 <a id="event-disc_day_ch07"></a>
 ## disc_day_ch07
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3428
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3432
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -206573,10 +206609,10 @@ s => {
   "le": {
     "age": 11
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "家族・読み聞かせ",
@@ -206696,7 +206732,7 @@ s => {
 <a id="event-disc_day_ch08"></a>
 ## disc_day_ch08
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3478
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3482
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -206727,10 +206763,10 @@ s => {
   "le": {
     "age": 14
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "家族・近所",
@@ -206851,7 +206887,7 @@ s => {
 <a id="event-disc_day_ch09"></a>
 ## disc_day_ch09
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3529
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3533
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -206882,10 +206918,10 @@ s => {
   "le": {
     "age": 17
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "学校・教師",
@@ -207006,7 +207042,7 @@ s => {
 <a id="event-disc_day_ch10"></a>
 ## disc_day_ch10
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3580
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3584
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -207037,10 +207073,10 @@ s => {
   "le": {
     "age": 14
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "市場・家族",
@@ -207160,7 +207196,7 @@ s => {
 <a id="event-disc_day_ch11"></a>
 ## disc_day_ch11
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3630
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3634
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -207191,10 +207227,10 @@ s => {
   "le": {
     "age": 16
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "学校外・習い事",
@@ -207314,7 +207350,7 @@ s => {
 <a id="event-disc_day_ch12"></a>
 ## disc_day_ch12
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3680
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3684
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -207345,10 +207381,10 @@ s => {
   "le": {
     "age": 15
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "学校外・食事",
@@ -207469,7 +207505,7 @@ s => {
 <a id="event-disc_day_ch13"></a>
 ## disc_day_ch13
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3731
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3735
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -207500,10 +207536,10 @@ s => {
   "le": {
     "age": 13
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "家庭・仕事話",
@@ -207623,7 +207659,7 @@ s => {
 <a id="event-disc_day_ch14"></a>
 ## disc_day_ch14
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3781
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3785
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -207654,10 +207690,10 @@ s => {
   "le": {
     "age": 15
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "子ども・誤解",
@@ -207777,7 +207813,7 @@ s => {
 <a id="event-disc_day_reg01"></a>
 ## disc_day_reg01
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3833
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3837
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：炎国
@@ -207805,10 +207841,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "炎国・近隣",
@@ -207930,7 +207966,7 @@ s => {
 <a id="event-disc_day_reg02"></a>
 ## disc_day_reg02
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3884
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3888
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：龍門
@@ -207958,10 +207994,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "龍門・露店",
@@ -208083,7 +208119,7 @@ s => {
 <a id="event-disc_day_reg03"></a>
 ## disc_day_reg03
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3935
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3939
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア
@@ -208111,10 +208147,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "ターラー人",
     "domain": "ヴィクトリア・言語",
@@ -208235,7 +208271,7 @@ s => {
 <a id="event-disc_day_reg04"></a>
 ## disc_day_reg04
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3985
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:3989
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ウルサス
@@ -208263,10 +208299,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "ウルサス・街区",
@@ -208389,7 +208425,7 @@ s => {
 <a id="event-disc_day_reg05"></a>
 ## disc_day_reg05
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4038
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4042
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ラテラーノ
@@ -208417,10 +208453,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "サルカズ",
     "domain": "ラテラーノ・来訪",
@@ -208541,7 +208577,7 @@ s => {
 <a id="event-disc_day_reg06"></a>
 ## disc_day_reg06
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4088
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4092
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：カジミエーシュ
@@ -208569,10 +208605,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "カジミエーシュ・娯楽",
@@ -208694,7 +208730,7 @@ s => {
 <a id="event-disc_day_reg07"></a>
 ## disc_day_reg07
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4139
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4143
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：クルビア
@@ -208722,10 +208758,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "クルビア・仕事",
@@ -208847,7 +208883,7 @@ s => {
 <a id="event-disc_day_reg08"></a>
 ## disc_day_reg08
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4190
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4194
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：極東
@@ -208875,10 +208911,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "家系・出自",
     "domain": "極東・近隣",
@@ -209000,7 +209036,7 @@ s => {
 <a id="event-disc_day_reg09"></a>
 ## disc_day_reg09
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4241
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4245
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
@@ -209028,10 +209064,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "エーギル系住民",
     "domain": "イベリア・港",
@@ -209154,7 +209190,7 @@ s => {
 <a id="event-disc_day_reg10"></a>
 ## disc_day_reg10
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4294
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4298
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：シラクーザ
@@ -209182,10 +209218,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "シラクーザ・商店",
@@ -209308,7 +209344,7 @@ s => {
 <a id="event-disc_day_reg11"></a>
 ## disc_day_reg11
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4347
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4351
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：サルゴン
@@ -209336,10 +209372,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "サルゴン・共同体",
@@ -209461,7 +209497,7 @@ s => {
 <a id="event-disc_day_reg12"></a>
 ## disc_day_reg12
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4398
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4402
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：カズデル
@@ -209489,10 +209525,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "異郷の避難民",
     "domain": "カズデル・避難",
@@ -209614,7 +209650,7 @@ s => {
 <a id="event-disc_day_reg13"></a>
 ## disc_day_reg13
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4449
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4453
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：サーミ
@@ -209642,10 +209678,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "contextual-opportunity",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "サーミ・相互扶助",
@@ -209768,7 +209804,7 @@ s => {
 <a id="event-disc_day_reg14"></a>
 ## disc_day_reg14
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4501
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4505
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：リターニア
@@ -209796,10 +209832,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "リターニア・音楽",
@@ -209921,7 +209957,7 @@ s => {
 <a id="event-disc_day_reg15"></a>
 ## disc_day_reg15
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4552
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4556
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イェラグ
@@ -209949,10 +209985,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "外来者",
     "domain": "イェラグ・旅人",
@@ -210074,7 +210110,7 @@ s => {
 <a id="event-disc_day_reg16"></a>
 ## disc_day_reg16
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4603
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4607
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：レム・ビリトン
@@ -210102,10 +210138,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "レム・ビリトン・鉱区",
@@ -210226,7 +210262,7 @@ s => {
 <a id="event-disc_day_reg17"></a>
 ## disc_day_reg17
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4653
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4657
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ボリバル
@@ -210254,10 +210290,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "国内避難民",
     "domain": "ボリバル・避難",
@@ -210380,7 +210416,7 @@ s => {
 <a id="event-disc_day_reg18"></a>
 ## disc_day_reg18
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4706
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4710
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：シエスタ
@@ -210408,10 +210444,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "シエスタ・観光",
@@ -210534,7 +210570,7 @@ s => {
 <a id="event-disc_day_reg19"></a>
 ## disc_day_reg19
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4758
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4762
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ミノス
@@ -210562,10 +210598,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "ミノス・祭礼",
@@ -210688,7 +210724,7 @@ s => {
 <a id="event-disc_day_ct01"></a>
 ## disc_day_ct01
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4809
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4813
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -210716,10 +210752,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "日常・対照",
@@ -210839,7 +210875,7 @@ s => {
 <a id="event-disc_day_ct02"></a>
 ## disc_day_ct02
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4857
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4861
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -210867,10 +210903,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "日常・対照",
@@ -210991,7 +211027,7 @@ s => {
 <a id="event-disc_day_ct03"></a>
 ## disc_day_ct03
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4907
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4911
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -211019,10 +211055,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "日常・対照",
@@ -211143,7 +211179,7 @@ s => {
 <a id="event-disc_day_ct04"></a>
 ## disc_day_ct04
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4957
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:4961
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -211171,10 +211207,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "日常・対照",
@@ -211294,7 +211330,7 @@ s => {
 <a id="event-disc_day_ct05"></a>
 ## disc_day_ct05
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5006
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5010
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -211322,10 +211358,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "日常・対照",
@@ -211446,7 +211482,7 @@ s => {
 <a id="event-disc_day_ct06"></a>
 ## disc_day_ct06
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5057
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5061
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -211474,10 +211510,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "日常・対照",
@@ -211597,7 +211633,7 @@ s => {
 <a id="event-disc_day_ct07"></a>
 ## disc_day_ct07
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5105
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5109
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -211625,10 +211661,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "日常・対照",
@@ -211748,7 +211784,7 @@ s => {
 <a id="event-disc_day_ct08"></a>
 ## disc_day_ct08
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5154
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5158
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -211776,10 +211812,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "サルカズ",
     "domain": "日常・対照",
@@ -211900,7 +211936,7 @@ s => {
 <a id="event-disc_day_ct09"></a>
 ## disc_day_ct09
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5205
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5209
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -211928,10 +211964,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "日常・対照",
@@ -212052,7 +212088,7 @@ s => {
 <a id="event-disc_day_ct10"></a>
 ## disc_day_ct10
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5255
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5259
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -212080,10 +212116,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "日常・対照",
@@ -212203,7 +212239,7 @@ s => {
 <a id="event-disc_day_org01"></a>
 ## disc_day_org01
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5306
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5310
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -212231,10 +212267,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "ロドス内部・日常",
@@ -212357,7 +212393,7 @@ s => {
 <a id="event-disc_day_org02"></a>
 ## disc_day_org02
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5359
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5363
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -212385,10 +212421,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "ロドス内部・日常",
@@ -212510,7 +212546,7 @@ s => {
 <a id="event-disc_day_org03"></a>
 ## disc_day_org03
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5410
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5414
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -212538,10 +212574,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "ロドス地域支部・日常",
@@ -212663,7 +212699,7 @@ s => {
 <a id="event-disc_day_org04"></a>
 ## disc_day_org04
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5461
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5465
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -212691,10 +212727,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "ロドス内部・日常",
@@ -212816,7 +212852,7 @@ s => {
 <a id="event-disc_day_org05"></a>
 ## disc_day_org05
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5512
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5516
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -212844,10 +212880,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "レユニオン内部・日常",
@@ -212970,7 +213006,7 @@ s => {
 <a id="event-disc_day_org06"></a>
 ## disc_day_org06
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5565
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5569
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -212998,10 +213034,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "session",
     "target": "感染者",
     "domain": "レユニオン内部・日常",
@@ -213123,7 +213159,7 @@ s => {
 <a id="event-disc_day_org07"></a>
 ## disc_day_org07
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5616
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5620
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -213151,10 +213187,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "感染者互助会内部",
@@ -213277,7 +213313,7 @@ s => {
 <a id="event-disc_day_org08"></a>
 ## disc_day_org08
 
-- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5669
+- 出典位置：data/parts/extensions/social-and-care/discrimination-daily.js:5673
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -213305,10 +213341,10 @@ s => {
   "ge": {
     "age": 7
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "感染者",
     "domain": "感染者互助会内部",
@@ -213431,7 +213467,7 @@ s => {
 <a id="event-soc_gap_01"></a>
 ## soc_gap_01
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:120
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:124
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：極東
@@ -213459,10 +213495,10 @@ s => {
   "ge": {
     "age": 15
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "current-worksite",
     "target": "鬼",
     "domain": "工房の客間",
@@ -213591,7 +213627,7 @@ s => {
 <a id="event-soc_gap_02"></a>
 ## soc_gap_02
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:176
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:180
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：極東
@@ -213619,10 +213655,10 @@ s => {
   "ge": {
     "age": 10
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "ambient",
     "target": "鬼",
     "domain": "受付の書類",
@@ -213745,7 +213781,7 @@ s => {
 <a id="event-soc_gap_03"></a>
 ## soc_gap_03
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:224
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:228
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：極東
@@ -213773,10 +213809,10 @@ s => {
   "ge": {
     "age": 14
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "market-street",
     "target": "鬼",
     "domain": "端末の掲示板",
@@ -213899,7 +213935,7 @@ s => {
 <a id="event-soc_gap_04"></a>
 ## soc_gap_04
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:274
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:278
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：サルゴン、クルビア、シエスタ
@@ -213927,10 +213963,10 @@ s => {
   "ge": {
     "age": 16
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "current-worksite",
     "target": "ドゥリン",
     "domain": "昇降機の修理現場",
@@ -214059,7 +214095,7 @@ s => {
 <a id="event-soc_gap_05"></a>
 ## soc_gap_05
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:331
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:335
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：クルビア、サルゴン、シエスタ
@@ -214087,10 +214123,10 @@ s => {
   "ge": {
     "age": 16
   },
-  "presentation": "major-choice",
+  "interactionScope": "major",
   "socialConstraint": {
     "group": "formation-or-relational",
-    "presentation": "major-choice",
+    "interactionScope": "major",
     "sceneBinding": "current-worksite",
     "target": "ドゥリン",
     "domain": "地上の作業台",
@@ -214222,7 +214258,7 @@ s => {
 <a id="event-soc_gap_08"></a>
 ## soc_gap_08
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:389
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:393
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ラテラーノ
@@ -214250,10 +214286,10 @@ s => {
   "ge": {
     "age": 10
   },
-  "presentation": "major-choice",
+  "interactionScope": "major",
   "socialConstraint": {
     "group": "formation-or-relational",
-    "presentation": "major-choice",
+    "interactionScope": "major",
     "sceneBinding": "ambient",
     "target": "リーベリ",
     "domain": "公民の会合",
@@ -214376,7 +214412,7 @@ s => {
 <a id="event-soc_gap_12"></a>
 ## soc_gap_12
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:440
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:444
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア、リターニア
@@ -214404,10 +214440,10 @@ s => {
   "ge": {
     "age": 8
   },
-  "presentation": "major-choice",
+  "interactionScope": "major",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "major-choice",
+    "interactionScope": "major",
     "sceneBinding": "ambient",
     "target": "ガリア系住民",
     "domain": "家族の夕食",
@@ -214532,7 +214568,7 @@ s => {
 <a id="event-soc_gap_13"></a>
 ## soc_gap_13
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:490
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:494
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア
@@ -214563,10 +214599,10 @@ s => {
   "le": {
     "age": 19
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "actual-school",
     "target": "ターラー系の話者",
     "domain": "学校の読み上げ",
@@ -214690,7 +214726,7 @@ s => {
 <a id="event-soc_gap_15"></a>
 ## soc_gap_15
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:541
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:545
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ウルサス
@@ -214721,10 +214757,10 @@ s => {
   "le": {
     "age": 20
   },
-  "presentation": "major-choice",
+  "interactionScope": "major",
   "socialConstraint": {
     "group": "formation-or-relational",
-    "presentation": "major-choice",
+    "interactionScope": "major",
     "sceneBinding": "actual-school",
     "target": "平民の生徒",
     "domain": "寄宿舎の当番",
@@ -214852,7 +214888,7 @@ s => {
 <a id="event-soc_gap_17"></a>
 ## soc_gap_17
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:597
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:601
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ミノス
@@ -214880,10 +214916,10 @@ s => {
   "ge": {
     "age": 8
   },
-  "presentation": "major-choice",
+  "interactionScope": "major",
   "socialConstraint": {
     "group": "ordinary-contrast",
-    "presentation": "major-choice",
+    "interactionScope": "major",
     "sceneBinding": "verified-festival",
     "target": "ミノス文化",
     "domain": "村の祭礼",
@@ -215007,7 +215043,7 @@ s => {
 <a id="event-soc_gap_23"></a>
 ## soc_gap_23
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:646
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:650
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：クルビア
@@ -215035,10 +215071,10 @@ s => {
   "ge": {
     "age": 18
   },
-  "presentation": "major-choice",
+  "interactionScope": "major",
   "socialConstraint": {
     "group": "formation-or-relational",
-    "presentation": "major-choice",
+    "interactionScope": "major",
     "sceneBinding": "market-street",
     "target": "開拓労働者",
     "domain": "開拓事業の案内",
@@ -215161,7 +215197,7 @@ s => {
 <a id="event-soc_gap_26"></a>
 ## soc_gap_26
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:694
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:698
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：シラクーザ
@@ -215189,10 +215225,10 @@ s => {
   "ge": {
     "age": 18
   },
-  "presentation": "major-choice",
+  "interactionScope": "major",
   "socialConstraint": {
     "group": "formation-or-relational",
-    "presentation": "major-choice",
+    "interactionScope": "major",
     "sceneBinding": "current-worksite",
     "target": "地域の非所属商人",
     "domain": "街区の取引交渉",
@@ -215318,7 +215354,7 @@ s => {
 <a id="event-soc_gap_29"></a>
 ## soc_gap_29
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:747
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:751
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
@@ -215346,10 +215382,10 @@ s => {
   "ge": {
     "age": 10
   },
-  "presentation": "major-choice",
+  "interactionScope": "major",
   "socialConstraint": {
     "group": "formation-or-relational",
-    "presentation": "major-choice",
+    "interactionScope": "major",
     "sceneBinding": "market-street",
     "target": "旧海洋文化の継承者",
     "domain": "家に残る海図",
@@ -215472,7 +215508,7 @@ s => {
 <a id="event-soc_gap_31"></a>
 ## soc_gap_31
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:797
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:801
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア、クルビア、カジミエーシュ
@@ -215500,10 +215536,10 @@ s => {
   "ge": {
     "age": 8
   },
-  "presentation": "minor-choice",
+  "interactionScope": "minor",
   "socialConstraint": {
     "group": "daily-bias",
-    "presentation": "minor-choice",
+    "interactionScope": "minor",
     "sceneBinding": "market-street",
     "target": "サルカズ",
     "domain": "祭りの露店",
@@ -215628,7 +215664,7 @@ s => {
 <a id="event-soc_gap_33"></a>
 ## soc_gap_33
 
-- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:852
+- 出典位置：data/parts/extensions/social-and-care/social-constraints.js:856
 - 分類確度：地域条件はユーザー提供台帳を採用。ジャンル・状況は初期自動候補で未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：炎国、ヴィクトリア、ウルサス、サルゴン、イェラグ、レム・ビリトン、ボリバル、イベリア
@@ -215659,10 +215695,10 @@ s => {
   "le": {
     "age": 28
   },
-  "presentation": "major-choice",
+  "interactionScope": "major",
   "socialConstraint": {
     "group": "formation-or-relational",
-    "presentation": "major-choice",
+    "interactionScope": "major",
     "sceneBinding": "market-street",
     "target": "辺境居住者",
     "domain": "大学の募集案内",
@@ -217449,6 +217485,904 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
 ```
 
 旧シム観測回数：84
+
+
+<a id="event-life_arts_training_first_lesson"></a>
+## life_arts_training_first_lesson
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:8
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 教室の木箱には、小さな金属片がいくつも並んでいた。教師は「まずは同じ動きを繰り返して」と言った。隣の生徒が器具を動かすあいだ、自分の箱はかすかな音も立てなかった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_training_first_lesson",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "once": true,
+  "w": 0.45,
+  "show": {
+    "dynamicFunction": "s => artsHasAttendedCurrentCourse(s)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_training_first_lesson-0"></a>
+選択肢文：教師に握り方を確かめてもらう
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_training_first_lesson-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 教師は手元の角度を直し、もう一度ゆっくり試すよう促した。しばらくして金属片がかすかに揺れ、箱の底を小さく鳴らした。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "record-practice",
+    "disciplineId": "kinetic",
+    "techniqueId": "kinetic-small-object",
+    "outcome": "guided-success"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_training_first_lesson-1"></a>
+選択肢文：隣の生徒の手元を見直す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_training_first_lesson-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 隣の生徒は実演のたびに指の位置を少し変えていた。自分の番が終わるまで、その違いを何度も目で追った。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "record-practice",
+    "disciplineId": "kinetic",
+    "techniqueId": "kinetic-small-object",
+    "outcome": "observed"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_arts_training_first_lesson-2"></a>
+選択肢文：今日は理論のノートをまとめる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_training_first_lesson-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 教師の説明を聞き、箱の横に書かれた注意事項を写した。授業が終わるころ、ノートの端は消し跡で黒ずんでいた。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "record-practice",
+    "disciplineId": "kinetic",
+    "techniqueId": "kinetic-small-object",
+    "outcome": "theory"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_lowaptitude_class"></a>
+## life_arts_lowaptitude_class
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:37
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 授業の終わりを告げる鐘が鳴っても、練習台の印はほとんど動かなかった。教師が器具を調べたあと、背後で誰かの椅子が床を擦った。机の上には、やり直した線が何本も残っている。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_lowaptitude_class",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "cd": 3,
+  "w": 0.3,
+  "show": {
+    "dynamicFunction": "s => s.artsProfile?.innateBand === \"lower\" &&\n        artsHasAttendedCurrentCourse(s) &&\n        !s.artsProfile.practiceHistory.some(row =>\n          row.sourceEventId === \"life_arts_lowaptitude_class\" && row.year === s.year)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_lowaptitude_class-0"></a>
+選択肢文：別の方法で試せないか尋ねる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_lowaptitude_class-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 教師は練習台の課題を小さな手順に分け、扱いやすい方法を一つ示した。机の上で、新しい線を引き直した。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "record-practice",
+    "disciplineId": "kinetic",
+    "techniqueId": "kinetic-small-object",
+    "outcome": "attempt-not-achieved",
+    "response": "alternative-task-shown",
+    "alternativeTaskId": "kinetic-small-object-basic"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_lowaptitude_class-1"></a>
+選択肢文：今日はここで切り上げる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_lowaptitude_class-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 印を消して器具を返した。廊下に出ると、窓から午後の光が差し込んでいた。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "record-practice",
+    "disciplineId": "kinetic",
+    "techniqueId": "kinetic-small-object",
+    "outcome": "attempt-not-achieved",
+    "response": "stopped-for-day"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_training_repeat"></a>
+## life_arts_training_repeat
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:62
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 前に書いた線を、同じ練習台でもう一度なぞった。教師はすぐ答えを示さず、手首の角度だけを指で示す。最初の印はかすれたが、二度目には道具がわずかに応えた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_training_repeat",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "cd": 2,
+  "w": 0.38,
+  "show": {
+    "dynamicFunction": "s => {\n        const enrollment = artsCurrentFormalEnrollment(s);\n        return artsHasAttendedCurrentCourse(s, enrollment) &&\n          s.artsProfile.practiceHistory.some(row => row.enrollmentId === enrollment.id &&\n            row.year === s.year && row.sourceEventId !== \"life_arts_training_repeat\") &&\n          !s.artsProfile.practiceHistory.some(row => row.enrollmentId === enrollment.id &&\n            row.sourceEventId === \"life_arts_training_repeat\" && row.year === s.year && row.month === s.mo);\n      }"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_training_repeat-0"></a>
+選択肢文：手元を直して、もう一度試す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_training_repeat-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 教師の示した角度を確かめ、手順を分けてやり直した。道具は前より小さく揺れ、線の終わりに短い印が残った。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "record-practice",
+    "disciplineId": "kinetic",
+    "techniqueId": "kinetic-small-object",
+    "outcome": "guided-success"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_training_repeat-1"></a>
+選択肢文：動きを見て、違いを書き留める
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_training_repeat-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> ほかの生徒の手元を見て、動かす前後の違いをノートに写した。自分の道具は片づけたが、線の形は頭に残った。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "record-practice",
+    "disciplineId": "kinetic",
+    "techniqueId": "kinetic-small-object",
+    "outcome": "observed"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_unit_borrow"></a>
+## life_arts_unit_borrow
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:91
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 授業のあと、保管庫の係が練習用の小型器具を机に置いた。貸出票には返却日と、授業の監督下で使うことが記されている。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_unit_borrow",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "cd": 1,
+  "w": 0.22,
+  "show": {
+    "dynamicFunction": "s => {\n        const enrollment = artsCurrentFormalEnrollment(s),\n          institutionId = s.educationPath?.institutionId || enrollment?.id;\n        return artsHasAttendedCurrentCourse(s, enrollment) &&\n          s.artsEquipment.items.length < 64 &&\n          !s.artsEquipment.items.some(item => item.ownerType === \"school\" &&\n            item.holderId === \"protagonist\" && item.condition !== \"returned\" && item.condition !== \"lost\");\n      }"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_unit_borrow-0"></a>
+選択肢文：貸出票を確かめて、器具を借りる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_borrow-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 返却日と使用場所を確かめてから署名した。器具は授業用の袋に収まり、貸出票の控えが手元に残った。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "borrow-equipment"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_unit_borrow-1"></a>
+選択肢文：今日は借りず、保管庫へ戻す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_borrow-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 器具を係へ戻し、貸出票には何も書かなかった。
+
+効果：
+
+```json
+null
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_unit_return"></a>
+## life_arts_unit_return
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:115
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 返却日が近づき、授業用の器具を袋から取り出した。金具に練習の跡が残っている。貸出票の控えには、返却窓口の場所が書かれていた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_unit_return",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "cd": 1,
+  "w": 0.3,
+  "show": {
+    "dynamicFunction": "s => s.artsEquipment.items.some(item => item.ownerType === \"school\" &&\n        item.holderId === \"protagonist\" && item.condition === \"serviceable\" && item.dueAt &&\n        (item.dueAt.year < s.year || item.dueAt.year === s.year && item.dueAt.month <= s.mo))"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_unit_return-0"></a>
+選択肢文：窓口で器具を返し、控えを受け取る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_return-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 係は器具の状態を確かめ、返却欄に日付を記した。控えを受け取ると、袋の中は空になった。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "return-equipment",
+    "equipmentId": "$oldest-due-school-loan"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_unit_return-1"></a>
+選択肢文：授業後に返しに来る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_return-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 器具を袋へ戻し、窓口の場所をもう一度確かめた。
+
+効果：
+
+```json
+null
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_unit_inspection"></a>
+## life_arts_unit_inspection
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:135
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 練習用の器具を返す前に、授業担当者が接続部を確かめるよう言った。金具の縁に黒い跡がある。汚れなのか、熱で変色したのかは、まだ分からない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_unit_inspection",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "cd": 2,
+  "w": 0.18,
+  "show": {
+    "dynamicFunction": "s => {\n        const enrollment = artsCurrentFormalEnrollment(s),\n          institutionId = s.educationPath?.institutionId || enrollment?.id;\n        return artsHasAttendedCurrentCourse(s, enrollment) &&\n          s.artsEquipment.items.some(item => item.ownerId === institutionId && item.holderId === \"protagonist\" &&\n            item.condition === \"serviceable\" && item.dueAt &&\n            (item.dueAt.year < s.year || item.dueAt.year === s.year && item.dueAt.month <= s.mo));\n      }"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_unit_inspection-0"></a>
+選択肢文：拭き取って点検し、異常なしと記す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_inspection-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 布で跡を拭き、担当者と接続部を確かめた。変形も緩みもなく、次の点検時期を貸出票に書き足した。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "inspect-equipment",
+    "equipmentId": "$current-course-unit",
+    "result": "serviceable"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_unit_inspection-1"></a>
+選択肢文：跡を報告し、使用を止めて点検に回す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_inspection-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 跡の位置を担当者に示し、器具の使用を止めた。貸出票には点検が必要だと記され、授業担当者へ修理を相談することになった。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "inspect-equipment",
+    "equipmentId": "$current-course-unit",
+    "result": "repair-required"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_unit_repair"></a>
+## life_arts_unit_repair
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:164
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 点検担当者は、接続部の焼け跡を見て使用を止めた。授業で使う予備器具は今すぐには出せないという。修理票には部品の型番と、預かり先を書く欄がある。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_unit_repair",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "cd": 2,
+  "w": 0.12,
+  "show": {
+    "dynamicFunction": "s => {\n        const enrollment = artsCurrentFormalEnrollment(s),\n          institutionId = s.educationPath?.institutionId || enrollment?.id;\n        return artsHasAttendedCurrentCourse(s, enrollment) &&\n          s.artsEquipment.items.some(item => item.ownerId === institutionId && item.holderId === \"protagonist\" &&\n            item.condition === \"unsafe\" && artsLatestEquipmentRecord(s, item.id)?.result === \"repair-required\");\n      }"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_unit_repair-0"></a>
+選択肢文：修理票を出し、器具を預ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_repair-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 器具を担当者へ渡し、修理票の控えを受け取った。担当者は、修理が済むまでは同じ器具を使う練習に戻れないと告げた。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "request-equipment-repair",
+    "equipmentId": "$current-course-unit"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_unit_repair-1"></a>
+選択肢文：修理を頼まず、貸与元へ返す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_repair-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 担当者は器具を保管庫へ戻し、貸与の終了を記した。練習では、しばらく実演を見ることになった。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "return-equipment",
+    "equipmentId": "$oldest-unsafe-school-loan"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_unit_repair_parts"></a>
+## life_arts_unit_repair_parts
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:192
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 保管庫から、修理に必要な交換部品が届いたという知らせがあった。受取確認が済むまでは器具に使えず、担当者は組み直しと動作確認にも日を置きたいと言う。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_unit_repair_parts",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "cd": 1,
+  "w": 0.1,
+  "show": {
+    "dynamicFunction": "s => s.artsEquipment.items.some(item => item.ownerType === \"school\" && item.condition === \"in-repair\" &&\n        artsEquipmentFollowupDue(s, item, \"repair-requested\"))"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_unit_repair_parts-0"></a>
+選択肢文：部品の受領を確認し、修理台へ回す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_repair_parts-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 届いた部品の型番を修理票と照合し、担当者が受領欄に記入した。器具は作業台に移された。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "record-repair-parts",
+    "equipmentId": "$oldest-school-repair"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_unit_repair_parts-1"></a>
+選択肢文：修理票をしまい、受取確認は次回に回す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_repair_parts-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 部品の番号はまだ確かめず、修理票をしまった。受取の返事は次の授業で出すことにした。
+
+効果：
+
+```json
+null
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_unit_repair_complete"></a>
+## life_arts_unit_repair_complete
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:211
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：未校閲　優先度：未判定
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：なし
+
+### 本文
+
+> 担当者から、器具の接続部を組み直したと連絡があった。受け渡しの前に、修理票と照らしながら状態を確かめる必要があるという。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_unit_repair_complete",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "cd": 1,
+  "w": 0.1,
+  "show": {
+    "dynamicFunction": "s => s.artsEquipment.items.some(item => item.ownerType === \"school\" && item.condition === \"in-repair\" &&\n        artsEquipmentFollowupDue(s, item, \"parts-available\"))"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_unit_repair_complete-0"></a>
+選択肢文：点検済みの器具を受け取り、貸出票を更新する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_repair_complete-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 係と一緒に接続部を確かめ、貸出票の修理欄に日付を記した。器具は監督下で使える状態に戻った。
+
+効果：
+
+```json
+{
+  "artsAction": {
+    "action": "complete-equipment-repair",
+    "equipmentId": "$oldest-school-repair"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_unit_repair_complete-1"></a>
+選択肢文：確認を次の授業まで待つ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_unit_repair_complete-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 器具は保管庫に置いたままにし、次の授業で担当者と確かめることにした。
+
+効果：
+
+```json
+null
+```
+
+旧シム観測回数：未計測
 
 
 <a id="event-romance_followup"></a>
@@ -234803,7 +235737,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 <a id="event-life_medical_followup"></a>
 ## life_medical_followup
 
-- 出典位置：data/health/mortality.js:238
+- 出典位置：data/health/mortality.js:252
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -234928,7 +235862,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 <a id="event-life_mental_crisis_support"></a>
 ## life_mental_crisis_support
 
-- 出典位置：data/health/mortality.js:278
+- 出典位置：data/health/mortality.js:292
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -235089,7 +236023,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 <a id="event-life_mental_crisis_recurrence"></a>
 ## life_mental_crisis_recurrence
 
-- 出典位置：data/health/mortality.js:316
+- 出典位置：data/health/mortality.js:330
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -235255,7 +236189,7 @@ s => {
 <a id="event-life_mental_crisis_recovery"></a>
 ## life_mental_crisis_recovery
 
-- 出典位置：data/health/mortality.js:360
+- 出典位置：data/health/mortality.js:374
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -235363,7 +236297,7 @@ s => {
 <a id="event-life_violence_threat_safety"></a>
 ## life_violence_threat_safety
 
-- 出典位置：data/health/mortality.js:383
+- 出典位置：data/health/mortality.js:397
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -235504,7 +236438,7 @@ s => {
 <a id="event-life_disaster_recovery_care"></a>
 ## life_disaster_recovery_care
 
-- 出典位置：data/health/mortality.js:418
+- 出典位置：data/health/mortality.js:432
 - 分類確度：本文・条件・表示条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -235617,7 +236551,7 @@ s => {
 <a id="event-life_late_care_planning"></a>
 ## life_late_care_planning
 
-- 出典位置：data/health/mortality.js:443
+- 出典位置：data/health/mortality.js:457
 - 分類確度：本文・条件・表示条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -235724,7 +236658,7 @@ s => {
 <a id="event-life_severe_illness_companionship"></a>
 ## life_severe_illness_companionship
 
-- 出典位置：data/health/mortality.js:465
+- 出典位置：data/health/mortality.js:479
 - 分類確度：本文・条件・表示条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -235832,7 +236766,7 @@ s => {
 <a id="event-life_rehabilitation_followup"></a>
 ## life_rehabilitation_followup
 
-- 出典位置：data/health/mortality.js:490
+- 出典位置：data/health/mortality.js:504
 - 分類確度：本文・条件・表示条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -235958,7 +236892,7 @@ s => {
 <a id="event-life_unexpected_rescue"></a>
 ## life_unexpected_rescue
 
-- 出典位置：data/health/mortality.js:520
+- 出典位置：data/health/mortality.js:534
 - 分類確度：本文・条件・表示条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -236071,7 +237005,7 @@ s => {
 <a id="event-life_harassment_threat_escalation"></a>
 ## life_harassment_threat_escalation
 
-- 出典位置：data/health/mortality.js:568
+- 出典位置：data/health/mortality.js:582
 - 分類確度：本文・条件・表示条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -236200,7 +237134,7 @@ s => {
 <a id="event-life_harassment_threat_resolution"></a>
 ## life_harassment_threat_resolution
 
-- 出典位置：data/health/mortality.js:606
+- 出典位置：data/health/mortality.js:620
 - 分類確度：本文・条件・表示条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -236326,7 +237260,7 @@ s => {
 <a id="event-life_arts_overload_crisis"></a>
 ## life_arts_overload_crisis
 
-- 出典位置：data/health/mortality.js:643
+- 出典位置：data/health/mortality.js:657
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -236442,7 +237376,7 @@ s => {
 <a id="event-life_columbia_clinical_trap_decision"></a>
 ## life_columbia_clinical_trap_decision
 
-- 出典位置：data/health/mortality.js:686
+- 出典位置：data/health/mortality.js:700
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：クルビア
@@ -236559,7 +237493,7 @@ s => {
 <a id="event-life_lynch_mob_siege"></a>
 ## life_lynch_mob_siege
 
-- 出典位置：data/health/mortality.js:726
+- 出典位置：data/health/mortality.js:740
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア、ウルサス、リターニア
@@ -236659,7 +237593,7 @@ s => {
 <a id="event-life_mine_collapse_crisis"></a>
 ## life_mine_collapse_crisis
 
-- 出典位置：data/health/mortality.js:764
+- 出典位置：data/health/mortality.js:778
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ウルサス、カズデル、レム・ビリトン
@@ -236757,7 +237691,7 @@ s => {
 <a id="event-life_omerta_hitman_confrontation"></a>
 ## life_omerta_hitman_confrontation
 
-- 出典位置：data/health/mortality.js:799
+- 出典位置：data/health/mortality.js:813
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：シラクーザ
@@ -236856,7 +237790,7 @@ s => {
 <a id="event-life_terminal_despair_choice"></a>
 ## life_terminal_despair_choice
 
-- 出典位置：data/health/mortality.js:837
+- 出典位置：data/health/mortality.js:851
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -236986,7 +237920,7 @@ s => {
 <a id="event-life_honor_martyrdom_decision"></a>
 ## life_honor_martyrdom_decision
 
-- 出典位置：data/health/mortality.js:879
+- 出典位置：data/health/mortality.js:893
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ラテラーノ
@@ -237089,7 +238023,7 @@ s => {
 <a id="event-life_debt_bankruptcy_crisis"></a>
 ## life_debt_bankruptcy_crisis
 
-- 出典位置：data/health/mortality.js:916
+- 出典位置：data/health/mortality.js:930
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -288294,7 +289228,7 @@ s => $rules.social.infectionPriorSummary(s.socialConflict?.infectionShock)
 <a id="event-v78_parent_rejection_diagnosis"></a>
 ## v78_parent_rejection_diagnosis
 
-- 出典位置：data/social/conflict.js:435
+- 出典位置：data/social/conflict.js:437
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -288592,7 +289526,7 @@ s => $rules.social.infectionPriorSummary(s.socialConflict?.infectionShock)
 <a id="event-v87_family_contact_boundary_diagnosis"></a>
 ## v87_family_contact_boundary_diagnosis
 
-- 出典位置：data/social/conflict.js:567
+- 出典位置：data/social/conflict.js:569
 - 分類確度：本文・条件・表示条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -288795,7 +289729,7 @@ s => $rules.social.infectionPriorSummary(s.socialConflict?.infectionShock)
 <a id="event-v78_family_breach_recovery"></a>
 ## v78_family_breach_recovery
 
-- 出典位置：data/social/conflict.js:646
+- 出典位置：data/social/conflict.js:648
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -289106,7 +290040,7 @@ s =>
 <a id="event-v78_mutual_aid_conflict"></a>
 ## v78_mutual_aid_conflict
 
-- 出典位置：data/social/conflict.js:787
+- 出典位置：data/social/conflict.js:789
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -289252,7 +290186,7 @@ s =>
 <a id="event-v78_ideology_recruitment"></a>
 ## v78_ideology_recruitment
 
-- 出典位置：data/social/conflict.js:837
+- 出典位置：data/social/conflict.js:839
 - 分類確度：本文・条件・表示条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -289395,7 +290329,7 @@ s =>
 <a id="event-v78_opponent_cost"></a>
 ## v78_opponent_cost
 
-- 出典位置：data/social/conflict.js:883
+- 出典位置：data/social/conflict.js:885
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -289551,7 +290485,7 @@ s =>
 <a id="event-v78_discriminated_victim_grief"></a>
 ## v78_discriminated_victim_grief
 
-- 出典位置：data/social/conflict.js:932
+- 出典位置：data/social/conflict.js:934
 - 分類確度：本文・条件・表示条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -289733,7 +290667,7 @@ s =>
 <a id="event-v78_sarkaz_self_protection"></a>
 ## v78_sarkaz_self_protection
 
-- 出典位置：data/social/conflict.js:1010
+- 出典位置：data/social/conflict.js:1012
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：カズデル
@@ -289857,7 +290791,7 @@ s =>
 <a id="event-v78_id_document_victoria"></a>
 ## v78_id_document_victoria
 
-- 出典位置：data/social/conflict.js:1052
+- 出典位置：data/social/conflict.js:1054
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：ヴィクトリア
@@ -289987,7 +290921,7 @@ s =>
 <a id="event-v79_parent_public_rejection"></a>
 ## v79_parent_public_rejection
 
-- 出典位置：data/social/conflict.js:1079
+- 出典位置：data/social/conflict.js:1081
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -290141,7 +291075,7 @@ s =>
 <a id="event-v79_parent_defends_infected"></a>
 ## v79_parent_defends_infected
 
-- 出典位置：data/social/conflict.js:1129
+- 出典位置：data/social/conflict.js:1131
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -290269,7 +291203,7 @@ s =>
 <a id="event-v79_parent_views_diverge"></a>
 ## v79_parent_views_diverge
 
-- 出典位置：data/social/conflict.js:1162
+- 出典位置：data/social/conflict.js:1164
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定

@@ -1155,11 +1155,18 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
     valueType: "object"
   };
 
-  $terraData.EVENT_FIELD_META.presentation = {
-    unit: "選択肢の提示クラス",
-    meaning: "minor-choice は日常の既存イベント枠を使い、majorEventMonth を消費しない",
+  $terraData.EVENT_FIELD_META.interactionScope = {
+    unit: "イベントの発火枠",
+    meaning: "major・minor・daily・scheduledを共通抽選器へ渡す。minorは主要選択枠を消費しない",
     status: "S",
     valueType: "text"
+  };
+
+  $terraData.EVENT_FIELD_META.artsAction = {
+    unit: "アーツ学習実績操作",
+    meaning: "確認できる学習・貸与・点検・修理の行為だけを、対象IDと根拠付きで個別台帳へ記録する",
+    status: "S",
+    valueType: "object"
   };
 
   $terraData.EVENT_FIELD_META.socialConstraint = {
@@ -1344,6 +1351,7 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
   $terraData.EVENT_EFFECT_TYPES.object.push("infectionWorkplaceAction");
   $terraData.EVENT_EFFECT_TYPES.object.push("employmentResourceIncident");
   $terraData.EVENT_EFFECT_TYPES.object.push("languageAction");
+  $terraData.EVENT_EFFECT_TYPES.object.push("artsAction");
 
   $terraData.EVENT_EFFECT_TYPES.objectArray.push("bodyChanges", "infectionAwarenessActions");
 

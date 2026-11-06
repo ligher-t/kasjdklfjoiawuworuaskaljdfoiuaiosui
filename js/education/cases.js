@@ -505,7 +505,7 @@ function educationCaseCommit(s,mode="cash") {
     "educationDecision","educationCases","educationRecord","fl","study",
     "job","workPayBonus","reducedWorkStartedYear","lifeRecord","careerHistory",
     "educationAttendance","educationCredits","educationPlacements",
-    "educationPeopleTies","cash"];
+    "educationPeopleTies","artsProfile","cash"];
   const saved=Object.fromEntries(fields.map(key=>
     [key,s[key]===undefined?undefined:educationFinanceClone(s[key])]));
   const houseCash=s.house?.cash;

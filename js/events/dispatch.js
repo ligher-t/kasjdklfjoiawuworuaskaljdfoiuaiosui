@@ -27,7 +27,14 @@ function isPeacefulLeisureEvent(event) {
   return event?.crisisPolicy === "nonessential-leisure";
 }
 function isMinorChoiceEvent(event) {
-  return event?.presentation === "minor-choice" || event?.socialConstraint?.presentation === "minor-choice";
+  return event?.interactionScope === "minor";
+}
+function isValidEventMonthMarker(marker, currentYear) {
+  return marker === null || (
+    Number.isInteger(currentYear) && marker && typeof marker === "object" && !Array.isArray(marker) &&
+    Number.isInteger(marker.year) && marker.year <= currentYear &&
+    Number.isInteger(marker.month) && marker.month >= 0 && marker.month <= CALENDAR_MONTHS
+  );
 }
 // Initial gameplay assumptions: category shares stay fixed as candidate counts grow.
 function chooseSocialMinorChoice(events, s, T) {
@@ -220,6 +227,7 @@ function slot(x) {
   const el = eligible.filter(e => (!e.c || hasActionableChoice(e)) &&
       !(e.c && (isMinorChoiceEvent(e) ? minorChoiceAlreadyUsed : choiceAlreadyUsed))),
     mj = el.filter(e => e.c && !isMinorChoiceEvent(e)),
+    scheduledChoices = mj.filter(e => e.interactionScope === "scheduled"),
     minorChoices = el.filter(e => e.c && isMinorChoiceEvent(e));
   if (HL) {
     recordSimulationSlot(STG[stg(s)] || "不明", eligible, el);
@@ -253,13 +261,15 @@ function slot(x) {
   reserveExpiringSlots(s, protectedChoices);
   if (HL) recordSimulationExpiringChoices(s, expiringChoices);
   const localTimelineChoice = mj.find(event =>
+    event.interactionScope !== "scheduled" &&
     ["direct", "journey"].includes(event.historicalScene?.delivery) &&
     event.timelineFlag &&
     s.world?.events?.[event.timelineFlag] &&
     !s.sn?.[event.id] &&
     hasActionableChoice(event)
   );
-  const optionalChoices = mj.filter(event => employmentRoutineAvailable(event, s)),
+  const optionalChoices = mj.filter(event => employmentRoutineAvailable(event, s) &&
+      event.interactionScope !== "scheduled"),
     socialMajorChoices = optionalChoices.filter(event => event.socialConstraint),
     ordinaryOptionalChoices = optionalChoices.filter(event => !event.socialConstraint);
   const priorityChoices = optionalChoices.filter(event => event.pri && event.id !== "higher_ed");
@@ -271,14 +281,14 @@ function slot(x) {
     expiringFollowup ||
     mj.find(event=>event.id==="journey_decision_review") ||
     localTimelineChoice ||
-    nextScheduledFollowup(optionalChoices,s) ||
+    nextScheduledFollowup([...optionalChoices, ...scheduledChoices],s) ||
     livelihoodRecovery ||
     wpk(priorityChoices, s, T) || institutional;
   const serviceOnly=s.eventSchedule?.year===s.year&&s.eventSchedule.servicePositions.includes(x);
   if(!e&&serviceOnly)return;
   if(!e&&R()<playChoiceChance(s)&&ordinaryOptionalChoices.length)e=wpk(ordinaryOptionalChoices,s,T);
   if(!e)e=chooseSocialMajorChoice(socialMajorChoices,s,T);
-  if (!e) e = chooseSocialMinorChoice(minorChoices, s, T);
+  if (!e) e = chooseSocialMinorChoice(minorChoices.filter(event => event.socialConstraint), s, T);
   if (!e) {
     const inCrisis = isLocationInCrisis(s);
     const r = R(),
@@ -289,8 +299,19 @@ function slot(x) {
     const timelineDailies = inCrisis ? fl.filter(event => event.timelineFlag && s.world?.events?.[event.timelineFlag]) : [];
     const pool = (timelineDailies.length && R() < 0.6) ? timelineDailies : (pl.length ? pl : fl),
       contextual = pool.filter(event => contextualDailyEvent(event, s, T)),
-      contextualTone = contextual.filter(event => tone(event.fx) === g);
-    e = wpk(contextual.length && R() < 0.7 ? (contextualTone.length ? contextualTone : contextual) : pool, s, T);
+      contextualTone = contextual.filter(event => tone(event.fx) === g),
+      dailyPool = contextual.length && R() < 0.7
+        ? (contextualTone.length ? contextualTone : contextual)
+        : pool,
+      ordinaryMinorChoices = minorChoices.filter(event => !event.socialConstraint);
+    if (ordinaryMinorChoices.length && dailyPool.length) {
+      // Keep the minor share fixed as new eligible events are added.
+      e = R() < 0.2 ? wpk(ordinaryMinorChoices, s, T) : wpk(dailyPool, s, T);
+    } else if (ordinaryMinorChoices.length) {
+      e = wpk(ordinaryMinorChoices, s, T);
+    } else {
+      e = dailyPool.length ? wpk(dailyPool, s, T) : null;
+    }
   }
   if (e) fire(e, s, T);
 }

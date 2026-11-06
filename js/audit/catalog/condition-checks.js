@@ -32,7 +32,7 @@ function createCatalogFieldChecks(W_, services) {
   ]);
   const eventKeys = new Set([
     ...conditionKeys, "id", "conf", "references", "w", "cd", "once", "pri", "st", "months",
-    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "displayTone", "timelineFlag", "crisisPolicy", "historicalScene", "regionCooldowns", "presentation", "socialConstraint"
+    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "displayTone", "timelineFlag", "crisisPolicy", "historicalScene", "regionCooldowns", "interactionScope", "socialConstraint"
   ]);
   const cc = (c, w, event = false) => {
     if (!c) return;
@@ -114,6 +114,34 @@ function createCatalogFieldChecks(W_, services) {
               (input.onlyIfMember != null && typeof input.onlyIfMember !== "boolean")))
         )
           W_.push(`${w}: 効果「siracusaFamilyAction」は有効な関係状態または条件付き関係状態ではない`);
+      }
+      if (k === "artsAction") {
+        const action = f[k],
+          allowedKeys = new Set(["action", "disciplineId", "techniqueId", "outcome", "response", "alternativeTaskId", "equipmentId", "result"]),
+          disciplines = new Set(["thermal", "kinetic", "acoustic", "material", "medical-support", "ritual-local"]),
+          outcomes = new Set(["guided-success", "observed", "theory", "attempt-not-achieved"]),
+          responses = new Set(["alternative-task-shown", "stopped-for-day"]),
+          equipmentActions = new Set(["borrow-equipment", "return-equipment", "inspect-equipment",
+            "request-equipment-repair", "record-repair-parts", "complete-equipment-repair"]),
+          invalidCommon = !action || typeof action !== "object" || Array.isArray(action) ||
+            Object.keys(action).some(key => !allowedKeys.has(key)),
+          invalidPractice = action?.action === "record-practice" &&
+            (!disciplines.has(action.disciplineId) || typeof action.techniqueId !== "string" || !action.techniqueId.trim() ||
+              !outcomes.has(action.outcome) || (action.response != null && !responses.has(action.response)) ||
+              (action.alternativeTaskId != null && (typeof action.alternativeTaskId !== "string" || !action.alternativeTaskId.trim())) ||
+              (action.response === "alternative-task-shown" && !action.alternativeTaskId) ||
+              (action.response === "stopped-for-day" && action.alternativeTaskId != null) ||
+              (action.response != null && action.outcome !== "attempt-not-achieved")),
+          invalidEquipment = action && equipmentActions.has(action.action) &&
+            ((action.action !== "borrow-equipment" &&
+              (typeof action.equipmentId !== "string" || !["$current-course-unit", "$oldest-school-loan", "$oldest-due-school-loan", "$oldest-unsafe-school-loan", "$oldest-school-repair"].includes(action.equipmentId))) ||
+             (action.action === "borrow-equipment" && action.equipmentId != null) ||
+             (action.action === "inspect-equipment" && !["serviceable", "repair-required"].includes(action.result)) ||
+             (action.action !== "inspect-equipment" && action.result != null)),
+          validPractice = action?.action === "record-practice" && !invalidPractice,
+          validEquipment = equipmentActions.has(action?.action) && !invalidEquipment,
+          invalid = invalidCommon || (!validPractice && !validEquipment);
+        if (invalid) W_.push(w + ": 効果「artsAction」の実技記録契約が不正");
       }
       if(type === "object" && (!f[k] || typeof f[k] !== "object" || Array.isArray(f[k])))
         W_.push(`${w}: 効果「${k}」がオブジェクトではない`);
