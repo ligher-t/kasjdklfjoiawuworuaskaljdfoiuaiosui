@@ -3,6 +3,9 @@ window.TERRA_RULES.bind({
   mortality: {
     get urgentEpisodes() {
       return urgentMortalityEpisodes;
+    },
+    get healthCriticalNeedsReview() {
+      return healthCriticalNeedsReview;
     }
   },
   economy: {

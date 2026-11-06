@@ -3,6 +3,26 @@ function auditCommunityAndRandomState(s, problems, services = STATE_AUDIT_SERVIC
     !Number.isInteger(s.infectionOnset.year) || s.infectionOnset.year > s.year ||
     !Number.isFinite(s.infectionOnset.initialLoad) || s.infectionOnset.initialLoad < 0 || s.infectionOnset.initialLoad > 100 ||
     typeof s.infectionOnset.acute !== "boolean"))problems.push("感染初期病状の記録が不正");
+  const healthCritical = s.mortality?.healthCritical;
+  if (healthCritical && (
+    !["none", "active", "resolved"].includes(healthCritical.status) ||
+    !Array.isArray(healthCritical.history) || healthCritical.history.length > 24 ||
+    (healthCritical.status !== "none" &&
+      (!Number.isInteger(healthCritical.sinceYear) || healthCritical.sinceYear > s.year)) ||
+    (healthCritical.resolvedYear != null &&
+      (!Number.isInteger(healthCritical.resolvedYear) || healthCritical.resolvedYear < healthCritical.sinceYear || healthCritical.resolvedYear > s.year)) ||
+    (healthCritical.careUntilYear != null &&
+      (!Number.isInteger(healthCritical.careUntilYear) || healthCritical.careUntilYear < healthCritical.sinceYear)) ||
+    (healthCritical.lastDecisionYear != null &&
+      (!Number.isInteger(healthCritical.lastDecisionYear) || healthCritical.lastDecisionYear < healthCritical.sinceYear || healthCritical.lastDecisionYear > s.year)) ||
+    (healthCritical.lastDecisionElapsed != null &&
+      (!Number.isInteger(healthCritical.lastDecisionElapsed) || healthCritical.lastDecisionElapsed < 0)) ||
+    (healthCritical.palliativePreferenceYear != null &&
+      (!Number.isInteger(healthCritical.palliativePreferenceYear) || healthCritical.palliativePreferenceYear < healthCritical.sinceYear || healthCritical.palliativePreferenceYear > s.year)) ||
+    healthCritical.history.some(row => !row || !Number.isInteger(row.year) || row.year > s.year ||
+      !["onset", "recovered", "clinic", "emergency", "support", "rest", "nutrition", "palliative"].includes(row.action) ||
+      (row.elapsed != null && (!Number.isInteger(row.elapsed) || row.elapsed < 0)))
+  )) problems.push("危篤状態の開始・治療・看取り希望記録が不正");
   if(s.debtPlan && (!["frugal","maintain"].includes(s.debtPlan.action) ||
     !Number.isInteger(s.debtPlan.year) || s.debtPlan.year > s.year))problems.push("家計再建方針の記録が不正");
   if (s.local?.districtId && (!s.local.placeId || s.local.identitySignature !== residenceSignature(s)))

@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2591　選択肢数：3306　結果枝数：4111
+イベント数：2591　選択肢数：3308　結果枝数：4114
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -2339,7 +2339,7 @@
 - [life_medical_injury](#event-life_medical_injury) — 表の傷口はふさがったのに、重い物を持ち上げると奥が鋭く疼く。帰り道でも痛みに足を引きずり、何度か立ち止まって息をついた。
 - [life_medical_nutrition](#event-life_medical_nutrition) — 一日の食事を一度に減らす日が続き、朝起きても手足に力が入らない。空腹をごまかすために水ばかり飲みながら、戸棚の奥に残ったわずかな乾物を数えた。
 - [life_medical_oripathy](#event-life_medical_oripathy) — 鉱石病の疼きと重だるさが年々深まり、昔なら一気に片づいた仕事にも何度も息継ぎが要るようになった。次の抑制薬を買う金と診察の日取りを思い浮かべ、ため息…
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
+- [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
 - [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
 - [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
@@ -2814,7 +2814,7 @@
 
 ## ジャンル別索引
 
-[移動・物流 (244)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (369)](#tag-genre-2)　・　[感染・医療 (419)](#tag-genre-3)　・　[教育・文化 (446)](#tag-genre-4)　・　[差別・制度 (156)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (244)](#tag-genre-7)　・　[戦争・政治 (146)](#tag-genre-8)　・　[天災・避難 (201)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (396)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (896)](#tag-genre-13)　・　[労働・経済 (769)](#tag-genre-14)
+[移動・物流 (244)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (370)](#tag-genre-2)　・　[感染・医療 (419)](#tag-genre-3)　・　[教育・文化 (446)](#tag-genre-4)　・　[差別・制度 (156)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (244)](#tag-genre-7)　・　[戦争・政治 (146)](#tag-genre-8)　・　[天災・避難 (201)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (396)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (896)](#tag-genre-13)　・　[労働・経済 (768)](#tag-genre-14)
 
 <a id="tag-genre-0"></a>
 ### 移動・物流（244）
@@ -3068,7 +3068,7 @@
 - [life_debt_budget_review](#event-life_debt_budget_review) — テーブルの上に給金袋と借金の督促状を並べ、ため息をついた。今の稼ぎだけではとても一度には返しきれず、腹をくくって日々の食い扶持を削るか、身体を壊さな…
 
 <a id="tag-genre-2"></a>
-### 家族・介護（369）
+### 家族・介護（370）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -3344,6 +3344,7 @@
 - [life_medical_injury](#event-life_medical_injury) — 表の傷口はふさがったのに、重い物を持ち上げると奥が鋭く疼く。帰り道でも痛みに足を引きずり、何度か立ち止まって息をついた。
 - [life_medical_nutrition](#event-life_medical_nutrition) — 一日の食事を一度に減らす日が続き、朝起きても手足に力が入らない。空腹をごまかすために水ばかり飲みながら、戸棚の奥に残ったわずかな乾物を数えた。
 - [life_medical_oripathy](#event-life_medical_oripathy) — 鉱石病の疼きと重だるさが年々深まり、昔なら一気に片づいた仕事にも何度も息継ぎが要るようになった。次の抑制薬を買う金と診察の日取りを思い浮かべ、ため息…
+- [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
 - [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
 - [life_mental_crisis_recovery](#event-life_mental_crisis_recovery) — 底のない暗がりの中にいた頃より、外の光を浴びて歩ける日が増えてきた。それでもふとした拍子に胸がざわつく夜はある。自分の心とどう折り合いをつけていくか…
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
@@ -3711,7 +3712,7 @@
 - [life_medical_injury](#event-life_medical_injury) — 表の傷口はふさがったのに、重い物を持ち上げると奥が鋭く疼く。帰り道でも痛みに足を引きずり、何度か立ち止まって息をついた。
 - [life_medical_nutrition](#event-life_medical_nutrition) — 一日の食事を一度に減らす日が続き、朝起きても手足に力が入らない。空腹をごまかすために水ばかり飲みながら、戸棚の奥に残ったわずかな乾物を数えた。
 - [life_medical_oripathy](#event-life_medical_oripathy) — 鉱石病の疼きと重だるさが年々深まり、昔なら一気に片づいた仕事にも何度も息継ぎが要るようになった。次の抑制薬を買う金と診察の日取りを思い浮かべ、ため息…
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
+- [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
 - [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
 - [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
@@ -5402,7 +5403,7 @@
 - [life_medical_nerve](#event-life_medical_nerve) — ふいに視界がぐらりと揺れ、片方の手足からすっと力が抜けた。路地の壁に慌てて手をつき、冷たい石の感触にすがりながらめまいが引くのを待った。
 - [life_medical_injury](#event-life_medical_injury) — 表の傷口はふさがったのに、重い物を持ち上げると奥が鋭く疼く。帰り道でも痛みに足を引きずり、何度か立ち止まって息をついた。
 - [life_medical_nutrition](#event-life_medical_nutrition) — 一日の食事を一度に減らす日が続き、朝起きても手足に力が入らない。空腹をごまかすために水ばかり飲みながら、戸棚の奥に残ったわずかな乾物を数えた。
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
+- [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
 - [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
 - [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
@@ -6381,7 +6382,7 @@
 - [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
 
 <a id="tag-genre-14"></a>
-### 労働・経済（769）
+### 労働・経済（768）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -6926,7 +6927,6 @@
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
 - [life_medical_nutrition](#event-life_medical_nutrition) — 一日の食事を一度に減らす日が続き、朝起きても手足に力が入らない。空腹をごまかすために水ばかり飲みながら、戸棚の奥に残ったわずかな乾物を数えた。
 - [life_medical_oripathy](#event-life_medical_oripathy) — 鉱石病の疼きと重だるさが年々深まり、昔なら一気に片づいた仕事にも何度も息継ぎが要るようになった。次の抑制薬を買う金と診察の日取りを思い浮かべ、ため息…
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
 - [life_late_care_planning](#event-life_late_care_planning) — 買い物袋を提げて帰る途中で、息が切れて立ち止まる日が増えた。昔は何ともなかった段差や水汲みが、今はやけにこたえる。自分が動けなくなった時のことを、そ…
 - [life_unexpected_rescue](#event-life_unexpected_rescue) — 現場の足場板が腐って浮き上がり、頭上の荷台で重い資材が嫌な音を立てて傾いていた。このまま作業を続ければ崩れ落ちるかもしれない。
@@ -7154,7 +7154,7 @@
 
 ## 状況別索引
 
-[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (141)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (255)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[季節の現物分配 (1)](#tag-situation-108)　・　[記録・説明責任 (1)](#tag-situation-109)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-110)　・　[記録と責任 (1)](#tag-situation-111)　・　[技師 (1)](#tag-situation-112)　・　[技能条件 (1)](#tag-situation-113)　・　[求職 (2)](#tag-situation-114)　・　[求職・紹介 (1)](#tag-situation-115)　・　[旧坑区の荷札照会 (1)](#tag-situation-116)　・　[競技会場の仮設席設営 (1)](#tag-situation-117)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-118)　・　[競技騎士の肩の負傷 (1)](#tag-situation-119)　・　[競技祭 (1)](#tag-situation-120)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-121)　・　[脅迫を受ける (1)](#tag-situation-122)　・　[脅迫記録の解除分岐 (1)](#tag-situation-123)　・　[極東 (1)](#tag-situation-124)　・　[極東の軍務・兵站ルート (2)](#tag-situation-125)　・　[極東の神社 (1)](#tag-situation-126)　・　[勤務縮小後 (1)](#tag-situation-127)　・　[近隣からの相談 (1)](#tag-situation-128)　・　[近隣との情報交換 (1)](#tag-situation-129)　・　[近隣の若年者との交流 (1)](#tag-situation-130)　・　[近隣互助 (1)](#tag-situation-131)　・　[軍務・護衛の継続 (1)](#tag-situation-132)　・　[契約確認 (1)](#tag-situation-133)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-134)　・　[継続／民間移行／求職 (1)](#tag-situation-135)　・　[継続後の振り返り (1)](#tag-situation-136)　・　[継続後の窓口 (1)](#tag-situation-137)　・　[警戒・質問の選択 (1)](#tag-situation-138)　・　[検査延期後の再検討 (1)](#tag-situation-139)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-140)　・　[源石片による負傷・曝露 (1)](#tag-situation-141)　・　[源石片への接触回避 (1)](#tag-situation-142)　・　[言葉の行き違い (1)](#tag-situation-143)　・　[個人情報 (1)](#tag-situation-144)　・　[古傷による職業転換 (1)](#tag-situation-145)　・　[固定集落への配達 (1)](#tag-situation-146)　・　[固定都市 (1)](#tag-situation-147)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-148)　・　[交易所の共用端末 (1)](#tag-situation-149)　・　[公証人役場 (1)](#tag-situation-150)　・　[工業区域 (1)](#tag-situation-151)　・　[工場労働者 (1)](#tag-situation-152)　・　[港湾労働 (2)](#tag-situation-153)　・　[鉱区事故 (1)](#tag-situation-154)　・　[鉱山の交替減少 (1)](#tag-situation-155)　・　[鉱山労働 (1)](#tag-situation-156)　・　[鉱石病以外の回復期 (1)](#tag-situation-157)　・　[鉱石病診断済み (1)](#tag-situation-158)　・　[鉱夫 (1)](#tag-situation-159)　・　[鉱夫分岐 (1)](#tag-situation-160)　・　[高等教育経験者の教員応募 (1)](#tag-situation-161)　・　[高齢期 (1)](#tag-situation-162)　・　[高齢期の就労 (1)](#tag-situation-163)　・　[告示の交代 (1)](#tag-situation-164)　・　[国の発生条件あり (1560)](#tag-situation-165)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-166)　・　[再受付・別の診療先の探索 (1)](#tag-situation-167)　・　[採掘坑内の換気停止 (1)](#tag-situation-168)　・　[採掘地域 (1)](#tag-situation-169)　・　[採掘地域に限定 (1)](#tag-situation-170)　・　[採掘中 (1)](#tag-situation-171)　・　[災害後の商店再開 (1)](#tag-situation-172)　・　[祭典 (1)](#tag-situation-173)　・　[作業技能 (1)](#tag-situation-174)　・　[作業停止・退避 (1)](#tag-situation-175)　・　[山道の情報共有 (1)](#tag-situation-176)　・　[山麓の宿への道案内 (1)](#tag-situation-177)　・　[仕送り (1)](#tag-situation-178)　・　[子どもの就学 (1)](#tag-situation-179)　・　[子どもの誕生・養育 (1)](#tag-situation-180)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-181)　・　[子への訃報 (1)](#tag-situation-182)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-183)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-184)　・　[思春期 (1)](#tag-situation-185)　・　[支援の受入れ (1)](#tag-situation-186)　・　[氏族養育 (1)](#tag-situation-187)　・　[資格取得後の求職 (1)](#tag-situation-188)　・　[飼育動物の世話 (1)](#tag-situation-189)　・　[次便待ち (1)](#tag-situation-190)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-191)　・　[自動発生イベント (1428)](#tag-situation-192)　・　[湿地地勢 (1)](#tag-situation-193)　・　[守秘と名簿 (1)](#tag-situation-194)　・　[種族差別 (2)](#tag-situation-195)　・　[種族差別後 (1)](#tag-situation-196)　・　[酒類の仕入れ帳 (1)](#tag-situation-197)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-198)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-199)　・　[授業担当者との接点 (1)](#tag-situation-200)　・　[収容・隔離中 (1)](#tag-situation-201)　・　[収容・隔離中の診療 (1)](#tag-situation-202)　・　[収容中 (4)](#tag-situation-203)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-204)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-205)　・　[就労中 (2)](#tag-situation-206)　・　[就労中の鉱夫 (1)](#tag-situation-207)　・　[住居差別 (1)](#tag-situation-208)　・　[住居差別後 (1)](#tag-situation-209)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-210)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-211)　・　[宿泊拒否 (1)](#tag-situation-212)　・　[宿泊拒否後 (1)](#tag-situation-213)　・　[出場・観戦・場外見物 (1)](#tag-situation-214)　・　[所持金による本文・選択肢 (1)](#tag-situation-215)　・　[小舞台 (1)](#tag-situation-216)　・　[少年・青年 (2)](#tag-situation-217)　・　[少年・青年・壮年 (3)](#tag-situation-218)　・　[消息不明者の生存確認 (1)](#tag-situation-219)　・　[症状進行中 (1)](#tag-situation-220)　・　[情報網の高い居住地 (1)](#tag-situation-221)　・　[条件付き本文 (210)](#tag-situation-222)　・　[職業課程の継続 (1)](#tag-situation-223)　・　[職業課程の修了 (1)](#tag-situation-224)　・　[職業条件あり (71)](#tag-situation-225)　・　[職場・近隣で露見の兆し (1)](#tag-situation-226)　・　[職場の排斥 (1)](#tag-situation-227)　・　[食堂の客足 (1)](#tag-situation-228)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-229)　・　[食料不足 (1)](#tag-situation-230)　・　[森林地勢 (1)](#tag-situation-231)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-232)　・　[親の家計判断 (1)](#tag-situation-233)　・　[親の感染 (1)](#tag-situation-234)　・　[親の死後 (1)](#tag-situation-235)　・　[親子の記憶 (1)](#tag-situation-236)　・　[診断済み (1)](#tag-situation-237)　・　[診断済み・未治療 (1)](#tag-situation-238)　・　[診療・休養・記録から選択 (1)](#tag-situation-239)　・　[診療・作業調整 (1)](#tag-situation-240)　・　[診療・動作を避ける選択 (1)](#tag-situation-241)　・　[診療・付き添いの依頼 (1)](#tag-situation-242)　・　[診療・負担軽減から選択 (1)](#tag-situation-243)　・　[診療延期後 (1)](#tag-situation-244)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-245)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-246)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-247)　・　[身近な人への支援依頼 (1)](#tag-situation-248)　・　[身近な連絡先あり (1)](#tag-situation-249)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-250)　・　[睡眠不足 (1)](#tag-situation-251)　・　[世界イベント後 (1)](#tag-situation-252)　・　[成人 (4)](#tag-situation-253)　・　[成人・返済支援の選択 (1)](#tag-situation-254)　・　[成人した子 (2)](#tag-situation-255)　・　[成人の種族偏見に触れる (1)](#tag-situation-256)　・　[生活上の備え (1)](#tag-situation-257)　・　[青年・壮年 (5)](#tag-situation-258)　・　[青年・壮年・老年 (3)](#tag-situation-259)　・　[雪祭司・聖樹 (1)](#tag-situation-260)　・　[選択イベント (1104)](#tag-situation-261)　・　[前段で残留した人 (1)](#tag-situation-262)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-263)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-264)　・　[全年齢の循環器系エピソード (1)](#tag-situation-265)　・　[全年齢の食料不足 (1)](#tag-situation-266)　・　[全年齢の負傷後の痛み (1)](#tag-situation-267)　・　[組織・所属に言及 (175)](#tag-situation-268)　・　[組織離脱後 (1)](#tag-situation-269)　・　[相談・医療・休養 (1)](#tag-situation-270)　・　[相談・記録 (1)](#tag-situation-271)　・　[相談・記録・経路変更 (1)](#tag-situation-272)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-273)　・　[足場や荷の異常 (1)](#tag-situation-274)　・　[退会後の関係 (1)](#tag-situation-275)　・　[退職選択 (1)](#tag-situation-276)　・　[大いなる静謐後 (1)](#tag-situation-277)　・　[大学課程の継続 (1)](#tag-situation-278)　・　[大学課程の修了 (1)](#tag-situation-279)　・　[短期雇用 (1)](#tag-situation-280)　・　[短期雇用と現場危険 (1)](#tag-situation-281)　・　[地域の供給不安定 (1)](#tag-situation-282)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-283)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-284)　・　[地域学習会・独学の選択 (1)](#tag-situation-285)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-286)　・　[仲間の捜索 (1)](#tag-situation-287)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-288)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-289)　・　[通学していない (1)](#tag-situation-290)　・　[通学中 (1)](#tag-situation-291)　・　[通行止め・迂回 (1)](#tag-situation-292)　・　[天災・戦乱による避難中 (1)](#tag-situation-293)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-294)　・　[店舗からの排斥集会 (1)](#tag-situation-295)　・　[転居後の近隣交流 (1)](#tag-situation-296)　・　[都市街区での襲撃 (1)](#tag-situation-297)　・　[動的表示条件 (694)](#tag-situation-298)　・　[動的本文 (32)](#tag-situation-299)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-300)　・　[同一都市の周縁区への転居 (1)](#tag-situation-301)　・　[同郷者との交流 (1)](#tag-situation-302)　・　[同行者との交流 (1)](#tag-situation-303)　・　[匿名動画の出所確認 (1)](#tag-situation-304)　・　[独立商業所属 (1)](#tag-situation-305)　・　[読み書きに困難がある (1)](#tag-situation-306)　・　[日雇い (1)](#tag-situation-307)　・　[乳児の成長 (1)](#tag-situation-308)　・　[任意応募・採用選考 (1)](#tag-situation-309)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-310)　・　[年齢：35歳以上 (2)](#tag-situation-311)　・　[年齢：児童 (975)](#tag-situation-312)　・　[年齢：少年 (1211)](#tag-situation-313)　・　[年齢：青年 (2384)](#tag-situation-314)　・　[年齢：壮年 (2324)](#tag-situation-315)　・　[年齢：乳児 (20)](#tag-situation-316)　・　[年齢：幼児 (37)](#tag-situation-317)　・　[年齢：老年 (1526)](#tag-situation-318)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-319)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-320)　・　[配給・食料不足 (1)](#tag-situation-321)　・　[配給・寝床・診療案内 (1)](#tag-situation-322)　・　[配給と地域支援 (1)](#tag-situation-323)　・　[配給登録 (1)](#tag-situation-324)　・　[配偶者との死別 (1)](#tag-situation-325)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-326)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-327)　・　[班間の点検記録 (1)](#tag-situation-328)　・　[班内の技能伝達 (1)](#tag-situation-329)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-330)　・　[避難中 (1)](#tag-situation-331)　・　[非感染者 (1)](#tag-situation-332)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-333)　・　[付き添い依頼・受診延期 (1)](#tag-situation-334)　・　[付き添い相談 (1)](#tag-situation-335)　・　[扶養中の子 (2)](#tag-situation-336)　・　[扶養中の子の看病 (1)](#tag-situation-337)　・　[負傷後の職務調整 (1)](#tag-situation-338)　・　[部品寸法 (1)](#tag-situation-339)　・　[復旧作業中の負傷 (1)](#tag-situation-340)　・　[粉塵への接触懸念 (1)](#tag-situation-341)　・　[粉塵曝露 (2)](#tag-situation-342)　・　[兵士の消息不明 (1)](#tag-situation-343)　・　[兵役招集 (1)](#tag-situation-344)　・　[別居・転居 (1)](#tag-situation-345)　・　[亡命・移住 (2)](#tag-situation-346)　・　[未診断の感染者 (1)](#tag-situation-347)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-348)　・　[未成年は養育者判断 (8)](#tag-situation-349)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-350)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-351)　・　[名前を知る相手 (1)](#tag-situation-352)　・　[夜間の世話 (1)](#tag-situation-353)　・　[友人との文通再開 (1)](#tag-situation-354)　・　[友人への恋心 (1)](#tag-situation-355)　・　[傭兵・護衛勤務 (1)](#tag-situation-356)　・　[傭兵隊の護衛契約 (1)](#tag-situation-357)　・　[傭兵隊の通過 (1)](#tag-situation-358)　・　[幼い子の養育 (1)](#tag-situation-359)　・　[用事の再開・再診 (1)](#tag-situation-360)　・　[養育者の視点 (1)](#tag-situation-361)　・　[離婚後の元配偶者の死 (1)](#tag-situation-362)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-363)　・　[離婚後の子育て・連絡 (1)](#tag-situation-364)　・　[龍門 (1)](#tag-situation-365)　・　[龍門の移動都市居住区 (1)](#tag-situation-366)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-367)　・　[龍門の商業街 (1)](#tag-situation-368)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-369)　・　[隣人との死別 (1)](#tag-situation-370)　・　[隣人との伝言再開 (1)](#tag-situation-371)　・　[隣人の消息不明 (1)](#tag-situation-372)　・　[隣人の生存確認 (1)](#tag-situation-373)　・　[連絡・休息の継続 (1)](#tag-situation-374)　・　[連絡先と家の用事の相談 (1)](#tag-situation-375)　・　[労務補償 (1)](#tag-situation-376)
+[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (141)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (255)](#tag-situation-87)　・　[感染の開示・露見に言及 (43)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[季節の現物分配 (1)](#tag-situation-108)　・　[記録・説明責任 (1)](#tag-situation-109)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-110)　・　[記録と責任 (1)](#tag-situation-111)　・　[技師 (1)](#tag-situation-112)　・　[技能条件 (1)](#tag-situation-113)　・　[求職 (2)](#tag-situation-114)　・　[求職・紹介 (1)](#tag-situation-115)　・　[旧坑区の荷札照会 (1)](#tag-situation-116)　・　[競技会場の仮設席設営 (1)](#tag-situation-117)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-118)　・　[競技騎士の肩の負傷 (1)](#tag-situation-119)　・　[競技祭 (1)](#tag-situation-120)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-121)　・　[脅迫を受ける (1)](#tag-situation-122)　・　[脅迫記録の解除分岐 (1)](#tag-situation-123)　・　[極東 (1)](#tag-situation-124)　・　[極東の軍務・兵站ルート (2)](#tag-situation-125)　・　[極東の神社 (1)](#tag-situation-126)　・　[勤務縮小後 (1)](#tag-situation-127)　・　[近隣からの相談 (1)](#tag-situation-128)　・　[近隣との情報交換 (1)](#tag-situation-129)　・　[近隣の若年者との交流 (1)](#tag-situation-130)　・　[近隣互助 (1)](#tag-situation-131)　・　[軍務・護衛の継続 (1)](#tag-situation-132)　・　[契約確認 (1)](#tag-situation-133)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-134)　・　[継続／民間移行／求職 (1)](#tag-situation-135)　・　[継続後の振り返り (1)](#tag-situation-136)　・　[継続後の窓口 (1)](#tag-situation-137)　・　[警戒・質問の選択 (1)](#tag-situation-138)　・　[検査延期後の再検討 (1)](#tag-situation-139)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-140)　・　[源石片による負傷・曝露 (1)](#tag-situation-141)　・　[源石片への接触回避 (1)](#tag-situation-142)　・　[言葉の行き違い (1)](#tag-situation-143)　・　[個人情報 (1)](#tag-situation-144)　・　[古傷による職業転換 (1)](#tag-situation-145)　・　[固定集落への配達 (1)](#tag-situation-146)　・　[固定都市 (1)](#tag-situation-147)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-148)　・　[交易所の共用端末 (1)](#tag-situation-149)　・　[公証人役場 (1)](#tag-situation-150)　・　[工業区域 (1)](#tag-situation-151)　・　[工場労働者 (1)](#tag-situation-152)　・　[港湾労働 (2)](#tag-situation-153)　・　[鉱区事故 (1)](#tag-situation-154)　・　[鉱山の交替減少 (1)](#tag-situation-155)　・　[鉱山労働 (1)](#tag-situation-156)　・　[鉱石病以外の回復期 (1)](#tag-situation-157)　・　[鉱石病診断済み (1)](#tag-situation-158)　・　[鉱夫 (1)](#tag-situation-159)　・　[鉱夫分岐 (1)](#tag-situation-160)　・　[高等教育経験者の教員応募 (1)](#tag-situation-161)　・　[高齢期 (1)](#tag-situation-162)　・　[高齢期の就労 (1)](#tag-situation-163)　・　[告示の交代 (1)](#tag-situation-164)　・　[国の発生条件あり (1560)](#tag-situation-165)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-166)　・　[再受付・別の診療先の探索 (1)](#tag-situation-167)　・　[採掘坑内の換気停止 (1)](#tag-situation-168)　・　[採掘地域 (1)](#tag-situation-169)　・　[採掘地域に限定 (1)](#tag-situation-170)　・　[採掘中 (1)](#tag-situation-171)　・　[災害後の商店再開 (1)](#tag-situation-172)　・　[祭典 (1)](#tag-situation-173)　・　[作業技能 (1)](#tag-situation-174)　・　[作業停止・退避 (1)](#tag-situation-175)　・　[山道の情報共有 (1)](#tag-situation-176)　・　[山麓の宿への道案内 (1)](#tag-situation-177)　・　[仕送り (1)](#tag-situation-178)　・　[子どもの就学 (1)](#tag-situation-179)　・　[子どもの誕生・養育 (1)](#tag-situation-180)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-181)　・　[子への訃報 (1)](#tag-situation-182)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-183)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-184)　・　[思春期 (1)](#tag-situation-185)　・　[支援の受入れ (1)](#tag-situation-186)　・　[氏族養育 (1)](#tag-situation-187)　・　[資格取得後の求職 (1)](#tag-situation-188)　・　[飼育動物の世話 (1)](#tag-situation-189)　・　[次便待ち (1)](#tag-situation-190)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-191)　・　[自動発生イベント (1428)](#tag-situation-192)　・　[湿地地勢 (1)](#tag-situation-193)　・　[守秘と名簿 (1)](#tag-situation-194)　・　[種族差別 (2)](#tag-situation-195)　・　[種族差別後 (1)](#tag-situation-196)　・　[酒類の仕入れ帳 (1)](#tag-situation-197)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-198)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-199)　・　[授業担当者との接点 (1)](#tag-situation-200)　・　[収容・隔離中 (1)](#tag-situation-201)　・　[収容・隔離中の診療 (1)](#tag-situation-202)　・　[収容中 (4)](#tag-situation-203)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-204)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-205)　・　[就労中 (2)](#tag-situation-206)　・　[就労中の鉱夫 (1)](#tag-situation-207)　・　[住居差別 (1)](#tag-situation-208)　・　[住居差別後 (1)](#tag-situation-209)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-210)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-211)　・　[宿泊拒否 (1)](#tag-situation-212)　・　[宿泊拒否後 (1)](#tag-situation-213)　・　[出場・観戦・場外見物 (1)](#tag-situation-214)　・　[所持金による本文・選択肢 (1)](#tag-situation-215)　・　[小舞台 (1)](#tag-situation-216)　・　[少年・青年 (2)](#tag-situation-217)　・　[少年・青年・壮年 (3)](#tag-situation-218)　・　[消息不明者の生存確認 (1)](#tag-situation-219)　・　[症状進行中 (1)](#tag-situation-220)　・　[情報網の高い居住地 (1)](#tag-situation-221)　・　[条件付き本文 (210)](#tag-situation-222)　・　[職業課程の継続 (1)](#tag-situation-223)　・　[職業課程の修了 (1)](#tag-situation-224)　・　[職業条件あり (71)](#tag-situation-225)　・　[職場・近隣で露見の兆し (1)](#tag-situation-226)　・　[職場の排斥 (1)](#tag-situation-227)　・　[食堂の客足 (1)](#tag-situation-228)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-229)　・　[食料不足 (1)](#tag-situation-230)　・　[森林地勢 (1)](#tag-situation-231)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-232)　・　[親の家計判断 (1)](#tag-situation-233)　・　[親の感染 (1)](#tag-situation-234)　・　[親の死後 (1)](#tag-situation-235)　・　[親子の記憶 (1)](#tag-situation-236)　・　[診断済み (1)](#tag-situation-237)　・　[診断済み・未治療 (1)](#tag-situation-238)　・　[診療・休養・記録から選択 (1)](#tag-situation-239)　・　[診療・作業調整 (1)](#tag-situation-240)　・　[診療・支援・休息・緩和希望の記録 (1)](#tag-situation-241)　・　[診療・動作を避ける選択 (1)](#tag-situation-242)　・　[診療・付き添いの依頼 (1)](#tag-situation-243)　・　[診療・負担軽減から選択 (1)](#tag-situation-244)　・　[診療延期後 (1)](#tag-situation-245)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-246)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-247)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-248)　・　[身近な人への支援依頼 (1)](#tag-situation-249)　・　[身近な連絡先あり (1)](#tag-situation-250)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-251)　・　[睡眠不足 (1)](#tag-situation-252)　・　[世界イベント後 (1)](#tag-situation-253)　・　[成人 (4)](#tag-situation-254)　・　[成人・返済支援の選択 (1)](#tag-situation-255)　・　[成人した子 (2)](#tag-situation-256)　・　[成人の種族偏見に触れる (1)](#tag-situation-257)　・　[生活上の備え (1)](#tag-situation-258)　・　[青年・壮年 (5)](#tag-situation-259)　・　[青年・壮年・老年 (3)](#tag-situation-260)　・　[雪祭司・聖樹 (1)](#tag-situation-261)　・　[選択イベント (1104)](#tag-situation-262)　・　[前段で残留した人 (1)](#tag-situation-263)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-264)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-265)　・　[全年齢の重い病状 (1)](#tag-situation-266)　・　[全年齢の循環器系エピソード (1)](#tag-situation-267)　・　[全年齢の食料不足 (1)](#tag-situation-268)　・　[全年齢の負傷後の痛み (1)](#tag-situation-269)　・　[組織・所属に言及 (175)](#tag-situation-270)　・　[組織離脱後 (1)](#tag-situation-271)　・　[相談・医療・休養 (1)](#tag-situation-272)　・　[相談・記録 (1)](#tag-situation-273)　・　[相談・記録・経路変更 (1)](#tag-situation-274)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-275)　・　[足場や荷の異常 (1)](#tag-situation-276)　・　[体力0の危篤状態 (1)](#tag-situation-277)　・　[退会後の関係 (1)](#tag-situation-278)　・　[退職選択 (1)](#tag-situation-279)　・　[大いなる静謐後 (1)](#tag-situation-280)　・　[大学課程の継続 (1)](#tag-situation-281)　・　[大学課程の修了 (1)](#tag-situation-282)　・　[短期雇用 (1)](#tag-situation-283)　・　[短期雇用と現場危険 (1)](#tag-situation-284)　・　[地域の供給不安定 (1)](#tag-situation-285)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-286)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-287)　・　[地域学習会・独学の選択 (1)](#tag-situation-288)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-289)　・　[仲間の捜索 (1)](#tag-situation-290)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-291)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-292)　・　[通学していない (1)](#tag-situation-293)　・　[通学中 (1)](#tag-situation-294)　・　[通行止め・迂回 (1)](#tag-situation-295)　・　[天災・戦乱による避難中 (1)](#tag-situation-296)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-297)　・　[店舗からの排斥集会 (1)](#tag-situation-298)　・　[転居後の近隣交流 (1)](#tag-situation-299)　・　[都市街区での襲撃 (1)](#tag-situation-300)　・　[動的表示条件 (694)](#tag-situation-301)　・　[動的本文 (32)](#tag-situation-302)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-303)　・　[同一都市の周縁区への転居 (1)](#tag-situation-304)　・　[同郷者との交流 (1)](#tag-situation-305)　・　[同行者との交流 (1)](#tag-situation-306)　・　[匿名動画の出所確認 (1)](#tag-situation-307)　・　[独立商業所属 (1)](#tag-situation-308)　・　[読み書きに困難がある (1)](#tag-situation-309)　・　[日雇い (1)](#tag-situation-310)　・　[乳児の成長 (1)](#tag-situation-311)　・　[任意応募・採用選考 (1)](#tag-situation-312)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-313)　・　[年齢：35歳以上 (2)](#tag-situation-314)　・　[年齢：児童 (974)](#tag-situation-315)　・　[年齢：少年 (1210)](#tag-situation-316)　・　[年齢：青年 (2383)](#tag-situation-317)　・　[年齢：壮年 (2323)](#tag-situation-318)　・　[年齢：乳児 (20)](#tag-situation-319)　・　[年齢：幼児 (36)](#tag-situation-320)　・　[年齢：老年 (1525)](#tag-situation-321)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-322)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-323)　・　[配給・食料不足 (1)](#tag-situation-324)　・　[配給・寝床・診療案内 (1)](#tag-situation-325)　・　[配給と地域支援 (1)](#tag-situation-326)　・　[配給登録 (1)](#tag-situation-327)　・　[配偶者との死別 (1)](#tag-situation-328)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-329)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-330)　・　[班間の点検記録 (1)](#tag-situation-331)　・　[班内の技能伝達 (1)](#tag-situation-332)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-333)　・　[避難中 (1)](#tag-situation-334)　・　[非感染者 (1)](#tag-situation-335)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-336)　・　[付き添い依頼・受診延期 (1)](#tag-situation-337)　・　[付き添い相談 (1)](#tag-situation-338)　・　[扶養中の子 (2)](#tag-situation-339)　・　[扶養中の子の看病 (1)](#tag-situation-340)　・　[負傷後の職務調整 (1)](#tag-situation-341)　・　[部品寸法 (1)](#tag-situation-342)　・　[復旧作業中の負傷 (1)](#tag-situation-343)　・　[粉塵への接触懸念 (1)](#tag-situation-344)　・　[粉塵曝露 (2)](#tag-situation-345)　・　[兵士の消息不明 (1)](#tag-situation-346)　・　[兵役招集 (1)](#tag-situation-347)　・　[別居・転居 (1)](#tag-situation-348)　・　[亡命・移住 (2)](#tag-situation-349)　・　[未診断の感染者 (1)](#tag-situation-350)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-351)　・　[未成年は養育者判断 (8)](#tag-situation-352)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-353)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-354)　・　[名前を知る相手 (1)](#tag-situation-355)　・　[夜間の世話 (1)](#tag-situation-356)　・　[友人との文通再開 (1)](#tag-situation-357)　・　[友人への恋心 (1)](#tag-situation-358)　・　[傭兵・護衛勤務 (1)](#tag-situation-359)　・　[傭兵隊の護衛契約 (1)](#tag-situation-360)　・　[傭兵隊の通過 (1)](#tag-situation-361)　・　[幼い子の養育 (1)](#tag-situation-362)　・　[用事の再開・再診 (1)](#tag-situation-363)　・　[養育者の視点 (1)](#tag-situation-364)　・　[離婚後の元配偶者の死 (1)](#tag-situation-365)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-366)　・　[離婚後の子育て・連絡 (1)](#tag-situation-367)　・　[龍門 (1)](#tag-situation-368)　・　[龍門の移動都市居住区 (1)](#tag-situation-369)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-370)　・　[龍門の商業街 (1)](#tag-situation-371)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-372)　・　[隣人との死別 (1)](#tag-situation-373)　・　[隣人との伝言再開 (1)](#tag-situation-374)　・　[隣人の消息不明 (1)](#tag-situation-375)　・　[隣人の生存確認 (1)](#tag-situation-376)　・　[連絡・休息の継続 (1)](#tag-situation-377)　・　[連絡先と家の用事の相談 (1)](#tag-situation-378)　・　[労務補償 (1)](#tag-situation-379)
 
 <a id="tag-situation-0"></a>
 ### 1072年以降は戦役後の導入文（1）
@@ -11841,78 +11841,82 @@
 - [kaz_knight_injury_adaptation](#event-kaz_knight_injury_adaptation) — 競技中に深く傷めた肩が、腕を高く上げる作業や重い荷を抱えるたびに鈍く疼く。競技場からは治療費も補償の音沙汰もないまま、この身体でどうやって日々の仕事…
 
 <a id="tag-situation-241"></a>
+### 診療・支援・休息・緩和希望の記録（1）
+- [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
+
+<a id="tag-situation-242"></a>
 ### 診療・動作を避ける選択（1）
 - [life_medical_injury](#event-life_medical_injury) — 表の傷口はふさがったのに、重い物を持ち上げると奥が鋭く疼く。帰り道でも痛みに足を引きずり、何度か立ち止まって息をついた。
 
-<a id="tag-situation-242"></a>
+<a id="tag-situation-243"></a>
 ### 診療・付き添いの依頼（1）
 - [life_medical_nerve](#event-life_medical_nerve) — ふいに視界がぐらりと揺れ、片方の手足からすっと力が抜けた。路地の壁に慌てて手をつき、冷たい石の感触にすがりながらめまいが引くのを待った。
 
-<a id="tag-situation-243"></a>
+<a id="tag-situation-244"></a>
 ### 診療・負担軽減から選択（1）
 - [life_medical_circulation](#event-life_medical_circulation) — 階段や坂を上るたびに心臓が早鐘を打ち、胸の奥を掴まれたように足が止まる。腰を下ろして息をついても、鉛のような重苦しさがなかなか消えない。
 
-<a id="tag-situation-244"></a>
+<a id="tag-situation-245"></a>
 ### 診療延期後（1）
 - [earth_discr_clinic_return](#event-earth_discr_clinic_return) — 前の受診を諦めてから、いつの間にか月が変わってしまった。薬の残りは心細いが、あの裏口の冷たい空気を思い出すと足がすくむ。
 
-<a id="tag-situation-245"></a>
+<a id="tag-situation-246"></a>
 ### 診療所の受付で順番を譲らされる（1）
 - [attitude_infected_child](#event-attitude_infected_child) — 診療所の軒先で、鉱石病の患者が受付の列から外れるよう言い渡されていた。周りの大人たちは理由も言わず、手で追い払うような仕草をして距離を取っている。
 
-<a id="tag-situation-246"></a>
+<a id="tag-situation-247"></a>
 ### 診療窓口で別窓口へ回される（1）
 - [earth_discr_clinic_entry](#event-earth_discr_clinic_entry) — 診療所の受付で順番を待つうち、係の者から「感染者は裏の別窓口へ回れ」と冷たく言われた。そちらには案内板すらなく、いつ薬を受け取れるかも分からない。仕…
 
-<a id="tag-situation-247"></a>
+<a id="tag-situation-248"></a>
 ### 診療窓口の担当者との再接触（1）
 - [people_clinic_followup](#event-people_clinic_followup) — しばらく足が遠のいていた診療所の近くを通りかかり、以前親切に応対してくれた職員の顔を思い出した。今もあの窓口にいるだろうか。
 
-<a id="tag-situation-248"></a>
+<a id="tag-situation-249"></a>
 ### 身近な人への支援依頼（1）
 - [chi](#event-chi) — 夜の食卓で茶を飲みながら、{sp}とそろそろ子どもを持つか話し合った。部屋の広さやこれからの稼ぎ、いざという時に頼れる人の顔を思い浮かべた。
 
-<a id="tag-situation-249"></a>
+<a id="tag-situation-250"></a>
 ### 身近な連絡先あり（1）
 - [life_severe_illness_companionship](#event-life_severe_illness_companionship) — 病が深まり、一日の大半を寝床で過ごすようになった。窓から差す光の傾きを眺めながら、そばにいてくれる人へ何を伝え、残りの時間をどう過ごすか考えた。
 
-<a id="tag-situation-250"></a>
+<a id="tag-situation-251"></a>
 ### 水路の利用順をめぐる家々の相談（1）
 - [sar_tribe](#event-sar_tribe) — オアシスから延びる細い水路の堰の前で、顔見知りの二つの家が水を引く順番をめぐって言い争っていた。通りかかったあなたを見止めると、双方が「お前もここで…
 
-<a id="tag-situation-251"></a>
+<a id="tag-situation-252"></a>
 ### 睡眠不足（1）
 - [f55](#event-f55) — 夜中に{careKid}が熱を出してぐずり、いつでも水を飲ませられるよう枕元に付きっきりだった。朝日が差すころには、自分の目もすっかり充血していた。…
 
-<a id="tag-situation-252"></a>
+<a id="tag-situation-253"></a>
 ### 世界イベント後（1）
 - [f100](#event-f100) — 食堂で一人の名が出ると、周囲の話し声がぴたりと途切れた。店主が無言で通り側の窓を閉め、冷めた茶の器を下げていく。重苦しい沈黙の意味を、帰り道もずっと…
 
-<a id="tag-situation-253"></a>
+<a id="tag-situation-254"></a>
 ### 成人（4）
 - [bol_dossoles_traveler_account](#event-bol_dossoles_traveler_account) — 街道沿いの荷馬車の休憩所で、東へ向かうくたびれた旅人と相席になった。せっかくドッソレスの近くまで来たのに、乗り継ぎの運賃すら足りず、華やかな街を遠く…
 - [earth_discr_sarkaz_work_later](#event-earth_discr_sarkaz_work_later) — サルカズだというだけで門前払いされた苦い記憶がまだ残るなか、知人づてに次の仕事を紹介してくれるという人物と会うことになった。自分の腕とこれまでの経緯…
 - [earth_discr_sarkaz_lodging](#event-earth_discr_sarkaz_lodging) — 用事で訪れた街の安宿で空き部屋を尋ねると、帳場の主人はあなたの姿を見るなり「荒っぽい兵隊は他所へ行ってくれ」と手を振った。傭兵ではないと説明する間も…
 - [earth_discr_tara_language](#event-earth_discr_tara_language) — 職場の休憩中、ターラー出身の同僚が故郷の言葉で古い歌を口ずさんだ。すると別の同僚が「ここではその田舎言葉を引っ込めろ」と険しい声で遮った。仕事の指示…
 
-<a id="tag-situation-254"></a>
+<a id="tag-situation-255"></a>
 ### 成人・返済支援の選択（1）
 - [rim_debt](#event-rim_debt) — 生まれ育った大家族の集まりで、身内の一人が首の回らないほどの借金を抱えていると打ち明けられた。みんなで金を出し合って尻拭いをするか、本人に始末をつけ…
 
-<a id="tag-situation-255"></a>
+<a id="tag-situation-256"></a>
 ### 成人した子（2）
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
 - [adult_child_memory](#event-adult_child_memory) — （動的本文）
 
-<a id="tag-situation-256"></a>
+<a id="tag-situation-257"></a>
 ### 成人の種族偏見に触れる（1）
 - [attitude_sarkaz_child](#event-attitude_sarkaz_child) — 賑わう市場の露店の前で、サルカズの荷運び人が売り物に手を触れたと店主から怒鳴られていた。そばで見ていた大人が「これだからサルカズは油断ならない」と吐…
 
-<a id="tag-situation-257"></a>
+<a id="tag-situation-258"></a>
 ### 生活上の備え（1）
 - [earth_discr_sarkaz_lodging_later](#event-earth_discr_sarkaz_lodging_later) — あの夜、宿の戸口で追い返された記憶が消えず、遠出の用事が入るたびに「今夜はどこで眠れるだろう」と真っ先に気をもむようになった。
 
-<a id="tag-situation-258"></a>
+<a id="tag-situation-259"></a>
 ### 青年・壮年（5）
 - [lon_merchant](#event-lon_merchant) — 龍門の賑やかな商業通りで、空きが出たばかりの小さな露店を引き継がないかと声がかかった。権利金と仕入れで50万龍門幣。当たれば大きいが、客がつかなくて…
 - [hig_tension](#event-hig_tension) — 北院と南院の睨み合いや、海の向こうのウルサスとのいくさ話が、仕事帰りの茶屋でもしきりに囁かれるようになった。辻の掲示板には、近隣の陣屋が兵站や街道警…
@@ -11920,17 +11924,17 @@
 - [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
 
-<a id="tag-situation-259"></a>
+<a id="tag-situation-260"></a>
 ### 青年・壮年・老年（3）
 - [bol_local_contract](#event-bol_local_contract) — 市場の木の掲示板に、農作物の袋詰め、採鉱道具の修理、そして街道を行く荷車の護衛という三つの日雇い募集が並んでいた。どれも数日ポッキリの口で、危険の度…
 - [sie_seasonal_work](#event-sie_seasonal_work) — 観光シーズンの到来とともに、海辺の食堂に「配膳・洗い場急募」の木札が下がった。裏の倉庫街でも、土産物の荷ほどきを手伝う短期の人手を探している。
 - [life_violence_threat_safety](#event-life_violence_threat_safety) — 帰り道で浴びせられた脅し文句が、扉の鍵を閉めたあとも耳の奥にこびりついている。翌朝、表へ出る前に足がすくんだ。どうやって自分の身を守るか考えなければ…
 
-<a id="tag-situation-260"></a>
+<a id="tag-situation-261"></a>
 ### 雪祭司・聖樹（1）
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 
-<a id="tag-situation-261"></a>
+<a id="tag-situation-262"></a>
 ### 選択イベント（1104）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
@@ -12575,7 +12579,7 @@
 - [life_ursus_classmate_contact](#event-life_ursus_classmate_contact) — よく学校を休む同級生が、休み時間に遠慮がちにノートを見せてほしいと声をかけてきた。机を寄せて黒板を写したページを開く。これからも気に留めてやるか、距…
 - [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
+- [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
 - [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_arts_overload_crisis](#event-life_arts_overload_crisis) — 激しい精神の昂ぶりと疲弊のなか、体内の源石結晶が異常励起を起こし、アーツの奔流が意識の制御を離れて逆流し始めた。皮膚下の結晶が赤黒く脈打って熱を帯び…
@@ -13037,31 +13041,35 @@
 - [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
-<a id="tag-situation-262"></a>
+<a id="tag-situation-263"></a>
 ### 前段で残留した人（1）
 - [kazdel_afterfall](#event-kazdel_afterfall) — 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
 
-<a id="tag-situation-263"></a>
+<a id="tag-situation-264"></a>
 ### 全年齢の急なめまい・運動困難（1）
 - [life_medical_nerve](#event-life_medical_nerve) — ふいに視界がぐらりと揺れ、片方の手足からすっと力が抜けた。路地の壁に慌てて手をつき、冷たい石の感触にすがりながらめまいが引くのを待った。
 
-<a id="tag-situation-264"></a>
+<a id="tag-situation-265"></a>
 ### 全年齢の呼吸器系エピソード（1）
 - [life_medical_respiratory](#event-life_medical_respiratory) — 浅い息をするたびに胸の奥がヒューヒューと鳴り、熱が幾日も引かない。朝起き上がれずに仕事や外の用事を休んだまま、診療所までの足代と手元の小銭を数えた。
 
-<a id="tag-situation-265"></a>
+<a id="tag-situation-266"></a>
+### 全年齢の重い病状（1）
+- [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
+
+<a id="tag-situation-267"></a>
 ### 全年齢の循環器系エピソード（1）
 - [life_medical_circulation](#event-life_medical_circulation) — 階段や坂を上るたびに心臓が早鐘を打ち、胸の奥を掴まれたように足が止まる。腰を下ろして息をついても、鉛のような重苦しさがなかなか消えない。
 
-<a id="tag-situation-266"></a>
+<a id="tag-situation-268"></a>
 ### 全年齢の食料不足（1）
 - [life_medical_nutrition](#event-life_medical_nutrition) — 一日の食事を一度に減らす日が続き、朝起きても手足に力が入らない。空腹をごまかすために水ばかり飲みながら、戸棚の奥に残ったわずかな乾物を数えた。
 
-<a id="tag-situation-267"></a>
+<a id="tag-situation-269"></a>
 ### 全年齢の負傷後の痛み（1）
 - [life_medical_injury](#event-life_medical_injury) — 表の傷口はふさがったのに、重い物を持ち上げると奥が鋭く疼く。帰り道でも痛みに足を引きずり、何度か立ち止まって息をついた。
 
-<a id="tag-situation-268"></a>
+<a id="tag-situation-270"></a>
 ### 組織・所属に言及（175）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [loan_shark_siracusa](#event-loan_shark_siracusa) — シラクーザの馴染みの食堂の奥席で、ファミリーの会計役が濃い珈琲のカップを置き、折り畳んだ証文を差し出した。「いま困っているなら融通しよう。返すのは二…
@@ -13239,124 +13247,128 @@
 - [car_sir_soldier_choice_turf_war](#event-car_sir_soldier_choice_turf_war) — 隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。…
 - [cl_siracusa_market_patron](#event-cl_siracusa_market_patron) — シラクーザの市場で店の手伝いを頼まれたが、店主は毎月の売り上げとは別に、地元のファミリーへ納める金を裏帳面に書き込んでいた。表の帳面だけをつけるか、…
 
-<a id="tag-situation-269"></a>
+<a id="tag-situation-271"></a>
 ### 組織離脱後（1）
 - [earth_discr_exclusion_redress](#event-earth_discr_exclusion_redress) — かつて感染者を締め出す運動に加わっていた街区を歩いていると、会を抜けた今も、当時の『感染者お断り』の木札が店先にぶら下がっていた。通りかかった感染者…
 
-<a id="tag-situation-270"></a>
+<a id="tag-situation-272"></a>
 ### 相談・医療・休養（1）
 - [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
 
-<a id="tag-situation-271"></a>
+<a id="tag-situation-273"></a>
 ### 相談・記録（1）
 - [life_harassment_threat_escalation](#event-life_harassment_threat_escalation) — かつて仕事場や宿で締め出されたいきさつを知る連中に、夕暮れの帰り道で取り囲まれ、次に見かけたらただでは置かないと罵声を浴びせられた。部屋へ逃げ帰って…
 
-<a id="tag-situation-272"></a>
+<a id="tag-situation-274"></a>
 ### 相談・記録・経路変更（1）
 - [life_violence_threat_safety](#event-life_violence_threat_safety) — 帰り道で浴びせられた脅し文句が、扉の鍵を閉めたあとも耳の奥にこびりついている。翌朝、表へ出る前に足がすくんだ。どうやって自分の身を守るか考えなければ…
 
-<a id="tag-situation-273"></a>
+<a id="tag-situation-275"></a>
 ### 葬送への移動・遺族への送金（1）
 - [family_sibling_bereavement](#event-family_sibling_bereavement) — {siblingDeathTiming}、{sibling}が亡くなったという知らせが届いた。死因は{siblingDeathCause}だという。…
 
-<a id="tag-situation-274"></a>
+<a id="tag-situation-276"></a>
 ### 足場や荷の異常（1）
 - [life_unexpected_rescue](#event-life_unexpected_rescue) — 現場の足場板が腐って浮き上がり、頭上の荷台で重い資材が嫌な音を立てて傾いていた。このまま作業を続ければ崩れ落ちるかもしれない。
 
-<a id="tag-situation-275"></a>
+<a id="tag-situation-277"></a>
+### 体力0の危篤状態（1）
+- [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
+
+<a id="tag-situation-278"></a>
 ### 退会後の関係（1）
 - [life_infected_organization_exit_legacy](#event-life_infected_organization_exit_legacy) — あの会を離れてから何年もの月日が流れた。ある日、今の世話役から「あなたが関わっていた頃のいきさつを教えてほしい」と便りが届いた。過去のことにどう向き…
 
-<a id="tag-situation-276"></a>
+<a id="tag-situation-279"></a>
 ### 退職選択（1）
 - [old_followup](#event-old_followup) — 仕事の時間を減らしてから何年かが過ぎた。体をいたわる暮らしには慣れたものの、懐具合や体力の衰えは年々変わっていく。職場から、来期はどうするか声がかか…
 
-<a id="tag-situation-277"></a>
+<a id="tag-situation-280"></a>
 ### 大いなる静謐後（1）
 - [earth_discr_iberia_aegir_port](#event-earth_discr_iberia_aegir_port) — 港の作業員名簿に名を連ねようとした時、係官はあなたがエーギルだと知るなり目つきを変え、他の作業員には聞かない身の上まで根掘り葉掘り尋ねてきた。「大い…
 
-<a id="tag-situation-278"></a>
+<a id="tag-situation-281"></a>
 ### 大学課程の継続（1）
 - [uni_fee](#event-uni_fee) — 新年度の登録が始まり、学費の納付期限が迫ってきた。講義へ出る時間と日雇いで働く日数をどうやりくりするか頭を悩ませた。
 
-<a id="tag-situation-279"></a>
+<a id="tag-situation-282"></a>
 ### 大学課程の修了（1）
 - [uni_final_fee](#event-uni_final_fee) — 最終年度の学費と部屋代の支払いが同じ月に重なった。卒業証書を手にするには、この最後の支払いだけはなんとしても乗り切らなければならない。
 
-<a id="tag-situation-280"></a>
+<a id="tag-situation-283"></a>
 ### 短期雇用（1）
 - [bol_dossoles_championship_work](#event-bol_dossoles_championship_work) — 水上競技大会で沸き返るドッソレスの荷受け場に、仮設スタンドを組む数日間の急募が出ていた。日当は悪くない。今の仕事や予定と折り合いがつくか考えた。
 
-<a id="tag-situation-281"></a>
+<a id="tag-situation-284"></a>
 ### 短期雇用と現場危険（1）
 - [bol_local_contract](#event-bol_local_contract) — 市場の木の掲示板に、農作物の袋詰め、採鉱道具の修理、そして街道を行く荷車の護衛という三つの日雇い募集が並んでいた。どれも数日ポッキリの口で、危険の度…
 
-<a id="tag-situation-282"></a>
+<a id="tag-situation-285"></a>
 ### 地域の供給不安定（1）
 - [local_food_shortage](#event-local_food_shortage) — 市場の棚は歯が抜けたように空いていた。荷馬車や輸送便がいつ着くかは日によってまちまちで、店主も首を振るばかりだ。財布の底の硬貨を指で数えながら、今日…
 
-<a id="tag-situation-283"></a>
+<a id="tag-situation-286"></a>
 ### 地域の診療先状況で一部選択肢を表示（1）
 - [ori_rhodes_examination_contact](#event-ori_rhodes_examination_contact) — 鉱石病の診断は出たものの、通院のたびに飛んでいく薬代と、仕事を抜ける穴埋めが重くのしかかる。近くの診療所で様子を見てもらうか、専門の療養先を探し回る…
 
-<a id="tag-situation-284"></a>
+<a id="tag-situation-287"></a>
 ### 地域の診療先状況で本文・選択肢が変化（2）
 - [ori_diagnosis_decision](#event-ori_diagnosis_decision) — （動的本文）
 - [ori_followup_access](#event-ori_followup_access) — （動的本文）
 
-<a id="tag-situation-285"></a>
+<a id="tag-situation-288"></a>
 ### 地域学習会・独学の選択（1）
 - [v77_child_informal_study](#event-v77_child_informal_study) — 家に届いた書き付けや店の帳面の字が読めず、周りの大人に読み上げてもらうしかなかった。学校という場所には、もうしばらく通っていない。
 
-<a id="tag-situation-286"></a>
+<a id="tag-situation-289"></a>
 ### 地域診療所・互助先・ロドス（1）
 - [family_spouse_infection_care](#event-family_spouse_infection_care) — 配偶者が鉱石病を打ち明けてから日がたったが、まだ本格的な治療には通えていない。かさむ薬代と通院の交通費、それに仕事を休めるかどうかを食卓で突き合わせ…
 
-<a id="tag-situation-287"></a>
+<a id="tag-situation-290"></a>
 ### 仲間の捜索（1）
 - [f111](#event-f111) — 工業区域の角で、工員たちが仲間を捜す準備をしていた。油まみれの服を着た数人が声を潜めて地図を囲み、最後に姿を見た場所や裏路地の抜け道を確かめ合ってい…
 
-<a id="tag-situation-288"></a>
+<a id="tag-situation-291"></a>
 ### 帳簿・窓口補助の学び直し（1）
 - [kaz_knight_injury_job_transition](#event-kaz_knight_injury_job_transition) — 古傷の肩をかばいながら働く要領は覚えたものの、無理が重なる日は夜も眠れないほど疼く。街の求人板で帳簿つけや受付補助の募集を見かけ、力仕事を離れて新し…
 
-<a id="tag-situation-289"></a>
+<a id="tag-situation-292"></a>
 ### 追随・理由を尋ねる選択（1）
 - [attitude_infected_child](#event-attitude_infected_child) — 診療所の軒先で、鉱石病の患者が受付の列から外れるよう言い渡されていた。周りの大人たちは理由も言わず、手で追い払うような仕草をして距離を取っている。
 
-<a id="tag-situation-290"></a>
+<a id="tag-situation-293"></a>
 ### 通学していない（1）
 - [v77_child_informal_study](#event-v77_child_informal_study) — 家に届いた書き付けや店の帳面の字が読めず、周りの大人に読み上げてもらうしかなかった。学校という場所には、もうしばらく通っていない。
 
-<a id="tag-situation-291"></a>
+<a id="tag-situation-294"></a>
 ### 通学中（1）
 - [people_school_introduction](#event-people_school_introduction) — 放課後の教室で、授業を受け持つ先生が教卓の上のプリントを揃えていた。手元のノートには、授業中に聞きそびれた疑問がいくつも残っている。
 
-<a id="tag-situation-292"></a>
+<a id="tag-situation-295"></a>
 ### 通行止め・迂回（1）
 - [rim_transporter_mine_handoff_daily](#event-rim_transporter_mine_handoff_daily) — 鉱区の荷受け場で、まったく別方向の集落へ行く木箱が同じ荷台に乱雑に放り込まれていた。ちょうど天災トランスポーターが黒板に封鎖区画を書き足したところで…
 
-<a id="tag-situation-293"></a>
+<a id="tag-situation-296"></a>
 ### 天災・戦乱による避難中（1）
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
 
-<a id="tag-situation-294"></a>
+<a id="tag-situation-297"></a>
 ### 天災トランスポーターの帰路案内（1）
 - [rim_forecast_route_daily](#event-rim_forecast_route_daily) — 坑道から地上へ上がると、詰所の前で天災トランスポーターが帰路の案内札を掛け替えていた。煤けた黒板にはこれからの風向きと安全に通れる谷筋が短く記され、…
 
-<a id="tag-situation-295"></a>
+<a id="tag-situation-298"></a>
 ### 店舗からの排斥集会（1）
 - [v78_ideology_recruitment](#event-v78_ideology_recruitment) — 感染者を通りから締め出そうと息巻く連中から、次の集まりへ顔を出さないかと誘われた。「あいつらが俺たちの食い扶持を奪っている」と誰かが吐き捨てる。同じ…
 
-<a id="tag-situation-296"></a>
+<a id="tag-situation-299"></a>
 ### 転居後の近隣交流（1）
 - [neighbor_followup](#event-neighbor_followup) — 隣の{neighborName}が、湯気の立つ鉢を持って戸口を訪ねてきた。引っ越してきた日にこちらが差し入れた食べ物を覚えていて、「今日はお裾分けだ…
 
-<a id="tag-situation-297"></a>
+<a id="tag-situation-300"></a>
 ### 都市街区での襲撃（1）
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
-<a id="tag-situation-298"></a>
+<a id="tag-situation-301"></a>
 ### 動的表示条件（694）
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
@@ -13590,7 +13602,7 @@
 - [asset_daily_workshop_revenue](#event-asset_daily_workshop_revenue) — 工房の店先で注文主と打ち合わせをし、丹精込めて仕上げた品を納品した。手渡された代金を金庫に収め、自らの腕で稼ぎ出す手応えを噛み締めた。
 - [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
+- [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
 - [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_arts_overload_crisis](#event-life_arts_overload_crisis) — 激しい精神の昂ぶりと疲弊のなか、体内の源石結晶が異常励起を起こし、アーツの奔流が意識の制御を離れて逆流し始めた。皮膚下の結晶が赤黒く脈打って熱を帯び…
@@ -14053,7 +14065,7 @@
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
-<a id="tag-situation-299"></a>
+<a id="tag-situation-302"></a>
 ### 動的本文（32）
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
@@ -14088,57 +14100,57 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
 
-<a id="tag-situation-300"></a>
+<a id="tag-situation-303"></a>
 ### 同じ経験を持つ人との互助（1）
 - [v78_discriminated_victim_grief](#event-v78_discriminated_victim_grief) — 昔から顔を合わせれば挨拶していた近所の人が、あなたの鉱石病を知って以来、プイと横を向くようになった。夕暮れの店先でその背中を見かけ、声をかけるべきか…
 
-<a id="tag-situation-301"></a>
+<a id="tag-situation-304"></a>
 ### 同一都市の周縁区への転居（1）
 - [cl_urban_rent_pressure](#event-cl_urban_rent_pressure) — 移動都市の暮らしは、何をするにもまず部屋代が重くのしかかる。今月も袋の底の硬貨を数えるような有様で、路地裏の安宿や相部屋の貼り紙を見比べてはため息を…
 
-<a id="tag-situation-302"></a>
+<a id="tag-situation-305"></a>
 ### 同郷者との交流（1）
 - [f70](#event-f70) — 思いがけず故郷の言葉が通じる人と出会い、懐かしい料理の名前を次々に挙げ合った。同じ国を離れてきた身でも、胸にしまっている町の風景は少しずつ違っていた…
 
-<a id="tag-situation-303"></a>
+<a id="tag-situation-306"></a>
 ### 同行者との交流（1）
 - [f49](#event-f49) — 見張り任務の合間に、焚き火を囲んで仲間と夜通し語り合った。本名すら知らない相手にも、故郷に置いてきた家族や忘れられない景色があった。 隊商護衛の休憩…
 
-<a id="tag-situation-304"></a>
+<a id="tag-situation-307"></a>
 ### 匿名動画の出所確認（1）
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
 
-<a id="tag-situation-305"></a>
+<a id="tag-situation-308"></a>
 ### 独立商業所属（1）
 - [siracusa_wine_shop_ledger_daily](#event-siracusa_wine_shop_ledger_daily) — 店の扉を閉める前、店主に頼まれて木箱のワイン瓶と仕入れ帳をひと瓶ずつ照らし合わせた。ぶどうの産地を細かく尋ねる常連客にも淀みなく答えられるようになり…
 
-<a id="tag-situation-306"></a>
+<a id="tag-situation-309"></a>
 ### 読み書きに困難がある（1）
 - [v77_child_informal_study](#event-v77_child_informal_study) — 家に届いた書き付けや店の帳面の字が読めず、周りの大人に読み上げてもらうしかなかった。学校という場所には、もうしばらく通っていない。
 
-<a id="tag-situation-307"></a>
+<a id="tag-situation-310"></a>
 ### 日雇い（1）
 - [earth_discr_sarkaz_application](#event-earth_discr_sarkaz_application) — 荷運びの口があると聞いて仕事場を訪ね、これまでの経験を話すと、雇い主はあなたの角や顔つきをじろじろ見て「前の傭兵崩れと同じじゃないだろうな」と鼻で笑…
 
-<a id="tag-situation-308"></a>
+<a id="tag-situation-311"></a>
 ### 乳児の成長（1）
 - [f4](#event-f4) — あなたが初めて声を立てて笑うと、抱き上げていた{caregiver}もぱっと顔をほころばせた。
 
-<a id="tag-situation-309"></a>
+<a id="tag-situation-312"></a>
 ### 任意応募・採用選考（1）
 - [lon_guard](#event-lon_guard) — 龍門近衛局が街区を回る巡回要員を募集していた。採用されれば安定した給金が出るが、雑踏の揉め事や荒事に身を晒す仕事でもある。志願票を手に、今の暮らしと…
 
-<a id="tag-situation-310"></a>
+<a id="tag-situation-313"></a>
 ### 任期見直し・離職後の民間輸送（1）
 - [hig_service_review](#event-hig_service_review) — 陣屋で兵站と街道警備の務めに就いて三年が経ち、上役から次の任期も残るかと尋ねられた。このまま軍務を続けるか、覚えた荷捌きの腕を民間の輸送業で生かすか…
 
-<a id="tag-situation-311"></a>
+<a id="tag-situation-314"></a>
 ### 年齢：35歳以上（2）
 - [fam_care](#event-fam_care) — {parentName}の足腰と体調が目に見えて弱り、通院や日々の炊事・買い出しを一人でこなすのが難しくなってきた。自分の仕事や暮らしもあるなか、誰…
 - [fam_care_followup](#event-fam_care_followup) — 親の世話を始めてから二年が過ぎた。{parentName}の通院や身の回りの手伝いはまだ終わらず、こちらの体や暮らしの予定にも疲れが溜まってきている…
 
-<a id="tag-situation-312"></a>
-### 年齢：児童（975）
+<a id="tag-situation-315"></a>
+### 年齢：児童（974）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -14974,7 +14986,6 @@
 - [life_ursus_school_habit](#event-life_ursus_school_habit) — 学校へ通える日は、冷たい空気の教室で授業を受けた。試験が近づくにつれ、放課後に残って勉強するか、まっすぐ帰って家の手伝いをするか迷った。家に帰れば、…
 - [life_ursus_classmate_contact](#event-life_ursus_classmate_contact) — よく学校を休む同級生が、休み時間に遠慮がちにノートを見せてほしいと声をかけてきた。机を寄せて黒板を写したページを開く。これからも気に留めてやるか、距…
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
 - [ori_post_catastrophe_ground](#event-ori_post_catastrophe_ground) — 崩れた通りを歩いていると、ぬかるんだ土の中に黒く光る欠片がいくつも混じっているのが目に入った。ただの石炭か、それとも活性を持った源石の欠片か、遠目に…
 - [ori_school_fragment](#event-ori_school_fragment) — 遊びからの帰り道、前を歩いていた友だちが道端に落ちていた黒く光る石ころに手を伸ばした。ただのガラス片か源石の欠片か咄嗟には分からず、胸がひやりとした…
@@ -15115,8 +15126,8 @@
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
-<a id="tag-situation-313"></a>
-### 年齢：少年（1211）
+<a id="tag-situation-316"></a>
+### 年齢：少年（1210）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
@@ -16122,7 +16133,6 @@
 - [life_ursus_school_habit](#event-life_ursus_school_habit) — 学校へ通える日は、冷たい空気の教室で授業を受けた。試験が近づくにつれ、放課後に残って勉強するか、まっすぐ帰って家の手伝いをするか迷った。家に帰れば、…
 - [life_ursus_classmate_contact](#event-life_ursus_classmate_contact) — よく学校を休む同級生が、休み時間に遠慮がちにノートを見せてほしいと声をかけてきた。机を寄せて黒板を写したページを開く。これからも気に留めてやるか、距…
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
 - [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [ori_work_safety_instruction](#event-ori_work_safety_instruction) — 粉塵の舞う工程へ入る前、使い回しの手袋に黒っぽい粉がこびりついているのに気づいた。頭上の換気扇からは乾いた異音が響いている。
@@ -16329,8 +16339,8 @@
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
-<a id="tag-situation-314"></a>
-### 年齢：青年（2384）
+<a id="tag-situation-317"></a>
+### 年齢：青年（2383）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -18183,7 +18193,6 @@
 - [family_divorce_child_residence](#event-family_divorce_child_residence) — 別れた相手の訃報が届いた。手紙には、残された子どもが今誰の元で暮らしているのかまでは書かれていなかった。すぐにこちらで引き取ると伝えるか、親族に居場…
 - [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
 - [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_arts_overload_crisis](#event-life_arts_overload_crisis) — 激しい精神の昂ぶりと疲弊のなか、体内の源石結晶が異常励起を起こし、アーツの奔流が意識の制御を離れて逆流し始めた。皮膚下の結晶が赤黒く脈打って熱を帯び…
@@ -18716,8 +18725,8 @@
 - [parent_oripathy_death_4](#event-parent_oripathy_death_4) — {親の名}は鉱石病で亡くなった。遺体の結晶化が進んでいると告げられ、その場を離れるよう促された。持ち出せた荷を抱え、建物の外で身を寄せ合って待った。…
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 
-<a id="tag-situation-315"></a>
-### 年齢：壮年（2324）
+<a id="tag-situation-318"></a>
+### 年齢：壮年（2323）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -20520,7 +20529,6 @@
 - [family_divorce_child_residence](#event-family_divorce_child_residence) — 別れた相手の訃報が届いた。手紙には、残された子どもが今誰の元で暮らしているのかまでは書かれていなかった。すぐにこちらで引き取ると伝えるか、親族に居場…
 - [life_ursus_school_aid_later](#event-life_ursus_school_aid_later) — チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分か…
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
 - [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_arts_overload_crisis](#event-life_arts_overload_crisis) — 激しい精神の昂ぶりと疲弊のなか、体内の源石結晶が異常励起を起こし、アーツの奔流が意識の制御を離れて逆流し始めた。皮膚下の結晶が赤黒く脈打って熱を帯び…
@@ -21043,7 +21051,7 @@
 - [parent_oripathy_death_4](#event-parent_oripathy_death_4) — {親の名}は鉱石病で亡くなった。遺体の結晶化が進んでいると告げられ、その場を離れるよう促された。持ち出せた荷を抱え、建物の外で身を寄せ合って待った。…
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 
-<a id="tag-situation-316"></a>
+<a id="tag-situation-319"></a>
 ### 年齢：乳児（20）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [dg](#event-dg) — 収容先の薄暗い診察室で、肌に浮いた結晶は鉱石病だと告げられた。外の病院へは行けない。ここで抑制薬を出してもらえるのか、医師の顔を見つめた。 隔離区画…
@@ -21066,8 +21074,8 @@
 - [parent_oripathy_death_4](#event-parent_oripathy_death_4) — {親の名}は鉱石病で亡くなった。遺体の結晶化が進んでいると告げられ、その場を離れるよう促された。持ち出せた荷を抱え、建物の外で身を寄せ合って待った。…
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 
-<a id="tag-situation-317"></a>
-### 年齢：幼児（37）
+<a id="tag-situation-320"></a>
+### 年齢：幼児（36）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [bias_family_model](#event-bias_family_model) — 夕餉の食卓で、大人たちが近所にいる鉱石病患者の噂話をしていた。誰かが吐き捨てるように『ああいう連中は決まりも守らない』と言い、周りの大人も誰一人とし…
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
@@ -21096,7 +21104,6 @@
 - [family_daily_small_care](#event-family_daily_small_care) — （動的本文） {dailyFamilyName}と帰ると、食卓には冷めかけた汁物があった。今日見たものを話しながら、二人で湯を足した。 {daily…
 - [family_sibling_birth](#event-family_sibling_birth) — 親から、もうすぐ家に赤ん坊が生まれると聞かされた。嬉しい知らせのはずなのに、狭い部屋のどこに寝かせるか、食費やあなたの家の手伝いがどう増えるか、大人…
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [ori_diagnosis_decision](#event-ori_diagnosis_decision) — （動的本文）
 - [v77_social_stigma_family](#event-v77_social_stigma_family) — 町の食堂に入ると、感染者の隣人が隅の卓で一人黙々と匙を動かしていた。あからさまに席を立つ客もいれば、小さく会釈して通り過ぎる人もいる。家の大人の目が…
 - [parent_oripathy_death_1](#event-parent_oripathy_death_1) — 鉱石病で、{親の名}が亡くなった。息が途絶えたあとも、身体を覆う黒い結晶は残っていた。やがて遺体そのものが源石へ変わり、崩れれば粉が周りへ広がるのだ…
@@ -21106,8 +21113,8 @@
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
-<a id="tag-situation-318"></a>
-### 年齢：老年（1526）
+<a id="tag-situation-321"></a>
+### 年齢：老年（1525）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -22285,7 +22292,6 @@
 - [family_spouse_housing_choice](#event-family_spouse_housing_choice) — 離れて暮らす{sp}から、今の部屋の家賃や、もう少し落ち着いて眠れる場所に移りたいという相談が届いた。貸間の案内を見比べながら、相部屋にするか、今の…
 - [family_divorce_child_residence](#event-family_divorce_child_residence) — 別れた相手の訃報が届いた。手紙には、残された子どもが今誰の元で暮らしているのかまでは書かれていなかった。すぐにこちらで引き取ると伝えるか、親族に居場…
 - [life_medical_occupational](#event-life_medical_occupational) — 現場に出た日に限って咳と倦怠感がひどくなり、休みの日には少し和らぐ。埃っぽい工程を終えて外へ出ても、喉の奥にざらついた息苦しさが残っていた。うなりを…
-- [life_medical_urgent_review](#event-life_medical_urgent_review) — 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探し…
 - [life_medical_followup](#event-life_medical_followup) — 前回の診察で言われた再診の時期がやってきた。薬の残りも心もとない。診察代と通院の段取りを、家の者と相談した。
 - [life_mental_crisis_recurrence](#event-life_mental_crisis_recurrence) — （動的本文）
 - [life_arts_overload_crisis](#event-life_arts_overload_crisis) — 激しい精神の昂ぶりと疲弊のなか、体内の源石結晶が異常励起を起こし、アーツの奔流が意識の制御を離れて逆流し始めた。皮膚下の結晶が赤黒く脈打って熱を帯び…
@@ -22635,130 +22641,130 @@
 - [parent_oripathy_death_4](#event-parent_oripathy_death_4) — {親の名}は鉱石病で亡くなった。遺体の結晶化が進んでいると告げられ、その場を離れるよう促された。持ち出せた荷を抱え、建物の外で身を寄せ合って待った。…
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 
-<a id="tag-situation-319"></a>
+<a id="tag-situation-322"></a>
 ### 排斥への参加・黙認・拒否（1）
 - [v78_ideology_recruitment](#event-v78_ideology_recruitment) — 感染者を通りから締め出そうと息巻く連中から、次の集まりへ顔を出さないかと誘われた。「あいつらが俺たちの食い扶持を奪っている」と誰かが吐き捨てる。同じ…
 
-<a id="tag-situation-320"></a>
+<a id="tag-situation-323"></a>
 ### 排斥等に伴う脅迫が継続（1）
 - [life_violence_threat_safety](#event-life_violence_threat_safety) — 帰り道で浴びせられた脅し文句が、扉の鍵を閉めたあとも耳の奥にこびりついている。翌朝、表へ出る前に足がすくんだ。どうやって自分の身を守るか考えなければ…
 
-<a id="tag-situation-321"></a>
+<a id="tag-situation-324"></a>
 ### 配給・食料不足（1）
 - [f62](#event-f62) — その日の配給袋は、手にした瞬間に分かるほど軽かった。次の配布日まであと何回に分けて食べられるか、寝床の隅で中身を数え直した。 配給の品が一つ足りず、…
 
-<a id="tag-situation-322"></a>
+<a id="tag-situation-325"></a>
 ### 配給・寝床・診療案内（1）
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
 
-<a id="tag-situation-323"></a>
+<a id="tag-situation-326"></a>
 ### 配給と地域支援（1）
 - [lon_slum](#event-lon_slum) — かつて部屋を追い出されるように移ってきたこの下層街区で、食料と薬の炊き出しに長い列ができていた。自分の番が飛ばされないよう必死に引換券を握りしめる人…
 
-<a id="tag-situation-324"></a>
+<a id="tag-situation-327"></a>
 ### 配給登録（1）
 - [earth_discr_relief_follow](#event-earth_discr_relief_follow) — 先が見えない避難生活が続いている。今度の配給所でもよそ者だという理由で足止めされ、前に係員から聞いておいた手続きの話を持ち出した。
 
-<a id="tag-situation-325"></a>
+<a id="tag-situation-328"></a>
 ### 配偶者との死別（1）
 - [family_spouse_death](#event-family_spouse_death) — {spouseDeathTiming}、連れ合いの{sp}が亡くなったという知らせが届いた。食卓には二人で食べようと買っておいた食材がそのまま残り、…
 
-<a id="tag-situation-326"></a>
+<a id="tag-situation-329"></a>
 ### 配偶者の療養状態に応じた選択（1）
 - [family_spouse_treatment_review](#event-family_spouse_treatment_review) — 鉱石病のことを聞いてからも、まだ配偶者の通院先は決まっていない。薬代や交通費、仕事を休める日取りを二人で突き合わせ、どうにか受診を始められないか話し…
 
-<a id="tag-situation-327"></a>
+<a id="tag-situation-330"></a>
 ### 買い物の予算調整・近隣支援（1）
 - [local_food_shortage](#event-local_food_shortage) — 市場の棚は歯が抜けたように空いていた。荷馬車や輸送便がいつ着くかは日によってまちまちで、店主も首を振るばかりだ。財布の底の硬貨を指で数えながら、今日…
 
-<a id="tag-situation-328"></a>
+<a id="tag-situation-331"></a>
 ### 班間の点検記録（1）
 - [victoria_factory_drawing_notes_daily](#event-victoria_factory_drawing_notes_daily) — 蒸気機関の点検図を広げると、前の番の技師が鉛筆で残した微調整の寸法が余白に書き込まれていた。自分も今日取り替えた弁の癖を短く書き足して次の班へ引き継…
 
-<a id="tag-situation-329"></a>
+<a id="tag-situation-332"></a>
 ### 班内の技能伝達（1）
 - [ursus_factory_skill_handoff_daily](#event-ursus_factory_skill_handoff_daily) — 交替の汽笛が鳴る少し前、同じ班の古株が「こう締めるとネジ山が潰れない」と留め具の順番を見せてくれた。次の番からはそのやり方を真似てみると、夕方の腕の…
 
-<a id="tag-situation-330"></a>
+<a id="tag-situation-333"></a>
 ### 避難／後方荷役／残留・死亡分岐（1）
 - [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 
-<a id="tag-situation-331"></a>
+<a id="tag-situation-334"></a>
 ### 避難中（1）
 - [earth_discr_relief_follow](#event-earth_discr_relief_follow) — 先が見えない避難生活が続いている。今度の配給所でもよそ者だという理由で足止めされ、前に係員から聞いておいた手続きの話を持ち出した。
 
-<a id="tag-situation-332"></a>
+<a id="tag-situation-335"></a>
 ### 非感染者（1）
 - [v78_ideology_recruitment](#event-v78_ideology_recruitment) — 感染者を通りから締め出そうと息巻く連中から、次の集まりへ顔を出さないかと誘われた。「あいつらが俺たちの食い扶持を奪っている」と誰かが吐き捨てる。同じ…
 
-<a id="tag-situation-333"></a>
+<a id="tag-situation-336"></a>
 ### 貧困／感染診断／制度差別の条件（1）
 - [lon_slum](#event-lon_slum) — かつて部屋を追い出されるように移ってきたこの下層街区で、食料と薬の炊き出しに長い列ができていた。自分の番が飛ばされないよう必死に引換券を握りしめる人…
 
-<a id="tag-situation-334"></a>
+<a id="tag-situation-337"></a>
 ### 付き添い依頼・受診延期（1）
 - [earth_discr_clinic_entry](#event-earth_discr_clinic_entry) — 診療所の受付で順番を待つうち、係の者から「感染者は裏の別窓口へ回れ」と冷たく言われた。そちらには案内板すらなく、いつ薬を受け取れるかも分からない。仕…
 
-<a id="tag-situation-335"></a>
+<a id="tag-situation-338"></a>
 ### 付き添い相談（1）
 - [earth_discr_clinic_return](#event-earth_discr_clinic_return) — 前の受診を諦めてから、いつの間にか月が変わってしまった。薬の残りは心細いが、あの裏口の冷たい空気を思い出すと足がすくむ。
 
-<a id="tag-situation-336"></a>
+<a id="tag-situation-339"></a>
 ### 扶養中の子（2）
 - [family_child_crystal_exposure](#event-family_child_crystal_exposure) — 外から帰ってきた子どもが、「きれいな石を拾った」と黒く光る欠片を手のひらに乗せて見せてきた。近くの古い採掘跡から風で飛ばされてきた源石片らしい。子ど…
 - [family_child_exposure_followup](#event-family_child_exposure_followup) — （動的本文）
 
-<a id="tag-situation-337"></a>
+<a id="tag-situation-340"></a>
 ### 扶養中の子の看病（1）
 - [f55](#event-f55) — 夜中に{careKid}が熱を出してぐずり、いつでも水を飲ませられるよう枕元に付きっきりだった。朝日が差すころには、自分の目もすっかり充血していた。…
 
-<a id="tag-situation-338"></a>
+<a id="tag-situation-341"></a>
 ### 負傷後の職務調整（1）
 - [kaz_knight_injury_job_transition](#event-kaz_knight_injury_job_transition) — 古傷の肩をかばいながら働く要領は覚えたものの、無理が重なる日は夜も眠れないほど疼く。街の求人板で帳簿つけや受付補助の募集を見かけ、力仕事を離れて新し…
 
-<a id="tag-situation-339"></a>
+<a id="tag-situation-342"></a>
 ### 部品寸法（1）
 - [victoria_factory_drawing_notes_daily](#event-victoria_factory_drawing_notes_daily) — 蒸気機関の点検図を広げると、前の番の技師が鉛筆で残した微調整の寸法が余白に書き込まれていた。自分も今日取り替えた弁の癖を短く書き足して次の班へ引き継…
 
-<a id="tag-situation-340"></a>
+<a id="tag-situation-343"></a>
 ### 復旧作業中の負傷（1）
 - [v77_accidental_originium_cleanup](#event-v77_accidental_originium_cleanup) — 復旧現場の瓦礫を運んでいたとき、割れた源石片で手を切った。傷は塞がったが、しばらくして指先に黒い結晶が浮かび、熱とだるさが抜けなくなった。
 
-<a id="tag-situation-341"></a>
+<a id="tag-situation-344"></a>
 ### 粉塵への接触懸念（1）
 - [v77_accidental_originium_uncertain](#event-v77_accidental_originium_uncertain) — 廃材置き場の脇を通ったとき、破れた麻袋から黒っぽい粉がこぼれ、乾いた風に舞い上がっていた。ただの煤か源石の粉か見分けがつかず、慌てて口元を覆って袖を…
 
-<a id="tag-situation-342"></a>
+<a id="tag-situation-345"></a>
 ### 粉塵曝露（2）
 - [f48](#event-f48) — 坑道の粉塵を吸い込みすぎたのか、夜中にも乾いた咳が出る日が増えた。玄関先で作業着をはたくと、街灯の光の中に黒っぽい灰が舞い落ちた。 切羽から上がって…
 - [v77_accidental_transport_originium](#event-v77_accidental_transport_originium) — 職場の運搬車が損傷して積み荷の袋が破れ、黒い粉が舞った。近くにいたとき粉を吸い込み、その後から咳とだるさが続いた。
 
-<a id="tag-situation-343"></a>
+<a id="tag-situation-346"></a>
 ### 兵士の消息不明（1）
 - [f101](#event-f101) — 店の前の掲示板から、同じ通りに住む兵士の名が消えていた。角の商店先にいた家族は何も語らず、目を伏せたまま夕方の品物を袋に詰めていた。通りを歩く人々も…
 
-<a id="tag-situation-344"></a>
+<a id="tag-situation-347"></a>
 ### 兵役招集（1）
 - [fam_conscript](#event-fam_conscript) — 戦火が迫るなか、きょうだいの一人に部隊への招集状が届いた。泣き崩れる家族のそばで、免除を願い出るか、自分が身代わりに出るか、重苦しい相談が続いた。
 
-<a id="tag-situation-345"></a>
+<a id="tag-situation-348"></a>
 ### 別居・転居（1）
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
 
-<a id="tag-situation-346"></a>
+<a id="tag-situation-349"></a>
 ### 亡命・移住（2）
 - [f69](#event-f69) — 身を寄せた先の窓口で、耳慣れない土地の言い回しを早口で並べられた。聞き返しているうちに後ろの列が詰まり、背中に刺さる無言の視線に汗がにじんだ。 逃れ…
 - [f70](#event-f70) — 思いがけず故郷の言葉が通じる人と出会い、懐かしい料理の名前を次々に挙げ合った。同じ国を離れてきた身でも、胸にしまっている町の風景は少しずつ違っていた…
 
-<a id="tag-situation-347"></a>
+<a id="tag-situation-350"></a>
 ### 未診断の感染者（1）
 - [ori_diagnosis_decision](#event-ori_diagnosis_decision) — （動的本文）
 
-<a id="tag-situation-348"></a>
+<a id="tag-situation-351"></a>
 ### 未成年の家族支援／成人の短期就労（1）
 - [kazdel_rebuild](#event-kazdel_rebuild) — 落ち着かない仮住まいが続き、家の人は毎日の食べ物と燃料を手に入れるだけで精一杯だ。通りで同じ故郷の訛りや角の形を見かけるたび、思わず目で追ってしまう…
 
-<a id="tag-situation-349"></a>
+<a id="tag-situation-352"></a>
 ### 未成年は養育者判断（8）
 - [life_medical_respiratory](#event-life_medical_respiratory) — 浅い息をするたびに胸の奥がヒューヒューと鳴り、熱が幾日も引かない。朝起き上がれずに仕事や外の用事を休んだまま、診療所までの足代と手元の小銭を数えた。
 - [life_medical_circulation](#event-life_medical_circulation) — 階段や坂を上るたびに心臓が早鐘を打ち、胸の奥を掴まれたように足が止まる。腰を下ろして息をついても、鉛のような重苦しさがなかなか消えない。
@@ -22769,111 +22775,111 @@
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
 - [life_rehabilitation_followup](#event-life_rehabilitation_followup) — ひどい熱や痛みはどうにか峠を越えたが、少し長く歩いた翌朝は鉛を背負ったように体が重い。焦る気持ちを抑えながら、朝の家事を一つ済ませて体の具合を確かめ…
 
-<a id="tag-situation-350"></a>
+<a id="tag-situation-353"></a>
 ### 未成年は養育者判断／移住支援・残留（1）
 - [sie_volcano](#event-sie_volcano) — 夏の祭典の熱気が冷めたころ、役所から新設される移動都市への移住案内が配られた。火山の活動が年々激しくなり、この美しい浜辺の街を丸ごと移すのだという。…
 
-<a id="tag-situation-351"></a>
+<a id="tag-situation-354"></a>
 ### 未成年は養育者判断／成人は本人判断（1）
 - [kaz_exile](#event-kaz_exile) — 内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。
 
-<a id="tag-situation-352"></a>
+<a id="tag-situation-355"></a>
 ### 名前を知る相手（1）
 - [neighbor_followup](#event-neighbor_followup) — 隣の{neighborName}が、湯気の立つ鉢を持って戸口を訪ねてきた。引っ越してきた日にこちらが差し入れた食べ物を覚えていて、「今日はお裾分けだ…
 
-<a id="tag-situation-353"></a>
+<a id="tag-situation-356"></a>
 ### 夜間の世話（1）
 - [f54](#event-f54) — 遊び疲れた{careKid}が眠りについてから、乾いた小さな服を一枚ずつ畳んだ。規則正しい寝息を聞いていると、一日の疲れがすっと溶けていくようだった…
 
-<a id="tag-situation-354"></a>
+<a id="tag-situation-357"></a>
 ### 友人との文通再開（1）
 - [friend_recontact_news](#event-friend_recontact_news) — 共通の知人を通じ、{contactName}からの返事が{contactReplyYear}年に届いた。伝言を受け取ったことと、便りを続けてもよいと…
 
-<a id="tag-situation-355"></a>
+<a id="tag-situation-358"></a>
 ### 友人への恋心（1）
 - [f25](#event-f25) — 別れたあとの帰り道も、{friendName}の声がずっと耳の奥に残っていた。気楽な友人のままでいたい気持ちと、もっと特別な距離に踏み込みたい気持ち…
 
-<a id="tag-situation-356"></a>
+<a id="tag-situation-359"></a>
 ### 傭兵・護衛勤務（1）
 - [f49](#event-f49) — 見張り任務の合間に、焚き火を囲んで仲間と夜通し語り合った。本名すら知らない相手にも、故郷に置いてきた家族や忘れられない景色があった。 隊商護衛の休憩…
 
-<a id="tag-situation-357"></a>
+<a id="tag-situation-360"></a>
 ### 傭兵隊の護衛契約（1）
 - [kaz_merc](#event-kaz_merc) — カズデルの傭兵隊が、荒野を抜ける輸送隊の護衛を募っていた。分け前は悪くないが、生きて帰れる保証もない長旅になる。
 
-<a id="tag-situation-358"></a>
+<a id="tag-situation-361"></a>
 ### 傭兵隊の通過（1）
 - [f95](#event-f95) — 内戦の火種がくすぶるなか、武装した傭兵の一団が荷をまとめて通りを抜けていった。家の大人は店先にいたあなたを慌てて奥へ引っ張り込み、隊列が角を曲がりき…
 
-<a id="tag-situation-359"></a>
+<a id="tag-situation-362"></a>
 ### 幼い子の養育（1）
 - [f54](#event-f54) — 遊び疲れた{careKid}が眠りについてから、乾いた小さな服を一枚ずつ畳んだ。規則正しい寝息を聞いていると、一日の疲れがすっと溶けていくようだった…
 
-<a id="tag-situation-360"></a>
+<a id="tag-situation-363"></a>
 ### 用事の再開・再診（1）
 - [life_rehabilitation_followup](#event-life_rehabilitation_followup) — ひどい熱や痛みはどうにか峠を越えたが、少し長く歩いた翌朝は鉛を背負ったように体が重い。焦る気持ちを抑えながら、朝の家事を一つ済ませて体の具合を確かめ…
 
-<a id="tag-situation-361"></a>
+<a id="tag-situation-364"></a>
 ### 養育者の視点（1）
 - [f4](#event-f4) — あなたが初めて声を立てて笑うと、抱き上げていた{caregiver}もぱっと顔をほころばせた。
 
-<a id="tag-situation-362"></a>
+<a id="tag-situation-365"></a>
 ### 離婚後の元配偶者の死（1）
 - [family_former_spouse_death_notice](#event-family_former_spouse_death_notice) — かつて婚姻関係にあった{formerSpouse}が亡くなったという知らせが届いた。食卓に腰を下ろすと、言い争った日も笑い合った日も入り混じって胸に…
 
-<a id="tag-situation-363"></a>
+<a id="tag-situation-366"></a>
 ### 離婚後の元配偶者の転居（1）
 - [family_former_spouse_move_notice](#event-family_former_spouse_move_notice) — 別れた{formerSpouse}が{formerSpouseMovedRegion}へ移り住んだという知らせが、{formerSpouseMove…
 
-<a id="tag-situation-364"></a>
+<a id="tag-situation-367"></a>
 ### 離婚後の子育て・連絡（1）
 - [family_divorce_parenting_review](#event-family_divorce_parenting_review) — 前に送った子どもの予定についての便りに、まだ{formerSpouse}から返事がない。休みが近づき、もう一度手紙を出すべきか迷った。 知人に間へ入…
 
-<a id="tag-situation-365"></a>
+<a id="tag-situation-368"></a>
 ### 龍門（1）
 - [lon_guard](#event-lon_guard) — 龍門近衛局が街区を回る巡回要員を募集していた。採用されれば安定した給金が出るが、雑踏の揉め事や荒事に身を晒す仕事でもある。志願票を手に、今の暮らしと…
 
-<a id="tag-situation-366"></a>
+<a id="tag-situation-369"></a>
 ### 龍門の移動都市居住区（1）
 - [lon_housing](#event-lon_housing) — 部屋の更新手続きに行くと、家主は診断記録に目を落としたまま、これまでの倍近い保証金をふっかけてきた。「お互いの安心のためだよ」と笑うが、元の契約書の…
 
-<a id="tag-situation-367"></a>
+<a id="tag-situation-370"></a>
 ### 龍門の移動都市周縁区・避難労働区（1）
 - [lon_slum](#event-lon_slum) — かつて部屋を追い出されるように移ってきたこの下層街区で、食料と薬の炊き出しに長い列ができていた。自分の番が飛ばされないよう必死に引換券を握りしめる人…
 
-<a id="tag-situation-368"></a>
+<a id="tag-situation-371"></a>
 ### 龍門の商業街（1）
 - [lon_merchant](#event-lon_merchant) — 龍門の賑やかな商業通りで、空きが出たばかりの小さな露店を引き継がないかと声がかかった。権利金と仕入れで50万龍門幣。当たれば大きいが、客がつかなくて…
 
-<a id="tag-situation-369"></a>
+<a id="tag-situation-372"></a>
 ### 臨時露店仕事・観覧・出費回避（1）
 - [sie_tourist](#event-sie_tourist) — オブシディアン・フェスティバルが開幕し、街中が浮き立つような音楽と観光客の熱気で溢れ返っている。浜辺の露店では、夜遅くの片づけまで手伝ってくれる若手…
 
-<a id="tag-situation-370"></a>
+<a id="tag-situation-373"></a>
 ### 隣人との死別（1）
 - [neighbor_death_notice](#event-neighbor_death_notice) — {contactDeathTiming}、{contactName}が亡くなったと同じ区画の人から聞いた。知らせには死因も最期の様子もなかった。玄関…
 
-<a id="tag-situation-371"></a>
+<a id="tag-situation-374"></a>
 ### 隣人との伝言再開（1）
 - [neighbor_recontact_news](#event-neighbor_recontact_news) — 同じ区画の人から、{contactName}の返事があったと伝えられた。あなたの便りが届いたことだけが書かれていた。
 
-<a id="tag-situation-372"></a>
+<a id="tag-situation-375"></a>
 ### 隣人の消息不明（1）
 - [neighbor_missing_news](#event-neighbor_missing_news) — {contactName}の姿を見なくなったのは{contactMissingYear}年ごろだという。最後に所在が確かめられたのは{contact…
 
-<a id="tag-situation-373"></a>
+<a id="tag-situation-376"></a>
 ### 隣人の生存確認（1）
 - [neighbor_found_news](#event-neighbor_found_news) — 地域の人づてに、{contactName}が{contactFoundYear}年に生きていると聞いた。今いる場所も、戻る予定も分からない。
 
-<a id="tag-situation-374"></a>
+<a id="tag-situation-377"></a>
 ### 連絡・休息の継続（1）
 - [life_mental_crisis_recovery](#event-life_mental_crisis_recovery) — 底のない暗がりの中にいた頃より、外の光を浴びて歩ける日が増えてきた。それでもふとした拍子に胸がざわつく夜はある。自分の心とどう折り合いをつけていくか…
 
-<a id="tag-situation-375"></a>
+<a id="tag-situation-378"></a>
 ### 連絡先と家の用事の相談（1）
 - [life_late_care_planning](#event-life_late_care_planning) — 買い物袋を提げて帰る途中で、息が切れて立ち止まる日が増えた。昔は何ともなかった段差や水汲みが、今はやけにこたえる。自分が動けなくなった時のことを、そ…
 
-<a id="tag-situation-376"></a>
+<a id="tag-situation-379"></a>
 ### 労務補償（1）
 - [f94](#event-f94) — 鉱区の掲示板に、落盤で負傷した仲間の名と閉鎖された坑道番号がチョークで書き出された。次の番に入る同僚は、見舞金や補償の話を誰に掛け合えばいいのかと周…
 
@@ -33483,6 +33489,10 @@ s => {
         const info = s.local?.info ?? 0.5,
           region = s.res?.n,
           ecology = s.local?.ecology;
+        if (region === "レム・ビリトン")
+          return info >= 0.55
+            ? "レム・ビリトンの警報塔から、天災が迫るという声が荒野を越えて届いた。幼いころに歌や放送で覚えた合図を思い出し、退避穴へ向かう道と閉じる扉を確かめる。"
+            : "遠くの警報塔から天災の知らせが届いた。鉱山の怖い話にも歌にも、災害のときは無理に外へ出ず、使える退避穴の扉を閉じろと教わってきた。";
         if (s.home === "移動都市")
           return info >= 0.65
             ? "天災トランスポーターの観測報が街区放送で鳴り響き、都市が緊急針路変更に入ると告げられた。身の回りの荷を掴んで地下の避難区画へ走るか、今の部屋に留まるか、猶予はない。"
@@ -33515,12 +33525,15 @@ s => {
   "conf": "S",
   "references": [
     "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+    "SRC_CATASTROPHE_RIM_BILLITON",
+    "SRC_CATASTROPHE_KJERAG_FIRST",
     "SRC_MOBILE_CITY_MOBILITY",
     "SRC_REGIONAL_ENVIRONMENT",
     "SRC_CATASTROPHE_CIVILIAN_LIFEPATH"
   ],
-  "need": [
-    "天災危険"
+  "any": [
+    "天災危険",
+    "国:レム・ビリトン"
   ],
   "ban": [
     "避難中"
@@ -33529,7 +33542,19 @@ s => {
     "age": 8
   },
   "cd": 12,
-  "w": 0.2,
+  "regionCooldowns": {
+    "レム・ビリトン": 5
+  },
+  "w": [
+    0.2,
+    {
+      "when": "国:レム・ビリトン",
+      "x": 4
+    }
+  ],
+  "show": {
+    "dynamicFunction": "s => s.res?.n !== \"イェラグ\" || s.year >= 1101"
+  },
   "who": {
     "dynamicFunction": "s => (s.age < $rules.parameters.value(\"life.adultStartAge\") ? \"parent\" : \"self\")"
   }
@@ -33591,7 +33616,8 @@ s => {
     "disaster_displaced": 1,
     "sch": 0
   },
-  "displacement": "displaced"
+  "displacement": "displaced",
+  "catastropheInfectionChance": 0.02
 }
 ```
 
@@ -33645,7 +33671,8 @@ s => {
 
 ```json
 {
-  "p": -2
+  "p": -2,
+  "catastropheInfectionChance": 0.03
 }
 ```
 
@@ -33687,7 +33714,8 @@ s => {
 
 ```json
 {
-  "p": -2
+  "p": -2,
+  "catastropheInfectionChance": 0.05
 }
 ```
 
@@ -33710,6 +33738,59 @@ s => {
 ```
 
 旧シム観測回数：34
+
+#### 選択肢 4
+
+<a id="choice-nat-3"></a>
+選択肢文：警報塔の合図に従い、使える退避穴へ入って扉を閉じる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => s.res?.n === \"レム・ビリトン\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-nat-3-0"></a>
+
+- **結果 1（設定確率 97%）**
+
+> 警報塔の声が途切れる前に退避穴へ滑り込み、教わったとおり入口の扉を閉めた。地鳴りが遠ざかるまで暗がりで肩を寄せ、扉の向こうに砂が降り積もる音を聞いた。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "catastropheInfectionChance": 0.02
+}
+```
+
+旧シム観測回数：未計測
+<a id="outcome-nat-3-1"></a>
+
+- **結果 2（設定確率 3%）**
+
+> 退避穴へ駆け込んだ直後、地面が割れて入口が崩れた。教わった手順を守っても避けきれない揺れに巻き込まれ、瓦礫の下で息絶えた。
+
+効果：
+
+```json
+{
+  "d": [
+    "天災",
+    "退避穴へ避難したが、地盤崩落に巻き込まれ亡くなった"
+  ]
+}
+```
+
+旧シム観測回数：未計測
 
 
 <a id="event-displacement_after"></a>
@@ -214920,17 +215001,17 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 ## life_medical_urgent_review
 
 - 出典位置：data/health/mortality.js:199
-- 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：確認済み　優先度：低
+- 分類確度：本文・条件・動的表示条件と結果枝を手動確認。出典区分とゲーム上の危険モデルを記録。
+- 校閲状態：未校閲　優先度：高
 - 国・地域：未特定
-- ジャンル：日常、労働・経済、感染・医療
-- 状況：年齢：幼児、年齢：児童、年齢：少年、年齢：青年、年齢：壮年、年齢：老年、選択イベント、動的表示条件
-- 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：幼児・児童にも成人の家事責任を負わせるよう読めた本文と選択肢を年齢中立の医療・支援行動へ改め、全結果枝と効果を再確認。
+- ジャンル：日常、家族・介護、感染・医療
+- 状況：全年齢の重い病状、体力0の危篤状態、診療・支援・休息・緩和希望の記録、選択イベント、動的表示条件
+- 指摘分類：条件・表示・処理、因果・状況整合
+- 注記：重症エピソードに加えて体力0の危篤状態にも接続。苦痛緩和の希望記録を追加し、治療成功や他者の同意・支援提供を確定しない。
 
 ### 本文
 
-> 病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探した。
+> 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
 
 ### 発生条件・構造
 
@@ -214951,11 +215032,14 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
     "壮年",
     "老年"
   ],
+  "who": {
+    "dynamicFunction": "s => (s.age < $rules.parameters.value(\"life.adultStartAge\") ? \"parent\" : \"self\")"
+  },
   "pri": true,
-  "cd": 5,
+  "cd": 1,
   "w": 1,
   "show": {
-    "dynamicFunction": "s => $rules.mortality.urgentEpisodes(s).length > 0"
+    "dynamicFunction": "s => $rules.mortality.urgentEpisodes(s).length > 0 || $rules.mortality.healthCriticalNeedsReview(s)"
   }
 }
 ```
@@ -214974,7 +215058,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 #### 選択肢 1
 
 <a id="choice-life_medical_urgent_review-0"></a>
-選択肢文：すぐに診療所へ運び、手当を受ける
+選択肢文：診療所へ運び、急な診察と手当を受ける
 
 表示・選択条件と補助情報：
 
@@ -214997,7 +215081,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 
 - **結果 1（設定確率 100%）**
 
-> 急患として診療所へ駆け込み、応急の処置と強い薬を受けた。帰り道、ようやく少しずつ息がしやすくなった。
+> 診療所で状態を伝え、急な診察と手当を受けた。帰りは休みながら移動し、しばらく体を休めることにした。
 
 効果：
 
@@ -215018,7 +215102,17 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 #### 選択肢 2
 
 <a id="choice-life_medical_urgent_review-1"></a>
-選択肢文：身近な人に看病と水や食事の世話を頼む
+選択肢文：身近な人に看病や水・食事の手助けを頼む
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !!(s.sp || s.kids?.length || s.personTies?.length || s.siblings?.length || s.par?.fa || s.par?.mo)"
+  }
+}
+```
 
 旧シム観測：表示 14646、選択可能 14646
 
@@ -215027,7 +215121,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 
 - **結果 1（設定確率 100%）**
 
-> 頼れる人が枕元につき、水や柔らかい食事を口へ運んでくれた。熱に浮かされる中、そばに誰かがいる気配だけが支えだった。
+> 身近な人へ、水や食事、移動の手助けを頼んだ。できる範囲を相談し、無理な用事はいったん取りやめた。
 
 効果：
 
@@ -215046,7 +215140,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 #### 選択肢 3
 
 <a id="choice-life_medical_urgent_review-2"></a>
-選択肢文：外の用事をすべて投げ出し、寝床でひたすら安静にする
+選択肢文：外の用事を止め、寝床で休む
 
 旧シム観測：表示 14646、選択可能 14646
 
@@ -215055,7 +215149,7 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 
 - **結果 1（設定確率 100%）**
 
-> 今はただ息をして峠を越えるしかない。すべての約束を断り、薄暗い部屋で毛布にくるまって目を閉じた。
+> 急ぎでない用事を断り、水を手元に置いて横になった。先のことは決めず、その日は体を休めた。
 
 効果：
 
@@ -215070,6 +215164,44 @@ s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
 ```
 
 旧シム観測回数：5279
+
+#### 選択肢 4
+
+<a id="choice-life_medical_urgent_review-3"></a>
+選択肢文：苦痛を和らげる支援も望むと記録する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => s.age >= $rules.parameters.value(\"life.adultStartAge\") && s.h <= 0 && s.mortality?.healthCritical?.status === \"active\" && s.mortality.healthCritical.palliativePreferenceYear == null"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_medical_urgent_review-3-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 痛みや息苦しさを和らげる支援も望んでいると書き残した。病気を治す手立てを相談することと、苦痛を軽くする支援を求めることを、これからの希望として分けて考えた。
+
+効果：
+
+```json
+{
+  "mortalityCare": {
+    "kind": "urgent",
+    "action": "palliative"
+  },
+  "p": 2
+}
+```
+
+旧シム観測回数：未計測
 
 
 <a id="event-life_medical_followup"></a>

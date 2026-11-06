@@ -119,7 +119,7 @@ window.TERRA_DATA_BUILD.run("review/historical-reviews", function ($terraData, $
       lov: "s,s,w",
       chi: "s,s,f",
       ksc: "s,s",
-      nat: "s,s,s",
+      nat: "s,s,s,s",
       mv: "s,s,s",
       old: "s,s,s",
       elder_work_opportunity: "s,s,a",

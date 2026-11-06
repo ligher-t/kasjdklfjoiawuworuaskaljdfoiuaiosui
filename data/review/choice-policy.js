@@ -575,7 +575,7 @@ window.TERRA_DATA_BUILD.run("review/choice-policy", function ($terraData, $defin
       life_medical_occupational: "p,s,i",
       life_medical_injury: "s,s",
       life_medical_nutrition: "s,s",
-      life_medical_urgent_review: "s,s,s",
+      life_medical_urgent_review: "s,s,s,s",
       life_medical_followup: "s,s",
       life_disaster_recovery_care: "s,s",
       life_unexpected_rescue: "p,w",

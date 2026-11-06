@@ -66,6 +66,7 @@ function applyHouseholdHealthEffects(e, s) {
     });
     s.residenceHistory = s.residenceHistory.slice(-24);
   }
+  if (s.mortality?.healthCritical || (e.h != null && s.h <= 0)) updateHealthCriticalState(s);
 }
 
 function applyWorkAndCareEffects(e, s, fromRegion) {

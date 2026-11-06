@@ -117,7 +117,7 @@ function oriApplyAction(s, action) {
 function advanceIllnessState(s) {
   if (!s.illness && (s.h <= 18 || (s.inf && s.ob >= P("death.oripathyStart") && s.h <= 28))) {
     s.illness = {
-      kind: s.inf ? "oripathy_complication" : "chronic",
+      kind: s.inf && s.ob >= P("death.oripathyStart") ? "oripathy_complication" : "chronic",
       stage: 1,
       startedYear: s.year,
       reviewed: 0,

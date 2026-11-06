@@ -200,14 +200,15 @@ window.TERRA_DATA_BUILD.run("health/mortality", function ($terraData, $define, $
       conf: "S",
       references: $terraData.LIFE_END_REFS,
       st: ["幼児", "児童", "少年", "青年", "壮年", "老年"],
+      who: s => (s.age < $rules.parameters.value("life.adultStartAge") ? "parent" : "self"),
       pri: true,
-      cd: 5,
+      cd: 1,
       w: 1.0,
-      show: s => $rules.mortality.urgentEpisodes(s).length > 0,
-      t: "病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探した。",
+      show: s => $rules.mortality.urgentEpisodes(s).length > 0 || $rules.mortality.healthCriticalNeedsReview(s),
+      t: "体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。",
       c: [
         $terraData.K(
-          "すぐに診療所へ運び、手当を受ける",
+          "診療所へ運び、急な診察と手当を受ける",
           {
             show: s => {
               const clinic = $rules.facilities.activeFacility(s, "clinic");
@@ -218,20 +219,33 @@ window.TERRA_DATA_BUILD.run("health/mortality", function ($terraData, $define, $
           },
           [
             1,
-            "急患として診療所へ駆け込み、応急の処置と強い薬を受けた。帰り道、ようやく少しずつ息がしやすくなった。",
+            "診療所で状態を伝え、急な診察と手当を受けた。帰りは休みながら移動し、しばらく体を休めることにした。",
             { cash: -5e4, med: 1, mortalityCare: { kind: "urgent", action: "emergency" }, h: 2 }
           ]
         ),
-        $terraData.K("身近な人に看病と水や食事の世話を頼む", {}, [
+        $terraData.K(
+          "身近な人に看病や水・食事の手助けを頼む",
+          { show: s => !!(s.sp || s.kids?.length || s.personTies?.length || s.siblings?.length || s.par?.fa || s.par?.mo) },
+          [
+            1,
+            "身近な人へ、水や食事、移動の手助けを頼んだ。できる範囲を相談し、無理な用事はいったん取りやめた。",
+            { mortalityCare: { kind: "urgent", action: "support" }, rl: 3 }
+          ]
+        ),
+        $terraData.K("外の用事を止め、寝床で休む", {}, [
           1,
-          "頼れる人が枕元につき、水や柔らかい食事を口へ運んでくれた。熱に浮かされる中、そばに誰かがいる気配だけが支えだった。",
-          { mortalityCare: { kind: "urgent", action: "support" }, rl: 3 }
-        ]),
-        $terraData.K("外の用事をすべて投げ出し、寝床でひたすら安静にする", {}, [
-          1,
-          "今はただ息をして峠を越えるしかない。すべての約束を断り、薄暗い部屋で毛布にくるまって目を閉じた。",
+          "急ぎでない用事を断り、水を手元に置いて横になった。先のことは決めず、その日は体を休めた。",
           { mortalityCare: { kind: "urgent", action: "rest" }, p: -1 }
-        ])
+        ]),
+        $terraData.K(
+          "苦痛を和らげる支援も望むと記録する",
+          { show: s => s.age >= $rules.parameters.value("life.adultStartAge") && s.h <= 0 && s.mortality?.healthCritical?.status === "active" && s.mortality.healthCritical.palliativePreferenceYear == null },
+          [
+            1,
+            "痛みや息苦しさを和らげる支援も望んでいると書き残した。病気を治す手立てを相談することと、苦痛を軽くする支援を求めることを、これからの希望として分けて考えた。",
+            { mortalityCare: { kind: "urgent", action: "palliative" }, p: 2 }
+          ]
+        )
       ]
     },
     {

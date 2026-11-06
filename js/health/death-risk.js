@@ -58,6 +58,13 @@ function D(s) {
   const baseIll =
     P("life.generalMortalityBase") +
     hp * hp * P("life.generalMortalityHealthScale") * (1 + ea / P("death.generalMortalityAgeScale"));
+  const healthCritical = m.healthCritical,
+    criticalActive = healthCritical?.status === "active" && s.h <= 0,
+    criticalYears = criticalActive ? Math.max(0, s.year - healthCritical.sinceYear) : 0,
+    op = severe("oripathy"),
+    criticalOripathy = criticalActive && criticalYears >= 1 && s.inf && s.ob >= P("death.oripathyStart"),
+    criticalAdvancedOripathy = criticalOripathy &&
+      (s.ob >= P("mortality.criticalOripathyLoad") || op?.severity >= 3);
   A(
     a < 5 ? P("death.infantBase") * (po ? P("death.povertyMortalityScale") : 1) * (0.5 + hp) : 0,
     "病死（小児期の急性疾患）",
@@ -110,8 +117,35 @@ function D(s) {
       palliative ? "病死（ロドス医療部での看取り）" : category,
       palliative ? ["記録されていた重い病状が悪化し、ロドスの医務室で療養を続けたが、回復できずに亡くなった。"] : texts, ep);
   }
-  const op = severe("oripathy");
-  if (op && s.inf) {
+  if (criticalActive) {
+    const baseRisk = criticalYears === 0
+      ? P("mortality.healthCriticalYear1Risk")
+      : criticalYears === 1
+        ? P("mortality.healthCriticalYear2Risk")
+        : P("mortality.healthCriticalYear3PlusRisk");
+    const risk = criticalAdvancedOripathy
+      ? P("mortality.criticalOripathyRisk")
+      : Math.min(0.95, baseRisk * (criticalOripathy ? P("mortality.criticalInfectionScale") : 1) *
+        (healthCritical.careUntilYear != null && healthCritical.careUntilYear >= s.year
+          ? P("mortality.episodeCareReduction")
+          : 1));
+    const category = criticalOripathy ? "病死（鉱石病）" : "病死（危篤状態）";
+    A(
+      risk,
+      category,
+      criticalOripathy
+        ? [
+            "体力が尽きた状態で鉱石病の負担が重なり、回復できないまま亡くなった。",
+            "危篤状態が続くなか鉱石病の症状が進み、全身の状態が戻らず息を引き取った。"
+          ]
+        : [
+            "体力が尽きたまま回復できず、危篤状態が続いた末に亡くなった。",
+            "身の回りにも助けが要る状態から体力が戻らず、命を落とした。"
+          ],
+      criticalOripathy ? op : null
+    );
+  }
+  if (op && s.inf && !criticalOripathy) {
     const scale = Math.max(0, s.ob - P("death.oripathyStart")) / P("death.oripathyScale");
     A(
       scale *
@@ -129,7 +163,7 @@ function D(s) {
     );
   }
   // The old illness state is still honored when the new episode has not yet been staged.
-  if (!illnessTypes.some(([kind]) => severe(kind)) && s.h <= 18 && (s.illness?.stage || 0) >= 3)
+  if (!criticalOripathy && !illnessTypes.some(([kind]) => severe(kind)) && s.h <= 18 && (s.illness?.stage || 0) >= 3)
     A(baseIll * (s.illness?.treated ? 0.4 : 1), "病死（病状の悪化）", [
       "長く続いた病状が重くなり、回復できずに亡くなった。",
       "全身の状態が悪化し、回復できずに亡くなった。"
