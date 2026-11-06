@@ -1190,6 +1190,7 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
         "cr",
         "ep",
         "ob",
+        "catastropheInfectionChance",
         "selfCash",
         "familyTransfer",
         "familyContribution",
@@ -1378,7 +1379,8 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
     personalWishes:{unit:"本人の希望",meaning:"本人が選んだ終盤の希望を記録する",status:"S",valueType:"object"},
     languageAction:{unit:"言語操作",meaning:"言語能力学習・現場符牒獲得・通訳手配・遭遇記録などの言語状態機械操作",status:"S",valueType:"object"},
     employmentResourceIncident:{unit:"生計資源の変化",meaning:"現役の自営生計に対する出典付き資源損失だけを、実際の農地・資源状態へ記録する",status:"S",valueType:"object"},
-    infectionRoute:{unit:"源石曝露の経路",meaning:"明示された粉塵・創傷・深い創傷・混合曝露を初期病状へ接続する",status:"S",valueType:"text"}
+    infectionRoute:{unit:"源石曝露の経路",meaning:"明示された粉塵・創傷・深い創傷・混合曝露を初期病状へ接続する",status:"S",valueType:"text"},
+    catastropheInfectionChance:{unit:"感染確率",meaning:"天災を生き延びた後、粉塵曝露による感染を本人および条件を満たす家族ごとに独立判定する確率（最大5%）",status:"S",valueType:"number"}
   });
 
 });

@@ -442,6 +442,18 @@ window.TERRA_DATA_BUILD.fragment(
         kind: "日本版公式インタビュー",
         note: "公式インタビューは天災トランスポーターの役割を、天災の早期警戒、周囲の環境の観察・計測、近隣都市への警報発信と説明する。一般の荷物・書状の配達職とは区別する。特定鉱区の掲示札、道具、観測手順、資格や各地区の運用は示さない。"
       },
+      SRC_CATASTROPHE_RIM_BILLITON: {
+        title: "Learn a Terra Fact Over A Carrot's Worth of Time #7 — Catastrophe Survival Handbook",
+        url: "https://arknights.wiki.gg/wiki/Learn_a_Terra_Fact_Over_A_Carrot%27s_Worth_of_Time_7",
+        kind: "公式PVの英語転記（二次ホスト）",
+        note: "PVはレム・ビリトンで天災が絶えず、幼少期から歌・放送・鉱山の怪談で備えを教え、荒野を越える声の塔を設けたと説明する。扉を閉じて身を守る慣用句も紹介する一方、採掘者が天災区域へ急行する危険と相当数の死者にも言及する。4倍の抽選重み、5年の最短再発間隔、年次背景死亡率0.8倍、退避手順の分岐率は原作の定量値ではなく、頻発と訓練を遊びへ反映するゲーム上の調整値。"
+      },
+      SRC_CATASTROPHE_KJERAG_FIRST: {
+        title: "イベント「Retracing Our Steps」あらすじ・イェラグ初天災",
+        url: "https://arknights.wiki.gg/wiki/Retracing_Our_Steps/Synopsis",
+        kind: "公式ゲームシナリオ概要の英語転記（二次ホスト）",
+        note: "1101年12月にイェラグが千年ぶりの天災に襲われたとする。これに基づき1101年より前の天災イベントと年次天災死亡を抑止する。年内の日付・地域内の一時的影響・当時の具体的な生存率はゲーム本文の記述以上に補わない。"
+      },
       SRC_CATASTROPHE_CIVILIAN_LIFEPATH: {
         title: "天災警報の到達と一世帯の避難後生活",
         kind: "ゲーム上の仮定",
