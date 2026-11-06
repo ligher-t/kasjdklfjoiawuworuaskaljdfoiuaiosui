@@ -130,6 +130,7 @@ const approved=Object.freeze([
   "v87_affiliation_career_paths.js",
   "v87_affiliation_career_ursus_mine.js",
   "v87_birth_year_locality.js",
+  "birth-locality-zero-weights.test.cjs",
   "v87_bolivar_upland_lifecourse.js",
   "v87_catastrophe_lifecourse.js",
   "v87_class_locality_history.js",

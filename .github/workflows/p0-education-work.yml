@@ -47,6 +47,10 @@ jobs:
           node-version: '22'
       - name: Runtime syntax and generated revision
         run: node tools/check-efficient.cjs syntax
+      - name: Birth locality zero-weight regression
+        run: node tools/check-efficient.cjs run birth-locality-zero-weights.test.cjs
+      - name: Isolated ending peer worker and comparison regression
+        run: node tools/check-efficient.cjs run ending-peer-worker.test.cjs ending-comparison.test.cjs
       - name: Save import and HTML output security regressions
         run: node tools/check-efficient.cjs run v88_audit_fixes_xss_and_causes.test.cjs
       - name: Contract and household debt accounting
@@ -207,10 +211,6 @@ jobs:
       - name: Developer simulation report and state isolation
         if: github.event_name == 'workflow_dispatch'
         run: node tools/check-efficient.cjs run v87_dev_simulation_diagnostics.js
-      - name: Birth locality zero-weight regression
-        run: node tools/check-efficient.cjs run v87_birth_year_locality.js
-      - name: Isolated ending peer worker and comparison regression
-        run: node tools/check-efficient.cjs run ending-peer-worker.test.cjs ending-comparison.test.cjs
       - name: Generated event catalogue matches review metadata
         run: node tools/generate-event-catalog.cjs --check
 
