@@ -4,6 +4,12 @@ window.TERRA_DATA_BUILD.fragment(
   "extensions/social-and-care/sources-and-flags"
 )(function ($terraData, $define, $rules, $parts) {
   "use strict";
+  $terraData.SETTING_SOURCES.SRC_SOCIAL_CONSTRAINTS_V3 = {
+    title: "差別・社会的制約イベント提案台帳 v3（2026-11-06）",
+    file: "docs/PLAYER_TEXT_REVIEW.md#social-constraints-v3",
+    kind: "ユーザー提供のゲーム内創作シナリオ案",
+    note: "個別の本文・選択・頻度はゲーム上の創作。原作の制度・法律・人物史の根拠とは扱わず、確認できない具体的な履歴を持つ場面は発火条件で保留する。"
+  };
   $terraData.SETTING_SOURCES.SRC_TERRA_DISCR_CALADON = {
     title: "『闇散らす火花』ST-1・カレドンの労働と賃金券",
     url: "https://shimadouma.github.io/astrhtml/events/act10mini/stories/ST-1.html",

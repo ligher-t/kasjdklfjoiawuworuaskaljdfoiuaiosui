@@ -26,6 +26,47 @@ function isPeacefulLeisureEvent(event) {
   // battlefield relief meal must not be rejected by matching prose fragments.
   return event?.crisisPolicy === "nonessential-leisure";
 }
+function isMinorChoiceEvent(event) {
+  return event?.presentation === "minor-choice" || event?.socialConstraint?.presentation === "minor-choice";
+}
+// Initial gameplay assumptions: category shares stay fixed as candidate counts grow.
+function chooseSocialMinorChoice(events, s, T) {
+  const eligible = events.filter(event => isMinorChoiceEvent(event) && event.c),
+    pressure = infectionSocialPressure(s).public,
+    pools = [
+      { budget: 0.04, events: eligible.filter(event => event.socialConstraint?.group === "ordinary-contrast") },
+      { budget: 0.18 * pressure, events: eligible.filter(event =>
+        event.socialConstraint?.group === "daily-bias" && /感染者|鉱石病/.test(String(event.socialConstraint?.target || ""))) },
+      { budget: 0.08, events: eligible.filter(event =>
+        event.socialConstraint?.group === "daily-bias" && !/感染者|鉱石病/.test(String(event.socialConstraint?.target || ""))) }
+    ].filter(row => row.events.length),
+    total = pools.reduce((sum, row) => sum + row.budget, 0);
+  if (!total || R() >= total) return null;
+  let draw = R() * total;
+  for (const row of pools) {
+    draw -= row.budget;
+    if (draw < 0) return wpk(row.events, s, T);
+  }
+  return wpk(pools.at(-1).events, s, T);
+}
+// Social major choices use reserved category budgets on spare regular slots;
+// they never enter the existing domains' weighted pool.
+function chooseSocialMajorChoice(events, s, T) {
+  const eligible = events.filter(event => event.c && !isMinorChoiceEvent(event)),
+    pools = [
+      { budget: 0.05, events: eligible.filter(event => event.socialConstraint?.group === "formation-or-relational") },
+      { budget: 0.03, events: eligible.filter(event => event.socialConstraint?.group === "contextual-opportunity") },
+      { budget: 0.02, events: eligible.filter(event => event.socialConstraint?.group === "severe-case") }
+    ].filter(row => row.events.length),
+    total = pools.reduce((sum, row) => sum + row.budget, 0);
+  if (!total || R() >= total) return null;
+  let draw = R() * total;
+  for (const row of pools) {
+    draw -= row.budget;
+    if (draw < 0) return wpk(row.events, s, T);
+  }
+  return wpk(pools.at(-1).events, s, T);
+}
 // Dates only: never relax eligibility, select random relatives, or mutate state here.
 function scheduledFollowupDueYear(event,s) {
   let due=null;
@@ -162,6 +203,7 @@ function slot(x) {
   educationCaseReserveSlots(s);
   const T = tags(s),
     choiceAlreadyUsed = s.majorEventMonth?.year === s.year && s.majorEventMonth?.month === s.mo,
+    minorChoiceAlreadyUsed = s.minorEventMonth?.year === s.year && s.minorEventMonth?.month === s.mo,
     eligible = EV.filter(e => HL ? elig(e, s, T, SIMULATION_ELIGIBILITY_OPTIONS) : elig(e, s, T)),
     choiceStates = new Map();
   if (HL) for (const event of eligible) if (event.c) {
@@ -171,12 +213,14 @@ function slot(x) {
   }
   const hasActionableChoice = event =>
     (choiceStates.get(event) || simulationChoiceStates(event, s, T)).some(row => row.enabled);
-  if (HL && choiceAlreadyUsed) for (const event of eligible) if (event.c) {
+  if (HL && choiceAlreadyUsed) for (const event of eligible) if (event.c && !isMinorChoiceEvent(event)) {
     const row = STAT.eventCoverage[event.id];
     if (row) row.monthlyChoiceBlocked++;
   }
-  const el = eligible.filter(e => (!e.c || hasActionableChoice(e)) && !(choiceAlreadyUsed && e.c)),
-    mj = el.filter(e => e.c);
+  const el = eligible.filter(e => (!e.c || hasActionableChoice(e)) &&
+      !(e.c && (isMinorChoiceEvent(e) ? minorChoiceAlreadyUsed : choiceAlreadyUsed))),
+    mj = el.filter(e => e.c && !isMinorChoiceEvent(e)),
+    minorChoices = el.filter(e => e.c && isMinorChoiceEvent(e));
   if (HL) {
     recordSimulationSlot(STG[stg(s)] || "不明", eligible, el);
     for (const candidate of el) STAT.op[candidate.id] = (STAT.op[candidate.id] || 0) + 1;
@@ -215,7 +259,9 @@ function slot(x) {
     !s.sn?.[event.id] &&
     hasActionableChoice(event)
   );
-  const optionalChoices = mj.filter(event => employmentRoutineAvailable(event, s));
+  const optionalChoices = mj.filter(event => employmentRoutineAvailable(event, s)),
+    socialMajorChoices = optionalChoices.filter(event => event.socialConstraint),
+    ordinaryOptionalChoices = optionalChoices.filter(event => !event.socialConstraint);
   const priorityChoices = optionalChoices.filter(event => event.pri && event.id !== "higher_ed");
   const livelihoodRecovery = s.job === 0 && s.age >= 20 && s.age <= 60
     ? optionalChoices.find(event => event.id === "work_unemployed_reentry")
@@ -230,7 +276,9 @@ function slot(x) {
     wpk(priorityChoices, s, T) || institutional;
   const serviceOnly=s.eventSchedule?.year===s.year&&s.eventSchedule.servicePositions.includes(x);
   if(!e&&serviceOnly)return;
-  if(!e)e=R()<playChoiceChance(s)?wpk(optionalChoices,s,T):null;
+  if(!e&&R()<playChoiceChance(s)&&ordinaryOptionalChoices.length)e=wpk(ordinaryOptionalChoices,s,T);
+  if(!e)e=chooseSocialMajorChoice(socialMajorChoices,s,T);
+  if (!e) e = chooseSocialMinorChoice(minorChoices, s, T);
   if (!e) {
     const inCrisis = isLocationInCrisis(s);
     const r = R(),
@@ -251,6 +299,15 @@ function fire(e, s, T) {
   if (!s || s.dead) {
     if (HL) STAT.postDeathFireAttempts++;
     return;
+  }
+  if (e.socialConstraint && (!s.eventSocialContext || s.eventSocialContext.eventId !== e.id ||
+      s.eventSocialContext.year !== s.year || s.eventSocialContext.month !== s.mo)) {
+    const context = readSocialSceneContext(s, e);
+    s.eventSocialContext = context ? {
+      ...context,
+      eventId: e.id,
+      sceneId: `${e.id}:${s.year}:${s.mo}:${s.community?.key || s.res?.n || "unplaced"}`
+    } : null;
   }
   if(["dg"].includes(e?.id))importantLifeNotification(s,"diagnosis");
   if(["family_spouse_death","family_former_spouse_death_notice","family_sibling_bereavement","family_child_bereavement"].includes(e?.id))importantLifeNotification(s,"family-death");
@@ -469,6 +526,7 @@ function ask(e, T, t, before, resumed = false) {
     if (HL) STAT.choiceBlocked++;
     console.warn(`選択肢の条件を満たせないため保留: ${e.id}`);
     recordTrace("choice-blocked", e.id, { text: t, reason: "no-available-choice" }, before);
+    if (e.socialConstraint) s.eventSocialContext = null;
     return;
   }
   recordEmploymentPrompt(e, s, {
@@ -476,13 +534,14 @@ function ask(e, T, t, before, resumed = false) {
     protected: nextExpiringFollowup([e], s) === e
   });
   delete s.employmentUserInitiated;
-  if (HL) {
+  if (HL && !isMinorChoiceEvent(e)) {
     const key = `${STAT.currentLife}:${s.year}:${s.mo}`;
     if (STAT.choiceMonths.has(key)) STAT.duplicateChoiceMonths++;
     else STAT.choiceMonths.add(key);
   }
   s.sn[e.id] = s.year;
-  s.majorEventMonth = { year: s.year, month: s.mo };
+  if (isMinorChoiceEvent(e)) s.minorEventMonth = { year: s.year, month: s.mo };
+  else s.majorEventMonth = { year: s.year, month: s.mo };
   if (HL) {
     const k = STG[stg(s)],
       d = STAT.ev[e.id] || (STAT.ev[e.id] = {});
@@ -529,7 +588,10 @@ function ask(e, T, t, before, resumed = false) {
     // This outcome belongs to the partner at the time of the choice, even if
     // the choice ends the relationship. The first meeting can create the ID.
     const romanceIdAtChoice = s.romance?.id || null;
-    TRACE_RESOLUTION = { kind: "choice", id: e.id, label: choiceLabel };
+    TRACE_RESOLUTION = {
+      kind: "choice", id: e.id, label: choiceLabel, choiceIndex, outcomeIndex,
+      socialScene: s.eventSocialContext ? { ...s.eventSocialContext } : null
+    };
     try {
       ap(o[2], routeReserve);
       advanceAutomaticEducation(s);
@@ -550,6 +612,7 @@ function ask(e, T, t, before, resumed = false) {
       s.eventCareNetworkMemberId = null;
       s.eventCareSiblingId = null;
       s.eventHobbyKey = null;
+      s.eventSocialContext = null;
     }
     const choiceMode = by ? "parent" : AU || HL ? "auto" : "self";
     recordTrace(

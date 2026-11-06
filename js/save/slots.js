@@ -243,6 +243,8 @@ function normalizeResumeImport(data) {
     throw new Error("現行版の中断データとして必要な状態が揃っていません。");
   if (JSON.stringify(knowledge) !== JSON.stringify(state.known))
     throw new Error("保存済みの年表知識が人生状態と一致しません。");
+  if (!isValidSocialConstraintState(state.socialConstraints))
+    throw new Error("社会的制約の記録が現行版の形式と一致しません。");
   let stateProblems;
   try {
     stateProblems = auditLifeState(state);

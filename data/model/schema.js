@@ -1155,6 +1155,27 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
     valueType: "object"
   };
 
+  $terraData.EVENT_FIELD_META.presentation = {
+    unit: "選択肢の提示クラス",
+    meaning: "minor-choice は日常の既存イベント枠を使い、majorEventMonth を消費しない",
+    status: "S",
+    valueType: "text"
+  };
+
+  $terraData.EVENT_FIELD_META.socialConstraint = {
+    unit: "社会的な場面の適格性情報",
+    meaning: "場面・対象・認知根拠の読み取り専用条件。選択候補の探索では状態を変更しない",
+    status: "S",
+    valueType: "object"
+  };
+
+  $terraData.EVENT_FIELD_META.socialConstraintAction = {
+    unit: "社会的制約の選択結果",
+    meaning: "実際に確定した選択と結果だけを人物・場面・認知根拠に結び付けて追記する",
+    status: "S",
+    valueType: "object"
+  };
+
   $define(
     "EVENT_EFFECT_TYPES",
     {
@@ -1262,7 +1283,8 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
         "groupStanding",
         "regionalImpact",
         "lifeWorkRelationship",
-        "siracusaFamilyDuty"
+        "siracusaFamilyDuty",
+        "socialConstraintAction"
       ],
       objectArray: ["lifeGoals", "lifeAffiliations", "groupStandings"],
       text: [
