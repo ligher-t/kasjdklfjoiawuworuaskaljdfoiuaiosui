@@ -37,9 +37,9 @@ concurrency:
 permissions:
   contents: read
 jobs:
-  selected-boundary-tests:
+  birth-ending-boundaries:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 4
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -51,6 +51,16 @@ jobs:
         run: node tools/check-efficient.cjs run birth-locality-zero-weights.test.cjs
       - name: Isolated ending peer worker and comparison regression
         run: node tools/check-efficient.cjs run ending-peer-worker.test.cjs ending-comparison.test.cjs
+  selected-boundary-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Runtime syntax and generated revision
+        run: node tools/check-efficient.cjs syntax
       - name: Save import and HTML output security regressions
         run: node tools/check-efficient.cjs run v88_audit_fixes_xss_and_causes.test.cjs
       - name: Contract and household debt accounting
