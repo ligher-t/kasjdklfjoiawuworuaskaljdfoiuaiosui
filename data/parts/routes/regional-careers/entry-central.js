@@ -28,7 +28,7 @@ window.TERRA_DATA_BUILD.fragment(
             "クルビア開拓連盟",
             "開拓農場主",
             "columbia-frontier-survival",
-            "荒野で農場を開墾し、自らの手でアメリカン・ドリームを掴む",
+            "荒野で農場を開墾し、自らの手で開拓者の夢を掴む",
             "frontier-survival",
             "荒野開墾・掘削重機運用",
             { h: 3, p: 2, cashDelta: -500000 }

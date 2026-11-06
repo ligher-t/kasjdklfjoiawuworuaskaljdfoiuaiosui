@@ -747,7 +747,7 @@ window.TERRA_DATA_BUILD.run("health/mortality", function ($terraData, $define, $
         (s.r?.n === "サルカズ" || s.inf > 0) &&
         ["ウルサス", "ヴィクトリア", "リターニア"].includes(s.res?.n) &&
         (s.fl?.ed_violent_threat || s.fl?.ed_sarkaz_lodging_refused || s.fl?.housing_exclusion),
-      t: "夜更け、怒号と松明の火がアパートの窓を赤く照らし出した。棍棒を持った排斥暴徒が『忌み者を焼き出せ』と叫びながら玄関扉を叩き壊そうとしている。廊下にはすでにガソリンの生臭い臭気が充満し始めていた。",
+      t: "夜更け、怒号と松明の火がアパートの窓を赤く照らし出した。棍棒を持った排斥暴徒が『忌み者を焼き出せ』と叫びながら玄関扉を叩き壊そうとしている。廊下にはすでに揮発性鉱油の刺激臭が充満し始めていた。",
       c: [
         $terraData.K(
           "裏窓から屋根伝いに飛び降り、闇夜の路地へ命からがら脱出する",
