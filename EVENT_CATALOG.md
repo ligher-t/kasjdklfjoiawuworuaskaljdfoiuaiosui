@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2715　選択肢数：3554　結果枝数：4359
+イベント数：2715　選択肢数：3555　結果枝数：4361
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -34055,6 +34055,10 @@ s => {
         const info = s.local?.info ?? 0.5,
           region = s.res?.n,
           ecology = s.local?.ecology;
+        if (region === "レム・ビリトン")
+          return info >= 0.55
+            ? "レム・ビリトンの警報塔から、天災が迫るという声が荒野を越えて届いた。幼いころに歌や放送で覚えた合図を思い出し、退避穴へ向かう道と閉じる扉を確かめる。"
+            : "遠くの警報塔から天災の知らせが届いた。鉱山の怖い話にも歌にも、災害のときは無理に外へ出ず、使える退避穴の扉を閉じろと教わってきた。";
         if (s.home === "移動都市")
           return info >= 0.65
             ? "天災トランスポーターの観測報が街区放送で鳴り響き、都市が緊急針路変更に入ると告げられた。身の回りの荷を掴んで地下の避難区画へ走るか、今の部屋に留まるか、猶予はない。"
@@ -34087,12 +34091,15 @@ s => {
   "conf": "S",
   "references": [
     "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+    "SRC_CATASTROPHE_RIM_BILLITON",
+    "SRC_CATASTROPHE_KJERAG_FIRST",
     "SRC_MOBILE_CITY_MOBILITY",
     "SRC_REGIONAL_ENVIRONMENT",
     "SRC_CATASTROPHE_CIVILIAN_LIFEPATH"
   ],
-  "need": [
-    "天災危険"
+  "any": [
+    "天災危険",
+    "国:レム・ビリトン"
   ],
   "ban": [
     "避難中"
@@ -34101,7 +34108,19 @@ s => {
     "age": 8
   },
   "cd": 12,
-  "w": 0.2,
+  "regionCooldowns": {
+    "レム・ビリトン": 5
+  },
+  "w": [
+    0.2,
+    {
+      "when": "国:レム・ビリトン",
+      "x": 4
+    }
+  ],
+  "show": {
+    "dynamicFunction": "s => s.res?.n !== \"イェラグ\" || s.year >= 1101"
+  },
   "who": {
     "dynamicFunction": "s => (s.age < $rules.parameters.value(\"life.adultStartAge\") ? \"parent\" : \"self\")"
   }
@@ -34163,7 +34182,8 @@ s => {
     "disaster_displaced": 1,
     "sch": 0
   },
-  "displacement": "displaced"
+  "displacement": "displaced",
+  "catastropheInfectionChance": 0.02
 }
 ```
 
@@ -34217,7 +34237,8 @@ s => {
 
 ```json
 {
-  "p": -2
+  "p": -2,
+  "catastropheInfectionChance": 0.03
 }
 ```
 
@@ -34259,7 +34280,8 @@ s => {
 
 ```json
 {
-  "p": -2
+  "p": -2,
+  "catastropheInfectionChance": 0.05
 }
 ```
 
@@ -34283,11 +34305,64 @@ s => {
 
 旧シム観測回数：34
 
+#### 選択肢 4
+
+<a id="choice-nat-3"></a>
+選択肢文：警報塔の合図に従い、使える退避穴へ入って扉を閉じる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => s.res?.n === \"レム・ビリトン\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-nat-3-0"></a>
+
+- **結果 1（設定確率 97%）**
+
+> 警報塔の声が途切れる前に退避穴へ滑り込み、教わったとおり入口の扉を閉めた。地鳴りが遠ざかるまで暗がりで肩を寄せ、扉の向こうに砂が降り積もる音を聞いた。
+
+効果：
+
+```json
+{
+  "p": -1,
+  "catastropheInfectionChance": 0.02
+}
+```
+
+旧シム観測回数：未計測
+<a id="outcome-nat-3-1"></a>
+
+- **結果 2（設定確率 3%）**
+
+> 退避穴へ駆け込んだ直後、地面が割れて入口が崩れた。教わった手順を守っても避けきれない揺れに巻き込まれ、瓦礫の下で息絶えた。
+
+効果：
+
+```json
+{
+  "d": [
+    "天災",
+    "退避穴へ避難したが、地盤崩落に巻き込まれ亡くなった"
+  ]
+}
+```
+
+旧シム観測回数：未計測
+
 
 <a id="event-displacement_after"></a>
 ## displacement_after
 
-- 出典位置：data/base/life-and-health.js:613
+- 出典位置：data/base/life-and-health.js:636
 - 分類確度：戦乱避難状態と年齢別の選択条件を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -34556,7 +34631,7 @@ s => {
 <a id="event-disaster_displacement_after"></a>
 ## disaster_displacement_after
 
-- 出典位置：data/base/life-and-health.js:686
+- 出典位置：data/base/life-and-health.js:709
 - 分類確度：避難状態・経過年数・年齢別条件と結果を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -34802,7 +34877,7 @@ s => {
 <a id="event-alley_attack"></a>
 ## alley_attack
 
-- 出典位置：data/base/life-and-health.js:744
+- 出典位置：data/base/life-and-health.js:767
 - 分類確度：国・都市居住条件と所持金による本文・選択肢の差を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：シラクーザ、龍門、ウルサス、ボリバル
@@ -35203,7 +35278,7 @@ s => {
 <a id="event-war"></a>
 ## war
 
-- 出典位置：data/base/life-and-health.js:849
+- 出典位置：data/base/life-and-health.js:872
 - 分類確度：戦乱地域と移動都市の動的本文・選択結果を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -35418,7 +35493,7 @@ s => {
 <a id="event-mv"></a>
 ## mv
 
-- 出典位置：data/base/life-and-health.js:902
+- 出典位置：data/base/life-and-health.js:925
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -35716,7 +35791,7 @@ s => {
 <a id="event-old"></a>
 ## old
 
-- 出典位置：data/base/life-and-health.js:982
+- 出典位置：data/base/life-and-health.js:1005
 - 分類確度：年齢・就労・勤務縮小条件と年次収入への影響を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -35872,7 +35947,7 @@ s => {
 <a id="event-old_followup"></a>
 ## old_followup
 
-- 出典位置：data/base/life-and-health.js:1022
+- 出典位置：data/base/life-and-health.js:1045
 - 分類確度：勤務縮小後の経過年数・就労状態・健康条件を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -36019,7 +36094,7 @@ s => {
 <a id="event-elder_work_opportunity"></a>
 ## elder_work_opportunity
 
-- 出典位置：data/base/life-and-health.js:1056
+- 出典位置：data/base/life-and-health.js:1079
 - 分類確度：65歳以上・非就労条件と本文分岐、技能条件を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
