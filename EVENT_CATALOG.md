@@ -196791,6 +196791,9 @@ s => {
   "w": 0.46,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -196940,6 +196943,9 @@ s => {
   "w": 0.38,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -197088,6 +197094,9 @@ s => {
   "w": 0.3,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -197237,6 +197246,9 @@ s => {
   "w": 0.35,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -197385,6 +197397,9 @@ s => {
   "w": 0.36,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -197533,6 +197548,9 @@ s => {
   "w": 0.42,
   "cd": 6,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -197682,6 +197700,9 @@ s => {
   "w": 0.27,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -197831,6 +197852,9 @@ s => {
   "w": 0.5,
   "cd": 5,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -197979,6 +198003,9 @@ s => {
   "w": 0.39,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -198128,6 +198155,9 @@ s => {
   "w": 0.44,
   "cd": 6,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -198277,6 +198307,9 @@ s => {
   "w": 0.25,
   "cd": 12,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -198425,6 +198458,9 @@ s => {
   "w": 0.31,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -198574,6 +198610,9 @@ s => {
   "w": 0.24,
   "cd": 11,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -198723,6 +198762,9 @@ s => {
   "w": 0.43,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -198871,6 +198913,9 @@ s => {
   "w": 0.31,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -199020,6 +199065,9 @@ s => {
   "w": 0.35,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -199169,6 +199217,9 @@ s => {
   "w": 0.4,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -199318,6 +199369,9 @@ s => {
   "w": 0.29,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -199467,6 +199521,9 @@ s => {
   "w": 0.41,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -199616,6 +199673,9 @@ s => {
   "w": 0.25,
   "cd": 10,
   "once": true,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -199766,6 +199826,9 @@ s => {
   "w": 0.28,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -199915,6 +199978,9 @@ s => {
   "w": 0.32,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -200064,6 +200130,9 @@ s => {
   "w": 0.43,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -200214,6 +200283,9 @@ s => {
   "w": 0.26,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -200363,6 +200435,9 @@ s => {
   "w": 0.28,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -200521,6 +200596,9 @@ s => {
   "w": 0.43,
   "cd": 6,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -200671,6 +200749,9 @@ s => {
   "w": 0.31,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -200820,6 +200901,9 @@ s => {
   "w": 0.4,
   "cd": 6,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -200969,6 +201053,12 @@ s => {
   "w": 0.47,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 6
+  },
+  "le": {
+    "age": 15
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -201118,6 +201208,9 @@ s => {
   "w": 0.2,
   "cd": 12,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -201268,6 +201361,9 @@ s => {
   "w": 0.27,
   "cd": 9,
   "once": true,
+  "ge": {
+    "age": 16
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -201416,6 +201512,9 @@ s => {
   "w": 0.3,
   "cd": 10,
   "once": true,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -201568,6 +201667,9 @@ s => {
   "w": 0.46,
   "cd": 6,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -201717,6 +201819,9 @@ s => {
   "w": 0.4,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -201866,6 +201971,9 @@ s => {
   "w": 0.33,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -202015,6 +202123,9 @@ s => {
   "w": 0.4,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 18
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -202164,6 +202275,9 @@ s => {
   "w": 0.31,
   "cd": 9,
   "once": true,
+  "ge": {
+    "age": 18
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -202320,6 +202434,9 @@ s => {
   "w": 0.34,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -202469,6 +202586,9 @@ s => {
   "w": 0.28,
   "cd": 12,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -202618,6 +202738,9 @@ s => {
   "w": 0.37,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -202767,6 +202890,9 @@ s => {
   "w": 0.39,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -202916,6 +203042,9 @@ s => {
   "w": 0.28,
   "cd": 10,
   "once": true,
+  "ge": {
+    "age": 18
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -203068,6 +203197,9 @@ s => {
   "w": 0.25,
   "cd": 11,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -203217,6 +203349,9 @@ s => {
   "w": 0.27,
   "cd": 11,
   "once": false,
+  "ge": {
+    "age": 8
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -203366,6 +203501,9 @@ s => {
   "w": 0.39,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -203515,6 +203653,9 @@ s => {
   "w": 0.37,
   "cd": 7,
   "once": true,
+  "ge": {
+    "age": 14
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -203667,6 +203808,9 @@ s => {
   "w": 0.48,
   "cd": 6,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -203815,6 +203959,9 @@ s => {
   "w": 0.3,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 12
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -203964,6 +204111,9 @@ s => {
   "w": 0.42,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 18
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -204113,6 +204263,9 @@ s => {
   "w": 0.49,
   "cd": 6,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -204261,6 +204414,9 @@ s => {
   "w": 0.34,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 18
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -204414,6 +204570,9 @@ s => {
   "w": 0.41,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 14
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -204562,6 +204721,9 @@ s => {
   "w": 0.37,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -204711,6 +204873,9 @@ s => {
   "w": 0.54,
   "cd": 5,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -204859,6 +205024,9 @@ s => {
   "w": 0.35,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -205010,6 +205178,9 @@ s => {
   "w": 0.27,
   "cd": 9,
   "once": true,
+  "ge": {
+    "age": 18
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -205162,6 +205333,9 @@ s => {
   "w": 0.26,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 12
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -205310,6 +205484,9 @@ s => {
   "w": 0.28,
   "cd": 11,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -205459,6 +205636,12 @@ s => {
   "w": 0.55,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 5
+  },
+  "le": {
+    "age": 13
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -205607,6 +205790,12 @@ s => {
   "w": 0.46,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 6
+  },
+  "le": {
+    "age": 13
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -205755,6 +205944,12 @@ s => {
   "w": 0.6,
   "cd": 6,
   "once": false,
+  "ge": {
+    "age": 6
+  },
+  "le": {
+    "age": 14
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -205904,6 +206099,12 @@ s => {
   "w": 0.6,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 6
+  },
+  "le": {
+    "age": 14
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -206052,6 +206253,12 @@ s => {
   "w": 0.34,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
+  "le": {
+    "age": 17
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -206200,6 +206407,12 @@ s => {
   "w": 0.46,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 8
+  },
+  "le": {
+    "age": 16
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -206348,6 +206561,12 @@ s => {
   "w": 0.4,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 5
+  },
+  "le": {
+    "age": 11
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -206496,6 +206715,12 @@ s => {
   "w": 0.37,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 7
+  },
+  "le": {
+    "age": 14
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -206645,6 +206870,12 @@ s => {
   "w": 0.36,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
+  "le": {
+    "age": 17
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -206794,6 +207025,12 @@ s => {
   "w": 0.46,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 6
+  },
+  "le": {
+    "age": 14
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -206942,6 +207179,12 @@ s => {
   "w": 0.44,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 8
+  },
+  "le": {
+    "age": 16
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -207090,6 +207333,12 @@ s => {
   "w": 0.51,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
+  "le": {
+    "age": 15
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -207239,6 +207488,12 @@ s => {
   "w": 0.41,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 6
+  },
+  "le": {
+    "age": 13
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -207387,6 +207642,12 @@ s => {
   "w": 0.49,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
+  "le": {
+    "age": 15
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -207535,6 +207796,9 @@ s => {
   "w": 0.36,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -207685,6 +207949,9 @@ s => {
   "w": 0.48,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -207835,6 +208102,9 @@ s => {
   "w": 0.38,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -207984,6 +208254,9 @@ s => {
   "w": 0.5,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -208135,6 +208408,9 @@ s => {
   "w": 0.4,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -208284,6 +208560,9 @@ s => {
   "w": 0.31,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -208434,6 +208713,9 @@ s => {
   "w": 0.33,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -208584,6 +208866,9 @@ s => {
   "w": 0.3,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -208734,6 +209019,9 @@ s => {
   "w": 0.34,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -208885,6 +209173,9 @@ s => {
   "w": 0.39,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -209036,6 +209327,9 @@ s => {
   "w": 0.24,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -209186,6 +209480,9 @@ s => {
   "w": 0.29,
   "cd": 11,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -209336,6 +209633,9 @@ s => {
   "w": 0.46,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "contextual-opportunity",
@@ -209487,6 +209787,9 @@ s => {
   "w": 0.29,
   "cd": 11,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -209637,6 +209940,9 @@ s => {
   "w": 0.32,
   "cd": 11,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -209787,6 +210093,9 @@ s => {
   "w": 0.41,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -209936,6 +210245,9 @@ s => {
   "w": 0.33,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -210087,6 +210399,9 @@ s => {
   "w": 0.34,
   "cd": 10,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -210238,6 +210553,9 @@ s => {
   "w": 0.23,
   "cd": 12,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -210389,6 +210707,9 @@ s => {
   "w": 0.35,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -210537,6 +210858,9 @@ s => {
   "w": 0.38,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -210686,6 +211010,9 @@ s => {
   "w": 0.34,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -210835,6 +211162,9 @@ s => {
   "w": 0.36,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -210983,6 +211313,9 @@ s => {
   "w": 0.32,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -211132,6 +211465,9 @@ s => {
   "w": 0.25,
   "cd": 12,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -211280,6 +211616,9 @@ s => {
   "w": 0.34,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -211428,6 +211767,9 @@ s => {
   "w": 0.35,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -211577,6 +211919,9 @@ s => {
   "w": 0.29,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -211726,6 +212071,9 @@ s => {
   "w": 0.34,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -211874,6 +212222,9 @@ s => {
   "w": 0.5,
   "cd": 6,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -212025,6 +212376,9 @@ s => {
   "w": 0.37,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -212175,6 +212529,9 @@ s => {
   "w": 0.48,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -212325,6 +212682,9 @@ s => {
   "w": 0.45,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -212475,6 +212835,9 @@ s => {
   "w": 0.44,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -212626,6 +212989,9 @@ s => {
   "w": 0.39,
   "cd": 8,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -212776,6 +213142,9 @@ s => {
   "w": 0.44,
   "cd": 7,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -212927,6 +213296,9 @@ s => {
   "w": 0.35,
   "cd": 9,
   "once": false,
+  "ge": {
+    "age": 7
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -213078,6 +213450,9 @@ s => {
   "w": 0.42,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 15
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -213235,6 +213610,9 @@ s => {
   "w": 0.36,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 10
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -213386,6 +213764,9 @@ s => {
   "w": 0.26,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 14
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -213537,6 +213918,9 @@ s => {
   "w": 0.36,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 16
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -213694,6 +214078,9 @@ s => {
   "w": 0.3,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 16
+  },
   "presentation": "major-choice",
   "socialConstraint": {
     "group": "formation-or-relational",
@@ -213854,6 +214241,9 @@ s => {
   "w": 0.44,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 10
+  },
   "presentation": "major-choice",
   "socialConstraint": {
     "group": "formation-or-relational",
@@ -214005,6 +214395,9 @@ s => {
   "w": 0.3,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 8
+  },
   "presentation": "major-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -214158,6 +214551,12 @@ s => {
   "w": 0.36,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 9
+  },
+  "le": {
+    "age": 19
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -214310,6 +214709,12 @@ s => {
   "w": 0.37,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 12
+  },
+  "le": {
+    "age": 20
+  },
   "presentation": "major-choice",
   "socialConstraint": {
     "group": "formation-or-relational",
@@ -214466,6 +214871,9 @@ s => {
   "w": 0.36,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 8
+  },
   "presentation": "major-choice",
   "socialConstraint": {
     "group": "ordinary-contrast",
@@ -214618,6 +215026,9 @@ s => {
   "w": 0.35,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 18
+  },
   "presentation": "major-choice",
   "socialConstraint": {
     "group": "formation-or-relational",
@@ -214769,6 +215180,9 @@ s => {
   "w": 0.37,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 18
+  },
   "presentation": "major-choice",
   "socialConstraint": {
     "group": "formation-or-relational",
@@ -214923,6 +215337,9 @@ s => {
   "w": 0.31,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 10
+  },
   "presentation": "major-choice",
   "socialConstraint": {
     "group": "formation-or-relational",
@@ -215074,6 +215491,9 @@ s => {
   "w": 0.27,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 8
+  },
   "presentation": "minor-choice",
   "socialConstraint": {
     "group": "daily-bias",
@@ -215227,6 +215647,12 @@ s => {
   "w": 0.34,
   "cd": 8,
   "once": true,
+  "ge": {
+    "age": 14
+  },
+  "le": {
+    "age": 28
+  },
   "presentation": "major-choice",
   "socialConstraint": {
     "group": "formation-or-relational",
@@ -287768,12 +288194,14 @@ s => $rules.social.infectionPriorSummary(s.socialConflict?.infectionShock)
     "target": "infected",
     "context": "past-attitude"
   },
-  "lifeGoal": {
-    "id": "order-through-exclusion",
-    "action": "compromise",
-    "onlyIfActive": true,
-    "note": "診断後、排除によって秩序を守る目標を見直した"
-  },
+  "lifeGoals": [
+    {
+      "id": "order-through-exclusion",
+      "action": "compromise",
+      "onlyIfUnresolved": true,
+      "note": "診断後、排除によって秩序を守る目標を見直した"
+    }
+  ],
   "p": -3,
   "equityGain": 9
 }

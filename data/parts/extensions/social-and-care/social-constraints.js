@@ -16,6 +16,8 @@ function socialActionForChoice(choice) {
 }
 function socialConstraintMetadata(row) {
   const minor = /^(L0|L1)_/.test(row.frequencyClass);
+  // Generalized rows without age-specific source claims use a conservative age-seven floor.
+  const ageRange = row.ageRange || { min: 7, max: null };
   const conditions = String(row.conditionSummary || ''),
     infectedTarget = /感染者|鉱石病/.test(String(row.target || '')),
     workContext = /職場|工房|雇用|労働|仕事|荷受け|職務/.test(conditions) && /現に|実際に|在籍|就労|勤務中/.test(conditions),
@@ -32,7 +34,7 @@ function socialConstraintMetadata(row) {
     knowledgeBasis: String(row.knowledgeBasis || 'scene-observed-or-specific-record').slice(0, 120),
     conditionSummary: String(row.conditionSummary || '').slice(0, 500),
     excludeSummary: String(row.excludeSummary || '').slice(0, 300),
-    ageRange: row.ageRange,
+    ageRange,
     regions: row.regions,
     requiresPlayerDiagnosis: row.requiresPlayerDiagnosis,
     knowledgeAudiences: Array.isArray(row.knowledgeAudiences) ? row.knowledgeAudiences : [],
@@ -70,6 +72,8 @@ function compileSocialEvent(row) {
     w: row.weight,
     cd: row.cooldownYears,
     once: row.once,
+    ...(Number.isFinite(meta.ageRange?.min) ? { ge: { age: meta.ageRange.min } } : {}),
+    ...(Number.isFinite(meta.ageRange?.max) ? { le: { age: meta.ageRange.max } } : {}),
     presentation: meta.presentation,
     socialConstraint: meta,
     t: row.text,
