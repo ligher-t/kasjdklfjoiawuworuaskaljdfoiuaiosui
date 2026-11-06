@@ -178,7 +178,7 @@ function D(s) {
     "思いがけない事故による負傷が命に関わり、亡くなった。"
   ]);
   const displaced = !isLandship && !!(s.fl.disaster_displaced || s.displacement?.status === "shelter" || s.displacement?.status === "displaced");
-  const disaster = isLandship ? 0 :
+  const disaster = isLandship || (s.res?.n === "イェラグ" && s.year < 1101) ? 0 :
     P("life.disasterMortalityBase") *
     (s.home === "固定集落" ? P("death.disasterFixedSettlementScale") : 1) *
     (0.65 + (s.local?.hazard || 0) * 0.6);

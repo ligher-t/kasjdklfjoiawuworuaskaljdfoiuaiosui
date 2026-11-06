@@ -529,7 +529,7 @@ function elig(e, s, T, options = {}) {
   const l = s.sn[e.id] ?? (e.id === "displacement_after" ? s.sn.disaster_after : undefined),
     a = e.after,
     ignoreOccurrence = options.ignoreOccurrence === true,
-    cd = e.cd != null ? e.cd : e.c ? Infinity : 8;
+    cd = e.regionCooldowns?.[s.res?.n] ?? (e.cd != null ? e.cd : e.c ? Infinity : 8);
   if (!ignoreOccurrence && e.once && l != null) return rejectEligibility(e, "once", options);
   if (e.st && !e.st.includes(STG[stg(s)])) return rejectEligibility(e, "stage", options);
   if (e.months && !e.months.includes(s.mo)) return rejectEligibility(e, "month", options);

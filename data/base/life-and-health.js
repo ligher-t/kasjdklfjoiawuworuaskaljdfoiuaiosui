@@ -515,20 +515,28 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
       conf: "S",
       references: [
         "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+        "SRC_CATASTROPHE_RIM_BILLITON",
+        "SRC_CATASTROPHE_KJERAG_FIRST",
         "SRC_MOBILE_CITY_MOBILITY",
         "SRC_REGIONAL_ENVIRONMENT",
         "SRC_CATASTROPHE_CIVILIAN_LIFEPATH"
       ],
-      need: ["天災危険"],
+      any: ["天災危険", "国:レム・ビリトン"],
       ban: ["避難中"],
       ge: { age: 8 },
       cd: 12,
-      w: 0.2,
+      regionCooldowns: { "レム・ビリトン": 5 },
+      w: [0.2, { when: "国:レム・ビリトン", x: 4 }],
+      show: s => s.res?.n !== "イェラグ" || s.year >= 1101,
       who: s => (s.age < $rules.parameters.value("life.adultStartAge") ? "parent" : "self"),
       t: s => {
         const info = s.local?.info ?? 0.5,
           region = s.res?.n,
           ecology = s.local?.ecology;
+        if (region === "レム・ビリトン")
+          return info >= 0.55
+            ? "レム・ビリトンの警報塔から、天災が迫るという声が荒野を越えて届いた。幼いころに歌や放送で覚えた合図を思い出し、退避穴へ向かう道と閉じる扉を確かめる。"
+            : "遠くの警報塔から天災の知らせが届いた。鉱山の怖い話にも歌にも、災害のときは無理に外へ出ず、使える退避穴の扉を閉じろと教わってきた。";
         if (s.home === "移動都市")
           return info >= 0.65
             ? "天災トランスポーターの観測報が街区放送で鳴り響き、都市が緊急針路変更に入ると告げられた。身の回りの荷を掴んで地下の避難区画へ走るか、今の部屋に留まるか、猶予はない。"
@@ -570,7 +578,8 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
               p: -10,
               cash: -3e5,
               fl: { disaster_displaced: 1, sch: 0 },
-              displacement: "displaced"
+              displacement: "displaced",
+              catastropheInfectionChance: 0.02
             }
           ],
           [
@@ -585,7 +594,7 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
           [
             0.92,
             "係員の怒号に押されながら地下の避難区画へ滑り込んだ。機関部が唸りを上げて都市が急旋回し、鉄壁の向こうで食器の割れる音と子どもの泣き声がいつまでも響いていた。",
-            { p: -2 }
+            { p: -2, catastropheInfectionChance: 0.03 }
           ],
           [
             1,
@@ -599,12 +608,26 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
           [
             0.85,
             "窓に板を打ち付け、机の下で息を潜めた。やがて地鳴りは遠ざかり、灰の舞う朝が来たが、しばらくは少しの風音にも心臓が跳ねた。",
-            { p: -2 }
+            { p: -2, catastropheInfectionChance: 0.05 }
           ],
           [
             1,
             "逃げる間もなく天災の直撃を受け、住み慣れた街ごと黒い結晶と瓦礫の海に呑み込まれた。",
             { d: ["天災", "居住地を襲った天災から逃げられず亡くなった"] }
+          ]
+        ),
+        $terraData.K(
+          "警報塔の合図に従い、使える退避穴へ入って扉を閉じる",
+          { show: s => s.res?.n === "レム・ビリトン" },
+          [
+            0.97,
+            "警報塔の声が途切れる前に退避穴へ滑り込み、教わったとおり入口の扉を閉めた。地鳴りが遠ざかるまで暗がりで肩を寄せ、扉の向こうに砂が降り積もる音を聞いた。",
+            { p: -1, catastropheInfectionChance: 0.02 }
+          ],
+          [
+            1,
+            "退避穴へ駆け込んだ直後、地面が割れて入口が崩れた。教わった手順を守っても避けきれない揺れに巻き込まれ、瓦礫の下で息絶えた。",
+            { d: ["天災", "退避穴へ避難したが、地盤崩落に巻き込まれ亡くなった"] }
           ]
         )
       ]

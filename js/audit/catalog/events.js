@@ -35,6 +35,14 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
     }
     if (e.w != null) weight(e.w, w);
     if (e.cd != null && (!Number.isFinite(e.cd) || e.cd < 0)) W_.push(`${w}: 再発待機期間が不正`);
+    if (e.regionCooldowns != null) {
+      if (!e.regionCooldowns || typeof e.regionCooldowns !== "object" || Array.isArray(e.regionCooldowns))
+        W_.push(`${w}: 地域別再発待機期間がオブジェクトではない`);
+      else Object.entries(e.regionCooldowns).forEach(([region, cooldown]) => {
+        if (!services.REG.some(row => row.n === region) || !Number.isFinite(cooldown) || cooldown < 0)
+          W_.push(`${w}: 地域別再発待機期間「${region}」が不正`);
+      });
+    }
     if (e.inConfinement != null && typeof e.inConfinement !== "boolean")
       W_.push(`${w}: 収容・隔離中の発生可否が真偽値でない`);
     if (

@@ -27,6 +27,39 @@ function applyStatEffects(e, s) {
   }
 }
 
+function infectCoResidentAfterCatastrophe(person, s, chance, cause, knowledgeField) {
+  if (!person || person.d || person.inf || R() >= chance) return false;
+  const infected = { ...person, year: s.year, r: person.r || s.r, ob: person.ob || 0 };
+  initializeInfection(infected, "dust");
+  person.inf = 1;
+  person.ob = infected.ob;
+  person.ac = infected.ac;
+  person.infectionOnset = infected.infectionOnset;
+  person.infYear = s.year;
+  person.infCause = cause;
+  person[knowledgeField] = 0;
+  person.infection = { year: s.year, cause, basis: "catastrophe-exposure", diagnosedYear: null };
+  return true;
+}
+
+function applyCatastropheInfectionChecks(s, chance) {
+  if (!Number.isFinite(chance) || chance <= 0 || chance > 0.05) return;
+  const cause = "天災後に吸い込んだ源石粉塵への曝露";
+  if (!s.inf && R() < chance) {
+    applyInfectionAndContactEffects(
+      { inf: 1, infectionRoute: "dust", infCause: cause },
+      s
+    );
+  }
+  if (!inSharedHousehold(s)) return;
+  const parentKeys = s.care?.parentKeys?.length ? s.care.parentKeys : ["fa", "mo"];
+  for (const key of parentKeys)
+    infectCoResidentAfterCatastrophe(s.par?.[key], s, chance, cause, "infectionKnown");
+  for (const sibling of siblingsOf(s))
+    if (!sibling.independentSinceYear && sibling.contactState !== "ended")
+      infectCoResidentAfterCatastrophe(sibling, s, chance, cause, "infKnown");
+}
+
 function applyInfectionAndContactEffects(e, s) {
   if (e.ob && s.inf) s.ob = clamp(s.ob + e.ob, 0, 100);
   if (e.exposureAction) oriApplyAction(s, e.exposureAction);
@@ -54,6 +87,8 @@ function applyInfectionAndContactEffects(e, s) {
     oriState(s).reviewDueYear = null;
     oriRecord(s, "diagnosis", "検査で鉱石病と診断された");
   }
+  if (e.catastropheInfectionChance != null)
+    applyCatastropheInfectionChecks(s, e.catastropheInfectionChance);
   if (Number.isFinite(e.careInclination) && e.careInclination > 0) {
     const before = s.careInclination ?? 50,
       after = clamp(before + e.careInclination, 0, 100);

@@ -32,7 +32,7 @@ function createCatalogFieldChecks(W_, services) {
   ]);
   const eventKeys = new Set([
     ...conditionKeys, "id", "conf", "references", "w", "cd", "once", "pri", "st", "months",
-    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "displayTone", "timelineFlag", "crisisPolicy", "historicalScene"
+    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "displayTone", "timelineFlag", "crisisPolicy", "historicalScene", "regionCooldowns"
   ]);
   const cc = (c, w, event = false) => {
     if (!c) return;
@@ -124,6 +124,8 @@ function createCatalogFieldChecks(W_, services) {
         W_.push(`${w}: 効果「${k}」が空でない文字列ではない`);
       if(k === "infectionRoute" && !["dust","wound","deep-wound","mixed"].includes(f[k]))
         W_.push(`${w}: 感染経路が不正`);
+      if(k === "catastropheInfectionChance" && (f[k] < 0 || f[k] > 0.05))
+        W_.push(`${w}: 天災後の感染確率は0から5%の範囲ではない`);
       if(k === "debtPlan" && !["frugal","maintain"].includes(f[k]))W_.push(`${w}: 家計再建方針が不正`);
       if (type === "number" && (typeof f[k] !== "number" || !Number.isFinite(f[k])))
         W_.push(`${w}: 効果「${k}」が有限な数値ではない`);
