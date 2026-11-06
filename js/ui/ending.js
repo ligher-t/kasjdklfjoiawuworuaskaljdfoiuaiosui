@@ -196,6 +196,7 @@ function renderEndingPeers(life, root, retryAttempt = 0) {
     console.error("ending peer worker message error", error);
     finish();
   };
+  present(false);
   worker.postMessage({
     type: "run", revision: ENGINE_REVISION, seed, by: life.by, bd: life.bd,
     count, retryAttempt
