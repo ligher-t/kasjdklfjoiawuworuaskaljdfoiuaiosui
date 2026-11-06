@@ -7,6 +7,7 @@ vm.runInNewContext(require('../tools/runtime.cjs').readEngine(root).split('/* ==
 const result=vm.runInNewContext(String.raw`(()=>{
  const event=id=>window.GAME_DATA.EV.find(row=>row.id===id),apply=(id,choice,outcome)=>{const e=event(id),previous=TRACE_RESOLUTION;TRACE_RESOLUTION={kind:'choice',id:e.id,label:e.c[choice].l};try{ap(e.c[choice].o[outcome][2])}finally{TRACE_RESOLUTION=previous}};
  born({seed:870601,by:1050,region:'龍門'});S.age=35;S.year=1085;S.res=REG.find(x=>x.n==='龍門');S.biasInfected=82;S.house.cash=10000000;S.job=1;
+ const speciesBoundDaily=event('disc_day_vs01'),speciesEligibility=socialConstraintSceneEligible(speciesBoundDaily,S);if(typeof speciesEligibility!=='boolean')throw Error('species-scoped social eligibility did not return a boolean');
  apply('life_infected_association_choice',0,0);
  const affiliation=S.lifeRecord.affiliations.find(x=>x.id==='infected-exclusion'),organization=S.lifeRecord.organizations.find(x=>x.id==='infected-exclusion');
  if(affiliation?.status!=='active'||organization?.status!=='active'||!S.socialConflict.acts.some(x=>x.action==='exclude'&&x.target==='infected')||S.lifeRecord.goals.find(x=>x.id==='order-through-exclusion')?.status!=='active')throw Error('founding did not carry into active affiliation, organization policy, aspiration, and personal action history');

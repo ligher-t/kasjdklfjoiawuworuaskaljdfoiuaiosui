@@ -201,10 +201,12 @@ function socialConstraintSceneEligible(event, s) {
     return false;
   if (meta.externalSettingRequired && scene.interior) return false;
   if (!socialConstraintHasProtagonistKnowledge(s, meta, scene)) return false;
-  if (meta.requiresProtagonistSarkaz && !tags(s).includes("種族:サルカズ")) return false;
-  if (meta.requiresProtagonistOni && !tags(s).includes("種族:鬼")) return false;
-  if (meta.requiresProtagonistDurin && !tags(s).includes("種族:ドゥリン")) return false;
-  if (meta.requiresProtagonistLiberi && !tags(s).includes("種族:リーベリ")) return false;
+  const protagonistTags = meta.requiresProtagonistSarkaz || meta.requiresProtagonistOni ||
+    meta.requiresProtagonistDurin || meta.requiresProtagonistLiberi ? tags(s) : null;
+  if (meta.requiresProtagonistSarkaz && !protagonistTags.has("種族:サルカズ")) return false;
+  if (meta.requiresProtagonistOni && !protagonistTags.has("種族:鬼")) return false;
+  if (meta.requiresProtagonistDurin && !protagonistTags.has("種族:ドゥリン")) return false;
+  if (meta.requiresProtagonistLiberi && !protagonistTags.has("種族:リーベリ")) return false;
   if (meta.requiresCurrentEmployment && !socialConstraintEmploymentEpisode(s, meta)) return false;
   if (meta.requiresActiveEducation && !socialConstraintEnrollment(s, meta, scene)) return false;
   if (meta.requiresEducationIntent && !socialConstraintEducationIntent(s, meta)) return false;

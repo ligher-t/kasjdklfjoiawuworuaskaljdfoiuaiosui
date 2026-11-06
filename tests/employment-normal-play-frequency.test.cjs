@@ -29,6 +29,8 @@ const {context} = require('./support/annual-cases.cjs');
   assert.equal(report.summary.attempted, 5);
   assert.equal(rows.length, report.summary.sampled,
     'only completed lives have employment prompt diagnostics');
+  assert.equal(report.summary.runtimeFailures + report.summary.stateFailures, 0,
+    'fixed normal-play sample must finish without simulation failures: ' + JSON.stringify(report.failures));
   const decisions = rows.reduce((sum, row) => sum + row.employmentDecisionsShown, 0);
   assert(decisions > 0, 'fixed normal-play sample must exercise real employment choices');
   for (const row of rows) {
