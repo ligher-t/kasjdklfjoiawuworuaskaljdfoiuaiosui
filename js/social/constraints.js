@@ -103,17 +103,76 @@ function socialConstraintHasHouseholdScene(s) {
   return !!(s?.house && (s.house.members?.length || s.par?.fa || s.par?.mo || s.sp || s.kids?.length));
 }
 
+function socialConstraintEmploymentEpisode(s, meta = {}) {
+  const episode = typeof currentPlayerEmployment === "function" ? currentPlayerEmployment(s) : null;
+  if (!episode || travelPresence(s).mode !== "residence" || restricted(s)) return null;
+  if (Array.isArray(meta.workJobIds) && meta.workJobIds.length &&
+      !meta.workJobIds.includes(episode.jobId)) return null;
+  if (episode.kind === "wage-employment") {
+    const areaId = typeof occupationWorkAreaKey === "function" ? occupationWorkAreaKey(s) : null,
+      site = s.world?.occupationWorld?.sites?.[episode.siteId];
+    if (!areaId || episode.areaId !== areaId || !site || site.areaId !== episode.areaId ||
+        !["open", "strained"].includes(site.status)) return null;
+  } else if (episode.region !== s.res?.n || episode.localityKey !== s.community?.key) return null;
+  return episode;
+}
+
+function socialConstraintEnrollment(s, meta = {}, scene = null) {
+  if (s.educationPath?.status !== "enrolled" || travelPresence(s).mode !== "residence" || restricted(s) ||
+      typeof educationActiveEnrollment !== "function") return null;
+  const enrollment = educationActiveEnrollment(s), world = s.world?.educationWorld,
+    record = s.educationRecord?.enrollments?.find(row => row.id === enrollment?.id),
+    offering = world?.offerings?.[enrollment?.offeringId],
+    campus = world?.campuses?.[offering?.campusId],
+    area = world?.areas?.[campus?.educationAreaId];
+  if (!enrollment || record?.status !== "enrolled" || !offering || !campus || !area ||
+      !s.local?.educationAreaId || campus.educationAreaId !== s.local.educationAreaId ||
+      area.regionKey !== (scene?.region || s.res?.n)) return null;
+  if (Array.isArray(meta.educationStages) && meta.educationStages.length &&
+      !meta.educationStages.includes(offering.stage)) return null;
+  return { enrollment, offering, institutionId: offering.institutionId };
+}
+
+function socialConstraintEducationIntent(s, meta = {}) {
+  const item = typeof educationActiveCase === "function" ? educationActiveCase(s) : null;
+  if (!item || item.status !== "active" || !["intent", "planning"].includes(item.phase)) return false;
+  return !Array.isArray(meta.educationStages) || !meta.educationStages.length ||
+    meta.educationStages.includes(item.stage);
+}
+
+function socialConstraintMarketStreet(s) {
+  if (travelPresence(s).mode !== "residence" || restricted(s)) return false;
+  const localKind = String(s.local?.kind || "");
+  return !!s.local?.city || /市場|商業|中心|街区/.test(localKind);
+}
+
+function socialConstraintKnowledgeRecipients(s, meta = {}, scene = null) {
+  if (meta.knowledgeRecipientBinding === "current-workplace") {
+    const episode = socialConstraintEmploymentEpisode(s, {});
+    return episode ? new Set([episode.siteId, episode.employerId].filter(Boolean)) : null;
+  }
+  if (meta.knowledgeRecipientBinding === "current-school") {
+    const school = socialConstraintEnrollment(s, {}, scene);
+    return school ? new Set([school.institutionId].filter(Boolean)) : null;
+  }
+  if (meta.knowledgeRecipientBinding === "specified") {
+    return new Set([meta.knowledgeRecipientId, meta.knowledgeRecipientRef].filter(Boolean));
+  }
+  return null;
+}
+
 function socialConstraintHasProtagonistKnowledge(s, meta, scene) {
   if (!meta.requiresPlayerDiagnosis) return true;
   if (!s?.inf || !s.fl?.dg || typeof infectionAwarenessEntries !== "function") return false;
-  const allowedAudience = new Set(meta.knowledgeAudiences || ["public", "community", "residents"]);
-  return infectionAwarenessEntries(s).some(row =>
-    row.subject === "protagonist" && row.certainty === "confirmed" && row.subjectMatch === "confirmed" &&
-    row.region === scene.region && row.placeId === scene.placeId &&
-    (!row.areaKey || row.areaKey === scene.localityKey) &&
-    allowedAudience.has(row.audience) &&
-    (row.audience === "public" || !!row.recipientId || !!row.recipientRef)
-  );
+  const expectedRecipients = socialConstraintKnowledgeRecipients(s, meta, scene);
+  if (!expectedRecipients?.size || !scene?.placeId || !scene?.localityKey) return false;
+  const allowedAudience = new Set(Array.isArray(meta.knowledgeAudiences) ? meta.knowledgeAudiences : []);
+  return infectionAwarenessEntries(s).some(row => {
+    const sameRecipient = expectedRecipients.has(row.recipientId) || expectedRecipients.has(row.recipientRef);
+    return row.subject === "protagonist" && row.certainty === "confirmed" && row.subjectMatch === "confirmed" &&
+      row.region === scene.region && row.placeId === scene.placeId && row.areaKey === scene.localityKey &&
+      allowedAudience.has(row.audience) && sameRecipient;
+  });
 }
 
 function socialConstraintMotifAlreadyRecorded(s, meta, scene) {
@@ -134,6 +193,7 @@ function socialConstraintSceneEligible(event, s) {
   if (meta.ageRange && (!Number.isFinite(s.age) ||
       (Number.isFinite(meta.ageRange.min) && s.age < meta.ageRange.min) ||
       (Number.isFinite(meta.ageRange.max) && s.age > meta.ageRange.max))) return false;
+  if (Number.isInteger(meta.minYear) && (!Number.isInteger(s.year) || s.year < meta.minYear)) return false;
   if (Array.isArray(meta.regions) && meta.regions.length && !meta.regions.includes(scene.region)) return false;
   if (socialConstraintMotifAlreadyRecorded(s, meta, scene)) return false;
   if (meta.protectedInteriorMask && infectedTarget &&
@@ -143,10 +203,11 @@ function socialConstraintSceneEligible(event, s) {
   if (!socialConstraintHasProtagonistKnowledge(s, meta, scene)) return false;
   if (meta.requiresProtagonistSarkaz && !tags(s).includes("種族:サルカズ")) return false;
   if (meta.requiresProtagonistOni && !tags(s).includes("種族:鬼")) return false;
-  if (meta.requiresCurrentEmployment &&
-      !(typeof currentPlayerEmployment === "function" && currentPlayerEmployment(s))) return false;
-  if (meta.requiresActiveEducation &&
-      !(typeof educationActiveEnrollment === "function" && educationActiveEnrollment(s))) return false;
+  if (meta.requiresProtagonistDurin && !tags(s).includes("種族:ドゥリン")) return false;
+  if (meta.requiresProtagonistLiberi && !tags(s).includes("種族:リーベリ")) return false;
+  if (meta.requiresCurrentEmployment && !socialConstraintEmploymentEpisode(s, meta)) return false;
+  if (meta.requiresActiveEducation && !socialConstraintEnrollment(s, meta, scene)) return false;
+  if (meta.requiresEducationIntent && !socialConstraintEducationIntent(s, meta)) return false;
   if (meta.requiresHouseholdScene && !socialConstraintHasHouseholdScene(s)) return false;
   if (meta.requiresRhodesBranch && scene.interior !== "rhodes-branch") return false;
   if (meta.requiresReunionBase &&
@@ -170,10 +231,12 @@ function socialConstraintSceneEligible(event, s) {
     case "current-residence":
       return travelPresence(s).mode === "residence";
     case "current-worksite":
-      return !!(typeof currentPlayerEmployment === "function" && currentPlayerEmployment(s));
+      return !!socialConstraintEmploymentEpisode(s, meta);
     case "current-education":
     case "actual-school":
-      return !!(typeof educationActiveEnrollment === "function" && educationActiveEnrollment(s));
+      return !!socialConstraintEnrollment(s, meta, scene);
+    case "market-street":
+      return socialConstraintMarketStreet(s);
     case "worksite-or-visit":
     case "actual-merchant-worksite":
     case "actual-boarding-school":

@@ -1,4 +1,4 @@
-// Generated from the user-provided v3 ledger; edits belong in that ledger and this runtime adapter.
+// Runtime adapter for reviewed v3 prose; editorial decisions: docs/DISCRIMINATION_HELD_48_EDITORIAL_DECISIONS.md.
 window.TERRA_DATA_BUILD.fragment(
   "extensions/social-and-care",
   "extensions/social-and-care/discrimination-daily"
@@ -28,20 +28,30 @@ function socialConstraintMetadata(row) {
     target: row.target,
     domain: row.domain,
     episodeKey: String(row.episodeKey || row.id).slice(0, 100),
-    subjectKind: row.requiresPlayerDiagnosis || row.requiresProtagonistOni || row.requiresProtagonistSarkaz ? 'protagonist' : 'scene-person',
+    subjectKind: row.requiresPlayerDiagnosis || row.requiresProtagonistOni || row.requiresProtagonistSarkaz || row.requiresProtagonistDurin || row.requiresProtagonistLiberi ? 'protagonist' : 'scene-person',
     knowledgeBasis: String(row.knowledgeBasis || 'scene-observed-or-specific-record').slice(0, 120),
     conditionSummary: String(row.conditionSummary || '').slice(0, 500),
     excludeSummary: String(row.excludeSummary || '').slice(0, 300),
     ageRange: row.ageRange,
     regions: row.regions,
     requiresPlayerDiagnosis: row.requiresPlayerDiagnosis,
-    knowledgeAudiences: ['public'],
+    knowledgeAudiences: Array.isArray(row.knowledgeAudiences) ? row.knowledgeAudiences : [],
+    knowledgeRecipientBinding: row.knowledgeRecipientBinding,
+    knowledgeRecipientId: row.knowledgeRecipientId,
+    knowledgeRecipientRef: row.knowledgeRecipientRef,
     requiresProtagonistSarkaz: row.requiresProtagonistSarkaz,
+    requiresProtagonistDurin: row.requiresProtagonistDurin,
+    requiresProtagonistLiberi: row.requiresProtagonistLiberi,
+    workJobIds: row.workJobIds,
+    educationStages: row.educationStages,
+    requiresEducationIntent: row.requiresEducationIntent,
+    minYear: row.minYear,
+    requiredLanguageVariety: row.requiredLanguageVariety,
     requiresProtagonistOni: row.requiresProtagonistOni,
     protectedInteriorMask: infectedTarget && row.group === 'daily-bias',
     externalSettingRequired: row.target === 'サルカズ' && /組織外/.test(conditions),
-    requiresCurrentEmployment: workContext,
-    requiresActiveEducation: educationContext,
+    requiresCurrentEmployment: row.requiresCurrentEmployment === true || workContext,
+    requiresActiveEducation: row.requiresActiveEducation === true || educationContext,
     requiresHouseholdScene: householdContext,
     requiresRhodesBranch: /rhodes-staff|rhodes-care/.test(conditions),
     requiresReunionBase: /reunion-1096\/reunion-reorg/.test(conditions),
@@ -1009,8 +1019,8 @@ function compileSocialEvent(row) {
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": false,
-    "holdReason": null,
+    "held": true,
+    "holdReason": "現行状態に場面の店員・住民・係員を特定する受け手IDがなく、同じ地域・場所の公開情報だけでは相手の認知を確定できない。",
     "text": "干し肉を選んでいると、店主があなたの包みにだけ別の値札を貼った。「感染者には手間がかかる」と平然と言う。隣の客の値札はそのままだった。",
     "choices": [
       {
@@ -1035,11 +1045,13 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi02",
-    "title": "帳簿の署名",
+    "title": "保証人を求める店",
     "domain": "商い・受取",
     "target": "感染者",
     "ageRange": {
@@ -1048,46 +1060,48 @@ function compileSocialEvent(row) {
     },
     "regions": [],
     "sceneBinding": "session",
-    "conditionSummary": "本人が感染・診断済み。相手の認知がinfectionAwarenessに本人・同生活圏・当該受け手として記録済み。場面固有の施設利用を確認。受取予定の荷物が実際に記録されている場合。",
-    "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
+    "conditionSummary": "本人が感染・診断済み。店側が本人を感染者と知る場合、同じ地域・場所・生活圏のinfectionAwarenessに当該取引担当者が受け手として記録済み。店頭での一回の買い物。",
+    "excludeSummary": "公開掲示だけから店側の知識を推定する場合、受け手・場所が一致しない場合、移動中や立入制限中。",
     "knowledgeBasis": "感染診断本人・受け手・現在の受取場所が照合できる。無関係な隣人へ感染を自動拡散しない。",
     "frequencyClass": "L1_日常",
     "group": "daily-bias",
     "weight": 0.25,
     "cooldownYears": 10,
-    "once": false,
+    "once": true,
     "episodeKey": "商い・受取|感染者|荷物の受取窓口",
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
     "held": true,
-    "holdReason": "受取予定の荷物に結び付く注文履歴が現行状態にない。",
+    "holdReason": "現行状態に特定の店・取引担当者を示す受け手IDがなく、公開情報だけでは相手の認知を確定できない。",
     "text": "注文した荷物の受取帳に署名すると、窓口の男は「感染者は保証人を連れてこい」と言って帳簿を閉じた。荷札にはあなたの名前がはっきり書かれている。",
     "choices": [
       {
-        "label": "注文控えを示して引き渡しを求める",
-        "outcome": "控えと帳簿を見比べた男は渋々荷物を出した。縄の結び目がやけに固かった。",
+        "label": "その場で理由を問いただす",
+        "outcome": "男は帳場を閉じ、「うちの扱いだ」と答えた。品物は渡されず、後ろの客が呼ばれた。",
         "numericEffects": {
           "p": -1,
           "k": 1
         },
         "actionDescriptors": [
-          "記憶:parcel-released"
+          "記憶:guarantor-demand-questioned"
         ],
         "recordAction": null
       },
       {
-        "label": "後日あらためて受け取りに来る",
-        "outcome": "控えを畳んで戻った。荷物を預けたまま帰る道は、行きより長く感じられた。",
+        "label": "今日は買わず店を出る",
+        "outcome": "店の外へ出ると、隣の客が包みを抱えて通りを歩いていった。",
         "numericEffects": {
           "p": -2
         },
         "actionDescriptors": [
-          "記憶:parcel-deferred"
+          "記憶:purchase-left"
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi03",
@@ -1112,8 +1126,8 @@ function compileSocialEvent(row) {
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": false,
-    "holdReason": null,
+    "held": true,
+    "holdReason": "現行状態に場面の店員・住民・係員を特定する受け手IDがなく、同じ地域・場所の公開情報だけでは相手の認知を確定できない。",
     "text": "理髪店で順番を待っていると、店主はあなたを指して「感染者の髪は別の店で切ってもらえ」と告げた。椅子には白い布が一枚、きれいに掛かっている。",
     "choices": [
       {
@@ -1138,11 +1152,13 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi04",
-    "title": "洗い直す布",
+    "title": "押し返された布",
     "domain": "家事・注文",
     "target": "感染者",
     "ageRange": {
@@ -1151,45 +1167,47 @@ function compileSocialEvent(row) {
     },
     "regions": [],
     "sceneBinding": "session",
-    "conditionSummary": "本人が感染・診断済み。相手の認知がinfectionAwarenessに本人・同生活圏・当該受け手として記録済み。場面固有の施設利用を確認。洗濯・仕立てを外注している生活場面。",
-    "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
+    "conditionSummary": "本人が感染・診断済み。店側が本人を感染者と知る場合、同じ地域・場所・生活圏のinfectionAwarenessに当該店員が受け手として記録済み。店頭で布を渡そうとする一回の生活場面。",
+    "excludeSummary": "外注の継続契約や洗濯履歴を新設しない。公開掲示だけから店側の知識を推定する場合、受け手・場所が一致しない場合。",
     "knowledgeBasis": "感染診断本人・受け手・現在の受取場所が照合できる。無関係な隣人へ感染を自動拡散しない。",
     "frequencyClass": "L1_日常",
     "group": "daily-bias",
     "weight": 0.32,
     "cooldownYears": 8,
-    "once": false,
+    "once": true,
     "episodeKey": "家事・注文|感染者|仕立て・洗濯を請ける店",
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
     "held": true,
-    "holdReason": "洗濯・仕立てを外注した継続関係の記録が現行状態にない。",
+    "holdReason": "現行状態に特定の洗濯店・店員を示す受け手IDがなく、公開情報だけでは相手の認知を確定できない。",
     "text": "洗い上がった布を受け取りに行くと、店の女はあなたの包みだけを棒の先で押し出した。「そのまま持って帰って」と言い、ほかの客には手渡ししていた。",
     "choices": [
       {
-        "label": "包みの受け渡しを頼む",
-        "outcome": "女は唇を結び、棒から包みを外して台に置いた。糸の端が少しほつれていた。",
+        "label": "布を受け取るよう頼む",
+        "outcome": "女は布を台へ置いたが、手渡そうとはしなかった。店の奥で次の客を呼ぶ声がした。",
         "numericEffects": {
           "p": -1
         },
         "actionDescriptors": [
-          "記憶:laundry-handled"
+          "記憶:service-refusal-questioned"
         ],
         "recordAction": null
       },
       {
-        "label": "包みを拾って帰る",
+        "label": "布を持ち帰る",
         "outcome": "布を抱えて店を出た。背中で木の棒が床へ転がる音がした。",
         "numericEffects": {
           "p": -1
         },
         "actionDescriptors": [
-          "記憶:laundry-pole"
+          "記憶:cloth-carried-home"
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi05",
@@ -1214,8 +1232,8 @@ function compileSocialEvent(row) {
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": false,
-    "holdReason": null,
+    "held": true,
+    "holdReason": "現行状態に場面の店員・住民・係員を特定する受け手IDがなく、同じ地域・場所の公開情報だけでは相手の認知を確定できない。",
     "text": "戸口に回覧板が届かなかった。隣人に聞くと、「病気の家へ回すのは嫌だって皆が」と言われる。祭礼の集合時刻は、あなた以外の家だけに伝わっていた。",
     "choices": [
       {
@@ -1241,7 +1259,9 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi06",
@@ -1266,8 +1286,8 @@ function compileSocialEvent(row) {
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": false,
-    "holdReason": null,
+    "held": true,
+    "holdReason": "現行状態に場面の店員・住民・係員を特定する受け手IDがなく、同じ地域・場所の公開情報だけでは相手の認知を確定できない。",
     "text": "寒い朝、共用の火鉢へ近づくと、一緒に暖を取っていた二人が立ち上がった。「お前は向こうだ」と冷えた隅を指す。炭火の赤が遠くなった。",
     "choices": [
       {
@@ -1292,7 +1312,9 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi07",
@@ -1304,8 +1326,8 @@ function compileSocialEvent(row) {
       "max": null
     },
     "regions": [],
-    "sceneBinding": "session",
-    "conditionSummary": "本人が感染・診断済み。相手の認知がinfectionAwarenessに本人・同生活圏・当該受け手として記録済み。場面固有の施設利用を確認。実際の工房勤務・共同道具箱。就業中か短期職人仕事の現場。",
+    "sceneBinding": "current-worksite",
+    "conditionSummary": "本人が感染・診断済み。J2/J7/J11/J18/J22の現職が同じ地域・勤務場所にある。雇用主または職場が本人を感染者と知る場合、同じ場所・生活圏のinfectionAwarenessに当該職場が受け手として記録済み。",
     "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
     "knowledgeBasis": "感染診断本人・受け手・現在の受取場所が照合できる。無関係な隣人へ感染を自動拡散しない。",
     "frequencyClass": "L1_日常",
@@ -1343,6 +1365,19 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
+    ],
+    "requiresCurrentEmployment": true,
+    "workJobIds": [
+      2,
+      7,
+      11,
+      18,
+      22
+    ],
+    "knowledgeRecipientBinding": "current-workplace",
+    "knowledgeAudiences": [
+      "workplace",
+      "employer"
     ]
   },
   {
@@ -1368,8 +1403,8 @@ function compileSocialEvent(row) {
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": false,
-    "holdReason": null,
+    "held": true,
+    "holdReason": "現行状態に場面の店員・住民・係員を特定する受け手IDがなく、同じ地域・場所の公開情報だけでは相手の認知を確定できない。",
     "text": "代金を払うと、店員は釣銭を窓枠の外へ一枚ずつ並べた。あなたの後ろの客には掌へ渡している。「病気の人にはこの方がいい」と店員は言った。",
     "choices": [
       {
@@ -1395,7 +1430,9 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi09",
@@ -1420,8 +1457,8 @@ function compileSocialEvent(row) {
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": false,
-    "holdReason": null,
+    "held": true,
+    "holdReason": "現行状態に場面の店員・住民・係員を特定する受け手IDがなく、同じ地域・場所の公開情報だけでは相手の認知を確定できない。",
     "text": "窓口の名簿であなたの名が飛ばされた。受付係は次の人を呼び、こちらへ「感染者の分は夕方だ」と言った。窓の向こうでは時計の針が進んでいた。",
     "choices": [
       {
@@ -1446,7 +1483,9 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi10",
@@ -1471,8 +1510,8 @@ function compileSocialEvent(row) {
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": false,
-    "holdReason": null,
+    "held": true,
+    "holdReason": "現行状態に場面の店員・住民・係員を特定する受け手IDがなく、同じ地域・場所の公開情報だけでは相手の認知を確定できない。",
     "text": "乾物を注文すると、店主はあなたの袋だけを紙で二重に包んだ。「感染者に売ったと知られるのは困る」と小声で言う。袋の口がひどく固く結ばれた。",
     "choices": [
       {
@@ -1497,7 +1536,9 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi11",
@@ -1522,8 +1563,8 @@ function compileSocialEvent(row) {
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": false,
-    "holdReason": null,
+    "held": true,
+    "holdReason": "現行状態に場面の店員・住民・係員を特定する受け手IDがなく、同じ地域・場所の公開情報だけでは相手の認知を確定できない。",
     "text": "子どもたちの縄跳びに入ろうとすると、大人が「感染者の子は見ているだけにして」と手を伸ばした。縄が足元で止まり、向こうの子が口を開きかけた。",
     "choices": [
       {
@@ -1548,7 +1589,9 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi12",
@@ -1573,8 +1616,8 @@ function compileSocialEvent(row) {
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": false,
-    "holdReason": null,
+    "held": true,
+    "holdReason": "現行状態に場面の店員・住民・係員を特定する受け手IDがなく、同じ地域・場所の公開情報だけでは相手の認知を確定できない。",
     "text": "家族のために小札を求めると、受付の老人は「鉱石病の家には渡せない」と小札を引き出しへ戻した。後ろの参拝客には同じものを手渡している。",
     "choices": [
       {
@@ -1600,60 +1643,64 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi13",
-    "title": "配達の時間",
+    "title": "戸口に残された包み",
     "domain": "町内・便り",
     "target": "感染者",
     "ageRange": {
-      "min": 7,
+      "min": 16,
       "max": null
     },
     "regions": [],
     "sceneBinding": "session",
-    "conditionSummary": "本人が感染・診断済み。相手の認知がinfectionAwarenessに本人・同生活圏・当該受け手として記録済み。場面固有の施設利用を確認。継続した配達依頼と同一配達人の勤務が必要。",
-    "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
+    "conditionSummary": "本人が感染・診断済み。トランスポーターが本人を感染者と知る場合、同じ地域・場所・生活圏のinfectionAwarenessに当該受け手が記録済み。目の前の荷物一件だけを扱う。",
+    "excludeSummary": "継続配送・同一配達人ID・翌日以降の配達順変更を作らない。公開掲示だけから受け手の知識を推定しない。",
     "knowledgeBasis": "感染診断本人・受け手・現在の受取場所が照合できる。無関係な隣人へ感染を自動拡散しない。",
     "frequencyClass": "L1_日常",
     "group": "daily-bias",
     "weight": 0.27,
     "cooldownYears": 9,
-    "once": false,
+    "once": true,
     "episodeKey": "町内・便り|感染者|配達サービスのある市街地",
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
     "held": true,
-    "holdReason": "継続配達と同一配達人の人物IDを照合できない。",
-    "text": "頼んだ荷物だけが毎度日暮れに届く。配達人は今日も「感染者の家は最後にしている」と肩をすくめた。夕食の支度に使う品が、紙包みの中で冷えていた。",
+    "holdReason": "現行状態にこの荷物を扱う配達担当者の受け手IDがなく、公開情報だけでは相手の認知を確定できない。",
+    "text": "頼んでいた包みが、夕暮れにようやく届いた。戸口のトランスポーターは荷を足元へ置き、「まあ、分かるだろ。うつされたらかなわん」と言って手を引っ込めた。",
     "choices": [
       {
-        "label": "配達の予定を相談する",
-        "outcome": "配達人は明日の便から順番を変えると言い、荷車の台帳に印を付けた。",
+        "label": "その言い方を問いただす",
+        "outcome": "トランスポーターは荷紐を握り直し、「俺にも暮らしがあるんだ」と言い残して去った。包みは足元に残された。",
         "numericEffects": {},
         "actionDescriptors": [
-          "記憶:delivery-time-adjusted"
+          "記憶:delivery-bias-questioned"
         ],
         "recordAction": null
       },
       {
-        "label": "荷物を受け取って戸を閉める",
-        "outcome": "包みの紐をほどき、冷えた品を取り出した。外で荷車の車輪が軋んだ。",
+        "label": "包みを拾って戸を閉める",
+        "outcome": "紙包みを抱えて家に入った。外では荷車の車輪が石畳を鳴らしていた。",
         "numericEffects": {
           "p": -1
         },
         "actionDescriptors": [
-          "記憶:delivery-time-late"
+          "記憶:parcel-taken-inside"
         ],
         "recordAction": null
       }
-    ]
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": []
   },
   {
     "id": "disc_day_vi14",
-    "title": "買い物の列の印",
+    "title": "帳簿の黒い印",
     "domain": "商店・登録",
     "target": "感染者",
     "ageRange": {
@@ -1662,44 +1709,51 @@ function compileSocialEvent(row) {
     },
     "regions": [],
     "sceneBinding": "session",
-    "conditionSummary": "本人が感染・診断済み。相手の認知がinfectionAwarenessに本人・同生活圏・当該受け手として記録済み。場面固有の施設利用を確認。店に実際の常連名簿がある。法令上の感染者登録制度とは分ける。",
-    "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
+    "conditionSummary": "本人が感染・診断済み。J5/J24の現職で同じ地域の取引をしている。取引担当者が本人を感染者と知る場合、同じ場所・生活圏のinfectionAwarenessにその担当者が受け手として記録済み。帳簿はその場の一取引に限る。",
+    "excludeSummary": "永続的な顧客名簿・企業全体や国家への共有・全国法を示さない。公開掲示だけから担当者の知識を推定しない。",
     "knowledgeBasis": "感染診断本人・受け手・現在の受取場所が照合できる。無関係な隣人へ感染を自動拡散しない。",
     "frequencyClass": "L1_日常",
     "group": "daily-bias",
     "weight": 0.3,
     "cooldownYears": 10,
-    "once": false,
+    "once": true,
     "episodeKey": "商店・登録|感染者|登録客のある生活用品店",
     "requiresPlayerDiagnosis": true,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
     "held": true,
-    "holdReason": "店の常連名簿という実在文書の記録が現行状態にない。",
-    "text": "会員帳を開いた店員が、あなたの名前の横に小さな黒い印を押した。「これなら誰が相手をしたか分かる」と言う。前の客の欄は白いままだった。",
+    "holdReason": "現行状態に取引先の担当者を示す受け手IDがなく、公開情報だけでは相手の認知を確定できない。",
+    "text": "取引先の担当者が帳簿を開き、あなたの名の横に黒い印を付けた。「感染者との取引だったと分かるように」と言って紙を閉じる。前の欄には印がなかった。",
     "choices": [
       {
-        "label": "印の意味を問い、取り消しを求める",
-        "outcome": "店員は帳簿を引っ込め、黒い印の上に細い線を引いた。紙には跡が残った。",
+        "label": "印の理由を尋ね、消すよう求める",
+        "outcome": "担当者は帳簿を引き戻し、黒い印に細い線を引いた。紙には跡が残った。",
         "numericEffects": {
           "k": 1
         },
         "actionDescriptors": [
-          "記憶:customer-mark-crossed"
+          "記憶:trade-mark-challenged"
         ],
         "recordAction": null
       },
       {
-        "label": "買い物を済ませる",
-        "outcome": "品物を持って店を出た。帳簿にはあなたの名前と黒い印が並んでいた。",
+        "label": "取引を続ける",
+        "outcome": "品物を受け取り、店を出た。帳簿は担当者の前に残り、外へ持ち出されなかった。",
         "numericEffects": {
           "p": -1
         },
         "actionDescriptors": [
-          "記憶:customer-mark-left"
+          "記憶:trade-continued"
         ],
         "recordAction": null
       }
+    ],
+    "knowledgeRecipientBinding": "specified",
+    "knowledgeAudiences": [],
+    "requiresCurrentEmployment": true,
+    "workJobIds": [
+      5,
+      24
     ]
   },
   {
@@ -1908,7 +1962,7 @@ function compileSocialEvent(row) {
   },
   {
     "id": "disc_day_vs05",
-    "title": "針の貸し借り",
+    "title": "共用備品の棚",
     "domain": "職場・工房",
     "target": "サルカズ",
     "ageRange": {
@@ -1916,45 +1970,53 @@ function compileSocialEvent(row) {
       "max": null
     },
     "regions": [],
-    "sceneBinding": "session",
-    "conditionSummary": "本人の種族がサルカズ。相手が角・氏名・名乗りなどから当人をサルカズと認識。組織外の商業・街区場面。現に同じ仕事場へ出入り。針・手工具の使われる職種に限る。",
-    "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
+    "sceneBinding": "current-worksite",
+    "conditionSummary": "主人公がサルカズで、相手が外見・名乗り等からそう認識する。J2/J7/J11/J18/J21/J22の現職が同じ地域にあり、共用備品を使う職場での一回の場面。",
+    "excludeSummary": "職業IDだけで現職を推定しない。別地域の職場、勤務終了後、共用備品のない場面を除く。",
     "knowledgeBasis": "種族と、会話・容貌・名前等により相手が認識した場面。",
     "frequencyClass": "L1_日常",
     "group": "daily-bias",
     "weight": 0.31,
     "cooldownYears": 9,
-    "once": false,
+    "once": true,
     "episodeKey": "職場・工房|サルカズ|実際に通う裁縫・細工の仕事場",
     "requiresPlayerDiagnosis": false,
     "requiresProtagonistSarkaz": true,
     "requiresProtagonistOni": false,
-    "held": true,
-    "holdReason": "手工具・針作業を伴う職務種別を現在の勤務記録から確認できない。",
-    "text": "仕事場で針を一本借りると、向かいの職人が「サルカズの使った物は戻すな」と声を上げた。針箱は職人たちの間を普通に行き来している。",
+    "held": false,
+    "text": "仕事場で共用備品を棚から取ると、向かいの同僚が「サルカズの触れた物は、共用に戻すな」と声を上げた。棚の品は職場の皆が使っていた。",
     "choices": [
       {
-        "label": "針を手入れして箱へ戻す",
-        "outcome": "使い終えた針を拭いて元の穴に差した。職人は箱を見たまま黙った。",
+        "label": "使った備品を元の場所へ戻す",
+        "outcome": "備品を棚へ戻した。同僚は棚を見たまま黙った。",
         "numericEffects": {
           "k": 1
         },
         "actionDescriptors": [
-          "記憶:needle-returned"
+          "記憶:shared-supply-returned"
         ],
         "recordAction": null
       },
       {
-        "label": "自分の針を買い足す",
-        "outcome": "帰りに細い針を二本買い、布に刺して包んだ。翌朝からは自分の箱を持っていった。",
+        "label": "必要なものを自分で用意する",
+        "outcome": "必要な品を手元へ移して作業を続けた。共用棚には、いつもの備品が残った。",
         "numericEffects": {
           "p": -1
         },
         "actionDescriptors": [
-          "記憶:needle-private"
+          "記憶:personal-supplies-used"
         ],
         "recordAction": null
       }
+    ],
+    "requiresCurrentEmployment": true,
+    "workJobIds": [
+      2,
+      7,
+      11,
+      18,
+      21,
+      22
     ]
   },
   {
@@ -2162,59 +2224,8 @@ function compileSocialEvent(row) {
     ]
   },
   {
-    "id": "disc_day_vs10",
-    "title": "絵葉書の裏",
-    "domain": "郵便・連絡",
-    "target": "サルカズ",
-    "ageRange": {
-      "min": 7,
-      "max": null
-    },
-    "regions": [],
-    "sceneBinding": "session",
-    "conditionSummary": "本人の種族がサルカズ。相手が角・氏名・名乗りなどから当人をサルカズと認識。組織外の商業・街区場面。郵便・書簡送付制度が現地にある。便りの宛先も実際に存在。",
-    "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
-    "knowledgeBasis": "種族と、会話・容貌・名前等により相手が認識した場面。",
-    "frequencyClass": "L1_日常",
-    "group": "daily-bias",
-    "weight": 0.26,
-    "cooldownYears": 10,
-    "once": false,
-    "episodeKey": "郵便・連絡|サルカズ|文書を扱う窓口",
-    "requiresPlayerDiagnosis": false,
-    "requiresProtagonistSarkaz": true,
-    "requiresProtagonistOni": false,
-    "held": true,
-    "holdReason": "郵便経路と実在する宛先人物を同時に確認できない。",
-    "text": "便りを出そうとすると、係員は宛名を見て「サルカズの手紙は後で調べる」と別の箱へ放り込んだ。前の客の便りはすぐに封を切らず流れていった。",
-    "choices": [
-      {
-        "label": "通常の扱いを求める",
-        "outcome": "係員は面倒そうに箱から便りを拾い、普通の束に差し入れた。",
-        "numericEffects": {
-          "k": 1
-        },
-        "actionDescriptors": [
-          "記憶:letter-regular-post"
-        ],
-        "recordAction": null
-      },
-      {
-        "label": "控えをもらって窓口を離れる",
-        "outcome": "控えには日付だけが書かれていた。別箱の口は固く閉まっていた。",
-        "numericEffects": {
-          "p": -1
-        },
-        "actionDescriptors": [
-          "記憶:letter-special-box"
-        ],
-        "recordAction": null
-      }
-    ]
-  },
-  {
     "id": "disc_day_vs11",
-    "title": "修繕した扉",
+    "title": "修繕へのひと言",
     "domain": "近隣・労働",
     "target": "サルカズ",
     "ageRange": {
@@ -2222,26 +2233,25 @@ function compileSocialEvent(row) {
       "max": null
     },
     "regions": [],
-    "sceneBinding": "session",
-    "conditionSummary": "本人の種族がサルカズ。相手が角・氏名・名乗りなどから当人をサルカズと認識。組織外の商業・街区場面。主人公が実際に修繕を引き受けた職種・短期仕事。仕事の成立と報酬は既存契約で管理。",
-    "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
+    "sceneBinding": "current-worksite",
+    "conditionSummary": "主人公がサルカズで、相手が外見・名乗り等からそう認識する。J18/J19の現職で修繕作業をしている同じ地域の一回の場面。顧客のその場の反応だけを扱う。",
+    "excludeSummary": "職業IDだけで現職や扉の修理を推定しない。新しい契約・報酬・後続注文を作らない。",
     "knowledgeBasis": "種族と、会話・容貌・名前等により相手が認識した場面。",
     "frequencyClass": "L1_日常",
     "group": "daily-bias",
     "weight": 0.28,
     "cooldownYears": 10,
-    "once": false,
+    "once": true,
     "episodeKey": "近隣・労働|サルカズ|近隣に修理仕事のある住宅街",
     "requiresPlayerDiagnosis": false,
     "requiresProtagonistSarkaz": true,
     "requiresProtagonistOni": false,
-    "held": true,
-    "holdReason": "修理依頼・契約・完了の仕事記録が現行状態にない。",
-    "text": "頼まれた扉の蝶番を直すと、家主はきちんと閉まる戸を試したあと、「サルカズにしては手先が器用だ」と笑った。工具の先に木屑がついていた。",
+    "held": false,
+    "text": "修繕作業の手を止めると、顧客は設備を確かめて「サルカズにしては手先が器用だ」と笑った。工具の先に木屑がついていた。",
     "choices": [
       {
         "label": "仕事ぶりを見て判断してほしいと返す",
-        "outcome": "家主は扉をもう一度開け閉めし、「まあ、直った」と答えた。",
+        "outcome": "顧客は設備をもう一度確かめ、「まあ、直った」と答えた。",
         "numericEffects": {
           "p": -1
         },
@@ -2251,8 +2261,8 @@ function compileSocialEvent(row) {
         "recordAction": null
       },
       {
-        "label": "道具を片づける",
-        "outcome": "工具を箱に収めた。扉は静かに閉まったが、言葉はしばらく耳に残った。",
+        "label": "工具を片づける",
+        "outcome": "工具を箱に収めた。設備は静かに動いたが、言葉はしばらく耳に残った。",
         "numericEffects": {
           "p": -1
         },
@@ -2261,6 +2271,11 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
+    ],
+    "requiresCurrentEmployment": true,
+    "workJobIds": [
+      18,
+      19
     ]
   },
   {
@@ -2366,57 +2381,6 @@ function compileSocialEvent(row) {
     ]
   },
   {
-    "id": "disc_day_vs14",
-    "title": "名前を伏せた花",
-    "domain": "近隣・弔意",
-    "target": "サルカズ",
-    "ageRange": {
-      "min": 7,
-      "max": null
-    },
-    "regions": [],
-    "sceneBinding": "session",
-    "conditionSummary": "本人の種族がサルカズ。相手が角・氏名・名乗りなどから当人をサルカズと認識。組織外の商業・街区場面。実際に弔意を寄せる隣人・関係先が存在。葬儀場面が成立。",
-    "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
-    "knowledgeBasis": "種族と、会話・容貌・名前等により相手が認識した場面。",
-    "frequencyClass": "L1_日常",
-    "group": "daily-bias",
-    "weight": 0.19,
-    "cooldownYears": 15,
-    "once": false,
-    "episodeKey": "近隣・弔意|サルカズ|近隣で葬送に花を供える習慣のある生活圏",
-    "requiresPlayerDiagnosis": false,
-    "requiresProtagonistSarkaz": true,
-    "requiresProtagonistOni": false,
-    "held": true,
-    "holdReason": "弔事の発生と本人の近隣関係・参列を示す記録が現行状態にない。",
-    "text": "近所の葬儀へ花を持って行くと、受付の男はあなたの名を紙に書きかけて止めた。「サルカズの名前は表に出さない方がいい」と言って、花だけ受け取った。",
-    "choices": [
-      {
-        "label": "名を残してほしいと頼む",
-        "outcome": "男は短くうなずき、花の横に名前を書き添えた。墨の乾く匂いがした。",
-        "numericEffects": {
-          "p": -1
-        },
-        "actionDescriptors": [
-          "記憶:flower-name-listed"
-        ],
-        "recordAction": null
-      },
-      {
-        "label": "花を託して帰る",
-        "outcome": "門の外へ出た。花の色だけが他の供え物の間に見えた。",
-        "numericEffects": {
-          "p": -1
-        },
-        "actionDescriptors": [
-          "記憶:flower-anonymous"
-        ],
-        "recordAction": null
-      }
-    ]
-  },
-  {
     "id": "disc_day_ac01",
     "title": "軒下の一歩",
     "domain": "通り・雨宿り",
@@ -2469,30 +2433,29 @@ function compileSocialEvent(row) {
   },
   {
     "id": "disc_day_ac02",
-    "title": "店の釣銭皿",
+    "title": "釣銭皿を使え",
     "domain": "商店・接客",
-    "target": "感染者",
+    "target": "感染者だという噂の対象者",
     "ageRange": {
       "min": 14,
       "max": null
     },
     "regions": [],
-    "sceneBinding": "session",
-    "conditionSummary": "主人公が実際に小売店の会計業務を担当。来店客が感染者と認知された事情あり。",
-    "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
+    "sceneBinding": "current-worksite",
+    "conditionSummary": "J5/J24の現職で、同じ地域の店頭会計をする場面。匿名の客については感染者だという噂として扱い、主人公の診断認知へ登録しない。",
+    "excludeSummary": "小売会計係という架空の細分職を作らず、職業IDだけで勤務を推定しない。匿名の客を確定診断済みと断定しない。",
     "knowledgeBasis": "場面NPCの感染・種族は本文上の事実として生成可能。主人公の認知や感染公表履歴へ自動転記しない。",
     "frequencyClass": "L1_日常",
     "group": "daily-bias",
     "weight": 0.37,
     "cooldownYears": 7,
-    "once": false,
+    "once": true,
     "episodeKey": "商店・接客|感染者|主人公が客へ会計を行う小売店",
-    "requiresPlayerDiagnosis": true,
+    "requiresPlayerDiagnosis": false,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": true,
-    "holdReason": "小売会計担当という具体的な職務を現在の勤務記録から確認できない。",
-    "text": "帳場で感染者の客から代金を受け取ると、隣の店員が「皿を使え、手で受けるな」と耳打ちした。客は買い物袋を持って待っている。",
+    "held": false,
+    "text": "帳場で客から代金を受け取ろうとすると、隣の店員が「感染者だって話だ。手で受け取るな」と耳打ちした。客は袋を持って待っている。",
     "choices": [
       {
         "label": "いつも通り会計を済ませる",
@@ -2507,7 +2470,7 @@ function compileSocialEvent(row) {
       },
       {
         "label": "釣銭皿へ置いて渡す",
-        "outcome": "客は小銭を指で集め、店を出た。隣の店員は満足そうにうなずいた。",
+        "outcome": "客は小銭を指で集め、店を出た。隣の店員は帳場へ戻った。",
         "numericEffects": {
           "biasInf": 2
         },
@@ -2516,6 +2479,11 @@ function compileSocialEvent(row) {
         ],
         "recordAction": null
       }
+    ],
+    "requiresCurrentEmployment": true,
+    "workJobIds": [
+      5,
+      24
     ]
   },
   {
@@ -2722,7 +2690,7 @@ function compileSocialEvent(row) {
   },
   {
     "id": "disc_day_ac07",
-    "title": "寄せた箱",
+    "title": "隅へ寄せられた荷",
     "domain": "商店・仕事",
     "target": "サルカズ",
     "ageRange": {
@@ -2730,44 +2698,50 @@ function compileSocialEvent(row) {
       "max": null
     },
     "regions": [],
-    "sceneBinding": "session",
-    "conditionSummary": "現に荷受け・仕分けの職務に従事。対象運送人はサルカズと分かっている。",
-    "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
+    "sceneBinding": "current-worksite",
+    "conditionSummary": "J16/J33の現職で同じ地域の荷扱いに従事。相手が外見等からサルカズと分かる運び手だとその場で認識できる。箱の並べ替え一回だけを扱う。",
+    "excludeSummary": "職業IDだけで荷受け・仕分けを推定せず、運送組織全体の配送方針を変更しない。",
     "knowledgeBasis": "場面NPCの感染・種族は本文上の事実として生成可能。主人公の認知や感染公表履歴へ自動転記しない。",
     "frequencyClass": "L1_日常",
     "group": "daily-bias",
     "weight": 0.34,
     "cooldownYears": 8,
-    "once": false,
+    "once": true,
     "episodeKey": "商店・仕事|サルカズ|主人公が荷の仕分けを担当する現場",
     "requiresPlayerDiagnosis": false,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": true,
-    "holdReason": "荷受け・仕分け担当という職務と相手の運送人情報を現行記録から確認できない。",
-    "text": "荷場の男が、サルカズの運送人が運んだ箱だけを隅に積むよう指示した。「あいつらの荷は後で数えろ」と言って帳簿を閉じる。",
+    "held": false,
+    "text": "荷の受け渡しをしていると、同じ場所にいたトランスポーターが、サルカズと分かる運び手の箱だけを隅へ寄せた。「あとで数えればいい」と帳簿を閉じた。",
     "choices": [
       {
         "label": "荷札の順に並べる",
-        "outcome": "到着時刻を見て箱を並べ直した。後から来た荷が隅へ移った。",
+        "outcome": "到着順に箱を並べ直した。隅に寄せられていた荷も、ほかの荷の横へ戻った。",
         "numericEffects": {
           "equityGain": 2,
           "k": 1
         },
-        "actionDescriptors": [],
+        "actionDescriptors": [
+          "記憶:one-cargo-reordered"
+        ],
         "recordAction": null
       },
       {
-        "label": "言われた通り隅に積む",
-        "outcome": "箱を重ね終えると、運送人がしばらくその前に立っていた。",
+        "label": "言われた通り隅へ寄せる",
+        "outcome": "箱を隅へ置き終えると、運び手はしばらくその前に立っていた。",
         "numericEffects": {
           "biasSar": 2
         },
         "actionDescriptors": [
-          "socialConflictAction:exclude/sarkaz/delayed-cargo"
+          "記憶:one-cargo-set-aside"
         ],
         "recordAction": null
       }
+    ],
+    "requiresCurrentEmployment": true,
+    "workJobIds": [
+      16,
+      33
     ]
   },
   {
@@ -2973,34 +2947,33 @@ function compileSocialEvent(row) {
   },
   {
     "id": "disc_day_ac12",
-    "title": "乗せない木箱",
+    "title": "荷台から外された箱",
     "domain": "商店・配送",
-    "target": "感染者",
+    "target": "感染者だという噂のある届け先",
     "ageRange": {
       "min": 18,
       "max": null
     },
     "regions": [],
-    "sceneBinding": "session",
-    "conditionSummary": "現に配送・倉庫に関わる仕事。実際の納期と運送便が記録された場合。",
-    "excludeSummary": "本人が別の場所で拘束・隔離中、または該当場面の利用・訪問が成立しない場合。",
+    "sceneBinding": "current-worksite",
+    "conditionSummary": "J16/J28/J33など配送・物資運搬の現職で同じ地域の荷扱いをする。現在の箱一つだけを扱い、届け先は感染者だという噂として表現する。",
+    "excludeSummary": "本人の診断や確定した届け先情報を推定しない。納期・日付・配送計画・取引信用・賃金・継続契約を作らない。",
     "knowledgeBasis": "場面NPCの感染・種族は本文上の事実として生成可能。主人公の認知や感染公表履歴へ自動転記しない。",
     "frequencyClass": "L1_日常",
     "group": "daily-bias",
     "weight": 0.27,
     "cooldownYears": 9,
-    "once": false,
+    "once": true,
     "episodeKey": "商店・配送|感染者|配達用の荷車がある現場",
     "requiresPlayerDiagnosis": false,
     "requiresProtagonistSarkaz": false,
     "requiresProtagonistOni": false,
-    "held": true,
-    "holdReason": "実際の納期と配送便・倉庫の勤務記録を照合できない。",
-    "text": "運搬係が、感染者の得意先へ届ける箱を車の脇へ戻した。「あそこは明日でいい」と言う。帳簿の納期には今日の日付が記されていた。",
+    "held": false,
+    "text": "荷台へ積む箱を運んでいると、同じ便を扱うトランスポーターが一つを脇へ除けた。「感染者だという噂の家まで行くのは御免だ」。行き先の札だけが、ほかの荷と同じ向きに揃っていた。",
     "choices": [
       {
-        "label": "今日の便に箱を積む",
-        "outcome": "箱を荷台へ持ち上げ、ほかの荷と縄で締めた。運搬係は黙って車を出した。",
+        "label": "箱をほかの荷と一緒に積む",
+        "outcome": "箱を荷台へ戻し、縄をかけた。トランスポーターは口を閉ざして次の荷を持ち上げた。",
         "numericEffects": {
           "k": 1
         },
@@ -3010,14 +2983,20 @@ function compileSocialEvent(row) {
         "recordAction": null
       },
       {
-        "label": "係の判断に従う",
-        "outcome": "箱を倉庫の隅へ戻した。得意先の宛名札が扉の方を向いていた。",
+        "label": "その箱を脇へ残す",
+        "outcome": "荷台の板が軋み、車が動き出した。箱は戸口に残され、宛名札が風に揺れた。",
         "numericEffects": {},
         "actionDescriptors": [
           "社会行動:complicit-delay"
         ],
         "recordAction": null
       }
+    ],
+    "requiresCurrentEmployment": true,
+    "workJobIds": [
+      16,
+      28,
+      33
     ]
   },
   {

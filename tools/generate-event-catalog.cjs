@@ -65,7 +65,7 @@ function usage() {
     '  node tools/generate-event-catalog.cjs --check',
     '',
     '--initialize creates the metadata sidecar once and writes the catalogue.',
-    '--reconcile adds missing event metadata as unreviewed without changing existing records or the catalogue.',
+    '--reconcile adds missing event metadata as unreviewed and refreshes source line locations for unchanged anchors.',
     'Stale IDs and invalid existing records require explicit editorial reconciliation; they are never deleted.',
     '--write refreshes the catalogue without changing editorial metadata.',
     '--check validates metadata and reports whether the catalogue is current.'
@@ -344,24 +344,53 @@ function initializeMetadata(events, origins, data, reportPath) {
   return metadata;
 }
 
+function isRetiredMetadataRow(row) {
+  return row?.lifecycle === 'retired';
+}
+
+function retirementMetadataIssue(row) {
+  const retirement = row?.retirement;
+  if (!retirement || !['removed', 'integrated'].includes(retirement.disposition) ||
+      typeof retirement.reason !== 'string' || !retirement.reason.trim() ||
+      typeof retirement.decisionSource !== 'string' || !retirement.decisionSource.trim() ||
+      (retirement.successorIds != null && (!Array.isArray(retirement.successorIds) ||
+        retirement.successorIds.some(id => typeof id !== 'string' || !id)))) {
+    return 'Retired metadata requires a disposition, reason, decision source, and valid successor IDs.';
+  }
+  return null;
+}
+
 function reconcileMetadata(metadata, events, origins, data) {
   if (!metadata || metadata.schemaVersion !== 1 || !metadata.events ||
       typeof metadata.events !== 'object' || Array.isArray(metadata.events)) {
     throw new Error('Unsupported event-catalog metadata schema.');
   }
   const current = new Set(events.map(event => event.id));
-  const stale = Object.keys(metadata.events).filter(id => !current.has(id));
-  if (stale.length) {
-    throw new Error('Stale metadata IDs require explicit reconciliation; no records were removed: ' + stale.slice(0, 20).join(', '));
+  const stale = Object.entries(metadata.events).filter(([id, row]) => !current.has(id) && !isRetiredMetadataRow(row));
+  const reusedRetired = events.filter(event => isRetiredMetadataRow(metadata.events[event.id]));
+  if (stale.length || reusedRetired.length) {
+    throw new Error('Stale IDs require explicit retirement records and retired IDs cannot be reused without reactivation; no records were removed: ' +
+      [...stale.map(([id]) => id), ...reusedRetired.map(event => event.id)].slice(0, 20).join(', '));
   }
   const missing = events.filter(event => !Object.hasOwn(metadata.events, event.id));
   const regions = (data.REG || []).map(row => row.n || row.name || row.id).filter(Boolean);
   for (const event of missing) {
     metadata.events[event.id] = initialEventMetadata(event, origins, regions);
   }
+  let updatedOrigins = 0;
+  for (const event of events) {
+    const row = metadata.events[event.id], currentOrigin = origins.get(event.id);
+    if (!row.origin || row.origin.anchor !== currentOrigin?.anchor) {
+      throw new Error('Source anchor changed for ' + event.id + '; reconcile its metadata origin.');
+    }
+    if (!isDeepStrictEqual(row.origin, currentOrigin)) {
+      row.origin = currentOrigin;
+      updatedOrigins++;
+    }
+  }
   // Invalid existing annotations and changed source anchors still block the write.
   validateMetadata(metadata, events, origins);
-  return missing.length;
+  return { added: missing.length, updatedOrigins };
 }
 
 function validateMetadata(metadata, events, origins) {
@@ -373,14 +402,20 @@ function validateMetadata(metadata, events, origins) {
     throw new Error('Issue-category vocabulary is missing or incomplete.');
   }
   const current = new Set(events.map(event => event.id));
-  const recorded = new Set(Object.keys(metadata.events));
-  const missing = [...current].filter(id => !recorded.has(id));
-  const stale = [...recorded].filter(id => !current.has(id));
-  if (missing.length || stale.length) {
+  const missing = [...current].filter(id => !Object.hasOwn(metadata.events, id) ||
+    isRetiredMetadataRow(metadata.events[id]));
+  const stale = Object.entries(metadata.events).filter(([id, row]) => !current.has(id) && !isRetiredMetadataRow(row));
+  const invalidLifecycle = Object.entries(metadata.events).filter(([, row]) =>
+    row?.lifecycle != null && !['active', 'retired'].includes(row.lifecycle));
+  const invalidRetirement = Object.entries(metadata.events).filter(([, row]) =>
+    isRetiredMetadataRow(row) && retirementMetadataIssue(row));
+  if (missing.length || stale.length || invalidLifecycle.length || invalidRetirement.length) {
     throw new Error([
       'Metadata and current event IDs do not match.',
       missing.length ? 'Missing metadata: ' + missing.slice(0, 20).join(', ') : '',
-      stale.length ? 'Stale metadata: ' + stale.slice(0, 20).join(', ') : '',
+      stale.length ? 'Unretired stale metadata: ' + stale.slice(0, 20).map(([id]) => id).join(', ') : '',
+      invalidLifecycle.length ? 'Invalid lifecycle metadata: ' + invalidLifecycle.slice(0, 20).map(([id]) => id).join(', ') : '',
+      invalidRetirement.length ? 'Incomplete retirement metadata: ' + invalidRetirement.slice(0, 20).map(([id]) => id).join(', ') : '',
       'Reconcile the sidecar before regenerating.'
     ].filter(Boolean).join('\n'));
   }
@@ -785,15 +820,15 @@ function main() {
 
   const metadata = JSON.parse(fs.readFileSync(METADATA_PATH, 'utf8'));
   if (args.mode === 'reconcile') {
-    const added = reconcileMetadata(metadata, events, origins, data);
-    if (added) {
+    const reconciled = reconcileMetadata(metadata, events, origins, data);
+    if (reconciled.added || reconciled.updatedOrigins) {
       const serialized = metadataJson(metadata);
       if (!isDeepStrictEqual(JSON.parse(serialized), metadata)) {
         throw new Error('Metadata serialization would discard existing fields; no changes were written.');
       }
       fs.writeFileSync(METADATA_PATH, serialized, 'utf8');
     }
-    console.log(JSON.stringify({ reconciled: true, added, preserved: events.length - added, events: events.length, catalogWritten: false }, null, 2));
+    console.log(JSON.stringify({ reconciled: true, ...reconciled, preserved: events.length - reconciled.added, events: events.length, catalogWritten: false }, null, 2));
     return;
   }
   validateMetadata(metadata, events, origins);
