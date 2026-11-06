@@ -24999,7 +24999,7 @@
     "age": 13
   },
   "show": {
-    "dynamicFunction": "s=>Object.values(s.par||{}).some(p=>p&&!p.d&&p.inf)"
+    "dynamicFunction": "s=>inSharedHousehold(s)&&[s.par?.fa,s.par?.mo].some(p=>p&&!p.d&&!p.separated&&p.inf)"
   },
   "once": true,
   "w": [
@@ -25655,6 +25655,9 @@
   "need": [
     "就学中"
   ],
+  "show": {
+    "dynamicFunction": "s => {\n        const enrollment = educationActiveEnrollment(s);\n        return s.educationPath?.status === \"enrolled\" && enrollment?.status === \"enrolled\";\n      }"
+  },
   "references": [
     "SRC_TERRA_SOCIAL_ATTITUDES"
   ],
@@ -25847,6 +25850,9 @@
   "references": [
     "SRC_TERRA_SOCIAL_ATTITUDES"
   ],
+  "show": {
+    "dynamicFunction": "s => {\n        const enrollment = educationActiveEnrollment(s);\n        return s.educationPath?.status === \"enrolled\" && enrollment?.status === \"enrolled\";\n      }"
+  },
   "st": [
     "児童",
     "少年"
@@ -287622,7 +287628,7 @@ s => {
   "cd": 6,
   "w": 0.68,
   "show": {
-    "dynamicFunction": "s => s.job > 0 && (s.biasInfected || 0) >= 35"
+    "dynamicFunction": "s => !!(\n        s.inf && s.fl?.dg && currentPlayerEmployment(s) &&\n        (s.biasInfected || 0) >= 35\n      )"
   }
 }
 ```
@@ -289630,7 +289636,7 @@ s => {
   "cd": 8,
   "w": 0.64,
   "show": {
-    "dynamicFunction": "s =>\n        s.r?.n !== \"サルカズ\" &&\n        s.res?.n === \"ヴィクトリア\" &&\n        s.job > 0 &&\n        s.biasSarkaz >= 75 &&\n        (s.socialLearning?.equityCommitment || 0) < 35 &&\n        s.lifeRecord?.affiliations?.some(\n          a => a.kind === \"employer\" && [\"active\", \"crisis\"].includes(a.status)\n        ) &&\n        !s.lifeRecord?.workRelationships?.some(r => r.id === \"victoria-sarkaz-interview\")"
+    "dynamicFunction": "s =>\n        s.r?.n !== \"サルカズ\" &&\n        s.res?.n === \"ヴィクトリア\" &&\n        s.job > 0 &&\n        !!currentPlayerEmployment(s) &&\n        s.biasSarkaz >= 75 &&\n        (s.socialLearning?.equityCommitment || 0) < 35 &&\n        s.lifeRecord?.affiliations?.some(\n          a => a.kind === \"employer\" && [\"active\", \"crisis\"].includes(a.status)\n        ) &&\n        !s.lifeRecord?.workRelationships?.some(r => r.id === \"victoria-sarkaz-interview\")"
   }
 }
 ```

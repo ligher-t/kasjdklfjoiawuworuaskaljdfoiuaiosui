@@ -356,7 +356,11 @@ window.TERRA_DATA_BUILD.run("base/childhood-attitudes", function ($terraData, $d
       st: ["幼児", "児童", "少年"],
       ge: { age: 5 },
       le: { age: 13 },
-      show: s => !!s.par?.fa?.inf || !!s.par?.mo?.inf,
+      show: s => {
+        const parents = [s.par?.fa, s.par?.mo];
+        return $rules.family.inSharedHousehold(s) &&
+          parents.some(parent => parent && !parent.d && !parent.separated && parent.inf);
+      },
       once: true,
       w: [
         0.55,
@@ -511,6 +515,10 @@ window.TERRA_DATA_BUILD.run("base/childhood-attitudes", function ($terraData, $d
       id: "bias_peer_mockery",
       conf: "S",
       need: ["就学中"],
+      show: s => {
+        const enrollment = educationActiveEnrollment(s);
+        return s.educationPath?.status === "enrolled" && enrollment?.status === "enrolled";
+      },
       references: ["SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["児童", "少年"],
       ge: { age: 7 },
@@ -553,6 +561,10 @@ window.TERRA_DATA_BUILD.run("base/childhood-attitudes", function ($terraData, $d
       id: "bias_teacher_lesson",
       conf: "S",
       references: ["SRC_TERRA_SOCIAL_ATTITUDES"],
+      show: s => {
+        const enrollment = educationActiveEnrollment(s);
+        return s.educationPath?.status === "enrolled" && enrollment?.status === "enrolled";
+      },
       st: ["児童", "少年"],
       ge: { age: 8 },
       le: { age: 15 },

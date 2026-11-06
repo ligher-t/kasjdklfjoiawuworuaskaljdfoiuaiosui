@@ -244,6 +244,7 @@ window.TERRA_DATA_BUILD.run("social/conflict", function ($terraData, $define, $r
         s.r?.n !== "サルカズ" &&
         s.res?.n === "ヴィクトリア" &&
         s.job > 0 &&
+        !!currentPlayerEmployment(s) &&
         s.biasSarkaz >= 75 &&
         (s.socialLearning?.equityCommitment || 0) < 35 &&
         s.lifeRecord?.affiliations?.some(
