@@ -14,6 +14,7 @@ const FXK = [
   "localityAction",
   "classAction",
   "exposureAction",
+  "catastropheInfectionChance",
   "mortalityCare",
   "h",
   "p",
@@ -168,7 +169,8 @@ FXK.push(
   "closeKnowledgeAction",
   "infectionWorkplaceAction",
   "infectionAwarenessAction",
-  "infectionAwarenessActions"
+  "infectionAwarenessActions",
+  "socialConstraintAction"
 );
 FXK.push(
   "careInclination",

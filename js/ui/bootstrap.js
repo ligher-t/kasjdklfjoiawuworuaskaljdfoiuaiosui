@@ -243,7 +243,7 @@ if (DEBUG_PLAYBACK) {
       try {
       const state=S, T=tags(state);let reason=null;
       let eligible=elig(event,state,T,{onReject:(_event,gate)=>{reason ||= gate;}});
-      if(eligible && event.c && state.majorEventMonth?.year===state.year && state.majorEventMonth?.month===state.mo){eligible=false;reason="monthly-choice-limit";}
+      if(eligible && event.c && !isMinorChoiceEvent(event) && state.majorEventMonth?.year===state.year && state.majorEventMonth?.month===state.mo){eligible=false;reason="monthly-choice-limit";}
       const who=typeof event.who === "function" ? event.who(state) : event.who || (stg(state)<=1 ? "parent" : "self");
       if(eligible && event.c && !event.c.some(choice=>ok(choice.show,state,T)&&ok(choice.en,state,T)&&!ethicalLock(event,choice,state,who))){eligible=false;reason="ethical-choice-lock";}
       return {id,eligible,firstBlockingGate:reason,choices:event.c?.map((choice,index)=>({index:index+1,label:tpl(choice.l,state),shown:ok(choice.show,state,T),enabled:ok(choice.show,state,T)&&ok(choice.en,state,T)&&!ethicalLock(event,choice,state,who),why:choice.why || null})) || []};

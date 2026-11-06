@@ -206,7 +206,10 @@ window.TERRA_DATA_BUILD.run("social/learning", function ($terraData, $define, $r
       st: ["青年", "壮年", "老年"],
       cd: 6,
       w: 0.68,
-      show: s => s.job > 0 && (s.biasInfected || 0) >= 35,
+      show: s => !!(
+        s.inf && s.fl?.dg && currentPlayerEmployment(s) &&
+        (s.biasInfected || 0) >= 35
+      ),
       t: "鉱石病と診断されたばかりの働き手が、同じ現場に入ることになった。休憩室では「源石の粉とあいつ、どっちが危ないんだ」と心ない冗談が飛び交い、同僚たちがあなたの顔色をうかがった。",
       c: [
         $terraData.K(

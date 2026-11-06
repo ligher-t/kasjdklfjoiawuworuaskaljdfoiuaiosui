@@ -19,6 +19,7 @@ ctx.A175_REVIEW=JSON.stringify(review);
 // Reviewed current-source changes since the 2026-11-04 W01 snapshot. Each
 // digest binds its changed label, condition, result and effect to this review.
 const reviewedBranches={
+  'nat:3':'94775554ab64e3f0976aa55f1f117064ffad1dd8c00b317cccf07c0ee8486b5c',
   'vic_war:1':'b76100928f6037685832c3d086f97e862c8a135fe11e613d2556fa08bc918ca6',
   'kaz_exile:0':'085be54d2eb029e547880e13611a86d89c337769eec83cb6949c8110ca3ccb71',
   'kaz_exile:1':'32a1edfc59f011b517a844a15522511a1b7d6a0816f8a5911fa0c06e872d611e',
@@ -30,6 +31,7 @@ const reviewedBranches={
   'life_rhodes_role_review:3':'2a3609e463d4dbe8f4eb59f82b810830cf180aed642d8bbead9df2ea1261aba2'
 };
 const expectedShapeDeltas=[
+  {eventId:'nat',field:'choice-count',baseline:3,current:4},
   {eventId:'vic_war',choiceIndex:1,baseline:2,current:1},
   {eventId:'kaz_exile',choiceIndex:0,baseline:2,current:1},
   {eventId:'kaz_exile',choiceIndex:1,baseline:2,current:1},
@@ -114,11 +116,11 @@ for(const expected of review.events){
 assert.deepEqual(observedShapeDeltas,expectedShapeDeltas,'only the seven reviewed W01 source-shape deltas are allowed');
 assert.deepEqual(observedReviewedBranches.sort(),[...reviewedBranchKeys].sort());
 assert.equal(report.events,175,'W01 A175 event set is complete');
-assert.equal(report.choices,489,'all current A175 choices reach runtime employment review');
-assert.equal(report.outcomes,698,'all current A175 result branches reach runtime employment admission');
-assert.equal(reviewedBranchKeys.size,9);
+assert.equal(report.choices,490,'all current A175 choices reach runtime employment review');
+assert.equal(report.outcomes,700,'all current A175 result branches reach runtime employment admission');
+assert.equal(reviewedBranchKeys.size,10);
 assert.equal(report.jobStartsRejectedWithoutEvidence+report.communityLivelihoodsRetained>0,true);
-console.log(`PASS W01 current runtime review: ${report.events} events, ${report.choices} choices, ${report.outcomes} outcomes; 7 reviewed source-shape deltas; 9 content-bound branches; unsupported starts rejected ${report.jobStartsRejectedWithoutEvidence}, evidence-backed livelihoods retained ${report.communityLivelihoodsRetained}`);
+console.log(`PASS W01 current runtime review: ${report.events} events, ${report.choices} choices, ${report.outcomes} outcomes; 8 reviewed source-shape deltas; 10 content-bound branches; unsupported starts rejected ${report.jobStartsRejectedWithoutEvidence}, evidence-backed livelihoods retained ${report.communityLivelihoodsRetained}`);
 
 // W11 is a screening inventory, not a semantic approval. Runtime-check every
 // job/livelihood-context candidate and recovered W12 source against the same

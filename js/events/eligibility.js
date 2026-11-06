@@ -518,6 +518,8 @@ function rejectEligibility(e, reason, options) {
   return false;
 }
 function elig(e, s, T, options = {}) {
+  if (e.socialConstraint && !socialConstraintSceneEligible(e, s))
+    return rejectEligibility(e, "social-scene-or-provenance", options);
   if (e.groundOnly && isRhodesLandshipResident(s)) return rejectEligibility(e, "ground-location", options);
   if (e.id?.startsWith("daily_rhodes_") && !isRhodesLandshipResident(s)) return rejectEligibility(e, "landship-location", options);
   if (!affiliationEventAvailable(e, s)) return rejectEligibility(e, "affiliation-place", options);

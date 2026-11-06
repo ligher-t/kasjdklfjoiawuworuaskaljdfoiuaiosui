@@ -11,7 +11,7 @@ window.TERRA_PARENT_BEREAVEMENT=d=>{
     references:['SRC_ORIPATHY_OFFICIAL_OVERVIEW','SRC_ORIPATHY_EXPOSURE'],
     st:['乳児','幼児','児童','少年','青年','壮年','老年'],show:()=>false,t,fx:{},w:1}));
   const living=d.EV.find(e=>e.id==='bias_family_infected_parent_solidarity');
-  living.show=s=>Object.values(s.par||{}).some(p=>p&&!p.d&&p.inf);
+  living.show=s=>inSharedHousehold(s)&&[s.par?.fa,s.par?.mo].some(p=>p&&!p.d&&!p.separated&&p.inf);
   d.EV.push({...living,id:'bias_family_infected_parent_memory',
     show:s=>!Object.values(s.par||{}).some(p=>p&&!p.d&&p.inf)&&
       Object.values(s.par||{}).some(p=>p?.d&&p.inf&&p.deathKnownYear&&p.deathKnownYear<=s.year),

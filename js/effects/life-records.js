@@ -39,6 +39,7 @@ function applyLifeRecordEffects(e, s) {
   if (e.identityAction) identityAction(s, e.identityAction);
   if (e.personalWishes) recordPersonalWishes(s,e.personalWishes);
   if (e.socialConflictAction) socialConflictAction(s, e.socialConflictAction);
+  if (e.socialConstraintAction) applySocialConstraintAction(s, e.socialConstraintAction);
   if (e.bodyChange) applyBodyChange(e.bodyChange);
   if (e.bodyChanges) e.bodyChanges.forEach(applyBodyChange);
   if (e.lifeGoal) applyLifeGoal(e.lifeGoal);
