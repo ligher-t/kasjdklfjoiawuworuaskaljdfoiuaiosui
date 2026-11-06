@@ -115,6 +115,7 @@ const approved=Object.freeze([
   "ui-ending-chart.test.cjs",
   "ui-record-evidence.test.cjs",
   "ending-comparison.test.cjs",
+  "ending-peer-worker.test.cjs",
   "ui-summary-display-boundaries.test.cjs",
   "ui-title-resume.test.cjs",
   "annual-phases.test.cjs",

@@ -1,3 +1,13 @@
+function birthLocalityWeightPool(options, weights) {
+  const pool = options.map(opt => {
+    const raw = weights[opt.n];
+    return { n: opt.n, w: raw === 0 ? 0 : Math.max(1, raw ?? 1) };
+  });
+  if (pool.some(opt => opt.w > 0)) return pool;
+  // An impossible all-zero override falls back to the original locality table.
+  const base = options.map(opt => ({ n: opt.n, w: Math.max(0, opt.w ?? opt.p ?? 0) }));
+  return base.some(opt => opt.w > 0) ? base : options.map(opt => ({ n: opt.n, w: 1 }));
+}
 function pickBirthLocalityKind(home, g, w, par, care) {
   const isMobile = home === "移動都市";
   const options = isMobile ? SIM_TABLES.locality.mobile : SIM_TABLES.locality.fixed;
@@ -34,7 +44,7 @@ function pickBirthLocalityKind(home, g, w, par, care) {
       weights["移動都市の周縁区"] = 25;
       weights["移動都市の避難・労働区画"] = 75;
     }
-    pool = options.map(opt => ({ n: opt.n, w: Math.max(1, weights[opt.n] || 1) }));
+    pool = birthLocalityWeightPool(options, weights);
   } else {
     const weights = {
       "固定都市の街区": [5, 15, 40, 65, 80][wi],
@@ -61,12 +71,13 @@ function pickBirthLocalityKind(home, g, w, par, care) {
       weights["固定都市の街区"] = 0;
       weights["辺境・移動の多い居住地"] += 50;
     }
-    pool = options.map(opt => ({ n: opt.n, w: Math.max(1, weights[opt.n] || 1) }));
+    pool = birthLocalityWeightPool(options, weights);
   }
   return wp(pool).n;
 }
 
 function born(birth = {}) {
+  if (!HL) cancelEndingPeerComparison();
   seedLifeRandom(birth.seed);
   const requestedBirthYear = Number(birth.by),
     birthYear = Number.isInteger(requestedBirthYear) && requestedBirthYear >= BIRTH_YEAR_MIN && requestedBirthYear <= BIRTH_YEAR_MAX

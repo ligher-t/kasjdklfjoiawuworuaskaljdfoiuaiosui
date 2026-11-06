@@ -207,6 +207,10 @@ jobs:
       - name: Developer simulation report and state isolation
         if: github.event_name == 'workflow_dispatch'
         run: node tools/check-efficient.cjs run v87_dev_simulation_diagnostics.js
+      - name: Birth locality zero-weight regression
+        run: node tools/check-efficient.cjs run v87_birth_year_locality.js
+      - name: Isolated ending peer worker and comparison regression
+        run: node tools/check-efficient.cjs run ending-peer-worker.test.cjs ending-comparison.test.cjs
       - name: Generated event catalogue matches review metadata
         run: node tools/generate-event-catalog.cjs --check
 

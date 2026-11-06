@@ -3,6 +3,7 @@ function cont(savedInput = null) {
     const raw = savedInput == null ? localStorage.getItem("terra2") : savedInput,
       parsed = typeof raw === "string" ? JSON.parse(raw) : raw,
       snapshot = normalizeResumeImport(parsed);
+    cancelEndingPeerComparison();
     replaceCurrentLife(snapshot.S);
     replaceWorldKnowledge(snapshot.W);
     S.known = W;
