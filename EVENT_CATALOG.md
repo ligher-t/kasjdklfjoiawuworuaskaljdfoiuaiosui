@@ -217922,7 +217922,7 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
 効果：
 
 ```json
-null
+{}
 ```
 
 旧シム観測回数：未計測
@@ -218015,7 +218015,7 @@ null
 効果：
 
 ```json
-null
+{}
 ```
 
 旧シム観測回数：未計測
@@ -218306,7 +218306,7 @@ null
 効果：
 
 ```json
-null
+{}
 ```
 
 旧シム観測回数：未計測
@@ -218399,7 +218399,7 @@ null
 効果：
 
 ```json
-null
+{}
 ```
 
 旧シム観測回数：未計測

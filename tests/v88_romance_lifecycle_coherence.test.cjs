@@ -17,21 +17,25 @@ const scheduledTest = vm.runInContext(`(() => {
     romance: { stage: 'known', metYear: 1089, yearsKnown: 1 }
   };
   const evFollowup = EV.find(e => e.id === 'romance_followup');
-  const due1 = scheduledFollowupDueYear(evFollowup, s);
+  const dueYear = (event, state) => {
+    const period = scheduledFollowupDuePeriod(event, state);
+    return period === null ? null : Math.floor((period - 1) / 12);
+  };
+  const due1 = dueYear(evFollowup, s);
 
   s.sn.romance_followup = 1090;
   s.romance.stage = 'dating';
   s.romance.stageSinceYear = 1090;
   s.year = 1091;
   const evFutureTalk = EV.find(e => e.id === 'romance_future_talk');
-  const due2 = scheduledFollowupDueYear(evFutureTalk, s);
+  const due2 = dueYear(evFutureTalk, s);
 
   s.sn.romance_future_talk = 1091;
   s.romance.stage = 'committed';
   s.romance.stageSinceYear = 1091;
   s.year = 1092;
   const evMarriage = EV.find(e => e.id === 'romance_marriage_choice');
-  const due3 = scheduledFollowupDueYear(evMarriage, s);
+  const due3 = dueYear(evMarriage, s);
 
   return { due1, due2, due3 };
 })()`, runtimeEnv);
