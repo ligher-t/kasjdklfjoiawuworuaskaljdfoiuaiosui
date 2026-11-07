@@ -65,6 +65,7 @@ window.TERRA_DATA_BUILD.run("model/flag-usage", function ($terraData, $define, $
     "ENGINE_FLAG_CLEARERS",
     {
       sch: ["教育状態機械で修了・退学・休学などにより在籍を終える、または中断したとき"],
+      arts_enrolled: ["教育状態機械がアーツ課程の修了・中断・退学を確定したとき"],
       debt_yakuza: ["年次家計で負債残高が0になったとき", "イベント結果で全債務を返済したとき"],
       parent_unemployed: ["本人が養育家計の管理年齢を終えたとき"],
       retired: ["職業を付与するイベントで就労へ戻ったとき"],
@@ -105,6 +106,7 @@ window.TERRA_DATA_BUILD.run("model/flag-usage", function ($terraData, $define, $
         : "経歴フラグ。一度記録されると人生終了まで保持。";
     if (id === "sch") meta.source="本人の入学選択と教育状態機械の在籍・修了・中断処理";
     if (id === "arts_grad") meta.source="学籍別の認定履修を満たす課程修了で教育状態機械が確定";
+    if (id === "arts_enrolled") meta.source="教育案件の入学確定と教育状態機械が管理するアーツ課程の在籍状態";
     if (id === "insured") meta.source = "EVの加入結果と年次家計処理によるゲーム上の状態";
     if (id === "pet_care_outsourced") {
       meta.source = "本人の選択と収容・隔離状態によるゲーム上の状態";
@@ -122,5 +124,9 @@ window.TERRA_DATA_BUILD.run("model/flag-usage", function ($terraData, $define, $
     if (["neighbor_contact", "neighbor_welcome", "neighbor_familiar"].includes(id))
       meta.lifecycle =
         "現在の居住先に結び付く状態フラグ。転居時にエンジンが解除する。後日談の未決着状態と返礼記録は、後日談でも解除する。";
+    if (meta.status === "retired") {
+      meta.source = meta.retirementSource || "旧保存データの経歴表示のみ。現行イベントでは生成しない。";
+      meta.lifecycle = meta.retirementReason || "旧フラグ。現行ゲームでは新規生成しない。";
+    }
   });
 });

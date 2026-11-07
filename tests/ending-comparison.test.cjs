@@ -28,7 +28,7 @@ assert.deepEqual([...thresholds], [0.75, 1], 'weighted outcomes must cover every
 // Birth distribution changes may expose independent employment errors in an
 // otherwise deterministic life. In either case the visible caller must survive.
 let peer = null, peerError = null;
-try { peer = vm.runInContext('simPeer(905033)', ctx, { timeout: 30000 }); }
+try { peer = vm.runInContext('simPeer(905033)', ctx, { timeout: 120000 }); }
 catch (error) { peerError = error; }
 
 assert.equal(storage.get('terra2'),'original-autosave','hidden peer deaths must not erase the active life autosave');

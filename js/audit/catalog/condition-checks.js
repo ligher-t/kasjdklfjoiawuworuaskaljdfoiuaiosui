@@ -149,7 +149,7 @@ function createCatalogFieldChecks(W_, services) {
         const action = f[k],
           domains = new Set(["warning", "infrastructure", "shipment", "contract", "research", "community-project", "culture", "information", "arts"]),
           allowedKeys = new Set(["domain", "action", "mode", "targetId", "learningPathId", "providerId", "siteRef",
-            "disciplineId", "techniqueId", "purpose", "equipmentId", "result", "techSkillId", "minimumSkill",
+            "disciplineId", "techniqueId", "purpose", "equipmentId", "result", "outcome", "techSkillId", "minimumSkill",
             "skillId", "enrollmentId", "year", "menteeId", "organizationId", "recipientId", "routeId",
             "helperCount", "claimId", "languageId", "languageMode", "workplaceUse", "requireEquipment", "amount"]),
           actions = {
@@ -157,7 +157,8 @@ function createCatalogFieldChecks(W_, services) {
             shipment: ["take-custody", "confirm-recipient", "return", "receive-medicine", "resolve-address", "record-delay-response"],
             contract: ["contact", "offer", "decline", "accept", "prepare", "defer-preparation", "depart", "handoff", "survey", "continue-work",
               "query-cargo", "support-equity", "query-screening", "verify-receipt", "dispute-payment", "mark-payment-missing",
-              "settle", "family-notice", "return", "cancel", "end-contact", "defer-payment-claim"],
+              "settle", "family-notice", "return", "cancel", "end-contact", "defer-payment-claim",
+              "review-eligibility", "defer-departure"],
             research: ["attend-briefing", "consent", "defer", "refuse", "procedure", "withdraw", "followup"],
             "community-project": ["propose", "donate", "mark-parts-received", "record-helpers", "complete-work"],
             culture: ["record-music-performance", "record-oral-tradition", "record-mentoring", "sign-up-festival",

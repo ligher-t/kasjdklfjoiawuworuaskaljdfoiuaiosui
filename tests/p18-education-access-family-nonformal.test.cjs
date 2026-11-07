@@ -262,7 +262,7 @@ const informal=run(function(){
      after.university===before.university,
    pathStatus:path.status,issues:educationNonformalInvariants(s)};
 });
-assert.equal(informal.modeCount,16);
+assert.equal(informal.modeCount,21,'the five Arts learning paths are part of the nonformal mode catalog');
 assert.equal(informal.duplicate,true);
 assert(informal.idempotent>=1);
 assert.equal(informal.unverifiedRejected,true);

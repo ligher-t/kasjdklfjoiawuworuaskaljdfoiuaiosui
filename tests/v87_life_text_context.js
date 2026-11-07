@@ -29,7 +29,7 @@ assert(school.st.includes('児童'));
 const householdHelp = school.c.find(choice => choice.l === '家の手伝いをする');
 const householdHelpResult = textOf(householdHelp.o);
 assert(householdHelpResult.includes('水汲みや片付け'), 'the child performs household tasks');
-assert.equal(householdHelp.o[0][2].educationAction,'decline-primary','helping at home postpones enrollment');
+assert.equal(householdHelp.o[0][2].educationAction,'case:decline:primary','helping at home postpones enrollment through the current case ledger');
 assert(!householdHelpResult.includes('あなたは働きに出た'), 'the child is not described as taking adult employment');
 
 const urgentReview = event('life_medical_urgent_review');

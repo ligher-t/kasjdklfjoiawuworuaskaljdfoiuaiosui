@@ -57,13 +57,13 @@ for(const [id,tuition,credential] of [['uni_fee',200000,'uni'],['uni_final_fee',
  assert.equal(dropped.fl?.[credential],undefined,id+' dropout must not award a credential');
  assert.equal(dropped.fl?.[hasUniversity?'uni_enrolled':'voc_enrolled'],0);
 }
-const career=event('car'),artsAdmission=career.c.find(choice=>choice.l==='アーツ学院を目指す');
-assert(artsAdmission,'Arts Academy entry route missing');
-assert.equal(artsAdmission.o[0][2].job,undefined,'admission must not imply employment');
-assert.equal(artsAdmission.o[0][2].fl.arts_enrolled,1,'admission must record enrollment');
-assert.equal(artsAdmission.o[0][2].fl.arts_grad,undefined,'admission must not imply graduation');
-assert.equal(artsAdmission.o[0][2].fl.voc_enrolled,1,'Arts course must use tracked tuition and completion states');
-assert.equal(artsAdmission.o[1][2].job,undefined,'rejected applicant must retain their existing employment state');
+const career=event('car'),artsInquiry=career.c.find(choice=>choice.l==='アーツ学院の募集を照会する');
+assert(artsInquiry,'Arts Academy inquiry route missing');
+assert.equal(artsInquiry.o[0][2].educationAction,'case:begin:higher-path:arts:1',
+  'asking about a school opens a verified application path instead of enrolling immediately');
+assert.equal(artsInquiry.o[0][2].job,undefined,'asking about admission must not imply employment');
+assert.equal(artsInquiry.o[0][2].fl?.arts_enrolled,undefined,'inquiry must not create enrollment');
+assert.equal(artsInquiry.o[0][2].fl?.arts_grad,undefined,'inquiry must not imply graduation');
 const artsCompletion=event('arts_academy_completion');
 assert.equal(typeof artsCompletion.show,'function','career path must verify completed Arts enrollment');
 const artsHire=artsCompletion.c[0];
@@ -166,7 +166,7 @@ function lifecycleRegressions(){
     reentry.educationRecord.enrollments[1].status==='completed' &&
     reentry.educationRecord.awards.length===0;
   const normal=[];
-  for(const stage of ['upper','university','vocational','arts','preparatory']){
+  for(const stage of ['upper','university','vocational','preparatory']){
     if(stage==='preparatory'){
       const s=fresh(22),start=s.year,initialCash=s.cash;
       s.mo=0;ensureResidenceIdentity(s);
@@ -219,6 +219,11 @@ function lifecycleRegressions(){
         stage==='upper'?educationHas(s,'upper'):educationCredential(s,stage==='arts'?'arts':stage),
       audit:auditLifeState(s)});
   }
+  const artsWithoutEvidence=fresh(22);educationStart(artsWithoutEvidence,'arts');
+  for(let i=0;i<artsWithoutEvidence.educationPath.duration;i++)advance(artsWithoutEvidence);
+  const artsNeedsCourseEvidence=artsWithoutEvidence.educationPath.status!=='completed' &&
+    !educationCredential(artsWithoutEvidence,'arts') &&
+    artsWithoutEvidence.fl.arts_grad!==1;
   const deferred=fresh(22);educationStart(deferred,'university');
   deferred.cash=0;advance(deferred);
   const earned=deferred.educationPath.yearsCompleted;
@@ -262,11 +267,11 @@ function lifecycleRegressions(){
   const unearnedAwardDetected=auditLifeState(broken).includes('教育学籍の年限・就業・資格記録に矛盾');
   const gap=fresh(22);educationStart(gap,'upper');gap.year+=10;gap.age+=10;educationAdvanceYear(gap);
   const gapNoCredit=gap.educationPath.yearsCompleted===0 && gap.educationPath.status==='enrolled';
-  return {reentryComplete,normal,noFreeGraduation,aidDoesNotCredit,noDuplicateCredit,aidYearEarned,
+  return {reentryComplete,normal,artsNeedsCourseEvidence,noFreeGraduation,aidDoesNotCredit,noDuplicateCredit,aidYearEarned,
     pauseNoCredit,resumedWorkClear,resumedComplete,admissionWorkClear,workingCourseKeepsJob,gapNoCredit,repeatFundingPreserved,repeatNotInstant,repeatCompleted,unearnedAwardDetected};
 }
 const regressions=vm.runInContext('('+lifecycleRegressions.toString()+')()',lifeCtx,{timeout:18000});
-for(const key of ['reentryComplete','noFreeGraduation','aidDoesNotCredit','noDuplicateCredit','aidYearEarned',
+for(const key of ['reentryComplete','artsNeedsCourseEvidence','noFreeGraduation','aidDoesNotCredit','noDuplicateCredit','aidYearEarned',
  'pauseNoCredit','resumedWorkClear','resumedComplete','admissionWorkClear','workingCourseKeepsJob','gapNoCredit','repeatFundingPreserved','repeatNotInstant','repeatCompleted','unearnedAwardDetected'])
  assert.equal(regressions[key],true,key);
 for(const row of regressions.normal){

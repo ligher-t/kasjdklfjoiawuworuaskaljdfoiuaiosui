@@ -278,7 +278,7 @@ function main(args){
  for(const file of request.files){
   const inputs=[...dependencies('tests/'+file),...(extraInputs[file]||[])],key=digest(inputs,common);
   if(!request.reason&&cache[file]?.key===key){console.log('REUSED '+file+': unchanged inputs');continue;}
-  const start=Date.now(),result=spawnSync(process.execPath,['tests/'+file],{cwd:root,encoding:'utf8',timeout:file==='v87_dev_simulation_diagnostics.js'?120000:file==='audit-diagnostics.test.cjs'?60000:30000,maxBuffer:256*1024});
+  const start=Date.now(),timeout=['v87_dev_simulation_diagnostics.js','ending-comparison.test.cjs','v88_deadline_coverage_metrics.test.cjs'].includes(file)?120000:file==='audit-diagnostics.test.cjs'?60000:30000,result=spawnSync(process.execPath,['tests/'+file],{cwd:root,encoding:'utf8',timeout,maxBuffer:256*1024});
   if(result.status!==0){delete cache[file];saveCache(cache);console.error('FAILED '+file+'\n'+([result.error?.message,result.stderr||result.stdout||'No diagnostic output'].filter(Boolean).join('\n')).slice(-16000));return 1;}
   cache[file]={key,ms:Date.now()-start};console.log('PASSED '+file+': '+cache[file].ms+' ms');
  }

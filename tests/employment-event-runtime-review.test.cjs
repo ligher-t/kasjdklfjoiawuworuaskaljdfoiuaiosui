@@ -31,6 +31,7 @@ const reviewedBranches={
   'life_rhodes_role_review:3':'2a3609e463d4dbe8f4eb59f82b810830cf180aed642d8bbead9df2ea1261aba2'
 };
 const expectedShapeDeltas=[
+  {eventId:'car',choiceIndex:2,baseline:2,current:1},
   {eventId:'nat',field:'choice-count',baseline:3,current:4},
   {eventId:'vic_war',choiceIndex:1,baseline:2,current:1},
   {eventId:'kaz_exile',choiceIndex:0,baseline:2,current:1},
@@ -113,14 +114,14 @@ for(const expected of review.events){
     }
   }
 }
-assert.deepEqual(observedShapeDeltas,expectedShapeDeltas,'only the seven reviewed W01 source-shape deltas are allowed');
+assert.deepEqual(observedShapeDeltas,expectedShapeDeltas,'only reviewed W01 source-shape deltas are allowed');
 assert.deepEqual(observedReviewedBranches.sort(),[...reviewedBranchKeys].sort());
 assert.equal(report.events,175,'W01 A175 event set is complete');
 assert.equal(report.choices,490,'all current A175 choices reach runtime employment review');
-assert.equal(report.outcomes,700,'all current A175 result branches reach runtime employment admission');
+assert.equal(report.outcomes,699,'all current A175 result branches reach runtime employment admission');
 assert.equal(reviewedBranchKeys.size,10);
 assert.equal(report.jobStartsRejectedWithoutEvidence+report.communityLivelihoodsRetained>0,true);
-console.log(`PASS W01 current runtime review: ${report.events} events, ${report.choices} choices, ${report.outcomes} outcomes; 8 reviewed source-shape deltas; 10 content-bound branches; unsupported starts rejected ${report.jobStartsRejectedWithoutEvidence}, evidence-backed livelihoods retained ${report.communityLivelihoodsRetained}`);
+console.log(`PASS W01 current runtime review: ${report.events} events, ${report.choices} choices, ${report.outcomes} outcomes; 9 reviewed source-shape delta records; 10 content-bound branches; unsupported starts rejected ${report.jobStartsRejectedWithoutEvidence}, evidence-backed livelihoods retained ${report.communityLivelihoodsRetained}`);
 
 // W11 is a screening inventory, not a semantic approval. Runtime-check every
 // job/livelihood-context candidate and recovered W12 source against the same

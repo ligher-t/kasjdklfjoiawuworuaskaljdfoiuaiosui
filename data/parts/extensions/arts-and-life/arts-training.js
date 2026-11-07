@@ -110,7 +110,7 @@ window.TERRA_DATA_BUILD.fragment(
           "返却日と使用場所を確かめてから署名した。器具は授業用の袋に収まり、貸出票の控えが手元に残った。",
           { artsAction: { action: "borrow-equipment" } }
         ]),
-        $terraData.K("今日は借りず、保管庫へ戻す", {}, [1, "器具を係へ戻し、貸出票には何も書かなかった。"])
+        $terraData.K("今日は借りず、保管庫へ戻す", {}, [1, "器具を係へ戻し、貸出票には何も書かなかった。", {}])
       ]
     },
     {
@@ -131,7 +131,7 @@ window.TERRA_DATA_BUILD.fragment(
           "係は器具の状態を確かめ、返却欄に日付を記した。控えを受け取ると、袋の中は空になった。",
           { artsAction: { action: "return-equipment", equipmentId: "$oldest-due-school-loan" } }
         ]),
-        $terraData.K("授業後に返しに来る", {}, [1, "器具を袋へ戻し、窓口の場所をもう一度確かめた。"])
+        $terraData.K("授業後に返しに来る", {}, [1, "器具を袋へ戻し、窓口の場所をもう一度確かめた。", {}])
       ]
     },
     {
@@ -210,7 +210,7 @@ window.TERRA_DATA_BUILD.fragment(
           "届いた部品の型番を修理票と照合し、担当者が受領欄に記入した。器具は作業台に移された。",
           { artsAction: { action: "record-repair-parts", equipmentId: "$oldest-school-repair" } }
         ]),
-        $terraData.K("修理票をしまい、受取確認は次回に回す", {}, [1, "部品の番号はまだ確かめず、修理票をしまった。受取の返事は次の授業で出すことにした。"])
+        $terraData.K("修理票をしまい、受取確認は次回に回す", {}, [1, "部品の番号はまだ確かめず、修理票をしまった。受取の返事は次の授業で出すことにした。", {}])
       ]
     },
     {
@@ -230,7 +230,7 @@ window.TERRA_DATA_BUILD.fragment(
           "係と一緒に接続部を確かめ、貸出票の修理欄に日付を記した。器具は監督下で使える状態に戻った。",
           { artsAction: { action: "complete-equipment-repair", equipmentId: "$oldest-school-repair" } }
         ]),
-        $terraData.K("確認を次の授業まで待つ", {}, [1, "器具は保管庫に置いたままにし、次の授業で担当者と確かめることにした。"])
+        $terraData.K("確認を次の授業まで待つ", {}, [1, "器具は保管庫に置いたままにし、次の授業で担当者と確かめることにした。", {}])
       ]
     }
   );

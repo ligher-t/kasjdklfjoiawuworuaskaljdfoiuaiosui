@@ -50,7 +50,14 @@ window.TERRA_DATA_BUILD.run("model/flags", function ($terraData, $define, $rules
         tags: ["ロンディニウム戦争期の生活を経験"]
       },
       arena: { label: "地下闘技場", description: "地下闘技場で活動した経験。", engine: "経歴表示" },
-      arts_gifted: { label: "アーツの才", description: "アーツ適性を評価された経験。", engine: "経歴表示" },
+      arts_gifted: {
+        label: "アーツの才",
+        description: "旧適性経路で記録されたアーツ評価。現在の技能・資格・勤務能力を示さない。",
+        engine: "旧セーブの経歴表示",
+        status: "retired",
+        retirementSource: "旧適性経路の保存済み履歴のみ。現行ゲームでは新規生成しない。",
+        retirementReason: "旧来の適性値による経路を廃止し、学習・実技・資格の個別記録へ置換。"
+      },
       teacher_attempted: {
         label: "教職への誘いに返答した",
         description: "地域の学び舎からの教職の誘いに返答した。再提示を抑える。",

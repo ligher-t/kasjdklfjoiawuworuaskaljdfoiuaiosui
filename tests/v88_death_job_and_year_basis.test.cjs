@@ -29,7 +29,9 @@ assert.equal(risk('海の怪異（恐魚の捕食・同化・海への喪失）'
 start('レム・ビリトン',16);assert.equal(risk('獣害（狂暴化源石獣の襲撃）'),1,'canonical region spelling activates regional hazards');
 start('クルビア',3,'S.inf=1;S.ob=80;S.p=15;');
 assert.equal(risk(arts),0,'miners with oripathy are not automatically Arts-capable');
-vm.runInContext('S.ar=42;',ctx);assert.equal(risk(arts),1,'Arts ability supports Arts-specific death');
+vm.runInContext('S.ar=42;',ctx);assert.equal(risk(arts),0,'legacy aptitude alone is not an Arts exposure record');
+vm.runInContext("S.lifeRecord.skills.push({id:'arts-practice',title:'アーツ実技の記録'});",ctx);
+assert.equal(risk(arts),1,'recorded Arts practice supports Arts-specific death');
 start('クルビア',11,'S.inf=1;S.ob=80;S.p=15;');
 assert.equal(risk(arts),1,'Arts engineer is an Arts job');
 

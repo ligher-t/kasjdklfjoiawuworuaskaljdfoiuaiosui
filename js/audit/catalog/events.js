@@ -13,9 +13,12 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
       W_.push(`${w}: dailyイベントに選択肢がある`);
     if (e.interactionScope === "scheduled" && typeof e.scheduledAt !== "function")
       W_.push(`${w}: scheduledイベントに汎用の期日関数がない`);
+    const hasOwnedDynamicEligibility = e.lifeSystemFamily != null && typeof e.show === "function";
     if (e.lifeSystemFamily != null &&
         !["arts", "infrastructure", "delivery", "contingency", "culture-research", "general"].includes(e.lifeSystemFamily))
       W_.push(`${w}: lifeSystemFamilyが登録済みの軽選択カテゴリではない`);
+    if (e.lifeSystemFamily != null && typeof e.show !== "function")
+      W_.push(`${w}: lifeSystemFamilyイベントに状態所有者の動的適格性判定がない`);
     (e.references || []).forEach(ref => {
       if (!services.SETTING_SOURCES[ref]) W_.push(`${w}: 未定義の資料ID「${ref}」`);
     });
@@ -64,7 +67,7 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
         e.months.some(m => !Number.isInteger(m) || m < 1 || m > services.CALENDAR_MONTHS))
     )
       W_.push(`${w}: 発生月の指定が不正`);
-    if (!e.st && (!e.ge || e.ge.age == null) && (!e.le || e.le.age == null))
+    if (!e.st && (!e.ge || e.ge.age == null) && (!e.le || e.le.age == null) && !hasOwnedDynamicEligibility)
       W_.push(`${w}: 時期(st)も年齢条件もなく、全年齢で発生する`);
     (e.st || []).forEach(x => services.STG.includes(x) || W_.push(`${w}: 未知の時期「${x}」`));
     cc(e, w, true);
