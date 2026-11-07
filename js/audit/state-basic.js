@@ -97,6 +97,8 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
   if (typeof isValidArtsEquipmentState !== "function" ||
       !isValidArtsEquipmentState(s.artsEquipment, s.year))
     problems.push("アーツ機器・貸与・点検の状態が不正");
+  if (typeof isValidLifeSystemsState !== "function" || !isValidLifeSystemsState(s))
+    problems.push("地域警報・設備・物流・契約・研究・文化の状態が不正");
   if (typeof isValidEventMonthMarker !== "function" ||
       !isValidEventMonthMarker(s.majorEventMonth, s.year) ||
       !isValidEventMonthMarker(s.minorEventMonth, s.year))

@@ -180,7 +180,9 @@ function careerOpeningAssessment(s, opening) {
     qualified = (uni || voc || skill(/technical|repair|engineering|job-18/)) && s.k >= 25 && literacy >= 30;
     reason = "修了課程または技術の実務経験がまだ確認できない";
   } else if (role === "arts-technician") {
-    qualified = (arts || skill(/arts|originium/)) && s.ar >= 35 && literacy >= 30;
+    qualified = (arts || skill(/arts|originium/)) &&
+      (s.artsProfile?.techSkills?.["unit-maintenance"] >= 10 ||
+       s.artsProfile?.techSkills?.["unit-inspection"] >= 10) && literacy >= 30;
     reason = "アーツ器具を扱う訓練・実務経験が未確認";
   } else if (role === "teacher") {
     qualified = (uni || voc || skill(/teach|literacy-tutor/)) && literacy >= 40;

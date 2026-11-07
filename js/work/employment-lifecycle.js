@@ -192,7 +192,7 @@ function commitEmploymentOpening(s, assessed, options = {}) {
  */
 function recordCompletedGig(s, action) {
   const kind = action.kind;
-  if (!["cargo-handling", "short-sentry", "local-errand", "market-watch"].includes(kind))
+  if (!["cargo-handling", "short-sentry", "local-errand", "market-watch", "contingency-logistics"].includes(kind))
     throw Error("短期業務の種類が不正");
   if (!Number.isSafeInteger(action.nominalCash) || action.nominalCash < 0 ||
       !action.sourceEventId || typeof action.sourceEventId !== "string")

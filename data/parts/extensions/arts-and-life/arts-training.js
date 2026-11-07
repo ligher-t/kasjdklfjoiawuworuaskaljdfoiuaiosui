@@ -11,6 +11,7 @@ window.TERRA_DATA_BUILD.fragment(
       conf: "S",
       references: ["SRC_LEITHANIEN_ARTS", "SRC_LEITHANIEN_ARTS_ARCHIVE", "SRC_EDUCATION_ACCESS"],
       interactionScope: "minor",
+      lifeSystemFamily: "arts",
       once: true,
       w: 0.45,
       show: s => artsHasAttendedCurrentCourse(s),
@@ -38,12 +39,10 @@ window.TERRA_DATA_BUILD.fragment(
       conf: "S",
       references: ["SRC_LEITHANIEN_ARTS", "SRC_LEITHANIEN_ARTS_ARCHIVE", "SRC_EDUCATION_ACCESS"],
       interactionScope: "minor",
+      lifeSystemFamily: "arts",
       cd: 3,
       w: 0.3,
-      show: s => s.artsProfile?.innateBand === "lower" &&
-        artsHasAttendedCurrentCourse(s) &&
-        !s.artsProfile.practiceHistory.some(row =>
-          row.sourceEventId === "life_arts_lowaptitude_class" && row.year === s.year),
+      show: s => lifeSystemEventEligible(s, "life_arts_lowaptitude_class"),
       t: "授業の終わりを告げる鐘が鳴っても、練習台の印はほとんど動かなかった。教師が器具を調べたあと、背後で誰かの椅子が床を擦った。机の上には、やり直した線が何本も残っている。",
       c: [
         $terraData.K("別の方法で試せないか尋ねる", {}, [
@@ -63,6 +62,7 @@ window.TERRA_DATA_BUILD.fragment(
       conf: "S",
       references: ["SRC_LEITHANIEN_ARTS", "SRC_LEITHANIEN_ARTS_ARCHIVE", "SRC_EDUCATION_ACCESS"],
       interactionScope: "minor",
+      lifeSystemFamily: "arts",
       cd: 2,
       w: 0.38,
       show: s => {
@@ -92,6 +92,7 @@ window.TERRA_DATA_BUILD.fragment(
       conf: "S",
       references: ["SRC_LEITHANIEN_ARTS", "SRC_LEITHANIEN_ARTS_ARCHIVE", "SRC_EDUCATION_ACCESS"],
       interactionScope: "minor",
+      lifeSystemFamily: "arts",
       cd: 1,
       w: 0.22,
       show: s => {
@@ -117,6 +118,7 @@ window.TERRA_DATA_BUILD.fragment(
       conf: "S",
       references: ["SRC_LEITHANIEN_ARTS", "SRC_LEITHANIEN_ARTS_ARCHIVE", "SRC_EDUCATION_ACCESS"],
       interactionScope: "minor",
+      lifeSystemFamily: "arts",
       cd: 1,
       w: 0.3,
       show: s => s.artsEquipment.items.some(item => item.ownerType === "school" &&
@@ -137,6 +139,7 @@ window.TERRA_DATA_BUILD.fragment(
       conf: "S",
       references: ["SRC_INDUSTRIAL_LIFE", "SRC_TERRA_INDUSTRY_POLICY", "SRC_EDUCATION_ACCESS"],
       interactionScope: "minor",
+      lifeSystemFamily: "arts",
       cd: 2,
       w: 0.18,
       show: s => {
@@ -166,6 +169,7 @@ window.TERRA_DATA_BUILD.fragment(
       conf: "S",
       references: ["SRC_INDUSTRIAL_LIFE", "SRC_TERRA_INDUSTRY_POLICY", "SRC_EDUCATION_ACCESS"],
       interactionScope: "minor",
+      lifeSystemFamily: "arts",
       cd: 2,
       w: 0.12,
       show: s => {
@@ -194,6 +198,7 @@ window.TERRA_DATA_BUILD.fragment(
       conf: "S",
       references: ["SRC_INDUSTRIAL_LIFE", "SRC_TERRA_INDUSTRY_POLICY", "SRC_EDUCATION_ACCESS"],
       interactionScope: "minor",
+      lifeSystemFamily: "arts",
       cd: 1,
       w: 0.1,
       show: s => s.artsEquipment.items.some(item => item.ownerType === "school" && item.condition === "in-repair" &&
@@ -213,6 +218,7 @@ window.TERRA_DATA_BUILD.fragment(
       conf: "S",
       references: ["SRC_INDUSTRIAL_LIFE", "SRC_TERRA_INDUSTRY_POLICY", "SRC_EDUCATION_ACCESS"],
       interactionScope: "minor",
+      lifeSystemFamily: "arts",
       cd: 1,
       w: 0.1,
       show: s => s.artsEquipment.items.some(item => item.ownerType === "school" && item.condition === "in-repair" &&

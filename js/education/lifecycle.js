@@ -211,7 +211,7 @@ function educationExam(s, stage, tier = 1) {
     funded=educationPaymentPlan(s,examFee),
     knowledge = Number(s.k || 0),
     literacy = Number.isFinite(s.socialLearning?.literacy) ? s.socialLearning.literacy : 0,
-    arts = Number(s.ar || 0);
+    arts = typeof artsAdmissionPotential === "function" ? artsAdmissionPotential(s) : 0;
   const threshold = (stage === "university" ? 43 : stage === "arts" ? 27 : 25) + (tier - 1) * 22,
     aptitude = stage === "arts" ? arts * 0.7 + knowledge * 0.2 + literacy * 0.1 :
       knowledge * 0.67 + literacy * 0.33,
@@ -280,6 +280,12 @@ function educationEnd(s,outcome,reason,source=null) {
        model.completionAssessment?.passed!==true ||
        model.completionAssessment.enrollmentId!==model.currentEnrollmentId))
     return false;
+  if(outcome==="completed" && model.stage==="arts" &&
+     (!model.currentEnrollmentId || model.completionAssessment?.passed!==true ||
+      model.completionAssessment.enrollmentId!==model.currentEnrollmentId)){
+    if(!s.educationDecision)s.educationDecision={kind:"graduation",year:s.year};
+    return false;
+  }
   if(outcome==="completed" && model.offeringId){
     const enrollment=educationActiveEnrollment(s),
       credits=enrollment?educationTransferredCreditIds(s,enrollment.id):[],
@@ -689,7 +695,7 @@ function educationAdvanceYear(s) {
     }
     const knowledge=s.k||0,lit=Number.isFinite(s.socialLearning?.literacy)?s.socialLearning.literacy:0,
       preparatoryReady=m.stage==="preparatory" ? knowledge>=48 && lit>=45 : true,
-      artsReady=m.stage==="arts" ? (s.ar||0)>=30 : true,
+      artsReady=m.stage==="arts" ? m.completionAssessment?.passed===true : true,
       threshold=m.stage==="university" ? 45+(m.tier-1)*13 : 25+(m.tier-1)*10;
     if(knowledge>=threshold && lit>=35 && artsReady && preparatoryReady){
       if(m.stage==="preparatory"){

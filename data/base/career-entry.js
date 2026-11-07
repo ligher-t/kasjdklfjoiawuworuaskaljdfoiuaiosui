@@ -73,25 +73,17 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           ]
         ),
         $terraData.K(
-          "アーツ学院を目指す",
+          "アーツ学院の募集を照会する",
           {
             show: {
               any: ["国:リターニア", "国:クルビア", "国:炎国"],
               ban: ["voc", "voc_enrolled", "uni_enrolled"]
             },
-            en: { ge: { ar: 40, cash: 3e5 } },
-            why: "学院が求めるアーツの適性か、入学金30万龍門幣が足りない"
+            en: s => !educationActiveCase(s),
+            why: "進学案件をすでに手続き中"
           },
-          [
-            0.7,
-            "学院の選抜を通り、入学金と当面の学費として30万龍門幣を納めた。真新しい教本と杖を手に取り、アーツの訓練が始まった。",
-            { ar: 15, ep: 8, k: 4, cr: 8, cash: -3e5, fl: { arts_enrolled: 1, voc_enrolled: 1 }, study: "voc_start" }
-          ],
-          [
-            1,
-            "実技と筆記に挑んだが、合格者の貼り紙に自分の番号はなかった。旅費と受験料の3万龍門幣だけが消え、重い足取りで別の働き口を探し始めた。",
-            { p: -8, cash: -3e4 }
-          ]
+          [1, "窓口で通える募集先を照会し、出願や費用の確認を進めることにした。入学の選考と授業料は、確認できた募集先ごとに判断する。",
+            { educationAction: "case:begin:higher-path:arts:1" }]
         ),
         $terraData.K("工場労働者として働く", { show: s => !!employmentOpeningForChoice(s, 2) }, [
           1,
@@ -377,7 +369,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           [
             1,
             "工房の隅で布の裁断や金具の下ごしらえを任された。ようやく仕上がった品が表の棚に並んでも、売値の大半は材料代と親方の懐へ消えていった。",
-            { employmentAction: { action: "accept-local-opening", jobId: 22 }, ar: 2, k: 1 }
+            { employmentAction: { action: "accept-local-opening", jobId: 22 }, k: 1 }
           ]
         ),
         $terraData.K(

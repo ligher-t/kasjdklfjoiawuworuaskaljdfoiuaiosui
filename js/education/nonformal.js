@@ -16,6 +16,11 @@ const EDUCATION_NONFORMAL_MODES=Object.freeze({
   "corporate-training":{axes:[2,4,9,4],subjects:["technical","safety"]},
   "rhodes-onboard":{axes:[6,6,4,7],subjects:["academic_knowledge","medical_safety","language"]},
   "community-health-training":{axes:[2,4,7,4],subjects:["first_aid","medical_safety"]},
+  "arts-foundation":{axes:[1,3,4,2],subjects:["arts-foundation","arts-kinetic","arts-thermal"]},
+  "arts-unit-maintenance":{axes:[1,2,8,2],subjects:["arts-unit-maintenance","technical","safety"]},
+  "arts-workshop":{axes:[1,3,8,2],subjects:["arts-workshop","craft","technical"]},
+  "arts-tradition":{axes:[1,3,5,6],subjects:["arts-tradition","oral-tradition","ritual-knowledge"]},
+  "arts-medical-support":{axes:[1,2,7,3],subjects:["arts-medical-support","medical-support","medical-safety"]},
   "exam-self-preparation":{axes:[3,6,1,4],subjects:["test_preparation","formal_register"]}
 });
 const EDUCATION_NONFORMAL_AXES=["literacy","knowledge","practicalSkill","language"];

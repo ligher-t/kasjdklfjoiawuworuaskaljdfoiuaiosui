@@ -58,5 +58,4 @@ function advanceAnnualWellbeing(s, services, a, t, f, careEffect) {
   ];
   s.p=services.clamp(s.p+moodParts.reduce((sum,delta)=>sum+wellbeingDelta(s,'p',delta),0));
   services.annualEducationAndRelationships(s, f, t);
-  if (f == 5) s.ar = services.clamp(s.ar + services.P("education.artsGrowth"));
 }

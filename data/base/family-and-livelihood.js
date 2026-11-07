@@ -20,11 +20,11 @@ window.TERRA_DATA_BUILD.run("base/family-and-livelihood", function ($terraData, 
         ]),
         $terraData.K(
           "音楽家に試奏を申し出る",
-          { show: { ge: { ar: 35 } } },
+          { show: s => !!s.fl?.hobby_music || (s.artsProfile?.disciplines?.acoustic?.practice || 0) > 0 },
           [
             0.45,
             "人前で弾くつもりもなかった昔馴染みの曲を奏でた。聴き終えた音楽家は古い譜面を一冊差し出し、次の稽古日に顔を出すよう言った。帰り道、胸に抱えた譜面の重みが心地よかった。",
-            { ar: 3, k: 1, p: 2, rl: 1 }
+            { k: 1, p: 2, rl: 1 }
           ],
           [1, "緊張で最初の和音が硬く上ずった。音楽家は短く会釈して次の客へ向き直り、あなたはそっと鍵盤から指を引いた。", { p: -2 }]
         ),

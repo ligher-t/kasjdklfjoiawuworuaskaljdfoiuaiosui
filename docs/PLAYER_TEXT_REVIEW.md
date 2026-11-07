@@ -13896,3 +13896,1177 @@ Workerは同じ出生年・誕生日と決定論的シードで比較人生を�
 
 - **窓口で器具を返し、控えを受け取る** → 係は器具の状態を確かめ、返却欄に日付を記した。控えを受け取ると、袋の中は空になった。
 - **授業後に返しに来る** → 器具を袋へ戻し、窓口の場所をもう一度確かめた。
+
+## 2026-11-07 統合アーツ・生活システムイベント60件
+
+**対象と判断**：新規 `data/parts/extensions/arts-and-life/arts-contingencies.js` の60 ID。各IDを現行の `EV` 登録、`lifeSystemEventEligible` の同ID条件、選択肢ごとの表示条件・全結果・効果payloadへ照合した。登録順は既存 `extensions/education-and-later-life` 段階の `arts-training` の後に固定し、独立した新段階は作らない。
+
+**理念**：架空の個人がその場で見聞きできる事実から選択を描き、記録・同意・受領・到着・実行・検収を一段ずつ進める。能力素質は習得証拠と分け、診療と研究、噂と確認、地域の事故と世界全体、組織の受領と個人の収入、参加と常勤雇用を混同しない。
+
+**出典区分**：全60件の `conf` は `[S]`。新規の場面・受講経路・発生頻度・数値影響はゲーム内モデルの仮定であり、参照IDは設定背景・制度の存在範囲に限って付した。参照IDの出典階層・URL・資料限界は `data/model/sources.js` の登録を正本とする。未確認の法定資格、勤務制度、普遍的な救援頻度を原作事実として断定しない。
+
+**実装上の因果確認**：イベント発火は各イベントの `show` から `js/world/life-systems.js` のID別適格条件へ接続する。選択ごとの表示条件、効果payload、状態所有者を以下に記す。期日イベントは `scheduledAt` と状態条件を別に照合する。保存・圧縮はarts/equipment/history各台帳、同版復元は `js/save/slots.js` のSAVE_VERSION 88正規化を用いる。
+
+**個別本文判断**：`life_ship_recipient_check` は宛先を結び付けられない荷物を倉庫へ戻す処理ではなく、主人公が預かった状態で保持する。結果文を実際の荷物所有者・状態に合わせた。
+
+### 全60件の本文・選択肢・結果・効果
+
+#### `life_arts_family_glimpse`
+
+**状態枠**：minor、再提示間隔 `cd=3`
+**入口条件**：`case "life_arts_family_glimpse": return s.age < 18 && inSharedHousehold(s) && !!(s.par?.fa && !s.par.fa.d || s.par?.mo && !s.par.mo.d) &&
+      s.artsProfile?.useHistory?.some(row => row.result === "performed" && row.year === s.year &&
+        row.siteRef === s.community?.key);`
+**出典区分**：[S]
+**出典ID**：`SRC_LEITHANIEN_ARTS`、`SRC_LEITHANIEN_ARTS_ARCHIVE`、`SRC_EDUCATION_ACCESS`
+
+**本文**：夕食の支度をしていると、湯気の向こうで器がすっと棚の端へ寄った。自分の指先には、さっき練習した力の感触が残っている。向かいの親は、まだ何も尋ねてこない。
+
+- **親に見せて、気づいたことを聞く**
+  - 結果（重み 1）：「親へ見せ、相手の返事を待った。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"information","action":"receive-situated","claimId":"arts-family-practice"}}`
+- **器を戻し、練習のことは話さない**
+  - 結果（重み 1）：「器を棚へ戻し、食卓の話題を夕飯へ移した。」
+    - 効果payload：`{}`
+
+#### `life_arts_training_inquiry`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_arts_training_inquiry": return s.age >= 12 && s.age <= 25 &&
+      !educationActiveCase(s) && !educationOccupied(s) && !s.educationDecision &&
+      (s.world?.educationWorld?.offerings && Object.values(s.world.educationWorld.offerings).some(row =>
+        row.stage === "arts" && row.admissionTier === 1 &&
+        s.world.educationWorld.campuses?.[row.campusId]?.educationAreaId === s.local?.educationAreaId));`
+**出典区分**：[S]
+**出典ID**：`SRC_LEITHANIEN_ARTS`、`SRC_LEITHANIEN_ARTS_ARCHIVE`、`SRC_EDUCATION_ACCESS`
+
+**本文**：掲示板にアーツ課程の募集要項が貼られていた。入学時期や費用は年度で違うらしい。家の人は紙面を読み、まず近くに通える学校があるか窓口で聞いてみようと言った。
+
+- **学院の窓口で募集と通学を照会する**
+  - 結果（重み 1）：「進学案件を開き、居住地区の募集先を照会した。」
+    - 効果payload：`{"educationAction":"case:begin:higher-path:arts:1"}`
+- **今回は見送り、家計と仕事を優先する**
+  - 結果（重み 1）：「紙面をしまい、今期は進学手続きを始めなかった。」
+    - 効果payload：`{"educationAction":"case:decline:higher-path"}`
+
+#### `life_arts_practical_assessment`
+
+**状態枠**：major
+**入口条件**：`case "life_arts_practical_assessment": {
+      const enrollment = artsCurrentFormalEnrollment(s);
+      return s.educationPath?.stage === "arts" && s.educationPath.status === "enrolled" && enrollment &&
+        s.educationPath.yearsCompleted >= s.educationPath.duration &&
+        educationTransferredCreditIds(s, enrollment.id).length >= s.educationPath.duration &&
+        s.artsProfile?.practiceHistory?.some(row =>
+          row.enrollmentId === enrollment.id && row.outcome === "guided-success") &&
+        !s.artsProfile.assessmentHistory.some(row => row.enrollmentId === enrollment.id && row.year === s.year);
+    }`
+**出典区分**：[S]
+**出典ID**：`SRC_LEITHANIEN_ARTS`、`SRC_LEITHANIEN_ARTS_ARCHIVE`、`SRC_EDUCATION_ACCESS`
+
+**本文**：試験台には、習った器具と同じ型の木箱が置かれていた。出席記録と実習帳は係が確認済みだという。結果を出すには、実技を一度通して見てもらう必要がある。
+
+- **担当者の前で、習った手順を試す**
+  - 結果（重み 1）：「課程の出席と実技を照合し、試験を受けた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"assess-course","enrollmentId":"$current-arts-enrollment","result":"passed"}}`
+- **苦手な手順を申告し、再実習を頼む**
+  - 結果（重み 1）：「苦手な手順を伝え、再評価が必要との記録を受けた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"assess-course","enrollmentId":"$current-arts-enrollment","result":"reassess"}}`
+
+#### `life_arts_course_after`
+
+**状態枠**：minor、再提示間隔 `cd=3`、一度限り
+**入口条件**：`case "life_arts_course_after": return s.educationPath?.stage === "arts" &&
+      s.educationPath.status === "completed" && !!s.artsProfile?.assessment?.sourceRef;`
+**出典区分**：[S]
+**出典ID**：`SRC_LEITHANIEN_ARTS`、`SRC_LEITHANIEN_ARTS_ARCHIVE`、`SRC_EDUCATION_ACCESS`
+
+**本文**：修了の知らせを受け、机の上の教本を閉じた。証書には履修した課程が記されている。練習具の返却と、次に何を学ぶかの相談は別々に残っていた。
+
+- **窓口で次に通える課程を調べる**
+  - 結果（重み 1）：「次の進学先を探す進路案件を開いた。」
+    - 効果payload：`{"educationAction":"case:begin:higher-path:arts:1"}`
+- **貸与具を返却する**
+  - 結果（重み 1）：「貸与記録を照合し、返却できる器具を窓口へ返した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"return-equipment","equipmentId":"$oldest-school-loan"}}`
+- **証書をしまい、しばらく仕事に戻る**
+  - 結果（重み 1）：「証書を保管し、次の課程への申込みはしなかった。」
+    - 効果payload：`{}`
+
+#### `life_arts_scholarship_inquiry`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_arts_scholarship_inquiry": {
+      const educationCase = educationActiveCase(s);
+      return educationCase?.stage === "arts" && educationCase.phase === "contract" &&
+        educationCase.status === "active" && !s.educationAccess?.financingOffers?.[educationCase.id];
+    }`
+**出典区分**：[S]
+**出典ID**：`SRC_LEITHANIEN_ARTS`、`SRC_LEITHANIEN_ARTS_ARCHIVE`、`SRC_EDUCATION_ACCESS`
+
+**本文**：学院の会計窓口で、受験と入学に必要な費用の見積書を示された。机の脇には、支援制度を照会する用紙も置かれている。利用できるかは、窓口の確認後に分かる。
+
+- **今回の募集先で使える支援を照会する**
+  - 結果（重み 1）：「募集先と今回の費用に限って支援条件を照会した。」
+    - 効果payload：`{"educationAction":"case:check-financing"}`
+- **申込みを急がず、家で費用を相談する**
+  - 結果（重み 1）：「見積書を持ち帰り、支援の申請は保留した。」
+    - 効果payload：`{"educationAction":"case:defer"}`
+
+#### `life_arts_school_decision`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_arts_school_decision": {
+      const educationCase = educationActiveCase(s), notice = educationCase?.applicationId &&
+        s.educationAccess?.notices?.[educationCase.applicationId];
+      return educationCase?.stage === "arts" && educationCase.phase === "contract" && notice?.result === "accepted";
+    }`
+**出典区分**：[S]
+**出典ID**：`SRC_LEITHANIEN_ARTS`、`SRC_LEITHANIEN_ARTS_ARCHIVE`、`SRC_EDUCATION_ACCESS`
+
+**本文**：学院の窓口から、選考結果と入学条件を記した通知が届いた。募集先の授業状況、費用、通学経路をもう一度確かめてから返事をするよう書かれている。
+
+- **通知と条件を確かめて、入学手続きを進める**
+  - 結果（重み 1）：「確認済みの募集先へ入学の意思を伝え、条件を満たす場合に在籍を開始した。」
+    - 効果payload：`{"educationAction":"case:commit"}`
+- **今回は辞退し、通知を窓口へ返す**
+  - 結果（重み 1）：「募集先へ辞退を伝え、今回の入学案件を閉じた。」
+    - 効果payload：`{"educationAction":"case:decline-offer"}`
+
+#### `life_arts_workshop_invitation`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_arts_workshop_invitation": return !!work && s.job === 18 &&
+      lifeSystemArtsProviders(s).some(provider => [work.site.employerId, work.site.siteId].includes(provider.organizationId || provider.providerId));`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：工房の作業台には、勤務先で扱う器具の点検札が置かれていた。担当者は、まず同じ型の部品を見て、手入れを学ぶ気があるか尋ねた。通常のアーツ行使は求められていない。
+
+- **勤務先の指導者に、工房実習を頼む**
+  - 結果（重み 1）：「実在する勤務先の指導者と場所を確認し、工房学習の道を開いた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"open-path","mode":"arts-workshop","providerId":"$current-arts-provider"}}`
+- **見学だけにして、作業台から離れる**
+  - 結果（重み 1）：「部品の並びを見せてもらい、実習の申込みはしなかった。」
+    - 効果payload：`{}`
+
+#### `life_arts_late_fee`
+
+**状態枠**：major
+**入口条件**：`case "life_arts_late_fee": {
+      const loan = artsEquipmentForAction(s, { equipmentId: "$oldest-overdue-school-loan" });
+      return artsEquipmentLateFeeDue(s, loan);
+    }`
+**出典区分**：[S]
+**出典ID**：`SRC_LEITHANIEN_ARTS`、`SRC_LEITHANIEN_ARTS_ARCHIVE`、`SRC_EDUCATION_ACCESS`
+
+**本文**：返却期日を過ぎた貸与具について、窓口から金額の書かれた請求書が届いた。貸出票と品物の所在を照らし、支払いか相談かを決める必要がある。
+
+- **請求額を支払い、返却予定を伝える**
+  - 表示条件：`s => artsCanPayLateFee(s)`
+  - 結果（重み 1）：「貸与記録にある請求額を支払い、窓口へ返却予定を伝えた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"pay-late-fee","equipmentId":"$oldest-overdue-school-loan"}}`
+- **請求書を持って窓口で支払時期を相談する**
+  - 結果（重み 1）：「請求額はそのままに、支払い時期の相談を記録した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"defer-late-fee","equipmentId":"$oldest-overdue-school-loan"}}`
+
+#### `life_arts_small_use`
+
+**状態枠**：minor、再提示間隔 `cd=1`
+**入口条件**：`case "life_arts_small_use": {
+      const technique = s.artsProfile?.knownTechniques?.[0];
+      return !!technique &&
+      (artsHasAttendedCurrentCourse(s) || (s.learningPaths || []).some(path => path.status === "active" &&
+        path.modeId.startsWith("arts-") && path.siteRef?.areaId === s.local?.educationAreaId)) &&
+      artsAssessUse(s, { techniqueId: technique.id,
+        disciplineId: technique.disciplineId, purpose: "personal-practice",
+        siteRef: s.community?.key, learningPathId: technique.courseRef }).eligible;
+    }`
+**出典区分**：[S]
+**出典ID**：`SRC_LEITHANIEN_ARTS`、`SRC_LEITHANIEN_ARTS_ARCHIVE`、`SRC_EDUCATION_ACCESS`
+
+**本文**：食卓のランプが消え、授業で覚えた小さな術式を思い出した。足元に人がいないことを確かめ、今日は使うか別の方法にするか決められる。
+
+- **安全を確かめて、小さな術式を使う**
+  - 結果（重み 1）：「習得記録のある術式を安全な場所で実際に使った。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"record-use","techniqueId":"$first-known-technique","disciplineId":"$technique-discipline","purpose":"personal-practice","siteRef":"$current-area","result":"performed"}}`
+- **器具をしまい、手でランプを直す**
+  - 結果（重み 1）：「術式を使わず、ランプを手で点検して灯りを戻した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"record-use","techniqueId":"$first-known-technique","disciplineId":"$technique-discipline","purpose":"personal-practice","siteRef":"$current-area","result":"stopped"}}`
+
+#### `life_arts_non_caster_craft`
+
+**状態枠**：minor、再提示間隔 `cd=2`
+**入口条件**：`case "life_arts_non_caster_craft": return !!work && s.job === 18 &&
+      (s.artsProfile?.techSkills?.["unit-maintenance"] || 0) < 12 &&
+      !!lifeSystemCurrentArtsPath(s, ["arts-unit-maintenance", "arts-workshop"]);`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：動力部のふたを外すと、留め具の位置が点検表と違っていた。工房の指導者が横で部品を押さえる。ここではアーツを使わず、工具の扱いだけを練習する。
+
+- **指導のもとで留め具を組み直す**
+  - 表示条件：`s => !!lifeSystemCurrentArtsPath(s, ["arts-unit-maintenance", "arts-workshop"])`
+  - 結果（重み 1）：「勤務先の指導者のもと、器具の保守技能を実地で練習した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"record-tech-skill","learningPathId":"$current-arts-path","skillId":"unit-maintenance","result":"guided-success"}}`
+- **手順を写し、作業は指導者へ戻す**
+  - 結果（重み 1）：「手順を記録し、器具の組み直しは指導者に任せた。」
+    - 効果payload：`{}`
+
+#### `life_arts_employer_request`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_arts_employer_request": {
+      const technique = s.artsProfile?.knownTechniques?.[0], opening = s.employmentState?.knowledge?.find(row => row.certainty === "confirmed");
+      return !!work && s.job === 18 && !!technique && !!opening &&
+        artsJobRequirement(s, { openingId: opening.openingId, techniqueId: technique.id }).eligible;
+    }`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：勤務先の掲示板に、実技を見てから担当を決める作業枠が載った。求められるのは既に習った術式の実演で、資格や採用は試験の前には決まらない。
+
+- **募集条件を照会し、確認済みの術式を見せる**
+  - 結果（重み 1）：「実際の募集条件と学習記録を照合し、技能確認を申し込んだ。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"record-use","techniqueId":"$first-known-technique","disciplineId":"$technique-discipline","purpose":"workplace-use","siteRef":"$current-worksite","workplaceUse":true,"result":"performed"}}`
+- **不足する手順を確かめ、今回は応募しない**
+  - 結果（重み 1）：「募集枠の条件を読み、応募前に必要な経験を確かめた。」
+    - 効果payload：`{}`
+
+#### `life_arts_skill_retest`
+
+**状態枠**：minor、再提示間隔 `cd=3`、一度限り
+**入口条件**：`case "life_arts_skill_retest": return s.artsProfile?.assessmentHistory?.some(row => row.result === "reassess") &&
+      (s.learningPaths || []).some(path => path.status === "active" && path.modeId === "arts-unit-maintenance" &&
+        path.siteRef?.areaId === s.local?.educationAreaId);`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：前の実技確認で止まった調整箇所を、工房の練習台に印した。担当者は同じ手順を急がず繰り返すよう言う。今日は再訓練にするか、別の作業を選ぶか決められる。
+
+- **指導者と同じ手順をもう一度練習する**
+  - 表示条件：`s => !!lifeSystemCurrentArtsPath(s, ["arts-unit-maintenance", "arts-workshop"])`
+  - 結果（重み 1）：「勤務先の指導者と保守作業を再練習した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"record-tech-skill","learningPathId":"$current-arts-path","skillId":"unit-maintenance","result":"guided-success"}}`
+- **再試験を急がず、別の作業を続ける**
+  - 結果（重み 1）：「再評価を保留し、現在の担当作業へ戻った。」
+    - 効果payload：`{}`
+
+#### `life_arts_medical_observation`
+
+**状態枠**：minor、再提示間隔 `cd=3`、一度限り
+**入口条件**：`case "life_arts_medical_observation": return !!s.inf && artsHasAttendedCurrentCourse(s) && !!s.community?.facilities &&
+      Object.values(s.community.facilities).some(row => row.kind === "clinic" && row.status !== "closed") &&
+      !s.artsProfile?.practiceHistory?.some(row => row.sourceEventId === id && row.year === s.year);`
+**出典区分**：[S]
+**出典ID**：`SRC_ORI_JP_OVERVIEW_2026`、`SRC_RHODES_MEDICAL`
+
+**本文**：診療所の担当者が、同意を得た診察のあとで補助具の扱いを説明した。見学できるのは器具と手順だけで、患者の記録や治療判断には触れない。
+
+- **担当者の許可を得て器具の扱いを見る**
+  - 結果（重み 1）：「許可された補助器具の使い方を見学した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"record-practice","disciplineId":"medical-support","techniqueId":"medical-support-tool-handling","outcome":"observed"}}`
+- **見学を断り、廊下で待つ**
+  - 結果（重み 1）：「見学を断り、診療所の待合へ戻った。」
+    - 効果payload：`{}`
+
+#### `life_arts_medical_training`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_arts_medical_training": return !!s.inf && !!work && artsCurrentFormalEnrollment(s)?.stage === "arts" &&
+      lifeSystemArtsProviders(s, "arts-medical-support").some(provider => [provider.organizationId, provider.providerId].includes(work.site.employerId));`
+**出典区分**：[S]
+**出典ID**：`SRC_ORI_JP_OVERVIEW_2026`、`SRC_RHODES_MEDICAL`、`SRC_EDUCATION_ACCESS`
+
+**本文**：診療所の訓練担当者が、器具の受け渡しと記録補助を教える枠を説明した。訓練は監督者のいる時間だけで、診療や研究への参加とは別に扱われる。
+
+- **指導者と時間を決め、補助訓練を始める**
+  - 表示条件：`s => lifeSystemArtsProviders(s, "arts-medical-support").length > 0`
+  - 結果（重み 1）：「勤務先の指導者と医療補助の学習経路を確認した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"open-path","mode":"arts-medical-support","providerId":"$current-arts-provider"}}`
+- **診療所の説明だけ聞いて、返事を保留する**
+  - 結果（重み 1）：「訓練枠の説明を聞き、申込みは保留した。」
+    - 効果payload：`{}`
+
+#### `life_arts_overexertion`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_arts_overexertion": return !!s.inf && !!s.artsProfile?.knownTechniques?.length &&
+      artsAssessUse(s, { techniqueId: s.artsProfile.knownTechniques[0]?.id,
+        disciplineId: s.artsProfile.knownTechniques[0]?.disciplineId, purpose: "high-load-internal",
+        siteRef: s.community?.key, learningPathId: s.artsProfile.knownTechniques[0]?.courseRef }).eligible;`
+**出典区分**：[S]
+**出典ID**：`SRC_ORI_JP_OVERVIEW_2026`、`SRC_RHODES_MEDICAL`
+
+**本文**：器具を握る手に震えが残り、呼吸も整わない。指導者は高負荷の術式を続けるか、途中で止めるか尋ねた。体調の変化を理由に休む選択もある。
+
+- **症状を伝えて中断し、診療所へ相談する**
+  - 結果（重み 1）：「高負荷の術式を中断し、体調の変化を相談記録へ残した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"record-use","techniqueId":"$first-known-technique","disciplineId":"$technique-discipline","purpose":"high-load-internal","siteRef":"$current-area","result":"stopped"}}`
+- **高負荷を続け、負担の記録を残す**
+  - 結果（重み 1）：「選んだ術式を実行し、その際の体調を曝露記録に残した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"record-use","techniqueId":"$first-known-technique","disciplineId":"$technique-discipline","purpose":"high-load-internal","siteRef":"$current-area","result":"performed"}}`
+- **今日は使わず、担当者に休むと伝える**
+  - 結果（重み 1）：「器具を置き、今日は訓練を続けないと伝えた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"record-use","techniqueId":"$first-known-technique","disciplineId":"$technique-discipline","purpose":"high-load-internal","siteRef":"$current-area","result":"stopped"}}`
+
+#### `life_arts_after_overexertion`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_arts_after_overexertion": return !!artsExposureNeedingFollowup(s);`
+**期日計算**：`s => {
+        const exposure = artsExposureNeedingFollowup(s);
+        if (!exposure) return null;
+        const due = exposure.year * 12 + exposure.month + 1;
+        return { year: Math.floor((due - 1) / 12), month: ((due - 1) % 12) + 1 };
+      }`
+**出典区分**：[S]
+**出典ID**：`SRC_ORI_JP_OVERVIEW_2026`、`SRC_RHODES_MEDICAL`
+
+**本文**：前回の訓練から数日が過ぎても、指先のこわばりが気になった。診療所では、訓練記録と今の状態を見ながら、休息や次回の負荷を相談できる。
+
+- **訓練記録を示し、診察を相談する**
+  - 結果（重み 1）：「前回の行使記録をもとに、医療者へ経過を相談した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"followup","mode":"consult"}}`
+- **器具を返し、次の訓練を延期する**
+  - 結果（重み 1）：「次の訓練を延期し、器具の保管方法を確認した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"followup","mode":"defer"}}`
+
+#### `life_arts_work_adjustment`
+
+**状態枠**：major、再提示間隔 `cd=4`
+**入口条件**：`case "life_arts_work_adjustment": return !!work && (s.h < 55 || s.artsProfile?.exposureHistory?.some(row => row.year >= s.year - 1));`
+**出典区分**：[S]
+**出典ID**：`SRC_ORI_JP_OVERVIEW_2026`、`SRC_RHODES_MEDICAL`、`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：勤務表を前に、今の体調では同じ負荷を続けにくいと感じた。担当者は、作業の組替え、休みの申請、器具の保守訓練への移行を案内した。
+
+- **担当者へ負荷の調整を相談する**
+  - 結果（重み 1）：「現職の担当者へ作業負荷の相談を申し出た。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"request-assessment","result":"work-adjustment-requested"}}`
+- **休みを申請し、次の勤務日を相談する**
+  - 結果（重み 1）：「体調を理由に勤務調整を相談した。」
+    - 効果payload：`{"employmentAction":{"action":"suspend","reason":"health-adjustment"}}`
+- **保守の実習について、指導者に相談する**
+  - 結果（重み 1）：「別の技能訓練が実際にあるか勤務先へ尋ねた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"arts","action":"open-path","mode":"arts-unit-maintenance","providerId":"$current-arts-provider"}}`
+
+#### `life_arts_mentor_later`
+
+**状態枠**：minor、再提示間隔 `cd=3`、一度限り
+**入口条件**：`case "life_arts_mentor_later": return lifeSystemArtsMentoringCandidates(s).length > 0 &&
+      (s.artsProfile?.techSkills?.["unit-maintenance"] > 0 ||
+        Object.values(s.artsProfile?.disciplines || {}).some(row => row.practice > 0)) &&
+      !s.culturalPractice?.mentoring?.some(row => row.sourceEventId === id && row.year === s.year);`
+**出典区分**：[S]
+**出典ID**：`SRC_LEITHANIEN_ARTS`、`SRC_LEITHANIEN_ARTS_ARCHIVE`、`SRC_EDUCATION_ACCESS`
+
+**本文**：年下の子が作業台の端から手元を見ていた。教える資格の話ではなく、道具を置く順や危ない箇所を一緒に確かめるだけでもよい。
+
+- **具体的な手順を一緒に確かめる**
+  - 結果（重み 1）：「実際に同居する子と、身につけた手順を一緒に確かめた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"culture","action":"record-mentoring","menteeId":"$oldest-eligible-child"}}`
+- **見せるだけにして、手は出させない**
+  - 結果（重み 1）：「作業を見せたが、子どもへ道具を渡さなかった。」
+    - 効果payload：`{}`
+
+#### `life_arts_tradition_lesson`
+
+**状態枠**：minor、再提示間隔 `cd=3`、一度限り
+**入口条件**：`case "life_arts_tradition_lesson": return s.res?.n === "サーミ" && !!s.neighborContact?.id && !!s.culturalIdentity?.homeLanguage &&
+      !s.culturalPractice?.traditions?.some(row => row.sourceEventId === id && row.year === s.year);`
+**出典区分**：[S]
+**出典ID**：`SRC_SAMI_CLANS`、`SRC_LEITHANIEN_ARTS`
+
+**本文**：近所の年長者は、谷の風向きを表す古い呼び名を口にした。書き方は教わっていない。言葉を聞き、土地の記憶と学院の術式を別々に受け取る時間だった。
+
+- **呼び名を聞き、使う場面を尋ねる**
+  - 結果（重み 1）：「近所の人から土地の呼び名と使う場面を聞いた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"culture","action":"record-oral-tradition"}}`
+- **聞いた言葉を自分の言葉で言い直す**
+  - 結果（重み 1）：「聞いた言葉を声に出して確かめた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"culture","action":"record-oral-tradition"}}`
+
+#### `life_cc_first_contact`
+
+**状態枠**：minor、再提示間隔 `cd=12`
+**入口条件**：`case "life_cc_first_contact": return !!incident && !!work && !s.fl?.detained && !s.fl?.isolated && s.age >= 18 &&
+      !s.contingencyContracts?.contacts?.some(row => row.areaKey === s.community?.key &&
+        row.employerId === work.site.employerId && row.status !== "closed") &&
+      !activeContingencyContract(s, ["offered", "accepted", "prepared", "travelling", "at-site", "awaiting-verification", "awaiting-payment", "payment-disputed"]);`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：職場の休憩所に、近隣の復旧窓口の連絡先が置かれていた。担当者は急な応援を募る可能性があると説明したが、仕事内容や期間はまだ決まっていない。
+
+- **窓口へ連絡先を伝え、条件が出たら聞く**
+  - 結果（重み 1）：「現在の勤務先を通じて、同じ地区の窓口へ連絡先を伝えた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"contact"}}`
+- **今は登録せず、案内を戻す**
+  - 結果（重み 1）：「連絡先を渡さず、案内を窓口へ戻した。」
+    - 効果payload：`{}`
+
+#### `life_cc_offer_review`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_cc_offer_review": return !!incident && !!work &&
+      s.contingencyContracts?.contacts?.some(row => row.areaKey === s.community?.key &&
+        row.employerId === work.site.employerId && row.status === "contacted") &&
+      !activeContingencyContract(s, ["offered", "accepted", "prepared", "travelling", "at-site", "awaiting-verification", "awaiting-payment", "payment-disputed"]);`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：連絡先を残した窓口から、復旧支援の短期依頼が届いた。現場、荷物、受取先、支払条件を確かめる欄がある。内容を確かめるまでは受ける必要はない。
+
+- **受取先と荷札が空欄のため、先に照会する**
+  - 表示条件：`s => activeInfrastructureIncident(s)?.kind === "water"`
+  - 結果（重み 1）：「依頼主から荷主と品目の記された荷札を受け取り、受取先を確認した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"offer","mode":"undisclosed-cargo"}}`
+- **内容の分かる依頼として条件を確かめる**
+  - 結果（重み 1）：「記載された条件を確認できる依頼を提示してもらった。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"offer"}}`
+- **条件が合わないので、今回は辞退する**
+  - 結果（重み 1）：「窓口へ辞退を伝え、連絡案件を閉じた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"end-contact"}}`
+
+#### `life_cc_accept`
+
+**状態枠**：major
+**入口条件**：`case "life_cc_accept": {
+      const offer = activeContingencyContract(s, ["offered"]);
+      return offer?.status === "offered" && offer.disclosedCargo !== false && s.age >= 18 && !restricted(s);
+    }`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：契約書には、期間、依頼主、届け先、報酬、途中で撤収する手順が記されていた。現場調査や設備保守には、募集条件に記された実務技能の記録も要る。条件を確かめてから、署名するか決められる。
+
+- **条件と技能記録を満たした依頼を受ける**
+  - 表示条件：`s => contingencySkillAssessment(s).eligible`
+  - 結果（重み 1）：「契約条件と、記録された実務技能を照合して依頼を受けた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"accept"}}`
+- **必要技能の記録を照会し、今回は受けない**
+  - 表示条件：`s => !contingencySkillAssessment(s).eligible`
+  - 結果（重み 1）：「募集条件の技能記録が足りないことを確認し、受注を見送った。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"review-eligibility"}}`
+- **条件を断り、契約書を返す**
+  - 結果（重み 1）：「提示された短期依頼を断った。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"decline"}}`
+
+#### `life_cc_preparation`
+
+**状態枠**：minor、再提示間隔 `cd=3`
+**入口条件**：`case "life_cc_preparation": return activeContingencyContract(s, ["accepted"])?.status === "accepted";`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：荷台には、持ち出す器具と現地に残す道具を分ける余地があった。未成年の子がいる家では、出発前に世話を引き受ける人との話し合いも要る。
+
+- **必要な道具と作業手順を点検する**
+  - 表示条件：`s => !contingencyNeedsCarePlan(s)`
+  - 結果（重み 1）：「契約に必要な道具と作業の準備を記録した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"prepare","mode":"equipment"}}`
+- **家族の世話を引き受ける人と計画を記す**
+  - 表示条件：`s => contingencyNeedsCarePlan(s) && !!contingencyAvailableCaregiver(s)`
+  - 結果（重み 1）：「家族の世話を担う成人と話し合い、留守中の計画を記録した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"prepare","mode":"family-plan"}}`
+- **準備を延期し、依頼主へ日程を伝える**
+  - 結果（重み 1）：「出発準備を延期した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"defer-preparation"}}`
+- **依頼を断り、契約を終える**
+  - 結果（重み 1）：「出発前に短期依頼を断り、契約を終了した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"cancel"}}`
+
+#### `life_cc_departure`
+
+**状態枠**：major
+**入口条件**：`case "life_cc_departure": return activeContingencyContract(s, ["prepared"])?.status === "prepared";`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：予定していた出発時刻が近づいた。運賃と道具、留守宅の段取りを改めて確かめる。条件がそろえば現場へ向かえる。延期や辞退を依頼主へ伝えることもできる。
+
+- **条件を確かめ、確認済みの経路で出発する**
+  - 表示条件：`s => contingencyCanDepart(s)`
+  - 結果（重み 1）：「移動費を払い、契約の現場へ出発した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"depart"}}`
+- **段取りを整え直し、出発を延期する**
+  - 結果（重み 1）：「出発を延期し、契約準備を改めて確認することにした。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"defer-departure"}}`
+- **依頼主へ辞退を伝え、契約を終える**
+  - 結果（重み 1）：「出発せず、依頼主へ辞退を伝えて契約を終了した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"cancel"}}`
+
+#### `life_cc_handoff`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_cc_handoff": return contract?.status === "at-site" && travelCurrentJourney(s)?.status === "arrived";`
+**期日計算**：`s => activeContingencyContract(s, ["at-site"]) ? { year: s.year, month: s.mo } : null`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：現場の受取担当者が、荷札の宛先と数量を読み上げた。受領印をもらう前に、依頼書の品目と目の前の荷物を照合する。
+
+- **照合して荷物を引き渡す**
+  - 結果（重み 1）：「契約の届け先へ荷物を渡し、検収を待つ状態にした。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"handoff"}}`
+- **数量が合わないため、引渡しを保留する**
+  - 結果（重み 1）：「数量の違いを記録し、荷物をまだ引き渡さなかった。」
+    - 効果payload：`{}`
+
+#### `life_cc_forecast_survey`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_cc_forecast_survey": return contract?.kind === "forecast-survey" && contract.status === "at-site" &&
+      travelCurrentJourney(s)?.id === contract.travelJourneyId && travelCurrentJourney(s)?.status === "arrived";`
+**期日計算**：`s => lifeSystemEventEligible(s, "life_cc_forecast_survey")
+        ? { year: s.year, month: s.mo } : null`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：観測場所には、風向きを測る器具と撤収路の案内があった。責任者は許可された範囲を示し、続けるか戻るか確認した。
+
+- **許可された範囲を観測して記録する**
+  - 結果（重み 1）：「観測した範囲と時刻を記録した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"survey"}}`
+- **危険を感じたため、観測を切り上げる**
+  - 結果（重み 1）：「安全条件を優先し、観測を切り上げた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"return"}}`
+
+#### `life_cc_suspicious_cargo`
+
+**状態枠**：major、一度限り、優先候補
+**入口条件**：`case "life_cc_suspicious_cargo": return contract?.status === "offered" && contract.kind === "relief-logistics" && contract.disclosedCargo === false;`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：受け取った依頼書では、荷主と箱の中身の欄が空いていた。窓口は先に受領印を求めているが、説明を求めることもできる。
+
+- **荷主と品目が記された荷札を受け取る**
+  - 結果（重み 1）：「依頼主から荷主と品目を記した荷札を受け取り、受領条件を確かめた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"query-cargo"}}`
+- **説明がないため、依頼を辞退する**
+  - 結果（重み 1）：「内容を確認できない依頼を辞退した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"decline"}}`
+
+#### `life_cc_support_equity`
+
+**状態枠**：minor、再提示間隔 `cd=3`、一度限り
+**入口条件**：`case "life_cc_support_equity": return contract?.status === "accepted" && contract.kind === "relief-logistics" &&
+      (s.community?.metrics?.food < 0.55 || s.community?.metrics?.medical < 0.55);`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：配給表には、届く予定の食料と医薬品が地区ごとに記されていた。数の不足が残る欄を見つけ、配分を決める前に担当者へ尋ねられる。
+
+- **不足する地区と必要数を担当者へ尋ねる**
+  - 結果（重み 1）：「記録にある不足について配分担当者へ照会した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"support-equity"}}`
+- **荷を動かさず、配分の判断を担当者に任せる**
+  - 結果（重み 1）：「配分について意見を伝えず、担当者の判断を待った。」
+    - 効果payload：`{}`
+
+#### `life_cc_hiring_bias`
+
+**状態枠**：minor、再提示間隔 `cd=3`、一度限り
+**入口条件**：`case "life_cc_hiring_bias": return contract?.status === "offered" &&
+      (s.socialConflict?.events || []).some(row => row.employerId === contract.employerId &&
+        row.areaKey === contract.areaKey && ["hiring-bias", "screening-discrimination"].includes(row.kind));`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：名簿の選考欄に、自分の所属についての記載があった。担当者はその理由を説明していない。見た記録を示して、基準を尋ねることはできる。
+
+- **記載の理由と選考基準を照会する**
+  - 結果（重み 1）：「実際に見た選考記録について、基準の説明を求めた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"query-screening"}}`
+- **記録を写し、今回は返事を待つ**
+  - 結果（重み 1）：「該当欄を記録し、選考への異議は保留した。」
+    - 効果payload：`{}`
+
+#### `life_cc_payment`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_cc_payment": {
+      const due = activeContingencyContract(s, ["awaiting-payment", "payment-disputed"]);
+      return !!due && due.paymentDueAt && s.year * 12 + s.mo >= due.paymentDueAt.year * 12 + due.paymentDueAt.month &&
+        (due.status === "awaiting-payment" || !!due.paymentClaim);
+    }`
+**期日計算**：`s => activeContingencyContract(s, ["awaiting-payment", "payment-disputed"])?.paymentDueAt || null`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：検収済みの控えと報酬の金額が一致した。支払窓口で受領を確かめるか、期日に金が届かなかったことを記録して照会へ進める。
+
+- **控えを示し、報酬を受け取る**
+  - 表示条件：`s => {
+          const c = activeContingencyContract(s, ["awaiting-payment", "payment-disputed"]);
+          return !!c && (c.status === "awaiting-payment" || !!c.paymentClaim);
+        }`
+  - 結果（重み 1）：「短期業務の報酬を受け取り、支払記録を閉じた。」
+    - 効果payload：`{"employmentAction":{"action":"complete-gig","kind":"contingency-logistics","sourceEventId":"life_cc_payment","nominalCash":12000},"cash":12000,"lifeSystemAction":{"domain":"contract","action":"settle"}}`
+- **支払いが届かなかったと記録し、窓口へ申し立てる**
+  - 表示条件：`s => activeContingencyContract(s)?.status === "awaiting-payment"`
+  - 結果（重み 1）：「期日の未払いを記録し、支払請求の窓口へ進んだ。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"mark-payment-missing"}}`
+
+#### `life_cc_payment_dispute`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_cc_payment_dispute": return contract?.status === "payment-disputed" && !contract.paymentClaim &&
+      (!contract.paymentReviewAt || s.year * 12 + s.mo >= contract.paymentReviewAt.year * 12 + contract.paymentReviewAt.month);`
+**期日計算**：`s => {
+        const c = activeContingencyContract(s, ["payment-disputed"]);
+        return c ? c.paymentReviewAt || c.paymentDisputedAt ||
+          c.history?.findLast(row => row.status === "payment-disputed") || null : null;
+      }`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：支払期日を過ぎても、受領額は帳面に記されていない。検収票と連絡先をそろえ、金額を確認する請求を出せる。
+
+- **検収票を添えて、報酬の支払いを請求する**
+  - 結果（重み 1）：「未払いの報酬について、書類を添えて請求を記録した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"dispute-payment"}}`
+- **窓口の返答を待ち、追加の請求は保留する**
+  - 結果（重み 1）：「未払いの記録を保ち、次の確認日を決めた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"defer-payment-claim"}}`
+
+#### `life_cc_organization_receipt`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_cc_organization_receipt": return contract?.status === "awaiting-verification";`
+**期日計算**：`s => activeContingencyContract(s, ["awaiting-verification"])
+        ? { year: s.year, month: s.mo } : null`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：届け先の担当者が、荷札と受領控えを照合した。組織の受領なら所属記録のある窓口へ、地域の受領なら地区の担当者へ確認する。
+
+- **実際の届け先と受領控えを照合する**
+  - 結果（重み 1）：「届け先が受取った記録を契約へ結び、支払期日を確定した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"verify-receipt"}}`
+- **控えの不一致を申告し、検収を待つ**
+  - 結果（重み 1）：「控えの違いを申告し、支払確認を保留した。」
+    - 効果payload：`{}`
+
+#### `life_cc_family_notice`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_cc_family_notice": {
+      const person = s.sp && !s.sp.d ? s.sp : [s.par?.fa, s.par?.mo].find(row => row && !row.d);
+      return !!activeContingencyContract(s, ["accepted", "prepared", "travelling", "at-site"] ) &&
+        !contract.familyNoticeShipmentId && !!person?.id && !!shipmentKnownPersonArea(s, person);
+    }`
+**期日計算**：`s => activeContingencyContract(s, ["accepted", "prepared", "travelling", "at-site"])
+        ? { year: s.year, month: s.mo } : null`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：出発後、家の人へ伝える連絡先と便の予定を確認した。手紙を出しても、届いたことや受け手の気持ちは後で確かめる必要がある。
+
+- **確認した宛先へ、予定を書いた便りを出す**
+  - 結果（重み 1）：「家族への連絡を実際の宛先と便に登録した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"family-notice"}}`
+- **次の連絡機会まで、便りを手元に置く**
+  - 結果（重み 1）：「便りを出さず、次に連絡できる時期を確かめた。」
+    - 効果payload：`{}`
+
+#### `life_cc_return`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_cc_return": return !!activeContingencyContract(s, ["travelling", "at-site"]) && !!travelCurrentJourney(s) &&
+      (!contract.returnDecisionDueAt || s.year * 12 + s.mo >= contract.returnDecisionDueAt.year * 12 + contract.returnDecisionDueAt.month);`
+**期日計算**：`s => {
+        const c = activeContingencyContract(s, ["travelling", "at-site"]);
+        return c ? c.returnDecisionDueAt || { year: s.year, month: s.mo } : null;
+      }`
+**出典区分**：[S]
+**出典ID**：`SRC_LEONHARDT_ARCHIVE`、`SRC_SR_RHODES_WORK`、`SRC_MOBILE_CITY_MOBILITY`
+
+**本文**：帰り道の便が残っている。現場では作業を続けることも、依頼主へ知らせて戻ることもできる。帰路の費用と行き先を確認した。
+
+- **現場を離れ、確認済みの経路で戻る**
+  - 結果（重み 1）：「依頼主へ知らせ、帰還の移動を始めた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"return"}}`
+- **安全が保てる範囲で作業を続ける**
+  - 結果（重み 1）：「帰路を選ばず、次の作業日を依頼主と決めた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"contract","action":"continue-work"}}`
+
+#### `life_infra_warning_notice`
+
+**状態枠**：minor、再提示間隔 `cd=2`
+**入口条件**：`case "life_infra_warning_notice": return !!activeCatastropheWarning(s, ["issued"]);`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：地区の掲示板に、数か月先の荒天注意が載った。予報は停電や通行止めを知らせるものではない。発信元と対象期間を読むことができる。
+
+- **掲示を受け取り、日付と地区を確かめる**
+  - 結果（重み 1）：「自分の地区に届いた予報を受け取り、対象期間を確認した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"warning","action":"receive"}}`
+- **今は受け取らず、掲示だけ見て通る**
+  - 結果（重み 1）：「予報の写しは受け取らず、その場を離れた。」
+    - 効果payload：`{}`
+
+#### `life_infra_warning_response`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_infra_warning_response": return warning?.status === "received";`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：予報を読んだあと、予定表には屋台の仕入れ日が残っていた。準備を変えるか、予報を出した窓口へ確かめるかは自分で選べる。
+
+- **仕入れと屋台の設営を早めに整える**
+  - 結果（重み 1）：「予報を受けたうえで、予定に合わせた準備をした。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"warning","action":"respond","mode":"prepare"}}`
+- **いつもの予定を保ち、当日まで様子を見る**
+  - 結果（重み 1）：「予定を変えず、当日の状況を確かめることにした。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"warning","action":"respond","mode":"keep-schedule"}}`
+- **予報窓口へ対象地区を尋ねる**
+  - 結果（重み 1）：「発信元へ予報の対象地区を照会した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"warning","action":"respond","mode":"ask-source"}}`
+
+#### `life_infra_warning_result`
+
+**状態枠**：minor、再提示間隔 `cd=6`
+**入口条件**：`case "life_infra_warning_result": return warning?.status === "resolved" && !!warning.receivedAt && !warning.reviewedAt;`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：予報期間が過ぎ、観測所の掲示が更新された。対象の天候は地区の記録に載っている。あらかじめ聞いた予報と、今回の観測結果を見比べた。
+
+- **結果を読み、受け取った予報の記録に添える**
+  - 結果（重み 1）：「観測結果を読み、予報の後日記録を確認した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"warning","action":"review"}}`
+- **結果を写さず、次の予定へ移る**
+  - 結果（重み 1）：「掲示を読まずに、その場を離れた。」
+    - 効果payload：`{}`
+
+#### `life_infra_messenger_feedback`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_infra_messenger_feedback": return !!work && /予報|気象|天災連絡/.test(String(work.episode.role || work.site.label || "")) && warning?.status === "resolved" && !!warning.respondedAt && !warning.feedbackAt;`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：予報を伝える仕事の机に、前回の観測票と地区から届いた問い合わせが並んだ。説明する範囲を確かめ、窓口へ返す言葉を選ぶ。
+
+- **観測票の範囲を示して問い合わせに返答する**
+  - 結果（重み 1）：「担当した観測記録の範囲を示し、問い合わせを受け付けた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"warning","action":"feedback"}}`
+- **照合を終えるまで、返答を保留する**
+  - 結果（重み 1）：「観測票との照合を続け、返答は保留した。」
+    - 効果payload：`{}`
+
+#### `life_infra_power_loss`
+
+**状態枠**：minor、再提示間隔 `cd=2`
+**入口条件**：`case "life_infra_power_loss": return incident?.kind === "power" && incident.status === "active" && lifeSystemIncidentReviewDue(s, incident);`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：作業台の灯りが落ち、同じ区画の機械も止まった。設備担当者は故障場所を確かめている。手元の工具を置き、作業を続けるか連絡するか決める。
+
+- **機械を止め、担当者へ停電を知らせる**
+  - 結果（重み 1）：「作業を止めて、区画の停電を設備担当者へ知らせた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"infrastructure","action":"respond","mode":"work-stop"}}`
+- **安全な予備灯を使い、復旧を待つ**
+  - 結果（重み 1）：「予備灯の下で作業を止め、復旧を待った。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"infrastructure","action":"respond","mode":"alternate"}}`
+
+#### `life_infra_water_loss`
+
+**状態枠**：minor、再提示間隔 `cd=2`
+**入口条件**：`case "life_infra_water_loss": return incident?.kind === "water" && incident.status === "active" && lifeSystemIncidentReviewDue(s, incident);`
+**出典区分**：[S]
+**出典ID**：`SRC_SARGON_WATER`、`SRC_SARGON_WATER_LIFE_MODEL`
+
+**本文**：朝の蛇口から水が出ず、給水所の場所を記した紙が戸口に差し込まれていた。配管の故障箇所や復旧時刻はまだ掲示されていない。
+
+- **給水所の場所を確かめ、近所へ知らせる**
+  - 結果（重み 1）：「給水所の案内を確かめ、同じ地区の人へ伝えた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"infrastructure","action":"respond","mode":"notify"}}`
+- **修理担当者へ、復旧見込みを尋ねる**
+  - 結果（重み 1）：「地区の設備担当へ復旧時期を照会した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"infrastructure","action":"acknowledge"}}`
+
+#### `life_infra_route_block`
+
+**状態枠**：minor、再提示間隔 `cd=2`
+**入口条件**：`case "life_infra_route_block": return incident?.kind === "route" && incident.status === "active" && lifeSystemIncidentReviewDue(s, incident);`
+**出典区分**：[S]
+**出典ID**：`SRC_MOBILE_CITY_MOBILITY`、`SRC_LEONHARDT_ARCHIVE`、`SRC_SIESTA_TRANSITION`
+
+**本文**：いつも通る連結扉に、点検中の札が掛かっていた。向こう側へは進めない。掲示には迂回路が示されているが、再開時刻はまだ書かれていない。
+
+- **迂回路の案内を確かめる**
+  - 結果（重み 1）：「通行止めを確認し、迂回路の案内を受け取った。実際の移動はその後に決める。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"infrastructure","action":"respond","mode":"alternate"}}`
+- **勤務先へ遅れると連絡し、開通を待つ**
+  - 結果（重み 1）：「通行止めを勤務先へ伝え、再開を待った。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"infrastructure","action":"respond","mode":"notify"}}`
+
+#### `life_infra_repair_request`
+
+**状態枠**：major
+**入口条件**：`case "life_infra_repair_request": return !!incident && incident.status === "active";`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：設備担当の窓口に、地区の故障番号と必要な交換部品が書き込まれた。修理を申し込めば部品便を手配できるが、到着と検査には時間がかかる。
+
+- **故障番号を示し、交換部品を依頼する**
+  - 結果（重み 1）：「同じ地区の故障記録に部品便を結び付けた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"infrastructure","action":"request-repair"}}`
+- **故障箇所を報告し、見積りを待つ**
+  - 結果（重み 1）：「担当窓口へ故障を報告し、作業日を待った。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"infrastructure","action":"acknowledge"}}`
+
+#### `life_infra_repair_verification`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_infra_repair_verification": {
+      const parts = incident?.repairShipmentId && findShipment(s, incident.repairShipmentId);
+      return !!incident && incident.status === "repair-requested" && parts?.status === "delivered-to-recipient" && !!work;
+    }`
+**期日計算**：`s => {
+        const incident = activeInfrastructureIncident(s), parts = incident?.repairShipmentId && findShipment(s, incident.repairShipmentId);
+        return incident?.status === "repair-requested" ? parts?.arrivedAt || null : null;
+      }`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INDUSTRY_POLICY`、`SRC_ORI_JP_OVERVIEW_2026`
+
+**本文**：交換部品が届き、担当者は設備を組み直す準備をしていた。電源と接続部を点検し、同じ地区の故障番号へ結果を記入する。
+
+- **動作を確かめ、故障記録を閉じる**
+  - 結果（重み 1）：「地区の設備を点検し、修理後の状態を記録した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"infrastructure","action":"verify-repair"}}`
+- **異音を記録し、追加点検を依頼する**
+  - 結果（重み 1）：「追加の点検が必要として、故障記録を開いたままにした。」
+    - 効果payload：`{}`
+
+#### `life_infra_relocation_utility`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_infra_relocation_utility": return !!incident && incident.kind === "route" && s.home === "移動都市" && incident.areaKey === s.community?.key;`
+**出典区分**：[S]
+**出典ID**：`SRC_MOBILE_CITY_MOBILITY`、`SRC_LEONHARDT_ARCHIVE`、`SRC_SIESTA_TRANSITION`
+
+**本文**：移動都市の通路が閉じ、いつもの経路が切れていた。近くの掲示は別経路を示している。家族へ知らせるか、通れるかどうかを設備担当へ確かめるか選べる。
+
+- **家族と勤務先へ経路変更を知らせる**
+  - 結果（重み 1）：「現在の地区で生じた通行障害を家族と勤務先へ知らせた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"infrastructure","action":"respond","mode":"notify"}}`
+- **迂回路の案内を確認する**
+  - 結果（重み 1）：「掲示の迂回路を確認した。通行の再開時刻は、設備担当者の案内を待つ。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"infrastructure","action":"respond","mode":"alternate"}}`
+
+#### `life_ship_custody`
+
+**状態枠**：minor、再提示間隔 `cd=2`
+**入口条件**：`case "life_ship_custody": return !!activeShipment(s, null, ["arrived-at-depot"]);`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INFO_NETWORKS`、`SRC_RHODES_MEDICAL`
+
+**本文**：倉庫の台帳に、宛先の地区へ到着した荷物が載っていた。荷札には差出人と担当者の名がある。自分が持ち出す前に、保管の引継ぎを確認する。
+
+- **荷札と担当者を確かめ、引渡しを受ける**
+  - 結果（重み 1）：「地区の荷物を台帳と照合して一時保管した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"shipment","action":"take-custody"}}`
+- **担当者へ照会し、荷物に触れずに待つ**
+  - 結果（重み 1）：「保管担当者へ荷札の照会を出した。」
+    - 効果payload：`{}`
+
+#### `life_ship_recipient_check`
+
+**状態枠**：minor、再提示間隔 `cd=3`
+**入口条件**：`case "life_ship_recipient_check": return !!activeShipment(s, null, ["held-for-delivery"]);`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INFO_NETWORKS`、`SRC_RHODES_MEDICAL`
+
+**本文**：荷物の宛先欄は古い住所のままだった。差出人の控えには、転居後の連絡先が書かれていない。今ここで受取人を確認するか、差出人へ返すかを選べる。
+
+- **本人と現在の住所を照合して渡す**
+  - 結果（重み 1）：「住所と本人を照合した。合致した荷物は受領担当者へ渡し、確かめられない荷物は手元で預かった。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"shipment","action":"confirm-recipient"}}`
+- **宛先が合わない荷物を差出人へ返す**
+  - 結果（重み 1）：「宛先を照合できない荷物を返送手続きへ回した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"shipment","action":"return"}}`
+
+#### `life_ship_return`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_ship_return": return !!activeShipment(s, null, ["arrived-at-depot", "held-for-delivery", "delivered-to-recipient", "undeliverable"]);`
+**期日計算**：`s => {
+        const shipment = activeShipment(s, null, ["arrived-at-depot", "held-for-delivery", "delivered-to-recipient", "undeliverable"]);
+        return shipment?.arrivedAt || shipment?.returnRequestedAt || shipment?.completedAt || null;
+      }`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INFO_NETWORKS`、`SRC_RHODES_MEDICAL`
+
+**本文**：返送受付の控えと、荷物の荷札を並べた。帰り便に載せる前に差出人と宛先をもう一度照合できる。
+
+- **荷札を照合し、返送便へ載せる**
+  - 結果（重み 1）：「荷物を差出人への返送便に載せた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"shipment","action":"return"}}`
+- **差出人の確認を待ち、倉庫へ保管する**
+  - 結果（重み 1）：「照会の返事が届くまで荷物を倉庫に置いた。」
+    - 効果payload：`{}`
+
+#### `life_ship_medicine_delay`
+
+**状態枠**：minor、再提示間隔 `cd=2`
+**入口条件**：`case "life_ship_medicine_delay": return !!activeShipment(s, "medicine", ["delayed"]);`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INFO_NETWORKS`、`SRC_RHODES_MEDICAL`
+
+**本文**：診療所から、処方薬の便が通行障害で遅れていると連絡があった。薬の変更はここでは決められない。受診予定を調整し、担当者に状況を尋ねられる。
+
+- **診療所へ連絡し、受診時期を相談する**
+  - 結果（重み 1）：「薬の遅延を診療所へ伝え、受診日を相談した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"shipment","action":"record-delay-response"}}`
+- **案内された便の到着を待つ**
+  - 結果（重み 1）：「処方内容を変えず、荷物の到着を待つことにした。」
+    - 効果payload：`{}`
+
+#### `life_ship_medicine_received`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_ship_medicine_received": return !!activeShipment(s, "medicine", ["arrived-at-depot"]);`
+**期日計算**：`s => activeShipment(s, "medicine", ["arrived-at-depot"])?.arrivedAt || null`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INFO_NETWORKS`、`SRC_RHODES_MEDICAL`
+
+**本文**：診療所の受取台に、処方薬の箱が届いた。受付係は荷札と保管場所を照合してから、在庫帳に数量を記す。
+
+- **荷札を照合し、診療所の在庫へ受け入れる**
+  - 結果（重み 1）：「届いた薬を診療所の在庫帳へ受け入れた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"shipment","action":"receive-medicine"}}`
+- **数量を再確認するため、受入れを待つ**
+  - 結果（重み 1）：「箱を開けず、数量の再確認を頼んだ。」
+    - 効果payload：`{}`
+
+#### `life_info_media_claim`
+
+**状態枠**：minor、再提示間隔 `cd=12`
+**入口条件**：`case "life_info_media_claim": return !claim && (s.infrastructureIncidents?.items || []).some(row =>
+      row.areaKey === s.community?.key && ["repair-requested", "repair-ready", "repaired"].includes(row.status));`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INFO_NETWORKS`、`SRC_RHODES_MEDICAL`
+
+**本文**：地域放送は、修理された設備について短く伝えていた。放送した人は地区全体の安全には触れていない。聞いた主張を、出所と範囲を添えて記録できる。
+
+- **聞いた放送を、範囲を添えて記録する**
+  - 結果（重み 1）：「地域放送の一つの主張を、出所と対象地区を添えて受け取った。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"information","action":"receive-situated","claimId":"local-infrastructure-bulletin"}}`
+- **記録せず、放送を聞き流す**
+  - 結果（重み 1）：「放送の内容を記録せず、そのまま聞き流した。」
+    - 効果payload：`{}`
+
+#### `life_info_claim_correction`
+
+**状態枠**：minor、再提示間隔 `cd=3`
+**入口条件**：`case "life_info_claim_correction": return !!claim && claim.status === "unverified" && !claim.pursuitStopped &&
+      !claim.evidence?.some(row => row.type === "same-area-repair-observation") &&
+      (!claim.localReviewDeferredAt || s.year * 12 + s.mo >= claim.localReviewDeferredAt.year * 12 + claim.localReviewDeferredAt.month + 12) &&
+      (s.infrastructureIncidents?.items || []).some(row => row.areaKey === s.community?.key && row.status === "repaired");`
+**出典区分**：[S]
+**出典ID**：`SRC_INDUSTRIAL_LIFE`、`SRC_TERRA_INFO_NETWORKS`、`SRC_RHODES_MEDICAL`
+
+**本文**：同じ地区の設備担当者が、故障番号と修理の完了日を掲示した。掲示にある一件の修理記録を受け取り、確認できた範囲を放送の記録へ添えられる。
+
+- **同じ地区の修理記録を受け取り、主張を限定する**
+  - 結果（重み 1）：「一つの故障記録を照合し、その設備に限る証拠を添えた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"information","action":"record-local-correction","claimId":"local-infrastructure-bulletin","targetId":"$repaired-incident"}}`
+- **修理記録だけ保管し、放送の評価は保留する**
+  - 結果（重み 1）：「修理記録を保管し、放送の評価は保留した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"information","action":"defer-local-correction","claimId":"local-infrastructure-bulletin"}}`
+
+#### `life_info_letter_delay`
+
+**状態枠**：minor、再提示間隔 `cd=3`
+**入口条件**：`case "life_info_letter_delay": return !!activeShipment(s, "letter", ["delayed"]);`
+**出典区分**：[S]
+**出典ID**：`SRC_TERRA_INFO_NETWORKS`、`SRC_KAZIMIERZ_INFO_ROUTE_MODEL`
+
+**本文**：返事が来ないまま、家族への便りを出してから一か月が過ぎた。配送記録では現在の宛先を確かめられない。未着の事実と、相手が返事をしないことは分けて扱う。
+
+- **差出人へ未着を知らせ、便の所在を照会する**
+  - 結果（重み 1）：「送受信履歴に基づき、便の所在を照会した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"shipment","action":"record-delay-response"}}`
+- **新しい返事を待ち、追加の便は出さない**
+  - 結果（重み 1）：「新しい便りを出さず、返事を待った。」
+    - 効果payload：`{}`
+
+#### `life_info_letter_resolution`
+
+**状態枠**：minor、再提示間隔 `cd=3`、一度限り
+**入口条件**：`case "life_info_letter_resolution": return !!activeShipment(s, "letter", ["delayed", "undeliverable"]);`
+**出典区分**：[S]
+**出典ID**：`SRC_TERRA_INFO_NETWORKS`、`SRC_KAZIMIERZ_INFO_ROUTE_MODEL`
+
+**本文**：配達所から、受取人の転居記録と新しい住所が示された。宛先を変えるには、その住所が今も使われているか本人の記録を照合する。
+
+- **記録にある住所を照合し、便りを再送する**
+  - 結果（重み 1）：「本人の住所記録を照合し、遅れていた便りを再送に回した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"shipment","action":"resolve-address"}}`
+- **住所が一致しないため、便りを差出人へ返す**
+  - 結果（重み 1）：「住所を照合できなかった便りを差出人へ返した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"shipment","action":"return"}}`
+
+#### `life_culture_music_arts`
+
+**状態枠**：minor、再提示間隔 `cd=6`
+**入口条件**：`case "life_culture_music_arts": return !!s.fl?.hobby_music || (s.artsProfile?.disciplines?.acoustic?.practice || 0) > 0;`
+**出典区分**：[S]
+**出典ID**：`SRC_LEITHANIEN_ARTS`、`SRC_SIESTA_TOURISM`
+
+**本文**：小さな舞台に、弦の音とアーツ器具の点検音が交互に響いた。演奏の稽古と術式の学習は別の記録だ。今日は曲を弾くか、器具の扱いを尋ねるか決められる。
+
+- **覚えている曲を人前で演奏する**
+  - 結果（重み 1）：「演奏した曲と場所を文化記録に残した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"culture","action":"record-music-performance"}}`
+- **術式の練習器具について質問する**
+  - 結果（重み 1）：「術式と演奏の違いについて、器具の担当者に尋ねた。」
+    - 効果payload：`{}`
+
+#### `life_culture_festival_shortjob`
+
+**状態枠**：minor、再提示間隔 `cd=0`
+**入口条件**：`case "life_culture_festival_shortjob": return !!festival;`
+**出典区分**：[S]
+**出典ID**：`SRC_LEITHANIEN_ARTS`、`SRC_SIESTA_TOURISM`
+
+**本文**：祭りの会場で、机や灯りを運ぶ短い手伝いが募集されていた。作業日は限られ、設営に加わるか断るかは自分で決められる。
+
+- **設営を手伝い、作業日を確認する**
+  - 表示条件：`s => currentCommunityFestival(s)?.status === "open"`
+  - 結果（重み 1）：「祭りの設営に参加し、作業日を記録した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"culture","action":"sign-up-festival"}}`
+- **今回は参加しない**
+  - 表示条件：`s => currentCommunityFestival(s)?.status === "open"`
+  - 結果（重み 1）：「短期の設営を断った。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"culture","action":"decline-festival"}}`
+- **完了した設営の報酬を受け取る**
+  - 表示条件：`s => currentCommunityFestival(s)?.status === "work-complete"`
+  - 結果（重み 1）：「実際に働いた短期分の報酬を受け取り、支払記録を閉じた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"culture","action":"settle-festival"},"employmentAction":{"action":"complete-gig","kind":"local-errand","sourceEventId":"life_culture_festival_shortjob","nominalCash":4500},"cash":4500}`
+
+#### `life_culture_rural_well`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_culture_rural_well": return ruralWellEligible(s);`
+**出典区分**：[S]
+**出典ID**：`SRC_SARGON_WATER`、`SRC_SARGON_WATER_LIFE_MODEL`
+
+**本文**：集落の井戸の点検帳に、濁りと交換部品の不足が記されていた。近隣の人たちが費用と部品の見積りを集めている。計画に加わるか、寄付だけにするか、今回は見送るか。
+
+- **必要な部品を見積り、修理計画を始める**
+  - 結果（重み 1）：「同じ集落の井戸修理計画と部品便を登録した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"community-project","action":"propose"}}`
+- **手元の金を寄付し、計画には加わらない**
+  - 表示条件：`s => ruralWellDonationAffordable(s)`
+  - 結果（重み 1）：「井戸の修理相談に寄付を申し出た。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"community-project","action":"donate","amount":2500}}`
+- **今回は参加せず、点検帳を読む**
+  - 結果（重み 1）：「計画への参加を見送った。」
+    - 効果payload：`{}`
+
+#### `life_culture_rural_repair`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_culture_rural_repair": {
+      const parts = project?.shipmentId && findShipment(s, project.shipmentId);
+      return !!project && (project.status === "parts-received" || parts?.status === "delivered-to-recipient");
+    }`
+**期日計算**：`s => {
+        const project = activeCommunityProject(s), parts = project?.shipmentId && findShipment(s, project.shipmentId);
+        return !project ? null : project.status === "parts-in-transit"
+          ? parts?.arrivedAt || null : { year: s.year, month: s.mo };
+      }`
+**出典区分**：[S]
+**出典ID**：`SRC_SARGON_WATER`、`SRC_SARGON_WATER_LIFE_MODEL`
+
+**本文**：井戸の交換部品が集落へ届いた。作業台には検査表があり、近所の人たちと実際の作業人数を確認してから修理に進む。
+
+- **受領を確かめ、部品を修理場所へ渡す**
+  - 表示条件：`s => activeCommunityProject(s)?.status === "parts-in-transit"`
+  - 結果（重み 1）：「井戸修理の部品を荷札と照合し、受領記録を付けた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"community-project","action":"mark-parts-received"}}`
+- **会合で手伝う人の人数を確かめる**
+  - 表示条件：`s => activeCommunityProject(s)?.status === "parts-received" && !activeCommunityProject(s)?.helpersRecordedAt`
+  - 結果（重み 1）：「会合で作業に同意した近所の人の人数を記録した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"community-project","action":"record-helpers","helperCount":2}}`
+- **点検表をそろえ、修理後の水を検査する**
+  - 表示条件：`s => activeCommunityProject(s)?.status === "parts-received" && activeCommunityProject(s)?.helperCount >= 2`
+  - 結果（重み 1）：「実際の人員と部品をそろえ、井戸の修理後の検査を記録した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"community-project","action":"complete-work"}}`
+
+#### `life_research_consent`
+
+**状態枠**：major、一度限り
+**入口条件**：`case "life_research_consent": return offer?.status === "offered";`
+**出典区分**：[S]
+**出典ID**：`SRC_COLUMBIA_DV1`、`SRC_COLUMBIA_DV5`
+
+**本文**：診療所の研究担当者が、観察の目的、診療と研究の違い、途中で断れることを説明する。ここでは説明を聞いた記録だけを残し、参加の同意は別に本人が決める。
+
+- **説明会に出席し、資料を受け取る**
+  - 結果（重み 1）：「研究担当者の説明を聞いた。これは参加への同意ではない。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"research","action":"attend-briefing"}}`
+- **説明を持ち帰り、回答を延期する**
+  - 結果（重み 1）：「研究参加の返事を延期した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"research","action":"defer"}}`
+- **今回は参加を断る**
+  - 結果（重み 1）：「研究参加を断った。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"research","action":"refuse"}}`
+
+#### `life_research_procedure`
+
+**状態枠**：scheduled
+**入口条件**：`case "life_research_procedure": return offer?.status === "briefing-attended" ||
+      offer?.status === "consented" && offer.procedureDueAt &&
+        s.year * 12 + s.mo >= offer.procedureDueAt.year * 12 + offer.procedureDueAt.month;`
+**期日計算**：`s => {
+        const offer = activeResearchOffer(s);
+        return offer?.status === "briefing-attended" ? { year: s.year, month: s.mo } : offer?.procedureDueAt || null;
+      }`
+**出典区分**：[S]
+**出典ID**：`SRC_COLUMBIA_DV1`、`SRC_COLUMBIA_DV5`
+
+**本文**：担当者は観察の目的と手順をもう一度示し、診療への影響がないことを説明した。説明を聞いた記録と参加への同意は別で、本人は始める前に断ることもできる。
+
+- **説明された範囲を確かめて同意する**
+  - 表示条件：`s => activeResearchOffer(s)?.status === "briefing-attended"`
+  - 結果（重み 1）：「説明と参加範囲を確認し、本人が観察への参加に同意した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"research","action":"consent"}}`
+- **同意した範囲の観察を受ける**
+  - 表示条件：`s => activeResearchOffer(s)?.status === "consented"`
+  - 結果（重み 1）：「説明と同意の範囲内で、非侵襲の観察記録を作成した。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"research","action":"procedure"}}`
+- **開始前に同意を取り下げる**
+  - 表示条件：`s => activeResearchOffer(s)?.status === "consented"`
+  - 結果（重み 1）：「手順を始める前に研究参加を取り下げた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"research","action":"withdraw"}}`
+
+#### `life_research_followup`
+
+**状態枠**：scheduled、一度限り
+**入口条件**：`case "life_research_followup": return offer?.status === "procedure-complete" && offer.followupDueAt &&
+      s.year * 12 + s.mo >= offer.followupDueAt.year * 12 + offer.followupDueAt.month;`
+**期日計算**：`s => activeResearchOffer(s)?.followupDueAt || null`
+**出典区分**：[S]
+**出典ID**：`SRC_COLUMBIA_DV1`、`SRC_COLUMBIA_DV5`
+
+**本文**：観察後の確認日が来た。診療所はその日の体調と記録を尋ねている。治療変更や補償の約束はなく、必要なら別に診療を申し込める。
+
+- **体調を伝え、観察後の確認を終える**
+  - 結果（重み 1）：「本人が伝えた当日の状態を記録し、研究後の確認を終えた。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"research","action":"followup"}}`
+- **確認を断り、診療の相談だけ申し込む**
+  - 結果（重み 1）：「研究の追加確認を断り、診療窓口を案内してもらった。」
+    - 効果payload：`{"lifeSystemAction":{"domain":"research","action":"followup","mode":"decline"}}`
+
+<!-- integrated arts-life review: end -->

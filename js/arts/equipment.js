@@ -57,6 +57,15 @@ function isValidArtsEquipmentState(state, currentYear) {
         (item.dueAt != null && (!Number.isInteger(item.dueAt.year) || item.dueAt.year < item.borrowedAt.year ||
           item.dueAt.year > currentYear + 2 || !Number.isInteger(item.dueAt.month) || item.dueAt.month < 1 || item.dueAt.month > 12)) ||
         (item.loanEpisodeId != null && (typeof item.loanEpisodeId !== "string" || !item.loanEpisodeId))) return false;
+    if (item.lateFee != null && (!item.lateFee || item.lateFee.amount !== 250 ||
+        !["due", "deferred", "paid"].includes(item.lateFee.status) ||
+        !Number.isInteger(item.lateFee.issuedAt?.year) || item.lateFee.issuedAt.year > currentYear ||
+        !Number.isInteger(item.lateFee.issuedAt?.month) || item.lateFee.issuedAt.month < 1 || item.lateFee.issuedAt.month > 12 ||
+        (item.lateFee.nextReviewAt != null && (!Number.isInteger(item.lateFee.nextReviewAt.year) ||
+          !Number.isInteger(item.lateFee.nextReviewAt.month) || item.lateFee.nextReviewAt.month < 1 || item.lateFee.nextReviewAt.month > 12)) ||
+        (item.lateFee.status === "paid" && (!item.lateFee.paymentId || !item.lateFee.paidAt)))) return false;
+    if ((item.useCount != null && (!Number.isInteger(item.useCount) || item.useCount < 0 || item.useCount > 100000)) ||
+        (item.wear != null && (!Number.isFinite(item.wear) || item.wear < 0 || item.wear > 100))) return false;
     itemIds.add(item.id);
   }
   const recordIds = new Set(), allowedActions = new Set([
@@ -88,9 +97,10 @@ function isValidArtsEquipmentState(state, currentYear) {
 function artsEquipmentForAction(s, action) {
   const equipment = s?.artsEquipment;
   if (!equipment || typeof action?.equipmentId !== "string") return null;
-  if (["$oldest-school-loan", "$oldest-due-school-loan", "$oldest-unsafe-school-loan"].includes(action.equipmentId))
+  if (["$oldest-school-loan", "$oldest-due-school-loan", "$oldest-unsafe-school-loan", "$oldest-overdue-school-loan"].includes(action.equipmentId))
     return equipment.items.filter(item => item.ownerType === "school" && item.holderId === "protagonist" &&
       item.condition !== "returned" && item.condition !== "lost" &&
+      (action.equipmentId !== "$oldest-overdue-school-loan" || item.lateFee && ["due", "deferred"].includes(item.lateFee.status)) &&
       (action.equipmentId !== "$oldest-due-school-loan" || item.condition === "serviceable" && item.dueAt &&
         (item.dueAt.year < s.year || item.dueAt.year === s.year && item.dueAt.month <= s.mo)) &&
       (action.equipmentId !== "$oldest-unsafe-school-loan" || item.condition === "unsafe")).sort((a, b) =>
@@ -108,8 +118,46 @@ function artsEquipmentForAction(s, action) {
     item.holderId === "protagonist" && item.condition !== "returned") || null;
 }
 
+function advanceArtsEquipment(s) {
+  const state = s?.artsEquipment;
+  if (!state || !Number.isInteger(s.year) || !Number.isInteger(s.mo)) return;
+  for (const item of state.items) {
+    if (item.ownerType !== "school" || item.holderId !== "protagonist" ||
+        ["returned", "lost"].includes(item.condition) || !item.dueAt || item.lateFee ||
+        s.year * 12 + s.mo <= item.dueAt.year * 12 + item.dueAt.month) continue;
+    item.lateFee = { amount: 250, status: "due", issuedAt: { year: s.year, month: s.mo },
+      nextReviewAt: { year: s.year, month: s.mo }, paymentId: null, paidAt: null };
+  }
+}
+
+function artsEquipmentLateFeeAction(s, action, eventId, resolution) {
+  if (!s?.artsEquipment || !["pay-late-fee", "defer-late-fee"].includes(action?.action) ||
+      typeof eventId !== "string" || !eventId) return false;
+  const item = artsEquipmentForAction(s, { equipmentId: action.equipmentId || "$oldest-overdue-school-loan" }),
+    fee = item?.lateFee;
+  if (!item || item.ownerType !== "school" || item.holderId !== "protagonist" || !fee ||
+      !["due", "deferred"].includes(fee.status) ||
+      s.year * 12 + s.mo < fee.nextReviewAt.year * 12 + fee.nextReviewAt.month) return false;
+  if (action.action === "pay-late-fee") {
+    const wallet = inSharedHousehold(s) ? s.house : s;
+    if (!wallet || wallet.cash < fee.amount) return false;
+    wallet.cash -= fee.amount;
+    fee.status = "paid";
+    fee.paymentId = `arts-loan-fee:${item.id}:${fee.issuedAt.year}:${fee.issuedAt.month}`;
+    fee.paidAt = { year: s.year, month: s.mo, sourceEventId: eventId,
+      resolution: [resolution?.choiceIndex ?? 0, resolution?.outcomeIndex ?? 0], amount: fee.amount,
+      paidBy: inSharedHousehold(s) ? "household" : "personal" };
+    return true;
+  }
+  fee.status = "deferred";
+  const next = s.year * 12 + s.mo + 12;
+  fee.nextReviewAt = { year: Math.floor((next - 1) / 12), month: ((next - 1) % 12) + 1 };
+  fee.lastDeferAt = { year: s.year, month: s.mo, sourceEventId: eventId };
+  return true;
+}
+
 function artsEquipmentAvailable(s, equipmentId, purpose, siteRef) {
-  const item = s?.artsEquipment?.items?.find(row => row.id === equipmentId);
+  const item = artsEquipmentForAction(s, { equipmentId }) || s?.artsEquipment?.items?.find(row => row.id === equipmentId);
   if (!item) return { allowed: false, reason: "equipment-not-recorded", item: null };
   if (item.holderId !== "protagonist") return { allowed: false, reason: "not-in-custody", item };
   if (!ARTS_EQUIPMENT_PURPOSES.includes(purpose) || !item.allowedPurposes.includes(purpose))

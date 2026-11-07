@@ -42,6 +42,7 @@ function ap(e, routeReserve = 0) {
     debtBefore = (s.debt || 0) + (s.house?.debt || 0),
     investmentBefore = s.investment || 0,
     cashBefore = s.cash || 0;
+  if (e.lifeSystemAction) applyLifeSystemAction(s, e.lifeSystemAction, TRACE_RESOLUTION?.id || null);
   applyStatEffects(e, s);
   applyParentMedicalEffects(e, s);
   applyInfectionAndContactEffects(e, s);

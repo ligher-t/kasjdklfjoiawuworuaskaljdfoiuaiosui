@@ -1268,6 +1268,7 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
       who: "self",
       show: s => educationLegacySceneGuard(s,"education_school_classroom") &&
         educationP17SchoolExperience(s,"arts-selection-exam") &&
+        !educationActiveCase(s) &&
         Object.values(s.world?.educationWorld?.offerings||{}).some(o =>
           o.institutionId===s.educationPath?.institutionId && o.stage==="arts" &&
           ["open","limited"].includes(educationSchoolStatusAt(s,o.id,s.year,s.mo)?.admissionStatus)),
@@ -1275,16 +1276,11 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
       once: true,
       t: "学校でアーツの選抜試験の案内を渡された。特別な授業に進むには試験を受けるという。道具を使って準備するには費用もかかり、{caregiver}と案内を読み返した。",
       c: [
-        $terraData.K(
-          "手元の物で準備して試験を受ける",
-          {},
-          [
-            0.35,
-            "特別な授業への参加を認められた。次に使う道具の名を、{caregiver}と覚えた。",
-            { ar: 10, ep: 8, cr: 3, fl: { arts_gifted: 1 } }
-          ],
-          [1, "選抜には入れなかった。教わった基礎の練習を続け、いつもの授業へ戻った。", { ar: 2, p: -3 }]
-        ),
+        $terraData.K("試験の手続きを窓口で確かめる", {}, [
+          1,
+          "案内にあった選抜の手続きと募集先を確かめるため、{caregiver}と進学案件を開いた。試験日と授業の席は募集先ごとに確認する。",
+          { educationAction: "case:begin:higher-path:arts:1" }
+        ]),
         $terraData.K(
           "道具を借り、準備の指導を受ける（費用 {leithArtsPreparationCost}）",
           {
@@ -1292,14 +1288,9 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
             why: "道具と準備に地域物価込みで{leithArtsPreparationCost}を用意できない"
           },
           [
-            0.65,
-            "準備に{leithArtsPreparationCost}を払い、使い慣れない道具の扱いを教わった。試験で手順を示すことができ、特別な授業へ進んだ。",
-            { cash: -3e4, pm: 1, ar: 10, ep: 8, cr: 3, fl: { arts_gifted: 1 } }
-          ],
-          [
             1,
-            "準備をしても選抜には入れなかった。準備費用{leithArtsPreparationCost}は戻らないが、教わった練習は手元に残った。",
-            { cash: -3e4, pm: 1, ar: 3, p: -3 }
+            "準備に{leithArtsPreparationCost}を払い、道具の扱いを教わった。試験日と募集先を確かめるため、進学案件を開いた。合否と授業料は、実際の募集先へ出願したあとに決まる。",
+            { cash: -3e4, pm: 1, educationAction: "case:begin:higher-path:arts:1" }
           ]
         ),
         $terraData.K("今の授業を続ける", {}, [

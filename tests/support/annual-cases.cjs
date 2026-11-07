@@ -35,8 +35,8 @@ function mockBrowserWindow() {
 }
 function context(root){
  const nodes=new Map(),storage=new Map();
- function node(id=''){if(!nodes.has(id))nodes.set(id,{id,hidden:false,value:'',textContent:'',innerHTML:'',dataset:{},style:{},children:[],classList:{toggle(){},add(){},remove(){}},setAttribute(){},append(){},appendChild(){},insertAdjacentHTML(_position,text){this.innerHTML+=text;},replaceChildren(){this.children=[];this.innerHTML='';},querySelectorAll(){return[];},addEventListener(){},click(){}});return nodes.get(id);}
- const document={currentScript:null,getElementById:node,querySelectorAll(){return[];},createElement:tag=>node('created-'+tag),createTextNode:text=>({textContent:text}),addEventListener(){},activeElement:{tagName:'BODY'},documentElement:{style:{setProperty(){}},removeAttribute(){},setAttribute(){}},head:{appendChild(){}}};
+ function node(id=''){if(!nodes.has(id))nodes.set(id,{id,hidden:false,value:'',textContent:'',innerHTML:'',dataset:{},style:{},children:[],classList:{toggle(){},add(){},remove(){}},setAttribute(){},removeAttribute(){},focus(){},append(){},appendChild(){},insertAdjacentHTML(_position,text){this.innerHTML+=text;},replaceChildren(){this.children=[];this.innerHTML='';},querySelector(){return null;},querySelectorAll(){return[];},addEventListener(){},click(){}});return nodes.get(id);}
+ const document={currentScript:null,getElementById:node,querySelector(){return null;},querySelectorAll(){return[];},createElement:tag=>node('created-'+tag),createTextNode:text=>({textContent:text}),addEventListener(){},activeElement:{tagName:'BODY'},body:{classList:{toggle(){}}},documentElement:{style:{setProperty(){}},removeAttribute(){},setAttribute(){}},head:{appendChild(){}}};
  // Browser event registration must never schedule real callbacks in Node.
  const window=mockBrowserWindow();
  const ctx=vm.createContext({window,document,console,Date,setTimeout(){},setInterval(){},alert(){},confirm(){return true;},localStorage:{getItem:key=>storage.get(key)||null,setItem:(key,value)=>storage.set(key,String(value))}});

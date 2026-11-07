@@ -104,6 +104,25 @@ const INFORMATION_CLAIM_DEFINITIONS = {
       followupFrom: 1098,
       followupTo: 1110
     }
+  },
+  "local-infrastructure-bulletin": {
+    basis: "situated-encounter",
+    text: "同じ地区の設備は修理された",
+    claimant: "地域放送の発言者（氏名不明）",
+    channel: "本人が実際に聞いた地域放送",
+    scope: "一つの地区設備についての放送。設備以外や地区全体の安全は示さない",
+    receiveEvent: "life_info_media_claim",
+    followupEvent: "life_info_claim_correction",
+    receivedDetail: "同じ地区の一設備についての放送を受領。修理結果や他の設備は未確認"
+  },
+  "arts-family-practice": {
+    basis: "situated-encounter",
+    text: "練習した小さな術式を家の器具に使った",
+    claimant: "主人公",
+    channel: "同じ食卓での本人の説明",
+    scope: "本人が一度の行使について話したこと。家族の理解、評価、反応、他者への伝達は記録しない",
+    receiveEvent: "life_arts_family_glimpse",
+    receivedDetail: "本人が一度の行使を家族へ話した。相手の受け止めや行動は記録しない"
   }
 };
 const INFORMATION_CLAIM_ORGANIZATIONS = {

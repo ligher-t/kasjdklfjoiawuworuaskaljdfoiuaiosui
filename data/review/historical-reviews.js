@@ -21,7 +21,6 @@ window.TERRA_DATA_BUILD.run("review/historical-reviews", function ($terraData, $
       parent_household_move_news: "i,w,i",
       fam_care: "s,s,s",
       fam_unemploy: "s,s,s",
-      arts_awake: "s,s,w",
       dg: "s,s,s"
     },
     false

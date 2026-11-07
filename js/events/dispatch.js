@@ -29,6 +29,27 @@ function isPeacefulLeisureEvent(event) {
 function isMinorChoiceEvent(event) {
   return event?.interactionScope === "minor";
 }
+function chooseOrdinaryMinorChoice(events, s, T) {
+  const groups = new Map();
+  for (const event of events) {
+    const family = event.lifeSystemFamily || "general";
+    if (!groups.has(family)) groups.set(family, []);
+    groups.get(family).push(event);
+  }
+  const budgets = {
+    general: 0.65, arts: 0.08, infrastructure: 0.08,
+    delivery: 0.07, contingency: 0.06, "culture-research": 0.06
+  }, available = [...groups.entries()].map(([family, rows]) => ({
+    family, rows, budget: budgets[family] ?? 0.05
+  })).filter(row => row.rows.length), total = available.reduce((sum, row) => sum + row.budget, 0);
+  if (!total) return null;
+  let draw = R() * total;
+  for (const row of available) {
+    draw -= row.budget;
+    if (draw < 0) return wpk(row.rows, s, T);
+  }
+  return wpk(available.at(-1).rows, s, T);
+}
 function isValidEventMonthMarker(marker, currentYear) {
   return marker === null || (
     Number.isInteger(currentYear) && marker && typeof marker === "object" && !Array.isArray(marker) &&
@@ -75,7 +96,16 @@ function chooseSocialMajorChoice(events, s, T) {
   return wpk(pools.at(-1).events, s, T);
 }
 // Dates only: never relax eligibility, select random relatives, or mutate state here.
-function scheduledFollowupDueYear(event,s) {
+function scheduledFollowupDuePeriod(event,s) {
+  let dueAt = null;
+  if (typeof event.scheduledAt === "function") {
+    try { dueAt = event.scheduledAt(s); } catch { dueAt = null; }
+  }
+  if (Number.isInteger(dueAt?.year) && Number.isInteger(dueAt?.month) &&
+      dueAt.month >= 1 && dueAt.month <= 12) {
+    const due = dueAt.year * 12 + dueAt.month;
+    return due <= s.year * 12 + s.mo ? due : null;
+  }
   let due=null;
   if(event.id==="family_child_exposure_followup")
     due=childForEvent(s,event.id)?.exposureReviewYear;
@@ -109,11 +139,13 @@ function scheduledFollowupDueYear(event,s) {
            "life_ursus_school_aid_adult_followup","life_ursus_school_aid_later"].includes(event.id)) {
     const previous=s.sn?.[event.after?.id];
     if(Number.isInteger(previous))due=previous+(event.after.min||0);
+  } else if (typeof lifeSystemScheduledDueYear === "function") {
+    due = lifeSystemScheduledDueYear(s, event.id);
   }
-  return Number.isInteger(due) && due<=s.year ? due : null;
+  return Number.isInteger(due) && due<=s.year ? due * 12 + 1 : null;
 }
 function nextScheduledFollowup(events,s) {
-  return events.map(event=>({event,due:scheduledFollowupDueYear(event,s)}))
+  return events.map(event=>({event,due:scheduledFollowupDuePeriod(event,s)}))
     .filter(row=>row.due!==null)
     .sort((a,b)=>a.due-b.due)[0]?.event || null;
 }
@@ -200,6 +232,7 @@ function slot(x) {
   if(s.educationPath?.offeringId)
     educationSimulateAttendanceThrough(s,s.year,s.mo-1);
   ensureLocalityState(s);
+  advanceLifeSystems(s);
   educationReconcileWorldAt(s,s.year,s.mo);
   educationServiceTick(s);
   advanceAutomaticEducation(s);
@@ -307,8 +340,6 @@ function slot(x) {
     if (ordinaryMinorChoices.length && dailyPool.length) {
       // Keep the minor share fixed as new eligible events are added.
       e = R() < 0.2 ? wpk(ordinaryMinorChoices, s, T) : wpk(dailyPool, s, T);
-    } else if (ordinaryMinorChoices.length) {
-      e = wpk(ordinaryMinorChoices, s, T);
     } else {
       e = dailyPool.length ? wpk(dailyPool, s, T) : null;
     }

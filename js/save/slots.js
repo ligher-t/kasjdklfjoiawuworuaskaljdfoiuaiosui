@@ -210,8 +210,21 @@ function isValidResumeEventReviews(reviews, currentYear) {
 function normalizeResumeImport(data) {
   if (data?.format !== "terra-resume-save" || data.version !== SAVE_VERSION)
     throw new Error("この中断データは現在のゲームと同じ保存版ではありません。");
-  const state = data.S,
+  const state = data.S && typeof data.S === "object" && !Array.isArray(data.S)
+      ? JSON.parse(JSON.stringify(data.S)) : data.S,
     knowledge = data.W;
+  // SAVE_VERSION 88 snapshots created before the arts/life-system ledgers were
+  // added have no fields for them. Backfill only empty current-version ledgers;
+  // do not infer practical skill, licenses, consent, equipment, or past events.
+  if (state && typeof state === "object" && !Array.isArray(state) &&
+      Number.isInteger(state.year) && Number.isFinite(state.ar)) {
+    if (!Object.hasOwn(state, "artsProfile")) state.artsProfile = createArtsProfile(state.ar);
+    if (!Object.hasOwn(state, "artsEquipment")) state.artsEquipment = createArtsEquipmentState();
+    if (state.world && typeof state.world === "object") {
+      state.world.events ||= {};
+      initializeLifeSystems(state);
+    }
+  }
   if (
     !state || typeof state !== "object" || Array.isArray(state) ||
     !knowledge || typeof knowledge !== "object" || Array.isArray(knowledge) ||
@@ -220,6 +233,7 @@ function normalizeResumeImport(data) {
     !Number.isInteger(state.by) || !Number.isInteger(state.year) || !Number.isInteger(state.age) ||
     !isValidArtsProfileState(state.artsProfile, state.year) ||
     !isValidArtsEquipmentState(state.artsEquipment, state.year) ||
+    !isValidLifeSystemsState(state) ||
     !isValidEventMonthMarker(state.majorEventMonth, state.year) ||
     !isValidEventMonthMarker(state.minorEventMonth, state.year) ||
     !isValidResumeEventReviews(state.eventReviews, state.year) ||

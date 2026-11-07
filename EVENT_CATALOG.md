@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：2724　選択肢数：3575　結果枝数：4381
+イベント数：2783　選択肢数：3706　結果枝数：4509
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -12,7 +12,7 @@
 
 ## 国・地域別索引
 
-[イェラグ (86)](#tag-region-0)　・　[イベリア (112)](#tag-region-1)　・　[ヴィクトリア (151)](#tag-region-2)　・　[ウルサス (173)](#tag-region-3)　・　[カジミエーシュ (104)](#tag-region-4)　・　[カズデル (119)](#tag-region-5)　・　[クルビア (122)](#tag-region-6)　・　[サーミ (93)](#tag-region-7)　・　[サルゴン (102)](#tag-region-8)　・　[シエスタ (83)](#tag-region-9)　・　[シラクーザ (100)](#tag-region-10)　・　[ボリバル (96)](#tag-region-11)　・　[ミノス (87)](#tag-region-12)　・　[ラテラーノ (90)](#tag-region-13)　・　[リターニア (105)](#tag-region-14)　・　[レム・ビリトン (95)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (88)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (94)](#tag-region-19)　・　[未特定 (870)](#tag-region-20)　・　[龍門 (107)](#tag-region-21)
+[イェラグ (86)](#tag-region-0)　・　[イベリア (112)](#tag-region-1)　・　[ヴィクトリア (151)](#tag-region-2)　・　[ウルサス (173)](#tag-region-3)　・　[カジミエーシュ (104)](#tag-region-4)　・　[カズデル (119)](#tag-region-5)　・　[クルビア (122)](#tag-region-6)　・　[サーミ (93)](#tag-region-7)　・　[サルゴン (102)](#tag-region-8)　・　[シエスタ (83)](#tag-region-9)　・　[シラクーザ (100)](#tag-region-10)　・　[ボリバル (96)](#tag-region-11)　・　[ミノス (87)](#tag-region-12)　・　[ラテラーノ (90)](#tag-region-13)　・　[リターニア (105)](#tag-region-14)　・　[レム・ビリトン (95)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (88)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (94)](#tag-region-19)　・　[未特定 (929)](#tag-region-20)　・　[龍門 (107)](#tag-region-21)
 
 <a id="tag-region-0"></a>
 ### イェラグ（86）
@@ -1977,7 +1977,7 @@
 - [car_hig_touhou_daily_01](#event-car_hig_touhou_daily_01) — 東方重工の工場内で、最新鋭の旋盤から削り出された手裏剣『シルバーウィンド』同型刃の寸法と硬度を測定した。特殊合金の焼き入れムラがないか、顕微鏡で結晶…
 
 <a id="tag-region-20"></a>
-### 未特定（870）
+### 未特定（929）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
@@ -1997,7 +1997,6 @@
 - [col_tech_after_departure](#event-col_tech_after_departure) — クルビアの研究企業を離れてから数年が過ぎた。今の仕事場で工具を握ると、試作装置の前で計器の針を睨んでいたころの手つきが自然と蘇る。機械を動かす前にも…
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
 - [work_elder_reentry](#event-work_elder_reentry) — 仕事を退いてから時間が経ったが、じっとしているのも性に合わず、路銀の減りも気になってきた。年老いた体でも引き受けられるささやかな仕事がないか、近所の…
-- [arts_awake](#event-arts_awake) — アーツの筋が良いと見込まれ、本格的に鍛えてみないかと声がかかった。ただ、無理に力を使って鉱石病が悪化した人の話を思い出し、訓練場の敷居の前で足が止ま…
 - [dst](#event-dst) — いつも一緒に働いていた同僚が鉱石病だと知れ渡った。首筋や手首の結晶が隠せなくなり、昼休みの食堂では、何人かが露骨にその人の席を避けるようになった。
 - [dg](#event-dg) — 収容先の薄暗い診察室で、肌に浮いた結晶は鉱石病だと告げられた。外の病院へは行けない。ここで抑制薬を出してもらえるのか、医師の顔を見つめた。 隔離区画…
 - [lov](#event-lov) — 仕事帰りにたびたび顔を合わせる人と、雨宿りの軒先で立ち話をした。もっと話していたい気持ちはあったが、今月の支払いに追われる暮らしを思うと、次の一歩を…
@@ -2393,6 +2392,66 @@
 - [life_arts_unit_repair](#event-life_arts_unit_repair) — 点検担当者は、接続部の焼け跡を見て使用を止めた。授業で使う予備器具は今すぐには出せないという。修理票には部品の型番と、預かり先を書く欄がある。
 - [life_arts_unit_repair_parts](#event-life_arts_unit_repair_parts) — 保管庫から、修理に必要な交換部品が届いたという知らせがあった。受取確認が済むまでは器具に使えず、担当者は組み直しと動作確認にも日を置きたいと言う。
 - [life_arts_unit_repair_complete](#event-life_arts_unit_repair_complete) — 担当者から、器具の接続部を組み直したと連絡があった。受け渡しの前に、修理票と照らしながら状態を確かめる必要があるという。
+- [life_arts_family_glimpse](#event-life_arts_family_glimpse) — 夕食の支度をしていると、湯気の向こうで器がすっと棚の端へ寄った。自分の指先には、さっき練習した力の感触が残っている。向かいの親は、まだ何も尋ねてこな…
+- [life_arts_training_inquiry](#event-life_arts_training_inquiry) — 掲示板にアーツ課程の募集要項が貼られていた。入学時期や費用は年度で違うらしい。家の人は紙面を読み、まず近くに通える学校があるか窓口で聞いてみようと言…
+- [life_arts_practical_assessment](#event-life_arts_practical_assessment) — 試験台には、習った器具と同じ型の木箱が置かれていた。出席記録と実習帳は係が確認済みだという。結果を出すには、実技を一度通して見てもらう必要がある。
+- [life_arts_course_after](#event-life_arts_course_after) — 修了の知らせを受け、机の上の教本を閉じた。証書には履修した課程が記されている。練習具の返却と、次に何を学ぶかの相談は別々に残っていた。
+- [life_arts_scholarship_inquiry](#event-life_arts_scholarship_inquiry) — 学院の会計窓口で、受験と入学に必要な費用の見積書を示された。机の脇には、支援制度を照会する用紙も置かれている。利用できるかは、窓口の確認後に分かる。
+- [life_arts_school_decision](#event-life_arts_school_decision) — 学院の窓口から、選考結果と入学条件を記した通知が届いた。募集先の授業状況、費用、通学経路をもう一度確かめてから返事をするよう書かれている。
+- [life_arts_workshop_invitation](#event-life_arts_workshop_invitation) — 工房の作業台には、勤務先で扱う器具の点検札が置かれていた。担当者は、まず同じ型の部品を見て、手入れを学ぶ気があるか尋ねた。通常のアーツ行使は求められ…
+- [life_arts_late_fee](#event-life_arts_late_fee) — 返却期日を過ぎた貸与具について、窓口から金額の書かれた請求書が届いた。貸出票と品物の所在を照らし、支払いか相談かを決める必要がある。
+- [life_arts_small_use](#event-life_arts_small_use) — 食卓のランプが消え、授業で覚えた小さな術式を思い出した。足元に人がいないことを確かめ、今日は使うか別の方法にするか決められる。
+- [life_arts_non_caster_craft](#event-life_arts_non_caster_craft) — 動力部のふたを外すと、留め具の位置が点検表と違っていた。工房の指導者が横で部品を押さえる。ここではアーツを使わず、工具の扱いだけを練習する。
+- [life_arts_employer_request](#event-life_arts_employer_request) — 勤務先の掲示板に、実技を見てから担当を決める作業枠が載った。求められるのは既に習った術式の実演で、資格や採用は試験の前には決まらない。
+- [life_arts_skill_retest](#event-life_arts_skill_retest) — 前の実技確認で止まった調整箇所を、工房の練習台に印した。担当者は同じ手順を急がず繰り返すよう言う。今日は再訓練にするか、別の作業を選ぶか決められる。
+- [life_arts_medical_observation](#event-life_arts_medical_observation) — 診療所の担当者が、同意を得た診察のあとで補助具の扱いを説明した。見学できるのは器具と手順だけで、患者の記録や治療判断には触れない。
+- [life_arts_medical_training](#event-life_arts_medical_training) — 診療所の訓練担当者が、器具の受け渡しと記録補助を教える枠を説明した。訓練は監督者のいる時間だけで、診療や研究への参加とは別に扱われる。
+- [life_arts_overexertion](#event-life_arts_overexertion) — 器具を握る手に震えが残り、呼吸も整わない。指導者は高負荷の術式を続けるか、途中で止めるか尋ねた。体調の変化を理由に休む選択もある。
+- [life_arts_after_overexertion](#event-life_arts_after_overexertion) — 前回の訓練から数日が過ぎても、指先のこわばりが気になった。診療所では、訓練記録と今の状態を見ながら、休息や次回の負荷を相談できる。
+- [life_arts_work_adjustment](#event-life_arts_work_adjustment) — 勤務表を前に、今の体調では同じ負荷を続けにくいと感じた。担当者は、作業の組替え、休みの申請、器具の保守訓練への移行を案内した。
+- [life_arts_mentor_later](#event-life_arts_mentor_later) — 年下の子が作業台の端から手元を見ていた。教える資格の話ではなく、道具を置く順や危ない箇所を一緒に確かめるだけでもよい。
+- [life_arts_tradition_lesson](#event-life_arts_tradition_lesson) — 近所の年長者は、谷の風向きを表す古い呼び名を口にした。書き方は教わっていない。言葉を聞き、土地の記憶と学院の術式を別々に受け取る時間だった。
+- [life_cc_first_contact](#event-life_cc_first_contact) — 職場の休憩所に、近隣の復旧窓口の連絡先が置かれていた。担当者は急な応援を募る可能性があると説明したが、仕事内容や期間はまだ決まっていない。
+- [life_cc_offer_review](#event-life_cc_offer_review) — 連絡先を残した窓口から、復旧支援の短期依頼が届いた。現場、荷物、受取先、支払条件を確かめる欄がある。内容を確かめるまでは受ける必要はない。
+- [life_cc_accept](#event-life_cc_accept) — 契約書には、期間、依頼主、届け先、報酬、途中で撤収する手順が記されていた。現場調査や設備保守には、募集条件に記された実務技能の記録も要る。条件を確か…
+- [life_cc_preparation](#event-life_cc_preparation) — 荷台には、持ち出す器具と現地に残す道具を分ける余地があった。未成年の子がいる家では、出発前に世話を引き受ける人との話し合いも要る。
+- [life_cc_departure](#event-life_cc_departure) — 予定していた出発時刻が近づいた。運賃と道具、留守宅の段取りを改めて確かめる。条件がそろえば現場へ向かえる。延期や辞退を依頼主へ伝えることもできる。
+- [life_cc_handoff](#event-life_cc_handoff) — 現場の受取担当者が、荷札の宛先と数量を読み上げた。受領印をもらう前に、依頼書の品目と目の前の荷物を照合する。
+- [life_cc_forecast_survey](#event-life_cc_forecast_survey) — 観測場所には、風向きを測る器具と撤収路の案内があった。責任者は許可された範囲を示し、続けるか戻るか確認した。
+- [life_cc_suspicious_cargo](#event-life_cc_suspicious_cargo) — 受け取った依頼書では、荷主と箱の中身の欄が空いていた。窓口は先に受領印を求めているが、説明を求めることもできる。
+- [life_cc_support_equity](#event-life_cc_support_equity) — 配給表には、届く予定の食料と医薬品が地区ごとに記されていた。数の不足が残る欄を見つけ、配分を決める前に担当者へ尋ねられる。
+- [life_cc_hiring_bias](#event-life_cc_hiring_bias) — 名簿の選考欄に、自分の所属についての記載があった。担当者はその理由を説明していない。見た記録を示して、基準を尋ねることはできる。
+- [life_cc_payment](#event-life_cc_payment) — 検収済みの控えと報酬の金額が一致した。支払窓口で受領を確かめるか、期日に金が届かなかったことを記録して照会へ進める。
+- [life_cc_payment_dispute](#event-life_cc_payment_dispute) — 支払期日を過ぎても、受領額は帳面に記されていない。検収票と連絡先をそろえ、金額を確認する請求を出せる。
+- [life_cc_organization_receipt](#event-life_cc_organization_receipt) — 届け先の担当者が、荷札と受領控えを照合した。組織の受領なら所属記録のある窓口へ、地域の受領なら地区の担当者へ確認する。
+- [life_cc_family_notice](#event-life_cc_family_notice) — 出発後、家の人へ伝える連絡先と便の予定を確認した。手紙を出しても、届いたことや受け手の気持ちは後で確かめる必要がある。
+- [life_cc_return](#event-life_cc_return) — 帰り道の便が残っている。現場では作業を続けることも、依頼主へ知らせて戻ることもできる。帰路の費用と行き先を確認した。
+- [life_infra_warning_notice](#event-life_infra_warning_notice) — 地区の掲示板に、数か月先の荒天注意が載った。予報は停電や通行止めを知らせるものではない。発信元と対象期間を読むことができる。
+- [life_infra_warning_response](#event-life_infra_warning_response) — 予報を読んだあと、予定表には屋台の仕入れ日が残っていた。準備を変えるか、予報を出した窓口へ確かめるかは自分で選べる。
+- [life_infra_warning_result](#event-life_infra_warning_result) — 予報期間が過ぎ、観測所の掲示が更新された。対象の天候は地区の記録に載っている。あらかじめ聞いた予報と、今回の観測結果を見比べた。
+- [life_infra_messenger_feedback](#event-life_infra_messenger_feedback) — 予報を伝える仕事の机に、前回の観測票と地区から届いた問い合わせが並んだ。説明する範囲を確かめ、窓口へ返す言葉を選ぶ。
+- [life_infra_power_loss](#event-life_infra_power_loss) — 作業台の灯りが落ち、同じ区画の機械も止まった。設備担当者は故障場所を確かめている。手元の工具を置き、作業を続けるか連絡するか決める。
+- [life_infra_water_loss](#event-life_infra_water_loss) — 朝の蛇口から水が出ず、給水所の場所を記した紙が戸口に差し込まれていた。配管の故障箇所や復旧時刻はまだ掲示されていない。
+- [life_infra_route_block](#event-life_infra_route_block) — いつも通る連結扉に、点検中の札が掛かっていた。向こう側へは進めない。掲示には迂回路が示されているが、再開時刻はまだ書かれていない。
+- [life_infra_repair_request](#event-life_infra_repair_request) — 設備担当の窓口に、地区の故障番号と必要な交換部品が書き込まれた。修理を申し込めば部品便を手配できるが、到着と検査には時間がかかる。
+- [life_infra_repair_verification](#event-life_infra_repair_verification) — 交換部品が届き、担当者は設備を組み直す準備をしていた。電源と接続部を点検し、同じ地区の故障番号へ結果を記入する。
+- [life_infra_relocation_utility](#event-life_infra_relocation_utility) — 移動都市の通路が閉じ、いつもの経路が切れていた。近くの掲示は別経路を示している。家族へ知らせるか、通れるかどうかを設備担当へ確かめるか選べる。
+- [life_ship_custody](#event-life_ship_custody) — 倉庫の台帳に、宛先の地区へ到着した荷物が載っていた。荷札には差出人と担当者の名がある。自分が持ち出す前に、保管の引継ぎを確認する。
+- [life_ship_recipient_check](#event-life_ship_recipient_check) — 荷物の宛先欄は古い住所のままだった。差出人の控えには、転居後の連絡先が書かれていない。今ここで受取人を確認するか、差出人へ返すかを選べる。
+- [life_ship_return](#event-life_ship_return) — 返送受付の控えと、荷物の荷札を並べた。帰り便に載せる前に差出人と宛先をもう一度照合できる。
+- [life_ship_medicine_delay](#event-life_ship_medicine_delay) — 診療所から、処方薬の便が通行障害で遅れていると連絡があった。薬の変更はここでは決められない。受診予定を調整し、担当者に状況を尋ねられる。
+- [life_ship_medicine_received](#event-life_ship_medicine_received) — 診療所の受取台に、処方薬の箱が届いた。受付係は荷札と保管場所を照合してから、在庫帳に数量を記す。
+- [life_info_media_claim](#event-life_info_media_claim) — 地域放送は、修理された設備について短く伝えていた。放送した人は地区全体の安全には触れていない。聞いた主張を、出所と範囲を添えて記録できる。
+- [life_info_claim_correction](#event-life_info_claim_correction) — 同じ地区の設備担当者が、故障番号と修理の完了日を掲示した。掲示にある一件の修理記録を受け取り、確認できた範囲を放送の記録へ添えられる。
+- [life_info_letter_delay](#event-life_info_letter_delay) — 返事が来ないまま、家族への便りを出してから一か月が過ぎた。配送記録では現在の宛先を確かめられない。未着の事実と、相手が返事をしないことは分けて扱う。
+- [life_info_letter_resolution](#event-life_info_letter_resolution) — 配達所から、受取人の転居記録と新しい住所が示された。宛先を変えるには、その住所が今も使われているか本人の記録を照合する。
+- [life_culture_music_arts](#event-life_culture_music_arts) — 小さな舞台に、弦の音とアーツ器具の点検音が交互に響いた。演奏の稽古と術式の学習は別の記録だ。今日は曲を弾くか、器具の扱いを尋ねるか決められる。
+- [life_culture_festival_shortjob](#event-life_culture_festival_shortjob) — 祭りの会場で、机や灯りを運ぶ短い手伝いが募集されていた。作業日は限られ、設営に加わるか断るかは自分で決められる。
+- [life_culture_rural_well](#event-life_culture_rural_well) — 集落の井戸の点検帳に、濁りと交換部品の不足が記されていた。近隣の人たちが費用と部品の見積りを集めている。計画に加わるか、寄付だけにするか、今回は見送…
+- [life_culture_rural_repair](#event-life_culture_rural_repair) — 井戸の交換部品が集落へ届いた。作業台には検査表があり、近所の人たちと実際の作業人数を確認してから修理に進む。
+- [life_research_consent](#event-life_research_consent) — 診療所の研究担当者が、観察の目的、診療と研究の違い、途中で断れることを説明する。ここでは説明を聞いた記録だけを残し、参加の同意は別に本人が決める。
+- [life_research_procedure](#event-life_research_procedure) — 担当者は観察の目的と手順をもう一度示し、診療への影響がないことを説明した。説明を聞いた記録と参加への同意は別で、本人は始める前に断ることもできる。
+- [life_research_followup](#event-life_research_followup) — 観察後の確認日が来た。診療所はその日の体調と記録を尋ねている。治療変更や補償の約束はなく、必要なら別に診療を申し込める。
 - [romance_followup](#event-romance_followup) — {romancePartner}とまた会おうと約束してから、仕事帰りに同じ食堂で何度もテーブルを挟んだ。ある夜は職場の愚痴を聞いて笑い合い、別の夜は…
 - [romance_future_talk](#event-romance_future_talk) — {romancePartner}とこれからの暮らしを話すたび、部屋の狭さや家賃、もしどちらかが倒れて働けなくなった時の不安が口をついて出た。それでも…
 - [romance_marriage_choice](#event-romance_marriage_choice) — 互いの家族へ挨拶に行く日取りや、ささやかな祝いの席にいくらかかるかを指折り数えた。仕事を休める日も見計らいながら、{romancePartner}と…
@@ -2961,10 +3020,10 @@
 
 ## ジャンル別索引
 
-[移動・物流 (265)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (393)](#tag-genre-2)　・　[感染・医療 (495)](#tag-genre-3)　・　[教育・文化 (473)](#tag-genre-4)　・　[差別・制度 (157)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (253)](#tag-genre-7)　・　[戦争・政治 (147)](#tag-genre-8)　・　[天災・避難 (203)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (426)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (904)](#tag-genre-13)　・　[労働・経済 (789)](#tag-genre-14)
+[移動・物流 (272)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (400)](#tag-genre-2)　・　[感染・医療 (503)](#tag-genre-3)　・　[教育・文化 (480)](#tag-genre-4)　・　[差別・制度 (158)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (255)](#tag-genre-7)　・　[戦争・政治 (147)](#tag-genre-8)　・　[天災・避難 (208)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (431)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (921)](#tag-genre-13)　・　[労働・経済 (805)](#tag-genre-14)
 
 <a id="tag-genre-0"></a>
-### 移動・物流（265）
+### 移動・物流（272）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [transporter_contract_review](#event-transporter_contract_review) — トランスポーターとして街を走り始めて二年が経った。靴底の減り方と裏通りの抜け道がすっかり体に染みついたころ、契約の節目がやってきた。このまま顔なじみ…
 - [kjerag_transporter_route_review](#event-kjerag_transporter_route_review) — 雪の山道を荷を背負って登り始めて二年になる。新しい荷受け場所を設けたいと集落を回ると、温かい茶を出して歓迎してくれる村もあれば、よそ者の出入りを嫌っ…
@@ -3172,6 +3231,13 @@
 - [soc_gap_23](#event-soc_gap_23) — 街角に開拓計画の募集ポスターが貼られていた。小さな図には離れた街区と宿泊棟が描かれ、細かな費用は問い合わせ先で確かめるよう書かれていた。
 - [life_family_remittance](#event-life_family_remittance) — 家計逼迫 故郷の親から手紙が届いた。薬代や家の修繕のことが遠慮がちに数行だけ書かれている。こちらの財布も厳しい中、どんな返事を書くか便箋を前に迷った…
 - [life_parent_visit](#event-life_parent_visit) — 故郷の親から届いた手紙に、『たまには顔を見せておくれ』とあった。高い往復の運賃を出せば、今月の支払いをひとつ我慢しなければならない。 親からの手紙に…
+- [life_cc_offer_review](#event-life_cc_offer_review) — 連絡先を残した窓口から、復旧支援の短期依頼が届いた。現場、荷物、受取先、支払条件を確かめる欄がある。内容を確かめるまでは受ける必要はない。
+- [life_cc_handoff](#event-life_cc_handoff) — 現場の受取担当者が、荷札の宛先と数量を読み上げた。受領印をもらう前に、依頼書の品目と目の前の荷物を照合する。
+- [life_ship_custody](#event-life_ship_custody) — 倉庫の台帳に、宛先の地区へ到着した荷物が載っていた。荷札には差出人と担当者の名がある。自分が持ち出す前に、保管の引継ぎを確認する。
+- [life_ship_recipient_check](#event-life_ship_recipient_check) — 荷物の宛先欄は古い住所のままだった。差出人の控えには、転居後の連絡先が書かれていない。今ここで受取人を確認するか、差出人へ返すかを選べる。
+- [life_ship_return](#event-life_ship_return) — 返送受付の控えと、荷物の荷札を並べた。帰り便に載せる前に差出人と宛先をもう一度照合できる。
+- [life_ship_medicine_delay](#event-life_ship_medicine_delay) — 診療所から、処方薬の便が通行障害で遅れていると連絡があった。薬の変更はここでは決められない。受診予定を調整し、担当者に状況を尋ねられる。
+- [life_info_letter_resolution](#event-life_info_letter_resolution) — 配達所から、受取人の転居記録と新しい住所が示された。宛先を変えるには、その住所が今も使われているか本人の記録を照合する。
 - [romance_cohabitation_review](#event-romance_cohabitation_review) — 同じ部屋で暮らし始めてから、日々の食費や掃除・洗濯の分担がすっかり日常になった。ただ、部屋の契約名義や親族への紹介をどうするか、宙ぶらりんのままにな…
 - [family_care_network_move_news](#event-family_care_network_move_news) — 幼い頃に世話になった{careNetwork}の人たちが、住み慣れた{careNetworkMoveFrom}を離れて{careNetworkMov…
 - [family_daily_spouse_errand_together](#event-family_daily_spouse_errand_together) — 非番の午後、買い物籠を提げて{sp}と二人で市場へ出かけた。日持ちする乾物や穀物の値段を比べ合いながら、帰り道には小さな焼き菓子を一つ買って分け合っ…
@@ -3236,7 +3302,7 @@
 - [life_debt_budget_review](#event-life_debt_budget_review) — テーブルの上に給金袋と借金の督促状を並べ、ため息をついた。今の稼ぎだけではとても一度には返しきれず、腹をくくって日々の食い扶持を削るか、身体を壊さな…
 
 <a id="tag-genre-2"></a>
-### 家族・介護（393）
+### 家族・介護（400）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -3471,6 +3537,13 @@
 - [life_youth_apprenticeship](#event-life_youth_apprenticeship) — （動的本文）
 - [life_parent_visit](#event-life_parent_visit) — 故郷の親から届いた手紙に、『たまには顔を見せておくれ』とあった。高い往復の運賃を出せば、今月の支払いをひとつ我慢しなければならない。 親からの手紙に…
 - [life_neighbor_mutual_aid](#event-life_neighbor_mutual_aid) — 階段の上り下りで息を切らしていると、近所の顔なじみの{neighborName}が「買い物や水運び、ついでにやってこようか」と声をかけてくれた。袋を…
+- [life_arts_family_glimpse](#event-life_arts_family_glimpse) — 夕食の支度をしていると、湯気の向こうで器がすっと棚の端へ寄った。自分の指先には、さっき練習した力の感触が残っている。向かいの親は、まだ何も尋ねてこな…
+- [life_arts_mentor_later](#event-life_arts_mentor_later) — 年下の子が作業台の端から手元を見ていた。教える資格の話ではなく、道具を置く順や危ない箇所を一緒に確かめるだけでもよい。
+- [life_cc_accept](#event-life_cc_accept) — 契約書には、期間、依頼主、届け先、報酬、途中で撤収する手順が記されていた。現場調査や設備保守には、募集条件に記された実務技能の記録も要る。条件を確か…
+- [life_cc_preparation](#event-life_cc_preparation) — 荷台には、持ち出す器具と現地に残す道具を分ける余地があった。未成年の子がいる家では、出発前に世話を引き受ける人との話し合いも要る。
+- [life_cc_family_notice](#event-life_cc_family_notice) — 出発後、家の人へ伝える連絡先と便の予定を確認した。手紙を出しても、届いたことや受け手の気持ちは後で確かめる必要がある。
+- [life_infra_relocation_utility](#event-life_infra_relocation_utility) — 移動都市の通路が閉じ、いつもの経路が切れていた。近くの掲示は別経路を示している。家族へ知らせるか、通れるかどうかを設備担当へ確かめるか選べる。
+- [life_info_letter_delay](#event-life_info_letter_delay) — 返事が来ないまま、家族への便りを出してから一か月が過ぎた。配送記録では現在の宛先を確かめられない。未着の事実と、相手が返事をしないことは分けて扱う。
 - [romance_followup](#event-romance_followup) — {romancePartner}とまた会おうと約束してから、仕事帰りに同じ食堂で何度もテーブルを挟んだ。ある夜は職場の愚痴を聞いて笑い合い、別の夜は…
 - [romance_future_talk](#event-romance_future_talk) — {romancePartner}とこれからの暮らしを話すたび、部屋の狭さや家賃、もしどちらかが倒れて働けなくなった時の不安が口をついて出た。それでも…
 - [romance_marriage_choice](#event-romance_marriage_choice) — 互いの家族へ挨拶に行く日取りや、ささやかな祝いの席にいくらかかるかを指折り数えた。仕事を休める日も見計らいながら、{romancePartner}と…
@@ -3632,7 +3705,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-genre-3"></a>
-### 感染・医療（495）
+### 感染・医療（503）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
@@ -3646,7 +3719,6 @@
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [ursus_mine_assignment_offer](#event-ursus_mine_assignment_offer) — 採掘現場で働いていると、鉱区の監督官に呼び出された。鉱石病の診断記録を理由に、北方の鉱区へ移れという。拒めばどうなるかは口にされないまま、冷たい机の…
 - [ursus_mine_assignment_review](#event-ursus_mine_assignment_review) — 監視付きの採掘班に送り込まれて二年が過ぎた。皮下に埋め込まれた位置特定チップを抜き取ろうと、密かに外の医療班とつなぎを取る坑夫もいる。信号が途絶えれ…
-- [arts_awake](#event-arts_awake) — アーツの筋が良いと見込まれ、本格的に鍛えてみないかと声がかかった。ただ、無理に力を使って鉱石病が悪化した人の話を思い出し、訓練場の敷居の前で足が止ま…
 - [dst](#event-dst) — いつも一緒に働いていた同僚が鉱石病だと知れ渡った。首筋や手首の結晶が隠せなくなり、昼休みの食堂では、何人かが露骨にその人の席を避けるようになった。
 - [dg](#event-dg) — 収容先の薄暗い診察室で、肌に浮いた結晶は鉱石病だと告げられた。外の病院へは行けない。ここで抑制薬を出してもらえるのか、医師の顔を見つめた。 隔離区画…
 - [illness_review](#event-illness_review) — いく晩寝ても体の鉛のような重さが抜けず、歩くだけで息が上がるようになった。病院へ行くには金も時間もかかるが、このまま放っておけば働くことすらできなく…
@@ -3948,6 +4020,15 @@
 - [disc_day_org07](#event-disc_day_org07) — 互助会で薬の共同購入品が届き、皆で封を切った。感染者の老人が品目を読み上げ、若い会員が帳簿の数字を一つずつ確かめた。
 - [disc_day_org08](#event-disc_day_org08) — 互助会に、以前この地区を離れた感染者の家族から便りが届いた。病院の場所を教えてもらった礼が、小さな紙に丁寧に書かれている。
 - [life_pet_vet_cost](#event-life_pet_vet_cost) — 可愛がっている生き物が、ここ数日ほとんど餌に口をつけない。毛並みもどこか元気がなく見えるが、獣医に診せれば今月の生活費が吹き飛んでしまう。 飼ってい…
+- [life_arts_medical_observation](#event-life_arts_medical_observation) — 診療所の担当者が、同意を得た診察のあとで補助具の扱いを説明した。見学できるのは器具と手順だけで、患者の記録や治療判断には触れない。
+- [life_arts_medical_training](#event-life_arts_medical_training) — 診療所の訓練担当者が、器具の受け渡しと記録補助を教える枠を説明した。訓練は監督者のいる時間だけで、診療や研究への参加とは別に扱われる。
+- [life_arts_overexertion](#event-life_arts_overexertion) — 器具を握る手に震えが残り、呼吸も整わない。指導者は高負荷の術式を続けるか、途中で止めるか尋ねた。体調の変化を理由に休む選択もある。
+- [life_arts_after_overexertion](#event-life_arts_after_overexertion) — 前回の訓練から数日が過ぎても、指先のこわばりが気になった。診療所では、訓練記録と今の状態を見ながら、休息や次回の負荷を相談できる。
+- [life_ship_medicine_delay](#event-life_ship_medicine_delay) — 診療所から、処方薬の便が通行障害で遅れていると連絡があった。薬の変更はここでは決められない。受診予定を調整し、担当者に状況を尋ねられる。
+- [life_ship_medicine_received](#event-life_ship_medicine_received) — 診療所の受取台に、処方薬の箱が届いた。受付係は荷札と保管場所を照合してから、在庫帳に数量を記す。
+- [life_research_consent](#event-life_research_consent) — 診療所の研究担当者が、観察の目的、診療と研究の違い、途中で断れることを説明する。ここでは説明を聞いた記録だけを残し、参加の同意は別に本人が決める。
+- [life_research_procedure](#event-life_research_procedure) — 担当者は観察の目的と手順をもう一度示し、診療への影響がないことを説明した。説明を聞いた記録と参加への同意は別で、本人は始める前に断ることもできる。
+- [life_research_followup](#event-life_research_followup) — 観察後の確認日が来た。診療所はその日の体調と記録を尋ねている。治療変更や補償の約束はなく、必要なら別に診療を申し込める。
 - [family_sibling_exposure](#event-family_sibling_exposure) — 離れて暮らす{sibling}から、源石の破片が混じった廃材で指を深く切ってしまったと震える字の手紙が届いた。医者で検査を受けるか、雇い主に話をつけ…
 - [family_sibling_exposure_followup](#event-family_sibling_exposure_followup) — 前に掛け合った仕事先は最初の検査代を少しだけ出したが、それっきりだった。{sibling}から「そろそろ再検査の時期だけれど、仕事を休むと言い出しづ…
 - [family_sibling_infection](#event-family_sibling_infection) — 同じ家で暮らす{sibling}が鉱石病にかかっていると分かった。親族のひとりは「世間に知られたら終わりだから絶対に隠せ」と声を潜め、もうひとりは「…
@@ -4130,7 +4211,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-genre-4"></a>
-### 教育・文化（473）
+### 教育・文化（480）
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_model](#event-bias_family_model) — 夕餉の席で、親の一人が近所に越してきた感染者の一家について話した。『ああいう家とは付き合うな。厄介事を持ち込まれる』。煮物を取り分ける手は止まらず、…
@@ -4445,6 +4526,13 @@
 - [life_arts_unit_inspection](#event-life_arts_unit_inspection) — 練習用の器具を返す前に、授業担当者が接続部を確かめるよう言った。金具の縁に黒い跡がある。汚れなのか、熱で変色したのかは、まだ分からない。
 - [life_arts_unit_repair](#event-life_arts_unit_repair) — 点検担当者は、接続部の焼け跡を見て使用を止めた。授業で使う予備器具は今すぐには出せないという。修理票には部品の型番と、預かり先を書く欄がある。
 - [life_arts_unit_repair_complete](#event-life_arts_unit_repair_complete) — 担当者から、器具の接続部を組み直したと連絡があった。受け渡しの前に、修理票と照らしながら状態を確かめる必要があるという。
+- [life_arts_training_inquiry](#event-life_arts_training_inquiry) — 掲示板にアーツ課程の募集要項が貼られていた。入学時期や費用は年度で違うらしい。家の人は紙面を読み、まず近くに通える学校があるか窓口で聞いてみようと言…
+- [life_arts_school_decision](#event-life_arts_school_decision) — 学院の窓口から、選考結果と入学条件を記した通知が届いた。募集先の授業状況、費用、通学経路をもう一度確かめてから返事をするよう書かれている。
+- [life_arts_small_use](#event-life_arts_small_use) — 食卓のランプが消え、授業で覚えた小さな術式を思い出した。足元に人がいないことを確かめ、今日は使うか別の方法にするか決められる。
+- [life_arts_tradition_lesson](#event-life_arts_tradition_lesson) — 近所の年長者は、谷の風向きを表す古い呼び名を口にした。書き方は教わっていない。言葉を聞き、土地の記憶と学院の術式を別々に受け取る時間だった。
+- [life_infra_messenger_feedback](#event-life_infra_messenger_feedback) — 予報を伝える仕事の机に、前回の観測票と地区から届いた問い合わせが並んだ。説明する範囲を確かめ、窓口へ返す言葉を選ぶ。
+- [life_culture_music_arts](#event-life_culture_music_arts) — 小さな舞台に、弦の音とアーツ器具の点検音が交互に響いた。演奏の稽古と術式の学習は別の記録だ。今日は曲を弾くか、器具の扱いを尋ねるか決められる。
+- [life_culture_festival_shortjob](#event-life_culture_festival_shortjob) — 祭りの会場で、机や灯りを運ぶ短い手伝いが募集されていた。作業日は限られ、設営に加わるか断るかは自分で決められる。
 - [family_sibling_birth](#event-family_sibling_birth) — 親から、もうすぐ家に赤ん坊が生まれると聞かされた。嬉しい知らせのはずなのに、狭い部屋のどこに寝かせるか、食費やあなたの家の手伝いがどう増えるか、大人…
 - [family_daily_spouse_health_care](#event-family_daily_spouse_health_care) — 一日中立ち仕事で強張った背中を、{sp}が温かい手でさすってくれた。淹れてくれたハーブの香る茶をすすりながら、明日もまた二人で乗り切ろうと静かに頷き…
 - [family_care_network_member_death_notice](#event-family_care_network_member_death_notice) — 昔世話になった{careMemberName}が{careMemberDeathYear}年に亡くなったと、{careMemberDeathChan…
@@ -4606,7 +4694,7 @@
 - [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-genre-5"></a>
-### 差別・制度（157）
+### 差別・制度（158）
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
@@ -4717,6 +4805,7 @@
 - [earth_persecution_victoria_mob_arson](#event-earth_persecution_victoria_mob_arson) — 真夜中、窓ガラスが割れる甲高い音と焦げ臭い煙で跳ね起きた。通りでは排斥感情を煽られた暴徒たちが松明を掲げ、『汚れた連中を焼き出せ』と叫びながらアパー…
 - [earth_persecution_ursus_family_infection_spill](#event-earth_persecution_ursus_family_infection_spill) — 家族の誰かが鉱石病を患っているという噂が近所に漏れた途端、あなたの生活は一変した。勤め先へ行くと同僚たちが一斉に距離を置き、監督から『お前が感染源で…
 - [disc_day_reg08](#event-disc_day_reg08) — 地区の掃除当番を決める席で、老人が移り住んだ一家の苗字を見て「その家筋は昔からよそ者だ」と言った。一家の女は箒を持ったまま立っていた。
+- [life_arts_scholarship_inquiry](#event-life_arts_scholarship_inquiry) — 学院の会計窓口で、受験と入学に必要な費用の見積書を示された。机の脇には、支援制度を照会する用紙も置かれている。利用できるかは、窓口の確認後に分かる。
 - [romance_cohabitation_review](#event-romance_cohabitation_review) — 同じ部屋で暮らし始めてから、日々の食費や掃除・洗濯の分担がすっかり日常になった。ただ、部屋の契約名義や親族への紹介をどうするか、宙ぶらりんのままにな…
 - [family_sibling_infection](#event-family_sibling_infection) — 同じ家で暮らす{sibling}が鉱石病にかかっていると分かった。親族のひとりは「世間に知られたら終わりだから絶対に隠せ」と声を潜め、もうひとりは「…
 - [infection_family_disclosure_choice](#event-infection_family_disclosure_choice) — 鉱石病の診断書を、人目につかないよう鞄の底へ押し込んだ。近所では病気がバレて下宿を追い出された人もいる。これから通院を続けるのに、誰かひとりでも打ち…
@@ -4770,7 +4859,7 @@
 - [life_work_project_setback](#event-life_work_project_setback) — 納品目前になって、届いた部品の寸法が仕様書と食い違っていることが発覚した。現場には古い図面と、納期を盾に急かせる発注者の怒鳴り声だけが残された。 工…
 
 <a id="tag-genre-7"></a>
-### 所属・組織（253）
+### 所属・組織（255）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [loan_shark_siracusa](#event-loan_shark_siracusa) — シラクーザの馴染みの食堂の奥席で、ファミリーの会計役が濃い珈琲のカップを置き、折り畳んだ証文を差し出した。「いま困っているなら融通しよう。返すのは二…
 - [fam_gunrite](#event-fam_gunrite) — 教会から、守護銃の授与と訓練の知らせが届いた。家の人たちは晴れがましい顔で、あなたが一丁の銃を受け取る日を心待ちにしている。
@@ -4899,6 +4988,8 @@
 - [disc_day_org07](#event-disc_day_org07) — 互助会で薬の共同購入品が届き、皆で封を切った。感染者の老人が品目を読み上げ、若い会員が帳簿の数字を一つずつ確かめた。
 - [disc_day_org08](#event-disc_day_org08) — 互助会に、以前この地区を離れた感染者の家族から便りが届いた。病院の場所を教えてもらった礼が、小さな紙に丁寧に書かれている。
 - [soc_gap_26](#event-soc_gap_26) — 店じまいのころ、見知らぬ使いが帳場に来て「この通りで商いをするなら取り分を払え」と言った。金額も根拠も告げず、折り畳んだ紙を置いた。
+- [life_cc_hiring_bias](#event-life_cc_hiring_bias) — 名簿の選考欄に、自分の所属についての記載があった。担当者はその理由を説明していない。見た記録を示して、基準を尋ねることはできる。
+- [life_cc_organization_receipt](#event-life_cc_organization_receipt) — 届け先の担当者が、荷札と受領控えを照合した。組織の受領なら所属記録のある窓口へ、地域の受領なら地区の担当者へ確認する。
 - [family_child_future](#event-family_child_future) — 大きくなった{kid}のこれからについて、近しい仲間や家族と膝を突き合わせた。鉱山や工場の見習いに入るか、よそへ学びに出るか、それとも独立するか。最…
 - [life_ursus_student_assembly_pause_review](#event-life_ursus_student_assembly_pause_review) — あの冬のあと、学生連合の活動から距離を置いて数年が経った。街でかつての知人の噂を耳にし、無事を確かめたい思いが胸をかすめる。今の平穏な暮らしを守りつ…
 - [life_omerta_hitman_confrontation](#event-life_omerta_hitman_confrontation) — 雨の降りしきるシラクーザの路地裏で、前後の出口に見覚えのない黒塗りのコートを着た男たちが立った。冷たい銃口が向けられ、オメルタを破った裏切り者への『…
@@ -5176,7 +5267,7 @@
 - [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 
 <a id="tag-genre-9"></a>
-### 天災・避難（203）
+### 天災・避難（208）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [rim_catastrophe_transporter_review](#event-rim_catastrophe_transporter_review) — 天災が爪痕を残した坑道を調べる助手になって二年が過ぎた。崩落した岩肌や黒く光る源石の露出を図面に落とし込む隣で、同行する天災トランスポーターは絶えず…
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
@@ -5306,6 +5397,11 @@
 - [earth_discr_relief_follow](#event-earth_discr_relief_follow) — 先が見えない避難生活が続いている。今度の配給所でもよそ者だという理由で足止めされ、前に係員から聞いておいた手続きの話を持ち出した。
 - [disc_day_reg12](#event-disc_day_reg12) — 市場の長椅子で、避難してきたよそ者が座ろうとすると、古参の商人が「この土地を知らぬ者は座るな」と言った。避難民は色褪せた布包みを抱え直した。
 - [disc_day_reg17](#event-disc_day_reg17) — 避難民向けの配給場所を示す地図が、掲示板の裏側へ移されていた。商人が「避難してきた連中が増えると客が減る」と言っていた。
+- [life_cc_first_contact](#event-life_cc_first_contact) — 職場の休憩所に、近隣の復旧窓口の連絡先が置かれていた。担当者は急な応援を募る可能性があると説明したが、仕事内容や期間はまだ決まっていない。
+- [life_cc_offer_review](#event-life_cc_offer_review) — 連絡先を残した窓口から、復旧支援の短期依頼が届いた。現場、荷物、受取先、支払条件を確かめる欄がある。内容を確かめるまでは受ける必要はない。
+- [life_infra_power_loss](#event-life_infra_power_loss) — 作業台の灯りが落ち、同じ区画の機械も止まった。設備担当者は故障場所を確かめている。手元の工具を置き、作業を続けるか連絡するか決める。
+- [life_infra_water_loss](#event-life_infra_water_loss) — 朝の蛇口から水が出ず、給水所の場所を記した紙が戸口に差し込まれていた。配管の故障箇所や復旧時刻はまだ掲示されていない。
+- [life_infra_relocation_utility](#event-life_infra_relocation_utility) — 移動都市の通路が閉じ、いつもの経路が切れていた。近くの掲示は別経路を示している。家族へ知らせるか、通れるかどうかを設備担当へ確かめるか選べる。
 - [romance_followup](#event-romance_followup) — {romancePartner}とまた会おうと約束してから、仕事帰りに同じ食堂で何度もテーブルを挟んだ。ある夜は職場の愚痴を聞いて笑い合い、別の夜は…
 - [romance_daily_market_walk](#event-romance_daily_market_walk) — 移動都市の居住区画の市場で、仕事帰りに{romancePartner}と待ち合わせた。屋台から漂う香辛料の匂いに誘われて串焼きを半分ずつ分け合い、雑…
 - [family_daily_spouse_holiday_stroll](#event-family_daily_spouse_holiday_stroll) — 風の穏やかな休日に、{sp}と区画の連絡通路を抜けて展望デッキまで散歩した。通り過ぎていく荒野の地平線を並んで眺めながら、二人で歩んできた年月の長さ…
@@ -5386,7 +5482,7 @@
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
 <a id="tag-genre-11"></a>
-### 日常（426）
+### 日常（431）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
@@ -5714,6 +5810,11 @@
 - [life_hobby_budget](#event-life_hobby_budget) — 通っている音楽の稽古場の月謝が来月から上がるという。楽器ケースの留め金を閉じた瞬間、月末の家賃と食費の計算が頭をよぎった。 借りている小さな菜園の更…
 - [life_parent_visit](#event-life_parent_visit) — 故郷の親から届いた手紙に、『たまには顔を見せておくれ』とあった。高い往復の運賃を出せば、今月の支払いをひとつ我慢しなければならない。 親からの手紙に…
 - [life_neighbor_mutual_aid](#event-life_neighbor_mutual_aid) — 階段の上り下りで息を切らしていると、近所の顔なじみの{neighborName}が「買い物や水運び、ついでにやってこようか」と声をかけてくれた。袋を…
+- [life_arts_family_glimpse](#event-life_arts_family_glimpse) — 夕食の支度をしていると、湯気の向こうで器がすっと棚の端へ寄った。自分の指先には、さっき練習した力の感触が残っている。向かいの親は、まだ何も尋ねてこな…
+- [life_arts_small_use](#event-life_arts_small_use) — 食卓のランプが消え、授業で覚えた小さな術式を思い出した。足元に人がいないことを確かめ、今日は使うか別の方法にするか決められる。
+- [life_arts_tradition_lesson](#event-life_arts_tradition_lesson) — 近所の年長者は、谷の風向きを表す古い呼び名を口にした。書き方は教わっていない。言葉を聞き、土地の記憶と学院の術式を別々に受け取る時間だった。
+- [life_infra_water_loss](#event-life_infra_water_loss) — 朝の蛇口から水が出ず、給水所の場所を記した紙が戸口に差し込まれていた。配管の故障箇所や復旧時刻はまだ掲示されていない。
+- [life_culture_rural_repair](#event-life_culture_rural_repair) — 井戸の交換部品が集落へ届いた。作業台には検査表があり、近所の人たちと実際の作業人数を確認してから修理に進む。
 - [romance_marriage_choice](#event-romance_marriage_choice) — 互いの家族へ挨拶に行く日取りや、ささやかな祝いの席にいくらかかるかを指折り数えた。仕事を休める日も見計らいながら、{romancePartner}と…
 - [family_sibling_birth](#event-family_sibling_birth) — 親から、もうすぐ家に赤ん坊が生まれると聞かされた。嬉しい知らせのはずなのに、狭い部屋のどこに寝かせるか、食費やあなたの家の手伝いがどう増えるか、大人…
 - [romance_daily_cohabiting_laundry](#event-romance_daily_cohabiting_laundry) — 狭い借間の窓辺で、洗い立ての衣服を{romancePartner}と並んで物干し竿にかけた。区画の換気ダクトから流れる乾いた風に揺れる二人の服を見上…
@@ -5820,7 +5921,7 @@
 - [fam_mafia](#event-fam_mafia) — ファミリーの下働きで最初の夜を終えると、奥の部屋で年長者が革張りの帳簿をパタンと閉じた。「いいか、表で喋っていいことと、墓まで持っていくことがある」…
 
 <a id="tag-genre-13"></a>
-### 未分類（904）
+### 未分類（921）
 - [investment_exit](#event-investment_exit) — 出資先から精算の知らせが届いた。いま持分を手放せば{investmentCurrentValue}になり、出した元手を上回るという。ここで現金に替え…
 - [f1](#event-f1) — {caregiverArms}まどろむ日が続いた。ふと目を開けると、すぐそばで誰かが声を潜めて語りかけていた。 やわらかな布にくるまれて眠った。目を…
 - [f2](#event-f2) — 戸口から差し込む光の筋を、まばたきもせずに目で追った。人の影がそれを横切ると、そちらへ首をめぐらせた。 風に揺れる布の影をじっと見つめた。つかまえよ…
@@ -6655,6 +6756,23 @@
 - [soc_gap_02](#event-soc_gap_02) — 窓口で用件を伝え、名前を書こうとしたところ、係員が「その名前はどこの出身だ」と尋ねた。あなたが答えると、係員は書きかけた欄を指でなぞり直した。
 - [soc_gap_05](#event-soc_gap_05) — 作業台の奥にある留め金へ腕が届かず、手元の部品が床へ転がった。監督は次の作業へ急ぐよう促した。
 - [life_arts_unit_repair_parts](#event-life_arts_unit_repair_parts) — 保管庫から、修理に必要な交換部品が届いたという知らせがあった。受取確認が済むまでは器具に使えず、担当者は組み直しと動作確認にも日を置きたいと言う。
+- [life_arts_practical_assessment](#event-life_arts_practical_assessment) — 試験台には、習った器具と同じ型の木箱が置かれていた。出席記録と実習帳は係が確認済みだという。結果を出すには、実技を一度通して見てもらう必要がある。
+- [life_arts_workshop_invitation](#event-life_arts_workshop_invitation) — 工房の作業台には、勤務先で扱う器具の点検札が置かれていた。担当者は、まず同じ型の部品を見て、手入れを学ぶ気があるか尋ねた。通常のアーツ行使は求められ…
+- [life_arts_non_caster_craft](#event-life_arts_non_caster_craft) — 動力部のふたを外すと、留め具の位置が点検表と違っていた。工房の指導者が横で部品を押さえる。ここではアーツを使わず、工具の扱いだけを練習する。
+- [life_arts_employer_request](#event-life_arts_employer_request) — 勤務先の掲示板に、実技を見てから担当を決める作業枠が載った。求められるのは既に習った術式の実演で、資格や採用は試験の前には決まらない。
+- [life_arts_skill_retest](#event-life_arts_skill_retest) — 前の実技確認で止まった調整箇所を、工房の練習台に印した。担当者は同じ手順を急がず繰り返すよう言う。今日は再訓練にするか、別の作業を選ぶか決められる。
+- [life_arts_work_adjustment](#event-life_arts_work_adjustment) — 勤務表を前に、今の体調では同じ負荷を続けにくいと感じた。担当者は、作業の組替え、休みの申請、器具の保守訓練への移行を案内した。
+- [life_cc_forecast_survey](#event-life_cc_forecast_survey) — 観測場所には、風向きを測る器具と撤収路の案内があった。責任者は許可された範囲を示し、続けるか戻るか確認した。
+- [life_cc_suspicious_cargo](#event-life_cc_suspicious_cargo) — 受け取った依頼書では、荷主と箱の中身の欄が空いていた。窓口は先に受領印を求めているが、説明を求めることもできる。
+- [life_cc_support_equity](#event-life_cc_support_equity) — 配給表には、届く予定の食料と医薬品が地区ごとに記されていた。数の不足が残る欄を見つけ、配分を決める前に担当者へ尋ねられる。
+- [life_infra_warning_notice](#event-life_infra_warning_notice) — 地区の掲示板に、数か月先の荒天注意が載った。予報は停電や通行止めを知らせるものではない。発信元と対象期間を読むことができる。
+- [life_infra_warning_response](#event-life_infra_warning_response) — 予報を読んだあと、予定表には屋台の仕入れ日が残っていた。準備を変えるか、予報を出した窓口へ確かめるかは自分で選べる。
+- [life_infra_warning_result](#event-life_infra_warning_result) — 予報期間が過ぎ、観測所の掲示が更新された。対象の天候は地区の記録に載っている。あらかじめ聞いた予報と、今回の観測結果を見比べた。
+- [life_infra_route_block](#event-life_infra_route_block) — いつも通る連結扉に、点検中の札が掛かっていた。向こう側へは進めない。掲示には迂回路が示されているが、再開時刻はまだ書かれていない。
+- [life_infra_repair_request](#event-life_infra_repair_request) — 設備担当の窓口に、地区の故障番号と必要な交換部品が書き込まれた。修理を申し込めば部品便を手配できるが、到着と検査には時間がかかる。
+- [life_infra_repair_verification](#event-life_infra_repair_verification) — 交換部品が届き、担当者は設備を組み直す準備をしていた。電源と接続部を点検し、同じ地区の故障番号へ結果を記入する。
+- [life_info_media_claim](#event-life_info_media_claim) — 地域放送は、修理された設備について短く伝えていた。放送した人は地区全体の安全には触れていない。聞いた主張を、出所と範囲を添えて記録できる。
+- [life_info_claim_correction](#event-life_info_claim_correction) — 同じ地区の設備担当者が、故障番号と修理の完了日を掲示した。掲示にある一件の修理記録を受け取り、確認できた範囲を放送の記録へ添えられる。
 - [romance_daily_rain_shelter](#event-romance_daily_rain_shelter) — 都市の移動に伴う天候変化で、突然の冷たい通り雨に見舞われた。アーケードの軒下で{romancePartner}と身を寄せ合い、温かい茶の缶を二人で包…
 - [romance_daily_modest_gift](#event-romance_daily_modest_gift) — 街角の小間物屋で、{romancePartner}の髪や服に似合いそうなささやかな留め具を見つけて買い求めた。次に会ったときに手渡すと、相手は驚いた…
 - [romance_daily_shared_meal](#event-romance_daily_shared_meal) — 休日の昼下がり、お互いに持ち寄った食材で簡単な温かいスープを作った。味付けの濃淡を言い合いながら{romancePartner}と鍋を囲む時間は、ど…
@@ -6727,7 +6845,7 @@
 - [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
 
 <a id="tag-genre-14"></a>
-### 労働・経済（789）
+### 労働・経済（805）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -7222,6 +7340,22 @@
 - [life_parent_visit](#event-life_parent_visit) — 故郷の親から届いた手紙に、『たまには顔を見せておくれ』とあった。高い往復の運賃を出せば、今月の支払いをひとつ我慢しなければならない。 親からの手紙に…
 - [life_room_repair](#event-life_room_repair) — 部屋の歪んだ窓枠から、夜になると冷たい隙間風が吹き込む。大家に言えば面倒な押し問答になりそうだが、自分で板やパテを買って塞ぐにも金がかかる。 長雨の…
 - [life_neighbor_mutual_aid](#event-life_neighbor_mutual_aid) — 階段の上り下りで息を切らしていると、近所の顔なじみの{neighborName}が「買い物や水運び、ついでにやってこようか」と声をかけてくれた。袋を…
+- [life_arts_training_inquiry](#event-life_arts_training_inquiry) — 掲示板にアーツ課程の募集要項が貼られていた。入学時期や費用は年度で違うらしい。家の人は紙面を読み、まず近くに通える学校があるか窓口で聞いてみようと言…
+- [life_arts_course_after](#event-life_arts_course_after) — 修了の知らせを受け、机の上の教本を閉じた。証書には履修した課程が記されている。練習具の返却と、次に何を学ぶかの相談は別々に残っていた。
+- [life_arts_scholarship_inquiry](#event-life_arts_scholarship_inquiry) — 学院の会計窓口で、受験と入学に必要な費用の見積書を示された。机の脇には、支援制度を照会する用紙も置かれている。利用できるかは、窓口の確認後に分かる。
+- [life_arts_school_decision](#event-life_arts_school_decision) — 学院の窓口から、選考結果と入学条件を記した通知が届いた。募集先の授業状況、費用、通学経路をもう一度確かめてから返事をするよう書かれている。
+- [life_arts_late_fee](#event-life_arts_late_fee) — 返却期日を過ぎた貸与具について、窓口から金額の書かれた請求書が届いた。貸出票と品物の所在を照らし、支払いか相談かを決める必要がある。
+- [life_cc_first_contact](#event-life_cc_first_contact) — 職場の休憩所に、近隣の復旧窓口の連絡先が置かれていた。担当者は急な応援を募る可能性があると説明したが、仕事内容や期間はまだ決まっていない。
+- [life_cc_accept](#event-life_cc_accept) — 契約書には、期間、依頼主、届け先、報酬、途中で撤収する手順が記されていた。現場調査や設備保守には、募集条件に記された実務技能の記録も要る。条件を確か…
+- [life_cc_preparation](#event-life_cc_preparation) — 荷台には、持ち出す器具と現地に残す道具を分ける余地があった。未成年の子がいる家では、出発前に世話を引き受ける人との話し合いも要る。
+- [life_cc_departure](#event-life_cc_departure) — 予定していた出発時刻が近づいた。運賃と道具、留守宅の段取りを改めて確かめる。条件がそろえば現場へ向かえる。延期や辞退を依頼主へ伝えることもできる。
+- [life_cc_handoff](#event-life_cc_handoff) — 現場の受取担当者が、荷札の宛先と数量を読み上げた。受領印をもらう前に、依頼書の品目と目の前の荷物を照合する。
+- [life_cc_payment](#event-life_cc_payment) — 検収済みの控えと報酬の金額が一致した。支払窓口で受領を確かめるか、期日に金が届かなかったことを記録して照会へ進める。
+- [life_cc_payment_dispute](#event-life_cc_payment_dispute) — 支払期日を過ぎても、受領額は帳面に記されていない。検収票と連絡先をそろえ、金額を確認する請求を出せる。
+- [life_cc_organization_receipt](#event-life_cc_organization_receipt) — 届け先の担当者が、荷札と受領控えを照合した。組織の受領なら所属記録のある窓口へ、地域の受領なら地区の担当者へ確認する。
+- [life_cc_return](#event-life_cc_return) — 帰り道の便が残っている。現場では作業を続けることも、依頼主へ知らせて戻ることもできる。帰路の費用と行き先を確認した。
+- [life_infra_messenger_feedback](#event-life_infra_messenger_feedback) — 予報を伝える仕事の机に、前回の観測票と地区から届いた問い合わせが並んだ。説明する範囲を確かめ、窓口へ返す言葉を選ぶ。
+- [life_culture_rural_well](#event-life_culture_rural_well) — 集落の井戸の点検帳に、濁りと交換部品の不足が記されていた。近隣の人たちが費用と部品の見積りを集めている。計画に加わるか、寄付だけにするか、今回は見送…
 - [romance_followup](#event-romance_followup) — {romancePartner}とまた会おうと約束してから、仕事帰りに同じ食堂で何度もテーブルを挟んだ。ある夜は職場の愚痴を聞いて笑い合い、別の夜は…
 - [romance_future_talk](#event-romance_future_talk) — {romancePartner}とこれからの暮らしを話すたび、部屋の狭さや家賃、もしどちらかが倒れて働けなくなった時の不安が口をついて出た。それでも…
 - [romance_marriage_choice](#event-romance_marriage_choice) — 互いの家族へ挨拶に行く日取りや、ささやかな祝いの席にいくらかかるかを指折り数えた。仕事を休める日も見計らいながら、{romancePartner}と…
@@ -7520,7 +7654,7 @@
 
 ## 状況別索引
 
-[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (143)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (331)](#tag-situation-87)　・　[感染の開示・露見に言及 (53)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[季節の現物分配 (1)](#tag-situation-108)　・　[記録・説明責任 (1)](#tag-situation-109)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-110)　・　[記録と責任 (1)](#tag-situation-111)　・　[技師 (1)](#tag-situation-112)　・　[技能条件 (1)](#tag-situation-113)　・　[求職 (2)](#tag-situation-114)　・　[求職・紹介 (1)](#tag-situation-115)　・　[旧坑区の荷札照会 (1)](#tag-situation-116)　・　[競技会場の仮設席設営 (1)](#tag-situation-117)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-118)　・　[競技騎士の肩の負傷 (1)](#tag-situation-119)　・　[競技祭 (1)](#tag-situation-120)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-121)　・　[脅迫を受ける (1)](#tag-situation-122)　・　[脅迫記録の解除分岐 (1)](#tag-situation-123)　・　[極東 (1)](#tag-situation-124)　・　[極東の軍務・兵站ルート (2)](#tag-situation-125)　・　[極東の神社 (1)](#tag-situation-126)　・　[勤務縮小後 (1)](#tag-situation-127)　・　[近隣からの相談 (1)](#tag-situation-128)　・　[近隣との情報交換 (1)](#tag-situation-129)　・　[近隣の若年者との交流 (1)](#tag-situation-130)　・　[近隣互助 (1)](#tag-situation-131)　・　[軍務・護衛の継続 (1)](#tag-situation-132)　・　[契約確認 (1)](#tag-situation-133)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-134)　・　[継続／民間移行／求職 (1)](#tag-situation-135)　・　[継続後の振り返り (1)](#tag-situation-136)　・　[継続後の窓口 (1)](#tag-situation-137)　・　[警戒・質問の選択 (1)](#tag-situation-138)　・　[検査延期後の再検討 (1)](#tag-situation-139)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-140)　・　[源石片による負傷・曝露 (1)](#tag-situation-141)　・　[源石片への接触回避 (1)](#tag-situation-142)　・　[言葉の行き違い (1)](#tag-situation-143)　・　[個人情報 (1)](#tag-situation-144)　・　[古傷による職業転換 (1)](#tag-situation-145)　・　[固定集落への配達 (1)](#tag-situation-146)　・　[固定都市 (1)](#tag-situation-147)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-148)　・　[交易所の共用端末 (1)](#tag-situation-149)　・　[公証人役場 (1)](#tag-situation-150)　・　[工業区域 (1)](#tag-situation-151)　・　[工場労働者 (1)](#tag-situation-152)　・　[港湾労働 (2)](#tag-situation-153)　・　[鉱区事故 (1)](#tag-situation-154)　・　[鉱山の交替減少 (1)](#tag-situation-155)　・　[鉱山労働 (1)](#tag-situation-156)　・　[鉱石病以外の回復期 (1)](#tag-situation-157)　・　[鉱石病診断済み (1)](#tag-situation-158)　・　[鉱夫 (1)](#tag-situation-159)　・　[鉱夫分岐 (1)](#tag-situation-160)　・　[高等教育経験者の教員応募 (1)](#tag-situation-161)　・　[高齢期 (1)](#tag-situation-162)　・　[高齢期の就労 (1)](#tag-situation-163)　・　[告示の交代 (1)](#tag-situation-164)　・　[国の発生条件あり (1560)](#tag-situation-165)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-166)　・　[再受付・別の診療先の探索 (1)](#tag-situation-167)　・　[採掘坑内の換気停止 (1)](#tag-situation-168)　・　[採掘地域 (1)](#tag-situation-169)　・　[採掘地域に限定 (1)](#tag-situation-170)　・　[採掘中 (1)](#tag-situation-171)　・　[災害後の商店再開 (1)](#tag-situation-172)　・　[祭典 (1)](#tag-situation-173)　・　[作業技能 (1)](#tag-situation-174)　・　[作業停止・退避 (1)](#tag-situation-175)　・　[山道の情報共有 (1)](#tag-situation-176)　・　[山麓の宿への道案内 (1)](#tag-situation-177)　・　[仕送り (1)](#tag-situation-178)　・　[子どもの就学 (1)](#tag-situation-179)　・　[子どもの誕生・養育 (1)](#tag-situation-180)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-181)　・　[子への訃報 (1)](#tag-situation-182)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-183)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-184)　・　[思春期 (1)](#tag-situation-185)　・　[支援の受入れ (1)](#tag-situation-186)　・　[氏族養育 (1)](#tag-situation-187)　・　[資格取得後の求職 (1)](#tag-situation-188)　・　[飼育動物の世話 (1)](#tag-situation-189)　・　[次便待ち (1)](#tag-situation-190)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-191)　・　[自動発生イベント (1428)](#tag-situation-192)　・　[湿地地勢 (1)](#tag-situation-193)　・　[守秘と名簿 (1)](#tag-situation-194)　・　[種族差別 (2)](#tag-situation-195)　・　[種族差別後 (1)](#tag-situation-196)　・　[酒類の仕入れ帳 (1)](#tag-situation-197)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-198)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-199)　・　[授業担当者との接点 (1)](#tag-situation-200)　・　[収容・隔離中 (1)](#tag-situation-201)　・　[収容・隔離中の診療 (1)](#tag-situation-202)　・　[収容中 (4)](#tag-situation-203)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-204)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-205)　・　[就労中 (2)](#tag-situation-206)　・　[就労中の鉱夫 (1)](#tag-situation-207)　・　[住居差別 (1)](#tag-situation-208)　・　[住居差別後 (1)](#tag-situation-209)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-210)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-211)　・　[宿泊拒否 (1)](#tag-situation-212)　・　[宿泊拒否後 (1)](#tag-situation-213)　・　[出場・観戦・場外見物 (1)](#tag-situation-214)　・　[所持金による本文・選択肢 (1)](#tag-situation-215)　・　[小舞台 (1)](#tag-situation-216)　・　[少年・青年 (2)](#tag-situation-217)　・　[少年・青年・壮年 (3)](#tag-situation-218)　・　[消息不明者の生存確認 (1)](#tag-situation-219)　・　[症状進行中 (1)](#tag-situation-220)　・　[情報網の高い居住地 (1)](#tag-situation-221)　・　[条件付き本文 (210)](#tag-situation-222)　・　[職業課程の継続 (1)](#tag-situation-223)　・　[職業課程の修了 (1)](#tag-situation-224)　・　[職業条件あり (71)](#tag-situation-225)　・　[職場・近隣で露見の兆し (1)](#tag-situation-226)　・　[職場の排斥 (1)](#tag-situation-227)　・　[食堂の客足 (1)](#tag-situation-228)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-229)　・　[食料不足 (1)](#tag-situation-230)　・　[森林地勢 (1)](#tag-situation-231)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-232)　・　[親の家計判断 (1)](#tag-situation-233)　・　[親の感染 (1)](#tag-situation-234)　・　[親の死後 (1)](#tag-situation-235)　・　[親子の記憶 (1)](#tag-situation-236)　・　[診断済み (1)](#tag-situation-237)　・　[診断済み・未治療 (1)](#tag-situation-238)　・　[診療・休養・記録から選択 (1)](#tag-situation-239)　・　[診療・作業調整 (1)](#tag-situation-240)　・　[診療・支援・休息・緩和希望の記録 (1)](#tag-situation-241)　・　[診療・動作を避ける選択 (1)](#tag-situation-242)　・　[診療・付き添いの依頼 (1)](#tag-situation-243)　・　[診療・負担軽減から選択 (1)](#tag-situation-244)　・　[診療延期後 (1)](#tag-situation-245)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-246)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-247)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-248)　・　[身近な人への支援依頼 (1)](#tag-situation-249)　・　[身近な連絡先あり (1)](#tag-situation-250)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-251)　・　[睡眠不足 (1)](#tag-situation-252)　・　[世界イベント後 (1)](#tag-situation-253)　・　[成人 (4)](#tag-situation-254)　・　[成人・返済支援の選択 (1)](#tag-situation-255)　・　[成人した子 (2)](#tag-situation-256)　・　[成人の種族偏見に触れる (1)](#tag-situation-257)　・　[生活上の備え (1)](#tag-situation-258)　・　[青年・壮年 (5)](#tag-situation-259)　・　[青年・壮年・老年 (3)](#tag-situation-260)　・　[雪祭司・聖樹 (1)](#tag-situation-261)　・　[選択イベント (1237)](#tag-situation-262)　・　[前段で残留した人 (1)](#tag-situation-263)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-264)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-265)　・　[全年齢の重い病状 (1)](#tag-situation-266)　・　[全年齢の循環器系エピソード (1)](#tag-situation-267)　・　[全年齢の食料不足 (1)](#tag-situation-268)　・　[全年齢の負傷後の痛み (1)](#tag-situation-269)　・　[組織・所属に言及 (181)](#tag-situation-270)　・　[組織離脱後 (1)](#tag-situation-271)　・　[相談・医療・休養 (1)](#tag-situation-272)　・　[相談・記録 (1)](#tag-situation-273)　・　[相談・記録・経路変更 (1)](#tag-situation-274)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-275)　・　[足場や荷の異常 (1)](#tag-situation-276)　・　[体力0の危篤状態 (1)](#tag-situation-277)　・　[退会後の関係 (1)](#tag-situation-278)　・　[退職選択 (1)](#tag-situation-279)　・　[大いなる静謐後 (1)](#tag-situation-280)　・　[大学課程の継続 (1)](#tag-situation-281)　・　[大学課程の修了 (1)](#tag-situation-282)　・　[短期雇用 (1)](#tag-situation-283)　・　[短期雇用と現場危険 (1)](#tag-situation-284)　・　[地域の供給不安定 (1)](#tag-situation-285)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-286)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-287)　・　[地域学習会・独学の選択 (1)](#tag-situation-288)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-289)　・　[仲間の捜索 (1)](#tag-situation-290)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-291)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-292)　・　[通学していない (1)](#tag-situation-293)　・　[通学中 (1)](#tag-situation-294)　・　[通行止め・迂回 (1)](#tag-situation-295)　・　[天災・戦乱による避難中 (1)](#tag-situation-296)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-297)　・　[店舗からの排斥集会 (1)](#tag-situation-298)　・　[転居後の近隣交流 (1)](#tag-situation-299)　・　[都市街区での襲撃 (1)](#tag-situation-300)　・　[動的表示条件 (703)](#tag-situation-301)　・　[動的本文 (32)](#tag-situation-302)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-303)　・　[同一都市の周縁区への転居 (1)](#tag-situation-304)　・　[同郷者との交流 (1)](#tag-situation-305)　・　[同行者との交流 (1)](#tag-situation-306)　・　[匿名動画の出所確認 (1)](#tag-situation-307)　・　[独立商業所属 (1)](#tag-situation-308)　・　[読み書きに困難がある (1)](#tag-situation-309)　・　[日雇い (1)](#tag-situation-310)　・　[乳児の成長 (1)](#tag-situation-311)　・　[任意応募・採用選考 (1)](#tag-situation-312)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-313)　・　[年齢：35歳以上 (2)](#tag-situation-314)　・　[年齢：児童 (974)](#tag-situation-315)　・　[年齢：少年 (1210)](#tag-situation-316)　・　[年齢：青年 (2383)](#tag-situation-317)　・　[年齢：壮年 (2323)](#tag-situation-318)　・　[年齢：乳児 (20)](#tag-situation-319)　・　[年齢：幼児 (36)](#tag-situation-320)　・　[年齢：老年 (1525)](#tag-situation-321)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-322)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-323)　・　[配給・食料不足 (1)](#tag-situation-324)　・　[配給・寝床・診療案内 (1)](#tag-situation-325)　・　[配給と地域支援 (1)](#tag-situation-326)　・　[配給登録 (1)](#tag-situation-327)　・　[配偶者との死別 (1)](#tag-situation-328)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-329)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-330)　・　[班間の点検記録 (1)](#tag-situation-331)　・　[班内の技能伝達 (1)](#tag-situation-332)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-333)　・　[避難中 (1)](#tag-situation-334)　・　[非感染者 (1)](#tag-situation-335)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-336)　・　[付き添い依頼・受診延期 (1)](#tag-situation-337)　・　[付き添い相談 (1)](#tag-situation-338)　・　[扶養中の子 (2)](#tag-situation-339)　・　[扶養中の子の看病 (1)](#tag-situation-340)　・　[負傷後の職務調整 (1)](#tag-situation-341)　・　[部品寸法 (1)](#tag-situation-342)　・　[復旧作業中の負傷 (1)](#tag-situation-343)　・　[粉塵への接触懸念 (1)](#tag-situation-344)　・　[粉塵曝露 (2)](#tag-situation-345)　・　[兵士の消息不明 (1)](#tag-situation-346)　・　[兵役招集 (1)](#tag-situation-347)　・　[別居・転居 (1)](#tag-situation-348)　・　[亡命・移住 (2)](#tag-situation-349)　・　[未診断の感染者 (1)](#tag-situation-350)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-351)　・　[未成年は養育者判断 (8)](#tag-situation-352)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-353)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-354)　・　[名前を知る相手 (1)](#tag-situation-355)　・　[夜間の世話 (1)](#tag-situation-356)　・　[友人との文通再開 (1)](#tag-situation-357)　・　[友人への恋心 (1)](#tag-situation-358)　・　[傭兵・護衛勤務 (1)](#tag-situation-359)　・　[傭兵隊の護衛契約 (1)](#tag-situation-360)　・　[傭兵隊の通過 (1)](#tag-situation-361)　・　[幼い子の養育 (1)](#tag-situation-362)　・　[用事の再開・再診 (1)](#tag-situation-363)　・　[養育者の視点 (1)](#tag-situation-364)　・　[離婚後の元配偶者の死 (1)](#tag-situation-365)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-366)　・　[離婚後の子育て・連絡 (1)](#tag-situation-367)　・　[龍門 (1)](#tag-situation-368)　・　[龍門の移動都市居住区 (1)](#tag-situation-369)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-370)　・　[龍門の商業街 (1)](#tag-situation-371)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-372)　・　[隣人との死別 (1)](#tag-situation-373)　・　[隣人との伝言再開 (1)](#tag-situation-374)　・　[隣人の消息不明 (1)](#tag-situation-375)　・　[隣人の生存確認 (1)](#tag-situation-376)　・　[連絡・休息の継続 (1)](#tag-situation-377)　・　[連絡先と家の用事の相談 (1)](#tag-situation-378)　・　[労務補償 (1)](#tag-situation-379)
+[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (144)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (330)](#tag-situation-87)　・　[感染の開示・露見に言及 (53)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[季節の現物分配 (1)](#tag-situation-108)　・　[記録・説明責任 (1)](#tag-situation-109)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-110)　・　[記録と責任 (1)](#tag-situation-111)　・　[技師 (1)](#tag-situation-112)　・　[技能条件 (1)](#tag-situation-113)　・　[求職 (2)](#tag-situation-114)　・　[求職・紹介 (1)](#tag-situation-115)　・　[旧坑区の荷札照会 (1)](#tag-situation-116)　・　[競技会場の仮設席設営 (1)](#tag-situation-117)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-118)　・　[競技騎士の肩の負傷 (1)](#tag-situation-119)　・　[競技祭 (1)](#tag-situation-120)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-121)　・　[脅迫を受ける (1)](#tag-situation-122)　・　[脅迫記録の解除分岐 (1)](#tag-situation-123)　・　[極東 (1)](#tag-situation-124)　・　[極東の軍務・兵站ルート (2)](#tag-situation-125)　・　[極東の神社 (1)](#tag-situation-126)　・　[勤務縮小後 (1)](#tag-situation-127)　・　[近隣からの相談 (1)](#tag-situation-128)　・　[近隣との情報交換 (1)](#tag-situation-129)　・　[近隣の若年者との交流 (1)](#tag-situation-130)　・　[近隣互助 (1)](#tag-situation-131)　・　[軍務・護衛の継続 (1)](#tag-situation-132)　・　[契約確認 (1)](#tag-situation-133)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-134)　・　[継続／民間移行／求職 (1)](#tag-situation-135)　・　[継続後の振り返り (1)](#tag-situation-136)　・　[継続後の窓口 (1)](#tag-situation-137)　・　[警戒・質問の選択 (1)](#tag-situation-138)　・　[検査延期後の再検討 (1)](#tag-situation-139)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-140)　・　[源石片による負傷・曝露 (1)](#tag-situation-141)　・　[源石片への接触回避 (1)](#tag-situation-142)　・　[言葉の行き違い (1)](#tag-situation-143)　・　[個人情報 (1)](#tag-situation-144)　・　[古傷による職業転換 (1)](#tag-situation-145)　・　[固定集落への配達 (1)](#tag-situation-146)　・　[固定都市 (1)](#tag-situation-147)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-148)　・　[交易所の共用端末 (1)](#tag-situation-149)　・　[公証人役場 (1)](#tag-situation-150)　・　[工業区域 (1)](#tag-situation-151)　・　[工場労働者 (1)](#tag-situation-152)　・　[港湾労働 (2)](#tag-situation-153)　・　[鉱区事故 (1)](#tag-situation-154)　・　[鉱山の交替減少 (1)](#tag-situation-155)　・　[鉱山労働 (1)](#tag-situation-156)　・　[鉱石病以外の回復期 (1)](#tag-situation-157)　・　[鉱石病診断済み (1)](#tag-situation-158)　・　[鉱夫 (1)](#tag-situation-159)　・　[鉱夫分岐 (1)](#tag-situation-160)　・　[高等教育経験者の教員応募 (1)](#tag-situation-161)　・　[高齢期 (1)](#tag-situation-162)　・　[高齢期の就労 (1)](#tag-situation-163)　・　[告示の交代 (1)](#tag-situation-164)　・　[国の発生条件あり (1560)](#tag-situation-165)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-166)　・　[再受付・別の診療先の探索 (1)](#tag-situation-167)　・　[採掘坑内の換気停止 (1)](#tag-situation-168)　・　[採掘地域 (1)](#tag-situation-169)　・　[採掘地域に限定 (1)](#tag-situation-170)　・　[採掘中 (1)](#tag-situation-171)　・　[災害後の商店再開 (1)](#tag-situation-172)　・　[祭典 (1)](#tag-situation-173)　・　[作業技能 (1)](#tag-situation-174)　・　[作業停止・退避 (1)](#tag-situation-175)　・　[山道の情報共有 (1)](#tag-situation-176)　・　[山麓の宿への道案内 (1)](#tag-situation-177)　・　[仕送り (1)](#tag-situation-178)　・　[子どもの就学 (1)](#tag-situation-179)　・　[子どもの誕生・養育 (1)](#tag-situation-180)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-181)　・　[子への訃報 (1)](#tag-situation-182)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-183)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-184)　・　[思春期 (1)](#tag-situation-185)　・　[支援の受入れ (1)](#tag-situation-186)　・　[氏族養育 (1)](#tag-situation-187)　・　[資格取得後の求職 (1)](#tag-situation-188)　・　[飼育動物の世話 (1)](#tag-situation-189)　・　[次便待ち (1)](#tag-situation-190)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-191)　・　[自動発生イベント (1428)](#tag-situation-192)　・　[湿地地勢 (1)](#tag-situation-193)　・　[守秘と名簿 (1)](#tag-situation-194)　・　[種族差別 (2)](#tag-situation-195)　・　[種族差別後 (1)](#tag-situation-196)　・　[酒類の仕入れ帳 (1)](#tag-situation-197)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-198)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-199)　・　[授業担当者との接点 (1)](#tag-situation-200)　・　[収容・隔離中 (1)](#tag-situation-201)　・　[収容・隔離中の診療 (1)](#tag-situation-202)　・　[収容中 (4)](#tag-situation-203)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-204)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-205)　・　[就労中 (2)](#tag-situation-206)　・　[就労中の鉱夫 (1)](#tag-situation-207)　・　[住居差別 (1)](#tag-situation-208)　・　[住居差別後 (1)](#tag-situation-209)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-210)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-211)　・　[宿泊拒否 (1)](#tag-situation-212)　・　[宿泊拒否後 (1)](#tag-situation-213)　・　[出場・観戦・場外見物 (1)](#tag-situation-214)　・　[所持金による本文・選択肢 (1)](#tag-situation-215)　・　[小舞台 (1)](#tag-situation-216)　・　[少年・青年 (2)](#tag-situation-217)　・　[少年・青年・壮年 (3)](#tag-situation-218)　・　[消息不明者の生存確認 (1)](#tag-situation-219)　・　[症状進行中 (1)](#tag-situation-220)　・　[情報網の高い居住地 (1)](#tag-situation-221)　・　[条件付き本文 (209)](#tag-situation-222)　・　[職業課程の継続 (1)](#tag-situation-223)　・　[職業課程の修了 (1)](#tag-situation-224)　・　[職業条件あり (71)](#tag-situation-225)　・　[職場・近隣で露見の兆し (1)](#tag-situation-226)　・　[職場の排斥 (1)](#tag-situation-227)　・　[食堂の客足 (1)](#tag-situation-228)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-229)　・　[食料不足 (1)](#tag-situation-230)　・　[森林地勢 (1)](#tag-situation-231)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-232)　・　[親の家計判断 (1)](#tag-situation-233)　・　[親の感染 (1)](#tag-situation-234)　・　[親の死後 (1)](#tag-situation-235)　・　[親子の記憶 (1)](#tag-situation-236)　・　[診断済み (1)](#tag-situation-237)　・　[診断済み・未治療 (1)](#tag-situation-238)　・　[診療・休養・記録から選択 (1)](#tag-situation-239)　・　[診療・作業調整 (1)](#tag-situation-240)　・　[診療・支援・休息・緩和希望の記録 (1)](#tag-situation-241)　・　[診療・動作を避ける選択 (1)](#tag-situation-242)　・　[診療・付き添いの依頼 (1)](#tag-situation-243)　・　[診療・負担軽減から選択 (1)](#tag-situation-244)　・　[診療延期後 (1)](#tag-situation-245)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-246)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-247)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-248)　・　[身近な人への支援依頼 (1)](#tag-situation-249)　・　[身近な連絡先あり (1)](#tag-situation-250)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-251)　・　[睡眠不足 (1)](#tag-situation-252)　・　[世界イベント後 (1)](#tag-situation-253)　・　[成人 (4)](#tag-situation-254)　・　[成人・返済支援の選択 (1)](#tag-situation-255)　・　[成人した子 (2)](#tag-situation-256)　・　[成人の種族偏見に触れる (1)](#tag-situation-257)　・　[生活上の備え (1)](#tag-situation-258)　・　[青年・壮年 (5)](#tag-situation-259)　・　[青年・壮年・老年 (3)](#tag-situation-260)　・　[雪祭司・聖樹 (1)](#tag-situation-261)　・　[選択イベント (1296)](#tag-situation-262)　・　[前段で残留した人 (1)](#tag-situation-263)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-264)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-265)　・　[全年齢の重い病状 (1)](#tag-situation-266)　・　[全年齢の循環器系エピソード (1)](#tag-situation-267)　・　[全年齢の食料不足 (1)](#tag-situation-268)　・　[全年齢の負傷後の痛み (1)](#tag-situation-269)　・　[組織・所属に言及 (181)](#tag-situation-270)　・　[組織離脱後 (1)](#tag-situation-271)　・　[相談・医療・休養 (1)](#tag-situation-272)　・　[相談・記録 (1)](#tag-situation-273)　・　[相談・記録・経路変更 (1)](#tag-situation-274)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-275)　・　[足場や荷の異常 (1)](#tag-situation-276)　・　[体力0の危篤状態 (1)](#tag-situation-277)　・　[退会後の関係 (1)](#tag-situation-278)　・　[退職選択 (1)](#tag-situation-279)　・　[大いなる静謐後 (1)](#tag-situation-280)　・　[大学課程の継続 (1)](#tag-situation-281)　・　[大学課程の修了 (1)](#tag-situation-282)　・　[短期雇用 (1)](#tag-situation-283)　・　[短期雇用と現場危険 (1)](#tag-situation-284)　・　[地域の供給不安定 (1)](#tag-situation-285)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-286)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-287)　・　[地域学習会・独学の選択 (1)](#tag-situation-288)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-289)　・　[仲間の捜索 (1)](#tag-situation-290)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-291)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-292)　・　[通学していない (1)](#tag-situation-293)　・　[通学中 (1)](#tag-situation-294)　・　[通行止め・迂回 (1)](#tag-situation-295)　・　[天災・戦乱による避難中 (1)](#tag-situation-296)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-297)　・　[店舗からの排斥集会 (1)](#tag-situation-298)　・　[転居後の近隣交流 (1)](#tag-situation-299)　・　[都市街区での襲撃 (1)](#tag-situation-300)　・　[動的表示条件 (763)](#tag-situation-301)　・　[動的本文 (32)](#tag-situation-302)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-303)　・　[同一都市の周縁区への転居 (1)](#tag-situation-304)　・　[同郷者との交流 (1)](#tag-situation-305)　・　[同行者との交流 (1)](#tag-situation-306)　・　[匿名動画の出所確認 (1)](#tag-situation-307)　・　[独立商業所属 (1)](#tag-situation-308)　・　[読み書きに困難がある (1)](#tag-situation-309)　・　[日雇い (1)](#tag-situation-310)　・　[乳児の成長 (1)](#tag-situation-311)　・　[任意応募・採用選考 (1)](#tag-situation-312)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-313)　・　[年齢：35歳以上 (2)](#tag-situation-314)　・　[年齢：児童 (974)](#tag-situation-315)　・　[年齢：少年 (1209)](#tag-situation-316)　・　[年齢：青年 (2382)](#tag-situation-317)　・　[年齢：壮年 (2323)](#tag-situation-318)　・　[年齢：乳児 (20)](#tag-situation-319)　・　[年齢：幼児 (36)](#tag-situation-320)　・　[年齢：老年 (1525)](#tag-situation-321)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-322)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-323)　・　[配給・食料不足 (1)](#tag-situation-324)　・　[配給・寝床・診療案内 (1)](#tag-situation-325)　・　[配給と地域支援 (1)](#tag-situation-326)　・　[配給登録 (1)](#tag-situation-327)　・　[配偶者との死別 (1)](#tag-situation-328)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-329)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-330)　・　[班間の点検記録 (1)](#tag-situation-331)　・　[班内の技能伝達 (1)](#tag-situation-332)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-333)　・　[避難中 (1)](#tag-situation-334)　・　[非感染者 (1)](#tag-situation-335)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-336)　・　[付き添い依頼・受診延期 (1)](#tag-situation-337)　・　[付き添い相談 (1)](#tag-situation-338)　・　[扶養中の子 (2)](#tag-situation-339)　・　[扶養中の子の看病 (1)](#tag-situation-340)　・　[負傷後の職務調整 (1)](#tag-situation-341)　・　[部品寸法 (1)](#tag-situation-342)　・　[復旧作業中の負傷 (1)](#tag-situation-343)　・　[粉塵への接触懸念 (1)](#tag-situation-344)　・　[粉塵曝露 (2)](#tag-situation-345)　・　[兵士の消息不明 (1)](#tag-situation-346)　・　[兵役招集 (1)](#tag-situation-347)　・　[別居・転居 (1)](#tag-situation-348)　・　[亡命・移住 (2)](#tag-situation-349)　・　[未診断の感染者 (1)](#tag-situation-350)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-351)　・　[未成年は養育者判断 (8)](#tag-situation-352)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-353)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-354)　・　[名前を知る相手 (1)](#tag-situation-355)　・　[夜間の世話 (1)](#tag-situation-356)　・　[友人との文通再開 (1)](#tag-situation-357)　・　[友人への恋心 (1)](#tag-situation-358)　・　[傭兵・護衛勤務 (1)](#tag-situation-359)　・　[傭兵隊の護衛契約 (1)](#tag-situation-360)　・　[傭兵隊の通過 (1)](#tag-situation-361)　・　[幼い子の養育 (1)](#tag-situation-362)　・　[用事の再開・再診 (1)](#tag-situation-363)　・　[養育者の視点 (1)](#tag-situation-364)　・　[離婚後の元配偶者の死 (1)](#tag-situation-365)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-366)　・　[離婚後の子育て・連絡 (1)](#tag-situation-367)　・　[龍門 (1)](#tag-situation-368)　・　[龍門の移動都市居住区 (1)](#tag-situation-369)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-370)　・　[龍門の商業街 (1)](#tag-situation-371)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-372)　・　[隣人との死別 (1)](#tag-situation-373)　・　[隣人との伝言再開 (1)](#tag-situation-374)　・　[隣人の消息不明 (1)](#tag-situation-375)　・　[隣人の生存確認 (1)](#tag-situation-376)　・　[連絡・休息の継続 (1)](#tag-situation-377)　・　[連絡先と家の用事の相談 (1)](#tag-situation-378)　・　[労務補償 (1)](#tag-situation-379)
 
 <a id="tag-situation-0"></a>
 ### 1072年以降は戦役後の導入文（1）
@@ -7747,7 +7881,7 @@
 - [siesta_shop_reopens_after_move](#event-siesta_shop_reopens_after_move) — 移動都市へと姿を変えた新しいシエスタで、勤め先の店をようやく再開した。まだ人通りのまばらな通りに面して木の案内札を立て、届いたばかりの商品を一品ずつ…
 
 <a id="tag-situation-55"></a>
-### 移動都市・避難に言及（143）
+### 移動都市・避難に言及（144）
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
 - [lov](#event-lov) — 仕事帰りにたびたび顔を合わせる人と、雨宿りの軒先で立ち話をした。もっと話していたい気持ちはあったが、今月の支払いに追われる暮らしを思うと、次の一歩を…
 - [nat](#event-nat) — （動的本文）
@@ -7841,6 +7975,7 @@
 - [earth_discr_relief_follow](#event-earth_discr_relief_follow) — 先が見えない避難生活が続いている。今度の配給所でもよそ者だという理由で足止めされ、前に係員から聞いておいた手続きの話を持ち出した。
 - [disc_day_reg12](#event-disc_day_reg12) — 市場の長椅子で、避難してきたよそ者が座ろうとすると、古参の商人が「この土地を知らぬ者は座るな」と言った。避難民は色褪せた布包みを抱え直した。
 - [disc_day_reg17](#event-disc_day_reg17) — 避難民向けの配給場所を示す地図が、掲示板の裏側へ移されていた。商人が「避難してきた連中が増えると客が減る」と言っていた。
+- [life_infra_relocation_utility](#event-life_infra_relocation_utility) — 移動都市の通路が閉じ、いつもの経路が切れていた。近くの掲示は別経路を示している。家族へ知らせるか、通れるかどうかを設備担当へ確かめるか選べる。
 - [romance_followup](#event-romance_followup) — {romancePartner}とまた会おうと約束してから、仕事帰りに同じ食堂で何度もテーブルを挟んだ。ある夜は職場の愚痴を聞いて笑い合い、別の夜は…
 - [romance_daily_market_walk](#event-romance_daily_market_walk) — 移動都市の居住区画の市場で、仕事帰りに{romancePartner}と待ち合わせた。屋台から漂う香辛料の匂いに誘われて串焼きを半分ずつ分け合い、雑…
 - [family_daily_spouse_holiday_stroll](#event-family_daily_spouse_holiday_stroll) — 風の穏やかな休日に、{sp}と区画の連絡通路を抜けて展望デッキまで散歩した。通り過ぎていく荒野の地平線を並んで眺めながら、二人で歩んできた年月の長さ…
@@ -8020,7 +8155,7 @@
 - [voc_fee](#event-voc_fee) — 専門課程の次年度登録が近づいてきた。授業料と日々の食い扶持に加え、実習の日に仕事を休めるかどうかが悩みの種だった。
 
 <a id="tag-situation-87"></a>
-### 感染・鉱石病に言及（331）
+### 感染・鉱石病に言及（330）
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_model](#event-bias_family_model) — 夕餉の席で、親の一人が近所に越してきた感染者の一家について話した。『ああいう家とは付き合うな。厄介事を持ち込まれる』。煮物を取り分ける手は止まらず、…
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
@@ -8030,7 +8165,6 @@
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [ursus_mine_assignment_offer](#event-ursus_mine_assignment_offer) — 採掘現場で働いていると、鉱区の監督官に呼び出された。鉱石病の診断記録を理由に、北方の鉱区へ移れという。拒めばどうなるかは口にされないまま、冷たい机の…
-- [arts_awake](#event-arts_awake) — アーツの筋が良いと見込まれ、本格的に鍛えてみないかと声がかかった。ただ、無理に力を使って鉱石病が悪化した人の話を思い出し、訓練場の敷居の前で足が止ま…
 - [dst](#event-dst) — いつも一緒に働いていた同僚が鉱石病だと知れ渡った。首筋や手首の結晶が隠せなくなり、昼休みの食堂では、何人かが露骨にその人の席を避けるようになった。
 - [dg](#event-dg) — 収容先の薄暗い診察室で、肌に浮いた結晶は鉱石病だと告げられた。外の病院へは行けない。ここで抑制薬を出してもらえるのか、医師の顔を見つめた。 隔離区画…
 - [dis](#event-dis) — 現場の監督から、あなたの種族を理由に条件の悪い持ち場へ移るよう言い渡された。「上の決まりだ」の一点張りで、どんな規則なのか尋ねても取り合わなかった。…
@@ -11940,7 +12074,7 @@
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
 
 <a id="tag-situation-222"></a>
-### 条件付き本文（210）
+### 条件付き本文（209）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -11950,7 +12084,6 @@
 - [col_tech_safety_aftermath](#event-col_tech_safety_aftermath) — あの試作試験から二年が過ぎた。訂正印が押された点検表は今もロッカーの奥に眠っているが、現場ではまたしても安全手順を省くよう急かす声が飛び交い始めた。…
 - [col_tech_internal_review](#event-col_tech_internal_review) — 検査証のない交換部品を特例で通した件について、監査室の聞き取りに呼ばれた。冷たい蛍光灯の下で、調査員は署名欄を指差し、誰の指示で受け入れたのかと問い…
 - [col_tech_workplace_consequence](#event-col_tech_workplace_consequence) — 監査の一件から三年が経ち、部品受入れの決裁権は上の部署へ吸い上げられた。現場の点検と引き継ぎだけを守る日々が続く中、上司から今後の持ち場について声を…
-- [arts_awake](#event-arts_awake) — アーツの筋が良いと見込まれ、本格的に鍛えてみないかと声がかかった。ただ、無理に力を使って鉱石病が悪化した人の話を思い出し、訓練場の敷居の前で足が止ま…
 - [dg](#event-dg) — 収容先の薄暗い診察室で、肌に浮いた結晶は鉱石病だと告げられた。外の病院へは行けない。ここで抑制薬を出してもらえるのか、医師の顔を見つめた。 隔離区画…
 - [lov](#event-lov) — 仕事帰りにたびたび顔を合わせる人と、雨宿りの軒先で立ち話をした。もっと話していたい気持ちはあったが、今月の支払いに追われる暮らしを思うと、次の一歩を…
 - [ill](#event-ill) — 家計逼迫 急な高熱で布団から起き上がれなくなった。医者にかかる金も惜しいが、今日休めば日当が消えることの方が恐ろしかった。 幾日も熱が下がらず、とう…
@@ -12389,7 +12522,7 @@
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 
 <a id="tag-situation-262"></a>
-### 選択イベント（1237）
+### 選択イベント（1296）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -12427,7 +12560,6 @@
 - [col_tech_after_departure](#event-col_tech_after_departure) — クルビアの研究企業を離れてから数年が過ぎた。今の仕事場で工具を握ると、試作装置の前で計器の針を睨んでいたころの手つきが自然と蘇る。機械を動かす前にも…
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
 - [work_elder_reentry](#event-work_elder_reentry) — 仕事を退いてから時間が経ったが、じっとしているのも性に合わず、路銀の減りも気になってきた。年老いた体でも引き受けられるささやかな仕事がないか、近所の…
-- [arts_awake](#event-arts_awake) — アーツの筋が良いと見込まれ、本格的に鍛えてみないかと声がかかった。ただ、無理に力を使って鉱石病が悪化した人の話を思い出し、訓練場の敷居の前で足が止ま…
 - [dst](#event-dst) — いつも一緒に働いていた同僚が鉱石病だと知れ渡った。首筋や手首の結晶が隠せなくなり、昼休みの食堂では、何人かが露骨にその人の席を避けるようになった。
 - [dg](#event-dg) — 収容先の薄暗い診察室で、肌に浮いた結晶は鉱石病だと告げられた。外の病院へは行けない。ここで抑制薬を出してもらえるのか、医師の顔を見つめた。 隔離区画…
 - [lov](#event-lov) — 仕事帰りにたびたび顔を合わせる人と、雨宿りの軒先で立ち話をした。もっと話していたい気持ちはあったが、今月の支払いに追われる暮らしを思うと、次の一歩を…
@@ -13082,6 +13214,66 @@
 - [life_arts_unit_repair](#event-life_arts_unit_repair) — 点検担当者は、接続部の焼け跡を見て使用を止めた。授業で使う予備器具は今すぐには出せないという。修理票には部品の型番と、預かり先を書く欄がある。
 - [life_arts_unit_repair_parts](#event-life_arts_unit_repair_parts) — 保管庫から、修理に必要な交換部品が届いたという知らせがあった。受取確認が済むまでは器具に使えず、担当者は組み直しと動作確認にも日を置きたいと言う。
 - [life_arts_unit_repair_complete](#event-life_arts_unit_repair_complete) — 担当者から、器具の接続部を組み直したと連絡があった。受け渡しの前に、修理票と照らしながら状態を確かめる必要があるという。
+- [life_arts_family_glimpse](#event-life_arts_family_glimpse) — 夕食の支度をしていると、湯気の向こうで器がすっと棚の端へ寄った。自分の指先には、さっき練習した力の感触が残っている。向かいの親は、まだ何も尋ねてこな…
+- [life_arts_training_inquiry](#event-life_arts_training_inquiry) — 掲示板にアーツ課程の募集要項が貼られていた。入学時期や費用は年度で違うらしい。家の人は紙面を読み、まず近くに通える学校があるか窓口で聞いてみようと言…
+- [life_arts_practical_assessment](#event-life_arts_practical_assessment) — 試験台には、習った器具と同じ型の木箱が置かれていた。出席記録と実習帳は係が確認済みだという。結果を出すには、実技を一度通して見てもらう必要がある。
+- [life_arts_course_after](#event-life_arts_course_after) — 修了の知らせを受け、机の上の教本を閉じた。証書には履修した課程が記されている。練習具の返却と、次に何を学ぶかの相談は別々に残っていた。
+- [life_arts_scholarship_inquiry](#event-life_arts_scholarship_inquiry) — 学院の会計窓口で、受験と入学に必要な費用の見積書を示された。机の脇には、支援制度を照会する用紙も置かれている。利用できるかは、窓口の確認後に分かる。
+- [life_arts_school_decision](#event-life_arts_school_decision) — 学院の窓口から、選考結果と入学条件を記した通知が届いた。募集先の授業状況、費用、通学経路をもう一度確かめてから返事をするよう書かれている。
+- [life_arts_workshop_invitation](#event-life_arts_workshop_invitation) — 工房の作業台には、勤務先で扱う器具の点検札が置かれていた。担当者は、まず同じ型の部品を見て、手入れを学ぶ気があるか尋ねた。通常のアーツ行使は求められ…
+- [life_arts_late_fee](#event-life_arts_late_fee) — 返却期日を過ぎた貸与具について、窓口から金額の書かれた請求書が届いた。貸出票と品物の所在を照らし、支払いか相談かを決める必要がある。
+- [life_arts_small_use](#event-life_arts_small_use) — 食卓のランプが消え、授業で覚えた小さな術式を思い出した。足元に人がいないことを確かめ、今日は使うか別の方法にするか決められる。
+- [life_arts_non_caster_craft](#event-life_arts_non_caster_craft) — 動力部のふたを外すと、留め具の位置が点検表と違っていた。工房の指導者が横で部品を押さえる。ここではアーツを使わず、工具の扱いだけを練習する。
+- [life_arts_employer_request](#event-life_arts_employer_request) — 勤務先の掲示板に、実技を見てから担当を決める作業枠が載った。求められるのは既に習った術式の実演で、資格や採用は試験の前には決まらない。
+- [life_arts_skill_retest](#event-life_arts_skill_retest) — 前の実技確認で止まった調整箇所を、工房の練習台に印した。担当者は同じ手順を急がず繰り返すよう言う。今日は再訓練にするか、別の作業を選ぶか決められる。
+- [life_arts_medical_observation](#event-life_arts_medical_observation) — 診療所の担当者が、同意を得た診察のあとで補助具の扱いを説明した。見学できるのは器具と手順だけで、患者の記録や治療判断には触れない。
+- [life_arts_medical_training](#event-life_arts_medical_training) — 診療所の訓練担当者が、器具の受け渡しと記録補助を教える枠を説明した。訓練は監督者のいる時間だけで、診療や研究への参加とは別に扱われる。
+- [life_arts_overexertion](#event-life_arts_overexertion) — 器具を握る手に震えが残り、呼吸も整わない。指導者は高負荷の術式を続けるか、途中で止めるか尋ねた。体調の変化を理由に休む選択もある。
+- [life_arts_after_overexertion](#event-life_arts_after_overexertion) — 前回の訓練から数日が過ぎても、指先のこわばりが気になった。診療所では、訓練記録と今の状態を見ながら、休息や次回の負荷を相談できる。
+- [life_arts_work_adjustment](#event-life_arts_work_adjustment) — 勤務表を前に、今の体調では同じ負荷を続けにくいと感じた。担当者は、作業の組替え、休みの申請、器具の保守訓練への移行を案内した。
+- [life_arts_mentor_later](#event-life_arts_mentor_later) — 年下の子が作業台の端から手元を見ていた。教える資格の話ではなく、道具を置く順や危ない箇所を一緒に確かめるだけでもよい。
+- [life_arts_tradition_lesson](#event-life_arts_tradition_lesson) — 近所の年長者は、谷の風向きを表す古い呼び名を口にした。書き方は教わっていない。言葉を聞き、土地の記憶と学院の術式を別々に受け取る時間だった。
+- [life_cc_first_contact](#event-life_cc_first_contact) — 職場の休憩所に、近隣の復旧窓口の連絡先が置かれていた。担当者は急な応援を募る可能性があると説明したが、仕事内容や期間はまだ決まっていない。
+- [life_cc_offer_review](#event-life_cc_offer_review) — 連絡先を残した窓口から、復旧支援の短期依頼が届いた。現場、荷物、受取先、支払条件を確かめる欄がある。内容を確かめるまでは受ける必要はない。
+- [life_cc_accept](#event-life_cc_accept) — 契約書には、期間、依頼主、届け先、報酬、途中で撤収する手順が記されていた。現場調査や設備保守には、募集条件に記された実務技能の記録も要る。条件を確か…
+- [life_cc_preparation](#event-life_cc_preparation) — 荷台には、持ち出す器具と現地に残す道具を分ける余地があった。未成年の子がいる家では、出発前に世話を引き受ける人との話し合いも要る。
+- [life_cc_departure](#event-life_cc_departure) — 予定していた出発時刻が近づいた。運賃と道具、留守宅の段取りを改めて確かめる。条件がそろえば現場へ向かえる。延期や辞退を依頼主へ伝えることもできる。
+- [life_cc_handoff](#event-life_cc_handoff) — 現場の受取担当者が、荷札の宛先と数量を読み上げた。受領印をもらう前に、依頼書の品目と目の前の荷物を照合する。
+- [life_cc_forecast_survey](#event-life_cc_forecast_survey) — 観測場所には、風向きを測る器具と撤収路の案内があった。責任者は許可された範囲を示し、続けるか戻るか確認した。
+- [life_cc_suspicious_cargo](#event-life_cc_suspicious_cargo) — 受け取った依頼書では、荷主と箱の中身の欄が空いていた。窓口は先に受領印を求めているが、説明を求めることもできる。
+- [life_cc_support_equity](#event-life_cc_support_equity) — 配給表には、届く予定の食料と医薬品が地区ごとに記されていた。数の不足が残る欄を見つけ、配分を決める前に担当者へ尋ねられる。
+- [life_cc_hiring_bias](#event-life_cc_hiring_bias) — 名簿の選考欄に、自分の所属についての記載があった。担当者はその理由を説明していない。見た記録を示して、基準を尋ねることはできる。
+- [life_cc_payment](#event-life_cc_payment) — 検収済みの控えと報酬の金額が一致した。支払窓口で受領を確かめるか、期日に金が届かなかったことを記録して照会へ進める。
+- [life_cc_payment_dispute](#event-life_cc_payment_dispute) — 支払期日を過ぎても、受領額は帳面に記されていない。検収票と連絡先をそろえ、金額を確認する請求を出せる。
+- [life_cc_organization_receipt](#event-life_cc_organization_receipt) — 届け先の担当者が、荷札と受領控えを照合した。組織の受領なら所属記録のある窓口へ、地域の受領なら地区の担当者へ確認する。
+- [life_cc_family_notice](#event-life_cc_family_notice) — 出発後、家の人へ伝える連絡先と便の予定を確認した。手紙を出しても、届いたことや受け手の気持ちは後で確かめる必要がある。
+- [life_cc_return](#event-life_cc_return) — 帰り道の便が残っている。現場では作業を続けることも、依頼主へ知らせて戻ることもできる。帰路の費用と行き先を確認した。
+- [life_infra_warning_notice](#event-life_infra_warning_notice) — 地区の掲示板に、数か月先の荒天注意が載った。予報は停電や通行止めを知らせるものではない。発信元と対象期間を読むことができる。
+- [life_infra_warning_response](#event-life_infra_warning_response) — 予報を読んだあと、予定表には屋台の仕入れ日が残っていた。準備を変えるか、予報を出した窓口へ確かめるかは自分で選べる。
+- [life_infra_warning_result](#event-life_infra_warning_result) — 予報期間が過ぎ、観測所の掲示が更新された。対象の天候は地区の記録に載っている。あらかじめ聞いた予報と、今回の観測結果を見比べた。
+- [life_infra_messenger_feedback](#event-life_infra_messenger_feedback) — 予報を伝える仕事の机に、前回の観測票と地区から届いた問い合わせが並んだ。説明する範囲を確かめ、窓口へ返す言葉を選ぶ。
+- [life_infra_power_loss](#event-life_infra_power_loss) — 作業台の灯りが落ち、同じ区画の機械も止まった。設備担当者は故障場所を確かめている。手元の工具を置き、作業を続けるか連絡するか決める。
+- [life_infra_water_loss](#event-life_infra_water_loss) — 朝の蛇口から水が出ず、給水所の場所を記した紙が戸口に差し込まれていた。配管の故障箇所や復旧時刻はまだ掲示されていない。
+- [life_infra_route_block](#event-life_infra_route_block) — いつも通る連結扉に、点検中の札が掛かっていた。向こう側へは進めない。掲示には迂回路が示されているが、再開時刻はまだ書かれていない。
+- [life_infra_repair_request](#event-life_infra_repair_request) — 設備担当の窓口に、地区の故障番号と必要な交換部品が書き込まれた。修理を申し込めば部品便を手配できるが、到着と検査には時間がかかる。
+- [life_infra_repair_verification](#event-life_infra_repair_verification) — 交換部品が届き、担当者は設備を組み直す準備をしていた。電源と接続部を点検し、同じ地区の故障番号へ結果を記入する。
+- [life_infra_relocation_utility](#event-life_infra_relocation_utility) — 移動都市の通路が閉じ、いつもの経路が切れていた。近くの掲示は別経路を示している。家族へ知らせるか、通れるかどうかを設備担当へ確かめるか選べる。
+- [life_ship_custody](#event-life_ship_custody) — 倉庫の台帳に、宛先の地区へ到着した荷物が載っていた。荷札には差出人と担当者の名がある。自分が持ち出す前に、保管の引継ぎを確認する。
+- [life_ship_recipient_check](#event-life_ship_recipient_check) — 荷物の宛先欄は古い住所のままだった。差出人の控えには、転居後の連絡先が書かれていない。今ここで受取人を確認するか、差出人へ返すかを選べる。
+- [life_ship_return](#event-life_ship_return) — 返送受付の控えと、荷物の荷札を並べた。帰り便に載せる前に差出人と宛先をもう一度照合できる。
+- [life_ship_medicine_delay](#event-life_ship_medicine_delay) — 診療所から、処方薬の便が通行障害で遅れていると連絡があった。薬の変更はここでは決められない。受診予定を調整し、担当者に状況を尋ねられる。
+- [life_ship_medicine_received](#event-life_ship_medicine_received) — 診療所の受取台に、処方薬の箱が届いた。受付係は荷札と保管場所を照合してから、在庫帳に数量を記す。
+- [life_info_media_claim](#event-life_info_media_claim) — 地域放送は、修理された設備について短く伝えていた。放送した人は地区全体の安全には触れていない。聞いた主張を、出所と範囲を添えて記録できる。
+- [life_info_claim_correction](#event-life_info_claim_correction) — 同じ地区の設備担当者が、故障番号と修理の完了日を掲示した。掲示にある一件の修理記録を受け取り、確認できた範囲を放送の記録へ添えられる。
+- [life_info_letter_delay](#event-life_info_letter_delay) — 返事が来ないまま、家族への便りを出してから一か月が過ぎた。配送記録では現在の宛先を確かめられない。未着の事実と、相手が返事をしないことは分けて扱う。
+- [life_info_letter_resolution](#event-life_info_letter_resolution) — 配達所から、受取人の転居記録と新しい住所が示された。宛先を変えるには、その住所が今も使われているか本人の記録を照合する。
+- [life_culture_music_arts](#event-life_culture_music_arts) — 小さな舞台に、弦の音とアーツ器具の点検音が交互に響いた。演奏の稽古と術式の学習は別の記録だ。今日は曲を弾くか、器具の扱いを尋ねるか決められる。
+- [life_culture_festival_shortjob](#event-life_culture_festival_shortjob) — 祭りの会場で、机や灯りを運ぶ短い手伝いが募集されていた。作業日は限られ、設営に加わるか断るかは自分で決められる。
+- [life_culture_rural_well](#event-life_culture_rural_well) — 集落の井戸の点検帳に、濁りと交換部品の不足が記されていた。近隣の人たちが費用と部品の見積りを集めている。計画に加わるか、寄付だけにするか、今回は見送…
+- [life_culture_rural_repair](#event-life_culture_rural_repair) — 井戸の交換部品が集落へ届いた。作業台には検査表があり、近所の人たちと実際の作業人数を確認してから修理に進む。
+- [life_research_consent](#event-life_research_consent) — 診療所の研究担当者が、観察の目的、診療と研究の違い、途中で断れることを説明する。ここでは説明を聞いた記録だけを残し、参加の同意は別に本人が決める。
+- [life_research_procedure](#event-life_research_procedure) — 担当者は観察の目的と手順をもう一度示し、診療への影響がないことを説明した。説明を聞いた記録と参加への同意は別で、本人は始める前に断ることもできる。
+- [life_research_followup](#event-life_research_followup) — 観察後の確認日が来た。診療所はその日の体調と記録を尋ねている。治療変更や補償の約束はなく、必要なら別に診療を申し込める。
 - [romance_followup](#event-romance_followup) — {romancePartner}とまた会おうと約束してから、仕事帰りに同じ食堂で何度もテーブルを挟んだ。ある夜は職場の愚痴を聞いて笑い合い、別の夜は…
 - [romance_future_talk](#event-romance_future_talk) — {romancePartner}とこれからの暮らしを話すたび、部屋の狭さや家賃、もしどちらかが倒れて働けなくなった時の不安が口をついて出た。それでも…
 - [romance_marriage_choice](#event-romance_marriage_choice) — 互いの家族へ挨拶に行く日取りや、ささやかな祝いの席にいくらかかるかを指折り数えた。仕事を休める日も見計らいながら、{romancePartner}と…
@@ -13962,7 +14154,7 @@
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
 <a id="tag-situation-301"></a>
-### 動的表示条件（703）
+### 動的表示条件（763）
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
@@ -14171,6 +14363,66 @@
 - [life_arts_unit_repair](#event-life_arts_unit_repair) — 点検担当者は、接続部の焼け跡を見て使用を止めた。授業で使う予備器具は今すぐには出せないという。修理票には部品の型番と、預かり先を書く欄がある。
 - [life_arts_unit_repair_parts](#event-life_arts_unit_repair_parts) — 保管庫から、修理に必要な交換部品が届いたという知らせがあった。受取確認が済むまでは器具に使えず、担当者は組み直しと動作確認にも日を置きたいと言う。
 - [life_arts_unit_repair_complete](#event-life_arts_unit_repair_complete) — 担当者から、器具の接続部を組み直したと連絡があった。受け渡しの前に、修理票と照らしながら状態を確かめる必要があるという。
+- [life_arts_family_glimpse](#event-life_arts_family_glimpse) — 夕食の支度をしていると、湯気の向こうで器がすっと棚の端へ寄った。自分の指先には、さっき練習した力の感触が残っている。向かいの親は、まだ何も尋ねてこな…
+- [life_arts_training_inquiry](#event-life_arts_training_inquiry) — 掲示板にアーツ課程の募集要項が貼られていた。入学時期や費用は年度で違うらしい。家の人は紙面を読み、まず近くに通える学校があるか窓口で聞いてみようと言…
+- [life_arts_practical_assessment](#event-life_arts_practical_assessment) — 試験台には、習った器具と同じ型の木箱が置かれていた。出席記録と実習帳は係が確認済みだという。結果を出すには、実技を一度通して見てもらう必要がある。
+- [life_arts_course_after](#event-life_arts_course_after) — 修了の知らせを受け、机の上の教本を閉じた。証書には履修した課程が記されている。練習具の返却と、次に何を学ぶかの相談は別々に残っていた。
+- [life_arts_scholarship_inquiry](#event-life_arts_scholarship_inquiry) — 学院の会計窓口で、受験と入学に必要な費用の見積書を示された。机の脇には、支援制度を照会する用紙も置かれている。利用できるかは、窓口の確認後に分かる。
+- [life_arts_school_decision](#event-life_arts_school_decision) — 学院の窓口から、選考結果と入学条件を記した通知が届いた。募集先の授業状況、費用、通学経路をもう一度確かめてから返事をするよう書かれている。
+- [life_arts_workshop_invitation](#event-life_arts_workshop_invitation) — 工房の作業台には、勤務先で扱う器具の点検札が置かれていた。担当者は、まず同じ型の部品を見て、手入れを学ぶ気があるか尋ねた。通常のアーツ行使は求められ…
+- [life_arts_late_fee](#event-life_arts_late_fee) — 返却期日を過ぎた貸与具について、窓口から金額の書かれた請求書が届いた。貸出票と品物の所在を照らし、支払いか相談かを決める必要がある。
+- [life_arts_small_use](#event-life_arts_small_use) — 食卓のランプが消え、授業で覚えた小さな術式を思い出した。足元に人がいないことを確かめ、今日は使うか別の方法にするか決められる。
+- [life_arts_non_caster_craft](#event-life_arts_non_caster_craft) — 動力部のふたを外すと、留め具の位置が点検表と違っていた。工房の指導者が横で部品を押さえる。ここではアーツを使わず、工具の扱いだけを練習する。
+- [life_arts_employer_request](#event-life_arts_employer_request) — 勤務先の掲示板に、実技を見てから担当を決める作業枠が載った。求められるのは既に習った術式の実演で、資格や採用は試験の前には決まらない。
+- [life_arts_skill_retest](#event-life_arts_skill_retest) — 前の実技確認で止まった調整箇所を、工房の練習台に印した。担当者は同じ手順を急がず繰り返すよう言う。今日は再訓練にするか、別の作業を選ぶか決められる。
+- [life_arts_medical_observation](#event-life_arts_medical_observation) — 診療所の担当者が、同意を得た診察のあとで補助具の扱いを説明した。見学できるのは器具と手順だけで、患者の記録や治療判断には触れない。
+- [life_arts_medical_training](#event-life_arts_medical_training) — 診療所の訓練担当者が、器具の受け渡しと記録補助を教える枠を説明した。訓練は監督者のいる時間だけで、診療や研究への参加とは別に扱われる。
+- [life_arts_overexertion](#event-life_arts_overexertion) — 器具を握る手に震えが残り、呼吸も整わない。指導者は高負荷の術式を続けるか、途中で止めるか尋ねた。体調の変化を理由に休む選択もある。
+- [life_arts_after_overexertion](#event-life_arts_after_overexertion) — 前回の訓練から数日が過ぎても、指先のこわばりが気になった。診療所では、訓練記録と今の状態を見ながら、休息や次回の負荷を相談できる。
+- [life_arts_work_adjustment](#event-life_arts_work_adjustment) — 勤務表を前に、今の体調では同じ負荷を続けにくいと感じた。担当者は、作業の組替え、休みの申請、器具の保守訓練への移行を案内した。
+- [life_arts_mentor_later](#event-life_arts_mentor_later) — 年下の子が作業台の端から手元を見ていた。教える資格の話ではなく、道具を置く順や危ない箇所を一緒に確かめるだけでもよい。
+- [life_arts_tradition_lesson](#event-life_arts_tradition_lesson) — 近所の年長者は、谷の風向きを表す古い呼び名を口にした。書き方は教わっていない。言葉を聞き、土地の記憶と学院の術式を別々に受け取る時間だった。
+- [life_cc_first_contact](#event-life_cc_first_contact) — 職場の休憩所に、近隣の復旧窓口の連絡先が置かれていた。担当者は急な応援を募る可能性があると説明したが、仕事内容や期間はまだ決まっていない。
+- [life_cc_offer_review](#event-life_cc_offer_review) — 連絡先を残した窓口から、復旧支援の短期依頼が届いた。現場、荷物、受取先、支払条件を確かめる欄がある。内容を確かめるまでは受ける必要はない。
+- [life_cc_accept](#event-life_cc_accept) — 契約書には、期間、依頼主、届け先、報酬、途中で撤収する手順が記されていた。現場調査や設備保守には、募集条件に記された実務技能の記録も要る。条件を確か…
+- [life_cc_preparation](#event-life_cc_preparation) — 荷台には、持ち出す器具と現地に残す道具を分ける余地があった。未成年の子がいる家では、出発前に世話を引き受ける人との話し合いも要る。
+- [life_cc_departure](#event-life_cc_departure) — 予定していた出発時刻が近づいた。運賃と道具、留守宅の段取りを改めて確かめる。条件がそろえば現場へ向かえる。延期や辞退を依頼主へ伝えることもできる。
+- [life_cc_handoff](#event-life_cc_handoff) — 現場の受取担当者が、荷札の宛先と数量を読み上げた。受領印をもらう前に、依頼書の品目と目の前の荷物を照合する。
+- [life_cc_forecast_survey](#event-life_cc_forecast_survey) — 観測場所には、風向きを測る器具と撤収路の案内があった。責任者は許可された範囲を示し、続けるか戻るか確認した。
+- [life_cc_suspicious_cargo](#event-life_cc_suspicious_cargo) — 受け取った依頼書では、荷主と箱の中身の欄が空いていた。窓口は先に受領印を求めているが、説明を求めることもできる。
+- [life_cc_support_equity](#event-life_cc_support_equity) — 配給表には、届く予定の食料と医薬品が地区ごとに記されていた。数の不足が残る欄を見つけ、配分を決める前に担当者へ尋ねられる。
+- [life_cc_hiring_bias](#event-life_cc_hiring_bias) — 名簿の選考欄に、自分の所属についての記載があった。担当者はその理由を説明していない。見た記録を示して、基準を尋ねることはできる。
+- [life_cc_payment](#event-life_cc_payment) — 検収済みの控えと報酬の金額が一致した。支払窓口で受領を確かめるか、期日に金が届かなかったことを記録して照会へ進める。
+- [life_cc_payment_dispute](#event-life_cc_payment_dispute) — 支払期日を過ぎても、受領額は帳面に記されていない。検収票と連絡先をそろえ、金額を確認する請求を出せる。
+- [life_cc_organization_receipt](#event-life_cc_organization_receipt) — 届け先の担当者が、荷札と受領控えを照合した。組織の受領なら所属記録のある窓口へ、地域の受領なら地区の担当者へ確認する。
+- [life_cc_family_notice](#event-life_cc_family_notice) — 出発後、家の人へ伝える連絡先と便の予定を確認した。手紙を出しても、届いたことや受け手の気持ちは後で確かめる必要がある。
+- [life_cc_return](#event-life_cc_return) — 帰り道の便が残っている。現場では作業を続けることも、依頼主へ知らせて戻ることもできる。帰路の費用と行き先を確認した。
+- [life_infra_warning_notice](#event-life_infra_warning_notice) — 地区の掲示板に、数か月先の荒天注意が載った。予報は停電や通行止めを知らせるものではない。発信元と対象期間を読むことができる。
+- [life_infra_warning_response](#event-life_infra_warning_response) — 予報を読んだあと、予定表には屋台の仕入れ日が残っていた。準備を変えるか、予報を出した窓口へ確かめるかは自分で選べる。
+- [life_infra_warning_result](#event-life_infra_warning_result) — 予報期間が過ぎ、観測所の掲示が更新された。対象の天候は地区の記録に載っている。あらかじめ聞いた予報と、今回の観測結果を見比べた。
+- [life_infra_messenger_feedback](#event-life_infra_messenger_feedback) — 予報を伝える仕事の机に、前回の観測票と地区から届いた問い合わせが並んだ。説明する範囲を確かめ、窓口へ返す言葉を選ぶ。
+- [life_infra_power_loss](#event-life_infra_power_loss) — 作業台の灯りが落ち、同じ区画の機械も止まった。設備担当者は故障場所を確かめている。手元の工具を置き、作業を続けるか連絡するか決める。
+- [life_infra_water_loss](#event-life_infra_water_loss) — 朝の蛇口から水が出ず、給水所の場所を記した紙が戸口に差し込まれていた。配管の故障箇所や復旧時刻はまだ掲示されていない。
+- [life_infra_route_block](#event-life_infra_route_block) — いつも通る連結扉に、点検中の札が掛かっていた。向こう側へは進めない。掲示には迂回路が示されているが、再開時刻はまだ書かれていない。
+- [life_infra_repair_request](#event-life_infra_repair_request) — 設備担当の窓口に、地区の故障番号と必要な交換部品が書き込まれた。修理を申し込めば部品便を手配できるが、到着と検査には時間がかかる。
+- [life_infra_repair_verification](#event-life_infra_repair_verification) — 交換部品が届き、担当者は設備を組み直す準備をしていた。電源と接続部を点検し、同じ地区の故障番号へ結果を記入する。
+- [life_infra_relocation_utility](#event-life_infra_relocation_utility) — 移動都市の通路が閉じ、いつもの経路が切れていた。近くの掲示は別経路を示している。家族へ知らせるか、通れるかどうかを設備担当へ確かめるか選べる。
+- [life_ship_custody](#event-life_ship_custody) — 倉庫の台帳に、宛先の地区へ到着した荷物が載っていた。荷札には差出人と担当者の名がある。自分が持ち出す前に、保管の引継ぎを確認する。
+- [life_ship_recipient_check](#event-life_ship_recipient_check) — 荷物の宛先欄は古い住所のままだった。差出人の控えには、転居後の連絡先が書かれていない。今ここで受取人を確認するか、差出人へ返すかを選べる。
+- [life_ship_return](#event-life_ship_return) — 返送受付の控えと、荷物の荷札を並べた。帰り便に載せる前に差出人と宛先をもう一度照合できる。
+- [life_ship_medicine_delay](#event-life_ship_medicine_delay) — 診療所から、処方薬の便が通行障害で遅れていると連絡があった。薬の変更はここでは決められない。受診予定を調整し、担当者に状況を尋ねられる。
+- [life_ship_medicine_received](#event-life_ship_medicine_received) — 診療所の受取台に、処方薬の箱が届いた。受付係は荷札と保管場所を照合してから、在庫帳に数量を記す。
+- [life_info_media_claim](#event-life_info_media_claim) — 地域放送は、修理された設備について短く伝えていた。放送した人は地区全体の安全には触れていない。聞いた主張を、出所と範囲を添えて記録できる。
+- [life_info_claim_correction](#event-life_info_claim_correction) — 同じ地区の設備担当者が、故障番号と修理の完了日を掲示した。掲示にある一件の修理記録を受け取り、確認できた範囲を放送の記録へ添えられる。
+- [life_info_letter_delay](#event-life_info_letter_delay) — 返事が来ないまま、家族への便りを出してから一か月が過ぎた。配送記録では現在の宛先を確かめられない。未着の事実と、相手が返事をしないことは分けて扱う。
+- [life_info_letter_resolution](#event-life_info_letter_resolution) — 配達所から、受取人の転居記録と新しい住所が示された。宛先を変えるには、その住所が今も使われているか本人の記録を照合する。
+- [life_culture_music_arts](#event-life_culture_music_arts) — 小さな舞台に、弦の音とアーツ器具の点検音が交互に響いた。演奏の稽古と術式の学習は別の記録だ。今日は曲を弾くか、器具の扱いを尋ねるか決められる。
+- [life_culture_festival_shortjob](#event-life_culture_festival_shortjob) — 祭りの会場で、机や灯りを運ぶ短い手伝いが募集されていた。作業日は限られ、設営に加わるか断るかは自分で決められる。
+- [life_culture_rural_well](#event-life_culture_rural_well) — 集落の井戸の点検帳に、濁りと交換部品の不足が記されていた。近隣の人たちが費用と部品の見積りを集めている。計画に加わるか、寄付だけにするか、今回は見送…
+- [life_culture_rural_repair](#event-life_culture_rural_repair) — 井戸の交換部品が集落へ届いた。作業台には検査表があり、近所の人たちと実際の作業人数を確認してから修理に進む。
+- [life_research_consent](#event-life_research_consent) — 診療所の研究担当者が、観察の目的、診療と研究の違い、途中で断れることを説明する。ここでは説明を聞いた記録だけを残し、参加の同意は別に本人が決める。
+- [life_research_procedure](#event-life_research_procedure) — 担当者は観察の目的と手順をもう一度示し、診療への影響がないことを説明した。説明を聞いた記録と参加への同意は別で、本人は始める前に断ることもできる。
+- [life_research_followup](#event-life_research_followup) — 観察後の確認日が来た。診療所はその日の体調と記録を尋ねている。治療変更や補償の約束はなく、必要なら別に診療を申し込める。
 - [romance_resolve_safety](#event-romance_resolve_safety) — {romancePartner}と付き合い始めてから長い年月が流れた。互いの癖も日々の暮らしも知り尽くした今、このまま曖昧な距離を保ち続けるか、それ…
 - [infection_family_disclosure_choice](#event-infection_family_disclosure_choice) — 鉱石病の診断書を、人目につかないよう鞄の底へ押し込んだ。近所では病気がバレて下宿を追い出された人もいる。これから通院を続けるのに、誰かひとりでも打ち…
 - [infection_visible_crystal_question](#event-infection_visible_crystal_question) — 診療所の待合室で、ふとした拍子に袖口から黒い結晶がのぞいた。向かいに座っていた客がぎょっとして、部屋中に響く声で「おい、鉱石病じゃないのか」と声を上…
@@ -15729,7 +15981,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-situation-316"></a>
-### 年齢：少年（1210）
+### 年齢：少年（1209）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
@@ -15740,7 +15992,6 @@
 - [bias_family_sarkaz_model](#event-bias_family_sarkaz_model) — 親戚から届いた手紙に、仕事場へ入ったサルカズの働き手への苦情が書かれていた。親の一人は本人を知らないまま、『サルカズには最初から近づくな』と言った。…
 - [bias_peer_mockery](#event-bias_peer_mockery) — 昼休みの教室で、子どもたちが休んでいる子の名前を挙げ、感染者を嘲るあだ名をはやし立てた。下品な笑い声が机の間を飛び交い、誰も止めようとしなかった。
 - [bias_teacher_lesson](#event-bias_teacher_lesson) — 授業の最中、教壇の先生が「感染者は決まりを破り、まっとうな住民に迷惑をかける」と当然のように語った。教室の何人かが深くうなずき、前の席ではその言葉を…
-- [arts_awake](#event-arts_awake) — アーツの筋が良いと見込まれ、本格的に鍛えてみないかと声がかかった。ただ、無理に力を使って鉱石病が悪化した人の話を思い出し、訓練場の敷居の前で足が止ま…
 - [dg](#event-dg) — 収容先の薄暗い診察室で、肌に浮いた結晶は鉱石病だと告げられた。外の病院へは行けない。ここで抑制薬を出してもらえるのか、医師の顔を見つめた。 隔離区画…
 - [displacement_after](#event-displacement_after) — 戦乱避難中 地平線の砲声は遠のいたが、救護所の配給を待つ列は少しも短くならなかった。冷たい粥をすすりながら、帰れる家がまだ残っているのか考えた。 避…
 - [disaster_displacement_after](#event-disaster_displacement_after) — （動的本文）
@@ -16942,7 +17193,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-situation-317"></a>
-### 年齢：青年（2383）
+### 年齢：青年（2382）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -16967,7 +17218,6 @@
 - [vic_clerk_after_departure](#event-vic_clerk_after_departure) — 保険仲介所を辞めてから数年が経った。近所の知人から店先の帳面のつけ方を相談され、インクの匂いに満ちていたあの事務所の日々を思い出した。昔身につけた整…
 - [col_tech_after_departure](#event-col_tech_after_departure) — クルビアの研究企業を離れてから数年が過ぎた。今の仕事場で工具を握ると、試作装置の前で計器の針を睨んでいたころの手つきが自然と蘇る。機械を動かす前にも…
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
-- [arts_awake](#event-arts_awake) — アーツの筋が良いと見込まれ、本格的に鍛えてみないかと声がかかった。ただ、無理に力を使って鉱石病が悪化した人の話を思い出し、訓練場の敷居の前で足が止ま…
 - [dst](#event-dst) — いつも一緒に働いていた同僚が鉱石病だと知れ渡った。首筋や手首の結晶が隠せなくなり、昼休みの食堂では、何人かが露骨にその人の席を避けるようになった。
 - [dg](#event-dg) — 収容先の薄暗い診察室で、肌に浮いた結晶は鉱石病だと告げられた。外の病院へは行けない。ここで抑制薬を出してもらえるのか、医師の顔を見つめた。 隔離区画…
 - [lov](#event-lov) — 仕事帰りにたびたび顔を合わせる人と、雨宿りの軒先で立ち話をした。もっと話していたい気持ちはあったが、今月の支払いに追われる暮らしを思うと、次の一歩を…
@@ -26411,7 +26661,7 @@
 #### 選択肢 3
 
 <a id="choice-car-2"></a>
-選択肢文：アーツ学院を目指す
+選択肢文：アーツ学院の募集を照会する
 
 表示・選択条件と補助情報：
 
@@ -26430,12 +26680,9 @@
     ]
   },
   "en": {
-    "ge": {
-      "ar": 40,
-      "cash": 300000
-    }
+    "dynamicFunction": "s => !educationActiveCase(s)"
   },
-  "why": "学院が求めるアーツの適性か、入学金30万龍門幣が足りない"
+  "why": "進学案件をすでに手続き中"
 }
 ```
 
@@ -26444,44 +26691,19 @@
 結果枝：
 <a id="outcome-car-2-0"></a>
 
-- **結果 1（設定確率 70%）**
+- **結果 1（設定確率 100%）**
 
-> 学院の選抜を通り、入学金と当面の学費として30万龍門幣を納めた。真新しい教本と杖を手に取り、アーツの訓練が始まった。
+> 窓口で通える募集先を照会し、出願や費用の確認を進めることにした。入学の選考と授業料は、確認できた募集先ごとに判断する。
 
 効果：
 
 ```json
 {
-  "ar": 15,
-  "ep": 8,
-  "k": 4,
-  "cr": 8,
-  "cash": -300000,
-  "fl": {
-    "arts_enrolled": 1,
-    "voc_enrolled": 1
-  },
-  "study": "voc_start"
+  "educationAction": "case:begin:higher-path:arts:1"
 }
 ```
 
 旧シム観測回数：1
-<a id="outcome-car-2-1"></a>
-
-- **結果 2（設定確率 30%）**
-
-> 実技と筆記に挑んだが、合格者の貼り紙に自分の番号はなかった。旅費と受験料の3万龍門幣だけが消え、重い足取りで別の働き口を探し始めた。
-
-効果：
-
-```json
-{
-  "p": -8,
-  "cash": -30000
-}
-```
-
-旧シム観測回数：0
 
 #### 選択肢 4
 
@@ -27155,7 +27377,6 @@
     "action": "accept-local-opening",
     "jobId": 22
   },
-  "ar": 2,
   "k": 1
 }
 ```
@@ -27669,7 +27890,7 @@
 <a id="event-life_columbia_failed_application_followup"></a>
 ## life_columbia_failed_application_followup
 
-- 出典位置：data/base/career-entry.js:541
+- 出典位置：data/base/career-entry.js:533
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -27924,7 +28145,7 @@ s => s.job > 0 ? "研究企業の技師職に採用されなかったあと、�
 <a id="event-life_victoria_failed_application_followup"></a>
 ## life_victoria_failed_application_followup
 
-- 出典位置：data/base/career-entry.js:578
+- 出典位置：data/base/career-entry.js:570
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -28179,7 +28400,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-transporter_contract_review"></a>
 ## transporter_contract_review
 
-- 出典位置：data/base/career-entry.js:615
+- 出典位置：data/base/career-entry.js:607
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -28358,7 +28579,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-kjerag_transporter_route_review"></a>
 ## kjerag_transporter_route_review
 
-- 出典位置：data/base/career-entry.js:692
+- 出典位置：data/base/career-entry.js:684
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：イェラグ
@@ -28537,7 +28758,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-rim_catastrophe_transporter_review"></a>
 ## rim_catastrophe_transporter_review
 
-- 出典位置：data/base/career-entry.js:771
+- 出典位置：data/base/career-entry.js:763
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：レム・ビリトン
@@ -28752,7 +28973,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-sargon_market_contract_review"></a>
 ## sargon_market_contract_review
 
-- 出典位置：data/base/career-entry.js:891
+- 出典位置：data/base/career-entry.js:883
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：サルゴン
@@ -28966,7 +29187,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-ursus_mine_assignment_offer"></a>
 ## ursus_mine_assignment_offer
 
-- 出典位置：data/base/career-entry.js:998
+- 出典位置：data/base/career-entry.js:990
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：ウルサス
@@ -29132,7 +29353,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-ursus_mine_assignment_review"></a>
 ## ursus_mine_assignment_review
 
-- 出典位置：data/base/career-entry.js:1073
+- 出典位置：data/base/career-entry.js:1065
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：ウルサス
@@ -29325,7 +29546,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-vic_clerk_contract_review"></a>
 ## vic_clerk_contract_review
 
-- 出典位置：data/base/career-entry.js:1178
+- 出典位置：data/base/career-entry.js:1170
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：ヴィクトリア
@@ -29506,7 +29727,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-col_tech_safety_review"></a>
 ## col_tech_safety_review
 
-- 出典位置：data/base/career-entry.js:1264
+- 出典位置：data/base/career-entry.js:1256
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：クルビア
@@ -29742,7 +29963,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-col_tech_safety_aftermath"></a>
 ## col_tech_safety_aftermath
 
-- 出典位置：data/base/career-entry.js:1386
+- 出典位置：data/base/career-entry.js:1378
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：クルビア
@@ -30032,7 +30253,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-col_tech_role_review"></a>
 ## col_tech_role_review
 
-- 出典位置：data/base/career-entry.js:1523
+- 出典位置：data/base/career-entry.js:1515
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：クルビア
@@ -30287,7 +30508,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-col_tech_supplier_exception"></a>
 ## col_tech_supplier_exception
 
-- 出典位置：data/base/career-entry.js:1650
+- 出典位置：data/base/career-entry.js:1642
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：クルビア
@@ -30508,7 +30729,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-col_tech_internal_review"></a>
 ## col_tech_internal_review
 
-- 出典位置：data/base/career-entry.js:1761
+- 出典位置：data/base/career-entry.js:1753
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：クルビア
@@ -30725,7 +30946,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-col_tech_workplace_consequence"></a>
 ## col_tech_workplace_consequence
 
-- 出典位置：data/base/career-entry.js:1859
+- 出典位置：data/base/career-entry.js:1851
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：クルビア
@@ -30970,7 +31191,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-col_tech_later_years"></a>
 ## col_tech_later_years
 
-- 出典位置：data/base/career-entry.js:1977
+- 出典位置：data/base/career-entry.js:1969
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：クルビア
@@ -31180,7 +31401,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-vic_clerk_role_review"></a>
 ## vic_clerk_role_review
 
-- 出典位置：data/base/career-entry.js:2070
+- 出典位置：data/base/career-entry.js:2062
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：ヴィクトリア
@@ -31350,7 +31571,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-vic_clerk_later_years"></a>
 ## vic_clerk_later_years
 
-- 出典位置：data/base/career-entry.js:2147
+- 出典位置：data/base/career-entry.js:2139
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：ヴィクトリア
@@ -31509,7 +31730,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-vic_clerk_after_departure"></a>
 ## vic_clerk_after_departure
 
-- 出典位置：data/base/career-entry.js:2213
+- 出典位置：data/base/career-entry.js:2205
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -31617,7 +31838,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-col_tech_after_departure"></a>
 ## col_tech_after_departure
 
-- 出典位置：data/base/career-entry.js:2247
+- 出典位置：data/base/career-entry.js:2239
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -31725,7 +31946,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-work_unemployed_reentry"></a>
 ## work_unemployed_reentry
 
-- 出典位置：data/base/career-entry.js:2281
+- 出典位置：data/base/career-entry.js:2273
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -31968,7 +32189,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-work_elder_reentry"></a>
 ## work_elder_reentry
 
-- 出典位置：data/base/career-entry.js:2339
+- 出典位置：data/base/career-entry.js:2331
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -32122,169 +32343,10 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 旧シム観測回数：未計測
 
 
-<a id="event-arts_awake"></a>
-## arts_awake
-
-- 出典位置：data/base/life-and-health.js:4
-- 分類確度：本文・条件から確認。地域固有の記述がないため未特定。
-- 校閲状態：確認済み　優先度：低
-- 国・地域：未特定
-- ジャンル：感染・医療
-- 状況：年齢：少年、年齢：青年、選択イベント、条件付き本文、感染・鉱石病に言及
-- 指摘分類：日本語・文法、因果・状況整合
-- 注記：感染診断の有無で導入文と鍛錬の選択肢を分け、結果を訓練場での経験として整理。
-
-### 本文
-
-#### 条件付き本文 1
-
-条件：
-```json
-"感染診断済"
-```
-
-> アーツの筋が良いと見込まれ、本格的に鍛えてみないかと声がかかった。ただ、無理に力を使って鉱石病が悪化した人の話を思い出し、訓練場の敷居の前で足が止まった。
-
-#### 条件付き本文 2
-
-条件：
-```json
-"(条件指定なし)"
-```
-
-> アーツの筋が良いと見込まれ、鍛錬に誘われた。手ほどきを受ければ一端の使い手になれると言われ、心が動いた。
-
-### 発生条件・構造
-
-```json
-{
-  "id": "arts_awake",
-  "conf": "S",
-  "st": [
-    "少年",
-    "青年"
-  ],
-  "ge": {
-    "ar": 45
-  },
-  "once": true
-}
-```
-
-### 旧1000人シムの観測
-
-添付された旧版固定条件での観測値。現行版の発生率や人口統計ではありません。
-
-- 発生数：9
-- 候補枠数：1453
-- 候補枠内発生率：0.619%
-- 到達状況：observed
-
-### 選択肢と結果枝
-
-#### 選択肢 1
-
-<a id="choice-arts_awake-0"></a>
-選択肢文：体をいたわりながら鍛錬する
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "show": {
-    "need": [
-      "感染診断済"
-    ]
-  }
-}
-```
-
-旧シム観測：表示 395、選択可能 395
-
-結果枝：
-<a id="outcome-arts_awake-0-0"></a>
-
-- **結果 1（設定確率 100%）**
-
-> 自分の呼吸と脈を確かめ、無理のない範囲で鍛錬を続けた。アーツの扱いは見違えるほど上達したが、力を込めたあとは肌の結晶がじんじんと疼いた。
-
-効果：
-
-```json
-{
-  "ar": 12,
-  "ob": 8
-}
-```
-
-旧シム観測回数：0
-
-#### 選択肢 2
-
-<a id="choice-arts_awake-1"></a>
-選択肢文：指導を受けて鍛錬する
-
-表示・選択条件と補助情報：
-
-```json
-{
-  "show": {
-    "ban": [
-      "感染診断済"
-    ]
-  }
-}
-```
-
-旧シム観測：表示 1098、選択可能 1098
-
-結果枝：
-<a id="outcome-arts_awake-1-0"></a>
-
-- **結果 1（設定確率 100%）**
-
-> 師について基礎からみっちりしごかれた。指先や杖を通る力の流れを掴み、自分の身を守る術をひとつ身につけた。
-
-効果：
-
-```json
-{
-  "ar": 12,
-  "p": 2
-}
-```
-
-旧シム観測回数：4
-
-#### 選択肢 3
-
-<a id="choice-arts_awake-2"></a>
-選択肢文：力には頼らずに暮らす
-
-旧シム観測：表示 1493、選択可能 1493
-
-結果枝：
-<a id="outcome-arts_awake-2-0"></a>
-
-- **結果 1（設定確率 100%）**
-
-> 誘いを断り、訓練場に背を向けた。背後から響く掛け声を聞きながら、いつもの夕暮れの道を帰った。
-
-効果：
-
-```json
-{
-  "p": 1
-}
-```
-
-旧シム観測回数：5
-
-
 <a id="event-dst"></a>
 ## dst
 
-- 出典位置：data/base/life-and-health.js:30
+- 出典位置：data/base/life-and-health.js:4
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -32448,7 +32510,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-dg"></a>
 ## dg
 
-- 出典位置：data/base/life-and-health.js:74
+- 出典位置：data/base/life-and-health.js:50
 - 分類確度：本文・条件から確認。収容・隔離と診断後の治療を含む。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -32705,7 +32767,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-lov"></a>
 ## lov
 
-- 出典位置：data/base/life-and-health.js:136
+- 出典位置：data/base/life-and-health.js:112
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -32897,7 +32959,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-chi"></a>
 ## chi
 
-- 出典位置：data/base/life-and-health.js:194
+- 出典位置：data/base/life-and-health.js:170
 - 分類確度：本文と条件から確認。地域固有の記述がないため未特定。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -33051,7 +33113,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-ksc"></a>
 ## ksc
 
-- 出典位置：data/base/life-and-health.js:232
+- 出典位置：data/base/life-and-health.js:208
 - 分類確度：本文と条件から確認。地域固有の記述がないため未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -33150,7 +33212,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-par_death"></a>
 ## par_death
 
-- 出典位置：data/base/life-and-health.js:255
+- 出典位置：data/base/life-and-health.js:231
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -33261,7 +33323,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-illness_review"></a>
 ## illness_review
 
-- 出典位置：data/base/life-and-health.js:280
+- 出典位置：data/base/life-and-health.js:256
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -33414,7 +33476,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-illness_followup"></a>
 ## illness_followup
 
-- 出典位置：data/base/life-and-health.js:320
+- 出典位置：data/base/life-and-health.js:296
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -33568,7 +33630,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-ill"></a>
 ## ill
 
-- 出典位置：data/base/life-and-health.js:361
+- 出典位置：data/base/life-and-health.js:337
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -34079,7 +34141,7 @@ s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかった�
 <a id="event-nat"></a>
 ## nat
 
-- 出典位置：data/base/life-and-health.js:514
+- 出典位置：data/base/life-and-health.js:490
 - 分類確度：動的本文と地域条件を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：サルゴン、サーミ、シエスタ
@@ -34404,7 +34466,7 @@ s => {
 <a id="event-displacement_after"></a>
 ## displacement_after
 
-- 出典位置：data/base/life-and-health.js:636
+- 出典位置：data/base/life-and-health.js:612
 - 分類確度：戦乱避難状態と年齢別の選択条件を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -34673,7 +34735,7 @@ s => {
 <a id="event-disaster_displacement_after"></a>
 ## disaster_displacement_after
 
-- 出典位置：data/base/life-and-health.js:709
+- 出典位置：data/base/life-and-health.js:685
 - 分類確度：避難状態・経過年数・年齢別条件と結果を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -34919,7 +34981,7 @@ s => {
 <a id="event-alley_attack"></a>
 ## alley_attack
 
-- 出典位置：data/base/life-and-health.js:767
+- 出典位置：data/base/life-and-health.js:743
 - 分類確度：国・都市居住条件と所持金による本文・選択肢の差を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：シラクーザ、龍門、ウルサス、ボリバル
@@ -35320,7 +35382,7 @@ s => {
 <a id="event-war"></a>
 ## war
 
-- 出典位置：data/base/life-and-health.js:872
+- 出典位置：data/base/life-and-health.js:848
 - 分類確度：戦乱地域と移動都市の動的本文・選択結果を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -35535,7 +35597,7 @@ s => {
 <a id="event-mv"></a>
 ## mv
 
-- 出典位置：data/base/life-and-health.js:925
+- 出典位置：data/base/life-and-health.js:901
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：高
 - 国・地域：未特定
@@ -35833,7 +35895,7 @@ s => {
 <a id="event-old"></a>
 ## old
 
-- 出典位置：data/base/life-and-health.js:1005
+- 出典位置：data/base/life-and-health.js:981
 - 分類確度：年齢・就労・勤務縮小条件と年次収入への影響を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -35989,7 +36051,7 @@ s => {
 <a id="event-old_followup"></a>
 ## old_followup
 
-- 出典位置：data/base/life-and-health.js:1045
+- 出典位置：data/base/life-and-health.js:1021
 - 分類確度：勤務縮小後の経過年数・就労状態・健康条件を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -36136,7 +36198,7 @@ s => {
 <a id="event-elder_work_opportunity"></a>
 ## elder_work_opportunity
 
-- 出典位置：data/base/life-and-health.js:1079
+- 出典位置：data/base/life-and-health.js:1055
 - 分類確度：65歳以上・非就労条件と本文分岐、技能条件を確認。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -36438,9 +36500,7 @@ s => {
 ```json
 {
   "show": {
-    "ge": {
-      "ar": 35
-    }
+    "dynamicFunction": "s => !!s.fl?.hobby_music || (s.artsProfile?.disciplines?.acoustic?.practice || 0) > 0"
   }
 }
 ```
@@ -36458,7 +36518,6 @@ s => {
 
 ```json
 {
-  "ar": 3,
   "k": 1,
   "p": 2,
   "rl": 1
@@ -43800,7 +43859,7 @@ s => {
 <a id="event-f26"></a>
 ## f26
 
-- 出典位置：data/base/daily-childhood.js:208
+- 出典位置：data/base/daily-childhood.js:209
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -43828,12 +43887,10 @@ s => {
     "少年",
     "青年"
   ],
-  "fx": {
-    "ar": 3
-  },
+  "fx": {},
   "conf": "S",
-  "ge": {
-    "ar": 20
+  "show": {
+    "dynamicFunction": "() => false"
   }
 }
 ```
@@ -54025,7 +54082,7 @@ s => {
   },
   "who": "self",
   "show": {
-    "dynamicFunction": "s => educationLegacySceneGuard(s,\"education_school_classroom\") &&\n        educationP17SchoolExperience(s,\"arts-selection-exam\") &&\n        Object.values(s.world?.educationWorld?.offerings||{}).some(o =>\n          o.institutionId===s.educationPath?.institutionId && o.stage===\"arts\" &&\n          [\"open\",\"limited\"].includes(educationSchoolStatusAt(s,o.id,s.year,s.mo)?.admissionStatus))"
+    "dynamicFunction": "s => educationLegacySceneGuard(s,\"education_school_classroom\") &&\n        educationP17SchoolExperience(s,\"arts-selection-exam\") &&\n        !educationActiveCase(s) &&\n        Object.values(s.world?.educationWorld?.offerings||{}).some(o =>\n          o.institutionId===s.educationPath?.institutionId && o.stage===\"arts\" &&\n          [\"open\",\"limited\"].includes(educationSchoolStatusAt(s,o.id,s.year,s.mo)?.admissionStatus))"
   },
   "w": 1.2,
   "once": true
@@ -54046,47 +54103,26 @@ s => {
 #### 選択肢 1
 
 <a id="choice-lei_arts-0"></a>
-選択肢文：手元の物で準備して試験を受ける
+選択肢文：試験の手続きを窓口で確かめる
 
 旧シム観測：表示 333、選択可能 333
 
 結果枝：
 <a id="outcome-lei_arts-0-0"></a>
 
-- **結果 1（設定確率 35%）**
+- **結果 1（設定確率 100%）**
 
-> 特別な授業への参加を認められた。次に使う道具の名を、{caregiver}と覚えた。
+> 案内にあった選抜の手続きと募集先を確かめるため、{caregiver}と進学案件を開いた。試験日と授業の席は募集先ごとに確認する。
 
 効果：
 
 ```json
 {
-  "ar": 10,
-  "ep": 8,
-  "cr": 3,
-  "fl": {
-    "arts_gifted": 1
-  }
+  "educationAction": "case:begin:higher-path:arts:1"
 }
 ```
 
 旧シム観測回数：0
-<a id="outcome-lei_arts-0-1"></a>
-
-- **結果 2（設定確率 65%）**
-
-> 選抜には入れなかった。教わった基礎の練習を続け、いつもの授業へ戻った。
-
-効果：
-
-```json
-{
-  "ar": 2,
-  "p": -3
-}
-```
-
-旧シム観測回数：1
 
 #### 選択肢 2
 
@@ -54109,9 +54145,9 @@ s => {
 結果枝：
 <a id="outcome-lei_arts-1-0"></a>
 
-- **結果 1（設定確率 65%）**
+- **結果 1（設定確率 100%）**
 
-> 準備に{leithArtsPreparationCost}を払い、使い慣れない道具の扱いを教わった。試験で手順を示すことができ、特別な授業へ進んだ。
+> 準備に{leithArtsPreparationCost}を払い、道具の扱いを教わった。試験日と募集先を確かめるため、進学案件を開いた。合否と授業料は、実際の募集先へ出願したあとに決まる。
 
 効果：
 
@@ -54119,34 +54155,11 @@ s => {
 {
   "cash": -30000,
   "pm": 1,
-  "ar": 10,
-  "ep": 8,
-  "cr": 3,
-  "fl": {
-    "arts_gifted": 1
-  }
+  "educationAction": "case:begin:higher-path:arts:1"
 }
 ```
 
 旧シム観測回数：0
-<a id="outcome-lei_arts-1-1"></a>
-
-- **結果 2（設定確率 35%）**
-
-> 準備をしても選抜には入れなかった。準備費用{leithArtsPreparationCost}は戻らないが、教わった練習は手元に残った。
-
-効果：
-
-```json
-{
-  "cash": -30000,
-  "pm": 1,
-  "ar": 3,
-  "p": -3
-}
-```
-
-旧シム観測回数：3
 
 #### 選択肢 3
 
@@ -54177,7 +54190,7 @@ s => {
 <a id="event-lei_witchking"></a>
 ## lei_witchking
 
-- 出典位置：data/base/regional-west.js:1313
+- 出典位置：data/base/regional-west.js:1304
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：リターニア
@@ -54365,7 +54378,7 @@ s => {
 <a id="event-lei_noble"></a>
 ## lei_noble
 
-- 出典位置：data/base/regional-west.js:1360
+- 出典位置：data/base/regional-west.js:1351
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：リターニア
@@ -54611,7 +54624,7 @@ s => {
 <a id="event-lei_noble_after"></a>
 ## lei_noble_after
 
-- 出典位置：data/base/regional-west.js:1487
+- 出典位置：data/base/regional-west.js:1478
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -54829,7 +54842,7 @@ s => {
 <a id="event-lei_noble_later"></a>
 ## lei_noble_later
 
-- 出典位置：data/base/regional-west.js:1617
+- 出典位置：data/base/regional-west.js:1608
 - 分類確度：本文・条件・全選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定
@@ -54989,7 +55002,7 @@ s => {
 <a id="event-lei_isolation"></a>
 ## lei_isolation
 
-- 出典位置：data/base/regional-west.js:1704
+- 出典位置：data/base/regional-west.js:1695
 - 分類確度：本文・条件・選択肢・結果枝と対応する状態更新を確認済み。
 - 校閲状態：確認済み　優先度：高
 - 国・地域：リターニア
@@ -55164,7 +55177,7 @@ s => {
 <a id="event-sir_family"></a>
 ## sir_family
 
-- 出典位置：data/base/regional-west.js:1782
+- 出典位置：data/base/regional-west.js:1773
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：高
 - 国・地域：シラクーザ
@@ -55364,7 +55377,7 @@ s => {
 <a id="event-sir_family_review"></a>
 ## sir_family_review
 
-- 出典位置：data/base/regional-west.js:1873
+- 出典位置：data/base/regional-west.js:1864
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：シラクーザ
@@ -55558,7 +55571,7 @@ s => {
 <a id="event-sir_family_duty"></a>
 ## sir_family_duty
 
-- 出典位置：data/base/regional-west.js:1967
+- 出典位置：data/base/regional-west.js:1958
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：高
 - 国・地域：シラクーザ
@@ -55798,7 +55811,7 @@ s => {
 <a id="event-sir_family_obligation"></a>
 ## sir_family_obligation
 
-- 出典位置：data/base/regional-west.js:2110
+- 出典位置：data/base/regional-west.js:2101
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：高
 - 国・地域：シラクーザ
@@ -56072,7 +56085,7 @@ s => {
 <a id="event-sir_family_afterwork"></a>
 ## sir_family_afterwork
 
-- 出典位置：data/base/regional-west.js:2260
+- 出典位置：data/base/regional-west.js:2251
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：シラクーザ
@@ -56332,7 +56345,7 @@ s => {
 <a id="event-sir_family_later_work"></a>
 ## sir_family_later_work
 
-- 出典位置：data/base/regional-west.js:2391
+- 出典位置：data/base/regional-west.js:2382
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：シラクーザ
@@ -56528,7 +56541,7 @@ s => {
 <a id="event-sir_hospital"></a>
 ## sir_hospital
 
-- 出典位置：data/base/regional-west.js:2493
+- 出典位置：data/base/regional-west.js:2484
 - 分類確度：本文・条件・選択肢・結果枝と対応する状態更新を確認済み。
 - 校閲状態：確認済み　優先度：高
 - 国・地域：シラクーザ
@@ -56793,7 +56806,7 @@ s => {
 <a id="event-sir_feud"></a>
 ## sir_feud
 
-- 出典位置：data/base/regional-west.js:2577
+- 出典位置：data/base/regional-west.js:2568
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：シラクーザ
@@ -56975,7 +56988,7 @@ s => {
 <a id="event-col_timecard_dispute"></a>
 ## col_timecard_dispute
 
-- 出典位置：data/base/regional-west.js:2628
+- 出典位置：data/base/regional-west.js:2619
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：クルビア
@@ -57138,7 +57151,7 @@ s => {
 <a id="event-col_reuse_market"></a>
 ## col_reuse_market
 
-- 出典位置：data/base/regional-west.js:2669
+- 出典位置：data/base/regional-west.js:2660
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：クルビア
@@ -74818,7 +74831,7 @@ s => {
 <a id="event-f84"></a>
 ## f84
 
-- 出典位置：data/base/daily-regional.js:193
+- 出典位置：data/base/daily-regional.js:194
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：リターニア
@@ -74876,13 +74889,11 @@ s => {
     "青年",
     "壮年"
   ],
-  "fx": {
-    "ar": 2
-  },
+  "fx": {},
   "conf": "S",
-  "need": [
-    "国:リターニア"
-  ],
+  "show": {
+    "dynamicFunction": "() => false"
+  },
   "references": [
     "SRC_LEITHANIEN_ARTS"
   ],
@@ -74906,7 +74917,7 @@ s => {
 <a id="event-f85"></a>
 ## f85
 
-- 出典位置：data/base/daily-regional.js:215
+- 出典位置：data/base/daily-regional.js:216
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：シラクーザ
@@ -74989,7 +75000,7 @@ s => {
 <a id="event-f86"></a>
 ## f86
 
-- 出典位置：data/base/daily-regional.js:233
+- 出典位置：data/base/daily-regional.js:234
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：龍門
@@ -75077,7 +75088,7 @@ s => {
 <a id="event-f87"></a>
 ## f87
 
-- 出典位置：data/base/daily-regional.js:255
+- 出典位置：data/base/daily-regional.js:256
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：ウルサス
@@ -75169,7 +75180,7 @@ s => {
 <a id="event-f88"></a>
 ## f88
 
-- 出典位置：data/base/daily-regional.js:277
+- 出典位置：data/base/daily-regional.js:278
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：クルビア
@@ -75262,7 +75273,7 @@ s => {
 <a id="event-f89"></a>
 ## f89
 
-- 出典位置：data/base/daily-regional.js:299
+- 出典位置：data/base/daily-regional.js:300
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：カジミエーシュ
@@ -75345,7 +75356,7 @@ s => {
 <a id="event-f90"></a>
 ## f90
 
-- 出典位置：data/base/daily-regional.js:317
+- 出典位置：data/base/daily-regional.js:318
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：イベリア
@@ -75433,7 +75444,7 @@ s => {
 <a id="event-f91"></a>
 ## f91
 
-- 出典位置：data/base/daily-regional.js:338
+- 出典位置：data/base/daily-regional.js:339
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：炎国
@@ -75516,7 +75527,7 @@ s => {
 <a id="event-f92"></a>
 ## f92
 
-- 出典位置：data/base/daily-regional.js:356
+- 出典位置：data/base/daily-regional.js:357
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：サルゴン
@@ -75625,7 +75636,7 @@ s => {
 <a id="event-f93"></a>
 ## f93
 
-- 出典位置：data/base/daily-regional.js:382
+- 出典位置：data/base/daily-regional.js:383
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：極東
@@ -75722,7 +75733,7 @@ s => {
 <a id="event-f94"></a>
 ## f94
 
-- 出典位置：data/base/daily-regional.js:407
+- 出典位置：data/base/daily-regional.js:408
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：レム・ビリトン
@@ -75805,7 +75816,7 @@ s => {
 <a id="event-f95"></a>
 ## f95
 
-- 出典位置：data/base/daily-regional.js:425
+- 出典位置：data/base/daily-regional.js:426
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：カズデル
@@ -75904,7 +75915,7 @@ s => {
 <a id="event-f96"></a>
 ## f96
 
-- 出典位置：data/base/daily-regional.js:454
+- 出典位置：data/base/daily-regional.js:455
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：シエスタ
@@ -76003,7 +76014,7 @@ s => {
 <a id="event-f97"></a>
 ## f97
 
-- 出典位置：data/base/daily-regional.js:476
+- 出典位置：data/base/daily-regional.js:477
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：ボリバル
@@ -76095,7 +76106,7 @@ s => {
 <a id="event-f98"></a>
 ## f98
 
-- 出典位置：data/base/daily-regional.js:503
+- 出典位置：data/base/daily-regional.js:504
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：ミノス
@@ -76188,7 +76199,7 @@ s => {
 <a id="event-rainforest_damp"></a>
 ## rainforest_damp
 
-- 出典位置：data/base/daily-regional.js:526
+- 出典位置：data/base/daily-regional.js:527
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：サルゴン
@@ -76251,7 +76262,7 @@ s => {
 <a id="event-rainforest_path"></a>
 ## rainforest_path
 
-- 出典位置：data/base/daily-regional.js:539
+- 出典位置：data/base/daily-regional.js:540
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：低
 - 国・地域：サルゴン
@@ -76314,7 +76325,7 @@ s => {
 <a id="event-sami_forest_tasks"></a>
 ## sami_forest_tasks
 
-- 出典位置：data/base/daily-regional.js:552
+- 出典位置：data/base/daily-regional.js:553
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：サーミ
@@ -76377,7 +76388,7 @@ s => {
 <a id="event-sami_wetland_way"></a>
 ## sami_wetland_way
 
-- 出典位置：data/base/daily-regional.js:565
+- 出典位置：data/base/daily-regional.js:566
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：サーミ
@@ -76447,7 +76458,7 @@ s => {
 <a id="event-siesta_shop_reopens_after_move"></a>
 ## siesta_shop_reopens_after_move
 
-- 出典位置：data/base/daily-regional.js:579
+- 出典位置：data/base/daily-regional.js:580
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：シエスタ
@@ -76508,7 +76519,7 @@ s => {
 <a id="event-kjerag_traveler_asks_directions"></a>
 ## kjerag_traveler_asks_directions
 
-- 出典位置：data/base/daily-regional.js:591
+- 出典位置：data/base/daily-regional.js:592
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：イェラグ
@@ -76566,7 +76577,7 @@ s => {
 <a id="event-kjerag_transporter_village_delivery_daily"></a>
 ## kjerag_transporter_village_delivery_daily
 
-- 出典位置：data/base/daily-regional.js:602
+- 出典位置：data/base/daily-regional.js:603
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：イェラグ
@@ -76625,7 +76636,7 @@ s => {
 <a id="event-laterano_household_papers"></a>
 ## laterano_household_papers
 
-- 出典位置：data/base/daily-regional.js:619
+- 出典位置：data/base/daily-regional.js:620
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：ラテラーノ
@@ -76677,7 +76688,7 @@ s => {
 <a id="event-col_pioneer_radio_daily"></a>
 ## col_pioneer_radio_daily
 
-- 出典位置：data/base/daily-regional.js:629
+- 出典位置：data/base/daily-regional.js:630
 - 分類確度：本文・条件・選択肢と結果枝を確認済み
 - 校閲状態：確認済み　優先度：中
 - 国・地域：クルビア
@@ -76734,7 +76745,7 @@ s => {
 <a id="event-rim_forecast_route_daily"></a>
 ## rim_forecast_route_daily
 
-- 出典位置：data/base/daily-regional.js:640
+- 出典位置：data/base/daily-regional.js:641
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：レム・ビリトン
@@ -76791,7 +76802,7 @@ s => {
 <a id="event-rim_local_mine_slowdown_daily"></a>
 ## rim_local_mine_slowdown_daily
 
-- 出典位置：data/base/daily-regional.js:655
+- 出典位置：data/base/daily-regional.js:656
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：レム・ビリトン
@@ -76846,7 +76857,7 @@ s => {
 <a id="event-rim_transporter_mine_handoff_daily"></a>
 ## rim_transporter_mine_handoff_daily
 
-- 出典位置：data/base/daily-regional.js:665
+- 出典位置：data/base/daily-regional.js:666
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：レム・ビリトン
@@ -76903,7 +76914,7 @@ s => {
 <a id="event-ursus_factory_skill_handoff_daily"></a>
 ## ursus_factory_skill_handoff_daily
 
-- 出典位置：data/base/daily-regional.js:675
+- 出典位置：data/base/daily-regional.js:676
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：ウルサス
@@ -76968,7 +76979,7 @@ s => {
 <a id="event-victoria_factory_drawing_notes_daily"></a>
 ## victoria_factory_drawing_notes_daily
 
-- 出典位置：data/base/daily-regional.js:697
+- 出典位置：data/base/daily-regional.js:698
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：ヴィクトリア
@@ -77028,7 +77039,7 @@ s => {
 <a id="event-siracusa_wine_shop_ledger_daily"></a>
 ## siracusa_wine_shop_ledger_daily
 
-- 出典位置：data/base/daily-regional.js:716
+- 出典位置：data/base/daily-regional.js:717
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：シラクーザ
@@ -77089,7 +77100,7 @@ s => {
 <a id="event-minos_small_stage_rehearsal_daily"></a>
 ## minos_small_stage_rehearsal_daily
 
-- 出典位置：data/base/daily-regional.js:747
+- 出典位置：data/base/daily-regional.js:748
 - 分類確度：本文・条件・分岐を手動確認。地域等、根拠のない分類は未特定。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：ミノス
@@ -77147,7 +77158,7 @@ s => {
 <a id="event-ursus_zelgrad_chimney_stench_daily"></a>
 ## ursus_zelgrad_chimney_stench_daily
 
-- 出典位置：data/base/daily-regional.js:762
+- 出典位置：data/base/daily-regional.js:763
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ウルサス
@@ -77199,7 +77210,7 @@ s => {
 <a id="event-ursus_zelgrad_recruitment_rumor_daily"></a>
 ## ursus_zelgrad_recruitment_rumor_daily
 
-- 出典位置：data/base/daily-regional.js:773
+- 出典位置：data/base/daily-regional.js:774
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ウルサス
@@ -77250,7 +77261,7 @@ s => {
 <a id="event-arts_overload_resonance_daily"></a>
 ## arts_overload_resonance_daily
 
-- 出典位置：data/base/daily-regional.js:784
+- 出典位置：data/base/daily-regional.js:785
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -77281,7 +77292,7 @@ s => {
     "老年"
   ],
   "show": {
-    "dynamicFunction": "s => s.inf > 0 && (s.job === 3 || (s.arts || 0) >= 40 || !!s.lifeRecord?.skills?.some(x => x.id?.includes(\"arts\") || x.title?.includes(\"アーツ\")))"
+    "dynamicFunction": "s => s.inf > 0 && !!s.artsProfile?.exposureHistory?.some(row =>\n        row.kind === \"high-load-internal-arts\" && row.year >= s.year - 1)"
   },
   "cd": 4,
   "w": 0.3,
@@ -77303,7 +77314,7 @@ s => {
 <a id="event-arts_overload_nightmare_scorch_daily"></a>
 ## arts_overload_nightmare_scorch_daily
 
-- 出典位置：data/base/daily-regional.js:796
+- 出典位置：data/base/daily-regional.js:798
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -77355,7 +77366,7 @@ s => {
 <a id="event-dust_hazard_clogged_filter_daily"></a>
 ## dust_hazard_clogged_filter_daily
 
-- 出典位置：data/base/daily-regional.js:808
+- 出典位置：data/base/daily-regional.js:810
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -77406,7 +77417,7 @@ s => {
 <a id="event-dust_hazard_air_shimmer_daily"></a>
 ## dust_hazard_air_shimmer_daily
 
-- 出典位置：data/base/daily-regional.js:819
+- 出典位置：data/base/daily-regional.js:821
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -77457,7 +77468,7 @@ s => {
 <a id="event-hypothermia_blizzard_fuel_shortage_daily"></a>
 ## hypothermia_blizzard_fuel_shortage_daily
 
-- 出典位置：data/base/daily-regional.js:830
+- 出典位置：data/base/daily-regional.js:832
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ウルサス、サーミ
@@ -77511,7 +77522,7 @@ s => {
 <a id="event-hypothermia_tundra_ice_fog_daily"></a>
 ## hypothermia_tundra_ice_fog_daily
 
-- 出典位置：data/base/daily-regional.js:841
+- 出典位置：data/base/daily-regional.js:843
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ウルサス、サーミ
@@ -77562,7 +77573,7 @@ s => {
 <a id="event-dehydration_sargon_dried_oasis_daily"></a>
 ## dehydration_sargon_dried_oasis_daily
 
-- 出典位置：data/base/daily-regional.js:852
+- 出典位置：data/base/daily-regional.js:854
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：サルゴン
@@ -77614,7 +77625,7 @@ s => {
 <a id="event-dehydration_sargon_mirage_daily"></a>
 ## dehydration_sargon_mirage_daily
 
-- 出典位置：data/base/daily-regional.js:863
+- 出典位置：data/base/daily-regional.js:865
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：サルゴン
@@ -77665,7 +77676,7 @@ s => {
 <a id="event-peril_sami_demonic_whisper_daily"></a>
 ## peril_sami_demonic_whisper_daily
 
-- 出典位置：data/base/daily-regional.js:874
+- 出典位置：data/base/daily-regional.js:876
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：サーミ
@@ -77716,7 +77727,7 @@ s => {
 <a id="event-peril_iberia_deep_sea_wash_daily"></a>
 ## peril_iberia_deep_sea_wash_daily
 
-- 出典位置：data/base/daily-regional.js:885
+- 出典位置：data/base/daily-regional.js:887
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
@@ -77768,7 +77779,7 @@ s => {
 <a id="event-isolation_buffer_ration_denial_daily"></a>
 ## isolation_buffer_ration_denial_daily
 
-- 出典位置：data/base/daily-regional.js:896
+- 出典位置：data/base/daily-regional.js:898
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -77820,7 +77831,7 @@ s => {
 <a id="event-isolation_buffer_cold_shelter_daily"></a>
 ## isolation_buffer_cold_shelter_daily
 
-- 出典位置：data/base/daily-regional.js:907
+- 出典位置：data/base/daily-regional.js:909
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -77873,7 +77884,7 @@ s => {
 <a id="event-bombardment_warning_siren_daily"></a>
 ## bombardment_warning_siren_daily
 
-- 出典位置：data/base/daily-regional.js:918
+- 出典位置：data/base/daily-regional.js:920
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -77926,7 +77937,7 @@ s => {
 <a id="event-bombardment_module_tremor_daily"></a>
 ## bombardment_module_tremor_daily
 
-- 出典位置：data/base/daily-regional.js:929
+- 出典位置：data/base/daily-regional.js:931
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -77978,7 +77989,7 @@ s => {
 <a id="event-wild_beast_track_daily"></a>
 ## wild_beast_track_daily
 
-- 出典位置：data/base/daily-regional.js:941
+- 出典位置：data/base/daily-regional.js:943
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：クルビア、サルゴン、カズデル、サーミ
@@ -78029,7 +78040,7 @@ s => {
 <a id="event-seaborn_coastal_whisper_daily"></a>
 ## seaborn_coastal_whisper_daily
 
-- 出典位置：data/base/daily-regional.js:952
+- 出典位置：data/base/daily-regional.js:954
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
@@ -78082,7 +78093,7 @@ s => {
 <a id="event-northern_demon_shadow_daily"></a>
 ## northern_demon_shadow_daily
 
-- 出典位置：data/base/daily-regional.js:964
+- 出典位置：data/base/daily-regional.js:966
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：サーミ
@@ -78133,7 +78144,7 @@ s => {
 <a id="event-medical_denial_shuttered_clinic_daily"></a>
 ## medical_denial_shuttered_clinic_daily
 
-- 出典位置：data/base/daily-regional.js:975
+- 出典位置：data/base/daily-regional.js:977
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア、ウルサス、シラクーザ、リターニア
@@ -78185,7 +78196,7 @@ s => {
 <a id="event-clinical_trial_screams_daily"></a>
 ## clinical_trial_screams_daily
 
-- 出典位置：data/base/daily-regional.js:986
+- 出典位置：data/base/daily-regional.js:988
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：クルビア
@@ -78236,7 +78247,7 @@ s => {
 <a id="event-lynch_mob_bricks_daily"></a>
 ## lynch_mob_bricks_daily
 
-- 出典位置：data/base/daily-regional.js:997
+- 出典位置：data/base/daily-regional.js:999
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア、ウルサス、リターニア
@@ -78287,7 +78298,7 @@ s => {
 <a id="event-urban_smog_yellow_fog_daily"></a>
 ## urban_smog_yellow_fog_daily
 
-- 出典位置：data/base/daily-regional.js:1008
+- 出典位置：data/base/daily-regional.js:1010
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア
@@ -78341,7 +78352,7 @@ s => {
 <a id="event-mine_collapse_creaking_beam_daily"></a>
 ## mine_collapse_creaking_beam_daily
 
-- 出典位置：data/base/daily-regional.js:1019
+- 出典位置：data/base/daily-regional.js:1021
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -78392,7 +78403,7 @@ s => {
 <a id="event-arena_brutal_record_daily"></a>
 ## arena_brutal_record_daily
 
-- 出典位置：data/base/daily-regional.js:1030
+- 出典位置：data/base/daily-regional.js:1032
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：カジミエーシュ
@@ -78443,7 +78454,7 @@ s => {
 <a id="event-omerta_black_ribbon_daily"></a>
 ## omerta_black_ribbon_daily
 
-- 出典位置：data/base/daily-regional.js:1041
+- 出典位置：data/base/daily-regional.js:1043
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：シラクーザ
@@ -78494,7 +78505,7 @@ s => {
 <a id="event-espionage_surveillance_car_daily"></a>
 ## espionage_surveillance_car_daily
 
-- 出典位置：data/base/daily-regional.js:1052
+- 出典位置：data/base/daily-regional.js:1054
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -78545,7 +78556,7 @@ s => {
 <a id="event-terminal_despair_ledger_daily"></a>
 ## terminal_despair_ledger_daily
 
-- 出典位置：data/base/daily-regional.js:1063
+- 出典位置：data/base/daily-regional.js:1065
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -78596,7 +78607,7 @@ s => {
 <a id="event-honor_martyrdom_hidden_blade_daily"></a>
 ## honor_martyrdom_hidden_blade_daily
 
-- 出典位置：data/base/daily-regional.js:1074
+- 出典位置：data/base/daily-regional.js:1076
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：カジミエーシュ
@@ -217492,12 +217503,12 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
 
 - 出典位置：data/parts/extensions/arts-and-life/arts-training.js:8
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：低
 - 国・地域：未特定
 - ジャンル：教育・文化
 - 状況：選択イベント、動的表示条件
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：本文・選択肢・同年出席条件・実効果を照合。貸与機器は個体IDと所有者を保ち、技能・資格・雇用・感染への自動波及を分離。
 
 ### 本文
 
@@ -217515,6 +217526,7 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
     "SRC_EDUCATION_ACCESS"
   ],
   "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
   "once": true,
   "w": 0.45,
   "show": {
@@ -217620,14 +217632,14 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
 <a id="event-life_arts_lowaptitude_class"></a>
 ## life_arts_lowaptitude_class
 
-- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:37
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:38
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：低
 - 国・地域：未特定
 - ジャンル：教育・文化
 - 状況：選択イベント、動的表示条件
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：本文・選択肢・同年出席条件・実効果を照合。貸与機器は個体IDと所有者を保ち、技能・資格・雇用・感染への自動波及を分離。
 
 ### 本文
 
@@ -217645,10 +217657,11 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
     "SRC_EDUCATION_ACCESS"
   ],
   "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
   "cd": 3,
   "w": 0.3,
   "show": {
-    "dynamicFunction": "s => s.artsProfile?.innateBand === \"lower\" &&\n        artsHasAttendedCurrentCourse(s) &&\n        !s.artsProfile.practiceHistory.some(row =>\n          row.sourceEventId === \"life_arts_lowaptitude_class\" && row.year === s.year)"
+    "dynamicFunction": "s => lifeSystemEventEligible(s, \"life_arts_lowaptitude_class\")"
   }
 }
 ```
@@ -217724,14 +217737,14 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
 <a id="event-life_arts_training_repeat"></a>
 ## life_arts_training_repeat
 
-- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:62
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:61
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：低
 - 国・地域：未特定
 - ジャンル：教育・文化
 - 状況：選択イベント、動的表示条件
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：本文・選択肢・同年出席条件・実効果を照合。貸与機器は個体IDと所有者を保ち、技能・資格・雇用・感染への自動波及を分離。
 
 ### 本文
 
@@ -217749,6 +217762,7 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
     "SRC_EDUCATION_ACCESS"
   ],
   "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
   "cd": 2,
   "w": 0.38,
   "show": {
@@ -217827,12 +217841,12 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
 
 - 出典位置：data/parts/extensions/arts-and-life/arts-training.js:91
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：低
 - 国・地域：未特定
 - ジャンル：教育・文化
 - 状況：選択イベント、動的表示条件
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：本文・選択肢・同年出席条件・実効果を照合。貸与機器は個体IDと所有者を保ち、技能・資格・雇用・感染への自動波及を分離。
 
 ### 本文
 
@@ -217850,6 +217864,7 @@ s => educationLive(s) && ["primary","lower","upper"].includes(s.educationPath.st
     "SRC_EDUCATION_ACCESS"
   ],
   "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
   "cd": 1,
   "w": 0.22,
   "show": {
@@ -217916,14 +217931,14 @@ null
 <a id="event-life_arts_unit_return"></a>
 ## life_arts_unit_return
 
-- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:115
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:117
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：低
 - 国・地域：未特定
 - ジャンル：教育・文化
 - 状況：選択イベント、動的表示条件
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：本文・選択肢・同年出席条件・実効果を照合。貸与機器は個体IDと所有者を保ち、技能・資格・雇用・感染への自動波及を分離。
 
 ### 本文
 
@@ -217941,6 +217956,7 @@ null
     "SRC_EDUCATION_ACCESS"
   ],
   "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
   "cd": 1,
   "w": 0.3,
   "show": {
@@ -218008,14 +218024,14 @@ null
 <a id="event-life_arts_unit_inspection"></a>
 ## life_arts_unit_inspection
 
-- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:135
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:138
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：低
 - 国・地域：未特定
 - ジャンル：教育・文化
 - 状況：選択イベント、動的表示条件
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：本文・選択肢・同年出席条件・実効果を照合。貸与機器は個体IDと所有者を保ち、技能・資格・雇用・感染への自動波及を分離。
 
 ### 本文
 
@@ -218033,6 +218049,7 @@ null
     "SRC_EDUCATION_ACCESS"
   ],
   "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
   "cd": 2,
   "w": 0.18,
   "show": {
@@ -218107,14 +218124,14 @@ null
 <a id="event-life_arts_unit_repair"></a>
 ## life_arts_unit_repair
 
-- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:164
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:168
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：低
 - 国・地域：未特定
 - ジャンル：教育・文化
 - 状況：選択イベント、動的表示条件
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：本文・選択肢・同年出席条件・実効果を照合。貸与機器は個体IDと所有者を保ち、技能・資格・雇用・感染への自動波及を分離。
 
 ### 本文
 
@@ -218132,6 +218149,7 @@ null
     "SRC_EDUCATION_ACCESS"
   ],
   "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
   "cd": 2,
   "w": 0.12,
   "show": {
@@ -218204,14 +218222,14 @@ null
 <a id="event-life_arts_unit_repair_parts"></a>
 ## life_arts_unit_repair_parts
 
-- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:192
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:197
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：低
 - 国・地域：未特定
 - ジャンル：未分類
 - 状況：選択イベント、動的表示条件
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：本文・選択肢・同年出席条件・実効果を照合。貸与機器は個体IDと所有者を保ち、技能・資格・雇用・感染への自動波及を分離。
 
 ### 本文
 
@@ -218229,6 +218247,7 @@ null
     "SRC_EDUCATION_ACCESS"
   ],
   "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
   "cd": 1,
   "w": 0.1,
   "show": {
@@ -218296,14 +218315,14 @@ null
 <a id="event-life_arts_unit_repair_complete"></a>
 ## life_arts_unit_repair_complete
 
-- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:211
+- 出典位置：data/parts/extensions/arts-and-life/arts-training.js:217
 - 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 校閲状態：条件／処理確認　優先度：低
 - 国・地域：未特定
 - ジャンル：教育・文化
 - 状況：選択イベント、動的表示条件
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：本文・選択肢・同年出席条件・実効果を照合。貸与機器は個体IDと所有者を保ち、技能・資格・雇用・感染への自動波及を分離。
 
 ### 本文
 
@@ -218321,6 +218340,7 @@ null
     "SRC_EDUCATION_ACCESS"
   ],
   "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
   "cd": 1,
   "w": 0.1,
   "show": {
@@ -218380,6 +218400,6441 @@ null
 
 ```json
 null
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_family_glimpse"></a>
+## life_arts_family_glimpse
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:29
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：日常、家族・介護
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 夕食の支度をしていると、湯気の向こうで器がすっと棚の端へ寄った。自分の指先には、さっき練習した力の感触が残っている。向かいの親は、まだ何も尋ねてこない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_family_glimpse",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_family_glimpse-0"></a>
+選択肢文：親に見せて、気づいたことを聞く
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_family_glimpse-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 親へ見せ、相手の返事を待った。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "information",
+    "action": "receive-situated",
+    "claimId": "arts-family-practice"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_family_glimpse-1"></a>
+選択肢文：器を戻し、練習のことは話さない
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_family_glimpse-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 器を棚へ戻し、食卓の話題を夕飯へ移した。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_training_inquiry"></a>
+## life_arts_training_inquiry
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:33
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 掲示板にアーツ課程の募集要項が貼られていた。入学時期や費用は年度で違うらしい。家の人は紙面を読み、まず近くに通える学校があるか窓口で聞いてみようと言った。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_training_inquiry",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "arts",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_training_inquiry-0"></a>
+選択肢文：学院の窓口で募集と通学を照会する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_training_inquiry-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 進学案件を開き、居住地区の募集先を照会した。
+
+効果：
+
+```json
+{
+  "educationAction": "case:begin:higher-path:arts:1"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_training_inquiry-1"></a>
+選択肢文：今回は見送り、家計と仕事を優先する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_training_inquiry-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 紙面をしまい、今期は進学手続きを始めなかった。
+
+効果：
+
+```json
+{
+  "educationAction": "case:decline:higher-path"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_practical_assessment"></a>
+## life_arts_practical_assessment
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:37
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 試験台には、習った器具と同じ型の木箱が置かれていた。出席記録と実習帳は係が確認済みだという。結果を出すには、実技を一度通して見てもらう必要がある。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_practical_assessment",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "arts",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_practical_assessment-0"></a>
+選択肢文：担当者の前で、習った手順を試す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_practical_assessment-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 課程の出席と実技を照合し、試験を受けた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "assess-course",
+    "enrollmentId": "$current-arts-enrollment",
+    "result": "passed"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_practical_assessment-1"></a>
+選択肢文：苦手な手順を申告し、再実習を頼む
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_practical_assessment-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 苦手な手順を伝え、再評価が必要との記録を受けた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "assess-course",
+    "enrollmentId": "$current-arts-enrollment",
+    "result": "reassess"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_course_after"></a>
+## life_arts_course_after
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:41
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 修了の知らせを受け、机の上の教本を閉じた。証書には履修した課程が記されている。練習具の返却と、次に何を学ぶかの相談は別々に残っていた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_course_after",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_course_after-0"></a>
+選択肢文：窓口で次に通える課程を調べる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_course_after-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 次の進学先を探す進路案件を開いた。
+
+効果：
+
+```json
+{
+  "educationAction": "case:begin:higher-path:arts:1"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_course_after-1"></a>
+選択肢文：貸与具を返却する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_course_after-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 貸与記録を照合し、返却できる器具を窓口へ返した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "return-equipment",
+    "equipmentId": "$oldest-school-loan"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_arts_course_after-2"></a>
+選択肢文：証書をしまい、しばらく仕事に戻る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_course_after-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 証書を保管し、次の課程への申込みはしなかった。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_scholarship_inquiry"></a>
+## life_arts_scholarship_inquiry
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:46
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済、差別・制度
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 学院の会計窓口で、受験と入学に必要な費用の見積書を示された。机の脇には、支援制度を照会する用紙も置かれている。利用できるかは、窓口の確認後に分かる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_scholarship_inquiry",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "arts",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_scholarship_inquiry-0"></a>
+選択肢文：今回の募集先で使える支援を照会する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_scholarship_inquiry-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 募集先と今回の費用に限って支援条件を照会した。
+
+効果：
+
+```json
+{
+  "educationAction": "case:check-financing"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_scholarship_inquiry-1"></a>
+選択肢文：申込みを急がず、家で費用を相談する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_scholarship_inquiry-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 見積書を持ち帰り、支援の申請は保留した。
+
+効果：
+
+```json
+{
+  "educationAction": "case:defer"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_school_decision"></a>
+## life_arts_school_decision
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:50
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 学院の窓口から、選考結果と入学条件を記した通知が届いた。募集先の授業状況、費用、通学経路をもう一度確かめてから返事をするよう書かれている。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_school_decision",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "arts",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_school_decision-0"></a>
+選択肢文：通知と条件を確かめて、入学手続きを進める
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_school_decision-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 確認済みの募集先へ入学の意思を伝え、条件を満たす場合に在籍を開始した。
+
+効果：
+
+```json
+{
+  "educationAction": "case:commit"
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_school_decision-1"></a>
+選択肢文：今回は辞退し、通知を窓口へ返す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_school_decision-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 募集先へ辞退を伝え、今回の入学案件を閉じた。
+
+効果：
+
+```json
+{
+  "educationAction": "case:decline-offer"
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_workshop_invitation"></a>
+## life_arts_workshop_invitation
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:54
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 工房の作業台には、勤務先で扱う器具の点検札が置かれていた。担当者は、まず同じ型の部品を見て、手入れを学ぶ気があるか尋ねた。通常のアーツ行使は求められていない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_workshop_invitation",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "arts",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_workshop_invitation-0"></a>
+選択肢文：勤務先の指導者に、工房実習を頼む
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_workshop_invitation-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 実在する勤務先の指導者と場所を確認し、工房学習の道を開いた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "open-path",
+    "mode": "arts-workshop",
+    "providerId": "$current-arts-provider"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_workshop_invitation-1"></a>
+選択肢文：見学だけにして、作業台から離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_workshop_invitation-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 部品の並びを見せてもらい、実習の申込みはしなかった。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_late_fee"></a>
+## life_arts_late_fee
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:58
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 返却期日を過ぎた貸与具について、窓口から金額の書かれた請求書が届いた。貸出票と品物の所在を照らし、支払いか相談かを決める必要がある。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_late_fee",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "arts",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_late_fee-0"></a>
+選択肢文：請求額を支払い、返却予定を伝える
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => artsCanPayLateFee(s)"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_late_fee-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 貸与記録にある請求額を支払い、窓口へ返却予定を伝えた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "pay-late-fee",
+    "equipmentId": "$oldest-overdue-school-loan"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_late_fee-1"></a>
+選択肢文：請求書を持って窓口で支払時期を相談する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_late_fee-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 請求額はそのままに、支払い時期の相談を記録した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "defer-late-fee",
+    "equipmentId": "$oldest-overdue-school-loan"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_small_use"></a>
+## life_arts_small_use
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:62
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：日常、教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 食卓のランプが消え、授業で覚えた小さな術式を思い出した。足元に人がいないことを確かめ、今日は使うか別の方法にするか決められる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_small_use",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
+  "cd": 1,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_small_use-0"></a>
+選択肢文：安全を確かめて、小さな術式を使う
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_small_use-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 習得記録のある術式を安全な場所で実際に使った。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "record-use",
+    "techniqueId": "$first-known-technique",
+    "disciplineId": "$technique-discipline",
+    "purpose": "personal-practice",
+    "siteRef": "$current-area",
+    "result": "performed"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_small_use-1"></a>
+選択肢文：器具をしまい、手でランプを直す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_small_use-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 術式を使わず、ランプを手で点検して灯りを戻した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "record-use",
+    "techniqueId": "$first-known-technique",
+    "disciplineId": "$technique-discipline",
+    "purpose": "personal-practice",
+    "siteRef": "$current-area",
+    "result": "stopped"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_non_caster_craft"></a>
+## life_arts_non_caster_craft
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:67
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 動力部のふたを外すと、留め具の位置が点検表と違っていた。工房の指導者が横で部品を押さえる。ここではアーツを使わず、工具の扱いだけを練習する。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_non_caster_craft",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
+  "cd": 2,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_non_caster_craft-0"></a>
+選択肢文：指導のもとで留め具を組み直す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !!lifeSystemCurrentArtsPath(s, [\"arts-unit-maintenance\", \"arts-workshop\"])"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_non_caster_craft-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 勤務先の指導者のもと、器具の保守技能を実地で練習した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "record-tech-skill",
+    "learningPathId": "$current-arts-path",
+    "skillId": "unit-maintenance",
+    "result": "guided-success"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_non_caster_craft-1"></a>
+選択肢文：手順を写し、作業は指導者へ戻す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_non_caster_craft-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 手順を記録し、器具の組み直しは指導者に任せた。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_employer_request"></a>
+## life_arts_employer_request
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:70
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 勤務先の掲示板に、実技を見てから担当を決める作業枠が載った。求められるのは既に習った術式の実演で、資格や採用は試験の前には決まらない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_employer_request",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "arts",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_employer_request-0"></a>
+選択肢文：募集条件を照会し、確認済みの術式を見せる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_employer_request-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 実際の募集条件と学習記録を照合し、技能確認を申し込んだ。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "record-use",
+    "techniqueId": "$first-known-technique",
+    "disciplineId": "$technique-discipline",
+    "purpose": "workplace-use",
+    "siteRef": "$current-worksite",
+    "workplaceUse": true,
+    "result": "performed"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_employer_request-1"></a>
+選択肢文：不足する手順を確かめ、今回は応募しない
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_employer_request-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 募集枠の条件を読み、応募前に必要な経験を確かめた。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_skill_retest"></a>
+## life_arts_skill_retest
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:67
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 前の実技確認で止まった調整箇所を、工房の練習台に印した。担当者は同じ手順を急がず繰り返すよう言う。今日は再訓練にするか、別の作業を選ぶか決められる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_skill_retest",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_skill_retest-0"></a>
+選択肢文：指導者と同じ手順をもう一度練習する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !!lifeSystemCurrentArtsPath(s, [\"arts-unit-maintenance\", \"arts-workshop\"])"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_skill_retest-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 勤務先の指導者と保守作業を再練習した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "record-tech-skill",
+    "learningPathId": "$current-arts-path",
+    "skillId": "unit-maintenance",
+    "result": "guided-success"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_skill_retest-1"></a>
+選択肢文：再試験を急がず、別の作業を続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_skill_retest-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 再評価を保留し、現在の担当作業へ戻った。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_medical_observation"></a>
+## life_arts_medical_observation
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:78
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：感染・医療
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 診療所の担当者が、同意を得た診察のあとで補助具の扱いを説明した。見学できるのは器具と手順だけで、患者の記録や治療判断には触れない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_medical_observation",
+  "conf": "S",
+  "references": [
+    "SRC_ORI_JP_OVERVIEW_2026",
+    "SRC_RHODES_MEDICAL"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_medical_observation-0"></a>
+選択肢文：担当者の許可を得て器具の扱いを見る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_medical_observation-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 許可された補助器具の使い方を見学した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "record-practice",
+    "disciplineId": "medical-support",
+    "techniqueId": "medical-support-tool-handling",
+    "outcome": "observed"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_medical_observation-1"></a>
+選択肢文：見学を断り、廊下で待つ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_medical_observation-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 見学を断り、診療所の待合へ戻った。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_medical_training"></a>
+## life_arts_medical_training
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:82
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：感染・医療
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 診療所の訓練担当者が、器具の受け渡しと記録補助を教える枠を説明した。訓練は監督者のいる時間だけで、診療や研究への参加とは別に扱われる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_medical_training",
+  "conf": "S",
+  "references": [
+    "SRC_ORI_JP_OVERVIEW_2026",
+    "SRC_RHODES_MEDICAL",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "arts",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_medical_training-0"></a>
+選択肢文：指導者と時間を決め、補助訓練を始める
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => lifeSystemArtsProviders(s, \"arts-medical-support\").length > 0"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_medical_training-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 勤務先の指導者と医療補助の学習経路を確認した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "open-path",
+    "mode": "arts-medical-support",
+    "providerId": "$current-arts-provider"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_medical_training-1"></a>
+選択肢文：診療所の説明だけ聞いて、返事を保留する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_medical_training-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 訓練枠の説明を聞き、申込みは保留した。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_overexertion"></a>
+## life_arts_overexertion
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:86
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：感染・医療
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 器具を握る手に震えが残り、呼吸も整わない。指導者は高負荷の術式を続けるか、途中で止めるか尋ねた。体調の変化を理由に休む選択もある。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_overexertion",
+  "conf": "S",
+  "references": [
+    "SRC_ORI_JP_OVERVIEW_2026",
+    "SRC_RHODES_MEDICAL"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "arts",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_overexertion-0"></a>
+選択肢文：症状を伝えて中断し、診療所へ相談する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_overexertion-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 高負荷の術式を中断し、体調の変化を相談記録へ残した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "record-use",
+    "techniqueId": "$first-known-technique",
+    "disciplineId": "$technique-discipline",
+    "purpose": "high-load-internal",
+    "siteRef": "$current-area",
+    "result": "stopped"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_overexertion-1"></a>
+選択肢文：高負荷を続け、負担の記録を残す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_overexertion-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 選んだ術式を実行し、その際の体調を曝露記録に残した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "record-use",
+    "techniqueId": "$first-known-technique",
+    "disciplineId": "$technique-discipline",
+    "purpose": "high-load-internal",
+    "siteRef": "$current-area",
+    "result": "performed"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_arts_overexertion-2"></a>
+選択肢文：今日は使わず、担当者に休むと伝える
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_overexertion-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 器具を置き、今日は訓練を続けないと伝えた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "record-use",
+    "techniqueId": "$first-known-technique",
+    "disciplineId": "$technique-discipline",
+    "purpose": "high-load-internal",
+    "siteRef": "$current-area",
+    "result": "stopped"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_after_overexertion"></a>
+## life_arts_after_overexertion
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:91
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：感染・医療
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 前回の訓練から数日が過ぎても、指先のこわばりが気になった。診療所では、訓練記録と今の状態を見ながら、休息や次回の負荷を相談できる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_after_overexertion",
+  "conf": "S",
+  "references": [
+    "SRC_ORI_JP_OVERVIEW_2026",
+    "SRC_RHODES_MEDICAL"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "arts",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => {\n        const exposure = artsExposureNeedingFollowup(s);\n        if (!exposure) return null;\n        const due = exposure.year * 12 + exposure.month + 1;\n        return { year: Math.floor((due - 1) / 12), month: ((due - 1) % 12) + 1 };\n      }"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_after_overexertion-0"></a>
+選択肢文：訓練記録を示し、診察を相談する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_after_overexertion-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 前回の行使記録をもとに、医療者へ経過を相談した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "followup",
+    "mode": "consult"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_after_overexertion-1"></a>
+選択肢文：器具を返し、次の訓練を延期する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_after_overexertion-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 次の訓練を延期し、器具の保管方法を確認した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "followup",
+    "mode": "defer"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_work_adjustment"></a>
+## life_arts_work_adjustment
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:101
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 勤務表を前に、今の体調では同じ負荷を続けにくいと感じた。担当者は、作業の組替え、休みの申請、器具の保守訓練への移行を案内した。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_work_adjustment",
+  "conf": "S",
+  "references": [
+    "SRC_ORI_JP_OVERVIEW_2026",
+    "SRC_RHODES_MEDICAL",
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "arts",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "cd": 4
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_work_adjustment-0"></a>
+選択肢文：担当者へ負荷の調整を相談する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_work_adjustment-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 現職の担当者へ作業負荷の相談を申し出た。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "request-assessment",
+    "result": "work-adjustment-requested"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_work_adjustment-1"></a>
+選択肢文：休みを申請し、次の勤務日を相談する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_work_adjustment-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 体調を理由に勤務調整を相談した。
+
+効果：
+
+```json
+{
+  "employmentAction": {
+    "action": "suspend",
+    "reason": "health-adjustment"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_arts_work_adjustment-2"></a>
+選択肢文：保守の実習について、指導者に相談する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_work_adjustment-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 別の技能訓練が実際にあるか勤務先へ尋ねた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "arts",
+    "action": "open-path",
+    "mode": "arts-unit-maintenance",
+    "providerId": "$current-arts-provider"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_mentor_later"></a>
+## life_arts_mentor_later
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:106
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：家族・介護
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 年下の子が作業台の端から手元を見ていた。教える資格の話ではなく、道具を置く順や危ない箇所を一緒に確かめるだけでもよい。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_mentor_later",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_LEITHANIEN_ARTS_ARCHIVE",
+    "SRC_EDUCATION_ACCESS"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_mentor_later-0"></a>
+選択肢文：具体的な手順を一緒に確かめる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_mentor_later-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 実際に同居する子と、身につけた手順を一緒に確かめた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "culture",
+    "action": "record-mentoring",
+    "menteeId": "$oldest-eligible-child"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_mentor_later-1"></a>
+選択肢文：見せるだけにして、手は出させない
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_mentor_later-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 作業を見せたが、子どもへ道具を渡さなかった。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_arts_tradition_lesson"></a>
+## life_arts_tradition_lesson
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:110
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：日常、教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 近所の年長者は、谷の風向きを表す古い呼び名を口にした。書き方は教わっていない。言葉を聞き、土地の記憶と学院の術式を別々に受け取る時間だった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_arts_tradition_lesson",
+  "conf": "S",
+  "references": [
+    "SRC_SAMI_CLANS",
+    "SRC_LEITHANIEN_ARTS"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "arts",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_arts_tradition_lesson-0"></a>
+選択肢文：呼び名を聞き、使う場面を尋ねる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_tradition_lesson-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 近所の人から土地の呼び名と使う場面を聞いた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "culture",
+    "action": "record-oral-tradition"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_arts_tradition_lesson-1"></a>
+選択肢文：聞いた言葉を自分の言葉で言い直す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_arts_tradition_lesson-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 聞いた言葉を声に出して確かめた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "culture",
+    "action": "record-oral-tradition"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_first_contact"></a>
+## life_cc_first_contact
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:115
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済、天災・避難
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 職場の休憩所に、近隣の復旧窓口の連絡先が置かれていた。担当者は急な応援を募る可能性があると説明したが、仕事内容や期間はまだ決まっていない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_first_contact",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "contingency",
+  "cd": 12,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_first_contact-0"></a>
+選択肢文：窓口へ連絡先を伝え、条件が出たら聞く
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_first_contact-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 現在の勤務先を通じて、同じ地区の窓口へ連絡先を伝えた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "contact"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_first_contact-1"></a>
+選択肢文：今は登録せず、案内を戻す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_first_contact-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 連絡先を渡さず、案内を窓口へ戻した。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_offer_review"></a>
+## life_cc_offer_review
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:119
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：天災・避難、移動・物流
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 連絡先を残した窓口から、復旧支援の短期依頼が届いた。現場、荷物、受取先、支払条件を確かめる欄がある。内容を確かめるまでは受ける必要はない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_offer_review",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "contingency",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_offer_review-0"></a>
+選択肢文：受取先と荷札が空欄のため、先に照会する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => activeInfrastructureIncident(s)?.kind === \"water\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_offer_review-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 依頼主から荷主と品目の記された荷札を受け取り、受取先を確認した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "offer",
+    "mode": "undisclosed-cargo"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_offer_review-1"></a>
+選択肢文：内容の分かる依頼として条件を確かめる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_offer_review-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 記載された条件を確認できる依頼を提示してもらった。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "offer"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_cc_offer_review-2"></a>
+選択肢文：条件が合わないので、今回は辞退する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_offer_review-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 窓口へ辞退を伝え、連絡案件を閉じた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "end-contact"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_accept"></a>
+## life_cc_accept
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:124
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：家族・介護、労働・経済
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 契約書には、期間、依頼主、届け先、報酬、途中で撤収する手順が記されていた。現場調査や設備保守には、募集条件に記された実務技能の記録も要る。条件を確かめてから、署名するか決められる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_accept",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "contingency",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_accept-0"></a>
+選択肢文：条件と技能記録を満たした依頼を受ける
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => contingencySkillAssessment(s).eligible"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_accept-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 契約条件と、記録された実務技能を照合して依頼を受けた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "accept"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_accept-1"></a>
+選択肢文：必要技能の記録を照会し、今回は受けない
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !contingencySkillAssessment(s).eligible"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_accept-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 募集条件の技能記録が足りないことを確認し、受注を見送った。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "review-eligibility"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_cc_accept-2"></a>
+選択肢文：条件を断り、契約書を返す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_accept-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 提示された短期依頼を断った。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "decline"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_preparation"></a>
+## life_cc_preparation
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:131
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：家族・介護、労働・経済
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 荷台には、持ち出す器具と現地に残す道具を分ける余地があった。未成年の子がいる家では、出発前に世話を引き受ける人との話し合いも要る。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_preparation",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "contingency",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_preparation-0"></a>
+選択肢文：必要な道具と作業手順を点検する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => !contingencyNeedsCarePlan(s)"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_preparation-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 契約に必要な道具と作業の準備を記録した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "prepare",
+    "mode": "equipment"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_preparation-1"></a>
+選択肢文：家族の世話を引き受ける人と計画を記す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => contingencyNeedsCarePlan(s) && !!contingencyAvailableCaregiver(s)"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_preparation-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 家族の世話を担う成人と話し合い、留守中の計画を記録した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "prepare",
+    "mode": "family-plan"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_cc_preparation-2"></a>
+選択肢文：準備を延期し、依頼主へ日程を伝える
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_preparation-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 出発準備を延期した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "defer-preparation"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 4
+
+<a id="choice-life_cc_preparation-3"></a>
+選択肢文：依頼を断り、契約を終える
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_preparation-3-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 出発前に短期依頼を断り、契約を終了した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "cancel"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_departure"></a>
+## life_cc_departure
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:135
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 予定していた出発時刻が近づいた。運賃と道具、留守宅の段取りを改めて確かめる。条件がそろえば現場へ向かえる。延期や辞退を依頼主へ伝えることもできる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_departure",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "contingency",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_departure-0"></a>
+選択肢文：条件を確かめ、確認済みの経路で出発する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => contingencyCanDepart(s)"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_departure-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 移動費を払い、契約の現場へ出発した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "depart"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_departure-1"></a>
+選択肢文：段取りを整え直し、出発を延期する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_departure-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 出発を延期し、契約準備を改めて確認することにした。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "defer-departure"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_cc_departure-2"></a>
+選択肢文：依頼主へ辞退を伝え、契約を終える
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_departure-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 出発せず、依頼主へ辞退を伝えて契約を終了した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "cancel"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_handoff"></a>
+## life_cc_handoff
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:140
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済、移動・物流
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 現場の受取担当者が、荷札の宛先と数量を読み上げた。受領印をもらう前に、依頼書の品目と目の前の荷物を照合する。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_handoff",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "contingency",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => activeContingencyContract(s, [\"at-site\"]) ? { year: s.year, month: s.mo } : null"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_handoff-0"></a>
+選択肢文：照合して荷物を引き渡す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_handoff-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 契約の届け先へ荷物を渡し、検収を待つ状態にした。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "handoff"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_handoff-1"></a>
+選択肢文：数量が合わないため、引渡しを保留する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_handoff-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 数量の違いを記録し、荷物をまだ引き渡さなかった。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_forecast_survey"></a>
+## life_cc_forecast_survey
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:145
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 観測場所には、風向きを測る器具と撤収路の案内があった。責任者は許可された範囲を示し、続けるか戻るか確認した。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_forecast_survey",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "contingency",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, \"life_cc_forecast_survey\")\n        ? { year: s.year, month: s.mo } : null"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_forecast_survey-0"></a>
+選択肢文：許可された範囲を観測して記録する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_forecast_survey-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 観測した範囲と時刻を記録した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "survey"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_forecast_survey-1"></a>
+選択肢文：危険を感じたため、観測を切り上げる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_forecast_survey-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 安全条件を優先し、観測を切り上げた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "return"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_suspicious_cargo"></a>
+## life_cc_suspicious_cargo
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:151
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 受け取った依頼書では、荷主と箱の中身の欄が空いていた。窓口は先に受領印を求めているが、説明を求めることもできる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_suspicious_cargo",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "contingency",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true,
+  "pri": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_suspicious_cargo-0"></a>
+選択肢文：荷主と品目が記された荷札を受け取る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_suspicious_cargo-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 依頼主から荷主と品目を記した荷札を受け取り、受領条件を確かめた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "query-cargo"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_suspicious_cargo-1"></a>
+選択肢文：説明がないため、依頼を辞退する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_suspicious_cargo-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 内容を確認できない依頼を辞退した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "decline"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_support_equity"></a>
+## life_cc_support_equity
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:155
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 配給表には、届く予定の食料と医薬品が地区ごとに記されていた。数の不足が残る欄を見つけ、配分を決める前に担当者へ尋ねられる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_support_equity",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "contingency",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_support_equity-0"></a>
+選択肢文：不足する地区と必要数を担当者へ尋ねる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_support_equity-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 記録にある不足について配分担当者へ照会した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "support-equity"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_support_equity-1"></a>
+選択肢文：荷を動かさず、配分の判断を担当者に任せる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_support_equity-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 配分について意見を伝えず、担当者の判断を待った。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_hiring_bias"></a>
+## life_cc_hiring_bias
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:159
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：所属・組織
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 名簿の選考欄に、自分の所属についての記載があった。担当者はその理由を説明していない。見た記録を示して、基準を尋ねることはできる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_hiring_bias",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "contingency",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_hiring_bias-0"></a>
+選択肢文：記載の理由と選考基準を照会する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_hiring_bias-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 実際に見た選考記録について、基準の説明を求めた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "query-screening"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_hiring_bias-1"></a>
+選択肢文：記録を写し、今回は返事を待つ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_hiring_bias-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 該当欄を記録し、選考への異議は保留した。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_payment"></a>
+## life_cc_payment
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:166
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 検収済みの控えと報酬の金額が一致した。支払窓口で受領を確かめるか、期日に金が届かなかったことを記録して照会へ進める。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_payment",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "contingency",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => activeContingencyContract(s, [\"awaiting-payment\", \"payment-disputed\"])?.paymentDueAt || null"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_payment-0"></a>
+選択肢文：控えを示し、報酬を受け取る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => {\n          const c = activeContingencyContract(s, [\"awaiting-payment\", \"payment-disputed\"]);\n          return !!c && (c.status === \"awaiting-payment\" || !!c.paymentClaim);\n        }"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_payment-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 短期業務の報酬を受け取り、支払記録を閉じた。
+
+効果：
+
+```json
+{
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "contingency-logistics",
+    "sourceEventId": "life_cc_payment",
+    "nominalCash": 12000
+  },
+  "cash": 12000,
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "settle"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_payment-1"></a>
+選択肢文：支払いが届かなかったと記録し、窓口へ申し立てる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => activeContingencyContract(s)?.status === \"awaiting-payment\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_payment-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 期日の未払いを記録し、支払請求の窓口へ進んだ。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "mark-payment-missing"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_payment_dispute"></a>
+## life_cc_payment_dispute
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:173
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 支払期日を過ぎても、受領額は帳面に記されていない。検収票と連絡先をそろえ、金額を確認する請求を出せる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_payment_dispute",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "contingency",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => {\n        const c = activeContingencyContract(s, [\"payment-disputed\"]);\n        return c ? c.paymentReviewAt || c.paymentDisputedAt ||\n          c.history?.findLast(row => row.status === \"payment-disputed\") || null : null;\n      }"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_payment_dispute-0"></a>
+選択肢文：検収票を添えて、報酬の支払いを請求する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_payment_dispute-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 未払いの報酬について、書類を添えて請求を記録した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "dispute-payment"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_payment_dispute-1"></a>
+選択肢文：窓口の返答を待ち、追加の請求は保留する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_payment_dispute-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 未払いの記録を保ち、次の確認日を決めた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "defer-payment-claim"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_organization_receipt"></a>
+## life_cc_organization_receipt
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:182
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済、所属・組織
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 届け先の担当者が、荷札と受領控えを照合した。組織の受領なら所属記録のある窓口へ、地域の受領なら地区の担当者へ確認する。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_organization_receipt",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "contingency",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => activeContingencyContract(s, [\"awaiting-verification\"])\n        ? { year: s.year, month: s.mo } : null"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_organization_receipt-0"></a>
+選択肢文：実際の届け先と受領控えを照合する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_organization_receipt-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 届け先が受取った記録を契約へ結び、支払期日を確定した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "verify-receipt"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_organization_receipt-1"></a>
+選択肢文：控えの不一致を申告し、検収を待つ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_organization_receipt-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 控えの違いを申告し、支払確認を保留した。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_family_notice"></a>
+## life_cc_family_notice
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:188
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：家族・介護
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 出発後、家の人へ伝える連絡先と便の予定を確認した。手紙を出しても、届いたことや受け手の気持ちは後で確かめる必要がある。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_family_notice",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "contingency",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => activeContingencyContract(s, [\"accepted\", \"prepared\", \"travelling\", \"at-site\"])\n        ? { year: s.year, month: s.mo } : null"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_family_notice-0"></a>
+選択肢文：確認した宛先へ、予定を書いた便りを出す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_family_notice-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 家族への連絡を実際の宛先と便に登録した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "family-notice"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_family_notice-1"></a>
+選択肢文：次の連絡機会まで、便りを手元に置く
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_family_notice-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 便りを出さず、次に連絡できる時期を確かめた。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_cc_return"></a>
+## life_cc_return
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:194
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 帰り道の便が残っている。現場では作業を続けることも、依頼主へ知らせて戻ることもできる。帰路の費用と行き先を確認した。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_cc_return",
+  "conf": "S",
+  "references": [
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SR_RHODES_WORK",
+    "SRC_MOBILE_CITY_MOBILITY"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "contingency",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => {\n        const c = activeContingencyContract(s, [\"travelling\", \"at-site\"]);\n        return c ? c.returnDecisionDueAt || { year: s.year, month: s.mo } : null;\n      }"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_cc_return-0"></a>
+選択肢文：現場を離れ、確認済みの経路で戻る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_return-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 依頼主へ知らせ、帰還の移動を始めた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "return"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_cc_return-1"></a>
+選択肢文：安全が保てる範囲で作業を続ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_cc_return-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 帰路を選ばず、次の作業日を依頼主と決めた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "contract",
+    "action": "continue-work"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_infra_warning_notice"></a>
+## life_infra_warning_notice
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:203
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 地区の掲示板に、数か月先の荒天注意が載った。予報は停電や通行止めを知らせるものではない。発信元と対象期間を読むことができる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_infra_warning_notice",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "infrastructure",
+  "cd": 2,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_infra_warning_notice-0"></a>
+選択肢文：掲示を受け取り、日付と地区を確かめる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_warning_notice-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 自分の地区に届いた予報を受け取り、対象期間を確認した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "warning",
+    "action": "receive"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_infra_warning_notice-1"></a>
+選択肢文：今は受け取らず、掲示だけ見て通る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_warning_notice-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 予報の写しは受け取らず、その場を離れた。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_infra_warning_response"></a>
+## life_infra_warning_response
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:207
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 予報を読んだあと、予定表には屋台の仕入れ日が残っていた。準備を変えるか、予報を出した窓口へ確かめるかは自分で選べる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_infra_warning_response",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "infrastructure",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_infra_warning_response-0"></a>
+選択肢文：仕入れと屋台の設営を早めに整える
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_warning_response-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 予報を受けたうえで、予定に合わせた準備をした。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "warning",
+    "action": "respond",
+    "mode": "prepare"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_infra_warning_response-1"></a>
+選択肢文：いつもの予定を保ち、当日まで様子を見る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_warning_response-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 予定を変えず、当日の状況を確かめることにした。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "warning",
+    "action": "respond",
+    "mode": "keep-schedule"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_infra_warning_response-2"></a>
+選択肢文：予報窓口へ対象地区を尋ねる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_warning_response-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 発信元へ予報の対象地区を照会した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "warning",
+    "action": "respond",
+    "mode": "ask-source"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_infra_warning_result"></a>
+## life_infra_warning_result
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:212
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 予報期間が過ぎ、観測所の掲示が更新された。対象の天候は地区の記録に載っている。あらかじめ聞いた予報と、今回の観測結果を見比べた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_infra_warning_result",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "infrastructure",
+  "cd": 6,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_infra_warning_result-0"></a>
+選択肢文：結果を読み、受け取った予報の記録に添える
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_warning_result-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 観測結果を読み、予報の後日記録を確認した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "warning",
+    "action": "review"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_infra_warning_result-1"></a>
+選択肢文：結果を写さず、次の予定へ移る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_warning_result-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 掲示を読まずに、その場を離れた。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_infra_messenger_feedback"></a>
+## life_infra_messenger_feedback
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:216
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済、教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 予報を伝える仕事の机に、前回の観測票と地区から届いた問い合わせが並んだ。説明する範囲を確かめ、窓口へ返す言葉を選ぶ。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_infra_messenger_feedback",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "infrastructure",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_infra_messenger_feedback-0"></a>
+選択肢文：観測票の範囲を示して問い合わせに返答する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_messenger_feedback-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 担当した観測記録の範囲を示し、問い合わせを受け付けた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "warning",
+    "action": "feedback"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_infra_messenger_feedback-1"></a>
+選択肢文：照合を終えるまで、返答を保留する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_messenger_feedback-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 観測票との照合を続け、返答は保留した。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_infra_power_loss"></a>
+## life_infra_power_loss
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:220
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：天災・避難
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 作業台の灯りが落ち、同じ区画の機械も止まった。設備担当者は故障場所を確かめている。手元の工具を置き、作業を続けるか連絡するか決める。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_infra_power_loss",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "infrastructure",
+  "cd": 2,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_infra_power_loss-0"></a>
+選択肢文：機械を止め、担当者へ停電を知らせる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_power_loss-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 作業を止めて、区画の停電を設備担当者へ知らせた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "infrastructure",
+    "action": "respond",
+    "mode": "work-stop"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_infra_power_loss-1"></a>
+選択肢文：安全な予備灯を使い、復旧を待つ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_power_loss-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 予備灯の下で作業を止め、復旧を待った。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "infrastructure",
+    "action": "respond",
+    "mode": "alternate"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_infra_water_loss"></a>
+## life_infra_water_loss
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:224
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：日常、天災・避難
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 朝の蛇口から水が出ず、給水所の場所を記した紙が戸口に差し込まれていた。配管の故障箇所や復旧時刻はまだ掲示されていない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_infra_water_loss",
+  "conf": "S",
+  "references": [
+    "SRC_SARGON_WATER",
+    "SRC_SARGON_WATER_LIFE_MODEL"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "infrastructure",
+  "cd": 2,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_infra_water_loss-0"></a>
+選択肢文：給水所の場所を確かめ、近所へ知らせる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_water_loss-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 給水所の案内を確かめ、同じ地区の人へ伝えた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "infrastructure",
+    "action": "respond",
+    "mode": "notify"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_infra_water_loss-1"></a>
+選択肢文：修理担当者へ、復旧見込みを尋ねる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_water_loss-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 地区の設備担当へ復旧時期を照会した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "infrastructure",
+    "action": "acknowledge"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_infra_route_block"></a>
+## life_infra_route_block
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:228
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> いつも通る連結扉に、点検中の札が掛かっていた。向こう側へは進めない。掲示には迂回路が示されているが、再開時刻はまだ書かれていない。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_infra_route_block",
+  "conf": "S",
+  "references": [
+    "SRC_MOBILE_CITY_MOBILITY",
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SIESTA_TRANSITION"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "infrastructure",
+  "cd": 2,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_infra_route_block-0"></a>
+選択肢文：迂回路の案内を確かめる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_route_block-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 通行止めを確認し、迂回路の案内を受け取った。実際の移動はその後に決める。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "infrastructure",
+    "action": "respond",
+    "mode": "alternate"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_infra_route_block-1"></a>
+選択肢文：勤務先へ遅れると連絡し、開通を待つ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_route_block-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 通行止めを勤務先へ伝え、再開を待った。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "infrastructure",
+    "action": "respond",
+    "mode": "notify"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_infra_repair_request"></a>
+## life_infra_repair_request
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:232
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 設備担当の窓口に、地区の故障番号と必要な交換部品が書き込まれた。修理を申し込めば部品便を手配できるが、到着と検査には時間がかかる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_infra_repair_request",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "infrastructure",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_infra_repair_request-0"></a>
+選択肢文：故障番号を示し、交換部品を依頼する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_repair_request-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 同じ地区の故障記録に部品便を結び付けた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "infrastructure",
+    "action": "request-repair"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_infra_repair_request-1"></a>
+選択肢文：故障箇所を報告し、見積りを待つ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_repair_request-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 担当窓口へ故障を報告し、作業日を待った。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "infrastructure",
+    "action": "acknowledge"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_infra_repair_verification"></a>
+## life_infra_repair_verification
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:236
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 交換部品が届き、担当者は設備を組み直す準備をしていた。電源と接続部を点検し、同じ地区の故障番号へ結果を記入する。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_infra_repair_verification",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INDUSTRY_POLICY",
+    "SRC_ORI_JP_OVERVIEW_2026"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "infrastructure",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => {\n        const incident = activeInfrastructureIncident(s), parts = incident?.repairShipmentId && findShipment(s, incident.repairShipmentId);\n        return incident?.status === \"repair-requested\" ? parts?.arrivedAt || null : null;\n      }"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_infra_repair_verification-0"></a>
+選択肢文：動作を確かめ、故障記録を閉じる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_repair_verification-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 地区の設備を点検し、修理後の状態を記録した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "infrastructure",
+    "action": "verify-repair"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_infra_repair_verification-1"></a>
+選択肢文：異音を記録し、追加点検を依頼する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_repair_verification-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 追加の点検が必要として、故障記録を開いたままにした。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_infra_relocation_utility"></a>
+## life_infra_relocation_utility
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:244
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：家族・介護、天災・避難
+- 状況：選択イベント、動的表示条件、移動都市・避難に言及
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 移動都市の通路が閉じ、いつもの経路が切れていた。近くの掲示は別経路を示している。家族へ知らせるか、通れるかどうかを設備担当へ確かめるか選べる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_infra_relocation_utility",
+  "conf": "S",
+  "references": [
+    "SRC_MOBILE_CITY_MOBILITY",
+    "SRC_LEONHARDT_ARCHIVE",
+    "SRC_SIESTA_TRANSITION"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "infrastructure",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_infra_relocation_utility-0"></a>
+選択肢文：家族と勤務先へ経路変更を知らせる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_relocation_utility-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 現在の地区で生じた通行障害を家族と勤務先へ知らせた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "infrastructure",
+    "action": "respond",
+    "mode": "notify"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_infra_relocation_utility-1"></a>
+選択肢文：迂回路の案内を確認する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_infra_relocation_utility-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 掲示の迂回路を確認した。通行の再開時刻は、設備担当者の案内を待つ。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "infrastructure",
+    "action": "respond",
+    "mode": "alternate"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_ship_custody"></a>
+## life_ship_custody
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:249
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：移動・物流
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 倉庫の台帳に、宛先の地区へ到着した荷物が載っていた。荷札には差出人と担当者の名がある。自分が持ち出す前に、保管の引継ぎを確認する。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_ship_custody",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INFO_NETWORKS",
+    "SRC_RHODES_MEDICAL"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "delivery",
+  "cd": 2,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_ship_custody-0"></a>
+選択肢文：荷札と担当者を確かめ、引渡しを受ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ship_custody-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 地区の荷物を台帳と照合して一時保管した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "shipment",
+    "action": "take-custody"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_ship_custody-1"></a>
+選択肢文：担当者へ照会し、荷物に触れずに待つ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ship_custody-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 保管担当者へ荷札の照会を出した。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_ship_recipient_check"></a>
+## life_ship_recipient_check
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:253
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：移動・物流
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：宛先確認に失敗した荷物も倉庫へ戻さず、主人公が預かった状態で保持する実際のcustodian/statusへ結果文を合わせた。
+
+### 本文
+
+> 荷物の宛先欄は古い住所のままだった。差出人の控えには、転居後の連絡先が書かれていない。今ここで受取人を確認するか、差出人へ返すかを選べる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_ship_recipient_check",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INFO_NETWORKS",
+    "SRC_RHODES_MEDICAL"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "delivery",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_ship_recipient_check-0"></a>
+選択肢文：本人と現在の住所を照合して渡す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ship_recipient_check-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 住所と本人を照合した。合致した荷物は受領担当者へ渡し、確かめられない荷物は手元で預かった。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "shipment",
+    "action": "confirm-recipient"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_ship_recipient_check-1"></a>
+選択肢文：宛先が合わない荷物を差出人へ返す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ship_recipient_check-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 宛先を照合できない荷物を返送手続きへ回した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "shipment",
+    "action": "return"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_ship_return"></a>
+## life_ship_return
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:257
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：移動・物流
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 返送受付の控えと、荷物の荷札を並べた。帰り便に載せる前に差出人と宛先をもう一度照合できる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_ship_return",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INFO_NETWORKS",
+    "SRC_RHODES_MEDICAL"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "delivery",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => {\n        const shipment = activeShipment(s, null, [\"arrived-at-depot\", \"held-for-delivery\", \"delivered-to-recipient\", \"undeliverable\"]);\n        return shipment?.arrivedAt || shipment?.returnRequestedAt || shipment?.completedAt || null;\n      }"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_ship_return-0"></a>
+選択肢文：荷札を照合し、返送便へ載せる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ship_return-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 荷物を差出人への返送便に載せた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "shipment",
+    "action": "return"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_ship_return-1"></a>
+選択肢文：差出人の確認を待ち、倉庫へ保管する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ship_return-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 照会の返事が届くまで荷物を倉庫に置いた。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_ship_medicine_delay"></a>
+## life_ship_medicine_delay
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:265
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：感染・医療、移動・物流
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 診療所から、処方薬の便が通行障害で遅れていると連絡があった。薬の変更はここでは決められない。受診予定を調整し、担当者に状況を尋ねられる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_ship_medicine_delay",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INFO_NETWORKS",
+    "SRC_RHODES_MEDICAL"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "delivery",
+  "cd": 2,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_ship_medicine_delay-0"></a>
+選択肢文：診療所へ連絡し、受診時期を相談する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ship_medicine_delay-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 薬の遅延を診療所へ伝え、受診日を相談した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "shipment",
+    "action": "record-delay-response"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_ship_medicine_delay-1"></a>
+選択肢文：案内された便の到着を待つ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ship_medicine_delay-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 処方内容を変えず、荷物の到着を待つことにした。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_ship_medicine_received"></a>
+## life_ship_medicine_received
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:269
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：感染・医療
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 診療所の受取台に、処方薬の箱が届いた。受付係は荷札と保管場所を照合してから、在庫帳に数量を記す。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_ship_medicine_received",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INFO_NETWORKS",
+    "SRC_RHODES_MEDICAL"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "delivery",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => activeShipment(s, \"medicine\", [\"arrived-at-depot\"])?.arrivedAt || null"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_ship_medicine_received-0"></a>
+選択肢文：荷札を照合し、診療所の在庫へ受け入れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ship_medicine_received-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 届いた薬を診療所の在庫帳へ受け入れた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "shipment",
+    "action": "receive-medicine"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_ship_medicine_received-1"></a>
+選択肢文：数量を再確認するため、受入れを待つ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_ship_medicine_received-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 箱を開けず、数量の再確認を頼んだ。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_info_media_claim"></a>
+## life_info_media_claim
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:274
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 地域放送は、修理された設備について短く伝えていた。放送した人は地区全体の安全には触れていない。聞いた主張を、出所と範囲を添えて記録できる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_info_media_claim",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INFO_NETWORKS",
+    "SRC_RHODES_MEDICAL"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "delivery",
+  "cd": 12,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_info_media_claim-0"></a>
+選択肢文：聞いた放送を、範囲を添えて記録する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_info_media_claim-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 地域放送の一つの主張を、出所と対象地区を添えて受け取った。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "information",
+    "action": "receive-situated",
+    "claimId": "local-infrastructure-bulletin"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_info_media_claim-1"></a>
+選択肢文：記録せず、放送を聞き流す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_info_media_claim-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 放送の内容を記録せず、そのまま聞き流した。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_info_claim_correction"></a>
+## life_info_claim_correction
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:278
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：未分類
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 同じ地区の設備担当者が、故障番号と修理の完了日を掲示した。掲示にある一件の修理記録を受け取り、確認できた範囲を放送の記録へ添えられる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_info_claim_correction",
+  "conf": "S",
+  "references": [
+    "SRC_INDUSTRIAL_LIFE",
+    "SRC_TERRA_INFO_NETWORKS",
+    "SRC_RHODES_MEDICAL"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "delivery",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_info_claim_correction-0"></a>
+選択肢文：同じ地区の修理記録を受け取り、主張を限定する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_info_claim_correction-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 一つの故障記録を照合し、その設備に限る証拠を添えた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "information",
+    "action": "record-local-correction",
+    "claimId": "local-infrastructure-bulletin",
+    "targetId": "$repaired-incident"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_info_claim_correction-1"></a>
+選択肢文：修理記録だけ保管し、放送の評価は保留する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_info_claim_correction-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 修理記録を保管し、放送の評価は保留した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "information",
+    "action": "defer-local-correction",
+    "claimId": "local-infrastructure-bulletin"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_info_letter_delay"></a>
+## life_info_letter_delay
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:282
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：家族・介護
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 返事が来ないまま、家族への便りを出してから一か月が過ぎた。配送記録では現在の宛先を確かめられない。未着の事実と、相手が返事をしないことは分けて扱う。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_info_letter_delay",
+  "conf": "S",
+  "references": [
+    "SRC_TERRA_INFO_NETWORKS",
+    "SRC_KAZIMIERZ_INFO_ROUTE_MODEL"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "delivery",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_info_letter_delay-0"></a>
+選択肢文：差出人へ未着を知らせ、便の所在を照会する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_info_letter_delay-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 送受信履歴に基づき、便の所在を照会した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "shipment",
+    "action": "record-delay-response"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_info_letter_delay-1"></a>
+選択肢文：新しい返事を待ち、追加の便は出さない
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_info_letter_delay-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 新しい便りを出さず、返事を待った。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_info_letter_resolution"></a>
+## life_info_letter_resolution
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:286
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：移動・物流
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 配達所から、受取人の転居記録と新しい住所が示された。宛先を変えるには、その住所が今も使われているか本人の記録を照合する。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_info_letter_resolution",
+  "conf": "S",
+  "references": [
+    "SRC_TERRA_INFO_NETWORKS",
+    "SRC_KAZIMIERZ_INFO_ROUTE_MODEL"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "delivery",
+  "cd": 3,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_info_letter_resolution-0"></a>
+選択肢文：記録にある住所を照合し、便りを再送する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_info_letter_resolution-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 本人の住所記録を照合し、遅れていた便りを再送に回した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "shipment",
+    "action": "resolve-address"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_info_letter_resolution-1"></a>
+選択肢文：住所が一致しないため、便りを差出人へ返す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_info_letter_resolution-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 住所を照合できなかった便りを差出人へ返した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "shipment",
+    "action": "return"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_culture_music_arts"></a>
+## life_culture_music_arts
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:291
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 小さな舞台に、弦の音とアーツ器具の点検音が交互に響いた。演奏の稽古と術式の学習は別の記録だ。今日は曲を弾くか、器具の扱いを尋ねるか決められる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_culture_music_arts",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_SIESTA_TOURISM"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "culture-research",
+  "cd": 6,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_culture_music_arts-0"></a>
+選択肢文：覚えている曲を人前で演奏する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_culture_music_arts-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 演奏した曲と場所を文化記録に残した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "culture",
+    "action": "record-music-performance"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_culture_music_arts-1"></a>
+選択肢文：術式の練習器具について質問する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_culture_music_arts-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 術式と演奏の違いについて、器具の担当者に尋ねた。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_culture_festival_shortjob"></a>
+## life_culture_festival_shortjob
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:299
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：教育・文化
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 祭りの会場で、机や灯りを運ぶ短い手伝いが募集されていた。作業日は限られ、設営に加わるか断るかは自分で決められる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_culture_festival_shortjob",
+  "conf": "S",
+  "references": [
+    "SRC_LEITHANIEN_ARTS",
+    "SRC_SIESTA_TOURISM"
+  ],
+  "interactionScope": "minor",
+  "lifeSystemFamily": "culture-research",
+  "cd": 0,
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_culture_festival_shortjob-0"></a>
+選択肢文：設営を手伝い、作業日を確認する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => currentCommunityFestival(s)?.status === \"open\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_culture_festival_shortjob-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 祭りの設営に参加し、作業日を記録した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "culture",
+    "action": "sign-up-festival"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_culture_festival_shortjob-1"></a>
+選択肢文：今回は参加しない
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => currentCommunityFestival(s)?.status === \"open\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_culture_festival_shortjob-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 短期の設営を断った。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "culture",
+    "action": "decline-festival"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_culture_festival_shortjob-2"></a>
+選択肢文：完了した設営の報酬を受け取る
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => currentCommunityFestival(s)?.status === \"work-complete\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_culture_festival_shortjob-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 実際に働いた短期分の報酬を受け取り、支払記録を閉じた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "culture",
+    "action": "settle-festival"
+  },
+  "employmentAction": {
+    "action": "complete-gig",
+    "kind": "local-errand",
+    "sourceEventId": "life_culture_festival_shortjob",
+    "nominalCash": 4500
+  },
+  "cash": 4500
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_culture_rural_well"></a>
+## life_culture_rural_well
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:303
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：労働・経済
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 集落の井戸の点検帳に、濁りと交換部品の不足が記されていた。近隣の人たちが費用と部品の見積りを集めている。計画に加わるか、寄付だけにするか、今回は見送るか。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_culture_rural_well",
+  "conf": "S",
+  "references": [
+    "SRC_SARGON_WATER",
+    "SRC_SARGON_WATER_LIFE_MODEL"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "culture-research",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_culture_rural_well-0"></a>
+選択肢文：必要な部品を見積り、修理計画を始める
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_culture_rural_well-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 同じ集落の井戸修理計画と部品便を登録した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "community-project",
+    "action": "propose"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_culture_rural_well-1"></a>
+選択肢文：手元の金を寄付し、計画には加わらない
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => ruralWellDonationAffordable(s)"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_culture_rural_well-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 井戸の修理相談に寄付を申し出た。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "community-project",
+    "action": "donate",
+    "amount": 2500
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_culture_rural_well-2"></a>
+選択肢文：今回は参加せず、点検帳を読む
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_culture_rural_well-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 計画への参加を見送った。
+
+効果：
+
+```json
+{}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_culture_rural_repair"></a>
+## life_culture_rural_repair
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:310
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：日常
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 井戸の交換部品が集落へ届いた。作業台には検査表があり、近所の人たちと実際の作業人数を確認してから修理に進む。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_culture_rural_repair",
+  "conf": "S",
+  "references": [
+    "SRC_SARGON_WATER",
+    "SRC_SARGON_WATER_LIFE_MODEL"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "culture-research",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => {\n        const project = activeCommunityProject(s), parts = project?.shipmentId && findShipment(s, project.shipmentId);\n        return !project ? null : project.status === \"parts-in-transit\"\n          ? parts?.arrivedAt || null : { year: s.year, month: s.mo };\n      }"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_culture_rural_repair-0"></a>
+選択肢文：受領を確かめ、部品を修理場所へ渡す
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => activeCommunityProject(s)?.status === \"parts-in-transit\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_culture_rural_repair-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 井戸修理の部品を荷札と照合し、受領記録を付けた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "community-project",
+    "action": "mark-parts-received"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_culture_rural_repair-1"></a>
+選択肢文：会合で手伝う人の人数を確かめる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => activeCommunityProject(s)?.status === \"parts-received\" && !activeCommunityProject(s)?.helpersRecordedAt"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_culture_rural_repair-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 会合で作業に同意した近所の人の人数を記録した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "community-project",
+    "action": "record-helpers",
+    "helperCount": 2
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_culture_rural_repair-2"></a>
+選択肢文：点検表をそろえ、修理後の水を検査する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => activeCommunityProject(s)?.status === \"parts-received\" && activeCommunityProject(s)?.helperCount >= 2"
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_culture_rural_repair-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 実際の人員と部品をそろえ、井戸の修理後の検査を記録した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "community-project",
+    "action": "complete-work"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_research_consent"></a>
+## life_research_consent
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:318
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：感染・医療
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 診療所の研究担当者が、観察の目的、診療と研究の違い、途中で断れることを説明する。ここでは説明を聞いた記録だけを残し、参加の同意は別に本人が決める。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_research_consent",
+  "conf": "S",
+  "references": [
+    "SRC_COLUMBIA_DV1",
+    "SRC_COLUMBIA_DV5"
+  ],
+  "interactionScope": "major",
+  "lifeSystemFamily": "culture-research",
+  "w": 0.24,
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_research_consent-0"></a>
+選択肢文：説明会に出席し、資料を受け取る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_research_consent-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 研究担当者の説明を聞いた。これは参加への同意ではない。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "research",
+    "action": "attend-briefing"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_research_consent-1"></a>
+選択肢文：説明を持ち帰り、回答を延期する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_research_consent-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 研究参加の返事を延期した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "research",
+    "action": "defer"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_research_consent-2"></a>
+選択肢文：今回は参加を断る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_research_consent-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 研究参加を断った。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "research",
+    "action": "refuse"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_research_procedure"></a>
+## life_research_procedure
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:323
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：感染・医療
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 担当者は観察の目的と手順をもう一度示し、診療への影響がないことを説明した。説明を聞いた記録と参加への同意は別で、本人は始める前に断ることもできる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_research_procedure",
+  "conf": "S",
+  "references": [
+    "SRC_COLUMBIA_DV1",
+    "SRC_COLUMBIA_DV5"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "culture-research",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => {\n        const offer = activeResearchOffer(s);\n        return offer?.status === \"briefing-attended\" ? { year: s.year, month: s.mo } : offer?.procedureDueAt || null;\n      }"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_research_procedure-0"></a>
+選択肢文：説明された範囲を確かめて同意する
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => activeResearchOffer(s)?.status === \"briefing-attended\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_research_procedure-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 説明と参加範囲を確認し、本人が観察への参加に同意した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "research",
+    "action": "consent"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_research_procedure-1"></a>
+選択肢文：同意した範囲の観察を受ける
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => activeResearchOffer(s)?.status === \"consented\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_research_procedure-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 説明と同意の範囲内で、非侵襲の観察記録を作成した。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "research",
+    "action": "procedure"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-life_research_procedure-2"></a>
+選択肢文：開始前に同意を取り下げる
+
+表示・選択条件と補助情報：
+
+```json
+{
+  "show": {
+    "dynamicFunction": "s => activeResearchOffer(s)?.status === \"consented\""
+  }
+}
+```
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_research_procedure-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 手順を始める前に研究参加を取り下げた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "research",
+    "action": "withdraw"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-life_research_followup"></a>
+## life_research_followup
+
+- 出典位置：data/parts/extensions/arts-and-life/arts-contingencies.js:332
+- 分類確度：本文・条件からの初期自動候補。未校閲。
+- 校閲状態：条件／処理確認　優先度：低
+- 国・地域：未特定
+- ジャンル：感染・医療
+- 状況：選択イベント、動的表示条件
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：本文・入口条件・選択表示・全結果と効果payloadを照合。状態台帳の所有者へ接続し、参照資料は設定背景に限定。頻度は小規模固定標本でのみ観測。
+
+### 本文
+
+> 観察後の確認日が来た。診療所はその日の体調と記録を尋ねている。治療変更や補償の約束はなく、必要なら別に診療を申し込める。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "life_research_followup",
+  "conf": "S",
+  "references": [
+    "SRC_COLUMBIA_DV1",
+    "SRC_COLUMBIA_DV5"
+  ],
+  "interactionScope": "scheduled",
+  "lifeSystemFamily": "culture-research",
+  "w": 0.24,
+  "scheduledAt": {
+    "dynamicFunction": "s => activeResearchOffer(s)?.followupDueAt || null"
+  },
+  "show": {
+    "dynamicFunction": "s => lifeSystemEventEligible(s, id)"
+  },
+  "once": true
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-life_research_followup-0"></a>
+選択肢文：体調を伝え、観察後の確認を終える
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_research_followup-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 本人が伝えた当日の状態を記録し、研究後の確認を終えた。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "research",
+    "action": "followup"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-life_research_followup-1"></a>
+選択肢文：確認を断り、診療の相談だけ申し込む
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-life_research_followup-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 研究の追加確認を断り、診療窓口を案内してもらった。
+
+効果：
+
+```json
+{
+  "lifeSystemAction": {
+    "domain": "research",
+    "action": "followup",
+    "mode": "decline"
+  }
+}
 ```
 
 旧シム観測回数：未計測
@@ -243255,10 +249710,7 @@ s => {
 ```json
 {
   "show": {
-    "ge": {
-      "ar": 65,
-      "h": 68
-    }
+    "dynamicFunction": "s => s.h >= 68 && (s.lifeRecord?.skills || []).some(row =>\n            row.id === \"rhodes-field\" && row.level >= 2)"
   }
 }
 ```
@@ -243366,7 +249818,7 @@ s => {
 <a id="event-sr_rhodes_work_review"></a>
 ## sr_rhodes_work_review
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:411
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:412
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -243521,7 +249973,7 @@ s => {
 <a id="event-sr_rhodes_former_worker"></a>
 ## sr_rhodes_former_worker
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:471
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:472
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -243654,7 +250106,7 @@ s => {
 <a id="event-sr_reunion_neighbour_contact"></a>
 ## sr_reunion_neighbour_contact
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:498
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:499
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：龍門、ヴィクトリア、ウルサス、カズデル
@@ -243831,7 +250283,7 @@ s => {
 <a id="event-sr_reunion_ordinary_followup"></a>
 ## sr_reunion_ordinary_followup
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:558
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:559
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -243980,7 +250432,7 @@ s => {
 <a id="event-sr_chernobog_distant_news"></a>
 ## sr_chernobog_distant_news
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:614
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:615
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：ウルサス
@@ -244116,7 +250568,7 @@ s => {
 <a id="event-sr_rhodes_posting_review"></a>
 ## sr_rhodes_posting_review
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:644
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:645
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：龍門、ヴィクトリア、ウルサス、クルビア、イベリア、サルゴン、リターニア、ボリバル
@@ -244328,7 +250780,7 @@ s => {
 <a id="event-sr_rhodes_posting_transfer"></a>
 ## sr_rhodes_posting_transfer
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:740
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:741
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：龍門、ヴィクトリア、ウルサス、クルビア、イベリア、サルゴン、リターニア、ボリバル
@@ -244494,7 +250946,7 @@ s => {
 <a id="event-sr_rhodes_branch_transfer"></a>
 ## sr_rhodes_branch_transfer
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:802
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:803
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -244653,7 +251105,7 @@ s => {
 <a id="event-sr_rhodes_ship_routine"></a>
 ## sr_rhodes_ship_routine
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:854
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:855
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -244792,7 +251244,7 @@ s => {
 <a id="event-sr_rhodes_branch_routine"></a>
 ## sr_rhodes_branch_routine
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:889
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:890
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -245086,7 +251538,7 @@ s => {
 <a id="event-sr_rhodes_field_assignment"></a>
 ## sr_rhodes_field_assignment
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:995
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:996
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -245241,7 +251693,7 @@ s => {
 <a id="event-sr_rhodes_transport_dispatch"></a>
 ## sr_rhodes_transport_dispatch
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1035
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1036
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -245380,7 +251832,7 @@ s => {
 <a id="event-sr_rhodes_reserve_drill"></a>
 ## sr_rhodes_reserve_drill
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1070
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1071
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -245519,7 +251971,7 @@ s => {
 <a id="event-sr_rhodes_colleague_introduction"></a>
 ## sr_rhodes_colleague_introduction
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1106
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1107
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -245675,7 +252127,7 @@ s => {
 <a id="event-sr_rhodes_colleague_followup"></a>
 ## sr_rhodes_colleague_followup
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1152
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1153
 - 分類確度：本文・条件からの初期自動候補。タグは未監査。
 - 校閲状態：確認済み　優先度：低
 - 国・地域：未特定
@@ -245820,7 +252272,7 @@ s => {
 <a id="event-sr_rhodes_promotion_review"></a>
 ## sr_rhodes_promotion_review
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1192
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1193
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -246028,7 +252480,7 @@ s => {
 <a id="event-sr_rhodes_cafeteria_flavors"></a>
 ## sr_rhodes_cafeteria_flavors
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1281
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1282
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：炎国、カジミエーシュ
@@ -246158,7 +252610,7 @@ s => {
 <a id="event-sr_rhodes_greenhouse_rest"></a>
 ## sr_rhodes_greenhouse_rest
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1309
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1310
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -246282,8 +252734,7 @@ s => {
 
 ```json
 {
-  "p": 2,
-  "ar": 1
+  "p": 2
 }
 ```
 
@@ -246293,7 +252744,7 @@ s => {
 <a id="event-sr_rhodes_internal_bias_conflict"></a>
 ## sr_rhodes_internal_bias_conflict
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1346
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1347
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -246429,7 +252880,7 @@ s => {
 <a id="event-sr_rhodes_bias_rescue_reconciliation"></a>
 ## sr_rhodes_bias_rescue_reconciliation
 
-- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1382
+- 出典位置：data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1383
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -246562,8 +253013,7 @@ s => {
 ```json
 {
   "biasInf": -80,
-  "p": 2,
-  "ar": 1
+  "p": 2
 }
 ```
 
@@ -260646,8 +267096,7 @@ s => {
 ```json
 {
   "k": 6,
-  "p": 4,
-  "ar": 2
+  "p": 4
 }
 ```
 
@@ -260714,7 +267163,7 @@ s => {
 <a id="event-sr_rhine_post_lone_trail_career_review"></a>
 ## sr_rhine_post_lone_trail_career_review
 
-- 出典位置：data/parts/routes/rhodes-and-factions/rhine-routes.js:428
+- 出典位置：data/parts/routes/rhodes-and-factions/rhine-routes.js:427
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -260841,7 +267290,7 @@ s => {
 <a id="event-sr_rhine_after_departure_livelihood"></a>
 ## sr_rhine_after_departure_livelihood
 
-- 出典位置：data/parts/routes/rhodes-and-factions/rhine-routes.js:466
+- 出典位置：data/parts/routes/rhodes-and-factions/rhine-routes.js:465
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -261047,7 +267496,7 @@ s => {
 <a id="event-sr_rhine_whistleblower_return_review"></a>
 ## sr_rhine_whistleblower_return_review
 
-- 出典位置：data/parts/routes/rhodes-and-factions/rhine-routes.js:518
+- 出典位置：data/parts/routes/rhodes-and-factions/rhine-routes.js:517
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：クルビア
@@ -293244,7 +299693,7 @@ s =>
 <a id="event-v86_individual_colleague_apology"></a>
 ## v86_individual_colleague_apology
 
-- 出典位置：data/review/historical-reviews.js:176
+- 出典位置：data/review/historical-reviews.js:175
 - 分類確度：本文・条件・結果枝を確認済み。
 - 校閲状態：確認済み　優先度：中
 - 国・地域：未特定

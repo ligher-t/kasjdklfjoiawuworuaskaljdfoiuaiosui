@@ -368,6 +368,7 @@ function born(birth = {}) {
   S.artsProfile = createArtsProfile(S.ar);
   S.artsEquipment = createArtsEquipmentState();
   ensureLocalityState(S);
+  initializeLifeSystems(S);
   ensureEducationWorldForResidence(S);
   educationCreateMobilityState(S);
   educationReconcileWorldAt(S,S.year,S.mo??0);

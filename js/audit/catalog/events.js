@@ -11,6 +11,11 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
       W_.push(`${w}: 選択イベントのinteractionScopeに選択肢がない`);
     if (e.interactionScope === "daily" && e.c)
       W_.push(`${w}: dailyイベントに選択肢がある`);
+    if (e.interactionScope === "scheduled" && typeof e.scheduledAt !== "function")
+      W_.push(`${w}: scheduledイベントに汎用の期日関数がない`);
+    if (e.lifeSystemFamily != null &&
+        !["arts", "infrastructure", "delivery", "contingency", "culture-research", "general"].includes(e.lifeSystemFamily))
+      W_.push(`${w}: lifeSystemFamilyが登録済みの軽選択カテゴリではない`);
     (e.references || []).forEach(ref => {
       if (!services.SETTING_SOURCES[ref]) W_.push(`${w}: 未定義の資料ID「${ref}」`);
     });

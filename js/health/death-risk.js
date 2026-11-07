@@ -15,7 +15,7 @@ function occupationalDeathExposure(s) {
     mineCollapse:mine && ["レム・ビリトン","ウルサス","カズデル"].includes(region),
     arena:!!s.fl?.arena || !!s.fl?.street_fighter ||
       (region==="カジミエーシュ" && [MORTALITY_JOB.knight,MORTALITY_JOB.competitionKnight].includes(job)),
-    arts:job===MORTALITY_JOB.artsEngineer || (s.ar||0)>=40 ||
+    arts:job===MORTALITY_JOB.artsEngineer ||
       !!s.lifeRecord?.skills?.some(x=>x.title?.includes("アーツ")),
     northern:region==="サーミ" && (job===MORTALITY_JOB.northernGuard || travel),
     coastal:region==="イベリア" &&

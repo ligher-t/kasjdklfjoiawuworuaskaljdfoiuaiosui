@@ -276,7 +276,7 @@ function educationCaseAdmissionChance(s,row) {
   const higher=["university","vocational","arts"].includes(row.stage);
   const k=Number(s.k||0),
     lit=Number.isFinite(s.socialLearning?.literacy)?s.socialLearning.literacy:0,
-    arts=Number(s.ar||0);
+    arts=typeof artsAdmissionPotential === "function" ? artsAdmissionPotential(s) : 0;
   if(!higher)return row.stage==="primary"?0.94:row.stage==="lower"?0.88:0.79;
   const threshold=(row.stage==="university"?43:row.stage==="arts"?27:25)+(row.tier-1)*22,
     aptitude=row.stage==="arts"?arts*0.7+k*0.2+lit*0.1:k*0.67+lit*0.33;

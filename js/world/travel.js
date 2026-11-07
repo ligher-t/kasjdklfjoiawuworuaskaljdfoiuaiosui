@@ -129,7 +129,13 @@ function travelRefreshFamilyCare(state, agreementId) {
   return journey;
 }
 function travelLegFareQuote(state, fromRegion, toRegion) {
-  if(fromRegion===toRegion&&REG.some(x=>x.n===fromRegion))return {amount:Math.round(20000*(state.priceIndex||1)),currency:"龍門幣",source:"registered-local-transport-model"};
+  if(fromRegion===toRegion&&REG.some(x=>x.n===fromRegion)) {
+    const incident = typeof activeInfrastructureIncident === "function" && fromRegion === state.res?.n
+      ? activeInfrastructureIncident(state, ["route"]) : null,
+      multiplier = incident && incident.response !== "alternate" ? 1.25 : 1;
+    return {amount:Math.round(20000*(state.priceIndex||1)*multiplier),currency:"龍門幣",
+      source:multiplier>1?"local-route-disruption-game-model":"registered-local-transport-model"};
+  }
   const route = (MIGRATION_ROUTES[fromRegion] || []).find(row => row.n === toRegion);
   const origin = REG.find(row => row.n === fromRegion);
   if (!route || !origin || !Number.isFinite(route.fare) || route.fare < 0)
@@ -270,8 +276,12 @@ function travelStart(state, request) {
   if (state.fl?.detained || state.fl?.ursus_katorga_detained ||
       state.fl?.isolated || (state.age < 18 && !travelMinorPermission(state,request)))
     throw Error("出発に必要な了承または移動条件が確認できない");
-  const duration = request?.durationMonths == null ? 1 : request.durationMonths;
-  if (!Number.isInteger(duration) || duration < 1 || duration > 24)
+  const baseDuration = request?.durationMonths == null ? 1 : request.durationMonths,
+    localRouteIncident = typeof activeInfrastructureIncident === "function"
+      ? activeInfrastructureIncident(state, ["route"]) : null,
+    routeDelay = localRouteIncident && localRouteIncident.response !== "alternate" ? 1 : 0,
+    duration = baseDuration + routeDelay;
+  if (!Number.isInteger(baseDuration) || baseDuration < 1 || !Number.isInteger(duration) || duration > 24)
     throw Error("移動期間が不正");
   const companions=travelValidateCompanions(state,request?.companionAgreementId,to);
   const householdCare = travelValidateFamilyCare(state, request?.familyCareAgreementId || null,companions);
@@ -285,7 +295,8 @@ function travelStart(state, request) {
   const leg = {
     id: id + ":leg:0", routeId: "migration-reference:" + state.res.n + ":" + to,
     fromRegion: state.res.n, toRegion: to, durationMonths: duration,
-    checkpointId: null, checkpointRegion: null, sourceKind: "game-model"
+    checkpointId: null, checkpointRegion: null, sourceKind: "game-model",
+    ...(routeDelay ? { localIncidentId: localRouteIncident.id, localRouteDelayMonths: routeDelay } : {})
   };
   if(request.corridorId){
     const corridor=travelCorridors(state,state.res.n,to).find(x=>x.id===request.corridorId);

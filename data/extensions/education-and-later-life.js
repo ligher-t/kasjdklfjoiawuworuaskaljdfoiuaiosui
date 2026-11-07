@@ -5,6 +5,7 @@ window.TERRA_DATA_BUILD.run(
     "use strict";
     $parts("extensions/education-and-later-life/training");
     $parts("extensions/arts-and-life/arts-training");
+    $parts("extensions/arts-and-life/arts-contingencies");
     $parts("extensions/education-and-later-life/relationships");
     $parts("extensions/education-and-later-life/family-care");
     $parts("extensions/education-and-later-life/ursus-student-life");

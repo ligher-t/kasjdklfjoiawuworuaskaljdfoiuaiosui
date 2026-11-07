@@ -57,7 +57,6 @@ function advanceAnnualInfection(s, services, f) {
           services.P("infection.annualProgressBase") *
           (s.ac ? services.P("infection.acuteProgressScale") : 1) *
           (s.fl.tx ? services.P("infection.treatmentProgressScale") : 1) *
-          (f == 5 ? services.P("infection.artsProgressScale") : 1) *
           (services.J[s.job].ex ? services.P("infection.occupationProgressScale") : 1)
     );
   services.advanceMortalityState(s);

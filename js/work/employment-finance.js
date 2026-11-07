@@ -31,12 +31,11 @@ function employmentMonthlyTerms(s, episode, year, month) {
     price = 1 + ((s.priceIndex || 1) - 1) * 0.65,
     bonus = 1 + (contract?.wagePremium || 0) + (s.workPayBonus || 0),
     knowledge = 1 + s.k / P("economy.knowledgeIncomeScale"),
-    arts = 1 + s.ar / P("economy.artsIncomeScale"),
     policy = s.f === 2 ? P("economy.workIncomeScale") : s.f === 4 ? P("economy.restIncomeScale") :
       s.f === 7 ? P("economy.familyIncomeScale") : s.f === 8 ? P("economy.riskyWorkIncomeScale") : 1,
     gross = active && (wage || self)
       ? Math.max(0, rate * (episode.payRegionPm ?? s.res.pm) * price * fraction * hours * bonus *
-        personalWorkCapacity(s) * knowledge * arts * (s.t.inc || 1) * policy *
+        personalWorkCapacity(s) * knowledge * (s.t.inc || 1) * policy *
         (1 - employmentDiscriminationPenalty(s)) * (s.fl.reduced_work ? 0.65 : 1)) : 0,
     expenses = self ? gross * (episode.expenseShare ?? 0.35) : 0;
   return { gross, expenses, net: Math.max(0, gross - expenses),

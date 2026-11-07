@@ -32,7 +32,7 @@ function createCatalogFieldChecks(W_, services) {
   ]);
   const eventKeys = new Set([
     ...conditionKeys, "id", "conf", "references", "w", "cd", "once", "pri", "st", "months",
-    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "displayTone", "timelineFlag", "crisisPolicy", "historicalScene", "regionCooldowns", "interactionScope", "socialConstraint"
+    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "displayTone", "timelineFlag", "crisisPolicy", "historicalScene", "regionCooldowns", "interactionScope", "lifeSystemFamily", "socialConstraint", "scheduledAt"
   ]);
   const cc = (c, w, event = false) => {
     if (!c) return;
@@ -45,6 +45,8 @@ function createCatalogFieldChecks(W_, services) {
     }
     for (const key of Object.keys(c)) if (!(event ? eventKeys : conditionKeys).has(key))
       W_.push(`${w}: 未知の${event ? "イベント" : "条件"}キー「${key}」`);
+    if (event && c.scheduledAt != null && typeof c.scheduledAt !== "function")
+      W_.push(`${w}: scheduledAtは年月を返す関数でなければならない`);
     for (const k of ["need", "any", "ban"])
       (c[k] || []).forEach(t => okT(t) || W_.push(`${w}: 未知のタグ「${t}」`));
     for (const k of ["ge", "le"])
@@ -142,6 +144,42 @@ function createCatalogFieldChecks(W_, services) {
           validEquipment = equipmentActions.has(action?.action) && !invalidEquipment,
           invalid = invalidCommon || (!validPractice && !validEquipment);
         if (invalid) W_.push(w + ": 効果「artsAction」の実技記録契約が不正");
+      }
+      if (k === "lifeSystemAction") {
+        const action = f[k],
+          domains = new Set(["warning", "infrastructure", "shipment", "contract", "research", "community-project", "culture", "information", "arts"]),
+          allowedKeys = new Set(["domain", "action", "mode", "targetId", "learningPathId", "providerId", "siteRef",
+            "disciplineId", "techniqueId", "purpose", "equipmentId", "result", "techSkillId", "minimumSkill",
+            "skillId", "enrollmentId", "year", "menteeId", "organizationId", "recipientId", "routeId",
+            "helperCount", "claimId", "languageId", "languageMode", "workplaceUse", "requireEquipment", "amount"]),
+          actions = {
+            warning: ["receive", "respond", "review", "feedback"], infrastructure: ["acknowledge", "respond", "request-repair", "verify-repair"],
+            shipment: ["take-custody", "confirm-recipient", "return", "receive-medicine", "resolve-address", "record-delay-response"],
+            contract: ["contact", "offer", "decline", "accept", "prepare", "defer-preparation", "depart", "handoff", "survey", "continue-work",
+              "query-cargo", "support-equity", "query-screening", "verify-receipt", "dispute-payment", "mark-payment-missing",
+              "settle", "family-notice", "return", "cancel", "end-contact", "defer-payment-claim"],
+            research: ["attend-briefing", "consent", "defer", "refuse", "procedure", "withdraw", "followup"],
+            "community-project": ["propose", "donate", "mark-parts-received", "record-helpers", "complete-work"],
+            culture: ["record-music-performance", "record-oral-tradition", "record-mentoring", "sign-up-festival",
+              "decline-festival", "settle-festival"],
+            information: ["receive-situated", "record-local-correction", "defer-local-correction"],
+            arts: ["open-path", "record-practice", "record-use", "assess-course", "record-tech-skill",
+              "borrow-equipment", "return-equipment", "inspect-equipment", "request-equipment-repair",
+              "record-repair-parts", "complete-equipment-repair", "pay-late-fee", "defer-late-fee", "request-assessment", "followup"]
+          },
+          invalid = !action || typeof action !== "object" || Array.isArray(action) ||
+            Object.keys(action).some(key => !allowedKeys.has(key)) || !domains.has(action.domain) ||
+            typeof action.action !== "string" || !(actions[action.domain] || []).includes(action.action) ||
+            (action.mode != null && typeof action.mode !== "string") ||
+            (action.year != null && !Number.isInteger(action.year)) ||
+            (["workplaceUse", "requireEquipment"].some(key => action[key] != null && typeof action[key] !== "boolean")) ||
+            (action.helperCount != null && ![1, 2].includes(action.helperCount)) ||
+            (action.amount != null && (!Number.isSafeInteger(action.amount) || action.amount <= 0 || action.amount > 1000000)) ||
+            (["targetId", "learningPathId", "providerId", "siteRef", "disciplineId", "techniqueId", "purpose",
+              "equipmentId", "result", "techSkillId", "skillId", "enrollmentId", "menteeId", "organizationId",
+              "recipientId", "routeId", "claimId", "languageId", "languageMode"]
+              .some(key => action[key] != null && (typeof action[key] !== "string" || !action[key].trim())));
+        if (invalid) W_.push(w + ": 効果「lifeSystemAction」の状態遷移契約が不正");
       }
       if(type === "object" && (!f[k] || typeof f[k] !== "object" || Array.isArray(f[k])))
         W_.push(`${w}: 効果「${k}」がオブジェクトではない`);

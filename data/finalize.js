@@ -39,8 +39,6 @@ window.TERRA_DATA_BUILD.run("finalize", function ($terraData, $define, $rules) {
     ["col_hire", 2, 0, "good"],
     ["col_hire", 2, 1, "bad"],
     ["kaz_knight", 1, 1, "bad"],
-    ["lei_arts", 0, 1, "bad"],
-    ["lei_arts", 1, 1, "bad"],
     ["ibe_rebuild_contract_review", 0, 1, "bad"],
     ["kje_open", 0, 0, "good"],
     ["kje_open", 0, 1, "bad"],

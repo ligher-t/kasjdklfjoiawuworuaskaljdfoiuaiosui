@@ -359,7 +359,7 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
       p: { unit: "幸福点", meaning: "選択結果による幸福変化", status: "S" },
       k: { unit: "知識点", meaning: "選択結果による知識変化", status: "S" },
       rl: { unit: "関係点", meaning: "選択結果による関係変化", status: "S" },
-      ar: { unit: "適性点", meaning: "選択結果による適性変化", status: "S" },
+      ar: { unit: "旧互換値", meaning: "出生時のアーツ素養を保持する互換値。習得技能・資格・現在の業務適性の正本ではない", status: "S" },
       cr: { unit: "信用点", meaning: "選択結果による信用変化", status: "S" },
       ep: { unit: "教育点", meaning: "選択結果による教育進捗", status: "S" },
       ob: { unit: "感染度", meaning: "感染進行の変化", status: "S" },
@@ -1162,9 +1162,30 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
     valueType: "text"
   };
 
+  $terraData.EVENT_FIELD_META.lifeSystemFamily = {
+    unit: "軽選択の候補カテゴリ",
+    meaning: "minorイベントを機能カテゴリ別の固定予算で抽選し、候補件数による頻度変化を抑える",
+    status: "S",
+    valueType: "text"
+  };
+
+  $terraData.EVENT_FIELD_META.scheduledAt = {
+    unit: "イベントを選べる最短年月",
+    meaning: "期日を所有する状態機能が年月を返し、共通のscheduled枠が月単位で優先する",
+    status: "S",
+    valueType: "function"
+  };
+
   $terraData.EVENT_FIELD_META.artsAction = {
     unit: "アーツ学習実績操作",
     meaning: "確認できる学習・貸与・点検・修理の行為だけを、対象IDと根拠付きで個別台帳へ記録する",
+    status: "S",
+    valueType: "object"
+  };
+
+  $terraData.EVENT_FIELD_META.lifeSystemAction = {
+    unit: "地域・配送・契約・研究・文化の状態遷移",
+    meaning: "実際の地区・案件・受取人・本人同意に対応する個別の行為だけを記録する",
     status: "S",
     valueType: "object"
   };
@@ -1352,6 +1373,7 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
   $terraData.EVENT_EFFECT_TYPES.object.push("employmentResourceIncident");
   $terraData.EVENT_EFFECT_TYPES.object.push("languageAction");
   $terraData.EVENT_EFFECT_TYPES.object.push("artsAction");
+  $terraData.EVENT_EFFECT_TYPES.object.push("lifeSystemAction");
 
   $terraData.EVENT_EFFECT_TYPES.objectArray.push("bodyChanges", "infectionAwarenessActions");
 
