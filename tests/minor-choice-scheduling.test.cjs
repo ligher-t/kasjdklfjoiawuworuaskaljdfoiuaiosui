@@ -30,6 +30,51 @@ const candidateCountInvariant = read(`(()=>{
 assert.deepEqual(candidateCountInvariant, {
   generalWithOne: 'general', generalWithMany: 'general', artsWithOne: 'arts', artsWithMany: 'arts'
 }, 'adding 100 same-family minor events must not change either family budget');
+const combinedMinorBudget = read(`(()=>[0,0.07,0.15,0.25].map(social=>{
+  const ordinary=ordinaryMinorChoiceChance(social);
+  return Number((social+(1-social)*ordinary).toFixed(12));
+}))()`);
+assert.deepEqual(combinedMinorBudget, [0.25,0.25,0.25,0.25],
+  'social and ordinary minor categories together must stay within the 25% daily-slot budget');
+const socialBudgetCap = read(`(()=>{
+  const region=S.res.n;
+  try {
+    S.res.n='ウルサス';
+    return socialMinorChoiceBudget([
+      {interactionScope:'minor',c:[{}],socialConstraint:{group:'ordinary-contrast'}},
+      {interactionScope:'minor',c:[{}],socialConstraint:{group:'daily-bias',target:'感染者'}},
+      {interactionScope:'minor',c:[{}],socialConstraint:{group:'daily-bias',target:'市民'}}
+    ],S);
+  } finally { S.res.n=region; }
+})()`);
+assert.equal(socialBudgetCap, 0.25,
+  'even maximum-pressure social candidates must be capped before ordinary minor choices are budgeted');
+const socialFamilyInvariant = read(`(()=>{
+  const originalRandom=DEBUG_RANDOM,originalRegion=S.res.n,
+    contrast={id:'social-contrast',interactionScope:'minor',c:[{o:[[1,'ok',{}]]}],w:1,
+      socialConstraint:{group:'ordinary-contrast'}},
+    infectedOne=[{id:'infected-one',interactionScope:'minor',c:[{o:[[1,'ok',{}]]}],w:1,
+      socialConstraint:{group:'daily-bias',target:'感染者'}}],
+    infectedMany=Array.from({length:100},(_,i)=>({id:'infected-'+i,interactionScope:'minor',c:[{o:[[1,'ok',{}]]}],w:1,
+      socialConstraint:{group:'daily-bias',target:'感染者'}}));
+  const select=events=>{
+    const draws=[0.1,0.3,0.2];
+    DEBUG_RANDOM=()=>draws.shift()??0.2;
+    return chooseSocialMinorChoice(events,S,tags(S))?.socialConstraint?.group||null;
+  };
+  try {
+    S.res.n='ウルサス';
+    return {one:select([contrast,...infectedOne]),many:select([contrast,...infectedMany])};
+  } finally { DEBUG_RANDOM=originalRandom;S.res.n=originalRegion; }
+})()`);
+assert.deepEqual(socialFamilyInvariant, {one:'daily-bias',many:'daily-bias'},
+  'adding same-group discrimination events must not increase that category budget');
+const slotSource = vm.runInContext('slot.toString()', ctx);
+assert.match(slotSource,
+  /R\(\) < ordinaryMinorChoiceChance\(socialMinorShare\)[\s\S]*?chooseOrdinaryMinorChoice\(ordinaryMinorChoices, s, T\)/,
+  'the ordinary minor-choice slot must use the remaining combined category budget');
+assert.match(slotSource, /chooseSocialMinorChoice\(socialMinorChoices, s, T\)/,
+  'the social minor-choice slot must use the shared capped category budget');
 
 const dueAtContract = read(`(()=>{
   const event={id:'fixture-deadline',scheduledAt:state=>({year:state.year,month:3})};

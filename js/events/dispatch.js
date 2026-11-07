@@ -29,6 +29,7 @@ function isPeacefulLeisureEvent(event) {
 function isMinorChoiceEvent(event) {
   return event?.interactionScope === "minor";
 }
+const MINOR_CHOICE_SLOT_BUDGET = 0.25;
 function chooseOrdinaryMinorChoice(events, s, T) {
   const groups = new Map();
   for (const event of events) {
@@ -58,7 +59,7 @@ function isValidEventMonthMarker(marker, currentYear) {
   );
 }
 // Initial gameplay assumptions: category shares stay fixed as candidate counts grow.
-function chooseSocialMinorChoice(events, s, T) {
+function socialMinorChoicePools(events, s) {
   const eligible = events.filter(event => isMinorChoiceEvent(event) && event.c),
     pressure = infectionSocialPressure(s).public,
     pools = [
@@ -67,9 +68,23 @@ function chooseSocialMinorChoice(events, s, T) {
         event.socialConstraint?.group === "daily-bias" && /感染者|鉱石病/.test(String(event.socialConstraint?.target || ""))) },
       { budget: 0.08, events: eligible.filter(event =>
         event.socialConstraint?.group === "daily-bias" && !/感染者|鉱石病/.test(String(event.socialConstraint?.target || ""))) }
-    ].filter(row => row.events.length),
+    ].filter(row => row.events.length);
+  return pools;
+}
+function socialMinorChoiceBudget(events, s) {
+  // Social sub-budgets share the 25% daily-slot cap with ordinary life domains.
+  return Math.min(MINOR_CHOICE_SLOT_BUDGET,
+    socialMinorChoicePools(events, s).reduce((sum, row) => sum + row.budget, 0));
+}
+function ordinaryMinorChoiceChance(socialShare) {
+  const reserved = Math.max(0, Math.min(MINOR_CHOICE_SLOT_BUDGET, socialShare || 0));
+  // Conditional on the social draw not firing, fill only the remaining absolute budget.
+  return (MINOR_CHOICE_SLOT_BUDGET - reserved) / (1 - reserved);
+}
+function chooseSocialMinorChoice(events, s, T) {
+  const pools = socialMinorChoicePools(events, s),
     total = pools.reduce((sum, row) => sum + row.budget, 0);
-  if (!total || R() >= total) return null;
+  if (!total || R() >= Math.min(MINOR_CHOICE_SLOT_BUDGET, total)) return null;
   let draw = R() * total;
   for (const row of pools) {
     draw -= row.budget;
@@ -261,7 +276,9 @@ function slot(x) {
       !(e.c && (isMinorChoiceEvent(e) ? minorChoiceAlreadyUsed : choiceAlreadyUsed))),
     mj = el.filter(e => e.c && !isMinorChoiceEvent(e)),
     scheduledChoices = mj.filter(e => e.interactionScope === "scheduled"),
-    minorChoices = el.filter(e => e.c && isMinorChoiceEvent(e));
+    minorChoices = el.filter(e => e.c && isMinorChoiceEvent(e)),
+    socialMinorChoices = minorChoices.filter(event => event.socialConstraint),
+    socialMinorShare = socialMinorChoiceBudget(socialMinorChoices, s);
   if (HL) {
     recordSimulationSlot(STG[stg(s)] || "不明", eligible, el);
     for (const candidate of el) STAT.op[candidate.id] = (STAT.op[candidate.id] || 0) + 1;
@@ -321,7 +338,7 @@ function slot(x) {
   if(!e&&serviceOnly)return;
   if(!e&&R()<playChoiceChance(s)&&ordinaryOptionalChoices.length)e=wpk(ordinaryOptionalChoices,s,T);
   if(!e)e=chooseSocialMajorChoice(socialMajorChoices,s,T);
-  if (!e) e = chooseSocialMinorChoice(minorChoices.filter(event => event.socialConstraint), s, T);
+  if (!e) e = chooseSocialMinorChoice(socialMinorChoices, s, T);
   if (!e) {
     const inCrisis = isLocationInCrisis(s);
     const r = R(),
@@ -338,8 +355,10 @@ function slot(x) {
         : pool,
       ordinaryMinorChoices = minorChoices.filter(event => !event.socialConstraint);
     if (ordinaryMinorChoices.length && dailyPool.length) {
-      // Keep the minor share fixed as new eligible events are added.
-      e = R() < 0.2 ? wpk(ordinaryMinorChoices, s, T) : wpk(dailyPool, s, T);
+      // Social and ordinary minor categories share the calibrated daily-slot cap.
+      e = R() < ordinaryMinorChoiceChance(socialMinorShare)
+        ? chooseOrdinaryMinorChoice(ordinaryMinorChoices, s, T)
+        : wpk(dailyPool, s, T);
     } else {
       e = dailyPool.length ? wpk(dailyPool, s, T) : null;
     }
