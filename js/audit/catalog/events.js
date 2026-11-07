@@ -11,6 +11,15 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
       W_.push(`${w}: 選択イベントのinteractionScopeに選択肢がない`);
     if (e.interactionScope === "daily" && e.c)
       W_.push(`${w}: dailyイベントに選択肢がある`);
+    if (e.raceDaily != null && typeof e.raceDaily !== "boolean")
+      W_.push(`${w}: raceDailyは真偽値ではない`);
+    const raceBoundDaily = [
+      ...(Array.isArray(e.need) ? e.need : typeof e.need === "string" ? [e.need] : []),
+      ...(Array.isArray(e.any) ? e.any : typeof e.any === "string" ? [e.any] : [])
+    ]
+      .some(tag => typeof tag === "string" && tag.startsWith("種族:"));
+    if (e.raceDaily && (e.c || !raceBoundDaily))
+      W_.push(`${w}: raceDailyは選択肢なし・種族条件付きイベントではない`);
     if (e.interactionScope === "scheduled" && typeof e.scheduledAt !== "function")
       W_.push(`${w}: scheduledイベントに汎用の期日関数がない`);
     const hasOwnedDynamicEligibility = e.lifeSystemFamily != null && typeof e.show === "function";
@@ -104,7 +113,7 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
             if (typeof o[1] !== "string" || !o[1].trim()) W_.push(`${y}: 結果本文がない`);
             if (o.length === 4 && !["good", "bad"].includes(o[3]))
               W_.push(`${y}: displayToneはgood/badのいずれでもない`);
-            fx(o[2], x);
+            fx(o[2], x, e);
             checkAffordableCashEffect(c.en, o[2], y);
             checkCashGateEffect([e, c.en, c.show], o[2], y);
           });
@@ -116,7 +125,7 @@ function validateEvents(W_, services, ids, cc, weight, fx, checkAffordableCashEf
         if (c.en && !c.why) W_.push(`${x}: 選べない理由(why)がない`);
       });
     } else {
-      fx(e.fx, w);
+      fx(e.fx, w, e);
       checkAffordableCashEffect(e, e.fx, w);
       checkCashGateEffect([e], e.fx, w);
     }

@@ -213,11 +213,12 @@ function normalizeResumeImport(data) {
   const state = data.S && typeof data.S === "object" && !Array.isArray(data.S)
       ? JSON.parse(JSON.stringify(data.S)) : data.S,
     knowledge = data.W;
-  // SAVE_VERSION 88 snapshots created before the arts/life-system ledgers were
-  // added have no fields for them. Backfill only empty current-version ledgers;
-  // do not infer practical skill, licenses, consent, equipment, or past events.
+  // Same-version snapshots created before the race/arts/life-system ledgers
+  // were added have no fields for them. Backfill only empty current-version
+  // ledgers; never infer traits, practical skill, licenses, consent, or history.
   if (state && typeof state === "object" && !Array.isArray(state) &&
       Number.isInteger(state.year) && Number.isFinite(state.ar)) {
+    if (!Object.hasOwn(state, "raceProfile")) state.raceProfile = createRaceProfile(state.r);
     if (!Object.hasOwn(state, "artsProfile")) state.artsProfile = createArtsProfile(state.ar);
     if (!Object.hasOwn(state, "artsEquipment")) state.artsEquipment = createArtsEquipmentState();
     if (state.world && typeof state.world === "object") {
@@ -231,6 +232,7 @@ function normalizeResumeImport(data) {
     !Number.isFinite(data.acc) || !Number.isInteger(data.sp) || data.sp < 0 || data.sp >= SPD.length ||
     typeof data.AU !== "string" || !Array.isArray(data.log) ||
     !Number.isInteger(state.by) || !Number.isInteger(state.year) || !Number.isInteger(state.age) ||
+    !isValidRaceProfileState(state.raceProfile, state.r, state.year) ||
     !isValidArtsProfileState(state.artsProfile, state.year) ||
     !isValidArtsEquipmentState(state.artsEquipment, state.year) ||
     !isValidLifeSystemsState(state) ||

@@ -345,22 +345,28 @@ function slot(x) {
       neutral = P("events.dailyNeutralToneShare"),
       g = r < neutral ? "" : r < neutral + P("events.dailyPositiveToneShare") ? "gd" : "bad",
       fl = el.filter(e => !e.c && (!inCrisis || !isPeacefulLeisureEvent(e))),
-      pl = fl.filter(e => tone(e.fx) === g);
-    const timelineDailies = inCrisis ? fl.filter(event => event.timelineFlag && s.world?.events?.[event.timelineFlag]) : [];
-    const pool = (timelineDailies.length && R() < 0.6) ? timelineDailies : (pl.length ? pl : fl),
+      raceDailyPool = fl.filter(event => event.raceDaily === true),
+      ordinaryDaily = fl.filter(event => event.raceDaily !== true),
+      pl = ordinaryDaily.filter(e => tone(e.fx) === g);
+    const timelineDailies = inCrisis ? ordinaryDaily.filter(event => event.timelineFlag && s.world?.events?.[event.timelineFlag]) : [];
+    const pool = (timelineDailies.length && R() < 0.6) ? timelineDailies : (pl.length ? pl : ordinaryDaily),
       contextual = pool.filter(event => contextualDailyEvent(event, s, T)),
       contextualTone = contextual.filter(event => tone(event.fx) === g),
       dailyPool = contextual.length && R() < 0.7
         ? (contextualTone.length ? contextualTone : contextual)
         : pool,
-      ordinaryMinorChoices = minorChoices.filter(event => !event.socialConstraint);
-    if (ordinaryMinorChoices.length && dailyPool.length) {
+      ordinaryMinorChoices = minorChoices.filter(event => !event.socialConstraint),
+      raceDailyShare = Math.min(0.2, Math.max(0, P("events.raceDailyShare"))),
+      chooseNoChoiceDaily = () => raceDailyPool.length && R() < raceDailyShare
+        ? wpk(raceDailyPool, s, T)
+        : dailyPool.length ? wpk(dailyPool, s, T) : null;
+    if (ordinaryMinorChoices.length && (dailyPool.length || raceDailyPool.length)) {
       // Social and ordinary minor categories share the calibrated daily-slot cap.
       e = R() < ordinaryMinorChoiceChance(socialMinorShare)
         ? chooseOrdinaryMinorChoice(ordinaryMinorChoices, s, T)
-        : wpk(dailyPool, s, T);
+        : chooseNoChoiceDaily();
     } else {
-      e = dailyPool.length ? wpk(dailyPool, s, T) : null;
+      e = chooseNoChoiceDaily();
     }
   }
   if (e) fire(e, s, T);

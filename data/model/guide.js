@@ -624,6 +624,17 @@ window.TERRA_DATA_BUILD.run("model/guide", function ($terraData, $define, $rules
         usedBy: ["日常イベント選択"]
       },
       {
+        id: "events.raceDailyShare",
+        label: "種族日常イベント選択率",
+        value: 0.15,
+        unit: "選択なし日常イベントの確率",
+        status: "S",
+        scope: "日常イベント",
+        description: "対象人物に適格な種族日常候補がある場合の初期選択率。暫定の上限は20%。候補がない年は発生させない。",
+        source: "ゲーム用仮定（調整値）",
+        usedBy: ["種族日常イベント選択"]
+      },
+      {
         id: "events.slotPlacementCeiling",
         label: "年間抽選枠の月内配置上限",
         value: 0.98,

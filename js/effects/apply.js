@@ -35,6 +35,7 @@ function ap(e, routeReserve = 0) {
     else throw Error("不明な旅程操作");
   }
   applyLifeRecordEffects(e, s);
+  if (e.raceProfileAction) applyRaceProfileAction(s, e.raceProfileAction, TRACE_RESOLUTION?.id || null);
   if (e.artsAction) applyArtsAction(s, e.artsAction);
   if (e.employmentAction && e.employmentAction.action !== "site-incident")
     applyPlayerEmploymentAction(s, e.employmentAction);

@@ -32,7 +32,7 @@ function createCatalogFieldChecks(W_, services) {
   ]);
   const eventKeys = new Set([
     ...conditionKeys, "id", "conf", "references", "w", "cd", "once", "pri", "st", "months",
-    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "displayTone", "timelineFlag", "crisisPolicy", "historicalScene", "regionCooldowns", "interactionScope", "lifeSystemFamily", "socialConstraint", "scheduledAt"
+    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "displayTone", "timelineFlag", "crisisPolicy", "historicalScene", "regionCooldowns", "interactionScope", "lifeSystemFamily", "socialConstraint", "scheduledAt", "raceDaily"
   ]);
   const cc = (c, w, event = false) => {
     if (!c) return;
@@ -96,7 +96,7 @@ function createCatalogFieldChecks(W_, services) {
       });
     }
   };
-  const fx = (f, w) =>
+  const fx = (f, w, event = null) =>
     Object.keys(f || {}).forEach(k => {
       if (!services.FXK.includes(k)) {
         W_.push(`${w}: 未知の効果「${k}」`);
@@ -181,6 +181,23 @@ function createCatalogFieldChecks(W_, services) {
               "recipientId", "routeId", "claimId", "languageId", "languageMode"]
               .some(key => action[key] != null && (typeof action[key] !== "string" || !action[key].trim())));
         if (invalid) W_.push(w + ": 効果「lifeSystemAction」の状態遷移契約が不正");
+      }
+      if (k === "raceProfileAction") {
+        const update = f[k],
+          statuses = new Set(["present", "absent", "unknown", "not_applicable"]),
+          sources = new Set(["self-report", "clinical-record", "direct-observation", "game-assumption"]),
+          raceTags = new Set([
+            ...(Array.isArray(event?.need) ? event.need : typeof event?.need === "string" ? [event.need] : []),
+            ...(Array.isArray(event?.any) ? event.any : typeof event?.any === "string" ? [event.any] : [])
+          ]
+            .filter(tag => typeof tag === "string" && tag.startsWith("種族:"))),
+          valid = update && typeof update === "object" && !Array.isArray(update) &&
+            Object.keys(update).every(key => ["traitId", "status", "source", "basis"].includes(key)) &&
+            typeof update.traitId === "string" && Object.hasOwn(RACE_PROFILE_TRAITS, update.traitId) &&
+            raceTags.has("種族:" + RACE_PROFILE_TRAITS[update.traitId].race) &&
+            statuses.has(update.status) && sources.has(update.source) &&
+            typeof update.basis === "string" && update.basis.trim().length > 0 && update.basis.length <= 240;
+        if (!valid) W_.push(w + ": 効果「raceProfileAction」の個体記録契約が不正");
       }
       if(type === "object" && (!f[k] || typeof f[k] !== "object" || Array.isArray(f[k])))
         W_.push(`${w}: 効果「${k}」がオブジェクトではない`);

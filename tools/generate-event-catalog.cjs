@@ -103,6 +103,7 @@ function lineAt(text, offset) {
 function buildSourceOrigins(events) {
   const explicit = new Map();
   const declarations = new Map();
+  const draftCalls = new Map();
   const generatedCalls = [];
   const documents = [];
   for (const file of dataFiles(ROOT)) {
@@ -123,6 +124,12 @@ function buildSourceOrigins(events) {
       rows.push({ file, line: lineAt(source, match.index), anchor: file + '#id-' + id });
       declarations.set(id, rows);
     }
+    for (const match of source.matchAll(/\b(?:bsw|rhine)DraftChoice\s*\(\s*(["'])(.*?)\1/g)) {
+      const id = match[2];
+      const rows = draftCalls.get(id) || [];
+      rows.push({ file, line: lineAt(source, match.index), anchor: file + '#id-' + id });
+      draftCalls.set(id, rows);
+    }
     for (const match of source.matchAll(/\bid\s*:\s*(["'])(.*?)\1/g)) {
       const id = match[2];
       const rows = explicit.get(id) || [];
@@ -140,7 +147,7 @@ function buildSourceOrigins(events) {
       origins.set(event.id, location);
       continue;
     }
-    const locations = declarations.get(event.id) || explicit.get(event.id);
+    const locations = declarations.get(event.id) || draftCalls.get(event.id) || explicit.get(event.id);
     if (locations && locations.length) {
       origins.set(event.id, locations[0]);
       continue;

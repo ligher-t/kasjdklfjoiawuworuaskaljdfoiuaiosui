@@ -365,6 +365,7 @@ function born(birth = {}) {
     dataFingerprintAtBirth: DATA_FINGERPRINT,
     sourceFingerprintAtBirth: SOURCE_FINGERPRINT
   });
+  S.raceProfile = createRaceProfile(S.r);
   S.artsProfile = createArtsProfile(S.ar);
   S.artsEquipment = createArtsEquipmentState();
   ensureLocalityState(S);

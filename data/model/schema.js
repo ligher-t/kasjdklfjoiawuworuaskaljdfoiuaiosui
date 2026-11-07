@@ -1203,6 +1203,12 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
     status: "S",
     valueType: "object"
   };
+  $terraData.EVENT_FIELD_META.raceProfileAction = {
+    unit: "個体の身体特性記録",
+    meaning: "種族名から推定せず、本人の申告・診療記録・直接観察で確認された個体差だけを本人の履歴に記録する",
+    status: "S",
+    valueType: "object"
+  };
 
   $define(
     "EVENT_EFFECT_TYPES",
@@ -1374,6 +1380,7 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
   $terraData.EVENT_EFFECT_TYPES.object.push("languageAction");
   $terraData.EVENT_EFFECT_TYPES.object.push("artsAction");
   $terraData.EVENT_EFFECT_TYPES.object.push("lifeSystemAction");
+  $terraData.EVENT_EFFECT_TYPES.object.push("raceProfileAction");
 
   $terraData.EVENT_EFFECT_TYPES.objectArray.push("bodyChanges", "infectionAwarenessActions");
 

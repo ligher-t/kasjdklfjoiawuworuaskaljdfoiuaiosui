@@ -9,7 +9,8 @@ window.TERRA_DATA_BUILD.fragment(
     {
       ...$parts("model/sources/references-entries-01"),
       ...$parts("model/sources/references-entries-02"),
-      ...$parts("model/sources/references-entries-03")
+      ...$parts("model/sources/references-entries-03"),
+      ...$parts("model/sources/references-entries-04")
     },
     false
   );
