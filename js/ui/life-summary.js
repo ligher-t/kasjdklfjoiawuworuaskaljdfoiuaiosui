@@ -82,7 +82,7 @@ function lifeRecordFacts(s) {
       x =>
         `${x.title}（${{ active: "運営中", "handed-over": "引継ぎ", dissolved: "解散" }[x.status] || "状態不明"}・${x.startedYear}年設立${x.endedYear ? `、${x.endedYear}年まで` : ""}` +
         `・会費累計${m(x.contributionsTotal)}` +
-        (`龍門幣・運営費${m(x.spentTotal)}龍門幣${x.operatingReserve ? `・残額${m(x.operatingReserve)}龍門幣` : ""}・方針:${x.policy}` +
+        (`・運営費${m(x.spentTotal)}${x.operatingReserve ? `・残額${m(x.operatingReserve)}` : ""}・方針:${x.policy}` +
           `・本人の役割:${x.participation || "未記録"}${x.lastFollowupYear ? `・後年の確認${x.lastFollowupYear}年` : ""}`) +
         `）`
     ),
@@ -207,7 +207,7 @@ function lifeChapterRecords(s) {
         row.year,
         row.age,
         "組織",
-        `${org.title} — ${row.note || actionLabels[row.action] || "運営を記録"}${Number.isFinite(row.amount) && row.amount > 0 ? `（${m(row.amount)}龍門幣）` : ""}`,
+        `${org.title} — ${row.note || actionLabels[row.action] || "運営を記録"}${Number.isFinite(row.amount) && row.amount > 0 ? `（${m(row.amount)}）` : ""}`,
         row.eventId
       );
   for (const relation of life.workRelationships)
@@ -645,8 +645,8 @@ function lifeSummaryMarkup(s) {
       ["契約した借金と返済", (s.loanContracts||[]).map(contract=>{
         const paid=(contract.history||[]).filter(row=>row.kind==="payment").reduce((sum,row)=>sum+(row.amount||0),0),
           status={open:"返済中",overdue:"期限超過",paid:"完済", "unresolved-at-death":"死亡時未解決"}[contract.status]||contract.status;
-        return (contract.account==="household"?"世帯":"本人")+"／"+contract.creditor+"／"+contract.currency+"："+Math.round(contract.principal).toLocaleString("ja-JP")+
-          "元本、総額"+Math.round(contract.totalDue).toLocaleString("ja-JP")+"、返済"+Math.round(paid).toLocaleString("ja-JP")+
+        return (contract.account==="household"?"世帯":"本人")+"／"+contract.creditor+"（金額単位："+(contract.currency||"龍門幣換算")+"）：元本"+Math.round(contract.principal).toLocaleString("ja-JP")+
+          "、総額"+Math.round(contract.totalDue).toLocaleString("ja-JP")+"、返済"+Math.round(paid).toLocaleString("ja-JP")+
           "、残額"+Math.round(contract.balance).toLocaleString("ja-JP")+"、"+status+"（期限"+contract.dueYear+"年）。"+contract.terms+
           " 支払履歴："+(contract.history||[]).filter(row=>row.kind==="payment"||row.kind==="disputed-charge")
             .map(row=>row.year+"年"+(row.kind==="payment"?"返済":"契約外請求")+Math.round(row.amount||0).toLocaleString("ja-JP")).join("／");

@@ -54,14 +54,31 @@ function educationSchoolOrDecision(s) {
 function educationHas(s, stage) {
   return !!s.educationPath?.completed?.includes(stage);
 }
+// A school recipient is the current school or the particular higher-course
+// enrolment, never the neighborhood elementary school for a university.
+function educationInstitutionRef(s, stage = s?.educationPath?.stage) {
+  if(s?.educationPath?.stage===stage && s.educationPath.offeringId &&
+     s.educationPath.institutionId)return s.educationPath.institutionId;
+  if (["primary","lower","upper"].includes(stage))
+    return typeof activeFacility === "function" ? activeFacility(s,"school")?.id || null : null;
+  if (!["university","vocational","arts","preparatory"].includes(stage) ||
+      s?.educationPath?.stage !== stage ||
+      !["enrolled","paused"].includes(s.educationPath.status)) return null;
+  const m=s.educationPath;
+  return m.institutionId || [
+    "course",s.res?.n || "unknown",s.local?.placeId || s.community?.key || "unknown",
+    stage,m.tier,m.stageStartYear
+  ].join(":");
+}
 function educationSchoolKnowsInfection(s, stage) {
-  if (
-    !["primary", "lower", "upper"].includes(stage) ||
-    !s.inf || !s.fl?.dg ||
-    typeof infectionAwarenessEntries !== "function"
-  ) return false;
-  const site = typeof activeFacility === "function" ? activeFacility(s, "school") : null;
-  if (!site?.id) return false;
+  if (!s.inf || !s.fl?.dg || typeof infectionAwarenessEntries !== "function")
+    return false;
+  const siteId = educationInstitutionRef(s,stage);
+  if (!siteId) return false;
+  if(s.world?.educationWorld?.institutions?.[siteId])
+    return educationRecipientInfectionKnowledge(s,{
+      institutionId:siteId,recipientKind:"institution"
+    }).status==="institution-confirmed";
   return infectionAwarenessEntries(s).some(row =>
     row.subject === "protagonist" &&
     row.audience === "school" &&
@@ -69,7 +86,7 @@ function educationSchoolKnowsInfection(s, stage) {
     row.region === s.res?.n &&
     (!row.placeId || row.placeId === s.local?.placeId) &&
     (!row.areaKey || row.areaKey === s.community?.key) &&
-    row.recipientRef === site.id
+    row.recipientRef === siteId
   );
 }
 function educationBarrier(s, stage, tier = 1) {
@@ -78,7 +95,14 @@ function educationBarrier(s, stage, tier = 1) {
     sarkaz = s.r?.n === "サルカズ",
     tara = region === "ヴィクトリア" &&
       s.culturalIdentity?.affiliation === "ターラー系",
-    school = typeof activeFacility === "function" ? activeFacility(s,"school") : null,
+    realOffering=s.educationPath?.stage===stage &&
+      s.world?.educationWorld?.offerings?.[s.educationPath.offeringId],
+    school = realOffering?
+      (()=>{const status=educationSchoolStatusAt(s,realOffering.id,s.year,s.mo??0);
+        return status?{id:realOffering.institutionId,
+          status:status.teachingEquivalent<=0?"closed":
+            status.teachingEquivalent<1?"strained":"open"}:null;})() :
+      typeof activeFacility==="function"?activeFacility(s,"school"):null,
     basicSchool = ["primary","lower","upper"].includes(stage),
     clanSite = region === "サーミ" && s.local?.kind &&
       /氏族|遊牧|非定住/.test(s.local.kind);
@@ -127,10 +151,11 @@ function educationBarrier(s, stage, tier = 1) {
     reason:chance<1 ? "学校側の受入れ、地域の身分・種族・感染者差別、交通の影響" : null,
     basis:"game-model-school-policy",profile:profile.source};
 }
-function educationFunds(s, stage, tier = 1) {
-  const config = EDUCATION_PROGRAMS[stage];
-  return Math.round((config?.fee || 0) * (stage === "university" || stage === "vocational" || stage === "arts" ? 1 + 0.55 * (tier - 1) : 1) *
-    (s.res?.pm || 1) * (s.priceIndex || 1));
+function educationFunds(s,stage,tier=1,offeringId=null) {
+  const current=s.educationPath;
+  const named=offeringId||(current?.stage===stage&&current.tier===tier?
+    current.offeringId||null:null);
+  return educationFinancePrice(s,stage,tier,named).amount;
 }
 function educationPaymentPlan(s, fee) {
   const requested=Math.max(0,fee||0),
@@ -151,16 +176,24 @@ function educationPayer(s, required = 0) {
   return s.house && typeof inSharedHousehold==="function" && inSharedHousehold(s) &&
     (s.house.cash || 0) >= required ? s.house : s;
 }
-function educationChargeFee(s, amount, stage, recordAnnual = true) {
-  const plan=educationPaymentPlan(s,amount);
-  if(!plan.allowed)return false;
-  s.cash=(s.cash||0)-plan.personal;
-  if(plan.household)s.house.cash-=plan.household;
-  if(recordAnnual && amount>0) {
-    s.educationAnnualFee={year:s.year,stage,amount,
-      payer:plan.household===0?"personal":plan.personal===0?"household":"mixed",
-      paidByPersonal:plan.personal,paidByHousehold:plan.household};
-  }
+function educationChargeFee(s,amount,stage,recordAnnual=true) {
+  const m=s.educationPath,
+    inSameCourse=recordAnnual&&m?.status==="enrolled"&&m.stage===stage;
+  const invoice=inSameCourse
+    ? educationEnsureTuitionInvoice(s,m,s.year)
+    : educationEnsureInvoice(s,{
+      id:["education-legacy",stage,s.year,
+        typeof TRACE_RESOLUTION==="object"&&TRACE_RESOLUTION?.id||"annual",
+        m?.stageStartYear||"new"].join(":"),
+      kind:stage==="materials"?"school-materials":"tuition",
+      institutionId:m?.institutionId||"legacy-school:"+s.res?.n+":"+stage,
+      offeringId:m?.stage===stage?m.offeringId||null:null,
+      amount:educationFinanceAmount(amount),serviceYear:s.year
+    });
+  if(invoice.net!==amount)return false;
+  const receipt=educationSettleInvoice(s,invoice);
+  if(!receipt)return false;
+  if(recordAnnual)educationFinanceProjectInvoice(s,invoice);
   return true;
 }
 function educationCanEnter(s, stage, tier = 1) {
@@ -173,20 +206,23 @@ function educationCanEnter(s, stage, tier = 1) {
 function educationExam(s, stage, tier = 1) {
   const hasQualification = educationHas(s,"upper") ||
     !!s.educationPath?.equivalency?.includes("upper");
-  const admission = educationCanEnter(s,stage,tier),
+  const access=educationBarrier(s,stage,tier),
+    fee=educationFunds(s,stage,tier),examFee=Math.round(fee*0.06),
+    funded=educationPaymentPlan(s,examFee),
     knowledge = Number(s.k || 0),
     literacy = Number.isFinite(s.socialLearning?.literacy) ? s.socialLearning.literacy : 0,
-    arts = Number(s.ar || 0);
+    arts = typeof artsAdmissionPotential === "function" ? artsAdmissionPotential(s) : 0;
   const threshold = (stage === "university" ? 43 : stage === "arts" ? 27 : 25) + (tier - 1) * 22,
     aptitude = stage === "arts" ? arts * 0.7 + knowledge * 0.2 + literacy * 0.1 :
       knowledge * 0.67 + literacy * 0.33,
     // Large gaps should make success extremely unlikely; exceptional prepared
     // applicants pass with high probability, without an invented intelligence trait.
     examChance = Math.max(0.008,Math.min(0.985,0.5 + (aptitude - threshold) * 0.025));
-  return {allowed:hasQualification && admission.allowed && !educationOccupied(s),
-    chance:examChance * admission.chance,fee:admission.fee,
+  return {allowed:hasQualification && access.allowed && funded.allowed && !educationOccupied(s),
+    chance:examChance * access.chance,fee,examFee,
     reason:!hasQualification ? "後期中等課程の修了、または正式な同等資格が必要" :
-      educationOccupied(s) ? "在籍・休学中の課程を先に終える必要がある" : admission.reason};
+      educationOccupied(s) ? "在籍・休学中の課程を先に終える必要がある" :
+      !funded.allowed?"受験料の支払手段が不足している":access.reason};
 }
 function educationAppendHistory(s,action,details = {}) {
   const model = s.educationPath;
@@ -206,9 +242,11 @@ function educationStart(s,stage,tier = 1,source = null) {
     equivalency:[...(previous?.equivalency || [])],
     history:[...(previous?.history || [])].slice(-60),sourceEventId:source
   };
+  s.educationPath.institutionId = educationInstitutionRef(s,stage);
+  if(stage === "arts" && typeof recordArtsFormalAdmissionAssessment === "function")
+    recordArtsFormalAdmissionAssessment(s,source);
   educationAppendHistory(s,"enrolled",{stage,tier,source,
-    schoolSiteId:["primary","lower","upper"].includes(stage) ?
-      (typeof activeFacility === "function" ? activeFacility(s,"school")?.id || null : null) : null
+    schoolSiteId:s.educationPath.institutionId || null
   });
   s.educationDecision=null;
   // All full-time courses, not only universities, exclude concurrent regular work.
@@ -232,11 +270,35 @@ function educationStart(s,stage,tier = 1,source = null) {
     s.study={kind,yearsPaid:1,nextDue:s.year+1,duration:years,educationManaged:true};
     recordEducationTransition(s, stage==="university"?"university":stage==="arts"?"arts-academy":"vocational","start",source);
     // Regular work was reconciled before applying the course flags.
-  }
+  }else recordEducationTransition(s,"preparatory","start",source);
 }
 function educationEnd(s,outcome,reason,source=null) {
   const model=s.educationPath;
-  if(!model || model.status!=="enrolled" && model.status!=="paused")return;
+  if(!model || model.status!=="enrolled" && model.status!=="paused")return false;
+  if(outcome==="completed" && model.stage==="preparatory" &&
+     (!model.offeringId || !model.currentEnrollmentId ||
+       model.completionAssessment?.passed!==true ||
+       model.completionAssessment.enrollmentId!==model.currentEnrollmentId))
+    return false;
+  if(outcome==="completed" && model.stage==="arts" &&
+     (!model.currentEnrollmentId || model.completionAssessment?.passed!==true ||
+      model.completionAssessment.enrollmentId!==model.currentEnrollmentId)){
+    if(!s.educationDecision)s.educationDecision={kind:"graduation",year:s.year};
+    return false;
+  }
+  if(outcome==="completed" && model.offeringId){
+    const enrollment=educationActiveEnrollment(s),
+      credits=enrollment?educationTransferredCreditIds(s,enrollment.id):[],
+      offering=s.world?.educationWorld?.offerings?.[model.offeringId];
+    if(!enrollment||credits.length<model.duration||
+       model.yearsCompleted<model.duration ||
+       offering?.recognitionRule?.issuerBasis!=="game-model"){
+      if(!s.educationDecision)s.educationDecision={kind:"graduation",year:s.year};
+      return false;
+    }
+  }
+  if(model.offeringId)
+    educationSimulateAttendanceThrough(s,s.year,Math.max(0,(s.mo||0)-1));
   const program=model.stage;
   educationAppendHistory(s,outcome,{stage:program,reason,source});
   model.status=outcome;
@@ -260,7 +322,15 @@ function educationEnd(s,outcome,reason,source=null) {
     recordEducationTransition(s,"general-school","finish",source||"annual-school-completion");
   }else if(outcome!=="completed" && ["primary","lower","upper"].includes(program)){
     recordEducationTransition(s,"general-school","stop",source||"annual-school-withdrawal");
+  }else if(program==="preparatory"){
+    recordEducationTransition(s,"preparatory",outcome==="completed"?"finish":"stop",
+      source||"formal-preparatory-closure");
   }
+  if(educationAutoStage(s,program)){
+    if(outcome==="completed")educationAutoMessage(s,(EDUCATION_CASE_STAGES[program]||"学校")+"を修了した。");
+    else educationAutoMessage(s,(EDUCATION_CASE_STAGES[program]||"学校")+"での在籍が終了した。"+reason,true);
+  }
+  return true;
 }
 // Aid and credit fund the upcoming year; they do not award completed study immediately.
 function educationRecordFundedYear(s,m,source,historyKind,details) {
@@ -271,6 +341,14 @@ function educationRecordFundedYear(s,m,source,historyKind,details) {
   s.educationDecision=null;
 }
 function educationApplyAction(s,action) {
+  if(typeof action==="string" && action.startsWith("legacy:teacher-"))
+    return educationLegacyTeacherAction(s,action);
+  if(typeof action==="string" && action.startsWith("event:"))
+    return educationMigrationApply(s,action.slice(6));
+  if(typeof action==="string" && action.startsWith("case:")) {
+    educationCaseAction(s,action);
+    return;
+  }
   const source=typeof TRACE_RESOLUTION==="object" ? TRACE_RESOLUTION?.id : null;
   if(action==="primary"){
     const gate=educationCanEnter(s,"primary");
@@ -310,11 +388,8 @@ function educationApplyAction(s,action) {
     return;
   }
   if(action==="start-preparatory"){
-    const fee=educationFunds(s,"preparatory");
-    if(!educationOccupied(s) && !educationHas(s,"upper") &&
-       educationChargeFee(s,fee,"preparatory")){
-      educationStart(s,"preparatory",1,source);
-    }
+    if(!educationOccupied(s) && !educationHas(s,"upper"))
+      educationCaseAction(s,"case:begin:reentry:preparatory:1");
     return;
   }
   if(action==="school-materials"){
@@ -342,54 +417,52 @@ function educationApplyAction(s,action) {
   }
   if(action==="funding-grant"){
     const m=s.educationPath;
-    if(s.educationDecision?.kind!=="funding" || !m || m.status!=="enrolled" ||
+    if(s.educationDecision?.kind!=="funding"||!m||m.status!=="enrolled"||
        !EDUCATION_INSTITUTIONAL_REGIONS.includes(s.res?.n))return;
-    const fee=educationFunds(s,m.stage,m.tier),plan=educationPaymentPlan(s,fee),
-      aid=Math.max(0,fee-plan.personal-plan.household);
-    if(plan.allowed || aid<=0)return;
-    s.cash=(s.cash||0)-plan.personal;
-    if(plan.household)s.house.cash-=plan.household;
-    s.educationAnnualFee={year:s.year,stage:m.stage,amount:fee,
-      payer:plan.household===0?"personal":plan.personal===0?"household":"mixed",
-      paidByPersonal:plan.personal,paidByHousehold:plan.household,
-      aidAmount:aid,aidBasis:"simulation-school-tuition-relief"};
+    const invoice=educationEnsureTuitionInvoice(s,m),
+      remaining=invoice.net-invoice.paid,
+      plan=educationPaymentPlan(s,remaining),
+      aid=Math.max(0,remaining-plan.personal-plan.household);
+    if(plan.allowed||aid<=0)return;
+    const id="grant:"+s.year+":"+invoice.id;
+    const posting=educationSettleInvoice(s,invoice,{
+      postingId:invoice.id+":grant-settlement",
+      grant:{id,amount:aid,basis:"game-model-institutional-relief"}
+    });
+    if(!posting)return;
+    educationFinanceProjectInvoice(s,invoice);
     educationRecordFundedYear(s,m,source,"aid-granted",{
-      tuition:fee,personal:plan.personal,household:plan.household,grant:aid,
-      basis:"simulation-school-tuition-relief"
+      tuition:invoice.net,personal:plan.personal,household:plan.household,
+      grant:aid,basis:"game-model-institutional-relief"
     });
     return;
   }
   if(action==="funding-loan"){
     const m=s.educationPath;
-    if(s.educationDecision?.kind!=="funding" || !m || m.status!=="enrolled" ||
-       s.age<18 || s.res?.n!=="クルビア" || typeof addLoanContract!=="function")return;
-    const fee=educationFunds(s,m.stage,m.tier),plan=educationPaymentPlan(s,fee),
-      principal=Math.max(0,Math.round(fee-plan.personal-plan.household));
-    if(principal<=0)return;
-    const id="columbia-education-credit-"+s.year;
-    addLoanContract(s,{
-      contractId:id,kind:"education-credit",borrower:"本人",
-      creditor:"クルビア工業区の民間学費貸付人",region:"クルビア",
-      currency:"クルビア現地通貨（モデル単位）",account:"personal",
-      principal,totalDue:Math.round(principal*1.1),installmentShare:0.2,
-      dueInYears:3,disbursement:"school",
-      terms:"この学費契約の返済総額は元本の1.1倍。契約年から3年後の年末が期限。一部返済可。固定返済総額以外の利息・遅延料は記載なし。",
-      sourceEventId:source
-    },1);
-    s.cash=(s.cash||0)-plan.personal;
-    if(plan.household)s.house.cash-=plan.household;
-    s.educationAnnualFee={year:s.year,stage:m.stage,amount:fee,
-      payer:plan.personal+plan.household>0?"mixed-contract":"contract",
-      paidByPersonal:plan.personal,paidByHousehold:plan.household,
-      paidByContract:principal,contractId:id,aidAmount:0};
+    if(s.educationDecision?.kind!=="funding"||!m||m.status!=="enrolled"||
+       s.age<18||s.res?.n!=="クルビア"||typeof addLoanContract!=="function")return;
+    const invoice=educationEnsureTuitionInvoice(s,m),
+      remaining=invoice.net-invoice.paid,
+      plan=educationPaymentPlan(s,remaining),
+      principal=Math.max(0,remaining-plan.personal-plan.household);
+    if(plan.allowed||principal<=0)return;
+    const id="edu-loan:"+educationTuitionEnrollmentId(s,m)+":"+invoice.id;
+    const posting=educationSettleInvoice(s,invoice,{
+      postingId:invoice.id+":loan-settlement",
+      loan:{id,amount:principal,creditor:"クルビア工業区の民間学費貸付人"}
+    });
+    if(!posting)return;
+    educationFinanceProjectInvoice(s,invoice);
     educationRecordFundedYear(s,m,source,"education-credit-signed",{
-      tuition:fee,personal:plan.personal,household:plan.household,
+      tuition:invoice.net,personal:plan.personal,household:plan.household,
       principal,totalDue:Math.round(principal*1.1),contractId:id
     });
     return;
   }
   if(action==="funding-pause"){
     if(s.educationPath?.status==="enrolled"){
+      if(s.educationPath.offeringId)
+        educationSimulateAttendanceThrough(s,s.year,Math.max(0,(s.mo||0)-1));
       s.educationPath.status="paused";
       if(s.study)s.study.suspended=true;
       s.educationPath.pauseYear=s.year;
@@ -421,7 +494,7 @@ function educationApplyAction(s,action) {
   if(action==="funding-resume"){
     const m=s.educationPath;
     if(!m || m.status!=="paused") {s.educationDecision=null;return;}
-    const fee=educationFunds(s,m.stage,m.tier);
+    const fee=educationFunds(s,m.stage,m.tier,m.offeringId||null);
     if(m?.status==="paused" && educationBarrier(s,m.stage,m.tier).allowed &&
        educationChargeFee(s,fee,m.stage)){
       m.status="enrolled";m.lastProcessedYear=s.year;m.fundedYear=s.year;
@@ -453,19 +526,40 @@ function educationApplyAction(s,action) {
     s.educationDecision=null;return;
   }
   if(action.startsWith("apply:")){
-    const [,stage,t]=action.split(":"),tier=Number(t),exam=educationExam(s,stage,tier);
+    const [,stage,t]=action.split(":"),tier=Number(t),
+      exam=educationExam(s,stage,tier);
     if(!exam.allowed)return;
-    // Examination fee applies even when the application is rejected.
-    const examFee=Math.round(exam.fee*0.06),admitted=R()<exam.chance;
-    if(admitted) {
-      if(educationChargeFee(s,exam.fee,stage)) {
+    const applicationId=["legacy-application",source||"unattributed",stage,tier,s.year].join(":"),
+      invoice=educationEnsureInvoice(s,{
+        id:applicationId+":exam:1",kind:"entrance-exam",
+        applicationId,institutionId:"legacy-course:"+s.res?.n+":"+stage+":"+tier,
+        amount:exam.examFee,serviceYear:s.year,
+        policyId:"game-model-legacy-entrance-exam-v1"
+      });
+    // The identical fee is settled before selection. A failed examination
+    // cannot defer payment until after seeing the result.
+    if(!educationSettleInvoice(s,invoice))return;
+    const admitted=R()<exam.chance;
+    if(admitted){
+      const funded=educationPaymentPlan(s,exam.fee).allowed;
+      if(funded && educationChargeFee(s,exam.fee,stage)){
         educationStart(s,stage,tier,source);
-        if(typeof L==="function")L("選考に合格し、学費を納付して"+(stage==="university"?"大学":stage==="arts"?"アーツ学院":"専門校")+"への入学が認められた。");
+        if(typeof L==="function")L("選考に合格し、学費を納付して"+
+          (stage==="university"?"大学":stage==="arts"?"アーツ学院":"専門校")+
+          "への入学が認められた。");
+      }else{
+        s.educationPath=s.educationPath||{version:1,status:"outside",completed:[],history:[]};
+        educationAppendHistory(s,"accepted-not-enrolled",{
+          stage,tier,applicationId,reason:"入学年度の学費未納",source
+        });
+        s.educationDecision=null;
+        if(typeof L==="function")L("選考には通ったものの、入学年度の学費がそろわず、在籍の手続は成立しなかった。受験料の支払は記録に残った。");
       }
-    } else {
-      educationChargeFee(s,examFee,stage);
+    }else{
       s.educationPath=s.educationPath||{version:1,status:"outside",completed:[],history:[]};
-      educationAppendHistory(s,"exam-failed",{stage,tier,source,examChance:exam.chance,examFee});
+      educationAppendHistory(s,"exam-failed",{
+        stage,tier,source,applicationId,examChance:exam.chance,examFee:exam.examFee
+      });
       s.educationDecision=null;
       if(typeof L==="function")L("入学試験の結果は不合格だった。受験料は戻らず、学費は支払っていない。");
     }
@@ -484,18 +578,32 @@ function educationEnforceAccess(s){
   }
 }
 function educationFundYear(s,m) {
-  const fee=educationFunds(s,m.stage,m.tier);
-  if(fee>0) {
-    if(!educationPaymentPlan(s,fee).allowed){
-      if(EDUCATION_INSTITUTIONAL_REGIONS.includes(s.res?.n)) {
-        s.educationDecision={kind:"funding",year:s.year,fee};
-        m.lastProcessedYear=s.year;
+  // Old diagnostic fixtures and incomplete school records may lack a real
+  // defined course. Never bill or mark study funded for such a stage.
+  if(!Object.hasOwn(EDUCATION_PROGRAMS,m.stage)){
+    m.lastProcessedYear=s.year;
+    return;
+  }
+  const invoice=educationEnsureTuitionInvoice(s,m,s.year);
+  if(invoice.status==="void")return;
+  if(invoice.outstanding>0){
+    const posting=educationSettleInvoice(s,invoice);
+    if(!posting){
+      // Only regions with an actual institutional tuition-support pathway
+      // can leave a funding decision pending. Else stop the enrollment.
+      if(!EDUCATION_INSTITUTIONAL_REGIONS.includes(s.res?.n)){
+        educationEnd(s,"withdrawn","学費不足による在籍終了","annual-finance");
+        educationVoidInvoice(s,invoice.id,"enrollment-ended-unfunded");
         return;
       }
-      educationEnd(s,"withdrawn","学費不足による在籍終了","annual-finance");return;
+      s.educationDecision={kind:"funding",year:s.year,fee:invoice.outstanding,
+        invoiceId:invoice.id};
+      m.lastProcessedYear=s.year;
+      return;
     }
-    educationChargeFee(s,fee,m.stage);
   }
+  if(invoice.status!=="paid")return;
+  educationFinanceProjectInvoice(s,invoice);
   m.fundedYear=s.year;
   m.lastProcessedYear=s.year;
   if(s.study){s.study.yearsPaid++;s.study.nextDue=s.year+1;}
@@ -531,19 +639,37 @@ function educationAdvanceYear(s) {
   }
   if(m.stageStartYear===s.year)return;
   // Only a funded, uninterrupted previous year earns study credit. Calendar gaps do not.
-  if(m.fundedYear===s.year-1) {
+  const credit=m.offeringId?educationCreditForPreviousYear(s):null;
+  const recognized=m.offeringId?credit?.credited===true:m.fundedYear===s.year-1;
+  if(recognized && m.lastCreditedYear!==s.year-1) {
     m.yearsCompleted++;
+    m.lastCreditedYear=s.year-1;
     m.fundedYear=null;
-    educationAppendHistory(s,"advanced",{stage:m.stage,yearsCompleted:m.yearsCompleted});
-    s.ep=Math.min(120,(s.ep||0)+(m.stage==="primary"?8:5));
-    s.k=Math.min(100,(s.k||0)+(m.stage==="primary"?3:4));
-    if(s.socialLearning && Number.isFinite(s.socialLearning.literacy))
-      s.socialLearning.literacy=Math.min(100,s.socialLearning.literacy+(m.stage==="primary"?9:4));
+    educationAppendHistory(s,"advanced",{stage:m.stage,yearsCompleted:m.yearsCompleted,
+      creditId:credit?.id||null});
+    // For actual school offerings the social learning subsystem owns skills:
+    // a recognized year is a credential input, not another ability bonus.
+    if(!m.offeringId){
+      s.ep=Math.min(120,(s.ep||0)+(m.stage==="primary"?8:5));
+      s.k=Math.min(100,(s.k||0)+(m.stage==="primary"?3:4));
+      if(s.socialLearning && Number.isFinite(s.socialLearning.literacy))
+        s.socialLearning.literacy=Math.min(100,s.socialLearning.literacy+(m.stage==="primary"?9:4));
+    }
+  } else if(m.offeringId && !recognized && credit && !s.educationDecision){
+    const pending=educationCaseBegin(s,"interruption-review",m.stage,m.tier,"continuity");
+    if(pending)educationAppendHistory(s,"credit-interrupted",{
+      academicYear:s.year-1,creditId:credit.id,reason:credit.outcome});
   }
   m.lastProcessedYear=s.year;
   if(m.yearsCompleted>=m.duration){
     if(m.stage==="primary") {
       educationAppendHistory(s,"completed-stage",{stage:"primary"});
+      if(m.offeringId) {
+        if(!educationEnd(s,"completed","初等課程の履修を修了","annual-progression"))return;
+        recordEducationTransition(s,"general-school","finish","annual-progression");
+        s.educationDecision={kind:"lower-path",year:s.year};
+        return;
+      }
       if(!m.completed.includes("primary"))m.completed.push("primary");
       const lowerAccess=educationBarrier(s,"lower");
       if(!lowerAccess.allowed) {
@@ -558,29 +684,46 @@ function educationAdvanceYear(s) {
       educationStart(s,"lower",1,"annual-progression");return;
     }
     if(m.stage==="lower"){
+      if(!educationEnd(s,"completed","前期中等課程の年限を修了","annual-progression"))return;
       educationAppendHistory(s,"completed-stage",{stage:"lower"});
-      if(!m.completed.includes("lower"))m.completed.push("lower");
-      educationEnd(s,"completed","前期中等課程の年限を修了","annual-progression");
       s.educationDecision={kind:"upper-path",year:s.year};return;
     }
     if(m.stage==="upper"){
+      if(!educationEnd(s,"completed","後期中等課程の年限を修了","annual-progression"))return;
       educationAppendHistory(s,"completed-stage",{stage:"upper"});
-      if(!m.completed.includes("upper"))m.completed.push("upper");
-      educationEnd(s,"completed","後期中等課程の年限を修了","annual-progression");
       s.educationDecision={kind:"higher-path",year:s.year};return;
     }
     const knowledge=s.k||0,lit=Number.isFinite(s.socialLearning?.literacy)?s.socialLearning.literacy:0,
       preparatoryReady=m.stage==="preparatory" ? knowledge>=48 && lit>=45 : true,
-      artsReady=m.stage==="arts" ? (s.ar||0)>=30 : true,
+      artsReady=m.stage==="arts" ? m.completionAssessment?.passed===true : true,
       threshold=m.stage==="university" ? 45+(m.tier-1)*13 : 25+(m.tier-1)*10;
     if(knowledge>=threshold && lit>=35 && artsReady && preparatoryReady){
-      if(m.stage==="preparatory")m.equivalency.push("upper");
-      educationEnd(s,"completed","年限・履修・修了評価を満たした","annual-progression");
+      if(m.stage==="preparatory"){
+        const enrollment=educationActiveEnrollment(s);
+        if(!enrollment || !m.offeringId ||
+           enrollment.id!==m.currentEnrollmentId){
+          s.educationDecision={kind:"graduation",year:s.year};
+          return;
+        }
+        const evidenceRef=enrollment.id+":formal-completion-assessment:"+s.year;
+        m.completionAssessment={evidenceRef,enrollmentId:enrollment.id,
+          assessedAt:{year:s.year,month:s.mo||0},
+          knowledge, literacy:lit,passed:true,
+          basis:"game-model-formal-qualification-assessment",
+          sourceCreditIds:educationTransferredCreditIds(s,enrollment.id)};
+      }
+      const completed=educationEnd(s,"completed",
+        "年限・履修・修了評価を満たした","annual-progression");
+      if(completed && m.stage==="preparatory" && !m.equivalency.includes("upper"))
+        m.equivalency.push("upper");
     }else {
       s.educationDecision={kind:"graduation",year:s.year};
       m.lastProcessedYear=s.year;
     }
     return;
   }
-  educationFundYear(s,m);
+  if(!s.educationDecision || s.educationDecision.kind!=="case-review"){
+    educationFundYear(s,m);
+    if(m.status==="enrolled"&&m.offeringId)educationRenewGuardianStudy(s);
+  }
 }

@@ -1,92 +1,40 @@
-const STANDARD_EMPLOYMENT_JOBS = new Set([2, 3, 6, 7, 8, 9, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 25, 27]);
-const contractEligibleJob = s => STANDARD_EMPLOYMENT_JOBS.has(s.job);
-function ensureWorkplaceLedger(s, facility, year = s.year) {
-  if (!facility || facility.kind !== "workplace") return null;
-  if (!facility.employer) {
-    const roll = key => keyedRoll(`terra-employer-v76:${facility.id}:${key}`);
-    const headCount = 3 + Math.floor(roll("size") * 10);
-    facility.employer = {
-      version: 1,
-      createdYear: year,
-      staffSlots: headCount,
-      openings: 1 + Math.floor(roll("openings") * Math.min(4, headCount)),
-      payScale:
-        Math.round(
-          (P("social.employerMinimumPayScale") +
-            roll("pay") * (P("social.employerMaximumPayScale") - P("social.employerMinimumPayScale"))) *
-            100
-        ) / 100,
-      shift: roll("shift") < 0.18 ? "long" : roll("shift") > 0.83 ? "short" : "regular",
-      safety: roll("safety") < 0.3 ? "basic" : "managed",
-      lastYear: year,
-      history: [],
-      basis: "synthetic-employer-model"
-    };
-  }
-  return facility.employer;
-}
-function advanceWorkplaceLedger(s, facility, year) {
-  const ledger = ensureWorkplaceLedger(s, facility, year);
-  if (!ledger || ledger.lastYear >= year) return ledger;
-  // 運営規模はモデル上の求人・募集余地。地元人口やNPC全員の採用枠を表さない。
-  const old = ledger.openings;
-  const localPressure = facility.status === "limited" ? -0.5 : facility.status === "strained" ? -0.2 : 0.15;
-  const roll = keyedRoll(`terra-employer-openings:${facility.id}:${year}`);
-  ledger.openings = clamp(
-    Math.round(ledger.openings + (roll < 0.2 ? -1 : roll > 0.82 ? 1 : 0) + localPressure),
-    0,
-    Math.min(4, ledger.staffSlots)
-  );
-  if (old !== ledger.openings) {
-    ledger.history.push({ year, field: "openings", from: old, to: ledger.openings, basis: "game-model" });
-    ledger.history = ledger.history.slice(-16);
-  }
-  ledger.lastYear = year;
-  return ledger;
-}
 function reconcileWorkContract(s) {
-  s.workContractHistory ||= [];
-  const prior = s.workContract;
-  const eligible = contractEligibleJob(s) && !s.fl?.retired && !restricted(s);
-  const site = eligible ? activeFacility(s, "workplace") : null;
-  if (prior && (!site || prior.siteId !== site.id || prior.jobId !== s.job || prior.status !== "active")) {
-    if (prior.status === "active")
-      s.workContractHistory.push({
-        year: s.year,
-        siteId: prior.siteId,
-        jobId: prior.jobId,
-        action: "ended",
-        reason: !eligible ? "employment-ended" : prior.jobId !== s.job ? "occupation-changed" : "site-changed",
-        assignment: prior.assignment
-      });
-    s.workContract = null;
-  }
-  if (site) {
-    const employer = ensureWorkplaceLedger(s, site);
-    if (!s.workContract) {
-      s.workContract = {
-        siteId: site.id,
-        jobId: s.job,
-        startYear: s.year,
-        status: "active",
-        wagePremium: 0,
-        hours: employer.shift,
-        assignment: "usual",
-        knownConditions: "basic",
-        basis: "current-year-model"
-      };
-      s.workContractHistory.push({
-        year: s.year,
-        siteId: site.id,
-        jobId: s.job,
-        action: "started",
-        basis: "current-year-model"
-      });
+  const episode = currentPlayerEmployment(s);
+  if (episode) {
+    const site = s.world?.occupationWorld?.sites?.[episode.siteId],
+      term = episode.scheduledEndAt,
+      termEnded = term && s.year * 12 + (s.mo || 1) >= term.year * 12 + term.month,
+      moved = episode.areaId && site?.kind !== "mobile" && !episode.affiliationId &&
+        occupationWorkAreaKey(s) !== episode.areaId;
+    if ((s.job !== episode.jobId && episode.projectAsJob !== false) || s.fl?.retired ||
+        (restricted(s) && episode.kind !== "coerced-assignment") || site?.status === "closed" || termEnded || moved) {
+      endPlayerEmployment(s, site?.status === "closed" ? "worksite-closed" : termEnded ? "term-completed" :
+        moved ? "relocation" : "occupation-or-availability-changed",
+        site?.status === "closed" ? site.operationTo : termEnded ? term : null);
+    } else if (episode.kind === "wage-employment") {
+      // The actual site is a persistent world record, never a local synthetic workplace.
+      if (!s.workContract || s.workContract.basis !== "occupation-episode" ||
+          s.workContract.episodeId !== episode.episodeId) {
+        s.workContract = {
+          siteId: episode.siteId, jobId: episode.jobId, episodeId: episode.episodeId,
+          startYear: episode.startYear, status: "active", wagePremium: 0,
+          hours: "regular", assignment: "usual", knownConditions: "basic",
+          basis: "occupation-episode"
+        };
+      }
+      return s.workContract;
     }
   }
+  // Non-wage roles never fall through to the existing contract model.
+  if (currentPlayerEmployment(s)) return null;
+  s.workContractHistory ||= [];
+  // A profession projection alone is not an employment contract. Versioned
+  // career state has no legacy-save migration path; only active episodes may
+  // own a current contract.
+  if (s.workContract) s.workContract = null;
   s.workContractHistory = s.workContractHistory.slice(-80);
   closeInfectionWorkplaceDisclosureIfEmploymentChanged(s);
-  return s.workContract || null;
+  return null;
 }
 function closeInfectionWorkplaceDisclosureIfEmploymentChanged(s) {
   const record = s.infectionWorkplace;
@@ -105,12 +53,8 @@ function closeInfectionWorkplaceDisclosureIfEmploymentChanged(s) {
 function contractIncomeFactor(s) {
   const contract = reconcileWorkContract(s);
   if (!contract) return 1;
-  const employer = s.community?.facilities?.[contract.siteId]?.employer;
-  if (!employer) return 1;
-  // 施設稼働の既存補正とは別に、雇用先の契約上の賃金だけを反映。親・配偶者の賃金は対象外。
   return clamp(
-    employer.payScale *
-      (1 + contract.wagePremium) *
+    (1 + (contract.wagePremium || 0)) *
       (contract.hours === "short"
         ? P("social.employerShortHoursIncomeFactor")
         : contract.hours === "long"
@@ -123,13 +67,18 @@ function contractIncomeFactor(s) {
 function applyWorkContractAction(s, action) {
   if (!action || !["review", "negotiate", "hours", "assignment"].includes(action.action))
     throw Error("職場契約への行動が不正");
+  settleEmploymentThrough(s, s.year, Math.max(0, (s.mo || 1) - 1));
   const result = action.result || "approved";
   if (!["approved", "declined"].includes(result)) throw Error("契約協議の結果が不正");
   const contract = reconcileWorkContract(s);
   if (!contract) throw Error("契約中の勤務先がない");
-  const facility = activeFacility(s, "workplace"),
-    ledger = ensureWorkplaceLedger(s, facility);
-  if (!facility || facility.id !== contract.siteId || !ledger) throw Error("勤務先の施設情報が不一致");
+  const facility = contract.basis === "occupation-episode"
+      ? s.world?.occupationWorld?.sites?.[contract.siteId] : null,
+    position = facility && s.world?.occupationWorld?.positions?.[contract.positionId ||
+      currentPlayerEmployment(s)?.positionId],
+    ledger = position ? { openings: position.vacancyCount ?? 0 } : null;
+  if (!facility || facility.siteId !== contract.siteId || !ledger)
+    throw Error("勤務先の施設情報が不一致");
   if (action.action === "review") contract.knownConditions = "reviewed";
   if (action.action === "negotiate") {
     if (result === "approved") {

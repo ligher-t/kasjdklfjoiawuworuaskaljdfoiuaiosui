@@ -1,54 +1,3 @@
-function pickStarterJob(s) {
-  const region = s.res?.n,
-    lowAccess = s.local?.access < P("birth.lowAccessThreshold");
-  const byRegion = {
-    "ウルサス": [1, 2, 3, 14, 17, 22, 23],
-    "レム・ビリトン": [1, 2, 3, 16, 18, 19, 23, 27],
-    "ラテラーノ": [1, 2, 5, 9, 15, 17, 21, 22],
-    "カズデル": [1, 4, 16, 22, 23, 26, 27],
-    "イェラグ": [1, 5, 16, 17, 22, 23, 26],
-    "シラクーザ": [1, 5, 15, 16, 17, 22, 24, 25],
-    "クルビア": [1, 2, 5, 7, 16, 17, 18, 19, 21, 24],
-    "龍門": [1, 2, 5, 15, 16, 17, 18, 21, 24],
-    "炎国": [1, 5, 9, 16, 17, 19, 22, 23, 24],
-    "ヴィクトリア": [1, 2, 5, 6, 14, 16, 17, 18, 19, 22],
-    "リターニア": [1, 5, 9, 11, 12, 13, 17, 22],
-    "カジミエーシュ": [1, 2, 5, 10, 16, 17, 22, 24],
-    "サルゴン": [1, 4, 5, 16, 22, 23, 24, 26, 27],
-    "ボリバル": [1, 2, 4, 5, 14, 16, 17, 23, 24],
-    "極東": [1, 5, 9, 16, 17, 19, 22, 23],
-    "シエスタ": [1, 5, 16, 17, 22, 23, 24],
-    "ミノス": [1, 5, 10, 17, 19, 22, 23],
-    "サーミ": [1, 4, 16, 22, 23, 26],
-    "ヒガシ": [1, 5, 9, 16, 17, 19, 22, 23]
-  };
-  const ids = [...(byRegion[region] || [1, 2, 5, 16, 17, 22, 23, 24])];
-  // Learning can lead to a chance to apply, but points alone are not a diploma.
-  // J[8] combines physicians and researchers; do not assign it by a generic draw.
-  if (s.k >= 20 || educationCredential(s, "vocational") || educationCredential(s, "university"))
-    ids.push(6, 7, 11, 12, 20, 21);
-  if (s.socialClass?.originGroup === "landed" && s.k >= 24) ids.push(5, 14);
-  const roles = {
-    6: "administrator",
-    7: "technical",
-    8: "clinical",
-    9: "clergy",
-    11: "arts-technician",
-    12: "teacher",
-    20: "medical-assistant",
-    21: "office-assistant"
-  };
-  const candidates = [...new Set(ids)]
-    .filter(id => id !== 8 && careerOpeningAssessment(s, { role: roles[id] || "general", automatic: true }).canBeAssigned)
-    .map(id => ({
-      id,
-      // Low access reduces opportunities, not a person's ability or every job's legality.
-      w: (id === 1 ? 3 : 1) * (lowAccess && [6, 7, 11, 12, 20, 21].includes(id) ? 0.45 : 1)
-    }));
-  // This broad livelihood path prevents a false specialist assignment or empty draw.
-  if (!candidates.length) candidates.push({ id: 1, w: 1 });
-  return wp(candidates).id;
-}
 const newHouseholdSetupCost = s => m(120000 * (s.res?.pm || 1) * (s.priceIndex || 1));
 const newHouseholdKinSetupCost = s => m(40000 * (s.res?.pm || 1) * (s.priceIndex || 1));
 const hobbyExamples = s => {
@@ -97,12 +46,23 @@ function currentHouseholdMembers(s) {
     for (const sibling of siblingsOf(s))
       if (!sibling.d && !sibling.independentSinceYear) members.push(sibling.nm);
   }
-  if (arrangement === "spouse_parent_home") members.push("配偶者の親族（個別記録なし）");
-  if (s.sp && !s.sp.d && (arrangement.startsWith("spouse_") || spouseLivesWithProtagonist(s)))
+  if (arrangement === "partner_shared" && s.romance?.stage === "cohabiting")
+    members.push(s.romance.name || s.romance.nm || "同居する恋人");
+  if (arrangement === "spouse_parent_home" && spouseLivesWithProtagonist(s))
+    members.push("配偶者の親族（個別記録なし）");
+  if (spouseLivesWithProtagonist(s))
     members.push(s.sp.nm || "配偶者");
-  for (const child of s.kids || [])
-    if (!child.d && child.householdStatus !== "independent" && child.householdResidencePlan !== "former")
+  for (const child of s.kids || []) {
+    const plan = child.householdResidencePlan,
+      former = formerSpouseForChild(s, child);
+    if (
+      !child.d &&
+      child.householdStatus !== "independent" &&
+      !["former", "former_support", "unresolved"].includes(plan) &&
+      (!former || plan === "self" || plan === "shared")
+    )
       members.push(child.nm || "子");
+  }
   return members.length ? [...new Set(members)].join("、") : "なし";
 }
 const fam = s => {
@@ -469,6 +429,8 @@ const fam = s => {
         independent_rental: "別の賃貸住居で独立",
         independent_owned: "自己所有の住居で独立",
         spouse_shared: "配偶者と同居",
+        partner_shared: "婚姻前の恋人と同居（本人の家計は別管理）",
+        post_cohabitation_housing_unconfirmed: "同居解消後・住居と契約の状況を確認中（転居の記録なし）",
         spouse_parent_home: "配偶者の親族宅で同居（他の同居者は未記録）"
       }[s.residenceArrangement] || "旧記録では未確認"
     ],

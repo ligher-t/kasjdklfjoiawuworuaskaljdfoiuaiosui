@@ -253,7 +253,9 @@ window.TERRA_DATA_BUILD.fragment(
       after: { id: "life_kazdel_displaced_start", min: 5 },
       once: true,
       w: 0.12,
-      show: s => isPaused(s),
+      show: s => isPaused(s) &&
+        Number.isInteger(goal(s)?.lastChangedYear) &&
+        s.year - goal(s).lastChangedYear >= 3,
       t: "故郷へ帰ることを考えるのをやめてから数年が過ぎ、この街での暮らしもすっかり板についた。そんな折、カズデルの噂を伝える便りが舞い込み、もう一度故郷のことを考えるか迷った。",
       c: [
         $terraData.K("改めてカズデルへの道や現地の暮らしぶりを調べ始める", {}, [
@@ -281,8 +283,14 @@ window.TERRA_DATA_BUILD.fragment(
       after: { id: "life_kazdel_displaced_start", min: 7 },
       once: true,
       w: 0.2,
-      show: s => isActive(s) && (s.kids || []).some(child => !child.d),
-      t: "この土地で育った子どもに、「カズデルってどんな場所だったの？」と尋ねられた。自分が目で見た故郷の風景や、苦しい避難の記憶をどこまで語って聞かせるか考えた。",
+      show: s => isActive(s) && (s.kids || []).some(child =>
+        !child.d &&
+        Number.isInteger(child.by) && s.year - child.by >= 6 &&
+        child.householdStatus !== "independent" &&
+        !["former", "former_support", "unresolved"].includes(child.householdResidencePlan) &&
+        child.contactState !== "paused"
+      ),
+      t: "夕餉の支度をしていると、子どもに「カズデルってどんな場所だったの？」と尋ねられた。自分が目で見た故郷の風景や、苦しい避難の記憶をどこまで語って聞かせるか考えた。",
       c: [
         $terraData.K("自分がその目で見たカズデルの街並みと、人から聞いた話を分けて語って聞かせる", {}, [
           1,

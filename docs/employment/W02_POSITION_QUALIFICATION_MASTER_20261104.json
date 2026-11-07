@@ -1,0 +1,2523 @@
+{
+  "schema": "terra-work-w02-position-eligibility-master",
+  "version": 1,
+  "asOf": "2026-11-04",
+  "status": "designed-83-job-profiles-ready-for-position-per-entity-instantiation",
+  "source": "JOB_83_ACCESS_CONTRACT_20261104.json and js/core/state.js careerOpeningAssessment",
+  "evidenceBasis": "All names from current game; thresholds/profiles are design requirements rather than proven Terra legal licensing rules",
+  "rules": [
+    "role-subtype,positionId,siteId,offering-verified awardId and competence",
+    "worksite is world truth; applicant knowledge distinct",
+    "local ordinances require date and sourceRef",
+    "a skill shortage disallows immediate hire but not information-seeking",
+    "employing other family members does not hire the player",
+    "active staff role and formal identity distinct from training/probation"
+  ],
+  "profiles": {
+    "0": {
+      "jobId": 0,
+      "jobLabel": "無職",
+      "employmentKinds": [
+        "none"
+      ],
+      "sectorCandidates": [],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "none",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "none",
+      "qualificationEvidenceInterpretation": "no job; preserve self-care, seeking and unpaid family activity separately",
+      "requiredRecordRefs": [],
+      "entryCommit": "unemployed state only",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "none by default; benefits and in-kind support tracked elsewhere"
+    },
+    "1": {
+      "jobId": 1,
+      "jobLabel": "日雇い・農作業",
+      "employmentKinds": [
+        "gig-piecework",
+        "seasonal-contract",
+        "family-community"
+      ],
+      "sectorCandidates": [
+        "AGR"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "local",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "task-provider-or-family-role",
+      "qualificationEvidenceInterpretation": "practical capacity and hazard/age context; no universal school rule",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "2": {
+      "jobId": 2,
+      "jobLabel": "工場労働者",
+      "employmentKinds": [
+        "wage-employment",
+        "seasonal-contract",
+        "coerced-assignment"
+      ],
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "local",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "task-provider-or-family-role",
+      "qualificationEvidenceInterpretation": "practical capacity and hazard/age context; no universal school rule",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "3": {
+      "jobId": 3,
+      "jobLabel": "鉱夫",
+      "employmentKinds": [
+        "wage-employment",
+        "coerced-assignment",
+        "gig-piecework"
+      ],
+      "sectorCandidates": [
+        "MIN"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "mine-site",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "active-extraction-site",
+      "qualificationEvidenceInterpretation": "site-specific safety and actual ability; voluntary wage vs coerced assignment distinguished",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "4": {
+      "jobId": 4,
+      "jobLabel": "傭兵・護衛",
+      "employmentKinds": [
+        "gig-piecework",
+        "organization-service",
+        "wage-employment"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "mission-site",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "verified-client-or-armed-organization",
+      "qualificationEvidenceInterpretation": "assignment scope, experience, risk consent, individual command",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "5": {
+      "jobId": 5,
+      "jobLabel": "商人",
+      "employmentKinds": [
+        "self-employment",
+        "family-community",
+        "wage-employment"
+      ],
+      "sectorCandidates": [
+        "COM"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "market",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "commercial-demand-and-capital",
+      "qualificationEvidenceInterpretation": "shop ownership or employer offer, inventory, sales route and expenses",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "6": {
+      "jobId": 6,
+      "jobLabel": "官吏",
+      "employmentKinds": [
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "government-office",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "documented-office",
+      "qualificationEvidenceInterpretation": "read/write skill, formal record or office training, appointment authority",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "7": {
+      "jobId": 7,
+      "jobLabel": "技師",
+      "employmentKinds": [
+        "wage-employment",
+        "gig-piecework",
+        "self-employment"
+      ],
+      "sectorCandidates": [
+        "MFG",
+        "SCI"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "works-site",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "specific-equipment-and-worksite",
+      "qualificationEvidenceInterpretation": "technical training or verified practice, safe operation, role-specific mathematics and reading",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "8": {
+      "jobId": 8,
+      "jobLabel": "医師・研究者",
+      "employmentKinds": [
+        "wage-employment",
+        "public-appointment",
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MED",
+        "SCI"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "medical-or-research-site",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "licensed-clinical-service-or-research-position",
+      "qualificationEvidenceInterpretation": "SPLIT: clinician needs verified clinical qualification/authority; research needs subject/ethics and research experience",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "clinical",
+        "researcher"
+      ],
+      "warning": "current code role=clinical is always unqualified due research-lead condition; design excludes this conjunction"
+    },
+    "9": {
+      "jobId": 9,
+      "jobLabel": "聖職者",
+      "employmentKinds": [
+        "faith-service",
+        "family-community"
+      ],
+      "sectorCandidates": [
+        "REL"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "faith-site",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "religious-site",
+      "qualificationEvidenceInterpretation": "acceptance, rite, practical service and rights to leave",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "10": {
+      "jobId": 10,
+      "jobLabel": "騎士",
+      "employmentKinds": [
+        "organization-service",
+        "seasonal-contract",
+        "self-employment"
+      ],
+      "sectorCandidates": [
+        "MIL",
+        "CRE"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "knight-organization",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "specific-knight-role",
+      "qualificationEvidenceInterpretation": "combat service, commercial athletics or honorary rank; do not infer one from another",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "combat-knight",
+        "competition-knight",
+        "honorary-knight"
+      ]
+    },
+    "11": {
+      "jobId": 11,
+      "jobLabel": "アーツ技師",
+      "employmentKinds": [
+        "wage-employment",
+        "gig-piecework"
+      ],
+      "sectorCandidates": [
+        "SCI",
+        "MFG"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "arts-worksite",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "arts-technical-site",
+      "qualificationEvidenceInterpretation": "ability plus safe equipment handling and documented training, not a region-wide legal ban",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "12": {
+      "jobId": 12,
+      "jobLabel": "教師",
+      "employmentKinds": [
+        "wage-employment",
+        "public-appointment",
+        "family-community"
+      ],
+      "sectorCandidates": [
+        "EDU"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "verified-education-provider",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "education-provider-site",
+      "qualificationEvidenceInterpretation": "actual teaching offering, pedagogical experience and verified subject/language skills",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "13": {
+      "jobId": 13,
+      "jobLabel": "芸術家",
+      "employmentKinds": [
+        "self-employment",
+        "seasonal-contract",
+        "wage-employment"
+      ],
+      "sectorCandidates": [
+        "CRE"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "cultural-venue",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "cultural-venue-or-independent-audience",
+      "qualificationEvidenceInterpretation": "skill or work sample and commission; venue / audience need",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "14": {
+      "jobId": 14,
+      "jobLabel": "軍務・兵站",
+      "employmentKinds": [
+        "organization-service",
+        "public-appointment",
+        "coerced-assignment"
+      ],
+      "sectorCandidates": [
+        "MIL",
+        "LOG"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "command-post",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "command-post-or-unit",
+      "qualificationEvidenceInterpretation": "documented enlistment, conscription, commission and assignment site; exclude forced from applications",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "active-combat",
+        "logistics",
+        "administrative-conscription"
+      ]
+    },
+    "15": {
+      "jobId": 15,
+      "jobLabel": "治安機関勤務",
+      "employmentKinds": [
+        "public-appointment",
+        "wage-employment"
+      ],
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "public-security-site",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "security-site",
+      "qualificationEvidenceInterpretation": "specific appointing authority and service checks; lawful and illicit roles separate",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "16": {
+      "jobId": 16,
+      "jobLabel": "トランスポーター",
+      "employmentKinds": [
+        "gig-piecework",
+        "wage-employment",
+        "self-employment"
+      ],
+      "sectorCandidates": [
+        "LOG"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "transport-route",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "operational-route-and-shipment",
+      "qualificationEvidenceInterpretation": "actual route, cargo, escort if needed, transport availability",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "17": {
+      "jobId": 17,
+      "jobLabel": "飲食・宿の仕事",
+      "employmentKinds": [
+        "wage-employment",
+        "family-community",
+        "seasonal-contract",
+        "self-employment"
+      ],
+      "sectorCandidates": [
+        "COM"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "hospitality-site",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "active-service-premises",
+      "qualificationEvidenceInterpretation": "work schedule, household or public employer and pay terms",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "18": {
+      "jobId": 18,
+      "jobLabel": "修理・整備工",
+      "employmentKinds": [
+        "wage-employment",
+        "gig-piecework",
+        "self-employment"
+      ],
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "workshop",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "specific-equipment-and-worksite",
+      "qualificationEvidenceInterpretation": "technical training or verified practice, safe operation, role-specific mathematics and reading",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "19": {
+      "jobId": 19,
+      "jobLabel": "建設・水道設備",
+      "employmentKinds": [
+        "wage-employment",
+        "gig-piecework",
+        "coerced-assignment"
+      ],
+      "sectorCandidates": [
+        "MFG",
+        "REC"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "construction-site",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "work-order-and-materials",
+      "qualificationEvidenceInterpretation": "specific works, weather and equipment, construction safety",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "20": {
+      "jobId": 20,
+      "jobLabel": "医療補助・薬局手伝い",
+      "employmentKinds": [
+        "wage-employment",
+        "family-community"
+      ],
+      "sectorCandidates": [
+        "MED"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "health-site",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "health-service-site",
+      "qualificationEvidenceInterpretation": "literacy and clinic-specific training; no physician license implied",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "21": {
+      "jobId": 21,
+      "jobLabel": "事務・窓口補助",
+      "employmentKinds": [
+        "wage-employment",
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "CIV",
+        "COM"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "office",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "office-or-commercial-site",
+      "qualificationEvidenceInterpretation": "clerical literacy and actual manager approval",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "22": {
+      "jobId": 22,
+      "jobLabel": "職人・仕立て",
+      "employmentKinds": [
+        "self-employment",
+        "family-community",
+        "wage-employment"
+      ],
+      "sectorCandidates": [
+        "MFG",
+        "COM"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "workshop",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "material-workshop",
+      "qualificationEvidenceInterpretation": "craft transmission, stock and verified site",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "23": {
+      "jobId": 23,
+      "jobLabel": "農漁業・採集",
+      "employmentKinds": [
+        "family-community",
+        "self-employment",
+        "seasonal-contract"
+      ],
+      "sectorCandidates": [
+        "AGR"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "agricultural-resource",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "land-water-season-and-community",
+      "qualificationEvidenceInterpretation": "ecological suitability, cultivation rights or clan responsibility",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "24": {
+      "jobId": 24,
+      "jobLabel": "露店・小商い",
+      "employmentKinds": [
+        "self-employment",
+        "family-community",
+        "gig-piecework"
+      ],
+      "sectorCandidates": [
+        "COM"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "market-stall",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "licensed-or-informal-stall-and-demand",
+      "qualificationEvidenceInterpretation": "stock, customer access, market place and sales receipts",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "25": {
+      "jobId": 25,
+      "jobLabel": "舞台・興行の裏方",
+      "employmentKinds": [
+        "seasonal-contract",
+        "gig-piecework",
+        "wage-employment"
+      ],
+      "sectorCandidates": [
+        "CRE",
+        "COM"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "venue",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "event-venue-and-booking",
+      "qualificationEvidenceInterpretation": "venue/commission, date of performance, stage task",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "26": {
+      "jobId": 26,
+      "jobLabel": "氏族・共同体の仕事",
+      "employmentKinds": [
+        "family-community",
+        "faith-service"
+      ],
+      "sectorCandidates": [
+        "REL",
+        "AGR"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "community-site",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "named-family-or-community",
+      "qualificationEvidenceInterpretation": "known family or clan and agreed role; in-kind allocation",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "family-work",
+        "clan-role",
+        "unpaid-community-service"
+      ]
+    },
+    "27": {
+      "jobId": 27,
+      "jobLabel": "測量・天災後の復旧",
+      "employmentKinds": [
+        "gig-piecework",
+        "wage-employment",
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "REC",
+        "MIN"
+      ],
+      "organizationKey": null,
+      "regionScope": null,
+      "siteRequirement": "recovery-site",
+      "reviewStatus": "not-applicable",
+      "requiredContext": "specific-hazard-and-recovery-contract",
+      "qualificationEvidenceInterpretation": "local expertise, site access, risk scope and task duration",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "28": {
+      "jobId": 28,
+      "jobLabel": "ロドスの物資・生活支援職員",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "LOG",
+        "COM"
+      ],
+      "organizationKey": "rhodes-island",
+      "regionScope": "global-by-confirmed-site",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "organization-controlled-worksite",
+      "qualificationEvidenceInterpretation": "Rhodes staff onboarding or referral decision, health service and medical consent are separate",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "logistics",
+        "life-support"
+      ]
+    },
+    "29": {
+      "jobId": 29,
+      "jobLabel": "ロドスの設備整備職員",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "organizationKey": "rhodes-island",
+      "regionScope": "global-by-confirmed-site",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "organization-controlled-worksite",
+      "qualificationEvidenceInterpretation": "Rhodes staff onboarding or referral decision, health service and medical consent are separate",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "mechanical-maintenance"
+      ]
+    },
+    "30": {
+      "jobId": 30,
+      "jobLabel": "ロドスの医療・研究補助職員",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MED",
+        "SCI"
+      ],
+      "organizationKey": "rhodes-island",
+      "regionScope": "global-by-confirmed-site",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "organization-controlled-worksite",
+      "qualificationEvidenceInterpretation": "Rhodes staff onboarding or referral decision, health service and medical consent are separate",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "clinical-assistant",
+        "scientific-assistant"
+      ]
+    },
+    "31": {
+      "jobId": 31,
+      "jobLabel": "ロドスの外勤オペレーター",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MED",
+        "MIL"
+      ],
+      "organizationKey": "rhodes-island",
+      "regionScope": "global-by-confirmed-site",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "organization-controlled-worksite",
+      "qualificationEvidenceInterpretation": "Rhodes staff onboarding or referral decision, health service and medical consent are separate",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "field-operator"
+      ]
+    },
+    "32": {
+      "jobId": 32,
+      "jobLabel": "カジミエーシュの競技会場運営職員",
+      "employmentKinds": [
+        "wage-employment",
+        "seasonal-contract"
+      ],
+      "sectorCandidates": [
+        "CRE",
+        "COM"
+      ],
+      "organizationKey": "kazimierz-arena",
+      "regionScope": "カジミエーシュ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "active-event-venue",
+      "qualificationEvidenceInterpretation": "operator approval and event schedule",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "33": {
+      "jobId": 33,
+      "jobLabel": "ロドスのトランスポーター",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "LOG"
+      ],
+      "organizationKey": "rhodes-island",
+      "regionScope": "global-by-confirmed-site",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "organization-controlled-worksite",
+      "qualificationEvidenceInterpretation": "Rhodes staff onboarding or referral decision, health service and medical consent are separate",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "transporter"
+      ]
+    },
+    "34": {
+      "jobId": 34,
+      "jobLabel": "ロドス行動予備隊員",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "EDU",
+        "MIL"
+      ],
+      "organizationKey": "rhodes-island",
+      "regionScope": "global-by-confirmed-site",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "organization-controlled-worksite",
+      "qualificationEvidenceInterpretation": "Rhodes staff onboarding or referral decision, health service and medical consent are separate",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "trainee",
+        "preparatory-operator"
+      ]
+    },
+    "35": {
+      "jobId": 35,
+      "jobLabel": "BSW契約警備員・見習い",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "blacksteel-worldwide",
+      "regionScope": "クルビア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "BSW-confirmed-base",
+      "qualificationEvidenceInterpretation": "contract training, internal promotion and assigned mission authority",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "36": {
+      "jobId": 36,
+      "jobLabel": "BSW正規戦術オペレーター",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "blacksteel-worldwide",
+      "regionScope": "クルビア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "BSW-confirmed-base",
+      "qualificationEvidenceInterpretation": "contract training, internal promotion and assigned mission authority",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "37": {
+      "jobId": 37,
+      "jobLabel": "BSW特務スペシャリスト",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "blacksteel-worldwide",
+      "regionScope": "クルビア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "BSW-confirmed-base",
+      "qualificationEvidenceInterpretation": "contract training, internal promotion and assigned mission authority",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "38": {
+      "jobId": 38,
+      "jobLabel": "ライン生命研究実習生",
+      "employmentKinds": [
+        "wage-employment",
+        "training-placement"
+      ],
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "organizationKey": "rhine-lab",
+      "regionScope": "クルビア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "research-facility-and-subfield",
+      "qualificationEvidenceInterpretation": "research role must have subject-specific record; formal degree only when opening requires",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "intern"
+      ],
+      "authority": "Rhine Lab Section-specific internship and supervisor"
+    },
+    "39": {
+      "jobId": 39,
+      "jobLabel": "ライン生命専任研究員",
+      "employmentKinds": [
+        "wage-employment",
+        "training-placement"
+      ],
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "organizationKey": "rhine-lab",
+      "regionScope": "クルビア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "research-facility-and-subfield",
+      "qualificationEvidenceInterpretation": "research role must have subject-specific record; formal degree only when opening requires",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "researcher"
+      ],
+      "authority": "Rhine Lab actual Section and project"
+    },
+    "40": {
+      "jobId": 40,
+      "jobLabel": "ライン生命主任研究員",
+      "employmentKinds": [
+        "wage-employment",
+        "training-placement"
+      ],
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "organizationKey": "rhine-lab",
+      "regionScope": "クルビア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "research-facility-and-subfield",
+      "qualificationEvidenceInterpretation": "research role must have subject-specific record; formal degree only when opening requires",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "subroles": [
+        "chief-researcher"
+      ],
+      "authority": "verified internal promotion; no direct automatic hire"
+    },
+    "41": {
+      "jobId": 41,
+      "jobLabel": "炎国朝廷文官（科挙登用）",
+      "employmentKinds": [
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "organizationKey": "yan-civil-service",
+      "regionScope": "炎国",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "active-government-office",
+      "qualificationEvidenceInterpretation": "role-level documentation and appointment; do not hardcode historic Chinese exams nationwide",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "42": {
+      "jobId": 42,
+      "jobLabel": "炎国司歳台・大理寺監察官",
+      "employmentKinds": [
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "organizationKey": "yan-supervisory-authority",
+      "regionScope": "炎国",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "security-site",
+      "qualificationEvidenceInterpretation": "specific appointing authority and service checks; lawful and illicit roles separate",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "43": {
+      "jobId": 43,
+      "jobLabel": "炎国天師府・国家天師",
+      "employmentKinds": [
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "SCI",
+        "CIV"
+      ],
+      "organizationKey": "yan-tianshi-office",
+      "regionScope": "炎国",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "authorized-arts-office",
+      "qualificationEvidenceInterpretation": "Arts ability, actual training and office mandate",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "44": {
+      "jobId": 44,
+      "jobLabel": "龍門近衛局（L.G.D.）警官",
+      "employmentKinds": [
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "organizationKey": "lungmen-guard-department",
+      "regionScope": "龍門",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "security-site",
+      "qualificationEvidenceInterpretation": "specific appointing authority and service checks; lawful and illicit roles separate",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "45": {
+      "jobId": 45,
+      "jobLabel": "龍門黒市ブローカー",
+      "employmentKinds": [
+        "informal-illicit"
+      ],
+      "sectorCandidates": [
+        "COM"
+      ],
+      "organizationKey": "lungmen-underground-brokerage",
+      "regionScope": "龍門",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "position-specified",
+      "qualificationEvidenceInterpretation": "needs position-specific evidence",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "46": {
+      "jobId": 46,
+      "jobLabel": "極東武家・侍",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "higashi-household-retainers",
+      "regionScope": "極東",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "named-household-and-patron",
+      "qualificationEvidenceInterpretation": "invitation, duty and oath/contract without universal nobility requirement",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "47": {
+      "jobId": 47,
+      "jobLabel": "極東・忍者（隠密）",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "higashi-household-retainers",
+      "regionScope": "極東",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "named-household-and-patron",
+      "qualificationEvidenceInterpretation": "invitation, duty and oath/contract without universal nobility requirement",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "48": {
+      "jobId": 48,
+      "jobLabel": "極東・サイバーニンジャ",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MIL",
+        "SCI"
+      ],
+      "organizationKey": "higashi-cyberninja-scenario",
+      "regionScope": "極東",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "scenario-label-needs-jp-canon",
+      "requiredContext": "documented-unit-and-capability",
+      "qualificationEvidenceInterpretation": "source status unconfirmed; no named recruitment before canon name check",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "availability": "source-name-unverified",
+      "allowGenericJobEquivalent": true
+    },
+    "49": {
+      "jobId": 49,
+      "jobLabel": "極東・神職（神官・僧侶）",
+      "employmentKinds": [
+        "faith-service"
+      ],
+      "sectorCandidates": [
+        "REL"
+      ],
+      "organizationKey": "higashi-religious-institution",
+      "regionScope": "極東",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "religious-site",
+      "qualificationEvidenceInterpretation": "acceptance, rite, practical service and rights to leave",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "50": {
+      "jobId": 50,
+      "jobLabel": "東方重工・兵器技師",
+      "employmentKinds": [
+        "wage-employment"
+      ],
+      "sectorCandidates": [
+        "MFG"
+      ],
+      "organizationKey": "higashi-touhou-heavy-scenario",
+      "regionScope": "極東",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "scenario-label-needs-jp-canon",
+      "requiredContext": "verified-entity",
+      "qualificationEvidenceInterpretation": "named source check pending, generic MFG role remains viable",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "availability": "source-name-unverified",
+      "allowGenericJobEquivalent": true
+    },
+    "51": {
+      "jobId": 51,
+      "jobLabel": "ウルサス帝国軍・近衛将校",
+      "employmentKinds": [
+        "public-appointment",
+        "organization-service",
+        "coerced-assignment"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "ursus-imperial-forces",
+      "regionScope": "ウルサス",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "command-post-or-unit",
+      "qualificationEvidenceInterpretation": "documented enlistment, conscription, commission and assignment site; exclude forced from applications",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "52": {
+      "jobId": 52,
+      "jobLabel": "ウルサス国境警備兵・炭鉱監視",
+      "employmentKinds": [
+        "public-appointment",
+        "organization-service",
+        "coerced-assignment"
+      ],
+      "sectorCandidates": [
+        "MIL",
+        "MIN"
+      ],
+      "organizationKey": "ursus-imperial-forces",
+      "regionScope": "ウルサス",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "command-post-or-unit",
+      "qualificationEvidenceInterpretation": "documented enlistment, conscription, commission and assignment site; exclude forced from applications",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "53": {
+      "jobId": 53,
+      "jobLabel": "ウルサス帝国科学院技師",
+      "employmentKinds": [
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "SCI"
+      ],
+      "organizationKey": "ursus-science-academy-scenario",
+      "regionScope": "ウルサス",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "scenario-label-needs-jp-canon",
+      "requiredContext": "research-facility-and-subfield",
+      "qualificationEvidenceInterpretation": "research role must have subject-specific record; formal degree only when opening requires",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "availability": "source-name-unverified",
+      "allowGenericJobEquivalent": true
+    },
+    "54": {
+      "jobId": 54,
+      "jobLabel": "ヴィクトリア正規軍・歩兵",
+      "employmentKinds": [
+        "organization-service",
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "victoria-military-authorities",
+      "regionScope": "ヴィクトリア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "command-post-or-unit",
+      "qualificationEvidenceInterpretation": "documented enlistment, conscription, commission and assignment site; exclude forced from applications",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "55": {
+      "jobId": 55,
+      "jobLabel": "王立前衛学校卒エリート将校",
+      "employmentKinds": [
+        "organization-service",
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "victoria-military-authorities",
+      "regionScope": "ヴィクトリア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "scenario-label-needs-jp-canon",
+      "requiredContext": "command-post-or-unit",
+      "qualificationEvidenceInterpretation": "documented enlistment, conscription, commission and assignment site; exclude forced from applications",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "availability": "credential-wording-unverified",
+      "allowGenericJobEquivalent": true
+    },
+    "56": {
+      "jobId": 56,
+      "jobLabel": "ヴィクトリア帝国議会書記官",
+      "employmentKinds": [
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "organizationKey": "victoria-legislative-administration",
+      "regionScope": "ヴィクトリア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "documented-office",
+      "qualificationEvidenceInterpretation": "read/write skill, formal record or office training, appointment authority",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "57": {
+      "jobId": 57,
+      "jobLabel": "ヴィクトリア重工業・鉄道工廠技師",
+      "employmentKinds": [
+        "wage-employment"
+      ],
+      "sectorCandidates": [
+        "MFG",
+        "LOG"
+      ],
+      "organizationKey": "victoria-rail-works",
+      "regionScope": "ヴィクトリア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "specific-equipment-and-worksite",
+      "qualificationEvidenceInterpretation": "technical training or verified practice, safe operation, role-specific mathematics and reading",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "58": {
+      "jobId": 58,
+      "jobLabel": "リターニア金律法衛",
+      "employmentKinds": [
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "MIL",
+        "SCI"
+      ],
+      "organizationKey": "leithanien-legal-enforcement-scenario",
+      "regionScope": "リターニア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "scenario-label-needs-jp-canon",
+      "requiredContext": "verified-law-or-arts-institution",
+      "qualificationEvidenceInterpretation": "establish actual mandate and credential evidence",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "availability": "source-name-unverified",
+      "allowGenericJobEquivalent": true
+    },
+    "59": {
+      "jobId": 59,
+      "jobLabel": "選帝侯領・宮廷音楽家",
+      "employmentKinds": [
+        "organization-service",
+        "seasonal-contract"
+      ],
+      "sectorCandidates": [
+        "CRE",
+        "SCI"
+      ],
+      "organizationKey": "leithanien-court",
+      "regionScope": "リターニア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "named-court",
+      "qualificationEvidenceInterpretation": "audition/performance ability and patron decision",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "60": {
+      "jobId": 60,
+      "jobLabel": "ラテラーノ公証人役場執行人",
+      "employmentKinds": [
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "organizationKey": "laterano-notarial-hall",
+      "regionScope": "ラテラーノ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "Laterano-notarial-office",
+      "qualificationEvidenceInterpretation": "confirmed authority, role-specific legal and field training, not automatic Sankta exclusion",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "61": {
+      "jobId": 61,
+      "jobLabel": "ランデン修道院・修道銃士",
+      "employmentKinds": [
+        "faith-service",
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "REL",
+        "MIL"
+      ],
+      "organizationKey": "laterano-landen-monastery",
+      "regionScope": "ラテラーノ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "scenario-label-needs-jp-canon",
+      "requiredContext": "identified-monastery",
+      "qualificationEvidenceInterpretation": "vocational faith acceptance and training; site itself must be evidenced",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "availability": "source-name-unverified",
+      "allowGenericJobEquivalent": true
+    },
+    "62": {
+      "jobId": 62,
+      "jobLabel": "フロンティア開拓パイオニア",
+      "employmentKinds": [
+        "seasonal-contract",
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "AGR",
+        "REC"
+      ],
+      "organizationKey": "columbia-frontier-program",
+      "regionScope": "クルビア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "individual-frontier-operator",
+      "qualificationEvidenceInterpretation": "specific camp, travel, obligations and exit terms",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "63": {
+      "jobId": 63,
+      "jobLabel": "商業連合会公認・企業騎士",
+      "employmentKinds": [
+        "wage-employment",
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "CRE",
+        "MIL"
+      ],
+      "organizationKey": "kazimierz-corporate-knight-club",
+      "regionScope": "カジミエーシュ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "named-competition-and-sponsor",
+      "qualificationEvidenceInterpretation": "license/qualification for actual season, actual business association and security terms",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "64": {
+      "jobId": 64,
+      "jobLabel": "カジミエーシュ無冑盟暗殺員",
+      "employmentKinds": [
+        "organization-service",
+        "informal-illicit"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "kazimierz-armorless-union",
+      "regionScope": "カジミエーシュ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "proven-clandestine-contact",
+      "qualificationEvidenceInterpretation": "no public posting; cannot appear as generic vacancy",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "65": {
+      "jobId": 65,
+      "jobLabel": "シラクーザ・ファミリー構成員",
+      "employmentKinds": [
+        "family-community",
+        "informal-illicit"
+      ],
+      "sectorCandidates": [
+        "COM",
+        "MIL"
+      ],
+      "organizationKey": "siracusa-family",
+      "regionScope": "シラクーザ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "named-famiglia-and-cover-business",
+      "qualificationEvidenceInterpretation": "involvement and criminal risk distinct from normal wages",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "66": {
+      "jobId": 66,
+      "jobLabel": "ウォルシーニ裁判所警察官",
+      "employmentKinds": [
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "organizationKey": "siracusa-volsinii-court",
+      "regionScope": "シラクーザ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "security-site",
+      "qualificationEvidenceInterpretation": "specific appointing authority and service checks; lawful and illicit roles separate",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "67": {
+      "jobId": 67,
+      "jobLabel": "シエスタ火山観測所研究員",
+      "employmentKinds": [
+        "wage-employment",
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "SCI",
+        "REC"
+      ],
+      "organizationKey": "siesta-volcanology-center",
+      "regionScope": "シエスタ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "scenario-label-needs-jp-canon",
+      "requiredContext": "specific-volcanological-site",
+      "qualificationEvidenceInterpretation": "laboratory or museum subrole, known operating year; title unresolved",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "availability": "observatory-name-unverified",
+      "allowGenericJobEquivalent": true
+    },
+    "68": {
+      "jobId": 68,
+      "jobLabel": "パーディシャー宮廷親衛隊",
+      "employmentKinds": [
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "sargon-padishah-palace",
+      "regionScope": "サルゴン",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "local-ruler-and-court",
+      "qualificationEvidenceInterpretation": "ruler person/office, site and appointment term",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "69": {
+      "jobId": 69,
+      "jobLabel": "アカフラ部族大勇士",
+      "employmentKinds": [
+        "family-community"
+      ],
+      "sectorCandidates": [
+        "MIL",
+        "REL"
+      ],
+      "organizationKey": "sargon-acahualla-community",
+      "regionScope": "サルゴン",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "specified-clan-site",
+      "qualificationEvidenceInterpretation": "contribution accepted as shared role, not automatically annual salary",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "70": {
+      "jobId": 70,
+      "jobLabel": "サーミ雪祀（自然呪術者）",
+      "employmentKinds": [
+        "family-community",
+        "faith-service",
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "REL"
+      ],
+      "organizationKey": "sami-tribes",
+      "regionScope": "サーミ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "specified-clan-site",
+      "qualificationEvidenceInterpretation": "contribution accepted as shared role, not automatically annual salary",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "71": {
+      "jobId": 71,
+      "jobLabel": "氷原境界哨戒戦士",
+      "employmentKinds": [
+        "family-community",
+        "faith-service",
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "MIL",
+        "REC"
+      ],
+      "organizationKey": "sami-tribes",
+      "regionScope": "サーミ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "specified-clan-site",
+      "qualificationEvidenceInterpretation": "contribution accepted as shared role, not automatically annual salary",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "72": {
+      "jobId": 72,
+      "jobLabel": "カランド貿易・武装社員",
+      "employmentKinds": [
+        "organization-service",
+        "wage-employment"
+      ],
+      "sectorCandidates": [
+        "MIL",
+        "LOG"
+      ],
+      "organizationKey": "karlan-trade",
+      "regionScope": "イェラグ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "Karlan-site-and-department",
+      "qualificationEvidenceInterpretation": "actual company branch, transport or security role and dates",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "73": {
+      "jobId": 73,
+      "jobLabel": "曼珠院・聖山護衛僧",
+      "employmentKinds": [
+        "faith-service"
+      ],
+      "sectorCandidates": [
+        "REL",
+        "MIL"
+      ],
+      "organizationKey": "kjerag-monastery",
+      "regionScope": "イェラグ",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "identified-monastery",
+      "qualificationEvidenceInterpretation": "vocational faith acceptance and training; site itself must be evidenced",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "74": {
+      "jobId": 74,
+      "jobLabel": "軍事委員会・サルカズ正規兵",
+      "employmentKinds": [
+        "organization-service",
+        "coerced-assignment"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "kazdel-military-commission",
+      "regionScope": "カズデル",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "command-post-or-unit",
+      "qualificationEvidenceInterpretation": "documented enlistment, conscription, commission and assignment site; exclude forced from applications",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "75": {
+      "jobId": 75,
+      "jobLabel": "カズデル伝統骨鍛冶",
+      "employmentKinds": [
+        "self-employment",
+        "family-community"
+      ],
+      "sectorCandidates": [
+        "MFG",
+        "REL"
+      ],
+      "organizationKey": "kazdel-craft-workshop",
+      "regionScope": "カズデル",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "material-workshop",
+      "qualificationEvidenceInterpretation": "craft transmission, stock and verified site",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "76": {
+      "jobId": 76,
+      "jobLabel": "イベリア裁判所・見習い審問官",
+      "employmentKinds": [
+        "public-appointment",
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "organizationKey": "iberian-inquisition-and-coastal-sites",
+      "regionScope": "イベリア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "inquisition-or-light-house-site",
+      "qualificationEvidenceInterpretation": "legal authority and technical specialty separately; Agenir status only per actual policy",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "77": {
+      "jobId": 77,
+      "jobLabel": "イベリア沿岸灯台調律師",
+      "employmentKinds": [
+        "public-appointment",
+        "organization-service"
+      ],
+      "sectorCandidates": [
+        "REC",
+        "SCI"
+      ],
+      "organizationKey": "iberian-inquisition-and-coastal-sites",
+      "regionScope": "イベリア",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "scenario-label-needs-jp-canon",
+      "requiredContext": "inquisition-or-light-house-site",
+      "qualificationEvidenceInterpretation": "legal authority and technical specialty separately; Agenir status only per actual policy",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "availability": "lighthouse-technical-title-unverified",
+      "allowGenericJobEquivalent": true
+    },
+    "78": {
+      "jobId": 78,
+      "jobLabel": "ボリバル正規・真正連合軍兵士",
+      "employmentKinds": [
+        "organization-service",
+        "coerced-assignment"
+      ],
+      "sectorCandidates": [
+        "MIL"
+      ],
+      "organizationKey": "bolivar-faction-military",
+      "regionScope": "ボリバル",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "identified-faction-and-front",
+      "qualificationEvidenceInterpretation": "voluntary/forced mandate, field deployment and pay provisions",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "79": {
+      "jobId": 79,
+      "jobLabel": "ドッソレス特区市警",
+      "employmentKinds": [
+        "public-appointment"
+      ],
+      "sectorCandidates": [
+        "CIV",
+        "MIL"
+      ],
+      "organizationKey": "dossoles-police",
+      "regionScope": "ボリバル",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "specific-municipal-police",
+      "qualificationEvidenceInterpretation": "actual city authority not Bolivar-wide",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "80": {
+      "jobId": 80,
+      "jobLabel": "レム・ビリトン採掘重機主任技師",
+      "employmentKinds": [
+        "wage-employment"
+      ],
+      "sectorCandidates": [
+        "MIN",
+        "MFG"
+      ],
+      "organizationKey": "rim-billiton-mining-conglomerates",
+      "regionScope": "レム・ビリトン",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "organization-or-institution-scope-required",
+      "requiredContext": "active-mining-machine-site",
+      "qualificationEvidenceInterpretation": "equipment training, safety, on-call operation and supervisor authority",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period"
+    },
+    "81": {
+      "jobId": 81,
+      "jobLabel": "アテヌス英雄神殿競技勇士",
+      "employmentKinds": [
+        "seasonal-contract",
+        "family-community"
+      ],
+      "sectorCandidates": [
+        "CRE",
+        "MIL"
+      ],
+      "organizationKey": "minos-hero-temple-arena",
+      "regionScope": "ミノス",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "scenario-label-needs-jp-canon",
+      "requiredContext": "identified-temple-or-meet",
+      "qualificationEvidenceInterpretation": "actual match and ceremonial role; cash award contingent",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "availability": "competition-institution-name-unverified",
+      "allowGenericJobEquivalent": true
+    },
+    "82": {
+      "jobId": 82,
+      "jobLabel": "ミノス市民集会・法廷弁論官",
+      "employmentKinds": [
+        "public-appointment",
+        "family-community"
+      ],
+      "sectorCandidates": [
+        "CIV"
+      ],
+      "organizationKey": "minos-civic-court",
+      "regionScope": "ミノス",
+      "siteRequirement": "named-or-typed-employer-site-and-position",
+      "reviewStatus": "scenario-label-needs-jp-canon",
+      "requiredContext": "specific-polis-government",
+      "qualificationEvidenceInterpretation": "local civic qualification and nomination or appointment, no universal national law",
+      "requiredRecordRefs": [
+        "world:siteId-or-self-work-resourceId",
+        "world:positionId-or-formal-community-roleId",
+        "person:personId",
+        "person:knowledge-asof-date",
+        "person:skill-and-credential-evidence",
+        "work:episodeId-if-started",
+        "finance:pay-schedule-and-actual-transactions"
+      ],
+      "entryCommit": "if opening application: offer and acceptance and onboarding. If self/family/gig: actual resource, role, accepted commission and work-start evidence",
+      "safetyAndRights": "voluntary/coerced, physical safety, infection awareness per recipient, age and guardian authority per local case",
+      "annualIncomeRule": "wage=earned-months; gig=performed-commission; self=receipts-minus-costs; community=in-kind/household share; public=appointment period",
+      "availability": "polis-institution-name-unverified",
+      "allowGenericJobEquivalent": true
+    }
+  }
+}

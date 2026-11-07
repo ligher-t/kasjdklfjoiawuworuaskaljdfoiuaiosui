@@ -200,14 +200,15 @@ window.TERRA_DATA_BUILD.run("health/mortality", function ($terraData, $define, $
       conf: "S",
       references: $terraData.LIFE_END_REFS,
       st: ["幼児", "児童", "少年", "青年", "壮年", "老年"],
+      who: s => (s.age < $rules.parameters.value("life.adultStartAge") ? "parent" : "self"),
       pri: true,
-      cd: 5,
+      cd: 1,
       w: 1.0,
-      show: s => $rules.mortality.urgentEpisodes(s).length > 0,
-      t: "病状が一段と重くなり、起き上がって食事をとるのにも誰かの手が必要になった。これ以上放っておけば危ない。医者へ運ぶ手立てと、そばについてくれる人を探した。",
+      show: s => $rules.mortality.urgentEpisodes(s).length > 0 || $rules.mortality.healthCriticalNeedsReview(s),
+      t: "体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。",
       c: [
         $terraData.K(
-          "すぐに診療所へ運び、手当を受ける",
+          "診療所へ運び、急な診察と手当を受ける",
           {
             show: s => {
               const clinic = $rules.facilities.activeFacility(s, "clinic");
@@ -218,20 +219,33 @@ window.TERRA_DATA_BUILD.run("health/mortality", function ($terraData, $define, $
           },
           [
             1,
-            "急患として診療所へ駆け込み、応急の処置と強い薬を受けた。帰り道、ようやく少しずつ息がしやすくなった。",
+            "診療所で状態を伝え、急な診察と手当を受けた。帰りは休みながら移動し、しばらく体を休めることにした。",
             { cash: -5e4, med: 1, mortalityCare: { kind: "urgent", action: "emergency" }, h: 2 }
           ]
         ),
-        $terraData.K("身近な人に看病と水や食事の世話を頼む", {}, [
+        $terraData.K(
+          "身近な人に看病や水・食事の手助けを頼む",
+          { show: s => !!(s.sp || s.kids?.length || s.personTies?.length || s.siblings?.length || s.par?.fa || s.par?.mo) },
+          [
+            1,
+            "身近な人へ、水や食事、移動の手助けを頼んだ。できる範囲を相談し、無理な用事はいったん取りやめた。",
+            { mortalityCare: { kind: "urgent", action: "support" }, rl: 3 }
+          ]
+        ),
+        $terraData.K("外の用事を止め、寝床で休む", {}, [
           1,
-          "頼れる人が枕元につき、水や柔らかい食事を口へ運んでくれた。熱に浮かされる中、そばに誰かがいる気配だけが支えだった。",
-          { mortalityCare: { kind: "urgent", action: "support" }, rl: 3 }
-        ]),
-        $terraData.K("外の用事をすべて投げ出し、寝床でひたすら安静にする", {}, [
-          1,
-          "今はただ息をして峠を越えるしかない。すべての約束を断り、薄暗い部屋で毛布にくるまって目を閉じた。",
+          "急ぎでない用事を断り、水を手元に置いて横になった。先のことは決めず、その日は体を休めた。",
           { mortalityCare: { kind: "urgent", action: "rest" }, p: -1 }
-        ])
+        ]),
+        $terraData.K(
+          "苦痛を和らげる支援も望むと記録する",
+          { show: s => s.age >= $rules.parameters.value("life.adultStartAge") && s.h <= 0 && s.mortality?.healthCritical?.status === "active" && s.mortality.healthCritical.palliativePreferenceYear == null },
+          [
+            1,
+            "痛みや息苦しさを和らげる支援も望んでいると書き残した。病気を治す手立てを相談することと、苦痛を軽くする支援を求めることを、これからの希望として分けて考えた。",
+            { mortalityCare: { kind: "urgent", action: "palliative" }, p: 2 }
+          ]
+        )
       ]
     },
     {
@@ -285,31 +299,73 @@ window.TERRA_DATA_BUILD.run("health/mortality", function ($terraData, $define, $
       show: s =>
         s.age >= 14 &&
         s.mortality?.crisis?.status === "active" &&
+        (s.mortality.crisis.consultCount || 0) === 0 &&
         s.mortality.crisis.lastDecisionYear !== s.year,
-      t: s =>
-        (s.mortality?.crisis?.consultCount || 0) > 0
-          ? "以前の苦しさがまたぶり返し、夜の静寂が重くのしかかる。かつて相談した経験や周囲の支えを思い返し、長引く不調の波とどう折り合いをつけていくか考えた。"
-          : "幾晩もまともに眠れず、人の声や視線に触れるだけで胸が張り裂けそうになる。昨日何を口にしたかも思い出せないまま、薄暗い寝床の脇に置いた水だけを見つめていた。",
+      t: "幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考えた。",
       c: [
-        $terraData.K("心を許せる相手に、再び波が来たと打ち明ける", {
+        $terraData.K("心を許せる相手に、今の苦しさを打ち明ける", {
           show: s => !!(s.sp || (s.kids && s.kids.length > 0) || (s.personTies && s.personTies.length > 0) || (s.siblings && s.siblings.length > 0) || (!s.fl?.household_separated && (s.par?.fa || s.par?.mo)))
         }, [
           1,
-          "途切れ途切れの声で、また息が詰まりそうだと伝えた。相手は静かに寄り添い、焦らなくていいと背中に手を当ててくれた。",
+          "途切れ途切れでも今の状態を伝えた。相手と、苦しくなった時に声をかけることと、一人で抱え込まないことを決めた。",
           { mortalityCare: { kind: "crisis", action: "support" }, rl: 3, p: 2 }
         ]),
         $terraData.K(
-          "診療所や相談窓口へ行き、これまでの経過を話す",
+          "診療所や相談窓口へ行き、今までの経過を話す",
           { en: { affordableMedicalCash: 2e4 }, why: "移動と相談に必要な費用が足りない" },
           [
             1,
-            "重い足を引きずって窓口を訪ね、不調の波がぶり返したことを打ち明けた。これまでの経過を踏まえた助言と、眠りを助ける薬を受け取った。",
+            "窓口で眠れない日や食事が取れない日のことを話し、今後の相談先と、次に苦しくなった時の連絡方法を確かめた。",
             { cash: -2e4, med: 1, mortalityCare: { kind: "crisis", action: "clinic" }, p: 3 }
           ]
         ),
-        $terraData.K("予定も用事もすべて投げ出し、毛布をかぶって目を閉じる", {}, [
+        $terraData.K("今日の予定を止め、食事と休息を優先する", {}, [
           1,
-          "起き上がることも人と話すことも諦め、薄暗い部屋でただ息を潜めた。思考が鈍るのを待ちながら、深い静寂に身を沈めた。",
+          "急ぎでない用事を断り、水分と食べられる物を少しずつ取りながら横になった。今日は先のことを決めず、身体を休めることにした。",
+          { mortalityCare: { kind: "crisis", action: "rest" }, p: 1 }
+        ])
+      ]
+    },
+    {
+      id: "life_mental_crisis_recurrence",
+      conf: "S",
+      references: ["SRC_LIFE_ENDING_GAME", "SRC_LIFE_ENDING_LW02"],
+      st: ["少年", "青年", "壮年", "老年"],
+      cd: 4,
+      w: 0.5,
+      show: s =>
+        s.age >= 14 &&
+        s.mortality?.crisis?.status === "active" &&
+        (s.mortality.crisis.consultCount || 0) > 0 &&
+        s.mortality.crisis.lastDecisionYear !== s.year,
+      t: s => {
+        const prior = s.mortality?.crisis?.lastAction;
+        if (prior === "clinic")
+          return "以前に相談したあとも、しばらくすると眠れない夜や何も手につかない日が戻ってきた。前に確かめた相談先を使うか、暮らしの負担を減らすか考え直した。";
+        if (prior === "support")
+          return "以前に身近な人へ苦しさを話したあとも、また日々の負担が重くなってきた。前に決めた助けの求め方を使うか、別の支えを探すか考えた。";
+        return "前に用事を止めて休んだあとも、不調の波がまた強くなった。休むだけで凌ぐか、今度は誰かに状態を伝えるか考えた。";
+      },
+      c: [
+        $terraData.K("前に頼った相手や身近な人へ、また状態が悪くなったと伝える", {
+          show: s => !!(s.sp || (s.kids && s.kids.length > 0) || (s.personTies && s.personTies.length > 0) || (s.siblings && s.siblings.length > 0) || (!s.fl?.household_separated && (s.par?.fa || s.par?.mo)))
+        }, [
+          1,
+          "前に話した時から何が変わったかを伝え、苦しい日に連絡する方法をもう一度確かめた。",
+          { mortalityCare: { kind: "crisis", action: "support" }, rl: 2, p: 2 }
+        ]),
+        $terraData.K(
+          "相談窓口へもう一度連絡し、その後の経過を話す",
+          { en: { affordableMedicalCash: 2e4 }, why: "移動と相談に必要な費用が足りない" },
+          [
+            1,
+            "前回から眠りや食事、日々の負担がどう変わったかを伝え、次に状態が崩れた時の相談方法を確認した。",
+            { cash: -2e4, med: 1, mortalityCare: { kind: "crisis", action: "clinic" }, p: 2 }
+          ]
+        ),
+        $terraData.K("今週の予定を減らし、食事と睡眠を立て直す", {}, [
+          1,
+          "急ぎでない用事をいくつか後へ回し、食事と眠る時間を確保した。調子が戻らなければ相談することにした。",
           { mortalityCare: { kind: "crisis", action: "rest" }, p: 1 }
         ])
       ]
@@ -691,7 +747,7 @@ window.TERRA_DATA_BUILD.run("health/mortality", function ($terraData, $define, $
         (s.r?.n === "サルカズ" || s.inf > 0) &&
         ["ウルサス", "ヴィクトリア", "リターニア"].includes(s.res?.n) &&
         (s.fl?.ed_violent_threat || s.fl?.ed_sarkaz_lodging_refused || s.fl?.housing_exclusion),
-      t: "夜更け、怒号と松明の火がアパートの窓を赤く照らし出した。棍棒を持った排斥暴徒が『忌み者を焼き出せ』と叫びながら玄関扉を叩き壊そうとしている。廊下にはすでにガソリンの生臭い臭気が充満し始めていた。",
+      t: "夜更け、怒号と松明の火がアパートの窓を赤く照らし出した。棍棒を持った排斥暴徒が『忌み者を焼き出せ』と叫びながら玄関扉を叩き壊そうとしている。廊下にはすでに揮発性鉱油の刺激臭が充満し始めていた。",
       c: [
         $terraData.K(
           "裏窓から屋根伝いに飛び降り、闇夜の路地へ命からがら脱出する",

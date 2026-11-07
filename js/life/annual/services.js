@@ -14,6 +14,9 @@ const ANNUAL_SERVICES = Object.freeze({
   L(...args) {
     return L(...args);
   },
+  m(...args) {
+    return m(...args);
+  },
   esc(...args) {
     return esc(...args);
   },
@@ -209,9 +212,6 @@ const ANNUAL_SERVICES = Object.freeze({
   endCareNetworkPeopleRoles(...args) {
     return endCareNetworkPeopleRoles(...args);
   },
-  pickStarterJob(...args) {
-    return pickStarterJob(...args);
-  },
   reconcileWorkContract(...args) {
     return reconcileWorkContract(...args);
   },
@@ -265,6 +265,9 @@ const ANNUAL_SERVICES = Object.freeze({
   },
   recordIndependentSiblingCareSupportPayments(...args) {
     return recordIndependentSiblingCareSupportPayments(...args);
+  },
+  recordDivorceChildSupportPayments(...args) {
+    return recordDivorceChildSupportPayments(...args);
   },
   recordSpouseSeparateSupportTransfer(...args) {
     return recordSpouseSeparateSupportTransfer(...args);

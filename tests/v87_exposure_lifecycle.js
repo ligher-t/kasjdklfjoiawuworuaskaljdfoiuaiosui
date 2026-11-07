@@ -3,11 +3,13 @@ const assert = require('node:assert/strict'),
   path = require('node:path'),
   vm = require('node:vm'),
   root = path.resolve(__dirname, '..'),
-  { context, setup } = require('./support/annual-cases.cjs');
+  { context, setup } = require('./support/annual-cases.cjs'),
+  { installGeneralEmploymentFixture } = require('./support/general-employment-fixture.cjs');
 
 function fresh(id, region, age = 32) {
   const { ctx } = context(root);
   setup(ctx, { id, seed: 905121, region, age });
+  installGeneralEmploymentFixture(ctx);
   return ctx;
 }
 
@@ -359,6 +361,7 @@ console.log(
   const ctx=fresh('scheduled-family-and-school-followups','クルビア',40);
   const result=vm.runInContext(`(()=>{
     const s=S; s.r=RACE.find(x=>x.n==='フェリーン');s.age=40;s.year=s.by+40;
+    const scheduledYear=(event,state)=>{const period=scheduledFollowupDuePeriod(event,state);return period===null?null:Math.floor((period-1)/12);};
     s.fl.household_separated=1;
     s.kids=[{id:'followup-child',nm:'再検査の子',by:s.year-35,d:0,inf:0,
       exposurePending:1,exposureYear:s.year-29,exposureReviewYear:s.year,
@@ -373,10 +376,10 @@ console.log(
     const text=e=>txt(e,s,tags(s));
     const childText=text(child),careText=text(care),schoolText=text(school);
     const before=JSON.stringify({s,rng:RANDOM_STATE});
-    const due=scheduledFollowupDueYear(child,s),next=nextScheduledFollowup([child,care,school],s)?.id;
+    const due=scheduledYear(child,s),next=nextScheduledFollowup([child,care,school],s)?.id;
     const pure=before===JSON.stringify({s,rng:RANDOM_STATE});
     const restored=JSON.parse(JSON.stringify(s));
-    const restoredDue=scheduledFollowupDueYear(child,restored);
+    const restoredDue=scheduledYear(child,restored);
     const saved=EV.slice(),realFire=fire;let fired=null;
     function oneSlot(events){EV.splice(0,EV.length,...events);fired=null;slot(0.1);return fired;}
     fire=e=>{fired=e.id};DEBUG_RANDOM=()=>0.999;
@@ -406,11 +409,11 @@ console.log(
     s.kids.push({id:'other-child',nm:'別の子',by:s.year-10,exposurePending:0});
     applyChildEffects({kidExposureReviewDelay:1},s,()=>{});
     const postponed=s.kids[0].exposureReviewYear===s.year+1 && !s.kids[1].exposurePending;
-    const notYetDue=scheduledFollowupDueYear(child,s)===null;
-    s.year++;s.age++;const nowDue=scheduledFollowupDueYear(child,s)===s.year;
+    const notYetDue=scheduledYear(child,s)===null;
+    s.year++;s.age++;const nowDue=scheduledYear(child,s)===s.year;
     const postponedText=text(child);
     applyChildEffects({kidExposureClose:1},s,()=>{});
-    const resolved=scheduledFollowupDueYear(child,s)===null;
+    const resolved=scheduledYear(child,s)===null;
     // A fresh injury replaces the episode date; deferral above never did.
     applyChildEffects({kidExposurePending:1,kidExposureReviewDelay:1},s,()=>{});
     const renewed=s.kids[0].exposureYear===s.year;
@@ -451,8 +454,9 @@ console.log('PASS scheduled followups, real elapsed text, target identity and di
 // Short stateful regressions: resolve actual choices, then inspect specific future slots.
 {
   const ctx=fresh('repeat-review-context','ヴィクトリア');
+  ctx.startGeneralEmploymentFixture(2,'repeat-review-context');
   const r=vm.runInContext(`(()=>{
-    S.job=2;S.cash=10000000;reconcileWorkContract(S);
+    S.cash=10000000;
     const e=EV.find(x=>x.id==='v77_written_application');
     const untouched=!S.eventReviews;
     DEBUG_RANDOM=()=>0.999;fire(e,S,tags(S));DEBUG_RANDOM=null;
@@ -523,8 +527,9 @@ console.log('PASS scheduled followups, real elapsed text, target identity and di
 }
 {
   const ctx=fresh('scoped-institutional-knowledge','ウルサス');
+  ctx.startGeneralEmploymentFixture(2,'scoped-institutional-knowledge');
   const r=vm.runInContext(`(()=>{
-    S.inf=1;S.fl.dg=1;S.job=2;reconcileWorkContract(S);
+    S.inf=1;S.fl.dg=1;
     const sweep=EV.find(e=>e.id==='urs_sweep');
     const add=(audience,more={})=>recordInfectionAwareness(S,{subject:'protagonist',audience,
       certainty:'confirmed',source:'self-disclosure',consent:'voluntary',...more});

@@ -17,6 +17,9 @@ const STAT = {
   duplicateChoiceMonths: 0,
   unavailableChoiceCandidates: 0,
   choiceMonths: new Set(),
+  deadlinePending: new Map(),
+  deadlineFired: new Set(),
+  deadlineCoverage: {observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0,byEvent:{},byRegion:{},byAgeBand:{},unservedExamples:[]},
   currentLife: -1
 };
 
@@ -50,6 +53,9 @@ function resetSimulationStatistics() {
   STAT.duplicateChoiceMonths = 0;
   STAT.unavailableChoiceCandidates = 0;
   STAT.choiceMonths = new Set();
+  STAT.deadlinePending = new Map();
+  STAT.deadlineFired = new Set();
+  STAT.deadlineCoverage = {observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0,byEvent:{},byRegion:{},byAgeBand:{},unservedExamples:[]};
   STAT.currentLife = -1;
   STAT.currentEventId = null;
 }
@@ -86,9 +92,57 @@ function recordSimulationEligibilityRejection(event, reason) {
   row.rejections[reason] = (row.rejections[reason] || 0) + 1;
 }
 
+// Count each actionable final-year event once per person-year, even when
+// it remains a candidate through multiple monthly slots.
+function recordSimulationExpiringChoices(state, events) {
+  if (!HL) return;
+  for (const event of events) {
+    const existing = STAT.deadlinePending.get(event.id);
+    if (existing) existing.lastMonth = state.mo;
+    else STAT.deadlinePending.set(event.id, {
+      event,firstMonth:state.mo,lastMonth:state.mo,
+      firstRegion:state.res?.n||'不明',firstAge:state.age
+    });
+  }
+}
+function finalizeSimulationDeadlineYear(state, interrupted = false) {
+  if (!HL) return;
+  for (const [id, window] of STAT.deadlinePending) {
+    const summary = STAT.deadlineCoverage,
+      row = summary.byEvent[id] || (summary.byEvent[id] = {observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0});
+    summary.observed++; row.observed++;
+    const completed = STAT.deadlineFired.has(id),
+      actionable = !completed && !interrupted && elig(window.event,state,tags(state)) &&
+        simulationChoiceStates(window.event,state,tags(state)).some(choice=>choice.enabled),
+      status = completed ? "delivered" : interrupted ? "censored" :
+        actionable ? "expiredUnserved" : "superseded";
+    summary[status]++; row[status]++;
+    // Attribute observations to the place and age at first eligibility.
+    const age=window.firstAge,
+      band=age<=17?"0-17":age<=34?"18-34":age<=59?"35-59":"60+";
+    for(const [groups,key] of [[summary.byRegion,window.firstRegion],[summary.byAgeBand,band]]){
+      const group=groups[key]||(groups[key]={
+        observed:0,delivered:0,expiredUnserved:0,superseded:0,censored:0
+      });
+      group.observed++;
+      group[status]++;
+    }
+    if (status !== "delivered" && summary.unservedExamples.length < 30)
+      summary.unservedExamples.push({
+        lifeIndex:STAT.currentLife+1, eventId:id, year:state.year,
+        age:window.firstAge, region:window.firstRegion,
+        resolution:status, firstEligibleMonth:window.firstMonth,
+        lastEligibleMonth:window.lastMonth, lastProcessedMonth:state.mo,
+        schoolEnrolled:!!state.fl?.sch
+      });
+  }
+  STAT.deadlinePending.clear();
+  STAT.deadlineFired.clear();
+}
 function recordSimulationEvent(event, state) {
   if (!HL) return;
   if (Number.isInteger(state?.year)) STAT.lifeEventYears.add(state.year);
+  if (event.c) STAT.deadlineFired.add(event.id);
   const row = STAT.eventCoverage[event.id];
   const stage = STG[stg(state)] || "不明";
   if (row) {

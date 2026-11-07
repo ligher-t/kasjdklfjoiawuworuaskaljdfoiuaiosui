@@ -186,13 +186,15 @@ window.TERRA_DATA_BUILD.run("model/guide", function ($terraData, $define, $rules
         ]
       },
       namedCities: {
+        "クルビア": ["トリマウンツ"],
         "炎国": ["玉門", "尚蜀"],
         "龍門": ["龍門"],
         "ヴィクトリア": ["ロンディニウム"],
         "ウルサス": ["チェルノボーグ", "ゼルグラード", "サンクト・グリファーブルク"],
         "ボリバル": ["エル・ソル", "ドッソレス"],
         "シエスタ": ["シエスタ"],
-        "シラクーザ": ["ウォルシーニ"]
+        "シラクーザ": ["ウォルシーニ"],
+        "カジミエーシュ": ["カヴァレリエルキ"]
       },
       parentJobs: [
         { n: "日雇い・農作業", w: 2, jobId: 1 },
@@ -620,6 +622,17 @@ window.TERRA_DATA_BUILD.run("model/guide", function ($terraData, $define, $rules
         description: "日常イベント抽選で中立群の後に良結果群へ割り当てる幅。残りを悪結果群とする。",
         source: "ゲーム用仮定",
         usedBy: ["日常イベント選択"]
+      },
+      {
+        id: "events.raceDailyShare",
+        label: "種族日常イベント選択率",
+        value: 0.15,
+        unit: "選択なし日常イベントの確率",
+        status: "S",
+        scope: "日常イベント",
+        description: "対象人物に適格な種族日常候補がある場合の初期選択率。暫定の上限は20%。候補がない年は発生させない。",
+        source: "ゲーム用仮定（調整値）",
+        usedBy: ["種族日常イベント選択"]
       },
       {
         id: "events.slotPlacementCeiling",
@@ -1133,7 +1146,7 @@ window.TERRA_DATA_BUILD.run("model/guide", function ($terraData, $define, $rules
         source: "ゲーム用設定",
         usedBy: ["死亡結果UI"]
       },
-      // LIFE / MORTALITY V2. Values are game assumptions, never Terra epidemiology.
+      // LIFE / MORTALITY V3. Values are game assumptions, never Terra epidemiology.
       {
         id: "mortality.chronicOnset",
         label: "長期疾患の年次発生基準",

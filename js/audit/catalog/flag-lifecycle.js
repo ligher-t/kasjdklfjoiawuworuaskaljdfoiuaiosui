@@ -1,4 +1,5 @@
 function validateFlagLifecycle(W_, services) {
+  const engineProducedFlags=new Set(["arts_grad","arts_enrolled",...TRAVEL_ENGINE_PRODUCED_FLAGS]);
   const actualCreators = new Map(),
     actualClearers = new Map(),
     actualConsumers = new Map();
@@ -10,7 +11,7 @@ function validateFlagLifecycle(W_, services) {
         for (const part of node) inspect(part);
         return;
       }
-      for (const [flag, value] of Object.entries({...node.fl,...(node.educationAction==="primary"?{sch:1}:{})})) {
+      for (const [flag, value] of Object.entries({...node.fl,...(["primary","case:commit","case:commit-grant","case:commit-loan"].includes(node.educationAction)?{sch:1}:{})})) {
         if (!seen.has(flag)) seen.set(flag, new Set());
         seen.get(flag).add(value);
       }
@@ -34,6 +35,8 @@ function validateFlagLifecycle(W_, services) {
     }
   }
   Object.entries(services.FLAG_REGISTRY).forEach(([flag, meta]) => {
+    const retired = meta.status === "retired";
+    if(TRAVEL_ENGINE_PRODUCED_FLAGS.has(flag)&&meta.engineProducers?.join("|")!=="travelArrivalConsequences")W_.push(`${flag}: 実到着による生成元が未登録`);
     if (
       !meta.label ||
       !meta.description ||
@@ -42,7 +45,7 @@ function validateFlagLifecycle(W_, services) {
       !meta.lifecycle ||
       !meta.source ||
       !meta.engine ||
-      !meta.producers?.length ||
+      (!meta.producers?.length && !engineProducedFlags.has(flag) && !retired) ||
       !meta.consumers?.length ||
       !Array.isArray(meta.clearers) ||
       !Array.isArray(meta.engineClearers)
@@ -53,7 +56,8 @@ function validateFlagLifecycle(W_, services) {
     });
     const producers = actualCreators.get(flag) || [],
       clearers = actualClearers.get(flag) || [];
-    if (!producers.length) W_.push(`${flag}: イベント生成元がない（未使用フラグの可能性）`);
+    if (!producers.length && !engineProducedFlags.has(flag) && !retired)
+      W_.push(`${flag}: イベント生成元がない（未使用フラグの可能性）`);
     if (meta.producers?.join("|") !== producers.join("|"))
       W_.push(`${flag}: フラグ生成元の台帳がイベント定義と一致しない`);
     if (!Array.isArray(meta.clearers) || meta.clearers.join("|") !== clearers.join("|"))

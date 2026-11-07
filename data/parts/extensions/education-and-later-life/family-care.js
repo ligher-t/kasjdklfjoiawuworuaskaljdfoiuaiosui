@@ -190,7 +190,8 @@ window.TERRA_DATA_BUILD.fragment(
       st: ["青年", "壮年", "老年"],
       need: ["子あり"],
       ge: { age: 16 },
-      cd: 3,
+      // Each child has their own futurePlanReviewYear; do not block a sibling's turn for three years.
+      cd: 1,
       pri: true,
       w: 0.32,
       t: [
@@ -214,13 +215,13 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K(
           "専門の勉強をしたいならと、学費の足しに15万龍門幣を渡す",
           {
-            en: { affordableCashAfterReserve: 15e4 },
+            en: s => $rules.economy.availableFunds(s) >= 15e4 + $rules.economy.annualReserve(s),
             why: "学費の15万龍門幣を出すと、向こう一年の家の暮らしが立ち行かなくなる"
           },
           [
             1,
             "専門の技術を学ぶ足しにするよう、蓄えから15万龍門幣を{kid}に持たせた。どこで何を学ぶかは、あの子自身の意思に任せることにした。",
-            { childFutureSupport: { kind: "study-funds", amount: 15e4 }, cash: -15e4, pm: 1, p: 2, rl: 3 }
+            { childFutureSupport: { kind: "study-funds", amount: 15e4 }, cash: () => -15e4, p: 2, rl: 3 }
           ]
         ),
         $terraData.K("見習いとして雇ってくれそうな知り合いに声をかけてみる", {}, [
@@ -236,13 +237,13 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K(
           "一人暮らしを始める時の支度金として、8万龍門幣を持たせる",
           {
-            en: { affordableCashAfterReserve: 8e4 },
+            en: s => $rules.economy.availableFunds(s) >= 8e4 + $rules.economy.annualReserve(s),
             why: "支度金の8万龍門幣を出すと、向こう一年の家の暮らしが立ち行かなくなる"
           },
           [
             1,
             "自分の足で暮らし始める時に使いなさいと、8万龍門幣を包んで渡した。いつどの街へ出ていくかは{kid}が決める。",
-            { childFutureSupport: { kind: "move-funds", amount: 8e4 }, cash: -8e4, pm: 1, rl: -1, p: -1 }
+            { childFutureSupport: { kind: "move-funds", amount: 8e4 }, cash: () => -8e4, rl: -1, p: -1 }
           ]
         ),
         $terraData.K("今は結論を急がず、三年後にまたじっくり話す", {}, [

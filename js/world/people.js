@@ -113,6 +113,7 @@ function personKnownLife(p, year) {
 function facilityPersonAdvance(s, area, year) {
   if (!area.people) return;
   for (const p of Object.values(area.people)) {
+    if (p.actualStatus === "dead") continue;
     // Old saves are snapshots. Begin new biography from the year first inspected,
     // not a fictional reconstruction of their earlier years.
     ensurePersonLife(p, year);
@@ -183,12 +184,13 @@ function applyFacilityPersonAction(s, action) {
   const f = activeFacility(s, action.kind);
   if (!f) throw Error("その施設に本人の生活上の接点がない");
   const people = ensureFacilityPersonStore(s, s.community);
-  let person = facilityPersonFor(s, action.kind);
+  let person = facilityPersonFor(s, action.kind, null, action.action === "ask");
   if (action.action === "meet") {
     if (person) throw Error("すでに出会った施設関係者がいる");
     const sx = keyedRoll(`terra-person-sex:${f.id}:${s.year}`) < 0.5 ? "女" : "男";
     const birthYear = s.year - (24 + Math.floor(keyedRoll(`terra-person-age:${f.id}:${s.year}`) * 25));
-    const id = f.id + "#person#1";
+    const priorCount = Object.values(people).filter(row => row.facilityId === f.id && row.kind === action.kind).length;
+    const id = f.id + "#person#" + (priorCount + 1);
     person = {
       id,
       facilityId: f.id,
@@ -290,7 +292,8 @@ function facilityPeopleSummary(s) {
   const status = {
     working: "勤めを続けていると聞いた",
     away: "一時的に持ち場を離れたと聞いた",
-    left: "その持ち場を離れたと聞いた"
+    left: "その持ち場を離れたと聞いた",
+    dead: "亡くなったと聞いた"
   };
   const line = (p, former) => {
     const known = p.knownLife,

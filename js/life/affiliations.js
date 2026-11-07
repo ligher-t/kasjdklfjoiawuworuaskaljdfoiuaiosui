@@ -5,12 +5,23 @@
 // 移転による休止を個人的な休止と分け、帰還だけで休止前の危機が解消したことにしない。
 const affiliationRule = (scope, region, jobs, goal, source, reason) => ({scope, region, jobs, goal, source, reason});
 const AFFILIATION_RULES = Object.freeze({
+  "hist-columbia_independence": affiliationRule("district", "クルビア", null, "hist-columbia_independence-path", "timeline_columbia_independence/history_path_review_columbia_independence", "開拓地区の自治組織への本人参加。登記申請中であることを自治地位や職員雇用と混同しない"),
+  "hist-kazdel_commission_founded": affiliationRule("district", "カズデル", null, "hist-kazdel_commission_founded-path", "timeline_kazdel_commission_founded/history_path_review_kazdel_commission_founded", "現地補給班の継続的な地域参加。軍事委員会の正式兵籍・常勤給与とは切り離す"),
+  "hist-siracusa_unification": affiliationRule("district", "シラクーザ", null, "hist-siracusa_unification-path", "timeline_siracusa_unification/history_path_review_siracusa_unification", "地区の掟を担う個人の約束。特定ファミリーの正式職員資格とは切り離す"),
+  "hist-ursus_great_rebellion": affiliationRule("district", "ウルサス", null, "hist-ursus_great_rebellion-path", "timeline_ursus_great_rebellion/history_path_review_ursus_great_rebellion", "待遇要求に加わった現地の労働者の活動。雇用契約や所在地の証明とは区別する"),
+  "hist-rim_billiton_independence": affiliationRule("district", "レム・ビリトン", null, "hist-rim_billiton_independence-path", "timeline_rim_billiton_independence/history_path_review_rim_billiton_independence", "鉱区自治に関する地区内の当番。鉱業会社との雇用を意味しない"),
+  "hist-leith_revolution": affiliationRule("district", "リターニア", null, "hist-leith_revolution-path", "timeline_leith_revolution/history_path_review_leith_revolution", "地区での政治的な参加・連絡。宮廷職や新政権の官職に自動採用しない"),
+  "hist-kazdel_war_declared": affiliationRule("district", "カズデル", null, "hist-kazdel_war_declared-path", "timeline_kazdel_war_declared/history_path_review_kazdel_war_declared", "当該地区の後方補給の役務。正規軍への雇用や徴兵歴を自動発行しない"),
+  "hist-kazdel_civil_war": affiliationRule("district", "カズデル", null, "hist-kazdel_civil_war-path", "timeline_kazdel_civil_war/history_path_review_kazdel_civil_war", "避難者の現地生活再建活動。実際の業務報酬・被雇用者資格とは区別する"),
   "terra-general-transporter": affiliationRule("occupation", null, [16], "transporter-work", "car/transporter_contract_review", "各地で続ける職業。転居だけでは終わらず、転職・退職で現役を終える"),
   "kjerag-village-transporter": affiliationRule("region", "イェラグ", [16], "kjerag-transporter-route", "car/kjerag_transporter_route_review", "複数集落を結ぶ便。村一つに固定せず国外転居・転職で終了"),
   "columbia-technical-work": affiliationRule("workplace", "クルビア", [7], "columbia-technical-work", "col_tech_*", "同じ企業の設備・調達案件。別の街区・職場へ持ち越さず、退職後の技能は残す"),
   "victoria-insurance-clerk": affiliationRule("workplace", "ヴィクトリア", [21], "victoria-clerk-livelihood", "vic_clerk_*", "特定仲介所の帳簿係。職場を離れた後は勤務経験の後日談へ移る"),
   "rim-catastrophe-survey-assistant": affiliationRule("region", "レム・ビリトン", [27], "rim-catastrophe-fieldwork", "rim_catastrophe_transporter_review", "鉱山調査班への同行。地区の転居とは分離し、国外・転職で班の勤務を終える"),
   "sargon-market-guard-contracts": affiliationRule("contract", "サルゴン", null, "sargon-market-guard-work", "car/sargon_market_contract_review", "一件ごとの短期請負。受注・終了を各在籍期間に分け、次の依頼は別契約"),
+  "military-service-entry": affiliationRule("workplace", null, [14], "military-service-entry", "car/choice_ursus_04", "任地の補助部隊への個別採用。全国組織や別の任地へ勤務を持ち越さず、移動・退役で現在の配属を終える"),
+  "displaced-recovery-survey": affiliationRule("workplace", null, [27], "displaced-recovery-survey", "displacement_after", "避難先の復旧調査班への現地採用。避難先を離れた後も調査勤務が続くとは扱わない"),
+  "ursus-military-factory-contract": affiliationRule("workplace", "ウルサス", [2], "ursus-military-factory-contract", "urs_conscript", "ウルサスの軍需工場に置かれた個別の生産勤務。徴用の背景を残しつつ、工場を離れた後の雇用は別に確認する"),
   "ursus-kleini-sever-mine": affiliationRule("workplace", "ウルサス", [3], "ursus-kleini-sever-survival", "ursus_mine_assignment_*", "監視付き鉱区の強制配属。実際の脱出・転居・職務終了と期間を対応させる"),
   "lei-music-patronage": affiliationRule("personal", null, null, "lei-music-practice", "lei_noble/lei_noble_after/lei_noble_later", "後援者一人との接点。国外でも便りは可能で、貴族家への所属や常勤雇用ではない"),
   "lei-music-casual-work": affiliationRule("personal", null, null, "lei-music-livelihood", "lei_noble/lei_noble_after/lei_noble_later", "短期仕事の紹介先とのつながり。年間雇用とは扱わず、その都度の仕事だけ記録"),
@@ -26,7 +37,7 @@ const AFFILIATION_RULES = Object.freeze({
   "rhodes-employment": affiliationRule("contact", null, null, "rhodes-job-search", "sr_rhodes_recruitment_contact/sr_rhodes_hiring_review/sr_rhodes_reapplication", "応募照会。採用・不採用で照会を閉じ、採用後の職員在籍を別に始める"),
   "bsw-contract": affiliationRule("organization", "クルビア", [35, 36, 37], "bsw-work", "sr_bsw_*", "クルビアの民間軍事会社BSWでの警備契約・戦術任務雇用。契約更新・派遣・退職を管理"),
   "rhine-lab": affiliationRule("organization", "クルビア", [38, 39, 40], "rhine-research", "sr_rhine_*", "クルビア・トリマウンツのライン生命研究所における研究雇用・特許契約。専門科配属と研究倫理を管理"),
-  "rhodes-staff": affiliationRule("organization", null, [28,29,30,31,33,34], "rhodes-work", "sr_rhodes_*", "本艦・地域支部・外勤の雇用。船の航行や一時任務を転居とせず、支部異動は配属を更新"),
+  "rhodes-staff": affiliationRule("organization", null, [28,29,30,31,33,34,35,36,37], "rhodes-work", "sr_rhodes_*", "本艦・地域支部・外勤の雇用。船の航行や一時任務を転居とせず、支部異動は配属を更新"),
   "reunion-1096": affiliationRule("mobile-network", null, null, "protect-neighbours", "life_reunion_early_*/life_reunion_chernobog_*", "初期移動野営地、チェルノボーグ臨時拠点、散開後の連絡を分離。壊滅後の旧拠点勤務を続けない"),
   "ursus-school-aid": affiliationRule("network", null, null, null, "life_ursus_school_aid*", "同級生と避難先の連絡網。卒業・転居後も便りを続けられ、学校在籍や同居を意味しない"),
   "infected-exclusion": affiliationRule("district", null, null, "order-through-exclusion", "life_infected_association*/life_infected_organization*/v87_exclusion_organizer_infected", "地域の住民会。現地会合と主催者の罹患・思想・過去の排斥行為を分け、転居で加害履歴を消さない"),
@@ -58,6 +69,7 @@ const AFFILIATION_RULES = Object.freeze({
   "ursus-imperial-academy-science": affiliationRule("organization", "ウルサス", [53], "ursus-science-engineering", "car/urs_academy_*", "ウルサス帝国科学院の重工業技師。装甲列車と軍用都市設計"),
   "victoria-regular-infantry": affiliationRule("organization", "ヴィクトリア", [54], "victoria-infantry-service", "car/vic_infantry_*", "ヴィクトリア正規陸軍の平民歩兵。泥にまみれる使い捨て兵士"),
   "victoria-royal-officer": affiliationRule("organization", "ヴィクトリア", [55], "victoria-officer-career", "car/vic_royal_*", "王立前衛学校卒のエリート将校。公爵派閥の権力闘争"),
+  "victoria-exiled-ducal-command": affiliationRule("organization", "ヴィクトリア", [55], "victoria-exiled-command", "car/vic_royal_choice_coup/car/vic_exile_command_review", "1094年の陥落後、敗れた公爵家の残存部隊を率いる本人固有の分岐。元の公爵軍と勤務地を区別するゲーム上の所属モデル"),
   "victoria-parliament-scribe": affiliationRule("organization", "ヴィクトリア", [56], "victoria-parliament-governance", "car/vic_scribe_*", "ヴィクトリア帝国議会・貴族院の書記官。官僚機構の実務"),
   "victoria-locomotive-works": affiliationRule("organization", "ヴィクトリア", [57], "victoria-locomotive-engineering", "car/vic_works_*", "ヴィクトリア鉄道工廠・製鋼工場の重工業技師。蒸気動力の心臓部"),
   "leithania-golden-law": affiliationRule("organization", "リターニア", [58], "leithania-golden-law-enforce", "car/lei_golden_*", "リターニア金律法衛。女帝直属の音律法典執行部隊"),
@@ -66,6 +78,7 @@ const AFFILIATION_RULES = Object.freeze({
   "laterano-landen-monastery": affiliationRule("organization", "ラテラーノ", [61], "laterano-landen-devotion", "car/lat_landen_*", "ランデン修道院の修道銃士。伝統銃器と信仰の護持"),
   // 企業・商業・自治
   "columbia-frontier-pioneer": affiliationRule("region", "クルビア", [62], "columbia-frontier-survival", "car/col_pioneer_*", "クルビアのフロンティア開拓者。自己責任の荒野農場経営"),
+  "columbia-frontier-contract-crew": affiliationRule("region", "クルビア", [62], "columbia-frontier-contract-work", "col_frontier/col_frontier_contract_review", "開拓地の企業雇用による現場労働。自営の開拓農場主とは別契約で、地域移動・転職・契約終了で離職"),
   "kazimierz-competition-knight": affiliationRule("organization", "カジミエーシュ", [63], "kazimierz-arena-glory", "car/kaz_comp_knight_*", "商業連合会公認の企業騎士。アリーナでの競技とスポンサー契約"),
   "kazimierz-armorless-union": affiliationRule("network", "カジミエーシュ", [64], "kazimierz-armorless-elimination", "car/kaz_armorless_*", "無冑盟の暗殺部隊員。商業連合会の裏の汚れ仕事と脱出不可の掟"),
   "siracusa-mafia-soldier": affiliationRule("network", "シラクーザ", [65], "siracusa-mafia-loyalty", "car/sir_soldier_*", "シラクーザ12ファミリーの構成員。オメルタの沈黙の掟と血の抗争"),
@@ -143,8 +156,11 @@ function affiliationWorkAvailable(s, id) {
   if (a.posting?.kind === "ship" && s.residenceBase?.id !== "rhodes-landship") return false;
   if (["初期移動野営地","チェルノボーグ臨時拠点","国境野営地","移動隊"].includes(a.posting?.kind) &&
       (a.role||"").startsWith(a.posting.kind+"・") && a.posting.localityKey !== localityKey(s)) return false;
-  if (rule?.scope === "workplace" && a.anchor?.workplaceId && s.siteAffiliations?.workplace)
-    return a.anchor.workplaceId === s.siteAffiliations.workplace.facilityId;
+  if (rule?.scope === "workplace") {
+    const episode = currentPlayerEmployment(s);
+    if (!episode || episode.jobId !== s.job) return false;
+    if (a.anchor?.workplaceId && a.anchor.workplaceId !== episode.siteId) return false;
+  }
   return true;
 }
 function affiliationAppointmentHere(s, id) {
@@ -240,11 +256,31 @@ function reconcileAffiliationWork(s, preserveCurrentJob = false) {
         continue;
       }
     }
+    // An explicit leave can arrive without job: 0. A closed regional employer
+    // must never continue paying the old, non-transferable occupation.
+    const continuingEmployer = s.lifeRecord.affiliations.some(other =>
+      other.id !== a.id &&
+      AFFILIATION_RULES[other.id]?.jobs?.includes(s.job) &&
+      affiliationWorkAvailable(s, other.id));
+    if (!preserveCurrentJob && !continuingEmployer && a.status === "left" &&
+        rule?.jobs?.includes(s.job) && s.job >= 41 && s.job <= 82) {
+      const formerJob = s.job;
+      s.job = 0;
+      s.workPayBonus = 0;
+      s.fl.workplace_hazard = 0;
+      recordCareerChange(s, formerJob, 0);
+      const goal = s.lifeRecord.goals.find(row => row.id === rule.goal);
+      if (goal && ["active", "paused"].includes(goal.status))
+        applyLifeGoal({id: goal.id, action: "compromise", note: "この職場・任地を離れ、次の生計を考える"});
+      continue;
+    }
     if (!rule?.jobs || !["active", "crisis"].includes(a.status)) continue;
-    const matches = rule.jobs.includes(s.job) && !s.fl?.retired && !restricted(s) &&
+    const activeEpisode = currentPlayerEmployment(s),
+      matches = rule.jobs.includes(s.job) && !s.fl?.retired && !restricted(s) &&
       (!rule.region || s.res.n === rule.region) &&
       (rule.scope !== "workplace" || !a.anchor || a.anchor.localityKey === localityKey(s)) &&
-      (!a.anchor?.workplaceId || !s.siteAffiliations?.workplace || a.anchor.workplaceId === s.siteAffiliations.workplace.facilityId) &&
+      (rule.scope !== "workplace" || activeEpisode?.jobId === s.job) &&
+      (!a.anchor?.workplaceId || a.anchor.workplaceId === activeEpisode?.siteId) &&
       (a.posting?.kind !== "branch" || a.posting.localityKey === localityKey(s));
     const posted = a.posting?.kind !== "ship" || s.residenceBase?.id === "rhodes-landship";
     if (matches && posted) continue;
@@ -253,7 +289,14 @@ function reconcileAffiliationWork(s, preserveCurrentJob = false) {
     const goal = s.lifeRecord.goals.find(row => row.id === rule.goal);
     if (goal && ["active", "paused", "compromised"].includes(goal.status))
       applyLifeGoal({id:goal.id, action:"compromise", note:"この職場・任地を離れ、次の生計を考える"});
-    if (!preserveCurrentJob && priorJob && (["workplace", "organization"].includes(rule.scope) || ["higashi-service", "kazimierz-competition-career", "rim-catastrophe-survey-assistant"].includes(a.id))) {
+    // Regional career IDs 41–82 have no transferable employment contract.
+    // A personal, regional or network affiliation can close without a workplace scope.
+    if (!preserveCurrentJob && priorJob && (
+      activeEpisode?.affiliationId === a.id ||
+      ["workplace", "organization"].includes(rule.scope) ||
+      ["higashi-service", "kazimierz-competition-career", "rim-catastrophe-survey-assistant"].includes(a.id) ||
+      (s.job >= 41 && s.job <= 82)
+    )) {
       const before = s.job; s.job=0; s.workPayBonus=0; s.fl.workplace_hazard=0;
       recordCareerChange(s,before,0);
     }

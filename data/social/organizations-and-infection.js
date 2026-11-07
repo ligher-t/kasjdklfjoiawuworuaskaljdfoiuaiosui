@@ -176,7 +176,7 @@ window.TERRA_DATA_BUILD.run("social/organizations-and-infection", function ($ter
           "「触るな」と声を上げて友だちの手を引っこめさせ、通りがかった大人に場所を知らせた。それっきり、その石がどうなったかは分からなかった。",
           { exposureAction: "avoid", rl: 2, k: 1 }
         ]),
-        $terraData.K("触らずに帰り、翌日学校の先生に話す", { show: { need: ["就学中"] } }, [
+        $terraData.K("触らずに帰り、翌日学校の先生に話す", { show: s => educationLegacySceneGuard(s,"education_school_classroom") }, [
           1,
           "その場では石に触れさせず、引っ張るようにして一緒に帰った。翌朝、先生に道端の黒い石のことを話した。",
           { exposureAction: "document", k: 2, rl: 1 }

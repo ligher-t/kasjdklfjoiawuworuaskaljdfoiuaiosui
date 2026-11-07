@@ -3,6 +3,19 @@ function tick() {
   advanceCurrentLifeYear(currentLifeState(), ANNUAL_SERVICES);
 }
 function advanceCurrentLifeYear(s, services) {
+  if(s.educationPath?.offeringId && !s.dead){
+    s.educationYearClosing=true;
+    try{
+      educationSimulateAttendanceThrough(s,s.year,12);
+      educationSettleCompletedAcademicYear(s,s.year);
+    }finally{
+      delete s.educationYearClosing;
+    }
+  }
+  advanceCurrentWorksites(s, s.year, 12);
+  settleEmploymentThrough(s, s.year, 12);
+  advanceJourneyThrough(s, s.year, 12);
+  educationExpireCases(s,s.year+1);
   const a = ++s.age,
     t = s.t,
     f =
@@ -13,12 +26,15 @@ function advanceCurrentLifeYear(s, services) {
   let annualFlowRecorded = false;
   advanceAnnualCalendar(s, services);
   advanceAnnualRelationsAndAccess(s, services);
+  educationSynchronizeDependents(s);
   advanceAnnualWellbeing(s, services, a, t, f, careEffect);
   advanceAnnualInfection(s, services, f);
   if (typeof educationAdvanceYear === "function") educationAdvanceYear(s);
   if (typeof advanceAnnualLanguageLearning === "function") advanceAnnualLanguageLearning(s, services, a);
   settleAnnualHouseholdBudget(s, services, a);
   annualFlowRecorded = applyAnnualPersonalBudget(s, services, a, t, f);
+  travelProjectAnnualOutflow(s, s.year, "household");
+  if (annualFlowRecorded) travelProjectAnnualOutflow(s, s.year, "personal");
   recordAnnualWealthAndHistory(s, services, a, annualFlowRecorded);
   services.hist();
   if (s.dead) return;

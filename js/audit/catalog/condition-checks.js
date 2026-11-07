@@ -32,7 +32,7 @@ function createCatalogFieldChecks(W_, services) {
   ]);
   const eventKeys = new Set([
     ...conditionKeys, "id", "conf", "references", "w", "cd", "once", "pri", "st", "months",
-    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly"
+    "after", "excl", "inConfinement", "show", "t", "c", "fx", "who", "groundOnly", "displayTone", "timelineFlag", "crisisPolicy", "historicalScene", "regionCooldowns", "interactionScope", "lifeSystemFamily", "socialConstraint", "scheduledAt", "raceDaily"
   ]);
   const cc = (c, w, event = false) => {
     if (!c) return;
@@ -45,6 +45,8 @@ function createCatalogFieldChecks(W_, services) {
     }
     for (const key of Object.keys(c)) if (!(event ? eventKeys : conditionKeys).has(key))
       W_.push(`${w}: 未知の${event ? "イベント" : "条件"}キー「${key}」`);
+    if (event && c.scheduledAt != null && typeof c.scheduledAt !== "function")
+      W_.push(`${w}: scheduledAtは年月を返す関数でなければならない`);
     for (const k of ["need", "any", "ban"])
       (c[k] || []).forEach(t => okT(t) || W_.push(`${w}: 未知のタグ「${t}」`));
     for (const k of ["ge", "le"])
@@ -94,7 +96,7 @@ function createCatalogFieldChecks(W_, services) {
       });
     }
   };
-  const fx = (f, w) =>
+  const fx = (f, w, event = null) =>
     Object.keys(f || {}).forEach(k => {
       if (!services.FXK.includes(k)) {
         W_.push(`${w}: 未知の効果「${k}」`);
@@ -104,6 +106,151 @@ function createCatalogFieldChecks(W_, services) {
         type = meta?.valueType;
       if (!meta || !meta.unit || !meta.meaning || !type)
         W_.push(`${w}: 効果「${k}」の型・単位・説明台帳がない`);
+      if (k === "siracusaFamilyAction") {
+        const input = f[k], action = typeof input === "string" ? input : input?.action;
+        if (
+          !["active", "distant", "left", "declined"].includes(action) ||
+          (typeof input === "object" &&
+            (!input || Array.isArray(input) ||
+              Object.keys(input).some(key => !["action", "onlyIfMember"].includes(key)) ||
+              (input.onlyIfMember != null && typeof input.onlyIfMember !== "boolean")))
+        )
+          W_.push(`${w}: 効果「siracusaFamilyAction」は有効な関係状態または条件付き関係状態ではない`);
+      }
+      if (k === "artsAction") {
+        const action = f[k],
+          allowedKeys = new Set(["action", "disciplineId", "techniqueId", "outcome", "response", "alternativeTaskId", "equipmentId", "result"]),
+          disciplines = new Set(["thermal", "kinetic", "acoustic", "material", "medical-support", "ritual-local"]),
+          outcomes = new Set(["guided-success", "observed", "theory", "attempt-not-achieved"]),
+          responses = new Set(["alternative-task-shown", "stopped-for-day"]),
+          equipmentActions = new Set(["borrow-equipment", "return-equipment", "inspect-equipment",
+            "request-equipment-repair", "record-repair-parts", "complete-equipment-repair"]),
+          invalidCommon = !action || typeof action !== "object" || Array.isArray(action) ||
+            Object.keys(action).some(key => !allowedKeys.has(key)),
+          invalidPractice = action?.action === "record-practice" &&
+            (!disciplines.has(action.disciplineId) || typeof action.techniqueId !== "string" || !action.techniqueId.trim() ||
+              !outcomes.has(action.outcome) || (action.response != null && !responses.has(action.response)) ||
+              (action.alternativeTaskId != null && (typeof action.alternativeTaskId !== "string" || !action.alternativeTaskId.trim())) ||
+              (action.response === "alternative-task-shown" && !action.alternativeTaskId) ||
+              (action.response === "stopped-for-day" && action.alternativeTaskId != null) ||
+              (action.response != null && action.outcome !== "attempt-not-achieved")),
+          invalidEquipment = action && equipmentActions.has(action.action) &&
+            ((action.action !== "borrow-equipment" &&
+              (typeof action.equipmentId !== "string" || !["$current-course-unit", "$oldest-school-loan", "$oldest-due-school-loan", "$oldest-unsafe-school-loan", "$oldest-school-repair"].includes(action.equipmentId))) ||
+             (action.action === "borrow-equipment" && action.equipmentId != null) ||
+             (action.action === "inspect-equipment" && !["serviceable", "repair-required"].includes(action.result)) ||
+             (action.action !== "inspect-equipment" && action.result != null)),
+          validPractice = action?.action === "record-practice" && !invalidPractice,
+          validEquipment = equipmentActions.has(action?.action) && !invalidEquipment,
+          invalid = invalidCommon || (!validPractice && !validEquipment);
+        if (invalid) W_.push(w + ": 効果「artsAction」の実技記録契約が不正");
+      }
+      if (k === "lifeSystemAction") {
+        const action = f[k],
+          domains = new Set(["warning", "infrastructure", "shipment", "contract", "research", "community-project", "culture", "information", "arts"]),
+          allowedKeys = new Set(["domain", "action", "mode", "targetId", "learningPathId", "providerId", "siteRef",
+            "disciplineId", "techniqueId", "purpose", "equipmentId", "result", "outcome", "techSkillId", "minimumSkill",
+            "skillId", "enrollmentId", "year", "menteeId", "organizationId", "recipientId", "routeId",
+            "helperCount", "claimId", "languageId", "languageMode", "workplaceUse", "requireEquipment", "amount"]),
+          actions = {
+            warning: ["receive", "respond", "review", "feedback"], infrastructure: ["acknowledge", "respond", "request-repair", "verify-repair"],
+            shipment: ["take-custody", "confirm-recipient", "return", "receive-medicine", "resolve-address", "record-delay-response"],
+            contract: ["contact", "offer", "decline", "accept", "prepare", "defer-preparation", "depart", "handoff", "survey", "continue-work",
+              "query-cargo", "support-equity", "query-screening", "verify-receipt", "dispute-payment", "mark-payment-missing",
+              "settle", "family-notice", "return", "cancel", "end-contact", "defer-payment-claim",
+              "review-eligibility", "defer-departure"],
+            research: ["attend-briefing", "consent", "defer", "refuse", "procedure", "withdraw", "followup"],
+            "community-project": ["propose", "donate", "mark-parts-received", "record-helpers", "complete-work"],
+            culture: ["record-music-performance", "record-oral-tradition", "record-mentoring", "sign-up-festival",
+              "decline-festival", "settle-festival"],
+            information: ["receive-situated", "record-local-correction", "defer-local-correction"],
+            arts: ["open-path", "record-practice", "record-use", "assess-course", "record-tech-skill",
+              "borrow-equipment", "return-equipment", "inspect-equipment", "request-equipment-repair",
+              "record-repair-parts", "complete-equipment-repair", "pay-late-fee", "defer-late-fee", "request-assessment", "followup"]
+          },
+          invalid = !action || typeof action !== "object" || Array.isArray(action) ||
+            Object.keys(action).some(key => !allowedKeys.has(key)) || !domains.has(action.domain) ||
+            typeof action.action !== "string" || !(actions[action.domain] || []).includes(action.action) ||
+            (action.mode != null && typeof action.mode !== "string") ||
+            (action.year != null && !Number.isInteger(action.year)) ||
+            (["workplaceUse", "requireEquipment"].some(key => action[key] != null && typeof action[key] !== "boolean")) ||
+            (action.helperCount != null && ![1, 2].includes(action.helperCount)) ||
+            (action.amount != null && (!Number.isSafeInteger(action.amount) || action.amount <= 0 || action.amount > 1000000)) ||
+            (["targetId", "learningPathId", "providerId", "siteRef", "disciplineId", "techniqueId", "purpose",
+              "equipmentId", "result", "techSkillId", "skillId", "enrollmentId", "menteeId", "organizationId",
+              "recipientId", "routeId", "claimId", "languageId", "languageMode"]
+              .some(key => action[key] != null && (typeof action[key] !== "string" || !action[key].trim())));
+        if (invalid) W_.push(w + ": 効果「lifeSystemAction」の状態遷移契約が不正");
+      }
+      if (k === "raceProfileAction") {
+        const update = f[k],
+          statuses = new Set(["present", "absent", "unknown", "not_applicable"]),
+          sources = new Set(["self-report", "clinical-record", "direct-observation", "game-assumption"]),
+          raceTags = new Set([
+            ...(Array.isArray(event?.need) ? event.need : typeof event?.need === "string" ? [event.need] : []),
+            ...(Array.isArray(event?.any) ? event.any : typeof event?.any === "string" ? [event.any] : [])
+          ]
+            .filter(tag => typeof tag === "string" && tag.startsWith("種族:"))),
+          valid = update && typeof update === "object" && !Array.isArray(update) &&
+            Object.keys(update).every(key => ["traitId", "status", "source", "basis"].includes(key)) &&
+            typeof update.traitId === "string" && Object.hasOwn(RACE_PROFILE_TRAITS, update.traitId) &&
+            raceTags.has("種族:" + RACE_PROFILE_TRAITS[update.traitId].race) &&
+            statuses.has(update.status) && sources.has(update.source) &&
+            typeof update.basis === "string" && update.basis.trim().length > 0 && update.basis.length <= 240;
+        if (!valid) W_.push(w + ": 効果「raceProfileAction」の個体記録契約が不正");
+      }
+      if (k === "violenceAction") {
+        const action = f[k],
+          allowedKeys = new Set(["action", "scenarioId", "kind", "context", "decision", "outcome", "targetGroup",
+          "victimRef", "victims", "witnesses", "deathEvidence", "deathEvidenceId", "authorityAction", "witnessNorm", "evidenceIds", "payment",
+            "followupAfterMonths", "linkedExecutionIncidentId", "evidenceId", "behavior", "basis", "delta", "audience", "incidentId", "caseType"]),
+          victimKeys = new Set(["kind", "role", "localOrdinal", "sourceEventId", "id", "areaKey", "personId"]),
+          witnessKeys = new Set(["kind", "role", "id"]),
+          validVictimRef = ref => {
+            if (!ref || typeof ref !== "object" || Array.isArray(ref) || Object.keys(ref).some(key => !victimKeys.has(key))) return false;
+            if (["anonymous-person", "collective"].includes(ref.kind))
+              return Number.isInteger(ref.localOrdinal) && ref.localOrdinal > 0;
+            if (ref.kind === "incident-victim")
+              return typeof ref.sourceEventId === "string" && !!ref.sourceEventId.trim() &&
+                Number.isInteger(ref.localOrdinal) && ref.localOrdinal > 0;
+            if (["family-person", "recorded-contact"].includes(ref.kind))
+              return typeof ref.id === "string" && !!ref.id.trim();
+            if (ref.kind === "family-role") return ["spouse", "father", "mother"].includes(ref.role);
+            if (ref.kind === "facility-person")
+              return typeof ref.areaKey === "string" && !!ref.areaKey.trim() &&
+                typeof ref.personId === "string" && !!ref.personId.trim();
+            return false;
+          },
+          invalid = !action || typeof action !== "object" || Array.isArray(action) ||
+            Object.keys(action).some(key => !allowedKeys.has(key)) ||
+            !["record-belief", "resolve-scene", "adjudicate-case", "complete-sentence"].includes(action.action) ||
+            (action.action === "record-belief" &&
+              (!new Set(["infected", "sarkaz"]).has(action.targetGroup) ||
+                !new Set(["hear", "endorse", "reject", "leave-group"]).has(action.behavior) ||
+                typeof action.evidenceId !== "string" || !action.evidenceId.trim() ||
+                typeof action.basis !== "string" || !action.basis.trim() ||
+                (action.delta != null && (!Number.isInteger(action.delta) || action.delta < 0 || action.delta > 30)))) ||
+            (action.action === "resolve-scene" &&
+              (typeof action.scenarioId !== "string" || !action.scenarioId.trim() ||
+                typeof action.kind !== "string" || typeof action.context !== "string" ||
+                typeof action.decision !== "string" || typeof action.outcome !== "string" ||
+                (action.victimRef != null && action.victims != null) ||
+                (action.victimRef != null && !validVictimRef(action.victimRef)) ||
+                (action.victims != null && (!Array.isArray(action.victims) || !action.victims.length || action.victims.length > 16 ||
+                  action.victims.some(ref => !validVictimRef(ref)))) ||
+                (action.victimRef == null && action.victims == null) ||
+                !Array.isArray(action.witnesses) || action.witnesses.some(ref => !ref || typeof ref !== "object" || Array.isArray(ref) ||
+                  Object.keys(ref).some(key => !witnessKeys.has(key)) ||
+                  !["family-role", "family-person", "recorded-contact"].includes(ref.kind) ||
+                  (ref.kind === "family-role" && !["spouse", "father", "mother", "friend", "neighbor"].includes(ref.role)) ||
+                  (ref.kind !== "family-role" && (typeof ref.id !== "string" || !ref.id.trim()))) ||
+                (action.payment != null && (!Number.isSafeInteger(action.payment) || action.payment <= 0 || action.payment > 1000000)) ||
+                (action.followupAfterMonths != null && (!Number.isInteger(action.followupAfterMonths) || action.followupAfterMonths < 1 || action.followupAfterMonths > 24)) ||
+                (action.linkedExecutionIncidentId != null && (typeof action.linkedExecutionIncidentId !== "string" || !action.linkedExecutionIncidentId.trim())))) ||
+            (["adjudicate-case", "complete-sentence"].includes(action.action) &&
+              (typeof action.incidentId !== "string" || !action.incidentId.trim()));
+        if (invalid) W_.push(w + ": 効果「violenceAction」の事件・当事者契約が不正");
+      }
       if(type === "object" && (!f[k] || typeof f[k] !== "object" || Array.isArray(f[k])))
         W_.push(`${w}: 効果「${k}」がオブジェクトではない`);
       if(type === "objectOrArray" && (!f[k] || typeof f[k] !== "object" ||
@@ -113,6 +260,8 @@ function createCatalogFieldChecks(W_, services) {
         W_.push(`${w}: 効果「${k}」が空でない文字列ではない`);
       if(k === "infectionRoute" && !["dust","wound","deep-wound","mixed"].includes(f[k]))
         W_.push(`${w}: 感染経路が不正`);
+      if(k === "catastropheInfectionChance" && (f[k] < 0 || f[k] > 0.05))
+        W_.push(`${w}: 天災後の感染確率は0から5%の範囲ではない`);
       if(k === "debtPlan" && !["frugal","maintain"].includes(f[k]))W_.push(`${w}: 家計再建方針が不正`);
       if (type === "number" && (typeof f[k] !== "number" || !Number.isFinite(f[k])))
         W_.push(`${w}: 効果「${k}」が有限な数値ではない`);

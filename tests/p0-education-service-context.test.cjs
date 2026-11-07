@@ -2,14 +2,18 @@
 const assert=require('node:assert/strict');
 const path=require('node:path'),vm=require('node:vm');
 const annual=require('./support/annual-cases.cjs');
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
+const {installGeneralEmploymentFixture}=require('./support/general-employment-fixture.cjs');
 const root=path.resolve(__dirname,'..');
 const {ctx}=annual.context(root);
+installEmploymentAppointmentFixture(ctx);installGeneralEmploymentFixture(ctx);
 annual.setup(ctx,{id:'p0-education-service',seed:948101,region:'ヴィクトリア',age:8});
 function inspect(age,region,id){
   ctx.__scenario={age,region,id};
   return vm.runInContext(`(()=>{
     const {age,region,id}=__scenario;
     S.age=age;S.year=S.by+age;S.res=REG.find(r=>r.n===region);
+    if(id==='car'&&age===18&&region==='ヴィクトリア')prepareEmploymentAppointmentFixture('car',14,'military-service-entry');
     const scene=EV.find(e=>e.id===id),tagsNow=tags(S);
     return {eligible:elig(scene,S,tagsNow),shown:scene.c.map(c=>({label:c.l,visible:ok(c.show,S,tagsNow),enabled:ok(c.en,S,tagsNow)}))};
   })()`,ctx,{timeout:15000});
@@ -38,13 +42,41 @@ assert.equal(inKazdel.shown.find(c=>c.label==='傭兵団に加わる').visible,t
 const career=vm.runInContext("EV.find(e=>e.id==='car')",ctx);
 const service=career.c.find(c=>c.l==='軍務に志願する'),guard=career.c.find(c=>c.l==='傭兵団に加わる');
 assert.equal(vm.runInContext('J',ctx)[service.o[0][2].job].n,'軍務・兵站','regular army recruitment must not assign mercenary work');
-assert.equal(guard.o[0][2].job,4);
+assert.equal(guard.o[0][2].job,undefined,'completed short guard duty does not create a permanent mercenary job');
+assert.equal(guard.o[0][2].employmentAction?.action,'complete-gig');
+assert.equal(guard.o[0][2].employmentAction?.kind,'short-sentry');
+assert.equal(guard.o[0][2].employmentAction?.nominalCash,120000);
 assert.equal(service.o[0][2].fl?.trauma_war,undefined,'recruitment alone does not establish wartime trauma');
 assert.equal(guard.o[0][2].fl?.trauma_war,undefined,'a completed guard contract alone does not establish trauma');
 assert.equal(service.o[1][2].fl?.trauma_war,1,'the explicit first-battle injury still records trauma');
 function phaseBSchool(id, enrolled, age = 12) {
+  // A flag alone is not a witnessed, reachable classroom. Start a real
+  // enrollment for the pupil so P13 school scenes can verify its campus.
+  annual.setup(ctx,{id:'p0-classroom-'+id+'-'+enrolled,
+    seed:948120,region:'ヴィクトリア',age});
   ctx.__phaseBSchool = {id, enrolled, age};
-  return vm.runInContext('(()=>{ const {id,enrolled,age}=__phaseBSchool; S.age=age; S.year=S.by+age; S.res=REG.find(r=>r.n==="ヴィクトリア"); S.fl.sch=enrolled?1:0; S.ep=0; const scene=EV.find(e=>e.id===id); return {eligible:elig(scene,S,tags(S)),text:typeof scene.t==="function"?scene.t(S):scene.t,education:educationStandingLabel(S)};})()', ctx);
+  return vm.runInContext(`(()=>{
+    const {id,enrolled,age}=__phaseBSchool;
+    S.age=age;S.year=S.by+age;S.mo=4;S.fl.sch=0;S.ep=0;
+    if(enrolled){
+      ensureResidenceIdentity(S);
+      const areaId=ensureEducationWorldForResidence(S);
+      const school=educationRegisterInstitution(S.world.educationWorld,
+        areaId,"p0-confirmed-classroom","general_lower",["lower"],S.year);
+      const offering=S.world.educationWorld.offerings[school.offeringIds[0]];
+      educationStart(S,"lower",1,"p0-classroom-admission");
+      S.educationPath.institutionId=school.id;
+      S.educationPath.campusId=offering.campusId;
+      S.educationPath.offeringId=offering.id;
+      const enrollment=S.educationRecord.enrollments.at(-1);
+      educationBindFormalEnrollment(S,enrollment.id);
+      educationEnsureEnrolledSchoolPeople(S,enrollment.id);
+    }
+    const scene=EV.find(e=>e.id===id),T=tags(S);
+    return {eligible:elig(scene,S,T),
+      text:typeof scene.t==="function"?scene.t(S):scene.t,
+      education:educationStandingLabel(S)};
+  })()`,ctx);
 }
 const outOfSchool = phaseBSchool('bias_peer_mockery', false);
 const inSchool = phaseBSchool('bias_peer_mockery', true);
@@ -72,7 +104,8 @@ for(const outcome of replacement.o){
   assert.equal(outcome[2].fl?.trauma_war,undefined,'training or recruitment without combat cannot establish war trauma');
   assert.equal(outcome[2].fl?.veteran,1,'both service outcomes retain service history');
 }
-assert.equal(vm.runInContext('J',ctx)[replacement.o[0][2].job].n,'軍務・兵站');
+assert.equal(replacement.o[0][2].employmentAction?.kind,'coerced-assignment');
+assert.equal(vm.runInContext('J',ctx)[replacement.o[0][2].employmentAction.jobId].n,'軍務・兵站');
 for(const route of [service,guard])assert.equal(route.o[1][2].fl.veteran,1,'first-duty injury retains the service history');
 assert.equal(guard.o[1][2].fl.trauma_war,undefined,'an unspecified first-duty injury does not prove combat');
 assert.doesNotMatch(olderVeteran.t,/古傷/,'a worker without an injury record must not be assigned an old wound');
@@ -91,7 +124,7 @@ for(const [by,region,home] of [[1000,'カズデル','固定集落'],[1100,'ヴ�
  assert.equal(result.available.visible,true,'school application is presented while a school is available');
  assert.equal(result.available.enabled,true,'an accessible school permits applying');
  assert.equal(result.limited.visible,true,'a disrupted school still shows the application choice');
- assert.equal(result.limited.enabled,false,'a disrupted school disables the application choice');
+ assert.equal(result.limited.enabled,true,'a disrupted school still permits stating the wish to search; enrollment is checked later');
 }
 for(const [eventId,label,outcomeIndex,expectedJob,trauma] of [
  ['car','軍務に志願する',0,'軍務・兵站',false],
@@ -101,14 +134,15 @@ for(const [eventId,label,outcomeIndex,expectedJob,trauma] of [
 ]){
  annual.setup(ctx,{id:'service-outcome',seed:948109,region:'ヴィクトリア',age:18});
  ctx.effectCase={eventId,label,outcomeIndex};
- const outcome=vm.runInContext(`(()=>{const c=EV.find(e=>e.id===effectCase.eventId).c.find(c=>c.l===effectCase.label);ap(c.o[effectCase.outcomeIndex][2]);return {job:occupationLabel(S),trauma:!!S.fl.trauma_war,service:!!S.fl.veteran};})()`,ctx);
+ const outcome=vm.runInContext(`(()=>{const c=EV.find(e=>e.id===effectCase.eventId).c.find(c=>c.l===effectCase.label);if(effectCase.eventId==='car'&&effectCase.outcomeIndex===0)prepareEmploymentAppointmentFixture('car',14,'military-service-entry');ap(c.o[effectCase.outcomeIndex][2]);return {job:occupationLabel(S),trauma:!!S.fl.trauma_war,service:!!S.fl.veteran};})()`,ctx);
  assert.equal(outcome.job,expectedJob,'effect application preserves the declared occupation');
  assert.equal(outcome.trauma,trauma,'only explicit combat injury establishes war trauma');
  assert.equal(outcome.service,true,'service history survives the real effect pipeline');
 }
 annual.setup(ctx,{id:'medical-assistant',seed:948110,region:'クルビア',age:22});
 assert.equal(vm.runInContext(`(()=>{
+ S.fl.uni=1;S.k=50;S.socialLearning||={};S.socialLearning.literacy=60;
  const route=EV.find(e=>e.id==='study_to_work').c.find(c=>c.l==='診療・研究機関の補助職へ応募する');
- ap(route.o[0][2]);return occupationLabel(S);
+ prepareGeneralEmploymentOpeningFixture(20,'p0-medical-assistant');ap(route.o[0][2]);return occupationLabel(S);
 })()`,ctx),'医療補助・薬局手伝い','an assistant appointment must not confer physician/researcher employment');
 console.log('PASS P0 education, local school access, service occupation, combat trauma and retirement boundaries');

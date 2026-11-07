@@ -16,7 +16,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "サルゴン" && s.job === $terraData.REG_JOBS.sar_guard,
+      show: s => s.res?.n === "サルゴン" && $terraData.regionalCareerOnDuty(s, "sar_guard"),
       t: "灼熱の太陽が照りつけるオアシス宮殿の門前で、黄金の彫刻が施された曲刀を手に直立した。隊商の商人や部族の首領たちが平伏しながら通り過ぎる。パーディシャーの冷酷な威光を守るため、砂嵐の中でも油断なく視線を走らせる。",
       c: [
         $terraData.K("交代を終え、冷たい地下水で喉を潤す", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -30,28 +30,31 @@ window.TERRA_DATA_BUILD.fragment(
       id: "car_sar_guard_choice_assassination",
       conf: "S",
       st: ["青年", "壮年"],
-      cd: 4,
+      once: true,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "サルゴン" && s.job === $terraData.REG_JOBS.sar_guard,
-      t: "深夜、宮殿の奥殿から争う物音が響いた。敵対するパーディシャーが放った凄腕のアサシンたちが、寝所へ忍び込んだようだ。曲刀を抜いて単身で奥殿へ駆け込み、主君を救出するか。",
+      show: s => s.res?.n === "サルゴン" && $terraData.regionalCareerOnDuty(s, "sar_guard") &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "sargon-padishah-guard" && ["active", "crisis"].includes(a.status)),
+      t: "深夜、宮殿の奥から短い叫び声と金属のぶつかる音がした。回廊に倒れた衛兵のそばで、夜番の鐘が鳴り始める。寝所へ続く扉は半ば開いたままだった。",
       c: [
-        $terraData.K("扉を蹴破り、曲刀の連撃で刺客たちを斬り伏せる", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+        $terraData.K("寝所へ駆け込み、刺客を迎え撃つ", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
-          "闇の中から飛び出す刺客三人を電光石火の太刀筋で斬り倒し、パーディシャーの命を救った。主君から莫大な黄金と『親衛隊長』の地位を賜った。",
-          { cr: 5, h: 2, p: 3, cash: 2500000 }
+          "暗がりで刃を受け止め、駆けつけた衛兵とともに侵入者を取り押さえた。翌朝、主君から金子と親衛隊長の役目を与えられ、詰所の命令簿に新しい肩書が記された。",
+          { cr: 5, h: 2, p: 3, cash: 2500000,
+            lifeAffiliation: { id: "sargon-padishah-guard", action: "role", role: "親衛隊長", onlyIfActiveOrCrisis: true,
+              note: "寝所への侵入者を取り押さえた功績で隊長役を命じられた" } }
         ], [
           0.8,
-          "主君を救出したものの、毒の塗られた投剣を受けて倒れた。解毒剤で一命を取り留めたが、長い療養を要した。",
-          { h: -8, p: 1, cash: 400000 }
+          "短刀が肩を裂いた。仲間に引きずられて回廊へ戻り、手当てを受ける間も、扉の向こうでは怒号が続いていた。",
+          { h: -8, p: -1 }
         ], [
           1,
-          "刺客の放った毒矢を喉に受け、主君の眼前で倒れて息絶えた。",
+          "衛兵が駆けつけたとき、寝所の扉の前には血が広がっていた。刺客の刃が喉を裂き、最後の息は声にならなかった。",
           { h: -100, d: ["護衛任務での毒殺", "サルゴンの宮廷護衛中、刺客の放った毒矢を喉に受けて息絶えた。"] }
         ]),
-        $terraData.K("警報の銅鑼を打ち鳴らし、大隊の兵を集めて包囲する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
+        $terraData.K("警鐘を鳴らし、衛兵を集める", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
           1,
-          "集まった兵たちで宮殿を封鎖し、刺客を生け捕りにした。",
+          "鐘の音で集まった衛兵が回廊を塞ぎ、窓から逃げようとした侵入者を取り押さえた。夜明けのころには、床に残った血の跡だけが騒ぎを伝えていた。",
           { p: 2, k: 1 }
         ])
       ]
@@ -67,7 +70,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "サルゴン" && s.job === $terraData.REG_JOBS.sar_warrior,
+      show: s => s.res?.n === "サルゴン" && $terraData.regionalCareerOnDuty(s, "sar_warrior"),
       t: "鬱蒼としたジャングルの熱気の中、ティアカの若者たちを集めて素手での組み手稽古をつけた。川から大魚を釣り上げ、焚火で豪快に焼きながら部族の武勇伝を語り合う。力こそが正義であり誇りであるアカフラの日常。",
       c: [
         $terraData.K("川の冷水に飛び込み、仲間と笑い合う", { ethics: { reviewed: true, policyVersion: 87, intent: "self-or-family-care" } }, [
@@ -84,7 +87,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "サルゴン" && s.job === $terraData.REG_JOBS.sar_warrior,
+      show: s => s.res?.n === "サルゴン" && $terraData.regionalCareerOnDuty(s, "sar_warrior"),
       t: "雨林の沼地から、家屋ほどもある巨大な原生生物『大顎猛獣』が現れ、集落の家畜を荒らし始めた。部族の長から討伐の先陣を頼まれた。素手と棍棒だけでこの巨大な怪物を仕留めるか。",
       c: [
         $terraData.K("巨獣の背中に飛び乗り、渾身の打撃を叩き込む", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -118,7 +121,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "サーミ" && s.job === $terraData.REG_JOBS.sam_priest,
+      show: s => s.res?.n === "サーミ" && $terraData.regionalCareerOnDuty(s, "sam_priest"),
       t: "静寂に包まれたサーミの原生林で、雪に覆われた古代樹の幹にルーン文字を刻み込んだ。火に焚べたトナカイの肩甲骨のひび割れを読み、明日の天候と狩場の安全を占う。人々の営みを原始の自然と調和させる日々の務めである。",
       c: [
         $terraData.K("占いの神託を部族の長に伝える", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -135,7 +138,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "サーミ" && s.job === $terraData.REG_JOBS.sam_priest,
+      show: s => s.res?.n === "サーミ" && $terraData.regionalCareerOnDuty(s, "sam_priest"),
       t: "深い瞑想の最中、北方の氷原から漂う『悪魔』の認識汚染の波動が精神を揺るがした。底知れぬ暗黒の甘い囁きが、自己の輪郭を溶かそうと迫る。自然の精霊の加護を強く祈り、自己の精神を保てるか。",
       c: [
         $terraData.K("骨の杖を氷に突き立て、森の全精霊の歌を叫ぶ", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -169,7 +172,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "サーミ" && s.job === $terraData.REG_JOBS.sam_warrior,
+      show: s => s.res?.n === "サーミ" && $terraData.regionalCareerOnDuty(s, "sam_warrior"),
       t: "吐く息が瞬時に凍りつくインフィ氷原の外縁。樹皮に自らの血で描いた境界印の鮮度を点検した。雪の上に残る異様な怪物の足跡。冷たい干し肉を噛み締めながら、北方からの侵食に目を光らせる。",
       c: [
         $terraData.K("雪洞を掘って仮眠を取り、次の哨戒へ備える", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -186,7 +189,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "サーミ" && s.job === $terraData.REG_JOBS.sam_warrior,
+      show: s => s.res?.n === "サーミ" && $terraData.regionalCareerOnDuty(s, "sam_warrior"),
       t: "猛烈な吹雪の中、形を持たぬ漆黒の崩壊体（悪魔の尖兵）が境界を越えて侵入してきた。周囲の空間が歪み、現実が崩れかける中、樹痕の槍を構えて死線へ突撃するか。",
       c: [
         $terraData.K("樹痕の槍に命の炎を灯し、崩壊体の核へ突き刺す", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -220,7 +223,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "イェラグ" && s.job === $terraData.REG_JOBS.kje_karlan,
+      show: s => s.res?.n === "イェラグ" && $terraData.regionalCareerOnDuty(s, "kje_karlan"),
       t: "雪山を貫く鉄路沿いの保線基地で、最新式のアサルトライフルの分解清掃を行った。他国から運ばれてくる工業資材のコンテナを検品する。保守的な三族議会の視線に警戒しながら、シルバーアッシュ議長の近代化政策を現場で支える。",
       c: [
         $terraData.K("点検表にサインし、温かい紅茶を飲む", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -237,13 +240,20 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "イェラグ" && s.job === $terraData.REG_JOBS.kje_karlan,
+      show: s => s.res?.n === "イェラグ" && $terraData.regionalCareerOnDuty(s, "kje_karlan"),
       t: "物資を満載した貨物列車が渓谷の鉄橋に差し掛かった瞬間、伝統派の刺客集団が爆薬を仕掛けて突撃してきた。列車の脱線はイェラグ全土の経済崩壊を招く。銃を連射して敵の爆破工作を阻止するか。",
       c: [
         $terraData.K("屋根の上に這い上がり、狙撃で爆弾の起爆手を討ち取る", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "凍てつく風の中で正確な狙撃を放ち、起爆装置を持つ首領を狙撃。列車を無傷で通過させた。議長直々に銀の懐中時計を贈られ、特務護衛班長へ昇進した。",
-          { cr: 5, p: 3, cash: 1200000 }
+          { cr: 5, p: 3, cash: 1200000,
+            lifeAffiliation: { id: "kjerag-karlan-commercial", action: "role", role: "特務護衛班長",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "kjerag-train-bomb-plot-defense",
+              kind: "defensive-lethal", context: "civilian-defense", decision: "shot-bomb-trigger-carrier",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              deathEvidence: "observed", deathEvidenceId: "bomb-trigger-carrier-killed-at-scene",
+              evidenceIds: ["immediate-attack", "armed-bomb-threat", "direct-defensive-shot", "bomb-trigger-carrier-killed-at-scene"] } }
         ], [
           0.85,
           "敵の銃弾を肩に受けながらも撃退に成功。列車は軽微な被害で済んだ。",
@@ -271,7 +281,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "イェラグ" && s.job === $terraData.REG_JOBS.kje_monk,
+      show: s => s.res?.n === "イェラグ" && $terraData.regionalCareerOnDuty(s, "kje_monk"),
       t: "険しい聖峰の石段に積もった大雪を、鉄のスコップで黙々と掻き分けた。曼珠院の鐘が谷間に重厚に響き渡る。巡礼者たちに温かいバター茶を振る舞い、カランドの巫女の加護を祈りながら山門の警護に就く。",
       c: [
         $terraData.K("鐘楼で夕暮れの読経を行う", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -288,7 +298,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "イェラグ" && s.job === $terraData.REG_JOBS.kje_monk,
+      show: s => s.res?.n === "イェラグ" && $terraData.regionalCareerOnDuty(s, "kje_monk"),
       t: "聖峰の上部で巨大な雪崩が発生し、参道を登っていた大勢の巡礼者が雪の下に呑み込まれた。吹雪が吹き荒れる中、錫杖を手に危険な雪崩斜面へ飛び込み、埋没者の救出に向かうか。",
       c: [
         $terraData.K("錫杖で雪面を突き、埋もれた巡礼者を掘り起こす", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -322,7 +332,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "カズデル" && s.job === $terraData.REG_JOBS.kazdel_mil,
+      show: s => s.res?.n === "カズデル" && $terraData.regionalCareerOnDuty(s, "kazdel_mil"),
       t: "瓦礫の散らばるカズデルの軍営で、大剣の刃を荒砥で研ぎ澄ました。周囲から聞こえる古きサルカズの哀歌と復讐の誓い。千年の迫害に終止符を打つため、他国への遠征に向けた訓練を繰り返す。",
       c: [
         $terraData.K("配給の濃縮源石レーションを噛み砕く", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -339,13 +349,20 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "カズデル" && s.job === $terraData.REG_JOBS.kazdel_mil,
+      show: s => s.res?.n === "カズデル" && $terraData.regionalCareerOnDuty(s, "kazdel_mil"),
       t: "ロンディニウム近郊の平原で、ヴィクトリア模範軍の大口径蒸気砲が唸りを上げた。砲弾が大地を抉る中、軍事委員会突撃隊として敵の砲兵陣地への突入命令が下された。死を恐れぬ猛攻で砲座を奪取するか。",
       c: [
         $terraData.K("大剣を振りかざし、砲煙を突き破って突進する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
-          "猛砲撃の中を駆け抜け、敵の砲兵隊を薙ぎ倒して砲座を制圧した。摂政王テレシスより直々に武勲を称えられ、百人隊長へ昇進した。",
-          { h: -3, p: 4, cr: 4, cash: 800000 }
+          "猛砲撃の中を駆け抜けて砲座を制圧し、敵の砲撃を止めた。砲煙が晴れた後も敵兵の損害は確かめられなかった。摂政王テレシスより直々に武勲を称えられ、百人隊長へ昇進した。",
+          { h: -3, p: 4, cr: 4, cash: 800000,
+            lifeAffiliation: { id: "kazdel-military-commission", action: "role", role: "百人隊長",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "kazdel-major-battle-artillery-assault",
+              kind: "combat-lethal", context: "military", decision: "stormed-artillery-position",
+              outcome: "unresolved", targetGroup: "enemy-artillery-crew",
+              victimRef: { kind: "collective", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-theater", "confirmed-combatant-target", "enemy-casualties-unconfirmed"] } }
         ], [
           0.8,
           "砲撃の爆風で吹き飛ばされ、全身に破片を浴びて倒れた。衛生兵に救助され生き延びた。",
@@ -373,7 +390,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "カズデル" && s.job === $terraData.REG_JOBS.kazdel_bone,
+      show: s => s.res?.n === "カズデル" && $terraData.regionalCareerOnDuty(s, "kazdel_bone"),
       t: "黒煙が燻る工房で、巨大な古獣の骨を赤熱した炉火にかざし、ノミで源石アーツの回路を彫り込んだ。骨に宿る古い記憶と対話しながら、傭兵たちの命を預かる武具や呪具へと仕立て上げる。サルカズの血脈に受け継がれる秘術。",
       c: [
         $terraData.K("完成した骨剣を冷水で焼き入れする", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -390,7 +407,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "カズデル" && s.job === $terraData.REG_JOBS.kazdel_bone,
+      show: s => s.res?.n === "カズデル" && $terraData.regionalCareerOnDuty(s, "kazdel_bone"),
       t: "荒野の古戦場から掘り出された、禍々しい怨念を放つ巨大サルカズの頭蓋骨が持ち込まれた。常人なら触れるだけで狂死する呪物が宿っている。己の全精神を研ぎ澄まし、歴史に残る至高の魔刃へと鍛え上げるか。",
       c: [
         $terraData.K("自らの血を炉に注ぎ、怨念を刃の力へとねじ伏せる", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -424,7 +441,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "イベリア" && s.job === $terraData.REG_JOBS.ibe_inq,
+      show: s => s.res?.n === "イベリア" && $terraData.regionalCareerOnDuty(s, "ibe_inq"),
       t: "海風が吹き抜けるイベリアの寂れた漁村で、住民たちの身元と深海教会の関与がないかを厳しく改めた。手元のランタンの灯火を確かめる。沈黙の海からの脅威を決して見逃さぬよう、静かに目を凝らす。",
       c: [
         $terraData.K("詰所で審問記録をまとめ、報告書を送る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -441,13 +458,15 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "イベリア" && s.job === $terraData.REG_JOBS.ibe_inq,
+      show: s => s.res?.n === "イベリア" && $terraData.regionalCareerOnDuty(s, "ibe_inq"),
       t: "夜更けの海岸線で、波間から無数の恐魚（海の怪物）が這い上がってきた。集落が呑み込まれる寸前である。審問官としてランタンの光を最大出力で解き放ち、剣を抜いて怪物たちの群れへ斬り込むか。",
       c: [
         $terraData.K("ランタンの聖光を浴びせ、刃で怪物を両断する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
           "青白い怪物の群れを一人で斬り伏せ、夜明けまで海岸線を守り抜いた。大審問官からその信仰と剣技を絶賛され、正式な『上級審問官』へ昇進した。",
-          { cr: 5, p: 4, h: -2, cash: 1000000 }
+          { cr: 5, p: 4, h: -2, cash: 1000000,
+            lifeAffiliation: { id: "iberia-inquisition-officer", action: "role", role: "上級審問官",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.8,
           "怪物を撃退したものの、怪物の青い体液を浴びて幻覚と高熱に襲われた。激しい治療の末に生還した。",
@@ -475,7 +494,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "イベリア" && s.job === $terraData.REG_JOBS.ibe_tuner,
+      show: s => s.res?.n === "イベリア" && $terraData.regionalCareerOnDuty(s, "ibe_tuner"),
       t: "絶壁の上にそびえる古代の『光の塔（灯台）』。螺旋階段を登り、塩風で曇った巨大な屈折レンズを丹念に磨き上げた。海へ向けて放たれる光の波長を調律し、海の怪物を遠ざける結界の強度を維持する。",
       c: [
         $terraData.K("アーツ蓄電池の残量を記録する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -492,13 +511,15 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "イベリア" && s.job === $terraData.REG_JOBS.ibe_tuner,
+      show: s => s.res?.n === "イベリア" && $terraData.regionalCareerOnDuty(s, "ibe_tuner"),
       t: "海原から視界を奪う黒い海霧が立ち込め、灯台のレンズに無数の小型恐魚が群がり始めた。レンズの光が途絶えれば、沿岸都市全体が海の怪物の餌食となる。命綱を締めて塔の外壁へ出て、怪物を払い落とすか。",
       c: [
         $terraData.K("暴風雨の外壁に身を乗り出し、工具とアーツで怪物を叩き落とす", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "滑りやすい絶壁の足場を踏みしめ、レンズに群がる怪物をすべて叩き落として灯火を守り抜いた。沿岸航路を救った英雄として表彰され、技師長に任命された。",
-          { cr: 4, p: 3, k: 2, cash: 800000 }
+          { cr: 4, p: 3, k: 2, cash: 800000,
+            lifeAffiliation: { id: "iberia-lantern-tuner", action: "role", role: "技師長",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "怪物の針で手を刺されながらも灯火を復旧した。手の痺れが残ったが一命を取り留めた。",
@@ -526,7 +547,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 19 },
-      show: s => s.res?.n === "ボリバル" && s.job === $terraData.REG_JOBS.bol_soldier,
+      show: s => s.res?.n === "ボリバル" && $terraData.regionalCareerOnDuty(s, "bol_soldier"),
       t: "止まぬ雨に泥水が溜まる塹壕で、錆びたライフルを抱えて歩哨に立った。運ばれてきた薄いスープと塩漬け肉を仲間と奪い合うように分け合う。誰のために戦っているのかも分からぬまま、ただ今日を生き延びる。",
       c: [
         $terraData.K("泥を拭い、湿った毛布に包まる", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -543,13 +564,20 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 21 },
-      show: s => s.res?.n === "ボリバル" && s.job === $terraData.REG_JOBS.bol_soldier,
+      show: s => s.res?.n === "ボリバル" && $terraData.regionalCareerOnDuty(s, "bol_soldier"),
       t: "敵軍の夜間砲撃がやんだ瞬間、司令部から敵の前進基地への突撃命令が下った。泥濘に足を取られる中、照明弾の光が交差する無人地帯を駆け抜ける。生き残るために銃剣を構えて塹壕へ飛び込むか。",
       c: [
         $terraData.K("泥煙を突っ切り、敵の機関銃座へ手榴弾を投げ込む", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
-          "敵の弾幕を掻い潜り、機関銃座の隙間に手榴弾を叩き込んで制圧した。小隊を全滅から救った功績で軍曹へ昇進し、特別報奨金を獲得した。",
-          { cr: 4, h: -2, p: 3, cash: 400000 }
+          "敵の弾幕を掻い潜って機関銃座へ迫り、手榴弾で射撃を止めた。爆煙の向こうの敵兵は見えなくなり、損害を確かめる余裕もなかった。小隊を危機から救った功績で軍曹へ昇進し、特別報奨金を獲得した。",
+          { cr: 4, h: -2, p: 3, cash: 400000,
+            lifeAffiliation: { id: "bolivar-coalition-soldier", action: "role", role: "軍曹",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "bolivar-night-counterattack-unknown-casualties",
+              kind: "combat-lethal", context: "military", decision: "grenade-used-against-machine-gun-position",
+              outcome: "unresolved", targetGroup: "enemy-machine-gun-crew",
+              victimRef: { kind: "collective", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-theater", "confirmed-combatant-target", "enemy-casualties-unconfirmed"] } }
         ], [
           0.8,
           "銃弾が脚を貫通して倒れた。泥水を這いずりながら味方の衛生兵に救助された。",
@@ -577,7 +605,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "ボリバル" && s.job === $terraData.REG_JOBS.bol_dossoles,
+      show: s => s.res?.n === "ボリバル" && $terraData.regionalCareerOnDuty(s, "bol_dossoles"),
       t: "人工ビーチにネオンが輝く歓楽都市ドッソレス。サングラスをかけ、水着姿の富豪たちで賑わうプロムナードをパトロールした。カンデラ市長の絶対支配の下、観光客の笑顔と裏社会の利権が交差する街で秩序を保つ。",
       c: [
         $terraData.K("ビーチサイドで冷たいドリンクを飲み、報告書を書く", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -594,13 +622,15 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "ボリバル" && s.job === $terraData.REG_JOBS.bol_dossoles,
+      show: s => s.res?.n === "ボリバル" && $terraData.regionalCareerOnDuty(s, "bol_dossoles"),
       t: "沖合に停泊する豪華クルーザーで、違法な武器取引と賭博が行われているとの密告が入った。容疑者はドッソレス有力マフィアの幹部である。踏み込んで現行犯逮捕するか、あるいは賄賂を受け取って見逃すか。",
       c: [
         $terraData.K("警棒と拳銃を手に船内へ突入し、マフィア幹部を現行犯逮捕する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "激しい銃撃戦の末に護衛を制圧し、密輸幹部を逮捕。大量の密輸武器を押収した。カンデラ市長から直接激励を受け、警部補へ特進した。",
-          { cr: 5, p: 3, cash: 1000000 }
+          { cr: 5, p: 3, cash: 1000000,
+            lifeAffiliation: { id: "bolivar-dossoles-police", action: "role", role: "警部補",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "逮捕には成功したものの、銃弾を腕に受けて負傷した。犯人の一味から報復の脅迫状が届いた。",
@@ -628,7 +658,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "レム・ビリトン" && s.job === $terraData.REG_JOBS.rim_eng,
+      show: s => s.res?.n === "レム・ビリトン" && $terraData.regionalCareerOnDuty(s, "rim_eng"),
       t: "轟音を響かせて大地を穿つ巨大採掘プラットフォーム。油圧シリンダーの圧力ゲージとドリルの摩耗具合を慎重に測定した。源石鉱脈の爆破掘削を統括し、鉱夫たちの安全と会社の収益を両肩に背負う。",
       c: [
         $terraData.K("整備日誌に署名し、安全操業を確認する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -645,13 +675,15 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "レム・ビリトン" && s.job === $terraData.REG_JOBS.rim_eng,
+      show: s => s.res?.n === "レム・ビリトン" && $terraData.regionalCareerOnDuty(s, "rim_eng"),
       t: "地下数百メートルの最下層坑道で、高濃度の源石ガスが突如噴出した。警報器が狂ったように鳴り響く。遮断弁を手動で締めに行かなければ、坑道全体が誘爆して数百人の鉱夫が生き埋めになる。自ら防護服を着てガスの中へ突入するか。",
       c: [
         $terraData.K("レンチを握り締め、噴出する源石ガスの中へ突入する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "視界ゼロのガス充満地帯を突き進み、高熱のバルブを渾身の力で締め切った。大爆発を食い止め全鉱夫を救った英雄として、鉱山長から最高顧問技師の座を授けられた。",
-          { cr: 5, p: 4, k: 3, cash: 1500000 }
+          { cr: 5, p: 4, k: 3, cash: 1500000,
+            lifeAffiliation: { id: "rim-mining-lead-engineer", action: "role", role: "最高顧問技師",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "バルブの閉鎖には成功したが、防護服が破損して高濃度の粉塵を吸入。鉱石病を発症してしまった。",
@@ -679,7 +711,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "ミノス" && s.job === $terraData.REG_JOBS.min_champ,
+      show: s => s.res?.n === "ミノス" && $terraData.regionalCareerOnDuty(s, "min_champ"),
       t: "青空の下、神殿の白亜の円形闘技場で全身にオリーブ油を塗り、パンクラチオンの組み手稽古に汗を流した。鍛え上げられた筋肉と槍の一突き。神々とポリスの自由のため、自らの肉体を極限まで研ぎ澄ます。",
       c: [
         $terraData.K("泉で汗を流し、市民たちとブドウを食べる", { ethics: { reviewed: true, policyVersion: 87, intent: "self-or-family-care" } }, [
@@ -696,7 +728,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "ミノス" && s.job === $terraData.REG_JOBS.min_champ,
+      show: s => s.res?.n === "ミノス" && $terraData.regionalCareerOnDuty(s, "min_champ"),
       t: "四年に一度の全ミノス大競技会。決勝戦の相手は、前大会無敗の巨漢戦士である。観客席を埋め尽くした数万の市民が固唾を呑んで見守る中、月桂冠とポリスの名誉を賭けた死闘のゴングが鳴った。",
       c: [
         $terraData.K("神速の槍捌きと渾身の足払いで巨漢を打ち倒す", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -730,7 +762,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "ミノス" && s.job === $terraData.REG_JOBS.min_orator,
+      show: s => s.res?.n === "ミノス" && $terraData.regionalCareerOnDuty(s, "min_orator"),
       t: "市民たちが集うアゴラの木陰で、商人同士の水利紛争を公正な法理に基づいて調停した。午後は若者たちに古典哲学と修辞学の講義。声高な暴力ではなく、言葉と理性によってポリスの平和を守る。",
       c: [
         $terraData.K("調停書をアクロポリス文庫に納める", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -747,7 +779,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 23 },
-      show: s => s.res?.n === "ミノス" && s.job === $terraData.REG_JOBS.min_orator,
+      show: s => s.res?.n === "ミノス" && $terraData.regionalCareerOnDuty(s, "min_orator"),
       t: "他国の大使館が裏工作を行い、ミノスの鉱山採掘権を不当に買い叩こうとする議案が市民集会に提出された。買収された議員たちが賛成を煽る中、演壇に立ち、大国の陰謀を白日の下に晒す告発演説を行うか。",
       c: [
         $terraData.K("演壇に登り、圧倒的な論理と情熱で大国の陰謀を糾弾する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [

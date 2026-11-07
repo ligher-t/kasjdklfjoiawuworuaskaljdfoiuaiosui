@@ -1,17 +1,20 @@
 'use strict';
 const path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const {context}=require('./support/presentation-cases.cjs');
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
 const {ctx}=context(path.resolve(__dirname,'..'));
+installEmploymentAppointmentFixture(ctx);
 const run=source=>JSON.parse(vm.runInContext(`JSON.stringify((()=>{${source}})())`,ctx));
 const entered=run(`
  born({seed:107701,by:1077,region:'クルビア'});
  S.year=1100;S.age=23;S.job=0;S.h=75;S.cash=50000;
- const apply=id=>ap(EV.find(e=>e.id===id).c[0].o[0][2]);
+ const apply=id=>id==='sr_rhodes_hiring_review'?applyEmploymentAppointmentFixture(id,28,'rhodes-staff',0,0):ap(EV.find(e=>e.id===id).c[0].o[0][2]);
+ const dueYear=(event,state)=>{const period=scheduledFollowupDuePeriod(event,state);return period===null?null:Math.floor((period-1)/12);};
  apply('sr_rhodes_recruitment_contact');S.sn.sr_rhodes_recruitment_contact=S.year;
  const review=EV.find(e=>e.id==='sr_rhodes_hiring_review');
- const before=scheduledFollowupDueYear(review,S);
+ const before=dueYear(review,S);
  S.year++;S.age++;
- const due=scheduledFollowupDueYear(review,S);
+ const due=dueYear(review,S);
  apply('sr_rhodes_hiring_review');S.sn.sr_rhodes_hiring_review=S.year;
  S.year++;S.age++;apply('sr_rhodes_posting_review');
  const T=tags(S);

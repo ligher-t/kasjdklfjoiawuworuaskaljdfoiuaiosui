@@ -30,11 +30,7 @@ function childHouseholdFinances(s, costPm, regionPm = s.res.pm) {
       living += P("economy.adultChildSharedHousingAnnualCost") * share * childCostPm;
     }
     if (child.inf && dependent && (child.tx || child.careSupport !== 0)) {
-      const careBase =
-        P(child.tx ? "economy.childInfectionTreatmentAnnualCost" : "economy.childInfectionCareAnnualCost") *
-        infectionCareTravelCostScale(s) *
-        share *
-        childCostPm;
+      const careBase = childAnnualMedicalExpense(s, child, !!child.tx, costPm);
       care += careBase;
       living += careBase;
     }
@@ -42,9 +38,9 @@ function childHouseholdFinances(s, costPm, regionPm = s.res.pm) {
       education += P("economy.adultChildStudyAnnualCost") * share * childCostPm;
     if (dependent && child.householdStatus === "working" && Number.isInteger(child.jobId) && J[child.jobId])
       income +=
-        ((J[child.jobId].pay * localPm) / (s.res?.pm || 1)) *
-        regionPm *
-        (s.priceIndex || 1) *
+        dependentEmploymentAnnualIncome(s, child, s.year, {
+          jobId: child.jobId, region: child.region || s.res.n
+        }) *
         P("economy.childHouseholdContributionShare") *
         share;
     if (child.householdStatus === "independent" && child.remittanceAnnual > 0)
@@ -61,6 +57,31 @@ function childHouseholdFinances(s, costPm, regionPm = s.res.pm) {
     divorceSupport,
     careTravel: infectionCareTravelPortion(care, s)
   };
+}
+// The former spouse's current cash balance is not modeled, so record matching remittance receipts without inventing assets.
+function recordDivorceChildSupportPayments(s) {
+  for (const child of s.kids || []) {
+    if (
+      child.d ||
+      s.year - child.by >= P("life.adultStartAge") ||
+      child.householdResidencePlan !== "former_support" ||
+      child.divorceSupportPaidYear === s.year
+    ) continue;
+    const recipient = formerSpouseForChild(s, child);
+    if (!recipient || formerSpouseDeathKnown(recipient)) continue;
+    const amount = divorceChildSupportAnnualCost(s, child),
+      transactionId = `${child.id}::divorce-support::${s.year}`,
+      receipt = { year: s.year, amount, transactionId, childId: child.id, fromId: "player", recipientId: recipient.id };
+    child.divorceSupportPaidYear = s.year;
+    child.divorceSupportPaidAmount = amount;
+    child.divorceSupportPaidTotal = (child.divorceSupportPaidTotal || 0) + amount;
+    child.divorceSupportReceipts || (child.divorceSupportReceipts = []);
+    child.divorceSupportReceipts.push(receipt);
+    child.divorceSupportReceipts = child.divorceSupportReceipts.slice(-16);
+    recipient.childSupportReceipts || (recipient.childSupportReceipts = []);
+    recipient.childSupportReceipts.push({ ...receipt });
+    recipient.childSupportReceipts = recipient.childSupportReceipts.slice(-16);
+  }
 }
 function adultChildVisitRoute(
   s,
@@ -105,11 +126,9 @@ function adultChildReturnAnnualCost(s, child) {
   );
 }
 function adultChildReturnRoomSetupAffordable(s, child) {
-  return (
-    !!child &&
-    Number.isFinite(child.by) &&
-    moveFunds(s) >= adultChildReturnRoomSetupCost(s) + annualCashReserve(s)
-  );
+  if (!child || child.d || !Number.isFinite(child.by)) return false;
+  if (Number.isFinite(child.returnRoomSetupYear)) return true;
+  return moveFunds(s) >= adultChildReturnRoomSetupCost(s) + annualCashReserve(s);
 }
 function siblingVisitRoute(
   s,
@@ -139,7 +158,8 @@ function childFutureContext(s,child) {
     s.year-child.by>=18]);
 }
 const childForEvent = (s, id) => {
-  const children = (s.kids || []).filter(x => !x.d);
+  const children = (s.kids || []).filter(x => !x.d &&
+    !(typeof violencePersonContactBlocked === "function" && violencePersonContactBlocked(s, x)));
   if (id === "family_child_exposure_followup")
     return (
       children
@@ -175,14 +195,20 @@ const childForEvent = (s, id) => {
     const grown = children.filter(
       x => s.year - x.by >= 18 && (x.contactReviewYear == null || x.contactReviewYear <= s.year)
     );
+    // Eligibility, choice display, and dispatch must agree on the same child.
+    const stable = candidates => {
+      if (!candidates.length) return null;
+      const sorted = candidates.slice().sort((a, b) => String(a.id).localeCompare(String(b.id)));
+      return sorted[((s.year % sorted.length) + sorted.length) % sorted.length];
+    };
     const moved = grown.filter(x => (x.moveHistory?.length || 0) > (x.knownMoveCount || 0));
-    if (moved.length) return pick(moved);
+    if (moved.length) return stable(moved);
     const request = grown.filter(x => Number.isFinite(x.returnRequestYear));
-    if (request.length) return pick(request);
+    if (request.length) return stable(request);
     const pending = grown.filter(x => Number.isFinite(x.returnOfferYear));
-    if (pending.length) return pick(pending);
+    if (pending.length) return stable(pending);
     const supported = grown.filter(x => (x.remittanceAnnual || 0) > 0);
-    return supported.length ? pick(supported) : grown.length ? pick(grown) : null;
+    return stable(supported.length ? supported : grown);
   }
   if (id === "adult_child_memory" || id === "life_personal_wishes") {
     const grown = children.filter(x => s.year - x.by >= 18);
@@ -215,6 +241,7 @@ function adultChildEmergencyAidCost(s) {
 function adultChildEmergencyAidAffordable(s, child = childForEvent(s, "adult_child_contact")) {
   const row = child?.budgetHistory?.at(-1);
   return (
+    child?.householdStatus === "independent" &&
     !!row &&
     Number.isFinite(row.net) &&
     row.net < 0 &&
@@ -249,6 +276,8 @@ function advanceIndependentChildLives(s) {
       from = child.region;
     child.region = destination.n;
     child.jobId = job;
+    recordDependentEmployment(s, child, {jobId: job, region: destination.n,
+      source: "independent-child-work-and-move", kind: "background-livelihood"});
     child.moveHistory || (child.moveHistory = []);
     child.moveHistory.push({ year: s.year, from, to: destination.n, jobId: job, cause: "仕事や暮らしの縁" });
     child.returnOfferYear = null;
@@ -272,13 +301,15 @@ function advanceIndependentChildBudgets(s) {
     if (child.budgetHistory.some(row => row.year === s.year)) continue;
     const priceIndex = Math.max(0.1, s.priceIndex || 1),
       job = Number.isInteger(child.jobId) ? J[child.jobId] : null,
-      income = job ? Math.max(0, job.pay || 0) * region.pm * (1 + (priceIndex - 1) * 0.65) : null,
+      income = job ? dependentEmploymentAnnualIncome(s, child, s.year, {
+        jobId: child.jobId, region: region.n, priceIndex
+      }) : null,
       living =
         Math.max(P("economy.minimumExpenseBase"), EXP[child.budgetExpenseTier] || EXP[2]) *
         region.pm *
         priceIndex,
       support =
-        Math.max(0, child.remittanceAnnual || 0) * s.res.pm * priceIndex +
+        Math.max(0, child.remittanceAnnual || 0) * s.res.pm * priceIndex * localityLivingMultiplier(s) +
         (child.aidTransfers || [])
           .filter(transfer => transfer.year === s.year)
           .reduce((sum, transfer) => sum + transfer.amount, 0),

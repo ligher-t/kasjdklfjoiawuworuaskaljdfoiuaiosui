@@ -1,4 +1,5 @@
 function renderLocalityPanel(s, services) {
+  renderTravelControls(s, services);
   const regionMetrics = services.localityStateView(s);
   const meter = services.document.getElementById("locality-meter");
   if (meter && regionMetrics)

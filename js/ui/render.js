@@ -6,6 +6,7 @@ const cnt = k => {
 function sts() {
   if (HL) return;
   $("stt").textContent = !S || S.dead ? "" : S.ev ? "選択待ち" : SPD[sp] ? "進行中" : "停止中";
+  if(S?.importantNotificationPause&&!S.dead&&!S.ev)$("stt").textContent="停止中："+({"parent-death":"家族の訃報","family-death":"家族の訃報","diagnosis":"診断の知らせ","school-interruption":"学びの継続についての知らせ"}[S.importantNotificationPause.kind]||"重要な知らせ");
   $("stt").dataset.flow = !S || S.dead ? "ended" : S.ev ? "waiting" : SPD[sp] ? "running" : "paused";
   const progressControls = document.getElementById("terminal-progress");
   if (progressControls) progressControls.hidden = !!S?.dead;
@@ -105,6 +106,7 @@ function rd() {
   renderEconomyPanel(s, services);
   renderTagsAndHealthPanel(s, services);
   renderLocalityPanel(s, services);
+  renderEducationPanel(s);
   renderLifeAndKnowledgePanel(s, services);
   renderControlsPanel(s, services);
   renderSocialPanel(s, services);
@@ -123,6 +125,7 @@ function play(n, source = "system") {
   // Explicit speed changes override the auto-resume of the record room.
   if (source === "user" && typeof TERMINAL_LEDGER !== "undefined" && TERMINAL_LEDGER)
     TERMINAL_LEDGER.resumeSpeed = null;
+  if(n>0&&S)delete S.importantNotificationPause;
   sp = n;
   sts();
   document

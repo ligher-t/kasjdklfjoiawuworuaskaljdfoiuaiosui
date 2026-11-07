@@ -16,6 +16,12 @@
 
 ---
 
+## 雇用・職業・生計モデル（実装前統合設計）
+
+- **[統合設計書 v3.0](docs/employment/TERRA_EMPLOYMENT_INTEGRATED_DESIGN_V3_20261105.md)**：W00〜W12と会話ログの雇用設計を統合した今後の実装入口。19地域、職場生成、83職業、採用・職歴・家計、イベント・UX、移行・受入を規定。
+- [66組織のプレイヤー採用可否](docs/employment/EMPLOYER_PLAYER_ACCESS_POLICY_66_20261105.json)：ペンギン急便・リー探偵事務所等の新規雇用規約。
+- [v3追加受入28ケース](docs/employment/V3_EMPLOYMENT_ACCESS_UX_ACCEPTANCE_20261105.json)／[既存107ケース](docs/employment/W10_INTEGRATION_ACCEPTANCE_107_CASES_20261104.json)：採用禁止、選択負荷、家計、移動、旧セーブの設計上の完了基準。現行ゲームコードへの適用は未着手。
+
 ## 実装の見取り図
 
 | 場所 | 役割 |

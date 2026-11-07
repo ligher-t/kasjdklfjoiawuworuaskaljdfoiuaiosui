@@ -150,14 +150,18 @@ function auditCareAndWorkplaceState(s, problems, services = STATE_AUDIT_SERVICES
         p =>
           !p.id ||
           !p.facilityId ||
-          !area.facilities?.[p.facilityId] ||
+          (!area.facilities?.[p.facilityId] && !(p.kind === "workplace" &&
+            s.world?.occupationWorld?.sites?.[p.facilityId]?.siteId === p.facilityId &&
+            typeof s.world.occupationWorld.sites[p.facilityId].areaId === "string" &&
+            !!s.world.occupationWorld.sites[p.facilityId].areaId)) ||
           !Number.isInteger(p.by) ||
           !Number.isInteger(p.metYear) ||
           p.metYear > s.year ||
           !Number.isInteger(p.lastUpdatedYear) ||
           p.lastUpdatedYear > s.year ||
-          !["working", "away", "left"].includes(p.actualStatus) ||
-          !["working", "away", "left"].includes(p.knownStatus) ||
+          !["working", "away", "left", "dead"].includes(p.actualStatus) ||
+          !["working", "away", "left", "dead"].includes(p.knownStatus) ||
+          (p.actualStatus === "dead" && (!Number.isInteger(p.deathYear) || p.deathYear > s.year || !p.deathCause)) ||
           p.lastKnownYear > p.lastUpdatedYear ||
           !Array.isArray(p.history) ||
           p.history.length > 16 ||
@@ -224,7 +228,8 @@ function auditCareAndWorkplaceState(s, problems, services = STATE_AUDIT_SERVICES
     problems.push("施設在籍履歴が不正");
   if (
     s.siteAffiliations?.workplace &&
-    (!s.job ||
+    (!s.job || !currentPlayerEmployment(s) ||
+      currentPlayerEmployment(s).siteId !== s.siteAffiliations.workplace.facilityId ||
       String(s.job) !== s.siteAffiliations.workplace.extra ||
       s.siteAffiliations.workplace.areaKey !== s.community?.key)
   )
@@ -234,7 +239,17 @@ function auditCareAndWorkplaceState(s, problems, services = STATE_AUDIT_SERVICES
     (!s.job ||
       s.workContract.status !== "active" ||
       s.workContract.jobId !== s.job ||
-      s.workContract.siteId !== s.siteAffiliations?.workplace?.facilityId ||
+      (s.workContract.basis === "occupation-episode"
+        ? !s.employmentState?.episodes?.some(row =>
+            row.status === "active" &&
+            row.episodeId === s.employmentState.activeEpisodeId &&
+            row.episodeId === s.workContract.episodeId &&
+            row.siteId === s.workContract.siteId &&
+            row.jobId === s.job &&
+            row.startYear === s.workContract.startYear &&
+            s.world?.occupationWorld?.sites?.[row.siteId]?.siteId === row.siteId &&
+            s.world?.occupationWorld?.positions?.[row.positionId]?.siteId === row.siteId)
+        : true) ||
       !Number.isInteger(s.workContract.startYear) ||
       s.workContract.startYear > s.year ||
       s.workContract.wagePremium < 0 ||

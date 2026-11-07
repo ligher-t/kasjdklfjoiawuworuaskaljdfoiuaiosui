@@ -29,9 +29,11 @@ function settleAnnualPersonalCash(s, services, amounts, a) {
     veteranPension,
     inc
   } = amounts;
+  const prepaidEmploymentIncome = amounts.prepaidEmploymentIncome || 0,
+    cashIncome = Math.max(0, inc - prepaidEmploymentIncome);
   let insuranceCost = 0;
   if (s.fl.insured && s.insurancePaidYear !== s.year) {
-    if (s.cash + inc - essentialWithCoverage >= annualInsurance) {
+    if (s.cash + cashIncome - essentialWithCoverage >= annualInsurance) {
       insuranceCost = annualInsurance;
       s.insurancePaidYear = s.year;
     } else {
@@ -65,7 +67,7 @@ function settleAnnualPersonalCash(s, services, amounts, a) {
       siblingCareSupportCost +
       familyCareCost +
       insuranceCost,
-    net = inc - ex - tc - adultParentTreatmentCost;
+    net = cashIncome - ex - tc - adultParentTreatmentCost;
   let unfundedDeficit = 0;
   if (net >= 0) {
     if (typeof updateLoanContractStatuses === "function") updateLoanContractStatuses(s);
@@ -102,20 +104,14 @@ function settleAnnualPersonalCash(s, services, amounts, a) {
       }
       if (currentDebt >= MAX_PERSONAL_DEBT || unfundedDeficit > 0) {
         s.h = Math.max(0, (s.h || 0) - 2);
-        s.p = Math.max(0, (s.p || 0) - 3);
+        changeWellbeing(s,'p',-3);
         if (s.fl?.tx && tc > 0) {
           s.fl.tx = 0;
         }
       }
     }
   }
-  const supportIncome =
-      s.fl.retired || (!s.job && a >= services.P("economy.employmentAgeLimit"))
-        ? Math.max(
-            0,
-            inc - childHouseholdIncome - spouseHouseholdContribution - veteranPension
-          )
-        : 0,
+  const supportIncome = amounts.publicSupport || 0,
     annualFlow = {
       year: s.year,
       income: {
@@ -149,11 +145,10 @@ function settleAnnualPersonalCash(s, services, amounts, a) {
         familyCare: familyCareCost,
         ...(unfundedDeficit > 0 ? { unfundedDeficit } : {})
       },
-      net
+      net: inc - ex - tc - adultParentTreatmentCost,
+      prepaidEmploymentIncome
     };
-  const educationTuition = s.educationAnnualFee?.year === s.year ?
-    (s.educationAnnualFee.paidByPersonal ??
-     (s.educationAnnualFee.payer === "personal" ? s.educationAnnualFee.amount : 0)) : 0;
+  const educationTuition=educationAnnualOutflow(s,s.year,"personal");
   if(educationTuition){
     annualFlow.expense.education = educationTuition;
     annualFlow.net -= educationTuition;

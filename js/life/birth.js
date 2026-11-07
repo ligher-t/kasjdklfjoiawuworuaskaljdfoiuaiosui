@@ -1,3 +1,13 @@
+function birthLocalityWeightPool(options, weights) {
+  const pool = options.map(opt => {
+    const raw = weights[opt.n];
+    return { n: opt.n, w: raw === 0 ? 0 : Math.max(1, raw ?? 1) };
+  });
+  if (pool.some(opt => opt.w > 0)) return pool;
+  // An impossible all-zero override falls back to the original locality table.
+  const base = options.map(opt => ({ n: opt.n, w: Math.max(0, opt.w ?? opt.p ?? 0) }));
+  return base.some(opt => opt.w > 0) ? base : options.map(opt => ({ n: opt.n, w: 1 }));
+}
 function pickBirthLocalityKind(home, g, w, par, care) {
   const isMobile = home === "移動都市";
   const options = isMobile ? SIM_TABLES.locality.mobile : SIM_TABLES.locality.fixed;
@@ -34,7 +44,7 @@ function pickBirthLocalityKind(home, g, w, par, care) {
       weights["移動都市の周縁区"] = 25;
       weights["移動都市の避難・労働区画"] = 75;
     }
-    pool = options.map(opt => ({ n: opt.n, w: Math.max(1, weights[opt.n] || 1) }));
+    pool = birthLocalityWeightPool(options, weights);
   } else {
     const weights = {
       "固定都市の街区": [5, 15, 40, 65, 80][wi],
@@ -61,12 +71,13 @@ function pickBirthLocalityKind(home, g, w, par, care) {
       weights["固定都市の街区"] = 0;
       weights["辺境・移動の多い居住地"] += 50;
     }
-    pool = options.map(opt => ({ n: opt.n, w: Math.max(1, weights[opt.n] || 1) }));
+    pool = birthLocalityWeightPool(options, weights);
   }
   return wp(pool).n;
 }
 
 function born(birth = {}) {
+  if (!HL) cancelEndingPeerComparison();
   seedLifeRandom(birth.seed);
   const requestedBirthYear = Number(birth.by),
     birthYear = Number.isInteger(requestedBirthYear) && requestedBirthYear >= BIRTH_YEAR_MIN && requestedBirthYear <= BIRTH_YEAR_MAX
@@ -257,6 +268,7 @@ function born(birth = {}) {
     socialConflict: null,
     socialAftermath: null,
     personTies: null,
+    violenceState: createViolenceState(),
     closeKnowledge: null,
     infectionAwareness: null,
     infectionWorkplace: null,
@@ -348,12 +360,20 @@ function born(birth = {}) {
     hd: {},
     cn: { g: 0, b: 0, n: 0 },
     majorEventMonth: null,
+    minorEventMonth: null,
     textDeck: {},
     trace: [],
     dataFingerprintAtBirth: DATA_FINGERPRINT,
     sourceFingerprintAtBirth: SOURCE_FINGERPRINT
   });
+  S.raceProfile = createRaceProfile(S.r);
+  S.artsProfile = createArtsProfile(S.ar);
+  S.artsEquipment = createArtsEquipmentState();
   ensureLocalityState(S);
+  initializeLifeSystems(S);
+  ensureEducationWorldForResidence(S);
+  educationCreateMobilityState(S);
+  educationReconcileWorldAt(S,S.year,S.mo??0);
   ensureIdentity(S, {
     // 公式の民族人口比ではない。地域の家の伝承を独立抽選し、種族では確定させない。
     affiliation:
@@ -390,12 +410,17 @@ function born(birth = {}) {
   initializeSocialClass(S);
   initializeCareNetworkPeople(S);
   assignRelativeIds(S);
+  playerEmploymentState(S);
+  for (const parent of Object.values(S.par)) if (parent && !parent.d)
+    recordDependentEmployment(S, parent, {jobId:parent.j,region:S.res.n,
+      source:"family-background-at-birth",kind:"background-livelihood",month:1});
   advanceRelativeMilestones(S);
   if (S.inf) {
     S.ob = rnd(P("infection.diagnosisRollMin"), P("infection.diagnosisRollMax"));
     S.ac = R() < P("infection.acuteShare");
     S.infection = { year: S.year, cause: "出生時から保有（結晶曝露の経路未記録）" };
   }
+  S.playSettings=newLifePlaySettings();
   acc = 0;
   replaceWorldKnowledge(S.known);
   const birthPlace = `${g.n}${local.city ? `・${local.city}` : ""}`;
@@ -413,6 +438,7 @@ function born(birth = {}) {
       `テラ暦${birthYear}年、${birthPlace}に${S.r.n}の${S.sx === "男" ? "男の子" : "女の子"}として生まれた。家庭の経済状況は「${w.n}」。気質は「${t.n}」。`
     );
   }
+  educationSynchronizeDependents(S);
   recordTrace("birth", null, { text: `テラ暦${birthYear}年、${birthPlace}に生まれた。` });
   hist();
   sched();

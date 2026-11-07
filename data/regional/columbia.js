@@ -8,6 +8,15 @@ window.TERRA_DATA_BUILD.run("regional/columbia", function ($terraData, $define, 
     choice.ethics = { intent, target: null, reviewed: true, policyVersion: 87 };
     return choice;
   }
+  // This regional phase precedes the BSW route helper registration.
+  // The resolved appointment still uses the same affiliation and career goal.
+  const bswAppointment = (jobId, role) => ({
+    job: jobId,
+    lifeAffiliation: { id: "bsw-contract", title: "ブラックスチール・ワールドワイド",
+      kind: "employer", action: "join", role },
+    lifeGoal: { id: "bsw-work", title: "民間軍事会社BSWでプロとしての契約を果たす",
+      priority: "生業", action: "start", preserveAchievement: true }
+  });
 
   // --- クルビア（Columbia）日常イベント 60件 ---
   const columbiaDaily = [];
@@ -296,26 +305,18 @@ window.TERRA_DATA_BUILD.run("regional/columbia", function ($terraData, $define, 
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:クルビア", "就労中"],
-      show: s => s.job > 0 && /ライン生命|研究|医師|医療|技師|バイオ/.test($terraData.J[s.job]?.n || ""),
+      show: s => !!employmentEventWorksite(s, "research-records"),
       w: 0.75,
       cd: 10,
-      t: [
-        {
-          when: s => /ライン生命/.test($terraData.J[s.job]?.n || ""),
-          t: "配属先のライン生命のバイオ研究セクションで、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監査局かマスコミへ告発するか迫られた。"
-        },
-        {
-          t: "勤め先のバイオ研究所で、感染者の被験者を使い捨てにする非人道的な生体実験の極秘データを目にしてしまった。隠蔽工作が進む中、州の監査局かマスコミへ告発するか迫られた。"
-        }
-      ],
+      t: "配属先で扱う被験者の記録に、実験後の深刻な障害と、本人への説明を省いた処置が残っていた。記録の回収を命じる連絡が回るなか、手元の写しを誰へ託すか、机の前で考え込んだ。",
       c: [
         K("証拠データを持ち出し、大手新聞社と連邦保安局へ告発する", { intent: "oppose-exclusion", en: { ge: { cr: 45 } }, why: "企業の暗殺部隊に消される恐怖に打ち勝てない。" },
-          [0.75, "新聞の一面を飾る大スクープとなり、悪徳研究所は強制捜査で解体。多くの被験者を救い出し、歴史に名を残す内部告発者となった。", { cr: 8, p: 7, rl: 5 }],
-          [1, "警備部隊に脱出を察知され、追跡を受けて負傷。データは奪われ、指名手配される羽目になった。", { h: -20, p: -8, job: 0 }]),
+          [0.75, "資料を受け取った記者が被験者や家族への取材を始め、監査側からも照会が届いた。廊下には張り詰めた声が響いたが、どこまで明らかになるかはまだ分からなかった。", { employmentAction: { action: "site-incident", kind: "research-investigation", incident: "investigation-opened" }, cr: 8, p: 7, rl: 5 }],
+          [1, "資料の持ち出しを警備員に察知され、追跡を受けて負傷した。写しは奪われ、その職場には戻れなくなった。", { employmentAction: { action: "site-incident", kind: "research-investigation", incident: "evidence-seized", terminate: true }, h: -20, p: -8 }]),
         K("匿名で告発データを情報通信網へ放流し、自らは平静を装う", { intent: "caution", en: { ge: { k: 35 } }, why: "電子的な追跡を遮断する通信回路の専門知識がない。" },
-          [1, "身元を巧みに隠して都市の世論を激震させ、研究所を社会的制裁に追い込んだ。自らは安全に退職した。", { k: 3, p: 4, job: 0 }]),
+          [1, "匿名の窓口へ資料を渡し、職場へ退職を申し出た。照会番号を記した紙をしまい、荷物をまとめた。捜査の行方や、自分の身元が守られるかまでは見通せなかった。", { employmentAction: { action: "site-incident", kind: "research-investigation", incident: "anonymous-report", terminate: true }, k: 3, p: 4 }]),
         K("関われば命がないと悟り、データを消去して黙認する", { intent: "withdrawal" },
-          [1, "恐怖に屈して目を伏せた。安全は守られたが、良心の呵責に苛まれ続けた。", { p: -4 }])
+          [1, "手元の写しを消し、何も見なかったように席へ戻った。呼び出しはなかったが、記録にあった人々の名が頭から離れなかった。", { employmentAction: { action: "site-incident", kind: "research-investigation", incident: "copy-destroyed" }, p: -4 }])
       ]
     },
     // 4. 新型ドローンの暴走事故の緊急停止
@@ -366,16 +367,17 @@ window.TERRA_DATA_BUILD.run("regional/columbia", function ($terraData, $define, 
       st: ["青年", "壮年"],
       need: ["国:クルビア"],
       ban: ["ロドス本艦居住", "ロドス職員として活動中"],
-      show: s => !s.fl?.rhodes && !s.fl?.rhodes_landship,
+      show: s => !s.fl?.rhodes && !s.fl?.rhodes_landship &&
+        [36, 37].some(jobId => assessEmploymentAppointment(s, { jobId, affiliationId: "bsw-contract", sourceEventId: "choice_columbia_06" }).canApply),
       w: 0.75,
       cd: 8,
-      t: "大手民間軍事会社BSWが、新兵の射撃と近接戦闘を指導する特別インストラクターの選抜試験を実施していた。教官に採用されれば高額年俸と最高ランクの福利厚生が付与される。",
+      t: "BSW本艦の試験場で、射撃と近接戦闘を指導する教官や、演習の分析担当の募集説明を聞いた。審査を通れば、担当業務と報酬を確認して契約できるという。訓練場の標的を眺め、自分の経験を生かせるか考えた。",
       c: [
-        K("模擬実戦試験に臨み、圧倒的な戦術技能と気迫を見せつける", { intent: "procedure", en: { ge: { cr: 45, h: 60 } }, why: "プロの傭兵を凌駕する実戦技能がない。" },
-          [0.8, "試験官を完璧に制圧し、満場一致で専属インストラクターに合格。破格の契約金と高給を手に入れた。", { cash: 90000, cr: 8, p: 6 }],
+        K("実戦技能の試験を受け、合格なら教官の勤務条件に署名する", { intent: "procedure", show: s => assessEmploymentAppointment(s, { jobId: 37, affiliationId: "bsw-contract", sourceEventId: "choice_columbia_06" }).canApply, en: { ge: { cr: 45, h: 60 } }, why: "訓練を指導するための体力と実戦技能が足りない。" },
+          [0.8, "射撃と模擬戦の審査を通過し、教官として担当する訓練と報酬の説明を受けた。契約に署名して支度金を受け取り、次の訓練日の予定を手帳に書いた。", { ...bswAppointment(37, "BSW戦術教官"), cash: 90000, cr: 8, p: 6 }],
           [1, "激しいスパーリングで肋骨を痛めて惜しくも不合格。だが高い戦術経験値を得た。", { h: -12, p: 1, cr: 3 }]),
-        K("戦術シミュレーターのデータ分析官の採用試験に切り替える", { intent: "information", en: { ge: { k: 35 } }, why: "データ分析と戦術理論の素養がない。" },
-          [1, "優れた戦術理論を高く評価され、後方の戦術アナリストとして採用された。手堅い高給を得た。", { cash: 50000, k: 2, p: 3 }]),
+        K("分析担当の審査を受け、勤務条件を確かめて契約する", { intent: "procedure", show: s => assessEmploymentAppointment(s, { jobId: 36, affiliationId: "bsw-contract", sourceEventId: "choice_columbia_06" }).canApply, en: { ge: { k: 35 } }, why: "データ分析と戦術理論の素養がない。" },
+          [1, "演習データの読み取りと報告書の審査を終え、後方の分析担当として契約した。支度金を受け取り、机に積まれた訓練記録へ目を通し始めた。", { ...bswAppointment(36, "BSW戦術分析担当"), cash: 50000, k: 2, p: 3 }]),
         K("軍事企業への応募は見合わせる", { intent: "withdrawal" },
           [1, "民間の平和な仕事に専念することを選んだ。", { p: 1 }])
       ]

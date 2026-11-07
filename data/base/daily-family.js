@@ -117,7 +117,7 @@ window.TERRA_DATA_BUILD.run("base/daily-family", function ($terraData, $define, 
           ]
         ),
         $terraData.K(
-          "寝床を整えて家に迎える（準備費{grownKidReturnRoomCost}）",
+          "寝床を整えて家に迎える（未準備なら{grownKidReturnRoomCost}）",
           {
             show: s => $rules.compatibility.tags(s).has("対象の子から帰宅相談中"),
             en: s =>
@@ -129,7 +129,7 @@ window.TERRA_DATA_BUILD.run("base/daily-family", function ($terraData, $define, 
           },
           [
             1,
-            "{grownKid}の頼みを受け入れ、{grownKidReturnRoomCost}で寝床や身の回りを整えて再び同じ屋根の下に迎えた。家事や暮らしの分担は、顔を合わせながら少しずつ決めていけばいい。",
+            "{grownKid}の頼みを受け入れ、寝床や身の回りを整えて再び同じ屋根の下に迎えた。家事や暮らしの分担は、顔を合わせながら少しずつ決めていけばいい。",
             { childContact: "return", childReturnRoomSetup: 1, rl: 4, p: 2 }
           ]
         ),
@@ -174,7 +174,17 @@ window.TERRA_DATA_BUILD.run("base/daily-family", function ($terraData, $define, 
           1,"子の{grownKid}に宛てて、自分が使ってきた仕事道具や書きつけをどうするか家族で話し合ってほしいと手紙にしたためた。封をして、大切な品と一緒に引き出しの奥へしまった。",
           {personalWishes:{kind:"written",content:"仕事道具と帳面の扱いを家族で相談してほしい。"}}
         ]),
-        $terraData.K("折を見て言葉で伝え、書き置きは残さない",{},[
+        $terraData.K("折を見て言葉で伝え、書き置きは残さない",{
+          show: s => {
+            const child = (s.kids || []).find(row => row.id === s.eventRelativeId && !row.d);
+            return !!child && (
+              child.contactState === "regular" ||
+              (child.householdStatus !== "independent" &&
+                !["former", "former_support", "unresolved"].includes(child.householdResidencePlan) &&
+                !["paused", "ended"].includes(child.contactState))
+            );
+          }
+        },[
           1,"子の{grownKid}と顔を合わせた折に、道具や書きつけのことは好きに相談して決めてくれと直接伝えた。堅苦しい書き置きは残さず、あとは残る家族に任せることにした。",
           {personalWishes:{kind:"not-written"}}
         ])
@@ -187,10 +197,18 @@ window.TERRA_DATA_BUILD.run("base/daily-family", function ($terraData, $define, 
       need: ["成人した子あり"],
       cd: 9,
       w: 0.5,
-      t: [
-        "片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひらで転がした。",
-        "ふとした拍子に{grownKid}が小さかったころの思い出話になった。親の自分がすっかり忘れていた場面を向こうが鮮明に覚えていたり、本人が忘れている泣き顔をこちらが覚えていたりと、笑い声が絶えなかった。"
-      ],
+      t: s => {
+        const child = (s.kids || []).find(row => row.id === s.eventRelativeId && !row.d);
+        const canTalk = child && (
+          child.contactState === "regular" ||
+          (child.householdStatus !== "independent" &&
+            !["former", "former_support", "unresolved"].includes(child.householdResidencePlan) &&
+            !["paused", "ended"].includes(child.contactState))
+        );
+        if (!canTalk || s.year % 2 === 0)
+          return "片づけものをしていて、{grownKid}が幼いころに離さなかった小さな持ち物を見つけた。染みついた埃をぬぐい、元の場所へしまう前にしばらく手のひらで転がした。";
+        return "ふとした拍子に{grownKid}が小さかったころの思い出話になった。親の自分がすっかり忘れていた場面を向こうが鮮明に覚えていたり、本人が忘れている泣き顔をこちらが覚えていたりと、笑い声が絶えなかった。";
+      },
       fx: { p: 3, rl: 1 }
     },
     $terraData.F(

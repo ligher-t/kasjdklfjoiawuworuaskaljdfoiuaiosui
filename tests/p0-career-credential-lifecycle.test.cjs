@@ -28,11 +28,9 @@ const result=vm.runInContext(`(()=>{
   careerOpeningAssessment(s,{role:'technical'});
   careerOpeningAssessment(s,{role:'technical'});
   const pure=before===JSON.stringify({record:s.educationRecord,rng:s.rngState,skills:s.lifeRecord?.skills});
-  DEBUG_RANDOM=()=>0.47;
-  const baseJob=pickStarterJob(s);
+  const baseJob=typeof pickStarterJob;
   s.inf=1;s.fl.dg=1;
-  const diagnosedJob=pickStarterJob(s);
-  DEBUG_RANDOM=null;
+  const diagnosedJob=typeof pickStarterJob;
   s.inf=0;s.fl.dg=0;
   const undocumented=careerOpeningAssessment(s,{role:'general',policy:{
     region:'クルビア',role:'general',sourceRef:'',certainty:'unverified'
@@ -100,7 +98,8 @@ assert.equal(result.graduates.awards[0].sourceEventId,'annual-progression');
 assert.equal(result.ready.canBeAssigned,true,'an earned credential opens technical work');
 assert.equal(result.readyResearch.canBeAssigned,true,'graduation and high knowledge permit research applications');
 assert.equal(result.pure,true,'qualification inquiries never alter the state or RNG');
-assert.equal(result.baseJob,result.diagnosedJob,'diagnosis alone cannot erase a generic starter job pool');
+assert.equal(result.baseJob,'undefined','birth never assigns an unverified job without an actual opening');
+assert.equal(result.diagnosedJob,result.baseJob,'diagnosis cannot create a job-assignment shortcut');
 assert.equal(result.undocumented.canApply,true,'unverified policy cannot become a national ban');
 assert.equal(result.otherRegion.canApply,true,'another region\'s rule does not apply here');
 assert.equal(result.documented.canApply,false,'a specific sourced, current opening restriction can be represented');

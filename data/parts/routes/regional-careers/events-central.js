@@ -16,7 +16,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "クルビア" && s.job === $terraData.REG_JOBS.col_pioneer,
+      show: s => s.res?.n === "クルビア" && $terraData.regionalCareerOnDuty(s, "col_pioneer"),
       t: "乾いた土煙が舞う荒野の農場で、地下水汲み上げポンプのモーターを分解修理した。厳しい日差しの中、自らの手で開墾した畑に緑の芽が吹くのを見つめる。すべてが自己責任のフロンティアで、今日も大地と向き合う。",
       c: [
         $terraData.K("トラクターの燃料を補給し、日没を迎える", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -33,13 +33,18 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "クルビア" && s.job === $terraData.REG_JOBS.col_pioneer,
+      show: s => s.res?.n === "クルビア" && $terraData.regionalCareerOnDuty(s, "col_pioneer"),
       t: "収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取ってサイロから撃って撃退するか、要求を呑んで土地を明け渡すか。",
       c: [
         $terraData.K("サイロに籠城し、猟銃で応戦する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
-          "的確な狙撃で略奪団の車両のタイヤを撃ち抜き、頭目を射殺して敗走させた。自力で農場を守り抜いた不屈の開拓者として連邦新聞に報じられた。",
-          { cr: 4, h: 2, p: 3, cash: 800000 }
+          "的確な狙撃で略奪団の車両のタイヤを撃ち抜き、頭目を射殺して敗走させた。その後、収穫した作物は予定どおり出荷された。自力で農場を守り抜いた不屈の開拓者として、連邦新聞にも報じられた。",
+          { cr: 4, h: 2, p: 3, cash: 800000,
+            violenceAction: { action: "resolve-scene", scenarioId: "columbia-frontier-bandit-defense",
+              kind: "defensive-lethal", context: "civilian-defense", decision: "defended-farm",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 },
+              witnesses: [], deathEvidence: "observed", deathEvidenceId: "victim-seen-at-scene", targetGroup: "armed-raider",
+              evidenceIds: ["armed-raid-on-farm", "victim-seen-at-scene"] } }
         ], [
           0.85,
           "撃退には成功したものの、サイロに火を放たれて収穫の半分を失った。",
@@ -51,8 +56,19 @@ window.TERRA_DATA_BUILD.fragment(
         ]),
         $terraData.K("財産を諦め、夜陰に乗じてトラクターで脱出する", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
-          "命からがら移動都市へ逃げ延びた。農場は略奪されたが、命は繋いだ。",
-          { job: 0, cash: -500000, p: -5 }
+          "命からがら農場を離れ、近くの避難場所へ逃げ延びた。畑も収穫物も略奪されたが、命だけはつないだ。",
+          { job: 0, cash: -500000, p: -5,
+            employmentResourceIncident: { action:"lose-current", sourceEventId:"car_col_pioneer_choice_bandits",
+              affiliationId:"columbia-frontier-pioneer" },
+            lifeAffiliation: { id: "columbia-frontier-pioneer", action: "leave",
+              note: "農場を襲撃されて土地を離れ、開拓の仕事を終えた" },
+            lifeGoals: [
+              { id: "columbia-frontier-survival", action: "abandon", onlyIfUnresolved: true,
+                note: "農場を失い、従来の開拓生活を終えた" },
+              { id: "columbia-dispossessed-pioneer-livelihood",
+                title: "農場を失った後の働き口を見つける",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ])
       ]
     },
@@ -67,7 +83,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "カジミエーシュ" && s.job === $terraData.REG_JOBS.kaz_comp_knight,
+      show: s => s.res?.n === "カジミエーシュ" && $terraData.regionalCareerOnDuty(s, "kaz_comp_knight"),
       t: "照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と巨額のギャラが飛び交うが、負ければ即座に契約を切られる過酷な競争の世界である。",
       c: [
         $terraData.K("サイン会をこなし、専属トレーナーのマッサージを受ける", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -84,8 +100,8 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "カジミエーシュ" && s.job === $terraData.REG_JOBS.kaz_comp_knight,
-      t: "メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として五百万龍門幣を約束する』。八百長を呑んで巨額の富を手にするか、騎士の誇りを賭けて真正面から勝利を掴むか。",
+      show: s => s.res?.n === "カジミエーシュ" && $terraData.regionalCareerOnDuty(s, "kaz_comp_knight"),
+      t: "メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFixOffer}を約束する』。八百長を呑んで巨額の富を手にするか、騎士の誇りを賭けて真正面から勝利を掴むか。",
       c: [
         $terraData.K("八百長を断固拒絶し、全霊を賭けて決勝戦で打ち倒す", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
@@ -102,7 +118,7 @@ window.TERRA_DATA_BUILD.fragment(
         ]),
         $terraData.K("裏取引を呑み、第3ラウンドでわざと倒れる", { ethics: { reviewed: true, policyVersion: 87, intent: "self-or-family-care" } }, [
           1,
-          "見事な負け芝居を打ち、五百万龍門幣の裏金を受け取った。だがファンからの激しい罵声が耳に焼き付いた。",
+          "見事な負け芝居を打ち、約束された{kazMatchFixOffer}の裏金を受け取った。だがファンからの激しい罵声が耳に焼き付いた。",
           { cash: 5000000, cr: -5, p: -8 }
         ])
       ]
@@ -114,17 +130,36 @@ window.TERRA_DATA_BUILD.fragment(
     {
       id: "car_kaz_armorless_daily_01",
       conf: "S",
+      references: ["SRC_VIOLENCE_LIFEPATH_MODEL"],
       st: ["青年", "壮年"],
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "カジミエーシュ" && s.job === $terraData.REG_JOBS.kaz_armorless,
-      t: "商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。冷酷な数字として命を消去する日常である。",
+      show: s => s.res?.n === "カジミエーシュ" && $terraData.regionalCareerOnDuty(s, "kaz_armorless"),
+      t: "依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか。",
       c: [
-        $terraData.K("気配を消してアジトへ戻る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
+        $terraData.K("護衛から離れた標的へ矢を放つ", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+          0.6,
+          "矢は男の胸に刺さった。護衛が駆け寄る前に息が止まり、現場で死亡を確かめた。依頼主は完了を認め、約束した報酬を支払った。",
+          { p: 1, h: 1, violenceAction: { action: "resolve-scene", scenarioId: "kaz-armorless-contract-assassination",
+              kind: "intentional-killing", context: "organized-contract", decision: "carried-out-contract",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 },
+              witnesses: [], deathEvidence: "confirmed", deathEvidenceId: "death-confirmed-at-scene", payment: 220000,
+              evidenceIds: ["contract-target-seen-at-site", "death-confirmed-at-scene"] } }
+        ], [
+          0.86,
+          "矢は男の肩をかすめた。護衛に囲まれた標的は路地を抜け、行方を追えなくなった。依頼主へ渡せる完了報告も、報酬もない。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "kaz-armorless-contract-assassination",
+              kind: "intentional-killing", context: "organized-contract", decision: "carried-out-contract",
+              outcome: "escaped", victimRef: { kind: "anonymous-person", localOrdinal: 1 },
+              witnesses: [], evidenceIds: ["contract-target-seen-at-site", "target-escaped"] } }
+        ], [
           1,
-          "暗殺完了の報酬を現金で受け取り、次の標的を待った。",
-          { p: 1, h: 1, cash: 220000 }
+          "護衛が路地へ入ってきた。矢を放つ機会を失い、弓を隠してアジトへ戻った。依頼は未完了のまま残った。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "kaz-armorless-contract-assassination",
+              kind: "attempted-lethal", context: "organized-contract", decision: "carried-out-contract",
+              outcome: "prevented", victimRef: { kind: "anonymous-person", localOrdinal: 1 },
+              witnesses: [], evidenceIds: ["contract-target-seen-at-site", "attack-prevented"] } }
         ])
       ]
     },
@@ -139,7 +174,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "シラクーザ" && s.job === $terraData.REG_JOBS.sir_soldier,
+      show: s => s.res?.n === "シラクーザ" && $terraData.regionalCareerOnDuty(s, "sir_soldier"),
       t: "石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コートの下の銃の重みが、シラクーザの夜の秩序を担保している。",
       c: [
         $terraData.K("回収金を幹部に納め、酒場でワインを飲む", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -156,13 +191,15 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "シラクーザ" && s.job === $terraData.REG_JOBS.sir_soldier,
+      show: s => s.res?.n === "シラクーザ" && $terraData.regionalCareerOnDuty(s, "sir_soldier"),
       t: "隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。夜の市街地で血で血を洗う銃撃戦が始まる。",
       c: [
         $terraData.K("先頭を切ってクラブに突入し、サブマシンガンを乱射する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "猛烈な銃撃戦の中で敵幹部を仕留め、クラブを制圧した。ドンからその胆力を絶賛され、若くして小隊を率いる『カポ』へ昇進した。",
-          { cr: 4, h: 2, p: 2, cash: 1200000 }
+          { cr: 4, h: 2, p: 2, cash: 1200000,
+            lifeAffiliation: { id: "siracusa-mafia-soldier", action: "role", role: "カポ",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "敵を制圧したものの、太腿に銃弾を受けて流血した。裏医者の元で弾を抜いてもらった。",
@@ -190,7 +227,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "シラクーザ" && s.job === $terraData.REG_JOBS.sir_police,
+      show: s => s.res?.n === "シラクーザ" && $terraData.regionalCareerOnDuty(s, "sir_police"),
       t: "ヌオバ・ウォルシーニの広場で、市民からの陳情や交通の整理を行った。マフィアの報復を恐れて声を潜める住民に優しく声をかけ、法による保護を約束する。銃ではなく法典で街を変える、静かで尊い戦いである。",
       c: [
         $terraData.K("詰所で日誌を書き終え、パスタを食べる", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -211,7 +248,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "シエスタ" && s.job === $terraData.REG_JOBS.sie_obs,
+      show: s => s.res?.n === "シエスタ" && $terraData.regionalCareerOnDuty(s, "sie_obs"),
       t: "シエスタ火山の観測ドームで、マグマだまりの圧力と噴気孔の硫黄濃度データを集計した。リゾート地で音楽フェスを楽しむ観光客たちの笑顔を守るため、数値の異常を一つも見落とさぬよう目を光らせる。",
       c: [
         $terraData.K("安全報告書を市長府へ送信する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -220,7 +257,39 @@ window.TERRA_DATA_BUILD.fragment(
           { k: 1, p: 1, cash: 150000 }
         ])
       ]
-    }
+    },
+    {
+      id: "car_col_pioneer_after_dispossession",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 24 },
+      after: { id: "car_col_pioneer_choice_bandits", min: 2, choice: 1, outcome: 0 },
+      show: s => s.lifeRecord?.affiliations?.some(a => a.id === "columbia-frontier-pioneer" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        s.lifeRecord?.goals?.some(g => g.id === "columbia-dispossessed-pioneer-livelihood" && ["active", "paused", "compromised"].includes(g.status)),
+      t: "農場を離れた夜のことは今も覚えている。畑の位置も、掘り当てた水脈も、誰かに奪われた土地に残してきた。新しい働き口を探すか、もう一度開拓を始めるか、生活の先を考えた。",
+      c: [
+        $terraData.K("ほかの働き口を探して回る", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "求人を出している工房と倉庫を訪ねた。農具を扱えた経験を話したが、採用の返事はまだ届かなかった。",
+          { lifeGoal: { id: "columbia-dispossessed-pioneer-livelihood", action: "continue",
+            note: "農場喪失後に求職を続けたが、採用は成立していない" } }]),
+        $terraData.K("今は働き口探しを休む", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "焼けた農場のことを考えながら、しばらく手元の道具を片付けた。新しい契約を結ぶのは先送りにした。",
+          { lifeGoal: { id: "columbia-dispossessed-pioneer-livelihood", action: "pause",
+            note: "土地を失った後の求職を一時休止した" } }]),
+        $terraData.K("新しい仕事で暮らしを再建したと認める", {
+          show: s => s.job > 0 && (s.job !== 62 || s.lifeRecord?.affiliations?.some(a => a.id === "columbia-frontier-pioneer" && a.status === "active" && a.episodes?.length >= 2)),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "今日の仕事を終え、賃金を受け取った。元の畑は戻らないが、いま働いている場所には新しい生活の手がかりがある。",
+          { lifeGoal: { id: "columbia-dispossessed-pioneer-livelihood", action: "complete",
+            note: "農場を失った後、新たな実際の職業で生計を立て直した" } }])
+      ]
+    },
   ];
 
   for (const event of E) {

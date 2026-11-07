@@ -21,29 +21,24 @@ function settleAnnualHouseholdBudget(s, services, a) {
     const householdWealthIndex = Math.min(services.EXP.length - 1,
       services.P("economy.wealthClassReserveYears").filter(x => householdYears >= x).length);
     const parents = (s.care.parentKeys || ["fa", "mo"]).map(k => s.par[k]).filter(x => x && !x.d);
-    const grossParentIncome = parents.reduce(
-        (sum, x) => sum + (services.J[x.j]?.pay || 0) * (x.workShare ?? 1),
-        0
-      ),
-      unemployedParent = s.par?.[s.parentUnemploymentTargetKey],
-      lostParentIncome =
-        s.fl.parent_unemployed && unemployedParent && !unemployedParent.d
-          ? (services.J[unemployedParent.j]?.pay || 0) * (unemployedParent.workShare ?? 1)
-          : 0;
-    const wageIndex = (1 + (s.priceIndex - 1) * 0.65) * services.localityEarningsMultiplier(s),
+    const parentContributions = parents.map(parent => ({ parent, amount:
+      dependentEmploymentAnnualIncome(s, parent, s.year, { region:s.res.n,
+        unemployed: !!s.fl.parent_unemployed && parent === s.par?.[s.parentUnemploymentTargetKey] }) *
+      s.care.parentShare * services.localityEarningsMultiplier(s) })),
+      parentIncome = parentContributions.reduce((sum, row) => sum + row.amount, 0),
+      wageIndex = (1 + (s.priceIndex - 1) * 0.65) * services.localityEarningsMultiplier(s),
       networkIncome = s.care.networkIncome * s.res.pm * wageIndex,
       capitalIncome = [0, 0, 3e5, 2e6, 6e6][householdWealthIndex] * s.res.pm * wageIndex,
-      hinc =
-        Math.max(0, grossParentIncome - lostParentIncome) * s.care.parentShare * s.res.pm * wageIndex +
-        networkIncome +
-        capitalIncome;
+      prepaidWages = employmentPaidForYear(s, s.year - 1, "household"),
+      hinc = parentIncome + networkIncome + capitalIncome;
     // 共有家計を続ける限り、成人後も本人の生活・治療をこの帳簿で負担する。
     // 個人会計を選んだ場合は本人分を家計人数・治療費から外し、本人会計へ載せる。
     const householdCoversProtagonist =
       a < services.P("life.workStartAge") || services.inSharedHousehold(s);
     const petCost = s.pet ? services.petCostBase(s.pet) * s.res.pm : 0,
       schoolCost =
-        s.fl.sch && a < services.P("life.schoolEnrollmentEndAge")
+        s.fl.sch && a < services.P("life.schoolEnrollmentEndAge") &&
+          !s.educationPath?.offeringId
           ? services.P("economy.schoolMaterialsAnnualCost") * s.res.pm
           : 0,
       tc =
@@ -72,14 +67,18 @@ function settleAnnualHouseholdBudget(s, services, a) {
     const costPm = s.res.pm * s.priceIndex * services.localityLivingMultiplier(s),
       dependents = services.householdDependentSiblings(s).length,
       parentUnits = parents.length > 1 ? 1.5 : 1.0,
-      protagonistUnits = householdCoversProtagonist ? (a < 15 ? 0.35 : 0.5) : 0,
+      awayMonths=typeof educationResidenceAwayMonths==="function" ?
+        educationResidenceAwayMonths(s,s.year):0,
+      protagonistUnits = householdCoversProtagonist ?
+        (a < 15 ? 0.35 : 0.5) * (1-awayMonths/12) : 0,
       siblingUnits = 0.25 * dependents,
       householdUnits = parentUnits + protagonistUnits + siblingUnits;
-    const hex =
-      Math.max(
+      const living = Math.max(0, Math.max(
         services.P("economy.minimumExpenseBase") * costPm,
         services.EXP[householdWealthIndex] * costPm * householdUnits
-      ) +
+      ) - employmentMealOffset(s, s.year - 1, "household") -
+        employmentInKindOffset(s, s.year - 1, "household"));
+    const hex = living +
       petCost * s.priceIndex +
       schoolCost * s.priceIndex +
       tc * s.priceIndex +
@@ -112,25 +111,23 @@ function settleAnnualHouseholdBudget(s, services, a) {
     if(typeof accrueUncontractedDebtInterest==="function")
       accrueUncontractedDebtInterest(s,"household",services.P("economy.debtInterest"));
     else house.debt *= 1 + services.P("economy.debtInterest");
-    const educationTuition = s.educationAnnualFee?.year === s.year ?
-      (s.educationAnnualFee.paidByHousehold ??
-       (s.educationAnnualFee.payer === "household" ? s.educationAnnualFee.amount : 0)) : 0;
-    house.inc = hinc + reserveContribution;
+    const educationTuition=educationAnnualOutflow(s,s.year,"household");
+    for (const { parent, amount } of parentContributions) if (amount > 0 && parent.id)
+      recordDependentEmploymentPayment(s, parent, { amount, recipientId:"shared-household",
+        source:"annual-shared-household", kind:"household-contribution" });
+    house.inc = hinc + reserveContribution + prepaidWages;
     house.exp = hex + educationTuition;
     house.flow = {
       year: s.year,
       income: {
-        caregivers:
-          Math.max(0, grossParentIncome - lostParentIncome) * s.care.parentShare * s.res.pm * wageIndex,
+        caregivers: parentIncome,
+        ...(prepaidWages > 0 ? { protagonistWages: prepaidWages } : {}),
         network: networkIncome,
         capital: capitalIncome,
         ...(reserveContribution > 0 ? { protagonistReserve: reserveContribution } : {})
       },
       expense: {
-        living: Math.max(
-          services.P("economy.minimumExpenseBase") * costPm,
-          services.EXP[householdWealthIndex] * costPm * householdUnits
-        ),
+        living,
         pet: petCost * s.priceIndex,
         school: schoolCost * s.priceIndex + educationTuition,
         treatment: (tc - treatmentTravel) * s.priceIndex,
@@ -138,7 +135,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
         siblingCare: (siblingCareCost - siblingCareTravel) * s.priceIndex,
         medicalTravel: (treatmentTravel + parentTreatmentTravel + siblingCareTravel) * s.priceIndex
       },
-      net: hnet + reserveContribution - educationTuition
+      net: hnet + reserveContribution + prepaidWages - educationTuition
     };
     const network = s.care.supportNetwork;
     if (network && network.status === "active") {
@@ -179,7 +176,7 @@ function settleAnnualHouseholdBudget(s, services, a) {
         house.cash -= transferAmount;
         s.cash = (s.cash || 0) + transferAmount;
         s.familyLaunchTransferred = true;
-        services.L(`<span class="good">自立の節目を迎え、実家の蓄えから門出の支度金として${Math.round(transferAmount).toLocaleString()}テラ通貨を渡された。</span>`);
+        services.L(`<span class="good">自立の節目を迎え、実家の蓄えから門出の支度金として${services.m(transferAmount)}を渡された。</span>`);
         if (s.moneyLog) {
           s.moneyLog.push({
             year: s.year,

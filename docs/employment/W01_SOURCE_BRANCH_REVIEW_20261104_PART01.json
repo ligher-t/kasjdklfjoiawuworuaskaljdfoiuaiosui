@@ -1,0 +1,5216 @@
+{
+  "schema": "terra-work-w01-source-choice-audit",
+  "version": 2,
+  "part": "01",
+  "ref": "fix/historical-event-scope-and-delivery",
+  "method": "Read source event bodies; preserve prose opening and extracted choice labels/outcome snippets, flagged effect and condition references. Full branch result graph may contain generated callbacks and requires explicit semantic decision.",
+  "files": [
+    "data/base/career-entry.js",
+    "data/base/life-and-health.js",
+    "data/base/family-and-livelihood.js",
+    "data/base/regional-west.js",
+    "data/base/regional-east.js",
+    "data/base/regional-conflict.js",
+    "data/base/world-and-contacts.js"
+  ],
+  "sourceErrors": [],
+  "eventCount": 64,
+  "parseErrors": [],
+  "choiceMismatches": [],
+  "events": [
+    {
+      "eventId": "car",
+      "source": "data/base/career-entry.js:4",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_URSUS_INFECTED",
+        "SRC_URSUS_EP16",
+        "SRC_RIM_WORK",
+        "SRC_LEONHARDT_ARCHIVE",
+        "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+        "SRC_PENGUIN_LOGISTICS_CB1",
+        "SRC_COURIER_LOGISTICS_RECORD",
+        "SRC_TRANSPORTER_LIFE_MODEL",
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_SARGON_WD1_WD5",
+        "SRC_SARGON_CONTRACT_LIFE_MODEL"
+      ],
+      "catalogChoiceCount": 23,
+      "catalogOutcomeBranchCount": 37,
+      "possibleJobIds": [
+        14,
+        0,
+        4,
+        2,
+        3,
+        16,
+        17,
+        18,
+        20,
+        21,
+        7,
+        22,
+        23,
+        24,
+        27,
+        1
+      ],
+      "mechanics": [
+        "ar",
+        "cash",
+        "cr",
+        "ep",
+        "fl",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "payBonus",
+        "pm",
+        "res",
+        "residenceArrangement",
+        "rl",
+        "study"
+      ],
+      "found": true,
+      "actualLine": 6,
+      "sourceLength": 17106,
+      "conditionSnippet": "show: s => !educationSchoolOrDecision(s) && (s.job === 0 || s.job == null) && !s.fl?.frontier_contract && !s.fl?.rhodes_landship,\n      conf: \"S\",\n      references: [\n        \"SRC_INDUSTRIAL_LIFE\",\n        \"SRC_URSUS_INFECTED\",\n        \"SRC_URSUS_EP16\",\n        \"SRC_RIM_WORK\",\n        \"SRC_LEONHARDT_ARCHIVE\",\n        \"SRC_CATASTROPHE_TRANSPORTER_OFFICIAL\",\n        \"SRC_PENGUIN_LOGISTICS_CB1\",\n        \"SRC_COURIER_LOGISTICS_RECORD\",\n        \"SRC_TRANSPORTER_LIFE_MODEL\",\n        \"SRC_TERRA_INDUSTRY_POLICY\",\n        \"SRC_SARGON_WD1_WD5\",\n        \"SRC_SARGON_CONTRACT_LIFE_MODEL\"\n      ],\n      ge: { age: 17 },\n      le: { age: 21 },\n      pri: true,\n      once: true,\n      t: [\n        {\n          when: \"感染診断済\",\n          t: \"鉱石病の診断を受けてから、働き口を探",
+      "descriptionSample": "鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならないか指でたどった。",
+      "choiceCountParsed": 23,
+      "choices": [
+        {
+          "label": "軍務に志願する",
+          "jobEffectsDetected": [
+            14,
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": true,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "補助部隊に採用され、泥にまみれる訓練と哨戒任務の日々が始まった。給金は決まった日に出たが、故郷の土を踏める休暇はほとんどなかった。",
+            "初陣で深い傷を負い、隊に留まれなくなった。野戦病院を出て除隊となったものの、痛む体では元の暮らしにもすぐには戻れなかった。"
+          ]
+        },
+        {
+          "label": "傭兵団に加わる",
+          "jobEffectsDetected": [
+            4,
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "短期契約の前金を懐に収め、荒野の見張り任務に就いた。手渡された報酬で当座の暮らしは息をついた。仕事が明けたあとも、武具の手入れをしながら次の依頼を待つ暮らしに入った。",
+            "最初の任務で深手を負い、契約は途中で打ち切られた。買い揃えた装備や路銀も回収できないまま、傷を抱えて戦場を離れた。"
+          ]
+        },
+        {
+          "label": "アーツ学院を目指す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "学院の選抜を通り、入学金と当面の学費として30万龍門幣を納めた。真新しい教本と杖を手に取り、アーツの訓練が始まった。",
+            "実技と筆記に挑んだが、合格者の貼り紙に自分の番号はなかった。旅費と受験料の3万龍門幣だけが消え、重い足取りで別の働き口を探し始めた。"
+          ]
+        },
+        {
+          "label": "工場労働者として働く",
+          "jobEffectsDetected": [
+            2
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "製造工場の働き口を得た。交代のベルが鳴り響くたび、機械油で黒ずんだ手を布で拭い、熱気のこもる持ち場へと向かった。"
+          ]
+        },
+        {
+          "label": "ウルサスの鉱山で働く",
+          "jobEffectsDetected": [
+            3
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "軍需を支える鉱山の募集に応じ、採掘班に組み込まれた。渡された防塵具だけで坑道の黒い粉塵をしのげるのか、確かめる術もないまま暗い坑口へ入った。"
+          ]
+        },
+        {
+          "label": "トランスポーターの仕事を請ける",
+          "jobEffectsDetected": [
+            16
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "荷札の宛先を確かめ、鞄を肩に食い込ませて街区から街区へ荷物や書状を運んだ。抜け道を覚えるほど足は速くなったが、夜更けの急な呼び出しも増えていった。"
+          ]
+        },
+        {
+          "label": "山間の集落へ荷を運ぶ便に応募する",
+          "jobEffectsDetected": [
+            16
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "雪深い山道の集落へ荷を届ける仕事に採用された。荷札の村名を確かめ、受け入れが決まった集落の戸口へ日用品や手紙を背負い上げる。雪崩やぬかるみで道が荒れるたび、歩を進める予定はその場で変わっていった。",
+            "集落間の便はまだ話がまとまっておらず、人手は要らないと断られた。山風の中で踵を返し、しばらくは別の働き口を探すことにした。"
+          ]
+        },
+        {
+          "label": "飲食店や宿の仕事を探す",
+          "jobEffectsDetected": [
+            17
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "湯気と脂の匂いが満ちる食堂で、皿洗いと配膳を任された。旅慣れた客の雑談から遠い土地の噂を聞く一方、混み合う夜は自分の賄いをかき込む暇もなかった。"
+          ]
+        },
+        {
+          "label": "修理工房で技術を習う",
+          "jobEffectsDetected": [
+            18
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "鉄と機械油の匂う工房で、工具の呼び名と部品の型から叩き込まれた。見習いの給金はわずかだったが、壊れた装置が息を吹き返す感触が指先に残った。",
+            "自前の工具代も親方への紹介状も揃わず、見習いの枠は別の若者に埋まった。"
+          ]
+        },
+        {
+          "label": "医療補助や薬局の手伝いをする",
+          "jobEffectsDetected": [
+            20
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "消毒薬の匂う棚で薬瓶の数を揃え、青い顔をした患者を診察室へ案内した。病を治す知識はなくても、長い順番を待つ人の不安な声に耳を傾ける時間はあった。",
+            "読み書きのできる応募者が多く、薬局の働き口は経験のある人に決まった。"
+          ]
+        },
+        {
+          "label": "事務・記録の仕事を探す",
+          "jobEffectsDetected": [
+            21
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "インクの匂う机で帳簿を書き写し、窓口を訪れた人の事情を取り次いだ。自分が整える一行の数字が、誰かの住まいや暮らしを左右するのだと肌で知った。",
+            "実務の経験がないことを理由に断られ、採用には至らなかった。"
+          ]
+        },
+        {
+          "label": "応募・移動費 {colTechApplicationCost} を払って、クルビアの研究企業の技師職に挑む",
+          "jobEffectsDetected": [
+            7,
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "研究企業の技師として迎えられ、唸りを上げる試験装置の点検と調整を任された。計器のクセを一つずつ体に覚え込ませ、いずれは大型設備を任される日を目指した。",
+            "実技の課題はこなせたものの、今期の採用枠はすでに埋まっていた。旅費と受験の費用は戻らないが、この腕を街の工房で活かせないか思案しながら帰路についた。"
+          ]
+        },
+        {
+          "label": "応募費 {vicClerkApplicationCost} を払って、ヴィクトリアの保険仲介所で帳簿係を探す",
+          "jobEffectsDetected": [
+            21,
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "読み書きと計算の速さを買われ、保険仲介所の補助係として机を与えられた。積み上がる契約書の不備や問い合わせ先を洗い出し、奥の給付担当へと引き継ぐ日々が始まった。",
+            "紹介屋の口利きで面接までは進んだが、採用は実務経験のある応募者に決まった。手付金は戻らないまま、窓口で求められた書式の知識だけを胸に次の仕事を探し始めた。"
+          ]
+        },
+        {
+          "label": "職人の工房で手仕事を覚える",
+          "jobEffectsDetected": [
+            22
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "工房の隅で布の裁断や金具の下ごしらえを任された。ようやく仕上がった品が表の棚に並んでも、売値の大半は材料代と親方の懐へ消えていった。"
+          ]
+        },
+        {
+          "label": "農漁業や採集の手伝いに入る",
+          "jobEffectsDetected": [
+            23
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "空模様と風向きを読みながら、夜明け前に畑や水辺へ出た。どれほど収穫があっても、買い叩く仲買人や悪路のせいで手元に残る金はわずかだった。"
+          ]
+        },
+        {
+          "label": "露店や家族の小商いを手伝う",
+          "jobEffectsDetected": [
+            24
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "夜明けの市場から運んだ品を木箱に並べ、夕方には売れ残りを数えた。家の商いを肌で覚えるかわりに、大通りが静まるまで店を閉められなくなった。",
+            "仕入れに回す元手がどうしても足りず、人手を増やす話は立ち消えになった。外で別の働き口を探すしかなかった。"
+          ]
+        },
+        {
+          "label": "今は学び直し、進路を急がない",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "学び舎に残り、もう少し先まで進路を見極めることにした。学費や教本代の工面は続くが、まだ危険な現場へ身を投じずに済んだ。"
+          ]
+        },
+        {
+          "label": "鉱区へ働きに出る",
+          "jobEffectsDetected": [
+            3
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "地元業者が仕切る鉱区で採掘班の働き口を得た。落盤や粉塵への対策は曖昧に濁されたまま、ツルハシを担いで薄暗い坑道へ入った。"
+          ]
+        },
+        {
+          "label": "天災後の鉱区調査隊で助手に応募する",
+          "jobEffectsDetected": [
+            27
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "鉱山隊に同行する天災トランスポーターの募集を聞きつけ、崩れた地形や源石の露出を測る助手として採用された。焦げた土の匂いが残る天災後の鉱区を歩き、観測の記録を取り始めた。",
+            "荒れた鉱区を歩ける経験者が優先され、今回は不採用となった。天災直後の現場の危うさを耳にし、街の中で別の働き口も探すことにした。"
+          ]
+        },
+        {
+          "label": "ファミリーの下で働く",
+          "jobEffectsDetected": [
+            1
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "街の顔役を通じてファミリーの雑用を請け負った。渡された前金で急場はしのげたが、次に持ち込まれる頼みを断れる保証はどこにもない。",
+            "最初から危ない橋を渡る使い走りを押しつけられ、路地裏を逃げ惑う途中で深い傷を負った。"
+          ]
+        },
+        {
+          "label": "競技団体の裏方仕事を探す",
+          "jobEffectsDetected": [
+            1
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "競技場の柵の設営や武具運びの仕事を得た。歓声の中で騎士たちの名が華やかに呼ばれていく裏で、その日の汗の分だけ日当を受け取った。",
+            "ツテがなく裏方の枠に入れなかった。次の競技会が開かれるまで、日雇いの口を探すしかなかった。"
+          ]
+        },
+        {
+          "label": "故郷を離れ、放浪する",
+          "jobEffectsDetected": [
+            1
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "手元の金で切符が買える行き先を選び、荷物を一つまとめて故郷を出た。帰る場所は遠ざかったが、見知らぬ土地でやり直す余地だけは広がった。"
+          ]
+        },
+        {
+          "label": "移動バザール周辺で短い警戒任務を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "移動バザールを行き来するトランスポーターの口利きで、隊商の荷を守る短期の警戒任務を請けた。手渡された前金で当座の暮らしは息をついたが、砂塵の旅が一往復終わると次の依頼は来なかった。",
+            "教えられた天幕を訪ねたが護衛の枠はすでに埋まっており、往復の足代だけが消えた。砂風の中で踵を返し、別の稼ぎ口を探すことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [
+        "frontier_contract",
+        "rhodes_landship"
+      ],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "transporter_contract_review",
+      "source": "data/base/career-entry.js:519",
+      "sourceRefs": [
+        "SRC_PENGUIN_LOGISTICS_CB1",
+        "SRC_COURIER_LOGISTICS_RECORD",
+        "SRC_TRANSPORTER_LIFE_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill"
+      ],
+      "found": true,
+      "actualLine": 600,
+      "sourceLength": 2660,
+      "conditionSnippet": "show: s =>\n        s.lifeRecord?.affiliations?.some(a => a.id === \"terra-general-transporter\" && a.status === \"active\") &&\n        s.lifeRecord?.goals?.some(\n          g =>\n            g.id === \"transporter-work\" &&\n            [\"active\", \"compromised\"].includes(g.status) &&\n            Number.isInteger(g.startedYear) &&\n            s.year >= g.startedYear + 2\n        ),\n      after: { id: \"car\", min: 2 },\n      ge: { age: 19 },\n      once: true,\n      w: 0.62,\n      t: \"トランスポーターとして街を走り始めて二年が経った。靴底の減り方と裏通りの抜け道がすっかり体に染みついたころ、契約の節目がやってきた。このまま顔なじみの多い近場の便を回るか、実入りのいい遠方の臨時便に手を出すか、それとも足を洗うか迷った。\",\n      ",
+      "descriptionSample": "トランスポーターとして街を走り始めて二年が経った。靴底の減り方と裏通りの抜け道がすっかり体に染みついたころ、契約の節目がやってきた。このまま顔なじみの多い近場の便を回るか、実入りのいい遠方の臨時便に手を出すか、それとも足を洗うか迷った。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "近場の便を中心に続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "これまで通り、近隣の街区を回る配達を続けた。顔なじみの店主から「次もあんたに頼むよ」と茶を振る舞われる日も増えた。"
+          ]
+        },
+        {
+          "label": "遠回りの要る臨時便を一件請ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "割増のつく臨時便を引き受け、悪路を抜けて夜更けに荷を届けきった。懐に入る金は増えたが、帰りの足代と泥のように眠る休日が丸一日消えた。"
+          ]
+        },
+        {
+          "label": "契約を更新せず、別の働き口を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "使い込んだ配達鞄を置き、今回は契約を更新しなかった。毎日駆け抜けた通りを離れ、別の仕事を探すことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "car"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "kjerag_transporter_route_review",
+      "source": "data/base/career-entry.js:596",
+      "sourceRefs": [
+        "SRC_COURIER_LOGISTICS_RECORD",
+        "SRC_TRANSPORTER_LIFE_MODEL",
+        "SRC_KJERAG_LIFE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill"
+      ],
+      "found": true,
+      "actualLine": 677,
+      "sourceLength": 2728,
+      "conditionSnippet": "show: s =>\n        s.res?.n === \"イェラグ\" &&\n        s.lifeRecord?.affiliations?.some(\n          a => a.id === \"kjerag-village-transporter\" && a.status === \"active\"\n        ) &&\n        s.lifeRecord?.goals?.some(\n          g =>\n            g.id === \"kjerag-transporter-route\" &&\n            g.status === \"active\" &&\n            Number.isInteger(g.startedYear) &&\n            s.year >= g.startedYear + 2\n        ),\n      after: { id: \"car\", min: 2 },\n      ge: { age: 19 },\n      once: true,\n      w: 0.52,\n      t: \"雪の山道を荷を背負って登り始めて二年になる。新しい荷受け場所を設けたいと集落を回ると、温かい茶を出して歓迎してくれる村もあれば、よそ者の出入りを嫌って返事を渋る村もあった。便のまとめ役から、来季はどの区間を受け持つか尋ねられた。\",\n      ",
+      "descriptionSample": "雪の山道を荷を背負って登り始めて二年になる。新しい荷受け場所を設けたいと集落を回ると、温かい茶を出して歓迎してくれる村もあれば、よそ者の出入りを嫌って返事を渋る村もあった。便のまとめ役から、来季はどの区間を受け持つか尋ねられた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "受け入れが決まった集落間の便を続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "歓迎してくれる集落だけを結んで歩いた。軒先で荷を下ろして熱い湯をいただき、帰り荷の空き箱を背負い直して次の尾根へ向かった。"
+          ]
+        },
+        {
+          "label": "山麓の短距離便にしぼる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "気難しい奥地の区間を外し、山麓の集落だけを結ぶ短い道に絞った。実入りは少し減ったが、吹雪の前に屋根の下へ戻れるようになった。"
+          ]
+        },
+        {
+          "label": "計画から離れ、別の仕事を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "背負子を下ろし、山間の集落を回る便から手を引いた。雪の少ない街場で別の働き口を探すことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "car"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "rim_catastrophe_transporter_review",
+      "source": "data/base/career-entry.js:675",
+      "sourceRefs": [
+        "SRC_LEONHARDT_ARCHIVE",
+        "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+        "SRC_RIM_LOCAL_LIFE_MODEL",
+        "SRC_TRANSPORTER_LIFE_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        16
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill"
+      ],
+      "found": true,
+      "actualLine": 756,
+      "sourceLength": 3817,
+      "conditionSnippet": "show: s =>\n        s.res?.n === \"レム・ビリトン\" &&\n        s.lifeRecord?.affiliations?.some(\n          a => a.id === \"rim-catastrophe-survey-assistant\" && a.status === \"active\"\n        ) &&\n        s.lifeRecord?.goals?.some(\n          g =>\n            g.id === \"rim-catastrophe-fieldwork\" &&\n            g.status === \"active\" &&\n            Number.isInteger(g.startedYear) &&\n            s.year >= g.startedYear + 2\n        ),\n      after: { id: \"car\", min: 2 },\n      ge: { age: 19 },\n      once: true,\n      w: 0.56,\n      t: \"天災が爪痕を残した坑道を調べる助手になって二年が過ぎた。崩落した岩肌や黒く光る源石の露出を図面に落とし込む隣で、同行する天災トランスポーターは絶えず風向きと計器を読んでいた。次の現場へ向かう前、鉱山隊のまとめ役からこれからの持ち場をどうするか聞かれた。\",\n      ",
+      "descriptionSample": "天災が爪痕を残した坑道を調べる助手になって二年が過ぎた。崩落した岩肌や黒く光る源石の露出を図面に落とし込む隣で、同行する天災トランスポーターは絶えず風向きと計器を読んでいた。次の現場へ向かう前、鉱山隊のまとめ役からこれからの持ち場をどうするか聞かれた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "鉱山隊の調査記録を続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "これまで通り、崩落箇所と鉱床の位置を図面に起こす助手を続けた。出発前の慌ただしい天幕で、描き上げたばかりの地図をトランスポーターへ手渡した。"
+          ]
+        },
+        {
+          "label": "観測に同行し、計測値の記録を手伝う",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "天災トランスポーターのすぐ後ろにつき、乾いた風向きや地鳴りの変化を観測器から読み取って控えた。張り詰めた空気のなか、揃えた数値を予報役の同行者へ託した。"
+          ]
+        },
+        {
+          "label": "鉱区を離れ、地域のトランスポーターとして働く",
+          "jobEffectsDetected": [
+            16
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "粉塵の舞う調査現場を離れ、街と街を結んで荷や手紙を運ぶ地域のトランスポーターへ移った。荒野の道で培った足腰を頼りに、荷物を背負って次の届け先へと歩き出した。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "car"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sargon_market_contract_review",
+      "source": "data/base/career-entry.js:792",
+      "sourceRefs": [
+        "SRC_SARGON_WD1_WD5",
+        "SRC_SARGON_CONTRACT_LIFE_MODEL",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        0,
+        16
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 873,
+      "sourceLength": 3267,
+      "conditionSnippet": "show: s =>\n        s.res?.n === \"サルゴン\" &&\n        s.local?.ecology === \"乾燥地・オアシス\" &&\n        s.lifeRecord?.goals?.some(\n          g =>\n            g.id === \"sargon-market-guard-work\" &&\n            g.status === \"active\" &&\n            Number.isInteger(g.startedYear) &&\n            s.year >= g.startedYear + 2\n        ) &&\n        s.lifeRecord?.affiliations?.some(\n          a => a.id === \"sargon-market-guard-contracts\" && a.status === \"left\"\n        ),\n      after: { id: \"car\", min: 1 },\n      once: true,\n      w: 0.38,\n      t: \"移動バザールの護衛を請けてから二年が経った。砂風が吹く天幕の間を歩いて次の口を探したが、前の雇い主からは音沙汰がない。このまま単発の警戒任務を追い続けるか、別の商売へ鞍替えするか迷った。\",\n      ",
+      "descriptionSample": "移動バザールの護衛を請けてから二年が経った。砂風が吹く天幕の間を歩いて次の口を探したが、前の雇い主からは音沙汰がない。このまま単発の警戒任務を追い続けるか、別の商売へ鞍替えするか迷った。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "別の短期警戒任務に応募する",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "別の隊商から声がかかり、荷車の脇を固める短い警戒任務に就いた。手渡された銅貨は前回より少なく、砂塵の旅が終わるとまた次の当ては途切れた。",
+            "バザールを回っても護衛の口は見つからず、水代と移動費だけが減った。用心棒で食いつなぐ考えはいったん引っ込め、別の働き口を探すことにした。"
+          ]
+        },
+        {
+          "label": "荷札や行き先を扱うトランスポーターの仕事を探す",
+          "jobEffectsDetected": [
+            16
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "武器の代わりに荷袋を担ぎ、移動バザールの天幕から天幕へ品物を届けるトランスポーターの仕事へ移った。"
+          ]
+        },
+        {
+          "label": "次の警戒任務は断り、家の用事を優先する",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "紹介屋に断りを入れ、不安定な護衛の請負から足を洗った。しばらくは家の用事と足元の暮らしを立て直すことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "car"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "ursus_mine_assignment_offer",
+      "source": "data/base/career-entry.js:898",
+      "sourceRefs": [
+        "SRC_URSUS_MINE_LIFE",
+        "SRC_URSUS_EP16",
+        "SRC_URSUS_INFECTED"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        3
+      ],
+      "mechanics": [
+        "fl",
+        "h",
+        "home",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "localKind",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 979,
+      "sourceLength": 2322,
+      "conditionSnippet": null,
+      "descriptionSample": "採掘現場で働いていると、鉱区の監督官に呼び出された。鉱石病の診断記録を理由に、北方の鉱区へ移れという。拒めばどうなるかは口にされないまま、冷たい机の上に移動命令書が突き出された。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "命令に従い、監視付き採掘班へ移る",
+          "jobEffectsDetected": [
+            3
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "翌朝、武装した監視員に追い立てられて北方の鉱区へ送られた。凍てつく切羽の入り口にも見張りが立っていた。"
+          ]
+        },
+        {
+          "label": "移送を拒み、身近な人に先に相談する",
+          "jobEffectsDetected": [
+            3
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "顔なじみが納屋の奥に一晩身を隠す場所を作ってくれた。その夜のうちに、北へ向かう移送列車の道筋から外れた。",
+            "匿ってくれる当てはどこにも見つからなかった。翌朝、監視員に腕を掴まれ、命令どおり北方の鉱区へ送り込まれた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "car"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "ursus_mine_assignment_review",
+      "source": "data/base/career-entry.js:973",
+      "sourceRefs": [
+        "SRC_URSUS_MINE_LIFE",
+        "SRC_URSUS_EP16",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "groupStanding",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p",
+        "regionalImpact",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 1054,
+      "sourceLength": 3371,
+      "conditionSnippet": "show: s => {\n        const a = s.lifeRecord?.affiliations?.find(x => x.id === \"ursus-kleini-sever-mine\");\n        return (\n          !!a &&\n          [\"active\", \"crisis\", \"suspended\"].includes(a.status) &&\n          Number.isInteger(a.startedYear) &&\n          s.year >= a.startedYear + 2\n        );\n      },\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      w: 0.5,\n      t: \"監視付きの採掘班に送り込まれて二年が過ぎた。皮下に埋め込まれた位置特定チップを抜き取ろうと、密かに外の医療班とつなぎを取る坑夫もいる。信号が途絶えれば爆発するぞという監視隊の脅しが耳にこびりつき、見回りの軍靴が近づくたび皮膚の下が疼く気がした。\",\n      ",
+      "descriptionSample": "監視付きの採掘班に送り込まれて二年が過ぎた。皮下に埋め込まれた位置特定チップを抜き取ろうと、密かに外の医療班とつなぎを取る坑夫もいる。信号が途絶えれば爆発するぞという監視隊の脅しが耳にこびりつき、見回りの軍靴が近づくたび皮膚の下が疼く気がした。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "外部の医療班へ検査と摘出を頼む",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "薄暗い仮設天幕で、外の医療班が皮下のチップを摘出してくれた。監視の網を抜けて鉱区を脱出し、教えられた診療所を頼りに別の土地で生きる道を探し始めた。",
+            "信号が途切れた瞬間の危険を拭いきれず、医療班はメスを置いた。傷口を押さえて暗い宿舎へ戻り、監視の目をやり過ごしながら生き延びる道を探った。"
+          ]
+        },
+        {
+          "label": "一部の同僚と出発準備を進め、武力での報復は避ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "気の置けない数人の仲間と、持ち出せる保存食や吹雪の夜に抜ける山道を確かめ合った。見回りの靴音が近づくと素早く口をつぐみ、ツルハシを握り直した。"
+          ]
+        },
+        {
+          "label": "計画から距離を取り、今の仕事と身近な人への連絡を優先する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "危険な脱出話には首を突っ込まず、坑道から上がると故郷の家族へ短い手紙を書いた。廊下を渡る見回りの足音を聞きながら、遠い返事を待った。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "col_tech_safety_aftermath",
+      "source": "data/base/career-entry.js:1286",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE",
+        "SRC_COLUMBIA_TECH_SAFETY_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        7,
+        0
+      ],
+      "mechanics": [
+        "cr",
+        "fl",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "regionalImpact"
+      ],
+      "found": true,
+      "actualLine": 1367,
+      "sourceLength": 4657,
+      "conditionSnippet": "show: s => $rules.careers.currentCareerPlacement(s, \"columbia-technical-work\"),\n      references: [\"SRC_TERRA_INDUSTRY_POLICY\", \"SRC_INDUSTRIAL_LIFE\", \"SRC_TERRA_LIFECOURSE\", \"SRC_COLUMBIA_TECH_SAFETY_MODEL\"],\n      need: [\"技師職の安全案件\"],\n      after: { id: \"col_tech_safety_review\", min: 2 },\n      ban: [\"技師職の安全案件を終えた\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      pri: true,\n      w: 1,\n      t: [\n        {\n          when: \"技師職で安全懸念を報告\",\n          t: \"あの試作試験から二年が過ぎた。訂正印が押された点検表は今もロッカーの奥に眠っているが、現場ではまたしても安全手順を省くよう急かす声が飛び交い始めた。もう一度声を上げるか、給料のために見過ごすか迷った。\"\n        },\n        {\n          when: \"技師職の安全メモ\",\n          t: \"あの試作試験から二年が経った。作業着のポケットに忍ばせたメモは、ついぞ会社の公式記録には載らなかった。隣の班でも保護具が足りないと耳にし、あの時飲み込んだ言葉が苦く蘇った。\"\n        },\n        {\n          t: ",
+      "descriptionSample": "あの試作試験から二年が過ぎた。訂正印が押された点検表は今もロッカーの奥に眠っているが、現場ではまたしても安全手順を省くよう急かす声が飛び交い始めた。もう一度声を上げるか、給料のために見過ごすか迷った。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "手元の記録を持ち、地域の労務相談窓口で手続きを尋ねる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "休日に街の労務相談所を訪ね、書き溜めた現場の数値と手順のズレを相談員に見せた。すぐに会社へ立ち入りが入るわけではないが、いざという時に身を守る手順を教わり、少しだけ肩の荷が下りた。",
+            "相談所の担当者はうなずいて聞いてくれたものの、企業内部の試験には口を出せないと申し訳なさそうに言った。夕暮れの街を歩きながら、結局は現場の仲間同士で身を守るしかないのだと痛感した。"
+          ]
+        },
+        {
+          "label": "担当替えを願い出て、点検・記録の仕事を続ける",
+          "jobEffectsDetected": [
+            7
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "上司に頭を下げて試作の現場から外してもらい、定期点検と整備記録をまとめる後方部門へ移った。月の手取りは変わらず、焦げ臭い試験室の代わりに静かな机が自分の持ち場になった。"
+          ]
+        },
+        {
+          "label": "仕事を辞め、別の工房や職場を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "退職届を机に置き、油の染みた作業服をロッカーに返した。定期的な給料袋は途切れたが、翌朝からは久しぶりに胸のつかえない空気を吸って、別の工房を探しに街へ出た。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "col_tech_safety_review"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "col_tech_internal_review",
+      "source": "data/base/career-entry.js:1661",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cr",
+        "fl",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 1742,
+      "sourceLength": 3279,
+      "conditionSnippet": "show: s => $rules.careers.currentCareerPlacement(s, \"columbia-technical-work\"),\n      references: [\"SRC_TERRA_INDUSTRY_POLICY\", \"SRC_INDUSTRIAL_LIFE\", \"SRC_TERRA_LIFECOURSE\"],\n      need: [\"技師職の内部確認待ち\", \"就労中\"],\n      after: { id: \"col_tech_supplier_exception\", min: 2 },\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      w: 0.68,\n      t: [\n        {\n          when: \"書類未確認の部品を例外扱いした\",\n          t: \"検査証のない交換部品を特例で通した件について、監査室の聞き取りに呼ばれた。冷たい蛍光灯の下で、調査員は署名欄を指差し、誰の指示で受け入れたのかと問い詰めてきた。\"\n        },\n        {\n          when: \"書類未確認の部品を保留した\",\n          t: \"検査証のない交換部品を止めて試験を遅らせた件で、監査室の聞き取りに呼ばれた。仕入れ担当とのやり取りを机に並べ、なぜあの時すぐに判断したのかを問われた。\"\n        },\n        {\n          t: \"仮受けにした交換部品の扱いについて、監査室から呼び出しを受けた。木箱を開けた時刻と仕入れ担当へ連絡した経緯を、静まり返った小部屋で一つずつ説明した。\"\n        ",
+      "descriptionSample": "検査証のない交換部品を特例で通した件について、監査室の聞き取りに呼ばれた。冷たい蛍光灯の下で、調査員は署名欄を指差し、誰の指示で受け入れたのかと問い詰めてきた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "自分が見たことと記録だけを提出する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "誰かをかばうことも責めることもせず、自分が目で見た箱の状態と時刻だけを淡々と伝えた。調査員は無表情に受領印を押し、分厚いファイルを脇へ積んだ。"
+          ]
+        },
+        {
+          "label": "帳面の範囲だけ答え、推測はしない",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "誘導するような問いかけには乗らず、手元の作業日誌に書いた事実だけを答えた。調査員はペンを置いてファイルを閉じ、重苦しい聞き取りはようやく終わった。"
+          ]
+        },
+        {
+          "label": "確認が続く間、担当を離れて別の職場を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "責任の押しつけ合いが続く社内に嫌気がさし、聞き取りの記録を出したその足で退職を申し出た。私物をまとめて社屋を出ると、翌週から別の街の工房を探し始めた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "col_tech_supplier_exception"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "col_tech_workplace_consequence",
+      "source": "data/base/career-entry.js:1759",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cr",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "regionalImpact"
+      ],
+      "found": true,
+      "actualLine": 1840,
+      "sourceLength": 3873,
+      "conditionSnippet": "show: s => $rules.careers.currentCareerPlacement(s, \"columbia-technical-work\"),\n      references: [\"SRC_TERRA_INDUSTRY_POLICY\", \"SRC_INDUSTRIAL_LIFE\", \"SRC_TERRA_LIFECOURSE\"],\n      need: [\"仕入れ記録の内部確認を終えた\", \"就労中\"],\n      after: { id: \"col_tech_internal_review\", min: 3 },\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      w: 0.48,\n      t: [\n        {\n          when: \"小さな作業班の点検役\",\n          t: \"監査の一件から三年が経ち、部品受入れの決裁権は上の部署へ吸い上げられた。現場の点検と引き継ぎだけを守る日々が続く中、上司から今後の持ち場について声をかけられた。\"\n        },\n        {\n          when: \"後輩技師を教えた\",\n          t: \"監査の一件のあと、手塩にかけて教えた後輩は別の建屋へ異動になった。装置のクセは一通り伝えたが、会社の裏事情までは語れないまま、静かになった作業台で今後の身の振り方を考えた。\"\n        },\n        {\n          when: \"納期優先の試験調整を担った\",\n          t: \"監査の一件のあと、日程調整の役目は外され、黙々と点検記録を照合する席へ回された。次の大型試験が近づ",
+      "descriptionSample": "監査の一件から三年が経ち、部品受入れの決裁権は上の部署へ吸い上げられた。現場の点検と引き継ぎだけを守る日々が続く中、上司から今後の持ち場について声をかけられた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "承認権限は戻らなくても、点検記録の整備を続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "華やかな決裁権はなくても、現場の機械が止まらないよう日々の点検と引き継ぎを地道に整えた。後から来る若い技師が迷わないよう、工具箱の脇に分かりやすい手順書を残した。"
+          ]
+        },
+        {
+          "label": "別の班への配置換えを願い出る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "空気の淀んだ元の班を離れ、別棟の設備点検班へ異動を願い出た。見知らぬ顔ぶれの中で工具の置き場所から覚え直し、静かに給料日を待つ暮らしを選んだ。"
+          ]
+        },
+        {
+          "label": "今の職場を離れ、別の働き口を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "潮時だと見切りをつけ、後任に装置のクセを引き継いで退職した。長年通った工業区の門を出て、これまで培った腕を活かせる別の職場を探し始めた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "col_tech_internal_review"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "col_tech_later_years",
+      "source": "data/base/career-entry.js:1877",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "groupStanding",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 1958,
+      "sourceLength": 3120,
+      "conditionSnippet": "show: s => $rules.careers.currentCareerPlacement(s, \"columbia-technical-work\"),\n      references: [\"SRC_TERRA_INDUSTRY_POLICY\", \"SRC_INDUSTRIAL_LIFE\", \"SRC_TERRA_LIFECOURSE\"],\n      need: [\"クルビア企業技術職経験\", \"就労中\"],\n      ban: [\"技師職の後年の働き方を決めた\"],\n      after: { id: \"col_tech_workplace_consequence\", min: 5 },\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      w: 0.42,\n      t: \"機械油と金属音の中で働き続けて長い年月が過ぎた。夕方には腰や指先の痛みが残るようになり、このまま騒音の激しい現場に立ち続けるか、少し荷の軽い役回りへ退くか考える時期が来ていた。\",\n      ",
+      "descriptionSample": "機械油と金属音の中で働き続けて長い年月が過ぎた。夕方には腰や指先の痛みが残るようになり、このまま騒音の激しい現場に立ち続けるか、少し荷の軽い役回りへ退くか考える時期が来ていた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "点検と新人指導を続け、経験を次の人へ渡す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "無理のない日数に勤務を減らしてもらい、若い技師たちに計器の読み方や異音の聞き分け方を教える役に回った。直接スパナを握る日は減ったが、現場の相談役として頼りにされた。"
+          ]
+        },
+        {
+          "label": "同じ会社で役割を軽くし、記録の照会だけ受け持つ",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "重労働の現場から退き、資料室で過去の整備記録を照会する静かな席へ移った。給料の見直しは次の契約期まで持ち越されたが、夜は泥のように眠り込まずに済むようになった。"
+          ]
+        },
+        {
+          "label": "職場を離れ、別の暮らしへ移る",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "長年着慣れた作業着を畳んで会社に返し、技師としての勤めに区切りをつけた。最後の夕暮れに工場の門を振り返り、明日からは穏やかな仕事で食いつなぐことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "col_tech_workplace_consequence"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "vic_clerk_role_review",
+      "source": "data/base/career-entry.js:1970",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "payBonus"
+      ],
+      "found": true,
+      "actualLine": 2051,
+      "sourceLength": 2443,
+      "conditionSnippet": "show: s => $rules.careers.currentCareerPlacement(s, \"victoria-insurance-clerk\"),\n      after: { id: \"vic_clerk_contract_review\", min: 3 },\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      w: 0.7,\n      t: \"保険仲介所の月末締めを一人で回せるようになったころ、先輩から次の役回りを打診された。照合係の束ね役になればわずかな手当がつき、窓口に残れば顔なじみの依頼者の相談に乗り続けられる。家の暮らしと給金を思い合わせ、どちらへ進むか考えた。\",\n      ",
+      "descriptionSample": "保険仲介所の月末締めを一人で回せるようになったころ、先輩から次の役回りを打診された。照合係の束ね役になればわずかな手当がつき、窓口に残れば顔なじみの依頼者の相談に乗り続けられる。家の暮らしと給金を思い合わせ、どちらへ進むか考えた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "照合係をまとめる（今の基準給金に4%の手当）",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": true,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "照合班を束ねる役を引き受けた。給料に4%の手当がついたかわりに、若い係員たちの書き損じや苦情まで自分の机に集まるようになった。それでも給付の最終決裁だけは、相変わらず奥の席で決められていた。"
+          ]
+        },
+        {
+          "label": "窓口と帳簿の仕事を続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "束ね役は丁重に断り、これまで通り窓口と帳簿の実務を続けた。以前追い返されそうになった依頼者が書類を揃えて戻ってきた日には、小さな礼の言葉に胸が温かくなった。"
+          ]
+        },
+        {
+          "label": "帳面を引き継ぎ、この職場を離れる",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "返事待ちの案件を後任へ細かく引き継ぎ、仲介所を辞めた。最終日の夕方、使い込んだペンと窓口の鍵を返し、もっと納得して働ける場所を探し始めた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "vic_clerk_contract_review"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "vic_clerk_later_years",
+      "source": "data/base/career-entry.js:2047",
+      "sourceRefs": [
+        "SRC_TERRA_INDUSTRY_POLICY",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 2128,
+      "sourceLength": 2091,
+      "conditionSnippet": "show: s => $rules.careers.currentCareerPlacement(s, \"victoria-insurance-clerk\"),\n      after: { id: \"vic_clerk_role_review\", min: 6 },\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      w: 0.6,\n      t: \"自分が閉じた帳簿が壁の棚を一段埋め尽くすほど、仲介所で長い年月を過ごした。手ほどきをしてくれた先輩はとっくに去り、今では若い係員があなたの机へ尋ねに来る。変わりゆく書式と老いていく目をいたわりながら、これからの働き方を考えた。\",\n      ",
+      "descriptionSample": "自分が閉じた帳簿が壁の棚を一段埋め尽くすほど、仲介所で長い年月を過ごした。手ほどきをしてくれた先輩はとっくに去り、今では若い係員があなたの机へ尋ねに来る。変わりゆく書式と老いていく目をいたわりながら、これからの働き方を考えた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "今の担当を続け、新しい手順を学ぶ",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "老眼鏡をかけ直し、新しく変わった書式を若い係員から教わって机に残り続けた。古い台帳の連絡先へ手紙を出すと、思いがけず感謝の返事が届く日もあれば、宛先不明で戻ってくる日もあった。"
+          ]
+        },
+        {
+          "label": "照会の引継ぎと新人の案内を担当する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "表の窓口から一歩退き、古い案件の掘り起こしと新人の手ほどきを引き受けた。緊張した新人と契約書を読み合わせていると、若かったころに先輩から掛けられた言葉がふと蘇った。"
+          ]
+        },
+        {
+          "label": "仕事を引き継いで離れる",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "気がかりだった未解決の案件を後任へ託し、長年座った椅子を立った。石畳の帰り道をゆっくり歩きながら、これからの穏やかな暮らしをどう支えるか考えた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "vic_clerk_role_review"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "work_unemployed_reentry",
+      "source": "data/base/career-entry.js:2188",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_INDUSTRY_POLICY"
+      ],
+      "catalogChoiceCount": 5,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        1,
+        2,
+        24,
+        4
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "h",
+        "job",
+        "k",
+        "p",
+        "pm",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 2262,
+      "sourceLength": 1725,
+      "conditionSnippet": "show: s => (s.job === 0 || s.job == null) && s.age >= 18 && s.age <= 60,\n      cd: 2,\n      w: 2.2,\n      t: \"無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案した。\",\n      ",
+      "descriptionSample": "無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案した。",
+      "choiceCountParsed": 5,
+      "choices": [
+        {
+          "label": "市場や貨物駅の荷揚げ場で、日雇い・荷運びの仕事に就く",
+          "jobEffectsDetected": [
+            1
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "人手不足の荷揚げ場で荷車引きの仕事を得た。重い荷に腰がきしむが、その日のうちに日当を受け取り、暮らしの足場を固め直した。"
+          ]
+        },
+        {
+          "label": "街外れの町工場や工房で、製造工として雇ってもらう",
+          "jobEffectsDetected": [
+            2
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "油の匂いが立ち込める町工場で採用された。機械の轟音の中で交代勤務に入り、再び毎月の安定した給金を得られるようになった。"
+          ]
+        },
+        {
+          "label": "大通りや裏路地の一角で、細々と露店・小商いを始める",
+          "jobEffectsDetected": [
+            24
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "手持ちの小銭で古道具や日用品を仕入れ、木箱を並べて露店を開いた。呼び込みの声に足を止める客も現れ、自活の第一歩を踏み出した。"
+          ]
+        },
+        {
+          "label": "荒野の隊商や商会の護衛・警備の契約に応募する",
+          "jobEffectsDetected": [
+            4
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "隊商の警備員として雇われた。移動都市の外縁を巡回する過酷な任務だが、危険手当を含めた給金で生活の立て直しに目処がついた。"
+          ]
+        },
+        {
+          "label": "今は焦らず、手元の蓄えを切り崩しながらより良い求人を待つ",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "無理に合わない仕事に飛びつくのはやめ、節約しながら次の機会を待つことにした。図書館や広場で情報を集め、次の求人動向を注視した。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "work_elder_reentry",
+      "source": "data/base/career-entry.js:2246",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE",
+        "SRC_TERRA_INDUSTRY_POLICY"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        24,
+        1
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 2320,
+      "sourceLength": 1064,
+      "conditionSnippet": "show: s => (s.job === 0 || s.job == null) && s.age > 60 && s.age <= 80,\n      cd: 3,\n      w: 1.8,\n      t: \"仕事を退いてから時間が経ったが、じっとしているのも性に合わず、路銀の減りも気になってきた。年老いた体でも引き受けられるささやかな仕事がないか、近所の長屋や市場で声をかけた。\",\n      ",
+      "descriptionSample": "仕事を退いてから時間が経ったが、じっとしているのも性に合わず、路銀の減りも気になってきた。年老いた体でも引き受けられるささやかな仕事がないか、近所の長屋や市場で声をかけた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "路地裏の露店で、古着や手細工の小商いを始める",
+          "jobEffectsDetected": [
+            24
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "軒先に小さな敷物を広げ、繕った布や小物を並べた。近所の住人と言葉を交わしながら、自分のペースで小銭を稼ぐ穏やかな日々が始まった。"
+          ]
+        },
+        {
+          "label": "集会所や長屋の掃除・管理人見習いとして手伝う",
+          "jobEffectsDetected": [
+            1
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "近隣の顔役から共同便所や広場の清掃を頼まれ、日当をもらうことになった。若い頃のような無理は利かないが、地域に居場所を取り戻した。"
+          ]
+        },
+        {
+          "label": "無理に働かず、蓄えと周囲の支えに甘えて余生を過ごす",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "体を休めることを第一にし、日向ぼっこをしながら静かに過ごした。贅沢はできないが、平穏な一日に感謝した。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "illness_review",
+      "source": "data/base/life-and-health.js:281",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "illnessReviewed",
+        "illnessTreated",
+        "job",
+        "med",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 280,
+      "sourceLength": 1409,
+      "conditionSnippet": null,
+      "descriptionSample": "いく晩寝ても体の鉛のような重さが抜けず、歩くだけで息が上がるようになった。病院へ行くには金も時間もかかるが、このまま放っておけば働くことすらできなくなりそうだった。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "診療所で診てもらい、薬と休養を取る（費用 {illnessReviewCost}）",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "診療所で診察を受け、{illnessReviewCost}を払って薬をもらった。数日は無理な仕事を控え、温かい湯を飲んで体を休めると、少しずつ息が楽になった。"
+          ]
+        },
+        {
+          "label": "家族や近所に肩を借り、診てもらえる場所を探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "家族や近所の人に支えてもらいながら、診てくれそうな診療所を探して回った。いくつか心当たりは見つかったものの、帰り着くころにはぐったりと冷や汗をかいていた。"
+          ]
+        },
+        {
+          "label": "仕事を辞めて療養する",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "これ以上は働けないと職場に伝え、仕事を辞めて療養に専念することにした。枕元に水差しを置き、天井の染みを見つめながら、蓄えがあと何日もつか数えた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "illness_followup",
+      "source": "data/base/life-and-health.js:321",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "illnessReviewed",
+        "illnessTreated",
+        "job",
+        "med",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 320,
+      "sourceLength": 1412,
+      "conditionSnippet": null,
+      "descriptionSample": "熱と鈍い痛みがいつまでも引かず、朝、布団から体を起こすのさえやっとだった。もう一度金を払って診療所へ行くか、周りの手を借りるか、それとも仕事を辞めて寝込むか。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "診療所へ行き、治療と休養を受ける（費用 {illnessFollowupCost}）",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "{illnessFollowupCost}を払って強い薬を出してもらい、仕事を休んだ。苦い薬を水で流し込み、熱が引くのを祈りながら毛布にくるまった。"
+          ]
+        },
+        {
+          "label": "食事の差し入れや付き添いを頼み、受診先を探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "親しい人に頼み込んで粥を作ってもらい、通えそうな診療所を探してもらった。まだ診察は受けられないまま、熱い息を吐きながら夜を明かした。"
+          ]
+        },
+        {
+          "label": "仕事を離れ、手元の薬と休養でしのぐ",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "職場に辞意を伝え、家に残っていた薬を飲んで毛布にくるまった。痛みはなかなか引かず、病院へ行くあてもないまま、静かに休養を取った。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "nat",
+      "source": "data/base/life-and-health.js:514",
+      "sourceRefs": [
+        "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+        "SRC_MOBILE_CITY_MOBILITY",
+        "SRC_REGIONAL_ENVIRONMENT",
+        "SRC_CATASTROPHE_CIVILIAN_LIFEPATH"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "d",
+        "displacement",
+        "fl",
+        "home",
+        "job",
+        "p",
+        "res",
+        "w"
+      ],
+      "found": true,
+      "actualLine": 514,
+      "sourceLength": 3577,
+      "conditionSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "運賃を払い、別地域の避難先へ向かう",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "重たい家財はすべて諦め、なけなしの金を払って避難の荷車に飛び乗った。背後で空が赤黒く裂けるのを見やりながら夜通し揺られ、夜明けに知らない町の救護テントで目を覚ました。",
+            "逃げ延びる途中で大地が裂け、崩れ落ちた岩と黒い結晶の嵐が避難路を呑み込んだ。人気のない街道で、そのまま息絶えた。"
+          ]
+        },
+        {
+          "label": "避難区画に移り、都市の進路変更を待つ",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "係員の怒号に押されながら地下の避難区画へ滑り込んだ。機関部が唸りを上げて都市が急旋回し、鉄壁の向こうで食器の割れる音と子どもの泣き声がいつまでも響いていた。",
+            "都市の旋回が間に合わず、凄まじい衝撃が区画ごと船体を突き上げた。ひしゃげた鉄骨と隔壁が崩れ落ち、暗闇の下敷きになった。"
+          ]
+        },
+        {
+          "label": "今ある住まいや仕事を守り、その場に残る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "窓に板を打ち付け、机の下で息を潜めた。やがて地鳴りは遠ざかり、灰の舞う朝が来たが、しばらくは少しの風音にも心臓が跳ねた。",
+            "逃げる間もなく天災の直撃を受け、住み慣れた街ごと黒い結晶と瓦礫の海に呑み込まれた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "displacement_after",
+      "source": "data/base/life-and-health.js:612",
+      "sourceRefs": [],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        27
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "displacement",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 613,
+      "sourceLength": 2326,
+      "conditionSnippet": null,
+      "descriptionSample": null,
+      "choiceCountParsed": 4,
+      "choices": [
+        {
+          "label": "親類や知人の元へ身を寄せる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "伝手をたどって親類や知人を訪ね、部屋の片隅に布団を敷かせてもらった。礼として幾ばくかの生活費を渡し、久しぶりに屋根の下で足を伸ばして眠った。"
+          ]
+        },
+        {
+          "label": "配給と日雇いの復旧仕事で暮らしを立て直す",
+          "jobEffectsDetected": [
+            27
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "配給で飢えをしのぎながら、瓦礫の片づけや荷運びの日雇いに精を出した。やがて現場監督に働きぶりを買われて測量の補助も任されるようになり、この町で生きていく足がかりができた。"
+          ]
+        },
+        {
+          "label": "家の人と力を合わせて仮住まいを整える",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "家の人と一緒にバケツで水を運び、湿った毛布を日向に干した。まだ知らない道ばかりだけれど、毎朝顔を合わせる隣のテントの人と挨拶を交わすようになった。"
+          ]
+        },
+        {
+          "label": "元の街へ戻れる日を待つ",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "ようやく封鎖が解け、元の街区へ立ち入れるようになった。かつての家は跡形もなかったが、近くの焼け残った建物に小さな部屋を借りて出直すことにした。",
+            "いつまで待っても通行再開の知らせは届かなかった。冷たい風の吹く避難所で配給を受け取り、故郷へ帰る夢をまた次の季節へ先送りした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "war",
+      "source": "data/base/life-and-health.js:841",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "d",
+        "fl",
+        "h",
+        "home",
+        "job",
+        "p",
+        "res"
+      ],
+      "found": true,
+      "actualLine": 842,
+      "sourceLength": 1591,
+      "conditionSnippet": null,
+      "descriptionSample": "遠くで砲撃の閃光が走り、移動都市は黒煙を吐いて緊急針路変更を始めた。機関区へ走る整備班と、避難路へ殺到する住民の怒号で通路が埋め尽くされた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "すべてを置いて避難する",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "背負えるだけの荷物を掴んで街を脱出した。たどり着いた見知らぬ町の救護所で、泥だらけの靴のまま配給の長い列の最後尾に並んだ。",
+            "人がひしめく避難路のど真ん中に砲弾が落ちた。名前を呼ぶ声も轟音にかき消され、爆風と炎のなかに呑み込まれた。"
+          ]
+        },
+        {
+          "label": "武器を取って従軍する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "泥と硝煙にまみれた前線から、なんとか生還した。体には消えない傷跡が残り、軍から届くわずかな恩給で薬と日々のパンをつないだ。夜中に扉が鳴るたび、無意識に身構える癖が抜けない。",
+            "激戦の最前線で倒れ、二度と立ち上がれなかった。故郷へ戻ったのは、戦死を告げる紙切れ一枚だけだった。"
+          ]
+        },
+        {
+          "label": "故郷の家を守って留まる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "主力部隊は街の脇を通り抜け、最悪の事態は免れた。爆風で割れた窓に隣人と板を打ち付け、荒れ果てた通りで互いの無事を確かめ合った。",
+            "激しい砲撃で家並みが次々と崩れ落ち、逃げる間もなく梁と瓦礫の下敷きになった。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "mv",
+      "source": "data/base/life-and-health.js:894",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "debt",
+        "fl",
+        "home",
+        "job",
+        "p",
+        "res",
+        "residenceArrangement",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 895,
+      "sourceLength": 2690,
+      "conditionSnippet": null,
+      "descriptionSample": "きな臭い知らせが相次ぎ、この移動都市もいつ戦火に巻き込まれるか分からない。外の定住地へ降りるか、別の移動都市へ乗り継ぐか、懐の金を数えながら思案した。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "固定集落へ移り、仕事と寝床を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "運賃と当面の宿代を払い、紹介された集落へ移り住んだ。荷物を解き、水場の場所や働き口の手順をひとつずつ頭に叩き込んだ。",
+            "当てにしていた仕事の口は空振りになり、宿代ばかりが飛ぶように消えていった。見知らぬ町の片隅で、明日の寝床を探して途方に暮れた。"
+          ]
+        },
+        {
+          "label": "別の移動都市へ渡り、働き口を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "連絡便のチケットを手に入れ、別の移動都市へ乗り込んだ。タラップが上がり、見慣れた街並みが砂煙の向こうへ遠ざかっていった。",
+            "出発直前になって仲介人と連絡が途絶え、乗り込みの話は立ち消えになった。旅費は減らなかったものの、また一から行き先を探し直す羽目になった。"
+          ]
+        },
+        {
+          "label": "今の土地に留まり、親類や仲間に頭を下げる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "事情を打ち明けると、当面の寝床と日雇いの口を融通してもらえた。借りた生活費は出世払いで返す約束をし、なんとか急場をしのいだ。",
+            "頭を下げて回ったが、どこも自分の暮らしで手一杯だった。冷たい夜風のなか、救護所の空きベッドを探して歩いた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "old",
+      "source": "data/base/life-and-health.js:974",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 975,
+      "sourceLength": 1151,
+      "conditionSnippet": null,
+      "descriptionSample": "若い頃は一晩寝れば抜けた仕事の疲れが、翌朝になっても腰や肩に重く残るようになった。無理を押して同じように働くか、日数を減らしてもらうか、監督に相談した。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "出る日数を減らし、若い衆への手ほどきに回る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "現場に出る日数を減らし、自分が長年かけて覚えた段取りやコツを若手に教える役回りを引き受けた。稼ぎは少し減ったが、体への負担はぐっと軽くなった。"
+          ]
+        },
+        {
+          "label": "きっぱり退職する",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "長年の勤めに区切りをつけ、職場に別れを告げた。翌朝、いつもの始業時刻にふと目が覚め、仕事着を着なくていい静かな朝に少し不思議な気分になった。"
+          ]
+        },
+        {
+          "label": "まだ現役として今の持ち場で働き続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "「まだ若い者には負けん」と今の持ち場に残った。きつい日は無理をしないよう心に留めつつ、これまで通りの稼ぎを守った。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "old_followup",
+      "source": "data/base/life-and-health.js:1014",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 1015,
+      "sourceLength": 1065,
+      "conditionSnippet": "show: s =>\n        Number.isInteger(s.reducedWorkStartedYear) &&\n        s.year - s.reducedWorkStartedYear >= 2,\n      cd: 7,\n      w: 0.55,\n      t: \"仕事の時間を減らしてから何年かが過ぎた。体をいたわる暮らしには慣れたものの、懐具合や体力の衰えは年々変わっていく。職場から、来期はどうするか声がかかった。\",\n      ",
+      "descriptionSample": "仕事の時間を減らしてから何年かが過ぎた。体をいたわる暮らしには慣れたものの、懐具合や体力の衰えは年々変わっていく。職場から、来期はどうするか声がかかった。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "今の短い勤務のまま続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "無理をせず、今のペースのまま働き続けることにした。まだ日の高いうちに帰り道につき、夕飯の買い物をゆっくり済ませて家で足を伸ばした。"
+          ]
+        },
+        {
+          "label": "ここで完全に引退する",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "世話になった職場に礼を言い、最後の仕事を終えた。翌月から給金が入らなくなる心細さはあるが、長年の荷を下ろして深い息をついた。"
+          ]
+        },
+        {
+          "label": "まだ体が動くうちに、また勤務を増やす",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "人手が足りないという職場の頼みもあり、また以前のようにしっかりシフトへ入ることにした。少しでも蓄えを増やせるよう、もう一度気を引き締めた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "elder_work_opportunity",
+      "source": "data/base/life-and-health.js:1048",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        24,
+        12
+      ],
+      "mechanics": [
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 1049,
+      "sourceLength": 1676,
+      "conditionSnippet": null,
+      "descriptionSample": "引退して何年か経ったころ、近所の商店から「昼の間だけ店番を手伝ってくれないか」と声がかかった。近くの学び場でも、子どもたちに読み書きや算盤を教えられる年長者を探しているらしい。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "短い時間だけ店番を手伝う",
+          "jobEffectsDetected": [
+            24
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "週に数日、近所の店先に立つようになった。常連客と世間話をしながら品物を渡し、夕方には小遣いほどの賃金をもらってゆっくり歩いて帰った。",
+            "せっかく足を運んだが、店番の口は一歩違いで若い人に決まっていた。店主と茶を一杯飲んで世間話をし、また縁があればと帰ってきた。"
+          ]
+        },
+        {
+          "label": "読み書きや帳面の経験を教える",
+          "jobEffectsDetected": [
+            12
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "近所の学び場で、子どもたちに文字の書き方や算盤の弾き方を教えることになった。授業のあと、たどたどしい字を誇らしげに見せに来る子の笑顔に心が和んだ。",
+            "教える役は別の人に決まったが、ついでに頼まれた近所の人の手紙の代読を引き受け、礼に果物をもらった。"
+          ]
+        },
+        {
+          "label": "給金のある仕事はせず、近所のちょっとした手伝いをする",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "決まった勤めには出ず、近所で頼まれた留守番や繕い物などを気楽に引き受けた。お金にならない日も多いが、誰かに頼りにされるだけで部屋にこもりがちな日々が明るくなった。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "dis",
+      "source": "data/base/family-and-livelihood.js:408",
+      "sourceRefs": [],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cr",
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 408,
+      "sourceLength": 1619,
+      "conditionSnippet": null,
+      "descriptionSample": "現場の監督から、あなたの種族を理由に条件の悪い持ち場へ移るよう言い渡された。「上の決まりだ」の一点張りで、どんな規則なのか尋ねても取り合わなかった。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "その場では唇を噛んで従う",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "ここで逆らえば明日の食い扶持まで失いかねない。奥歯を噛み締めて引き下がったが、帰り道も屈辱が胸の奥でくすぶり続けた。"
+          ]
+        },
+        {
+          "label": "不当だと声を上げる",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "見ていた同僚の一人が「そんな決まりは聞いたことがない」と口を添えてくれた。監督は舌打ちして引き下がり、翌週の勤務表には元の持ち場が戻っていた。",
+            "食い下がったその日のうちに契約を打ち切られた。私物を詰めた袋を肩にかけ、冷たい風の吹く通りへ次の働き口を探しに出た。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "fam_unemploy",
+      "source": "data/base/family-and-livelihood.js:632",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        1
+      ],
+      "mechanics": [
+        "cash",
+        "educationAction",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 688,
+      "sourceLength": 1684,
+      "conditionSnippet": null,
+      "descriptionSample": "大黒柱だった親が職を失った。ただでさえ苦しかった台所は火の車で、明日のパンや米をどうするかという声が部屋に響いた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "自分も働きに出る",
+          "jobEffectsDetected": [
+            1
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "学ぶ時間も削り、日雇いの荷運びに出た。泥だらけで持ち帰った小銭で食卓はつないだが、親の働き口はまだ見つからない。",
+            "大人の嫌がる危険な現場しか口がなく、無理がたたって体を壊した。親の仕事も決まらず、食費と薬代のどちらを先に出すかで家が暗くなった。"
+          ]
+        },
+        {
+          "label": "勉学を続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "「お前は学校へ行け」と親が背中を押してくれた。すり減った靴で通学を続けたが、親は毎日仕事を探し回って疲れ切っていた。",
+            "学費どころか日々の食事にも事欠くようになり、学校を辞めざるを得なくなった。親の新しい仕事もまだ見つからない。"
+          ]
+        },
+        {
+          "label": "家の仕事を手伝って支える",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "水汲みや炊事、細かな繕い物を引き受け、親が仕事探しに回れるよう家を守った。まだ吉報は届かないが、食卓ではなるべく明るい声を出し合った。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "fam_conscript",
+      "source": "data/base/family-and-livelihood.js:722",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        14,
+        0
+      ],
+      "mechanics": [
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 778,
+      "sourceLength": 1481,
+      "conditionSnippet": null,
+      "descriptionSample": "戦火が迫るなか、きょうだいの一人に部隊への招集状が届いた。泣き崩れる家族のそばで、免除を願い出るか、自分が身代わりに出るか、重苦しい相談が続いた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "家族で役所へ掛け合い、免除を願い出る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "家族総出で窓口へ頭を下げ、家の窮状を必死に訴えた。係官は渋い顔で書類を預かり、徴集はひとまず先送りになった。きょうだいと肩を抱き合って家へ帰った。",
+            "どれほど食い下がっても免除は認められず、きょうだいは兵舎へ連れて行かれた。「いつ帰れるのか」と叫ぶ声に、係官は振り返りもしなかった。"
+          ]
+        },
+        {
+          "label": "きょうだいと語り合い、集合場所まで見送る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "きょうだいは覚悟を決め、ぶかぶかの軍服に袖を通した。門の向こうへ消える寸前、こちらを振り返って短く手を振った。",
+            "数ヶ月後、きょうだいが前線で行方知れずになったという冷たい通知だけが届いた。"
+          ]
+        },
+        {
+          "label": "自分が身代わりになって出頭する",
+          "jobEffectsDetected": [
+            14,
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "きょうだいを家に残し、自分が徴集の列に入った。泥にまみれる訓練と行軍の日々が始まり、故郷からの便りは次第に途絶えていった。",
+            "過酷な訓練のさなかに大怪我を負い、使い物にならないと部隊を追い出された。足を引きずりながら、長い道のりをかけて家へ戻った。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "fam_infected",
+      "source": "data/base/family-and-livelihood.js:770",
+      "sourceRefs": [
+        "SRC_ORIPATHY_SOCIAL",
+        "SRC_TERRA_FAMILY",
+        "SRC_URSUS_INFECTED",
+        "SRC_LEITHANIEN_INFECTION",
+        "SRC_LATERANO_CIVIC"
+      ],
+      "catalogChoiceCount": 5,
+      "catalogOutcomeBranchCount": 8,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "infectionAwarenessActions",
+        "job",
+        "k",
+        "p",
+        "parentTreatment",
+        "res",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 826,
+      "sourceLength": 8073,
+      "conditionSnippet": null,
+      "descriptionSample": "{parentName}が鉱石病だと分かった。その夜から、家では窓を閉め切ってひそひそ声で話すようになった。よそで絶対に口にするなと言い含められたが、職場や大家にバレたらどうなるかという怯えが食卓に張りついていた。",
+      "choiceCountParsed": 5,
+      "choices": [
+        {
+          "label": "近所には伏せ、家族で通院を支える",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "周りに気づかれないよう、親は人目を避けてこれまでの診療所へ通い続けた。体がつらい日でも、家の前では何事もない顔で振る舞っていた。",
+            "隠し通せず近所に知れ渡り、道ですれ違っても挨拶を返されなくなった。親をかばったあなたまで学校で遠巻きにされ、家族は誰にも頼れないまま肩を寄せ合った。"
+          ]
+        },
+        {
+          "label": "医師に今後の治療の続け方を相談する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "医師は声を潜め、無理なく薬を続ける方法を教えてくれた。帰り道、親はほっとしたようにあなたの手を強く握り、次の診察日まで二人で秘密を守ることにした。",
+            "診察室でもはっきりした見通しは立たず、次の診察まで様子を見ることになった。家の大人たちの会話がふいに途切れるたび、親の仕事やこの家がどうなるのかと胸が冷えた。"
+          ]
+        },
+        {
+          "label": "近くの診療所へ親と一緒に通う",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "親の荷物を持って診療所へついて行った。消毒液の匂いがする待合室のベンチで順番を待ち、薬の袋を受け取る親の横顔をじっと見守った。"
+          ]
+        },
+        {
+          "label": "巡回診療が来る日を確かめ、付き添う人を決める",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "町に診療所はなく、巡回の医療車が来る日も月にわずかしかない。親が倒れる前に誰が仕事を休んで付き添うか、家族で足代をかき集めながら話し合った。"
+          ]
+        },
+        {
+          "label": "いっそ別の土地へ移ろうと家族に話す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "後ろ指をさされる前に、家族で運賃を払って街を出た。背負えるだけの荷物を抱え、誰も自分たちを知らない土地へ向かった。",
+            "旅の途中で宿が取れず、冷たい風に吹かれて親の熱が上がってしまった。あなたも疲れ果てて動けなくなり、旅を諦めて元の街へ引き返した。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "fam_tribetree",
+      "source": "data/base/family-and-livelihood.js:957",
+      "sourceRefs": [
+        "SRC_SAMI_CLANS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "res",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 1014,
+      "sourceLength": 1079,
+      "conditionSnippet": null,
+      "descriptionSample": "世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "これからも氏族と歩き続けたいと伝える",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "次の移動から一人前の手伝いを任されることになった。吹雪の避け方や獣道の名前を教わるたび、この氏族の中に自分の居場所が根づいていくのを感じた。"
+          ]
+        },
+        {
+          "label": "よその土地の親類を頼りたいと話す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "紹介状を懐にしまい、運賃を払って南へ続く荷車に乗った。揺れる荷台の上で、聞き慣れた氏族の唄が白樺の森の向こうへ遠ざかっていった。",
+            "旅立つ支度までしたが、頼るはずの親類から迎えの返事が来なかった。気まずさを抱えたまま幕舎へ戻り、また氏族と冬を越すことになった。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "fam_inherit",
+      "source": "data/base/family-and-livelihood.js:1032",
+      "sourceRefs": [],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        5
+      ],
+      "mechanics": [
+        "cr",
+        "ep",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 1089,
+      "sourceLength": 1323,
+      "conditionSnippet": null,
+      "descriptionSample": "商いを切り盛りする親から、そろそろ店の仕事を手伝わないかと切り出された。まだ学業を続けたい気持ちもあるが、年々白髪の増える親の横顔を見ると簡単には断れなかった。",
+      "choiceCountParsed": 4,
+      "choices": [
+        {
+          "label": "親の店に入り、商いを覚える",
+          "jobEffectsDetected": [
+            5
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "前掛けを締め、親の隣で仕入れ先との駆け引きや算盤を覚え始めた。看板を継ぐのはまだ先だが、常連客に顔を覚えてもらうのが嬉しかった。"
+          ]
+        },
+        {
+          "label": "今は学業を続けたいと伝える",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "「もう少しだけ勉強を続けさせてほしい」と頭を下げた。親は少し寂しそうに頷き、店の話は卒業まで待ってくれることになった。"
+          ]
+        },
+        {
+          "label": "店は継がず、よそで働き口を探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "自分の力で外の世界を見てみたいと伝え、店の話を断った。夕食の席で商売の話題が出るたび、気まずくて茶碗に目を落とした。"
+          ]
+        },
+        {
+          "label": "すぐには決めず、もう少し考えさせてほしいと言う",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "まだ心の整理がつかないと正直に伝えた。夜、店を閉めるシャッターの音を聞きながら、自分が帳場に立つ姿を思い描いてみた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "urs_mine",
+      "source": "data/base/regional-west.js:123",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE"
+      ],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 8,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "d",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 123,
+      "sourceLength": 1936,
+      "conditionSnippet": null,
+      "descriptionSample": "地底を揺らす轟音とともに、第3坑道の天井が崩れ落ちた。粉塵にむせながら坑口まで駆け戻ると、「まだ奥に仲間が残ってるぞ！」という悲鳴と、監督官に日当の扱いを詰め寄る怒号が入り乱れていた。",
+      "choiceCountParsed": 4,
+      "choices": [
+        {
+          "label": "ツルハシを握り、救出に向かう",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "カンテラを掲げて崩落現場へ引き返し、瓦礫の隙間から泥だらけの仲間を引っ張り出した。外の冷たい空気を吸い込みながら、煤けた顔を見合わせて無事を確かめ合った。",
+            "仲間を掘り出している最中に二度目の崩落が起き、落ちてきた岩塊に肩を強く打ちつけた。担架で坑口へ運び出され、治療費と薬代で手元の蓄えがごっそり消えた。",
+            "仲間を助けようと奥へ踏み込んだ瞬間、大規模な二次崩落が頭上から襲いかかり、暗い坑道の底でそのまま帰らぬ人となった。"
+          ]
+        },
+        {
+          "label": "監督官に休業補償と安全対策を掛け合う",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "仲間たちと肩を並べて監督官に詰め寄り、坑道が復旧するまでの休業手当をどうにか認めさせた。次の切羽の支柱を補強する約束も取り付け、泥のついた手で硬貨を受け取った。",
+            "「文句があるなら明日から来なくていい」と監督官に一蹴され、次のシフト表から名前を消された。翌朝、煤の落ちきらない指先を見つめながら街の求人札を探して歩いた。"
+          ]
+        },
+        {
+          "label": "坑口で崩落の位置を伝え、救出班を待つ",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "駆けつけた救出班に、支柱が折れた場所や最後に仲間を見た位置を詳しく伝えた。その後は坑口の焚き火の前で、真っ黒になって運び出されてくる仲間の数を祈るように数えた。",
+            "坑口から噴き出す粉塵を吸い込み、夜になるまで激しい咳が止まらなかった。その日の作業は打ち切られたが、いつから坑道が再開されるのかは誰も教えてくれなかった。"
+          ]
+        },
+        {
+          "label": "ツルハシを返し、ヤマを降りる",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "今日限りで辞めると監督官に告げ、使い込んだ工具箱とヘルメットを返した。明日からどうやって食いつなぐかあてはないが、あの暗い地の底へ潜る朝はもう来ない。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "urs_conscript",
+      "source": "data/base/regional-west.js:187",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        2,
+        14
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "k",
+        "p",
+        "payBonus"
+      ],
+      "found": true,
+      "actualLine": 187,
+      "sourceLength": 1390,
+      "conditionSnippet": null,
+      "descriptionSample": "街角に貼り出された軍需工場の募集票には、「高給・宿舎完備」と太字で書かれていた。だがよく読めば、配属先も外出の可否もすべて軍の管理下に置かれるとあり、戦況が悪化した際にどこへ送られるかは曖昧にぼかされていた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "背に腹は代えられず応募する",
+          "jobEffectsDetected": [
+            2,
+            14
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": true,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "募集窓口で契約書に署名し、軍需工場の生産ラインに入った。確かに給金は上がったが、休日に街へ出るのにもいちいち衛兵の通行証が要る息苦しい暮らしが始まった。",
+            "後方工場での作業と聞いて署名したはずが、到着した先で渡されたのは重い背嚢と軍務命令書だった。抗議する暇もなく輸送車に押し込まれ、砲声の響く前線近くの補給基地へ回された。"
+          ]
+        },
+        {
+          "label": "窓口で配属先と退職条件を詳しく尋ねる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "契約期間が満了したら本当に辞められるのか、前線へ回されることはないのかと係官に尋ねた。歯切れの悪い返答を胸に刻み、うかつに判を押すのはやめておくことにした。"
+          ]
+        },
+        {
+          "label": "募集を断り、民間の仕事を探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "募集票を窓口に返し、今の仕事があるからと頭を下げて立ち去った。冷たい風の吹く表通りへ出て、ほっと息をついた。",
+            "断ろうとすると係官の目つきが変わり、「なぜ軍の募集に応じないのか」と根掘り葉掘り詰問された。赤鉛筆で台帳に名前を控えられ、嫌な汗をかきながら窓口を出た。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "urs_purge",
+      "source": "data/base/regional-west.js:280",
+      "sourceRefs": [
+        "SRC_TL_EARLY"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 280,
+      "sourceLength": 1670,
+      "conditionSnippet": null,
+      "descriptionSample": "黒い外套を着た役人たちが通りを回り、一軒ずつ住人の名簿と身元を調べていた。家の大人たちは険しい顔でカーテンを閉め、「外でうちの仕事や親戚の話を絶対にするんじゃないよ」とあなたの肩を強く掴んだ。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "家のなかで息を潜めて暮らす",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "それきり家に客が来なくなった。大人たちは戸を叩く音がするたび、まず覗き穴から外の相手を確かめるようになった。",
+            "ある日、役人が土足で家に上がり込み、本棚や引き出しの中身を床にぶちまけていった。大人たちは何日も仕事へ行けず、あなたは散らかった部屋の隅で黙って嵐が過ぎるのを待った。"
+          ]
+        },
+        {
+          "label": "家財をまとめ、家族で別の街へ移る",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "夜明け前に荷馬車へ家財道具を積み込み、一家で住み慣れた街を離れた。遠ざかる幌の隙間から、見慣れた屋根や煙突が霧の向こうへ消えていくのをいつまでも見つめた。",
+            "街を出ようとしたが、街道の検問所で通行証の不備を咎められて追い返された。賄賂や荷運びの費用だけが消え、家に帰った大人たちはしばらく口をきかなかった。"
+          ]
+        },
+        {
+          "label": "いざという時に頼れる親戚や知人へ手紙を出す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "遠くの街にいる知人から、「何かあったらすぐこちらへ来なさい」という温かい返事が届いた。家の人はその手紙を大切に胸ポケットへしまい、少しだけ表情を和らげた。",
+            "しばらくして届いた返事には、向こうも余裕がないという素っ気ない断りが書かれていた。家の人は黙って手紙をストーブにくべ、今いる場所で生き延びる算段を始めた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "vic_patron",
+      "source": "data/base/regional-west.js:337",
+      "sourceRefs": [],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        6,
+        2
+      ],
+      "mechanics": [
+        "cr",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 337,
+      "sourceLength": 1552,
+      "conditionSnippet": null,
+      "descriptionSample": "地元の有力な名家の執事から、「旦那様が若い働き手に目をかけておられる。望むなら良い勤め先へ口をきいてやろう」と声がかかった。渡りに船の話だが、名家の後ろ盾を得れば、後でどんな義理を返さねばならないか知れたものではない。",
+      "choiceCountParsed": 4,
+      "choices": [
+        {
+          "label": "書類仕事への紹介を頼む",
+          "jobEffectsDetected": [
+            6
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "名家の紹介状を懐に役所へ赴き、書記の席を得た。初出勤の日、上役から「あの方のご推薦なら安心だ」と意味ありげに微笑まれ、背筋がわずかに粟立った。",
+            "紹介状を持って出向いたものの、あいにくタッチの差で別の縁故者が席を埋めたあとだった。無駄足に肩を落とし、自力で別の働き口を探すことにした。"
+          ]
+        },
+        {
+          "label": "蒸気工場の働き口への紹介を頼む",
+          "jobEffectsDetected": [
+            2
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "口添えのおかげで大きな蒸気工場にすんなり雇われた。油まみれの機械の扱いを覚えながら、時折屋敷の執事へ近況の挨拶に顔を出さねばならないのが少し気重だった。",
+            "紹介された工場を訪ねたが、求められていた職種の条件と合わなかった。執事に丁重に礼を述べて引き下がり、元の暮らしへと戻った。"
+          ]
+        },
+        {
+          "label": "見返りに何を求められるのか探りを入れる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "「ありがたいお話ですが、私にどんなお役目が務まるでしょうか」と執事に遠回しに尋ねてみた。曖昧な微笑みの裏にある打算を感じ取り、すぐには飛びつかないことにした。"
+          ]
+        },
+        {
+          "label": "丁重に辞退し、自分の力で暮らす",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "せっかくの申し出だが、分不相応だからと頭を下げて断った。出世の近道は逃したかもしれないが、誰にも首根っこを掴まれない気楽さを選んだ。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "vic_strike",
+      "source": "data/base/regional-west.js:438",
+      "sourceRefs": [
+        "SRC_INDUSTRIAL_LIFE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "job",
+        "p",
+        "payBonus",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 438,
+      "sourceLength": 1574,
+      "conditionSnippet": null,
+      "descriptionSample": "蒸気機関の煤煙が立ちこめる工場の裏手で、仲間たちが「こんな安い賃金と長時間の立ちっぱなしじゃ体がもたない」とストライキの相談を始めた。加わればその間の日当は出ないが、月末の家賃の支払いもすぐそこに迫っていた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "当面の食い扶持を取り置いてストライキに加わる",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": true,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "ボイラーの火を止めて門の前に座り込み、数日間の交渉の末に工場長から賃上げの約束を勝ち取った。仲間たちと煤けた手で握手し合い、誇らしい気持ちで持ち場へ戻った。",
+            "蓄えを食い潰して抗議を続けたものの、会社側は警備員を雇って門を閉ざし、参加者全員を解雇した。賃上げどころか職まで失い、翌朝から冷たい霧のなか求人札を探して歩いた。"
+          ]
+        },
+        {
+          "label": "残業時間や怪我人の記録をまとめて代表に渡す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": true,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "表立って作業は止められない代わりに、これまでの不当な時間外労働や負傷者の記録を細かく書き出して交渉役へ託した。それが決め手となって一部手当の見直しが通り、仲間からも感謝された。",
+            "記録をまとめて渡したものの、交渉はうやむやに終わった。誰が資料を作ったのか上役に勘づかれていないか、職場で顔を合わせるたびに胃が痛んだ。"
+          ]
+        },
+        {
+          "label": "ストライキには加わらず、普段通り機械を回す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "月末の家賃を考えて持ち場を離れなかった。家の事情を察してくれる仲間もいたが、昼休みの輪にはどうにも加わりづらかった。",
+            "ピケを張る仲間たちの脇をすり抜けて工場へ入ったことで、「裏切り者」と罵声を浴びせられた。昼休みも工場の隅でひとり冷たいパンをかじり、重い足取りで家路についた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "vic_war",
+      "source": "data/base/regional-west.js:485",
+      "sourceRefs": [
+        "SRC_TL_LATE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 8,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "d",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 485,
+      "sourceLength": 2310,
+      "conditionSnippet": "show: s => !!s.world?.events?.londinium_war,\n      w: 2.0,\n      once: true,\n      t: \"ロンディニウムの居住区まで激しい砲撃の音が迫り、窓ガラスがビリビリと震え続けている。昨日まで通れた大通りが今日は瓦礫で塞がり、飲み水と今夜の寝床を確保するだけでも必死の有様だ。\",\n      ",
+      "descriptionSample": "ロンディニウムの居住区まで激しい砲撃の音が迫り、窓ガラスがビリビリと震え続けている。昨日まで通れた大通りが今日は瓦礫で塞がり、飲み水と今夜の寝床を確保するだけでも必死の有様だ。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "危険を冒して救援物資の運搬を引き受ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "黒煙の上がる通りを縫って医薬品と食料の木箱を運び、まとまった手当と乾パンを受け取った。崩れた建物の陰を走り抜けて部屋へ戻ると、張りつめていた糸が切れて膝がガクガクと震えた。",
+            "荷車を引いて路地を抜ける途中で至近弾が炸裂し、荷物を投げ出して這々の体で逃げ帰った。飛んできた破片で切った腕を手当てしながらも、耳鳴りがしばらく止まなかった。",
+            "物資を運ぶ途中で激しい砲撃の直撃を受け、崩れ落ちる煉瓦の下敷きとなってそのまま命を落とした。"
+          ]
+        },
+        {
+          "label": "有り金を払って脱出ルートを確保し、街を離れる",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "闇のブローカーに30万龍門幣を握らせて荷馬車の隅に乗り込み、砲火に包まれる王都をどうにか脱出した。命は助かったものの、見知らぬ避難先でまた一から仕事と寝床を探さなければならない。",
+            "手配金を払って街の外縁まで向かったものの、前方の城門が戦闘で封鎖されており引き返すしかなかった。逃げ惑う群衆のなかで破片を浴びて負傷し、金も体力もすり減らした。"
+          ]
+        },
+        {
+          "label": "頑丈な地下室に身を寄せ、嵐が過ぎるのを待つ",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "近所の住民たちと古い石造りの地下室に毛布を敷き、僅かな水と食料を分け合った。頭上で鈍い爆発音が響くたび、天井から落ちる砂埃を見上げて全員で息を呑んだ。",
+            "身を寄せていた建物のすぐ隣に着弾し、崩れた壁の破片で怪我を負った。潰れた家財道具の買い直しと傷の治療で、なけなしの蓄えがほとんど吹き飛んだ。",
+            "身を寄せていた地下室の天井が攻城砲弾で粉砕され、瓦礫に押し潰されて命を落とした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "col_quarantine_offer",
+      "source": "data/base/regional-west.js:666",
+      "sourceRefs": [
+        "SRC_COLUMBIA_DV1",
+        "SRC_COLUMBIA_DV5"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 672,
+      "sourceLength": 1123,
+      "conditionSnippet": null,
+      "descriptionSample": "高い保険料が払えず薬の確保に苦労していると、同じ境遇の仕事仲間が声を潜めて「市の感染者隔離区画へ入れば、公費で最低限の処置は受けられるらしい」と教えてくれた。ただし一度中へ入れば、今の職場を辞めざるを得ず、外の世界へ自由に出ることも難しくなるという。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "治療を最優先にし、隔離区画へ身を移す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "背に腹は代えられず、荷物を最小限にまとめて隔離区画のゲートをくぐった。簡易ベッドと引き換えに通行証は回収され、いつ外へ出られるのかも分からないまま、高いフェンスの内側での暮らしが始まった。"
+          ]
+        },
+        {
+          "label": "隔離区画へは入らず、外の街で生き延びる道を探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "一度入れば二度と出てこられない気がして、その話は断った。薬のあてはまだ不確かなままだが、自分の足で街を歩き、働き続ける自由だけは手放さないことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [
+        "col_coverage_gap"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "col_hire",
+      "source": "data/base/regional-west.js:690",
+      "sourceRefs": [],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 8,
+      "possibleJobIds": [
+        7,
+        2
+      ],
+      "mechanics": [
+        "cr",
+        "job",
+        "k",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 704,
+      "sourceLength": 2146,
+      "conditionSnippet": null,
+      "descriptionSample": "新興企業が並ぶオフィス街の求人ボードに、研究所の技師と工場スタッフの募集票が貼り出された。履歴書の健康状態の欄を前にペンが止まる。リスクを冒して待遇の良い職場へ挑むか、今の暮らしを守るか思案した。",
+      "choiceCountParsed": 4,
+      "choices": [
+        {
+          "label": "研究室の選考を受ける",
+          "jobEffectsDetected": [
+            7
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "筆記と実技の選考を突破し、研究所の測定機器を管理する技師として採用された。真新しい白衣の寸法を測ってもらいながら、空調の効いた清潔な職場を見回して胸を躍らせた。",
+            "正技師の枠には届かなかったが、データ記録や機器清掃を担う研究補助として雇われた。初任給は高くないものの、最新の設備に触れながら腕を磨ける環境だ。",
+            "面接官の反応は芳しくなく、数日後に不採用の通知が届いた。ガラス張りのビルを見上げ、帰りの路面電車の時刻表に目を落とした。"
+          ]
+        },
+        {
+          "label": "工場の技術職に応募する",
+          "jobEffectsDetected": [
+            7
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "実技試験で工具を手際よく扱い、機械の調整手順を正確に説明して採用を勝ち取った。来週の初出勤から使う専用レンチの型番を誇らしい気持ちで控えた。",
+            "技術職の枠は経験者で埋まってしまったと断られた。今の仕事を続けながら、また空きが出るのを待つことにした。"
+          ]
+        },
+        {
+          "label": "製造ラインの工員募集に応募する",
+          "jobEffectsDetected": [
+            2
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "簡単な面接を通過し、ベルトコンベアの前で部品を組み立てるライン工として採用された。一日中立ちっぱなしの仕事になるが、毎月の決まった給料が入るのはありがたい。",
+            "履歴書を提出したものの、定型文の不採用通知が封筒で返ってきた。受付に理由を尋ねても、困ったように首を振られるだけだった。"
+          ]
+        },
+        {
+          "label": "応募は見送り、今の仕事と暮らしを続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "求人ボードの前から離れ、いつもの通りへと歩き出した。今は無理に環境を変えず、足元の暮らしを固めることにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "col_frontier",
+      "source": "data/base/regional-west.js:758",
+      "sourceRefs": [
+        "SRC_COLUMBIA_INSURANCE",
+        "SRC_COLUMBIA_DV5"
+      ],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        62,
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "debt",
+        "fl",
+        "h",
+        "home",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "localKind",
+        "p",
+        "residenceArrangement",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 772,
+      "sourceLength": 6003,
+      "conditionSnippet": null,
+      "descriptionSample": "診療所の待合室に、クルビア西部の未開拓地へ向かう労働者を募るポスターが貼られていた。前渡しの支度金が出るうえ感染者も不問と書かれているが、荒野の開拓キャンプへ移れば今の病院にはもう通えなくなる。",
+      "choiceCountParsed": 4,
+      "choices": [
+        {
+          "label": "支度金で借金を相殺し、開拓地へ赴く",
+          "jobEffectsDetected": [
+            62,
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "契約書にサインして前渡しの支度金で借金を大きく減らし、会社の大型トラックに揺られて荒野の開拓基地へと移り住んだ。砂埃の舞うプレハブ宿舎から、毎朝ツルハシや重機を扱う現場へ通う日々が始まった。",
+            "支度金で借金は減らせたものの、開拓地の過酷な昼夜交代作業で早々に体を壊してしまった。現場から外され、砂嵐の吹きつける辺境の町で次の働き口を探さなければならなくなった。"
+          ]
+        },
+        {
+          "label": "宿舎付きの開拓労働に応募する",
+          "jobEffectsDetected": [
+            62,
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "鞄ひとつで会社の輸送トラックに乗り込み、辺境の開拓基地へと移った。プレハブ宿舎の二段ベッドを寝床に現場へ通い始め、最初の給料で丈夫な作業靴と防塵外套を買い揃えた。",
+            "新天地での稼ぎを当てにして開拓地へ渡ったが、容赦ない重労働で腰と肺を痛めてしまった。宿舎を追い出される前に、乏しい蓄えで次の仕事を探さなければならない。"
+          ]
+        },
+        {
+          "label": "現地の医療設備や支度金の天引き条件を詳しく聞く",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "採用担当者に、現地に医者はいるのか、宿舎代や食費が支度金からどれだけ引かれるのかを細かく尋ねた。甘い宣伝文句の裏にある厳しい実態を知り、ひとまず頭を冷やすことにした。"
+          ]
+        },
+        {
+          "label": "募集票を返し、今の街に踏みとどまる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "募集票を窓口へ返した。借金や食い扶持の悩みは消えないが、見知らぬ荒野で使い潰されるよりは、通い慣れたこの街で生き延びる道を探すことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "col_frontier_contract_review",
+      "source": "data/base/regional-west.js:932",
+      "sourceRefs": [
+        "SRC_COLUMBIA_INSURANCE",
+        "SRC_COLUMBIA_DV5"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeGoals",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 932,
+      "sourceLength": 1550,
+      "conditionSnippet": "show: s => s.res?.n === \"クルビア\" && s.job === 62 &&\n        $rules.affiliations.canWork(s, \"columbia-frontier-contract-crew\") &&\n        s.lifeRecord?.goals?.some(g => g.id === \"columbia-frontier-contract-work\" &&\n          [\"active\", \"compromised\", \"paused\"].includes(g.status)),\n      t: \"開拓キャンプで働き始めてから、いくつも季節が過ぎた。会社から支給された道具と宿舎はあるが、現場の仕事は体にこたえる。契約を続けるか、区切りをつけて新しい働き口を探すか。\",\n      ",
+      "descriptionSample": "開拓キャンプで働き始めてから、いくつも季節が過ぎた。会社から支給された道具と宿舎はあるが、現場の仕事は体にこたえる。契約を続けるか、区切りをつけて新しい働き口を探すか。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "今の班に残り、勤務を続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "作業帳に名前を記し、次の当番へ向かった。道具の手入れを済ませ、明日の作業手順を確かめた。"
+          ]
+        },
+        {
+          "label": "契約を終え、次の働き口を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "支給品を返し、作業班の責任者に退職を伝えた。宿舎を出た後の寝床と仕事はまだ決まっていない。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "col_frontier"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "kaz_rural",
+      "source": "data/base/regional-west.js:1062",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        1,
+        2
+      ],
+      "mechanics": [
+        "cash",
+        "home",
+        "job",
+        "localKind",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 1215,
+      "sourceLength": 1182,
+      "conditionSnippet": null,
+      "descriptionSample": "農村の知人から、仕事を引き継ぐ人を探していると連絡が来た。道具と住まいの支度には金が要る。都市で別の勤めを探す道もあるが、そちらも何も決まっていない。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "支度を整えて農村の仕事を引き受ける",
+          "jobEffectsDetected": [
+            1
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "道具と寝床の費用を払い、同じ地域の農村で働き始めた。教わる仕事は多いが、翌朝行く場所は決まった。"
+          ]
+        },
+        {
+          "label": "都市の工場の求人を訪ねる",
+          "jobEffectsDetected": [
+            2
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "費用を払い、同じ地域の移動都市で仕事と寝床を得た。初日に知らない道で迷い、同僚へ帰り道を尋ねた。",
+            "求人を訪ねる費用はかかったが、採用は決まらなかった。今いる場所へ戻り、次の募集を探した。"
+          ]
+        },
+        {
+          "label": "今の場所で暮らしを続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "今回は引き受けないと返事をした。農村で仕事を継ぐ話は頭に残ったが、翌朝はいつもの道を歩いた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "lei_isolation",
+      "source": "data/base/regional-west.js:1587",
+      "sourceRefs": [
+        "SRC_LEITHANIEN_INFECTION"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "h",
+        "infectionAwarenessAction",
+        "job",
+        "p",
+        "w"
+      ],
+      "found": true,
+      "actualLine": 1699,
+      "sourceLength": 2145,
+      "conditionSnippet": "show: s => !!$rules.social.institutionalInfectionAudience(s),\n      w: 0.8,\n      cd: 6,\n      t: [\n        {\n          when: \"就労中\",\n          t: \"地区の役所から、診断記録を根拠に隔離区画へ移るよう通達が届いた。移れば仕事を失うことになり、当面の収入も途絶える。\"\n        },\n        {\n          t: \"地区の役所から、診断記録を根拠に隔離区画へ移るよう通達が届いた。移れば外での自由を奪われ、狭い区画に押し込められることになる。\"\n        }\n      ],\n      ",
+      "descriptionSample": "地区の役所から、診断記録を根拠に隔離区画へ移るよう通達が届いた。移れば仕事を失うことになり、当面の収入も途絶える。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "隔離区画へ移る",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "通達に従い、隔離区画で暮らし始めた。仕事を休み、受け取る賃金も減った。"
+          ]
+        },
+        {
+          "label": "移送を避けて身を隠す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "役所の手が届きにくい場所に身を隠した。",
+            "役所の者に見つかり、隔離区画へ連れて行かれた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sir_family_afterwork",
+      "source": "data/base/regional-west.js:2125",
+      "sourceRefs": [
+        "SRC_TERRA_FAMILY",
+        "SRC_SIRACUSA_FAMILIA_CONTEXT",
+        "SRC_SIRACUSA_MARKET_MODEL",
+        "SRC_SIRACUSA_POST_FAMILY_WORK_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        16,
+        24
+      ],
+      "mechanics": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 2255,
+      "sourceLength": 3888,
+      "conditionSnippet": "show: s =>\n        s.siracusaFamilyTie?.status === \"left\" &&\n        !s.lifeRecord?.affiliations?.some(\n          row => row.id === \"siracusa-post-family-work\" && row.status === \"active\"\n        ),\n      once: true,\n      w: 0.72,\n      t: [\n        {\n          when: s => Number(s.siracusaFamilyTie?.duty?.outstandingAmount) > 0,\n          t: \"ファミリーの仕事から手を引いた。帳面に残った立替金はまだ片づかず、別の働き口を探す必要がある。地区の掲示で配達と露店の求人を見つけた。\"\n        },\n        {\n          t: \"ファミリーの仕事を終え、次の稼ぎ口を探した。地区の掲示には近距離の配達と露店の手伝いが出ていた。\"\n        }\n      ],\n      ",
+      "descriptionSample": "ファミリーの仕事から手を引いた。帳面に残った立替金はまだ片づかず、別の働き口を探す必要がある。地区の掲示で配達と露店の求人を見つけた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "近距離の荷物を運ぶ仕事に応募する",
+          "jobEffectsDetected": [
+            16
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "店と住民の荷物を近距離で運ぶ仕事に採用された。以前の用事で覚えた道順や伝言の段取りを、今度は配達の仕事で使うことになった。",
+            "募集枠はすでに埋まっていた。今の仕事を続けながら、地区の掲示を見て次の口を探すことにした。"
+          ]
+        },
+        {
+          "label": "露店の品出しや帳場の手伝いに応募する",
+          "jobEffectsDetected": [
+            24
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "市場の露店で品出しと売上帳の手伝いを始めた。誰の商売を預かるか、仕入れや売上の条件は店主と一つずつ確かめた。",
+            "露店の手伝いは決まらなかった。手元の仕事を続けながら、別の募集を探すことにした。"
+          ]
+        },
+        {
+          "label": "今の仕事を保ち、求人を急いで決めない",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "今の働き口を続け、条件の合う求人が出るのを待った。ファミリーを離れた後の支払いと、顔なじみとの付き合いは別々に考えることにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sir_family_later_work",
+      "source": "data/base/regional-west.js:2255",
+      "sourceRefs": [
+        "SRC_TERRA_FAMILY",
+        "SRC_SIRACUSA_FAMILIA_CONTEXT",
+        "SRC_SIRACUSA_MARKET_MODEL",
+        "SRC_SIRACUSA_POST_FAMILY_WORK_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        24,
+        0
+      ],
+      "mechanics": [
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 2385,
+      "sourceLength": 3067,
+      "conditionSnippet": "show: s =>\n        s.age >= 55 &&\n        s.lifeRecord?.affiliations?.some(\n          row => row.id === \"siracusa-post-family-work\" && row.status === \"active\"\n        ),\n      once: true,\n      w: 0.8,\n      t: \"ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。\",\n      ",
+      "descriptionSample": "ファミリーを離れてからも、配達や店先の仕事を続けてきた。長い道のりや一日の立ち仕事がこたえるようになり、今の働き方をどうするか考えた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "今の仕事を続け、受ける仕事は体調に合わせる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "仕事は続けると伝えた。遠い配達や長時間の立ち仕事は、引き受ける前に体調と家の用事を見て決めることにした。"
+          ]
+        },
+        {
+          "label": "近所の露店で品出しや帳場補助へ移る",
+          "jobEffectsDetected": [
+            24
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "近所の露店に採用され、品出しと売上帳の補助を引き受けた。長い配達は減ったが、店の売上や仕入れを一人で決める立場ではない。",
+            "露店の手伝いは決まらなかった。今の仕事を続け、頼まれる範囲を見直すことにした。"
+          ]
+        },
+        {
+          "label": "地域の仕事を辞め、働き方を改める",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "地域の配達や露店の仕事を終え、収入の柱を一つ手放した。体の具合を見ながら、これからの暮らしを組み直すことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sir_feud",
+      "source": "data/base/regional-west.js:2441",
+      "sourceRefs": [
+        "SRC_TERRA_FAMILY",
+        "SRC_CRIME_REGIONAL"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 2571,
+      "sourceLength": 1407,
+      "conditionSnippet": null,
+      "descriptionSample": "関わりのあるファミリーと対立組織の緊張が高まった。知人は店の裏口を閉め、今夜は誰と帰るかを確かめている。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "明るい大通りを選んで帰る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "店の灯りが残る大通りを通って帰った。家に着いても、連絡の取れない人が気にかかった。",
+            "帰り道で抗争の現場に出くわした。逃げる途中で負傷し、数日仕事を休むことになった。"
+          ]
+        },
+        {
+          "label": "別の地域へ逃げる",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "運賃と当面の費用を払い、紹介を受けた別の地域へ移った。家族の無事は確かめられず、着いた先で連絡手段を探した。",
+            "相談していた便は満席で、その夜の出発には間に合わなかった。運賃は払わずに済んだが、抗争の気配はまだ通りに残っていた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "lat_exile",
+      "source": "data/base/regional-east.js:28",
+      "sourceRefs": [
+        "SRC_LATERANO_CIVIC",
+        "SRC_LATERANO_ARENE"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "infectionAwarenessAction",
+        "job",
+        "p",
+        "res",
+        "resFareCovered",
+        "residenceArrangement",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 28,
+      "sourceLength": 1934,
+      "conditionSnippet": null,
+      "descriptionSample": "ラテラーノ市民であっても例外はない。鉱石病にかかったことを理由に、聖都を退去するよう冷たい通達が届いた。甘い菓子の匂いが漂う見慣れた石畳を歩きながら、鞄に何を詰めるか考えた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "公証役場の移送車を待たず、自費で街を出る",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "自腹で運賃と当面の宿代を払い、誰にも見送られないまま生まれ育った街を後にした。新しい行き先を知らせるあてもなく、光輪の輝く鐘楼が遠ざかるのを黙って見つめた。"
+          ]
+        },
+        {
+          "label": "役場の移送便に身を任せる",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "行き先を選ぶ自由すらなかった。小さな包みを抱えて役場の移送車に乗り込み、鉄格子の窓から遠ざかる白い街並みを見つめた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "lat_priest",
+      "source": "data/base/regional-east.js:84",
+      "sourceRefs": [
+        "SRC_LATERANO_RELIGION"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        9
+      ],
+      "mechanics": [
+        "cr",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 88,
+      "sourceLength": 973,
+      "conditionSnippet": null,
+      "descriptionSample": "礼拝堂からの帰り道、穏やかな物腰の聖職者に呼び止められた。教会の奉仕や聖職の道に関心があるなら、一度話を聞きに来ないかという。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "聖職の道へ進むため選考を受ける",
+          "jobEffectsDetected": [
+            9
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "選考を通り、聖堂で教義を学びながら聖職の務めに就いた。迷える市民の嘆きに耳を傾ける日もあれば、祭礼の支度に追われる日もある。",
+            "選考には通らなかったが、礼拝堂の鐘の音を背に、また自分の普段の暮らしへと戻った。"
+          ]
+        },
+        {
+          "label": "今の仕事を続けながら、時おり手伝いに顔を出す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "今の勤めは辞められないと伝えたうえで、休日の手伝いについて尋ねた。帰り道には、礼拝堂の前で会釈を交わせる顔なじみが一人増えた。"
+          ]
+        },
+        {
+          "label": "すぐには決めず、教会の書物を読んで考える",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "その場では返事をせず、勧められた書物を借りて帰った。静かな部屋でページをめくりながら、自分に務まる道かどうか考えた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "ibe_rebuild",
+      "source": "data/base/regional-east.js:250",
+      "sourceRefs": [
+        "SRC_IBERIA_INFORMATION",
+        "SRC_IBERIA_RECOVERY"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [],
+      "mechanics": [
+        "cash",
+        "cr",
+        "h",
+        "k",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 254,
+      "sourceLength": 3015,
+      "conditionSnippet": "show: s => s.year > 1038 || (s.year === 1038 && s.mo >= 7),\n      w: 0.6,\n      once: true,\n      t: \"潮風で朽ちた海辺の街区で、崩れた倉庫の床や石畳を直す短期の復旧人足を募っていた。長く続く仕事ではないが、日銭にはなる。\",\n      ",
+      "descriptionSample": "潮風で朽ちた海辺の街区で、崩れた倉庫の床や石畳を直す短期の復旧人足を募っていた。長く続く仕事ではないが、日銭にはなる。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "補修の人足として働く",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "腐った床板を剥がし、潮で歪んだ木戸を削り直した。数日分の手当を受け取ると現場は解散になり、また次の仕事を探すことになった。"
+          ]
+        },
+        {
+          "label": "道具を自前で揃え、古い設備の図面を探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "工具と灯りを買って古い倉庫の奥を調べ、昔の排水溝の構造を突き止めた。現場監督に直し方を進言すると大いに喜ばれ、道具代を差し引いても十分な手当が残った。",
+            "自腹で道具を買って調べ回ったが、手がかりになるような図面はすでに朽ち果てていた。カビ臭い埃を吸い込み、家に帰ってからも激しい咳が続いた。"
+          ]
+        },
+        {
+          "label": "今回は手を出さず、現場を離れる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "募集の張り紙から目を離し、潮風の吹く岸壁を後にした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "ibe_rebuild_contract_review",
+      "source": "data/base/regional-east.js:345",
+      "sourceRefs": [
+        "SRC_IBERIA_INFORMATION",
+        "SRC_IBERIA_RECOVERY",
+        "SRC_TERRA_LIFECOURSE"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [],
+      "mechanics": [
+        "cash",
+        "h",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 349,
+      "sourceLength": 2843,
+      "conditionSnippet": "show: s =>\n        s.res?.n === \"イベリア\" &&\n        s.lifeRecord?.goals?.some(\n          goal =>\n            goal.id === \"iberia-coastal-recovery-work\" &&\n            goal.status === \"active\" &&\n            Number.isInteger(goal.startedYear) &&\n            s.year >= goal.startedYear + 2\n        ) &&\n        s.lifeRecord?.affiliations?.some(\n          affiliation => affiliation.id === \"iberia-coastal-recovery-contract\" && affiliation.status === \"left\"\n        ),\n      after: { id: \"ibe_rebuild\", min: 2 },\n      once: true,\n      w: 0.38,\n      t: \"海辺の街区で、また別の古い倉庫を直す日雇い募集が出ていた。前に覚えた手順を生かして応募するか、もっと安定した別の職を探すか思案した。\",\n      ",
+      "descriptionSample": "海辺の街区で、また別の古い倉庫を直す日雇い募集が出ていた。前に覚えた手順を生かして応募するか、もっと安定した別の職を探すか思案した。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "もう一度、補修の現場へ応募する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "勝手の分かる現場で数日間汗を流し、手堅く日当を受け取った。ただ、今回もその倉庫ひとつを直し終えると解散になった。",
+            "顔を出した時にはすでに人手が揃っており、今回は入れなかった。いつあるとも知れない単発の現場をあてにするのはやめ、別の働き口を探すことにした。"
+          ]
+        },
+        {
+          "label": "現場で身につけた腕を頼りに、別の仕事口を探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "単発の復旧現場ばかり追うのはやめ、覚えた修繕の腕を買ってくれそうな町場の店や工房を回ることにした。"
+          ]
+        },
+        {
+          "label": "もう海辺の現場からは足を洗い、今の暮らしを守る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "募集の張り紙を見送り、潮風の冷たい海辺の現場からはきっぱり離れることにした。今の暮らしと家の用事を第一にしていく。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "ibe_rebuild"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "kje_open",
+      "source": "data/base/regional-east.js:565",
+      "sourceRefs": [
+        "SRC_KJERAG_LIFE",
+        "SRC_KJERAG_RAIL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        2,
+        5
+      ],
+      "mechanics": [
+        "cash",
+        "job",
+        "k",
+        "p",
+        "pm",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 569,
+      "sourceLength": 1308,
+      "conditionSnippet": null,
+      "descriptionSample": "開通したばかりの駅の周りに、新しい工場の求人札と、旅人相手の露店の貸し枠が出ていた。汽車が白い蒸気を吐いて滑り込むたび、駅前は見たこともない人波でにぎわう。この機会に打って出るか迷った。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "工場の求人に応募する",
+          "jobEffectsDetected": [
+            2
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "真新しい工場の採用が決まった。油の匂う機械の扱いを一から覚え、初めての給金日を心待ちにした。",
+            "面接を受けたが、求める経験に合わないと断られた。駅前のざわめきを背に、いつもの雪道を帰った。"
+          ]
+        },
+        {
+          "label": "駅前で旅人相手の商いを始める",
+          "jobEffectsDetected": [
+            5
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "場所代と仕入れに15万龍門幣をはたき、汽車を降りる客へ温かい飲み物や土産物を売り始めた。売れ残る日もあるが、よその土地の客とやり取りするコツが少しずつ掴めてきた。",
+            "なけなしの金を投じて店を広げたが、旅人は素通りするばかりでさっぱり売れなかった。場所代だけを取られ、冷え切った品物を抱えて撤退した。"
+          ]
+        },
+        {
+          "label": "浮足立たず、今の暮らしを続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "新しい時代の風に浮かれる人々を横目に、いつもの家路についた。街がどれだけ変わっても、自分の暮らしの歩幅は崩したくなかった。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "yan_exam",
+      "source": "data/base/regional-east.js:607",
+      "sourceRefs": [
+        "SRC_YAN_GOVERNMENT"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        6
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "ep",
+        "job",
+        "k",
+        "p",
+        "pm"
+      ],
+      "found": true,
+      "actualLine": 611,
+      "sourceLength": 1391,
+      "conditionSnippet": null,
+      "descriptionSample": "役所の門前に、下級書記の採用試験を知らせる告示が貼り出された。公文書を読み解く学識と、試験場へ赴く旅費が要る。今の仕事を投げ打って官の道へ挑むかどうか、告示の前でしばらく立ち尽くした。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "書記の採用選考を受ける",
+          "jobEffectsDetected": [
+            6
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "狭き門を突破し、役所の書記として召し抱えられた。墨の匂いに囲まれながら、分厚い法規と帳簿に向き合う日々が始まった。",
+            "張り出された合格者の連名に、自分の名はなかった。旅費と受験料に消えた6万龍門幣を惜しみつつ、また元の暮らしへ戻った。"
+          ]
+        },
+        {
+          "label": "まずは夜学に通い、読み書きと算術を鍛える",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "昼の仕事を終えたあと、眠い目をこすりながら夜学へ通った。月謝は痛かったが、難しい公文書の言い回しや算盤の桁が少しずつ読めるようになった。"
+          ]
+        },
+        {
+          "label": "身の程を知り、今の暮らしを続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "告示の前を離れ、いつもの仕事場へ足を向けた。役人になる夢は誰か別の者に譲り、自分は今の暮らしを手堅く守ることにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "lon_guard",
+      "source": "data/base/regional-east.js:717",
+      "sourceRefs": [
+        "SRC_LUNGMEN_SECURITY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        15
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "p",
+        "pm"
+      ],
+      "found": true,
+      "actualLine": 721,
+      "sourceLength": 986,
+      "conditionSnippet": null,
+      "descriptionSample": "龍門近衛局が街区を回る巡回要員を募集していた。採用されれば安定した給金が出るが、雑踏の揉め事や荒事に身を晒す仕事でもある。志願票を手に、今の暮らしと天秤にかけた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "応募費 {lungmenGuardApplicationCost} を払い、選考に挑む",
+          "jobEffectsDetected": [
+            15
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "試験と身元調査を突破し、近衛局の青い制服に袖を通した。ネオンの輝く表通りから入り組んだ路地裏まで、街の揉め事に駆けつける日々が始まった。",
+            "選考で落とされ、書類と移動に使った金は無駄になった。制服姿の隊員とすれ違うたび、少し悔しい気持ちでいつもの仕事場へ向かった。"
+          ]
+        },
+        {
+          "label": "志願は見送り、今の暮らしを続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "志願票を窓口へ戻し、見慣れた雑踏へと引き返した。危ない橋を渡らなくても、今の自分には守るべき日常がある。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "lon_merchant",
+      "source": "data/base/regional-east.js:901",
+      "sourceRefs": [
+        "SRC_LUNGMEN_AUTONOMY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        5,
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "job",
+        "p",
+        "pm"
+      ],
+      "found": true,
+      "actualLine": 905,
+      "sourceLength": 874,
+      "conditionSnippet": null,
+      "descriptionSample": "龍門の賑やかな商業通りで、空きが出たばかりの小さな露店を引き継がないかと声がかかった。権利金と仕入れで50万龍門幣。当たれば大きいが、客がつかなくても元手は一銭も戻らない博打だ。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "資金を出して店を開く",
+          "jobEffectsDetected": [
+            5,
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "思い切って50万龍門幣を払い、ネオンの下で自分の店を開いた。通りがかりの旅客や夜勤明けの客が足を止めてくれるようになり、諸経費を引いても50万龍門幣の利益が手元に残った。",
+            "なけなしの50万龍門幣を注ぎ込んで店を開いたものの、客足はさっぱり伸びず、仕入れた品も捌けないまま店を畳むことになった。"
+          ]
+        },
+        {
+          "label": "手を出さずに断る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "うまい話には裏があると見て丁重に断った。通りを歩くたびあの軒先が目に入ったが、虎の子の貯えは手元に無事残った。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "hig_tension",
+      "source": "data/base/regional-east.js:1036",
+      "sourceRefs": [
+        "SRC_HIGASHI_CONFLICT",
+        "SRC_HIGASHI_SERVICE_MODEL",
+        "SRC_AKAFUYU_HIGASHI"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        14
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 1040,
+      "sourceLength": 2367,
+      "conditionSnippet": null,
+      "descriptionSample": "北院と南院の睨み合いや、海の向こうのウルサスとのいくさ話が、仕事帰りの茶屋でもしきりに囁かれるようになった。辻の掲示板には、近隣の陣屋が兵站や街道警備の人員を募る真新しい木札がいくつも並んでいる。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "軍務・兵站の職に志願する",
+          "jobEffectsDetected": [
+            14
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "陣屋の選考を通過し、兵站と街道警備の職に就いた。荷駄の検め方や関所の立ち番を覚え、北や南から物々しい早馬が届くたびに、いくさの影が自分の背中にも張りついているのを感じた。",
+            "陣屋の選考を受けたが、今回は採用されなかった。辻に立つ募集札を横目に見ながら、元の仕事場へと戻った。"
+          ]
+        },
+        {
+          "label": "輸送隊の荷運びを日雇いで手伝う",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "街道を行く輸送隊に雇われ、重い木箱を荷車へ積み替える仕事を数日手伝った。まとまった日当は懐に入ったが、峠の向こうから響いてきた鈍い砲声がいつまでも耳の奥に残った。"
+          ]
+        },
+        {
+          "label": "志願せず、今の暮らしを守る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "募集の木札から目を離し、いつもの帰り道を歩いた。きな臭い噂は日増しに近づいてくるが、今は自分の手にある暮らしを守ることにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "hig_service_review",
+      "source": "data/base/regional-east.js:1117",
+      "sourceRefs": [
+        "SRC_HIGASHI_CONFLICT",
+        "SRC_HIGASHI_SERVICE_MODEL",
+        "SRC_AKAFUYU_HIGASHI"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        16,
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 1121,
+      "sourceLength": 3151,
+      "conditionSnippet": null,
+      "descriptionSample": "陣屋で兵站と街道警備の務めに就いて三年が経ち、上役から次の任期も残るかと尋ねられた。このまま軍務を続けるか、覚えた荷捌きの腕を民間の輸送業で生かすか、身の振り方を決める時期が来ていた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "軍務・兵站を続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "次の任期も陣屋に残ると返事をした。食い扶持は確かなものの、いつどこへ配置換えになるかは上役の鶴の一声次第という落ち着かない日々が続く。"
+          ]
+        },
+        {
+          "label": "民間のトランスポーターへ転じる",
+          "jobEffectsDetected": [
+            16
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "任期の区切りで陣屋を退き、街のトランスポーターとして荷や書状を運ぶ仕事に就いた。実入りは少し減ったが、兵站で叩き込まれた荷崩れしない縄掛けや街道の抜け道がそのまま役に立った。"
+          ]
+        },
+        {
+          "label": "軍務を離れ、街で別の働き口を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "任期満了で陣屋を退き、平服に戻って街の口入れ屋を回ることにした。次の働き口はまだ決まっていないが、兵站で鍛えた足腰と段取りの良さを買ってもらえる場所を探すつもりだ。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "hig_tension"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "hig_service_later_career_review",
+      "source": "data/base/regional-east.js:1220",
+      "sourceRefs": [
+        "SRC_HIGASHI_CONFLICT",
+        "SRC_HIGASHI_SERVICE_MODEL",
+        "SRC_AKAFUYU_HIGASHI"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        16,
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "job",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 1224,
+      "sourceLength": 4964,
+      "conditionSnippet": "show: s => {\n        const service = s.lifeRecord?.affiliations?.find(row => row.id === \"higashi-service\");\n        return (\n          s.age >= 50 &&\n          service?.status === \"active\" &&\n          Number.isInteger(service.startedYear) &&\n          s.year - service.startedYear >= 15\n        );\n      },\n      once: true,\n      w: 0.85,\n      t: \"気づけば十五年以上も軍務・兵站の現場に身を置き、急な陣触れと家の暮らしのあいだで折り合いをつけてきた。このまま古参として部隊に残るか、培った街道と荷捌きの知識を民間へ移すか、あるいはいったん荷を下ろすか思案した。\",\n      ",
+      "descriptionSample": "気づけば十五年以上も軍務・兵站の現場に身を置き、急な陣触れと家の暮らしのあいだで折り合いをつけてきた。このまま古参として部隊に残るか、培った街道と荷捌きの知識を民間へ移すか、あるいはいったん荷を下ろすか思案した。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "古参として軍務・兵站を続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "次の任期も部隊に残ることにした。重い木箱を担ぐのは若い衆に任せ、荷駄の割り振りや関所との交渉を新入りに教える役回りが増えてきた。"
+          ]
+        },
+        {
+          "label": "任期を終え、民間のトランスポーターへ転じる",
+          "jobEffectsDetected": [
+            16,
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "長年の務めに区切りをつけて陣屋を退き、地域の運送屋にトランスポーターとして迎えられた。街道の難所や天候の読みなど、兵站で培った勘所が新しい職場でも重宝された。",
+            "陣屋を退いて民間の運送屋を当たったが、どこも若い衆を欲しがっており空きはなかった。長年の兵站の腕を買ってくれる問屋がないか、街の口入れ屋を気長に回ることにした。"
+          ]
+        },
+        {
+          "label": "軍務を退き、しばらく骨を休めてから次を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "長年着慣れた軍衣を返納し、陣屋の門を出た。まずは軋む膝や腰を休めて家の片づけを済ませ、それから無理のない働き口を探すつもりだ。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "rim_mine",
+      "source": "data/base/regional-conflict.js:32",
+      "sourceRefs": [
+        "SRC_RIM_WORK"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0,
+        2
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 32,
+      "sourceLength": 1429,
+      "conditionSnippet": null,
+      "descriptionSample": "採掘坑の奥で支柱がきしみ、一度作業を止めて点検すべきだという声が上がった。手を止めれば今日の日当が削られるが、このまま掘り進めて崩れたら命がない。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "点検のため作業を止める",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "止めた分の稼ぎは飛んだが、緩んでいた支柱を補強してから安全に作業へ戻れた。坑道を出たあと、仲間と肩を叩き合って息をついた。",
+            "作業を止めたことが監督の逆鱗に触れ、次のシフトから外されてしまった。目減りした最後の給金を握りしめ、別の働き口を探すことになった。"
+          ]
+        },
+        {
+          "label": "見なかったことにして作業を続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "予定通りに掘り進め、割り増しの手当まで受け取った。ただ、きしむ支柱の下をくぐる時だけは生きた心地がしなかった。",
+            "掘削の途中で天井の岩盤が崩れ落ち、大怪我を負った。治療費で手当も吹き飛び、あの時なぜ止めなかったのかと痛む体で悔やんだ。"
+          ]
+        },
+        {
+          "label": "鉱山を辞め、別の仕事を探す",
+          "jobEffectsDetected": [
+            2,
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "危ない坑道に見切りをつけ、町工場の働き口を見つけた。機械の音に慣れながらも、時おり鉱山に残った仲間たちの無事を祈った。",
+            "坑道を離れたものの、次の働き口は簡単には見つからなかった。日に日に薄くなる財布を覗きながら、求人札を探して歩いた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "kaz_exile",
+      "source": "data/base/regional-conflict.js:126",
+      "sourceRefs": [
+        "SRC_TL_EARLY",
+        "SRC_TL_1094",
+        "SRC_KAZDEL_LIFE",
+        "SRC_KAZDEL_DISPLACEMENT_MODEL"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "d",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 126,
+      "sourceLength": 1808,
+      "conditionSnippet": "show: s => !!s.world?.events?.kazdel_civil_war,\n      ge: { year: 1092 },\n      le: { year: 1094 },\n      once: true,\n      w: 0.8,\n      cd: 5,\n      who: s => (s.age < $rules.parameters.value(\"life.adultStartAge\") ? \"parent\" : \"self\"),\n      t: [\n        {\n          when: \"未成年\",\n          t: \"カズデル全土に内戦の炎が広がり、大人たちは国を捨てるか残るかで夜通し言い争っている。あなたは押し殺した声に耳を澄ませながら、いつでも逃げられるよう荷物をまとめた。\"\n        },\n        {\n          t: \"内戦の戦火がいよいよ身近に迫り、故郷を捨てて国境を越えるか、この地に留まるか決断を迫られた。逃げ道も荒野も、どちらも血と硝煙の匂いがしていた。\"\n        }\n      ],\n      ",
+      "descriptionSample": "カズデル全土に内戦の炎が広がり、大人たちは国を捨てるか残るかで夜通し言い争っている。あなたは押し殺した声に耳を澄ませながら、いつでも逃げられるよう荷物をまとめた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "運賃と当面の費用を工面して国外へ逃れる",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "有り金をはたいて闇の運び屋に乗り込み、国境を越えた。背負い袋ひとつの身の上になり、カズデルに残してきた人たちとの音信もぷっつりと途絶えた。",
+            "金を払って脱出を図ったが、荒野の途中で武装集団に襲われ、荷物も路銀も根こそぎ奪われた。国境を越えることもできず、傷ついた体でカズデルへ引き返した。"
+          ]
+        },
+        {
+          "label": "故郷に留まる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "崩れた壁の陰で息を潜め、激化する内戦をなんとか生き延びた。夜空を焦がす砲火を見上げるたび、いつまでここで生きていけるのかと胸が潰れそうになった。",
+            "封鎖線を抜けることもできないまま、容赦ない戦火が居住区ごとすべてを焼き尽くした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "kazdel_afterfall",
+      "source": "data/base/regional-conflict.js:185",
+      "sourceRefs": [
+        "SRC_TL_1094",
+        "SRC_KAZDEL_LIFE",
+        "SRC_KAZDEL_DISPLACEMENT_MODEL"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 186,
+      "sourceLength": 1594,
+      "conditionSnippet": null,
+      "descriptionSample": "ようやく砲声が止んだ夜、家の人たちは瓦礫の中から焦げた鍋や毛布を拾い集めた。誰が生き残り、どこへ散ったのかも分からない。よその土地の親戚を頼るか、焼け跡に残った人たちと身を寄せ合うか、暗い部屋で相談が続いた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "運賃を工面して別の土地へ移る",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "わずかな荷物を背負い、焼け跡に残る人たちに別れを告げた。移動の運賃と支度金を支払い、向かう先の町の名を口の中で何度も繰り返しながら、見知らぬ土地へ旅立った。"
+          ]
+        },
+        {
+          "label": "近くに残った人たちと仮住まいを探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "焼け残った者同士で声をかけ合い、雨風をしのげる空き家を手入れした。故郷の景色は変わり果ててしまったが、乏しい食料や毛布を分け合える相手がそばにいた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [
+        "kaz_exile"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "bol_war",
+      "source": "data/base/regional-conflict.js:358",
+      "sourceRefs": [
+        "SRC_BOLIVAR_CIVIL_WAR"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 6,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "d",
+        "fl",
+        "h",
+        "job",
+        "p",
+        "res"
+      ],
+      "found": true,
+      "actualLine": 360,
+      "sourceLength": 1432,
+      "conditionSnippet": "show: s => !!s.world?.events?.bolivar_civil_war,\n      w: 2.0,\n      cd: 5,\n      t: \"三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金と逃げ道の心当たりを確かめた。\",\n      ",
+      "descriptionSample": "三つ巴の内戦が泥沼化するボリバルで、街道の物流が止まり、近所の商店や仕事場も干上がり始めていた。いつ前線がこの町へ雪崩れ込んでくるか分からず、懐の金と逃げ道の心当たりを確かめた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "軍の後方基地で荷さばきを手伝う",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "後方部隊の倉庫で弾薬箱とレーションを積み替える日雇いにありついた。実入りは良く当面の支払いはしのげたが、前線の死傷者の噂が耳に入るたび手が止まった。",
+            "補給物資を運ぶ車列が敵対勢力の待ち伏せを受け、飛び交う銃弾と砲火のなかを逃げ惑って負傷した。"
+          ]
+        },
+        {
+          "label": "戦火の及ばない土地へ避難する",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "なけなしの運賃を払って荷馬車に乗り、銃声の届かない地域へ移り住んだ。見知らぬ町でまた一から仕事を探し直すことになる。",
+            "避難する街道で敗残兵崩れの強盗に襲われ、持ち出した路銀の大半を巻き上げられた。傷の手当てをしながら元の街へ引き返すしかなかった。"
+          ]
+        },
+        {
+          "label": "今の街に留まる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "鎧戸を閉ざして街に踏みとどまり、嵐が通り過ぎるのを息を潜めて待った。",
+            "激突する両軍の砲火が街区を直撃し、逃げ場のないまま炎に巻かれた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "bol_tourist",
+      "source": "data/base/regional-conflict.js:398",
+      "sourceRefs": [
+        "SRC_BOLIVAR_ECONOMY"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        1
+      ],
+      "mechanics": [
+        "cash",
+        "job",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 401,
+      "sourceLength": 863,
+      "conditionSnippet": null,
+      "descriptionSample": "市場の荷さばき場に、急ぎの積荷を仕分ける数日間の人手募集が貼り出されていた。手っ取り早く日銭を稼ぐには悪くない話だ。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "一日だけ荷の仕分けを手伝う",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "丸一日、埃まみれになって木箱を仕分け、約束通りの日当を受け取った。来週も同じ仕事があるとは限らないが、今日の財布は少し温まった。"
+          ]
+        },
+        {
+          "label": "今の勤めを優先する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "目先の日銭には飛びつかず、いつもの仕事場へ向かった。顔なじみの同僚と挨拶を交わすと、気持ちが落ち着いた。"
+          ]
+        },
+        {
+          "label": "もっと長く働ける口を探す",
+          "jobEffectsDetected": [
+            1
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "市場の問屋を回り、継続して荷運びを手伝える口を見つけた。",
+            "市場から裏通りまで何軒も頭を下げて回ったが、その日はどこも人手が足りていると断られた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "wld_race",
+      "source": "data/base/world-and-contacts.js:153",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "p",
+        "res",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 153,
+      "sourceLength": 2240,
+      "conditionSnippet": null,
+      "descriptionSample": "前に異議を申し立てた窓口で、担当者が記録を探す間、あなたは立ったまま待たされた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "抗議する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "係員は申し立てを記録し、規則を確認すると答えた。近くにいた一人が、あなたの話を聞いたと申し出た。",
+            "係員は申し立てを受け付けたが、列の順は戻らなかった。そばにいた人は目をそらし、あなたは記録の控えを持って窓口を出た。"
+          ]
+        },
+        {
+          "label": "耐える",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "返事をせず、頼まれた手続きだけ済ませた。帰り道も、さっきの言葉が耳に残った。"
+          ]
+        },
+        {
+          "label": "運賃と住居費を払い、別地域への転居を試みる",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "運賃と新しい住まいの初期費用を払い、引越しを終えた。通い慣れた店や顔見知りから離れ、知らない土地で暮らし始めた。",
+            "転居先の部屋を探したが、契約条件を満たせず断られた。手続き代を払った後も、今の場所にとどまるしかなかった。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "discrimination_after",
+      "source": "data/base/world-and-contacts.js:228",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 228,
+      "sourceLength": 1521,
+      "conditionSnippet": null,
+      "descriptionSample": "申し立てから数日後、上司は返事を先延ばしにし、同僚は仕事の話しかしなくなった。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "同僚に証言を頼み、手続きを続ける",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "同僚の一人が証言に応じた。二人で記録を提出し、職場の調査が始まった。",
+            "証言を頼んだ同僚は距離を置き、契約も更新されなかった。申し立てた記録だけが手元に残った。"
+          ]
+        },
+        {
+          "label": "別の職場を探し、今の契約を終える",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "今の契約を終え、別の職場の求人を探し始めた。給金が途切れる不安はあるが、毎日の侮辱から離れた。",
+            "求人先でも似た扱いを受けた。契約を終えた後も仕事は見つからず、移るための手間と費用だけが残った。"
+          ]
+        },
+        {
+          "label": "記録を残して申し立てをいったん止める",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "日付と発言を書き留め、手続きを止めた。記録を折りたたみ、ほかの書類と一緒にしまった。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [
+        "wld_race"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "discrimination_work_after",
+      "source": "data/base/world-and-contacts.js:281",
+      "sourceRefs": [],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 5,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "fl",
+        "job",
+        "k",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 281,
+      "sourceLength": 1399,
+      "conditionSnippet": null,
+      "descriptionSample": "封書には調査中とだけあった。記録は受け取ったが、その先のことは何も書かれていない。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "同僚に証言を頼み、記録を残す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "同僚の一人が証言に応じた。調査の記録を受け取り、これ以上ひとりで抱え込まずに済んだ。",
+            "証言を頼んだ同僚は距離を置き、契約も更新されなかった。記録だけを手元に残した。"
+          ]
+        },
+        {
+          "label": "別の仕事口を探し始める",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "今の契約を終え、別の仕事口を探し始めた。給金が途切れる不安はあるが、毎日の侮辱から離れた。",
+            "求人先でも似た扱いを受けた。契約を終えた後も仕事は見つからず、探す手間と費用だけがかさんだ。"
+          ]
+        },
+        {
+          "label": "今は記録だけ残して申し立てを止める",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "日付と発言を書き留め、手続きを止めた。記録を折りたたみ、ほかの書類と一緒にしまった。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": false,
+      "priorRefs": [
+        "dis"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    }
+  ]
+}

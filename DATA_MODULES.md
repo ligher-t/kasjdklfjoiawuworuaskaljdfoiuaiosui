@@ -54,7 +54,7 @@
 | 39 | [data/base/confinement-and-education.js](data/base/confinement-and-education.js) | 収容・診断開示・教育・後年の出来事 | `confined_care`、`confined_pet_care`、`confinement_wait` |
 | 21 | [data/extensions/social-and-care.js](data/extensions/social-and-care.js) | 社会行為・個人の生活経路の追加と既存枝の調整 | `attitude_infected_child`、`attitude_sarkaz_child`、`family_parent_crystal_dust` |
 | 22 | [data/model/flag-usage.js](data/model/flag-usage.js) | フラグの参照・別名・生成/消費の台帳 | 設定・登録・調整 |
-| 23 | [data/extensions/education-and-later-life.js](data/extensions/education-and-later-life.js) | 学び・職務の継続と後年経路 | `life_night_study`、`life_family_remittance`、`life_youth_apprenticeship` |
+| 23 | [data/extensions/education-and-later-life.js](data/extensions/education-and-later-life.js) | 学び・職務の継続、アーツ訓練、地域警報・設備・配送・危機契約・研究同意・共同体文化 | `life_night_study`、`life_youth_apprenticeship`、[arts-training.js](data/parts/extensions/arts-and-life/arts-training.js)、[arts-contingencies.js](data/parts/extensions/arts-and-life/arts-contingencies.js) |
 | 24 | [data/world/history.js](data/world/history.js) | 年表・歴史事件の範囲・地域圧力・移動経路 | 設定・登録・調整 |
 | 25 | [data/extensions/family-and-community.js](data/extensions/family-and-community.js) | 家族・近隣・生活圏の追加経路 | `life_rim_skill_handover_followup`、`life_rim_workmate_followup`、`life_savra_late_craft` |
 | 26 | [data/health/mortality.js](data/health/mortality.js) | 病気・危機と人生終盤の選択 | `life_medical_urgent_review`、`life_medical_followup`、`life_mental_crisis_support` |

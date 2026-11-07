@@ -14,7 +14,7 @@ window.TERRA_DATA_BUILD.fragment(
       ban: ["既婚", "交際中"],
       ge: { age: 20 },
       le: { age: 48 },
-      after: { id: "lov", min: 1, max: 6 },
+      after: { id: "lov", min: 1, max: 6, choice: 0, outcome: 0, subject: "romance" },
       cd: 2,
       w: 1.8,
       t: [
@@ -62,7 +62,7 @@ window.TERRA_DATA_BUILD.fragment(
       ban: ["既婚"],
       ge: { age: 20 },
       le: { age: 50 },
-      after: { id: "romance_followup", min: 1, max: 6 },
+      after: { id: "romance_followup", min: 1, max: 6, choice: 0, outcome: 0, subject: "romance" },
       cd: 2,
       w: 1.8,
       t: [
@@ -71,7 +71,11 @@ window.TERRA_DATA_BUILD.fragment(
           t: "{romancePartner}とこれからの暮らしを話すたび、部屋の狭さや家賃、もしどちらかが倒れて働けなくなった時の不安が口をついて出た。それでも二人で生きていく道があるのか、会うたびに少しずつ言葉を交わした。"
         },
         {
-          t: "付き合いが長くなった頃、{romancePartner}が別の地区へ働きに出るかもしれないと打ち明けた。離ればなれになってもこの縁を繋ぎ止められるのか、すぐには答えが出なかった。"
+          t: [
+            "付き合いが長くなるにつれ、{romancePartner}と会う時間には、食事や仕事の話だけでなく、この先どこでどう暮らしたいかという話も混じるようになった。二人とも、そろそろ曖昧なままにはしておけないと感じていた。",
+            "{romancePartner}と休みの日の予定を立てているうちに、これから先も同じ暮らしの中で会い続けるのかという話になった。仕事や住まいをどうするか、二人で一つずつ考えることにした。",
+            "いつもの帰り道で、{romancePartner}と家賃や仕事、家族との付き合い方について話した。今の関係をこの先どうしたいのか、互いの考えを確かめる時期が来ていた。"
+          ]
         }
       ],
       c: [
@@ -101,7 +105,7 @@ window.TERRA_DATA_BUILD.fragment(
       ban: ["既婚"],
       ge: { age: 20 },
       le: { age: 52 },
-      after: { id: "romance_future_talk", min: 1, max: 7 },
+      after: { id: "romance_future_talk", min: 1, max: 7, choice: 0, outcome: 0, subject: "romance" },
       cd: 2,
       w: 2.0,
       t: "互いの家族へ挨拶に行く日取りや、ささやかな祝いの席にいくらかかるかを指折り数えた。仕事を休める日も見計らいながら、{romancePartner}とこれからの所帯の持ち方を相談した。",
@@ -149,7 +153,7 @@ window.TERRA_DATA_BUILD.fragment(
       ban: ["既婚"],
       ge: { age: 20 },
       le: { age: 55 },
-      after: { id: "romance_marriage_choice", min: 1, max: 4 },
+      after: { id: "romance_marriage_choice", min: 1, max: 4, choice: 2, outcome: 0, subject: "romance" },
       cd: 2,
       w: 0.55,
       t: "同じ部屋で暮らし始めてから、日々の食費や掃除・洗濯の分担がすっかり日常になった。ただ、部屋の契約名義や親族への紹介をどうするか、宙ぶらりんのままになっている。",
@@ -240,14 +244,14 @@ window.TERRA_DATA_BUILD.fragment(
           "元気な産声が響き、家族みんなで名前を考えた。お湯や清潔な布を運んで手伝い、夜泣きの声に目を覚ます慌ただしい日々が始まった。",
           { sibBirth: 1, rl: 3, p: 2, fl: { sibling_born: 1, sibling_supported: 1 } }
         ]),
-        $terraData.K("自分の学校や日課をこれまで通り続ける", {}, [
+        $terraData.K("自分の日課をこれまで通り続ける", {}, [
           1,
-          "赤ん坊が生まれて家の中は急に賑やかになった。学校や自分の日課はこれまで通り続けたが、夜中に泣き声で目が覚めることもあった。",
+          "赤ん坊が生まれて家の中は急に賑やかになった。いつもの日課を続けようとしたが、夜中に泣き声で目が覚めることもあった。",
           { sibBirth: 1, p: 1, fl: { sibling_born: 1 } }
         ]),
         $terraData.K("口数が増えることで家の暮らしが苦しくならないか心配する", {}, [
           1,
-          "赤ん坊は可愛かったが、家の財布がさらに寂しくなる不安は消えなかった。言いつけられた水汲みや掃除をこなしながら、新しいノートを買っていいものかためらった。",
+          "赤ん坊は可愛かったが、家の財布がさらに寂しくなる不安は消えなかった。水汲みや掃除をこなしながら、自分に必要な品を買ってよいかためらった。",
           { sibBirth: 1, cash: -2e4, p: -2, rl: -1, fl: { sibling_born: 1 } }
         ])
       ]
@@ -258,9 +262,9 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_ORIPATHY_EXPOSURE", "SRC_TERRA_FAMILY"],
       st: ["少年", "青年", "壮年", "老年"],
       need: ["存命の成人きょうだいがいる"],
-      ban: ["感染したきょうだいがいる", "sibling_exposure_seen"],
+      show: s => !!siblingForEvent(s, "family_sibling_exposure"),
       ge: { age: 14 },
-      once: true,
+      cd: 1,
       w: 0.3,
       t: [
         {
@@ -760,6 +764,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.65,
       t: [
@@ -774,6 +779,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.6,
       t: [
@@ -788,6 +794,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.6,
       t: [
@@ -802,6 +809,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.55,
       t: [
@@ -816,6 +824,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES", "SRC_MOBILE_CITY_MOBILITY"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.6,
       t: [
@@ -830,6 +839,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 3,
       w: 0.6,
       t: [
@@ -844,6 +854,7 @@ window.TERRA_DATA_BUILD.fragment(
       references: ["SRC_TERRA_FAMILY", "SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["青年", "壮年", "老年"],
       need: ["既婚"],
+      show: s => $rules.family.spouseLivesWithProtagonist(s),
       cd: 4,
       w: 0.5,
       t: [

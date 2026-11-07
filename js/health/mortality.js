@@ -1,4 +1,4 @@
-/* ===== LIFE ENDINGS V2 : individual episodes, help and risk =====
+/* ===== LIFE ENDINGS V3 : individual episodes, critical health, help and risk =====
  * Disease and crisis parameters are game hypotheses, not official Terra statistics.
  * All interventions are optional and cannot guarantee a medical outcome.
  */
@@ -11,11 +11,24 @@ const MORBID_LABELS = {
   nutrition: "栄養不足と衰弱",
   oripathy: "鉱石病に伴う不調"
 };
+function createHealthCriticalState() {
+  return {
+    status: "none",
+    sinceYear: null,
+    resolvedYear: null,
+    careUntilYear: null,
+    lastDecisionYear: null,
+    lastDecisionElapsed: null,
+    palliativePreferenceYear: null,
+    history: []
+  };
+}
 function mortalityState(s) {
   if (!s.mortality || typeof s.mortality !== "object")
     s.mortality = {
-      version: 2,
+      version: 3,
       episodes: [],
+      healthCritical: createHealthCriticalState(),
       crisis: { status: "none", years: 0, lastDecisionYear: null, supportedUntilYear: null },
       threat: { status: "none", lastDecisionYear: null, safeUntilYear: null },
       exposureProtectionUntilYear: null,
@@ -26,9 +39,19 @@ function mortalityState(s) {
   const m = s.mortality;
   if (!Array.isArray(m.episodes)) m.episodes = [];
   if (!Array.isArray(m.history)) m.history = [];
+  if (!m.healthCritical || typeof m.healthCritical !== "object") m.healthCritical = createHealthCriticalState();
+  const hc = m.healthCritical;
+  if (!Array.isArray(hc.history)) hc.history = [];
+  if (!Object.hasOwn(hc, "status")) hc.status = "none";
+  if (!Object.hasOwn(hc, "sinceYear")) hc.sinceYear = null;
+  if (!Object.hasOwn(hc, "resolvedYear")) hc.resolvedYear = null;
+  if (!Object.hasOwn(hc, "careUntilYear")) hc.careUntilYear = null;
+  if (!Object.hasOwn(hc, "lastDecisionYear")) hc.lastDecisionYear = null;
+  if (!Object.hasOwn(hc, "lastDecisionElapsed")) hc.lastDecisionElapsed = null;
+  if (!Object.hasOwn(hc, "palliativePreferenceYear")) hc.palliativePreferenceYear = null;
   if (!m.crisis || typeof m.crisis !== "object") m.crisis = { status: "none", years: 0 };
   if (!m.threat || typeof m.threat !== "object") m.threat = { status: "none" };
-  m.version = 2;
+  m.version = 3;
   return m;
 }
 const activeMortality = (s, kind) =>
@@ -43,6 +66,13 @@ const urgentMortalityEpisodes = s =>
     (ep.careUntilYear == null || ep.careUntilYear < s.year || (ep.lastDecisionTreatment && !mortalityEpisodeTreatment(s,ep)) ||
       (ep.history || []).some(row => row.year === s.year && row.action === "worsened" && row.severity >= 3))
   );
+function healthCriticalNeedsReview(s) {
+  const hc = s?.mortality?.healthCritical;
+  if (!hc || hc.status !== "active" || s.h > 0 || hc.lastDecisionYear === s.year) return false;
+  const elapsed = Math.max(0, s.year - hc.sinceYear);
+  return hc.lastDecisionElapsed == null || elapsed > hc.lastDecisionElapsed ||
+    (hc.careUntilYear != null && hc.careUntilYear < s.year);
+}
 function logMortality(s, kind, text, episode = null) {
   const m = mortalityState(s);
   m.history.push({ year: s.year, age: s.age, kind, text, episodeId: episode?.id || null });
@@ -77,21 +107,46 @@ function startMortalityEpisode(s, kind, severity = 1, origin = "annual-model") {
     );
   return ep;
 }
+function updateHealthCriticalState(s) {
+  const m = mortalityState(s),
+    hc = m.healthCritical;
+  if (s.h <= 0) {
+    if (hc.status !== "active") {
+      hc.status = "active";
+      hc.sinceYear = s.year;
+      hc.resolvedYear = null;
+      hc.careUntilYear = null;
+      hc.lastDecisionYear = null;
+      hc.lastDecisionElapsed = null;
+      hc.palliativePreferenceYear = null;
+      hc.history.push({ year: s.year, action: "onset" });
+      hc.history = hc.history.slice(-24);
+      logMortality(s, "health-critical", "体力が尽き、危篤状態の経過記録が始まった");
+    }
+  } else if (hc.status === "active") {
+    hc.status = "resolved";
+    hc.resolvedYear = s.year;
+    hc.history.push({ year: s.year, action: "recovered" });
+    hc.history = hc.history.slice(-24);
+    logMortality(s, "health-critical", "体力が戻り、危篤状態を抜けた");
+  }
+}
 function advanceMortalityState(s) {
   const m = mortalityState(s),
     ageScaled = s.age / Math.max(0.3, s.r?.lm || 1),
     j = J[s.job] || {};
+  updateHealthCriticalState(s);
   // The old illness record stays intact for old saves/events. It is not a new diagnosis.
   if (
     s.illness &&
     s.illness.stage >= 2 &&
     !activeMortality(s).some(
-      x => x.kind === (s.inf && s.illness.kind === "oripathy_complication" ? "oripathy" : "respiratory")
+      x => x.kind === (s.inf && s.ob >= P("death.oripathyStart") && s.illness.kind === "oripathy_complication" ? "oripathy" : "respiratory")
     )
   ) {
     startMortalityEpisode(
       s,
-      s.inf && s.illness.kind === "oripathy_complication" ? "oripathy" : "respiratory",
+      s.inf && s.ob >= P("death.oripathyStart") && s.illness.kind === "oripathy_complication" ? "oripathy" : "respiratory",
       Math.min(3, s.illness.stage),
       "legacy-illness"
     );
@@ -262,7 +317,8 @@ function applyMortalityCare(input) {
       "escape",
       "nutrition",
       "plan",
-      "companionship"
+      "companionship",
+      "palliative"
     ]);
   if (!valid.has(action)) throw new Error("未定義の医療・安全対応: " + action);
   if (kind === "crisis") {
@@ -280,6 +336,16 @@ function applyMortalityCare(input) {
   } else if (kind === "late") m.lateCareDiscussionYear = s.year;
   else if (kind === "exposure") m.exposureProtectionUntilYear = s.year + P("mortality.episodeCareYears");
   else {
+    const hc = m.healthCritical;
+    if (kind === "urgent" && hc.status === "active") {
+      hc.lastDecisionYear = s.year;
+      hc.lastDecisionElapsed = Math.max(0, s.year - hc.sinceYear);
+      if (["clinic", "emergency", "support", "rest", "nutrition"].includes(action))
+        hc.careUntilYear = s.year + P("mortality.episodeCareYears");
+      if (action === "palliative") hc.palliativePreferenceYear = s.year;
+      hc.history.push({ year: s.year, action, elapsed: hc.lastDecisionElapsed });
+      hc.history = hc.history.slice(-24);
+    }
     const eligible = kind === "urgent" ? urgentMortalityEpisodes(s) : m.episodes.filter(x =>
       kind === "recovering"
         ? x.status === "recovering"
@@ -314,7 +380,8 @@ function applyMortalityCare(input) {
       escape: "危険な環境を避けた",
       nutrition: "食事を優先する調整をした",
       plan: "今後の暮らしと連絡先を相談した",
-      companionship: "大事な人に今の希望を伝えた"
+      companionship: "大事な人に今の希望を伝えた",
+      palliative: "苦痛を和らげる支援を希望すると記録した"
     }[action]
   );
 }
@@ -330,6 +397,13 @@ function mortalityStatusMarkup(s) {
         `<div class="ledger"><b>${esc(MORBID_LABELS[x.kind] || x.kind)}</b>：${esc(ph[x.status] || x.status)}${x.status === "active" ? `・負担の段階${x.severity}/4` : ""}` +
         `。開始：テラ暦${x.startedYear}年。${x.careUntilYear != null ? `相談・生活調整の見直し目安：${x.careUntilYear}年。` : ""}</div>`
     );
+  const hc = m.healthCritical;
+  if (hc.status === "active" && s.h <= 0) {
+    const elapsed = Math.max(0, s.year - hc.sinceYear);
+    rows.push(`<div class="ledger"><b>危篤状態</b>：テラ暦${hc.sinceYear}年から継続（${elapsed + 1}年目）。</div>`);
+    if (hc.palliativePreferenceYear != null)
+      rows.push(`<div class="ledger">苦痛を和らげる支援の希望：テラ暦${hc.palliativePreferenceYear}年に記録。</div>`);
+  }
   if (m.crisis.status === "active")
     rows.push('<div class="ledger">負担の大きい時期が続いている。相談や休息の選択肢がある。</div>');
   if (m.crisis.status === "recovering")
@@ -351,6 +425,7 @@ const CAUSE_CODE_MAP = {
   "負傷の合併症による死亡": "medical.injury_complication",
   "病死（鉱石病）": "medical.oripathy",
   "病死（病状の悪化）": "medical.chronic_unspecified",
+  "病死（危篤状態）": "medical.critical_health",
   "急病（前兆の乏しい急変）": "medical.acute_sudden",
   "老衰": "old_age",
   "事故死（作業現場）": "accident.workplace",
@@ -477,6 +552,9 @@ function mortalityDeathDetail(s, category, description, monthBasis, episodeId = 
     year: s.year,
     month: Number.isInteger(s.mo) ? s.mo : null,
     monthBasis,
+    accountingPeriod: s.flow?.year === s.year
+      ? { year:s.year,kind:"full-year-model",proratedToDeath:false }
+      : { year:s.flow?.year || null,kind:"last-completed-year",proratedToDeath:false },
     age: s.age,
     place: {
       region: s.res?.n || null,
@@ -488,15 +566,28 @@ function mortalityDeathDetail(s, category, description, monthBasis, episodeId = 
     startedYear: ep?.startedYear ?? null,
     lastCareUntilYear: ep?.careUntilYear ?? null,
     careHistory: ep?.history?.slice(-12) || [],
+    healthCriticalContext: m.healthCritical?.sinceYear != null
+      ? {
+          status: m.healthCritical.status,
+          sinceYear: m.healthCritical.sinceYear,
+          fullYearsAtZero: Math.max(0, s.year - m.healthCritical.sinceYear),
+          careUntilYear: m.healthCritical.careUntilYear,
+          palliativePreferenceYear: m.healthCritical.palliativePreferenceYear,
+          history: m.healthCritical.history?.slice(-12) || []
+        }
+      : null,
     classificationBasis,
     note: monthBasis === "current-calendar-month" ? "記録された年月による。" : "死亡月の詳細は未記録。",
     modelNote:
       "死因名はゲーム上の分類。実世界の診断・原作の確定死因を意味しない。" +
-      (monthBasis === "annual-random-placeholder"
-        ? "月は年次処理後に置いた表示・記録用の仮置きで、実際の死亡月を特定しない。"
+      (monthBasis === "annual-month-unknown"
+        ? "年次の死亡判定のため、死亡月は特定していない。"
         : monthBasis === "pressure-window-sample"
           ? "月は有効な戦乱期間から選んだゲーム上の代表月で、正確な死亡月を確定しない。"
-          : "月はゲーム内の進行暦による。日付までは記録しない。")
+          : "月はゲーム内の進行暦による。日付までは記録しない。") +
+      (s.flow?.year === s.year
+        ? "死亡年の収支は12か月分の年次モデル値であり、死亡時点までに受け取った実収入・実支出を示さない。"
+        : "")
   };
 }
 /* 鉱石病への曝露モデル：確定的な生物学的種族差を感染抽選へ用いない。

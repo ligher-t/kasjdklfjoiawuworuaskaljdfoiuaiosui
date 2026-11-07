@@ -46,24 +46,15 @@ window.TERRA_DATA_BUILD.run("life/goals-and-family", function ($terraData, $defi
       st: ["少年", "青年", "壮年"],
       cd: 6,
       w: 0.42,
-      show: s => {
-        const p = $rules.facilities.facilityPersonFor(s, "school");
-        return (
-          !!p &&
-          p.actualStatus === "working" &&
-          p.contactState !== "distant" &&
-          s.year - p.metYear >= 1 &&
-          (!p.knownLife || s.year - p.knownLife.heardYear >= 3)
-        );
-      },
-      t: s => $rules.conditions.matches({ need: ["就学中"] }, s, $rules.conditions.inspectTags(s))
+      show: s => !!educationLegacyTeacherContact(s,{known:true}),
+      t: s => educationLegacySceneGuard(s,"education_school_classroom")
         ? "授業後の教室で、いつも教えてくれる先生がチョークの粉を払いながら机を並べていた。授業以外の話をしたことはまだない。"
         : "夕暮れの道で再会したかつての恩師と、懐かしさに足をとめて言葉を交わした。教わっていた頃を思い出しながら、今の暮らしについて立ち話をする。",
       c: [
         $terraData.K("最近の暮らしぶりや近況を尋ねてみる", {}, [
           1,
           "教壇の向こうでは見えなかった普段の暮らしの話を聞き、帰り道でもその言葉が温かく胸に残った。",
-          { facilityPersonAction: { kind: "school", action: "talk" }, rl: 1 }
+          { educationAction:"legacy:teacher-talk", rl: 1 }
         ]),
         $terraData.K("前に習ったことで気になっていた疑問を一つだけ尋ねる", {}, [
           1,
@@ -141,22 +132,13 @@ window.TERRA_DATA_BUILD.run("life/goals-and-family", function ($terraData, $defi
       st: ["少年", "青年", "壮年"],
       cd: 7,
       w: 0.36,
-      show: s => {
-        const p = $rules.facilities.facilityPersonFor(s, "school");
-        return (
-          !!p &&
-          p.actualStatus === "working" &&
-          p.life &&
-          ["shared", "temporary"].includes(p.life.home) &&
-          p.contactState === "familiar"
-        );
-      },
-      t: "授業が終わったあと、顔なじみの教え手が重い教材箱の蓋を閉じた。今借りている相部屋では夜に机を広げるゆとりもないと聞く。後片づけを手伝うか、次の授業の相談をするか。",
+      show: s => !!educationLegacyTeacherContact(s,{known:true}),
+      t: "顔なじみの教え手が教材箱の蓋を閉じた。次の授業の支度で忙しそうだ。片づけを手伝うか、次に扱う内容を尋ねるか考えた。",
       c: [
         $terraData.K("教材箱の運搬や黒板消しを手伝う", {}, [
           1,
           "少しでも早く帰れるよう、重い箱を一緒に棚へ運んだ。教え手は礼を言い、机の上の講義ノートを鞄へ収めた。",
-          { facilityPersonAction: { kind: "school", action: "help" }, rl: 1 }
+          { educationAction:"legacy:teacher-concern", rl: 1 }
         ]),
         $terraData.K("次の授業でどこを扱うかだけ確かめておく", {}, [
           1,
@@ -182,7 +164,7 @@ window.TERRA_DATA_BUILD.run("life/goals-and-family", function ($terraData, $defi
       c: [
         $terraData.K("患者の目線から、少し迷いそうな箇所を伝える", {}, [
           1,
-          "年寄りや急患がパッと見て迷いそうな一行を指さした。係はなるほどと頷き、すぐさま筆を取り直した。個人の意見が施設の手順を変えたことにはならないが、その場で少し役には立ったようだ。",
+          "年寄りや急患がパッと見て迷いそうな一行を指さした。係はなるほどと頷き、その箇所の言い回しを手元の案で書き直した。",
           { facilityPersonAction: { kind: "clinic", action: "feedback" }, k: 1 }
         ]),
         $terraData.K("邪魔をしないよう、自分の受付だけ済ませる", {}, [

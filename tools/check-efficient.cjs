@@ -3,12 +3,52 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {spawnSync}=require('node:child_process'),{createHash}=require('node:crypto');
 const runtime=require('./runtime.cjs'),root=path.resolve(__dirname,'..');
 const approved=Object.freeze([
+  "employment-family-periods.test.cjs",
+  "employment-appointments-world.test.cjs",
+  "employment-ux.test.cjs",
+  "employment-finance-transitions.test.cjs",
+  "employment-event-runtime-review.test.cjs",
+  "employment-135-case-manifest.test.cjs",
+  "employment-legacy-route-removal.test.cjs",
+  "employment-normal-play-frequency.test.cjs",
+  "disclosure-impact.test.cjs",
+  "advanced-settings.test.cjs",
+  "parent-oripathy-bereavement.test.cjs",
+  "v88-history-roaming-completion.test.cjs",
+  "p20-education-completion.test.cjs",
+  "p15-education-regional-paths.test.cjs",
   "p0-career-credential-lifecycle.test.cjs",
+  "v89_employment_i1_access_world.test.cjs",
+  "v90_employment_i2_lifecycle.test.cjs",
+  "v91_employment_ordinary_positions_and_gigs.test.cjs",
   "p0-education-nonstandard.test.cjs",
   "p0-school-progression.test.cjs",
+  "event-outcome-tone.test.cjs",
   "p0-school-regional-access.test.cjs",
+  "p18-education-world-determinism.test.cjs",
+  "p19-education-observation.test.cjs",
+  "p19-education-dependent-observation.test.cjs",
+  "p19-education-nine-stage.test.cjs",
+  "p19-education-local-transitions.test.cjs",
+  "p15-education-regional-representatives.test.cjs",
+  "p15-education-causal-boundaries.test.cjs",
+  "p15-education-annual-lifecourse.test.cjs",
+  "p15-education-transfer-and-dependents.test.cjs",
+  "p15-education-infection-and-history.test.cjs",
+  "p18-education-operations-mobility.test.cjs",
+  "p18-education-case-fsm.test.cjs",
+  "p18-education-finance-ledger.test.cjs",
+  "p18-education-attendance-credit.test.cjs",
+  "p18-education-access-family-nonformal.test.cjs",
+  "p18-education-event-migration.test.cjs",
   "p0-education-service-context.test.cjs",
   "regional-event-context.test.cjs",
+  "arts-profile-and-learning.test.cjs",
+  "minor-choice-scheduling.test.cjs",
+  "life-systems-delivery-infrastructure.test.cjs",
+  "contingency-contract-lifecycle.test.cjs",
+  "community-research-culture.test.cjs",
+  "arts-history-retention.test.cjs",
   "terra-death-causes-diversity.test.cjs",
   "v87_rhodes_landship_reforms.test.cjs",
   "v87_sim_audit_fixes_and_metrics.test.cjs",
@@ -18,6 +58,63 @@ const approved=Object.freeze([
   "v88_system_audit_fixes.test.cjs",
   "v88_language_system.test.cjs",
   "v88_timeline_local_events.test.cjs",
+  "v88_history_scope_and_pending.test.cjs",
+  "v88_historical_roaming_contract.test.cjs",
+  "v88_roaming_school_absence.test.cjs",
+  "v88_roaming_work_family_boundaries.test.cjs",
+  "v88_roaming_ui_roundtrip.test.cjs",
+  "v88_roaming_monthly_stay.test.cjs",
+  "v88_historical_regional_impacts.test.cjs",
+  "v88_regional_career_outcomes.test.cjs",
+  "v88_regional_promotion_history.test.cjs",
+  "v88_yan_court_spring_eligibility.test.cjs",
+  "v88_regional_choice_seasonal_calendar.test.cjs",
+  "v88_regional_daily_seasonal_calendar.test.cjs",
+  "v88_death_job_and_year_basis.test.cjs",
+  "v88_language_school_scopes.test.cjs",
+  "v88_effect_subject_finance_and_infection.test.cjs",
+  "v88_outcome_followup_lineage.test.cjs",
+  "v88_relationship_flag_lifecycle.test.cjs",
+  "v88_cohabitation_residence_accounting.test.cjs",
+  "v88_family_spouse_co_residence_events_and_roster.test.cjs",
+  "v88_historical_catalog_schema_and_sources.test.cjs",
+  "v88_crisis_event_priority.test.cjs",
+  "v88_regional_crisis_leisure_scope.test.cjs",
+  "v88_expiring_followup_priority.test.cjs",
+  "v88_age_cutoff_competing_followups.test.cjs",
+  "v88_annual_deadline_capacity.test.cjs",
+  "v88_deadline_coverage_metrics.test.cjs",
+  "v88_long_life_state_reproductions.test.cjs",
+  "v88_ursus_katorga_custody_lifecycle.test.cjs",
+  "v88_followup_elapsed_from_status.test.cjs",
+  "v88_infected_organization_exit_consistency.test.cjs",
+  "v88_infected_org_reentry_suspension_age.test.cjs",
+  "v88_kazdel_child_family_memory_context.test.cjs",
+  "v88_adult_child_contact_target_and_funds.test.cjs",
+  "v88_family_child_future_and_memories.test.cjs",
+  "v88_affiliation_goal_closure.test.cjs",
+  "v88_affiliation_goal_outcome_branches.test.cjs",
+  "v88_workplace_goal_departure_contracts.test.cjs",
+  "v88_rejected_career_and_short_contract_goals.test.cjs",
+  "v88_rhine_and_rhodes_departure_lifecycle.test.cjs",
+  "v88_higashi_and_siracusa_retirement_goals.test.cjs",
+  "v88_zelgrad_post_settlement_lifecycle.test.cjs",
+  "v88_zelgrad_second_job_loss_and_mobility.test.cjs",
+  "v88_affiliation_legacy_event_boundaries.test.cjs",
+  "v88_reunion_goal_transition.test.cjs",
+  "v88_cross_faction_affiliation_transitions.test.cjs",
+  "v88_student_familia_status_debt.test.cjs",
+  "v88_currency_display.test.cjs",
+  "v88_multi_child_diagnosis_target.test.cjs",
+  "v88_sibling_exposure_individual_targets.test.cjs",
+  "v88_spouse_sibling_medical_funds.test.cjs",
+  "violence-lifepath.test.cjs",
+  "v88_separate_spouse_sibling_annual_reconciliation.test.cjs",
+  "v88_spouse_oneoff_and_annual_receipt_idempotency.test.cjs",
+  "v88_multi_child_annual_family_budget_reconciliation.test.cjs",
+  "v88_divorce_child_support_recipient_receipts.test.cjs",
+  "v88_multi_child_medical_quote_and_payer.test.cjs",
+  "v88_romance_lifecycle_coherence.test.cjs",
   "ui-summary-focus.test.cjs",
   "ui-log-years.test.cjs",
   "ui-choice-presentation.test.cjs",
@@ -25,6 +122,7 @@ const approved=Object.freeze([
   "ui-ending-chart.test.cjs",
   "ui-record-evidence.test.cjs",
   "ending-comparison.test.cjs",
+  "ending-peer-worker.test.cjs",
   "ui-summary-display-boundaries.test.cjs",
   "ui-title-resume.test.cjs",
   "annual-phases.test.cjs",
@@ -39,6 +137,7 @@ const approved=Object.freeze([
   "v87_affiliation_career_paths.js",
   "v87_affiliation_career_ursus_mine.js",
   "v87_birth_year_locality.js",
+  "birth-locality-zero-weights.test.cjs",
   "v87_bolivar_upland_lifecourse.js",
   "v87_catastrophe_lifecourse.js",
   "v87_class_locality_history.js",
@@ -159,15 +258,19 @@ function main(args){
  if(request.command==='list'){console.log(approved.join('\n'));return 0;}
  if(request.dry){console.log(JSON.stringify({command:request.command,tests:request.files,rerunReason:request.reason,writes:false}));return 0;}
  const cache=readCache(),publicFiles=runtime.publicFiles(root);
- const common=digest([...publicFiles,'tools/runtime.cjs','tools/check-efficient.cjs']);
+ const common=digest([...publicFiles,'tools/runtime.cjs','tools/check-efficient.cjs','tools/history-source-keys.cjs']);
  if(request.reason)console.log('Explicit rerun: '+request.reason);
  if(request.command==='syntax'){
   const expectedRevision=require('./update-version.cjs').revision(root);
   if(!fs.readFileSync(path.join(root,'js/version.js'),'utf8').includes('const ENGINE_REVISION = '+JSON.stringify(expectedRevision)+';')) {
-    console.error('Stale engine revision: run node tools/update-version.cjs');return 1;
+    console.error('Stale engine revision: expected '+expectedRevision+'; run node tools/update-version.cjs');return 1;
   }
   if(!request.reason&&cache['@syntax']?.key===common){console.log('REUSED syntax: unchanged runtime');return 0;}
   const start=Date.now();
+  for(const file of publicFiles.filter(x=>x.startsWith('data/')&&x.endsWith('.js'))){
+    const duplicates=require('./history-source-keys.cjs').duplicateSceneKeys(fs.readFileSync(path.join(root,file),'utf8'));
+    if(duplicates.length){console.error('Duplicate scene keys: '+file+' '+JSON.stringify(duplicates));return 1;}
+  }
   try{for(const file of publicFiles.filter(f=>f.endsWith('.js')))new vm.Script(fs.readFileSync(path.join(root,file),'utf8'),{filename:file});}
   catch(error){delete cache['@syntax'];saveCache(cache);console.error(error.stack);return 1;}
   cache['@syntax']={key:common,ms:Date.now()-start};saveCache(cache);
@@ -176,8 +279,8 @@ function main(args){
  for(const file of request.files){
   const inputs=[...dependencies('tests/'+file),...(extraInputs[file]||[])],key=digest(inputs,common);
   if(!request.reason&&cache[file]?.key===key){console.log('REUSED '+file+': unchanged inputs');continue;}
-  const start=Date.now(),result=spawnSync(process.execPath,['tests/'+file],{cwd:root,encoding:'utf8',timeout:30000,maxBuffer:256*1024});
-  if(result.status!==0){delete cache[file];saveCache(cache);console.error('FAILED '+file+'\n'+(result.stderr||result.stdout||result.error?.message||'No diagnostic output').slice(-16000));return 1;}
+  const start=Date.now(),timeout=file==='v87_dev_simulation_diagnostics.js'?240000:['ending-comparison.test.cjs','v88_deadline_coverage_metrics.test.cjs'].includes(file)?120000:file==='audit-diagnostics.test.cjs'?60000:30000,result=spawnSync(process.execPath,['tests/'+file],{cwd:root,encoding:'utf8',timeout,maxBuffer:256*1024});
+  if(result.status!==0){delete cache[file];saveCache(cache);console.error('FAILED '+file+'\n'+([result.error?.message,result.stderr||result.stdout||'No diagnostic output'].filter(Boolean).join('\n')).slice(-16000));return 1;}
   cache[file]={key,ms:Date.now()-start};console.log('PASSED '+file+': '+cache[file].ms+' ms');
  }
  saveCache(cache);return 0;

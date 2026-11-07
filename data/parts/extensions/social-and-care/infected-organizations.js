@@ -196,6 +196,12 @@ window.TERRA_DATA_BUILD.fragment(
               onlyIfActiveOrCrisis: true
             }
           ],
+          lifeGoals: [
+            { id: "order-through-exclusion", action: "abandon", onlyIfActive: true,
+              note: "会の運営から退き、本人が追っていた活動目標を終了" },
+            { id: "infected-mutual-aid", action: "abandon", onlyIfActive: true,
+              note: "会の運営から退き、本人が追っていた活動目標を終了" }
+          ],
           lifeOrganization: {
             id: "infected-current",
             action: "handover",
@@ -228,6 +234,12 @@ window.TERRA_DATA_BUILD.fragment(
               note: "内部分裂を受けて解散",
               onlyIfActiveOrCrisis: true
             }
+          ],
+          lifeGoals: [
+            { id: "order-through-exclusion", action: "abandon", onlyIfActive: true,
+              note: "組織を解散し、本人の活動目標を終了" },
+            { id: "infected-mutual-aid", action: "abandon", onlyIfActive: true,
+              note: "組織を解散し、本人の活動目標を終了" }
           ],
           lifeOrganization: { id: "infected-current", action: "dissolve", note: "内部分裂を受け解散" },
           p: -2
@@ -555,6 +567,13 @@ window.TERRA_DATA_BUILD.fragment(
     any: ["感染者排除団体から退出済み", "感染者互助組織から退出済み"],
     cd: 8,
     w: 0.2,
+    show: s => (s.lifeRecord?.affiliations || []).some(member =>
+      ["infected-exclusion", "infected-mutual-aid"].includes(member.id) &&
+      member.status === "left" &&
+      Number.isInteger(member.endedYear) && s.year - member.endedYear >= 3 &&
+      (s.lifeRecord?.organizations || []).some(org =>
+        org.id === member.id && ["active", "handed-over"].includes(org.status))
+    ),
     t: "あの会を離れてから何年もの月日が流れた。ある日、今の世話役から「あなたが関わっていた頃のいきさつを教えてほしい」と便りが届いた。過去のことにどう向き合うか考えた。",
     c: [
       $terraData.K("個人の名前は伏せたうえで、当時なぜそう決めたのかを話して伝える", {}, [

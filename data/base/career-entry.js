@@ -1,6 +1,13 @@
 // base/career-entry: ordered game data; see DATA_MODULES.md.
 window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, $rules) {
   "use strict";
+  $terraData.EVENT_EFFECT_TYPES.object.push("employmentAction");
+  $terraData.EVENT_FIELD_META.employmentAction = {
+    unit: "求人・就業案件への本人の意思決定",
+    meaning: "実在する求人枠、資格、本人の承諾から採用案件と実勤務期間を開始・終了する。職業IDのみでは雇用しない",
+    status: "S",
+    valueType: "object"
+  };
   $terraData.EV.push(
     {
       id: "car",
@@ -36,11 +43,14 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
       c: [
         $terraData.K(
           "軍務に志願する",
-          { show: { "any": ["国:ウルサス", "国:ヴィクトリア"] } },
+          { show: s => ["ウルサス", "ヴィクトリア"].includes(s.res?.n) &&
+            employmentEffectAssessment(s, { job: 14, lifeAffiliation: { id: "military-service-entry", action: "join" } }, "car").canStart },
           [
             0.6,
             "補助部隊に採用され、泥にまみれる訓練と哨戒任務の日々が始まった。給金は決まった日に出たが、故郷の土を踏める休暇はほとんどなかった。",
-            { job: 14, fl: { veteran: 1 }, h: -8, cr: 7, p: -1, payBonus: 0.05 }
+            { job: 14, fl: { veteran: 1 }, h: -8, cr: 7, p: -1, payBonus: 0.05,
+              lifeAffiliation: { id: "military-service-entry", title: "任地の補助部隊", kind: "career",
+                action: "join", role: "補助部隊の訓練・哨戒", note: "一任地でのゲーム上の勤務経歴" } }
           ],
           [
             1,
@@ -54,7 +64,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           [
             0.6,
             "短期契約の前金を懐に収め、荒野の見張り任務に就いた。手渡された報酬で当座の暮らしは息をついた。仕事が明けたあとも、武具の手入れをしながら次の依頼を待つ暮らしに入った。",
-            { job: 4, fl: { veteran: 1 }, h: -14, cr: -3, p: -2, cash: 120000 }
+            { employmentAction: { action: "complete-gig", kind: "short-sentry", sourceEventId: "car", nominalCash: 120000 }, fl: { veteran: 1 }, h: -14, cr: -3, p: -2, cash: 120000 }
           ],
           [
             1,
@@ -63,43 +73,36 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           ]
         ),
         $terraData.K(
-          "アーツ学院を目指す",
+          "アーツ学院の募集を照会する",
           {
             show: {
               any: ["国:リターニア", "国:クルビア", "国:炎国"],
               ban: ["voc", "voc_enrolled", "uni_enrolled"]
             },
-            en: { ge: { ar: 40, cash: 3e5 } },
-            why: "学院が求めるアーツの適性か、入学金30万龍門幣が足りない"
+            en: s => !educationActiveCase(s),
+            why: "進学案件をすでに手続き中"
           },
-          [
-            0.7,
-            "学院の選抜を通り、入学金と当面の学費として30万龍門幣を納めた。真新しい教本と杖を手に取り、アーツの訓練が始まった。",
-            { ar: 15, ep: 8, k: 4, cr: 8, cash: -3e5, fl: { arts_enrolled: 1, voc_enrolled: 1 }, study: "voc_start" }
-          ],
-          [
-            1,
-            "実技と筆記に挑んだが、合格者の貼り紙に自分の番号はなかった。旅費と受験料の3万龍門幣だけが消え、重い足取りで別の働き口を探し始めた。",
-            { p: -8, cash: -3e4 }
-          ]
+          [1, "窓口で通える募集先を照会し、出願や費用の確認を進めることにした。入学の選考と授業料は、確認できた募集先ごとに判断する。",
+            { educationAction: "case:begin:higher-path:arts:1" }]
         ),
-        $terraData.K("工場労働者として働く", {}, [
+        $terraData.K("工場労働者として働く", { show: s => !!employmentOpeningForChoice(s, 2) }, [
           1,
           "製造工場の働き口を得た。交代のベルが鳴り響くたび、機械油で黒ずんだ手を布で拭い、熱気のこもる持ち場へと向かった。",
-          { job: 2 }
+          { employmentAction: { action: "accept-local-opening", jobId: 2 } }
         ]),
         $terraData.K(
           "ウルサスの鉱山で働く",
-          { show: { need: ["国:ウルサス"], or: [{ ban: ["感染診断済"] }, { need: ["隠蔽"] }] } },
+          { show: { need: ["国:ウルサス"], or: [{ ban: ["感染診断済"] }, { need: ["隠蔽"] }] }, en: s => !!employmentOpeningForChoice(s, 3), why: "この地域では採掘班の募集を確認できない" },
           [
             1,
             "軍需を支える鉱山の募集に応じ、採掘班に組み込まれた。渡された防塵具だけで坑道の黒い粉塵をしのげるのか、確かめる術もないまま暗い坑口へ入った。",
-            { job: 3, fl: { workplace_hazard: 1 } }
+            { employmentAction: { action: "accept-local-opening", jobId: 3 }, fl: { workplace_hazard: 1 } }
           ]
         ),
         $terraData.K(
           "トランスポーターの仕事を請ける",
-          { show: { any: ["国:龍門", "国:クルビア", "国:ヴィクトリア", "国:シラクーザ", "国:ボリバル", "国:レム・ビリトン"] } },
+          { show: s => ["龍門", "クルビア", "ヴィクトリア", "シラクーザ", "ボリバル", "レム・ビリトン"].includes(s.res?.n) &&
+            employmentEffectAssessment(s, { job: 16, lifeAffiliation: { id: "terra-general-transporter", action: "join" } }, "car").canStart },
           [
             1,
             "荷札の宛先を確かめ、鞄を肩に食い込ませて街区から街区へ荷物や書状を運んだ。抜け道を覚えるほど足は速くなったが、夜更けの急な呼び出しも増えていった。",
@@ -132,7 +135,8 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         ),
         $terraData.K(
           "山間の集落へ荷を運ぶ便に応募する",
-          { show: { need: ["国:イェラグ"] } },
+          { show: s => s.res?.n === "イェラグ" &&
+            employmentEffectAssessment(s, { job: 16, lifeAffiliation: { id: "kjerag-village-transporter", action: "join" } }, "car").canStart },
           [
             0.65,
             "雪深い山道の集落へ荷を届ける仕事に採用された。荷札の村名を確かめ、受け入れが決まった集落の戸口へ日用品や手紙を背負い上げる。雪崩やぬかるみで道が荒れるたび、歩を進める予定はその場で変わっていった。",
@@ -168,45 +172,46 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             { p: -2 }
           ]
         ),
-        $terraData.K("飲食店や宿の仕事を探す", {}, [
+        $terraData.K("飲食店や宿の仕事を探す", { show: s => !!employmentOpeningForChoice(s, 17) }, [
           1,
           "湯気と脂の匂いが満ちる食堂で、皿洗いと配膳を任された。旅慣れた客の雑談から遠い土地の噂を聞く一方、混み合う夜は自分の賄いをかき込む暇もなかった。",
-          { job: 17, rl: 3 }
+          { employmentAction: { action: "accept-local-opening", jobId: 17 }, rl: 3 }
         ]),
         $terraData.K(
           "修理工房で技術を習う",
-          { show: { any: ["国:クルビア", "国:ヴィクトリア", "国:龍門", "国:レム・ビリトン", "国:炎国"] } },
+          { show: s => ["クルビア", "ヴィクトリア", "龍門", "レム・ビリトン", "炎国"].includes(s.res?.n) && !!employmentOpeningForChoice(s, 18) },
           [
             0.8,
             "鉄と機械油の匂う工房で、工具の呼び名と部品の型から叩き込まれた。見習いの給金はわずかだったが、壊れた装置が息を吹き返す感触が指先に残った。",
-            { job: 18, k: 3, cr: 2 }
+            { employmentAction: { action: "accept-local-opening", jobId: 18 }, k: 3, cr: 2 }
           ],
           [1, "自前の工具代も親方への紹介状も揃わず、見習いの枠は別の若者に埋まった。", { p: -2 }]
         ),
         $terraData.K(
           "医療補助や薬局の手伝いをする",
-          { show: { ge: { k: 15, literacy: 28 } } },
+          { show: s => s.k >= 15 && literacyValue(s) >= 28 && !!employmentOpeningForChoice(s, 20) },
           [
             0.75,
             "消毒薬の匂う棚で薬瓶の数を揃え、青い顔をした患者を診察室へ案内した。病を治す知識はなくても、長い順番を待つ人の不安な声に耳を傾ける時間はあった。",
-            { job: 20, k: 2, rl: 3 }
+            { employmentAction: { action: "accept-local-opening", jobId: 20 }, k: 2, rl: 3 }
           ],
           [1, "読み書きのできる応募者が多く、薬局の働き口は経験のある人に決まった。", { p: -2 }]
         ),
         $terraData.K(
           "事務・記録の仕事を探す",
-          { show: { ge: { k: 20, literacy: 40 } } },
+          { show: s => s.k >= 20 && literacyValue(s) >= 40 && !!employmentOpeningForChoice(s, 21) },
           [
             0.8,
             "インクの匂う机で帳簿を書き写し、窓口を訪れた人の事情を取り次いだ。自分が整える一行の数字が、誰かの住まいや暮らしを左右するのだと肌で知った。",
-            { job: 21, k: 3, cr: 3 }
+            { employmentAction: { action: "accept-local-opening", jobId: 21 }, k: 3, cr: 3 }
           ],
           [1, "実務の経験がないことを理由に断られ、採用には至らなかった。", { p: -2 }]
         ),
         $terraData.K(
           "応募・移動費 {colTechApplicationCost} を払って、クルビアの研究企業の技師職に挑む",
           {
-            show: { need: ["国:クルビア"], ge: { k: 30, literacy: 35 } },
+            show: s => s.res?.n === "クルビア" && s.k >= 30 && literacyValue(s) >= 35 &&
+              employmentEffectAssessment(s, { job: 7, lifeAffiliation: { id: "columbia-technical-work", action: "join" } }, "car").canStart,
             en: (s, T) =>
               careerOpeningAssessment(s, { role: "technical" }).canApply &&
               ok({ affordableCashAfterReserve: 5e4 }, s, T),
@@ -284,7 +289,8 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         $terraData.K(
           "応募費 {vicClerkApplicationCost} を払って、ヴィクトリアの保険仲介所で帳簿係を探す",
           {
-            show: { need: ["国:ヴィクトリア"], ge: { k: 20, literacy: 40 } },
+            show: s => s.res?.n === "ヴィクトリア" && s.k >= 20 && literacyValue(s) >= 40 &&
+              employmentEffectAssessment(s, { job: 21, lifeAffiliation: { id: "victoria-insurance-clerk", action: "join" } }, "car").canStart,
             en: { affordableCashAfterReserve: 3e4 },
             why: "応募費を払うと、当面の暮らしを支える蓄えが残らない"
           },
@@ -359,31 +365,31 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
         ),
         $terraData.K(
           "職人の工房で手仕事を覚える",
-          { show: { any: ["国:カジミエーシュ", "国:リターニア", "国:炎国", "国:極東", "国:イェラグ"] } },
+          { show: s => ["カジミエーシュ", "リターニア", "炎国", "極東", "イェラグ"].includes(s.res?.n) && !!employmentOpeningForChoice(s, 22) },
           [
             1,
             "工房の隅で布の裁断や金具の下ごしらえを任された。ようやく仕上がった品が表の棚に並んでも、売値の大半は材料代と親方の懐へ消えていった。",
-            { job: 22, ar: 2, k: 1 }
+            { employmentAction: { action: "accept-local-opening", jobId: 22 }, k: 1 }
           ]
         ),
         $terraData.K(
           "農漁業や採集の手伝いに入る",
           {
-            show: { any: ["国:サルゴン", "国:イェラグ", "国:ミノス", "国:シエスタ", "国:サーミ", "国:炎国"] }
+            show: s => ["サルゴン", "イェラグ", "ミノス", "シエスタ", "サーミ", "炎国"].includes(s.res?.n) && !!employmentOpeningForChoice(s, 23)
           },
           [
             1,
             "空模様と風向きを読みながら、夜明け前に畑や水辺へ出た。どれほど収穫があっても、買い叩く仲買人や悪路のせいで手元に残る金はわずかだった。",
-            { job: 23, fl: { workplace_hazard: 1 } }
+            { employmentAction: { action: "accept-local-opening", jobId: 23 }, fl: { workplace_hazard: 1 } }
           ]
         ),
         $terraData.K(
           "露店や家族の小商いを手伝う",
-          { show: { need: ["家計を担う親あり"] } },
+          { show: s => !!resolveEmploymentLivelihoodResource(s, "family-community", 24, "family-business") },
           [
             0.75,
             "夜明けの市場から運んだ品を木箱に並べ、夕方には売れ残りを数えた。家の商いを肌で覚えるかわりに、大通りが静まるまで店を閉められなくなった。",
-            { job: 24, rl: 3 }
+            { employmentAction: { action: "start-livelihood", kind: "family-community", jobId: 24, sourceEventId: "car", roleId: "family-stall-helper", resourceId: "family-business", projectAsJob: false, workFraction: 0.25 }, rl: 3 }
           ],
           [1, "仕入れに回す元手がどうしても足りず、人手を増やす話は立ち消えになった。外で別の働き口を探すしかなかった。", { p: -2 }]
         ),
@@ -392,14 +398,15 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           "学び舎に残り、もう少し先まで進路を見極めることにした。学費や教本代の工面は続くが、まだ危険な現場へ身を投じずに済んだ。",
           { job: 0, k: 3, cash: -5e4, p: 2 }
         ]),
-        $terraData.K("鉱区へ働きに出る", { show: { need: ["国:レム・ビリトン"] } }, [
+        $terraData.K("鉱区へ働きに出る", { show: s => s.res?.n === "レム・ビリトン" && !!employmentOpeningForChoice(s, 3) }, [
           1,
           "地元業者が仕切る鉱区で採掘班の働き口を得た。落盤や粉塵への対策は曖昧に濁されたまま、ツルハシを担いで薄暗い坑道へ入った。",
-          { job: 3, fl: { workplace_hazard: 1 } }
+          { employmentAction: { action: "accept-local-opening", jobId: 3 }, fl: { workplace_hazard: 1 } }
         ]),
         $terraData.K(
           "天災後の鉱区調査隊で助手に応募する",
-          { show: { need: ["国:レム・ビリトン"], ge: { k: 20 } } },
+          { show: s => s.res?.n === "レム・ビリトン" && s.k >= 20 &&
+            employmentEffectAssessment(s, { job: 27, lifeAffiliation: { id: "rim-catastrophe-survey-assistant", action: "join" } }, "car").canStart },
           [
             0.55,
             "鉱山隊に同行する天災トランスポーターの募集を聞きつけ、崩れた地形や源石の露出を測る助手として採用された。焦げた土の匂いが残る天災後の鉱区を歩き、観測の記録を取り始めた。",
@@ -443,21 +450,21 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           [
             0.7,
             "街の顔役を通じてファミリーの雑用を請け負った。渡された前金で急場はしのげたが、次に持ち込まれる頼みを断れる保証はどこにもない。",
-            { job: 1, fl: { criminal_yakuza: 1 }, cash: 3e5, cr: -5, p: 2 }
+            { employmentAction: { action: "complete-gig", kind: "local-errand", sourceEventId: "car", nominalCash: 300000 }, fl: { criminal_yakuza: 1 }, cash: 3e5, cr: -5, p: 2 }
           ],
           [
             1,
             "最初から危ない橋を渡る使い走りを押しつけられ、路地裏を逃げ惑う途中で深い傷を負った。",
-            { job: 1, fl: { criminal_yakuza: 1, trauma_crime: 1 }, h: -15 }
+            { job: 0, fl: { criminal_yakuza: 1, trauma_crime: 1 }, h: -15 }
           ]
         ),
         $terraData.K(
           "競技団体の裏方仕事を探す",
-          { show: { need: ["国:カジミエーシュ"] } },
+          { show: s => s.res?.n === "カジミエーシュ" && employmentLivelihoodResource(s, "seasonal-contract", 1)?.canStart === true },
           [
             0.7,
             "競技場の柵の設営や武具運びの仕事を得た。歓声の中で騎士たちの名が華やかに呼ばれていく裏で、その日の汗の分だけ日当を受け取った。",
-            { job: 1, cr: 2 }
+            { employmentAction: { action: "complete-gig", kind: "cargo-handling", sourceEventId: "car", resourceId: "local-resource", nominalCash: 50000 }, cash: 50000, cr: 2 }
           ],
           [1, "ツテがなく裏方の枠に入れなかった。次の競技会が開かれるまで、日雇いの口を探すしかなかった。", { p: -3 }]
         ),
@@ -472,7 +479,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             "手元の金で切符が買える行き先を選び、荷物を一つまとめて故郷を出た。帰る場所は遠ざかったが、見知らぬ土地でやり直す余地だけは広がった。",
             {
               res: 1,
-              job: 1,
+              job: 0,
               rl: -15,
               p: 4,
               residenceArrangement: "independent_rental",
@@ -487,8 +494,8 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             0.6,
             "移動バザールを行き来するトランスポーターの口利きで、隊商の荷を守る短期の警戒任務を請けた。手渡された前金で当座の暮らしは息をついたが、砂塵の旅が一往復終わると次の依頼は来なかった。",
             {
-              job: 4,
               cash: 80000,
+              employmentAction: { action: "complete-gig", kind: "market-watch", sourceEventId: "car", nominalCash: 80000 },
               h: -5,
               lifeAffiliations: [
                 {
@@ -520,6 +527,80 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             { job: 0, cash: -20000, p: -2 }
           ]
         )
+      ]
+    },
+    {
+      id: "life_columbia_failed_application_followup",
+      conf: "B",
+      references: ["SRC_TERRA_INDUSTRY_POLICY", "SRC_TERRA_LIFECOURSE"],
+      st: ["青年", "壮年", "老年"],
+      ge: { age: 18 },
+      le: { age: 80 },
+      after: { id: "car", min: 1 },
+      cd: 2,
+      w: 0.34,
+      show: s => s.lifeRecord?.goals?.some(g =>
+        g.id === "columbia-technical-next-step" && ["active", "paused", "compromised"].includes(g.status)
+      ),
+      t: s => s.job > 0 ? "研究企業の技師職に採用されなかったあと、別の職場で働くようになった。選考で覚えた装置の仕組みは手元に残っているが、今の仕事を続けるか、改めて技術職を探すか考えた。" : "研究企業への応募が実らなかったあとも、職探しは続いている。採用試験で覚えた手順を忘れないようにしながら、求人の条件と今の暮らしを見比べた。",
+      c: [
+        $terraData.K("装置の点検や修理を扱う今の仕事を次の一歩として記録する", { show: s => [7, 18].includes(s.job) }, [
+          1, "別の職場で装置の点検や修理を担当することになった。最初の研究企業とは別の持ち場だが、以前に覚えたことを仕事へつなげられた。",
+          { lifeGoal: { id: "columbia-technical-next-step", action: "complete", note: "別の職場で装置の点検・修理の仕事に就いた" }, p: 1 }
+        ]),
+        $terraData.K("今の職場で働きながら、技術職への希望を持ち続ける", { show: s => s.job > 0 && !([7, 18].includes(s.job)) }, [
+          1, "当面の収入は今の仕事で確保することにした。装置を扱う仕事への希望も捨てず、条件の合う募集があれば改めて考えるつもりだ。",
+          { lifeGoal: { id: "columbia-technical-next-step", action: "compromise", note: "別の職業で暮らしを支え、技術職への希望は留保した" }, p: 1 }
+        ]),
+        $terraData.K("今の仕事を暮らしの軸に据え、技術職探しを終える", { show: s => s.job > 0 && !([7, 18].includes(s.job)) }, [
+          1, "以前の採用試験は一つの経験として手帳に残した。今は別の職業で働く道を選び、技師職への応募を続ける考えを終えた。",
+          { lifeGoal: { id: "columbia-technical-next-step", action: "abandon", note: "別の職業を選び、技術職への求職目標を終了" }, p: 0 }
+        ]),
+        $terraData.K("身につけた装置の知識を復習し、求人を探し続ける", { show: s => s.job === 0 }, [
+          1, "試験で触れた装置の手順を手帳に書き直し、工房や技術職の募集を探した。まだ採用の約束はない。",
+          { lifeGoal: { id: "columbia-technical-next-step", action: "continue", note: "技術の知識を確かめながら求職を継続" }, p: 0 }
+        ]),
+        $terraData.K("いったん求職を休み、当面の生活を優先する", { show: s => s.job === 0 }, [
+          1, "次の採用試験を急がず、手元の蓄えと生活の用事を確かめることにした。技術職の求人票は捨てずに残した。",
+          { lifeGoal: { id: "columbia-technical-next-step", action: "pause", note: "次の技術職応募を保留し、生活を優先" }, p: 0 }
+        ])
+      ]
+    },
+    {
+      id: "life_victoria_failed_application_followup",
+      conf: "B",
+      references: ["SRC_TERRA_INDUSTRY_POLICY", "SRC_TERRA_LIFECOURSE"],
+      st: ["青年", "壮年", "老年"],
+      ge: { age: 18 },
+      le: { age: 80 },
+      after: { id: "car", min: 1 },
+      cd: 2,
+      w: 0.34,
+      show: s => s.lifeRecord?.goals?.some(g =>
+        g.id === "victoria-clerk-next-step" && ["active", "paused", "compromised"].includes(g.status)
+      ),
+      t: s => s.job > 0 ? "保険仲介所での帳簿係には採用されなかったが、その後に別の仕事に就いた。あのとき調べた書式や照会先は今も覚えている。新しい職場で使うか、別の生計を続けるか考えた。" : "保険仲介所の応募が実らなかったあとも、働き口を探している。書類を読み直し、窓口で求められた知識を使える仕事がないか確かめた。",
+      c: [
+        $terraData.K("帳簿や書類を扱う今の仕事を次の一歩として記録する", { show: s => s.job === 21 }, [
+          1, "別の職場で帳簿と書類を扱う仕事に就いた。最初に応募した仲介所との縁はなかったが、以前に覚えた書式の扱い方が役に立った。",
+          { lifeGoal: { id: "victoria-clerk-next-step", action: "complete", note: "別の職場で帳簿や書類を扱う仕事に就いた" }, p: 1 }
+        ]),
+        $terraData.K("今の職場で働きながら、事務職への希望を持ち続ける", { show: s => s.job > 0 && !(s.job === 21) }, [
+          1, "今は別の仕事で暮らしを支えている。読み書きや記録に関わる職場への希望は残し、次の募集を待つことにした。",
+          { lifeGoal: { id: "victoria-clerk-next-step", action: "compromise", note: "別の仕事で生計を支え、事務職の求職は留保" }, p: 1 }
+        ]),
+        $terraData.K("今の仕事を選び、事務職探しを終える", { show: s => s.job > 0 && !(s.job === 21) }, [
+          1, "書類を扱う仕事への応募は、これまでに経験した選択の一つとして残した。今の職場で働く道を選び、帳簿係の募集を追うことを終えた。",
+          { lifeGoal: { id: "victoria-clerk-next-step", action: "abandon", note: "別の職業を選び、帳簿係への求職目標を終了" }, p: 0 }
+        ]),
+        $terraData.K("書式の知識を確かめ、事務職の求人を探し続ける", { show: s => s.job === 0 }, [
+          1, "応募先で求められた書類を改めて読み、今度はどの窓口へ足を運べるか探した。まだ採用の返事はない。",
+          { lifeGoal: { id: "victoria-clerk-next-step", action: "continue", note: "書式の知識を確かめながら事務職を探した" }, p: 0 }
+        ]),
+        $terraData.K("いったん求職を休み、暮らしを整える", { show: s => s.job === 0 }, [
+          1, "窓口へ出向くのをいったんやめ、手元のお金と家の用事を確かめた。必要な書類はひとまとめにして残した。",
+          { lifeGoal: { id: "victoria-clerk-next-step", action: "pause", note: "事務職への応募を保留し、今の暮らしを優先" }, p: 0 }
+        ])
       ]
     },
     {
@@ -752,7 +833,10 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             cash: 50000
           }
         ]),
-        $terraData.K("鉱区を離れ、地域のトランスポーターとして働く", {}, [
+        $terraData.K("鉱区を離れ、地域のトランスポーターとして働く", {
+          show: s => employmentEffectAssessment(s, { job: 16,
+            lifeAffiliation: { id: "terra-general-transporter", action: "join" } }, "rim_catastrophe_transporter_review").canStart
+        }, [
           1,
           "粉塵の舞う調査現場を離れ、街と街を結んで荷や手紙を運ぶ地域のトランスポーターへ移った。荒野の道で培った足腰を頼りに、荷物を背負って次の届け先へと歩き出した。",
           {
@@ -826,8 +910,11 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             0.6,
             "別の隊商から声がかかり、荷車の脇を固める短い警戒任務に就いた。手渡された銅貨は前回より少なく、砂塵の旅が終わるとまた次の当ては途切れた。",
             {
-              job: 4,
               cash: 80000,
+              employmentAction: {
+                action: "complete-gig", kind: "market-watch",
+                sourceEventId: "sargon_market_contract_review", nominalCash: 80000
+              },
               h: -5,
               lifeAffiliations: [
                 { id: "sargon-market-guard-contracts", action: "return", role: "単発の警戒任務" },
@@ -848,7 +935,6 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             1,
             "バザールを回っても護衛の口は見つからず、水代と移動費だけが減った。用心棒で食いつなぐ考えはいったん引っ込め、別の働き口を探すことにした。",
             {
-              job: 0,
               cash: -20000,
               lifeGoal: {
                 id: "sargon-market-guard-work",
@@ -858,11 +944,11 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             }
           ]
         ),
-        $terraData.K("荷札や行き先を扱うトランスポーターの仕事を探す", {}, [
+        $terraData.K("荷札や行き先を扱うトランスポーターの仕事を探す", { show: s => !!employmentOpeningForChoice(s, 16) }, [
           1,
           "武器の代わりに荷袋を担ぎ、移動バザールの天幕から天幕へ品物を届けるトランスポーターの仕事へ移った。",
           {
-            job: 16,
+            employmentAction: { action: "accept-local-opening", jobId: 16 },
             rl: 2,
             lifeAffiliation: {
               id: "terra-general-transporter",
@@ -891,7 +977,6 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           1,
           "紹介屋に断りを入れ、不安定な護衛の請負から足を洗った。しばらくは家の用事と足元の暮らしを立て直すことにした。",
           {
-            job: 0,
             lifeGoal: {
               id: "sargon-market-guard-work",
               action: "abandon",
@@ -1417,7 +1502,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
               id: "columbia-technical-work",
               title: "技術職を続け、暮らしと安全を両立させる",
               priority: "生計と仕事",
-              action: "compromise",
+              action: "abandon",
               note: "現職を離れ、別の働き口を探す"
             },
             p: -5,
@@ -1753,7 +1838,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
               id: "columbia-technical-work",
               title: "技術職を続け、暮らしと安全を両立させる",
               priority: "生計と仕事",
-              action: "compromise",
+              action: "abandon",
               note: "内部確認の結論を待たず現職を離れた"
             },
             p: -2,
@@ -1871,7 +1956,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
               id: "columbia-technical-work",
               title: "技術職を続け、暮らしと安全を両立させる",
               priority: "生計と仕事",
-              action: "compromise",
+              action: "abandon",
               note: "同じ職場での継続を断念し、別の働き口を探す"
             },
             p: -2,
@@ -1965,7 +2050,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
               id: "columbia-technical-work",
               title: "技術職を続け、暮らしと安全を両立させる",
               priority: "暮らしの再構成",
-              action: "compromise",
+              action: "abandon",
               note: "同じ職場での勤務を終えた"
             },
             p: 0
@@ -2042,7 +2127,7 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
             },
             lifeGoal: {
               id: "victoria-clerk-livelihood",
-              action: "compromise",
+              action: "abandon",
               note: "この仲介所での勤務を終えた"
             },
             p: -1
@@ -2201,34 +2286,34 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
           [
             1,
             "人手不足の荷揚げ場で荷車引きの仕事を得た。重い荷に腰がきしむが、その日のうちに日当を受け取り、暮らしの足場を固め直した。",
-            { job: 1, cash: 50000, p: 2, h: -2 }
+            { employmentAction: { action: "complete-gig", kind: "cargo-handling", sourceEventId: "work_unemployed_reentry", nominalCash: 50000 }, cash: 50000, p: 2, h: -2 }
           ]
         ),
         $terraData.K(
           "街外れの町工場や工房で、製造工として雇ってもらう",
-          {},
+          { show: s => !!employmentOpeningForChoice(s, 2) },
           [
             1,
             "油の匂いが立ち込める町工場で採用された。機械の轟音の中で交代勤務に入り、再び毎月の安定した給金を得られるようになった。",
-            { job: 2, p: 3, rl: 2 }
+            { employmentAction: { action: "accept-local-opening", jobId: 2 }, p: 3, rl: 2 }
           ]
         ),
         $terraData.K(
           "大通りや裏路地の一角で、細々と露店・小商いを始める",
-          { en: { affordableCash: 30000 }, why: "仕入れに必要な3万龍門幣が足りない" },
+          { show: s => employmentLivelihoodResource(s, "self-employment", 24)?.canStart === true, en: { affordableCash: 30000 }, why: "仕入れに必要な3万龍門幣が足りない" },
           [
             1,
             "手持ちの小銭で古道具や日用品を仕入れ、木箱を並べて露店を開いた。呼び込みの声に足を止める客も現れ、自活の第一歩を踏み出した。",
-            { job: 24, cash: -30000, pm: 1, p: 3, cr: 2 }
+            { employmentAction: { action: "start-livelihood", kind: "self-employment", jobId: 24, sourceEventId: "work_unemployed_reentry", roleId: "market-vendor", resourceId: "local-resource", projectAsJob: true }, cash: -30000, pm: 1, p: 3, cr: 2 }
           ]
         ),
         $terraData.K(
           "荒野の隊商や商会の護衛・警備の契約に応募する",
-          { en: { ge: { h: 40 } }, why: "護衛任務に耐えうる体力が足りない" },
+          { show: s => employmentLivelihoodResource(s, "seasonal-contract", 4)?.canStart === true, en: { ge: { h: 40 } }, why: "護衛任務に耐えうる体力が足りない" },
           [
             1,
-            "隊商の警備員として雇われた。移動都市の外縁を巡回する過酷な任務だが、危険手当を含めた給金で生活の立て直しに目処がついた。",
-            { job: 4, cash: 80000, p: 1, h: -5 }
+            "隊商から頼まれた一度の警備に就き、荷が外縁の倉庫へ入るまで見届けた。手当を受け取ると契約は終わり、次の口を探すため詰め所へ戻った。",
+            { employmentAction: { action: "complete-gig", kind: "short-sentry", sourceEventId: "work_unemployed_reentry", resourceId: "local-resource", nominalCash: 80000 }, cash: 80000, p: 1, h: -5 }
           ]
         ),
         $terraData.K(
@@ -2254,20 +2339,20 @@ window.TERRA_DATA_BUILD.run("base/career-entry", function ($terraData, $define, 
       c: [
         $terraData.K(
           "路地裏の露店で、古着や手細工の小商いを始める",
-          {},
+          { show: s => employmentLivelihoodResource(s, "self-employment", 24)?.canStart === true },
           [
             1,
             "軒先に小さな敷物を広げ、繕った布や小物を並べた。近所の住人と言葉を交わしながら、自分のペースで小銭を稼ぐ穏やかな日々が始まった。",
-            { job: 24, p: 3, rl: 3 }
+            { employmentAction: { action: "start-livelihood", kind: "self-employment", jobId: 24, sourceEventId: "work_elder_reentry", roleId: "market-vendor", resourceId: "local-resource", projectAsJob: true, workFraction: 0.4 }, p: 3, rl: 3 }
           ]
         ),
         $terraData.K(
           "集会所や長屋の掃除・管理人見習いとして手伝う",
-          {},
+          { show: s => employmentLivelihoodResource(s, "seasonal-contract", 1)?.canStart === true },
           [
             1,
-            "近隣の顔役から共同便所や広場の清掃を頼まれ、日当をもらうことになった。若い頃のような無理は利かないが、地域に居場所を取り戻した。",
-            { job: 1, p: 2, rl: 4 }
+            "近隣の顔役から頼まれた共同便所や広場の清掃を終え、その日の日当を受け取った。若い頃のような無理は利かないが、ほうきを返すときに労いの声をかけられた。",
+            { employmentAction: { action: "complete-gig", kind: "local-errand", sourceEventId: "work_elder_reentry", resourceId: "local-resource", nominalCash: 20000 }, cash: 20000, p: 2, rl: 4 }
           ]
         ),
         $terraData.K(

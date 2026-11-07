@@ -1,6 +1,7 @@
 function shouldApplyLifeAffiliation(input) {
-  if (!input.onlyIfActive && !input.onlyIfActiveOrCrisis && !input.onlyIfMember) return true;
+  if (!input.onlyIfActive && !input.onlyIfActiveOrCrisis && !input.onlyIfMember && !input.onlyIfContacted) return true;
   const status = S.lifeRecord?.affiliations?.find(item => item.id === input.id)?.status;
+  if (input.onlyIfContacted) return status === "contacted";
   if (input.onlyIfMember) return ["active", "crisis", "suspended"].includes(status);
   return input.onlyIfActiveOrCrisis ? ["active", "crisis"].includes(status) : status === "active";
 }
@@ -38,16 +39,19 @@ function applyLifeRecordEffects(e, s) {
   if (e.identityAction) identityAction(s, e.identityAction);
   if (e.personalWishes) recordPersonalWishes(s,e.personalWishes);
   if (e.socialConflictAction) socialConflictAction(s, e.socialConflictAction);
+  if (e.socialConstraintAction) applySocialConstraintAction(s, e.socialConstraintAction);
   if (e.bodyChange) applyBodyChange(e.bodyChange);
   if (e.bodyChanges) e.bodyChanges.forEach(applyBodyChange);
   if (e.lifeGoal) applyLifeGoal(e.lifeGoal);
   if (e.lifeGoals)
     e.lifeGoals.forEach(input => {
+      const goal = S.lifeRecord?.goals?.find(item => item.id === input.id);
+      const member = input.onlyIfAffiliation &&
+        S.lifeRecord?.affiliations?.find(item => item.id === input.onlyIfAffiliation);
       if (
-        !input.onlyIfActive ||
-        S.lifeRecord?.goals?.some(
-          item => item.id === input.id && ["active", "compromised"].includes(item.status)
-        )
+        (!input.onlyIfAffiliation || ["active", "crisis", "suspended"].includes(member?.status)) &&
+        (!input.onlyIfUnresolved || (goal && ["active", "compromised", "paused"].includes(goal.status))) &&
+        (!input.onlyIfActive || (goal && ["active", "compromised"].includes(goal.status)))
       )
         applyLifeGoal(input);
     });
@@ -64,13 +68,18 @@ function applyLifeRecordEffects(e, s) {
   if (e.groupStanding) applyGroupStanding(e.groupStanding);
   if (e.groupStandings) e.groupStandings.forEach(applyGroupStanding);
   if (e.regionalImpact) applyRegionalImpact(e.regionalImpact);
-  if (e.siracusaFamilyAction)
-    recordSiracusaFamilyAction(
-      s,
-      e.siracusaFamilyAction,
-      TRACE_RESOLUTION?.id,
-      TRACE_RESOLUTION?.label || e.label
-    );
+  if (e.siracusaFamilyAction) {
+    const input = e.siracusaFamilyAction;
+    const action = typeof input === "string" ? input : input.action;
+    const member = s.lifeRecord?.affiliations?.find(item => item.id === "siracusa-familia");
+    if (!input.onlyIfMember || ["active", "crisis", "suspended"].includes(member?.status))
+      recordSiracusaFamilyAction(
+        s,
+        action,
+        TRACE_RESOLUTION?.id,
+        TRACE_RESOLUTION?.label || e.label
+      );
+  }
   if (e.siracusaFamilyDuty)
     recordSiracusaFamilyDuty(
       s,

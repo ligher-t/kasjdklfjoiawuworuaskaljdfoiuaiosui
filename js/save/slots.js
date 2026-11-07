@@ -195,17 +195,51 @@ function exportResumeSlot(index) {
 function isValidPersonName(name) {
   return typeof name === "string" && name.trim().length > 0 && name.length <= 50 && !/[<>]/.test(name);
 }
+function isValidResumeEventReviews(reviews, currentYear) {
+  if (reviews == null) return true;
+  if (typeof reviews !== "object" || Array.isArray(reviews)) return false;
+  return Object.entries(reviews).every(([id, review]) =>
+    id.length > 0 && id.length <= 128 &&
+    review && typeof review === "object" && !Array.isArray(review) &&
+    Number.isInteger(review.year) && review.year <= currentYear &&
+    typeof review.signature === "string" && review.signature.length <= 4096 &&
+    typeof review.choice === "string" && review.choice.trim().length > 0 &&
+    review.choice.length <= 200 && !/[<>]/.test(review.choice)
+  );
+}
 function normalizeResumeImport(data) {
   if (data?.format !== "terra-resume-save" || data.version !== SAVE_VERSION)
     throw new Error("この中断データは現在のゲームと同じ保存版ではありません。");
-  const state = data.S,
+  const state = data.S && typeof data.S === "object" && !Array.isArray(data.S)
+      ? JSON.parse(JSON.stringify(data.S)) : data.S,
     knowledge = data.W;
+  // Same-version snapshots created before the race/arts/life-system ledgers
+  // were added have no fields for them. Backfill only empty current-version
+  // ledgers; never infer traits, practical skill, licenses, consent, or history.
+  if (state && typeof state === "object" && !Array.isArray(state) &&
+      Number.isInteger(state.year) && Number.isFinite(state.ar)) {
+    if (!Object.hasOwn(state, "raceProfile")) state.raceProfile = createRaceProfile(state.r);
+    if (!Object.hasOwn(state, "artsProfile")) state.artsProfile = createArtsProfile(state.ar);
+    if (!Object.hasOwn(state, "artsEquipment")) state.artsEquipment = createArtsEquipmentState();
+    if (!Object.hasOwn(state, "violenceState")) state.violenceState = createViolenceState();
+    if (state.world && typeof state.world === "object") {
+      state.world.events ||= {};
+      initializeLifeSystems(state);
+    }
+  }
   if (
     !state || typeof state !== "object" || Array.isArray(state) ||
     !knowledge || typeof knowledge !== "object" || Array.isArray(knowledge) ||
     !Number.isFinite(data.acc) || !Number.isInteger(data.sp) || data.sp < 0 || data.sp >= SPD.length ||
     typeof data.AU !== "string" || !Array.isArray(data.log) ||
     !Number.isInteger(state.by) || !Number.isInteger(state.year) || !Number.isInteger(state.age) ||
+    !isValidRaceProfileState(state.raceProfile, state.r, state.year) ||
+    !isValidArtsProfileState(state.artsProfile, state.year) ||
+    !isValidArtsEquipmentState(state.artsEquipment, state.year) ||
+    !isValidLifeSystemsState(state) ||
+    !isValidEventMonthMarker(state.majorEventMonth, state.year) ||
+    !isValidEventMonthMarker(state.minorEventMonth, state.year) ||
+    !isValidResumeEventReviews(state.eventReviews, state.year) ||
     !Number.isInteger(state.randomSeed) || !Number.isInteger(state.rngState) ||
     state.randomAlgorithm !== RANDOM_ALGORITHM ||
     !state.world || typeof state.world !== "object" || !state.world.events || typeof state.world.events !== "object" ||
@@ -230,6 +264,8 @@ function normalizeResumeImport(data) {
     throw new Error("現行版の中断データとして必要な状態が揃っていません。");
   if (JSON.stringify(knowledge) !== JSON.stringify(state.known))
     throw new Error("保存済みの年表知識が人生状態と一致しません。");
+  if (!isValidSocialConstraintState(state.socialConstraints))
+    throw new Error("社会的制約の記録が現行版の形式と一致しません。");
   let stateProblems;
   try {
     stateProblems = auditLifeState(state);

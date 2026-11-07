@@ -579,6 +579,7 @@ function advanceSpouseLife(s) {
         : careNetworkInfoRoute({ ...s, res: origin }, s.res.n);
     spouse.d = s.year;
     spouse.deathYear = s.year;
+    closeDependentEmployment(s, spouse, "death", {year: s.year, month: spouse.deathMonth || s.mo});
     spouse.deathCause = mortality.cause;
     spouse.deathNoticePending = true;
     spouse.deathNoticeAvailableYear = s.year + route.delayYears;

@@ -17,8 +17,11 @@ const classes = ['daily_columbia_57','daily_columbia_58','daily_columbia_59','da
 for (const id of classes)
   assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), false, id+' rejects a child outside school');
 run(`educationStart(S,'lower',1,'regional-context');`);
+// A legacy school flag and an unbound school path do not establish that
+// a laboratory, club or tuition notice actually exists at a reachable campus.
 for (const id of classes)
-  assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), true, id+' remains reachable for a pupil');
+  assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), false,
+    id+' needs a verified school offering and the event-specific campus evidence');
 run(`educationEnd(S,'withdrawn','本人が通学を終えた','regional-context');`);
 restore();
 for (const id of classes)
@@ -79,7 +82,7 @@ run(`applyLifeAffiliation({id:'rhine-lab',action:'leave'});`);
 assert.equal(run(`elig(EV.find(e=>e.id==='daily_columbia_39'),S,tags(S),{ignoreOccurrence:true})`), false,'former laboratory membership does not permit current lab work');
 
 start('ラテラーノ', 15);
-run(`S.r=RACE.find(x=>x.n==='サンクタ');S.fl.gun=0;`);
+run(`S.r=RACE.find(x=>x.n==='サンクタ');S.raceProfile=createRaceProfile(S.r);S.fl.gun=0;`);
 const personalGunScenes = ['daily_laterano_04','daily_laterano_12','daily_laterano_14','daily_laterano_36','daily_laterano_40'];
 for (const id of personalGunScenes)
   assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), false, id+' requires recorded receipt/training');
@@ -87,10 +90,13 @@ run(`ap(EV.find(e=>e.id==='lat_gun').c[0].o[0][2]);`);
 restore();
 for (const id of personalGunScenes)
   assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), true, id+' is available after the existing receipt choice and restore');
-run(`S.r=RACE.find(x=>x.n==='リーベリ');`);
+run(`S.r=RACE.find(x=>x.n==='リーベリ');S.raceProfile=createRaceProfile(S.r);`);
 for (const id of personalGunScenes)
   assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), false, id+' does not give a non-Sankta their own guardian gun');
-assert.equal(run(`ok(EV.find(e=>e.id==='choice_laterano_10').c[0].en,S,tags(S))`), false,'celebration shooting also requires the actual gun route');
+const lateranoLocalGathering = plain(`return EV.find(e=>e.id==='choice_laterano_10');`);
+assert.equal(lateranoLocalGathering.c[0].l, '屋台の配膳を手伝う');
+assert.doesNotMatch(JSON.stringify(lateranoLocalGathering), /祝砲|守護銃で空へ撃つ/,
+  'the rewritten local gathering no longer invents a personal-gun celebration route');
 
 const prose = plain(`
   return ['choice_columbia_10','daily_columbia_40','choice_higashi_10','choice_victoria_10']

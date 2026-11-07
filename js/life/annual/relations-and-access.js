@@ -14,7 +14,6 @@ function advanceAnnualRelationsAndAccess(s, services) {
   services.advanceSeparatedParentWorkLives(s);
   services.advanceRelativeMilestones(s);
   services.advanceIndependentChildLives(s);
-  services.advanceIndependentChildBudgets(s);
   services.advanceSiblingLives(s);
   services.advanceIndependentSiblingMoves(s);
   services.advanceIndependentSiblingFamilies(s);
@@ -32,6 +31,8 @@ function advanceAnnualRelationsAndAccess(s, services) {
   services.deliverSocialContactNotices(s);
   s.priceIndex = (s.priceIndex || 1) * (1 + services.P("economy.costInflationAnnual"));
   services.refreshMobileCityEcology(s);
+  // Record independent children's current-year receipts after the payer's price/locality update.
+  services.advanceIndependentChildBudgets(s);
   services.settleSiblingParentTreatmentContribution(s);
   if (s.study) {
     if (services.restricted(s)) {
@@ -43,6 +44,9 @@ function advanceAnnualRelationsAndAccess(s, services) {
     }
   }
   if (s.fl.insured && s.res.n !== "クルビア") {
+    services.L(
+      '<span class="nt">クルビアを離れたため、現地で結んでいた医療保険の契約は更新しなかった。</span>'
+    );
     s.fl.insured = 0;
     s.insurancePaidYear = null;
   }

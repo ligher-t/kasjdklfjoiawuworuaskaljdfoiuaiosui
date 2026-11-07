@@ -20,11 +20,11 @@ window.TERRA_DATA_BUILD.fragment(
         !s.fl?.segregated &&
         !$terraData.srOnStaff(s) &&
         !$terraData.srAffiliationStatus(s, "rhodes-employment"),
-      t: "街を回っていたロドスの巡回医療班に同行していた職員が、荷の仕分けや設備の保守、事務手伝いの募集案内を配っていた。短期の募集で、配属先もまだ決まっていないという。今の仕事や家の暮らしを思い浮かべ、すぐには返事ができなかった。",
+      t: "街を回っていたロドスの巡回医療班に同行していた職員が、荷の仕分けや設備の保守、事務手伝いの募集案内を配っていた。短期の募集で、配属先もまだ決まっていないという。家の暮らしや今後の働き方を思い浮かべ、すぐには返事ができなかった。",
       c: [
         $terraData.K("仕事の内容を詳しく聞き、これまでの経験を添えて申し込む", {}, [
           1,
-          "これまで働いてきた場所と扱える道具を書き添えて応募した。返事を待つあいだも、毎朝いつもの仕事場へ通った。",
+          "これまで経験した作業や、扱える道具を書き添えて応募した。返事が来るまでは今の暮らしを続けた。",
           {
             lifeAffiliation: {
               id: "rhodes-employment",
@@ -37,14 +37,14 @@ window.TERRA_DATA_BUILD.fragment(
             k: 1
           }
         ]),
-        $terraData.K("今の職場を続けながら、次の募集案内だけ届くように頼む", {}, [
+        $terraData.K("今は応募せず、次の募集案内だけ届くように頼む", {}, [
           1,
-          "次に人手が必要になったら知らせてもらえるよう連絡先を伝え、翌朝もいつもの持ち場へ出た。",
+          "次に人手が必要になったら知らせてもらえるよう連絡先を伝え、その日は案内を持って家へ戻った。",
           { k: 1 }
         ]),
         $terraData.K("家の都合と今の暮らしを優先し、今回は見送る", {}, [
           1,
-          "家の段取りや今の働き方を考え合わせると、すぐには動けそうになかった。案内状をそっと返し、いつもの仕事場へ足を向けた。",
+          "家の段取りや今後の働き方を考え合わせると、すぐには動けそうになかった。案内状をそっと返し、今回は見送った。",
           { p: 1 }
         ])
       ]
@@ -165,7 +165,7 @@ window.TERRA_DATA_BUILD.fragment(
         ),
         $terraData.K(
           "外勤の選考と訓練を受けたいと申し出る",
-          { show: { ge: { h: 72, ar: 54, k: 25 } } },
+          { show: { ge: { h: 72, k: 25 } } },
           [
             0.13,
             "体力測定と実技訓練をくぐり抜け、外勤オペレーター候補に選ばれた。初めての任務では輸送班の護衛につき、緊張で乾いた喉で隊長の指示を復唱した。",
@@ -341,7 +341,8 @@ window.TERRA_DATA_BUILD.fragment(
         ]),
         $terraData.K(
           "先頭を行く偵察と、輸送隊の護衛に挑む",
-          { show: { ge: { ar: 65, h: 68 } } },
+          { show: s => s.h >= 68 && (s.lifeRecord?.skills || []).some(row =>
+            row.id === "rhodes-field" && row.level >= 2) },
           [
             0.7,
             "先輩の斥候と地図を突き合わせ、危険地帯のすぐ手前で本隊を止める合図を叩き込まれた。本番の派遣では先頭を歩き、風の匂いと足場の崩れを後ろの班へ伝え続けた。",
@@ -461,7 +462,7 @@ window.TERRA_DATA_BUILD.fragment(
               action: "leave",
               note: "勤務終了、職場を移る"
             },
-            lifeGoal: { id: "rhodes-work", action: "compromise", note: "別の仕事へ進むため退職" },
+            lifeGoal: { id: "rhodes-work", action: "abandon", note: "別の仕事へ進むため退職" },
             p: 1
           }
         ])
@@ -600,6 +601,10 @@ window.TERRA_DATA_BUILD.fragment(
               title: "再編後レユニオンに連なる互助連絡網",
               action: "leave",
               note: "地域の仕事へ戻る"
+            },
+            lifeGoal: {
+              id: "reunion-relief", title: "身近な感染者へ薬と食料を届ける",
+              action: "abandon", note: "配達の道順を後任へ引き継ぎ、連絡網の役目を終えた"
             },
             p: 1
           }
@@ -1107,10 +1112,7 @@ window.TERRA_DATA_BUILD.fragment(
       w: 0.5,
       show: s =>
         $terraData.srOnStaff(s) &&
-        !(s.personTies?.rhodesColleagues ||
-          (s.personTies?.rhodesColleague ? [s.personTies.rhodesColleague] : [])).some(
-          person => person.actualStatus === "working"
-        ) &&
+        !violenceCurrentRhodesColleague(s) &&
         ["active", "crisis"].includes($terraData.srAffiliationStatus(s, "rhodes-staff")),
       t: "同じ部署で何度か顔を合わせていた同僚と、食堂の休憩時間が一緒になった。コーヒーを片手に声をかけてみるか、それとも今日はひとりで静かに休むか考えた。",
       c: [
@@ -1153,8 +1155,7 @@ window.TERRA_DATA_BUILD.fragment(
       w: 0.62,
       show: s =>
         $terraData.srOnStaff(s) &&
-        !!s.personTies?.rhodesColleague &&
-        s.personTies.rhodesColleague.actualStatus === "working",
+        !!violenceCurrentRhodesColleague(s),
       t: "前に休憩室で話し込んだ同僚と、また同じシフトに入ることになった。山積みの作業を前に、どうやって片づけていくか目を合わせた。",
       c: [
         $terraData.K("得意な作業を分け合い、終わった分から声を掛け合って進める", {}, [
@@ -1334,7 +1335,7 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("展望デッキへ進み、移動都市の彼方に広がる雄大な大地と夕日を眺める", {}, [
           1,
           "沈みゆく夕日に照らされる広大な荒野と、その上を静かに進むロドスの巨大な艦影を見つめた。過酷な世界でこの船が目指す希望の意味を、静かに噛み締めた。",
-          { p: 2, ar: 1 }
+          { p: 2 }
         ])
       ]
     },
@@ -1418,7 +1419,7 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("命を救われた衝撃に震えながら、自分の命の恩人が「最も忌み嫌っていた存在」だった事実を深く噛み締める", {}, [
           1,
           "「なぜ自分のような者を助けたのか」という問いに、同僚は「ロドスの仲間だからです」と事も無げに答えた。自分の狭量さと世界の深さに打ちのめされ、内なる偏見は音を立てて崩れ去った。",
-          { biasInf: -80, p: 2, ar: 1 }
+          { biasInf: -80, p: 2 }
         ])
       ]
     }

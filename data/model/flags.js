@@ -50,7 +50,14 @@ window.TERRA_DATA_BUILD.run("model/flags", function ($terraData, $define, $rules
         tags: ["ロンディニウム戦争期の生活を経験"]
       },
       arena: { label: "地下闘技場", description: "地下闘技場で活動した経験。", engine: "経歴表示" },
-      arts_gifted: { label: "アーツの才", description: "アーツ適性を評価された経験。", engine: "経歴表示" },
+      arts_gifted: {
+        label: "アーツの才",
+        description: "旧適性経路で記録されたアーツ評価。現在の技能・資格・勤務能力を示さない。",
+        engine: "旧セーブの経歴表示",
+        status: "retired",
+        retirementSource: "旧適性経路の保存済み履歴のみ。現行ゲームでは新規生成しない。",
+        retirementReason: "旧来の適性値による経路を廃止し、学習・実技・資格の個別記録へ置換。"
+      },
       teacher_attempted: {
         label: "教職への誘いに返答した",
         description: "地域の学び舎からの教職の誘いに返答した。再提示を抑える。",
@@ -252,6 +259,26 @@ window.TERRA_DATA_BUILD.run("model/flags", function ($terraData, $define, $rules
         description: "本人の現金とは別に、地域の共同事業・小規模事業の持分を保有している状態。",
         engine: "年次評価・売却選択",
         tags: ["投資保有中"]
+      },
+      iberia_telescope_repaired: {
+        label: "イベリアの古い望遠鏡を修理して保管中",
+        description: "本人が発見した古い望遠鏡を専門の修理工へ持ち込み、使用できる状態で手元に残している。",
+        engine: "望遠鏡の後日談"
+      },
+      iberia_telescope_inspected: {
+        label: "イベリアの古い望遠鏡を点検した",
+        description: "発見した古い望遠鏡を修理工へ持ち込んだが、その時点では修理できなかった経験。",
+        engine: "経歴表示"
+      },
+      iberia_telescope_sold: {
+        label: "イベリアの古い望遠鏡を売却した",
+        description: "発見または修理した古い望遠鏡を古物商へ売却した経験。",
+        engine: "望遠鏡の後日談"
+      },
+      iberia_telescope_scrapped: {
+        label: "イベリアの古い望遠鏡を回収業者へ渡した",
+        description: "発見した古い望遠鏡を修理せず、金属部品として回収業者へ渡した経験。",
+        engine: "経歴表示"
       },
       friend_unpaid: {
         label: "旧友からの未返済",
@@ -562,6 +589,12 @@ window.TERRA_DATA_BUILD.run("model/flags", function ($terraData, $define, $rules
         description: "ライン生命の非人道実験を内部告発し、追われる身となった経験。",
         engine: "ロドス亡命・隠遁イベントの解放"
       },
+      rhine_whistleblower_review_passed: {
+        label: "ライン生命の再応募資格審査を通過",
+        description:
+          "1099年の組織再編後に個別の告発経歴を審査して再応募資格が認められたゲーム上の結果。採用内定や元の階級への復帰を意味しない。",
+        engine: "離職した告発者の通常採用経路を再び選択可能にする"
+      },
       bsw_infection_disclosed: {
         label: "BSW社内感染開示",
         description: "BSW社内規則に基づき、自身の鉱石病感染を人事部・同僚へ正式に開示した記録。",
@@ -743,6 +776,42 @@ window.TERRA_DATA_BUILD.run("model/flags", function ($terraData, $define, $rules
           "過去の職場経験を踏まえ、技師として働き続けるか、役割を軽くするか、職場を離れるかを選んだ経験。",
         engine: "クルビア技師職の後年経路",
         tags: ["技師職の後年の働き方を決めた"]
+      },
+      columbia_pioneer: {
+        label: "クルビア独立期に登記申請を選んだ",
+        description: "独立期に登記を申請する選択を記録。土地所有が認可されたという永続的な法的証明ではない。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
+      },
+      silence_survivor: {
+        label: "大いなる静謐で沿岸から避難した",
+        description: "沿岸の危機に遭遇し避難したという個人のゲーム内選択。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
+      },
+      omerta_sworn: {
+        label: "シラクーザ統一期に沈黙の掟を守った",
+        description: "当該時期の本人の選択。全国共通の法令を示さない。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
+      },
+      babel_affiliate: {
+        label: "バベル離脱時に陸艦へ向かった",
+        description: "年表上の危機で主人公が選んだ架空の行動。公式人物との関係を確定しない。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
+      },
+      chernobog_refugee: {
+        label: "チェルノボーグ事変で避難列車へ向かった",
+        description: "事変時に避難したという本人のゲーム内経験。全住民の被災・移動状況を表さない。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
+      },
+      volcano_evacuee: {
+        label: "シエスタ火山活動で船に避難した",
+        description: "火山危機で船を利用した本人の選択。公式の避難制度を確定しない。",
+        engine: "歴史イベントの個人別選択履歴",
+        tags: []
       },
       cyber_trace: {
         label: "鎖川電脳プロトコルの痕跡",

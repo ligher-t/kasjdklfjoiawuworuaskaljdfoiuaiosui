@@ -181,6 +181,18 @@ function uiDOM() {
   const ninth=node('mc').children[8];key('9');
   assert.equal(vm.runInContext('S.h',ctx),healthBeforeNine-1,'number key 9 resolves the ninth choice');
   ninth.click();assert.equal(vm.runInContext('S.h',ctx),healthBeforeNine-1,'ninth choice is also applied once');
+  for(const mode of ['legacy','resume','pause']){
+    ctx.resumeMode=mode;
+    vm.runInContext(`UI_PREFERENCES.choiceResume=resumeMode;play(3);
+      ask(nextProbe,tags(S),longChoiceText,traceState(S));`,ctx);
+    assert.equal(vm.runInContext('sp',ctx),mode==='legacy'?3:0,'choice opening speed: '+mode);
+    key('9');
+    assert.equal(vm.runInContext('sp',ctx),mode==='pause'?0:3,'choice completion speed: '+mode);
+  }
+  vm.runInContext("UI_PREFERENCES.choiceResume='legacy';play(4);openUISettings()",ctx);
+  assert.equal(vm.runInContext('sp',ctx),0,'settings pause progression');
+  key('Escape');key('Escape');
+  assert.equal(vm.runInContext('sp',ctx),4,'closing settings restores its entry speed');
 }
 
 // Medium-width status drawers must never steal Escape from an active choice

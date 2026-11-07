@@ -46,7 +46,7 @@ function infectionAwarenessStore(s) {
     throw new Error("感染認知台帳の形式が不正です");
   return store;
 }
-function recordInfectionAwareness(s, input) {
+function recordInfectionAwareness(s, input,location=null) {
   const allowedConsent = ["voluntary", "nonconsensual", "unclear"],
     item = {
       year: s.year,
@@ -59,11 +59,11 @@ function recordInfectionAwareness(s, input) {
       subjectMatch: input.subjectMatch || (input.certainty === "confirmed" ? "confirmed" : "unclear"),
       recipientId: input.recipientId || null,
       recipientRef: input.recipientRef === "current-school"
-        ? (typeof activeFacility === "function" ? activeFacility(s, "school")?.id || null : null)
+        ? (location?.schoolRef || (typeof educationInstitutionRef === "function" ? educationInstitutionRef(s) : null))
         : input.recipientRef || null,
-      region: s.res?.n || null,
-      placeId: s.local?.placeId || null,
-      areaKey: s.community?.key || null,
+      region: location?.region || s.res?.n || null,
+      placeId: location?.placeId || s.local?.placeId || null,
+      areaKey: location?location.areaKey:s.community?.key || null,
       sourceEventId: input.sourceEventId || TRACE_RESOLUTION?.id || null
     };
   if (
@@ -97,11 +97,12 @@ function recordInfectionAwareness(s, input) {
         row.source === item.source &&
         row.sourceEventId === item.sourceEventId &&
         row.recipientId === item.recipientId &&
-        row.recipientRef === item.recipientRef
+        row.recipientRef === item.recipientRef && row.region===item.region&&row.placeId===item.placeId&&row.areaKey===item.areaKey
     );
   if (duplicate) return duplicate;
   store.entries.push(item);
   if (store.entries.length > 80) store.entries.splice(0, store.entries.length - 80);
+  recordDisclosureAwarenessHarm(s,item);
   return item;
 }
 function infectionAwarenessTarget(s, subject) {
@@ -124,7 +125,7 @@ function infectionAwarenessTarget(s, subject) {
   if (!person || !person.inf) throw new Error("感染認知を記録する対象家族の診断を確認できません");
   return { subject: "relative", subjectId: person.id, infected: true };
 }
-function recordInfectionAwarenessAction(s, action) {
+function recordInfectionAwarenessAction(s, action,location=null) {
   if (!action || typeof action !== "object") throw new Error("感染認知の行動記録が不正です");
   const target = infectionAwarenessTarget(s, action.subject || "self");
   if (!target.infected) throw new Error("感染認知を記録する診断がありません");
@@ -135,15 +136,15 @@ function recordInfectionAwarenessAction(s, action) {
     // after relocation or transfer. The actual facility is the recipient.
     recipientRef: action.audience === "school" && !action.recipientRef &&
       typeof activeFacility === "function"
-      ? activeFacility(s,"school")?.id || null
-      : action.recipientRef || null,
+      ? (typeof educationInstitutionRef === "function" ? educationInstitutionRef(s) : null)
+      : action.recipientRef || (['employer','workplace'].includes(action.audience)?location?.worksiteId||s.workContract?.siteId||null:null),
     sourceEventId: TRACE_RESOLUTION?.id || null
-  });
+  },location);
 }
-function recordInfectionAwarenessActions(s, actions) {
+function recordInfectionAwarenessActions(s, actions,location=null) {
   if (!Array.isArray(actions) || actions.length < 1 || actions.length > 8)
     throw new Error("感染認知の複数範囲記録が不正です");
-  return actions.map(action => recordInfectionAwarenessAction(s, action));
+  return actions.map(action => recordInfectionAwarenessAction(s, action,location));
 }
 function recordCloseInfectionDisclosure(s, kind, person) {
   const audience = kind === "friend" ? "friend" : closeInfoPerson(s, kind) &&

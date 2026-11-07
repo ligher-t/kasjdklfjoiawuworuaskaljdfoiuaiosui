@@ -190,6 +190,7 @@ window.TERRA_DATA_BUILD.run("base/daily-regional", function ($terraData, $define
       { k: 2, p: -1 },
       { need: ["国:リターニア"], once: true, references: ["SRC_LEITHANIEN_HISTORY"] }
     ),
+    // Keep the generated event slot stable while legacy aptitude-only practice is retired.
     $terraData.F(
       ["少年", "青年", "壮年"],
       [
@@ -209,8 +210,8 @@ window.TERRA_DATA_BUILD.run("base/daily-regional", function ($terraData, $define
           ]
         }
       ],
-      { ar: 2 },
-      { need: ["国:リターニア"], references: ["SRC_LEITHANIEN_ARTS"] }
+      {},
+      { show: () => false, references: ["SRC_LEITHANIEN_ARTS"] }
     ),
     $terraData.F(
       ["少年", "青年", "壮年"],
@@ -786,7 +787,8 @@ window.TERRA_DATA_BUILD.run("base/daily-regional", function ($terraData, $define
       conf: "S",
       references: ["SRC_LIFE_ENDING_GAME", "SRC_ORIPATHY_SOCIAL"],
       st: ["少年", "青年", "壮年", "老年"],
-      show: s => s.inf > 0 && (s.job === 3 || (s.arts || 0) >= 40 || !!s.lifeRecord?.skills?.some(x => x.id?.includes("arts") || x.title?.includes("アーツ"))),
+      show: s => s.inf > 0 && !!s.artsProfile?.exposureHistory?.some(row =>
+        row.kind === "high-load-internal-arts" && row.year >= s.year - 1),
       cd: 4,
       w: 0.3,
       t: "感情が揺らぐたびにアーツユニットの触媒がキーンと高周波の共鳴音を立て、指先の源石結晶が脈拍に合わせてチリチリと熱を帯びた。術の制御に余計な集中力を削られる日が増えている。",
@@ -953,7 +955,8 @@ window.TERRA_DATA_BUILD.run("base/daily-regional", function ($terraData, $define
       conf: "S",
       references: ["SRC_LIFE_ENDING_GAME", "SRC_SR_STULTIFERA_NAVIS"],
       st: ["青年", "壮年", "老年"],
-      show: s => s.res?.n === "イベリア" && (s.local?.kind === "漁村・沿岸集落" || s.r?.n === "エーギル"),
+      show: s => s.res?.n === "イベリア" && s.local?.kind === "漁村・沿岸集落",
+      once: true,
       cd: 4,
       w: 0.25,
       t: "夜更け、波打ち際から自分を呼ぶ美しい歌声のような幻聴を聞き、気づけば海水を膝まで浸して立ち尽くしていた。冷たい海風に我に返り、ずぶ濡れの足元を見つめながら慌てて砂浜へ駆け戻った。",

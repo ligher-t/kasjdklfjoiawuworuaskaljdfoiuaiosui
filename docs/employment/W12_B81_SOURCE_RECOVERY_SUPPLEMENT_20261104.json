@@ -1,0 +1,929 @@
+{
+  "asOf": "2026-11-04",
+  "description": "Recovery of original event source bodies and outcome effects from otherwise misattributed or inline B-source file rows; other source files may be review-only wrappers.",
+  "summary": {
+    "candidates": 22,
+    "sourceObjects": 19,
+    "choices": 46,
+    "outcomes": 52,
+    "nonRuntime": [
+      {
+        "id": "earth_discr_work_years",
+        "diagnostic": "source-mutates-event-found-elsewhere"
+      },
+      {
+        "id": "edu_employer_sponsored_course",
+        "diagnostic": "prose-review-copy-not-runtime-event"
+      },
+      {
+        "id": "edu_study_work_balance",
+        "diagnostic": "prose-review-copy-not-runtime-event"
+      }
+    ],
+    "mismatch": [
+      {
+        "id": "vic_clerk_contract_review",
+        "parsed": 3
+      },
+      {
+        "id": "col_tech_safety_review",
+        "parsed": 3
+      },
+      {
+        "id": "col_tech_role_review",
+        "parsed": 3
+      },
+      {
+        "id": "col_tech_supplier_exception",
+        "parsed": 3
+      },
+      {
+        "id": "vic_clerk_after_departure",
+        "parsed": 2
+      },
+      {
+        "id": "col_tech_after_departure",
+        "parsed": 2
+      },
+      {
+        "id": "sr_rhodes_research_daily",
+        "parsed": 3
+      },
+      {
+        "id": "sr_rhodes_former_worker",
+        "parsed": 3
+      },
+      {
+        "id": "sr_reunion_neighbour_contact",
+        "parsed": 3
+      },
+      {
+        "id": "sr_reunion_ordinary_followup",
+        "parsed": 3
+      },
+      {
+        "id": "sr_chernobog_distant_news",
+        "parsed": 3
+      },
+      {
+        "id": "sr_rhodes_ship_routine",
+        "parsed": 3
+      },
+      {
+        "id": "life_reunion_chernobog_base_assignment",
+        "parsed": 0
+      },
+      {
+        "id": "car_vic_infantry_choice_skirmish",
+        "parsed": 2
+      },
+      {
+        "id": "car_lei_golden_choice_witch_remnant",
+        "parsed": 2
+      },
+      {
+        "id": "car_lat_executor_daily_01",
+        "parsed": 1
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "vic_clerk_contract_review",
+      "source": "data/base/career-entry.js:1078",
+      "status": "source-recovery-needs-validation",
+      "parsed": 3,
+      "outcomes": 3,
+      "head": "{\n      id: \"vic_clerk_contract_review\",\n      conf: \"S\",\n      show: s => $rules.careers.currentCareerPlacement(s, \"victoria-insurance-clerk\"),\n      references: [\"SRC_TERRA_INDUSTRY_POLICY\", \"SRC_TERRA_LIFECOURSE\"],\n      need: [\"vic_clerk_employed\"],\n      after: { id: \"car\", min: 1 },\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      w: 0.7,\n      t: \"保険仲介所の机に就いてから、番地の書き違いや診断書の抜けた申請がひっきりなしに回ってきた。ペン先で不備を拾い出し、奥の机へ書類を回す間も、窓口の格子向こうには順番を待つ人々の疲れた顔が並んでいた。\",\n      c: [\n        $terraData.K(\"不足書類を帳面に記し、提出者へ確認を頼む\", {}, [\n          1,\n          \"番地の食い違いと足りない証明を丁寧に書き出し、窓口の依頼者へどこで書類を取れるか伝えた。返事待ちの束が木箱の端に積み上がるなか、背後ではもう次の番号札が呼ばれていた。\",\n          {\n            lifeAffiliation: {\n              id: \"victoria-insurance-clerk\",\n              title: \"ヴィクトリアの保険仲介所\",\n              action: \"role\",\n              role: \"提出書類の照合補助\",\n              note: \"不足欄と照会先を帳面に残した\"\n            },\n            lifeSkill: {\n              id: \"clerical-records\",\n              title: \"帳簿整理と事務\",\n              delta: 2,\n              context: \"契約書類の不足欄・提出日・照会先を照合\"\n            },\n            lifeGoal: {\n              id: \"victoria-clerk-livelihood\",\n              title: \"帳簿の仕事で暮らしを立てながら、書類の行方を確かめる\",\n              priority: \"記録と生計\",\n              action: \"continue\",\n              note: \"不足書類と照会先を記録した\"\n            },\n            p: 1,\n            cr: 1\n          }\n       ",
+      "choices": [
+        {
+          "index": 0,
+          "label": "不足書類を帳面に記し、提出者へ確認を頼む",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "番地の食い違いと足りない証明を丁寧に書き出し、窓口の依頼者へどこで書類を取れるか伝えた。返事待ちの束が木箱の端に積み上がるなか、背後ではもう次の番号札が呼ばれていた。",
+              "effect": "{\n            lifeAffiliation: {\n              id: \"victoria-insurance-clerk\",\n              title: \"ヴィクトリアの保険仲介所\",\n              action: \"role\",\n              role: \"提出書類の照合補助\",\n              note: \"不足欄と照会先を帳面に残した\"\n            },\n            lifeSkill: {\n              id: \"clerical-records\",\n              title: \"帳簿整理と事務\",\n              delta: 2,\n              context: \"契約書類の不足欄・提出日・照会先を照合\"\n            },\n            lifeGoal: {\n              id: \"victoria-clerk-livelihood\",\n              title: \"帳簿の仕事で暮らしを立てながら、書類の行方を確かめる\",\n              priority: \"記録と生計\",\n              action: \"continue\",\n              note: \"不足書類と照会先を記録した\"\n            },\n            p: 1,\n            cr: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "契約を決める窓口と不足書類を案内する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "支払いの可否を決めるのは奥の査定係だと説明し、足りない証明書の控えを手渡した。焦る依頼者に頭を下げた瞬間、隣の席から次の番号を呼ぶ声が響いた。",
+              "effect": "{\n            lifeAffiliation: {\n              id: \"victoria-insurance-clerk\",\n              title: \"ヴィクトリアの保険仲介所\",\n              action: \"role\",\n              role: \"窓口で書類と手続きの範囲を案内\",\n              note: \"給付を決める権限はないと説明した\"\n            },\n            lifeGoal: {\n              id: \"victoria-clerk-livelihood\",\n              title: \"帳簿の仕事で暮らしを立てながら、書類の行方を確かめる\",\n              priority: \"窓口と生計\",\n              action: \"continue\",\n              note: \"決定権の範囲を説明した\"\n            },\n            rl: 1,\n            p: -1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "列を止めないことを優先し、次の窓口へ回す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "不備のある申請書に印だけをつけ、立ち止まる間も与えず別窓口へ回した。戸惑う依頼者の問いかけを背中で受け流しながら、すぐに次の紙束を引き寄せた。",
+              "effect": "{\n            lifeAffiliation: {\n              id: \"victoria-insurance-clerk\",\n              title: \"ヴィクトリアの保険仲介所\",\n              action: \"role\",\n              role: \"受付書類の振り分け\",\n              note: \"列を進めるため不足書類の依頼を別窓口へ回した\"\n            },\n            lifeGoal: {\n              id: \"victoria-clerk-livelihood\",\n              title: \"帳簿の仕事で暮らしを立てながら、書類の行方を確かめる\",\n              priority: \"雇用維持\",\n              action: \"compromise\",\n              note: \"受付量を優先し、照会の追跡は後回しにした\"\n            },\n            p: -2,\n            cr: -1\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "col_tech_safety_review",
+      "source": "data/base/career-entry.js:1164",
+      "status": "source-recovery-needs-validation",
+      "parsed": 3,
+      "outcomes": 4,
+      "head": "{\n      id: \"col_tech_safety_review\",\n      conf: \"S\",\n      show: s => $rules.careers.currentCareerPlacement(s, \"columbia-technical-work\"),\n      references: [\"SRC_TERRA_INDUSTRY_POLICY\", \"SRC_INDUSTRIAL_LIFE\", \"SRC_TERRA_LIFECOURSE\", \"SRC_COLUMBIA_TECH_SAFETY_MODEL\"],\n      need: [\"col_tech_employed\"],\n      after: { id: \"car\", min: 1 },\n      ban: [\"技師職の安全案件\"],\n      st: [\"青年\", \"壮年\"],\n      cd: 8,\n      once: true,\n      w: 0.42,\n      t: \"試作装置の点検表と、現場監督から渡された稼働手順の数値が食い違っていた。監督は試験の日程を一日たりとも動かさないと言う。始業のベルが作業場に鳴り響くなか、ペンを握ったまま点検表の署名欄を見つめた。\",\n      c: [\n        $terraData.K(\n          \"食い違いを点検表に記し、責任者へ確認を求める\",\n          {},\n          [\n            0.7,\n            \"機械の電源を入れる前に手を止め、どちらの数値で動かすのか監督に詰め寄った。監督は舌打ちしながらも訂正印を押し、気まずい沈黙のあとで面談の日取りだけを告げて去った。\",\n            {\n              fl: { col_tech_safety_case: 1, col_tech_reported: 1 },\n              lifeAffiliation: {\n                id: \"columbia-technical-work\",\n                title: \"クルビアの研究企業での技師職\",\n                action: \"role\",\n                role: \"点検記録を残す技師\",\n                note: \"安全手順の食い違いを点検表に記し、責任者へ確認\"\n              },\n              lifeSkill: {\n                id: \"equipment-maintenance\",\n                title: \"装置の点検・調整\",\n                delta: 2,\n                context: \"安全手順の照合と作業記録\"\n              },\n              lifeGoal: {\n                id: \"columbia-technical-w",
+      "choices": [
+        {
+          "index": 0,
+          "label": "食い違いを点検表に記し、責任者へ確認を求める",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.7",
+              "text": "機械の電源を入れる前に手を止め、どちらの数値で動かすのか監督に詰め寄った。監督は舌打ちしながらも訂正印を押し、気まずい沈黙のあとで面談の日取りだけを告げて去った。",
+              "effect": "{\n              fl: { col_tech_safety_case: 1, col_tech_reported: 1 },\n              lifeAffiliation: {\n                id: \"columbia-technical-work\",\n                title: \"クルビアの研究企業での技師職\",\n                action: \"role\",\n                role: \"点検記録を残す技師\",\n                note: \"安全手順の食い違いを点検表に記し、責任者へ確認\"\n              },\n              lifeSkill: {\n                id: \"equipment-maintenance\",\n                title: \"装置の点検・調整\",\n                delta: 2,\n                context: \"安全手順の照合と作業記録\"\n              },\n              lifeGoal: {\n                id: \"columbia-technical-work\",\n                title: \"技術職を続け、暮らしと安全を両立させる\",\n                priority: \"生計と仕事\",\n                action: \"continue\",\n                note: \"作業手順の確認を求めた\"\n              },\n              groupStanding: {\n                id: \"columbia-workshop-colleagues\",\n                title: \"同じ設備を扱う同僚\",\n                delta: 1,\n                reason: \"手順の確認を記録に残した\"\n              },\n              p: -2,\n              cr: 2\n            }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "text": "手順の確認を求めた翌週から、監督との面談が繰り返され、次の試験では窓のない別棟の班へ回された。数値の誤りは直ったが、使い慣れた工具箱を新しい作業台へ運ぶ足は重かった。",
+              "effect": "{\n              fl: { col_tech_safety_case: 1, col_tech_reported: 1 },\n              lifeAffiliation: {\n                id: \"columbia-technical-work\",\n                title: \"クルビアの研究企業での技師職\",\n                action: \"role\",\n                role: \"別班へ配置された技師\",\n                note: \"手順確認後に担当班が変わった\"\n              },\n              lifeGoal: {\n                id: \"columbia-technical-work\",\n                title: \"技術職を続け、暮らしと安全を両立させる\",\n                priority: \"生計と仕事\",\n                action: \"continue\",\n                note: \"担当班が変更された\"\n              },\n              p: -5,\n              cr: -2\n            }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "私用の手帳に手順と日時を書き、先輩にだけ相談する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "自分の作業着のポケットにある手帳に数値と時刻を控え、口の堅い先輩にだけ耳打ちした。試験は予定どおり始まったが、先輩はさりげなく防護具の留め具を確かめるよう班の仲間に声をかけて回った。",
+              "effect": "{\n            fl: { col_tech_safety_case: 1, col_tech_kept_note: 1 },\n            lifeAffiliation: {\n              id: \"columbia-technical-work\",\n              title: \"クルビアの研究企業での技師職\",\n              action: \"role\",\n              role: \"装置調整を続ける技師\",\n              note: \"安全上の懸念を私的に記録\"\n            },\n            lifeSkill: {\n              id: \"equipment-maintenance\",\n              title: \"装置の点検・調整\",\n              delta: 2,\n              context: \"現場の手順を照合\"\n            },\n            lifeGoal: {\n              id: \"columbia-technical-work\",\n              title: \"技術職を続け、暮らしと安全を両立させる\",\n              priority: \"生計と仕事\",\n              action: \"continue\",\n              note: \"懸念を私的な記録に残した\"\n            },\n            p: -1,\n            rl: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "契約更新や家計を考え、今は指示どおりに作業する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "波風を立てぬよう口をつぐみ、監督の指示どおりにレバーを引いた。その日は事故もなく終わったが、昼の食堂で同僚が防護具の傷みをぼやいたとき、何も言えずに目を伏せた。",
+              "effect": "{\n            fl: { col_tech_safety_case: 1, col_tech_silent: 1 },\n            lifeGoal: {\n              id: \"columbia-technical-work\",\n              title: \"技術職を続け、暮らしと安全を両立させる\",\n              priority: \"生計と仕事\",\n              action: \"continue\",\n              note: \"雇用と家計を優先し、懸念の報告を保留した\"\n            },\n            p: -2\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "col_tech_role_review",
+      "source": "data/base/career-entry.js:1423",
+      "status": "source-recovery-needs-validation",
+      "parsed": 3,
+      "outcomes": 3,
+      "head": "{\n      id: \"col_tech_role_review\",\n      conf: \"S\",\n      show: s => $rules.careers.currentCareerPlacement(s, \"columbia-technical-work\"),\n      references: [\"SRC_TERRA_INDUSTRY_POLICY\", \"SRC_INDUSTRIAL_LIFE\", \"SRC_TERRA_LIFECOURSE\", \"SRC_COLUMBIA_TECH_SAFETY_MODEL\"],\n      need: [\"クルビア企業技術職経験\", \"技師職の安全案件を終えた\", \"就労中\"],\n      ban: [\"技師職で次の役割を選んだ\"],\n      after: { id: \"col_tech_safety_aftermath\", min: 2 },\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      w: 0.72,\n      t: \"試作現場の一件からさらに数年が経ち、職場では中堅と呼ばれる年回りになった。上司から配置替えと手当の話を持ちかけられ、増える責任と家の暮らしを天秤にかけながら、これからの立ち位置を考えた。\",\n      c: [\n        $terraData.K(\n          \"班の点検責任者を引き受ける（基準給金に8%加算）\",\n          { en: { ge: { payBonusRoom: 0.08 } }, why: \"基準給金への8%加算を受ける余地がない\" },\n          [\n            1,\n            \"小班の点検責任者を引き受け、交代時の安全確認を取り仕切るようになった。給料袋が8%分ほど厚くなったぶん、機械が異音を立てるたびに真っ先に名を呼ばれるようになった。\",\n            {\n              fl: { col_tech_role_reviewed: 1, col_tech_supervisor: 1 },\n              payBonus: 0.08,\n              lifeAffiliation: {\n                id: \"columbia-technical-work\",\n                title: \"クルビアの研究企業での技師職\",\n                action: \"role\",\n                role: \"小さな作業班の点検責任者\",\n                note: \"限られた設備の点検と引き継ぎを担当。基準給金への8%加算はゲーム用仮定\"\n              },\n              lifeSkill: {\n                id: \"equipment-maintenance\",\n                title: \"装置の点検・調整\",\n        ",
+      "choices": [
+        {
+          "index": 0,
+          "label": "班の点検責任者を引き受ける（基準給金に8%加算）",
+          "gate": "{ en: { ge: { payBonusRoom: 0.08 } }, why: \"基準給金への8%加算を受ける余地がない\" }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "小班の点検責任者を引き受け、交代時の安全確認を取り仕切るようになった。給料袋が8%分ほど厚くなったぶん、機械が異音を立てるたびに真っ先に名を呼ばれるようになった。",
+              "effect": "{\n              fl: { col_tech_role_reviewed: 1, col_tech_supervisor: 1 },\n              payBonus: 0.08,\n              lifeAffiliation: {\n                id: \"columbia-technical-work\",\n                title: \"クルビアの研究企業での技師職\",\n                action: \"role\",\n                role: \"小さな作業班の点検責任者\",\n                note: \"限られた設備の点検と引き継ぎを担当。基準給金への8%加算はゲーム用仮定\"\n              },\n              lifeSkill: {\n                id: \"equipment-maintenance\",\n                title: \"装置の点検・調整\",\n                delta: 2,\n                context: \"班の点検と交代時の引き継ぎ\"\n              },\n              lifeGoal: {\n                id: \"columbia-technical-work\",\n                title: \"技術職を続け、暮らしと安全を両立させる\",\n                priority: \"生計と仕事\",\n                action: \"continue\",\n                note: \"班単位の点検責任者を引き受けた\"\n              },\n              groupStanding: {\n                id: \"columbia-workshop-colleagues\",\n                title: \"同じ設備を扱う同僚\",\n                delta: 1,\n                reason: \"引き継ぎ記録を整えた\"\n              },\n              cr: 1\n            }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "新人に点検手順と、分からない時の尋ね方を教える",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "入ったばかりの若い技師を連れ、熱を持つ配管や計器の見方を一から教えて回った。疑問を飲み込まずに聞くよう諭しながら、自分の仕事も遅くまで片づけた。",
+              "effect": "{\n            fl: { col_tech_role_reviewed: 1, col_tech_mentor: 1 },\n            lifeAffiliation: {\n              id: \"columbia-technical-work\",\n              title: \"クルビアの研究企業での技師職\",\n              action: \"role\",\n              role: \"後輩を教える技師\",\n              note: \"点検手順と記録の読み方を新人に伝える\"\n            },\n            lifeSkill: {\n              id: \"equipment-maintenance\",\n              title: \"装置の点検・調整\",\n              delta: 2,\n              context: \"新人と点検手順を確認\"\n            },\n            lifeGoal: {\n              id: \"columbia-technical-work\",\n              title: \"技術職を続け、暮らしと安全を両立させる\",\n              priority: \"生計と仕事\",\n              action: \"continue\",\n              note: \"後輩の指導を仕事の一部にした\"\n            },\n            groupStanding: {\n              id: \"columbia-workshop-colleagues\",\n              title: \"同じ設備を扱う同僚\",\n              delta: 2,\n              reason: \"新人への手順共有を続けた\"\n            },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "納期調整の連絡役を引き受ける（基準給金に5%加算）",
+          "gate": "{ en: { ge: { payBonusRoom: 0.05 } }, why: \"基準給金への5%加算を受ける余地がない\" }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "部品の納入と試験日程をすり合わせる連絡役を引き受け、給料に5%の手当がついた。現場の疲れを知りながら予定表に次の試験を書き込むたび、同僚たちの視線が少し冷たくなった。",
+              "effect": "{\n              fl: { col_tech_role_reviewed: 1, col_tech_shortcut: 1 },\n              payBonus: 0.05,\n              lifeAffiliation: {\n                id: \"columbia-technical-work\",\n                title: \"クルビアの研究企業での技師職\",\n                action: \"role\",\n                role: \"試験日程の連絡役\",\n                note: \"納期と現場日程を調整。基準給金への5%加算はゲーム用仮定\"\n              },\n              lifeSkill: {\n                id: \"equipment-maintenance\",\n                title: \"装置の点検・調整\",\n                delta: 1,\n                context: \"試験日程と部品記録の照合\"\n              },\n              lifeGoal: {\n                id: \"columbia-technical-work\",\n                title: \"技術職を続け、暮らしと安全を両立させる\",\n                priority: \"生計と仕事\",\n                action: \"continue\",\n                note: \"納期調整の連絡役を引き受けた\"\n              },\n              groupStanding: {\n                id: \"columbia-workshop-colleagues\",\n                title: \"同じ設備を扱う同僚\",\n                delta: -1,\n                reason: \"納期調整の連絡役となった\"\n              },\n              cr: 2\n            }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "col_tech_supplier_exception",
+      "source": "data/base/career-entry.js:1550",
+      "status": "source-recovery-needs-validation",
+      "parsed": 3,
+      "outcomes": 3,
+      "head": "{\n      id: \"col_tech_supplier_exception\",\n      conf: \"S\",\n      show: s => $rules.careers.currentCareerPlacement(s, \"columbia-technical-work\"),\n      references: [\"SRC_TERRA_INDUSTRY_POLICY\", \"SRC_INDUSTRIAL_LIFE\", \"SRC_TERRA_LIFECOURSE\"],\n      need: [\"クルビア企業技術職経験\", \"技師職で次の役割を選んだ\", \"就労中\"],\n      ban: [\"技師職の内部確認待ち\", \"仕入れ記録の内部確認を終えた\"],\n      after: { id: \"col_tech_role_review\", min: 2 },\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      w: 0.52,\n      t: \"搬入口に届いた交換部品の木箱を開けると、中に入っているはずの検査合格証が見当たらなかった。仕入れ担当が業者へ問い合わせている間にも、試験開始の時刻は刻々と迫ってくる。作業台の端に置かれた木箱を前に、どう裁くか決断を迫られた。\",\n      c: [\n        $terraData.K(\"一回分の例外に署名し、臨時手当2万龍門幣を受け取る\", {}, [\n          1,\n          \"特例受入れの欄に自分の名を書き、箱の番号だけ控えて現場へ回した。試験は滞りなく始まり、急場しのぎの礼として2万龍門幣の手当が懐に入ったが、後味の悪さは消えなかった。\",\n          {\n            fl: { col_tech_waiver_pending: 1, col_tech_waiver_signed: 1 },\n            cash: 20000,\n            lifeAffiliation: {\n              id: \"columbia-technical-work\",\n              title: \"クルビアの研究企業での技師職\",\n              action: \"role\",\n              role: \"点検・納期調整を担う技師\",\n              note: \"一回分の部品受入れ例外に署名し、照合待ち。臨時手当20,000龍門幣はゲーム用仮定\"\n            },\n            lifeGoal: {\n              id: \"columbia-technical-work\",\n              title: \"技術職を続け、暮らしと安全を両立させる\",\n              priority: \"生計と仕事\",\n              action: \"continue\",\n              note: \"臨時手当を受け取り試験日程を優先した一回分",
+      "choices": [
+        {
+          "index": 0,
+          "label": "一回分の例外に署名し、臨時手当2万龍門幣を受け取る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "特例受入れの欄に自分の名を書き、箱の番号だけ控えて現場へ回した。試験は滞りなく始まり、急場しのぎの礼として2万龍門幣の手当が懐に入ったが、後味の悪さは消えなかった。",
+              "effect": "{\n            fl: { col_tech_waiver_pending: 1, col_tech_waiver_signed: 1 },\n            cash: 20000,\n            lifeAffiliation: {\n              id: \"columbia-technical-work\",\n              title: \"クルビアの研究企業での技師職\",\n              action: \"role\",\n              role: \"点検・納期調整を担う技師\",\n              note: \"一回分の部品受入れ例外に署名し、照合待ち。臨時手当20,000龍門幣はゲーム用仮定\"\n            },\n            lifeGoal: {\n              id: \"columbia-technical-work\",\n              title: \"技術職を続け、暮らしと安全を両立させる\",\n              priority: \"生計と仕事\",\n              action: \"continue\",\n              note: \"臨時手当を受け取り試験日程を優先した一回分の例外判断。後日の照合待ち\"\n            },\n            groupStanding: {\n              id: \"columbia-workshop-colleagues\",\n              title: \"同じ設備を扱う同僚\",\n              delta: -1,\n              reason: \"検査票の未着を残したまま一回分の受入れを認めた\"\n            },\n            cr: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "検査票が届くまで一箱分を分けて保留する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "検査証のない部品は使えないと突っぱね、木箱に赤い保留札を下げて倉庫の隅へ隔離した。試験日程は後ろ倒しになり、上の機嫌は損ねたが、現場の安全だけは守った。",
+              "effect": "{\n            fl: { col_tech_waiver_pending: 1, col_tech_waiver_refused: 1 },\n            lifeAffiliation: {\n              id: \"columbia-technical-work\",\n              title: \"クルビアの研究企業での技師職\",\n              action: \"role\",\n              role: \"点検・記録を担う技師\",\n              note: \"検査票の届くまで一箱分の部品を保留\"\n            },\n            lifeSkill: {\n              id: \"equipment-maintenance\",\n              title: \"装置の点検・調整\",\n              delta: 1,\n              context: \"部品の追跡番号と保留理由を記録\"\n            },\n            lifeGoal: {\n              id: \"columbia-technical-work\",\n              title: \"技術職を続け、暮らしと安全を両立させる\",\n              priority: \"生計と仕事\",\n              action: \"continue\",\n              note: \"検査票の照合を優先し、試験日程を組み直した\"\n            },\n            groupStanding: {\n              id: \"columbia-workshop-colleagues\",\n              title: \"同じ設備を扱う同僚\",\n              delta: 1,\n              reason: \"保留理由と追跡番号を残した\"\n            },\n            p: -1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "納入品を分けて仮受けし、未確認と帳面に残す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "木箱を通常在庫とは別の棚へ移し、仮受けの札を貼って試験への使用を止めた。業者からの検査証が届くのを待ちながら、黒板の試験予定を書き直した。",
+              "effect": "{\n            fl: { col_tech_waiver_pending: 1, col_tech_waiver_note: 1 },\n            lifeAffiliation: {\n              id: \"columbia-technical-work\",\n              title: \"クルビアの研究企業での技師職\",\n              action: \"role\",\n              role: \"部品の仮受けと記録を担う技師\",\n              note: \"未確認品を区分し、仕入れ担当と照合中\"\n            },\n            lifeSkill: {\n              id: \"equipment-maintenance\",\n              title: \"装置の点検・調整\",\n              delta: 1,\n              context: \"在庫記録と検査票の照合\"\n            },\n            lifeGoal: {\n              id: \"columbia-technical-work\",\n              title: \"技術職を続け、暮らしと安全を両立させる\",\n              priority: \"生計と仕事\",\n              action: \"continue\",\n              note: \"未確認品を区分し、記録上も仮受けとした\"\n            },\n            groupStanding: {\n              id: \"columbia-workshop-colleagues\",\n              title: \"同じ設備を扱う同僚\",\n              delta: 1,\n              reason: \"未確認品を分けて記録した\"\n            }\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vic_clerk_after_departure",
+      "source": "data/base/career-entry.js:2113",
+      "status": "source-recovery-needs-validation",
+      "parsed": 2,
+      "outcomes": 2,
+      "head": "{\n      id: \"vic_clerk_after_departure\",\n      conf: \"S\",\n      references: [\"SRC_TERRA_INDUSTRY_POLICY\", \"SRC_TERRA_LIFECOURSE\"],\n      need: [\"vic_clerk_employed\"],\n      show: s =>\n        s.lifeRecord?.affiliations?.some(\n          row => row.id === \"victoria-insurance-clerk\" && row.status === \"left\" && s.year - row.endedYear >= 3\n        ),\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      w: 0.6,\n      t: \"保険仲介所を辞めてから数年が経った。近所の知人から店先の帳面のつけ方を相談され、インクの匂いに満ちていたあの事務所の日々を思い出した。昔身につけた整理のコツなら、今も誰かの役に立ちそうだった。\",\n      c: [\n        $terraData.K(\"個人の話を伏せ、帳面の付け方を伝える\", {}, [\n          1,\n          \"かつて扱った客の身の上話は一切口にせず、日付と入出金をすっきり分けて書くコツだけを教えた。知人が嬉しそうに帳面へ線を引くのを見て、少しだけ誇らしい気持ちになった。\",\n          {\n            lifeSkill: {\n              id: \"clerical-records\",\n              title: \"帳簿整理と事務\",\n              delta: 1,\n              context: \"退職後、個人情報を伏せて帳面の手順を説明\"\n            },\n            p: 1\n          }\n        ]),\n        $terraData.K(\"職歴だけ伝え、詳しい話はしない\", {}, [\n          1,\n          \"昔ちょっと書類仕事を手伝っていただけだと笑ってかわした。窓口で涙ぐんでいた依頼者たちの顔が一瞬よぎったが、胸の奥にしまったまま別の世間話へ移った。\",\n          { p: 1 }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "index": 0,
+          "label": "個人の話を伏せ、帳面の付け方を伝える",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "かつて扱った客の身の上話は一切口にせず、日付と入出金をすっきり分けて書くコツだけを教えた。知人が嬉しそうに帳面へ線を引くのを見て、少しだけ誇らしい気持ちになった。",
+              "effect": "{\n            lifeSkill: {\n              id: \"clerical-records\",\n              title: \"帳簿整理と事務\",\n              delta: 1,\n              context: \"退職後、個人情報を伏せて帳面の手順を説明\"\n            },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "職歴だけ伝え、詳しい話はしない",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "昔ちょっと書類仕事を手伝っていただけだと笑ってかわした。窓口で涙ぐんでいた依頼者たちの顔が一瞬よぎったが、胸の奥にしまったまま別の世間話へ移った。",
+              "effect": "{ p: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "col_tech_after_departure",
+      "source": "data/base/career-entry.js:2147",
+      "status": "source-recovery-needs-validation",
+      "parsed": 2,
+      "outcomes": 2,
+      "head": "{\n      id: \"col_tech_after_departure\",\n      conf: \"S\",\n      references: [\"SRC_TERRA_INDUSTRY_POLICY\", \"SRC_TERRA_LIFECOURSE\"],\n      need: [\"col_tech_employed\"],\n      show: s =>\n        s.lifeRecord?.affiliations?.some(\n          row => row.id === \"columbia-technical-work\" && row.status === \"left\" && s.year - row.endedYear >= 3\n        ),\n      st: [\"青年\", \"壮年\", \"老年\"],\n      once: true,\n      w: 0.6,\n      t: \"クルビアの研究企業を離れてから数年が過ぎた。今の仕事場で工具を握ると、試作装置の前で計器の針を睨んでいたころの手つきが自然と蘇る。機械を動かす前にもう一度だけ留め具を確かめる癖は、今も抜けていなかった。\",\n      c: [\n        $terraData.K(\"自分の経験を整理し、今の設備で確かめ直す\", {}, [\n          1,\n          \"昔のやり方をそのまま押しつけるのではなく、今の現場の機械に合わせて安全確認の手順を整え直した。作業を終えて工具を拭うとき、若いころより少しだけ自分の腕に納得できた。\",\n          {\n            lifeSkill: {\n              id: \"equipment-maintenance\",\n              title: \"装置の点検・調整\",\n              delta: 1,\n              context: \"退職後、設備ごとに確認すべき点を整理\"\n            },\n            p: 1\n          }\n        ]),\n        $terraData.K(\"前の会社の話題を切り上げ、今の作業に戻る\", {}, [\n          1,\n          \"前の職場の昔話を振られたが、軽く受け流して目の前の作業に集中した。終業のベルが鳴ると、今の仲間と笑い合いながら明日の段取りを確かめた。\",\n          { p: 1 }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "index": 0,
+          "label": "自分の経験を整理し、今の設備で確かめ直す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "昔のやり方をそのまま押しつけるのではなく、今の現場の機械に合わせて安全確認の手順を整え直した。作業を終えて工具を拭うとき、若いころより少しだけ自分の腕に納得できた。",
+              "effect": "{\n            lifeSkill: {\n              id: \"equipment-maintenance\",\n              title: \"装置の点検・調整\",\n              delta: 1,\n              context: \"退職後、設備ごとに確認すべき点を整理\"\n            },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "前の会社の話題を切り上げ、今の作業に戻る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "前の職場の昔話を振られたが、軽く受け流して目の前の作業に集中した。終業のベルが鳴ると、今の仲間と笑い合いながら明日の段取りを確かめた。",
+              "effect": "{ p: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr_rhodes_research_daily",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:317",
+      "status": "source-recovery-needs-validation",
+      "parsed": 3,
+      "outcomes": 3,
+      "head": "{\n      id: \"sr_rhodes_research_daily\",\n      conf: \"S\",\n      references: $terraData.SR_SRC,\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 4,\n      w: 0.5,\n      show: s => $terraData.srOnStaff(s) && s.job === $terraData.SR_JOBS.research,\n      t: \"鉱石病の経過記録を整理していると、同じくらいの症状でも定期検診の間隔が人によってばらばらなことに気づいた。ある患者の欄には、日雇いの仕事を休めず受診が何ヶ月も遅れたと走り書きがあった。\",\n      c: [\n        $terraData.K(\"仕事や暮らしの事情で通院が途切れた例を別枠でまとめる\", {}, [\n          1,\n          \"薬の効き目だけでなく、仕事を休めずに通院が途切れた事情も読み取れるように分類し直した。数字の並びの奥にある一人ひとりの暮らしが、少しだけ浮かび上がった。\",\n          {\n            lifeSkill: {\n              id: \"clinical-records\",\n              title: \"医療記録の整理と取り扱い\",\n              delta: 5,\n              context: \"通院できなかった記録の注記\"\n            },\n            k: 2,\n            p: 1\n          }\n        ]),\n        $terraData.K(\"聞き取りが曖昧なカルテを選び出し、主治医へ差し戻す\", {}, [\n          1,\n          \"空白や食い違いのある箇所に付箋を貼り、担当医の机へ戻して確認を頼んだ。自分が帰る時間になっても、まだ診察室からは声が出ていた。\",\n          { k: 1, rl: 1 }\n        ]),\n        $terraData.K(\"今日頼まれた分だけを正確に片づけ、目を休める\", {}, [\n          1,\n          \"深追いはせず、今日のうちに集計する分だけをきっちり仕上げてバインダーを閉じた。細かい文字を追い続けた目をこすりながら部屋を出た。\",\n          { h: 1 }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "index": 0,
+          "label": "仕事や暮らしの事情で通院が途切れた例を別枠でまとめる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "薬の効き目だけでなく、仕事を休めずに通院が途切れた事情も読み取れるように分類し直した。数字の並びの奥にある一人ひとりの暮らしが、少しだけ浮かび上がった。",
+              "effect": "{\n            lifeSkill: {\n              id: \"clinical-records\",\n              title: \"医療記録の整理と取り扱い\",\n              delta: 5,\n              context: \"通院できなかった記録の注記\"\n            },\n            k: 2,\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "聞き取りが曖昧なカルテを選び出し、主治医へ差し戻す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "空白や食い違いのある箇所に付箋を貼り、担当医の机へ戻して確認を頼んだ。自分が帰る時間になっても、まだ診察室からは声が出ていた。",
+              "effect": "{ k: 1, rl: 1 }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "今日頼まれた分だけを正確に片づけ、目を休める",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "深追いはせず、今日のうちに集計する分だけをきっちり仕上げてバインダーを閉じた。細かい文字を追い続けた目をこすりながら部屋を出た。",
+              "effect": "{ h: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr_rhodes_former_worker",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:512",
+      "status": "source-recovery-needs-validation",
+      "parsed": 3,
+      "outcomes": 3,
+      "head": "{\n      id: \"sr_rhodes_former_worker\",\n      conf: \"S\",\n      references: $terraData.SR_SRC,\n      st: [\"青年\", \"壮年\", \"老年\"],\n      need: [\"ロドスでの勤務経験あり\"],\n      cd: 10,\n      w: 0.17,\n      t: \"今の職場で、ロドスにいた頃に扱っていたのとよく似た型の機械や薬品箱を見かけた。隣で困っていた同僚から使い方を尋ねられ、昔の記憶をたぐり寄せた。\",\n      c: [\n        $terraData.K(\"自分が昔扱っていた範囲だけ教え、無理には手を出さない\", {}, [\n          1,\n          \"覚えている安全弁の位置だけを指さして教え、型番が違う部分には触れず専門の技師を呼んでもらった。昔の勘がまだ指先に残っていた。\",\n          { k: 1, rl: 1 }\n        ]),\n        $terraData.K(\"同僚と一緒に蓋を開け、昔のやり方と何が違うか確かめる\", {}, [\n          1,\n          \"二人で工具を手に取り、ロドスでのやり方と今の現場の手順を比べながら無事に動かしてみせた。仕事帰りに同僚から熱い飲み物をおごられた。\",\n          { k: 1, p: 1 }\n        ]),\n        $terraData.K(\"昔の職場のことは持ち出さず、今の持ち場に専念する\", {}, [\n          1,\n          \"詳しい先輩を取り次ぐだけにして、自分は今の作業へ戻った。過去の肩書きに頼らず、今の現場のやり方に馴染もうと思った。\",\n          { p: 1 }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "index": 0,
+          "label": "自分が昔扱っていた範囲だけ教え、無理には手を出さない",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "覚えている安全弁の位置だけを指さして教え、型番が違う部分には触れず専門の技師を呼んでもらった。昔の勘がまだ指先に残っていた。",
+              "effect": "{ k: 1, rl: 1 }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "同僚と一緒に蓋を開け、昔のやり方と何が違うか確かめる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "二人で工具を手に取り、ロドスでのやり方と今の現場の手順を比べながら無事に動かしてみせた。仕事帰りに同僚から熱い飲み物をおごられた。",
+              "effect": "{ k: 1, p: 1 }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "昔の職場のことは持ち出さず、今の持ち場に専念する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "詳しい先輩を取り次ぐだけにして、自分は今の作業へ戻った。過去の肩書きに頼らず、今の現場のやり方に馴染もうと思った。",
+              "effect": "{ p: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr_reunion_neighbour_contact",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:539",
+      "status": "source-recovery-needs-validation",
+      "parsed": 3,
+      "outcomes": 4,
+      "head": "{\n      id: \"sr_reunion_neighbour_contact\",\n      conf: \"S\",\n      references: [\"SRC_SR_REUNION_SPLIT\", \"SRC_SR_REUNION_LATER\", \"SRC_SR_GAME_MODEL\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      ge: { year: 1097, age: 18 },\n      le: { year: 1105 },\n      w: 0.14,\n      once: true,\n      show: s =>\n        [\"ウルサス\", \"龍門\", \"ヴィクトリア\", \"カズデル\"].includes(s.res.n) &&\n        ![\"active\", \"crisis\"].includes($terraData.srAffiliationStatus(s, \"reunion-reorg\")) &&\n        !s.fl?.detained,\n      t: \"旅先で立ち寄った宿の裏手で、レユニオンの事情に通じた人物から声をかけられた。近くの路地で暮らす感染者の一家に薬包を届けてほしいという。渡された紙切れの番地は少し古いらしく、相手もまだそこに住んでいるか確信がないようだった。\",\n      c: [\n        $terraData.K(\"一度きりという約束で、その家へ薬包を届ける\", {}, [\n          1,\n          \"教えられた路地裏の戸を叩き、出てきた家人に薬包を手渡した。相手は中身を確かめると、警戒を解いて深く頭を下げた。名前は名乗らず、そのまま元の通りへ引き返した。\",\n          {\n            regionalImpact: {\n              entity: \"近隣の感染者世帯\",\n              kind: \"one-time-local-aid\",\n              description: \"紹介を通じて感染者世帯へ物資を一度だけ届けた。\"\n            },\n            p: 1,\n            rl: 1\n          }\n        ]),\n        $terraData.K(\n          \"連絡網をまとめている人物に会い、どういう集まりなのか確かめる\",\n          {},\n          [\n            0.28,\n            \"紹介された世話役に会うと、ナインたちの再編レユニオンと連絡を取り合いながら各地の感染者へ薬を回していると打ち明けられた。その場で頼まれ、まずは近隣の届け先を確かめる手伝いから加わることになった。\",\n            {\n              lifeAffiliation: {\n                id: \"reunion-reorg\",\n                title: \"再編後レユニオンに",
+      "choices": [
+        {
+          "index": 0,
+          "label": "一度きりという約束で、その家へ薬包を届ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "教えられた路地裏の戸を叩き、出てきた家人に薬包を手渡した。相手は中身を確かめると、警戒を解いて深く頭を下げた。名前は名乗らず、そのまま元の通りへ引き返した。",
+              "effect": "{\n            regionalImpact: {\n              entity: \"近隣の感染者世帯\",\n              kind: \"one-time-local-aid\",\n              description: \"紹介を通じて感染者世帯へ物資を一度だけ届けた。\"\n            },\n            p: 1,\n            rl: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "連絡網をまとめている人物に会い、どういう集まりなのか確かめる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.28",
+              "text": "紹介された世話役に会うと、ナインたちの再編レユニオンと連絡を取り合いながら各地の感染者へ薬を回していると打ち明けられた。その場で頼まれ、まずは近隣の届け先を確かめる手伝いから加わることになった。",
+              "effect": "{\n              lifeAffiliation: {\n                id: \"reunion-reorg\",\n                title: \"再編後レユニオンに連なる互助連絡網\",\n                kind: \"local-relief-network\",\n                action: \"join\",\n                role: \"受け渡し先の連絡係\",\n                note: \"現地連絡者の紹介で地域の支援連絡網に参加\"\n              },\n              p: 1,\n              rl: 2\n            }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "text": "教えられた場所を訪ねたが、すでに世話役は立ち去ったあとで誰にも会えなかった。代わりに、感染者も診てくれる町の小さな施療院の場所を聞き出して帰った。",
+              "effect": "{ p: -1, k: 1 }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "深入りはせず、自分の仕事と暮らしを優先する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "見知らぬ運び仕事には手を出さず、丁重に断ってその場を離れた。夜は自分の部屋へ戻り、明日の仕事の支度をして眠った。",
+              "effect": "{ p: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr_reunion_ordinary_followup",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:599",
+      "status": "source-recovery-needs-validation",
+      "parsed": 3,
+      "outcomes": 3,
+      "head": "{\n      id: \"sr_reunion_ordinary_followup\",\n      conf: \"S\",\n      references: [\"SRC_SR_REUNION_SPLIT\", \"SRC_REUNION_HISTORY\", \"SRC_SR_GAME_MODEL\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      need: [\"1097年以後の再編レユニオン互助網に連絡中\"],\n      cd: 5,\n      w: 0.3,\n      t: \"薬の配給を心待ちにしている家族から、次の便はいつ届くのかと尋ねる伝言が回ってきた。しかし以前使っていた連絡場所はすでに畳まれ、荷を取りまとめる世話役も別の人に替わっていた。\",\n      c: [\n        $terraData.K(\"引っ越した世帯や新しい中継先を回り、連絡網をつなぎ直す\", {}, [\n          1,\n          \"自分の足で路地を回って空き家になった届け先を消し、今すぐ薬が要る世帯だけを新しい世話役へつないだ。留守だった家には、隣人に頼んで言伝を残した。\",\n          {\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編後レユニオンに連なる互助連絡網\",\n              action: \"role\",\n              role: \"連絡先・配達記録\"\n            },\n            k: 1,\n            rl: 1\n          }\n        ]),\n        $terraData.K(\"武装した一団とは距離を置き、ご近所の薬配りだけを続ける\", {}, [\n          1,\n          \"外から来る武装部隊とのやり取りはきっぱり断り、町の世話役と一緒に近所の病人へ薬を分ける仕事だけを守った。\",\n          {\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編後レユニオンに連なる互助連絡網\",\n              action: \"role\",\n              role: \"地域の非武装支援\"\n            },\n            p: 1\n          }\n        ]),\n        $terraData.K(\"運び手の役目を次の人へ引き継ぎ、連絡網から退く\", {}, [\n          1,\n          \"これまで回っていた家の道順を後任の若者へ教え、連絡網の手伝いを終えた。最後の薬包を届け終えた帰り道、夕暮れの風が少しだけ軽く感じられた。\",\n          {\n            lifeAffiliation: {\n              id",
+      "choices": [
+        {
+          "index": 0,
+          "label": "引っ越した世帯や新しい中継先を回り、連絡網をつなぎ直す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "自分の足で路地を回って空き家になった届け先を消し、今すぐ薬が要る世帯だけを新しい世話役へつないだ。留守だった家には、隣人に頼んで言伝を残した。",
+              "effect": "{\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編後レユニオンに連なる互助連絡網\",\n              action: \"role\",\n              role: \"連絡先・配達記録\"\n            },\n            k: 1,\n            rl: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "武装した一団とは距離を置き、ご近所の薬配りだけを続ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "外から来る武装部隊とのやり取りはきっぱり断り、町の世話役と一緒に近所の病人へ薬を分ける仕事だけを守った。",
+              "effect": "{\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編後レユニオンに連なる互助連絡網\",\n              action: \"role\",\n              role: \"地域の非武装支援\"\n            },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "運び手の役目を次の人へ引き継ぎ、連絡網から退く",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "これまで回っていた家の道順を後任の若者へ教え、連絡網の手伝いを終えた。最後の薬包を届け終えた帰り道、夕暮れの風が少しだけ軽く感じられた。",
+              "effect": "{\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編後レユニオンに連なる互助連絡網\",\n              action: \"leave\",\n              note: \"地域の仕事へ戻る\"\n            },\n            lifeGoal: {\n              id: \"reunion-relief\", title: \"身近な感染者へ薬と食料を届ける\",\n              action: \"abandon\", note: \"配達の道順を後任へ引き継ぎ、連絡網の役目を終えた\"\n            },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr_chernobog_distant_news",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:651",
+      "status": "source-recovery-needs-validation",
+      "parsed": 3,
+      "outcomes": 3,
+      "head": "{\n      id: \"sr_chernobog_distant_news\",\n      conf: \"S\",\n      references: [\"SRC_TL_MIDDLE\", \"SRC_SR_GAME_MODEL\"],\n      st: [\"少年\", \"青年\", \"壮年\", \"老年\"],\n      need: [\"国:ウルサス\", \"事件:chernobog_incident\"],\n      ban: [\"都市:チェルノボーグ\"],\n      ge: { year: 1096 },\n      le: { year: 1100 },\n      once: true,\n      w: 0.32,\n      t: \"遠く離れたチェルノボーグで大きな暴動と天災が起きたという知らせが、街じゅうを駆け巡った。その日を境に定期便の荷が滞り、街道の検問も厳しくなって、職場の段取りまで狂いはじめた。\",\n      c: [\n        $terraData.K(\"荷の遅れを見越して取引先に頭を下げ、手元の在庫でやりくりする\", {}, [\n          1,\n          \"届かない資材の代わりに手元の在庫をかき集め、納期の遅れを取引先へ詫びて回った。しばらくは気の休まらない日々が続いた。\",\n          { k: 1, p: -1 }\n        ]),\n        $terraData.K(\"チェルノボーグ方面にいる知人や親戚の安否を尋ね歩く\", {}, [\n          1,\n          \"あちらの街へ行ったきり連絡のない知人の消息を、避難民や運び屋の集まる酒場で尋ねて回った。確かなことは分からず、無事を祈って伝言だけを託した。\",\n          { rl: 1, p: -1 }\n        ]),\n        $terraData.K(\"検問の立つ大通りを避け、自分の生活圏を守ることに集中する\", {}, [\n          1,\n          \"兵士の増えた表通りや噂話の飛び交う広場には近づかず、開いている市場と仕事場だけを往復して静かに暮らした。\",\n          { p: 1 }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "index": 0,
+          "label": "荷の遅れを見越して取引先に頭を下げ、手元の在庫でやりくりする",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "届かない資材の代わりに手元の在庫をかき集め、納期の遅れを取引先へ詫びて回った。しばらくは気の休まらない日々が続いた。",
+              "effect": "{ k: 1, p: -1 }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "チェルノボーグ方面にいる知人や親戚の安否を尋ね歩く",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "あちらの街へ行ったきり連絡のない知人の消息を、避難民や運び屋の集まる酒場で尋ねて回った。確かなことは分からず、無事を祈って伝言だけを託した。",
+              "effect": "{ rl: 1, p: -1 }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "検問の立つ大通りを避け、自分の生活圏を守ることに集中する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "兵士の増えた表通りや噂話の飛び交う広場には近づかず、開いている市場と仕事場だけを往復して静かに暮らした。",
+              "effect": "{ p: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr_rhodes_ship_routine",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:887",
+      "status": "source-recovery-needs-validation",
+      "parsed": 3,
+      "outcomes": 3,
+      "head": "{\n      id: \"sr_rhodes_ship_routine\",\n      conf: \"S\",\n      references: $terraData.SR_SRC,\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 4,\n      w: 0.52,\n      show: s => $terraData.srOnStaff(s) && $terraData.srRhodesPost(s, \"本艦\"),\n      t: \"天災を避けるため本艦の進路が急に変更され、船内の食堂が開く時間も勤務の交代もすべて組み替わった。揺れの強い下部区画では、棚の木箱をベルトで縛り直す音が夜遅くまで響いていた。\",\n      c: [\n        $terraData.K(\"同僚と声をかけ合い、ずれた交代時間を調整する\", {}, [\n          1,\n          \"船酔いで辛そうな同僚の分まで前半の番を引き受け、翌日のシフトを組み直した。遅い夕食を食堂でかき込み、心地よい疲労とともにベッドへ潜り込んだ。\",\n          {\n            groupStanding: {\n              id: \"rhodes-colleagues\",\n              title: \"ロドスの同僚\",\n              delta: 1,\n              reason: \"航路変更後の勤務表を同僚と調整\"\n            },\n            p: 1\n          }\n        ]),\n        $terraData.K(\"自室の荷物をしっかり固定し、揺れが収まるまで横になる\", {}, [\n          1,\n          \"机の上のコップや本が落ちないよう片づけ、毛布にくるまって目を閉じた。次の当番が来る頃には船体のきしみも収まり、すっきりした頭で廊下へ出られた。\",\n          { h: 2, p: 1 }\n        ]),\n        $terraData.K(\"地上にいる家族へ無事を知らせる短い通信を送る\", {}, [\n          1,\n          \"通信室が空く時間を待って、航路が変わったことと自分の無事を知らせる短い電文を打った。\",\n          { p: 1, rl: 1 }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "index": 0,
+          "label": "同僚と声をかけ合い、ずれた交代時間を調整する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "船酔いで辛そうな同僚の分まで前半の番を引き受け、翌日のシフトを組み直した。遅い夕食を食堂でかき込み、心地よい疲労とともにベッドへ潜り込んだ。",
+              "effect": "{\n            groupStanding: {\n              id: \"rhodes-colleagues\",\n              title: \"ロドスの同僚\",\n              delta: 1,\n              reason: \"航路変更後の勤務表を同僚と調整\"\n            },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "自室の荷物をしっかり固定し、揺れが収まるまで横になる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "机の上のコップや本が落ちないよう片づけ、毛布にくるまって目を閉じた。次の当番が来る頃には船体のきしみも収まり、すっきりした頭で廊下へ出られた。",
+              "effect": "{ h: 2, p: 1 }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "地上にいる家族へ無事を知らせる短い通信を送る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "通信室が空く時間を待って、航路が変わったことと自分の無事を知らせる短い電文を打った。",
+              "effect": "{ p: 1, rl: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "life_reunion_chernobog_base_assignment",
+      "source": "data/parts/routes/rhodes-and-factions/reunion-lifepath.js:115",
+      "status": "source-recovery-needs-validation",
+      "parsed": 0,
+      "outcomes": 0,
+      "head": "{ id: \"life_reunion_chernobog_base_assignment\", min: 0 }",
+      "choices": []
+    },
+    {
+      "id": "car_vic_infantry_choice_skirmish",
+      "source": "data/parts/routes/regional-careers/events-west.js:128",
+      "status": "source-recovery-needs-validation",
+      "parsed": 2,
+      "outcomes": 4,
+      "head": "{\n      id: \"car_vic_infantry_choice_skirmish\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 21 },\n      show: s => s.res?.n === \"ヴィクトリア\" && $terraData.regionalCareerOnDuty(s, \"vic_infantry\"),\n      t: \"行軍中、霧の立ち込める渓谷で待ち伏せしていた凶悪なサルカズ傭兵団の奇襲を受けた。貴族将校は狼狽して逃げ腰になり、歩兵小隊が孤立した。銃剣を構えて突撃するか、土手を盾にして応戦するか。\",\n      c: [\n        $terraData.K(\"銃剣突撃の号令を自ら叫び、敵の側面を衝く\", { ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }, [\n          0.45,\n          \"怯む仲間を鼓舞して果敢に突撃し、サルカズの指揮官を銃剣で討ち取った。小隊を全滅の危機から救い、平民としては異例の『連隊先任軍曹』へ抜擢された。\",\n          { h: -2, cr: 4, p: 3, cash: 400000,\n            lifeAffiliation: { id: \"victoria-regular-infantry\", action: \"role\", role: \"連隊先任軍曹\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }\n        ], [\n          0.85,\n          \"撃退には成功したが、大剣で腕を切り裂かれ重傷を負った。\",\n          { h: -8, p: 1 }\n        ], [\n          1,\n          \"サルカズの黒魔術アーツに焼かれ、煙と共に戦場に倒れた。\",\n          { h: -100, d: [\"前線戦闘でのアーツ戦死\", \"ヴィクトリアの辺境防衛戦において、敵アーツの猛撃を受け戦死した。\"] }\n        ]),\n        $terraData.K(\"土手に伏せ、連隊の一斉射撃で足止めする\", { ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }, [\n          1,\n          \"規律正しい斉射で敵を押し返し、本隊の合流を待って無事に撤退した。\",\n          { p: 1, k: 1 }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "index": 0,
+          "label": "銃剣突撃の号令を自ら叫び、敵の側面を衝く",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "text": "怯む仲間を鼓舞して果敢に突撃し、サルカズの指揮官を銃剣で討ち取った。小隊を全滅の危機から救い、平民としては異例の『連隊先任軍曹』へ抜擢された。",
+              "effect": "{ h: -2, cr: 4, p: 3, cash: 400000,\n            lifeAffiliation: { id: \"victoria-regular-infantry\", action: \"role\", role: \"連隊先任軍曹\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }",
+              "jobIds": []
+            },
+            {
+              "weight": "0.85",
+              "text": "撃退には成功したが、大剣で腕を切り裂かれ重傷を負った。",
+              "effect": "{ h: -8, p: 1 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "text": "サルカズの黒魔術アーツに焼かれ、煙と共に戦場に倒れた。",
+              "effect": "{ h: -100, d: [\"前線戦闘でのアーツ戦死\", \"ヴィクトリアの辺境防衛戦において、敵アーツの猛撃を受け戦死した。\"] }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "土手に伏せ、連隊の一斉射撃で足止めする",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "規律正しい斉射で敵を押し返し、本隊の合流を待って無事に撤退した。",
+              "effect": "{ p: 1, k: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_lei_golden_choice_witch_remnant",
+      "source": "data/parts/routes/regional-careers/events-west.js:226",
+      "status": "source-recovery-needs-validation",
+      "parsed": 2,
+      "outcomes": 4,
+      "head": "{\n      id: \"car_lei_golden_choice_witch_remnant\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"リターニア\" && $terraData.regionalCareerOnDuty(s, \"lei_golden\"),\n      t: \"ツヴィリングトゥルムの地下深く、かつて巫王が築いた禁断の音律院で残党たちが狂乱のアーツ演奏を行っていた。歪んだ旋律が精神を蝕む中、法衛として即座に突入しアーツで鎮圧するか。\",\n      c: [\n        $terraData.K(\"金律の絶対和音を展開し、異端の旋律を粉砕する\", { ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }, [\n          0.45,\n          \"金律杖から放たれた神聖な光の和音が狂気の旋律を完全に打ち消し、残党を一網打尽にした。女帝直属の首席法衛へと抜擢された。\",\n          { k: 4, p: 4, cr: 5, cash: 1500000,\n            lifeAffiliation: { id: \"leithania-golden-law\", action: \"role\", role: \"首席法衛\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }\n        ], [\n          0.85,\n          \"残党を制圧したものの、巫王の呪詛アーツを耳にしてしまい、激しい頭痛と幻聴の後遺症を負った。\",\n          { p: -6, k: 1 }\n        ], [\n          1,\n          \"巫王の狂乱旋律に精神を直接破壊され、発狂して絶命した。\",\n          { h: -100, d: [\"巫王残党の狂乱旋律死\", \"リターニアの残党討伐任務において、巫王の狂乱アーツ旋律に精神を破壊され絶命した。\"] }\n        ]),\n        $terraData.K(\"退路を封鎖し、法衛本隊の増援を待つ\", { ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }, [\n          1,\n          \"大隊の到着を待って安全に制圧した。堅実な判断を賞賛された。\",\n          { p: 2, k: 1 }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "index": 0,
+          "label": "金律の絶対和音を展開し、異端の旋律を粉砕する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "text": "金律杖から放たれた神聖な光の和音が狂気の旋律を完全に打ち消し、残党を一網打尽にした。女帝直属の首席法衛へと抜擢された。",
+              "effect": "{ k: 4, p: 4, cr: 5, cash: 1500000,\n            lifeAffiliation: { id: \"leithania-golden-law\", action: \"role\", role: \"首席法衛\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }",
+              "jobIds": []
+            },
+            {
+              "weight": "0.85",
+              "text": "残党を制圧したものの、巫王の呪詛アーツを耳にしてしまい、激しい頭痛と幻聴の後遺症を負った。",
+              "effect": "{ p: -6, k: 1 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "text": "巫王の狂乱旋律に精神を直接破壊され、発狂して絶命した。",
+              "effect": "{ h: -100, d: [\"巫王残党の狂乱旋律死\", \"リターニアの残党討伐任務において、巫王の狂乱アーツ旋律に精神を破壊され絶命した。\"] }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "退路を封鎖し、法衛本隊の増援を待つ",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "大隊の到着を待って安全に制圧した。堅実な判断を賞賛された。",
+              "effect": "{ p: 2, k: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_lat_executor_daily_01",
+      "source": "data/parts/routes/regional-careers/events-west.js:260",
+      "status": "source-recovery-needs-validation",
+      "parsed": 1,
+      "outcomes": 1,
+      "head": "{\n      id: \"car_lat_executor_daily_01\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 3,\n      w: 0.5,\n      ge: { age: 20 },\n      show: s => s.res?.n === \"ラテラーノ\" && $terraData.regionalCareerOnDuty(s, \"lat_executor\"),\n      t: \"公証人役場の執務室で、他国企業とラテラーノ市民の間に結ばれた遺産分割契約書を審査した。午後は射撃場で守護銃の分解清掃と的当て。サンクタ法典の厳格な条文と火薬の匂いが、執行人の日常を満たす。\",\n      c: [\n        $terraData.K(\"報告書を提出し、名物のアップルパイを食べる\", { ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }, [\n          1,\n          \"カフェで甘いパイを楽しみ、同僚と談笑した。\",\n          { p: 2, cr: 1, cash: 220000 }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "index": 0,
+          "label": "報告書を提出し、名物のアップルパイを食べる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "カフェで甘いパイを楽しみ、同僚と談笑した。",
+              "effect": "{ p: 2, cr: 1, cash: 220000 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earth_discr_sarkaz_work_later",
+      "source": "data/parts/extensions/social-and-care/local-discrimination.js:474",
+      "status": "full-source-object-choices-found",
+      "expected": 3,
+      "parsed": 3,
+      "outcomes": 3,
+      "head": "{\n        \"id\": \"earth_discr_sarkaz_work_later\",\n        \"conf\": \"S\",\n        \"references\": [\"SRC_TERRA_DISCR_SARKAZ\", \"SRC_TERRA_SOCIAL_ATTITUDES\"],\n        \"st\": [\"青年\", \"壮年\", \"老年\"],\n        \"need\": [\"ed_sarkaz_work_bias\"],\n        \"once\": true,\n        \"w\": 0.45,\n        \"t\": \"サルカズだというだけで門前払いされた苦い記憶がまだ残るなか、知人づてに次の仕事を紹介してくれるという人物と会うことになった。自分の腕とこれまでの経緯をどう切り出すか迷った。\",\n        \"c\": [\n          {\n            \"l\": \"口先ではなく、これまで現場で任されてきた確かな腕前を伝えて口添えを頼む\",\n            \"o\": [\n              [\n                1,\n                \"これまでどんな現場をこなしてきたかを具体的に話し、真面目に働く人間だと先方に太鼓判を押してもらえることになった。\",\n                { \"k\": 2, \"rl\": 1, \"fl\": { \"ed_sarkaz_work_bias\": 0 } }\n              ]\n            ]\n          },\n          {\n            \"l\": \"余計な詮索を招かないよう、前の職を離れた理由は当たり障りなく話す\",\n            \"o\": [\n              [\n                1,\n                \"「傭兵崩れ」と決めつけられた屈辱が喉元まで出かかったが、紹介してくれた人の手前もあって、ただ条件が合わなかったとだけ答えた。\",\n                { \"p\": 1, \"fl\": { \"ed_sarkaz_work_bias\": 0 } }\n              ]\n            ]\n          },\n          {\n            \"l\": \"同じく仕事探しで苦労しているサルカズの仲間と、雇い主の評判を教え合う\",\n            \"o\": [\n              [\n                1,\n                \"種族で人を値踏みしない親方のいる現場や、逆に関わらない方がいい仕事場の噂を仲間内と分け合った。\",\n                { \"rl\": 2, \"fl\": { \"ed_sarkaz_work_bias\": 0, \"ed_sarkaz_mutual_job\": 1 } }\n              ]\n            ]\n          }\n        ],\n        \"after",
+      "choices": [
+        {
+          "index": 0,
+          "label": "口先ではなく、これまで現場で任されてきた確かな腕前を伝えて口添えを頼む",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "これまでどんな現場をこなしてきたかを具体的に話し、真面目に働く人間だと先方に太鼓判を押してもらえることになった。",
+              "effect": "{ \"k\": 2, \"rl\": 1, \"fl\": { \"ed_sarkaz_work_bias\": 0 } }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "余計な詮索を招かないよう、前の職を離れた理由は当たり障りなく話す",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "「傭兵崩れ」と決めつけられた屈辱が喉元まで出かかったが、紹介してくれた人の手前もあって、ただ条件が合わなかったとだけ答えた。",
+              "effect": "{ \"p\": 1, \"fl\": { \"ed_sarkaz_work_bias\": 0 } }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "同じく仕事探しで苦労しているサルカズの仲間と、雇い主の評判を教え合う",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "種族で人を値踏みしない親方のいる現場や、逆に関わらない方がいい仕事場の噂を仲間内と分け合った。",
+              "effect": "{ \"rl\": 2, \"fl\": { \"ed_sarkaz_work_bias\": 0, \"ed_sarkaz_mutual_job\": 1 } }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earth_discr_g1_market_coin",
+      "source": "data/parts/extensions/social-and-care/local-discrimination.js:1747",
+      "status": "full-source-object-choices-found",
+      "expected": 2,
+      "parsed": 2,
+      "outcomes": 2,
+      "head": "{\n      \"id\": \"earth_discr_g1_market_coin\",\n      \"conf\": \"S\",\n      \"references\": [\n            \"SRC_TERRA_DISCR_URSUS\",\n            \"SRC_ORIPATHY_SOCIAL\"\n      ],\n      \"st\": [\n            \"少年\",\n            \"青年\",\n            \"壮年\",\n            \"老年\"\n      ],\n      \"need\": [\n            \"感染診断済\"\n      ],\n      \"show\": s => infectionAwarenessHas(s, \"residents\", { includeUnverified: true }) || !!s.fl?.ed_neighborhood_whisper,\n      \"once\": true,\n      \"w\": 0.58,\n      \"cd\": 8,\n      \"t\": \"近所の食料品店でパンを買い、硬貨を手渡そうとした。店主はあなたの手から直接金を受け取ろうとせず、顎で勘定台の木皿を指した。お釣りを返す時も、触れぬよう宙から小銭を皿へ落とすように置かれた。\",\n      \"c\": [\n            {\n                  \"l\": \"皿の小銭を黙って拾い上げ、胸ポケットにしまう\",\n                  \"o\": [\n                        [\n                              1,\n                              \"乾いた金属音を立てる小銭を拾い集めた。店主は視線を合わせず、次の常連客には親しげに笑いかけながら手渡しで林檎を渡していた。\",\n                              {\n                                    \"p\": -3\n                              }\n                        ]\n                  ]\n            },\n            {\n                  \"l\": \"「触るのが嫌なら店先に貼り紙でもしておけ」と皮肉を返す\",\n                  \"o\": [\n                        [\n                              1,\n                              \"店主は露骨に顔を歪め、「客の勝手だろ、騒ぐならよそへ行け」と吐き捨てた。周りの買い物客の冷ややかな視線が背中に刺さった。\",\n                              {\n                                    \"p\": -4,\n                ",
+      "choices": [
+        {
+          "index": 0,
+          "label": "皿の小銭を黙って拾い上げ、胸ポケットにしまう",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "乾いた金属音を立てる小銭を拾い集めた。店主は視線を合わせず、次の常連客には親しげに笑いかけながら手渡しで林檎を渡していた。",
+              "effect": "{\n                                    \"p\": -3\n                              }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "「触るのが嫌なら店先に貼り紙でもしておけ」と皮肉を返す",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "店主は露骨に顔を歪め、「客の勝手だろ、騒ぐならよそへ行け」と吐き捨てた。周りの買い物客の冷ややかな視線が背中に刺さった。",
+              "effect": "{\n                                    \"p\": -4,\n                                    \"cr\": 1\n                              }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earth_discr_g2_work_lunch",
+      "source": "data/parts/extensions/social-and-care/local-discrimination.js:1899",
+      "status": "full-source-object-choices-found",
+      "expected": 2,
+      "parsed": 2,
+      "outcomes": 2,
+      "head": "{\n      \"id\": \"earth_discr_g2_work_lunch\",\n      \"conf\": \"S\",\n      \"references\": [\n            \"SRC_INDUSTRIAL_LIFE\",\n            \"SRC_ORIPATHY_SOCIAL\"\n      ],\n      \"st\": [\n            \"青年\",\n            \"壮年\",\n            \"老年\"\n      ],\n      \"need\": [\n            \"成人\",\n            \"感染診断済\",\n            \"就労中\"\n      ],\n      \"show\": s => infectionAwarenessHas(s, \"workplace\", { includeUnverified: true }) || !!s.fl?.ed_leak_witnessed,\n      \"once\": true,\n      \"w\": 0.62,\n      \"cd\": 8,\n      \"t\": \"工場の昼休憩、手洗いを済ませて食堂のテーブルへ向かった。昨日まで一緒に並んでスープを飲んでいた同僚たちが、あなたの姿を認めた途端に小声で囁き交わし、次々と食器を持って別の離れた長机へと移動していった。\",\n      \"c\": [\n            {\n                  \"l\": \"残された広い机の隅で、一人静かに冷めた弁当を食べる\",\n                  \"o\": [\n                        [\n                              1,\n                              \"誰もいないテーブルで黒パンをかじった。遠くの机から時折楽しげな笑い声が上がり、自分と世界を隔てる目に見えない溝の深さを痛感した。\",\n                              {\n                                    \"p\": -4,\n                                    \"fl\": {\n                                          \"ed_workplace_isolated\": 1\n                                    }\n                              }\n                        ]\n                  ]\n            },\n            {\n                  \"l\": \"移動した仲間の席へ歩み寄り、「席を変えた理由」を率直に尋ねる\",\n                  \"o\": [\n                        [\n                              1,\n          ",
+      "choices": [
+        {
+          "index": 0,
+          "label": "残された広い机の隅で、一人静かに冷めた弁当を食べる",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "誰もいないテーブルで黒パンをかじった。遠くの机から時折楽しげな笑い声が上がり、自分と世界を隔てる目に見えない溝の深さを痛感した。",
+              "effect": "{\n                                    \"p\": -4,\n                                    \"fl\": {\n                                          \"ed_workplace_isolated\": 1\n                                    }\n                              }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "移動した仲間の席へ歩み寄り、「席を変えた理由」を率直に尋ねる",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "同僚たちはぎこちなく視線を泳がせ、「あっちのほうが窓際で明るいからな」と見え透いた嘘をついた。気まずい沈黙の中、二度と同じ輪には戻れないことを悟った。",
+              "effect": "{\n                                    \"p\": -5,\n                                    \"fl\": {\n                                          \"ed_workplace_isolated\": 1\n                                    }\n                              }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earth_discr_work_years",
+      "source": "data/social/organizations-and-infection.js:14",
+      "status": "not-original-event-object",
+      "diagnostic": "source-mutates-event-found-elsewhere"
+    },
+    {
+      "id": "edu_employer_sponsored_course",
+      "source": "data/education/p17-reviewed-prose.js:595",
+      "status": "not-original-event-object",
+      "diagnostic": "prose-review-copy-not-runtime-event"
+    },
+    {
+      "id": "edu_study_work_balance",
+      "source": "data/education/p17-reviewed-prose.js:691",
+      "status": "not-original-event-object",
+      "diagnostic": "prose-review-copy-not-runtime-event"
+    }
+  ]
+}

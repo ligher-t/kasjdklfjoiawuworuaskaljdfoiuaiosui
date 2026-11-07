@@ -127,6 +127,9 @@ function applyLifeGoal(input) {
     !["start", "continue", "compromise", "pause", "complete", "abandon"].includes(action)
   )
     throw new Error("人生目標の記録形式が不正");
+  // A later employment episode must not undo an already completed life goal.
+  if (action === "start" && input.preserveAchievement && goal?.status === "achieved")
+    return goal;
   const source = lifeRecordSource();
   if (!goal) {
     goal = {
@@ -340,7 +343,10 @@ function workRelationshipValid(row, s) {
     !row?.id ||
     !row.title ||
     !row.person?.id ||
-    !row.person?.nm ||
+    typeof row.person?.nm !== "string" ||
+    !row.person.nm.trim() ||
+    row.person.nm.length > 50 ||
+    /[<>]/.test(row.person.nm) ||
     !RACE.some(r => r.n === row.person?.r?.n) ||
     !Number.isInteger(row.person?.by) ||
     !Number.isInteger(row.startedYear) ||
@@ -479,7 +485,7 @@ function recordCareerChange(s, fromJobId, toJobId, source = TRACE_RESOLUTION) {
   return item;
 }
 const CAREER_PLACEMENTS = [
-  { id: "rhodes-staff", jobs: [28, 29, 30, 31, 33, 34], region: null, goal: "rhodes-work" },
+  { id: "rhodes-staff", jobs: [28, 29, 30, 31, 33, 34, 35, 36, 37], region: null, goal: "rhodes-work" },
   { id: "bsw-contract", jobs: [35, 36, 37], region: "クルビア", goal: "bsw-work" },
   { id: "rhine-lab", jobs: [38, 39, 40], region: "クルビア", goal: "rhine-research" },
   { id: "kazimierz-arena-staff", job: 32, region: "カジミエーシュ", goal: "kazimierz-arena-work" },
@@ -499,14 +505,27 @@ function currentCareerPlacement(s, id) {
     !!s.lifeRecord?.affiliations?.some(row => row.id === id && ["active", "crisis"].includes(row.status))
   );
 }
+function reconcileGenericWorkGoal(s) {
+  const goal=s?.lifeRecord?.goals?.find(row=>row.id==="craft");
+  if(!goal)return;
+  const pauseNote="現在の仕事を離れたため、仕事の技能目標を休止";
+  if(s.job===0 && ["active","compromised"].includes(goal.status)) {
+    applyLifeGoal({id:"craft",action:"pause",note:pauseNote});
+    return;
+  }
+  if(s.job>0 && goal.status==="paused" && goal.history?.at(-1)?.note===pauseNote)
+    applyLifeGoal({id:"craft",action:"continue",note:"新しい仕事に就き、仕事の技能目標を再開"});
+}
 function reconcileCareerPlacements(s, preserveCurrentPay = false, assignedPlacements = null) {
   if (s !== S) return;
+  const jobAtStart = s.job;
   for (const placement of CAREER_PLACEMENTS) {
-    const affiliation = s.lifeRecord?.affiliations?.find(row => row.id === placement.id);
+    const affiliation = s.lifeRecord?.affiliations?.find(row => row.id === placement.id),
+      holdsPlacementJob = placement.jobs ? placement.jobs.includes(s.job) : s.job === placement.job;
     if (
       !affiliation ||
       !["active", "crisis"].includes(affiliation.status) ||
-      ((placement.jobs ? placement.jobs.includes(s.job) : s.job === placement.job) &&
+      (holdsPlacementJob &&
         (placement.region == null || s.res?.n === placement.region) &&
         !s.fl?.retired &&
         !restricted(s) &&
@@ -524,8 +543,19 @@ function reconcileCareerPlacements(s, preserveCurrentPay = false, assignedPlacem
         note: "この職場での継続を終え、次の暮らしを考える"
       });
     if (!preserveCurrentPay) s.workPayBonus = 0;
+    if (!preserveCurrentPay && holdsPlacementJob) {
+      const previousJob = s.job;
+      s.job = 0;
+      s.fl.workplace_hazard = 0;
+      recordCareerChange(s, previousJob, 0);
+    }
   }
   reconcileAffiliationWork(s, preserveCurrentPay);
+  reconcileGenericWorkGoal(s);
+  if (s.job !== jobAtStart) {
+    siteAffiliation(s, "workplace");
+    reconcileWorkContract(s);
+  }
 }
 function lifeAffiliationAtRecordedLocality(s, id) {
   const affiliation = s?.lifeRecord?.affiliations?.find(row => row.id === id),
@@ -538,6 +568,12 @@ function lifeAffiliationAwayFromRecordedLocality(s, id) {
   return !!affiliation?.localityKey && !!currentKey && affiliation.localityKey !== currentKey;
 }
 function applyLifeAffiliation(input) {
+  const employerKey = employmentOrganizationKey(input);
+  if (["join", "assign", "return"].includes(input?.action || "join") &&
+      EMPLOYER_PLAYER_ACCESS_MODES[employerKey] === "BLOCKED")
+    throw Error("プレイヤーの新規加入対象外となる組織への所属");
+  const priorKind = S.lifeRecord?.affiliations?.find(row => row.id === input.id)?.kind;
+  assertPlayerEmploymentEffectAllowed({lifeAffiliation:{...input, kind:input.kind || priorKind}});
   const r = ensureLifeRecord(S),
     id = String(input.id || "").trim(),
     requestedAction = input.action || "join";
@@ -675,6 +711,8 @@ function applyLifeAffiliation(input) {
               : "";
         if (post) role = `${post}／職務:${role}`.slice(0, 80);
       }
+      // A repeated success at the same rank is another incident, not another promotion.
+      if (input.onlyIfRoleChanged && a.role === role) return a;
       a.role = role;
     }
   } else if (action === "crisis") {

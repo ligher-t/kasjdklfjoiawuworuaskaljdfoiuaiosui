@@ -125,7 +125,7 @@ window.TERRA_DATA_BUILD.fragment(
     { n: "曼珠院・聖山護衛僧", pay: 1200000, ex: 1.10 },
     { n: "軍事委員会・サルカズ正規兵", pay: 2500000, ex: 1.40, war: 2.0 },
     { n: "カズデル伝統骨鍛冶", pay: 2200000, ex: 1.25 },
-    { n: "イベリア審問所・見習い審問官", pay: 3600000, ex: 1.30, war: 1.4 },
+    { n: "イベリア裁判所・見習い審問官", pay: 3600000, ex: 1.30, war: 1.4 },
     { n: "イベリア沿岸灯台調律師", pay: 2800000, ex: 1.20 },
     { n: "ボリバル正規・真正連合軍兵士", pay: 1100000, ex: 1.45, war: 1.8 },
     { n: "ドッソレス特区市警", pay: 3000000, ex: 1.15, war: 1.2 },
@@ -138,10 +138,29 @@ window.TERRA_DATA_BUILD.fragment(
     $terraData.J.push(job);
   }
 
+  // Recruitment outcomes establish the canonical employer for each regional job.
+  // Duty scenes must follow an active posting, not a stale occupation identifier.
+  const regionalCareerEmployers = new Map();
+  $define(
+    "regionalCareerOnDuty",
+    (s, jobKey) => {
+      const employer = regionalCareerEmployers.get(jobKey);
+      return !!employer &&
+        s.job === $terraData.REG_JOBS[jobKey] &&
+        $rules.affiliations.canWork(s, employer);
+    },
+    false,
+    true
+  );
+
   // Helper function to build a regional career entry effect
   $define(
     "regionalCareerStaff",
     (jobKey, affiliationId, affiliationTitle, roleTitle, goalId, goalTitle, skillId, skillTitle, opts = {}) => {
+      const assigned = regionalCareerEmployers.get(jobKey);
+      if (assigned && assigned !== affiliationId)
+        throw new Error("Conflicting regional career employer for " + jobKey);
+      regionalCareerEmployers.set(jobKey, affiliationId);
       const effect = {
         job: $terraData.REG_JOBS[jobKey],
         lifeAffiliation: {
@@ -156,7 +175,8 @@ window.TERRA_DATA_BUILD.fragment(
           id: goalId,
           title: goalTitle,
           priority: "生業",
-          action: "start"
+          action: "start",
+          preserveAchievement: true
         },
         p: opts.p || 0,
         k: opts.k || 0,

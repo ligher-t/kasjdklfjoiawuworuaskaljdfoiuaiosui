@@ -29,26 +29,46 @@ function applyFacilityAction(s, action) {
   s.facilityContacts = s.facilityContacts.slice(-80);
   // 窓口へ問い合わせたことと、受付・採用・治療・都市施設の復旧は別。
 }
+function facilityIncidentConstraint(s, kind, facility = null) {
+  const incident = typeof activeInfrastructureIncident === "function" ? activeInfrastructureIncident(s) : null;
+  if (!incident || incident.areaKey !== s?.community?.key) return null;
+  if (incident.kind === "power" && kind === "clinic" &&
+      (facility?.independentPower === true || facility?.backupPower === true)) return null;
+  return incident;
+}
+function facilityEffectiveStatus(s, kind, facility) {
+  return facilityIncidentConstraint(s, kind, facility) ? "limited" : facility?.status;
+}
 function facilitySummary(s) {
   const f = ["clinic", "school", "workplace"].map(kind => activeFacility(s, kind)).filter(Boolean);
   return (
     f
-      .map(x => `${x.label}：${FACILITY_MODEL.states[x.status]}`)
+      .map(x => {
+        const kind = x.kind, state = facilityEffectiveStatus(s, kind, x);
+        return `${x.label}：${state === "limited" && facilityIncidentConstraint(s, kind, x)
+          ? "地域設備の影響で一部制限" : FACILITY_MODEL.states[state]}`;
+      })
       .join("／") || "施設の登録なし"
   );
 }
 function facilitySchoolMultiplier(s) {
   if (!s.fl?.sch || restricted(s)) return 1;
-  const f = activeFacility(s, "school");
-  return f?.status === "limited" ? 0.35 : f?.status === "strained" ? 0.75 : 1;
+  const f = activeFacility(s, "school"), status = facilityEffectiveStatus(s, "school", f),
+    base = status === "limited" ? 0.35 : status === "strained" ? 0.75 : 1,
+    incident = facilityIncidentConstraint(s, "school", f), disruption = incident?.kind === "route" ? 0.7 : incident ? 0.8 : 1;
+  return Math.min(base, disruption);
 }
 function facilityWorkMultiplier(s) {
-  const f = activeFacility(s, "workplace");
-  return f?.status === "limited" ? 0.88 : f?.status === "strained" ? 0.96 : 1;
+  const f = activeFacility(s, "workplace"), status = facilityEffectiveStatus(s, "workplace", f),
+    base = status === "limited" ? 0.88 : status === "strained" ? 0.96 : 1,
+    incident = facilityIncidentConstraint(s, "workplace", f), disruption = incident?.kind === "route" ? 0.82 : incident ? 0.9 : 1;
+  return Math.min(base, disruption);
 }
 function facilityCarePenalty(s) {
-  const f = activeFacility(s, "clinic");
-  return f?.status === "limited" ? 0.08 : f?.status === "strained" ? 0.025 : 0;
+  const f = activeFacility(s, "clinic"), status = facilityEffectiveStatus(s, "clinic", f),
+    base = status === "limited" ? 0.08 : status === "strained" ? 0.025 : 0,
+    incident = facilityIncidentConstraint(s, "clinic", f), disruption = incident?.kind === "power" ? 0.08 : incident?.kind === "water" ? 0.07 : incident?.kind === "route" ? 0.04 : 0;
+  return Math.max(base, disruption);
 }
 
 function localityShockMatchesPlace(s, shock) {
@@ -143,6 +163,7 @@ function localityAdvanceOne(s, regionState, year) {
     shockIds.push("game-background-" + axis);
   }
   regionState.lastYear = year;
+  advanceOccupationWorkArea(s, year, regionState.metrics);
   facilityAdvance(s, regionState, year);
   facilityPersonAdvance(s, regionState, year);
   const diffs = localityAxes.filter(axis => Math.abs(regionState.metrics[axis] - before[axis]) >= 0.055);
@@ -269,7 +290,7 @@ function ensureLocalityState(s) {
   // 現職・居住地を変更した直後でも旧勤務契約が現在在籍として残らない。
   // この場所では activeFacility を再帰呼出しせず、既にある台帳だけを見る。
   if (
-    s.workContract &&
+    s.workContract && s.workContract.basis !== "occupation-episode" &&
     (!s.siteAffiliations?.workplace ||
       s.workContract.siteId !== s.siteAffiliations.workplace.facilityId ||
       s.workContract.jobId !== s.job ||
@@ -372,6 +393,8 @@ function pressureAnnualExposureShare(p, year) {
 }
 function worldPressureValue(p, key, s) {
   const value = p[key] || 1;
+  const travelShare=typeof travelPressureShare==="function"?travelPressureShare(s,p):null;
+  if(travelShare!==null)return 1+(value-1)*travelShare;
   if (s.mo !== 0 || !pressureHasMonthWindow(p)) return value;
   // Annual processing resolves health and mortality before assigning this year's event month.
   // Approximate a partial-year effect without publishing its historical event flag early.
@@ -383,6 +406,7 @@ function worldPressureDeathMonth(s, cause) {
     !["戦闘職務中の死亡", "戦争に伴う民間人死亡"].includes(cause)
   )
     return null;
+  if(typeof travelPressureShare==="function"&&WORLD_PRESSURES.some(p=>travelPressureShare(s,p)!==null))return null;
   const months = activeWorldPressures(s)
     .filter(pressureHasMonthWindow)
     .flatMap(p => {
@@ -395,7 +419,8 @@ function worldPressureDeathMonth(s, cause) {
 function activeWorldPressures(s, region = s.res?.n, city = s.local?.city) {
   return WORLD_PRESSURES.filter(
     p => {
-      if (!pressureMatchesPlace(p, region, city) || !pressureYearHasExposure(p, s.year)) return false;
+      const share=region===s.res?.n&&city===s.local?.city&&typeof travelPressureShare==="function"?travelPressureShare(s,p):null;
+      if (!(share===null?pressureMatchesPlace(p,region,city):share>0) || !pressureYearHasExposure(p, s.year)) return false;
       // Annual health/mortality runs before hist() publishes this year's flags.
       // The configured pressure window itself is sufficient for this aggregate
       // estimate; monthly event eligibility still waits for the historical flag.

@@ -3,7 +3,8 @@ function applyStatEffects(e, s) {
     if (e[k]) {
       const diminishing =
         k === "k" || k === "rl" ? Math.max(0.08, 1 - Math.pow(Math.max(0, s[k]) / 111, 1.6)) : 1;
-      s[k] = clamp(s[k] + e[k] * (e[k] > 0 ? diminishing : 1), 0, k === "ep" ? 200 : 100);
+      const delta=e[k]*(e[k]>0?diminishing:1);
+      s[k] = clamp(s[k] + wellbeingDelta(s,k,delta), 0, k === "ep" ? 200 : 100);
     }
   if (Number.isFinite(e.equityGain) && e.equityGain !== 0) {
     const model = socialModel(s);
@@ -26,6 +27,39 @@ function applyStatEffects(e, s) {
   }
 }
 
+function infectCoResidentAfterCatastrophe(person, s, chance, cause, knowledgeField) {
+  if (!person || person.d || person.inf || R() >= chance) return false;
+  const infected = { ...person, year: s.year, r: person.r || s.r, ob: person.ob || 0 };
+  initializeInfection(infected, "dust");
+  person.inf = 1;
+  person.ob = infected.ob;
+  person.ac = infected.ac;
+  person.infectionOnset = infected.infectionOnset;
+  person.infYear = s.year;
+  person.infCause = cause;
+  person[knowledgeField] = 0;
+  person.infection = { year: s.year, cause, basis: "catastrophe-exposure", diagnosedYear: null };
+  return true;
+}
+
+function applyCatastropheInfectionChecks(s, chance) {
+  if (!Number.isFinite(chance) || chance <= 0 || chance > 0.05) return;
+  const cause = "天災後に吸い込んだ源石粉塵への曝露";
+  if (!s.inf && R() < chance) {
+    applyInfectionAndContactEffects(
+      { inf: 1, infectionRoute: "dust", infCause: cause },
+      s
+    );
+  }
+  if (!inSharedHousehold(s)) return;
+  const parentKeys = s.care?.parentKeys?.length ? s.care.parentKeys : ["fa", "mo"];
+  for (const key of parentKeys)
+    infectCoResidentAfterCatastrophe(s.par?.[key], s, chance, cause, "infectionKnown");
+  for (const sibling of siblingsOf(s))
+    if (!sibling.independentSinceYear && sibling.contactState !== "ended")
+      infectCoResidentAfterCatastrophe(sibling, s, chance, cause, "infKnown");
+}
+
 function applyInfectionAndContactEffects(e, s) {
   if (e.ob && s.inf) s.ob = clamp(s.ob + e.ob, 0, 100);
   if (e.exposureAction) oriApplyAction(s, e.exposureAction);
@@ -46,11 +80,15 @@ function applyInfectionAndContactEffects(e, s) {
   }
   if (e.fl?.dg === 1 && s.inf) {
     s.infection || (s.infection = { year: s.year, cause: "感染経路未確認", basis: "event-unclassified" });
+    const newlyDiagnosed=s.infection.diagnosedYear==null;
     s.infection.diagnosedYear ??= s.year;
+    if(newlyDiagnosed)importantLifeNotification(s,"diagnosis");
     s.infection.diagnosisBasis ||= "イベントで確認した検査・診断";
     oriState(s).reviewDueYear = null;
     oriRecord(s, "diagnosis", "検査で鉱石病と診断された");
   }
+  if (e.catastropheInfectionChance != null)
+    applyCatastropheInfectionChecks(s, e.catastropheInfectionChance);
   if (Number.isFinite(e.careInclination) && e.careInclination > 0) {
     const before = s.careInclination ?? 50,
       after = clamp(before + e.careInclination, 0, 100);

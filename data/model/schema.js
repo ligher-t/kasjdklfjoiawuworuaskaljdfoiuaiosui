@@ -359,7 +359,7 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
       p: { unit: "幸福点", meaning: "選択結果による幸福変化", status: "S" },
       k: { unit: "知識点", meaning: "選択結果による知識変化", status: "S" },
       rl: { unit: "関係点", meaning: "選択結果による関係変化", status: "S" },
-      ar: { unit: "適性点", meaning: "選択結果による適性変化", status: "S" },
+      ar: { unit: "旧互換値", meaning: "出生時のアーツ素養を保持する互換値。習得技能・資格・現在の業務適性の正本ではない", status: "S" },
       cr: { unit: "信用点", meaning: "選択結果による信用変化", status: "S" },
       ep: { unit: "教育点", meaning: "選択結果による教育進捗", status: "S" },
       ob: { unit: "感染度", meaning: "感染進行の変化", status: "S" },
@@ -1002,9 +1002,9 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
   $terraData.EVENT_FIELD_META.siracusaFamilyAction = {
     unit: "シラクーザの組織的ファミリーとの関係",
     meaning:
-      "加入の受諾・辞退、関係継続、距離を置くこと、離脱を区別して履歴へ記録する。血縁家族とは別の社会・仕事上の関係",
+      "加入の受諾・辞退、関係継続、距離を置くこと、離脱を区別して履歴へ記録する。血縁家族とは別の社会・仕事上の関係。条件付き変更ではactionとonlyIfMemberを使う",
     status: "S",
-    valueType: "text"
+    valueType: "textOrObject"
   };
 
   $terraData.EVENT_FIELD_META.siracusaFamilyDuty = {
@@ -1155,6 +1155,68 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
     valueType: "object"
   };
 
+  $terraData.EVENT_FIELD_META.interactionScope = {
+    unit: "イベントの発火枠",
+    meaning: "major・minor・daily・scheduledを共通抽選器へ渡す。minorは主要選択枠を消費しない",
+    status: "S",
+    valueType: "text"
+  };
+
+  $terraData.EVENT_FIELD_META.lifeSystemFamily = {
+    unit: "軽選択の候補カテゴリ",
+    meaning: "minorイベントを機能カテゴリ別の固定予算で抽選し、候補件数による頻度変化を抑える",
+    status: "S",
+    valueType: "text"
+  };
+
+  $terraData.EVENT_FIELD_META.scheduledAt = {
+    unit: "イベントを選べる最短年月",
+    meaning: "期日を所有する状態機能が年月を返し、共通のscheduled枠が月単位で優先する",
+    status: "S",
+    valueType: "function"
+  };
+
+  $terraData.EVENT_FIELD_META.artsAction = {
+    unit: "アーツ学習実績操作",
+    meaning: "確認できる学習・貸与・点検・修理の行為だけを、対象IDと根拠付きで個別台帳へ記録する",
+    status: "S",
+    valueType: "object"
+  };
+
+  $terraData.EVENT_FIELD_META.lifeSystemAction = {
+    unit: "地域・配送・契約・研究・文化の状態遷移",
+    meaning: "実際の地区・案件・受取人・本人同意に対応する個別の行為だけを記録する",
+    status: "S",
+    valueType: "object"
+  };
+
+  $terraData.EVENT_FIELD_META.socialConstraint = {
+    unit: "社会的な場面の適格性情報",
+    meaning: "場面・対象・認知根拠の読み取り専用条件。選択候補の探索では状態を変更しない",
+    status: "S",
+    valueType: "object"
+  };
+
+  $terraData.EVENT_FIELD_META.socialConstraintAction = {
+    unit: "社会的制約の選択結果",
+    meaning: "実際に確定した選択と結果だけを人物・場面・認知根拠に結び付けて追記する",
+    status: "S",
+    valueType: "object"
+  };
+  $terraData.EVENT_FIELD_META.raceProfileAction = {
+    unit: "個体の身体特性記録",
+    meaning: "種族名から推定せず、本人の申告・診療記録・直接観察で確認された個体差だけを本人の履歴に記録する",
+    status: "S",
+    valueType: "object"
+  };
+
+  $terraData.EVENT_FIELD_META.violenceAction = {
+    unit: "暴力事件・証言・法的事後処理",
+    meaning: "具体的な現場、行為、被害者、直接の証人、確認済み結果を一度だけ記録し、民間人の露見は関係・手続へつなぐ",
+    status: "S",
+    valueType: "object"
+  };
+
   $define(
     "EVENT_EFFECT_TYPES",
     {
@@ -1169,6 +1231,7 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
         "cr",
         "ep",
         "ob",
+        "catastropheInfectionChance",
         "selfCash",
         "familyTransfer",
         "familyContribution",
@@ -1262,7 +1325,8 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
         "groupStanding",
         "regionalImpact",
         "lifeWorkRelationship",
-        "siracusaFamilyDuty"
+        "siracusaFamilyDuty",
+        "socialConstraintAction"
       ],
       objectArray: ["lifeGoals", "lifeAffiliations", "groupStandings"],
       text: [
@@ -1303,9 +1367,9 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
         "spouseSeparateContact",
         "spouseHousingPlan",
         "spouseDisclosureBoundary",
-        "divorceParentingPlan",
-        "siracusaFamilyAction"
-      ]
+        "divorceParentingPlan"
+      ],
+      textOrObject: ["siracusaFamilyAction"]
     },
     false
   );
@@ -1319,7 +1383,12 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
   $terraData.EVENT_EFFECT_TYPES.object.push("childFutureSupport", "childResidenceProposal");
 
   $terraData.EVENT_EFFECT_TYPES.object.push("infectionWorkplaceAction");
+  $terraData.EVENT_EFFECT_TYPES.object.push("employmentResourceIncident");
   $terraData.EVENT_EFFECT_TYPES.object.push("languageAction");
+  $terraData.EVENT_EFFECT_TYPES.object.push("artsAction");
+  $terraData.EVENT_EFFECT_TYPES.object.push("lifeSystemAction");
+  $terraData.EVENT_EFFECT_TYPES.object.push("raceProfileAction");
+  $terraData.EVENT_EFFECT_TYPES.object.push("violenceAction");
 
   $terraData.EVENT_EFFECT_TYPES.objectArray.push("bodyChanges", "infectionAwarenessActions");
 
@@ -1347,12 +1416,16 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
   Object.assign($terraData.EVENT_FIELD_META, {
     debtPlan:{unit:"家計再建方針",meaning:"生活必需費を保ちつつ支出を調整する本人の選択",status:"S",valueType:"text"},
     educationAction:{unit:"学籍操作",meaning:"教育状態機械へ入学・支払・中断・再開・修了判断を渡す",status:"S",valueType:"text"},
+    travelResidenceRef:{unit:"旅先の住居ID",meaning:"実到着と照合した住居の個別受入記録",status:"S",valueType:"text"},
+    travelAction:{unit:"旅程操作",meaning:"実在する旅程の検問通過・迂回・待機を確定する",status:"S",valueType:"text"},
     loanContract:{unit:"個人借入契約",meaning:"実際の契約条件と元本・返済総額を登録する",status:"S",valueType:"object"},
     loanPayment:{unit:"契約返済",meaning:"既存契約の残高と実際の支払を同時に減らす",status:"S",valueType:"object"},
     loanCharge:{unit:"契約外追加請求",meaning:"既存契約への追加請求と異議を記録する",status:"S",valueType:"object"},
     personalWishes:{unit:"本人の希望",meaning:"本人が選んだ終盤の希望を記録する",status:"S",valueType:"object"},
     languageAction:{unit:"言語操作",meaning:"言語能力学習・現場符牒獲得・通訳手配・遭遇記録などの言語状態機械操作",status:"S",valueType:"object"},
-    infectionRoute:{unit:"源石曝露の経路",meaning:"明示された粉塵・創傷・深い創傷・混合曝露を初期病状へ接続する",status:"S",valueType:"text"}
+    employmentResourceIncident:{unit:"生計資源の変化",meaning:"現役の自営生計に対する出典付き資源損失だけを、実際の農地・資源状態へ記録する",status:"S",valueType:"object"},
+    infectionRoute:{unit:"源石曝露の経路",meaning:"明示された粉塵・創傷・深い創傷・混合曝露を初期病状へ接続する",status:"S",valueType:"text"},
+    catastropheInfectionChance:{unit:"感染確率",meaning:"天災を生き延びた後、粉塵曝露による感染を本人および条件を満たす家族ごとに独立判定する確率（最大5%）",status:"S",valueType:"number"}
   });
 
 });

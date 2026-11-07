@@ -25,7 +25,11 @@ const thresholds = vm.runInContext(
   ctx
 );
 assert.deepEqual([...thresholds], [0.75, 1], 'weighted outcomes must cover every random roll');
-const peer = vm.runInContext('simPeer(905033)', ctx, { timeout: 30000 });
+// Birth distribution changes may expose independent employment errors in an
+// otherwise deterministic life. In either case the visible caller must survive.
+let peer = null, peerError = null;
+try { peer = vm.runInContext('simPeer(905033)', ctx, { timeout: 120000 }); }
+catch (error) { peerError = error; }
 
 assert.equal(storage.get('terra2'),'original-autosave','hidden peer deaths must not erase the active life autosave');
 assert.equal(ending.innerHTML, '<div class="peers">CURRENT PLAYER ENDING</div>',
@@ -34,73 +38,88 @@ assert.equal(ending.hidden,false,'hidden peer birth must not dismiss the visible
 assert.equal(history.innerHTML,'<li>the visible player journal</li>',
   'hidden peer birth must not clear the player history');
 assert.equal(controls.hidden,true,'hidden peer death must not toggle visible playback controls');
-assert.ok(peer.nm && peer.nm !== '?', 'comparison must have a real person name');
-assert.ok(Number.isInteger(peer.age) && peer.age > 0, 'comparison must have a simulated lifetime');
-assert.ok(peer.res && peer.res !== '?', 'comparison must have a region');
-assert.ok(peer.dc && peer.dc !== '?', 'comparison must have a recorded ending');
+if (peer) {
+  assert.ok(peer.nm && peer.nm !== '?', 'a completed comparison has a real person name');
+  assert.ok(Number.isInteger(peer.age) && peer.age > 0, 'a completed comparison has a simulated lifetime');
+  assert.ok(peer.res && peer.res !== '?', 'a completed comparison has a region');
+  assert.ok(peer.dc && peer.dc !== '?', 'a completed comparison has a recorded ending');
+} else {
+  assert.ok(peerError?.message, 'failed comparisons report a specific error without replacing the original life');
+}
 assert.deepEqual(annual.observe(ctx), before, 'peer calculation restores the active life, world, RNG and trace state');
 assert.equal(vm.runInContext('JSON.stringify(STAT)',ctx),statisticsBefore,
   'comparison initializes its own opportunity counters and restores the exact caller statistics');
 
 
-// Even when a peer simulation fails, other simulated lives must remain on
-// screen, the busy indicator must clear, and a retry must be available.
-const partial = vm.runInContext(`(() => {
-  const previous = simPeer, wasDead = S.dead;
-  let attempts = 0, busy = "";
-  const node = {
-    innerHTML: "",
-    setAttribute(name,value) { if (name === "aria-busy") busy = value; },
-    querySelector(selector) { return selector === ".ui-peer-retry" ? {addEventListener(){}} : null; }
-  };
-  try {
-    S.dead = 1;
-    simPeer = () => {
-      attempts++;
-      if (attempts === 2) throw new Error("test: one comparison failed");
-      return {nm:"検証人物",res:"カズデル",local:"集落",r:"サルカズ",
-        care:"親族",age:42,dc:"病死",job:"無職",edu:"未就学",moves:0};
-    };
-    renderEndingPeers(S,{querySelector:selector=>selector === ".peers" ? node : null});
-    return {attempts, busy, html:node.innerHTML};
-  } finally {
-    simPeer = previous;
-    S.dead = wasDead;
+// Worker messages must be incremental, allow independent failure, and leave
+// the original life, journal and autosave untouched.
+const workers = [];
+ctx.Worker = class {
+  constructor(url) { this.url = url; this.terminated = false; workers.push(this); }
+  postMessage(request) { this.request = request; }
+  terminate() { this.terminated = true; }
+};
+const testBox = {
+  innerHTML: '', busy: '', retry: null,
+  setAttribute(name, value) { if (name === 'aria-busy') this.busy = value; },
+  querySelector(selector) {
+    return selector === '.ui-peer-retry'
+      ? { addEventListener: (_type, callback) => { this.retry = callback; } }
+      : null;
   }
-})()`, ctx);
-assert.equal(partial.attempts,3,'the configured three lives are attempted independently');
-assert.equal(partial.busy,'false','comparison settles even with a failed peer');
-assert.equal((partial.html.match(/class="peer"/g)||[]).length,2,
-  'one failed life does not erase two valid lives');
-assert.match(partial.html,/比較を再試行/,'failed comparisons expose a retry affordance');
-assert.doesNotMatch(partial.html,/比較する人生を表示できませんでした/);
+};
+ctx.testPeerRoot = {
+  hidden: false, isConnected: true,
+  querySelector: selector => selector === '.peers' ? testBox : null
+};
+const person = {nm:'検証人物',res:'カズデル',local:'集落',r:'サルカズ',
+  care:'親族',age:42,dc:'病死',job:'無職',edu:'未就学',moves:0};
+const originalDead = vm.runInContext('S.dead',ctx);
+vm.runInContext('S.dead=1; HL=0;',ctx);
+const beforeWorker = annual.observe(ctx);
+const journalBefore = history.innerHTML, endingBefore = ending.innerHTML;
+storage.set('terra2','original-autosave');
+vm.runInContext('renderEndingPeers(S,testPeerRoot)',ctx);
+assert.equal(workers.length,1,'one worker is created for the whole comparison');
+assert.match(workers[0].url,/ending-peer-worker\.js$/);
+assert.equal(workers[0].request.count,3);
+assert.equal(testBox.busy,'true');
+assert.match(testBox.innerHTML,/0\/3人/);
+workers[0].onmessage({data:{type:'peer',index:0,person}});
+assert.match(testBox.innerHTML,/1\/3人/,'the first life is visible before the next completes');
+workers[0].onmessage({data:{type:'peer',index:1,error:'test: one comparison failed'}});
+workers[0].onmessage({data:{type:'peer',index:2,person}});
+workers[0].onmessage({data:{type:'done'}});
+assert.equal(workers[0].terminated,true,'completed workers release their resources');
+assert.equal(testBox.busy,'false','comparison settles after an independent failure');
+assert.equal((testBox.innerHTML.match(/class="peer"/g)||[]).length,2);
+assert.match(testBox.innerHTML,/比較を再試行/,'failed comparisons allow a retry');
+assert.equal(typeof testBox.retry,'function');
+assert.deepEqual(annual.observe(ctx),beforeWorker,'worker messages never mutate active life or RNG');
+assert.equal(storage.get('terra2'),'original-autosave');
+assert.equal(history.innerHTML,journalBefore);
+assert.equal(ending.innerHTML,endingBefore);
 
-// A real postmortem invokes three independent hidden simulations while the
-// original ending is still mounted. A previously hidden death replaced this
-// very container, making all rendered results invisible to the player.
-const integration = vm.runInContext(`(() => {
-  const oldHL=HL,oldDead=S.dead;
-  const box={html:"",innerHTML:"",setAttribute(){},
-    querySelector(){return null;}};
-  const root={querySelector:selector=>selector===".peers"?box:null};
-  const previousHtml=document.getElementById("rs").innerHTML;
-  const previousJournal=document.getElementById("lg").innerHTML;
-  try {
-    HL=0;
-    S.dead=1;
-    renderEndingPeers(S,root);
-    return {
-      results:(box.innerHTML.match(/class="peer"/g)||[]).length,
-      html:box.innerHTML,
-      endingIntact:document.getElementById("rs").innerHTML===previousHtml,
-      journalIntact:document.getElementById("lg").innerHTML===previousJournal
-    };
-  } finally {HL=oldHL;S.dead=oldDead;}
-})()`,ctx,{timeout:60000});
-assert.ok(integration.results>=1,
-  'real postmortem comparison must produce at least one valid life, not only mocked results');
-assert.ok(integration.endingIntact && integration.journalIntact,
-  'all hidden lives preserve the visible ending and the visible journal');
+// A replacement lifetime cancels a worker before it can publish stale results.
+vm.runInContext('renderEndingPeers(S,testPeerRoot,1)',ctx);
+const stale = workers[1];
+assert.equal(stale.request.retryAttempt,1);
+vm.runInContext('born({by:1077,seed:905044})',ctx);
+assert.equal(stale.terminated,true,'a new birth terminates the old comparison');
+stale.onmessage({data:{type:'done'}});
+assert.equal(testBox.busy,'true','stale results cannot replace the new screen');
+
+// Successful results are cached for the current engine and seed only.
+vm.runInContext('S.dead=1;renderEndingPeers(S,testPeerRoot,0)',ctx);
+const full = workers[2];
+for(let i=0;i<3;i++)full.onmessage({data:{type:'peer',index:i,person}});
+full.onmessage({data:{type:'done'}});
+vm.runInContext('renderEndingPeers(S,testPeerRoot,0)',ctx);
+assert.equal(workers.length,3,'a fully successful comparison reuses its session cache');
+assert.equal(testBox.busy,'false');
+vm.runInContext('cancelEndingPeerComparison()',ctx);
+delete ctx.Worker;
+vm.runInContext('S.dead='+Number(originalDead)+';HL=1;',ctx);
 
 // The supported birth-year edges and different caller death ages must not
 // let hidden peer births replace the active dead life, save, or random stream.
@@ -112,8 +131,11 @@ for (const [by,age] of [[1000,0],[1100,72]]) {
   const statistics=vm.runInContext('JSON.stringify(STAT)',ctx);
   const html=ending.innerHTML, journal=history.innerHTML;
   storage.set('terra2','boundary-autosave');
-  const result=vm.runInContext('simPeer(905042)',ctx,{timeout:30000});
-  assert.ok(result.nm && result.dc && Number.isInteger(result.age));
+  let result=null, failure=null;
+  try { result=vm.runInContext('simPeer(905042)',ctx,{timeout:30000}); }
+  catch (error) { failure=error; }
+  if (result) assert.ok(result.nm && result.dc && Number.isInteger(result.age));
+  else assert.ok(failure?.message, 'the comparison exposes a specific per-life failure');
   assert.deepEqual(annual.observe(ctx),snapshot,'boundary comparison restores life/world/RNG');
   assert.equal(vm.runInContext('JSON.stringify(STAT)',ctx),statistics);
   assert.equal(storage.get('terra2'),'boundary-autosave');

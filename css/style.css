@@ -719,3 +719,6 @@ body::before {
   display: block;
   width: 100%;
 }
+#travel-controls { display:flex; flex-direction:column; gap:0.5rem; }
+#travel-controls select, #travel-controls button { max-width:100%; min-width:0; }
+#travel-controls p { margin:0.25rem 0; }

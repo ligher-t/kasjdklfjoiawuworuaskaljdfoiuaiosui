@@ -12,6 +12,8 @@ window.TERRA_DATA_BUILD.run("routes/rhodes-and-factions", function ($terraData, 
   $parts("routes/rhodes-and-factions/cross-faction-routes");
   $parts("routes/rhodes-and-factions/bsw-routes");
   $parts("routes/rhodes-and-factions/rhine-routes");
+  $parts("routes/rhodes-and-factions/rhodes-additional-events");
+  $parts("routes/rhodes-and-factions/reunion-additional-events");
   // Run after every Rhodes route event, including referral and reapplication followups.
   for (const event of $terraData.EV) {
     if (!event.id.startsWith("sr_rhodes_")) continue;

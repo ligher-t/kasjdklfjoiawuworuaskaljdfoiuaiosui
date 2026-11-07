@@ -16,7 +16,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "ウルサス" && s.job === $terraData.REG_JOBS.urs_officer,
+      show: s => s.res?.n === "ウルサス" && $terraData.regionalCareerOnDuty(s, "urs_officer"),
       t: "要塞前広場で、凍てつく風の中を直立する兵士たちを馬上から閲兵した。毛皮の軍服に積もる雪を払うことも許さぬ絶対の軍規。ウルサスの軍事力は、この無情な服従の上に築かれている。",
       c: [
         $terraData.K("閲兵を終え、幕僚たちとウォッカで体を温める", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -33,13 +33,15 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 23 },
-      show: s => s.res?.n === "ウルサス" && s.job === $terraData.REG_JOBS.urs_officer,
+      show: s => s.res?.n === "ウルサス" && $terraData.regionalCareerOnDuty(s, "urs_officer"),
       t: "軍団長から極秘の密命が下された。反皇帝派の疑いがある同僚の貴族将校を、演習中の事故に見せかけて抹殺せよという。従えば軍団長の側近へ引き立てられるが、拒めば自らが反逆者として消される。",
       c: [
         $terraData.K("命令に従い、砲兵の誤爆に見せかけて標的を葬る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
           0.5,
           "事故偽装を完璧にやり遂げ、疑惑を一切持たれずに標的を排除した。軍団長から絶大な信任を得て、近衛少佐への昇進が決定した。",
-          { cr: 5, p: -3, cash: 1500000, groupStanding: { id: "ursus-officers", title: "帝国軍将校団", delta: 3 } }
+          { cr: 5, p: -3, cash: 1500000, groupStanding: { id: "ursus-officers", title: "帝国軍将校団", delta: 3 },
+            lifeAffiliation: { id: "ursus-imperial-officer", action: "role", role: "近衛少佐",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           1,
           "偽装に綻びが生じ、相手の親族である大貴族に察知された。軍法会議にかけられ、銃殺刑を宣告された。",
@@ -47,8 +49,16 @@ window.TERRA_DATA_BUILD.fragment(
         ]),
         $terraData.K("良心に従って命令を拒絶し、将校を辞任する", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
-          "軍服を脱ぎ捨てて要塞を脱出した。不名誉除隊とされ全財産を没収されたが、命だけは守った。",
-          { job: 0, cash: -2000000, p: 3, cr: -5 }
+          "軍服を脱ぎ捨てて要塞を脱出した。不名誉除隊とされ、財貨を差し押さえられたが、命だけは守った。",
+          { job: 0, cash: -2000000, p: 3, cr: -5 ,
+            lifeAffiliation: { id: "ursus-imperial-officer", action: "leave",
+              note: "命令を拒んで要塞を去り、不名誉除隊として軍籍を終えた" },
+            lifeGoals: [
+              { id: "ursus-imperial-command", action: "abandon", onlyIfUnresolved: true,
+                note: "不名誉除隊により、帝国軍で指揮を続ける目標を終えた" },
+              { id: "ursus-dismissed-officer-next-livelihood", title: "不名誉除隊後の暮らしと次の仕事を立て直す",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ])
       ]
     },
@@ -63,7 +73,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 19 },
-      show: s => s.res?.n === "ウルサス" && s.job === $terraData.REG_JOBS.urs_guard,
+      show: s => s.res?.n === "ウルサス" && $terraData.regionalCareerOnDuty(s, "urs_guard"),
       t: "鉛色の空の下、雪に埋もれたコンクリートトーチカで銃を抱えて立った。双眼鏡で荒涼たる雪原を監視し、凍えた手足を焚火にかざす。粗末な黒パンを齧りながら、交代のラッパを待つ。",
       c: [
         $terraData.K("交代兵に銃を引き渡し、粗末な兵舎へ戻る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -80,17 +90,20 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 21 },
-      show: s => s.res?.n === "ウルサス" && s.job === $terraData.REG_JOBS.urs_guard,
+      show: s => s.res?.n === "ウルサス" && $terraData.regionalCareerOnDuty(s, "urs_guard"),
       t: "監視する感染者炭鉱の地下最深部で、虐待に耐えかねた囚人たちがツルハシを手に一斉に暴動を起こした。坑道の出入口を塞ぐ鉄扉の前で、援軍が来るまで銃剣で死守するか、扉を捨てて地上へ逃げるか。",
       c: [
         $terraData.K("鉄扉の前に踏みとどまり、銃剣で突撃を迎え撃つ", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "猛烈なツルハシの連撃を銃剣で捌き、増援の到着まで扉を死守した。暴動は鎮圧され、勇敢さを称えられて憲兵軍曹へ昇進した。",
-          { h: -3, p: 3, cr: 3, cash: 300000 }
+          { h: -3, p: 3, cr: 3, cash: 300000,
+            lifeAffiliation: { id: "ursus-border-mine-guard", action: "role", role: "憲兵軍曹",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "重傷を負いながらも気絶するまで戦い抜いた。一命を取り留めたが、源石の破片を浴びて鉱石病を発症した。",
-          { h: -10, p: -5, fl: { dg: 1 } }
+          { h: -10, p: -5, inf: 1, infectionRoute: "wound",
+            infCause: "坑道暴動で源石の破片によって負った創傷", fl: { dg: 1 } }
         ], [
           1,
           "狂乱した囚人の群れに押し潰され、ツルハシで胸を刺し貫かれて絶命した。",
@@ -99,7 +112,78 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("鍵を投げ捨ててエレベーターへ逃げ込む", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
           "命からがら地上へ脱出したが、職場放棄の重罪で軍務を追放された。",
-          { job: 0, p: -5, cr: -3 }
+          { job: 0, p: -5, cr: -3 ,
+            lifeAffiliation: { id: "ursus-border-mine-guard", action: "leave",
+              note: "坑道から脱出した後、職場放棄を理由に軍務を追放された" },
+            lifeGoals: [
+              { id: "ursus-border-mine-patrol", action: "abandon", onlyIfUnresolved: true,
+                note: "軍務追放によって、国境と鉱山での警備任務を終えた" },
+              { id: "ursus-expelled-guard-next-livelihood", title: "軍務追放後の次の働き口を探す",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
+        ])
+      ]
+    },
+    {
+      id: "car_urs_guard_choice_captive_order",
+      conf: "S",
+      references: ["SRC_VIOLENCE_LIFEPATH_MODEL"],
+      once: true,
+      cd: 99,
+      w: 0.035,
+      st: ["青年", "壮年"],
+      ge: { age: 21 },
+      show: s => s.res?.n === "ウルサス" && $terraData.regionalCareerOnDuty(s, "urs_guard"),
+      t: "夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足元で膝を抱えている。",
+      c: [
+        $terraData.K("命令の根拠を問い直す", {}, [
+          1,
+          "隊長は「命令だ」と繰り返した。あなたは銃を下ろしたまま、捕虜を撃たなかった。兵舎へ戻された後も、男の行方は分からなかった。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "ursus-captive-execution-order",
+              kind: "refusal", context: "military", decision: "questioned-order-and-did-not-fire",
+              outcome: "prevented", targetGroup: "infected-captive",
+              victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-scene", "order-received", "order-questioned", "execution-not-carried-out"] } }
+        ]),
+        $terraData.K("執行を拒み、捕虜へ銃を向けない", {}, [
+          1,
+          "「撃てません」。そう答えると隊長は銃を預かり、あなたを監視所から外した。捕虜は詰所の奥へ連れて行かれたが、その後のことは知らされなかった。",
+          { lifeAffiliation: { id: "ursus-border-mine-guard", action: "role", role: "兵舎当番",
+              note: "捕虜の処刑命令を拒み、監視所から外された", onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "ursus-captive-execution-order",
+              kind: "refusal", context: "military", decision: "refused-prisoner-execution",
+              outcome: "prevented", targetGroup: "infected-captive",
+              victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-scene", "order-received", "refused-order", "weapon-surrendered"] } }
+        ]),
+        $terraData.K("命令どおりに、拘束された男を撃つ", {}, [
+          0.5,
+          "一発の銃声が詰所に響いた。衛生兵は男の死亡を確かめ、隊長は記録票にあなたの名を書いた。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "ursus-captive-execution-order",
+              kind: "unlawful-order-execution", context: "military", decision: "executed-prisoner-shooting-order",
+              outcome: "confirmed-death", targetGroup: "infected-captive",
+              victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              deathEvidence: "confirmed", deathEvidenceId: "medical-death-confirmation-at-guard-post",
+              evidenceIds: ["active-military-duty", "present-at-scene", "order-received", "protected-person-target",
+                "order-executed-by-protagonist", "medical-death-confirmation-at-guard-post"] } }
+        ], [
+          0.75,
+          "弾丸は男の脇腹に命中した。衛生兵が止血し、捕虜を医務所へ運んだ。隊長はあなたに見張りへ戻るよう命じた。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "ursus-captive-execution-order",
+              kind: "unlawful-order-execution", context: "military", decision: "executed-prisoner-shooting-order",
+              outcome: "injured", targetGroup: "infected-captive",
+              victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-scene", "order-received", "protected-person-target",
+                "order-executed-by-protagonist", "prisoner-survival-confirmed"] } }
+        ], [
+          1,
+          "銃声の後、停電と煙で詰所は騒然とした。男が倒れて運び出されたのは見たが、生死は確かめられなかった。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "ursus-captive-execution-order",
+              kind: "unlawful-order-execution", context: "military", decision: "executed-prisoner-shooting-order",
+              outcome: "unresolved", targetGroup: "infected-captive",
+              victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-scene", "order-received", "protected-person-target",
+                "order-executed-by-protagonist", "post-shot-outcome-unconfirmed"] } }
         ])
       ]
     },
@@ -114,7 +198,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 19 },
-      show: s => s.res?.n === "ヴィクトリア" && s.job === $terraData.REG_JOBS.vic_infantry,
+      show: s => s.res?.n === "ヴィクトリア" && $terraData.regionalCareerOnDuty(s, "vic_infantry"),
       t: "冷たい雨が降り続くヴィクトリア軍の演習陣地。膝まで泥に浸かりながら塹壕の土嚢を積み直し、油布で小銃のボルトを拭った。貴族将校が天幕で温かいスープを飲むのを横目に、冷え切った固パンを齧る。",
       c: [
         $terraData.K("小隊の仲間と煙草を分け合って一息つく", { ethics: { reviewed: true, policyVersion: 87, intent: "self-or-family-care" } }, [
@@ -131,13 +215,20 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 21 },
-      show: s => s.res?.n === "ヴィクトリア" && s.job === $terraData.REG_JOBS.vic_infantry,
+      show: s => s.res?.n === "ヴィクトリア" && $terraData.regionalCareerOnDuty(s, "vic_infantry"),
       t: "行軍中、霧の立ち込める渓谷で待ち伏せしていた凶悪なサルカズ傭兵団の奇襲を受けた。貴族将校は狼狽して逃げ腰になり、歩兵小隊が孤立した。銃剣を構えて突撃するか、土手を盾にして応戦するか。",
       c: [
         $terraData.K("銃剣突撃の号令を自ら叫び、敵の側面を衝く", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "怯む仲間を鼓舞して果敢に突撃し、サルカズの指揮官を銃剣で討ち取った。小隊を全滅の危機から救い、平民としては異例の『連隊先任軍曹』へ抜擢された。",
-          { h: -2, cr: 4, p: 3, cash: 400000 }
+          { h: -2, cr: 4, p: 3, cash: 400000,
+            lifeAffiliation: { id: "victoria-regular-infantry", action: "role", role: "連隊先任軍曹",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "victoria-frontier-skirmish-commanders-death",
+              kind: "combat-lethal", context: "military", decision: "bayonet-killed-enemy-commander",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              deathEvidence: "observed", deathEvidenceId: "commander-fatal-injury-observed",
+              evidenceIds: ["active-military-duty", "present-at-theater", "confirmed-combatant-target", "commander-fatal-injury-observed"] } }
         ], [
           0.85,
           "撃退には成功したが、大剣で腕を切り裂かれ重傷を負った。",
@@ -165,7 +256,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 21 },
-      show: s => s.res?.n === "ヴィクトリア" && s.job === $terraData.REG_JOBS.vic_royal,
+      show: s => s.res?.n === "ヴィクトリア" && $terraData.regionalCareerOnDuty(s, "vic_royal"),
       t: "ロンディニウムの豪壮な将校クラブで、大公爵派閥の貴族たちとワイングラスを傾けた。壁に掛けられた歴代の武勲詩。どの公爵が次の軍需予算を握るか、華やかな制服の下で冷徹な情報戦が繰り広げられる。",
       c: [
         $terraData.K("公爵の副官と親交を深め、派閥の動向を探る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -184,13 +275,26 @@ window.TERRA_DATA_BUILD.fragment(
       w: 0.4,
       ge: { age: 22, year: 1094 },
       le: { year: 1094 },
-      show: s => s.res?.n === "ヴィクトリア" && s.job === $terraData.REG_JOBS.vic_royal,
-      t: "1094年、ロンディニウムにカズデル軍事委員会が介入し、大公爵たちの利権闘争が頂点に達した。所属する公爵家が議会襲撃で敗北し、司令部が包囲された。反逆者として公爵と共に散るか、それとも寝返って新体制に忠誠を誓うか。",
+      show: s => s.res?.n === "ヴィクトリア" && $terraData.regionalCareerOnDuty(s, "vic_royal"),
+      t: "1094年、ロンディニウムではカズデル軍事委員会の影響が強まり、大公爵たちの利権争いも深まっていた。所属する公爵家の部隊は対立勢力に敗れ、司令部を包囲された。公爵の旗を守って抗戦するか、武器を置いて降伏するか。",
       c: [
         $terraData.K("サーベルを抜き、公爵の旗を守るため最後まで防衛戦を指揮する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
           "血路を開いて包囲を突破し、公爵家の後継者を連れて地方へ脱出した。忠義の士として称えられ、亡命貴族軍の最高指揮官となった。",
-          { cr: 5, p: 4, h: -4, cash: 2000000 }
+          { cr: 5, p: 4, h: -4, cash: 2000000, job: 55,
+            lifeGoals: [
+              { id: "victoria-officer-career", action: "compromise", onlyIfUnresolved: true,
+                note: "元の公爵軍での任務を終え、後継者と残存部隊の指揮へ移った" },
+              { id: "victoria-exiled-command", title: "亡命公爵家の部隊を率いて任務を続ける",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ],
+            lifeAffiliations: [
+              { id: "victoria-royal-officer", action: "leave",
+                note: "公爵家の敗北により元の指揮系統を離れた" },
+              { id: "victoria-exiled-ducal-command", title: "亡命公爵家の残存部隊",
+                kind: "employer", action: "join", role: "最高指揮官",
+                note: "公爵家の後継者と脱出し、残存部隊の指揮を任された" }
+            ] }
         ], [
           1,
           "軍事委員会のサルカズ精鋭に司令部を制圧され、捕縛された。反逆者としてロンディニウムの断頭台へ送られ、処刑された。",
@@ -199,7 +303,80 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("軍刀を床に置き、白旗を掲げて降伏する", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
           "爵位と財産を剥奪されたが命は助命され、平民として解放された。",
-          { job: 0, cash: -3000000, p: -5, cr: -4 }
+          { job: 0, cash: -3000000, p: -5, cr: -4,
+            lifeAffiliation: { id: "victoria-royal-officer", action: "leave",
+              note: "降伏により爵位と任官資格を失い、公爵軍を離れた" },
+            lifeGoals: [
+              { id: "victoria-officer-career", action: "abandon", onlyIfUnresolved: true,
+                note: "降伏により公爵軍の軍歴と派閥での権力追求を終えた" }
+            ] }
+        ])
+      ]
+    },
+
+    // The refugee command follows one person's survived 1094 coup outcome.
+    // No destination country or restoration to power is inferred.
+    {
+      id: "car_vic_exile_command_review",
+      conf: "S",
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.35,
+      ge: { age: 24, year: 1096 },
+      le: { year: 1098 },
+      after: { id: "car_vic_royal_choice_coup", min: 2, choice: 0, outcome: 0 },
+      show: s => s.res?.n === "ヴィクトリア" && s.job === 55 &&
+        $rules.affiliations.canWork(s, "victoria-exiled-ducal-command"),
+      t: "公爵家が都を追われてから幾年かが過ぎた。残った兵の名簿には、二度と戻らない者の名もある。かつての軍旗を守り続けるか、指揮の役目を終えて別の暮らしを探すか、決める時が来た。",
+      c: [
+        $terraData.K("残った部隊の指揮を続ける", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+          1,
+          "補給と宿営の帳面を開き、残る兵たちの持ち場を確かめた。次の朝も同じ旗の下で点呼を取ることにした。",
+          { k: 1, p: -1,
+            lifeGoal: { id: "victoria-exiled-command", action: "continue",
+              note: "残存部隊の指揮と補給の役目を継続した" } }
+        ]),
+        $terraData.K("指揮を引き継ぎ、軍務を離れる", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
+          1,
+          "指揮の引継ぎを終え、使い込んだ軍刀を布に包んだ。部隊の行方を決める席から離れ、当面の暮らしを自分で考えることにした。",
+          { job: 0,
+            lifeAffiliation: { id: "victoria-exiled-ducal-command", action: "leave",
+              note: "残存部隊の指揮を引き継ぎ、軍務を離れた" },
+            lifeGoal: { id: "victoria-exiled-command", action: "abandon",
+              note: "亡命部隊の指揮を終えた" } }
+        ])
+      ]
+    },
+
+    // The canonical 1098 end of the occupation changes the context of this
+    // fictional exile unit. Its survival and dissolution remain personal choices.
+    {
+      id: "car_vic_exile_postwar_review",
+      conf: "S",
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.45,
+      ge: { age: 24, year: 1099 },
+      after: { id: "car_vic_royal_choice_coup", min: 5, choice: 0, outcome: 0 },
+      show: s => s.res?.n === "ヴィクトリア" && s.job === 55 &&
+        $rules.affiliations.canWork(s, "victoria-exiled-ducal-command"),
+      t: "ロンディニウムの戦いが終わり、カズデル軍事委員会は都を去った。議会では復興のための話し合いが続いているが、敗れた公爵家の残存部隊がこの先どこに属するのかは定まっていない。かつて守った旗を掲げ続けるか、指揮を引き継いで軍務を終えるか。",
+      c: [
+        $terraData.K("残存部隊の指揮を続け、戦後の情勢を見定める", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+          1,
+          "占領軍の撤退は、失った部下を連れ戻してはくれなかった。兵の数と補給の残りを確かめ、今はまだ部隊の旗を降ろさないことにした。",
+          { k: 1, p: -1,
+            lifeGoal: { id: "victoria-exiled-command", action: "continue",
+              note: "戦後も残存部隊の指揮と補給を引き受けた" } }
+        ]),
+        $terraData.K("指揮を引き継ぎ、軍務を終える", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
+          1,
+          "これまでの命令書と兵の名簿を整理し、指揮の引継ぎを済ませた。戦争は終わった。明日の仕事は、もう軍刀を手に決めるものではない。",
+          { job: 0,
+            lifeAffiliation: { id: "victoria-exiled-ducal-command", action: "leave",
+              note: "戦後、残存部隊の指揮を引き継いで軍務を終えた" },
+            lifeGoal: { id: "victoria-exiled-command", action: "abandon",
+              note: "戦後の転身を選び、亡命部隊での指揮を終えた" } }
         ])
       ]
     },
@@ -214,7 +391,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "リターニア" && s.job === $terraData.REG_JOBS.lei_golden,
+      show: s => s.res?.n === "リターニア" && $terraData.regionalCareerOnDuty(s, "lei_golden"),
       t: "女帝の双塔を結ぶ高架回廊で、音律法典のアーツ発振器を調律した。完璧な純正律の和音を響かせ、都市の精神安定結界を維持する。わずかな不協和音も許さぬ金律法衛の誇りと重責が、全身の神経を研ぎ澄ませる。",
       c: [
         $terraData.K("調律を完了し、女帝の紋章に一礼する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -231,13 +408,15 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "リターニア" && s.job === $terraData.REG_JOBS.lei_golden,
+      show: s => s.res?.n === "リターニア" && $terraData.regionalCareerOnDuty(s, "lei_golden"),
       t: "ツヴィリングトゥルムの地下深く、かつて巫王が築いた禁断の音律院で残党たちが狂乱のアーツ演奏を行っていた。歪んだ旋律が精神を蝕む中、法衛として即座に突入しアーツで鎮圧するか。",
       c: [
         $terraData.K("金律の絶対和音を展開し、異端の旋律を粉砕する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "金律杖から放たれた神聖な光の和音が狂気の旋律を完全に打ち消し、残党を一網打尽にした。女帝直属の首席法衛へと抜擢された。",
-          { k: 4, p: 4, cr: 5, cash: 1500000 }
+          { k: 4, p: 4, cr: 5, cash: 1500000,
+            lifeAffiliation: { id: "leithania-golden-law", action: "role", role: "首席法衛",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "残党を制圧したものの、巫王の呪詛アーツを耳にしてしまい、激しい頭痛と幻聴の後遺症を負った。",
@@ -265,7 +444,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "ラテラーノ" && s.job === $terraData.REG_JOBS.lat_executor,
+      show: s => s.res?.n === "ラテラーノ" && $terraData.regionalCareerOnDuty(s, "lat_executor"),
       t: "公証人役場の執務室で、他国企業とラテラーノ市民の間に結ばれた遺産分割契約書を審査した。午後は射撃場で守護銃の分解清掃と的当て。サンクタ法典の厳格な条文と火薬の匂いが、執行人の日常を満たす。",
       c: [
         $terraData.K("報告書を提出し、名物のアップルパイを食べる", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -282,7 +461,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "ラテラーノ" && s.job === $terraData.REG_JOBS.lat_executor,
+      show: s => s.res?.n === "ラテラーノ" && $terraData.regionalCareerOnDuty(s, "lat_executor"),
       t: "公証人役場の特務指令。国外の無法地帯において、ラテラーノ市民の遺産である聖遺物と守護銃が武装傭兵団に略奪された。法典の履行のため、単身で傭兵アジトへ乗り込み返還調停を行うか。",
       c: [
         $terraData.K("法典を宣告し、守護銃の連射で制圧する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -304,7 +483,171 @@ window.TERRA_DATA_BUILD.fragment(
           { k: 2, cr: 2 }
         ])
       ]
-    }
+    },
+    {
+      id: "car_urs_officer_after_dismissal",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 25 },
+      after: { id: "car_urs_officer_choice_purge", min: 2, choice: 1 },
+      show: s => true &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-imperial-officer" &&
+          (a.status === "left" || (a.status === "active" && s.job === 51))) &&
+        s.lifeRecord?.goals?.some(g => g.id === "ursus-dismissed-officer-next-livelihood" &&
+          ["active", "compromised", "paused"].includes(g.status)),
+      t: "軍服を脱いだあの日から幾年かが過ぎた。不名誉除隊の記録と失ったものは、今も自分の経歴に残っている。新しい仕事や生活のかたちを、あらためて考える機会が訪れた。",
+      c: [
+        $terraData.K("働き口の手がかりを探す", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "店の軒先や仕事を仲介する者を訪ねて歩いた。今日のところ、雇ってくれる者は見つからなかった。",
+          { lifeGoal: { id: "ursus-dismissed-officer-next-livelihood", action: "continue",
+            note: "除隊後の求職を続けたが、採用はまだ成立していない" } }]),
+        $terraData.K("当面は仕事探しを休む", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "ひとまず足を止め、手元に残ったものを数えた。次の勤め先を決めるのは、もう少し先に延ばした。",
+          { lifeGoal: { id: "ursus-dismissed-officer-next-livelihood", action: "pause",
+            note: "除隊後の求職をいったん休んだ" } }]),
+        $terraData.K("今の仕事で新たな生活を始めたと認める", {
+          show: s => s.job > 0 && s.job !== 51,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "かつての階級は今の勤め先では役に立たない。自分の仕事を終え、約束された報酬を受け取った。",
+          { lifeGoal: { id: "ursus-dismissed-officer-next-livelihood", action: "complete",
+            note: "帝国軍を離れた後、別の実際の職業で新しい生計を得た" } }]),
+        $terraData.K("働き始めた後も先行きを考え続ける", {
+          show: s => s.job > 0 && s.job !== 51,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "新しい勤務は続いている。それでも、この先の暮らしを決めるにはまだ早いと感じた。",
+          { lifeGoal: { id: "ursus-dismissed-officer-next-livelihood", action: "continue",
+            note: "別の仕事に就いたが、除隊後の生計を引き続き見極める" } }]),
+        $terraData.K("軍に再採用された仕事を、生活再建の区切りとする", {
+          show: s => s.job === 51 && $rules.affiliations.canWork(s, "ursus-imperial-officer"),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "新たな任命書に署名し、かつての勤務地とは異なる持ち場の仕事を始めた。不名誉除隊の記録は残るが、今は自分の給金で暮らしている。",
+          { lifeGoal: { id: "ursus-dismissed-officer-next-livelihood", action: "complete",
+            note: "個別の処分審査後に再採用され、軍務で新たな生計を得た" } }])
+      ]
+    },
+    {
+      id: "car_urs_guard_after_expulsion",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 23 },
+      after: { id: "car_urs_guard_choice_riot", min: 2, choice: 1 },
+      show: s => true &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-border-mine-guard" &&
+          (a.status === "left" || (a.status === "active" && s.job === 52))) &&
+        s.lifeRecord?.goals?.some(g => g.id === "ursus-expelled-guard-next-livelihood" &&
+          ["active", "compromised", "paused"].includes(g.status)),
+      t: "坑道を離れたあの日のことは今も覚えている。軍務を追われた後の日々は、以前とは違う重みを持っていた。今の仕事も、次の暮らしも、自分で選び直すことができる。",
+      c: [
+        $terraData.K("別の働き口を探して回る", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "早朝から求人の話を聞いて回った。仕事を頼めそうな相手の名前を覚えたが、採用の約束は得られなかった。",
+          { lifeGoal: { id: "ursus-expelled-guard-next-livelihood", action: "continue",
+            note: "追放後も求職を続けたが、新たな採用は成立していない" } }]),
+        $terraData.K("しばらく身を休める", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "人の少ない場所に腰を下ろし、しばらく何もしないことにした。翌日の暮らしは、まだ決めていなかった。",
+          { lifeGoal: { id: "ursus-expelled-guard-next-livelihood", action: "pause",
+            note: "軍務追放後の求職を一時中断した" } }]),
+        $terraData.K("次の職を得たことに一区切りつける", {
+          show: s => s.job > 0 && s.job !== 52,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "今の仕事を終え、報酬を受け取った。坑道の扉の内側とは違う場所で、一日を終えることができた。",
+          { lifeGoal: { id: "ursus-expelled-guard-next-livelihood", action: "complete",
+            note: "軍務追放の後、別の実際の職業で生計を得た" } }]),
+        $terraData.K("新しい職があっても暮らしを見直し続ける", {
+          show: s => s.job > 0 && s.job !== 52,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "働き始めてからも、いつまでこの勤めが続くかは分からない。しばらく考え続けることにした。",
+          { lifeGoal: { id: "ursus-expelled-guard-next-livelihood", action: "continue",
+            note: "別の仕事に就いたが、追放後の暮らしの安定を引き続き見極める" } }]),
+        $terraData.K("再採用後の警備勤務を、生活再建の区切りとする", {
+          show: s => s.job === 52 && $rules.affiliations.canWork(s, "ursus-border-mine-guard"),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "新しい配属先で交代勤務を終えた。以前の坑道からは離れているが、任された仕事を終えるたびに給金が支払われるようになった。",
+          { lifeGoal: { id: "ursus-expelled-guard-next-livelihood", action: "complete",
+            note: "処分再審査後の再採用によって、警備勤務で生計を立て直した" } }])
+      ]
+    },
+    {
+      id: "car_urs_officer_disciplinary_review",
+      conf: "S",
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.32,
+      ge: { age: 25 },
+      after: { id: "car_urs_officer_choice_purge", min: 3, choice: 1, outcome: 0 },
+      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-imperial-officer" &&
+          a.status === "left" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        !(s.eventOutcomes?.car_urs_officer_disciplinary_review?.choiceIndex === 0 &&
+          s.eventOutcomes?.car_urs_officer_disciplinary_review?.outcomeIndex === 0),
+      t: "かつての不名誉除隊について、軍の記録担当が例外的な処分再審査の申立書を受け付けると知った。命令を拒んだ事情を記せば、当時の上官の判断も問い直すことになる。古い対立を掘り起こす危険はあった。",
+      c: [
+        $terraData.K("当時の命令と除隊の経緯を書き、審査を申し立てる", {
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [
+          0.2,
+          "数度の照会の後、処分記録に再審査の結果が追記された。士官候補として再応募することは認められたが、階級も任地も戻ってはいない。",
+          { k: 1, p: 1 }
+        ], [
+          1,
+          "軍司令部からは、処分を見直す根拠が見いだせないという短い返書が届いた。封書を閉じても、あの命令を拒んだ日の記憶は消えなかった。",
+          { p: -1 }
+        ]),
+        $terraData.K("処分には触れず、今の暮らしを優先する", {
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [
+          1,
+          "申立書を破り、いつもの仕事探しに戻ることにした。かつての肩章に頼らず暮らす道も、自分には残されていた。",
+          { p: 1 }
+        ])
+      ]
+    },
+    {
+      id: "car_urs_guard_disciplinary_review",
+      conf: "S",
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.32,
+      ge: { age: 23 },
+      after: { id: "car_urs_guard_choice_riot", min: 3, choice: 1, outcome: 0 },
+      show: s => s.res?.n === "ウルサス" && s.job === 0 && !s.fl?.retired &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "ursus-border-mine-guard" &&
+          a.status === "left" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        !(s.eventOutcomes?.car_urs_guard_disciplinary_review?.choiceIndex === 0 &&
+          s.eventOutcomes?.car_urs_guard_disciplinary_review?.outcomeIndex === 0),
+      t: "軍務を追われて数年が経ち、かつての坑道での出来事を別の担当者に申し立てられると聞いた。脱出を選んだ理由も、退路を塞いだ状況も、記録の中では短い「職場放棄」の一語で片付けられていた。",
+      c: [
+        $terraData.K("坑道の状況と自分の証言を提出し、処分の再審査を求める", {
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [
+          0.4,
+          "提出した報告が照合され、再び警備隊の採用選考を受ける資格を認められた。以前の処分や失った年月は記録に残っている。",
+          { k: 1, p: 1 }
+        ], [
+          1,
+          "返ってきたのは、処分を変更しないという通知だけだった。事件の詳しい事情は、今回の判断には採用されなかった。",
+          { p: -1 }
+        ]),
+        $terraData.K("軍務への復帰は望まず、今の生活を続ける", {
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [
+          1,
+          "書きかけの申立書をしまい、これからの仕事を探すことにした。坑道での出来事は、どこへ行っても自分の過去として残る。",
+          { p: 1 }
+        ])
+      ]
+    },
   ];
 
   for (const event of E) {

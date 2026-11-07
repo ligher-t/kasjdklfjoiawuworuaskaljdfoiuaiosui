@@ -195,7 +195,7 @@ window.TERRA_DATA_BUILD.fragment(
       w: 0.5,
       ge: { age: 18, year: 1092 },
       show: s => s.res?.n === "イェラグ" && s.job === 0 && !s.fl?.retired,
-      t: "雪に閉ざされた聖山イェラグを近代化へ導く、シルバーアッシュ総長率いる『カランド貿易』。伝統に固執する三大家族や曼珠院の保守派と対峙しながら、最新式の重火器と近代流通網を駆使して国を開く武装社員が募集されていた。",
+      t: "カランド貿易から案内された面接会場へ来た。受付には輸送路の警備や貨物の扱いを説明する紙が並び、武装社員の募集担当者が応募者の名を呼んでいる。慣れ親しんだ雪道が仕事場になるかもしれないと思い、条件書を手に取った。",
       c: [
         $terraData.K("近代火器の取扱と帳簿管理の試験を受ける", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.5,
@@ -368,16 +368,16 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 19, year: 1092 },
-      show: s => s.res?.n === "イベリア" && s.job === 0 && !s.fl?.retired && !s.fl?.inf,
-      t: "沈黙の海からの侵食と深海教会に怯えるイベリア。大静謐の恐怖を払い、異端と海の怪物を徹底して粛清する『イベリア審問所』。過酷な精神訓練と信仰、そして何より『エーギル族ではないこと』が絶対の条件とされる。",
+      show: s => s.res?.n === "イベリア" && s.job === 0 && !s.fl?.retired,
+      t: "港町の詰所で、裁判所の人員募集を知らせる紙が風に鳴っていた。海の異変への警戒が続くなか、見習い審問官には身元の照会もあるという。列に並ぶ人々のなかには、書類の出自欄を見つめたまま引き返す者もいた。",
       c: [
-        $terraData.K("ランタンを掲げ、異端審問の口頭試問を受ける", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+        $terraData.K("裁判所の採用試問を受ける", { show: { ban: ["種族:エーギル"] }, ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
-          "揺るがぬ意志と大審問官への服従を誓い、制服とアーツランタンを授与された。見習い審問官として、沿岸の異端摘発に身を投じる。",
+          "口頭試問を終えると、制服と灯りが渡された。見習い審問官として沿岸の警戒に加わることになり、詰所の当番表に自分の名が書き込まれた。",
           $terraData.regionalCareerStaff(
             "ibe_inq",
             "iberia-inquisition-officer",
-            "イベリア審問所",
+            "イベリア裁判所",
             "見習い審問官",
             "iberia-inquisition-crusade",
             "海の怪物の侵食を阻み、深海教会の異端を根絶やしにする",
@@ -387,16 +387,25 @@ window.TERRA_DATA_BUILD.fragment(
           )
         ], [
           0.7,
-          "海の怪物の絵姿を見せられた瞬間に恐怖で震え上がり、不合格と判定された。『脆い精神の者は海に呑まれるだけだ』と門前払いを食らった。",
+          "失踪した船員の記録について問われたとき、答えが詰まった。担当者は筆を置き、次の応募者の名を呼んだ。",
           { p: -4 }
         ], [
           1,
-          "海の血を引くエーギル族であることを見破られ、即座に手錠をかけられて地下牢獄へ投獄・過酷な尋問に晒された。",
-          { p: -15, h: -8 }
+          "身元の証明書類に不備があると告げられた。窓口で申し立てても試問に戻る許可は下りず、長く並んだ列を逆に辿った。",
+          { p: -5 }
         ]),
-        $terraData.K("過酷な審問官の道を避ける", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
+        $terraData.K("出自を申告し、試問を求める", { show: { need: ["種族:エーギル"] }, ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+          0.75,
+          "出自を告げると、審問官は帳面を閉じた。『今は採用できない』とだけ答え、理由を尋ねても次の列を指した。",
+          { p: -6, cr: -1 }
+        ], [
           1,
-          "冷酷な審問所の門前を離れ、町へ戻った。",
+          "問答の途中、係官が沿岸の不審な往来について問い始めた。裏付けとなる証言も示されぬまま、衛兵に腕をつかまれ、裁判所の留置室へ連れていかれた。",
+          { fl: { detained: 1 }, p: -12, h: -3 }
+        ]),
+        $terraData.K("審問官への応募を見送る", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
+          1,
+          "応募用紙を折りたたんで詰所を離れ、港の人足が集まる通りへ足を向けた。",
           { p: 1 }
         ])
       ]

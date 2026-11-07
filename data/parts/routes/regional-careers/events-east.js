@@ -16,7 +16,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "炎国" && s.job === $terraData.REG_JOBS.yan_court,
+      show: s => s.res?.n === "炎国" && $terraData.regionalCareerOnDuty(s, "yan_court"),
       t: "州府の公堂で、山積みになった治水工事の進捗報告と戸籍の改定記録に朱筆を走らせた。数字のわずかな不整合を洗い出し、下級書吏に再調査を命じる。平穏な民の暮らしは、こうした地道な墨の跡によって保たれている。",
       c: [
         $terraData.K("淡々と公務をこなし、定刻に退庁する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -33,7 +33,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "炎国" && s.job === $terraData.REG_JOBS.yan_court,
+      show: s => s.res?.n === "炎国" && $terraData.regionalCareerOnDuty(s, "yan_court"),
       t: "管轄下の穀倉地帯を巡視中、地方の有力豪族から私邸に招かれた。豪奢な酒宴の席で、豪族は帳簿の免税措置を願い出て、袖の下から眩い金の延べ棒を差し出してきた。三省の監査が入れば一族巻き添えの重罪になりかねないが、目の前の富はあまりに甘い。",
       c: [
         $terraData.K("賄賂を突き返し、即座に大理寺へ告発状を送る", { ethics: { reviewed: true, policyVersion: 87, intent: "whistleblowing" } }, [
@@ -51,8 +51,17 @@ window.TERRA_DATA_BUILD.fragment(
           { cash: 3000000, p: -5, cr: -4 }
         ], [
           1,
-          "偽装が拙く、わずか三ヶ月後に御史台の監察官に踏み込まれた。官位を剥奪され、重罪人として全財産を没収された。",
-          { job: 0, p: -20, cash: -1000000 }
+          "偽装が拙く、三ヶ月後に御史台の監察官が踏み込んだ。官位を剥奪され、財貨を差し押さえられた。",
+          { job: 0, p: -20, cash: -1000000,
+            lifeAffiliation: { id: "yan-court-bureaucracy", action: "leave",
+              note: "収賄の発覚で官位を剥奪され、朝廷の職を失った" },
+            lifeGoals: [
+              { id: "yan-governance", action: "abandon", onlyIfUnresolved: true,
+                note: "収賄による罷免で官吏の仕事を終えた" },
+              { id: "yan-dismissed-clerk-livelihood",
+                title: "罷免された後の生計を立て直す",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ])
       ]
     },
@@ -67,7 +76,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "炎国" && s.job === $terraData.REG_JOBS.yan_suis,
+      show: s => s.res?.n === "炎国" && $terraData.regionalCareerOnDuty(s, "yan_suis"),
       t: "人里離れた山頂の観測所で、司歳台の特殊計器が刻む地脈の波形を点検した。千年前の巨獣狩り以来、眠りにつく『歳』の気配に異常はないか。冷たい山風の中で杯の湯気を眺めながら、国家の安寧を確かめる。",
       c: [
         $terraData.K("観測記録に封印を施し、本府へ転送する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -84,7 +93,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 23 },
-      show: s => s.res?.n === "炎国" && s.job === $terraData.REG_JOBS.yan_suis,
+      show: s => s.res?.n === "炎国" && $terraData.regionalCareerOnDuty(s, "yan_suis"),
       t: "辺境の荒野で、歳獣の微細な破片が活性化し、周囲の天候を歪めながら暴走していた。近隣の集落が呑み込まれる寸前である。司歳台の監察官として、自らの命を削って封印術式を発動するか、本隊の増援を待つか。",
       c: [
         $terraData.K("単身で封印陣を展開し、巨獣の影を鎮める", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -118,7 +127,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "龍門" && s.job === $terraData.REG_JOBS.lmd_guard,
+      show: s => s.res?.n === "龍門" && $terraData.regionalCareerOnDuty(s, "lmd_guard"),
       t: "ネオン瞬く龍門の中央通りから、薄暗い下層水路へと巡回車を走らせた。違法な源石製品の密輸取引現場を押さえ、抵抗するチンピラを警棒で制圧する。近衛局のバッジを磨き直し、夜警の詰め所へ戻った。",
       c: [
         $terraData.K("日報を提出し、夜食のワンタン麺をすする", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -135,7 +144,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 21 },
-      show: s => s.res?.n === "龍門" && s.job === $terraData.REG_JOBS.lmd_guard,
+      show: s => s.res?.n === "龍門" && $terraData.regionalCareerOnDuty(s, "lmd_guard"),
       t: "近衛局通信から緊急入電。スラム街の廃ビルに武装組織の潜伏拠点が特定された。銃火器で武装した敵に対し、先頭を切って突入するか、催涙弾を撃ち込んで持久戦に持ち込むか。",
       c: [
         $terraData.K("防弾盾を構え、先頭でドアを蹴破る", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -169,7 +178,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "龍門" && s.job === $terraData.REG_JOBS.lmd_black,
+      show: s => s.res?.n === "龍門" && $terraData.regionalCareerOnDuty(s, "lmd_black"),
       t: "近衛局の目が届かぬ高架下の暗がりで、客と無言の取引を交わした。偽造身分証の引き渡し、出入国コードの売買。手渡された札束の厚みを指先で確かめ、路地の影へと溶け込む。",
       c: [
         $terraData.K("稼ぎの一部を隠し金庫に収める", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -186,7 +195,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "龍門" && s.job === $terraData.REG_JOBS.lmd_black,
+      show: s => s.res?.n === "龍門" && $terraData.regionalCareerOnDuty(s, "lmd_black"),
       t: "見知らぬ大物から、近衛局の極秘警備配置図を買い取りたいと破格の報酬が提示された。成功すれば数千万龍門幣の巨利だが、一歩間違えれば近衛局の特捜に踏み込まれるか、裏社会の消去対象にされる。",
       c: [
         $terraData.K("危険を冒して配置図を入手し、取引現場へ運ぶ", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -195,8 +204,17 @@ window.TERRA_DATA_BUILD.fragment(
           { cash: 5000000, p: 2, k: 3 }
         ], [
           1,
-          "取引現場は近衛局の仕組んだ罠だった。一斉射撃の中を逃げ切れず、手錠を打たれて投獄された。",
-          { job: 0, p: -20, cash: -2000000 }
+          "取引現場は近衛局の仕組んだ罠だった。射撃を受けながらも逃げ道を探したが、手錠をかけられ、留置施設へ連行された。",
+          { job: 0, p: -20, cash: -2000000, fl: { detained: 1 },
+            lifeAffiliation: { id: "lungmen-black-market", action: "leave",
+              note: "近衛局に拘束され、黒市の仲介業から離れた" },
+            lifeGoals: [
+              { id: "lmd-underground-deals", action: "abandon", onlyIfUnresolved: true,
+                note: "摘発によって黒市での仲介を続けられなくなった" },
+              { id: "lungmen-post-custody-livelihood",
+                title: "拘束が解けた後に新しい生計を探す",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ]),
         $terraData.K("怪しすぎて手を出せないと断る", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           1,
@@ -216,7 +234,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_samurai,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_samurai"),
       t: "朝靄の立ち込める道場で、息を整えながら居合の抜き付けを繰り返した。白鞘から放たれる鋼の冷たい光。稽古の後、丁字油で刀身を拭い、主君の警固当番へ向かう。武士としての節度と誇りが身に沁みつく。",
       c: [
         $terraData.K("背筋を伸ばし、御殿の門番を務める", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -233,13 +251,20 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_samurai,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_samurai"),
       t: "北朝と南朝の軍勢が川を挟んで対峙する合戦場。敵陣から名うての剛の者が馬を進め、大音声で一騎打ちを呼びかけてきた。主君の御前で名乗りを上げ、武士の誉れを懸けて立ち会うか。",
       c: [
         $terraData.K("太刀を抜き、名乗りを上げて一騎打ちに応じる", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
           "電光石火の抜刀で敵将の甲冑を両断し、討ち取った。両軍から轟く歓声の中、主君より感状と名刀を賜り、旗本頭へ昇進した。",
-          { h: 3, cr: 5, p: 3, cash: 800000 }
+          { h: 3, cr: 5, p: 3, cash: 800000,
+            lifeAffiliation: { id: "higashi-samurai-household", action: "role", role: "旗本頭",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "higashi-battle-duel-death",
+              kind: "combat-lethal", context: "military", decision: "killed-enemy-leader-in-duel",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              deathEvidence: "observed", deathEvidenceId: "duel-fatal-injury-observed",
+              evidenceIds: ["active-military-duty", "present-at-theater", "confirmed-combatant-target", "duel-fatal-injury-observed"] } }
         ], [
           0.85,
           "激闘の末に敵を退けたものの、深手を負って落馬した。味方に救出され、療養所へ運ばれた。",
@@ -252,7 +277,13 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("自重して陣形を維持し、鉄砲隊に射撃を命じる", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
           1,
           "敵将は鉄砲の一斉射撃で討ち取られた。派手さはないが、確実な用兵を評価された。",
-          { p: 1, k: 2 }
+          { p: 1, k: 2,
+            violenceAction: { action: "resolve-scene", scenarioId: "higashi-battle-commanded-volley",
+              kind: "command-harm", context: "military", decision: "ordered-volley-killed-enemy-leader",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              deathEvidence: "observed", deathEvidenceId: "enemy-leader-death-confirmed-by-unit",
+              evidenceIds: ["active-military-duty", "order-issued", "order-executed-by-unit", "subordinate-death-confirmed",
+                "present-at-theater", "confirmed-combatant-target", "enemy-leader-death-confirmed-by-unit"] } }
         ])
       ]
     },
@@ -267,7 +298,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_ninja,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_ninja"),
       t: "敵城の梁の上に息を潜め、数刻にわたり身じろぎ一つせず下の密談を聞き耳を立てた。手裏剣の刃に塗り直した痺れ薬の匂い。夜明け前に城壁を縄で滑り降り、頭領への報告書を暗号で認める。",
       c: [
         $terraData.K("気配を消して路地裏の隠れ処へ潜む", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -284,17 +315,33 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 5,
       w: 0.4,
       ge: { age: 22 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_ninja && !s.fl?.nukenin,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_ninja") && !s.fl?.nukenin,
       t: "頭領から下された新たな指令――それは無実の幼子を抹殺し、自らも証拠隠滅のために毒を仰げという冷酷なものだった。忍びの掟に従い命を捨てるか、それとも里を裏切り、生涯追手と戦い続ける『抜け忍』となるか。",
       c: [
         $terraData.K("巻物を焼き捨て、里から脱走して『抜け忍』となる", { ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" } }, [
           0.5,
           "追跡してきた刺客二人を返り討ちにし、極東の山中へ逃げ延びた。忍び衆の掟を破った『抜け忍』として、生涯追手から命を狙われ続ける修羅の人生が始まった。",
-          { job: 0, fl: { nukenin: 1 }, p: 3, h: 2, cr: -5 }
+          { job: 0, fl: { nukenin: 1 }, p: 3, h: 2, cr: -5 ,
+            lifeAffiliation: { id: "higashi-ninja-clan", action: "leave",
+              note: "忍び衆から脱走し、抜け忍として追われる身となった" },
+            lifeGoals: [
+              { id: "higashi-ninja-mission", action: "abandon", onlyIfUnresolved: true,
+                note: "忍び衆の密命を離れ、元の任務を終えた" },
+              { id: "higashi-nukenin-next-livelihood", title: "追跡を警戒しながら次の生計を見つける",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ], [
           1,
           "逃走の途中で追手の毒矢に射抜かれた。血を吐きながら川へ飛び込み、瀕死の重傷を負いながら街へ流れ着いた。",
-          { job: 0, fl: { nukenin: 1 }, h: -20, p: -10 }
+          { job: 0, fl: { nukenin: 1 }, h: -20, p: -10 ,
+            lifeAffiliation: { id: "higashi-ninja-clan", action: "leave",
+              note: "逃走中に重傷を負い、忍び衆の任務から離脱した" },
+            lifeGoals: [
+              { id: "higashi-ninja-mission", action: "abandon", onlyIfUnresolved: true,
+                note: "忍び衆の密命を離れ、元の任務を終えた" },
+              { id: "higashi-nukenin-next-livelihood", title: "追跡を警戒しながら次の生計を見つける",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ] }
         ]),
         $terraData.K("感情を殺し、掟に従って密命を完遂する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
           1,
@@ -314,7 +361,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_cyber,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_cyber"),
       t: "防音シェルターの暗室で、頭部インターフェースを通じて極東全土の光ファイバー網へ意識を接続した。他国の情報機関が仕掛けてくるクラッキングパケットをミリ秒単位で相殺し、国家基幹システムを防衛する。電脳空間の闇で息づく日常である。",
       c: [
         $terraData.K("ログを消去し、神経接続を解除する", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -331,13 +378,15 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 4,
       w: 0.45,
       ge: { age: 22 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_cyber,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_cyber"),
       t: "国家上層部から最重要指令。クルビアの巨大企業が極東の軍事通信を盗聴している疑いがある。その中枢サーバーへ電子侵入し、盗聴プログラムを無力化せよ。失敗すれば相手の防諜迎撃により端末のアーツユニットが暴走臨界を起こす極限の情報戦である。",
       c: [
         $terraData.K("最高強度の自作ウイルスを展開し、中枢へ突入する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
           "クルビアのファイアウォールを瞬時に粉砕し、盗聴データを完全消去して無傷で離脱した。国家電脳防諜部の『電脳首席執行官』へと登り詰め、国家の影の覇権を握った。",
-          { k: 8, p: 5, cash: 5000000, cr: 5 }
+          { k: 8, p: 5, cash: 5000000, cr: 5,
+            lifeAffiliation: { id: "higashi-cyber-intelligence", action: "role", role: "電脳首席執行官",
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
         ], [
           0.85,
           "作戦には成功したものの、相手の防諜パルスを浴びて一時的な記憶障害と頭痛の後遺症を負った。",
@@ -365,7 +414,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_shinto,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_shinto"),
       t: "朝露の残る神社の石段を竹箒で掃き清め、本堂の蝋燭に火を灯した。病や天災に怯える信徒たちが訪れ、鉱石病の平癒を祈願する。鈴の音を響かせ、真摯に祓いの詞を奏上する。人々の安寧を祈る静かな一日である。",
       c: [
         $terraData.K("信徒たちに供物の茶を振る舞う", { ethics: { reviewed: true, policyVersion: 87, intent: "self-or-family-care" } }, [
@@ -386,7 +435,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
-      show: s => s.res?.n === "極東" && s.job === $terraData.REG_JOBS.hig_touhou,
+      show: s => s.res?.n === "極東" && $terraData.regionalCareerOnDuty(s, "hig_touhou"),
       t: "東方重工の工場内で、最新鋭の旋盤から削り出された手裏剣『シルバーウィンド』同型刃の寸法と硬度を測定した。特殊合金の焼き入れムラがないか、顕微鏡で結晶構造を検査する。大量生産であっても、一撃の切れ味に一切の妥協は許されない。",
       c: [
         $terraData.K("検査合格印を押し、梱包ラインへ送る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
@@ -395,7 +444,112 @@ window.TERRA_DATA_BUILD.fragment(
           { k: 1, h: 1, cash: 180000 }
         ])
       ]
-    }
+    },
+    {
+      id: "car_hig_ninja_after_escape",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 24 },
+      after: { id: "car_hig_ninja_choice_escape", min: 2, choice: 0 },
+      show: s => !!s.fl?.nukenin &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "higashi-ninja-clan" && a.status === "left") &&
+        s.lifeRecord?.goals?.some(g => g.id === "higashi-nukenin-next-livelihood" &&
+          ["active", "compromised", "paused"].includes(g.status)),
+      t: "里を離れた後も、戸口の物音には耳が向いた。かつての名前を知る者がいつ現れるかは分からない。それでも、寝床と食い扶持は今日も必要だった。",
+      c: [
+        $terraData.K("足取りを隠しながら働き口を探す", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "市場に立ち寄り、誰も昔のことを尋ねない仕事がないか聞いて回った。働き口の約束は得られなかった。",
+          { lifeGoal: { id: "higashi-nukenin-next-livelihood", action: "continue",
+            note: "身元と追跡を気にかけつつ、次の仕事を探し続けた" } }]),
+        $terraData.K("いまは身を隠し、求職を休む", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "外へ出るのを控え、手元の食べ物を少しずつ使った。先の見通しは立たなかった。",
+          { lifeGoal: { id: "higashi-nukenin-next-livelihood", action: "pause",
+            note: "身を隠すことを優先し、仕事探しをいったん休んだ" } }]),
+        $terraData.K("新しい仕事を得たことに一区切りつける", {
+          show: s => s.job > 0 && s.job !== 47,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "今の勤め先で働いた分の報酬を受け取った。追われる記憶は残るが、自分の働きで暮らしを支える道が一つできた。",
+          { lifeGoal: { id: "higashi-nukenin-next-livelihood", action: "complete",
+            note: "忍び衆を離れた後、別の実際の職業で生計を得た" } }]),
+        $terraData.K("新しい勤め先があっても警戒を続ける", {
+          show: s => s.job > 0 && s.job !== 47,
+          ethics: { reviewed: true, policyVersion: 87, intent: "procedure" }
+        }, [1, "仕事には通い続けたが、帰り道では何度も背後を確かめた。暮らしを立て直せたかどうか、結論を急がなかった。",
+          { lifeGoal: { id: "higashi-nukenin-next-livelihood", action: "continue",
+            note: "別の職業に就いたが、追跡下での生計の安定を引き続き見極める" } }])
+      ]
+    },
+    {
+      id: "car_yan_court_after_dismissal",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 24 },
+      after: { id: "car_yan_court_choice_bribe", min: 2, choice: 1, outcome: 1 },
+      show: s => s.lifeRecord?.affiliations?.some(a => a.id === "yan-court-bureaucracy" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        s.lifeRecord?.goals?.some(g => g.id === "yan-dismissed-clerk-livelihood" && ["active", "paused", "compromised"].includes(g.status)),
+      t: "官吏の名簿から名を消されて以来、以前の役所の門を通ることはなかった。文字と帳簿を扱う腕は残っている。どこで働くとしても、あの収賄の記録を抱えて暮らすことになる。",
+      c: [
+        $terraData.K("役所の外で働き口を探す", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "小さな商店を訪ね、帳簿の仕事を引き受けられないか尋ねた。店主は話を聞いたが、採用については何も約束しなかった。",
+          { lifeGoal: { id: "yan-dismissed-clerk-livelihood", action: "continue",
+            note: "罷免後も民間の仕事を探したが、採用は成立していない" } }]),
+        $terraData.K("ひとまず求職を休む", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "書類を閉じ、当面は手元の蓄えと日々の支出を見直すことにした。かつての肩書きは戻らない。",
+          { lifeGoal: { id: "yan-dismissed-clerk-livelihood", action: "pause",
+            note: "罷免後の仕事探しを一時休止した" } }]),
+        $terraData.K("新しい仕事で暮らしを立て直したと認める", {
+          show: s => s.job > 0 && (s.job !== 41 || s.lifeRecord?.affiliations?.some(a => a.id === "yan-court-bureaucracy" && a.status === "active" && a.episodes?.length >= 2)),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "新しい勤め先で任された帳面を閉じ、働いた分の報酬を受け取った。失った官職の名ではなく、自分の今の仕事で生活が続いている。",
+          { lifeGoal: { id: "yan-dismissed-clerk-livelihood", action: "complete",
+            note: "官吏の職を失った後、別の実際の仕事で生計を得た" } }])
+      ]
+    },
+    {
+      id: "car_lmd_black_after_detention",
+      conf: "S",
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      ge: { age: 24 },
+      after: { id: "car_lmd_black_choice_big_deal", min: 2, choice: 0, outcome: 1 },
+      show: s => !s.fl?.detained &&
+        s.lifeRecord?.affiliations?.some(a => a.id === "lungmen-black-market" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        s.lifeRecord?.goals?.some(g => g.id === "lungmen-post-custody-livelihood" && ["active", "paused", "compromised"].includes(g.status)),
+      t: "留置施設を出た後も、裏通りで交わした名前を口にする気にはなれなかった。手元に残る金を数え、今日の寝床と次の仕事のことを考えた。",
+      c: [
+        $terraData.K("危ない紹介を避けて働き口を探す", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "小さな荷運びの依頼を尋ねて歩いたが、今日のところ仕事は決まらなかった。誰にも昔の取引を話さなかった。",
+          { lifeGoal: { id: "lungmen-post-custody-livelihood", action: "continue",
+            note: "拘束終了後、安全を優先して求職を続けた" } }]),
+        $terraData.K("しばらく身を落ち着ける", {
+          show: s => s.job === 0,
+          ethics: { reviewed: true, policyVersion: 87, intent: "withdrawal" }
+        }, [1, "日暮れまで人気の少ない場所で過ごした。次の勤め先を決めるのは、いまは見送った。",
+          { lifeGoal: { id: "lungmen-post-custody-livelihood", action: "pause",
+            note: "拘束後の求職を一時休止した" } }]),
+        $terraData.K("別の仕事で生活を立て直したと認める", {
+          show: s => s.job > 0 && (s.job !== 45 || s.lifeRecord?.affiliations?.some(a => a.id === "lungmen-black-market" && a.status === "active" && a.episodes?.length >= 2)),
+          ethics: { reviewed: true, policyVersion: 87, intent: "livelihood-planning" }
+        }, [1, "今日の仕事を終え、賃金を受け取った。黒市の取引から離れても、暮らしを支える仕事が一つできた。",
+          { lifeGoal: { id: "lungmen-post-custody-livelihood", action: "complete",
+            note: "拘束が解けた後、別の実際の仕事で生計を得た" } }])
+      ]
+    },
   ];
 
   for (const event of E) {

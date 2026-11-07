@@ -1,0 +1,1492 @@
+{
+  "part": "03",
+  "sourceRef": "fix/historical-event-scope-and-delivery",
+  "status": "extracted all textual outcome and effects where statically readable; not runtime signoff",
+  "events": [
+    {
+      "id": "life_rhodes_research_stall",
+      "source": "data/parts/extensions/social-and-care/research-reunion.js:173",
+      "choices": [
+        {
+          "label": "患者ごとの違いを記録に書き添え、集計を続ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "症例票に年齢や療養条件を書き加えた。数字が揃わない箇所は空欄のまま、担当医へ渡す時に事情を伝えた。",
+              "effectRaw": "{\n          lifeGoal: {\n            id: \"oripathy-research\",\n            action: \"continue\",\n            note: \"結論が出ない理由と資料の限界を記録\"\n          },\n          lifeSkill: {\n            id: \"clinical-records\",\n            title: \"医療記録の整理と匿名化\",\n            delta: 4,\n            context: \"研究限界を明記した集計\"\n          },\n          regionalImpact: {\n            entity: \"ロドス研究班の患者経過記録\",\n            kind: \"research-limitation-record\",\n            description: \"資料の限界と未確定の問いを明記した集計を残した\"\n          },\n          p: 1,\n          k: 2\n        }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "action",
+                "note",
+                "lifeSkill",
+                "title",
+                "delta",
+                "context",
+                "regionalImpact",
+                "entity",
+                "kind",
+                "description",
+                "p",
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "対象を広げる案に加わる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.65",
+              "prose": "新しい症例票の集計に取りかかった。項目を増やすたび、同意書と名前を消す手順も見直すことになった。",
+              "effectRaw": "{\n            lifeGoal: {\n              id: \"oripathy-research\",\n              action: \"compromise\",\n              note: \"研究範囲を広げる一方、手続きの負担が増えた\"\n            },\n            groupStanding: {\n              id: \"rhodes-research-team\",\n              title: \"ロドスの研究・医療担当者\",\n              delta: 1,\n              reason: \"追加集計を引き受けた\"\n            },\n            p: 1,\n            k: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "action",
+                "note",
+                "groupStanding",
+                "title",
+                "delta",
+                "reason",
+                "p",
+                "k"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "同意と治療条件の項目が揃わず、追加の症例票は束ねられないまま棚へ戻った。",
+              "effectRaw": "{\n            lifeGoal: {\n              id: \"oripathy-research\",\n              action: \"pause\",\n              note: \"追加対象と同意手順を決められず保留\"\n            },\n            p: -1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeGoal",
+                "id",
+                "action",
+                "note",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "研究を離れ、患者支援の持ち場を続ける",
+          "gate": "{\n          show: s =>\n            [\"active\", \"crisis\"].includes(\n              s.lifeRecord?.affiliations?.find(row => row.id === \"rhodes-staff\")?.status\n            )\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "研究班を離れ、患者の移動や療養相談の持ち場へ戻った。担当していた記録と、まだ答えの出ていない問いを後任へ渡した。",
+              "effectRaw": "{\n            lifeAffiliations: [\n              {\n                id: \"rhodes-research\",\n                action: \"leave\",\n                note: \"患者支援へ役割を移した\"\n              },\n              {\n                id: \"rhodes-staff\",\n                action: \"role\",\n                role: \"患者支援・物資補助\",\n                preserveRhodesPost: true\n              }\n            ],\n            lifeGoal: { id: \"oripathy-research\", action: \"abandon\", note: \"研究班を離れ、患者支援へ移った\" },\n            regionalImpact: {\n              entity: \"ロドス研究班の患者経過記録\",\n              kind: \"research-handover\",\n              description: \"未確定の問いと記録の扱いを後任へ引き継いだ\"\n            },\n            job: 28,\n            p: 1\n          }",
+              "directJobs": [
+                28
+              ],
+              "effectKeys": [
+                "lifeAffiliations",
+                "id",
+                "action",
+                "note",
+                "role",
+                "preserveRhodesPost",
+                "lifeGoal",
+                "regionalImpact",
+                "entity",
+                "kind",
+                "description",
+                "job",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "研究を離れ、休止中のロドス勤務も終える",
+          "gate": "{\n          show: s =>\n            s.lifeRecord?.affiliations?.find(row => row.id === \"rhodes-staff\")?.status === \"suspended\"\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "研究班とロドスでの勤務を終え、担当記録を後任へ渡した。次の働き口はまだ決まっていなかった。",
+              "effectRaw": "{\n            lifeAffiliations: [\n              {\n                id: \"rhodes-research\",\n                action: \"leave\",\n                note: \"研究班を離れた\"\n              },\n              {\n                id: \"rhodes-staff\",\n                action: \"leave\",\n                note: \"休止中のロドス勤務も終了\"\n              }\n            ],\n            lifeGoal: { id: \"oripathy-research\", action: \"abandon\", note: \"研究班と勤務関係を離れた\" },\n            lifeGoals: [\n              {\n                id: \"rhodes-work\",\n                title: \"ロドスで担当する仕事を無理なく続ける\",\n                action: \"abandon\",\n                note: \"休止中のロドス勤務も終了\"\n              }\n            ],\n            regionalImpact: {\n              entity: \"ロドス研究班の患者経過記録\",\n              kind: \"research-handover\",\n              description: \"未確定の問いと記録の扱いを後任へ引き継いだ\"\n            },\n            job: 0,\n            p: 1\n          }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "lifeAffiliations",
+                "id",
+                "action",
+                "note",
+                "lifeGoal",
+                "lifeGoals",
+                "title",
+                "regionalImpact",
+                "entity",
+                "kind",
+                "description",
+                "job",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "研究班を離れ、担当記録を引き継ぐ",
+          "gate": "{\n          show: s =>\n            [\"left\", \"contacted\"].includes(\n              s.lifeRecord?.affiliations?.find(row => row.id === \"rhodes-staff\")?.status\n            )\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "研究班を離れ、担当記録と答えの出ていない問いを後任へ渡した。次の役割が決まるまで、研究室の机は空いたままだった。",
+              "effectRaw": "{\n            lifeAffiliation: {\n              id: \"rhodes-research\",\n              action: \"leave\",\n              note: \"研究班を離れ、記録と課題を引き継いだ\"\n            },\n            lifeGoal: { id: \"oripathy-research\", action: \"abandon\", note: \"研究班を離れた\" },\n            regionalImpact: {\n              entity: \"ロドス研究班の患者経過記録\",\n              kind: \"research-handover\",\n              description: \"未確定の問いと記録の扱いを後任へ引き継いだ\"\n            },\n            p: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "action",
+                "note",
+                "lifeGoal",
+                "regionalImpact",
+                "entity",
+                "kind",
+                "description",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "life_chernobog_resident_response",
+      "source": "data/parts/extensions/social-and-care/civilian-response.js:17",
+      "choices": [
+        {
+          "label": "今の街区にとどまり、近所の人たちと連絡先を確かめ合う",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "万が一の時に避難場所や働き口の知らせが届くよう、近所の世話役と連絡の取り方を決めておいた。冷たい風が吹く通りでは、まだ窓に板を打ちつける槌音が響いていた。",
+              "effectRaw": "{\n          fl: { chernobog_resident_stayed: 1, chernobog_resident_displaced: 0 },\n          lifeAffiliation: {\n            id: \"chernobog-neighbourhood\",\n            title: \"チェルノボーグの近隣連絡先\",\n            kind: \"neighbourhood-network\",\n            action: \"join\",\n            role: \"近隣との避難・仕事の連絡を保つ\"\n          },\n          lifeGoal: {\n            id: \"chernobog-household-continuity\",\n            title: \"近所の連絡を保ち、暮らしをつなぐ\",\n            priority: \"住まいと生計\",\n            action: \"start\"\n          },\n          regionalImpact: {\n            region: \"ウルサス\",\n            entity: \"チェルノボーグの近隣連絡\",\n            kind: \"household-stay-decision\",\n            description:\n                \"事件圧力期に区画へ残り、避難所や働き口の知らせを受け取れる宛先を確かめた。\"\n          },\n          groupStanding: {\n            id: \"chernobog-neighbours\",\n            title: \"近隣住民\",\n            delta: 1,\n            reason: \"連絡先の確認を引き受けた\"\n          },\n          p: -1\n        }",
+              "directJobs": [],
+              "effectKeys": [
+                "fl",
+                "chernobog_resident_stayed",
+                "chernobog_resident_displaced",
+                "lifeAffiliation",
+                "id",
+                "title",
+                "kind",
+                "action",
+                "role",
+                "lifeGoal",
+                "priority",
+                "regionalImpact",
+                "region",
+                "entity",
+                "description",
+                "groupStanding",
+                "delta",
+                "reason",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "荷物をまとめ、つてを頼ってよその地域へ避難する",
+          "gate": "{ en: { affordableRoute: true }, why: \"移動費と生活予備費を確保できない\" }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "紹介してもらった移動先へ逃れ、避難所で毛布と場所を割り当ててもらった。はぐれた知人たちの連絡先を胸ポケットにしまい、見知らぬ土地で今夜眠る場所を整えた。",
+              "effectRaw": "{\n            job: 0,\n            res: 1,\n            fl: { chernobog_resident_displaced: 1, chernobog_resident_stayed: 0, war_displaced: 1, sch: 0 },\n            lifeAffiliation: {\n              id: \"chernobog-neighbourhood\",\n              title: \"チェルノボーグの近隣連絡先\",\n              kind: \"neighbourhood-network\",\n              action: \"join\",\n              role: \"避難先から便りを待つ\"\n            },\n            lifeGoal: {\n              id: \"chernobog-household-continuity\",\n            title: \"離れた知人や近所の消息を確かめながら新しい暮らしを組み立てる\",\n              priority: \"住まいと生計\",\n              action: \"start\"\n            },\n            regionalImpact: {\n              region: \"ウルサス\",\n              entity: \"チェルノボーグの近隣連絡\",\n              kind: \"household-displacement\",\n              description:\n                \"紹介された移動先へ移り、避難所の帳面に名前を書いた。\"\n            },\n            p: -2,\n            rl: -2\n          }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "res",
+                "fl",
+                "chernobog_resident_displaced",
+                "chernobog_resident_stayed",
+                "war_displaced",
+                "sch",
+                "lifeAffiliation",
+                "id",
+                "title",
+                "kind",
+                "action",
+                "role",
+                "lifeGoal",
+                "priority",
+                "regionalImpact",
+                "region",
+                "entity",
+                "description",
+                "p",
+                "rl"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "すぐには動かず、手元の金と保存食を確かめて様子を見る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "戸棚の食料と財布の中身を数え直した。街の外がどうなっているのか確かな噂も入らず、まずは自宅で嵐が過ぎるのを待つことにした。",
+              "effectRaw": "{\n          fl: { chernobog_resident_stayed: 1, chernobog_resident_displaced: 0 },\n          lifeGoal: {\n            id: \"chernobog-household-continuity\",\n            title: \"手元の暮らしを確かめながら次の住まいを決める\",\n            priority: \"手元の暮らし\",\n            action: \"start\"\n          },\n          regionalImpact: {\n            region: \"ウルサス\",\n            entity: \"チェルノボーグの住居・仕事\",\n            kind: \"household-move-deferred\",\n            description: \"移動を決めず、手元の金と食料を確かめて保留した。\"\n          },\n          p: 1\n        }",
+              "directJobs": [],
+              "effectKeys": [
+                "fl",
+                "chernobog_resident_stayed",
+                "chernobog_resident_displaced",
+                "lifeGoal",
+                "id",
+                "title",
+                "priority",
+                "action",
+                "regionalImpact",
+                "region",
+                "entity",
+                "kind",
+                "description",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        3
+      ]
+    },
+    {
+      "id": "life_work_project_setback",
+      "error": "source-not-found",
+      "choices": [
+        {
+          "label": "急かされても手を止め、図面と実物の寸法を測り直す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "発注者の小言を背中で聞き流しながら寸法を測り直し、仲間と知恵を絞って無理のない取り付け方を見つけた。納期は少し延びたが、機械は異音ひとつなく動き出した。",
+              "effectRaw": "{k:2,lifeSkill:{id:\"current-job\",title:\"current_job\",delta:3}}",
+              "effectKeys": [
+                "k",
+                "lifeSkill",
+                "id",
+                "title",
+                "delta"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "残業手当を目当てに、夜通しの突貫作業を引き受ける",
+          "gate": "{en:{ge:{h:25}},why:\"長い追加作業に耐えられる体力がない\"}",
+          "outcomes": [
+            {
+              "weight": "0.8",
+              "prose": "深夜まで火花を散らして部材を加工し続け、約束通りの臨時手当を懐に入れた。翌朝は鉛のように肩が重く、寝床から起き上がるのにひどく時間がかかった。",
+              "effectRaw": "{cash:18000,pm:1,h:-4,p:-2,lifeSkill:{id:\"current-job\",title:\"current_job\",delta:3}}",
+              "effectKeys": [
+                "cash",
+                "pm",
+                "h",
+                "p",
+                "lifeSkill",
+                "id",
+                "title",
+                "delta"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "疲れで手元が狂い、工具で指先を深く痛めて突貫作業から外された。臨時手当はふいになり、腫れた手を抱えて残りの工程を仲間に引き継いだ。",
+              "effectRaw": "{h:-7,p:-2}",
+              "effectKeys": [
+                "h",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "無理な残業は断り、勤務を短くして後任へ引き継ぐ",
+          "gate": "{show:s=>s.workContract?.hours!==\"short\"}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "身体を壊しては元も子もないと短時間勤務への切り替えを申し入れ、やりかけの箇所の寸法を次の番の仲間に伝えて現場を上がった。稼ぎは減るが、深く息をつける夜が戻った。",
+              "effectRaw": "{workContractAction:{action:\"hours\"},h:2,p:1}",
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "h",
+                "p"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earth_persecution_victoria_framed_debt",
+      "source": "data/parts/extensions/social-and-care/local-discrimination.js:1156",
+      "choices": [
+        {
+          "label": "証文への署名を拒否し、仲間とともに労働争議の窓口へ駆け込む",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "署名は拒んだものの即座に解雇され、給与は一銭も支払われなかった。さらに街の工場主連名でブラックリストに入れられ、同業への再就職を断たれた。",
+              "effectRaw": "{ \"p\": -6, \"rl\": 1, \"job\": 0, \"fl\": { \"ed_work_disadvantage\": 1, \"ed_work_record\": 1 } }",
+              "directJobs": [],
+              "effectKeys": []
+            }
+          ]
+        },
+        {
+          "label": "これ以上の暴力や投獄を恐れ、涙を飲んで賠償証文に震える手でサインする",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "身に覚えのない巨額の負債を背負わされ、給与明細はすべて借金の天引きとなった。日々のパンを買う小銭すら底をついた。",
+              "effectRaw": "{ \"debt\": 150000, \"p\": -10, \"h\": -4, \"fl\": { \"ed_work_disadvantage\": 1 } }",
+              "directJobs": [],
+              "effectKeys": []
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "earth_discr_disclose_employer",
+      "source": "data/parts/extensions/social-and-care/local-discrimination.js:1623",
+      "choices": [
+        {
+          "label": "自費で防護具を揃えることを条件に、持ち場の調整を申し出る",
+          "outcomes": [
+            {
+              "weight": "0.6",
+              "prose": "雇い主は険しい表情で診断書を眺め、「余計な騒ぎを起こさないなら、粉塵の少ない倉庫番へ回してやる」と条件付きで承諾した。給金は減ったが、即座の解雇は免れた。",
+              "effectRaw": "{\n                                    \"p\": -2,\n                                    \"fl\": {\n                                          \"employer_disclosed\": 1,\n                                          \"ed_work_disadvantage\": 1\n                                    },\n                                    \"infectionAwarenessAction\": {\n                                          \"subject\": \"protagonist\",\n                                          \"audience\": \"employer\",\n                                          \"certainty\": \"confirmed\",\n                                          \"source\": \"self-disclosure\",\n                                          \"consent\": \"voluntary\"\n                                    }\n                              }",
+              "directJobs": [],
+              "effectKeys": []
+            },
+            {
+              "weight": "1",
+              "prose": "雇い主は机を激しく叩き、「なぜ隠して雇われた！」と激昂した。その場で今週分の日当を投げ出され、身辺整理をする間もなく事務所から追い出された。",
+              "effectRaw": "{\n                                    \"job\": 0,\n                                    \"p\": -8,\n                                    \"fl\": {\n                                          \"employer_disclosed\": 1,\n                                          \"ed_work_disadvantage\": 1\n                                    },\n                                    \"infectionAwarenessAction\": {\n                                          \"subject\": \"protagonist\",\n                                          \"audience\": \"employer\",\n                                          \"certainty\": \"confirmed\",\n                                          \"source\": \"self-disclosure\",\n                                          \"consent\": \"voluntary\"\n                                    }\n                              }",
+              "directJobs": [],
+              "effectKeys": []
+            }
+          ]
+        },
+        {
+          "label": "今は打ち明けず、体力が続く限り隠して働き続ける",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "診断書を懐の奥深くしまい、何も言わずに持ち場へ戻った。いつ露見するか分からない恐怖を抱えながら、冷や汗を拭って工具を握り直した。",
+              "effectRaw": "{\n                                    \"p\": -3,\n                                    \"h\": -2\n                              }",
+              "directJobs": [],
+              "effectKeys": []
+            }
+          ]
+        }
+      ],
+      "expected": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "infection_workplace_review",
+      "source": "data/parts/extensions/education-and-later-life/relationships-events-03.js:253",
+      "choices": [
+        {
+          "label": "今の持ち場のまま、診察の日だけ休みを願い出る",
+          "gate": "{\n            show: s =>\n              s.job > 0 &&\n              s.job === s.infectionWorkplace?.disclosedJobId &&\n              (!s.infectionWorkplace?.siteId || s.workContract?.siteId === s.infectionWorkplace.siteId)\n          }",
+          "outcomes": [
+            {
+              "weight": "0.55",
+              "prose": "次の診察日を伝えると、嫌な顔もされずに休みが通った。ほっと息をつき、自分の持ち場へ戻った。",
+              "effectRaw": "{ infectionWorkplaceAction: { action: \"review\", outcome: \"leave-approved-again\" }, rl: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "infectionWorkplaceAction",
+                "action",
+                "outcome",
+                "rl"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "休みの申し出はいい顔をされず、返事を濁された。シフト表とにらめっこしながら、なんとか医者へ行ける隙間を探した。",
+              "effectRaw": "{ infectionWorkplaceAction: { action: \"review\", outcome: \"leave-unresolved\" }, p: -2 }",
+              "directJobs": [],
+              "effectKeys": [
+                "infectionWorkplaceAction",
+                "action",
+                "outcome",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "負担の大きい工程から外れる配置を相談する",
+          "gate": "{\n            show: s =>\n              s.job > 0 &&\n              s.job === s.infectionWorkplace?.disclosedJobId &&\n              ($terraData.J[s.job]?.ex || 1) > 1.1 &&\n              !!s.workContract &&\n              s.workContract.status === \"active\" &&\n              s.workContract.siteId === s.infectionWorkplace?.siteId &&\n              s.workContract.assignment === \"usual\"\n          }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "掛け合った末に配置換えが通り、粉塵や力仕事の少ない持ち場へ移ることができた。",
+              "effectRaw": "{\n              workContractAction: { action: \"assignment\", result: \"approved\" },\n              infectionWorkplaceAction: { action: \"review\", outcome: \"assignment-approved\" },\n              exposureAction: \"adjust-assignment\",\n              rl: 1\n            }",
+              "directJobs": [],
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "result",
+                "infectionWorkplaceAction",
+                "outcome",
+                "exposureAction",
+                "rl"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "特別扱いはできないと配置換えを断られた。痛む体をだましだまし動かしながら、通院できる日を探した。",
+              "effectRaw": "{\n              workContractAction: { action: \"assignment\", result: \"declined\" },\n              infectionWorkplaceAction: { action: \"review\", outcome: \"assignment-declined\" },\n              p: -2\n            }",
+              "directJobs": [],
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "result",
+                "infectionWorkplaceAction",
+                "outcome",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "勤務時間を短くしてもらえないか相談する",
+          "gate": "{\n            show: s =>\n              s.job > 0 &&\n              s.job === s.infectionWorkplace?.disclosedJobId &&\n              !!s.workContract &&\n              s.workContract.status === \"active\" &&\n              s.workContract.siteId === s.infectionWorkplace?.siteId\n          }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "毎日の勤務時間を短くしてもらえた。その分給金は減るが、体を壊さずに通院を続けられる道を選んだ。",
+              "effectRaw": "{\n              workContractAction: { action: \"hours\", result: \"approved\" },\n              infectionWorkplaceAction: { action: \"review\", outcome: \"hours-approved\" },\n              rl: 1,\n              p: 1\n            }",
+              "directJobs": [],
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "result",
+                "infectionWorkplaceAction",
+                "outcome",
+                "rl",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "決まった時間通り働けないなら困ると突き返された。これ以上ここで働き続けられるか、よその求人も気にかかり始めた。",
+              "effectRaw": "{\n              workContractAction: { action: \"hours\", result: \"declined\" },\n              infectionWorkplaceAction: { action: \"review\", outcome: \"hours-declined\" },\n              p: -2\n            }",
+              "directJobs": [],
+              "effectKeys": [
+                "workContractAction",
+                "action",
+                "result",
+                "infectionWorkplaceAction",
+                "outcome",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "仕事を辞め、受診時間を確保する",
+          "gate": "{\n            show: s =>\n              s.job > 0 &&\n              s.job === s.infectionWorkplace?.disclosedJobId &&\n              (!s.infectionWorkplace?.siteId || s.workContract?.siteId === s.infectionWorkplace.siteId)\n          }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "これ以上無理を重ねられないと退職を申し出た。誰に気兼ねすることなく通院できるが、来月からは稼ぎが途絶える。",
+              "effectRaw": "{ job: 0, infectionWorkplaceAction: { action: \"review\", outcome: \"left-by-player\" }, p: -4 }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "infectionWorkplaceAction",
+                "action",
+                "outcome",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        4,
+        7
+      ]
+    },
+    {
+      "id": "infection_regional_housing_pressure",
+      "source": "data/parts/extensions/education-and-later-life/relationships-events-03.js:370",
+      "choices": [
+        {
+          "label": "不当な追い出しだと地域の支援所へ駆け込み、間に入ってもらう",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.6",
+              "prose": "支援所の担当者に事情を話し、大家への申し入れを手伝ってもらった。万が一追い出された時のために、よその空き部屋も目星をつけておいた。",
+              "effectRaw": "{ cash: -1e4, rl: 2, cr: 1, fl: { housing_exclusion: 1, discrimination_complaint: 1 } }",
+              "directJobs": [],
+              "effectKeys": [
+                "cash",
+                "rl",
+                "cr",
+                "fl",
+                "housing_exclusion",
+                "discrimination_complaint"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "支援所もすぐには動いてくれず、更新の日までにどうなるか分からないままだった。いつ追い出されても困らないよう、別の貸間を探し始めた。",
+              "effectRaw": "{ p: -3, fl: { housing_exclusion: 1 } }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "fl",
+                "housing_exclusion"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "色をつけた保証金を積み増しして、今の部屋に居座る",
+          "gate": "{ en: { affordableCash: 1.2e5 }, why: \"上乗せされた保証金12万龍門幣を出すと、生活費が足りなくなる\" }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "12万龍門幣の追加保証金を叩きつけ、管理人を黙らせて部屋に残った。薬代の蓄えは大きく減ったが、通い慣れた職場と診療所を手放さずに済んだ。",
+              "effectRaw": "{ cash: -1.2e5, pm: 1, fl: { housing_exclusion: 1 }, p: -2 }",
+              "directJobs": [],
+              "effectKeys": [
+                "cash",
+                "pm",
+                "fl",
+                "housing_exclusion",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "こんな場所は見限り、別の地域へ引っ越す",
+          "gate": "{ en: { affordableRoute: true }, why: \"移動先への運賃を用意できない\" }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "荷物をまとめて旅費を払い、別の地域へ移り住んだ。見知らぬ街で一から部屋と診療所を探し直し、新しい通院路を歩いた。",
+              "effectRaw": "{ job: 0, res: 1, fl: { housing_exclusion: 1, sch: 0 }, rl: -2, p: -2 }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "res",
+                "fl",
+                "housing_exclusion",
+                "sch",
+                "rl",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "life_savra_late_craft",
+      "source": "data/extensions/family-and-community.js:155",
+      "choices": [
+        {
+          "label": "出勤日を減らし、点検の相談役として現場に残る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "現場に出る日数を減らし、若手から異音や摩耗の判断を聞かれた時に顔を出す役回りへ移った。大がかりな分解修理は腕のいい連中に任せることにした。",
+              "effectRaw": "{\n          job: 18,\n          fl: { retired: 0, reduced_work: 1 },\n          bodyChange: {\n            id: \"savra-long-work-fatigue\",\n            title: \"長年の整備仕事による疲労\",\n            action: \"start\",\n            cause: \"長期間の整備作業に伴う疲れ\",\n            function: \"作業日を減らし、点検の相談役として現場を支える\",\n            reviewDelay: 2\n          },\n          lifeGoal: {\n            id: \"savra-craft-later-life\",\n            title: \"長く身につけた整備の知識を、無理のない形で使い続ける\",\n            priority: \"仕事と健康\",\n            action: \"start\"\n          },\n          lifeSkill: { id: \"job-18\", title: \"修理・整備工の実務\", delta: 2, context: \"後輩たちの点検の相談役を担った\" },\n          groupStanding: {\n            id: \"rim-billiton-workmates\",\n            title: \"レム・ビリトンで一緒に働く人\",\n            delta: 2,\n            reason: \"無理のないペースで現場の相談役を続けた\"\n          },\n          p: 1\n        }",
+              "directJobs": [
+                18
+              ],
+              "effectKeys": [
+                "job",
+                "fl",
+                "retired",
+                "reduced_work",
+                "bodyChange",
+                "id",
+                "title",
+                "action",
+                "cause",
+                "function",
+                "reviewDelay",
+                "lifeGoal",
+                "priority",
+                "lifeSkill",
+                "delta",
+                "context",
+                "groupStanding",
+                "reason",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "体が痛む日は休み、道具の手入れに回る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "節々が痛む日は無理に現場へ出ず、工具の油引きやこれまでの修理メモの整理に徹した。いつまで現場に立つかは決めず、その日の体調と相談しながら暮らすことにした。",
+              "effectRaw": "{\n          bodyChange: {\n            id: \"savra-long-work-fatigue\",\n            title: \"長年の整備仕事による疲労\",\n            action: \"start\",\n            cause: \"長期間の作業と年齢に伴う疲れ\",\n            function: \"痛む日は作業を休み、道具の手入れや整理を続ける\",\n            reviewDelay: 3\n          },\n          lifeGoal: {\n            id: \"savra-craft-later-life\",\n            title: \"長く身につけた整備の知識を、無理のない形で使い続ける\",\n            priority: \"仕事と健康\",\n            action: \"start\"\n          },\n          lifeSkill: {\n            id: \"job-18\",\n            title: \"修理・整備工の実務\",\n            delta: 1,\n            context: \"工具の手入れと修理メモの整理\"\n          },\n          p: 1,\n          h: -1\n        }",
+              "directJobs": [],
+              "effectKeys": [
+                "bodyChange",
+                "id",
+                "title",
+                "action",
+                "cause",
+                "function",
+                "reviewDelay",
+                "lifeGoal",
+                "priority",
+                "lifeSkill",
+                "delta",
+                "context",
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "現場を退き、馴染んだ道具を後輩に譲る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "今日で現場を退くと仲間に告げ、手に馴染んだ工具箱を若い作業員に譲った。軽くなった手で家路につきながら、これからは蓄えでどう暮らしていくか静かに考えた。",
+              "effectRaw": "{\n          job: 0,\n          fl: { retired: 1, reduced_work: 0 },\n          bodyChange: {\n            id: \"savra-long-work-fatigue\",\n            title: \"長年の整備仕事による疲労\",\n            action: \"start\",\n            cause: \"長期間の整備作業に伴う疲れ\",\n            function: \"現場仕事を終え、手元の道具を後輩へ譲る\",\n            reviewDelay: 2\n          },\n          lifeGoal: {\n            id: \"savra-craft-later-life\",\n            title: \"長く身につけた整備の知識を、無理のない形で使い続ける\",\n            priority: \"仕事と健康\",\n            action: \"compromise\",\n            note: \"仕事を退き、長年使った道具を譲った\"\n          },\n          regionalImpact: {\n            entity: \"レム・ビリトンの整備作業場\",\n            kind: \"personal-tool-transfer\",\n            description: \"長年使い込んだ整備道具を、若い作業員へ譲った。\"\n          },\n          p: 1\n        }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "fl",
+                "retired",
+                "reduced_work",
+                "bodyChange",
+                "id",
+                "title",
+                "action",
+                "cause",
+                "function",
+                "reviewDelay",
+                "lifeGoal",
+                "priority",
+                "note",
+                "regionalImpact",
+                "entity",
+                "kind",
+                "description",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        3
+      ]
+    },
+    {
+      "id": "sr_rhodes_recruitment_contact",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:9",
+      "choices": [
+        {
+          "label": "仕事の内容を詳しく聞き、これまでの経験を添えて申し込む",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "これまで働いてきた場所と扱える道具を書き添えて応募した。返事を待つあいだも、毎朝いつもの仕事場へ通った。",
+              "effectRaw": "{\n            lifeAffiliation: {\n              id: \"rhodes-employment\",\n              title: \"ロドスへの雇用照会\",\n              kind: \"employment-application\",\n              action: \"contact\",\n              role: \"職務・勤務地の確認待ち\"\n            },\n            p: 1,\n            k: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "title",
+                "kind",
+                "action",
+                "role",
+                "p",
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "今の職場を続けながら、次の募集案内だけ届くように頼む",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "次に人手が必要になったら知らせてもらえるよう連絡先を伝え、翌朝もいつもの持ち場へ出た。",
+              "effectRaw": "{ k: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "家の都合と今の暮らしを優先し、今回は見送る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "家の段取りや今の働き方を考え合わせると、すぐには動けそうになかった。案内状をそっと返し、いつもの仕事場へ足を向けた。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        3
+      ]
+    },
+    {
+      "id": "sr_rhodes_hiring_review",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:53",
+      "choices": [
+        {
+          "label": "物資管理や宿舎の生活支援を希望する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.62",
+              "prose": "物資の仕分けと宿舎の世話を担う職員として迎え入れられた。朝一番に薬箱の荷札を改め、出発する班へ必要な物資を手渡す日々が始まった。",
+              "effectRaw": "$terraData.srStaff(\"service\", \"物資・生活支援職員\", \"rhodes-supply\", \"物資と生活支援の実務\")",
+              "directJobs": [],
+              "effectKeys": []
+            },
+            {
+              "weight": "1",
+              "prose": "生活支援枠の応募はすでに満員で、今回は見送りとなった。肩を落として宿舎を出たが、人事の職員が「人手が必要になればまた声をかける」と短く書き添えてくれた。",
+              "effectRaw": "{\n              lifeAffiliation: {\n                id: \"rhodes-employment\",\n                title: \"ロドスへの雇用照会\",\n                action: \"decline\",\n                note: \"定員充足のため今回の応募は見送り\"\n              },\n              p: 1\n            }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "title",
+                "action",
+                "note",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "機械・動力設備の点検職を希望する",
+          "gate": "{ show: { ge: { k: 20 } } }",
+          "outcomes": [
+            {
+              "weight": "0.44",
+              "prose": "設備整備の職員として採用が決まった。初日は先輩の後ろについて通路の配管や換気扇を回り、勝手に触れてはいけない動力盤の位置を頭に叩き込んだ。",
+              "effectRaw": "$terraData.srStaff(\n              \"maintenance\",\n              \"設備整備職員\",\n              \"rhodes-maintenance\",\n              \"動力設備と生活機器の点検\"\n            )",
+              "directJobs": [],
+              "effectKeys": []
+            },
+            {
+              "weight": "1",
+              "prose": "高圧設備を扱う資格は満たせなかったが、熱意と道具の手入れの丁寧さを買われ、施設保全部門の道具管理・補修補助（生活支援枠）として採用された。「現場で経験を積みながら整備士を目指すといい」と先輩が励ましてくれた。",
+              "effectRaw": "$terraData.srStaff(\"service\", \"整備部・資材管理補助\", \"rhodes-supply\", \"機材・物資の整理と整備補助\", 2)",
+              "directJobs": [],
+              "effectKeys": []
+            }
+          ]
+        },
+        {
+          "label": "診療記録や鉱石病研究の補助職を希望する",
+          "gate": "{ show: { ge: { k: 48 } } }",
+          "outcomes": [
+            {
+              "weight": "0.37",
+              "prose": "カルテの整理や研究資料の下調べを手伝う補助職として採用された。患者本人がどこまで記録の共有を許しているか、一文字ずつ目を凝らして確かめる仕事だった。",
+              "effectRaw": "$terraData.srStaff(\n              \"research\",\n              \"医療・研究補助職員\",\n              \"clinical-records\",\n              \"医療記録の整理と取り扱い\"\n            )",
+              "directJobs": [],
+              "effectKeys": []
+            },
+            {
+              "weight": "1",
+              "prose": "研究本隊の指導枠は満員だったが、診療所の薬品搬送や受診受付など、医療支援の現場スタッフとして拾い上げられた。白衣を着ることはできなくても、医療の最前線を支える一員になれた。",
+              "effectRaw": "$terraData.srStaff(\"service\", \"医務部・物資補給員\", \"rhodes-supply\", \"医療物資の運搬と受付補助\", 2)",
+              "directJobs": [],
+              "effectKeys": []
+            }
+          ]
+        },
+        {
+          "label": "支部間の連絡便を担うトランスポーターを希望する",
+          "gate": "{ show: { ge: { k: 15 } } }",
+          "outcomes": [
+            {
+              "weight": "0.38",
+              "prose": "まずは先輩の車に同乗し、決められた街道の連絡便から仕事を覚えることになった。荷箱の封を確かめ、天災警報の向きが変わればすぐに無線で知らせた。",
+              "effectRaw": "$terraData.srStaff(\n              \"transporter\",\n              \"トランスポーター候補\",\n              \"rhodes-transport\",\n              \"連絡便の経路・荷札・受領記録\"\n            )",
+              "directJobs": [],
+              "effectKeys": []
+            },
+            {
+              "weight": "1",
+              "prose": "長距離トランスポーター枠には届かなかったが、艦内や拠点周辺の物資集積所を結ぶ構内連絡・搬送係として迎え入れられた。「近場から道を覚えていけばいい」と配属通知を受け取った。",
+              "effectRaw": "$terraData.srStaff(\"service\", \"構内運搬・連絡支援員\", \"rhodes-supply\", \"拠点内物流と連絡便補助\", 2)",
+              "directJobs": [],
+              "effectKeys": []
+            }
+          ]
+        },
+        {
+          "label": "行動予備隊の事務と基礎訓練を希望する",
+          "gate": "{ show: { ge: { k: 18 } } }",
+          "outcomes": [
+            {
+              "weight": "0.3",
+              "prose": "行動予備隊の補助枠で採用され、日中の事務仕事と夕方の自衛訓練からスタートした。訓練が終わったあと、汗だくで防具の泥を拭き取る毎日が始まった。",
+              "effectRaw": "$terraData.srStaff(\n              \"reserve\",\n              \"行動予備隊員\",\n              \"rhodes-reserve\",\n              \"隊内連絡・事務手順・基礎訓練\",\n              2\n            )",
+              "directJobs": [],
+              "effectKeys": []
+            },
+            {
+              "weight": "1",
+              "prose": "行動予備隊の正隊員枠には届かなかったが、訓練施設管理と装備整備を担当する後方支援員として採用された。隊員たちと共に走り、いつか隊員に加わることを目指して汗を流す日々が始まった。",
+              "effectRaw": "$terraData.srStaff(\"service\", \"予備隊支援員・装備整備補\", \"rhodes-supply\", \"訓練資材の管理と後方支援\", 2)",
+              "directJobs": [],
+              "effectKeys": []
+            }
+          ]
+        },
+        {
+          "label": "外勤の選考と訓練を受けたいと申し出る",
+          "gate": "{ show: { ge: { h: 72, ar: 54, k: 25 } } }",
+          "outcomes": [
+            {
+              "weight": "0.13",
+              "prose": "体力測定と実技訓練をくぐり抜け、外勤オペレーター候補に選ばれた。初めての任務では輸送班の護衛につき、緊張で乾いた喉で隊長の指示を復唱した。",
+              "effectRaw": "$terraData.srStaff(\"field\", \"外勤オペレーター候補\", \"rhodes-field\", \"外勤の装備確認と行動訓練\", 2)",
+              "directJobs": [],
+              "effectKeys": []
+            },
+            {
+              "weight": "1",
+              "prose": "実技選考の基準は厳しく実戦オペレーター採用は見送られたが、教官から「基礎体力と気概は十分だ」と行動予備隊の見習い枠（予備隊員）への推薦を受けた。まずは予備隊でじっくり実戦力を磨くことになった。",
+              "effectRaw": "$terraData.srStaff(\"reserve\", \"行動予備隊員（見習い）\", \"rhodes-reserve\", \"隊内連絡・事務手順・基礎訓練\", 2)",
+              "directJobs": [],
+              "effectKeys": []
+            }
+          ]
+        },
+        {
+          "label": "選考は辞退し、今の暮らしを続ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "今回は選考を辞退すると連絡を入れた。肩の力を抜き、見慣れた自分の職場と家の暮らしへ戻った。",
+              "effectRaw": "{\n            lifeAffiliation: {\n              id: \"rhodes-employment\",\n              title: \"ロドスへの雇用照会\",\n              action: \"decline\",\n              note: \"本人が応募を取り下げた\"\n            },\n            p: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "title",
+                "action",
+                "note",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        7,
+        13
+      ]
+    },
+    {
+      "id": "sr_rhodes_field_qualification",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:353",
+      "choices": [
+        {
+          "label": "物資の補給と、負傷者を後ろへ運ぶ役目を担う",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "重い補給嚢を背負って走る訓練を重ね、救護班との連携を身体に覚え込ませた。現場では怪我人を担架へ乗せて引き渡し、しんがりで撤退の信号弾を打ち上げた。",
+              "effectRaw": "{\n            lifeAffiliation: {\n              id: \"rhodes-staff\",\n              title: \"ロドス・アイランド\",\n              action: \"role\",\n              role: \"外勤オペレーター（補給・救護支援）\",\n              preserveRhodesPost: true\n            },\n            lifeSkill: {\n              id: \"rhodes-field\",\n              title: \"外勤の装備確認と行動訓練\",\n              delta: 7,\n              context: \"救援経路と撤退訓練\"\n            },\n            h: -2,\n            k: 2\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "title",
+                "action",
+                "role",
+                "preserveRhodesPost",
+                "lifeSkill",
+                "delta",
+                "context",
+                "h",
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "先頭を行く偵察と、輸送隊の護衛に挑む",
+          "gate": "{ show: { ge: { ar: 65, h: 68 } } }",
+          "outcomes": [
+            {
+              "weight": "0.7",
+              "prose": "先輩の斥候と地図を突き合わせ、危険地帯のすぐ手前で本隊を止める合図を叩き込まれた。本番の派遣では先頭を歩き、風の匂いと足場の崩れを後ろの班へ伝え続けた。",
+              "effectRaw": "{\n              lifeAffiliation: {\n                id: \"rhodes-staff\",\n                title: \"ロドス・アイランド\",\n                action: \"role\",\n                role: \"外勤オペレーター（護衛・偵察）\",\n                preserveRhodesPost: true\n              },\n              lifeSkill: {\n                id: \"rhodes-field\",\n                title: \"外勤の装備確認と行動訓練\",\n                delta: 7,\n                context: \"護衛と偵察の訓練\"\n              },\n              h: -3,\n              cr: 1\n            }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "title",
+                "action",
+                "role",
+                "preserveRhodesPost",
+                "lifeSkill",
+                "delta",
+                "context",
+                "h",
+                "cr"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "模擬戦で判断が一歩遅れ、前衛の偵察班へ入るのはまだ早いと告げられた。悔しさを噛みしめながら、後方での連絡と補給路の維持に回ることにした。",
+              "effectRaw": "{\n              lifeAffiliation: {\n                id: \"rhodes-staff\",\n                title: \"ロドス・アイランド\",\n                action: \"role\",\n                role: \"外勤オペレーター（連絡・補給）\",\n                preserveRhodesPost: true\n              },\n              lifeSkill: {\n                id: \"rhodes-field\",\n                title: \"外勤の装備確認と行動訓練\",\n                delta: 3,\n                context: \"前衛配置は見送り\"\n              },\n              p: -1\n            }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "title",
+                "action",
+                "role",
+                "preserveRhodesPost",
+                "lifeSkill",
+                "delta",
+                "context",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "外勤は自分の手に余ると認め、設備整備への配置換えを願い出る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "教官に正直な気持ちを打ち明け、内勤の整備班へ移らせてもらった。外勤の訓練で泥まみれにした装具や通信機の構造を知っていたおかげで、修理の仕事にはすぐ馴染めた。",
+              "effectRaw": "{\n            job: $terraData.SR_JOBS.maintenance,\n            lifeAffiliation: {\n              id: \"rhodes-staff\",\n              title: \"ロドス・アイランド\",\n              action: \"role\",\n              role: \"設備整備職員\",\n              preserveRhodesPost: true\n            },\n            lifeSkill: {\n              id: \"rhodes-maintenance\",\n              title: \"動力設備と生活機器の点検\",\n              delta: 2,\n              context: \"外勤から設備の点検へ配置換え\"\n            },\n            p: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "job",
+                "lifeAffiliation",
+                "id",
+                "title",
+                "action",
+                "role",
+                "preserveRhodesPost",
+                "lifeSkill",
+                "delta",
+                "context",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "sr_rhodes_work_review",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:452",
+      "choices": [
+        {
+          "label": "これからも今の持ち場で働き続ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "迷わず来季も残ると答え、馴染んだ持ち場の予定表に自分の名を入れた。廊下へ出ると、いつもの機械音と仲間の話し声が聞こえてきた。",
+              "effectRaw": "{ p: 1, cr: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "cr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "無理のない日数に減らし、新人の指導や引き継ぎに回る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "体力や暮らしと相談して出勤日を減らしてもらい、若い職員に仕事の手順を教える役目を引き受けた。空いた休日にゆっくりお茶を飲むゆとりができた。",
+              "effectRaw": "{\n            fl: { reduced_work: 1 },\n            lifeAffiliation: {\n              id: \"rhodes-staff\",\n              title: \"ロドス・アイランド\",\n              action: \"role\",\n              role: \"短時間勤務・引継ぎ\",\n              preserveRhodesPost: true\n            },\n            p: 2,\n            h: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "fl",
+                "reduced_work",
+                "lifeAffiliation",
+                "id",
+                "title",
+                "action",
+                "role",
+                "preserveRhodesPost",
+                "p",
+                "h"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "ロドスを退職し、別の土地で新しい働き口を探す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "後任に仕事のコツをすべて伝え、支給されていた制服と身分証を返した。見送りに来てくれた同僚と握手を交わし、タラップを下りて次の街へ向かった。",
+              "effectRaw": "{\n            job: 0,\n            lifeAffiliation: {\n              id: \"rhodes-staff\",\n              title: \"ロドス・アイランド\",\n              action: \"leave\",\n              note: \"勤務終了、職場を移る\"\n            },\n            lifeGoal: { id: \"rhodes-work\", action: \"abandon\", note: \"別の仕事へ進むため退職\" },\n            p: 1\n          }",
+              "directJobs": [
+                0
+              ],
+              "effectKeys": [
+                "job",
+                "lifeAffiliation",
+                "id",
+                "title",
+                "action",
+                "note",
+                "lifeGoal",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        3
+      ]
+    },
+    {
+      "id": "sr_rhodes_posting_review",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:681",
+      "choices": [
+        {
+          "label": "本艦の船内宿舎に入り、船の上を生活の拠点にする",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "荷物をまとめて本艦の船室へ移り住んだ。食堂も職場も同じ鉄の廊下でつながり、地上に残してきた家族や友人とは通信や手紙で近況を伝え合う暮らしが始まった。",
+              "effectRaw": "{\n            residenceArrangement: \"independent_rental\",\n            lifeAffiliation: {\n              id: \"rhodes-staff\",\n              action: \"role\",\n              role: \"本艦・船内居住\"\n            },\n            groupStanding: {\n              id: \"rhodes-colleagues\",\n              title: \"ロドスの同僚\",\n              delta: 1,\n              reason: \"船内勤務を生活の拠点に選んだ\"\n            },\n            fl: { rhodes_landship: 1, rhodes: 1, household_separated: 1, sch: 0 },\n            p: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "residenceArrangement",
+                "lifeAffiliation",
+                "id",
+                "action",
+                "role",
+                "groupStanding",
+                "title",
+                "delta",
+                "reason",
+                "fl",
+                "rhodes_landship",
+                "rhodes",
+                "household_separated",
+                "sch",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "今暮らしている国の地域支部で働きたいと希望する",
+          "gate": "{\n            show: s =>\n              [\n                \"クルビア\",\n                \"ヴィクトリア\",\n                \"ウルサス\",\n                \"龍門\",\n                \"リターニア\",\n                \"サルゴン\",\n                \"イベリア\",\n                \"ボリバル\"\n              ].includes(s.res?.n)\n          }",
+          "outcomes": [
+            {
+              "weight": "0.56",
+              "prose": "ちょうど現地の地上支部に空きがあり、希望通りに配属が決まった。馴染みのある街の空気を吸いながら、支部の診療所や倉庫へ通う毎日が始まった。",
+              "effectRaw": "{\n              lifeAffiliation: {\n                id: \"rhodes-staff\",\n                action: \"role\",\n                role: \"地域支部・地上拠点勤務\"\n              },\n              groupStanding: {\n                id: \"rhodes-colleagues\",\n                title: \"ロドスの同僚\",\n                delta: 1,\n                reason: \"地域支部での勤務を始めた\"\n              },\n              p: 1\n            }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "action",
+                "role",
+                "groupStanding",
+                "title",
+                "delta",
+                "reason",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "希望した地上支部は今期の定員が埋まっていた。次の異動時期までは本艦で働くことになり、荷物を抱えて船内の宿舎へ入った。",
+              "effectRaw": "{\n              lifeAffiliation: {\n                id: \"rhodes-staff\",\n                action: \"role\",\n                role: \"本艦・支部希望待ち\"\n              },\n              p: -1\n            }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "action",
+                "role",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "家の都合がはっきりするまで、ひとまず本艦の仮部屋で様子を見る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "結論を急がず、当面は本艦の仮宿舎から持ち場へ通うことにした。船内の暮らしに馴染めるか確かめてから、次の面談で正式に決めるつもりだ。",
+              "effectRaw": "{\n            lifeAffiliation: {\n              id: \"rhodes-staff\",\n              action: \"role\",\n              role: \"本艦・配属保留\"\n            },\n            p: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "action",
+                "role",
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "sr_rhodes_posting_transfer",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:773",
+      "choices": [
+        {
+          "label": "地上支部への異動を願い出て、街での暮らしへ移る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.56",
+              "prose": "異動願が通り、本艦を降りて地域支部の勤務へ移った。久しぶりに土の匂いがする街角で借り部屋を探し、現地の診療所や倉庫を支える新しい毎日が始まった。",
+              "effectRaw": "{\n            lifeAffiliation: {\n              id: \"rhodes-staff\",\n              action: \"role\",\n              role: \"地域支部・地上拠点勤務\"\n            },\n            groupStanding: {\n              id: \"rhodes-colleagues\",\n              title: \"ロドスの同僚\",\n              delta: 1,\n              reason: \"本艦から地域支部へ異動した\"\n            },\n            p: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "action",
+                "role",
+                "groupStanding",
+                "title",
+                "delta",
+                "reason",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "タッチの差で支部の欠員は埋まってしまい、異動は見送りになった。また次の機会を待つことにして、見慣れた本艦の廊下へ戻った。",
+              "effectRaw": "{\n            lifeAffiliation: {\n              id: \"rhodes-staff\",\n              action: \"role\",\n              role: \"本艦・支部希望待ち\"\n            },\n            p: -1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "action",
+                "role",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "異動は望まず、住み慣れた本艦での仕事を続ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "異動願は出さず、エンジン音の響く本艦の居室と今の持ち場にそのまま残ることにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "地上の部屋探しや家の都合を考えて、今回は見送る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "今すぐ地上へ引っ越すのは負担が大きいと考え、今回の募集は見送った。次の機会が来るまでは本艦で働き続けることにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "sr_rhodes_branch_transfer",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:835",
+      "choices": [
+        {
+          "label": "本艦への異動を希望し、船内での暮らしへ移る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.48",
+              "prose": "異動が認められ、街の部屋を引き払って本艦の船室へ移ることになった。支部の仲間に別れを告げ、大きな荷鞄を提げて連絡艇に乗り込んだ。",
+              "effectRaw": "{\n            lifeAffiliation: {\n              id: \"rhodes-staff\",\n              action: \"role\",\n              role: \"本艦・船内居住\"\n            },\n            groupStanding: {\n              id: \"rhodes-colleagues\",\n              title: \"ロドスの同僚\",\n              delta: 1,\n              reason: \"地域支部から本艦へ異動した\"\n            },\n            p: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "lifeAffiliation",
+                "id",
+                "action",
+                "role",
+                "groupStanding",
+                "title",
+                "delta",
+                "reason",
+                "p"
+              ]
+            },
+            {
+              "weight": "1",
+              "prose": "今回の本艦枠はすでに埋まり、異動は叶わなかった。落胆はあったものの、翌朝にはまた馴染みの支部の扉を開けた。",
+              "effectRaw": "{ p: -1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "異動はせず、今の街と支部での仕事を続ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "通達には手を挙げず、顔なじみの患者やスタッフがいる今の地上支部で働き続けることにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "仕事の引き継ぎや家の都合を考え、次の機会まで見送る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "今はまだ抱えている仕事や家の用事が離れがたく、今回の異動は見送ることにした。",
+              "effectRaw": "{ p: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "sr_rhodes_promotion_review",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:1188",
+      "choices": [
+        {
+          "label": "推薦を受け入れ、現場主任・リーダー職への昇進を引き受ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "責任の重さに身の引き締まる思いを抱きながら、昇進の内示書に署名した。手当が増額され、後輩たちの指導や業務の総括を任されることになった。",
+              "effectRaw": "{\n            payBonus: 0.25,\n            groupStanding: {\n              id: \"rhodes-colleagues\",\n              title: \"ロドスの同僚\",\n              delta: 2,\n              reason: \"現場主任・リーダー職へ昇進した\"\n            },\n            lifeAffiliation: {\n              id: \"rhodes-staff\",\n              title: \"ロドス・アイランド\",\n              action: \"role\",\n              role: \"現場主任・業務統括\",\n              preserveRhodesPost: true\n            },\n            p: 2,\n            k: 2\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "payBonus",
+                "groupStanding",
+                "id",
+                "title",
+                "delta",
+                "reason",
+                "lifeAffiliation",
+                "action",
+                "role",
+                "preserveRhodesPost",
+                "p",
+                "k"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "行動予備隊での訓練と実績を活かし、正規外勤オペレーターへの昇格を志願する",
+          "gate": "{ show: s => s.job === $terraData.SR_JOBS.reserve || (s.h >= 60 && s.k >= 22) }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "実技試験と教官陣の推薦をクリアし、晴れて正規の外勤オペレーターとして辞令を受けた。過酷な前線への出撃が待っているが、確かな誇りと高待遇を手に入れた。",
+              "effectRaw": "{\n              job: $terraData.SR_JOBS.field,\n              payBonus: 0.2,\n              groupStanding: {\n                id: \"rhodes-colleagues\",\n                title: \"ロドスの同僚\",\n                delta: 2,\n                reason: \"正規外勤オペレーターへ昇格した\"\n              },\n              lifeAffiliation: {\n                id: \"rhodes-staff\",\n                title: \"ロドス・アイランド\",\n                action: \"role\",\n                role: \"正規外勤オペレーター\",\n                preserveRhodesPost: true\n              },\n              p: 2,\n              cr: 1\n            }",
+              "directJobs": [],
+              "effectKeys": [
+                "job",
+                "payBonus",
+                "groupStanding",
+                "id",
+                "title",
+                "delta",
+                "reason",
+                "lifeAffiliation",
+                "action",
+                "role",
+                "preserveRhodesPost",
+                "p",
+                "cr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "管理職よりも実務を極めたいと伝え、専門スペシャリストとしての待遇向上を望む",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "「現場の第一線で腕を振るいたい」という希望を伝え、役職名ではなく技術・実務の専任手当を支給されることになった。同僚たちも自分のこだわりを温かく支持してくれた。",
+              "effectRaw": "{\n            payBonus: 0.2,\n            groupStanding: {\n              id: \"rhodes-colleagues\",\n              title: \"ロドスの同僚\",\n              delta: 1,\n              reason: \"職人気質の働きぶりが認められた\"\n            },\n            lifeAffiliation: {\n              id: \"rhodes-staff\",\n              title: \"ロドス・アイランド\",\n              action: \"role\",\n              role: \"専門技能指導員\",\n              preserveRhodesPost: true\n            },\n            k: 3,\n            p: 1\n          }",
+              "directJobs": [],
+              "effectKeys": [
+                "payBonus",
+                "groupStanding",
+                "id",
+                "title",
+                "delta",
+                "reason",
+                "lifeAffiliation",
+                "action",
+                "role",
+                "preserveRhodesPost",
+                "k",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "今は現在の担当範囲を無理なく維持したいと伝え、現状維持を願い出る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "責任の重い役職は固辞し、慣れ親しんだ今の持ち場をマイペースに続けることを選んだ。上司も納得し、変わらぬ笑顔で送り出してくれた。",
+              "effectRaw": "{ p: 1, h: 1 }",
+              "directJobs": [],
+              "effectKeys": [
+                "p",
+                "h"
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        4,
+        4
+      ]
+    }
+  ],
+  "exceptions": [
+    {
+      "id": "life_work_project_setback",
+      "actual": [
+        3,
+        4
+      ]
+    }
+  ]
+}

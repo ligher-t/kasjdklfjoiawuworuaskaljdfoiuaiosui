@@ -88,7 +88,9 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.srOnStaff(s) &&
         s.year >= 1096 &&
         (s.job === 31 || s.job === 34) &&
-        (s.biasInfected || 0) <= 25,
+        (s.biasInfected || 0) <= 25 &&
+        !s.lifeRecord?.affiliations?.some(a => a.id === "reunion-reorg" &&
+          ["active", "crisis", "suspended"].includes(a.status)),
       t: "移動都市の路地裏で、正規軍と警官隊による感染者強制隔離区画の無差別掃討を目撃した。泣き叫ぶ子供や無抵抗の老人が銃床で殴り倒されている。しかし通信機からは「ロドスの中立原則を維持せよ。交戦への軍事介入は厳禁」という冷徹な命令が響いていた。",
       c: [
         $terraData.K("中立という名の傍観を捨て、銃を取って虐殺を止め、レユニオンの隊列に加わる", {}, [
@@ -102,6 +104,13 @@ window.TERRA_DATA_BUILD.fragment(
               action: "leave",
               note: "感染者虐殺を前に中立を捨てレユニオンへ転向"
             },
+            lifeGoals: [{
+              id: "rhodes-work",
+              action: "abandon",
+              onlyIfAffiliation: "rhodes-staff",
+              onlyIfUnresolved: true,
+              note: "ロドスの勤務を辞し、別の組織へ活動を移した"
+            }],
             lifeAffiliations: [
               {
                 id: "reunion-reorg",
@@ -111,6 +120,13 @@ window.TERRA_DATA_BUILD.fragment(
                 role: "最前線自衛戦闘班"
               }
             ],
+            lifeGoal: {
+              id: "reunion-relief",
+              title: "所属した隊で感染者の生活と安全を支える",
+              priority: "地域と安全",
+              action: "start",
+              note: "ロドス勤務を辞し、再編後の隊に加わった"
+            },
             fl: { reunion: 1 },
             p: 2
           }
@@ -132,6 +148,8 @@ window.TERRA_DATA_BUILD.fragment(
       ge: { year: 1097 },
       show: s =>
         s.lifeRecord?.affiliations?.some(a => ["reunion-1096", "reunion-reorg"].includes(a.id) && ["active", "crisis"].includes(a.status)) &&
+        !s.lifeRecord?.affiliations?.some(a => a.id === "rhodes-care" &&
+          ["active", "crisis", "suspended"].includes(a.status)) &&
         (s.ob >= 40 || s.h <= 45),
       t: "組織の瓦解と激しい内紛の果て、極寒の荒野で吹雪に巻かれて倒れ伏した。全身の源石結晶が激痛を放ち、意識が遠のく中、巨大な陸上移動艦の轟音とともに白い防護服を着た救助隊が駆け寄ってきた。",
       c: [
@@ -139,13 +157,35 @@ window.TERRA_DATA_BUILD.fragment(
           1,
           "凍りついた短剣を手放し、担架へと身体を預けた。目を覚ますとそこは暖かな無菌病室で、点滴の管と穏やかな眼差しの医師がいた。「もう戦わなくていい」という言葉に、張り詰めていた糸が解けて涙が零れた。",
           {
-            lifeAffiliation: {
-              id: "reunion-reorg",
-              title: "レユニオン・ムーブメント",
-              action: "leave",
-              note: "組織崩壊と病状悪化によりロドスへ保護"
-            },
+            lifeGoals: [
+              {
+                id: "protect-neighbours",
+                action: "abandon",
+                onlyIfAffiliation: "reunion-1096",
+                onlyIfUnresolved: true,
+                note: "所属隊の活動を離れ、治療のために保護を受けた"
+              },
+              {
+                id: "reunion-relief",
+                action: "abandon",
+                onlyIfAffiliation: "reunion-reorg",
+                onlyIfUnresolved: true,
+                note: "再編互助網の活動を離れ、治療のために保護を受けた"
+              }
+            ],
             lifeAffiliations: [
+              {
+                id: "reunion-1096",
+                action: "leave",
+                onlyIfActiveOrCrisis: true,
+                note: "活動を離れてロドスの医療保護を受けた"
+              },
+              {
+                id: "reunion-reorg",
+                action: "leave",
+                onlyIfActiveOrCrisis: true,
+                note: "活動を離れてロドスの医療保護を受けた"
+              },
               {
                 id: "rhodes-care",
                 title: "ロドスへの療養相談",
@@ -154,6 +194,7 @@ window.TERRA_DATA_BUILD.fragment(
                 role: "本艦・保護療養患者（元レユニオン）"
               }
             ],
+            fl: { reunion: 0 },
             h: 3,
             p: 2
           }
@@ -174,7 +215,10 @@ window.TERRA_DATA_BUILD.fragment(
       w: 0.5,
       ge: { year: 1097 },
       show: s =>
-        s.lifeRecord?.affiliations?.some(a => a.id === "rhodes-care" && a.role?.includes?.("元レユニオン")),
+        s.lifeRecord?.affiliations?.some(a => a.id === "rhodes-care" &&
+          ["active", "crisis"].includes(a.status) && a.role?.includes?.("元レユニオン")) &&
+        !s.lifeRecord?.affiliations?.some(a => a.id === "rhodes-staff" &&
+          ["active", "crisis", "suspended"].includes(a.status)),
       t: "ロドス本艦での投薬と療養によって体調が劇的に回復した。過去の経歴審査を終えた人事担当者から「船内で働きながら、新しい人生を歩み直してみないか」と更生雇用の提案を受けた。",
       c: [
         $terraData.K("倉庫の仕分けや宿舎の清掃など、非戦闘の生活支援員として第二の人生を始める", {}, [

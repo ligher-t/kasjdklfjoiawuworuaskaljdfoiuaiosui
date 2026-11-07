@@ -138,7 +138,7 @@ window.TERRA_DATA_BUILD.run("base/daily-childhood", function ($terraData, $defin
         "消しては書き直した答案に、前よりずっといい点がついた。黙っていようか少し迷ったが、家に着くなり我慢できずに{caregiver}へ突き出した。"
       ],
       { k: 2, p: 3 },
-      { need: ["就学中"] }
+      { need: ["就学中"], show: s => educationLegacySceneGuard(s,"education_school_classroom") }
     ),
     $terraData.F(
       ["児童"],
@@ -147,7 +147,7 @@ window.TERRA_DATA_BUILD.run("base/daily-childhood", function ($terraData, $defin
         "教室で言われた何気ない冗談を笑って流せず、むきになって言い返してしまった。翌朝、その子の席の近くを通る時はひどく足が重かった。"
       ],
       { rl: -3, p: -2 },
-      { need: ["就学中"] }
+      { need: ["就学中"], show: s => educationLegacySceneGuard(s,"education_school_classroom") }
     ),
     $terraData.F(
       ["児童"],
@@ -205,14 +205,15 @@ window.TERRA_DATA_BUILD.run("base/daily-childhood", function ($terraData, $defin
       { p: 5 },
       { once: true, show: s => !!s.friendContact?.id }
     ),
+    // Keep the generated event slot stable while legacy aptitude-only practice is retired.
     $terraData.F(
       ["少年", "青年"],
       [
         "借りた触媒器具を手に、アーツの制御を繰り返し練習した。同じ型を何度もなぞるうちに、指先へ通す力の加減が少しずつ掴めてきた。",
         "アーツの訓練中、どうしても乱れる呼吸と所作を一つずつ確かめ直した。ほんのわずかなコツに気づけた日は、道具を片づけるのが名残惜しかった。"
       ],
-      { ar: 3 },
-      { ge: { ar: 20 } }
+      {},
+      { show: () => false }
     )
   );
 });

@@ -38,5 +38,5 @@ function appendEnvironmentAndWellbeingTags(s, services, T, on) {
   on(s.rl < services.helpers.P("condition.relationLow"), "孤立");
   on(s.rl >= services.helpers.P("condition.relationHigh"), "社交的");
   on(s.k >= services.helpers.P("condition.knowledgeHigh"), "博識");
-  on(s.ar >= services.helpers.P("condition.artsHigh"), "アーツ優");
+  on(artsAdmissionPotential(s) >= services.helpers.P("condition.artsHigh"), "アーツ優");
 }

@@ -21,7 +21,7 @@ function recordAnnualWealthAndHistory(s, services, a, annualFlowRecorded) {
   const tg =
     services.P("social.creditBase") +
     services.eduLv(s) * services.P("social.educationCreditScale") +
-    (services.J[s.job].pay > services.P("social.highIncomeThreshold")
+    (employmentPaidForYear(s, s.year - 1) > services.P("social.highIncomeThreshold")
       ? services.P("social.highIncomeBonus")
       : 0) +
     (s.cash + (s.investment || 0) >= s.debt

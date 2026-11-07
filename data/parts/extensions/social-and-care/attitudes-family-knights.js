@@ -765,7 +765,7 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K(
           "家計から初回費用（{spouseInitialTreatmentCost}）を捻出し、すぐに診察を受けさせる",
           {
-            en: { affordableCash: 1e5 },
+            en: { affordableCashAfterReserve: 1e5 },
             why: "初回の通院費{spouseInitialTreatmentCost}を生活費後に用意できない"
           },
           [
@@ -839,7 +839,7 @@ window.TERRA_DATA_BUILD.fragment(
           "配偶者の希望を確かめ、初回費用{spouseInitialTreatmentCost}を払って通院を始める",
           {
             show: { need: ["配偶者の療養未開始"] },
-            en: { affordableCash: 1e5 },
+            en: { affordableCashAfterReserve: 1e5 },
             why: "初回の通院費{spouseInitialTreatmentCost}を生活費後に用意できない"
           },
           [
@@ -876,7 +876,7 @@ window.TERRA_DATA_BUILD.fragment(
           "初回費用{spouseInitialTreatmentCost}を払い、通院を再開する",
           {
             show: { need: ["配偶者の療養を休止中"] },
-            en: { affordableCash: 1e5 },
+            en: { affordableCashAfterReserve: 1e5 },
             why: "通院再開の初回費用{spouseInitialTreatmentCost}を生活費後に用意できない"
           },
           [
@@ -1156,8 +1156,9 @@ window.TERRA_DATA_BUILD.fragment(
           show: { ge: { literacy: 40 } },
           en: s =>
             $rules.economy.availableFunds(s) >=
-            5e3 * s.res.pm * (s.priceIndex || 1) + $rules.economy.annualReserve(s),
-          why: "応募・移動費5,000龍門幣と生活予備費を残せない"
+            5e3 * s.res.pm * (s.priceIndex || 1) + $rules.economy.annualReserve(s) &&
+            !!employmentOpeningForChoice(s, 21, null, true),
+          why: "応募費と生活予備費を残せないか、現在地の事務補助に募集枠がない"
         },
         [
           0.45,

@@ -21,7 +21,6 @@ window.TERRA_DATA_BUILD.run("review/historical-reviews", function ($terraData, $
       parent_household_move_news: "i,w,i",
       fam_care: "s,s,s",
       fam_unemploy: "s,s,s",
-      arts_awake: "s,s,w",
       dg: "s,s,s"
     },
     false
@@ -54,7 +53,7 @@ window.TERRA_DATA_BUILD.run("review/historical-reviews", function ($terraData, $
     {
       life_ursus_student_assembly_contact: "i,w",
       life_ursus_student_assembly_meeting: "d,a,w",
-      life_ursus_student_assembly_protest: "a,a,w",
+      life_ursus_student_assembly_protest: "a,a,w,i,w",
       life_ursus_katorga_life: "i,i,s",
       life_ursus_student_assembly_release: "d,w,s",
       life_ursus_student_assembly_later: "i,i,w",
@@ -119,7 +118,7 @@ window.TERRA_DATA_BUILD.run("review/historical-reviews", function ($terraData, $
       lov: "s,s,w",
       chi: "s,s,f",
       ksc: "s,s",
-      nat: "s,s,s",
+      nat: "s,s,s,s",
       mv: "s,s,s",
       old: "s,s,s",
       elder_work_opportunity: "s,s,a",

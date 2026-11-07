@@ -47,7 +47,7 @@ data.HIST.forEach(h => {
   assert(allEventFlags.has(h.flag), `Every HIST flag must be referenced by an event, missing: ${h.flag}`);
 });
 
-// 3. Local news routing: resident in Londinium in 1094 gets direct experience log
+// 3. Residence alone delivers nearby news; an actual, city-grounded event records direct experience
 const localLondiniumNews = JSON.parse(JSON.stringify(vm.runInNewContext(`(() => {
   born({ seed: 109401, by: 1060, region: 'ヴィクトリア' });
   S.res = REG.find(r => r.n === 'ヴィクトリア');
@@ -57,16 +57,25 @@ const localLondiniumNews = JSON.parse(JSON.stringify(vm.runInNewContext(`(() => 
   activateHistoricalWorldEvents(S);
   hist();
   const infoEntry = S.infoLog.find(row => row.id === 'thelazia_dead');
+  const h = HIST.find(row => row.flag === 'thelazia_dead');
+  const directBefore = !!historicalDirectEncounter(h, S);
+  const encounter = recordHistoricalDirectEncounter(h, S, 'timeline_thelazia_dead_londinium');
   return {
     known: !!S.known.thelazia_dead,
     route: infoEntry?.route,
-    textBasis: infoEntry?.textBasis
+    textBasis: infoEntry?.textBasis,
+    directBefore,
+    encounterRecorded: !!encounter,
+    witnessedRoute: historicalInformationRoute(h,S)
   };
 })()`, context)));
 
 assert.equal(localLondiniumNews.known, true, 'Londinium resident registers thelazia_dead');
-assert.equal(localLondiniumNews.route, '現地での直接の目撃・体験', 'Local resident receives eyewitness route');
-assert.equal(localLondiniumNews.textBasis, '現地体験文面', 'Local resident receives local text basis');
+assert.equal(localLondiniumNews.route, '近隣・地域の伝達網', 'residence alone supplies news, not eyewitness status');
+assert.notEqual(localLondiniumNews.textBasis, '現地体験文面', 'no unearned eyewitness prose from news');
+assert.equal(localLondiniumNews.directBefore,false,'initial regional news is not an encounter');
+assert.equal(localLondiniumNews.encounterRecorded,true,'matching city and region permit an event-backed encounter');
+assert.equal(localLondiniumNews.witnessedRoute,'現地での直接の目撃・体験','actual documented city encounter supplies direct experience');
 
 // 4. Distant news routing: resident in Higashi gets distant news, not local route
 const distantNews = JSON.parse(JSON.stringify(vm.runInNewContext(`(() => {
@@ -132,9 +141,9 @@ const crisisPeacefulSuppression = JSON.parse(JSON.stringify(vm.runInNewContext(`
   const inCrisis = isLocationInCrisis(S);
   
   // Test peaceful daily event recognition
-  const roseGarden = { t: "公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。" };
-  const salon = { t: "名門サロンの夜会に招かれ、銀器の触れ合う音の中で貴族や実業家たちと優雅に歓談した。" };
-  const drawbridge = { t: "運河沿いの遊歩道を歩き、夕暮れに染まる巨大な跳ね橋のシルエットを眺めた。" };
+  const roseGarden = { crisisPolicy: "nonessential-leisure", t: "公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。" };
+  const salon = { crisisPolicy: "nonessential-leisure", t: "名門サロンの夜会に招かれ、銀器の触れ合う音の中で貴族や実業家たちと優雅に歓談した。" };
+  const drawbridge = { crisisPolicy: "nonessential-leisure", t: "運河沿いの遊歩道を歩き、夕暮れに染まる巨大な跳ね橋のシルエットを眺めた。" };
   const wartimeDaily = { t: "諸侯軍の攻城砲の地鳴りが一日中響き、路地に立ち込める硝煙の向こうで自救軍の若者たちが救援物資を運び込んでいた。" };
   
   return {
@@ -151,6 +160,8 @@ assert.equal(crisisPeacefulSuppression.roseGardenBlocked, true, 'Rose garden str
 assert.equal(crisisPeacefulSuppression.salonBlocked, true, 'Salon party is recognized as peaceful leisure and blocked');
 assert.equal(crisisPeacefulSuppression.drawbridgeBlocked, true, 'Drawbridge stroll is recognized as peaceful leisure and blocked');
 assert.equal(crisisPeacefulSuppression.wartimeDailyAllowed, true, 'Wartime siege daily is allowed during crisis');
+assert.equal(vm.runInContext('isPeacefulLeisureEvent({t:"観光開発のために共有地を失うことに抗議した。"})',context),false,
+  'prose about tourism or unrest is not automatically classified as leisure');
 
 // 8. Historical death cause codes validation
 const requiredDeathCauses = [

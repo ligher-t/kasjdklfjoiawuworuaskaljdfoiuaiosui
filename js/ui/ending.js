@@ -3,8 +3,14 @@ function die(c, l, monthBasis = null, episodeId = null) {
   const s = S;
   if (s.dead) return;
   const before = traceState(s);
+  endPlayerEmployment(s, "death");
   if(educationLive(s)||s.educationPath?.status==="paused")
     educationEnd(s,"deceased","在学中に死亡し、課程を修了できなかった","death");
+  const journeyLocation = travelDeathLocation(s);
+  if (journeyLocation) {
+    s.deathTravel = journeyLocation;
+    travelEnd(s, "ended-by-death");
+  }
   s.dead = 1;
   s.dc = c;
   s.dl = l;
@@ -14,14 +20,15 @@ function die(c, l, monthBasis = null, episodeId = null) {
       localStorage.removeItem("terra2");
     } catch (e) {}
   }
+  // Annual mortality is not a dated incident. Keep month=0 when unknown.
   const annualMonthWasUnassigned = !s.mo;
-  if (annualMonthWasUnassigned) s.mo = rnd(1, 12);
+  if (annualMonthWasUnassigned && !monthBasis) s.mo = 0;
   s.deathOrigin = ["choice","daily"].includes(TRACE_RESOLUTION?.kind) ? "event" : "annual";
   s.deathProcess = mortalityDeathDetail(
     s,
     c,
     l,
-    monthBasis || (annualMonthWasUnassigned ? "annual-random-placeholder" : "current-calendar-month"),
+    monthBasis || (annualMonthWasUnassigned ? "annual-month-unknown" : "current-calendar-month"),
     episodeId
   );
   if (TRACE_RESOLUTION && !(HL && !CAPTURE_TRACE)) {
@@ -52,7 +59,7 @@ function die(c, l, monthBasis = null, episodeId = null) {
     `<div class="ui-record-path">${terminalRecordPathMarkup(s, "生涯の記録")}</div><p class="ui-ending-kicker">生涯の記録 / 終幕</p>` +
     `<h2 id="ending-title">${esc(s.nm)}は<span class="ui-ending-age">${s.age}<small>歳</small></span>で生涯を終えた</h2>` +
     `<p class="ui-ending-period">テラ暦${s.by}年 <span aria-hidden="true">―</span> ${s.year}年</p>` +
-    `<p class="ui-ending-place">${s.year}年、${s.res.n}にて</p>` +
+    `<p class="ui-ending-place">${s.year}年、${esc(s.deathTravel?.label || s.res.n)}にて</p>` +
     `<div class="ui-ending-cause"><p><strong>死因の分類</strong><span>${c}</span></p>` +
     `<p class="cause"><strong>記録された経緯</strong><span>${l}</span></p></div></header>` +
     `<div class="ui-ending-actions" role="group" aria-label="人生を終えた後の操作"><section class="ui-ending-next"><h3>次の人生</h3><p>また別の時代、別の土地で産声を上げる。</p>` +
@@ -86,44 +93,113 @@ function endingPeerCount() {
   const configured = P("world.maxLifeEvents");
   return Number.isSafeInteger(configured) && configured >= 1 && configured <= 6 ? configured : 3;
 }
-// A failed peer must not hide the other valid lives, or damage the active save.
+// Comparison lifetimes run in their own worker; the visible life remains untouched.
+let ENDING_PEERS_ACTIVE = null;
+const ENDING_PEERS_CACHE = new Map();
+function cancelEndingPeerComparison() {
+  if (!ENDING_PEERS_ACTIVE) return;
+  ENDING_PEERS_ACTIVE.worker.terminate();
+  ENDING_PEERS_ACTIVE = null;
+}
 function renderEndingPeers(life, root, retryAttempt = 0) {
-  if (S !== life || !life.dead) return;
+  if (S !== life || !life.dead || root?.hidden) return;
+  cancelEndingPeerComparison();
   const box = root?.querySelector(".peers");
   if (!box) return;
-  box.setAttribute("aria-busy", "true");
-  const seed = Number.isInteger(life.randomSeed) ? life.randomSeed : life.by;
-  const peers = [];
-  let failed = 0;
-  // A user-initiated retry selects the next deterministic group of seeds.
-  // It preserves the same birth year and birthday without replaying an
-  // already failing life indefinitely.
-  const count = endingPeerCount();
-  for (let index = 0; index < count; index++) {
-    try {
-      peers.push(simPeer(endingPeerSeed(seed, index + retryAttempt * count)));
-    } catch (error) {
-      failed++;
-      console.error("ending peer " + (index + 1) + " failed", error);
-    }
+  const count = endingPeerCount(),
+    seed = Number.isInteger(life.randomSeed) ? life.randomSeed : life.by,
+    key = JSON.stringify([ENGINE_REVISION, seed, life.by, life.bd, count, retryAttempt]),
+    cached = ENDING_PEERS_CACHE.get(key),
+    results = cached ? cached.slice() : Array(count).fill(null);
+  let received = cached ? count : 0;
+  const present = finished => {
+    if (S !== life || root.hidden) return;
+    const peers = results.filter(person => person && !person.error);
+    const failed = results.filter(person => person?.error).length;
+    const html = results.map((person, index) =>
+      person && !person.error
+        ? `<div class="peer"><b>${index + 1}.</b> ${esc(person.nm)} — ${esc(person.res)}・${esc(person.local)}／${esc(person.r)}／${esc(person.care)}。${person.age}歳没・${esc(person.dc)}` +
+          `。<span class="nt">${esc(person.job)}・${esc(person.edu)}・移住${person.moves}回</span></div>`
+        : "").join("");
+    const note = finished
+      ? peers.length
+        ? '<p class="nt">同じ年の同じ日に生を享けても、降り立った土地や巡り合わせによって、歩む道はこれほど変わります。</p>'
+        : '<p class="nt" role="status">今回は比較する人生を作成できませんでした。</p>'
+      : `<p class="nt" role="status">比較する人生を計算しています（${received}/${count}人）…</p>`;
+    box.innerHTML = html + note + (finished && failed
+      ? '<p class="nt">一部の比較記録を作成できませんでした。</p>' +
+        (retryAttempt < 2 ? '<button type="button" class="ui-peer-retry">別の条件で比較を再試行</button>' :
+        '<p class="nt">これ以上の自動再試行は行いません。</p>')
+      : "");
+    box.setAttribute("aria-busy", String(!finished));
+    if (finished) box.querySelector(".ui-peer-retry")?.addEventListener("click", () => {
+      if (S !== life || root.hidden) return;
+      box.innerHTML = '<p class="nt" role="status">比較する人生を再計算しています…</p>';
+      setTimeout(() => renderEndingPeers(life, root, retryAttempt + 1), 30);
+    });
+  };
+  if (cached) {
+    present(true);
+    return;
   }
-  const html = peers.map((person, index) =>
-    `<div class="peer"><b>${index + 1}.</b> ${esc(person.nm)} — ${esc(person.res)}・${esc(person.local)}／${esc(person.r)}／${esc(person.care)}。${person.age}歳没・${esc(person.dc)}` +
-    `。<span class="nt">${esc(person.job)}・${esc(person.edu)}・移住${person.moves}回</span></div>`
-  ).join("");
-  const note = peers.length
-    ? '<p class="nt">同じ年の同じ日に生を享けても、降り立った土地や巡り合わせによって、歩む道はこれほど変わります。</p>'
-    : '<p class="nt" role="status">今回は比較する人生を作成できませんでした。</p>';
-  box.innerHTML = html + note + (failed
-    ? '<p class="nt">一部の比較記録を作成できませんでした。</p>' +
-      (retryAttempt < 2 ? '<button type="button" class="ui-peer-retry">別の条件で比較を再試行</button>' :
-      '<p class="nt">これ以上の自動再試行は行いません。</p>')
-    : "");
-  box.setAttribute("aria-busy", "false");
-  box.querySelector(".ui-peer-retry")?.addEventListener("click", () => {
-    if (S !== life) return;
-    box.innerHTML = '<p class="nt" role="status">比較する人生を再計算しています…</p>';
-    setTimeout(() => renderEndingPeers(life, root, retryAttempt + 1), 30);
+  if (typeof Worker !== "function") {
+    box.innerHTML = '<p class="nt" role="status">この環境では比較人生を計算する機能が利用できません。</p>';
+    box.setAttribute("aria-busy", "false");
+    return;
+  }
+  let worker;
+  try {
+    worker = new Worker("js/ui/ending-peer-worker.js", { name: "terra-ending-peers" });
+  } catch (error) {
+    console.error("ending peer worker initialization failed", error);
+    box.innerHTML = '<p class="nt" role="status">比較人生の計算を開始できませんでした。</p>';
+    box.setAttribute("aria-busy", "false");
+    return;
+  }
+  const active = { worker, life, root };
+  ENDING_PEERS_ACTIVE = active;
+  const current = () => ENDING_PEERS_ACTIVE === active && S === life &&
+    life.dead && !root.hidden && root.isConnected !== false;
+  const stop = () => {
+    if (ENDING_PEERS_ACTIVE === active) cancelEndingPeerComparison();
+  };
+  const finish = () => {
+    if (!current()) { stop(); return; }
+    for (let i = 0; i < count; i++) if (results[i] === null) results[i] = { error: true };
+    received = count;
+    if (results.every(person => !person.error)) {
+      ENDING_PEERS_CACHE.set(key, results.slice());
+      if (ENDING_PEERS_CACHE.size > 8) ENDING_PEERS_CACHE.delete(ENDING_PEERS_CACHE.keys().next().value);
+    }
+    stop();
+    present(true);
+  };
+  worker.onmessage = ({ data }) => {
+    if (!current()) { stop(); return; }
+    if (data?.type === "peer" && Number.isInteger(data.index) &&
+        data.index >= 0 && data.index < count && results[data.index] === null) {
+      results[data.index] = data.person || { error: data.error || true };
+      received++;
+      present(false);
+    } else if (data?.type === "done") {
+      finish();
+    } else if (data?.type === "fatal") {
+      console.error("ending peer worker failed", data.error);
+      finish();
+    }
+  };
+  worker.onerror = error => {
+    console.error("ending peer worker error", error);
+    finish();
+  };
+  worker.onmessageerror = error => {
+    console.error("ending peer worker message error", error);
+    finish();
+  };
+  present(false);
+  worker.postMessage({
+    type: "run", revision: ENGINE_REVISION, seed, by: life.by, bd: life.bd,
+    count, retryAttempt
   });
 }
 function endingPeerSeed(base, index) {
@@ -133,7 +209,7 @@ function endingPeerSeed(base, index) {
   value ^= value << 5;
   return value >>> 0 || 0x6d2b79f5;
 }
-function simPeer(seed = null) {
+function simPeer(seed = null, birthDetails = null) {
   const cloneStats = value =>
     value instanceof Set
       ? new Set(value)
@@ -171,7 +247,7 @@ function simPeer(seed = null) {
     TRACE_RESOLUTION = null;
     PENDING_DEATH_TRACE = null;
     CAPTURE_TRACE = false;
-    const birth = { by: bkS.by, bd: bkS.bd };
+    const birth = { by: birthDetails?.by ?? bkS?.by, bd: birthDetails?.bd ?? bkS?.bd };
     if (Number.isSafeInteger(seed)) birth.seed = seed;
     born(birth);
     let g = 0;

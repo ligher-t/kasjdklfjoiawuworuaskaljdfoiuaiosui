@@ -15,11 +15,11 @@ window.TERRA_DATA_BUILD.fragment(
     months: [10, 11],
     once: true,
     w: 0.18,
-    t: "冬の舞踏会が近づく街で、よその学校の生徒たちがひそかに開く集まりの噂が回ってきた。国家評議会庁舎を傷つけた容疑で、学生連合の生徒がひとり憲兵に連れて行かれたという。家では親が「頼むから余計なことに首を突っ込むな」と眉をひそめていた。",
+    t: "冬の舞踏会が近づく街で、よその学校の生徒たちがひそかに開く集まりの噂が回ってきた。国家評議会庁舎を傷つけた容疑で、学生連合の生徒がひとり憲兵に連れて行かれたという。家ではこの集まりに近づかないほうがいいと心配する声もあった。",
     c: [
-      $terraData.K("家の人には少し遅くなるとだけ言い、集まりへ様子を見に行く", {}, [
+      $terraData.K("身近な人には用事があるとだけ伝え、集まりを見に行く", {}, [
         1,
-        "親には友人と勉強してくるとだけ告げて集まりへ顔を出した。捕まった生徒を助け出そうと息巻く声と、下手に動けば全員捕まると怯える声が入り乱れていた。帰り道、大通りでは冬の舞踏会に向けた華やかな飾りつけが進んでいた。",
+        "用事があると伝えて集まりへ顔を出した。捕まった生徒を助け出そうと息巻く声と、下手に動けば全員捕まると怯える声が入り乱れていた。帰り道、大通りでは冬の舞踏会に向けた華やかな飾りつけが進んでいた。",
         {
           fl: { ursus_student_assembly_contacted: 1 },
           lifeAffiliation: {
@@ -27,12 +27,12 @@ window.TERRA_DATA_BUILD.fragment(
             title: "サンクト・グリファーブルク学生連合とのつながり",
             kind: "community",
             action: "contact",
-            role: "会合の知らせを受けた学生"
+            role: "会合の知らせを受けた参加者"
           },
           lifeGoal: {
             id: "ursus-student-assembly",
             title: "同じ街の学生たちと連絡を保ち、自分の身を守る",
-            priority: "学業と安全",
+            priority: "暮らしと安全",
             action: "start"
           },
           groupStanding: {
@@ -44,15 +44,15 @@ window.TERRA_DATA_BUILD.fragment(
           p: 1
         }
       ]),
-      $terraData.K("危ない誘いには乗らず、学校と家の往復を守る", {}, [
+      $terraData.K("危ない誘いには乗らず、普段の暮らしを続ける", {}, [
         1,
-        "その集まりには足を向けなかった。教室でも捕まった生徒の噂がひそひそと囁かれていたが、放課後は寄り道せず、冷たい風の中をまっすぐ家へ帰った。",
+        "その集まりには足を向けなかった。街では捕まった生徒の噂が囁かれていたが、冷たい風の中をまっすぐ帰った。",
         {
           fl: { ursus_student_assembly_contacted: 0, ursus_student_assembly_active: 0 },
           lifeGoal: {
             id: "ursus-student-assembly",
             title: "同じ街の学生たちと連絡を保ち、自分の身を守る",
-            priority: "家と学業",
+            priority: "暮らしと安全",
             action: "abandon",
             note: "連合との接触を選ばず、日々の暮らしを続けた"
           },
@@ -74,7 +74,7 @@ window.TERRA_DATA_BUILD.fragment(
     months: [10, 11],
     once: true,
     w: 0.22,
-    t: "薄暗い空き部屋で開かれた会合では、捕まった仲間を釈放させるため、冬の舞踏会の当日に宮殿の前で抗議の声を上げようという話になった。だが街頭へ出れば憲兵に目を付けられる。親になんと言い訳するか、本当に広場へ立つ覚悟があるか、手のひらが汗ばんだ。",
+    t: "薄暗い空き部屋で開かれた会合では、捕まった仲間を釈放させるため、冬の舞踏会の当日に宮殿の前で抗議の声を上げようという話になった。だが街頭へ出れば憲兵に目を付けられる。身近な人にどう伝えるか、本当に広場へ立つ覚悟があるか、手のひらが汗ばんだ。",
     c: [
       $terraData.K("当日広場へ出ると腹を括り、プラカードの準備を手伝う", {}, [
         1,
@@ -142,7 +142,7 @@ window.TERRA_DATA_BUILD.fragment(
       ]),
       $terraData.K("これ以上は危険だと身を引き、集まりから抜ける", {}, [
         1,
-        "やはり自分には無理だと伝えて部屋を出た。翌日からはいつも通り授業に出たが、街の空気はどこかピリピリと張り詰めていた。",
+        "やはり自分には無理だと伝えて部屋を出た。翌日からは普段の暮らしに戻ったが、街の空気はどこか張り詰めていた。",
         {
           fl: { ursus_student_assembly_contacted: 0, ursus_student_assembly_active: 0 },
           lifeAffiliation: {
@@ -182,13 +182,15 @@ window.TERRA_DATA_BUILD.fragment(
     show: s => !!s.world?.events?.katorga_incident,
     once: true,
     w: 0.2,
-    t: "冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた。突然、白煙を噴き上げて催涙弾が転がり込み、帰る道も見失われた。警棒を構えた警備兵が雪煙を蹴立てて突っ込んでくる中、すぐ目の前で友人が足を滑らせて倒れ込んだ。",
+    t: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1
+      ? "冬の舞踏会の夜、広場から離れた部屋で学生たちの帰りを待った。通りの向こうで鐘が鳴り、騒ぎが始まったという知らせが届く。戻ってこない生徒の家族に、何をどこまで伝えられるのか。机の上には、まだ確かめられていない名前が並んでいた。"
+      : "冬の舞踏会の当日、凍てつく宮殿前の広場には大勢の学生が詰めかけた。静かにプラカードを掲げる者もいれば、怒号を上げる者もいて足並みは最初から乱れていた。突然、白煙を噴き上げて催涙弾が転がり込み、帰る道も見失われた。警棒を構えた警備兵が雪煙を蹴立てて突っ込んでくる中、すぐ目の前で友人が足を滑らせて倒れ込んだ。",
     c: [
-      $terraData.K("転んだ友人を起こそうとする", {}, [
+      $terraData.K("転んだ友人を起こそうとする", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 0 }, [
         1,
         "友人の肩を抱き起こそうとした瞬間、背後から警備兵に取り押さえられた。そのまま窓のない護送車へ押し込まれ、どこへ行くかも知らされないまま、電力も暖房も落とされた極寒のカトルガ区画へ放り込まれた。",
         {
-          fl: { ursus_katorga_detained: 1 },
+          fl: { ursus_katorga_detained: 1, detained: 1, ursus_student_assembly_active: 0 },
           lifeAffiliation: {
             id: "ursus-student-assembly",
             title: "サンクト・グリファーブルク学生連合とのつながり",
@@ -212,7 +214,7 @@ window.TERRA_DATA_BUILD.fragment(
           k: -2
         }
       ]),
-      $terraData.K("パニックの人波から脇道へ抜け、家族への伝言役に徹する", {}, [
+      $terraData.K("パニックの人波から脇道へ抜け、家族への伝言役に徹する", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 0 }, [
         1,
         "むせるような煙の中、友人と引き剥がされるように路地裏へ逃げ込んだ。翌日からは表通りを避け、捕まった仲間たちの親もとへひそかに様子を知らせて回った。",
         {
@@ -244,7 +246,7 @@ window.TERRA_DATA_BUILD.fragment(
           p: 1
         }
       ]),
-      $terraData.K("命の危険を感じ、そのまま家へ逃げ帰って息を潜める", {}, [
+      $terraData.K("命の危険を感じ、そのまま家へ逃げ帰って息を潜める", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 0 }, [
         1,
         "誰にも声をかけず、震える足で家まで走って逃げ帰った。それから数日は恐ろしくて学校へも行けず、誰が連れ去られたという噂ばかりが耳に入った。",
         {
@@ -259,13 +261,61 @@ window.TERRA_DATA_BUILD.fragment(
           lifeGoal: { id: "ursus-student-assembly", action: "pause", note: "身の安全と家族との生活を優先" },
           p: 0
         }
-      ])
+      ]),
+      $terraData.K("確かめられた帰宅情報だけを、待っている家族へ届ける", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1 }, [
+        1,
+        "夜明けまでに戻った人の名前を一つずつ確かめ、その家族へ知らせに歩いた。まだ帰らない人については、知らないことを知らないまま伝えた。戸口が閉まるたび、次の家へ向かう足が重くなった。",
+        {
+          lifeAffiliation: {
+            id: "ursus-student-assembly",
+            title: "サンクト・グリファーブルク学生連合とのつながり",
+            kind: "community",
+            action: "role",
+            role: "帰宅確認と家族への伝言係",
+            note: "広場へは出ず、確かめた安否だけを伝えた"
+          },
+          lifeGoal: {
+            id: "ursus-student-assembly",
+            action: "continue",
+            note: "知らない安否を憶測で埋めず、連絡役を続けた"
+          },
+          regionalImpact: {
+            region: "ウルサス",
+            entity: "学生の家族への帰宅連絡",
+            kind: "family-message",
+            description: "帰宅を確認できた学生について、その家族へ伝えた",
+            basis: "secondary-event-summary; individual-game-branch"
+          },
+          p: -2, rl: 2
+        }
+      ]),
+      $terraData.K("いったん連絡を止め、家族と自分の安全を確かめる", { show: s => s.eventOutcomes?.life_ursus_student_assembly_meeting?.choiceIndex === 1 }, [
+        1,
+        "外では誰が連れて行かれたのか確かな話がなく、伝言を待つ家からも次々に人が訪れた。今夜は答えを出せないと告げ、紙片をしまって戸に鍵を掛けた。",
+        {
+          fl: { ursus_student_assembly_active: 0 },
+          lifeAffiliation: {
+            id: "ursus-student-assembly",
+            title: "サンクト・グリファーブルク学生連合とのつながり",
+            kind: "community",
+            action: "suspend",
+            note: "広場の外での連絡を休止し、身の安全を優先した"
+          },
+          lifeGoal: {
+            id: "ursus-student-assembly",
+            action: "pause",
+            note: "安否不明のまま断定せず、連絡を一時止めた"
+          },
+          p: -1
+        }
+      ]),
     ]
   });
 
   $terraData.EV.push({
     id: "life_ursus_katorga_life",
     conf: "B",
+    inConfinement: true,
     references: ["SRC_URSUS_PAA_SYNOPSIS"],
     st: ["少年", "青年"],
     need: ["ursus_katorga_detained"],
@@ -345,6 +395,7 @@ window.TERRA_DATA_BUILD.fragment(
   $terraData.EV.push({
     id: "life_ursus_student_assembly_release",
     conf: "B",
+    inConfinement: true,
     references: ["SRC_URSUS_PAA_SYNOPSIS"],
     st: ["少年", "青年"],
     need: ["ursus_katorga_detained"],
@@ -371,7 +422,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "continue",
             note: "生活を立て直しながら仲間との細い縁を保つ"
           },
-          fl: { ursus_katorga_detained: 0, ursus_student_assembly_active: 1 },
+          fl: { ursus_katorga_detained: 0, detained: 0, ursus_student_assembly_active: 1 },
           p: 1
         }
       ]),
@@ -391,7 +442,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "complete",
             note: "無事に帰宅し、仲間の安否を伝えて区切りをつけた"
           },
-          fl: { ursus_katorga_detained: 0, ursus_student_assembly_active: 0 },
+          fl: { ursus_katorga_detained: 0, detained: 0, ursus_student_assembly_active: 0 },
           regionalImpact: {
             region: "ウルサス",
             entity: "カトルガ区画から戻った本人の記録",
@@ -418,7 +469,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "pause",
             note: "体調と暮らしの立て直しを最優先した"
           },
-          fl: { ursus_katorga_detained: 0, ursus_student_assembly_active: 0 },
+          fl: { ursus_katorga_detained: 0, detained: 0, ursus_student_assembly_active: 0 },
           h: 2,
           p: 0
         }
@@ -436,7 +487,9 @@ window.TERRA_DATA_BUILD.fragment(
     ge: { year: 1107, age: 18 },
     once: true,
     w: 0.16,
-      t: "あの冬の事件から何年もが過ぎ、学校を出て働く場所も住まいも変わった。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との平穏な暮らしを思いながら、返事を書くか迷った。",
+    show: s => s.lifeRecord?.affiliations?.some(row =>
+      row.id === "ursus-student-assembly" && ["active", "crisis"].includes(row.status)),
+      t: "あの冬の事件から何年もが過ぎた。学びの場や仕事、住まいが以前とは変わった人も多い。ある日、当時学生連合で顔を合わせたひとりから短い手紙が届いた。今の仕事や家族との平穏な暮らしを思いながら、返事を書くか迷った。",
     c: [
       $terraData.K("今の暮らしに障らない範囲で、そのひとりとだけ細く連絡を保つ", {}, [
         1,

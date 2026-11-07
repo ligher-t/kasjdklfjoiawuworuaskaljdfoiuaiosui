@@ -13,7 +13,7 @@ assert(data.RACE.some(row => row.n === 'ヴァルポ'));
 assert(data.RACE.some(row => row.n === 'ヴィーヴル'));
 assert.equal(data.RACE_AFF['シラクーザ']['ヴァルポ'], 1.5);
 assert.equal(data.RACE_AFF['極東']['ヴァルポ'], 1.5);
-for (const obsolete of ['ヴァルボ', 'ヴイーヴル', 'デイティ・グリファーバーグ', 'ファミリア', '雪祀司'])
+for (const obsolete of ['ヴァルボ', 'ヴイーヴル', 'デイティ・グリファーバーグ', 'ファミリア', '雪祀司', 'グランファロ'])
   assert(!allDataText.includes(obsolete), `published data retains obsolete terminology: ${obsolete}`);
 assert(allDataText.includes('サンクト・グリファーブルク'));
 assert(allDataText.includes('ファミリー'));
@@ -71,6 +71,23 @@ assert(conflict.c.slice(0, 4).every(choice => choice.o[0][1].endsWith('伝えた
 assert(conflict.c.slice(0, 4).every(choice => !/返事|黙って|尋ねた|言った/.test(choice.o[0][1])));
 assert(!allDataText.includes('{spouse}'));
 
+const publishedEventStrings = [];
+for (const row of data.EV) {
+  const add = value => {
+    if (typeof value === 'string') publishedEventStrings.push(value);
+    else if (Array.isArray(value)) value.forEach(add);
+    else if (value && typeof value === 'object' && typeof value.t === 'string') add(value.t);
+  };
+  add(row.t);
+  for (const choice of row.c || []) {
+    add(choice.l);
+    add(choice.why);
+    for (const outcome of choice.o || []) add(outcome?.[1]);
+  }
+}
+assert(!publishedEventStrings.some(text => /ことにはならない/.test(text)),
+  'player event prose must not append a redundant "ことにはならない" disclaimer');
+
 const schoolAid = event('life_ursus_school_aid_followup');
 assert.equal(
   schoolAid.c[1].o[0][2].regionalImpact.description,
@@ -102,6 +119,22 @@ assert(!JSON.stringify(lateranoReview).includes('返答や許可、採用はま�
 assert(!JSON.stringify(lateranoReview).includes('許可や越境を意味せず'));
 
 const ctx = context(root).ctx;
+const matchFixingText = vm.runInContext(`(()=>{
+  born({seed:871005,by:1077,region:'カジミエーシュ'});
+  S.age=26;S.year=1103;S.priceIndex=1.363619883;
+  const row=EV.find(e=>e.id==='car_kaz_comp_knight_choice_match');
+  const expected=m(5000000*S.priceIndex);
+  const before=(S.cash||0)+(S.house?.cash||0);
+  const previous=TRACE_RESOLUTION;TRACE_RESOLUTION={kind:'choice',id:row.id,label:row.c[1].l};
+  try{ap(row.c[1].o[0][2]);}finally{TRACE_RESOLUTION=previous;}
+  const after=(S.cash||0)+(S.house?.cash||0);
+  return {expected,body:tpl(row.t,S),result:tpl(row.c[1].o[0][1],S),delta:after-before};
+})()`, ctx);
+assert(matchFixingText.body.includes(matchFixingText.expected));
+assert(matchFixingText.result.includes(matchFixingText.expected));
+assert(Math.abs(matchFixingText.delta-5000000*1.363619883)<1e-6,
+  'displayed match-fixing payment and actual cash delta use the same scale');
+
 const noRegisteredWorldPressure = vm.runInContext(
   "worldPressureContext({res:REG.find(region=>region.n==='ウルサス'),year:1090,world:{events:{}}}).summary",
   ctx

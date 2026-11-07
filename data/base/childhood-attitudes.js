@@ -94,24 +94,24 @@ window.TERRA_DATA_BUILD.run("base/childhood-attitudes", function ($terraData, $d
           "小学校への入学を希望する",
           {
             // Always show the option. An unavailable school or unmet requirements disable it.
-            en: s => educationCanEnter(s,"primary").allowed,
-            why: "通える学校や空き枠がないか、学費や感染者への扱いなどの条件を満たせない",
+            en: s => !educationActiveCase(s),
+            why: "今年の進路相談がすでに進んでいる",
             pw: [1, { when: "貧困", x: 0.4 }]
           },
           [
             1,
-            "「学校へ行きたい」と家の人に伝え、初等学校へ入学の申し込みを出してもらった。無事に机を並べられるかどうかは、学校の空き枠や世間の目にも左右される。",
-            { k: 1, rl: 4, educationAction: "primary" }
+            "「学校へ行きたい」と家の人に伝えた。家の人と近くの募集案内を確かめ、どの学び舎へ通えるか相談することにした。",
+            { k: 1, rl: 4, educationAction: "case:begin:primary:primary:1" }
           ]
         ),
-        $terraData.K("学校に受け入れられない理由を確認する",
-          {show:s=>!educationBarrier(s,"primary").allowed},
-          [1,"学校の門は閉ざされ、入学は断られた。どうして教室へ入れないのか、家の人と悔しさを噛みしめながらその理由を確かめた。",
-           {educationAction:"denied-primary",p:-2}]),
+        $terraData.K("家の人と近隣の募集案内を探す",
+          {show:s=>!educationActiveCase(s)},
+          [1,"学校に入れるかは、まだ分からない。家の人に頼んで、近くにある学び舎の募集案内を一緒に調べた。",
+           {educationAction:"case:begin:primary:primary:1",p:1}]),
         $terraData.K("家の手伝いをする", { pw: [0.3, { when: "貧困", x: 3 }] }, [
           1,
           "家の人と水汲みや片付けを分け合った。学校への申し込みは見送り、当面は家で文字や暮らしの知恵を教わることにした。",
-          { k: 3, p: -3, educationAction: "decline-primary" }
+          { k: 3, p: -3, educationAction: "case:decline:primary" }
         ])
       ]
     },
@@ -313,31 +313,37 @@ window.TERRA_DATA_BUILD.run("base/childhood-attitudes", function ($terraData, $d
       st: ["幼児", "児童", "少年"],
       ge: { age: 5 },
       le: { age: 13 },
-      show: s => !s.inf && !s.par?.fa?.inf && !s.par?.mo?.inf,
+      show: s => {
+        const parents = [s.par?.fa, s.par?.mo];
+        return !s.inf && !s.par?.fa?.inf && !s.par?.mo?.inf &&
+          $rules.family.inSharedHousehold(s) &&
+          parents.some(parent => parent && !parent.d && !parent.separated &&
+            parent.beliefs && parent.beliefs.infected >= 65);
+      },
       once: true,
       w: [
         0.55,
         { when: "感染者への世間圧力が強い", x: 1.5 },
         { when: "地域の感染者圧力が比較的弱い", x: 0.7 }
       ],
-      t: "夕餉の食卓で、大人たちが近所にいる鉱石病患者の噂話をしていた。誰かが吐き捨てるように『ああいう連中は決まりも守らない』と言い、周りの大人も誰一人としてそれを否定しなかった。",
+      t: "夕餉の席で、親の一人が近所に越してきた感染者の一家について話した。『ああいう家とは付き合うな。厄介事を持ち込まれる』。煮物を取り分ける手は止まらず、卓には箸の音だけが残った。",
       c: [
-        $terraData.K("大人たちの話を信じる", { pw: [1, { when: "気質:慎重", x: 1.5 }] }, [
+        $terraData.K("その親の言葉を信じる", { pw: [1, { when: "気質:慎重", x: 1.5 }] }, [
           1,
-          "家の大人がみんな黙ってうなずくのだから、きっとそうに違いないと思った。それからは鉱石病という言葉を聞くたび、病の苦しみより先にあの夜の冷たい言葉を思い出すようになった。",
+          "一緒に食卓にいた親の話が正しいのだと思った。それからは鉱石病という言葉を聞くたび、病の苦しみより先にあの夜の冷たい言葉を思い出すようになった。",
           { biasInf: 14, fl: { bias_family_model: 1, bias_inf_formed: 1 }, p: -2 }
         ]),
         $terraData.K(
-          "どうしてみんな同じだと言うのか尋ねる",
+          "その親に、何を根拠にそう言うのか尋ねる",
           { pw: [1, { when: "気質:社交的", x: 1.4 }, { when: "気質:楽天的", x: 1.2 }] },
           [
             0.65,
-            "思い切って聞き返すと、一人は『昔からそう言われている』と口ごもり、別の大人は『病気だけで人の良し悪しは決められないよ』と静かに言った。食卓の噂話はそこで止まり、二つの言葉が胸に残った。",
+            "問い返すと、親は『昔からそう言われている』と口ごもった。病気だけで人を決めつけてよいのか、あなたは冷めかけた汁をすすりながら考え続けた。",
             { biasInf: -3, fl: { bias_family_model: 1, bias_inf_formed: 1 }, k: 2, rl: 2 }
           ],
           [
             1,
-            "問い返した途端、食器の音が止まって気まずい沈黙が落ちた。大人たちはすぐに話題を変えたが、誰一人としてちゃんとした理由を言えなかったことだけははっきり覚えていた。",
+            "親は箸を置いたまま答えず、やがて話題を変えた。あなたは冷めかけた汁をすすり、理由のない決めつけだけが食卓に残った。",
             { biasInf: -1, fl: { bias_family_model: 1, bias_inf_formed: 1 }, p: -3, rl: -2 }
           ]
         )
@@ -350,7 +356,11 @@ window.TERRA_DATA_BUILD.run("base/childhood-attitudes", function ($terraData, $d
       st: ["幼児", "児童", "少年"],
       ge: { age: 5 },
       le: { age: 13 },
-      show: s => !!s.par?.fa?.inf || !!s.par?.mo?.inf,
+      show: s => {
+        const parents = [s.par?.fa, s.par?.mo];
+        return $rules.family.inSharedHousehold(s) &&
+          parents.some(parent => parent && !parent.d && !parent.separated && parent.inf);
+      },
       once: true,
       w: [
         0.55,
@@ -463,7 +473,13 @@ window.TERRA_DATA_BUILD.run("base/childhood-attitudes", function ($terraData, $d
       st: ["幼児", "児童", "少年"],
       ge: { age: 5 },
       le: { age: 13 },
-      show: s => s.r?.n !== "サルカズ" && s.par?.fa?.r?.n !== "サルカズ" && s.par?.mo?.r?.n !== "サルカズ",
+      show: s => {
+        const parents = [s.par?.fa, s.par?.mo];
+        return s.r?.n !== "サルカズ" && s.par?.fa?.r?.n !== "サルカズ" && s.par?.mo?.r?.n !== "サルカズ" &&
+          $rules.family.inSharedHousehold(s) &&
+          parents.some(parent => parent && !parent.d && !parent.separated &&
+            parent.beliefs && parent.beliefs.sarkaz >= 65);
+      },
       once: true,
       w: [
         0.45,
@@ -472,24 +488,24 @@ window.TERRA_DATA_BUILD.run("base/childhood-attitudes", function ($terraData, $d
         { when: "地域で少数派", x: 1.15 },
         { when: "多種族の交流圏", x: 1.15 }
       ],
-      t: "親戚から届いた手紙に、近くの仕事場に入ったサルカズの労働者への苦情が書き連ねてあった。家の大人たちはその人の顔も仕事ぶりも知らないまま、『サルカズには最初から近づくな』と口を揃えた。",
+      t: "親戚から届いた手紙に、仕事場へ入ったサルカズの働き手への苦情が書かれていた。親の一人は本人を知らないまま、『サルカズには最初から近づくな』と言った。封筒には、その人が何をしたかは書かれていなかった。",
       c: [
-        $terraData.K("親族の言う通り、近づかない", { pw: [1, { when: "気質:慎重", x: 1.5 }] }, [
+        $terraData.K("その親の忠告を信じ、近づかない", { pw: [1, { when: "気質:慎重", x: 1.5 }] }, [
           1,
-          "周りの大人が揃ってそう言うのだから、関わらないのが身のためだと思い込んだ。相手の名前や人柄を知るより先に、角や出自だけで距離を測る癖がいつしか身についた。",
+          "親の忠告を胸にしまい、次に荷車を引くサルカズとすれ違ったとき道端へ身を寄せた。相手の名や仕事ぶりを知るより先に、角や出自で距離を測る癖がついた。",
           { biasSar: 14, fl: { bias_family_sarkaz_model: 1, bias_sar_formed: 1 }, p: -2 }
         ]),
         $terraData.K(
-          "会ったこともないのに、どうして悪く言うのか尋ねる",
+          "会ったこともない人を、なぜ悪く言うのか尋ねる",
           { pw: [1, { when: "気質:社交的", x: 1.4 }, { when: "気質:楽天的", x: 1.2 }] },
           [
             0.65,
-            "『会ったこともないのに、どうして悪く言うの』と真っ直ぐ尋ねた。大人たちは曖昧に言葉を濁したが、家の偏見をそのまま鵜呑みにせずに済んだ。",
+            "『会ったこともない人を、どうして悪く言うの』と尋ねると、親は返事に困って手紙を裏返した。そこには、その人の行いを責める言葉はなかった。",
             { biasSar: -3, fl: { bias_family_sarkaz_model: 1, bias_sar_formed: 1 }, k: 1, rl: 2 }
           ],
           [
             1,
-            "問い返すと、大人は苦い顔をして手紙を畳み、話を打ち切った。それ以上は口を挟めなかったが、見たこともない相手を決めつけることへの違和感だけは消えなかった。",
+            "親は手紙を畳み、話題を打ち切った。それ以上は聞けなかったが、見たこともない相手を出自だけで決めつける話にはうなずけなかった。",
             { biasSar: -1, fl: { bias_family_sarkaz_model: 1, bias_sar_formed: 1 }, p: -2, rl: -1 }
           ]
         )
@@ -499,6 +515,10 @@ window.TERRA_DATA_BUILD.run("base/childhood-attitudes", function ($terraData, $d
       id: "bias_peer_mockery",
       conf: "S",
       need: ["就学中"],
+      show: s => {
+        const enrollment = educationActiveEnrollment(s);
+        return s.educationPath?.status === "enrolled" && enrollment?.status === "enrolled";
+      },
       references: ["SRC_TERRA_SOCIAL_ATTITUDES"],
       st: ["児童", "少年"],
       ge: { age: 7 },
@@ -541,6 +561,10 @@ window.TERRA_DATA_BUILD.run("base/childhood-attitudes", function ($terraData, $d
       id: "bias_teacher_lesson",
       conf: "S",
       references: ["SRC_TERRA_SOCIAL_ATTITUDES"],
+      show: s => {
+        const enrollment = educationActiveEnrollment(s);
+        return s.educationPath?.status === "enrolled" && enrollment?.status === "enrolled";
+      },
       st: ["児童", "少年"],
       ge: { age: 8 },
       le: { age: 15 },

@@ -1,0 +1,1306 @@
+{
+  "schema": "terra-employer-organization-and-worksite-provenance",
+  "schemaVersion": 1,
+  "asOf": "2026-11-04",
+  "status": "design-register-canon-source-graded",
+  "branch": "fix/historical-event-scope-and-delivery",
+  "interpretation": "Named entry establishes evidence of organization, not a particular shop's physical location, an opening, eligibility or that a player knows it. Secondary URLs are leads to in-universe named entities. Specific Japanese names remain provisional unless separately marked.",
+  "locationRule": "Every organization must be instantiated with historically credible siteId, operating interval, region/area and role. No global auto-openings for cross-region companies.",
+  "constraints": [
+    "secondary identified ≠ player-known opening",
+    "corporate products/services ≠ local branch",
+    "corporate membership ≠ company payroll",
+    "underground or secret role ≠ public notice",
+    "source-unverified scenario name ≠ authoritative canonical organization",
+    "historical corps ≠ current employer",
+    "clinic patient/referral ≠ Rhodes employee",
+    "local disaster relief ≠ annual salaried job"
+  ],
+  "sourcePath": "siryou/テラ国家別_萌娘百科横断補完台帳_20261028.md; docs/employment/TERRA_19_REGION_OCCUPATION_MODEL_20261104.md; secondary URLs per row",
+  "totals": {
+    "registered": 66,
+    "namedSecondary": 33,
+    "designArchetypes": 26,
+    "scenarioNames": 6,
+    "historical": 1,
+    "jobOrganizationKeysCovered": 55
+  },
+  "organizations": [
+    {
+      "organizationKey": "rhodes-island",
+      "displayName": "ロドス・アイランド",
+      "regionScope": "transregional",
+      "sectorKinds": [
+        "MED",
+        "SCI",
+        "LOG",
+        "MFG",
+        "MIL"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhodes_Island",
+      "displayNameStatus": "existing-japanese-game-name",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "Rhodes-organization-and-ship-or-office-at-time; game entry routes from 1095",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "医療相談・治療契約・協力者・オペレーター採用を分離。船の移動先と支部IDが必要。"
+    },
+    {
+      "organizationKey": "blacksteel-worldwide",
+      "displayName": "ブラックスチール・ワールドワイド",
+      "regionScope": "クルビア+verified-contract-sites",
+      "sectorKinds": [
+        "MIL",
+        "LOG"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Blacksteel",
+      "displayNameStatus": "existing-japanese-game-name",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "傭兵・契約警備・特務を別職位で採用。勤務地をクルビア全域と同一視しない。"
+    },
+    {
+      "organizationKey": "rhine-lab",
+      "displayName": "ライン生命",
+      "regionScope": "クルビア+verified-research-sites",
+      "sectorKinds": [
+        "SCI",
+        "MED",
+        "MFG"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhine_Lab%3A_Access",
+      "displayNameStatus": "existing-japanese-game-name",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "トリマウンツ本拠、研究実習・専任・主任を別課程・経験・審査へ。サーミの調査拠点は同社の別site。"
+    },
+    {
+      "organizationKey": "karlan-trade",
+      "displayName": "カランド貿易",
+      "regionScope": "イェラグ+confirmed-foreign-branches",
+      "sectorKinds": [
+        "LOG",
+        "MFG",
+        "COM",
+        "MIL",
+        "MIN"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Karlan_Trade",
+      "displayNameStatus": "existing-japanese-game-name",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "外資・鉄道・採鉱・設備輸入・護衛を同一会社内の個別職位として持つ。地域近代化の開始時期に注意。"
+    },
+    {
+      "organizationKey": "lungmen-guard-department",
+      "displayName": "龍門近衛局",
+      "regionScope": "龍門",
+      "sectorKinds": [
+        "CIV",
+        "MIL"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Lungmen",
+      "displayNameStatus": "existing-japanese-game-name",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "public-appointment",
+      "notes": ""
+    },
+    {
+      "organizationKey": "penguin-logistics",
+      "displayName": "ペンギン急便",
+      "regionScope": "龍門+verified-outposts",
+      "sectorKinds": [
+        "LOG",
+        "MIL",
+        "COM"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Penguin_Logistics",
+      "displayNameStatus": "existing-japanese-game-name",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "founded-1093; sites-must-be-grounded",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "会社の実在を固定しても募集票は別途必要。"
+    },
+    {
+      "organizationKey": "mountaindash-logistics",
+      "displayName": "MountainDash Logistics（マウンテンダッシュ物流・表記要照合）",
+      "regionScope": "龍門+verified-outposts",
+      "sectorKinds": [
+        "LOG",
+        "COM"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/MountainDash_Logistics",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "龍門を拠点とする物流大手。シエスタとの合弁会社を別法人とする。"
+    },
+    {
+      "organizationKey": "lee-detective-agency",
+      "displayName": "リー探偵事務所",
+      "regionScope": "龍門",
+      "sectorKinds": [
+        "COM",
+        "CIV"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Lee%27s_Detective_Agency",
+      "displayNameStatus": "japanese-title-in-secondary",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "少人数の家族的な請負事務所。地域共通の公募枠を生成しない。"
+    },
+    {
+      "organizationKey": "kazimierz-arena",
+      "displayName": "カジミエーシュ競技会場運営",
+      "regionScope": "カジミエーシュ",
+      "sectorKinds": [
+        "CRE",
+        "COM"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_Major",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "複数の実競技場・運営会社を束ねる業務類型。具体の会場・興行年度・主催者が必要。"
+    },
+    {
+      "organizationKey": "kazimierz-general-chamber",
+      "displayName": "カジミエーシュ商業連合会",
+      "regionScope": "カジミエーシュ",
+      "sectorKinds": [
+        "COM",
+        "CIV",
+        "CRE"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "displayNameStatus": "japanese-title-in-secondary",
+      "employmentRole": "association",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "chamber-staff-only-or-affiliate-position",
+      "notes": "商業連合会の会員企業を会議体の直接雇用へ集約しない。"
+    },
+    {
+      "organizationKey": "kazimierz-corporate-knight-club",
+      "displayName": "企業騎士クラブ（個別クラブ未指定）",
+      "regionScope": "カジミエーシュ",
+      "sectorKinds": [
+        "CRE",
+        "MIL",
+        "COM"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": "kazimierz-general-chamber",
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "スポンサー契約・競技資格・参加許可は分離。"
+    },
+    {
+      "organizationKey": "mieszko-group",
+      "displayName": "Mieszko Group（表記要照合）",
+      "regionScope": "カジミエーシュ",
+      "sectorKinds": [
+        "MFG",
+        "SCI"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "工学・機材製造の関連企業。具体的工場地は未確定。",
+      "associationKeys": [
+        "kazimierz-general-chamber"
+      ]
+    },
+    {
+      "organizationKey": "rose-papers-union",
+      "displayName": "Rose Papers Union（表記要照合）",
+      "regionScope": "カジミエーシュ+confirmed-branches",
+      "sectorKinds": [
+        "CRE",
+        "COM"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": "mieszko-group",
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "報道・広告・メディア関係の職位。",
+      "associationKeys": [
+        "kazimierz-general-chamber"
+      ]
+    },
+    {
+      "organizationKey": "sloma-food-corporation",
+      "displayName": "Słoma Food Corporation（表記要照合）",
+      "regionScope": "カジミエーシュ",
+      "sectorKinds": [
+        "COM",
+        "MFG"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "食品・小売。店舗と本部職を分離。",
+      "associationKeys": [
+        "kazimierz-general-chamber"
+      ]
+    },
+    {
+      "organizationKey": "ellen-select-technology",
+      "displayName": "Ellen Select Technology（表記要照合）",
+      "regionScope": "カジミエーシュ",
+      "sectorKinds": [
+        "MFG",
+        "SCI"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "無人機・宣伝機材。",
+      "associationKeys": [
+        "kazimierz-general-chamber"
+      ]
+    },
+    {
+      "organizationKey": "gale-industries",
+      "displayName": "Gale Industries（表記要照合）",
+      "regionScope": "カジミエーシュ",
+      "sectorKinds": [
+        "MFG",
+        "REC"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "建設企業、感染者支援策への言及あり。制度は個別時点で評価。",
+      "associationKeys": [
+        "kazimierz-general-chamber"
+      ]
+    },
+    {
+      "organizationKey": "kazimierz-armorless-union",
+      "displayName": "無冑盟",
+      "regionScope": "カジミエーシュ",
+      "sectorKinds": [
+        "MIL"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Armorless_Union",
+      "displayNameStatus": "japanese-title-in-secondary",
+      "employmentRole": "clandestine-faction",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "secret-organization-contact-only",
+      "notes": "一般の求人板に表示しない。"
+    },
+    {
+      "organizationKey": "rhein-sami-station",
+      "displayName": "ライン生命・サーミ研究拠点",
+      "regionScope": "サーミ",
+      "sectorKinds": [
+        "SCI",
+        "REC"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhine_Lab%3A_Access",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": "rhine-lab",
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "organization-transfer-or-vetted-field-assignment",
+      "notes": "研究基地が確認できる地域でもサーミ一般住民の就業先とはしない。"
+    },
+    {
+      "organizationKey": "raythean-industries",
+      "displayName": "レイジアン工業",
+      "regionScope": "クルビア+confirmed-export-sites",
+      "sectorKinds": [
+        "MFG",
+        "SCI",
+        "MIL"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Raythean",
+      "displayNameStatus": "japanese-title-in-secondary",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "製造企業。外国の製品流通を現地工場設置や求人とみなさない。"
+    },
+    {
+      "organizationKey": "mama-johns",
+      "displayName": "ママジョンズ",
+      "regionScope": "クルビア+confirmed-stores",
+      "sectorKinds": [
+        "COM",
+        "MFG",
+        "LOG"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Mama_John%27s",
+      "displayNameStatus": "japanese-title-in-secondary",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "小売・食品等。商品が売られている地区と直営店・倉庫・採用先を分離。"
+    },
+    {
+      "organizationKey": "maylander-foundation",
+      "displayName": "マイレンダー基金（表記要照合）",
+      "regionScope": "クルビア+verified-operations",
+      "sectorKinds": [
+        "CIV",
+        "MIL",
+        "SCI"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Maylander_Foundation",
+      "displayNameStatus": "japanese-title-in-secondary",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "restricted-secret-organization",
+      "notes": "情報機関の性質を持ち、一般的なNGO公募と秘密部署の任用を区別。"
+    },
+    {
+      "organizationKey": "beachbrella",
+      "displayName": "Beachbrella（表記要照合）",
+      "regionScope": "クルビア",
+      "sectorKinds": [
+        "MED",
+        "SCI"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Columbia/Branches",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "医薬・生物工学。秘密研究について本人認知を厳格化。"
+    },
+    {
+      "organizationKey": "volvort-kochinski",
+      "displayName": "Volvort Kochinski（表記要照合）",
+      "regionScope": "クルビア",
+      "sectorKinds": [
+        "MFG",
+        "MIL",
+        "COM"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Columbia/Branches",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "軍需のほか民需・金融へ展開。"
+    },
+    {
+      "organizationKey": "haydn-pharmaceuticals",
+      "displayName": "Haydn Pharmaceuticals（表記要照合）",
+      "regionScope": "クルビア",
+      "sectorKinds": [
+        "MED",
+        "SCI"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhine_Lab%3A_Access",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "history-and-facility-specific; destroyed-lab-not-permanent-opening",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "研究事故で施設が焼失した史料あり。営業継続可否は校地単位で処理。"
+    },
+    {
+      "organizationKey": "columbia-frontier-program",
+      "displayName": "クルビア開拓事業主・開拓キャンプ",
+      "regionScope": "クルビア",
+      "sectorKinds": [
+        "AGR",
+        "REC",
+        "MIN"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Columbia",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "一社の永久求人ではなく個別キャンプ・請負契約・雇い主ごとの案件。"
+    },
+    {
+      "organizationKey": "laterano-notarial-hall",
+      "displayName": "ラテラーノ公証人役場",
+      "regionScope": "ラテラーノ+explicit-foreign-dispatch",
+      "sectorKinds": [
+        "CIV",
+        "MIL"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview",
+      "displayNameStatus": "existing-japanese-game-name",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "public-appointment",
+      "notes": "公証業務・執行人・国外派遣を部署/職位で区分。"
+    },
+    {
+      "organizationKey": "laterano-curia-sixth",
+      "displayName": "ラテラーノ教皇庁第六法廷",
+      "regionScope": "ラテラーノ",
+      "sectorKinds": [
+        "CIV",
+        "EDU",
+        "MED"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "public-appointment",
+      "notes": "教育・福祉・保健に係る行政部門。法廷の日本語名称は要原文照合。"
+    },
+    {
+      "organizationKey": "laterano-cohors",
+      "displayName": "ラテラーノ常備軍（Pontifica Cohors）",
+      "regionScope": "ラテラーノ",
+      "sectorKinds": [
+        "MIL"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "organization-service",
+      "notes": "公証人役場の執行人と混同しない。"
+    },
+    {
+      "organizationKey": "laterano-landen-monastery",
+      "displayName": "ランデン修道院",
+      "regionScope": "ラテラーノ",
+      "sectorKinds": [
+        "REL",
+        "MIL"
+      ],
+      "entityType": "scenario-name",
+      "sourceGrade": "game-text-label",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Laterano/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "現行J61の名称。文献での個別修道院の固有名・修道銃士制度は未照合。"
+    },
+    {
+      "organizationKey": "karlan-rail",
+      "displayName": "イェラグ鉄道事業",
+      "regionScope": "イェラグ",
+      "sectorKinds": [
+        "LOG",
+        "MFG",
+        "COM"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kjerag",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "区間・建設時期・運行開始・雇用主を確定して職を生成。"
+    },
+    {
+      "organizationKey": "rmia",
+      "displayName": "レム・ビリトン鉱業協会（RMIA）",
+      "regionScope": "レム・ビリトン",
+      "sectorKinds": [
+        "MIN",
+        "MFG",
+        "LOG"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Stationary_Security_Service/Missions/Former",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "association",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "association-or-member-site",
+      "notes": "Iron Carrot Mineの再稼働とロドス外部警備委託が示される。個々の鉱業会社を協会の直接雇用へまとめない。"
+    },
+    {
+      "organizationKey": "rim-billiton-mining-conglomerates",
+      "displayName": "レム・ビリトン鉱業企業群",
+      "regionScope": "レム・ビリトン",
+      "sectorKinds": [
+        "MIN",
+        "MFG",
+        "LOG"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rim_Billiton",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "鉱山site別の事業者と運営権・操業を定義。"
+    },
+    {
+      "organizationKey": "siesta-city-council",
+      "displayName": "シエスタ市議会・市役所",
+      "regionScope": "シエスタ",
+      "sectorKinds": [
+        "CIV",
+        "REC",
+        "COM"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "public-appointment",
+      "notes": "旧市街と移動都市の機関継承・時期を明記。"
+    },
+    {
+      "organizationKey": "siesta-volcanology-center",
+      "displayName": "シエスタ火山博物館・観測研究",
+      "regionScope": "シエスタ",
+      "sectorKinds": [
+        "SCI",
+        "REC",
+        "CRE"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "火山博物館と実研究職を区別。現行J67の『火山観測所』との同一性は原文確認待ち。"
+    },
+    {
+      "organizationKey": "siesta-hot-springs-hotel",
+      "displayName": "オブシディアン温泉ホテル（表記要照合）",
+      "regionScope": "シエスタ",
+      "sectorKinds": [
+        "COM",
+        "MED"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "観光宿の具体例。オーナー・開業時期・スタッフ公募は別証拠。"
+    },
+    {
+      "organizationKey": "mountaincomm-trade",
+      "displayName": "Mountaincomm Trade（表記要照合）",
+      "regionScope": "シエスタ",
+      "sectorKinds": [
+        "LOG",
+        "COM"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siesta/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "post-1099-secondary-description; verify-before-activation",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "シエスタで設立・契約した会社。SL-1ではMountainDash Logisticsの子会社として描写され、SL-7では独立会社への移行方針が告げられる。Schwire側の投資・提携も存在。企業の親子・投資関係を年代固定にしない。具体月日・法人手続の発効と日本語名称は要日本語本文確認。",
+      "jointVenturePartyKeys": [
+        "mountaindash-logistics",
+        "scwire-group"
+      ],
+      "relationshipTimeline": [
+        {
+          "phase": "initial-subsidiary",
+          "parentOrganizationKey": "mountaindash-logistics",
+          "sourceUrl": "https://arknights.wiki.gg/wiki/SL-1/Story",
+          "evidence": "translated-original-story-transcript",
+          "startDate": "unconfirmed",
+          "endDate": "before-separation-effectiveness-unconfirmed"
+        },
+        {
+          "phase": "investment-and-partnership",
+          "counterpartyOrganizationKey": "scwire-group",
+          "sourceUrl": "https://arknights.wiki.gg/wiki/SL-6/Story",
+          "evidence": "translated-original-story-transcript",
+          "effectiveDate": "unconfirmed"
+        },
+        {
+          "phase": "proposed-separation",
+          "formerParentOrganizationKey": "mountaindash-logistics",
+          "sourceUrl": "https://arknights.wiki.gg/wiki/SL-7/Story",
+          "evidence": "translated-original-story-transcript",
+          "effectiveDate": "unconfirmed",
+          "comment": "Character's declaration does not itself provide the precise legal-registration date"
+        }
+      ],
+      "jointVenturePartiesAreHistoricalNotPerpetual": true
+    },
+    {
+      "organizationKey": "scwire-group",
+      "displayName": "Schwire Group（表記要照合。英語のScwireは表記揺れ）",
+      "regionScope": "龍門+ヴィクトリアの確認済み事業+個別支部",
+      "sectorKinds": [
+        "COM",
+        "LOG"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Swire/Operator_Record",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "スワイヤー家に関係する企業集団。日本語の法人正式名未照合。英語原文を転載したSL-6およびスワイヤーの記録はSchwire Groupと記載。龍門の本拠とヴィクトリアの事業は個別文脈で裏付ける。企業取引は第三国の常設支店・採用枠を自動的に意味しない。",
+      "secondarySourceUrls": [
+        "https://arknights.wiki.gg/wiki/SL-6/Story",
+        "https://arknights.wiki.gg/wiki/Adams_Schwire"
+      ]
+    },
+    {
+      "organizationKey": "iberian-inquisition-and-coastal-sites",
+      "displayName": "イベリア裁判所と沿岸配置",
+      "regionScope": "イベリア",
+      "sectorKinds": [
+        "CIV",
+        "MIL",
+        "REC",
+        "SCI"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Inquisition",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "public-appointment",
+      "notes": "審問官と灯台技術職を別site/roleとし、灯台の現存を海岸全域へ広げない。"
+    },
+    {
+      "organizationKey": "sargon-acahualla-community",
+      "displayName": "アカフラ共同体",
+      "regionScope": "サルゴン",
+      "sectorKinds": [
+        "AGR",
+        "REL",
+        "MIL"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Sargon/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "祭礼の大勇士は職業J69だが常雇給与としない。"
+    },
+    {
+      "organizationKey": "sargon-padishah-palace",
+      "displayName": "サルゴン・パーディシャー宮廷",
+      "regionScope": "サルゴン",
+      "sectorKinds": [
+        "CIV",
+        "MIL"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Sargon/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "支配者ごとの宮廷、任命・供物・賃金の差を個別で管理。"
+    },
+    {
+      "organizationKey": "sami-tribes",
+      "displayName": "サーミ氏族・雪祀・北方守護",
+      "regionScope": "サーミ",
+      "sectorKinds": [
+        "AGR",
+        "REL",
+        "MIL",
+        "REC"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Sami/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "宗教的役割・共同体の分配・哨戒を契約給与と一律に見なさない。"
+    },
+    {
+      "organizationKey": "kazdel-military-commission",
+      "displayName": "カズデル軍事委員会",
+      "regionScope": "カズデル",
+      "sectorKinds": [
+        "MIL",
+        "MFG",
+        "REC"
+      ],
+      "entityType": "named",
+      "sourceGrade": "secondary-reports-named-entity",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazdel",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "organization-service-or-conscript-assignment",
+      "notes": "正規兵・徴募・傭兵を分離。"
+    },
+    {
+      "organizationKey": "babel-historical",
+      "displayName": "バベル",
+      "regionScope": "カズデル+historical-operations",
+      "sectorKinds": [
+        "MED",
+        "EDU",
+        "MIL",
+        "SCI"
+      ],
+      "entityType": "historical",
+      "sourceGrade": "secondary-reports-historical",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Rhodes_Island",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "before-and-around-1094-dependent-on-event",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "1094年前後のロドスとの組織継承を区別。過去時点の現在求人を生成しない。"
+    },
+    {
+      "organizationKey": "higashi-household-retainers",
+      "displayName": "極東武家・家臣団",
+      "regionScope": "極東",
+      "sectorKinds": [
+        "MIL",
+        "CIV"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Higashi/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "北朝/南朝、領主、時期、家中の承認が必要。"
+    },
+    {
+      "organizationKey": "higashi-cyberninja-scenario",
+      "displayName": "極東・サイバーニンジャ（現行ゲーム文面）",
+      "regionScope": "極東",
+      "sectorKinds": [
+        "MIL",
+        "SCI"
+      ],
+      "entityType": "scenario-name",
+      "sourceGrade": "game-text-label",
+      "sourceUrl": null,
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "技術の年代・組織実在の具体的原典確認が必要。自動設置停止。"
+    },
+    {
+      "organizationKey": "higashi-touhou-heavy-scenario",
+      "displayName": "東方重工（現行ゲーム文面）",
+      "regionScope": "極東",
+      "sectorKinds": [
+        "MFG"
+      ],
+      "entityType": "scenario-name",
+      "sourceGrade": "game-text-label",
+      "sourceUrl": null,
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "会社名の日本語版本文照合前。架空の具体企業として登録しない。"
+    },
+    {
+      "organizationKey": "higashi-religious-institution",
+      "displayName": "極東宗教施設・神職",
+      "regionScope": "極東",
+      "sectorKinds": [
+        "REL"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Higashi/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "実在神社・寺院単位の弟子入りと資格・祭祀。"
+    },
+    {
+      "organizationKey": "ursus-imperial-forces",
+      "displayName": "ウルサス帝国軍・鉱区監督官庁",
+      "regionScope": "ウルサス",
+      "sectorKinds": [
+        "MIL",
+        "CIV",
+        "MIN"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Ursus/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "軍務、鉱区の監督、拘束労働は別制度とする。"
+    },
+    {
+      "organizationKey": "ursus-science-academy-scenario",
+      "displayName": "ウルサス帝国科学院（現行ゲーム文面）",
+      "regionScope": "ウルサス",
+      "sectorKinds": [
+        "SCI"
+      ],
+      "entityType": "scenario-name",
+      "sourceGrade": "game-text-label",
+      "sourceUrl": null,
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "固有機関の出典照合まで職業J53のnamed site生成停止。"
+    },
+    {
+      "organizationKey": "victoria-military-authorities",
+      "displayName": "ヴィクトリア軍・公爵軍",
+      "regionScope": "ヴィクトリア",
+      "sectorKinds": [
+        "MIL"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Victoria/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "中央軍と地方公爵軍、正規任用、戦時徴集を区別。"
+    },
+    {
+      "organizationKey": "victoria-legislative-administration",
+      "displayName": "ヴィクトリア議会・地方行政庁",
+      "regionScope": "ヴィクトリア",
+      "sectorKinds": [
+        "CIV"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Victoria/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "具体的議会の存続・会期・場所を必要とする。"
+    },
+    {
+      "organizationKey": "victoria-rail-works",
+      "displayName": "ヴィクトリア鉄道・重工業工場",
+      "regionScope": "ヴィクトリア",
+      "sectorKinds": [
+        "MFG",
+        "LOG"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Victoria/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "工業都市の工場に個別職位を置く。"
+    },
+    {
+      "organizationKey": "yan-civil-service",
+      "displayName": "炎国州府・朝廷官庁",
+      "regionScope": "炎国",
+      "sectorKinds": [
+        "CIV"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Yan/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "中央官職と地方書記を分離。官吏登用試験は制度の時点と募集主確認。"
+    },
+    {
+      "organizationKey": "yan-supervisory-authority",
+      "displayName": "炎国・司歳台／大理寺（現行ゲームの統合職ラベル）",
+      "regionScope": "炎国",
+      "sectorKinds": [
+        "CIV",
+        "MIL"
+      ],
+      "entityType": "scenario-name",
+      "sourceGrade": "game-text-label",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Yan/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "別機関であれば同一jobIDでも任命先を分離。名称・権限の日本語原文要照合。"
+    },
+    {
+      "organizationKey": "yan-tianshi-office",
+      "displayName": "炎国・天師関連機関",
+      "regionScope": "炎国",
+      "sectorKinds": [
+        "SCI",
+        "CIV"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Yan/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "アーツ技術者全員の雇い主にせず具体公的機関と専門領域を区別。"
+    },
+    {
+      "organizationKey": "lungmen-underground-brokerage",
+      "displayName": "龍門地下仲介網",
+      "regionScope": "龍門",
+      "sectorKinds": [
+        "COM",
+        "MIL"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Lungmen",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "contact-only",
+      "notes": "犯罪組織を常設の求人掲示として出さない。"
+    },
+    {
+      "organizationKey": "leithanien-court",
+      "displayName": "リターニア選帝侯領の宮廷",
+      "regionScope": "リターニア",
+      "sectorKinds": [
+        "CRE",
+        "SCI",
+        "CIV"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Leithanien/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "宮廷・学舎・音楽家の雇用主と奏者資格を分離。"
+    },
+    {
+      "organizationKey": "leithanien-legal-enforcement-scenario",
+      "displayName": "リターニア金律法衛（現行ゲーム職ラベル）",
+      "regionScope": "リターニア",
+      "sectorKinds": [
+        "MIL",
+        "SCI"
+      ],
+      "entityType": "scenario-name",
+      "sourceGrade": "game-text-label",
+      "sourceUrl": null,
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "組織固有の公式名称・年代を要原文確認。"
+    },
+    {
+      "organizationKey": "siracusa-family",
+      "displayName": "シラクーザのファミリー（個別組織未指定）",
+      "regionScope": "シラクーザ",
+      "sectorKinds": [
+        "COM",
+        "MIL"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siracusa/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "contact-only",
+      "notes": "ファミリー参加と表商売は別契約。"
+    },
+    {
+      "organizationKey": "siracusa-volsinii-court",
+      "displayName": "ウォルシーニ裁判所・治安機関",
+      "regionScope": "シラクーザ",
+      "sectorKinds": [
+        "CIV",
+        "MIL"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Siracusa/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "市名の日本語表記・組織権限を事象単位で再照合。"
+    },
+    {
+      "organizationKey": "dossoles-police",
+      "displayName": "ドッソレス特区市警",
+      "regionScope": "ボリバル",
+      "sectorKinds": [
+        "MIL",
+        "CIV"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Bol%C3%ADvar/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "特区の公職をボリバル内の全農村へ適用しない。"
+    },
+    {
+      "organizationKey": "bolivar-faction-military",
+      "displayName": "ボリバル各派軍事組織",
+      "regionScope": "ボリバル",
+      "sectorKinds": [
+        "MIL"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Bol%C3%ADvar/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "勢力・前線・年月・徴募の自由度を分離。"
+    },
+    {
+      "organizationKey": "kazdel-craft-workshop",
+      "displayName": "カズデル工房・鍛冶共同体",
+      "regionScope": "カズデル",
+      "sectorKinds": [
+        "MFG",
+        "REL"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kazdel/Overview",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "名称付きの職人団体が確認される場合だけ固有会社へ。"
+    },
+    {
+      "organizationKey": "kjerag-monastery",
+      "displayName": "イェラグ宗教機関・聖山護衛",
+      "regionScope": "イェラグ",
+      "sectorKinds": [
+        "REL",
+        "MIL"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Kjerag",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "曼珠院など固有組織と祈祷・護衛・寄宿を分ける。"
+    },
+    {
+      "organizationKey": "minos-hero-temple-arena",
+      "displayName": "ミノス神殿・競技会",
+      "regionScope": "ミノス",
+      "sectorKinds": [
+        "REL",
+        "CRE"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Minos",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "祭礼の競技勇士を常勤雇用の騎士と同一視しない。"
+    },
+    {
+      "organizationKey": "minos-civic-court",
+      "displayName": "ミノス各ポリスの市民集会・法廷",
+      "regionScope": "ミノス",
+      "sectorKinds": [
+        "CIV"
+      ],
+      "entityType": "archetype",
+      "sourceGrade": "game-design-archetype",
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Minos",
+      "displayNameStatus": "needs-jp-text-confirmation",
+      "employmentRole": "employer-or-organizer",
+      "parentOrganizationKey": null,
+      "availabilityRule": "year-and-site-specific",
+      "recruitmentRule": "verified-site-and-individual-position",
+      "notes": "個々の都市国家の制度・市民資格・職務を別立て。"
+    }
+  ],
+  "relationshipSemantics": {
+    "parentOrganizationKey": "Equity/subsidiary or actual branch organizational parent; association membership or state regulation is not ownership",
+    "associationKeys": "Member or affiliated associations; association payroll is distinct from member-company payroll",
+    "jointVenturePartyKeys": "Investors or joint founders; not equivalent to sole employer"
+  },
+  "provenanceReview": {
+    "asOf": "2026-11-04",
+    "source": [
+      "https://arknights.wiki.gg/wiki/Kazimierz/Branches",
+      "https://arknights.wiki.gg/wiki/Kazimierz_General_Chamber_of_Commerce",
+      "https://arknights.wiki.gg/wiki/Siesta/Overview",
+      "https://arknights.wiki.gg/wiki/SL-1/Story",
+      "https://arknights.wiki.gg/wiki/SL-6/Story",
+      "https://arknights.wiki.gg/wiki/SL-7/Story",
+      "https://arknights.wiki.gg/wiki/Swire/Operator_Record"
+    ],
+    "notes": "Mieszko Group傘下にRose Papers Unionがあるとの二次史料。KGCCは企業連合の加盟であって給与主体ではない。Mountaincomm Tradeの子会社関係はSL-1/SL-7で変化し、出資を受けた後に独立する旨の記録がある。Schwireの英語綴りと龍門・ヴィクトリアへの関係を修正。日本語正式名と効力発生日は未照合。"
+  }
+}

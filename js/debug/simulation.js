@@ -115,6 +115,7 @@ async function runDevSimulation(input = {}, hooks = {}) {
       if (options.wealth) birth.wealth = options.wealth;
       result.attempted++;
       STAT.currentLife = index; STAT.currentEventId = null; STAT.recentEvents = []; STAT.lifeEventYears.clear();
+      STAT.deadlinePending.clear(); STAT.deadlineFired.clear();
       let observer = null;
       try {
         born(birth);
@@ -128,7 +129,14 @@ async function runDevSimulation(input = {}, hooks = {}) {
         check("出生直後");
         let years = 0;
         while (!S.dead && years < options.maxYears) {
-          for (const q of S.q.splice(0)) { slot(q); check("イベント処理後"); }
+          // A due choice can reserve future months while a slot is processed.
+          // Consume the live queue so such slots are audited before year end.
+          while (S.q.length && !S.dead) {
+            const q=S.q.shift();
+            slot(q);
+            check("イベント処理後");
+          }
+          finalizeSimulationDeadlineYear(S, !!S.dead);
           if (!S.dead) { tick(); check("年次更新後", true); years++; result.processedYears++; }
           if (Date.now() - lastYieldAt >= 10) {
             hooks.onProgress?.(progressState("running"));
@@ -144,6 +152,7 @@ async function runDevSimulation(input = {}, hooks = {}) {
         result.completed++;
         if (S.dead) recordSimulationDeath(S);
       } catch (error) {
+        finalizeSimulationDeadlineYear(S, true);
         const type = error?.stateFailure ? "state" : "runtime";
         devFinalizeLifeObserver(observer, result.analytics, type + "-failure");
         if (error?.stateFailure) result.stateFailureCount++; else result.runtimeFailureCount++;

@@ -39,6 +39,13 @@ const validConditions=vm.runInContext(`(()=>{
 })()`,runtimeEnv.ctx);
 assert.deepEqual(Array.from(validConditions),[],
   'supported nested conditions and the unchanged catalog remain valid');
+const missingOwnedEligibility=vm.runInContext(`(()=>{
+ const event=EV.find(row=>row.lifeSystemFamily),oldShow=event.show;
+ try {event.show=null;return validate();}
+ finally {event.show=oldShow;}
+})()`,runtimeEnv.ctx);
+assert(Array.from(missingOwnedEligibility).some(problem=>problem.includes('状態所有者の動的適格性判定')),
+  'state-owned life-system events cannot lose their dynamic eligibility gate');
 const {revision,canonicalSource}=require('../tools/update-version.cjs');
 assert.equal(canonicalSource('a\r\nb\r\n'),canonicalSource('a\nb\n'));
 assert(fs.readFileSync(path.join(root,'js/version.js'),'utf8').includes(revision(root)),

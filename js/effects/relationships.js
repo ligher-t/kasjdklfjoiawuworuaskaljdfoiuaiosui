@@ -1,3 +1,55 @@
+// Residential status records who shares the current home, not merely who used
+// to be the player's partner. A breakup does not authorize a fabricated move,
+// lease assignment, or a transfer from the former partner's wallet.
+function reconcileRelationshipResidence(s) {
+  if (!s || !s.residenceArrangement) return;
+  let next = null, reason = null;
+  if (s.romance?.stage === "cohabiting" && !s.sp &&
+      s.residenceArrangement === "spouse_shared") {
+    // A previous cohabitation used spouse_shared for an unmarried partner.
+    next = "partner_shared";
+    reason = "婚姻前の恋人との同居を配偶者世帯と区別";
+  } else if (!s.sp && s.romance?.stage !== "cohabiting" &&
+      ["partner_shared", "spouse_shared", "spouse_parent_home"].includes(s.residenceArrangement)) {
+    next = "post_cohabitation_housing_unconfirmed";
+    reason = "同居関係は終了。住所・契約名義・新しい生活先は未確認";
+  }
+  if (!next) return;
+  s.residenceArrangement = next;
+  s.residenceHistory || (s.residenceHistory = []);
+  s.residenceHistory.push({
+    year: s.year, arrangement: next, reason, moveRecorded: false
+  });
+  s.residenceHistory = s.residenceHistory.slice(-24);
+}
+
+// The current relationship flags are derived state, unlike history flags
+// (romance_started, romance_ended, marriage_ended, divorced). An outcome may
+// update its explicit fl values later in the same ap() call, so reconcile last.
+function reconcileRelationshipStatusFlags(s) {
+  if (!s?.fl) return;
+  const stage = s.romance?.stage || null;
+  if (!stage || stage === "known" || stage === "arranged") {
+    s.fl.romance_dating = 0;
+    s.fl.romance_committed = 0;
+    s.fl.romance_cohabiting = 0;
+  } else if (stage === "dating") {
+    s.fl.romance_dating = 1;
+    s.fl.romance_committed = 0;
+    s.fl.romance_cohabiting = 0;
+  } else if (stage === "committed") {
+    s.fl.romance_dating = 1;
+    s.fl.romance_committed = 1;
+    s.fl.romance_cohabiting = 0;
+  } else if (stage === "cohabiting") {
+    s.fl.romance_dating = 1;
+    s.fl.romance_cohabiting = 1;
+    // Keep the prior commitment only if the couple actually made one.
+  }
+  if (!s.sp) s.fl.marriage_strained = 0;
+  reconcileRelationshipResidence(s);
+}
+
 function applyRelationshipAndSiblingHealthEffects(e, s) {
   if (e.sp) {
     if (s.romance) {
@@ -44,8 +96,19 @@ function applyRelationshipAndSiblingHealthEffects(e, s) {
     s.romance.yearsKnown = (s.romance.yearsKnown || 0) + 1;
     if (e.romanceStage === "cohabiting") {
       s.fl.romance_cohabiting = 1;
-      s.residenceArrangement = "spouse_shared";
-      s.fl.household_separated = 1;
+      if (s.residenceArrangement !== "partner_shared") {
+        s.residenceArrangement = "partner_shared";
+        s.residenceHistory || (s.residenceHistory = []);
+        s.residenceHistory.push({
+          year: s.year, arrangement: "partner_shared",
+          reason: "婚姻前の恋人との同居開始", moveRecorded: false
+        });
+        s.residenceHistory = s.residenceHistory.slice(-24);
+      }
+      if (!s.fl.household_separated) {
+        s.fl.household_separated = 1;
+        beginSeparatedParentLedger(s);
+      }
     }
   }
   if (e.romanceEnd && s.romance) {
@@ -82,6 +145,9 @@ function applyRelationshipAndSiblingHealthEffects(e, s) {
     };
     s.romance = null;
   }
+  if (s.sp?.id && Number.isInteger(s.sp.j) && s.sp.j < 28 && !s.sp.d && !s.sp.employmentState)
+    recordDependentEmployment(s, s.sp, {jobId:s.sp.j,region:s.sp.region||s.res.n,
+      source:TRACE_RESOLUTION?.id||"marriage-known-livelihood",kind:"background-livelihood"});
   if (s.sp && !s.sp.d && s.sp.marriedYear === s.year && s.sp.sharesHousehold == null) {
     const familyHome =
       (s.residenceArrangement || "family_home_shared_budget").startsWith("family_home_") &&
@@ -709,11 +775,7 @@ function advanceRomanceLife(s) {
       ending: "別離"
     });
     s.romance = null;
-    if (s.fl) {
-      s.fl.romance_dating = 0;
-      s.fl.romance_committed = 0;
-      s.fl.romance_cohabiting = 0;
-    }
+    reconcileRelationshipStatusFlags(s);
   }
 }
 

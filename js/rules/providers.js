@@ -3,6 +3,9 @@ window.TERRA_RULES.bind({
   mortality: {
     get urgentEpisodes() {
       return urgentMortalityEpisodes;
+    },
+    get healthCriticalNeedsReview() {
+      return healthCriticalNeedsReview;
     }
   },
   economy: {
@@ -82,6 +85,9 @@ window.TERRA_RULES.bind({
     },
     get spouseSeparateSupportAffordable() {
       return spouseSeparateSupportAffordable;
+    },
+    get spouseSeparateSupportCost() {
+      return spouseSeparateSupportCost;
     },
     get spouseVisitAffordable() {
       return spouseVisitAffordable;

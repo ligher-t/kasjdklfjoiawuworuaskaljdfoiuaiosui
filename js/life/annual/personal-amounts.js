@@ -1,22 +1,9 @@
 // js/life/annual/personal-amounts.js: ordered annual phase; see ANNUAL.md.
 function prepareAnnualPersonalBudget(s, services, a, t, f) {
-  if (
-    !s.job &&
-    !s.lifeRecord?.careerChanges?.length &&
-    !s.fl.retired &&
-    !s.fl.unemployed &&
-    !services.restricted(s) &&
-    a < services.P("economy.employmentAgeLimit") &&
-    !educationSchoolOrDecision(s) &&
-    !(s.fl.sch && a < services.P("life.schoolEnrollmentEndAge")) &&
-    !(s.educationPath?.completed?.includes("upper") && a <= 21 && !s.sn?.car)
-  ) {
-    s.job = services.pickStarterJob(s);
-    services.recordCareerChange(s, 0, s.job, null);
-  }
   services.reconcileWorkContract(s);
   services.reconcileEquity(s);
-  const j = services.J[s.job],
+  const recordedMain = currentPlayerEmployment(s),
+    prepaidEmploymentIncome = employmentPaidForYear(s, s.year - 1),
     pm = s.res.pm,
     householdCoversPersonalCosts = services.inSharedHousehold(s),
     costPm = pm * s.priceIndex * services.localityLivingMultiplier(s),
@@ -51,34 +38,13 @@ function prepareAnnualPersonalBudget(s, services, a, t, f) {
     incBase = s.fl.detained
       ? 0
       : s.fl.segregated
-        ? s.fl.seg_work
-          ? services.P("economy.segregationWorkAnnualPay") * pm
-          : 0
-        : !s.fl.retired && (a < services.P("economy.employmentAgeLimit") || s.job > 0)
-          ? j.pay *
-            pm *
-            services.contractIncomeFactor(s) * services.personalWorkCapacity(s) *
-            (1 + (s.workPayBonus || 0)) *
-            (1 + s.k / services.P("economy.knowledgeIncomeScale")) *
-            (t.inc || 1) *
-            (s.study && !s.study.suspended
-              ? services.P(
-                  s.study.kind === "uni" ? "economy.universityIncomeScale" : "economy.vocationalIncomeScale"
-                )
-              : 1) *
-            (1 + s.ar / services.P("economy.artsIncomeScale")) *
-            (1 - services.employmentDiscriminationPenalty(s)) *
-            (f == 2 ? services.P("economy.workIncomeScale") : 1) *
-            (f == 4 ? services.P("economy.restIncomeScale") : 1) *
-            (f == 7 ? services.P("economy.familyIncomeScale") : 1) *
-            (f == 8 ? services.P("economy.riskyWorkIncomeScale") : 1) *
-            (s.fl.reduced_work ? 0.65 : 1) *
-            (1 + (s.priceIndex - 1) * 0.65)
-          : pm *
-            services.P("economy.retirementIncomeBase") *
-            (s.w.i < services.P("condition.povertyWealthIndex") ? 1 : 0),
+        ? s.fl.seg_work ? services.P("economy.segregationWorkAnnualPay") * pm : 0
+        : !recordedMain && (s.fl.retired || a >= services.P("economy.employmentAgeLimit"))
+          ? pm * services.P("economy.retirementIncomeBase") *
+            (s.w.i < services.P("condition.povertyWealthIndex") ? 1 : 0)
+          : 0,
     /* 生活費の設定値は収入と独立していたため、収入を超える部分を機械的に固定しない。これはゲーム上の上限仮定。 */
-    baseExpense = householdCoversPersonalCosts
+    livingBeforeMeal = householdCoversPersonalCosts
       ? 0
       : s.fl.detained
       ? services.P("economy.detainedPersonalAnnualCost") * costPm
@@ -95,8 +61,10 @@ function prepareAnnualPersonalBudget(s, services, a, t, f) {
                 : 1) *
               (!s.job && (s.cash || 0) < services.EXP[s.w.i] * costPm ? 0.65 : 1)
           ) * (isRhodesStaff ? 0.35 : [35, 36, 37].includes(s.job) ? 1.15 : 1),
+    baseExpense = Math.max(0, livingBeforeMeal - employmentMealOffset(s, s.year - 1, "personal") -
+      employmentInKindOffset(s, s.year - 1, "personal")),
     spouseLivingCost = services.spouseLivesWithProtagonist(s)
-      ? baseExpense * services.P("economy.spouseLivingExpenseShare")
+      ? livingBeforeMeal * services.P("economy.spouseLivingExpenseShare")
       : 0,
     petCost = s.pet ? services.petCostBase(s.pet) * costPm : 0,
     hobbyCost = services.restricted(s) ? 0 : services.hobbyAnnualExpense(s, costPm),
@@ -147,9 +115,6 @@ function prepareAnnualPersonalBudget(s, services, a, t, f) {
       coveredTreatmentCost,
     annualInsurance = services.P("economy.columbiaInsuranceAnnualCost") * costPm,
     veteranPension = s.fl.military_pension ? services.P("economy.veteranPensionAnnual") * costPm : 0,
-    rhinePatentGrant = [38, 39, 40].includes(s.job) && !services.restricted(s)
-      ? (s.job === 40 ? 1200000 : 500000) * pm
-      : 0,
     inc =
       incBase *
         services.familyCareEarningsScale(s, incBase) *
@@ -159,8 +124,12 @@ function prepareAnnualPersonalBudget(s, services, a, t, f) {
       childHouseholdIncome +
       spouseHouseholdContribution +
       veteranPension +
-      rhinePatentGrant;
+      prepaidEmploymentIncome;
+  const publicSupport = !s.fl.detained && !s.fl.segregated &&
+    (s.fl.retired || (!currentPlayerEmployment(s) && a >= services.P("economy.employmentAgeLimit")))
+    ? Math.max(0,inc - prepaidEmploymentIncome - childHouseholdIncome - spouseHouseholdContribution - veteranPension) : 0;
   return {
+    prepaidEmploymentIncome, publicSupport,
     costPm,
     childHouseholdIncome,
     spouseHouseholdContribution,

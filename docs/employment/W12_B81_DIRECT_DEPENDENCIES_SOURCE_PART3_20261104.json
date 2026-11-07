@@ -1,0 +1,788 @@
+{
+  "part": 3,
+  "files": [
+    "data/social/organizations-and-infection.js",
+    "data/world/class-and-locality.js",
+    "data/world/facilities.js",
+    "data/work/contracts.js",
+    "data/education/p17-reviewed-prose.js",
+    "data/base/daily-regional.js",
+    "data/parts/extensions/social-and-care/attitudes-family-knights.js",
+    "data/parts/extensions/education-and-later-life/relationships-events-01.js",
+    "data/parts/extensions/education-and-later-life/elder-life.js",
+    "data/extensions/family-and-community.js",
+    "data/parts/routes/rhodes-and-factions/aftercare-and-eligibility.js",
+    "data/parts/routes/rhodes-and-factions/bsw-routes.js",
+    "data/life/goals-and-family.js",
+    "data/social/learning.js",
+    "data/social/conflict.js",
+    "data/review/choice-policy.js",
+    "data/relationships/close-disclosure.js"
+  ],
+  "summary": {
+    "events": 22,
+    "choices": 42,
+    "outcomes": 47
+  },
+  "events": [
+    {
+      "id": "rim_local_mine_slowdown_daily",
+      "source": "data/base/daily-regional.js:644",
+      "expected": 0,
+      "codeIntro": "{\n      id: \"rim_local_mine_slowdown_daily\",\n      conf: \"S\",\n      references: [\"SRC_RIM_WORK\", \"SRC_RIM_LOCAL_LIFE_MODEL\"],\n      st: [\"青年\", \"壮年\"],\n      need: [\"国:レム・ビリトン\", \"住環境:工業・採掘地域\", \"職:鉱夫\", \"就労中\"],\n      once: true,\n      w: 0.25,\n      t: \"町外れの鉱山で稼働する切羽が減り始めてから、行きつけの食堂の昼時もすっかり客足が遠のいた。店主は火にかける大鍋を一つ減らし、静まり返った店内で所在なげにテーブルを拭いている。薄いスープを飲み干し、減らされた来週の番割りを思い浮かべながらツルハシの柄を握り直した。\"\n    }",
+      "choices": [],
+      "actual": 0,
+      "outcomeCount": 0
+    },
+    {
+      "id": "kaz_knight_injury_adaptation",
+      "source": "data/parts/extensions/social-and-care/attitudes-family-knights.js:1038",
+      "expected": 3,
+      "codeIntro": "{\n    id: \"kaz_knight_injury_adaptation\",\n    conf: \"S\",\n    references: [\"SRC_KAZIMIERZ_COMPETITION\", \"SRC_KAZIMIERZ_KNIGHT_LIFE_MODEL\"],\n    st: [\"青年\", \"壮年\", \"老年\"],\n    need: [\"身体機能の見直し時期\"],\n    cd: 1,\n    w: 1,\n    pri: true,\n    t: \"競技中に深く傷めた肩が、腕を高く上げる作業や重い荷を抱えるたびに鈍く疼く。競技場からは治療費も補償の音沙汰もないまま、この身体でどうやって日々の仕事と暮らしを回していくか考えた。\",\n    c: [\n      $terraData.K(\"周囲に事情を話し、重い荷や腕を上げる作業を代わってもらう\", {}, [\n        1,\n        \"意地を張らずに肩の古傷のことを打ち明け、重い荷を一人で抱える役目を避けさせてもらった。疼きは消えないが、身体を壊さずに働き続けるやり方を探った。\",\n        {\n          bodyChange: {\n            id: \"kaz-knight-shoulder\",\n            title: \"競技中の肩の重傷\",\n            action: \"adapt\",\n            accommodation: \"重い荷物を分担し、腕を高く上げる作業を交替する\",\n            note: \"仕事と家の役割を周囲と調整。専門医の診断を受けた記録ではない\"\n          },\n          lifeGoal: {\n            id: \"physical-life-adjustment\",\n            title: \"身体の変化に合わせて暮らしを続ける\",\n            priority: \"生活の維持\",\n            action: \"start\"\n          },\n          p: 1\n        }\n      ]),\n      $terraData.K(\n        \"地域の診療所で肩を診てもらい、サポーターで固定する（約2万龍門幣）\",\n        {\n          en: { affordableMedicalCash: 2e4 },\n          why: \"診察と簡単な固定の",
+      "choices": [
+        {
+          "label": "周囲に事情を話し、重い荷や腕を上げる作業を代わってもらう",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "意地を張らずに肩の古傷のことを打ち明け、重い荷を一人で抱える役目を避けさせてもらった。疼きは消えないが、身体を壊さずに働き続けるやり方を探った。",
+              "effect": "{\n          bodyChange: {\n            id: \"kaz-knight-shoulder\",\n            title: \"競技中の肩の重傷\",\n            action: \"adapt\",\n            accommodation: \"重い荷物を分担し、腕を高く上げる作業を交替する\",\n            note: \"仕事と家の役割を周囲と調整。専門医の診断を受けた記録ではない\"\n          },\n          lifeGoal: {\n            id: \"physical-life-adjustment\",\n            title: \"身体の変化に合わせて暮らしを続ける\",\n            priority: \"生活の維持\",\n            action: \"start\"\n          },\n          p: 1\n        }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "地域の診療所で肩を診てもらい、サポーターで固定する（約2万龍門幣）",
+          "gate": "{\n          en: { affordableMedicalCash: 2e4 },\n          why: \"診察と簡単な固定の目安約2万龍門幣に生活予備費を加えた現金が足りない\"\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "診療所で肩の具合を診てもらい、痛みを逃がす腕の動かし方と固定用の装具をあつらえてもらった。2万龍門幣の出費は大きかったが、肩のぐらつきが収まって息がしやすくなった。",
+              "effect": "{\n            cash: -2e4,\n            bodyChange: {\n              id: \"kaz-knight-shoulder\",\n              title: \"競技中の肩の重傷\",\n              action: \"adapt\",\n              accommodation: \"診療所で教わった範囲に動作を控え、痛みが続けば再診する\",\n              note: \"診察と簡単な固定に約2万龍門幣。痛みが続けば再診する\"\n            },\n            lifeGoal: {\n              id: \"physical-life-adjustment\",\n              title: \"身体の変化に合わせて暮らしを続ける\",\n              priority: \"回復と家計\",\n              action: \"start\"\n            },\n            h: 4,\n            p: 2\n          }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "弱音は吐かず、痛みが強い日だけ騙し騙し腕を休める",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "仕事や家の役目を減らしてほしいとはどうしても言い出せず、疼く日は冷やしながら来月まで様子を見ることにした。",
+              "effect": "{\n          bodyChange: {\n            id: \"kaz-knight-shoulder\",\n            title: \"競技中の肩の重傷\",\n            action: \"review\",\n            status: \"ongoing\",\n            reviewDelay: 2,\n            note: \"役割調整や診療を決めず、本人が経過観察を続ける\"\n          },\n          p: -1,\n          h: -2\n        }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 3,
+      "outcomeCount": 3
+    },
+    {
+      "id": "earth_discr_work_years",
+      "source": "data/social/organizations-and-infection.js:14",
+      "expected": 3,
+      "error": "id-not-found",
+      "choices": []
+    },
+    {
+      "id": "romance_daily_market_walk",
+      "source": "data/parts/extensions/education-and-later-life/relationships-events-01.js:623",
+      "expected": 0,
+      "codeIntro": "{\n      id: \"romance_daily_market_walk\",\n      conf: \"S\",\n      references: [\"SRC_TERRA_FAMILY\", \"SRC_TERRA_SOCIAL_ATTITUDES\"],\n      st: [\"青年\", \"壮年\"],\n      need: [\"交際中\"],\n      ban: [\"既婚\"],\n      cd: 3,\n      w: 0.65,\n      t: [\n        \"移動都市の居住区画の市場で、仕事帰りに{romancePartner}と待ち合わせた。屋台から漂う香辛料の匂いに誘われて串焼きを半分ずつ分け合い、雑踏を並んで歩きながら何気ない世間話に笑い合った。\",\n        \"露店の並ぶ通りを{romancePartner}とそぞろ歩きした。通り抜ける風に混じる揚げ菓子の香りに足を止め、紙包みを分け合ってつまみながら他愛のない話で笑顔を交わした。\"\n      ],\n      fx: { p: 2, rl: 1 }\n    }",
+      "choices": [],
+      "actual": 0,
+      "outcomeCount": 0
+    },
+    {
+      "id": "elder_choice_craft_teaching",
+      "source": "data/parts/extensions/education-and-later-life/elder-life.js:55",
+      "expected": 2,
+      "codeIntro": "{\n        id: \"elder_choice_craft_teaching\",\n        conf: \"S\",\n        references: [\"SRC_INDUSTRIAL_LIFE\", \"SRC_TERRA_FAMILY\"],\n        st: [\"老年\"],\n        ge: { age: 55 },\n        cd: 4,\n        w: 0.4,\n        t: \"近所の若い見習い職人が、作業のコツが掴めずに悩んでいると耳にした。長年の現場経験で培った勘と技術を、次の世代へ教える機会が巡ってきた。\",\n        c: [\n          $terraData.K(\n            \"手取り足取り作業の勘所を惜しみなく教える\",\n            {},\n            [\n              1,\n              \"作業台の前に並んで手本を見せ、道具の持ち方や力の抜き方を丁寧に教えた。若者の目が輝き、感謝の言葉とともに深々と頭を下げられた。\",\n              { k: 2, rl: 3, p: 2 }\n            ]\n          ),\n          $terraData.K(\n            \"自分で試行錯誤して覚えるのも修行だと温かく見守る\",\n            {},\n            [\n              1,\n              \"細かい口出しはせず、温かい茶を差し入れながら見守った。自分で工夫して壁を乗り越えた若者の姿に、頼もしさを覚えた。\",\n              { rl: 1, p: 1 }\n            ]\n          )\n        ]\n      }",
+      "choices": [
+        {
+          "label": "手取り足取り作業の勘所を惜しみなく教える",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "作業台の前に並んで手本を見せ、道具の持ち方や力の抜き方を丁寧に教えた。若者の目が輝き、感謝の言葉とともに深々と頭を下げられた。",
+              "effect": "{ k: 2, rl: 3, p: 2 }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "自分で試行錯誤して覚えるのも修行だと温かく見守る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "細かい口出しはせず、温かい茶を差し入れながら見守った。自分で工夫して壁を乗り越えた若者の姿に、頼もしさを覚えた。",
+              "effect": "{ rl: 1, p: 1 }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 2,
+      "outcomeCount": 2
+    },
+    {
+      "id": "family_spouse_work_preference",
+      "source": "data/extensions/family-and-community.js:504",
+      "expected": 4,
+      "codeIntro": "{\n    id: \"family_spouse_work_preference\",\n    conf: \"S\",\n    references: [\"SRC_TERRA_FAMILY\"],\n    st: [\"青年\", \"壮年\", \"老年\"],\n    need: [\"配偶者と仕事の希望を話す時期\"],\n    w: 0.5,\n    t: \"{spouseWorkPreferenceContext}、これからの働き方について{sp}と話し合った。稼ぎの良さか、身の安全か、それとも慣れた職場か、本人が何を一番大事にしたいか耳を傾けた。\",\n    c: [\n      $terraData.K(\n        \"少しでも実入りのいい仕事を一緒に探すか尋ねる\",\n        {},\n        [\n          0.7,\n          \"相手も、もう少し家計にゆとりを作れる仕事を探したいと頷いた。ただ給金が高いだけでなく、体を壊さず続けられる職場かどうかも見極めることにした。\",\n          { spouseWorkPreference: \"income\", rl: 1, p: 1 }\n        ],\n        [\n          1,\n          \"相手は稼ぎも気にしていたが、それだけで飛びつくのは怖いと言った。焦らずいろんな募集を見比べていくことにした。\",\n          { spouseWorkPreference: \"open\", rl: 1, p: 1 }\n        ]\n      ),\n      $terraData.K(\n        \"危ない現場や体を酷使する仕事は避けてほしいと伝える\",\n        {},\n        [\n          0.7,\n          \"相手も、怪我や病気の危険が大きい現場からは離れたいと本音を漏らした。次を探す時は、作業環境を一番に確かめることにした。\",\n          { spouseWorkPreference: \"low_hazard\", rl: 2, p: 1 }\n        ],\n        [\n          1,\n          \"安全はもちろん大事だが、給金や通いやすさも無視できないと相手は言った。条件を一つに決めつけず、広く働き口を探すことにした。\",\n          { spouseWorkPreference: \"open\", rl: 1, p: 1 }\n        ]\n   ",
+      "choices": [
+        {
+          "label": "少しでも実入りのいい仕事を一緒に探すか尋ねる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.7",
+              "text": "相手も、もう少し家計にゆとりを作れる仕事を探したいと頷いた。ただ給金が高いだけでなく、体を壊さず続けられる職場かどうかも見極めることにした。",
+              "effect": "{ spouseWorkPreference: \"income\", rl: 1, p: 1 }",
+              "directJob": []
+            },
+            {
+              "weight": "1",
+              "text": "相手は稼ぎも気にしていたが、それだけで飛びつくのは怖いと言った。焦らずいろんな募集を見比べていくことにした。",
+              "effect": "{ spouseWorkPreference: \"open\", rl: 1, p: 1 }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "危ない現場や体を酷使する仕事は避けてほしいと伝える",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.7",
+              "text": "相手も、怪我や病気の危険が大きい現場からは離れたいと本音を漏らした。次を探す時は、作業環境を一番に確かめることにした。",
+              "effect": "{ spouseWorkPreference: \"low_hazard\", rl: 2, p: 1 }",
+              "directJob": []
+            },
+            {
+              "weight": "1",
+              "text": "安全はもちろん大事だが、給金や通いやすさも無視できないと相手は言った。条件を一つに決めつけず、広く働き口を探すことにした。",
+              "effect": "{ spouseWorkPreference: \"open\", rl: 1, p: 1 }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "今の職場に愛着があるなら、無理に変えなくていいと話す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.7",
+              "text": "相手は、気心の知れた今の職場でもう少し頑張りたいと笑った。無理に転職は考えず、本当に嫌になった時にまた相談することにした。",
+              "effect": "{ spouseWorkPreference: \"stay\", rl: 2, p: 1 }",
+              "directJob": []
+            },
+            {
+              "weight": "1",
+              "text": "今の仕事には慣れているものの、別の仕事にも少し未練があるようだった。どちらにも転べるよう、外の話も耳に入れておくことにした。",
+              "effect": "{ spouseWorkPreference: \"open\", rl: 1, p: 1 }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "先入観を持たず、本人が納得できる働き口を探す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "条件を一つに縛らず、相手が一番納得して働ける場所を探すことにした。募集が出るたび、休日の食卓で一緒に見比べることにした。",
+              "effect": "{ spouseWorkPreference: \"open\", rl: 1, p: 1 }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 4,
+      "outcomeCount": 7
+    },
+    {
+      "id": "ori_victoria_factory_shift",
+      "source": "data/social/organizations-and-infection.js:648",
+      "expected": 3,
+      "codeIntro": "{\n      id: \"ori_victoria_factory_shift\",\n      conf: \"S\",\n      references: [\"SRC_ORI_CATHERINE_RECORD\", \"SRC_ORI_GAME_MODEL_V3\"],\n      st: [\"青年\", \"壮年\"],\n      w: 0.47,\n      once: true,\n      show: s => s.res.n === \"ヴィクトリア\" && s.local?.kind === \"工業・採掘地域\" && s.job > 0,\n      t: \"ヴィクトリアの工場で長い交代番を終えたとき、作業着の袖口にきらりと黒く光る粉が付いているのに気づいた。班長に問い質しても、どのラインから漏れたのか分からないと首をかしげるばかりだった。\",\n      c: [\n        $terraData.K(\"どの工程で浴びたか洗い出し、清掃とマスクの交換を迫る\", {}, [\n          1,\n          \"今日回った持ち場を一つずつ辿り、粉が漏れている箇所を突き止めて責任者に掃除と予備のマスクを出させた。\",\n          { exposureAction: \"inspect\", k: 1, cr: 1 }\n        ]),\n        $terraData.K(\"作業着を袋に封じ、検査係の判定を待つ\", {}, [\n          1,\n          \"汚れた作業着を家へ持ち帰らないよう別の袋に封じ込め、工場の検査係を捕まえて源石粉かどうか調べるよう頼み込んだ。\",\n          { exposureAction: \"protect\", k: 1 }\n        ]),\n        $terraData.K(\"その日は作業着をロッカーに隔離し、次の番で掛け合う\", {}, [\n          1,\n          \"素手で触れないよう作業着をロッカーの隅に押し込み、次の交代番が入る前に誰が現場を点検するのか班長に食い下がった。\",\n          { exposureAction: \"avoid\", p: -1 }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "label": "どの工程で浴びたか洗い出し、清掃とマスクの交換を迫る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "今日回った持ち場を一つずつ辿り、粉が漏れている箇所を突き止めて責任者に掃除と予備のマスクを出させた。",
+              "effect": "{ exposureAction: \"inspect\", k: 1, cr: 1 }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "作業着を袋に封じ、検査係の判定を待つ",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "汚れた作業着を家へ持ち帰らないよう別の袋に封じ込め、工場の検査係を捕まえて源石粉かどうか調べるよう頼み込んだ。",
+              "effect": "{ exposureAction: \"protect\", k: 1 }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "その日は作業着をロッカーに隔離し、次の番で掛け合う",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "素手で触れないよう作業着をロッカーの隅に押し込み、次の交代番が入る前に誰が現場を点検するのか班長に食い下がった。",
+              "effect": "{ exposureAction: \"avoid\", p: -1 }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 3,
+      "outcomeCount": 3
+    },
+    {
+      "id": "life_rhodes_research_pause_review",
+      "source": "data/parts/routes/rhodes-and-factions/aftercare-and-eligibility.js:7",
+      "expected": 3,
+      "codeIntro": "{\n    id: \"life_rhodes_research_pause_review\",\n    conf: \"S\",\n    references: [\"SRC_RHODES_MEDICAL\", \"SRC_TERRA_LIFECOURSE\"],\n    st: [\"青年\", \"壮年\", \"老年\"],\n    cd: 5,\n    w: 0.34,\n    show: s => {\n      const a = s.lifeRecord?.affiliations?.find(x => x.id === \"rhodes-research\");\n      return s.age >= 18 && a?.status === \"suspended\" && s.year - (a.lastChangedYear ?? s.year) >= 5;\n    },\n    t: \"療養や家の暮らしに追われ、ロドスの経過研究から離れて数年が過ぎた。ある日、研究班からこれからどうするか尋ねる便りが届いた。引き出しの奥にしまっていた資料の束を取り出し、ページをめくりながら今の体調と暮らしを思い返した。\",\n    c: [\n      $terraData.K(\"無理のない日数だけ研究班へ戻る\", {}, [\n        1,\n        \"週に一度だけ顔を出す約束で、同意書の確認や記録の整理から手伝いを再開した。帰り際、次の出勤日を卓上の暦に書き込んだ。\",\n        {\n          lifeAffiliation: {\n            id: \"rhodes-research\",\n            title: \"ロドスの鉱石病経過研究\",\n            action: \"return\",\n            role: \"短時間の同意確認・記録補助\",\n            note: \"勤務日を限って研究協力を再開\"\n          },\n          lifeGoal: {\n            id: \"oripathy-research\",\n            action: \"continue\",\n            note: \"生活に合わせた短時間勤務で研究協力へ復帰\"\n          },\n          p: 1\n        }\n      ]),\n      $terraData.K(\"今はまだ休止を続け、数年後にまた考える\", {}, [\n        1,",
+      "choices": [
+        {
+          "label": "無理のない日数だけ研究班へ戻る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "週に一度だけ顔を出す約束で、同意書の確認や記録の整理から手伝いを再開した。帰り際、次の出勤日を卓上の暦に書き込んだ。",
+              "effect": "{\n          lifeAffiliation: {\n            id: \"rhodes-research\",\n            title: \"ロドスの鉱石病経過研究\",\n            action: \"return\",\n            role: \"短時間の同意確認・記録補助\",\n            note: \"勤務日を限って研究協力を再開\"\n          },\n          lifeGoal: {\n            id: \"oripathy-research\",\n            action: \"continue\",\n            note: \"生活に合わせた短時間勤務で研究協力へ復帰\"\n          },\n          p: 1\n        }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "今はまだ休止を続け、数年後にまた考える",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "まだしばらくは療養と家の暮らしを優先したいと返事を書いた。資料の束を元の引き出しへ戻すと、部屋に静かな夕方の光が差していた。",
+              "effect": "{\n          lifeAffiliation: {\n            id: \"rhodes-research\",\n            title: \"ロドスの鉱石病経過研究\",\n            action: \"review\",\n            note: \"療養・家族の時間を優先し、五年後に再確認\"\n          },\n          lifeGoal: {\n            id: \"oripathy-research\",\n            action: \"pause\",\n            note: \"研究から離れた状態を続け、再確認時期を記録\"\n          },\n          p: 1\n        }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "研究協力をここで終え、資料を後任へ託す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "手元にあった記録をまとめて後任の担当者へ引き継ぎ、研究班を離れた。机の上がすっかり片づいたあとも、ふとした折に当時の症例や仲間の顔が浮かんだ。",
+              "effect": "{\n          lifeAffiliation: {\n            id: \"rhodes-research\",\n            title: \"ロドスの鉱石病経過研究\",\n            action: \"leave\",\n            note: \"研究協力を終了し、記録の引継ぎを依頼\"\n          },\n          lifeGoal: {\n            id: \"oripathy-research\",\n            action: \"abandon\",\n            note: \"研究協力を終え、生活上の別の優先事項へ移る\"\n          },\n          p: 1\n        }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 3,
+      "outcomeCount": 3
+    },
+    {
+      "id": "sr_bsw_davistown_debt_conflict",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:205",
+      "expected": 3,
+      "codeIntro": "{\n      id: \"sr_bsw_davistown_debt_conflict\",\n      conf: \"S\",\n      references: [\"SRC_BSW_PMC\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { year: 1096 },\n      show: s => onBsw(s) && (s.job === 35 || s.job === 36),\n      t: \"衰退した鉱業移動区画ダヴィスタウンへの派遣任務。契約主である開拓銀行の要請は、債務超過に陥った住民たちの住宅を差し押さえ、開拓地への強制移送を支援するための夜間警備だった。街路には荷物をまとめる気力も失った老人や職人たちの絶望的な視線が満ちている。\",\n      c: [\n        $terraData.K(\"「契約は絶対だ」と感情を排し、銀行の指示通りに差し押さえ区画の厳重封鎖を行う\", {}, [\n          1,\n          \"規則通りにバリケードを敷き、住民の立ち入りを阻止した。銀行役員からは手厚い報奨金を渡されたが、立ち退かされた家族の啜り泣きが耳の奥に残り続けた。\",\n          {\n            cash: 100000,\n            p: -2,\n            biasInf: 5\n          }\n        ]),\n        $terraData.K(\"住民たちの退去猶予を勝ち取るため、契約違反のリスクを冒して上司と銀行へ異議を申し立てる\", {}, [\n          1,\n          \"『ダーティマネー』のジェシカのように、理不尽な収奪に対して毅然と抗議の声を上げた。社内査問で処分を受けたものの、住民たちからは「命の恩人」として涙ながらに感謝された。\",\n          {\n            groupStanding: {\n              id: \"bsw-colleagues\",\n              title: \"BSWの同僚・小隊員\",\n              delta: -1,\n              reason: \"契約主への異議申し立て\"\n            },\n            rl: 3,\n            p: 3\n          }\n        ]),\n     ",
+      "choices": [
+        {
+          "label": "「契約は絶対だ」と感情を排し、銀行の指示通りに差し押さえ区画の厳重封鎖を行う",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "規則通りにバリケードを敷き、住民の立ち入りを阻止した。銀行役員からは手厚い報奨金を渡されたが、立ち退かされた家族の啜り泣きが耳の奥に残り続けた。",
+              "effect": "{\n            cash: 100000,\n            p: -2,\n            biasInf: 5\n          }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "住民たちの退去猶予を勝ち取るため、契約違反のリスクを冒して上司と銀行へ異議を申し立てる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "『ダーティマネー』のジェシカのように、理不尽な収奪に対して毅然と抗議の声を上げた。社内査問で処分を受けたものの、住民たちからは「命の恩人」として涙ながらに感謝された。",
+              "effect": "{\n            groupStanding: {\n              id: \"bsw-colleagues\",\n              title: \"BSWの同僚・小隊員\",\n              delta: -1,\n              reason: \"契約主への異議申し立て\"\n            },\n            rl: 3,\n            p: 3\n          }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "地元の元兵士（ウッドロウ）や商店主らと接触し、衝突を避けるための自主避難ルートを模索する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "住民側の顔役と水面下で連絡を取り、暴力的な衝突を起こさずに荷物を運び出せる裏道を案内した。民間軍事の枠組みの中で、ぎりぎりの良心を守り抜いた。",
+              "effect": "{\n            k: 2,\n            p: 2,\n            rl: 1\n          }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 3,
+      "outcomeCount": 3
+    },
+    {
+      "id": "cl_household_work_entry",
+      "source": "data/world/class-and-locality.js:104",
+      "expected": 3,
+      "codeIntro": "{\n        id: \"cl_household_work_entry\",\n        conf: \"S\",\n        references: $terraData.CLASS_REFS,\n        st: [\"少年\", \"青年\"],\n        ge: { age: 13 },\n        le: { age: 20 },\n        need: [\"労働・生業を中心とする生家\"],\n        once: true,\n        w: 0.58,\n        t: \"家の稼ぎを支える親から、「猫の手も借りたい時期だけ現場を手伝ってくれないか」と頼まれた。仕事の手順を覚えれば一人前として扱われるが、そのぶん勉強や息抜きの時間は削られる。\",\n        c: [\n          $terraData.K(\"危なくない手仕事から少しずつ教わる\", {}, [\n            1,\n            \"工具の手入れや荷の仕分けを教わり、親の背中を見ながら一日働いた。夕方には手のひらに小さな豆ができていた。\",\n            {\n              k: 1,\n              rl: 1,\n              lifeSkill: {\n                id: \"class-household-work\",\n                title: \"家の生業の基礎\",\n                delta: 2,\n                context: \"安全にできる作業を教わった\"\n              },\n              ...$terraData.CFX(\"household_skill\", \"家の生業を手伝い技能を習った\", {\n                opportunity: \"技能を習う\"\n              })\n            }\n          ]),\n          $terraData.K(\"学校の授業だけは休めないと家族に掛け合う\", { show: s => educationLegacySceneGuard(s,\"education_school_classroom\") }, [\n            1,\n            \"「学校がある日は抜けられない」と正直に話し、休みの日だけ手伝うことで折り合いをつけた。夜はランプの下で遅くまで宿題",
+      "choices": [
+        {
+          "label": "危なくない手仕事から少しずつ教わる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "工具の手入れや荷の仕分けを教わり、親の背中を見ながら一日働いた。夕方には手のひらに小さな豆ができていた。",
+              "effect": "{\n              k: 1,\n              rl: 1,\n              lifeSkill: {\n                id: \"class-household-work\",\n                title: \"家の生業の基礎\",\n                delta: 2,\n                context: \"安全にできる作業を教わった\"\n              },\n              ...$terraData.CFX(\"household_skill\", \"家の生業を手伝い技能を習った\", {\n                opportunity: \"技能を習う\"\n              })\n            }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "学校の授業だけは休めないと家族に掛け合う",
+          "gate": "{ show: s => educationLegacySceneGuard(s,\"education_school_classroom\") }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "「学校がある日は抜けられない」と正直に話し、休みの日だけ手伝うことで折り合いをつけた。夜はランプの下で遅くまで宿題を広げた。",
+              "effect": "{\n              rl: 1,\n              k: 2,\n              ...$terraData.CFX(\"education_choice\", \"家の生業と授業の優先順位を話した\", {\n                view: \"働く時間と学ぶ機会を両方大切にしたい\"\n              })\n            }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "現場に出るより、クタクタな家族のために炊事や洗濯を回る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "仕事場へは入らず、泥だらけで帰ってくる家族のために温かい飯と洗濯を引き受けた。直接の稼ぎにはならなくても、家の暮らしが回るのを支えた。",
+              "effect": "{ rl: 2, p: 1, ...$terraData.CFX(\"care_work\", \"生業の外にある家事労働を引き受けた\") }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 3,
+      "outcomeCount": 3
+    },
+    {
+      "id": "cl_siracusa_market_patron",
+      "source": "data/world/class-and-locality.js:411",
+      "expected": 3,
+      "codeIntro": "{\n        id: \"cl_siracusa_market_patron\",\n        conf: \"S\",\n        references: [\"SRC_CLASS_SIRACUSA\"],\n        st: [\"青年\", \"壮年\"],\n        ge: { age: 18 },\n        need: [\"国:シラクーザ\"],\n        once: true,\n        w: 0.35,\n        t: \"シラクーザの市場で店の手伝いを頼まれたが、店主は毎月の売り上げとは別に、地元のファミリーへ納める金を裏帳面に書き込んでいた。表の帳面だけをつけるか、それとも店が抱える危うい事情まで踏み込むか迷った。\",\n        c: [\n          $terraData.K(\"日々の品物と売り上げの計算だけを引き受ける\", {}, [\n            1,\n            \"「自分が触るのは表の帳面だけだ」と線を引き、仕入れと売り上げの計算だけをきっちり片づけた。引き出しの奥にある黒い小帳面には指一本触れなかった。\",\n            {\n              k: 2,\n              rl: 1,\n              ...$terraData.CFX(\"market_work\", \"ファミリーの存在する地域で市場の帳簿仕事を手伝った\", {\n                opportunity: \"帳簿仕事\"\n              })\n            }\n          ]),\n          $terraData.K(\"店主の愚痴に耳を傾け、支払いのやりくりを一緒に考える\", {}, [\n            1,\n            \"閉店後の暗い店内で店主の溜め息を聞き、卸業者への支払いと毎月の取り立てをどうしのぐか一緒に算盤を弾いた。帳面を閉じても、店主の指は小刻みに震えていた。\",\n            { rl: 2, ...$terraData.CFX(\"market_support\", \"店主が置かれた取引関係について話を聞いた\") }\n          ]),\n          $terraData.K(\"きな臭い商売からは手を引き、別の働き口を探す\", {}, [\n            1,\n            \"ファミリーの影がちらつく店には深入りせず、丁重に断って表へ出た。石畳の広場",
+      "choices": [
+        {
+          "label": "日々の品物と売り上げの計算だけを引き受ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "「自分が触るのは表の帳面だけだ」と線を引き、仕入れと売り上げの計算だけをきっちり片づけた。引き出しの奥にある黒い小帳面には指一本触れなかった。",
+              "effect": "{\n              k: 2,\n              rl: 1,\n              ...$terraData.CFX(\"market_work\", \"ファミリーの存在する地域で市場の帳簿仕事を手伝った\", {\n                opportunity: \"帳簿仕事\"\n              })\n            }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "店主の愚痴に耳を傾け、支払いのやりくりを一緒に考える",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "閉店後の暗い店内で店主の溜め息を聞き、卸業者への支払いと毎月の取り立てをどうしのぐか一緒に算盤を弾いた。帳面を閉じても、店主の指は小刻みに震えていた。",
+              "effect": "{ rl: 2, ...$terraData.CFX(\"market_support\", \"店主が置かれた取引関係について話を聞いた\") }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "きな臭い商売からは手を引き、別の働き口を探す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "ファミリーの影がちらつく店には深入りせず、丁重に断って表へ出た。石畳の広場では、黒服の男たちが談笑していた。",
+              "effect": "{ p: 1, ...$terraData.CFX(\"market_distance\", \"市場仕事を引き受けなかった\") }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 3,
+      "outcomeCount": 3
+    },
+    {
+      "id": "facility_work_restricted",
+      "source": "data/world/facilities.js:219",
+      "expected": 3,
+      "codeIntro": "{\n        id: \"facility_work_restricted\",\n        conf: \"S\",\n        references: [\"SRC_FACILITY_PODENCO\", \"SRC_FACILITY_TW\"],\n        st: [\"青年\", \"壮年\", \"老年\"],\n        need: [\"仕事場の業務が縮小中\"],\n        cd: 5,\n        w: 0.78,\n        t: \"原材料が届かず、仕事場の機械が半分以上止まったままだ。持ち場の作業も減り、現場の責任者は毎日渋い顔でシフトを削っている。来月の給金がどうなるか聞くか、雑用でも買って出るか、それともよその口を探すか。\",\n        c: [\n          $terraData.K(\"責任者に、当面の出勤日数と給金の扱いを確かめる\", {}, [\n            1,\n            \"事務所の戸を叩き、来月どれだけ仕事があるのか、休業中の手当は出るのかを腹を割って尋ねた。\",\n            {\n              k: 1,\n              facilityAction: {\n                kind: \"workplace\",\n                action: \"contract_check\",\n                description: \"業務縮小時の勤務条件を問い合わせた\"\n              }\n            }\n          ]),\n          $terraData.K(\"止まった機械の掃除や、動いているラインの手伝いに回る\", {}, [\n            1,\n            \"少しでも現場に居場所を残すため、油まみれになって休止中の設備を拭き上げ、人手の足りない工程を手伝った。\",\n            {\n              rl: 1,\n              facilityAction: {\n                kind: \"workplace\",\n                action: \"maintenance\",\n                description: \"縮小中の仕事場でできる作業を手伝った\"\n              }\n            }\n          ]),\n          ",
+      "choices": [
+        {
+          "label": "責任者に、当面の出勤日数と給金の扱いを確かめる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "事務所の戸を叩き、来月どれだけ仕事があるのか、休業中の手当は出るのかを腹を割って尋ねた。",
+              "effect": "{\n              k: 1,\n              facilityAction: {\n                kind: \"workplace\",\n                action: \"contract_check\",\n                description: \"業務縮小時の勤務条件を問い合わせた\"\n              }\n            }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "止まった機械の掃除や、動いているラインの手伝いに回る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "少しでも現場に居場所を残すため、油まみれになって休止中の設備を拭き上げ、人手の足りない工程を手伝った。",
+              "effect": "{\n              rl: 1,\n              facilityAction: {\n                kind: \"workplace\",\n                action: \"maintenance\",\n                description: \"縮小中の仕事場でできる作業を手伝った\"\n              }\n            }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "ここが立ち行かなくなった時のために、よその求人を探しておく",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "帰りに職業紹介所へ寄り、自分の腕で移れそうな働き口を探した。応募の紙を懐にしまい、翌朝は何食わぬ顔で職場へ出た。",
+              "effect": "{\n              k: 2,\n              facilityAction: {\n                kind: \"workplace\",\n                action: \"job_search\",\n                description: \"業務縮小を受けて別の求人を調べた\"\n              }\n            }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 3,
+      "outcomeCount": 3
+    },
+    {
+      "id": "facility_work_recovery",
+      "source": "data/world/facilities.js:267",
+      "expected": 2,
+      "codeIntro": "{\n        id: \"facility_work_recovery\",\n        conf: \"S\",\n        references: [\"SRC_FACILITY_PODENCO\"],\n        st: [\"青年\", \"壮年\", \"老年\"],\n        need: [\"仕事場の業務が再開した\"],\n        cd: 6,\n        w: 0.8,\n        t: \"止まっていた資材がようやく届き、仕事場に機械の唸りが戻ってきた。ただ、人が抜けた穴を埋めるため、貼り出された配置表には見慣れない工程まで自分の名前が書き込まれている。\",\n        c: [\n          $terraData.K(\"新しく割り振られた工程と安全手順を最初から教わる\", {}, [\n            1,\n            \"知ったかぶりをして怪我をしないよう、古株の職人に頭を下げて見慣れない機械の止め方と手順を一つずつ確かめた。\",\n            {\n              k: 1,\n              facilityAction: {\n                kind: \"workplace\",\n                action: \"review_roles\",\n                description: \"再開後の作業と安全手順を確認した\"\n              }\n            }\n          ]),\n          $terraData.K(\"まずは慣れた持ち場を回し、無理な掛け持ちは後で掛け合う\", {}, [\n            1,\n            \"久しぶりに動く自分の持ち場を無難にこなしながら、一人では抱えきれない分担について責任者へ話す機会をうかがった。\",\n            {\n              p: 1,\n              facilityAction: {\n                kind: \"workplace\",\n                action: \"stay\",\n                description: \"再開した仕事場で勤務を続ける意向を記録した\"\n              }\n            }\n          ])\n        ]\n      }",
+      "choices": [
+        {
+          "label": "新しく割り振られた工程と安全手順を最初から教わる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "知ったかぶりをして怪我をしないよう、古株の職人に頭を下げて見慣れない機械の止め方と手順を一つずつ確かめた。",
+              "effect": "{\n              k: 1,\n              facilityAction: {\n                kind: \"workplace\",\n                action: \"review_roles\",\n                description: \"再開後の作業と安全手順を確認した\"\n              }\n            }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "まずは慣れた持ち場を回し、無理な掛け持ちは後で掛け合う",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "久しぶりに動く自分の持ち場を無難にこなしながら、一人では抱えきれない分担について責任者へ話す機会をうかがった。",
+              "effect": "{\n              p: 1,\n              facilityAction: {\n                kind: \"workplace\",\n                action: \"stay\",\n                description: \"再開した仕事場で勤務を続ける意向を記録した\"\n              }\n            }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 2,
+      "outcomeCount": 2
+    },
+    {
+      "id": "people_work_life_conversation",
+      "source": "data/life/goals-and-family.js:10",
+      "expected": 2,
+      "codeIntro": "{\n      id: \"people_work_life_conversation\",\n      conf: \"S\",\n      references: $terraData.lifeRefs,\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 5,\n      w: 0.42,\n      show: s => {\n        const p = $rules.facilities.facilityPersonFor(s, \"workplace\");\n        return (\n          !!p &&\n          p.actualStatus === \"working\" &&\n          p.contactState !== \"distant\" &&\n          s.year - p.metYear >= 1 &&\n          (!p.knownLife || s.year - p.knownLife.heardYear >= 3)\n        );\n      },\n      t: \"昼休みの片隅で、顔なじみの同僚が冷めた茶を飲みながら勤務表を眺めていた。次の作業の打ち合わせが終わり、ふっと言葉が途切れる。\",\n      c: [\n        $terraData.K(\"仕事から離れて、最近の暮らしぶりを尋ねる\", {}, [\n          1,\n          \"家のことや休みの日の過ごし方をぽつりぽつりと語り合った。始業のベルが鳴り、また後でと笑って持ち場へ戻った。\",\n          { facilityPersonAction: { kind: \"workplace\", action: \"talk\" }, rl: 1 }\n        ]),\n        $terraData.K(\"午後の段取りだけ確かめて切り上げる\", {}, [\n          1,\n          \"午後の手順をもう一度すり合わせ、短い休憩の残りを黙って過ごしてから持ち場へ戻った。\",\n          { k: 1 }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "label": "仕事から離れて、最近の暮らしぶりを尋ねる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "家のことや休みの日の過ごし方をぽつりぽつりと語り合った。始業のベルが鳴り、また後でと笑って持ち場へ戻った。",
+              "effect": "{ facilityPersonAction: { kind: \"workplace\", action: \"talk\" }, rl: 1 }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "午後の段取りだけ確かめて切り上げる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "午後の手順をもう一度すり合わせ、短い休憩の残りを黙って過ごしてから持ち場へ戻った。",
+              "effect": "{ k: 1 }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 2,
+      "outcomeCount": 2
+    },
+    {
+      "id": "inter_victoria_taran_speech_v76",
+      "source": "data/work/contracts.js:182",
+      "expected": 2,
+      "codeIntro": "{\n      id: \"inter_victoria_taran_speech_v76\",\n      conf: \"S\",\n      references: [\"SRC_V76_TARA\"],\n      st: [\"少年\", \"青年\", \"壮年\"],\n      cd: 7,\n      w: 0.52,\n      show: s => s.res.n === \"ヴィクトリア\",\n      t: \"役所の窓口で、ターラー訛りの抜けない労働者が係員に冷たくあしらわれていた。本人は就労の書類を見てほしいと必死に食い下がっているのに、係員はろくに目も合わせず「あっちの列へ並び直せ」と顎でしゃくっている。\",\n      c: [\n        $terraData.K(\"横から口を添え、係員に説明を求める\", {}, [\n          1,\n          \"二人の間に割り込んで案内書きを指さし、ここで受け付けるはずだと係員に食い下がった。渋々書類を受け取るのを見届けると、相手は深く息を吐いて頭を下げた。\",\n          {\n            intergroupAction: {\n              context: \"institution\",\n              topic: \"ターラーの言葉と窓口の扱い\",\n              response: \"手続きの説明を支援\"\n            },\n            rl: 2\n          }\n        ]),\n        $terraData.K(\"本人の気持ちを確かめてから手を貸す\", {}, [\n          1,\n          \"列を外れた本人に声をかけると、「一度書類を揃え直してくる」と唇を噛んでいた。次にまた追い返されたら一緒に来ようと約束して別れた。\",\n          {\n            intergroupAction: {\n              context: \"institution\",\n              topic: \"ターラーの言葉と窓口の扱い\",\n              response: \"当人の意向を確認\"\n            },\n            k: 1\n          }\n        ])\n      ]\n    }",
+      "choices": [
+        {
+          "label": "横から口を添え、係員に説明を求める",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "二人の間に割り込んで案内書きを指さし、ここで受け付けるはずだと係員に食い下がった。渋々書類を受け取るのを見届けると、相手は深く息を吐いて頭を下げた。",
+              "effect": "{\n            intergroupAction: {\n              context: \"institution\",\n              topic: \"ターラーの言葉と窓口の扱い\",\n              response: \"手続きの説明を支援\"\n            },\n            rl: 2\n          }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "本人の気持ちを確かめてから手を貸す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "列を外れた本人に声をかけると、「一度書類を揃え直してくる」と唇を噛んでいた。次にまた追い返されたら一緒に来ようと約束して別れた。",
+              "effect": "{\n            intergroupAction: {\n              context: \"institution\",\n              topic: \"ターラーの言葉と窓口の扱い\",\n              response: \"当人の意向を確認\"\n            },\n            k: 1\n          }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 2,
+      "outcomeCount": 2
+    },
+    {
+      "id": "inter_prior_contact_followup_v76",
+      "source": "data/work/contracts.js:306",
+      "expected": 2,
+      "codeIntro": "{\n      id: \"inter_prior_contact_followup_v76\",\n      conf: \"S\",\n      references: $terraData.v76FrictionRefs,\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 8,\n      w: 0.48,\n      show: s =>\n        (s.intergroupHistory || []).some(\n          x =>\n            (s.year - x.year >= 2 && x.response === \"不明瞭な説明による遅れ\") ||\n            (s.year - x.year >= 2 && x.response === \"配置確認が遅れた\")\n        ),\n      t: \"数年前に窓口でたらい回しにされ、曖昧な理由で待たされた一件が、新しい手続きの場でふいにぶり返した。当時の控えを突きつけて筋を通すか、蒸し返さずに今日の仕事へ戻るか迷った。\",\n      c: [\n        $terraData.K(\"当時の控えを出し、今の説明と食い違う点を質す\", {}, [\n          1,\n          \"古い控えを机に広げて当時の経緯を説明し、二度と宙ぶらりんにされないよう担当者の言質を取った。\",\n          {\n            intergroupAction: {\n              context: \"community\",\n              topic: \"以前の窓口での不利益の後日談\",\n              response: \"以前の記録を照合\"\n            },\n            k: 2\n          }\n        ]),\n        $terraData.K(\"過ぎたこととして飲み込み、今の暮らしを優先する\", {}, [\n          1,\n          \"古い書類は鞄の奥へ押し込み、そのまま仕事場へ戻った。ただ、あのとき待合のベンチで味わった惨めさだけは、消えずに胸の底へ沈んでいた。\",\n          {\n            intergroupAction: {\n              context: \"community\",\n              topic: \"以前の窓口での不利益の後日談\",\n  ",
+      "choices": [
+        {
+          "label": "当時の控えを出し、今の説明と食い違う点を質す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "古い控えを机に広げて当時の経緯を説明し、二度と宙ぶらりんにされないよう担当者の言質を取った。",
+              "effect": "{\n            intergroupAction: {\n              context: \"community\",\n              topic: \"以前の窓口での不利益の後日談\",\n              response: \"以前の記録を照合\"\n            },\n            k: 2\n          }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "過ぎたこととして飲み込み、今の暮らしを優先する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "古い書類は鞄の奥へ押し込み、そのまま仕事場へ戻った。ただ、あのとき待合のベンチで味わった惨めさだけは、消えずに胸の底へ沈んでいた。",
+              "effect": "{\n            intergroupAction: {\n              context: \"community\",\n              topic: \"以前の窓口での不利益の後日談\",\n              response: \"再照会を見送り\"\n            },\n            p: 1\n          }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 2,
+      "outcomeCount": 2
+    },
+    {
+      "id": "v77_accidental_transport_originium",
+      "source": "data/social/learning.js:392",
+      "expected": 0,
+      "codeIntro": "{\n      id: \"v77_accidental_transport_originium\",\n      conf: \"S\",\n      references: [\"SRC_V77_TRANSPORT_INFECTION\", \"SRC_V77_WATER_WORK\"],\n      st: [\"青年\", \"壮年\"],\n      once: true,\n      w: 0.075,\n      show: s =>\n        !s.inf &&\n        !$rules.conditions.restricted(s) &&\n        s.job > 0 &&\n        /トランスポーター|運送|伝令|復旧|鉱夫|工場|整備|兵站/.test($terraData.J[s.job]?.n || \"\") &&\n        (s.oripathyExposure?.protectionUntilYear ?? -1) < s.year,\n      t: \"職場の運搬車が損傷して積み荷の袋が破れ、黒い粉が舞った。近くにいたとき粉を吸い込み、その後から咳とだるさが続いた。\",\n      fx: { inf: 1, h: -4, p: -3, infCause: \"輸送事故で源石を含む粉塵に曝露した\", infectionRoute: \"dust\" }\n    }",
+      "choices": [],
+      "actual": 0,
+      "outcomeCount": 0
+    },
+    {
+      "id": "v78_hardline_sarkaz_employer",
+      "source": "data/social/conflict.js:196",
+      "expected": 2,
+      "codeIntro": "{\n      id: \"v78_hardline_sarkaz_employer\",\n      conf: \"S\",\n      references: [\"SRC_V87_SARKAZ_HARDSHIP\", \"SRC_SR_REUNION_LATER\", \"SRC_V78_SOCIAL_DESIGN\"],\n      st: [\"青年\", \"壮年\"],\n      cd: 8,\n      w: 0.64,\n      show: s =>\n        s.r?.n !== \"サルカズ\" &&\n        s.res?.n === \"ヴィクトリア\" &&\n        s.job > 0 &&\n        s.biasSarkaz >= 75 &&\n        (s.socialLearning?.equityCommitment || 0) < 35 &&\n        s.lifeRecord?.affiliations?.some(\n          a => a.kind === \"employer\" && [\"active\", \"crisis\"].includes(a.status)\n        ) &&\n        !s.lifeRecord?.workRelationships?.some(r => r.id === \"victoria-sarkaz-interview\"),\n      t: \"ヴィクトリアの仕事場に、サルカズの求職者が面接にやってきた。角と名前を見た瞬間、どんな腕前かも確かめないうちに「こいつは危ない」と決めつけていた。採用担当から、現場で一緒に働く身としてどう思うかと耳打ちされる。\",\n      c: [\n        $terraData.K(\n          \"ろくな噂がないと吹き込み、採用に反対する\",\n          {},\n          [\n            0.65,\n            \"担当者はあなたの言葉を鵜呑みにし、その場で面接を打ち切った。求職者は無言で履歴書を折り畳み、踵を返して出ていった。\",\n            {\n              socialConflictAction: { action: \"exclude\", target: \"sarkaz\", context: \"employment\" },\n              lifeWorkRelationship: {\n                id: \"vi",
+      "choices": [
+        {
+          "label": "ろくな噂がないと吹き込み、採用に反対する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "0.65",
+              "text": "担当者はあなたの言葉を鵜呑みにし、その場で面接を打ち切った。求職者は無言で履歴書を折り畳み、踵を返して出ていった。",
+              "effect": "{\n              socialConflictAction: { action: \"exclude\", target: \"sarkaz\", context: \"employment\" },\n              lifeWorkRelationship: {\n                id: \"victoria-sarkaz-interview\",\n                action: \"record-employment-exclusion\",\n                employerId: \"current\",\n                decision: \"excluded\",\n                applicantResponse: \"left-after-exclusion\"\n              },\n              fl: { ed_sarkaz_work_bias: 1 },\n              biasSar: 5,\n              cr: 1\n            }",
+              "directJob": []
+            },
+            {
+              "weight": "1",
+              "text": "採用担当は根拠のない噂話を退け、実務の基準だけで話を進めた。求職者が勤務時間や持ち場を熱心に尋ねる声が、仕切りの向こうから聞こえてきた。",
+              "effect": "{\n              socialConflictAction: { action: \"exclude\", target: \"sarkaz\", context: \"employment\" },\n              lifeWorkRelationship: {\n                id: \"victoria-sarkaz-interview\",\n                action: \"record-employment-exclusion\",\n                employerId: \"current\",\n                decision: \"manager-overruled\",\n                applicantResponse: \"asked-for-criteria\"\n              },\n              rl: -4,\n              cr: -2\n            }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "口出しはせず、控え室から席を外す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "余計な口は挟まずその場を離れた。仕切りの向こうで続くやり取りを聞きながら、角を見るだけで身構える自分の癖に苦いものを感じた。",
+              "effect": "{}",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 2,
+      "outcomeCount": 3
+    },
+    {
+      "id": "v81_job_silence",
+      "source": "data/review/choice-policy.js:6",
+      "expected": 3,
+      "codeIntro": "{\n      id: \"v81_job_silence\",\n      conf: \"S\",\n      references: $terraData.v81src,\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 6,\n      w: 0.82,\n      show: s =>\n        s.age >= 18 &&\n        s.job > 0 &&\n        s.socialAftermath?.episodes?.some(\n          x => x.domain === \"work\" && x.status === \"active\" && s.year - x.year <= 4\n        ),\n      t: \"勤務表には仕事があるのに、申し送りの紙からあなたの名前だけが抜けていた。仕事の振り分けを尋ねても、同僚は話を途中で切り上げる。異議を申し立てるか、話を聞いてくれる人に伝えるか、今日は帰るか考えた。\",\n      c: [\n        $terraData.K(\"記録を取り、労務相談先へ状況を伝える\", {}, [\n          1,\n          \"仕事の割当てと説明された理由を分けて書き、労務相談先へ渡した。返事を待つ間も、申し送りから名前は抜けたままだった。\",\n          {\n            socialAftermathAction: { type: \"document\", domain: \"work\", note: \"勤務上の対応を記録\" },\n            k: 1,\n            p: -1\n          }\n        ]),\n        $terraData.K(\n          \"話を聞いてくれる同僚にだけ事情を打ち明ける\",\n          { en: { ge: { rl: 16 } }, why: \"近況を話せる相手がまだいない。\" },\n          [\n            0.65,\n            \"同僚は勤務後まで残り、休憩室で話を聞いた。申し送りの欄は空いたままだったが、帰りは途中まで一緒に歩いた。\",\n            {\n              socialAftermathAction: { type: \"support\", domain: \"work\", note: \"同僚との短い支援の接点\" },\n             ",
+      "choices": [
+        {
+          "label": "記録を取り、労務相談先へ状況を伝える",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "仕事の割当てと説明された理由を分けて書き、労務相談先へ渡した。返事を待つ間も、申し送りから名前は抜けたままだった。",
+              "effect": "{\n            socialAftermathAction: { type: \"document\", domain: \"work\", note: \"勤務上の対応を記録\" },\n            k: 1,\n            p: -1\n          }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "話を聞いてくれる同僚にだけ事情を打ち明ける",
+          "gate": "{ en: { ge: { rl: 16 } }, why: \"近況を話せる相手がまだいない。\" }",
+          "outcomes": [
+            {
+              "weight": "0.65",
+              "text": "同僚は勤務後まで残り、休憩室で話を聞いた。申し送りの欄は空いたままだったが、帰りは途中まで一緒に歩いた。",
+              "effect": "{\n              socialAftermathAction: { type: \"support\", domain: \"work\", note: \"同僚との短い支援の接点\" },\n              rl: 2,\n              p: 1\n            }",
+              "directJob": []
+            },
+            {
+              "weight": "1",
+              "text": "同僚は「今は関わりたくない」と言った。書きかけの申立書を持ち帰り、次に話す相手を考えた。",
+              "effect": "{ socialAftermathAction: { type: \"review\", domain: \"work\", note: \"協力の申し出は保留\" }, p: -3 }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "今日は仕事だけを終え、返事を急がない",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "必要な作業だけ終え、いつもより早く持ち場を出た。翌日の勤務予定を確かめた。",
+              "effect": "{ socialAftermathAction: { type: \"review\", domain: \"work\", note: \"対応を先延ばし\" } }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 3,
+      "outcomeCount": 4
+    },
+    {
+      "id": "life_ursus_zelgrad_post_settlement_job_search",
+      "source": "data/relationships/close-disclosure.js:1620",
+      "expected": 2,
+      "codeIntro": "{\n      id: \"life_ursus_zelgrad_post_settlement_job_search\",\n      conf: \"B\",\n      references: [\"SRC_ZELGRAD_DISPLACED_WORK_MODEL\", \"SRC_TERRA_LIFECOURSE\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      ge: { year: 1106, age: 18 },\n      le: { year: 1135, age: 85 },\n      after: { id: \"life_ursus_zelgrad_displaced_work_review\", min: 1 },\n      once: true,\n      w: 0.32,\n      show: s =>\n        s.job === 0 &&\n        s.lifeRecord?.affiliations?.some(a =>\n          a.id === \"ursus-displaced-repair-workshop\" && a.status === \"left\"\n        ) &&\n        s.lifeRecord?.goals?.some(g =>\n          g.id === \"ursus-zelgrad-after-crisis\" && g.status === \"achieved\"\n        ) &&\n        !s.lifeRecord?.goals?.some(g => g.id === \"ursus-post-settlement-reemployment\"),\n      t: \"工房での仕事を終え、収入の見通しが立たなくなった。以前に住まいと生計を立て直した日々まで消えたわけではないが、今の暮らしを続けるには別の働き口が要る。職探しを始めるか、しばらく暮らしの立て直しを優先するか考えた。\",\n      c: [\n        $terraData.K(\"工場と工房で覚えた手順をまとめ、次の働き口を探す\", {}, [\n          1,\n          \"使い慣れた工具を手入れし、製造補助と検品で覚えた手順を手帳へ書き出した。求人を出している店や工房を訪ね、これまでの経験を伝えながら、次の仕事を探し始めた。\",\n          {\n            lifeGoal: {\n              id: \"ur",
+      "choices": [
+        {
+          "label": "工場と工房で覚えた手順をまとめ、次の働き口を探す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "使い慣れた工具を手入れし、製造補助と検品で覚えた手順を手帳へ書き出した。求人を出している店や工房を訪ね、これまでの経験を伝えながら、次の仕事を探し始めた。",
+              "effect": "{\n            lifeGoal: {\n              id: \"ursus-post-settlement-reemployment\",\n              title: \"立て直した暮らしを支える次の働き口を見つける\",\n              priority: \"生計\",\n              action: \"start\",\n              note: \"以前の工房を離れ、経験を生かす再就職を目指した\"\n            },\n            p: 1\n          }",
+              "directJob": []
+            }
+          ]
+        },
+        {
+          "label": "当面は食費と住まいの支払いを確かめ、求職を急がない",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "text": "手元の金と次の支払日を確かめ、今すぐ動ける範囲を考えた。道具は捨てずに手元へ残し、身体を休めながら次の募集を待つことにした。",
+              "effect": "{\n            lifeGoal: {\n              id: \"ursus-post-settlement-reemployment\",\n              title: \"立て直した暮らしを支える次の働き口を見つける\",\n              priority: \"生計\",\n              action: \"pause\",\n              note: \"暮らしの支払いを確認し、再就職の判断を保留した\"\n            },\n            p: 0\n          }",
+              "directJob": []
+            }
+          ]
+        }
+      ],
+      "actual": 2,
+      "outcomeCount": 2
+    },
+    {
+      "id": "edu_employer_sponsored_course",
+      "source": "data/education/p17-reviewed-prose.js:595",
+      "expected": 2,
+      "error": "id-not-found",
+      "choices": []
+    },
+    {
+      "id": "edu_study_work_balance",
+      "source": "data/education/p17-reviewed-prose.js:691",
+      "expected": 2,
+      "error": "id-not-found",
+      "choices": []
+    }
+  ],
+  "issues": [
+    {
+      "id": "earth_discr_work_years",
+      "expected": 3,
+      "error": "id-not-found"
+    },
+    {
+      "id": "edu_employer_sponsored_course",
+      "expected": 2,
+      "error": "id-not-found"
+    },
+    {
+      "id": "edu_study_work_balance",
+      "expected": 2,
+      "error": "id-not-found"
+    }
+  ]
+}

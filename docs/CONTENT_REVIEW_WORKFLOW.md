@@ -2,12 +2,18 @@
 
 この手順は EVENT_CATALOG.md、tools/event-catalog-metadata.json、data/review/、データモジュールを一つの制作経路として扱う。カタログは生成物であり、編集者が直接修正しない。
 
+**全イベント共通の優先校閲基準**：[`EVENT_PROSE_CAUSALITY_AND_REVIEW_STANDARD.md`](EVENT_PROSE_CAUSALITY_AND_REVIEW_STANDARD.md) を併読する。設計理念、選択／結果／後続の因果とフラグ、既存文面に準じた散文・生活描写、人物と施設の認知境界を、新規執筆・改稿・監査のすべてで同時に確認する。
+
 ## 変更するとき
 
 1. イベントIDから EVENT_CATALOG.md で現行の生成元ファイルとレビュー状態を探す。
 2. 本文・条件・選択・効果・後続を、実際のデータ生成元（data/ と対応するエンジンの js/）で直す。条件、効果、後続、出典IDも本文と同じ変更範囲として確認する。
+**プレイヤー表示文面の提出ルール**：イベントの本文、選択肢、結果、UIに表示される肩書・説明文を追加・改稿した場合、`docs/PLAYER_TEXT_REVIEW.md` に**イベントID・変更後の文面全文・変更理由・根拠区分・該当ソースパス**を一度だけ追記する。確認用台帳はプレイヤー表示の正本ではなく、レビューの索引。文章の評価を実装担当の完了条件にしない。課題や進捗は従来どおり `REMAINING_TASKS.md` のみとする。
+
+イベントを独立案から削除・統合する判断では、`tools/event-catalog-metadata.json` の記録を削除せず、`lifecycle: "retired"` と `retirement`（`disposition`、`reason`、`decisionSource`、必要なら`successorIds`）を明記する。退役IDは履歴として保存し、現行 `EVENT_CATALOG.md` には載せない。IDを再利用する場合は、退役状態を明示的に解除し、現行ソースの出典アンカーを再照合する。
+
 3. 根拠は data/model/sources.js の構成下にある SETTING_SOURCES と、data/review/current-review.js または choice-policy.js の既存分類へ記録する。個別事例、二次資料、分析・推論、ゲーム内補完を区別し、複数の台帳へ同じ長文を複製しない。
-4. 編集・レビュー分類の変更後に node tools/generate-event-catalog.cjs --write を実行し、生成された EVENT_CATALOG.md を更新する。手作業でカタログの行を変えない。
+4. イベントの追加・削除時はサイドカーを先に照合する。削除・統合したIDは退役記録へ移し、`node tools/generate-event-catalog.cjs --reconcile` で新規メタデータと同じアンカーの出典行番号を更新する。その後 `--write` で `EVENT_CATALOG.md` を生成する。カタログは手作業で編集しない。
 5. 提出前に node tools/generate-event-catalog.cjs --check を実行する。これはメタデータ整合と生成物の最新状態を確認する。P3対象ファイルでは同じチェックがPR自動検査でも走る。
 
 ## 校閲の読み方

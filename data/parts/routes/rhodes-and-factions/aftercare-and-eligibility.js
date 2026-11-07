@@ -66,7 +66,7 @@ window.TERRA_DATA_BUILD.fragment(
           },
           lifeGoal: {
             id: "oripathy-research",
-            action: "compromise",
+            action: "abandon",
             note: "研究協力を終え、生活上の別の優先事項へ移る"
           },
           p: 1
@@ -126,7 +126,7 @@ window.TERRA_DATA_BUILD.fragment(
     "life_reunion_reorg_exit_legacy"
   ]) {
     const e = $terraData.EV.find(row => row.id === id);
-    if (id === "life_reunion_reorg_review" || id === "life_reunion_reorg_exit_legacy") e.after = null;
+    if (id === "life_reunion_reorg_review") e.after = null;
     if (id === "life_reunion_reorg_tension") e.after = { id: "life_reunion_reorg_review", min: 1 };
     // An internal conflict must actually be recorded before a resolution can appear.
   }

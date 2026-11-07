@@ -86,8 +86,12 @@ const selectAutomaticChoice = (choices, mode) => {
   return choices[Math.floor(R() * choices.length)];
 };
 const tn = v => (v >= P("outcome.goodThreshold") ? "gd" : v <= P("outcome.badThreshold") ? "bad" : "");
-const tone = e => tn(SC(e));
+const tone = (e, displayTone) =>
+  displayTone === "good" ? "gd" : displayTone === "bad" ? "bad" : tn(SC(e));
 const evt = c => {
+  const explicitTone = c.o[0]?.[3];
+  if (explicitTone && c.o.every(outcome => outcome[3] === explicitTone))
+    return explicitTone === "good" ? "gd" : "bad";
   let previous = 0,
     v = 0;
   for (const o of c.o) {

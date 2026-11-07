@@ -188,14 +188,14 @@ assert.equal(elderEventsTest.palliativeShow, true, 'elder_choice_palliative_care
 assert.equal(elderEventsTest.reflectionPresent, true, 'elder_choice_life_reflection is registered in catalog');
 console.log('PASS: All elder life and later life events are properly registered and condition-tested');
 
-// 6. Phase 3: Assets, Property, Insurance & UI Genealogy/Career Stepper test
+// 6. Phase 3: Assets, Property, Columbia Medical Insurance & UI Genealogy/Career Stepper test
 const phase3Test = vm.runInContext(`(() => {
   const propertyEv = EV.find(e => e.id === 'asset_choice_property_purchase');
   const workshopEv = EV.find(e => e.id === 'asset_choice_workshop_open');
   const insuranceEv = EV.find(e => e.id === 'asset_choice_catastrophe_insurance');
   const claimEv = EV.find(e => e.id === 'asset_catastrophe_insurance_claim');
 
-  // Test state with Rhodes Island job, owned property, opened workshop and catastrophe insurance
+  // Test state with Rhodes Island job, owned property and opened workshop
   const s = {
     by: 1070, year: 1120, age: 50,
     nm: 'テストオペレーター',
@@ -209,7 +209,6 @@ const phase3Test = vm.runInContext(`(() => {
     fl: {
       real_estate_owned: 1,
       workshop_opened: 1,
-      catastrophe_insured: 1,
       grandchild_count: 2,
       grandchild_interaction: 1
     },
@@ -249,7 +248,7 @@ const phase3Test = vm.runInContext(`(() => {
 assert.equal(phase3Test.propertyPresent, true, 'asset_choice_property_purchase is registered');
 assert.equal(phase3Test.workshopPresent, true, 'asset_choice_workshop_open is registered');
 assert.equal(phase3Test.insurancePresent, true, 'asset_choice_catastrophe_insurance is registered');
-assert.equal(phase3Test.claimPresent, true, 'asset_catastrophe_insurance_claim is registered');
+assert.equal(phase3Test.claimPresent, false, 'medical insurance no longer creates a catastrophe-rebuild claim');
 assert.equal(phase3Test.propertyShow, true, 'Property purchase is offered to adult with sufficient cash');
 assert.equal(phase3Test.workshopShow, true, 'Workshop opening is offered to skilled adult with cash');
 
@@ -266,6 +265,6 @@ assert.ok(phase3Test.stepperMarkup.includes('ui-career-stepper'), 'Career timeli
 assert.ok(phase3Test.stepperMarkup.includes('1090年'), 'Career stepper contains past career change years');
 assert.ok(phase3Test.stepperMarkup.includes('自営工房開業'), 'Career stepper contains workshop milestone');
 
-console.log('PASS: Phase 3 long-term assets, insurance, badge telemetry, generation tree and career stepper verified');
+console.log('PASS: Phase 3 long-term assets, medical insurance separation, badge telemetry, generation tree and career stepper verified');
 
 console.log('ALL 1000-SIM AUDIT FIXES AND TELEMETRY TESTS PASSED!');

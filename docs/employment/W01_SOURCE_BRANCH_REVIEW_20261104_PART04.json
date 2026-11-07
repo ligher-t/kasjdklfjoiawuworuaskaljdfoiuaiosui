@@ -1,0 +1,2436 @@
+{
+  "schema": "terra-work-w01-source-choice-audit",
+  "version": 2,
+  "part": "04",
+  "ref": "fix/historical-event-scope-and-delivery",
+  "method": "Read source event bodies; preserve prose opening and extracted choice labels/outcome snippets, flagged effect and condition references. Full branch result graph may contain generated callbacks and requires explicit semantic decision.",
+  "files": [
+    "data/parts/routes/rhodes-and-factions/arena-work.js",
+    "data/parts/routes/rhodes-and-factions/aftercare-and-eligibility.js",
+    "data/parts/routes/rhodes-and-factions/cross-faction-routes.js",
+    "data/parts/routes/rhodes-and-factions/bsw-routes.js",
+    "data/parts/routes/rhodes-and-factions/rhine-routes.js",
+    "data/parts/routes/regional-careers/entry-east.js",
+    "data/parts/routes/regional-careers/entry-west.js"
+  ],
+  "sourceErrors": [],
+  "eventCount": 37,
+  "parseErrors": [],
+  "choiceMismatches": [],
+  "events": [
+    {
+      "eventId": "sr_kazimierz_arena_backstage",
+      "source": "data/parts/routes/rhodes-and-factions/arena-work.js:11",
+      "sourceRefs": [
+        "SRC_KAZIMIERZ_COMPETITION",
+        "SRC_SR_GAME_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        32
+      ],
+      "mechanics": [
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 13,
+      "sourceLength": 2060,
+      "conditionSnippet": "show: s => s.res.n === \"カジミエーシュ\" && !s.fl?.detained && !$terraData.srArenaEmployee(s),\n      t: \"試合のない日でも、競技場の裏手では荷運びや客席の補修、備品の点検が絶え間なく続いていた。表の看板には華やかな騎士たちの名が並び、裏方の名前は詰め所の勤務表にしか残らない。その片隅に、人手を募る貼り紙が出ていた。\",\n      ",
+      "descriptionSample": "試合のない日でも、競技場の裏手では荷運びや客席の補修、備品の点検が絶え間なく続いていた。表の看板には華やかな騎士たちの名が並び、裏方の名前は詰め所の勤務表にしか残らない。その片隅に、人手を募る貼り紙が出ていた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "会場の整備・運営職へ応募する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "安全手順やこれまでの作業経験を尋ねられ、競技場の運営職員として雇われることになった。華やかな舞台に立つわけではなく、傷んだ客席の修繕や照明・備品の管理が毎日の仕事になった。",
+            "今回はすでに枠が埋まったと断られた。今の仕事を辞める前でよかったと思い直し、また別の働き口を探すことにした。"
+          ]
+        },
+        {
+          "label": "試合のある日だけ日雇いで手伝う",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "興行の当日だけ詰め所に入り、入場口の誘導と試合後の客席片付けを手伝った。本業を変えるほどではなかったが、大歓声の裏側でどれだけ人が動いているかを肌で知った。"
+          ]
+        },
+        {
+          "label": "応募はせず、今の仕事と暮らしを守る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "練習試合の歓声を背中に聞きながら、いつもの仕事場へ引き返した。夕暮れの街角で振り返ると、競技場の高い照明塔が遠くに光っていた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [
+        "detained"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_kazimierz_arena_shift",
+      "source": "data/parts/routes/rhodes-and-factions/arena-work.js:81",
+      "sourceRefs": [
+        "SRC_KAZIMIERZ_COMPETITION",
+        "SRC_SR_GAME_MODEL"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 81,
+      "sourceLength": 1429,
+      "conditionSnippet": "show: s => $terraData.srArenaEmployee(s),\n      t: \"興行の時間が急に繰り上がり、資材の搬入と客席の清掃が同じ時間帯に重なってしまった。外には開場を待つ観客の列が伸び、裏口には重い機材を積んだ荷車が連なっている。\",\n      ",
+      "descriptionSample": "興行の時間が急に繰り上がり、資材の搬入と客席の清掃が同じ時間帯に重なってしまった。外には開場を待つ観客の列が伸び、裏口には重い機材を積んだ荷車が連なっている。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "荷車の通り道を先に空け、作業の手順を振り分ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "搬入の順番をその場で仕切り直し、機材車が通り抜けた区画から順に清掃班を入れた。入口の列は長くなったが、接触事故も出さずに開場時刻へ間に合わせた。"
+          ]
+        },
+        {
+          "label": "同僚に持ち場を代わってもらい、少し息を入れる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "無理をせず同僚に声をかけ、詰め所の奥で冷たい水を飲んだ。息を整えて通路へ戻ると、騎士の入場を待つ観客のざわめきが壁越しに響いてきた。"
+          ]
+        },
+        {
+          "label": "この仕事を辞め、別の働き口を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "鍵束と備品台帳を次の担当者へ引き継ぎ、競技場の裏門を出た。背後のスタンドからは、まだお気に入りの騎士の名を叫ぶ歓声が風にのって聞こえていた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_rhodes_reapplication",
+      "source": "data/parts/routes/rhodes-and-factions/aftercare-and-eligibility.js:78",
+      "sourceRefs": [
+        "SRC_SR_GAME_MODEL",
+        "SRC_SR_RHODES_WORK",
+        "SRC_SR_RHODES_FIELD",
+        "SRC_RHODES_FOUNDATION",
+        "SRC_RHODES_BRANCHES",
+        "SRC_RHODES_RESERVE",
+        "SRC_RHODES_LANDSHIP"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [],
+      "mechanics": [
+        "k",
+        "lifeAffiliation",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 79,
+      "sourceLength": 1205,
+      "conditionSnippet": "show: s => {\n      const a = s.lifeRecord?.affiliations?.find(x => x.id === \"rhodes-employment\");\n      return (\n        a?.status === \"outside\" &&\n        s.year - (a.lastChangedYear ?? s.year) >= 3 &&\n        !$terraData.srOnStaff(s) &&\n        !s.fl?.detained &&\n        !s.fl?.segregated\n      );\n    },\n    t: \"数年前に応募して縁がなかったロドスから、別の部署で人手を募っているという知らせが届いた。あの頃から新しく覚えた仕事もいくつかある。もう一度だけ挑んでみるか、夜の机で封筒を見つめた。\",\n    ",
+      "descriptionSample": "数年前に応募して縁がなかったロドスから、別の部署で人手を募っているという知らせが届いた。あの頃から新しく覚えた仕事もいくつかある。もう一度だけ挑んでみるか、夜の机で封筒を見つめた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "この数年で身につけた仕事を書き添えて再応募する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "以前の控えを引っ張り出し、今の職場で覚えた手順や扱える道具を書き足して投函した。返事を待つあいだも、翌朝になればいつも通り仕事場へ向かった。"
+          ]
+        },
+        {
+          "label": "今の仕事や家族との暮らしを大切にする",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "案内状を封筒へ戻し、今回は見送ることにした。あのとき不採用になった悔しさも、その後に今の場所で積み重ねてきた日々も、どちらも自分の暮らしの一部になっていた。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [
+        "detained",
+        "segregated"
+      ],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_rhodes_to_reunion_turning_point",
+      "source": "data/parts/routes/rhodes-and-factions/cross-faction-routes.js:80",
+      "sourceRefs": [
+        "SRC_RHODES_FOUNDATION",
+        "SRC_ORIPATHY_SOCIAL"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "fl",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 80,
+      "sourceLength": 2103,
+      "conditionSnippet": "show: s =>\n        $terraData.srOnStaff(s) &&\n        s.year >= 1096 &&\n        (s.job === 31 || s.job === 34) &&\n        (s.biasInfected || 0) <= 25 &&\n        !s.lifeRecord?.affiliations?.some(a => a.id === \"reunion-reorg\" &&\n          [\"active\", \"crisis\", \"suspended\"].includes(a.status)),\n      t: \"移動都市の路地裏で、正規軍と警官隊による感染者強制隔離区画の無差別掃討を目撃した。泣き叫ぶ子供や無抵抗の老人が銃床で殴り倒されている。しかし通信機からは「ロドスの中立原則を維持せよ。交戦への軍事介入は厳禁」という冷徹な命令が響いていた。\",\n      ",
+      "descriptionSample": "移動都市の路地裏で、正規軍と警官隊による感染者強制隔離区画の無差別掃討を目撃した。泣き叫ぶ子供や無抵抗の老人が銃床で殴り倒されている。しかし通信機からは「ロドスの中立原則を維持せよ。交戦への軍事介入は厳禁」という冷徹な命令が響いていた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "中立という名の傍観を捨て、銃を取って虐殺を止め、レユニオンの隊列に加わる",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "通信機を足元で踏み砕き、制服の記章を引きちぎって軍警の列へ銃弾を撃ち込んだ。生き残った感染者たちを連れて包囲を脱出し、雪原のレユニオン合流地へ向かった。二度と合法の世界には戻れないが、魂を裏切らずに済んだ。"
+          ]
+        },
+        {
+          "label": "無力感に爪を立てながらも命令に従い、生存者の救護と治療という自らの職責に留まる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "奥歯が砕けるほど噛み締めながら銃を下ろし、軍警が去った後に散乱する路地で生き残った重傷者の救命に駆け寄った。政治の残酷さと、ロドスが背負う中立の重さに深く苦悩した。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_reunion_turncoat_rehabilitation",
+      "source": "data/parts/routes/rhodes-and-factions/cross-faction-routes.js:169",
+      "sourceRefs": [
+        "SRC_RHODES_FOUNDATION"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        28,
+        34
+      ],
+      "mechanics": [
+        "fl",
+        "groupStanding",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 210,
+      "sourceLength": 1581,
+      "conditionSnippet": "show: s =>\n        s.lifeRecord?.affiliations?.some(a => a.id === \"rhodes-care\" &&\n          [\"active\", \"crisis\"].includes(a.status) && a.role?.includes?.(\"元レユニオン\")) &&\n        !s.lifeRecord?.affiliations?.some(a => a.id === \"rhodes-staff\" &&\n          [\"active\", \"crisis\", \"suspended\"].includes(a.status)),\n      t: \"ロドス本艦での投薬と療養によって体調が劇的に回復した。過去の経歴審査を終えた人事担当者から「船内で働きながら、新しい人生を歩み直してみないか」と更生雇用の提案を受けた。\",\n      ",
+      "descriptionSample": "ロドス本艦での投薬と療養によって体調が劇的に回復した。過去の経歴審査を終えた人事担当者から「船内で働きながら、新しい人生を歩み直してみないか」と更生雇用の提案を受けた。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "倉庫の仕分けや宿舎の清掃など、非戦闘の生活支援員として第二の人生を始める",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "人を傷つける仕事から離れ、医薬品の荷役や食堂の配膳を担当する生活支援員（J 28）として正式に雇用された。温かな湯気の中で仲間たちと笑い合う日々に、確かな救いを見出した。"
+          ]
+        },
+        {
+          "label": "過去の過ちを償うため、行動予備隊に志願して他者を守るための訓練を受ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "かつて破壊のために振るった武器を、今度は誰かを守る盾とするため、行動予備隊（J 34）の訓練生となった。教官の厳しい指導と仲間の温かい励ましを受け、まっすぐに前を向いて走り始めた。"
+          ]
+        },
+        {
+          "label": "組織には所属せず、治療薬を携えて静かに船を降りる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "数か月分の抑制薬を受け取り、港町で船を降りた。名もなき旅人として、平穏な暮らしを求めて見知らぬ大地へと歩き出した。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_bsw_recruitment_assessment",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:12",
+      "sourceRefs": [
+        "SRC_BSW_PMC"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        35
+      ],
+      "mechanics": [
+        "groupStanding",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 14,
+      "sourceLength": 817,
+      "conditionSnippet": "show: s => s.res?.n === \"クルビア\" && s.h >= 55 && !s.fl?.detained && !s.job,\n      t: \"クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新鋭の射撃シミュレータと過酷な障害物走が受験者に課されている。\",\n      ",
+      "descriptionSample": "クルビア連邦の移動都市にて、国際民間軍事会社『ブラックスチール・ワールドワイド（BSW）』の警備契約社員の募集告知を見かけた。適性試験会場では、最新鋭の射撃シミュレータと過酷な障害物走が受験者に課されている。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "銃器適性と体力審査に挑み、BSW契約警備員として署名する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "合格基準をクリアし、防護ベストとクルビア製タクティカル装備を受領した。厳しい規律とプロフェッショナリズムを重んじる国際PMCでのキャリアが始まった。"
+          ]
+        },
+        {
+          "label": "民間軍事会社の危険な契約は見送り、他の職を探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "銃火器の硝煙と危険手当の誘惑を振り切り、安全な一般市民としての暮らしを求めて募集所を後にした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "detained"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_bsw_promotion_tactical",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:83",
+      "sourceRefs": [
+        "SRC_BSW_PMC"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        36
+      ],
+      "mechanics": [
+        "cr",
+        "groupStanding",
+        "h",
+        "job",
+        "lifeAffiliation",
+        "p",
+        "payBonus"
+      ],
+      "found": true,
+      "actualLine": 85,
+      "sourceLength": 1159,
+      "conditionSnippet": "show: s => s.job === 35,\n      t: \"見習い期間中の優れた実績が評価され、BSWクルビア本部から正規戦術オペレーターへの昇格審査に召集された。高難度の実地想定演習と銃器ライセンス更新が課される。\",\n      ",
+      "descriptionSample": "見習い期間中の優れた実績が評価され、BSWクルビア本部から正規戦術オペレーターへの昇格審査に召集された。高難度の実地想定演習と銃器ライセンス更新が課される。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "実技審査と戦術筆記試験を突破し、正規戦術オペレーターへ昇格する",
+          "jobEffectsDetected": [
+            36
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": true,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "社内ライセンス審査を堂々の成績で突破し、BSWの正規戦術オペレーター（J 36）として辞令を受けた。国際任務への派遣権限と大幅な昇給が認められた。"
+          ]
+        },
+        {
+          "label": "現場の専任警備員として留まり、過酷な海外派遣を見送る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "国際紛争地帯への出動を伴う正規職は辞退し、国内施設での見習い・契約警備員の枠を更新した。命の危険を避けてマイペースに勤務を続けた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_bsw_vip_escort_ambush",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:123",
+      "sourceRefs": [
+        "SRC_BSW_PMC"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        37
+      ],
+      "mechanics": [
+        "cash",
+        "cr",
+        "groupStanding",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "p",
+        "payBonus"
+      ],
+      "found": true,
+      "actualLine": 125,
+      "sourceLength": 1466,
+      "conditionSnippet": "show: s => onBsw(s) && (s.job === 36 || s.job === 37),\n      t: \"移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の口止め料と安全を約束する」と極秘通信が入った。\",\n      ",
+      "descriptionSample": "移動都市間の首脳会談に向かう多国籍企業の重要役員を警護中、対抗勢力が雇った凄腕の襲撃部隊に包囲された。暗殺部隊の指揮官から「要人を引き渡せば、巨額の口止め料と安全を約束する」と極秘通信が入った。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "「BSWの契約は金では買えない」と通信を叩き切り、要人を死守する",
+          "jobEffectsDetected": [
+            37
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": true,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "通信を即座に遮断し、閃光弾と精密射撃で敵の包囲網を粉砕した。無傷で要人を目的地へ送り届け、依頼主の企業とBSW本社から破格の報奨金と特務スペシャリスト（J 37）への昇格内定が贈られた。"
+          ]
+        },
+        {
+          "label": "要人を連れて裏口から脱出し、民間人の犠牲を出さずに安全地帯へ退避する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "敵の意表を突く煙幕を展開し、地下搬送路を伝って安全に警護対象を避難させた。堅実な判断力が高く評価された。"
+          ]
+        },
+        {
+          "label": "圧倒的な敵の包囲を前に、要人と共に投降して人質交渉を図る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "部隊の全滅を避けるためやむなく交渉に応じた。命は助かったものの、警備任務の失敗として社内査問を受け、減俸処分が下された。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_bsw_rhodes_secondment",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:169",
+      "sourceRefs": [
+        "SRC_BSW_PMC",
+        "SRC_RHODES_FOUNDATION"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [],
+      "mechanics": [
+        "fl",
+        "k",
+        "lifeAffiliation",
+        "p",
+        "residenceArrangement",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 171,
+      "sourceLength": 1192,
+      "conditionSnippet": "show: s => onBsw(s) && (s.job === 36 || s.job === 37),\n      t: \"BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛にあたる。医療部門への相談も可能だが、受診や費用の条件は別途確認が必要だという。\",\n      ",
+      "descriptionSample": "BSW本部から、業務提携先である製薬会社『ロドス・アイランド』への出向派遣（secondment）の打診があった。ロドス本艦で戦術教官や任務の護衛にあたる。医療部門への相談も可能だが、受診や費用の条件は別途確認が必要だという。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "出向協定に合意し、BSW籍を保持したままロドス本艦へ派遣される",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "BSWの雇用契約を保持したまま、ロドス本艦へ戦術顧問として着任した。医療部門への相談窓口も案内された。両組織の間で、任務の連絡と生活の調整を続ける日々が始まった。"
+          ]
+        },
+        {
+          "label": "出向は辞退し、クルビア国内での民間警備契約に専念する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "見知らぬ製薬会社の船に乗ることは辞退し、慣れ親しんだクルビアの各都市での警備任務を継続することにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_bsw_infected_squad_policy",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:250",
+      "sourceRefs": [
+        "SRC_BSW_PMC"
+      ],
+      "catalogChoiceCount": 3,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [],
+      "mechanics": [
+        "fl",
+        "groupStanding",
+        "h",
+        "k",
+        "lifeAffiliation",
+        "p",
+        "residenceArrangement"
+      ],
+      "found": true,
+      "actualLine": 252,
+      "sourceLength": 1949,
+      "conditionSnippet": "show: s => onBsw(s) && !!s.inf && !s.fl?.bsw_infection_disclosed,\n      t: \"定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混成編成には厳格な制限があり、相棒や同僚の同意、あるいは後方・対源石専門部隊への配置転換が求められる。\",\n      ",
+      "descriptionSample": "定期健診のレントゲン写真に、黒く輝く源石結晶の影が写り込んだ。BSWの社内規則では「感染者の即時解雇」こそないものの、高危険度任務での非感染者との混成編成には厳格な制限があり、相棒や同僚の同意、あるいは後方・対源石専門部隊への配置転換が求められる。",
+      "choiceCountParsed": 3,
+      "choices": [
+        {
+          "label": "規定に従い人事部へ正式申告し、同僚たちの同意を得て前線任務の継続を申請する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "小隊長と相棒に事実を打ち明けた。一瞬の動揺の後、相棒は「お前の背中はこれまで通り俺が守る」と同意書にサインしてくれた。厳格な社内審査を経て、条件付きの前線任務継続が認められた。"
+          ]
+        },
+        {
+          "label": "ジャネット・ロングフェロー率いる対源石・生物災害対処部門（BPRS）への異動を願い出る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "危険源石環境の防護・除染を担う専門部隊へ転属した。防護スーツに身を包み、同じ境遇の感染者隊員たちと共に、過酷だが差別のない現場で専門技術を磨く道を選んだ。"
+          ]
+        },
+        {
+          "label": "フランカの前例にならい、治療と任務継続を両立できるロドスへの交換派遣を会社へ要請する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "BSWとロドスの担当者が出向の受入を確認し、雇用契約を保持したまま本艦へ着任した。感染の状態と治療の希望について、船内の医療担当者へ相談することになった。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [
+        "bsw_infection_disclosed"
+      ],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_bsw_secondment_posting_review",
+      "source": "data/parts/routes/rhodes-and-factions/bsw-routes.js:310",
+      "sourceRefs": [
+        "SRC_BSW_PMC",
+        "SRC_RHODES_FOUNDATION"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [],
+      "mechanics": [
+        "k",
+        "lifeAffiliation",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 310,
+      "sourceLength": 1266,
+      "conditionSnippet": "show: s => [35, 36, 37].includes(s.job) &&\n        $rules.affiliations.canWork(s, \"bsw-contract\") &&\n        $rules.affiliations.canWork(s, \"rhodes-staff\") &&\n        s.residenceBase?.id === \"rhodes-landship\" &&\n        s.lifeRecord?.affiliations?.some(a => a.id === \"rhodes-staff\" &&\n          a.role?.startsWith(\"本艦・BSW出向\") &&\n          s.year > a.episodes?.at(-1)?.startedYear),\n      t: \"ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生かすか、出向の任務を終えて元の会社の仕事へ戻るか。\",\n      ",
+      "descriptionSample": "ロドス本艦での出向勤務が一年を越えた。BSWの契約は続いているが、本社からは帰任時期を尋ねる連絡が届いた。医療部門や外勤班で覚えた手順をこのまま生かすか、出向の任務を終えて元の会社の仕事へ戻るか。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "本艦での出向勤務を続け、次の任務の準備をする",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "本社へ勤務継続を伝えた。防護装備の点検を終えると、明日の仕事で必要になる訓練記録を整理した。"
+          ]
+        },
+        {
+          "label": "出向を終え、BSWの契約警備任務へ帰任する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "本艦での引継ぎを済ませ、使い慣れた装備と派遣記録を持って船を降りた。BSWとの雇用契約は残り、次の配置先について本社と連絡を取ることになった。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_rhine_recruitment_exam",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:12",
+      "sourceRefs": [
+        "SRC_RHINE_LAB"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        38
+      ],
+      "mechanics": [
+        "groupStanding",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 13,
+      "sourceLength": 860,
+      "conditionSnippet": "show: s => s.res?.n === \"クルビア\" && s.k >= 45 && !s.fl?.detained && !s.job &&\n        (!s.fl?.rhine_whistleblower || !!s.fl?.rhine_whistleblower_review_passed),\n      t: \"クルビア連邦トリマウンツにそびえるライン生命本社ビル。テラ最先端の科学技術と莫大な資本が集うこの学術コンソーシアムで、研究実習生の公募選考が行われている。\",\n      ",
+      "descriptionSample": "クルビア連邦トリマウンツにそびえるライン生命本社ビル。テラ最先端の科学技術と莫大な資本が集うこの学術コンソーシアムで、研究実習生の公募選考が行われている。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "研究計画書と理論論文を提出し、ライン生命研究実習生として入職する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "厳格な学術審査と口頭試問をパスし、ライン生命の研究実習生（J 38）としてIDカードを受領した。最先端の分析機器と膨大な学術アーカイブに囲まれる日々が始まった。"
+          ]
+        },
+        {
+          "label": "過酷な学術競争から距離を置き、一般の技術工房や町工場を選ぶ",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "巨大企業の研究開発競争には加わらず、身近な機械修理や一般産業の道へ進むことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "detained",
+        "rhine_whistleblower",
+        "rhine_whistleblower_review_passed"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_rhine_section_assignment",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:35",
+      "sourceRefs": [
+        "SRC_RHINE_LAB"
+      ],
+      "catalogChoiceCount": 4,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        39
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "p",
+        "payBonus",
+        "rl"
+      ],
+      "found": true,
+      "actualLine": 37,
+      "sourceLength": 2262,
+      "conditionSnippet": "show: s => onRhine(s) && s.job === 38 && s.k >= 55,\n      t: \"実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ迎え入れようとしている。\",\n      ",
+      "descriptionSample": "実習期間中の優れた分析能力が認められ、専任研究員（J 39）への昇格面談に呼ばれた。ライン生命が誇る専門各科の主任たちが、新たな頭脳を自らの研究室へ迎え入れようとしている。",
+      "choiceCountParsed": 4,
+      "choices": [
+        {
+          "label": "生態科（ミュルジス主任）を志望し、水循環・環境工学の研究に就く",
+          "jobEffectsDetected": [
+            39
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": true,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "生態科の研究員として配属された。過酷な荒野環境を改善するバイオテラフォーミングや水質浄化の実験を進め、主任のミュルジスからも気さくな歓迎を受けた。"
+          ]
+        },
+        {
+          "label": "エネルギー科（フェルディナンド主任）を志望し、源石動力の革新に挑む",
+          "jobEffectsDetected": [
+            39
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": true,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "エネルギー科の配属となった。国家規模の巨大プロジェクトと巨額の研究費が動く現場で、次世代源石リアクターの高効率化設計に没頭した。"
+          ]
+        },
+        {
+          "label": "生物科・医術科（サイレンス主任補佐）を志望し、鉱石病の生体適合性を追う",
+          "jobEffectsDetected": [
+            39
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": true,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "生物・医術科の研究員となった。鉱石病患者の病理組織と向き合い、細胞の結晶化を抑制する画期的な薬剤カプセルの研究に情熱を注いだ。"
+          ]
+        },
+        {
+          "label": "構造・防衛科（サリア主任）を志望し、施設安全と先端材料開発を担う",
+          "jobEffectsDetected": [
+            39
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": true,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "防衛科の専任研究員となった。天災や過酷な実験事故に耐えうる高強度複合外骨格と防護シールドの素材開発を担当し、サリア主任の厳格な指導を受けた。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_rhine_promotion_chief",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:161",
+      "sourceRefs": [
+        "SRC_RHINE_LAB"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        40
+      ],
+      "mechanics": [
+        "cr",
+        "groupStanding",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "p",
+        "payBonus"
+      ],
+      "found": true,
+      "actualLine": 163,
+      "sourceLength": 1189,
+      "conditionSnippet": "show: s => onRhine(s) && s.job === 39 && s.k >= 75,\n      t: \"これまでの傑出した学術業績と特許取得がクリステン総括の目に留まり、自らの研究室と莫大な予算枠を持つ主任研究員（J 40）への昇格面談に呼ばれた。\",\n      ",
+      "descriptionSample": "これまでの傑出した学術業績と特許取得がクリステン総括の目に留まり、自らの研究室と莫大な予算枠を持つ主任研究員（J 40）への昇格面談に呼ばれた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "昇進の内示書に署名し、独自ラボを統括する主任研究員へ就任する",
+          "jobEffectsDetected": [
+            40
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": true,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "専用の研究フロアと数十人の助手、そして巨額の自由予算を手に入れた。テラ科学の最先端を牽引する主任研究員（J 40）として、誰も到達したことのない真理への扉を開く日々が始まった。"
+          ]
+        },
+        {
+          "label": "組織管理の重責を固辞し、現場の専任研究員として純粋な実験を続ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "出世や社内政治には背を向け、白衣を着て試験管を振る現場の専任研究員として留まる道を選んだ。自分のペースで探求を深める日々に満足した。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_rhine_rhodes_asylum",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:240",
+      "sourceRefs": [
+        "SRC_RHINE_LAB",
+        "SRC_RHODES_FOUNDATION"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        30,
+        20
+      ],
+      "mechanics": [
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeAffiliations",
+        "lifeGoal",
+        "lifeGoals",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 243,
+      "sourceLength": 2178,
+      "conditionSnippet": "show: s =>\n        !!s.fl?.rhine_whistleblower &&\n        !s.fl?.rhine_whistleblower_review_passed &&\n        onRhine(s),\n      t: \"トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格納庫で、白衣を着た医療スタッフたちが出迎えてくれた。\",\n      ",
+      "descriptionSample": "トリマウンツからの追っ手を逃れ、荒野を彷徨っていたところを、密かに連絡を取っていた『ロドス・アイランド』の救護小隊に保護された。巨大な陸上移動艦の格納庫で、白衣を着た医療スタッフたちが出迎えてくれた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "持ち出した研究資料をロドスへ託し、医療・研究補助職員（J 30）として身を寄せる",
+          "jobEffectsDetected": [
+            30
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "機密データをロドスの医療部へ引き渡し、正式に医療・研究補助職員（J 30）として迎え入れられた。過去の実験への贖罪を胸に、今度は誰かを傷つけるためではなく、感染者の命を救うための研究にその頭脳を捧げる道を選んだ。"
+          ]
+        },
+        {
+          "label": "ロドスには留まらず、地方の町で名もなき薬局手伝いとしてひっそり暮らす",
+          "jobEffectsDetected": [
+            20
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "巨大組織の争いに疲れ果て、旅の途中で船を降りた。地方都市の静かな薬局で、処方箋を調合しながら平穏な余生を過ごすことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [],
+      "flagRefs": [
+        "rhine_whistleblower",
+        "rhine_whistleblower_review_passed"
+      ],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "sr_rhine_post_lone_trail_career_review",
+      "source": "data/parts/routes/rhodes-and-factions/rhine-routes.js:402",
+      "sourceRefs": [
+        "SRC_RHINE_LAB"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 2,
+      "possibleJobIds": [
+        0
+      ],
+      "mechanics": [
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeGoals",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 404,
+      "sourceLength": 1363,
+      "conditionSnippet": "show: s => onRhine(s),\n      t: \"トリマウンツの空にあの光が走ってから、季節が巡った。研究室には残った装置と書類が積まれ、担当者たちは研究を続けている。ここで仕事を続けるか、職員証を返して別の暮らしを探すか、考える時が来た。\",\n      ",
+      "descriptionSample": "トリマウンツの空にあの光が走ってから、季節が巡った。研究室には残った装置と書類が積まれ、担当者たちは研究を続けている。ここで仕事を続けるか、職員証を返して別の暮らしを探すか、考える時が来た。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "今の研究室に残り、仕事を引き継ぐ",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "使える装置と残された試料を確認し、明日の実験の準備をした。研究室での仕事は、まだ自分の手の届くところにあった。"
+          ]
+        },
+        {
+          "label": "職員証を返し、別の働き口を探す",
+          "jobEffectsDetected": [
+            0
+          ],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": true,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "資料の引継ぎを済ませ、職員証を机に置いた。次にどこで働くかは決まっていない。研究室の扉を閉め、ひとまず自分の暮らしを考えることにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": true,
+      "usesAffiliation": true,
+      "priorRefs": [
+        "sr_rhine_lone_trail_sky_horizon"
+      ],
+      "flagRefs": [],
+      "riskSiteUnverified": false,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_yan_court_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:13",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        41
+      ],
+      "mechanics": [
+        "debt",
+        "groupStanding",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 13,
+      "sourceLength": 1476,
+      "conditionSnippet": "show: s => s.res?.n === \"炎国\" && s.job === 0 && !s.fl?.retired && (s.k || 0) >= 30,\n      t: \"炎国の春、都や各州の試験場で科挙の会試が催された。真龍の治める広大な領土に秩序を敷くべく、三省六部の官吏登用を期して天下の士が筆を執る。家柄の推薦状だけでは通らぬ厳格な律令の試練である。\",\n      ",
+      "descriptionSample": "炎国の春、都や各州の試験場で科挙の会試が催された。真龍の治める広大な領土に秩序を敷くべく、三省六部の官吏登用を期して天下の士が筆を執る。家柄の推薦状だけでは通らぬ厳格な律令の試練である。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "科挙の会試に全霊を賭けて臨む",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "論策と法典の問答において見事な才を認められ、及第を果たした。三省の審査を経て、地方県令補佐の主簿として朝廷の官吏名簿に名が記された。",
+            "筆の運びは悪くなかったものの、殿試の当落線上で落第となった。三年後の再試まで及第者名簿に名は載らず、試験のために背負った宿代と紙墨の借金が重くのしかかった。",
+            "最初の基礎問答すら要領を得ず、試験官から冷淡に失格を言い渡された。会場の門前へ追い出され、学の浅さを思い知らされた。"
+          ]
+        },
+        {
+          "label": "朝廷の試験を辞退し、民間の生業を探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "官吏への道を見送り、街角路地で別の生き方を探すことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_yan_suis_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:57",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        42
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 58,
+      "sourceLength": 1365,
+      "conditionSnippet": "show: s => s.res?.n === \"炎国\" && s.job === 0 && !s.fl?.retired && (s.p || 0) >= 30,\n      t: \"旅籠の奥で、無地の官服をまとった役人が静かに杯を置いていた。巨獣の影を追い、朝廷の内外を巡視して災いを未然に断つ『司歳台』と司法監察の『大理寺』。常人離れした胆力と鋭い洞察を持つ者を人知れず探しているという。\",\n      ",
+      "descriptionSample": "旅籠の奥で、無地の官服をまとった役人が静かに杯を置いていた。巨獣の影を追い、朝廷の内外を巡視して災いを未然に断つ『司歳台』と司法監察の『大理寺』。常人離れした胆力と鋭い洞察を持つ者を人知れず探しているという。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "監察特務の試問に名乗りを上げる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "役人の放つ威圧に一切たじろがず、投げかけられた巨獣の痕跡と官吏の偽装を見抜いた。無言で手渡された腰牌により、司歳台の監察官補佐としての任が始まった。",
+            "役人の放つ鋭い殺気に息を呑み、試問の途中で精神が竦んでしまった。『気骨が足らぬ。二度と関わるな』と冷淡に突き放され、厳しい挫折感を味わった。",
+            "武芸と知恵の双方で基準に達していないと見做され、門前払いを食らった。"
+          ]
+        },
+        {
+          "label": "関わりを恐れて目を逸らし、その場を立ち去る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "国家の暗部に首を突っ込む危険を避け、静かに旅籠を出た。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_yan_tianshi_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:101",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        43
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 102,
+      "sourceLength": 1226,
+      "conditionSnippet": "show: s => s.res?.n === \"炎国\" && s.job === 0 && !s.fl?.retired && (s.k || 0) >= 25,\n      t: \"各地の天師府では、国家の気象観測、治水、城壁防護を司る『天師』の採用試問が開かれている。アーツの心得があれば門戸は開かれているが、国家の資材を委ねるに足る精密な術式制御が求められる。\",\n      ",
+      "descriptionSample": "各地の天師府では、国家の気象観測、治水、城壁防護を司る『天師』の採用試問が開かれている。アーツの心得があれば門戸は開かれているが、国家の資材を委ねるに足る精密な術式制御が求められる。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "天師府の術式制御試験に挑む",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "試問盤に展開したアーツの波形は見事な安定を示し、天師府の長老たちを頷かせた。国家天師の見習いとして正式に籍を置くことが認められた。",
+            "アーツの励起が不安定で、試問盤の数値を乱してしまった。天師としての適性なしと判定され、不合格となった。"
+          ]
+        },
+        {
+          "label": "試験を見送り、民間の道を選ぶ",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "アーツを国家機関に捧げる道を選ばず、自前の生活を続けることにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_lmd_guard_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:141",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        44
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 142,
+      "sourceLength": 1644,
+      "conditionSnippet": "show: s => s.res?.n === \"龍門\" && s.job === 0 && !s.fl?.retired,\n      t: \"近衛局ビル前の掲示板に、新任巡査の採用募集が張り出されていた。繁栄する国際貿易都市の治安を維持するため、暴動鎮圧・対テロ・スラム警戒を担う強靭な肉体と規律ある精神が試される。\",\n      ",
+      "descriptionSample": "近衛局ビル前の掲示板に、新任巡査の採用募集が張り出されていた。繁栄する国際貿易都市の治安を維持するため、暴動鎮圧・対テロ・スラム警戒を担う強靭な肉体と規律ある精神が試される。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "近衛局の体力測定と適性審査を受ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "厳しい実技訓練と口頭試問を突破し、制服と警棒を支給された。龍門近衛局の巡査として、街頭のパトロール任務に就く。",
+            "正規の巡査基準にはわずかに届かなかったが、試験官から『スラム外縁の下請け臨時警備員なら雇ってやる』と打診された。危険手当はあるものの、装備は自前で殉職の補償も薄い過酷な現場へ回された。",
+            "体力試験で息が切れ、教官から『近衛局を舐めるな』と一喝されて落とされた。"
+          ]
+        },
+        {
+          "label": "危険な警察官を避け、民間の商いを志す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "銃弾や暴徒と向き合う仕事を避け、穏やかな仕事を探すことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_lmd_black_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:195",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        45
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 196,
+      "sourceLength": 1235,
+      "conditionSnippet": "show: s => s.res?.n === \"龍門\" && s.job === 0 && !s.fl?.retired,\n      t: \"近衛局のサイレンが遠ざかるスラムの薄暗い酒場で、怪しげな仲介人が品定めの視線を向けていた。ネオンの届かぬ暗がりで密輸品や身元偽造、裏の噂話を売り捌く『黒市ブローカー』の席が空いているという。\",\n      ",
+      "descriptionSample": "近衛局のサイレンが遠ざかるスラムの薄暗い酒場で、怪しげな仲介人が品定めの視線を向けていた。ネオンの届かぬ暗がりで密輸品や身元偽造、裏の噂話を売り捌く『黒市ブローカー』の席が空いているという。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "裏通りの掟を呑み、ブローカーの手先になる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "仲介人との駆け引きで肝の太さを示し、路地の隠れ家と顧客の連絡先を教えられた。龍門黒市の情報ブローカーとして、影の稼業に身を投じる。",
+            "気後れした態度を見透かされ、『ただの素人が首を突っ込む場所じゃない』と路地裏から叩き出された。身包みを剥がされなかっただけ幸運だった。"
+          ]
+        },
+        {
+          "label": "危ない橋を渡らず、表通りへ引き返す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "犯罪の匂いが漂う酒場を抜け出し、光の差す大通りへ急ぎ足で戻った。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_hig_samurai_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:235",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        46
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 236,
+      "sourceLength": 1682,
+      "conditionSnippet": "show: s => s.res?.n === \"極東\" && s.job === 0 && !s.fl?.retired,\n      t: \"極東の城下町で、名門武家が新たな家臣を募っていた。北朝と南朝の対立が続くこの国において、主君に命を預けて刀を振るう『侍』は誉れ高き身分である。だがそれには、家格と武芸、そして主君への絶対の服従が求められる。\",\n      ",
+      "descriptionSample": "極東の城下町で、名門武家が新たな家臣を募っていた。北朝と南朝の対立が続くこの国において、主君に命を預けて刀を振るう『侍』は誉れ高き身分である。だがそれには、家格と武芸、そして主君への絶対の服従が求められる。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "武家の指南役の前で剣術の型を披露する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "指南役との木刀での立ち会いで鋭い太刀筋を見せ、見事召抱えが決まった。大小二本を腰に差し、武家の正規の侍として主君に仕える日々が始まった。",
+            "筋の良さは認められたものの、家柄の後ろ盾がなく『足軽頭（捨て駒部隊）』としての採用となった。泥水すする前線配属を命じられ、手柄を立てねば侍としての禄は望めない。",
+            "太刀筋の甘さを一喝され、指南役から門前払いを食らった。『腕を磨き直して出直せ』と冷ややかに見送られた。"
+          ]
+        },
+        {
+          "label": "武士の道を選ばず、町人として生きる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "命を捨て駒にする武家の掟から距離を置き、民間の生業を探すことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_hig_ninja_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:289",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        47
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 290,
+      "sourceLength": 1240,
+      "conditionSnippet": "show: s => s.res?.n === \"極東\" && s.job === 0 && !s.fl?.retired && !s.fl?.nukenin,\n      t: \"夜更けの屋根裏から、音もなく黒装束の密使が姿を現した。大名の影で敵情を探り、暗殺と工作を担う忍び衆。名も捨て、情も捨て、主君の命に従い影に生きる覚悟があるかを試される。失敗すれば自決、逃亡すれば『抜け忍』として追われる修羅の道である。\",\n      ",
+      "descriptionSample": "夜更けの屋根裏から、音もなく黒装束の密使が姿を現した。大名の影で敵情を探り、暗殺と工作を担う忍び衆。名も捨て、情も捨て、主君の命に従い影に生きる覚悟があるかを試される。失敗すれば自決、逃亡すれば『抜け忍』として追われる修羅の道である。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "血判を押し、影の掟に従う",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "無言で手渡された巻物に血判を記し、忍びの道具一式を受け取った。足音を消し、気配を隠し、極東の暗闘に身を投じる。",
+            "覚悟を試すための拷問めいた試練に耐えきれず、悲鳴を上げて失格となった。『この記憶を漏らせば命はない』と脅され、夜の闇に放り出された。"
+          ]
+        },
+        {
+          "label": "首を横に振り、影の誘いを拒む",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "密使は無言で会釈し、闇に溶けるように消え去った。背筋に冷や汗が流れた。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired",
+        "nukenin"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_hig_cyber_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:355",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        48
+      ],
+      "mechanics": [
+        "cash",
+        "fl",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 356,
+      "sourceLength": 1659,
+      "conditionSnippet": "show: s => s.res?.n === \"極東\" && s.job === 0 && s.fl?.cyber_trace === 1 && !s.fl?.retired,\n      t: \"深夜2時、自室の端末が突如として外部電源なしに起動した。黒い画面に、かつて保存した鎖川の極秘暗号プロトコルが自動展開される。国家中枢の電子防諜を担う『サイバーニンジャ』からの直接介入だ。一般市民は存在すら知らぬこの組織に踏み込むか、それとも退くか。\",\n      ",
+      "descriptionSample": "深夜2時、自室の端末が突如として外部電源なしに起動した。黒い画面に、かつて保存した鎖川の極秘暗号プロトコルが自動展開される。国家中枢の電子防諜を担う『サイバーニンジャ』からの直接介入だ。一般市民は存在すら知らぬこの組織に踏み込むか、それとも退くか。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "迎撃プロトコルを突破し、自作の復号コードで応答する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "光速で押し寄せる逆探知トラップをすべて躱し、完璧な復号応答を返した。画面に『適性承認・身元抹消手続き開始』と表示され、巨額の暗号資金が振り込まれた。極東の国家電脳防諜部『サイバーニンジャ』として電子の闇に潜む。",
+            "応答コードの処理がコンマ数秒遅れた。瞬間、防諜システムによる強烈な逆流サージと迎撃アーツが端末を直撃。アーツユニットが激しくショートして閃光が爆発し、激しい電磁衝撃で頭部と神経に深刻な打撲と火傷を負った。",
+            "逆探知を阻止できず、わずか5分後に武装した治安特務部隊がドアを蹴破って突入してきた。連行され、厳しい尋問の末に全財産を没収された。"
+          ]
+        },
+        {
+          "label": "電源コードを引き抜き、端末を金槌で叩き壊す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "火花を散らして砕けた端末の残骸を見つめながら、荒い息を吐いた。死線を踏み越えずに済んだことを天に感謝した。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "cyber_trace",
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_hig_shinto_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:399",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        49
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 400,
+      "sourceLength": 1624,
+      "conditionSnippet": "show: s => s.res?.n === \"極東\" && s.job === 0 && !s.fl?.retired,\n      t: \"緑深き山あいの神社と古刹の門前で、若き神職や僧侶を志す者が集まっていた。テラでは珍しく神仏が共に息づく極東において、人々の穢れを祓い、病や天災による悲嘆を祈りで鎮める尊い職分である。\",\n      ",
+      "descriptionSample": "緑深き山あいの神社と古刹の門前で、若き神職や僧侶を志す者が集まっていた。テラでは珍しく神仏が共に息づく極東において、人々の穢れを祓い、病や天災による悲嘆を祈りで鎮める尊い職分である。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "白装束をまとい、入門の儀礼を受ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "静寂の中で祝詞と読経の儀礼を過ちなく終え、澄み切った精神が認められた。社寺の正式な神職・僧侶として、日々の勤行と地域信徒の相談役を任された。",
+            "雑念が多く修行が足りぬと判断され、霊峰の奥にある『荒行場』へ三年間の山籠りを命じられた。真冬の滝に打たれる過酷な日々の始まりである。",
+            "心が浮ついており俗世の欲が抜けきっていないと見抜かれ、入門を断られた。"
+          ]
+        },
+        {
+          "label": "俗世に留まり、別の生業を探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "厳しい戒律の生活を敬遠し、街へ戻ることにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_hig_touhou_entry",
+      "source": "data/parts/routes/regional-careers/entry-east.js:453",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_HIGASHI_CAREERS"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        50
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 454,
+      "sourceLength": 1550,
+      "conditionSnippet": "show: s => s.res?.n === \"極東\" && s.job === 0 && !s.fl?.retired,\n      t: \"煙突から黒煙を吐き出す巨大な近代工場群――東方重工。シラユキの手裏剣『シルバーウィンド』をはじめ、伝統的な刀剣や手裏剣を高精度の工業ラインで大量生産する一大軍需企業である。特殊合金の精錬や機構設計を担う技師が募集されていた。\",\n      ",
+      "descriptionSample": "煙突から黒煙を吐き出す巨大な近代工場群――東方重工。シラユキの手裏剣『シルバーウィンド』をはじめ、伝統的な刀剣や手裏剣を高精度の工業ラインで大量生産する一大軍需企業である。特殊合金の精錬や機構設計を担う技師が募集されていた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "金属工学の筆記と治具設計の実技に挑む",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "工学設計の知識と手際の良さを評価され、兵器製造部門の正規技師として採用された。最新の旋盤と炉が並ぶラインで、兵器開発に携わる。",
+            "製図の基準寸法を誤り、高熱の溶解炉の前で行う危険な雑用係に回された。火傷の絶えぬ過酷な労働環境である。"
+          ]
+        },
+        {
+          "label": "工場の騒音を避け、別の仕事を探す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "煙と油の匂いが立ち込める工場を離れ、町へ戻った。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_urs_officer_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:13",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        51
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 28,
+      "sourceLength": 1952,
+      "conditionSnippet": "show: s => s.res?.n === \"ウルサス\" && s.job === 0 && !s.fl?.retired && (s.eventOutcomes?.car_urs_officer_choice_purge?.choiceIndex !== 1 ||\n        militaryReturnCleared(s, \"car_urs_officer_choice_purge\",\n          \"car_urs_officer_disciplinary_review\", \"ursus-imperial-officer\")),\n      t: \"要塞司令部の豪奢な執務室で、貴族将校たちが書類に目を落としていた。ウルサス帝国軍の指揮官枠――それは貴族の血筋と巨額の軍資金を握る選民だけの特権である。平民や感染者を徹底して見下す軍国主義の牙城に、士官候補生としての仕官を願う。\",\n      ",
+      "descriptionSample": "要塞司令部の豪奢な執務室で、貴族将校たちが書類に目を落としていた。ウルサス帝国軍の指揮官枠――それは貴族の血筋と巨額の軍資金を握る選民だけの特権である。平民や感染者を徹底して見下す軍国主義の牙城に、士官候補生としての仕官を願う。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "家格の推薦状と武芸の証を差し出す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "軍団長は傲慢に頷き、黄金の肩章を手渡した。帝国軍の近衛将校として部隊の指揮権を与えられ、厳格な階級社会の階段を登り始める。",
+            "軍団長は書類を机に投げ捨てた。『家柄が一段劣るな。少尉になりたくば、部隊整備費として三百万龍門幣相当を寄付金として納めろ』。裏金を払うため、高利貸しから莫大な借金を背負う羽目になった。",
+            "『平民風情が生意気な面を出すな！』と怒号を浴びせられ、衛兵に棍棒で殴打されて司令部から叩き出された。身の程知らずの代償は重かった。"
+          ]
+        },
+        {
+          "label": "傲慢な軍門を避け、民間の暮らしを選ぶ",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "軍閥の冷酷さに背を向け、静かに司令部を去った。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_urs_guard_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:67",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        52
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 84,
+      "sourceLength": 1740,
+      "conditionSnippet": "show: s => s.res?.n === \"ウルサス\" && s.job === 0 && !s.fl?.retired && (s.eventOutcomes?.car_urs_guard_choice_riot?.choiceIndex !== 1 ||\n        militaryReturnCleared(s, \"car_urs_guard_choice_riot\",\n          \"car_urs_guard_disciplinary_review\", \"ursus-border-mine-guard\")),\n      t: \"ツンドラの冷風が吹きすさぶ兵舎で、国境警備部隊と感染者鉱山を監視する憲兵の徴募が行われていた。厳しい学歴は問われず、頑丈な体さえあれば誰でも雇われる。だがそれは、極寒と感染者の暴動が渦巻く使い捨ての最前線である。\",\n      ",
+      "descriptionSample": "ツンドラの冷風が吹きすさぶ兵舎で、国境警備部隊と感染者鉱山を監視する憲兵の徴募が行われていた。厳しい学歴は問われず、頑丈な体さえあれば誰でも雇われる。だがそれは、極寒と感染者の暴動が渦巻く使い捨ての最前線である。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "過酷な任務を覚悟し、徴募書に署名する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "粗末な外套と連発銃を支給され、国境哨戒班に配属された。吹雪の中で銃口を構える過酷な兵役が始まった。",
+            "体力不足と見做され、最も過酷な『感染者炭鉱の地下最深部・監視兵』へ回された。充満する源石粉塵と脱走者の殺気に晒される死線勤務である。"
+          ]
+        },
+        {
+          "label": "命を安売りせず、兵舎を離れる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "肉壁にされる未来を拒み、兵舎の門を出て町へ戻った。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_urs_academy_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:117",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        53
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 136,
+      "sourceLength": 1220,
+      "conditionSnippet": "show: s => s.res?.n === \"ウルサス\" && s.job === 0 && !s.fl?.retired && (s.k || 0) >= 25,\n      t: \"巨大な軍用装甲列車や重工業都市の設計を手掛けるウルサス帝国科学院。硬質な鉄と源石動力の極致を追求するこの研究機関で、構造工学と動力回路の専門技師が募集されていた。\",\n      ",
+      "descriptionSample": "巨大な軍用装甲列車や重工業都市の設計を手掛けるウルサス帝国科学院。硬質な鉄と源石動力の極致を追求するこの研究機関で、構造工学と動力回路の専門技師が募集されていた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "構造力学と蒸気源石機構の試験を受ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "装甲列車の耐熱限界計算を正確に解き明かし、帝国科学院の正規技師として採用された。重工業の巨艦を動かす設計現場に就く。",
+            "力学計算の狂いを厳しく指摘され、不合格となった。科学院の敷居の高さに肩を落とした。"
+          ]
+        },
+        {
+          "label": "学術の門を見送る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "研究職を諦め、民間の工場や工房を目指すことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_vic_infantry_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:157",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        54
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 176,
+      "sourceLength": 1525,
+      "conditionSnippet": "show: s => s.res?.n === \"ヴィクトリア\" && s.job === 0 && !s.fl?.retired,\n      t: \"ヴィクトリアの各都市で、正規陸軍の平民歩兵の募集が行われていた。伝統と栄光を謳う帝国だが、平民出身の兵士はどれほど戦功を立てても下士官止まりであり、貴族将校の号令一つで砲火の泥沼へ突撃させられるのが現実である。\",\n      ",
+      "descriptionSample": "ヴィクトリアの各都市で、正規陸軍の平民歩兵の募集が行われていた。伝統と栄光を謳う帝国だが、平民出身の兵士はどれほど戦功を立てても下士官止まりであり、貴族将校の号令一つで砲火の泥沼へ突撃させられるのが現実である。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "入隊誓詞に署名し、連隊の銃を受け取る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "小銃と背嚢を渡され、前哨歩兵連隊に配属された。泥と雨に濡れながら、行軍と射撃訓練の日々が始まった。",
+            "体力不足を理由に、最も過酷な弾薬運搬歩兵（砲弾担ぎ）へ回された。重い砲弾箱に腰を痛める過酷な日々が待っていた。"
+          ]
+        },
+        {
+          "label": "徴募を断り、軍隊を避ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "貴族の使い捨てにされる道を避け、街へ戻った。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_vic_royal_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:207",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        55
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 226,
+      "sourceLength": 1729,
+      "conditionSnippet": "show: s => s.res?.n === \"ヴィクトリア\" && s.job === 0 && !s.fl?.retired && (s.cr || 0) >= 25 && s.sn?.car_vic_royal_choice_coup == null,\n      t: \"ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要な条件を確かめることにした。\",\n      ",
+      "descriptionSample": "ヴィクトリアの公爵軍で士官候補の募集があると聞いた。推薦状や軍務経験を求める声もあり、採用の判断が誰に委ねられるのかも分からない。窓口へ出向き、必要な条件を確かめることにした。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "推薦状と経歴を提出し、採用審査を受ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "これまでの経験を確認され、軍務の仕事に採用された。配属先の規則と装備の扱いを教わり、新しい職場で働き始めた。",
+            "採用の口利きには多額の金が必要だと告げられた。不透明な借入条件を受け入れ、軍務の職場へ入ったが、重い返済義務が残った。",
+            "提出した経歴を見た担当者に冷たく断られた。採用理由は説明されず、持ち帰った書類の角だけが折れていた。"
+          ]
+        },
+        {
+          "label": "採用条件が合わないため、応募を見送る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "募集の条件を控えたうえで応募を見送り、ほかの働き口を探し始めた。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_vic_scribe_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:261",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        56
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 280,
+      "sourceLength": 1265,
+      "conditionSnippet": "show: s => s.res?.n === \"ヴィクトリア\" && s.job === 0 && !s.fl?.retired && (s.k || 0) >= 25,\n      t: \"ロンディニウム中央議会や地方市議会の議事堂で、公爵や伯爵たちの議案や法律文書を記録・整理する書記官が募集されていた。貴族の利権調整と汚職の嵐に巻き込まれながらも、帝国の政策を文面から動かす行政エリートの席である。\",\n      ",
+      "descriptionSample": "ロンディニウム中央議会や地方市議会の議事堂で、公爵や伯爵たちの議案や法律文書を記録・整理する書記官が募集されていた。貴族の利権調整と汚職の嵐に巻き込まれながらも、帝国の政策を文面から動かす行政エリートの席である。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "帝国法規と議事速記の試験を受ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "難解な議会法規の解釈を完璧に論じ、帝国議会の上級書記官補として採用された。重厚な議事堂のデスクで、公爵たちの利権文書を扱う日々が始まる。",
+            "筆記試験の点数が足りず、不合格となった。貴族の派閥にコネがなければ受からぬ現実を痛感した。"
+          ]
+        },
+        {
+          "label": "政治の泥沼を避ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "権力闘争に身を擦り減らす官僚の道を敬遠した。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_vic_works_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:301",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        57
+      ],
+      "mechanics": [
+        "cash",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 320,
+      "sourceLength": 1227,
+      "conditionSnippet": "show: s => s.res?.n === \"ヴィクトリア\" && s.job === 0 && !s.fl?.retired,\n      t: \"巨大な蒸気機関車と鉄鋼レールが並ぶヴィクトリアの鉄道工廠。産業革命の鼓動が響くこの巨大施設で、高圧蒸気パイプラインや機関車エンジンの整備を担う技術者が募集されていた。\",\n      ",
+      "descriptionSample": "巨大な蒸気機関車と鉄鋼レールが並ぶヴィクトリアの鉄道工廠。産業革命の鼓動が響くこの巨大施設で、高圧蒸気パイプラインや機関車エンジンの整備を担う技術者が募集されていた。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "蒸気圧制御と機械製図の実技試験を受ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": true,
+          "outcomeTextSamples": [
+            "弁の調整とパイプの気密テストを手際よく成功させ、工廠の正規技師として採用された。熱気と鉄の匂いの中で、機関車の整備に携わる。",
+            "蒸気圧の開放弁を見誤って火傷を負い、実技失格となった。治療代を払いながら町へ戻った。"
+          ]
+        },
+        {
+          "label": "工廠の重労働を避ける",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "火傷の絶えぬ重工業現場を避け、別の仕事を探すことにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_lei_golden_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:341",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        58
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 360,
+      "sourceLength": 1399,
+      "conditionSnippet": "show: s => s.res?.n === \"リターニア\" && s.job === 0 && !s.fl?.retired && (s.k || 0) >= 30,\n      t: \"双子女帝の座すツヴィリングトゥルムの回廊で、金律法衛の選考審査が開かれていた。リターニアの調和とアーツ法典を執行する選ばれし魔道士たち。一音の狂いも許さぬ絶対の音律アーツ制御と、巫王の邪説を排する純粋な精神が試される。\",\n      ",
+      "descriptionSample": "双子女帝の座すツヴィリングトゥルムの回廊で、金律法衛の選考審査が開かれていた。リターニアの調和とアーツ法典を執行する選ばれし魔道士たち。一音の狂いも許さぬ絶対の音律アーツ制御と、巫王の邪説を排する純粋な精神が試される。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "法典の譜面を構え、厳格な音律アーツを奏でる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "黄金の光芒がアーツユニットから完璧な和音を伴って放たれ、審査官たちを平伏させた。女帝直属の金律法衛として、黄金の制服と法典杖を授与された。",
+            "第三楽章の高音部でわずかに指が震え、アーツ波形に不協和音を生じさせてしまった。『耳が腐っている。法衛の品位を汚すな』と冷酷に罵倒され、追放された。",
+            "アーツの基礎すらなっておらず、審査官から嘲笑されて即座に退出を命じられた。"
+          ]
+        },
+        {
+          "label": "あまりの重圧に辞退を申し出る",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "失敗が許されぬ神聖な審査を避け、静かに回廊を去った。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_lei_court_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:385",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        59
+      ],
+      "mechanics": [
+        "debt",
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 404,
+      "sourceLength": 1276,
+      "conditionSnippet": "show: s => s.res?.n === \"リターニア\" && s.job === 0 && !s.fl?.retired,\n      t: \"リターニア各選帝侯の宮殿で、貴族専属の音楽家を募るサロンが開かれていた。チェロやピアノのアーツ演奏で主君を楽しませ、夜会を彩る名誉ある地位。だがそこには貴族への莫大な献金と、派閥の顔色を窺う世渡りが不可欠である。\",\n      ",
+      "descriptionSample": "リターニア各選帝侯の宮殿で、貴族専属の音楽家を募るサロンが開かれていた。チェロやピアノのアーツ演奏で主君を楽しませ、夜会を彩る名誉ある地位。だがそこには貴族への莫大な献金と、派閥の顔色を窺う世渡りが不可欠である。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "サロンで貴族たちに新作ソナタを披露する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "貴族たちの心を掴む華麗な旋律を響かせ、選帝侯直属の宮廷楽団員として召抱えられた。サロンで優雅に演奏する日々が始まる。",
+            "『技術は悪くないが、パトロンへの忠誠心が足りぬ』と見做され、百五十万龍門幣相当の寄付金を要求された。金を出さねば宮廷の敷居は跨げないと突き放された。"
+          ]
+        },
+        {
+          "label": "貴族のサロンを辞退する",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "貴族の気まぐれに付き合う生活を避け、街角で演奏を続けることにした。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_lat_executor_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:425",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 4,
+      "possibleJobIds": [
+        60
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 444,
+      "sourceLength": 1443,
+      "conditionSnippet": "show: s => s.res?.n === \"ラテラーノ\" && s.job === 0 && !s.fl?.retired && s.r?.n === \"サンクタ\",\n      t: \"鐘の音が鳴り響くラテラーノ公証人役場。教皇庁の法典を執行し、遺言・契約の履行と国内外の紛争調停を担う『執行人』の審査が行われていた。絶対の信仰と守護銃の扱い、そしてサンクタ族としての頭上の光輪が問われる神聖な試験である。\",\n      ",
+      "descriptionSample": "鐘の音が鳴り響くラテラーノ公証人役場。教皇庁の法典を執行し、遺言・契約の履行と国内外の紛争調停を担う『執行人』の審査が行われていた。絶対の信仰と守護銃の扱い、そしてサンクタ族としての頭上の光輪が問われる神聖な試験である。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "サンクタ法典の解釈と守護銃の射撃試問に挑む",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "法典の条文を一言一句違わず諳んじ、守護銃の早撃ちで的の心臓を撃ち抜いた。公証人役場の正式な執行人として、黒衣と役場バッジを授与された。",
+            "法典試問の解釈に迷いが生じて不合格となった。『民間人として平穏に暮らしなさい』と諭され、役場を去った。",
+            "法典試問の解釈に誤りがあり、射撃試問も基準点に届かず不合格となった。『次回の公証審査まで信仰の研鑽を積み直すように』と告げられ、役場を去った。"
+          ]
+        },
+        {
+          "label": "銃を取る役目を避け、菓子職人を目指す",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "厳格な法典の執行官ではなく、甘いスイーツを作る穏やかな暮らしを望んだ。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    },
+    {
+      "eventId": "car_lat_landen_entry",
+      "source": "data/parts/routes/regional-careers/entry-west.js:469",
+      "sourceRefs": [
+        "SRC_REGIONAL_CAREERS",
+        "SRC_VICTORIA_MILITARY"
+      ],
+      "catalogChoiceCount": 2,
+      "catalogOutcomeBranchCount": 3,
+      "possibleJobIds": [
+        61
+      ],
+      "mechanics": [
+        "h",
+        "job",
+        "k",
+        "lifeAffiliation",
+        "lifeGoal",
+        "lifeSkill",
+        "p"
+      ],
+      "found": true,
+      "actualLine": 488,
+      "sourceLength": 1154,
+      "conditionSnippet": "show: s => s.res?.n === \"ラテラーノ\" && s.job === 0 && !s.fl?.retired,\n      t: \"ラテラーノの伝統を頑なに守るランデン修道院。祈りとパン作り、そして守護銃の整備に生涯を捧げる修道銃士たちが祈りを捧げていた。世俗の富を捨て、信仰と伝統の銃火器を守る覚悟が問われる。\",\n      ",
+      "descriptionSample": "ラテラーノの伝統を頑なに守るランデン修道院。祈りとパン作り、そして守護銃の整備に生涯を捧げる修道銃士たちが祈りを捧げていた。世俗の富を捨て、信仰と伝統の銃火器を守る覚悟が問われる。",
+      "choiceCountParsed": 2,
+      "choices": [
+        {
+          "label": "修道院の祭壇で終生誓願を立てる",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": true,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "静謐な礼拝堂で祈りを捧げ、修道銃士として迎えられた。質素な修道服をまとい、伝統の教理と銃の研鑽に生きる。",
+            "信仰心が足りぬとされ、門前で見送られた。"
+          ]
+        },
+        {
+          "label": "修道院の門を後にする",
+          "jobEffectsDetected": [],
+          "usesRegionalCareerStaff": false,
+          "usesWorkContractAction": false,
+          "usesAffiliation": false,
+          "usesPayBonus": false,
+          "usesCash": false,
+          "outcomeTextSamples": [
+            "世俗の自由を愛し、修道院の門を出た。"
+          ]
+        }
+      ],
+      "usesJobEffect": false,
+      "usesAffiliation": false,
+      "priorRefs": [],
+      "flagRefs": [
+        "retired"
+      ],
+      "riskSiteUnverified": true,
+      "manualBranchMeaningReview": "source-choices-read; validate all dynamic effects at implementation"
+    }
+  ]
+}

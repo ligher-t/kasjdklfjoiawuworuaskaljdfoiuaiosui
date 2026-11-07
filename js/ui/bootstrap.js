@@ -243,7 +243,8 @@ if (DEBUG_PLAYBACK) {
       try {
       const state=S, T=tags(state);let reason=null;
       let eligible=elig(event,state,T,{onReject:(_event,gate)=>{reason ||= gate;}});
-      if(eligible && event.c && state.majorEventMonth?.year===state.year && state.majorEventMonth?.month===state.mo){eligible=false;reason="monthly-choice-limit";}
+      if(eligible && event.c && !isMinorChoiceEvent(event) && state.majorEventMonth?.year===state.year && state.majorEventMonth?.month===state.mo){eligible=false;reason="monthly-choice-limit";}
+      if(eligible && event.c && isMinorChoiceEvent(event) && state.minorEventMonth?.year===state.year && state.minorEventMonth?.month===state.mo){eligible=false;reason="monthly-minor-choice-limit";}
       const who=typeof event.who === "function" ? event.who(state) : event.who || (stg(state)<=1 ? "parent" : "self");
       if(eligible && event.c && !event.c.some(choice=>ok(choice.show,state,T)&&ok(choice.en,state,T)&&!ethicalLock(event,choice,state,who))){eligible=false;reason="ethical-choice-lock";}
       return {id,eligible,firstBlockingGate:reason,choices:event.c?.map((choice,index)=>({index:index+1,label:tpl(choice.l,state),shown:ok(choice.show,state,T),enabled:ok(choice.show,state,T)&&ok(choice.en,state,T)&&!ethicalLock(event,choice,state,who),why:choice.why || null})) || []};
@@ -354,8 +355,8 @@ function paintYearProgress(value) {
 setInterval(() => {
   if (!S || S.dead || S.ev || !SPD[sp]) return;
   acc += (SPD[sp] * 100) / YMS;
-  while (S.q.length && acc >= S.q[0] && !S.ev && !S.dead) slot(S.q.shift());
-  if (acc >= 1 && !S.ev && !S.dead) {
+  while (S.q.length && acc >= S.q[0] && !S.ev && !S.dead && SPD[sp]) slot(S.q.shift());
+  if (acc >= 1 && !S.ev && !S.dead && SPD[sp]) {
     acc -= 1;
     tick();
   }
@@ -363,6 +364,7 @@ setInterval(() => {
   $("mo").textContent = Math.floor(acc * CALENDAR_MONTHS) + 1 + "月";
 }, 100);
 initializeUIPreferences();
+initializeAdvancedSettings();
 try {
   const tb = document.getElementById("tb");
   new ResizeObserver(() =>

@@ -284,11 +284,13 @@ function auditDeathProcess(s, problems, services = STATE_AUDIT_SERVICES) {
     detail.year !== s.year ||
     detail.month !== s.mo ||
     !Number.isInteger(detail.month) ||
-    detail.month < 1 ||
-    detail.month > 12 ||
-    !["current-calendar-month", "annual-random-placeholder", "pressure-window-sample"].includes(
-      detail.monthBasis
-    ) ||
+    detail.month < 0 || detail.month > 12 ||
+    !["current-calendar-month", "annual-month-unknown", "pressure-window-sample"].includes(detail.monthBasis) ||
+    (detail.monthBasis === "annual-month-unknown" ? detail.month !== 0 : detail.month === 0) ||
+    !detail.accountingPeriod ||
+    !["full-year-model","last-completed-year"].includes(detail.accountingPeriod.kind) ||
+    detail.accountingPeriod.proratedToDeath !== false ||
+    (detail.accountingPeriod.kind === "full-year-model" && detail.accountingPeriod.year !== s.year) ||
     detail.age !== s.age ||
     !detail.place ||
     detail.place.region !== (s.res?.n || null) ||
@@ -375,7 +377,9 @@ function auditResidenceAndPersonalState(s, problems, services = STATE_AUDIT_SERV
     "independent_rental",
     "independent_owned",
     "spouse_shared",
-    "spouse_parent_home"
+    "spouse_parent_home",
+    "partner_shared",
+    "post_cohabitation_housing_unconfirmed"
   ]);
   if (s.residenceArrangement != null && !residenceTypes.has(s.residenceArrangement))
     problems.push("住居・世帯形態のコードが未定義");

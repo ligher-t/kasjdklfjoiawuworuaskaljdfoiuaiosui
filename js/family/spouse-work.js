@@ -97,6 +97,8 @@ function advanceSpouseWorkLife(s) {
       cause: "本人の求職・再就職"
     });
     spouse.employmentHistory = spouse.employmentHistory.slice(-16);
+    recordDependentEmployment(s, spouse, {jobId: toJobId, region: spouseResidenceRegion(s).n,
+      source: "spouse-reemployment", kind: "background-livelihood"});
     if (toJobId !== fromJobId) {
       spouse.j = toJobId;
       spouse.workHistory || (spouse.workHistory = []);
@@ -114,6 +116,7 @@ function advanceSpouseWorkLife(s) {
   spouse.workReviewYear = s.year + rnd(min, max);
   if (R() < P("family.spouseUnemploymentChance")) {
     spouse.employmentStatus = "unemployed";
+    closeDependentEmployment(s, spouse, "unemployed");
     spouse.unemployedSinceYear = s.year;
     spouse.unemploymentSupportPending = true;
     spouse.reemploymentBoost = 0;
@@ -139,6 +142,8 @@ function advanceSpouseWorkLife(s) {
     toJobId = wp(pool).jobId;
   if (fromJobId === toJobId) return;
   spouse.j = toJobId;
+  recordDependentEmployment(s, spouse, {jobId: toJobId, region: spouseResidenceRegion(s).n,
+    source: "spouse-work-change", kind: "background-livelihood"});
   spouse.workHistory || (spouse.workHistory = []);
   spouse.workHistory.push({
     year: s.year,
@@ -204,6 +209,11 @@ function advanceSpouseIndependentMove(s) {
   });
   finance.transfers = finance.transfers.slice(-20);
   spouse.residenceRegion = to;
+  // Moving home does not prove a new employer. End local work and let the
+  // existing independent work review establish the next livelihood.
+  closeDependentEmployment(s, spouse, "relocation");
+  spouse.employmentStatus = "unemployed";
+  spouse.unemployedSinceYear = s.year;
   spouse.sharesHousehold = false;
   spouse.residenceHistory || (spouse.residenceHistory = []);
   spouse.residenceHistory.push({
@@ -259,6 +269,9 @@ function advanceSeparatedParentWorkLives(s) {
       toJobId = wp(pool).jobId;
     if (fromJobId === toJobId) continue;
     parent.j = toJobId;
+    parent.employmentRelocationPending = false;
+    recordDependentEmployment(s, parent, {jobId: toJobId, region: ledger.region,
+      source: "parent-work-change", kind: "background-livelihood"});
     parent.jobHistory || (parent.jobHistory = []);
     parent.jobHistory.push({ year: s.year, fromJobId, toJobId, cause: "雇用や家計の事情" });
   }

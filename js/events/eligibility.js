@@ -180,6 +180,9 @@ const tpl = (t, s) => {
       rc: s.r.n,
       kid: (eventChild || livingKids.at(-1) || deadChild)?.nm || "",
       careKid: youngest?.nm || "",
+      violenceSentenceEmployment: (s.violenceState?.proceedings || []).some(row =>
+        row.status === "investigation-open" && row.hadEmploymentAtOpen
+      ) ? "職も失い、" : "",
       grownKid: grown?.nm || "",
       grownKidRegion: pendingChildMove ? grown.region : grown?.knownRegion || "居場所はまだ聞けていない",
       grownKidWork: pendingChildMove
@@ -421,6 +424,7 @@ const tpl = (t, s) => {
   words.childFeverVisitCost = m(childFeverVisitCost(s));
   words.illnessReviewCost = m(2e4 * s.res.md * (s.priceIndex || 1));
   words.rimSupplyKitCost = m(P("economy.rimSupplyKitCost") * s.res.pm * (s.priceIndex || 1));
+  words.kazMatchFixOffer = m(5e6 * (s.priceIndex || 1));
   words.investmentProjectName = investmentProjectName(s);
   words.investmentCurrentValue = m(s.investment || 0);
   words.newHouseholdSetupCost = newHouseholdSetupCost(s);
@@ -509,7 +513,7 @@ const txt = (e, s, T) => {
     if(action)t=`前回は${action}。{kid}の今の学校・仕事・住まいを確かめ、支え方を見直した。`;
   }
   if(CONTEXT_REVIEW_EVENTS.has(e.id) && s.eventReviews?.[e.id])
-    t=`前回は「${s.eventReviews[e.id].choice}」と決めた。その後の状況を踏まえて、改めて考えた。${t}`;
+    t=`前回は「${esc(s.eventReviews[e.id].choice)}」と決めた。その後の状況を踏まえて、改めて考えた。${t}`;
   return tpl(t, s);
 };
 function rejectEligibility(e, reason, options) {
@@ -517,19 +521,37 @@ function rejectEligibility(e, reason, options) {
   return false;
 }
 function elig(e, s, T, options = {}) {
+  if (e.socialConstraint && !socialConstraintSceneEligible(e, s))
+    return rejectEligibility(e, "social-scene-or-provenance", options);
   if (e.groundOnly && isRhodesLandshipResident(s)) return rejectEligibility(e, "ground-location", options);
   if (e.id?.startsWith("daily_rhodes_") && !isRhodesLandshipResident(s)) return rejectEligibility(e, "landship-location", options);
   if (!affiliationEventAvailable(e, s)) return rejectEligibility(e, "affiliation-place", options);
+  if (travelBlocksResidenceEvent(e, s)) return rejectEligibility(e, "away-from-residence", options);
+  if (e.timelineFlag) {
+    const scene = historicalSceneEligibility(e, s);
+    if (!scene.eligible) return rejectEligibility(e, scene.reason, options);
+  }
   const l = s.sn[e.id] ?? (e.id === "displacement_after" ? s.sn.disaster_after : undefined),
     a = e.after,
     ignoreOccurrence = options.ignoreOccurrence === true,
-    cd = e.cd != null ? e.cd : e.c ? Infinity : 8;
+    cd = e.regionCooldowns?.[s.res?.n] ?? (e.cd != null ? e.cd : e.c ? Infinity : 8);
   if (!ignoreOccurrence && e.once && l != null) return rejectEligibility(e, "once", options);
   if (e.st && !e.st.includes(STG[stg(s)])) return rejectEligibility(e, "stage", options);
   if (e.months && !e.months.includes(s.mo)) return rejectEligibility(e, "month", options);
+  // Katorga is a particular sealed location with a scripted release. The
+  // generic detention appeal/escape route cannot liberate this special case,
+  // and ordinary jobs/social scenes cannot occur while trapped inside.
+  if (s.fl?.ursus_katorga_detained &&
+      !["life_ursus_katorga_life", "life_ursus_student_assembly_release"].includes(e.id))
+    return rejectEligibility(e, "katorga-route", options);
   if (restricted(s) && !e.inConfinement && !e.need?.some(t => t === "収容中" || t === "隔離中")) return rejectEligibility(e, "confinement", options);
+  if (typeof violenceEventEligible === "function" && !violenceEventEligible(e, s))
+    return rejectEligibility(e, "known-violence-relationship-boundary", options);
   if (!ok(e, s, T)) return rejectEligibility(e, "event-condition", options);
   if (!ok(e.show, s, T)) return rejectEligibility(e, "event-show-condition", options);
+  if(typeof educationLegacySceneGuard==="function" &&
+     !educationLegacySceneGuard(s,e.id))
+    return rejectEligibility(e,"school-context-unverified",options);
   const review=s.eventReviews?.[e.id];
   if(!ignoreOccurrence && review && review.signature===eventReviewSignature(e,s) &&
      (CONTEXT_REVIEW_EVENTS.has(e.id) || s.year-review.year<5))
@@ -553,6 +575,15 @@ function elig(e, s, T, options = {}) {
   if (a) {
     const x = s.sn[a.id];
     if (x == null || s.year - x < (a.min || 0) || (a.max != null && s.year - x > a.max)) return rejectEligibility(e, "after-dependency", options);
+    if (a.choice != null || a.outcome != null || a.subject === "romance") {
+      const result = s.eventOutcomes?.[a.id];
+      if (!result || result.year !== x ||
+          (a.choice != null && result.choiceIndex !== a.choice) ||
+          (a.outcome != null && result.outcomeIndex !== a.outcome) ||
+          (a.subject === "romance" &&
+            (!s.romance?.id || result.romanceId !== s.romance.id)))
+        return rejectEligibility(e, "after-outcome", options);
+    }
   }
   if (e.excl && e.excl.some(i => s.sn[i] != null)) return rejectEligibility(e, "excluded-by-event", options);
   return true;

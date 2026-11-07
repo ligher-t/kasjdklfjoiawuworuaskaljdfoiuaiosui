@@ -196,16 +196,21 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
       c: [
         $terraData.K(
           "背に腹は代えられず応募する",
-          {},
+          { show: s => employmentEffectAssessment(s, { job: 2,
+            lifeAffiliation: { id: "ursus-military-factory-contract", action: "join" } }, "urs_conscript").canStart },
           [
             0.8,
             "募集窓口で契約書に署名し、軍需工場の生産ラインに入った。確かに給金は上がったが、休日に街へ出るのにもいちいち衛兵の通行証が要る息苦しい暮らしが始まった。",
-            { job: 2, payBonus: 0.1, cash: 1e5, p: -4, fl: { military_contract: 1 } }
+            { job: 2, payBonus: 0.1, cash: 1e5, p: -4, fl: { military_contract: 1 },
+              lifeAffiliation: { id: "ursus-military-factory-contract", title: "ウルサスの軍需工場契約", kind: "employer",
+                action: "join", role: "生産ライン勤務", note: "戦乱期の募集票から結んだ個別契約" } }
           ],
           [
             1,
             "後方工場での作業と聞いて署名したはずが、到着した先で渡されたのは重い背嚢と軍務命令書だった。抗議する暇もなく輸送車に押し込まれ、砲声の響く前線近くの補給基地へ回された。",
-            { job: 14, h: -20, p: -12, fl: { conscripted: 1 } }
+            { employmentAction: { action: "start-livelihood", kind: "coerced-assignment", jobId: 14,
+                sourceEventId: "urs_conscript", roleId: "ursus-conscripted-supply-placement", resourceId: "local-resource",
+                projectAsJob: true }, h: -20, p: -12, fl: { conscripted: 1 } }
           ]
         ),
         $terraData.K("窓口で配属先と退職条件を詳しく尋ねる", {}, [
@@ -721,43 +726,43 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
         $terraData.K(
           "研究室の選考を受ける",
           {
-            show: { ge: { literacy: 40 } },
+            show: s => literacyValue(s) >= 40 && !!employmentOpeningForChoice(s, 7),
             en: s => careerOpeningAssessment(s, { role: "technical" }).canApply && s.k >= 30,
             why: "研究所の機器を扱うための専門課程または実務経験と基礎知識が足りない"
           },
           [
             0.45,
             "筆記と実技の選考を突破し、研究所の測定機器を管理する技師として採用された。真新しい白衣の寸法を測ってもらいながら、空調の効いた清潔な職場を見回して胸を躍らせた。",
-            { job: 7, cr: 5, p: 4 }
+            { employmentAction: { action: "accept-local-opening", jobId: 7 }, cr: 5, p: 4 }
           ],
           [
             0.7,
             "正技師の枠には届かなかったが、データ記録や機器清掃を担う研究補助として雇われた。初任給は高くないものの、最新の設備に触れながら腕を磨ける環境だ。",
-            { job: 7, cr: 2, k: 2 }
+            { employmentAction: { action: "accept-local-opening", jobId: 7 }, cr: 2, k: 2 }
           ],
           [1, "面接官の反応は芳しくなく、数日後に不採用の通知が届いた。ガラス張りのビルを見上げ、帰りの路面電車の時刻表に目を落とした。", { p: -4 }]
         ),
         $terraData.K(
           "工場の技術職に応募する",
           {
-            show: { ge: { literacy: 35 } },
+            show: s => literacyValue(s) >= 35 && !!employmentOpeningForChoice(s, 7),
             en: s => careerOpeningAssessment(s, { role: "technical" }).canApply,
             why: "技術職として応募するための課程修了または現場技能の証明が足りない"
           },
           [
             0.6,
             "実技試験で工具を手際よく扱い、機械の調整手順を正確に説明して採用を勝ち取った。来週の初出勤から使う専用レンチの型番を誇らしい気持ちで控えた。",
-            { job: 7, cr: 3, k: 2 }
+            { employmentAction: { action: "accept-local-opening", jobId: 7 }, cr: 3, k: 2 }
           ],
           [1, "技術職の枠は経験者で埋まってしまったと断られた。今の仕事を続けながら、また空きが出るのを待つことにした。", { p: -2 }]
         ),
         $terraData.K(
           "製造ラインの工員募集に応募する",
-          {},
+          { show: s => !!employmentOpeningForChoice(s, 2) },
           [
             0.7,
             "簡単な面接を通過し、ベルトコンベアの前で部品を組み立てるライン工として採用された。一日中立ちっぱなしの仕事になるが、毎月の決まった給料が入るのはありがたい。",
-            { job: 2, p: 1 }
+            { employmentAction: { action: "accept-local-opening", jobId: 2 }, p: 1 }
           ],
           [1, "履歴書を提出したものの、定型文の不採用通知が封筒で返ってきた。受付に理由を尋ねても、困ったように首を振られるだけだった。", { p: -3 }]
         ),
@@ -801,6 +806,19 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
               debt: -1e6,
               cash: 2e5,
               job: 62,
+              lifeAffiliation: {
+                id: "columbia-frontier-contract-crew",
+                title: "クルビア辺境開拓事業・契約労働班",
+                kind: "employer",
+                action: "join",
+                role: "開拓基地・現場契約労働者",
+                note: "企業の開拓現場に雇われ、辺境の宿舎へ着任した"
+              },
+              lifeGoal: {
+                id: "columbia-frontier-contract-work",
+                title: "開拓基地の雇用契約で生活を維持する",
+                priority: "生業", action: "start", preserveAchievement: true
+              },
               h: -8,
               p: -4,
               fl: { frontier_contract: 1, household_separated: 1, sch: 0 }
@@ -815,6 +833,25 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
               residenceArrangement: "independent_rental",
               debt: -1e6,
               job: 0,
+              lifeAffiliations: [
+                { id: "columbia-frontier-contract-crew",
+                  title: "クルビア辺境開拓事業・契約労働班",
+                  kind: "employer", action: "join",
+                  role: "開拓基地・現場契約労働者",
+                  note: "開拓基地へ着任したが、重労働で契約を続けられなかった" },
+                { id: "columbia-frontier-contract-crew", action: "leave",
+                  note: "健康を損ない、開拓基地の雇用を終了した" }
+              ],
+              lifeGoals: [
+                { id: "columbia-frontier-contract-work",
+                  title: "開拓基地の雇用契約で生活を維持する",
+                  priority: "生業", action: "start", preserveAchievement: true },
+                { id: "columbia-frontier-contract-work", action: "abandon",
+                  onlyIfUnresolved: true, note: "健康を損なって開拓事業の契約を終えた" },
+                { id: "columbia-frontier-camp-next-livelihood",
+                  title: "開拓キャンプを離れた後の生計を立て直す",
+                  priority: "生業", action: "start", preserveAchievement: true }
+              ],
               h: -25,
               p: -10,
               fl: { frontier_contract: 1, household_separated: 1, sch: 0 }
@@ -833,6 +870,19 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
               residenceArrangement: "independent_rental",
               cash: 2e5,
               job: 62,
+              lifeAffiliation: {
+                id: "columbia-frontier-contract-crew",
+                title: "クルビア辺境開拓事業・契約労働班",
+                kind: "employer",
+                action: "join",
+                role: "開拓基地・現場契約労働者",
+                note: "企業の開拓現場に雇われ、辺境の宿舎へ着任した"
+              },
+              lifeGoal: {
+                id: "columbia-frontier-contract-work",
+                title: "開拓基地の雇用契約で生活を維持する",
+                priority: "生業", action: "start", preserveAchievement: true
+              },
               h: -8,
               p: 1,
               fl: { frontier_contract: 1, household_separated: 1, sch: 0 }
@@ -846,6 +896,25 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
               localKind: "辺境・移動の多い居住地",
               residenceArrangement: "independent_rental",
               job: 0,
+              lifeAffiliations: [
+                { id: "columbia-frontier-contract-crew",
+                  title: "クルビア辺境開拓事業・契約労働班",
+                  kind: "employer", action: "join",
+                  role: "開拓基地・現場契約労働者",
+                  note: "開拓基地へ着任したが、重労働で契約を続けられなかった" },
+                { id: "columbia-frontier-contract-crew", action: "leave",
+                  note: "健康を損ない、開拓基地の雇用を終了した" }
+              ],
+              lifeGoals: [
+                { id: "columbia-frontier-contract-work",
+                  title: "開拓基地の雇用契約で生活を維持する",
+                  priority: "生業", action: "start", preserveAchievement: true },
+                { id: "columbia-frontier-contract-work", action: "abandon",
+                  onlyIfUnresolved: true, note: "健康を損なって開拓事業の契約を終えた" },
+                { id: "columbia-frontier-camp-next-livelihood",
+                  title: "開拓キャンプを離れた後の生計を立て直す",
+                  priority: "生業", action: "start", preserveAchievement: true }
+              ],
               h: -25,
               p: -10,
               fl: { frontier_contract: 1, household_separated: 1, sch: 0 }
@@ -861,6 +930,77 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
           1,
           "募集票を窓口へ返した。借金や食い扶持の悩みは消えないが、見知らぬ荒野で使い潰されるよりは、通い慣れたこの街で生き延びる道を探すことにした。",
           { p: -2 }
+        ])
+      ]
+    },
+    {
+      id: "col_frontier_contract_review",
+      conf: "S",
+      references: ["SRC_COLUMBIA_INSURANCE", "SRC_COLUMBIA_DV5"],
+      st: ["青年", "壮年"],
+      cd: 3,
+      w: 0.35,
+      after: { id: "col_frontier", min: 2 },
+      show: s => s.res?.n === "クルビア" && s.job === 62 &&
+        $rules.affiliations.canWork(s, "columbia-frontier-contract-crew") &&
+        s.lifeRecord?.goals?.some(g => g.id === "columbia-frontier-contract-work" &&
+          ["active", "compromised", "paused"].includes(g.status)),
+      t: "開拓キャンプで働き始めてから、いくつも季節が過ぎた。会社から支給された道具と宿舎はあるが、現場の仕事は体にこたえる。契約を続けるか、区切りをつけて新しい働き口を探すか。",
+      c: [
+        $terraData.K("今の班に残り、勤務を続ける", {}, [
+          1, "作業帳に名前を記し、次の当番へ向かった。道具の手入れを済ませ、明日の作業手順を確かめた。",
+          { lifeGoal: { id: "columbia-frontier-contract-work", action: "continue",
+            note: "開拓契約の勤務を続け、現場の状況を見極めた" }, p: 1 }
+        ]),
+        $terraData.K("契約を終え、次の働き口を探す", {}, [
+          1, "支給品を返し、作業班の責任者に退職を伝えた。宿舎を出た後の寝床と仕事はまだ決まっていない。",
+          {
+            job: 0,
+            lifeAffiliation: { id: "columbia-frontier-contract-crew", action: "leave",
+              note: "企業の開拓地雇用契約を終了し、別の仕事を探し始めた" },
+            lifeGoals: [
+              { id: "columbia-frontier-contract-work", action: "abandon",
+                onlyIfUnresolved: true, note: "開拓地の企業雇用を終えた" },
+              { id: "columbia-frontier-camp-next-livelihood",
+                title: "開拓キャンプを離れた後の生計を立て直す",
+                priority: "生業", action: "start", preserveAchievement: true }
+            ], p: 1
+          }
+        ])
+      ]
+    },
+    {
+      id: "col_frontier_after_contract_loss",
+      conf: "S",
+      references: ["SRC_COLUMBIA_INSURANCE", "SRC_COLUMBIA_DV5"],
+      st: ["青年", "壮年", "老年"],
+      cd: 3,
+      w: 0.3,
+      after: { id: "col_frontier", min: 2 },
+      show: s => s.lifeRecord?.affiliations?.some(a => a.id === "columbia-frontier-contract-crew" &&
+          a.status === "left" && a.episodes?.some(ep => ep.endedYear != null)) &&
+        s.lifeRecord?.goals?.some(g => g.id === "columbia-frontier-camp-next-livelihood" &&
+          ["active", "compromised", "paused"].includes(g.status)),
+      t: "開拓キャンプの契約を終えた後も、仕事を探す日は続いた。砂埃の多い現場で覚えたことは残っている。今の生活で何を頼りにできるか、改めて考えた。",
+      c: [
+        $terraData.K("次の働き口を探し続ける", { show: s => s.job === 0 }, [
+          1, "倉庫と工場を訪ね、仕事の空きを尋ねた。今日のところ採用は決まらなかった。",
+          { lifeGoal: { id: "columbia-frontier-camp-next-livelihood", action: "continue",
+            note: "開拓事業を離れた後も求職を続けた" } }
+        ]),
+        $terraData.K("当面は求職を休む", { show: s => s.job === 0 }, [
+          1, "体を休め、手持ちの資金と支出を確かめた。次の仕事は今は決めずにおいた。",
+          { lifeGoal: { id: "columbia-frontier-camp-next-livelihood", action: "pause",
+            note: "開拓地を離れた後の求職を一時休止した" } }
+        ]),
+        $terraData.K("実際に得た仕事で生活を再開したと認める", {
+          show: s => s.job > 0 && (s.job !== 62 ||
+            s.lifeRecord?.affiliations?.some(a => a.id === "columbia-frontier-contract-crew" &&
+              a.status === "active" && a.episodes?.length >= 2))
+        }, [
+          1, "新たな仕事を終え、働いた分の報酬を受け取った。前の開拓キャンプでの契約は終わったが、いまの働きで暮らしを続けている。",
+          { lifeGoal: { id: "columbia-frontier-camp-next-livelihood", action: "complete",
+            note: "開拓地での契約終了後、別の実際の仕事を得た" } }
         ])
       ]
     },
@@ -1126,20 +1266,21 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
       ge: { age: 10 },
       le: { age: 14 },
       who: "self",
+      show: s => educationLegacySceneGuard(s,"education_school_classroom") &&
+        educationP17SchoolExperience(s,"arts-selection-exam") &&
+        !educationActiveCase(s) &&
+        Object.values(s.world?.educationWorld?.offerings||{}).some(o =>
+          o.institutionId===s.educationPath?.institutionId && o.stage==="arts" &&
+          ["open","limited"].includes(educationSchoolStatusAt(s,o.id,s.year,s.mo)?.admissionStatus)),
       w: 1.2,
       once: true,
       t: "学校でアーツの選抜試験の案内を渡された。特別な授業に進むには試験を受けるという。道具を使って準備するには費用もかかり、{caregiver}と案内を読み返した。",
       c: [
-        $terraData.K(
-          "手元の物で準備して試験を受ける",
-          {},
-          [
-            0.35,
-            "特別な授業への参加を認められた。次に使う道具の名を、{caregiver}と覚えた。",
-            { ar: 10, ep: 8, cr: 3, fl: { arts_gifted: 1 } }
-          ],
-          [1, "選抜には入れなかった。教わった基礎の練習を続け、いつもの授業へ戻った。", { ar: 2, p: -3 }]
-        ),
+        $terraData.K("試験の手続きを窓口で確かめる", {}, [
+          1,
+          "案内にあった選抜の手続きと募集先を確かめるため、{caregiver}と進学案件を開いた。試験日と授業の席は募集先ごとに確認する。",
+          { educationAction: "case:begin:higher-path:arts:1" }
+        ]),
         $terraData.K(
           "道具を借り、準備の指導を受ける（費用 {leithArtsPreparationCost}）",
           {
@@ -1147,14 +1288,9 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
             why: "道具と準備に地域物価込みで{leithArtsPreparationCost}を用意できない"
           },
           [
-            0.65,
-            "準備に{leithArtsPreparationCost}を払い、使い慣れない道具の扱いを教わった。試験で手順を示すことができ、特別な授業へ進んだ。",
-            { cash: -3e4, pm: 1, ar: 10, ep: 8, cr: 3, fl: { arts_gifted: 1 } }
-          ],
-          [
             1,
-            "準備をしても選抜には入れなかった。準備費用{leithArtsPreparationCost}は戻らないが、教わった練習は手元に残った。",
-            { cash: -3e4, pm: 1, ar: 3, p: -3 }
+            "準備に{leithArtsPreparationCost}を払い、道具の扱いを教わった。試験日と募集先を確かめるため、進学案件を開いた。合否と授業料は、実際の募集先へ出願したあとに決まる。",
+            { cash: -3e4, pm: 1, educationAction: "case:begin:higher-path:arts:1" }
           ]
         ),
         $terraData.K("今の授業を続ける", {}, [
@@ -1730,10 +1866,13 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
       references: ["SRC_TERRA_FAMILY", "SRC_CRIME_REGIONAL"],
       st: ["青年", "壮年", "老年"],
       need: ["国:シラクーザ"],
-      show: s =>
-        ["active", "distant"].includes(s.siracusaFamilyTie?.status) &&
-        Number.isInteger(s.siracusaFamilyTie.nextReviewYear) &&
-        s.year >= s.siracusaFamilyTie.nextReviewYear,
+      show: s => {
+        const tie = s.siracusaFamilyTie;
+        const member = s.lifeRecord?.affiliations?.find(row => row.id === "siracusa-familia");
+        return ((tie?.status === "active" && ["active", "crisis"].includes(member?.status)) ||
+          (tie?.status === "distant" && member?.status === "suspended")) &&
+          Number.isInteger(tie.nextReviewYear) && s.year >= tie.nextReviewYear;
+      },
       w: 1,
       cd: 3,
       t: [
@@ -1785,8 +1924,8 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
               id: "siracusa-family-livelihood",
               title: "地区のつながりを使いながら自分の暮らしを守る",
               priority: "生計と安全",
-              action: "compromise",
-              note: "仕事を断り、関係に距離を置いた"
+              action: "pause",
+              note: "仕事を断り、現在の役割を一時休止した"
             },
             fl: { family: 0 }
           }
@@ -1971,22 +2110,24 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
       w: 1,
       cd: 1,
       pri: true,
-      t: "以前の仕事で残った90,000龍門幣の立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。",
+      t: "以前の仕事で残った立替金について、返済期限が来た。仕事を頼んだ相手から返済を求められ、全額を返すか、額を相談するか、連絡を断つかを考えた。",
       c: [
         $terraData.K(
-          "記録された額を返す（-90,000龍門幣）",
+          "帳面に残る立替金を全額返す",
           {
-            show: s => $rules.economy.availableFunds(s) >= 90000 + $rules.economy.annualReserve(s),
-            en: s => $rules.economy.availableFunds(s) >= 90000 + $rules.economy.annualReserve(s),
+            show: s => $rules.economy.availableFunds(s) >=
+              Number(s.siracusaFamilyTie?.duty?.outstandingAmount || 0) + $rules.economy.annualReserve(s),
+            en: s => $rules.economy.availableFunds(s) >=
+              Number(s.siracusaFamilyTie?.duty?.outstandingAmount || 0) + $rules.economy.annualReserve(s),
             why: "返済後の生活準備金を残せない"
           },
           [
             1,
             "帳面に残っていた分を返した。相手は返済を確認し、借りの記録に印をつけた。",
             {
-              cash: -90000,
-              siracusaFamilyDuty: { action: "settled", amount: 90000, note: "記録された立替金を返済" },
-              lifeGoal: { id: "siracusa-family-livelihood", action: "continue", note: "立替金を清算した" },
+              cash: s => -Math.max(0, Number(s.siracusaFamilyTie?.duty?.outstandingAmount || 0)),
+              siracusaFamilyDuty: { action: "settled", amount: "outstanding", note: "記録された立替金を返済" },
+              lifeGoal: { id: "siracusa-family-livelihood", action: "continue", onlyIfActive: true, note: "立替金を清算した" },
               groupStanding: {
                 id: "siracusa-familia",
                 title: "仕事を頼む地区の人々",
@@ -1999,7 +2140,7 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
         $terraData.K(
           "事情を話し、仲介役を通じて30,000龍門幣を返す（残額の扱いを相談）",
           {
-            show: s => s.siracusaFamilyTie?.duty?.outstandingAmount > 0,
+            show: s => s.siracusaFamilyTie?.duty?.outstandingAmount >= 30000,
             en: s => $rules.economy.availableFunds(s) >= 30000 + $rules.economy.annualReserve(s),
             why: "仲介費用を出すと生活準備金が不足する"
           },
@@ -2013,18 +2154,19 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
                 amount: 0,
                 note: "仲介を頼み、30,000龍門幣を返して残額の免除を受けた"
               },
-              siracusaFamilyAction: "distant",
+              siracusaFamilyAction: { action: "distant", onlyIfMember: true },
               lifeAffiliation: {
                 id: "siracusa-familia",
                 title: "シラクーザの地区ファミリーとの仕事・保護のつながり",
                 action: "suspend",
-                onlyIfActive: true,
+                onlyIfActiveOrCrisis: true,
                 note: "借りの仲介後、仕事から距離を置いた"
               },
               lifeGoal: {
                 id: "siracusa-family-livelihood",
-                action: "compromise",
-                note: "借りを仲介し、依頼から距離を置いた"
+                action: "pause",
+                onlyIfActive: true,
+                note: "借りを仲介し、依頼の仕事を休止した"
               },
               groupStanding: {
                 id: "siracusa-familia",
@@ -2037,28 +2179,29 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
           ],
           [
             1,
-            "仲介役を通じて30,000龍門幣を返したが、残る60,000龍門幣も返すよう求められた。期限は二年後となり、ファミリーの仕事から距離を置いた。",
+            "仲介役を通じて30,000龍門幣を返したが、残額も返すよう求められた。期限は二年後となり、ファミリーの仕事から距離を置いた。",
             {
               cash: -30000,
               siracusaFamilyDuty: {
                 action: "mediated",
-                amount: 60000,
-                note: "仲介を頼み、30,000龍門幣を返した。残額60,000龍門幣は二年後までに返す"
+                amount: "remaining-after-30000",
+                note: "仲介を頼み、30,000龍門幣を返した。残額は二年後までに返す"
               },
-              siracusaFamilyAction: "distant",
+              siracusaFamilyAction: { action: "distant", onlyIfMember: true },
               lifeAffiliation: {
                 id: "siracusa-familia",
                 title: "シラクーザの地区ファミリーとの仕事・保護のつながり",
                 action: "suspend",
-                onlyIfActive: true,
+                onlyIfActiveOrCrisis: true,
                 note: "残額の返済が続くため仕事から距離を置いた"
               },
               lifeGoal: {
                 id: "siracusa-family-livelihood",
                 title: "地区のつながりを使いながら自分の暮らしを守る",
                 priority: "生計と安全",
-                action: "compromise",
-                note: "一部を返済し、残額の返済を続ける"
+                action: "pause",
+                onlyIfActive: true,
+                note: "一部を返済し、仕事を休止して残額を清算する"
               },
               groupStanding: {
                 id: "siracusa-familia",
@@ -2076,7 +2219,7 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
           {
             siracusaFamilyDuty: {
               action: "disputed",
-              amount: 90000,
+              amount: "outstanding",
               note: "支払い要求を拒み接触を断った。帳面上の借りは未解決"
             },
             siracusaFamilyAction: "left",
@@ -2087,11 +2230,12 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
               onlyIfMember: true,
               note: "支払い要求を拒み接触を断った"
             },
-            lifeGoal: {
+            lifeGoals: [{
               id: "siracusa-family-livelihood",
               action: "abandon",
+              onlyIfUnresolved: true,
               note: "危険を避けるため関係を断った"
-            },
+            }],
             groupStanding: {
               id: "siracusa-neighbours",
               title: "近隣の住民",
@@ -2129,7 +2273,8 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
       c: [
         $terraData.K(
           "近距離の荷物を運ぶ仕事に応募する",
-          {},
+          { show: s => employmentEffectAssessment(s, { job: 16,
+            lifeAffiliation: { id: "siracusa-post-family-work", action: "join" } }, "sir_family_afterwork").canStart },
           [
             0.5,
             "店と住民の荷物を近距離で運ぶ仕事に採用された。以前の用事で覚えた道順や伝言の段取りを、今度は配達の仕事で使うことになった。",
@@ -2326,8 +2471,8 @@ window.TERRA_DATA_BUILD.run("base/regional-west", function ($terraData, $define,
             },
             lifeGoal: {
               id: "siracusa-post-family-work",
-              action: "compromise",
-              onlyIfActive: true,
+              title: "ファミリーを離れ、地域の仕事で生計を立てる",
+              action: "abandon",
               note: "地域の仕事を終え、後年の暮らしへ移った"
             },
             p: 2

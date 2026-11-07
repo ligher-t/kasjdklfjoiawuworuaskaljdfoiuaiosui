@@ -19,7 +19,8 @@ function sourceLiteracyGate(label){
  const offset=source.indexOf(label),nextChoice=source.indexOf('$terraData.K(',offset+label.length);
  const choiceSource=source.slice(offset,nextChoice<0?source.length:nextChoice);
  const match=choiceSource.match(/,\s*\{\s*show\s*:\s*\{[\s\S]*?\bge\s*:\s*\{[^}]*\bliteracy\s*:\s*(\d+)/);
- return match?Number(match[1]):undefined;
+ const dynamic = choiceSource.split('literacyValue(s) >= ')[1];
+ return match?Number(match[1]):dynamic?Number.parseInt(dynamic,10):undefined;
 }
 const reviewedIntent={uni_fee:['self-or-family-care','self-or-family-care','withdrawal'],uni_final_fee:['self-or-family-care','self-or-family-care','withdrawal'],voc_fee:['self-or-family-care','self-or-family-care','withdrawal'],voc_final_fee:['self-or-family-care','self-or-family-care','withdrawal'],teacher_path:['procedure','voluntary-aid','withdrawal'],artist_path:['self-or-family-care','self-or-family-care','withdrawal'],study_to_work:['procedure','procedure','procedure','withdrawal'],arts_academy_completion:['procedure','procedure']};
 for(const [id,intents] of Object.entries(reviewedIntent)){
@@ -56,21 +57,21 @@ for(const [id,tuition,credential] of [['uni_fee',200000,'uni'],['uni_final_fee',
  assert.equal(dropped.fl?.[credential],undefined,id+' dropout must not award a credential');
  assert.equal(dropped.fl?.[hasUniversity?'uni_enrolled':'voc_enrolled'],0);
 }
-const career=event('car'),artsAdmission=career.c.find(choice=>choice.l==='アーツ学院を目指す');
-assert(artsAdmission,'Arts Academy entry route missing');
-assert.equal(artsAdmission.o[0][2].job,undefined,'admission must not imply employment');
-assert.equal(artsAdmission.o[0][2].fl.arts_enrolled,1,'admission must record enrollment');
-assert.equal(artsAdmission.o[0][2].fl.arts_grad,undefined,'admission must not imply graduation');
-assert.equal(artsAdmission.o[0][2].fl.voc_enrolled,1,'Arts course must use tracked tuition and completion states');
-assert.equal(artsAdmission.o[1][2].job,undefined,'rejected applicant must retain their existing employment state');
+const career=event('car'),artsInquiry=career.c.find(choice=>choice.l==='アーツ学院の募集を照会する');
+assert(artsInquiry,'Arts Academy inquiry route missing');
+assert.equal(artsInquiry.o[0][2].educationAction,'case:begin:higher-path:arts:1',
+  'asking about a school opens a verified application path instead of enrolling immediately');
+assert.equal(artsInquiry.o[0][2].job,undefined,'asking about admission must not imply employment');
+assert.equal(artsInquiry.o[0][2].fl?.arts_enrolled,undefined,'inquiry must not create enrollment');
+assert.equal(artsInquiry.o[0][2].fl?.arts_grad,undefined,'inquiry must not imply graduation');
 const artsCompletion=event('arts_academy_completion');
-assert.deepEqual(Array.from(artsCompletion.need),['arts_enrolled','voc']);
+assert.equal(typeof artsCompletion.show,'function','career path must verify completed Arts enrollment');
 const artsHire=artsCompletion.c[0];
 assert.equal(artsHire.o[0][2].job,11,'Arts technician job must follow completed training and a successful application');
-assert.equal(artsHire.o[0][2].fl.arts_grad,1);
-assert.equal(artsHire.o[0][2].fl.arts_enrolled,0);
+assert.equal(artsHire.o[0][2].fl?.arts_grad,undefined,'hiring must not reissue credentials');
+assert.equal(artsHire.o[0][2].fl?.arts_enrolled,undefined,'graduated enrollment stays settled');
 assert.equal(artsHire.o[1][2].job,undefined,'rejected Arts technician applicant keeps their existing job');
-assert.equal(artsHire.o[1][2].fl.arts_grad,1,'completed training still grants the credential after job rejection');
+assert.equal(artsHire.o[1][2].fl?.arts_grad,undefined,'a rejected application must preserve existing issued credential without duplicating it');
 assert.equal(event('voc_final_fee').c[0].o[0][2].fl.arts_grad,undefined,'generic course completion must not create an Arts Academy credential');
 for(const [id,label,min] of [['car','医療補助や薬局の手伝いをする',28],['car','事務・記録の仕事を探す',40],['car','応募・移動費 {colTechApplicationCost} を払って、クルビアの研究企業の技師職に挑む',35],['car','応募費 {vicClerkApplicationCost} を払って、ヴィクトリアの保険仲介所で帳簿係を探す',40],['elder_work_opportunity','読み書きや帳面の経験を教える',40],['teacher_path','教材と交通費を用意し、模擬授業に臨む',40],['kaz_knight_injury_job_transition','応募・移動費5,000龍門幣を払い、帳簿や窓口補助の仕事に応募する',40],['vic_patron','書類仕事への紹介を頼む',40],['col_hire','研究室の選考を受ける',40],['col_hire','工場の技術職に応募する',35],['yan_exam','書記の採用選考を受ける',40]]){
  const choice=event(id).c.find(row=>row.l===label);
@@ -99,15 +100,16 @@ for(const choice of literacy.c)for(const outcome of choice.o){
  assert.equal(effects.ep,undefined,'informal literacy must not award a formal education credential');
  assert.equal(effects.study,undefined,'informal literacy must not create a university/vocational enrollment');
 }
-const university=event('higher_ed'),universityChoice=university.c.find(row=>row.l.includes('地域大学の入学試験を受ける'));
-assert(universityChoice,'regional university entrance path missing');
+const university=event('higher_ed'),universityChoice=university.c.find(row=>row.l.includes('地域大学の募集先を探す'));
+assert(universityChoice,'regional university search intent missing');
 const universityApplication=universityChoice.o[0][2];
-assert.equal(universityApplication.educationAction,'apply:university:1');
-assert.equal(universityApplication.study,undefined,'applying for a course must not enroll before admission');
+assert.equal(universityApplication.educationAction,'case:begin:higher-path:university:1');
+assert.equal(universityApplication.study,undefined,'researching a course must not enroll before verified admission');
+assert.equal(universityApplication.cash,undefined,'researching a course must not charge examination fees');
 const disruption=event('facility_school_disruption'),reopen=event('facility_school_reopen');
 assert(disruption&&reopen,'school disruption and reopening paths must both exist');
-assert(disruption.need.includes('就学中') && disruption.need.includes('学び舎の通常授業が制限中'));
-assert(reopen.need.includes('就学中') && reopen.need.includes('学び舎の授業が再開した'));
+assert(disruption.need.includes('就学中') && typeof disruption.show==='function','disruption must assess actual current school operation');
+assert(reopen.need.includes('就学中') && typeof reopen.show==='function','reopening must assess actual restoration of offering');
 for(const id of ['higher_ed','facility_school_disruption','cl_columbia_school_fee','cl_training_long_term'])
  assert(event(id).c.every(choice=>choice.ethics?.reviewed),'education review inventory is incomplete: '+id);
 const annualRuntime=require('./support/annual-cases.cjs'),
@@ -135,7 +137,7 @@ assert.equal(credit.balance,credit.totalDue-50000);
 assert.equal(credit.aggregate,credit.balance,'annual repayment changes the ledger and aggregate exactly once');
 assert.equal(credit.payer,'contract');
 assert.equal(credit.paidByContract,credit.fee);
-assert.equal(credit.contractId,'columbia-education-credit-'+credit.year);
+assert(credit.contractId.startsWith('edu-loan:'),'the loan contract is keyed to the specific tuition invoice');
 assert.equal(credit.years,1,'signing tuition credit starts a funded year without instant completed study');
 assert.equal(credit.decision,null);
 assert.equal(credit.cash,0,'education credit pays the school and does not inflate student cash');
@@ -164,7 +166,49 @@ function lifecycleRegressions(){
     reentry.educationRecord.enrollments[1].status==='completed' &&
     reentry.educationRecord.awards.length===0;
   const normal=[];
-  for(const stage of ['upper','university','vocational','arts','preparatory']){
+  for(const stage of ['upper','university','vocational','preparatory']){
+    if(stage==='preparatory'){
+      const s=fresh(22),start=s.year,initialCash=s.cash;
+      s.mo=0;ensureResidenceIdentity(s);
+      const area=ensureEducationWorldForResidence(s),world=s.world.educationWorld,
+        inst=educationRegisterInstitution(world,area,'v87-confirmed-preparatory',
+          'preparatory',['preparatory'],s.year),
+        off=world.offerings[inst.offeringIds[0]];
+      educationStart(s,'preparatory',1,'verified-preparatory-offer');
+      s.educationPath.institutionId=inst.id;
+      s.educationPath.campusId=off.campusId;
+      s.educationPath.offeringId=off.id;
+      const enrollment=s.educationRecord.enrollments.at(-1);
+      educationBindFormalEnrollment(s,enrollment.id);
+      const place=s.educationPlacements.currentPlacementId,
+        tuition=educationFunds(s,'preparatory',1,off.id),
+        initialInvoice=educationEnsureTuitionInvoice(s,s.educationPath,s.year);
+      educationSettleInvoice(s,initialInvoice);
+      educationFinanceProjectInvoice(s,initialInvoice);
+      const duration=s.educationPath.duration;
+      for(let i=0;i<duration;i++){
+        s.mo=12;
+        for(let month=1;month<=12;month++)
+          educationRecordAttendance(s,{enrollmentId:enrollment.id,
+            placementId:place,year:s.year,month,personalAccess:1,
+            evidenceRef:'v87-preparatory:'+s.year+':'+month});
+        const credit=educationSettleCompletedAcademicYear(s,s.year);
+        if(!credit.credited)throw Error('Preparatory year lacks a real credit');
+        s.year++;s.age++;s.mo=0;educationAdvanceYear(s);
+      }
+      normal.push({stage,
+        complete:s.educationPath.status==='completed',
+        years:s.educationPath.yearsCompleted,
+        duration,elapsed:s.year-start,
+        paid:initialCash-s.cash,expected:tuition*duration,
+        credential:s.educationPath.equivalency.includes('upper') &&
+          (s.educationRecord.schoolCertificates||[]).some(x=>
+            x.enrollmentId===enrollment.id &&
+            x.qualification==='upper-equivalency' &&
+            x.sourceCreditIds.length===duration),
+        audit:auditLifeState(s)});
+      continue;
+    }
     const s=fresh(22),fee=educationFunds(s,stage),start=s.year;
     educationChargeFee(s,fee,stage);educationStart(s,stage);
     const duration=s.educationPath.duration,initialCash=50000000;
@@ -175,6 +219,11 @@ function lifecycleRegressions(){
         stage==='upper'?educationHas(s,'upper'):educationCredential(s,stage==='arts'?'arts':stage),
       audit:auditLifeState(s)});
   }
+  const artsWithoutEvidence=fresh(22);educationStart(artsWithoutEvidence,'arts');
+  for(let i=0;i<artsWithoutEvidence.educationPath.duration;i++)advance(artsWithoutEvidence);
+  const artsNeedsCourseEvidence=artsWithoutEvidence.educationPath.status!=='completed' &&
+    !educationCredential(artsWithoutEvidence,'arts') &&
+    artsWithoutEvidence.fl.arts_grad!==1;
   const deferred=fresh(22);educationStart(deferred,'university');
   deferred.cash=0;advance(deferred);
   const earned=deferred.educationPath.yearsCompleted;
@@ -218,11 +267,11 @@ function lifecycleRegressions(){
   const unearnedAwardDetected=auditLifeState(broken).includes('教育学籍の年限・就業・資格記録に矛盾');
   const gap=fresh(22);educationStart(gap,'upper');gap.year+=10;gap.age+=10;educationAdvanceYear(gap);
   const gapNoCredit=gap.educationPath.yearsCompleted===0 && gap.educationPath.status==='enrolled';
-  return {reentryComplete,normal,noFreeGraduation,aidDoesNotCredit,noDuplicateCredit,aidYearEarned,
+  return {reentryComplete,normal,artsNeedsCourseEvidence,noFreeGraduation,aidDoesNotCredit,noDuplicateCredit,aidYearEarned,
     pauseNoCredit,resumedWorkClear,resumedComplete,admissionWorkClear,workingCourseKeepsJob,gapNoCredit,repeatFundingPreserved,repeatNotInstant,repeatCompleted,unearnedAwardDetected};
 }
 const regressions=vm.runInContext('('+lifecycleRegressions.toString()+')()',lifeCtx,{timeout:18000});
-for(const key of ['reentryComplete','noFreeGraduation','aidDoesNotCredit','noDuplicateCredit','aidYearEarned',
+for(const key of ['reentryComplete','artsNeedsCourseEvidence','noFreeGraduation','aidDoesNotCredit','noDuplicateCredit','aidYearEarned',
  'pauseNoCredit','resumedWorkClear','resumedComplete','admissionWorkClear','workingCourseKeepsJob','gapNoCredit','repeatFundingPreserved','repeatNotInstant','repeatCompleted','unearnedAwardDetected'])
  assert.equal(regressions[key],true,key);
 for(const row of regressions.normal){

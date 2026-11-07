@@ -287,7 +287,8 @@ function applySocialAftermathAction(s, input, eventId) {
   if (!input || !["support", "review", "close", "document"].includes(input.type))
     throw Error("社会的被害の後日談の効果が不正");
   const m = socialAftermath(s),
-    matches = x => !input.domain || x.domain === input.domain,
+    matches = x => (!input.domain || x.domain === input.domain)&&
+      (!input.currentPlace||(x.regionKey===s.res.n&&!!x.localityKey&&x.localityKey===s.community?.key)),
     episodes = m.episodes.slice().reverse(),
     target =
       episodes.find(x => x.status === "active" && matches(x)) ||
@@ -300,6 +301,10 @@ function applySocialAftermathAction(s, input, eventId) {
     target.status = "ended";
     target.endedYear = s.year; // 過去の事実自体は残す
   }
+  if(['support','close'].includes(input.type))disclosureImpactRecovery(s,
+    input.type==='close'&&target.domain==='housing'?'housing':'support',
+    target.id+'|'+input.type,
+    {domain:input.type==='close'&&target.domain==='housing'?'housing':null});
   m.actions.push({
     year: s.year,
     action: input.type,
@@ -392,7 +397,9 @@ function advanceSocialLearning(s) {
   const beforeLiteracy = literacyValue(s);
   // 正規就学外の読み書きにも道を残す。ただし学校の不在を毎年の大幅成長に変換しない。
   const formal = studying
-    ? (a < 16 ? P("social.v77SchoolLiteracyGain") : 3.2) * facilitySchoolMultiplier(s)
+    ? (a < 16 ? P("social.v77SchoolLiteracyGain") : 3.2) *
+      facilitySchoolMultiplier(s) *
+      (s.educationPath?.offeringId?educationAnnualParticipationScale(s):1)
     : 0;
   const informal = !studying && s.f === 1 && a >= 8 ? P("social.v77InformalLiteracyGain") * participation : 0;
   if (m.literacy === null) m.literacy = beforeLiteracy;
@@ -549,7 +556,8 @@ function annualEducationAndRelationships(s, f, t) {
   const a = s.age,
     m = socialModel(s),
     inSchool = !!s.fl?.sch && !restricted(s) && a < P("life.schoolEnrollmentEndAge"),
-    schoolMultiplier = inSchool ? facilitySchoolMultiplier(s) : 0;
+    schoolMultiplier = inSchool ? facilitySchoolMultiplier(s) *
+      (s.educationPath?.offeringId?educationAnnualParticipationScale(s):1) : 0;
   const studying = f === 1 && !restricted(s),
     access = socialParticipation(s);
   const literacy = literacyValue(s),
@@ -565,8 +573,9 @@ function annualEducationAndRelationships(s, f, t) {
   /* 被害の同一エピソードを、直接のrl変化に加え毎年もう一度減点しない。アクセス不足としてのみ扱う。 */
   const ambient = (R() - 0.53) * 1.25 * access,
     connections = (f === 3 ? 1.35 : 0) + (f === 7 ? 0.6 : 0);
-  let relChange = (ambient + connections * access + (t.rl || 0) * 0.035) * Math.max(0.09, 1 - s.rl / 104);
-  if (relChange < 0) relChange *= 1.15;
+  const relationshipParts=[ambient,connections*access,(t.rl||0)*0.035],
+    relChange=relationshipParts.reduce((sum,delta)=>sum+wellbeingDelta(s,'rl',delta>0?
+      delta*Math.max(0.09,1-s.rl/104):delta*1.15),0);
   s.rl = clamp(s.rl + relChange);
   if (!restricted(s)) {
     const course = !!s.study && !s.study.suspended;

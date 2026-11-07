@@ -3,6 +3,26 @@ function auditCommunityAndRandomState(s, problems, services = STATE_AUDIT_SERVIC
     !Number.isInteger(s.infectionOnset.year) || s.infectionOnset.year > s.year ||
     !Number.isFinite(s.infectionOnset.initialLoad) || s.infectionOnset.initialLoad < 0 || s.infectionOnset.initialLoad > 100 ||
     typeof s.infectionOnset.acute !== "boolean"))problems.push("感染初期病状の記録が不正");
+  const healthCritical = s.mortality?.healthCritical;
+  if (healthCritical && (
+    !["none", "active", "resolved"].includes(healthCritical.status) ||
+    !Array.isArray(healthCritical.history) || healthCritical.history.length > 24 ||
+    (healthCritical.status !== "none" &&
+      (!Number.isInteger(healthCritical.sinceYear) || healthCritical.sinceYear > s.year)) ||
+    (healthCritical.resolvedYear != null &&
+      (!Number.isInteger(healthCritical.resolvedYear) || healthCritical.resolvedYear < healthCritical.sinceYear || healthCritical.resolvedYear > s.year)) ||
+    (healthCritical.careUntilYear != null &&
+      (!Number.isInteger(healthCritical.careUntilYear) || healthCritical.careUntilYear < healthCritical.sinceYear)) ||
+    (healthCritical.lastDecisionYear != null &&
+      (!Number.isInteger(healthCritical.lastDecisionYear) || healthCritical.lastDecisionYear < healthCritical.sinceYear || healthCritical.lastDecisionYear > s.year)) ||
+    (healthCritical.lastDecisionElapsed != null &&
+      (!Number.isInteger(healthCritical.lastDecisionElapsed) || healthCritical.lastDecisionElapsed < 0)) ||
+    (healthCritical.palliativePreferenceYear != null &&
+      (!Number.isInteger(healthCritical.palliativePreferenceYear) || healthCritical.palliativePreferenceYear < healthCritical.sinceYear || healthCritical.palliativePreferenceYear > s.year)) ||
+    healthCritical.history.some(row => !row || !Number.isInteger(row.year) || row.year > s.year ||
+      !["onset", "recovered", "clinic", "emergency", "support", "rest", "nutrition", "palliative"].includes(row.action) ||
+      (row.elapsed != null && (!Number.isInteger(row.elapsed) || row.elapsed < 0)))
+  )) problems.push("危篤状態の開始・治療・看取り希望記録が不正");
   if(s.debtPlan && (!["frugal","maintain"].includes(s.debtPlan.action) ||
     !Number.isInteger(s.debtPlan.year) || s.debtPlan.year > s.year))problems.push("家計再建方針の記録が不正");
   if (s.local?.districtId && (!s.local.placeId || s.local.identitySignature !== residenceSignature(s)))
@@ -71,6 +91,18 @@ function auditCommunityAndRandomState(s, problems, services = STATE_AUDIT_SERVIC
 function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICES) {
   const isValidName = name =>
     typeof name === "string" && name.trim().length > 0 && name.length <= 50 && !/[<>]/.test(name);
+  if (typeof isValidArtsProfileState !== "function" ||
+      !isValidArtsProfileState(s.artsProfile, s.year))
+    problems.push("アーツ適性・実績の状態が不正");
+  if (typeof isValidArtsEquipmentState !== "function" ||
+      !isValidArtsEquipmentState(s.artsEquipment, s.year))
+    problems.push("アーツ機器・貸与・点検の状態が不正");
+  if (typeof isValidLifeSystemsState !== "function" || !isValidLifeSystemsState(s))
+    problems.push("地域警報・設備・物流・契約・研究・文化の状態が不正");
+  if (typeof isValidEventMonthMarker !== "function" ||
+      !isValidEventMonthMarker(s.majorEventMonth, s.year) ||
+      !isValidEventMonthMarker(s.minorEventMonth, s.year))
+    problems.push("月間イベント選択記録が不正");
   if (!isValidName(s.nm)) problems.push("名前が不正");
   if (s.sp && !isValidName(s.sp.nm)) problems.push("配偶者の名前が不正");
   if (Array.isArray(s.kids) && s.kids.some(k => k && k.nm != null && !isValidName(k.nm))) problems.push("子どもの名前が不正");
@@ -103,11 +135,11 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
   if (s.ob < 0 || s.ob > services.P("infection.terminalThreshold")) problems.push("感染度が範囲外");
   const education = s.educationRecord;
   if (!education || education.version !== 1 ||
-      !Array.isArray(education.enrollments) || education.enrollments.length > 24 ||
-      !Array.isArray(education.awards) || education.awards.length > 12 ||
+      !Array.isArray(education.enrollments) ||
+      !Array.isArray(education.awards) ||
       education.enrollments.some(row =>
-        !row.id || !["general-school", "university", "vocational", "arts-academy"].includes(row.program) ||
-        !["enrolled", "completed", "interrupted"].includes(row.status) ||
+        !row.id || !["general-school", "university", "vocational", "arts-academy", "preparatory"].includes(row.program) ||
+        !["enrolled", "completed", "interrupted", "transferred"].includes(row.status) ||
         !Number.isInteger(row.startedYear) || row.startedYear > s.year ||
         (row.endedYear != null && (!Number.isInteger(row.endedYear) ||
           row.endedYear < row.startedYear || row.endedYear > s.year)) ||
@@ -155,9 +187,39 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
       school.fundedYear < school.stageStartYear || school.fundedYear > s.year))
   )) problems.push("教育学籍の年限・就業・資格記録に矛盾");
   if(s.educationDecision && (
-    !["primary","upper-path","higher-path","funding","resume","graduation","transfer"].includes(s.educationDecision.kind) ||
+    !["primary","lower-path","upper-path","higher-path","funding","resume","graduation","transfer","case-review"].includes(s.educationDecision.kind) ||
     !Number.isInteger(s.educationDecision.year) || s.educationDecision.year > s.year
   )) problems.push("教育上の必須進路判断が不正");
+  if(s.educationDecision?.kind==="case-review" &&
+    (s.educationCases?.activeCaseId!==s.educationDecision.caseId ||
+      s.educationCases?.items?.[s.educationDecision.caseId]?.status!=="active"))
+    problems.push("進路案件の選択対象と進行中の案件が一致しない");
+  if(s.educationCases && (
+    s.educationCases.version!==1 ||
+    !Number.isInteger(s.educationCases.sequence) || s.educationCases.sequence<0 ||
+    !Array.isArray(s.educationCases.history) || !s.educationCases.items ||
+    typeof s.educationCases.items!=="object" ||
+    Object.values(s.educationCases.items).some(item=>!item || item.stepsUsed>3 ||
+      item.stepsUsed<0 || !["active","resolved"].includes(item.status) ||
+      !["intent","planning","application","contract","continuity","resolved"].includes(item.phase))
+  )) problems.push("進路案件の年次・状態遷移記録が不正");
+  if(typeof educationCheckFinanceInvariants==="function" &&
+    educationCheckFinanceInvariants(s).length)
+    problems.push("教育費の請求・領収・返金台帳に矛盾");
+  if(typeof educationAttendanceInvariants==="function" &&
+    educationAttendanceInvariants(s).length)
+    problems.push("教育の月次出席・年次履修認定記録に矛盾");
+  if(typeof educationAccessIdentityInvariants==="function" &&
+    educationAccessIdentityInvariants(s).length)
+    problems.push("学校・教師の感染認知または言語支援に不整合");
+  if(typeof educationDependentInvariants==="function" &&
+    educationDependentInvariants(s).length)
+    problems.push("子・きょうだいの教育記録に不整合");
+  if(typeof educationNonformalInvariants==="function" &&
+    educationNonformalInvariants(s).length)
+    problems.push("学校外学習または技能認定記録に不整合");
+  if(typeof educationServiceInvariants==="function" && educationServiceInvariants(s).length)
+    problems.push("教育窓口の申請・回答記録に不整合");
   if(s.educationAnnualFee && (
     !Number.isInteger(s.educationAnnualFee.year) ||
     s.educationAnnualFee.year > s.year ||
@@ -301,6 +363,7 @@ function auditPersonalFlagsAndLimits(s, problems, services = STATE_AUDIT_SERVICE
   for (const [flag, value] of Object.entries(s.fl))
     if (!services.FLAG_REGISTRY[flag] || (value !== 0 && value !== 1))
       problems.push(`不正な状態フラグ ${flag}`);
+  problems.push(...auditDisclosureImpact(s),...auditPlaySettings(s),...auditTravelState(s),...auditHistoricalExposureState(s));
   if (s.house)
     for (const key of ["cash", "debt", "inc", "exp"])
       if (!Number.isFinite(s.house[key]) || s.house[key] < 0) problems.push(`家計${key}が不正`);

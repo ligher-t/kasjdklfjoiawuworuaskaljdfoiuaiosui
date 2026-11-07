@@ -13,10 +13,11 @@ window.TERRA_DATA_BUILD.fragment(
       id: "car_yan_court_entry",
       conf: "S",
       st: ["青年", "壮年"],
+      months: [3, 4, 5],
       cd: 3,
       w: 0.5,
       ge: { age: 18, year: 1090 },
-      show: s => s.res?.n === "炎国" && s.job === 0 && !s.fl?.retired && !s.fl?.inf && (s.k || 0) >= 30,
+      show: s => s.res?.n === "炎国" && s.job === 0 && !s.fl?.retired && (s.k || 0) >= 30,
       t: "炎国の春、都や各州の試験場で科挙の会試が催された。真龍の治める広大な領土に秩序を敷くべく、三省六部の官吏登用を期して天下の士が筆を執る。家柄の推薦状だけでは通らぬ厳格な律令の試練である。",
       c: [
         $terraData.K("科挙の会試に全霊を賭けて臨む", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -238,7 +239,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.5,
       ge: { age: 18, year: 1090 },
-      show: s => s.res?.n === "極東" && s.job === 0 && !s.fl?.retired && !s.fl?.inf,
+      show: s => s.res?.n === "極東" && s.job === 0 && !s.fl?.retired,
       t: "極東の城下町で、名門武家が新たな家臣を募っていた。北朝と南朝の対立が続くこの国において、主君に命を預けて刀を振るう『侍』は誉れ高き身分である。だがそれには、家格と武芸、そして主君への絶対の服従が求められる。",
       c: [
         $terraData.K("武家の指南役の前で剣術の型を披露する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
@@ -292,7 +293,7 @@ window.TERRA_DATA_BUILD.fragment(
       cd: 3,
       w: 0.45,
       ge: { age: 18, year: 1090 },
-      show: s => s.res?.n === "極東" && s.job === 0 && !s.fl?.retired,
+      show: s => s.res?.n === "極東" && s.job === 0 && !s.fl?.retired && !s.fl?.nukenin,
       t: "夜更けの屋根裏から、音もなく黒装束の密使が姿を現した。大名の影で敵情を探り、暗殺と工作を担う忍び衆。名も捨て、情も捨て、主君の命に従い影に生きる覚悟があるかを試される。失敗すれば自決、逃亡すれば『抜け忍』として追われる修羅の道である。",
       c: [
         $terraData.K("血判を押し、影の掟に従う", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [

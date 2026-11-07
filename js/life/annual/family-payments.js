@@ -23,6 +23,7 @@ function recordAnnualFamilyPayments(s, services, amounts) {
     s.sp.separateContactHistory = s.sp.separateContactHistory.slice(-16);
   }
   services.recordIndependentSiblingCareSupportPayments(s, costPm);
+  services.recordDivorceChildSupportPayments(s);
   if (spouseSeparateSupport > 0 && s.sp)
     services.recordSpouseSeparateSupportTransfer(s, spouseSeparateSupport);
   if (s.familyCare?.treatmentSupport && adultParentTreatmentCost > 0)

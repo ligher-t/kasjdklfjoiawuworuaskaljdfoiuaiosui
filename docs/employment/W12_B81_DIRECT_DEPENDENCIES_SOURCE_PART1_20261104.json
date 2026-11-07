@@ -1,0 +1,1289 @@
+{
+  "part": 1,
+  "sourceFiles": [
+    "data/parts/routes/regional-careers/events-frontier.js",
+    "data/parts/routes/regional-careers/events-west.js",
+    "data/base/career-entry.js",
+    "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js",
+    "data/parts/routes/rhodes-and-factions/reunion-lifepath.js",
+    "data/parts/routes/rhodes-and-factions/arena-work.js"
+  ],
+  "scope": "B P0/P1 source branch inspection",
+  "status": "static source evidence; requires semantic ruling",
+  "events": [
+    {
+      "id": "vic_clerk_contract_review",
+      "source": "data/base/career-entry.js:1078",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "col_tech_safety_review",
+      "source": "data/base/career-entry.js:1164",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "col_tech_role_review",
+      "source": "data/base/career-entry.js:1423",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "col_tech_supplier_exception",
+      "source": "data/base/career-entry.js:1550",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "vic_clerk_after_departure",
+      "source": "data/base/career-entry.js:2113",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "col_tech_after_departure",
+      "source": "data/base/career-entry.js:2147",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "sr_rhodes_research_daily",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:317",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "sr_rhodes_former_worker",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:512",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "sr_reunion_neighbour_contact",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:539",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "sr_reunion_ordinary_followup",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:599",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "sr_chernobog_distant_news",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:651",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "sr_rhodes_ship_routine",
+      "source": "data/parts/routes/rhodes-and-factions/staff-routes-events-01.js:887",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "sr_siracusa_independent_business",
+      "source": "data/parts/routes/rhodes-and-factions/arena-work.js:127",
+      "priorClassification": "P0",
+      "originalChoiceCount": 3,
+      "choiceCount": 3,
+      "outcomeCount": 3,
+      "eventPrelude": "{\n      id: \"sr_siracusa_independent_business\",\n      conf: \"S\",\n      references: [\"SRC_SIRACUSA_CROSSROADS_ST2\", \"SRC_SIRACUSA_CROSSROADS_ST4\", \"SRC_SIRACUSA_MARKET_MODEL\"],\n      st: [\"青年\", \"壮年\"],\n      ge: { age: 18 },\n      once: true,\n      w: 0.17,\n      show: s =>\n        s.res.n === \"シラクーザ\" &&\n        s.local?.kind === \"固定都市の街区\" &&\n        !s.fl?.detained &&\n        !$terraData.srAffiliationStatus(s, \"siracusa-independent-trade\"),\n      t: \"帳場の手伝いをしている街角の小売店に、大手の飲料会社から専売契約の申し出が持ち込まれた。まとまった奨励金が出る代わりに、よその飲み物をすべて棚から外せという条件だった。店主は古くから付き合いのある地元ワイナリーの瓶を見つめ、腕を組んで黙り込んでいる。\",\n      ",
+      "choices": [
+        {
+          "label": "棚から外れる品と契約期間を洗い出し、店主と一緒に確かめる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "専売の対象になる品目と縛りの期間を書き出し、店主の前に広げた。もしサインすればどの常連客が困るか、棚の瓶を一つずつ指さしながら二人で数えた。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"siracusa-independent-trade\",\n              title: \"地区市場の仕入れ・帳簿手伝い\",\n              kind: \"local-business-network\",\n              action: \"join\",\n              bindToLocality: true,\n              role: \"一社専売案の対象と期限を帳簿に整理\"\n            },\n            lifeGoal: {\n              id: \"siracusa-independent-livelihood\",\n              title: \"契約の条件を確かめて商売を続ける\",\n              priority: \"仕事\",\n              action: \"start\"\n            },\n            lifeSkill: {\n              id: \"market-ledger\",\n              title: \"仕入れ契約と帳簿\",\n              delta: 2,\n              context: \"対象商品と期間を記録\"\n            },\n            k: 2\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "地元ワイナリーや他の卸し先の仕入れ値を並べて比べる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "地元のワイナリーや別の卸商から届く瓶の仕入れ値と売れ行きを並べ、奨励金に頼らなくても店が回るか計算した。数字がそろうにつれ、店主の表情も少しずつ落ち着きを取り戻した。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"siracusa-independent-trade\",\n              title: \"地区市場の仕入れ・帳簿手伝い\",\n              kind: \"local-business-network\",\n              action: \"join\",\n              bindToLocality: true,\n              role: \"仕入れ先ごとの商品と値段を比較\"\n            },\n            lifeGoal: {\n              id: \"siracusa-independent-livelihood\",\n              title: \"地元の商品と複数の仕入れ先を記録する\",\n              priority: \"仕事\",\n              action: \"start\"\n            },\n            lifeSkill: {\n              id: \"market-ledger\",\n              title: \"市場の仕入れと帳簿\",\n              delta: 2,\n              context: \"複数の仕入れ先の商品と価格を照合\"\n            },\n            k: 2\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "疑問点を店主に伝え、返事は急がないよう進言する",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "気になるところを店主に伝え、先方の説明がそろうまでは判を押さない方がいいと進言した。契約書は帳場の引き出しにしまわれ、店先には今日も地元ワイナリーの瓶が並んでいる。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"siracusa-independent-trade\",\n              title: \"地区市場の仕入れ・帳簿手伝い\",\n              kind: \"local-business-network\",\n              action: \"join\",\n              bindToLocality: true,\n              role: \"専売案の説明を待ちながら帳簿を担当\"\n            },\n            lifeGoal: {\n              id: \"siracusa-independent-livelihood\",\n              title: \"仕入れ契約の条件を確かめて働く\",\n              priority: \"仕事\",\n              action: \"start\"\n            },\n            lifeSkill: {\n              id: \"market-ledger\",\n              title: \"市場の仕入れと帳簿\",\n              delta: 1,\n              context: \"専売契約案の対象と期限を確認待ち\"\n            },\n            k: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr_siracusa_trade_followup",
+      "source": "data/parts/routes/rhodes-and-factions/arena-work.js:225",
+      "priorClassification": "P0",
+      "originalChoiceCount": 3,
+      "choiceCount": 3,
+      "outcomeCount": 3,
+      "eventPrelude": "{\n      id: \"sr_siracusa_trade_followup\",\n      conf: \"S\",\n      references: [\"SRC_SIRACUSA_CROSSROADS_ST2\", \"SRC_SIRACUSA_CROSSROADS_ST4\", \"SRC_SIRACUSA_MARKET_MODEL\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 3,\n      w: 0.42,\n      show: s => {\n        const affiliation = s.lifeRecord?.affiliations?.find(row => row.id === \"siracusa-independent-trade\"),\n          currentEpisode = affiliation?.episodes?.at(-1),\n          startedYear = Number.isInteger(currentEpisode?.startedYear)\n            ? currentEpisode.startedYear\n            : affiliation?.startedYear;\n        return (\n          s.res.n === \"シラクーザ\" &&\n          s.local?.kind === \"固定都市の街区\" &&\n          $rules.affiliations.atRecordedLocality(s, \"siracusa-independent-trade\") &&\n          [\"active\", \"crisis\"].includes($terraData.srAffiliationStatus(s, \"siracusa-independent-trade\")) &&\n          Number.isInteger(startedYear) &&\n          s.year - startedYear >= 1\n        );\n      },\n      t: s => {\n        const role =\n          s.lifeRecord?.affiliations?.find(row => row.id === \"siracusa-independent-trade\")?.role || \"\";\n        if (role.includes(\"一社専売案\"))\n          return \"専売案の対象品と期限を書き込んだ帳簿をめぐって、再び営業担当が店に顔を出した。店を休んだ日の違約金や他の仕入れ先",
+      "choices": [
+        {
+          "label": "店主に代わって掛け合い、無理な条件を削るよう求める",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "店主と相談し、地元の品を一部残すことや休業時の免責を先方へ申し入れた。言い値のまま呑まれないよう、譲れない一線をはっきり伝えた。",
+              "effects": "{\n            lifeSkill: {\n              id: \"market-ledger\",\n              title: \"仕入れ契約と帳簿\",\n              delta: 2,\n              context: \"契約対象・期間・休業条件を分けて確認\"\n            },\n            lifeGoal: {\n              id: \"siracusa-independent-livelihood\",\n              action: \"continue\",\n              note: \"仕入れ契約の条件を見直すよう申し入れた\"\n            },\n            k: 1,\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "店主が決めた方針に従い、日々の仕入れ計算を続ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "交渉は店主に任せ、こちらは毎日の納品数と支払いの計算を狂いなく続けた。まだ話のついていない項目には付箋を貼り、いつでも見返せるようにしておいた。",
+              "effects": "{\n            lifeSkill: {\n              id: \"market-ledger\",\n              title: \"市場の仕入れと帳簿\",\n              delta: 1,\n              context: \"確認できた取引条件を記録\"\n            },\n            k: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "店の帳場手伝いに区切りをつける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "これまでの仕入れ値をまとめた帳面を店主に引き継ぎ、手伝いを辞めた。店先を出ると、木箱を満載した荷車が石畳を鳴らして通り過ぎていった。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"siracusa-independent-trade\",\n              title: \"地区市場の取引手伝い\",\n              action: \"leave\",\n              note: \"帳簿の引継ぎ後、手伝いを終了\"\n            },\n            lifeGoal: {\n              id: \"siracusa-independent-livelihood\",\n              action: \"compromise\",\n              note: \"市場取引への関与を終了\"\n            },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr_siracusa_trade_relocation",
+      "source": "data/parts/routes/rhodes-and-factions/arena-work.js:309",
+      "priorClassification": "P0",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 2,
+      "eventPrelude": "{\n      id: \"sr_siracusa_trade_relocation\",\n      conf: \"S\",\n      references: [\"SRC_SIRACUSA_CROSSROADS_ST2\", \"SRC_SIRACUSA_CROSSROADS_ST4\", \"SRC_SIRACUSA_MARKET_MODEL\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      after: { id: \"sr_siracusa_independent_business\", min: 0 },\n      cd: 3,\n      w: 0.12,\n      show: s => {\n        const affiliation = s.lifeRecord?.affiliations?.find(row => row.id === \"siracusa-independent-trade\");\n        return affiliation?.status === \"active\" && $rules.affiliations.awayFromRecordedLocality(s, \"siracusa-independent-trade\");\n      },\n      t: \"引っ越しをしてから、かつて帳場を手伝っていた小売店のある街区とは足が遠のいている。離れたままでは日々の納品も見られないため、店主に連絡を入れて身の振り方を決めることにした。\",\n      ",
+      "choices": [
+        {
+          "label": "預かっていた控えを返し、店の仕事から完全に退く",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "手元にあった仕入れの控えを店主へ送り、これまでのお礼を添えて手伝いを終えた。新しい街の市場を歩き、これからの暮らしで使う馴染みの店を探し始めた。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"siracusa-independent-trade\",\n              action: \"leave\",\n              note: \"転居に伴い地区市場の帳簿手伝いを終了\"\n            },\n            lifeGoal: { id: \"siracusa-independent-livelihood\", action: \"compromise\", note: \"転居後、地区市場の仕事を終えた\" },\n            p: 0\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "しばらく手伝いを休み、元の街区へ戻れたらまた顔を出すと伝える",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "新しい土地での暮らしが落ち着くまで手伝いを休ませてほしいと店主に伝えた。またあの街区へ戻ることがあれば、真っ先に店へ顔を出すつもりだ。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"siracusa-independent-trade\",\n              action: \"suspend\",\n              note: \"転居後の生活を整える間、取引の帳簿手伝いを休止\"\n            },\n            lifeGoal: { id: \"siracusa-independent-livelihood\", action: \"pause\", note: \"転居後に帳簿仕事を休止\" },\n            p: 0\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr_siracusa_trade_pause_review",
+      "source": "data/parts/routes/rhodes-and-factions/arena-work.js:351",
+      "priorClassification": "P0",
+      "originalChoiceCount": 3,
+      "choiceCount": 3,
+      "outcomeCount": 3,
+      "eventPrelude": "{\n      id: \"sr_siracusa_trade_pause_review\",\n      conf: \"S\",\n      references: [\"SRC_SIRACUSA_CROSSROADS_ST2\", \"SRC_SIRACUSA_CROSSROADS_ST4\", \"SRC_SIRACUSA_MARKET_MODEL\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      after: { id: \"sr_siracusa_independent_business\", min: 3 },\n      cd: 3,\n      w: 0.1,\n      show: s => {\n        const affiliation = s.lifeRecord?.affiliations?.find(row => row.id === \"siracusa-independent-trade\");\n        return (\n          affiliation?.status === \"suspended\" &&\n          $rules.affiliations.atRecordedLocality(s, \"siracusa-independent-trade\") &&\n          s.year - (affiliation.lastChangedYear ?? s.year) >= 3\n        );\n      },\n      t: \"久しぶりに元の街区へ戻ると、かつて手伝っていた小売店の馴染みの看板が目に入った。あの時の専売契約の話はどう落ち着いたのか、のれんをくぐって店主の顔を見に行くことにした。\",\n      ",
+      "choices": [
+        {
+          "label": "店主に挨拶し、また帳場の手伝いへ戻る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "懐かしい店主に迎えられ、今の仕入れ状況を聞きながら再び帳場の椅子に座った。棚には見慣れない新しい卸し先の瓶も並び、街の商いが続いてきたことを感じた。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"siracusa-independent-trade\",\n              action: \"return\",\n              role: \"復帰後の仕入れ条件確認\"\n            },\n            lifeGoal: {\n              id: \"siracusa-independent-livelihood\",\n              action: \"continue\",\n              note: \"元の街区へ戻り、店主と条件を確かめて再開\"\n            },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "立ち話だけ交わし、手伝いはまだ休ませておく",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "店主と近況を語り合い、今はまだ自分の仕事で手一杯だと伝えた。次にまたゆっくり立ち寄る約束をして、ワインを一本買って店を出た。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"siracusa-independent-trade\",\n              action: \"review\",\n              note: \"元の街区へ戻ったが、帳簿手伝いの休止を継続\"\n            },\n            lifeGoal: {\n              id: \"siracusa-independent-livelihood\",\n              action: \"pause\",\n              note: \"帳簿手伝いの休止を続けた\"\n            },\n            p: 0\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "この機会に挨拶をし、手伝いに区切りをつける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "店主にお礼を言い、これからは客として店に通うと伝えて手伝いに区切りをつけた。肩の荷がひとつ下り、馴染みの通りをゆっくり歩いて帰った。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"siracusa-independent-trade\",\n              action: \"leave\",\n              note: \"休止後に地区市場の手伝いを終了\"\n            },\n            lifeGoal: {\n              id: \"siracusa-independent-livelihood\",\n              action: \"compromise\",\n              note: \"帳簿手伝いを終えた\"\n            },\n            p: 0\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "life_reunion_early_contact",
+      "source": "data/parts/routes/rhodes-and-factions/reunion-lifepath.js:122",
+      "priorClassification": "P0",
+      "originalChoiceCount": 4,
+      "choiceCount": 4,
+      "outcomeCount": 4,
+      "eventPrelude": "{\n      id: \"life_reunion_early_contact\",\n      conf: \"S\",\n      references: [\"SRC_REUNION_TIMELINE\", \"SRC_REUNION_EARLY_CAMP\", \"SRC_REUNION_HISTORY\"],\n      st: [\"青年\", \"壮年\"],\n      need: [\"国:ウルサス\"],\n      ge: { year: 1090, age: 18 },\n      le: { year: 1095 },\n      once: true,\n      w: 0.18,\n      show: s => !!s.inf && !affiliation(s, \"reunion-1096\"),\n      t: \"ウルサス北部の凍原を渡り歩く感染者の一団が、追われてきた者に毛布と温かい食事を分け、夜通し見張りの火を焚いていた。まもなく次の集落へ向けて野営を畳むという。彼らと行動をともにするか、焚火のそばで声をかけられた。\",\n      ",
+      "choices": [
+        {
+          "label": "食事と寝床の世話を引き受け、移動野営地に加わる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "毛布と乾パンを配る役目を引き受け、一団の列に加わった。夜は焚火が消えないよう交代で薪をくべ、夜明け前には凍えた手で荷車を括り直した。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-1096\",\n              title: \"レユニオン初期支援隊\",\n              kind: \"infected-mutual-aid\",\n              action: \"join\",\n              role: \"初期移動野営地・食料と寝床の当番\"\n            },\n            lifeGoal: {\n              id: \"protect-neighbours\",\n              title: \"追われた感染者が休める場所を保つ\",\n              priority: \"互助\",\n              action: \"start\"\n            },\n            groupStanding: {\n              id: \"reunion-early-companions\",\n              title: \"凍原を移動する感染者の仲間\",\n              delta: 2,\n              reason: \"野営地の食料と寝床を担った\"\n            },\n            fl: { reunion: 1 },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "夜の見張りと抜け道の案内を引き受ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "吹雪の夜に見張りへ立ち、朝になれば次の集落へ抜ける獣道を確かめた。遠くに監視哨の影を見つけたときは口笛で合図を送り、仲間の列を窪地へ隠した。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-1096\",\n              title: \"レユニオン初期支援隊\",\n              kind: \"infected-mutual-aid\",\n              action: \"join\",\n              role: \"初期移動野営地・見張りと避難路案内\"\n            },\n            lifeGoal: {\n              id: \"protect-neighbours\",\n              title: \"追われた感染者が通れる道を探す\",\n              priority: \"互助\",\n              action: \"start\"\n            },\n            groupStanding: {\n              id: \"reunion-early-companions\",\n              title: \"凍原を移動する感染者の仲間\",\n              delta: 2,\n              reason: \"夜間の見張りと避難路案内を担った\"\n            },\n            fl: { reunion: 1 },\n            h: -1,\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "安全な道順だけ教え、今の集落にとどまる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "吹雪を避けられる谷筋を地面に描いて教えた。一団が白い闇へ消えていくのを見送り、自分は集落の小屋へ戻っていつもの仕事に就いた。",
+              "effects": "{ k: 1, p: 1 }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "関わりを避け、誘いを断る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "首を振って誘いを断り、足早に自分の家へ戻った。夜風に混じって見張りの呼び声が遠くから聞こえたが、戸の桟を固く閉ざして眠った。",
+              "effects": "{ p: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "life_reunion_chernobog_base_assignment",
+      "source": "data/parts/routes/rhodes-and-factions/reunion-lifepath.js:115",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "life_reunion_chernobog_aftermath",
+      "source": "data/parts/routes/rhodes-and-factions/reunion-lifepath.js:397",
+      "priorClassification": "P0",
+      "originalChoiceCount": 3,
+      "choiceCount": 3,
+      "outcomeCount": 3,
+      "eventPrelude": "{\n      id: \"life_reunion_chernobog_aftermath\",\n      conf: \"S\",\n      references: [\"SRC_TL_CHERNOB_WINDOW\", \"SRC_REUNION_HISTORY\", \"SRC_SR_REUNION_SPLIT\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      need: [\"1096年のレユニオン地域網\"],\n      ge: { year: 1097, age: 18 },\n      le: { year: 1098 },\n      once: true,\n      w: 0.56,\n      show: s => active(s, \"reunion-1096\") && (s.year > 1097 || s.mo >= 2),\n      t: \"チェルノボーグを離れたあと、同じ拠点にいた仲間は散り散りになった。頼りにしていた連絡網も途絶え、残された小さな一団には次に向かう先を決めるリーダーもいない。このまま避難者の護衛を続けるか、一度身を潜めるか、それとも完全に別れるか、岐路に立たされていた。\",\n      ",
+      "choices": [
+        {
+          "label": "少人数の隊に残り、見張りと避難者の護衛を続ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "顔なじみの仲間数人と行動をともにし、野宿の見張りと避難民の護衛を続けた。立ち寄る町ごとに昔の仲間の消息を尋ね歩いたが、はっきりした行方はなかなかつかめなかった。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-1096\",\n              title: \"事変後に散ったレユニオン残存隊\",\n              action: \"role\",\n              role: \"事変後の小隊・見張りと避難者護衛\"\n            },\n            lifeGoal: {\n              id: \"protect-neighbours\",\n              action: \"continue\",\n              note: \"大きな指揮系統を失った後も、近くの人を守る隊に残った\"\n            },\n            h: -2,\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "しばらく身を潜め、信頼できる仲間の連絡だけを待つ",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "表立った活動からは手を引き、気心の知れた仲間にだけ今の居場所を伝えておいた。あの倉庫にいた連中が今も無事なのか、どこをさまよっているのかは分からないままだ。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-1096\",\n              title: \"事変後のレユニオン連絡待ち\",\n              action: \"suspend\",\n              role: \"活動休止・個人連絡のみ\",\n              note: \"再編後の連絡先や方針は定まっていない\"\n            },\n            lifeGoal: {\n              id: \"protect-neighbours\",\n              action: \"pause\",\n              note: \"活動を休み、消息を確かめる\"\n            },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "隊を離れ、流れ着いた先で自分の暮らしを立て直す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "残った仲間に別れを告げ、ひとりで隊を離れた。逃げてきたばかりの土地で仕事も寝床も決まっておらず、かつての仲間とまた会える日があるのかも分からなかった。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-1096\",\n              title: \"レユニオン初期支援隊\",\n              action: \"leave\",\n              note: \"チェルノボーグ事変後に離脱\"\n            },\n            lifeGoal: {\n              id: \"protect-neighbours\",\n              action: \"abandon\",\n              note: \"避難先で自分の生活を立て直す\"\n            },\n            fl: { war_displaced: 1, reunion: 0 },\n            p: -1\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "life_reunion_survivor_reconnection",
+      "source": "data/parts/routes/rhodes-and-factions/reunion-lifepath.js:469",
+      "priorClassification": "P0",
+      "originalChoiceCount": 3,
+      "choiceCount": 3,
+      "outcomeCount": 3,
+      "eventPrelude": "{\n      id: \"life_reunion_survivor_reconnection\",\n      conf: \"S\",\n      references: [\"SRC_REUNION_HISTORY\", \"SRC_REUNION_REFORM\", \"SRC_SR_REUNION_SPLIT\", \"SRC_REUNION_GAME_MODEL\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      after: { id: \"life_reunion_chernobog_aftermath\", min: 1 },\n      ge: { year: 1098, age: 18 },\n      le: { year: 1101 },\n      once: true,\n      w: 0.48,\n      show: s => !!s.inf && attachedAfterChernobog(s),\n      t: \"長く途絶えていた伝手をたどって、ナインたちが散り散りになった仲間を集め直しているという知らせが届いた。生まれ変わったレユニオンは、各地の感染者を支えながら新しい行き先を模索しているらしい。合流するか、今の場所にとどまるか、昔の仲間から返事を求められた。\",\n      ",
+      "choices": [
+        {
+          "label": "新しい連絡網へ合流し、近隣への薬や食料の配達を担う",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "昔の仲間を通じて新しい連絡網に加わり、近くの感染者世帯へ薬や食料を運ぶ役目を引き受けた。生き別れていた仲間にも、新しいつなぎ先をそっと伝えた。",
+              "effects": "{\n            lifeAffiliations: [\n              {\n                id: \"reunion-1096\",\n                action: \"leave\",\n                note: \"事変後、ナインがまとめる再編レユニオンの連絡網へ移った\"\n              },\n              {\n                id: \"reunion-reorg\",\n                title: \"再編後レユニオンに連なる互助連絡網\",\n                kind: \"local-relief-network\",\n                action: \"join\",\n                role: \"近隣の物資配達\",\n                note: \"本人が地域の支援連絡網へ参加。武装隊の任務は別途選択\"\n              }\n            ],\n            lifeGoal: {\n              id: \"reunion-relief\",\n              title: \"身近な感染者へ薬と食料を届ける\",\n              priority: \"互助\",\n              action: \"start\"\n            },\n            lifeGoals: [{\n              id: \"protect-neighbours\",\n              action: \"abandon\",\n              note: \"旧隊での役割を終え、再編後の互助網へ活動を移した\"\n            }],\n            groupStanding: {\n              id: \"reunion-reorg-volunteers\",\n              title: \"再編後の地域ボランティア\",\n              delta: 2,\n              reason: \"新しい連絡網で近隣への配達を引き受けた\"\n            },\n            fl: { reunion: 1 },\n            rl: 2,\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "合流はせず、今の小さな隊で避難者の護衛を続ける",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "大きな合流話には乗らず、今そばにいる仲間たちと見張りの順番を組み直した。町を離れる感染者の一家が来れば、街道が分かれるところまで静かに付き添った。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-1096\",\n              action: \"continue\",\n              role: \"事変後の小隊・見張りと避難者護衛\"\n            },\n            lifeGoal: {\n              id: \"protect-neighbours\",\n              action: \"continue\",\n              note: \"小隊に残り、身近な避難者の護衛を続けた\"\n            },\n            h: -1,\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "この機会に隊を離れ、ひとりの生活へ戻る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "再編の知らせを潮時に、仲間へ別れを告げて町で仕事と部屋を探した。それでも時折、チェルノボーグの倉庫で顔を合わせた家族のことが頭をよぎった。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-1096\",\n              action: \"leave\",\n              note: \"チェルノボーグ事変後、隊を離れて暮らしを立て直した\"\n            },\n            lifeGoal: {\n              id: \"protect-neighbours\",\n              action: \"abandon\",\n              note: \"レユニオンの隊を離れた\"\n            },\n            fl: { war_displaced: 1, reunion: 0 },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr_reunion_movement_join",
+      "source": "data/parts/routes/rhodes-and-factions/reunion-lifepath.js:556",
+      "priorClassification": "P0",
+      "originalChoiceCount": 4,
+      "choiceCount": 4,
+      "outcomeCount": 4,
+      "eventPrelude": "{\n      id: \"sr_reunion_movement_join\",\n      conf: \"S\",\n      references: [\"SRC_REUNION_HISTORY\", \"SRC_REUNION_REFORM\", \"SRC_REUNION_BORDER_CAMP\", \"SRC_REUNION_GAME_MODEL\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      need: [\"1097年以後の再編レユニオン互助網に連絡中\"],\n      ge: { year: 1101, age: 18 },\n      once: true,\n      w: 0.5,\n      show: s => !!s.inf && active(s, \"reunion-reorg\"),\n      t: \"ウルサスとカジミエーシュの国境に近い辺境の村から、野営地の人手を募る知らせが届いた。チェルノボーグから逃れてきた者たちが荒れ地を耕し、薬を分け合って暮らしているという。野営地へ赴いて当番を担うか、今の町から中継を手伝うか考えた。\",\n      ",
+      "choices": [
+        {
+          "label": "国境の野営地へ移り、食料と薬の配給を受け持つ",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "荷物をまとめて国境の村へ移り、薬箱と食料庫の管理を引き受けた。誰の家に何が足りないかを聞き取り、遅れている荷があれば次の運び手へ伝言を託した。",
+              "effects": "{\n            resTo: \"ウルサス\",\n            home: \"固定集落\",\n            localKind: \"小規模な定住地\",\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編レユニオンの国境野営地\",\n              kind: \"reorganized-infected-movement\",\n              action: \"role\",\n              role: \"国境野営地・食料と医薬品の配給\",\n              bindAt: \"destination\",\n              rebindPosting: true,\n              note: \"本人が野営地の配給当番を選択\"\n            },\n            lifeGoal: {\n              id: \"reunion-relief\",\n              title: \"国境野営地で感染者の生活を支える\",\n              priority: \"互助\",\n              action: \"start\"\n            },\n            groupStanding: {\n              id: \"reunion-reorg-volunteers\",\n              title: \"再編レユニオンの野営地仲間\",\n              delta: 2,\n              reason: \"食料と医薬品の配給当番に加わった\"\n            },\n            p: 1,\n            rl: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "国境の野営地へ移り、畑仕事と小屋の修繕に加わる",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "国境の村へ移り住み、石ころだらけの畑を耕して隙間風の吹く寝小屋の板壁を打ち直した。仲間と一緒に収穫した麦の一部を来年の種籾に残し、厳しい冬への備えを進めた。",
+              "effects": "{\n            resTo: \"ウルサス\",\n            home: \"固定集落\",\n            localKind: \"小規模な定住地\",\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編レユニオンの国境野営地\",\n              kind: \"reorganized-infected-movement\",\n              action: \"role\",\n              role: \"国境野営地・農作業と住居の手入れ\",\n              bindAt: \"destination\",\n              rebindPosting: true,\n              note: \"本人が野営地の農作業と生活再建の当番を選択\"\n            },\n            lifeGoal: {\n              id: \"reunion-relief\",\n              title: \"国境野営地で感染者の生活を支える\",\n              priority: \"互助\",\n              action: \"start\"\n            },\n            lifeSkill: {\n              id: \"reunion-camp-care\",\n              title: \"野営地の農作業と生活再建\",\n              delta: 3,\n              context: \"共同の畑と寝床の修繕に加わった\"\n            },\n            groupStanding: {\n              id: \"reunion-reorg-volunteers\",\n              title: \"再編レユニオンの野営地仲間\",\n              delta: 2,\n              reason: \"畑と寝床の手入れを担った\"\n            },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "今の町に暮らしを残し、荷の中継と連絡だけを手伝う",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "住まいは今の町に残したまま、国境へ向かう荷の中継だけを引き受けた。馴染みの運び手に包みと伝言を託し、無事に届いた知らせが戻ると胸をなでおろした。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編レユニオンに連なる地域連絡網\",\n              action: \"role\",\n              role: \"遠隔連絡・臨時の物資便\",\n              note: \"野営地には移らず、居住地から不定期の連絡を担当\"\n            },\n            lifeGoal: {\n              id: \"reunion-relief\",\n              title: \"今の地域から感染者への支援を続ける\",\n              priority: \"地域\",\n              action: \"continue\"\n            },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "連絡網から手を引き、今の仕事と家族の暮らしを守る",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "これ以上は関われないと仲間に伝え、連絡網から抜けた。国境の村へは向かわず、今の町で仕事と家族との穏やかな毎日を守ることにした。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編レユニオンに連なる地域連絡網\",\n              action: \"leave\",\n              note: \"移動野営地への加入を見送り、連絡網を離脱\"\n            },\n            lifeGoal: { id: \"reunion-relief\", action: \"abandon\", note: \"地域の連絡網を離れた\" },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr_reunion_border_relocation",
+      "source": "data/parts/routes/rhodes-and-factions/reunion-lifepath.js:781",
+      "priorClassification": "P0",
+      "originalChoiceCount": 3,
+      "choiceCount": 3,
+      "outcomeCount": 3,
+      "eventPrelude": "{\n      id: \"sr_reunion_border_relocation\",\n      conf: \"S\",\n      references: [\"SRC_REUNION_BORDER_CAMP\", \"SRC_REUNION_HISTORY\", \"SRC_REUNION_GAME_MODEL\"],\n      st: [\"青年\", \"壮年\", \"老年\"],\n      ge: { year: 1101 },\n      once: true,\n      w: 0.42,\n      show: s => postAt(s, \"reunion-reorg\", \"国境野営地・\"),\n      t: \"国境の村を畳み、サンクト・グリファーブルクの方面へ向かう移動隊の支度が始まった。荷車を引いて旅立つ者もいれば、せっかく耕した畑と小屋を守るため村に残る者もいる。どちらの道で仲間を支えるか、決断のときが来ていた。\",\n      ",
+      "choices": [
+        {
+          "label": "移動隊の列に加わり、道中の連絡と荷運びを担う",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "移動隊に名を連ね、道中の伝令と物資の積み下ろしを引き受けた。出発の朝、村に残る人たちと固い握手を交わし、薬の届け先や連絡の目印を何度も確かめ合った。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編レユニオンの移動隊\",\n              action: \"role\",\n              role: \"移動隊・サンクト・グリファーブルクへの連絡と補給\",\n              note: \"野営地から移動する本人の選択を記録\"\n            },\n            lifeGoal: {\n              id: \"reunion-relief\",\n              action: \"continue\",\n              note: \"移動隊の連絡と物資の仕事へ役割を移した\"\n            },\n            h: -1,\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "村に残って畑と薬の受け渡しを守り、中継地を保つ",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "旅立つ仲間の背中を見送り、村に残って麦の取り入れと薬の受け渡しを続けた。移動隊の全員が今どこにいるかは分からないが、時折届く無事を知らせる便りを集会所の壁に貼り出した。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編レユニオンの国境野営地\",\n              action: \"role\",\n              role: \"国境野営地・農作業と医薬品の受け渡し\",\n              note: \"移動隊には加わらず、集落に残る選択\"\n            },\n            lifeGoal: { id: \"reunion-relief\", action: \"continue\" },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "レユニオンから離れ、村の外で自分の暮らしを立て直す",
+          "gate": "{}",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "受け持っていた仕事を仲間に引き継ぎ、この機会にレユニオンを離れた。国境の村を背に歩き出し、これからどこで働き、どこに根を下ろすかをひとりで考えた。",
+              "effects": "{\n            lifeAffiliation: {\n              id: \"reunion-reorg\",\n              title: \"再編レユニオンの国境野営地\",\n              action: \"leave\",\n              note: \"移動にも残留にも加わらず、野営地を離れた\"\n            },\n            lifeGoal: { id: \"reunion-relief\", action: \"abandon\", note: \"野営地での役割を終えた\" },\n          fl: { war_displaced: 1, reunion: 0 },\n            p: 1\n          }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_vic_infantry_choice_skirmish",
+      "source": "data/parts/routes/regional-careers/events-west.js:128",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "car_lei_golden_choice_witch_remnant",
+      "source": "data/parts/routes/regional-careers/events-west.js:226",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "car_lat_executor_daily_01",
+      "source": "data/parts/routes/regional-careers/events-west.js:260",
+      "error": "source-id-not-found",
+      "choices": []
+    },
+    {
+      "id": "car_urs_officer_after_dismissal",
+      "source": "data/parts/routes/regional-careers/events-west.js:420",
+      "priorClassification": "P1",
+      "originalChoiceCount": 5,
+      "choiceCount": 5,
+      "outcomeCount": 5,
+      "eventPrelude": "{\n      id: \"car_urs_officer_after_dismissal\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 3,\n      w: 0.3,\n      ge: { age: 25 },\n      after: { id: \"car_urs_officer_choice_purge\", min: 2, choice: 1 },\n      show: s => true &&\n        s.lifeRecord?.affiliations?.some(a => a.id === \"ursus-imperial-officer\" &&\n          (a.status === \"left\" || (a.status === \"active\" && s.job === 51))) &&\n        s.lifeRecord?.goals?.some(g => g.id === \"ursus-dismissed-officer-next-livelihood\" &&\n          [\"active\", \"compromised\", \"paused\"].includes(g.status)),\n      t: \"軍服を脱いだあの日から幾年かが過ぎた。不名誉除隊の記録と失ったものは、今も自分の経歴に残っている。新しい仕事や生活のかたちを、あらためて考える機会が訪れた。\",\n      ",
+      "choices": [
+        {
+          "label": "働き口の手がかりを探す",
+          "gate": "{\n          show: s => s.job === 0,\n          ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "店の軒先や仕事を仲介する者を訪ねて歩いた。今日のところ、雇ってくれる者は見つからなかった。",
+              "effects": "{ lifeGoal: { id: \"ursus-dismissed-officer-next-livelihood\", action: \"continue\",\n            note: \"除隊後の求職を続けたが、採用はまだ成立していない\" } }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "当面は仕事探しを休む",
+          "gate": "{\n          show: s => s.job === 0,\n          ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "ひとまず足を止め、手元に残ったものを数えた。次の勤め先を決めるのは、もう少し先に延ばした。",
+              "effects": "{ lifeGoal: { id: \"ursus-dismissed-officer-next-livelihood\", action: \"pause\",\n            note: \"除隊後の求職をいったん休んだ\" } }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "今の仕事で新たな生活を始めたと認める",
+          "gate": "{\n          show: s => s.job > 0 && s.job !== 51,\n          ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "かつての階級は今の勤め先では役に立たない。自分の仕事を終え、約束された報酬を受け取った。",
+              "effects": "{ lifeGoal: { id: \"ursus-dismissed-officer-next-livelihood\", action: \"complete\",\n            note: \"帝国軍を離れた後、別の実際の職業で新しい生計を得た\" } }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "働き始めた後も先行きを考え続ける",
+          "gate": "{\n          show: s => s.job > 0 && s.job !== 51,\n          ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "新しい勤務は続いている。それでも、この先の暮らしを決めるにはまだ早いと感じた。",
+              "effects": "{ lifeGoal: { id: \"ursus-dismissed-officer-next-livelihood\", action: \"continue\",\n            note: \"別の仕事に就いたが、除隊後の生計を引き続き見極める\" } }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "軍に再採用された仕事を、生活再建の区切りとする",
+          "gate": "{\n          show: s => s.job === 51 && $rules.affiliations.canWork(s, \"ursus-imperial-officer\"),\n          ethics: { reviewed: true, policyVersion: 87, intent: \"livelihood-planning\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "新たな任命書に署名し、かつての勤務地とは異なる持ち場の仕事を始めた。不名誉除隊の記録は残るが、今は自分の給金で暮らしている。",
+              "effects": "{ lifeGoal: { id: \"ursus-dismissed-officer-next-livelihood\", action: \"complete\",\n            note: \"個別の処分審査後に再採用され、軍務で新たな生計を得た\" } }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_urs_guard_after_expulsion",
+      "source": "data/parts/routes/regional-careers/events-west.js:460",
+      "priorClassification": "P1",
+      "originalChoiceCount": 5,
+      "choiceCount": 5,
+      "outcomeCount": 5,
+      "eventPrelude": "{\n      id: \"car_urs_guard_after_expulsion\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\", \"老年\"],\n      cd: 3,\n      w: 0.3,\n      ge: { age: 23 },\n      after: { id: \"car_urs_guard_choice_riot\", min: 2, choice: 1 },\n      show: s => true &&\n        s.lifeRecord?.affiliations?.some(a => a.id === \"ursus-border-mine-guard\" &&\n          (a.status === \"left\" || (a.status === \"active\" && s.job === 52))) &&\n        s.lifeRecord?.goals?.some(g => g.id === \"ursus-expelled-guard-next-livelihood\" &&\n          [\"active\", \"compromised\", \"paused\"].includes(g.status)),\n      t: \"坑道を離れたあの日のことは今も覚えている。軍務を追われた後の日々は、以前とは違う重みを持っていた。今の仕事も、次の暮らしも、自分で選び直すことができる。\",\n      ",
+      "choices": [
+        {
+          "label": "別の働き口を探して回る",
+          "gate": "{\n          show: s => s.job === 0,\n          ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "早朝から求人の話を聞いて回った。仕事を頼めそうな相手の名前を覚えたが、採用の約束は得られなかった。",
+              "effects": "{ lifeGoal: { id: \"ursus-expelled-guard-next-livelihood\", action: \"continue\",\n            note: \"追放後も求職を続けたが、新たな採用は成立していない\" } }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "しばらく身を休める",
+          "gate": "{\n          show: s => s.job === 0,\n          ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "人の少ない場所に腰を下ろし、しばらく何もしないことにした。翌日の暮らしは、まだ決めていなかった。",
+              "effects": "{ lifeGoal: { id: \"ursus-expelled-guard-next-livelihood\", action: \"pause\",\n            note: \"軍務追放後の求職を一時中断した\" } }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "次の職を得たことに一区切りつける",
+          "gate": "{\n          show: s => s.job > 0 && s.job !== 52,\n          ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "今の仕事を終え、報酬を受け取った。坑道の扉の内側とは違う場所で、一日を終えることができた。",
+              "effects": "{ lifeGoal: { id: \"ursus-expelled-guard-next-livelihood\", action: \"complete\",\n            note: \"軍務追放の後、別の実際の職業で生計を得た\" } }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "新しい職があっても暮らしを見直し続ける",
+          "gate": "{\n          show: s => s.job > 0 && s.job !== 52,\n          ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "働き始めてからも、いつまでこの勤めが続くかは分からない。しばらく考え続けることにした。",
+              "effects": "{ lifeGoal: { id: \"ursus-expelled-guard-next-livelihood\", action: \"continue\",\n            note: \"別の仕事に就いたが、追放後の暮らしの安定を引き続き見極める\" } }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "再採用後の警備勤務を、生活再建の区切りとする",
+          "gate": "{\n          show: s => s.job === 52 && $rules.affiliations.canWork(s, \"ursus-border-mine-guard\"),\n          ethics: { reviewed: true, policyVersion: 87, intent: \"livelihood-planning\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "新しい配属先で交代勤務を終えた。以前の坑道からは離れているが、任された仕事を終えるたびに給金が支払われるようになった。",
+              "effects": "{ lifeGoal: { id: \"ursus-expelled-guard-next-livelihood\", action: \"complete\",\n            note: \"処分再審査後の再採用によって、警備勤務で生計を立て直した\" } }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_urs_officer_disciplinary_review",
+      "source": "data/parts/routes/regional-careers/events-west.js:514",
+      "priorClassification": "P1",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 3,
+      "eventPrelude": "{\n      id: \"car_urs_officer_disciplinary_review\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 3,\n      w: 0.32,\n      ge: { age: 25 },\n      after: { id: \"car_urs_officer_choice_purge\", min: 3, choice: 1, outcome: 0 },\n      show: s => s.res?.n === \"ウルサス\" && s.job === 0 && !s.fl?.retired &&\n        s.lifeRecord?.affiliations?.some(a => a.id === \"ursus-imperial-officer\" &&\n          a.status === \"left\" && a.episodes?.some(ep => ep.endedYear != null)) &&\n        !(s.eventOutcomes?.car_urs_officer_disciplinary_review?.choiceIndex === 0 &&\n          s.eventOutcomes?.car_urs_officer_disciplinary_review?.outcomeIndex === 0),\n      t: \"かつての不名誉除隊について、軍の記録担当が例外的な処分再審査の申立書を受け付けると知った。命令を拒んだ事情を記せば、当時の上官の判断も問い直すことになる。古い対立を掘り起こす危険はあった。\",\n      ",
+      "choices": [
+        {
+          "label": "当時の命令と除隊の経緯を書き、審査を申し立てる",
+          "gate": "{\n          ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "0.2",
+              "prose": "数度の照会の後、処分記録に再審査の結果が追記された。士官候補として再応募することは認められたが、階級も任地も戻ってはいない。",
+              "effects": "{ k: 1, p: 1 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "prose": "軍司令部からは、処分を見直す根拠が見いだせないという短い返書が届いた。封書を閉じても、あの命令を拒んだ日の記憶は消えなかった。",
+              "effects": "{ p: -1 }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "処分には触れず、今の暮らしを優先する",
+          "gate": "{\n          ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "申立書を破り、いつもの仕事探しに戻ることにした。かつての肩章に頼らず暮らす道も、自分には残されていた。",
+              "effects": "{ p: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_urs_guard_disciplinary_review",
+      "source": "data/parts/routes/regional-careers/events-west.js:549",
+      "priorClassification": "P1",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 3,
+      "eventPrelude": "{\n      id: \"car_urs_guard_disciplinary_review\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 3,\n      w: 0.32,\n      ge: { age: 23 },\n      after: { id: \"car_urs_guard_choice_riot\", min: 3, choice: 1, outcome: 0 },\n      show: s => s.res?.n === \"ウルサス\" && s.job === 0 && !s.fl?.retired &&\n        s.lifeRecord?.affiliations?.some(a => a.id === \"ursus-border-mine-guard\" &&\n          a.status === \"left\" && a.episodes?.some(ep => ep.endedYear != null)) &&\n        !(s.eventOutcomes?.car_urs_guard_disciplinary_review?.choiceIndex === 0 &&\n          s.eventOutcomes?.car_urs_guard_disciplinary_review?.outcomeIndex === 0),\n      t: \"軍務を追われて数年が経ち、かつての坑道での出来事を別の担当者に申し立てられると聞いた。脱出を選んだ理由も、退路を塞いだ状況も、記録の中では短い「職場放棄」の一語で片付けられていた。\",\n      ",
+      "choices": [
+        {
+          "label": "坑道の状況と自分の証言を提出し、処分の再審査を求める",
+          "gate": "{\n          ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "0.4",
+              "prose": "提出した報告が照合され、再び警備隊の採用選考を受ける資格を認められた。以前の処分や失った年月は記録に残っている。",
+              "effects": "{ k: 1, p: 1 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "prose": "返ってきたのは、処分を変更しないという通知だけだった。事件の詳しい事情は、今回の判断には採用されなかった。",
+              "effects": "{ p: -1 }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "軍務への復帰は望まず、今の生活を続ける",
+          "gate": "{\n          ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" }\n        }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "書きかけの申立書をしまい、これからの仕事を探すことにした。坑道での出来事は、どこへ行っても自分の過去として残る。",
+              "effects": "{ p: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_sar_guard_choice_assassination",
+      "source": "data/parts/routes/regional-careers/events-frontier.js:30",
+      "priorClassification": "P0",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 4,
+      "eventPrelude": "{\n      id: \"car_sar_guard_choice_assassination\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      once: true,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"サルゴン\" && $terraData.regionalCareerOnDuty(s, \"sar_guard\") &&\n        s.lifeRecord?.affiliations?.some(a => a.id === \"sargon-padishah-guard\" && [\"active\", \"crisis\"].includes(a.status)),\n      t: \"深夜、宮殿の奥から短い叫び声と金属のぶつかる音がした。回廊に倒れた衛兵のそばで、夜番の鐘が鳴り始める。寝所へ続く扉は半ば開いたままだった。\",\n      ",
+      "choices": [
+        {
+          "label": "寝所へ駆け込み、刺客を迎え撃つ",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.4",
+              "prose": "暗がりで刃を受け止め、駆けつけた衛兵とともに侵入者を取り押さえた。翌朝、主君から金子と親衛隊長の役目を与えられ、詰所の命令簿に新しい肩書が記された。",
+              "effects": "{ cr: 5, h: 2, p: 3, cash: 2500000,\n            lifeAffiliation: { id: \"sargon-padishah-guard\", action: \"role\", role: \"親衛隊長\", onlyIfActiveOrCrisis: true,\n              note: \"寝所への侵入者を取り押さえた功績で隊長役を命じられた\" } }",
+              "jobIds": []
+            },
+            {
+              "weight": "0.8",
+              "prose": "短刀が肩を裂いた。仲間に引きずられて回廊へ戻り、手当てを受ける間も、扉の向こうでは怒号が続いていた。",
+              "effects": "{ h: -8, p: -1 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "prose": "衛兵が駆けつけたとき、寝所の扉の前には血が広がっていた。刺客の刃が喉を裂き、最後の息は声にならなかった。",
+              "effects": "{ h: -100, d: [\"護衛任務での毒殺\", \"サルゴンの宮廷護衛中、刺客の放った毒矢を喉に受けて息絶えた。\"] }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "警鐘を鳴らし、衛兵を集める",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "鐘の音で集まった衛兵が回廊を塞ぎ、窓から逃げようとした侵入者を取り押さえた。夜明けのころには、床に残った血の跡だけが騒ぎを伝えていた。",
+              "effects": "{ p: 2, k: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_kje_karlan_choice_ambush",
+      "source": "data/parts/routes/regional-careers/events-frontier.js:234",
+      "priorClassification": "P0",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 4,
+      "eventPrelude": "{\n      id: \"car_kje_karlan_choice_ambush\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"イェラグ\" && $terraData.regionalCareerOnDuty(s, \"kje_karlan\"),\n      t: \"物資を満載した貨物列車が渓谷の鉄橋に差し掛かった瞬間、伝統派の刺客集団が爆薬を仕掛けて突撃してきた。列車の脱線はイェラグ全土の経済崩壊を招く。銃を連射して敵の爆破工作を阻止するか。\",\n      ",
+      "choices": [
+        {
+          "label": "屋根の上に這い上がり、狙撃で爆弾の起爆手を討ち取る",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "凍てつく風の中で正確な狙撃を放ち、起爆装置を持つ首領を狙撃。列車を無傷で通過させた。議長直々に銀の懐中時計を贈られ、特務護衛班長へ昇進した。",
+              "effects": "{ cr: 5, p: 3, cash: 1200000,\n            lifeAffiliation: { id: \"kjerag-karlan-commercial\", action: \"role\", role: \"特務護衛班長\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }",
+              "jobIds": []
+            },
+            {
+              "weight": "0.85",
+              "prose": "敵の銃弾を肩に受けながらも撃退に成功。列車は軽微な被害で済んだ。",
+              "effects": "{ h: -5, p: 1, cash: 300000 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "prose": "鉄橋が爆破され、貨車ごと深い氷谷の底へ転落して激突死した。",
+              "effects": "{ h: -100, d: [\"鉄道護衛中の転落死\", \"イェラグの山岳鉄道防衛中、爆破された鉄橋から谷底へ転落して激突死した。\"] }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "非常ブレーキを作動させ、乗務員を退避させる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "列車を安全に停止させ、応援部隊の到着まで持ちこたえた。",
+              "effects": "{ p: 2, k: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_kazdel_mil_choice_major_battle",
+      "source": "data/parts/routes/regional-careers/events-frontier.js:336",
+      "priorClassification": "P0",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 4,
+      "eventPrelude": "{\n      id: \"car_kazdel_mil_choice_major_battle\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"カズデル\" && $terraData.regionalCareerOnDuty(s, \"kazdel_mil\"),\n      t: \"ロンディニウム近郊の平原で、ヴィクトリア模範軍の大口径蒸気砲が唸りを上げた。砲弾が大地を抉る中、軍事委員会突撃隊として敵の砲兵陣地への突入命令が下された。死を恐れぬ猛攻で砲座を奪取するか。\",\n      ",
+      "choices": [
+        {
+          "label": "大剣を振りかざし、砲煙を突き破って突進する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.4",
+              "prose": "猛砲撃の中を駆け抜け、敵の砲兵隊を薙ぎ倒して砲座を制圧した。摂政王テレシスより直々に武勲を称えられ、百人隊長へ昇進した。",
+              "effects": "{ h: -3, p: 4, cr: 4, cash: 800000,\n            lifeAffiliation: { id: \"kazdel-military-commission\", action: \"role\", role: \"百人隊長\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }",
+              "jobIds": []
+            },
+            {
+              "weight": "0.8",
+              "prose": "砲撃の爆風で吹き飛ばされ、全身に破片を浴びて倒れた。衛生兵に救助され生き延びた。",
+              "effects": "{ h: -12, p: 1 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "prose": "直撃した大口径榴弾の爆光に呑み込まれ、跡形もなく消滅して戦死した。",
+              "effects": "{ h: -100, d: [\"主戦場での砲撃爆死\", \"カズデルの大会戦において、敵の大口径榴弾の直撃を受けて戦死した。\"] }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "瓦礫の影に伏せ、砲撃の隙を窺う",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "無理な突撃を避け、味方の魔術支援を待って慎重に前進した。",
+              "effects": "{ p: 1, k: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_kazdel_bone_daily_01",
+      "source": "data/parts/routes/regional-careers/events-frontier.js:370",
+      "priorClassification": "P1",
+      "originalChoiceCount": 1,
+      "choiceCount": 1,
+      "outcomeCount": 1,
+      "eventPrelude": "{\n      id: \"car_kazdel_bone_daily_01\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 3,\n      w: 0.5,\n      ge: { age: 20 },\n      show: s => s.res?.n === \"カズデル\" && $terraData.regionalCareerOnDuty(s, \"kazdel_bone\"),\n      t: \"黒煙が燻る工房で、巨大な古獣の骨を赤熱した炉火にかざし、ノミで源石アーツの回路を彫り込んだ。骨に宿る古い記憶と対話しながら、傭兵たちの命を預かる武具や呪具へと仕立て上げる。サルカズの血脈に受け継がれる秘術。\",\n      ",
+      "choices": [
+        {
+          "label": "完成した骨剣を冷水で焼き入れする",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "鋭い刃紋を確認し、依頼主の傭兵頭に引き渡した。",
+              "effects": "{ k: 1, h: 1, cash: 130000 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_ibe_inq_choice_seaborn_attack",
+      "source": "data/parts/routes/regional-careers/events-frontier.js:438",
+      "priorClassification": "P0",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 4,
+      "eventPrelude": "{\n      id: \"car_ibe_inq_choice_seaborn_attack\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"イベリア\" && $terraData.regionalCareerOnDuty(s, \"ibe_inq\"),\n      t: \"夜更けの海岸線で、波間から無数の恐魚（海の怪物）が這い上がってきた。集落が呑み込まれる寸前である。審問官としてランタンの光を最大出力で解き放ち、剣を抜いて怪物たちの群れへ斬り込むか。\",\n      ",
+      "choices": [
+        {
+          "label": "ランタンの聖光を浴びせ、刃で怪物を両断する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.4",
+              "prose": "青白い怪物の群れを一人で斬り伏せ、夜明けまで海岸線を守り抜いた。大審問官からその信仰と剣技を絶賛され、正式な『上級審問官』へ昇進した。",
+              "effects": "{ cr: 5, p: 4, h: -2, cash: 1000000,\n            lifeAffiliation: { id: \"iberia-inquisition-officer\", action: \"role\", role: \"上級審問官\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }",
+              "jobIds": []
+            },
+            {
+              "weight": "0.8",
+              "prose": "怪物を撃退したものの、怪物の青い体液を浴びて幻覚と高熱に襲われた。激しい治療の末に生還した。",
+              "effects": "{ h: -8, p: -3, cash: 200000 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "prose": "怪物の群れに押し包まれ、冷たい海の中へ引きずり込まれて絶命した。",
+              "effects": "{ h: -100, d: [\"恐魚の群れによる海中絶命\", \"イベリア沿岸での恐魚掃討戦において、海中へ引きずり込まれて絶命した。\"] }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "信徒たちを高台の教会へ避難させ、防衛線を構築する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "教会の堅牢な扉を盾にし、朝の光が怪物を退けるまで耐え抜いた。",
+              "effects": "{ p: 2, cr: 2 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_ibe_tuner_choice_fog",
+      "source": "data/parts/routes/regional-careers/events-frontier.js:489",
+      "priorClassification": "P0",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 4,
+      "eventPrelude": "{\n      id: \"car_ibe_tuner_choice_fog\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"イベリア\" && $terraData.regionalCareerOnDuty(s, \"ibe_tuner\"),\n      t: \"海原から視界を奪う黒い海霧が立ち込め、灯台のレンズに無数の小型恐魚が群がり始めた。レンズの光が途絶えれば、沿岸都市全体が海の怪物の餌食となる。命綱を締めて塔の外壁へ出て、怪物を払い落とすか。\",\n      ",
+      "choices": [
+        {
+          "label": "暴風雨の外壁に身を乗り出し、工具とアーツで怪物を叩き落とす",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "滑りやすい絶壁の足場を踏みしめ、レンズに群がる怪物をすべて叩き落として灯火を守り抜いた。沿岸航路を救った英雄として表彰され、技師長に任命された。",
+              "effects": "{ cr: 4, p: 3, k: 2, cash: 800000,\n            lifeAffiliation: { id: \"iberia-lantern-tuner\", action: \"role\", role: \"技師長\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }",
+              "jobIds": []
+            },
+            {
+              "weight": "0.85",
+              "prose": "怪物の針で手を刺されながらも灯火を復旧した。手の痺れが残ったが一命を取り留めた。",
+              "effects": "{ h: -5, p: 1, cash: 200000 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "prose": "突風に煽られて命綱が切れ、百メートルの断崖絶壁から波濤の中へ転落して水死した。",
+              "effects": "{ h: -100, d: [\"光塔保守中の断崖転落死\", \"イベリアの光塔保守作業中、突風で断崖絶壁から波濤へ転落して水死した。\"] }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "予備の光波発信機を起動し、内部から防衛する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "予備電源で光量を維持し、朝の干潮まで灯台を守り切った。",
+              "effects": "{ p: 2, k: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_bol_soldier_choice_counterattack",
+      "source": "data/parts/routes/regional-careers/events-frontier.js:540",
+      "priorClassification": "P0",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 4,
+      "eventPrelude": "{\n      id: \"car_bol_soldier_choice_counterattack\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 21 },\n      show: s => s.res?.n === \"ボリバル\" && $terraData.regionalCareerOnDuty(s, \"bol_soldier\"),\n      t: \"敵軍の夜間砲撃がやんだ瞬間、司令部から敵の前進基地への突撃命令が下った。泥濘に足を取られる中、照明弾の光が交差する無人地帯を駆け抜ける。生き残るために銃剣を構えて塹壕へ飛び込むか。\",\n      ",
+      "choices": [
+        {
+          "label": "泥煙を突っ切り、敵の機関銃座へ手榴弾を投げ込む",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.4",
+              "prose": "敵の弾幕を掻い潜り、機関銃座の隙間に手榴弾を叩き込んで制圧した。小隊を全滅から救った功績で軍曹へ昇進し、特別報奨金を獲得した。",
+              "effects": "{ cr: 4, h: -2, p: 3, cash: 400000,\n            lifeAffiliation: { id: \"bolivar-coalition-soldier\", action: \"role\", role: \"軍曹\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }",
+              "jobIds": []
+            },
+            {
+              "weight": "0.8",
+              "prose": "銃弾が脚を貫通して倒れた。泥水を這いずりながら味方の衛生兵に救助された。",
+              "effects": "{ h: -10, p: 1 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "prose": "敵の集中砲火を正面から浴び、塹壕の手前で蜂の巣にされて戦死した。",
+              "effects": "{ h: -100, d: [\"前線塹壕戦での戦死\", \"ボリバルの反撃作戦において、敵の集中砲火を浴びて戦死した。\"] }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "砲弾のクレーターに身を潜め、援護射撃に徹する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "無理な突進を避け、味方の後退を援護しながら生き延びた。",
+              "effects": "{ p: 1, k: 1 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_bol_dossoles_choice_syndicate",
+      "source": "data/parts/routes/regional-careers/events-frontier.js:591",
+      "priorClassification": "P0",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 4,
+      "eventPrelude": "{\n      id: \"car_bol_dossoles_choice_syndicate\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"ボリバル\" && $terraData.regionalCareerOnDuty(s, \"bol_dossoles\"),\n      t: \"沖合に停泊する豪華クルーザーで、違法な武器取引と賭博が行われているとの密告が入った。容疑者はドッソレス有力マフィアの幹部である。踏み込んで現行犯逮捕するか、あるいは賄賂を受け取って見逃すか。\",\n      ",
+      "choices": [
+        {
+          "label": "警棒と拳銃を手に船内へ突入し、マフィア幹部を現行犯逮捕する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "激しい銃撃戦の末に護衛を制圧し、密輸幹部を逮捕。大量の密輸武器を押収した。カンデラ市長から直接激励を受け、警部補へ特進した。",
+              "effects": "{ cr: 5, p: 3, cash: 1000000,\n            lifeAffiliation: { id: \"bolivar-dossoles-police\", action: \"role\", role: \"警部補\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }",
+              "jobIds": []
+            },
+            {
+              "weight": "0.85",
+              "prose": "逮捕には成功したものの、銃弾を腕に受けて負傷した。犯人の一味から報復の脅迫状が届いた。",
+              "effects": "{ h: -5, p: -2, cash: 300000 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "prose": "マフィアの重火器の一斉射撃を受け、クルーザーの甲板で射殺された。",
+              "effects": "{ h: -100, d: [\"特区マフィアによる射殺\", \"ドッソレス特区の水上制圧戦において、シンジケートの重火器射撃を受け射殺された。\"] }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "マフィアから差し出された札束を受け取り、見逃す",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"self-or-family-care\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "厚い札束をポケットにしまい、捜査記録をもみ消した。ドッソレスではよくある光景だ。",
+              "effects": "{ cash: 1500000, p: -4, cr: -2 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_rim_eng_daily_01",
+      "source": "data/parts/routes/regional-careers/events-frontier.js:625",
+      "priorClassification": "P1",
+      "originalChoiceCount": 1,
+      "choiceCount": 1,
+      "outcomeCount": 1,
+      "eventPrelude": "{\n      id: \"car_rim_eng_daily_01\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 3,\n      w: 0.5,\n      ge: { age: 20 },\n      show: s => s.res?.n === \"レム・ビリトン\" && $terraData.regionalCareerOnDuty(s, \"rim_eng\"),\n      t: \"轟音を響かせて大地を穿つ巨大採掘プラットフォーム。油圧シリンダーの圧力ゲージとドリルの摩耗具合を慎重に測定した。源石鉱脈の爆破掘削を統括し、鉱夫たちの安全と会社の収益を両肩に背負う。\",\n      ",
+      "choices": [
+        {
+          "label": "整備日誌に署名し、安全操業を確認する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "作業員たちとビールを飲み交わし、宿舎へ戻った。",
+              "effects": "{ k: 1, h: 1, cash: 200000 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_rim_eng_choice_gas_leak",
+      "source": "data/parts/routes/regional-careers/events-frontier.js:642",
+      "priorClassification": "P0",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 4,
+      "eventPrelude": "{\n      id: \"car_rim_eng_choice_gas_leak\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 22 },\n      show: s => s.res?.n === \"レム・ビリトン\" && $terraData.regionalCareerOnDuty(s, \"rim_eng\"),\n      t: \"地下数百メートルの最下層坑道で、高濃度の源石ガスが突如噴出した。警報器が狂ったように鳴り響く。遮断弁を手動で締めに行かなければ、坑道全体が誘爆して数百人の鉱夫が生き埋めになる。自ら防護服を着てガスの中へ突入するか。\",\n      ",
+      "choices": [
+        {
+          "label": "レンチを握り締め、噴出する源石ガスの中へ突入する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.45",
+              "prose": "視界ゼロのガス充満地帯を突き進み、高熱のバルブを渾身の力で締め切った。大爆発を食い止め全鉱夫を救った英雄として、鉱山長から最高顧問技師の座を授けられた。",
+              "effects": "{ cr: 5, p: 4, k: 3, cash: 1500000,\n            lifeAffiliation: { id: \"rim-mining-lead-engineer\", action: \"role\", role: \"最高顧問技師\",\n              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }",
+              "jobIds": []
+            },
+            {
+              "weight": "0.85",
+              "prose": "バルブの閉鎖には成功したが、防護服が破損して高濃度の粉塵を吸入。鉱石病を発症してしまった。",
+              "effects": "{ h: -10, p: 2, fl: { dg: 1 } }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "prose": "バルブに手が届く直前、ガスに引火して大爆発が発生。炎に包まれて殉職した。",
+              "effects": "{ h: -100, d: [\"鉱山ガス爆発による殉職\", \"レム・ビリトンの坑道救旧作業中、高濃度ガスの大爆発に巻き込まれて殉職した。\"] }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "退避警報を発令し、安全な区画まで全員を急行避難させる",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"withdrawal\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "坑道の一部は失われたが、作業員の大半を地上へ脱出させた。",
+              "effects": "{ p: 2, k: 2, cash: -300000 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car_min_orator_choice_foreign_plot",
+      "source": "data/parts/routes/regional-careers/events-frontier.js:744",
+      "priorClassification": "P1",
+      "originalChoiceCount": 2,
+      "choiceCount": 2,
+      "outcomeCount": 4,
+      "eventPrelude": "{\n      id: \"car_min_orator_choice_foreign_plot\",\n      conf: \"S\",\n      st: [\"青年\", \"壮年\"],\n      cd: 4,\n      w: 0.45,\n      ge: { age: 23 },\n      show: s => s.res?.n === \"ミノス\" && $terraData.regionalCareerOnDuty(s, \"min_orator\"),\n      t: \"他国の大使館が裏工作を行い、ミノスの鉱山採掘権を不当に買い叩こうとする議案が市民集会に提出された。買収された議員たちが賛成を煽る中、演壇に立ち、大国の陰謀を白日の下に晒す告発演説を行うか。\",\n      ",
+      "choices": [
+        {
+          "label": "演壇に登り、圧倒的な論理と情熱で大国の陰謀を糾弾する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"organization-participation\" } }",
+          "outcomes": [
+            {
+              "weight": "0.5",
+              "prose": "雷鳴のような演説で全市民の心を揺さぶり、売国法案を圧倒的多数で否決させた。市民集会の指導者として満場一致で『最高執政官』に推挙された。",
+              "effects": "{ cr: 5, p: 5, k: 3, cash: 1200000 }",
+              "jobIds": []
+            },
+            {
+              "weight": "0.85",
+              "prose": "法案の否決には成功したものの、集会の帰路で親外国派の暴漢に襲撃され負傷した。",
+              "effects": "{ h: -6, p: -2, cash: 200000 }",
+              "jobIds": []
+            },
+            {
+              "weight": "1",
+              "prose": "演説の直後、外国の特務機関が放った刺客に毒針を刺され、演壇の上で倒れて絶命した。",
+              "effects": "{ h: -100, d: [\"特務刺客による毒殺\", \"ミノス市民集会での演説直後、外国特務の放った毒針により演壇で絶命した。\"] }",
+              "jobIds": []
+            }
+          ]
+        },
+        {
+          "label": "修正案を提出し、穏便な妥協点を模索する",
+          "gate": "{ ethics: { reviewed: true, policyVersion: 87, intent: \"procedure\" } }",
+          "outcomes": [
+            {
+              "weight": "1",
+              "prose": "現実的な修正案で双方を納得させ、ポリスの分裂を防いだ。",
+              "effects": "{ k: 2, p: 2 }",
+              "jobIds": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "id": "vic_clerk_contract_review"
+    },
+    {
+      "id": "col_tech_safety_review"
+    },
+    {
+      "id": "col_tech_role_review"
+    },
+    {
+      "id": "col_tech_supplier_exception"
+    },
+    {
+      "id": "vic_clerk_after_departure"
+    },
+    {
+      "id": "col_tech_after_departure"
+    },
+    {
+      "id": "sr_rhodes_research_daily"
+    },
+    {
+      "id": "sr_rhodes_former_worker"
+    },
+    {
+      "id": "sr_reunion_neighbour_contact"
+    },
+    {
+      "id": "sr_reunion_ordinary_followup"
+    },
+    {
+      "id": "sr_chernobog_distant_news"
+    },
+    {
+      "id": "sr_rhodes_ship_routine"
+    },
+    {
+      "id": "life_reunion_chernobog_base_assignment"
+    },
+    {
+      "id": "car_vic_infantry_choice_skirmish"
+    },
+    {
+      "id": "car_lei_golden_choice_witch_remnant"
+    },
+    {
+      "id": "car_lat_executor_daily_01"
+    }
+  ]
+}

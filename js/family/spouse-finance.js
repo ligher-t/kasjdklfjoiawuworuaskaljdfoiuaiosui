@@ -236,6 +236,8 @@ function recordSpouseAnnualFinance(
   if (!spouse || spouse.d) return null;
   repairSpouseFinance(s);
   const finance = spouse.personalFinance;
+  const previous = finance.history.find(row => row.year === s.year);
+  if (previous) return previous;
   if (!finance.history.length && finance.startedYear > s.year) finance.startedYear = s.year;
   const interest =
       finance.status === "modeled_balance"
@@ -287,6 +289,12 @@ function recordSpouseAnnualFinance(
     row.condition = "unknown";
   }
   finance.history.push(row);
+  if (finance.status === "modeled_balance") {
+    recordDependentEmploymentPayment(s, spouse, {amount: income, recipientId: spouse.id,
+      year: s.year, source: "spouse-annual-finance"});
+    recordDependentEmploymentPayment(s, spouse, {amount: contribution, recipientId: "protagonist-household",
+      year: s.year, kind: "household-contribution", source: "spouse-annual-finance"});
+  }
   finance.history = finance.history.slice(-20);
   finance.updatedYear = s.year;
   return row;
@@ -294,6 +302,8 @@ function recordSpouseAnnualFinance(
 function recordSpouseSeparateSupportTransfer(s, amount) {
   const spouse = s.sp;
   if (!spouse || !Number.isFinite(amount) || amount <= 0) return null;
+  // The annual payer record has one debit per year; repeat settlement must not duplicate a receipt.
+  if (spouse.separateSupportPaidYear === s.year) return null;
   const transactionId = `${spouse.id}::support::${s.year}`,
     region = spouseResidenceRegion(s).n,
     plan = spouse.separateSupportPlan,
@@ -312,12 +322,11 @@ function recordSpouseSeparateSupportTransfer(s, amount) {
   spouse.pendingSupportTransactionId = transactionId;
   return transactionId;
 }
-function spouseSeparateSupportCost(s) {
+function spouseSeparateSupportCost(s, plan = s.sp?.separateSupportPlan) {
   const spouse = s.sp;
   if (!spouse || spouse.d || spouseLivesWithProtagonist(s)) return 0;
   const region = spouseResidenceRegion(s),
-    price = s.priceIndex || 1,
-    plan = spouse.separateSupportPlan;
+    price = s.priceIndex || 1;
   if (plan === "living") return P("economy.spouseSeparateSupportAnnualCost") * region.pm * price;
   if (plan === "medical" && spouse.inf && spouse.tx) {
     const pressure =

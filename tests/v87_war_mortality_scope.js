@@ -102,9 +102,10 @@ const kazdelDeath = dieAndRead({
   flag: 'kazdel_civil_war', cause: '戦争に伴う民間人死亡'
 });
 assert.equal(kazdelDeath.detail.month, kazdelDeath.month);
-assert.equal(kazdelDeath.detail.monthBasis, 'annual-random-placeholder');
+assert.equal(kazdelDeath.detail.monthBasis, 'annual-month-unknown');
+assert.equal(kazdelDeath.month, 0, 'an annual death without a dated scene has no invented month');
 assert.equal(kazdelDeath.detail.note,'死亡月の詳細は未記録。','an assigned annual month is not presented as a precise date');
-assert(kazdelDeath.detail.modelNote.includes('実際の死亡月を特定しない'));
+assert(kazdelDeath.detail.modelNote.includes('死亡月は特定していない'));
 assert.deepEqual(kazdelDeath.detail.warModelContext.pressureIds, ['kazdel_civil_war']);
 assert.equal(kazdelDeath.detail.warModelContext.city, null, 'unknown city stays unknown in the recorded cause context');
 assert.deepEqual(kazdelDeath.errors, []);

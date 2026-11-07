@@ -1,0 +1,42 @@
+'use strict';
+const assert=require('node:assert/strict');
+const path=require('node:path');
+const vm=require('node:vm');
+const {context,setup}=require('./support/annual-cases.cjs');
+const {ctx}=context(path.resolve(__dirname,'..'));
+const read=body=>JSON.parse(vm.runInContext('JSON.stringify((()=>{'+body+'})())',ctx));
+setup(ctx,{id:'historical-catalog-metadata',seed:196510,region:'ヴィクトリア',age:30});
+const result=read(`
+ const clean=validate();
+ const historical=EV.filter(e=>e.timelineFlag);
+ const flagNames=['columbia_pioneer','silence_survivor','omerta_sworn','babel_affiliate','chernobog_refugee','volcano_evacuee'];
+ const flags=flagNames.map(k=>!!FLAG_REGISTRY[k]);
+ const daily=['timeline_daily_londinium_siege','timeline_daily_londinium_martial',
+ 'timeline_daily_chernobog_alarm','timeline_daily_bolivar_barricade','timeline_daily_great_silence_sea'];
+ const stages=daily.map(id=>EV.find(e=>e.id===id)?.st);
+ const city=SIM_TABLES.namedCities['カジミエーシュ']?.includes('カヴァレリエルキ')||false;
+ const job=J.some(j=>j.n==='イベリア裁判所・見習い審問官');
+ const actualType=EVENT_FIELD_META.siracusaFamilyAction.valueType;
+ const registeredType=EVENT_EFFECT_TYPES.textOrObject?.includes('siracusaFamilyAction')||false;
+ const target=historical[0],original=target.timelineFlag;
+ target.timelineFlag='unregistered-chronicle-probe';
+ const invalidTimeline=validate().filter(msg=>msg.includes(target.id)&&msg.includes('timelineFlag'));
+ target.timelineFlag=original;
+ const sir=EV.find(e=>e.id==='sir_family_obligation'),old=sir.c[1].o[0][2].siracusaFamilyAction;
+ sir.c[1].o[0][2].siracusaFamilyAction={action:'distant',onlyIfMember:'wrong'};
+ const invalidFamily=validate().filter(msg=>msg.includes('sir_family_obligation')&&msg.includes('siracusaFamilyAction'));
+ sir.c[1].o[0][2].siracusaFamilyAction=old;
+ return {clean,flags,count:historical.length,unmapped:historical.filter(e=>!HIST.some(h=>h.flag===e.timelineFlag)).map(e=>e.id),
+  stages,city,job,actualType,registeredType,invalidTimeline,invalidFamily};
+`);
+assert.deepEqual(result.clean,[],'all event source, effect and tag references resolve');
+assert(result.count>=30,'historical event metadata is registered');
+assert.deepEqual(result.unmapped,[],'historical events target a real HIST flag');
+assert(result.flags.every(Boolean),'all six historic player outcomes have registry entries');
+assert(result.stages.every(s=>s?.includes('少年')&&s?.includes('老年')),'war dailies are age scoped');
+assert(result.city&&result.job,'city and job tags match runtime vocabularies');
+assert.equal(result.actualType,'textOrObject','effect type is not silently overwritten during data initialization');
+assert.equal(result.registeredType,true,'schema source of truth accepts conditional family actions');
+assert(result.invalidTimeline.length>0,'an invalid timelineFlag must fail diagnostics');
+assert(result.invalidFamily.length>0,'malformed conditional family action must fail diagnostics');
+console.log('PASS: historical catalog tags, timeline, flags and Siracusa conditional effect');

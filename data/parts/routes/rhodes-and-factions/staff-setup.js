@@ -59,6 +59,7 @@ window.TERRA_DATA_BUILD.fragment(
           id: "rhodes-employment",
           title: "ロドスへの雇用照会",
           action: "decline",
+          onlyIfContacted: true,
           note: "選考の返答を受け、照会期間が終了"
         },
         {

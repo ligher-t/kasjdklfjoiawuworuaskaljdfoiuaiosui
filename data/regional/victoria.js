@@ -15,12 +15,12 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
   // [汎用・生活・風土 1-38]
   const commonTexts = [
     // 良 (Good: p +2 or cash/h)
-    { t: "午後の茶の時間に、素朴な焼き菓子に濃厚な生クリームと果実ジャムを添え、柑橘の香る温かい銘茶を味わった。贅沢な甘みに心が満たされた。", fx: { p: 2 } },
+    { crisisPolicy: "nonessential-leisure", t: "午後の茶の時間に、素朴な焼き菓子に濃厚な生クリームと果実ジャムを添え、柑橘の香る温かい銘茶を味わった。贅沢な甘みに心が満たされた。", fx: { p: 2 } },
     { t: "近所の大衆食堂で、揚げたての白身魚と香ばしい揚げ芋を頬張りながら麦茶を啜った。カリッとした衣の旨味に、一日の疲れが吹き飛んだ。", fx: { p: 2 } },
-    { t: "公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。", fx: { p: 2 } },
+    { crisisPolicy: "nonessential-leisure", t: "公園の手入れされたバラ園を散歩した。色とりどりの大輪のバラと洗練された噴水の水音に、都会の喧騒を忘れて優雅なひとときを過ごした。", fx: { p: 2 } },
     { t: "街角の書店で、旧時代のヴィクトリアを舞台にした重厚な推理小説を手に入れた。格調高い装幀の本を抱え、暖炉の前で読書に耽る楽しみができた。", fx: { k: 1, p: 2 } },
-    { t: "市場の露店で、上等なウールで編まれたチェック柄のマフラーを安く買い求めた。首元を温かい羊毛で包み、冬の風の中を暖かく歩いた。", fx: { p: 1 } },
-    { t: "運河沿いの遊歩道を歩き、夕暮れに染まる巨大な跳ね橋のシルエットを眺めた。蒸気と鋼鉄の文明を象徴する壮大な景観に息を呑んだ。", fx: { p: 2 } },
+    { months: [12, 1, 2], t: "市場の露店で、上等なウールで編まれたチェック柄のマフラーを安く買い求めた。首元を温かい羊毛で包み、冬の風の中を暖かく歩いた。", fx: { p: 1 } },
+    { crisisPolicy: "nonessential-leisure", t: "運河沿いの遊歩道を歩き、夕暮れに染まる巨大な跳ね橋のシルエットを眺めた。蒸気と鋼鉄の文明を象徴する壮大な景観に息を呑んだ。", fx: { p: 2 } },
     { t: "近所の仕立て屋で、綻びていた上着の裏地を美しく修繕してもらった。丁寧な職人技により、新品のように生まれ変わった服に誇らしさを感じた。", fx: { p: 2 } },
     { t: "ベーカリーの軒先から漂う、焼き立てのトーストとミートパイの香ばしい匂いに誘われて朝食を買い込んだ。サクサクのパイ生地が口の中で弾けた。", fx: { p: 1 } },
     { t: "路地裏の広場で、旅の音楽家が奏でるバイオリンの哀愁を帯びたターラーの古い民謡に聞き入った。通りがかりの人々とともに温かい拍手を送った。", fx: { p: 2 } },
@@ -66,6 +66,8 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
       conf: "S",
       st: ["児童", "少年", "青年", "壮年", "老年"],
       need: ["国:ヴィクトリア"],
+      ...(item.months ? { months: item.months } : {}),
+      ...(item.crisisPolicy ? { crisisPolicy: item.crisisPolicy } : {}),
       t: item.t,
       fx: item.fx
     });
@@ -124,7 +126,7 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
     fx: { p: -3 }
   });
   victoriaDaily.push({
-    id: "daily_victoria_48", conf: "S", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
+    id: "daily_victoria_48", conf: "S", months: [9, 10, 11], st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
     show: {"need":["固定集落"],"any":["住環境:小規模な定住地","住環境:辺境・移動の多い居住地"]},
     t: "果樹園でリンゴの収穫に励み、自家製サイダー（リンゴ酒）の樽詰めを手伝った。甘酸っぱい果実の香りに包まれて豊かな秋を祝った。",
     fx: { p: 2, cash: 6000 }
@@ -132,25 +134,25 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
 
   // 3. 上流階級・サロン・社交 (4件)
   victoriaDaily.push({
-    id: "daily_victoria_49", conf: "S", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
+    id: "daily_victoria_49", conf: "S", crisisPolicy: "nonessential-leisure", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
     show: {"ge":{"cash":500000}},
     t: "名門サロンの夜会に招かれ、銀器の触れ合う音の中で貴族や実業家たちと優雅に歓談した。国際情勢の裏話に耳を傾け、人脈を広げた。",
     fx: { p: 4, rl: 2 }
   });
   victoriaDaily.push({
-    id: "daily_victoria_50", conf: "S", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
+    id: "daily_victoria_50", conf: "S", crisisPolicy: "nonessential-leisure", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
     show: {"ge":{"cash":500000}},
     t: "都内の大劇場の前を通りかかると、着飾った貴族や紳士淑女たちが馬車から降り立つ華やかな光景が広がっていた。漏れ聞こえる壮麗な管弦楽の調べに、上流階級の優雅な夕べを感じた。",
     fx: { p: 2 }
   });
   victoriaDaily.push({
-    id: "daily_victoria_51", conf: "S", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
+    id: "daily_victoria_51", conf: "S", crisisPolicy: "nonessential-leisure", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
     show: {"ge":{"cash":500000}},
     t: "伝統ある仕立て屋が集まる街区を歩いた。ショーウィンドウに整然と並ぶ最高級のウールスーツやコートの完璧な裁断に見惚れ、ヴィクトリアの職人文化の極致を味わった。",
     fx: { p: 2 }
   });
   victoriaDaily.push({
-    id: "daily_victoria_52", conf: "S", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
+    id: "daily_victoria_52", conf: "S", crisisPolicy: "nonessential-leisure", st: ["青年", "壮年"], need: ["国:ヴィクトリア"],
     show: {"ge":{"cash":500000}},
     t: "格式ある会員制紳士クラブの図書室で、革張りのアームチェアに身を沈めて高級シガーを燻らせた。完全な静寂と特権階級の安らぎを味わった。",
     fx: { p: 3 }
@@ -193,8 +195,7 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
   });
   victoriaDaily.push({
     id: "daily_victoria_59", conf: "S", st: ["少年", "青年"], need: ["国:ヴィクトリア"],
-    show: "就学中",
-    t: "放課後、運河沿いの土手を歩いていると、学生たちがボートを漕ぎ進める練習風景に出会った。威勢のいい掛け声に合わせてオールが一斉に水を掻き、夕暮れの水面を滑っていく姿に清々しさを感じた。",
+    t: "運河沿いの土手を歩いていると、学生たちがボートを漕ぎ進める練習風景に出会った。掛け声に合わせてオールが一斉に水を掻き、夕暮れの水面を滑っていく姿に清々しさを感じた。",
     fx: { p: 2 }
   });
   victoriaDaily.push({
@@ -232,17 +233,18 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:ヴィクトリア", "就労中"],
+      show: s => !!employmentEventWorksite(s, "factory-dispute"),
       w: 0.85,
       cd: 8,
       t: "勤め先の現場で、度重なる賃金カットと安全対策の軽視に反発し、労働組合が一斉ストライキに踏み切った。正門前でピケを張る仲間から合流を呼びかけられている。",
       c: [
         K("仲間とともにストライキの最前線に立ち、正当な権利を要求する", { intent: "oppose-exclusion", en: { ge: { cr: 40 } }, why: "雇用主からの報復を恐れる気持ちが勝る。" },
-          [0.75, "粘り強い座り込みの末に経営陣を交渉の席に着かせ、賃金改善と安全装備の支給を勝ち取った。組合の英雄となった。", { cash: 20000, cr: 6, p: 5, rl: 4 }],
-          [1, "警察の騎馬隊が突入して強制排除され、警棒で殴られて負傷。職場も解雇されてしまった。", { h: -15, p: -6, job: 0 }]),
+          [0.75, "粘り強い座り込みの末に経営陣を交渉の席に着かせた。職場の給金を引き上げる合意書が読み上げられ、持ち場には新しい安全装備が届いた。帰り道、仲間とようやく肩の力を抜いた。", { employmentAction: { action: "site-incident", kind: "factory-dispute", incident: "agreement", payFactor: 1.05, safetyImproved: true }, cash: 20000, cr: 6, p: 5, rl: 4 }],
+          [1, "警察の騎馬隊が突入して強制排除され、警棒で殴られて負傷。職場も解雇されてしまった。", { employmentAction: { action: "site-incident", kind: "factory-dispute", incident: "dismissal", terminate: true }, h: -15, p: -6 }]),
         K("ストライキには参加せず、裏口から現場へ入り通常勤務を続ける", { intent: "procedure" },
-          [1, "経営陣から忠誠を評価されて特別手当を受け取ったが、同僚たちからは「裏切り者」と冷たい視線を浴びた。", { cash: 30000, p: -3, rl: -3 }]),
+          [1, "経営陣から忠誠を評価されて特別手当を受け取ったが、同僚たちからは「裏切り者」と冷たい視線を浴びた。", { employmentAction: { action: "site-incident", kind: "factory-dispute", incident: "worked-during-strike" }, cash: 30000, p: -3, rl: -3 }]),
         K("争いが収まるまで病気と偽って自宅で待機する", { intent: "withdrawal" },
-          [1, "無用な衝突を避け、家で事態の推移を見守った。やがて妥協案が成立して職場へ戻った。", { p: 1 }])
+          [1, "無用な衝突を避け、家で事態の推移を見守った。やがて妥協案が成立して職場へ戻った。", { employmentAction: { action: "site-incident", kind: "factory-dispute", incident: "waited-for-settlement" }, p: 1 }])
       ]
     },
     // 2. 霧の夜の街の迷子とスリ集団
@@ -256,7 +258,7 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
       cd: 7,
       t: "濃霧が立ち込める夜の裏通りで、裕福そうな老婦人が方向を見失って立ち往生していた。路地の影から、浮浪児のスリ集団がじわじわと包囲を狭めている。",
       c: [
-        K("大声でスリたちを一喝して追い払い、老婦人を大通りまで護衛する", { intent: "voluntary-aid", en: { ge: { cr: 35 } }, why: "不良少年たちの刃物が怖い。" },
+        K("大声でスリたちを一喝して追い払い、老婦人を大通りまで護衛する", { intent: "voluntary-aid", en: { ge: { h: 30, cr: 35 } }, why: "刃物を持つ相手と距離を取りながら護衛する体力か度胸が足りない。" },
           [1, "毅然とした態度で悪童たちを退散させ、老婦人を安全な辻馬車まで送り届けた。貴族の婦人から感謝され、分厚い謝礼の封筒を受け取った。", { cash: 45000, cr: 4, p: 5 }]),
         K("警察官（ボビー）の笛を吹き鳴らして周囲に急報する", { intent: "procedure" },
           [1, "警官が駆けつけ、スリたちは散り散りに逃げ去った。適切な判断を警官と婦人から感謝された。", { p: 3, cr: 2 }]),
@@ -368,6 +370,7 @@ window.TERRA_DATA_BUILD.run("regional/victoria", function ($terraData, $define, 
     {
       id: "choice_victoria_08",
       conf: "S",
+      months: [12],
       references: ["SRC_TERRA_19REGIONS_LIFE_20261030"],
       st: ["青年", "壮年"],
       need: ["国:ヴィクトリア"],

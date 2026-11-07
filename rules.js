@@ -6,7 +6,10 @@
   }
   if (window.TERRA_RULES) throw new Error("Rule API already initialized");
   const contract = {
-    "mortality": { "urgentEpisodes": "urgentMortalityEpisodes" },
+    "mortality": {
+      "urgentEpisodes": "urgentMortalityEpisodes",
+      "healthCriticalNeedsReview": "healthCriticalNeedsReview"
+    },
     "economy": { "availableFunds": "moveFunds", "annualReserve": "annualCashReserve" },
     "family": {
       "adultChildEmergencyAidAffordable": "adultChildEmergencyAidAffordable",
@@ -32,6 +35,7 @@
       "spouseResidenceRegion": "spouseResidenceRegion",
       "spouseSeparateContactAnnualCost": "spouseSeparateContactAnnualCost",
       "spouseSeparateSupportAffordable": "spouseSeparateSupportAffordable",
+      "spouseSeparateSupportCost": "spouseSeparateSupportCost",
       "spouseVisitAffordable": "spouseVisitAffordable",
       "spouseVisitRoute": "spouseVisitRoute"
     },

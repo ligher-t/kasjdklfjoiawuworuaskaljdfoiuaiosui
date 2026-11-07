@@ -432,7 +432,7 @@ window.TERRA_DATA_BUILD.run("extensions/family-and-community", function ($terraD
     c: [
       $terraData.K(
         "返済の足しに、手元から{spouseFinanceAidAmount}を出す",
-        { en: { affordableCash: 1e5 }, why: "自分たちの生活費を残して{spouseFinanceAidAmount}を出す余裕がない" },
+        { en: { affordableCashAfterReserve: 1e5 }, why: "自分たちの生活費を残して{spouseFinanceAidAmount}を出す余裕がない" },
         [
           1,
           "蓄えから{spouseFinanceAidAmount}を渡し、急ぎの返済に充てて残りは手元に置いておくよう伝えた。張り詰めていた相手の肩から、ようやく少し力が抜けた。",
@@ -645,9 +645,7 @@ window.TERRA_DATA_BUILD.run("extensions/family-and-community", function ($terraD
           en: s =>
             $rules.family.spouseSeparateSupportAffordable(
               s,
-              $rules.parameters.value("economy.spouseSeparateSupportAnnualCost") *
-                $rules.family.spouseResidenceRegion(s).pm *
-                (s.priceIndex || 1) +
+              $rules.family.spouseSeparateSupportCost(s, "living") +
                 $rules.family.spouseSeparateContactAnnualCost(s, "letters")
             ),
           why: "仕送りと通信費を、自分の生活費を残して捻出できない"
@@ -665,13 +663,7 @@ window.TERRA_DATA_BUILD.run("extensions/family-and-community", function ($terraD
           en: s =>
             $rules.family.spouseSeparateSupportAffordable(
               s,
-              $rules.parameters.value("economy.spouseInfectionCareAnnualCost") *
-                $rules.family.spouseResidenceRegion(s).pm *
-                (1 +
-                  ($terraData.SIM_TABLES.oripathyPressure?.[$rules.family.spouseResidenceRegion(s).n]
-                    ?.medical ?? 0.45) *
-                    0.3) *
-                (s.priceIndex || 1) +
+              $rules.family.spouseSeparateSupportCost(s, "medical") +
                 $rules.family.spouseSeparateContactAnnualCost(s, "letters")
             ),
           why: "療養費の仕送りと通信費を、自分の生活費を残して捻出できない"
@@ -1093,7 +1085,7 @@ window.TERRA_DATA_BUILD.run("extensions/family-and-community", function ($terraD
     ge: { year: 1105, age: 24 },
     once: true,
     w: 0.2,
-    t: "チェルノボーグから散り散りになった昔の同級生から、短い葉書が届いた。あの日から細々と便りを続けてきたが、お互い住む街も仕事もすっかり変わった。これからも年に一度の便りを続けるか、連絡網の世話役を誰かに引き継ぐか、ふと考えた。",
+    t: "チェルノボーグから離れた昔の同級生の宛先を、古い住所録の中に見つけた。あの日から便りを続けようとしてきたが、相手が今も同じ場所に暮らしているかは分からない。これからも年に一度の便りを続けるか、連絡網の世話役を誰かに引き継ぐか、考えた。",
     c: [
       $terraData.K("年に一度だけ近況を送り、返事は相手の気ままに任せる", {}, [
         1,

@@ -59,7 +59,6 @@ function facilitySpecsFor(s) {
     { kind: "clinic", extra: "" },
     { kind: "school", extra: "" }
   ];
-  if (s.job > 0 && !s.fl?.retired && !restricted(s)) base.push({ kind: "workplace", extra: String(s.job) });
   return base;
 }
 const facilityId = (regionKey, kind, extra = "") => `${regionKey}#${kind}${extra ? "#" + extra : ""}`;
@@ -146,7 +145,6 @@ function facilityAdvance(s, area, year) {
     }
     f.status = status;
     f.lastYear = year;
-    if (f.kind === "workplace") advanceWorkplaceLedger(s, f, year);
   }
 }
 

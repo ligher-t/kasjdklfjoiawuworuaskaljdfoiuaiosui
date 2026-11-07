@@ -104,7 +104,7 @@ const esc = x =>
     /[&<>"']/g,
     c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]
   );
-const SAVE_VERSION = 87;
+const SAVE_VERSION = 88;
 const TRACE_VERSION = 69;
 const FLOW_HISTORY_LIMIT = 600;
 let CAPTURE_TRACE = false;

@@ -22,9 +22,16 @@ for(const [id,intents] of Object.entries(expected)){
 }
 const feedback=event('people_clinic_skill_continuity'),feedbackAction=feedback.c[0].o[0][2].facilityPersonAction;
 assert.deepEqual({...feedbackAction},{kind:'clinic',action:'feedback'});
-assert(feedback.c[0].o[0][1].includes('個人の意見が施設の手順を変えたことにはならない'));
-for(const id of ['people_clinic_life_conversation','people_school_life_conversation','people_work_life_conversation'])assert.equal(event(id).c[0].o[0][2].facilityPersonAction.action,'talk');
-for(const id of ['people_clinic_small_help','people_school_small_help','people_work_small_help','people_work_care_schedule','people_school_housing_concern'])assert.equal(event(id).c[0].o[0][2].facilityPersonAction.action,'help');
+const feedbackText=feedback.c[0].o[0][1];
+assert(feedbackText.includes('手元の案で書き直した'),
+ 'the result describes the attendant revising their draft, not an institution-wide change');
+assert(!/施設の手順を変えた|受付の手順を変えた/.test(feedbackText),
+ 'a personal suggestion must not promise an institution-wide procedure change');
+for(const id of ['people_clinic_life_conversation','people_work_life_conversation'])assert.equal(event(id).c[0].o[0][2].facilityPersonAction.action,'talk');
+assert.equal(event('people_school_life_conversation').c[0].o[0][2].educationAction,'legacy:teacher-talk');
+for(const id of ['people_clinic_small_help','people_work_small_help','people_work_care_schedule'])assert.equal(event(id).c[0].o[0][2].facilityPersonAction.action,'help');
+assert.equal(event('people_school_small_help').c[0].o[0][2].educationAction,'legacy:teacher-help');
+assert.equal(event('people_school_housing_concern').c[0].o[0][2].educationAction,'legacy:teacher-concern');
 const runtime=vm.runInNewContext(String.raw`(()=>{
  HL=1;AU='r';born({seed:862004,by:1077,region:'クルビア'});S.job=2;S.age=30;S.year=1107;
  const facility=activeFacility(S,'clinic');if(!facility)throw Error('clinic facility missing');
@@ -41,4 +48,21 @@ assert.equal(runtime.feedbackStanding,runtime.before,'giving service feedback mu
 assert.equal(runtime.feedbackAction,'service-feedback');assert.equal(runtime.feedbackDelta,0);assert.equal(runtime.feedbackContact,'feedback');
 assert.equal(runtime.followupHelpStanding,runtime.before+4,'actual shared help keeps its existing relationship effect');
 assert.equal(runtime.followupHelpAction,'shared-work');assert.equal(runtime.facilityLog,'feedback');assert.deepEqual(Array.from(runtime.auditErrors),[]);
+const workplaceAudit=vm.runInNewContext(String.raw`(()=>{
+ HL=1;AU='r';born({seed:862005,by:1077,region:'クルビア'});S.job=2;S.age=30;S.year=1107;
+ const areaId=occupationWorkAreaKey(S),siteId='audit-fixture-workplace-site',work=S.world.occupationWorld||
+   (S.world.occupationWorld={version:1,areas:{},employers:{},sites:{},positions:{},openings:{},transitions:[]});
+ work.sites[siteId]={siteId,areaId,region:S.res.n,status:'open',createdYear:S.year,lastYear:S.year,history:[]};
+ const episodeId='audit-fixture-work-episode';
+ S.employmentState={version:1,cases:[],episodes:[{episodeId,personId:'player',kind:'wage-employment',
+   jobId:2,siteId,status:'active',startYear:S.year,startMonth:1,endYear:null,endMonth:null,
+   annualBase:120000,workFraction:1,occupiesPosition:false,history:[]}],activeEpisodeId:episodeId,knowledge:[]};
+ const facility=activeFacility(S,'workplace');if(facility?.id!==siteId)throw Error('workplace fixture did not resolve');
+ applyFacilityPersonAction(S,{kind:'workplace',action:'meet'});
+ const person=facilityPersonFor(S,'workplace');
+ return {facilityId:person?.facilityId,auditErrors:auditLifeState(S)};
+})()`,context,{timeout:30000});
+assert.equal(workplaceAudit.facilityId,'audit-fixture-workplace-site');
+assert.deepEqual(Array.from(workplaceAudit.auditErrors),[],
+ 'a contacted workplace person may reference a registered occupation-world site');
 console.log(JSON.stringify({passed:true,reviewedEvents:Object.keys(expected).length,reviewedChoices:Object.values(expected).flat().length,serviceFeedbackSeparateFromSharedWork:true,sharedHelpEffectPreserved:true,personSpecificHistoryRecorded:true,auditErrors:runtime.auditErrors},null,2));

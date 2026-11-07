@@ -208,6 +208,8 @@ function recordCloseKnowledgeAction(s, { kind, personId, action, recipientRespon
   link.history = link.history.slice(-16);
   store.history.push(entry);
   store.history = store.history.slice(-80);
+  if(action==='help-execution'&&outcome==='fulfilled')
+    disclosureImpactRecovery(s,'relationship',person.id+'|appointment|'+pendingHelp.agreedYear,{recipientId:person.id});
   return entry;
 }
 function closeKnowledgeSummary(s) {

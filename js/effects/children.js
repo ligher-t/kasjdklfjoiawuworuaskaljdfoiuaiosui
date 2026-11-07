@@ -80,6 +80,7 @@ function applyChildEffects(e, s, addMoney) {
         child.remittanceEndedYear = s.year;
       }
       if (e.childPlan === "study") {
+        closeDependentEmployment(s, child, "education-or-supported");
         child.householdStatus = "study";
         child.studyEndYear = s.year + rnd(2, 4);
         child.futurePlanReviewYear = child.studyEndYear;
@@ -92,6 +93,8 @@ function applyChildEffects(e, s, addMoney) {
             w: p.w * (p.jobId <= 2 ? [3, 2, 1, 0.5, 0.2][wealthIndex] : [0.2, 0.5, 1, 2, 4][wealthIndex])
           }));
         child.jobId = wp(pool).jobId;
+        recordDependentEmployment(s, child, {jobId:child.jobId,region:child.region||s.res.n,
+          source:TRACE_RESOLUTION?.id||"child-work-choice",kind:"background-livelihood"});
       } else if (e.childPlan === "independent") {
         child.householdStatus = "independent";
         child.independentSinceYear = s.year;
@@ -161,10 +164,10 @@ function applyChildEffects(e, s, addMoney) {
         child.visitCount = (child.visitCount || 0) + 1;
       }
       if (e.childContact === "returnOffer" || e.childReturnRoomSetup) {
-        const setupCost = adultChildReturnRoomSetupCost(s);
-        if (!adultChildReturnRoomSetupAffordable(s, child))
-          throw new Error("成人子を迎える準備費と家計の予備を残せません");
         if (!Number.isFinite(child.returnRoomSetupYear)) {
+          if (!adultChildReturnRoomSetupAffordable(s, child))
+            throw new Error("成人子を迎える準備費と家計の予備を残せません");
+          const setupCost = adultChildReturnRoomSetupCost(s);
           const setupWallet = inSharedHousehold(s)
             ? s.house || (s.house = { cash: 0, debt: 0, inc: 0, exp: 0 })
             : s;

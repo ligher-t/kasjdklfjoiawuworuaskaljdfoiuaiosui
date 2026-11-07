@@ -2,6 +2,9 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),context=require('./support/annual-cases.cjs').context(root).ctx;
 context.rd=()=>{};
+const {installEmploymentAppointmentFixture}=require('./support/employment-appointment-fixture.cjs');
+const {installGeneralEmploymentFixture}=require('./support/general-employment-fixture.cjs');
+installEmploymentAppointmentFixture(context);installGeneralEmploymentFixture(context);
 const event=id=>context.window.GAME_DATA.EV.find(row=>row.id===id);
 const expected={kaz_merc:['procedure','withdrawal'],sr_kazimierz_arena_backstage:['procedure','procedure','withdrawal'],sr_kazimierz_arena_shift:['procedure','self-or-family-care','withdrawal'],life_rhodes_research_pause_review:['organization-participation','defer','withdrawal']};
 for(const [id,intents] of Object.entries(expected)){
@@ -20,11 +23,30 @@ for(const choice of research.c){
  const affiliation=choice.o[0][2].lifeAffiliation,goal=choice.o[0][2].lifeGoal;
  const result=vm.runInContext(String.raw`(()=>{born({seed:870051,by:1070,region:'クルビア'});S.age=36;S.year=1107;const title='ロドスの鉱石病経過研究';applyLifeAffiliation({id:'rhodes-research',title,action:'join'});applyLifeAffiliation({id:'rhodes-research',action:'suspend',note:'生活事情'});applyLifeGoal({id:'oripathy-research',title,action:'start'});applyLifeAffiliation(${JSON.stringify(affiliation)});applyLifeGoal(${JSON.stringify(goal)});const a=S.lifeRecord.affiliations.find(x=>x.id==='rhodes-research'),g=S.lifeRecord.goals.find(x=>x.id==='oripathy-research');return {affiliation:a.status,episode:a.episodes.at(-1),goal:g.status,audit:auditLifeState(S)}})()`,context,{timeout:30000});
  const expectedAffiliation=affiliation.action==='return'?'active':affiliation.action==='leave'?'left':'suspended';
- const expectedGoal=goal.action==='continue'?'active':goal.action==='pause'?'paused':'compromised';
+ const expectedGoal=goal.action==='continue'?'active':goal.action==='pause'?'paused':goal.action==='abandon'?'abandoned':'compromised';
  assert.equal(result.affiliation,expectedAffiliation);assert.equal(result.goal,expectedGoal);assert.deepEqual(Array.from(result.audit),[]);states.push({affiliation:result.affiliation,goal:result.goal});
 }
 const routeState=(seed,region,job,age=24)=>vm.runInContext(`(()=>{born({seed:${seed},by:1076,region:${JSON.stringify(region)}});S.age=${age};S.year=1100;S.mo=6;S.res=REG.find(row=>row.n===${JSON.stringify(region)});S.job=${job};S.sn.car=1100;return S})()`,context,{timeout:30000});
+const provisionAppointment=(state,eventId,jobId,affiliationId)=>{context.__state=state;vm.runInContext(`S=__state;prepareEmploymentAppointmentFixture(${JSON.stringify(eventId)},${jobId},${JSON.stringify(affiliationId)})`,context,{timeout:30000});};
 const applyEffect=(state,effect)=>{context.__state=state;context.__effect=effect;vm.runInContext('S=__state;ap(__effect);',context,{timeout:30000});};
+const provisionOpening=(state,jobId,suffix)=>{
+ context.__state=state;context.__jobId=jobId;context.__suffix=suffix;
+ return JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+  const area=ensureOccupationWorkArea(__state),work=__state.world.occupationWorld,
+   employerId='career-route-employer:'+__suffix,siteId='career-route-site:'+__suffix,
+   positionId='career-route-position:'+__suffix,openingId='career-route-opening:'+__suffix,
+   sectorByJob={2:'MFG',3:'MIN',7:'SCI',14:'MIL',16:'LOG',21:'CIV',27:'SCI',32:'REC'},
+   sector=sectorByJob[__jobId]||'MFG';
+  area.sectorPresence||={};area.sectorPresence[sector]=true;
+  work.employers[employerId]={employerId,organizationKey:null};
+  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',sector,positionIds:[positionId]};
+  work.positions[positionId]={positionId,siteId,jobId:__jobId,capacity:1,aggregateOccupiedSlots:0,
+   identifiedOccupiedSlots:0,reservedSlots:0,vacancyCount:1,openingIds:[openingId]};
+  work.openings[openingId]={openingId,siteId,positionId,employerId,areaId:area.areaId,
+   kind:'general-public',status:'open',slots:1,validFromYear:__state.year};
+  area.siteIds.push(siteId);return {openingId,siteId};
+ })())`,context,{timeout:30000}));
+};
 const restoreState=state=>{context.__state=state;return vm.runInContext('(()=>{S=__state;const saved=normalizeResumeImport(makeResumeSnapshot());replaceCurrentLife(saved.S);replaceWorldKnowledge(saved.W);S.known=W;restoreLifeRandom(S);return S})()',context);};
 const eligible=(row,state)=>{context.__event=row;context.__state=state;return vm.runInContext('elig(__event,__state,tags(__state))',context,{timeout:30000});};
 const affiliationEffect=(eventId,affiliationId,action='join')=>{
@@ -35,9 +57,29 @@ const affiliationEffect=(eventId,affiliationId,action='join')=>{
  }
  assert.fail(`${eventId} has no ${action} outcome for ${affiliationId}`);
 };
+const employmentStartSource=(affiliationId,jobId)=>{
+ let fallback=null;
+ for(const row of context.window.GAME_DATA.EV)for(let choiceIndex=0;choiceIndex<(row.c||[]).length;choiceIndex++)
+  for(let outcomeIndex=0;outcomeIndex<(row.c[choiceIndex].o||[]).length;outcomeIndex++){
+   const effect=row.c[choiceIndex].o[outcomeIndex][2],memberships=[effect?.lifeAffiliation,...(effect?.lifeAffiliations||[])].filter(Boolean),
+    starts=memberships.filter(item=>['join','assign'].includes(item.action||'join'));
+   if(effect?.job===jobId&&starts.length===1&&starts[0]?.id===affiliationId&&
+     memberships.every(item=>item===starts[0]||item.action==='leave')&&
+     typeof starts[0].title==='string'&&starts[0].title.trim()){
+    const establishedVisit=vm.runInContext(
+     'EMPLOYMENT_PHYSICAL_INTERVIEWS[__eventId]===__affiliationId||EMPLOYMENT_ONBOARD_APPOINTMENT_SOURCES[__eventId]===__affiliationId',
+     Object.assign(context,{__eventId:row.id,__affiliationId:affiliationId}));
+    const source={eventId:row.id,choiceIndex,outcomeIndex};
+    if(establishedVisit)return source;
+    if(!fallback)fallback=source;
+   }
+  }
+ return fallback;
+};
 const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(context,{__state:state}),{timeout:30000});
 {
  const start=affiliationEffect('car','kjerag-village-transporter'),state=routeState(870081,'イェラグ',0);
+ provisionAppointment(state,'car',16,'kjerag-village-transporter');
  applyEffect(state,start);
  assert.equal(state.job,16,'the Kjerag village route starts in the transporter occupation');
  assert.equal(state.lifeRecord.affiliations.find(row=>row.id==='kjerag-village-transporter').status,'active');
@@ -51,7 +93,7 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
  applyEffect(state,review.c[0].o[0][2]);
  assert.equal(state.lifeRecord.affiliations.find(row=>row.id==='kjerag-village-transporter').role,'受け入れが決まった荷受け場所間の配達');
  assert.deepEqual(Array.from(auditRoute(state)),[],'continued Kjerag route remains auditable');
- const exitState=routeState(870082,'イェラグ',0);applyEffect(exitState,start);exitState.year=1102;exitState.age+=2;
+ const exitState=routeState(870082,'イェラグ',0);provisionAppointment(exitState,'car',16,'kjerag-village-transporter');applyEffect(exitState,start);exitState.year=1102;exitState.age+=2;
  applyEffect(exitState,review.c[2].o[0][2]);
  assert.equal(exitState.lifeRecord.affiliations.find(row=>row.id==='kjerag-village-transporter').status,'left');
  assert.equal(exitState.lifeRecord.goals.find(row=>row.id==='kjerag-transporter-route').status,'abandoned');
@@ -60,6 +102,7 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
 }
 {
  const start=affiliationEffect('car','rim-catastrophe-survey-assistant'),state=routeState(870083,'レム・ビリトン',0);
+ provisionAppointment(state,'car',27,'rim-catastrophe-survey-assistant');
  applyEffect(state,start);
  assert.equal(state.job,27,'the Rim route starts as an investigation assistant, not an independent forecaster');
  const review=event('rim_catastrophe_transporter_review');
@@ -73,10 +116,11 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
  assert.match(assistant.history.at(-1).note,/予測・警報発信を独立して担う職務ではない/);
  assert.equal(state.job,27,'observation assistance does not silently promote the person to a transporter');
  assert.deepEqual(Array.from(auditRoute(state)),[],'Rim assistant role update remains auditable');
- const exitState=routeState(870084,'レム・ビリトン',0);applyEffect(exitState,start);exitState.year=1102;exitState.age+=2;
+ const exitState=routeState(870084,'レム・ビリトン',0);provisionAppointment(exitState,'car',27,'rim-catastrophe-survey-assistant');applyEffect(exitState,start);exitState.year=1102;exitState.age+=2;
  assert.match(review.c[2].l,/地域のトランスポーターとして働く/,'the selected transition begins the new job rather than only searching for one');
  assert.match(review.c[2].o[0][1],/トランスポーターへ移った/,'the result text matches the active transporter affiliation');
  assert.doesNotMatch(review.c[2].o[0][1],/求人を探し始めた/,'the result does not defer a job search after applying its hire effect');
+ provisionAppointment(exitState,'rim_catastrophe_transporter_review',16,'terra-general-transporter');
  applyEffect(exitState,review.c[2].o[0][2]);
  assert.equal(exitState.lifeRecord.affiliations.find(row=>row.id==='rim-catastrophe-survey-assistant').status,'left');
  assert.equal(exitState.lifeRecord.affiliations.find(row=>row.id==='terra-general-transporter').status,'active');
@@ -85,6 +129,7 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
 }
 {
  const start=affiliationEffect('car','victoria-insurance-clerk'),state=routeState(870085,'ヴィクトリア',0);
+ provisionAppointment(state,'car',21,'victoria-insurance-clerk');
  applyEffect(state,start);
  assert.equal(state.job,21);assert.equal(state.fl.vic_clerk_employed,1);
  const contract=event('vic_clerk_contract_review'),role=event('vic_clerk_role_review'),after=event('vic_clerk_after_departure');
@@ -212,6 +257,7 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
  assert.deepEqual(Array.from(auditRoute(state)),[],'rejected and renewed application states remain auditable');
  const hired=routeState(870087,'クルビア',0);hired.local.access=0.8;
  applyEffect(hired,contact.c[0].o[0][2]);hired.year=1101;hired.age+=1;
+ provisionAppointment(hired,'sr_rhodes_hiring_review',28,'rhodes-staff');
  applyEffect(hired,hiring.c[0].o[0][2]);
  assert.equal(hired.lifeRecord.affiliations.find(row=>row.id==='rhodes-employment').status,'outside');
  assert.equal(hired.lifeRecord.affiliations.find(row=>row.id==='rhodes-staff').status,'active','accepted application transitions into active staff membership');
@@ -226,12 +272,50 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
   for(const a of [e.lifeAffiliation,...(e.lifeAffiliations||[])].filter(Boolean))ids.add(a.id);
  }
  assert.deepEqual([...ids].sort(),Object.keys(rules).sort(),'new or unreviewed affiliation IDs cannot bypass the scope audit');
- const localWorkers=new Set(['columbia-technical-work','victoria-insurance-clerk','ursus-kleini-sever-mine','siracusa-post-family-work','kazimierz-arena-staff','ursus-zelgrad-factory','ursus-displaced-repair-workshop']);
- const localDuties=new Set(['local-mutual-aid','infected-exclusion','infected-mutual-aid','londinium-mutual-aid','leithanian-district-petition','leithanian-noble-household','siracusa-independent-trade']);
+ const localWorkers=new Set(['military-service-entry','displaced-recovery-survey','ursus-military-factory-contract','columbia-technical-work','victoria-insurance-clerk','ursus-kleini-sever-mine','siracusa-post-family-work','kazimierz-arena-staff','ursus-zelgrad-factory','ursus-displaced-repair-workshop']);
+ const localDuties=new Set(['local-mutual-aid','infected-exclusion','infected-mutual-aid','londinium-mutual-aid','leithanian-district-petition','leithanian-noble-household','siracusa-independent-trade','hist-columbia_independence','hist-kazdel_commission_founded','hist-siracusa_unification','hist-ursus_great_rebellion','hist-rim_billiton_independence','hist-leith_revolution','hist-kazdel_war_declared','hist-kazdel_civil_war']);
  for(const [i,id] of [...ids].sort().entries()){
   const rule=rules[id],s=routeState(872000+i,rule.region||'ヴィクトリア',rule.jobs?.[0]||0);
   const appOnly=id==='rhodes-employment';
-  applyEffect(s,{lifeAffiliation:{id,title:id,action:appOnly?'contact':id==='ursus-kleini-sever-mine'?'assign':'join'}});
+  if(rule.scope==='workplace'){
+   const jobId=rule.jobs[0];
+   s.job=0;s.k=Math.max(50,s.k||0);s.socialLearning||={};s.socialLearning.literacy=60;
+   if(id==='ursus-displaced-repair-workshop'){
+    s.year=1102;s.age+=2;context.__state=s;
+    vm.runInContext("S=__state;S.res=REG.find(row=>row.n==='ウルサス');S.home='移動都市';S.local={...makeLocality(S.home,S.res.n),kind:'移動都市の避難・労働区画',city:null};",context);
+    s.displacement={status:'shelter',sinceYear:1102};
+    applyEffect(s,{lifeAffiliation:{id:'ursus-zelgrad-factory',title:'ゼルグラードの工場',kind:'employer',action:'join',role:'工場補助'}});
+    applyEffect(s,{lifeGoal:{id:'ursus-zelgrad-after-crisis',title:'ゼルグラード危機後の住まいと生計を整える',priority:'生計と居場所',action:'start'}});
+    applyEffect(s,{lifeSkill:{id:'industrial-production',title:'工場の製造補助',delta:1,context:'ゼルグラード工場の検品・部品作業'}});
+    s.year=1103;s.age+=1;
+    assert(event('life_ursus_zelgrad_displaced_work').show(s),'Ursus displaced-work source is reachable after factory employment and evacuation');
+   }
+   if(id==='kazimierz-arena-staff'){
+    s.age=55;s.year=1088;
+    s.lifeRecord.affiliations.push({id:'kazimierz-competition-career',title:'カジミエーシュの競技騎士としての職業',kind:'individual-career',status:'active',role:'競技騎士',startedYear:1088,endedYear:null,episodes:[{startedYear:1088,endedYear:null,roleAtStart:'競技騎士',returning:false,basis:'recorded'}],history:[]});
+    s.year=1100;
+   }
+   if(jobId===7)applyEffect(s,{lifeSkill:{id:'engineering-experience',title:'技術経験',delta:12,context:'所属範囲監査用の実在求人'}});
+   context.__id=id;
+   const spec=vm.runInContext('EMPLOYMENT_APPOINTMENT_SITES.find(row=>row.affiliationId===__id)',context);
+   const source=employmentStartSource(id,jobId);
+   assert(source,id+' has a source-backed employment start');
+   context.__state=s;context.__source=source;context.__jobId=jobId;
+   try{
+    if(spec){
+     s.year=Math.max(s.year,spec.fromYear);
+     vm.runInContext('S=__state;applyEmploymentAppointmentFixture(__source.eventId,__jobId,__id,__source.choiceIndex,__source.outcomeIndex)',context,{timeout:30000});
+    }else{
+     assert.equal(id,'ursus-kleini-sever-mine','a missing appointment definition is reserved for the coercive mine assignment route');
+     assert.equal(source.eventId,'ursus_mine_assignment_offer','the coercive mine assignment keeps its reviewed source');
+     vm.runInContext('S=__state;applyEventOutcomeFixture(__source.eventId,__source.choiceIndex,__source.outcomeIndex)',context,{timeout:30000});
+    }
+   }
+   catch(error){throw new Error(`${id} source ${source.eventId} could not establish its reviewed start: ${error.message}`);}
+  }
+  const existing=s.lifeRecord.affiliations.find(row=>row.id===id);
+  if(!existing||!['active','crisis','suspended'].includes(existing.status))
+   applyEffect(s,{lifeAffiliation:{id,title:id,action:appOnly?'contact':id==='ursus-kleini-sever-mine'?'assign':'join'}});
   const a=s.lifeRecord.affiliations.find(row=>row.id===id),key=a.anchor?.localityKey;
   assert(a.origin?.localityKey,id+' retains its first contact place');
   if(appOnly){applyEffect(s,{lifeAffiliation:{id,action:'followup'}});applyEffect(s,{lifeAffiliation:{id,action:'decline'}});assert.equal(a.status,'outside');continue;}
@@ -274,7 +358,9 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
 {
  const s=routeState(872110,'ウルサス',0);s.inf=1;s.fl.dg=1;s.cash=10000000;
  const entry=event('life_ursus_zelgrad_recruitment'),from=s.community.key;
- applyEffect(s,entry.c[0].o[0][2]);
+ assert(entry,'Ursus factory recruitment source exists');
+ s.year=1102;s.age+=2;context.__state=s;
+ vm.runInContext("S=__state;applyEmploymentAppointmentFixture('life_ursus_zelgrad_recruitment',2,'ursus-zelgrad-factory',0,0)",context,{timeout:30000});
  const a=s.lifeRecord.affiliations.find(row=>row.id==='ursus-zelgrad-factory');
  assert.equal(s.local.city,'ゼルグラード');assert.equal(a.status,'active');assert.equal(s.job,2);
  assert.equal(a.origin.localityKey,from,'the recruitment origin is retained separately');
@@ -283,14 +369,25 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
  assert(a.anchor.workplaceId);
 }
 {
- const s=routeState(872120,'クルビア',7);
+ const s=routeState(872120,'クルビア',0);
+ s.k=50;s.socialLearning||={};s.socialLearning.literacy=60;s.lifeRecord.skills||=[];
+ s.lifeRecord.skills.push({id:'engineering-experience',level:12,basis:'acceptance-fixture'});
+ const first=provisionOpening(s,7,'first'),second=provisionOpening(s,7,'second');
+ assert.equal(s.world.occupationWorld.openings[second.openingId]?.status,'open','the fixture retains its second public vacancy');
+ context.__state=s;context.__opening=first.openingId;
+ vm.runInContext("S=__state;applyPlayerEmploymentAction(S,{action:'accept-local-opening',jobId:7,openingId:__opening})",context,{timeout:30000});
  applyEffect(s,{lifeAffiliation:{id:'columbia-technical-work',title:'研究企業',action:'join'}});
  context.__state=s;
  const available=vm.runInContext("alternativeFacility(__state,'workplace')",context);
- assert(available,'the site-transfer case has a different available employer');
+ assert(available?.openingId,'the alternative is backed by a real vacancy');
+ assert.notEqual(available.siteId,first.siteId,'the alternative changes the current workplace');
+ assert.equal(s.world.occupationWorld.openings[available.openingId]?.siteId,available.siteId,'the selected workplace owns the open vacancy');
+ const destinationSiteId=available.siteId;
  applyEffect(s,{siteAction:{kind:'workplace',action:'switch'}});
  assert.equal(s.lifeRecord.affiliations.find(row=>row.id==='columbia-technical-work').status,'left','same occupation at another workplace is not the old company');
  assert.equal(s.job,7,'a confirmed new placement retains the occupation');
+ context.__state=s;assert.equal(vm.runInContext('S=__state;currentPlayerEmployment(S).siteId',context),destinationSiteId);
+ assert(s.siteAffiliationHistory.some(row=>row.kind==='workplace'&&row.action==='ended'&&row.reason==='chosen-transfer'));
  s.fl.workplace_hazard=1;applyEffect(s,{job:0});assert.equal(s.fl.workplace_hazard,0,'past hazardous work does not remain a current workplace exposure');
 }
 {
@@ -408,7 +505,8 @@ const auditRoute=state=>vm.runInContext('auditLifeState(__state)',Object.assign(
 }
 {
  const ui=require('./support/presentation-cases.cjs').context(root);
- vm.runInContext("born({seed:872320,by:1077,region:'ヴィクトリア'});S.age=25;S.year=1102;ap({job:28,lifeAffiliation:{id:'rhodes-staff',title:'ロドス',action:'join'}});ap({lifeAffiliation:{id:'rhodes-staff',action:'role',role:'本艦・船内居住',bindAt:'destination'}});HL=0;rd();",ui.ctx);
+ installEmploymentAppointmentFixture(ui.ctx);
+ vm.runInContext("born({seed:872320,by:1077,region:'ヴィクトリア'});S.age=25;S.year=1102;applyEmploymentAppointmentFixture('sr_rhodes_hiring_review',28,'rhodes-staff',0,0);ap({lifeAffiliation:{id:'rhodes-staff',action:'role',role:'本艦・船内居住',bindAt:'destination'}});HL=0;rd();",ui.ctx);
  assert(ui.nodes.get('pf').innerHTML.includes('ロドス本艦'),'the profile renders the ship as the actual residence, not the old land district');
  vm.runInContext("ap({lifeAffiliation:{id:'rhodes-staff',action:'role',role:'地域支部・地上拠点勤務',bindAt:'destination'}});rd();",ui.ctx);
  assert(!ui.nodes.get('pf').innerHTML.includes('ロドス本艦'),'the residence display follows the move back to land');
@@ -425,7 +523,7 @@ console.log('PASS affiliation scopes and lifecycles, current-version restoration
 
 const project=vm.runInContext(`(()=>{
   HL=1;AU='r';born({seed:909121,by:1077,region:'ヴィクトリア'});
-  S.age=32;S.year=S.by+32;S.job=2;reconcileWorkContract(S);S.workContract.hours="regular";
+  S.age=32;S.year=S.by+32;startGeneralEmploymentFixture(2,'work-project-setback');S.workContract.hours="regular";
   const e=EV.find(e=>e.id==='life_work_project_setback'),T=tags(S);
   const visible=elig(e,S,T);DEBUG_RANDOM=()=>0.999;fire(e,S,T);DEBUG_RANDOM=null;
   const short=S.workContract.hours,choice=S.eventReviews[e.id].choice,

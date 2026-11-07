@@ -3,30 +3,6 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
   "use strict";
   $terraData.EV.push(
     {
-      id: "arts_awake",
-      conf: "S",
-      st: ["少年", "青年"],
-      ge: { ar: 45 },
-      once: true,
-      t: [
-        { when: "感染診断済", t: "アーツの筋が良いと見込まれ、本格的に鍛えてみないかと声がかかった。ただ、無理に力を使って鉱石病が悪化した人の話を思い出し、訓練場の敷居の前で足が止まった。" },
-        { t: "アーツの筋が良いと見込まれ、鍛錬に誘われた。手ほどきを受ければ一端の使い手になれると言われ、心が動いた。" }
-      ],
-      c: [
-        $terraData.K("体をいたわりながら鍛錬する", { show: { need: ["感染診断済"] } }, [
-          1,
-          "自分の呼吸と脈を確かめ、無理のない範囲で鍛錬を続けた。アーツの扱いは見違えるほど上達したが、力を込めたあとは肌の結晶がじんじんと疼いた。",
-          { ar: 12, ob: 8 }
-        ]),
-        $terraData.K("指導を受けて鍛錬する", { show: { ban: ["感染診断済"] } }, [
-          1,
-          "師について基礎からみっちりしごかれた。指先や杖を通る力の流れを掴み、自分の身を守る術をひとつ身につけた。",
-          { ar: 12, p: 2 }
-        ]),
-        $terraData.K("力には頼らずに暮らす", {}, [1, "誘いを断り、訓練場に背を向けた。背後から響く掛け声を聞きながら、いつもの夕暮れの道を帰った。", { p: 1 }])
-      ]
-    },
-    {
       id: "dst",
       conf: "S",
       st: ["青年", "壮年"],
@@ -234,21 +210,20 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
       st: ["青年", "壮年"],
       need: ["子あり"],
       after: { id: "chi", min: 6 },
-      t: "{kid}が学校へ上がる年齢になった。背丈の伸びた我が子を見ながら、制服や学用品を揃えるお金をどう工面するか思案した。",
+      show: s => s.kids?.some(child =>
+        Number.isFinite(child.by) && s.year-child.by>=6 &&
+        s.year-child.by<=12),
+      t: "子どもが学校へ通う年齢になった。どこで学べるのか、家では話題にするようになったが、受入先も通学の方法もまだ分かっていない。手元に用意できる学用品のことから考え始めた。",
       c: [
-        $terraData.K(
-          "通学の支度金を工面する",
-          { en: { or: [{ le: { sc: 1.3 } }, { ge: { net: 0 } }] }, why: "通学の費用を工面できない" },
-          [
-            1,
-            "少し大きめの靴と新しい鞄、筆記具を買い揃えた。最初の登校日、{kid}は何度も鞄の肩紐を直しながら、誇らしげに駆けていった。",
-            { cash: -4e5, sc: 1, p: 3 }
-          ]
-        ),
-        $terraData.K("今年の入学は見送り、家計を立て直す", {}, [
+        $terraData.K("学校や学用品の費用を調べ、支度の相談をする", {}, [
           1,
-          "今年は入学を諦めさせ、余分に仕事を入れて日銭を稼いだ。来年の春こそは通わせてやれるよう、毎月の食費を切り詰めて学用品代を貯めた。",
-          { cash: 2e5, p: -4 }
+          "授業を受けられる場所と、通うために必要な品を一つずつ書き出した。学校に入れるかどうかは、本人の希望と受入先の返事を確かめてから決めることにした。",
+          { p: 2 }
+        ]),
+        $terraData.K("今は生活費を優先し、支度の相談を続ける", {}, [
+          1,
+          "家計の数字を見直し、今すぐ買う必要のない品を後回しにした。子どもの進路については、本人の考えを聞きながら調べ続けることにした。",
+          { p: -1 }
         ])
       ]
     },
@@ -516,20 +491,28 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
       conf: "S",
       references: [
         "SRC_CATASTROPHE_TRANSPORTER_OFFICIAL",
+        "SRC_CATASTROPHE_RIM_BILLITON",
+        "SRC_CATASTROPHE_KJERAG_FIRST",
         "SRC_MOBILE_CITY_MOBILITY",
         "SRC_REGIONAL_ENVIRONMENT",
         "SRC_CATASTROPHE_CIVILIAN_LIFEPATH"
       ],
-      need: ["天災危険"],
+      any: ["天災危険", "国:レム・ビリトン"],
       ban: ["避難中"],
       ge: { age: 8 },
       cd: 12,
-      w: 0.2,
+      regionCooldowns: { "レム・ビリトン": 5 },
+      w: [0.2, { when: "国:レム・ビリトン", x: 4 }],
+      show: s => s.res?.n !== "イェラグ" || s.year >= 1101,
       who: s => (s.age < $rules.parameters.value("life.adultStartAge") ? "parent" : "self"),
       t: s => {
         const info = s.local?.info ?? 0.5,
           region = s.res?.n,
           ecology = s.local?.ecology;
+        if (region === "レム・ビリトン")
+          return info >= 0.55
+            ? "レム・ビリトンの警報塔から、天災が迫るという声が荒野を越えて届いた。幼いころに歌や放送で覚えた合図を思い出し、退避穴へ向かう道と閉じる扉を確かめる。"
+            : "遠くの警報塔から天災の知らせが届いた。鉱山の怖い話にも歌にも、災害のときは無理に外へ出ず、使える退避穴の扉を閉じろと教わってきた。";
         if (s.home === "移動都市")
           return info >= 0.65
             ? "天災トランスポーターの観測報が街区放送で鳴り響き、都市が緊急針路変更に入ると告げられた。身の回りの荷を掴んで地下の避難区画へ走るか、今の部屋に留まるか、猶予はない。"
@@ -571,7 +554,8 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
               p: -10,
               cash: -3e5,
               fl: { disaster_displaced: 1, sch: 0 },
-              displacement: "displaced"
+              displacement: "displaced",
+              catastropheInfectionChance: 0.02
             }
           ],
           [
@@ -586,7 +570,7 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
           [
             0.92,
             "係員の怒号に押されながら地下の避難区画へ滑り込んだ。機関部が唸りを上げて都市が急旋回し、鉄壁の向こうで食器の割れる音と子どもの泣き声がいつまでも響いていた。",
-            { p: -2 }
+            { p: -2, catastropheInfectionChance: 0.03 }
           ],
           [
             1,
@@ -600,12 +584,26 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
           [
             0.85,
             "窓に板を打ち付け、机の下で息を潜めた。やがて地鳴りは遠ざかり、灰の舞う朝が来たが、しばらくは少しの風音にも心臓が跳ねた。",
-            { p: -2 }
+            { p: -2, catastropheInfectionChance: 0.05 }
           ],
           [
             1,
             "逃げる間もなく天災の直撃を受け、住み慣れた街ごと黒い結晶と瓦礫の海に呑み込まれた。",
             { d: ["天災", "居住地を襲った天災から逃げられず亡くなった"] }
+          ]
+        ),
+        $terraData.K(
+          "警報塔の合図に従い、使える退避穴へ入って扉を閉じる",
+          { show: s => s.res?.n === "レム・ビリトン" },
+          [
+            0.97,
+            "警報塔の声が途切れる前に退避穴へ滑り込み、教わったとおり入口の扉を閉めた。地鳴りが遠ざかるまで暗がりで肩を寄せ、扉の向こうに砂が降り積もる音を聞いた。",
+            { p: -1, catastropheInfectionChance: 0.02 }
+          ],
+          [
+            1,
+            "退避穴へ駆け込んだ直後、地面が割れて入口が崩れた。教わった手順を守っても避けきれない揺れに巻き込まれ、瓦礫の下で息絶えた。",
+            { d: ["天災", "退避穴へ避難したが、地盤崩落に巻き込まれ亡くなった"] }
           ]
         )
       ]
@@ -647,7 +645,11 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
           "伝手をたどって親類や知人を訪ね、部屋の片隅に布団を敷かせてもらった。礼として幾ばくかの生活費を渡し、久しぶりに屋根の下で足を伸ばして眠った。",
           { p: 3, rl: 4, cash: -1e5, fl: { war_displaced: 0 }, displacement: "housed" }
         ]),
-        $terraData.K("配給と日雇いの復旧仕事で暮らしを立て直す", { show: { need: ["成人"] } }, [
+        $terraData.K("配給と日雇いの復旧仕事で暮らしを立て直す", {
+          show: { need: ["成人"] },
+          en: s => employmentEffectAssessment(s, { job: 27, lifeAffiliation: { id: "displaced-recovery-survey", action: "join" } }, "displacement_after").canStart,
+          why: "測量補助を受け入れる復旧調査班が現在地にない"
+        }, [
           1,
           "配給で飢えをしのぎながら、瓦礫の片づけや荷運びの日雇いに精を出した。やがて現場監督に働きぶりを買われて測量の補助も任されるようになり、この町で生きていく足がかりができた。",
           {
@@ -655,6 +657,9 @@ window.TERRA_DATA_BUILD.run("base/life-and-health", function ($terraData, $defin
             cr: 2,
             cash: 8e4,
             job: 27,
+            lifeAffiliation: { id: "displaced-recovery-survey", title: "避難先の復旧調査班", kind: "individual-career",
+              action: "join", role: "測量・復旧記録の補助",
+              note: "この避難先でのゲーム上の受け入れ先。全地域共通の復旧組織を示さない" },
             fl: { war_displaced: 0 },
             displacement: "rebuilt"
           }

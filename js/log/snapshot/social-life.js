@@ -4,6 +4,7 @@ function traceSocialLife(s, services) {
     socialConflict: JSON.parse(JSON.stringify(services.conflictState(s))),
     socialAftermath: JSON.parse(JSON.stringify(services.socialAftermath(s))),
     personTies: JSON.parse(JSON.stringify(services.personTieStore(s))),
+    violence: JSON.parse(JSON.stringify(violenceSummaryForPlayer(s))),
     closeKnowledge: JSON.parse(JSON.stringify(services.closeInfoStore(s))),
     equityLedger: JSON.parse(JSON.stringify(services.reconcileEquity(s))),
     attitudes: {

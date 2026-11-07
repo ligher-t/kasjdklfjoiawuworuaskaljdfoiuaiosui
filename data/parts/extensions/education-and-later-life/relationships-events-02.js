@@ -359,7 +359,7 @@ window.TERRA_DATA_BUILD.fragment(
           "まとまった金を一度送り、急場をしのいでもらう",
           {
             show: { ban: ["対象きょうだいとの連絡終了"] },
-            en: { affordableCash: 1e5 },
+            en: { affordableCashAfterReserve: 1e5 },
             why: "10万龍門幣相当の仕送りを出すと、自分の生活費が足りなくなる"
           },
           [
@@ -372,7 +372,7 @@ window.TERRA_DATA_BUILD.fragment(
           "医者へ行くための足代を一度だけ送る（{siblingHealthAidAmount}）",
           {
             show: { need: ["対象きょうだいの体調に注意"], ban: ["対象きょうだいとの連絡終了"] },
-            en: { affordableCash: 50000 },
+            en: { affordableCashAfterReserve: 50000 },
             why: "交通費を送ると自分の生活費が足りなくなる"
           },
           [
@@ -402,7 +402,7 @@ window.TERRA_DATA_BUILD.fragment(
           },
           [
             1,
-            "年に{siblingCareSupportAmount}ずつ治療費を送ると{siblings}に伝え、最初の仕送りを済ませた。少しでも安心して医者にかかれるよう祈った。",
+            "年に{siblingCareSupportAmount}ずつ治療費を送ると{siblings}に伝え、最初の送金日を決めた。少しでも安心して医者にかかれるよう祈った。",
             { sibCareSupport: "start", sibContact: "regular", rl: 3, p: 1 }
           ]
         ),

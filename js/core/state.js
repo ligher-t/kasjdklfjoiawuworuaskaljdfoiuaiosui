@@ -76,7 +76,7 @@ const educationCredential = (s, kind) =>
 // This record carries the event provenance, rather than inferring a diploma from ep.
 function recordEducationTransition(s, program, action, sourceEventId = null) {
   const record = s.educationRecord || (s.educationRecord = { version: 1, enrollments: [], awards: [] });
-  if (!["general-school", "university", "vocational", "arts-academy"].includes(program))
+  if (!["general-school", "university", "vocational", "arts-academy", "preparatory"].includes(program))
     throw new Error("未定義の教育課程");
   if (!["start", "advance", "finish", "stop"].includes(action))
     throw new Error("未定義の学籍変更");
@@ -97,16 +97,62 @@ function recordEducationTransition(s, program, action, sourceEventId = null) {
       current.endingEventId = sourceEventId;
     }
   }
-  if (action === "finish" && program !== "general-school" &&
-      !record.awards.some(x => x.program === program)) {
+  const formal=s.educationPath?.offeringId &&
+    s.educationPath.currentEnrollmentId===current?.id &&
+    ["completed","enrolled"].includes(s.educationPath.status);
+  const credits=formal?educationTransferredCreditIds(s,current.id)
+    .map(id=>s.educationCredits.items[id]).filter(Boolean):[];
+  if(action==="finish" && formal &&
+     (credits.length<s.educationPath.duration ||
+       s.educationPath.yearsCompleted<s.educationPath.duration))
+    throw new Error("実際の履修認定を欠く課程に卒業資格は発行できない");
+  if(action==="finish" && formal && program==="general-school"){
+    record.schoolCertificates||=[];
+    const id=current.id+":school-certificate";
+    if(!record.schoolCertificates.some(x=>x.id===id))
+      record.schoolCertificates.push({
+        id,enrollmentId:current.id,
+        offeringId:s.educationPath.offeringId,
+        stage:s.educationPath.stage,issuer:s.educationPath.institutionId,
+        awardedYear:s.year,
+        sourceCreditIds:credits.map(x=>x.id)
+      });
+  }
+  if(action==="finish" && formal && program==="preparatory"){
+    const assessment=s.educationPath.completionAssessment;
+    if(!assessment?.passed || assessment.enrollmentId!==current.id ||
+       !assessment.evidenceRef || !assessment.assessedAt?.year ||
+       assessment.assessedAt.year!==s.year)
+      throw new Error("準備課程の正式な同等資格評価が未確認");
+    record.schoolCertificates||=[];
+    const id=current.id+":upper-equivalency";
+    if(!record.schoolCertificates.some(x=>x.id===id))
+      record.schoolCertificates.push({
+        id,enrollmentId:current.id,
+        offeringId:s.educationPath.offeringId,
+        stage:"upper",qualification:"upper-equivalency",
+        issuer:s.educationPath.institutionId,awardedYear:s.year,
+        assessmentEvidenceId:assessment.evidenceRef,
+        sourceCreditIds:credits.map(x=>x.id)
+      });
+  }
+  if (action === "finish" && program !== "general-school" && program !== "preparatory" &&
+      !record.awards.some(x => x.program === program &&
+        (formal ? x.enrollmentId===current.id : !x.enrollmentId))) {
     record.awards.push({
       id: `award-${record.awards.length + 1}`, program, awardedYear: s.year,
-      region: s.res?.n || null, sourceEventId, issuer: "個別課程（機関名未記録）",
-      certainty: "game-course-completion"
+      region: s.res?.n || null, sourceEventId,
+      issuer: formal?s.educationPath.institutionId:"個別課程（機関名未記録）",
+      certainty: "game-course-completion",
+      ...(formal?{
+        enrollmentId:current.id,offeringId:s.educationPath.offeringId,
+        issuerInstitutionId:s.educationPath.institutionId,
+        sourceCreditIds:credits.map(x=>x.id)
+      }:{})
     });
   }
-  record.enrollments = record.enrollments.slice(-24);
-  record.awards = record.awards.slice(-12);
+  // Formal enrollment and award provenance remain a lifelong ledger.
+  // Only UI or daily narrative history may be windowed.
 }
 // One opening's work, evidence and stated requirements are distinct from an
 // unsupported general law. The inquiry must not mutate state or consume RNG.
@@ -121,14 +167,22 @@ function careerOpeningAssessment(s, opening) {
       ? s.socialLearning.literacy
       : Math.min(75, eduLv(s) * 18 + (s.k || 0) * 0.32);
   let qualified = true, reason = null;
-  if (role === "research-lead" || role === "clinical") {
-    qualified = role === "research-lead" && uni && s.k >= 50 && literacy >= 45;
-    reason = "専門的な研究・診療の認定と実務が確認できない";
+  if (role === "research-lead") {
+    qualified = uni && s.k >= 50 && literacy >= 45;
+    reason = "研究に必要な修了課程と専門知識が確認できない";
+  } else if (role === "clinical") {
+    // Graduation alone must not create an unrestricted medical license.
+    // Accredited clinical training is represented by recorded practical evidence.
+    qualified = uni && skill(/clinical|medical-clinical|physician-practice/) &&
+      s.k >= 45 && literacy >= 45;
+    reason = "臨床業務の課程修了と実務認定が確認できない";
   } else if (role === "technical") {
     qualified = (uni || voc || skill(/technical|repair|engineering|job-18/)) && s.k >= 25 && literacy >= 30;
     reason = "修了課程または技術の実務経験がまだ確認できない";
   } else if (role === "arts-technician") {
-    qualified = (arts || skill(/arts|originium/)) && s.ar >= 35 && literacy >= 30;
+    qualified = (arts || skill(/arts|originium/)) &&
+      (s.artsProfile?.techSkills?.["unit-maintenance"] >= 10 ||
+       s.artsProfile?.techSkills?.["unit-inspection"] >= 10) && literacy >= 30;
     reason = "アーツ器具を扱う訓練・実務経験が未確認";
   } else if (role === "teacher") {
     qualified = (uni || voc || skill(/teach|literacy-tutor/)) && literacy >= 40;
@@ -176,11 +230,15 @@ function careerOpeningAssessment(s, opening) {
       row.domain === "work" && row.status === "active" &&
       row.siteId === siteId && row.jobId === s.job
     );
+  const employerGate = assessPlayerEmploymentAccess(s, opening),
+    employmentAllowed = employerGate.canApply;
   return {
-    canApply: qualified && !documentedRestriction,
-    canBeAssigned: qualified && !documentedRestriction,
+    canApply: qualified && !documentedRestriction && employmentAllowed,
+    canBeAssigned: qualified && !documentedRestriction && employmentAllowed,
     qualification: qualified ? "eligible" : "needs-training",
-    reason: !qualified ? reason : documentedRestriction ? "この募集に記録された資格・制度上の制限がある" : null,
+    reason: !qualified ? reason : documentedRestriction
+      ? "この募集に記録された資格・制度上の制限がある"
+      : !employmentAllowed ? "この応募経路では職務と募集先の条件が整っていない" : null,
     restriction: documentedRestriction ? policy.sourceRef : null,
     employerKnowsDiagnosis,
     // Only an observed incident tied to the current employer counts as workplace harm.
@@ -194,7 +252,9 @@ function educationStandingLabel(s) {
       preparatory:"同等資格の準備課程",university:"大学課程",vocational:"職業専門課程",arts:"アーツ専門学院"},
     currentCourse = educationLive(s) ?
       stages[s.educationPath.stage] + "・" + (s.educationPath.yearsCompleted + 1) + "年次在籍中" : null,
+    generalCompleted = ["upper", "lower", "primary"].find(stage => s.educationPath?.completed?.includes(stage)),
     completed = [
+      generalCompleted ? stages[generalCompleted] + "修了" : null,
       educationCredential(s, "university") ? "大学課程修了" : null,
       educationCredential(s, "vocational") ? "職業課程修了" : null,
       educationCredential(s, "arts") ? "アーツ学院修了" : null

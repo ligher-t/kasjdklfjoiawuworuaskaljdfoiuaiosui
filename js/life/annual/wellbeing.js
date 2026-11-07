@@ -40,25 +40,22 @@ function advanceAnnualWellbeing(s, services, a, t, f, careEffect) {
   );
   services.advanceIllnessState(s);
   services.advanceSocialLearning(s);
-  s.p = services.clamp(
-    s.p +
-      (services.P("mood.equilibrium") - s.p) * services.P("mood.reversion") +
-      (services.R() - 0.5) * services.P("mood.randomDrift") +
-      (t.p || 0) * services.P("traits.moodScale") +
-      (s.care.support - 0.5) * services.P("mood.careSupport") * careEffect +
-      (s.care.stability - 0.5) * services.P("mood.careStability") * careEffect -
-      (s.inf && s.ob > services.P("mood.infectionThreshold") ? services.P("mood.infectionPenalty") : 0) -
-      (s.rl < services.P("mood.isolationThreshold") ? services.P("mood.isolationPenalty") : 0) +
-      (f == 4 ? services.P("mood.restBenefit") : 0) -
-      (f == 2 ? services.P("mood.workPenalty") : 0) -
-      (f == 6 ? services.P("mood.frugalPenalty") : 0) -
-      annualHealthMoodPenalty(s, services) -
-      (a > services.P("life.workStartAge") ? annualDebtMoodPenalty(s, services) : 0) +
-      (f == 7 ? services.P("mood.familyBenefit") : 0) +
-      (!services.restricted(s) && (services.hobbyCount(s) || s.pet)
-        ? services.P("economy.hobbyMoodBenefit")
-        : 0)
-  );
+  const moodParts=[
+    (services.P("mood.equilibrium")-s.p)*services.P("mood.reversion"),
+    (services.R()-0.5)*services.P("mood.randomDrift"),
+    (t.p||0)*services.P("traits.moodScale"),
+    (s.care.support-0.5)*services.P("mood.careSupport")*careEffect,
+    (s.care.stability-0.5)*services.P("mood.careStability")*careEffect,
+    -(s.inf&&s.ob>services.P("mood.infectionThreshold")?services.P("mood.infectionPenalty"):0),
+    -(s.rl<services.P("mood.isolationThreshold")?services.P("mood.isolationPenalty"):0),
+    f==4?services.P("mood.restBenefit"):0,
+    -(f==2?services.P("mood.workPenalty"):0),
+    -(f==6?services.P("mood.frugalPenalty"):0),
+    -annualHealthMoodPenalty(s,services),
+    -(a>services.P("life.workStartAge")?annualDebtMoodPenalty(s,services):0),
+    f==7?services.P("mood.familyBenefit"):0,
+    !services.restricted(s)&&(services.hobbyCount(s)||s.pet)?services.P("economy.hobbyMoodBenefit"):0
+  ];
+  s.p=services.clamp(s.p+moodParts.reduce((sum,delta)=>sum+wellbeingDelta(s,'p',delta),0));
   services.annualEducationAndRelationships(s, f, t);
-  if (f == 5) s.ar = services.clamp(s.ar + services.P("education.artsGrowth"));
 }

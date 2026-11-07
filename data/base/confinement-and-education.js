@@ -439,29 +439,38 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
       id:"education_return_path",conf:"S",references:["SRC_EDUCATION_ACCESS"],
       st:["児童","少年","青年","壮年"],cd:3,w:0.65,
       show:s=>s.age>=8 && !educationOccupied(s) &&
-        !(educationHas(s,"upper") || s.educationPath?.equivalency?.includes("upper")),
+        !(educationHas(s,"upper") || s.educationPath?.equivalency?.includes("upper")) &&
+        educationReturnPathSearchAvailable(s),
       t:"途中で学び舎を離れたか、そもそも机を並べる機会がないまま歳月が過ぎた。今の読み書きの力と懐具合で、もう一度学べる場所がないか探してみた。",
       c:[
-        $terraData.K("初等課程へ遅れて入学を申し込む",{
-          show:s=>s.age<=14 && !educationHas(s,"primary"),
-          en:s=>educationCanEnter(s,"primary").allowed,why:"学校の受入枠や入学費用を確保できない"
-        },[1,"年下の子たちに混じる覚悟を決め、遅ればせながら初等学校への入学を申し込んだ。",
-           {educationAction:"primary"}]),
-        $terraData.K("中断した中等課程へ再入学を申し込む",{
-          show:s=>s.age<=20 && ["lower","upper"].includes(s.educationPath?.stage) &&
-            ["withdrawn","outside"].includes(s.educationPath.status),
-          en:s=>educationCanEnter(s,s.educationPath.stage).allowed,
-          why:"学校の受入枠や再入学の学費を確保できない"
-        },[1,"かつて諦めた中等学校の門をもう一度叩いた。残りの学費を工面し、止まっていた学びをやり直すことにした。",
-          {educationAction:"reenter-secondary"}]),
-        $terraData.K("働きながら三年の基礎準備課程に進む",{
-          show:s=>s.age>=16,
-          en:s=>educationPaymentPlan(s,educationFunds(s,"preparatory")).allowed,why:"準備課程の費用を確保できない"
-        },[1,"昼間の仕事と掛け持ちで、夜間や休日に学ぶ三年間の基礎準備課程へ入った。眠い目をこすりながら修了試験を目指す日々が始まった。",
-           {educationAction:"start-preparatory"}]),
-        $terraData.K("仕事・氏族や師弟のもとで学ぶ",{},
-          [1,"学校の免状にはこだわらず、現場の親方や年長者の手元を見て実地の技術と知恵を身につけた。",
-           {k:3,ep:3,p:2}])
+        $terraData.K("初等課程の募集先を探し、遅れて入れるか相談する",{
+          show:s=>s.age<=14 && !educationHas(s,"primary") &&
+            educationReturnPathSearchAllowed(s,"primary"),
+          en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
+        },[1,"年下の子と同じ教室に通うことも考え、まず受け入れる学校があるか調べることにした。入学はまだ決まっていない。",
+           {educationAction:"case:begin:reentry:primary:1"}]),
+        $terraData.K("中断した前期中等課程の受入先を探す",{
+          show:s=>s.age<=20 && s.educationPath?.stage==="lower" &&
+            ["withdrawn","outside"].includes(s.educationPath.status) &&
+            educationReturnPathSearchAllowed(s,"lower"),
+          en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
+        },[1,"以前の履修記録を確かめ、前期中等の課程を再開できる学校へ相談することにした。",
+           {educationAction:"case:begin:reentry:lower:1"}]),
+        $terraData.K("中断した後期中等課程の受入先を探す",{
+          show:s=>s.age<=20 && s.educationPath?.stage==="upper" &&
+            ["withdrawn","outside"].includes(s.educationPath.status) &&
+            educationReturnPathSearchAllowed(s,"upper"),
+          en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
+        },[1,"以前の履修記録を確かめ、後期中等の課程を再開できる学校へ相談することにした。",
+           {educationAction:"case:begin:reentry:upper:1"}]),
+        $terraData.K("働きながら学べる正式準備課程を探す",{
+          show:s=>s.age>=16 && educationReturnPathSearchAllowed(s,"preparatory"),
+          en:s=>!educationActiveCase(s),why:"今年の進路案件がすでにある"
+        },[1,"働きながら受けられる正式な準備課程があるか、募集期間と通学条件を調べることにした。",
+           {educationAction:"case:begin:reentry:preparatory:1"}]),
+        $terraData.K("仕事や氏族・師弟のもとで学べる方法を探す",{},
+          [1,"仕事場の親方や年長者に、教えてもらえることがあるか尋ねた。実際に学ぶ場と期間は、まだ決まっていない。",
+           {p:1}])
       ]
     },
     {
@@ -541,7 +550,8 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
     {
       id:"education_school_disclosure_review",conf:"S",references:["SRC_EDUCATION_ACCESS"],
       st:["児童","少年","青年","壮年","老年"],cd:3,w:0.55,
-      show:s=>educationLive(s)&&!!s.inf&&!!s.fl?.dg&&!educationSchoolKnowsInfection(s),
+      show:s=>educationLive(s)&&!s.educationPath?.offeringId&&
+        !!s.inf&&!!s.fl?.dg&&!educationSchoolKnowsInfection(s),
       t:"鉱石病の診断を受けた。通院で休む日や体育・実習の配慮を頼むため、学校へ正直に病名を打ち明けるべきか迷った。",
       c:[
         $terraData.K("学校に診断結果を伝え、配慮を相談する",{},[
@@ -561,11 +571,11 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
       pri:true,who:"self",
       t:"通っていた学び舎から、これ以上は席を置けないと通告された。同じ街に受け入れてくれる別の学校があるか探し、このまま学びを続けるかどうか決断を迫られた。",
       c:[
-        $terraData.K("別の学び舎へ転学して履修を続ける",{
-          en:s=>!!alternativeFacility(s,"school"),
-          why:"同じ生活圏に受入れ可能な別の学び舎がない"
-        },[1,"受け入れてくれる別の学び舎へ籍を移した。見知らぬ教室で一から机を並べ直し、途切れかけた学びを繋いだ。",
-          {educationAction:"transfer-school"}]),
+        $terraData.K("受入が確定した学び舎へ学籍を移す",{
+          en:s=>!!educationMigrationTransferOffer(s),
+          why:"受入先の正式な承認・単位認定・通学・納付が揃っていない"
+        },[1,"学籍と既修得の履修記録を確認し、承認された別の学び舎へ移った。新しい校地で学業を続けることになった。",
+          {educationAction:"event:E41:A"}]),
         $terraData.K("通学をやめ、別の学び方を考える",{},[
           1,"学校へ通い続けることを断念し、教本を鞄にしまった。これまで覚えた知識は頭に残るが、卒業の免状は手に入らないまま校門を出た。",
           {educationAction:"transfer-leave"}])
@@ -582,6 +592,7 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
       ),
       pri: true,
       w: 1,
+      cd:1,
       t: [
         {
           when: s => s.educationDecision?.kind === "higher-path",
@@ -592,45 +603,45 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
         }
       ],
       c: [
-        $terraData.K("地域大学の入学試験を受ける",
-          {en:s=>educationExam(s,"university",1).allowed,
+        $terraData.K("地域大学の募集先を探す",
+          {en:s=>!educationActiveCase(s),
            why:"後期中等修了・入学資金・学校の受入要件が必要"},
-          [1,"地域の大学へ願書を出し、試験会場の机に向かった。これまでの積み重ねがどこまで通じるか、静かな緊張の中でペンを走らせた。",
-            {educationAction:"apply:university:1"}]),
-        $terraData.K("選抜大学の入学試験を受ける",
-          {en:s=>educationExam(s,"university",2).allowed,
+          [1,"地域の大学へ進みたいと考え、実際に募集している課程と通学方法を調べ始めた。",
+            {educationAction:"case:begin:higher-path:university:1"}]),
+        $terraData.K("選抜大学の募集先を調べる",
+          {en:s=>!educationActiveCase(s),
            why:"進学資格・受験費用・学校の受入要件が必要"},
-          [1,"各地から秀才が集まる選抜大学で試験に臨んだ。ひねりの効いた難問を前に、これまで読み込んだ知識を必死にたぐり寄せた。",
-            {educationAction:"apply:university:2"}]),
-        $terraData.K("最高水準の大学へ挑戦する",
-          {en:s=>educationExam(s,"university",3).allowed,
+          [1,"選抜の厳しい大学について、募集先と出願資格を調べた。試験を受けるかは、確かめた条件を見て決める。",
+            {educationAction:"case:begin:higher-path:university:2"}]),
+        $terraData.K("高度な大学課程の募集を調べる",
+          {en:s=>!educationActiveCase(s),
            why:"進学資格・高額な学費・学校の受入要件が必要"},
-          [1,"名だたる難関大学の荘厳な試験会場へ足を踏み入れた。ごくわずかな合格枠をめぐり、張り詰めた空気の中で最後の設問まで食らいついた。",
-            {educationAction:"apply:university:3"}]),
-        $terraData.K("地域の技術専門校を受験する",
-          {en:s=>educationExam(s,"vocational",1).allowed,
+          [1,"高度な大学課程への進学を望み、出願先と試験の条件を調べた。実際に受験できる場所はまだ決まっていない。",
+            {educationAction:"case:begin:higher-path:university:3"}]),
+        $terraData.K("技術専門課程の募集を調べる",
+          {en:s=>!educationActiveCase(s),
            why:"中等課程修了か同等資格と実習・授業料が必要"},
-          [1,"地域の技術専門校で選考を受けた。機械油の匂いが染みついた実習場で、工具の扱いと基礎計算を確かめられた。",
-            {educationAction:"apply:vocational:1"}]),
-        $terraData.K("上級技術専門校を受験する",
-          {en:s=>educationExam(s,"vocational",2).allowed,
+          [1,"手仕事を学べる技術専門課程を探すことにした。実習設備と受入条件を調べ、通える学校を選ぼうと考えた。",
+            {educationAction:"case:begin:higher-path:vocational:1"}]),
+        $terraData.K("高度な技術専門課程を探す",
+          {en:s=>!educationActiveCase(s),
            why:"中等課程修了か同等資格と実習・授業料が必要"},
-          [1,"上級技術専門校の実技と筆記試験に挑んだ。厳しい目つきの試験官から、手を動かす手順だけでなくその裏付けまで鋭く問われた。",
-            {educationAction:"apply:vocational:2"}]),
-        $terraData.K("アーツ実技を扱う専門学院を受験する",
-          {en:s=>educationExam(s,"arts",1).allowed,
+          [1,"高度な実習を行う学校について、募集課程と受入条件を調べた。まだ試験の結果は出ていない。",
+            {educationAction:"case:begin:higher-path:vocational:2"}]),
+        $terraData.K("アーツ専門学院の募集を調べる",
+          {en:s=>!educationActiveCase(s),
            why:"中等修了・学費・学校の受入要件が必要"},
-          [1,"アーツの制御と触媒器具の安全な扱いについて、専門学院の実技選抜を受けた。",
-            {educationAction:"apply:arts:1"}]),
-        $terraData.K("高度なアーツ学院へ挑戦する",
-          {en:s=>educationExam(s,"arts",3).allowed,
+          [1,"アーツの制御や器具を扱う学院で学びたいと考え、募集案内を探した。",
+            {educationAction:"case:begin:higher-path:arts:1"}]),
+        $terraData.K("高度なアーツ学院の募集を調べる",
+          {en:s=>!educationActiveCase(s),
            why:"中等修了・相当の学費・学院の受入要件が必要"},
-          [1,"最先端のアーツ研究を行う名門学院で選考に臨んだ。熟練の術師でも額に汗を浮かべるような高度な制御課題を課された。",
-            {educationAction:"apply:arts:3"}]),
+          [1,"高度なアーツ課程への進学を望み、実際の募集先と出願資格を確かめることにした。",
+            {educationAction:"case:begin:higher-path:arts:3"}]),
         $terraData.K("進学はせず、働き口を探して自立する",
           { show: s => s.educationDecision?.kind === "higher-path" },
           [1,"学生生活にきっぱりと区切りをつけ、社会に出て働き口を探すことにした。これからは自分の手で暮らしを立てていく。",
-            {educationAction:"leave-higher", p: 1}]),
+            {educationAction:"case:decline:higher-path", p: 1}]),
         $terraData.K("今回は出願を見送り、学習や仕事を続ける",
           { show: s => s.educationDecision?.kind !== "higher-path" },
           [1,"願書を引き出しの奥へしまい、今年の受験は見送った。このまま働き続けるか、蓄えを作って来年挑むかはまだ決めなかった。",{p:1}])
@@ -642,16 +653,16 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
       t:"前期中等課程を修了し、ひとつの区切りを迎えた。このまま上の学校へ進むか、それとも働きに出て暮らしを支えるか、食卓で家族と財布の中身を確かめながら話し合った。",
       c:[
         $terraData.K("高等学校相当の課程に進む",
-          {en:s=>educationCanEnter(s,"upper").allowed,
-           why:"通学先の受入れまたは授業料の負担が難しい"},
-          [1,"上の課程への進学を願い出て願書を出した。学費の工面と学校の受け入れ結果を胸を突かれる思いで待つ。",
-           {educationAction:"enter-upper"}]),
+          {en:s=>!educationActiveCase(s),
+           why:"先に今年の進路案件を整理する必要がある"},
+          [1,"上の課程で学びたいと家族に話した。どの学校で募集があるか、通い道と費用を一つずつ調べ始めた。",
+           {educationAction:"case:begin:upper-path:upper:1"}]),
         $terraData.K("就職や家業の手伝いへ進む",{},
-          [1,"家族と話し合い、学生生活にきっぱり区切りをつけて仕事や見習いの口を探し始めた。",
-           {educationAction:"leave-secondary"}]),
+          [1,"家族と話し合い、今期の進学は見送り、仕事や見習いの口を探すことにした。",
+           {educationAction:"case:decline:upper-path"}]),
         $terraData.K("今は進学を見送り、学び直しの道を残す",{},
-          [1,"まずは働きに出て暮らしを立て、余裕ができたら夜学や資格試験で学び直す道を選んだ。",
-           {educationAction:"leave-secondary"}])
+          [1,"今期の進学は見送り、余裕ができれば学び直す道を残すことにした。",
+           {educationAction:"case:decline:upper-path"}])
       ]
     },
     {
@@ -864,11 +875,11 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
       c: [
         $terraData.K(
           "技術職の採用試験を受ける",
-          { show: { need: ["uni"], ge: { literacy: 35 } } },
+          { show: s => tags(s).has("uni") && literacyValue(s) >= 35 && !!employmentOpeningForChoice(s, 7) },
           [
             0.65,
             "筆記と面接をくぐり抜け、技術部門の補助として働き始めた。教本で覚えた数式より、現場の油と熱の中で確かめることの方がずっと多かった。",
-            { job: 7, cr: 3, p: 4 }
+            { employmentAction: { action: "accept-local-opening", jobId: 7 }, cr: 3, p: 4 }
           ],
           [
             1,
@@ -878,11 +889,11 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
         ),
         $terraData.K(
           "診療・研究機関の補助職へ応募する",
-          { show: { need: ["uni"], ge: { literacy: 40 } } },
+          { show: s => tags(s).has("uni") && literacyValue(s) >= 40 && !!employmentOpeningForChoice(s, 20) },
           [
             0.55,
             "消毒液の匂う施設で、検査記録の整理と器具の支度を任された。病棟と研究室のどちらへ届ける品か、最初のうちは何度も指差しで確かめた。",
-            { job: 20, cr: 2, p: 3 }
+            { employmentAction: { action: "accept-local-opening", jobId: 20 }, cr: 2, p: 3 }
           ],
           [
             1,
@@ -916,8 +927,10 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
       conf: "S",
       references: ["SRC_EDUCATION_ACCESS"],
       st: ["青年", "壮年"],
-      need: ["arts_enrolled", "voc"],
-      ban: ["arts_grad"],
+      show: s => s.fl?.arts_grad===1 &&
+        s.educationPath?.completed?.includes("arts") &&
+        !!s.educationRecord?.enrollments?.some(x=>x.program==="arts" &&
+          !!x.institutionId && !!x.offeringId),
       ge: { age: 18 },
       once: true,
       who: "self",
@@ -930,18 +943,18 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
           [
             0.55,
             "実技と面接を通過し、アーツユニットの点検と整備を任された。学院の綺麗な実験室とは勝手が違う現場で、油にまみれながら調整の勘所を掴んでいった。",
-            { job: 11, fl: { arts_grad: 1, arts_enrolled: 0 }, cr: 3, p: 2 }
+            { job: 11, cr: 3, p: 2 }
           ],
           [
             1,
             "実技試験まで進んだが、経験者には及ばず不採用となった。修了証を懐にしまい、自分の術を活かせる別の働き口を探した。",
-            { fl: { arts_grad: 1, arts_enrolled: 0 }, p: -2 }
+            { p: -2 }
           ]
         ),
         $terraData.K("修了証を携え、習った技術を使える募集を探す", {}, [
           1,
           "真新しい修了証を懐に携え、アーツの心得を求める工房や商会の募集を一つずつ回り始めた。",
-          { fl: { arts_grad: 1, arts_enrolled: 0 }, p: 1 }
+          { p: 1 }
         ])
       ]
     },
@@ -1214,4 +1227,117 @@ window.TERRA_DATA_BUILD.run("base/confinement-and-education", function ($terraDa
       ]
     }
   );
+  // P06/P16: dated case follow-up and post-primary progression.
+  $terraData.EV.push({
+    id:"education_case_review",conf:"S",references:["SRC_EDUCATION_ACCESS"],
+    ge:{age:6},cd:0,pri:true,who:"self",inConfinement:true,
+    show:s=>educationCaseNeedsReview(s),
+    t:"学校の案内と家の事情を確かめながら、今年の進路についてもう一度考えた。募集先の知らせが届いても、通い続ける算段と入学の手続は別に残っている。",
+    c:[
+      $terraData.K("確認した第一候補へ申し込む",{
+        show:s=>educationActiveCase(s)?.phase==="planning" && !!educationCaseCandidate(s,0),
+        en:s=>educationCasePreflight(s,educationCaseCandidate(s,0)).allowed,
+        why:"この募集先の応募資格、交通、保護者または受験費用の条件が整っていない"
+      },[1,"候補校への出願を考え、家の人と学校に必要な手続きを確かめた。返事に応じて次の判断をする。",
+        {educationAction:"case:select:0"}]),
+      $terraData.K("確認した第二候補へ申し込む",{
+        show:s=>educationActiveCase(s)?.phase==="planning" && !!educationCaseCandidate(s,1),
+        en:s=>educationCasePreflight(s,educationCaseCandidate(s,1)).allowed,
+        why:"この募集先の応募資格、交通、保護者または受験費用の条件が整っていない"
+      },[1,"別の地区で確認した学校を候補に選んだ。家の人の同意と学校の回答を確かめて進路を決める。",
+        {educationAction:"case:select:1"}]),
+      $terraData.K("確認した第三候補へ申し込む",{
+        show:s=>educationActiveCase(s)?.phase==="planning" && !!educationCaseCandidate(s,2),
+        en:s=>educationCasePreflight(s,educationCaseCandidate(s,2)).allowed,
+        why:"この募集先の応募資格、交通、保護者または受験費用の条件が整っていない"
+      },[1,"調べた学校の一つを候補として挙げ、必要な同意と募集条件を確かめた。",
+        {educationAction:"case:select:2"}]),
+      $terraData.K("会場へ向かい入学試験を受ける",{
+        show:s=>educationActiveCase(s)?.phase==="application"&&!educationActiveCase(s).examAttendedAt,
+        en:s=>{const x=educationActiveCase(s);return x&&(!x.examAt||
+          s.year*12+s.mo>=x.examAt.year*12+x.examAt.month)&&educationServiceMobilityQuote(s,
+          {offering:s.world.educationWorld.offerings[x.offeringId]},"entrance-trip").allowed;},
+        why:"試験の日程、往復経路または移動費の条件が整っていない"
+      },[1,"案内の日時と道順を確かめ、会場へ向かう支度をした。",{educationAction:"case:attend-exam"}]),
+      $terraData.K("今回の出願を取り下げる",{
+        show:s=>educationActiveCase(s)?.phase==="application"
+      },[1,"学校へ出願を取り下げると伝えた。納めた費用は学校の返金規約に従って扱われる。",
+        {educationAction:"case:cancel-application"}]),
+      $terraData.K("隣の地区の募集先も調べる",{
+        show:s=>educationActiveCase(s)?.phase==="planning" &&
+          !s.educationAccess?.searches?.some(x=>
+            x.caseId===educationActiveCase(s)?.id && x.scope==="adjacent") &&
+          educationNeighborAreaIds(s,s.local?.educationAreaId).length>0
+      },[1,"近くの地区まで足を延ばし、募集案内のある学校を一つずつ訪ねて回った。探した範囲と時期を記録した。",
+        {educationAction:"case:search-adjacent"}]),
+      $terraData.K("学校外で読み書きや手仕事を学ぶ",{
+        show:s=>educationActiveCase(s)?.phase==="planning"
+      },[1,"今年は学校へ通う手続を置き、家や仕事場で学べることから始めると決めた。読み書きや手仕事を教わる相手を探し始めた。",
+        {educationAction:"case:nonformal",k:2}]),
+      $terraData.K("今年の進学は見送る",{
+        show:s=>educationActiveCase(s)?.phase==="planning"
+      },[1,"調べた学校の案内を手元に残し、今年は申込みをしないことにした。また考える余地は残してある。",
+        {educationAction:"case:defer"}]),
+      $terraData.K("入学の条件を確かめて正式に手続する",{
+        show:s=>educationActiveCase(s)?.phase==="contract",
+        en:s=>educationCaseCommitEligibility(s).allowed,
+        why:"受入通知、校地、通学手段または入学時の費用を整えられていない"
+      },[1,"合格の知らせを受けて、学費と通学の手続きをそろえた。入学の届けを出し、学校で学ぶ暮らしが始まる。",
+        {educationAction:"case:commit"}]),
+      $terraData.K("学費支援と貸付の窓口へ条件を尋ねる",{
+        show:s=>educationActiveCase(s)?.phase==="contract" &&
+          !s.educationAccess?.financingOffers?.[educationActiveCase(s).id] &&
+          !educationPaymentPlan(s,educationFunds(s,
+            educationActiveCase(s).stage,educationActiveCase(s).tier,
+            educationActiveCase(s).offeringId)).allowed
+      },[1,"入学までに用意できる金を数え直し、学校の相談窓口で減免と学資貸付の条件を聞いた。支援の返事を受けてから手続きを決める。",
+        {educationAction:"case:check-financing"}]),
+      $terraData.K("認められた学費支援を使って入学する",{
+        show:s=>educationActiveCase(s)?.phase==="contract" &&
+          !!s.educationAccess?.financingOffers?.[educationActiveCase(s).id]?.grant,
+        en:s=>educationCaseCommitEligibility(s,"grant").allowed,
+        why:"今回の学校の支援額、残りの負担と通学条件が整っていない"
+      },[1,"学校から認められた支援を今期の学費に充て、残額の支払と入学手続きを整えた。",
+        {educationAction:"case:commit-grant"}]),
+      $terraData.K("確認した貸付の返済条件に同意して入学する",{
+        show:s=>educationActiveCase(s)?.phase==="contract" &&
+          !!s.educationAccess?.financingOffers?.[educationActiveCase(s).id]?.loan,
+        en:s=>educationCaseCommitEligibility(s,"loan").allowed,
+        why:"今回の貸付条件、本人負担と通学・入学要件を満たしていない"
+      },[1,"借入先と返済総額を確かめ、学校に直接納付される学費貸付の契約書に署名した。残る自分の負担分も納めた。",
+        {educationAction:"case:commit-loan"}]),
+      $terraData.K("合格・受入後の入学を辞退する",{
+        show:s=>educationActiveCase(s)?.phase==="contract"
+      },[1,"受け入れるという学校の返事を手元に残し、今回は入学を見送った。受験をした事実は消えない。",
+        {educationAction:"case:decline-offer"}]),
+      $terraData.K("元の学籍の継続について相談する",{
+        show:s=>educationActiveCase(s)?.phase==="continuity",
+        en:s=>educationOccupied(s),
+        why:"継続できる学籍が残っていない"
+      },[1,"学校の窓口に現在の学籍を照会し、今年の扱いを確認した。",
+        {educationAction:"case:keep-current"}]),
+      $terraData.K("在籍中の課程をいったん休む",{
+        show:s=>educationActiveCase(s)?.phase==="continuity"&&educationLive(s)
+      },[1,"学びを続けるための時間を得ようと、学校に休学の意思を伝えた。",
+        {educationAction:"case:pause"}]),
+      $terraData.K("いったん退学して別の学び方を考える",{
+        show:s=>educationActiveCase(s)?.phase==="continuity"
+      },[1,"これまでの履修記録を残し、今の学校を離れる判断を下した。",
+        {educationAction:"case:withdraw"}])
+    ]
+  }, {
+    id:"edu_lower_stage_site_review",conf:"S",references:["SRC_EDUCATION_ACCESS"],
+    st:["児童","少年","青年","壮年"],pri:true,who:"self",cd:0,
+    show:s=>s.educationDecision?.kind==="lower-path" &&
+      !educationActiveCase(s),
+    t:"初等課程で過ごした日々が終わった。次の課程を学べる場所は、この地区にもあるのだろうか。手元の修了記録を見ながら、家の人とこれからの通い先を考えた。",
+    c:[
+      $terraData.K("前期中等課程の募集先を調べる",{},[
+        1,"次の課程で学びたいと伝え、通える範囲にある学校の案内を確かめ始めた。",
+        {educationAction:"case:begin:lower-path:lower:1"}]),
+      $terraData.K("今年は別の学び方を探す",{},[
+        1,"初等の修了記録は手元に残した。今すぐ次の学校へは進まず、家や仕事場で学ぶ道を考えた。",
+        {educationAction:"case:decline:lower-path"}])
+    ]
+  });
 });

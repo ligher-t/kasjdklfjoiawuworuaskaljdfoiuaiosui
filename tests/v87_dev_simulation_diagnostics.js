@@ -29,7 +29,7 @@ context.setTimeout = setTimeout;
     const comparison=compareDevSimulationReports(first,second);
     let invalidOptionsRejected=false;
     try { normalizeDevSimulationOptions({...options,birthYearMin:1080,birthYearMax:1060}); } catch { invalidOptionsRejected=true; }
-    return {progress,first,second,canceled,large:{summary:large.summary,cohortCount:large.cohorts.reduce((sum,row)=>sum+row.lives,0),lifeDurations:large.lifePaths.lifeDurations},findings,findingSummary,comparison,original,after,eventCount:EV.length,invalidOptionsRejected};
+    return {progress,first,second,canceled,large:{summary:large.summary,failures:large.failures,cohortCount:large.cohorts.reduce((sum,row)=>sum+row.lives,0),lifeDurations:large.lifePaths.lifeDurations},findings,findingSummary,comparison,original,after,eventCount:EV.length,invalidOptionsRejected};
   })()`, context, { timeout: 60000 });
 
   const cohorts = await vm.runInContext(`(async()=>{
@@ -127,7 +127,7 @@ context.setTimeout = setTimeout;
   assert(result.first.eventCoverage.every(row => row.evaluated === row.eligibleSlots + Object.values(row.firstBlockingGateCounts).reduce((sum,count)=>sum+count,0)), 'each event-slot evaluation has one first outcome');
   assert(result.first.choiceBranches.every(row => row.outcomes.reduce((sum, outcome) => sum + outcome.count, 0) <= row.enabled));
   assert(result.first.choiceBranches.some(row => row.enabled > 0), 'choice availability must include eligible but unselected candidates');
-  assert(result.first.eventCoverage.some(row => row.monthlyChoiceBlocked > 0), 'monthly choice exclusion must be visible');
+  assert(result.first.eventCoverage.every(row => row.monthlyChoiceBlocked === 0), 'collision-free annual scheduling must not waste major choices in the same month');
   assert.deepEqual(JSON.parse(JSON.stringify(result.first.eventCoverage)), JSON.parse(JSON.stringify(result.second.eventCoverage)), 'same seed and cohort must reproduce event coverage');
   assert.deepEqual(JSON.parse(JSON.stringify(result.first.choiceBranches)), JSON.parse(JSON.stringify(result.second.choiceBranches)), 'same seed and cohort must reproduce selected outcomes');
   assert.equal(result.comparison.sameConfig, true);
@@ -137,7 +137,7 @@ context.setTimeout = setTimeout;
   assert.equal(result.canceled.summary.attempted, 1);
   assert.equal(result.canceled.summary.sampled, 1, 'cancellation should retain completed lives');
   assert.equal(result.large.summary.attempted, 12);
-  assert.equal(result.large.summary.sampled, 12);
+  assert.equal(result.large.summary.sampled, 12, JSON.stringify(result.large.failures));
   assert.equal(result.large.cohortCount, 12);
   assert.equal(result.large.lifeDurations.length,12);
   assert(result.large.lifeDurations.every(row=>row.observedYears<=100&&row.maxEventFreeYears<=100&&row.maxYearsWithoutRecordedJob<=100));

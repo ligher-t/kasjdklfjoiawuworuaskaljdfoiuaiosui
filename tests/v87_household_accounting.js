@@ -3,8 +3,10 @@ const assert = require('node:assert/strict'),
   path = require('node:path'),
   vm = require('node:vm'),
   { context, setup } = require('./support/annual-cases.cjs'),
+  { installGeneralEmploymentFixture } = require('./support/general-employment-fixture.cjs'),
   root = path.resolve(__dirname, '..'),
   { ctx } = context(root);
+installGeneralEmploymentFixture(ctx);
 
 function prepare(age, arrangement, infected = false) {
   setup(ctx, { id: 'household-accounting', seed: 905120 + age, region: 'カジミエーシュ', age });
@@ -62,6 +64,7 @@ const adultShared = vm.runInContext(`(() => {
   s.par.fa.d = 0;
   s.par.fa.separated = true;
   s.par.mo.d = 0;
+  closeDependentEmployment(s, s.par.mo, "unemployed-before-budget", {year:s.year, month:1});
   s.par.mo.j = 0;
   s.care.networkIncome = 0;
   s.w = WEALTH[4];
@@ -248,10 +251,19 @@ assert.deepEqual(JSON.parse(JSON.stringify(householdContractLedger)),
 console.log('PASS household and personal ledgers, contractual debt, uncontracted deficit interest, repayments, and death balance');
 
 prepare(32,'independent');
+ctx.startGeneralEmploymentFixture(2,'household-capacity-and-debt');
 const capacityAndDebt=vm.runInContext(`(()=>{
-  S.job=2;S.fl.retired=0;S.debt=10000000;S.cash=0;S.w={...S.w,i:4};S.h=80;
+  S.fl.retired=0;S.debt=10000000;S.cash=0;S.w={...S.w,i:4};S.h=80;
   const budget=()=>prepareAnnualPersonalBudget(S,ANNUAL_SERVICES,S.age,S.t,S.f);
-  const healthy=budget();S.h=0;const limited=budget(),travel=infectionCareTravelCostScale(S);
+  const healthyState=JSON.parse(JSON.stringify(S)),limitedState=JSON.parse(JSON.stringify(S));
+  healthyState.h=80;limitedState.h=0;
+  settleEmploymentThrough(healthyState,healthyState.year,12);
+  settleEmploymentThrough(limitedState,limitedState.year,12);
+  healthyState.year++;healthyState.age++;
+  limitedState.year++;limitedState.age++;
+  const healthy=prepareAnnualPersonalBudget(healthyState,ANNUAL_SERVICES,healthyState.age,healthyState.t,healthyState.f),
+    limited=prepareAnnualPersonalBudget(limitedState,ANNUAL_SERVICES,limitedState.age,limitedState.t,limitedState.f);
+  S.h=0;const travel=infectionCareTravelCostScale(S);
   S.h=80;const normalTravel=infectionCareTravelCostScale(S);
   ap({debtPlan:'frugal'});const frugal=budget();ap({debtPlan:'maintain'});const kept=budget();
   S.debt=2*Math.max(annualCashReserve(S),S.inc||0,S.exp||0);

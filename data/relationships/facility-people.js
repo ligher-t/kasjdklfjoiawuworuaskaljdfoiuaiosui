@@ -38,14 +38,16 @@ window.TERRA_DATA_BUILD.run("relationships/facility-people", function ($terraDat
       st: ["児童", "少年", "青年"],
       cd: 6,
       w: 0.65,
-      show: s =>
-        !!s.fl?.sch && !$rules.facilities.facilityPersonFor(s, "school") && !$rules.conditions.restricted(s),
+      show: s => !!educationMigrationCurrent(s) &&
+        educationLegacySceneGuard(s,"education_school_classroom") &&
+        !!educationLegacyTeacherContact(s,{known:false}) &&
+        !$rules.conditions.restricted(s),
       t: "放課後の教室で、授業を受け持つ先生が教卓の上のプリントを揃えていた。手元のノートには、授業中に聞きそびれた疑問がいくつも残っている。",
       c: [
         $terraData.K("教卓へ歩み寄り、分からなかった箇所を尋ねる", {}, [
           1,
           "思い切って名前を名乗り、つまずいていた箇所を尋ねた。先生は黒板の隅を使ってかみ砕いて教えてくれ、次の授業からも質問しやすくなった。",
-          { facilityPersonAction: { kind: "school", action: "meet" }, k: 1 }
+          { educationAction:"legacy:teacher-meet", k: 1 }
         ]),
         $terraData.K("ひとりで教科書とノートを見直す", {}, [
           1,
@@ -110,16 +112,13 @@ window.TERRA_DATA_BUILD.run("relationships/facility-people", function ($terraDat
       st: ["児童", "少年", "青年", "壮年"],
       cd: 5,
       w: 0.54,
-      show: s => {
-        const p = $rules.facilities.facilityPersonFor(s, "school");
-        return !!p && s.year - p.metYear >= 2 && s.year - (p.contacts.at(-1)?.year ?? p.metYear) >= 2;
-      },
+      show: s => !!educationLegacyTeacherContact(s,{known:true,minElapsed:2}),
       t: "ふとした拍子に、以前わかりやすく勉強を教えてくれた先生のことを思い出した。あの学び舎では今も変わらず授業が続いているだろうか。",
       c: [
         $terraData.K("学び舎を訪ね、先生の近況を聞いてみる", {}, [
           1,
           "授業の合間を見計らって顔を出すと、最近の教室の様子や生徒たちの話を温かく聞かせてくれた。",
-          { facilityPersonAction: { kind: "school", action: "ask" }, p: 1 }
+          { educationAction:"legacy:teacher-followup", p: 1 }
         ]),
         $terraData.K("訪ねるのはやめ、当時のノートを引っ張り出して読み返す", {}, [
           1,
@@ -187,16 +186,13 @@ window.TERRA_DATA_BUILD.run("relationships/facility-people", function ($terraDat
       st: ["児童", "少年", "青年", "壮年"],
       cd: 7,
       w: 0.3,
-      show: s => {
-        const p = $rules.facilities.facilityPersonFor(s, "school");
-        return !!p && p.actualStatus === "working" && p.knownStatus === "working";
-      },
+      show: s => !!educationLegacyTeacherContact(s,{known:true}),
       t: "学び舎の前を通りかかると、顔なじみの先生が重そうな教材の箱を一人で運んでいた。次の授業が始まるまでに教室へ並べたいらしい。",
       c: [
         $terraData.K("箱を半分持ち、教室の棚へ並べるのを手伝う", {}, [
           1,
           "教材の箱を一緒に教室まで運び、授業の鐘が鳴る前に棚へきれいに並べ終えた。",
-          { facilityPersonAction: { kind: "school", action: "help" }, rl: 1 }
+          { educationAction:"legacy:teacher-help", rl: 1 }
         ]),
         $terraData.K("今は先を急いでいると詫びて通り過ぎる", {}, [
           1,
@@ -385,6 +381,7 @@ window.TERRA_DATA_BUILD.run("relationships/facility-people", function ($terraDat
         w: 0.4,
         show: s =>
           !!s.fl?.sch &&
+          !s.educationPath?.offeringId &&
           !$rules.conditions.restricted(s) &&
           !!$rules.facilities.alternativeFacility(s, "school"),
         t: "今通っている学び舎とは別の教室が、年度の途中からでも生徒を受け入れると案内を出していた。通いやすさや授業の進み具合を家の人と話し合った。",

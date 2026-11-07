@@ -140,6 +140,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "leave",
             note: "近所の人へ当番を引継いだ"
           },
+          lifeGoal: { id: "neighborhood-mutual-aid", action: "abandon", note: "当番を後任へ引き継ぎ、近隣の役目を終えた" },
           groupStanding: {
             id: "neighbors",
             title: "近隣の住民",
@@ -164,6 +165,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "suspend",
             note: "本人の休養と家の用事"
           },
+          lifeGoal: { id: "neighborhood-mutual-aid", action: "pause", note: "家の用事を優先し、当番を一時休止した" },
           h: -1,
           p: 1
         }
@@ -199,6 +201,7 @@ window.TERRA_DATA_BUILD.fragment(
             role: "不定期の備品確認",
             note: "休止後、本人が可能な日の当番へ復帰"
           },
+          lifeGoal: { id: "neighborhood-mutual-aid", action: "continue", note: "戻れる日だけ当番を再開した" },
           groupStanding: {
             id: "neighbors",
             title: "近隣の住民",
@@ -229,6 +232,7 @@ window.TERRA_DATA_BUILD.fragment(
             action: "leave",
             note: "本人が近隣互助の当番を終えた"
           },
+          lifeGoal: { id: "neighborhood-mutual-aid", action: "abandon", note: "鍵を返し、近隣互助の当番を終えた" },
           p: 0
         }
       ])
@@ -260,8 +264,8 @@ window.TERRA_DATA_BUILD.fragment(
           },
           lifeGoal: {
             id: "neighborhood-mutual-aid",
-            action: "compromise",
-            note: "転居後、地域互助の担当を引き継いだ"
+            action: "abandon",
+            note: "転居に伴い、以前の地区の当番を引き継いで終えた"
           },
           p: 1
         }
@@ -929,13 +933,22 @@ window.TERRA_DATA_BUILD.fragment(
     references: ["SRC_TL_MIDDLE", "SRC_URSUS_CHILDREN", "SRC_CHERNOB_AFTERSHOCK_MODEL"],
     st: ["児童", "少年", "青年", "壮年", "老年"],
     need: ["国:ウルサス", "都市:チェルノボーグ"],
-    show: s =>
-      !!s.world?.events?.chernobog_incident && (s.year > 1097 || (s.year === 1097 && s.mo >= 2)),
+    show: s => !!s.world?.events?.chernobog_incident &&
+      (s.year>1097 || (s.year===1097 && s.mo>=2)) &&
+      Object.values(s.world?.educationWorld?.offerings||{}).some(o=>{
+        if(o.stage!=="lower" ||
+          s.world.educationWorld.campuses[o.campusId]?.educationAreaId !==
+          s.local?.educationAreaId)return false;
+        const before=educationSchoolStatusAt(s,o.id,1096,12),
+          now=educationSchoolStatusAt(s,o.id,s.year,s.mo??0);
+        return !!before && !!now && before.teachingEquivalent===0 &&
+          now.teachingEquivalent>0;
+      }),
     ge: { year: 1097, age: 6 },
     le: { year: 1098 },
     once: true,
     w: 0.3,
-    t: "傷跡の残る中学校の門に、ようやく授業を再開する日が貼り出された。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままで、廊下には戻ってこない生徒たちの空席がいくつも並んでいた。",
+    t: "傷跡の残る中学校の門に、再開した課程の案内が貼り出されていた。近所の大人たちが使える机を運び込んでいたが、割れた窓は板で打ち付けられたままだった。",
     c: [
       $terraData.K("手を貸して、教室まで机を一つ運び込む", {}, [
         1,
@@ -973,14 +986,27 @@ window.TERRA_DATA_BUILD.fragment(
     ge: { year: 1096, age: 12 },
     le: { year: 1097, age: 17 },
     months: [12, 1],
-    show: s => !!s.world?.events?.chernobog_incident,
+    show: s => !!s.world?.events?.chernobog_incident &&
+      !!s.local?.educationAreaId,
     once: true,
     w: 0.4,
-    t: "混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持ちの食料を分け合おうとしている。窓の外では、街を脱出する人々の列が雪煙の中を動いていた。",
+    t: s => {
+      const student=educationMigrationCurrent(s),campus=student &&
+        s.world?.educationWorld?.campuses?.[student.m.campusId];
+      return student && student.enroll.startedYear<=1096 && campus &&
+        campus.educationAreaId===s.local?.educationAreaId ?
+        "混乱に包まれた教室で、逃げ場所を探す声と親きょうだいを呼ぶ声が飛び交った。何人かの同級生が「はぐれても連絡が取れるようにしよう」と声を張り上げ、手持ちの食料を分け合おうとしている。窓の外では、街を脱出する人々の列が雪煙の中を動いていた。" :
+        "チェルノボーグの通りに避難する人々があふれた。学校の方角からも子どもたちが駆けてくる。何が教室で起きたかは分からないまま、近くの大人に逃げ道を尋ねるか考えた。";
+    },
     c: [
       $terraData.K(
         "同級生たちの連絡係を引き受け、避難先と食料のありかを伝えて回る",
-        {},
+        { show: s => {
+          const student=educationMigrationCurrent(s),campus=student &&
+            s.world?.educationWorld?.campuses?.[student.m.campusId];
+          return !!student && student.enroll.startedYear<=1096 &&
+            campus?.educationAreaId===s.local?.educationAreaId;
+        } },
         [
           0.7,
           "震える手で書き留めた仲間の家を駆け回り、炊き出しの場所と合流先を必死に伝えた。息を切らして次の路地へと走った。",
@@ -1014,9 +1040,9 @@ window.TERRA_DATA_BUILD.fragment(
           { p: -3, fl: { war_displaced: 1 } }
         ]
       ),
-      $terraData.K("生き延びることを最優先し、学校を出て避難の列に飛び込む", {}, [
+      $terraData.K("生き延びることを最優先し、避難の列に加わる", {}, [
         1,
-        "ちりぢりになる同級生たちの声を背後に聞きながら、避難民の波へ駆け込んだ。誰が無事に逃げ延びたのかも分からないまま街を離れた。",
+        "遠くで呼び合う人々の声を聞きながら、避難民の波へ駆け込んだ。誰が無事に逃げ延びたのかも分からないまま街を離れた。",
         { fl: { war_displaced: 1 }, p: 1 }
       ]),
       $terraData.K("パニックにならず、近所の大人に安全な抜け道を聞いてから動く", {}, [
@@ -1079,9 +1105,9 @@ window.TERRA_DATA_BUILD.fragment(
           rl: 2
         }
       ]),
-      $terraData.K("家族と別の土地へ移るため、書き留めた連絡先を信頼できる大人に託す", {}, [
+      $terraData.K("今後の連絡のため、書き留めた宛先を信頼できる大人に託す", {}, [
         1,
-        "遠くの街へ移り住むことになり、もし後から尋ねてくる子がいたら渡してほしいと近所の大人に控えを託した。新しい土地で生きるのに必死で、振り返る余裕はなかった。",
+        "もし後から尋ねてくる人がいたら伝えてほしいと、近所の大人に宛先の控えを託した。自分は当面、日々の生活を整えることにした。",
         {
           lifeAffiliation: {
             id: "ursus-school-aid",
@@ -1095,7 +1121,6 @@ window.TERRA_DATA_BUILD.fragment(
             kind: "student-handover",
             description: "家族の転居前、同級生の連絡先を近所の大人へ託した"
           },
-          fl: { war_displaced: 1 },
           p: 1
         }
       ]),
@@ -1136,7 +1161,7 @@ window.TERRA_DATA_BUILD.fragment(
     c: [
       $terraData.K("生き延びた旧友へ再び筆を執り、年に一度だけでも便りを交わす", {}, [
         1,
-        "連絡がつく同級生へ久しぶりに手紙を書き、互いの無事を確かめ合った。年に一度、あの冬を生き延びた証として近況を送り合うことにした。",
+        "以前の同級生の宛先へ久しぶりに手紙を書いた。返事が届くかは分からないが、年に一度でも近況を尋ねられるように住所を控え直した。",
         {
           lifeAffiliation: {
             id: "ursus-school-aid",

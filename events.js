@@ -57,6 +57,7 @@
       "relationships/facility-people",
       "life/goals-and-family",
       "work/contracts",
+      "work/employment-choices",
       "social/learning",
       "social/conflict",
       "review/choice-policy",
@@ -133,8 +134,8 @@
             for (const row of node) readResult(row);
             return;
           }
-          if (node.fl || node.educationAction === "primary")
-            for (const [id, value] of Object.entries({...node.fl,...(node.educationAction === "primary" ? {sch:1} : {})})) {
+          if (node.fl || ["primary","case:commit","case:commit-grant","case:commit-loan"].includes(node.educationAction))
+            for (const [id, value] of Object.entries({...node.fl,...(["primary","case:commit","case:commit-grant","case:commit-loan"].includes(node.educationAction) ? {sch:1} : {})})) {
               if (!changes.has(id)) changes.set(id, new Set());
               changes.get(id).add(value);
             }

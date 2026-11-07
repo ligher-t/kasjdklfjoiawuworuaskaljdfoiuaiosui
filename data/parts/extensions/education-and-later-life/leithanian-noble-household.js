@@ -209,7 +209,7 @@ window.TERRA_DATA_BUILD.fragment(
               onlyIfActive: true,
               note: "屋敷での実務から手を引いた"
             },
-            lifeGoal: { id: goalId, action: "compromise", onlyIfActive: true, note: "屋敷での務めを終えた" },
+            lifeGoal: { id: goalId, action: "abandon", onlyIfActive: true, note: "屋敷での務めを終えた" },
             p: -1
           }
         ])
@@ -260,7 +260,7 @@ window.TERRA_DATA_BUILD.fragment(
               onlyIfActive: true,
               note: "長年の屋敷の務めにピリオドを打った"
             },
-            lifeGoal: { id: goalId, action: "compromise", onlyIfActive: true, note: "屋敷の役目を終え、自分の道を選んだ" },
+            lifeGoal: { id: goalId, action: "abandon", onlyIfActive: true, note: "屋敷の役目を終え、自分の道を選んだ" },
             p: -1
           }
         ])
@@ -308,7 +308,7 @@ window.TERRA_DATA_BUILD.fragment(
               action: "leave",
               note: "休止していた屋敷の務めを正式に返上"
             },
-            lifeGoal: { id: goalId, action: "compromise", note: "屋敷での役目に区切りをつけた" },
+            lifeGoal: { id: goalId, action: "abandon", note: "屋敷での役目に区切りをつけた" },
             p: -1
           }
         ])
@@ -323,7 +323,9 @@ window.TERRA_DATA_BUILD.fragment(
       after: { id: "life_leithanian_noble_household_review", min: 10 },
       once: true,
       w: 0.07,
-      show: hasLeft,
+      show: s => hasLeft(s) &&
+        Number.isInteger(affiliation(s)?.endedYear) &&
+        s.year - affiliation(s).endedYear >= 10,
       t: "屋敷の務めを離れてから、ずいぶん長い年月が経った。それでも、複雑な出納や古い目録をさばいた手際は、今の仕事や暮らしの中でもふとした拍子に顔を出す。あの頃の経験をどう受け止めるか、ふと振り返った。",
       c: [
         $terraData.K("屋敷で身につけた実務の勘所を、今の仕事に活かす", {}, [

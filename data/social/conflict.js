@@ -244,6 +244,7 @@ window.TERRA_DATA_BUILD.run("social/conflict", function ($terraData, $define, $r
         s.r?.n !== "サルカズ" &&
         s.res?.n === "ヴィクトリア" &&
         s.job > 0 &&
+        !!currentPlayerEmployment(s) &&
         s.biasSarkaz >= 75 &&
         (s.socialLearning?.equityCommitment || 0) < 35 &&
         s.lifeRecord?.affiliations?.some(
@@ -412,12 +413,14 @@ window.TERRA_DATA_BUILD.run("social/conflict", function ($terraData, $define, $r
             {
               biasInf: -11,
               socialConflictAction: { action: "reconsider", target: "infected", context: "past-attitude" },
-              lifeGoal: {
-                id: "order-through-exclusion",
-                action: "compromise",
-                onlyIfActive: true,
-                note: "診断後、排除によって秩序を守る目標を見直した"
-              },
+              lifeGoals: [
+                {
+                  id: "order-through-exclusion",
+                  action: "compromise",
+                  onlyIfUnresolved: true,
+                  note: "診断後、排除によって秩序を守る目標を見直した"
+                }
+              ],
               p: -3,
               equityGain: 9
             }
