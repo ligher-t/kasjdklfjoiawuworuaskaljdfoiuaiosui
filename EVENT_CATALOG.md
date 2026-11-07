@@ -4,7 +4,7 @@
 
 タグは初期自動候補です。校閲状態が未校閲の間、タグや指摘欄を監査済みとは扱いません。指摘欄が空でも問題がないことを意味しません。
 
-イベント数：3700　選択肢数：4488　結果枝数：5297
+イベント数：3711　選択肢数：4508　結果枝数：5323
 
 頻度欄は添付された旧版シムの観測値です。 birthYear=1077–1077、seed=100010100、source=terra-source-76f37d23。現行版の確率・テラの人口統計・正史上の頻度ではありません。候補枠数と発生数は人の人数ではなく抽選枠の記録です。
 
@@ -12,7 +12,7 @@
 
 ## 国・地域別索引
 
-[イェラグ (89)](#tag-region-0)　・　[イベリア (119)](#tag-region-1)　・　[ヴィクトリア (163)](#tag-region-2)　・　[ウルサス (199)](#tag-region-3)　・　[カジミエーシュ (108)](#tag-region-4)　・　[カズデル (122)](#tag-region-5)　・　[クルビア (197)](#tag-region-6)　・　[サーミ (95)](#tag-region-7)　・　[サルゴン (111)](#tag-region-8)　・　[シエスタ (86)](#tag-region-9)　・　[シラクーザ (104)](#tag-region-10)　・　[ボリバル (99)](#tag-region-11)　・　[ミノス (87)](#tag-region-12)　・　[ラテラーノ (97)](#tag-region-13)　・　[リターニア (110)](#tag-region-14)　・　[レム・ビリトン (95)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (92)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (102)](#tag-region-19)　・　[未特定 (1672)](#tag-region-20)　・　[龍門 (113)](#tag-region-21)
+[イェラグ (89)](#tag-region-0)　・　[イベリア (119)](#tag-region-1)　・　[ヴィクトリア (163)](#tag-region-2)　・　[ウルサス (200)](#tag-region-3)　・　[カジミエーシュ (108)](#tag-region-4)　・　[カズデル (122)](#tag-region-5)　・　[クルビア (207)](#tag-region-6)　・　[サーミ (95)](#tag-region-7)　・　[サルゴン (111)](#tag-region-8)　・　[シエスタ (86)](#tag-region-9)　・　[シラクーザ (104)](#tag-region-10)　・　[ボリバル (99)](#tag-region-11)　・　[ミノス (87)](#tag-region-12)　・　[ラテラーノ (97)](#tag-region-13)　・　[リターニア (110)](#tag-region-14)　・　[レム・ビリトン (95)](#tag-region-15)　・　[移動都市 (1)](#tag-region-16)　・　[炎国 (92)](#tag-region-17)　・　[居住地未特定 (1)](#tag-region-18)　・　[極東 (102)](#tag-region-19)　・　[未特定 (1672)](#tag-region-20)　・　[龍門 (113)](#tag-region-21)
 
 <a id="tag-region-0"></a>
 ### イェラグ（89）
@@ -395,7 +395,7 @@
 - [v78_id_document_victoria](#event-v78_id_document_victoria) — 仕事の応募書類を出したところ、家で呼ばれているターラーの名と、役所の台帳にあるヴィクトリア風の綴りが違うと突き返された。窓口の係員は「どっちが本当の…
 
 <a id="tag-region-3"></a>
-### ウルサス（199）
+### ウルサス（200）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [ursus_mine_assignment_offer](#event-ursus_mine_assignment_offer) — 採掘現場で働いていると、鉱区の監督官に呼び出された。鉱石病の診断記録を理由に、北方の鉱区へ移れという。拒めばどうなるかは口にされないまま、冷たい机の…
 - [ursus_mine_assignment_review](#event-ursus_mine_assignment_review) — 監視付きの採掘班に送り込まれて二年が過ぎた。皮下に埋め込まれた位置特定チップを抜き取ろうと、密かに外の医療班とつなぎを取る坑夫もいる。信号が途絶えれ…
@@ -581,6 +581,7 @@
 - [car_urs_officer_choice_purge](#event-car_urs_officer_choice_purge) — 軍団長から極秘の密命が下された。反皇帝派の疑いがある同僚の貴族将校を、演習中の事故に見せかけて抹殺せよという。従えば軍団長の側近へ引き立てられるが、…
 - [car_urs_guard_daily_01](#event-car_urs_guard_daily_01) — 鉛色の空の下、雪に埋もれたコンクリートトーチカで銃を抱えて立った。双眼鏡で荒涼たる雪原を監視し、凍えた手足を焚火にかざす。粗末な黒パンを齧りながら、…
 - [car_urs_guard_choice_riot](#event-car_urs_guard_choice_riot) — 監視する感染者炭鉱の地下最深部で、虐待に耐えかねた囚人たちがツルハシを手に一斉に暴動を起こした。坑道の出入口を塞ぐ鉄扉の前で、援軍が来るまで銃剣で死…
+- [car_urs_guard_choice_captive_order](#event-car_urs_guard_choice_captive_order) — 夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足…
 - [car_urs_officer_disciplinary_review](#event-car_urs_officer_disciplinary_review) — かつての不名誉除隊について、軍の記録担当が例外的な処分再審査の申立書を受け付けると知った。命令を拒んだ事情を記せば、当時の上官の判断も問い直すことに…
 - [car_urs_guard_disciplinary_review](#event-car_urs_guard_disciplinary_review) — 軍務を追われて数年が経ち、かつての坑道での出来事を別の担当者に申し立てられると聞いた。脱出を選んだ理由も、退路を塞いだ状況も、記録の中では短い「職場…
 - [cl_ursus_school_divide](#event-cl_ursus_school_divide) — ウルサスの学校の廊下で、親の身分や家の貧しさをあげつらう怒鳴り声が響いた。貴族や役人の家を鼻にかける生徒と、馬鹿にされて拳を握りしめる生徒が睨み合っ…
@@ -704,7 +705,7 @@
 - [car_kaz_armorless_entry](#event-car_kaz_armorless_entry) — 商業連合会の暗部――金で動く騎士たちの背後で、邪魔な感染者騎士や監査会の役人を密かに始末する影の暗殺組織『無冑盟』。一度足を踏み入れれば抜け出すこと…
 - [car_kaz_comp_knight_daily_01](#event-car_kaz_comp_knight_daily_01) — 照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と…
 - [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFi…
-- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。…
+- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか…
 - [cl_kazimierz_sponsorship](#event-cl_kazimierz_sponsorship) — カジミエーシュの眩い競技場の裏手では、ネオンの影で無数の清掃夫や整備工が油まみれになって働いていた。顔なじみの業者から「競技場の裏方の口があるぞ」と…
 
 <a id="tag-region-5"></a>
@@ -833,7 +834,7 @@
 - [v78_sarkaz_self_protection](#event-v78_sarkaz_self_protection) — 新しい仕事場の面接で、担当者はあなたの角を一瞥するなり履歴書を脇へ押しやった。「お前たちサルカズが何をしてきたか、知らないとは言わせないぞ」。これま…
 
 <a id="tag-region-6"></a>
-### クルビア（197）
+### クルビア（207）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [col_tech_safety_review](#event-col_tech_safety_review) — 試作装置の点検表と、現場監督から渡された稼働手順の数値が食い違っていた。監督は試験の日程を一日たりとも動かさないと言う。始業のベルが作業場に鳴り響く…
 - [col_tech_safety_aftermath](#event-col_tech_safety_aftermath) — あの試作試験から二年が過ぎた。訂正印が押された点検表は今もロッカーの奥に眠っているが、現場ではまたしても安全手順を省くよう急かす声が飛び交い始めた。…
@@ -944,6 +945,16 @@
 - [child_originium_slug_race_alley](#event-child_originium_slug_race_alley) — 路地の子どもたちが、紙片で作った小さな車を床の溝に走らせていた。通行人が増えると、誰かが遊びを止めて道を空けた。
 - [child_polyglot_border_market_ear](#event-child_polyglot_border_market_ear) — 市場の店先で、同じ品に違う呼び名が使われていた。値札や身振りを手がかりに、売り手と買い手が何を確かめているのか考えた。
 - [child_scrap_radio_assembly](#event-child_scrap_radio_assembly) — 壊れた通信機の部品が作業台に置かれていた。大人の許可を得て、電源を外した状態でネジと配線を分類した。
+- [violence_infected_expulsion_speech](#event-violence_infected_expulsion_speech) — 市場の掲示板に、感染者を街から追い出せと訴える集会の案内が貼られていた。演説者は「抵抗する者は力ずくで追い出せ」と声を張り、集まった人々へ賛同を求め…
+- [violence_infected_expulsion_meeting](#event-violence_infected_expulsion_meeting) — 翌年、また同じ街角に人が集まった。演説者は「抵抗する感染者は力ずくで追い出せ」と声を張り、周囲へ唱和を促している。
+- [violence_infected_market_assault](#event-violence_infected_market_assault) — 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しや…
+- [violence_infected_market_homicide_followup](#event-violence_infected_market_homicide_followup) — 数週間後、診療所を出た男は、まだ包帯を巻いた腕をかばいながら市場を歩いていた。あなたと配偶者が路地口へ差しかかると、同じ一団が男を取り囲んだ。巡回衛…
+- [violence_civilian_homicide_adjudication](#event-violence_civilian_homicide_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、救護員の死亡確認が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_attempted_homicide_adjudication](#event-violence_civilian_attempted_homicide_adjudication) — 取り押さえられて三か月。衛士と配偶者の証言が法廷に提出され、石を振り下ろした行為への判決が告げられる。
+- [violence_civilian_assault_adjudication](#event-violence_civilian_assault_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、治療を受けた男の記録が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_homicide_release](#event-violence_civilian_homicide_release) — 三年間の収容を終え、門の外へ出た。手元の金と戻れる場所を確かめ、翌日からの暮らしを考え始めた。
+- [violence_civilian_attempted_homicide_release](#event-violence_civilian_attempted_homicide_release) — 二年の収容を終え、門の外へ出た。石を振り下ろした相手は死ななかった。目撃した配偶者との日常も戻らず、これからの暮らしを考えることになった。
+- [violence_civilian_assault_release](#event-violence_civilian_assault_release) — 一年の収容を終え、門の外へ出た。石を振り下ろした相手は生きていた。配偶者との関係も、あの日から止まったままだった。
 - [asset_choice_catastrophe_insurance](#event-asset_choice_catastrophe_insurance) — クルビアの民間保険会社から、治療費の負担を軽くする医療保険の案内が届いた。契約を続けるには、年ごとの更新料を納める必要がある。
 - [life_columbia_clinical_trap_decision](#event-life_columbia_clinical_trap_decision) — 多額の負債と生活苦のなか、製薬企業の代理人を名乗る男から『新薬の短期被験者になるだけで借金を全額肩代わりする』という契約書を差し出された。だが添付さ…
 - [ori_columbia_insurance_records](#event-ori_columbia_insurance_records) — 鉱石病の診断が出たあと、クルビアの保険窓口へ治療費の補助が出るか掛け合いに行った。担当者が広げた約款には小さな文字で除外条項が並び、結局いくらの薬代…
@@ -3944,7 +3955,7 @@
 
 ## ジャンル別索引
 
-[移動・物流 (336)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (510)](#tag-genre-2)　・　[感染・医療 (647)](#tag-genre-3)　・　[教育・文化 (547)](#tag-genre-4)　・　[差別・制度 (190)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (396)](#tag-genre-7)　・　[戦争・政治 (179)](#tag-genre-8)　・　[天災・避難 (271)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (489)](#tag-genre-11)　・　[暴力・犯罪 (2)](#tag-genre-12)　・　[未分類 (1292)](#tag-genre-13)　・　[労働・経済 (959)](#tag-genre-14)
+[移動・物流 (336)](#tag-genre-0)　・　[家計・生活 (1)](#tag-genre-1)　・　[家族・介護 (513)](#tag-genre-2)　・　[感染・医療 (651)](#tag-genre-3)　・　[教育・文化 (547)](#tag-genre-4)　・　[差別・制度 (193)](#tag-genre-5)　・　[仕事・技能 (1)](#tag-genre-6)　・　[所属・組織 (398)](#tag-genre-7)　・　[戦争・政治 (180)](#tag-genre-8)　・　[天災・避難 (270)](#tag-genre-9)　・　[都市生活 (1)](#tag-genre-10)　・　[日常 (490)](#tag-genre-11)　・　[暴力・犯罪 (12)](#tag-genre-12)　・　[未分類 (1291)](#tag-genre-13)　・　[労働・経済 (967)](#tag-genre-14)
 
 <a id="tag-genre-0"></a>
 ### 移動・物流（336）
@@ -4290,7 +4301,7 @@
 - [life_debt_budget_review](#event-life_debt_budget_review) — テーブルの上に給金袋と借金の督促状を並べ、ため息をついた。今の稼ぎだけではとても一度には返しきれず、腹をくくって日々の食い扶持を削るか、身体を壊さな…
 
 <a id="tag-genre-2"></a>
-### 家族・介護（510）
+### 家族・介護（513）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -4622,6 +4633,9 @@
 - [life_later_spouse_evening_walk](#event-life_later_spouse_evening_walk) — 夕方、配偶者と近所を歩いた。歩く速さや寄り道したい場所はその日によって違い、言わなくても分かると思わず確かめ合った。
 - [life_later_neighbor_children_story](#event-life_later_neighbor_children_story) — 近所の子どもが、昔の街や移動都市の暮らしについて尋ねてきた。覚えている景色と、後から聞いた話を分けて話すことにした。
 - [life_later_life_review](#event-life_later_life_review) — 棚の記録や古い仕事道具を見ながら、何を覚えていて、何を忘れてしまったか考えた。家族や友人と過ごした日々を、一つずつたどった。
+- [violence_infected_market_assault](#event-violence_infected_market_assault) — 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しや…
+- [violence_infected_market_homicide_followup](#event-violence_infected_market_homicide_followup) — 数週間後、診療所を出た男は、まだ包帯を巻いた腕をかばいながら市場を歩いていた。あなたと配偶者が路地口へ差しかかると、同じ一団が男を取り囲んだ。巡回衛…
+- [violence_civilian_attempted_homicide_release](#event-violence_civilian_attempted_homicide_release) — 二年の収容を終え、門の外へ出た。石を振り下ろした相手は死ななかった。目撃した配偶者との日常も戻らず、これからの暮らしを考えることになった。
 - [life_family_remittance](#event-life_family_remittance) — 家計逼迫 故郷の親から手紙が届いた。薬代や家の修繕のことが遠慮がちに数行だけ書かれている。こちらの財布も厳しい中、どんな返事を書くか便箋を前に迷った…
 - [life_youth_apprenticeship](#event-life_youth_apprenticeship) — （動的本文）
 - [life_parent_visit](#event-life_parent_visit) — 故郷の親から届いた手紙に、『たまには顔を見せておくれ』とあった。高い往復の運賃を出せば、今月の支払いをひとつ我慢しなければならない。 親からの手紙に…
@@ -4803,7 +4817,7 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-genre-3"></a>
-### 感染・医療（647）
+### 感染・医療（651）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
@@ -5165,6 +5179,10 @@
 - [life_infected_partner_future_talk](#event-life_infected_partner_future_talk) — これからの治療や暮らしについて、配偶者と落ち着いて話す時間を取った。相手も同じ考えだろうと決めつけず、希望を一つずつ確かめた。
 - [life_infected_later_years_reflection](#event-life_infected_later_years_reflection) — 長い時間をかけて、治療や仕事、住まいの都合を何度も調整してきた。病気が軽くなったわけではないが、今の生活に合わせた相談先や手順は少しずつ増えている。
 - [life_later_health_review](#event-life_later_health_review) — 診察の帰り、医療担当者と今後の通院や日々の動き方を話した。年齢だけで体の状態を決めず、本人が感じる変化を記録に残した。
+- [violence_infected_expulsion_speech](#event-violence_infected_expulsion_speech) — 市場の掲示板に、感染者を街から追い出せと訴える集会の案内が貼られていた。演説者は「抵抗する者は力ずくで追い出せ」と声を張り、集まった人々へ賛同を求め…
+- [violence_infected_expulsion_meeting](#event-violence_infected_expulsion_meeting) — 翌年、また同じ街角に人が集まった。演説者は「抵抗する感染者は力ずくで追い出せ」と声を張り、周囲へ唱和を促している。
+- [violence_infected_market_assault](#event-violence_infected_market_assault) — 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しや…
+- [violence_infected_market_homicide_followup](#event-violence_infected_market_homicide_followup) — 数週間後、診療所を出た男は、まだ包帯を巻いた腕をかばいながら市場を歩いていた。あなたと配偶者が路地口へ差しかかると、同じ一団が男を取り囲んだ。巡回衛…
 - [life_pet_vet_cost](#event-life_pet_vet_cost) — 可愛がっている生き物が、ここ数日ほとんど餌に口をつけない。毛並みもどこか元気がなく見えるが、獣医に診せれば今月の生活費が吹き飛んでしまう。 飼ってい…
 - [life_arts_medical_observation](#event-life_arts_medical_observation) — 診療所の担当者が、同意を得た診察のあとで補助具の扱いを説明した。見学できるのは器具と手順だけで、患者の記録や治療判断には触れない。
 - [life_arts_medical_training](#event-life_arts_medical_training) — 診療所の訓練担当者が、器具の受け渡しと記録補助を教える枠を説明した。訓練は監督者のいる時間だけで、診療や研究への参加とは別に扱われる。
@@ -6003,7 +6021,7 @@
 - [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 
 <a id="tag-genre-5"></a>
-### 差別・制度（190）
+### 差別・制度（193）
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
@@ -6133,6 +6151,8 @@
 - [hist_exp_1075_rim_billiton_independence_jubilee](#event-hist_exp_1075_rim_billiton_independence_jubilee) — 職場の掲示板に、自治や鉱業の運営に関する新しい説明会の日程が貼られた。制度の変更が実際の賃金や安全にどう影響するかは、まだ分からない。
 - [hist_exp_1099_kjerag_travelers_rumor](#event-hist_exp_1099_kjerag_travelers_rumor) — 行商人が、遠い国境や開拓地、海辺の町で検問や通行が変わったらしいと話していた。話す人ごとに時期や場所は違い、イェラグの外のことを確かめる手段はなかっ…
 - [life_infected_youth_support](#event-life_infected_youth_support) — 互助の集まりで、診断を受けたばかりの人が質問をためらっていた。あなたの経験を誰かの未来へ当てはめることはできないが、知っている相談先なら伝えられる。
+- [violence_infected_expulsion_speech](#event-violence_infected_expulsion_speech) — 市場の掲示板に、感染者を街から追い出せと訴える集会の案内が貼られていた。演説者は「抵抗する者は力ずくで追い出せ」と声を張り、集まった人々へ賛同を求め…
+- [violence_infected_expulsion_meeting](#event-violence_infected_expulsion_meeting) — 翌年、また同じ街角に人が集まった。演説者は「抵抗する感染者は力ずくで追い出せ」と声を張り、周囲へ唱和を促している。
 - [life_arts_scholarship_inquiry](#event-life_arts_scholarship_inquiry) — 学院の会計窓口で、受験と入学に必要な費用の見積書を示された。机の脇には、支援制度を照会する用紙も置かれている。利用できるかは、窓口の確認後に分かる。
 - [romance_cohabitation_review](#event-romance_cohabitation_review) — 同じ部屋で暮らし始めてから、日々の食費や掃除・洗濯の分担がすっかり日常になった。ただ、部屋の契約名義や親族への紹介をどうするか、宙ぶらりんのままにな…
 - [family_sibling_infection](#event-family_sibling_infection) — 同じ家で暮らす{sibling}が鉱石病にかかっていると分かった。親族のひとりは「世間に知られたら終わりだから絶対に隠せ」と声を潜め、もうひとりは「…
@@ -6166,6 +6186,7 @@
 - [reunion_reorg_choice_deserter_soldier_shelter](#event-reunion_reorg_choice_deserter_soldier_shelter) — 正規軍の中で感染が発覚し、激戦地の最前線へ「使い捨ての弾除け」として送られる直前に脱走してきた若い兵士が、移動隊に助けを求めてきた。追っ手の憲兵がす…
 - [reunion_legacy_testimony_for_historian](#event-reunion_legacy_testimony_for_historian) — 1096年の動乱と感染者運動の実態を偏見なく記録しているという中立の調査員から、匿名での聞き取り取材を依頼された。レユニオンが単なる暴徒の集団ではな…
 - [car_urs_officer_choice_purge](#event-car_urs_officer_choice_purge) — 軍団長から極秘の密命が下された。反皇帝派の疑いがある同僚の貴族将校を、演習中の事故に見せかけて抹殺せよという。従えば軍団長の側近へ引き立てられるが、…
+- [car_urs_guard_choice_captive_order](#event-car_urs_guard_choice_captive_order) — 夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足…
 - [car_kazdel_mil_daily_01](#event-car_kazdel_mil_daily_01) — 瓦礫の散らばるカズデルの軍営で、大剣の刃を荒砥で研ぎ澄ました。周囲から聞こえる古きサルカズの哀歌と復讐の誓い。千年の迫害に終止符を打つため、他国への…
 - [cl_ursus_school_divide](#event-cl_ursus_school_divide) — ウルサスの学校の廊下で、親の身分や家の貧しさをあげつらう怒鳴り声が響いた。貴族や役人の家を鼻にかける生徒と、馬鹿にされて拳を握りしめる生徒が睨み合っ…
 - [cl_tara_language_gate](#event-cl_tara_language_gate) — ヴィクトリアの窓口で、田舎の訛りが強い住民が係員に鼻で笑われていた。訛り一つで教養も仕事の腕もないと決めつけ、ろくに説明もせず追い返そうとしている。
@@ -6200,7 +6221,7 @@
 - [life_work_project_setback](#event-life_work_project_setback) — 納品目前になって、届いた部品の寸法が仕様書と食い違っていることが発覚した。現場には古い図面と、納期を盾に急かせる発注者の怒鳴り声だけが残された。 工…
 
 <a id="tag-genre-7"></a>
-### 所属・組織（396）
+### 所属・組織（398）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [loan_shark_siracusa](#event-loan_shark_siracusa) — シラクーザの馴染みの食堂の奥席で、ファミリーの会計役が濃い珈琲のカップを置き、折り畳んだ証文を差し出した。「いま困っているなら融通しよう。返すのは二…
 - [fam_gunrite](#event-fam_gunrite) — 教会から、守護銃の授与と訓練の知らせが届いた。家の人たちは晴れがましい顔で、あなたが一丁の銃を受け取る日を心待ちにしている。
@@ -6590,7 +6611,9 @@
 - [car_sir_soldier_entry](#event-car_sir_soldier_entry) — シラクーザを支配する12の巨大マフィア・ファミリー。煙草の煙が立ち込める屋敷の奥で、新たなソルジャーを迎える儀礼が開かれていた。『沈黙の掟（オメルタ…
 - [car_sir_police_entry](#event-car_sir_police_entry) — マフィアの支配から脱却し、法と秩序による統治を目指す新移動都市ヌオバ・ウォルシーニ。裁判所直属の都市警察官として、ファミリーからの脅迫や買収に屈せず…
 - [car_lmd_guard_choice_raid](#event-car_lmd_guard_choice_raid) — 近衛局通信から緊急入電。スラム街の廃ビルに武装組織の潜伏拠点が特定された。銃火器で武装した敵に対し、先頭を切って突入するか、催涙弾を撃ち込んで持久戦…
+- [car_urs_guard_choice_captive_order](#event-car_urs_guard_choice_captive_order) — 夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足…
 - [car_vic_royal_choice_coup](#event-car_vic_royal_choice_coup) — 1094年、ロンディニウムではカズデル軍事委員会の影響が強まり、大公爵たちの利権争いも深まっていた。所属する公爵家の部隊は対立勢力に敗れ、司令部を包…
+- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか…
 - [car_sir_soldier_daily_01](#event-car_sir_soldier_daily_01) — 石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コー…
 - [car_sir_soldier_choice_turf_war](#event-car_sir_soldier_choice_turf_war) — 隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。…
 - [cl_siracusa_market_patron](#event-cl_siracusa_market_patron) — シラクーザの市場で店の手伝いを頼まれたが、店主は毎月の売り上げとは別に、地元のファミリーへ納める金を裏帳面に書き込んでいた。表の帳面だけをつけるか、…
@@ -6599,7 +6622,7 @@
 - [history_path_review_kazdel_commission_founded](#event-history_path_review_kazdel_commission_founded) — 地元の補給組織に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた。
 
 <a id="tag-genre-8"></a>
-### 戦争・政治（179）
+### 戦争・政治（180）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [war](#event-war) — 遠くで砲撃の閃光が走り、移動都市は黒煙を吐いて緊急針路変更を始めた。機関区へ走る整備班と、避難路へ殺到する住民の怒号で通路が埋め尽くされた。 地響き…
 - [mv](#event-mv) — きな臭い知らせが相次ぎ、この移動都市もいつ戦火に巻き込まれるか分からない。外の定住地へ降りるか、別の移動都市へ乗り継ぐか、懐の金を数えながら思案した…
@@ -6763,6 +6786,7 @@
 - [car_urs_officer_daily_01](#event-car_urs_officer_daily_01) — 要塞前広場で、凍てつく風の中を直立する兵士たちを馬上から閲兵した。毛皮の軍服に積もる雪を払うことも許さぬ絶対の軍規。ウルサスの軍事力は、この無情な服…
 - [car_urs_officer_choice_purge](#event-car_urs_officer_choice_purge) — 軍団長から極秘の密命が下された。反皇帝派の疑いがある同僚の貴族将校を、演習中の事故に見せかけて抹殺せよという。従えば軍団長の側近へ引き立てられるが、…
 - [car_urs_guard_choice_riot](#event-car_urs_guard_choice_riot) — 監視する感染者炭鉱の地下最深部で、虐待に耐えかねた囚人たちがツルハシを手に一斉に暴動を起こした。坑道の出入口を塞ぐ鉄扉の前で、援軍が来るまで銃剣で死…
+- [car_urs_guard_choice_captive_order](#event-car_urs_guard_choice_captive_order) — 夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足…
 - [car_vic_infantry_daily_01](#event-car_vic_infantry_daily_01) — 冷たい雨が降り続くヴィクトリア軍の演習陣地。膝まで泥に浸かりながら塹壕の土嚢を積み直し、油布で小銃のボルトを拭った。貴族将校が天幕で温かいスープを飲…
 - [car_vic_infantry_choice_skirmish](#event-car_vic_infantry_choice_skirmish) — 行軍中、霧の立ち込める渓谷で待ち伏せしていた凶悪なサルカズ傭兵団の奇襲を受けた。貴族将校は狼狽して逃げ腰になり、歩兵小隊が孤立した。銃剣を構えて突撃…
 - [car_vic_royal_daily_01](#event-car_vic_royal_daily_01) — ロンディニウムの豪壮な将校クラブで、大公爵派閥の貴族たちとワイングラスを傾けた。壁に掛けられた歴代の武勲詩。どの公爵が次の軍需予算を握るか、華やかな…
@@ -6781,7 +6805,7 @@
 - [history_path_review_leith_revolution](#event-history_path_review_leith_revolution) — 地区の新政権支持活動に関わってから時が過ぎた。役目を続けることで得たつながりも、暮らしに増えた負担もある。これからどこまで引き受けるか、改めて考えた…
 
 <a id="tag-genre-9"></a>
-### 天災・避難（271）
+### 天災・避難（270）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [rim_catastrophe_transporter_review](#event-rim_catastrophe_transporter_review) — 天災が爪痕を残した坑道を調べる助手になって二年が過ぎた。崩落した岩肌や黒く光る源石の露出を図面に落とし込む隣で、同行する天災トランスポーターは絶えず…
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
@@ -7037,7 +7061,6 @@
 - [car_rim_eng_entry](#event-car_rim_eng_entry) — コータス族が主導する巨大採掘国家レム・ビリトン。地平線を覆う巨大自走採掘プラットフォーム『アイアンキャロット』等の心臓部を担う重機主任技師の選考が行…
 - [car_yan_suis_choice_beast_shard](#event-car_yan_suis_choice_beast_shard) — 辺境の荒野で、歳獣の微細な破片が活性化し、周囲の天候を歪めながら暴走していた。近隣の集落が呑み込まれる寸前である。司歳台の監察官として、自らの命を削…
 - [car_hig_shinto_daily_01](#event-car_hig_shinto_daily_01) — 朝露の残る神社の石段を竹箒で掃き清め、本堂の蝋燭に火を灯した。病や天災に怯える信徒たちが訪れ、鉱石病の平癒を祈願する。鈴の音を響かせ、真摯に祓いの詞…
-- [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
 - [car_sar_guard_choice_assassination](#event-car_sar_guard_choice_assassination) — 深夜、宮殿の奥から短い叫び声と金属のぶつかる音がした。回廊に倒れた衛兵のそばで、夜番の鐘が鳴り始める。寝所へ続く扉は半ば開いたままだった。
 - [car_sam_priest_choice_demon_whisper](#event-car_sam_priest_choice_demon_whisper) — 深い瞑想の最中、北方の氷原から漂う『悪魔』の認識汚染の波動が精神を揺るがした。底知れぬ暗黒の甘い囁きが、自己の輪郭を溶かそうと迫る。自然の精霊の加護…
 - [car_ibe_inq_choice_seaborn_attack](#event-car_ibe_inq_choice_seaborn_attack) — 夜更けの海岸線で、波間から無数の恐魚（海の怪物）が這い上がってきた。集落が呑み込まれる寸前である。審問官としてランタンの光を最大出力で解き放ち、剣を…
@@ -7059,7 +7082,7 @@
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
 <a id="tag-genre-11"></a>
-### 日常（489）
+### 日常（490）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
@@ -7436,6 +7459,7 @@
 - [life_hobby_garden_artifact_showcase](#event-life_hobby_garden_artifact_showcase) — 何年も手入れしてきた鉢植えが、今年はよく育った。水や日照の記録も残っており、近所の人から株分けを頼まれた。
 - [life_later_spouse_evening_walk](#event-life_later_spouse_evening_walk) — 夕方、配偶者と近所を歩いた。歩く速さや寄り道したい場所はその日によって違い、言わなくても分かると思わず確かめ合った。
 - [life_later_neighbor_children_story](#event-life_later_neighbor_children_story) — 近所の子どもが、昔の街や移動都市の暮らしについて尋ねてきた。覚えている景色と、後から聞いた話を分けて話すことにした。
+- [violence_infected_market_assault](#event-violence_infected_market_assault) — 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しや…
 - [life_family_remittance](#event-life_family_remittance) — 家計逼迫 故郷の親から手紙が届いた。薬代や家の修繕のことが遠慮がちに数行だけ書かれている。こちらの財布も厳しい中、どんな返事を書くか便箋を前に迷った…
 - [life_overtime_offer](#event-life_overtime_offer) — 家計逼迫 職場で残業や休日出勤の募集がかかった。割増の手当は喉から手が出るほど欲しいが、これ以上働けば体を壊しかねない。 月末の請求書を思い浮かべて…
 - [life_hobby_budget](#event-life_hobby_budget) — 通っている音楽の稽古場の月謝が来月から上がるという。楽器ケースの留め金を閉じた瞬間、月末の家賃と食費の計算が頭をよぎった。 借りている小さな菜園の更…
@@ -7551,12 +7575,22 @@
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
 <a id="tag-genre-12"></a>
-### 暴力・犯罪（2）
+### 暴力・犯罪（12）
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 - [fam_mafia](#event-fam_mafia) — ファミリーの下働きで最初の夜を終えると、奥の部屋で年長者が革張りの帳簿をパタンと閉じた。「いいか、表で喋っていいことと、墓まで持っていくことがある」…
+- [violence_infected_market_assault](#event-violence_infected_market_assault) — 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しや…
+- [violence_infected_market_homicide_followup](#event-violence_infected_market_homicide_followup) — 数週間後、診療所を出た男は、まだ包帯を巻いた腕をかばいながら市場を歩いていた。あなたと配偶者が路地口へ差しかかると、同じ一団が男を取り囲んだ。巡回衛…
+- [violence_civilian_homicide_adjudication](#event-violence_civilian_homicide_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、救護員の死亡確認が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_attempted_homicide_adjudication](#event-violence_civilian_attempted_homicide_adjudication) — 取り押さえられて三か月。衛士と配偶者の証言が法廷に提出され、石を振り下ろした行為への判決が告げられる。
+- [violence_civilian_assault_adjudication](#event-violence_civilian_assault_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、治療を受けた男の記録が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_homicide_release](#event-violence_civilian_homicide_release) — 三年間の収容を終え、門の外へ出た。手元の金と戻れる場所を確かめ、翌日からの暮らしを考え始めた。
+- [violence_civilian_attempted_homicide_release](#event-violence_civilian_attempted_homicide_release) — 二年の収容を終え、門の外へ出た。石を振り下ろした相手は死ななかった。目撃した配偶者との日常も戻らず、これからの暮らしを考えることになった。
+- [violence_civilian_assault_release](#event-violence_civilian_assault_release) — 一年の収容を終え、門の外へ出た。石を振り下ろした相手は生きていた。配偶者との関係も、あの日から止まったままだった。
+- [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
+- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか…
 
 <a id="tag-genre-13"></a>
-### 未分類（1292）
+### 未分類（1291）
 - [investment_exit](#event-investment_exit) — 出資先から精算の知らせが届いた。いま持分を手放せば{investmentCurrentValue}になり、出した元手を上回るという。ここで現金に替え…
 - [f1](#event-f1) — {caregiverArms}まどろむ日が続いた。ふと目を開けると、すぐそばで誰かが声を潜めて語りかけていた。 やわらかな布にくるまれて眠った。目を…
 - [f2](#event-f2) — 戸口から差し込む光の筋を、まばたきもせずに目で追った。人の影がそれを横切ると、そちらへ首をめぐらせた。 風に揺れる布の影をじっと見つめた。つかまえよ…
@@ -8822,7 +8856,6 @@
 - [car_lei_golden_choice_witch_remnant](#event-car_lei_golden_choice_witch_remnant) — ツヴィリングトゥルムの地下深く、かつて巫王が築いた禁断の音律院で残党たちが狂乱のアーツ演奏を行っていた。歪んだ旋律が精神を蝕む中、法衛として即座に突…
 - [car_lat_executor_choice_dispute](#event-car_lat_executor_choice_dispute) — 公証人役場の特務指令。国外の無法地帯において、ラテラーノ市民の遺産である聖遺物と守護銃が武装傭兵団に略奪された。法典の履行のため、単身で傭兵アジトへ…
 - [car_col_pioneer_daily_01](#event-car_col_pioneer_daily_01) — 乾いた土煙が舞う荒野の農場で、地下水汲み上げポンプのモーターを分解修理した。厳しい日差しの中、自らの手で開墾した畑に緑の芽が吹くのを見つめる。すべて…
-- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。…
 - [car_sir_police_daily_01](#event-car_sir_police_daily_01) — ヌオバ・ウォルシーニの広場で、市民からの陳情や交通の整理を行った。マフィアの報復を恐れて声を潜める住民に優しく声をかけ、法による保護を約束する。銃で…
 - [car_sar_warrior_daily_01](#event-car_sar_warrior_daily_01) — 鬱蒼としたジャングルの熱気の中、ティアカの若者たちを集めて素手での組み手稽古をつけた。川から大魚を釣り上げ、焚火で豪快に焼きながら部族の武勇伝を語り…
 - [car_sar_warrior_choice_beast](#event-car_sar_warrior_choice_beast) — 雨林の沼地から、家屋ほどもある巨大な原生生物『大顎猛獣』が現れ、集落の家畜を荒らし始めた。部族の長から討伐の先陣を頼まれた。素手と棍棒だけでこの巨大…
@@ -8851,7 +8884,7 @@
 - [edu_region_minos_learning_and_debate](#event-edu_region_minos_learning_and_debate) — 列柱のある広場で、若い学徒が古い英雄譚の意味を問い直していた。年長の語り手は答えを急がず、まず何を知っているのか尋ねた。
 
 <a id="tag-genre-14"></a>
-### 労働・経済（959）
+### 労働・経済（967）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -9441,6 +9474,12 @@
 - [life_later_revisit_recorded_displacement](#event-life_later_revisit_recorded_displacement) — 以前に離れた地域から、復旧の便りが届いた。戻れるかどうかは住まいや仕事、家族の都合にも左右される。
 - [life_later_neighbor_children_story](#event-life_later_neighbor_children_story) — 近所の子どもが、昔の街や移動都市の暮らしについて尋ねてきた。覚えている景色と、後から聞いた話を分けて話すことにした。
 - [life_later_life_review](#event-life_later_life_review) — 棚の記録や古い仕事道具を見ながら、何を覚えていて、何を忘れてしまったか考えた。家族や友人と過ごした日々を、一つずつたどった。
+- [violence_civilian_homicide_adjudication](#event-violence_civilian_homicide_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、救護員の死亡確認が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_attempted_homicide_adjudication](#event-violence_civilian_attempted_homicide_adjudication) — 取り押さえられて三か月。衛士と配偶者の証言が法廷に提出され、石を振り下ろした行為への判決が告げられる。
+- [violence_civilian_assault_adjudication](#event-violence_civilian_assault_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、治療を受けた男の記録が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_homicide_release](#event-violence_civilian_homicide_release) — 三年間の収容を終え、門の外へ出た。手元の金と戻れる場所を確かめ、翌日からの暮らしを考え始めた。
+- [violence_civilian_attempted_homicide_release](#event-violence_civilian_attempted_homicide_release) — 二年の収容を終え、門の外へ出た。石を振り下ろした相手は死ななかった。目撃した配偶者との日常も戻らず、これからの暮らしを考えることになった。
+- [violence_civilian_assault_release](#event-violence_civilian_assault_release) — 一年の収容を終え、門の外へ出た。石を振り下ろした相手は生きていた。配偶者との関係も、あの日から止まったままだった。
 - [life_night_study](#event-life_night_study) — 家計逼迫 働きながら通える夜間講習の貼り紙が職場の壁に出ていた。くたくたに疲れた仕事帰りの体と、教材を買う金と、どちらも今の苦しい暮らしから絞り出さ…
 - [life_family_remittance](#event-life_family_remittance) — 家計逼迫 故郷の親から手紙が届いた。薬代や家の修繕のことが遠慮がちに数行だけ書かれている。こちらの財布も厳しい中、どんな返事を書くか便箋を前に迷った…
 - [life_youth_apprenticeship](#event-life_youth_apprenticeship) — （動的本文）
@@ -9681,7 +9720,9 @@
 - [car_urs_guard_after_expulsion](#event-car_urs_guard_after_expulsion) — 坑道を離れたあの日のことは今も覚えている。軍務を追われた後の日々は、以前とは違う重みを持っていた。今の仕事も、次の暮らしも、自分で選び直すことができ…
 - [car_urs_officer_disciplinary_review](#event-car_urs_officer_disciplinary_review) — かつての不名誉除隊について、軍の記録担当が例外的な処分再審査の申立書を受け付けると知った。命令を拒んだ事情を記せば、当時の上官の判断も問い直すことに…
 - [car_urs_guard_disciplinary_review](#event-car_urs_guard_disciplinary_review) — 軍務を追われて数年が経ち、かつての坑道での出来事を別の担当者に申し立てられると聞いた。脱出を選んだ理由も、退路を塞いだ状況も、記録の中では短い「職場…
+- [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
 - [car_kaz_comp_knight_daily_01](#event-car_kaz_comp_knight_daily_01) — 照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と…
+- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか…
 - [car_col_pioneer_after_dispossession](#event-car_col_pioneer_after_dispossession) — 農場を離れた夜のことは今も覚えている。畑の位置も、掘り当てた水脈も、誰かに奪われた土地に残してきた。新しい働き口を探すか、もう一度開拓を始めるか、生…
 - [cl_child_school_supplies](#event-cl_child_school_supplies) — 新学期の教室を見渡すと、真新しい文房具を机に並べる子もいれば、ちびた鉛筆や継ぎ接ぎの鞄を使っている子もいた。家の手伝いも抱えるなかで、どうやって勉強…
 - [cl_family_legacy_expectation](#event-cl_family_legacy_expectation) — 押し入れの奥から、古い家系図と封書が出てきた。親戚は昔の格式を今さらのように誇らしげに語るが、記された領地や屋敷にはとっくに見知らぬ他人の名が上書き…
@@ -9814,7 +9855,7 @@
 
 ## 状況別索引
 
-[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (181)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (381)](#tag-situation-87)　・　[感染の開示・露見に言及 (61)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[帰宅の申出または提案 (1)](#tag-situation-107)　・　[季節の現物分配 (1)](#tag-situation-108)　・　[記録・説明責任 (1)](#tag-situation-109)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-110)　・　[記録と責任 (1)](#tag-situation-111)　・　[技師 (1)](#tag-situation-112)　・　[技能条件 (1)](#tag-situation-113)　・　[求職 (2)](#tag-situation-114)　・　[求職・紹介 (1)](#tag-situation-115)　・　[旧坑区の荷札照会 (1)](#tag-situation-116)　・　[競技会場の仮設席設営 (1)](#tag-situation-117)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-118)　・　[競技騎士の肩の負傷 (1)](#tag-situation-119)　・　[競技祭 (1)](#tag-situation-120)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-121)　・　[脅迫を受ける (1)](#tag-situation-122)　・　[脅迫記録の解除分岐 (1)](#tag-situation-123)　・　[極東 (1)](#tag-situation-124)　・　[極東の軍務・兵站ルート (2)](#tag-situation-125)　・　[極東の神社 (1)](#tag-situation-126)　・　[勤務縮小後 (1)](#tag-situation-127)　・　[近隣からの相談 (1)](#tag-situation-128)　・　[近隣との情報交換 (1)](#tag-situation-129)　・　[近隣の若年者との交流 (1)](#tag-situation-130)　・　[近隣互助 (1)](#tag-situation-131)　・　[軍務・護衛の継続 (1)](#tag-situation-132)　・　[契約確認 (1)](#tag-situation-133)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-134)　・　[継続／民間移行／求職 (1)](#tag-situation-135)　・　[継続後の振り返り (1)](#tag-situation-136)　・　[継続後の窓口 (1)](#tag-situation-137)　・　[警戒・質問の選択 (1)](#tag-situation-138)　・　[検査延期後の再検討 (1)](#tag-situation-139)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-140)　・　[源石片による負傷・曝露 (1)](#tag-situation-141)　・　[源石片への接触回避 (1)](#tag-situation-142)　・　[言葉の行き違い (1)](#tag-situation-143)　・　[個人情報 (1)](#tag-situation-144)　・　[古傷による職業転換 (1)](#tag-situation-145)　・　[固定集落への配達 (1)](#tag-situation-146)　・　[固定都市 (1)](#tag-situation-147)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-148)　・　[交易所の共用端末 (1)](#tag-situation-149)　・　[公証人役場 (1)](#tag-situation-150)　・　[工業区域 (1)](#tag-situation-151)　・　[工場労働者 (1)](#tag-situation-152)　・　[港湾労働 (2)](#tag-situation-153)　・　[鉱区事故 (1)](#tag-situation-154)　・　[鉱山の交替減少 (1)](#tag-situation-155)　・　[鉱山労働 (1)](#tag-situation-156)　・　[鉱石病以外の回復期 (1)](#tag-situation-157)　・　[鉱石病診断済み (1)](#tag-situation-158)　・　[鉱夫 (1)](#tag-situation-159)　・　[鉱夫分岐 (1)](#tag-situation-160)　・　[高等教育経験者の教員応募 (1)](#tag-situation-161)　・　[高齢期 (1)](#tag-situation-162)　・　[高齢期の就労 (1)](#tag-situation-163)　・　[告示の交代 (1)](#tag-situation-164)　・　[国の発生条件あり (1642)](#tag-situation-165)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-166)　・　[再受付・別の診療先の探索 (1)](#tag-situation-167)　・　[採掘坑内の換気停止 (1)](#tag-situation-168)　・　[採掘地域 (1)](#tag-situation-169)　・　[採掘地域に限定 (1)](#tag-situation-170)　・　[採掘中 (1)](#tag-situation-171)　・　[災害後の商店再開 (1)](#tag-situation-172)　・　[祭典 (1)](#tag-situation-173)　・　[作業技能 (1)](#tag-situation-174)　・　[作業停止・退避 (1)](#tag-situation-175)　・　[山道の情報共有 (1)](#tag-situation-176)　・　[山麓の宿への道案内 (1)](#tag-situation-177)　・　[仕送り (1)](#tag-situation-178)　・　[子どもの就学 (1)](#tag-situation-179)　・　[子どもの誕生・養育 (1)](#tag-situation-180)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-181)　・　[子への訃報 (1)](#tag-situation-182)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-183)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-184)　・　[思春期 (1)](#tag-situation-185)　・　[支援の受入れ (1)](#tag-situation-186)　・　[氏族養育 (1)](#tag-situation-187)　・　[資格取得後の求職 (1)](#tag-situation-188)　・　[飼育動物の世話 (1)](#tag-situation-189)　・　[次便待ち (1)](#tag-situation-190)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-191)　・　[自動発生イベント (1962)](#tag-situation-192)　・　[湿地地勢 (1)](#tag-situation-193)　・　[守秘と名簿 (1)](#tag-situation-194)　・　[種族差別 (2)](#tag-situation-195)　・　[種族差別後 (1)](#tag-situation-196)　・　[酒類の仕入れ帳 (1)](#tag-situation-197)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-198)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-199)　・　[授業担当者との接点 (1)](#tag-situation-200)　・　[収容・隔離中 (1)](#tag-situation-201)　・　[収容・隔離中の診療 (1)](#tag-situation-202)　・　[収容中 (4)](#tag-situation-203)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-204)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-205)　・　[就労中 (2)](#tag-situation-206)　・　[就労中の鉱夫 (1)](#tag-situation-207)　・　[住居差別 (1)](#tag-situation-208)　・　[住居差別後 (1)](#tag-situation-209)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-210)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-211)　・　[宿泊拒否 (1)](#tag-situation-212)　・　[宿泊拒否後 (1)](#tag-situation-213)　・　[出場・観戦・場外見物 (1)](#tag-situation-214)　・　[所持金による本文・選択肢 (1)](#tag-situation-215)　・　[小舞台 (1)](#tag-situation-216)　・　[少年・青年 (2)](#tag-situation-217)　・　[少年・青年・壮年 (3)](#tag-situation-218)　・　[消息不明者の生存確認 (1)](#tag-situation-219)　・　[症状進行中 (1)](#tag-situation-220)　・　[情報網の高い居住地 (1)](#tag-situation-221)　・　[条件付き本文 (209)](#tag-situation-222)　・　[職業課程の継続 (1)](#tag-situation-223)　・　[職業課程の修了 (1)](#tag-situation-224)　・　[職業条件あり (71)](#tag-situation-225)　・　[職場・近隣で露見の兆し (1)](#tag-situation-226)　・　[職場の排斥 (1)](#tag-situation-227)　・　[食堂の客足 (1)](#tag-situation-228)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-229)　・　[食料不足 (1)](#tag-situation-230)　・　[森林地勢 (1)](#tag-situation-231)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-232)　・　[親の家計判断 (1)](#tag-situation-233)　・　[親の感染 (1)](#tag-situation-234)　・　[親の死後 (1)](#tag-situation-235)　・　[親子の記憶 (1)](#tag-situation-236)　・　[診断済み (1)](#tag-situation-237)　・　[診断済み・未治療 (1)](#tag-situation-238)　・　[診療・休養・記録から選択 (1)](#tag-situation-239)　・　[診療・作業調整 (1)](#tag-situation-240)　・　[診療・支援・休息・緩和希望の記録 (1)](#tag-situation-241)　・　[診療・動作を避ける選択 (1)](#tag-situation-242)　・　[診療・付き添いの依頼 (1)](#tag-situation-243)　・　[診療・負担軽減から選択 (1)](#tag-situation-244)　・　[診療延期後 (1)](#tag-situation-245)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-246)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-247)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-248)　・　[身近な人への支援依頼 (1)](#tag-situation-249)　・　[身近な連絡先あり (1)](#tag-situation-250)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-251)　・　[睡眠不足 (1)](#tag-situation-252)　・　[世界イベント後 (1)](#tag-situation-253)　・　[成人 (4)](#tag-situation-254)　・　[成人・返済支援の選択 (1)](#tag-situation-255)　・　[成人した子 (2)](#tag-situation-256)　・　[成人の種族偏見に触れる (1)](#tag-situation-257)　・　[生活上の備え (1)](#tag-situation-258)　・　[青年・壮年 (5)](#tag-situation-259)　・　[青年・壮年・老年 (3)](#tag-situation-260)　・　[雪祭司・聖樹 (1)](#tag-situation-261)　・　[選択イベント (1679)](#tag-situation-262)　・　[前段で残留した人 (1)](#tag-situation-263)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-264)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-265)　・　[全年齢の重い病状 (1)](#tag-situation-266)　・　[全年齢の循環器系エピソード (1)](#tag-situation-267)　・　[全年齢の食料不足 (1)](#tag-situation-268)　・　[全年齢の負傷後の痛み (1)](#tag-situation-269)　・　[組織・所属に言及 (301)](#tag-situation-270)　・　[組織離脱後 (1)](#tag-situation-271)　・　[相談・医療・休養 (1)](#tag-situation-272)　・　[相談・記録 (1)](#tag-situation-273)　・　[相談・記録・経路変更 (1)](#tag-situation-274)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-275)　・　[足場や荷の異常 (1)](#tag-situation-276)　・　[体力0の危篤状態 (1)](#tag-situation-277)　・　[退会後の関係 (1)](#tag-situation-278)　・　[退職選択 (1)](#tag-situation-279)　・　[大いなる静謐後 (1)](#tag-situation-280)　・　[大学課程の継続 (1)](#tag-situation-281)　・　[大学課程の修了 (1)](#tag-situation-282)　・　[短期雇用 (1)](#tag-situation-283)　・　[短期雇用と現場危険 (1)](#tag-situation-284)　・　[地域の供給不安定 (1)](#tag-situation-285)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-286)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-287)　・　[地域学習会・独学の選択 (1)](#tag-situation-288)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-289)　・　[仲間の捜索 (1)](#tag-situation-290)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-291)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-292)　・　[通学していない (1)](#tag-situation-293)　・　[通学中 (1)](#tag-situation-294)　・　[通行止め・迂回 (1)](#tag-situation-295)　・　[天災・戦乱による避難中 (1)](#tag-situation-296)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-297)　・　[店舗からの排斥集会 (1)](#tag-situation-298)　・　[転居後の近隣交流 (1)](#tag-situation-299)　・　[都市街区での襲撃 (1)](#tag-situation-300)　・　[動的表示条件 (1228)](#tag-situation-301)　・　[動的本文 (32)](#tag-situation-302)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-303)　・　[同一都市の周縁区への転居 (1)](#tag-situation-304)　・　[同郷者との交流 (1)](#tag-situation-305)　・　[同行者との交流 (1)](#tag-situation-306)　・　[匿名動画の出所確認 (1)](#tag-situation-307)　・　[独立商業所属 (1)](#tag-situation-308)　・　[読み書きに困難がある (1)](#tag-situation-309)　・　[日雇い (1)](#tag-situation-310)　・　[乳児の成長 (1)](#tag-situation-311)　・　[任意応募・採用選考 (1)](#tag-situation-312)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-313)　・　[年齢：35歳以上 (2)](#tag-situation-314)　・　[年齢：児童 (1237)](#tag-situation-315)　・　[年齢：少年 (1599)](#tag-situation-316)　・　[年齢：青年 (3163)](#tag-situation-317)　・　[年齢：壮年 (3142)](#tag-situation-318)　・　[年齢：乳児 (20)](#tag-situation-319)　・　[年齢：幼児 (37)](#tag-situation-320)　・　[年齢：老年 (2214)](#tag-situation-321)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-322)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-323)　・　[配給・食料不足 (1)](#tag-situation-324)　・　[配給・寝床・診療案内 (1)](#tag-situation-325)　・　[配給と地域支援 (1)](#tag-situation-326)　・　[配給登録 (1)](#tag-situation-327)　・　[配偶者との死別 (1)](#tag-situation-328)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-329)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-330)　・　[班間の点検記録 (1)](#tag-situation-331)　・　[班内の技能伝達 (1)](#tag-situation-332)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-333)　・　[避難中 (1)](#tag-situation-334)　・　[非感染者 (1)](#tag-situation-335)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-336)　・　[付き添い依頼・受診延期 (1)](#tag-situation-337)　・　[付き添い相談 (1)](#tag-situation-338)　・　[扶養中の子 (2)](#tag-situation-339)　・　[扶養中の子の看病 (1)](#tag-situation-340)　・　[負傷後の職務調整 (1)](#tag-situation-341)　・　[部品寸法 (1)](#tag-situation-342)　・　[復旧作業中の負傷 (1)](#tag-situation-343)　・　[粉塵への接触懸念 (1)](#tag-situation-344)　・　[粉塵曝露 (2)](#tag-situation-345)　・　[兵士の消息不明 (1)](#tag-situation-346)　・　[兵役招集 (1)](#tag-situation-347)　・　[別居・転居 (1)](#tag-situation-348)　・　[亡命・移住 (2)](#tag-situation-349)　・　[未診断の感染者 (1)](#tag-situation-350)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-351)　・　[未成年は養育者判断 (8)](#tag-situation-352)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-353)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-354)　・　[名前を知る相手 (1)](#tag-situation-355)　・　[夜間の世話 (1)](#tag-situation-356)　・　[友人との文通再開 (1)](#tag-situation-357)　・　[友人への恋心 (1)](#tag-situation-358)　・　[傭兵・護衛勤務 (1)](#tag-situation-359)　・　[傭兵隊の護衛契約 (1)](#tag-situation-360)　・　[傭兵隊の通過 (1)](#tag-situation-361)　・　[幼い子の養育 (1)](#tag-situation-362)　・　[用事の再開・再診 (1)](#tag-situation-363)　・　[養育者の視点 (1)](#tag-situation-364)　・　[離婚後の元配偶者の死 (1)](#tag-situation-365)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-366)　・　[離婚後の子育て・連絡 (1)](#tag-situation-367)　・　[龍門 (1)](#tag-situation-368)　・　[龍門の移動都市居住区 (1)](#tag-situation-369)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-370)　・　[龍門の商業街 (1)](#tag-situation-371)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-372)　・　[隣人との死別 (1)](#tag-situation-373)　・　[隣人との伝言再開 (1)](#tag-situation-374)　・　[隣人の消息不明 (1)](#tag-situation-375)　・　[隣人の生存確認 (1)](#tag-situation-376)　・　[連絡・休息の継続 (1)](#tag-situation-377)　・　[連絡先と家の用事の相談 (1)](#tag-situation-378)　・　[労務補償 (1)](#tag-situation-379)
+[1072年以降は戦役後の導入文 (1)](#tag-situation-0)　・　[1095年以降・前段の避難記録が必要 (1)](#tag-situation-1)　・　[1096年以前・少年／青年 (1)](#tag-situation-2)　・　[1097〜1102年・チェルノボーグ事変後 (1)](#tag-situation-3)　・　[1097年8月〜1100年・火山活動後 (1)](#tag-situation-4)　・　[1097年以降 (1)](#tag-situation-5)　・　[1097年以降・18歳以上 (1)](#tag-situation-6)　・　[1101年以降 (1)](#tag-situation-7)　・　[14歳以上 (1)](#tag-situation-8)　・　[14歳以上・危機状態 (1)](#tag-situation-9)　・　[15歳以上 (1)](#tag-situation-10)　・　[18歳以上 (2)](#tag-situation-11)　・　[18歳以上・転居／契約更新 (1)](#tag-situation-12)　・　[50歳以上・15年以上の継続勤務 (1)](#tag-situation-13)　・　[55歳以上 (1)](#tag-situation-14)　・　[55歳以上・健康低下 (1)](#tag-situation-15)　・　[7〜13歳 (2)](#tag-situation-16)　・　[9〜17歳 (1)](#tag-situation-17)　・　[アーツ課程修了 (1)](#tag-situation-18)　・　[エーギル差別 (1)](#tag-situation-19)　・　[エーギル差別後 (1)](#tag-situation-20)　・　[カズデル (1)](#tag-situation-21)　・　[カズデル・感染診断済 (1)](#tag-situation-22)　・　[カズデル内戦後・1095〜1098年 (1)](#tag-situation-23)　・　[カズデル内戦中 (1)](#tag-situation-24)　・　[カズデル内戦中・1092〜1094年 (1)](#tag-situation-25)　・　[カズデル離散後 (1)](#tag-situation-26)　・　[きょうだいの訃報 (1)](#tag-situation-27)　・　[きょうだい関係 (1)](#tag-situation-28)　・　[サルカズの配偶者と親族の反対 (1)](#tag-situation-29)　・　[サルゴンの乾燥地・オアシス (2)](#tag-situation-30)　・　[サンクタとサルカズの歴史的記憶 (1)](#tag-situation-31)　・　[シエスタ・オブシディアン・フェスティバル (1)](#tag-situation-32)　・　[シエスタ・観光期の季節雇用 (1)](#tag-situation-33)　・　[シエスタ固定集落 (1)](#tag-situation-34)　・　[ターラー文化・言語 (1)](#tag-situation-35)　・　[ドッソレス (1)](#tag-situation-36)　・　[ドッソレスへの運賃が足りなかった旅人 (1)](#tag-situation-37)　・　[ボリバルの荷車休憩所 (1)](#tag-situation-38)　・　[ボリバルの市場 (1)](#tag-situation-39)　・　[ボリバルの市場掲示 (1)](#tag-situation-40)　・　[ボリバル内戦・1048年以降 (1)](#tag-situation-41)　・　[ボリバル内戦の生活影響 (1)](#tag-situation-42)　・　[ミノスの英雄文化 (1)](#tag-situation-43)　・　[ミノスの競技祭 (1)](#tag-situation-44)　・　[ミノス競技祭の出場経験が必要 (1)](#tag-situation-45)　・　[ラテラーノ市民向け手続き分岐 (1)](#tag-situation-46)　・　[リターニア革命後 (1)](#tag-situation-47)　・　[レム・ビリトン (1)](#tag-situation-48)　・　[レム・ビリトンの鉱区 (1)](#tag-situation-49)　・　[ロドスの事前助言 (1)](#tag-situation-50)　・　[ロンディニウム戦争中 (2)](#tag-situation-51)　・　[安全確認・相談継続 (1)](#tag-situation-52)　・　[安全上の判断・転職 (1)](#tag-situation-53)　・　[移動都市 (1)](#tag-situation-54)　・　[移動都市・避難に言及 (180)](#tag-situation-55)　・　[移動都市とそれ以外で導入文が分岐 (1)](#tag-situation-56)　・　[移動都市の居住区 (1)](#tag-situation-57)　・　[一度の記録 (1)](#tag-situation-58)　・　[一日荷役・就労状態別選択 (1)](#tag-situation-59)　・　[一年後の再検査 (1)](#tag-situation-60)　・　[隠蔽中は非表示 (1)](#tag-situation-61)　・　[雨後の道 (1)](#tag-situation-62)　・　[運搬車両の事故 (1)](#tag-situation-63)　・　[英雄譚の稽古 (1)](#tag-situation-64)　・　[駅前 (1)](#tag-situation-65)　・　[遠出 (1)](#tag-situation-66)　・　[音楽・園芸・工作・運動・収集・語りの趣味 (1)](#tag-situation-67)　・　[仮住まい・個人の再移動 (1)](#tag-situation-68)　・　[加入3年後・20歳以上 (1)](#tag-situation-69)　・　[家計に余裕がない (1)](#tag-situation-70)　・　[家計逼迫 (1)](#tag-situation-71)　・　[家族による診療支援 (1)](#tag-situation-72)　・　[家族共同体で育った人 (1)](#tag-situation-73)　・　[家庭の契約 (1)](#tag-situation-74)　・　[火山活動再活発化前 (1)](#tag-situation-75)　・　[稼働状況の異なる診療窓口 (1)](#tag-situation-76)　・　[荷受け場 (1)](#tag-situation-77)　・　[過ごし方・続けたい作業の選択 (1)](#tag-situation-78)　・　[過去の排斥・就労不利益等の後 (1)](#tag-situation-79)　・　[会場運営への転職 (1)](#tag-situation-80)　・　[会費・当番 (1)](#tag-situation-81)　・　[開業資金条件・事業選択 (1)](#tag-situation-82)　・　[外部連絡・審査請求・脱走 (1)](#tag-situation-83)　・　[隔離区画内の就労・移動制限 (1)](#tag-situation-84)　・　[隔離中 (3)](#tag-situation-85)　・　[学費・借入 (2)](#tag-situation-86)　・　[感染・鉱石病に言及 (384)](#tag-situation-87)　・　[感染の開示・露見に言及 (61)](#tag-situation-88)　・　[感染を隠している (1)](#tag-situation-89)　・　[感染源石粉塵への曝露 (1)](#tag-situation-90)　・　[感染者への圧力が強い地域 (1)](#tag-situation-91)　・　[感染者互助組織 (1)](#tag-situation-92)　・　[感染者組織の運営 (1)](#tag-situation-93)　・　[感染者排斥の過去 (1)](#tag-situation-94)　・　[感染者排斥の考えが強い (1)](#tag-situation-95)　・　[感染診断を知った知人の回避 (1)](#tag-situation-96)　・　[感染診断後の初回受診 (1)](#tag-situation-97)　・　[感染診断済み (1)](#tag-situation-98)　・　[感染発生 (2)](#tag-situation-99)　・　[感染未確認 (1)](#tag-situation-100)　・　[看守・拘束 (1)](#tag-situation-101)　・　[危機状態からの回復期 (1)](#tag-situation-102)　・　[危険度の高い職場・健康低下 (1)](#tag-situation-103)　・　[寄付・手伝い・見物から本人が選択 (1)](#tag-situation-104)　・　[希望者による軍務・兵站への応募 (1)](#tag-situation-105)　・　[既婚 (1)](#tag-situation-106)　・　[期限付き後日談 (1)](#tag-situation-107)　・　[帰宅の申出または提案 (1)](#tag-situation-108)　・　[季節の現物分配 (1)](#tag-situation-109)　・　[記録・説明責任 (1)](#tag-situation-110)　・　[記録・当事者の語り・偏見の選択 (1)](#tag-situation-111)　・　[記録と責任 (1)](#tag-situation-112)　・　[技師 (1)](#tag-situation-113)　・　[技能条件 (1)](#tag-situation-114)　・　[求職 (2)](#tag-situation-115)　・　[求職・紹介 (1)](#tag-situation-116)　・　[旧坑区の荷札照会 (1)](#tag-situation-117)　・　[競技会場の仮設席設営 (1)](#tag-situation-118)　・　[競技騎士として10年以上の所属 (1)](#tag-situation-119)　・　[競技騎士の肩の負傷 (1)](#tag-situation-120)　・　[競技祭 (1)](#tag-situation-121)　・　[脅迫の危険が2年以上継続 (1)](#tag-situation-122)　・　[脅迫を受ける (1)](#tag-situation-123)　・　[脅迫記録の解除分岐 (1)](#tag-situation-124)　・　[極東 (1)](#tag-situation-125)　・　[極東の軍務・兵站ルート (2)](#tag-situation-126)　・　[極東の神社 (1)](#tag-situation-127)　・　[勤務縮小後 (1)](#tag-situation-128)　・　[近隣からの相談 (1)](#tag-situation-129)　・　[近隣との情報交換 (1)](#tag-situation-130)　・　[近隣の若年者との交流 (1)](#tag-situation-131)　・　[近隣互助 (1)](#tag-situation-132)　・　[軍務・護衛の継続 (1)](#tag-situation-133)　・　[契約確認 (1)](#tag-situation-134)　・　[経験を伝える／一度だけ付き合う／断る (1)](#tag-situation-135)　・　[継続／民間移行／求職 (1)](#tag-situation-136)　・　[継続後の振り返り (1)](#tag-situation-137)　・　[継続後の窓口 (1)](#tag-situation-138)　・　[警戒・質問の選択 (1)](#tag-situation-139)　・　[検査延期後の再検討 (1)](#tag-situation-140)　・　[源石粉塵に曝露する仕事 (1)](#tag-situation-141)　・　[源石片による負傷・曝露 (1)](#tag-situation-142)　・　[源石片への接触回避 (1)](#tag-situation-143)　・　[現役の軍務 (1)](#tag-situation-144)　・　[言葉の行き違い (1)](#tag-situation-145)　・　[個人情報 (1)](#tag-situation-146)　・　[古傷による職業転換 (1)](#tag-situation-147)　・　[固定集落への配達 (1)](#tag-situation-148)　・　[固定都市 (1)](#tag-situation-149)　・　[互助連絡・加入保留・接触回避 (1)](#tag-situation-150)　・　[交易所の共用端末 (1)](#tag-situation-151)　・　[公証人役場 (1)](#tag-situation-152)　・　[工業区域 (1)](#tag-situation-153)　・　[工場労働者 (1)](#tag-situation-154)　・　[港湾労働 (2)](#tag-situation-155)　・　[鉱区事故 (1)](#tag-situation-156)　・　[鉱山の交替減少 (1)](#tag-situation-157)　・　[鉱山労働 (1)](#tag-situation-158)　・　[鉱石病以外の回復期 (1)](#tag-situation-159)　・　[鉱石病診断済み (1)](#tag-situation-160)　・　[鉱夫 (1)](#tag-situation-161)　・　[鉱夫分岐 (1)](#tag-situation-162)　・　[高等教育経験者の教員応募 (1)](#tag-situation-163)　・　[高齢期 (1)](#tag-situation-164)　・　[高齢期の就労 (1)](#tag-situation-165)　・　[告示の交代 (1)](#tag-situation-166)　・　[国の発生条件あり (1642)](#tag-situation-167)　・　[国外避難・残留・死亡分岐 (1)](#tag-situation-168)　・　[再受付・別の診療先の探索 (1)](#tag-situation-169)　・　[採掘坑内の換気停止 (1)](#tag-situation-170)　・　[採掘地域 (1)](#tag-situation-171)　・　[採掘地域に限定 (1)](#tag-situation-172)　・　[採掘中 (1)](#tag-situation-173)　・　[災害後の商店再開 (1)](#tag-situation-174)　・　[祭典 (1)](#tag-situation-175)　・　[作業技能 (1)](#tag-situation-176)　・　[作業停止・退避 (1)](#tag-situation-177)　・　[殺人・殺人未遂 (1)](#tag-situation-178)　・　[山道の情報共有 (1)](#tag-situation-179)　・　[山麓の宿への道案内 (1)](#tag-situation-180)　・　[仕送り (1)](#tag-situation-181)　・　[子どもの就学 (1)](#tag-situation-182)　・　[子どもの誕生・養育 (1)](#tag-situation-183)　・　[子の居住地に応じた動的本文 (1)](#tag-situation-184)　・　[子への訃報 (1)](#tag-situation-185)　・　[市場でサルカズの荷運び人が責められる (1)](#tag-situation-186)　・　[市場で代替品・入荷を確認 (1)](#tag-situation-187)　・　[思春期 (1)](#tag-situation-188)　・　[支援の受入れ (1)](#tag-situation-189)　・　[氏族養育 (1)](#tag-situation-190)　・　[資格取得後の求職 (1)](#tag-situation-191)　・　[飼育動物の世話 (1)](#tag-situation-192)　・　[次便待ち (1)](#tag-situation-193)　・　[自治地区の工業・採掘地域 (1)](#tag-situation-194)　・　[自動発生イベント (1962)](#tag-situation-195)　・　[湿地地勢 (1)](#tag-situation-196)　・　[守秘と名簿 (1)](#tag-situation-197)　・　[種族差別 (2)](#tag-situation-198)　・　[種族差別後 (1)](#tag-situation-199)　・　[酒類の仕入れ帳 (1)](#tag-situation-200)　・　[受け取り・問い合わせ・辞退 (1)](#tag-situation-201)　・　[受診・負担軽減・隠蔽 (1)](#tag-situation-202)　・　[授業担当者との接点 (1)](#tag-situation-203)　・　[収容・隔離中 (1)](#tag-situation-204)　・　[収容・隔離中の診療 (1)](#tag-situation-205)　・　[収容後の釈放 (3)](#tag-situation-206)　・　[収容中 (7)](#tag-situation-207)　・　[就学中のみ一部選択肢を表示 (1)](#tag-situation-208)　・　[就労・孤立による条件付き導入 (1)](#tag-situation-209)　・　[就労中 (2)](#tag-situation-210)　・　[就労中の鉱夫 (1)](#tag-situation-211)　・　[住居差別 (1)](#tag-situation-212)　・　[住居差別後 (1)](#tag-situation-213)　・　[重症度3以上の活動性疾患 (1)](#tag-situation-214)　・　[宿場の案内・食事を分ける・旅費を残す (1)](#tag-situation-215)　・　[宿泊拒否 (1)](#tag-situation-216)　・　[宿泊拒否後 (1)](#tag-situation-217)　・　[出場・観戦・場外見物 (1)](#tag-situation-218)　・　[所持金による本文・選択肢 (1)](#tag-situation-219)　・　[小舞台 (1)](#tag-situation-220)　・　[少年・青年 (2)](#tag-situation-221)　・　[少年・青年・壮年 (3)](#tag-situation-222)　・　[消息不明者の生存確認 (1)](#tag-situation-223)　・　[症状進行中 (1)](#tag-situation-224)　・　[情報網の高い居住地 (1)](#tag-situation-225)　・　[条件付き本文 (209)](#tag-situation-226)　・　[職業課程の継続 (1)](#tag-situation-227)　・　[職業課程の修了 (1)](#tag-situation-228)　・　[職業条件あり (71)](#tag-situation-229)　・　[職場・近隣で露見の兆し (1)](#tag-situation-230)　・　[職場の排斥 (1)](#tag-situation-231)　・　[食堂の客足 (1)](#tag-situation-232)　・　[食料を尋ねる／支出を見直す (1)](#tag-situation-233)　・　[食料不足 (1)](#tag-situation-234)　・　[審理後の裁定 (3)](#tag-situation-235)　・　[森林地勢 (1)](#tag-situation-236)　・　[親・配偶者・友人・雇用先へ伝える選択 (1)](#tag-situation-237)　・　[親の家計判断 (1)](#tag-situation-238)　・　[親の感染 (1)](#tag-situation-239)　・　[親の死後 (1)](#tag-situation-240)　・　[親子の記憶 (1)](#tag-situation-241)　・　[診断済み (1)](#tag-situation-242)　・　[診断済み・未治療 (1)](#tag-situation-243)　・　[診療・休養・記録から選択 (1)](#tag-situation-244)　・　[診療・作業調整 (1)](#tag-situation-245)　・　[診療・支援・休息・緩和希望の記録 (1)](#tag-situation-246)　・　[診療・動作を避ける選択 (1)](#tag-situation-247)　・　[診療・付き添いの依頼 (1)](#tag-situation-248)　・　[診療・負担軽減から選択 (1)](#tag-situation-249)　・　[診療延期後 (1)](#tag-situation-250)　・　[診療所の受付で順番を譲らされる (1)](#tag-situation-251)　・　[診療窓口で別窓口へ回される (1)](#tag-situation-252)　・　[診療窓口の担当者との再接触 (1)](#tag-situation-253)　・　[身近な人への支援依頼 (1)](#tag-situation-254)　・　[身近な連絡先あり (1)](#tag-situation-255)　・　[水路の利用順をめぐる家々の相談 (1)](#tag-situation-256)　・　[睡眠不足 (1)](#tag-situation-257)　・　[世界イベント後 (1)](#tag-situation-258)　・　[成人 (4)](#tag-situation-259)　・　[成人・返済支援の選択 (1)](#tag-situation-260)　・　[成人した子 (2)](#tag-situation-261)　・　[成人の種族偏見に触れる (1)](#tag-situation-262)　・　[生活上の備え (1)](#tag-situation-263)　・　[青年・壮年 (5)](#tag-situation-264)　・　[青年・壮年・老年 (3)](#tag-situation-265)　・　[雪祭司・聖樹 (1)](#tag-situation-266)　・　[選択イベント (1690)](#tag-situation-267)　・　[前段で残留した人 (1)](#tag-situation-268)　・　[全年齢の急なめまい・運動困難 (1)](#tag-situation-269)　・　[全年齢の呼吸器系エピソード (1)](#tag-situation-270)　・　[全年齢の重い病状 (1)](#tag-situation-271)　・　[全年齢の循環器系エピソード (1)](#tag-situation-272)　・　[全年齢の食料不足 (1)](#tag-situation-273)　・　[全年齢の負傷後の痛み (1)](#tag-situation-274)　・　[組織・所属に言及 (301)](#tag-situation-275)　・　[組織離脱後 (1)](#tag-situation-276)　・　[相談・医療・休養 (1)](#tag-situation-277)　・　[相談・記録 (1)](#tag-situation-278)　・　[相談・記録・経路変更 (1)](#tag-situation-279)　・　[葬送への移動・遺族への送金 (1)](#tag-situation-280)　・　[足場や荷の異常 (1)](#tag-situation-281)　・　[体力0の危篤状態 (1)](#tag-situation-282)　・　[退会後の関係 (1)](#tag-situation-283)　・　[退職選択 (1)](#tag-situation-284)　・　[大いなる静謐後 (1)](#tag-situation-285)　・　[大学課程の継続 (1)](#tag-situation-286)　・　[大学課程の修了 (1)](#tag-situation-287)　・　[短期雇用 (1)](#tag-situation-288)　・　[短期雇用と現場危険 (1)](#tag-situation-289)　・　[地域の供給不安定 (1)](#tag-situation-290)　・　[地域の診療先状況で一部選択肢を表示 (1)](#tag-situation-291)　・　[地域の診療先状況で本文・選択肢が変化 (2)](#tag-situation-292)　・　[地域学習会・独学の選択 (1)](#tag-situation-293)　・　[地域診療所・互助先・ロドス (1)](#tag-situation-294)　・　[仲間の捜索 (1)](#tag-situation-295)　・　[帳簿・窓口補助の学び直し (1)](#tag-situation-296)　・　[追随・理由を尋ねる選択 (1)](#tag-situation-297)　・　[通学していない (1)](#tag-situation-298)　・　[通学中 (1)](#tag-situation-299)　・　[通行止め・迂回 (1)](#tag-situation-300)　・　[天災・戦乱による避難中 (1)](#tag-situation-301)　・　[天災トランスポーターの帰路案内 (1)](#tag-situation-302)　・　[店舗からの排斥集会 (1)](#tag-situation-303)　・　[転居後の近隣交流 (1)](#tag-situation-304)　・　[都市街区での襲撃 (1)](#tag-situation-305)　・　[動的表示条件 (1232)](#tag-situation-306)　・　[動的本文 (32)](#tag-situation-307)　・　[同じ経験を持つ人との互助 (1)](#tag-situation-308)　・　[同一都市の周縁区への転居 (1)](#tag-situation-309)　・　[同一被害者 (1)](#tag-situation-310)　・　[同郷者との交流 (1)](#tag-situation-311)　・　[同行者との交流 (1)](#tag-situation-312)　・　[匿名動画の出所確認 (1)](#tag-situation-313)　・　[匿名被害者 (1)](#tag-situation-314)　・　[独立商業所属 (1)](#tag-situation-315)　・　[読み書きに困難がある (1)](#tag-situation-316)　・　[日雇い (1)](#tag-situation-317)　・　[乳児の成長 (1)](#tag-situation-318)　・　[任意応募・採用選考 (1)](#tag-situation-319)　・　[任期見直し・離職後の民間輸送 (1)](#tag-situation-320)　・　[年齢：35歳以上 (2)](#tag-situation-321)　・　[年齢：児童 (1237)](#tag-situation-322)　・　[年齢：少年 (1599)](#tag-situation-323)　・　[年齢：青年 (3174)](#tag-situation-324)　・　[年齢：壮年 (3153)](#tag-situation-325)　・　[年齢：乳児 (20)](#tag-situation-326)　・　[年齢：幼児 (37)](#tag-situation-327)　・　[年齢：老年 (2220)](#tag-situation-328)　・　[農場への武装襲撃 (1)](#tag-situation-329)　・　[排斥への参加・黙認・拒否 (1)](#tag-situation-330)　・　[排斥等に伴う脅迫が継続 (1)](#tag-situation-331)　・　[配給・食料不足 (1)](#tag-situation-332)　・　[配給・寝床・診療案内 (1)](#tag-situation-333)　・　[配給と地域支援 (1)](#tag-situation-334)　・　[配給登録 (1)](#tag-situation-335)　・　[配偶者との死別 (1)](#tag-situation-336)　・　[配偶者の療養状態に応じた選択 (1)](#tag-situation-337)　・　[買い物の予算調整・近隣支援 (1)](#tag-situation-338)　・　[班間の点検記録 (1)](#tag-situation-339)　・　[班内の技能伝達 (1)](#tag-situation-340)　・　[避難／後方荷役／残留・死亡分岐 (1)](#tag-situation-341)　・　[避難中 (1)](#tag-situation-342)　・　[非感染者 (1)](#tag-situation-343)　・　[標的の死亡確認 (1)](#tag-situation-344)　・　[貧困／感染診断／制度差別の条件 (1)](#tag-situation-345)　・　[付き添い依頼・受診延期 (1)](#tag-situation-346)　・　[付き添い相談 (1)](#tag-situation-347)　・　[扶養中の子 (2)](#tag-situation-348)　・　[扶養中の子の看病 (1)](#tag-situation-349)　・　[負傷後の職務調整 (1)](#tag-situation-350)　・　[部品寸法 (1)](#tag-situation-351)　・　[復旧作業中の負傷 (1)](#tag-situation-352)　・　[粉塵への接触懸念 (1)](#tag-situation-353)　・　[粉塵曝露 (2)](#tag-situation-354)　・　[兵士の消息不明 (1)](#tag-situation-355)　・　[兵役招集 (1)](#tag-situation-356)　・　[別居・転居 (1)](#tag-situation-357)　・　[捕虜への命令 (1)](#tag-situation-358)　・　[亡命・移住 (2)](#tag-situation-359)　・　[暴行・救助・退避 (1)](#tag-situation-360)　・　[未診断の感染者 (1)](#tag-situation-361)　・　[未成年の家族支援／成人の短期就労 (1)](#tag-situation-362)　・　[未成年は養育者判断 (8)](#tag-situation-363)　・　[未成年は養育者判断／移住支援・残留 (1)](#tag-situation-364)　・　[未成年は養育者判断／成人は本人判断 (1)](#tag-situation-365)　・　[無冑盟の実勤務 (1)](#tag-situation-366)　・　[名前を知る相手 (1)](#tag-situation-367)　・　[夜間の世話 (1)](#tag-situation-368)　・　[友人との文通再開 (1)](#tag-situation-369)　・　[友人への恋心 (1)](#tag-situation-370)　・　[傭兵・護衛勤務 (1)](#tag-situation-371)　・　[傭兵隊の護衛契約 (1)](#tag-situation-372)　・　[傭兵隊の通過 (1)](#tag-situation-373)　・　[幼い子の養育 (1)](#tag-situation-374)　・　[用事の再開・再診 (1)](#tag-situation-375)　・　[養育者の視点 (1)](#tag-situation-376)　・　[離婚後の元配偶者の死 (1)](#tag-situation-377)　・　[離婚後の元配偶者の転居 (1)](#tag-situation-378)　・　[離婚後の子育て・連絡 (1)](#tag-situation-379)　・　[龍門 (1)](#tag-situation-380)　・　[龍門の移動都市居住区 (1)](#tag-situation-381)　・　[龍門の移動都市周縁区・避難労働区 (1)](#tag-situation-382)　・　[龍門の商業街 (1)](#tag-situation-383)　・　[臨時露店仕事・観覧・出費回避 (1)](#tag-situation-384)　・　[隣人との死別 (1)](#tag-situation-385)　・　[隣人との伝言再開 (1)](#tag-situation-386)　・　[隣人の消息不明 (1)](#tag-situation-387)　・　[隣人の生存確認 (1)](#tag-situation-388)　・　[連絡・休息の継続 (1)](#tag-situation-389)　・　[連絡先と家の用事の相談 (1)](#tag-situation-390)　・　[労務補償 (1)](#tag-situation-391)
 
 <a id="tag-situation-0"></a>
 ### 1072年以降は戦役後の導入文（1）
@@ -10041,7 +10082,7 @@
 - [siesta_shop_reopens_after_move](#event-siesta_shop_reopens_after_move) — 移動都市へと姿を変えた新しいシエスタで、勤め先の店をようやく再開した。まだ人通りのまばらな通りに面して木の案内札を立て、届いたばかりの商品を一品ずつ…
 
 <a id="tag-situation-55"></a>
-### 移動都市・避難に言及（181）
+### 移動都市・避難に言及（180）
 - [work_unemployed_reentry](#event-work_unemployed_reentry) — 無職のまま月日が流れ、手元の路銀も心許なくなってきた。街角の求人板や市場の詰め所を回り、今日明日のパンと家賃を稼ぎ出すための新しい働き口を探して思案…
 - [lov](#event-lov) — 仕事帰りにたびたび顔を合わせる人と、雨宿りの軒先で立ち話をした。もっと話していたい気持ちはあったが、今月の支払いに追われる暮らしを思うと、次の一歩を…
 - [nat](#event-nat) — （動的本文）
@@ -10208,7 +10249,6 @@
 - [car_col_pioneer_entry](#event-car_col_pioneer_entry) — 移動都市の外、荒涼たる大地に広がる未開地。クルビア連邦政府の開拓局で、原野に自らの農場や工房を築く『パイオニア』の入植登記が行われていた。資本主義の…
 - [car_sir_police_entry](#event-car_sir_police_entry) — マフィアの支配から脱却し、法と秩序による統治を目指す新移動都市ヌオバ・ウォルシーニ。裁判所直属の都市警察官として、ファミリーからの脅迫や買収に屈せず…
 - [car_yan_suis_choice_beast_shard](#event-car_yan_suis_choice_beast_shard) — 辺境の荒野で、歳獣の微細な破片が活性化し、周囲の天候を歪めながら暴走していた。近隣の集落が呑み込まれる寸前である。司歳台の監察官として、自らの命を削…
-- [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
 - [car_sam_priest_choice_demon_whisper](#event-car_sam_priest_choice_demon_whisper) — 深い瞑想の最中、北方の氷原から漂う『悪魔』の認識汚染の波動が精神を揺るがした。底知れぬ暗黒の甘い囁きが、自己の輪郭を溶かそうと迫る。自然の精霊の加護…
 - [car_ibe_inq_choice_seaborn_attack](#event-car_ibe_inq_choice_seaborn_attack) — 夜更けの海岸線で、波間から無数の恐魚（海の怪物）が這い上がってきた。集落が呑み込まれる寸前である。審問官としてランタンの光を最大出力で解き放ち、剣を…
 - [car_rim_eng_choice_gas_leak](#event-car_rim_eng_choice_gas_leak) — 地下数百メートルの最下層坑道で、高濃度の源石ガスが突如噴出した。警報器が狂ったように鳴り響く。遮断弁を手動で締めに行かなければ、坑道全体が誘爆して数…
@@ -10352,7 +10392,7 @@
 - [voc_fee](#event-voc_fee) — 専門課程の次年度登録が近づいてきた。授業料と日々の食い扶持に加え、実習の日に仕事を休めるかどうかが悩みの種だった。
 
 <a id="tag-situation-87"></a>
-### 感染・鉱石病に言及（381）
+### 感染・鉱石病に言及（384）
 - [friend_fight](#event-friend_fight) — 仲の良かった友人と、些細なことで掴み合い寸前の口論になった。荒い息をついて背を向けた瞬間、めくれた袖口の奥に黒い結晶が光った気がした。翌日にはもう、…
 - [bias_family_model](#event-bias_family_model) — 夕餉の席で、親の一人が近所に越してきた感染者の一家について話した。『ああいう家とは付き合うな。厄介事を持ち込まれる』。煮物を取り分ける手は止まらず、…
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
@@ -10600,6 +10640,9 @@
 - [sr_intersect_minos_orator_infected_amnesty_bill](#event-sr_intersect_minos_orator_infected_amnesty_bill) — 感染者支援の請願について、ロドスの担当者が制度上の困りごとを聞き取りたいと申し出た。個別の体験をどう扱うか、相談者の同意を確かめる必要がある。
 - [hist_exp_1097_kazimierz_24th_major_fever](#event-hist_exp_1097_kazimierz_24th_major_fever) — 大騎士競技の会期が近づき、宿や食堂の営業時間が延びていた。競技の勝敗だけでなく、感染者騎士の参加をめぐる議論も街の掲示板に並んでいる。
 - [child_oripathy_secret_friend_beyond_fence](#event-child_oripathy_secret_friend_beyond_fence) — 学校の連絡板に、鉱石病の診療時間と相談窓口が掲示された。病名を知った子どもの中には、家族にも話せず一人で紙を見つめている人がいた。
+- [violence_infected_expulsion_speech](#event-violence_infected_expulsion_speech) — 市場の掲示板に、感染者を街から追い出せと訴える集会の案内が貼られていた。演説者は「抵抗する者は力ずくで追い出せ」と声を張り、集まった人々へ賛同を求め…
+- [violence_infected_expulsion_meeting](#event-violence_infected_expulsion_meeting) — 翌年、また同じ街角に人が集まった。演説者は「抵抗する感染者は力ずくで追い出せ」と声を張り、周囲へ唱和を促している。
+- [violence_infected_market_assault](#event-violence_infected_market_assault) — 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しや…
 - [family_sibling_exposure](#event-family_sibling_exposure) — 離れて暮らす{sibling}から、源石の破片が混じった廃材で指を深く切ってしまったと震える字の手紙が届いた。医者で検査を受けるか、雇い主に話をつけ…
 - [family_sibling_exposure_followup](#event-family_sibling_exposure_followup) — 前に掛け合った仕事先は最初の検査代を少しだけ出したが、それっきりだった。{sibling}から「そろそろ再検査の時期だけれど、仕事を休むと言い出しづ…
 - [family_sibling_infection](#event-family_sibling_infection) — 同じ家で暮らす{sibling}が鉱石病にかかっていると分かった。親族のひとりは「世間に知られたら終わりだから絶対に隠せ」と声を潜め、もうひとりは「…
@@ -10873,241 +10916,249 @@
 - [chi](#event-chi) — 夜の食卓で茶を飲みながら、{sp}とそろそろ子どもを持つか話し合った。部屋の広さやこれからの稼ぎ、いざという時に頼れる人の顔を思い浮かべた。
 
 <a id="tag-situation-107"></a>
+### 期限付き後日談（1）
+- [violence_infected_market_homicide_followup](#event-violence_infected_market_homicide_followup) — 数週間後、診療所を出た男は、まだ包帯を巻いた腕をかばいながら市場を歩いていた。あなたと配偶者が路地口へ差しかかると、同じ一団が男を取り囲んだ。巡回衛…
+
+<a id="tag-situation-108"></a>
 ### 帰宅の申出または提案（1）
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
 
-<a id="tag-situation-108"></a>
+<a id="tag-situation-109"></a>
 ### 季節の現物分配（1）
 - [work_sami_winter_food_share](#event-work_sami_winter_food_share) — 雪が深くなる前に、集めた保存食を共同倉へ置く相談が回ってきた。家の人数を書いた木札を添えておけば、冬の間、必要な時に少しずつ受け取れる。
 
-<a id="tag-situation-109"></a>
+<a id="tag-situation-110"></a>
 ### 記録・説明責任（1）
 - [life_infected_organization_exit_legacy](#event-life_infected_organization_exit_legacy) — あの会を離れてから何年もの月日が流れた。ある日、今の世話役から「あなたが関わっていた頃のいきさつを教えてほしい」と便りが届いた。過去のことにどう向き…
 
-<a id="tag-situation-110"></a>
+<a id="tag-situation-111"></a>
 ### 記録・当事者の語り・偏見の選択（1）
 - [v77_sarkaz_historical_tension](#event-v77_sarkaz_historical_tension) — 寄り合いの席で、サンクタとサルカズの古い戦いの話に火がついた。親から聞いた恨み言や昔の記録が次々に持ち出され、酒場の空気が一気に重くなる。
 
-<a id="tag-situation-111"></a>
+<a id="tag-situation-112"></a>
 ### 記録と責任（1）
 - [earth_discr_exclusion_redress](#event-earth_discr_exclusion_redress) — かつて感染者を締め出す運動に加わっていた街区を歩いていると、会を抜けた今も、当時の『感染者お断り』の木札が店先にぶら下がっていた。通りかかった感染者…
 
-<a id="tag-situation-112"></a>
+<a id="tag-situation-113"></a>
 ### 技師（1）
 - [victoria_factory_drawing_notes_daily](#event-victoria_factory_drawing_notes_daily) — 蒸気機関の点検図を広げると、前の番の技師が鉛筆で残した微調整の寸法が余白に書き込まれていた。自分も今日取り替えた弁の癖を短く書き足して次の班へ引き継…
 
-<a id="tag-situation-113"></a>
+<a id="tag-situation-114"></a>
 ### 技能条件（1）
 - [elder_work_opportunity](#event-elder_work_opportunity) — 引退して何年か経ったころ、近所の商店から「昼の間だけ店番を手伝ってくれないか」と声がかかった。近くの学び場でも、子どもたちに読み書きや算盤を教えられ…
 
-<a id="tag-situation-114"></a>
+<a id="tag-situation-115"></a>
 ### 求職（2）
 - [earth_discr_sarkaz_application](#event-earth_discr_sarkaz_application) — 荷運びの口があると聞いて仕事場を訪ね、これまでの経験を話すと、雇い主はあなたの角や顔つきをじろじろ見て「前の傭兵崩れと同じじゃないだろうな」と鼻で笑…
 - [earth_discr_iberia_aegir_return](#event-earth_discr_iberia_aegir_return) — 港でエーギルだというだけで詰問されて以来、役人や監督の視線がどうにも棘のように感じられる。それでも海辺の仕事を続けるか、内陸の仕事へ移るか心が揺れた…
 
-<a id="tag-situation-115"></a>
+<a id="tag-situation-116"></a>
 ### 求職・紹介（1）
 - [earth_discr_sarkaz_work_later](#event-earth_discr_sarkaz_work_later) — サルカズだというだけで門前払いされた苦い記憶がまだ残るなか、知人づてに次の仕事を紹介してくれるという人物と会うことになった。自分の腕とこれまでの経緯…
 
-<a id="tag-situation-116"></a>
+<a id="tag-situation-117"></a>
 ### 旧坑区の荷札照会（1）
 - [rim_shipment_label](#event-rim_shipment_label) — 自治地区の集配所で、あなた宛てに届いた重たい工具箱を係員が出してきた。ただ、荷札に書かれた坑区番号がすでに閉鎖された古い区画になっており、そのままで…
 
-<a id="tag-situation-117"></a>
+<a id="tag-situation-118"></a>
 ### 競技会場の仮設席設営（1）
 - [bol_dossoles_championship_work](#event-bol_dossoles_championship_work) — 水上競技大会で沸き返るドッソレスの荷受け場に、仮設スタンドを組む数日間の急募が出ていた。日当は悪くない。今の仕事や予定と折り合いがつくか考えた。
 
-<a id="tag-situation-118"></a>
+<a id="tag-situation-119"></a>
 ### 競技騎士として10年以上の所属（1）
 - [kaz_knight_later_career_review](#event-kaz_knight_later_career_review) — 競技場の砂塵のなかで剣を振るい続けて、もう十年以上が過ぎた。どれだけ試合を重ねても、傷んだ武具の修理代や次の大会の登録料は自分の懐から出ていく。若い…
 
-<a id="tag-situation-119"></a>
+<a id="tag-situation-120"></a>
 ### 競技騎士の肩の負傷（1）
 - [kaz_knight_injury_adaptation](#event-kaz_knight_injury_adaptation) — 競技中に深く傷めた肩が、腕を高く上げる作業や重い荷を抱えるたびに鈍く疼く。競技場からは治療費も補償の音沙汰もないまま、この身体でどうやって日々の仕事…
 
-<a id="tag-situation-120"></a>
+<a id="tag-situation-121"></a>
 ### 競技祭（1）
 - [f98](#event-f98) — 競技祭の露店で値札を書き直し、客の切れ間に見物用の長椅子を並べた。出場登録料を払えず遠くから舞台を見つめていた若者に、「見物席なら端が空いてるぞ」と…
 
-<a id="tag-situation-121"></a>
+<a id="tag-situation-122"></a>
 ### 脅迫の危険が2年以上継続（1）
 - [life_harassment_threat_resolution](#event-life_harassment_threat_resolution) — 帰り道で脅されてから二年の月日が流れた。ずっと遠回りを続けてきたが、街角で似た背格好や乱暴な笑い声を聞くたび、今でも思わず足がすくむ。
 
-<a id="tag-situation-122"></a>
+<a id="tag-situation-123"></a>
 ### 脅迫を受ける（1）
 - [life_harassment_threat_escalation](#event-life_harassment_threat_escalation) — かつて仕事場や宿で締め出されたいきさつを知る連中に、夕暮れの帰り道で取り囲まれ、次に見かけたらただでは置かないと罵声を浴びせられた。部屋へ逃げ帰って…
 
-<a id="tag-situation-123"></a>
+<a id="tag-situation-124"></a>
 ### 脅迫記録の解除分岐（1）
 - [life_harassment_threat_resolution](#event-life_harassment_threat_resolution) — 帰り道で脅されてから二年の月日が流れた。ずっと遠回りを続けてきたが、街角で似た背格好や乱暴な笑い声を聞くたび、今でも思わず足がすくむ。
 
-<a id="tag-situation-124"></a>
+<a id="tag-situation-125"></a>
 ### 極東（1）
 - [hig_tension](#event-hig_tension) — 北院と南院の睨み合いや、海の向こうのウルサスとのいくさ話が、仕事帰りの茶屋でもしきりに囁かれるようになった。辻の掲示板には、近隣の陣屋が兵站や街道警…
 
-<a id="tag-situation-125"></a>
+<a id="tag-situation-126"></a>
 ### 極東の軍務・兵站ルート（2）
 - [hig_service_review](#event-hig_service_review) — 陣屋で兵站と街道警備の務めに就いて三年が経ち、上役から次の任期も残るかと尋ねられた。このまま軍務を続けるか、覚えた荷捌きの腕を民間の輸送業で生かすか…
 - [hig_service_later_career_review](#event-hig_service_later_career_review) — 気づけば十五年以上も軍務・兵站の現場に身を置き、急な陣触れと家の暮らしのあいだで折り合いをつけてきた。このまま古参として部隊に残るか、培った街道と荷…
 
-<a id="tag-situation-126"></a>
+<a id="tag-situation-127"></a>
 ### 極東の神社（1）
 - [hig_shrine](#event-hig_shrine) — 帰り道に神社の前を通りかかると、氏子や近所の人たちが祭礼の支度に追われていた。紅白の幕を張り、提灯を吊るし、石段の脇には奉納金を募る木札が並んでいる…
 
-<a id="tag-situation-127"></a>
+<a id="tag-situation-128"></a>
 ### 勤務縮小後（1）
 - [old_followup](#event-old_followup) — 仕事の時間を減らしてから何年かが過ぎた。体をいたわる暮らしには慣れたものの、懐具合や体力の衰えは年々変わっていく。職場から、来期はどうするか声がかか…
 
-<a id="tag-situation-128"></a>
+<a id="tag-situation-129"></a>
 ### 近隣からの相談（1）
 - [earth_discr_housing_record_after](#event-earth_discr_housing_record_after) — あなたが以前大家と渡り合ったことを聞きつけた近所の住人が、自分も部屋を追い出されそうだと青い顔をして相談に来た。手に握りしめた借家証文を見せ、どう切…
 
-<a id="tag-situation-129"></a>
+<a id="tag-situation-130"></a>
 ### 近隣との情報交換（1）
 - [f63](#event-f63) — 同じ隔離区画に暮らす人と、乏しい食材で少しでも腹持ちよく作る工夫を話し合った。昔の家庭料理の味を言い合っているうちに、自然と互いの故郷の話になった。…
 
-<a id="tag-situation-130"></a>
+<a id="tag-situation-131"></a>
 ### 近隣の若年者との交流（1）
 - [elder_community](#event-elder_community) — 仕事帰りの夕暮れ、近所の若者に古い道具の手入れの仕方を尋ねられた。提げていた買い物袋を足元に置き、どこから教えてやろうかと考えた。 久しく誰も訪ねて…
 
-<a id="tag-situation-131"></a>
+<a id="tag-situation-132"></a>
 ### 近隣互助（1）
 - [seg_life](#event-seg_life) — 隔離区画の中の雑用を終えて顔を上げると、柵の向こうの大通りに華やかな夕明かりが灯っていた。手にした賃金はわずかだが、数日分のパンと芋を買うにはどうに…
 
-<a id="tag-situation-132"></a>
+<a id="tag-situation-133"></a>
 ### 軍務・護衛の継続（1）
 - [veteran](#event-veteran) — 新しい遠征任務の召集が舞い込んだ。冷える日に強張る体とこれからの暮らしを思い、武器を置いて若手を教える役に回るか、まだ現場に出て日当を稼ぐか迷った。
 
-<a id="tag-situation-133"></a>
+<a id="tag-situation-134"></a>
 ### 契約確認（1）
 - [earth_discr_housing_review](#event-earth_discr_housing_review) — 住まいをめぐって大家や管理人から冷たい扱いを受けて以来、部屋にいてもどこか落ち着かない日々が続いている。このまま肩身の狭い思いをしながら住み続けるか…
 
-<a id="tag-situation-134"></a>
+<a id="tag-situation-135"></a>
 ### 経験を伝える／一度だけ付き合う／断る（1）
 - [minos_competition_skill_later_life](#event-minos_competition_skill_later_life) — 若い頃にミノスの競技祭へ出たことを知る近所の若者から、「一度でいいからフォームや道具の手入れを見てほしい」と頭を下げられた。今の体と相談しながら、ど…
 
-<a id="tag-situation-135"></a>
+<a id="tag-situation-136"></a>
 ### 継続／民間移行／求職（1）
 - [hig_service_later_career_review](#event-hig_service_later_career_review) — 気づけば十五年以上も軍務・兵站の現場に身を置き、急な陣触れと家の暮らしのあいだで折り合いをつけてきた。このまま古参として部隊に残るか、培った街道と荷…
 
-<a id="tag-situation-136"></a>
+<a id="tag-situation-137"></a>
 ### 継続後の振り返り（1）
 - [earth_discr_housing_review](#event-earth_discr_housing_review) — 住まいをめぐって大家や管理人から冷たい扱いを受けて以来、部屋にいてもどこか落ち着かない日々が続いている。このまま肩身の狭い思いをしながら住み続けるか…
 
-<a id="tag-situation-137"></a>
+<a id="tag-situation-138"></a>
 ### 継続後の窓口（1）
 - [earth_discr_relief_follow](#event-earth_discr_relief_follow) — 先が見えない避難生活が続いている。今度の配給所でもよそ者だという理由で足止めされ、前に係員から聞いておいた手続きの話を持ち出した。
 
-<a id="tag-situation-138"></a>
+<a id="tag-situation-139"></a>
 ### 警戒・質問の選択（1）
 - [attitude_sarkaz_child](#event-attitude_sarkaz_child) — 賑わう市場の露店の前で、サルカズの荷運び人が売り物に手を触れたと店主から怒鳴られていた。そばで見ていた大人が「これだからサルカズは油断ならない」と吐…
 
-<a id="tag-situation-139"></a>
+<a id="tag-situation-140"></a>
 ### 検査延期後の再検討（1）
 - [ori_followup_access](#event-ori_followup_access) — （動的本文）
 
-<a id="tag-situation-140"></a>
+<a id="tag-situation-141"></a>
 ### 源石粉塵に曝露する仕事（1）
 - [ori_diagnosed_workplace](#event-ori_diagnosed_workplace) — 鉱石病と診断されたあとも、源石の粉塵が舞う現場での仕事は続いていた。体をいたわれば稼ぎが減り、無理をすれば病が進む。毎月の暮らしと自分の体のどこで折…
 
-<a id="tag-situation-141"></a>
+<a id="tag-situation-142"></a>
 ### 源石片による負傷・曝露（1）
 - [family_child_crystal_exposure](#event-family_child_crystal_exposure) — 外から帰ってきた子どもが、「きれいな石を拾った」と黒く光る欠片を手のひらに乗せて見せてきた。近くの古い採掘跡から風で飛ばされてきた源石片らしい。子ど…
 
-<a id="tag-situation-142"></a>
+<a id="tag-situation-143"></a>
 ### 源石片への接触回避（1）
 - [ori_school_fragment](#event-ori_school_fragment) — 遊びからの帰り道、前を歩いていた友だちが道端に落ちていた黒く光る石ころに手を伸ばした。ただのガラス片か源石の欠片か咄嗟には分からず、胸がひやりとした…
 
-<a id="tag-situation-143"></a>
+<a id="tag-situation-144"></a>
+### 現役の軍務（1）
+- [car_urs_guard_choice_captive_order](#event-car_urs_guard_choice_captive_order) — 夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足…
+
+<a id="tag-situation-145"></a>
 ### 言葉の行き違い（1）
 - [f69](#event-f69) — 身を寄せた先の窓口で、耳慣れない土地の言い回しを早口で並べられた。聞き返しているうちに後ろの列が詰まり、背中に刺さる無言の視線に汗がにじんだ。 逃れ…
 
-<a id="tag-situation-144"></a>
+<a id="tag-situation-146"></a>
 ### 個人情報（1）
 - [earth_discr_housing_record_after](#event-earth_discr_housing_record_after) — あなたが以前大家と渡り合ったことを聞きつけた近所の住人が、自分も部屋を追い出されそうだと青い顔をして相談に来た。手に握りしめた借家証文を見せ、どう切…
 
-<a id="tag-situation-145"></a>
+<a id="tag-situation-147"></a>
 ### 古傷による職業転換（1）
 - [veteran](#event-veteran) — 新しい遠征任務の召集が舞い込んだ。冷える日に強張る体とこれからの暮らしを思い、武器を置いて若手を教える役に回るか、まだ現場に出て日当を稼ぐか迷った。
 
-<a id="tag-situation-146"></a>
+<a id="tag-situation-148"></a>
 ### 固定集落への配達（1）
 - [kjerag_transporter_village_delivery_daily](#event-kjerag_transporter_village_delivery_daily) — 木札に焼印された村の名と荷物の数を確かめ、冷たい風が吹く山道を下った。谷あいの村の入口で待っていた住民に荷を引き渡し、代わりに託された空の木箱を背負…
 
-<a id="tag-situation-147"></a>
+<a id="tag-situation-149"></a>
 ### 固定都市（1）
 - [siracusa_wine_shop_ledger_daily](#event-siracusa_wine_shop_ledger_daily) — 店の扉を閉める前、店主に頼まれて木箱のワイン瓶と仕入れ帳をひと瓶ずつ照らし合わせた。ぶどうの産地を細かく尋ねる常連客にも淀みなく答えられるようになり…
 
-<a id="tag-situation-148"></a>
+<a id="tag-situation-150"></a>
 ### 互助連絡・加入保留・接触回避（1）
 - [kaz_reunion](#event-kaz_reunion) — チェルノボーグ事変のあと、散り散りになったレユニオンが感染者の互助組織として立て直されているという噂が、北から来た旅人を通じて伝わってきた。カズデル…
 
-<a id="tag-situation-149"></a>
+<a id="tag-situation-151"></a>
 ### 交易所の共用端末（1）
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
 
-<a id="tag-situation-150"></a>
+<a id="tag-situation-152"></a>
 ### 公証人役場（1）
 - [laterano_household_papers](#event-laterano_household_papers) — 住まいの契約更新について確かめるため、高い天井の公証人役場へ出向いた。窓口の職員から次に揃えるべき証明書の名前を教わり、重い扉を押し開けて外へ出ると…
 
-<a id="tag-situation-151"></a>
+<a id="tag-situation-153"></a>
 ### 工業区域（1）
 - [f111](#event-f111) — 工業区域の角で、工員たちが仲間を捜す準備をしていた。油まみれの服を着た数人が声を潜めて地図を囲み、最後に姿を見た場所や裏路地の抜け道を確かめ合ってい…
 
-<a id="tag-situation-152"></a>
+<a id="tag-situation-154"></a>
 ### 工場労働者（1）
 - [ursus_factory_skill_handoff_daily](#event-ursus_factory_skill_handoff_daily) — 交替の汽笛が鳴る少し前、同じ班の古株が「こう締めるとネジ山が潰れない」と留め具の順番を見せてくれた。次の番からはそのやり方を真似てみると、夕方の腕の…
 
-<a id="tag-situation-153"></a>
+<a id="tag-situation-155"></a>
 ### 港湾労働（2）
 - [earth_discr_iberia_aegir_port](#event-earth_discr_iberia_aegir_port) — 港の作業員名簿に名を連ねようとした時、係官はあなたがエーギルだと知るなり目つきを変え、他の作業員には聞かない身の上まで根掘り葉掘り尋ねてきた。「大い…
 - [earth_discr_iberia_aegir_return](#event-earth_discr_iberia_aegir_return) — 港でエーギルだというだけで詰問されて以来、役人や監督の視線がどうにも棘のように感じられる。それでも海辺の仕事を続けるか、内陸の仕事へ移るか心が揺れた…
 
-<a id="tag-situation-154"></a>
+<a id="tag-situation-156"></a>
 ### 鉱区事故（1）
 - [f94](#event-f94) — 鉱区の掲示板に、落盤で負傷した仲間の名と閉鎖された坑道番号がチョークで書き出された。次の番に入る同僚は、見舞金や補償の話を誰に掛け合えばいいのかと周…
 
-<a id="tag-situation-155"></a>
+<a id="tag-situation-157"></a>
 ### 鉱山の交替減少（1）
 - [rim_local_mine_slowdown_daily](#event-rim_local_mine_slowdown_daily) — 町外れの鉱山で稼働する切羽が減り始めてから、行きつけの食堂の昼時もすっかり客足が遠のいた。店主は火にかける大鍋を一つ減らし、静まり返った店内で所在な…
 
-<a id="tag-situation-156"></a>
+<a id="tag-situation-158"></a>
 ### 鉱山労働（1）
 - [f48](#event-f48) — 坑道の粉塵を吸い込みすぎたのか、夜中にも乾いた咳が出る日が増えた。玄関先で作業着をはたくと、街灯の光の中に黒っぽい灰が舞い落ちた。 切羽から上がって…
 
-<a id="tag-situation-157"></a>
+<a id="tag-situation-159"></a>
 ### 鉱石病以外の回復期（1）
 - [life_rehabilitation_followup](#event-life_rehabilitation_followup) — ひどい熱や痛みはどうにか峠を越えたが、少し長く歩いた翌朝は鉛を背負ったように体が重い。焦る気持ちを抑えながら、朝の家事を一つ済ませて体の具合を確かめ…
 
-<a id="tag-situation-158"></a>
+<a id="tag-situation-160"></a>
 ### 鉱石病診断済み（1）
 - [life_medical_oripathy](#event-life_medical_oripathy) — 鉱石病の疼きと重だるさが年々深まり、昔なら一気に片づいた仕事にも何度も息継ぎが要るようになった。次の抑制薬を買う金と診察の日取りを思い浮かべ、ため息…
 
-<a id="tag-situation-159"></a>
+<a id="tag-situation-161"></a>
 ### 鉱夫（1）
 - [infection_mine_crystal_contact](#event-infection_mine_crystal_contact) — 採掘坑の古い支柱がミシミシと軋んでずれ、崩れた壁面から生々しい源石の結晶がむき出しになった。換気扇は止まり、きらめく粉塵がカンテラの光を濁らせている…
 
-<a id="tag-situation-160"></a>
+<a id="tag-situation-162"></a>
 ### 鉱夫分岐（1）
 - [f94](#event-f94) — 鉱区の掲示板に、落盤で負傷した仲間の名と閉鎖された坑道番号がチョークで書き出された。次の番に入る同僚は、見舞金や補償の話を誰に掛け合えばいいのかと周…
 
-<a id="tag-situation-161"></a>
+<a id="tag-situation-163"></a>
 ### 高等教育経験者の教員応募（1）
 - [teacher_path](#event-teacher_path) — 地域の学び舎に、読み書きを教える講師の募集が出ていた。顔見知りの紹介者から「一度教室を見学して、短い模擬授業をやってみないか」と誘われ、教本代と往復…
 
-<a id="tag-situation-162"></a>
+<a id="tag-situation-164"></a>
 ### 高齢期（1）
 - [elder_community](#event-elder_community) — 仕事帰りの夕暮れ、近所の若者に古い道具の手入れの仕方を尋ねられた。提げていた買い物袋を足元に置き、どこから教えてやろうかと考えた。 久しく誰も訪ねて…
 
-<a id="tag-situation-163"></a>
+<a id="tag-situation-165"></a>
 ### 高齢期の就労（1）
 - [elder_work_opportunity](#event-elder_work_opportunity) — 引退して何年か経ったころ、近所の商店から「昼の間だけ店番を手伝ってくれないか」と声がかかった。近くの学び場でも、子どもたちに読み書きや算盤を教えられ…
 
-<a id="tag-situation-164"></a>
+<a id="tag-situation-166"></a>
 ### 告示の交代（1）
 - [f102](#event-f102) — 広場の掲示板に、真新しい印章が押された布告が張り出されていた。その端から、昨日までの古い告示が半分だけ破れてのぞいている。人垣の後ろから新しい文面を…
 
-<a id="tag-situation-165"></a>
+<a id="tag-situation-167"></a>
 ### 国の発生条件あり（1642）
 - [minos_hero_spirit_stigma](#event-minos_hero_spirit_stigma) — 診療所の帰り道、通りがかりの大人が『鉱石病は英雄の気高い魂まで蝕む』と噂していた。治療を続ける親は、家の病のことを近所にだけは悟られるなと唇に指を当…
 - [kjerag_transporter_route_review](#event-kjerag_transporter_route_review) — 雪の山道を荷を背負って登り始めて二年になる。新しい荷受け場所を設けたいと集落を回ると、温かい茶を出して歓迎してくれる村もあれば、よそ者の出入りを嫌っ…
@@ -12752,111 +12803,115 @@
 - [cl_kazdel_displacement_history](#event-cl_kazdel_displacement_history) — カズデルの市場の軒下で、かつての戦功をまくし立てる男が宿の主人に寝床代を掛け合っていた。すぐ脇では、着の身着のままで逃げてきた家族が荷車から古着を出…
 - [cl_training_long_term](#event-cl_training_long_term) — 街角で再び技能講習の募集を見かけた。働き始めて数年、泥のように疲れて帰り、机に向かう気力さえない夜も多い。現場で身につけた腕を自分で磨くか、今からで…
 
-<a id="tag-situation-166"></a>
+<a id="tag-situation-168"></a>
 ### 国外避難・残留・死亡分岐（1）
 - [kaz_exile](#event-kaz_exile) — 内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。
 
-<a id="tag-situation-167"></a>
+<a id="tag-situation-169"></a>
 ### 再受付・別の診療先の探索（1）
 - [earth_discr_clinic_return](#event-earth_discr_clinic_return) — 前の受診を諦めてから、いつの間にか月が変わってしまった。薬の残りは心細いが、あの裏口の冷たい空気を思い出すと足がすくむ。
 
-<a id="tag-situation-168"></a>
+<a id="tag-situation-170"></a>
 ### 採掘坑内の換気停止（1）
 - [infection_mine_crystal_contact](#event-infection_mine_crystal_contact) — 採掘坑の古い支柱がミシミシと軋んでずれ、崩れた壁面から生々しい源石の結晶がむき出しになった。換気扇は止まり、きらめく粉塵がカンテラの光を濁らせている…
 
-<a id="tag-situation-169"></a>
+<a id="tag-situation-171"></a>
 ### 採掘地域（1）
 - [rim_transporter_mine_handoff_daily](#event-rim_transporter_mine_handoff_daily) — 鉱区の荷受け場で、まったく別方向の集落へ行く木箱が同じ荷台に乱雑に放り込まれていた。ちょうど天災トランスポーターが黒板に封鎖区画を書き足したところで…
 
-<a id="tag-situation-170"></a>
+<a id="tag-situation-172"></a>
 ### 採掘地域に限定（1）
 - [urs_sweep](#event-urs_sweep) — 鉱石病の兆候を周囲に隠したまま暮らしてきた。ある朝、重苦しい軍靴の音が通りに響き、憲兵や地区の係員が未登録の感染者を匿う家はないかと一軒ずつ戸を叩き…
 
-<a id="tag-situation-171"></a>
+<a id="tag-situation-173"></a>
 ### 採掘中（1）
 - [rim_forecast_route_daily](#event-rim_forecast_route_daily) — 坑道から地上へ上がると、詰所の前で天災トランスポーターが帰路の案内札を掛け替えていた。煤けた黒板にはこれからの風向きと安全に通れる谷筋が短く記され、…
 
-<a id="tag-situation-172"></a>
+<a id="tag-situation-174"></a>
 ### 災害後の商店再開（1）
 - [siesta_shop_reopens_after_move](#event-siesta_shop_reopens_after_move) — 移動都市へと姿を変えた新しいシエスタで、勤め先の店をようやく再開した。まだ人通りのまばらな通りに面して木の案内札を立て、届いたばかりの商品を一品ずつ…
 
-<a id="tag-situation-173"></a>
+<a id="tag-situation-175"></a>
 ### 祭典（1）
 - [f96](#event-f96) — 海辺の祭りの日、店先には朝から晩まで観光客の波が絶えなかった。釣り銭を渡し続ける手を休める暇もなかったが、客足がふっと途切れた一瞬だけ、きらめく海の…
 
-<a id="tag-situation-174"></a>
+<a id="tag-situation-176"></a>
 ### 作業技能（1）
 - [ursus_factory_skill_handoff_daily](#event-ursus_factory_skill_handoff_daily) — 交替の汽笛が鳴る少し前、同じ班の古株が「こう締めるとネジ山が潰れない」と留め具の順番を見せてくれた。次の番からはそのやり方を真似てみると、夕方の腕の…
 
-<a id="tag-situation-175"></a>
+<a id="tag-situation-177"></a>
 ### 作業停止・退避（1）
 - [life_unexpected_rescue](#event-life_unexpected_rescue) — 現場の足場板が腐って浮き上がり、頭上の荷台で重い資材が嫌な音を立てて傾いていた。このまま作業を続ければ崩れ落ちるかもしれない。
 
-<a id="tag-situation-176"></a>
+<a id="tag-situation-178"></a>
+### 殺人・殺人未遂（1）
+- [violence_infected_market_homicide_followup](#event-violence_infected_market_homicide_followup) — 数週間後、診療所を出た男は、まだ包帯を巻いた腕をかばいながら市場を歩いていた。あなたと配偶者が路地口へ差しかかると、同じ一団が男を取り囲んだ。巡回衛…
+
+<a id="tag-situation-179"></a>
 ### 山道の情報共有（1）
 - [sami_forest_tasks](#event-sami_forest_tasks) — 深い針葉樹の森の入り口で、橇や斧の手入れをする人に手を貸した。生木の樹脂の匂いに包まれながら、ひと足先にこの森を抜けていった狩人たちの話を聞いた。 …
 
-<a id="tag-situation-177"></a>
+<a id="tag-situation-180"></a>
 ### 山麓の宿への道案内（1）
 - [kjerag_traveler_asks_directions](#event-kjerag_traveler_asks_directions) — 新しくできた駅前で、重そうな鞄を提げた外からの旅人に山麓の宿への道順を尋ねられた。雪の残る坂道の分岐を指さして教えると、旅人は白い息を吐いて何度も頭…
 
-<a id="tag-situation-178"></a>
+<a id="tag-situation-181"></a>
 ### 仕送り（1）
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
 
-<a id="tag-situation-179"></a>
+<a id="tag-situation-182"></a>
 ### 子どもの就学（1）
 - [ksc](#event-ksc) — 子どもが学校へ通う年齢になった。どこで学べるのか、家では話題にするようになったが、受入先も通学の方法もまだ分かっていない。手元に用意できる学用品のこ…
 
-<a id="tag-situation-180"></a>
+<a id="tag-situation-183"></a>
 ### 子どもの誕生・養育（1）
 - [chi](#event-chi) — 夜の食卓で茶を飲みながら、{sp}とそろそろ子どもを持つか話し合った。部屋の広さやこれからの稼ぎ、いざという時に頼れる人の顔を思い浮かべた。
 
-<a id="tag-situation-181"></a>
+<a id="tag-situation-184"></a>
 ### 子の居住地に応じた動的本文（1）
 - [family_former_spouse_move_notice](#event-family_former_spouse_move_notice) — 別れた{formerSpouse}が{formerSpouseMovedRegion}へ移り住んだという知らせが、{formerSpouseMove…
 
-<a id="tag-situation-182"></a>
+<a id="tag-situation-185"></a>
 ### 子への訃報（1）
 - [family_former_spouse_death_notice](#event-family_former_spouse_death_notice) — かつて婚姻関係にあった{formerSpouse}が亡くなったという知らせが届いた。食卓に腰を下ろすと、言い争った日も笑い合った日も入り混じって胸に…
 
-<a id="tag-situation-183"></a>
+<a id="tag-situation-186"></a>
 ### 市場でサルカズの荷運び人が責められる（1）
 - [attitude_sarkaz_child](#event-attitude_sarkaz_child) — 賑わう市場の露店の前で、サルカズの荷運び人が売り物に手を触れたと店主から怒鳴られていた。そばで見ていた大人が「これだからサルカズは油断ならない」と吐…
 
-<a id="tag-situation-184"></a>
+<a id="tag-situation-187"></a>
 ### 市場で代替品・入荷を確認（1）
 - [local_food_shortage](#event-local_food_shortage) — 市場の棚は歯が抜けたように空いていた。荷馬車や輸送便がいつ着くかは日によってまちまちで、店主も首を振るばかりだ。財布の底の硬貨を指で数えながら、今日…
 
-<a id="tag-situation-185"></a>
+<a id="tag-situation-188"></a>
 ### 思春期（1）
 - [f25](#event-f25) — 別れたあとの帰り道も、{friendName}の声がずっと耳の奥に残っていた。気楽な友人のままでいたい気持ちと、もっと特別な距離に踏み込みたい気持ち…
 
-<a id="tag-situation-186"></a>
+<a id="tag-situation-189"></a>
 ### 支援の受入れ（1）
 - [earth_discr_aid_internal_voice](#event-earth_discr_aid_internal_voice) — 互助会で薬や食料を配る日取りを決めていると、感染者のいない世帯の住人から「力仕事をを手伝いたい」と申し出があった。人手は喉から手が出るほど欲しいが、…
 
-<a id="tag-situation-187"></a>
+<a id="tag-situation-190"></a>
 ### 氏族養育（1）
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 
-<a id="tag-situation-188"></a>
+<a id="tag-situation-191"></a>
 ### 資格取得後の求職（1）
 - [study_to_work](#event-study_to_work) — 実習で扱ったのと同じ機械を使う工房の求人が出た。なけなしの交通費と経歴書を懐に入れ、どの工房から門を叩くか考えた。 街の掲示板に技術部門と研究補助の…
 
-<a id="tag-situation-189"></a>
+<a id="tag-situation-192"></a>
 ### 飼育動物の世話（1）
 - [confined_pet_care](#event-confined_pet_care) — 隔離された生活が長引き、ずっと家を空けたままになっている。部屋に残してきた生き物の水や餌を誰に頼むか、そして預けたあとの餌代をどう送り続けるかで頭が…
 
-<a id="tag-situation-190"></a>
+<a id="tag-situation-193"></a>
 ### 次便待ち（1）
 - [kjerag_transporter_village_delivery_daily](#event-kjerag_transporter_village_delivery_daily) — 木札に焼印された村の名と荷物の数を確かめ、冷たい風が吹く山道を下った。谷あいの村の入口で待っていた住民に荷を引き渡し、代わりに託された空の木箱を背負…
 
-<a id="tag-situation-191"></a>
+<a id="tag-situation-194"></a>
 ### 自治地区の工業・採掘地域（1）
 - [rim_shipment_label](#event-rim_shipment_label) — 自治地区の集配所で、あなた宛てに届いた重たい工具箱を係員が出してきた。ただ、荷札に書かれた坑区番号がすでに閉鎖された古い区画になっており、そのままで…
 
-<a id="tag-situation-192"></a>
+<a id="tag-situation-195"></a>
 ### 自動発生イベント（1962）
 - [f1](#event-f1) — {caregiverArms}まどろむ日が続いた。ふと目を開けると、すぐそばで誰かが声を潜めて語りかけていた。 やわらかな布にくるまれて眠った。目を…
 - [f2](#event-f2) — 戸口から差し込む光の筋を、まばたきもせずに目で追った。人の影がそれを横切ると、そちらへ首をめぐらせた。 風に揺れる布の影をじっと見つめた。つかまえよ…
@@ -14821,131 +14876,140 @@
 - [parent_oripathy_death_4](#event-parent_oripathy_death_4) — {親の名}は鉱石病で亡くなった。遺体の結晶化が進んでいると告げられ、その場を離れるよう促された。持ち出せた荷を抱え、建物の外で身を寄せ合って待った。…
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 
-<a id="tag-situation-193"></a>
+<a id="tag-situation-196"></a>
 ### 湿地地勢（1）
 - [sami_wetland_way](#event-sami_wetland_way) — 泥炭地の道に渡してあった木板が泥の下へ沈みかけ、近所の人と予備の厚板を担いで運んだ。荷物を手渡しで送りながら一人ずつ慎重に渡りきり、硬い地面の上でよ…
 
-<a id="tag-situation-194"></a>
+<a id="tag-situation-197"></a>
 ### 守秘と名簿（1）
 - [earth_discr_aid_internal_voice](#event-earth_discr_aid_internal_voice) — 互助会で薬や食料を配る日取りを決めていると、感染者のいない世帯の住人から「力仕事をを手伝いたい」と申し出があった。人手は喉から手が出るほど欲しいが、…
 
-<a id="tag-situation-195"></a>
+<a id="tag-situation-198"></a>
 ### 種族差別（2）
 - [earth_discr_sarkaz_application](#event-earth_discr_sarkaz_application) — 荷運びの口があると聞いて仕事場を訪ね、これまでの経験を話すと、雇い主はあなたの角や顔つきをじろじろ見て「前の傭兵崩れと同じじゃないだろうな」と鼻で笑…
 - [earth_discr_sarkaz_lodging](#event-earth_discr_sarkaz_lodging) — 用事で訪れた街の安宿で空き部屋を尋ねると、帳場の主人はあなたの姿を見るなり「荒っぽい兵隊は他所へ行ってくれ」と手を振った。傭兵ではないと説明する間も…
 
-<a id="tag-situation-196"></a>
+<a id="tag-situation-199"></a>
 ### 種族差別後（1）
 - [earth_discr_sarkaz_work_later](#event-earth_discr_sarkaz_work_later) — サルカズだというだけで門前払いされた苦い記憶がまだ残るなか、知人づてに次の仕事を紹介してくれるという人物と会うことになった。自分の腕とこれまでの経緯…
 
-<a id="tag-situation-197"></a>
+<a id="tag-situation-200"></a>
 ### 酒類の仕入れ帳（1）
 - [siracusa_wine_shop_ledger_daily](#event-siracusa_wine_shop_ledger_daily) — 店の扉を閉める前、店主に頼まれて木箱のワイン瓶と仕入れ帳をひと瓶ずつ照らし合わせた。ぶどうの産地を細かく尋ねる常連客にも淀みなく答えられるようになり…
 
-<a id="tag-situation-198"></a>
+<a id="tag-situation-201"></a>
 ### 受け取り・問い合わせ・辞退（1）
 - [rim_shipment_label](#event-rim_shipment_label) — 自治地区の集配所で、あなた宛てに届いた重たい工具箱を係員が出してきた。ただ、荷札に書かれた坑区番号がすでに閉鎖された古い区画になっており、そのままで…
 
-<a id="tag-situation-199"></a>
+<a id="tag-situation-202"></a>
 ### 受診・負担軽減・隠蔽（1）
 - [life_medical_oripathy](#event-life_medical_oripathy) — 鉱石病の疼きと重だるさが年々深まり、昔なら一気に片づいた仕事にも何度も息継ぎが要るようになった。次の抑制薬を買う金と診察の日取りを思い浮かべ、ため息…
 
-<a id="tag-situation-200"></a>
+<a id="tag-situation-203"></a>
 ### 授業担当者との接点（1）
 - [people_school_introduction](#event-people_school_introduction) — 放課後の教室で、授業を受け持つ先生が教卓の上のプリントを揃えていた。手元のノートには、授業中に聞きそびれた疑問がいくつも残っている。
 
-<a id="tag-situation-201"></a>
+<a id="tag-situation-204"></a>
 ### 収容・隔離中（1）
 - [confined_pet_care](#event-confined_pet_care) — 隔離された生活が長引き、ずっと家を空けたままになっている。部屋に残してきた生き物の水や餌を誰に頼むか、そして預けたあとの餌代をどう送り続けるかで頭が…
 
-<a id="tag-situation-202"></a>
+<a id="tag-situation-205"></a>
 ### 収容・隔離中の診療（1）
 - [dg](#event-dg) — 収容先の薄暗い診察室で、肌に浮いた結晶は鉱石病だと告げられた。外の病院へは行けない。ここで抑制薬を出してもらえるのか、医師の顔を見つめた。 隔離区画…
 
-<a id="tag-situation-203"></a>
-### 収容中（4）
+<a id="tag-situation-206"></a>
+### 収容後の釈放（3）
+- [violence_civilian_homicide_release](#event-violence_civilian_homicide_release) — 三年間の収容を終え、門の外へ出た。手元の金と戻れる場所を確かめ、翌日からの暮らしを考え始めた。
+- [violence_civilian_attempted_homicide_release](#event-violence_civilian_attempted_homicide_release) — 二年の収容を終え、門の外へ出た。石を振り下ろした相手は死ななかった。目撃した配偶者との日常も戻らず、これからの暮らしを考えることになった。
+- [violence_civilian_assault_release](#event-violence_civilian_assault_release) — 一年の収容を終え、門の外へ出た。石を振り下ろした相手は生きていた。配偶者との関係も、あの日から止まったままだった。
+
+<a id="tag-situation-207"></a>
+### 収容中（7）
 - [f64](#event-f64) — 収容所の冷たい壁に、かつてここにいた誰かの名前と日付がいくつも引っ掻かれていた。薄暗い端まで指でたどり、刻まれた月日の長さを頭の中で数えた。 寝床の…
 - [f65](#event-f65) — 看守に番号と名前を呼ばれ、返事をした自分の声が思った以上に掠れていた。大した用件ではなかったのに、背を向けたあともしばらく肩の力が抜けなかった。 廊…
 - [f66](#event-f66) — その日の汁物は水のように薄く、器を空にしても腹の足しにはならなかった。隣の寝床の人と、昔外で食べた旨いものの名前ばかりをぽつりぽつりと挙げていった。…
 - [detain_life](#event-detain_life) — 外の相談所へ自分が収容されている場所を知らせると、異議申立ての用紙が差し入れられた。だが、それをどの役人へ出せばいいのかは誰にも教えてもらえなかった…
+- [violence_civilian_homicide_adjudication](#event-violence_civilian_homicide_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、救護員の死亡確認が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_attempted_homicide_adjudication](#event-violence_civilian_attempted_homicide_adjudication) — 取り押さえられて三か月。衛士と配偶者の証言が法廷に提出され、石を振り下ろした行為への判決が告げられる。
+- [violence_civilian_assault_adjudication](#event-violence_civilian_assault_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、治療を受けた男の記録が法廷に提出され、裁判官が処分を言い渡した。
 
-<a id="tag-situation-204"></a>
+<a id="tag-situation-208"></a>
 ### 就学中のみ一部選択肢を表示（1）
 - [ori_school_fragment](#event-ori_school_fragment) — 遊びからの帰り道、前を歩いていた友だちが道端に落ちていた黒く光る石ころに手を伸ばした。ただのガラス片か源石の欠片か咄嗟には分からず、胸がひやりとした…
 
-<a id="tag-situation-205"></a>
+<a id="tag-situation-209"></a>
 ### 就労・孤立による条件付き導入（1）
 - [elder_community](#event-elder_community) — 仕事帰りの夕暮れ、近所の若者に古い道具の手入れの仕方を尋ねられた。提げていた買い物袋を足元に置き、どこから教えてやろうかと考えた。 久しく誰も訪ねて…
 
-<a id="tag-situation-206"></a>
+<a id="tag-situation-210"></a>
 ### 就労中（2）
 - [kazimierz_knight_entry](#event-kazimierz_knight_entry) — 仕事帰りに競技会場へ立ち寄り、きらびやかなネオンの奥にある受付で、騎士競技の舞台に立つ手順を尋ねてみた。自前で登録料と武具を揃えて予選に挑むか、有力…
 - [old_reemployment_review](#event-old_reemployment_review) — 朝起きて仕事着に袖を通すたび、年々抜けない疲れを実感するようになった。これまでと同じ日数働き続けるか、そろそろ荷を下ろすか考える時期が来た。
 
-<a id="tag-situation-207"></a>
+<a id="tag-situation-211"></a>
 ### 就労中の鉱夫（1）
 - [rim_mine](#event-rim_mine) — 採掘坑の奥で支柱がきしみ、一度作業を止めて点検すべきだという声が上がった。手を止めれば今日の日当が削られるが、このまま掘り進めて崩れたら命がない。
 
-<a id="tag-situation-208"></a>
+<a id="tag-situation-212"></a>
 ### 住居差別（1）
 - [earth_discr_housing_review](#event-earth_discr_housing_review) — 住まいをめぐって大家や管理人から冷たい扱いを受けて以来、部屋にいてもどこか落ち着かない日々が続いている。このまま肩身の狭い思いをしながら住み続けるか…
 
-<a id="tag-situation-209"></a>
+<a id="tag-situation-213"></a>
 ### 住居差別後（1）
 - [earth_discr_housing_record_after](#event-earth_discr_housing_record_after) — あなたが以前大家と渡り合ったことを聞きつけた近所の住人が、自分も部屋を追い出されそうだと青い顔をして相談に来た。手に握りしめた借家証文を見せ、どう切…
 
-<a id="tag-situation-210"></a>
+<a id="tag-situation-214"></a>
 ### 重症度3以上の活動性疾患（1）
 - [life_severe_illness_companionship](#event-life_severe_illness_companionship) — 病が深まり、一日の大半を寝床で過ごすようになった。窓から差す光の傾きを眺めながら、そばにいてくれる人へ何を伝え、残りの時間をどう過ごすか考えた。
 
-<a id="tag-situation-211"></a>
+<a id="tag-situation-215"></a>
 ### 宿場の案内・食事を分ける・旅費を残す（1）
 - [bol_dossoles_traveler_account](#event-bol_dossoles_traveler_account) — 街道沿いの荷馬車の休憩所で、東へ向かうくたびれた旅人と相席になった。せっかくドッソレスの近くまで来たのに、乗り継ぎの運賃すら足りず、華やかな街を遠く…
 
-<a id="tag-situation-212"></a>
+<a id="tag-situation-216"></a>
 ### 宿泊拒否（1）
 - [earth_discr_sarkaz_lodging](#event-earth_discr_sarkaz_lodging) — 用事で訪れた街の安宿で空き部屋を尋ねると、帳場の主人はあなたの姿を見るなり「荒っぽい兵隊は他所へ行ってくれ」と手を振った。傭兵ではないと説明する間も…
 
-<a id="tag-situation-213"></a>
+<a id="tag-situation-217"></a>
 ### 宿泊拒否後（1）
 - [earth_discr_sarkaz_lodging_later](#event-earth_discr_sarkaz_lodging_later) — あの夜、宿の戸口で追い返された記憶が消えず、遠出の用事が入るたびに「今夜はどこで眠れるだろう」と真っ先に気をもむようになった。
 
-<a id="tag-situation-214"></a>
+<a id="tag-situation-218"></a>
 ### 出場・観戦・場外見物（1）
 - [min_hero](#event-min_hero) — ミノスの伝統競技祭が近づき、街角の広場は出場者と見物客の熱気でざわめいている。登録料と遠征費を出して自ら挑むか、観客席から声援を送るか、それとも外か…
 
-<a id="tag-situation-215"></a>
+<a id="tag-situation-219"></a>
 ### 所持金による本文・選択肢（1）
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
-<a id="tag-situation-216"></a>
+<a id="tag-situation-220"></a>
 ### 小舞台（1）
 - [minos_small_stage_rehearsal_daily](#event-minos_small_stage_rehearsal_daily) — 市場の脇にある小さな石舞台で、若い役者たちが英雄譚の立ち回りと台詞を稽古していた。買い物帰りの人々は一節だけ聞いて通り過ぎていったが、つい足が止まり…
 
-<a id="tag-situation-217"></a>
+<a id="tag-situation-221"></a>
 ### 少年・青年（2）
 - [sar_tribe](#event-sar_tribe) — オアシスから延びる細い水路の堰の前で、顔見知りの二つの家が水を引く順番をめぐって言い争っていた。通りかかったあなたを見止めると、双方が「お前もここで…
 - [min_hero](#event-min_hero) — ミノスの伝統競技祭が近づき、街角の広場は出場者と見物客の熱気でざわめいている。登録料と遠征費を出して自ら挑むか、観客席から声援を送るか、それとも外か…
 
-<a id="tag-situation-218"></a>
+<a id="tag-situation-222"></a>
 ### 少年・青年・壮年（3）
 - [sar_sandstorm](#event-sar_sandstorm) — 生ぬるい突風とともに、移動都市の外縁デッキへ赤茶けた砂が吹き込み始めた。巨大な砂嵐の接近を知らせる鐘が鳴り響き、人々が慌てて鎧戸を閉め、内側の区画へ…
 - [hig_shrine](#event-hig_shrine) — 帰り道に神社の前を通りかかると、氏子や近所の人たちが祭礼の支度に追われていた。紅白の幕を張り、提灯を吊るし、石段の脇には奉納金を募る木札が並んでいる…
 - [bol_tourist](#event-bol_tourist) — 市場の荷さばき場に、急ぎの積荷を仕分ける数日間の人手募集が貼り出されていた。手っ取り早く日銭を稼ぐには悪くない話だ。
 
-<a id="tag-situation-219"></a>
+<a id="tag-situation-223"></a>
 ### 消息不明者の生存確認（1）
 - [friend_found_news](#event-friend_found_news) — 共通の知人から、{contactName}が{contactFoundYear}年に生きていたと伝言が届いた。今いる場所や、直接便りを出す宛先はまだ…
 
-<a id="tag-situation-220"></a>
+<a id="tag-situation-224"></a>
 ### 症状進行中（1）
 - [life_medical_oripathy](#event-life_medical_oripathy) — 鉱石病の疼きと重だるさが年々深まり、昔なら一気に片づいた仕事にも何度も息継ぎが要るようになった。次の抑制薬を買う金と診察の日取りを思い浮かべ、ため息…
 
-<a id="tag-situation-221"></a>
+<a id="tag-situation-225"></a>
 ### 情報網の高い居住地（1）
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
 
-<a id="tag-situation-222"></a>
+<a id="tag-situation-226"></a>
 ### 条件付き本文（209）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
@@ -15157,15 +15221,15 @@
 - [family_spouse_infected_housing_pressure](#event-family_spouse_infected_housing_pressure) — 離れて暮らす{sp}のアパートで、契約更新の紙に健康状態を詳しく書くよう求められたという。病名は伏せていたが、肌の表面の結晶や通院の様子から勘づかれ…
 - [family_divorce_child_residence](#event-family_divorce_child_residence) — 別れた相手の訃報が届いた。手紙には、残された子どもが今誰の元で暮らしているのかまでは書かれていなかった。すぐにこちらで引き取ると伝えるか、親族に居場…
 
-<a id="tag-situation-223"></a>
+<a id="tag-situation-227"></a>
 ### 職業課程の継続（1）
 - [voc_fee](#event-voc_fee) — 専門課程の次年度登録が近づいてきた。授業料と日々の食い扶持に加え、実習の日に仕事を休めるかどうかが悩みの種だった。
 
-<a id="tag-situation-224"></a>
+<a id="tag-situation-228"></a>
 ### 職業課程の修了（1）
 - [voc_final_fee](#event-voc_final_fee) — 卒業前の実技試験が目前に迫った。最後の授業料を納め、試験当日に仕事を休めるよう段取りをつけなければならない。
 
-<a id="tag-situation-225"></a>
+<a id="tag-situation-229"></a>
 ### 職業条件あり（71）
 - [transporter_contract_review](#event-transporter_contract_review) — トランスポーターとして街を走り始めて二年が経った。靴底の減り方と裏通りの抜け道がすっかり体に染みついたころ、契約の節目がやってきた。このまま顔なじみ…
 - [kjerag_transporter_route_review](#event-kjerag_transporter_route_review) — 雪の山道を荷を背負って登り始めて二年になる。新しい荷受け場所を設けたいと集落を回ると、温かい茶を出して歓迎してくれる村もあれば、よそ者の出入りを嫌っ…
@@ -15239,143 +15303,149 @@
 - [life_rim_supply_delay](#event-life_rim_supply_delay) — 鉱区へ届くはずの交換部品の輸送便が遅れ、急ぎの修理に必要な部材が底をついた。止まった重機の警報音が作業場中に鳴り響いている。自腹で消耗品を買い足して…
 - [life_rim_skill_handover](#event-life_rim_skill_handover) — 整備の現場にもすっかり慣れ、機械の異音を聞き分けるのも早くなった。最近入ってきた新人が、外した部品の戻し方や異音の見極め方で立ち往生し、休憩時間に心…
 
-<a id="tag-situation-226"></a>
+<a id="tag-situation-230"></a>
 ### 職場・近隣で露見の兆し（1）
 - [hid_exposed](#event-hid_exposed) — 作業中にめくれた袖口から、黒い結晶を誰かに見られたらしい。翌朝、現場の責任者に声を潜めて呼び止められた。誰が言いふらし、どこまで知られているのか見当…
 
-<a id="tag-situation-227"></a>
+<a id="tag-situation-231"></a>
 ### 職場の排斥（1）
 - [earth_discr_tara_language](#event-earth_discr_tara_language) — 職場の休憩中、ターラー出身の同僚が故郷の言葉で古い歌を口ずさんだ。すると別の同僚が「ここではその田舎言葉を引っ込めろ」と険しい声で遮った。仕事の指示…
 
-<a id="tag-situation-228"></a>
+<a id="tag-situation-232"></a>
 ### 食堂の客足（1）
 - [rim_local_mine_slowdown_daily](#event-rim_local_mine_slowdown_daily) — 町外れの鉱山で稼働する切羽が減り始めてから、行きつけの食堂の昼時もすっかり客足が遠のいた。店主は火にかける大鍋を一つ減らし、静まり返った店内で所在な…
 
-<a id="tag-situation-229"></a>
+<a id="tag-situation-233"></a>
 ### 食料を尋ねる／支出を見直す（1）
 - [life_medical_nutrition](#event-life_medical_nutrition) — 一日の食事を一度に減らす日が続き、朝起きても手足に力が入らない。空腹をごまかすために水ばかり飲みながら、戸棚の奥に残ったわずかな乾物を数えた。
 
-<a id="tag-situation-230"></a>
+<a id="tag-situation-234"></a>
 ### 食料不足（1）
 - [f66](#event-f66) — その日の汁物は水のように薄く、器を空にしても腹の足しにはならなかった。隣の寝床の人と、昔外で食べた旨いものの名前ばかりをぽつりぽつりと挙げていった。…
 
-<a id="tag-situation-231"></a>
+<a id="tag-situation-235"></a>
+### 審理後の裁定（3）
+- [violence_civilian_homicide_adjudication](#event-violence_civilian_homicide_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、救護員の死亡確認が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_attempted_homicide_adjudication](#event-violence_civilian_attempted_homicide_adjudication) — 取り押さえられて三か月。衛士と配偶者の証言が法廷に提出され、石を振り下ろした行為への判決が告げられる。
+- [violence_civilian_assault_adjudication](#event-violence_civilian_assault_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、治療を受けた男の記録が法廷に提出され、裁判官が処分を言い渡した。
+
+<a id="tag-situation-236"></a>
 ### 森林地勢（1）
 - [sami_forest_tasks](#event-sami_forest_tasks) — 深い針葉樹の森の入り口で、橇や斧の手入れをする人に手を貸した。生木の樹脂の匂いに包まれながら、ひと足先にこの森を抜けていった狩人たちの話を聞いた。 …
 
-<a id="tag-situation-232"></a>
+<a id="tag-situation-237"></a>
 ### 親・配偶者・友人・雇用先へ伝える選択（1）
 - [hid_exposed](#event-hid_exposed) — 作業中にめくれた袖口から、黒い結晶を誰かに見られたらしい。翌朝、現場の責任者に声を潜めて呼び止められた。誰が言いふらし、どこまで知られているのか見当…
 
-<a id="tag-situation-233"></a>
+<a id="tag-situation-238"></a>
 ### 親の家計判断（1）
 - [ksc](#event-ksc) — 子どもが学校へ通う年齢になった。どこで学べるのか、家では話題にするようになったが、受入先も通学の方法もまだ分かっていない。手元に用意できる学用品のこ…
 
-<a id="tag-situation-234"></a>
+<a id="tag-situation-239"></a>
 ### 親の感染（1）
 - [fam_infected](#event-fam_infected) — {parentName}が鉱石病だと分かった。その夜から、家では窓を閉め切ってひそひそ声で話すようになった。よそで絶対に口にするなと言い含められたが…
 
-<a id="tag-situation-235"></a>
+<a id="tag-situation-240"></a>
 ### 親の死後（1）
 - [family_parent_crystal_dust](#event-family_parent_crystal_dust) — 鉱石病に苦しみながら息を引き取った親の遺品を片づけていた。着古した服の縫い目や使い込まれた道具には、黒く光る結晶の欠片と細かい粉がこびりついている。…
 
-<a id="tag-situation-236"></a>
+<a id="tag-situation-241"></a>
 ### 親子の記憶（1）
 - [adult_child_memory](#event-adult_child_memory) — （動的本文）
 
-<a id="tag-situation-237"></a>
+<a id="tag-situation-242"></a>
 ### 診断済み（1）
 - [ori_diagnosed_workplace](#event-ori_diagnosed_workplace) — 鉱石病と診断されたあとも、源石の粉塵が舞う現場での仕事は続いていた。体をいたわれば稼ぎが減り、無理をすれば病が進む。毎月の暮らしと自分の体のどこで折…
 
-<a id="tag-situation-238"></a>
+<a id="tag-situation-243"></a>
 ### 診断済み・未治療（1）
 - [ori_rhodes_examination_contact](#event-ori_rhodes_examination_contact) — 鉱石病の診断は出たものの、通院のたびに飛んでいく薬代と、仕事を抜ける穴埋めが重くのしかかる。近くの診療所で様子を見てもらうか、専門の療養先を探し回る…
 
-<a id="tag-situation-239"></a>
+<a id="tag-situation-244"></a>
 ### 診療・休養・記録から選択（1）
 - [life_medical_respiratory](#event-life_medical_respiratory) — 浅い息をするたびに胸の奥がヒューヒューと鳴り、熱が幾日も引かない。朝起き上がれずに仕事や外の用事を休んだまま、診療所までの足代と手元の小銭を数えた。
 
-<a id="tag-situation-240"></a>
+<a id="tag-situation-245"></a>
 ### 診療・作業調整（1）
 - [kaz_knight_injury_adaptation](#event-kaz_knight_injury_adaptation) — 競技中に深く傷めた肩が、腕を高く上げる作業や重い荷を抱えるたびに鈍く疼く。競技場からは治療費も補償の音沙汰もないまま、この身体でどうやって日々の仕事…
 
-<a id="tag-situation-241"></a>
+<a id="tag-situation-246"></a>
 ### 診療・支援・休息・緩和希望の記録（1）
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
 
-<a id="tag-situation-242"></a>
+<a id="tag-situation-247"></a>
 ### 診療・動作を避ける選択（1）
 - [life_medical_injury](#event-life_medical_injury) — 表の傷口はふさがったのに、重い物を持ち上げると奥が鋭く疼く。帰り道でも痛みに足を引きずり、何度か立ち止まって息をついた。
 
-<a id="tag-situation-243"></a>
+<a id="tag-situation-248"></a>
 ### 診療・付き添いの依頼（1）
 - [life_medical_nerve](#event-life_medical_nerve) — ふいに視界がぐらりと揺れ、片方の手足からすっと力が抜けた。路地の壁に慌てて手をつき、冷たい石の感触にすがりながらめまいが引くのを待った。
 
-<a id="tag-situation-244"></a>
+<a id="tag-situation-249"></a>
 ### 診療・負担軽減から選択（1）
 - [life_medical_circulation](#event-life_medical_circulation) — 階段や坂を上るたびに心臓が早鐘を打ち、胸の奥を掴まれたように足が止まる。腰を下ろして息をついても、鉛のような重苦しさがなかなか消えない。
 
-<a id="tag-situation-245"></a>
+<a id="tag-situation-250"></a>
 ### 診療延期後（1）
 - [earth_discr_clinic_return](#event-earth_discr_clinic_return) — 前の受診を諦めてから、いつの間にか月が変わってしまった。薬の残りは心細いが、あの裏口の冷たい空気を思い出すと足がすくむ。
 
-<a id="tag-situation-246"></a>
+<a id="tag-situation-251"></a>
 ### 診療所の受付で順番を譲らされる（1）
 - [attitude_infected_child](#event-attitude_infected_child) — 診療所の軒先で、鉱石病の患者が受付の列から外れるよう言い渡されていた。周りの大人たちは理由も言わず、手で追い払うような仕草をして距離を取っている。
 
-<a id="tag-situation-247"></a>
+<a id="tag-situation-252"></a>
 ### 診療窓口で別窓口へ回される（1）
 - [earth_discr_clinic_entry](#event-earth_discr_clinic_entry) — 診療所の受付で順番を待つうち、係の者から「感染者は裏の別窓口へ回れ」と冷たく言われた。そちらには案内板すらなく、いつ薬を受け取れるかも分からない。仕…
 
-<a id="tag-situation-248"></a>
+<a id="tag-situation-253"></a>
 ### 診療窓口の担当者との再接触（1）
 - [people_clinic_followup](#event-people_clinic_followup) — しばらく足が遠のいていた診療所の近くを通りかかり、以前親切に応対してくれた職員の顔を思い出した。今もあの窓口にいるだろうか。
 
-<a id="tag-situation-249"></a>
+<a id="tag-situation-254"></a>
 ### 身近な人への支援依頼（1）
 - [chi](#event-chi) — 夜の食卓で茶を飲みながら、{sp}とそろそろ子どもを持つか話し合った。部屋の広さやこれからの稼ぎ、いざという時に頼れる人の顔を思い浮かべた。
 
-<a id="tag-situation-250"></a>
+<a id="tag-situation-255"></a>
 ### 身近な連絡先あり（1）
 - [life_severe_illness_companionship](#event-life_severe_illness_companionship) — 病が深まり、一日の大半を寝床で過ごすようになった。窓から差す光の傾きを眺めながら、そばにいてくれる人へ何を伝え、残りの時間をどう過ごすか考えた。
 
-<a id="tag-situation-251"></a>
+<a id="tag-situation-256"></a>
 ### 水路の利用順をめぐる家々の相談（1）
 - [sar_tribe](#event-sar_tribe) — オアシスから延びる細い水路の堰の前で、顔見知りの二つの家が水を引く順番をめぐって言い争っていた。通りかかったあなたを見止めると、双方が「お前もここで…
 
-<a id="tag-situation-252"></a>
+<a id="tag-situation-257"></a>
 ### 睡眠不足（1）
 - [f55](#event-f55) — 夜中に{careKid}が熱を出してぐずり、いつでも水を飲ませられるよう枕元に付きっきりだった。朝日が差すころには、自分の目もすっかり充血していた。…
 
-<a id="tag-situation-253"></a>
+<a id="tag-situation-258"></a>
 ### 世界イベント後（1）
 - [f100](#event-f100) — 食堂で一人の名が出ると、周囲の話し声がぴたりと途切れた。店主が無言で通り側の窓を閉め、冷めた茶の器を下げていく。重苦しい沈黙の意味を、帰り道もずっと…
 
-<a id="tag-situation-254"></a>
+<a id="tag-situation-259"></a>
 ### 成人（4）
 - [bol_dossoles_traveler_account](#event-bol_dossoles_traveler_account) — 街道沿いの荷馬車の休憩所で、東へ向かうくたびれた旅人と相席になった。せっかくドッソレスの近くまで来たのに、乗り継ぎの運賃すら足りず、華やかな街を遠く…
 - [earth_discr_sarkaz_work_later](#event-earth_discr_sarkaz_work_later) — サルカズだというだけで門前払いされた苦い記憶がまだ残るなか、知人づてに次の仕事を紹介してくれるという人物と会うことになった。自分の腕とこれまでの経緯…
 - [earth_discr_sarkaz_lodging](#event-earth_discr_sarkaz_lodging) — 用事で訪れた街の安宿で空き部屋を尋ねると、帳場の主人はあなたの姿を見るなり「荒っぽい兵隊は他所へ行ってくれ」と手を振った。傭兵ではないと説明する間も…
 - [earth_discr_tara_language](#event-earth_discr_tara_language) — 職場の休憩中、ターラー出身の同僚が故郷の言葉で古い歌を口ずさんだ。すると別の同僚が「ここではその田舎言葉を引っ込めろ」と険しい声で遮った。仕事の指示…
 
-<a id="tag-situation-255"></a>
+<a id="tag-situation-260"></a>
 ### 成人・返済支援の選択（1）
 - [rim_debt](#event-rim_debt) — 生まれ育った大家族の集まりで、身内の一人が首の回らないほどの借金を抱えていると打ち明けられた。みんなで金を出し合って尻拭いをするか、本人に始末をつけ…
 
-<a id="tag-situation-256"></a>
+<a id="tag-situation-261"></a>
 ### 成人した子（2）
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
 - [adult_child_memory](#event-adult_child_memory) — （動的本文）
 
-<a id="tag-situation-257"></a>
+<a id="tag-situation-262"></a>
 ### 成人の種族偏見に触れる（1）
 - [attitude_sarkaz_child](#event-attitude_sarkaz_child) — 賑わう市場の露店の前で、サルカズの荷運び人が売り物に手を触れたと店主から怒鳴られていた。そばで見ていた大人が「これだからサルカズは油断ならない」と吐…
 
-<a id="tag-situation-258"></a>
+<a id="tag-situation-263"></a>
 ### 生活上の備え（1）
 - [earth_discr_sarkaz_lodging_later](#event-earth_discr_sarkaz_lodging_later) — あの夜、宿の戸口で追い返された記憶が消えず、遠出の用事が入るたびに「今夜はどこで眠れるだろう」と真っ先に気をもむようになった。
 
-<a id="tag-situation-259"></a>
+<a id="tag-situation-264"></a>
 ### 青年・壮年（5）
 - [lon_merchant](#event-lon_merchant) — 龍門の賑やかな商業通りで、空きが出たばかりの小さな露店を引き継がないかと声がかかった。権利金と仕入れで50万龍門幣。当たれば大きいが、客がつかなくて…
 - [hig_tension](#event-hig_tension) — 北院と南院の睨み合いや、海の向こうのウルサスとのいくさ話が、仕事帰りの茶屋でもしきりに囁かれるようになった。辻の掲示板には、近隣の陣屋が兵站や街道警…
@@ -15383,18 +15453,18 @@
 - [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
 
-<a id="tag-situation-260"></a>
+<a id="tag-situation-265"></a>
 ### 青年・壮年・老年（3）
 - [bol_local_contract](#event-bol_local_contract) — 市場の木の掲示板に、農作物の袋詰め、採鉱道具の修理、そして街道を行く荷車の護衛という三つの日雇い募集が並んでいた。どれも数日ポッキリの口で、危険の度…
 - [sie_seasonal_work](#event-sie_seasonal_work) — 観光シーズンの到来とともに、海辺の食堂に「配膳・洗い場急募」の木札が下がった。裏の倉庫街でも、土産物の荷ほどきを手伝う短期の人手を探している。
 - [life_violence_threat_safety](#event-life_violence_threat_safety) — 帰り道で浴びせられた脅し文句が、扉の鍵を閉めたあとも耳の奥にこびりついている。翌朝、表へ出る前に足がすくんだ。どうやって自分の身を守るか考えなければ…
 
-<a id="tag-situation-261"></a>
+<a id="tag-situation-266"></a>
 ### 雪祭司・聖樹（1）
 - [fam_tribetree](#event-fam_tribetree) — 世話になってきた氏族の聖樹の下で、雪祭司が集まりを開いた。大人たちは焚き火を囲み、次の季節の移動にもあなたを連れていくか話し合っている。
 
-<a id="tag-situation-262"></a>
-### 選択イベント（1679）
+<a id="tag-situation-267"></a>
+### 選択イベント（1690）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
 - [pet](#event-pet) — 帰り道、近所の子が飼っている小さな生き物を抱かせてくれた。手のひらに伝わる温もりが忘れられなかったが、毎日の餌代を思うと家の人にはなかなかねだれなか…
@@ -16296,6 +16366,16 @@
 - [life_later_personal_belongings_plan](#event-life_later_personal_belongings_plan) — 部屋の荷物を整理していると、誰に渡したいか決めていない品がいくつも出てきた。今すぐ結論を出す必要はないが、後で迷わないよう自分の希望を残しておくこと…
 - [life_later_health_review](#event-life_later_health_review) — 診察の帰り、医療担当者と今後の通院や日々の動き方を話した。年齢だけで体の状態を決めず、本人が感じる変化を記録に残した。
 - [life_later_life_review](#event-life_later_life_review) — 棚の記録や古い仕事道具を見ながら、何を覚えていて、何を忘れてしまったか考えた。家族や友人と過ごした日々を、一つずつたどった。
+- [violence_infected_expulsion_speech](#event-violence_infected_expulsion_speech) — 市場の掲示板に、感染者を街から追い出せと訴える集会の案内が貼られていた。演説者は「抵抗する者は力ずくで追い出せ」と声を張り、集まった人々へ賛同を求め…
+- [violence_infected_expulsion_meeting](#event-violence_infected_expulsion_meeting) — 翌年、また同じ街角に人が集まった。演説者は「抵抗する感染者は力ずくで追い出せ」と声を張り、周囲へ唱和を促している。
+- [violence_infected_market_assault](#event-violence_infected_market_assault) — 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しや…
+- [violence_infected_market_homicide_followup](#event-violence_infected_market_homicide_followup) — 数週間後、診療所を出た男は、まだ包帯を巻いた腕をかばいながら市場を歩いていた。あなたと配偶者が路地口へ差しかかると、同じ一団が男を取り囲んだ。巡回衛…
+- [violence_civilian_homicide_adjudication](#event-violence_civilian_homicide_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、救護員の死亡確認が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_attempted_homicide_adjudication](#event-violence_civilian_attempted_homicide_adjudication) — 取り押さえられて三か月。衛士と配偶者の証言が法廷に提出され、石を振り下ろした行為への判決が告げられる。
+- [violence_civilian_assault_adjudication](#event-violence_civilian_assault_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、治療を受けた男の記録が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_homicide_release](#event-violence_civilian_homicide_release) — 三年間の収容を終え、門の外へ出た。手元の金と戻れる場所を確かめ、翌日からの暮らしを考え始めた。
+- [violence_civilian_attempted_homicide_release](#event-violence_civilian_attempted_homicide_release) — 二年の収容を終え、門の外へ出た。石を振り下ろした相手は死ななかった。目撃した配偶者との日常も戻らず、これからの暮らしを考えることになった。
+- [violence_civilian_assault_release](#event-violence_civilian_assault_release) — 一年の収容を終え、門の外へ出た。石を振り下ろした相手は生きていた。配偶者との関係も、あの日から止まったままだった。
 - [life_night_study](#event-life_night_study) — 家計逼迫 働きながら通える夜間講習の貼り紙が職場の壁に出ていた。くたくたに疲れた仕事帰りの体と、教材を買う金と、どちらも今の苦しい暮らしから絞り出さ…
 - [life_family_remittance](#event-life_family_remittance) — 家計逼迫 故郷の親から手紙が届いた。薬代や家の修繕のことが遠慮がちに数行だけ書かれている。こちらの財布も厳しい中、どんな返事を書くか便箋を前に迷った…
 - [life_youth_apprenticeship](#event-life_youth_apprenticeship) — （動的本文）
@@ -16805,6 +16885,7 @@
 - [car_urs_officer_choice_purge](#event-car_urs_officer_choice_purge) — 軍団長から極秘の密命が下された。反皇帝派の疑いがある同僚の貴族将校を、演習中の事故に見せかけて抹殺せよという。従えば軍団長の側近へ引き立てられるが、…
 - [car_urs_guard_daily_01](#event-car_urs_guard_daily_01) — 鉛色の空の下、雪に埋もれたコンクリートトーチカで銃を抱えて立った。双眼鏡で荒涼たる雪原を監視し、凍えた手足を焚火にかざす。粗末な黒パンを齧りながら、…
 - [car_urs_guard_choice_riot](#event-car_urs_guard_choice_riot) — 監視する感染者炭鉱の地下最深部で、虐待に耐えかねた囚人たちがツルハシを手に一斉に暴動を起こした。坑道の出入口を塞ぐ鉄扉の前で、援軍が来るまで銃剣で死…
+- [car_urs_guard_choice_captive_order](#event-car_urs_guard_choice_captive_order) — 夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足…
 - [car_vic_infantry_daily_01](#event-car_vic_infantry_daily_01) — 冷たい雨が降り続くヴィクトリア軍の演習陣地。膝まで泥に浸かりながら塹壕の土嚢を積み直し、油布で小銃のボルトを拭った。貴族将校が天幕で温かいスープを飲…
 - [car_vic_infantry_choice_skirmish](#event-car_vic_infantry_choice_skirmish) — 行軍中、霧の立ち込める渓谷で待ち伏せしていた凶悪なサルカズ傭兵団の奇襲を受けた。貴族将校は狼狽して逃げ腰になり、歩兵小隊が孤立した。銃剣を構えて突撃…
 - [car_vic_royal_daily_01](#event-car_vic_royal_daily_01) — ロンディニウムの豪壮な将校クラブで、大公爵派閥の貴族たちとワイングラスを傾けた。壁に掛けられた歴代の武勲詩。どの公爵が次の軍需予算を握るか、華やかな…
@@ -16823,7 +16904,7 @@
 - [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
 - [car_kaz_comp_knight_daily_01](#event-car_kaz_comp_knight_daily_01) — 照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と…
 - [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFi…
-- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。…
+- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか…
 - [car_sir_soldier_daily_01](#event-car_sir_soldier_daily_01) — 石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コー…
 - [car_sir_soldier_choice_turf_war](#event-car_sir_soldier_choice_turf_war) — 隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。…
 - [car_sir_police_daily_01](#event-car_sir_police_daily_01) — ヌオバ・ウォルシーニの広場で、市民からの陳情や交通の整理を行った。マフィアの報復を恐れて声を潜める住民に優しく声をかけ、法による保護を約束する。銃で…
@@ -17075,35 +17156,35 @@
 - [edu_later_life_retraining_after_displacement](#event-edu_later_life_retraining_after_displacement) — 久しぶりに机へ向かうと、鉛筆の握り方までよそよそしく感じた。前の仕事で覚えたことを、今度は別の暮らしに役立てられるかもしれない。
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
-<a id="tag-situation-263"></a>
+<a id="tag-situation-268"></a>
 ### 前段で残留した人（1）
 - [kazdel_afterfall](#event-kazdel_afterfall) — 戦争の後、この土地で暮らしを立て直す方法を考えた。残っている仕事も、連絡の取れない人もいる。次に住む場所をどう選ぶか、身近な人々と話し合った。
 
-<a id="tag-situation-264"></a>
+<a id="tag-situation-269"></a>
 ### 全年齢の急なめまい・運動困難（1）
 - [life_medical_nerve](#event-life_medical_nerve) — ふいに視界がぐらりと揺れ、片方の手足からすっと力が抜けた。路地の壁に慌てて手をつき、冷たい石の感触にすがりながらめまいが引くのを待った。
 
-<a id="tag-situation-265"></a>
+<a id="tag-situation-270"></a>
 ### 全年齢の呼吸器系エピソード（1）
 - [life_medical_respiratory](#event-life_medical_respiratory) — 浅い息をするたびに胸の奥がヒューヒューと鳴り、熱が幾日も引かない。朝起き上がれずに仕事や外の用事を休んだまま、診療所までの足代と手元の小銭を数えた。
 
-<a id="tag-situation-266"></a>
+<a id="tag-situation-271"></a>
 ### 全年齢の重い病状（1）
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
 
-<a id="tag-situation-267"></a>
+<a id="tag-situation-272"></a>
 ### 全年齢の循環器系エピソード（1）
 - [life_medical_circulation](#event-life_medical_circulation) — 階段や坂を上るたびに心臓が早鐘を打ち、胸の奥を掴まれたように足が止まる。腰を下ろして息をついても、鉛のような重苦しさがなかなか消えない。
 
-<a id="tag-situation-268"></a>
+<a id="tag-situation-273"></a>
 ### 全年齢の食料不足（1）
 - [life_medical_nutrition](#event-life_medical_nutrition) — 一日の食事を一度に減らす日が続き、朝起きても手足に力が入らない。空腹をごまかすために水ばかり飲みながら、戸棚の奥に残ったわずかな乾物を数えた。
 
-<a id="tag-situation-269"></a>
+<a id="tag-situation-274"></a>
 ### 全年齢の負傷後の痛み（1）
 - [life_medical_injury](#event-life_medical_injury) — 表の傷口はふさがったのに、重い物を持ち上げると奥が鋭く疼く。帰り道でも痛みに足を引きずり、何度か立ち止まって息をついた。
 
-<a id="tag-situation-270"></a>
+<a id="tag-situation-275"></a>
 ### 組織・所属に言及（301）
 - [car](#event-car) — 鉱石病の診断を受けてから、働き口を探すたび通院の日取りと薬代が先に頭をよぎるようになった。街角の求人板の前で足を止め、診療所の開く日と勤務が重ならな…
 - [loan_shark_siracusa](#event-loan_shark_siracusa) — シラクーザの馴染みの食堂の奥席で、ファミリーの会計役が濃い珈琲のカップを置き、折り畳んだ証文を差し出した。「いま困っているなら融通しよう。返すのは二…
@@ -17407,129 +17488,129 @@
 - [car_sir_soldier_choice_turf_war](#event-car_sir_soldier_choice_turf_war) — 隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。…
 - [cl_siracusa_market_patron](#event-cl_siracusa_market_patron) — シラクーザの市場で店の手伝いを頼まれたが、店主は毎月の売り上げとは別に、地元のファミリーへ納める金を裏帳面に書き込んでいた。表の帳面だけをつけるか、…
 
-<a id="tag-situation-271"></a>
+<a id="tag-situation-276"></a>
 ### 組織離脱後（1）
 - [earth_discr_exclusion_redress](#event-earth_discr_exclusion_redress) — かつて感染者を締め出す運動に加わっていた街区を歩いていると、会を抜けた今も、当時の『感染者お断り』の木札が店先にぶら下がっていた。通りかかった感染者…
 
-<a id="tag-situation-272"></a>
+<a id="tag-situation-277"></a>
 ### 相談・医療・休養（1）
 - [life_mental_crisis_support](#event-life_mental_crisis_support) — 幾晩もまともに眠れず、人の声や視線に触れるだけで胸が苦しくなる。食事や用事も手につかない日が続き、このまま一人で抱えるか、誰かに今の状態を伝えるか考…
 
-<a id="tag-situation-273"></a>
+<a id="tag-situation-278"></a>
 ### 相談・記録（1）
 - [life_harassment_threat_escalation](#event-life_harassment_threat_escalation) — かつて仕事場や宿で締め出されたいきさつを知る連中に、夕暮れの帰り道で取り囲まれ、次に見かけたらただでは置かないと罵声を浴びせられた。部屋へ逃げ帰って…
 
-<a id="tag-situation-274"></a>
+<a id="tag-situation-279"></a>
 ### 相談・記録・経路変更（1）
 - [life_violence_threat_safety](#event-life_violence_threat_safety) — 帰り道で浴びせられた脅し文句が、扉の鍵を閉めたあとも耳の奥にこびりついている。翌朝、表へ出る前に足がすくんだ。どうやって自分の身を守るか考えなければ…
 
-<a id="tag-situation-275"></a>
+<a id="tag-situation-280"></a>
 ### 葬送への移動・遺族への送金（1）
 - [family_sibling_bereavement](#event-family_sibling_bereavement) — {siblingDeathTiming}、{sibling}が亡くなったという知らせが届いた。死因は{siblingDeathCause}だという。…
 
-<a id="tag-situation-276"></a>
+<a id="tag-situation-281"></a>
 ### 足場や荷の異常（1）
 - [life_unexpected_rescue](#event-life_unexpected_rescue) — 現場の足場板が腐って浮き上がり、頭上の荷台で重い資材が嫌な音を立てて傾いていた。このまま作業を続ければ崩れ落ちるかもしれない。
 
-<a id="tag-situation-277"></a>
+<a id="tag-situation-282"></a>
 ### 体力0の危篤状態（1）
 - [life_medical_urgent_review](#event-life_medical_urgent_review) — 体を起こすだけでも力が続かず、食事や身の回りのことにも手が要る。診療を急ぐか、看病や休息を頼むか、これからの過ごし方を考えた。
 
-<a id="tag-situation-278"></a>
+<a id="tag-situation-283"></a>
 ### 退会後の関係（1）
 - [life_infected_organization_exit_legacy](#event-life_infected_organization_exit_legacy) — あの会を離れてから何年もの月日が流れた。ある日、今の世話役から「あなたが関わっていた頃のいきさつを教えてほしい」と便りが届いた。過去のことにどう向き…
 
-<a id="tag-situation-279"></a>
+<a id="tag-situation-284"></a>
 ### 退職選択（1）
 - [old_followup](#event-old_followup) — 仕事の時間を減らしてから何年かが過ぎた。体をいたわる暮らしには慣れたものの、懐具合や体力の衰えは年々変わっていく。職場から、来期はどうするか声がかか…
 
-<a id="tag-situation-280"></a>
+<a id="tag-situation-285"></a>
 ### 大いなる静謐後（1）
 - [earth_discr_iberia_aegir_port](#event-earth_discr_iberia_aegir_port) — 港の作業員名簿に名を連ねようとした時、係官はあなたがエーギルだと知るなり目つきを変え、他の作業員には聞かない身の上まで根掘り葉掘り尋ねてきた。「大い…
 
-<a id="tag-situation-281"></a>
+<a id="tag-situation-286"></a>
 ### 大学課程の継続（1）
 - [uni_fee](#event-uni_fee) — 新年度の登録が始まり、学費の納付期限が迫ってきた。講義へ出る時間と日雇いで働く日数をどうやりくりするか頭を悩ませた。
 
-<a id="tag-situation-282"></a>
+<a id="tag-situation-287"></a>
 ### 大学課程の修了（1）
 - [uni_final_fee](#event-uni_final_fee) — 最終年度の学費と部屋代の支払いが同じ月に重なった。卒業証書を手にするには、この最後の支払いだけはなんとしても乗り切らなければならない。
 
-<a id="tag-situation-283"></a>
+<a id="tag-situation-288"></a>
 ### 短期雇用（1）
 - [bol_dossoles_championship_work](#event-bol_dossoles_championship_work) — 水上競技大会で沸き返るドッソレスの荷受け場に、仮設スタンドを組む数日間の急募が出ていた。日当は悪くない。今の仕事や予定と折り合いがつくか考えた。
 
-<a id="tag-situation-284"></a>
+<a id="tag-situation-289"></a>
 ### 短期雇用と現場危険（1）
 - [bol_local_contract](#event-bol_local_contract) — 市場の木の掲示板に、農作物の袋詰め、採鉱道具の修理、そして街道を行く荷車の護衛という三つの日雇い募集が並んでいた。どれも数日ポッキリの口で、危険の度…
 
-<a id="tag-situation-285"></a>
+<a id="tag-situation-290"></a>
 ### 地域の供給不安定（1）
 - [local_food_shortage](#event-local_food_shortage) — 市場の棚は歯が抜けたように空いていた。荷馬車や輸送便がいつ着くかは日によってまちまちで、店主も首を振るばかりだ。財布の底の硬貨を指で数えながら、今日…
 
-<a id="tag-situation-286"></a>
+<a id="tag-situation-291"></a>
 ### 地域の診療先状況で一部選択肢を表示（1）
 - [ori_rhodes_examination_contact](#event-ori_rhodes_examination_contact) — 鉱石病の診断は出たものの、通院のたびに飛んでいく薬代と、仕事を抜ける穴埋めが重くのしかかる。近くの診療所で様子を見てもらうか、専門の療養先を探し回る…
 
-<a id="tag-situation-287"></a>
+<a id="tag-situation-292"></a>
 ### 地域の診療先状況で本文・選択肢が変化（2）
 - [ori_diagnosis_decision](#event-ori_diagnosis_decision) — （動的本文）
 - [ori_followup_access](#event-ori_followup_access) — （動的本文）
 
-<a id="tag-situation-288"></a>
+<a id="tag-situation-293"></a>
 ### 地域学習会・独学の選択（1）
 - [v77_child_informal_study](#event-v77_child_informal_study) — 家に届いた書き付けや店の帳面の字が読めず、周りの大人に読み上げてもらうしかなかった。学校という場所には、もうしばらく通っていない。
 
-<a id="tag-situation-289"></a>
+<a id="tag-situation-294"></a>
 ### 地域診療所・互助先・ロドス（1）
 - [family_spouse_infection_care](#event-family_spouse_infection_care) — 配偶者が鉱石病を打ち明けてから日がたったが、まだ本格的な治療には通えていない。かさむ薬代と通院の交通費、それに仕事を休めるかどうかを食卓で突き合わせ…
 
-<a id="tag-situation-290"></a>
+<a id="tag-situation-295"></a>
 ### 仲間の捜索（1）
 - [f111](#event-f111) — 工業区域の角で、工員たちが仲間を捜す準備をしていた。油まみれの服を着た数人が声を潜めて地図を囲み、最後に姿を見た場所や裏路地の抜け道を確かめ合ってい…
 
-<a id="tag-situation-291"></a>
+<a id="tag-situation-296"></a>
 ### 帳簿・窓口補助の学び直し（1）
 - [kaz_knight_injury_job_transition](#event-kaz_knight_injury_job_transition) — 古傷の肩をかばいながら働く要領は覚えたものの、無理が重なる日は夜も眠れないほど疼く。街の求人板で帳簿つけや受付補助の募集を見かけ、力仕事を離れて新し…
 
-<a id="tag-situation-292"></a>
+<a id="tag-situation-297"></a>
 ### 追随・理由を尋ねる選択（1）
 - [attitude_infected_child](#event-attitude_infected_child) — 診療所の軒先で、鉱石病の患者が受付の列から外れるよう言い渡されていた。周りの大人たちは理由も言わず、手で追い払うような仕草をして距離を取っている。
 
-<a id="tag-situation-293"></a>
+<a id="tag-situation-298"></a>
 ### 通学していない（1）
 - [v77_child_informal_study](#event-v77_child_informal_study) — 家に届いた書き付けや店の帳面の字が読めず、周りの大人に読み上げてもらうしかなかった。学校という場所には、もうしばらく通っていない。
 
-<a id="tag-situation-294"></a>
+<a id="tag-situation-299"></a>
 ### 通学中（1）
 - [people_school_introduction](#event-people_school_introduction) — 放課後の教室で、授業を受け持つ先生が教卓の上のプリントを揃えていた。手元のノートには、授業中に聞きそびれた疑問がいくつも残っている。
 
-<a id="tag-situation-295"></a>
+<a id="tag-situation-300"></a>
 ### 通行止め・迂回（1）
 - [rim_transporter_mine_handoff_daily](#event-rim_transporter_mine_handoff_daily) — 鉱区の荷受け場で、まったく別方向の集落へ行く木箱が同じ荷台に乱雑に放り込まれていた。ちょうど天災トランスポーターが黒板に封鎖区画を書き足したところで…
 
-<a id="tag-situation-296"></a>
+<a id="tag-situation-301"></a>
 ### 天災・戦乱による避難中（1）
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
 
-<a id="tag-situation-297"></a>
+<a id="tag-situation-302"></a>
 ### 天災トランスポーターの帰路案内（1）
 - [rim_forecast_route_daily](#event-rim_forecast_route_daily) — 坑道から地上へ上がると、詰所の前で天災トランスポーターが帰路の案内札を掛け替えていた。煤けた黒板にはこれからの風向きと安全に通れる谷筋が短く記され、…
 
-<a id="tag-situation-298"></a>
+<a id="tag-situation-303"></a>
 ### 店舗からの排斥集会（1）
 - [v78_ideology_recruitment](#event-v78_ideology_recruitment) — 感染者を通りから締め出そうと息巻く連中から、次の集まりへ顔を出さないかと誘われた。「あいつらが俺たちの食い扶持を奪っている」と誰かが吐き捨てる。同じ…
 
-<a id="tag-situation-299"></a>
+<a id="tag-situation-304"></a>
 ### 転居後の近隣交流（1）
 - [neighbor_followup](#event-neighbor_followup) — 隣の{neighborName}が、湯気の立つ鉢を持って戸口を訪ねてきた。引っ越してきた日にこちらが差し入れた食べ物を覚えていて、「今日はお裾分けだ…
 
-<a id="tag-situation-300"></a>
+<a id="tag-situation-305"></a>
 ### 都市街区での襲撃（1）
 - [alley_attack](#event-alley_attack) — 懐には小銭しか残っていない夜、街灯の切れた暗い路地で行く手を塞がれた。「有り金を置いていけ」と低い声が迫る。 遅番を終えて鉄錆びた区画の通路を歩いて…
 
-<a id="tag-situation-301"></a>
-### 動的表示条件（1228）
+<a id="tag-situation-306"></a>
+### 動的表示条件（1232）
 - [bias_family_infected_parent_solidarity](#event-bias_family_infected_parent_solidarity) — 夕暮れ、仕事から戻った親が咳き込みながら奥の部屋で薬を飲んでいた。近所では鉱石病患者への心ない噂話が飛び交っているが、目の前で必死に家族を支えてくれ…
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
@@ -17887,6 +17968,9 @@
 - [life_later_health_review](#event-life_later_health_review) — 診察の帰り、医療担当者と今後の通院や日々の動き方を話した。年齢だけで体の状態を決めず、本人が感じる変化を記録に残した。
 - [life_later_window_tea](#event-life_later_window_tea) — 朝の湯気が窓の近くに流れ、いつもの茶碗が手になじんだ。街の蒸気機関が動き出す音を聞きながら、予定のない朝をゆっくり過ごした。
 - [life_later_life_review](#event-life_later_life_review) — 棚の記録や古い仕事道具を見ながら、何を覚えていて、何を忘れてしまったか考えた。家族や友人と過ごした日々を、一つずつたどった。
+- [violence_infected_expulsion_speech](#event-violence_infected_expulsion_speech) — 市場の掲示板に、感染者を街から追い出せと訴える集会の案内が貼られていた。演説者は「抵抗する者は力ずくで追い出せ」と声を張り、集まった人々へ賛同を求め…
+- [violence_infected_expulsion_meeting](#event-violence_infected_expulsion_meeting) — 翌年、また同じ街角に人が集まった。演説者は「抵抗する感染者は力ずくで追い出せ」と声を張り、周囲へ唱和を促している。
+- [violence_infected_market_assault](#event-violence_infected_market_assault) — 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しや…
 - [life_arts_training_first_lesson](#event-life_arts_training_first_lesson) — 教室の木箱には、小さな金属片がいくつも並んでいた。教師は「まずは同じ動きを繰り返して」と言った。隣の生徒が器具を動かすあいだ、自分の箱はかすかな音も…
 - [life_arts_lowaptitude_class](#event-life_arts_lowaptitude_class) — 授業の終わりを告げる鐘が鳴っても、練習台の印はほとんど動かなかった。教師が器具を調べたあと、背後で誰かの椅子が床を擦った。机の上には、やり直した線が…
 - [life_arts_training_repeat](#event-life_arts_training_repeat) — 前に書いた線を、同じ練習台でもう一度なぞった。教師はすぐ答えを示さず、手首の角度だけを指で示す。最初の印はかすれたが、二度目には道具がわずかに応えた…
@@ -18506,6 +18590,7 @@
 - [car_urs_officer_choice_purge](#event-car_urs_officer_choice_purge) — 軍団長から極秘の密命が下された。反皇帝派の疑いがある同僚の貴族将校を、演習中の事故に見せかけて抹殺せよという。従えば軍団長の側近へ引き立てられるが、…
 - [car_urs_guard_daily_01](#event-car_urs_guard_daily_01) — 鉛色の空の下、雪に埋もれたコンクリートトーチカで銃を抱えて立った。双眼鏡で荒涼たる雪原を監視し、凍えた手足を焚火にかざす。粗末な黒パンを齧りながら、…
 - [car_urs_guard_choice_riot](#event-car_urs_guard_choice_riot) — 監視する感染者炭鉱の地下最深部で、虐待に耐えかねた囚人たちがツルハシを手に一斉に暴動を起こした。坑道の出入口を塞ぐ鉄扉の前で、援軍が来るまで銃剣で死…
+- [car_urs_guard_choice_captive_order](#event-car_urs_guard_choice_captive_order) — 夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足…
 - [car_vic_infantry_daily_01](#event-car_vic_infantry_daily_01) — 冷たい雨が降り続くヴィクトリア軍の演習陣地。膝まで泥に浸かりながら塹壕の土嚢を積み直し、油布で小銃のボルトを拭った。貴族将校が天幕で温かいスープを飲…
 - [car_vic_infantry_choice_skirmish](#event-car_vic_infantry_choice_skirmish) — 行軍中、霧の立ち込める渓谷で待ち伏せしていた凶悪なサルカズ傭兵団の奇襲を受けた。貴族将校は狼狽して逃げ腰になり、歩兵小隊が孤立した。銃剣を構えて突撃…
 - [car_vic_royal_daily_01](#event-car_vic_royal_daily_01) — ロンディニウムの豪壮な将校クラブで、大公爵派閥の貴族たちとワイングラスを傾けた。壁に掛けられた歴代の武勲詩。どの公爵が次の軍需予算を握るか、華やかな…
@@ -18524,7 +18609,7 @@
 - [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
 - [car_kaz_comp_knight_daily_01](#event-car_kaz_comp_knight_daily_01) — 照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と…
 - [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFi…
-- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。…
+- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか…
 - [car_sir_soldier_daily_01](#event-car_sir_soldier_daily_01) — 石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コー…
 - [car_sir_soldier_choice_turf_war](#event-car_sir_soldier_choice_turf_war) — 隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。…
 - [car_sir_police_daily_01](#event-car_sir_police_daily_01) — ヌオバ・ウォルシーニの広場で、市民からの陳情や交通の整理を行った。マフィアの報復を恐れて声を潜める住民に優しく声をかけ、法による保護を約束する。銃で…
@@ -18759,7 +18844,7 @@
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
-<a id="tag-situation-302"></a>
+<a id="tag-situation-307"></a>
 ### 動的本文（32）
 - [life_columbia_failed_application_followup](#event-life_columbia_failed_application_followup) — （動的本文）
 - [life_victoria_failed_application_followup](#event-life_victoria_failed_application_followup) — （動的本文）
@@ -18794,56 +18879,64 @@
 - [life_ursus_zelgrad_post_settlement_work_review](#event-life_ursus_zelgrad_post_settlement_work_review) — （動的本文）
 - [life_ursus_zelgrad_later_unemployment_review](#event-life_ursus_zelgrad_later_unemployment_review) — （動的本文）
 
-<a id="tag-situation-303"></a>
+<a id="tag-situation-308"></a>
 ### 同じ経験を持つ人との互助（1）
 - [v78_discriminated_victim_grief](#event-v78_discriminated_victim_grief) — 昔から顔を合わせれば挨拶していた近所の人が、あなたの鉱石病を知って以来、プイと横を向くようになった。夕暮れの店先でその背中を見かけ、声をかけるべきか…
 
-<a id="tag-situation-304"></a>
+<a id="tag-situation-309"></a>
 ### 同一都市の周縁区への転居（1）
 - [cl_urban_rent_pressure](#event-cl_urban_rent_pressure) — 移動都市の暮らしは、何をするにもまず部屋代が重くのしかかる。今月も袋の底の硬貨を数えるような有様で、路地裏の安宿や相部屋の貼り紙を見比べてはため息を…
 
-<a id="tag-situation-305"></a>
+<a id="tag-situation-310"></a>
+### 同一被害者（1）
+- [violence_infected_market_homicide_followup](#event-violence_infected_market_homicide_followup) — 数週間後、診療所を出た男は、まだ包帯を巻いた腕をかばいながら市場を歩いていた。あなたと配偶者が路地口へ差しかかると、同じ一団が男を取り囲んだ。巡回衛…
+
+<a id="tag-situation-311"></a>
 ### 同郷者との交流（1）
 - [f70](#event-f70) — 思いがけず故郷の言葉が通じる人と出会い、懐かしい料理の名前を次々に挙げ合った。同じ国を離れてきた身でも、胸にしまっている町の風景は少しずつ違っていた…
 
-<a id="tag-situation-306"></a>
+<a id="tag-situation-312"></a>
 ### 同行者との交流（1）
 - [f49](#event-f49) — 見張り任務の合間に、焚き火を囲んで仲間と夜通し語り合った。本名すら知らない相手にも、故郷に置いてきた家族や忘れられない景色があった。 隊商護衛の休憩…
 
-<a id="tag-situation-307"></a>
+<a id="tag-situation-313"></a>
 ### 匿名動画の出所確認（1）
 - [bol_jungle_treasure_video_rumor](#event-bol_jungle_treasure_video_rumor) — 交易所の共用端末に、ボリバルの密林の奥で「黄金の財宝を見つけた」という短い動画が出回っていた。誰が撮ったのかも分からず、目印になるような岩や建物も映…
 
-<a id="tag-situation-308"></a>
+<a id="tag-situation-314"></a>
+### 匿名被害者（1）
+- [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
+
+<a id="tag-situation-315"></a>
 ### 独立商業所属（1）
 - [siracusa_wine_shop_ledger_daily](#event-siracusa_wine_shop_ledger_daily) — 店の扉を閉める前、店主に頼まれて木箱のワイン瓶と仕入れ帳をひと瓶ずつ照らし合わせた。ぶどうの産地を細かく尋ねる常連客にも淀みなく答えられるようになり…
 
-<a id="tag-situation-309"></a>
+<a id="tag-situation-316"></a>
 ### 読み書きに困難がある（1）
 - [v77_child_informal_study](#event-v77_child_informal_study) — 家に届いた書き付けや店の帳面の字が読めず、周りの大人に読み上げてもらうしかなかった。学校という場所には、もうしばらく通っていない。
 
-<a id="tag-situation-310"></a>
+<a id="tag-situation-317"></a>
 ### 日雇い（1）
 - [earth_discr_sarkaz_application](#event-earth_discr_sarkaz_application) — 荷運びの口があると聞いて仕事場を訪ね、これまでの経験を話すと、雇い主はあなたの角や顔つきをじろじろ見て「前の傭兵崩れと同じじゃないだろうな」と鼻で笑…
 
-<a id="tag-situation-311"></a>
+<a id="tag-situation-318"></a>
 ### 乳児の成長（1）
 - [f4](#event-f4) — あなたが初めて声を立てて笑うと、抱き上げていた{caregiver}もぱっと顔をほころばせた。
 
-<a id="tag-situation-312"></a>
+<a id="tag-situation-319"></a>
 ### 任意応募・採用選考（1）
 - [lon_guard](#event-lon_guard) — 龍門近衛局が街区を回る巡回要員を募集していた。採用されれば安定した給金が出るが、雑踏の揉め事や荒事に身を晒す仕事でもある。志願票を手に、今の暮らしと…
 
-<a id="tag-situation-313"></a>
+<a id="tag-situation-320"></a>
 ### 任期見直し・離職後の民間輸送（1）
 - [hig_service_review](#event-hig_service_review) — 陣屋で兵站と街道警備の務めに就いて三年が経ち、上役から次の任期も残るかと尋ねられた。このまま軍務を続けるか、覚えた荷捌きの腕を民間の輸送業で生かすか…
 
-<a id="tag-situation-314"></a>
+<a id="tag-situation-321"></a>
 ### 年齢：35歳以上（2）
 - [fam_care](#event-fam_care) — {parentName}の足腰と体調が目に見えて弱り、通院や日々の炊事・買い出しを一人でこなすのが難しくなってきた。自分の仕事や暮らしもあるなか、誰…
 - [fam_care_followup](#event-fam_care_followup) — 親の世話を始めてから二年が過ぎた。{parentName}の通院や身の回りの手伝いはまだ終わらず、こちらの体や暮らしの予定にも疲れが溜まってきている…
 
-<a id="tag-situation-315"></a>
+<a id="tag-situation-322"></a>
 ### 年齢：児童（1237）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [sch](#event-sch) — 近所の子たちが小学校へ通い始める年頃になった。余裕のない家計のなか、家の人は学費や教本代を工面できるか頭を悩ませている。それでも、学校へ行ってみたい…
@@ -20083,7 +20176,7 @@
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
-<a id="tag-situation-316"></a>
+<a id="tag-situation-323"></a>
 ### 年齢：少年（1599）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
@@ -21685,8 +21778,8 @@
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
-<a id="tag-situation-317"></a>
-### 年齢：青年（3163）
+<a id="tag-situation-324"></a>
+### 年齢：青年（3174）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -23918,6 +24011,16 @@
 - [hist_exp_1101_sankt_griffaburg_student_katorga](#event-hist_exp_1101_sankt_griffaburg_student_katorga) — 大学周辺で抗議の声が上がり、憲兵の車両が通りを塞いだ。誰が連れて行かれたか、住民には確かめられない。窓口も問い合わせに答えていなかった。
 - [hist_exp_1101_iberia_distant_sea_rumor](#event-hist_exp_1101_iberia_distant_sea_rumor) — 旅人から、近海の黒い潮や北方の防壁で異変があったらしいと聞いた。話す人ごとに時期や場所が違い、海の向こうのことを確かめる術はなかった。
 - [hist_exp_1102_yan_sui_awakening_tremor](#event-hist_exp_1102_yan_sui_awakening_tremor) — 大きな揺れのあと、街区の水路と建物の点検が続いていた。原因について様々な話が流れているが、作業員たちは目の前の損傷を一つずつ調べている。
+- [violence_infected_expulsion_speech](#event-violence_infected_expulsion_speech) — 市場の掲示板に、感染者を街から追い出せと訴える集会の案内が貼られていた。演説者は「抵抗する者は力ずくで追い出せ」と声を張り、集まった人々へ賛同を求め…
+- [violence_infected_expulsion_meeting](#event-violence_infected_expulsion_meeting) — 翌年、また同じ街角に人が集まった。演説者は「抵抗する感染者は力ずくで追い出せ」と声を張り、周囲へ唱和を促している。
+- [violence_infected_market_assault](#event-violence_infected_market_assault) — 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しや…
+- [violence_infected_market_homicide_followup](#event-violence_infected_market_homicide_followup) — 数週間後、診療所を出た男は、まだ包帯を巻いた腕をかばいながら市場を歩いていた。あなたと配偶者が路地口へ差しかかると、同じ一団が男を取り囲んだ。巡回衛…
+- [violence_civilian_homicide_adjudication](#event-violence_civilian_homicide_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、救護員の死亡確認が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_attempted_homicide_adjudication](#event-violence_civilian_attempted_homicide_adjudication) — 取り押さえられて三か月。衛士と配偶者の証言が法廷に提出され、石を振り下ろした行為への判決が告げられる。
+- [violence_civilian_assault_adjudication](#event-violence_civilian_assault_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、治療を受けた男の記録が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_homicide_release](#event-violence_civilian_homicide_release) — 三年間の収容を終え、門の外へ出た。手元の金と戻れる場所を確かめ、翌日からの暮らしを考え始めた。
+- [violence_civilian_attempted_homicide_release](#event-violence_civilian_attempted_homicide_release) — 二年の収容を終え、門の外へ出た。石を振り下ろした相手は死ななかった。目撃した配偶者との日常も戻らず、これからの暮らしを考えることになった。
+- [violence_civilian_assault_release](#event-violence_civilian_assault_release) — 一年の収容を終え、門の外へ出た。石を振り下ろした相手は生きていた。配偶者との関係も、あの日から止まったままだった。
 - [life_night_study](#event-life_night_study) — 家計逼迫 働きながら通える夜間講習の貼り紙が職場の壁に出ていた。くたくたに疲れた仕事帰りの体と、教材を買う金と、どちらも今の苦しい暮らしから絞り出さ…
 - [life_family_remittance](#event-life_family_remittance) — 家計逼迫 故郷の親から手紙が届いた。薬代や家の修繕のことが遠慮がちに数行だけ書かれている。こちらの財布も厳しい中、どんな返事を書くか便箋を前に迷った…
 - [life_overtime_offer](#event-life_overtime_offer) — 家計逼迫 職場で残業や休日出勤の募集がかかった。割増の手当は喉から手が出るほど欲しいが、これ以上働けば体を壊しかねない。 月末の請求書を思い浮かべて…
@@ -24568,6 +24671,7 @@
 - [car_urs_officer_choice_purge](#event-car_urs_officer_choice_purge) — 軍団長から極秘の密命が下された。反皇帝派の疑いがある同僚の貴族将校を、演習中の事故に見せかけて抹殺せよという。従えば軍団長の側近へ引き立てられるが、…
 - [car_urs_guard_daily_01](#event-car_urs_guard_daily_01) — 鉛色の空の下、雪に埋もれたコンクリートトーチカで銃を抱えて立った。双眼鏡で荒涼たる雪原を監視し、凍えた手足を焚火にかざす。粗末な黒パンを齧りながら、…
 - [car_urs_guard_choice_riot](#event-car_urs_guard_choice_riot) — 監視する感染者炭鉱の地下最深部で、虐待に耐えかねた囚人たちがツルハシを手に一斉に暴動を起こした。坑道の出入口を塞ぐ鉄扉の前で、援軍が来るまで銃剣で死…
+- [car_urs_guard_choice_captive_order](#event-car_urs_guard_choice_captive_order) — 夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足…
 - [car_vic_infantry_daily_01](#event-car_vic_infantry_daily_01) — 冷たい雨が降り続くヴィクトリア軍の演習陣地。膝まで泥に浸かりながら塹壕の土嚢を積み直し、油布で小銃のボルトを拭った。貴族将校が天幕で温かいスープを飲…
 - [car_vic_infantry_choice_skirmish](#event-car_vic_infantry_choice_skirmish) — 行軍中、霧の立ち込める渓谷で待ち伏せしていた凶悪なサルカズ傭兵団の奇襲を受けた。貴族将校は狼狽して逃げ腰になり、歩兵小隊が孤立した。銃剣を構えて突撃…
 - [car_vic_royal_daily_01](#event-car_vic_royal_daily_01) — ロンディニウムの豪壮な将校クラブで、大公爵派閥の貴族たちとワイングラスを傾けた。壁に掛けられた歴代の武勲詩。どの公爵が次の軍需予算を握るか、華やかな…
@@ -24586,7 +24690,7 @@
 - [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
 - [car_kaz_comp_knight_daily_01](#event-car_kaz_comp_knight_daily_01) — 照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と…
 - [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFi…
-- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。…
+- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか…
 - [car_sir_soldier_daily_01](#event-car_sir_soldier_daily_01) — 石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コー…
 - [car_sir_soldier_choice_turf_war](#event-car_sir_soldier_choice_turf_war) — 隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。…
 - [car_sir_police_daily_01](#event-car_sir_police_daily_01) — ヌオバ・ウォルシーニの広場で、市民からの陳情や交通の整理を行った。マフィアの報復を恐れて声を潜める住民に優しく声をかけ、法による保護を約束する。銃で…
@@ -24851,8 +24955,8 @@
 - [parent_oripathy_death_4](#event-parent_oripathy_death_4) — {親の名}は鉱石病で亡くなった。遺体の結晶化が進んでいると告げられ、その場を離れるよう促された。持ち出せた荷を抱え、建物の外で身を寄せ合って待った。…
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 
-<a id="tag-situation-318"></a>
-### 年齢：壮年（3142）
+<a id="tag-situation-325"></a>
+### 年齢：壮年（3153）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -27076,6 +27180,16 @@
 - [life_later_health_review](#event-life_later_health_review) — 診察の帰り、医療担当者と今後の通院や日々の動き方を話した。年齢だけで体の状態を決めず、本人が感じる変化を記録に残した。
 - [life_later_window_tea](#event-life_later_window_tea) — 朝の湯気が窓の近くに流れ、いつもの茶碗が手になじんだ。街の蒸気機関が動き出す音を聞きながら、予定のない朝をゆっくり過ごした。
 - [life_later_life_review](#event-life_later_life_review) — 棚の記録や古い仕事道具を見ながら、何を覚えていて、何を忘れてしまったか考えた。家族や友人と過ごした日々を、一つずつたどった。
+- [violence_infected_expulsion_speech](#event-violence_infected_expulsion_speech) — 市場の掲示板に、感染者を街から追い出せと訴える集会の案内が貼られていた。演説者は「抵抗する者は力ずくで追い出せ」と声を張り、集まった人々へ賛同を求め…
+- [violence_infected_expulsion_meeting](#event-violence_infected_expulsion_meeting) — 翌年、また同じ街角に人が集まった。演説者は「抵抗する感染者は力ずくで追い出せ」と声を張り、周囲へ唱和を促している。
+- [violence_infected_market_assault](#event-violence_infected_market_assault) — 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しや…
+- [violence_infected_market_homicide_followup](#event-violence_infected_market_homicide_followup) — 数週間後、診療所を出た男は、まだ包帯を巻いた腕をかばいながら市場を歩いていた。あなたと配偶者が路地口へ差しかかると、同じ一団が男を取り囲んだ。巡回衛…
+- [violence_civilian_homicide_adjudication](#event-violence_civilian_homicide_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、救護員の死亡確認が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_attempted_homicide_adjudication](#event-violence_civilian_attempted_homicide_adjudication) — 取り押さえられて三か月。衛士と配偶者の証言が法廷に提出され、石を振り下ろした行為への判決が告げられる。
+- [violence_civilian_assault_adjudication](#event-violence_civilian_assault_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、治療を受けた男の記録が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_homicide_release](#event-violence_civilian_homicide_release) — 三年間の収容を終え、門の外へ出た。手元の金と戻れる場所を確かめ、翌日からの暮らしを考え始めた。
+- [violence_civilian_attempted_homicide_release](#event-violence_civilian_attempted_homicide_release) — 二年の収容を終え、門の外へ出た。石を振り下ろした相手は死ななかった。目撃した配偶者との日常も戻らず、これからの暮らしを考えることになった。
+- [violence_civilian_assault_release](#event-violence_civilian_assault_release) — 一年の収容を終え、門の外へ出た。石を振り下ろした相手は生きていた。配偶者との関係も、あの日から止まったままだった。
 - [life_night_study](#event-life_night_study) — 家計逼迫 働きながら通える夜間講習の貼り紙が職場の壁に出ていた。くたくたに疲れた仕事帰りの体と、教材を買う金と、どちらも今の苦しい暮らしから絞り出さ…
 - [life_family_remittance](#event-life_family_remittance) — 家計逼迫 故郷の親から手紙が届いた。薬代や家の修繕のことが遠慮がちに数行だけ書かれている。こちらの財布も厳しい中、どんな返事を書くか便箋を前に迷った…
 - [life_overtime_offer](#event-life_overtime_offer) — 家計逼迫 職場で残業や休日出勤の募集がかかった。割増の手当は喉から手が出るほど欲しいが、これ以上働けば体を壊しかねない。 月末の請求書を思い浮かべて…
@@ -27723,6 +27837,7 @@
 - [car_urs_officer_choice_purge](#event-car_urs_officer_choice_purge) — 軍団長から極秘の密命が下された。反皇帝派の疑いがある同僚の貴族将校を、演習中の事故に見せかけて抹殺せよという。従えば軍団長の側近へ引き立てられるが、…
 - [car_urs_guard_daily_01](#event-car_urs_guard_daily_01) — 鉛色の空の下、雪に埋もれたコンクリートトーチカで銃を抱えて立った。双眼鏡で荒涼たる雪原を監視し、凍えた手足を焚火にかざす。粗末な黒パンを齧りながら、…
 - [car_urs_guard_choice_riot](#event-car_urs_guard_choice_riot) — 監視する感染者炭鉱の地下最深部で、虐待に耐えかねた囚人たちがツルハシを手に一斉に暴動を起こした。坑道の出入口を塞ぐ鉄扉の前で、援軍が来るまで銃剣で死…
+- [car_urs_guard_choice_captive_order](#event-car_urs_guard_choice_captive_order) — 夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足…
 - [car_vic_infantry_daily_01](#event-car_vic_infantry_daily_01) — 冷たい雨が降り続くヴィクトリア軍の演習陣地。膝まで泥に浸かりながら塹壕の土嚢を積み直し、油布で小銃のボルトを拭った。貴族将校が天幕で温かいスープを飲…
 - [car_vic_infantry_choice_skirmish](#event-car_vic_infantry_choice_skirmish) — 行軍中、霧の立ち込める渓谷で待ち伏せしていた凶悪なサルカズ傭兵団の奇襲を受けた。貴族将校は狼狽して逃げ腰になり、歩兵小隊が孤立した。銃剣を構えて突撃…
 - [car_vic_royal_daily_01](#event-car_vic_royal_daily_01) — ロンディニウムの豪壮な将校クラブで、大公爵派閥の貴族たちとワイングラスを傾けた。壁に掛けられた歴代の武勲詩。どの公爵が次の軍需予算を握るか、華やかな…
@@ -27741,7 +27856,7 @@
 - [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
 - [car_kaz_comp_knight_daily_01](#event-car_kaz_comp_knight_daily_01) — 照明が眩しいスタジオで、スポンサー企業の栄養ドリンクを掲げてカメラに向かって微笑んだ。午後は数千人の観客が見つめる中、アリーナで公開練習試合。喝采と…
 - [car_kaz_comp_knight_choice_match](#event-car_kaz_comp_knight_choice_match) — メジャー大会の決勝前夜、商業連合会の重鎮プロモーターが部屋を訪れた。『明日の試合で第3ラウンドに派手にKO負けしろ。報酬として{kazMatchFi…
-- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。…
+- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか…
 - [car_sir_soldier_daily_01](#event-car_sir_soldier_daily_01) — 石畳の路地に並ぶリストランテや煙草屋から、今月のみかじめ料を回収して回った。遅れを出した店主の胸ぐらを掴み、冷徹にファミリーの掟を言い聞かせる。コー…
 - [car_sir_soldier_choice_turf_war](#event-car_sir_soldier_choice_turf_war) — 隣接する対立ファミリーが境界のレストランを襲撃し、縄張りを侵犯してきた。ドンから『報復として敵の幹部クラブを一斉掃討せよ』とトンプソン銃が配られた。…
 - [car_sir_police_daily_01](#event-car_sir_police_daily_01) — ヌオバ・ウォルシーニの広場で、市民からの陳情や交通の整理を行った。マフィアの報復を恐れて声を潜める住民に優しく声をかけ、法による保護を約束する。銃で…
@@ -27996,7 +28111,7 @@
 - [parent_oripathy_death_4](#event-parent_oripathy_death_4) — {親の名}は鉱石病で亡くなった。遺体の結晶化が進んでいると告げられ、その場を離れるよう促された。持ち出せた荷を抱え、建物の外で身を寄せ合って待った。…
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 
-<a id="tag-situation-319"></a>
+<a id="tag-situation-326"></a>
 ### 年齢：乳児（20）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [dg](#event-dg) — 収容先の薄暗い診察室で、肌に浮いた結晶は鉱石病だと告げられた。外の病院へは行けない。ここで抑制薬を出してもらえるのか、医師の顔を見つめた。 隔離区画…
@@ -28019,7 +28134,7 @@
 - [parent_oripathy_death_4](#event-parent_oripathy_death_4) — {親の名}は鉱石病で亡くなった。遺体の結晶化が進んでいると告げられ、その場を離れるよう促された。持ち出せた荷を抱え、建物の外で身を寄せ合って待った。…
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 
-<a id="tag-situation-320"></a>
+<a id="tag-situation-327"></a>
 ### 年齢：幼児（37）
 - [fever](#event-fever) — 夜中に体が燃えるように熱くなり、うなされて目を覚ました。家の人が灯りの下で小銭入れを開き、診療所までの足代と薬代を数えていた。 夕食の匙を持つ手も重…
 - [bias_family_model](#event-bias_family_model) — 夕餉の席で、親の一人が近所に越してきた感染者の一家について話した。『ああいう家とは付き合うな。厄介事を持ち込まれる』。煮物を取り分ける手は止まらず、…
@@ -28059,8 +28174,8 @@
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 - [bias_family_infected_parent_memory](#event-bias_family_infected_parent_memory) — 近所で鉱石病患者をあざける声を聞いた。もう亡くなった親が、咳をこらえながら家の用事を続けていた姿が浮かんだ。言い返そうとしても、最後に聞いた声や、空…
 
-<a id="tag-situation-321"></a>
-### 年齢：老年（2214）
+<a id="tag-situation-328"></a>
+### 年齢：老年（2220）
 - [pet_strain](#event-pet_strain) — 餌代の値上がりが続き、器に入れてやれる量を少しずつ減らした。空っぽの器を舐め終えても、じっとこちらを見上げて餌場を離れない姿に胸が締めつけられた。
 - [pet_life_turn](#event-pet_life_turn) — 前の治療から幾年かが過ぎ、年老いた飼育動物は再び餌を残して眠り続けるようになった。痩せた背中を撫でながら、もう一度医者へ連れていくか家族と静かに話し…
 - [attitude_counterexample](#event-attitude_counterexample) — 鉱石病を患う伴侶に次の診療日を確かめ、薬代の分を封筒に取り分けた。夕餉の皿を洗い終えるころ、相手はなんてことのない職場の揉め事を笑ってこぼした。 子…
@@ -29529,6 +29644,12 @@
 - [life_later_health_review](#event-life_later_health_review) — 診察の帰り、医療担当者と今後の通院や日々の動き方を話した。年齢だけで体の状態を決めず、本人が感じる変化を記録に残した。
 - [life_later_window_tea](#event-life_later_window_tea) — 朝の湯気が窓の近くに流れ、いつもの茶碗が手になじんだ。街の蒸気機関が動き出す音を聞きながら、予定のない朝をゆっくり過ごした。
 - [life_later_life_review](#event-life_later_life_review) — 棚の記録や古い仕事道具を見ながら、何を覚えていて、何を忘れてしまったか考えた。家族や友人と過ごした日々を、一つずつたどった。
+- [violence_civilian_homicide_adjudication](#event-violence_civilian_homicide_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、救護員の死亡確認が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_attempted_homicide_adjudication](#event-violence_civilian_attempted_homicide_adjudication) — 取り押さえられて三か月。衛士と配偶者の証言が法廷に提出され、石を振り下ろした行為への判決が告げられる。
+- [violence_civilian_assault_adjudication](#event-violence_civilian_assault_adjudication) — 詰所に留め置かれて三か月。衛士と配偶者の証言、治療を受けた男の記録が法廷に提出され、裁判官が処分を言い渡した。
+- [violence_civilian_homicide_release](#event-violence_civilian_homicide_release) — 三年間の収容を終え、門の外へ出た。手元の金と戻れる場所を確かめ、翌日からの暮らしを考え始めた。
+- [violence_civilian_attempted_homicide_release](#event-violence_civilian_attempted_homicide_release) — 二年の収容を終え、門の外へ出た。石を振り下ろした相手は死ななかった。目撃した配偶者との日常も戻らず、これからの暮らしを考えることになった。
+- [violence_civilian_assault_release](#event-violence_civilian_assault_release) — 一年の収容を終え、門の外へ出た。石を振り下ろした相手は生きていた。配偶者との関係も、あの日から止まったままだった。
 - [life_family_remittance](#event-life_family_remittance) — 家計逼迫 故郷の親から手紙が届いた。薬代や家の修繕のことが遠慮がちに数行だけ書かれている。こちらの財布も厳しい中、どんな返事を書くか便箋を前に迷った…
 - [life_hobby_budget](#event-life_hobby_budget) — 通っている音楽の稽古場の月謝が来月から上がるという。楽器ケースの留め金を閉じた瞬間、月末の家賃と食費の計算が頭をよぎった。 借りている小さな菜園の更…
 - [life_pet_vet_cost](#event-life_pet_vet_cost) — 可愛がっている生き物が、ここ数日ほとんど餌に口をつけない。毛並みもどこか元気がなく見えるが、獣医に診せれば今月の生活費が吹き飛んでしまう。 飼ってい…
@@ -30276,130 +30397,146 @@
 - [parent_oripathy_death_4](#event-parent_oripathy_death_4) — {親の名}は鉱石病で亡くなった。遺体の結晶化が進んでいると告げられ、その場を離れるよう促された。持ち出せた荷を抱え、建物の外で身を寄せ合って待った。…
 - [parent_oripathy_death_5](#event-parent_oripathy_death_5) — 鉱石病で{親の名}が亡くなったと知らされた。最期の寝床にも、遺体が運び出されるところにも立ち会えなかった。結晶が崩れて粉になる前に、処理を進めなけれ…
 
-<a id="tag-situation-322"></a>
+<a id="tag-situation-329"></a>
+### 農場への武装襲撃（1）
+- [car_col_pioneer_choice_bandits](#event-car_col_pioneer_choice_bandits) — 収穫を間近に控えた夜、武装した荒野の略奪者集団が農場を取り囲み、全収穫物とトラクターの引き渡しを要求してきた。民兵の応援は間に合わない。猟銃を取って…
+
+<a id="tag-situation-330"></a>
 ### 排斥への参加・黙認・拒否（1）
 - [v78_ideology_recruitment](#event-v78_ideology_recruitment) — 感染者を通りから締め出そうと息巻く連中から、次の集まりへ顔を出さないかと誘われた。「あいつらが俺たちの食い扶持を奪っている」と誰かが吐き捨てる。同じ…
 
-<a id="tag-situation-323"></a>
+<a id="tag-situation-331"></a>
 ### 排斥等に伴う脅迫が継続（1）
 - [life_violence_threat_safety](#event-life_violence_threat_safety) — 帰り道で浴びせられた脅し文句が、扉の鍵を閉めたあとも耳の奥にこびりついている。翌朝、表へ出る前に足がすくんだ。どうやって自分の身を守るか考えなければ…
 
-<a id="tag-situation-324"></a>
+<a id="tag-situation-332"></a>
 ### 配給・食料不足（1）
 - [f62](#event-f62) — その日の配給袋は、手にした瞬間に分かるほど軽かった。次の配布日まであと何回に分けて食べられるか、寝床の隅で中身を数え直した。 配給の品が一つ足りず、…
 
-<a id="tag-situation-325"></a>
+<a id="tag-situation-333"></a>
 ### 配給・寝床・診療案内（1）
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
 
-<a id="tag-situation-326"></a>
+<a id="tag-situation-334"></a>
 ### 配給と地域支援（1）
 - [lon_slum](#event-lon_slum) — かつて部屋を追い出されるように移ってきたこの下層街区で、食料と薬の炊き出しに長い列ができていた。自分の番が飛ばされないよう必死に引換券を握りしめる人…
 
-<a id="tag-situation-327"></a>
+<a id="tag-situation-335"></a>
 ### 配給登録（1）
 - [earth_discr_relief_follow](#event-earth_discr_relief_follow) — 先が見えない避難生活が続いている。今度の配給所でもよそ者だという理由で足止めされ、前に係員から聞いておいた手続きの話を持ち出した。
 
-<a id="tag-situation-328"></a>
+<a id="tag-situation-336"></a>
 ### 配偶者との死別（1）
 - [family_spouse_death](#event-family_spouse_death) — {spouseDeathTiming}、連れ合いの{sp}が亡くなったという知らせが届いた。食卓には二人で食べようと買っておいた食材がそのまま残り、…
 
-<a id="tag-situation-329"></a>
+<a id="tag-situation-337"></a>
 ### 配偶者の療養状態に応じた選択（1）
 - [family_spouse_treatment_review](#event-family_spouse_treatment_review) — 鉱石病のことを聞いてからも、まだ配偶者の通院先は決まっていない。薬代や交通費、仕事を休める日取りを二人で突き合わせ、どうにか受診を始められないか話し…
 
-<a id="tag-situation-330"></a>
+<a id="tag-situation-338"></a>
 ### 買い物の予算調整・近隣支援（1）
 - [local_food_shortage](#event-local_food_shortage) — 市場の棚は歯が抜けたように空いていた。荷馬車や輸送便がいつ着くかは日によってまちまちで、店主も首を振るばかりだ。財布の底の硬貨を指で数えながら、今日…
 
-<a id="tag-situation-331"></a>
+<a id="tag-situation-339"></a>
 ### 班間の点検記録（1）
 - [victoria_factory_drawing_notes_daily](#event-victoria_factory_drawing_notes_daily) — 蒸気機関の点検図を広げると、前の番の技師が鉛筆で残した微調整の寸法が余白に書き込まれていた。自分も今日取り替えた弁の癖を短く書き足して次の班へ引き継…
 
-<a id="tag-situation-332"></a>
+<a id="tag-situation-340"></a>
 ### 班内の技能伝達（1）
 - [ursus_factory_skill_handoff_daily](#event-ursus_factory_skill_handoff_daily) — 交替の汽笛が鳴る少し前、同じ班の古株が「こう締めるとネジ山が潰れない」と留め具の順番を見せてくれた。次の番からはそのやり方を真似てみると、夕方の腕の…
 
-<a id="tag-situation-333"></a>
+<a id="tag-situation-341"></a>
 ### 避難／後方荷役／残留・死亡分岐（1）
 - [bol_war](#event-bol_war) — 内戦の影響で、この地区にも荷の遅れと仕事の不足が及んでいる。ここで生計を立て直すか、移動の準備をするか考えた。
 
-<a id="tag-situation-334"></a>
+<a id="tag-situation-342"></a>
 ### 避難中（1）
 - [earth_discr_relief_follow](#event-earth_discr_relief_follow) — 先が見えない避難生活が続いている。今度の配給所でもよそ者だという理由で足止めされ、前に係員から聞いておいた手続きの話を持ち出した。
 
-<a id="tag-situation-335"></a>
+<a id="tag-situation-343"></a>
 ### 非感染者（1）
 - [v78_ideology_recruitment](#event-v78_ideology_recruitment) — 感染者を通りから締め出そうと息巻く連中から、次の集まりへ顔を出さないかと誘われた。「あいつらが俺たちの食い扶持を奪っている」と誰かが吐き捨てる。同じ…
 
-<a id="tag-situation-336"></a>
+<a id="tag-situation-344"></a>
+### 標的の死亡確認（1）
+- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか…
+
+<a id="tag-situation-345"></a>
 ### 貧困／感染診断／制度差別の条件（1）
 - [lon_slum](#event-lon_slum) — かつて部屋を追い出されるように移ってきたこの下層街区で、食料と薬の炊き出しに長い列ができていた。自分の番が飛ばされないよう必死に引換券を握りしめる人…
 
-<a id="tag-situation-337"></a>
+<a id="tag-situation-346"></a>
 ### 付き添い依頼・受診延期（1）
 - [earth_discr_clinic_entry](#event-earth_discr_clinic_entry) — 診療所の受付で順番を待つうち、係の者から「感染者は裏の別窓口へ回れ」と冷たく言われた。そちらには案内板すらなく、いつ薬を受け取れるかも分からない。仕…
 
-<a id="tag-situation-338"></a>
+<a id="tag-situation-347"></a>
 ### 付き添い相談（1）
 - [earth_discr_clinic_return](#event-earth_discr_clinic_return) — 前の受診を諦めてから、いつの間にか月が変わってしまった。薬の残りは心細いが、あの裏口の冷たい空気を思い出すと足がすくむ。
 
-<a id="tag-situation-339"></a>
+<a id="tag-situation-348"></a>
 ### 扶養中の子（2）
 - [family_child_crystal_exposure](#event-family_child_crystal_exposure) — 外から帰ってきた子どもが、「きれいな石を拾った」と黒く光る欠片を手のひらに乗せて見せてきた。近くの古い採掘跡から風で飛ばされてきた源石片らしい。子ど…
 - [family_child_exposure_followup](#event-family_child_exposure_followup) — （動的本文）
 
-<a id="tag-situation-340"></a>
+<a id="tag-situation-349"></a>
 ### 扶養中の子の看病（1）
 - [f55](#event-f55) — 夜中に{careKid}が熱を出してぐずり、いつでも水を飲ませられるよう枕元に付きっきりだった。朝日が差すころには、自分の目もすっかり充血していた。…
 
-<a id="tag-situation-341"></a>
+<a id="tag-situation-350"></a>
 ### 負傷後の職務調整（1）
 - [kaz_knight_injury_job_transition](#event-kaz_knight_injury_job_transition) — 古傷の肩をかばいながら働く要領は覚えたものの、無理が重なる日は夜も眠れないほど疼く。街の求人板で帳簿つけや受付補助の募集を見かけ、力仕事を離れて新し…
 
-<a id="tag-situation-342"></a>
+<a id="tag-situation-351"></a>
 ### 部品寸法（1）
 - [victoria_factory_drawing_notes_daily](#event-victoria_factory_drawing_notes_daily) — 蒸気機関の点検図を広げると、前の番の技師が鉛筆で残した微調整の寸法が余白に書き込まれていた。自分も今日取り替えた弁の癖を短く書き足して次の班へ引き継…
 
-<a id="tag-situation-343"></a>
+<a id="tag-situation-352"></a>
 ### 復旧作業中の負傷（1）
 - [v77_accidental_originium_cleanup](#event-v77_accidental_originium_cleanup) — 復旧現場の瓦礫を運んでいたとき、割れた源石片で手を切った。傷は塞がったが、しばらくして指先に黒い結晶が浮かび、熱とだるさが抜けなくなった。
 
-<a id="tag-situation-344"></a>
+<a id="tag-situation-353"></a>
 ### 粉塵への接触懸念（1）
 - [v77_accidental_originium_uncertain](#event-v77_accidental_originium_uncertain) — 廃材置き場の脇を通ったとき、破れた麻袋から黒っぽい粉がこぼれ、乾いた風に舞い上がっていた。ただの煤か源石の粉か見分けがつかず、慌てて口元を覆って袖を…
 
-<a id="tag-situation-345"></a>
+<a id="tag-situation-354"></a>
 ### 粉塵曝露（2）
 - [f48](#event-f48) — 坑道の粉塵を吸い込みすぎたのか、夜中にも乾いた咳が出る日が増えた。玄関先で作業着をはたくと、街灯の光の中に黒っぽい灰が舞い落ちた。 切羽から上がって…
 - [v77_accidental_transport_originium](#event-v77_accidental_transport_originium) — 職場の運搬車が損傷して積み荷の袋が破れ、黒い粉が舞った。近くにいたとき粉を吸い込み、その後から咳とだるさが続いた。
 
-<a id="tag-situation-346"></a>
+<a id="tag-situation-355"></a>
 ### 兵士の消息不明（1）
 - [f101](#event-f101) — 店の前の掲示板から、同じ通りに住む兵士の名が消えていた。角の商店先にいた家族は何も語らず、目を伏せたまま夕方の品物を袋に詰めていた。通りを歩く人々も…
 
-<a id="tag-situation-347"></a>
+<a id="tag-situation-356"></a>
 ### 兵役招集（1）
 - [fam_conscript](#event-fam_conscript) — 戦火が迫るなか、きょうだいの一人に部隊への招集状が届いた。泣き崩れる家族のそばで、免除を願い出るか、自分が身代わりに出るか、重苦しい相談が続いた。
 
-<a id="tag-situation-348"></a>
+<a id="tag-situation-357"></a>
 ### 別居・転居（1）
 - [adult_child_contact](#event-adult_child_contact) — {grownKid}から久しぶりに便りが届いた。仕事や暮らしの縁で{grownKidRegion}へ移り、今は{grownKidWork}として働い…
 
-<a id="tag-situation-349"></a>
+<a id="tag-situation-358"></a>
+### 捕虜への命令（1）
+- [car_urs_guard_choice_captive_order](#event-car_urs_guard_choice_captive_order) — 夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足…
+
+<a id="tag-situation-359"></a>
 ### 亡命・移住（2）
 - [f69](#event-f69) — 身を寄せた先の窓口で、耳慣れない土地の言い回しを早口で並べられた。聞き返しているうちに後ろの列が詰まり、背中に刺さる無言の視線に汗がにじんだ。 逃れ…
 - [f70](#event-f70) — 思いがけず故郷の言葉が通じる人と出会い、懐かしい料理の名前を次々に挙げ合った。同じ国を離れてきた身でも、胸にしまっている町の風景は少しずつ違っていた…
 
-<a id="tag-situation-350"></a>
+<a id="tag-situation-360"></a>
+### 暴行・救助・退避（1）
+- [violence_infected_market_assault](#event-violence_infected_market_assault) — 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しや…
+
+<a id="tag-situation-361"></a>
 ### 未診断の感染者（1）
 - [ori_diagnosis_decision](#event-ori_diagnosis_decision) — （動的本文）
 
-<a id="tag-situation-351"></a>
+<a id="tag-situation-362"></a>
 ### 未成年の家族支援／成人の短期就労（1）
 - [kazdel_rebuild](#event-kazdel_rebuild) — 落ち着かない仮住まいが続き、家の人は毎日の食べ物と燃料を手に入れるだけで精一杯だ。通りで同じ故郷の訛りや角の形を見かけるたび、思わず目で追ってしまう…
 
-<a id="tag-situation-352"></a>
+<a id="tag-situation-363"></a>
 ### 未成年は養育者判断（8）
 - [life_medical_respiratory](#event-life_medical_respiratory) — 浅い息をするたびに胸の奥がヒューヒューと鳴り、熱が幾日も引かない。朝起き上がれずに仕事や外の用事を休んだまま、診療所までの足代と手元の小銭を数えた。
 - [life_medical_circulation](#event-life_medical_circulation) — 階段や坂を上るたびに心臓が早鐘を打ち、胸の奥を掴まれたように足が止まる。腰を下ろして息をついても、鉛のような重苦しさがなかなか消えない。
@@ -30410,111 +30547,115 @@
 - [life_disaster_recovery_care](#event-life_disaster_recovery_care) — 着の身着のままの避難生活が長引き、硬い床と乏しい食事、濁った水がじわじわと体力を奪っていた。配給の列に並ぶか、それとも少しでも風を避けられる隅で泥の…
 - [life_rehabilitation_followup](#event-life_rehabilitation_followup) — ひどい熱や痛みはどうにか峠を越えたが、少し長く歩いた翌朝は鉛を背負ったように体が重い。焦る気持ちを抑えながら、朝の家事を一つ済ませて体の具合を確かめ…
 
-<a id="tag-situation-353"></a>
+<a id="tag-situation-364"></a>
 ### 未成年は養育者判断／移住支援・残留（1）
 - [sie_volcano](#event-sie_volcano) — 夏の祭典の熱気が冷めたころ、役所から新設される移動都市への移住案内が配られた。火山の活動が年々激しくなり、この美しい浜辺の街を丸ごと移すのだという。…
 
-<a id="tag-situation-354"></a>
+<a id="tag-situation-365"></a>
 ### 未成年は養育者判断／成人は本人判断（1）
 - [kaz_exile](#event-kaz_exile) — 内戦が続き、仕事と往来の先行きが見えなくなった。暮らす地区に残るか、行先と運賃を確かめて避難の旅を始めるか、身近な人々と考えた。
 
-<a id="tag-situation-355"></a>
+<a id="tag-situation-366"></a>
+### 無冑盟の実勤務（1）
+- [car_kaz_armorless_daily_01](#event-car_kaz_armorless_daily_01) — 依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか…
+
+<a id="tag-situation-367"></a>
 ### 名前を知る相手（1）
 - [neighbor_followup](#event-neighbor_followup) — 隣の{neighborName}が、湯気の立つ鉢を持って戸口を訪ねてきた。引っ越してきた日にこちらが差し入れた食べ物を覚えていて、「今日はお裾分けだ…
 
-<a id="tag-situation-356"></a>
+<a id="tag-situation-368"></a>
 ### 夜間の世話（1）
 - [f54](#event-f54) — 遊び疲れた{careKid}が眠りについてから、乾いた小さな服を一枚ずつ畳んだ。規則正しい寝息を聞いていると、一日の疲れがすっと溶けていくようだった…
 
-<a id="tag-situation-357"></a>
+<a id="tag-situation-369"></a>
 ### 友人との文通再開（1）
 - [friend_recontact_news](#event-friend_recontact_news) — 共通の知人を通じ、{contactName}からの返事が{contactReplyYear}年に届いた。伝言を受け取ったことと、便りを続けてもよいと…
 
-<a id="tag-situation-358"></a>
+<a id="tag-situation-370"></a>
 ### 友人への恋心（1）
 - [f25](#event-f25) — 別れたあとの帰り道も、{friendName}の声がずっと耳の奥に残っていた。気楽な友人のままでいたい気持ちと、もっと特別な距離に踏み込みたい気持ち…
 
-<a id="tag-situation-359"></a>
+<a id="tag-situation-371"></a>
 ### 傭兵・護衛勤務（1）
 - [f49](#event-f49) — 見張り任務の合間に、焚き火を囲んで仲間と夜通し語り合った。本名すら知らない相手にも、故郷に置いてきた家族や忘れられない景色があった。 隊商護衛の休憩…
 
-<a id="tag-situation-360"></a>
+<a id="tag-situation-372"></a>
 ### 傭兵隊の護衛契約（1）
 - [kaz_merc](#event-kaz_merc) — カズデルの傭兵隊が、荒野を抜ける輸送隊の護衛を募っていた。分け前は悪くないが、生きて帰れる保証もない長旅になる。
 
-<a id="tag-situation-361"></a>
+<a id="tag-situation-373"></a>
 ### 傭兵隊の通過（1）
 - [f95](#event-f95) — 内戦の火種がくすぶるなか、武装した傭兵の一団が荷をまとめて通りを抜けていった。家の大人は店先にいたあなたを慌てて奥へ引っ張り込み、隊列が角を曲がりき…
 
-<a id="tag-situation-362"></a>
+<a id="tag-situation-374"></a>
 ### 幼い子の養育（1）
 - [f54](#event-f54) — 遊び疲れた{careKid}が眠りについてから、乾いた小さな服を一枚ずつ畳んだ。規則正しい寝息を聞いていると、一日の疲れがすっと溶けていくようだった…
 
-<a id="tag-situation-363"></a>
+<a id="tag-situation-375"></a>
 ### 用事の再開・再診（1）
 - [life_rehabilitation_followup](#event-life_rehabilitation_followup) — ひどい熱や痛みはどうにか峠を越えたが、少し長く歩いた翌朝は鉛を背負ったように体が重い。焦る気持ちを抑えながら、朝の家事を一つ済ませて体の具合を確かめ…
 
-<a id="tag-situation-364"></a>
+<a id="tag-situation-376"></a>
 ### 養育者の視点（1）
 - [f4](#event-f4) — あなたが初めて声を立てて笑うと、抱き上げていた{caregiver}もぱっと顔をほころばせた。
 
-<a id="tag-situation-365"></a>
+<a id="tag-situation-377"></a>
 ### 離婚後の元配偶者の死（1）
 - [family_former_spouse_death_notice](#event-family_former_spouse_death_notice) — かつて婚姻関係にあった{formerSpouse}が亡くなったという知らせが届いた。食卓に腰を下ろすと、言い争った日も笑い合った日も入り混じって胸に…
 
-<a id="tag-situation-366"></a>
+<a id="tag-situation-378"></a>
 ### 離婚後の元配偶者の転居（1）
 - [family_former_spouse_move_notice](#event-family_former_spouse_move_notice) — 別れた{formerSpouse}が{formerSpouseMovedRegion}へ移り住んだという知らせが、{formerSpouseMove…
 
-<a id="tag-situation-367"></a>
+<a id="tag-situation-379"></a>
 ### 離婚後の子育て・連絡（1）
 - [family_divorce_parenting_review](#event-family_divorce_parenting_review) — 前に送った子どもの予定についての便りに、まだ{formerSpouse}から返事がない。休みが近づき、もう一度手紙を出すべきか迷った。 知人に間へ入…
 
-<a id="tag-situation-368"></a>
+<a id="tag-situation-380"></a>
 ### 龍門（1）
 - [lon_guard](#event-lon_guard) — 龍門近衛局が街区を回る巡回要員を募集していた。採用されれば安定した給金が出るが、雑踏の揉め事や荒事に身を晒す仕事でもある。志願票を手に、今の暮らしと…
 
-<a id="tag-situation-369"></a>
+<a id="tag-situation-381"></a>
 ### 龍門の移動都市居住区（1）
 - [lon_housing](#event-lon_housing) — 部屋の更新手続きに行くと、家主は診断記録に目を落としたまま、これまでの倍近い保証金をふっかけてきた。「お互いの安心のためだよ」と笑うが、元の契約書の…
 
-<a id="tag-situation-370"></a>
+<a id="tag-situation-382"></a>
 ### 龍門の移動都市周縁区・避難労働区（1）
 - [lon_slum](#event-lon_slum) — かつて部屋を追い出されるように移ってきたこの下層街区で、食料と薬の炊き出しに長い列ができていた。自分の番が飛ばされないよう必死に引換券を握りしめる人…
 
-<a id="tag-situation-371"></a>
+<a id="tag-situation-383"></a>
 ### 龍門の商業街（1）
 - [lon_merchant](#event-lon_merchant) — 龍門の賑やかな商業通りで、空きが出たばかりの小さな露店を引き継がないかと声がかかった。権利金と仕入れで50万龍門幣。当たれば大きいが、客がつかなくて…
 
-<a id="tag-situation-372"></a>
+<a id="tag-situation-384"></a>
 ### 臨時露店仕事・観覧・出費回避（1）
 - [sie_tourist](#event-sie_tourist) — オブシディアン・フェスティバルが開幕し、街中が浮き立つような音楽と観光客の熱気で溢れ返っている。浜辺の露店では、夜遅くの片づけまで手伝ってくれる若手…
 
-<a id="tag-situation-373"></a>
+<a id="tag-situation-385"></a>
 ### 隣人との死別（1）
 - [neighbor_death_notice](#event-neighbor_death_notice) — {contactDeathTiming}、{contactName}が亡くなったと同じ区画の人から聞いた。知らせには死因も最期の様子もなかった。玄関…
 
-<a id="tag-situation-374"></a>
+<a id="tag-situation-386"></a>
 ### 隣人との伝言再開（1）
 - [neighbor_recontact_news](#event-neighbor_recontact_news) — 同じ区画の人から、{contactName}の返事があったと伝えられた。あなたの便りが届いたことだけが書かれていた。
 
-<a id="tag-situation-375"></a>
+<a id="tag-situation-387"></a>
 ### 隣人の消息不明（1）
 - [neighbor_missing_news](#event-neighbor_missing_news) — {contactName}の姿を見なくなったのは{contactMissingYear}年ごろだという。最後に所在が確かめられたのは{contact…
 
-<a id="tag-situation-376"></a>
+<a id="tag-situation-388"></a>
 ### 隣人の生存確認（1）
 - [neighbor_found_news](#event-neighbor_found_news) — 地域の人づてに、{contactName}が{contactFoundYear}年に生きていると聞いた。今いる場所も、戻る予定も分からない。
 
-<a id="tag-situation-377"></a>
+<a id="tag-situation-389"></a>
 ### 連絡・休息の継続（1）
 - [life_mental_crisis_recovery](#event-life_mental_crisis_recovery) — 底のない暗がりの中にいた頃より、外の光を浴びて歩ける日が増えてきた。それでもふとした拍子に胸がざわつく夜はある。自分の心とどう折り合いをつけていくか…
 
-<a id="tag-situation-378"></a>
+<a id="tag-situation-390"></a>
 ### 連絡先と家の用事の相談（1）
 - [life_late_care_planning](#event-life_late_care_planning) — 買い物袋を提げて帰る途中で、息が切れて立ち止まる日が増えた。昔は何ともなかった段差や水汲みが、今はやけにこたえる。自分が動けなくなった時のことを、そ…
 
-<a id="tag-situation-379"></a>
+<a id="tag-situation-391"></a>
 ### 労務補償（1）
 - [f94](#event-f94) — 鉱区の掲示板に、落盤で負傷した仲間の名と閉鎖された坑道番号がチョークで書き出された。次の番に入る同僚は、見舞金や補償の話を誰に掛け合えばいいのかと周…
 
@@ -265542,6 +265683,1256 @@ s => {
 旧シム観測回数：未計測
 
 
+<a id="event-violence_infected_expulsion_speech"></a>
+## violence_infected_expulsion_speech
+
+- 出典位置：data/parts/extensions/social-and-care/violence-lifepath.js:23
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
+- 国・地域：クルビア
+- ジャンル：感染・医療、差別・制度
+- 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、感染・鉱石病に言及
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：公の場で本人が排斥に賛同・反対・不表明を選ぶ。出生属性や既存の偏見値を発言記録の代用にしない。
+
+### 本文
+
+> 市場の掲示板に、感染者を街から追い出せと訴える集会の案内が貼られていた。演説者は「抵抗する者は力ずくで追い出せ」と声を張り、集まった人々へ賛同を求めた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "violence_infected_expulsion_speech",
+  "conf": "S",
+  "references": [
+    "SRC_ORIPATHY_SOCIAL",
+    "SRC_TERRA_SOCIAL_ATTITUDES"
+  ],
+  "once": true,
+  "cd": 99,
+  "w": 0.055,
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "age": 18
+  },
+  "show": {
+    "dynamicFunction": "s => s.res?.n === \"クルビア\" && !(s.violenceState?.formationHistory || []).some(row => row.sourceEventId === \"violence_infected_expulsion_speech\")"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-violence_infected_expulsion_speech-0"></a>
+選択肢文：演説に賛同し、感染者を追い出せと声を上げる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_infected_expulsion_speech-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 演説者の隣に立ち、感染者を追い出せと声を張った。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "record-belief",
+    "targetGroup": "infected",
+    "behavior": "endorse",
+    "delta": 30,
+    "evidenceId": "public-expulsion-endorsement",
+    "basis": "本人が集会で排除を公言した",
+    "audience": "public"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-violence_infected_expulsion_speech-1"></a>
+選択肢文：その言い分に反対し、集会を離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_infected_expulsion_speech-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 感染者を追い出せという声に反対し、集会の輪から離れた。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "record-belief",
+    "targetGroup": "infected",
+    "behavior": "reject",
+    "delta": 0,
+    "evidenceId": "public-expulsion-rejection",
+    "basis": "本人が集会で排除の主張を拒んだ",
+    "audience": "public"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-violence_infected_expulsion_speech-2"></a>
+選択肢文：話を聞くだけにして、何も言わず帰る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_infected_expulsion_speech-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 演説を聞いたが、賛否を口にせず市場へ戻った。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "record-belief",
+    "targetGroup": "infected",
+    "behavior": "hear",
+    "delta": 0,
+    "evidenceId": "public-expulsion-heard",
+    "basis": "演説をその場で聞いた",
+    "audience": "present"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-violence_infected_expulsion_meeting"></a>
+## violence_infected_expulsion_meeting
+
+- 出典位置：data/parts/extensions/social-and-care/violence-lifepath.js:46
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
+- 国・地域：クルビア
+- ジャンル：感染・医療、差別・制度
+- 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、感染・鉱石病に言及
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：前年の本人賛同と同じ地域への居住を条件にする。二度目の発言も自動的な加害意思へ置き換えない。
+
+### 本文
+
+> 翌年、また同じ街角に人が集まった。演説者は「抵抗する感染者は力ずくで追い出せ」と声を張り、周囲へ唱和を促している。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "violence_infected_expulsion_meeting",
+  "conf": "S",
+  "references": [
+    "SRC_ORIPATHY_SOCIAL",
+    "SRC_TERRA_SOCIAL_ATTITUDES"
+  ],
+  "once": true,
+  "cd": 99,
+  "w": 0.035,
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "age": 18
+  },
+  "after": {
+    "id": "violence_infected_expulsion_speech",
+    "min": 1,
+    "choice": 0,
+    "outcome": 0
+  },
+  "show": {
+    "dynamicFunction": "s => s.res?.n === \"クルビア\" && hasEndorsement(s, \"violence_infected_expulsion_speech\")?.region === s.res?.n &&\n        !(s.violenceState?.formationHistory || []).some(row => row.sourceEventId === \"violence_infected_expulsion_meeting\")"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-violence_infected_expulsion_meeting-0"></a>
+選択肢文：集会に加わり、感染者を追い出せと唱和する
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_infected_expulsion_meeting-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 集会の列に加わり、感染者を街から追い出せと繰り返した。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "record-belief",
+    "targetGroup": "infected",
+    "behavior": "endorse",
+    "delta": 30,
+    "evidenceId": "second-expulsion-endorsement",
+    "basis": "二度目の集会で排除を支持した",
+    "audience": "public"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-violence_infected_expulsion_meeting-1"></a>
+選択肢文：演説に加わらず、帰路につく
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_infected_expulsion_meeting-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 演説を聞き流し、唱和には加わらず帰った。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "record-belief",
+    "targetGroup": "infected",
+    "behavior": "leave-group",
+    "delta": 0,
+    "evidenceId": "second-expulsion-departure",
+    "basis": "二度目の集会を離れた",
+    "audience": "present"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-violence_infected_market_assault"></a>
+## violence_infected_market_assault
+
+- 出典位置：data/parts/extensions/social-and-care/violence-lifepath.js:65
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
+- 国・地域：クルビア
+- ジャンル：日常、暴力・犯罪、家族・介護、感染・医療
+- 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、感染・鉱石病に言及、暴行・救助・退避
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：二度の本人賛同後に同じ地域で起きる具体的場面。感染の目視根拠、負傷・救助・立ち去りを別結果にする。
+
+### 本文
+
+> 市場の路地で、腕に結晶の見える感染者が人垣に囲まれていた。一緒に買い物へ出た配偶者が隣にいる。衛士は路地の入口で人々を止めていたが、男は壁際へ押しやられている。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "violence_infected_market_assault",
+  "conf": "S",
+  "references": [
+    "SRC_ORIPATHY_SOCIAL",
+    "SRC_TERRA_SOCIAL_ATTITUDES",
+    "SRC_TERRA_FAMILY",
+    "SRC_VIOLENCE_LIFEPATH_MODEL"
+  ],
+  "once": true,
+  "cd": 99,
+  "w": 0.035,
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "age": 18
+  },
+  "after": {
+    "id": "violence_infected_expulsion_meeting",
+    "min": 1,
+    "choice": 0,
+    "outcome": 0
+  },
+  "show": {
+    "dynamicFunction": "s => s.res?.n === \"クルビア\" && hasEndorsement(s, \"violence_infected_expulsion_meeting\")?.region === s.res?.n &&\n        !!s.sp?.id && spouseLivesWithProtagonist(s) && !violenceLatestIncidentForEvent(s, \"violence_infected_market_assault\")"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-violence_infected_market_assault-0"></a>
+選択肢文：人垣に加わり、感染者の肩を殴る
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_infected_market_assault-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 男の肩を殴ると、そばにいた人々が二人を引き離した。男は肩を痛め、救護員に付き添われて診療所へ向かった。配偶者は声もかけず、路地の外へ出た。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "infected-market-assault",
+    "kind": "assault",
+    "context": "civilian",
+    "decision": "joined-expulsion-assault",
+    "outcome": "injured",
+    "targetGroup": "infected",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [
+      {
+        "kind": "family-role",
+        "role": "spouse"
+      }
+    ],
+    "evidenceIds": [
+      "visible-oripathy-signs",
+      "direct-assault",
+      "scene-observed-injury",
+      "medical-help-arrived"
+    ],
+    "followupAfterMonths": 1
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-violence_infected_market_assault-1"></a>
+選択肢文：衛士に声をかけ、男を路地から連れ出す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_infected_market_assault-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 衛士へ声をかけて人垣を割り、男を診療所へ連れていくのを手伝った。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "infected-market-rescue",
+    "kind": "rescue",
+    "context": "civilian",
+    "decision": "helped-target-leave",
+    "outcome": "escaped",
+    "targetGroup": "infected",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [
+      {
+        "kind": "family-role",
+        "role": "spouse"
+      }
+    ],
+    "evidenceIds": [
+      "visible-oripathy-signs",
+      "direct-rescue"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-violence_infected_market_assault-2"></a>
+選択肢文：配偶者と路地を離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_infected_market_assault-2-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 配偶者と人垣を避け、衛士が男を連れ出すのを見届けずに市場を離れた。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "infected-market-withdrawal",
+    "kind": "refusal",
+    "context": "civilian",
+    "decision": "withdrew-with-spouse",
+    "outcome": "unresolved",
+    "targetGroup": "infected",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [
+      {
+        "kind": "family-role",
+        "role": "spouse"
+      }
+    ],
+    "evidenceIds": [
+      "visible-oripathy-signs",
+      "withdrew-before-contact"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-violence_infected_market_homicide_followup"></a>
+## violence_infected_market_homicide_followup
+
+- 出典位置：data/parts/extensions/social-and-care/violence-lifepath.js:98
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
+- 国・地域：クルビア
+- ジャンル：暴力・犯罪、家族・介護、感染・医療
+- 状況：年齢：青年、年齢：壮年、選択イベント、期限付き後日談、同一被害者、殺人・殺人未遂
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：前月に負傷した同一人物を再び襲う場面。死亡確認・生存・阻止を分け、実際にいた配偶者だけへ結果を記録する。
+
+### 本文
+
+> 数週間後、診療所を出た男は、まだ包帯を巻いた腕をかばいながら市場を歩いていた。あなたと配偶者が路地口へ差しかかると、同じ一団が男を取り囲んだ。巡回衛士が人垣へ駆け寄る。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "violence_infected_market_homicide_followup",
+  "conf": "S",
+  "references": [
+    "SRC_ORIPATHY_SOCIAL",
+    "SRC_TERRA_SOCIAL_ATTITUDES",
+    "SRC_TERRA_FAMILY",
+    "SRC_VIOLENCE_LIFEPATH_MODEL"
+  ],
+  "once": true,
+  "cd": 99,
+  "interactionScope": "scheduled",
+  "scheduledAt": {
+    "dynamicFunction": "s => violenceNextSceneAt(s, \"infected-market-assault\")"
+  },
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "age": 18
+  },
+  "show": {
+    "dynamicFunction": "s => s.res?.n === \"クルビア\" && violenceCivilianHomicideEligible(s, \"infected\") &&\n        !!s.sp?.id && spouseLivesWithProtagonist(s) && !!homicideDue(s) &&\n        violenceLatestIncidentForEvent(s, \"violence_infected_market_assault\")?.region === s.res?.n &&\n        s.year * 12 + s.mo - (homicideDue(s).year * 12 + homicideDue(s).month) <= 2"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-violence_infected_market_homicide_followup-0"></a>
+選択肢文：衛士に声をかけ、男を人垣から連れ出す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_infected_market_homicide_followup-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 衛士とともに人垣を割り、男を路地から連れ出した。配偶者は男を診療所まで送るのを手伝った。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "infected-market-assault",
+    "kind": "rescue",
+    "context": "civilian",
+    "decision": "intervened-and-rescued",
+    "outcome": "escaped",
+    "targetGroup": "infected",
+    "victimRef": {
+      "kind": "incident-victim",
+      "sourceEventId": "violence_infected_market_assault",
+      "localOrdinal": 1
+    },
+    "witnesses": [
+      {
+        "kind": "family-role",
+        "role": "spouse"
+      }
+    ],
+    "evidenceIds": [
+      "repeat-targeting",
+      "direct-rescue"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-violence_infected_market_homicide_followup-1"></a>
+選択肢文：配偶者とその場を離れる
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_infected_market_homicide_followup-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 衛士が人垣を止める声を背に、配偶者と市場の出口へ向かった。男のその後は見届けなかった。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "infected-market-assault",
+    "kind": "refusal",
+    "context": "civilian",
+    "decision": "withdrew-from-repeat-assault",
+    "outcome": "unresolved",
+    "targetGroup": "infected",
+    "victimRef": {
+      "kind": "incident-victim",
+      "sourceEventId": "violence_infected_market_assault",
+      "localOrdinal": 1
+    },
+    "witnesses": [
+      {
+        "kind": "family-role",
+        "role": "spouse"
+      }
+    ],
+    "evidenceIds": [
+      "repeat-targeting",
+      "withdrew-before-contact"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-violence_infected_market_homicide_followup-2"></a>
+選択肢文：石を拾い、男の頭を狙って振り下ろす
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_infected_market_homicide_followup-2-0"></a>
+
+- **結果 1（設定確率 25%）**
+
+> 石が男の頭に当たった。駆けつけた救護員は男の死亡を確認し、衛士はその場であなたを押さえた。配偶者はあなたに近づかず、衛士と詰所へ向かった。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "infected-market-homicide",
+    "kind": "intentional-killing",
+    "context": "civilian",
+    "decision": "struck-to-kill",
+    "outcome": "confirmed-death",
+    "targetGroup": "infected",
+    "victimRef": {
+      "kind": "incident-victim",
+      "sourceEventId": "violence_infected_market_assault",
+      "localOrdinal": 1
+    },
+    "witnesses": [
+      {
+        "kind": "family-role",
+        "role": "spouse"
+      }
+    ],
+    "deathEvidence": "confirmed",
+    "deathEvidenceId": "medical-death-confirmation",
+    "authorityAction": "detain-and-investigate",
+    "witnessNorm": "ordinary-civilian-taboo",
+    "evidenceIds": [
+      "repeat-targeting",
+      "direct-lethal-act",
+      "medical-death-confirmation",
+      "authority-witness"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+<a id="outcome-violence_infected_market_homicide_followup-2-1"></a>
+
+- **結果 2（設定確率 47%）**
+
+> 石は男の頭を割ったが、救護員は命を取り留めたと告げた。衛士はあなたを押さえ、配偶者は詰所で見たことを話した。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "infected-market-homicide",
+    "kind": "intentional-killing",
+    "context": "civilian",
+    "decision": "struck-to-kill",
+    "outcome": "injured",
+    "targetGroup": "infected",
+    "victimRef": {
+      "kind": "incident-victim",
+      "sourceEventId": "violence_infected_market_assault",
+      "localOrdinal": 1
+    },
+    "witnesses": [
+      {
+        "kind": "family-role",
+        "role": "spouse"
+      }
+    ],
+    "authorityAction": "detain-and-investigate",
+    "witnessNorm": "ordinary-civilian-taboo",
+    "evidenceIds": [
+      "repeat-targeting",
+      "direct-lethal-act",
+      "medical-survival-confirmation",
+      "authority-witness"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+<a id="outcome-violence_infected_market_homicide_followup-2-2"></a>
+
+- **結果 3（設定確率 28%）**
+
+> 衛士があなたの腕を押さえ、石は地面に落ちた。男は身をかわし、配偶者は衛士の後ろへ下がった。衛士はあなたを詰所へ連れて行った。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "infected-market-homicide",
+    "kind": "intentional-killing",
+    "context": "civilian",
+    "decision": "struck-to-kill",
+    "outcome": "prevented",
+    "targetGroup": "infected",
+    "victimRef": {
+      "kind": "incident-victim",
+      "sourceEventId": "violence_infected_market_assault",
+      "localOrdinal": 1
+    },
+    "witnesses": [
+      {
+        "kind": "family-role",
+        "role": "spouse"
+      }
+    ],
+    "authorityAction": "detain-and-investigate",
+    "witnessNorm": "ordinary-civilian-taboo",
+    "evidenceIds": [
+      "repeat-targeting",
+      "attack-prevented",
+      "authority-witness"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-violence_civilian_homicide_adjudication"></a>
+## violence_civilian_homicide_adjudication
+
+- 出典位置：data/parts/extensions/social-and-care/violence-lifepath.js:151
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
+- 国・地域：クルビア
+- ジャンル：暴力・犯罪、労働・経済
+- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、収容中、審理後の裁定
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：衛士の直接証拠と死亡確認に基づく裁判・刑期・罰金。刑罰額と地域制度はゲーム上の仮定。
+
+### 本文
+
+> 詰所に留め置かれて三か月。衛士と配偶者の証言、救護員の死亡確認が法廷に提出され、裁判官が処分を言い渡した。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "violence_civilian_homicide_adjudication",
+  "conf": "S",
+  "references": [
+    "SRC_ORIPATHY_SOCIAL",
+    "SRC_TERRA_SOCIAL_ATTITUDES",
+    "SRC_TERRA_FAMILY",
+    "SRC_VIOLENCE_LIFEPATH_MODEL"
+  ],
+  "cd": 0,
+  "interactionScope": "scheduled",
+  "inConfinement": true,
+  "scheduledAt": {
+    "dynamicFunction": "s => caseDue(s, \"civilian-homicide\")"
+  },
+  "show": {
+    "dynamicFunction": "s => !!s.fl?.detained && caseReadyHere(s, \"civilian-homicide\", \"investigation-open\", \"reviewAt\")"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "age": 18
+  },
+  "w": 1
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-violence_civilian_homicide_adjudication-0"></a>
+選択肢文：判決を聞き、処分を受ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_civilian_homicide_adjudication-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 裁判所は殺人罪を認定し、三年間の収容と8万龍門幣の罰金を言い渡した。勤め先を失い、出所の日が決まった。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "adjudicate-case",
+    "incidentId": "$due-violence-case",
+    "caseType": "civilian-homicide"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-violence_civilian_attempted_homicide_adjudication"></a>
+## violence_civilian_attempted_homicide_adjudication
+
+- 出典位置：data/parts/extensions/social-and-care/violence-lifepath.js:162
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
+- 国・地域：クルビア
+- ジャンル：暴力・犯罪、労働・経済
+- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、収容中、審理後の裁定
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：殺害未遂で死亡しなかった結果を殺人と分ける。二年間の収容・罰金はゲーム上の仮定。
+
+### 本文
+
+> 取り押さえられて三か月。衛士と配偶者の証言が法廷に提出され、石を振り下ろした行為への判決が告げられる。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "violence_civilian_attempted_homicide_adjudication",
+  "conf": "S",
+  "references": [
+    "SRC_ORIPATHY_SOCIAL",
+    "SRC_TERRA_SOCIAL_ATTITUDES",
+    "SRC_TERRA_FAMILY",
+    "SRC_VIOLENCE_LIFEPATH_MODEL"
+  ],
+  "cd": 0,
+  "interactionScope": "scheduled",
+  "inConfinement": true,
+  "scheduledAt": {
+    "dynamicFunction": "s => caseDue(s, \"attempted-civilian-homicide\")"
+  },
+  "show": {
+    "dynamicFunction": "s => !!s.fl?.detained && caseReadyHere(s, \"attempted-civilian-homicide\", \"investigation-open\", \"reviewAt\")"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "age": 18
+  },
+  "w": 1
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-violence_civilian_attempted_homicide_adjudication-0"></a>
+選択肢文：判決を聞き、処分を受ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_civilian_attempted_homicide_adjudication-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 裁判所は殺人未遂罪を認定し、二年間の収容と5万龍門幣の罰金を言い渡した。{violenceSentenceEmployment}出所の日が決まった。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "adjudicate-case",
+    "incidentId": "$due-violence-case",
+    "caseType": "attempted-civilian-homicide"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-violence_civilian_assault_adjudication"></a>
+## violence_civilian_assault_adjudication
+
+- 出典位置：data/parts/extensions/social-and-care/violence-lifepath.js:173
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
+- 国・地域：クルビア
+- ジャンル：暴力・犯罪、労働・経済
+- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、収容中、審理後の裁定
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：致死目的を伴わない重傷事件の裁定例。殺人・殺人未遂と区別し、刑罰額はゲーム上の仮定。
+
+### 本文
+
+> 詰所に留め置かれて三か月。衛士と配偶者の証言、治療を受けた男の記録が法廷に提出され、裁判官が処分を言い渡した。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "violence_civilian_assault_adjudication",
+  "conf": "S",
+  "references": [
+    "SRC_ORIPATHY_SOCIAL",
+    "SRC_TERRA_SOCIAL_ATTITUDES",
+    "SRC_TERRA_FAMILY",
+    "SRC_VIOLENCE_LIFEPATH_MODEL"
+  ],
+  "cd": 0,
+  "interactionScope": "scheduled",
+  "inConfinement": true,
+  "scheduledAt": {
+    "dynamicFunction": "s => caseDue(s, \"serious-civilian-assault\")"
+  },
+  "show": {
+    "dynamicFunction": "s => !!s.fl?.detained && caseReadyHere(s, \"serious-civilian-assault\", \"investigation-open\", \"reviewAt\")"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "age": 18
+  },
+  "w": 1
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-violence_civilian_assault_adjudication-0"></a>
+選択肢文：判決を聞き、処分を受ける
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_civilian_assault_adjudication-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 裁判所は傷害罪を認定し、一年間の収容と2万龍門幣の罰金を言い渡した。勤め先を失った。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "adjudicate-case",
+    "incidentId": "$due-violence-case",
+    "caseType": "serious-civilian-assault"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-violence_civilian_homicide_release"></a>
+## violence_civilian_homicide_release
+
+- 出典位置：data/parts/extensions/social-and-care/violence-lifepath.js:184
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
+- 国・地域：クルビア
+- ジャンル：暴力・犯罪、労働・経済
+- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、収容後の釈放
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：殺人の三年の刑期終了後に発火。目撃した配偶者との接触境界は釈放で自動解除しない。
+
+### 本文
+
+> 三年間の収容を終え、門の外へ出た。手元の金と戻れる場所を確かめ、翌日からの暮らしを考え始めた。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "violence_civilian_homicide_release",
+  "conf": "S",
+  "references": [
+    "SRC_ORIPATHY_SOCIAL",
+    "SRC_TERRA_SOCIAL_ATTITUDES",
+    "SRC_TERRA_FAMILY",
+    "SRC_VIOLENCE_LIFEPATH_MODEL"
+  ],
+  "cd": 0,
+  "interactionScope": "scheduled",
+  "inConfinement": true,
+  "scheduledAt": {
+    "dynamicFunction": "s => releaseDue(s, \"civilian-homicide\")"
+  },
+  "show": {
+    "dynamicFunction": "s => !!s.fl?.detained && caseReadyHere(s, \"civilian-homicide\", \"convicted\", \"releaseAt\")"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "age": 18
+  },
+  "w": 1
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-violence_civilian_homicide_release-0"></a>
+選択肢文：街へ戻り、暮らしを立て直す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_civilian_homicide_release-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 出所の手続きを終え、住まいと仕事を探し始めた。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "complete-sentence",
+    "incidentId": "$due-violence-release",
+    "caseType": "civilian-homicide"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-violence_civilian_attempted_homicide_release"></a>
+## violence_civilian_attempted_homicide_release
+
+- 出典位置：data/parts/extensions/social-and-care/violence-lifepath.js:195
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
+- 国・地域：クルビア
+- ジャンル：暴力・犯罪、労働・経済、家族・介護
+- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、収容後の釈放
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：殺人未遂の二年の刑期終了後に発火。死亡数を増やさず、配偶者との日常接触境界を継続する。
+
+### 本文
+
+> 二年の収容を終え、門の外へ出た。石を振り下ろした相手は死ななかった。目撃した配偶者との日常も戻らず、これからの暮らしを考えることになった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "violence_civilian_attempted_homicide_release",
+  "conf": "S",
+  "references": [
+    "SRC_ORIPATHY_SOCIAL",
+    "SRC_TERRA_SOCIAL_ATTITUDES",
+    "SRC_TERRA_FAMILY",
+    "SRC_VIOLENCE_LIFEPATH_MODEL"
+  ],
+  "cd": 0,
+  "interactionScope": "scheduled",
+  "inConfinement": true,
+  "scheduledAt": {
+    "dynamicFunction": "s => releaseDue(s, \"attempted-civilian-homicide\")"
+  },
+  "show": {
+    "dynamicFunction": "s => !!s.fl?.detained && caseReadyHere(s, \"attempted-civilian-homicide\", \"convicted\", \"releaseAt\")"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "age": 18
+  },
+  "w": 1
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-violence_civilian_attempted_homicide_release-0"></a>
+選択肢文：街へ戻り、暮らしを立て直す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_civilian_attempted_homicide_release-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 出所の手続きを終えた。手元に残った金を確かめ、次の仕事を探し始めた。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "complete-sentence",
+    "incidentId": "$due-violence-release",
+    "caseType": "attempted-civilian-homicide"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
+<a id="event-violence_civilian_assault_release"></a>
+## violence_civilian_assault_release
+
+- 出典位置：data/parts/extensions/social-and-care/violence-lifepath.js:206
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
+- 国・地域：クルビア
+- ジャンル：暴力・犯罪、労働・経済
+- 状況：年齢：青年、年齢：壮年、年齢：老年、選択イベント、収容後の釈放
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：重傷事件の一年の刑期終了後に発火。被害者は生存し、刑罰額はゲーム上の仮定。
+
+### 本文
+
+> 一年の収容を終え、門の外へ出た。石を振り下ろした相手は生きていた。配偶者との関係も、あの日から止まったままだった。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "violence_civilian_assault_release",
+  "conf": "S",
+  "references": [
+    "SRC_ORIPATHY_SOCIAL",
+    "SRC_TERRA_SOCIAL_ATTITUDES",
+    "SRC_TERRA_FAMILY",
+    "SRC_VIOLENCE_LIFEPATH_MODEL"
+  ],
+  "cd": 0,
+  "interactionScope": "scheduled",
+  "inConfinement": true,
+  "scheduledAt": {
+    "dynamicFunction": "s => releaseDue(s, \"serious-civilian-assault\")"
+  },
+  "show": {
+    "dynamicFunction": "s => !!s.fl?.detained && caseReadyHere(s, \"serious-civilian-assault\", \"convicted\", \"releaseAt\")"
+  },
+  "st": [
+    "青年",
+    "壮年",
+    "老年"
+  ],
+  "ge": {
+    "age": 18
+  },
+  "w": 1
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-violence_civilian_assault_release-0"></a>
+選択肢文：街へ戻り、仕事を探す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-violence_civilian_assault_release-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 出所の手続きを終えた。新しい仕事を探しながら、配偶者との関係にも自分で向き合うことになった。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "complete-sentence",
+    "incidentId": "$due-violence-release",
+    "caseType": "serious-civilian-assault"
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
 <a id="event-life_night_study"></a>
 ## life_night_study
 
@@ -301709,7 +303100,7 @@ s => {
   "cd": 4,
   "w": 0.5,
   "show": {
-    "dynamicFunction": "s =>\n        $terraData.srOnStaff(s) &&\n        !(s.personTies?.rhodesColleagues ||\n          (s.personTies?.rhodesColleague ? [s.personTies.rhodesColleague] : [])).some(\n          person => person.actualStatus === \"working\"\n        ) &&\n        [\"active\", \"crisis\"].includes($terraData.srAffiliationStatus(s, \"rhodes-staff\"))"
+    "dynamicFunction": "s =>\n        $terraData.srOnStaff(s) &&\n        !violenceCurrentRhodesColleague(s) &&\n        [\"active\", \"crisis\"].includes($terraData.srAffiliationStatus(s, \"rhodes-staff\"))"
   },
   "ge": {
     "year": 1095
@@ -301865,7 +303256,7 @@ s => {
   "cd": 4,
   "w": 0.62,
   "show": {
-    "dynamicFunction": "s =>\n        $terraData.srOnStaff(s) &&\n        !!s.personTies?.rhodesColleague &&\n        s.personTies.rhodesColleague.actualStatus === \"working\""
+    "dynamicFunction": "s =>\n        $terraData.srOnStaff(s) &&\n        !!violenceCurrentRhodesColleague(s)"
   },
   "ge": {
     "year": 1095
@@ -350561,6 +351952,27 @@ s => {
     "role": "旗本頭",
     "onlyIfActiveOrCrisis": true,
     "onlyIfRoleChanged": true
+  },
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "higashi-battle-duel-death",
+    "kind": "combat-lethal",
+    "context": "military",
+    "decision": "killed-enemy-leader-in-duel",
+    "outcome": "confirmed-death",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "deathEvidence": "observed",
+    "deathEvidenceId": "duel-fatal-injury-observed",
+    "evidenceIds": [
+      "active-military-duty",
+      "present-at-theater",
+      "confirmed-combatant-target",
+      "duel-fatal-injury-observed"
+    ]
   }
 }
 ```
@@ -350622,7 +352034,31 @@ s => {
 ```json
 {
   "p": 1,
-  "k": 2
+  "k": 2,
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "higashi-battle-commanded-volley",
+    "kind": "command-harm",
+    "context": "military",
+    "decision": "ordered-volley-killed-enemy-leader",
+    "outcome": "confirmed-death",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "deathEvidence": "observed",
+    "deathEvidenceId": "enemy-leader-death-confirmed-by-unit",
+    "evidenceIds": [
+      "active-military-duty",
+      "order-issued",
+      "order-executed-by-unit",
+      "subordinate-death-confirmed",
+      "present-at-theater",
+      "confirmed-combatant-target",
+      "enemy-leader-death-confirmed-by-unit"
+    ]
+  }
 }
 ```
 
@@ -350632,7 +352068,7 @@ s => {
 <a id="event-car_hig_ninja_daily_01"></a>
 ## car_hig_ninja_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-east.js:284
+- 出典位置：data/parts/routes/regional-careers/events-east.js:295
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：極東
@@ -350706,7 +352142,7 @@ s => {
 <a id="event-car_hig_ninja_choice_escape"></a>
 ## car_hig_ninja_choice_escape
 
-- 出典位置：data/parts/routes/regional-careers/events-east.js:301
+- 出典位置：data/parts/routes/regional-careers/events-east.js:312
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：極東
@@ -350870,7 +352306,7 @@ s => {
 <a id="event-car_hig_cyber_daily_01"></a>
 ## car_hig_cyber_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-east.js:347
+- 出典位置：data/parts/routes/regional-careers/events-east.js:358
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：極東
@@ -350944,7 +352380,7 @@ s => {
 <a id="event-car_hig_cyber_choice_offensive"></a>
 ## car_hig_cyber_choice_offensive
 
-- 出典位置：data/parts/routes/regional-careers/events-east.js:364
+- 出典位置：data/parts/routes/regional-careers/events-east.js:375
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：クルビア、極東
@@ -351087,7 +352523,7 @@ s => {
 <a id="event-car_hig_shinto_daily_01"></a>
 ## car_hig_shinto_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-east.js:400
+- 出典位置：data/parts/routes/regional-careers/events-east.js:411
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：極東
@@ -351161,7 +352597,7 @@ s => {
 <a id="event-car_hig_touhou_daily_01"></a>
 ## car_hig_touhou_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-east.js:421
+- 出典位置：data/parts/routes/regional-careers/events-east.js:432
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：極東
@@ -351235,7 +352671,7 @@ s => {
 <a id="event-car_hig_ninja_after_escape"></a>
 ## car_hig_ninja_after_escape
 
-- 出典位置：data/parts/routes/regional-careers/events-east.js:438
+- 出典位置：data/parts/routes/regional-careers/events-east.js:449
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -351441,7 +352877,7 @@ s => {
 <a id="event-car_yan_court_after_dismissal"></a>
 ## car_yan_court_after_dismissal
 
-- 出典位置：data/parts/routes/regional-careers/events-east.js:478
+- 出典位置：data/parts/routes/regional-careers/events-east.js:489
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -351610,7 +353046,7 @@ s => {
 <a id="event-car_lmd_black_after_detention"></a>
 ## car_lmd_black_after_detention
 
-- 出典位置：data/parts/routes/regional-careers/events-east.js:510
+- 出典位置：data/parts/routes/regional-careers/events-east.js:521
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -352245,10 +353681,275 @@ s => {
 旧シム観測回数：未計測
 
 
+<a id="event-car_urs_guard_choice_captive_order"></a>
+## car_urs_guard_choice_captive_order
+
+- 出典位置：data/parts/routes/regional-careers/events-west.js:128
+- 分類確度：本文・条件・全選択肢と結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
+- 国・地域：ウルサス
+- ジャンル：戦争・政治、所属・組織、差別・制度
+- 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、現役の軍務、捕虜への命令
+- 指摘分類：未記入（問題なしの確認を意味しない）
+- 注記：実勤務、命令受領、捕虜の状態、拒否／実行、死亡確認・負傷・転帰不明を分離。発生・組織応答はゲーム上の個別仮定。
+
+### 本文
+
+> 夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足元で膝を抱えている。
+
+### 発生条件・構造
+
+```json
+{
+  "id": "car_urs_guard_choice_captive_order",
+  "conf": "S",
+  "references": [
+    "SRC_VIOLENCE_LIFEPATH_MODEL",
+    "SRC_REGIONAL_CAREERS",
+    "SRC_VICTORIA_MILITARY"
+  ],
+  "once": true,
+  "cd": 99,
+  "w": 0.035,
+  "st": [
+    "青年",
+    "壮年"
+  ],
+  "ge": {
+    "age": 21
+  },
+  "show": {
+    "dynamicFunction": "s => s.res?.n === \"ウルサス\" && $terraData.regionalCareerOnDuty(s, \"urs_guard\")"
+  }
+}
+```
+
+### 旧1000人シムの観測
+
+未計測（添付シムにこのイベントIDの記録なし。0件ではありません。）
+
+### 選択肢と結果枝
+
+#### 選択肢 1
+
+<a id="choice-car_urs_guard_choice_captive_order-0"></a>
+選択肢文：命令の根拠を問い直す
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-car_urs_guard_choice_captive_order-0-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 隊長は「命令だ」と繰り返した。あなたは銃を下ろしたまま、捕虜を撃たなかった。兵舎へ戻された後も、男の行方は分からなかった。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "ursus-captive-execution-order",
+    "kind": "refusal",
+    "context": "military",
+    "decision": "questioned-order-and-did-not-fire",
+    "outcome": "prevented",
+    "targetGroup": "infected-captive",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "evidenceIds": [
+      "active-military-duty",
+      "present-at-scene",
+      "order-received",
+      "order-questioned",
+      "execution-not-carried-out"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 2
+
+<a id="choice-car_urs_guard_choice_captive_order-1"></a>
+選択肢文：執行を拒み、捕虜へ銃を向けない
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-car_urs_guard_choice_captive_order-1-0"></a>
+
+- **結果 1（設定確率 100%）**
+
+> 「撃てません」。そう答えると隊長は銃を預かり、あなたを監視所から外した。捕虜は詰所の奥へ連れて行かれたが、その後のことは知らされなかった。
+
+効果：
+
+```json
+{
+  "lifeAffiliation": {
+    "id": "ursus-border-mine-guard",
+    "action": "role",
+    "role": "兵舎当番",
+    "note": "捕虜の処刑命令を拒み、監視所から外された",
+    "onlyIfActiveOrCrisis": true,
+    "onlyIfRoleChanged": true
+  },
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "ursus-captive-execution-order",
+    "kind": "refusal",
+    "context": "military",
+    "decision": "refused-prisoner-execution",
+    "outcome": "prevented",
+    "targetGroup": "infected-captive",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "evidenceIds": [
+      "active-military-duty",
+      "present-at-scene",
+      "order-received",
+      "refused-order",
+      "weapon-surrendered"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+#### 選択肢 3
+
+<a id="choice-car_urs_guard_choice_captive_order-2"></a>
+選択肢文：命令どおりに、拘束された男を撃つ
+
+旧シム観測：未計測（記録なし。0件ではありません。）
+
+結果枝：
+<a id="outcome-car_urs_guard_choice_captive_order-2-0"></a>
+
+- **結果 1（設定確率 50%）**
+
+> 一発の銃声が詰所に響いた。衛生兵は男の死亡を確かめ、隊長は記録票にあなたの名を書いた。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "ursus-captive-execution-order",
+    "kind": "unlawful-order-execution",
+    "context": "military",
+    "decision": "executed-prisoner-shooting-order",
+    "outcome": "confirmed-death",
+    "targetGroup": "infected-captive",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "deathEvidence": "confirmed",
+    "deathEvidenceId": "medical-death-confirmation-at-guard-post",
+    "evidenceIds": [
+      "active-military-duty",
+      "present-at-scene",
+      "order-received",
+      "protected-person-target",
+      "order-executed-by-protagonist",
+      "medical-death-confirmation-at-guard-post"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+<a id="outcome-car_urs_guard_choice_captive_order-2-1"></a>
+
+- **結果 2（設定確率 25%）**
+
+> 弾丸は男の脇腹に命中した。衛生兵が止血し、捕虜を医務所へ運んだ。隊長はあなたに見張りへ戻るよう命じた。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "ursus-captive-execution-order",
+    "kind": "unlawful-order-execution",
+    "context": "military",
+    "decision": "executed-prisoner-shooting-order",
+    "outcome": "injured",
+    "targetGroup": "infected-captive",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "evidenceIds": [
+      "active-military-duty",
+      "present-at-scene",
+      "order-received",
+      "protected-person-target",
+      "order-executed-by-protagonist",
+      "prisoner-survival-confirmed"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+<a id="outcome-car_urs_guard_choice_captive_order-2-2"></a>
+
+- **結果 3（設定確率 25%）**
+
+> 銃声の後、停電と煙で詰所は騒然とした。男が倒れて運び出されたのは見たが、生死は確かめられなかった。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "ursus-captive-execution-order",
+    "kind": "unlawful-order-execution",
+    "context": "military",
+    "decision": "executed-prisoner-shooting-order",
+    "outcome": "unresolved",
+    "targetGroup": "infected-captive",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "evidenceIds": [
+      "active-military-duty",
+      "present-at-scene",
+      "order-received",
+      "protected-person-target",
+      "order-executed-by-protagonist",
+      "post-shot-outcome-unconfirmed"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+
+
 <a id="event-car_vic_infantry_daily_01"></a>
 ## car_vic_infantry_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:132
+- 出典位置：data/parts/routes/regional-careers/events-west.js:195
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア
@@ -352322,7 +354023,7 @@ s => {
 <a id="event-car_vic_infantry_choice_skirmish"></a>
 ## car_vic_infantry_choice_skirmish
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:149
+- 出典位置：data/parts/routes/regional-careers/events-west.js:212
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア
@@ -352394,6 +354095,27 @@ s => {
     "role": "連隊先任軍曹",
     "onlyIfActiveOrCrisis": true,
     "onlyIfRoleChanged": true
+  },
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "victoria-frontier-skirmish-commanders-death",
+    "kind": "combat-lethal",
+    "context": "military",
+    "decision": "bayonet-killed-enemy-commander",
+    "outcome": "confirmed-death",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "deathEvidence": "observed",
+    "deathEvidenceId": "commander-fatal-injury-observed",
+    "evidenceIds": [
+      "active-military-duty",
+      "present-at-theater",
+      "confirmed-combatant-target",
+      "commander-fatal-injury-observed"
+    ]
   }
 }
 ```
@@ -352464,7 +354186,7 @@ s => {
 <a id="event-car_vic_royal_daily_01"></a>
 ## car_vic_royal_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:185
+- 出典位置：data/parts/routes/regional-careers/events-west.js:253
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア
@@ -352538,7 +354260,7 @@ s => {
 <a id="event-car_vic_royal_choice_coup"></a>
 ## car_vic_royal_choice_coup
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:202
+- 出典位置：data/parts/routes/regional-careers/events-west.js:270
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア、カズデル
@@ -352718,7 +354440,7 @@ s => {
 <a id="event-car_vic_exile_command_review"></a>
 ## car_vic_exile_command_review
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:252
+- 出典位置：data/parts/routes/regional-careers/events-west.js:320
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア
@@ -352840,7 +354562,7 @@ s => {
 <a id="event-car_vic_exile_postwar_review"></a>
 ## car_vic_exile_postwar_review
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:286
+- 出典位置：data/parts/routes/regional-careers/events-west.js:354
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア、カズデル
@@ -352959,7 +354681,7 @@ s => {
 <a id="event-car_lei_golden_daily_01"></a>
 ## car_lei_golden_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:320
+- 出典位置：data/parts/routes/regional-careers/events-west.js:388
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：リターニア
@@ -353033,7 +354755,7 @@ s => {
 <a id="event-car_lei_golden_choice_witch_remnant"></a>
 ## car_lei_golden_choice_witch_remnant
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:337
+- 出典位置：data/parts/routes/regional-careers/events-west.js:405
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：リターニア
@@ -353175,7 +354897,7 @@ s => {
 <a id="event-car_lat_executor_daily_01"></a>
 ## car_lat_executor_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:373
+- 出典位置：data/parts/routes/regional-careers/events-west.js:441
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ラテラーノ
@@ -353249,7 +354971,7 @@ s => {
 <a id="event-car_lat_executor_choice_dispute"></a>
 ## car_lat_executor_choice_dispute
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:390
+- 出典位置：data/parts/routes/regional-careers/events-west.js:458
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ラテラーノ
@@ -353385,7 +355107,7 @@ s => {
 <a id="event-car_urs_officer_after_dismissal"></a>
 ## car_urs_officer_after_dismissal
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:420
+- 出典位置：data/parts/routes/regional-careers/events-west.js:488
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -353629,7 +355351,7 @@ s => {
 <a id="event-car_urs_guard_after_expulsion"></a>
 ## car_urs_guard_after_expulsion
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:467
+- 出典位置：data/parts/routes/regional-careers/events-west.js:535
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -353873,7 +355595,7 @@ s => {
 <a id="event-car_urs_officer_disciplinary_review"></a>
 ## car_urs_officer_disciplinary_review
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:514
+- 出典位置：data/parts/routes/regional-careers/events-west.js:582
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ウルサス
@@ -353991,7 +355713,7 @@ s => {
 <a id="event-car_urs_guard_disciplinary_review"></a>
 ## car_urs_guard_disciplinary_review
 
-- 出典位置：data/parts/routes/regional-careers/events-west.js:549
+- 出典位置：data/parts/routes/regional-careers/events-west.js:617
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ウルサス
@@ -354183,13 +355905,13 @@ s => {
 ## car_col_pioneer_choice_bandits
 
 - 出典位置：data/parts/routes/regional-careers/events-central.js:30
-- 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
 - 国・地域：クルビア
-- ジャンル：天災・避難
-- 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、移動都市・避難に言及
+- ジャンル：暴力・犯罪、労働・経済
+- 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、農場への武装襲撃、匿名被害者
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：荒野の襲撃から農場を守る場面。匿名の死亡記録を一度だけ作り、既存の出荷収入を殺害報酬にしない。
 
 ### 本文
 
@@ -354237,7 +355959,7 @@ s => {
 
 - **結果 1（設定確率 45%）**
 
-> 的確な狙撃で略奪団の車両のタイヤを撃ち抜き、頭目を射殺して敗走させた。自力で農場を守り抜いた不屈の開拓者として連邦新聞に報じられた。
+> 的確な狙撃で略奪団の車両のタイヤを撃ち抜き、頭目を射殺して敗走させた。その後、収穫した作物は予定どおり出荷された。自力で農場を守り抜いた不屈の開拓者として、連邦新聞にも報じられた。
 
 効果：
 
@@ -354246,7 +355968,27 @@ s => {
   "cr": 4,
   "h": 2,
   "p": 3,
-  "cash": 800000
+  "cash": 800000,
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "columbia-frontier-bandit-defense",
+    "kind": "defensive-lethal",
+    "context": "civilian-defense",
+    "decision": "defended-farm",
+    "outcome": "confirmed-death",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "deathEvidence": "observed",
+    "deathEvidenceId": "victim-seen-at-scene",
+    "targetGroup": "armed-raider",
+    "evidenceIds": [
+      "armed-raid-on-farm",
+      "victim-seen-at-scene"
+    ]
+  }
 }
 ```
 
@@ -354343,7 +356085,7 @@ s => {
 <a id="event-car_kaz_comp_knight_daily_01"></a>
 ## car_kaz_comp_knight_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-central.js:75
+- 出典位置：data/parts/routes/regional-careers/events-central.js:80
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：カジミエーシュ
@@ -354416,7 +356158,7 @@ s => {
 <a id="event-car_kaz_comp_knight_choice_match"></a>
 ## car_kaz_comp_knight_choice_match
 
-- 出典位置：data/parts/routes/regional-careers/events-central.js:92
+- 出典位置：data/parts/routes/regional-careers/events-central.js:97
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：カジミエーシュ
@@ -354552,18 +356294,18 @@ s => {
 <a id="event-car_kaz_armorless_daily_01"></a>
 ## car_kaz_armorless_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-central.js:126
-- 分類確度：本文・条件からの初期自動候補。未校閲。
-- 校閲状態：未校閲　優先度：未判定
+- 出典位置：data/parts/routes/regional-careers/events-central.js:131
+- 分類確度：本文・条件・選択肢と全結果枝を確認済み
+- 校閲状態：確認済み　優先度：高
 - 国・地域：カジミエーシュ
-- ジャンル：未分類
-- 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件
+- ジャンル：暴力・犯罪、所属・組織、労働・経済
+- 状況：年齢：青年、年齢：壮年、選択イベント、動的表示条件、無冑盟の実勤務、標的の死亡確認
 - 指摘分類：未記入（問題なしの確認を意味しない）
-- 注記：なし
+- 注記：カジミエーシュの無冑盟実勤務中の暗殺依頼。被害者は匿名、確定死亡時のみ報酬と従来の職務効果を反映する。
 
 ### 本文
 
-> 商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。冷酷な数字として命を消去する日常である。
+> 依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか。
 
 ### 発生条件・構造
 
@@ -354571,6 +356313,10 @@ s => {
 {
   "id": "car_kaz_armorless_daily_01",
   "conf": "S",
+  "references": [
+    "SRC_VIOLENCE_LIFEPATH_MODEL",
+    "SRC_REGIONAL_CAREERS"
+  ],
   "st": [
     "青年",
     "壮年"
@@ -354582,10 +356328,7 @@ s => {
   },
   "show": {
     "dynamicFunction": "s => s.res?.n === \"カジミエーシュ\" && $terraData.regionalCareerOnDuty(s, \"kaz_armorless\")"
-  },
-  "references": [
-    "SRC_REGIONAL_CAREERS"
-  ]
+  }
 }
 ```
 
@@ -354598,16 +356341,16 @@ s => {
 #### 選択肢 1
 
 <a id="choice-car_kaz_armorless_daily_01-0"></a>
-選択肢文：気配を消してアジトへ戻る
+選択肢文：護衛から離れた標的へ矢を放つ
 
 旧シム観測：未計測（記録なし。0件ではありません。）
 
 結果枝：
 <a id="outcome-car_kaz_armorless_daily_01-0-0"></a>
 
-- **結果 1（設定確率 100%）**
+- **結果 1（設定確率 60%）**
 
-> 暗殺完了の報酬を現金で受け取り、次の標的を待った。
+> 矢は男の胸に刺さった。護衛が駆け寄る前に息が止まり、現場で死亡を確かめた。依頼主は完了を認め、約束した報酬を支払った。
 
 効果：
 
@@ -354615,7 +356358,88 @@ s => {
 {
   "p": 1,
   "h": 1,
-  "cash": 220000
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "kaz-armorless-contract-assassination",
+    "kind": "intentional-killing",
+    "context": "organized-contract",
+    "decision": "carried-out-contract",
+    "outcome": "confirmed-death",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "deathEvidence": "confirmed",
+    "deathEvidenceId": "death-confirmed-at-scene",
+    "payment": 220000,
+    "evidenceIds": [
+      "contract-target-seen-at-site",
+      "death-confirmed-at-scene"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+<a id="outcome-car_kaz_armorless_daily_01-0-1"></a>
+
+- **結果 2（設定確率 26%）**
+
+> 矢は男の肩をかすめた。護衛に囲まれた標的は路地を抜け、行方を追えなくなった。依頼主へ渡せる完了報告も、報酬もない。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "kaz-armorless-contract-assassination",
+    "kind": "intentional-killing",
+    "context": "organized-contract",
+    "decision": "carried-out-contract",
+    "outcome": "escaped",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "evidenceIds": [
+      "contract-target-seen-at-site",
+      "target-escaped"
+    ]
+  }
+}
+```
+
+旧シム観測回数：未計測
+<a id="outcome-car_kaz_armorless_daily_01-0-2"></a>
+
+- **結果 3（設定確率 14%）**
+
+> 護衛が路地へ入ってきた。矢を放つ機会を失い、弓を隠してアジトへ戻った。依頼は未完了のまま残った。
+
+効果：
+
+```json
+{
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "kaz-armorless-contract-assassination",
+    "kind": "attempted-lethal",
+    "context": "organized-contract",
+    "decision": "carried-out-contract",
+    "outcome": "prevented",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "evidenceIds": [
+      "contract-target-seen-at-site",
+      "attack-prevented"
+    ]
+  }
 }
 ```
 
@@ -354625,7 +356449,7 @@ s => {
 <a id="event-car_sir_soldier_daily_01"></a>
 ## car_sir_soldier_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-central.js:147
+- 出典位置：data/parts/routes/regional-careers/events-central.js:171
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：シラクーザ
@@ -354697,7 +356521,7 @@ s => {
 <a id="event-car_sir_soldier_choice_turf_war"></a>
 ## car_sir_soldier_choice_turf_war
 
-- 出典位置：data/parts/routes/regional-careers/events-central.js:164
+- 出典位置：data/parts/routes/regional-careers/events-central.js:188
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：シラクーザ
@@ -354839,7 +356663,7 @@ s => {
 <a id="event-car_sir_police_daily_01"></a>
 ## car_sir_police_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-central.js:200
+- 出典位置：data/parts/routes/regional-careers/events-central.js:224
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：シラクーザ
@@ -354912,7 +356736,7 @@ s => {
 <a id="event-car_sie_obs_daily_01"></a>
 ## car_sie_obs_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-central.js:221
+- 出典位置：data/parts/routes/regional-careers/events-central.js:245
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：シエスタ
@@ -354985,7 +356809,7 @@ s => {
 <a id="event-car_col_pioneer_after_dispossession"></a>
 ## car_col_pioneer_after_dispossession
 
-- 出典位置：data/parts/routes/regional-careers/events-central.js:238
+- 出典位置：data/parts/routes/regional-careers/events-central.js:262
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -356129,6 +357953,27 @@ s => {
     "role": "特務護衛班長",
     "onlyIfActiveOrCrisis": true,
     "onlyIfRoleChanged": true
+  },
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "kjerag-train-bomb-plot-defense",
+    "kind": "defensive-lethal",
+    "context": "civilian-defense",
+    "decision": "shot-bomb-trigger-carrier",
+    "outcome": "confirmed-death",
+    "victimRef": {
+      "kind": "anonymous-person",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "deathEvidence": "observed",
+    "deathEvidenceId": "bomb-trigger-carrier-killed-at-scene",
+    "evidenceIds": [
+      "immediate-attack",
+      "armed-bomb-threat",
+      "direct-defensive-shot",
+      "bomb-trigger-carrier-killed-at-scene"
+    ]
   }
 }
 ```
@@ -356200,7 +358045,7 @@ s => {
 <a id="event-car_kje_monk_daily_01"></a>
 ## car_kje_monk_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:273
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:278
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イェラグ
@@ -356273,7 +358118,7 @@ s => {
 <a id="event-car_kje_monk_choice_avalanche"></a>
 ## car_kje_monk_choice_avalanche
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:290
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:295
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イェラグ
@@ -356407,7 +358252,7 @@ s => {
 <a id="event-car_kazdel_mil_daily_01"></a>
 ## car_kazdel_mil_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:324
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:329
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：カズデル
@@ -356480,7 +358325,7 @@ s => {
 <a id="event-car_kazdel_mil_choice_major_battle"></a>
 ## car_kazdel_mil_choice_major_battle
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:341
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:346
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア、カズデル
@@ -356535,7 +358380,7 @@ s => {
 
 - **結果 1（設定確率 40%）**
 
-> 猛砲撃の中を駆け抜け、敵の砲兵隊を薙ぎ倒して砲座を制圧した。摂政王テレシスより直々に武勲を称えられ、百人隊長へ昇進した。
+> 猛砲撃の中を駆け抜けて砲座を制圧し、敵の砲撃を止めた。砲煙が晴れた後も敵兵の損害は確かめられなかった。摂政王テレシスより直々に武勲を称えられ、百人隊長へ昇進した。
 
 効果：
 
@@ -356551,6 +358396,26 @@ s => {
     "role": "百人隊長",
     "onlyIfActiveOrCrisis": true,
     "onlyIfRoleChanged": true
+  },
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "kazdel-major-battle-artillery-assault",
+    "kind": "combat-lethal",
+    "context": "military",
+    "decision": "stormed-artillery-position",
+    "outcome": "unresolved",
+    "targetGroup": "enemy-artillery-crew",
+    "victimRef": {
+      "kind": "collective",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "evidenceIds": [
+      "active-military-duty",
+      "present-at-theater",
+      "confirmed-combatant-target",
+      "enemy-casualties-unconfirmed"
+    ]
   }
 }
 ```
@@ -356621,7 +358486,7 @@ s => {
 <a id="event-car_kazdel_bone_daily_01"></a>
 ## car_kazdel_bone_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:377
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:387
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：カズデル
@@ -356694,7 +358559,7 @@ s => {
 <a id="event-car_kazdel_bone_choice_cursed_bone"></a>
 ## car_kazdel_bone_choice_cursed_bone
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:394
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:404
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：カズデル
@@ -356828,7 +358693,7 @@ s => {
 <a id="event-car_ibe_inq_daily_01"></a>
 ## car_ibe_inq_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:428
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:438
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
@@ -356901,7 +358766,7 @@ s => {
 <a id="event-car_ibe_inq_choice_seaborn_attack"></a>
 ## car_ibe_inq_choice_seaborn_attack
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:445
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:455
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
@@ -357043,7 +358908,7 @@ s => {
 <a id="event-car_ibe_tuner_daily_01"></a>
 ## car_ibe_tuner_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:481
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:491
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
@@ -357116,7 +358981,7 @@ s => {
 <a id="event-car_ibe_tuner_choice_fog"></a>
 ## car_ibe_tuner_choice_fog
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:498
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:508
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
@@ -357258,7 +359123,7 @@ s => {
 <a id="event-car_bol_soldier_daily_01"></a>
 ## car_bol_soldier_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:534
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:544
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ボリバル
@@ -357330,7 +359195,7 @@ s => {
 <a id="event-car_bol_soldier_choice_counterattack"></a>
 ## car_bol_soldier_choice_counterattack
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:551
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:561
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ボリバル
@@ -357385,7 +359250,7 @@ s => {
 
 - **結果 1（設定確率 40%）**
 
-> 敵の弾幕を掻い潜り、機関銃座の隙間に手榴弾を叩き込んで制圧した。小隊を全滅から救った功績で軍曹へ昇進し、特別報奨金を獲得した。
+> 敵の弾幕を掻い潜って機関銃座へ迫り、手榴弾で射撃を止めた。爆煙の向こうの敵兵は見えなくなり、損害を確かめる余裕もなかった。小隊を危機から救った功績で軍曹へ昇進し、特別報奨金を獲得した。
 
 効果：
 
@@ -357401,6 +359266,26 @@ s => {
     "role": "軍曹",
     "onlyIfActiveOrCrisis": true,
     "onlyIfRoleChanged": true
+  },
+  "violenceAction": {
+    "action": "resolve-scene",
+    "scenarioId": "bolivar-night-counterattack-unknown-casualties",
+    "kind": "combat-lethal",
+    "context": "military",
+    "decision": "grenade-used-against-machine-gun-position",
+    "outcome": "unresolved",
+    "targetGroup": "enemy-machine-gun-crew",
+    "victimRef": {
+      "kind": "collective",
+      "localOrdinal": 1
+    },
+    "witnesses": [],
+    "evidenceIds": [
+      "active-military-duty",
+      "present-at-theater",
+      "confirmed-combatant-target",
+      "enemy-casualties-unconfirmed"
+    ]
   }
 }
 ```
@@ -357471,7 +359356,7 @@ s => {
 <a id="event-car_bol_dossoles_daily_01"></a>
 ## car_bol_dossoles_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:587
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:602
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ボリバル
@@ -357544,7 +359429,7 @@ s => {
 <a id="event-car_bol_dossoles_choice_syndicate"></a>
 ## car_bol_dossoles_choice_syndicate
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:604
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:619
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ボリバル
@@ -357686,7 +359571,7 @@ s => {
 <a id="event-car_rim_eng_daily_01"></a>
 ## car_rim_eng_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:640
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:655
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：レム・ビリトン
@@ -357759,7 +359644,7 @@ s => {
 <a id="event-car_rim_eng_choice_gas_leak"></a>
 ## car_rim_eng_choice_gas_leak
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:657
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:672
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：レム・ビリトン
@@ -357904,7 +359789,7 @@ s => {
 <a id="event-car_min_champ_daily_01"></a>
 ## car_min_champ_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:693
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:708
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ミノス
@@ -357977,7 +359862,7 @@ s => {
 <a id="event-car_min_champ_choice_grand_games"></a>
 ## car_min_champ_choice_grand_games
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:710
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:725
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ミノス
@@ -358113,7 +359998,7 @@ s => {
 <a id="event-car_min_orator_daily_01"></a>
 ## car_min_orator_daily_01
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:744
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:759
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ミノス
@@ -358186,7 +360071,7 @@ s => {
 <a id="event-car_min_orator_choice_foreign_plot"></a>
 ## car_min_orator_choice_foreign_plot
 
-- 出典位置：data/parts/routes/regional-careers/events-frontier.js:761
+- 出典位置：data/parts/routes/regional-careers/events-frontier.js:776
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ミノス

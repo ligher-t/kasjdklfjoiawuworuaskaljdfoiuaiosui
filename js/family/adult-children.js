@@ -158,7 +158,8 @@ function childFutureContext(s,child) {
     s.year-child.by>=18]);
 }
 const childForEvent = (s, id) => {
-  const children = (s.kids || []).filter(x => !x.d);
+  const children = (s.kids || []).filter(x => !x.d &&
+    !(typeof violencePersonContactBlocked === "function" && violencePersonContactBlocked(s, x)));
   if (id === "family_child_exposure_followup")
     return (
       children

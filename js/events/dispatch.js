@@ -411,7 +411,7 @@ function fire(e, s, T) {
         e.id === "family_spouse_independent_move_notice"
       ? s.sp?.id || null
       : null;
-  if (e.id === "family_daily_small_care") s.eventRelativeId = familyDailyTarget(s)?.person?.id || null;
+  if (e.id === "family_daily_small_care") s.eventRelativeId = violenceFamilyDailyTarget(s)?.person?.id || null;
   if (e.id === "life_hobby_budget")
     s.eventHobbyKey =
       ["hobby_music", "hobby_garden", "hobby_craft", "hobby_sport", "hobby_collect", "hobby_story"].find(
@@ -425,24 +425,14 @@ function fire(e, s, T) {
   if (e.id === "family_former_spouse_move_notice")
     s.eventRelativeId = formerSpouseMoveNoticeTarget(s)?.id || null;
   if (e.id === "fam_care") {
-    const parent = [s.par.fa, s.par.mo]
-      .filter(
-        p =>
-          p &&
-          !p.d &&
-          (p.health <= P("family.parentCareNeedThreshold") ||
-            (p.inf && p.health <= P("family.parentCareNeedInfectedThreshold")))
-      )
-      .sort((a, b) => a.health - b.health)[0];
+    const parent = violenceParentForEvent(s, e.id);
     s.eventRelativeId = parent?.id || null;
   }
-  if (e.id === "fam_care_capacity_review") s.eventRelativeId = s.par?.[s.familyCare?.target]?.id || null;
+  if (e.id === "fam_care_capacity_review" || e.id === "parent_treatment_review" ||
+      e.id === "parent_work_news" || e.id === "fam_infected")
+    s.eventRelativeId = violenceParentForEvent(s, e.id)?.id || null;
   if (e.id === "fam_care_followup") {
-    const ended = (s.familyCareHistory || [])
-        .slice()
-        .reverse()
-        .find(row => row.type === "period_ended"),
-      parent = [s.par?.fa, s.par?.mo].find(person => person && !person.d && person.id === ended?.targetId);
+    const parent = violenceParentForEvent(s, e.id);
     s.eventRelativeId = parent?.id || null;
     s.eventCareSiblingId =
       familyCareCostShareSiblingCandidates(s)

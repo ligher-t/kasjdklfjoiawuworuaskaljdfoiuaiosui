@@ -221,6 +221,7 @@ function normalizeResumeImport(data) {
     if (!Object.hasOwn(state, "raceProfile")) state.raceProfile = createRaceProfile(state.r);
     if (!Object.hasOwn(state, "artsProfile")) state.artsProfile = createArtsProfile(state.ar);
     if (!Object.hasOwn(state, "artsEquipment")) state.artsEquipment = createArtsEquipmentState();
+    if (!Object.hasOwn(state, "violenceState")) state.violenceState = createViolenceState();
     if (state.world && typeof state.world === "object") {
       state.world.events ||= {};
       initializeLifeSystems(state);

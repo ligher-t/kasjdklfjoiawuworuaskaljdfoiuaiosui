@@ -61,7 +61,12 @@ function recordPersonTieAction(s, input) {
       store.rhodesColleagues.push(store.rhodesColleague);
     if (store.rhodesColleague)
       store.rhodesColleague = store.rhodesColleagues.find(row => row.id === store.rhodesColleague.id) || store.rhodesColleague;
-    let current = store.rhodesColleagues.find(row => row.actualStatus === "working") || null;
+    const currentPointer = store.rhodesColleague;
+    let current = currentPointer?.actualStatus === "working" &&
+      !(typeof violencePersonContactBlocked === "function" && violencePersonContactBlocked(s, currentPointer))
+      ? currentPointer
+      : store.rhodesColleagues.find(row => row.actualStatus === "working" &&
+        !(typeof violencePersonContactBlocked === "function" && violencePersonContactBlocked(s, row))) || null;
     if (!current && input.action === "introduced") {
       const status = s.lifeRecord?.affiliations?.find(row => row.id === "rhodes-staff")?.status;
       if (s.year < 1094 || !["active", "crisis"].includes(status))

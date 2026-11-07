@@ -17,4 +17,5 @@ window.TERRA_DATA_BUILD.run("extensions/social-and-care", function ($terraData, 
   $parts("extensions/social-and-care/race-events");
   $parts("extensions/social-and-care/species-daily-events");
   $parts("extensions/social-and-care/supplementary-events");
+  $parts("extensions/social-and-care/violence-lifepath");
 });

@@ -248,7 +248,12 @@ window.TERRA_DATA_BUILD.fragment(
           "凍てつく風の中で正確な狙撃を放ち、起爆装置を持つ首領を狙撃。列車を無傷で通過させた。議長直々に銀の懐中時計を贈られ、特務護衛班長へ昇進した。",
           { cr: 5, p: 3, cash: 1200000,
             lifeAffiliation: { id: "kjerag-karlan-commercial", action: "role", role: "特務護衛班長",
-              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "kjerag-train-bomb-plot-defense",
+              kind: "defensive-lethal", context: "civilian-defense", decision: "shot-bomb-trigger-carrier",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              deathEvidence: "observed", deathEvidenceId: "bomb-trigger-carrier-killed-at-scene",
+              evidenceIds: ["immediate-attack", "armed-bomb-threat", "direct-defensive-shot", "bomb-trigger-carrier-killed-at-scene"] } }
         ], [
           0.85,
           "敵の銃弾を肩に受けながらも撃退に成功。列車は軽微な被害で済んだ。",
@@ -349,10 +354,15 @@ window.TERRA_DATA_BUILD.fragment(
       c: [
         $terraData.K("大剣を振りかざし、砲煙を突き破って突進する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
-          "猛砲撃の中を駆け抜け、敵の砲兵隊を薙ぎ倒して砲座を制圧した。摂政王テレシスより直々に武勲を称えられ、百人隊長へ昇進した。",
+          "猛砲撃の中を駆け抜けて砲座を制圧し、敵の砲撃を止めた。砲煙が晴れた後も敵兵の損害は確かめられなかった。摂政王テレシスより直々に武勲を称えられ、百人隊長へ昇進した。",
           { h: -3, p: 4, cr: 4, cash: 800000,
             lifeAffiliation: { id: "kazdel-military-commission", action: "role", role: "百人隊長",
-              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "kazdel-major-battle-artillery-assault",
+              kind: "combat-lethal", context: "military", decision: "stormed-artillery-position",
+              outcome: "unresolved", targetGroup: "enemy-artillery-crew",
+              victimRef: { kind: "collective", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-theater", "confirmed-combatant-target", "enemy-casualties-unconfirmed"] } }
         ], [
           0.8,
           "砲撃の爆風で吹き飛ばされ、全身に破片を浴びて倒れた。衛生兵に救助され生き延びた。",
@@ -559,10 +569,15 @@ window.TERRA_DATA_BUILD.fragment(
       c: [
         $terraData.K("泥煙を突っ切り、敵の機関銃座へ手榴弾を投げ込む", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.4,
-          "敵の弾幕を掻い潜り、機関銃座の隙間に手榴弾を叩き込んで制圧した。小隊を全滅から救った功績で軍曹へ昇進し、特別報奨金を獲得した。",
+          "敵の弾幕を掻い潜って機関銃座へ迫り、手榴弾で射撃を止めた。爆煙の向こうの敵兵は見えなくなり、損害を確かめる余裕もなかった。小隊を危機から救った功績で軍曹へ昇進し、特別報奨金を獲得した。",
           { cr: 4, h: -2, p: 3, cash: 400000,
             lifeAffiliation: { id: "bolivar-coalition-soldier", action: "role", role: "軍曹",
-              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "bolivar-night-counterattack-unknown-casualties",
+              kind: "combat-lethal", context: "military", decision: "grenade-used-against-machine-gun-position",
+              outcome: "unresolved", targetGroup: "enemy-machine-gun-crew",
+              victimRef: { kind: "collective", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-theater", "confirmed-combatant-target", "enemy-casualties-unconfirmed"] } }
         ], [
           0.8,
           "銃弾が脚を貫通して倒れた。泥水を這いずりながら味方の衛生兵に救助された。",

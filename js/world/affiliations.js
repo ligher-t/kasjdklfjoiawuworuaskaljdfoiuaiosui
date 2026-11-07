@@ -227,13 +227,14 @@ const FACILITY_PERSON_ROLES = {
   school: "学び舎で教える人",
   workplace: "同じ仕事場の働き手"
 };
-function facilityPersonFor(s, kind, personId = null) {
+function facilityPersonFor(s, kind, personId = null, includeDead = false) {
   const f = activeFacility(s, kind),
     area = s.community;
   if (!f || !area?.people) return null;
   // Explicitly named interactions never silently switch to the newest colleague.
   const candidates = Object.values(area.people).filter(
-    p => p.facilityId === f.id && p.kind === kind && Number.isInteger(p.metYear) && p.metYear <= s.year
+    p => p.facilityId === f.id && p.kind === kind && Number.isInteger(p.metYear) && p.metYear <= s.year &&
+      (includeDead || p.actualStatus !== "dead")
   );
   return personId
     ? candidates.find(p => p.id === personId) || null

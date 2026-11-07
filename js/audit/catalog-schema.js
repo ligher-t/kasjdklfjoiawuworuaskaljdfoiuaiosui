@@ -241,3 +241,4 @@ const VK = [
 ];
 
 FXK.push("travelAction","travelResidenceRef","debtPlan","educationAction","loanContract","loanPayment","loanCharge","personalWishes","infectionRoute","languageAction","artsAction","lifeSystemAction","raceProfileAction");
+FXK.push("violenceAction");

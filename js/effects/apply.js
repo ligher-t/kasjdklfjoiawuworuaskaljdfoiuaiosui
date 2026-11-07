@@ -4,6 +4,10 @@ function finalizeLifeLedgerAtDeath(s) {
 }
 function ap(e, routeReserve = 0) {
   if (!e) return;
+  if (e.violenceAction) {
+    const assessment = violenceActionAssessment(S, e.violenceAction, TRACE_RESOLUTION, TRACE_RESOLUTION?.id);
+    if (!assessment.ok) throw Error(`暴力イベントの条件が変わったため適用できない: ${assessment.reason}`);
+  }
   if (e.employmentAction && e.employmentAction.action !== "site-incident" && e.job != null)
     throw Error("採用案件と旧職業IDの直接付与を同時に処理できない");
   if (e.employmentAction?.action === "complete-gig" &&
@@ -49,6 +53,14 @@ function ap(e, routeReserve = 0) {
   applyInfectionAndContactEffects(e, s);
   educationEnforceAccess(s);
   applyHouseholdHealthEffects(e, s);
+  let violenceResult = null;
+  if (e.violenceAction) {
+    violenceResult = ["adjudicate-case", "complete-sentence"].includes(e.violenceAction.action)
+      ? applyViolenceLegalAction(s, e.violenceAction, TRACE_RESOLUTION, TRACE_RESOLUTION?.id)
+      : applyViolenceAction(s, e.violenceAction, TRACE_RESOLUTION, TRACE_RESOLUTION?.id);
+    if (violenceResult.cashDelta)
+      e = { ...e, cash: (Number(e.cash) || 0) + violenceResult.cashDelta };
+  }
   const cashScale = (e.med ? s.res.md : e.sc ? s.res.sc : e.pm ? s.res.pm : 1) * (s.priceIndex || 1);
   const addMoney = (target, amount) => {
     target.cash += amount;

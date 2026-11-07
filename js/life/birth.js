@@ -268,6 +268,7 @@ function born(birth = {}) {
     socialConflict: null,
     socialAftermath: null,
     personTies: null,
+    violenceState: createViolenceState(),
     closeKnowledge: null,
     infectionAwareness: null,
     infectionWorkplace: null,

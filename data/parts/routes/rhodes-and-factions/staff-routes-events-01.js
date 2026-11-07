@@ -1112,10 +1112,7 @@ window.TERRA_DATA_BUILD.fragment(
       w: 0.5,
       show: s =>
         $terraData.srOnStaff(s) &&
-        !(s.personTies?.rhodesColleagues ||
-          (s.personTies?.rhodesColleague ? [s.personTies.rhodesColleague] : [])).some(
-          person => person.actualStatus === "working"
-        ) &&
+        !violenceCurrentRhodesColleague(s) &&
         ["active", "crisis"].includes($terraData.srAffiliationStatus(s, "rhodes-staff")),
       t: "同じ部署で何度か顔を合わせていた同僚と、食堂の休憩時間が一緒になった。コーヒーを片手に声をかけてみるか、それとも今日はひとりで静かに休むか考えた。",
       c: [
@@ -1158,8 +1155,7 @@ window.TERRA_DATA_BUILD.fragment(
       w: 0.62,
       show: s =>
         $terraData.srOnStaff(s) &&
-        !!s.personTies?.rhodesColleague &&
-        s.personTies.rhodesColleague.actualStatus === "working",
+        !!violenceCurrentRhodesColleague(s),
       t: "前に休憩室で話し込んだ同僚と、また同じシフトに入ることになった。山積みの作業を前に、どうやって片づけていくか目を合わせた。",
       c: [
         $terraData.K("得意な作業を分け合い、終わった分から声を掛け合って進める", {}, [

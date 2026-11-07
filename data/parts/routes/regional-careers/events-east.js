@@ -259,7 +259,12 @@ window.TERRA_DATA_BUILD.fragment(
           "電光石火の抜刀で敵将の甲冑を両断し、討ち取った。両軍から轟く歓声の中、主君より感状と名刀を賜り、旗本頭へ昇進した。",
           { h: 3, cr: 5, p: 3, cash: 800000,
             lifeAffiliation: { id: "higashi-samurai-household", action: "role", role: "旗本頭",
-              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "higashi-battle-duel-death",
+              kind: "combat-lethal", context: "military", decision: "killed-enemy-leader-in-duel",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              deathEvidence: "observed", deathEvidenceId: "duel-fatal-injury-observed",
+              evidenceIds: ["active-military-duty", "present-at-theater", "confirmed-combatant-target", "duel-fatal-injury-observed"] } }
         ], [
           0.85,
           "激闘の末に敵を退けたものの、深手を負って落馬した。味方に救出され、療養所へ運ばれた。",
@@ -272,7 +277,13 @@ window.TERRA_DATA_BUILD.fragment(
         $terraData.K("自重して陣形を維持し、鉄砲隊に射撃を命じる", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
           1,
           "敵将は鉄砲の一斉射撃で討ち取られた。派手さはないが、確実な用兵を評価された。",
-          { p: 1, k: 2 }
+          { p: 1, k: 2,
+            violenceAction: { action: "resolve-scene", scenarioId: "higashi-battle-commanded-volley",
+              kind: "command-harm", context: "military", decision: "ordered-volley-killed-enemy-leader",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              deathEvidence: "observed", deathEvidenceId: "enemy-leader-death-confirmed-by-unit",
+              evidenceIds: ["active-military-duty", "order-issued", "order-executed-by-unit", "subordinate-death-confirmed",
+                "present-at-theater", "confirmed-combatant-target", "enemy-leader-death-confirmed-by-unit"] } }
         ])
       ]
     },

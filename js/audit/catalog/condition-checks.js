@@ -199,6 +199,58 @@ function createCatalogFieldChecks(W_, services) {
             typeof update.basis === "string" && update.basis.trim().length > 0 && update.basis.length <= 240;
         if (!valid) W_.push(w + ": 効果「raceProfileAction」の個体記録契約が不正");
       }
+      if (k === "violenceAction") {
+        const action = f[k],
+          allowedKeys = new Set(["action", "scenarioId", "kind", "context", "decision", "outcome", "targetGroup",
+          "victimRef", "victims", "witnesses", "deathEvidence", "deathEvidenceId", "authorityAction", "witnessNorm", "evidenceIds", "payment",
+            "followupAfterMonths", "linkedExecutionIncidentId", "evidenceId", "behavior", "basis", "delta", "audience", "incidentId", "caseType"]),
+          victimKeys = new Set(["kind", "role", "localOrdinal", "sourceEventId", "id", "areaKey", "personId"]),
+          witnessKeys = new Set(["kind", "role", "id"]),
+          validVictimRef = ref => {
+            if (!ref || typeof ref !== "object" || Array.isArray(ref) || Object.keys(ref).some(key => !victimKeys.has(key))) return false;
+            if (["anonymous-person", "collective"].includes(ref.kind))
+              return Number.isInteger(ref.localOrdinal) && ref.localOrdinal > 0;
+            if (ref.kind === "incident-victim")
+              return typeof ref.sourceEventId === "string" && !!ref.sourceEventId.trim() &&
+                Number.isInteger(ref.localOrdinal) && ref.localOrdinal > 0;
+            if (["family-person", "recorded-contact"].includes(ref.kind))
+              return typeof ref.id === "string" && !!ref.id.trim();
+            if (ref.kind === "family-role") return ["spouse", "father", "mother"].includes(ref.role);
+            if (ref.kind === "facility-person")
+              return typeof ref.areaKey === "string" && !!ref.areaKey.trim() &&
+                typeof ref.personId === "string" && !!ref.personId.trim();
+            return false;
+          },
+          invalid = !action || typeof action !== "object" || Array.isArray(action) ||
+            Object.keys(action).some(key => !allowedKeys.has(key)) ||
+            !["record-belief", "resolve-scene", "adjudicate-case", "complete-sentence"].includes(action.action) ||
+            (action.action === "record-belief" &&
+              (!new Set(["infected", "sarkaz"]).has(action.targetGroup) ||
+                !new Set(["hear", "endorse", "reject", "leave-group"]).has(action.behavior) ||
+                typeof action.evidenceId !== "string" || !action.evidenceId.trim() ||
+                typeof action.basis !== "string" || !action.basis.trim() ||
+                (action.delta != null && (!Number.isInteger(action.delta) || action.delta < 0 || action.delta > 30)))) ||
+            (action.action === "resolve-scene" &&
+              (typeof action.scenarioId !== "string" || !action.scenarioId.trim() ||
+                typeof action.kind !== "string" || typeof action.context !== "string" ||
+                typeof action.decision !== "string" || typeof action.outcome !== "string" ||
+                (action.victimRef != null && action.victims != null) ||
+                (action.victimRef != null && !validVictimRef(action.victimRef)) ||
+                (action.victims != null && (!Array.isArray(action.victims) || !action.victims.length || action.victims.length > 16 ||
+                  action.victims.some(ref => !validVictimRef(ref)))) ||
+                (action.victimRef == null && action.victims == null) ||
+                !Array.isArray(action.witnesses) || action.witnesses.some(ref => !ref || typeof ref !== "object" || Array.isArray(ref) ||
+                  Object.keys(ref).some(key => !witnessKeys.has(key)) ||
+                  !["family-role", "family-person", "recorded-contact"].includes(ref.kind) ||
+                  (ref.kind === "family-role" && !["spouse", "father", "mother", "friend", "neighbor"].includes(ref.role)) ||
+                  (ref.kind !== "family-role" && (typeof ref.id !== "string" || !ref.id.trim()))) ||
+                (action.payment != null && (!Number.isSafeInteger(action.payment) || action.payment <= 0 || action.payment > 1000000)) ||
+                (action.followupAfterMonths != null && (!Number.isInteger(action.followupAfterMonths) || action.followupAfterMonths < 1 || action.followupAfterMonths > 24)) ||
+                (action.linkedExecutionIncidentId != null && (typeof action.linkedExecutionIncidentId !== "string" || !action.linkedExecutionIncidentId.trim())))) ||
+            (["adjudicate-case", "complete-sentence"].includes(action.action) &&
+              (typeof action.incidentId !== "string" || !action.incidentId.trim()));
+        if (invalid) W_.push(w + ": 効果「violenceAction」の事件・当事者契約が不正");
+      }
       if(type === "object" && (!f[k] || typeof f[k] !== "object" || Array.isArray(f[k])))
         W_.push(`${w}: 効果「${k}」がオブジェクトではない`);
       if(type === "objectOrArray" && (!f[k] || typeof f[k] !== "object" ||

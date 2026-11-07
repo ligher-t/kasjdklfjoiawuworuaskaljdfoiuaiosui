@@ -1210,6 +1210,13 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
     valueType: "object"
   };
 
+  $terraData.EVENT_FIELD_META.violenceAction = {
+    unit: "暴力事件・証言・法的事後処理",
+    meaning: "具体的な現場、行為、被害者、直接の証人、確認済み結果を一度だけ記録し、民間人の露見は関係・手続へつなぐ",
+    status: "S",
+    valueType: "object"
+  };
+
   $define(
     "EVENT_EFFECT_TYPES",
     {
@@ -1381,6 +1388,7 @@ window.TERRA_DATA_BUILD.run("model/schema", function ($terraData, $define, $rule
   $terraData.EVENT_EFFECT_TYPES.object.push("artsAction");
   $terraData.EVENT_EFFECT_TYPES.object.push("lifeSystemAction");
   $terraData.EVENT_EFFECT_TYPES.object.push("raceProfileAction");
+  $terraData.EVENT_EFFECT_TYPES.object.push("violenceAction");
 
   $terraData.EVENT_EFFECT_TYPES.objectArray.push("bodyChanges", "infectionAwarenessActions");
 

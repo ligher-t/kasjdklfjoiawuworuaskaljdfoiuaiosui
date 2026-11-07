@@ -108,6 +108,7 @@ const approved=Object.freeze([
   "v88_multi_child_diagnosis_target.test.cjs",
   "v88_sibling_exposure_individual_targets.test.cjs",
   "v88_spouse_sibling_medical_funds.test.cjs",
+  "violence-lifepath.test.cjs",
   "v88_separate_spouse_sibling_annual_reconciliation.test.cjs",
   "v88_spouse_oneoff_and_annual_receipt_idempotency.test.cjs",
   "v88_multi_child_annual_family_budget_reconciliation.test.cjs",

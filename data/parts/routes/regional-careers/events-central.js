@@ -38,8 +38,13 @@ window.TERRA_DATA_BUILD.fragment(
       c: [
         $terraData.K("サイロに籠城し、猟銃で応戦する", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
           0.45,
-          "的確な狙撃で略奪団の車両のタイヤを撃ち抜き、頭目を射殺して敗走させた。自力で農場を守り抜いた不屈の開拓者として連邦新聞に報じられた。",
-          { cr: 4, h: 2, p: 3, cash: 800000 }
+          "的確な狙撃で略奪団の車両のタイヤを撃ち抜き、頭目を射殺して敗走させた。その後、収穫した作物は予定どおり出荷された。自力で農場を守り抜いた不屈の開拓者として、連邦新聞にも報じられた。",
+          { cr: 4, h: 2, p: 3, cash: 800000,
+            violenceAction: { action: "resolve-scene", scenarioId: "columbia-frontier-bandit-defense",
+              kind: "defensive-lethal", context: "civilian-defense", decision: "defended-farm",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 },
+              witnesses: [], deathEvidence: "observed", deathEvidenceId: "victim-seen-at-scene", targetGroup: "armed-raider",
+              evidenceIds: ["armed-raid-on-farm", "victim-seen-at-scene"] } }
         ], [
           0.85,
           "撃退には成功したものの、サイロに火を放たれて収穫の半分を失った。",
@@ -125,17 +130,36 @@ window.TERRA_DATA_BUILD.fragment(
     {
       id: "car_kaz_armorless_daily_01",
       conf: "S",
+      references: ["SRC_VIOLENCE_LIFEPATH_MODEL"],
       st: ["青年", "壮年"],
       cd: 3,
       w: 0.5,
       ge: { age: 20 },
       show: s => s.res?.n === "カジミエーシュ" && $terraData.regionalCareerOnDuty(s, "kaz_armorless"),
-      t: "商業連合会の高層ビル街の足元、陽の当たらぬ路地裏で標的の役人の行動パターンを記録した。暗殺弓の弦を張り替え、鏃に塗った遅効性神経毒の鮮度を確かめる。冷酷な数字として命を消去する日常である。",
+      t: "依頼書には、役人の帰路と報酬だけが記されていた。人通りが途切れた路地で弓を構え、標的が護衛から離れるのを待つ。矢を放つか、依頼を捨ててアジトへ戻るか。",
       c: [
-        $terraData.K("気配を消してアジトへ戻る", { ethics: { reviewed: true, policyVersion: 87, intent: "procedure" } }, [
+        $terraData.K("護衛から離れた標的へ矢を放つ", { ethics: { reviewed: true, policyVersion: 87, intent: "organization-participation" } }, [
+          0.6,
+          "矢は男の胸に刺さった。護衛が駆け寄る前に息が止まり、現場で死亡を確かめた。依頼主は完了を認め、約束した報酬を支払った。",
+          { p: 1, h: 1, violenceAction: { action: "resolve-scene", scenarioId: "kaz-armorless-contract-assassination",
+              kind: "intentional-killing", context: "organized-contract", decision: "carried-out-contract",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 },
+              witnesses: [], deathEvidence: "confirmed", deathEvidenceId: "death-confirmed-at-scene", payment: 220000,
+              evidenceIds: ["contract-target-seen-at-site", "death-confirmed-at-scene"] } }
+        ], [
+          0.86,
+          "矢は男の肩をかすめた。護衛に囲まれた標的は路地を抜け、行方を追えなくなった。依頼主へ渡せる完了報告も、報酬もない。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "kaz-armorless-contract-assassination",
+              kind: "intentional-killing", context: "organized-contract", decision: "carried-out-contract",
+              outcome: "escaped", victimRef: { kind: "anonymous-person", localOrdinal: 1 },
+              witnesses: [], evidenceIds: ["contract-target-seen-at-site", "target-escaped"] } }
+        ], [
           1,
-          "暗殺完了の報酬を現金で受け取り、次の標的を待った。",
-          { p: 1, h: 1, cash: 220000 }
+          "護衛が路地へ入ってきた。矢を放つ機会を失い、弓を隠してアジトへ戻った。依頼は未完了のまま残った。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "kaz-armorless-contract-assassination",
+              kind: "attempted-lethal", context: "organized-contract", decision: "carried-out-contract",
+              outcome: "prevented", victimRef: { kind: "anonymous-person", localOrdinal: 1 },
+              witnesses: [], evidenceIds: ["contract-target-seen-at-site", "attack-prevented"] } }
         ])
       ]
     },

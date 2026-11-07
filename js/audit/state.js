@@ -16,5 +16,6 @@ function auditLifeState(s) {
   auditInformationState(s, problems, services);
   auditCareAndWorkplaceState(s, problems, services);
   auditSocialAndFacilityState(s, problems, services);
+  if (typeof auditViolenceState === "function") auditViolenceState(s, problems);
   return problems;
 }

@@ -159,8 +159,9 @@ function auditCareAndWorkplaceState(s, problems, services = STATE_AUDIT_SERVICES
           p.metYear > s.year ||
           !Number.isInteger(p.lastUpdatedYear) ||
           p.lastUpdatedYear > s.year ||
-          !["working", "away", "left"].includes(p.actualStatus) ||
-          !["working", "away", "left"].includes(p.knownStatus) ||
+          !["working", "away", "left", "dead"].includes(p.actualStatus) ||
+          !["working", "away", "left", "dead"].includes(p.knownStatus) ||
+          (p.actualStatus === "dead" && (!Number.isInteger(p.deathYear) || p.deathYear > s.year || !p.deathCause)) ||
           p.lastKnownYear > p.lastUpdatedYear ||
           !Array.isArray(p.history) ||
           p.history.length > 16 ||

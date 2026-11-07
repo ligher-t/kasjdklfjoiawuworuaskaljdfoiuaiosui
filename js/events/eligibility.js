@@ -180,6 +180,9 @@ const tpl = (t, s) => {
       rc: s.r.n,
       kid: (eventChild || livingKids.at(-1) || deadChild)?.nm || "",
       careKid: youngest?.nm || "",
+      violenceSentenceEmployment: (s.violenceState?.proceedings || []).some(row =>
+        row.status === "investigation-open" && row.hadEmploymentAtOpen
+      ) ? "職も失い、" : "",
       grownKid: grown?.nm || "",
       grownKidRegion: pendingChildMove ? grown.region : grown?.knownRegion || "居場所はまだ聞けていない",
       grownKidWork: pendingChildMove
@@ -542,6 +545,8 @@ function elig(e, s, T, options = {}) {
       !["life_ursus_katorga_life", "life_ursus_student_assembly_release"].includes(e.id))
     return rejectEligibility(e, "katorga-route", options);
   if (restricted(s) && !e.inConfinement && !e.need?.some(t => t === "収容中" || t === "隔離中")) return rejectEligibility(e, "confinement", options);
+  if (typeof violenceEventEligible === "function" && !violenceEventEligible(e, s))
+    return rejectEligibility(e, "known-violence-relationship-boundary", options);
   if (!ok(e, s, T)) return rejectEligibility(e, "event-condition", options);
   if (!ok(e.show, s, T)) return rejectEligibility(e, "event-show-condition", options);
   if(typeof educationLegacySceneGuard==="function" &&

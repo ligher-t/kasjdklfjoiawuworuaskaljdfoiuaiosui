@@ -70,6 +70,7 @@ on:
       - 'tests/v88_divorce_child_support_recipient_receipts.test.cjs'
       - 'tests/v88_multi_child_medical_quote_and_payer.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
+      - 'tests/violence-lifepath.test.cjs'
       - '.github/workflows/history-boundaries.yml'
   pull_request:
     branches: [main]
@@ -141,6 +142,7 @@ on:
       - 'tests/v88_divorce_child_support_recipient_receipts.test.cjs'
       - 'tests/v88_multi_child_medical_quote_and_payer.test.cjs'
       - 'tests/v88_romance_lifecycle_coherence.test.cjs'
+      - 'tests/violence-lifepath.test.cjs'
       - '.github/workflows/history-boundaries.yml'
 permissions:
   contents: read
@@ -219,6 +221,9 @@ jobs:
         run: |
           node tools/check-efficient.cjs run v88_relationship_flag_lifecycle.test.cjs
           node tools/check-efficient.cjs run v88_romance_lifecycle_coherence.test.cjs
+      - name: Civilian violence evidence, family boundary and legal aftermath
+        if: ${{ !cancelled() }}
+        run: node tools/check-efficient.cjs run violence-lifepath.test.cjs
       - name: Unmarried cohabitation, breakup and balance-sheet boundaries
         if: ${{ !cancelled() }}
         run: node tools/check-efficient.cjs run v88_cohabitation_residence_accounting.test.cjs

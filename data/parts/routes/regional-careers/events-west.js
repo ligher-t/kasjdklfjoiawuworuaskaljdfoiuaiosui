@@ -124,6 +124,69 @@ window.TERRA_DATA_BUILD.fragment(
         ])
       ]
     },
+    {
+      id: "car_urs_guard_choice_captive_order",
+      conf: "S",
+      references: ["SRC_VIOLENCE_LIFEPATH_MODEL"],
+      once: true,
+      cd: 99,
+      w: 0.035,
+      st: ["青年", "壮年"],
+      ge: { age: 21 },
+      show: s => s.res?.n === "ウルサス" && $terraData.regionalCareerOnDuty(s, "urs_guard"),
+      t: "夜明け前、監視所へ両手を縛られた感染者の捕虜が連れて来られた。隊長は「反抗の見せしめだ。夜が明けるまでに撃ち殺せ」と告げた。男は武器を持たず、兵の足元で膝を抱えている。",
+      c: [
+        $terraData.K("命令の根拠を問い直す", {}, [
+          1,
+          "隊長は「命令だ」と繰り返した。あなたは銃を下ろしたまま、捕虜を撃たなかった。兵舎へ戻された後も、男の行方は分からなかった。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "ursus-captive-execution-order",
+              kind: "refusal", context: "military", decision: "questioned-order-and-did-not-fire",
+              outcome: "prevented", targetGroup: "infected-captive",
+              victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-scene", "order-received", "order-questioned", "execution-not-carried-out"] } }
+        ]),
+        $terraData.K("執行を拒み、捕虜へ銃を向けない", {}, [
+          1,
+          "「撃てません」。そう答えると隊長は銃を預かり、あなたを監視所から外した。捕虜は詰所の奥へ連れて行かれたが、その後のことは知らされなかった。",
+          { lifeAffiliation: { id: "ursus-border-mine-guard", action: "role", role: "兵舎当番",
+              note: "捕虜の処刑命令を拒み、監視所から外された", onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "ursus-captive-execution-order",
+              kind: "refusal", context: "military", decision: "refused-prisoner-execution",
+              outcome: "prevented", targetGroup: "infected-captive",
+              victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-scene", "order-received", "refused-order", "weapon-surrendered"] } }
+        ]),
+        $terraData.K("命令どおりに、拘束された男を撃つ", {}, [
+          0.5,
+          "一発の銃声が詰所に響いた。衛生兵は男の死亡を確かめ、隊長は記録票にあなたの名を書いた。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "ursus-captive-execution-order",
+              kind: "unlawful-order-execution", context: "military", decision: "executed-prisoner-shooting-order",
+              outcome: "confirmed-death", targetGroup: "infected-captive",
+              victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              deathEvidence: "confirmed", deathEvidenceId: "medical-death-confirmation-at-guard-post",
+              evidenceIds: ["active-military-duty", "present-at-scene", "order-received", "protected-person-target",
+                "order-executed-by-protagonist", "medical-death-confirmation-at-guard-post"] } }
+        ], [
+          0.75,
+          "弾丸は男の脇腹に命中した。衛生兵が止血し、捕虜を医務所へ運んだ。隊長はあなたに見張りへ戻るよう命じた。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "ursus-captive-execution-order",
+              kind: "unlawful-order-execution", context: "military", decision: "executed-prisoner-shooting-order",
+              outcome: "injured", targetGroup: "infected-captive",
+              victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-scene", "order-received", "protected-person-target",
+                "order-executed-by-protagonist", "prisoner-survival-confirmed"] } }
+        ], [
+          1,
+          "銃声の後、停電と煙で詰所は騒然とした。男が倒れて運び出されたのは見たが、生死は確かめられなかった。",
+          { violenceAction: { action: "resolve-scene", scenarioId: "ursus-captive-execution-order",
+              kind: "unlawful-order-execution", context: "military", decision: "executed-prisoner-shooting-order",
+              outcome: "unresolved", targetGroup: "infected-captive",
+              victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              evidenceIds: ["active-military-duty", "present-at-scene", "order-received", "protected-person-target",
+                "order-executed-by-protagonist", "post-shot-outcome-unconfirmed"] } }
+        ])
+      ]
+    },
 
     // =============================================================
     // ヴィクトリア: 正規軍・平民歩兵
@@ -160,7 +223,12 @@ window.TERRA_DATA_BUILD.fragment(
           "怯む仲間を鼓舞して果敢に突撃し、サルカズの指揮官を銃剣で討ち取った。小隊を全滅の危機から救い、平民としては異例の『連隊先任軍曹』へ抜擢された。",
           { h: -2, cr: 4, p: 3, cash: 400000,
             lifeAffiliation: { id: "victoria-regular-infantry", action: "role", role: "連隊先任軍曹",
-              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true } }
+              onlyIfActiveOrCrisis: true, onlyIfRoleChanged: true },
+            violenceAction: { action: "resolve-scene", scenarioId: "victoria-frontier-skirmish-commanders-death",
+              kind: "combat-lethal", context: "military", decision: "bayonet-killed-enemy-commander",
+              outcome: "confirmed-death", victimRef: { kind: "anonymous-person", localOrdinal: 1 }, witnesses: [],
+              deathEvidence: "observed", deathEvidenceId: "commander-fatal-injury-observed",
+              evidenceIds: ["active-military-duty", "present-at-theater", "confirmed-combatant-target", "commander-fatal-injury-observed"] } }
         ], [
           0.85,
           "撃退には成功したが、大剣で腕を切り裂かれ重傷を負った。",
