@@ -27,6 +27,16 @@ window.TERRA_DATA_BUILD.fragment(
         ...extra
       };
     },
+    choiceReason = en => {
+      const reasons = [];
+      if (en?.affordableMedicalCash != null) reasons.push("診療費を支払える資金が足りない");
+      else if (en?.affordableCash != null) reasons.push("必要な費用を支払える資金が足りない");
+      if (en?.ge?.k != null) reasons.push("この対応に必要な知識が足りない");
+      if (en?.ge?.h != null || en?.le?.h != null) reasons.push("体調が条件を満たしていない");
+      if (en?.ge?.rl != null) reasons.push("必要な信頼関係を築けていない");
+      if (en?.ge?.cash != null) reasons.push("現在の資金が必要額に届いていない");
+      return reasons.length ? `${reasons.join("、")}ため、今は選べない。` : "前提条件を満たしていないため、今は選べない。";
+    },
     choice = (id, st, condition, t, options, extra = {}, references = speciesRefs) => ({
       id: `race_${id}`,
       conf: "S",
@@ -37,9 +47,18 @@ window.TERRA_DATA_BUILD.fragment(
       once: true,
       ...condition,
       t,
-      c: options.map(([label, result, fx, en]) =>
-        $terraData.K(label, en ? { en } : {}, [1, result, fx])
-      ),
+      c: options.map(([label, result, fx, en]) => {
+        const effect = fx && typeof fx === "object" && !Array.isArray(fx) ? { ...fx } : fx;
+        if (effect && typeof effect === "object" && !Array.isArray(effect) &&
+            [effect.cash, effect.selfCash].some(value => Number.isFinite(value) && value < 0)) {
+          if (en?.affordableMedicalCash != null) effect.med = 1;
+          else if (en?.affordableCash != null) effect.pm = 1;
+        }
+        const choiceRecord = $terraData.K(label, en ? { en } : {}, [1, result, effect]);
+        return en && !choiceRecord.why
+          ? { ...choiceRecord, why: choiceReason(en) }
+          : choiceRecord;
+      }),
       ...extra
     }),
     anyRace = names => ({ any: names.map(name => `種族:${name}`) }),

@@ -82,7 +82,7 @@ run(`applyLifeAffiliation({id:'rhine-lab',action:'leave'});`);
 assert.equal(run(`elig(EV.find(e=>e.id==='daily_columbia_39'),S,tags(S),{ignoreOccurrence:true})`), false,'former laboratory membership does not permit current lab work');
 
 start('ラテラーノ', 15);
-run(`S.r=RACE.find(x=>x.n==='サンクタ');S.fl.gun=0;`);
+run(`S.r=RACE.find(x=>x.n==='サンクタ');S.raceProfile=createRaceProfile(S.r);S.fl.gun=0;`);
 const personalGunScenes = ['daily_laterano_04','daily_laterano_12','daily_laterano_14','daily_laterano_36','daily_laterano_40'];
 for (const id of personalGunScenes)
   assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), false, id+' requires recorded receipt/training');
@@ -90,7 +90,7 @@ run(`ap(EV.find(e=>e.id==='lat_gun').c[0].o[0][2]);`);
 restore();
 for (const id of personalGunScenes)
   assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), true, id+' is available after the existing receipt choice and restore');
-run(`S.r=RACE.find(x=>x.n==='リーベリ');`);
+run(`S.r=RACE.find(x=>x.n==='リーベリ');S.raceProfile=createRaceProfile(S.r);`);
 for (const id of personalGunScenes)
   assert.equal(run(`elig(EV.find(e=>e.id===${JSON.stringify(id)}),S,tags(S))`), false, id+' does not give a non-Sankta their own guardian gun');
 const lateranoLocalGathering = plain(`return EV.find(e=>e.id==='choice_laterano_10');`);

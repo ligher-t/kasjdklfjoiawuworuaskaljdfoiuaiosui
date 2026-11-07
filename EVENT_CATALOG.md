@@ -222626,7 +222626,7 @@ s => {
 <a id="event-race_rd_01"></a>
 ## race_rd_01
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:70
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:89
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -222683,7 +222683,7 @@ s => {
 <a id="event-race_rd_02"></a>
 ## race_rd_02
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:72
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:91
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -222734,7 +222734,7 @@ s => {
 <a id="event-race_rd_03"></a>
 ## race_rd_03
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:74
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:93
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -222788,7 +222788,7 @@ s => {
 <a id="event-race_rd_04"></a>
 ## race_rd_04
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:76
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:95
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -222844,7 +222844,7 @@ s => {
 <a id="event-race_rd_05"></a>
 ## race_rd_05
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:78
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:97
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -222897,7 +222897,7 @@ s => {
 <a id="event-race_rd_06"></a>
 ## race_rd_06
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:80
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:99
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -222951,7 +222951,7 @@ s => {
 <a id="event-race_rd_07"></a>
 ## race_rd_07
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:82
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:101
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223004,7 +223004,7 @@ s => {
 <a id="event-race_rd_08"></a>
 ## race_rd_08
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:84
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:103
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223058,7 +223058,7 @@ s => {
 <a id="event-race_rd_09"></a>
 ## race_rd_09
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:86
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:105
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223114,7 +223114,7 @@ s => {
 <a id="event-race_rd_10"></a>
 ## race_rd_10
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:88
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:107
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223167,7 +223167,7 @@ s => {
 <a id="event-race_rd_11"></a>
 ## race_rd_11
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:90
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:109
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223220,7 +223220,7 @@ s => {
 <a id="event-race_rd_12"></a>
 ## race_rd_12
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:92
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:111
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223272,7 +223272,7 @@ s => {
 <a id="event-race_rd_13"></a>
 ## race_rd_13
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:94
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:113
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223325,7 +223325,7 @@ s => {
 <a id="event-race_rd_14"></a>
 ## race_rd_14
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:96
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:115
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223376,7 +223376,7 @@ s => {
 <a id="event-race_rd_15"></a>
 ## race_rd_15
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:98
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:117
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223427,7 +223427,7 @@ s => {
 <a id="event-race_rd_16"></a>
 ## race_rd_16
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:100
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:119
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223483,7 +223483,7 @@ s => {
 <a id="event-race_rd_17"></a>
 ## race_rd_17
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:102
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:121
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223536,7 +223536,7 @@ s => {
 <a id="event-race_rd_18"></a>
 ## race_rd_18
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:104
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:123
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223589,7 +223589,7 @@ s => {
 <a id="event-race_rd_19"></a>
 ## race_rd_19
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:106
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:125
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223642,7 +223642,7 @@ s => {
 <a id="event-race_rd_20"></a>
 ## race_rd_20
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:108
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:127
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ウルサス
@@ -223694,7 +223694,7 @@ s => {
 <a id="event-race_rd_21"></a>
 ## race_rd_21
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:110
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:129
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223745,7 +223745,7 @@ s => {
 <a id="event-race_rd_22"></a>
 ## race_rd_22
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:112
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:131
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223800,7 +223800,7 @@ s => {
 <a id="event-race_rd_23"></a>
 ## race_rd_23
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:114
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:133
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223858,7 +223858,7 @@ s => {
 <a id="event-race_rd_24"></a>
 ## race_rd_24
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:116
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:135
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223909,7 +223909,7 @@ s => {
 <a id="event-race_rd_25"></a>
 ## race_rd_25
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:118
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:137
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -223962,7 +223962,7 @@ s => {
 <a id="event-race_rd_26"></a>
 ## race_rd_26
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:120
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:139
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -224014,7 +224014,7 @@ s => {
 <a id="event-race_rd_27"></a>
 ## race_rd_27
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:122
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:141
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -224067,7 +224067,7 @@ s => {
 <a id="event-race_rd_28"></a>
 ## race_rd_28
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:124
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:143
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -224118,7 +224118,7 @@ s => {
 <a id="event-race_rd_29"></a>
 ## race_rd_29
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:126
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:145
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -224170,7 +224170,7 @@ s => {
 <a id="event-race_rd_30"></a>
 ## race_rd_30
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:128
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:147
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -224220,7 +224220,7 @@ s => {
 <a id="event-race_rp_01"></a>
 ## race_rp_01
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:133
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:152
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -224276,7 +224276,8 @@ s => {
 {
   "en": {
     "affordableMedicalCash": 8000
-  }
+  },
+  "why": "診療費を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -224301,7 +224302,8 @@ s => {
     "status": "present",
     "source": "self-report",
     "basis": "本人申告：角への触覚がある"
-  }
+  },
+  "med": 1
 }
 ```
 
@@ -224318,7 +224320,8 @@ s => {
 {
   "en": {
     "affordableMedicalCash": 5000
-  }
+  },
+  "why": "診療費を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -224343,7 +224346,8 @@ s => {
     "status": "absent",
     "source": "self-report",
     "basis": "本人申告：角への感覚がない"
-  }
+  },
+  "med": 1
 }
 ```
 
@@ -224360,7 +224364,8 @@ s => {
 {
   "en": {
     "affordableMedicalCash": 5000
-  }
+  },
+  "why": "診療費を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -224385,7 +224390,8 @@ s => {
     "status": "unknown",
     "source": "self-report",
     "basis": "本人申告：角への感覚は未評価"
-  }
+  },
+  "med": 1
 }
 ```
 
@@ -224420,7 +224426,7 @@ s => {
 <a id="event-race_rp_02"></a>
 ## race_rp_02
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:144
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:163
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -224480,7 +224486,8 @@ s => {
 {
   "en": {
     "affordableCash": 12000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -224499,7 +224506,8 @@ s => {
 {
   "cash": -12000,
   "h": 2,
-  "cr": 1
+  "cr": 1,
+  "pm": 1
 }
 ```
 
@@ -224518,7 +224526,8 @@ s => {
     "ge": {
       "k": 22
     }
-  }
+  },
+  "why": "この対応に必要な知識が足りないため、今は選べない。"
 }
 ```
 
@@ -224571,7 +224580,7 @@ s => {
 <a id="event-race_rp_03"></a>
 ## race_rp_03
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:148
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:167
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
@@ -224631,7 +224640,8 @@ s => {
 {
   "en": {
     "affordableMedicalCash": 10000
-  }
+  },
+  "why": "診療費を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -224656,7 +224666,8 @@ s => {
     "status": "present",
     "source": "clinical-record",
     "basis": "診療記録と本人申告で水分保持の特徴を確認"
-  }
+  },
+  "med": 1
 }
 ```
 
@@ -224673,7 +224684,8 @@ s => {
 {
   "en": {
     "affordableMedicalCash": 5000
-  }
+  },
+  "why": "診療費を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -224698,7 +224710,8 @@ s => {
     "status": "absent",
     "source": "clinical-record",
     "basis": "問診と診療記録で水分保持の特徴は確認されなかった"
-  }
+  },
+  "med": 1
 }
 ```
 
@@ -224790,7 +224803,7 @@ s => {
 <a id="event-race_rp_04"></a>
 ## race_rp_04
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:157
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:176
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -224849,7 +224862,8 @@ s => {
     "ge": {
       "h": 65
     }
-  }
+  },
+  "why": "体調が条件を満たしていないため、今は選べない。"
 }
 ```
 
@@ -224971,7 +224985,7 @@ s => {
 <a id="event-race_rp_05"></a>
 ## race_rp_05
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:178
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:197
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -225025,7 +225039,8 @@ s => {
 {
   "en": {
     "affordableCash": 8000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -225044,7 +225059,8 @@ s => {
 {
   "cash": -8000,
   "k": 2,
-  "p": 2
+  "p": 2,
+  "pm": 1
 }
 ```
 
@@ -225104,7 +225120,7 @@ s => {
 <a id="event-race_rp_06"></a>
 ## race_rp_06
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:172
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:191
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -225165,7 +225181,8 @@ s => {
     "ge": {
       "k": 25
     }
-  }
+  },
+  "why": "この対応に必要な知識が足りないため、今は選べない。"
 }
 ```
 
@@ -225203,7 +225220,8 @@ s => {
     "ge": {
       "k": 30
     }
-  }
+  },
+  "why": "この対応に必要な知識が足りないため、今は選べない。"
 }
 ```
 
@@ -225257,7 +225275,7 @@ s => {
 <a id="event-race_rp_07"></a>
 ## race_rp_07
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:180
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:199
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -225314,7 +225332,8 @@ s => {
 {
   "en": {
     "affordableCash": 12000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -225333,7 +225352,8 @@ s => {
 {
   "cash": -12000,
   "h": 2,
-  "p": 2
+  "p": 2,
+  "pm": 1
 }
 ```
 
@@ -225350,7 +225370,8 @@ s => {
 {
   "en": {
     "affordableCash": 5000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -225369,7 +225390,8 @@ s => {
 {
   "cash": -5000,
   "rl": 1,
-  "p": 1
+  "p": 1,
+  "pm": 1
 }
 ```
 
@@ -225404,7 +225426,7 @@ s => {
 <a id="event-race_rp_08"></a>
 ## race_rp_08
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:187
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:206
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -225464,7 +225486,8 @@ s => {
       "k": 18,
       "rl": 15
     }
-  }
+  },
+  "why": "この対応に必要な知識が足りない、必要な信頼関係を築けていないため、今は選べない。"
 }
 ```
 
@@ -225544,7 +225567,7 @@ s => {
 <a id="event-race_rp_09"></a>
 ## race_rp_09
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:194
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:213
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -225667,7 +225690,7 @@ s => {
 <a id="event-race_rp_10"></a>
 ## race_rp_10
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:201
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:220
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -225765,7 +225788,7 @@ s => {
 <a id="event-race_rp_11"></a>
 ## race_rp_11
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:207
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:226
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -225850,7 +225873,8 @@ s => {
 {
   "en": {
     "affordableCash": 6000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -225869,7 +225893,8 @@ s => {
 {
   "cash": -6000,
   "h": 1,
-  "cr": 1
+  "cr": 1,
+  "pm": 1
 }
 ```
 
@@ -225904,7 +225929,7 @@ s => {
 <a id="event-race_rp_12"></a>
 ## race_rp_12
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:214
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:233
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -226032,7 +226057,7 @@ s => {
 <a id="event-race_rp_13"></a>
 ## race_rp_13
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:221
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:240
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -226133,7 +226158,7 @@ s => {
 <a id="event-race_rp_14"></a>
 ## race_rp_14
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:227
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:246
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -226215,7 +226240,8 @@ s => {
     "ge": {
       "k": 20
     }
-  }
+  },
+  "why": "この対応に必要な知識が足りないため、今は選べない。"
 }
 ```
 
@@ -226243,7 +226269,7 @@ s => {
 <a id="event-race_rp_15"></a>
 ## race_rp_15
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:233
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:252
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -226304,7 +226330,8 @@ s => {
 {
   "en": {
     "affordableCash": 8000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -226323,7 +226350,8 @@ s => {
 {
   "cash": -8000,
   "h": 1,
-  "p": 1
+  "p": 1,
+  "pm": 1
 }
 ```
 
@@ -226383,7 +226411,7 @@ s => {
 <a id="event-race_rp_16"></a>
 ## race_rp_16
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:240
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:259
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -226483,7 +226511,7 @@ s => {
 <a id="event-race_rp_17"></a>
 ## race_rp_17
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:246
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:265
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -226539,7 +226567,8 @@ s => {
 {
   "en": {
     "affordableCash": 10000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -226559,7 +226588,8 @@ s => {
   "cash": -10000,
   "ar": 2,
   "k": 1,
-  "p": 1
+  "p": 1,
+  "pm": 1
 }
 ```
 
@@ -226595,7 +226625,7 @@ s => {
 <a id="event-race_rp_18"></a>
 ## race_rp_18
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:254
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:273
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -226651,7 +226681,8 @@ s => {
     "ge": {
       "k": 18
     }
-  }
+  },
+  "why": "この対応に必要な知識が足りないため、今は選べない。"
 }
 ```
 
@@ -226707,7 +226738,7 @@ s => {
 <a id="event-race_rp_19"></a>
 ## race_rp_19
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:258
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:277
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -226760,7 +226791,8 @@ s => {
 {
   "en": {
     "affordableCash": 5000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -226816,7 +226848,7 @@ s => {
 <a id="event-race_rp_20"></a>
 ## race_rp_20
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:264
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:283
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -226873,7 +226905,8 @@ s => {
 {
   "en": {
     "affordableMedicalCash": 7000
-  }
+  },
+  "why": "診療費を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -226893,7 +226926,8 @@ s => {
   "cash": -7000,
   "h": 3,
   "k": 1,
-  "p": 1
+  "p": 1,
+  "med": 1
 }
 ```
 
@@ -226910,7 +226944,8 @@ s => {
 {
   "en": {
     "affordableMedicalCash": 12000
-  }
+  },
+  "why": "診療費を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -226929,7 +226964,8 @@ s => {
 {
   "cash": -12000,
   "h": 3,
-  "p": 1
+  "p": 1,
+  "med": 1
 }
 ```
 
@@ -226964,7 +227000,7 @@ s => {
 <a id="event-race_rb_01"></a>
 ## race_rb_01
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:285
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:304
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -227053,7 +227089,8 @@ s => {
 {
   "en": {
     "affordableMedicalCash": 5000
-  }
+  },
+  "why": "診療費を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -227079,7 +227116,8 @@ s => {
     "status": "absent",
     "source": "clinical-record",
     "basis": "診療所の検査で分泌が確認されなかった"
-  }
+  },
+  "med": 1
 }
 ```
 
@@ -227120,7 +227158,7 @@ s => {
 <a id="event-race_rb_02"></a>
 ## race_rb_02
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:281
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:300
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -227224,7 +227262,7 @@ s => {
 <a id="event-race_rb_03"></a>
 ## race_rb_03
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:287
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:306
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -227348,7 +227386,7 @@ s => {
 <a id="event-race_rb_04"></a>
 ## race_rb_04
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:294
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:313
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -227432,7 +227470,8 @@ s => {
     "ge": {
       "k": 22
     }
-  }
+  },
+  "why": "この対応に必要な知識が足りないため、今は選べない。"
 }
 ```
 
@@ -227485,7 +227524,7 @@ s => {
 <a id="event-race_rb_05"></a>
 ## race_rb_05
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:301
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:320
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：シラクーザ
@@ -227586,7 +227625,7 @@ s => {
 <a id="event-race_rb_06"></a>
 ## race_rb_06
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:307
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:326
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -227671,7 +227710,8 @@ s => {
     "ge": {
       "k": 25
     }
-  }
+  },
+  "why": "この対応に必要な知識が足りないため、今は選べない。"
 }
 ```
 
@@ -227700,7 +227740,7 @@ s => {
 <a id="event-race_rb_07"></a>
 ## race_rb_07
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:313
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:332
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -227800,7 +227840,7 @@ s => {
 <a id="event-race_rb_08"></a>
 ## race_rb_08
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:319
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:338
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -227882,7 +227922,8 @@ s => {
     "ge": {
       "k": 24
     }
-  }
+  },
+  "why": "この対応に必要な知識が足りないため、今は選べない。"
 }
 ```
 
@@ -227910,7 +227951,7 @@ s => {
 <a id="event-race_rb_09"></a>
 ## race_rb_09
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:325
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:344
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -228007,7 +228048,7 @@ s => {
 <a id="event-race_rb_10"></a>
 ## race_rb_10
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:331
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:350
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：極東
@@ -228105,7 +228146,7 @@ s => {
 <a id="event-race_rb_11"></a>
 ## race_rb_11
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:337
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:356
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
@@ -228205,7 +228246,7 @@ s => {
 <a id="event-race_rb_12"></a>
 ## race_rb_12
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:343
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:362
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ラテラーノ
@@ -228305,7 +228346,7 @@ s => {
 <a id="event-race_rb_13"></a>
 ## race_rb_13
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:349
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:368
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：カズデル
@@ -228406,7 +228447,7 @@ s => {
 <a id="event-race_rb_14"></a>
 ## race_rb_14
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:355
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:374
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：サルゴン
@@ -228504,7 +228545,7 @@ s => {
 <a id="event-race_rb_15"></a>
 ## race_rb_15
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:361
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:380
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：ヴィクトリア
@@ -228588,7 +228629,8 @@ s => {
     "ge": {
       "k": 30
     }
-  }
+  },
+  "why": "この対応に必要な知識が足りないため、今は選べない。"
 }
 ```
 
@@ -228617,7 +228659,7 @@ s => {
 <a id="event-race_rb_16"></a>
 ## race_rb_16
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:367
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:386
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：サーミ
@@ -228715,7 +228757,7 @@ s => {
 <a id="event-race_rb_17"></a>
 ## race_rb_17
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:377
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:396
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -228814,7 +228856,7 @@ s => {
 <a id="event-race_rb_18"></a>
 ## race_rb_18
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:379
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:398
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -228913,7 +228955,7 @@ s => {
 <a id="event-race_rb_19"></a>
 ## race_rb_19
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:385
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:404
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -229013,7 +229055,7 @@ s => {
 <a id="event-race_rb_20"></a>
 ## race_rb_20
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:391
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:410
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -229112,7 +229154,7 @@ s => {
 <a id="event-race_rc_co_01"></a>
 ## race_rc_co_01
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:401
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:420
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -229211,7 +229253,7 @@ s => {
 <a id="event-race_rc_co_02"></a>
 ## race_rc_co_02
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:411
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:430
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -229313,7 +229355,7 @@ s => {
 <a id="event-race_rc_co_03"></a>
 ## race_rc_co_03
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:413
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:432
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -229414,7 +229456,7 @@ s => {
 <a id="event-race_rc_co_04"></a>
 ## race_rc_co_04
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:419
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:438
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：リターニア
@@ -229514,7 +229556,7 @@ s => {
 <a id="event-race_rc_co_05"></a>
 ## race_rc_co_05
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:425
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:444
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -229617,7 +229659,7 @@ s => {
 <a id="event-race_rc_co_06"></a>
 ## race_rc_co_06
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:431
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:450
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：シラクーザ
@@ -229715,7 +229757,7 @@ s => {
 <a id="event-race_rc_co_07"></a>
 ## race_rc_co_07
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:437
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:456
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：サルゴン
@@ -229814,7 +229856,7 @@ s => {
 <a id="event-race_rc_co_08"></a>
 ## race_rc_co_08
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:443
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:462
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -229894,7 +229936,8 @@ s => {
 {
   "en": {
     "affordableCash": 3000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -229913,7 +229956,8 @@ s => {
 {
   "cash": -3000,
   "p": 1,
-  "h": 1
+  "h": 1,
+  "pm": 1
 }
 ```
 
@@ -229923,7 +229967,7 @@ s => {
 <a id="event-race_rc_co_09"></a>
 ## race_rc_co_09
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:449
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:468
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -230027,7 +230071,7 @@ s => {
 <a id="event-race_rc_co_10"></a>
 ## race_rc_co_10
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:455
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:474
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -230083,7 +230127,8 @@ s => {
 {
   "en": {
     "affordableCash": 12000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -230120,7 +230165,8 @@ s => {
 {
   "en": {
     "affordableCash": 3000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -230139,7 +230185,8 @@ s => {
 {
   "cash": -3000,
   "p": 1,
-  "rl": 1
+  "rl": 1,
+  "pm": 1
 }
 ```
 
@@ -230149,7 +230196,7 @@ s => {
 <a id="event-race_rc_co_11"></a>
 ## race_rc_co_11
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:461
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:480
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -230250,7 +230297,7 @@ s => {
 <a id="event-race_rc_co_12"></a>
 ## race_rc_co_12
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:467
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:486
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -230349,7 +230396,7 @@ s => {
 <a id="event-race_rc_co_13"></a>
 ## race_rc_co_13
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:473
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:492
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -230428,7 +230475,8 @@ s => {
 {
   "en": {
     "affordableCash": 4000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -230447,7 +230495,8 @@ s => {
 {
   "cash": -4000,
   "rl": 1,
-  "k": 1
+  "k": 1,
+  "pm": 1
 }
 ```
 
@@ -230457,7 +230506,7 @@ s => {
 <a id="event-race_rc_co_14"></a>
 ## race_rc_co_14
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:479
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:498
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -230557,7 +230606,7 @@ s => {
 <a id="event-race_rc_co_15"></a>
 ## race_rc_co_15
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:485
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:504
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -230659,7 +230708,7 @@ s => {
 <a id="event-race_rc_co_16"></a>
 ## race_rc_co_16
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:491
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:510
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：サルゴン
@@ -230757,7 +230806,7 @@ s => {
 <a id="event-race_rc_co_17"></a>
 ## race_rc_co_17
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:497
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:516
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -230859,7 +230908,7 @@ s => {
 <a id="event-race_rc_co_18"></a>
 ## race_rc_co_18
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:503
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:522
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -230959,7 +231008,7 @@ s => {
 <a id="event-race_rc_co_19"></a>
 ## race_rc_co_19
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:509
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:528
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -231060,7 +231109,7 @@ s => {
 <a id="event-race_rc_co_20"></a>
 ## race_rc_co_20
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:519
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:538
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -231165,7 +231214,7 @@ s => {
 <a id="event-race_rm_01"></a>
 ## race_rm_01
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:525
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:544
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -231244,7 +231293,8 @@ s => {
 {
   "en": {
     "affordableCash": 5000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -231263,7 +231313,8 @@ s => {
 {
   "cash": -5000,
   "rl": 1,
-  "p": 1
+  "p": 1,
+  "pm": 1
 }
 ```
 
@@ -231273,7 +231324,7 @@ s => {
 <a id="event-race_rm_02"></a>
 ## race_rm_02
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:531
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:550
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -231327,7 +231378,8 @@ s => {
 {
   "en": {
     "affordableCash": 5000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -231347,7 +231399,8 @@ s => {
   "cash": -5000,
   "h": 1,
   "rl": 1,
-  "p": 1
+  "p": 1,
+  "pm": 1
 }
 ```
 
@@ -231382,7 +231435,7 @@ s => {
 <a id="event-race_rm_03"></a>
 ## race_rm_03
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:537
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:556
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -231482,7 +231535,7 @@ s => {
 <a id="event-race_rm_04"></a>
 ## race_rm_04
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:543
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:562
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -231583,7 +231636,7 @@ s => {
 <a id="event-race_rm_05"></a>
 ## race_rm_05
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:549
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:568
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -231684,7 +231737,7 @@ s => {
 <a id="event-race_rm_06"></a>
 ## race_rm_06
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:555
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:574
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -231782,7 +231835,7 @@ s => {
 <a id="event-race_rm_07"></a>
 ## race_rm_07
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:561
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:580
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：イベリア
@@ -231879,7 +231932,7 @@ s => {
 <a id="event-race_rm_08"></a>
 ## race_rm_08
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:567
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:586
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -231960,7 +232013,8 @@ s => {
 {
   "en": {
     "affordableCash": 3000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -231979,7 +232033,8 @@ s => {
 {
   "cash": -3000,
   "rl": 1,
-  "p": 1
+  "p": 1,
+  "pm": 1
 }
 ```
 
@@ -231989,7 +232044,7 @@ s => {
 <a id="event-race_rm_09"></a>
 ## race_rm_09
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:573
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:592
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -232087,7 +232142,7 @@ s => {
 <a id="event-race_rm_10"></a>
 ## race_rm_10
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:579
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:598
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -232140,7 +232195,8 @@ s => {
 {
   "en": {
     "affordableCash": 5000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -232160,7 +232216,8 @@ s => {
   "cash": -5000,
   "cr": 1,
   "rl": 1,
-  "p": 1
+  "p": 1,
+  "pm": 1
 }
 ```
 
@@ -232196,7 +232253,7 @@ s => {
 <a id="event-race_rm_11"></a>
 ## race_rm_11
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:585
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:604
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -232292,7 +232349,7 @@ s => {
 <a id="event-race_rm_12"></a>
 ## race_rm_12
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:591
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:610
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -232391,7 +232448,7 @@ s => {
 <a id="event-race_rm_13"></a>
 ## race_rm_13
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:601
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:620
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -232470,7 +232527,8 @@ s => {
 {
   "en": {
     "affordableCash": 3000
-  }
+  },
+  "why": "必要な費用を支払える資金が足りないため、今は選べない。"
 }
 ```
 
@@ -232489,7 +232547,8 @@ s => {
 {
   "cash": -3000,
   "rl": 1,
-  "p": 1
+  "p": 1,
+  "pm": 1
 }
 ```
 
@@ -232499,7 +232558,7 @@ s => {
 <a id="event-race_rm_14"></a>
 ## race_rm_14
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:603
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:622
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -232597,7 +232656,7 @@ s => {
 <a id="event-race_rm_15"></a>
 ## race_rm_15
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:611
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:630
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -232697,7 +232756,7 @@ s => {
 <a id="event-race_rs_01"></a>
 ## race_rs_01
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:624
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:643
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -232797,7 +232856,7 @@ s => {
 <a id="event-race_rs_02"></a>
 ## race_rs_02
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:627
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:646
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -232898,7 +232957,7 @@ s => {
 <a id="event-race_rs_03"></a>
 ## race_rs_03
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:631
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:650
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -232995,7 +233054,7 @@ s => {
 <a id="event-race_rs_04"></a>
 ## race_rs_04
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:637
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:656
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：カジミエーシュ
@@ -233098,7 +233157,7 @@ s => {
 <a id="event-race_rs_05"></a>
 ## race_rs_05
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:648
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:667
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -233198,7 +233257,7 @@ s => {
 <a id="event-race_rs_06"></a>
 ## race_rs_06
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:649
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:668
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -233298,7 +233357,7 @@ s => {
 <a id="event-race_rs_07"></a>
 ## race_rs_07
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:655
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:674
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -233402,7 +233461,7 @@ s => {
 <a id="event-race_rs_08"></a>
 ## race_rs_08
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:661
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:680
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -233501,7 +233560,7 @@ s => {
 <a id="event-race_rs_09"></a>
 ## race_rs_09
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:667
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:686
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -233603,7 +233662,7 @@ s => {
 <a id="event-race_rs_10"></a>
 ## race_rs_10
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:673
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:692
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -233702,7 +233761,7 @@ s => {
 <a id="event-race_rs_11"></a>
 ## race_rs_11
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:679
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:698
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -233804,7 +233863,7 @@ s => {
 <a id="event-race_rs_12"></a>
 ## race_rs_12
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:685
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:704
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -233901,7 +233960,7 @@ s => {
 <a id="event-race_rs_13"></a>
 ## race_rs_13
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:691
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:710
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：極東
@@ -234000,7 +234059,7 @@ s => {
 <a id="event-race_rs_14"></a>
 ## race_rs_14
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:697
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:716
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -234104,7 +234163,7 @@ s => {
 <a id="event-race_rs_15"></a>
 ## race_rs_15
 
-- 出典位置：data/parts/extensions/social-and-care/race-events.js:703
+- 出典位置：data/parts/extensions/social-and-care/race-events.js:722
 - 分類確度：本文・条件からの初期自動候補。未校閲。
 - 校閲状態：未校閲　優先度：未判定
 - 国・地域：未特定
@@ -319066,7 +319125,7 @@ s => {
     "rhodes": 1,
     "rhodes_landship": 0
   },
-  "lifeAffiliation": [
+  "lifeAffiliations": [
     {
       "id": "bsw-contract",
       "action": "leave",
@@ -319080,7 +319139,7 @@ s => {
       "note": "BSW契約終了後に外勤職へ転籍"
     }
   ],
-  "lifeGoal": [
+  "lifeGoals": [
     {
       "id": "bsw-work",
       "action": "abandon",
@@ -328984,7 +329043,7 @@ s => {
 旧シム観測回数：未計測
 <a id="outcome-sr_rhine_death_originium_reactor_explosion-1-1"></a>
 
-- **結果 2（設定確率 -92%）**
+- **結果 2（設定確率 4%）**
 
 > 退避経路の設備が破損し、爆発の衝撃に巻き込まれた。医療班の到着は間に合わず、その場で命を落とした。
 
@@ -329101,7 +329160,7 @@ s => {
 旧シム観測回数：未計測
 <a id="outcome-sr_rhine_death_unapproved_bio_trial-1-1"></a>
 
-- **結果 2（設定確率 -94%）**
+- **結果 2（設定確率 3%）**
 
 > 救護が続くなか、別の区画で装置が暴走した。退避中に重傷を負い、その後死亡した。原因は調査中として記録された。
 
@@ -329217,7 +329276,7 @@ s => {
 旧シム観測回数：未計測
 <a id="outcome-sr_rhine_death_black_ops_silenced-1-1"></a>
 
-- **結果 2（設定確率 -98%）**
+- **結果 2（設定確率 1%）**
 
 > 事情聴取の場を離れた直後、身元不明の襲撃に遭った。救助が間に合わず命を落とし、事件は調査中として残された。
 
@@ -329334,7 +329393,7 @@ s => {
 旧シム観測回数：未計測
 <a id="outcome-sr_rhine_death_sami_collapsal_expedition-1-1"></a>
 
-- **結果 2（設定確率 -94%）**
+- **結果 2（設定確率 3%）**
 
 > 観測機材の故障で帰路が塞がれ、吹雪の中で救助を待つことになった。救助隊が到着する前に力尽きた。
 
@@ -329451,7 +329510,7 @@ s => {
 旧シム観測回数：未計測
 <a id="outcome-sr_rhine_death_arts_transmitter_burnout-1-1"></a>
 
-- **結果 2（設定確率 -96%）**
+- **結果 2（設定確率 2%）**
 
 > 装置の放電が遮断操作の直前に広がり、退避中に致命傷を負った。記録には原因未確定の事故として残った。
 
@@ -329568,7 +329627,7 @@ s => {
 旧シム観測回数：未計測
 <a id="outcome-sr_rhine_death_karoshi_at_desk-1-1"></a>
 
-- **結果 2（設定確率 -98%）**
+- **結果 2（設定確率 1%）**
 
 > 同僚は搬送先で亡くなった。長時間勤務との因果は調査中で、職場は記録の提出を求められた。
 
@@ -330376,9 +330435,6 @@ s => {
   "once": true,
   "ge": {
     "age": 35
-  },
-  "extraShow": {
-    "dynamicFunction": "s => s.lifeRecord?.skills?.[\"rhine-academic\"]?.level >= 1"
   },
   "show": {
     "dynamicFunction": "s => ![38, 39, 40].includes(s.job) &&\n        (s.lifeRecord?.affiliations?.some(a => a.id === \"rhine-lab\" && a.status === \"left\") ||\n          (s.lifeRecord?.skills?.[\"rhine-academic\"]?.level || 0) >= 1) &&\n        (!customShow || customShow(s))"
@@ -331755,7 +331811,7 @@ s => {
 ```json
 {
   "k": 1,
-  "m": 1,
+  "p": 1,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 2
@@ -331783,10 +331839,11 @@ s => {
 
 ```json
 {
-  "m": -1,
+  "p": -1,
   "lifeSkill": {
     "id": "care-aid",
-    "level": 1
+    "title": "患者へのケアと医療支援",
+    "delta": 1
   },
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -331872,7 +331929,7 @@ s => {
 ```json
 {
   "k": 1,
-  "m": 1,
+  "p": 1,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 1
@@ -331900,10 +331957,11 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "lifeSkill": {
     "id": "quiet-resolve",
-    "level": 1
+    "title": "冷静な状況判断と連絡",
+    "delta": 1
   }
 }
 ```
@@ -331984,7 +332042,7 @@ s => {
 
 ```json
 {
-  "m": -1,
+  "p": -1,
   "k": 1,
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -332013,10 +332071,11 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "lifeSkill": {
     "id": "quiet-resolve",
-    "level": 1
+    "title": "冷静な状況判断と連絡",
+    "delta": 1
   }
 }
 ```
@@ -332097,10 +332156,14 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "lifeGoal": {
     "id": "rhodes-work",
-    "progress": 2
+    "title": "ロドスで担当する仕事を無理なく続ける",
+    "priority": "生業",
+    "action": "start",
+    "preserveAchievement": true,
+    "note": "捕虜となった患者にも規定に沿って医療支援を行った"
   },
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -332129,7 +332192,7 @@ s => {
 
 ```json
 {
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 2
@@ -332214,7 +332277,7 @@ s => {
 ```json
 {
   "k": 2,
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 2
@@ -332328,7 +332391,7 @@ s => {
 ```json
 {
   "h": -2,
-  "m": 3,
+  "p": 3,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 2
@@ -332360,7 +332423,7 @@ s => {
 
 ```json
 {
-  "m": -1,
+  "p": -1,
   "k": 1,
   "regionalImpact": {
     "id": "catastrophe-relief",
@@ -332455,7 +332518,7 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "rl": -1,
   "lifeAffiliation": {
     "id": "rhodes-research",
@@ -332487,7 +332550,7 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "h": 1
 }
 ```
@@ -332569,7 +332632,7 @@ s => {
 
 ```json
 {
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 1
@@ -332677,10 +332740,11 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "lifeSkill": {
     "id": "quiet-resolve",
-    "level": 1
+    "title": "冷静な状況判断と連絡",
+    "delta": 1
   },
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -332822,7 +332886,7 @@ s => {
 ```json
 {
   "k": 2,
-  "m": -1
+  "p": -1
 }
 ```
 
@@ -332904,10 +332968,11 @@ s => {
 ```json
 {
   "h": -2,
-  "m": 3,
+  "p": 3,
   "lifeSkill": {
     "id": "care-aid",
-    "level": 1
+    "title": "患者へのケアと医療支援",
+    "delta": 1
   },
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -332937,7 +333002,7 @@ s => {
 ```json
 {
   "k": 1,
-  "m": 1,
+  "p": 1,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 1
@@ -333021,7 +333086,7 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 2
@@ -333049,7 +333114,7 @@ s => {
 
 ```json
 {
-  "m": 3,
+  "p": 3,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 2
@@ -333134,7 +333199,7 @@ s => {
 ```json
 {
   "k": 2,
-  "m": 1,
+  "p": 1,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 2
@@ -333247,10 +333312,11 @@ s => {
 ```json
 {
   "k": 2,
-  "m": 2,
+  "p": 2,
   "lifeSkill": {
     "id": "care-aid",
-    "level": 2
+    "title": "患者へのケアと医療支援",
+    "delta": 2
   },
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -333280,7 +333346,7 @@ s => {
 ```json
 {
   "k": 3,
-  "m": 1,
+  "p": 1,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 1
@@ -333365,7 +333431,7 @@ s => {
 ```json
 {
   "job": 31,
-  "m": 1,
+  "p": 1,
   "k": 1,
   "lifeAffiliation": {
     "id": "rhodes-staff",
@@ -333399,7 +333465,7 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "lifeAffiliation": {
     "id": "rhodes-staff",
     "role": "本艦・行動予備隊先任",
@@ -333490,7 +333556,7 @@ s => {
 {
   "job": 30,
   "k": 2,
-  "m": 1,
+  "p": 1,
   "lifeAffiliation": {
     "id": "rhodes-staff",
     "role": "本艦・医療研究補助職員",
@@ -333549,7 +333615,7 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 1
@@ -333666,7 +333732,7 @@ s => {
 
 ```json
 {
-  "m": 1
+  "p": 1
 }
 ```
 
@@ -333779,7 +333845,7 @@ s => {
 
 ```json
 {
-  "m": 1
+  "p": 1
 }
 ```
 
@@ -333892,7 +333958,7 @@ s => {
 
 ```json
 {
-  "m": 1
+  "p": 1
 }
 ```
 
@@ -334005,7 +334071,7 @@ s => {
 
 ```json
 {
-  "m": 1
+  "p": 1
 }
 ```
 
@@ -334118,7 +334184,7 @@ s => {
 
 ```json
 {
-  "m": 1
+  "p": 1
 }
 ```
 
@@ -334200,9 +334266,9 @@ s => {
 {
   "job": 29,
   "h": 2,
-  "m": 1,
+  "p": 1,
   "fl": {
-    "reduced_work": true
+    "reduced_work": 1
   },
   "lifeAffiliation": {
     "id": "rhodes-staff",
@@ -334234,9 +334300,9 @@ s => {
 {
   "job": 28,
   "h": 2,
-  "m": 1,
+  "p": 1,
   "fl": {
-    "reduced_work": true
+    "reduced_work": 1
   },
   "lifeAffiliation": {
     "id": "rhodes-staff",
@@ -334324,7 +334390,7 @@ s => {
 ```json
 {
   "h": -3,
-  "m": 1,
+  "p": 1,
   "k": 2,
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -334358,10 +334424,11 @@ s => {
 ```json
 {
   "h": -1,
-  "m": 2,
+  "p": 2,
   "lifeSkill": {
     "id": "care-aid",
-    "level": 1
+    "title": "患者へのケアと医療支援",
+    "delta": 1
   },
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -334447,7 +334514,7 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "k": 1,
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -334476,7 +334543,7 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "regionalImpact": {
     "id": "infected-rights",
     "delta": 1
@@ -334620,7 +334687,7 @@ s => {
 ```json
 {
   "h": -3,
-  "m": 2,
+  "p": 2,
   "k": 2,
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -334654,10 +334721,11 @@ s => {
 ```json
 {
   "h": -4,
-  "m": 3,
+  "p": 3,
   "lifeSkill": {
     "id": "quiet-resolve",
-    "level": 2
+    "title": "冷静な状況判断と連絡",
+    "delta": 2
   },
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -334811,7 +334879,7 @@ s => {
 ```json
 {
   "k": 2,
-  "m": 1
+  "p": 1
 }
 ```
 
@@ -334918,7 +334986,7 @@ s => {
 {
   "h": -2,
   "k": 2,
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 2
@@ -335032,7 +335100,7 @@ s => {
 ```json
 {
   "k": 1,
-  "m": 1,
+  "p": 1,
   "groupStanding": {
     "id": "rhodes-colleagues",
     "delta": 1
@@ -335060,7 +335128,7 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "regionalImpact": {
     "id": "infected-rights",
     "delta": 1
@@ -335177,7 +335245,7 @@ s => {
   },
   "fx": {
     "h": -2,
-    "m": -1
+    "p": -1
   }
 }
 ```
@@ -335239,7 +335307,7 @@ s => {
   },
   "fx": {
     "h": -3,
-    "m": 1
+    "p": 1
   }
 }
 ```
@@ -335508,7 +335576,7 @@ s => {
     "dynamicFunction": "s => onRhodes(s) && !!s.inf && !!s.fl?.tx && s.rl >= 85 && s.h <= 20 && (s.age || 0) >= 20"
   },
   "fx": {
-    "m": 3,
+    "p": 3,
     "groupStanding": {
       "id": "rhodes-colleagues",
       "delta": 2
@@ -335613,12 +335681,12 @@ s => {
 ```json
 {
   "job": 0,
-  "m": 2,
+  "p": 2,
   "fl": {
-    "retired": true,
-    "rhodes_landship": false
+    "retired": 1,
+    "rhodes_landship": 0
   },
-  "lifeAffiliation": [
+  "lifeAffiliations": [
     {
       "id": "rhodes-staff",
       "action": "leave"
@@ -335654,10 +335722,10 @@ s => {
 
 ```json
 {
-  "m": 1,
+  "p": 1,
   "k": 1,
   "fl": {
-    "reduced_work": true
+    "reduced_work": 1
   },
   "groupStanding": {
     "id": "rhodes-colleagues",
@@ -335753,14 +335821,14 @@ s => {
 ```json
 {
   "job": 0,
-  "m": 1,
+  "p": 1,
   "k": 1,
   "fl": {
-    "rhodes_landship": false,
+    "rhodes_landship": 0,
     "retired": 0,
     "reduced_work": 1
   },
-  "lifeAffiliation": [
+  "lifeAffiliations": [
     {
       "id": "rhodes-staff",
       "action": "leave",
@@ -335797,7 +335865,7 @@ s => {
 ```json
 {
   "k": 1,
-  "m": 1
+  "p": 1
 }
 ```
 
@@ -336450,7 +336518,7 @@ s => {
 
 ```json
 {
-  "m": 3,
+  "p": 3,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 2
@@ -336483,7 +336551,7 @@ s => {
 ```json
 {
   "k": 1,
-  "m": 1,
+  "p": 1,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 1
@@ -336567,7 +336635,7 @@ s => {
 
 ```json
 {
-  "m": 2,
+  "p": 2,
   "k": 1,
   "groupStanding": {
     "id": "reunion-network",
@@ -336601,7 +336669,7 @@ s => {
 ```json
 {
   "h": 1,
-  "m": -1
+  "p": -1
 }
 ```
 
@@ -336682,7 +336750,7 @@ s => {
 ```json
 {
   "k": 2,
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 2
@@ -336710,7 +336778,7 @@ s => {
 
 ```json
 {
-  "m": -2,
+  "p": -2,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 1
@@ -337207,14 +337275,14 @@ s => {
 
 ```json
 {
-  "m": 2,
+  "p": 2,
   "lifeAffiliation": {
     "id": "reunion-1096",
     "action": "leave"
   },
   "fl": {
-    "reunion": false,
-    "hid": true
+    "reunion": 0,
+    "hid": 1
   }
 }
 ```
@@ -337239,7 +337307,7 @@ s => {
 
 ```json
 {
-  "m": -1,
+  "p": -1,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 2
@@ -337666,7 +337734,7 @@ s => {
 ```json
 {
   "h": -3,
-  "m": 3,
+  "p": 3,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 3
@@ -337699,7 +337767,7 @@ s => {
 ```json
 {
   "k": 2,
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 1
@@ -337783,11 +337851,12 @@ s => {
 
 ```json
 {
-  "m": 2,
+  "p": 2,
   "k": 1,
   "lifeSkill": {
     "id": "quiet-resolve",
-    "level": 2
+    "title": "冷静な状況判断と連絡",
+    "delta": 2
   },
   "regionalImpact": {
     "id": "catastrophe-relief",
@@ -337816,7 +337885,7 @@ s => {
 
 ```json
 {
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 2
@@ -337901,7 +337970,7 @@ s => {
 ```json
 {
   "k": 2,
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 3
@@ -337929,7 +337998,7 @@ s => {
 
 ```json
 {
-  "m": 2,
+  "p": 2,
   "lifeAffiliation": {
     "id": "reunion-1096",
     "role": "チェルノボーグ臨時拠点・遊撃隊後方班",
@@ -338019,7 +338088,7 @@ s => {
 ```json
 {
   "h": -5,
-  "m": 1,
+  "p": 1,
   "rl": 4,
   "groupStanding": {
     "id": "reunion-network",
@@ -338053,7 +338122,7 @@ s => {
 ```json
 {
   "h": -3,
-  "m": -2,
+  "p": -2,
   "k": 2,
   "groupStanding": {
     "id": "reunion-network",
@@ -338427,7 +338496,7 @@ s => {
 
 ```json
 {
-  "m": 3,
+  "p": 3,
   "k": 1,
   "groupStanding": {
     "id": "reunion-network",
@@ -338435,7 +338504,11 @@ s => {
   },
   "lifeGoal": {
     "id": "protect-neighbours",
-    "progress": 2
+    "title": "避難した近隣の人々を当面支える",
+    "priority": "地域",
+    "action": "start",
+    "preserveAchievement": true,
+    "note": "仲間と住民の安全を優先し、攻撃を止めた"
   }
 }
 ```
@@ -338460,7 +338533,7 @@ s => {
 
 ```json
 {
-  "m": -1,
+  "p": -1,
   "k": 2,
   "groupStanding": {
     "id": "reunion-network",
@@ -338549,7 +338622,7 @@ s => {
 
 ```json
 {
-  "m": 4,
+  "p": 4,
   "h": 2,
   "groupStanding": {
     "id": "reunion-network",
@@ -338578,7 +338651,7 @@ s => {
 
 ```json
 {
-  "m": 3,
+  "p": 3,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 2
@@ -339166,7 +339239,7 @@ s => {
 
 ```json
 {
-  "m": 2,
+  "p": 2,
   "lifeAffiliation": {
     "id": "rhodes-care",
     "title": "ロドス地域療養窓口への相談",
@@ -339197,10 +339270,11 @@ s => {
 
 ```json
 {
-  "m": 2,
+  "p": 2,
   "lifeSkill": {
     "id": "quiet-resolve",
-    "level": 1
+    "title": "冷静な状況判断と連絡",
+    "delta": 1
   }
 }
 ```
@@ -340021,7 +340095,7 @@ s => {
 
 ```json
 {
-  "m": 2,
+  "p": 2,
   "k": 2,
   "groupStanding": {
     "id": "reunion-network",
@@ -340055,10 +340129,11 @@ s => {
 ```json
 {
   "h": -3,
-  "m": 3,
+  "p": 3,
   "lifeSkill": {
     "id": "quiet-resolve",
-    "level": 2
+    "title": "冷静な状況判断と連絡",
+    "delta": 2
   },
   "groupStanding": {
     "id": "reunion-network",
@@ -340143,7 +340218,7 @@ s => {
 ```json
 {
   "k": 2,
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 2
@@ -340172,10 +340247,11 @@ s => {
 ```json
 {
   "k": 3,
-  "m": 1,
+  "p": 1,
   "lifeSkill": {
     "id": "camp-logistics",
-    "level": 1
+    "title": "移動野営地の補給と安全管理",
+    "delta": 1
   },
   "groupStanding": {
     "id": "reunion-network",
@@ -340260,7 +340336,7 @@ s => {
 ```json
 {
   "k": 2,
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 2
@@ -340289,7 +340365,7 @@ s => {
 ```json
 {
   "k": 1,
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 2
@@ -340376,7 +340452,7 @@ s => {
 
 ```json
 {
-  "m": 3,
+  "p": 3,
   "k": 1,
   "groupStanding": {
     "id": "reunion-network",
@@ -340411,7 +340487,7 @@ s => {
 {
   "h": -1,
   "k": 2,
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 2
@@ -340494,7 +340570,7 @@ s => {
 
 ```json
 {
-  "m": 3,
+  "p": 3,
   "k": 1,
   "groupStanding": {
     "id": "reunion-network",
@@ -340524,7 +340600,7 @@ s => {
 ```json
 {
   "h": -2,
-  "m": 3,
+  "p": 3,
   "k": 2,
   "groupStanding": {
     "id": "reunion-network",
@@ -340612,10 +340688,14 @@ s => {
 
 ```json
 {
-  "m": 4,
+  "p": 4,
   "lifeGoal": {
     "id": "reunion-relief",
-    "progress": 2
+    "title": "所属した隊で感染者の生活と安全を支える",
+    "priority": "地域と安全",
+    "action": "start",
+    "preserveAchievement": true,
+    "note": "子どもの避難と養育先の調整を支えた"
   }
 }
 ```
@@ -340640,7 +340720,7 @@ s => {
 
 ```json
 {
-  "m": 3,
+  "p": 3,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 2
@@ -340843,11 +340923,15 @@ s => {
 ```json
 {
   "h": -3,
-  "m": 4,
+  "p": 4,
   "k": 2,
   "lifeGoal": {
     "id": "reunion-relief",
-    "progress": 3
+    "title": "所属した隊で感染者の生活と安全を支える",
+    "priority": "地域と安全",
+    "action": "start",
+    "preserveAchievement": true,
+    "note": "収容者と子どもを安全な場所へ避難させた"
   },
   "groupStanding": {
     "id": "reunion-network",
@@ -340882,7 +340966,7 @@ s => {
 {
   "h": -1,
   "k": 3,
-  "m": 3,
+  "p": 3,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 3
@@ -341120,7 +341204,7 @@ s => {
 
 ```json
 {
-  "m": 1
+  "p": 1
 }
 ```
 
@@ -341231,7 +341315,7 @@ s => {
 
 ```json
 {
-  "m": 1
+  "p": 1
 }
 ```
 
@@ -341342,7 +341426,7 @@ s => {
 
 ```json
 {
-  "m": 1
+  "p": 1
 }
 ```
 
@@ -341923,12 +342007,12 @@ s => {
 
 ```json
 {
-  "m": 4,
+  "p": 4,
   "h": 3,
   "fl": {
-    "reunion": false
+    "reunion": 0
   },
-  "lifeAffiliation": [
+  "lifeAffiliations": [
     {
       "id": "reunion-reorg",
       "action": "leave"
@@ -341962,7 +342046,7 @@ s => {
 
 ```json
 {
-  "m": 2,
+  "p": 2,
   "groupStanding": {
     "id": "reunion-network",
     "delta": 2
@@ -342056,9 +342140,9 @@ s => {
 ```json
 {
   "fl": {
-    "reunion": false
+    "reunion": 0
   },
-  "lifeAffiliation": [
+  "lifeAffiliations": [
     {
       "id": "reunion-reorg",
       "action": "leave"
@@ -342094,7 +342178,7 @@ s => {
 
 ```json
 {
-  "m": 1
+  "p": 1
 }
 ```
 
