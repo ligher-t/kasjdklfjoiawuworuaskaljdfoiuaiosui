@@ -197,7 +197,8 @@ function recordCompletedGig(s, action) {
   if (!Number.isSafeInteger(action.nominalCash) || action.nominalCash < 0 ||
       !action.sourceEventId || typeof action.sourceEventId !== "string")
     throw Error("短期業務の支払根拠が不正");
-  const resource = action.resourceId ? resolveEmploymentLivelihoodResource(s, "seasonal-contract", 1, action.resourceId) : null;
+  const resourceJobId = kind === "short-sentry" ? 4 : 1,
+    resource = action.resourceId ? resolveEmploymentLivelihoodResource(s, "seasonal-contract", resourceJobId, action.resourceId) : null;
   if (action.resourceId && !resource) throw Error("短期業務の現場がない");
   const month = Number.isInteger(s.mo) && s.mo >= 1 && s.mo <= 12 ? s.mo : 1,
     state = playerEmploymentState(s),

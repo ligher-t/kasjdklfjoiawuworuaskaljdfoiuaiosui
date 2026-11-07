@@ -150,7 +150,10 @@ function auditCareAndWorkplaceState(s, problems, services = STATE_AUDIT_SERVICES
         p =>
           !p.id ||
           !p.facilityId ||
-          !area.facilities?.[p.facilityId] ||
+          (!area.facilities?.[p.facilityId] && !(p.kind === "workplace" &&
+            s.world?.occupationWorld?.sites?.[p.facilityId]?.siteId === p.facilityId &&
+            typeof s.world.occupationWorld.sites[p.facilityId].areaId === "string" &&
+            !!s.world.occupationWorld.sites[p.facilityId].areaId)) ||
           !Number.isInteger(p.by) ||
           !Number.isInteger(p.metYear) ||
           p.metYear > s.year ||

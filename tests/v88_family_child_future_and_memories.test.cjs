@@ -120,4 +120,30 @@ const bereavement=inspect(`
 assert.deepEqual(bereavement,{initialEligible:true,deathYear:1108,knownYear:1110,
  remittance:0,exposurePending:0,request:null,offer:null,contact:null,
  secondDead:false,secondRemittance:12000,secondContact:'regular',afterDeath:true});
+
+setup(ctx,{id:'year-only-parent-death-employment',seed:195642,region:'ヴィクトリア',age:48});
+const deathEmployment=inspect(`
+ S.year=1108;S.mo=0;S.kids=[];S.siblings=[];S.sp=null;S.romance=null;
+  const parent={id:'late-reported-deceased-parent',by:1060,d:1105,j:2,lifeStatus:'dead',
+    employmentState:{version:1,cases:[],activeEpisodeId:'parent-job-2',episodes:[
+      {episodeId:'parent-job-1',personId:'late-reported-deceased-parent',kind:'background-livelihood',jobId:2,
+       startYear:1077,startMonth:1,endYear:1107,endMonth:1,status:'terminated',leaveReason:'changed-livelihood',
+       annualBase:120000,workFraction:1,occupiesPosition:false,history:[
+         {year:1077,month:1,status:'active'},{year:1107,month:1,status:'terminated',reason:'changed-livelihood'}]},
+      {episodeId:'parent-job-2',personId:'late-reported-deceased-parent',kind:'background-livelihood',jobId:2,
+       startYear:1107,startMonth:1,endYear:null,endMonth:null,status:'active',
+       annualBase:120000,workFraction:1,occupiesPosition:false,history:[{year:1107,month:1,status:'active'}]}]}};
+ S.par={fa:parent,mo:null};
+ advanceRelativeMilestones(S);
+  const [beforeDeath,afterDeath]=parent.employmentState.episodes;
+  return {beforeDeathEnd:[beforeDeath.endYear,beforeDeath.endMonth],
+    beforeDeathReason:beforeDeath.leaveReason,afterDeathStatus:afterDeath.status,
+    afterDeathEnd:[afterDeath.endYear,afterDeath.endMonth],afterDeathReason:afterDeath.leaveReason,
+    reportedDeath:[afterDeath.deathReconciliation.deathYear,afterDeath.deathReconciliation.deathMonth],
+    zeroPostDeathIncome:dependentEmploymentAnnualIncome(S,parent,1107)===0,
+    activeEpisodeId:parent.employmentState.activeEpisodeId};
+`);
+assert.deepEqual(deathEmployment,{beforeDeathEnd:[1105,12],beforeDeathReason:'death',
+ afterDeathStatus:'terminated',afterDeathEnd:[1107,1],afterDeathReason:'death-before-employment',
+ reportedDeath:[1105,12],zeroPostDeathIncome:true,activeEpisodeId:null});
 console.log('PASS child-specific future planning, exact nominal gifts, separated memories and bereavement records');

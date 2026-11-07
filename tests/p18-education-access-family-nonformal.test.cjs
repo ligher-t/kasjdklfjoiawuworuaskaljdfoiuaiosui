@@ -325,9 +325,11 @@ const certified=run(function(){
    recognitionKind:"skill_certificate",
    effectiveFrom:{year:s.year,month:12}
  })===accepted;
+ const skillRecord=s.lifeRecord.skills.find(x=>x.id==="nonformal:repair");
  return {attendance:attended.effectiveAttendanceFraction,
    certified:accepted.applicationStatus,
    reviewSame:again,retry,skill:s.lifeRecord.skills.find(x=>x.id==="nonformal:repair")?.level,
+   skillRecord,skillProblems:auditLifeState(s).filter(x=>x.includes("技能・熟達履歴")),
    recognitions:s.educationRecord.recognitions.length,
    degree:s.educationRecord.awards.length,
    knownGroup:!!world.informalProviders["p12-shop-tutor"],
@@ -338,6 +340,10 @@ assert.equal(certified.certified,"accepted");
 assert.equal(certified.reviewSame,true);
 assert.equal(certified.retry,true);
 assert(certified.skill>0);
+assert.equal(certified.skillRecord.title,"修理技能");
+assert.equal(certified.skillRecord.practiceCount,1);
+assert.equal(certified.skillRecord.history[0].after,certified.skillRecord.level);
+assert.deepEqual(certified.skillProblems,[]);
 assert.equal(certified.recognitions,1);
 assert.equal(certified.degree,0);
 assert.equal(certified.knownGroup,true);

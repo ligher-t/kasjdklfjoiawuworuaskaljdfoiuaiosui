@@ -164,14 +164,22 @@ function educationCompetenceGain(s,personId,path,period,attendance,quality,
     }else if(axis==="knowledge")s.k=Math.min(100,(s.k||0)+delta);
     else if(axis==="practicalSkill"){
       s.learningPracticalSkill=Math.min(100,(s.learningPracticalSkill||0)+delta);
-      const record=ensureLifeRecord(s),skillId="nonformal:"+path.subjectIds[0];
+      const record=ensureLifeRecord(s),skillId="nonformal:"+path.subjectIds[0],
+        skillTitle=({repair:"修理技能",manufacturing:"製造技能",craft:"手仕事の技能",
+          technical:"技術技能",terrain:"地形技能","arts-foundation":"アーツ基礎",
+          "arts-unit-maintenance":"アーツユニット保守技能","arts-workshop":"アーツ工房技能",
+          "arts-tradition":"アーツ伝承技能","arts-medical-support":"アーツ医療支援技能"})[path.subjectIds[0]]||"学校外学習の実技";
       let entry=record.skills.find(x=>x.id===skillId);
       if(!entry){
-        entry={id:skillId,level:0,source:"nonformal-evidence",history:[]};
+        entry={id:skillId,title:skillTitle,level:0,practiceCount:0,source:"nonformal-evidence",history:[]};
         record.skills.push(entry);
       }
-      entry.level=Math.min(100,entry.level+delta);
-      entry.history.push({year:s.year,sourceEventId:originEvidenceId,delta});
+      entry.title=skillTitle;
+      const before=entry.level;
+      entry.level=Math.min(100,before+delta);
+      entry.practiceCount++;
+      entry.history.push({year:s.year,before,after:entry.level,sourceEventId:originEvidenceId,delta});
+      entry.history=entry.history.slice(-20);
     }else if(axis==="language"){
       applyLanguageAction(s,{type:"learn",languageId:path.languageId,
         mode:path.languageMode,amount:delta});

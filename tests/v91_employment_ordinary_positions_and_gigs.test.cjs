@@ -121,4 +121,26 @@ assert.equal(gig.duplicateDenied,true);
 assert.equal(gig.wrongPayDenied,true);
 assert.equal(gig.zeroSideEffects,true);
 assert.equal(gig.episodesAfterRepeat,1);
+const sentryGig=inspect(`
+  S.job=0;S.fl.retired=0;S.mo=7;
+  const area=occupationAreaSnapshot(S),work=S.world.occupationWorld,
+    employerId='short-sentry-fixture-employer',siteId='short-sentry-fixture-site',
+    resourceId='short-sentry-fixture-resource';
+  work.employers[employerId]={employerId,organizationKey:null,kind:'anonymous-operator'};
+  work.sites[siteId]={siteId,employerId,areaId:area.areaId,status:'open',sector:'MIL',positionIds:[]};
+  area.siteIds.push(siteId);area.resources[resourceId]={resourceId,siteId,sector:'MIL',status:'available'};
+  for(const resource of Object.values(area.resources))if(resource.sector==='AGR')resource.status='closed';
+  const choice=EV.find(e=>e.id==='work_unemployed_reentry').c.find(c=>c.l.includes('護衛'));
+  const expectedResource=employmentLivelihoodResource(S,'seasonal-contract',4),
+    militaryResourceAvailable=expectedResource?.canStart===true;
+  ap(choice.o[0][2]);
+  const episode=S.employmentState.episodes.at(-1);
+  return {militaryResourceAvailable,expectedResourceId:expectedResource?.resourceId,
+    kind:episode?.taskKind,resourceId:episode?.resourceId,
+    status:episode?.status};
+`);
+assert.equal(sentryGig.militaryResourceAvailable,true);
+assert.equal(sentryGig.kind,'short-sentry');
+assert.equal(sentryGig.resourceId,sentryGig.expectedResourceId);
+assert.equal(sentryGig.status,'completed');
 console.log('PASS employment I-2 ordinary positions and completed gigs');

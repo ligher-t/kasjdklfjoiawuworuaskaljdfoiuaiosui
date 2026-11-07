@@ -7,9 +7,70 @@ function dependentEmploymentMonth(s, month) {
   return Number.isInteger(month) && month >= 1 && month <= 12 ? month :
     Number.isInteger(s.mo) && s.mo >= 1 && s.mo <= 12 ? s.mo : 1;
 }
+function dependentEmploymentReleasePosition(s, episode) {
+  if (!episode?.occupiesPosition) return;
+  const position = s.world?.occupationWorld?.positions?.[episode.positionId];
+  if (position) {
+    position.identifiedOccupiedSlots = Math.max(0, (position.identifiedOccupiedSlots || 0) - 1);
+    position.vacancyCount = Math.max(0, position.capacity - position.aggregateOccupiedSlots -
+      position.identifiedOccupiedSlots - (position.reservedSlots || 0));
+  }
+  episode.occupiesPosition = false;
+}
+function dependentEmploymentReconcileDeath(s, person, deathYear, deathMonth) {
+  const state = person?.employmentState, episodes = state?.episodes;
+  if (!Array.isArray(episodes)) return null;
+  const activeId = state.activeEpisodeId,
+    deathDate = {year: deathYear, month: deathMonth},
+    atOrBefore = (year, month, otherYear, otherMonth) =>
+      year < otherYear || (year === otherYear && month <= otherMonth),
+    reportedAt = {year: s.year, month: dependentEmploymentMonth(s, s.mo)};
+  let closed = null;
+  for (const episode of episodes) {
+    const startYear = episode.startYear,
+      startMonth = Number.isInteger(episode.startMonth) ? episode.startMonth : 1,
+      startsAfterDeath = !atOrBefore(startYear, startMonth, deathYear, deathMonth),
+      endYear = episode.endYear, endMonth = episode.endMonth,
+      normalizedEndMonth = Number.isInteger(endMonth) ? endMonth : 12,
+      endsAfterDeath = endYear == null || !atOrBefore(endYear, normalizedEndMonth, deathYear, deathMonth);
+    if (!startsAfterDeath && !endsAfterDeath) continue;
+    if (startsAfterDeath) {
+      // A late death notice can arrive after synthetic future livelihood episodes
+      // were generated. Keep the record auditable but give it zero elapsed time.
+      episode.endYear = startYear;
+      episode.endMonth = startMonth;
+      episode.leaveReason = "death-before-employment";
+    } else {
+      episode.endYear = deathYear;
+      episode.endMonth = deathMonth;
+      episode.leaveReason = "death";
+    }
+    episode.status = "terminated";
+    episode.deathReconciliation = {
+      deathYear, deathMonth, reportedYear: reportedAt.year, reportedMonth: reportedAt.month,
+      employmentStartedAfterDeath: startsAfterDeath
+    };
+    const termination = {year: episode.endYear, month: episode.endMonth,
+      status: "terminated", reason: episode.leaveReason,
+      ...(startsAfterDeath ? {deathYear, deathMonth} : {})};
+    episode.history ||= [];
+    const last = episode.history.at(-1);
+    if (last?.status === "terminated") Object.assign(last, termination);
+    else episode.history.push(termination);
+    dependentEmploymentReleasePosition(s, episode);
+    if (episode.episodeId === activeId) closed = episode;
+  }
+  state.activeEpisodeId = null;
+  return closed;
+}
 function closeDependentEmployment(s, person, reason = "work-ended", date = {}) {
-  const state = person?.employmentState,
-    current = state?.episodes?.find(row => row.episodeId === state.activeEpisodeId);
+  const state = person?.employmentState;
+  if (reason === "death" && state?.episodes?.length) {
+    const year = Number.isInteger(date.year) ? date.year : s.year,
+      month = dependentEmploymentMonth(s, date.month);
+    return dependentEmploymentReconcileDeath(s, person, year, month);
+  }
+  const current = state?.episodes?.find(row => row.episodeId === state.activeEpisodeId);
   if (!current || current.status === "terminated") return null;
   const year = Number.isInteger(date.year) ? date.year : s.year,
     month = dependentEmploymentMonth(s, date.month);
@@ -20,15 +81,7 @@ function closeDependentEmployment(s, person, reason = "work-ended", date = {}) {
   current.status = "terminated";
   current.leaveReason = reason;
   current.history.push({year, month, status: "terminated", reason});
-  if (current.occupiesPosition) {
-    const position = s.world?.occupationWorld?.positions?.[current.positionId];
-    if (position) {
-      position.identifiedOccupiedSlots = Math.max(0, (position.identifiedOccupiedSlots || 0) - 1);
-      position.vacancyCount = Math.max(0, position.capacity - position.aggregateOccupiedSlots -
-        position.identifiedOccupiedSlots - (position.reservedSlots || 0));
-    }
-    current.occupiesPosition = false;
-  }
+  dependentEmploymentReleasePosition(s, current);
   state.activeEpisodeId = null;
   return current;
 }
@@ -44,7 +97,13 @@ function recordDependentEmployment(s, person, input = {}) {
   if (!REG.some(row => row.n === region)) throw Error("家族の仕事が行われる地域を確認できません");
   if (input.jobId === 0 || person.d || input.unemployed) {
     person.employmentState = state;
-    closeDependentEmployment(s, person, person.d ? "death" : "unemployed", {year, month});
+    if (person.d) {
+      const deathYear = Number.isInteger(person.d) ? person.d :
+        Number.isInteger(person.deathYear) ? person.deathYear : year,
+        deathMonth = person.deathMonth || person.actualDeathMonth ||
+          (deathYear === s.year ? month : 12);
+      closeDependentEmployment(s, person, "death", {year: deathYear, month: deathMonth});
+    } else closeDependentEmployment(s, person, "unemployed", {year, month});
     return null;
   }
   // Named employment must refer to the same real world records as the player.
